@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect, ReactNode } from "react";
+import { ROUTES } from '@/config'
 import { motion, AnimatePresence } from "framer-motion";
+import { ROUTES } from '@/config'
 import {
   ShieldCheckIcon,
   CreditCardIcon,
@@ -12,9 +14,13 @@ import {
   ExclamationTriangleIcon,
 } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";
+import { ROUTES } from '@/config'
 import { useSubscription } from "@/context/SubscriptionContext";
+import { ROUTES } from '@/config'
 import { authService } from "@/lib/auth";
+import { ROUTES } from '@/config'
 import { plans, formatPrice } from "@/config/pricing";
+import { ROUTES } from '@/config'
 
 interface SubscriptionGateProps {
   children: ReactNode;
@@ -202,8 +208,8 @@ export default function SubscriptionGate({
                 },
               ].map((benefit, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <CheckCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-sm text-gray-700">
+                  <CheckCircleIcon className="w-5 h-5 text-action-500 flex-shrink-0" />
+                  <span className="text-sm text-secondary-700">
                     {isPortuguese ? benefit.pt : benefit.en}
                   </span>
                 </div>
@@ -226,7 +232,7 @@ export default function SubscriptionGate({
                   <div className="text-2xl font-bold text-gray-900 mb-1">
                     {formatPrice(plans.community.monthly)}
                   </div>
-                  <div className="text-sm text-gray-600 mb-2">
+                  <div className="text-sm text-secondary-600 mb-2">
                     {isPortuguese ? "Membro da Comunidade" : "Community Member"}
                   </div>
                   <div className="text-xs text-gray-500">
@@ -243,7 +249,7 @@ export default function SubscriptionGate({
                   <div className="text-lg font-bold text-gray-900 mb-1">
                     {formatPrice(plans.ambassador.monthly)}
                   </div>
-                  <div className="text-sm text-gray-600 mb-1">
+                  <div className="text-sm text-secondary-600 mb-1">
                     {isPortuguese
                       ? "Embaixador Cultural"
                       : "Cultural Ambassador"}
@@ -285,7 +291,7 @@ export default function SubscriptionGate({
                 : "Need help? Contact our support team."}
             </p>
             <a
-              href="/contact"
+              href={ROUTES.contact}
               className="text-xs text-primary-500 hover:text-primary-600 underline"
             >
               {isPortuguese ? "Suporte ao Cliente" : "Customer Support"}

@@ -553,7 +553,7 @@ export default function AcademicNetworkingSection() {
       case "postdoc":
         return "bg-coral-100 text-coral-700";
       default:
-        return "bg-gray-100 text-gray-700";
+        return "bg-secondary-100 text-secondary-700";
     }
   };
 
@@ -574,7 +574,7 @@ export default function AcademicNetworkingSection() {
       case "exam_prep":
         return "bg-red-100 text-red-700";
       case "research_group":
-        return "bg-blue-100 text-blue-700";
+        return "bg-blue-100 text-primary-700";
       case "thesis_support":
         return "bg-green-100 text-green-700";
       case "language_practice":
@@ -582,7 +582,7 @@ export default function AcademicNetworkingSection() {
       case "assignment_help":
         return "bg-yellow-100 text-yellow-700";
       default:
-        return "bg-gray-100 text-gray-700";
+        return "bg-secondary-100 text-secondary-700";
     }
   };
 
@@ -591,11 +591,11 @@ export default function AcademicNetworkingSection() {
       case "recruiting":
         return "bg-green-100 text-green-700";
       case "active":
-        return "bg-blue-100 text-blue-700";
+        return "bg-blue-100 text-primary-700";
       case "completed":
-        return "bg-gray-100 text-gray-700";
+        return "bg-secondary-100 text-secondary-700";
       default:
-        return "bg-gray-100 text-gray-700";
+        return "bg-secondary-100 text-secondary-700";
     }
   };
 
@@ -625,7 +625,7 @@ export default function AcademicNetworkingSection() {
               : "Connect with the Portuguese Academic Community"}
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             {language === "pt"
               ? "Encontre estudantes, professores e investigadores portugueses para colaboração académica, grupos de estudo e projetos de investigação"
               : "Find Portuguese students, professors, and researchers for academic collaboration, study groups, and research projects"}
@@ -656,14 +656,14 @@ export default function AcademicNetworkingSection() {
                   <div className="flex items-center justify-center mb-3">
                     <div
                       className={`p-3 rounded-xl ${
-                        activeTab === tab.id ? "bg-primary-100" : "bg-gray-100"
+                        activeTab === tab.id ? "bg-primary-100" : "bg-secondary-100"
                       }`}
                     >
                       <IconComponent
                         className={`w-6 h-6 ${
                           activeTab === tab.id
                             ? "text-primary-600"
-                            : "text-gray-600"
+                            : "text-secondary-600"
                         }`}
                       />
                     </div>
@@ -677,7 +677,7 @@ export default function AcademicNetworkingSection() {
                   >
                     {tab.label[language]}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {tab.description[language]}
                   </p>
                 </button>
@@ -693,13 +693,13 @@ export default function AcademicNetworkingSection() {
             <div className="mb-8 bg-white rounded-2xl p-6 shadow-lg">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === "pt" ? "Função:" : "Role:"}
                   </label>
                   <select
                     value={selectedRole}
                     onChange={(e) => setSelectedRole(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   >
                     {roleFilters.map((filter) => (
                       <option key={filter.value} value={filter.value}>
@@ -709,13 +709,13 @@ export default function AcademicNetworkingSection() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === "pt" ? "Disciplina:" : "Subject:"}
                   </label>
                   <select
                     value={selectedSubject}
                     onChange={(e) => setSelectedSubject(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   >
                     {subjectFilters.map((filter) => (
                       <option key={filter.value} value={filter.value}>
@@ -765,7 +765,7 @@ export default function AcademicNetworkingSection() {
                     <div className="flex items-center">
                       <div
                         className={`w-3 h-3 rounded-full ${
-                          connection.isOnline ? "bg-green-500" : "bg-gray-300"
+                          connection.isOnline ? "bg-action-500" : "bg-gray-300"
                         }`}
                       ></div>
                     </div>
@@ -773,15 +773,15 @@ export default function AcademicNetworkingSection() {
 
                   {/* University & Subject */}
                   <div className="mb-4">
-                    <div className="flex items-center text-sm text-gray-600 mb-1">
+                    <div className="flex items-center text-sm text-secondary-600 mb-1">
                       <BuildingLibraryIcon className="w-4 h-4 mr-2" />
                       {connection.university}
                     </div>
-                    <div className="flex items-center text-sm text-gray-600 mb-1">
+                    <div className="flex items-center text-sm text-secondary-600 mb-1">
                       <BookOpenIcon className="w-4 h-4 mr-2" />
                       {connection.subject}
                     </div>
-                    <div className="flex items-center text-sm text-gray-600">
+                    <div className="flex items-center text-sm text-secondary-600">
                       <MapPinIcon className="w-4 h-4 mr-2" />
                       {connection.location}
                     </div>
@@ -798,7 +798,7 @@ export default function AcademicNetworkingSection() {
                       {connection.specialization.slice(0, 2).map((spec, i) => (
                         <span
                           key={i}
-                          className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full"
+                          className="text-xs bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full"
                         >
                           {spec}
                         </span>
@@ -822,9 +822,9 @@ export default function AcademicNetworkingSection() {
                       {connection.availableFor.slice(0, 3).map((service, i) => (
                         <div
                           key={i}
-                          className="flex items-center text-xs text-gray-600"
+                          className="flex items-center text-xs text-secondary-600"
                         >
-                          <CheckIcon className="w-3 h-3 text-green-500 mr-2" />
+                          <CheckIcon className="w-3 h-3 text-action-500 mr-2" />
                           {service.replace("_", " ")}
                         </div>
                       ))}
@@ -833,16 +833,16 @@ export default function AcademicNetworkingSection() {
 
                   {/* Stats */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center text-sm text-gray-600">
+                    <div className="flex items-center text-sm text-secondary-600">
                       <StarIconSolid className="w-4 h-4 text-yellow-400 mr-1" />
                       {connection.rating}
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-secondary-600">
                       {connection.connections}{" "}
                       {language === "pt" ? "conexões" : "connections"}
                     </div>
                     {connection.publications && (
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-secondary-600">
                         {connection.publications}{" "}
                         {language === "pt" ? "publicações" : "publications"}
                       </div>
@@ -900,15 +900,15 @@ export default function AcademicNetworkingSection() {
 
                 {/* University & Subject */}
                 <div className="mb-4">
-                  <div className="flex items-center text-sm text-gray-600 mb-1">
+                  <div className="flex items-center text-sm text-secondary-600 mb-1">
                     <BuildingLibraryIcon className="w-4 h-4 mr-2" />
                     {group.university}
                   </div>
-                  <div className="flex items-center text-sm text-gray-600 mb-1">
+                  <div className="flex items-center text-sm text-secondary-600 mb-1">
                     <BookOpenIcon className="w-4 h-4 mr-2" />
                     {group.subject}
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-secondary-600">
                     <CalendarDaysIcon className="w-4 h-4 mr-2" />
                     {language === "pt"
                       ? "Próxima reunião:"
@@ -917,7 +917,7 @@ export default function AcademicNetworkingSection() {
                   </div>
                 </div>
 
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                <p className="text-secondary-600 text-sm mb-4 leading-relaxed">
                   {language === "pt"
                     ? group.descriptionPortuguese
                     : group.description}
@@ -925,13 +925,13 @@ export default function AcademicNetworkingSection() {
 
                 {/* Members */}
                 <div className="mb-4">
-                  <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
+                  <div className="flex items-center justify-between text-sm text-secondary-600 mb-2">
                     <span>{language === "pt" ? "Membros:" : "Members:"}</span>
                     <span>
                       {group.members}/{group.maxMembers}
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-secondary-200 rounded-full h-2">
                     <div
                       className="bg-primary-500 h-2 rounded-full"
                       style={{
@@ -955,7 +955,7 @@ export default function AcademicNetworkingSection() {
                 <button
                   className={`w-full font-medium py-3 px-4 rounded-lg transition-all duration-200 ${
                     group.members >= group.maxMembers
-                      ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                      ? "bg-secondary-100 text-gray-400 cursor-not-allowed"
                       : "bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600"
                   }`}
                   disabled={group.members >= group.maxMembers}
@@ -1001,7 +1001,7 @@ export default function AcademicNetworkingSection() {
                       >
                         {project.status}
                       </span>
-                      <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                      <span className="text-xs bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full">
                         {project.type.replace("_", " ")}
                       </span>
                     </div>
@@ -1013,7 +1013,7 @@ export default function AcademicNetworkingSection() {
                       </div>
                     )}
                     {project.publications && (
-                      <div className="bg-blue-100 text-blue-700 p-2 rounded-lg">
+                      <div className="bg-blue-100 text-primary-700 p-2 rounded-lg">
                         <DocumentTextIcon className="w-4 h-4" />
                       </div>
                     )}
@@ -1022,23 +1022,23 @@ export default function AcademicNetworkingSection() {
 
                 {/* University & Department */}
                 <div className="mb-4">
-                  <div className="flex items-center text-sm text-gray-600 mb-1">
+                  <div className="flex items-center text-sm text-secondary-600 mb-1">
                     <BuildingLibraryIcon className="w-4 h-4 mr-2" />
                     {project.university} - {project.department}
                   </div>
-                  <div className="flex items-center text-sm text-gray-600 mb-1">
+                  <div className="flex items-center text-sm text-secondary-600 mb-1">
                     <UsersIcon className="w-4 h-4 mr-2" />
                     {language === "pt" ? "Líder:" : "Lead:"}{" "}
                     {project.leadResearcher}
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-secondary-600">
                     <ClockIcon className="w-4 h-4 mr-2" />
                     {language === "pt" ? "Duração:" : "Duration:"}{" "}
                     {project.duration}
                   </div>
                 </div>
 
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                <p className="text-secondary-600 text-sm mb-4 leading-relaxed">
                   {language === "pt"
                     ? project.descriptionPortuguese
                     : project.description}
@@ -1053,9 +1053,9 @@ export default function AcademicNetworkingSection() {
                     {project.requirements.slice(0, 3).map((req, i) => (
                       <div
                         key={i}
-                        className="flex items-start text-xs text-gray-600"
+                        className="flex items-start text-xs text-secondary-600"
                       >
-                        <CheckIcon className="w-3 h-3 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <CheckIcon className="w-3 h-3 text-action-500 mr-2 mt-0.5 flex-shrink-0" />
                         {req}
                       </div>
                     ))}
@@ -1081,7 +1081,7 @@ export default function AcademicNetworkingSection() {
 
                 {/* Collaborators */}
                 <div className="mb-4">
-                  <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
+                  <div className="flex items-center justify-between text-sm text-secondary-600 mb-2">
                     <span>
                       {language === "pt" ? "Colaboradores:" : "Collaborators:"}
                     </span>
@@ -1089,7 +1089,7 @@ export default function AcademicNetworkingSection() {
                       {project.collaborators}/{project.maxCollaborators}
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-secondary-200 rounded-full h-2">
                     <div
                       className="bg-primary-500 h-2 rounded-full"
                       style={{
@@ -1103,7 +1103,7 @@ export default function AcademicNetworkingSection() {
                 </div>
 
                 {/* Deadline */}
-                <div className="mb-4 text-sm text-gray-600">
+                <div className="mb-4 text-sm text-secondary-600">
                   <strong>
                     {language === "pt"
                       ? "Prazo de candidatura:"
@@ -1117,7 +1117,7 @@ export default function AcademicNetworkingSection() {
                   className={`w-full font-medium py-3 px-4 rounded-lg transition-all duration-200 ${
                     project.collaborators >= project.maxCollaborators ||
                     project.status === "completed"
-                      ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                      ? "bg-secondary-100 text-gray-400 cursor-not-allowed"
                       : "bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600"
                   }`}
                   disabled={
@@ -1162,7 +1162,7 @@ export default function AcademicNetworkingSection() {
               : "Connect with over 2,150 Portuguese students at UK universities. Collaborate, learn, and grow together."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-primary-600 font-bold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-primary-600 font-bold px-8 py-3 rounded-xl hover:bg-secondary-100 transition-colors">
               {language === "pt"
                 ? "Criar Perfil Académico"
                 : "Create Academic Profile"}

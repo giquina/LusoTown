@@ -224,7 +224,7 @@ export default function SafetyCenter() {
                 )}
               </h1>
               
-              <p className="text-xl sm:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8">
+              <p className="text-xl sm:text-2xl text-secondary-700 leading-relaxed max-w-4xl mx-auto mb-8">
                 {isPortuguese ? 
                   'O LusoTown foi construído com a segurança da comunidade portuguesa no centro. Aprenda sobre as nossas funcionalidades de segurança abrangentes, obtenha dicas para encontros seguros, e aceda a recursos para navegar amizades com confiança em Londres.' :
                   'LusoTown is built with Portuguese community safety at its core. Learn about our comprehensive safety features, get tips for safe meetups, and access resources to help you navigate friendships with confidence in London.'
@@ -232,7 +232,7 @@ export default function SafetyCenter() {
               </p>
               
               {/* Portuguese Community Trust Elements */}
-              <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-8">
+              <div className="flex flex-wrap justify-center gap-6 text-sm text-secondary-600 mb-8">
                 <div className="flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 border border-secondary-200/40">
                   <HomeIcon className="w-4 h-4 mr-2 text-secondary-500" />
                   {isPortuguese ? 'Locais Portugueses Seguros' : 'Safe Portuguese Venues'}
@@ -258,7 +258,7 @@ export default function SafetyCenter() {
               <div className="bg-white/90 backdrop-blur-lg border border-red-300/60 rounded-3xl p-8 shadow-2xl">
                 <div className="flex items-start">
                   <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mr-6 flex-shrink-0">
-                    <ExclamationTriangleIcon className="w-8 h-8 text-red-600" />
+                    <ExclamationTriangleIcon className="w-8 h-8 text-coral-600" />
                   </div>
                   <div className="flex-1">
                     <h2 className="text-2xl sm:text-3xl font-bold text-red-800 mb-6">
@@ -270,9 +270,9 @@ export default function SafetyCenter() {
                           <PhoneIcon className="w-5 h-5 mr-2" />
                           {isPortuguese ? 'Serviços de Emergência UK' : 'UK Emergency Services'}
                         </h3>
-                        <div className="space-y-3 text-red-600">
+                        <div className="space-y-3 text-coral-600">
                           <div className="flex items-center bg-white/80 rounded-lg p-3">
-                            <PhoneIcon className="w-5 h-5 mr-3 text-red-500" />
+                            <PhoneIcon className="w-5 h-5 mr-3 text-coral-500" />
                             <div>
                               <div className="font-bold text-lg">999</div>
                               <div className="text-sm">
@@ -281,7 +281,7 @@ export default function SafetyCenter() {
                             </div>
                           </div>
                           <div className="flex items-center bg-white/80 rounded-lg p-3">
-                            <PhoneIcon className="w-5 h-5 mr-3 text-red-500" />
+                            <PhoneIcon className="w-5 h-5 mr-3 text-coral-500" />
                             <div>
                               <div className="font-bold text-lg">101</div>
                               <div className="text-sm">
@@ -296,10 +296,10 @@ export default function SafetyCenter() {
                           <EnvelopeIcon className="w-5 h-5 mr-2" />
                           {isPortuguese ? 'Segurança da Plataforma' : 'Platform Safety'}
                         </h3>
-                        <div className="space-y-3 text-red-600">
+                        <div className="space-y-3 text-coral-600">
                           <div className="bg-white/80 rounded-lg p-4">
                             <div className="flex items-center mb-2">
-                              <EnvelopeIcon className="w-5 h-5 mr-2 text-red-500" />
+                              <EnvelopeIcon className="w-5 h-5 mr-2 text-coral-500" />
                               <span className="font-bold">seguranca@lusotown.com</span>
                             </div>
                             <div className="text-sm text-red-700">
@@ -315,26 +315,26 @@ export default function SafetyCenter() {
                     
                     {/* Portuguese Community Emergency Resources */}
                     <div className="mt-8 bg-gradient-to-r from-secondary-50/60 via-accent-50/40 to-coral-50/40 rounded-2xl p-6">
-                      <h3 className="font-bold text-gray-800 mb-4 text-lg flex items-center">
+                      <h3 className="font-bold text-secondary-800 mb-4 text-lg flex items-center">
                         <GlobeAltIcon className="w-5 h-5 mr-2 text-secondary-600" />
                         {isPortuguese ? 'Recursos Consulares Portugueses' : 'Portuguese Consular Resources'}
                       </h3>
                       <div className="grid md:grid-cols-2 gap-4 text-sm">
                         <div className="bg-white/70 rounded-lg p-3">
-                          <div className="font-semibold text-gray-800">
+                          <div className="font-semibold text-secondary-800">
                             {isPortuguese ? 'Consulado Geral de Portugal' : 'Portuguese Consulate General'}
                           </div>
-                          <div className="text-gray-600">London: +44 20 7235 5331</div>
-                          <div className="text-gray-600 text-xs">
+                          <div className="text-secondary-600">London: +44 20 7235 5331</div>
+                          <div className="text-secondary-600 text-xs">
                             {isPortuguese ? 'Assistência consular para cidadãos portugueses' : 'Consular assistance for Portuguese citizens'}
                           </div>
                         </div>
                         <div className="bg-white/70 rounded-lg p-3">
-                          <div className="font-semibold text-gray-800">
+                          <div className="font-semibold text-secondary-800">
                             {isPortuguese ? 'Consulado do Brasil' : 'Brazilian Consulate'}
                           </div>
-                          <div className="text-gray-600">London: +44 20 7499 0877</div>
-                          <div className="text-gray-600 text-xs">
+                          <div className="text-secondary-600">London: +44 20 7499 0877</div>
+                          <div className="text-secondary-600 text-xs">
                             {isPortuguese ? 'Assistência para cidadãos brasileiros' : 'Assistance for Brazilian citizens'}
                           </div>
                         </div>
@@ -370,7 +370,7 @@ export default function SafetyCenter() {
                     'Portuguese Community Safety Features'
                   }
                 </h2>
-                <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                <p className="text-xl sm:text-2xl text-secondary-600 leading-relaxed max-w-4xl mx-auto">
                   {isPortuguese ? 
                     'Múltiplas camadas de proteção para garantir conexões autênticas portuguesas e interações seguras em Londres' :
                     'Multiple layers of protection to ensure authentic Portuguese connections and safe interactions in London'
@@ -390,7 +390,7 @@ export default function SafetyCenter() {
                       <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-secondary-700 transition-colors duration-300">
                         {feature.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-secondary-600 leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
@@ -409,7 +409,7 @@ export default function SafetyCenter() {
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
                   Meeting Safely: Your Complete Guide
                 </h2>
-                <p className="text-xl text-gray-600">
+                <p className="text-xl text-secondary-600">
                   Essential safety tips for meeting new friends through LusoTown
                 </p>
               </div>
@@ -425,8 +425,8 @@ export default function SafetyCenter() {
                     <div className="space-y-3">
                       {section.tips.map((tip, tipIndex) => (
                         <div key={tipIndex} className="flex items-start">
-                          <CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <p className="text-gray-600 text-sm">{tip}</p>
+                          <CheckCircleIcon className="w-5 h-5 text-action-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <p className="text-secondary-600 text-sm">{tip}</p>
                         </div>
                       ))}
                     </div>
@@ -445,7 +445,7 @@ export default function SafetyCenter() {
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
                   Recognize Warning Signs
                 </h2>
-                <p className="text-xl text-gray-600">
+                <p className="text-xl text-secondary-600">
                   Trust your instincts and watch for these potential red flags
                 </p>
               </div>
@@ -461,7 +461,7 @@ export default function SafetyCenter() {
                     <div className="space-y-3">
                       {category.signs.map((sign, signIndex) => (
                         <div key={signIndex} className="flex items-start">
-                          <XMarkIcon className="w-5 h-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <XMarkIcon className="w-5 h-5 text-coral-500 mr-2 mt-0.5 flex-shrink-0" />
                           <p className="text-red-700 text-sm">{sign}</p>
                         </div>
                       ))}
@@ -501,7 +501,7 @@ export default function SafetyCenter() {
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
                   How to Report Concerns
                 </h2>
-                <p className="text-xl text-gray-600">
+                <p className="text-xl text-secondary-600">
                   Multiple ways to report issues with quick, confidential responses
                 </p>
               </div>
@@ -514,24 +514,24 @@ export default function SafetyCenter() {
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-start">
-                      <CheckCircleIcon className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                      <CheckCircleIcon className="w-5 h-5 text-action-500 mr-3 mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Profile Reports</h4>
-                        <p className="text-gray-600 text-sm">Use the "Report" button on any profile to flag concerning behavior or fake accounts</p>
+                        <p className="text-secondary-600 text-sm">Use the "Report" button on any profile to flag concerning behavior or fake accounts</p>
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircleIcon className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                      <CheckCircleIcon className="w-5 h-5 text-action-500 mr-3 mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Message Reports</h4>
-                        <p className="text-gray-600 text-sm">Report inappropriate messages directly from your chat interface</p>
+                        <p className="text-secondary-600 text-sm">Report inappropriate messages directly from your chat interface</p>
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircleIcon className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                      <CheckCircleIcon className="w-5 h-5 text-action-500 mr-3 mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Event Reports</h4>
-                        <p className="text-gray-600 text-sm">Report concerning behavior at events or inappropriate event descriptions</p>
+                        <p className="text-secondary-600 text-sm">Report concerning behavior at events or inappropriate event descriptions</p>
                       </div>
                     </div>
                   </div>
@@ -556,7 +556,7 @@ export default function SafetyCenter() {
                       </div>
                     </div>
                     
-                    <div className="space-y-2 text-gray-600 text-sm">
+                    <div className="space-y-2 text-secondary-600 text-sm">
                       <p>• All reports are confidential and taken seriously</p>
                       <p>• Include screenshots or evidence when possible</p>
                       <p>• We investigate all reports within 24 hours</p>
@@ -574,28 +574,28 @@ export default function SafetyCenter() {
                       <span className="font-bold">1</span>
                     </div>
                     <h4 className="font-semibold text-gray-900 mb-2">Report Received</h4>
-                    <p className="text-gray-600 text-sm">Your report is immediately logged and assigned to our safety team</p>
+                    <p className="text-secondary-600 text-sm">Your report is immediately logged and assigned to our safety team</p>
                   </div>
                   <div className="text-center">
                     <div className="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">2</span>
                     </div>
                     <h4 className="font-semibold text-gray-900 mb-2">Investigation</h4>
-                    <p className="text-gray-600 text-sm">We review all evidence and may contact involved parties for more information</p>
+                    <p className="text-secondary-600 text-sm">We review all evidence and may contact involved parties for more information</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <div className="w-12 h-12 bg-green-100 text-action-600 rounded-full flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">3</span>
                     </div>
                     <h4 className="font-semibold text-gray-900 mb-2">Action Taken</h4>
-                    <p className="text-gray-600 text-sm">Appropriate measures are implemented, from warnings to permanent bans</p>
+                    <p className="text-secondary-600 text-sm">Appropriate measures are implemented, from warnings to permanent bans</p>
                   </div>
                   <div className="text-center">
                     <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">4</span>
                     </div>
                     <h4 className="font-semibold text-gray-900 mb-2">Follow-Up</h4>
-                    <p className="text-gray-600 text-sm">You receive an update on the resolution and any additional steps</p>
+                    <p className="text-secondary-600 text-sm">You receive an update on the resolution and any additional steps</p>
                   </div>
                 </div>
               </div>
@@ -611,7 +611,7 @@ export default function SafetyCenter() {
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
                   Additional Support Resources
                 </h2>
-                <p className="text-xl text-gray-600">
+                <p className="text-xl text-secondary-600">
                   External resources for additional support and information
                 </p>
               </div>

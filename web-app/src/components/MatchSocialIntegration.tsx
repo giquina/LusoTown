@@ -1,8 +1,11 @@
 'use client'
 
 import React, { useState, useEffect, useMemo } from 'react'
+import { buildUnsplashUrl } from '@/config'
 import { motion, AnimatePresence } from 'framer-motion'
+import { buildUnsplashUrl } from '@/config'
 import Image from 'next/image'
+import { buildUnsplashUrl } from '@/config'
 import { 
   HeartIcon,
   ChatBubbleLeftRightIcon,
@@ -17,9 +20,13 @@ import {
   LinkIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon, StarIcon as StarSolidIcon } from '@heroicons/react/24/solid'
+import { buildUnsplashUrl } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { buildUnsplashUrl } from '@/config'
 import { useFollowing, FollowableEntity } from '@/context/FollowingContext'
+import { buildUnsplashUrl } from '@/config'
 import FollowButton from '@/components/FollowButton'
+import { buildUnsplashUrl } from '@/config'
 
 // Mock match data structure (extends the existing match system)
 interface MatchProfile {
@@ -166,7 +173,7 @@ export default function MatchSocialIntegration({
     return (
       <div className={`text-center py-12 ${className}`}>
         <HeartIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-        <h3 className="text-xl font-semibold text-gray-700 mb-2">
+        <h3 className="text-xl font-semibold text-secondary-700 mb-2">
           {isPortuguese ? 'Nenhum Match Ainda' : 'No Matches Yet'}
         </h3>
         <p className="text-gray-500">
@@ -189,7 +196,7 @@ export default function MatchSocialIntegration({
               <SparklesIcon className="w-6 h-6 text-primary-500" />
               {isPortuguese ? 'Conexões dos Teus Matches' : 'Your Match Connections'}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {isPortuguese 
                 ? 'Vê as atualizações sociais dos teus matches e conecta-te na vida real'
                 : 'See social updates from your matches and connect in real life'
@@ -216,7 +223,7 @@ export default function MatchSocialIntegration({
             className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 ${
               selectedTab === 'posts'
                 ? 'border-primary-500 text-primary-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700'
+                : 'border-transparent text-gray-500 hover:text-secondary-700'
             }`}
           >
             {isPortuguese ? 'Publicações' : 'Posts'} ({mockMatchedPosts.length})
@@ -226,7 +233,7 @@ export default function MatchSocialIntegration({
             className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 ${
               selectedTab === 'connections'
                 ? 'border-primary-500 text-primary-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700'
+                : 'border-transparent text-gray-500 hover:text-secondary-700'
             }`}
           >
             {isPortuguese ? 'Conexões' : 'Connections'} ({recentMatches.length})
@@ -236,7 +243,7 @@ export default function MatchSocialIntegration({
             className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 ${
               selectedTab === 'events'
                 ? 'border-primary-500 text-primary-600'
-                : 'border-transparent text-gray-500 hover:text-gray-700'
+                : 'border-transparent text-gray-500 hover:text-secondary-700'
             }`}
           >
             {isPortuguese ? 'Eventos' : 'Events'} (3)
@@ -298,11 +305,11 @@ export default function MatchSocialIntegration({
                 {currentProfile.serviceProvider && (
                   <div className="mb-4 p-3 bg-gradient-to-r from-blue-50 to-primary-50 rounded-lg border border-blue-200">
                     <div className="flex items-center gap-2 mb-2">
-                      <StarSolidIcon className="w-4 h-4 text-yellow-500" />
+                      <StarSolidIcon className="w-4 h-4 text-accent-500" />
                       <span className="font-semibold text-blue-800">
                         {isPortuguese ? 'Prestador de Serviços Verificado' : 'Verified Service Provider'}
                       </span>
-                      <span className="text-sm text-blue-600">
+                      <span className="text-sm text-primary-600">
                         {currentProfile.serviceProvider.rating}/5 ⭐
                       </span>
                     </div>
@@ -310,7 +317,7 @@ export default function MatchSocialIntegration({
                       {currentProfile.serviceProvider.specialties.map((specialty, index) => (
                         <span 
                           key={index}
-                          className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full"
+                          className="text-xs bg-blue-100 text-primary-700 px-2 py-1 rounded-full"
                         >
                           {specialty}
                         </span>
@@ -320,7 +327,7 @@ export default function MatchSocialIntegration({
                 )}
 
                 {/* Recent posts placeholder */}
-                <p className="text-gray-600 italic">
+                <p className="text-secondary-600 italic">
                   {isPortuguese 
                     ? 'Publicações recentes aparecerão aqui após a conexão...'
                     : 'Recent posts will appear here after connection...'
@@ -348,7 +355,7 @@ export default function MatchSocialIntegration({
                   </div>
                 </div>
                 
-                <p className="text-gray-700 mb-4">{post.content}</p>
+                <p className="text-secondary-700 mb-4">{post.content}</p>
                 
                 {/* Linked Event */}
                 {post.linkedEvent && (
@@ -357,7 +364,7 @@ export default function MatchSocialIntegration({
                       <CalendarDaysIcon className="w-4 h-4 text-primary-600" />
                       <span className="font-semibold text-gray-900">{post.linkedEvent.title}</span>
                     </div>
-                    <p className="text-sm text-gray-600">{post.linkedEvent.date} • {post.linkedEvent.location}</p>
+                    <p className="text-sm text-secondary-600">{post.linkedEvent.date} • {post.linkedEvent.location}</p>
                   </div>
                 )}
                 
@@ -378,16 +385,16 @@ export default function MatchSocialIntegration({
                 {/* Post Actions */}
                 <div className="flex items-center justify-between pt-3 border-t border-gray-100">
                   <div className="flex items-center gap-4">
-                    <button className="flex items-center gap-1 text-gray-600 hover:text-red-500 transition-colors">
+                    <button className="flex items-center gap-1 text-secondary-600 hover:text-coral-500 transition-colors">
                       {post.liked ? (
-                        <HeartSolidIcon className="w-5 h-5 text-red-500" />
+                        <HeartSolidIcon className="w-5 h-5 text-coral-500" />
                       ) : (
                         <HeartIcon className="w-5 h-5" />
                       )}
                       <span className="text-sm">{post.likes}</span>
                     </button>
                     
-                    <button className="flex items-center gap-1 text-gray-600 hover:text-primary-500 transition-colors">
+                    <button className="flex items-center gap-1 text-secondary-600 hover:text-primary-500 transition-colors">
                       <ChatBubbleLeftRightIcon className="w-5 h-5" />
                       <span className="text-sm">
                         {isPortuguese ? 'Comentar' : 'Comment'}
@@ -396,7 +403,7 @@ export default function MatchSocialIntegration({
                   </div>
                   
                   {post.serviceAnnouncement && (
-                    <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                    <span className="text-xs bg-blue-100 text-primary-700 px-2 py-1 rounded-full">
                       {isPortuguese ? 'Serviço' : 'Service'}
                     </span>
                   )}
@@ -425,9 +432,9 @@ export default function MatchSocialIntegration({
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 text-lg">{match.name}, {match.age}</h4>
-                      <p className="text-gray-600">{match.profession} • {match.location}</p>
+                      <p className="text-secondary-600">{match.profession} • {match.location}</p>
                       <div className="flex items-center gap-2 mt-1">
-                        <StarSolidIcon className="w-4 h-4 text-yellow-500" />
+                        <StarSolidIcon className="w-4 h-4 text-accent-500" />
                         <span className="text-sm font-medium text-primary-600">
                           {match.compatibility}% {isPortuguese ? 'compatibilidade' : 'match'}
                         </span>
@@ -438,7 +445,7 @@ export default function MatchSocialIntegration({
                   <div className="flex flex-col gap-2">
                     <button
                       onClick={() => onViewProfile(match.id)}
-                      className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors"
+                      className="px-4 py-2 bg-secondary-100 text-secondary-700 rounded-lg text-sm font-medium hover:bg-secondary-200 transition-colors"
                     >
                       {isPortuguese ? 'Ver Perfil' : 'View Profile'}
                     </button>
@@ -472,8 +479,8 @@ export default function MatchSocialIntegration({
               <div className="space-y-3">
                 <div className="p-4 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg border border-primary-100">
                   <h5 className="font-semibold text-gray-900">Portuguese Cultural Night</h5>
-                  <p className="text-sm text-gray-600 mb-2">August 25, 2025 • Portuguese Cultural Centre</p>
-                  <p className="text-sm text-gray-700 mb-3">Perfect for cultural matches to meet in person</p>
+                  <p className="text-sm text-secondary-600 mb-2">August 25, 2025 • Portuguese Cultural Centre</p>
+                  <p className="text-sm text-secondary-700 mb-3">Perfect for cultural matches to meet in person</p>
                   <button className="text-primary-600 text-sm font-medium hover:underline">
                     {isPortuguese ? 'Coordenar Encontro' : 'Coordinate Meetup'}
                   </button>
@@ -503,14 +510,14 @@ export default function MatchSocialIntegration({
           </button>
           
           <button className="flex items-center gap-2 p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors">
-            <CalendarDaysIcon className="w-5 h-5 text-blue-500" />
+            <CalendarDaysIcon className="w-5 h-5 text-primary-500" />
             <span className="text-sm font-medium">
               {isPortuguese ? 'Planear Encontro' : 'Plan Meetup'}
             </span>
           </button>
           
           <button className="flex items-center gap-2 p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors">
-            <LinkIcon className="w-5 h-5 text-green-500" />
+            <LinkIcon className="w-5 h-5 text-action-500" />
             <span className="text-sm font-medium">
               {isPortuguese ? 'Serviços em Grupo' : 'Group Services'}
             </span>

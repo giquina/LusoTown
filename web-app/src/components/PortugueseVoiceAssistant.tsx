@@ -597,10 +597,10 @@ export default function PortugueseVoiceAssistant() {
                   isListening 
                     ? 'bg-red-100 text-red-700' 
                     : isSpeaking 
-                      ? 'bg-blue-100 text-blue-700'
+                      ? 'bg-blue-100 text-primary-700'
                       : isProcessing
                         ? 'bg-yellow-100 text-yellow-700'
-                        : 'bg-gray-100 text-gray-600'
+                        : 'bg-secondary-100 text-secondary-600'
                 }`}>
                   {isListening && <MicrophoneSolid className="w-4 h-4 animate-pulse" />}
                   {isSpeaking && <SpeakerSolid className="w-4 h-4 animate-pulse" />}
@@ -618,7 +618,7 @@ export default function PortugueseVoiceAssistant() {
               {/* Transcript Display */}
               {transcript && (
                 <div className="bg-gray-50 rounded-xl p-4 mb-6">
-                  <p className="text-gray-700 italic">"{transcript}"</p>
+                  <p className="text-secondary-700 italic">"{transcript}"</p>
                 </div>
               )}
 
@@ -633,7 +633,7 @@ export default function PortugueseVoiceAssistant() {
                       <div className={`max-w-[80%] p-3 rounded-lg ${
                         message.type === 'user'
                           ? 'bg-secondary-100 text-secondary-800'
-                          : 'bg-gray-100 text-gray-800'
+                          : 'bg-secondary-100 text-secondary-800'
                       }`}>
                         <p className="text-sm">{message.content}</p>
                         {message.translation && language !== message.originalLanguage && (
@@ -652,7 +652,7 @@ export default function PortugueseVoiceAssistant() {
                   disabled={isSpeaking || isProcessing}
                   className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-semibold transition-all ${
                     isListening
-                      ? 'bg-red-500 text-white hover:bg-red-600'
+                      ? 'bg-coral-500 text-white hover:bg-coral-600'
                       : 'bg-gradient-to-r from-secondary-500 to-accent-500 text-white hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed'
                   }`}
                 >
@@ -671,7 +671,7 @@ export default function PortugueseVoiceAssistant() {
 
                 <button
                   onClick={stopVoiceActivity}
-                  className="px-4 py-3 bg-gray-200 text-gray-700 rounded-xl hover:bg-gray-300 transition-colors"
+                  className="px-4 py-3 bg-secondary-200 text-secondary-700 rounded-xl hover:bg-gray-300 transition-colors"
                 >
                   <XMarkIcon className="w-5 h-5" />
                 </button>
@@ -690,7 +690,7 @@ export default function PortugueseVoiceAssistant() {
                         className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg"
                       >
                         <capability.icon className="w-4 h-4 text-secondary-600 flex-shrink-0" />
-                        <span className="text-xs text-gray-700 font-medium">
+                        <span className="text-xs text-secondary-700 font-medium">
                           {language === 'pt' ? capability.titlePt : capability.title}
                         </span>
                       </div>

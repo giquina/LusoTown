@@ -1,7 +1,9 @@
 'use client'
 
 import React, { useState } from 'react'
+import { buildUnsplashUrl } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { buildUnsplashUrl } from '@/config'
 import { 
   UserPlus,
   MapPin,
@@ -37,7 +39,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
     {
       id: '1',
       name: 'Ana Ferreira',
-      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face',
+      avatar: buildUnsplashUrl('photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face'),
       bio: 'Portuguese chef sharing traditional recipes from Porto',
       location: 'Stockwell, London',
       membershipTier: 'cultural_ambassador',
@@ -51,7 +53,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
     {
       id: '2',
       name: 'Carlos Silva',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+      avatar: buildUnsplashUrl('photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'),
       bio: 'Brazilian engineer passionate about Samba and London nightlife',
       location: 'Vauxhall, London',
       membershipTier: 'community',
@@ -65,7 +67,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
     {
       id: '3',
       name: 'Maria Santos',
-      avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=face',
+      avatar: buildUnsplashUrl('photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=face'),
       bio: 'Fado singer and Portuguese language teacher',
       location: 'Borough Market, London',
       membershipTier: 'cultural_ambassador',
@@ -79,7 +81,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
     {
       id: '4',
       name: 'João Rodrigues',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
+      avatar: buildUnsplashUrl('photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face'),
       bio: 'Transport service owner helping Portuguese families in London',
       location: 'South London',
       membershipTier: 'community',
@@ -143,7 +145,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
               <h3 className="text-lg font-semibold text-gray-900">
                 {t('suggestions.title') || 'People You May Know'}
               </h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-secondary-600">
                 {t('suggestions.subtitle') || 'Portuguese speakers in London'}
               </p>
             </div>
@@ -168,7 +170,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
                     </div>
                   )}
                   {user.joinedRecently && (
-                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-action-500 rounded-full border-2 border-white"></div>
                   )}
                 </div>
 
@@ -178,7 +180,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
                     <h4 className="font-medium text-gray-900 truncate">{user.name}</h4>
                     <button
                       onClick={() => handleDismiss(user.id)}
-                      className="opacity-0 group-hover:opacity-100 p-1 hover:bg-gray-200 rounded transition-all"
+                      className="opacity-0 group-hover:opacity-100 p-1 hover:bg-secondary-200 rounded transition-all"
                     >
                       <X className="w-3 h-3 text-gray-400" />
                     </button>
@@ -193,7 +195,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
                     </div>
                   </div>
 
-                  <p className="text-sm text-gray-600 mb-2 line-clamp-2">
+                  <p className="text-sm text-secondary-600 mb-2 line-clamp-2">
                     {user.bio}
                   </p>
 
@@ -243,7 +245,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
                       onClick={() => handleFollow(user.id)}
                       className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                         user.isFollowing
-                          ? 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          ? 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                           : 'bg-primary-500 text-white hover:bg-primary-600'
                       }`}
                     >
@@ -252,7 +254,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
                         : (t('suggestions.follow') || 'Follow')
                       }
                     </button>
-                    <button className="px-3 py-2 border border-gray-200 text-gray-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors">
+                    <button className="px-3 py-2 border border-gray-200 text-secondary-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors">
                       <MessageCircle className="w-4 h-4" />
                     </button>
                   </div>

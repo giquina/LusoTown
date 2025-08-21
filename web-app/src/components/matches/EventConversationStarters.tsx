@@ -340,13 +340,13 @@ export default function EventConversationStarters({
   const getSafetyLevelColor = (level: string) => {
     switch (level) {
       case "safe":
-        return "text-green-600 bg-green-100";
+        return "text-action-600 bg-green-100";
       case "moderate":
         return "text-yellow-600 bg-yellow-100";
       case "caution":
-        return "text-red-600 bg-red-100";
+        return "text-coral-600 bg-red-100";
       default:
-        return "text-gray-600 bg-gray-100";
+        return "text-secondary-600 bg-secondary-100";
     }
   };
 
@@ -403,7 +403,7 @@ export default function EventConversationStarters({
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                className="bg-green-500 text-white p-4 text-center"
+                className="bg-action-500 text-white p-4 text-center"
               >
                 <div className="flex items-center justify-center gap-2">
                   <CheckCircleIcon className="w-5 h-5" />
@@ -428,10 +428,10 @@ export default function EventConversationStarters({
                   </h3>
                   <span className="text-lg">{getOriginFlag(matchProfile.origin)}</span>
                   {matchProfile.verificationStatus === 'Verified' && (
-                    <CheckCircleIcon className="w-4 h-4 text-green-500" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-500" />
                   )}
                 </div>
-                <p className="text-sm text-gray-600 mb-2">{matchProfile.profession}</p>
+                <p className="text-sm text-secondary-600 mb-2">{matchProfile.profession}</p>
                 
                 {/* Event Context */}
                 <div className="bg-primary-50 p-3 rounded-lg">
@@ -449,7 +449,7 @@ export default function EventConversationStarters({
               </div>
               <button
                 onClick={onClose}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                className="p-2 hover:bg-secondary-100 rounded-lg transition-colors"
               >
                 ✕
               </button>
@@ -458,12 +458,12 @@ export default function EventConversationStarters({
             {/* Safety Notice */}
             <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-3">
               <div className="flex items-center gap-2 mb-1">
-                <ShieldCheckIcon className="w-4 h-4 text-blue-600" />
+                <ShieldCheckIcon className="w-4 h-4 text-primary-600" />
                 <span className="text-sm font-semibold text-blue-800">
                   {language === "pt" ? "Encontro Seguro" : "Safe Meeting"}
                 </span>
               </div>
-              <p className="text-xs text-blue-700">
+              <p className="text-xs text-primary-700">
                 {language === "pt"
                   ? "Este é um evento público numa localização verificada. Mantenha sempre conversas respeitosas."
                   : "This is a public event at a verified location. Always maintain respectful conversations."}
@@ -493,7 +493,7 @@ export default function EventConversationStarters({
                     className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                       selectedCategory === category.key
                         ? 'bg-primary-600 text-white'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                     }`}
                   >
                     {category.label}
@@ -531,15 +531,15 @@ export default function EventConversationStarters({
                             {starter.safetyLevel === 'safe' ? '✓' : starter.safetyLevel === 'moderate' ? '⚠' : '!'}
                           </div>
                           <div className="flex items-center gap-1">
-                            <StarIcon className="w-3 h-3 text-yellow-500" />
-                            <span className="text-xs text-gray-600">{starter.responseRate}% response rate</span>
+                            <StarIcon className="w-3 h-3 text-accent-500" />
+                            <span className="text-xs text-secondary-600">{starter.responseRate}% response rate</span>
                           </div>
                           <span className="text-xs text-gray-500">
                             {starter.culturalRelevance}% {language === "pt" ? "cultural" : "cultural"}
                           </span>
                         </div>
                         
-                        <p className="text-sm text-gray-800 mb-2">"{starter.text}"</p>
+                        <p className="text-sm text-secondary-800 mb-2">"{starter.text}"</p>
                         
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-gray-500 capitalize">
@@ -573,7 +573,7 @@ export default function EventConversationStarters({
                 placeholder={language === "pt" 
                   ? "Escreva a sua própria mensagem..."
                   : "Write your own message..."}
-                className="w-full p-3 border border-gray-300 rounded-lg text-sm resize-none"
+                className="w-full p-3 border border-secondary-300 rounded-lg text-sm resize-none"
                 rows={3}
                 maxLength={300}
               />
@@ -595,7 +595,7 @@ export default function EventConversationStarters({
             <div className="mt-6">
               <button
                 onClick={() => setShowSafetyTips(!showSafetyTips)}
-                className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-800 transition-colors"
+                className="flex items-center gap-2 text-sm text-secondary-600 hover:text-secondary-800 transition-colors"
               >
                 <ShieldCheckIcon className="w-4 h-4" />
                 {language === "pt" ? "Dicas de Segurança" : "Safety Tips"}
@@ -609,21 +609,21 @@ export default function EventConversationStarters({
                     exit={{ height: 0, opacity: 0 }}
                     className="mt-3 bg-gray-50 rounded-lg p-4"
                   >
-                    <ul className="text-sm text-gray-700 space-y-2">
+                    <ul className="text-sm text-secondary-700 space-y-2">
                       <li className="flex items-start gap-2">
-                        <CheckCircleIcon className="w-4 h-4 text-green-500 mt-0.5" />
+                        <CheckCircleIcon className="w-4 h-4 text-action-500 mt-0.5" />
                         {language === "pt" 
                           ? "Encontrem-se sempre em locais públicos durante eventos"
                           : "Always meet in public locations during events"}
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircleIcon className="w-4 h-4 text-green-500 mt-0.5" />
+                        <CheckCircleIcon className="w-4 h-4 text-action-500 mt-0.5" />
                         {language === "pt"
                           ? "Mantenham conversas respeitosas e apropriadas"
                           : "Keep conversations respectful and appropriate"}
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircleIcon className="w-4 h-4 text-green-500 mt-0.5" />
+                        <CheckCircleIcon className="w-4 h-4 text-action-500 mt-0.5" />
                         {language === "pt"
                           ? "Reportem qualquer comportamento inadequado"
                           : "Report any inappropriate behavior"}
@@ -633,7 +633,7 @@ export default function EventConversationStarters({
                     {onSafetyReport && (
                       <button
                         onClick={() => onSafetyReport(matchProfile.id, 'inappropriate_behavior')}
-                        className="mt-3 flex items-center gap-2 text-sm text-red-600 hover:text-red-800 transition-colors"
+                        className="mt-3 flex items-center gap-2 text-sm text-coral-600 hover:text-red-800 transition-colors"
                       >
                         <ExclamationTriangleIcon className="w-4 h-4" />
                         {language === "pt" ? "Reportar Problema" : "Report Issue"}

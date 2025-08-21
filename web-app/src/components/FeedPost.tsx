@@ -143,14 +143,14 @@ export default function FeedPost({
               size="sm"
             />
             
-            <button className="text-gray-400 hover:text-gray-600">
+            <button className="text-gray-400 hover:text-secondary-600">
               <EllipsisHorizontalIcon className="w-5 h-5" />
             </button>
           </div>
         </div>
         
         {/* Post Content */}
-        <p className="text-gray-700 mb-4 whitespace-pre-line">{content}</p>
+        <p className="text-secondary-700 mb-4 whitespace-pre-line">{content}</p>
         
         {/* Post Image */}
         {imageUrl && (
@@ -172,7 +172,7 @@ export default function FeedPost({
               <CalendarDaysIcon className="w-4 h-4 text-primary-600" />
               <h5 className="font-semibold text-gray-900">{linkedEvent.title}</h5>
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               <p>{linkedEvent.date}</p>
               <p>{linkedEvent.location}</p>
             </div>
@@ -189,7 +189,7 @@ export default function FeedPost({
               <MapPinIcon className="w-4 h-4 text-secondary-600" />
               <h5 className="font-semibold text-gray-900">{linkedBusiness.name}</h5>
             </div>
-            <p className="text-sm text-gray-600">{linkedBusiness.category}</p>
+            <p className="text-sm text-secondary-600">{linkedBusiness.category}</p>
             <button className="mt-2 text-secondary-600 text-sm font-medium hover:underline">
               View Business Details
             </button>
@@ -253,20 +253,20 @@ export default function FeedPost({
         <div className="flex items-center justify-between">
           <button 
             onClick={handleLike}
-            className={`flex items-center gap-2 text-gray-600 hover:text-red-500 transition-colors ${
-              liked ? 'text-red-500' : ''
+            className={`flex items-center gap-2 text-secondary-600 hover:text-coral-500 transition-colors ${
+              liked ? 'text-coral-500' : ''
             }`}
           >
             <HeartIcon className={`w-5 h-5 ${liked ? 'fill-current' : ''}`} />
             <span className="text-sm font-medium">Like</span>
           </button>
           
-          <button className="flex items-center gap-2 text-gray-600 hover:text-primary-500 transition-colors">
+          <button className="flex items-center gap-2 text-secondary-600 hover:text-primary-500 transition-colors">
             <ChatBubbleLeftRightIcon className="w-5 h-5" />
             <span className="text-sm font-medium">Comment</span>
           </button>
           
-          <button className="flex items-center gap-2 text-gray-600 hover:text-secondary-500 transition-colors">
+          <button className="flex items-center gap-2 text-secondary-600 hover:text-secondary-500 transition-colors">
             <ArrowsRightLeftIcon className="w-5 h-5" />
             <span className="text-sm font-medium">Share</span>
           </button>

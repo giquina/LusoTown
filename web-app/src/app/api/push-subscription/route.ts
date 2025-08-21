@@ -14,7 +14,6 @@ export async function POST(request: NextRequest) {
     }
 
     // Store subscription in database (replace with actual database logic)
-    console.log('[Push Subscription] New subscription received:', {
       endpoint: subscription.endpoint,
       preferences,
       language,
@@ -93,7 +92,6 @@ export async function DELETE(request: NextRequest) {
     }
 
     // Remove subscription from database (replace with actual database logic)
-    console.log('[Push Subscription] Removing subscription:', subscription.endpoint);
 
     // In production, remove from Supabase or your database
     /*
@@ -137,7 +135,6 @@ export async function PUT(request: NextRequest) {
     }
 
     // Update subscription preferences in database
-    console.log('[Push Subscription] Updating preferences:', {
       endpoint: subscription.endpoint,
       preferences,
       language
@@ -196,7 +193,6 @@ async function sendWelcomeNotification(subscription: any, language: string = 'en
       }
     };
 
-    console.log('[Push Subscription] Welcome notification prepared:', welcomeMessage);
 
     // In production, send actual push notification:
     /*
@@ -245,7 +241,6 @@ export async function schedulePortugueseCulturalNotifications() {
   ];
 
   // In production, schedule these notifications based on user timezone
-  console.log('[Push Subscription] Portuguese cultural events scheduled:', culturalEvents);
 
   return culturalEvents;
 }

@@ -18,7 +18,7 @@ export default function CulturalToursBookingRedirect() {
         <h1 className="text-2xl font-bold text-gray-900 mb-4">
           {isPortuguese ? 'Redirecionando...' : 'Redirecting...'}
         </h1>
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {isPortuguese
             ? 'Você está sendo redirecionado para nossos serviços de transporte.'
             : 'You are being redirected to our transport services.'

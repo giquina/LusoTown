@@ -246,7 +246,7 @@ export default function DiasporaNetwork({
           <div className={`text-3xl font-bold mb-2 text-${stat.color}-600`}>
             {stat.value.toLocaleString()}
           </div>
-          <div className="text-sm text-gray-600">{stat.label}</div>
+          <div className="text-sm text-secondary-600">{stat.label}</div>
         </div>
       ))}
     </div>
@@ -269,7 +269,7 @@ export default function DiasporaNetwork({
                   story.type === 'business' ? 'bg-blue-100 text-blue-800' :
                   story.type === 'cultural' ? 'bg-purple-100 text-purple-800' :
                   story.type === 'personal' ? 'bg-green-100 text-green-800' :
-                  'bg-gray-100 text-gray-800'
+                  'bg-secondary-100 text-secondary-800'
                 }`}>
                   {story.type}
                 </span>
@@ -277,13 +277,13 @@ export default function DiasporaNetwork({
               </div>
 
               <h4 className="text-xl font-bold text-gray-900 mb-3">{story.title}</h4>
-              <p className="text-gray-700 mb-4">{story.description}</p>
+              <p className="text-secondary-700 mb-4">{story.description}</p>
 
               <div className="mb-4">
-                <p className="text-sm text-gray-600 mb-2">Countries Involved:</p>
+                <p className="text-sm text-secondary-600 mb-2">Countries Involved:</p>
                 <div className="flex space-x-2">
                   {story.countries.map(country => (
-                    <span key={country} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
+                    <span key={country} className="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">
                       {country.toUpperCase()}
                     </span>
                   ))}
@@ -292,13 +292,13 @@ export default function DiasporaNetwork({
 
               <div className="mb-4">
                 <p className="text-sm font-medium text-gray-900 mb-2">Impact:</p>
-                <p className="text-sm text-gray-700">{story.impact}</p>
+                <p className="text-sm text-secondary-700">{story.impact}</p>
               </div>
 
               {story.testimonials.length > 0 && (
                 <div className="bg-gray-50 rounded-lg p-4">
                   <p className="text-sm font-medium text-gray-900 mb-2">Testimonial:</p>
-                  <p className="text-sm text-gray-700 italic">"{story.testimonials[0]}"</p>
+                  <p className="text-sm text-secondary-700 italic">"{story.testimonials[0]}"</p>
                 </div>
               )}
             </div>
@@ -315,7 +315,7 @@ export default function DiasporaNetwork({
         <select
           value={selectedRegion}
           onChange={(e) => setSelectedRegion(e.target.value as PortugueseCountry | 'all')}
-          className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+          className="px-4 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
         >
           <option value="all">All Regions</option>
           {globalNetwork.activeCountries.map(country => (
@@ -332,7 +332,7 @@ export default function DiasporaNetwork({
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h4 className="font-bold text-gray-900">{family.familyName}</h4>
-                <p className="text-sm text-gray-600">From {family.originRegion}</p>
+                <p className="text-sm text-secondary-600">From {family.originRegion}</p>
                 <p className="text-xs text-gray-500">{family.generationsSinceMigration} generations</p>
               </div>
               <span className={`px-2 py-1 text-xs rounded ${
@@ -345,7 +345,7 @@ export default function DiasporaNetwork({
             </div>
 
             <div className="mb-4">
-              <p className="text-xs text-gray-600 mb-1">Language Status:</p>
+              <p className="text-xs text-secondary-600 mb-1">Language Status:</p>
               <span className={`px-2 py-1 text-xs rounded ${
                 family.languageStatus === 'fluent' ? 'bg-green-100 text-green-800' :
                 family.languageStatus === 'conversational' ? 'bg-blue-100 text-blue-800' :
@@ -361,7 +361,7 @@ export default function DiasporaNetwork({
                 disabled={connectionRequests.includes(family.id)}
                 className={`w-full py-2 px-4 rounded-lg font-medium transition-all ${
                   connectionRequests.includes(family.id)
-                    ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                    ? 'bg-secondary-200 text-gray-500 cursor-not-allowed'
                     : 'bg-gradient-to-r from-green-600 via-red-500 to-yellow-500 text-white hover:shadow-lg'
                 }`}
               >
@@ -383,7 +383,7 @@ export default function DiasporaNetwork({
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h4 className="font-bold text-gray-900">{professional.name}</h4>
-                <p className="text-sm text-gray-600">{professional.profession}</p>
+                <p className="text-sm text-secondary-600">{professional.profession}</p>
                 <p className="text-xs text-gray-500">{professional.location.city}, {professional.location.country.toUpperCase()}</p>
               </div>
               {professional.availableForMentoring && (
@@ -394,10 +394,10 @@ export default function DiasporaNetwork({
             </div>
 
             <div className="mb-4">
-              <p className="text-xs text-gray-600 mb-2">Expertise:</p>
+              <p className="text-xs text-secondary-600 mb-2">Expertise:</p>
               <div className="flex flex-wrap gap-1">
                 {professional.expertise.slice(0, 2).map((skill, index) => (
-                  <span key={index} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
+                  <span key={index} className="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">
                     {skill}
                   </span>
                 ))}
@@ -410,7 +410,7 @@ export default function DiasporaNetwork({
                 disabled={connectionRequests.includes(professional.id)}
                 className={`w-full py-2 px-4 rounded-lg font-medium transition-all ${
                   connectionRequests.includes(professional.id)
-                    ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                    ? 'bg-secondary-200 text-gray-500 cursor-not-allowed'
                     : 'bg-gradient-to-r from-green-600 via-red-500 to-yellow-500 text-white hover:shadow-lg'
                 }`}
               >
@@ -430,7 +430,7 @@ export default function DiasporaNetwork({
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           Global Portuguese Diaspora Network
         </h1>
-        <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+        <p className="text-xl text-secondary-600 max-w-4xl mx-auto">
           Connect with Portuguese speakers worldwide - families preserving heritage, 
           professionals sharing expertise, and communities celebrating culture
         </p>
@@ -441,7 +441,7 @@ export default function DiasporaNetwork({
 
       {/* Navigation */}
       <div className="flex justify-center">
-        <div className="bg-gray-100 rounded-lg p-1 flex space-x-1">
+        <div className="bg-secondary-100 rounded-lg p-1 flex space-x-1">
           {[
             { id: 'network', label: 'Network Overview', icon: '🌐' },
             { id: 'families', label: 'Families', icon: '👨‍👩‍👧‍👦' },
@@ -454,7 +454,7 @@ export default function DiasporaNetwork({
               className={`px-6 py-3 rounded-md font-medium transition-all ${
                 selectedView === tab.id
                   ? 'bg-white text-gray-900 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                  : 'text-secondary-600 hover:text-gray-900'
               }`}
             >
               <span className="mr-2">{tab.icon}</span>
@@ -480,13 +480,13 @@ export default function DiasporaNetwork({
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Language Preservation</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-700">Active Language Learners</span>
-                    <span className="font-semibold text-green-600">{globalNetwork.languageLearners.toLocaleString()}</span>
+                    <span className="text-secondary-700">Active Language Learners</span>
+                    <span className="font-semibold text-action-600">{globalNetwork.languageLearners.toLocaleString()}</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-600 h-2 rounded-full" style={{ width: '68%' }}></div>
+                  <div className="w-full bg-secondary-200 rounded-full h-2">
+                    <div className="bg-action-600 h-2 rounded-full" style={{ width: '68%' }}></div>
                   </div>
-                  <p className="text-sm text-gray-600">68% growth in Portuguese language learning across diaspora communities</p>
+                  <p className="text-sm text-secondary-600">68% growth in Portuguese language learning across diaspora communities</p>
                 </div>
               </div>
 
@@ -494,13 +494,13 @@ export default function DiasporaNetwork({
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Cultural Impact</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-700">Cultural Preservation Projects</span>
+                    <span className="text-secondary-700">Cultural Preservation Projects</span>
                     <span className="font-semibold text-purple-600">{globalNetwork.culturalPreservationProjects}</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-secondary-200 rounded-full h-2">
                     <div className="bg-purple-600 h-2 rounded-full" style={{ width: '75%' }}></div>
                   </div>
-                  <p className="text-sm text-gray-600">Active projects documenting and preserving Portuguese cultural heritage globally</p>
+                  <p className="text-sm text-secondary-600">Active projects documenting and preserving Portuguese cultural heritage globally</p>
                 </div>
               </div>
             </div>

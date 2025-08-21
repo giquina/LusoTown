@@ -11,8 +11,8 @@ const platformConfig = {
   google: {
     name: 'Google',
     bgColor: 'bg-white hover:bg-gray-50',
-    textColor: 'text-gray-700',
-    borderColor: 'border-gray-300',
+    textColor: 'text-secondary-700',
+    borderColor: 'border-secondary-300',
     icon: (
       <svg className="h-5 w-5" viewBox="0 0 24 24">
         <path

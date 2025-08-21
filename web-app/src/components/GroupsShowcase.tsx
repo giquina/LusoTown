@@ -191,14 +191,14 @@ export default function GroupsShowcase() {
         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 group-hover:text-secondary-600 transition-colors duration-300 line-clamp-1">
           {group.name}
         </h3>
-        <p className="text-gray-600 mb-6 text-base leading-relaxed line-clamp-2">
+        <p className="text-secondary-600 mb-6 text-base leading-relaxed line-clamp-2">
           {group.description}
         </p>
 
         {/* Group Metadata - Enhanced Mobile Layout */}
         <div className="space-y-3 mb-6">
           {group.london_borough && (
-            <div className="flex items-center gap-3 text-sm text-gray-600">
+            <div className="flex items-center gap-3 text-sm text-secondary-600">
               <div className="w-8 h-8 bg-secondary-100 rounded-xl flex items-center justify-center">
                 <MapPinIcon className="w-4 h-4 text-secondary-600" />
               </div>
@@ -206,7 +206,7 @@ export default function GroupsShowcase() {
             </div>
           )}
           {group.language_preference && group.language_preference !== 'both' && (
-            <div className="flex items-center gap-3 text-sm text-gray-600">
+            <div className="flex items-center gap-3 text-sm text-secondary-600">
               <div className="w-8 h-8 bg-accent-100 rounded-xl flex items-center justify-center">
                 <GlobeAltIcon className="w-4 h-4 text-accent-600" />
               </div>
@@ -295,7 +295,7 @@ export default function GroupsShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium"
+            className="text-xl sm:text-2xl text-secondary-700 max-w-4xl mx-auto leading-relaxed font-medium"
           >
             Connect with Portuguese speakers across the United Kingdom. From business networking in London
             to cultural events in Manchester, discover groups nationwide that match your interests and make lasting friendships.
@@ -354,21 +354,21 @@ export default function GroupsShowcase() {
               <UserGroupIcon className="w-8 h-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-secondary-600 mb-2">15+</div>
-            <div className="text-gray-600 font-medium">Active Groups</div>
+            <div className="text-secondary-600 font-medium">Active Groups</div>
           </div>
           <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100/50 text-center group hover:shadow-2xl transition-all duration-300">
             <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
               <UsersIcon className="w-8 h-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-primary-600 mb-2">200+</div>
-            <div className="text-gray-600 font-medium">Community Members</div>
+            <div className="text-secondary-600 font-medium">Community Members</div>
           </div>
           <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100/50 text-center group hover:shadow-2xl transition-all duration-300">
             <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-coral-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
               <HeartIcon className="w-8 h-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-accent-600 mb-2">50+</div>
-            <div className="text-gray-600 font-medium">Weekly Meetups</div>
+            <div className="text-secondary-600 font-medium">Weekly Meetups</div>
           </div>
         </motion.div>
       </div>

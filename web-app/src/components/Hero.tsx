@@ -81,7 +81,7 @@ export default function Hero() {
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight tracking-tight">
                 {t("hero.title")}
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl font-medium">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-secondary-700 leading-relaxed max-w-2xl font-medium">
                 {t("hero.subtitle")}
               </p>
             </div>
@@ -112,7 +112,7 @@ export default function Hero() {
                 <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-action-500 to-action-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <HeartIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
                 </div>
-                <span className="text-xs font-bold text-gray-800 tracking-wide text-center leading-tight">
+                <span className="text-xs font-bold text-secondary-800 tracking-wide text-center leading-tight">
                   BOOK & EXPERIENCE
                 </span>
               </a>
@@ -123,7 +123,7 @@ export default function Hero() {
                 <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <UsersIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
                 </div>
-                <span className="text-xs font-bold text-gray-800 tracking-wide text-center leading-tight">
+                <span className="text-xs font-bold text-secondary-800 tracking-wide text-center leading-tight">
                   PORTUGUESE SPEAKERS
                 </span>
               </a>
@@ -134,7 +134,7 @@ export default function Hero() {
                 <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-accent-500 to-coral-500 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <SparklesIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
                 </div>
-                <span className="text-xs font-bold text-gray-800 tracking-wide text-center leading-tight">
+                <span className="text-xs font-bold text-secondary-800 tracking-wide text-center leading-tight">
                   LIVE TOGETHER
                 </span>
               </a>
@@ -145,7 +145,7 @@ export default function Hero() {
                 <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-premium-500 to-premium-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
                 </div>
-                <span className="text-xs font-bold text-gray-800 tracking-wide text-center leading-tight">
+                <span className="text-xs font-bold text-secondary-800 tracking-wide text-center leading-tight">
                   GROW NETWORK
                 </span>
               </a>
@@ -160,7 +160,7 @@ export default function Hero() {
               }`}
             >
               <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg">
-                <h3 className="text-lg font-bold text-gray-800 mb-4 text-center">
+                <h3 className="text-lg font-bold text-secondary-800 mb-4 text-center">
                   {t("hero.services.title", "Premium Portuguese Services")}
                 </h3>
                 <div className="grid grid-cols-3 gap-3">
@@ -171,7 +171,7 @@ export default function Hero() {
                     <div className="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center">
                       <MapPinIcon className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-xs font-semibold text-gray-700 text-center">
+                    <span className="text-xs font-semibold text-secondary-700 text-center">
                       London Tours
                     </span>
                   </a>
@@ -182,7 +182,7 @@ export default function Hero() {
                     <div className="w-8 h-8 rounded-lg bg-secondary-600 flex items-center justify-center">
                       <ArrowRightIcon className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-xs font-semibold text-gray-700 text-center">
+                    <span className="text-xs font-semibold text-secondary-700 text-center">
                       Executive Transport
                     </span>
                   </a>
@@ -193,7 +193,7 @@ export default function Hero() {
                     <div className="w-8 h-8 rounded-lg bg-premium-600 flex items-center justify-center">
                       <ShieldCheckIcon className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-xs font-semibold text-gray-700 text-center">
+                    <span className="text-xs font-semibold text-secondary-700 text-center">
                       Close Protection
                     </span>
                   </a>
@@ -221,7 +221,7 @@ export default function Hero() {
               </a>
               <a
                 href={ROUTES.services}
-                className="text-base sm:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:text-secondary-700 hover:-translate-y-1 w-full sm:w-auto text-center"
+                className="text-base sm:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 bg-white/70 backdrop-blur-lg text-secondary-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:text-secondary-700 hover:-translate-y-1 w-full sm:w-auto text-center"
               >
                 {t("hero.cta.services", "Premium Services")}
               </a>
@@ -247,10 +247,10 @@ export default function Hero() {
             <div className="relative z-10 bg-white/20 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30">
               <div className="space-y-6">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                  <h3 className="text-2xl font-bold text-secondary-800 mb-2">
                     Join the Portuguese Community
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     From {formatPrice(plans.community.monthly)}/month - Connect
                     with Portuguese speakers across the United Kingdom.
                     Unlimited matches, events, and networking nationwide.
@@ -294,7 +294,7 @@ export default function Hero() {
                     <div className="text-3xl font-bold text-secondary-600">
                       150+
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-secondary-600">
                       Monthly Experiences
                     </div>
                   </div>
@@ -302,7 +302,7 @@ export default function Hero() {
                     <div className="text-3xl font-bold text-action-600">
                       25+
                     </div>
-                    <div className="text-sm text-gray-600">UK Cities</div>
+                    <div className="text-sm text-secondary-600">UK Cities</div>
                   </div>
                 </div>
 
@@ -319,7 +319,7 @@ export default function Hero() {
             {/* Premium Services Quick Access (desktop-only, placed under the membership card) */}
             <div className="hidden lg:block mt-6">
               <div className="bg-white/70 backdrop-blur-lg rounded-2xl p-6 border border-white/30 shadow-xl">
-                <h3 className="text-lg font-bold text-gray-800 mb-4 text-center">
+                <h3 className="text-lg font-bold text-secondary-800 mb-4 text-center">
                   {t("hero.services.title", "Premium Portuguese Services")}
                 </h3>
                 <div className="grid grid-cols-3 gap-4">
@@ -330,7 +330,7 @@ export default function Hero() {
                     <div className="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center">
                       <MapPinIcon className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-xs font-semibold text-gray-700 text-center">
+                    <span className="text-xs font-semibold text-secondary-700 text-center">
                       London Tours
                     </span>
                   </a>
@@ -341,7 +341,7 @@ export default function Hero() {
                     <div className="w-8 h-8 rounded-lg bg-secondary-600 flex items-center justify-center">
                       <ArrowRightIcon className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-xs font-semibold text-gray-700 text-center">
+                    <span className="text-xs font-semibold text-secondary-700 text-center">
                       Executive Transport
                     </span>
                   </a>
@@ -352,7 +352,7 @@ export default function Hero() {
                     <div className="w-8 h-8 rounded-lg bg-premium-600 flex items-center justify-center">
                       <ShieldCheckIcon className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-xs font-semibold text-gray-700 text-center">
+                    <span className="text-xs font-semibold text-secondary-700 text-center">
                       Close Protection
                     </span>
                   </a>

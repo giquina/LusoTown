@@ -37,11 +37,11 @@ export default function FavoriteNotification() {
           <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-4 max-w-xs">
             <div className="flex items-start gap-3">
               <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <HeartIcon className="w-4 h-4 text-red-500" />
+                <HeartIcon className="w-4 h-4 text-coral-500" />
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900 text-sm">Saved to Favourites</h4>
-                <p className="text-gray-600 text-xs mt-1 line-clamp-2">{lastAdded}</p>
+                <p className="text-secondary-600 text-xs mt-1 line-clamp-2">{lastAdded}</p>
               </div>
             </div>
           </div>

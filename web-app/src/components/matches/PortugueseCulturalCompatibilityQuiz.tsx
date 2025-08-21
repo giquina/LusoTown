@@ -664,7 +664,7 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
       case 'image_selection':
         return (
           <div className="space-y-4">
-            <p className="text-sm text-gray-600 text-center">
+            <p className="text-sm text-secondary-600 text-center">
               {language === 'pt' ? 'Selecione até 3 opções' : 'Select up to 3 options'}
             </p>
             <div className="grid grid-cols-2 gap-3">
@@ -706,9 +706,9 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
                 step={currentQuestion.sliderConfig?.step || 1}
                 value={sliderValue}
                 onChange={(e) => setSliderValue(Number(e.target.value))}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+                className="w-full h-2 bg-secondary-200 rounded-lg appearance-none cursor-pointer slider"
               />
-              <div className="flex justify-between text-sm text-gray-600 mt-2">
+              <div className="flex justify-between text-sm text-secondary-600 mt-2">
                 <span>
                   {language === 'pt' 
                     ? currentQuestion.sliderConfig?.labelMinPt 
@@ -728,7 +728,7 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
       case 'ranking':
         return (
           <div className="space-y-3">
-            <p className="text-sm text-gray-600 text-center">
+            <p className="text-sm text-secondary-600 text-center">
               {language === 'pt' ? 'Arraste para reordenar (1º = mais importante)' : 'Drag to reorder (1st = most important)'}
             </p>
             {rankingOrder.map((optionId, index) => {
@@ -775,7 +775,7 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
             <h2 className="text-2xl font-bold text-primary-900 mb-2">
               {language === 'pt' ? 'Perfil Cultural Completo!' : 'Cultural Profile Complete!'}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {language === 'pt' 
                 ? 'Discover your Portuguese cultural compatibility'
                 : 'Discover your Portuguese cultural compatibility'}
@@ -795,7 +795,7 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
             
             <button
               onClick={onClose}
-              className="w-full bg-gray-100 text-gray-700 py-3 rounded-xl font-medium hover:bg-gray-200 transition-colors"
+              className="w-full bg-secondary-100 text-secondary-700 py-3 rounded-xl font-medium hover:bg-secondary-200 transition-colors"
             >
               {language === 'pt' ? 'Fechar' : 'Close'}
             </button>
@@ -822,7 +822,7 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
             <h2 className="text-xl font-bold text-primary-900">
               {language === 'pt' ? 'Quiz de Compatibilidade Cultural' : 'Cultural Compatibility Quiz'}
             </h2>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {language === 'pt' 
                 ? `Pergunta ${currentQuestionIndex + 1} de ${quizQuestions.length}`
                 : `Question ${currentQuestionIndex + 1} of ${quizQuestions.length}`}
@@ -830,14 +830,14 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+            className="w-8 h-8 bg-secondary-100 rounded-full flex items-center justify-center hover:bg-secondary-200 transition-colors"
           >
             ×
           </button>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-full bg-gray-200 rounded-full h-2 mb-8">
+        <div className="w-full bg-secondary-200 rounded-full h-2 mb-8">
           <motion.div
             className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full"
             initial={{ width: 0 }}
@@ -862,7 +862,7 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
           </h3>
           
           {currentQuestion.descriptionEn && (
-            <p className="text-sm text-gray-600 mb-6">
+            <p className="text-sm text-secondary-600 mb-6">
               {language === 'pt' ? currentQuestion.descriptionPt : currentQuestion.descriptionEn}
             </p>
           )}
@@ -878,7 +878,7 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
           <button
             onClick={handlePrevious}
             disabled={currentQuestionIndex === 0}
-            className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 px-4 py-2 text-secondary-600 hover:text-secondary-800 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <ChevronLeftIcon className="w-4 h-4" />
             {language === 'pt' ? 'Anterior' : 'Previous'}

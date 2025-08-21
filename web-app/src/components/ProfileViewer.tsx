@@ -191,7 +191,7 @@ export default function ProfileViewer({
         <div className="relative px-6 md:px-8 pb-8">
           {/* Profile Picture */}
           <div className="absolute -top-16 left-6 md:left-8">
-            <div className="w-32 h-32 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gray-200">
+            <div className="w-32 h-32 rounded-full border-4 border-white shadow-xl overflow-hidden bg-secondary-200">
               {profile.profile_picture_url ? (
                 <img
                   src={profile.profile_picture_url}
@@ -218,11 +218,11 @@ export default function ProfileViewer({
                   </h1>
                   
                   {profile.verification_status === 'verified' && (
-                    <CheckBadgeIcon className="w-7 h-7 text-blue-500" title="Verified Profile" />
+                    <CheckBadgeIcon className="w-7 h-7 text-primary-500" title="Verified Profile" />
                   )}
                 </div>
                 
-                <div className="flex flex-wrap items-center gap-4 text-gray-600 mb-4">
+                <div className="flex flex-wrap items-center gap-4 text-secondary-600 mb-4">
                   {profile.privacy_settings?.show_age !== false && profile.date_of_birth && (
                     <div className="flex items-center gap-1">
                       <CalendarDaysIcon className="w-4 h-4" />
@@ -251,7 +251,7 @@ export default function ProfileViewer({
                 <div className="flex items-center gap-2 ml-4">
                   <button
                     onClick={handleLike}
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-red-500 text-red-500 hover:bg-red-50 transition-all"
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-coral-500 text-coral-500 hover:bg-red-50 transition-all"
                   >
                     {isLiked ? (
                       <HeartSolidIcon className="w-5 h-5" />
@@ -305,7 +305,7 @@ export default function ProfileViewer({
                     <h3 className="font-semibold text-gray-900 mb-1">
                       {isPortuguese ? 'Compatibilidade Cultural' : 'Cultural Compatibility'}
                     </h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-secondary-600">
                       {Math.round(compatibility.overall_compatibility * 100)}% {isPortuguese ? 'compatível' : 'compatible'}
                     </p>
                   </div>
@@ -325,20 +325,20 @@ export default function ProfileViewer({
                 
                 {compatibility.shared_elements.length > 0 && (
                   <div className="mt-3">
-                    <p className="text-xs text-gray-600 mb-2">
+                    <p className="text-xs text-secondary-600 mb-2">
                       {isPortuguese ? 'Elementos em comum:' : 'Shared elements:'}
                     </p>
                     <div className="flex flex-wrap gap-1">
                       {compatibility.shared_elements.slice(0, 3).map((element, index) => (
                         <span
                           key={index}
-                          className="px-2 py-1 bg-white text-xs text-gray-700 rounded-full border"
+                          className="px-2 py-1 bg-white text-xs text-secondary-700 rounded-full border"
                         >
                           {element}
                         </span>
                       ))}
                       {compatibility.shared_elements.length > 3 && (
-                        <span className="px-2 py-1 bg-gray-100 text-xs text-gray-500 rounded-full">
+                        <span className="px-2 py-1 bg-secondary-100 text-xs text-gray-500 rounded-full">
                           +{compatibility.shared_elements.length - 3} {isPortuguese ? 'mais' : 'more'}
                         </span>
                       )}
@@ -351,7 +351,7 @@ export default function ProfileViewer({
             {/* Bio */}
             {profile.bio && (
               <div className="mb-6">
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-secondary-700 leading-relaxed">
                   {showFullBio || profile.bio.length <= 200 
                     ? profile.bio 
                     : `${profile.bio.substring(0, 200)}...`
@@ -377,7 +377,7 @@ export default function ProfileViewer({
                 <div className="text-2xl font-bold text-gray-900">
                   {profile.stats?.connections_count || 0}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {isPortuguese ? 'Conexões' : 'Connections'}
                 </div>
               </div>
@@ -386,7 +386,7 @@ export default function ProfileViewer({
                 <div className="text-2xl font-bold text-gray-900">
                   {profile.stats?.events_attended || 0}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {isPortuguese ? 'Eventos' : 'Events'}
                 </div>
               </div>
@@ -395,16 +395,16 @@ export default function ProfileViewer({
                 <div className="text-2xl font-bold text-primary-600">
                   {profile.membership_tier === 'premium' ? 'Premium' : 'Membro'}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {isPortuguese ? 'Plano' : 'Plan'}
                 </div>
               </div>
               
               <div className="text-center p-4 bg-gray-50 rounded-xl">
-                <div className="text-2xl font-bold text-green-600">
+                <div className="text-2xl font-bold text-action-600">
                   {profile.stats?.profile_completion || 0}%
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {isPortuguese ? 'Completo' : 'Complete'}
                 </div>
               </div>
@@ -463,7 +463,7 @@ export default function ProfileViewer({
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
-                className="aspect-square rounded-xl overflow-hidden bg-gray-200 cursor-pointer hover:shadow-lg transition-all"
+                className="aspect-square rounded-xl overflow-hidden bg-secondary-200 cursor-pointer hover:shadow-lg transition-all"
                 onClick={() => setActivePhotoIndex(index)}
               >
                 <img
@@ -493,7 +493,7 @@ export default function ProfileViewer({
         
         <div className="space-y-4">
           <div className="p-4 bg-gray-50 rounded-xl">
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {isPortuguese ? 
                 'Informações profissionais disponíveis para membros conectados' :
                 'Professional information available to connected members'

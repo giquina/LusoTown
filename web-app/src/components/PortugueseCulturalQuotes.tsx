@@ -313,7 +313,7 @@ const PortugueseCulturalQuotes: React.FC = () => {
               : "Words that Define Our Soul"}
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             {language === "pt"
               ? "Descubra a profundidade da sabedoria portuguesa através de citações que atravessam séculos e unem corações lusófonos."
               : "Discover the depth of Portuguese wisdom through quotes that span centuries and unite Portuguese hearts."
@@ -352,7 +352,7 @@ const PortugueseCulturalQuotes: React.FC = () => {
                 {/* Quote Text */}
                 <blockquote className="text-center mb-8">
                   <div className="text-6xl text-primary-200 mb-4">❝</div>
-                  <p className="text-2xl md:text-3xl font-light text-gray-800 leading-relaxed mb-4 italic">
+                  <p className="text-2xl md:text-3xl font-light text-secondary-800 leading-relaxed mb-4 italic">
                     {language === "pt" ? currentQuote.textPt : currentQuote.textEn}
                   </p>
                   <div className="text-6xl text-primary-200 rotate-180">❝</div>
@@ -363,7 +363,7 @@ const PortugueseCulturalQuotes: React.FC = () => {
                   <cite className="text-xl font-semibold text-gray-900 not-italic">
                     {currentQuote.author.name}
                   </cite>
-                  <div className="text-sm text-gray-600 mt-1">
+                  <div className="text-sm text-secondary-600 mt-1">
                     {currentQuote.author.period} • {currentQuote.author.origin}
                   </div>
                 </div>
@@ -375,7 +375,7 @@ const PortugueseCulturalQuotes: React.FC = () => {
                       <BookOpenIcon className="w-4 h-4 text-primary-600" />
                       {language === "pt" ? "Contexto" : "Context"}
                     </h4>
-                    <p className="text-sm text-gray-700 leading-relaxed">
+                    <p className="text-sm text-secondary-700 leading-relaxed">
                       {language === "pt" ? currentQuote.context.pt : currentQuote.context.en}
                     </p>
                   </div>
@@ -385,7 +385,7 @@ const PortugueseCulturalQuotes: React.FC = () => {
                       <HeartIcon className="w-4 h-4 text-secondary-600" />
                       {language === "pt" ? "Relevância Moderna" : "Modern Relevance"}
                     </h4>
-                    <p className="text-sm text-gray-700 leading-relaxed">
+                    <p className="text-sm text-secondary-700 leading-relaxed">
                       {language === "pt" ? currentQuote.modernRelevance.pt : currentQuote.modernRelevance.en}
                     </p>
                   </div>

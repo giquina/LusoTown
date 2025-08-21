@@ -197,9 +197,9 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       url: SITE_URL,
       logo: absoluteUrl("/logo.png"),
       sameAs: [
-        "https://facebook.com/lusotownlondon",
-        "https://instagram.com/lusotownlondon",
-        "https://linkedin.com/company/lusotown",
+        SOCIAL_URLS.facebook,
+        SOCIAL_URLS.instagram,
+        SOCIAL_URLS.linkedin,
       ],
       areaServed: {
         "@type": "City",

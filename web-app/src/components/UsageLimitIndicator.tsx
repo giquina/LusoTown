@@ -90,7 +90,7 @@ export default function UsageLimitIndicator({
     switch (urgencyLevel) {
       case 'critical':
         return {
-          bgColor: 'bg-red-500',
+          bgColor: 'bg-coral-500',
           textColor: 'text-white',
           borderColor: 'border-red-600',
           icon: ExclamationTriangleIcon,
@@ -108,7 +108,7 @@ export default function UsageLimitIndicator({
         }
       case 'medium':
         return {
-          bgColor: 'bg-yellow-500',
+          bgColor: 'bg-accent-500',
           textColor: 'text-white',
           borderColor: 'border-yellow-600',
           icon: ClockIcon,
@@ -117,7 +117,7 @@ export default function UsageLimitIndicator({
         }
       default:
         return {
-          bgColor: 'bg-blue-500',
+          bgColor: 'bg-primary-500',
           textColor: 'text-white',
           borderColor: 'border-blue-600',
           icon: ClockIcon,
@@ -293,7 +293,7 @@ export default function UsageLimitIndicator({
                     : (isPortuguese ? 'Quase no Limite!' : 'Almost at Limit!')}
                 </h3>
                 
-                <p className="text-gray-700 mb-6">
+                <p className="text-secondary-700 mb-6">
                   {urgencyLevel === 'critical' 
                     ? (isPortuguese 
                         ? 'Não pode criar mais matches ou enviar mensagens hoje. Faça upgrade para acesso ilimitado!'
@@ -329,8 +329,8 @@ export default function UsageLimitIndicator({
                       }
                     ].map((benefit, index) => (
                       <div key={index} className="flex items-center gap-3">
-                        <CheckCircleIcon className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span className="text-gray-700">{benefit.text}</span>
+                        <CheckCircleIcon className="w-4 h-4 text-action-600 flex-shrink-0" />
+                        <span className="text-secondary-700">{benefit.text}</span>
                       </div>
                     ))}
                   </div>
@@ -360,7 +360,7 @@ export default function UsageLimitIndicator({
                   
                   <button
                     onClick={() => setShowUpgradeModal(false)}
-                    className="w-full text-gray-600 py-2 text-sm hover:text-gray-800 transition-colors"
+                    className="w-full text-secondary-600 py-2 text-sm hover:text-secondary-800 transition-colors"
                   >
                     {urgencyLevel === 'critical' 
                       ? (isPortuguese ? 'Voltar amanhã' : 'Come back tomorrow')

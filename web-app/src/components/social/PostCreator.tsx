@@ -148,7 +148,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
           </h3>
           <button
             onClick={onCancel}
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-2 hover:bg-secondary-100 rounded-lg transition-colors"
           >
             <X className="w-5 h-5 text-gray-400" />
           </button>
@@ -168,7 +168,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
               <span className="text-xs text-gray-500">
                 {t('post_creator.supports_emojis') || 'Portuguese emojis: 🇵🇹 🇧🇷 🥧 🎵 ❤️'}
               </span>
-              <span className={`text-xs ${content.length > maxContentLength * 0.9 ? 'text-red-500' : 'text-gray-400'}`}>
+              <span className={`text-xs ${content.length > maxContentLength * 0.9 ? 'text-coral-500' : 'text-gray-400'}`}>
                 {content.length}/{maxContentLength}
               </span>
             </div>
@@ -176,7 +176,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
 
           {/* Content Type Selection */}
           <div className="flex items-center space-x-4">
-            <label className="text-sm font-medium text-gray-700">
+            <label className="text-sm font-medium text-secondary-700">
               {t('post_creator.content_type') || 'Post Type:'}
             </label>
             <select
@@ -198,7 +198,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
             {/* Cultural Tags */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <label className="text-sm font-medium text-gray-700">
+                <label className="text-sm font-medium text-secondary-700">
                   {t('post_creator.cultural_tags') || 'Portuguese Cultural Elements'}
                 </label>
                 <button
@@ -246,7 +246,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
                       className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm transition-colors ${
                         selectedCulturalTags.includes(tag.id)
                           ? 'bg-primary-500 text-white'
-                          : 'bg-white text-gray-700 hover:bg-gray-100'
+                          : 'bg-white text-secondary-700 hover:bg-secondary-100'
                       }`}
                     >
                       {tag.icon}
@@ -260,7 +260,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
             {/* Location Tags */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <label className="text-sm font-medium text-gray-700">
+                <label className="text-sm font-medium text-secondary-700">
                   <MapPin className="w-4 h-4 inline mr-1" />
                   {t('post_creator.location_tags') || 'London Areas'}
                 </label>
@@ -309,7 +309,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
                       className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm transition-colors ${
                         selectedLocationTags.includes(tag.id)
                           ? 'bg-secondary-500 text-white'
-                          : 'bg-white text-gray-700 hover:bg-gray-100'
+                          : 'bg-white text-secondary-700 hover:bg-secondary-100'
                       }`}
                     >
                       <MapPin className="w-3 h-3" />
@@ -324,7 +324,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
             {canCreateServicePosts && (
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <label className="text-sm font-medium text-gray-700">
+                  <label className="text-sm font-medium text-secondary-700">
                     <Tag className="w-4 h-4 inline mr-1" />
                     {t('post_creator.service_tags') || 'Services'}
                   </label>
@@ -373,7 +373,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
                         className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm transition-colors ${
                           selectedServiceTags.includes(tag.id)
                             ? 'bg-accent-500 text-white'
-                            : 'bg-white text-gray-700 hover:bg-gray-100'
+                            : 'bg-white text-secondary-700 hover:bg-secondary-100'
                         }`}
                       >
                         {tag.icon}
@@ -391,7 +391,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
             <div className="flex items-center space-x-4">
               {/* Visibility Selector */}
               <div className="flex items-center space-x-2">
-                <label className="text-sm text-gray-600">
+                <label className="text-sm text-secondary-600">
                   {t('post_creator.visibility') || 'Visibility:'}
                 </label>
                 <select
@@ -411,7 +411,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
               <button
                 type="button"
                 onClick={onCancel}
-                className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors"
+                className="px-4 py-2 text-secondary-600 hover:text-secondary-800 transition-colors"
               >
                 {t('post_creator.cancel') || 'Cancel'}
               </button>

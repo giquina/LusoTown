@@ -229,7 +229,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                           <div className="relative">
                             <CartSolidIcon className="h-7 w-7 text-primary-500" />
                             {cartCount > 0 && (
-                              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                              <span className="absolute -top-2 -right-2 bg-coral-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                                 {cartCount}
                               </span>
                             )}
@@ -349,10 +349,10 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                                       <div className="flex flex-1 items-end justify-between text-sm">
                                         <div className="flex items-center gap-2">
                                           {/* Quantity Controls */}
-                                          <div className="flex items-center border border-gray-300 rounded-lg">
+                                          <div className="flex items-center border border-secondary-300 rounded-lg">
                                             <button
                                               onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                                              className="p-1 text-gray-400 hover:text-gray-600"
+                                              className="p-1 text-gray-400 hover:text-secondary-600"
                                             >
                                               <MinusIcon className="w-4 h-4" />
                                             </button>
@@ -361,7 +361,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                                             </span>
                                             <button
                                               onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                                              className="p-1 text-gray-400 hover:text-gray-600"
+                                              className="p-1 text-gray-400 hover:text-secondary-600"
                                               disabled={Boolean(item.maxQuantity && item.quantity >= item.maxQuantity)}
                                             >
                                               <PlusIcon className="w-4 h-4" />
@@ -378,7 +378,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                                           <button
                                             type="button"
                                             onClick={() => handleSaveForLater(item)}
-                                            className="text-gray-400 hover:text-red-500 transition-colors"
+                                            className="text-gray-400 hover:text-coral-500 transition-colors"
                                             title={isPortuguese ? 'Guardar para mais tarde' : 'Save for later'}
                                           >
                                             <HeartIcon className="w-4 h-4" />
@@ -388,7 +388,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                                           <button
                                             type="button"
                                             onClick={() => removeFromCart(item.id)}
-                                            className="text-gray-400 hover:text-red-500 transition-colors"
+                                            className="text-gray-400 hover:text-coral-500 transition-colors"
                                             title={isPortuguese ? 'Remover' : 'Remove'}
                                           >
                                             <TrashIcon className="w-4 h-4" />
@@ -430,7 +430,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                         {/* Clear Cart */}
                         <button
                           onClick={clearCart}
-                          className="w-full mb-3 bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors"
+                          className="w-full mb-3 bg-secondary-100 text-secondary-700 px-6 py-3 rounded-lg font-medium hover:bg-secondary-200 transition-colors"
                         >
                           {isPortuguese ? 'Limpar Carrinho' : 'Clear Cart'}
                         </button>

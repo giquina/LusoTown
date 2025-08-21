@@ -107,7 +107,7 @@ export default function Features() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             <span className="gradient-text">{t('features.subtitle')}</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-secondary-600 leading-relaxed">
             Fill your social calendar with lusophone speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde, and beyond who share the joy of meals together, the comfort of our shared language, and the richness of diverse Portuguese-speaking cultures. Book experiences at places where Portuguese hearts from all corners of the world gather - from Stockwell's authentic bakeries to Vauxhall's multicultural centers.
           </p>
         </motion.div>
@@ -134,7 +134,7 @@ export default function Features() {
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-secondary-600 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -193,15 +193,15 @@ export default function Features() {
                   </div>
                   <div className="text-left">
                     <p className="font-semibold text-gray-900">Carlos Silva</p>
-                    <p className="text-sm text-gray-600">Portuguese Professional, moved from Porto to Stockwell</p>
+                    <p className="text-sm text-secondary-600">Portuguese Professional, moved from Porto to Stockwell</p>
                   </div>
                 </div>
-                <p className="text-lg text-gray-600 italic mb-4">
+                <p className="text-lg text-secondary-600 italic mb-4">
                   "I was homesick and felt lost in London. Through LusoTown, I found my Portuguese network - professionals who understand my story and welcome me into their circles. Now I have colleagues, mentors, and friends everywhere I go."
                 </p>
               </div>
               
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
                 Built by lusophone professionals from Portugal 🇵🇹, Brazil 🇧🇷, Angola 🇦🇴, Mozambique 🇲🇿, Cape Verde 🇨🇻, and beyond who know what it's like to thrive in London while honoring diverse Portuguese-speaking heritages. 
                 Every feature celebrates our shared language while respecting unique cultural traditions from across the Portuguese-speaking world.
               </p>

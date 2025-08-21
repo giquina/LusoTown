@@ -651,7 +651,7 @@ const CulturalLandmarkVR: React.FC = () => {
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
+            className="text-4xl md:text-5xl font-bold text-secondary-800 mb-4"
           >
             🏛️ {language === 'pt' ? 'Monumentos Portugueses em VR' : 'Portuguese Landmarks in VR'}
           </motion.h1>
@@ -659,7 +659,7 @@ const CulturalLandmarkVR: React.FC = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-xl text-secondary-600 max-w-3xl mx-auto"
           >
             {language === 'pt'
               ? 'Explore os monumentos mais icônicos de Portugal através de experiências imersivas de realidade virtual. Cada pedra conta uma história.'
@@ -678,13 +678,13 @@ const CulturalLandmarkVR: React.FC = () => {
                     placeholder={language === 'pt' ? 'Pesquisar monumentos...' : 'Search landmarks...'}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg border border-secondary-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="px-4 py-3 rounded-lg border border-secondary-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 >
                   {categories.map(category => (
                     <option key={category.id} value={category.id}>
@@ -715,7 +715,7 @@ const CulturalLandmarkVR: React.FC = () => {
                       }}
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-white bg-opacity-90 text-gray-800 px-2 py-1 rounded-full text-sm font-semibold">
+                      <span className="bg-white bg-opacity-90 text-secondary-800 px-2 py-1 rounded-full text-sm font-semibold">
                         {categories.find(c => c.id === landmark.category)?.icon} {landmark.period}
                       </span>
                     </div>
@@ -724,8 +724,8 @@ const CulturalLandmarkVR: React.FC = () => {
                         onClick={() => toggleFavorite(landmark.id)}
                         className={`p-2 rounded-full transition-colors ${
                           favorites.includes(landmark.id)
-                            ? 'bg-red-500 text-white'
-                            : 'bg-white bg-opacity-80 text-gray-600 hover:text-red-500'
+                            ? 'bg-coral-500 text-white'
+                            : 'bg-white bg-opacity-80 text-secondary-600 hover:text-coral-500'
                         }`}
                       >
                         <Bookmark className="h-4 w-4" />
@@ -744,10 +744,10 @@ const CulturalLandmarkVR: React.FC = () => {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                    <h3 className="text-xl font-bold text-secondary-800 mb-2">
                       {language === 'pt' ? landmark.namePt : landmark.name}
                     </h3>
-                    <p className="text-gray-600 mb-3">
+                    <p className="text-secondary-600 mb-3">
                       {language === 'pt' ? landmark.significancePt : landmark.significance}
                     </p>
                     
@@ -764,7 +764,7 @@ const CulturalLandmarkVR: React.FC = () => {
 
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4 text-sm">
-                        <span className="flex items-center text-yellow-500">
+                        <span className="flex items-center text-accent-500">
                           <Star className="h-4 w-4 mr-1" />
                           {landmark.rating}
                         </span>
@@ -879,7 +879,7 @@ const CulturalLandmarkVR: React.FC = () => {
             </div>
 
             {/* Experience Controls */}
-            <div className="bg-gray-900 text-white p-6">
+            <div className="bg-secondary-900 text-white p-6">
               {/* Viewpoint Selector */}
               <div className="mb-6">
                 <h4 className="text-lg font-semibold mb-3">
@@ -955,7 +955,7 @@ const CulturalLandmarkVR: React.FC = () => {
             <div className="p-6 bg-gray-50">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="font-bold text-gray-800 mb-3">
+                  <h4 className="font-bold text-secondary-800 mb-3">
                     {language === 'pt' ? 'Informações Históricas' : 'Historical Information'}
                   </h4>
                   <div className="space-y-2 text-sm">
@@ -971,26 +971,26 @@ const CulturalLandmarkVR: React.FC = () => {
                 </div>
                 
                 <div>
-                  <h4 className="font-bold text-gray-800 mb-3">
+                  <h4 className="font-bold text-secondary-800 mb-3">
                     {language === 'pt' ? 'Informações de Visita' : 'Visitor Information'}
                   </h4>
                   <div className="space-y-2 text-sm">
                     <div><strong>{language === 'pt' ? 'Visitantes anuais:' : 'Annual visitors:'}</strong> {selectedLandmark.facts.visitors}</div>
                     <div><strong>{language === 'pt' ? 'Melhor horário:' : 'Best visit time:'}</strong> {language === 'pt' ? selectedLandmark.bestVisitTimePt : selectedLandmark.bestVisitTime}</div>
                     <div className="flex items-center space-x-2">
-                      <span className="text-yellow-500">★</span>
+                      <span className="text-accent-500">★</span>
                       <span><strong>{selectedLandmark.rating}</strong> ({selectedLandmark.reviewCount.toLocaleString()} {language === 'pt' ? 'avaliações' : 'reviews'})</span>
                     </div>
                   </div>
                 </div>
                 
                 <div>
-                  <h4 className="font-bold text-gray-800 mb-3">
+                  <h4 className="font-bold text-secondary-800 mb-3">
                     {language === 'pt' ? 'Atrações Próximas' : 'Nearby Attractions'}
                   </h4>
                   <ul className="space-y-1 text-sm">
                     {selectedLandmark.nearbyAttractions.slice(0, 4).map((attraction, index) => (
-                      <li key={index} className="text-gray-600">• {attraction}</li>
+                      <li key={index} className="text-secondary-600">• {attraction}</li>
                     ))}
                   </ul>
                 </div>

@@ -154,7 +154,7 @@ export default function AuthPopup() {
             {/* Close Button */}
             <button
               onClick={hidePopup}
-              className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-all z-10"
+              className="absolute top-4 right-4 p-2 text-gray-400 hover:text-secondary-600 hover:bg-secondary-100 rounded-full transition-all z-10"
             >
               <XMarkIcon className="w-5 h-5" />
             </button>
@@ -249,7 +249,7 @@ export default function AuthPopup() {
                 
                 <button
                   onClick={handleLoginClick}
-                  className="w-full text-gray-600 hover:text-primary-600 font-medium py-2 px-4 transition-colors text-sm"
+                  className="w-full text-secondary-600 hover:text-primary-600 font-medium py-2 px-4 transition-colors text-sm"
                 >
                   {isPortuguese ? 'Já tem conta? Entrar aqui' : 'Already have an account? Sign in here'}
                 </button>

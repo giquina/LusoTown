@@ -80,32 +80,32 @@ export default function GroupReportModal({ groupId, groupName, isOpen, onClose }
       >
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center">
-            <ExclamationTriangleIcon className="w-6 h-6 text-red-600 mr-3" />
+            <ExclamationTriangleIcon className="w-6 h-6 text-coral-600 mr-3" />
             <h3 className="text-lg font-semibold text-gray-900">Report Group</h3>
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full"
+            className="p-2 hover:bg-secondary-100 rounded-full"
           >
             <XMarkIcon className="w-5 h-5 text-gray-500" />
           </button>
         </div>
 
         <div className="mb-4">
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-secondary-600">
             You're reporting: <span className="font-medium">{groupName}</span>
           </p>
         </div>
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               Reason for reporting *
             </label>
             <select
               value={reportType}
               onChange={(e) => setReportType(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
               required
             >
               <option value="">Select a reason</option>
@@ -118,14 +118,14 @@ export default function GroupReportModal({ groupId, groupName, isOpen, onClose }
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               Description *
             </label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               rows={4}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
               placeholder="Please provide details about your concern..."
               maxLength={500}
               required
@@ -146,14 +146,14 @@ export default function GroupReportModal({ groupId, groupName, isOpen, onClose }
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50"
+              className="flex-1 px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={loading || !reportType || !description.trim()}
-              className="flex-1 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center"
+              className="flex-1 px-4 py-2 bg-coral-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center"
             >
               {loading ? (
                 <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>

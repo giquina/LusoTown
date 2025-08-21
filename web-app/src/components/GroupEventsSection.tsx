@@ -31,7 +31,7 @@ const sampleGroupEvents: GroupEventData[] = [
     currency: "£",
     category: "Women 30+",
     image:
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80",
+      buildUnsplashUrl("photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80"),
     spotsLeft: 0,
     maxAttendees: 15,
     hostName: "Ana Rodrigues",
@@ -61,7 +61,7 @@ const sampleGroupEvents: GroupEventData[] = [
     maxAttendees: 12,
     hostName: "Carla Santos",
     hostImage:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80",
+      buildUnsplashUrl("photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80"),
     hostVerified: true,
     rating: 4.8,
     reviewCount: 34,
@@ -87,7 +87,7 @@ const sampleGroupEvents: GroupEventData[] = [
     maxAttendees: 18,
     hostName: "Isabel Fernandes",
     hostImage:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+      buildUnsplashUrl("photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"),
     hostVerified: true,
     rating: 4.9,
     reviewCount: 63,
@@ -108,12 +108,12 @@ const sampleGroupEvents: GroupEventData[] = [
     currency: "£",
     category: "All Welcome",
     image:
-      "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?auto=format&fit=crop&w=800&q=80",
+      buildUnsplashUrl("photo-1551269901-5c5e14c25df7?auto=format&fit=crop&w=800&q=80"),
     spotsLeft: 0,
     maxAttendees: 25,
     hostName: "Miguel Silva",
     hostImage:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80",
+      buildUnsplashUrl("photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80"),
     hostVerified: true,
     rating: 4.7,
     reviewCount: 89,
@@ -135,12 +135,12 @@ const sampleGroupEvents: GroupEventData[] = [
     currency: "£",
     category: "Women 30+",
     image:
-      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+      buildUnsplashUrl("photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80"),
     spotsLeft: 0,
     maxAttendees: 14,
     hostName: "Beatriz Costa",
     hostImage:
-      "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&w=150&q=80",
+      buildUnsplashUrl("photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&w=150&q=80"),
     hostVerified: true,
     rating: 4.8,
     reviewCount: 52,
@@ -161,12 +161,12 @@ const sampleGroupEvents: GroupEventData[] = [
     currency: "£",
     category: "All Welcome",
     image:
-      "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=800&q=80",
+      buildUnsplashUrl("photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=800&q=80"),
     spotsLeft: 0,
     maxAttendees: 20,
     hostName: "João Pereira",
     hostImage:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+      buildUnsplashUrl("photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"),
     hostVerified: true,
     rating: 4.6,
     reviewCount: 71,
@@ -227,12 +227,10 @@ export default function GroupEventsSection({
           .slice(0, maxEvents);
 
   const handleReserve = (eventId: string) => {
-    console.log("Reserving spot for event:", eventId);
     // Handle reservation logic here
   };
 
   const handleLike = (eventId: string) => {
-    console.log("Liking event:", eventId);
     // Handle like logic here
   };
 
@@ -271,12 +269,12 @@ export default function GroupEventsSection({
                   ? "Eventos & Tours de Grupo"
                   : "Upcoming Group Events & Tours"}
               </h2>
-              <p className="text-xl sm:text-2xl text-gray-700 mb-4 font-medium max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl sm:text-2xl text-secondary-700 mb-4 font-medium max-w-4xl mx-auto leading-relaxed">
                 {isPortuguese
                   ? "Junte-se a grupos portugueses para explorar Londres através de experiências culturais, passeios históricos e aventuras comunitárias"
                   : "Join Portuguese-speaking groups to explore London through cultural experiences, historical tours, and community adventures"}
               </p>
-              <div className="flex items-center justify-center gap-6 text-sm text-gray-600">
+              <div className="flex items-center justify-center gap-6 text-sm text-secondary-600">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-coral-400 rounded-full"></div>
                   <span>
@@ -309,7 +307,7 @@ export default function GroupEventsSection({
                       className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
                         selectedCategory === category.id
                           ? "bg-gradient-to-r from-coral-500 to-secondary-500 text-white shadow-lg"
-                          : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
+                          : "text-secondary-600 hover:text-secondary-800 hover:bg-gray-50"
                       }`}
                     >
                       <span>{category.label}</span>
@@ -349,7 +347,7 @@ export default function GroupEventsSection({
                     ? "Por que Participar nos Nossos Grupos?"
                     : "Why Join Our Portuguese Groups?"}
                 </h3>
-                <p className="text-gray-700 max-w-3xl mx-auto">
+                <p className="text-secondary-700 max-w-3xl mx-auto">
                   {isPortuguese
                     ? "Conecte-se com portugueses que partilham os seus interesses, explore Londres de forma autêntica e crie amizades duradouras."
                     : "Connect with Portuguese speakers who share your interests. With Portuguese-speaking guides and hosts, you will explore London authentically while building lasting friendships with people who understand your language and culture."}
@@ -366,7 +364,7 @@ export default function GroupEventsSection({
                       ? "Conexões Autênticas"
                       : "Authentic Connections"}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {isPortuguese
                       ? "Conheça pessoas que partilham a sua cultura e língua"
                       : "Connect with Portuguese speakers through shared experiences led by Portuguese hosts and guides"}
@@ -380,7 +378,7 @@ export default function GroupEventsSection({
                   <h4 className="font-semibold text-gray-900 mb-2">
                     {isPortuguese ? "Descubra Londres" : "Discover London"}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {isPortuguese
                       ? "Explore a cidade com locais e experiências únicas"
                       : "Discover London with Portuguese-speaking guides who understand your cultural preferences and language"}
@@ -396,7 +394,7 @@ export default function GroupEventsSection({
                       ? "Experiências de Qualidade"
                       : "Quality Experiences"}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {isPortuguese
                       ? "Organizadores experientes e eventos bem planeados"
                       : "Portuguese-speaking event organizers who ensure culturally authentic and language-comfortable experiences"}
@@ -413,7 +411,7 @@ export default function GroupEventsSection({
                     ? "Pronto para Se Juntar ao Próximo Evento?"
                     : "Ready to Join Your Next Group Adventure?"}
                 </h3>
-                <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+                <p className="text-lg text-secondary-700 mb-6 max-w-2xl mx-auto">
                   {isPortuguese
                     ? "Reserve o seu lugar em eventos que conectam portugueses através de experiências únicas em Londres."
                     : "Reserve your spot in events that connect Portuguese speakers through unique London experiences."}
@@ -433,7 +431,7 @@ export default function GroupEventsSection({
                   </a>
                   <a
                     href={ROUTES.groupsCreate}
-                    className="text-lg font-bold px-8 py-4 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-coral-300 hover:-translate-y-1"
+                    className="text-lg font-bold px-8 py-4 bg-white/70 backdrop-blur-lg text-secondary-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-coral-300 hover:-translate-y-1"
                   >
                     {isPortuguese
                       ? "Criar Evento de Grupo"
@@ -462,7 +460,7 @@ export default function GroupEventsSection({
                 ? "Eventos de Grupo Portugueses"
                 : "Portuguese Group Events"}
             </h1>
-            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-700 mb-8 max-w-3xl mx-auto">
               {isPortuguese
                 ? "Descubra eventos organizados especialmente para portugueses em Londres. Conecte-se, explore e crie memórias inesquecíveis."
                 : "Discover events organized specifically for Portuguese speakers in London. Connect, explore, and create unforgettable memories."}
@@ -482,7 +480,7 @@ export default function GroupEventsSection({
                         className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                           selectedCategory === category.id
                             ? "bg-gradient-to-r from-coral-500 to-secondary-500 text-white"
-                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                            : "bg-secondary-100 text-secondary-600 hover:bg-secondary-200"
                         }`}
                       >
                         {category.label} ({category.count})

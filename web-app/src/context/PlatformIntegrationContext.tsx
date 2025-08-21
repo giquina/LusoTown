@@ -712,7 +712,6 @@ export function PlatformIntegrationProvider({
   const autoEnrollCommunityGroups = useCallback(
     (serviceType: string, preferences: Record<string, any>) => {
       // Mock auto-enrollment logic
-      console.log("Auto-enrolling in community groups:", {
         serviceType,
         preferences,
       });
@@ -828,7 +827,6 @@ export function PlatformIntegrationProvider({
       try {
         updateJourneyProgress(activity.activityType, activity.metadata || {});
       } catch (e) {
-        console.log("trackActivity stub:", activity);
       }
     },
     [updateJourneyProgress]

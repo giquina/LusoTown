@@ -173,7 +173,6 @@ export default function CrossPlatformNavigationWidget({
 
   const handleOpportunityClick = (opportunity: any) => {
     // Track the opportunity click for analytics
-    console.log('Opportunity clicked:', currentPage, opportunity.id)
     window.location.href = opportunity.action
     setIsExpanded(false)
   }
@@ -218,13 +217,13 @@ export default function CrossPlatformNavigationWidget({
                     <h3 className="font-bold text-gray-900">
                       {isPortuguese ? 'Oportunidades' : 'Opportunities'}
                     </h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-secondary-600">
                       {isPortuguese ? 'Descubra mais na LusoTown' : 'Discover more on LusoTown'}
                     </p>
                   </div>
                   <button
                     onClick={() => setIsExpanded(false)}
-                    className="text-gray-400 hover:text-gray-600"
+                    className="text-gray-400 hover:text-secondary-600"
                   >
                     <XMarkIcon className="w-5 h-5" />
                   </button>
@@ -244,14 +243,14 @@ export default function CrossPlatformNavigationWidget({
                         >
                           <button
                             onClick={() => handleDismissNotification(notification.id)}
-                            className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
+                            className="absolute top-2 right-2 text-gray-400 hover:text-secondary-600"
                           >
                             <XMarkIcon className="w-4 h-4" />
                           </button>
                           <h5 className="font-semibold text-gray-900 text-sm mb-1">
                             {notification.title}
                           </h5>
-                          <p className="text-xs text-gray-600 mb-2">
+                          <p className="text-xs text-secondary-600 mb-2">
                             {notification.message}
                           </p>
                           {notification.actionType === 'redirect' && (notification.actionData as any)?.url && (
@@ -283,7 +282,7 @@ export default function CrossPlatformNavigationWidget({
                         key={opportunity.id}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="bg-gray-50 rounded-lg p-3 cursor-pointer hover:bg-gray-100 transition-colors"
+                        className="bg-gray-50 rounded-lg p-3 cursor-pointer hover:bg-secondary-100 transition-colors"
                         onClick={() => handleOpportunityClick(opportunity)}
                       >
                         <div className="flex items-start space-x-3">
@@ -301,7 +300,7 @@ export default function CrossPlatformNavigationWidget({
                                 </span>
                               )}
                             </div>
-                            <p className="text-xs text-gray-600 mt-1">
+                            <p className="text-xs text-secondary-600 mt-1">
                               {opportunity.description}
                             </p>
                           </div>
@@ -325,19 +324,18 @@ export default function CrossPlatformNavigationWidget({
                       >
                         <button
                           onClick={() => handleDismissNotification(rec.type)}
-                          className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
+                          className="absolute top-2 right-2 text-gray-400 hover:text-secondary-600"
                         >
                           <XMarkIcon className="w-4 h-4" />
                         </button>
                         <h5 className="font-semibold text-gray-900 text-sm mb-1">
                           {rec.title}
                         </h5>
-                        <p className="text-xs text-gray-600 mb-2">
+                        <p className="text-xs text-secondary-600 mb-2">
                           {rec.description}
                         </p>
                         <button
                           onClick={() => {
-                            console.log('Recommendation clicked:', currentPage, rec.id)
                             setIsExpanded(false)
                           }}
                           className="text-accent-600 text-xs font-medium hover:text-accent-700"

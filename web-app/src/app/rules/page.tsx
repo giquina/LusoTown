@@ -47,7 +47,7 @@ export default function RulesPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 Community Rules
               </h1>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-secondary-600">
                 Simple rules so everyone feels safe, respected, and welcome. For
                 the full standard, see our{" "}
                 <a
@@ -78,14 +78,14 @@ export default function RulesPage() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       {r.title}
                     </h3>
-                    <p className="text-gray-600">{r.desc}</p>
+                    <p className="text-secondary-600">{r.desc}</p>
                   </div>
                 );
               })}
             </div>
 
             <div className="max-w-3xl mx-auto mt-12 p-6 rounded-xl bg-gradient-to-r from-primary-50 to-secondary-50 border">
-              <p className="text-gray-700">
+              <p className="text-secondary-700">
                 Violations may result in warnings, suspensions, or permanent
                 bans per our{" "}
                 <a href={ROUTES.terms} className="text-primary-600 underline">

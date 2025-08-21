@@ -213,7 +213,7 @@ export default function PhotoUploadSystem({
         className={`relative border-2 border-dashed rounded-xl p-8 text-center transition-all ${
           dragOver 
             ? 'border-primary-400 bg-primary-50' 
-            : 'border-gray-300 hover:border-gray-400'
+            : 'border-secondary-300 hover:border-gray-400'
         }`}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
@@ -229,7 +229,7 @@ export default function PhotoUploadSystem({
         />
 
         <div className="space-y-4">
-          <div className="mx-auto w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+          <div className="mx-auto w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center">
             {dragOver ? (
               <ArrowUpTrayIcon className="w-8 h-8 text-primary-500" />
             ) : (
@@ -241,7 +241,7 @@ export default function PhotoUploadSystem({
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
               {isPortuguese ? 'Adicionar Fotos' : 'Add Photos'}
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-secondary-600 mb-4">
               {isPortuguese 
                 ? `Arraste e solte ou clique para selecionar até ${maxPhotos} fotos`
                 : `Drag and drop or click to select up to ${maxPhotos} photos`
@@ -297,7 +297,7 @@ export default function PhotoUploadSystem({
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
-                  className="relative group aspect-square rounded-xl overflow-hidden bg-gray-100"
+                  className="relative group aspect-square rounded-xl overflow-hidden bg-secondary-100"
                 >
                   <img
                     src={photo.url}
@@ -354,7 +354,7 @@ export default function PhotoUploadSystem({
 
                   {/* Profile picture badge */}
                   {photo.is_profile_picture && (
-                    <div className="absolute top-2 left-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+                    <div className="absolute top-2 left-2 bg-accent-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
                       <StarSolidIcon className="w-3 h-3" />
                       {isPortuguese ? 'Perfil' : 'Profile'}
                     </div>

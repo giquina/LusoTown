@@ -241,7 +241,7 @@ export default function JobsPage() {
                   placeholder="Search jobs, companies, or keywords..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-secondary-500 focus:border-transparent text-lg"
+                  className="w-full pl-12 pr-4 py-4 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-secondary-500 focus:border-transparent text-lg"
                 />
               </div>
               <button className="bg-secondary-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-secondary-700 transition-colors whitespace-nowrap">
@@ -254,7 +254,7 @@ export default function JobsPage() {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
+                className="px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
               >
                 {jobCategories.map(category => (
                   <option key={category} value={category}>{category}</option>
@@ -264,14 +264,14 @@ export default function JobsPage() {
               <select
                 value={selectedType}
                 onChange={(e) => setSelectedType(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
+                className="px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
               >
                 {jobTypes.map(type => (
                   <option key={type} value={type}>{type}</option>
                 ))}
               </select>
 
-              <label className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+              <label className="flex items-center gap-2 px-4 py-2 border border-secondary-300 rounded-lg cursor-pointer hover:bg-gray-50">
                 <input
                   type="checkbox"
                   checked={showRemoteOnly}
@@ -288,7 +288,7 @@ export default function JobsPage() {
       {/* Results Count */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="max-w-6xl mx-auto">
-          <p className="text-gray-600">
+          <p className="text-secondary-600">
             <span className="font-semibold text-gray-900">{filteredJobs.length}</span> jobs found
             {searchQuery && <span> for "{searchQuery}"</span>}
           </p>
@@ -319,7 +319,7 @@ export default function JobsPage() {
                     <div className="flex items-start justify-between mb-3">
                       <div>
                         <h3 className="text-xl font-bold text-gray-900 mb-1">{job.title}</h3>
-                        <div className="flex items-center gap-2 text-gray-600 mb-2">
+                        <div className="flex items-center gap-2 text-secondary-600 mb-2">
                           <BuildingOfficeIcon className="w-4 h-4" />
                           <span className="font-medium">{job.company}</span>
                         </div>
@@ -330,18 +330,18 @@ export default function JobsPage() {
                           className={`p-2 rounded-lg transition-colors ${
                             savedJobs.includes(job.id)
                               ? 'bg-secondary-100 text-secondary-600'
-                              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                              : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                           }`}
                         >
                           <BookmarkIcon className="w-5 h-5" />
                         </button>
-                        <button className="p-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors">
+                        <button className="p-2 rounded-lg bg-secondary-100 text-secondary-600 hover:bg-secondary-200 transition-colors">
                           <ShareIcon className="w-5 h-5" />
                         </button>
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-4 mb-4 text-sm text-gray-600">
+                    <div className="flex flex-wrap items-center gap-4 mb-4 text-sm text-secondary-600">
                       <div className="flex items-center gap-1">
                         <MapPinIcon className="w-4 h-4" />
                         <span>{job.location}</span>
@@ -361,11 +361,11 @@ export default function JobsPage() {
                       )}
                     </div>
 
-                    <p className="text-gray-700 mb-4 leading-relaxed">{job.description}</p>
+                    <p className="text-secondary-700 mb-4 leading-relaxed">{job.description}</p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
                       {job.requirements.slice(0, 3).map((req, idx) => (
-                        <span key={idx} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                        <span key={idx} className="bg-secondary-100 text-secondary-700 px-3 py-1 rounded-full text-sm">
                           {req}
                         </span>
                       ))}
@@ -392,7 +392,7 @@ export default function JobsPage() {
             <div className="text-center py-12">
               <BriefcaseIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">No jobs found</h3>
-              <p className="text-gray-600">Try adjusting your search criteria or browse all categories</p>
+              <p className="text-secondary-600">Try adjusting your search criteria or browse all categories</p>
             </div>
           )}
         </div>
@@ -405,7 +405,7 @@ export default function JobsPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Can't Find the Perfect Job?
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-secondary-600 mb-8">
               Set up job alerts and get notified when Portuguese-friendly positions become available
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

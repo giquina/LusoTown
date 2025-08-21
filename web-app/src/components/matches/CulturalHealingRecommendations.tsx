@@ -441,12 +441,12 @@ export default function CulturalHealingRecommendations({
       {/* Header */}
       <div className="text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <HeartSolid className="w-6 h-6 text-red-500" />
+          <HeartSolid className="w-6 h-6 text-coral-500" />
           <h2 className="text-2xl font-bold text-primary-900">
             {language === 'pt' ? 'Recomendações de Cura Cultural' : 'Cultural Healing Recommendations'}
           </h2>
         </div>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-secondary-600 max-w-2xl mx-auto">
           {language === 'pt' 
             ? 'Atividades personalizadas para curar a saudade e fortalecer a sua conexão cultural'
             : 'Personalized activities to heal saudade and strengthen your cultural connection'}
@@ -464,7 +464,7 @@ export default function CulturalHealingRecommendations({
               className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 selectedCategory === category.id
                   ? 'bg-gradient-to-r from-red-500 to-primary-500 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
               }`}
             >
               <IconComponent className="w-4 h-4" />
@@ -496,14 +496,14 @@ export default function CulturalHealingRecommendations({
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">
                     {language === 'pt' ? activity.titlePt : activity.titleEn}
                   </h3>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <span className="bg-gray-100 px-2 py-1 rounded">{activity.type}</span>
+                  <div className="flex items-center gap-2 text-sm text-secondary-600">
+                    <span className="bg-secondary-100 px-2 py-1 rounded">{activity.type}</span>
                     <span>•</span>
                     <span>{activity.duration}</span>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-lg font-bold text-red-600">
+                  <div className="text-lg font-bold text-coral-600">
                     {recommendation.matchScore}%
                   </div>
                   <div className="text-xs text-gray-500">
@@ -513,7 +513,7 @@ export default function CulturalHealingRecommendations({
               </div>
 
               {/* Description */}
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-secondary-600 mb-4">
                 {language === 'pt' ? activity.descriptionPt : activity.descriptionEn}
               </p>
 
@@ -530,18 +530,18 @@ export default function CulturalHealingRecommendations({
               {/* Benefits and Details */}
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div className="text-center">
-                  <div className="text-lg font-bold text-green-600">
+                  <div className="text-lg font-bold text-action-600">
                     {activity.healingPotential}/10
                   </div>
-                  <div className="text-xs text-gray-600">
+                  <div className="text-xs text-secondary-600">
                     {language === 'pt' ? 'Potencial de Cura' : 'Healing Potential'}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-bold text-blue-600">
+                  <div className="text-lg font-bold text-primary-600">
                     {activity.culturalConnection}/10
                   </div>
-                  <div className="text-xs text-gray-600">
+                  <div className="text-xs text-secondary-600">
                     {language === 'pt' ? 'Conexão Cultural' : 'Cultural Connection'}
                   </div>
                 </div>
@@ -549,11 +549,11 @@ export default function CulturalHealingRecommendations({
 
               {/* Timing and Location */}
               <div className="space-y-2 mb-4 text-sm">
-                <div className="flex items-center gap-2 text-gray-600">
+                <div className="flex items-center gap-2 text-secondary-600">
                   <CalendarDaysIcon className="w-4 h-4" />
                   <span>{recommendation.suggestedTiming}</span>
                 </div>
-                <div className="flex items-center gap-2 text-gray-600">
+                <div className="flex items-center gap-2 text-secondary-600">
                   <MapPinIcon className="w-4 h-4" />
                   <span>{activity.location}</span>
                 </div>
@@ -569,7 +569,7 @@ export default function CulturalHealingRecommendations({
                 </button>
                 <button
                   onClick={() => onScheduleActivity(activity.id)}
-                  className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
+                  className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
                 >
                   {language === 'pt' ? 'Agendar' : 'Schedule'}
                 </button>
@@ -602,7 +602,7 @@ export default function CulturalHealingRecommendations({
           <h3 className="text-lg font-medium text-gray-900 mb-2">
             {language === 'pt' ? 'Nenhuma recomendação encontrada' : 'No recommendations found'}
           </h3>
-          <p className="text-gray-600">
+          <p className="text-secondary-600">
             {language === 'pt' 
               ? 'Tente uma categoria diferente ou complete o seu perfil de saudade'
               : 'Try a different category or complete your saudade profile'}

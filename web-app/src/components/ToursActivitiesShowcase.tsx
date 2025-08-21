@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState, memo, useMemo } from "react";
+import { ROUTES } from '@/config'
 import { motion } from "framer-motion";
+import { ROUTES } from '@/config'
 import {
   MapPinIcon,
   ClockIcon,
@@ -26,7 +28,9 @@ import {
   MusicalNoteIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { ROUTES } from '@/config'
 import { useLanguage } from "@/context/LanguageContext";
+import { ROUTES } from '@/config'
 
 // Tour & Activity interfaces
 interface TourGuide {
@@ -74,7 +78,7 @@ const portugueseGuides: TourGuide[] = [
     name: "Maria Santos",
     rating: 4.9,
     reviews: 127,
-    image: "https://images.unsplash.com/photo-1494790108755-2616b332-3a6?w=100&h=100&fit=crop&crop=face",
+    image: buildUnsplashUrl("photo-1494790108755-2616b332-3a6?w=100&h=100&fit=crop&crop=face"),
     specialties: ["Portuguese Culture", "London History", "Food Tours"],
     languages: ["Portuguese", "English", "Spanish"],
     experience: "8 years",
@@ -85,7 +89,7 @@ const portugueseGuides: TourGuide[] = [
     name: "João Oliveira",
     rating: 4.8,
     reviews: 89,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+    image: buildUnsplashUrl("photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"),
     specialties: ["Business Tours", "Architecture", "Portuguese Districts"],
     languages: ["Portuguese", "English", "French"],
     experience: "12 years",
@@ -96,7 +100,7 @@ const portugueseGuides: TourGuide[] = [
     name: "Ana Rodrigues",
     rating: 4.9,
     reviews: 156,
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+    image: buildUnsplashUrl("photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"),
     specialties: ["Family Tours", "Cultural Immersion", "Portuguese Markets"],
     languages: ["Portuguese", "English"],
     experience: "6 years",
@@ -135,8 +139,8 @@ const toursData: Tour[] = [
     targetAudience: ['solo', 'families', 'couples'],
     guide: portugueseGuides[0],
     images: [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&h=400&fit=crop"
+      buildUnsplashUrl("photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop"),
+      buildUnsplashUrl("photo-1509440159596-0249088772ff?w=800&h=400&fit=crop")
     ],
     featured: true,
     availability: 'limited',
@@ -174,8 +178,8 @@ const toursData: Tour[] = [
     targetAudience: ['business'],
     guide: portugueseGuides[1],
     images: [
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=400&fit=crop"
+      buildUnsplashUrl("photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop"),
+      buildUnsplashUrl("photo-1556761175-b413da4baf72?w=800&h=400&fit=crop")
     ],
     featured: false,
     availability: 'available',
@@ -212,8 +216,8 @@ const toursData: Tour[] = [
     targetAudience: ['solo', 'families', 'couples'],
     guide: portugueseGuides[2],
     images: [
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=800&h=400&fit=crop"
+      buildUnsplashUrl("photo-1513635269975-59663e0ac1ad?w=800&h=400&fit=crop"),
+      buildUnsplashUrl("photo-1533929736458-ca588d08c8be?w=800&h=400&fit=crop")
     ],
     featured: true,
     availability: 'available',
@@ -250,8 +254,8 @@ const toursData: Tour[] = [
     targetAudience: ['solo', 'families', 'couples'],
     guide: portugueseGuides[0],
     images: [
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1520637836862-4d197d17c936?w=800&h=400&fit=crop"
+      buildUnsplashUrl("photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop"),
+      buildUnsplashUrl("photo-1520637836862-4d197d17c936?w=800&h=400&fit=crop")
     ],
     featured: false,
     availability: 'available',
@@ -289,8 +293,8 @@ const toursData: Tour[] = [
     targetAudience: ['solo', 'families', 'couples'],
     guide: portugueseGuides[1],
     images: [
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop"
+      buildUnsplashUrl("photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop"),
+      buildUnsplashUrl("photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop")
     ],
     featured: false,
     availability: 'available',
@@ -328,8 +332,8 @@ const toursData: Tour[] = [
     targetAudience: ['families'],
     guide: portugueseGuides[2],
     images: [
-      "https://images.unsplash.com/photo-1560707303-4e980ce876ad?w=800&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=800&h=400&fit=crop"
+      buildUnsplashUrl("photo-1560707303-4e980ce876ad?w=800&h=400&fit=crop"),
+      buildUnsplashUrl("photo-1533929736458-ca588d08c8be?w=800&h=400&fit=crop")
     ],
     featured: false,
     availability: 'available',
@@ -415,7 +419,7 @@ const TourFilters = memo(({ activeFilter, onFilterChange }: {
           className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
             activeFilter === filter.key
               ? 'bg-gradient-to-r from-secondary-500 to-primary-500 text-white shadow-lg'
-              : 'bg-white text-gray-700 border border-gray-200 hover:border-secondary-300 hover:text-secondary-600'
+              : 'bg-white text-secondary-700 border border-gray-200 hover:border-secondary-300 hover:text-secondary-600'
           }`}
         >
           {t(filter.label)}
@@ -462,7 +466,7 @@ const TrustIndicators = memo(() => {
           <div className="flex-shrink-0 w-10 h-10 bg-secondary-100 text-secondary-600 rounded-lg flex items-center justify-center">
             {feature.icon}
           </div>
-          <span className="text-sm font-medium text-gray-700">{t(feature.text)}</span>
+          <span className="text-sm font-medium text-secondary-700">{t(feature.text)}</span>
         </motion.div>
       ))}
     </div>
@@ -530,7 +534,7 @@ const ToursActivitiesShowcase = memo(() => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-xl text-secondary-600 max-w-3xl mx-auto"
           >
             {t('tours.showcase.subtitle')}
           </motion.p>
@@ -554,7 +558,7 @@ const ToursActivitiesShowcase = memo(() => {
               <div className="text-2xl font-bold text-gray-900 mb-1">
                 {stat.number}
               </div>
-              <div className="text-sm text-gray-600">{t(stat.label)}</div>
+              <div className="text-sm text-secondary-600">{t(stat.label)}</div>
             </div>
           ))}
         </motion.div>
@@ -619,12 +623,12 @@ const ToursActivitiesShowcase = memo(() => {
                 {/* Availability status */}
                 <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-1 shadow-sm">
                   <div className={`text-xs font-medium flex items-center gap-1 ${
-                    tour.availability === 'available' ? 'text-green-600' : 
-                    tour.availability === 'limited' ? 'text-amber-600' : 'text-red-600'
+                    tour.availability === 'available' ? 'text-action-600' : 
+                    tour.availability === 'limited' ? 'text-amber-600' : 'text-coral-600'
                   }`}>
                     <div className={`w-2 h-2 rounded-full ${
-                      tour.availability === 'available' ? 'bg-green-500' : 
-                      tour.availability === 'limited' ? 'bg-amber-500' : 'bg-red-500'
+                      tour.availability === 'available' ? 'bg-action-500' : 
+                      tour.availability === 'limited' ? 'bg-amber-500' : 'bg-coral-500'
                     }`}></div>
                     {tour.availability === 'available' ? 'Available' :
                      tour.availability === 'limited' ? 'Limited Spots' : 'Fully Booked'}
@@ -640,7 +644,7 @@ const ToursActivitiesShowcase = memo(() => {
                   </h3>
                 </div>
 
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed line-clamp-3">
+                <p className="text-secondary-600 mb-4 text-sm leading-relaxed line-clamp-3">
                   {tour.description}
                 </p>
 
@@ -682,7 +686,7 @@ const ToursActivitiesShowcase = memo(() => {
                       <div className="flex items-center gap-2">
                         <div className="flex items-center">
                           <StarIcon className="w-3 h-3 text-amber-400 fill-current" />
-                          <span className="text-xs text-gray-600 ml-1">
+                          <span className="text-xs text-secondary-600 ml-1">
                             {tour.guide.rating} ({tour.guide.reviews})
                           </span>
                         </div>
@@ -723,14 +727,14 @@ const ToursActivitiesShowcase = memo(() => {
                 {/* Booking Progress */}
                 <div className="mb-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-xs text-gray-600 font-medium">
+                    <span className="text-xs text-secondary-600 font-medium">
                       {tour.maxGroupSize - tour.currentBookings} spots left
                     </span>
                     <span className="text-xs font-medium text-primary-600">
                       {Math.round((tour.currentBookings / tour.maxGroupSize) * 100)}% full
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-secondary-200 rounded-full h-2">
                     <div
                       className="bg-gradient-to-r from-secondary-500 to-secondary-600 h-2 rounded-full transition-all duration-300"
                       style={{
@@ -808,7 +812,7 @@ const ToursActivitiesShowcase = memo(() => {
                 <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href="/signup"
+                href={ROUTES.auth.signup}
                 className="inline-flex items-center border-2 border-white text-white font-bold px-10 py-4 rounded-2xl hover:bg-white hover:text-secondary-600 transition-all duration-300 shadow-xl hover:shadow-2xl min-h-[44px]"
               >
                 {t('tours.showcase.join_community')}

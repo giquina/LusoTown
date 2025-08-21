@@ -83,7 +83,7 @@ function BookingContent() {
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? "Nome Completo" : "Full Name"} *
               </label>
               <input
@@ -91,12 +91,12 @@ function BookingContent() {
                 name="clientName"
                 value={formData.clientName}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
+                className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 Email *
               </label>
               <input
@@ -104,12 +104,12 @@ function BookingContent() {
                 name="clientEmail"
                 value={formData.clientEmail}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
+                className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? "Telefone" : "Phone"} *
               </label>
               <input
@@ -117,12 +117,12 @@ function BookingContent() {
                 name="clientPhone"
                 value={formData.clientPhone}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
+                className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? "Empresa/Organização" : "Company/Organization"}
               </label>
               <input
@@ -130,7 +130,7 @@ function BookingContent() {
                 name="company"
                 value={formData.company}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
+                className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
               />
             </div>
           </div>
@@ -142,7 +142,7 @@ function BookingContent() {
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? "Data do Serviço" : "Service Date"} *
               </label>
               <input
@@ -150,19 +150,19 @@ function BookingContent() {
                 name="serviceDate"
                 value={formData.serviceDate}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
+                className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? "Duração (dias)" : "Duration (days)"} *
               </label>
               <select
                 name="serviceDuration"
                 value={formData.serviceDuration}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
+                className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
                 required
               >
                 <option value="1">1 {isPortuguese ? "dia" : "day"}</option>
@@ -176,7 +176,7 @@ function BookingContent() {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? "Localização Principal" : "Primary Location"} *
               </label>
               <input
@@ -187,12 +187,12 @@ function BookingContent() {
                 placeholder={
                   isPortuguese ? "Londres, Reino Unido" : "London, UK"
                 }
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
+                className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese
                   ? "Número de Pessoas a Proteger"
                   : "Number of People to Protect"}{" "}
@@ -202,7 +202,7 @@ function BookingContent() {
                 name="numberOfPersons"
                 value={formData.numberOfPersons}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
+                className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
                 required
               >
                 <option value="1">
@@ -229,7 +229,7 @@ function BookingContent() {
     return (
       <div className="space-y-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 mb-2">
             {isPortuguese ? "Nível de Risco Percebido" : "Perceived Risk Level"}{" "}
             *
           </label>
@@ -237,7 +237,7 @@ function BookingContent() {
             name="riskLevel"
             value={formData.riskLevel}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
+            className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
             required
           >
             <option value="low">{isPortuguese ? "Baixo" : "Low"}</option>
@@ -251,7 +251,7 @@ function BookingContent() {
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 mb-2">
             {isPortuguese ? "Requisitos Especiais" : "Special Requirements"}
           </label>
           <textarea
@@ -259,11 +259,11 @@ function BookingContent() {
             value={formData.specialRequirements}
             onChange={handleInputChange}
             rows={4}
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
+            className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 mb-2">
             {isPortuguese
               ? "Preferências Culturais/Linguísticas"
               : "Cultural/Language Preferences"}
@@ -273,7 +273,7 @@ function BookingContent() {
             value={formData.culturalPreferences}
             onChange={handleInputChange}
             rows={3}
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
+            className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
           />
         </div>
       </div>
@@ -300,7 +300,7 @@ function BookingContent() {
                   ? "Agendar Proteção Pessoal"
                   : "Book Close Protection"}
               </h1>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
                 {isPortuguese
                   ? "Complete o formulário abaixo para solicitar uma consulta de segurança personalizada"
                   : "Complete the form below to request a personalized security consultation"}
@@ -330,7 +330,7 @@ function BookingContent() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">
                     {isPortuguese ? pkg.namePortuguese : pkg.name}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4">
+                  <p className="text-secondary-600 text-sm mb-4">
                     {isPortuguese ? pkg.descriptionPortuguese : pkg.description}
                   </p>
                   <div className="text-2xl font-bold text-premium-600">
@@ -359,7 +359,7 @@ function BookingContent() {
                     className={`w-10 h-10 rounded-full flex items-center justify-center ${
                       currentStep >= (step as 1 | 2 | 3)
                         ? "bg-premium-600 text-white"
-                        : "bg-gray-200 text-gray-600"
+                        : "bg-secondary-200 text-secondary-600"
                     }`}
                   >
                     {currentStep > (step as 1 | 2 | 3) ? (
@@ -373,7 +373,7 @@ function BookingContent() {
                       className={`w-24 h-1 mx-4 ${
                         currentStep > (step as 1 | 2 | 3)
                           ? "bg-premium-600"
-                          : "bg-gray-200"
+                          : "bg-secondary-200"
                       }`}
                     />
                   )}
@@ -406,7 +406,7 @@ function BookingContent() {
                   )
                 }
                 disabled={currentStep === 1}
-                className="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl font-medium hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-3 border border-secondary-300 text-secondary-700 rounded-xl font-medium hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isPortuguese ? "Anterior" : "Previous"}
               </button>

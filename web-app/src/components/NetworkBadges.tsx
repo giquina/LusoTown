@@ -61,7 +61,7 @@ export default function NetworkBadges({ achievements }: NetworkBadgesProps) {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
+              className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-secondary-100 transition-colors"
             >
               {/* Achievement Icon */}
               <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${getAchievementColor(achievement.type)} flex items-center justify-center text-white text-lg shadow-md`}>
@@ -73,7 +73,7 @@ export default function NetworkBadges({ achievements }: NetworkBadgesProps) {
                 <h4 className="font-semibold text-gray-900 text-sm truncate">
                   {achievement.name}
                 </h4>
-                <p className="text-xs text-gray-600 line-clamp-2">
+                <p className="text-xs text-secondary-600 line-clamp-2">
                   {achievement.description}
                 </p>
                 <div className="flex items-center gap-2 mt-1">
@@ -81,7 +81,7 @@ export default function NetworkBadges({ achievements }: NetworkBadgesProps) {
                     {formatDate(achievement.earnedAt)}
                   </span>
                   {achievement.isActive && (
-                    <SparklesIcon className="w-3 h-3 text-yellow-500" />
+                    <SparklesIcon className="w-3 h-3 text-accent-500" />
                   )}
                 </div>
               </div>

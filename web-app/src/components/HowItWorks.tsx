@@ -163,12 +163,12 @@ export default function HowItWorks() {
             </span>
           </h2>
 
-          <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium mb-6">
+          <p className="text-xl sm:text-2xl md:text-3xl text-secondary-700 leading-relaxed max-w-4xl mx-auto font-medium mb-6">
             Connect, experience, and preserve Portuguese culture in London
             through six meaningful steps
           </p>
 
-          <p className="text-lg text-gray-600 italic max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-secondary-600 italic max-w-3xl mx-auto leading-relaxed">
             "A vida é melhor quando vivida em comunidade" - Life is better when
             lived together
           </p>
@@ -177,25 +177,25 @@ export default function HowItWorks() {
           <div className="flex justify-center items-center gap-6 mt-12 flex-wrap">
             <div className="flex items-center gap-2 bg-white/50 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
               <Coffee className="h-5 w-5 text-accent-600" />
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-sm font-medium text-secondary-700">
                 Café Culture
               </span>
             </div>
             <div className="flex items-center gap-2 bg-white/50 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
               <Music className="h-5 w-5 text-action-600" />
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-sm font-medium text-secondary-700">
                 Fado Nights
               </span>
             </div>
             <div className="flex items-center gap-2 bg-white/50 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
               <UtensilsCrossed className="h-5 w-5 text-secondary-600" />
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-sm font-medium text-secondary-700">
                 Portuguese Cuisine
               </span>
             </div>
             <div className="flex items-center gap-2 bg-white/50 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
               <Camera className="h-5 w-5 text-coral-600" />
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-sm font-medium text-secondary-700">
                 Cultural Tours
               </span>
             </div>
@@ -227,29 +227,29 @@ export default function HowItWorks() {
 
             const textColor =
               step.accentColor === "red-600"
-                ? "text-red-600/20 group-hover:text-red-600/30"
+                ? "text-coral-600/20 group-hover:text-coral-600/30"
                 : step.accentColor === "green-600"
-                ? "text-green-600/20 group-hover:text-green-600/30"
+                ? "text-action-600/20 group-hover:text-action-600/30"
                 : step.accentColor === "green-500"
-                ? "text-green-500/20 group-hover:text-green-500/30"
+                ? "text-action-500/20 group-hover:text-action-500/30"
                 : step.accentColor === "yellow-600"
                 ? "text-yellow-600/20 group-hover:text-yellow-600/30"
                 : step.accentColor === "red-500"
-                ? "text-red-500/20 group-hover:text-red-500/30"
-                : "text-green-500/20 group-hover:text-green-500/30";
+                ? "text-coral-500/20 group-hover:text-coral-500/30"
+                : "text-action-500/20 group-hover:text-action-500/30";
 
             const buttonColor =
               step.accentColor === "red-600"
-                ? "bg-red-600 hover:bg-red-700"
+                ? "bg-coral-600 hover:bg-red-700"
                 : step.accentColor === "green-600"
-                ? "bg-green-600 hover:bg-green-700"
+                ? "bg-action-600 hover:bg-green-700"
                 : step.accentColor === "green-500"
-                ? "bg-green-500 hover:bg-green-700"
+                ? "bg-action-500 hover:bg-green-700"
                 : step.accentColor === "yellow-600"
                 ? "bg-yellow-600 hover:bg-yellow-700"
                 : step.accentColor === "red-500"
-                ? "bg-red-500 hover:bg-red-700"
-                : "bg-green-500 hover:bg-green-700";
+                ? "bg-coral-500 hover:bg-red-700"
+                : "bg-action-500 hover:bg-green-700";
 
             return (
               <div
@@ -295,7 +295,7 @@ export default function HowItWorks() {
                         {step.subtitle}
                       </p>
 
-                      <p className="text-sm text-gray-600 leading-relaxed break-words">
+                      <p className="text-sm text-secondary-600 leading-relaxed break-words">
                         {step.description}
                       </p>
 
@@ -329,10 +329,10 @@ export default function HowItWorks() {
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center group-hover:rotate-6 transition-transform duration-300 shadow-lg mx-auto mb-6">
               <Users className="h-8 w-8 text-white" />
             </div>
-            <div className="text-3xl font-black text-gray-800 mb-2">
+            <div className="text-3xl font-black text-secondary-800 mb-2">
               {communityStats.members}
             </div>
-            <div className="text-sm font-bold text-gray-600 tracking-wide mb-2">
+            <div className="text-sm font-bold text-secondary-600 tracking-wide mb-2">
               PORTUGUESE SPEAKERS
             </div>
             <div className="text-xs text-gray-500 italic">
@@ -344,8 +344,8 @@ export default function HowItWorks() {
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-500 to-coral-500 flex items-center justify-center group-hover:rotate-6 transition-transform duration-300 shadow-lg mx-auto mb-6">
               <Calendar className="h-8 w-8 text-white" />
             </div>
-            <div className="text-3xl font-black text-gray-800 mb-2">40+</div>
-            <div className="text-sm font-bold text-gray-600 tracking-wide mb-2">
+            <div className="text-3xl font-black text-secondary-800 mb-2">40+</div>
+            <div className="text-sm font-bold text-secondary-600 tracking-wide mb-2">
               MONTHLY MEETUPS
             </div>
             <div className="text-xs text-gray-500 italic">
@@ -357,8 +357,8 @@ export default function HowItWorks() {
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-action-500 to-action-600 flex items-center justify-center group-hover:rotate-6 transition-transform duration-300 shadow-lg mx-auto mb-6">
               <MapPin className="h-8 w-8 text-white" />
             </div>
-            <div className="text-3xl font-black text-gray-800 mb-2">75+</div>
-            <div className="text-sm font-bold text-gray-600 tracking-wide mb-2">
+            <div className="text-3xl font-black text-secondary-800 mb-2">75+</div>
+            <div className="text-sm font-bold text-secondary-600 tracking-wide mb-2">
               PORTUGUESE VENUES
             </div>
             <div className="text-xs text-gray-500 italic">
@@ -370,8 +370,8 @@ export default function HowItWorks() {
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-premium-500 to-premium-600 flex items-center justify-center group-hover:rotate-6 transition-transform duration-300 shadow-lg mx-auto mb-6">
               <Globe2 className="h-8 w-8 text-white" />
             </div>
-            <div className="text-3xl font-black text-gray-800 mb-2">15+</div>
-            <div className="text-sm font-bold text-gray-600 tracking-wide mb-2">
+            <div className="text-3xl font-black text-secondary-800 mb-2">15+</div>
+            <div className="text-sm font-bold text-secondary-600 tracking-wide mb-2">
               UK CITIES
             </div>
             <div className="text-xs text-gray-500 italic">
@@ -393,23 +393,23 @@ export default function HowItWorks() {
                 Join Our Community?
               </span>
             </h3>
-            <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-secondary-700 mb-8 max-w-3xl mx-auto leading-relaxed">
               Book experiences with{" "}
               <strong className="text-secondary-600">
                 {communityStats.members} Portuguese speakers
               </strong>{" "}
               in London.
-              <strong className="text-gray-800">
+              <strong className="text-secondary-800">
                 Real experiences, real venues, active social life.
               </strong>
             </p>
 
             {/* Portuguese cultural quote */}
             <div className="bg-white/50 rounded-2xl p-6 mb-10 max-w-2xl mx-auto border border-secondary-100">
-              <p className="text-gray-700 italic text-lg mb-2">
+              <p className="text-secondary-700 italic text-lg mb-2">
                 "Viver é conviver - há sempre algo para fazer juntos"
               </p>
-              <p className="text-gray-600 text-sm">
+              <p className="text-secondary-600 text-sm">
                 "To live is to live together - there's always something to do
                 together"
               </p>
@@ -428,7 +428,7 @@ export default function HowItWorks() {
               </a>
               <a
                 href={ROUTES.signup}
-                className="text-lg font-bold px-8 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 whitespace-nowrap"
+                className="text-lg font-bold px-8 py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 whitespace-nowrap"
               >
                 Join Now
               </a>

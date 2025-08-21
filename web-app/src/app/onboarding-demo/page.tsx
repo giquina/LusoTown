@@ -24,7 +24,6 @@ export default function OnboardingDemo() {
   const isPortuguese = language === 'pt'
 
   const handleOnboardingComplete = (data: any) => {
-    console.log('Onboarding completed with data:', data)
     setOnboardingData(data)
     setShowOnboarding(false)
     toast.success(isPortuguese ? 'Bem-vindo à LusoTown!' : 'Welcome to LusoTown!')
@@ -41,7 +40,6 @@ export default function OnboardingDemo() {
   }
 
   const handleGrowthFeaturesComplete = (action: string, data?: any) => {
-    console.log('Growth feature action:', action, data)
     
     switch (action) {
       case 'claim_welcome_bonus':
@@ -165,7 +163,7 @@ export default function OnboardingDemo() {
                   {isPortuguese ? 'Demonstração do Sistema de Onboarding' : 'Onboarding System Demo'}
                 </h2>
                 
-                <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+                <p className="text-lg text-secondary-600 mb-6 max-w-2xl mx-auto">
                   {isPortuguese 
                     ? 'Experimente o fluxo completo de onboarding e funcionalidades de crescimento para a comunidade portuguesa em Londres.'
                     : 'Experience the complete onboarding flow and growth features for the Portuguese community in London.'
@@ -179,7 +177,7 @@ export default function OnboardingDemo() {
                     className={`px-4 py-2 rounded-lg font-medium transition-all ${
                       language === 'en' 
                         ? 'bg-primary-500 text-white shadow-lg' 
-                        : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
+                        : 'bg-white text-secondary-600 hover:bg-gray-50 border border-gray-200'
                     }`}
                   >
                     🇬🇧 English
@@ -189,7 +187,7 @@ export default function OnboardingDemo() {
                     className={`px-4 py-2 rounded-lg font-medium transition-all ${
                       language === 'pt' 
                         ? 'bg-primary-500 text-white shadow-lg' 
-                        : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
+                        : 'bg-white text-secondary-600 hover:bg-gray-50 border border-gray-200'
                     }`}
                   >
                     🇵🇹 Português
@@ -219,7 +217,7 @@ export default function OnboardingDemo() {
                         {button.title}
                       </h3>
                       
-                      <p className="text-sm text-gray-600 leading-relaxed">
+                      <p className="text-sm text-secondary-600 leading-relaxed">
                         {button.description}
                       </p>
                     </button>
@@ -238,13 +236,13 @@ export default function OnboardingDemo() {
                     {isPortuguese ? 'Dados do Onboarding Coletados:' : 'Collected Onboarding Data:'}
                   </h3>
                   
-                  <pre className="bg-gray-50 rounded-lg p-4 text-sm text-gray-700 overflow-auto">
+                  <pre className="bg-gray-50 rounded-lg p-4 text-sm text-secondary-700 overflow-auto">
                     {JSON.stringify(onboardingData, null, 2)}
                   </pre>
                   
                   <button
                     onClick={() => setOnboardingData(null)}
-                    className="mt-4 text-sm text-red-600 hover:text-red-700"
+                    className="mt-4 text-sm text-coral-600 hover:text-red-700"
                   >
                     {isPortuguese ? 'Limpar Dados' : 'Clear Data'}
                   </button>
@@ -262,7 +260,7 @@ export default function OnboardingDemo() {
                   {isPortuguese ? 'Como Usar:' : 'How to Use:'}
                 </h3>
                 
-                <div className="space-y-3 text-sm text-gray-700">
+                <div className="space-y-3 text-sm text-secondary-700">
                   <p>
                     {isPortuguese 
                       ? '1. Clique em "Fluxo de Onboarding" para experimentar o processo completo de integração de novos utilizadores.'

@@ -103,7 +103,6 @@ export default function MatchMessagingFlow({
     setShowStarters(false)
     setTimeout(() => {
       // Could navigate to messages view or show success state
-      console.log('Message sent successfully!')
     }, 300)
   }
 
@@ -187,7 +186,7 @@ export default function MatchMessagingFlow({
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-green-500 rounded-lg">
+                <div className="p-2 bg-action-500 rounded-lg">
                   <ChatSolid className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -218,7 +217,7 @@ export default function MatchMessagingFlow({
             <div className="mt-3 flex flex-wrap gap-2">
               {messagingPermission?.has_mutual_match && (
                 <div className="flex items-center gap-1 bg-white/60 px-2 py-1 rounded-lg">
-                  <HeartSolid className="w-3 h-3 text-red-500" />
+                  <HeartSolid className="w-3 h-3 text-coral-500" />
                   <span className="text-xs font-medium text-green-800">
                     {language === 'pt' ? 'Match Mútuo' : 'Mutual Match'}
                   </span>
@@ -227,7 +226,7 @@ export default function MatchMessagingFlow({
               
               {messagingPermission?.has_event_permission && (
                 <div className="flex items-center gap-1 bg-white/60 px-2 py-1 rounded-lg">
-                  <CalendarIcon className="w-3 h-3 text-blue-500" />
+                  <CalendarIcon className="w-3 h-3 text-primary-500" />
                   <span className="text-xs font-medium text-green-800">
                     {messagingPermission.shared_events_count} {language === 'pt' ? 'Eventos' : 'Events'}
                   </span>

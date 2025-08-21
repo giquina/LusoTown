@@ -183,14 +183,14 @@ export default function LocalizedCulturalPreferences({
             <span className="text-2xl">{getRegionFlag(currentCountry)}</span>
             <div>
               <h3 className="font-semibold text-gray-900">{currentRegion?.name}</h3>
-              <p className="text-sm text-gray-600">{currentRegion?.nativeName}</p>
+              <p className="text-sm text-secondary-600">{currentRegion?.nativeName}</p>
             </div>
           </div>
           {showRegionSelector && (
             <select
               value={currentCountry}
               onChange={(e) => switchRegion(e.target.value as PortugueseCountry)}
-              className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-3 py-2 border border-secondary-300 rounded-md text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             >
               {availableCountries.map(country => (
                 <option key={country} value={country}>
@@ -203,11 +203,11 @@ export default function LocalizedCulturalPreferences({
         
         <div className="grid grid-cols-2 gap-4 text-sm">
           <div>
-            <span className="text-gray-600">Population:</span>
+            <span className="text-secondary-600">Population:</span>
             <p className="font-medium">{currentRegion?.portuguesePopulation.toLocaleString()}</p>
           </div>
           <div>
-            <span className="text-gray-600">Currency:</span>
+            <span className="text-secondary-600">Currency:</span>
             <p className="font-medium">{formatCurrency(100)}</p>
           </div>
         </div>
@@ -256,20 +256,20 @@ export default function LocalizedCulturalPreferences({
         <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-blue-50 rounded-lg p-4">
             <div className="flex items-center space-x-2 mb-2">
-              <span className="text-blue-600">🌍</span>
+              <span className="text-primary-600">🌍</span>
               <h3 className="font-semibold text-blue-900">Region</h3>
             </div>
             <p className="text-blue-800">{currentRegion?.region.replace('-', ' ').toUpperCase()}</p>
-            <p className="text-sm text-blue-600 mt-1">{currentRegion?.majorCities.join(', ')}</p>
+            <p className="text-sm text-primary-600 mt-1">{currentRegion?.majorCities.join(', ')}</p>
           </div>
           
           <div className="bg-green-50 rounded-lg p-4">
             <div className="flex items-center space-x-2 mb-2">
-              <span className="text-green-600">💰</span>
+              <span className="text-action-600">💰</span>
               <h3 className="font-semibold text-green-900">Currency</h3>
             </div>
             <p className="text-green-800">{currentRegion?.currency}</p>
-            <p className="text-sm text-green-600 mt-1">Example: {formatCurrency(25)}</p>
+            <p className="text-sm text-action-600 mt-1">Example: {formatCurrency(25)}</p>
           </div>
           
           <div className="bg-purple-50 rounded-lg p-4">
@@ -289,10 +289,10 @@ export default function LocalizedCulturalPreferences({
             {currentRegion?.culturalFeatures.map((feature, index) => (
               <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                 <div className="flex items-center space-x-2 mb-2">
-                  <span className="text-red-600">🎭</span>
+                  <span className="text-coral-600">🎭</span>
                   <h4 className="font-medium text-gray-900">{feature}</h4>
                 </div>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   Active in {currentRegion.name} Portuguese community
                 </p>
               </div>
@@ -306,7 +306,7 @@ export default function LocalizedCulturalPreferences({
             <h3 className="text-xl font-bold text-gray-900">Cultural Insights</h3>
             <button
               onClick={() => setShowCulturalDetails(!showCulturalDetails)}
-              className="px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors"
+              className="px-4 py-2 text-sm font-medium text-primary-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors"
             >
               {showCulturalDetails ? 'Hide Details' : 'Show Details'}
             </button>
@@ -334,15 +334,15 @@ export default function LocalizedCulturalPreferences({
                         {insight.preservationStatus}
                       </span>
                     </div>
-                    <p className="text-gray-700 mb-2">{insight.description}</p>
-                    <p className="text-sm text-gray-600 mb-1">
+                    <p className="text-secondary-700 mb-2">{insight.description}</p>
+                    <p className="text-sm text-secondary-600 mb-1">
                       <strong>Origin:</strong> {insight.origin}
                     </p>
-                    <p className="text-sm text-gray-600 mb-1">
+                    <p className="text-sm text-secondary-600 mb-1">
                       <strong>Significance:</strong> {insight.significance}
                     </p>
                     {insight.modernAdaptation && (
-                      <p className="text-sm text-blue-600">
+                      <p className="text-sm text-primary-600">
                         <strong>Modern Adaptation:</strong> {insight.modernAdaptation}
                       </p>
                     )}
@@ -358,13 +358,13 @@ export default function LocalizedCulturalPreferences({
                         <div key={festival.id} className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                           <div className="flex items-center justify-between mb-2">
                             <h5 className="font-medium text-gray-900">{festival.name}</h5>
-                            <span className="text-sm text-gray-600">{formatDate(new Date(festival.date))}</span>
+                            <span className="text-sm text-secondary-600">{formatDate(new Date(festival.date))}</span>
                           </div>
-                          <p className="text-gray-700 text-sm mb-2">{festival.description}</p>
-                          <p className="text-xs text-gray-600 mb-1">
+                          <p className="text-secondary-700 text-sm mb-2">{festival.description}</p>
+                          <p className="text-xs text-secondary-600 mb-1">
                             <strong>Location:</strong> {festival.location}
                           </p>
-                          <p className="text-xs text-gray-600">
+                          <p className="text-xs text-secondary-600">
                             <strong>Traditions:</strong> {festival.traditions.join(', ')}
                           </p>
                         </div>
@@ -384,11 +384,11 @@ export default function LocalizedCulturalPreferences({
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Date Format</label>
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">Date Format</label>
                   <select
                     value={selectedPreferences.dateFormat || regionalPreferences.dateFormat}
                     onChange={(e) => handlePreferenceChange('dateFormat', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
                   >
                     <option value="DD/MM/YYYY">DD/MM/YYYY</option>
                     <option value="MM/DD/YYYY">MM/DD/YYYY</option>
@@ -397,11 +397,11 @@ export default function LocalizedCulturalPreferences({
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Time Format</label>
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">Time Format</label>
                   <select
                     value={selectedPreferences.timeFormat || regionalPreferences.timeFormat}
                     onChange={(e) => handlePreferenceChange('timeFormat', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
                   >
                     <option value="24h">24 Hour</option>
                     <option value="12h">12 Hour (AM/PM)</option>
@@ -409,11 +409,11 @@ export default function LocalizedCulturalPreferences({
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Communication Style</label>
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">Communication Style</label>
                   <select
                     value={selectedPreferences.communicationStyle || regionalPreferences.communicationStyle}
                     onChange={(e) => handlePreferenceChange('communicationStyle', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
                   >
                     <option value="formal">Formal</option>
                     <option value="casual">Casual</option>
@@ -424,11 +424,11 @@ export default function LocalizedCulturalPreferences({
               
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">First Day of Week</label>
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">First Day of Week</label>
                   <select
                     value={selectedPreferences.firstDayOfWeek ?? regionalPreferences.firstDayOfWeek}
                     onChange={(e) => handlePreferenceChange('firstDayOfWeek', parseInt(e.target.value))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
                   >
                     <option value={0}>Sunday</option>
                     <option value={1}>Monday</option>
@@ -436,11 +436,11 @@ export default function LocalizedCulturalPreferences({
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Family Structure Importance</label>
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">Family Structure Importance</label>
                   <select
                     value={selectedPreferences.familyStructureImportance || regionalPreferences.familyStructureImportance}
                     onChange={(e) => handlePreferenceChange('familyStructureImportance', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
                   >
                     <option value="high">High</option>
                     <option value="medium">Medium</option>
@@ -453,7 +453,7 @@ export default function LocalizedCulturalPreferences({
                   <p className="text-sm text-blue-800">
                     {regionalPreferences.businessHours.start} - {regionalPreferences.businessHours.end}
                   </p>
-                  <p className="text-xs text-blue-600 mt-1">
+                  <p className="text-xs text-primary-600 mt-1">
                     Timezone: {regionalPreferences.businessHours.timezone}
                   </p>
                 </div>

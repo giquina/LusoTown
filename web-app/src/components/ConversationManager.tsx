@@ -258,11 +258,11 @@ export default function ConversationManager({
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               {timeUntilExpiry === 'Expired' ? (
-                <X className="h-5 w-5 text-red-600" />
+                <X className="h-5 w-5 text-coral-600" />
               ) : isExpiringSoon ? (
                 <AlertTriangle className="h-5 w-5 text-amber-600" />
               ) : (
-                <Clock className="h-5 w-5 text-green-600" />
+                <Clock className="h-5 w-5 text-action-600" />
               )}
               
               <div>
@@ -395,19 +395,19 @@ export default function ConversationManager({
                 <h4 className="font-medium text-neutral-900 mb-3">{t.tips.title}</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="flex items-start gap-2">
-                    <Heart className="h-4 w-4 text-green-600 mt-0.5" />
+                    <Heart className="h-4 w-4 text-action-600 mt-0.5" />
                     <p className="text-sm text-neutral-700">{t.tips.tip1}</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Utensils className="h-4 w-4 text-red-600 mt-0.5" />
+                    <Utensils className="h-4 w-4 text-coral-600 mt-0.5" />
                     <p className="text-sm text-neutral-700">{t.tips.tip2}</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Flag className="h-4 w-4 text-green-600 mt-0.5" />
+                    <Flag className="h-4 w-4 text-action-600 mt-0.5" />
                     <p className="text-sm text-neutral-700">{t.tips.tip3}</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Calendar className="h-4 w-4 text-red-600 mt-0.5" />
+                    <Calendar className="h-4 w-4 text-coral-600 mt-0.5" />
                     <p className="text-sm text-neutral-700">{t.tips.tip4}</p>
                   </div>
                 </div>

@@ -140,7 +140,7 @@ export default function PrimeirosPassosPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {language === 'pt' ? 'O que o espera' : 'What awaits you'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
                 {language === 'pt' 
                   ? 'Descubra tudo o que a LusoTown tem para oferecer à comunidade portuguesa'
                   : 'Discover everything LusoTown has to offer the Portuguese community'
@@ -157,7 +157,7 @@ export default function PrimeirosPassosPage() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     {language === 'pt' ? feature.titlePt : feature.titleEn}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {language === 'pt' ? feature.descriptionPt : feature.descriptionEn}
                   </p>
                 </div>
@@ -173,7 +173,7 @@ export default function PrimeirosPassosPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {language === 'pt' ? 'Como funciona' : 'How it works'}
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-secondary-600">
                 {language === 'pt' 
                   ? 'Três passos simples para começar'
                   : 'Three simple steps to get started'
@@ -193,7 +193,7 @@ export default function PrimeirosPassosPage() {
                     <h3 className="text-2xl font-semibold text-gray-900 mb-3">
                       {language === 'pt' ? step.titlePt : step.titleEn}
                     </h3>
-                    <p className="text-lg text-gray-600">
+                    <p className="text-lg text-secondary-600">
                       {language === 'pt' ? step.descriptionPt : step.descriptionEn}
                     </p>
                   </div>
@@ -227,7 +227,7 @@ export default function PrimeirosPassosPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {language === 'pt' ? 'Parabéns!' : 'Congratulations!'}
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-secondary-600 mb-8">
                 {language === 'pt' 
                   ? 'Completou os primeiros passos. Agora pode explorar tudo o que a LusoTown tem para oferecer!'
                   : 'You\'ve completed the first steps. Now you can explore everything LusoTown has to offer!'

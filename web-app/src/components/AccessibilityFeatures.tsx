@@ -149,7 +149,6 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
     // Setup focus management
     setupFocusManagement();
     
-    console.log('[Accessibility] Initialized for Portuguese community platform');
   };
 
   const loadAccessibilitySettings = () => {
@@ -670,7 +669,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
       {/* Focus indicator for keyboard navigation */}
       <div
         ref={focusIndicatorRef}
-        className="fixed pointer-events-none z-50 border-2 border-blue-500 rounded-lg shadow-lg"
+        className="fixed pointer-events-none z-50 border-2 border-primary-500 rounded-lg shadow-lg"
         style={{ display: 'none' }}
         aria-hidden="true"
       />
@@ -679,7 +678,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
       <div className="fixed top-4 right-4 z-40">
         <button
           onClick={() => setShowSettings(!showSettings)}
-          className="bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors"
+          className="bg-primary-600 text-white p-3 rounded-full shadow-lg hover:bg-primary-700 transition-colors"
           aria-label={language === 'pt' ? 'Abrir definições de acessibilidade' : 'Open accessibility settings'}
         >
           <Settings className="h-5 w-5" />
@@ -693,7 +692,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
               </h3>
               <button
                 onClick={() => setShowSettings(false)}
-                className="text-gray-400 hover:text-gray-600"
+                className="text-gray-400 hover:text-secondary-600"
                 aria-label={language === 'pt' ? 'Fechar definições' : 'Close settings'}
               >
                 <ChevronUp className="h-5 w-5" />
@@ -704,7 +703,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
               {/* High Contrast */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <Contrast className="h-5 w-5 text-gray-600" />
+                  <Contrast className="h-5 w-5 text-secondary-600" />
                   <div>
                     <h4 className="text-sm font-medium text-gray-900">
                       {language === 'pt' ? 'Alto Contraste' : 'High Contrast'}
@@ -717,7 +716,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                 <button
                   onClick={() => updateSetting('highContrast', !settings.highContrast)}
                   className={`w-10 h-6 rounded-full transition-colors ${
-                    settings.highContrast ? 'bg-blue-600' : 'bg-gray-300'
+                    settings.highContrast ? 'bg-primary-600' : 'bg-gray-300'
                   }`}
                   aria-label={`${language === 'pt' ? 'Alto contraste' : 'High contrast'} ${settings.highContrast ? (language === 'pt' ? 'ativado' : 'enabled') : (language === 'pt' ? 'desativado' : 'disabled')}`}
                 >
@@ -730,7 +729,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
               {/* Large Text */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <Type className="h-5 w-5 text-gray-600" />
+                  <Type className="h-5 w-5 text-secondary-600" />
                   <div>
                     <h4 className="text-sm font-medium text-gray-900">
                       {language === 'pt' ? 'Texto Grande' : 'Large Text'}
@@ -743,7 +742,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                 <button
                   onClick={() => updateSetting('largeText', !settings.largeText)}
                   className={`w-10 h-6 rounded-full transition-colors ${
-                    settings.largeText ? 'bg-blue-600' : 'bg-gray-300'
+                    settings.largeText ? 'bg-primary-600' : 'bg-gray-300'
                   }`}
                 >
                   <div className={`w-4 h-4 bg-white rounded-full transition-transform ${
@@ -755,7 +754,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
               {/* Portuguese Screen Reader */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <Volume2 className="h-5 w-5 text-gray-600" />
+                  <Volume2 className="h-5 w-5 text-secondary-600" />
                   <div>
                     <h4 className="text-sm font-medium text-gray-900">
                       {language === 'pt' ? 'Leitor de Ecrã PT' : 'Portuguese Screen Reader'}
@@ -768,7 +767,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                 <button
                   onClick={() => updateSetting('portugueseScreenReader', !settings.portugueseScreenReader)}
                   className={`w-10 h-6 rounded-full transition-colors ${
-                    settings.portugueseScreenReader ? 'bg-blue-600' : 'bg-gray-300'
+                    settings.portugueseScreenReader ? 'bg-primary-600' : 'bg-gray-300'
                   }`}
                 >
                   <div className={`w-4 h-4 bg-white rounded-full transition-transform ${
@@ -780,7 +779,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
               {/* Voice Control */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  {isListening ? <Mic className="h-5 w-5 text-green-600" /> : <MicOff className="h-5 w-5 text-gray-600" />}
+                  {isListening ? <Mic className="h-5 w-5 text-action-600" /> : <MicOff className="h-5 w-5 text-secondary-600" />}
                   <div>
                     <h4 className="text-sm font-medium text-gray-900">
                       {language === 'pt' ? 'Controlo de Voz' : 'Voice Control'}
@@ -794,8 +793,8 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                   onClick={startVoiceControl}
                   className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
                     isListening 
-                      ? 'bg-green-600 text-white' 
-                      : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
+                      ? 'bg-action-600 text-white' 
+                      : 'bg-gray-300 text-secondary-700 hover:bg-gray-400'
                   }`}
                 >
                   {isListening 
@@ -808,7 +807,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
               {/* Keyboard Navigation */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <Keyboard className="h-5 w-5 text-gray-600" />
+                  <Keyboard className="h-5 w-5 text-secondary-600" />
                   <div>
                     <h4 className="text-sm font-medium text-gray-900">
                       {language === 'pt' ? 'Navegação por Teclado' : 'Keyboard Navigation'}
@@ -821,7 +820,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                 <button
                   onClick={() => updateSetting('keyboardNavigation', !settings.keyboardNavigation)}
                   className={`w-10 h-6 rounded-full transition-colors ${
-                    settings.keyboardNavigation ? 'bg-blue-600' : 'bg-gray-300'
+                    settings.keyboardNavigation ? 'bg-primary-600' : 'bg-gray-300'
                   }`}
                 >
                   <div className={`w-4 h-4 bg-white rounded-full transition-transform ${
@@ -833,7 +832,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
               {/* Cultural Audio Guides */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <Globe className="h-5 w-5 text-gray-600" />
+                  <Globe className="h-5 w-5 text-secondary-600" />
                   <div>
                     <h4 className="text-sm font-medium text-gray-900">
                       {language === 'pt' ? 'Guias Culturais Áudio' : 'Cultural Audio Guides'}
@@ -846,7 +845,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                 <button
                   onClick={() => updateSetting('culturalAudioGuides', !settings.culturalAudioGuides)}
                   className={`w-10 h-6 rounded-full transition-colors ${
-                    settings.culturalAudioGuides ? 'bg-blue-600' : 'bg-gray-300'
+                    settings.culturalAudioGuides ? 'bg-primary-600' : 'bg-gray-300'
                   }`}
                 >
                   <div className={`w-4 h-4 bg-white rounded-full transition-transform ${
@@ -869,8 +868,8 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                     disabled={!settings.portugueseScreenReader}
                     className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                       isReading
-                        ? 'bg-red-600 text-white hover:bg-red-700'
-                        : 'bg-green-600 text-white hover:bg-green-700'
+                        ? 'bg-coral-600 text-white hover:bg-red-700'
+                        : 'bg-action-600 text-white hover:bg-green-700'
                     } disabled:opacity-50 disabled:cursor-not-allowed`}
                   >
                     {isReading ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
@@ -886,13 +885,13 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                 {/* Voice Settings */}
                 {availableVoices.length > 0 && (
                   <div className="space-y-2">
-                    <label className="block text-xs font-medium text-gray-700">
+                    <label className="block text-xs font-medium text-secondary-700">
                       {language === 'pt' ? 'Voz Portuguesa' : 'Portuguese Voice'}
                     </label>
                     <select
                       value={voiceSettings.voice}
                       onChange={(e) => setVoiceSettings(prev => ({ ...prev, voice: e.target.value }))}
-                      className="w-full px-3 py-1 border border-gray-300 rounded-md text-sm"
+                      className="w-full px-3 py-1 border border-secondary-300 rounded-md text-sm"
                     >
                       {availableVoices.map(voice => (
                         <option key={voice.name} value={voice.name}>

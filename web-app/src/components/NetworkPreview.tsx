@@ -1,9 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { buildUnsplashUrl } from '@/config'
 import { UserGroupIcon, PlusIcon } from '@heroicons/react/24/outline'
+import { buildUnsplashUrl } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { buildUnsplashUrl } from '@/config'
 import { Connection } from '@/context/NetworkingContext'
+import { buildUnsplashUrl } from '@/config'
 
 interface NetworkPreviewProps {
   eventId: string
@@ -64,7 +68,7 @@ export default function NetworkPreview({
                 title={`${connection.connectedUser.firstName} ${connection.connectedUser.lastName || ''}`}
               />
               {connection.connectedUser.isVerified && (
-                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-blue-500 rounded-full border border-white flex items-center justify-center">
+                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-primary-500 rounded-full border border-white flex items-center justify-center">
                   <span className="text-white text-xs">✓</span>
                 </div>
               )}

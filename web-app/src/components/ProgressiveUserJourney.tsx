@@ -423,7 +423,7 @@ export default function ProgressiveUserJourney({
             <h3 className="font-bold text-gray-900">
               {isPortuguese ? currentStage.namePortuguese : currentStage.name}
             </h3>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {isPortuguese ? currentStage.descriptionPortuguese : currentStage.description}
             </p>
           </div>
@@ -431,11 +431,11 @@ export default function ProgressiveUserJourney({
 
         {/* Progress Bar */}
         <div className="mb-4">
-          <div className="flex justify-between text-sm text-gray-600 mb-2">
+          <div className="flex justify-between text-sm text-secondary-600 mb-2">
             <span>{isPortuguese ? 'Progresso' : 'Progress'}</span>
             <span>{currentStage.progress}%</span>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
+          <div className="w-full bg-secondary-200 rounded-full h-2">
             <motion.div
               className={`bg-${currentStage.color}-500 h-2 rounded-full`}
               initial={{ width: 0 }}
@@ -468,7 +468,7 @@ export default function ProgressiveUserJourney({
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
-            className="fixed top-4 right-4 z-50 bg-green-500 text-white p-4 rounded-lg shadow-lg flex items-center gap-3"
+            className="fixed top-4 right-4 z-50 bg-action-500 text-white p-4 rounded-lg shadow-lg flex items-center gap-3"
           >
             <CheckCircleIcon className="w-6 h-6" />
             <span className="font-medium">
@@ -483,7 +483,7 @@ export default function ProgressiveUserJourney({
         <h2 className="text-3xl font-bold text-gray-900 mb-4">
           {isPortuguese ? 'Sua Jornada na Comunidade Portuguesa' : 'Your Portuguese Community Journey'}
         </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
           {isPortuguese 
             ? 'Descubra, conecte-se e torne-se parte da vibrante comunidade portuguesa em Londres. Cada passo aproxima-o mais de casa.'
             : 'Discover, connect, and become part of London\'s vibrant Portuguese community. Each step brings you closer to home.'
@@ -517,7 +517,7 @@ export default function ProgressiveUserJourney({
                 <div className={`w-16 h-16 rounded-2xl bg-${stage.color}-100 flex items-center justify-center relative`}>
                   <IconComponent className={`w-8 h-8 text-${stage.color}-600`} />
                   {stage.isCompleted && (
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-action-500 rounded-full flex items-center justify-center">
                       <CheckCircleIcon className="w-4 h-4 text-white" />
                     </div>
                   )}
@@ -526,7 +526,7 @@ export default function ProgressiveUserJourney({
                   <h3 className="text-xl font-bold text-gray-900 mb-1">
                     {isPortuguese ? stage.namePortuguese : stage.name}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPortuguese ? stage.descriptionPortuguese : stage.description}
                   </p>
                 </div>
@@ -534,11 +534,11 @@ export default function ProgressiveUserJourney({
 
               {/* Progress Bar */}
               <div className="mb-6">
-                <div className="flex justify-between text-sm text-gray-600 mb-2">
+                <div className="flex justify-between text-sm text-secondary-600 mb-2">
                   <span>{isPortuguese ? 'Progresso' : 'Progress'}</span>
                   <span>{stage.progress}%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
+                <div className="w-full bg-secondary-200 rounded-full h-3">
                   <motion.div
                     className={`bg-${stage.color}-500 h-3 rounded-full`}
                     initial={{ width: 0 }}
@@ -555,8 +555,8 @@ export default function ProgressiveUserJourney({
                 </h4>
                 <ul className="space-y-2">
                   {(isPortuguese ? stage.benefitsPortuguese : stage.benefits).map((benefit, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-gray-600">
-                      <CheckCircleIcon className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                    <li key={idx} className="flex items-start gap-3 text-sm text-secondary-600">
+                      <CheckCircleIcon className="w-4 h-4 text-action-500 flex-shrink-0 mt-0.5" />
                       <span>{benefit}</span>
                     </li>
                   ))}
@@ -579,7 +579,7 @@ export default function ProgressiveUserJourney({
                           ? `bg-${stage.color}-500 text-white border-${stage.color}-500 hover:bg-${stage.color}-600`
                           : action.type === 'secondary'
                           ? `bg-white text-${stage.color}-600 border-${stage.color}-200 hover:bg-${stage.color}-50`
-                          : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
+                          : 'bg-gray-50 text-secondary-700 border-gray-200 hover:bg-secondary-100'
                       }`}
                     >
                       <div className="flex items-center justify-between">
@@ -588,7 +588,7 @@ export default function ProgressiveUserJourney({
                             {isPortuguese ? action.titlePortuguese : action.title}
                           </h5>
                           <p className={`text-sm ${
-                            action.type === 'primary' ? 'text-white/90' : 'text-gray-600'
+                            action.type === 'primary' ? 'text-white/90' : 'text-secondary-600'
                           }`}>
                             {isPortuguese ? action.descriptionPortuguese : action.description}
                           </p>
@@ -613,11 +613,11 @@ export default function ProgressiveUserJourney({
               {/* Completed Badge */}
               {stage.isCompleted && (
                 <div className="flex items-center justify-center gap-3 p-4 bg-green-100 rounded-xl">
-                  <CheckCircleIcon className="w-6 h-6 text-green-600" />
+                  <CheckCircleIcon className="w-6 h-6 text-action-600" />
                   <span className="font-semibold text-green-700">
                     {isPortuguese ? 'Etapa Concluída!' : 'Stage Completed!'}
                   </span>
-                  <SparklesIcon className="w-6 h-6 text-green-600" />
+                  <SparklesIcon className="w-6 h-6 text-action-600" />
                 </div>
               )}
             </motion.div>
@@ -640,7 +640,7 @@ export default function ProgressiveUserJourney({
             <div className="text-3xl font-bold text-primary-600">
               {journeyStages.filter(s => s.isCompleted).length}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Etapas Concluídas' : 'Stages Completed'}
             </div>
           </div>
@@ -648,7 +648,7 @@ export default function ProgressiveUserJourney({
             <div className="text-3xl font-bold text-secondary-600">
               {Math.round(journeyStages.reduce((acc, s) => acc + s.progress, 0) / journeyStages.length)}%
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Progresso Total' : 'Overall Progress'}
             </div>
           </div>
@@ -656,7 +656,7 @@ export default function ProgressiveUserJourney({
             <div className="text-3xl font-bold text-accent-600">
               {connections.length}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Conexões' : 'Connections'}
             </div>
           </div>
@@ -664,7 +664,7 @@ export default function ProgressiveUserJourney({
             <div className="text-3xl font-bold text-coral-600">
               {stats.eventsAttended}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Eventos' : 'Events'}
             </div>
           </div>

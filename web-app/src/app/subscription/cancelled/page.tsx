@@ -55,12 +55,12 @@ export default function SubscriptionCancelledPage() {
                 className="mb-12"
               >
                 <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <XCircleIcon className="w-10 h-10 text-red-500" />
+                  <XCircleIcon className="w-10 h-10 text-coral-500" />
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? 'Subscrição Cancelada' : 'Subscription Cancelled'}
                 </h1>
-                <p className="text-lg text-gray-600 mb-6">
+                <p className="text-lg text-secondary-600 mb-6">
                   {isPortuguese 
                     ? 'O processo de subscrição foi cancelado. Não foi efetuado qualquer pagamento.'
                     : 'The subscription process was cancelled. No payment has been made.'
@@ -78,13 +78,13 @@ export default function SubscriptionCancelledPage() {
                 <h2 className="text-xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? 'O que aconteceu?' : 'What happened?'}
                 </h2>
-                <p className="text-gray-600 mb-4">
+                <p className="text-secondary-600 mb-4">
                   {isPortuguese 
                     ? 'O seu pagamento foi cancelado ou interrompido antes de ser concluído. Isto pode acontecer por vários motivos:'
                     : 'Your payment was cancelled or interrupted before completion. This can happen for several reasons:'
                   }
                 </p>
-                <div className="text-left space-y-2 text-sm text-gray-600">
+                <div className="text-left space-y-2 text-sm text-secondary-600">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-gray-400 rounded-full" />
                     <span>
@@ -124,9 +124,9 @@ export default function SubscriptionCancelledPage() {
               >
                 {reasons.map((reason, index) => (
                   <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
-                    <QuestionMarkCircleIcon className="w-8 h-8 text-blue-500 mx-auto mb-4" />
+                    <QuestionMarkCircleIcon className="w-8 h-8 text-primary-500 mx-auto mb-4" />
                     <h3 className="font-bold text-gray-900 mb-2">{reason.title}</h3>
-                    <p className="text-sm text-gray-600 mb-4">{reason.description}</p>
+                    <p className="text-sm text-secondary-600 mb-4">{reason.description}</p>
                     <button
                       onClick={() => {
                         if (index === 0) handleTryAgain()
@@ -158,7 +158,7 @@ export default function SubscriptionCancelledPage() {
                 
                 <button
                   onClick={() => router.push('/')}
-                  className="border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+                  className="border-2 border-secondary-300 text-secondary-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
                 >
                   <ArrowLeftIcon className="w-5 h-5" />
                   {isPortuguese ? 'Voltar ao Início' : 'Back to Home'}
@@ -176,7 +176,7 @@ export default function SubscriptionCancelledPage() {
                 <h3 className="font-bold text-gray-900 mb-2">
                   {isPortuguese ? 'Ainda interessado em juntar-se?' : 'Still interested in joining?'}
                 </h3>
-                <p className="text-sm text-gray-600 mb-4">
+                <p className="text-sm text-secondary-600 mb-4">
                   {isPortuguese 
                     ? 'A comunidade portuguesa de Londres está sempre aqui para si. Pode explorar o que oferecemos sem compromisso.'
                     : 'London\'s Portuguese community is always here for you. You can explore what we offer without commitment.'

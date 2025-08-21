@@ -88,13 +88,13 @@ export default function SIABookingConfirmation({
       case 'pending_review':
         return 'text-yellow-700 bg-yellow-100 border-yellow-300'
       case 'in_progress':
-        return 'text-blue-700 bg-blue-100 border-blue-300'
+        return 'text-primary-700 bg-blue-100 border-blue-300'
       case 'completed':
         return 'text-green-700 bg-green-100 border-green-300'
       case 'cancelled':
         return 'text-red-700 bg-red-100 border-red-300'
       default:
-        return 'text-gray-700 bg-gray-100 border-gray-300'
+        return 'text-secondary-700 bg-secondary-100 border-secondary-300'
     }
   }
 
@@ -119,9 +119,9 @@ export default function SIABookingConfirmation({
   }
 
   const getRiskLevelColor = (score: number) => {
-    if (score >= 15) return 'text-red-600 bg-red-50 border-red-200'
+    if (score >= 15) return 'text-coral-600 bg-red-50 border-red-200'
     if (score >= 10) return 'text-yellow-600 bg-yellow-50 border-yellow-200'
-    return 'text-green-600 bg-green-50 border-green-200'
+    return 'text-action-600 bg-green-50 border-green-200'
   }
 
   if (!isOpen) return null
@@ -235,19 +235,19 @@ export default function SIABookingConfirmation({
                     </h4>
                     <div className="space-y-3">
                       <div className="flex justify-between">
-                        <span className="text-gray-600">{isPortuguese ? 'Tipo de Serviço:' : 'Service Type:'}</span>
+                        <span className="text-secondary-600">{isPortuguese ? 'Tipo de Serviço:' : 'Service Type:'}</span>
                         <span className="font-medium">{bookingData.serviceType}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">{isPortuguese ? 'Data Agendada:' : 'Scheduled Date:'}</span>
+                        <span className="text-secondary-600">{isPortuguese ? 'Data Agendada:' : 'Scheduled Date:'}</span>
                         <span className="font-medium">{new Date(bookingData.scheduledDate).toLocaleDateString()}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">{isPortuguese ? 'Duração Estimada:' : 'Estimated Duration:'}</span>
+                        <span className="text-secondary-600">{isPortuguese ? 'Duração Estimada:' : 'Estimated Duration:'}</span>
                         <span className="font-medium">{bookingData.estimatedDuration}</span>
                       </div>
                       <div className="flex justify-between border-t pt-3">
-                        <span className="text-gray-600 font-medium">{isPortuguese ? 'Preço Total:' : 'Total Price:'}</span>
+                        <span className="text-secondary-600 font-medium">{isPortuguese ? 'Preço Total:' : 'Total Price:'}</span>
                         <span className="font-bold text-lg text-secondary-600">
                           {bookingData.currency} £{bookingData.totalPrice}
                         </span>
@@ -263,17 +263,17 @@ export default function SIABookingConfirmation({
                     </h4>
                     <div className="space-y-3">
                       <div>
-                        <span className="text-gray-600 text-sm">{isPortuguese ? 'Recolha:' : 'Pickup:'}</span>
+                        <span className="text-secondary-600 text-sm">{isPortuguese ? 'Recolha:' : 'Pickup:'}</span>
                         <p className="font-medium">{bookingData.complianceData.pickupLocation}</p>
                       </div>
                       {bookingData.complianceData.dropoffLocation && (
                         <div>
-                          <span className="text-gray-600 text-sm">{isPortuguese ? 'Destino:' : 'Destination:'}</span>
+                          <span className="text-secondary-600 text-sm">{isPortuguese ? 'Destino:' : 'Destination:'}</span>
                           <p className="font-medium">{bookingData.complianceData.dropoffLocation}</p>
                         </div>
                       )}
                       <div>
-                        <span className="text-gray-600 text-sm">{isPortuguese ? 'Passageiros:' : 'Passengers:'}</span>
+                        <span className="text-secondary-600 text-sm">{isPortuguese ? 'Passageiros:' : 'Passengers:'}</span>
                         <p className="font-medium">{bookingData.complianceData.passengerCount}</p>
                       </div>
                     </div>
@@ -287,17 +287,17 @@ export default function SIABookingConfirmation({
                     </h4>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <span className="text-gray-600">{isPortuguese ? 'Nível de Risco:' : 'Risk Level:'}</span>
+                        <span className="text-secondary-600">{isPortuguese ? 'Nível de Risco:' : 'Risk Level:'}</span>
                         <span className={`px-3 py-1 rounded-full text-sm font-medium border ${getRiskLevelColor(bookingData.complianceData.riskScore)}`}>
                           {getRiskLevelText(bookingData.complianceData.riskScore)}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">{isPortuguese ? 'Pontuação:' : 'Score:'}</span>
+                        <span className="text-secondary-600">{isPortuguese ? 'Pontuação:' : 'Score:'}</span>
                         <span className="font-medium">{bookingData.complianceData.riskScore}/20</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">{isPortuguese ? 'Nível de Ameaça:' : 'Threat Level:'}</span>
+                        <span className="text-secondary-600">{isPortuguese ? 'Nível de Ameaça:' : 'Threat Level:'}</span>
                         <span className="font-medium capitalize">{bookingData.complianceData.threatLevel}</span>
                       </div>
                     </div>
@@ -327,7 +327,7 @@ export default function SIABookingConfirmation({
                         )}
                         <div className="flex-1">
                           <h5 className="font-semibold text-gray-900">{bookingData.assignedOfficer.name}</h5>
-                          <p className="text-sm text-gray-600 mb-2">
+                          <p className="text-sm text-secondary-600 mb-2">
                             {isPortuguese ? 'Licença SIA:' : 'SIA License:'} {bookingData.assignedOfficer.licenseNumber}
                           </p>
                           <div className="flex items-center space-x-1 mb-2">
@@ -341,7 +341,7 @@ export default function SIABookingConfirmation({
                                 }`}
                               />
                             ))}
-                            <span className="text-sm text-gray-600 ml-1">
+                            <span className="text-sm text-secondary-600 ml-1">
                               ({bookingData.assignedOfficer.rating}/5)
                             </span>
                           </div>
@@ -385,7 +385,7 @@ export default function SIABookingConfirmation({
                     </h4>
                     <div className="space-y-3">
                       <div>
-                        <div className="flex items-center space-x-2 text-sm text-gray-600 mb-1">
+                        <div className="flex items-center space-x-2 text-sm text-secondary-600 mb-1">
                           <PhoneIcon className="w-4 h-4" />
                           <span>{isPortuguese ? 'Linha de Apoio 24/7:' : '24/7 Support Line:'}</span>
                         </div>
@@ -394,14 +394,14 @@ export default function SIABookingConfirmation({
                         </a>
                       </div>
                       <div>
-                        <div className="flex items-center space-x-2 text-sm text-gray-600 mb-1">
+                        <div className="flex items-center space-x-2 text-sm text-secondary-600 mb-1">
                           <PhoneIcon className="w-4 h-4" />
                           <span>{isPortuguese ? 'Contacto de Emergência:' : 'Emergency Contact:'}</span>
                         </div>
                         <p className="font-medium">{bookingData.emergencyContact}</p>
                       </div>
                       <div>
-                        <div className="flex items-center space-x-2 text-sm text-gray-600 mb-1">
+                        <div className="flex items-center space-x-2 text-sm text-secondary-600 mb-1">
                           <EnvelopeIcon className="w-4 h-4" />
                           <span>{isPortuguese ? 'Email de Apoio:' : 'Support Email:'}</span>
                         </div>
@@ -416,13 +416,13 @@ export default function SIABookingConfirmation({
                   {bookingData.conditions && bookingData.conditions.length > 0 && (
                     <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
                       <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                        <DocumentTextIcon className="w-5 h-5 mr-2 text-blue-600" />
+                        <DocumentTextIcon className="w-5 h-5 mr-2 text-primary-600" />
                         {isPortuguese ? 'Condições Especiais' : 'Special Conditions'}
                       </h4>
                       <ul className="space-y-2">
                         {bookingData.conditions.map((condition, index) => (
                           <li key={index} className="flex items-start space-x-2 text-sm">
-                            <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0" />
+                            <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mt-2 flex-shrink-0" />
                             <span className="text-blue-800">{condition}</span>
                           </li>
                         ))}
@@ -470,7 +470,7 @@ export default function SIABookingConfirmation({
                       ) : (
                         <>
                           <div className="flex items-start space-x-2">
-                            <div className="w-2 h-2 bg-green-600 rounded-full mt-1.5" />
+                            <div className="w-2 h-2 bg-action-600 rounded-full mt-1.5" />
                             <span>
                               {isPortuguese 
                                 ? 'Reserva aprovada e confirmada'
@@ -497,7 +497,7 @@ export default function SIABookingConfirmation({
 
             {/* Footer */}
             <div className="bg-gray-50 px-6 py-4 border-t border-gray-200">
-              <div className="flex items-center justify-between text-sm text-gray-600">
+              <div className="flex items-center justify-between text-sm text-secondary-600">
                 <div>
                   {isPortuguese ? 'Documento gerado em:' : 'Document generated at:'} {currentTime.toLocaleString()}
                 </div>

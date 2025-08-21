@@ -266,10 +266,10 @@ export default function StudentEventsSection() {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'beginner': return 'text-green-600 bg-green-100'
+      case 'beginner': return 'text-action-600 bg-green-100'
       case 'intermediate': return 'text-yellow-600 bg-yellow-100'
-      case 'advanced': return 'text-red-600 bg-red-100'
-      default: return 'text-gray-600 bg-gray-100'
+      case 'advanced': return 'text-coral-600 bg-red-100'
+      default: return 'text-secondary-600 bg-secondary-100'
     }
   }
 
@@ -299,7 +299,7 @@ export default function StudentEventsSection() {
               : 'Academic & Professional Calendar'}
           </h2>
           
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto mb-8">
             {language === 'pt' 
               ? 'Eventos especiais desenhados para estudantes portugueses: workshops de carreira, networking académico, imersão cultural e desenvolvimento profissional'
               : 'Special events designed for Portuguese students: career workshops, academic networking, cultural immersion, and professional development'}
@@ -309,19 +309,19 @@ export default function StudentEventsSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
             <div className="bg-primary-50 rounded-xl p-4">
               <div className="text-2xl font-bold text-primary-600 mb-1">{STUDENT_EVENTS.length}</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Eventos este mês' : 'Events this month'}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Eventos este mês' : 'Events this month'}</div>
             </div>
             <div className="bg-secondary-50 rounded-xl p-4">
               <div className="text-2xl font-bold text-secondary-600 mb-1">£0-15</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Preços estudante' : 'Student prices'}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Preços estudante' : 'Student prices'}</div>
             </div>
             <div className="bg-accent-50 rounded-xl p-4">
               <div className="text-2xl font-bold text-accent-600 mb-1">8</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Universidades' : 'Universities'}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Universidades' : 'Universities'}</div>
             </div>
             <div className="bg-premium-50 rounded-xl p-4">
               <div className="text-2xl font-bold text-premium-600 mb-1">4.8★</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Avaliação média' : 'Average rating'}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Avaliação média' : 'Average rating'}</div>
             </div>
           </div>
         </motion.div>
@@ -336,14 +336,14 @@ export default function StudentEventsSection() {
         >
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-between mb-6">
             <div className="flex items-center gap-2">
-              <FunnelIcon className="w-5 h-5 text-gray-600" />
+              <FunnelIcon className="w-5 h-5 text-secondary-600" />
               <span className="font-medium text-gray-900">
                 {language === 'pt' ? 'Filtros:' : 'Filters:'}
               </span>
             </div>
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className="sm:hidden bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium"
+              className="sm:hidden bg-secondary-100 text-secondary-700 px-4 py-2 rounded-lg font-medium"
             >
               {showFilters ? 
                 (language === 'pt' ? 'Ocultar Filtros' : 'Hide Filters') :
@@ -355,7 +355,7 @@ export default function StudentEventsSection() {
           <div className={`${showFilters ? 'block' : 'hidden'} sm:block space-y-4`}>
             {/* Event Type Filter */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {language === 'pt' ? 'Tipo de Evento:' : 'Event Type:'}
               </label>
               <div className="flex flex-wrap gap-2">
@@ -368,7 +368,7 @@ export default function StudentEventsSection() {
                       className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
                         selectedType === type.value
                           ? 'bg-primary-500 text-white'
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                       }`}
                     >
                       <IconComponent className="w-4 h-4" />
@@ -381,7 +381,7 @@ export default function StudentEventsSection() {
 
             {/* Year Group Filter */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {language === 'pt' ? 'Ano de Estudo:' : 'Year of Study:'}
               </label>
               <div className="flex flex-wrap gap-2">
@@ -392,7 +392,7 @@ export default function StudentEventsSection() {
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                       selectedYear === year.value
                         ? 'bg-secondary-500 text-white'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                     }`}
                   >
                     {year.label[language]}
@@ -452,7 +452,7 @@ export default function StudentEventsSection() {
                     {language === 'pt' ? event.titlePortuguese : event.title}
                   </h3>
 
-                  <div className="space-y-2 mb-4 text-sm text-gray-600">
+                  <div className="space-y-2 mb-4 text-sm text-secondary-600">
                     <div className="flex items-center">
                       <CalendarDaysIcon className="w-4 h-4 mr-2 flex-shrink-0" />
                       {new Date(event.date).toLocaleDateString()} • {event.time}
@@ -469,7 +469,7 @@ export default function StudentEventsSection() {
                     )}
                   </div>
 
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                  <p className="text-secondary-600 text-sm mb-4 leading-relaxed line-clamp-3">
                     {language === 'pt' ? event.descriptionPortuguese : event.description}
                   </p>
 
@@ -480,7 +480,7 @@ export default function StudentEventsSection() {
                     </h4>
                     <div className="flex flex-wrap gap-1">
                       {event.benefits.slice(0, 3).map((benefit, i) => (
-                        <span key={i} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                        <span key={i} className="text-xs bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full">
                           {benefit}
                         </span>
                       ))}
@@ -494,11 +494,11 @@ export default function StudentEventsSection() {
 
                   {/* Capacity & Enrollment */}
                   <div className="mb-4">
-                    <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
+                    <div className="flex items-center justify-between text-sm text-secondary-600 mb-2">
                       <span>{language === 'pt' ? 'Inscrições:' : 'Enrollment:'}</span>
                       <span>{event.enrolled}/{event.capacity}</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="w-full bg-secondary-200 rounded-full h-2">
                       <div 
                         className="bg-primary-500 h-2 rounded-full" 
                         style={{ width: `${(event.enrolled / event.capacity) * 100}%` }}
@@ -559,7 +559,7 @@ export default function StudentEventsSection() {
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
               {language === 'pt' ? 'Nenhum evento encontrado' : 'No events found'}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary-600 mb-6">
               {language === 'pt' 
                 ? 'Tente ajustar os filtros para ver mais eventos.'
                 : 'Try adjusting the filters to see more events.'}
@@ -588,7 +588,7 @@ export default function StudentEventsSection() {
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             {language === 'pt' ? 'Nunca Perca um Evento' : 'Never Miss an Event'}
           </h3>
-          <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+          <p className="text-lg text-secondary-600 mb-6 max-w-2xl mx-auto">
             {language === 'pt' 
               ? 'Receba notificações sobre novos eventos, workshops e oportunidades de networking específicas para a sua área de estudo.'
               : 'Get notified about new events, workshops, and networking opportunities specific to your field of study.'}
@@ -597,7 +597,7 @@ export default function StudentEventsSection() {
             <button className="bg-primary-500 text-white font-semibold px-8 py-3 rounded-xl hover:bg-primary-600 transition-colors">
               {language === 'pt' ? 'Ativar Notificações' : 'Enable Notifications'}
             </button>
-            <button className="border border-gray-300 text-gray-700 font-semibold px-8 py-3 rounded-xl hover:bg-gray-50 transition-colors">
+            <button className="border border-secondary-300 text-secondary-700 font-semibold px-8 py-3 rounded-xl hover:bg-gray-50 transition-colors">
               {language === 'pt' ? 'Ver Calendário Completo' : 'View Full Calendar'}
             </button>
           </div>

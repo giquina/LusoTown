@@ -474,9 +474,9 @@ export default function EventCoordinationSystem({
 
   const getConnectionPotentialColor = (potential: 'high' | 'medium' | 'low') => {
     switch (potential) {
-      case 'high': return 'text-green-600 bg-green-100'
+      case 'high': return 'text-action-600 bg-green-100'
       case 'medium': return 'text-yellow-600 bg-yellow-100'
-      case 'low': return 'text-gray-600 bg-gray-100'
+      case 'low': return 'text-secondary-600 bg-secondary-100'
     }
   }
 
@@ -501,7 +501,7 @@ export default function EventCoordinationSystem({
               <CalendarDaysIcon className="w-6 h-6 text-primary-500" />
               {isPortuguese ? 'Coordenação de Eventos para Matches' : 'Event Coordination for Matches'}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {isPortuguese 
                 ? 'Encontra eventos onde os teus matches estarão presentes'
                 : 'Find events where your matches will be attending'
@@ -513,7 +513,7 @@ export default function EventCoordinationSystem({
             <select
               value={filterCategory}
               onChange={(e) => setFilterCategory(e.target.value as any)}
-              className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400"
+              className="px-3 py-2 border border-secondary-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400"
             >
               <option value="all">{isPortuguese ? 'Todas as Categorias' : 'All Categories'}</option>
               <option value="cultural">{isPortuguese ? 'Cultural' : 'Cultural'}</option>
@@ -526,7 +526,7 @@ export default function EventCoordinationSystem({
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400"
+              className="px-3 py-2 border border-secondary-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400"
             >
               <option value="date">{isPortuguese ? 'Data' : 'Date'}</option>
               <option value="matches">{isPortuguese ? 'Matches Presentes' : 'Matches Attending'}</option>
@@ -561,7 +561,7 @@ export default function EventCoordinationSystem({
             </div>
           </div>
           <div className="text-center p-3 bg-green-50 rounded-lg">
-            <div className="text-xl font-bold text-green-600">
+            <div className="text-xl font-bold text-action-600">
               {filteredEvents.filter(e => e.pricing.isFree).length}
             </div>
             <div className="text-sm text-green-700">
@@ -598,7 +598,7 @@ export default function EventCoordinationSystem({
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">{event.title}</h3>
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
+                      <div className="flex items-center gap-2 text-sm text-secondary-600">
                         <span>{getCategoryLabel(event.category)}</span>
                         {event.organizer.isMatch && (
                           <span className="flex items-center gap-1 bg-primary-100 text-primary-700 px-2 py-1 rounded-full text-xs font-medium">
@@ -607,13 +607,13 @@ export default function EventCoordinationSystem({
                           </span>
                         )}
                         {event.organizer.verified && (
-                          <span className="text-green-600">✓ {isPortuguese ? 'Verificado' : 'Verified'}</span>
+                          <span className="text-action-600">✓ {isPortuguese ? 'Verificado' : 'Verified'}</span>
                         )}
                       </div>
                     </div>
                   </div>
                   
-                  <p className="text-gray-700 mb-4 line-clamp-2">{event.description}</p>
+                  <p className="text-secondary-700 mb-4 line-clamp-2">{event.description}</p>
                 </div>
                 
                 <div className="flex gap-2 ml-4">
@@ -631,8 +631,8 @@ export default function EventCoordinationSystem({
                     onClick={() => onSetReminder(event.id)}
                     className={`p-2 rounded-lg transition-colors ${
                       event.remindersSet 
-                        ? 'text-blue-600 bg-blue-100' 
-                        : 'text-gray-400 hover:text-blue-600 hover:bg-blue-50'
+                        ? 'text-primary-600 bg-blue-100' 
+                        : 'text-gray-400 hover:text-primary-600 hover:bg-blue-50'
                     }`}
                   >
                     {event.remindersSet ? <BellSolidIcon className="w-5 h-5" /> : <BellIcon className="w-5 h-5" />}
@@ -646,7 +646,7 @@ export default function EventCoordinationSystem({
                   <CalendarDaysIcon className="w-5 h-5 text-gray-400" />
                   <div>
                     <div className="font-medium text-gray-900">{formatDate(event.date)}</div>
-                    <div className="text-sm text-gray-600">{event.time}</div>
+                    <div className="text-sm text-secondary-600">{event.time}</div>
                   </div>
                 </div>
                 
@@ -654,7 +654,7 @@ export default function EventCoordinationSystem({
                   <MapPinIcon className="w-5 h-5 text-gray-400" />
                   <div>
                     <div className="font-medium text-gray-900">{event.location.name}</div>
-                    <div className="text-sm text-gray-600">{event.location.area}</div>
+                    <div className="text-sm text-secondary-600">{event.location.area}</div>
                   </div>
                 </div>
                 
@@ -664,7 +664,7 @@ export default function EventCoordinationSystem({
                     <div className="font-medium text-gray-900">
                       {event.pricing.isFree ? (isPortuguese ? 'Grátis' : 'Free') : event.pricing.price}
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-secondary-600">
                       {event.attendees.confirmed}/{event.attendees.capacity} {isPortuguese ? 'confirmados' : 'confirmed'}
                     </div>
                   </div>
@@ -692,7 +692,7 @@ export default function EventCoordinationSystem({
                        event.matchOpportunities.newConnectionPotential === 'medium' ? (isPortuguese ? 'Média' : 'Medium') :
                        (isPortuguese ? 'Baixa' : 'Low')}
                     </span>
-                    <div className="text-sm text-gray-600 mt-1">
+                    <div className="text-sm text-secondary-600 mt-1">
                       {isPortuguese ? 'Probabilidade' : 'Connection Potential'}
                     </div>
                   </div>
@@ -704,21 +704,21 @@ export default function EventCoordinationSystem({
                 <div className="bg-blue-50 rounded-lg p-3 mb-4 border border-blue-200">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <TruckIcon className="w-4 h-4 text-blue-600" />
+                      <TruckIcon className="w-4 h-4 text-primary-600" />
                       <span className="font-medium text-blue-800">
                         {isPortuguese ? 'Transporte Disponível' : 'Transport Available'}
                       </span>
-                      <span className="text-sm text-blue-600">• {event.transport.price}</span>
+                      <span className="text-sm text-primary-600">• {event.transport.price}</span>
                     </div>
                     <button
                       onClick={() => event.transport.pickupPoints && onBookTransport(event.id, event.transport.pickupPoints[0])}
-                      className="text-sm bg-blue-600 text-white px-3 py-1 rounded-lg hover:bg-blue-700 transition-colors"
+                      className="text-sm bg-primary-600 text-white px-3 py-1 rounded-lg hover:bg-primary-700 transition-colors"
                     >
                       {isPortuguese ? 'Reservar' : 'Book'}
                     </button>
                   </div>
                   {event.transport.pickupPoints && (
-                    <div className="text-sm text-blue-600 mt-1">
+                    <div className="text-sm text-primary-600 mt-1">
                       {isPortuguese ? 'Pontos de recolha:' : 'Pickup points:'} {event.transport.pickupPoints.join(', ')}
                     </div>
                   )}
@@ -727,14 +727,14 @@ export default function EventCoordinationSystem({
 
               {/* Event Highlights */}
               <div className="mb-4">
-                <h4 className="text-sm font-medium text-gray-700 mb-2">
+                <h4 className="text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'Destaques' : 'Highlights'}
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {event.highlights.slice(0, 4).map((highlight, idx) => (
                     <div key={idx} className="flex items-center gap-2 text-sm">
-                      <CheckCircleIcon className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-gray-700">{highlight}</span>
+                      <CheckCircleIcon className="w-4 h-4 text-action-500 flex-shrink-0" />
+                      <span className="text-secondary-700">{highlight}</span>
                     </div>
                   ))}
                 </div>
@@ -749,9 +749,9 @@ export default function EventCoordinationSystem({
                 }`}>
                   <div className="flex items-center gap-2">
                     <CheckCircleIcon className={`w-4 h-4 ${
-                      event.rsvpStatus === 'attending' ? 'text-green-600' :
+                      event.rsvpStatus === 'attending' ? 'text-action-600' :
                       event.rsvpStatus === 'interested' ? 'text-yellow-600' :
-                      'text-red-600'
+                      'text-coral-600'
                     }`} />
                     <span className={`text-sm font-medium ${
                       event.rsvpStatus === 'attending' ? 'text-green-800' :
@@ -791,7 +791,7 @@ export default function EventCoordinationSystem({
                   {event.organizer.isMatch && (
                     <button
                       onClick={() => onMessageOrganizer(event.organizer.id)}
-                      className="flex items-center gap-1 px-3 py-2 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-200 transition-colors"
+                      className="flex items-center gap-1 px-3 py-2 bg-blue-100 text-primary-700 rounded-lg text-sm font-medium hover:bg-blue-200 transition-colors"
                     >
                       <ChatBubbleLeftRightIcon className="w-4 h-4" />
                       {isPortuguese ? 'Conversar' : 'Message'}
@@ -811,7 +811,7 @@ export default function EventCoordinationSystem({
                   
                   <button
                     onClick={() => setSelectedEvent(event)}
-                    className="px-3 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors"
+                    className="px-3 py-2 bg-secondary-100 text-secondary-700 rounded-lg text-sm font-medium hover:bg-secondary-200 transition-colors"
                   >
                     {isPortuguese ? 'Ver Detalhes' : 'View Details'}
                   </button>
@@ -826,7 +826,7 @@ export default function EventCoordinationSystem({
       {filteredEvents.length === 0 && (
         <div className="text-center py-12">
           <CalendarDaysIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold text-gray-700 mb-2">
+          <h3 className="text-xl font-semibold text-secondary-700 mb-2">
             {isPortuguese ? 'Nenhum Evento Encontrado' : 'No Events Found'}
           </h3>
           <p className="text-gray-500">
@@ -862,7 +862,7 @@ export default function EventCoordinationSystem({
                   </h3>
                   <button
                     onClick={() => setSelectedEvent(null)}
-                    className="text-gray-500 hover:text-gray-700"
+                    className="text-gray-500 hover:text-secondary-700"
                   >
                     ✕
                   </button>
@@ -870,7 +870,7 @@ export default function EventCoordinationSystem({
                 
                 {/* Detailed event content would go here */}
                 <div className="text-center py-8">
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPortuguese 
                       ? 'Detalhes completos do evento, lista de participantes, e opções de coordenação...'
                       : 'Full event details, attendee list, and coordination options...'

@@ -1,8 +1,11 @@
 'use client'
 
 import React, { useState } from 'react'
+import { SOCIAL_URLS } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { SOCIAL_URLS } from '@/config'
 import { SocialPost } from './SocialFeed'
+import { SOCIAL_URLS } from '@/config'
 import { 
   Heart,
   MessageCircle,
@@ -54,7 +57,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
         )
       default:
         return (
-          <div className="flex items-center space-x-1 px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
+          <div className="flex items-center space-x-1 px-2 py-1 bg-secondary-100 text-secondary-600 rounded-full text-xs">
             <User className="w-3 h-3" />
             <span>{t('membership.free') || 'Free Member'}</span>
           </div>
@@ -149,18 +152,18 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
           <div className="relative">
             <button
               onClick={() => setShowMoreMenu(!showMoreMenu)}
-              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="p-2 hover:bg-secondary-100 rounded-lg transition-colors"
             >
               <MoreHorizontal className="w-4 h-4 text-gray-400" />
             </button>
 
             {showMoreMenu && (
               <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-10">
-                <button className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center space-x-2">
+                <button className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-gray-50 flex items-center space-x-2">
                   <Flag className="w-4 h-4" />
                   <span>{t('post.report') || 'Report Post'}</span>
                 </button>
-                <button className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center space-x-2">
+                <button className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-gray-50 flex items-center space-x-2">
                   <ExternalLink className="w-4 h-4" />
                   <span>{t('post.view_profile') || 'View Profile'}</span>
                 </button>
@@ -197,7 +200,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
               />
               <div className="p-4">
                 <h5 className="font-medium text-gray-900 mb-1">{post.linkPreview.title}</h5>
-                <p className="text-sm text-gray-600 mb-2">{post.linkPreview.description}</p>
+                <p className="text-sm text-secondary-600 mb-2">{post.linkPreview.description}</p>
                 <a
                   href={post.linkPreview.url}
                   target="_blank"
@@ -291,8 +294,8 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
               onClick={() => onInteraction(post.id, 'like')}
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
                 post.userInteractions.liked
-                  ? 'bg-red-50 text-red-600 hover:bg-red-100'
-                  : 'text-gray-600 hover:bg-gray-50'
+                  ? 'bg-red-50 text-coral-600 hover:bg-red-100'
+                  : 'text-secondary-600 hover:bg-gray-50'
               }`}
             >
               <Heart className={`w-4 h-4 ${post.userInteractions.liked ? 'fill-current' : ''}`} />
@@ -302,7 +305,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
             </button>
 
             {/* Comment Button */}
-            <button className="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors">
+            <button className="flex items-center space-x-2 px-4 py-2 text-secondary-600 hover:bg-gray-50 rounded-lg transition-colors">
               <MessageCircle className="w-4 h-4" />
               <span className="text-sm font-medium">
                 {t('post.comment') || 'Comment'}
@@ -313,7 +316,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
             <div className="relative">
               <button
                 onClick={() => setShowShareMenu(!showShareMenu)}
-                className="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
+                className="flex items-center space-x-2 px-4 py-2 text-secondary-600 hover:bg-gray-50 rounded-lg transition-colors"
               >
                 <Share2 className="w-4 h-4" />
                 <span className="text-sm font-medium">
@@ -325,21 +328,21 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
                 <div className="absolute left-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-10">
                   <button
                     onClick={() => handleShare('twitter')}
-                    className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center space-x-2"
+                    className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-gray-50 flex items-center space-x-2"
                   >
                     <Twitter className="w-4 h-4" />
                     <span>{t('post.share_twitter') || 'Share on Twitter'}</span>
                   </button>
                   <button
                     onClick={() => handleShare('facebook')}
-                    className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center space-x-2"
+                    className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-gray-50 flex items-center space-x-2"
                   >
                     <Facebook className="w-4 h-4" />
                     <span>{t('post.share_facebook') || 'Share on Facebook'}</span>
                   </button>
                   <button
                     onClick={() => handleShare('copy')}
-                    className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center space-x-2"
+                    className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-gray-50 flex items-center space-x-2"
                   >
                     <Copy className="w-4 h-4" />
                     <span>{t('post.copy_link') || 'Copy Link'}</span>
@@ -355,7 +358,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
             className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
               post.userInteractions.saved
                 ? 'bg-amber-50 text-amber-600 hover:bg-amber-100'
-                : 'text-gray-600 hover:bg-gray-50'
+                : 'text-secondary-600 hover:bg-gray-50'
             }`}
           >
             <Bookmark className={`w-4 h-4 ${post.userInteractions.saved ? 'fill-current' : ''}`} />

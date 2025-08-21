@@ -176,7 +176,7 @@ export default function EnhancedMatchCard({
 
         {/* Verification Badge */}
         {profile.isVerified && (
-          <div className="absolute top-16 right-4 bg-green-500 text-white px-2 py-1 rounded-full shadow-lg">
+          <div className="absolute top-16 right-4 bg-action-500 text-white px-2 py-1 rounded-full shadow-lg">
             <CheckCircleIcon className="w-4 h-4" />
           </div>
         )}
@@ -184,7 +184,7 @@ export default function EnhancedMatchCard({
         {/* Activity Status */}
         <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full border border-primary-100">
           <div className="flex items-center gap-1">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+            <div className="w-2 h-2 bg-action-500 rounded-full"></div>
             <span className="text-xs font-medium text-primary-700">
               {language === "pt" ? "Ativo recentemente" : "Recently active"}
             </span>
@@ -318,13 +318,13 @@ export default function EnhancedMatchCard({
                 </h5>
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-3 h-3 text-green-500" />
+                    <CheckCircleIcon className="w-3 h-3 text-action-500" />
                     <span className="text-xs text-secondary-700">
                       {language === "pt" ? "Herança portuguesa partilhada" : "Shared Portuguese heritage"}
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-3 h-3 text-blue-500" />
+                    <CheckCircleIcon className="w-3 h-3 text-primary-500" />
                     <span className="text-xs text-secondary-700">
                       {language === "pt" ? "Interesses culturais similares" : "Similar cultural interests"}
                     </span>
@@ -397,12 +397,12 @@ export default function EnhancedMatchCard({
 
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
               <div className="flex items-center gap-2 mb-2">
-                <CheckCircleIcon className="w-4 h-4 text-blue-600" />
+                <CheckCircleIcon className="w-4 h-4 text-primary-600" />
                 <span className="text-sm font-semibold text-blue-800">
                   {language === "pt" ? "Sistema de Segurança TikTok-Style" : "TikTok-Style Safety System"}
                 </span>
               </div>
-              <p className="text-xs text-blue-700">
+              <p className="text-xs text-primary-700">
                 {language === "pt"
                   ? "As mensagens só ficam disponíveis quando há interesse mútuo ou quando participam em eventos juntos, garantindo conexões autênticas e seguras."
                   : "Messages only unlock when there's mutual interest or when you attend events together, ensuring authentic and safe connections."}
@@ -416,7 +416,7 @@ export default function EnhancedMatchCard({
                   className="border border-gray-200 rounded-xl p-3 bg-gray-50 opacity-60"
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                    <p className="text-sm text-secondary-600 leading-relaxed flex-1">
                       "{starter.text}"
                     </p>
                     <div className="flex items-center gap-1 ml-2">
@@ -427,7 +427,7 @@ export default function EnhancedMatchCard({
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded-lg">
+                    <span className="text-xs bg-secondary-200 text-secondary-600 px-2 py-1 rounded-lg">
                       {starter.category}
                     </span>
                     <span className="text-xs text-gray-400">
@@ -444,11 +444,11 @@ export default function EnhancedMatchCard({
               </h5>
               <div className="space-y-2 text-sm text-primary-700">
                 <div className="flex items-center gap-2">
-                  <HeartIcon className="w-4 h-4 text-red-500" />
+                  <HeartIcon className="w-4 h-4 text-coral-500" />
                   <span>{language === "pt" ? "Match mútuo (ambos gostam)" : "Mutual match (both like each other)"}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CalendarDaysIcon className="w-4 h-4 text-blue-500" />
+                  <CalendarDaysIcon className="w-4 h-4 text-primary-500" />
                   <span>{language === "pt" ? "Participar em eventos juntos" : "Attend events together"}</span>
                 </div>
               </div>
@@ -462,7 +462,7 @@ export default function EnhancedMatchCard({
             onClick={() => onSkip(profile.id)}
             className="w-16 h-16 bg-white border-3 border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 group"
           >
-            <XMarkIcon className="w-8 h-8 text-gray-600 group-hover:text-red-600 transition-colors" />
+            <XMarkIcon className="w-8 h-8 text-secondary-600 group-hover:text-coral-600 transition-colors" />
           </button>
 
           <button

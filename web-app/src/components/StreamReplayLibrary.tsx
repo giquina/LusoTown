@@ -402,7 +402,7 @@ export default function StreamReplayLibrary({
             }
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            className="w-full pl-10 pr-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           />
         </div>
 
@@ -410,7 +410,7 @@ export default function StreamReplayLibrary({
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            className="px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           >
             <option value="recent">
               {language === "pt" ? "Mais Recentes" : "Most Recent"}
@@ -425,7 +425,7 @@ export default function StreamReplayLibrary({
 
           <button
             onClick={() => setShowFilters(!showFilters)}
-            className="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+            className="px-3 py-2 border border-secondary-300 rounded-lg hover:bg-gray-50 transition-colors"
           >
             <FunnelIcon className="w-4 h-4" />
           </button>
@@ -461,7 +461,7 @@ export default function StreamReplayLibrary({
                 className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all duration-200 group"
               >
                 {/* Thumbnail */}
-                <div className="relative aspect-video bg-gray-200">
+                <div className="relative aspect-video bg-secondary-200">
                   <Image
                     src={replay.thumbnail || "/events/networking.jpg"}
                     alt={replay.title}
@@ -504,7 +504,7 @@ export default function StreamReplayLibrary({
                     </h3>
                   </div>
 
-                  <p className="text-xs text-gray-600 line-clamp-2 mb-3">
+                  <p className="text-xs text-secondary-600 line-clamp-2 mb-3">
                     {replay.description}
                   </p>
 
@@ -543,7 +543,7 @@ export default function StreamReplayLibrary({
                       {replay.tags.slice(0, 2).map((tag) => (
                         <span
                           key={tag}
-                          className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded-full"
+                          className="px-2 py-0.5 bg-secondary-100 text-secondary-600 text-xs rounded-full"
                         >
                           #{tag}
                         </span>
@@ -552,7 +552,7 @@ export default function StreamReplayLibrary({
 
                     <div className="flex items-center gap-2">
                       <button
-                        className="p-1.5 text-gray-400 hover:text-gray-600 transition-colors"
+                        className="p-1.5 text-gray-400 hover:text-secondary-600 transition-colors"
                         title={language === "pt" ? "Guardar" : "Save"}
                       >
                         <BookmarkIcon className="w-4 h-4" />
@@ -590,7 +590,7 @@ export default function StreamReplayLibrary({
                   ? "Mais Conteúdo Disponível"
                   : "More Content Available"}
               </div>
-              <div className="text-xs text-gray-600">
+              <div className="text-xs text-secondary-600">
                 {language === "pt"
                   ? "Torne-se membro premium para aceder a replays exclusivos de workshops de negócios e mesas redondas VIP."
                   : "Become a premium member to access exclusive replays of business workshops and VIP roundtables."}
@@ -640,7 +640,7 @@ export default function StreamReplayLibrary({
                 <h2 className="text-xl font-bold text-gray-900 mb-2">
                   {selectedReplay.title}
                 </h2>
-                <p className="text-gray-600 mb-4">
+                <p className="text-secondary-600 mb-4">
                   {selectedReplay.description}
                 </p>
 
@@ -685,7 +685,7 @@ export default function StreamReplayLibrary({
                   </div>
                   <button
                     onClick={() => setSelectedReplay(null)}
-                    className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors"
+                    className="px-4 py-2 text-secondary-600 hover:text-secondary-800 transition-colors"
                   >
                     {language === "pt" ? "Fechar" : "Close"}
                   </button>

@@ -78,8 +78,8 @@ export default function ReferralWidget({
     return (
       <div className={`bg-white rounded-lg shadow-sm border animate-pulse ${className}`}>
         <div className="p-4">
-          <div className="h-4 bg-gray-200 rounded mb-2"></div>
-          <div className="h-6 bg-gray-200 rounded"></div>
+          <div className="h-4 bg-secondary-200 rounded mb-2"></div>
+          <div className="h-6 bg-secondary-200 rounded"></div>
         </div>
       </div>
     )
@@ -91,11 +91,11 @@ export default function ReferralWidget({
         <div className="p-4">
           <div className="flex items-center gap-3 mb-3">
             <div className="bg-red-100 p-2 rounded-lg">
-              <Users className="h-5 w-5 text-red-600" />
+              <Users className="h-5 w-5 text-coral-600" />
             </div>
             <div>
               <h3 className="font-semibold text-gray-900">{t('referral.title')}</h3>
-              <p className="text-sm text-gray-600">{language === 'pt' ? 'Convide amigos e ganhe' : 'Invite friends and earn'}</p>
+              <p className="text-sm text-secondary-600">{language === 'pt' ? 'Convide amigos e ganhe' : 'Invite friends and earn'}</p>
             </div>
           </div>
 
@@ -103,11 +103,11 @@ export default function ReferralWidget({
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-xs text-gray-500 mb-1">{t('referral.code.title')}</p>
-                <p className="font-bold text-red-600 text-lg tracking-wider">{userCode}</p>
+                <p className="font-bold text-coral-600 text-lg tracking-wider">{userCode}</p>
               </div>
               <button
                 onClick={copyCode}
-                className="bg-red-600 text-white p-2 rounded-lg hover:bg-red-700 transition-colors"
+                className="bg-coral-600 text-white p-2 rounded-lg hover:bg-red-700 transition-colors"
               >
                 <Copy className="h-4 w-4" />
               </button>
@@ -117,12 +117,12 @@ export default function ReferralWidget({
           {showStats && stats && (
             <div className="grid grid-cols-2 gap-3 mb-3">
               <div className="bg-white/50 rounded-lg p-2 text-center">
-                <p className="text-lg font-bold text-green-600">{stats.completedReferrals}</p>
-                <p className="text-xs text-gray-600">{language === 'pt' ? 'Amigos' : 'Friends'}</p>
+                <p className="text-lg font-bold text-action-600">{stats.completedReferrals}</p>
+                <p className="text-xs text-secondary-600">{language === 'pt' ? 'Amigos' : 'Friends'}</p>
               </div>
               <div className="bg-white/50 rounded-lg p-2 text-center">
-                <p className="text-lg font-bold text-blue-600">£{stats.totalEarnings}</p>
-                <p className="text-xs text-gray-600">{language === 'pt' ? 'Ganhos' : 'Earned'}</p>
+                <p className="text-lg font-bold text-primary-600">£{stats.totalEarnings}</p>
+                <p className="text-xs text-secondary-600">{language === 'pt' ? 'Ganhos' : 'Earned'}</p>
               </div>
             </div>
           )}
@@ -130,14 +130,14 @@ export default function ReferralWidget({
           <div className="grid grid-cols-2 gap-2">
             <button
               onClick={shareWhatsApp}
-              className="bg-green-500 text-white p-2 rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center gap-1 text-sm"
+              className="bg-action-500 text-white p-2 rounded-lg hover:bg-action-600 transition-colors flex items-center justify-center gap-1 text-sm"
             >
               <MessageCircle className="h-4 w-4" />
               <span>WhatsApp</span>
             </button>
             <button
               onClick={copyShareLink}
-              className="bg-red-600 text-white p-2 rounded-lg hover:bg-red-700 transition-colors flex items-center justify-center gap-1 text-sm"
+              className="bg-coral-600 text-white p-2 rounded-lg hover:bg-red-700 transition-colors flex items-center justify-center gap-1 text-sm"
             >
               <Share2 className="h-4 w-4" />
               <span>{language === 'pt' ? 'Link' : 'Share'}</span>
@@ -164,11 +164,11 @@ export default function ReferralWidget({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg text-center">
               <p className="text-2xl font-bold text-blue-900">{stats.completedReferrals}</p>
-              <p className="text-sm text-blue-600">{t('referral.stats.completed-referrals')}</p>
+              <p className="text-sm text-primary-600">{t('referral.stats.completed-referrals')}</p>
             </div>
             <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg text-center">
               <p className="text-2xl font-bold text-green-900">£{stats.totalEarnings}</p>
-              <p className="text-sm text-green-600">{t('referral.stats.total-earnings')}</p>
+              <p className="text-sm text-action-600">{t('referral.stats.total-earnings')}</p>
             </div>
             <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg text-center">
               <p className="text-2xl font-bold text-purple-900">{stats.activeReferrals}</p>
@@ -181,11 +181,11 @@ export default function ReferralWidget({
           <h3 className="font-semibold mb-3">{t('referral.code.title')}</h3>
           <div className="flex items-center gap-3">
             <div className="bg-white border-2 border-dashed border-red-300 rounded-lg px-4 py-3 flex-1">
-              <span className="text-xl font-bold text-red-600 tracking-wider">{userCode}</span>
+              <span className="text-xl font-bold text-coral-600 tracking-wider">{userCode}</span>
             </div>
             <button
               onClick={copyCode}
-              className="bg-red-600 text-white px-4 py-3 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2"
+              className="bg-coral-600 text-white px-4 py-3 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2"
             >
               <Copy className="h-4 w-4" />
               <span className="hidden sm:inline">{language === 'pt' ? 'Copiar' : 'Copy'}</span>
@@ -198,14 +198,14 @@ export default function ReferralWidget({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <button
               onClick={shareWhatsApp}
-              className="bg-green-500 text-white p-3 rounded-lg hover:bg-green-600 transition-colors flex items-center gap-3"
+              className="bg-action-500 text-white p-3 rounded-lg hover:bg-action-600 transition-colors flex items-center gap-3"
             >
               <MessageCircle className="h-5 w-5" />
               <span>{t('referral.share.whatsapp')}</span>
             </button>
             <button
               onClick={copyShareLink}
-              className="bg-red-600 text-white p-3 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-3"
+              className="bg-coral-600 text-white p-3 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-3"
             >
               <Share2 className="h-5 w-5" />
               <span>{t('referral.share.link')}</span>

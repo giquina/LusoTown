@@ -27,20 +27,20 @@ function ReferralsPageInner() {
         <main className="container mx-auto px-4 pt-24 pb-8">
           <div className="max-w-2xl mx-auto text-center">
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <Users className="h-16 w-16 text-red-600 mx-auto mb-4" />
+              <Users className="h-16 w-16 text-coral-600 mx-auto mb-4" />
               <h1 className="text-2xl font-bold text-gray-900 mb-4">
                 {language === "pt"
                   ? "Faça login para continuar"
                   : "Please log in to continue"}
               </h1>
-              <p className="text-gray-600 mb-6">
+              <p className="text-secondary-600 mb-6">
                 {language === "pt"
                   ? "Acesse o seu painel de indicações e comece a ganhar recompensas."
                   : "Access your referral dashboard and start earning rewards."}
               </p>
               <a
                 href={ROUTES.login}
-                className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors inline-flex items-center gap-2"
+                className="bg-coral-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors inline-flex items-center gap-2"
               >
                 {language === "pt" ? "Fazer Login" : "Log In"}
               </a>

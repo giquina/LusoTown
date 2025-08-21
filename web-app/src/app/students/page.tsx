@@ -618,7 +618,7 @@ export default function StudentsPage() {
       <div className="pt-16">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-          <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/university-students-london_q8w9xr.jpg')] bg-cover bg-center opacity-10"></div>
+          <div className="absolute inset-0 bg-[url(buildCloudinaryUrl('dqhbeqttp/image/upload/v1734535201/university-students-london_q8w9xr.jpg'))] bg-cover bg-center opacity-10"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
           <div className="relative container-width py-16 lg:py-24">
             <div className="text-center max-w-4xl mx-auto">
@@ -690,7 +690,7 @@ export default function StudentsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+                className="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto"
               >
                 {/* Desktop full subtitle */}
                 <span className="hidden sm:block">
@@ -712,7 +712,7 @@ export default function StudentsPage() {
                 transition={{ duration: 0.6, delay: 0.25 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6"
               >
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-secondary-600">
                   <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                   <span>
                     {language === 'pt'
@@ -720,7 +720,7 @@ export default function StudentsPage() {
                       : `${communityStats.viewers} Portuguese Students`}
                   </span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-secondary-600">
                   <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
                   <span>
                     {language === 'pt'
@@ -728,7 +728,7 @@ export default function StudentsPage() {
                       : "50% Membership Discount"}
                   </span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-secondary-600">
                   <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
                   <span>
                     {language === 'pt'
@@ -752,7 +752,7 @@ export default function StudentsPage() {
                 </button>
                 <button
                   onClick={() => document.getElementById('partner-universities')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="border border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="border border-secondary-300 text-secondary-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   {language === 'pt' ? "Ver Universidades Parceiras" : "View Partner Universities"}
                 </button>
@@ -767,19 +767,19 @@ export default function StudentsPage() {
               >
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                   <div className="text-2xl font-bold text-primary-600 mb-1">{communityStats.viewers}</div>
-                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Estudantes Portugueses no Reino Unido' : 'Portuguese Students in UK'}</div>
+                  <div className="text-xs text-secondary-600">{language === 'pt' ? 'Estudantes Portugueses no Reino Unido' : 'Portuguese Students in UK'}</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                   <div className="text-2xl font-bold text-secondary-600 mb-1">8</div>
-                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Universidades Parceiras' : 'Partner Universities'}</div>
+                  <div className="text-xs text-secondary-600">{language === 'pt' ? 'Universidades Parceiras' : 'Partner Universities'}</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                   <div className="text-2xl font-bold text-accent-600 mb-1">50%</div>
-                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Desconto Estudante' : 'Student Discount'}</div>
+                  <div className="text-xs text-secondary-600">{language === 'pt' ? 'Desconto Estudante' : 'Student Discount'}</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                   <div className="text-2xl font-bold text-premium-600 mb-1">£9.99</div>
-                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Por mês (estudante)' : 'Per month (student)'}</div>
+                  <div className="text-xs text-secondary-600">{language === 'pt' ? 'Por mês (estudante)' : 'Per month (student)'}</div>
                 </div>
               </motion.div>
             </div>
@@ -793,7 +793,7 @@ export default function StudentsPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {language === 'pt' ? 'Benefícios Exclusivos para Estudantes' : 'Exclusive Student Benefits'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto mb-8">
                 {language === 'pt' ?
                   'Descontos especiais, eventos exclusivos e apoio acadêmico para estudantes portugueses que estudam em universidades de Londres e do Reino Unido' :
                   'Special discounts, exclusive events, and academic support for Portuguese students studying at London and UK universities'
@@ -809,7 +809,7 @@ export default function StudentsPage() {
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                       selectedBenefitCategory === category.value
                         ? 'bg-primary-500 text-white'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                     }`}
                   >
                     {category.label[language]}
@@ -829,7 +829,7 @@ export default function StudentsPage() {
                         benefit.category === 'academic' ? 'bg-primary-100 text-primary-600' :
                         benefit.category === 'professional' ? 'bg-premium-100 text-premium-600' :
                         benefit.category === 'cultural' ? 'bg-coral-100 text-coral-600' :
-                        'bg-gray-100 text-gray-600'
+                        'bg-secondary-100 text-secondary-600'
                       }`}>
                         {benefit.category === 'financial' && <BanknotesIcon className="w-6 h-6" />}
                         {benefit.category === 'academic' && <BookOpenIcon className="w-6 h-6" />}
@@ -848,7 +848,7 @@ export default function StudentsPage() {
                       {language === 'pt' ? benefit.titlePortuguese : benefit.title}
                     </h3>
                     
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                    <p className="text-secondary-600 text-sm mb-4 leading-relaxed">
                       {language === 'pt' ? benefit.descriptionPortuguese : benefit.description}
                     </p>
                     
@@ -857,7 +857,7 @@ export default function StudentsPage() {
                         {language === 'pt' ? 'Elegibilidade:' : 'Eligibility:'}
                       </div>
                       {benefit.eligibility.slice(0, 2).map((req, index) => (
-                        <div key={index} className="flex items-center text-xs text-gray-600">
+                        <div key={index} className="flex items-center text-xs text-secondary-600">
                           <CheckIconSolid className="w-3 h-3 text-secondary-500 mr-2 flex-shrink-0" />
                           {req}
                         </div>
@@ -887,15 +887,15 @@ export default function StudentsPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                   <div className="text-3xl font-bold text-secondary-600 mb-2">£800+</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Valor anual em benefícios' : 'Annual value in benefits'}</div>
+                  <div className="text-sm text-secondary-600">{language === 'pt' ? 'Valor anual em benefícios' : 'Annual value in benefits'}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary-600 mb-2">£9.99</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Custo anual para estudantes' : 'Annual cost for students'}</div>
+                  <div className="text-sm text-secondary-600">{language === 'pt' ? 'Custo anual para estudantes' : 'Annual cost for students'}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-secondary-600 mb-2">6400%</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Retorno do investimento' : 'Return on investment'}</div>
+                  <div className="text-sm text-secondary-600">{language === 'pt' ? 'Retorno do investimento' : 'Return on investment'}</div>
                 </div>
               </div>
             </div>
@@ -909,7 +909,7 @@ export default function StudentsPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {language === 'pt' ? 'Universidades Parceiras no Reino Unido' : 'UK Partner Universities'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto mb-8">
                 {language === 'pt' ?
                   'Colaboramos com as principais universidades de Londres e do Reino Unido para apoiar estudantes portugueses e programas de estudos portugueses' :
                   'We collaborate with leading London and UK universities to support Portuguese students and Portuguese studies programs'
@@ -925,7 +925,7 @@ export default function StudentsPage() {
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                       selectedUniversityType === type.value
                         ? 'bg-primary-500 text-white'
-                        : 'bg-white text-gray-700 hover:bg-gray-100'
+                        : 'bg-white text-secondary-700 hover:bg-secondary-100'
                     }`}
                   >
                     {type.label[language]}
@@ -965,7 +965,7 @@ export default function StudentsPage() {
                       <h3 className="font-bold text-lg text-gray-900 mb-2">
                         {language === 'pt' ? university.namePortuguese : university.name}
                       </h3>
-                      <div className="flex items-center text-sm text-gray-600 mb-3">
+                      <div className="flex items-center text-sm text-secondary-600 mb-3">
                         <MapPinIcon className="w-4 h-4 mr-1" />
                         {university.location}
                         <span className="mx-2">•</span>
@@ -977,15 +977,15 @@ export default function StudentsPage() {
                     <div className="grid grid-cols-3 gap-3 mb-4 text-center">
                       <div className="bg-gray-50 rounded-lg p-2">
                         <div className="text-lg font-bold text-primary-600">{university.portugueseStudents}</div>
-                        <div className="text-xs text-gray-600">{language === 'pt' ? 'Estudantes PT' : 'PT Students'}</div>
+                        <div className="text-xs text-secondary-600">{language === 'pt' ? 'Estudantes PT' : 'PT Students'}</div>
                       </div>
                       <div className="bg-gray-50 rounded-lg p-2">
                         <div className="text-lg font-bold text-secondary-600">{(university.internationalStudents/1000).toFixed(0)}k</div>
-                        <div className="text-xs text-gray-600">{language === 'pt' ? 'Internacionais' : 'International'}</div>
+                        <div className="text-xs text-secondary-600">{language === 'pt' ? 'Internacionais' : 'International'}</div>
                       </div>
                       <div className="bg-gray-50 rounded-lg p-2">
                         <div className="text-lg font-bold text-accent-600">{(university.studentPopulation/1000).toFixed(0)}k</div>
-                        <div className="text-xs text-gray-600">{language === 'pt' ? 'Total' : 'Total'}</div>
+                        <div className="text-xs text-secondary-600">{language === 'pt' ? 'Total' : 'Total'}</div>
                       </div>
                     </div>
                     
@@ -998,7 +998,7 @@ export default function StudentsPage() {
                         </h4>
                         <div className="space-y-1 text-sm">
                           {university.programs.undergraduate.slice(0, 2).map((program, index) => (
-                            <div key={index} className="text-gray-600">• {program}</div>
+                            <div key={index} className="text-secondary-600">• {program}</div>
                           ))}
                           {university.programs.undergraduate.length > 2 && (
                             <div className="text-primary-600 text-xs">
@@ -1017,7 +1017,7 @@ export default function StudentsPage() {
                       </h4>
                       <div className="space-y-1">
                         {university.benefits.slice(0, 2).map((benefit, index) => (
-                          <div key={index} className="flex items-start text-sm text-gray-600">
+                          <div key={index} className="flex items-start text-sm text-secondary-600">
                             <CheckIconSolid className="w-3 h-3 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" />
                             {benefit}
                           </div>
@@ -1032,7 +1032,7 @@ export default function StudentsPage() {
                       </h4>
                       <div className="text-sm">
                         <p className="font-medium text-gray-900">{university.contact.name}</p>
-                        <p className="text-gray-600 text-xs">{university.contact.title}</p>
+                        <p className="text-secondary-600 text-xs">{university.contact.title}</p>
                       </div>
                     </div>
                     
@@ -1045,7 +1045,7 @@ export default function StudentsPage() {
                         href={university.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-3 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-all duration-200 min-h-[44px] shadow-lg hover:shadow-xl"
+                        className="px-3 py-3 bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-all duration-200 min-h-[44px] shadow-lg hover:shadow-xl"
                       >
                         <LinkIcon className="w-4 h-4" />
                       </a>
@@ -1063,19 +1063,19 @@ export default function StudentsPage() {
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary-600 mb-2">{communityStats.viewers}</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Estudantes Portugueses Apoiados' : 'Portuguese Students Supported'}</div>
+                  <div className="text-sm text-secondary-600">{language === 'pt' ? 'Estudantes Portugueses Apoiados' : 'Portuguese Students Supported'}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-secondary-600 mb-2">45</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Programas de Estudos Portugueses' : 'Portuguese Studies Programs'}</div>
+                  <div className="text-sm text-secondary-600">{language === 'pt' ? 'Programas de Estudos Portugueses' : 'Portuguese Studies Programs'}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-accent-600 mb-2">£1.7M</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Valor em Benefícios Estudantis' : 'Value in Student Benefits'}</div>
+                  <div className="text-sm text-secondary-600">{language === 'pt' ? 'Valor em Benefícios Estudantis' : 'Value in Student Benefits'}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-premium-600 mb-2">92%</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Satisfação dos Estudantes' : 'Student Satisfaction'}</div>
+                  <div className="text-sm text-secondary-600">{language === 'pt' ? 'Satisfação dos Estudantes' : 'Student Satisfaction'}</div>
                 </div>
               </div>
             </div>
@@ -1107,7 +1107,7 @@ export default function StudentsPage() {
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                   {language === 'pt' ? 'Como Verificar o Seu Status de Estudante' : 'How to Verify Your Student Status'}
                 </h2>
-                <p className="text-xl text-gray-600">
+                <p className="text-xl text-secondary-600">
                   {language === 'pt' ?
                     'Processo simples e seguro para verificar o seu email universitário e desbloquear benefícios exclusivos' :
                     'Simple and secure process to verify your university email and unlock exclusive benefits'
@@ -1124,7 +1124,7 @@ export default function StudentsPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {language === 'pt' ? '1. Email Universitário' : '1. University Email'}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {language === 'pt' ?
                       'Use o seu email universitário oficial (.ac.uk) para verificação automática' :
                       'Use your official university email (.ac.uk) for automatic verification'
@@ -1139,7 +1139,7 @@ export default function StudentsPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {language === 'pt' ? '2. Documentação' : '2. Documentation'}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {language === 'pt' ?
                       'Carregue uma cópia do seu cartão de estudante ou carta de confirmação' :
                       'Upload a copy of your student ID or confirmation letter'
@@ -1154,7 +1154,7 @@ export default function StudentsPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {language === 'pt' ? '3. Aprovação' : '3. Approval'}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {language === 'pt' ?
                       'Verificação em 24-48 horas e acesso imediato aos benefícios' :
                       'Verification within 24-48 hours and immediate access to benefits'
@@ -1182,7 +1182,7 @@ export default function StudentsPage() {
                       ].map((doc, index) => (
                         <div key={index} className="flex items-start">
                           <CheckIconSolid className="w-4 h-4 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-gray-600">{doc}</span>
+                          <span className="text-sm text-secondary-600">{doc}</span>
                         </div>
                       ))}
                     </div>
@@ -1200,7 +1200,7 @@ export default function StudentsPage() {
                       ].map((req, index) => (
                         <div key={index} className="flex items-start">
                           <CheckIconSolid className="w-4 h-4 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-gray-600">{req}</span>
+                          <span className="text-sm text-secondary-600">{req}</span>
                         </div>
                       ))}
                     </div>
@@ -1236,7 +1236,7 @@ export default function StudentsPage() {
                 </p>
                 <button 
                   onClick={handleVerification}
-                  className="bg-white text-primary-600 font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="bg-white text-primary-600 font-bold px-8 py-3 rounded-lg hover:bg-secondary-100 transition-colors"
                 >
                   {language === 'pt' ? 'Iniciar Verificação' : 'Start Verification'}
                 </button>
@@ -1252,7 +1252,7 @@ export default function StudentsPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {language === 'pt' ? 'O Que Dizem os Nossos Estudantes' : 'What Our Students Say'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
                 {language === 'pt' ?
                   'Histórias de sucesso de estudantes portugueses que encontraram a sua comunidade através da LusoTown' :
                   'Success stories from Portuguese students who found their community through LusoTown'
@@ -1296,12 +1296,12 @@ export default function StudentsPage() {
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                      <p className="text-sm text-gray-600">{testimonial.university}</p>
+                      <p className="text-sm text-secondary-600">{testimonial.university}</p>
                       <p className="text-xs text-primary-600">{testimonial.year}</p>
                     </div>
                   </div>
                   
-                  <blockquote className="text-gray-700 italic mb-4 leading-relaxed">
+                  <blockquote className="text-secondary-700 italic mb-4 leading-relaxed">
                     "{language === 'pt' ? testimonial.quote : testimonial.quoteEn}"
                   </blockquote>
                   
@@ -1311,7 +1311,7 @@ export default function StudentsPage() {
                     </h5>
                     <div className="space-y-1">
                       {testimonial.benefits.map((benefit, benefitIndex) => (
-                        <div key={benefitIndex} className="flex items-center text-xs text-gray-600">
+                        <div key={benefitIndex} className="flex items-center text-xs text-secondary-600">
                           <CheckIconSolid className="w-3 h-3 text-secondary-500 mr-2 flex-shrink-0" />
                           {benefit}
                         </div>
@@ -1360,7 +1360,7 @@ export default function StudentsPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <button 
                   onClick={handleVerification}
-                  className="bg-white text-primary-600 font-bold py-4 px-8 rounded-xl hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-200 group"
+                  className="bg-white text-primary-600 font-bold py-4 px-8 rounded-xl hover:bg-secondary-100 shadow-xl hover:shadow-2xl transition-all duration-200 group"
                 >
                   <span className="flex items-center justify-center">
                     {language === 'pt' ? 'Verificar Email Universitário' : 'Verify University Email'}
@@ -1406,7 +1406,7 @@ export default function StudentsPage() {
                   </h3>
                   <button 
                     onClick={() => setShowVerificationModal(false)}
-                    className="text-gray-400 hover:text-gray-600"
+                    className="text-gray-400 hover:text-secondary-600"
                   >
                     <span className="sr-only">{language === 'pt' ? 'Fechar' : 'Close'}</span>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1418,19 +1418,19 @@ export default function StudentsPage() {
                 {/* Progress Indicator */}
                 <div className="flex items-center mb-6">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                    verificationStep >= 1 ? 'bg-primary-500 text-white' : 'bg-gray-200 text-gray-600'
+                    verificationStep >= 1 ? 'bg-primary-500 text-white' : 'bg-secondary-200 text-secondary-600'
                   }`}>
                     1
                   </div>
-                  <div className={`flex-1 h-1 mx-2 ${verificationStep >= 2 ? 'bg-primary-500' : 'bg-gray-200'}`}></div>
+                  <div className={`flex-1 h-1 mx-2 ${verificationStep >= 2 ? 'bg-primary-500' : 'bg-secondary-200'}`}></div>
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                    verificationStep >= 2 ? 'bg-primary-500 text-white' : 'bg-gray-200 text-gray-600'
+                    verificationStep >= 2 ? 'bg-primary-500 text-white' : 'bg-secondary-200 text-secondary-600'
                   }`}>
                     2
                   </div>
-                  <div className={`flex-1 h-1 mx-2 ${verificationStep >= 3 ? 'bg-primary-500' : 'bg-gray-200'}`}></div>
+                  <div className={`flex-1 h-1 mx-2 ${verificationStep >= 3 ? 'bg-primary-500' : 'bg-secondary-200'}`}></div>
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                    verificationStep >= 3 ? 'bg-primary-500 text-white' : 'bg-gray-200 text-gray-600'
+                    verificationStep >= 3 ? 'bg-primary-500 text-white' : 'bg-secondary-200 text-secondary-600'
                   }`}>
                     3
                   </div>
@@ -1441,7 +1441,7 @@ export default function StudentsPage() {
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">
                       {language === 'pt' ? 'Passo 1: Email Universitário' : 'Step 1: University Email'}
                     </h4>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-secondary-600 mb-6">
                       {language === 'pt' ?
                         'Por favor, insira o seu email universitário oficial (.ac.uk) para verificação automática.' :
                         'Please enter your official university email (.ac.uk) for automatic verification.'
@@ -1449,20 +1449,20 @@ export default function StudentsPage() {
                     </p>
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           {language === 'pt' ? 'Email Universitário' : 'University Email'}
                         </label>
                         <input
                           type="email"
                           placeholder="your.name@university.ac.uk"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                          className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           {language === 'pt' ? 'Universidade' : 'University'}
                         </label>
-                        <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                        <select className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                           <option value="">{language === 'pt' ? 'Selecione a sua universidade' : 'Select your university'}</option>
                           {UNIVERSITIES.map(uni => (
                             <option key={uni.id} value={uni.id}>{uni.name}</option>
@@ -1470,10 +1470,10 @@ export default function StudentsPage() {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           {language === 'pt' ? 'Ano de Estudo' : 'Year of Study'}
                         </label>
-                        <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                        <select className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                           <option value="">{language === 'pt' ? 'Selecione o ano' : 'Select year'}</option>
                           <option value="1st">1st Year</option>
                           <option value="2nd">2nd Year</option>
@@ -1498,16 +1498,16 @@ export default function StudentsPage() {
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">
                       {language === 'pt' ? 'Passo 2: Documentação' : 'Step 2: Documentation'}
                     </h4>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-secondary-600 mb-6">
                       {language === 'pt' ?
                         'Carregue uma cópia do seu cartão de estudante ou carta de confirmação da universidade.' :
                         'Upload a copy of your student ID or university confirmation letter.'
                       }
                     </p>
                     <div className="space-y-4">
-                      <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                      <div className="border-2 border-dashed border-secondary-300 rounded-lg p-6 text-center">
                         <DocumentTextIcon className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                        <p className="text-gray-600 mb-2">
+                        <p className="text-secondary-600 mb-2">
                           {language === 'pt' ? 'Arraste ficheiros aqui ou clique para selecionar' : 'Drag files here or click to select'}
                         </p>
                         <p className="text-xs text-gray-500">
@@ -1531,7 +1531,7 @@ export default function StudentsPage() {
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">
                       {language === 'pt' ? 'Verificação Submetida!' : 'Verification Submitted!'}
                     </h4>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-secondary-600 mb-6">
                       {language === 'pt' ?
                         'A sua verificação foi submetida com sucesso. Receberá um email de confirmação em 24-48 horas com acesso aos benefícios estudantis.' :
                         'Your verification has been successfully submitted. You will receive a confirmation email within 24-48 hours with access to student benefits.'

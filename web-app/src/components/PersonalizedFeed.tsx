@@ -1,8 +1,11 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
+import { ROUTES } from '@/config'
 import Image from 'next/image'
+import { ROUTES } from '@/config'
 import { motion } from 'framer-motion'
+import { ROUTES } from '@/config'
 import { 
   HeartIcon, 
   ChatBubbleLeftRightIcon, 
@@ -22,12 +25,19 @@ import {
   SparklesIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
+import { ROUTES } from '@/config'
 import { useFollowing, FollowableEntity } from '@/context/FollowingContext'
+import { ROUTES } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config'
 import { useSubscription } from '@/context/SubscriptionContext'
+import { ROUTES } from '@/config'
 import FollowButton from '@/components/FollowButton'
+import { ROUTES } from '@/config'
 import EnhancedPostCreator from '@/components/EnhancedPostCreator'
+import { ROUTES } from '@/config'
 import ServiceIntegrationFeed from '@/components/ServiceIntegrationFeed'
+import { ROUTES } from '@/config'
 
 interface FeedPost {
   id: string
@@ -77,7 +87,7 @@ const generatePersonalizedPosts = (followedEntities: FollowableEntity[]): FeedPo
       id: 'post-1',
       authorVerified: true,
       content: 'Acabei de terminar a organização da próxima noite de Fado! Vai ser uma experiência inesquecível com músicos autênticos vindos diretamente de Lisboa. 🎶 #Fado #CulturaPortuguesa',
-      imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format',
+      imageUrl: buildUnsplashUrl('photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format'),
       createdAt: '2 hours ago',
       likes: 34,
       comments: 8,
@@ -119,7 +129,7 @@ const generatePersonalizedPosts = (followedEntities: FollowableEntity[]): FeedPo
       id: 'post-4',
       authorVerified: true,
       content: 'Great turnout at our Portuguese business networking event! So proud to see our community supporting each other. Próximo encontro será em Manchester! 💼',
-      imageUrl: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&auto=format',
+      imageUrl: buildUnsplashUrl('photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&auto=format'),
       createdAt: '8 hours ago',
       likes: 52,
       comments: 18,
@@ -290,7 +300,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
       id: `post-${Date.now()}`,
       authorId: 'currentUser',
       authorName: isPortuguese ? 'Tu' : 'You',
-      authorAvatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face&auto=format',
+      authorAvatar: buildUnsplashUrl('photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face&auto=format'),
       authorType: 'person',
       content,
       createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
@@ -336,7 +346,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
 {isPortuguese ? 'Feed Personalizado' : 'Personalized Feed'}
         </h3>
-        <p className="text-gray-600 mb-6">
+        <p className="text-secondary-600 mb-6">
           {isPortuguese 
             ? 'Segue pessoas, grupos e comunidades para ver as suas atualizações aqui.'
             : 'Follow people, groups, and communities to see their updates here.'
@@ -363,7 +373,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
               <BellIcon className="w-6 h-6 text-primary-500" />
               {isPortuguese ? 'Feed da Tua Rede' : 'Your Network Feed'}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {isPortuguese 
                 ? `Atualizações de ${following.length} pessoas e grupos que segues`
                 : `Updates from ${following.length} people and groups you follow`
@@ -386,7 +396,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
             className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-colors flex items-center gap-2 whitespace-nowrap ${
               filter === 'all'
                 ? 'bg-primary-100 text-primary-700'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
             }`}
           >
             <FilterIcon className="w-4 h-4" />
@@ -397,7 +407,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
             className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-colors flex items-center gap-2 whitespace-nowrap ${
               filter === 'following'
                 ? 'bg-primary-100 text-primary-700'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
             }`}
           >
             <HeartSolidIcon className="w-4 h-4" />
@@ -408,7 +418,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
             className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-colors flex items-center gap-2 whitespace-nowrap ${
               filter === 'services'
                 ? 'bg-secondary-100 text-secondary-700'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
             }`}
           >
             <TruckIcon className="w-4 h-4" />
@@ -419,7 +429,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
             className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-colors flex items-center gap-2 whitespace-nowrap ${
               filter === 'cultural'
                 ? 'bg-accent-100 text-accent-700'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
             }`}
           >
             <SparklesIcon className="w-4 h-4" />
@@ -479,11 +489,11 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                       )}
                       {post.servicePost && (
                         <span className={`text-xs px-2 py-1 rounded-full font-medium ${
-                          post.serviceType === 'transport' ? 'bg-blue-100 text-blue-700' :
+                          post.serviceType === 'transport' ? 'bg-blue-100 text-primary-700' :
                           post.serviceType === 'business' ? 'bg-green-100 text-green-700' :
                           post.serviceType === 'housing' ? 'bg-orange-100 text-orange-700' :
                           post.serviceType === 'event' ? 'bg-purple-100 text-purple-700' :
-                          'bg-gray-100 text-gray-700'
+                          'bg-secondary-100 text-secondary-700'
                         }`}>
                           {post.serviceType === 'transport' ? (isPortuguese ? 'Transporte' : 'Transport') :
                            post.serviceType === 'business' ? (isPortuguese ? 'Negócio' : 'Business') :
@@ -512,7 +522,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
               </div>
               
               {/* Post Content */}
-              <p className="text-gray-700 mb-4 whitespace-pre-line">{post.content}</p>
+              <p className="text-secondary-700 mb-4 whitespace-pre-line">{post.content}</p>
               
               {/* Post Image */}
               {post.imageUrl && (
@@ -532,7 +542,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                     <CalendarDaysIcon className="w-4 h-4 text-primary-600" />
                     <h5 className="font-semibold text-gray-900">{post.linkedEvent.title}</h5>
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-secondary-600">
                     <p>{post.linkedEvent.date}</p>
                     <p>{post.linkedEvent.location}</p>
                   </div>
@@ -549,7 +559,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                     <MapPinIcon className="w-4 h-4 text-secondary-600" />
                     <h5 className="font-semibold text-gray-900">{post.linkedBusiness.name}</h5>
                   </div>
-                  <p className="text-sm text-gray-600">{post.linkedBusiness.category}</p>
+                  <p className="text-sm text-secondary-600">{post.linkedBusiness.category}</p>
                   <button className="mt-2 text-secondary-600 text-sm font-medium hover:underline">
                     {isPortuguese ? 'Ver Negócio' : 'View Business'}
                   </button>
@@ -591,22 +601,22 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                 <div className="flex items-center gap-6">
                   <button 
                     onClick={() => handleLike(post.id)}
-                    className="flex items-center gap-2 text-gray-600 hover:text-red-500 transition-colors"
+                    className="flex items-center gap-2 text-secondary-600 hover:text-coral-500 transition-colors"
                   >
                     {post.liked ? (
-                      <HeartSolidIcon className="w-5 h-5 text-red-500" />
+                      <HeartSolidIcon className="w-5 h-5 text-coral-500" />
                     ) : (
                       <HeartIcon className="w-5 h-5" />
                     )}
                     <span className="text-sm font-medium">{post.likes}</span>
                   </button>
                   
-                  <button className="flex items-center gap-2 text-gray-600 hover:text-primary-500 transition-colors">
+                  <button className="flex items-center gap-2 text-secondary-600 hover:text-primary-500 transition-colors">
                     <ChatBubbleLeftRightIcon className="w-5 h-5" />
                     <span className="text-sm font-medium">{post.comments}</span>
                   </button>
                   
-                  <button className="flex items-center gap-2 text-gray-600 hover:text-primary-500 transition-colors">
+                  <button className="flex items-center gap-2 text-secondary-600 hover:text-primary-500 transition-colors">
                     <ArrowPathIcon className="w-5 h-5" />
                     <span className="text-sm font-medium">
                       {isPortuguese ? 'Partilhar' : 'Share'}
@@ -615,9 +625,9 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                 </div>
                 
                 <div className="flex gap-1">
-                  <button className="p-1 text-gray-400 hover:text-red-500">❤️</button>
+                  <button className="p-1 text-gray-400 hover:text-coral-500">❤️</button>
                   <button className="p-1 text-gray-400 hover:text-primary-500">👍</button>
-                  <button className="p-1 text-gray-400 hover:text-yellow-500">😂</button>
+                  <button className="p-1 text-gray-400 hover:text-accent-500">😂</button>
                   <button className="p-1 text-gray-400 hover:text-purple-500">😮</button>
                 </div>
               </div>
@@ -642,7 +652,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                 <TruckIcon className="w-5 h-5 text-primary-600" />
                 {isPortuguese ? 'Serviços Disponíveis' : 'Available Services'}
               </h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-secondary-600">
                 {isPortuguese 
                   ? 'Serviços da comunidade portuguesa verificada'
                   : 'Services from verified Portuguese community'
@@ -663,8 +673,8 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
               onClick={() => setFilter('services')}
               className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-gray-200"
             >
-              <TruckIcon className="w-6 h-6 text-blue-600 mb-2" />
-              <span className="text-sm font-medium text-gray-700">
+              <TruckIcon className="w-6 h-6 text-primary-600 mb-2" />
+              <span className="text-sm font-medium text-secondary-700">
                 {isPortuguese ? 'Transporte' : 'Transport'}
               </span>
               <span className="text-xs text-gray-500">
@@ -677,7 +687,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
               className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-gray-200"
             >
               <CalendarDaysIcon className="w-6 h-6 text-purple-600 mb-2" />
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-sm font-medium text-secondary-700">
                 {isPortuguese ? 'Eventos' : 'Events'}
               </span>
               <span className="text-xs text-gray-500">
@@ -689,8 +699,8 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
               onClick={() => setFilter('services')}
               className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-gray-200"
             >
-              <BriefcaseIcon className="w-6 h-6 text-green-600 mb-2" />
-              <span className="text-sm font-medium text-gray-700">
+              <BriefcaseIcon className="w-6 h-6 text-action-600 mb-2" />
+              <span className="text-sm font-medium text-secondary-700">
                 {isPortuguese ? 'Negócios' : 'Business'}
               </span>
               <span className="text-xs text-gray-500">
@@ -703,7 +713,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
               className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-gray-200"
             >
               <HomeIcon className="w-6 h-6 text-orange-600 mb-2" />
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-sm font-medium text-secondary-700">
                 {isPortuguese ? 'Habitação' : 'Housing'}
               </span>
               <span className="text-xs text-gray-500">

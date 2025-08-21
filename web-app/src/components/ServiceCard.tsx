@@ -169,7 +169,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isPortuguese, onBook
             className={`p-2 rounded-full shadow-lg transition-colors duration-200 ${
               isServiceFavorited 
                 ? 'bg-action-500 text-white' 
-                : 'bg-white/90 text-gray-600 hover:bg-white'
+                : 'bg-white/90 text-secondary-600 hover:bg-white'
             }`}
           >
             <HeartIcon className="w-4 h-4" />
@@ -179,7 +179,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isPortuguese, onBook
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={handleAddToCart}
-            className="p-2 bg-white/90 text-gray-600 hover:bg-white rounded-full shadow-lg transition-colors duration-200"
+            className="p-2 bg-white/90 text-secondary-600 hover:bg-white rounded-full shadow-lg transition-colors duration-200"
           >
             <ShoppingCartIcon className="w-4 h-4" />
           </motion.button>
@@ -193,7 +193,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isPortuguese, onBook
           <h3 className="text-xl font-bold text-gray-900 mb-2">
             {isPortuguese ? service.namePortuguese : service.name}
           </h3>
-          <p className="text-gray-600 text-sm mb-3">
+          <p className="text-secondary-600 text-sm mb-3">
             {isPortuguese ? service.descriptionPortuguese : service.description}
           </p>
           
@@ -215,12 +215,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isPortuguese, onBook
 
         {/* Features */}
         <div className="mb-6 flex-1">
-          <h4 className="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
+          <h4 className="text-sm font-semibold text-secondary-700 mb-3 uppercase tracking-wide">
             {isPortuguese ? 'Características' : 'Features'}
           </h4>
           <ul className="space-y-2">
             {(isPortuguese ? service.featuresPortuguese : service.features).slice(0, 4).map((feature, idx) => (
-              <li key={idx} className="flex items-start text-sm text-gray-600">
+              <li key={idx} className="flex items-start text-sm text-secondary-600">
                 <CheckCircleIcon className={`w-4 h-4 mr-2 mt-0.5 flex-shrink-0 ${colorClasses.icon}`} />
                 <span>{feature}</span>
               </li>
@@ -233,7 +233,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isPortuguese, onBook
           <div className="flex items-center space-x-4">
             <div className="flex items-center">
               <StarIcon className="w-4 h-4 text-yellow-400 mr-1" />
-              <span className="text-sm font-medium text-gray-700">{service.rating}</span>
+              <span className="text-sm font-medium text-secondary-700">{service.rating}</span>
             </div>
             <div className="flex items-center text-gray-500">
               <MessageCircle className="w-4 h-4 mr-1" />

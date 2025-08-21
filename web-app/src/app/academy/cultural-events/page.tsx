@@ -36,7 +36,6 @@ export default function CulturalEventsModule() {
 
   const handleModuleComplete = () => {
     // Module completion logic
-    console.log('Cultural Events module completed!');
   };
 
   // Define the learning module structure

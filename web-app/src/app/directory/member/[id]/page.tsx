@@ -83,7 +83,7 @@ export default function MemberProfile() {
 
   const getMembershipBadge = (tier: string) => {
     const badges = {
-      free: { icon: <Users className="w-4 h-4" />, color: 'bg-gray-100 text-gray-600', label: 'Free Member' },
+      free: { icon: <Users className="w-4 h-4" />, color: 'bg-secondary-100 text-secondary-600', label: 'Free Member' },
       core: { icon: <Star className="w-4 h-4" />, color: 'bg-[#FF6B6B] text-white', label: 'Core Member' },
       premium: { icon: <Crown className="w-4 h-4" />, color: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white', label: 'Premium Member' }
     }
@@ -152,7 +152,7 @@ export default function MemberProfile() {
         <div className="max-w-4xl mx-auto px-4 py-8 text-center">
           <Users className="w-16 h-16 text-gray-300 mx-auto mb-4" />
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Member Not Found</h1>
-          <p className="text-gray-600 mb-6">
+          <p className="text-secondary-600 mb-6">
             This member's profile is not available or has been removed.
           </p>
           <button
@@ -173,7 +173,7 @@ export default function MemberProfile() {
         <div className="mb-6">
           <button
             onClick={() => router.push('/directory')}
-            className="flex items-center space-x-2 text-gray-600 hover:text-[#FF6B6B] transition-colors"
+            className="flex items-center space-x-2 text-secondary-600 hover:text-[#FF6B6B] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Directory</span>
@@ -207,7 +207,7 @@ export default function MemberProfile() {
                 </div>
               </div>
               {member.isOnline && (
-                <div className="absolute -top-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-3 border-white flex items-center justify-center">
+                <div className="absolute -top-1 -right-1 w-6 h-6 bg-action-500 rounded-full border-3 border-white flex items-center justify-center">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
               )}
@@ -254,12 +254,12 @@ export default function MemberProfile() {
                 </button>
               )}
 
-              <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors flex items-center space-x-2">
+              <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors flex items-center space-x-2">
                 <Share className="w-4 h-4" />
                 <span>Share</span>
               </button>
 
-              <button className="px-3 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+              <button className="px-3 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors">
                 <MoreVertical className="w-4 h-4" />
               </button>
             </div>
@@ -274,7 +274,7 @@ export default function MemberProfile() {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4 text-gray-600 mb-3">
+              <div className="flex items-center space-x-4 text-secondary-600 mb-3">
                 {member.privacy.showAge && (
                   <>
                     <span>{member.age} years old</span>
@@ -299,45 +299,45 @@ export default function MemberProfile() {
                 <div className="flex items-center space-x-1">
                   <Users className="w-4 h-4 text-gray-400" />
                   <span className="font-semibold text-gray-900">{member.connectionsCount}</span>
-                  <span className="text-gray-600">connections</span>
+                  <span className="text-secondary-600">connections</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <Calendar className="w-4 h-4 text-gray-400" />
                   <span className="font-semibold text-gray-900">{member.eventsAttended}</span>
-                  <span className="text-gray-600">events attended</span>
+                  <span className="text-secondary-600">events attended</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <Camera className="w-4 h-4 text-gray-400" />
                   <span className="font-semibold text-gray-900">{member.photos.length}</span>
-                  <span className="text-gray-600">photos</span>
+                  <span className="text-secondary-600">photos</span>
                 </div>
               </div>
 
               {/* Bio */}
-              <p className="text-gray-700 mb-4">{member.bio}</p>
+              <p className="text-secondary-700 mb-4">{member.bio}</p>
 
               {/* Verification Status */}
               <div className="flex items-center space-x-3 mb-4">
                 <div className="flex items-center space-x-1">
                   {member.verification.emailVerified ? (
-                    <CheckCircle className="w-4 h-4 text-green-500" />
+                    <CheckCircle className="w-4 h-4 text-action-500" />
                   ) : (
-                    <XCircle className="w-4 h-4 text-red-500" />
+                    <XCircle className="w-4 h-4 text-coral-500" />
                   )}
-                  <span className="text-sm text-gray-600">Email</span>
+                  <span className="text-sm text-secondary-600">Email</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   {member.verification.photoVerified ? (
-                    <CheckCircle className="w-4 h-4 text-green-500" />
+                    <CheckCircle className="w-4 h-4 text-action-500" />
                   ) : (
-                    <XCircle className="w-4 h-4 text-red-500" />
+                    <XCircle className="w-4 h-4 text-coral-500" />
                   )}
-                  <span className="text-sm text-gray-600">Photo</span>
+                  <span className="text-sm text-secondary-600">Photo</span>
                 </div>
                 {member.verification.backgroundChecked && (
                   <div className="flex items-center space-x-1">
                     <Shield className="w-4 h-4 text-primary-500" />
-                    <span className="text-sm text-gray-600">Background Check</span>
+                    <span className="text-sm text-secondary-600">Background Check</span>
                   </div>
                 )}
               </div>
@@ -372,7 +372,7 @@ export default function MemberProfile() {
                       </div>
                     ))}
                     {mutualConnections.length > 5 && (
-                      <div className="w-8 h-8 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-gray-600 text-xs font-bold">
+                      <div className="w-8 h-8 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-secondary-600 text-xs font-bold">
                         +{mutualConnections.length - 5}
                       </div>
                     )}
@@ -399,7 +399,7 @@ export default function MemberProfile() {
                   className={`flex items-center space-x-2 py-4 border-b-2 font-medium text-sm transition-colors ${
                     activeTab === tab.id
                       ? 'border-[#FF6B6B] text-[#FF6B6B]'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                      : 'border-transparent text-gray-500 hover:text-secondary-700 hover:border-secondary-300'
                   }`}
                 >
                   {tab.icon}
@@ -420,7 +420,7 @@ export default function MemberProfile() {
                     {member.interests.map(interest => (
                       <span
                         key={interest}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 cursor-pointer"
+                        className="px-3 py-1 bg-secondary-100 text-secondary-700 rounded-full text-sm font-medium hover:bg-secondary-200 cursor-pointer"
                       >
                         {interest}
                       </span>
@@ -441,7 +441,7 @@ export default function MemberProfile() {
                           <div className="text-2xl">{badge.icon}</div>
                           <div>
                             <div className="font-medium text-gray-900">{badge.name}</div>
-                            <div className="text-sm text-gray-600">{badge.description}</div>
+                            <div className="text-sm text-secondary-600">{badge.description}</div>
                             <div className="text-xs text-gray-500">
                               Earned {formatTimeAgo(badge.earnedAt)}
                             </div>
@@ -457,7 +457,7 @@ export default function MemberProfile() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Looking For</h3>
                   <div className="flex items-center space-x-2">
                     <Heart className="w-5 h-5 text-[#FF6B6B]" />
-                    <span className="text-gray-700 capitalize">
+                    <span className="text-secondary-700 capitalize">
                       {member.preferences.lookingFor === 'all' ? 'New friends, activity partners, and networking' : member.preferences.lookingFor.replace('_', ' ')}
                     </span>
                   </div>
@@ -471,7 +471,7 @@ export default function MemberProfile() {
                   <div className="text-center py-12">
                     <Camera className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                     <h3 className="text-lg font-medium text-gray-900 mb-2">No photos yet</h3>
-                    <p className="text-gray-600">
+                    <p className="text-secondary-600">
                       {member.name.split(' ')[0]} hasn't shared any photos.
                     </p>
                   </div>
@@ -507,7 +507,7 @@ export default function MemberProfile() {
                 <div className="text-center py-12">
                   <Activity className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                   <h3 className="text-lg font-medium text-gray-900 mb-2">Activity Feed</h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     Recent activity from {member.name.split(' ')[0]} will appear here.
                   </p>
                 </div>

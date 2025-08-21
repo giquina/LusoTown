@@ -105,14 +105,14 @@ export default function StreamViewerStats({
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 * index }}
-              className="flex items-center justify-between p-4 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors"
+              className="flex items-center justify-between p-4 rounded-lg border border-gray-200 hover:border-secondary-300 transition-colors"
             >
               <div className="flex items-center gap-3">
                 <div className={`p-2 rounded-lg ${stat.bgColor}`}>
                   <IconComponent className={`w-4 h-4 ${stat.color}`} />
                 </div>
                 <div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
+                  <div className="text-sm text-secondary-600">{stat.label}</div>
                   <div className="text-lg font-bold text-gray-900">
                     {stat.value}
                   </div>
@@ -146,7 +146,7 @@ export default function StreamViewerStats({
               >
                 <div className="flex items-center gap-2">
                   <IconComponent className="w-4 h-4 text-gray-400" />
-                  <span className="text-sm text-gray-600">{metric.label}</span>
+                  <span className="text-sm text-secondary-600">{metric.label}</span>
                 </div>
                 <span className="text-sm font-medium text-gray-900">
                   {metric.value}
@@ -174,7 +174,7 @@ export default function StreamViewerStats({
             {language === "pt" ? "Estatísticas ao vivo" : "Live statistics"}
           </span>
         </div>
-        <div className="text-xs text-center text-gray-600 mt-1">
+        <div className="text-xs text-center text-secondary-600 mt-1">
           {language === "pt"
             ? "Atualizadas a cada 30 segundos"
             : "Updated every 30 seconds"}
@@ -187,7 +187,7 @@ export default function StreamViewerStats({
           {language === "pt" ? "Insights da Comunidade" : "Community Insights"}
         </h4>
 
-        <div className="space-y-2 text-xs text-gray-600">
+        <div className="space-y-2 text-xs text-secondary-600">
           <div className="flex justify-between">
             <span>
               {language === "pt" ? "Membros Premium:" : "Premium Members:"}

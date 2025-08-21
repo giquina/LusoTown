@@ -227,7 +227,7 @@ export default function HelpCenter() {
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
                 Help Center
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-xl text-secondary-600 leading-relaxed">
                 Find answers to common questions, get support, and make the most
                 of your LusoTown experience. Our community is here to support
                 your journey to meaningful friendships.
@@ -244,7 +244,7 @@ export default function HelpCenter() {
                 <input
                   type="text"
                   placeholder="Search help..."
-                  className="w-full px-6 py-4 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-6 py-4 text-lg border border-secondary-300 rounded-xl focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 />
                 <button className="absolute right-3 top-1/2 transform -translate-y-1/2 btn-primary px-6 py-2">
                   Search
@@ -280,10 +280,10 @@ export default function HelpCenter() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">
                       {channel.title}
                     </h3>
-                    <p className="text-gray-600 mb-4">{channel.description}</p>
+                    <p className="text-secondary-600 mb-4">{channel.description}</p>
 
                     <div className="space-y-2 text-sm">
-                      <div className="flex items-center text-gray-600">
+                      <div className="flex items-center text-secondary-600">
                         <EnvelopeIcon className="w-4 h-4 mr-2" />
                         <a
                           href={`mailto:${channel.contact}`}
@@ -292,11 +292,11 @@ export default function HelpCenter() {
                           {channel.contact}
                         </a>
                       </div>
-                      <div className="flex items-center text-gray-600">
+                      <div className="flex items-center text-secondary-600">
                         <ClockIcon className="w-4 h-4 mr-2" />
                         <span>Response: {channel.response}</span>
                       </div>
-                      <div className="flex items-center text-gray-600">
+                      <div className="flex items-center text-secondary-600">
                         <PhoneIcon className="w-4 h-4 mr-2" />
                         <span>{channel.hours}</span>
                       </div>
@@ -320,7 +320,7 @@ export default function HelpCenter() {
                       <h4 className="font-semibold text-gray-900 mb-2">
                         {tip.title}
                       </h4>
-                      <p className="text-sm text-gray-600">{tip.description}</p>
+                      <p className="text-sm text-secondary-600">{tip.description}</p>
                     </div>
                   ))}
                 </div>
@@ -336,7 +336,7 @@ export default function HelpCenter() {
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-center text-gray-600 mb-12">
+              <p className="text-center text-secondary-600 mb-12">
                 Find answers to the most common questions about LusoTown
               </p>
 
@@ -366,7 +366,7 @@ export default function HelpCenter() {
                             />
                             {faq.question}
                           </h4>
-                          <p className="text-gray-600 leading-relaxed ml-7">
+                          <p className="text-secondary-600 leading-relaxed ml-7">
                             {faq.answer}
                           </p>
                         </div>
@@ -394,7 +394,7 @@ export default function HelpCenter() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">
                       If You Feel Unsafe
                     </h3>
-                    <div className="space-y-3 text-gray-600">
+                    <div className="space-y-3 text-secondary-600">
                       <p>
                         • <strong>Immediate danger:</strong> Call 999 (UK
                         emergency services)
@@ -418,7 +418,7 @@ export default function HelpCenter() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">
                       Meeting Safely
                     </h3>
-                    <div className="space-y-3 text-gray-600">
+                    <div className="space-y-3 text-secondary-600">
                       <p>• Always meet in public places first</p>
                       <p>• Tell someone where you're going</p>
                       <p>• Trust your instincts - leave if uncomfortable</p>
@@ -456,7 +456,7 @@ export default function HelpCenter() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">
                     Community Guidelines
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-secondary-600 mb-4">
                     Learn about our community standards and how we maintain a
                     safe, supportive environment.
                   </p>
@@ -473,7 +473,7 @@ export default function HelpCenter() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">
                     Safety Center
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-secondary-600 mb-4">
                     Comprehensive safety resources, tips, and tools to help you
                     stay safe while making connections.
                   </p>
@@ -490,7 +490,7 @@ export default function HelpCenter() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">
                     Success Stories
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-secondary-600 mb-4">
                     Read inspiring stories from women who've found their tribe
                     through LusoTown.
                   </p>

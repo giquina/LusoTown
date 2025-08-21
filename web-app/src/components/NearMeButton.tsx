@@ -170,7 +170,7 @@ const NearMeButton: React.FC<NearMeButtonProps> = ({
 
       {/* Help Text for First Time Users */}
       {permissionStatus === 'unknown' && (
-        <div className="absolute top-full mt-2 left-0 right-0 text-xs text-gray-600 px-3 py-1 bg-gray-100 rounded-md border border-gray-200 z-10">
+        <div className="absolute top-full mt-2 left-0 right-0 text-xs text-secondary-600 px-3 py-1 bg-secondary-100 rounded-md border border-gray-200 z-10">
           {t('location.help_text', 'Find Portuguese businesses near your location')}
         </div>
       )}
@@ -194,7 +194,7 @@ export const DistanceIndicator: React.FC<DistanceIndicatorProps> = ({
   const distanceText = geolocationService.formatDistance(distance, language)
 
   return (
-    <div className={`inline-flex items-center gap-1 text-sm text-gray-600 ${className}`}>
+    <div className={`inline-flex items-center gap-1 text-sm text-secondary-600 ${className}`}>
       <MapPinIcon className="w-4 h-4" />
       <span>{distanceText}</span>
     </div>
@@ -219,7 +219,7 @@ export const RadiusSelector: React.FC<RadiusSelectorProps> = ({
 
   return (
     <div className={`flex items-center gap-2 ${className}`}>
-      <span className="text-sm text-gray-600 whitespace-nowrap">
+      <span className="text-sm text-secondary-600 whitespace-nowrap">
         {t('location.radius', 'Radius:')}
       </span>
       <div className="flex gap-1">
@@ -230,7 +230,7 @@ export const RadiusSelector: React.FC<RadiusSelectorProps> = ({
             className={`px-3 py-1 text-sm rounded-full transition-colors ${
               value === radius
                 ? 'bg-primary-500 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
             }`}
           >
             {radius}km

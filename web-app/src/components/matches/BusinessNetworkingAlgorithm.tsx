@@ -233,7 +233,7 @@ export default function BusinessNetworkingAlgorithm({
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       {metric.factors.map((factor, index) => (
                         <div key={index} className="flex items-center gap-2">
-                          <CheckCircleIcon className="w-4 h-4 text-green-500" />
+                          <CheckCircleIcon className="w-4 h-4 text-action-500" />
                           <span className="text-sm text-primary-700">{factor}</span>
                         </div>
                       ))}

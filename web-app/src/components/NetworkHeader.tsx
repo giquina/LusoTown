@@ -72,7 +72,7 @@ export default function NetworkHeader({ stats }: NetworkHeaderProps) {
             <div className="text-2xl font-bold text-gray-900 mb-1">
               {item.value}
             </div>
-            <div className="text-sm font-medium text-gray-700 mb-1">
+            <div className="text-sm font-medium text-secondary-700 mb-1">
               {item.label}
             </div>
             <div className="text-xs text-gray-500">

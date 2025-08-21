@@ -199,7 +199,7 @@ export default function UserOnboardingFlow({
                   </div>
                   <button
                     onClick={onClose}
-                    className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-all"
+                    className="p-2 text-gray-400 hover:text-secondary-600 hover:bg-secondary-100 rounded-full transition-all"
                   >
                     <XMarkIcon className="w-5 h-5" />
                   </button>
@@ -208,14 +208,14 @@ export default function UserOnboardingFlow({
                 {/* Progress Bar */}
                 <div className="mt-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-medium text-gray-600">
+                    <span className="text-sm font-medium text-secondary-600">
                       {isPortuguese ? 'Progresso' : 'Progress'}
                     </span>
                     <span className="text-sm text-gray-500">
                       {currentStep + 1} / {steps.length}
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-secondary-200 rounded-full h-2">
                     <motion.div
                       className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full"
                       initial={{ width: 0 }}
@@ -262,14 +262,14 @@ export default function UserOnboardingFlow({
                     </div>
                     <div>
                       <h1 className="text-2xl font-bold text-gray-900">LusoTown</h1>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-secondary-600">
                         {isPortuguese ? 'Comunidade Portuguesa em Londres' : 'Portuguese Community in London'}
                       </p>
                     </div>
                   </div>
                   <button
                     onClick={onClose}
-                    className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-all"
+                    className="p-2 text-gray-400 hover:text-secondary-600 hover:bg-secondary-100 rounded-full transition-all"
                   >
                     <XMarkIcon className="w-6 h-6" />
                   </button>
@@ -278,14 +278,14 @@ export default function UserOnboardingFlow({
                 {/* Progress Bar */}
                 <div className="mt-6">
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-sm font-medium text-gray-600">
+                    <span className="text-sm font-medium text-secondary-600">
                       {steps[currentStep]?.title}
                     </span>
                     <span className="text-sm text-gray-500">
                       {currentStep + 1} / {steps.length}
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-secondary-200 rounded-full h-2">
                     <motion.div
                       className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full"
                       initial={{ width: 0 }}
@@ -347,7 +347,7 @@ function WelcomeStep({ onNext, isPortuguese, isMobile }: any) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className={`${isMobile ? 'text-base' : 'text-lg'} text-gray-600 max-w-2xl mx-auto leading-relaxed`}
+          className={`${isMobile ? 'text-base' : 'text-lg'} text-secondary-600 max-w-2xl mx-auto leading-relaxed`}
         >
           {isPortuguese 
             ? 'A maior comunidade de falantes de português em Londres. Conecte-se, descubra eventos, faça amigos e sinta-se em casa.'
@@ -390,14 +390,14 @@ function WelcomeStep({ onNext, isPortuguese, isMobile }: any) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
-        className="flex items-center justify-center gap-6 text-sm text-gray-600"
+        className="flex items-center justify-center gap-6 text-sm text-secondary-600"
       >
         <div className="flex items-center gap-2">
-          <ShieldCheckIcon className="w-5 h-5 text-green-500" />
+          <ShieldCheckIcon className="w-5 h-5 text-action-500" />
           <span>{isPortuguese ? 'Seguro' : 'Safe'}</span>
         </div>
         <div className="flex items-center gap-2">
-          <CheckBadgeIcon className="w-5 h-5 text-blue-500" />
+          <CheckBadgeIcon className="w-5 h-5 text-primary-500" />
           <span>{isPortuguese ? 'Verificado' : 'Verified'}</span>
         </div>
         <div className="flex items-center gap-2">
@@ -464,7 +464,7 @@ function SocialLoginStep({ onNext, onPrevious, data, onDataChange, isPortuguese,
         <h3 className={`${isMobile ? 'text-xl' : 'text-2xl'} font-bold text-gray-900`}>
           {isPortuguese ? 'Como prefere entrar?' : 'How would you like to sign in?'}
         </h3>
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {isPortuguese 
             ? 'Escolha o método mais conveniente para si'
             : 'Choose the most convenient method for you'
@@ -490,7 +490,7 @@ function SocialLoginStep({ onNext, onPrevious, data, onDataChange, isPortuguese,
               </div>
               <div>
                 <div className="font-semibold text-gray-900">{option.name}</div>
-                <div className="text-sm text-gray-600">{option.description}</div>
+                <div className="text-sm text-secondary-600">{option.description}</div>
               </div>
             </div>
             
@@ -511,7 +511,7 @@ function SocialLoginStep({ onNext, onPrevious, data, onDataChange, isPortuguese,
       <div className={`flex ${isMobile ? 'flex-col gap-3' : 'justify-between items-center'} pt-6`}>
         <button
           onClick={onPrevious}
-          className={`${isMobile ? 'w-full' : ''} flex items-center gap-2 px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-xl transition-all`}
+          className={`${isMobile ? 'w-full' : ''} flex items-center gap-2 px-6 py-3 text-secondary-600 hover:text-secondary-800 hover:bg-secondary-100 rounded-xl transition-all`}
         >
           <ArrowLeftIcon className="w-4 h-4" />
           <span>{isPortuguese ? 'Voltar' : 'Back'}</span>
@@ -600,7 +600,7 @@ function HeritageStep({ onNext, onPrevious, data, onDataChange, isPortuguese, is
         <h3 className={`${isMobile ? 'text-xl' : 'text-2xl'} font-bold text-gray-900`}>
           {isPortuguese ? 'Partilhe a sua herança' : 'Share your heritage'}
         </h3>
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {isPortuguese 
             ? 'De onde vem a sua conexão com a língua portuguesa?'
             : 'Where does your connection to the Portuguese language come from?'
@@ -627,7 +627,7 @@ function HeritageStep({ onNext, onPrevious, data, onDataChange, isPortuguese, is
                   {option.name}
                 </div>
                 {!isMobile && (
-                  <div className="text-xs text-gray-600 leading-relaxed">
+                  <div className="text-xs text-secondary-600 leading-relaxed">
                     {option.description}
                   </div>
                 )}
@@ -651,7 +651,7 @@ function HeritageStep({ onNext, onPrevious, data, onDataChange, isPortuguese, is
       <div className={`flex ${isMobile ? 'flex-col gap-3' : 'justify-between items-center'} pt-6`}>
         <button
           onClick={onPrevious}
-          className={`${isMobile ? 'w-full' : ''} flex items-center gap-2 px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-xl transition-all`}
+          className={`${isMobile ? 'w-full' : ''} flex items-center gap-2 px-6 py-3 text-secondary-600 hover:text-secondary-800 hover:bg-secondary-100 rounded-xl transition-all`}
         >
           <ArrowLeftIcon className="w-4 h-4" />
           <span>{isPortuguese ? 'Voltar' : 'Back'}</span>
@@ -722,7 +722,7 @@ function LocationStep({ onNext, onPrevious, data, onDataChange, isPortuguese, is
         <h3 className={`${isMobile ? 'text-xl' : 'text-2xl'} font-bold text-gray-900`}>
           {isPortuguese ? 'Onde está localizado?' : 'Where are you located?'}
         </h3>
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {isPortuguese 
             ? 'Ajude-nos a conectá-lo com portugueses perto de si'
             : 'Help us connect you with Portuguese speakers near you'
@@ -750,7 +750,7 @@ function LocationStep({ onNext, onPrevious, data, onDataChange, isPortuguese, is
                 <div className={`font-semibold text-gray-900 mb-2 ${isMobile ? 'text-base' : 'text-lg'}`}>
                   {area.name}
                 </div>
-                <div className={`text-gray-600 ${isMobile ? 'text-xs' : 'text-sm'}`}>
+                <div className={`text-secondary-600 ${isMobile ? 'text-xs' : 'text-sm'}`}>
                   {area.areas.join(', ')}
                 </div>
               </div>
@@ -773,7 +773,7 @@ function LocationStep({ onNext, onPrevious, data, onDataChange, isPortuguese, is
       <div className={`flex ${isMobile ? 'flex-col gap-3' : 'justify-between items-center'} pt-6`}>
         <button
           onClick={onPrevious}
-          className={`${isMobile ? 'w-full' : ''} flex items-center gap-2 px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-xl transition-all`}
+          className={`${isMobile ? 'w-full' : ''} flex items-center gap-2 px-6 py-3 text-secondary-600 hover:text-secondary-800 hover:bg-secondary-100 rounded-xl transition-all`}
         >
           <ArrowLeftIcon className="w-4 h-4" />
           <span>{isPortuguese ? 'Voltar' : 'Back'}</span>
@@ -871,7 +871,7 @@ function InterestsStep({ onNext, onPrevious, data, onDataChange, isPortuguese, i
         <h3 className={`${isMobile ? 'text-xl' : 'text-2xl'} font-bold text-gray-900`}>
           {isPortuguese ? 'O que lhe interessa?' : 'What interests you?'}
         </h3>
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {isPortuguese 
             ? 'Selecione as categorias que mais lhe interessam (pode escolher várias)'
             : 'Select the categories that interest you most (you can choose several)'
@@ -905,7 +905,7 @@ function InterestsStep({ onNext, onPrevious, data, onDataChange, isPortuguese, i
                     {category.name}
                   </div>
                   {!isMobile && (
-                    <div className="text-xs text-gray-600 leading-relaxed">
+                    <div className="text-xs text-secondary-600 leading-relaxed">
                       {category.description}
                     </div>
                   )}
@@ -945,7 +945,7 @@ function InterestsStep({ onNext, onPrevious, data, onDataChange, isPortuguese, i
       <div className={`flex ${isMobile ? 'flex-col gap-3' : 'justify-between items-center'} pt-6`}>
         <button
           onClick={onPrevious}
-          className={`${isMobile ? 'w-full' : ''} flex items-center gap-2 px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-xl transition-all`}
+          className={`${isMobile ? 'w-full' : ''} flex items-center gap-2 px-6 py-3 text-secondary-600 hover:text-secondary-800 hover:bg-secondary-100 rounded-xl transition-all`}
         >
           <ArrowLeftIcon className="w-4 h-4" />
           <span>{isPortuguese ? 'Voltar' : 'Back'}</span>
@@ -1022,7 +1022,7 @@ function GuidelinesStep({ onNext, onPrevious, data, onDataChange, isPortuguese, 
         <h3 className={`${isMobile ? 'text-xl' : 'text-2xl'} font-bold text-gray-900`}>
           {isPortuguese ? 'Diretrizes da Comunidade' : 'Community Guidelines'}
         </h3>
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {isPortuguese 
             ? 'Estas diretrizes ajudam a manter a nossa comunidade segura e acolhedora'
             : 'These guidelines help keep our community safe and welcoming'
@@ -1047,7 +1047,7 @@ function GuidelinesStep({ onNext, onPrevious, data, onDataChange, isPortuguese, 
                 <h4 className={`font-semibold text-gray-900 mb-1 ${isMobile ? 'text-sm' : 'text-base'}`}>
                   {guideline.title}
                 </h4>
-                <p className={`text-gray-600 ${isMobile ? 'text-xs' : 'text-sm'} leading-relaxed`}>
+                <p className={`text-secondary-600 ${isMobile ? 'text-xs' : 'text-sm'} leading-relaxed`}>
                   {guideline.description}
                 </p>
               </div>
@@ -1068,7 +1068,7 @@ function GuidelinesStep({ onNext, onPrevious, data, onDataChange, isPortuguese, 
             <div className={`w-5 h-5 border-2 rounded transition-all ${
               data.acceptedGuidelines 
                 ? 'bg-primary-500 border-primary-500' 
-                : 'border-gray-300'
+                : 'border-secondary-300'
             }`}>
               {data.acceptedGuidelines && (
                 <CheckIcon className="w-3 h-3 text-white m-0.5" />
@@ -1082,7 +1082,7 @@ function GuidelinesStep({ onNext, onPrevious, data, onDataChange, isPortuguese, 
                 : 'I agree to the community guidelines'
               }
             </p>
-            <p className={`text-gray-600 mt-1 ${isMobile ? 'text-xs' : 'text-sm'}`}>
+            <p className={`text-secondary-600 mt-1 ${isMobile ? 'text-xs' : 'text-sm'}`}>
               {isPortuguese
                 ? 'Comprometo-me a seguir estas diretrizes para manter a nossa comunidade segura'
                 : 'I commit to following these guidelines to keep our community safe'
@@ -1096,7 +1096,7 @@ function GuidelinesStep({ onNext, onPrevious, data, onDataChange, isPortuguese, 
       <div className={`flex ${isMobile ? 'flex-col gap-3' : 'justify-between items-center'} pt-6`}>
         <button
           onClick={onPrevious}
-          className={`${isMobile ? 'w-full' : ''} flex items-center gap-2 px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-xl transition-all`}
+          className={`${isMobile ? 'w-full' : ''} flex items-center gap-2 px-6 py-3 text-secondary-600 hover:text-secondary-800 hover:bg-secondary-100 rounded-xl transition-all`}
         >
           <ArrowLeftIcon className="w-4 h-4" />
           <span>{isPortuguese ? 'Voltar' : 'Back'}</span>
@@ -1107,7 +1107,7 @@ function GuidelinesStep({ onNext, onPrevious, data, onDataChange, isPortuguese, 
           className={`${isMobile ? 'w-full' : ''} flex items-center gap-2 px-6 py-3 font-semibold rounded-xl transition-all ${
             data.acceptedGuidelines
               ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
           }`}
         >
           <span>
@@ -1150,7 +1150,7 @@ function GrowthStep({ onNext, onPrevious, data, onDataChange, isPortuguese, isMo
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className={`${isMobile ? 'text-base' : 'text-lg'} text-gray-600 max-w-2xl mx-auto leading-relaxed`}
+          className={`${isMobile ? 'text-base' : 'text-lg'} text-secondary-600 max-w-2xl mx-auto leading-relaxed`}
         >
           {isPortuguese 
             ? 'Agora faz parte da maior comunidade portuguesa em Londres! Aqui estão os seus benefícios de boas-vindas:'
@@ -1201,7 +1201,7 @@ function GrowthStep({ onNext, onPrevious, data, onDataChange, isPortuguese, isMo
               <div className={`font-semibold text-gray-900 ${isMobile ? 'text-sm' : 'text-base'}`}>
                 {benefit.title}
               </div>
-              <div className={`text-gray-600 ${isMobile ? 'text-xs' : 'text-sm'}`}>
+              <div className={`text-secondary-600 ${isMobile ? 'text-xs' : 'text-sm'}`}>
                 {benefit.description}
               </div>
             </div>

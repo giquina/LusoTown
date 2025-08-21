@@ -133,7 +133,7 @@ export default function UnifiedExperienceHub({
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
                       {rec.title}
                     </h4>
-                    <p className="text-gray-600 text-sm">{rec.description}</p>
+                    <p className="text-secondary-600 text-sm">{rec.description}</p>
                   </div>
                   <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
                     <SparklesIcon className="w-6 h-6 text-primary-600" />
@@ -203,7 +203,7 @@ export default function UnifiedExperienceHub({
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">
                   {opportunity.title}
                 </h4>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-secondary-600 text-sm mb-4">
                   {opportunity.description}
                 </p>
 
@@ -256,7 +256,7 @@ export default function UnifiedExperienceHub({
             <div className="text-2xl font-bold text-accent-600">
               {communityInsights.totalMembers}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? "Membros" : "Members"}
             </div>
           </div>
@@ -264,7 +264,7 @@ export default function UnifiedExperienceHub({
             <div className="text-2xl font-bold text-secondary-600">
               {communityInsights.activeLastMonth}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? "Ativos este mês" : "Active this month"}
             </div>
           </div>
@@ -272,7 +272,7 @@ export default function UnifiedExperienceHub({
             <div className="text-2xl font-bold text-primary-600">
               {communityInsights.averageConnections}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? "Conexões médias" : "Avg connections"}
             </div>
           </div>
@@ -280,7 +280,7 @@ export default function UnifiedExperienceHub({
             <div className="text-2xl font-bold text-coral-600">
               {communityInsights.communityGrowth}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? "Crescimento" : "Growth"}
             </div>
           </div>
@@ -309,7 +309,7 @@ export default function UnifiedExperienceHub({
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">
                     {pairing.eventTitle}
                   </h4>
-                  <p className="text-gray-600 text-sm mb-3">
+                  <p className="text-secondary-600 text-sm mb-3">
                     {pairing.culturalExperience}
                   </p>
                   <div className="flex items-center space-x-4 text-sm">
@@ -352,7 +352,7 @@ export default function UnifiedExperienceHub({
           <h3 className="text-xl font-bold text-gray-900 mb-4">
             {isPortuguese ? "Reservas de Grupo" : "Group Bookings"}
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-secondary-600 mb-6">
             {isPortuguese
               ? `Você tem ${connections.length} conexões. Economize até 30% em reservas de grupo!`
               : `You have ${connections.length} connections. Save up to 30% on group bookings!`}
@@ -367,7 +367,7 @@ export default function UnifiedExperienceHub({
                       ? "Transporte Privado"
                       : "Private Transport"}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {isPortuguese
                       ? "Para eventos culturais"
                       : "To cultural events"}
@@ -385,7 +385,7 @@ export default function UnifiedExperienceHub({
                   <h4 className="font-semibold text-gray-900">
                     {isPortuguese ? "Segurança VIP" : "VIP Security"}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {isPortuguese
                       ? "Para eventos de negócios"
                       : "For business events"}
@@ -429,7 +429,7 @@ export default function UnifiedExperienceHub({
                       {connection.connectedUser.firstName}{" "}
                       {connection.connectedUser.lastName}
                     </h4>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-secondary-600">
                       {connection.businessType}
                     </p>
                     <p className="text-xs text-primary-600">
@@ -456,7 +456,7 @@ export default function UnifiedExperienceHub({
             <div className="text-2xl font-bold text-premium-600">
               {stats.totalConnections}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? "Conexões" : "Connections"}
             </div>
           </div>
@@ -464,7 +464,7 @@ export default function UnifiedExperienceHub({
             <div className="text-2xl font-bold text-accent-600">
               {stats.eventsAttended}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? "Eventos" : "Events"}
             </div>
           </div>
@@ -472,7 +472,7 @@ export default function UnifiedExperienceHub({
             <div className="text-2xl font-bold text-secondary-600">
               {stats.newConnectionsThisMonth}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? "Novas este mês" : "New this month"}
             </div>
           </div>
@@ -480,7 +480,7 @@ export default function UnifiedExperienceHub({
             <div className="text-2xl font-bold text-coral-600">
               {stats.connectionStrength.toFixed(1)}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? "Força média" : "Avg strength"}
             </div>
           </div>
@@ -593,7 +593,7 @@ export default function UnifiedExperienceHub({
             ? "Centro de Experiências LusoTown"
             : "LusoTown Experience Hub"}
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
           {isPortuguese
             ? "Descubra, reserve e conecte-se numa plataforma integrada para a comunidade portuguesa"
             : "Discover, book, and connect in one integrated platform for the Portuguese community"}
@@ -602,7 +602,7 @@ export default function UnifiedExperienceHub({
 
       {/* Tab Navigation */}
       <div className="flex justify-center mb-8">
-        <div className="bg-gray-100 rounded-xl p-1 flex space-x-1">
+        <div className="bg-secondary-100 rounded-xl p-1 flex space-x-1">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             return (
@@ -612,7 +612,7 @@ export default function UnifiedExperienceHub({
                 className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                   activeTab === tab.id
                     ? "bg-white text-primary-600 shadow-md"
-                    : "text-gray-600 hover:text-gray-900"
+                    : "text-secondary-600 hover:text-gray-900"
                 }`}
               >
                 <Icon className="w-5 h-5" />
@@ -663,7 +663,7 @@ export default function UnifiedExperienceHub({
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {isPortuguese ? "Reserva Confirmada!" : "Booking Confirmed!"}
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-secondary-600 mb-6">
                   {isPortuguese
                     ? `Sua experiência "${selectedExperience.title}" foi reservada com sucesso.`
                     : `Your "${selectedExperience.title}" experience has been booked successfully.`}

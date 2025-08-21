@@ -149,12 +149,12 @@ const studentSupportModule = {
           <div class="bg-green-50 border border-green-200 rounded-lg p-4">
             <h5 class="font-semibold text-green-800">Camões Scholarship</h5>
             <p class="text-sm text-green-700">Up to £15,000/year for Portuguese nationals studying in the UK</p>
-            <p class="text-xs text-green-600 mt-2">Application deadline: March 2025</p>
+            <p class="text-xs text-action-600 mt-2">Application deadline: March 2025</p>
           </div>
           <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
             <h5 class="font-semibold text-blue-800">Lusitania Foundation Grant</h5>
-            <p class="text-sm text-blue-700">£8,000/year for Portuguese students in STEM fields</p>
-            <p class="text-xs text-blue-600 mt-2">Application deadline: February 2025</p>
+            <p class="text-sm text-primary-700">£8,000/year for Portuguese students in STEM fields</p>
+            <p class="text-xs text-primary-600 mt-2">Application deadline: February 2025</p>
           </div>
           <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
             <h5 class="font-semibold text-purple-800">Portuguese Heritage Award</h5>
@@ -189,12 +189,12 @@ const studentSupportModule = {
           <div class="bg-green-50 border border-green-200 rounded-lg p-4">
             <h5 class="font-semibold text-green-800">Bolsa Camões</h5>
             <p class="text-sm text-green-700">Até £15.000/ano para nacionais portugueses a estudar no Reino Unido</p>
-            <p class="text-xs text-green-600 mt-2">Prazo de candidatura: Março 2025</p>
+            <p class="text-xs text-action-600 mt-2">Prazo de candidatura: Março 2025</p>
           </div>
           <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
             <h5 class="font-semibold text-blue-800">Bolsa Fundação Lusitania</h5>
-            <p class="text-sm text-blue-700">£8.000/ano para estudantes portugueses em áreas STEM</p>
-            <p class="text-xs text-blue-600 mt-2">Prazo de candidatura: Fevereiro 2025</p>
+            <p class="text-sm text-primary-700">£8.000/ano para estudantes portugueses em áreas STEM</p>
+            <p class="text-xs text-primary-600 mt-2">Prazo de candidatura: Fevereiro 2025</p>
           </div>
           <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
             <h5 class="font-semibold text-purple-800">Prémio Herança Portuguesa</h5>
@@ -267,8 +267,8 @@ const studentSupportModule = {
               <BookOpenIcon class="h-5 w-5" />
               Portuguese Study Groups
             </h5>
-            <p class="text-sm text-blue-700 mt-2">Subject-specific study groups led by advanced Portuguese students and tutors across all major universities.</p>
-            <ul class="text-xs text-blue-600 mt-2 list-disc list-inside">
+            <p class="text-sm text-primary-700 mt-2">Subject-specific study groups led by advanced Portuguese students and tutors across all major universities.</p>
+            <ul class="text-xs text-primary-600 mt-2 list-disc list-inside">
               <li>Weekly sessions for challenging subjects</li>
               <li>Exam preparation workshops</li>
               <li>Assignment guidance and feedback</li>
@@ -281,7 +281,7 @@ const studentSupportModule = {
               Technology Support
             </h5>
             <p class="text-sm text-green-700 mt-2">Technical assistance for UK university systems, software, and digital learning platforms.</p>
-            <ul class="text-xs text-green-600 mt-2 list-disc list-inside">
+            <ul class="text-xs text-action-600 mt-2 list-disc list-inside">
               <li>University portal navigation</li>
               <li>Digital library access</li>
               <li>Online learning platform setup</li>
@@ -325,8 +325,8 @@ const studentSupportModule = {
               <BookOpenIcon class="h-5 w-5" />
               Grupos de Estudo Portugueses
             </h5>
-            <p class="text-sm text-blue-700 mt-2">Grupos de estudo específicos por matéria liderados por estudantes portugueses avançados e tutores em todas as universidades principais.</p>
-            <ul class="text-xs text-blue-600 mt-2 list-disc list-inside">
+            <p class="text-sm text-primary-700 mt-2">Grupos de estudo específicos por matéria liderados por estudantes portugueses avançados e tutores em todas as universidades principais.</p>
+            <ul class="text-xs text-primary-600 mt-2 list-disc list-inside">
               <li>Sessões semanais para disciplinas desafiadoras</li>
               <li>Workshops de preparação para exames</li>
               <li>Orientação e feedback de trabalhos</li>
@@ -339,7 +339,7 @@ const studentSupportModule = {
               Apoio Tecnológico
             </h5>
             <p class="text-sm text-green-700 mt-2">Assistência técnica para sistemas universitários do Reino Unido, software e plataformas de aprendizagem digital.</p>
-            <ul class="text-xs text-green-600 mt-2 list-disc list-inside">
+            <ul class="text-xs text-action-600 mt-2 list-disc list-inside">
               <li>Navegação no portal universitário</li>
               <li>Acesso à biblioteca digital</li>
               <li>Configuração de plataforma de aprendizagem online</li>
@@ -444,7 +444,7 @@ const studentSupportModule = {
               Cultural Walks
             </h5>
             <p class="text-sm text-green-700">Monthly walks exploring Portuguese history in London</p>
-            <p class="text-xs text-green-600 mt-1">Guided tours in Portuguese and English</p>
+            <p class="text-xs text-action-600 mt-1">Guided tours in Portuguese and English</p>
           </div>
           
           <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
@@ -509,7 +509,7 @@ const studentSupportModule = {
               Caminhadas Culturais
             </h5>
             <p class="text-sm text-green-700">Caminhadas mensais explorando a história portuguesa em Londres</p>
-            <p class="text-xs text-green-600 mt-1">Visitas guiadas em português e inglês</p>
+            <p class="text-xs text-action-600 mt-1">Visitas guiadas em português e inglês</p>
           </div>
           
           <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">

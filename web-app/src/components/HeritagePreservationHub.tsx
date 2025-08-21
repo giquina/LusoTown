@@ -337,7 +337,7 @@ export default function HeritagePreservationHub() {
               ? 'Preservando a Nossa Herança Portuguesa'
               : 'Preserving Our Portuguese Heritage'}
           </h2>
-          <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-secondary-700 mb-8 max-w-4xl mx-auto leading-relaxed">
             {language === 'pt' 
               ? 'Projetos comunitários ativos preservando histórias, tradições e cultura portuguesa para as futuras gerações através de iniciativas colaborativas inovadoras.'
               : 'Active community projects preserving Portuguese stories, traditions, and culture for future generations through innovative collaborative initiatives.'}
@@ -354,25 +354,25 @@ export default function HeritagePreservationHub() {
         >
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
             <div className="text-3xl font-bold text-primary-600 mb-2">{stats.totalProjects}</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Projetos Ativos' : 'Active Projects'}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
             <div className="text-3xl font-bold text-secondary-600 mb-2">{stats.totalParticipants}+</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Participantes' : 'Participants'}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
             <div className="text-3xl font-bold text-accent-600 mb-2">2,500+</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Itens Preservados' : 'Items Preserved'}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
             <div className="text-3xl font-bold text-coral-600 mb-2">60+</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Anos de História' : 'Years of History'}
             </div>
           </div>
@@ -386,7 +386,7 @@ export default function HeritagePreservationHub() {
               className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                 selectedCategory === 'all'
                   ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                  : 'bg-white/80 text-gray-700 hover:bg-gray-100 hover:text-primary-600 border border-gray-200'
+                  : 'bg-white/80 text-secondary-700 hover:bg-secondary-100 hover:text-primary-600 border border-gray-200'
               }`}
             >
               <GlobeAltIcon className="w-4 h-4" />
@@ -401,7 +401,7 @@ export default function HeritagePreservationHub() {
                   className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                     selectedCategory === key
                       ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                      : 'bg-white/80 text-gray-700 hover:bg-gray-100 hover:text-primary-600 border border-gray-200'
+                      : 'bg-white/80 text-secondary-700 hover:bg-secondary-100 hover:text-primary-600 border border-gray-200'
                   }`}
                 >
                   <IconComponent className="w-4 h-4" />
@@ -517,7 +517,7 @@ export default function HeritagePreservationHub() {
                         </h4>
                         <ul className="space-y-2">
                           {(language === 'pt' ? project.outcomesPortuguese : project.outcomes).map((outcome, index) => (
-                            <li key={index} className="flex items-start gap-2 text-sm text-gray-700">
+                            <li key={index} className="flex items-start gap-2 text-sm text-secondary-700">
                               <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
                               {outcome}
                             </li>
@@ -534,7 +534,7 @@ export default function HeritagePreservationHub() {
                           {project.partnerships.map(partner => (
                             <span
                               key={partner}
-                              className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+                              className="px-3 py-1 bg-secondary-100 text-secondary-700 text-xs rounded-full"
                             >
                               {partner}
                             </span>
@@ -547,7 +547,7 @@ export default function HeritagePreservationHub() {
                         <h4 className="font-medium text-gray-900 mb-2">
                           {language === 'pt' ? 'Próximos Passos:' : 'Next Steps:'}
                         </h4>
-                        <p className="text-gray-700 text-sm">
+                        <p className="text-secondary-700 text-sm">
                           {language === 'pt' ? project.nextStepsPortuguese : project.nextSteps}
                         </p>
                       </div>
@@ -580,7 +580,7 @@ export default function HeritagePreservationHub() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <a
                 href={ROUTES.signup}
-                className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
+                className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-secondary-100 transition-colors shadow-lg"
               >
                 {language === 'pt' ? 'Participar Agora' : 'Get Involved'}
               </a>

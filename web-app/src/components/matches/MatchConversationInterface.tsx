@@ -154,7 +154,7 @@ export default function MatchConversationInterface({
                   <div className="flex items-center gap-2 mt-2">
                     {match.isMutual && (
                       <div className="flex items-center gap-1 bg-green-50 border border-green-200 px-2 py-1 rounded-lg">
-                        <HeartSolid className="w-3 h-3 text-green-600" />
+                        <HeartSolid className="w-3 h-3 text-action-600" />
                         <span className="text-xs font-medium text-green-800">
                           {language === 'pt' ? 'Match Mútuo' : 'Mutual Match'}
                         </span>
@@ -163,7 +163,7 @@ export default function MatchConversationInterface({
                     
                     {match.sharedEvents && match.sharedEvents.length > 0 && (
                       <div className="flex items-center gap-1 bg-blue-50 border border-blue-200 px-2 py-1 rounded-lg">
-                        <CalendarIcon className="w-3 h-3 text-blue-600" />
+                        <CalendarIcon className="w-3 h-3 text-primary-600" />
                         <span className="text-xs font-medium text-blue-800">
                           {match.sharedEvents.length} {language === 'pt' ? 'Eventos' : 'Events'}
                         </span>

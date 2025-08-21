@@ -1,7 +1,9 @@
 'use client'
 
 import React, { useState } from 'react'
+import { ROUTES } from '@/config'
 import { motion } from 'framer-motion'
+import { ROUTES } from '@/config'
 import {
   ShieldCheckIcon,
   StarIcon,
@@ -11,12 +13,19 @@ import {
   ArrowLeftIcon
 } from '@heroicons/react/24/outline'
 import { ShieldCheckIcon as ShieldCheckSolid } from '@heroicons/react/24/solid'
+import { ROUTES } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config'
 import Link from 'next/link'
+import { ROUTES } from '@/config'
 import PortugueseCulturalPhotoVerification, { CulturalPhoto, VerificationResults } from '@/components/matches/PortugueseCulturalPhotoVerification'
+import { ROUTES } from '@/config'
 import CulturallyVerifiedMatchCard from '@/components/matches/CulturallyVerifiedMatchCard'
+import { ROUTES } from '@/config'
 import CulturalVerificationIntegration from '@/components/matches/CulturalVerificationIntegration'
+import { ROUTES } from '@/config'
 import { VerificationBadge } from '@/components/matches/CulturalVerificationBadges'
+import { ROUTES } from '@/config'
 
 // Mock data for demo
 const MOCK_VERIFIED_PROFILE = {
@@ -156,7 +165,7 @@ export default function CulturalVerificationDemoPage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Link
-                href="/matches"
+                href={ROUTES.matches}
                 className="flex items-center gap-2 text-primary-600 hover:text-primary-700 transition-colors"
               >
                 <ArrowLeftIcon className="w-5 h-5" />
@@ -175,7 +184,7 @@ export default function CulturalVerificationDemoPage() {
                   <h1 className="text-2xl font-bold text-gray-900">
                     {language === 'pt' ? 'Demo: Verificação Cultural Portuguesa' : 'Demo: Portuguese Cultural Verification'}
                   </h1>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {language === 'pt' 
                       ? 'Sistema inteligente de verificação de autenticidade cultural'
                       : 'Smart cultural authenticity verification system'
@@ -190,15 +199,15 @@ export default function CulturalVerificationDemoPage() {
                 <div className="text-2xl font-bold text-emerald-600">
                   {verificationResults ? Math.round(verificationResults.overallScore) : 0}%
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {language === 'pt' ? 'Verificação' : 'Verified'}
                 </div>
               </div>
               <div className="text-right">
-                <div className="text-2xl font-bold text-blue-600">
+                <div className="text-2xl font-bold text-primary-600">
                   {verificationResults ? verificationResults.totalBadges : 0}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {language === 'pt' ? 'Distintivos' : 'Badges'}
                 </div>
               </div>
@@ -216,7 +225,7 @@ export default function CulturalVerificationDemoPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 {language === 'pt' ? 'Sistema de Verificação Cultural' : 'Cultural Verification System'}
               </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
                 {language === 'pt' 
                   ? 'Revolucione os seus matches com verificação inteligente da autenticidade cultural portuguesa. Aumente a credibilidade, ganhe distintivos e conecte-se com pessoas que realmente partilham a sua herança.'
                   : 'Revolutionize your matches with intelligent Portuguese cultural authenticity verification. Boost credibility, earn badges, and connect with people who truly share your heritage.'
@@ -232,7 +241,7 @@ export default function CulturalVerificationDemoPage() {
                 <h3 className="font-bold text-gray-900 mb-2">
                   {language === 'pt' ? 'Verificação IA' : 'AI Verification'}
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' 
                     ? 'Inteligência artificial detecta elementos culturais portugueses automaticamente'
                     : 'AI automatically detects Portuguese cultural elements'
@@ -241,13 +250,13 @@ export default function CulturalVerificationDemoPage() {
               </div>
 
               <div className="text-center p-6 bg-gradient-to-b from-blue-50 to-blue-100 rounded-xl">
-                <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <StarIcon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2">
                   {language === 'pt' ? 'Sistema de Distintivos' : 'Badge System'}
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' 
                     ? 'Ganhe distintivos únicos por autenticidade cultural e envolvimento na comunidade'
                     : 'Earn unique badges for cultural authenticity and community involvement'
@@ -262,7 +271,7 @@ export default function CulturalVerificationDemoPage() {
                 <h3 className="font-bold text-gray-900 mb-2">
                   {language === 'pt' ? 'Matches Melhorados' : 'Enhanced Matches'}
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' 
                     ? 'Perfis verificados têm prioridade e melhores taxas de compatibilidade'
                     : 'Verified profiles get priority and better compatibility rates'
@@ -277,7 +286,7 @@ export default function CulturalVerificationDemoPage() {
                 <h3 className="font-bold text-gray-900 mb-2">
                   {language === 'pt' ? 'Confiança da Comunidade' : 'Community Trust'}
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' 
                     ? 'Construa confiança na comunidade portuguesa através da verificação autêntica'
                     : 'Build trust in the Portuguese community through authentic verification'
@@ -298,7 +307,7 @@ export default function CulturalVerificationDemoPage() {
                 className={`px-6 py-3 rounded-xl font-semibold transition-all ${
                   activeDemo === tab.id
                     ? 'bg-primary-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+                    : 'bg-white text-secondary-700 border border-gray-200 hover:bg-gray-50'
                 }`}
               >
                 <div className="text-left">
@@ -354,7 +363,7 @@ export default function CulturalVerificationDemoPage() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   {language === 'pt' ? 'Perfil Culturalmente Verificado' : 'Culturally Verified Profile'}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {language === 'pt' 
                     ? 'Veja como os perfis verificados aparecem para outros utilizadores'
                     : 'See how verified profiles appear to other users'
@@ -365,11 +374,11 @@ export default function CulturalVerificationDemoPage() {
               <div className="flex justify-center">
                 <CulturallyVerifiedMatchCard
                   profile={MOCK_VERIFIED_PROFILE}
-                  onLike={(id) => console.log('Liked:', id)}
-                  onSkip={(id) => console.log('Skipped:', id)}
-                  onSuperLike={(id) => console.log('Super liked:', id)}
-                  onStartConversation={(id, starter) => console.log('Start conversation:', id, starter)}
-                  onViewCulturalPhotos={(id) => console.log('View cultural photos:', id)}
+                  onLike={(id) => }
+                  onSkip={(id) => }
+                  onSuperLike={(id) => }
+                  onStartConversation={(id, starter) => }
+                  onViewCulturalPhotos={(id) => }
                   showCulturalDetails={true}
                 />
               </div>
@@ -400,7 +409,7 @@ export default function CulturalVerificationDemoPage() {
                 <h4 className="font-bold text-gray-900 mb-2">
                   {language === 'pt' ? 'Matches de Maior Qualidade' : 'Higher Quality Matches'}
                 </h4>
-                <p className="text-gray-600 text-sm">
+                <p className="text-secondary-600 text-sm">
                   {language === 'pt' 
                     ? 'Perfis verificados têm 3x mais probabilidade de resultar em conexões autênticas'
                     : 'Verified profiles are 3x more likely to result in authentic connections'
@@ -415,7 +424,7 @@ export default function CulturalVerificationDemoPage() {
                 <h4 className="font-bold text-gray-900 mb-2">
                   {language === 'pt' ? 'Prioridade na Comunidade' : 'Community Priority'}
                 </h4>
-                <p className="text-gray-600 text-sm">
+                <p className="text-secondary-600 text-sm">
                   {language === 'pt' 
                     ? 'Apareça primeiro nos resultados de pesquisa e seja destacado em eventos'
                     : 'Appear first in search results and get featured in events'
@@ -430,7 +439,7 @@ export default function CulturalVerificationDemoPage() {
                 <h4 className="font-bold text-gray-900 mb-2">
                   {language === 'pt' ? 'Confiança Aumentada' : 'Increased Trust'}
                 </h4>
-                <p className="text-gray-600 text-sm">
+                <p className="text-secondary-600 text-sm">
                   {language === 'pt' 
                     ? 'Membros confiam mais em perfis com verificação cultural autêntica'
                     : 'Members trust profiles with authentic cultural verification more'
@@ -441,7 +450,7 @@ export default function CulturalVerificationDemoPage() {
 
             <div className="text-center mt-8">
               <Link
-                href="/matches"
+                href={ROUTES.matches}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-xl font-bold hover:from-primary-700 hover:to-secondary-700 transition-all transform hover:scale-105 shadow-lg"
               >
                 {language === 'pt' ? 'Começar Verificação' : 'Start Verification'}

@@ -96,7 +96,7 @@ export default function EcosystemOverview() {
             <Network className="w-6 h-6 text-primary-600" />
           </div>
           <div className="text-2xl font-bold text-gray-900 mb-1">{stats.totalConnections}</div>
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-secondary-600">
             {language === 'pt' ? 'Conexões' : 'Connections'}
           </div>
         </div>
@@ -106,7 +106,7 @@ export default function EcosystemOverview() {
             <Calendar className="w-6 h-6 text-secondary-600" />
           </div>
           <div className="text-2xl font-bold text-gray-900 mb-1">{stats.eventsAttended}</div>
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-secondary-600">
             {language === 'pt' ? 'Eventos' : 'Events'}
           </div>
         </div>
@@ -118,7 +118,7 @@ export default function EcosystemOverview() {
           <div className="text-2xl font-bold text-gray-900 mb-1">
             {userJourney?.transportUsage.bookingsLast30Days || 0}
           </div>
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-secondary-600">
             {language === 'pt' ? 'Transportes' : 'Transports'}
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function EcosystemOverview() {
             <Crown className="w-6 h-6 text-premium-600" />
           </div>
           <div className="text-2xl font-bold text-gray-900 mb-1">{serviceDiscount}%</div>
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-secondary-600">
             {language === 'pt' ? 'Desconto' : 'Discount'}
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function EcosystemOverview() {
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div className="flex items-center space-x-3">
                 <Heart className="w-4 h-4 text-action-500" />
-                <span className="text-gray-700">
+                <span className="text-secondary-700">
                   {language === 'pt' ? 'Membros Ativos' : 'Active Members'}
                 </span>
               </div>
@@ -159,7 +159,7 @@ export default function EcosystemOverview() {
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div className="flex items-center space-x-3">
                 <TrendingUp className="w-4 h-4 text-secondary-500" />
-                <span className="text-gray-700">
+                <span className="text-secondary-700">
                   {language === 'pt' ? 'Crescimento' : 'Growth'}
                 </span>
               </div>
@@ -170,7 +170,7 @@ export default function EcosystemOverview() {
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-primary-500" />
-                <span className="text-gray-700">
+                <span className="text-secondary-700">
                   {language === 'pt' ? 'Total Membros' : 'Total Members'}
                 </span>
               </div>
@@ -193,7 +193,7 @@ export default function EcosystemOverview() {
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div className="flex items-center space-x-3">
                 <Crown className="w-4 h-4 text-premium-500" />
-                <span className="text-gray-700">
+                <span className="text-secondary-700">
                   {language === 'pt' ? 'Nível de Membro' : 'Membership Level'}
                 </span>
               </div>
@@ -204,7 +204,7 @@ export default function EcosystemOverview() {
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div className="flex items-center space-x-3">
                 <Star className="w-4 h-4 text-accent-500" />
-                <span className="text-gray-700">
+                <span className="text-secondary-700">
                   {language === 'pt' ? 'Desconto Transporte' : 'Transport Discount'}
                 </span>
               </div>
@@ -215,7 +215,7 @@ export default function EcosystemOverview() {
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div className="flex items-center space-x-3">
                 <Clock className="w-4 h-4 text-secondary-500" />
-                <span className="text-gray-700">
+                <span className="text-secondary-700">
                   {language === 'pt' ? 'Prioridade Eventos' : 'Event Priority'}
                 </span>
               </div>

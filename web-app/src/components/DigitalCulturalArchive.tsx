@@ -435,7 +435,7 @@ export default function DigitalCulturalArchive({
       poor: 'bg-orange-100 text-orange-800',
       endangered: 'bg-red-100 text-red-800'
     }
-    return colors[status as keyof typeof colors] || 'bg-gray-100 text-gray-800'
+    return colors[status as keyof typeof colors] || 'bg-secondary-100 text-secondary-800'
   }
 
   const UploadModal = () => (
@@ -458,7 +458,7 @@ export default function DigitalCulturalArchive({
             <h2 className="text-2xl font-bold text-gray-900">Contribute to Cultural Archive</h2>
             <button
               onClick={() => setShowUploadModal(false)}
-              className="text-gray-400 hover:text-gray-600"
+              className="text-gray-400 hover:text-secondary-600"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -468,27 +468,27 @@ export default function DigitalCulturalArchive({
 
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Item Title</label>
+              <label className="block text-sm font-medium text-secondary-700 mb-2">Item Title</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
                 placeholder="Enter a descriptive title for your cultural item"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Description</label>
+              <label className="block text-sm font-medium text-secondary-700 mb-2">Description</label>
               <textarea
                 rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
                 placeholder="Provide detailed description including historical context and significance"
               />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Item Type</label>
-                <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">Item Type</label>
+                <select className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500">
                   <option value="document">Document</option>
                   <option value="photo">Photo</option>
                   <option value="audio">Audio</option>
@@ -501,8 +501,8 @@ export default function DigitalCulturalArchive({
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Origin Country</label>
-                <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">Origin Country</label>
+                <select className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500">
                   <option value="portugal">Portugal</option>
                   <option value="brazil">Brazil</option>
                   <option value="usa">USA</option>
@@ -514,28 +514,28 @@ export default function DigitalCulturalArchive({
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Cultural Significance</label>
+              <label className="block text-sm font-medium text-secondary-700 mb-2">Cultural Significance</label>
               <textarea
                 rows={3}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
                 placeholder="Explain the cultural importance and historical context of this item"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Tags (comma-separated)</label>
+              <label className="block text-sm font-medium text-secondary-700 mb-2">Tags (comma-separated)</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
                 placeholder="e.g., azores, recipes, family tradition, heritage"
               />
             </div>
 
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+            <div className="border-2 border-dashed border-secondary-300 rounded-lg p-8 text-center">
               <div className="text-4xl mb-4">📁</div>
-              <p className="text-gray-600 mb-2">Upload your cultural item</p>
+              <p className="text-secondary-600 mb-2">Upload your cultural item</p>
               <p className="text-sm text-gray-500">Drag and drop files here, or click to browse</p>
-              <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+              <button className="mt-4 px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
                 Choose Files
               </button>
             </div>
@@ -546,7 +546,7 @@ export default function DigitalCulturalArchive({
               </button>
               <button
                 onClick={() => setShowUploadModal(false)}
-                className="flex-1 bg-gray-200 text-gray-800 font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors"
+                className="flex-1 bg-secondary-200 text-secondary-800 font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors"
               >
                 Cancel
               </button>
@@ -579,7 +579,7 @@ export default function DigitalCulturalArchive({
                 <span className="text-3xl">{getTypeIcon(item.type)}</span>
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900">{item.title}</h2>
-                  <p className="text-gray-600">{item.origin.city}, {item.origin.region}</p>
+                  <p className="text-secondary-600">{item.origin.city}, {item.origin.region}</p>
                 </div>
               </div>
               <span className={`px-3 py-1 text-xs font-medium rounded-full ${getPreservationStatusColor(item.preservationStatus)}`}>
@@ -588,7 +588,7 @@ export default function DigitalCulturalArchive({
             </div>
             <button
               onClick={() => setSelectedItem(null)}
-              className="text-gray-400 hover:text-gray-600"
+              className="text-gray-400 hover:text-secondary-600"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -600,28 +600,28 @@ export default function DigitalCulturalArchive({
             <div className="lg:col-span-2 space-y-6">
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Description</h3>
-                <p className="text-gray-700">{item.description}</p>
+                <p className="text-secondary-700">{item.description}</p>
               </div>
 
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Cultural Significance</h3>
-                <p className="text-gray-700">{item.culturalSignificance}</p>
+                <p className="text-secondary-700">{item.culturalSignificance}</p>
               </div>
 
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Cultural Context</h3>
-                <p className="text-gray-700">{item.culturalContext}</p>
+                <p className="text-secondary-700">{item.culturalContext}</p>
               </div>
 
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Modern Relevance</h3>
-                <p className="text-gray-700">{item.modernRelevance}</p>
+                <p className="text-secondary-700">{item.modernRelevance}</p>
               </div>
 
               {item.preservationNotes && (
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Preservation Notes</h3>
-                  <p className="text-sm text-gray-600 bg-gray-50 rounded-lg p-3">{item.preservationNotes}</p>
+                  <p className="text-sm text-secondary-600 bg-gray-50 rounded-lg p-3">{item.preservationNotes}</p>
                 </div>
               )}
             </div>
@@ -631,25 +631,25 @@ export default function DigitalCulturalArchive({
                 <h3 className="font-semibold text-gray-900 mb-3">Details</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Created:</span>
+                    <span className="text-secondary-600">Created:</span>
                     <span className="font-medium">{formatDate(item.dateCreated)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Period:</span>
+                    <span className="text-secondary-600">Period:</span>
                     <span className="font-medium">{item.historicalPeriod}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Language:</span>
+                    <span className="text-secondary-600">Language:</span>
                     <span className="font-medium">{item.language}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Access:</span>
+                    <span className="text-secondary-600">Access:</span>
                     <span className="font-medium">{item.accessLevel}</span>
                   </div>
                   {item.verified && (
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Status:</span>
-                      <span className="font-medium text-green-600 flex items-center">
+                      <span className="text-secondary-600">Status:</span>
+                      <span className="font-medium text-action-600 flex items-center">
                         <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
@@ -664,7 +664,7 @@ export default function DigitalCulturalArchive({
                 <h3 className="font-semibold text-gray-900 mb-3">Contributor</h3>
                 <div className="space-y-1 text-sm">
                   <p className="font-medium">{item.contributor.name}</p>
-                  <p className="text-gray-600 capitalize">{item.contributor.relationship}</p>
+                  <p className="text-secondary-600 capitalize">{item.contributor.relationship}</p>
                 </div>
               </div>
 
@@ -672,19 +672,19 @@ export default function DigitalCulturalArchive({
                 <h3 className="font-semibold text-gray-900 mb-3">Engagement</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Views:</span>
+                    <span className="text-secondary-600">Views:</span>
                     <span className="font-medium">{item.views.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Downloads:</span>
+                    <span className="text-secondary-600">Downloads:</span>
                     <span className="font-medium">{item.downloads.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Likes:</span>
+                    <span className="text-secondary-600">Likes:</span>
                     <span className="font-medium">{item.likes.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Shares:</span>
+                    <span className="text-secondary-600">Shares:</span>
                     <span className="font-medium">{item.shares.toLocaleString()}</span>
                   </div>
                 </div>
@@ -702,10 +702,10 @@ export default function DigitalCulturalArchive({
               </div>
 
               <div className="flex space-x-2">
-                <button className="flex-1 bg-blue-600 text-white py-2 px-3 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
+                <button className="flex-1 bg-primary-600 text-white py-2 px-3 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors">
                   Download
                 </button>
-                <button className="flex-1 bg-green-600 text-white py-2 px-3 rounded-lg text-sm font-medium hover:bg-green-700 transition-colors">
+                <button className="flex-1 bg-action-600 text-white py-2 px-3 rounded-lg text-sm font-medium hover:bg-green-700 transition-colors">
                   Share
                 </button>
               </div>
@@ -723,7 +723,7 @@ export default function DigitalCulturalArchive({
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           Digital Portuguese Cultural Archive
         </h1>
-        <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-6">
+        <p className="text-xl text-secondary-600 max-w-4xl mx-auto mb-6">
           Preserving Portuguese heritage through digital documentation - family recipes, historical documents, 
           traditional music, oral stories, and cultural artifacts from Portuguese communities worldwide
         </p>
@@ -744,20 +744,20 @@ export default function DigitalCulturalArchive({
       {/* Stats Overview */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-          <div className="text-3xl font-bold text-blue-600 mb-2">{mockArchiveItems.length.toLocaleString()}</div>
-          <div className="text-sm text-gray-600">Archived Items</div>
+          <div className="text-3xl font-bold text-primary-600 mb-2">{mockArchiveItems.length.toLocaleString()}</div>
+          <div className="text-sm text-secondary-600">Archived Items</div>
         </div>
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-          <div className="text-3xl font-bold text-green-600 mb-2">15</div>
-          <div className="text-sm text-gray-600">Countries Represented</div>
+          <div className="text-3xl font-bold text-action-600 mb-2">15</div>
+          <div className="text-sm text-secondary-600">Countries Represented</div>
         </div>
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
           <div className="text-3xl font-bold text-purple-600 mb-2">{mockPreservationProjects.length}</div>
-          <div className="text-sm text-gray-600">Active Preservation Projects</div>
+          <div className="text-sm text-secondary-600">Active Preservation Projects</div>
         </div>
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-          <div className="text-3xl font-bold text-red-600 mb-2">1,650</div>
-          <div className="text-sm text-gray-600">Community Contributors</div>
+          <div className="text-3xl font-bold text-coral-600 mb-2">1,650</div>
+          <div className="text-sm text-secondary-600">Community Contributors</div>
         </div>
       </div>
 
@@ -766,22 +766,22 @@ export default function DigitalCulturalArchive({
         <h3 className="font-semibold text-gray-900 mb-4">Search & Filter</h3>
         <div className="grid md:grid-cols-4 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Search</label>
+            <label className="block text-sm font-medium text-secondary-700 mb-2">Search</label>
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search archive..."
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
             />
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+            <label className="block text-sm font-medium text-secondary-700 mb-2">Category</label>
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value as any)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
             >
               <option value="all">All Categories</option>
               <option value="documents">Documents</option>
@@ -794,11 +794,11 @@ export default function DigitalCulturalArchive({
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Origin</label>
+            <label className="block text-sm font-medium text-secondary-700 mb-2">Origin</label>
             <select
               value={selectedOrigin}
               onChange={(e) => setSelectedOrigin(e.target.value as any)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
             >
               <option value="all">All Origins</option>
               <option value="portugal">Portugal</option>
@@ -811,11 +811,11 @@ export default function DigitalCulturalArchive({
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Sort By</label>
+            <label className="block text-sm font-medium text-secondary-700 mb-2">Sort By</label>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500"
             >
               <option value="date">Latest Added</option>
               <option value="popularity">Most Viewed</option>
@@ -841,17 +841,17 @@ export default function DigitalCulturalArchive({
                   <span className="text-2xl">{getTypeIcon(item.type)}</span>
                   <div className="flex-1">
                     <h3 className="font-bold text-gray-900 line-clamp-2">{item.title}</h3>
-                    <p className="text-sm text-gray-600">{item.origin.city}, {item.origin.region}</p>
+                    <p className="text-sm text-secondary-600">{item.origin.city}, {item.origin.region}</p>
                   </div>
                 </div>
                 {item.verified && (
-                  <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-action-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                 )}
               </div>
 
-              <p className="text-gray-700 text-sm mb-4 line-clamp-3">{item.description}</p>
+              <p className="text-secondary-700 text-sm mb-4 line-clamp-3">{item.description}</p>
 
               <div className="mb-4">
                 <span className={`px-2 py-1 text-xs font-medium rounded ${getPreservationStatusColor(item.preservationStatus)}`}>
@@ -861,13 +861,13 @@ export default function DigitalCulturalArchive({
 
               <div className="flex flex-wrap gap-2 mb-4">
                 {item.tags.slice(0, 3).map((tag, index) => (
-                  <span key={index} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
+                  <span key={index} className="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded">
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <div className="flex justify-between items-center text-sm text-gray-600">
+              <div className="flex justify-between items-center text-sm text-secondary-600">
                 <span>{formatDate(item.dateUploaded)}</span>
                 <div className="flex items-center space-x-4">
                   <span>👁️ {item.views}</span>
@@ -888,7 +888,7 @@ export default function DigitalCulturalArchive({
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{project.name}</h3>
-                  <p className="text-gray-700 mb-4">{project.description}</p>
+                  <p className="text-secondary-700 mb-4">{project.description}</p>
                 </div>
                 <span className={`px-3 py-1 text-xs font-medium rounded-full ${
                   project.type === 'digitization' ? 'bg-blue-100 text-blue-800' :
@@ -901,33 +901,33 @@ export default function DigitalCulturalArchive({
 
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div>
-                  <p className="text-sm text-gray-600">Timeline</p>
+                  <p className="text-sm text-secondary-600">Timeline</p>
                   <p className="font-semibold">{project.timeline}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Participants</p>
+                  <p className="text-sm text-secondary-600">Participants</p>
                   <p className="font-semibold">{project.participants}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Countries</p>
+                  <p className="text-sm text-secondary-600">Countries</p>
                   <p className="font-semibold">{project.countries.length}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Funding Goal</p>
+                  <p className="text-sm text-secondary-600">Funding Goal</p>
                   <p className="font-semibold">{project.fundingRequired.amount.toLocaleString()} {project.fundingRequired.currency}</p>
                 </div>
               </div>
 
               <div className="mb-4">
-                <p className="text-sm text-gray-600 mb-2">Expected Impact:</p>
-                <p className="text-sm text-gray-700">{project.expectedImpact}</p>
+                <p className="text-sm text-secondary-600 mb-2">Expected Impact:</p>
+                <p className="text-sm text-secondary-700">{project.expectedImpact}</p>
               </div>
 
               <div className="flex space-x-3">
                 <button className="flex-1 bg-gradient-to-r from-green-600 via-red-500 to-yellow-500 text-white font-semibold py-2 px-4 rounded-lg hover:shadow-lg transition-all">
                   Support Project
                 </button>
-                <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors">
                   Learn More
                 </button>
               </div>

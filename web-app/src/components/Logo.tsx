@@ -63,7 +63,7 @@ export default function Logo({ size = 'medium', className = '', animated = false
               <Flag country="GB" className="text-xs" />
             </div>
           </div>
-          <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest leading-none mt-0.5">
+          <span className="text-[10px] font-bold text-secondary-600 uppercase tracking-widest leading-none mt-0.5">
             London
           </span>
         </div>
@@ -103,7 +103,7 @@ export default function Logo({ size = 'medium', className = '', animated = false
           LusoTown
         </h1>
         {size !== 'small' && (
-          <span className={`text-xs font-bold text-gray-600 uppercase tracking-widest ${size === 'large' ? 'sm:text-sm' : ''} flex items-center gap-1`}>
+          <span className={`text-xs font-bold text-secondary-600 uppercase tracking-widest ${size === 'large' ? 'sm:text-sm' : ''} flex items-center gap-1`}>
             <Flag country="PT" className="text-[8px]" />
             London
             <Flag country="GB" className="text-[8px]" />

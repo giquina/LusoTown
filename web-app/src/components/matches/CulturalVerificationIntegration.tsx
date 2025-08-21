@@ -199,8 +199,8 @@ export default function CulturalVerificationIntegration({
   const getVerificationLevel = (score: number) => {
     if (score >= 95) return { level: 'Legendary', color: 'text-yellow-600', bg: 'bg-yellow-100' }
     if (score >= 85) return { level: 'Epic', color: 'text-purple-600', bg: 'bg-purple-100' }
-    if (score >= 75) return { level: 'Rare', color: 'text-blue-600', bg: 'bg-blue-100' }
-    return { level: 'Common', color: 'text-gray-600', bg: 'bg-gray-100' }
+    if (score >= 75) return { level: 'Rare', color: 'text-primary-600', bg: 'bg-blue-100' }
+    return { level: 'Common', color: 'text-secondary-600', bg: 'bg-secondary-100' }
   }
 
   const verificationLevel = verificationResults ? getVerificationLevel(verificationResults.overallScore) : null
@@ -252,7 +252,7 @@ export default function CulturalVerificationIntegration({
               </div>
             </div>
             <div className="text-center p-3 bg-white bg-opacity-50 rounded-xl">
-              <FireIcon className="w-8 h-8 text-red-600 mx-auto mb-2" />
+              <FireIcon className="w-8 h-8 text-coral-600 mx-auto mb-2" />
               <div className="text-sm font-medium text-gray-900">
                 {language === 'pt' ? 'Prioridade' : 'Priority'}
               </div>
@@ -294,7 +294,7 @@ export default function CulturalVerificationIntegration({
                   <h3 className="text-lg font-bold text-gray-900">
                     {language === 'pt' ? 'Verificação Cultural' : 'Cultural Verification'}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {getCompletionPercentage()}% {language === 'pt' ? 'completo' : 'complete'} • {getTotalPoints()} {language === 'pt' ? 'pontos' : 'points'}
                   </p>
                 </div>
@@ -309,11 +309,11 @@ export default function CulturalVerificationIntegration({
 
             {/* Progress Bar */}
             <div className="mt-4">
-              <div className="flex justify-between text-sm text-gray-600 mb-2">
+              <div className="flex justify-between text-sm text-secondary-600 mb-2">
                 <span>{language === 'pt' ? 'Progresso da Verificação' : 'Verification Progress'}</span>
                 <span>{getCompletionPercentage()}%</span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="w-full bg-secondary-200 rounded-full h-2">
                 <motion.div 
                   initial={{ width: 0 }}
                   animate={{ width: `${getCompletionPercentage()}%` }}
@@ -335,14 +335,14 @@ export default function CulturalVerificationIntegration({
                     className={`p-4 rounded-xl border transition-all ${
                       step.completed 
                         ? 'bg-emerald-50 border-emerald-200' 
-                        : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
+                        : 'bg-gray-50 border-gray-200 hover:bg-secondary-100'
                     }`}
                   >
                     <div className="flex items-start gap-3">
                       <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
                         step.completed 
                           ? 'bg-emerald-500 text-white' 
-                          : 'bg-gray-300 text-gray-600'
+                          : 'bg-gray-300 text-secondary-600'
                       }`}>
                         {step.completed ? (
                           <CheckCircleIcon className="w-5 h-5" />
@@ -363,7 +363,7 @@ export default function CulturalVerificationIntegration({
                           )}
                         </div>
                         
-                        <p className="text-sm text-gray-600 mb-2">
+                        <p className="text-sm text-secondary-600 mb-2">
                           {language === 'pt' ? step.descriptionPortuguese : step.description}
                         </p>
                         
@@ -400,7 +400,7 @@ export default function CulturalVerificationIntegration({
                 {photos.length > 0 && (
                   <button
                     onClick={() => setShowGallery(true)}
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all"
+                    className="flex items-center gap-2 px-4 py-2 bg-secondary-200 text-secondary-700 rounded-lg hover:bg-gray-300 transition-all"
                   >
                     <PhotoIcon className="w-4 h-4" />
                     {language === 'pt' ? 'Ver Galeria' : 'View Gallery'} ({photos.length})
@@ -410,7 +410,7 @@ export default function CulturalVerificationIntegration({
 
               {verificationResults && verificationResults.badges.length > 0 && (
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium text-gray-700">
+                  <span className="text-sm font-medium text-secondary-700">
                     {language === 'pt' ? 'Distintivos:' : 'Badges:'}
                   </span>
                   <CulturalVerificationBadges 

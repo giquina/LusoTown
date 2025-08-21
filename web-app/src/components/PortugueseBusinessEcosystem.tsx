@@ -254,7 +254,7 @@ export default function PortugueseBusinessEcosystem() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="py-12 bg-gray-900 text-white"
+          className="py-12 bg-secondary-900 text-white"
         >
           <div className="container-width">
             <h2 className="text-3xl font-bold text-center mb-12">
@@ -339,7 +339,7 @@ export default function PortugueseBusinessEcosystem() {
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               {isPortuguese ? 'Categorias de Neg�cios' : 'Business Categories'}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Explore categorias de neg�cios portugueses verificados e certificados para qualidade cultural'
                 : 'Explore Portuguese business categories verified and certified for cultural quality'
@@ -376,7 +376,7 @@ export default function PortugueseBusinessEcosystem() {
                     <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
                       {isPortuguese ? category.name : category.nameEn}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-secondary-600">
                       {category.businessCount} {isPortuguese ? 'neg�cios' : 'businesses'}
                     </p>
                   </div>
@@ -384,7 +384,7 @@ export default function PortugueseBusinessEcosystem() {
 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-secondary-600">
                       {isPortuguese ? 'Modelo de Receita:' : 'Revenue Model:'}
                     </span>
                     <span className="text-sm font-medium text-gray-900">
@@ -394,10 +394,10 @@ export default function PortugueseBusinessEcosystem() {
                   
                   {category.commission > 0 && (
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">
+                      <span className="text-sm text-secondary-600">
                         {isPortuguese ? 'Comiss�o:' : 'Commission:'}
                       </span>
-                      <span className="text-sm font-bold text-green-600">
+                      <span className="text-sm font-bold text-action-600">
                         {category.commission}%
                       </span>
                     </div>
@@ -424,7 +424,7 @@ export default function PortugueseBusinessEcosystem() {
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               {isPortuguese ? 'Neg�cios em Destaque' : 'Featured Businesses'}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Neg�cios portugueses premium com autenticidade cultural verificada'
                 : 'Premium Portuguese businesses with verified cultural authenticity'
@@ -447,7 +447,7 @@ export default function PortugueseBusinessEcosystem() {
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="text-2xl font-bold text-gray-900">{business.name}</h3>
                         {business.verified && (
-                          <CheckBadgeIcon className="w-6 h-6 text-blue-500" />
+                          <CheckBadgeIcon className="w-6 h-6 text-primary-500" />
                         )}
                         {business.premium && (
                           <div className="bg-premium-500 text-white text-xs font-bold px-2 py-1 rounded">
@@ -456,15 +456,15 @@ export default function PortugueseBusinessEcosystem() {
                         )}
                       </div>
                       
-                      <p className="text-gray-600 mb-4">
+                      <p className="text-secondary-600 mb-4">
                         {isPortuguese ? business.description : business.descriptionEn}
                       </p>
 
                       <div className="flex items-center gap-4 mb-4">
                         <div className="flex items-center gap-1">
-                          <StarIcon className="w-5 h-5 text-yellow-500 fill-current" />
+                          <StarIcon className="w-5 h-5 text-accent-500 fill-current" />
                           <span className="font-bold">{business.rating}</span>
-                          <span className="text-gray-600">({business.reviews})</span>
+                          <span className="text-secondary-600">({business.reviews})</span>
                         </div>
                         
                         <div className="flex items-center gap-2">
@@ -479,15 +479,15 @@ export default function PortugueseBusinessEcosystem() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-3">
-                      <div className="flex items-center gap-3 text-sm text-gray-600">
+                      <div className="flex items-center gap-3 text-sm text-secondary-600">
                         <MapPinIcon className="w-4 h-4" />
                         <span>{business.address}</span>
                       </div>
-                      <div className="flex items-center gap-3 text-sm text-gray-600">
+                      <div className="flex items-center gap-3 text-sm text-secondary-600">
                         <PhoneIcon className="w-4 h-4" />
                         <span>{business.phone}</span>
                       </div>
-                      <div className="flex items-center gap-3 text-sm text-gray-600">
+                      <div className="flex items-center gap-3 text-sm text-secondary-600">
                         <EnvelopeIcon className="w-4 h-4" />
                         <span>{business.email}</span>
                       </div>
@@ -506,7 +506,7 @@ export default function PortugueseBusinessEcosystem() {
                         <span className="font-medium text-gray-900">
                           {isPortuguese ? 'Taxa Mensal:' : 'Monthly Fee:'}
                         </span>
-                        <span className="ml-2 font-bold text-green-600">
+                        <span className="ml-2 font-bold text-action-600">
                           �{business.monthlyFee}
                         </span>
                       </div>
@@ -519,8 +519,8 @@ export default function PortugueseBusinessEcosystem() {
                     </h4>
                     <div className="grid md:grid-cols-2 gap-2">
                       {(isPortuguese ? business.features : business.featuresEn).slice(0, 4).map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                          <CheckBadgeIcon className="w-4 h-4 text-green-500" />
+                        <div key={idx} className="flex items-center gap-2 text-sm text-secondary-600">
+                          <CheckBadgeIcon className="w-4 h-4 text-action-500" />
                           <span>{feature}</span>
                         </div>
                       ))}

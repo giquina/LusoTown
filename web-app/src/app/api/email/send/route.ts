@@ -57,7 +57,7 @@ function generateEmailHTML(content: EmailContent, userInfo: any): string {
           margin: 0;
           padding: 0;
           background-color: #f8fafc;
-          color: #374151;
+          color: var(--color-secondary-700);
           line-height: 1.6;
         }
         .container {
@@ -95,7 +95,7 @@ function generateEmailHTML(content: EmailContent, userInfo: any): string {
           margin: 24px 0 12px 0;
         }
         .content h3 {
-          color: #374151;
+          color: var(--color-secondary-700);
           font-size: 18px;
           font-weight: 600;
           margin: 20px 0 8px 0;
@@ -112,7 +112,7 @@ function generateEmailHTML(content: EmailContent, userInfo: any): string {
         }
         .cta-button {
           display: inline-block;
-          background: linear-gradient(135deg, #dc2626, #ef4444);
+          background: linear-gradient(135deg, var(--color-coral-500), #ef4444);
           color: white;
           padding: 16px 32px;
           text-decoration: none;
@@ -123,17 +123,17 @@ function generateEmailHTML(content: EmailContent, userInfo: any): string {
           margin: 24px 0;
         }
         .cta-button:hover {
-          background: linear-gradient(135deg, #b91c1c, #dc2626);
+          background: linear-gradient(135deg, var(--color-coral-600), var(--color-coral-500));
         }
         .footer {
           background-color: #f8fafc;
           padding: 24px;
           text-align: center;
           font-size: 14px;
-          color: #6b7280;
+          color: var(--color-secondary-500);
         }
         .footer a {
-          color: #dc2626;
+          color: var(--color-coral-500);
           text-decoration: none;
         }
         .unsubscribe {

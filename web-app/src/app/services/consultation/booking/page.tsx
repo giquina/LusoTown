@@ -91,7 +91,6 @@ export default function ConsultationBookingPage() {
 
   const handleSubmit = () => {
     // Handle form submission
-    console.log('Consultation booking:', formData)
   // Redirect to confirmation page
   window.location.href = `${ROUTES.services}/consultation/confirmation`
   }
@@ -132,7 +131,7 @@ export default function ConsultationBookingPage() {
                   </h4>
                   <span className="text-sm text-primary-600 font-medium">{type.price}</span>
                 </div>
-                <p className="text-gray-600 text-sm mb-2">
+                <p className="text-secondary-600 text-sm mb-2">
                   {isPortuguese ? type.descriptionPortuguese : type.description}
                 </p>
                 <div className="flex items-center text-gray-500 text-sm">
@@ -154,13 +153,13 @@ export default function ConsultationBookingPage() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               {isPortuguese ? 'Idioma Preferido' : 'Preferred Language'}
             </label>
             <select
               value={formData.preferredLanguage}
               onChange={(e) => handleInputChange('preferredLanguage', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             >
               <option value="english">English</option>
               <option value="portuguese">Português</option>
@@ -169,13 +168,13 @@ export default function ConsultationBookingPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               {isPortuguese ? 'Duração' : 'Duration'}
             </label>
             <select
               value={formData.duration}
               onChange={(e) => handleInputChange('duration', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             >
               <option value="30">{isPortuguese ? '30 minutos' : '30 minutes'}</option>
               <option value="45">{isPortuguese ? '45 minutos' : '45 minutes'}</option>
@@ -201,7 +200,7 @@ export default function ConsultationBookingPage() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               {isPortuguese ? 'Data Preferida' : 'Preferred Date'}
             </label>
             <input
@@ -209,18 +208,18 @@ export default function ConsultationBookingPage() {
               value={formData.preferredDate}
               onChange={(e) => handleInputChange('preferredDate', e.target.value)}
               min={new Date().toISOString().split('T')[0]}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               {isPortuguese ? 'Hora Preferida' : 'Preferred Time'}
             </label>
             <select
               value={formData.preferredTime}
               onChange={(e) => handleInputChange('preferredTime', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             >
               <option value="">{isPortuguese ? 'Selecionar hora' : 'Select time'}</option>
               {timeSlots.map((time) => (
@@ -232,13 +231,13 @@ export default function ConsultationBookingPage() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-secondary-700 mb-2">
           {isPortuguese ? 'Local da Consulta' : 'Consultation Location'}
         </label>
         <select
           value={formData.location}
           onChange={(e) => handleInputChange('location', e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+          className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
         >
           <option value="">{isPortuguese ? 'Selecionar local' : 'Select location'}</option>
           <option value="video-call">{isPortuguese ? 'Videochamada (Zoom/Teams)' : 'Video Call (Zoom/Teams)'}</option>
@@ -249,7 +248,7 @@ export default function ConsultationBookingPage() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-secondary-700 mb-2">
           {isPortuguese ? 'Requisitos Específicos' : 'Specific Requirements'}
         </label>
         <textarea
@@ -260,7 +259,7 @@ export default function ConsultationBookingPage() {
             ? 'Descreva os seus requisitos, objetivos ou questões específicas...'
             : 'Describe your requirements, objectives, or specific questions...'
           }
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+          className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
         />
       </div>
     </motion.div>
@@ -279,52 +278,52 @@ export default function ConsultationBookingPage() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               {isPortuguese ? 'Nome Completo' : 'Full Name'}
             </label>
             <input
               type="text"
               value={formData.contactName}
               onChange={(e) => handleInputChange('contactName', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               {isPortuguese ? 'Empresa (opcional)' : 'Company (optional)'}
             </label>
             <input
               type="text"
               value={formData.company}
               onChange={(e) => handleInputChange('company', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               Email
             </label>
             <input
               type="email"
               value={formData.contactEmail}
               onChange={(e) => handleInputChange('contactEmail', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               {isPortuguese ? 'Telefone' : 'Phone'}
             </label>
             <input
               type="tel"
               value={formData.contactPhone}
               onChange={(e) => handleInputChange('contactPhone', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             />
           </div>
         </div>
@@ -332,13 +331,13 @@ export default function ConsultationBookingPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 mb-2">
             {isPortuguese ? 'Orçamento Estimado' : 'Estimated Budget'}
           </label>
           <select
             value={formData.budget}
             onChange={(e) => handleInputChange('budget', e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
           >
             <option value="">{isPortuguese ? 'Selecionar orçamento' : 'Select budget'}</option>
             <option value="under-500">£0 - £500</option>
@@ -351,13 +350,13 @@ export default function ConsultationBookingPage() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 mb-2">
             {isPortuguese ? 'Urgência' : 'Urgency'}
           </label>
           <select
             value={formData.urgency}
             onChange={(e) => handleInputChange('urgency', e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
           >
             <option value="">{isPortuguese ? 'Selecionar urgência' : 'Select urgency'}</option>
             <option value="flexible">{isPortuguese ? 'Flexível' : 'Flexible'}</option>
@@ -392,7 +391,7 @@ export default function ConsultationBookingPage() {
               </h1>
             </div>
             
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-secondary-600">
               {isPortuguese
                 ? 'Agende uma consulta gratuita com nossos especialistas para discutir suas necessidades específicas'
                 : 'Schedule a free consultation with our specialists to discuss your specific needs'
@@ -409,7 +408,7 @@ export default function ConsultationBookingPage() {
                     className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${
                       currentStep >= step
                         ? 'bg-primary-600 text-white'
-                        : 'bg-gray-200 text-gray-500'
+                        : 'bg-secondary-200 text-gray-500'
                     }`}
                   >
                     {step}
@@ -417,14 +416,14 @@ export default function ConsultationBookingPage() {
                   {step < 3 && (
                     <div
                       className={`w-16 h-1 ${
-                        currentStep > step ? 'bg-primary-600' : 'bg-gray-200'
+                        currentStep > step ? 'bg-primary-600' : 'bg-secondary-200'
                       }`}
                     />
                   )}
                 </div>
               ))}
             </div>
-            <div className="flex justify-between mt-2 text-sm text-gray-600">
+            <div className="flex justify-between mt-2 text-sm text-secondary-600">
               <span>{isPortuguese ? 'Tipo de Serviço' : 'Service Type'}</span>
               <span>{isPortuguese ? 'Agendamento' : 'Scheduling'}</span>
               <span>{isPortuguese ? 'Contacto' : 'Contact'}</span>
@@ -442,7 +441,7 @@ export default function ConsultationBookingPage() {
               <button
                 onClick={handlePrevStep}
                 disabled={currentStep === 1}
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isPortuguese ? 'Anterior' : 'Previous'}
               </button>

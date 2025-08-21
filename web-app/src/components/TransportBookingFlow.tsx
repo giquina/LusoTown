@@ -139,9 +139,9 @@ export default function TransportBookingFlow({
   }
 
   const getRiskLevelColor = (score: number) => {
-    if (score >= 15) return 'text-red-600 bg-red-50 border-red-200'
+    if (score >= 15) return 'text-coral-600 bg-red-50 border-red-200'
     if (score >= 10) return 'text-yellow-600 bg-yellow-50 border-yellow-200'
-    return 'text-green-600 bg-green-50 border-green-200'
+    return 'text-action-600 bg-green-50 border-green-200'
   }
 
   const getRiskLevelText = (score: number) => {
@@ -186,13 +186,13 @@ export default function TransportBookingFlow({
                   <h2 className="text-2xl font-bold text-gray-900">
                     {isPortuguese ? 'Detalhes da Reserva' : 'Booking Details'}
                   </h2>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {isPortuguese ? 'Conformidade SIA completada' : 'SIA compliance completed'}
                   </p>
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="p-2 text-gray-400 hover:text-secondary-600 rounded-lg hover:bg-secondary-100 transition-colors"
                 >
                   <XMarkIcon className="w-6 h-6" />
                 </button>
@@ -212,7 +212,7 @@ export default function TransportBookingFlow({
                   
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
-                      <span className="text-gray-600">
+                      <span className="text-secondary-600">
                         {isPortuguese ? 'Serviço:' : 'Service:'}
                       </span>
                       <span className="ml-2 font-medium">
@@ -220,7 +220,7 @@ export default function TransportBookingFlow({
                       </span>
                     </div>
                     <div>
-                      <span className="text-gray-600">
+                      <span className="text-secondary-600">
                         {isPortuguese ? 'Data:' : 'Date:'}
                       </span>
                       <span className="ml-2 font-medium">
@@ -228,7 +228,7 @@ export default function TransportBookingFlow({
                       </span>
                     </div>
                     <div>
-                      <span className="text-gray-600">
+                      <span className="text-secondary-600">
                         {isPortuguese ? 'Passageiros:' : 'Passengers:'}
                       </span>
                       <span className="ml-2 font-medium">
@@ -236,7 +236,7 @@ export default function TransportBookingFlow({
                       </span>
                     </div>
                     <div>
-                      <span className="text-gray-600">
+                      <span className="text-secondary-600">
                         {isPortuguese ? 'Proteção:' : 'Protection:'}
                       </span>
                       <span className="ml-2 font-medium capitalize">
@@ -319,7 +319,7 @@ export default function TransportBookingFlow({
                         £{Math.round((selectedService?.price || 75) * (complianceData.riskScore >= 15 ? 1.5 : complianceData.riskScore >= 10 ? 1.3 : 1.0))}
                       </span>
                     </div>
-                    <div className="text-sm text-gray-600 space-y-1">
+                    <div className="text-sm text-secondary-600 space-y-1">
                       <div>
                         {isPortuguese ? 'Data:' : 'Date:'} {new Date(complianceData.serviceDate).toLocaleDateString()}
                       </div>
@@ -351,7 +351,7 @@ export default function TransportBookingFlow({
                   
                   <button
                     onClick={onClose}
-                    className="w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+                    className="w-full border border-secondary-300 text-secondary-700 py-3 px-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
                   >
                     {isPortuguese ? 'Cancelar' : 'Cancel'}
                   </button>
@@ -379,14 +379,14 @@ export default function TransportBookingFlow({
               className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-6 text-center"
             >
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircleIcon className="w-8 h-8 text-green-600" />
+                <CheckCircleIcon className="w-8 h-8 text-action-600" />
               </div>
               
               <h3 className="text-xl font-bold text-gray-900 mb-2">
                 {isPortuguese ? 'Reserva Confirmada!' : 'Booking Confirmed!'}
               </h3>
               
-              <p className="text-gray-600 mb-4">
+              <p className="text-secondary-600 mb-4">
                 {isPortuguese 
                   ? 'O seu serviço SIA foi adicionado ao carrinho. Um oficial licenciado entrará em contacto para confirmar os detalhes.'
                   : 'Your SIA service has been added to cart. A licensed officer will contact you to confirm details.'
@@ -396,12 +396,12 @@ export default function TransportBookingFlow({
               {complianceData && (complianceData.riskScore >= 10 || complianceData.specialRequirements.includes('armed-protection') || complianceData.hasKnownRisks) && (
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
                   <div className="flex items-start space-x-2">
-                    <ClockIcon className="w-5 h-5 text-blue-600 mt-0.5" />
+                    <ClockIcon className="w-5 h-5 text-primary-600 mt-0.5" />
                     <div className="text-left">
                       <p className="text-sm font-medium text-blue-800">
                         {isPortuguese ? 'Revisão Obrigatória' : 'Review Required'}
                       </p>
-                      <p className="text-sm text-blue-700">
+                      <p className="text-sm text-primary-700">
                         {isPortuguese 
                           ? 'Tempo estimado de revisão: 2-4 horas'
                           : 'Estimated review time: 2-4 hours'
@@ -471,7 +471,7 @@ function UserDetailsForm({ onComplete, isPortuguese }: UserDetailsFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-secondary-700 mb-2">
           <UserIcon className="w-4 h-4 inline mr-2" />
           {isPortuguese ? 'Nome Completo *' : 'Full Name *'}
         </label>
@@ -480,17 +480,17 @@ function UserDetailsForm({ onComplete, isPortuguese }: UserDetailsFormProps) {
           value={formData.fullName}
           onChange={(e) => handleInputChange('fullName', e.target.value)}
           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent ${
-            errors.fullName ? 'border-red-500' : 'border-gray-300'
+            errors.fullName ? 'border-coral-500' : 'border-secondary-300'
           }`}
           placeholder={isPortuguese ? 'Seu nome completo' : 'Your full name'}
         />
         {errors.fullName && (
-          <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
+          <p className="text-coral-500 text-sm mt-1">{errors.fullName}</p>
         )}
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-secondary-700 mb-2">
           {isPortuguese ? 'Email *' : 'Email *'}
         </label>
         <input
@@ -498,17 +498,17 @@ function UserDetailsForm({ onComplete, isPortuguese }: UserDetailsFormProps) {
           value={formData.email}
           onChange={(e) => handleInputChange('email', e.target.value)}
           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent ${
-            errors.email ? 'border-red-500' : 'border-gray-300'
+            errors.email ? 'border-coral-500' : 'border-secondary-300'
           }`}
           placeholder={isPortuguese ? 'seu.email@exemplo.com' : 'your.email@example.com'}
         />
         {errors.email && (
-          <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+          <p className="text-coral-500 text-sm mt-1">{errors.email}</p>
         )}
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-secondary-700 mb-2">
           {isPortuguese ? 'Telefone *' : 'Phone Number *'}
         </label>
         <input
@@ -516,24 +516,24 @@ function UserDetailsForm({ onComplete, isPortuguese }: UserDetailsFormProps) {
           value={formData.phone}
           onChange={(e) => handleInputChange('phone', e.target.value)}
           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent ${
-            errors.phone ? 'border-red-500' : 'border-gray-300'
+            errors.phone ? 'border-coral-500' : 'border-secondary-300'
           }`}
           placeholder="+44 7XXX XXX XXX"
         />
         {errors.phone && (
-          <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+          <p className="text-coral-500 text-sm mt-1">{errors.phone}</p>
         )}
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-secondary-700 mb-2">
           {isPortuguese ? 'Notas Adicionais' : 'Additional Notes'}
         </label>
         <textarea
           value={formData.additionalNotes}
           onChange={(e) => handleInputChange('additionalNotes', e.target.value)}
           rows={3}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
+          className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
           placeholder={isPortuguese 
             ? 'Quaisquer pedidos especiais ou informações adicionais...'
             : 'Any special requests or additional information...'

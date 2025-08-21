@@ -1,7 +1,9 @@
 'use client'
 
 import { UserProfile, connectionService } from '@/lib/connections'
+import { buildUnsplashUrl } from '@/config'
 import { getImageWithFallback } from '@/lib/profileImages'
+import { buildUnsplashUrl } from '@/config'
 
 export interface DirectoryFilters {
   search?: string
@@ -51,8 +53,8 @@ export const mockDirectoryProfiles: UserProfile[] = [
       { id: 'badge-2', name: 'Community Builder', description: 'Made 25+ connections', icon: '🤝', color: 'blue', earnedAt: '2024-01-25T10:00:00Z' }
     ],
     photos: [
-      { id: 'photo-1', url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80', caption: 'Wine tasting in Tuscany!', isProfilePicture: false, uploadedAt: '2024-01-20T10:00:00Z', likes: 12, comments: [] },
-      { id: 'photo-2', url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80', caption: 'Book club meetup', isProfilePicture: false, uploadedAt: '2024-01-22T10:00:00Z', likes: 8, comments: [] }
+      { id: 'photo-1', url: buildUnsplashUrl('photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80'), caption: 'Wine tasting in Tuscany!', isProfilePicture: false, uploadedAt: '2024-01-20T10:00:00Z', likes: 12, comments: [] },
+      { id: 'photo-2', url: buildUnsplashUrl('photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80'), caption: 'Book club meetup', isProfilePicture: false, uploadedAt: '2024-01-22T10:00:00Z', likes: 8, comments: [] }
     ],
     preferences: {
       lookingFor: 'friendship',
@@ -92,8 +94,8 @@ export const mockDirectoryProfiles: UserProfile[] = [
       { id: 'badge-4', name: 'Super Connector', description: 'Made 40+ connections', icon: '⭐', color: 'gold', earnedAt: '2024-01-24T10:00:00Z' }
     ],
     photos: [
-      { id: 'photo-3', url: 'https://images.unsplash.com/photo-1506629905607-683b607dfc6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80', caption: 'Morning yoga in Hyde Park', isProfilePicture: false, uploadedAt: '2024-01-15T10:00:00Z', likes: 24, comments: [] },
-      { id: 'photo-4', url: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80', caption: 'Hiking in the Cotswolds', isProfilePicture: false, uploadedAt: '2024-01-18T10:00:00Z', likes: 18, comments: [] }
+      { id: 'photo-3', url: buildUnsplashUrl('photo-1506629905607-683b607dfc6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80'), caption: 'Morning yoga in Hyde Park', isProfilePicture: false, uploadedAt: '2024-01-15T10:00:00Z', likes: 24, comments: [] },
+      { id: 'photo-4', url: buildUnsplashUrl('photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80'), caption: 'Hiking in the Cotswolds', isProfilePicture: false, uploadedAt: '2024-01-18T10:00:00Z', likes: 18, comments: [] }
     ],
     preferences: {
       lookingFor: 'all',
@@ -132,7 +134,7 @@ export const mockDirectoryProfiles: UserProfile[] = [
       { id: 'badge-5', name: 'Tech Pioneer', description: 'Attended tech networking events', icon: '💻', color: 'blue', earnedAt: '2024-01-22T10:00:00Z' }
     ],
     photos: [
-      { id: 'photo-5', url: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80', caption: 'Tech conference networking', isProfilePicture: false, uploadedAt: '2024-01-16T10:00:00Z', likes: 15, comments: [] }
+      { id: 'photo-5', url: buildUnsplashUrl('photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80'), caption: 'Tech conference networking', isProfilePicture: false, uploadedAt: '2024-01-16T10:00:00Z', likes: 15, comments: [] }
     ],
     preferences: {
       lookingFor: 'networking',
@@ -172,8 +174,8 @@ export const mockDirectoryProfiles: UserProfile[] = [
       { id: 'badge-7', name: 'Social Butterfly', description: 'Attended 15+ social events', icon: '🦋', color: 'pink', earnedAt: '2024-01-23T10:00:00Z' }
     ],
     photos: [
-      { id: 'photo-6', url: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80', caption: 'Street art tour in Shoreditch', isProfilePicture: false, uploadedAt: '2024-01-14T10:00:00Z', likes: 32, comments: [] },
-      { id: 'photo-7', url: 'https://images.unsplash.com/photo-1522512115668-c09775d6f424?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80', caption: 'Behind the scenes at a photoshoot', isProfilePicture: false, uploadedAt: '2024-01-21T10:00:00Z', likes: 28, comments: [] }
+      { id: 'photo-6', url: buildUnsplashUrl('photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80'), caption: 'Street art tour in Shoreditch', isProfilePicture: false, uploadedAt: '2024-01-14T10:00:00Z', likes: 32, comments: [] },
+      { id: 'photo-7', url: buildUnsplashUrl('photo-1522512115668-c09775d6f424?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80'), caption: 'Behind the scenes at a photoshoot', isProfilePicture: false, uploadedAt: '2024-01-21T10:00:00Z', likes: 28, comments: [] }
     ],
     preferences: {
       lookingFor: 'activity_partners',
@@ -212,7 +214,7 @@ export const mockDirectoryProfiles: UserProfile[] = [
       { id: 'badge-8', name: 'New Member', description: 'Welcome to LusoTown!', icon: '👋', color: 'green', earnedAt: '2024-01-24T16:00:00Z' }
     ],
     photos: [
-      { id: 'photo-8', url: 'https://images.unsplash.com/photo-1506629905607-683b607dfc6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80', caption: 'First London weekend market!', isProfilePicture: false, uploadedAt: '2024-01-25T10:00:00Z', likes: 5, comments: [] }
+      { id: 'photo-8', url: buildUnsplashUrl('photo-1506629905607-683b607dfc6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80'), caption: 'First London weekend market!', isProfilePicture: false, uploadedAt: '2024-01-25T10:00:00Z', likes: 5, comments: [] }
     ],
     preferences: {
       lookingFor: 'friendship',

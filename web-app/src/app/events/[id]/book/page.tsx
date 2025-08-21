@@ -154,10 +154,10 @@ const TechnologyWorkshopBookingPage = () => {
                       <CpuChipIcon className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex gap-2">
-                      <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                      <span className="bg-accent-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full animate-pulse">
                         🎁 FREE GIVEAWAY
                       </span>
-                      <span className="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                      <span className="bg-primary-500 text-white text-xs font-bold px-2 py-1 rounded-full">
                         NEW EVENT
                       </span>
                     </div>
@@ -223,14 +223,14 @@ const TechnologyWorkshopBookingPage = () => {
                     {/* Progress Bar */}
                     <div className="mb-8">
                       <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm font-medium text-gray-600">
+                        <span className="text-sm font-medium text-secondary-600">
                           Step {step} of 3
                         </span>
                         <span className="text-sm text-gray-500">
                           {Math.round((step / 3) * 100)}% Complete
                         </span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-secondary-200 rounded-full h-2">
                         <div 
                           className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-300"
                           style={{ width: `${(step / 3) * 100}%` }}
@@ -250,12 +250,12 @@ const TechnologyWorkshopBookingPage = () => {
                           >
                             <div>
                               <h2 className="text-2xl font-bold text-gray-900 mb-2">Personal Information</h2>
-                              <p className="text-gray-600">Tell us about yourself</p>
+                              <p className="text-secondary-600">Tell us about yourself</p>
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                               <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <label className="block text-sm font-medium text-secondary-700 mb-2">
                                   First Name *
                                 </label>
                                 <div className="relative">
@@ -266,14 +266,14 @@ const TechnologyWorkshopBookingPage = () => {
                                     value={formData.firstName}
                                     onChange={handleInputChange}
                                     placeholder="Your first name"
-                                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                    className="w-full pl-10 pr-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                                     required
                                   />
                                 </div>
                               </div>
 
                               <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <label className="block text-sm font-medium text-secondary-700 mb-2">
                                   Last Name *
                                 </label>
                                 <div className="relative">
@@ -284,7 +284,7 @@ const TechnologyWorkshopBookingPage = () => {
                                     value={formData.lastName}
                                     onChange={handleInputChange}
                                     placeholder="Your last name"
-                                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                    className="w-full pl-10 pr-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                                     required
                                   />
                                 </div>
@@ -292,7 +292,7 @@ const TechnologyWorkshopBookingPage = () => {
                             </div>
 
                             <div>
-                              <label className="block text-sm font-medium text-gray-700 mb-2">
+                              <label className="block text-sm font-medium text-secondary-700 mb-2">
                                 Email Address *
                               </label>
                               <div className="relative">
@@ -303,14 +303,14 @@ const TechnologyWorkshopBookingPage = () => {
                                   value={formData.email}
                                   onChange={handleInputChange}
                                   placeholder="your@email.com"
-                                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                  className="w-full pl-10 pr-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                                   required
                                 />
                               </div>
                             </div>
 
                             <div>
-                              <label className="block text-sm font-medium text-gray-700 mb-2">
+                              <label className="block text-sm font-medium text-secondary-700 mb-2">
                                 Phone Number (Optional)
                               </label>
                               <div className="relative">
@@ -321,7 +321,7 @@ const TechnologyWorkshopBookingPage = () => {
                                   value={formData.phone}
                                   onChange={handleInputChange}
                                   placeholder="+44 7XXX XXXXXX"
-                                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                  className="w-full pl-10 pr-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                                 />
                               </div>
                             </div>
@@ -349,18 +349,18 @@ const TechnologyWorkshopBookingPage = () => {
                           >
                             <div>
                               <h2 className="text-2xl font-bold text-gray-900 mb-2">Workshop Details</h2>
-                              <p className="text-gray-600">Help us personalize your experience</p>
+                              <p className="text-secondary-600">Help us personalize your experience</p>
                             </div>
 
                             <div>
-                              <label className="block text-sm font-medium text-gray-700 mb-2">
+                              <label className="block text-sm font-medium text-secondary-700 mb-2">
                                 Technology Experience Level
                               </label>
                               <select
                                 name="techExperience"
                                 value={formData.techExperience}
                                 onChange={handleInputChange}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                               >
                                 <option value="beginner">Complete Beginner</option>
                                 <option value="some">Some Experience</option>
@@ -370,7 +370,7 @@ const TechnologyWorkshopBookingPage = () => {
                             </div>
 
                             <div>
-                              <label className="block text-sm font-medium text-gray-700 mb-2">
+                              <label className="block text-sm font-medium text-secondary-700 mb-2">
                                 Business Idea (For Free App Creation)
                               </label>
                               <textarea
@@ -378,7 +378,7 @@ const TechnologyWorkshopBookingPage = () => {
                                 value={formData.businessIdea}
                                 onChange={handleInputChange}
                                 placeholder="Describe your business idea in a few sentences. We'll create a demo app for it during the workshop!"
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                                 rows={4}
                               />
                               <div className="mt-2 text-sm text-amber-600 bg-amber-50 px-3 py-2 rounded-lg border border-amber-200">
@@ -387,7 +387,7 @@ const TechnologyWorkshopBookingPage = () => {
                             </div>
 
                             <div>
-                              <label className="block text-sm font-medium text-gray-700 mb-2">
+                              <label className="block text-sm font-medium text-secondary-700 mb-2">
                                 Dietary Requirements
                               </label>
                               <input
@@ -396,12 +396,12 @@ const TechnologyWorkshopBookingPage = () => {
                                 value={formData.dietaryRequirements}
                                 onChange={handleInputChange}
                                 placeholder="e.g., Vegetarian, Gluten-free, Allergies..."
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                               />
                             </div>
 
                             <div>
-                              <label className="block text-sm font-medium text-gray-700 mb-2">
+                              <label className="block text-sm font-medium text-secondary-700 mb-2">
                                 Special Requests
                               </label>
                               <textarea
@@ -409,7 +409,7 @@ const TechnologyWorkshopBookingPage = () => {
                                 value={formData.specialRequests}
                                 onChange={handleInputChange}
                                 placeholder="Any special requests or questions?"
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                                 rows={3}
                               />
                             </div>
@@ -418,7 +418,7 @@ const TechnologyWorkshopBookingPage = () => {
                               <button
                                 type="button"
                                 onClick={prevStep}
-                                className="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+                                className="px-6 py-3 border border-secondary-300 text-secondary-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
                               >
                                 Back
                               </button>
@@ -443,7 +443,7 @@ const TechnologyWorkshopBookingPage = () => {
                           >
                             <div>
                               <h2 className="text-2xl font-bold text-gray-900 mb-2">Payment & Confirmation</h2>
-                              <p className="text-gray-600">Review your booking and complete payment</p>
+                              <p className="text-secondary-600">Review your booking and complete payment</p>
                             </div>
 
                             {/* Booking Summary */}
@@ -482,11 +482,11 @@ const TechnologyWorkshopBookingPage = () => {
                                   name="agreeToTerms"
                                   checked={formData.agreeToTerms}
                                   onChange={handleInputChange}
-                                  className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                                  className="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500 border-secondary-300 rounded"
                                   required
                                 />
-                                <label className="text-sm text-gray-700">
-                                  I agree to the <a href={ROUTES.terms} className="text-blue-600 hover:underline">Terms and Conditions</a> and <a href={ROUTES.privacy} className="text-blue-600 hover:underline">Privacy Policy</a> *
+                                <label className="text-sm text-secondary-700">
+                                  I agree to the <a href={ROUTES.terms} className="text-primary-600 hover:underline">Terms and Conditions</a> and <a href={ROUTES.privacy} className="text-primary-600 hover:underline">Privacy Policy</a> *
                                 </label>
                               </div>
 
@@ -496,9 +496,9 @@ const TechnologyWorkshopBookingPage = () => {
                                   name="marketingConsent"
                                   checked={formData.marketingConsent}
                                   onChange={handleInputChange}
-                                  className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                                  className="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500 border-secondary-300 rounded"
                                 />
-                                <label className="text-sm text-gray-700">
+                                <label className="text-sm text-secondary-700">
                                   I'd like to receive updates about future technology workshops and Portuguese community events
                                 </label>
                               </div>
@@ -518,7 +518,7 @@ const TechnologyWorkshopBookingPage = () => {
                               <button
                                 type="button"
                                 onClick={prevStep}
-                                className="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+                                className="px-6 py-3 border border-secondary-300 text-secondary-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
                               >
                                 Back
                               </button>
@@ -555,20 +555,20 @@ const TechnologyWorkshopBookingPage = () => {
                       <h3 className="text-lg font-bold text-gray-900 mb-4">What You'll Learn</h3>
                       <div className="space-y-3">
                         <div className="flex items-start gap-3">
-                          <SparklesIcon className="w-5 h-5 text-blue-500 mt-0.5" />
-                          <span className="text-sm text-gray-700">Technology tools overview (platforms, apps, etc.)</span>
+                          <SparklesIcon className="w-5 h-5 text-primary-500 mt-0.5" />
+                          <span className="text-sm text-secondary-700">Technology tools overview (platforms, apps, etc.)</span>
                         </div>
                         <div className="flex items-start gap-3">
                           <SparklesIcon className="w-5 h-5 text-purple-500 mt-0.5" />
-                          <span className="text-sm text-gray-700">Hands-on business app creation</span>
+                          <span className="text-sm text-secondary-700">Hands-on business app creation</span>
                         </div>
                         <div className="flex items-start gap-3">
                           <GiftIcon className="w-5 h-5 text-amber-500 mt-0.5" />
-                          <span className="text-sm text-gray-700">Free app for your business idea</span>
+                          <span className="text-sm text-secondary-700">Free app for your business idea</span>
                         </div>
                         <div className="flex items-start gap-3">
-                          <UserGroupIcon className="w-5 h-5 text-green-500 mt-0.5" />
-                          <span className="text-sm text-gray-700">Network with Portuguese entrepreneurs</span>
+                          <UserGroupIcon className="w-5 h-5 text-action-500 mt-0.5" />
+                          <span className="text-sm text-secondary-700">Network with Portuguese entrepreneurs</span>
                         </div>
                       </div>
                     </div>
@@ -582,7 +582,7 @@ const TechnologyWorkshopBookingPage = () => {
                             <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs font-bold rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                               {index + 1}
                             </div>
-                            <span className="text-sm text-gray-700">{item}</span>
+                            <span className="text-sm text-secondary-700">{item}</span>
                           </div>
                         ))}
                       </div>
@@ -592,14 +592,14 @@ const TechnologyWorkshopBookingPage = () => {
                     <div className="bg-white rounded-2xl p-6 shadow-lg">
                       <h3 className="text-lg font-bold text-gray-900 mb-4">Need Help?</h3>
                       <div className="space-y-3">
-                        <div className="text-sm text-gray-700">
+                        <div className="text-sm text-secondary-700">
                           Questions about the workshop? Contact our team:
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-blue-600">
+                        <div className="flex items-center gap-2 text-sm text-primary-600">
                           <EnvelopeIcon className="w-4 h-4" />
                           events@lusotown.com
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-green-600">
+                        <div className="flex items-center gap-2 text-sm text-action-600">
                           <PhoneIcon className="w-4 h-4" />
                           WhatsApp Support
                         </div>
@@ -623,8 +623,8 @@ const TechnologyWorkshopBookingPage = () => {
             >
               <div className={`rounded-lg p-4 shadow-lg text-white ${
                 notification.type === 'success' 
-                  ? 'bg-green-500' 
-                  : 'bg-red-500'
+                  ? 'bg-action-500' 
+                  : 'bg-coral-500'
               }`}>
                 <div className="flex items-center gap-2">
                   {notification.type === 'success' ? (

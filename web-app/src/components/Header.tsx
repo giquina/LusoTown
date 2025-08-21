@@ -26,14 +26,14 @@ import { useLanguage } from "@/context/LanguageContext";
 import { ROUTES } from '@/config/routes'
 
 const getNavigationLinks = (t: any) => [
-  { name: t("nav.events", "London Events"), href: "/events" },
-  { name: t("nav.students", "Students"), href: "/students" },
+  { name: t("nav.events", "London Events"), href: {ROUTES.events} },
+  { name: t("nav.students", "Students"), href: {ROUTES.students} },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 
 const getAuthenticatedNavigationLinks = (t: any) => [
-  { name: t("nav.events", "London Events"), href: "/events" },
-  { name: t("nav.students", "Students"), href: "/students" },
+  { name: t("nav.events", "London Events"), href: {ROUTES.events} },
+  { name: t("nav.students", "Students"), href: {ROUTES.students} },
   { name: t("referral.title", "Referrals"), href: "/referrals" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
@@ -41,9 +41,9 @@ const getAuthenticatedNavigationLinks = (t: any) => [
 // Simplified navigation dropdown links - Services & Community only
 const getMoreDropdownLinks = (t: any) => ({
   services: [
-    { name: "Find Your Match", href: "/matches" },
+    { name: "Find Your Match", href: {ROUTES.matches} },
     { name: "Live TV", href: "/tv" },
-    { name: "Streaming", href: "/live" },
+    { name: "Streaming", href: {ROUTES.live} },
   ],
   community: [
     { name: "Events & Culture", href: ROUTES.events },
@@ -105,14 +105,14 @@ export default function Header() {
   const handleLogout = async () => {
     // Auth temporarily disabled for demo
     setShowUserMenu(false);
-    router.push("/");
+    router.push({ROUTES.home});
   };
 
   const getMembershipBadge = (tier: string) => {
     const badges = {
       free: {
         icon: <UserCircleIcon className="w-4 h-4" />,
-        color: "text-gray-600",
+        color: "text-secondary-600",
         label: "Free",
       },
       core: {
@@ -152,7 +152,7 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                className="text-secondary-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
               >
                 {link.name}
               </a>
@@ -164,7 +164,7 @@ export default function Header() {
               onMouseEnter={() => setShowMoreDropdown(true)}
               onMouseLeave={() => setShowMoreDropdown(false)}
             >
-              <button className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1">
+              <button className="text-secondary-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1">
                 More
                 <ChevronDownIcon className="w-4 h-4" />
               </button>
@@ -195,10 +195,10 @@ export default function Header() {
                             <li key={link.name}>
                               <a
                                 href={link.href}
-                                className="flex items-center gap-2 text-sm text-gray-600 hover:text-premium-600 hover:bg-premium-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
+                                className="flex items-center gap-2 text-sm text-secondary-600 hover:text-premium-600 hover:bg-premium-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
                               >
                                 <span>{link.name}</span>
-                                {link.href === "/matches" && (
+                                {link.href === {ROUTES.matches} && (
                                   <span
                                     className="ml-1 inline-block text-[10px] leading-4 font-semibold uppercase bg-secondary-100 text-secondary-700 px-2 py-0.5 rounded-full border border-secondary-200"
                                     aria-label="New feature"
@@ -222,7 +222,7 @@ export default function Header() {
                             <li key={link.name}>
                               <a
                                 href={link.href}
-                                className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
+                                className="block text-sm text-secondary-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
                               >
                                 {link.name}
                               </a>
@@ -246,7 +246,7 @@ export default function Header() {
               <div className="relative">
                 <button
                   onClick={() => setShowUserMenu(!showUserMenu)}
-                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 transition-colors h-10"
+                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-secondary-100 transition-colors h-10"
                 >
                   <div className="w-8 h-8 bg-gradient-to-r from-action-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                     {user.name
@@ -282,7 +282,7 @@ export default function Header() {
                     >
                       <a
                         href={`/profile/${user.id}`}
-                        className="flex items-center space-x-2 px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 min-h-[44px]"
+                        className="flex items-center space-x-2 px-4 py-3 text-sm text-secondary-700 hover:bg-secondary-100 min-h-[44px]"
                         onClick={() => setShowUserMenu(false)}
                       >
                         <UserIcon className="w-4 h-4" />
@@ -290,7 +290,7 @@ export default function Header() {
                       </a>
                       <a
                         href={ROUTES.favorites}
-                        className="flex items-center space-x-2 px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 min-h-[44px]"
+                        className="flex items-center space-x-2 px-4 py-3 text-sm text-secondary-700 hover:bg-secondary-100 min-h-[44px]"
                         onClick={() => setShowUserMenu(false)}
                       >
                         <HeartIcon className="w-4 h-4" />
@@ -298,7 +298,7 @@ export default function Header() {
                       </a>
                       <a
                         href={ROUTES.dashboard}
-                        className="flex items-center space-x-2 px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 min-h-[44px]"
+                        className="flex items-center space-x-2 px-4 py-3 text-sm text-secondary-700 hover:bg-secondary-100 min-h-[44px]"
                         onClick={() => setShowUserMenu(false)}
                       >
                         <UserCircleIcon className="w-4 h-4" />
@@ -330,7 +330,7 @@ export default function Header() {
               <>
                 <a
                   href={ROUTES.login}
-                  className="text-gray-600 hover:text-primary-600 p-2 rounded-md transition-colors duration-200 h-10 w-10 flex items-center justify-center"
+                  className="text-secondary-600 hover:text-primary-600 p-2 rounded-md transition-colors duration-200 h-10 w-10 flex items-center justify-center"
                   title="Login"
                 >
                   <UserIcon className="w-5 h-5" />
@@ -417,7 +417,7 @@ export default function Header() {
                           <h4 className="text-sm font-medium text-gray-900 mb-1">
                             {t("favorites.title", "Saved Items")}
                           </h4>
-                          <p className="text-xs text-gray-600 leading-relaxed">
+                          <p className="text-xs text-secondary-600 leading-relaxed">
                             {t(
                               "favorites.description",
                               "Access your favorite events, places, and services. Keep track of what interests you most."
@@ -437,7 +437,7 @@ export default function Header() {
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
+                        className="text-secondary-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -452,35 +452,35 @@ export default function Header() {
                     </h3>
                     <a
                       href="/london-tours"
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      className="text-secondary-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       London Tours
                     </a>
                     <a
                       href={`${ROUTES.services}#cultural-tours`}
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      className="text-secondary-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Cultural Tours
                     </a>
                     <a
                       href={`${ROUTES.services}#executive-transport`}
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      className="text-secondary-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Executive Transport
                     </a>
                     <a
                       href={ROUTES.transport}
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      className="text-secondary-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       London Transport
                     </a>
                     <a
                       href={`${ROUTES.services}#close-protection`}
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      className="text-secondary-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Close Protection
@@ -489,14 +489,14 @@ export default function Header() {
 
                   {/* Contact Section */}
                   <div className="pb-4 border-b border-gray-200">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-3">
+                    <h3 className="text-lg font-semibold text-secondary-700 mb-3">
                       Contact
                     </h3>
                     {moreDropdownLinks.contact.map((link) => (
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
+                        className="text-secondary-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -513,11 +513,11 @@ export default function Header() {
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center gap-2"
+                        className="text-secondary-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center gap-2"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <span>{link.name}</span>
-                        {link.href === "/matches" && (
+                        {link.href === {ROUTES.matches} && (
                           <span
                             className="ml-1 inline-block text-[10px] leading-4 font-semibold uppercase bg-secondary-100 text-secondary-700 px-2 py-0.5 rounded-full border border-secondary-200"
                             aria-label="New feature"
@@ -538,7 +538,7 @@ export default function Header() {
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
+                        className="text-secondary-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -555,7 +555,7 @@ export default function Header() {
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-accent-600 hover:bg-accent-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-accent-200 min-h-[44px] flex items-center"
+                        className="text-secondary-700 hover:text-accent-600 hover:bg-accent-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-accent-200 min-h-[44px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -565,7 +565,7 @@ export default function Header() {
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
+                        className="text-secondary-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -585,7 +585,7 @@ export default function Header() {
                               .join("")}
                           </div>
                           <div className="min-w-0 flex-1">
-                            <div className="text-base font-medium text-gray-800 truncate">
+                            <div className="text-base font-medium text-secondary-800 truncate">
                               {user.name}
                             </div>
                             <div className="flex items-center space-x-1">
@@ -604,7 +604,7 @@ export default function Header() {
 
                         <a
                           href={`/profile/${user.id}`}
-                          className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
+                          className="flex items-center space-x-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           <UserIcon className="w-5 h-5" />
@@ -612,7 +612,7 @@ export default function Header() {
                         </a>
                         <a
                           href={ROUTES.favorites}
-                          className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
+                          className="flex items-center space-x-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           <HeartIcon className="w-5 h-5" />
@@ -621,7 +621,7 @@ export default function Header() {
 
                         <a
                           href={ROUTES.dashboard}
-                          className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
+                          className="flex items-center space-x-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           <UserCircleIcon className="w-5 h-5" />
@@ -654,7 +654,7 @@ export default function Header() {
                       <>
                         <a
                           href={ROUTES.login}
-                          className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
+                          className="flex items-center space-x-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           <UserIcon className="w-5 h-5" />

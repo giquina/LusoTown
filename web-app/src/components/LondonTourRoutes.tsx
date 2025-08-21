@@ -2,7 +2,7 @@ export default function LondonTourRoutes() {
   return (
     <div className="bg-white rounded-xl p-6 shadow-sm">
       <h3 className="text-lg font-semibold text-gray-900 mb-2">London Tour Routes</h3>
-      <p className="text-gray-600">Component temporarily removed during cleanup</p>
+      <p className="text-secondary-600">Component temporarily removed during cleanup</p>
     </div>
   );
 }

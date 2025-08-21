@@ -322,10 +322,10 @@ export default function CommunityEventCreation({
     return (
       <div className={`animate-pulse ${className}`}>
         <div className="bg-white rounded-2xl shadow-lg p-6">
-          <div className="h-6 bg-gray-200 rounded mb-4"></div>
+          <div className="h-6 bg-secondary-200 rounded mb-4"></div>
           <div className="space-y-4">
             {[1, 2, 3].map(i => (
-              <div key={i} className="h-12 bg-gray-200 rounded-lg"></div>
+              <div key={i} className="h-12 bg-secondary-200 rounded-lg"></div>
             ))}
           </div>
         </div>
@@ -337,11 +337,11 @@ export default function CommunityEventCreation({
     return (
       <div className={`bg-white rounded-2xl shadow-lg p-6 ${className}`}>
         <div className="text-center">
-          <ExclamationTriangleIcon className="w-16 h-16 text-yellow-500 mx-auto mb-4" />
+          <ExclamationTriangleIcon className="w-16 h-16 text-accent-500 mx-auto mb-4" />
           <h3 className="text-xl font-bold text-gray-900 mb-2">
             {isPortuguese ? 'Verificação Necessária' : 'Verification Required'}
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-secondary-600 mb-6">
             {isPortuguese
               ? 'Para criar eventos da comunidade portuguesa, necessita de verificação como membro verificado, proprietário de negócio ou líder cultural.'
               : 'To create Portuguese community events, you need verification as a verified member, business owner, or cultural leader.'}
@@ -367,7 +367,7 @@ export default function CommunityEventCreation({
               <h2 className="text-xl font-bold text-gray-900">
                 {isPortuguese ? 'Criar Evento Comunitário' : 'Create Community Event'}
               </h2>
-              <p className="text-gray-600 text-sm">
+              <p className="text-secondary-600 text-sm">
                 {isPortuguese
                   ? 'Partilhe experiências portuguesas autênticas em Londres'
                   : 'Share authentic Portuguese experiences in London'}
@@ -393,7 +393,7 @@ export default function CommunityEventCreation({
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
                   step <= currentStep
                     ? 'bg-primary-500 text-white'
-                    : 'bg-gray-200 text-gray-600'
+                    : 'bg-secondary-200 text-secondary-600'
                 }`}
               >
                 {step}
@@ -401,7 +401,7 @@ export default function CommunityEventCreation({
               {step < 4 && (
                 <div
                   className={`flex-1 h-1 mx-2 ${
-                    step < currentStep ? 'bg-primary-500' : 'bg-gray-200'
+                    step < currentStep ? 'bg-primary-500' : 'bg-secondary-200'
                   }`}
                 />
               )}
@@ -409,7 +409,7 @@ export default function CommunityEventCreation({
           ))}
         </div>
 
-        <div className="mt-3 text-sm text-gray-600">
+        <div className="mt-3 text-sm text-secondary-600">
           {currentStep === 1 && (isPortuguese ? 'Informações Básicas' : 'Basic Information')}
           {currentStep === 2 && (isPortuguese ? 'Data e Local' : 'Date & Location')}
           {currentStep === 3 && (isPortuguese ? 'Participantes e Preço' : 'Attendees & Pricing')}
@@ -430,7 +430,7 @@ export default function CommunityEventCreation({
               className="space-y-6"
             >
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'Título do Evento' : 'Event Title'} *
                 </label>
                 <input
@@ -438,15 +438,15 @@ export default function CommunityEventCreation({
                   value={formData.title}
                   onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
                   className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                    errors.title ? 'border-red-500' : 'border-gray-300'
+                    errors.title ? 'border-coral-500' : 'border-secondary-300'
                   }`}
                   placeholder={isPortuguese ? 'ex: Noite de Fado Autêntico' : 'e.g. Authentic Fado Night'}
                 />
-                {errors.title && <p className="text-red-500 text-xs mt-1">{errors.title}</p>}
+                {errors.title && <p className="text-coral-500 text-xs mt-1">{errors.title}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'Descrição' : 'Description'} *
                 </label>
                 <textarea
@@ -454,18 +454,18 @@ export default function CommunityEventCreation({
                   onChange={(e) => setFormData(prev => ({ ...prev, description: e.target.value }))}
                   rows={4}
                   className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                    errors.description ? 'border-red-500' : 'border-gray-300'
+                    errors.description ? 'border-coral-500' : 'border-secondary-300'
                   }`}
                   placeholder={isPortuguese 
                     ? 'Descreva o seu evento, o que os participantes podem esperar...'
                     : 'Describe your event, what attendees can expect...'
                   }
                 />
-                {errors.description && <p className="text-red-500 text-xs mt-1">{errors.description}</p>}
+                {errors.description && <p className="text-coral-500 text-xs mt-1">{errors.description}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'Categoria Cultural' : 'Cultural Category'} *
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -477,7 +477,7 @@ export default function CommunityEventCreation({
                       className={`text-left p-3 border rounded-lg transition-all ${
                         formData.cultural_category === category.id
                           ? 'border-primary-500 bg-primary-50'
-                          : 'border-gray-300 hover:border-gray-400'
+                          : 'border-secondary-300 hover:border-gray-400'
                       }`}
                     >
                       <div className="flex items-center space-x-3">
@@ -486,13 +486,13 @@ export default function CommunityEventCreation({
                           <div className="font-medium text-gray-900">
                             {category.name[isPortuguese ? 'pt' : 'en']}
                           </div>
-                          <div className="text-xs text-gray-600">
+                          <div className="text-xs text-secondary-600">
                             {category.description}
                           </div>
                           {category.verification_required && (
                             <div className="flex items-center space-x-1 mt-1">
-                              <CheckCircleIcon className="w-3 h-3 text-green-500" />
-                              <span className="text-xs text-green-600">
+                              <CheckCircleIcon className="w-3 h-3 text-action-500" />
+                              <span className="text-xs text-action-600">
                                 {isPortuguese ? 'Verificação necessária' : 'Verification required'}
                               </span>
                             </div>
@@ -502,7 +502,7 @@ export default function CommunityEventCreation({
                     </button>
                   ))}
                 </div>
-                {errors.cultural_category && <p className="text-red-500 text-xs mt-1">{errors.cultural_category}</p>}
+                {errors.cultural_category && <p className="text-coral-500 text-xs mt-1">{errors.cultural_category}</p>}
               </div>
             </motion.div>
           )}
@@ -518,7 +518,7 @@ export default function CommunityEventCreation({
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {isPortuguese ? 'Data' : 'Date'} *
                   </label>
                   <input
@@ -526,14 +526,14 @@ export default function CommunityEventCreation({
                     value={formData.date}
                     onChange={(e) => setFormData(prev => ({ ...prev, date: e.target.value }))}
                     className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                      errors.date ? 'border-red-500' : 'border-gray-300'
+                      errors.date ? 'border-coral-500' : 'border-secondary-300'
                     }`}
                   />
-                  {errors.date && <p className="text-red-500 text-xs mt-1">{errors.date}</p>}
+                  {errors.date && <p className="text-coral-500 text-xs mt-1">{errors.date}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {isPortuguese ? 'Hora de Início' : 'Start Time'} *
                   </label>
                   <input
@@ -541,34 +541,34 @@ export default function CommunityEventCreation({
                     value={formData.time}
                     onChange={(e) => setFormData(prev => ({ ...prev, time: e.target.value }))}
                     className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                      errors.time ? 'border-red-500' : 'border-gray-300'
+                      errors.time ? 'border-coral-500' : 'border-secondary-300'
                     }`}
                   />
-                  {errors.time && <p className="text-red-500 text-xs mt-1">{errors.time}</p>}
+                  {errors.time && <p className="text-coral-500 text-xs mt-1">{errors.time}</p>}
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'Hora de Fim' : 'End Time'}
                 </label>
                 <input
                   type="time"
                   value={formData.end_time}
                   onChange={(e) => setFormData(prev => ({ ...prev, end_time: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'Bairro Português' : 'Portuguese Neighborhood'} *
                 </label>
                 <select
                   value={formData.portuguese_neighborhood}
                   onChange={(e) => setFormData(prev => ({ ...prev, portuguese_neighborhood: e.target.value }))}
                   className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                    errors.portuguese_neighborhood ? 'border-red-500' : 'border-gray-300'
+                    errors.portuguese_neighborhood ? 'border-coral-500' : 'border-secondary-300'
                   }`}
                 >
                   <option value="">{isPortuguese ? 'Selecione um bairro' : 'Select a neighborhood'}</option>
@@ -578,11 +578,11 @@ export default function CommunityEventCreation({
                     </option>
                   ))}
                 </select>
-                {errors.portuguese_neighborhood && <p className="text-red-500 text-xs mt-1">{errors.portuguese_neighborhood}</p>}
+                {errors.portuguese_neighborhood && <p className="text-coral-500 text-xs mt-1">{errors.portuguese_neighborhood}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'Local' : 'Venue'} *
                 </label>
                 <input
@@ -590,22 +590,22 @@ export default function CommunityEventCreation({
                   value={formData.venue}
                   onChange={(e) => setFormData(prev => ({ ...prev, venue: e.target.value }))}
                   className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                    errors.venue ? 'border-red-500' : 'border-gray-300'
+                    errors.venue ? 'border-coral-500' : 'border-secondary-300'
                   }`}
                   placeholder={isPortuguese ? 'ex: Centro Comunitário Português' : 'e.g. Portuguese Community Centre'}
                 />
-                {errors.venue && <p className="text-red-500 text-xs mt-1">{errors.venue}</p>}
+                {errors.venue && <p className="text-coral-500 text-xs mt-1">{errors.venue}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'Endereço Completo' : 'Full Address'}
                 </label>
                 <input
                   type="text"
                   value={formData.address}
                   onChange={(e) => setFormData(prev => ({ ...prev, address: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                   placeholder={isPortuguese ? 'Endereço completo com código postal' : 'Full address with postcode'}
                 />
               </div>
@@ -623,7 +623,7 @@ export default function CommunityEventCreation({
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {isPortuguese ? 'Máximo de Participantes' : 'Maximum Attendees'} *
                   </label>
                   <input
@@ -632,14 +632,14 @@ export default function CommunityEventCreation({
                     value={formData.max_attendees}
                     onChange={(e) => setFormData(prev => ({ ...prev, max_attendees: parseInt(e.target.value) || 0 }))}
                     className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                      errors.max_attendees ? 'border-red-500' : 'border-gray-300'
+                      errors.max_attendees ? 'border-coral-500' : 'border-secondary-300'
                     }`}
                   />
-                  {errors.max_attendees && <p className="text-red-500 text-xs mt-1">{errors.max_attendees}</p>}
+                  {errors.max_attendees && <p className="text-coral-500 text-xs mt-1">{errors.max_attendees}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {isPortuguese ? 'Preço (£)' : 'Price (£)'} *
                   </label>
                   <input
@@ -649,18 +649,18 @@ export default function CommunityEventCreation({
                     value={formData.price}
                     onChange={(e) => setFormData(prev => ({ ...prev, price: parseFloat(e.target.value) || 0 }))}
                     className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                      errors.price ? 'border-red-500' : 'border-gray-300'
+                      errors.price ? 'border-coral-500' : 'border-secondary-300'
                     }`}
                   />
-                  {errors.price && <p className="text-red-500 text-xs mt-1">{errors.price}</p>}
-                  <p className="text-xs text-gray-600 mt-1">
+                  {errors.price && <p className="text-coral-500 text-xs mt-1">{errors.price}</p>}
+                  <p className="text-xs text-secondary-600 mt-1">
                     {isPortuguese ? 'Defina 0 para eventos gratuitos' : 'Set to 0 for free events'}
                   </p>
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'Etiquetas do Evento' : 'Event Tags'}
                 </label>
                 <div className="space-y-3">
@@ -687,7 +687,7 @@ export default function CommunityEventCreation({
                         key={tag}
                         type="button"
                         onClick={() => addTag(tag)}
-                        className="bg-gray-100 text-gray-700 hover:bg-gray-200 px-3 py-1 rounded-full text-sm transition-colors"
+                        className="bg-secondary-100 text-secondary-700 hover:bg-secondary-200 px-3 py-1 rounded-full text-sm transition-colors"
                       >
                         + {tag}
                       </button>
@@ -702,15 +702,15 @@ export default function CommunityEventCreation({
                     type="checkbox"
                     checked={formData.requires_portuguese_verification}
                     onChange={(e) => setFormData(prev => ({ ...prev, requires_portuguese_verification: e.target.checked }))}
-                    className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                    className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                   />
-                  <span className="text-sm text-gray-700">
+                  <span className="text-sm text-secondary-700">
                     {isPortuguese 
                       ? 'Requer verificação de comunidade portuguesa' 
                       : 'Require Portuguese community verification'}
                   </span>
                 </label>
-                <p className="text-xs text-gray-600 mt-1">
+                <p className="text-xs text-secondary-600 mt-1">
                   {isPortuguese
                     ? 'Apenas membros verificados da comunidade portuguesa podem participar'
                     : 'Only verified Portuguese community members can attend'}
@@ -732,7 +732,7 @@ export default function CommunityEventCreation({
                 <h4 className="text-lg font-medium text-gray-900 mb-4">
                   {isPortuguese ? 'Características Culturais' : 'Cultural Features'}
                 </h4>
-                <p className="text-sm text-gray-600 mb-4">
+                <p className="text-sm text-secondary-600 mb-4">
                   {isPortuguese
                     ? 'Selecione as características que melhor descrevem o seu evento'
                     : 'Select the features that best describe your event'}
@@ -744,11 +744,11 @@ export default function CommunityEventCreation({
                       type="checkbox"
                       checked={formData.fado_music_featured}
                       onChange={(e) => setFormData(prev => ({ ...prev, fado_music_featured: e.target.checked }))}
-                      className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                      className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                     />
                     <div className="flex items-center space-x-2">
                       <MusicalNoteIcon className="w-5 h-5 text-purple-500" />
-                      <span className="text-sm text-gray-700">
+                      <span className="text-sm text-secondary-700">
                         {isPortuguese ? 'Música de Fado em destaque' : 'Fado music featured'}
                       </span>
                     </div>
@@ -759,11 +759,11 @@ export default function CommunityEventCreation({
                       type="checkbox"
                       checked={formData.santos_populares_themed}
                       onChange={(e) => setFormData(prev => ({ ...prev, santos_populares_themed: e.target.checked }))}
-                      className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                      className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                     />
                     <div className="flex items-center space-x-2">
                       <span className="text-lg">🎉</span>
-                      <span className="text-sm text-gray-700">
+                      <span className="text-sm text-secondary-700">
                         {isPortuguese ? 'Tema Santos Populares' : 'Santos Populares themed'}
                       </span>
                     </div>
@@ -774,11 +774,11 @@ export default function CommunityEventCreation({
                       type="checkbox"
                       checked={formData.football_viewing_party}
                       onChange={(e) => setFormData(prev => ({ ...prev, football_viewing_party: e.target.checked }))}
-                      className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                      className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                     />
                     <div className="flex items-center space-x-2">
                       <span className="text-lg">⚽</span>
-                      <span className="text-sm text-gray-700">
+                      <span className="text-sm text-secondary-700">
                         {isPortuguese ? 'Festa de visualização de futebol' : 'Football viewing party'}
                       </span>
                     </div>
@@ -789,11 +789,11 @@ export default function CommunityEventCreation({
                       type="checkbox"
                       checked={formData.cultural_preservation_focus}
                       onChange={(e) => setFormData(prev => ({ ...prev, cultural_preservation_focus: e.target.checked }))}
-                      className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                      className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                     />
                     <div className="flex items-center space-x-2">
                       <AcademicCapIcon className="w-5 h-5 text-amber-500" />
-                      <span className="text-sm text-gray-700">
+                      <span className="text-sm text-secondary-700">
                         {isPortuguese ? 'Foco na preservação cultural' : 'Cultural preservation focus'}
                       </span>
                     </div>
@@ -811,19 +811,19 @@ export default function CommunityEventCreation({
                     <span className="text-lg">{getCategoryIcon(formData.cultural_category)}</span>
                     <span className="font-medium">{formData.title || (isPortuguese ? 'Título do evento' : 'Event title')}</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-gray-600">
+                  <div className="flex items-center space-x-2 text-secondary-600">
                     <CalendarDaysIcon className="w-4 h-4" />
                     <span>{formData.date || (isPortuguese ? 'Data' : 'Date')} • {formData.time || (isPortuguese ? 'Hora' : 'Time')}</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-gray-600">
+                  <div className="flex items-center space-x-2 text-secondary-600">
                     <MapPinIcon className="w-4 h-4" />
                     <span>{formData.venue || (isPortuguese ? 'Local' : 'Venue')} • {formData.portuguese_neighborhood}</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-gray-600">
+                  <div className="flex items-center space-x-2 text-secondary-600">
                     <CurrencyPoundIcon className="w-4 h-4" />
                     <span>£{formData.price}</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-gray-600">
+                  <div className="flex items-center space-x-2 text-secondary-600">
                     <UsersIcon className="w-4 h-4" />
                     <span>{isPortuguese ? 'Máx' : 'Max'} {formData.max_attendees} {isPortuguese ? 'participantes' : 'attendees'}</span>
                   </div>
@@ -840,8 +840,8 @@ export default function CommunityEventCreation({
             disabled={currentStep === 1}
             className={`px-6 py-2 rounded-lg font-medium transition-colors ${
               currentStep === 1
-                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-secondary-100 text-gray-400 cursor-not-allowed'
+                : 'bg-secondary-200 text-secondary-700 hover:bg-gray-300'
             }`}
           >
             {isPortuguese ? 'Anterior' : 'Back'}
@@ -876,7 +876,7 @@ export default function CommunityEventCreation({
       {/* Usage Limit Info */}
       {verificationStatus && (
         <div className="p-4 bg-gray-50 border-t border-gray-200">
-          <div className="flex items-center space-x-2 text-sm text-gray-600">
+          <div className="flex items-center space-x-2 text-sm text-secondary-600">
             <InformationCircleIcon className="w-4 h-4" />
             <span>
               {isPortuguese

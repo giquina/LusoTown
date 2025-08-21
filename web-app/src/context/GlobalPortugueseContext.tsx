@@ -572,12 +572,10 @@ export function GlobalPortugueseProvider({ children }: GlobalPortugueseProviderP
 
   const joinExchangeProgram = useCallback(async (programId: string) => {
     // TODO: Implement API call to join exchange program
-    console.log(`Joining exchange program: ${programId}`)
   }, [])
 
   const connectWithFamily = useCallback(async (familyId: string) => {
     // TODO: Implement API call to connect with diaspora family
-    console.log(`Connecting with family: ${familyId}`)
   }, [])
 
   const formatCurrency = useCallback((amount: number): string => {

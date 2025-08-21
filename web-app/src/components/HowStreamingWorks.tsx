@@ -34,7 +34,7 @@ export default function HowStreamingWorks() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900">{t('how_streaming_works.title', 'How LusoTown Streaming Works')}</h2>
-          <p className="mt-4 text-lg text-gray-600">{t('how_streaming_works.subtitle', 'Your gateway to live Portuguese culture and community.')}</p>
+          <p className="mt-4 text-lg text-secondary-600">{t('how_streaming_works.subtitle', 'Your gateway to live Portuguese culture and community.')}</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
@@ -43,7 +43,7 @@ export default function HowStreamingWorks() {
                 <step.icon className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
-              <p className="text-gray-600">{step.description}</p>
+              <p className="text-secondary-600">{step.description}</p>
             </div>
           ))}
         </div>

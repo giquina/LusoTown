@@ -28,7 +28,7 @@ export default function NotFound() {
             <h2 className="text-2xl font-bold text-gray-900 mb-3">
               {isPortuguese ? 'Página Não Encontrada' : 'Page Not Found'}
             </h2>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-secondary-600 leading-relaxed">
               {isPortuguese 
                 ? 'Parece que esta página decidiu explorar outro bairro português! Vamos ajudá-lo a encontrar o que procura.'
                 : 'Looks like this page decided to explore another Portuguese neighborhood! Let\'s help you find what you\'re looking for.'
@@ -48,7 +48,7 @@ export default function NotFound() {
 
             <Link
               href={ROUTES.events}
-              className="w-full inline-flex items-center justify-center gap-2 bg-white text-gray-700 font-semibold px-6 py-3 rounded-xl border-2 border-gray-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200"
+              className="w-full inline-flex items-center justify-center gap-2 bg-white text-secondary-700 font-semibold px-6 py-3 rounded-xl border-2 border-gray-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200"
             >
               <MagnifyingGlassIcon className="w-5 h-5" />
               {isPortuguese ? 'Explorar Eventos' : 'Explore Events'}
@@ -56,7 +56,7 @@ export default function NotFound() {
 
             <button
               onClick={() => window.history.back()}
-              className="w-full inline-flex items-center justify-center gap-2 text-gray-600 hover:text-primary-600 font-medium transition-colors duration-200"
+              className="w-full inline-flex items-center justify-center gap-2 text-secondary-600 hover:text-primary-600 font-medium transition-colors duration-200"
             >
               <ArrowLeftIcon className="w-4 h-4" />
               {isPortuguese ? 'Página Anterior' : 'Previous Page'}
@@ -86,7 +86,7 @@ export default function NotFound() {
 
           {/* Cultural Touch */}
           <div className="mt-8 p-4 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl border border-primary-100">
-            <p className="text-xs text-gray-600 italic">
+            <p className="text-xs text-secondary-600 italic">
               {isPortuguese 
                 ? '"Onde há portugueses, há sempre uma mesa para mais um" - A comunidade portuguesa de Londres espera por si!'
                 : '"Where there are Portuguese, there\'s always room for one more" - The Portuguese community in London awaits you!'

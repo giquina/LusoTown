@@ -1,3 +1,4 @@
+import { buildUnsplashUrl, SOCIAL_URLS, buildCloudinaryUrl } from '@/config'
 /**
  * CDN and External Resource URL Management
  * 
@@ -8,7 +9,7 @@
 // CDN and Image Providers
 export const CDN_PROVIDERS = {
   unsplash: 'https://images.unsplash.com',
-  cloudinary: 'https://res.cloudinary.com/lusotown',
+  cloudinary: buildCloudinaryUrl('lusotown'),
   bunnycdn: 'https://lusotown.b-cdn.net',
   gravatar: 'https://www.gravatar.com/avatar',
   youtube: 'https://img.youtube.com/vi',

@@ -249,7 +249,7 @@ export default function PadrinhoMentorshipSystem() {
           <select
             value={filters.mentorshipArea}
             onChange={(e) => setFilters(prev => ({ ...prev, mentorshipArea: e.target.value }))}
-            className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
+            className="rounded-xl border-secondary-300 focus:border-secondary-500 focus:ring-secondary-500"
           >
             <option value="">{t('mentorship.filters.all_areas', 'All Mentorship Areas')}</option>
             {mentorshipAreas.map(area => (
@@ -262,7 +262,7 @@ export default function PadrinhoMentorshipSystem() {
           <select
             value={filters.profession}
             onChange={(e) => setFilters(prev => ({ ...prev, profession: e.target.value }))}
-            className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
+            className="rounded-xl border-secondary-300 focus:border-secondary-500 focus:ring-secondary-500"
           >
             <option value="">{t('mentorship.filters.all_professions', 'All Professions')}</option>
             <option value="marketing">Marketing</option>
@@ -274,7 +274,7 @@ export default function PadrinhoMentorshipSystem() {
           <select
             value={filters.region}
             onChange={(e) => setFilters(prev => ({ ...prev, region: e.target.value }))}
-            className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
+            className="rounded-xl border-secondary-300 focus:border-secondary-500 focus:ring-secondary-500"
           >
             <option value="">{t('mentorship.filters.all_regions', 'All Portuguese Regions')}</option>
             <option value="lisboa">Lisboa</option>
@@ -289,7 +289,7 @@ export default function PadrinhoMentorshipSystem() {
           <select
             value={filters.experience}
             onChange={(e) => setFilters(prev => ({ ...prev, experience: e.target.value }))}
-            className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
+            className="rounded-xl border-secondary-300 focus:border-secondary-500 focus:ring-secondary-500"
           >
             <option value="">{t('mentorship.filters.all_experience', 'All Experience Levels')}</option>
             <option value="5-10">5-10 years in London</option>
@@ -317,7 +317,7 @@ export default function PadrinhoMentorshipSystem() {
                   <UserCircleIcon className="w-10 h-10 text-white" />
                 </div>
                 {mentor.isVerified && (
-                  <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                  <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-action-500 rounded-full flex items-center justify-center">
                     <span className="text-white text-xs font-bold">✓</span>
                   </div>
                 )}
@@ -325,7 +325,7 @@ export default function PadrinhoMentorshipSystem() {
               
               <div className="flex-1 min-w-0">
                 <h3 className="text-xl font-bold text-gray-900 mb-1">{mentor.name}</h3>
-                <p className="text-gray-600 text-sm mb-2">{mentor.profession}</p>
+                <p className="text-secondary-600 text-sm mb-2">{mentor.profession}</p>
                 <p className="text-gray-500 text-xs">{mentor.company}</p>
                 
                 {/* Rating and Experience */}
@@ -335,7 +335,7 @@ export default function PadrinhoMentorshipSystem() {
                     <span className="text-sm font-semibold">{mentor.rating}</span>
                   </div>
                   <span className="text-gray-300">•</span>
-                  <span className="text-sm text-gray-600">{mentor.yearsInLondon} anos em Londres</span>
+                  <span className="text-sm text-secondary-600">{mentor.yearsInLondon} anos em Londres</span>
                 </div>
               </div>
             </div>
@@ -355,7 +355,7 @@ export default function PadrinhoMentorshipSystem() {
                   </span>
                 ))}
                 {mentor.specializations.length > 3 && (
-                  <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
+                  <span className="px-3 py-1 bg-secondary-100 text-secondary-600 rounded-full text-xs">
                     +{mentor.specializations.length - 3} more
                   </span>
                 )}
@@ -366,23 +366,23 @@ export default function PadrinhoMentorshipSystem() {
             <div className="grid grid-cols-2 gap-4 mb-6">
               <div className="text-center p-3 bg-gray-50 rounded-xl">
                 <div className="text-2xl font-bold text-secondary-600">{mentor.successfulMentorships}</div>
-                <div className="text-xs text-gray-600">{t('mentorship.successful', 'Successful Mentorships')}</div>
+                <div className="text-xs text-secondary-600">{t('mentorship.successful', 'Successful Mentorships')}</div>
               </div>
               <div className="text-center p-3 bg-gray-50 rounded-xl">
                 <div className="text-2xl font-bold text-accent-600">{mentor.portugueseRegion}</div>
-                <div className="text-xs text-gray-600">{t('mentorship.origin', 'Origin')}</div>
+                <div className="text-xs text-secondary-600">{t('mentorship.origin', 'Origin')}</div>
               </div>
             </div>
 
             {/* Bio Preview */}
-            <p className="text-gray-600 text-sm mb-6 line-clamp-3">{mentor.bio}</p>
+            <p className="text-secondary-600 text-sm mb-6 line-clamp-3">{mentor.bio}</p>
 
             {/* Response Time */}
             <div className="flex items-center justify-between mb-6">
               <span className="text-xs text-gray-500">
                 {t('mentorship.responds', 'Responds')} {mentor.responseTime}
               </span>
-              <span className="text-xs text-green-600 font-medium">
+              <span className="text-xs text-action-600 font-medium">
                 {t('mentorship.available', 'Available')}
               </span>
             </div>
@@ -416,7 +416,7 @@ export default function PadrinhoMentorshipSystem() {
           {t('mentorship.become.title', 'Share Your Journey, Guide Others Home')}
         </h2>
         
-        <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+        <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
           {t('mentorship.become.subtitle', 'Use your experience in London to help fellow Portuguese speakers thrive while preserving our cultural identity')}
         </p>
       </div>
@@ -430,7 +430,7 @@ export default function PadrinhoMentorshipSystem() {
           <h3 className="text-xl font-bold text-gray-900 mb-4">
             {t('mentorship.benefits.community.title', 'Strengthen Our Community')}
           </h3>
-          <p className="text-gray-600">
+          <p className="text-secondary-600">
             {t('mentorship.benefits.community.desc', 'Help build a stronger Portuguese diaspora network where everyone feels supported and connected to their roots')}
           </p>
         </div>
@@ -442,7 +442,7 @@ export default function PadrinhoMentorshipSystem() {
           <h3 className="text-xl font-bold text-gray-900 mb-4">
             {t('mentorship.benefits.growth.title', 'Personal Growth')}
           </h3>
-          <p className="text-gray-600">
+          <p className="text-secondary-600">
             {t('mentorship.benefits.growth.desc', 'Develop leadership skills, gain fresh perspectives, and find renewed purpose in your professional journey')}
           </p>
         </div>
@@ -454,7 +454,7 @@ export default function PadrinhoMentorshipSystem() {
           <h3 className="text-xl font-bold text-gray-900 mb-4">
             {t('mentorship.benefits.network.title', 'Expand Your Network')}
           </h3>
-          <p className="text-gray-600">
+          <p className="text-secondary-600">
             {t('mentorship.benefits.network.desc', 'Connect with diverse Portuguese professionals and discover new business and collaboration opportunities')}
           </p>
         </div>
@@ -466,7 +466,7 @@ export default function PadrinhoMentorshipSystem() {
           <h3 className="text-xl font-bold text-gray-900 mb-4">
             {t('mentorship.benefits.legacy.title', 'Cultural Legacy')}
           </h3>
-          <p className="text-gray-600">
+          <p className="text-secondary-600">
             {t('mentorship.benefits.legacy.desc', 'Preserve Portuguese traditions and values while helping others navigate the balance between heritage and integration')}
           </p>
         </div>
@@ -486,7 +486,7 @@ export default function PadrinhoMentorshipSystem() {
             <h4 className="font-semibold text-gray-900 mb-2">
               {t('mentorship.process.step1.title', 'Application')}
             </h4>
-            <p className="text-gray-600 text-sm">
+            <p className="text-secondary-600 text-sm">
               {t('mentorship.process.step1.desc', 'Complete detailed application showcasing your experience and mentorship philosophy')}
             </p>
           </div>
@@ -498,7 +498,7 @@ export default function PadrinhoMentorshipSystem() {
             <h4 className="font-semibold text-gray-900 mb-2">
               {t('mentorship.process.step2.title', 'Interview')}
             </h4>
-            <p className="text-gray-600 text-sm">
+            <p className="text-secondary-600 text-sm">
               {t('mentorship.process.step2.desc', 'Personal interview to assess cultural understanding and mentorship readiness')}
             </p>
           </div>
@@ -510,7 +510,7 @@ export default function PadrinhoMentorshipSystem() {
             <h4 className="font-semibold text-gray-900 mb-2">
               {t('mentorship.process.step3.title', 'Training')}
             </h4>
-            <p className="text-gray-600 text-sm">
+            <p className="text-secondary-600 text-sm">
               {t('mentorship.process.step3.desc', 'Complete mentorship training program and cultural sensitivity workshop')}
             </p>
           </div>
@@ -531,7 +531,7 @@ export default function PadrinhoMentorshipSystem() {
         <h2 className="text-4xl font-black text-gray-900 mb-6">
           {t('mentorship.programs.title', 'Structured Mentorship Programs')}
         </h2>
-        <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+        <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
           {t('mentorship.programs.subtitle', 'Choose from specialized programs designed to address specific aspects of Portuguese life in London')}
         </p>
       </div>
@@ -551,7 +551,7 @@ export default function PadrinhoMentorshipSystem() {
               <h3 className="text-xl font-bold text-gray-900 mb-2">
                 {language === 'pt' ? program.namePt : program.nameEn}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {language === 'pt' ? program.descriptionPt : program.descriptionEn}
               </p>
             </div>
@@ -567,7 +567,7 @@ export default function PadrinhoMentorshipSystem() {
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">{t('mentorship.success_rate', 'Success Rate')}:</span>
-                <span className="font-semibold text-green-600">{program.successRate}%</span>
+                <span className="font-semibold text-action-600">{program.successRate}%</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">{t('mentorship.participants', 'Participants')}:</span>
@@ -581,8 +581,8 @@ export default function PadrinhoMentorshipSystem() {
               </h4>
               <ul className="space-y-2">
                 {program.benefits.slice(0, 3).map((benefit, index) => (
-                  <li key={index} className="flex items-center gap-2 text-sm text-gray-600">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+                  <li key={index} className="flex items-center gap-2 text-sm text-secondary-600">
+                    <div className="w-1.5 h-1.5 bg-action-500 rounded-full" />
                     {benefit}
                   </li>
                 ))}
@@ -613,8 +613,8 @@ export default function PadrinhoMentorshipSystem() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-3xl px-6 py-3 mb-6"
           >
-            <HandRaisedIcon className="w-5 h-5 text-blue-600" />
-            <span className="font-semibold text-blue-700">
+            <HandRaisedIcon className="w-5 h-5 text-primary-600" />
+            <span className="font-semibold text-primary-700">
               {t('mentorship.badge', 'Padrinho/Madrinha System')}
             </span>
           </motion.div>
@@ -636,7 +636,7 @@ export default function PadrinhoMentorshipSystem() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto"
+            className="text-xl sm:text-2xl text-secondary-700 max-w-4xl mx-auto"
           >
             {t('mentorship.subtitle', 'Connect with experienced Portuguese mentors who understand your journey and can guide you to success while honoring your heritage')}
           </motion.p>
@@ -659,7 +659,7 @@ export default function PadrinhoMentorshipSystem() {
                     className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
                       activeTab === tab.key
                         ? 'bg-gradient-to-r from-secondary-600 to-accent-600 text-white shadow-lg'
-                        : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                        : 'text-secondary-600 hover:text-secondary-800 hover:bg-gray-50'
                     }`}
                   >
                     <Icon className="w-5 h-5" />
@@ -708,7 +708,7 @@ export default function PadrinhoMentorshipSystem() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-gray-900 mb-1">{selectedMentor.name}</h3>
-                    <p className="text-gray-600 mb-2">{selectedMentor.profession}</p>
+                    <p className="text-secondary-600 mb-2">{selectedMentor.profession}</p>
                     <p className="text-gray-500">{selectedMentor.company}</p>
                     <div className="flex items-center gap-3 mt-3">
                       <div className="flex items-center gap-1">
@@ -716,7 +716,7 @@ export default function PadrinhoMentorshipSystem() {
                         <span className="font-semibold">{selectedMentor.rating}</span>
                       </div>
                       <span className="text-gray-300">•</span>
-                      <span className="text-gray-600">{selectedMentor.yearsInLondon} anos em Londres</span>
+                      <span className="text-secondary-600">{selectedMentor.yearsInLondon} anos em Londres</span>
                     </div>
                   </div>
                 </div>
@@ -726,14 +726,14 @@ export default function PadrinhoMentorshipSystem() {
                     <h4 className="font-semibold text-gray-900 mb-2">
                       {t('mentorship.modal.bio', 'About')}
                     </h4>
-                    <p className="text-gray-600">{selectedMentor.bio}</p>
+                    <p className="text-secondary-600">{selectedMentor.bio}</p>
                   </div>
 
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">
                       {t('mentorship.modal.philosophy', 'Mentorship Philosophy')}
                     </h4>
-                    <p className="text-gray-600">{selectedMentor.mentorshipPhilosophy}</p>
+                    <p className="text-secondary-600">{selectedMentor.mentorshipPhilosophy}</p>
                   </div>
 
                   <div>
@@ -758,8 +758,8 @@ export default function PadrinhoMentorshipSystem() {
                     </h4>
                     <ul className="space-y-2">
                       {selectedMentor.achievements.map((achievement, index) => (
-                        <li key={index} className="flex items-start gap-2 text-gray-600">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0" />
+                        <li key={index} className="flex items-start gap-2 text-secondary-600">
+                          <div className="w-2 h-2 bg-action-500 rounded-full mt-2 flex-shrink-0" />
                           {achievement}
                         </li>
                       ))}
@@ -772,7 +772,7 @@ export default function PadrinhoMentorshipSystem() {
                     </button>
                     <button
                       onClick={() => setSelectedMentor(null)}
-                      className="px-6 py-3 border-2 border-gray-300 text-gray-600 rounded-xl font-semibold hover:border-gray-400 transition-colors"
+                      className="px-6 py-3 border-2 border-secondary-300 text-secondary-600 rounded-xl font-semibold hover:border-gray-400 transition-colors"
                     >
                       {t('common.close', 'Close')}
                     </button>

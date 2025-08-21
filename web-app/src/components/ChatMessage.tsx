@@ -98,8 +98,8 @@ export default function ChatMessageComponent({
             message.isHost 
               ? 'text-action-600' 
               : message.isModerator
-              ? 'text-blue-600'
-              : 'text-gray-700'
+              ? 'text-primary-600'
+              : 'text-secondary-700'
           }`}>
             {message.username}
           </span>
@@ -121,8 +121,8 @@ export default function ChatMessageComponent({
           
           {message.isModerator && !message.isHost && (
             <div className="flex items-center gap-1">
-              <Shield className="w-3 h-3 text-blue-600" />
-              <span className="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-xs font-medium">
+              <Shield className="w-3 h-3 text-primary-600" />
+              <span className="bg-blue-100 text-primary-700 px-1.5 py-0.5 rounded text-xs font-medium">
                 {language === 'pt' ? 'MOD' : 'MOD'}
               </span>
             </div>
@@ -149,7 +149,7 @@ export default function ChatMessageComponent({
             <div className="relative">
               <button
                 onClick={() => setShowModerationMenu(!showModerationMenu)}
-                className="opacity-0 group-hover:opacity-100 p-1 text-gray-400 hover:text-gray-600 
+                className="opacity-0 group-hover:opacity-100 p-1 text-gray-400 hover:text-secondary-600 
                   rounded transition-all"
               >
                 <AlertTriangle className="w-3 h-3" />
@@ -165,7 +165,7 @@ export default function ChatMessageComponent({
                   <button
                     onClick={handleDeleteMessage}
                     className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-gray-50 
-                      text-red-600 hover:text-red-700"
+                      text-coral-600 hover:text-red-700"
                   >
                     <Trash2 className="w-3 h-3" />
                     {language === 'pt' ? 'Apagar' : 'Delete'}
@@ -196,7 +196,7 @@ export default function ChatMessageComponent({
                       <button
                         onClick={handleBanUser}
                         className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-gray-50 
-                          text-red-600 hover:text-red-700"
+                          text-coral-600 hover:text-red-700"
                       >
                         <Ban className="w-3 h-3" />
                         {language === 'pt' ? 'Banir' : 'Ban'}
@@ -231,8 +231,8 @@ export default function ChatMessageComponent({
                     hasReacted
                       ? 'bg-primary-100 text-primary-700 border border-primary-200'
                       : currentUser
-                      ? 'bg-gray-100 hover:bg-gray-200 text-gray-600'
-                      : 'bg-gray-100 text-gray-600 cursor-not-allowed opacity-50'
+                      ? 'bg-secondary-100 hover:bg-secondary-200 text-secondary-600'
+                      : 'bg-secondary-100 text-secondary-600 cursor-not-allowed opacity-50'
                   }`}
                   title={`${reaction.users.length} ${
                     language === 'pt' 
@@ -250,8 +250,8 @@ export default function ChatMessageComponent({
             {currentUser && (
               <button
                 onClick={() => setShowModerationMenu(false)} // Could be replaced with quick reaction picker
-                className="w-6 h-6 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 
-                  hover:text-gray-600 text-xs transition-colors flex items-center justify-center"
+                className="w-6 h-6 rounded-full bg-secondary-100 hover:bg-secondary-200 text-gray-500 
+                  hover:text-secondary-600 text-xs transition-colors flex items-center justify-center"
                 title={language === 'pt' ? 'Adicionar reação' : 'Add reaction'}
               >
                 +

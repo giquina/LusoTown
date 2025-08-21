@@ -106,7 +106,7 @@ export default function HowConnectionsWork() {
             }
           </h2>
           
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-secondary-600 leading-relaxed">
             {isPortuguese 
               ? 'Construa naturalmente a sua rede de falantes de português através de experiências partilhadas. Quanto mais eventos participar, maior será a sua rede.'
               : 'Naturally build your network of Portuguese speakers through shared experiences. The more events you attend, the larger your network grows.'
@@ -146,7 +146,7 @@ export default function HowConnectionsWork() {
                       </h3>
                     </div>
                     
-                    <p className="text-xs sm:text-sm lg:text-base text-gray-600 leading-relaxed flex-1 break-words">
+                    <p className="text-xs sm:text-sm lg:text-base text-secondary-600 leading-relaxed flex-1 break-words">
                       {step.description}
                     </p>
                   </div>
@@ -168,7 +168,7 @@ export default function HowConnectionsWork() {
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
               {isPortuguese ? 'Porquê o LusoTown Connections?' : 'Why LusoTown Connections?'}
             </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-secondary-600 max-w-2xl mx-auto">
               {isPortuguese 
                 ? 'Criámos um sistema de networking que prioriza conexões autênticas baseadas em experiências reais partilhadas.'
                 : 'We created a networking system that prioritizes authentic connections based on real shared experiences.'
@@ -192,7 +192,7 @@ export default function HowConnectionsWork() {
                 <h4 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 leading-tight">
                   {benefit.title}
                 </h4>
-                <p className="text-xs sm:text-sm lg:text-base text-gray-600 leading-relaxed break-words">
+                <p className="text-xs sm:text-sm lg:text-base text-secondary-600 leading-relaxed break-words">
                   {benefit.description}
                 </p>
               </motion.div>
@@ -219,7 +219,7 @@ export default function HowConnectionsWork() {
             
             <a
               href={ROUTES.myNetwork}
-              className="bg-white text-gray-700 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-gray-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm sm:text-base"
+              className="bg-white text-secondary-700 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-gray-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm sm:text-base"
             >
               <UserGroupIcon className="w-4 h-4 sm:w-5 sm:h-5" />
               {isPortuguese ? 'Minha Rede' : 'My Network'}

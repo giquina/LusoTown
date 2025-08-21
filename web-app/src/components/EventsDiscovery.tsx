@@ -402,10 +402,10 @@ export default function EventsDiscovery({
     return (
       <div className={`animate-pulse ${className}`}>
         <div className="bg-white rounded-2xl shadow-lg p-6">
-          <div className="h-6 bg-gray-200 rounded mb-4"></div>
+          <div className="h-6 bg-secondary-200 rounded mb-4"></div>
           <div className="space-y-4">
             {[1, 2, 3].map(i => (
-              <div key={i} className="h-32 bg-gray-200 rounded-lg"></div>
+              <div key={i} className="h-32 bg-secondary-200 rounded-lg"></div>
             ))}
           </div>
         </div>
@@ -445,7 +445,7 @@ export default function EventsDiscovery({
                       <h4 className="font-semibold text-gray-900 text-sm line-clamp-1">
                         {event.title}
                       </h4>
-                      <p className="text-xs text-gray-600">
+                      <p className="text-xs text-secondary-600">
                         {event.portuguese_neighborhood} • {new Date(event.date).toLocaleDateString()}
                       </p>
                     </div>
@@ -459,17 +459,17 @@ export default function EventsDiscovery({
                         addToFavorites('events', event.id)
                       }
                     }}
-                    className="text-gray-400 hover:text-red-500 transition-colors"
+                    className="text-gray-400 hover:text-coral-500 transition-colors"
                   >
                     {isFavorite ? (
-                      <HeartSolidIcon className="w-4 h-4 text-red-500" />
+                      <HeartSolidIcon className="w-4 h-4 text-coral-500" />
                     ) : (
                       <HeartIcon className="w-4 h-4" />
                     )}
                   </button>
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-gray-600">
+                <div className="flex items-center justify-between text-xs text-secondary-600">
                   <span>£{event.price}</span>
                   <span>{attendancePercentage}% full</span>
                 </div>
@@ -494,7 +494,7 @@ export default function EventsDiscovery({
               <h2 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">
                 {isPortuguese ? 'Descobrir Eventos Portugueses' : 'Discover Portuguese Events'}
               </h2>
-              <p className="text-gray-600 text-sm leading-tight mt-1">
+              <p className="text-secondary-600 text-sm leading-tight mt-1">
                 {isPortuguese
                   ? 'Eventos autênticos nos bairros portugueses de Londres'
                   : 'Authentic events in London\'s Portuguese neighborhoods'}
@@ -503,7 +503,7 @@ export default function EventsDiscovery({
           </div>
           <button
             onClick={() => setShowFilters(!showFilters)}
-            className="md:hidden bg-gray-100 p-2.5 rounded-lg hover:bg-gray-200 transition-colors flex-shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="md:hidden bg-secondary-100 p-2.5 rounded-lg hover:bg-secondary-200 transition-colors flex-shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center"
           >
             <AdjustmentsHorizontalIcon className="w-5 h-5" />
           </button>
@@ -518,7 +518,7 @@ export default function EventsDiscovery({
               placeholder={isPortuguese ? 'Procurar eventos...' : 'Search events...'}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="w-full pl-10 pr-4 py-2 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
           </div>
 
@@ -527,7 +527,7 @@ export default function EventsDiscovery({
             <select
               value={selectedNeighborhood}
               onChange={(e) => setSelectedNeighborhood(e.target.value)}
-              className="border border-gray-300 rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="border border-secondary-300 rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
             >
               <option value="all">{isPortuguese ? 'Todos os Bairros' : 'All Neighborhoods'}</option>
               {PORTUGUESE_NEIGHBORHOODS.map(neighborhood => (
@@ -540,7 +540,7 @@ export default function EventsDiscovery({
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="border border-gray-300 rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="border border-secondary-300 rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
             >
               <option value="all">{isPortuguese ? 'Todas as Categorias' : 'All Categories'}</option>
               {CULTURAL_CATEGORIES.map(category => (
@@ -553,7 +553,7 @@ export default function EventsDiscovery({
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="border border-gray-300 rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="border border-secondary-300 rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
             >
               <option value="date">{isPortuguese ? 'Por Data' : 'By Date'}</option>
               <option value="distance">{isPortuguese ? 'Por Distância' : 'By Distance'}</option>
@@ -566,7 +566,7 @@ export default function EventsDiscovery({
 
       {/* Events List */}
       <div className="p-6">
-        <div className="mb-4 text-sm text-gray-600">
+        <div className="mb-4 text-sm text-secondary-600">
           {sortedEvents.length} {isPortuguese ? 'eventos encontrados' : 'events found'}
         </div>
 
@@ -586,7 +586,7 @@ export default function EventsDiscovery({
               >
                 <div className="flex flex-col sm:flex-row gap-4">
                   {/* Event Image */}
-                  <div className="sm:w-32 md:w-48 h-32 sm:h-24 relative overflow-hidden rounded-lg bg-gray-100 flex-shrink-0">
+                  <div className="sm:w-32 md:w-48 h-32 sm:h-24 relative overflow-hidden rounded-lg bg-secondary-100 flex-shrink-0">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-secondary-500/20"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="text-3xl">{getCategoryIcon(event.cultural_category)}</span>
@@ -602,7 +602,7 @@ export default function EventsDiscovery({
                             {getCategoryName(event.cultural_category)}
                           </span>
                           {event.host_verified && (
-                            <span className="inline-block w-4 h-4 bg-green-500 rounded-full text-white text-xs flex items-center justify-center">
+                            <span className="inline-block w-4 h-4 bg-action-500 rounded-full text-white text-xs flex items-center justify-center">
                               ✓
                             </span>
                           )}
@@ -617,7 +617,7 @@ export default function EventsDiscovery({
                                 }`}
                               />
                             ))}
-                            <span className="text-xs text-gray-600">
+                            <span className="text-xs text-secondary-600">
                               ({event.cultural_authenticity_score}% {isPortuguese ? 'autêntico' : 'authentic'})
                             </span>
                           </div>
@@ -625,7 +625,7 @@ export default function EventsDiscovery({
                         <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
                           {event.title}
                         </h3>
-                        <p className="text-gray-600 text-sm line-clamp-2 mb-2">
+                        <p className="text-secondary-600 text-sm line-clamp-2 mb-2">
                           {event.description}
                         </p>
                       </div>
@@ -638,10 +638,10 @@ export default function EventsDiscovery({
                             addToFavorites('events', event.id)
                           }
                         }}
-                        className="text-gray-400 hover:text-red-500 transition-colors"
+                        className="text-gray-400 hover:text-coral-500 transition-colors"
                       >
                         {isFavorite ? (
-                          <HeartSolidIcon className="w-5 h-5 text-red-500" />
+                          <HeartSolidIcon className="w-5 h-5 text-coral-500" />
                         ) : (
                           <HeartIcon className="w-5 h-5" />
                         )}
@@ -649,7 +649,7 @@ export default function EventsDiscovery({
                     </div>
 
                     {/* Event Meta */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 text-xs sm:text-sm text-secondary-600">
                       <div className="flex items-center space-x-1">
                         <CalendarDaysIcon className="w-4 h-4" />
                         <span>{eventDate.toLocaleDateString()}</span>
@@ -694,7 +694,7 @@ export default function EventsDiscovery({
 
                     {/* Attendance and Action */}
                     <div className="flex items-center justify-between mt-4">
-                      <div className="flex items-center space-x-4 text-sm text-gray-600">
+                      <div className="flex items-center space-x-4 text-sm text-secondary-600">
                         <div className="flex items-center space-x-1">
                           <UsersIcon className="w-4 h-4" />
                           <span>{event.current_attendees}/{event.max_attendees}</span>
@@ -729,7 +729,7 @@ export default function EventsDiscovery({
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
               {isPortuguese ? 'Nenhum evento encontrado' : 'No events found'}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary-600 mb-6">
               {isPortuguese
                 ? 'Tente ajustar os seus critérios de pesquisa'
                 : 'Try adjusting your search criteria'}

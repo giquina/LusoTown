@@ -1,9 +1,13 @@
 'use client'
 
 import React, { useState } from 'react'
+import { ROUTES } from '@/config'
 import { motion } from 'framer-motion'
+import { ROUTES } from '@/config'
 import Image from 'next/image'
+import { ROUTES } from '@/config'
 import { communityStats } from '@/config/community'
+import { ROUTES } from '@/config'
 import { 
   BuildingOffice2Icon,
   AcademicCapIcon,
@@ -20,6 +24,7 @@ import {
   StarIcon
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config'
 
 interface CommunityImpact {
   id: string
@@ -419,7 +424,7 @@ export default function CommunityImpactDocumentation() {
               ? 'Transformando Londres Através da Comunidade Portuguesa'
               : 'Transforming London Through Portuguese Community'}
           </h2>
-          <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-secondary-700 mb-8 max-w-4xl mx-auto leading-relaxed">
             {language === 'pt' 
               ? 'Impacto quantificável e documentado da comunidade portuguesa em Londres através de contribuições económicas, educacionais, culturais e sociais mensuráveis.'
               : 'Quantifiable and documented impact of the Portuguese community in London through measurable economic, educational, cultural, and social contributions.'}
@@ -436,37 +441,37 @@ export default function CommunityImpactDocumentation() {
         >
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center shadow-lg border border-white/50">
             <div className="text-2xl font-bold text-primary-600 mb-1">{totals.businessesSupported}</div>
-            <div className="text-xs text-gray-600">
+            <div className="text-xs text-secondary-600">
               {language === 'pt' ? 'Negócios Apoiados' : 'Businesses Supported'}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center shadow-lg border border-white/50">
             <div className="text-2xl font-bold text-secondary-600 mb-1">{totals.studentsEducated}</div>
-            <div className="text-xs text-gray-600">
+            <div className="text-xs text-secondary-600">
               {language === 'pt' ? 'Estudantes Educados' : 'Students Educated'}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center shadow-lg border border-white/50">
             <div className="text-2xl font-bold text-accent-600 mb-1">{totals.culturalEventsOrganized}+</div>
-            <div className="text-xs text-gray-600">
+            <div className="text-xs text-secondary-600">
               {language === 'pt' ? 'Eventos Culturais' : 'Cultural Events'}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center shadow-lg border border-white/50">
             <div className="text-2xl font-bold text-coral-600 mb-1">{totals.individualsSupported}+</div>
-            <div className="text-xs text-gray-600">
+            <div className="text-xs text-secondary-600">
               {language === 'pt' ? 'Indivíduos Apoiados' : 'Individuals Supported'}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center shadow-lg border border-white/50">
             <div className="text-2xl font-bold text-action-600 mb-1">{totals.votersRegistered}+</div>
-            <div className="text-xs text-gray-600">
+            <div className="text-xs text-secondary-600">
               {language === 'pt' ? 'Eleitores Registados' : 'Voters Registered'}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center shadow-lg border border-white/50">
             <div className="text-2xl font-bold text-premium-600 mb-1">{totals.startupsIncubated}</div>
-            <div className="text-xs text-gray-600">
+            <div className="text-xs text-secondary-600">
               {language === 'pt' ? 'Startups Incubadas' : 'Startups Incubated'}
             </div>
           </div>
@@ -480,7 +485,7 @@ export default function CommunityImpactDocumentation() {
               className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                 selectedCategory === 'all'
                   ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                  : 'bg-white/80 text-gray-700 hover:bg-gray-100 hover:text-primary-600 border border-gray-200'
+                  : 'bg-white/80 text-secondary-700 hover:bg-secondary-100 hover:text-primary-600 border border-gray-200'
               }`}
             >
               <GlobeAltIcon className="w-4 h-4" />
@@ -495,7 +500,7 @@ export default function CommunityImpactDocumentation() {
                   className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                     selectedCategory === key
                       ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                      : 'bg-white/80 text-gray-700 hover:bg-gray-100 hover:text-primary-600 border border-gray-200'
+                      : 'bg-white/80 text-secondary-700 hover:bg-secondary-100 hover:text-primary-600 border border-gray-200'
                   }`}
                 >
                   <IconComponent className="w-4 h-4" />
@@ -584,7 +589,7 @@ export default function CommunityImpactDocumentation() {
 
                   {/* Testimonial */}
                   <div className="bg-gradient-to-r from-gray-50 to-white rounded-lg p-4 mb-6 border-l-4 border-primary-500">
-                    <blockquote className="text-gray-700 italic text-sm mb-3">
+                    <blockquote className="text-secondary-700 italic text-sm mb-3">
                       "{language === 'pt' ? impact.testimonial.quotePortuguese : impact.testimonial.quote}"
                     </blockquote>
                     <cite className="text-primary-600 font-semibold text-sm">
@@ -620,7 +625,7 @@ export default function CommunityImpactDocumentation() {
                         </h4>
                         <ul className="space-y-2">
                           {(language === 'pt' ? impact.keyAchievementsPortuguese : impact.keyAchievements).map((achievement, index) => (
-                            <li key={index} className="flex items-start gap-2 text-sm text-gray-700">
+                            <li key={index} className="flex items-start gap-2 text-sm text-secondary-700">
                               <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
                               {achievement}
                             </li>
@@ -637,7 +642,7 @@ export default function CommunityImpactDocumentation() {
                           {impact.partnerships.map(partner => (
                             <span
                               key={partner}
-                              className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+                              className="px-3 py-1 bg-secondary-100 text-secondary-700 text-xs rounded-full"
                             >
                               {partner}
                             </span>
@@ -650,7 +655,7 @@ export default function CommunityImpactDocumentation() {
                         <h4 className="font-medium text-gray-900 mb-2">
                           {language === 'pt' ? 'Objetivos Futuros:' : 'Future Goals:'}
                         </h4>
-                        <p className="text-gray-700 text-sm">
+                        <p className="text-secondary-700 text-sm">
                           {language === 'pt' ? impact.futureGoalsPortuguese : impact.futureGoals}
                         </p>
                       </div>
@@ -699,8 +704,8 @@ export default function CommunityImpactDocumentation() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <a
-                href="/signup"
-                className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
+                href={ROUTES.auth.signup}
+                className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-secondary-100 transition-colors shadow-lg"
               >
                 {language === 'pt' ? 'Juntar-se ao Impacto' : 'Join the Impact'}
               </a>

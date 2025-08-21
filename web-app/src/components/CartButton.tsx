@@ -48,7 +48,7 @@ export default function CartButton({ className = "" }: CartButtonProps) {
     <>
       <button
         onClick={handleCartClick}
-        className={`relative p-3 text-gray-600 hover:text-primary-500 transition-colors group min-h-[44px] min-w-[44px] flex items-center justify-center ${className}`}
+        className={`relative p-3 text-secondary-600 hover:text-primary-500 transition-colors group min-h-[44px] min-w-[44px] flex items-center justify-center ${className}`}
         title={isPortuguese ? "Carrinho de Compras" : "Shopping Cart"}
       >
         {cartCount > 0 ? (
@@ -64,7 +64,7 @@ export default function CartButton({ className = "" }: CartButtonProps) {
         )}
 
         {/* Tooltip */}
-        <div className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-3 py-2 rounded shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">
+        <div className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 bg-secondary-900 text-white text-xs px-3 py-2 rounded shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">
           {isLoggedIn
             ? cartCount > 0
               ? `${cartCount} ${
@@ -82,7 +82,7 @@ export default function CartButton({ className = "" }: CartButtonProps) {
             : isPortuguese
             ? "Clique para se registar"
             : "Click to sign up"}
-          <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
+          <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-secondary-900 rotate-45"></div>
         </div>
       </button>
 

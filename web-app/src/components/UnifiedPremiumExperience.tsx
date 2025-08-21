@@ -414,7 +414,7 @@ export default function UnifiedPremiumExperience({
                 ? "Um Plano, Todos os Benefícios"
                 : "One Plan, All Benefits"}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese
                 ? "Transporte premium, eventos exclusivos, networking VIP e suporte da comunidade portuguesa - tudo numa só subscrição"
                 : "Premium transport, exclusive events, VIP networking, and Portuguese community support - all in one subscription"}
@@ -487,7 +487,7 @@ export default function UnifiedPremiumExperience({
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">
                     {benefit.title}
                   </h4>
-                  <p className="text-gray-600 text-sm">{benefit.description}</p>
+                  <p className="text-secondary-600 text-sm">{benefit.description}</p>
                 </motion.div>
               );
             })}
@@ -498,7 +498,7 @@ export default function UnifiedPremiumExperience({
         {!hasActiveSubscription && (
           <div className="mb-12">
             <div className="flex justify-center mb-8">
-              <div className="bg-gray-100 rounded-xl p-1 flex">
+              <div className="bg-secondary-100 rounded-xl p-1 flex">
                 {premiumTiers.map((tier) => (
                   <button
                     key={tier.id}
@@ -506,7 +506,7 @@ export default function UnifiedPremiumExperience({
                     className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                       selectedTier === tier.id
                         ? "bg-white text-primary-600 shadow-md"
-                        : "text-gray-600 hover:text-gray-900"
+                        : "text-secondary-600 hover:text-gray-900"
                     }`}
                   >
                     {tier.name}
@@ -532,7 +532,7 @@ export default function UnifiedPremiumExperience({
                     {selectedTierDetails.name}{" "}
                     {isPortuguese ? "Membro" : "Member"}
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-secondary-600 mb-4">
                     {selectedTierDetails.description}
                   </p>
                   <div className="text-4xl font-bold text-primary-600 mb-2">
@@ -576,7 +576,7 @@ export default function UnifiedPremiumExperience({
                             className="flex items-start space-x-3"
                           >
                             <CheckCircleIcon className="w-5 h-5 text-secondary-600 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-700 text-sm">
+                            <span className="text-secondary-700 text-sm">
                               {item}
                             </span>
                           </div>
@@ -629,7 +629,7 @@ export default function UnifiedPremiumExperience({
               ? "Mais Que Uma Subscrição"
               : "More Than a Subscription"}
           </h3>
-          <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
+          <p className="text-secondary-600 mb-6 max-w-3xl mx-auto">
             {isPortuguese
               ? "LusoTown Premium não é apenas um desconto - é o seu passaporte para a comunidade portuguesa mais vibrante de Londres. Transporte seguro, eventos exclusivos, networking profissional e amizades para a vida."
               : "LusoTown Premium isn't just a discount - it's your passport to London's most vibrant Portuguese community. Safe transport, exclusive events, professional networking, and friendships for life."}
@@ -639,7 +639,7 @@ export default function UnifiedPremiumExperience({
               <div className="text-2xl font-bold text-primary-600">
                 {connections.length}+
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {isPortuguese ? "Conexões ativas" : "Active connections"}
               </div>
             </div>
@@ -647,19 +647,19 @@ export default function UnifiedPremiumExperience({
               <div className="text-2xl font-bold text-secondary-600">
                 £{calculateAnnualSavings(15)}+
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {isPortuguese ? "Economia anual" : "Annual savings"}
               </div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-accent-600">50+</div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {isPortuguese ? "Eventos exclusivos" : "Exclusive events"}
               </div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-coral-600">24/7</div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {isPortuguese ? "Suporte português" : "Portuguese support"}
               </div>
             </div>

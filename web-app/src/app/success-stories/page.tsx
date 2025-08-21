@@ -71,7 +71,7 @@ export default function SuccessStories() {
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance">
                 From Saudade to Success: Portuguese Hearts United in London
               </h1>
-              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-balance">
+              <p className="text-lg sm:text-xl text-secondary-600 leading-relaxed text-balance">
                 Real Portuguese souls who transformed London loneliness into thriving community connections. From pastéis de nata meetups in Stockwell to fado nights in Camden - discover how nossa gente builds lasting bonds while preserving Portuguese heart in the city's rhythm.
               </p>
             </div>
@@ -108,7 +108,7 @@ export default function SuccessStories() {
                   Join LusoTown
                 </a>
                 <a
-                  href="/matches"
+                  href={ROUTES.matches}
                   className="bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
                 >
                   <ChatBubbleLeftRightIcon className="w-5 h-5 mr-2" />
@@ -141,7 +141,7 @@ export default function SuccessStories() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Get Inspired by More Success Stories
               </h3>
-              <p className="text-gray-600 mb-8">
+              <p className="text-secondary-600 mb-8">
                 Subscribe to receive monthly success stories, community highlights, and tips for building 
                 meaningful connections in London's Portuguese community.
               </p>
@@ -150,7 +150,7 @@ export default function SuccessStories() {
                 <input
                   type="email"
                   placeholder="Enter your email address"
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="flex-1 px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 />
                 <button
                   type="submit"

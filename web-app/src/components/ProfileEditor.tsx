@@ -177,7 +177,7 @@ export default function ProfileEditor({ profile, onSave, saving }: ProfileEditor
               <h3 className="text-lg font-semibold text-gray-900">
                 {isPortuguese ? 'Completude do Perfil' : 'Profile Completion'}
               </h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-secondary-600">
                 {profileCompletion.percentage}% {isPortuguese ? 'completo' : 'complete'}
               </p>
             </div>
@@ -186,7 +186,7 @@ export default function ProfileEditor({ profile, onSave, saving }: ProfileEditor
             </div>
           </div>
           
-          <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
+          <div className="w-full bg-secondary-200 rounded-full h-3 mb-4">
             <motion.div
               className="bg-gradient-to-r from-primary-500 to-secondary-500 h-3 rounded-full"
               initial={{ width: 0 }}
@@ -197,7 +197,7 @@ export default function ProfileEditor({ profile, onSave, saving }: ProfileEditor
 
           {profileCompletion.missing_steps.length > 0 && (
             <div>
-              <p className="text-sm font-medium text-gray-700 mb-2">
+              <p className="text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? 'Passos em falta:' : 'Missing steps:'}
               </p>
               <div className="flex flex-wrap gap-2">
@@ -227,7 +227,7 @@ export default function ProfileEditor({ profile, onSave, saving }: ProfileEditor
                 className={`flex items-center gap-2 px-4 py-3 rounded-lg font-medium text-sm transition-all ${
                   activeTab === tab.id
                     ? 'bg-primary-50 text-primary-600 border-2 border-primary-200'
-                    : 'text-gray-600 hover:bg-gray-50 border-2 border-transparent'
+                    : 'text-secondary-600 hover:bg-gray-50 border-2 border-transparent'
                 }`}
               >
                 <Icon className="w-4 h-4" />
@@ -294,41 +294,41 @@ function BasicInfoTab({ formData, updateFormData, isPortuguese }: any) {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               {isPortuguese ? 'Nome' : 'First Name'} *
             </label>
             <input
               type="text"
               value={formData.first_name}
               onChange={(e) => updateFormData('first_name', e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+              className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
               placeholder={isPortuguese ? 'Seu nome' : 'Your first name'}
             />
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               {isPortuguese ? 'Apelido' : 'Last Name'} *
             </label>
             <input
               type="text"
               value={formData.last_name}
               onChange={(e) => updateFormData('last_name', e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+              className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
               placeholder={isPortuguese ? 'Seu apelido' : 'Your last name'}
             />
           </div>
         </div>
 
         <div className="mt-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 mb-2">
             {isPortuguese ? 'Data de Nascimento' : 'Date of Birth'} *
           </label>
           <input
             type="date"
             value={formData.date_of_birth}
             onChange={(e) => updateFormData('date_of_birth', e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+            className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
             max={new Date(new Date().setFullYear(new Date().getFullYear() - 18)).toISOString().split('T')[0]}
           />
           <p className="text-xs text-gray-500 mt-1">
@@ -337,14 +337,14 @@ function BasicInfoTab({ formData, updateFormData, isPortuguese }: any) {
         </div>
 
         <div className="mt-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 mb-2">
             {isPortuguese ? 'Biografia' : 'Bio'} *
           </label>
           <textarea
             value={formData.bio}
             onChange={(e) => updateFormData('bio', e.target.value)}
             rows={4}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+            className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
             placeholder={isPortuguese ? 
               'Conte-nos um pouco sobre si, seus interesses e o que procura na comunidade...' : 
               'Tell us about yourself, your interests and what you are looking for in the community...'
@@ -388,13 +388,13 @@ function LocationTab({ formData, updateFormData, isPortuguese, options }: any) {
         </h3>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 mb-2">
             {isPortuguese ? 'Área de Londres' : 'London Area'} *
           </label>
           <select
             value={formData.location}
             onChange={(e) => updateFormData('location', e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+            className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
           >
             <option value="">
               {isPortuguese ? 'Selecione uma área' : 'Select an area'}
@@ -431,7 +431,7 @@ function InterestsTab({ formData, updateFormData, isPortuguese, options }: any) 
           {isPortuguese ? 'Seus Interesses Culturais' : 'Your Cultural Interests'}
         </h3>
         
-        <p className="text-gray-600 mb-6">
+        <p className="text-secondary-600 mb-6">
           {isPortuguese ? 
             'Selecione seus interesses para nos ajudar a conectá-lo com pessoas similares' :
             'Select your interests to help us connect you with like-minded people'
@@ -440,7 +440,7 @@ function InterestsTab({ formData, updateFormData, isPortuguese, options }: any) 
 
         {Object.entries(options.culturalInterests).map(([category, interests]) => (
           <div key={category} className="mb-8">
-            <h4 className="text-lg font-semibold text-gray-800 mb-4">{category}</h4>
+            <h4 className="text-lg font-semibold text-secondary-800 mb-4">{category}</h4>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {(interests as string[]).map((interest) => (
                 <button
@@ -450,7 +450,7 @@ function InterestsTab({ formData, updateFormData, isPortuguese, options }: any) 
                   className={`p-3 rounded-lg border-2 text-sm font-medium transition-all ${
                     (formData.interests || []).includes(interest)
                       ? 'border-primary-500 bg-primary-50 text-primary-700'
-                      : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
+                      : 'border-gray-200 bg-white text-secondary-700 hover:border-secondary-300'
                   }`}
                 >
                   {interest}

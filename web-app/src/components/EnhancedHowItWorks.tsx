@@ -44,7 +44,7 @@ export default function EnhancedHowItWorks() {
         ? "Conecte-se com portugueses que partilham a sua saudade, lealdades futebolísticas e património cultural"
         : "Connect with Portuguese speakers who share your saudade, football loyalties, and cultural heritage",
       cta: isPortuguese ? "Começar a Procurar" : "Start Matching",
-      link: "/matches",
+      link: {ROUTES.matches},
       icon: HeartIcon,
       solidIcon: HeartSolidIcon,
       gradient: "from-action-500 via-secondary-500 to-action-500",
@@ -99,7 +99,7 @@ export default function EnhancedHowItWorks() {
         ? "Desde noites íntimas de Fado em Stockwell até networking empresarial português na City"
         : "From intimate Fado nights in Stockwell to Portuguese business networking in the City",
       cta: isPortuguese ? "Descobrir Eventos" : "Discover Events",
-      link: "/events",
+      link: {ROUTES.events},
       icon: CalendarDaysIcon,
       solidIcon: CalendarDaysIcon,
       gradient: "from-secondary-500 via-accent-500 to-secondary-500",
@@ -180,7 +180,7 @@ export default function EnhancedHowItWorks() {
         ? "Serviços de transporte profissional com motoristas que falam português para conforto cultural"
         : "Professional transport services with Portuguese-speaking drivers for cultural comfort",
       cta: isPortuguese ? "Reservar Transporte" : "Book Transport",
-      link: "/transport",
+      link: {ROUTES.transport},
       icon: TruckIcon,
       solidIcon: TruckIcon,
       gradient: "from-coral-500 via-action-500 to-coral-500",
@@ -224,13 +224,13 @@ export default function EnhancedHowItWorks() {
             className="inline-flex items-center gap-2 bg-gradient-to-r from-secondary-100 to-accent-100 border border-secondary-200 rounded-full px-6 py-3 mb-8"
           >
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-action-500 rounded-full animate-pulse"></div>
               <div
-                className="w-2 h-2 bg-red-500 rounded-full animate-pulse"
+                className="w-2 h-2 bg-coral-500 rounded-full animate-pulse"
                 style={{ animationDelay: "0.5s" }}
               ></div>
               <div
-                className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"
+                className="w-2 h-2 bg-accent-500 rounded-full animate-pulse"
                 style={{ animationDelay: "1s" }}
               ></div>
             </div>
@@ -256,7 +256,7 @@ export default function EnhancedHowItWorks() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-secondary-700 max-w-4xl mx-auto leading-relaxed"
           >
             {isPortuguese
               ? "Descubra tudo o que pode fazer na maior comunidade portuguesa de Londres"
@@ -303,7 +303,7 @@ export default function EnhancedHowItWorks() {
                     {feature.title}
                   </h3>
 
-                  <p className="text-gray-600 leading-relaxed mb-6 flex-grow text-base">
+                  <p className="text-secondary-600 leading-relaxed mb-6 flex-grow text-base">
                     {feature.description}
                   </p>
 
@@ -318,7 +318,7 @@ export default function EnhancedHowItWorks() {
                       {/* Match Preview */}
                       {feature.preview.type === "match" && (
                         <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
+                          <div className="w-12 h-12 bg-secondary-200 rounded-full flex items-center justify-center">
                             <span className="text-lg">👤</span>
                           </div>
                           <div>
@@ -326,10 +326,10 @@ export default function EnhancedHowItWorks() {
                               {feature.preview.data.name},{" "}
                               {feature.preview.data.age}
                             </div>
-                            <div className="text-xs text-gray-600">
+                            <div className="text-xs text-secondary-600">
                               {feature.preview.data.location}
                             </div>
-                            <div className="text-xs text-green-600 font-medium">
+                            <div className="text-xs text-action-600 font-medium">
                               {feature.preview.data.compatibility}% Match
                             </div>
                           </div>
@@ -340,15 +340,15 @@ export default function EnhancedHowItWorks() {
                       {feature.preview.type === "streaming" && (
                         <div className="space-y-2">
                           <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                            <span className="text-xs font-medium text-red-600">
+                            <div className="w-2 h-2 bg-coral-500 rounded-full animate-pulse"></div>
+                            <span className="text-xs font-medium text-coral-600">
                               LIVE
                             </span>
                           </div>
                           <div className="font-semibold text-sm">
                             {feature.preview.data.title}
                           </div>
-                          <div className="text-xs text-gray-600">
+                          <div className="text-xs text-secondary-600">
                             {feature.preview.data.viewers} viewers •{" "}
                             {feature.preview.data.category}
                           </div>
@@ -362,10 +362,10 @@ export default function EnhancedHowItWorks() {
                             {feature.preview.data.title}
                           </div>
                           <div className="flex items-center justify-between text-xs">
-                            <span className="text-gray-600">
+                            <span className="text-secondary-600">
                               {feature.preview.data.date}
                             </span>
-                            <span className="font-medium text-green-600">
+                            <span className="font-medium text-action-600">
                               {feature.preview.data.price}
                             </span>
                           </div>
@@ -382,14 +382,14 @@ export default function EnhancedHowItWorks() {
                             {feature.preview.data.name}
                           </div>
                           <div className="flex items-center justify-between text-xs">
-                            <span className="text-gray-600">
+                            <span className="text-secondary-600">
                               {feature.preview.data.members} members
                             </span>
                             <span className="text-gray-500">
                               Active {feature.preview.data.recent}
                             </span>
                           </div>
-                          <div className="text-xs text-blue-600">
+                          <div className="text-xs text-primary-600">
                             {feature.preview.data.category}
                           </div>
                         </div>
@@ -402,7 +402,7 @@ export default function EnhancedHowItWorks() {
                             {feature.preview.data.title}
                           </div>
                           <div className="flex items-center justify-between text-xs">
-                            <span className="text-gray-600">
+                            <span className="text-secondary-600">
                               {feature.preview.data.duration}
                             </span>
                             <span className="flex items-center gap-1">
@@ -410,7 +410,7 @@ export default function EnhancedHowItWorks() {
                               <span>{feature.preview.data.rating}</span>
                             </span>
                           </div>
-                          <div className="text-xs text-green-600 font-medium">
+                          <div className="text-xs text-action-600 font-medium">
                             {feature.preview.data.price}
                           </div>
                         </div>
@@ -423,7 +423,7 @@ export default function EnhancedHowItWorks() {
                             {feature.preview.data.type}
                           </div>
                           <div className="flex items-center justify-between text-xs">
-                            <span className="text-green-600">
+                            <span className="text-action-600">
                               {feature.preview.data.availability}
                             </span>
                             <span className="flex items-center gap-1">
@@ -431,7 +431,7 @@ export default function EnhancedHowItWorks() {
                               <span>{feature.preview.data.rating}</span>
                             </span>
                           </div>
-                          <div className="text-xs text-blue-600">
+                          <div className="text-xs text-primary-600">
                             {feature.preview.data.language}
                           </div>
                         </div>
@@ -469,13 +469,13 @@ export default function EnhancedHowItWorks() {
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               {isPortuguese ? "Pronto para Começar?" : "Ready to Get Started?"}
             </h3>
-            <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+            <p className="text-lg text-secondary-700 mb-6 max-w-2xl mx-auto">
               {isPortuguese
                 ? "Junte-se a centenas de portugueses que já descobriram a sua comunidade em Londres"
                 : "Join hundreds of Portuguese speakers who have already discovered their community in London"}
             </p>
             <a
-              href="/signup"
+              href={ROUTES.auth.signup}
               className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold py-4 px-8 rounded-xl text-lg hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               {isPortuguese ? "Começar Grátis" : "Start Free"}

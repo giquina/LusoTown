@@ -93,8 +93,8 @@ export default function AppDownloadSection() {
         <div className="absolute top-3/4 right-1/3 w-6 h-6 bg-accent-400/40 rounded-full animate-pulse"></div>
         <div className="absolute bottom-1/4 left-2/3 w-4 h-4 bg-action-400/50 rounded-full"></div>
         {/* Portuguese flag colors floating elements */}
-        <div className="absolute top-10 left-10 w-3 h-3 bg-green-500/30 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-3 h-3 bg-red-500/30 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-10 left-10 w-3 h-3 bg-action-500/30 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-10 right-10 w-3 h-3 bg-coral-500/30 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="container-width section-padding relative z-10">
@@ -117,8 +117,8 @@ export default function AppDownloadSection() {
               className="inline-flex items-center gap-2 bg-gradient-to-r from-secondary-100 to-accent-100 border border-secondary-200 rounded-full px-6 py-3"
             >
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                <div className="w-2 h-2 bg-action-500 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-coral-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
               </div>
               <SparklesIcon className="h-4 w-4 text-primary-700" />
               <span className="text-sm font-bold text-primary-800">
@@ -153,7 +153,7 @@ export default function AppDownloadSection() {
                   </>
                 )}
               </h2>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl text-secondary-700 leading-relaxed">
                 {isPortuguese 
                   ? 'Nunca perca encontros portugueses em Londres, conversas de grupo ou novas ligações. Descarregue a app LusoTown e mantenha-se conectado com a comunidade portuguesa onde quer que vá.'
                   : 'Never miss Portuguese meetups in London, group chats or new connections. Get the LusoTown mobile app and stay connected with the Portuguese community wherever you go.'}
@@ -175,14 +175,14 @@ export default function AppDownloadSection() {
                         ? `Junte-se a ${communityStats.members} falantes de português verificados`
                         : `Join ${communityStats.members} verified Portuguese speakers`}
                     </h3>
-                    <p className="text-gray-700 text-lg leading-relaxed">
+                    <p className="text-secondary-700 text-lg leading-relaxed">
                       {isPortuguese 
                         ? 'A sua comunidade Luso-Londrina já está a crescer. Descarregue a app e encontre a sua comunidade hoje.'
                         : 'Your Portuguese London community is already growing. Download the app and find your community today.'}
                     </p>
                     <div className="flex items-center gap-6 text-sm font-medium">
                       <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <div className="w-2 h-2 bg-action-500 rounded-full animate-pulse"></div>
                         <span className="text-green-700">{communityStats.events} {isPortuguese ? 'eventos mensais' : 'monthly events'}</span>
                       </div>
                       <div className="flex items-center gap-2">
@@ -207,7 +207,7 @@ export default function AppDownloadSection() {
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
                   {isPortuguese ? 'Toda a Comunidade Portuguesa no Seu Telemóvel' : 'Your Entire Portuguese Community on Mobile'}
                 </h3>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-secondary-600">
                   {isPortuguese ? 'Acesso completo a todas as funcionalidades da plataforma' : 'Complete access to all platform features'}
                 </p>
               </div>
@@ -235,7 +235,7 @@ export default function AppDownloadSection() {
                       <h4 className="font-bold text-gray-900 text-base mb-2 group-hover:text-primary-700 transition-colors duration-300">
                         {feature.title}
                       </h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <p className="text-secondary-600 text-sm leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
@@ -256,7 +256,7 @@ export default function AppDownloadSection() {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {isPortuguese ? 'Descarregue Grátis Hoje' : 'Download Free Today'}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {isPortuguese ? 'Disponível para iOS e Android' : 'Available for iOS and Android'}
                 </p>
               </div>
@@ -317,14 +317,14 @@ export default function AppDownloadSection() {
               transition={{ delay: 1.4, duration: 0.6 }}
               className="text-center space-y-4"
             >
-              <p className="text-gray-600 text-base font-medium">
+              <p className="text-secondary-600 text-base font-medium">
                 {isPortuguese 
                   ? 'Grátis para descarregar • Disponível no iOS 14+ e Android 8+'
                   : 'Free to download • Available on iOS 14+ and Android 8+'}
               </p>
               <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-action-500 rounded-full animate-pulse"></div>
                   <span className="text-green-700 font-semibold">
                     {isPortuguese ? '100% Seguro e Verificado' : '100% Safe and Verified'}
                   </span>
@@ -367,19 +367,19 @@ export default function AppDownloadSection() {
                     <div className="flex items-center gap-2">
                       <span className="font-bold">9:41</span>
                       <div className="flex items-center gap-1">
-                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-green-600 font-medium text-xs">LusoTown</span>
+                        <div className="w-2 h-2 bg-action-500 rounded-full animate-pulse"></div>
+                        <span className="text-action-600 font-medium text-xs">LusoTown</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="flex items-center gap-1">
                         <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
                         <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
-                        <div className="w-1 h-1 bg-gray-900 rounded-full"></div>
+                        <div className="w-1 h-1 bg-secondary-900 rounded-full"></div>
                       </div>
-                      <div className="w-6 h-3 border border-gray-300 rounded-sm relative">
-                        <div className="w-5 h-2 bg-green-500 rounded-sm absolute top-0.5 left-0.5"></div>
-                        <div className="w-1 h-1 bg-green-500 rounded-sm absolute -right-0.5 top-1"></div>
+                      <div className="w-6 h-3 border border-secondary-300 rounded-sm relative">
+                        <div className="w-5 h-2 bg-action-500 rounded-sm absolute top-0.5 left-0.5"></div>
+                        <div className="w-1 h-1 bg-action-500 rounded-sm absolute -right-0.5 top-1"></div>
                       </div>
                     </div>
                   </div>
@@ -398,7 +398,7 @@ export default function AppDownloadSection() {
                           </div>
                           <div>
                             <h1 className="text-xl font-bold text-gray-900">LusoTown</h1>
-                            <p className="text-xs text-gray-600">London • Lisboa</p>
+                            <p className="text-xs text-secondary-600">London • Lisboa</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
@@ -442,7 +442,7 @@ export default function AppDownloadSection() {
                           </div>
                         </div>
                         <div className="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-xl p-4 border border-gray-100/50">
-                          <p className="text-sm text-gray-700 font-medium">
+                          <p className="text-sm text-secondary-700 font-medium">
                             &quot;{isPortuguese ? 'Alguém já leu \'Os Maias\' do Eça de Queirós?' : 'Anyone read \'Os Maias\' by Eça de Queirós?'}&quot;
                           </p>
                           <div className="flex items-center gap-2 mt-2">
@@ -477,8 +477,8 @@ export default function AppDownloadSection() {
                               {isPortuguese ? 'Noite de Fado em Stockwell' : 'Fado Night in Stockwell'}
                             </h3>
                             <div className="flex items-center gap-2">
-                              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                              <p className="text-sm text-green-600 font-medium">
+                              <div className="w-2 h-2 bg-action-500 rounded-full animate-pulse"></div>
+                              <p className="text-sm text-action-600 font-medium">
                                 {isPortuguese ? 'Amanhã, 19:30' : 'Tomorrow, 7:30 PM'}
                               </p>
                             </div>
@@ -491,11 +491,11 @@ export default function AppDownloadSection() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <MapPinIcon className="h-4 w-4 text-gray-400" />
-                            <p className="text-sm text-gray-600 font-medium">Portuguese Cultural Centre</p>
+                            <p className="text-sm text-secondary-600 font-medium">Portuguese Cultural Centre</p>
                           </div>
                           <div className="flex items-center gap-1">
                             <StarSolidIcon className="h-4 w-4 text-yellow-400" />
-                            <span className="text-sm font-semibold text-gray-700">4.9</span>
+                            <span className="text-sm font-semibold text-secondary-700">4.9</span>
                           </div>
                         </div>
                       </motion.div>
@@ -513,7 +513,7 @@ export default function AppDownloadSection() {
                             <h3 className="font-bold text-gray-900 text-base mb-1">
                               {isPortuguese ? 'Novos Portugueses na Área' : 'New Portuguese in Area'}
                             </h3>
-                            <p className="text-sm text-gray-600">
+                            <p className="text-sm text-secondary-600">
                               {isPortuguese ? '12 novos membros esta semana' : '12 new members this week'}
                             </p>
                           </div>
@@ -534,10 +534,10 @@ export default function AppDownloadSection() {
                                   backgroundColor: `hsl(${(i * 72) % 360}, 65%, 65%)`,
                                 }}
                               >
-                                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
+                                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-action-500 border-2 border-white rounded-full"></div>
                               </motion.div>
                             ))}
-                            <div className="w-10 h-10 rounded-full border-3 border-white bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-sm font-bold text-gray-700 shadow-lg">
+                            <div className="w-10 h-10 rounded-full border-3 border-white bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-sm font-bold text-secondary-700 shadow-lg">
                               +7
                             </div>
                           </div>

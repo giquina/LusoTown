@@ -119,7 +119,6 @@ export default function UserJourneyPage() {
   }
 
   const handleOnboardingComplete = (data: any) => {
-    console.log('Onboarding completed:', data)
     setShowOnboarding(false)
     
     // Update user activity based on onboarding data
@@ -132,7 +131,6 @@ export default function UserJourneyPage() {
   }
 
   const handleConversion = (opportunityId: string, conversionType: string, value: number) => {
-    console.log('Conversion tracked:', { opportunityId, conversionType, value })
     
     // Update analytics
     if (analyticsData) {
@@ -227,7 +225,7 @@ export default function UserJourneyPage() {
                     className={`flex items-center gap-3 py-4 px-2 border-b-2 font-medium text-sm whitespace-nowrap transition-colors ${
                       activeTab === tab.id
                         ? 'border-primary-500 text-primary-600'
-                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                        : 'border-transparent text-gray-500 hover:text-secondary-700 hover:border-secondary-300'
                     }`}
                   >
                     <IconComponent className="w-5 h-5" />
@@ -324,7 +322,7 @@ export default function UserJourneyPage() {
                         <div className="text-2xl font-bold text-primary-600 mb-2">
                           {analyticsData.userJourneyMetrics.discoveryToEngagement}
                         </div>
-                        <div className="text-sm text-gray-600">
+                        <div className="text-sm text-secondary-600">
                           {isPortuguese ? 'Descoberta → Envolvimento' : 'Discovery → Engagement'}
                         </div>
                       </div>
@@ -332,7 +330,7 @@ export default function UserJourneyPage() {
                         <div className="text-2xl font-bold text-secondary-600 mb-2">
                           {analyticsData.userJourneyMetrics.engagementToInvestment}
                         </div>
-                        <div className="text-sm text-gray-600">
+                        <div className="text-sm text-secondary-600">
                           {isPortuguese ? 'Envolvimento → Investimento' : 'Engagement → Investment'}
                         </div>
                       </div>
@@ -340,7 +338,7 @@ export default function UserJourneyPage() {
                         <div className="text-2xl font-bold text-accent-600 mb-2">
                           {analyticsData.userJourneyMetrics.investmentToAdvocacy}
                         </div>
-                        <div className="text-sm text-gray-600">
+                        <div className="text-sm text-secondary-600">
                           {isPortuguese ? 'Investimento → Advocacia' : 'Investment → Advocacy'}
                         </div>
                       </div>
@@ -357,7 +355,7 @@ export default function UserJourneyPage() {
                         <div key={index} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
                           <div className="flex-1">
                             <div className="font-semibold text-gray-900">{path.path}</div>
-                            <div className="text-sm text-gray-600">{path.users} {isPortuguese ? 'utilizadores' : 'users'}</div>
+                            <div className="text-sm text-secondary-600">{path.users} {isPortuguese ? 'utilizadores' : 'users'}</div>
                           </div>
                           <div className="text-right">
                             <div className="text-lg font-bold text-primary-600">{path.rate}</div>
@@ -390,7 +388,7 @@ export default function UserJourneyPage() {
                           <h3 className="font-semibold text-gray-900">
                             {isPortuguese ? 'Reiniciar Onboarding' : 'Reset Onboarding'}
                           </h3>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-secondary-600">
                             {isPortuguese 
                               ? 'Refaça o processo de integração para atualizar as suas preferências'
                               : 'Redo the onboarding process to update your preferences'
@@ -410,7 +408,7 @@ export default function UserJourneyPage() {
                           <h3 className="font-semibold text-gray-900">
                             {isPortuguese ? 'Limpar Dados de Progresso' : 'Clear Progress Data'}
                           </h3>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-secondary-600">
                             {isPortuguese 
                               ? 'Remove todas as conquistas e dados de progresso'
                               : 'Remove all achievements and progress data'
@@ -424,7 +422,7 @@ export default function UserJourneyPage() {
                             localStorage.removeItem('lusotown-completed-actions')
                             window.location.reload()
                           }}
-                          className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+                          className="px-4 py-2 bg-coral-500 text-white rounded-lg hover:bg-coral-600 transition-colors"
                         >
                           {isPortuguese ? 'Limpar' : 'Clear'}
                         </button>

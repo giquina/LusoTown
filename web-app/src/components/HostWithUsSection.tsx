@@ -1,6 +1,7 @@
 'use client'
 
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config'
 import { 
   AcademicCapIcon,
   SparklesIcon,
@@ -43,10 +44,10 @@ export default function HostWithUsSection() {
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
               {t('host-with-us.title')}
             </h2>
-            <p className="text-xl sm:text-2xl text-gray-700 mb-6 font-medium max-w-5xl mx-auto leading-relaxed">
+            <p className="text-xl sm:text-2xl text-secondary-700 mb-6 font-medium max-w-5xl mx-auto leading-relaxed">
               {t('host-with-us.subtitle')}
             </p>
-            <blockquote className="text-lg text-gray-600 italic max-w-4xl mx-auto font-medium">
+            <blockquote className="text-lg text-secondary-600 italic max-w-4xl mx-auto font-medium">
               {t('host-with-us.testimonial')}
             </blockquote>
           </div>
@@ -65,7 +66,7 @@ export default function HostWithUsSection() {
                   <h3 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4 group-hover:text-premium-600 transition-colors duration-300 leading-tight">
                     Professional Services
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6 flex-grow text-xs sm:text-sm lg:text-base">
+                  <p className="text-secondary-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6 flex-grow text-xs sm:text-sm lg:text-base">
                     AI workshops, business coaching, professional networking events.
                   </p>
                   <div className="text-xs text-gray-500 mb-2 sm:mb-3 lg:mb-4 font-medium">
@@ -94,7 +95,7 @@ export default function HostWithUsSection() {
                   <h3 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4 group-hover:text-secondary-600 transition-colors duration-300 leading-tight">
                     Cultural Events
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6 flex-grow text-xs sm:text-sm lg:text-base">
+                  <p className="text-secondary-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6 flex-grow text-xs sm:text-sm lg:text-base">
                     Cooking classes, Fado nights, language exchanges, cultural tours.
                   </p>
                   <div className="text-xs text-gray-500 mb-2 sm:mb-3 lg:mb-4 font-medium">
@@ -123,7 +124,7 @@ export default function HostWithUsSection() {
                   <h3 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4 group-hover:text-coral-600 transition-colors duration-300 leading-tight">
                     Business Promotion
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6 flex-grow text-xs sm:text-sm lg:text-base">
+                  <p className="text-secondary-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6 flex-grow text-xs sm:text-sm lg:text-base">
                     Promote restaurants, shops, professional services to Portuguese community.
                   </p>
                   <div className="text-xs text-gray-500 mb-2 sm:mb-3 lg:mb-4 font-medium">
@@ -147,14 +148,14 @@ export default function HostWithUsSection() {
               <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                 {t('host-with-us.success.title')}
               </h3>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
                 {t('host-with-us.success.subtitle')}
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-                <blockquote className="text-gray-700 italic mb-4 text-sm leading-relaxed">
+                <blockquote className="text-secondary-700 italic mb-4 text-sm leading-relaxed">
                   {t('host-with-us.success.story1.quote')}
                 </blockquote>
                 <div className="flex items-center gap-3">
@@ -168,7 +169,7 @@ export default function HostWithUsSection() {
               </div>
               
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-                <blockquote className="text-gray-700 italic mb-4 text-sm leading-relaxed">
+                <blockquote className="text-secondary-700 italic mb-4 text-sm leading-relaxed">
                   {t('host-with-us.success.story2.quote')}
                 </blockquote>
                 <div className="flex items-center gap-3">
@@ -192,7 +193,7 @@ export default function HostWithUsSection() {
               <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
                 Reach 750+ Portuguese
               </h4>
-              <p className="text-xs text-gray-600 leading-relaxed flex-1 break-words">
+              <p className="text-xs text-secondary-600 leading-relaxed flex-1 break-words">
                 Connect with Portuguese professionals and community members.
               </p>
             </div>
@@ -204,7 +205,7 @@ export default function HostWithUsSection() {
               <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
                 Sustainable Revenue
               </h4>
-              <p className="text-xs text-gray-600 leading-relaxed flex-1 break-words">
+              <p className="text-xs text-secondary-600 leading-relaxed flex-1 break-words">
                 Monetize expertise with payment processing.
               </p>
             </div>
@@ -216,7 +217,7 @@ export default function HostWithUsSection() {
               <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
                 Build Network
               </h4>
-              <p className="text-xs text-gray-600 leading-relaxed flex-1 break-words">
+              <p className="text-xs text-secondary-600 leading-relaxed flex-1 break-words">
                 Connect with Portuguese professionals.
               </p>
             </div>
@@ -228,7 +229,7 @@ export default function HostWithUsSection() {
               <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
                 Preserve Heritage
               </h4>
-              <p className="text-xs text-gray-600 leading-relaxed flex-1 break-words">
+              <p className="text-xs text-secondary-600 leading-relaxed flex-1 break-words">
                 Share Portuguese culture while building business.
               </p>
             </div>
@@ -240,7 +241,7 @@ export default function HostWithUsSection() {
               <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
                 {t('host-with-us.cta.title')}
               </h3>
-              <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-secondary-700 mb-8 max-w-3xl mx-auto leading-relaxed">
                 {t('host-with-us.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -256,7 +257,7 @@ export default function HostWithUsSection() {
                 </a>
                 <a
                   href="/host/learn-more"
-                  className="text-sm sm:text-base font-bold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-premium-300 hover:-translate-y-1 hover:bg-white/90"
+                  className="text-sm sm:text-base font-bold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-gray-200/60 rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-premium-300 hover:-translate-y-1 hover:bg-white/90"
                 >
                   Learn More
                 </a>

@@ -738,7 +738,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
             : 'Portuguese University Network'
           }
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
           {language === 'pt'
             ? 'Descubra oportunidades de educação superior, investigação e intercâmbio nas principais universidades portuguesas, conectando-se com excelência académica e inovação.'
             : 'Discover higher education, research, and exchange opportunities at leading Portuguese universities, connecting with academic excellence and innovation.'
@@ -756,7 +756,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
               className={`px-6 py-3 rounded-lg font-medium transition-colors ${
                 selectedUniversity === university.id
                   ? 'bg-primary-500 text-white'
-                  : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'
+                  : 'bg-white border border-secondary-300 text-secondary-700 hover:bg-gray-50'
               }`}
             >
               {language === 'pt' ? university.namePortuguese : university.name}
@@ -821,7 +821,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
                     className={`py-4 px-1 border-b-2 font-medium text-sm ${
                       selectedTab === tab
                         ? 'border-primary-500 text-primary-600'
-                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                        : 'border-transparent text-gray-500 hover:text-secondary-700 hover:border-secondary-300'
                     }`}
                   >
                     {tab === 'overview' && (language === 'pt' ? 'Visão Geral' : 'Overview')}
@@ -841,22 +841,22 @@ const PortugueseUniversityNetwork: React.FC = () => {
                     <div className="text-center">
                       <UserGroupIcon className="w-8 h-8 text-primary-500 mx-auto mb-2" />
                       <p className="text-2xl font-bold text-gray-900">{selectedUniversityData.studentsTotal.toLocaleString()}</p>
-                      <p className="text-sm text-gray-600">{language === 'pt' ? 'Estudantes Totais' : 'Total Students'}</p>
+                      <p className="text-sm text-secondary-600">{language === 'pt' ? 'Estudantes Totais' : 'Total Students'}</p>
                     </div>
                     <div className="text-center">
                       <GlobeAltIcon className="w-8 h-8 text-secondary-500 mx-auto mb-2" />
                       <p className="text-2xl font-bold text-gray-900">{selectedUniversityData.internationalStudents.toLocaleString()}</p>
-                      <p className="text-sm text-gray-600">{language === 'pt' ? 'Estudantes Internacionais' : 'International Students'}</p>
+                      <p className="text-sm text-secondary-600">{language === 'pt' ? 'Estudantes Internacionais' : 'International Students'}</p>
                     </div>
                     <div className="text-center">
                       <BuildingLibraryIcon className="w-8 h-8 text-accent-500 mx-auto mb-2" />
                       <p className="text-2xl font-bold text-gray-900">{selectedUniversityData.facultiesCount}</p>
-                      <p className="text-sm text-gray-600">{language === 'pt' ? 'Faculdades' : 'Faculties'}</p>
+                      <p className="text-sm text-secondary-600">{language === 'pt' ? 'Faculdades' : 'Faculties'}</p>
                     </div>
                     <div className="text-center">
                       <ChartBarIcon className="w-8 h-8 text-premium-500 mx-auto mb-2" />
                       <p className="text-2xl font-bold text-gray-900">{selectedUniversityData.researchCenters}</p>
-                      <p className="text-sm text-gray-600">{language === 'pt' ? 'Centros de Investigação' : 'Research Centers'}</p>
+                      <p className="text-sm text-secondary-600">{language === 'pt' ? 'Centros de Investigação' : 'Research Centers'}</p>
                     </div>
                   </div>
 
@@ -865,7 +865,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">
                       {language === 'pt' ? 'Sobre a Universidade' : 'About the University'}
                     </h3>
-                    <p className="text-gray-700">
+                    <p className="text-secondary-700">
                       {language === 'pt' ? selectedUniversityData.descriptionPortuguese : selectedUniversityData.description}
                     </p>
                   </div>
@@ -878,8 +878,8 @@ const PortugueseUniversityNetwork: React.FC = () => {
                       </h3>
                       <ul className="space-y-2">
                         {(language === 'pt' ? selectedUniversityData.specializationsPortuguese : selectedUniversityData.specializations).map((spec, index) => (
-                          <li key={index} className="flex items-center text-sm text-gray-700">
-                            <CheckBadgeIcon className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                          <li key={index} className="flex items-center text-sm text-secondary-700">
+                            <CheckBadgeIcon className="w-4 h-4 text-action-500 mr-2 flex-shrink-0" />
                             {spec}
                           </li>
                         ))}
@@ -891,8 +891,8 @@ const PortugueseUniversityNetwork: React.FC = () => {
                       </h3>
                       <ul className="space-y-2">
                         {(language === 'pt' ? selectedUniversityData.partnershipsPortuguese : selectedUniversityData.partnerships).map((partnership, index) => (
-                          <li key={index} className="flex items-center text-sm text-gray-700">
-                            <HandRaisedIcon className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" />
+                          <li key={index} className="flex items-center text-sm text-secondary-700">
+                            <HandRaisedIcon className="w-4 h-4 text-primary-500 mr-2 flex-shrink-0" />
                             {partnership}
                           </li>
                         ))}
@@ -908,15 +908,15 @@ const PortugueseUniversityNetwork: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                       <div>
                         <p className="font-medium text-gray-900">{selectedUniversityData.internationalOffice.director}</p>
-                        <p className="text-gray-600">{language === 'pt' ? 'Diretor' : 'Director'}</p>
+                        <p className="text-secondary-600">{language === 'pt' ? 'Diretor' : 'Director'}</p>
                       </div>
-                      <div className="flex items-center text-gray-600">
+                      <div className="flex items-center text-secondary-600">
                         <EnvelopeIcon className="w-4 h-4 mr-2" />
                         <a href={`mailto:${selectedUniversityData.internationalOffice.email}`} className="hover:text-primary-600">
                           {selectedUniversityData.internationalOffice.email}
                         </a>
                       </div>
-                      <div className="flex items-center text-gray-600">
+                      <div className="flex items-center text-secondary-600">
                         <PhoneIcon className="w-4 h-4 mr-2" />
                         <a href={`tel:${selectedUniversityData.internationalOffice.phone}`} className="hover:text-primary-600">
                           {selectedUniversityData.internationalOffice.phone}
@@ -1005,7 +1005,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
                         <h4 className="font-medium text-gray-900 mb-2">
                           {language === 'pt' ? 'Prazos de Candidatura:' : 'Application Deadlines:'}
                         </h4>
-                        <ul className="space-y-1 text-gray-700">
+                        <ul className="space-y-1 text-secondary-700">
                           <li>• {language === 'pt' ? '1ª Fase:' : '1st Phase:'} {language === 'pt' ? '15 de maio' : 'May 15th'}</li>
                           <li>• {language === 'pt' ? '2ª Fase:' : '2nd Phase:'} {language === 'pt' ? '15 de julho' : 'July 15th'}</li>
                           <li>• {language === 'pt' ? '3ª Fase:' : '3rd Phase:'} {language === 'pt' ? '15 de setembro' : 'September 15th'}</li>
@@ -1015,7 +1015,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
                         <h4 className="font-medium text-gray-900 mb-2">
                           {language === 'pt' ? 'Documentos Necessários:' : 'Required Documents:'}
                         </h4>
-                        <ul className="space-y-1 text-gray-700">
+                        <ul className="space-y-1 text-secondary-700">
                           <li>• {language === 'pt' ? 'Diploma de ensino secundário' : 'High school diploma'}</li>
                           <li>• {language === 'pt' ? 'Certificado de proficiência linguística' : 'Language proficiency certificate'}</li>
                           <li>• {language === 'pt' ? 'Carta de motivação' : 'Motivation letter'}</li>
@@ -1046,12 +1046,12 @@ const PortugueseUniversityNetwork: React.FC = () => {
                   scholarship.type === 'need_based' ? 'bg-green-100 text-green-800' :
                   scholarship.type === 'research' ? 'bg-purple-100 text-purple-800' :
                   scholarship.type === 'mobility' ? 'bg-yellow-100 text-yellow-800' :
-                  'bg-gray-100 text-gray-800'
+                  'bg-secondary-100 text-secondary-800'
                 }`}>
                   {scholarship.type.replace('_', ' ')}
                 </span>
                 <div className="text-right">
-                  <p className="text-lg font-bold text-green-600">
+                  <p className="text-lg font-bold text-action-600">
                     {formatCurrency(scholarship.amount, scholarship.currency)}
                   </p>
                   <p className="text-xs text-gray-500">
@@ -1064,11 +1064,11 @@ const PortugueseUniversityNetwork: React.FC = () => {
                 {language === 'pt' ? scholarship.namePortuguese : scholarship.name}
               </h3>
               
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-secondary-600 mb-4">
                 {language === 'pt' ? 'Fornecido por:' : 'Provided by:'} <span className="font-medium">{scholarship.provider}</span>
               </p>
 
-              <p className="text-sm text-gray-700 mb-4">
+              <p className="text-sm text-secondary-700 mb-4">
                 {language === 'pt' ? scholarship.descriptionPortuguese : scholarship.description}
               </p>
 
@@ -1078,8 +1078,8 @@ const PortugueseUniversityNetwork: React.FC = () => {
                 </h4>
                 <ul className="space-y-1">
                   {(language === 'pt' ? scholarship.eligibilityPortuguese : scholarship.eligibility).slice(0, 3).map((criterion, index) => (
-                    <li key={index} className="flex items-start text-xs text-gray-600">
-                      <CheckBadgeIcon className="w-3 h-3 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <li key={index} className="flex items-start text-xs text-secondary-600">
+                      <CheckBadgeIcon className="w-3 h-3 text-action-500 mr-2 mt-0.5 flex-shrink-0" />
                       {criterion}
                     </li>
                   ))}
@@ -1088,21 +1088,21 @@ const PortugueseUniversityNetwork: React.FC = () => {
 
               <div className="flex items-center justify-between mb-4 text-sm">
                 <div>
-                  <span className="text-gray-600">{language === 'pt' ? 'Duração:' : 'Duration:'}</span>
+                  <span className="text-secondary-600">{language === 'pt' ? 'Duração:' : 'Duration:'}</span>
                   <span className="font-medium ml-1">
                     {language === 'pt' ? scholarship.durationPortuguese : scholarship.duration}
                   </span>
                 </div>
                 <div>
-                  <span className="text-gray-600">{language === 'pt' ? 'Renovável:' : 'Renewable:'}</span>
-                  <span className={`font-medium ml-1 ${scholarship.renewable ? 'text-green-600' : 'text-red-600'}`}>
+                  <span className="text-secondary-600">{language === 'pt' ? 'Renovável:' : 'Renewable:'}</span>
+                  <span className={`font-medium ml-1 ${scholarship.renewable ? 'text-action-600' : 'text-coral-600'}`}>
                     {scholarship.renewable ? (language === 'pt' ? 'Sim' : 'Yes') : (language === 'pt' ? 'Não' : 'No')}
                   </span>
                 </div>
               </div>
 
               <div className="flex items-center justify-between mb-4 text-sm">
-                <span className="text-gray-600">{language === 'pt' ? 'Prazo:' : 'Deadline:'}</span>
+                <span className="text-secondary-600">{language === 'pt' ? 'Prazo:' : 'Deadline:'}</span>
                 <span className="font-medium">
                   {new Date(scholarship.applicationDeadline).toLocaleDateString(language === 'pt' ? 'pt-PT' : 'en-GB')}
                 </span>
@@ -1142,22 +1142,22 @@ const PortugueseUniversityNetwork: React.FC = () => {
                       {opportunity.level.toUpperCase()}
                     </span>
                   </div>
-                  <div className="flex items-center space-x-4 text-sm text-gray-600 mb-3">
+                  <div className="flex items-center space-x-4 text-sm text-secondary-600 mb-3">
                     <span>{opportunity.university}</span>
                     <span>•</span>
                     <span>{language === 'pt' ? opportunity.departmentPortuguese : opportunity.department}</span>
                     <span>•</span>
                     <span>{opportunity.supervisor}</span>
                   </div>
-                  <p className="text-gray-700 mb-4">
+                  <p className="text-secondary-700 mb-4">
                     {language === 'pt' ? opportunity.descriptionPortuguese : opportunity.description}
                   </p>
                 </div>
                 {opportunity.funding.available && (
                   <div className="text-right ml-6">
-                    <p className="text-lg font-bold text-green-600">
+                    <p className="text-lg font-bold text-action-600">
                       {formatCurrency(opportunity.funding.amount, opportunity.funding.currency)}
-                      <span className="text-sm text-gray-600">/mês</span>
+                      <span className="text-sm text-secondary-600">/mês</span>
                     </p>
                     <p className="text-xs text-gray-500">
                       {language === 'pt' ? opportunity.funding.durationPortuguese : opportunity.funding.duration}
@@ -1173,8 +1173,8 @@ const PortugueseUniversityNetwork: React.FC = () => {
                   </h4>
                   <ul className="space-y-2">
                     {(language === 'pt' ? opportunity.requirementsPortuguese : opportunity.requirements).map((req, index) => (
-                      <li key={index} className="flex items-start text-sm text-gray-700">
-                        <CheckBadgeIcon className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <li key={index} className="flex items-start text-sm text-secondary-700">
+                        <CheckBadgeIcon className="w-4 h-4 text-action-500 mr-2 mt-0.5 flex-shrink-0" />
                         {req}
                       </li>
                     ))}
@@ -1186,17 +1186,17 @@ const PortugueseUniversityNetwork: React.FC = () => {
                   </h4>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">{language === 'pt' ? 'Área:' : 'Field:'}</span>
+                      <span className="text-secondary-600">{language === 'pt' ? 'Área:' : 'Field:'}</span>
                       <span className="font-medium">{language === 'pt' ? opportunity.fieldPortuguese : opportunity.field}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">{language === 'pt' ? 'Prazo:' : 'Deadline:'}</span>
+                      <span className="text-secondary-600">{language === 'pt' ? 'Prazo:' : 'Deadline:'}</span>
                       <span className="font-medium">
                         {new Date(opportunity.applicationDeadline).toLocaleDateString(language === 'pt' ? 'pt-PT' : 'en-GB')}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">{language === 'pt' ? 'Início:' : 'Start Date:'}</span>
+                      <span className="text-secondary-600">{language === 'pt' ? 'Início:' : 'Start Date:'}</span>
                       <span className="font-medium">
                         {new Date(opportunity.startDate).toLocaleDateString(language === 'pt' ? 'pt-PT' : 'en-GB')}
                       </span>
@@ -1227,7 +1227,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           {language === 'pt' ? 'Conecte-se com a Excelência Académica Portuguesa' : 'Connect with Portuguese Academic Excellence'}
         </h2>
-        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+        <p className="text-secondary-600 mb-6 max-w-2xl mx-auto">
           {language === 'pt'
             ? 'Descubra oportunidades únicas de educação superior, investigação e intercâmbio nas universidades portuguesas de maior prestígio internacional.'
             : 'Discover unique opportunities for higher education, research, and exchange at Portugal\'s most internationally prestigious universities.'

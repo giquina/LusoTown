@@ -44,7 +44,7 @@ const creatorTiers = [
     namePortuguese: "Criador Iniciante", 
     price: 19,
     originalPrice: 29,
-    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/creator-starter-setup_dlqxkx.jpg",
+    image: buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535200/creator-starter-setup_dlqxkx.jpg"),
     imageAlt: "Portuguese content creator setup with professional streaming equipment",
     imageAltPortuguese: "Configuração de criador de conteúdo português com equipamento de streaming profissional",
     membershipDiscounts: {
@@ -84,7 +84,7 @@ const creatorTiers = [
     namePortuguese: "Criador Profissional",
     price: 49,
     originalPrice: 69,
-    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/professional-creator-studio_hml2nr.jpg",
+    image: buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535201/professional-creator-studio_hml2nr.jpg"),
     imageAlt: "Professional Portuguese streaming studio with advanced equipment and London backdrop",
     imageAltPortuguese: "Estúdio de streaming português profissional com equipamento avançado e cenário de Londres",
     membershipDiscounts: {
@@ -127,7 +127,7 @@ const creatorTiers = [
     namePortuguese: "Criador Empresarial",
     price: 199,
     originalPrice: 299,
-    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535202/enterprise-streaming-setup_abc123.jpg",
+    image: buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535202/enterprise-streaming-setup_abc123.jpg"),
     imageAlt: "Enterprise Portuguese streaming setup for business events and community broadcasts",
     imageAltPortuguese: "Configuração de streaming empresarial português para eventos de negócios e transmissões comunitárias",
     membershipDiscounts: {
@@ -243,7 +243,7 @@ export default function StreamingPage() {
     <div className="min-h-screen">
       {/* Hero Section - Similar to London Transport style */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-streaming-london_dlqxkx.jpg')] bg-cover bg-center opacity-5"></div>
+        <div className="absolute inset-0 bg-[url(buildCloudinaryUrl('dqhbeqttp/image/upload/v1734535200/portuguese-streaming-london_dlqxkx.jpg'))] bg-cover bg-center opacity-5"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/5 via-transparent to-secondary-900/5"></div>
         
         <div className="relative container-width py-16 lg:py-24">
@@ -286,7 +286,7 @@ export default function StreamingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+              className="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto"
             >
               <span className="hidden sm:block">
                 {isPortuguese 
@@ -309,15 +309,15 @@ export default function StreamingPage() {
               transition={{ delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
             >
-              <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2 text-sm text-secondary-600">
                 <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
                 <span>{isPortuguese ? "RTMP Professional" : "Professional RTMP"}</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2 text-sm text-secondary-600">
                 <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                 <span>{isPortuguese ? "Emotes Culturais" : "Cultural Emotes"}</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2 text-sm text-secondary-600">
                 <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
                 <span>{isPortuguese ? "85/15 Revenue Split" : "85/15 Revenue Split"}</span>
               </div>
@@ -338,7 +338,7 @@ export default function StreamingPage() {
               </button>
               <a 
                 href="#packages" 
-                className="border border-gray-300 text-gray-700 px-6 sm:px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl flex-1 max-w-[180px] sm:max-w-none text-center whitespace-nowrap"
+                className="border border-secondary-300 text-secondary-700 px-6 sm:px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl flex-1 max-w-[180px] sm:max-w-none text-center whitespace-nowrap"
               >
                 {isPortuguese ? "Ver Pacotes" : "View Packages"}
               </a>
@@ -357,7 +357,7 @@ export default function StreamingPage() {
                   <div className="text-2xl font-bold text-gray-900 mb-1">
                     {stat.label === "Active Streamers" ? visibleStreamers + "+" : stat.value}
                   </div>
-                  <div className="text-xs text-gray-600">
+                  <div className="text-xs text-secondary-600">
                     {isPortuguese ? stat.labelPt : stat.label}
                   </div>
                 </div>
@@ -374,7 +374,7 @@ export default function StreamingPage() {
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
               {isPortuguese ? "Categorias de Conteúdo" : "Content Categories"}
             </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+            <p className="text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese 
                 ? "Escolha a sua categoria e conecte-se com audiências que partilham os seus interesses"
                 : "Choose your category and connect with audiences who share your interests"
@@ -394,12 +394,12 @@ export default function StreamingPage() {
                 <div className={`h-2 bg-gradient-to-r ${category.color}`}></div>
                 <div className="p-6">
                   <div className="w-14 h-14 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <category.icon className="w-8 h-8 text-gray-600" />
+                    <category.icon className="w-8 h-8 text-secondary-600" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
                     {isPortuguese ? category.namePortuguese : category.name}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-secondary-600 text-sm mb-4 leading-relaxed">
                     {isPortuguese ? category.descriptionPortuguese : category.description}
                   </p>
                   <div className="flex items-center gap-2 text-primary-600">
@@ -420,7 +420,7 @@ export default function StreamingPage() {
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
               {isPortuguese ? "Pacotes para Criadores" : "Creator Packages"}
             </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+            <p className="text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese 
                 ? "Escolha o pacote perfeito para a sua jornada de criação de conteúdo português"
                 : "Choose the perfect package for your Portuguese content creation journey"
@@ -462,7 +462,7 @@ export default function StreamingPage() {
                         <span className="text-sm text-gray-500 line-through">£{tier.originalPrice}</span>
                       )}
                       <span className="text-2xl font-bold text-gray-900">£{tier.price}</span>
-                      <span className="text-sm text-gray-600">/month</span>
+                      <span className="text-sm text-secondary-600">/month</span>
                     </div>
                   </div>
                 </div>
@@ -472,7 +472,7 @@ export default function StreamingPage() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {isPortuguese ? tier.namePortuguese : tier.name}
                   </h3>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-secondary-600 mb-6">
                     {isPortuguese ? tier.descriptionPortuguese : tier.description}
                   </p>
                   
@@ -480,8 +480,8 @@ export default function StreamingPage() {
                   <div className="space-y-3 mb-8">
                     {(isPortuguese ? tier.featuresPortuguese : tier.features).slice(0, 6).map((feature, idx) => (
                       <div key={idx} className="flex items-start gap-3">
-                        <CheckCircleIcon className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{feature}</span>
+                        <CheckCircleIcon className="w-5 h-5 text-action-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-secondary-700">{feature}</span>
                       </div>
                     ))}
                     {(isPortuguese ? tier.featuresPortuguese : tier.features).length > 6 && (
@@ -497,7 +497,7 @@ export default function StreamingPage() {
                     className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 ${
                       tier.popular
                         ? 'bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                     }`}
                   >
                     {isPortuguese ? "Começar Agora" : "Start Now"}
@@ -516,7 +516,7 @@ export default function StreamingPage() {
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
               {isPortuguese ? "Como Funciona" : "How It Works"}
             </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+            <p className="text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese 
                 ? "Comece a fazer streaming para a comunidade portuguesa em apenas 3 passos simples"
                 : "Start streaming to the Portuguese community in just 3 simple steps"
@@ -562,7 +562,7 @@ export default function StreamingPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-secondary-600 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -579,7 +579,7 @@ export default function StreamingPage() {
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
               {isPortuguese ? "Histórias de Sucesso" : "Success Stories"}
             </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+            <p className="text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese 
                 ? "Criadores portugueses estão a prosperar na nossa plataforma"
                 : "Portuguese creators are thriving on our platform"
@@ -625,7 +625,7 @@ export default function StreamingPage() {
                 <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-3 mb-4 text-center">
                   <p className="text-green-800 font-semibold text-sm">{story.achievement}</p>
                 </div>
-                <blockquote className="text-gray-600 italic text-sm leading-relaxed">
+                <blockquote className="text-secondary-600 italic text-sm leading-relaxed">
                   "{story.quote}"
                 </blockquote>
               </motion.div>
@@ -670,7 +670,7 @@ export default function StreamingPage() {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               {isPortuguese ? "Começar Streaming" : "Start Streaming"}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary-600 mb-6">
               {isPortuguese 
                 ? "Entre em contato connosco para configurar sua conta de streaming"
                 : "Get in touch with us to set up your streaming account"
@@ -680,7 +680,7 @@ export default function StreamingPage() {
               <button className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3 rounded-xl font-semibold">
                 {isPortuguese ? "Contactar Equipa" : "Contact Team"}
               </button>
-              <button className="w-full bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold">
+              <button className="w-full bg-secondary-100 text-secondary-700 py-3 rounded-xl font-semibold">
                 {isPortuguese ? "Agendar Demonstração" : "Schedule Demo"}
               </button>
               <button 

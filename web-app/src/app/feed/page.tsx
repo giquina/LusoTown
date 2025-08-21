@@ -1,8 +1,11 @@
 'use client'
 import Image from 'next/image'
+import { buildUnsplashUrl } from '@/config'
 
 import { useState, useEffect } from 'react'
+import { buildUnsplashUrl } from '@/config'
 import { motion, AnimatePresence } from 'framer-motion'
+import { buildUnsplashUrl } from '@/config'
 import { 
   HeartIcon, 
   ChatBubbleLeftRightIcon, 
@@ -19,15 +22,25 @@ import {
   SparklesIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
+import { buildUnsplashUrl } from '@/config'
 import Footer from '@/components/Footer'
+import { buildUnsplashUrl } from '@/config'
 import PersonalizedFeed from '@/components/PersonalizedFeed'
+import { buildUnsplashUrl } from '@/config'
 import EventFeed from '@/components/EventFeed'
+import { buildUnsplashUrl } from '@/config'
 import LiveUpdateIndicator from '@/components/LiveUpdateIndicator'
+import { buildUnsplashUrl } from '@/config'
 import FeedFilters, { FeedFilters as FeedFiltersType } from '@/components/FeedFilters'
+import { buildUnsplashUrl } from '@/config'
 import PhotoUpload, { UploadedPhoto } from '@/components/PhotoUpload'
+import { buildUnsplashUrl } from '@/config'
 import EventFeedCard, { EventFeedCardData } from '@/components/EventFeedCard'
+import { buildUnsplashUrl } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { buildUnsplashUrl } from '@/config'
 import { Language } from '@/i18n'
+import { buildUnsplashUrl } from '@/config'
 
 interface FeedPost {
   id: string
@@ -68,7 +81,7 @@ const mockPosts: FeedPost[] = [
     id: '1',
     userId: 'user1',
     userName: 'Maria Santos',
-    userAvatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b1ac?w=100&h=100&fit=crop&crop=face&auto=format',
+    userAvatar: buildUnsplashUrl('photo-1494790108755-2616b612b1ac?w=100&h=100&fit=crop&crop=face&auto=format'),
     content: 'Just attended the most amazing Fado night at A Toca! The music was incredible and I met so many wonderful people. #FadoNight #PortugueseCulture',
     createdAt: '2 hours ago',
     likes: 24,
@@ -94,9 +107,9 @@ const mockPosts: FeedPost[] = [
     id: '2',
     userId: 'user2',
     userName: 'Carlos Oliveira',
-    userAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&auto=format',
+    userAvatar: buildUnsplashUrl('photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&auto=format'),
     content: 'Found this amazing pastelaria in Shoreditch that reminds me of home! Their pastéis de nata are authentic and delicious. Check it out!',
-    imageUrl: 'https://images.unsplash.com/photo-1574329818413-10376febd3f0?w=600&h=400&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('photo-1574329818413-10376febd3f0?w=600&h=400&fit=crop&auto=format'),
     createdAt: '5 hours ago',
     likes: 18,
     comments: 3,
@@ -120,7 +133,7 @@ const mockPosts: FeedPost[] = [
     id: '3',
     userId: 'user3',
     userName: 'Ana Pereira',
-    userAvatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face&auto=format',
+    userAvatar: buildUnsplashUrl('photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face&auto=format'),
     content: 'Looking forward to the weekend Portuguese Book Club meeting! We\'re discussing "O Guarani" by José de Alencar. Anyone interested in joining? 📚',
     linkUrl: 'https://lusotown-london.vercel.app/events/book-club',
     createdAt: '1 day ago',
@@ -182,7 +195,7 @@ export default function CommunityFeed() {
         id: `post-${Date.now()}`,
         userId: 'currentUser',
         userName: isPortuguese ? 'Tu' : 'You',
-        userAvatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face&auto=format',
+        userAvatar: buildUnsplashUrl('photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face&auto=format'),
         content: newPost,
         createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
         likes: 0,
@@ -217,12 +230,10 @@ export default function CommunityFeed() {
   const handleFiltersChange = (newFilters: FeedFiltersType) => {
     setFilters(newFilters)
     // Apply filters to posts here - for now just update state
-    console.log('Filters updated:', newFilters)
   }
 
   const handleLiveUpdate = (update: any) => {
     // Handle live update clicks - could navigate to specific events/posts
-    console.log('Live update clicked:', update)
   }
 
   return (
@@ -242,7 +253,7 @@ export default function CommunityFeed() {
                   {isPortuguese ? 'Feed da Comunidade LusoTown' : 'LusoTown Community Feed'}
                 </h1>
               </div>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-secondary-600 mb-8">
                 {isPortuguese 
                   ? 'Partilha atualizações, conecta-te com outros e mantém-te a par das últimas novidades da nossa comunidade portuguesa em Londres'
                   : 'Share updates, connect with others, and stay in the loop with the latest from our Portuguese community in London'
@@ -256,7 +267,7 @@ export default function CommunityFeed() {
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                       feedType === 'personalized'
                         ? 'bg-primary-500 text-white shadow-lg'
-                        : 'bg-white text-gray-700 hover:bg-gray-50'
+                        : 'bg-white text-secondary-700 hover:bg-gray-50'
                     }`}
                   >
                     {isPortuguese ? 'Minha Rede' : 'My Network'}
@@ -266,7 +277,7 @@ export default function CommunityFeed() {
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                       feedType === 'events'
                         ? 'bg-primary-500 text-white shadow-lg'
-                        : 'bg-white text-gray-700 hover:bg-gray-50'
+                        : 'bg-white text-secondary-700 hover:bg-gray-50'
                     }`}
                   >
                     {isPortuguese ? 'Eventos' : 'Events'}
@@ -276,7 +287,7 @@ export default function CommunityFeed() {
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                       feedType === 'community'
                         ? 'bg-primary-500 text-white shadow-lg'
-                        : 'bg-white text-gray-700 hover:bg-gray-50'
+                        : 'bg-white text-secondary-700 hover:bg-gray-50'
                     }`}
                   >
                     {isPortuguese ? 'Comunidade' : 'Community'}
@@ -290,7 +301,7 @@ export default function CommunityFeed() {
                     className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
                       showFilters
                         ? 'bg-secondary-500 text-white shadow-lg'
-                        : 'bg-white text-gray-700 hover:bg-gray-50'
+                        : 'bg-white text-secondary-700 hover:bg-gray-50'
                     }`}
                   >
                     <AdjustmentsHorizontalIcon className="w-4 h-4" />
@@ -298,11 +309,11 @@ export default function CommunityFeed() {
                   </button>
                   
                   <div className="flex items-center gap-2 bg-white rounded-lg px-4 py-2 shadow-sm">
-                    <LanguageIcon className="w-5 h-5 text-gray-600" />
+                    <LanguageIcon className="w-5 h-5 text-secondary-600" />
                     <select
                       value={language}
                       onChange={(e) => setLanguage(e.target.value as Language)}
-                      className="bg-transparent text-gray-700 font-medium focus:outline-none"
+                      className="bg-transparent text-secondary-700 font-medium focus:outline-none"
                     >
                       <option value="en">English</option>
                       <option value="pt-pt">Português (Portugal)</option>
@@ -346,7 +357,7 @@ export default function CommunityFeed() {
                       setShowPhotoUpload(false)
                       setUploadedPhotos([])
                     }}
-                    className="text-gray-500 hover:text-gray-700"
+                    className="text-gray-500 hover:text-secondary-700"
                   >
                     ✕
                   </button>
@@ -363,7 +374,7 @@ export default function CommunityFeed() {
                       ? 'O que está a acontecer na tua comunidade portuguesa?'
                       : "What's happening in your Portuguese community?"
                     }
-                    className="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent resize-none"
+                    className="flex-1 border border-secondary-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent resize-none"
                     rows={4}
                   />
                 </div>
@@ -442,7 +453,7 @@ export default function CommunityFeed() {
                         : (isPortuguese ? 'Comunidade' : 'Community Feed')
                       }
                     </h2>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-secondary-600">
                       {feedType === 'events' && (
                         isPortuguese 
                           ? 'Atualizações em tempo real de eventos portugueses em Londres'
@@ -519,7 +530,7 @@ export default function CommunityFeed() {
                       </div>
                       
                       {/* Post Content */}
-                      <p className="text-gray-700 mb-4 whitespace-pre-line">{post.content}</p>
+                      <p className="text-secondary-700 mb-4 whitespace-pre-line">{post.content}</p>
                       
                       {/* Post Image */}
                       {post.imageUrl && (
@@ -541,7 +552,7 @@ export default function CommunityFeed() {
                             <CalendarDaysIcon className="w-4 h-4 text-primary-600" />
                             <h5 className="font-semibold text-gray-900">{post.linkedEvent.title}</h5>
                           </div>
-                          <div className="text-sm text-gray-600">
+                          <div className="text-sm text-secondary-600">
                             <p>{post.linkedEvent.date}</p>
                             <p>{post.linkedEvent.location}</p>
                           </div>
@@ -558,7 +569,7 @@ export default function CommunityFeed() {
                             <MapPinIcon className="w-4 h-4 text-secondary-600" />
                             <h5 className="font-semibold text-gray-900">{post.linkedBusiness.name}</h5>
                           </div>
-                          <p className="text-sm text-gray-600">{post.linkedBusiness.category}</p>
+                          <p className="text-sm text-secondary-600">{post.linkedBusiness.category}</p>
                           <button className="mt-2 text-secondary-600 text-sm font-medium hover:underline">
                             View Business Details
                           </button>
@@ -586,35 +597,35 @@ export default function CommunityFeed() {
                         <div className="flex items-center gap-6">
                           <button 
                             onClick={() => handleLike(post.id)}
-                            className="flex items-center gap-2 text-gray-600 hover:text-red-500 transition-colors"
+                            className="flex items-center gap-2 text-secondary-600 hover:text-coral-500 transition-colors"
                           >
                             {post.liked ? (
-                              <HeartSolidIcon className="w-5 h-5 text-red-500" />
+                              <HeartSolidIcon className="w-5 h-5 text-coral-500" />
                             ) : (
                               <HeartIcon className="w-5 h-5" />
                             )}
                             <span className="text-sm font-medium">{post.likes}</span>
                           </button>
                           
-                          <button className="flex items-center gap-2 text-gray-600 hover:text-primary-500 transition-colors">
+                          <button className="flex items-center gap-2 text-secondary-600 hover:text-primary-500 transition-colors">
                             <ChatBubbleLeftRightIcon className="w-5 h-5" />
                             <span className="text-sm font-medium">{post.comments}</span>
                           </button>
                           
-                          <button className="flex items-center gap-2 text-gray-600 hover:text-primary-500 transition-colors">
+                          <button className="flex items-center gap-2 text-secondary-600 hover:text-primary-500 transition-colors">
                             <ArrowPathIcon className="w-5 h-5" />
                             <span className="text-sm font-medium">Share</span>
                           </button>
                         </div>
                         
                         <div className="flex gap-1">
-                          <button className="p-1 text-gray-400 hover:text-red-500">
+                          <button className="p-1 text-gray-400 hover:text-coral-500">
                             ❤️
                           </button>
                           <button className="p-1 text-gray-400 hover:text-primary-500">
                             👍
                           </button>
-                          <button className="p-1 text-gray-400 hover:text-yellow-500">
+                          <button className="p-1 text-gray-400 hover:text-accent-500">
                             😂
                           </button>
                           <button className="p-1 text-gray-400 hover:text-purple-500">

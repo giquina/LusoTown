@@ -1,0 +1,179 @@
+# LusoTown Hardcoded Strings Analysis
+Generated: Thu Aug 21 05:33:02 UTC 2025
+========================================
+
+## HIGH PRIORITY - Page Content Strings
+These are user-visible content that should use t() function:
+
+src/app/students/page.tsx:1482:                          <option value="masters">Masters</option>
+src/app/students/page.tsx:1483:                          <option value="phd">PhD</option>
+src/app/housing/page.tsx:488:                    <div>Deposit: {listing.deposit}</div>
+src/app/housing/page.tsx:489:                    <div>Min stay: {listing.minStay}</div>
+src/app/messages/page.tsx:194:    <Suspense fallback={<div>Loading...</div>}>
+src/app/profiles/page.tsx:208:              <span>Recommended</span>
+src/app/profiles/page.tsx:221:              <span>Browse All</span>
+src/app/profiles/page.tsx:251:              <span>Filters</span>
+src/app/profiles/page.tsx:367:                    <option value="">All Members</option>
+src/app/profiles/page.tsx:368:                    <option value="free">Free & Above</option>
+src/app/profiles/page.tsx:369:                    <option value="core">Core & Above</option>
+src/app/profiles/page.tsx:370:                    <option value="premium">Premium Only</option>
+src/app/contact/page.tsx:206:                            <option value="en">English</option>
+src/app/contact/page.tsx:207:                            <option value="pt">Português</option>
+src/app/groups/page.tsx:362:              <option value="">All Categories</option>
+src/app/groups/page.tsx:376:              <option value="">All Origins</option>
+src/app/groups/page.tsx:391:              <option value="">All London</option>
+src/app/groups/create/page.tsx:298:                <option value="">Select a category</option>
+src/app/groups/create/page.tsx:323:                <option value="">Select London borough</option>
+src/app/groups/create/page.tsx:371:                <option value="both">English & Portuguese</option>
+src/app/groups/create/page.tsx:372:                <option value="english">English primarily</option>
+src/app/groups/create/page.tsx:373:                <option value="portuguese">Portuguese primarily</option>
+src/app/groups/create/page.tsx:374:                <option value="pt-pt">Português (Portugal)</option>
+src/app/groups/create/page.tsx:375:                <option value="pt-br">Português (Brasil)</option>
+src/app/groups/create/page.tsx:693:              <span>Basic Info</span>
+src/app/groups/create/page.tsx:694:              <span>Location</span>
+src/app/groups/create/page.tsx:695:              <span>Settings</span>
+src/app/groups/create/page.tsx:696:              <span>Details</span>
+src/app/privacy/page.tsx:126:                    <p>LusoTown Ltd<br />
+src/app/privacy/page.tsx:389:                      <span><strong>Active accounts:</strong> Data retained while your account is active</span>
+src/app/privacy/page.tsx:393:                      <span><strong>Deleted accounts:</strong> Most data deleted within 30 days, some safety records retained for 12 months</span>
+src/app/privacy/page.tsx:397:                      <span><strong>Legal requirements:</strong> Some data may be retained longer to comply with legal obligations</span>
+src/app/privacy/page.tsx:462:                    <strong>Last Updated:</strong> January 2025 • <strong>Next Review:</strong> July 2025
+src/app/directory/page.tsx:234:          <span>Active {formatTimeAgo(member.lastActive)}</span>
+src/app/directory/page.tsx:244:            <span>View</span>
+src/app/directory/page.tsx:251:            <span>Connect</span>
+src/app/directory/page.tsx:491:                  <option value="newest">Newest Members</option>
+src/app/directory/page.tsx:492:                  <option value="active">Most Active</option>
+src/app/directory/page.tsx:493:                  <option value="connections">Most Connected</option>
+src/app/directory/page.tsx:495:                  <option value="age">By Age</option>
+src/app/directory/page.tsx:507:                  <span>Filters</span>
+src/app/directory/page.tsx:539:                      <option value="">Add location...</option>
+src/app/directory/page.tsx:569:                      <option value="">Add interest...</option>
+src/app/directory/page.tsx:590:                      <option value="all">All Members</option>
+src/app/directory/page.tsx:591:                      <option value="free">Free Members</option>
+src/app/directory/page.tsx:592:                      <option value="core">Core Members</option>
+src/app/directory/page.tsx:593:                      <option value="premium">Premium Members</option>
+src/app/directory/page.tsx:771:                      <span>Loading...</span>
+src/app/directory/member/[id]/page.tsx:179:            <span>Back to Directory</span>
+src/app/directory/member/[id]/page.tsx:232:                    <span>Connected</span>
+
+## MEDIUM PRIORITY - Button and Link Text
+
+
+## FILES WITH MOST VIOLATIONS
+
+697 violations in src/app/academy/housing-assistance/page.tsx
+572 violations in src/app/academy/live-streaming/page.tsx
+480 violations in src/app/academy/cultural-events/page.tsx
+455 violations in src/app/transport/page.tsx
+409 violations in src/app/academy/business-networking/page.tsx
+374 violations in src/app/academy/transport-chauffeur/page.tsx
+373 violations in src/components/LusophoneDiversityShowcase.tsx
+315 violations in src/app/academy/community-forums/page.tsx
+225 violations in src/app/academy/dating-matching/page.tsx
+222 violations in src/app/matches/page.tsx
+221 violations in src/components/students/AcademicNetworkingSection.tsx
+221 violations in src/app/academy/student-support/page.tsx
+160 violations in src/components/matches/EventBasedMatchingSystem.tsx
+151 violations in src/app/live/page.tsx
+134 violations in src/app/events/page.tsx
+124 violations in src/components/academy/UserPathwayAssessment.tsx
+124 violations in src/components/UnifiedPremiumExperience.tsx
+124 violations in src/app/host/page.tsx
+119 violations in src/app/tours/page.tsx
+115 violations in src/components/matches/BusinessNetworkingMatch.tsx
+
+## PAGES NEEDING IMMEDIATE ATTENTION
+
+=== page.tsx ===
+src/app/chauffeur/page.tsx
+src/app/students/page.tsx
+src/app/pricing/page.tsx
+src/app/chat/page.tsx
+src/app/chat/[id]/page.tsx
+src/app/safety/page.tsx
+src/app/demo-shared/page.tsx
+src/app/housing/page.tsx
+src/app/messages/page.tsx
+src/app/profiles/page.tsx
+src/app/contact/page.tsx
+src/app/profile/edit/page.tsx
+src/app/profile/[id]/page.tsx
+src/app/groups/page.tsx
+src/app/groups/[id]/page.tsx
+src/app/groups/create/page.tsx
+src/app/jobs/page.tsx
+src/app/privacy/page.tsx
+src/app/directory/page.tsx
+src/app/directory/member/[id]/page.tsx
+src/app/forums/create-topic/page.tsx
+src/app/forums/page.tsx
+src/app/forums/topic/[id]/page.tsx
+src/app/events/[id]/page.tsx
+src/app/events/[id]/confirmation/page.tsx
+src/app/events/[id]/book/page.tsx
+src/app/events/create/page.tsx
+src/app/instituto-camoes/page.tsx
+src/app/favorites/page.tsx
+src/app/admin/page.tsx
+src/app/neighborhood-groups/page.tsx
+src/app/creator-signup/page.tsx
+src/app/feed/page.tsx
+src/app/cultural-calendar/page.tsx
+src/app/forgot-password/page.tsx
+src/app/services/consultation/booking/page.tsx
+src/app/services/close-protection/page.tsx
+src/app/services/close-protection/booking/page.tsx
+src/app/corporate-partnerships/page.tsx
+src/app/subscription/success/page.tsx
+src/app/subscription/page.tsx
+src/app/how-it-works/page.tsx
+src/app/dashboard/page.tsx
+src/app/terms/page.tsx
+src/app/start-free/page.tsx
+src/app/community-guidelines/page.tsx
+src/app/premium-membership/page.tsx
+src/app/academy/dating-matching/page.tsx
+src/app/academy/student-support/page.tsx
+src/app/academy/business-networking/page.tsx
+src/app/academy/transport-chauffeur/page.tsx
+src/app/academy/housing-assistance/page.tsx
+src/app/academy/community-forums/page.tsx
+src/app/academy/cultural-events/page.tsx
+src/app/academy/live-streaming/page.tsx
+src/app/signup/success/page.tsx
+src/app/signup/page.tsx
+src/app/settings/page.tsx
+src/app/case-studies/page.tsx
+src/app/search/page.tsx
+src/app/tours/page.tsx
+src/app/help/page.tsx
+src/app/onboarding-demo/page.tsx
+src/app/community/page.tsx
+src/app/about/page.tsx
+src/app/language-exchange/page.tsx
+src/app/login/page.tsx
+
+=== about ===
+src/app/about/page.tsx
+
+=== events ===
+src/app/events/[id]/page.tsx
+src/app/events/[id]/confirmation/page.tsx
+src/app/events/[id]/book/page.tsx
+src/app/events/create/page.tsx
+src/app/academy/cultural-events/page.tsx
+
+=== transport ===
+src/app/academy/transport-chauffeur/page.tsx
+
+=== matches ===
+
+=== business ===
+src/app/academy/business-networking/page.tsx
+
+=== streaming ===
+src/app/academy/live-streaming/page.tsx
+
+=== students ===
+src/app/students/page.tsx
+

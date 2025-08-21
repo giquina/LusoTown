@@ -68,15 +68,15 @@ function MessagesContent() {
               <MessageCircle className="w-8 h-8 text-primary-600" />
               <div>
                 <h1 className="text-xl font-bold text-gray-900">{content.title}</h1>
-                <p className="text-sm text-gray-600">{content.subtitle}</p>
+                <p className="text-sm text-secondary-600">{content.subtitle}</p>
               </div>
             </div>
             
             <div className="flex items-center space-x-3">
-              <button className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100">
+              <button className="p-2 text-gray-400 hover:text-secondary-600 rounded-lg hover:bg-secondary-100">
                 <Settings className="w-5 h-5" />
               </button>
-              <button className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100">
+              <button className="p-2 text-gray-400 hover:text-secondary-600 rounded-lg hover:bg-secondary-100">
                 <Info className="w-5 h-5" />
               </button>
             </div>
@@ -92,12 +92,12 @@ function MessagesContent() {
           className="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4"
         >
           <div className="flex items-start space-x-3">
-            <Shield className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+            <Shield className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
             <div>
               <h3 className="text-sm font-medium text-blue-800">
                 {isPortuguese ? 'Mensagens Seguras' : 'Safe Messaging'}
               </h3>
-              <p className="text-sm text-blue-700 mt-1">
+              <p className="text-sm text-primary-700 mt-1">
                 {content.instructions}
               </p>
             </div>
@@ -130,7 +130,7 @@ function MessagesContent() {
                     onClick={() => setSelectedConversationId(null)}
                     className="absolute top-4 left-4 z-10 p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all"
                   >
-                    <ArrowLeft className="w-5 h-5 text-gray-600" />
+                    <ArrowLeft className="w-5 h-5 text-secondary-600" />
                   </button>
                 )}
                 <MessagingInterface conversationId={selectedConversationId} />
@@ -141,7 +141,7 @@ function MessagesContent() {
                   <div className="flex justify-center mb-6">
                     <div className="relative">
                       <MessageCircle className="w-16 h-16 text-gray-300" />
-                      <Heart className="w-6 h-6 text-red-500 absolute -top-1 -right-1" />
+                      <Heart className="w-6 h-6 text-coral-500 absolute -top-1 -right-1" />
                     </div>
                   </div>
                   
@@ -149,23 +149,23 @@ function MessagesContent() {
                     {content.noConversation}
                   </h3>
                   
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-secondary-600 mb-6">
                     {content.instructions}
                   </p>
 
                   <div className="text-left bg-gray-50 rounded-lg p-4 mb-6">
                     <h4 className="font-medium text-gray-900 mb-3">{content.getStarted}</h4>
-                    <ul className="space-y-2 text-sm text-gray-600">
+                    <ul className="space-y-2 text-sm text-secondary-600">
                       <li className="flex items-start space-x-2">
-                        <Heart className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
+                        <Heart className="w-4 h-4 text-coral-500 mt-0.5 flex-shrink-0" />
                         <span>{content.step1}</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <Calendar className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                        <Calendar className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
                         <span>{content.step2}</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <Users className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <Users className="w-4 h-4 text-action-500 mt-0.5 flex-shrink-0" />
                         <span>{content.step3}</span>
                       </li>
                     </ul>
@@ -175,7 +175,7 @@ function MessagesContent() {
                     <button className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium">
                       {content.findMatches}
                     </button>
-                    <button className="px-6 py-3 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                    <button className="px-6 py-3 bg-white border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors font-medium">
                       {content.browseEvents}
                     </button>
                   </div>

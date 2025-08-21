@@ -56,7 +56,7 @@ export default function PremiumMembershipPage() {
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? 'Associação Premium' : 'Premium Membership'}
                 </h1>
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
                   {isPortuguese 
                     ? 'Experiência completa da comunidade portuguesa de Londres com serviços premium e benefícios exclusivos'
                     : 'Complete London Portuguese community experience with premium services and exclusive benefits'
@@ -79,7 +79,7 @@ export default function PremiumMembershipPage() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       {isPortuguese ? 'Integração Comunitária' : 'Community Integration'}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-secondary-600">
                       {isPortuguese
                         ? 'Clientes de serviços automaticamente qualificam para membros da comunidade'
                         : 'Service clients automatically qualify for community membership'
@@ -94,7 +94,7 @@ export default function PremiumMembershipPage() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       {isPortuguese ? 'Eventos Exclusivos' : 'Exclusive Events'}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-secondary-600">
                       {isPortuguese
                         ? 'Convites automáticos para eventos culturais portugueses e acesso à Câmara de Comércio'
                         : 'Automatic invitations to Portuguese cultural events and Chamber of Commerce access'
@@ -109,7 +109,7 @@ export default function PremiumMembershipPage() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       {isPortuguese ? 'Descontos Premium' : 'Premium Discounts'}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-secondary-600">
                       {isPortuguese
                         ? 'Até 25% de desconto em todos os serviços premium com rastreamento automático'
                         : 'Up to 25% discount on all premium services with automatic tracking'
@@ -155,7 +155,7 @@ export default function PremiumMembershipPage() {
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">
                     {isPortuguese ? 'Sistema de Gestão de Benefícios' : 'Benefits Management System'}
                   </h2>
-                  <p className="text-gray-600 max-w-2xl mx-auto">
+                  <p className="text-secondary-600 max-w-2xl mx-auto">
                     {isPortuguese
                       ? 'Portal completo de membro com rastreamento de benefícios e aplicação automática de descontos'
                       : 'Complete member portal with benefits tracking and automatic discount application'
@@ -166,28 +166,28 @@ export default function PremiumMembershipPage() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   <div className="text-center p-4 bg-gray-50 rounded-xl">
                     <div className="text-2xl font-bold text-primary-600 mb-2">£450K-750K</div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-secondary-600">
                       {isPortuguese ? 'Receita Projetada Anual' : 'Projected Annual Revenue'}
                     </div>
                   </div>
 
                   <div className="text-center p-4 bg-gray-50 rounded-xl">
                     <div className="text-2xl font-bold text-secondary-600 mb-2">150-250</div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-secondary-600">
                       {isPortuguese ? 'Membros Objetivo' : 'Target Members'}
                     </div>
                   </div>
 
                   <div className="text-center p-4 bg-gray-50 rounded-xl">
                     <div className="text-2xl font-bold text-accent-600 mb-2">4</div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-secondary-600">
                       {isPortuguese ? 'Níveis Premium' : 'Premium Tiers'}
                     </div>
                   </div>
 
                   <div className="text-center p-4 bg-gray-50 rounded-xl">
                     <div className="text-2xl font-bold text-action-600 mb-2">25%</div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-secondary-600">
                       {isPortuguese ? 'Desconto Máximo' : 'Maximum Discount'}
                     </div>
                   </div>

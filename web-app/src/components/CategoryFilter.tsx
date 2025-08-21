@@ -74,7 +74,7 @@ export default function CategoryFilter({
         className={`w-full p-4 rounded-xl border-2 transition-all duration-200 text-left ${
           !selectedCategory
             ? 'border-primary-500 bg-primary-50 shadow-md'
-            : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+            : 'border-gray-200 hover:border-secondary-300 hover:bg-gray-50'
         }`}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
@@ -102,7 +102,7 @@ export default function CategoryFilter({
               'px-2 py-1 rounded-full',
               !selectedCategory
                 ? 'bg-primary-500 text-white'
-                : 'bg-gray-200 text-gray-700'
+                : 'bg-secondary-200 text-secondary-700'
             )}>
               {Object.values(eventCounts).reduce((a, b) => a + b, 0)}
             </span>
@@ -119,7 +119,7 @@ export default function CategoryFilter({
             className={`w-full p-4 rounded-xl border-2 transition-all duration-200 text-left ${
               selectedCategory === category
                 ? 'border-primary-500 bg-primary-50 shadow-md'
-                : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                : 'border-gray-200 hover:border-secondary-300 hover:bg-gray-50'
             }`}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -148,7 +148,7 @@ export default function CategoryFilter({
                   'px-2 py-1 rounded-full',
                   selectedCategory === category
                     ? 'bg-primary-500 text-white'
-                    : 'bg-gray-200 text-gray-700'
+                    : 'bg-secondary-200 text-secondary-700'
                 )}>
                   {eventCounts[category]}
                 </span>
@@ -168,7 +168,7 @@ export default function CategoryFilter({
             <div className="font-bold text-primary-600">
               {Object.values(eventCounts).reduce((a, b) => a + b, 0)}
             </div>
-            <div className="text-gray-600">
+            <div className="text-secondary-600">
               {isPortuguese ? 'Total' : 'Total'}
             </div>
           </div>
@@ -176,7 +176,7 @@ export default function CategoryFilter({
             <div className="font-bold text-secondary-600">
               {Object.keys(EVENT_TOUR_CATEGORIES).length}
             </div>
-            <div className="text-gray-600">
+            <div className="text-secondary-600">
               {isPortuguese ? 'Categorias' : 'Categories'}
             </div>
           </div>
@@ -201,7 +201,7 @@ export default function CategoryFilter({
                   className={`flex items-center gap-1.5 px-2 py-2 rounded-lg text-xs font-medium transition-colors min-w-0 ${
                     selectedCategory === category
                       ? 'bg-primary-500 text-white'
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                      : 'bg-secondary-200 text-secondary-700 hover:bg-gray-300'
                   }`}
                 >
                   <span className="flex-shrink-0">{EVENT_TOUR_CATEGORIES[category as keyof typeof EVENT_TOUR_CATEGORIES]?.icon}</span>
@@ -223,7 +223,7 @@ export default function CategoryFilter({
       {selectedCategory && (
         <motion.button
           onClick={() => onCategoryChange(undefined)}
-          className="w-full py-2 px-4 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-colors text-sm"
+          className="w-full py-2 px-4 bg-secondary-100 text-secondary-700 font-medium rounded-lg hover:bg-secondary-200 transition-colors text-sm"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >

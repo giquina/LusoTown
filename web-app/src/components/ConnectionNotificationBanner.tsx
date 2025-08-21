@@ -109,7 +109,7 @@ export default function ConnectionNotificationBanner({ notifications }: Connecti
                     <h4 className="text-sm font-semibold text-gray-900 mb-1">
                       {notification.title}
                     </h4>
-                    <p className="text-sm text-gray-600 truncate">
+                    <p className="text-sm text-secondary-600 truncate">
                       {getPortugueseNotificationText(notification.type, notification.message)}
                     </p>
                     {/* Portuguese cultural context */}
@@ -137,14 +137,14 @@ export default function ConnectionNotificationBanner({ notifications }: Connecti
                       </button>
                     )}
                     {notification.type === 'upcoming_event_with_connections' && (
-                      <button className="text-sm font-medium text-green-600 hover:text-green-700 transition-colors">
+                      <button className="text-sm font-medium text-action-600 hover:text-green-700 transition-colors">
                         {isPortuguese ? 'Ver Evento' : 'View Event'}
                       </button>
                     )}
                     
                     <button
                       onClick={() => handleDismiss(notification.id)}
-                      className="p-1 text-gray-400 hover:text-gray-600 transition-colors"
+                      className="p-1 text-gray-400 hover:text-secondary-600 transition-colors"
                       title={isPortuguese ? 'Dispensar' : 'Dismiss'}
                     >
                       <XMarkIcon className="w-4 h-4" />

@@ -84,20 +84,20 @@ const RSVPModal = ({
                 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       Notes (Optional)
                     </label>
                     <textarea
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
                       placeholder="Any questions or special requests..."
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
                       rows={3}
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       Dietary Requirements (Optional)
                     </label>
                     <input
@@ -105,7 +105,7 @@ const RSVPModal = ({
                       value={dietaryRequirements}
                       onChange={(e) => setDietaryRequirements(e.target.value)}
                       placeholder="e.g., Vegetarian, Gluten-free, Allergies..."
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
                     />
                   </div>
 
@@ -125,7 +125,7 @@ const RSVPModal = ({
                     <button
                       type="button"
                       onClick={onClose}
-                      className="flex-1 px-4 py-2 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                      className="flex-1 px-4 py-2 text-secondary-700 border border-secondary-300 rounded-lg hover:bg-gray-50 transition-colors"
                     >
                       Cancel
                     </button>
@@ -245,7 +245,6 @@ export default function EventDetailsPage() {
         }
         
         // In a real implementation, this would call an API to create the post
-        console.log('Auto-posting to LusoFeed:', feedPost)
         
         alert('success', `Successfully ${status === 'going' ? 'RSVPed' : 'joined waitlist'}!`)
       } else {
@@ -315,7 +314,7 @@ export default function EventDetailsPage() {
         <div className="pt-16 flex items-center justify-center min-h-[60vh]">
           <div className="text-center">
             <div className="w-12 h-12 border-4 border-primary-200 border-t-primary-500 rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading event details...</p>
+            <p className="text-secondary-600">Loading event details...</p>
           </div>
         </div>
         <Footer />
@@ -330,7 +329,7 @@ export default function EventDetailsPage() {
           <div className="text-center">
             <div className="text-6xl mb-4">😔</div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Event Not Found</h2>
-            <p className="text-gray-600 mb-6">The event you're looking for doesn't exist or has been removed.</p>
+            <p className="text-secondary-600 mb-6">The event you're looking for doesn't exist or has been removed.</p>
             <a
               href={ROUTES.events}
               className="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors font-medium"
@@ -406,13 +405,13 @@ export default function EventDetailsPage() {
                 className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
               >
                 {isFavorited ? (
-                  <HeartSolidIcon className="w-6 h-6 text-red-500" />
+                  <HeartSolidIcon className="w-6 h-6 text-coral-500" />
                 ) : (
-                  <HeartIcon className="w-6 h-6 text-gray-600" />
+                  <HeartIcon className="w-6 h-6 text-secondary-600" />
                 )}
               </button>
               <button className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors">
-                <ShareIcon className="w-6 h-6 text-gray-600" />
+                <ShareIcon className="w-6 h-6 text-secondary-600" />
               </button>
             </div>
 
@@ -424,7 +423,7 @@ export default function EventDetailsPage() {
                 </span>
               )}
               {event.verifiedEvent && (
-                <span className="bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-full">
+                <span className="bg-action-500 text-white text-sm font-bold px-3 py-1 rounded-full">
                   ✓ VERIFIED
                 </span>
               )}
@@ -433,7 +432,7 @@ export default function EventDetailsPage() {
             {/* Availability Status */}
             <div className="absolute bottom-6 left-6">
               {isFull ? (
-                <span className="bg-red-500 text-white text-sm font-bold px-4 py-2 rounded-full">
+                <span className="bg-coral-500 text-white text-sm font-bold px-4 py-2 rounded-full">
                   FULL {event.allowWaitlist && '• WAITLIST AVAILABLE'}
                 </span>
               ) : isAlmostFull ? (
@@ -441,7 +440,7 @@ export default function EventDetailsPage() {
                   {spotsLeft} SPOT{spotsLeft === 1 ? '' : 'S'} LEFT
                 </span>
               ) : (
-                <span className="bg-green-500 text-white text-sm font-bold px-4 py-2 rounded-full">
+                <span className="bg-action-500 text-white text-sm font-bold px-4 py-2 rounded-full">
                   {spotsLeft} SPOTS AVAILABLE
                 </span>
               )}
@@ -462,7 +461,7 @@ export default function EventDetailsPage() {
                       <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
                         {event.title}
                       </h1>
-                      <p className="text-lg text-gray-600 mb-3">
+                      <p className="text-lg text-secondary-600 mb-3">
                         {event.description}
                       </p>
                       {/* Portuguese Cultural Context */}
@@ -538,7 +537,7 @@ export default function EventDetailsPage() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                        <UserGroupIcon className="w-5 h-5 text-green-600" />
+                        <UserGroupIcon className="w-5 h-5 text-action-600" />
                       </div>
                       <div>
                         <div className="font-medium text-gray-900">{event.currentAttendees} / {event.maxAttendees}</div>
@@ -565,7 +564,7 @@ export default function EventDetailsPage() {
                     {event.tags.map((tag) => (
                       <span 
                         key={tag}
-                        className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                        className="bg-secondary-100 text-secondary-700 px-3 py-1 rounded-full text-sm"
                       >
                         {tag}
                       </span>
@@ -578,7 +577,7 @@ export default function EventDetailsPage() {
                   <h2 className="text-xl font-bold text-gray-900 mb-4">About This Event</h2>
                   <div className="prose prose-gray max-w-none">
                     {event.longDescription.split('\n\n').map((paragraph, index) => (
-                      <p key={index} className="mb-4 text-gray-700 leading-relaxed">
+                      <p key={index} className="mb-4 text-secondary-700 leading-relaxed">
                         {paragraph}
                       </p>
                     ))}
@@ -597,7 +596,7 @@ export default function EventDetailsPage() {
                         <h3 className="font-semibold text-gray-900 mb-2">What to Bring</h3>
                         <ul className="space-y-1">
                           {event.whatToBring.map((item, index) => (
-                            <li key={index} className="flex items-start gap-2 text-gray-700">
+                            <li key={index} className="flex items-start gap-2 text-secondary-700">
                               <InformationCircleIcon className="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0" />
                               {item}
                             </li>
@@ -613,7 +612,7 @@ export default function EventDetailsPage() {
                   <div className="bg-white rounded-2xl p-6 shadow-lg">
                     <div className="flex items-center justify-between mb-6">
                       <h2 className="text-xl font-bold text-gray-900">Event Photos</h2>
-                      <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                      <span className="text-sm text-gray-500 bg-secondary-100 px-3 py-1 rounded-full">
                         {event.photos.length} photos
                       </span>
                     </div>
@@ -652,7 +651,7 @@ export default function EventDetailsPage() {
                           
                           {/* Featured Badge */}
                           {photo.featured && (
-                            <div className="absolute top-2 right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full">
+                            <div className="absolute top-2 right-2 bg-accent-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full">
                               ⭐ Featured
                             </div>
                           )}
@@ -675,7 +674,7 @@ export default function EventDetailsPage() {
                   <div className="bg-white rounded-2xl p-6 shadow-lg">
                     <div className="flex items-center justify-between mb-6">
                       <h2 className="text-xl font-bold text-gray-900">Who's Going</h2>
-                      <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                      <span className="text-sm text-gray-500 bg-secondary-100 px-3 py-1 rounded-full">
                         {event.attendees.length} attending
                       </span>
                     </div>
@@ -706,7 +705,7 @@ export default function EventDetailsPage() {
                             {/* Membership Badge */}
                             <div className={`absolute -bottom-1 -right-1 w-6 h-6 rounded-full border-2 border-white flex items-center justify-center text-xs font-bold text-white ${
                               attendee.membershipTier === 'premium' ? 'bg-purple-500' : 
-                              attendee.membershipTier === 'core' ? 'bg-secondary-500' : 'bg-green-500'
+                              attendee.membershipTier === 'core' ? 'bg-secondary-500' : 'bg-action-500'
                             }`}>
                               {attendee.membershipTier === 'premium' ? 'P' : 
                                attendee.membershipTier === 'core' ? 'C' : 'F'}
@@ -727,7 +726,7 @@ export default function EventDetailsPage() {
                     <div className="mt-6 p-4 bg-gray-50 rounded-lg">
                       <div className="flex items-center justify-between text-sm">
                         <div className="flex items-center gap-4">
-                          <span className="text-gray-600">Community Mix:</span>
+                          <span className="text-secondary-600">Community Mix:</span>
                           <div className="flex items-center gap-3">
                             {event.attendees.filter(a => a.membershipTier === 'premium').length > 0 && (
                               <div className="flex items-center gap-1">
@@ -747,7 +746,7 @@ export default function EventDetailsPage() {
                             )}
                             {event.attendees.filter(a => a.membershipTier === 'free').length > 0 && (
                               <div className="flex items-center gap-1">
-                                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <div className="w-3 h-3 bg-action-500 rounded-full"></div>
                                 <span className="text-green-700 font-medium">
                                   {event.attendees.filter(a => a.membershipTier === 'free').length} Free
                                 </span>
@@ -802,7 +801,7 @@ export default function EventDetailsPage() {
                         }`}>
                           <div className="flex items-center gap-2 mb-2">
                             <CheckCircleIcon className={`w-5 h-5 ${
-                              userRSVP === 'going' ? 'text-green-600' : 'text-yellow-600'
+                              userRSVP === 'going' ? 'text-action-600' : 'text-yellow-600'
                             }`} />
                             <span className={`font-medium ${
                               userRSVP === 'going' ? 'text-green-800' : 'text-yellow-800'
@@ -821,7 +820,7 @@ export default function EventDetailsPage() {
                         
                         <button
                           onClick={handleCancelRSVP}
-                          className="w-full px-4 py-3 text-red-600 border border-red-200 rounded-lg hover:bg-red-50 transition-colors font-medium"
+                          className="w-full px-4 py-3 text-coral-600 border border-red-200 rounded-lg hover:bg-red-50 transition-colors font-medium"
                         >
                           Cancel RSVP
                         </button>
@@ -831,7 +830,7 @@ export default function EventDetailsPage() {
                         {isFull && !event.allowWaitlist ? (
                           <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                             <div className="flex items-center gap-2 mb-2">
-                              <ExclamationTriangleIcon className="w-5 h-5 text-red-600" />
+                              <ExclamationTriangleIcon className="w-5 h-5 text-coral-600" />
                               <span className="font-medium text-red-800">Event Full</span>
                             </div>
                             <p className="text-sm text-red-700">
@@ -849,7 +848,7 @@ export default function EventDetailsPage() {
 
                         {event.price > 0 && (
                           <div className="text-center">
-                            <p className="text-sm text-gray-600">
+                            <p className="text-sm text-secondary-600">
                               £{event.price} per person
                             </p>
                             <p className="text-xs text-gray-500 mt-1">
@@ -880,7 +879,7 @@ export default function EventDetailsPage() {
                       <div>
                         <h4 className="font-semibold text-gray-900">{event.hostName}</h4>
                         <div className="flex items-center gap-2">
-                          <p className="text-sm text-gray-600">{t('event.community-organizer', 'Community Organizer')}</p>
+                          <p className="text-sm text-secondary-600">{t('event.community-organizer', 'Community Organizer')}</p>
                           <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
                             ✓ {t('event.verified', 'Verified')}
                           </span>
@@ -889,7 +888,7 @@ export default function EventDetailsPage() {
                     </div>
 
                     {event.hostBio && (
-                      <p className="text-sm text-gray-700 mb-4">{event.hostBio}</p>
+                      <p className="text-sm text-secondary-700 mb-4">{event.hostBio}</p>
                     )}
 
                     {/* Contact Information */}
@@ -898,18 +897,18 @@ export default function EventDetailsPage() {
                       <div className="space-y-2">
                         {/* WhatsApp Contact - Common for Portuguese community */}
                         <button className="w-full flex items-center gap-3 p-3 bg-green-50 border border-green-200 rounded-lg hover:bg-green-100 transition-colors">
-                          <span className="text-green-600">📱</span>
+                          <span className="text-action-600">📱</span>
                           <div className="text-left">
                             <div className="text-sm font-medium text-green-700">{t('event.whatsapp-contact', 'WhatsApp')}</div>
-                            <div className="text-xs text-green-600">{t('event.quick-response', 'Usually responds within 1 hour')}</div>
+                            <div className="text-xs text-action-600">{t('event.quick-response', 'Usually responds within 1 hour')}</div>
                           </div>
                         </button>
                         
-                        <button className="w-full flex items-center gap-3 p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors">
-                          <span className="text-gray-600">✉️</span>
+                        <button className="w-full flex items-center gap-3 p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-secondary-100 transition-colors">
+                          <span className="text-secondary-600">✉️</span>
                           <div className="text-left">
-                            <div className="text-sm font-medium text-gray-700">{t('event.email-contact', 'Email')}</div>
-                            <div className="text-xs text-gray-600">{t('event.detailed-questions', 'For detailed questions')}</div>
+                            <div className="text-sm font-medium text-secondary-700">{t('event.email-contact', 'Email')}</div>
+                            <div className="text-xs text-secondary-600">{t('event.detailed-questions', 'For detailed questions')}</div>
                           </div>
                         </button>
                       </div>
@@ -919,7 +918,7 @@ export default function EventDetailsPage() {
                       <button className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all">
                         {t('event.view-host-profile', 'View Host Profile')}
                       </button>
-                      <button className="w-full border border-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors">
+                      <button className="w-full border border-gray-200 text-secondary-700 font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors">
                         {t('event.message-organizer', 'Message Organizer')}
                       </button>
                     </div>
@@ -932,19 +931,19 @@ export default function EventDetailsPage() {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="text-center">
                         <div className="text-2xl font-bold text-primary-600">{event.views || 0}</div>
-                        <div className="text-sm text-gray-600">Views</div>
+                        <div className="text-sm text-secondary-600">Views</div>
                       </div>
                       <div className="text-center">
                         <div className="text-2xl font-bold text-secondary-600">{event.favorites || 0}</div>
-                        <div className="text-sm text-gray-600">Favorites</div>
+                        <div className="text-sm text-secondary-600">Favorites</div>
                       </div>
                       <div className="text-center">
                         <div className="text-2xl font-bold text-purple-600">{event.shares || 0}</div>
-                        <div className="text-sm text-gray-600">Shares</div>
+                        <div className="text-sm text-secondary-600">Shares</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-green-600">{event.currentAttendees}</div>
-                        <div className="text-sm text-gray-600">Going</div>
+                        <div className="text-2xl font-bold text-action-600">{event.currentAttendees}</div>
+                        <div className="text-sm text-secondary-600">Going</div>
                       </div>
                     </div>
                   </div>
@@ -973,8 +972,8 @@ export default function EventDetailsPage() {
             >
               <div className={`rounded-lg p-4 shadow-lg text-white ${ 
                 notification.type === 'success' 
-                  ? 'bg-green-500' 
-                  : 'bg-red-500'
+                  ? 'bg-action-500' 
+                  : 'bg-coral-500'
               }`}>
                 <div className="flex items-center gap-2">
                   {notification.type === 'success' ? (

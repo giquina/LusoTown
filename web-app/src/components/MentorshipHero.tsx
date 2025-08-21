@@ -1,7 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { buildUnsplashUrl } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { buildUnsplashUrl } from '@/config'
 import { 
   AcademicCapIcon, 
   ChatBubbleLeftRightIcon, 
@@ -28,7 +30,7 @@ export default function MentorshipHero() {
         <div className="absolute bottom-40 right-10 w-12 h-12 border-2 border-accent-200/30 rotate-12 opacity-25" />
       </div>
 
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop&auto=format')] bg-cover bg-center opacity-10"></div>
+      <div className="absolute inset-0 bg-[url(buildUnsplashUrl('photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop&auto=format'))] bg-cover bg-center opacity-10"></div>
       <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
       <div className="relative container-width py-16 lg:py-24">
         <div className="text-center max-w-4xl mx-auto">
@@ -98,7 +100,7 @@ export default function MentorshipHero() {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {t('mentorship.hero.pillar1.title', 'Professional Integration')}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-secondary-600 text-sm leading-relaxed">
                   {t('mentorship.hero.pillar1.description', 'Career guidance from established Portuguese professionals in finance, healthcare, hospitality, and more')}
                 </p>
               </div>
@@ -111,7 +113,7 @@ export default function MentorshipHero() {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {t('mentorship.hero.pillar2.title', 'Language Exchange')}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-secondary-600 text-sm leading-relaxed">
                   {t('mentorship.hero.pillar2.description', 'Portuguese-English practice sessions with cross-generational cultural knowledge sharing')}
                 </p>
               </div>
@@ -124,7 +126,7 @@ export default function MentorshipHero() {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {t('mentorship.hero.pillar3.title', 'Cultural Skills')}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-secondary-600 text-sm leading-relaxed">
                   {t('mentorship.hero.pillar3.description', 'Learn traditional Portuguese crafts, cooking, fado music, and preserve cultural heritage')}
                 </p>
               </div>

@@ -81,7 +81,7 @@ export default function LiveChatWidget({
         <h3 className="text-lg font-semibold text-gray-900 mb-2">
           {language === 'pt' ? 'Stream Offline' : 'Stream Offline'}
         </h3>
-        <p className="text-gray-600 text-sm">
+        <p className="text-secondary-600 text-sm">
           {language === 'pt' 
             ? 'O chat estará disponível quando a transmissão começar.'
             : 'Chat will be available when the stream starts.'
@@ -124,13 +124,13 @@ export default function LiveChatWidget({
           
           <div className="flex items-center gap-1 sm:gap-2">
             {/* Mobile: Show fewer controls initially */}
-            <div className={`${isExpanded ? 'flex' : 'hidden sm:flex'} bg-gray-100 rounded-lg p-1`}>
+            <div className={`${isExpanded ? 'flex' : 'hidden sm:flex'} bg-secondary-100 rounded-lg p-1`}>
               <button
                 onClick={() => setActiveView('chat')}
                 className={`p-2 sm:p-1.5 rounded-md transition-colors touch-manipulation ${
                   activeView === 'chat' 
                     ? 'bg-white text-primary-600 shadow-sm' 
-                    : 'text-gray-500 hover:text-gray-700'
+                    : 'text-gray-500 hover:text-secondary-700'
                 }`}
                 title={language === 'pt' ? 'Chat' : 'Chat'}
               >
@@ -143,7 +143,7 @@ export default function LiveChatWidget({
                   className={`p-2 sm:p-1.5 rounded-md transition-colors touch-manipulation ${
                     activeView === 'polls' 
                       ? 'bg-white text-primary-600 shadow-sm' 
-                      : 'text-gray-500 hover:text-gray-700'
+                      : 'text-gray-500 hover:text-secondary-700'
                   }`}
                   title={language === 'pt' ? 'Sondagens' : 'Polls'}
                 >
@@ -156,8 +156,8 @@ export default function LiveChatWidget({
                   onClick={() => setShowModeratorPanel(true)}
                   className={`p-2 sm:p-1.5 rounded-md transition-colors touch-manipulation ${
                     showModeratorPanel 
-                      ? 'bg-white text-blue-600 shadow-sm' 
-                      : 'text-gray-500 hover:text-gray-700'
+                      ? 'bg-white text-primary-600 shadow-sm' 
+                      : 'text-gray-500 hover:text-secondary-700'
                   }`}
                   title={language === 'pt' ? 'Moderação' : 'Moderation'}
                 >
@@ -169,7 +169,7 @@ export default function LiveChatWidget({
             {/* Expand/Close Buttons - Mobile Optimized */}
             <button
               onClick={toggleExpanded}
-              className="p-2 sm:p-1 text-gray-500 hover:text-gray-700 active:scale-95 rounded-lg transition-all touch-manipulation"
+              className="p-2 sm:p-1 text-gray-500 hover:text-secondary-700 active:scale-95 rounded-lg transition-all touch-manipulation"
               title={isExpanded 
                 ? (language === 'pt' ? 'Minimizar' : 'Minimize')
                 : (language === 'pt' ? 'Expandir' : 'Expand')
@@ -187,7 +187,7 @@ export default function LiveChatWidget({
             {onClose && !isExpanded && (
               <button
                 onClick={onClose}
-                className="p-2 sm:p-1 text-gray-500 hover:text-gray-700 active:scale-95 rounded-lg transition-all touch-manipulation"
+                className="p-2 sm:p-1 text-gray-500 hover:text-secondary-700 active:scale-95 rounded-lg transition-all touch-manipulation"
               >
                 <XMarkIcon className="w-5 h-5 sm:w-4 sm:h-4" />
               </button>
@@ -269,7 +269,7 @@ export default function LiveChatWidget({
       {/* Footer - Portuguese Cultural Touch */}
       {isExpanded && (
         <div className="border-t border-gray-200 p-3 bg-gradient-to-r from-primary-50 to-secondary-50">
-          <div className="flex items-center justify-between text-xs text-gray-600">
+          <div className="flex items-center justify-between text-xs text-secondary-600">
             <div className="flex items-center gap-2">
               <span className="flex items-center gap-1">
                 🇵🇹 <span>{language === 'pt' ? 'Comunidade Portuguesa' : 'Portuguese Community'}</span>

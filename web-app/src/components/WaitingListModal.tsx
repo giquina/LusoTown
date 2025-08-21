@@ -1,7 +1,9 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import { ROUTES } from '@/config'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ROUTES } from '@/config'
 import { 
   XMarkIcon, 
   CheckCircleIcon, 
@@ -12,7 +14,9 @@ import {
   PhoneIcon
 } from '@heroicons/react/24/outline'
 import { useWaitingList } from '@/context/WaitingListContext'
+import { ROUTES } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config'
 
 interface WaitingListModalProps {
   isOpen: boolean
@@ -182,13 +186,13 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                   <h3 className="text-xl font-bold text-gray-900">
                     {language === 'pt' ? 'Juntar à Lista de Espera' : 'Join Waiting List'}
                   </h3>
-                  <p className="text-sm text-gray-600 mt-1">
+                  <p className="text-sm text-secondary-600 mt-1">
                     {event.title}
                   </p>
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 hover:bg-gray-100 rounded-xl transition-colors"
+                  className="p-2 hover:bg-secondary-100 rounded-xl transition-colors"
                 >
                   <XMarkIcon className="w-5 h-5 text-gray-500" />
                 </button>
@@ -197,7 +201,7 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
               {/* Event Info */}
               <div className="mt-4 p-4 bg-gradient-to-r from-secondary-50 to-primary-50 rounded-2xl">
                 <div className="flex items-center justify-between text-sm">
-                  <div className="flex items-center text-gray-700">
+                  <div className="flex items-center text-secondary-700">
                     <ClockIcon className="w-4 h-4 mr-2 text-primary-500" />
                     {event.date} • {event.time}
                   </div>
@@ -222,12 +226,12 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                   transition={{ delay: 0.2, type: "spring", stiffness: 300 }}
                   className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
                 >
-                  <CheckCircleIcon className="w-8 h-8 text-green-600" />
+                  <CheckCircleIcon className="w-8 h-8 text-action-600" />
                 </motion.div>
                 <h4 className="text-lg font-bold text-gray-900 mb-2">
                   {language === 'pt' ? 'Adicionado à Lista de Espera!' : 'Added to Waiting List!'}
                 </h4>
-                <p className="text-gray-600 mb-4">
+                <p className="text-secondary-600 mb-4">
                   {language === 'pt' 
                     ? 'Contactaremos você se surgirem vagas disponíveis.'
                     : "We'll contact you if spots become available."
@@ -254,14 +258,14 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                     animate={{ opacity: 1, y: 0 }}
                     className="p-3 bg-red-50 border border-red-200 rounded-xl flex items-center"
                   >
-                    <ExclamationTriangleIcon className="w-5 h-5 text-red-500 mr-2 flex-shrink-0" />
+                    <ExclamationTriangleIcon className="w-5 h-5 text-coral-500 mr-2 flex-shrink-0" />
                     <p className="text-sm text-red-700">{error}</p>
                   </motion.div>
                 )}
 
                 {/* Name Field */}
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === 'pt' ? 'Nome Completo *' : 'Full Name *'}
                   </label>
                   <input
@@ -271,19 +275,19 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                     onChange={(e) => handleInputChange('name', e.target.value)}
                     className={`w-full px-4 py-3 border rounded-xl transition-colors ${
                       fieldErrors.name 
-                        ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
+                        ? 'border-red-300 focus:border-coral-500 focus:ring-red-500'
                         : 'border-gray-200 focus:border-primary-500 focus:ring-primary-500'
                     }`}
                     placeholder={language === 'pt' ? 'Digite seu nome completo' : 'Enter your full name'}
                   />
                   {fieldErrors.name && (
-                    <p className="text-sm text-red-600 mt-1">{fieldErrors.name}</p>
+                    <p className="text-sm text-coral-600 mt-1">{fieldErrors.name}</p>
                   )}
                 </div>
 
                 {/* Email Field */}
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === 'pt' ? 'Email *' : 'Email Address *'}
                   </label>
                   <div className="relative">
@@ -294,7 +298,7 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                       onChange={(e) => handleInputChange('email', e.target.value)}
                       className={`w-full pl-10 pr-4 py-3 border rounded-xl transition-colors ${
                         fieldErrors.email 
-                          ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
+                          ? 'border-red-300 focus:border-coral-500 focus:ring-red-500'
                           : 'border-gray-200 focus:border-primary-500 focus:ring-primary-500'
                       }`}
                       placeholder={language === 'pt' ? 'seu@email.com' : 'your@email.com'}
@@ -302,13 +306,13 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                     <EnvelopeIcon className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
                   </div>
                   {fieldErrors.email && (
-                    <p className="text-sm text-red-600 mt-1">{fieldErrors.email}</p>
+                    <p className="text-sm text-coral-600 mt-1">{fieldErrors.email}</p>
                   )}
                 </div>
 
                 {/* Phone Field */}
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === 'pt' ? 'Número de Telefone *' : 'Phone Number *'}
                   </label>
                   <div className="relative">
@@ -319,7 +323,7 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                       onChange={(e) => handleInputChange('phone', e.target.value)}
                       className={`w-full pl-10 pr-4 py-3 border rounded-xl transition-colors ${
                         fieldErrors.phone 
-                          ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
+                          ? 'border-red-300 focus:border-coral-500 focus:ring-red-500'
                           : 'border-gray-200 focus:border-primary-500 focus:ring-primary-500'
                       }`}
                       placeholder={language === 'pt' ? '+44 20 1234 5678' : '+44 20 1234 5678'}
@@ -327,13 +331,13 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                     <PhoneIcon className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
                   </div>
                   {fieldErrors.phone && (
-                    <p className="text-sm text-red-600 mt-1">{fieldErrors.phone}</p>
+                    <p className="text-sm text-coral-600 mt-1">{fieldErrors.phone}</p>
                   )}
                 </div>
 
                 {/* Language Preference */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === 'pt' ? 'Preferência de Idioma' : 'Language Preference'}
                   </label>
                   <select
@@ -349,7 +353,7 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
 
                 {/* Notification Preference */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === 'pt' ? 'Como gostaria de ser contactado?' : 'How would you like to be contacted?'}
                   </label>
                   <select
@@ -365,7 +369,7 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
 
                 {/* Event Questions */}
                 <div>
-                  <label htmlFor="questions" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="questions" className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === 'pt' ? 'Perguntas sobre o Evento (Opcional)' : 'Event Questions (Optional)'}
                   </label>
                   <textarea
@@ -390,23 +394,23 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                       onChange={(e) => handleInputChange('agreedToPrivacy', e.target.checked)}
                       className={`mt-1 w-4 h-4 rounded border-2 transition-colors ${
                         fieldErrors.agreedToPrivacy
-                          ? 'border-red-300 text-red-600 focus:ring-red-500'
-                          : 'border-gray-300 text-primary-600 focus:ring-primary-500'
+                          ? 'border-red-300 text-coral-600 focus:ring-red-500'
+                          : 'border-secondary-300 text-primary-600 focus:ring-primary-500'
                       }`}
                     />
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-secondary-600">
                       {language === 'pt' 
                         ? 'Aceito que os meus dados sejam utilizados para contacto sobre vagas neste evento, de acordo com a '
                         : 'I agree to my data being used to contact me about available spots for this event, in accordance with the '
                       }
-                      <a href="/privacy" className="text-primary-600 hover:text-primary-700 underline">
+                      <a href={ROUTES.legal.privacy} className="text-primary-600 hover:text-primary-700 underline">
                         {language === 'pt' ? 'política de privacidade' : 'privacy policy'}
                       </a>
                       . *
                     </span>
                   </label>
                   {fieldErrors.agreedToPrivacy && (
-                    <p className="text-sm text-red-600 mt-1">{fieldErrors.agreedToPrivacy}</p>
+                    <p className="text-sm text-coral-600 mt-1">{fieldErrors.agreedToPrivacy}</p>
                   )}
                 </div>
 

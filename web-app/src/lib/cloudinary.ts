@@ -1,3 +1,4 @@
+import { buildCloudinaryUrl } from '@/config'
 /**
  * Cloudinary CDN Integration for LusoTown
  * Provides optimized image delivery for Portuguese community platform
@@ -254,6 +255,5 @@ export function isCloudinaryConfigured(): boolean {
  */
 export function debugCloudinaryUrl(url: string): void {
   if (process.env.NODE_ENV === 'development') {
-    console.log('🌥️  Cloudinary URL:', url)
   }
 }

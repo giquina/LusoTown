@@ -98,7 +98,7 @@ export default function FollowingPage() {
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
 {isPortuguese ? 'A Minha' : 'My'} <span className="gradient-text">{isPortuguese ? 'Rede' : 'Network'}</span>
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-xl text-secondary-600 leading-relaxed mb-8">
 {isPortuguese 
                   ? 'Todas as pessoas, grupos e comunidades portuguesas que segues. Mantém-te conectado com a tua rede cultural.'
                   : 'All the Portuguese people, groups, and communities you follow. Stay connected with your cultural network.'
@@ -109,28 +109,28 @@ export default function FollowingPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                 <div className="bg-white rounded-lg p-4 shadow-sm">
                   <div className="text-2xl font-bold text-primary-600 mb-1">{stats.people}</div>
-                  <div className="text-sm text-gray-600 flex items-center gap-1">
+                  <div className="text-sm text-secondary-600 flex items-center gap-1">
                     <UserIcon className="w-4 h-4" />
 {isPortuguese ? 'Pessoas' : 'People'}
                   </div>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-sm">
                   <div className="text-2xl font-bold text-secondary-600 mb-1">{stats.groups}</div>
-                  <div className="text-sm text-gray-600 flex items-center gap-1">
+                  <div className="text-sm text-secondary-600 flex items-center gap-1">
                     <UserGroupIcon className="w-4 h-4" />
 {isPortuguese ? 'Grupos' : 'Groups'}
                   </div>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-sm">
                   <div className="text-2xl font-bold text-primary-600 mb-1">{stats.communities}</div>
-                  <div className="text-sm text-gray-600 flex items-center gap-1">
+                  <div className="text-sm text-secondary-600 flex items-center gap-1">
                     <UsersIcon className="w-4 h-4" />
 {isPortuguese ? 'Comunidades' : 'Communities'}
                   </div>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-sm">
                   <div className="text-2xl font-bold text-secondary-600 mb-1">{stats.eventOrganizers}</div>
-                  <div className="text-sm text-gray-600 flex items-center gap-1">
+                  <div className="text-sm text-secondary-600 flex items-center gap-1">
                     <CalendarDaysIcon className="w-4 h-4" />
 {isPortuguese ? 'Organizadores' : 'Organizers'}
                   </div>
@@ -144,7 +144,7 @@ export default function FollowingPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     activeTab === 'all'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-gray-50'
                   }`}
                 >
 {isPortuguese ? 'Todos' : 'All'} ({following.length})
@@ -154,7 +154,7 @@ export default function FollowingPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'people'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-gray-50'
                   }`}
                 >
                   <UserIcon className="w-4 h-4" />
@@ -165,7 +165,7 @@ export default function FollowingPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'groups'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-gray-50'
                   }`}
                 >
                   <UserGroupIcon className="w-4 h-4" />
@@ -176,7 +176,7 @@ export default function FollowingPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'communities'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-gray-50'
                   }`}
                 >
                   <UsersIcon className="w-4 h-4" />
@@ -187,7 +187,7 @@ export default function FollowingPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'organizers'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-gray-50'
                   }`}
                 >
                   <CalendarDaysIcon className="w-4 h-4" />
@@ -218,7 +218,7 @@ export default function FollowingPage() {
             <div className="container-width">
               <div className="max-w-6xl mx-auto">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                  <StarIcon className="w-6 h-6 text-yellow-500" />
+                  <StarIcon className="w-6 h-6 text-accent-500" />
 {isPortuguese ? 'Sugestões para Ti' : 'Suggested for You'}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -250,7 +250,7 @@ export default function FollowingPage() {
                         <div className="flex-1 min-w-0">
                           <h3 className="font-bold text-gray-900 truncate">{entity.name}</h3>
                           {entity.title && (
-                            <p className="text-sm text-gray-600 mb-1">{entity.title}</p>
+                            <p className="text-sm text-secondary-600 mb-1">{entity.title}</p>
                           )}
                           <p className="text-xs text-gray-500 mb-2 line-clamp-2">{entity.description}</p>
                           
@@ -302,7 +302,7 @@ export default function FollowingPage() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
 {isPortuguese ? 'Ainda não segues ninguém' : 'Not following anyone yet'}
                   </h3>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-secondary-600 mb-6">
 {isPortuguese 
                       ? 'Começa a seguir pessoas, grupos e comunidades portuguesas para te manteres conectado com a tua cultura.'
                       : 'Start following Portuguese people, groups, and communities to stay connected with your culture.'
@@ -347,7 +347,7 @@ export default function FollowingPage() {
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-1">
                               {getEntityIcon(entity.type)}
-                              <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                              <span className="text-xs bg-secondary-100 text-secondary-600 px-2 py-1 rounded-full">
                                 {getTypeLabel(entity.type)}
                               </span>
                             </div>
@@ -360,7 +360,7 @@ export default function FollowingPage() {
                           className={`p-2 rounded-full transition-colors ${
                             notificationsEnabled
                               ? 'text-primary-600 bg-primary-50 hover:bg-primary-100'
-                              : 'text-gray-400 hover:text-gray-600 hover:bg-gray-50'
+                              : 'text-gray-400 hover:text-secondary-600 hover:bg-gray-50'
                           }`}
                           title={
                             notificationsEnabled 
@@ -377,11 +377,11 @@ export default function FollowingPage() {
                       </div>
                       
                       {entity.title && (
-                        <p className="text-sm font-medium text-gray-700 mb-2">{entity.title}</p>
+                        <p className="text-sm font-medium text-secondary-700 mb-2">{entity.title}</p>
                       )}
                       
                       {entity.description && (
-                        <p className="text-sm text-gray-600 mb-4 line-clamp-2">{entity.description}</p>
+                        <p className="text-sm text-secondary-600 mb-4 line-clamp-2">{entity.description}</p>
                       )}
                       
                       {/* Cultural Focus Tags */}

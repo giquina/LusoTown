@@ -149,7 +149,7 @@ function SearchContent() {
                   {language === 'pt' ? 'Pesquisar na Comunidade' : 'Search Community'}
                 </h1>
                 {query && (
-                  <p className="text-lg text-gray-600">
+                  <p className="text-lg text-secondary-600">
                     {t('search.results-for').replace('{query}', query)}
                   </p>
                 )}
@@ -159,7 +159,7 @@ function SearchContent() {
               
               {/* Results Summary */}
               {query && (
-                <div className="flex items-center justify-between text-sm text-gray-600 bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40">
+                <div className="flex items-center justify-between text-sm text-secondary-600 bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40">
                   <span>
                     {language === 'pt' 
                       ? `${totalResults} resultados encontrados`
@@ -190,7 +190,7 @@ function SearchContent() {
                       {/* Category Filters */}
                       <div className="flex items-center gap-2">
                         <FilterIcon className="w-5 h-5 text-gray-400" />
-                        <span className="text-sm font-medium text-gray-700">
+                        <span className="text-sm font-medium text-secondary-700">
                           {language === 'pt' ? 'Categoria:' : 'Category:'}
                         </span>
                         <div className="flex flex-wrap gap-2">
@@ -201,7 +201,7 @@ function SearchContent() {
                               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                                 activeCategory === category.id
                                   ? 'bg-primary-600 text-white shadow-lg'
-                                  : 'bg-gray-100 text-gray-600 hover:bg-primary-50 hover:text-primary-600'
+                                  : 'bg-secondary-100 text-secondary-600 hover:bg-primary-50 hover:text-primary-600'
                               }`}
                             >
                               {category.label}
@@ -227,7 +227,7 @@ function SearchContent() {
                       
                       {/* Sort Options */}
                       <div className="flex items-center gap-3">
-                        <span className="text-sm font-medium text-gray-700">
+                        <span className="text-sm font-medium text-secondary-700">
                           {language === 'pt' ? 'Ordenar por:' : 'Sort by:'}
                         </span>
                         <select
@@ -254,7 +254,7 @@ function SearchContent() {
                     <div className="flex items-center justify-center py-20">
                       <div className="text-center">
                         <div className="w-12 h-12 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin mx-auto mb-4"></div>
-                        <p className="text-gray-600">
+                        <p className="text-secondary-600">
                           {language === 'pt' ? 'Pesquisando...' : 'Searching...'}
                         </p>
                       </div>
@@ -293,7 +293,7 @@ function SearchContent() {
                                 )}
                               </div>
                               
-                              <p className="text-gray-600 mb-4 leading-relaxed">
+                              <p className="text-secondary-600 mb-4 leading-relaxed">
                                 {result.description}
                               </p>
                               
@@ -336,7 +336,7 @@ function SearchContent() {
                                   {result.tags.slice(0, 4).map((tag, index) => (
                                     <span
                                       key={index}
-                                      className="text-xs font-medium text-gray-600 bg-gray-100 px-2 py-1 rounded-full"
+                                      className="text-xs font-medium text-secondary-600 bg-secondary-100 px-2 py-1 rounded-full"
                                     >
                                       {tag}
                                     </span>
@@ -355,13 +355,13 @@ function SearchContent() {
                     </div>
                   ) : query.trim() ? (
                     <div className="text-center py-20">
-                      <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gray-100 flex items-center justify-center">
+                      <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-secondary-100 flex items-center justify-center">
                         <MagnifyingGlassIcon className="w-12 h-12 text-gray-400" />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-4">
                         {language === 'pt' ? 'Nenhum resultado encontrado' : 'No results found'}
                       </h3>
-                      <p className="text-gray-600 max-w-md mx-auto mb-6">
+                      <p className="text-secondary-600 max-w-md mx-auto mb-6">
                         {language === 'pt' 
                           ? `Não encontramos resultados para "${query}". Tente palavras-chave diferentes ou verifique a ortografia.`
                           : `We couldn't find any results for "${query}". Try different keywords or check your spelling.`
@@ -384,7 +384,7 @@ function SearchContent() {
                       <h3 className="text-xl font-bold text-gray-900 mb-4">
                         {language === 'pt' ? 'Pesquisar na Comunidade' : 'Search the Community'}
                       </h3>
-                      <p className="text-gray-600 max-w-md mx-auto">
+                      <p className="text-secondary-600 max-w-md mx-auto">
                         {language === 'pt' 
                           ? 'Use a barra de pesquisa acima para encontrar eventos, negócios, grupos e conteúdo da comunidade portuguesa.'
                           : 'Use the search bar above to find events, businesses, groups, and Portuguese community content.'
@@ -412,7 +412,7 @@ export default function SearchPage() {
           <div className="flex items-center justify-center py-20">
             <div className="text-center">
               <div className="w-12 h-12 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading search...</p>
+              <p className="text-secondary-600">Loading search...</p>
             </div>
           </div>
         </div>

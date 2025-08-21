@@ -29,7 +29,7 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900">{t('testimonials.title', 'From Our Community')}</h2>
-          <p className="mt-4 text-lg text-gray-600">{t('testimonials.subtitle', 'See what our members are saying about LusoTown Live.')}</p>
+          <p className="mt-4 text-lg text-secondary-600">{t('testimonials.subtitle', 'See what our members are saying about LusoTown Live.')}</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
@@ -39,10 +39,10 @@ export default function Testimonials() {
                   <StarIcon key={i} className="w-5 h-5 text-yellow-400" />
                 ))}
               </div>
-              <blockquote className="text-gray-700 italic mb-6">“{testimonial.quote}”</blockquote>
+              <blockquote className="text-secondary-700 italic mb-6">“{testimonial.quote}”</blockquote>
               <div>
                 <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                <p className="text-sm text-gray-600">{testimonial.role}</p>
+                <p className="text-sm text-secondary-600">{testimonial.role}</p>
               </div>
             </div>
           ))}

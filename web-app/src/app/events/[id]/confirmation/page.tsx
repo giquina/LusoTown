@@ -143,10 +143,10 @@ const BookingConfirmationPage = () => {
                       <div>
                         <h2 className="text-2xl font-bold text-gray-900">{event.title}</h2>
                         <div className="flex gap-2 mt-1">
-                          <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full">
+                          <span className="bg-accent-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full">
                             🎁 FREE GIVEAWAY
                           </span>
-                          <span className="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                          <span className="bg-primary-500 text-white text-xs font-bold px-2 py-1 rounded-full">
                             NEW EVENT
                           </span>
                         </div>
@@ -156,11 +156,11 @@ const BookingConfirmationPage = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                          <CalendarIcon className="w-5 h-5 text-blue-600" />
+                          <CalendarIcon className="w-5 h-5 text-primary-600" />
                         </div>
                         <div>
                           <div className="font-semibold text-gray-900">{event.date}</div>
-                          <div className="text-sm text-gray-600">Date</div>
+                          <div className="text-sm text-secondary-600">Date</div>
                         </div>
                       </div>
 
@@ -170,17 +170,17 @@ const BookingConfirmationPage = () => {
                         </div>
                         <div>
                           <div className="font-semibold text-gray-900">{event.time}</div>
-                          <div className="text-sm text-gray-600">Time</div>
+                          <div className="text-sm text-secondary-600">Time</div>
                         </div>
                       </div>
 
                       <div className="flex items-center gap-3 sm:col-span-2">
                         <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                          <MapPinIcon className="w-5 h-5 text-green-600" />
+                          <MapPinIcon className="w-5 h-5 text-action-600" />
                         </div>
                         <div>
                           <div className="font-semibold text-gray-900">{event.location}</div>
-                          <div className="text-sm text-gray-600">{event.address}</div>
+                          <div className="text-sm text-secondary-600">{event.address}</div>
                         </div>
                       </div>
                     </div>
@@ -206,11 +206,11 @@ const BookingConfirmationPage = () => {
                     <div className="space-y-4">
                       <div className="flex items-start gap-3">
                         <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                          <span className="text-blue-600 font-bold text-sm">1</span>
+                          <span className="text-primary-600 font-bold text-sm">1</span>
                         </div>
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-1">Welcome & AI Tools Overview</h4>
-                          <p className="text-gray-600 text-sm">Introduction to ChatGPT, Claude, and other business AI tools</p>
+                          <p className="text-secondary-600 text-sm">Introduction to ChatGPT, Claude, and other business AI tools</p>
                         </div>
                       </div>
 
@@ -220,17 +220,17 @@ const BookingConfirmationPage = () => {
                         </div>
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-1">Hands-on Workshop</h4>
-                          <p className="text-gray-600 text-sm">Learn to create business applications step-by-step</p>
+                          <p className="text-secondary-600 text-sm">Learn to create business applications step-by-step</p>
                         </div>
                       </div>
 
                       <div className="flex items-start gap-3">
                         <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                          <span className="text-green-600 font-bold text-sm">3</span>
+                          <span className="text-action-600 font-bold text-sm">3</span>
                         </div>
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-1">Live App Creation</h4>
-                          <p className="text-gray-600 text-sm">Watch us build a real app for a participant's business idea</p>
+                          <p className="text-secondary-600 text-sm">Watch us build a real app for a participant's business idea</p>
                         </div>
                       </div>
 
@@ -240,7 +240,7 @@ const BookingConfirmationPage = () => {
                         </div>
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-1">Your Business Idea Workshop</h4>
-                          <p className="text-gray-600 text-sm">Get personalized feedback and potential app creation for your idea</p>
+                          <p className="text-secondary-600 text-sm">Get personalized feedback and potential app creation for your idea</p>
                         </div>
                       </div>
                     </div>
@@ -257,20 +257,20 @@ const BookingConfirmationPage = () => {
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="flex items-center gap-3">
-                        <CheckCircleIcon className="w-5 h-5 text-green-500" />
-                        <span className="text-gray-700">Laptop or tablet</span>
+                        <CheckCircleIcon className="w-5 h-5 text-action-500" />
+                        <span className="text-secondary-700">Laptop or tablet</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <CheckCircleIcon className="w-5 h-5 text-green-500" />
-                        <span className="text-gray-700">Notebook for ideas</span>
+                        <CheckCircleIcon className="w-5 h-5 text-action-500" />
+                        <span className="text-secondary-700">Notebook for ideas</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <CheckCircleIcon className="w-5 h-5 text-green-500" />
-                        <span className="text-gray-700">Business idea (optional)</span>
+                        <CheckCircleIcon className="w-5 h-5 text-action-500" />
+                        <span className="text-secondary-700">Business idea (optional)</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <CheckCircleIcon className="w-5 h-5 text-green-500" />
-                        <span className="text-gray-700">Enthusiasm to learn!</span>
+                        <CheckCircleIcon className="w-5 h-5 text-action-500" />
+                        <span className="text-secondary-700">Enthusiasm to learn!</span>
                       </div>
                     </div>
 
@@ -299,15 +299,15 @@ const BookingConfirmationPage = () => {
                           onClick={handleAddToCalendar}
                           className="w-full flex items-center gap-3 p-3 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors"
                         >
-                          <CalendarIcon className="w-5 h-5 text-blue-600" />
-                          <span className="text-blue-700 font-medium">Add to Calendar</span>
+                          <CalendarIcon className="w-5 h-5 text-primary-600" />
+                          <span className="text-primary-700 font-medium">Add to Calendar</span>
                         </button>
 
                         <button
                           onClick={handleShare}
                           className="w-full flex items-center gap-3 p-3 bg-green-50 border border-green-200 rounded-lg hover:bg-green-100 transition-colors"
                         >
-                          <ShareIcon className="w-5 h-5 text-green-600" />
+                          <ShareIcon className="w-5 h-5 text-action-600" />
                           <span className="text-green-700 font-medium">Share with Friends</span>
                         </button>
 
@@ -330,7 +330,7 @@ const BookingConfirmationPage = () => {
                     >
                       <h3 className="text-lg font-bold text-gray-900 mb-4">Important Information</h3>
                       
-                      <div className="space-y-4 text-sm text-gray-700">
+                      <div className="space-y-4 text-sm text-secondary-700">
                         <div className="flex items-start gap-3">
                           <BellIcon className="w-5 h-5 text-amber-500 mt-0.5" />
                           <div>
@@ -340,7 +340,7 @@ const BookingConfirmationPage = () => {
                         </div>
 
                         <div className="flex items-start gap-3">
-                          <DocumentTextIcon className="w-5 h-5 text-blue-500 mt-0.5" />
+                          <DocumentTextIcon className="w-5 h-5 text-primary-500 mt-0.5" />
                           <div>
                             <div className="font-medium text-gray-900 mb-1">Cancellation Policy</div>
                             <div>Full refund available up to 48 hours before the event.</div>
@@ -348,7 +348,7 @@ const BookingConfirmationPage = () => {
                         </div>
 
                         <div className="flex items-start gap-3">
-                          <MapPinIcon className="w-5 h-5 text-green-500 mt-0.5" />
+                          <MapPinIcon className="w-5 h-5 text-action-500 mt-0.5" />
                           <div>
                             <div className="font-medium text-gray-900 mb-1">Venue Access</div>
                             <div>Doors open 15 minutes before the event. Please arrive on time.</div>
@@ -368,18 +368,18 @@ const BookingConfirmationPage = () => {
                       
                       <div className="space-y-3">
                         <div className="flex items-center gap-3">
-                          <EnvelopeIcon className="w-5 h-5 text-blue-500" />
+                          <EnvelopeIcon className="w-5 h-5 text-primary-500" />
                           <div>
                             <div className="font-medium text-gray-900">Email Support</div>
-                            <div className="text-sm text-gray-600">events@lusotown.com</div>
+                            <div className="text-sm text-secondary-600">events@lusotown.com</div>
                           </div>
                         </div>
 
                         <div className="flex items-center gap-3">
-                          <PhoneIcon className="w-5 h-5 text-green-500" />
+                          <PhoneIcon className="w-5 h-5 text-action-500" />
                           <div>
                             <div className="font-medium text-gray-900">WhatsApp</div>
-                            <div className="text-sm text-gray-600">Quick response support</div>
+                            <div className="text-sm text-secondary-600">Quick response support</div>
                           </div>
                         </div>
                       </div>

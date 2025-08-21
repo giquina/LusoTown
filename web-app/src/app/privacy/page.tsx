@@ -53,7 +53,7 @@ export default function PrivacyPolicy() {
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
                 Privacy Policy
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-xl text-secondary-600 leading-relaxed">
                 Your privacy is fundamental to everything we do at LusoTown. This policy explains how we collect, use, and protect your personal data in accordance with UK GDPR and Data Protection Act 2018.
               </p>
             </div>
@@ -73,29 +73,29 @@ export default function PrivacyPolicy() {
                   <div className="space-y-3">
                     <div className="flex items-start">
                       <div className="w-2 h-2 bg-secondary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <p className="text-gray-600"><strong>We collect minimal data</strong> - only what's necessary for your safety and community experience</p>
+                      <p className="text-secondary-600"><strong>We collect minimal data</strong> - only what's necessary for your safety and community experience</p>
                     </div>
                     <div className="flex items-start">
                       <div className="w-2 h-2 bg-secondary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <p className="text-gray-600"><strong>You control your data</strong> - view, edit, or delete your information anytime</p>
+                      <p className="text-secondary-600"><strong>You control your data</strong> - view, edit, or delete your information anytime</p>
                     </div>
                     <div className="flex items-start">
                       <div className="w-2 h-2 bg-secondary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <p className="text-gray-600"><strong>Security is paramount</strong> - your data is encrypted and protected</p>
+                      <p className="text-secondary-600"><strong>Security is paramount</strong> - your data is encrypted and protected</p>
                     </div>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-start">
                       <div className="w-2 h-2 bg-secondary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <p className="text-gray-600"><strong>No selling or sharing</strong> - we never sell your data to third parties</p>
+                      <p className="text-secondary-600"><strong>No selling or sharing</strong> - we never sell your data to third parties</p>
                     </div>
                     <div className="flex items-start">
                       <div className="w-2 h-2 bg-secondary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <p className="text-gray-600"><strong>UK-based processing</strong> - your data remains within the UK/EU</p>
+                      <p className="text-secondary-600"><strong>UK-based processing</strong> - your data remains within the UK/EU</p>
                     </div>
                     <div className="flex items-start">
                       <div className="w-2 h-2 bg-secondary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <p className="text-gray-600"><strong>Transparent practices</strong> - clear information about what we do with your data</p>
+                      <p className="text-secondary-600"><strong>Transparent practices</strong> - clear information about what we do with your data</p>
                     </div>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ export default function PrivacyPolicy() {
                   <UserIcon className="w-6 h-6 text-primary-600 mr-3" />
                   1. Who We Are
                 </h2>
-                <div className="prose text-gray-600 space-y-4">
+                <div className="prose text-secondary-600 space-y-4">
                   <p>
                     LusoTown is operated by LusoTown Ltd, a company registered in England and Wales. 
                     We are committed to protecting and respecting your privacy in accordance with the 
@@ -141,8 +141,8 @@ export default function PrivacyPolicy() {
                   
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">Account Information</h3>
-                    <p className="text-gray-600 mb-3">When you create an account, we collect:</p>
-                    <ul className="text-gray-600 space-y-2 ml-4">
+                    <p className="text-secondary-600 mb-3">When you create an account, we collect:</p>
+                    <ul className="text-secondary-600 space-y-2 ml-4">
                       <li className="flex items-start">
                         <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         First name and age (to create your community profile)
@@ -168,7 +168,7 @@ export default function PrivacyPolicy() {
 
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">Usage Information</h3>
-                    <ul className="text-gray-600 space-y-2 ml-4">
+                    <ul className="text-secondary-600 space-y-2 ml-4">
                       <li className="flex items-start">
                         <div className="w-2 h-2 bg-secondary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         Platform activity (events attended, groups joined, messages sent)
@@ -197,7 +197,7 @@ export default function PrivacyPolicy() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-primary-50 rounded-xl p-6">
                       <h3 className="text-lg font-semibold text-primary-700 mb-3">Essential Services</h3>
-                      <ul className="text-gray-600 space-y-2">
+                      <ul className="text-secondary-600 space-y-2">
                         <li>• Account creation and management</li>
                         <li>• Identity verification and safety</li>
                         <li>• Community matching and connections</li>
@@ -208,7 +208,7 @@ export default function PrivacyPolicy() {
                     
                     <div className="bg-secondary-50 rounded-xl p-6">
                       <h3 className="text-lg font-semibold text-secondary-700 mb-3">Communication & Support</h3>
-                      <ul className="text-gray-600 space-y-2">
+                      <ul className="text-secondary-600 space-y-2">
                         <li>• Send important service updates</li>
                         <li>• Respond to your questions and requests</li>
                         <li>• Notify you of relevant community activities</li>
@@ -220,10 +220,10 @@ export default function PrivacyPolicy() {
 
                   <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-6">
                     <h3 className="text-lg font-semibold text-purple-700 mb-3">Platform Improvement (With Your Consent)</h3>
-                    <p className="text-gray-600 mb-3">
+                    <p className="text-secondary-600 mb-3">
                       We may use anonymized data to improve our platform, but only with your explicit consent:
                     </p>
-                    <ul className="text-gray-600 space-y-2 ml-4">
+                    <ul className="text-secondary-600 space-y-2 ml-4">
                       <li>• Analyze platform usage to enhance user experience</li>
                       <li>• Develop new features and services</li>
                       <li>• Conduct research on community building and women's networking</li>
@@ -246,28 +246,28 @@ export default function PrivacyPolicy() {
                     <div className="w-4 h-4 bg-green-400 rounded-full mt-1 mr-4 flex-shrink-0"></div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Contractual Necessity</h3>
-                      <p className="text-gray-600">Processing your account data to provide our community platform services</p>
+                      <p className="text-secondary-600">Processing your account data to provide our community platform services</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <div className="w-4 h-4 bg-primary-400 rounded-full mt-1 mr-4 flex-shrink-0"></div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Legitimate Interest</h3>
-                      <p className="text-gray-600">Ensuring platform safety, preventing fraud, and improving user experience</p>
+                      <p className="text-secondary-600">Ensuring platform safety, preventing fraud, and improving user experience</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <div className="w-4 h-4 bg-purple-400 rounded-full mt-1 mr-4 flex-shrink-0"></div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Consent</h3>
-                      <p className="text-gray-600">Marketing communications and optional data analysis for platform improvement</p>
+                      <p className="text-secondary-600">Marketing communications and optional data analysis for platform improvement</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <div className="w-4 h-4 bg-red-400 rounded-full mt-1 mr-4 flex-shrink-0"></div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Legal Obligation</h3>
-                      <p className="text-gray-600">Compliance with legal requirements and law enforcement requests when necessary</p>
+                      <p className="text-secondary-600">Compliance with legal requirements and law enforcement requests when necessary</p>
                     </div>
                   </div>
                 </div>
@@ -292,21 +292,21 @@ export default function PrivacyPolicy() {
                     <div className="space-y-4">
                       <div className="border-l-4 border-primary-400 pl-4">
                         <h4 className="font-semibold text-gray-900">Service Providers</h4>
-                        <p className="text-gray-600">
+                        <p className="text-secondary-600">
                           We use trusted UK/EU-based service providers for hosting (Supabase), email delivery, 
                           and payment processing. These providers are bound by strict data protection agreements.
                         </p>
                       </div>
                       <div className="border-l-4 border-secondary-400 pl-4">
                         <h4 className="font-semibold text-gray-900">Safety and Legal Requirements</h4>
-                        <p className="text-gray-600">
+                        <p className="text-secondary-600">
                           We may share information if required by law, to prevent harm, or to protect the 
                           safety of our community members.
                         </p>
                       </div>
                       <div className="border-l-4 border-purple-400 pl-4">
                         <h4 className="font-semibold text-gray-900">Business Transfers</h4>
-                        <p className="text-gray-600">
+                        <p className="text-secondary-600">
                           In the event of a merger or acquisition, user data would be transferred under 
                           the same privacy protections with advance notice to users.
                         </p>
@@ -326,44 +326,44 @@ export default function PrivacyPolicy() {
                   <div className="space-y-4">
                     <div className="bg-primary-50 rounded-lg p-4">
                       <h3 className="font-semibold text-primary-700 mb-2">Access</h3>
-                      <p className="text-gray-600 text-sm">Request a copy of all personal data we hold about you</p>
+                      <p className="text-secondary-600 text-sm">Request a copy of all personal data we hold about you</p>
                     </div>
                     <div className="bg-secondary-50 rounded-lg p-4">
                       <h3 className="font-semibold text-secondary-700 mb-2">Rectification</h3>
-                      <p className="text-gray-600 text-sm">Correct any inaccurate or incomplete information</p>
+                      <p className="text-secondary-600 text-sm">Correct any inaccurate or incomplete information</p>
                     </div>
                     <div className="bg-purple-50 rounded-lg p-4">
                       <h3 className="font-semibold text-purple-700 mb-2">Erasure</h3>
-                      <p className="text-gray-600 text-sm">Request deletion of your personal data ('right to be forgotten')</p>
+                      <p className="text-secondary-600 text-sm">Request deletion of your personal data ('right to be forgotten')</p>
                     </div>
                     <div className="bg-green-50 rounded-lg p-4">
                       <h3 className="font-semibold text-green-700 mb-2">Portability</h3>
-                      <p className="text-gray-600 text-sm">Export your data in a machine-readable format</p>
+                      <p className="text-secondary-600 text-sm">Export your data in a machine-readable format</p>
                     </div>
                   </div>
                   <div className="space-y-4">
                     <div className="bg-indigo-50 rounded-lg p-4">
                       <h3 className="font-semibold text-indigo-700 mb-2">Restriction</h3>
-                      <p className="text-gray-600 text-sm">Limit how we process your personal data</p>
+                      <p className="text-secondary-600 text-sm">Limit how we process your personal data</p>
                     </div>
                     <div className="bg-pink-50 rounded-lg p-4">
                       <h3 className="font-semibold text-pink-700 mb-2">Objection</h3>
-                      <p className="text-gray-600 text-sm">Object to processing based on legitimate interests</p>
+                      <p className="text-secondary-600 text-sm">Object to processing based on legitimate interests</p>
                     </div>
                     <div className="bg-orange-50 rounded-lg p-4">
                       <h3 className="font-semibold text-orange-700 mb-2">Withdraw Consent</h3>
-                      <p className="text-gray-600 text-sm">Withdraw consent for optional processing activities</p>
+                      <p className="text-secondary-600 text-sm">Withdraw consent for optional processing activities</p>
                     </div>
                     <div className="bg-teal-50 rounded-lg p-4">
                       <h3 className="font-semibold text-teal-700 mb-2">Complaint</h3>
-                      <p className="text-gray-600 text-sm">File a complaint with the ICO or relevant supervisory authority</p>
+                      <p className="text-secondary-600 text-sm">File a complaint with the ICO or relevant supervisory authority</p>
                     </div>
                   </div>
                 </div>
                 
                 <div className="mt-6 bg-gray-50 rounded-xl p-6">
                   <h3 className="font-semibold text-gray-900 mb-3">How to Exercise Your Rights</h3>
-                  <p className="text-gray-600 mb-3">
+                  <p className="text-secondary-600 mb-3">
                     You can exercise most of these rights directly in your account settings. For other requests:
                   </p>
                   <div className="flex items-center space-x-4">
@@ -380,10 +380,10 @@ export default function PrivacyPolicy() {
               <div className="bg-white rounded-2xl p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">7. Data Retention</h2>
                 <div className="space-y-4">
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     We retain your personal data only as long as necessary to provide our services and comply with legal obligations:
                   </p>
-                  <ul className="text-gray-600 space-y-3 ml-4">
+                  <ul className="text-secondary-600 space-y-3 ml-4">
                     <li className="flex items-start">
                       <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                       <span><strong>Active accounts:</strong> Data retained while your account is active</span>
@@ -406,7 +406,7 @@ export default function PrivacyPolicy() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Technical Safeguards</h3>
-                    <ul className="text-gray-600 space-y-2">
+                    <ul className="text-secondary-600 space-y-2">
                       <li>• End-to-end encryption for sensitive data</li>
                       <li>• Secure HTTPS connections</li>
                       <li>• Regular security audits and updates</li>
@@ -416,7 +416,7 @@ export default function PrivacyPolicy() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Organizational Measures</h3>
-                    <ul className="text-gray-600 space-y-2">
+                    <ul className="text-secondary-600 space-y-2">
                       <li>• Staff training on data protection</li>
                       <li>• Limited access on a need-to-know basis</li>
                       <li>• Regular security assessments</li>

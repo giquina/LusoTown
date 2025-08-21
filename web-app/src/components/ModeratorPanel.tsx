@@ -51,7 +51,6 @@ export default function ModeratorPanel({
     setRoomSettings(newSettings)
     
     // In real implementation, this would update the room settings via socket
-    console.log('Updating room settings:', newSettings)
   }
 
   const handleUserAction = (userId: string, action: 'timeout' | 'ban' | 'unban', duration?: number) => {
@@ -89,14 +88,14 @@ export default function ModeratorPanel({
         <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-primary-50">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-blue-600" />
+              <Shield className="w-5 h-5 text-primary-600" />
               <h2 className="text-lg font-semibold text-gray-900">
                 {language === 'pt' ? 'Painel Moderação' : 'Moderation Panel'}
               </h2>
             </div>
             <button
               onClick={onClose}
-              className="p-1 text-gray-500 hover:text-gray-700 rounded-lg"
+              className="p-1 text-gray-500 hover:text-secondary-700 rounded-lg"
             >
               ×
             </button>
@@ -115,8 +114,8 @@ export default function ModeratorPanel({
                 className={`flex-1 flex items-center justify-center gap-1 py-2 px-3 rounded-md text-xs 
                   font-medium transition-colors ${
                   activeTab === tab.key
-                    ? 'bg-blue-100 text-blue-700'
-                    : 'text-gray-600 hover:text-gray-800'
+                    ? 'bg-blue-100 text-primary-700'
+                    : 'text-secondary-600 hover:text-secondary-800'
                 }`}
               >
                 <tab.icon className="w-3 h-3" />
@@ -137,14 +136,14 @@ export default function ModeratorPanel({
 
               {/* Slow Mode */}
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                <label className="text-sm font-medium text-secondary-700 flex items-center gap-2">
                   <Clock className="w-4 h-4" />
                   {language === 'pt' ? 'Modo Lento' : 'Slow Mode'}
                 </label>
                 <select
                   value={roomSettings.slowMode}
                   onChange={(e) => handleSettingsUpdate('slowMode', parseInt(e.target.value))}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
+                  className="w-full border border-secondary-300 rounded-lg px-3 py-2 text-sm"
                 >
                   <option value={0}>{language === 'pt' ? 'Desativado' : 'Off'}</option>
                   <option value={10}>10 {language === 'pt' ? 'segundos' : 'seconds'}</option>
@@ -158,14 +157,14 @@ export default function ModeratorPanel({
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Crown className="w-4 h-4 text-premium-600" />
-                  <span className="text-sm font-medium text-gray-700">
+                  <span className="text-sm font-medium text-secondary-700">
                     {language === 'pt' ? 'Só Membros' : 'Subscribers Only'}
                   </span>
                 </div>
                 <button
                   onClick={() => handleSettingsUpdate('subscriberOnly', !roomSettings.subscriberOnly)}
                   className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
-                    roomSettings.subscriberOnly ? 'bg-primary-600' : 'bg-gray-200'
+                    roomSettings.subscriberOnly ? 'bg-primary-600' : 'bg-secondary-200'
                   }`}
                 >
                   <span
@@ -180,14 +179,14 @@ export default function ModeratorPanel({
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <MessageSquare className="w-4 h-4 text-yellow-600" />
-                  <span className="text-sm font-medium text-gray-700">
+                  <span className="text-sm font-medium text-secondary-700">
                     {language === 'pt' ? 'Só Emotes' : 'Emote Only'}
                   </span>
                 </div>
                 <button
                   onClick={() => handleSettingsUpdate('emoteOnly', !roomSettings.emoteOnly)}
                   className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
-                    roomSettings.emoteOnly ? 'bg-primary-600' : 'bg-gray-200'
+                    roomSettings.emoteOnly ? 'bg-primary-600' : 'bg-secondary-200'
                   }`}
                 >
                   <span
@@ -202,14 +201,14 @@ export default function ModeratorPanel({
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="text-sm">🇵🇹</span>
-                  <span className="text-sm font-medium text-gray-700">
+                  <span className="text-sm font-medium text-secondary-700">
                     {language === 'pt' ? 'Só Português' : 'Portuguese Only'}
                   </span>
                 </div>
                 <button
                   onClick={() => handleSettingsUpdate('portugueseOnly', !roomSettings.portugueseOnly)}
                   className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
-                    roomSettings.portugueseOnly ? 'bg-primary-600' : 'bg-gray-200'
+                    roomSettings.portugueseOnly ? 'bg-primary-600' : 'bg-secondary-200'
                   }`}
                 >
                   <span
@@ -252,7 +251,7 @@ export default function ModeratorPanel({
               {/* Moderators */}
               {moderators.length > 0 && (
                 <div>
-                  <h4 className="text-xs font-semibold text-blue-600 mb-2 uppercase tracking-wide">
+                  <h4 className="text-xs font-semibold text-primary-600 mb-2 uppercase tracking-wide">
                     {language === 'pt' ? 'Moderadores' : 'Moderators'} ({moderators.length})
                   </h4>
                   <div className="space-y-2">
@@ -292,7 +291,7 @@ export default function ModeratorPanel({
               {/* Viewers */}
               {viewers.length > 0 && (
                 <div>
-                  <h4 className="text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wide">
+                  <h4 className="text-xs font-semibold text-secondary-600 mb-2 uppercase tracking-wide">
                     {language === 'pt' ? 'Espectadores' : 'Viewers'} ({viewers.length})
                   </h4>
                   <div className="space-y-2 max-h-40 overflow-y-auto">
@@ -341,7 +340,7 @@ export default function ModeratorPanel({
                           {action.timestamp.toLocaleTimeString()}
                         </span>
                       </div>
-                      <p className="text-sm text-gray-700 mt-1">{action.reason}</p>
+                      <p className="text-sm text-secondary-700 mt-1">{action.reason}</p>
                     </div>
                   ))}
                 </div>
@@ -398,7 +397,7 @@ function UserRow({
           <div className="flex items-center gap-1">
             <span className="text-sm font-medium text-gray-900">{user.username}</span>
             {user.isHost && <Crown className="w-3 h-3 text-action-600" />}
-            {user.isModerator && !user.isHost && <Shield className="w-3 h-3 text-blue-600" />}
+            {user.isModerator && !user.isHost && <Shield className="w-3 h-3 text-primary-600" />}
             {user.isSubscriber && !user.isModerator && !user.isHost && (
               <Crown className="w-3 h-3 text-premium-600" />
             )}
@@ -414,7 +413,7 @@ function UserRow({
         <div className="relative">
           <button
             onClick={() => setShowActions(!showActions)}
-            className="opacity-0 group-hover:opacity-100 p-1 text-gray-400 hover:text-gray-600 
+            className="opacity-0 group-hover:opacity-100 p-1 text-gray-400 hover:text-secondary-600 
               rounded transition-all"
           >
             <AlertTriangle className="w-4 h-4" />
@@ -459,7 +458,7 @@ function UserRow({
                   setShowActions(false)
                 }}
                 className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-gray-50 
-                  text-red-600 hover:text-red-700"
+                  text-coral-600 hover:text-red-700"
               >
                 <Ban className="w-3 h-3" />
                 {language === 'pt' ? 'Banir' : 'Ban'}

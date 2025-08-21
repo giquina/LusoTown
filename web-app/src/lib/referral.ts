@@ -1,4 +1,5 @@
 import { supabase } from './supabase'
+import { SOCIAL_URLS } from '@/config'
 
 // Referral Types
 export interface ReferralCode {

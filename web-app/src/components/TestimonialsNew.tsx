@@ -1,12 +1,19 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ROUTES } from '@/config'
 import Image from 'next/image'
+import { ROUTES } from '@/config'
 import { StarIcon } from '@heroicons/react/24/solid'
+import { ROUTES } from '@/config'
 import { ChatBubbleLeftIcon } from '@heroicons/react/24/outline'
+import { ROUTES } from '@/config'
 import { getImagesByCategory, getImageWithFallback, getAltTextWithFallback } from '@/lib/profileImages'
+import { ROUTES } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config'
 import { createMixedTestimonials, getTestimonialText, authenticPortugueseTestimonials } from '@/lib/testimonialMixer'
+import { ROUTES } from '@/config'
 
 // Combined testimonials with language indicators for mixed display
 const allTestimonials = [
@@ -213,7 +220,7 @@ export default function TestimonialsNew() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             <span className="gradient-text">{t('testimonials.title')}</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-secondary-600 leading-relaxed">
             {t('testimonials.subtitle')}
           </p>
         </motion.div>
@@ -258,7 +265,7 @@ export default function TestimonialsNew() {
                   </div>
 
                   {/* Testimonial Text */}
-                  <blockquote className="text-gray-700 leading-relaxed mb-6 text-sm sm:text-base">
+                  <blockquote className="text-secondary-700 leading-relaxed mb-6 text-sm sm:text-base">
                     "{displayContent.text}"
                   </blockquote>
 
@@ -304,7 +311,7 @@ export default function TestimonialsNew() {
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
               Meet Your <span className="gradient-text">London Portuguese Community</span>
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
               Join thousands of Portuguese speakers across London who are organizing events, building communities, and connecting throughout the city.
             </p>
           </div>
@@ -346,15 +353,15 @@ export default function TestimonialsNew() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               <div>
                 <p className="text-4xl font-bold text-primary-500 mb-2">4.9/5</p>
-                <p className="text-gray-600">Average Rating</p>
+                <p className="text-secondary-600">Average Rating</p>
               </div>
               <div>
                 <p className="text-4xl font-bold text-secondary-500 mb-2">8K+</p>
-                <p className="text-gray-600">London Members</p>
+                <p className="text-secondary-600">London Members</p>
               </div>
               <div>
                 <p className="text-4xl font-bold text-accent-500 mb-2">32+</p>
-                <p className="text-gray-600">London Boroughs</p>
+                <p className="text-secondary-600">London Boroughs</p>
               </div>
             </div>
           </div>
@@ -371,10 +378,10 @@ export default function TestimonialsNew() {
           <h3 className="text-2xl font-semibold text-gray-900 mb-4">
             Ready to Connect with Portuguese Speakers in London?
           </h3>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-secondary-600 mb-8 max-w-2xl mx-auto">
             Join thousands of Portuguese speakers across London who are organizing events, building communities, and creating lasting connections throughout the city.
           </p>
-          <a href="/signup" className="btn-primary text-lg px-10 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 inline-block">
+          <a href={ROUTES.auth.signup} className="btn-primary text-lg px-10 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 inline-block">
             Join the London Community
           </a>
         </motion.div>

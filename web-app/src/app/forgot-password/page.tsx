@@ -55,7 +55,7 @@ export default function ForgotPassword() {
             <div className="container-width">
               <div className="max-w-md mx-auto">
                 <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-                  <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-green-100 text-action-600 rounded-full flex items-center justify-center mx-auto mb-6">
                     <CheckCircleIcon className="w-8 h-8" />
                   </div>
                   
@@ -63,7 +63,7 @@ export default function ForgotPassword() {
                     Check Your Email
                   </h1>
                   
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-secondary-600 mb-6">
                     We've sent password reset instructions to <strong>{email}</strong>
                   </p>
                   
@@ -120,7 +120,7 @@ export default function ForgotPassword() {
                     Reset Your Password
                   </h1>
                   
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     Enter your email address and we'll send you a link to reset your password.
                   </p>
                 </div>
@@ -129,13 +129,13 @@ export default function ForgotPassword() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {error && (
                     <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center">
-                      <ExclamationTriangleIcon className="w-5 h-5 text-red-500 mr-2" />
+                      <ExclamationTriangleIcon className="w-5 h-5 text-coral-500 mr-2" />
                       <span className="text-red-700 text-sm">{error}</span>
                     </div>
                   )}
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-2">
                       Email Address
                     </label>
                     <div className="relative">
@@ -148,7 +148,7 @@ export default function ForgotPassword() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter your email address"
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                        className="w-full pl-10 pr-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                         required
                       />
                     </div>
@@ -235,10 +235,10 @@ export default function ForgotPassword() {
         <section className="py-12 bg-gray-50">
           <div className="container-width">
             <div className="max-w-2xl mx-auto">
-              <div className="bg-gray-100 rounded-xl p-6 text-center">
-                <LockClosedIcon className="w-8 h-8 text-gray-600 mx-auto mb-3" />
+              <div className="bg-secondary-100 rounded-xl p-6 text-center">
+                <LockClosedIcon className="w-8 h-8 text-secondary-600 mx-auto mb-3" />
                 <h3 className="font-semibold text-gray-900 mb-2">Your Security Matters</h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-secondary-600 text-sm">
                   We take your account security seriously. Password reset links are encrypted, 
                   expire quickly, and can only be used once. Never share reset links with others.
                 </p>

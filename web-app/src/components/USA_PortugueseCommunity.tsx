@@ -324,7 +324,7 @@ export default function USA_PortugueseCommunity({
           className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
             selectedCity === 'all' 
               ? 'bg-blue-100 text-blue-800 border border-blue-200' 
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
           }`}
         >
           All Cities
@@ -336,7 +336,7 @@ export default function USA_PortugueseCommunity({
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
               selectedCity === key 
                 ? 'bg-blue-100 text-blue-800 border border-blue-200' 
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
             }`}
           >
             {city.name}
@@ -355,16 +355,16 @@ export default function USA_PortugueseCommunity({
             Portuguese Americans
             <span className="text-4xl ml-3">🇵🇹</span>
           </h2>
-          <p className="text-xl text-gray-700 mb-6">
+          <p className="text-xl text-secondary-700 mb-6">
             Over 1.5 million Portuguese Americans preserve their rich heritage across the United States
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="bg-blue-50 rounded-lg p-4">
-              <div className="text-2xl font-bold text-blue-600">{usaCommunityData.totalPopulation.toLocaleString()}</div>
+              <div className="text-2xl font-bold text-primary-600">{usaCommunityData.totalPopulation.toLocaleString()}</div>
               <div className="text-sm text-blue-800">Portuguese Americans</div>
             </div>
             <div className="bg-green-50 rounded-lg p-4">
-              <div className="text-2xl font-bold text-green-600">155</div>
+              <div className="text-2xl font-bold text-action-600">155</div>
               <div className="text-sm text-green-800">Years of Heritage</div>
             </div>
             <div className="bg-purple-50 rounded-lg p-4">
@@ -372,7 +372,7 @@ export default function USA_PortugueseCommunity({
               <div className="text-sm text-purple-800">States with Communities</div>
             </div>
             <div className="bg-red-50 rounded-lg p-4">
-              <div className="text-2xl font-bold text-red-600">250+</div>
+              <div className="text-2xl font-bold text-coral-600">250+</div>
               <div className="text-sm text-red-800">Cultural Organizations</div>
             </div>
           </div>
@@ -387,17 +387,17 @@ export default function USA_PortugueseCommunity({
             <div key={key} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
               <div className="flex items-center justify-between mb-4">
                 <h4 className="text-xl font-bold text-gray-900">{city.name}</h4>
-                <span className="text-2xl font-bold text-blue-600">{city.population.toLocaleString()}</span>
+                <span className="text-2xl font-bold text-primary-600">{city.population.toLocaleString()}</span>
               </div>
               
               <div className="space-y-3">
                 <div>
-                  <p className="text-sm text-gray-600 mb-1">Key Neighborhoods:</p>
-                  <p className="text-gray-800">{city.neighborhoods.join(', ')}</p>
+                  <p className="text-sm text-secondary-600 mb-1">Key Neighborhoods:</p>
+                  <p className="text-secondary-800">{city.neighborhoods.join(', ')}</p>
                 </div>
                 
                 <div>
-                  <p className="text-sm text-gray-600 mb-1">Cultural Centers:</p>
+                  <p className="text-sm text-secondary-600 mb-1">Cultural Centers:</p>
                   <div className="flex flex-wrap gap-2">
                     {city.culturalCenters.map((center, index) => (
                       <span key={index} className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">
@@ -408,7 +408,7 @@ export default function USA_PortugueseCommunity({
                 </div>
                 
                 <div>
-                  <p className="text-sm text-gray-600 mb-1">Primary Origins:</p>
+                  <p className="text-sm text-secondary-600 mb-1">Primary Origins:</p>
                   <div className="flex flex-wrap gap-2">
                     {city.primaryOrigins.map((origin, index) => (
                       <span key={index} className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">
@@ -419,7 +419,7 @@ export default function USA_PortugueseCommunity({
                 </div>
                 
                 <div className="pt-2 border-t border-gray-200">
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     <strong>Established:</strong> {city.establishedSince}
                   </p>
                 </div>
@@ -441,12 +441,12 @@ export default function USA_PortugueseCommunity({
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <h4 className="text-xl font-bold text-gray-900 mb-2">{event.title}</h4>
-                  <p className="text-gray-600 mb-3">{event.description}</p>
+                  <p className="text-secondary-600 mb-3">{event.description}</p>
                 </div>
                 <span className={`px-3 py-1 text-xs font-medium rounded-full ${
                   event.type === 'cultural' ? 'bg-purple-100 text-purple-800' :
                   event.type === 'religious' ? 'bg-blue-100 text-blue-800' :
-                  'bg-gray-100 text-gray-800'
+                  'bg-secondary-100 text-secondary-800'
                 }`}>
                   {event.type}
                 </span>
@@ -454,19 +454,19 @@ export default function USA_PortugueseCommunity({
 
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div>
-                  <p className="text-sm text-gray-600">Date</p>
+                  <p className="text-sm text-secondary-600">Date</p>
                   <p className="font-semibold">{formatDate(event.date)}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Location</p>
+                  <p className="text-sm text-secondary-600">Location</p>
                   <p className="font-semibold">{event.location.city}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Expected Attendance</p>
+                  <p className="text-sm text-secondary-600">Expected Attendance</p>
                   <p className="font-semibold">{event.expectedAttendance.toLocaleString()}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Cost</p>
+                  <p className="text-sm text-secondary-600">Cost</p>
                   <p className="font-semibold">
                     {event.cost.amount === 0 ? 'Free' : formatCurrency(event.cost.amount)}
                   </p>
@@ -474,8 +474,8 @@ export default function USA_PortugueseCommunity({
               </div>
 
               <div className="mb-4">
-                <p className="text-sm text-gray-600 mb-1">Cultural Significance:</p>
-                <p className="text-sm text-gray-700">{event.culturalSignificance}</p>
+                <p className="text-sm text-secondary-600 mb-1">Cultural Significance:</p>
+                <p className="text-sm text-secondary-700">{event.culturalSignificance}</p>
               </div>
 
               <div className="flex space-x-3">
@@ -485,7 +485,7 @@ export default function USA_PortugueseCommunity({
                 >
                   {event.registrationRequired ? 'Register' : 'Get Details'}
                 </button>
-                <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors">
                   Share
                 </button>
               </div>
@@ -505,14 +505,14 @@ export default function USA_PortugueseCommunity({
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h4 className="text-xl font-bold text-gray-900">{business.businessName}</h4>
-                <p className="text-gray-600">Owner: {business.owner}</p>
+                <p className="text-secondary-600">Owner: {business.owner}</p>
                 <p className="text-sm text-gray-500">{business.location.city} • {business.industry}</p>
               </div>
               <span className="text-sm text-gray-500">Est. {business.establishedYear}</span>
             </div>
 
             <div className="mb-4">
-              <p className="text-sm text-gray-600 mb-2">Services:</p>
+              <p className="text-sm text-secondary-600 mb-2">Services:</p>
               <div className="flex flex-wrap gap-2">
                 {business.services.map((service, index) => (
                   <span key={index} className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">
@@ -523,7 +523,7 @@ export default function USA_PortugueseCommunity({
             </div>
 
             <div className="mb-4">
-              <p className="text-sm text-gray-600 mb-2">Portuguese Specialties:</p>
+              <p className="text-sm text-secondary-600 mb-2">Portuguese Specialties:</p>
               <div className="flex flex-wrap gap-2">
                 {business.portugueseSpecialties.map((specialty, index) => (
                   <span key={index} className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">
@@ -534,11 +534,11 @@ export default function USA_PortugueseCommunity({
             </div>
 
             <div className="mb-4">
-              <p className="text-sm text-gray-600 mb-2">Community Involvement:</p>
-              <ul className="text-sm text-gray-700 space-y-1">
+              <p className="text-sm text-secondary-600 mb-2">Community Involvement:</p>
+              <ul className="text-sm text-secondary-700 space-y-1">
                 {business.communityInvolvement.map((involvement, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="text-green-600 mr-2">•</span>
+                    <span className="text-action-600 mr-2">•</span>
                     {involvement}
                   </li>
                 ))}
@@ -549,7 +549,7 @@ export default function USA_PortugueseCommunity({
               <button className="flex-1 bg-gradient-to-r from-blue-600 to-red-600 text-white font-semibold py-2 px-4 rounded-lg hover:shadow-lg transition-all">
                 Contact Business
               </button>
-              <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+              <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors">
                 View Profile
               </button>
             </div>
@@ -567,12 +567,12 @@ export default function USA_PortugueseCommunity({
           <div key={professional.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
             <div className="text-center mb-4">
               <h4 className="text-lg font-bold text-gray-900">{professional.name}</h4>
-              <p className="text-gray-600">{professional.profession}</p>
+              <p className="text-secondary-600">{professional.profession}</p>
               <p className="text-sm text-gray-500">{professional.location.city}</p>
             </div>
 
             <div className="mb-4">
-              <p className="text-sm text-gray-600 mb-2">Expertise:</p>
+              <p className="text-sm text-secondary-600 mb-2">Expertise:</p>
               <div className="flex flex-wrap gap-2">
                 {professional.expertise.slice(0, 3).map((skill, index) => (
                   <span key={index} className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">
@@ -583,7 +583,7 @@ export default function USA_PortugueseCommunity({
             </div>
 
             <div className="mb-4">
-              <p className="text-sm text-gray-600 mb-2">Cultural Specialization:</p>
+              <p className="text-sm text-secondary-600 mb-2">Cultural Specialization:</p>
               <div className="flex flex-wrap gap-2">
                 {professional.culturalSpecialization?.slice(0, 2).map((spec, index) => (
                   <span key={index} className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">
@@ -594,8 +594,8 @@ export default function USA_PortugueseCommunity({
             </div>
 
             <div className="mb-4 text-center">
-              <span className="text-2xl font-bold text-blue-600">{professional.yearsExperience}</span>
-              <p className="text-sm text-gray-600">Years Experience</p>
+              <span className="text-2xl font-bold text-primary-600">{professional.yearsExperience}</span>
+              <p className="text-sm text-secondary-600">Years Experience</p>
             </div>
 
             {professional.availableForMentoring && (
@@ -623,7 +623,7 @@ export default function USA_PortugueseCommunity({
           <div key={org.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
             <div className="mb-4">
               <h4 className="text-lg font-bold text-gray-900">{org.name}</h4>
-              <p className="text-sm text-gray-600">Est. {org.foundedYear}</p>
+              <p className="text-sm text-secondary-600">Est. {org.foundedYear}</p>
             </div>
 
             <div className="mb-4">
@@ -631,18 +631,18 @@ export default function USA_PortugueseCommunity({
                 org.type === 'cultural' ? 'bg-purple-100 text-purple-800' :
                 org.type === 'educational' ? 'bg-green-100 text-green-800' :
                 org.type === 'professional' ? 'bg-blue-100 text-blue-800' :
-                'bg-gray-100 text-gray-800'
+                'bg-secondary-100 text-secondary-800'
               }`}>
                 {org.type}
               </span>
             </div>
 
             <div className="mb-4">
-              <p className="text-sm text-gray-600 mb-2">Services:</p>
-              <ul className="text-sm text-gray-700 space-y-1">
+              <p className="text-sm text-secondary-600 mb-2">Services:</p>
+              <ul className="text-sm text-secondary-700 space-y-1">
                 {org.services.map((service, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="text-blue-600 mr-2">•</span>
+                    <span className="text-primary-600 mr-2">•</span>
                     {service}
                   </li>
                 ))}
@@ -650,8 +650,8 @@ export default function USA_PortugueseCommunity({
             </div>
 
             <div className="mb-4 text-center">
-              <span className="text-xl font-bold text-blue-600">{org.memberCount?.toLocaleString()}</span>
-              <p className="text-sm text-gray-600">Members</p>
+              <span className="text-xl font-bold text-primary-600">{org.memberCount?.toLocaleString()}</span>
+              <p className="text-sm text-secondary-600">Members</p>
             </div>
 
             <div className="flex space-x-3">
@@ -659,7 +659,7 @@ export default function USA_PortugueseCommunity({
                 Join
               </button>
               {org.website && (
-                <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors">
                   Website
                 </button>
               )}
@@ -679,7 +679,7 @@ export default function USA_PortugueseCommunity({
           Portuguese American Community
           <span className="text-5xl ml-4">🇵🇹</span>
         </h1>
-        <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+        <p className="text-xl text-secondary-600 max-w-4xl mx-auto">
           Discover the vibrant Portuguese American community across the United States - 
           from the Azorean traditions of New England to the growing communities of California and Florida
         </p>
@@ -690,7 +690,7 @@ export default function USA_PortugueseCommunity({
 
       {/* Navigation */}
       <div className="flex justify-center">
-        <div className="bg-gray-100 rounded-lg p-1 flex flex-wrap justify-center gap-1">
+        <div className="bg-secondary-100 rounded-lg p-1 flex flex-wrap justify-center gap-1">
           {[
             { id: 'overview', label: 'Community Overview', icon: '🏘️' },
             { id: 'events', label: 'Events & Festivals', icon: '🎭' },
@@ -704,7 +704,7 @@ export default function USA_PortugueseCommunity({
               className={`px-4 py-3 rounded-md font-medium transition-all ${
                 selectedCategory === tab.id
                   ? 'bg-white text-gray-900 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                  : 'text-secondary-600 hover:text-gray-900'
               }`}
             >
               <span className="mr-2">{tab.icon}</span>

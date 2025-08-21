@@ -118,7 +118,6 @@ export default function MobileOptimizationFeatures({
     setTouchOptimized(mobile && enableTouchOptimization);
     setSwipeEnabled(mobile && enableSwipeGestures);
 
-    console.log('[Mobile] Device detection:', {
       isMobileDevice,
       isTouchDevice,
       isSmallScreen,
@@ -347,7 +346,6 @@ export default function MobileOptimizationFeatures({
         Haptics.impact({ style: styles[type] });
       }
     } catch (error) {
-      console.log('[Mobile] Haptic feedback not available:', error);
     }
   }, [hapticEnabled]);
 
@@ -379,7 +377,6 @@ export default function MobileOptimizationFeatures({
       oscillator.start();
       oscillator.stop(audioContext.currentTime + 0.1);
     } catch (error) {
-      console.log('[Mobile] Audio feedback not available:', error);
     }
   }, [soundEnabled]);
 
@@ -558,8 +555,8 @@ export default function MobileOptimizationFeatures({
               onClick={() => navigateToTab(item.id)}
               className={`flex flex-col items-center justify-center space-y-1 transition-colors ${
                 isActive 
-                  ? 'text-red-600 bg-red-50' 
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'text-coral-600 bg-red-50' 
+                  : 'text-secondary-600 hover:text-gray-900'
               } ${touchOptimized ? 'min-h-12' : ''}`}
               style={{ 
                 minWidth: touchOptimized ? '48px' : 'auto',
@@ -605,7 +602,7 @@ export default function MobileOptimizationFeatures({
             <button
               onClick={() => toggleAccessibilityFeature('highContrast')}
               className={`flex items-center justify-between w-full text-left p-2 rounded ${
-                highContrast ? 'bg-blue-100 text-blue-800' : 'text-gray-600'
+                highContrast ? 'bg-blue-100 text-blue-800' : 'text-secondary-600'
               }`}
             >
               <div className="flex items-center space-x-2">
@@ -614,13 +611,13 @@ export default function MobileOptimizationFeatures({
                   {language === 'pt' ? 'Alto Contraste' : 'High Contrast'}
                 </span>
               </div>
-              <div className={`w-4 h-4 rounded ${highContrast ? 'bg-blue-600' : 'bg-gray-300'}`} />
+              <div className={`w-4 h-4 rounded ${highContrast ? 'bg-primary-600' : 'bg-gray-300'}`} />
             </button>
             
             <button
               onClick={() => toggleAccessibilityFeature('largeText')}
               className={`flex items-center justify-between w-full text-left p-2 rounded ${
-                largeText ? 'bg-green-100 text-green-800' : 'text-gray-600'
+                largeText ? 'bg-green-100 text-green-800' : 'text-secondary-600'
               }`}
             >
               <div className="flex items-center space-x-2">
@@ -629,13 +626,13 @@ export default function MobileOptimizationFeatures({
                   {language === 'pt' ? 'Texto Grande' : 'Large Text'}
                 </span>
               </div>
-              <div className={`w-4 h-4 rounded ${largeText ? 'bg-green-600' : 'bg-gray-300'}`} />
+              <div className={`w-4 h-4 rounded ${largeText ? 'bg-action-600' : 'bg-gray-300'}`} />
             </button>
             
             <button
               onClick={() => toggleAccessibilityFeature('haptic')}
               className={`flex items-center justify-between w-full text-left p-2 rounded ${
-                hapticEnabled ? 'bg-purple-100 text-purple-800' : 'text-gray-600'
+                hapticEnabled ? 'bg-purple-100 text-purple-800' : 'text-secondary-600'
               }`}
             >
               <div className="flex items-center space-x-2">
@@ -650,7 +647,7 @@ export default function MobileOptimizationFeatures({
             <button
               onClick={() => toggleAccessibilityFeature('sound')}
               className={`flex items-center justify-between w-full text-left p-2 rounded ${
-                soundEnabled ? 'bg-yellow-100 text-yellow-800' : 'text-gray-600'
+                soundEnabled ? 'bg-yellow-100 text-yellow-800' : 'text-secondary-600'
               }`}
             >
               <div className="flex items-center space-x-2">
@@ -670,7 +667,7 @@ export default function MobileOptimizationFeatures({
   const renderScrollToTopButton = () => (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-20 right-4 z-40 bg-red-600 text-white p-3 rounded-full shadow-lg transition-all duration-200 ${
+      className={`fixed bottom-20 right-4 z-40 bg-coral-600 text-white p-3 rounded-full shadow-lg transition-all duration-200 ${
         window.scrollY > 400 ? 'opacity-100 scale-100' : 'opacity-0 scale-75 pointer-events-none'
       }`}
       style={{

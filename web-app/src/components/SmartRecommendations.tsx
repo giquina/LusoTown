@@ -78,7 +78,7 @@ export default function SmartRecommendations() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">{rec.title}</h3>
-                  <p className="text-sm text-gray-600">{rec.description}</p>
+                  <p className="text-sm text-secondary-600">{rec.description}</p>
                 </div>
               </div>
               <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border ${getUrgencyColor(rec.urgency)}`}>
@@ -89,7 +89,7 @@ export default function SmartRecommendations() {
             </div>
             
             <div className="flex items-center justify-between mb-3">
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 <span className="font-medium">
                   {language === 'pt' ? 'Baseado em:' : 'Based on:'}{' '}
                 </span>
@@ -133,7 +133,7 @@ export default function SmartRecommendations() {
         {recommendations.length === 0 && (
           <div className="text-center py-8">
             <Sparkles className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {language === 'pt' 
                 ? 'Nenhuma recomendação disponível no momento' 
                 : 'No recommendations available right now'

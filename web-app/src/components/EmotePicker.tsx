@@ -81,7 +81,7 @@ export default function EmotePicker({
             className={`flex-1 px-2 sm:px-3 py-3 sm:py-2 text-xs sm:text-sm font-medium transition-colors touch-manipulation ${
               activeTab === 'reactions'
                 ? 'text-primary-600 border-b-2 border-primary-600 bg-white'
-                : 'text-gray-500 hover:text-gray-700 active:bg-gray-100'
+                : 'text-gray-500 hover:text-secondary-700 active:bg-secondary-100'
             }`}
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-1">
@@ -95,7 +95,7 @@ export default function EmotePicker({
             className={`flex-1 px-2 sm:px-3 py-3 sm:py-2 text-xs sm:text-sm font-medium transition-colors touch-manipulation ${
               activeTab === 'emotes'
                 ? 'text-primary-600 border-b-2 border-primary-600 bg-white'
-                : 'text-gray-500 hover:text-gray-700 active:bg-gray-100'
+                : 'text-gray-500 hover:text-secondary-700 active:bg-secondary-100'
             }`}
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-1">
@@ -108,7 +108,7 @@ export default function EmotePicker({
             className={`flex-1 px-2 sm:px-3 py-3 sm:py-2 text-xs sm:text-sm font-medium transition-colors touch-manipulation ${
               activeTab === 'regional'
                 ? 'text-primary-600 border-b-2 border-primary-600 bg-white'
-                : 'text-gray-500 hover:text-gray-700 active:bg-gray-100'
+                : 'text-gray-500 hover:text-secondary-700 active:bg-secondary-100'
             }`}
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-1">
@@ -125,7 +125,7 @@ export default function EmotePicker({
           {activeTab === 'reactions' && (
             <div>
               <div className="mb-3">
-                <h4 className="text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wide">
+                <h4 className="text-xs font-semibold text-secondary-600 mb-2 uppercase tracking-wide">
                   {language === 'pt' ? 'Reações Rápidas' : 'Quick Reactions'}
                 </h4>
                 <div className="grid grid-cols-4 sm:grid-cols-5 gap-2 sm:gap-2">
@@ -135,8 +135,8 @@ export default function EmotePicker({
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => handleReactionClick(emoji)}
-                      className="aspect-square flex items-center justify-center text-2xl sm:text-2xl hover:bg-gray-100 
-                        active:bg-gray-200 rounded-lg transition-colors p-3 sm:p-2 touch-manipulation"
+                      className="aspect-square flex items-center justify-center text-2xl sm:text-2xl hover:bg-secondary-100 
+                        active:bg-secondary-200 rounded-lg transition-colors p-3 sm:p-2 touch-manipulation"
                     >
                       {emoji}
                     </motion.button>
@@ -145,7 +145,7 @@ export default function EmotePicker({
               </div>
 
               <div>
-                <h4 className="text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wide">
+                <h4 className="text-xs font-semibold text-secondary-600 mb-2 uppercase tracking-wide">
                   {language === 'pt' ? 'Reações Culturais' : 'Cultural Reactions'}
                 </h4>
                 <div className="grid grid-cols-5 gap-2">
@@ -155,7 +155,7 @@ export default function EmotePicker({
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => handleReactionClick(emoji)}
-                      className="aspect-square flex items-center justify-center text-2xl hover:bg-gray-100 
+                      className="aspect-square flex items-center justify-center text-2xl hover:bg-secondary-100 
                         rounded-lg transition-colors p-2"
                     >
                       {emoji}
@@ -179,7 +179,7 @@ export default function EmotePicker({
                       className={`flex-shrink-0 px-2 py-1 rounded-full text-xs font-medium transition-colors ${
                         selectedCategory === key
                           ? 'bg-primary-100 text-primary-700'
-                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                          : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                       }`}
                     >
                       <span className="mr-1">{category.icon}</span>
@@ -197,7 +197,7 @@ export default function EmotePicker({
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => handleEmoteClick(emote.code)}
-                    className="aspect-square flex items-center justify-center hover:bg-gray-100 
+                    className="aspect-square flex items-center justify-center hover:bg-secondary-100 
                       rounded-lg transition-colors p-1"
                     title={emote.culturalContext}
                   >
@@ -226,7 +226,7 @@ export default function EmotePicker({
           {activeTab === 'regional' && (
             <div>
               <div className="mb-3">
-                <h4 className="text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wide">
+                <h4 className="text-xs font-semibold text-secondary-600 mb-2 uppercase tracking-wide">
                   {language === 'pt' 
                     ? `Emotes Regionais - ${userRegion === 'brazil' ? 'Brasil' : 
                         userRegion === 'portugal' ? 'Portugal' : 
@@ -243,7 +243,7 @@ export default function EmotePicker({
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => handleEmoteClick(emote.code)}
-                    className="aspect-square flex items-center justify-center hover:bg-gray-100 
+                    className="aspect-square flex items-center justify-center hover:bg-secondary-100 
                       rounded-lg transition-colors p-1"
                     title={emote.culturalContext}
                   >

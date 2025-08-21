@@ -48,7 +48,7 @@ export default function CulturalCompatibilityBadge({
       level: 'exceptional',
       icon: FireIcon,
       solidIcon: FireIcon,
-      color: 'text-red-600',
+      color: 'text-coral-600',
       bg: 'bg-red-100',
       border: 'border-red-300',
       gradient: 'from-red-500 to-orange-500',
@@ -84,7 +84,7 @@ export default function CulturalCompatibilityBadge({
       level: 'good',
       icon: SparklesIcon,
       solidIcon: SparklesIcon,
-      color: 'text-blue-600',
+      color: 'text-primary-600',
       bg: 'bg-blue-100',
       border: 'border-blue-300',
       gradient: 'from-blue-500 to-purple-500',
@@ -96,9 +96,9 @@ export default function CulturalCompatibilityBadge({
       level: 'moderate',
       icon: SparklesIcon,
       solidIcon: SparklesIcon,
-      color: 'text-gray-600',
-      bg: 'bg-gray-100',
-      border: 'border-gray-300',
+      color: 'text-secondary-600',
+      bg: 'bg-secondary-100',
+      border: 'border-secondary-300',
       gradient: 'from-gray-500 to-gray-600',
       labelEn: 'Potential Match',
       labelPt: 'Match Potencial',
@@ -227,7 +227,7 @@ export default function CulturalCompatibilityBadge({
         </div>
 
         {culturalStrength && (
-          <div className="text-xs text-gray-600 font-medium">
+          <div className="text-xs text-secondary-600 font-medium">
             {language === 'pt' ? 'Força Cultural:' : 'Cultural Strength:'} {culturalStrength}
           </div>
         )}
@@ -281,7 +281,7 @@ export function CulturalCompatibilityMiniWidget({
       onClick={onClick}
     >
       <div className="flex items-center justify-between mb-2">
-        <span className="text-xs font-medium text-gray-600">
+        <span className="text-xs font-medium text-secondary-600">
           {language === 'pt' ? 'Compatibilidade Cultural' : 'Cultural Compatibility'}
         </span>
         <span className="text-lg">{compatibility.emoji}</span>

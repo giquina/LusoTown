@@ -101,7 +101,7 @@ export default function AboutLusoTown() {
             About <span className="bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 bg-clip-text text-transparent">LusoTown</span>
           </h2>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">
+          <p className="text-lg sm:text-xl md:text-2xl text-secondary-700 leading-relaxed max-w-4xl mx-auto font-medium">
             LusoTown is where Portuguese hearts find their London network. Whether you're homesick, building your career while honoring your heritage, 
             or simply miss the warmth of Portuguese conversation, this is your professional home. Every person here understands your journey and opens their networks to support you.
           </p>
@@ -112,7 +112,7 @@ export default function AboutLusoTown() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 bg-white/70 backdrop-blur-sm border border-gray-200 rounded-2xl px-6 py-3 shadow-lg mb-6">
               <Heart className="h-5 w-5 text-action-500" />
-              <span className="text-lg font-bold text-gray-800">When you join LusoTown, you can:</span>
+              <span className="text-lg font-bold text-secondary-800">When you join LusoTown, you can:</span>
             </div>
           </div>
 
@@ -136,10 +136,10 @@ export default function AboutLusoTown() {
                 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-secondary-800 transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  <p className="text-secondary-600 leading-relaxed group-hover:text-secondary-700 transition-colors duration-300">
                     {feature.description}
                   </p>
                 </div>

@@ -165,11 +165,11 @@ const PartnershipIntegrationDashboard: React.FC = () => {
 
   const getActivityColor = (type: PartnershipActivity['type']) => {
     const colors = {
-      new_partnership: 'text-green-600 bg-green-100',
-      renewal: 'text-blue-600 bg-blue-100',
+      new_partnership: 'text-action-600 bg-green-100',
+      renewal: 'text-primary-600 bg-blue-100',
       event: 'text-purple-600 bg-purple-100',
       benefit_claimed: 'text-yellow-600 bg-yellow-100',
-      meeting: 'text-gray-600 bg-gray-100'
+      meeting: 'text-secondary-600 bg-secondary-100'
     }
     return colors[type]
   }
@@ -209,7 +209,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
             <h1 className="text-3xl font-bold text-gray-900">
               {language === 'pt' ? 'Painel de Parcerias' : 'Partnership Dashboard'}
             </h1>
-            <p className="text-gray-600 mt-1">
+            <p className="text-secondary-600 mt-1">
               {language === 'pt' 
                 ? 'Gerir e monitorizar parcerias estratégicas portuguesas'
                 : 'Manage and monitor strategic Portuguese partnerships'
@@ -219,13 +219,13 @@ const PartnershipIntegrationDashboard: React.FC = () => {
           
           {/* Timeframe Selector */}
           <div className="flex items-center space-x-2">
-            <span className="text-sm text-gray-600">
+            <span className="text-sm text-secondary-600">
               {language === 'pt' ? 'Período:' : 'Timeframe:'}
             </span>
             <select
               value={selectedTimeframe}
               onChange={(e) => setSelectedTimeframe(e.target.value as any)}
-              className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              className="border border-secondary-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             >
               <option value="7d">{language === 'pt' ? 'Últimos 7 dias' : 'Last 7 days'}</option>
               <option value="30d">{language === 'pt' ? 'Últimos 30 dias' : 'Last 30 days'}</option>
@@ -243,11 +243,11 @@ const PartnershipIntegrationDashboard: React.FC = () => {
             <div className="flex items-center">
               <HandRaisedIcon className="w-8 h-8 text-primary-500" />
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">
+                <p className="text-sm font-medium text-secondary-600">
                   {language === 'pt' ? 'Parcerias Ativas' : 'Active Partnerships'}
                 </p>
                 <p className="text-2xl font-bold text-gray-900">{metrics.activePartnerships}</p>
-                <p className="text-xs text-green-600">
+                <p className="text-xs text-action-600">
                   +{metrics.monthlyGrowth}% {language === 'pt' ? 'este mês' : 'this month'}
                 </p>
               </div>
@@ -258,7 +258,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
             <div className="flex items-center">
               <UserGroupIcon className="w-8 h-8 text-secondary-500" />
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">
+                <p className="text-sm font-medium text-secondary-600">
                   {language === 'pt' ? 'Alcance Comunitário' : 'Community Reach'}
                 </p>
                 <p className="text-2xl font-bold text-gray-900">
@@ -275,7 +275,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
             <div className="flex items-center">
               <CurrencyPoundIcon className="w-8 h-8 text-accent-500" />
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">
+                <p className="text-sm font-medium text-secondary-600">
                   {language === 'pt' ? 'Valor Médio de Parceria' : 'Avg Partnership Value'}
                 </p>
                 <p className="text-2xl font-bold text-gray-900">
@@ -292,11 +292,11 @@ const PartnershipIntegrationDashboard: React.FC = () => {
             <div className="flex items-center">
               <TrophyIcon className="w-8 h-8 text-premium-500" />
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">
+                <p className="text-sm font-medium text-secondary-600">
                   {language === 'pt' ? 'Satisfação do Parceiro' : 'Partner Satisfaction'}
                 </p>
                 <p className="text-2xl font-bold text-gray-900">{metrics.partnerSatisfactionScore}/5</p>
-                <p className="text-xs text-green-600">
+                <p className="text-xs text-action-600">
                   {language === 'pt' ? 'Excelente' : 'Excellent'}
                 </p>
               </div>
@@ -333,10 +333,10 @@ const PartnershipIntegrationDashboard: React.FC = () => {
                     </div>
                     
                     <div className="flex items-center justify-between mt-1">
-                      <p className="text-sm text-gray-600">{activity.partnerName}</p>
+                      <p className="text-sm text-secondary-600">{activity.partnerName}</p>
                       <div className="flex items-center space-x-2 text-xs text-gray-500">
                         {activity.value && (
-                          <span className="font-medium text-green-600">
+                          <span className="font-medium text-action-600">
                             {formatCurrency(activity.value)}
                           </span>
                         )}
@@ -372,12 +372,12 @@ const PartnershipIntegrationDashboard: React.FC = () => {
               </div>
               
               <div className="flex items-start space-x-3 p-3 bg-blue-50 rounded-lg">
-                <ClockIcon className="w-5 h-5 text-blue-600 mt-0.5" />
+                <ClockIcon className="w-5 h-5 text-primary-600 mt-0.5" />
                 <div>
                   <p className="text-sm font-medium text-blue-800">
                     {language === 'pt' ? 'Candidaturas Pendentes' : 'Pending Applications'}
                   </p>
-                  <p className="text-xs text-blue-700">
+                  <p className="text-xs text-primary-700">
                     {metrics?.pendingApplications} {language === 'pt' ? 'novas candidaturas' : 'new applications'}
                   </p>
                 </div>
@@ -410,7 +410,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
                       <SparklesIcon className="w-4 h-4 text-accent-500" />
                     )}
                     {partner.officialStatus && (
-                      <CheckBadgeIcon className="w-4 h-4 text-green-500" />
+                      <CheckBadgeIcon className="w-4 h-4 text-action-500" />
                     )}
                   </div>
                 </div>
@@ -435,7 +435,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
                 {language === 'pt' ? 'Agendar Reunião' : 'Schedule Meeting'}
               </button>
               
-              <button className="w-full flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+              <button className="w-full flex items-center justify-center px-4 py-2 bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-colors">
                 <ChartBarIcon className="w-4 h-4 mr-2" />
                 {language === 'pt' ? 'Ver Relatórios' : 'View Reports'}
               </button>
@@ -458,10 +458,10 @@ const PartnershipIntegrationDashboard: React.FC = () => {
               </h4>
               <div className="flex items-center justify-between">
                 <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                  benefit.category === 'business' ? 'bg-blue-100 text-blue-700' :
+                  benefit.category === 'business' ? 'bg-blue-100 text-primary-700' :
                   benefit.category === 'cultural' ? 'bg-purple-100 text-purple-700' :
                   benefit.category === 'education' ? 'bg-green-100 text-green-700' :
-                  'bg-gray-100 text-gray-700'
+                  'bg-secondary-100 text-secondary-700'
                 }`}>
                   {benefit.category}
                 </span>

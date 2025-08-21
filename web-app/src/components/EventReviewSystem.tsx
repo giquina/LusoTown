@@ -184,7 +184,7 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
         ))}
       </div>
       {label && hovered > 0 && (
-        <span className="text-sm text-gray-600 mt-1">{label}</span>
+        <span className="text-sm text-secondary-600 mt-1">{label}</span>
       )}
     </div>
   )
@@ -211,11 +211,11 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg border border-green-100">
           <div className="flex items-center gap-2 mb-1">
-            <TrophyIcon className="w-5 h-5 text-green-600" />
+            <TrophyIcon className="w-5 h-5 text-action-600" />
             <span className="text-sm font-medium text-green-800">Community Impact</span>
           </div>
           <div className="text-2xl font-bold text-green-700">{((event.averageRating || 0) * 20).toFixed(0)}%</div>
-          <div className="text-xs text-green-600">Satisfaction Rate</div>
+          <div className="text-xs text-action-600">Satisfaction Rate</div>
         </div>
         
         <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-4 rounded-lg border border-primary-100">
@@ -252,7 +252,7 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
               >
                 Share Your Experience • Partilhe a Sua Experiência
               </button>
-              <p className="text-sm text-gray-600 mt-2">
+              <p className="text-sm text-secondary-600 mt-2">
                 Help fellow Portuguese community members by sharing your honest feedback
               </p>
             </div>
@@ -264,14 +264,14 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
             >
               <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-lg border border-primary-100">
                 <h3 className="font-semibold text-gray-900 mb-2">Como foi a sua experiência? • How was your experience?</h3>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-secondary-700">
                   Your honest feedback helps strengthen our Portuguese community in London
                 </p>
               </div>
 
               {/* Overall Rating */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   Overall Experience • Experiência Geral *
                 </label>
                 <StarRating
@@ -282,7 +282,7 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
                   size="w-8 h-8"
                 />
                 {formData.rating > 0 && (
-                  <p className="text-sm text-gray-600 mt-2">
+                  <p className="text-sm text-secondary-600 mt-2">
                     {formData.rating === 1 && "Poor • Fraco"}
                     {formData.rating === 2 && "Fair • Razoável"}
                     {formData.rating === 3 && "Good • Bom"}
@@ -294,7 +294,7 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
 
               {/* Cultural Value Rating */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   Cultural Authenticity • Autenticidade Cultural
                 </label>
                 <StarRating
@@ -308,7 +308,7 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
 
               {/* Organization Quality */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   Event Organization • Organização do Evento
                 </label>
                 <StarRating
@@ -321,7 +321,7 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
 
               {/* Venue Rating */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   Venue & Location • Local e Ambiente
                 </label>
                 <StarRating
@@ -334,7 +334,7 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
 
               {/* Written Review */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   Your Review • A Sua Avaliação *
                 </label>
                 <textarea
@@ -342,13 +342,13 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
                   onChange={(e) => setFormData(prev => ({ ...prev, comment: e.target.value }))}
                   placeholder="Share what made this event special for you and our Portuguese community... 
 Partilhe o que tornou este evento especial para si e para a nossa comunidade portuguesa..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent resize-none"
                   rows={4}
                   minLength={20}
                 />
                 <div className="flex justify-between items-center mt-2">
                   <span className="text-xs text-gray-500">Minimum 20 characters</span>
-                  <span className={`text-xs ${formData.comment.length >= 20 ? 'text-green-600' : 'text-gray-400'}`}>
+                  <span className={`text-xs ${formData.comment.length >= 20 ? 'text-action-600' : 'text-gray-400'}`}>
                     {formData.comment.length}/500
                   </span>
                 </div>
@@ -361,9 +361,9 @@ Partilhe o que tornou este evento especial para si e para a nossa comunidade por
                   id="recommend"
                   checked={formData.wouldRecommend}
                   onChange={(e) => setFormData(prev => ({ ...prev, wouldRecommend: e.target.checked }))}
-                  className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                  className="w-4 h-4 text-primary-600 border-secondary-300 rounded focus:ring-primary-500"
                 />
-                <label htmlFor="recommend" className="text-sm text-gray-700">
+                <label htmlFor="recommend" className="text-sm text-secondary-700">
                   I would recommend this event to fellow Portuguese community members
                 </label>
               </div>
@@ -375,9 +375,9 @@ Partilhe o que tornou este evento especial para si e para a nossa comunidade por
                   id="anonymous"
                   checked={formData.anonymous}
                   onChange={(e) => setFormData(prev => ({ ...prev, anonymous: e.target.checked }))}
-                  className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                  className="w-4 h-4 text-primary-600 border-secondary-300 rounded focus:ring-primary-500"
                 />
-                <label htmlFor="anonymous" className="text-sm text-gray-700">
+                <label htmlFor="anonymous" className="text-sm text-secondary-700">
                   Submit review anonymously
                 </label>
               </div>
@@ -387,7 +387,7 @@ Partilhe o que tornou este evento especial para si e para a nossa comunidade por
                 <button
                   type="button"
                   onClick={() => setShowReviewForm(false)}
-                  className="flex-1 px-4 py-2 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                  className="flex-1 px-4 py-2 text-secondary-700 border border-secondary-300 rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   Cancel
                 </button>
@@ -424,7 +424,7 @@ Partilhe o que tornou este evento especial para si e para a nossa comunidade por
           <div className="text-center py-8">
             <ChatBubbleLeftIcon className="w-12 h-12 text-gray-300 mx-auto mb-4" />
             <h3 className="text-lg font-medium text-gray-900 mb-2">No reviews yet</h3>
-            <p className="text-gray-600">Be the first to share your experience with this event</p>
+            <p className="text-secondary-600">Be the first to share your experience with this event</p>
           </div>
         )}
       </div>
@@ -440,8 +440,8 @@ Partilhe o que tornou este evento especial para si e para a nossa comunidade por
           >
             <div className={`rounded-lg p-4 shadow-lg text-white max-w-md ${ 
               notification.type === 'success' 
-                ? 'bg-green-500' 
-                : 'bg-red-500'
+                ? 'bg-action-500' 
+                : 'bg-coral-500'
             }`}>
               <div className="flex items-start gap-3">
                 {notification.type === 'success' ? (
@@ -512,14 +512,14 @@ const ReviewCard: React.FC<{ review: EventReview }> = ({ review }) => {
             </span>
           </div>
           
-          <p className="text-gray-700 mb-3 leading-relaxed">{review.comment}</p>
+          <p className="text-secondary-700 mb-3 leading-relaxed">{review.comment}</p>
           
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <span>{new Date(review.createdAt).toLocaleDateString('en-GB')}</span>
             <button
               onClick={handleHelpful}
               className={`flex items-center gap-1 transition-colors ${
-                userFound ? 'text-green-600' : 'hover:text-primary-600'
+                userFound ? 'text-action-600' : 'hover:text-primary-600'
               }`}
               disabled={userFound}
             >

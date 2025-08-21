@@ -227,7 +227,7 @@ export default function AdminDashboard() {
 
   const getMembershipBadge = (tier: string) => {
     const badges = {
-      free: { icon: <UserIcon className="w-3 h-3" />, color: 'bg-gray-100 text-gray-600', label: 'Free' },
+      free: { icon: <UserIcon className="w-3 h-3" />, color: 'bg-secondary-100 text-secondary-600', label: 'Free' },
       core: { icon: <Star className="w-3 h-3" />, color: 'bg-[#FF6B6B] text-white', label: 'Core' },
       premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white', label: 'Premium' }
     }
@@ -240,7 +240,7 @@ export default function AdminDashboard() {
       inactive: { color: 'bg-yellow-100 text-yellow-800', label: 'Inactive', icon: <AlertTriangle className="w-3 h-3" /> },
       suspended: { color: 'bg-red-100 text-red-800', label: 'Suspended', icon: <XCircle className="w-3 h-3" /> },
       published: { color: 'bg-green-100 text-green-800', label: 'Published', icon: <CheckCircle className="w-3 h-3" /> },
-      draft: { color: 'bg-gray-100 text-gray-800', label: 'Draft', icon: <Edit3 className="w-3 h-3" /> },
+      draft: { color: 'bg-secondary-100 text-secondary-800', label: 'Draft', icon: <Edit3 className="w-3 h-3" /> },
       cancelled: { color: 'bg-red-100 text-red-800', label: 'Cancelled', icon: <XCircle className="w-3 h-3" /> }
     }
     return badges[status as keyof typeof badges] || badges.active
@@ -272,20 +272,20 @@ export default function AdminDashboard() {
                 <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
                 <div className="flex items-center space-x-2">
                   <Shield className="w-4 h-4 text-purple-600" />
-                  <span className="text-sm text-gray-600">Welcome back, {user.name}</span>
+                  <span className="text-sm text-secondary-600">Welcome back, {user.name}</span>
                 </div>
               </div>
             </div>
             <div className="flex items-center space-x-4">
               <button
                 onClick={() => router.push('/dashboard')}
-                className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors"
+                className="px-4 py-2 text-secondary-600 hover:text-secondary-800 transition-colors"
               >
                 View User Dashboard
               </button>
               <button
                 onClick={handleLogout}
-                className="flex items-center space-x-2 px-4 py-2 bg-red-100 text-red-600 rounded-lg hover:bg-red-200 transition-colors"
+                className="flex items-center space-x-2 px-4 py-2 bg-red-100 text-coral-600 rounded-lg hover:bg-red-200 transition-colors"
               >
                 <LogOut className="w-4 h-4" />
                 <span>Logout</span>
@@ -305,7 +305,7 @@ export default function AdminDashboard() {
                   <Shield className="w-8 h-8" />
                 </div>
                 <h3 className="font-semibold text-gray-900">Admin Panel</h3>
-                <p className="text-gray-600 text-sm">Platform Management</p>
+                <p className="text-secondary-600 text-sm">Platform Management</p>
               </div>
               
               <nav className="space-y-2">
@@ -322,7 +322,7 @@ export default function AdminDashboard() {
                     className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors ${
                       activeTab === tab.id
                         ? 'bg-purple-600 text-white'
-                        : 'text-gray-600 hover:bg-gray-100'
+                        : 'text-secondary-600 hover:bg-secondary-100'
                     }`}
                   >
                     {tab.icon}
@@ -342,9 +342,9 @@ export default function AdminDashboard() {
                   <div className="bg-white rounded-xl shadow-sm p-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-gray-600 text-sm">Total Users</p>
+                        <p className="text-secondary-600 text-sm">Total Users</p>
                         <p className="text-2xl font-bold text-gray-900">{ADMIN_STATS.totalUsers.toLocaleString()}</p>
-                        <p className="text-green-600 text-sm flex items-center mt-1">
+                        <p className="text-action-600 text-sm flex items-center mt-1">
                           <TrendingUp className="w-3 h-3 mr-1" />
                           +12% this month
                         </p>
@@ -356,9 +356,9 @@ export default function AdminDashboard() {
                   <div className="bg-white rounded-xl shadow-sm p-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-gray-600 text-sm">Active Users</p>
+                        <p className="text-secondary-600 text-sm">Active Users</p>
                         <p className="text-2xl font-bold text-gray-900">{ADMIN_STATS.activeUsers.toLocaleString()}</p>
-                        <p className="text-green-600 text-sm flex items-center mt-1">
+                        <p className="text-action-600 text-sm flex items-center mt-1">
                           <Activity className="w-3 h-3 mr-1" />
                           {Math.round((ADMIN_STATS.activeUsers / ADMIN_STATS.totalUsers) * 100)}% active
                         </p>
@@ -370,7 +370,7 @@ export default function AdminDashboard() {
                   <div className="bg-white rounded-xl shadow-sm p-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-gray-600 text-sm">Total Events</p>
+                        <p className="text-secondary-600 text-sm">Total Events</p>
                         <p className="text-2xl font-bold text-gray-900">{ADMIN_STATS.totalEvents}</p>
                         <p className="text-primary-600 text-sm">{ADMIN_STATS.upcomingEvents} upcoming</p>
                       </div>
@@ -381,14 +381,14 @@ export default function AdminDashboard() {
                   <div className="bg-white rounded-xl shadow-sm p-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-gray-600 text-sm">Monthly Revenue</p>
+                        <p className="text-secondary-600 text-sm">Monthly Revenue</p>
                         <p className="text-2xl font-bold text-gray-900">£{ADMIN_STATS.revenue.toLocaleString()}</p>
-                        <p className="text-green-600 text-sm flex items-center mt-1">
+                        <p className="text-action-600 text-sm flex items-center mt-1">
                           <TrendingUp className="w-3 h-3 mr-1" />
                           +8% this month
                         </p>
                       </div>
-                      <TrendingUp className="w-8 h-8 text-green-500" />
+                      <TrendingUp className="w-8 h-8 text-action-500" />
                     </div>
                   </div>
                 </div>
@@ -409,7 +409,7 @@ export default function AdminDashboard() {
                             </span>
                           </div>
                           <p className="text-2xl font-bold text-gray-900">{count}</p>
-                          <p className="text-gray-600 text-sm">{percentage}% of users</p>
+                          <p className="text-secondary-600 text-sm">{percentage}% of users</p>
                         </div>
                       )
                     })}
@@ -455,7 +455,7 @@ export default function AdminDashboard() {
                     <button className="px-4 py-2 bg-[#FF6B6B] text-white rounded-lg hover:bg-[#e55a5a] transition-colors text-sm">
                       Export Users
                     </button>
-                    <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm">
+                    <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors text-sm">
                       Filter Users
                     </button>
                   </div>
@@ -465,12 +465,12 @@ export default function AdminDashboard() {
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-gray-200">
-                        <th className="text-left py-3 px-4 font-medium text-gray-700">User</th>
-                        <th className="text-left py-3 px-4 font-medium text-gray-700">Email</th>
-                        <th className="text-left py-3 px-4 font-medium text-gray-700">Membership</th>
-                        <th className="text-left py-3 px-4 font-medium text-gray-700">Status</th>
-                        <th className="text-left py-3 px-4 font-medium text-gray-700">Last Active</th>
-                        <th className="text-left py-3 px-4 font-medium text-gray-700">Actions</th>
+                        <th className="text-left py-3 px-4 font-medium text-secondary-700">User</th>
+                        <th className="text-left py-3 px-4 font-medium text-secondary-700">Email</th>
+                        <th className="text-left py-3 px-4 font-medium text-secondary-700">Membership</th>
+                        <th className="text-left py-3 px-4 font-medium text-secondary-700">Status</th>
+                        <th className="text-left py-3 px-4 font-medium text-secondary-700">Last Active</th>
+                        <th className="text-left py-3 px-4 font-medium text-secondary-700">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -486,7 +486,7 @@ export default function AdminDashboard() {
                                 </div>
                                 <div>
                                   <p className="font-medium text-gray-900">{user.name}</p>
-                                  <p className="text-sm text-gray-600">{user.location}</p>
+                                  <p className="text-sm text-secondary-600">{user.location}</p>
                                 </div>
                               </div>
                             </td>
@@ -503,7 +503,7 @@ export default function AdminDashboard() {
                                 <span>{statusBadge.label}</span>
                               </span>
                             </td>
-                            <td className="py-4 px-4 text-gray-600">{user.lastActive}</td>
+                            <td className="py-4 px-4 text-secondary-600">{user.lastActive}</td>
                             <td className="py-4 px-4">
                               <div className="flex items-center space-x-2">
                                 <button className="p-1 text-gray-400 hover:text-primary-600 transition-colors">
@@ -512,7 +512,7 @@ export default function AdminDashboard() {
                                 <button className="p-1 text-gray-400 hover:text-orange-600 transition-colors">
                                   <Edit3 className="w-4 h-4" />
                                 </button>
-                                <button className="p-1 text-gray-400 hover:text-red-600 transition-colors">
+                                <button className="p-1 text-gray-400 hover:text-coral-600 transition-colors">
                                   <Trash2 className="w-4 h-4" />
                                 </button>
                               </div>
@@ -554,7 +554,7 @@ export default function AdminDashboard() {
                           </div>
                         </div>
                         
-                        <div className="space-y-2 text-xs text-gray-600 mb-4">
+                        <div className="space-y-2 text-xs text-secondary-600 mb-4">
                           <div className="flex items-center justify-between">
                             <span>Category:</span>
                             <span className="font-medium">{event.category}</span>
@@ -593,7 +593,7 @@ export default function AdminDashboard() {
                   <div className="text-center py-12">
                     <BarChart3 className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                     <h3 className="text-lg font-medium text-gray-900 mb-2">Analytics Dashboard Coming Soon</h3>
-                    <p className="text-gray-600">Detailed analytics and insights will be available here.</p>
+                    <p className="text-secondary-600">Detailed analytics and insights will be available here.</p>
                   </div>
                 </div>
               </div>
@@ -606,7 +606,7 @@ export default function AdminDashboard() {
                   <div className="text-center py-12">
                     <FileText className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                     <h3 className="text-lg font-medium text-gray-900 mb-2">Content Management Coming Soon</h3>
-                    <p className="text-gray-600">Manage platform content, guidelines, and policies here.</p>
+                    <p className="text-secondary-600">Manage platform content, guidelines, and policies here.</p>
                   </div>
                 </div>
               </div>

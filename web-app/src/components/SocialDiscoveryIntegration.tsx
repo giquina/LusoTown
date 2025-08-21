@@ -333,7 +333,7 @@ export default function SocialDiscoveryIntegration({
               <MagnifyingGlassIcon className="w-5 h-5 text-coral-500" />
               {isPortuguese ? 'Descoberta Social Inteligente' : 'Smart Social Discovery'}
             </h2>
-            <p className="text-gray-600 text-sm">
+            <p className="text-secondary-600 text-sm">
               {isPortuguese 
                 ? 'Encontre novos matches baseados na sua rede social portuguesa'
                 : 'Find new matches based on your Portuguese social network'
@@ -346,7 +346,7 @@ export default function SocialDiscoveryIntegration({
             disabled={isRefreshing}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-colors ${
               isRefreshing
-                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                ? 'bg-secondary-100 text-gray-400 cursor-not-allowed'
                 : 'bg-gradient-to-r from-coral-500 to-primary-500 text-white hover:from-coral-600 hover:to-primary-600'
             }`}
           >
@@ -368,7 +368,7 @@ export default function SocialDiscoveryIntegration({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={isPortuguese ? 'Pesquisar por nome, local ou interesses...' : 'Search by name, location or interests...'}
-              className="w-full pl-10 pr-4 py-3 rounded-lg border-gray-300 shadow-sm focus:border-coral-500 focus:ring-coral-500"
+              className="w-full pl-10 pr-4 py-3 rounded-lg border-secondary-300 shadow-sm focus:border-coral-500 focus:ring-coral-500"
             />
           </div>
 
@@ -387,7 +387,7 @@ export default function SocialDiscoveryIntegration({
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   filterBy === filter.id
                     ? 'bg-coral-500 text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                 }`}
               >
                 {filter.label}
@@ -397,13 +397,13 @@ export default function SocialDiscoveryIntegration({
 
           {/* Sort Options */}
           <div className="flex items-center gap-4">
-            <span className="text-sm font-medium text-gray-700">
+            <span className="text-sm font-medium text-secondary-700">
               {isPortuguese ? 'Ordenar por:' : 'Sort by:'}
             </span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="rounded-lg border-gray-300 shadow-sm focus:border-coral-500 focus:ring-coral-500 text-sm"
+              className="rounded-lg border-secondary-300 shadow-sm focus:border-coral-500 focus:ring-coral-500 text-sm"
             >
               <option value="compatibility">{isPortuguese ? 'Compatibilidade' : 'Compatibility'}</option>
               <option value="cultural_score">{isPortuguese ? 'Pontuação Cultural' : 'Cultural Score'}</option>
@@ -419,7 +419,7 @@ export default function SocialDiscoveryIntegration({
             <div className="text-2xl font-bold text-coral-600 mb-1">
               {filteredMatches.length}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Descobertos' : 'Discovered'}
             </div>
           </div>
@@ -427,7 +427,7 @@ export default function SocialDiscoveryIntegration({
             <div className="text-2xl font-bold text-primary-600 mb-1">
               {filteredMatches.filter(m => m.isOnline).length}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Online Agora' : 'Online Now'}
             </div>
           </div>
@@ -435,7 +435,7 @@ export default function SocialDiscoveryIntegration({
             <div className="text-2xl font-bold text-secondary-600 mb-1">
               {filteredMatches.filter(m => m.compatibility >= 85).length}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Alta Compatibilidade' : 'High Compatibility'}
             </div>
           </div>
@@ -443,7 +443,7 @@ export default function SocialDiscoveryIntegration({
             <div className="text-2xl font-bold text-accent-600 mb-1">
               {filteredMatches.filter(m => m.verificationStatus === 'verified').length}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Verificados' : 'Verified'}
             </div>
           </div>
@@ -472,7 +472,7 @@ export default function SocialDiscoveryIntegration({
                         {match.name.charAt(0)}
                       </div>
                       {match.isOnline && (
-                        <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+                        <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-action-500 rounded-full border-2 border-white"></div>
                       )}
                     </div>
                     <div>
@@ -480,7 +480,7 @@ export default function SocialDiscoveryIntegration({
                         {match.name}, {match.age}
                         {getVerificationIcon(match.verificationStatus)}
                       </h3>
-                      <p className="text-sm text-gray-600">{match.location}</p>
+                      <p className="text-sm text-secondary-600">{match.location}</p>
                       <p className="text-xs text-gray-500">{match.lastSeen}</p>
                     </div>
                   </div>
@@ -504,7 +504,7 @@ export default function SocialDiscoveryIntegration({
                     </span>
                   </div>
                   {match.mutualConnections.length > 0 && (
-                    <div className="text-xs text-gray-600">
+                    <div className="text-xs text-secondary-600">
                       {isPortuguese ? 'Amigos mútuos: ' : 'Mutual friends: '}
                       {match.mutualConnections.slice(0, 2).join(', ')}
                       {match.mutualConnections.length > 2 && ` +${match.mutualConnections.length - 2}`}
@@ -516,11 +516,11 @@ export default function SocialDiscoveryIntegration({
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   <div className="text-center p-2 bg-gray-50 rounded-lg">
                     <div className="text-sm font-bold text-primary-600">{match.culturalScore}%</div>
-                    <div className="text-xs text-gray-600">{isPortuguese ? 'Cultural' : 'Cultural'}</div>
+                    <div className="text-xs text-secondary-600">{isPortuguese ? 'Cultural' : 'Cultural'}</div>
                   </div>
                   <div className="text-center p-2 bg-gray-50 rounded-lg">
                     <div className="text-sm font-bold text-secondary-600">{match.socialScore}%</div>
-                    <div className="text-xs text-gray-600">{isPortuguese ? 'Social' : 'Social'}</div>
+                    <div className="text-xs text-secondary-600">{isPortuguese ? 'Social' : 'Social'}</div>
                   </div>
                 </div>
 
@@ -541,12 +541,12 @@ export default function SocialDiscoveryIntegration({
                 {/* Recent Activity */}
                 <div className="mb-4 p-3 bg-gray-50 rounded-lg">
                   <div className="flex items-center gap-2 mb-1">
-                    <CalendarIcon className="w-4 h-4 text-gray-600" />
-                    <span className="text-xs font-medium text-gray-700">
+                    <CalendarIcon className="w-4 h-4 text-secondary-600" />
+                    <span className="text-xs font-medium text-secondary-700">
                       {isPortuguese ? 'Atividade Recente' : 'Recent Activity'}
                     </span>
                   </div>
-                  <p className="text-xs text-gray-600">{match.recentActivity}</p>
+                  <p className="text-xs text-secondary-600">{match.recentActivity}</p>
                 </div>
               </div>
 
@@ -555,7 +555,7 @@ export default function SocialDiscoveryIntegration({
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     onClick={() => handleViewProfile(match)}
-                    className="py-2 px-4 rounded-lg font-semibold text-sm bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+                    className="py-2 px-4 rounded-lg font-semibold text-sm bg-secondary-100 text-secondary-700 hover:bg-secondary-200 transition-colors"
                   >
                     {isPortuguese ? 'Ver Perfil' : 'View Profile'}
                   </button>
@@ -579,7 +579,7 @@ export default function SocialDiscoveryIntegration({
           <h3 className="text-lg font-semibold text-gray-900 mb-2">
             {isPortuguese ? 'Nenhuma Descoberta Encontrada' : 'No Discoveries Found'}
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-secondary-600 mb-6">
             {searchQuery ? (
               isPortuguese 
                 ? `Nenhum resultado para "${searchQuery}". Tente termos diferentes.`
@@ -626,7 +626,7 @@ export default function SocialDiscoveryIntegration({
                 </h3>
                 <button
                   onClick={() => setShowMatchDetail(false)}
-                  className="text-gray-400 hover:text-gray-600"
+                  className="text-gray-400 hover:text-secondary-600"
                 >
                   ✕
                 </button>
@@ -638,7 +638,7 @@ export default function SocialDiscoveryIntegration({
                   <div className="text-3xl font-bold text-coral-600 mb-2">
                     {selectedMatch.compatibility}%
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-secondary-600">
                     {isPortuguese ? 'Compatibilidade Geral' : 'Overall Compatibility'}
                   </div>
                 </div>
@@ -646,11 +646,11 @@ export default function SocialDiscoveryIntegration({
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
                     <div className="text-lg font-bold text-primary-600">{selectedMatch.culturalScore}%</div>
-                    <div className="text-xs text-gray-600">{isPortuguese ? 'Compatibilidade Cultural' : 'Cultural Compatibility'}</div>
+                    <div className="text-xs text-secondary-600">{isPortuguese ? 'Compatibilidade Cultural' : 'Cultural Compatibility'}</div>
                   </div>
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
                     <div className="text-lg font-bold text-secondary-600">{selectedMatch.socialScore}%</div>
-                    <div className="text-xs text-gray-600">{isPortuguese ? 'Pontuação Social' : 'Social Score'}</div>
+                    <div className="text-xs text-secondary-600">{isPortuguese ? 'Pontuação Social' : 'Social Score'}</div>
                   </div>
                 </div>
 
@@ -673,7 +673,7 @@ export default function SocialDiscoveryIntegration({
                   </h4>
                   <div className="space-y-1">
                     {selectedMatch.mutualConnections.map(connection => (
-                      <div key={connection} className="text-sm text-gray-600">
+                      <div key={connection} className="text-sm text-secondary-600">
                         • {connection}
                       </div>
                     ))}
@@ -683,7 +683,7 @@ export default function SocialDiscoveryIntegration({
                 <div className="flex gap-3 mt-6">
                   <button
                     onClick={() => setShowMatchDetail(false)}
-                    className="flex-1 bg-gray-100 text-gray-700 py-3 px-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+                    className="flex-1 bg-secondary-100 text-secondary-700 py-3 px-4 rounded-lg font-semibold hover:bg-secondary-200 transition-colors"
                   >
                     {isPortuguese ? 'Fechar' : 'Close'}
                   </button>
@@ -711,7 +711,7 @@ export default function SocialDiscoveryIntegration({
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {isPortuguese ? 'Descoberta Premium' : 'Premium Discovery'}
               </h3>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <ul className="text-sm text-secondary-600 space-y-1">
                 <li>• {isPortuguese ? 'Algoritmo de descoberta avançado' : 'Advanced discovery algorithm'}</li>
                 <li>• {isPortuguese ? 'Descobertas ilimitadas diárias' : 'Unlimited daily discoveries'}</li>
                 <li>• {isPortuguese ? 'Filtros de compatibilidade cultural' : 'Cultural compatibility filters'}</li>

@@ -34,37 +34,37 @@ export default function StreamCategories({
     const colorMap = {
       primary: {
         bg: isSelected ? 'bg-primary-100 border-primary-500' : 'bg-white border-gray-200 hover:border-primary-300',
-        text: isSelected ? 'text-primary-700' : 'text-gray-700',
+        text: isSelected ? 'text-primary-700' : 'text-secondary-700',
         icon: isSelected ? 'text-primary-600' : 'text-primary-500',
         gradient: 'from-primary-500 to-primary-600'
       },
       secondary: {
         bg: isSelected ? 'bg-secondary-100 border-secondary-500' : 'bg-white border-gray-200 hover:border-secondary-300',
-        text: isSelected ? 'text-secondary-700' : 'text-gray-700',
+        text: isSelected ? 'text-secondary-700' : 'text-secondary-700',
         icon: isSelected ? 'text-secondary-600' : 'text-secondary-500',
         gradient: 'from-secondary-500 to-secondary-600'
       },
       action: {
         bg: isSelected ? 'bg-action-100 border-action-500' : 'bg-white border-gray-200 hover:border-action-300',
-        text: isSelected ? 'text-action-700' : 'text-gray-700',
+        text: isSelected ? 'text-action-700' : 'text-secondary-700',
         icon: isSelected ? 'text-action-600' : 'text-action-500',
         gradient: 'from-action-500 to-action-600'
       },
       accent: {
         bg: isSelected ? 'bg-accent-100 border-accent-500' : 'bg-white border-gray-200 hover:border-accent-300',
-        text: isSelected ? 'text-accent-700' : 'text-gray-700',
+        text: isSelected ? 'text-accent-700' : 'text-secondary-700',
         icon: isSelected ? 'text-accent-600' : 'text-accent-500',
         gradient: 'from-accent-500 to-accent-600'
       },
       premium: {
         bg: isSelected ? 'bg-premium-100 border-premium-500' : 'bg-white border-gray-200 hover:border-premium-300',
-        text: isSelected ? 'text-premium-700' : 'text-gray-700',
+        text: isSelected ? 'text-premium-700' : 'text-secondary-700',
         icon: isSelected ? 'text-premium-600' : 'text-premium-500',
         gradient: 'from-premium-500 to-premium-600'
       },
       coral: {
         bg: isSelected ? 'bg-coral-100 border-coral-500' : 'bg-white border-gray-200 hover:border-coral-300',
-        text: isSelected ? 'text-coral-700' : 'text-gray-700',
+        text: isSelected ? 'text-coral-700' : 'text-secondary-700',
         icon: isSelected ? 'text-coral-600' : 'text-coral-500',
         gradient: 'from-coral-500 to-coral-600'
       }
@@ -74,7 +74,7 @@ export default function StreamCategories({
     
     if (isPremium && !hasAccess) {
       return {
-        bg: 'bg-gray-100 border-gray-300 opacity-75',
+        bg: 'bg-secondary-100 border-secondary-300 opacity-75',
         text: 'text-gray-500',
         icon: 'text-gray-400',
         gradient: 'from-gray-400 to-gray-500'
@@ -108,7 +108,7 @@ export default function StreamCategories({
         <h2 className="text-lg sm:text-xl font-bold text-gray-900">
           {language === 'pt' ? 'Categorias 🇵🇹' : 'Categories 🇵🇹'}
         </h2>
-        <div className="text-xs sm:text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+        <div className="text-xs sm:text-sm text-gray-500 bg-secondary-100 px-2 py-1 rounded-full">
           {categories.reduce((total, cat) => total + cat.streamCount, 0)} {language === 'pt' ? 'ao vivo' : 'live'}
         </div>
       </div>
@@ -120,8 +120,8 @@ export default function StreamCategories({
         onClick={() => onCategorySelect('all')}
         className={`w-full p-4 rounded-lg border-2 transition-all duration-200 mb-4 ${
           selectedCategory === 'all'
-            ? 'bg-gray-100 border-gray-500 text-gray-700'
-            : 'bg-white border-gray-200 hover:border-gray-300 text-gray-700'
+            ? 'bg-secondary-100 border-gray-500 text-secondary-700'
+            : 'bg-white border-gray-200 hover:border-secondary-300 text-secondary-700'
         }`}
       >
         <div className="flex items-center justify-between">
@@ -138,7 +138,7 @@ export default function StreamCategories({
               </div>
             </div>
           </div>
-          <div className="text-sm font-medium text-gray-600">
+          <div className="text-sm font-medium text-secondary-600">
             {categories.reduce((total, cat) => total + cat.streamCount, 0)}
           </div>
         </div>
@@ -157,14 +157,14 @@ export default function StreamCategories({
             className={`flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap border-2 transition-all touch-manipulation ${
               selectedCategory === 'all'
                 ? 'bg-primary-100 border-primary-500 text-primary-700'
-                : 'bg-white border-gray-200 text-gray-700 active:bg-gray-50'
+                : 'bg-white border-gray-200 text-secondary-700 active:bg-gray-50'
             }`}
           >
             <Users className="w-4 h-4" />
             <span className="text-sm font-medium">
               {language === 'pt' ? 'Todas' : 'All'}
             </span>
-            <span className="text-xs bg-gray-100 px-1.5 py-0.5 rounded-full">
+            <span className="text-xs bg-secondary-100 px-1.5 py-0.5 rounded-full">
               {categories.reduce((total, cat) => total + cat.streamCount, 0)}
             </span>
           </motion.button>
@@ -195,7 +195,7 @@ export default function StreamCategories({
                 <span className={`text-sm font-medium ${colors.text}`}>
                   {category.name.split(' ')[0]} {/* Show first word only on mobile */}
                 </span>
-                <span className="text-xs bg-gray-100 px-1.5 py-0.5 rounded-full">
+                <span className="text-xs bg-secondary-100 px-1.5 py-0.5 rounded-full">
                   {category.streamCount}
                 </span>
               </motion.button>
@@ -276,7 +276,7 @@ export default function StreamCategories({
               <div className="text-sm font-medium text-gray-900">
                 {language === 'pt' ? 'Desbloqueie Conteúdo Premium' : 'Unlock Premium Content'}
               </div>
-              <div className="text-xs text-gray-600">
+              <div className="text-xs text-secondary-600">
                 {language === 'pt' 
                   ? 'Aceda a workshops exclusivos, mesas redondas VIP e conteúdo dos bastidores.'
                   : 'Access exclusive workshops, VIP roundtables, and behind-the-scenes content.'

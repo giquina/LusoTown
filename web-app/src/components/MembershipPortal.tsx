@@ -102,13 +102,13 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
   if (membershipTier === 'none') {
     return (
       <div className="text-center py-12">
-        <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
           <UserGroupIcon className="w-8 h-8 text-gray-400" />
         </div>
         <h3 className="text-lg font-semibold text-gray-900 mb-2">
           {isPortuguese ? 'Associação Necessária' : 'Membership Required'}
         </h3>
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {isPortuguese 
             ? 'Subscreva um plano premium para aceder ao portal de benefícios.'
             : 'Subscribe to a premium plan to access the benefits portal.'
@@ -122,7 +122,7 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
     return (
       <div className="text-center py-12">
         <div className="w-8 h-8 border-2 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {isPortuguese ? 'Carregando benefícios...' : 'Loading benefits...'}
         </p>
       </div>
@@ -137,7 +137,7 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
         animate={{ opacity: 1, y: 0 }}
         className="text-center"
       >
-        <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-full mb-4 ${tierConfig.color === 'amber' ? 'bg-amber-100 text-amber-800' : tierConfig.color === 'gray' ? 'bg-gray-100 text-gray-800' : tierConfig.color === 'yellow' ? 'bg-yellow-100 text-yellow-800' : 'bg-purple-100 text-purple-800'}`}>
+        <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-full mb-4 ${tierConfig.color === 'amber' ? 'bg-amber-100 text-amber-800' : tierConfig.color === 'gray' ? 'bg-secondary-100 text-secondary-800' : tierConfig.color === 'yellow' ? 'bg-yellow-100 text-yellow-800' : 'bg-purple-100 text-purple-800'}`}>
           <SparklesIcon className="w-5 h-5" />
           <span className="font-semibold">
             {isPortuguese ? tierConfig.namePortuguese : tierConfig.name}
@@ -146,7 +146,7 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
         <h2 className="text-2xl font-bold text-gray-900 mb-2">
           {isPortuguese ? 'Portal de Benefícios' : 'Benefits Portal'}
         </h2>
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {isPortuguese ? tierConfig.descriptionPortuguese : tierConfig.description}
         </p>
       </motion.div>
@@ -161,9 +161,9 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
         <div className="bg-white p-4 rounded-xl border border-gray-200">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-              <CurrencyPoundIcon className="w-4 h-4 text-green-600" />
+              <CurrencyPoundIcon className="w-4 h-4 text-action-600" />
             </div>
-            <span className="text-sm font-medium text-gray-600">
+            <span className="text-sm font-medium text-secondary-600">
               {isPortuguese ? 'Poupanças' : 'Savings'}
             </span>
           </div>
@@ -178,9 +178,9 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
         <div className="bg-white p-4 rounded-xl border border-gray-200">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-              <ChartBarIcon className="w-4 h-4 text-blue-600" />
+              <ChartBarIcon className="w-4 h-4 text-primary-600" />
             </div>
-            <span className="text-sm font-medium text-gray-600">
+            <span className="text-sm font-medium text-secondary-600">
               {isPortuguese ? 'Serviços' : 'Services'}
             </span>
           </div>
@@ -197,7 +197,7 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
             <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
               <CalendarDaysIcon className="w-4 h-4 text-purple-600" />
             </div>
-            <span className="text-sm font-medium text-gray-600">
+            <span className="text-sm font-medium text-secondary-600">
               {isPortuguese ? 'Eventos' : 'Events'}
             </span>
           </div>
@@ -214,7 +214,7 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
             <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
               <UserGroupIcon className="w-4 h-4 text-amber-600" />
             </div>
-            <span className="text-sm font-medium text-gray-600">
+            <span className="text-sm font-medium text-secondary-600">
               {isPortuguese ? 'Rede' : 'Network'}
             </span>
           </div>
@@ -242,7 +242,7 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
             <h3 className="text-lg font-semibold text-gray-900">
               {isPortuguese ? 'Desconto Ativo' : 'Active Discount'}
             </h3>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {isPortuguese 
                 ? `Receba ${serviceDiscount}% de desconto em todos os serviços premium`
                 : `Receive ${serviceDiscount}% discount on all premium services`
@@ -269,12 +269,12 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
             <div key={benefit.id} className="bg-white p-4 rounded-xl border border-gray-200">
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <GiftIcon className="w-4 h-4 text-green-600" />
+                  <GiftIcon className="w-4 h-4 text-action-600" />
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900 mb-1">{benefit.benefit_name}</h4>
                   {benefit.benefit_description && (
-                    <p className="text-sm text-gray-600 mb-2">{benefit.benefit_description}</p>
+                    <p className="text-sm text-secondary-600 mb-2">{benefit.benefit_description}</p>
                   )}
                   {benefit.benefit_value && (
                     <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
@@ -303,15 +303,15 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
               <div key={partnership.id} className="bg-white p-4 rounded-xl border border-gray-200">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <UserGroupIcon className="w-4 h-4 text-blue-600" />
+                    <UserGroupIcon className="w-4 h-4 text-primary-600" />
                   </div>
                   <div className="flex-1">
                     <h4 className="font-medium text-gray-900 mb-1">{partnership.partner_name}</h4>
                     {partnership.partnership_description && (
-                      <p className="text-sm text-gray-600 mb-2">{partnership.partnership_description}</p>
+                      <p className="text-sm text-secondary-600 mb-2">{partnership.partnership_description}</p>
                     )}
                     {partnership.member_benefits && (
-                      <p className="text-sm text-green-600">{partnership.member_benefits}</p>
+                      <p className="text-sm text-action-600">{partnership.member_benefits}</p>
                     )}
                   </div>
                 </div>
@@ -340,13 +340,13 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
                       <div className="font-medium text-gray-900 capitalize">
                         {usageItem.benefit_type.replace('_', ' ')}
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-secondary-600">
                         {usageItem.service_type} " {new Date(usageItem.usage_date).toLocaleDateString()}
                       </div>
                     </div>
                     {usageItem.amount_saved && usageItem.amount_saved > 0 && (
                       <div className="text-right">
-                        <div className="text-sm font-medium text-green-600">
+                        <div className="text-sm font-medium text-action-600">
                           £{usageItem.amount_saved.toFixed(2)} {isPortuguese ? 'poupado' : 'saved'}
                         </div>
                         {usageItem.discount_applied && (

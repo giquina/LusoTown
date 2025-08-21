@@ -55,7 +55,6 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
         });
         
         setSwRegistration(registration);
-        console.log('[PWA] Service Worker registered:', registration);
         
         // Check for updates
         registration.addEventListener('updatefound', () => {
@@ -158,7 +157,6 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
       const choice = await installPrompt.userChoice;
       
       if (choice.outcome === 'accepted') {
-        console.log('[PWA] App installation accepted');
         addNotification({
           id: 'install-success',
           type: 'success',
@@ -169,7 +167,6 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
           duration: 5000
         });
       } else {
-        console.log('[PWA] App installation dismissed');
       }
       
       setInstallPrompt(null);
@@ -185,7 +182,6 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
     try {
       // Check if push notifications are supported
       if (!('PushManager' in window)) {
-        console.log('[PWA] Push notifications not supported');
         return;
       }
       
@@ -193,7 +189,6 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
       const existingSubscription = await swRegistration.pushManager.getSubscription();
       
       if (existingSubscription) {
-        console.log('[PWA] Existing push subscription found');
         // Send subscription to backend
         await sendSubscriptionToBackend(existingSubscription);
       }
@@ -261,7 +256,6 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
         applicationServerKey: process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY
       });
       
-      console.log('[PWA] Push subscription created:', subscription);
       await sendSubscriptionToBackend(subscription);
     } catch (error) {
       console.error('[PWA] Push subscription error:', error);
@@ -395,7 +389,7 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
           className={`flex items-center space-x-2 px-3 py-1 rounded-full text-sm transition-colors ${
             notificationsEnabled
               ? 'bg-blue-100 text-blue-800 hover:bg-blue-200'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
           }`}
         >
           {notificationsEnabled ? (
@@ -421,13 +415,13 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
         <div className="bg-gradient-to-r from-red-50 to-green-50 border border-red-200 rounded-lg p-4">
           <div className="flex items-start space-x-3">
             <div className="flex-shrink-0">
-              <Smartphone className="h-6 w-6 text-red-600" />
+              <Smartphone className="h-6 w-6 text-coral-600" />
             </div>
             <div className="flex-1">
               <h3 className="text-sm font-semibold text-gray-900">
                 {language === 'pt' ? 'Instalar App LusoTown' : 'Install LusoTown App'}
               </h3>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm text-secondary-600 mt-1">
                 {language === 'pt' 
                   ? 'Acesso rápido à comunidade portuguesa no teu dispositivo' 
                   : 'Quick access to the Portuguese community on your device'}
@@ -435,7 +429,7 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
               <div className="mt-3 flex space-x-3">
                 <button
                   onClick={installApp}
-                  className="inline-flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-red-700 transition-colors"
+                  className="inline-flex items-center space-x-2 bg-coral-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-red-700 transition-colors"
                 >
                   <Download className="h-4 w-4" />
                   <span>{language === 'pt' ? 'Instalar' : 'Install'}</span>
@@ -445,7 +439,7 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
                     setIsInstallable(false);
                     setInstallPrompt(null);
                   }}
-                  className="text-sm text-gray-500 hover:text-gray-700 px-4 py-2"
+                  className="text-sm text-gray-500 hover:text-secondary-700 px-4 py-2"
                 >
                   {language === 'pt' ? 'Agora não' : 'Not now'}
                 </button>
@@ -460,13 +454,13 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-4">
           <div className="flex items-start space-x-3">
             <div className="flex-shrink-0">
-              <Bell className="h-6 w-6 text-blue-600" />
+              <Bell className="h-6 w-6 text-primary-600" />
             </div>
             <div className="flex-1">
               <h3 className="text-sm font-semibold text-gray-900">
                 {language === 'pt' ? 'Ativar Notificações' : 'Enable Notifications'}
               </h3>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm text-secondary-600 mt-1">
                 {language === 'pt' 
                   ? 'Recebe alertas sobre eventos portugueses e novos contactos' 
                   : 'Get alerts about Portuguese cultural events and new connections'}
@@ -474,7 +468,7 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
               <div className="mt-3 flex space-x-3">
                 <button
                   onClick={enableNotifications}
-                  className="inline-flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+                  className="inline-flex items-center space-x-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors"
                 >
                   <Bell className="h-4 w-4" />
                   <span>{language === 'pt' ? 'Ativar' : 'Enable'}</span>
@@ -490,13 +484,13 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
         <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-4">
           <div className="flex items-start space-x-3">
             <div className="flex-shrink-0">
-              <Download className="h-6 w-6 text-green-600" />
+              <Download className="h-6 w-6 text-action-600" />
             </div>
             <div className="flex-1">
               <h3 className="text-sm font-semibold text-gray-900">
                 {language === 'pt' ? 'Atualização Disponível' : 'Update Available'}
               </h3>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm text-secondary-600 mt-1">
                 {language === 'pt' 
                   ? 'Nova versão com melhorias para a comunidade portuguesa' 
                   : 'New version with improvements for the Portuguese community'}
@@ -504,7 +498,7 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
               <div className="mt-3">
                 <button
                   onClick={() => window.location.reload()}
-                  className="inline-flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700 transition-colors"
+                  className="inline-flex items-center space-x-2 bg-action-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700 transition-colors"
                 >
                   <Download className="h-4 w-4" />
                   <span>{language === 'pt' ? 'Atualizar Agora' : 'Update Now'}</span>

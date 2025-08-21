@@ -123,7 +123,7 @@ export default function CreatorEarningsCalculator() {
         <h2 className="text-3xl font-bold text-gray-900 mb-4">
           {isPt ? 'Calculadora de Ganhos de Criador' : 'Creator Earnings Calculator'}
         </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
           {isPt
             ? 'Descubra quanto pode ganhar partilhando a sua paixão pela cultura portuguesa. Ajuste os valores com base no seu público e conteúdo.'
             : 'Discover how much you can earn sharing your passion for Portuguese culture. Adjust the values based on your audience and content.'}
@@ -148,7 +148,7 @@ export default function CreatorEarningsCalculator() {
               <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-primary-700">
                 {preset.name}
               </h4>
-              <p className="text-sm text-gray-600">{preset.description}</p>
+              <p className="text-sm text-secondary-600">{preset.description}</p>
             </motion.button>
           ))}
         </div>
@@ -176,7 +176,7 @@ export default function CreatorEarningsCalculator() {
               </h4>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-secondary-700 mb-1">
                     {isPt ? 'Seguidores' : 'Followers'}
                   </label>
                   <input
@@ -186,7 +186,7 @@ export default function CreatorEarningsCalculator() {
                     step="50"
                     value={followers}
                     onChange={(e) => setFollowers(parseInt(e.target.value))}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                    className="w-full h-2 bg-secondary-200 rounded-lg appearance-none cursor-pointer"
                   />
                   <div className="flex justify-between text-sm text-gray-500 mt-1">
                     <span>50</span>
@@ -196,7 +196,7 @@ export default function CreatorEarningsCalculator() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-secondary-700 mb-1">
                     {isPt ? 'Espectadores Médios por Stream' : 'Avg Viewers per Stream'}
                   </label>
                   <input
@@ -206,7 +206,7 @@ export default function CreatorEarningsCalculator() {
                     step="5"
                     value={avgViewers}
                     onChange={(e) => setAvgViewers(parseInt(e.target.value))}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                    className="w-full h-2 bg-secondary-200 rounded-lg appearance-none cursor-pointer"
                   />
                   <div className="flex justify-between text-sm text-gray-500 mt-1">
                     <span>10</span>
@@ -224,7 +224,7 @@ export default function CreatorEarningsCalculator() {
               </h4>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-secondary-700 mb-1">
                     {isPt ? 'Horas de Stream por Mês' : 'Stream Hours per Month'}
                   </label>
                   <input
@@ -234,7 +234,7 @@ export default function CreatorEarningsCalculator() {
                     step="2"
                     value={streamHours}
                     onChange={(e) => setStreamHours(parseInt(e.target.value))}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                    className="w-full h-2 bg-secondary-200 rounded-lg appearance-none cursor-pointer"
                   />
                   <div className="flex justify-between text-sm text-gray-500 mt-1">
                     <span>4h</span>
@@ -245,7 +245,7 @@ export default function CreatorEarningsCalculator() {
 
                 <div className="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-secondary-700 mb-1">
                       {isPt ? 'Preço Workshop (£)' : 'Workshop Price (£)'}
                     </label>
                     <input
@@ -254,11 +254,11 @@ export default function CreatorEarningsCalculator() {
                       max="100"
                       value={workshopPrice}
                       onChange={(e) => setWorkshopPrice(parseInt(e.target.value) || 0)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-secondary-700 mb-1">
                       {isPt ? 'Workshops/Mês' : 'Workshops/Month'}
                     </label>
                     <input
@@ -267,7 +267,7 @@ export default function CreatorEarningsCalculator() {
                       max="20"
                       value={workshopsPerMonth}
                       onChange={(e) => setWorkshopsPerMonth(parseInt(e.target.value) || 0)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     />
                   </div>
                 </div>
@@ -282,7 +282,7 @@ export default function CreatorEarningsCalculator() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-secondary-700 mb-1">
                       {isPt ? '% Espectadores que Doam' : '% Viewers who Donate'}
                     </label>
                     <input
@@ -292,12 +292,12 @@ export default function CreatorEarningsCalculator() {
                       step="1"
                       value={donationRate}
                       onChange={(e) => setDonationRate(parseInt(e.target.value))}
-                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                      className="w-full h-2 bg-secondary-200 rounded-lg appearance-none cursor-pointer"
                     />
                     <div className="text-center text-sm text-primary-600 font-medium">{donationRate}%</div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-secondary-700 mb-1">
                       {isPt ? 'Doação Média (£)' : 'Avg Donation (£)'}
                     </label>
                     <input
@@ -306,14 +306,14 @@ export default function CreatorEarningsCalculator() {
                       max="50"
                       value={avgDonation}
                       onChange={(e) => setAvgDonation(parseInt(e.target.value) || 0)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-secondary-700 mb-1">
                       {isPt ? 'Subscritores Premium' : 'Premium Subscribers'}
                     </label>
                     <input
@@ -322,11 +322,11 @@ export default function CreatorEarningsCalculator() {
                       max="200"
                       value={premiumSubs}
                       onChange={(e) => setPremiumSubs(parseInt(e.target.value) || 0)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-secondary-700 mb-1">
                       {isPt ? 'Preço Premium (£)' : 'Premium Price (£)'}
                     </label>
                     <input
@@ -335,7 +335,7 @@ export default function CreatorEarningsCalculator() {
                       max="50"
                       value={premiumPrice}
                       onChange={(e) => setPremiumPrice(parseInt(e.target.value) || 0)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     />
                   </div>
                 </div>
@@ -427,16 +427,16 @@ export default function CreatorEarningsCalculator() {
             </h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
-                <Info className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-600">
+                <Info className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
+                <span className="text-secondary-600">
                   {isPt
                     ? 'Recebe 85% de todas as receitas - uma das divisões mais generosas do mercado.'
                     : 'You receive 85% of all revenue - one of the most generous splits in the market.'}
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <Info className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-600">
+                <Info className="w-4 h-4 text-action-500 mt-0.5 flex-shrink-0" />
+                <span className="text-secondary-600">
                   {isPt
                     ? 'Pagamentos processados mensalmente até ao 5º dia útil.'
                     : 'Payments processed monthly by the 5th business day.'}
@@ -444,7 +444,7 @@ export default function CreatorEarningsCalculator() {
               </div>
               <div className="flex items-start gap-2">
                 <Info className="w-4 h-4 text-purple-500 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-600">
+                <span className="text-secondary-600">
                   {isPt
                     ? 'Ganhos podem aumentar significativamente com crescimento da audiência.'
                     : 'Earnings can grow significantly with audience growth.'}
@@ -453,7 +453,7 @@ export default function CreatorEarningsCalculator() {
               {followers > 1000 && (
                 <div className="flex items-start gap-2">
                   <Info className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-600">
+                  <span className="text-secondary-600">
                     {isPt
                       ? 'Com mais de 1.000 seguidores, está elegível para oportunidades de patrocínio!'
                       : 'With 1,000+ followers, you\'re eligible for sponsorship opportunities!'}

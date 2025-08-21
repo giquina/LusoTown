@@ -207,7 +207,7 @@ export default function SaveFavoriteCartButton({
     if (iconOnly) {
       return cn(
         'transition-all duration-200 rounded-lg flex items-center justify-center relative',
-        active ? 'bg-primary-100 text-primary-600' : 'bg-white hover:bg-gray-50 text-gray-600 shadow-sm border border-gray-200'
+        active ? 'bg-primary-100 text-primary-600' : 'bg-white hover:bg-gray-50 text-secondary-600 shadow-sm border border-gray-200'
       )
     }
     
@@ -253,7 +253,7 @@ export default function SaveFavoriteCartButton({
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   exit={{ scale: 0 }}
-                  className="absolute inset-0 bg-red-500 text-white rounded-lg flex items-center justify-center"
+                  className="absolute inset-0 bg-coral-500 text-white rounded-lg flex items-center justify-center"
                 >
                   <HeartSolidIcon className="w-5 h-5" />
                 </motion.div>
@@ -265,9 +265,9 @@ export default function SaveFavoriteCartButton({
                   transition={{ duration: 0.2 }}
                 >
                   {itemSaved ? (
-                    <HeartSolidIcon className={cn(IconSystem.sizes.md, 'text-red-500')} />
+                    <HeartSolidIcon className={cn(IconSystem.sizes.md, 'text-coral-500')} />
                   ) : (
-                    <HeartIcon className={cn(IconSystem.sizes.md, 'group-hover:text-red-500')} />
+                    <HeartIcon className={cn(IconSystem.sizes.md, 'group-hover:text-coral-500')} />
                   )}
                 </motion.div>
               )}
@@ -282,7 +282,7 @@ export default function SaveFavoriteCartButton({
           
           {/* Save Tooltip */}
           {showTooltip && (
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
+            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-secondary-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
               {showTooltip}
             </div>
           )}
@@ -337,7 +337,7 @@ export default function SaveFavoriteCartButton({
             
             {/* Cart count indicator */}
             {itemInCart && cartCount > 0 && (
-              <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full min-w-[18px] h-[18px] flex items-center justify-center font-bold">
+              <div className="absolute -top-1 -right-1 bg-coral-500 text-white text-xs rounded-full min-w-[18px] h-[18px] flex items-center justify-center font-bold">
                 {cartCount > 99 ? '99+' : cartCount}
               </div>
             )}
@@ -353,7 +353,7 @@ export default function SaveFavoriteCartButton({
           
           {/* Cart Tooltip */}
           {showTooltip && (
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
+            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-secondary-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
               {showTooltip}
             </div>
           )}

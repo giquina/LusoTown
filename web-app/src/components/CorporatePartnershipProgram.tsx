@@ -229,7 +229,7 @@ const CorporatePartnershipProgram: React.FC = () => {
             }
           </h1>
         </div>
-        <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-6">
+        <p className="text-xl text-secondary-600 max-w-4xl mx-auto mb-6">
           {language === 'pt'
             ? 'Junte-se ao mercado português de £450M no Reino Unido. Parcerias estratégicas para empresas que servem a comunidade lusófona.'
             : 'Join the £450M Portuguese market in the UK. Strategic partnerships for businesses serving the Portuguese-speaking community.'
@@ -240,25 +240,25 @@ const CorporatePartnershipProgram: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
             <div className="text-2xl font-bold text-primary-600">450,000+</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Portugueses no Reino Unido' : 'Portuguese in UK'}
             </div>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
             <div className="text-2xl font-bold text-secondary-600">£450M</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Poder de Compra Anual' : 'Annual Spending Power'}
             </div>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
             <div className="text-2xl font-bold text-accent-600">25,000+</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Membros Ativos' : 'Active Members'}
             </div>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
             <div className="text-2xl font-bold text-premium-600">380%</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'ROI Médio' : 'Average ROI'}
             </div>
           </div>
@@ -301,15 +301,15 @@ const CorporatePartnershipProgram: React.FC = () => {
                   {pkg.price}
                 </div>
                 
-                <div className="text-sm text-gray-600 mb-4">
+                <div className="text-sm text-secondary-600 mb-4">
                   <div className="mb-1">{pkg.targetRevenue}</div>
                   <div>{pkg.clientBase}</div>
                 </div>
                 
                 <div className="space-y-2">
                   {(language === 'pt' ? pkg.featuresPortuguese : pkg.features).slice(0, 3).map((feature, index) => (
-                    <div key={index} className="flex items-center text-sm text-gray-700">
-                      <CheckBadgeIcon className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    <div key={index} className="flex items-center text-sm text-secondary-700">
+                      <CheckBadgeIcon className="w-4 h-4 text-action-500 mr-2 flex-shrink-0" />
                       <span>{feature}</span>
                     </div>
                   ))}
@@ -333,7 +333,7 @@ const CorporatePartnershipProgram: React.FC = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {language === 'pt' ? selectedPkg.namePortuguese : selectedPkg.name}
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-secondary-600 mb-6">
                 {language === 'pt'
                   ? 'Benefícios completos incluídos neste pacote de parceria:'
                   : 'Complete benefits included in this partnership package:'
@@ -343,8 +343,8 @@ const CorporatePartnershipProgram: React.FC = () => {
               <div className="space-y-3">
                 {(language === 'pt' ? selectedPkg.featuresPortuguese : selectedPkg.features).map((feature, index) => (
                   <div key={index} className="flex items-start">
-                    <CheckBadgeIcon className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
+                    <CheckBadgeIcon className="w-5 h-5 text-action-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <span className="text-secondary-700">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -355,10 +355,10 @@ const CorporatePartnershipProgram: React.FC = () => {
                 {language === 'pt' ? 'ROI Estimado Anual' : 'Estimated Annual ROI'}
               </h4>
               <div className="bg-white rounded-lg p-6 mb-6">
-                <div className="text-3xl font-bold text-green-600 mb-2">
+                <div className="text-3xl font-bold text-action-600 mb-2">
                   {calculateTotalROI(selectedPackage)}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {language === 'pt' 
                     ? 'Retorno total estimado baseado em métricas de parceiros atuais'
                     : 'Total estimated return based on current partner metrics'
@@ -393,10 +393,10 @@ const CorporatePartnershipProgram: React.FC = () => {
                     {language === 'pt' ? roi.categoryPortuguese : roi.category}
                   </h4>
                 </div>
-                <div className="text-2xl font-bold text-green-600 mb-2">
+                <div className="text-2xl font-bold text-action-600 mb-2">
                   {roi.annualValue}
                 </div>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' ? roi.descriptionPortuguese : roi.description}
                 </p>
               </div>
@@ -419,18 +419,18 @@ const CorporatePartnershipProgram: React.FC = () => {
               </div>
               <div className="ml-4">
                 <h4 className="font-semibold text-gray-900">Millennium Bank UK</h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' ? 'Parceiro Bancário' : 'Banking Partner'}
                 </p>
               </div>
             </div>
-            <p className="text-gray-600 text-sm mb-4">
+            <p className="text-secondary-600 text-sm mb-4">
               {language === 'pt'
                 ? '45% de aumento em novos clientes portugueses através da parceria LusoTown.'
                 : '45% increase in new Portuguese customers through LusoTown partnership.'
               }
             </p>
-            <div className="text-2xl font-bold text-green-600">+£125K</div>
+            <div className="text-2xl font-bold text-action-600">+£125K</div>
             <div className="text-sm text-gray-500">
               {language === 'pt' ? 'Receita adicional anual' : 'Additional annual revenue'}
             </div>
@@ -443,18 +443,18 @@ const CorporatePartnershipProgram: React.FC = () => {
               </div>
               <div className="ml-4">
                 <h4 className="font-semibold text-gray-900">Instituto Camões</h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' ? 'Parceiro Cultural' : 'Cultural Partner'}
                 </p>
               </div>
             </div>
-            <p className="text-gray-600 text-sm mb-4">
+            <p className="text-secondary-600 text-sm mb-4">
               {language === 'pt'
                 ? '60% de aumento nas inscrições em cursos de português através da plataforma.'
                 : '60% increase in Portuguese course enrollments through the platform.'
               }
             </p>
-            <div className="text-2xl font-bold text-green-600">+£85K</div>
+            <div className="text-2xl font-bold text-action-600">+£85K</div>
             <div className="text-sm text-gray-500">
               {language === 'pt' ? 'Valor de inscrições adicionais' : 'Additional enrollment value'}
             </div>
@@ -467,18 +467,18 @@ const CorporatePartnershipProgram: React.FC = () => {
               </div>
               <div className="ml-4">
                 <h4 className="font-semibold text-gray-900">TAP Air Portugal</h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' ? 'Parceiro de Viagens' : 'Travel Partner'}
                 </p>
               </div>
             </div>
-            <p className="text-gray-600 text-sm mb-4">
+            <p className="text-secondary-600 text-sm mb-4">
               {language === 'pt'
                 ? '35% de aumento em reservas para Portugal através de referências da comunidade.'
                 : '35% increase in Portugal bookings through community referrals.'
               }
             </p>
-            <div className="text-2xl font-bold text-green-600">+£95K</div>
+            <div className="text-2xl font-bold text-action-600">+£95K</div>
             <div className="text-sm text-gray-500">
               {language === 'pt' ? 'Receita de viagens adicional' : 'Additional travel revenue'}
             </div>
@@ -500,7 +500,7 @@ const CorporatePartnershipProgram: React.FC = () => {
             <h4 className="font-semibold text-gray-900 mb-2">
               {language === 'pt' ? '1. Candidatura' : '1. Application'}
             </h4>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {language === 'pt'
                 ? 'Submeta a candidatura online com informações da empresa'
                 : 'Submit online application with company information'
@@ -515,7 +515,7 @@ const CorporatePartnershipProgram: React.FC = () => {
             <h4 className="font-semibold text-gray-900 mb-2">
               {language === 'pt' ? '2. Consulta' : '2. Consultation'}
             </h4>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {language === 'pt'
                 ? 'Reunião de estratégia para discutir objetivos'
                 : 'Strategy meeting to discuss objectives'
@@ -530,7 +530,7 @@ const CorporatePartnershipProgram: React.FC = () => {
             <h4 className="font-semibold text-gray-900 mb-2">
               {language === 'pt' ? '3. Acordo' : '3. Agreement'}
             </h4>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {language === 'pt'
                 ? 'Finalização do acordo de parceria'
                 : 'Partnership agreement finalization'
@@ -545,7 +545,7 @@ const CorporatePartnershipProgram: React.FC = () => {
             <h4 className="font-semibold text-gray-900 mb-2">
               {language === 'pt' ? '4. Lançamento' : '4. Launch'}
             </h4>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {language === 'pt'
                 ? 'Implementação e lançamento oficial'
                 : 'Implementation and official launch'
@@ -571,7 +571,7 @@ const CorporatePartnershipProgram: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="mailto:partnerships@lusotown.com"
-            className="inline-flex items-center bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-secondary-100 transition-colors"
           >
             <EnvelopeIcon className="w-5 h-5 mr-2" />
             {language === 'pt' ? 'Contactar por Email' : 'Email Us'}

@@ -70,7 +70,7 @@ export default function ConnectionFilters({
         className={`flex items-center gap-2 px-4 py-3 rounded-lg border transition-all duration-200 ${
           hasActiveFilters || showFilters
             ? 'bg-primary-50 border-primary-200 text-primary-700'
-            : 'bg-white border-gray-200 text-gray-600 hover:border-gray-300'
+            : 'bg-white border-gray-200 text-secondary-600 hover:border-secondary-300'
         }`}
       >
         <FunnelIcon className="w-5 h-5" />
@@ -103,7 +103,7 @@ export default function ConnectionFilters({
               </div>
               <button
                 onClick={() => setShowFilters(false)}
-                className="p-1 text-gray-400 hover:text-gray-600 transition-colors"
+                className="p-1 text-gray-400 hover:text-secondary-600 transition-colors"
               >
                 <XMarkIcon className="w-5 h-5" />
               </button>
@@ -112,7 +112,7 @@ export default function ConnectionFilters({
             <div className="space-y-6">
               {/* Membership Tier */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-secondary-700 mb-2">
                   <UserGroupIcon className="w-4 h-4" />
                   {isPortuguese ? 'Tipo de Membro' : 'Membership Type'}
                 </label>
@@ -131,7 +131,7 @@ export default function ConnectionFilters({
 
               {/* Location */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-secondary-700 mb-2">
                   <MapPinIcon className="w-4 h-4" />
                   {isPortuguese ? 'Localização' : 'Location'}
                 </label>
@@ -146,7 +146,7 @@ export default function ConnectionFilters({
 
               {/* Connection Strength */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-secondary-700 mb-2">
                   <StarIcon className="w-4 h-4" />
                   {isPortuguese ? 'Força da Conexão' : 'Connection Strength'}
                 </label>
@@ -165,7 +165,7 @@ export default function ConnectionFilters({
 
               {/* Minimum Shared Events */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-secondary-700 mb-2">
                   <CalendarIcon className="w-4 h-4" />
                   {isPortuguese ? 'Eventos Mínimos em Comum' : 'Minimum Shared Events'}
                 </label>
@@ -182,7 +182,7 @@ export default function ConnectionFilters({
 
               {/* Last Interaction */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-secondary-700 mb-2">
                   <CalendarIcon className="w-4 h-4" />
                   {isPortuguese ? 'Última Interação' : 'Last Interaction'}
                 </label>
@@ -206,11 +206,11 @@ export default function ConnectionFilters({
                     type="checkbox"
                     checked={activeFilters.isVerified === true}
                     onChange={(e) => handleFilterChange('isVerified', e.target.checked || undefined)}
-                    className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                    className="w-4 h-4 text-primary-600 border-secondary-300 rounded focus:ring-primary-500"
                   />
                   <div className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-blue-500" />
-                    <span className="text-sm font-medium text-gray-700">
+                    <CheckCircleIcon className="w-4 h-4 text-primary-500" />
+                    <span className="text-sm font-medium text-secondary-700">
                       {isPortuguese ? 'Apenas verificados' : 'Verified only'}
                     </span>
                   </div>
@@ -222,7 +222,7 @@ export default function ConnectionFilters({
             <div className="flex gap-3 mt-6 pt-6 border-t border-gray-200">
               <button
                 onClick={onClearFilters}
-                className="flex-1 px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors text-sm font-medium"
+                className="flex-1 px-4 py-2 text-secondary-600 hover:text-secondary-800 transition-colors text-sm font-medium"
                 disabled={!hasActiveFilters}
               >
                 {isPortuguese ? 'Limpar' : 'Clear'}

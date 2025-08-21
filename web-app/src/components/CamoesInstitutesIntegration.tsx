@@ -1,8 +1,11 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import { SOCIAL_URLS } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { SOCIAL_URLS } from '@/config'
 import { usePlatformIntegration } from '@/context/PlatformIntegrationContext'
+import { SOCIAL_URLS } from '@/config'
 import {
   AcademicCapIcon,
   LanguageIcon,
@@ -667,7 +670,6 @@ const CamoesInstitutesIntegration: React.FC = () => {
       }
     })
     // In real implementation, this would open enrollment modal or redirect to enrollment page
-    console.log('Enrolling in program:', program.title)
   }
 
   const handleMembershipSignup = (tier: MembershipTier, centerId: string) => {
@@ -681,7 +683,6 @@ const CamoesInstitutesIntegration: React.FC = () => {
       }
     })
     // In real implementation, this would open membership signup flow
-    console.log('Signing up for membership:', tier.name)
   }
 
   const formatCurrency = (amount: number): string => {
@@ -717,7 +718,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
             : 'Global Camões Centers Network'
           }
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
           {language === 'pt'
             ? 'Conecte-se com a rede mundial de Centros Camões para aprendizagem da língua portuguesa, certificações oficiais e imersão cultural autêntica.'
             : 'Connect with the worldwide network of Camões Centers for Portuguese language learning, official certifications, and authentic cultural immersion.'
@@ -735,7 +736,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
               className={`px-6 py-3 rounded-lg font-medium transition-colors ${
                 selectedCenter === center.id
                   ? 'bg-primary-500 text-white'
-                  : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'
+                  : 'bg-white border border-secondary-300 text-secondary-700 hover:bg-gray-50'
               }`}
             >
               {language === 'pt' ? center.namePortuguese : center.name}
@@ -782,22 +783,22 @@ const CamoesInstitutesIntegration: React.FC = () => {
                 <div className="text-center">
                   <UserGroupIcon className="w-8 h-8 text-primary-500 mx-auto mb-2" />
                   <p className="text-2xl font-bold text-gray-900">{selectedCenterData.studentsEnrolled}</p>
-                  <p className="text-sm text-gray-600">{language === 'pt' ? 'Estudantes Inscritos' : 'Students Enrolled'}</p>
+                  <p className="text-sm text-secondary-600">{language === 'pt' ? 'Estudantes Inscritos' : 'Students Enrolled'}</p>
                 </div>
                 <div className="text-center">
                   <CalendarDaysIcon className="w-8 h-8 text-secondary-500 mx-auto mb-2" />
                   <p className="text-2xl font-bold text-gray-900">{selectedCenterData.monthlyEvents}</p>
-                  <p className="text-sm text-gray-600">{language === 'pt' ? 'Eventos Mensais' : 'Monthly Events'}</p>
+                  <p className="text-sm text-secondary-600">{language === 'pt' ? 'Eventos Mensais' : 'Monthly Events'}</p>
                 </div>
                 <div className="text-center">
                   <ScaleIcon className="w-8 h-8 text-accent-500 mx-auto mb-2" />
                   <p className="text-2xl font-bold text-gray-900">{selectedCenterData.partnerInstitutions}</p>
-                  <p className="text-sm text-gray-600">{language === 'pt' ? 'Instituições Parceiras' : 'Partner Institutions'}</p>
+                  <p className="text-sm text-secondary-600">{language === 'pt' ? 'Instituições Parceiras' : 'Partner Institutions'}</p>
                 </div>
                 <div className="text-center">
                   <GlobeAltIcon className="w-8 h-8 text-premium-500 mx-auto mb-2" />
                   <p className="text-2xl font-bold text-gray-900">{selectedCenterData.culturalExchanges}</p>
-                  <p className="text-sm text-gray-600">{language === 'pt' ? 'Intercâmbios Culturais' : 'Cultural Exchanges'}</p>
+                  <p className="text-sm text-secondary-600">{language === 'pt' ? 'Intercâmbios Culturais' : 'Cultural Exchanges'}</p>
                 </div>
               </div>
 
@@ -809,8 +810,8 @@ const CamoesInstitutesIntegration: React.FC = () => {
                   </h3>
                   <ul className="space-y-2">
                     {(language === 'pt' ? selectedCenterData.facilitiesPortuguese : selectedCenterData.facilities).map((facility, index) => (
-                      <li key={index} className="flex items-center text-sm text-gray-700">
-                        <CheckBadgeIcon className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                      <li key={index} className="flex items-center text-sm text-secondary-700">
+                        <CheckBadgeIcon className="w-4 h-4 text-action-500 mr-2 flex-shrink-0" />
                         {facility}
                       </li>
                     ))}
@@ -822,8 +823,8 @@ const CamoesInstitutesIntegration: React.FC = () => {
                   </h3>
                   <ul className="space-y-2">
                     {(language === 'pt' ? selectedCenterData.specializationsPortuguese : selectedCenterData.specializations).map((specialization, index) => (
-                      <li key={index} className="flex items-center text-sm text-gray-700">
-                        <StarIcon className="w-4 h-4 text-yellow-500 mr-2 flex-shrink-0" />
+                      <li key={index} className="flex items-center text-sm text-secondary-700">
+                        <StarIcon className="w-4 h-4 text-accent-500 mr-2 flex-shrink-0" />
                         {specialization}
                       </li>
                     ))}
@@ -839,17 +840,17 @@ const CamoesInstitutesIntegration: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <p className="font-medium text-gray-900">{selectedCenterData.director.name}</p>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-secondary-600 text-sm">
                       {language === 'pt' ? selectedCenterData.director.titlePortuguese : selectedCenterData.director.title}
                     </p>
                     <div className="mt-2 space-y-1">
-                      <div className="flex items-center text-sm text-gray-600">
+                      <div className="flex items-center text-sm text-secondary-600">
                         <EnvelopeIcon className="w-4 h-4 mr-2" />
                         <a href={`mailto:${selectedCenterData.director.email}`} className="hover:text-primary-600">
                           {selectedCenterData.director.email}
                         </a>
                       </div>
-                      <div className="flex items-center text-sm text-gray-600">
+                      <div className="flex items-center text-sm text-secondary-600">
                         <PhoneIcon className="w-4 h-4 mr-2" />
                         <a href={`tel:${selectedCenterData.director.phone}`} className="hover:text-primary-600">
                           {selectedCenterData.director.phone}
@@ -861,14 +862,14 @@ const CamoesInstitutesIntegration: React.FC = () => {
                     <p className="font-medium text-gray-900 mb-2">
                       {language === 'pt' ? 'Horário de Funcionamento' : 'Opening Hours'}
                     </p>
-                    <div className="text-sm text-gray-600 space-y-1">
+                    <div className="text-sm text-secondary-600 space-y-1">
                       <p>{selectedCenterData.openingHours.weekdays}</p>
                       <p>{selectedCenterData.openingHours.weekends}</p>
                     </div>
                     <p className="font-medium text-gray-900 mt-4 mb-2">
                       {language === 'pt' ? 'Endereço' : 'Address'}
                     </p>
-                    <p className="text-sm text-gray-600">{selectedCenterData.address}</p>
+                    <p className="text-sm text-secondary-600">{selectedCenterData.address}</p>
                   </div>
                 </div>
               </div>
@@ -887,7 +888,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
                         </h4>
                         <div className="mt-2">
                           <span className="text-3xl font-bold text-primary-600">{formatCurrency(tier.price)}</span>
-                          <span className="text-gray-600 text-sm">/{language === 'pt' ? tier.durationPortuguese : tier.duration}</span>
+                          <span className="text-secondary-600 text-sm">/{language === 'pt' ? tier.durationPortuguese : tier.duration}</span>
                         </div>
                       </div>
 
@@ -897,8 +898,8 @@ const CamoesInstitutesIntegration: React.FC = () => {
                         </h5>
                         <ul className="space-y-2">
                           {(language === 'pt' ? tier.benefitsPortuguese : tier.benefits).map((benefit, index) => (
-                            <li key={index} className="flex items-center text-sm text-gray-700">
-                              <CheckBadgeIcon className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                            <li key={index} className="flex items-center text-sm text-secondary-700">
+                              <CheckBadgeIcon className="w-4 h-4 text-action-500 mr-2 flex-shrink-0" />
                               {benefit}
                             </li>
                           ))}
@@ -908,7 +909,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
                       {tier.priority && (
                         <div className="mb-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
                           <div className="flex items-center">
-                            <StarIcon className="w-4 h-4 text-yellow-500 mr-2" />
+                            <StarIcon className="w-4 h-4 text-accent-500 mr-2" />
                             <span className="text-sm font-medium text-yellow-800">
                               {language === 'pt' ? 'Prioridade de Reserva' : 'Priority Booking'}
                             </span>
@@ -954,30 +955,30 @@ const CamoesInstitutesIntegration: React.FC = () => {
                 {language === 'pt' ? program.titlePortuguese : program.title}
               </h3>
               
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-secondary-600 mb-4">
                 {language === 'pt' ? program.descriptionPortuguese : program.description}
               </p>
 
               <div className="space-y-3 mb-4">
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">{language === 'pt' ? 'Nível:' : 'Level:'}</span>
+                  <span className="text-secondary-600">{language === 'pt' ? 'Nível:' : 'Level:'}</span>
                   <span className="font-medium">
                     {language === 'pt' ? program.levelPortuguese : program.level}
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">{language === 'pt' ? 'Instrutor:' : 'Instructor:'}</span>
+                  <span className="text-secondary-600">{language === 'pt' ? 'Instrutor:' : 'Instructor:'}</span>
                   <span className="font-medium">{program.instructor.name}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">{language === 'pt' ? 'Horário:' : 'Schedule:'}</span>
+                  <span className="text-secondary-600">{language === 'pt' ? 'Horário:' : 'Schedule:'}</span>
                   <span className="font-medium">
                     {program.schedule.days.join(', ')} {language === 'pt' ? program.schedule.timesPortuguese : program.schedule.times}
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">{language === 'pt' ? 'Vagas:' : 'Availability:'}</span>
-                  <span className={`font-medium ${program.enrolled >= program.capacity ? 'text-red-600' : 'text-green-600'}`}>
+                  <span className="text-secondary-600">{language === 'pt' ? 'Vagas:' : 'Availability:'}</span>
+                  <span className={`font-medium ${program.enrolled >= program.capacity ? 'text-coral-600' : 'text-action-600'}`}>
                     {program.capacity - program.enrolled} {language === 'pt' ? 'vagas' : 'spots'}
                   </span>
                 </div>
@@ -988,14 +989,14 @@ const CamoesInstitutesIntegration: React.FC = () => {
                   <div>
                     <p className="text-lg font-bold text-gray-900">{formatCurrency(program.memberPrice)}</p>
                     <p className="text-sm text-gray-500 line-through">{formatCurrency(program.price)}</p>
-                    <p className="text-xs text-green-600">
+                    <p className="text-xs text-action-600">
                       {language === 'pt' ? 'Preço de sócio' : 'Member price'}
                     </p>
                   </div>
                   {program.certification && (
                     <div className="text-center">
-                      <TrophyIcon className="w-6 h-6 text-yellow-500 mx-auto" />
-                      <p className="text-xs text-gray-600 mt-1">
+                      <TrophyIcon className="w-6 h-6 text-accent-500 mx-auto" />
+                      <p className="text-xs text-secondary-600 mt-1">
                         {language === 'pt' ? 'Certificação' : 'Certification'}
                       </p>
                     </div>
@@ -1037,13 +1038,13 @@ const CamoesInstitutesIntegration: React.FC = () => {
                       {language === 'pt' ? 'Nível' : 'Level'} {cert.level}
                     </span>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {language === 'pt' ? cert.descriptionPortuguese : cert.description}
                   </p>
                 </div>
                 <div className="text-right">
                   <p className="text-2xl font-bold text-primary-600">{formatCurrency(cert.examFee)}</p>
-                  <p className="text-sm text-gray-600">{language === 'pt' ? 'Taxa de exame' : 'Exam fee'}</p>
+                  <p className="text-sm text-secondary-600">{language === 'pt' ? 'Taxa de exame' : 'Exam fee'}</p>
                 </div>
               </div>
 
@@ -1054,8 +1055,8 @@ const CamoesInstitutesIntegration: React.FC = () => {
                   </h4>
                   <ul className="space-y-1">
                     {(language === 'pt' ? cert.requirementsPortuguese : cert.requirements).map((req, index) => (
-                      <li key={index} className="flex items-start text-sm text-gray-700">
-                        <CheckBadgeIcon className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <li key={index} className="flex items-start text-sm text-secondary-700">
+                        <CheckBadgeIcon className="w-4 h-4 text-action-500 mr-2 mt-0.5 flex-shrink-0" />
                         {req}
                       </li>
                     ))}
@@ -1068,8 +1069,8 @@ const CamoesInstitutesIntegration: React.FC = () => {
                   </h4>
                   <ul className="space-y-1">
                     {(language === 'pt' ? cert.recognitionPortuguese : cert.recognition).map((recog, index) => (
-                      <li key={index} className="flex items-start text-sm text-gray-700">
-                        <TrophyIcon className="w-4 h-4 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <li key={index} className="flex items-start text-sm text-secondary-700">
+                        <TrophyIcon className="w-4 h-4 text-accent-500 mr-2 mt-0.5 flex-shrink-0" />
                         {recog}
                       </li>
                     ))}
@@ -1080,7 +1081,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
                   <h4 className="font-semibold text-gray-900 mb-3">
                     {language === 'pt' ? 'Detalhes do Exame:' : 'Exam Details:'}
                   </h4>
-                  <div className="space-y-2 text-sm text-gray-700">
+                  <div className="space-y-2 text-sm text-secondary-700">
                     <div className="flex justify-between">
                       <span>{language === 'pt' ? 'Processamento:' : 'Processing:'}</span>
                       <span>{language === 'pt' ? cert.resultProcessingPortuguese : cert.resultProcessing}</span>
@@ -1111,7 +1112,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
                         {language === 'pt' ? 'Preço:' : 'Price:'} {formatCurrency(cert.preparationCourse.price)}
                       </p>
                     </div>
-                    <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                    <button className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-medium">
                       {language === 'pt' ? 'Inscrever no Curso' : 'Enroll in Course'}
                     </button>
                   </div>
@@ -1137,7 +1138,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           {language === 'pt' ? 'Comece Sua Jornada de Aprendizagem' : 'Start Your Learning Journey'}
         </h2>
-        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+        <p className="text-secondary-600 mb-6 max-w-2xl mx-auto">
           {language === 'pt'
             ? 'Junte-se à rede global de Centros Camões e acesse programas de qualidade mundial, certificações oficiais e experiências culturais autênticas.'
             : 'Join the global network of Camões Centers and access world-class programs, official certifications, and authentic cultural experiences.'

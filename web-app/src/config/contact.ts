@@ -1,3 +1,4 @@
+import { SOCIAL_URLS } from '@/config'
 export const contactInfo = {
   general: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@lusotown.com',
   safety: process.env.NEXT_PUBLIC_SAFETY_EMAIL || 'safety@lusotown.com',

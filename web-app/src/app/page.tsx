@@ -144,10 +144,10 @@ export default function Home() {
                   <h2 id="community-activities" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-tight">
                     {t('what-you-can-do.title')}
                   </h2>
-                  <p className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-6 font-medium max-w-6xl mx-auto leading-relaxed">
+                  <p className="text-xl sm:text-2xl lg:text-3xl text-secondary-700 mb-6 font-medium max-w-6xl mx-auto leading-relaxed">
                     {t('what-you-can-do.subtitle')}
                   </p>
-                  <blockquote className="text-lg sm:text-xl lg:text-2xl text-gray-600 italic max-w-5xl mx-auto font-medium" cite="Maria, London">
+                  <blockquote className="text-lg sm:text-xl lg:text-2xl text-secondary-600 italic max-w-5xl mx-auto font-medium" cite="Maria, London">
                     {t('what-you-can-do.testimonial')}
                   </blockquote>
                 </header>
@@ -166,7 +166,7 @@ export default function Home() {
                         <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-secondary-600 transition-colors duration-300">
                           {t('what-you-can-do.events.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
+                        <p className="text-secondary-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
                           {t('what-you-can-do.events.description')}
                         </p>
                         <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
@@ -196,7 +196,7 @@ export default function Home() {
                         <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-accent-600 transition-colors duration-300">
                           {t('what-you-can-do.groups.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
+                        <p className="text-secondary-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
                           {t('what-you-can-do.groups.description')}
                         </p>
                         <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
@@ -225,7 +225,7 @@ export default function Home() {
                         <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-coral-500 transition-colors duration-300">
                           {t('what-you-can-do.feed.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
+                        <p className="text-secondary-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
                           {t('what-you-can-do.feed.description')}
                         </p>
                         <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
@@ -254,7 +254,7 @@ export default function Home() {
                         <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-action-600 transition-colors duration-300">
                           {t('what-you-can-do.favorites.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
+                        <p className="text-secondary-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
                           {t('what-you-can-do.favorites.description')}
                         </p>
                         <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
@@ -283,7 +283,7 @@ export default function Home() {
                         <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-premium-600 transition-colors duration-300">
                           {t('what-you-can-do.host.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
+                        <p className="text-secondary-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
                           {t('what-you-can-do.host.description')}
                         </p>
                         <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
@@ -307,7 +307,7 @@ export default function Home() {
                     <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
                       {t('cta.title')}
                     </h3>
-                    <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-lg text-secondary-700 mb-8 max-w-3xl mx-auto leading-relaxed">
                       Join {communityStats.members} Portuguese speakers from Brazil, Portugal, Africa and beyond living meaningful lives together in London - from cultural events to professional networking, family-friendly activities to weekend getaways.
                     </p>
                     <div className="flex flex-row gap-3 sm:gap-4 justify-center">
@@ -323,7 +323,7 @@ export default function Home() {
                       </a>
                       <a
                         href={ROUTES.events}
-                        className="text-base sm:text-lg font-bold px-6 sm:px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90 whitespace-nowrap flex-1 max-w-[180px] sm:max-w-none text-center"
+                        className="text-base sm:text-lg font-bold px-6 sm:px-10 py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90 whitespace-nowrap flex-1 max-w-[180px] sm:max-w-none text-center"
                       >
                         {t('core_features.explore_features')}
                       </a>

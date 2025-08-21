@@ -303,7 +303,7 @@ const PortugueseVRExperiences: React.FC = () => {
       case 'beginner': return 'bg-green-100 text-green-800';
       case 'intermediate': return 'bg-yellow-100 text-yellow-800';
       case 'advanced': return 'bg-red-100 text-red-800';
-      default: return 'bg-gray-100 text-gray-800';
+      default: return 'bg-secondary-100 text-secondary-800';
     }
   };
 
@@ -326,7 +326,7 @@ const PortugueseVRExperiences: React.FC = () => {
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
+            className="text-4xl md:text-5xl font-bold text-secondary-800 mb-4"
           >
             {language === 'pt' ? 'Experiências VR Portuguesas' : 'Portuguese VR Experiences'}
           </motion.h1>
@@ -334,7 +334,7 @@ const PortugueseVRExperiences: React.FC = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto mb-6"
+            className="text-xl text-secondary-600 max-w-3xl mx-auto mb-6"
           >
             {language === 'pt' 
               ? 'Explore Portugal como nunca antes através de experiências imersivas de realidade virtual. Viaje pelos nossos monumentos, tradições e paisagens naturais.'
@@ -363,13 +363,13 @@ const PortugueseVRExperiences: React.FC = () => {
                     placeholder={language === 'pt' ? 'Pesquisar experiências...' : 'Search experiences...'}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg border border-secondary-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                   />
                 </div>
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="px-4 py-3 rounded-lg border border-secondary-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                 >
                   {categories.map(category => (
                     <option key={category.id} value={category.id}>
@@ -400,7 +400,7 @@ const PortugueseVRExperiences: React.FC = () => {
                       }}
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-white bg-opacity-90 text-gray-800 px-2 py-1 rounded-full text-sm font-semibold">
+                      <span className="bg-white bg-opacity-90 text-secondary-800 px-2 py-1 rounded-full text-sm font-semibold">
                         {getCategoryIcon(experience.category)} {language === 'pt' ? categories.find(c => c.id === experience.category)?.namePt : categories.find(c => c.id === experience.category)?.name}
                       </span>
                     </div>
@@ -422,10 +422,10 @@ const PortugueseVRExperiences: React.FC = () => {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                    <h3 className="text-xl font-bold text-secondary-800 mb-2">
                       {language === 'pt' ? experience.titlePt : experience.title}
                     </h3>
-                    <p className="text-gray-600 mb-3">
+                    <p className="text-secondary-600 mb-3">
                       {language === 'pt' ? experience.descriptionPt : experience.description}
                     </p>
                     <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
@@ -441,7 +441,7 @@ const PortugueseVRExperiences: React.FC = () => {
                     
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4 text-sm">
-                        <span className="flex items-center text-yellow-500">
+                        <span className="flex items-center text-accent-500">
                           ⭐ {experience.userRating}
                         </span>
                         <span className="flex items-center text-gray-500">
@@ -449,7 +449,7 @@ const PortugueseVRExperiences: React.FC = () => {
                           {experience.totalViews.toLocaleString()}
                         </span>
                       </div>
-                      <button className="text-gray-400 hover:text-red-500 transition-colors">
+                      <button className="text-gray-400 hover:text-coral-500 transition-colors">
                         <Heart className="h-5 w-5" />
                       </button>
                     </div>
@@ -462,7 +462,7 @@ const PortugueseVRExperiences: React.FC = () => {
           /* VR Player */
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             {/* Player Header */}
-            <div className="bg-gray-900 text-white p-4">
+            <div className="bg-secondary-900 text-white p-4">
               <div className="flex items-center justify-between">
                 <div>
                   <h2 className="text-2xl font-bold mb-1">
@@ -535,7 +535,7 @@ const PortugueseVRExperiences: React.FC = () => {
             </div>
 
             {/* Player Controls */}
-            <div className="bg-gray-900 text-white p-4">
+            <div className="bg-secondary-900 text-white p-4">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-4">
                   <motion.button

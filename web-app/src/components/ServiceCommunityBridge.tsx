@@ -232,7 +232,7 @@ export default function ServiceCommunityBridge({
         <h3 className="text-xl font-bold text-gray-900 mb-2">
           {isPortuguese ? "Convidar Conexões" : "Invite Connections"}
         </h3>
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {isPortuguese
             ? "Selecione quem você gostaria de convidar para compartilhar o transporte"
             : "Select who you'd like to invite to share transport"}
@@ -246,7 +246,7 @@ export default function ServiceCommunityBridge({
             className={`flex items-center space-x-3 p-3 rounded-lg border cursor-pointer transition-all ${
               selectedConnections.includes(connection.id)
                 ? "border-primary-500 bg-primary-50"
-                : "border-gray-200 hover:border-gray-300"
+                : "border-gray-200 hover:border-secondary-300"
             }`}
             onClick={() => {
               if (selectedConnections.includes(connection.id)) {
@@ -294,7 +294,7 @@ export default function ServiceCommunityBridge({
               £{selectedConnections.length * 15}
             </span>
           </div>
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-secondary-600">
             {isPortuguese
               ? `${selectedConnections.length} pessoas × £15 economia por pessoa`
               : `${selectedConnections.length} people × £15 savings per person`}
@@ -305,7 +305,7 @@ export default function ServiceCommunityBridge({
       <div className="flex space-x-3">
         <button
           onClick={() => setGroupBookingMode(false)}
-          className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50"
+          className="flex-1 px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50"
         >
           {isPortuguese ? "Cancelar" : "Cancel"}
         </button>
@@ -326,7 +326,7 @@ export default function ServiceCommunityBridge({
         <h3 className="text-xl font-bold text-gray-900 mb-2">
           {selectedIntegration?.title}
         </h3>
-        <p className="text-gray-600">{selectedIntegration?.description}</p>
+        <p className="text-secondary-600">{selectedIntegration?.description}</p>
       </div>
 
       {/* Benefits */}
@@ -338,7 +338,7 @@ export default function ServiceCommunityBridge({
               {isPortuguese ? "Economia" : "Savings"}
             </span>
           </div>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-secondary-600">
             {isPortuguese
               ? "Até 30% de desconto em reservas combinadas"
               : "Up to 30% off combined bookings"}
@@ -352,7 +352,7 @@ export default function ServiceCommunityBridge({
               {isPortuguese ? "Networking" : "Networking"}
             </span>
           </div>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-secondary-600">
             {isPortuguese
               ? "Conecte-se com outros portugueses"
               : "Connect with other Portuguese speakers"}
@@ -366,7 +366,7 @@ export default function ServiceCommunityBridge({
               {isPortuguese ? "Segurança" : "Safety"}
             </span>
           </div>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-secondary-600">
             {isPortuguese
               ? "Transporte seguro e verificado"
               : "Safe and verified transport"}
@@ -380,7 +380,7 @@ export default function ServiceCommunityBridge({
               {isPortuguese ? "Conveniência" : "Convenience"}
             </span>
           </div>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-secondary-600">
             {isPortuguese
               ? "Tudo numa só reserva"
               : "Everything in one booking"}
@@ -397,7 +397,7 @@ export default function ServiceCommunityBridge({
               {isPortuguese ? "Benefício de Membro" : "Member Benefit"}
             </span>
           </div>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-secondary-600">
             {isPortuguese
               ? `Desconto adicional de ${serviceDiscount}% como membro ${membershipTier}`
               : `Additional ${serviceDiscount}% discount as ${membershipTier} member`}
@@ -441,7 +441,7 @@ export default function ServiceCommunityBridge({
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               {contextualContent.title}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
               {contextualContent.subtitle}
             </p>
           </motion.div>
@@ -473,7 +473,7 @@ export default function ServiceCommunityBridge({
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">
                     {integration.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4">
+                  <p className="text-secondary-600 text-sm mb-4">
                     {integration.description}
                   </p>
 
@@ -507,7 +507,7 @@ export default function ServiceCommunityBridge({
                   <h4 className="font-semibold text-gray-900 mb-2">
                     {rec.title}
                   </h4>
-                  <p className="text-gray-600 text-sm mb-3">
+                  <p className="text-secondary-600 text-sm mb-3">
                     {rec.description}
                   </p>
                   <button

@@ -267,11 +267,11 @@ export default function SaudadeConnectionMatcher() {
       >
         {/* Progress Bar */}
         <div className="mb-8">
-          <div className="flex justify-between text-sm text-gray-600 mb-2">
+          <div className="flex justify-between text-sm text-secondary-600 mb-2">
             <span>{t('saudade.assessment.progress', 'Progress')}</span>
             <span>{assessmentStep + 1} / {assessmentQuestions.length}</span>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
+          <div className="w-full bg-secondary-200 rounded-full h-2">
             <div 
               className="bg-gradient-to-r from-secondary-500 to-accent-500 h-2 rounded-full transition-all duration-500"
               style={{ width: `${((assessmentStep + 1) / assessmentQuestions.length) * 100}%` }}
@@ -284,7 +284,7 @@ export default function SaudadeConnectionMatcher() {
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             {language === 'pt' ? question.questionPt : question.questionEn}
           </h3>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-secondary-600">
             {language === 'pt' ? question.descriptionPt : question.descriptionEn}
           </p>
         </div>
@@ -308,7 +308,7 @@ export default function SaudadeConnectionMatcher() {
                 className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-semibold transition-all ${
                   currentValue === i
                     ? 'bg-gradient-to-br from-secondary-500 to-accent-500 text-white shadow-lg transform scale-110'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                 }`}
               >
                 {i}
@@ -323,7 +323,7 @@ export default function SaudadeConnectionMatcher() {
                 key={i}
                 className={`w-5 h-5 transition-all duration-300 ${
                   i < currentValue
-                    ? 'text-red-500'
+                    ? 'text-coral-500'
                     : 'text-gray-200'
                 }`}
               />
@@ -336,7 +336,7 @@ export default function SaudadeConnectionMatcher() {
           <button
             onClick={() => assessmentStep > 0 && setAssessmentStep(assessmentStep - 1)}
             disabled={assessmentStep === 0}
-            className="px-6 py-3 rounded-xl border-2 border-gray-300 text-gray-600 font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:border-gray-400 transition-colors"
+            className="px-6 py-3 rounded-xl border-2 border-secondary-300 text-secondary-600 font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:border-gray-400 transition-colors"
           >
             {t('common.back', 'Back')}
           </button>
@@ -424,7 +424,7 @@ export default function SaudadeConnectionMatcher() {
               <h3 className="text-3xl font-bold text-gray-900 mb-2">
                 {language === 'pt' ? typeInfo.namePt : typeInfo.nameEn}
               </h3>
-              <p className="text-lg text-gray-600 max-w-md">
+              <p className="text-lg text-secondary-600 max-w-md">
                 {language === 'pt' ? typeInfo.descPt : typeInfo.descEn}
               </p>
               <div className="mt-3 flex items-center gap-2">
@@ -436,7 +436,7 @@ export default function SaudadeConnectionMatcher() {
                     <HeartSolid
                       key={i}
                       className={`w-4 h-4 ${
-                        i < profile.average ? 'text-red-500' : 'text-gray-200'
+                        i < profile.average ? 'text-coral-500' : 'text-gray-200'
                       }`}
                     />
                   ))}
@@ -449,7 +449,7 @@ export default function SaudadeConnectionMatcher() {
           <h2 className="text-4xl font-black text-gray-900 mb-4">
             {t('saudade.results.title', 'Your Saudade Connection Matches')}
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
             {t('saudade.results.subtitle', 'Based on your emotional profile, we\'ve found people, groups, and activities to help you feel more connected to home')}
           </p>
         </div>
@@ -470,7 +470,7 @@ export default function SaudadeConnectionMatcher() {
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 {t('saudade.buddies.title', 'Saudade Buddies')}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {t('saudade.buddies.desc', 'Connect with others who understand your specific type of longing')}
               </p>
             </div>
@@ -485,7 +485,7 @@ export default function SaudadeConnectionMatcher() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h4 className="font-semibold text-gray-900 truncate">{match.name}</h4>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-secondary-600">
                       {match.compatibilityScore}% {t('common.compatibility', 'compatibility')} • {match.location}
                     </p>
                   </div>
@@ -523,7 +523,7 @@ export default function SaudadeConnectionMatcher() {
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 {t('saudade.groups.title', 'Support Groups')}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {t('saudade.groups.desc', 'Join caring communities that provide emotional support and understanding')}
               </p>
             </div>
@@ -534,7 +534,7 @@ export default function SaudadeConnectionMatcher() {
                   <h4 className="font-semibold text-gray-900 mb-2">
                     {language === 'pt' ? group.namePt : group.nameEn}
                   </h4>
-                  <p className="text-sm text-gray-600 mb-3">
+                  <p className="text-sm text-secondary-600 mb-3">
                     {language === 'pt' ? group.descriptionPt : group.descriptionEn}
                   </p>
                   <div className="flex justify-between text-xs text-gray-500">
@@ -564,7 +564,7 @@ export default function SaudadeConnectionMatcher() {
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 {t('saudade.activities.title', 'Comfort Activities')}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {t('saudade.activities.desc', 'Therapeutic activities rooted in Portuguese traditions to ease your saudade')}
               </p>
             </div>
@@ -575,7 +575,7 @@ export default function SaudadeConnectionMatcher() {
                   <h4 className="font-semibold text-gray-900 mb-2">
                     {language === 'pt' ? activity.namePt : activity.nameEn}
                   </h4>
-                  <p className="text-sm text-gray-600 mb-3">
+                  <p className="text-sm text-secondary-600 mb-3">
                     {language === 'pt' ? activity.descriptionPt : activity.descriptionEn}
                   </p>
                   <div className="flex justify-between items-center text-xs text-gray-500">
@@ -606,7 +606,7 @@ export default function SaudadeConnectionMatcher() {
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               {t('saudade.cta.title', 'Ready to Heal Your Saudade?')}
             </h3>
-            <p className="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
+            <p className="text-lg text-secondary-700 mb-6 max-w-3xl mx-auto">
               {t('saudade.cta.desc', 'Join our Portuguese community platform to connect with people who truly understand your journey')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -636,7 +636,7 @@ export default function SaudadeConnectionMatcher() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-3 bg-gradient-to-r from-red-50 to-pink-50 border border-red-200 rounded-3xl px-6 py-3 mb-6"
           >
-            <HeartSolid className="w-5 h-5 text-red-500" />
+            <HeartSolid className="w-5 h-5 text-coral-500" />
             <span className="font-semibold text-red-700">
               {t('saudade.badge', 'Saudade Connection System')}
             </span>
@@ -659,7 +659,7 @@ export default function SaudadeConnectionMatcher() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto"
+            className="text-xl sm:text-2xl text-secondary-700 max-w-4xl mx-auto"
           >
             {t('saudade.subtitle', 'Connect with Portuguese speakers who share your unique emotional journey of longing, homesickness, and cultural displacement')}
           </motion.p>

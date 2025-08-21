@@ -233,7 +233,7 @@ export default function EventMatchingIntegration({
       change: "+5%",
       positive: true,
       icon: StarIcon,
-      color: "text-green-600 bg-green-100"
+      color: "text-action-600 bg-green-100"
     },
     {
       label: language === "pt" ? "Compatibilidade Média" : "Avg Compatibility",
@@ -271,18 +271,18 @@ export default function EventMatchingIntegration({
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
                   eventMatchingEnabled
                     ? 'bg-green-100 text-green-700 border border-green-200'
-                    : 'bg-gray-100 text-gray-600 border border-gray-200'
+                    : 'bg-secondary-100 text-secondary-600 border border-gray-200'
                 }`}
               >
-                <div className={`w-2 h-2 rounded-full ${eventMatchingEnabled ? 'bg-green-500' : 'bg-gray-400'}`} />
+                <div className={`w-2 h-2 rounded-full ${eventMatchingEnabled ? 'bg-action-500' : 'bg-gray-400'}`} />
                 {language === "pt" ? "Ativo" : "Active"}
               </button>
               
               <button
                 onClick={() => setShowQuickActions(!showQuickActions)}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                className="p-2 hover:bg-secondary-100 rounded-lg transition-colors"
               >
-                <AdjustmentsHorizontalIcon className="w-5 h-5 text-gray-600" />
+                <AdjustmentsHorizontalIcon className="w-5 h-5 text-secondary-600" />
               </button>
             </div>
           </div>
@@ -308,14 +308,14 @@ export default function EventMatchingIntegration({
                       <div className={`p-2 rounded-lg ${stat.color}`}>
                         <stat.icon className="w-4 h-4" />
                       </div>
-                      <span className={`text-xs font-bold ${stat.positive ? 'text-green-600' : 'text-red-600'}`}>
+                      <span className={`text-xs font-bold ${stat.positive ? 'text-action-600' : 'text-coral-600'}`}>
                         {stat.change}
                       </span>
                     </div>
                     <div className="text-2xl font-bold text-gray-900 mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-secondary-600">
                       {stat.label}
                     </div>
                   </motion.div>
@@ -395,7 +395,7 @@ export default function EventMatchingIntegration({
                 <h4 className="font-bold text-gray-900 mb-1 text-sm">
                   {section.label}
                 </h4>
-                <p className="text-gray-600 text-xs">
+                <p className="text-secondary-600 text-xs">
                   {section.description}
                 </p>
               </button>
@@ -464,8 +464,8 @@ export default function EventMatchingIntegration({
                 onSkip={(matchId) => handleMatchAction(matchId, 'skip')}
                 onMessage={(matchId) => handleMatchAction(matchId, 'message')}
                 onEventBookTogether={handleEventBooking}
-                onViewEventDetails={(eventId) => console.log('View event:', eventId)}
-                onSafetyReport={(matchId, reason) => console.log('Safety report:', matchId, reason)}
+                onViewEventDetails={(eventId) => }
+                onSafetyReport={(matchId, reason) => }
                 showEventSuggestions={true}
                 showConversationStarters={true}
               />
@@ -510,19 +510,14 @@ export default function EventMatchingIntegration({
             userId={currentUser.id}
             userLocation={currentUser.location}
             onContactAttendee={(attendeeId, message) => {
-              console.log('Contact attendee:', attendeeId, message);
             }}
             onPlanFollowUp={(suggestionId, attendeeIds) => {
-              console.log('Plan follow-up:', suggestionId, attendeeIds);
             }}
             onRateEvent={(eventId, rating, review) => {
-              console.log('Rate event:', eventId, rating, review);
             }}
             onReportIssue={(eventId, attendeeId, issue) => {
-              console.log('Report issue:', eventId, attendeeId, issue);
             }}
             onShareEventMemory={(eventId, photo, caption) => {
-              console.log('Share memory:', eventId, photo, caption);
             }}
           />
         </div>

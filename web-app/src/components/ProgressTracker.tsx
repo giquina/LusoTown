@@ -37,7 +37,7 @@ export default function ProgressTracker({
                 {Math.round(progressPercentage)}%
               </span>
             </div>
-            <p className="text-sm text-gray-600 mt-1">
+            <p className="text-sm text-secondary-600 mt-1">
               {isPortuguese 
                 ? `Cerca de ${timeRemaining} minuto${timeRemaining > 1 ? 's' : ''} restante${timeRemaining > 1 ? 's' : ''}`
                 : `About ${timeRemaining} minute${timeRemaining > 1 ? 's' : ''} remaining`
@@ -52,14 +52,14 @@ export default function ProgressTracker({
             </div>
             <div className="text-xs">
               <div className="font-semibold text-gray-900">SIA Licenciado</div>
-              <div className="text-gray-600">Segurança Profissional</div>
+              <div className="text-secondary-600">Segurança Profissional</div>
             </div>
           </div>
         </div>
         
         {/* Progress Bar */}
         <div className="relative">
-          <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+          <div className="w-full bg-secondary-200 rounded-full h-3 overflow-hidden">
             <motion.div 
               className="bg-gradient-to-r from-secondary-500 to-accent-500 h-3 rounded-full"
               initial={{ width: 0 }}
@@ -83,7 +83,7 @@ export default function ProgressTracker({
                         ? 'bg-secondary-500 border-secondary-500 text-white' 
                         : isCurrent
                         ? 'bg-white border-secondary-500 text-secondary-500'
-                        : 'bg-gray-100 border-gray-300 text-gray-400'
+                        : 'bg-secondary-100 border-secondary-300 text-gray-400'
                     }`}
                     initial={{ scale: 0.8 }}
                     animate={{ scale: isCurrent ? 1.1 : 1 }}

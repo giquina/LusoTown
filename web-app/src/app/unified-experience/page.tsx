@@ -99,8 +99,8 @@ export default function UnifiedExperiencePage() {
           {activeDemo === "hub" && (
             <UnifiedExperienceHub
               initialTab="discover"
-              onServiceBooked={() => console.log("Service booked")}
-              onEventJoined={() => console.log("Event joined")}
+              onServiceBooked={() => }
+              onEventJoined={() => }
             />
           )}
 
@@ -108,7 +108,6 @@ export default function UnifiedExperiencePage() {
             <ServiceCommunityBridge
               triggerContext="homepage"
               onIntegrationSelected={(integration) =>
-                console.log("Integration selected:", integration)
               }
             />
           )}
@@ -117,7 +116,7 @@ export default function UnifiedExperiencePage() {
             <UnifiedPremiumExperience
               showUpgradePrompt={true}
               currentService="community"
-              onUpgradeClick={() => console.log("Upgrade clicked")}
+              onUpgradeClick={() => }
             />
           )}
         </motion.div>
@@ -137,7 +136,7 @@ export default function UnifiedExperiencePage() {
                   ? "Por Que a Integração Funciona"
                   : "Why Integration Works"}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
                 {isPortuguese
                   ? "LusoTown não é apenas uma coleção de serviços - é um ecossistema que cria valor através de conexões avançadas"
                   : "LusoTown isn't just a collection of services - it's an ecosystem that creates value through advanced connections"}
@@ -172,7 +171,7 @@ export default function UnifiedExperiencePage() {
                     ? "Experiência Perfeita"
                     : "Seamless Experience"}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {isPortuguese
                     ? "Uma única conta, uma única subscrição, acesso a tudo - transporte, eventos, networking e comunidade"
                     : "One account, one subscription, access to everything - transport, events, networking, and community"}
@@ -204,7 +203,7 @@ export default function UnifiedExperiencePage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? "Valor Amplificado" : "Amplified Value"}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {isPortuguese
                     ? "Cada serviço torna-se mais valioso quando conectado - transporte privado, networking em eventos, descontos cruzados"
                     : "Each service becomes more valuable when connected - private transport, event networking, cross-discounts"}
@@ -238,7 +237,7 @@ export default function UnifiedExperiencePage() {
                     ? "Comunidade Portuguesa Autêntica"
                     : "Authentic Portuguese Community"}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {isPortuguese
                     ? "Não apenas um serviço, mas uma comunidade real onde portugueses se conectam, prosperam e preservam cultura"
                     : "Not just a service, but a real community where Portuguese speakers connect, thrive, and preserve culture"}
@@ -262,7 +261,7 @@ export default function UnifiedExperiencePage() {
                   ? "Pronto para Experimentar?"
                   : "Ready to Experience?"}
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-secondary-600 mb-8">
                 {isPortuguese
                   ? "Junte-se à plataforma portuguesa mais integrada de Londres"
                   : "Join London's most integrated Portuguese platform"}

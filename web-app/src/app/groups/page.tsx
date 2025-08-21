@@ -157,9 +157,9 @@ export default function GroupsPage() {
             className="absolute top-4 right-4 p-2 bg-white/90 rounded-full hover:bg-white transition-colors"
           >
             {isSaved ? (
-              <HeartSolidIcon className="w-5 h-5 text-red-500" />
+              <HeartSolidIcon className="w-5 h-5 text-coral-500" />
             ) : (
-              <HeartIcon className="w-5 h-5 text-gray-600" />
+              <HeartIcon className="w-5 h-5 text-secondary-600" />
             )}
           </button>
 
@@ -180,7 +180,7 @@ export default function GroupsPage() {
               <h3 className="text-lg font-semibold text-gray-900 mb-1 line-clamp-1">
                 {group.name}
               </h3>
-              <p className="text-sm text-gray-600 line-clamp-2">
+              <p className="text-sm text-secondary-600 line-clamp-2">
                 {group.description}
               </p>
             </div>
@@ -189,21 +189,21 @@ export default function GroupsPage() {
           {/* Group Metadata */}
           <div className="space-y-2 mb-4">
             {group.london_borough && (
-              <div className="flex items-center text-sm text-gray-600">
+              <div className="flex items-center text-sm text-secondary-600">
                 <MapPinIcon className="w-4 h-4 mr-2 text-gray-400" />
                 {group.london_borough}
                 {group.location && `, ${group.location}`}
               </div>
             )}
 
-            <div className="flex items-center text-sm text-gray-600">
+            <div className="flex items-center text-sm text-secondary-600">
               <UsersIcon className="w-4 h-4 mr-2 text-gray-400" />
               {group.current_member_count} {group.current_member_count === 1 ? t('groups.member') : t('groups.members')}
               {group.max_members && ` / ${group.max_members}`}
             </div>
 
             {group.language_preference && group.language_preference !== 'both' && (
-              <div className="flex items-center text-sm text-gray-600">
+              <div className="flex items-center text-sm text-secondary-600">
                 <GlobeAltIcon className="w-4 h-4 mr-2 text-gray-400" />
                 {group.language_preference === 'english' && 'English'}
                 {group.language_preference === 'portuguese' && 'Portuguese'}
@@ -213,7 +213,7 @@ export default function GroupsPage() {
             )}
 
             {group.meeting_frequency && (
-              <div className="flex items-center text-sm text-gray-600">
+              <div className="flex items-center text-sm text-secondary-600">
                 <span className="capitalize">{t(`frequency.${group.meeting_frequency}`)}</span>
               </div>
             )}
@@ -225,7 +225,7 @@ export default function GroupsPage() {
               {group.group_tags.slice(0, 3).map((tag, index) => (
                 <span
                   key={index}
-                  className="inline-flex items-center px-2 py-1 rounded text-xs bg-gray-100 text-gray-600"
+                  className="inline-flex items-center px-2 py-1 rounded text-xs bg-secondary-100 text-secondary-600"
                 >
                   {tag}
                 </span>
@@ -277,7 +277,7 @@ export default function GroupsPage() {
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 isSaved
                   ? 'bg-red-100 text-red-700 hover:bg-red-200'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
               }`}
             >
               {isSaved ? 'Saved' : t('groups.save')}
@@ -313,7 +313,7 @@ export default function GroupsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-600 mb-8"
+            className="text-xl text-secondary-600 mb-8"
           >
             {t('groups.subtitle')}
           </motion.p>
@@ -349,7 +349,7 @@ export default function GroupsPage() {
                 placeholder="Search groups..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               />
             </div>
 
@@ -357,7 +357,7 @@ export default function GroupsPage() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             >
               <option value="">All Categories</option>
               {categories.map((category) => (
@@ -371,7 +371,7 @@ export default function GroupsPage() {
             <select
               value={selectedOrigin}
               onChange={(e) => setSelectedOrigin(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             >
               <option value="">All Origins</option>
               <option value="portugal">{t('origin.portugal')}</option>
@@ -386,7 +386,7 @@ export default function GroupsPage() {
             <select
               value={selectedBorough}
               onChange={(e) => setSelectedBorough(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             >
               <option value="">All London</option>
               {getUniqueValues('london_borough').map((borough) => (
@@ -405,7 +405,7 @@ export default function GroupsPage() {
           transition={{ delay: 0.5 }}
           className="mb-6"
         >
-          <p className="text-gray-600">
+          <p className="text-secondary-600">
             Showing {filteredGroups.length} of {groups.length} groups
             {searchQuery && ` for "${searchQuery}"`}
           </p>
@@ -436,7 +436,7 @@ export default function GroupsPage() {
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               No groups found
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary-600 mb-6">
               Try adjusting your search criteria or create a new group.
             </p>
             <Link

@@ -71,7 +71,7 @@ export default function NetworkAnalytics() {
             <h3 className="text-lg font-semibold text-gray-900">
               {isPortuguese ? 'Análise da Rede' : 'Network Analytics'}
             </h3>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {isPortuguese ? 'Insights sobre as suas conexões' : 'Insights about your connections'}
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function NetworkAnalytics() {
         <div className="flex gap-2">
           <button
             onClick={() => handleExport('csv')}
-            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 border border-gray-200 rounded-lg hover:border-gray-300 transition-colors"
+            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-secondary-600 hover:text-secondary-800 border border-gray-200 rounded-lg hover:border-secondary-300 transition-colors"
             title={isPortuguese ? 'Exportar como CSV' : 'Export as CSV'}
           >
             <ArrowDownTrayIcon className="w-4 h-4" />
@@ -89,7 +89,7 @@ export default function NetworkAnalytics() {
           </button>
           <button
             onClick={() => handleExport('json')}
-            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 border border-gray-200 rounded-lg hover:border-gray-300 transition-colors"
+            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-secondary-600 hover:text-secondary-800 border border-gray-200 rounded-lg hover:border-secondary-300 transition-colors"
             title={isPortuguese ? 'Exportar como JSON' : 'Export as JSON'}
           >
             <ArrowDownTrayIcon className="w-4 h-4" />
@@ -114,7 +114,7 @@ export default function NetworkAnalytics() {
             <div className="text-2xl font-bold text-gray-900 mb-1">
               {item.value}{item.unit}
             </div>
-            <div className="text-sm font-medium text-gray-700 mb-1">
+            <div className="text-sm font-medium text-secondary-700 mb-1">
               {item.label}
             </div>
             <div className="text-xs text-gray-500 truncate">
@@ -143,10 +143,10 @@ export default function NetworkAnalytics() {
 
       {/* Tips */}
       <div className="mt-4 p-3 bg-gray-50 rounded-lg">
-        <h5 className="text-sm font-medium text-gray-700 mb-2">
+        <h5 className="text-sm font-medium text-secondary-700 mb-2">
           💡 {isPortuguese ? 'Dicas para Melhorar a Sua Rede:' : 'Tips to Improve Your Network:'}
         </h5>
-        <ul className="text-xs text-gray-600 space-y-1">
+        <ul className="text-xs text-secondary-600 space-y-1">
           <li>• {isPortuguese ? 'Participe em mais eventos para conhecer novas pessoas' : 'Attend more events to meet new people'}</li>
           <li>• {isPortuguese ? 'Interaja regularmente com as suas conexões' : 'Interact regularly with your connections'}</li>
           <li>• {isPortuguese ? 'Use os quebra-gelos para iniciar conversas' : 'Use conversation starters to begin chats'}</li>

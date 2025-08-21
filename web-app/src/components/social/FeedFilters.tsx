@@ -161,7 +161,7 @@ export default function FeedFilters({ activeFilter, onFilterChange, className = 
             <h4 className="font-medium text-gray-900">
               {t(`feed_filters.active_${activeFilter}`) || filters.find(f => f.id === activeFilter)?.label}
             </h4>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {filters.find(f => f.id === activeFilter)?.description}
             </p>
           </div>
@@ -172,15 +172,15 @@ export default function FeedFilters({ activeFilter, onFilterChange, className = 
       <div className="mt-4 grid grid-cols-3 gap-4 text-center text-sm">
         <div>
           <p className="font-semibold text-primary-600">247</p>
-          <p className="text-gray-600">{t('feed_filters.posts_today') || 'Posts Today'}</p>
+          <p className="text-secondary-600">{t('feed_filters.posts_today') || 'Posts Today'}</p>
         </div>
         <div>
           <p className="font-semibold text-secondary-600">1.2k</p>
-          <p className="text-gray-600">{t('feed_filters.interactions') || 'Interactions'}</p>
+          <p className="text-secondary-600">{t('feed_filters.interactions') || 'Interactions'}</p>
         </div>
         <div>
           <p className="font-semibold text-accent-600">89%</p>
-          <p className="text-gray-600">{t('feed_filters.relevance') || 'Relevance'}</p>
+          <p className="text-secondary-600">{t('feed_filters.relevance') || 'Relevance'}</p>
         </div>
       </div>
     </div>

@@ -86,11 +86,11 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
     return (
       <div className="bg-white rounded-xl shadow-lg p-8">
         <div className="animate-pulse">
-          <div className="h-8 bg-gray-200 rounded mb-4"></div>
-          <div className="h-4 bg-gray-200 rounded mb-8"></div>
+          <div className="h-8 bg-secondary-200 rounded mb-4"></div>
+          <div className="h-4 bg-secondary-200 rounded mb-8"></div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className="h-24 bg-gray-200 rounded"></div>
+              <div key={i} className="h-24 bg-secondary-200 rounded"></div>
             ))}
           </div>
         </div>
@@ -134,8 +134,8 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
               onClick={() => setActiveTab(tab.id as any)}
               className={`py-4 px-2 border-b-2 font-medium text-sm flex items-center gap-2 ${
                 activeTab === tab.id
-                  ? 'border-red-500 text-red-600'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  ? 'border-coral-500 text-coral-600'
+                  : 'border-transparent text-gray-500 hover:text-secondary-700 hover:border-secondary-300'
               }`}
             >
               <tab.icon className="h-4 w-4" />
@@ -154,20 +154,20 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-blue-600">{t('referral.stats.total-earnings')}</p>
+                    <p className="text-sm font-medium text-primary-600">{t('referral.stats.total-earnings')}</p>
                     <p className="text-2xl font-bold text-blue-900">£{stats?.totalEarnings || 0}</p>
                   </div>
-                  <Gift className="h-8 w-8 text-blue-500" />
+                  <Gift className="h-8 w-8 text-primary-500" />
                 </div>
               </div>
 
               <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-green-600">{t('referral.stats.completed-referrals')}</p>
+                    <p className="text-sm font-medium text-action-600">{t('referral.stats.completed-referrals')}</p>
                     <p className="text-2xl font-bold text-green-900">{stats?.completedReferrals || 0}</p>
                   </div>
-                  <Users className="h-8 w-8 text-green-500" />
+                  <Users className="h-8 w-8 text-action-500" />
                 </div>
               </div>
 
@@ -177,7 +177,7 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
                     <p className="text-sm font-medium text-yellow-600">{t('referral.stats.active-friends')}</p>
                     <p className="text-2xl font-bold text-yellow-900">{stats?.activeReferrals || 0}</p>
                   </div>
-                  <TrendingUp className="h-8 w-8 text-yellow-500" />
+                  <TrendingUp className="h-8 w-8 text-accent-500" />
                 </div>
               </div>
 
@@ -197,14 +197,14 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
             {/* Your Referral Code */}
             <div className="bg-gray-50 rounded-lg p-6">
               <h3 className="text-lg font-semibold mb-4">{t('referral.code.title')}</h3>
-              <p className="text-gray-600 mb-4">{t('referral.code.description')}</p>
+              <p className="text-secondary-600 mb-4">{t('referral.code.description')}</p>
               <div className="flex items-center gap-3">
                 <div className="bg-white border-2 border-dashed border-red-300 rounded-lg px-6 py-4 flex-1">
-                  <span className="text-2xl font-bold text-red-600 tracking-wider">{userCode}</span>
+                  <span className="text-2xl font-bold text-coral-600 tracking-wider">{userCode}</span>
                 </div>
                 <button
                   onClick={() => copyToClipboard(userCode, 'code')}
-                  className="bg-red-600 text-white px-4 py-4 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2"
+                  className="bg-coral-600 text-white px-4 py-4 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2"
                 >
                   <Copy className="h-4 w-4" />
                   <span className="hidden sm:inline">{language === 'pt' ? 'Copiar' : 'Copy'}</span>
@@ -217,18 +217,18 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
               <div className="bg-gradient-to-r from-red-50 to-green-50 rounded-lg p-6">
                 <h3 className="text-lg font-semibold mb-4">{t('referral.progress.title')}</h3>
                 <div className="mb-4">
-                  <div className="flex justify-between text-sm text-gray-600 mb-2">
+                  <div className="flex justify-between text-sm text-secondary-600 mb-2">
                     <span>{stats.completedReferrals} / 5 {language === 'pt' ? 'amigos' : 'friends'}</span>
                     <span>{Math.round(stats.progressToBonus * 100)}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-secondary-200 rounded-full h-2">
                     <div 
                       className="bg-gradient-to-r from-red-500 to-green-500 h-2 rounded-full transition-all duration-300"
                       style={{ width: `${stats.progressToBonus * 100}%` }}
                     ></div>
                   </div>
                 </div>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {t('referral.progress.description').replace('{remaining}', String(5 - stats.completedReferrals))}
                 </p>
               </div>
@@ -257,7 +257,7 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
                 href={shareData.socialUrls.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 text-white p-4 rounded-lg hover:bg-green-600 transition-colors flex items-center gap-3"
+                className="bg-action-500 text-white p-4 rounded-lg hover:bg-action-600 transition-colors flex items-center gap-3"
               >
                 <MessageCircle className="h-6 w-6" />
                 <span>{t('referral.share.whatsapp')}</span>
@@ -266,7 +266,7 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
               {/* Email */}
               <a
                 href={shareData.socialUrls.email}
-                className="bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-colors flex items-center gap-3"
+                className="bg-primary-500 text-white p-4 rounded-lg hover:bg-primary-600 transition-colors flex items-center gap-3"
               >
                 <Mail className="h-6 w-6" />
                 <span>{t('referral.share.email')}</span>
@@ -286,7 +286,7 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
                 href={shareData.socialUrls.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-600 text-white p-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-3"
+                className="bg-primary-600 text-white p-4 rounded-lg hover:bg-primary-700 transition-colors flex items-center gap-3"
               >
                 <ExternalLink className="h-6 w-6" />
                 <span>{t('referral.share.facebook')}</span>
@@ -304,7 +304,7 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
               {/* QR Code placeholder */}
               <button
                 onClick={() => copyToClipboard(shareData.url, 'link')}
-                className="bg-gray-700 text-white p-4 rounded-lg hover:bg-gray-800 transition-colors flex items-center gap-3"
+                className="bg-gray-700 text-white p-4 rounded-lg hover:bg-secondary-800 transition-colors flex items-center gap-3"
               >
                 <QrCode className="h-6 w-6" />
                 <span>{t('referral.share.qr')}</span>
@@ -315,7 +315,7 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
             <div className="bg-gray-50 rounded-lg p-6">
               <h4 className="font-semibold mb-4">{language === 'pt' ? 'Mensagem de Partilha' : 'Share Message Preview'}</h4>
               <div className="bg-white border rounded-lg p-4">
-                <p className="text-gray-700">{shareData.messages.generic}</p>
+                <p className="text-secondary-700">{shareData.messages.generic}</p>
               </div>
             </div>
           </div>
@@ -413,7 +413,7 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
                           {t(`referral.history.${referral.status}`)}
                         </span>
                         {referral.referral_rewards?.length > 0 && (
-                          <p className="text-xs text-green-600 mt-1">
+                          <p className="text-xs text-action-600 mt-1">
                             {t('referral.history.reward-earned')}
                           </p>
                         )}

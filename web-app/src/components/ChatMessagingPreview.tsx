@@ -326,7 +326,7 @@ export default function ChatMessagingPreview() {
               ? "Conversas da Comunidade Portuguesa"
               : "Portuguese Community Conversations"}
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
             {language === "pt"
               ? "Junte-se a milhares de portugueses em Londres. Chat em tempo real, grupos culturais, coordenação de eventos - tudo num só lugar."
               : "Join thousands of Portuguese speakers in London. Real-time chat, cultural groups, event coordination - all in one place."}
@@ -336,20 +336,20 @@ export default function ChatMessagingPreview() {
           <div className="flex items-center justify-center mt-6 space-x-6">
             <div className="flex items-center">
               <div className="w-3 h-3 bg-secondary-500 rounded-full animate-pulse mr-2"></div>
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-sm font-medium text-secondary-700">
                 {language === "pt" ? "AO VIVO" : "LIVE"}
               </span>
             </div>
             <div className="flex items-center">
               <EyeIcon className="w-4 h-4 text-gray-500 mr-1" />
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-secondary-600">
                 {viewerCount.toLocaleString()}{" "}
                 {language === "pt" ? "online" : "online"}
               </span>
             </div>
             <div className="flex items-center">
               <UserGroupIcon className="w-4 h-4 text-gray-500 mr-1" />
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-secondary-600">
                 12{language === "pt" ? "k membros" : "k members"}
               </span>
             </div>
@@ -369,7 +369,7 @@ export default function ChatMessagingPreview() {
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-colors ${
                       activeTab === tab
                         ? "bg-primary-500 text-white"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-white"
+                        : "text-secondary-600 hover:text-gray-900 hover:bg-white"
                     }`}
                   >
                     {tab === "live" && (
@@ -484,7 +484,7 @@ export default function ChatMessagingPreview() {
                             </span>
                           </div>
 
-                          <p className="text-gray-800 text-sm mt-1 leading-relaxed">
+                          <p className="text-secondary-800 text-sm mt-1 leading-relaxed">
                             {message.message}
                           </p>
 
@@ -514,12 +514,12 @@ export default function ChatMessagingPreview() {
                                   className="flex items-center space-x-1 px-2 py-1 rounded-full bg-white border border-gray-200 text-xs hover:bg-gray-50 transition-colors"
                                 >
                                   <span>{reaction.emoji}</span>
-                                  <span className="text-gray-600">
+                                  <span className="text-secondary-600">
                                     {reaction.count}
                                   </span>
                                 </motion.button>
                               ))}
-                              <button className="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center text-gray-400 hover:text-gray-600 hover:border-gray-400 transition-colors">
+                              <button className="w-6 h-6 rounded-full border border-secondary-300 flex items-center justify-center text-gray-400 hover:text-secondary-600 hover:border-gray-400 transition-colors">
                                 <PlusIcon className="w-3 h-3" />
                               </button>
                             </div>
@@ -541,7 +541,7 @@ export default function ChatMessagingPreview() {
                             ? "Escreva sua mensagem..."
                             : "Type your message..."
                         }
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                         disabled
                       />
                       <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center space-x-2">
@@ -572,7 +572,7 @@ export default function ChatMessagingPreview() {
                     ].map((emote, idx) => (
                       <button
                         key={idx}
-                        className="px-2 py-1 text-xs bg-gray-100 rounded hover:bg-gray-200 transition-colors"
+                        className="px-2 py-1 text-xs bg-secondary-100 rounded hover:bg-secondary-200 transition-colors"
                         disabled
                       >
                         {emote}
@@ -637,7 +637,7 @@ export default function ChatMessagingPreview() {
                           >
                             {message.user.avatar}
                           </div>
-                          <span className="text-sm text-gray-700 truncate flex-1">
+                          <span className="text-sm text-secondary-700 truncate flex-1">
                             {message.user.name}
                           </span>
                           <span className="text-xs">

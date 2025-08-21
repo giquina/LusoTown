@@ -80,7 +80,7 @@ const ChatRoomCard = ({
         {/* Status badges */}
         <div className="absolute top-3 left-3 flex gap-2">
           {room.pinned && (
-            <span className="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+            <span className="bg-accent-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
               <StarIcon className="w-3 h-3" />
               PINNED
             </span>
@@ -102,7 +102,7 @@ const ChatRoomCard = ({
             {room.avatar ? (
               <Image src={room.avatar} alt={room.name} width={8 * 4} height={8 * 4} className="object-cover" />
             ) : (
-              <ChatBubbleLeftRightIcon className="w-6 h-6 text-gray-600" />
+              <ChatBubbleLeftRightIcon className="w-6 h-6 text-secondary-600" />
             )}
           </div>
         </div>
@@ -117,7 +117,7 @@ const ChatRoomCard = ({
               {room.notifications ? (
                 <BellSolidIcon className="w-4 h-4 text-primary-600" />
               ) : (
-                <BellIcon className="w-4 h-4 text-gray-600" />
+                <BellIcon className="w-4 h-4 text-secondary-600" />
               )}
             </button>
           </div>
@@ -131,14 +131,14 @@ const ChatRoomCard = ({
             <h3 className="font-bold text-lg text-gray-900 mb-1 group-hover:text-primary-600 transition-colors">
               {room.name}
             </h3>
-            <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+            <p className="text-secondary-600 text-sm mb-3 line-clamp-2">
               {room.description}
             </p>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
+        <div className="flex items-center gap-4 mb-4 text-sm text-secondary-600">
           <div className="flex items-center gap-1">
             <UsersIcon className="w-4 h-4" />
             <span>{room.currentMembers.toLocaleString()}</span>
@@ -161,7 +161,7 @@ const ChatRoomCard = ({
                 {new Date(room.lastMessage.timestamp).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
               </span>
             </div>
-            <p className="text-sm text-gray-700 line-clamp-2">{room.lastMessage.content}</p>
+            <p className="text-sm text-secondary-700 line-clamp-2">{room.lastMessage.content}</p>
           </div>
         )}
 
@@ -170,7 +170,7 @@ const ChatRoomCard = ({
           {room.tags.slice(0, 3).map((tag) => (
             <span 
               key={tag}
-              className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full flex items-center gap-1"
+              className="bg-secondary-100 text-secondary-600 text-xs px-2 py-1 rounded-full flex items-center gap-1"
             >
               <HashtagIcon className="w-3 h-3" />
               {tag}
@@ -232,7 +232,7 @@ const CategoryFilter = ({
         className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
           selectedCategory === null
             ? 'bg-primary-500 text-white'
-            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
         }`}
       >
         All Rooms
@@ -244,7 +244,7 @@ const CategoryFilter = ({
           className={`px-4 py-2 rounded-full text-sm font-medium transition-colors flex items-center gap-2 ${
             selectedCategory === category
               ? 'bg-primary-500 text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
           }`}
         >
           <span className="text-base">
@@ -366,7 +366,7 @@ export default function ChatRoomsPage() {
                 Community{' '}
                 <span className="gradient-text">Chat Rooms</span>
               </h1>
-              <p className="text-lg sm:text-xl text-gray-600 mb-8">
+              <p className="text-lg sm:text-xl text-secondary-600 mb-8">
                 Join conversations with like-minded women across London. Share experiences, get advice, and build lasting friendships.
               </p>
               
@@ -384,7 +384,7 @@ export default function ChatRoomsPage() {
               
               {currentUser && joinedRoomsCount > 0 && (
                 <div className="mt-6">
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     You're a member of <span className="font-semibold text-primary-600">{joinedRoomsCount}</span> chat room{joinedRoomsCount === 1 ? '' : 's'}
                   </p>
                 </div>
@@ -404,13 +404,13 @@ export default function ChatRoomsPage() {
                     type="checkbox"
                     checked={showJoinedOnly}
                     onChange={(e) => setShowJoinedOnly(e.target.checked)}
-                    className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                    className="w-4 h-4 text-primary-600 border-secondary-300 rounded focus:ring-primary-500"
                   />
-                  <span className="text-sm font-medium text-gray-700">Show joined rooms only</span>
+                  <span className="text-sm font-medium text-secondary-700">Show joined rooms only</span>
                 </label>
               </div>
               
-              <div className="text-gray-600">
+              <div className="text-secondary-600">
                 {loading ? 'Loading...' : `${filteredRooms.length} room${filteredRooms.length === 1 ? '' : 's'} found`}
               </div>
             </div>
@@ -426,13 +426,13 @@ export default function ChatRoomsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
                   <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden animate-pulse">
-                    <div className="h-32 bg-gray-200"></div>
+                    <div className="h-32 bg-secondary-200"></div>
                     <div className="p-6">
-                      <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                      <div className="h-4 bg-gray-200 rounded mb-4 w-2/3"></div>
-                      <div className="h-3 bg-gray-200 rounded mb-2"></div>
-                      <div className="h-3 bg-gray-200 rounded mb-4 w-3/4"></div>
-                      <div className="h-10 bg-gray-200 rounded"></div>
+                      <div className="h-4 bg-secondary-200 rounded mb-2"></div>
+                      <div className="h-4 bg-secondary-200 rounded mb-4 w-2/3"></div>
+                      <div className="h-3 bg-secondary-200 rounded mb-2"></div>
+                      <div className="h-3 bg-secondary-200 rounded mb-4 w-3/4"></div>
+                      <div className="h-10 bg-secondary-200 rounded"></div>
                     </div>
                   </div>
                 ))}
@@ -441,7 +441,7 @@ export default function ChatRoomsPage() {
               <div className="text-center py-16">
                 <div className="text-6xl mb-4">💬</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">No chat rooms found</h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-secondary-600 mb-6">
                   Try adjusting your search or filters to find the perfect room for you.
                 </p>
                 <button
@@ -478,30 +478,30 @@ export default function ChatRoomsPage() {
               <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg">
                 <div className="text-center max-w-2xl mx-auto">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">New to Community Chat?</h2>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-secondary-600 mb-6">
                     Our chat rooms are safe, welcoming spaces where LusoTown members can connect, share experiences, and support each other. Each room has its own community guidelines and active moderators.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="text-center">
                       <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <CheckCircleIcon className="w-6 h-6 text-green-600" />
+                        <CheckCircleIcon className="w-6 h-6 text-action-600" />
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-1">Verified Members</h3>
-                      <p className="text-sm text-gray-600">All participants are verified LusoTown members</p>
+                      <p className="text-sm text-secondary-600">All participants are verified LusoTown members</p>
                     </div>
                     <div className="text-center">
                       <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-2">
                         <UsersIcon className="w-6 h-6 text-primary-600" />
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-1">Active Moderation</h3>
-                      <p className="text-sm text-gray-600">Dedicated moderators ensure positive conversations</p>
+                      <p className="text-sm text-secondary-600">Dedicated moderators ensure positive conversations</p>
                     </div>
                     <div className="text-center">
                       <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
                         <ChatBubbleLeftRightIcon className="w-6 h-6 text-purple-600" />
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-1">Diverse Topics</h3>
-                      <p className="text-sm text-gray-600">Find conversations that match your interests</p>
+                      <p className="text-sm text-secondary-600">Find conversations that match your interests</p>
                     </div>
                   </div>
                 </div>

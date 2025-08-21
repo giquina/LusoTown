@@ -82,7 +82,7 @@ export default function FavoriteButton({
         />
       ) : (
         <HeartOutlineIcon 
-          className={`${sizeClasses[size]} ${variant === 'overlay' ? 'text-gray-600' : 'text-gray-400'} hover:text-action-500 transition-colors`} 
+          className={`${sizeClasses[size]} ${variant === 'overlay' ? 'text-secondary-600' : 'text-gray-400'} hover:text-action-500 transition-colors`} 
         />
       )}
     </button>

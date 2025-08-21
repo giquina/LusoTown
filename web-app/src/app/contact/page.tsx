@@ -89,7 +89,7 @@ export default function Contact() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto"
+                  className="text-xl text-secondary-600 leading-relaxed max-w-3xl mx-auto"
                 >
                   {t('contact.subtitle', 'Your Portuguese community across the UK is here to support you. Whether you need help finding events, connecting with other Portuguese speakers, or have questions about our community - we\'re here with a warm welcome.')}
                 </motion.p>
@@ -98,18 +98,18 @@ export default function Contact() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="flex items-center justify-center gap-8 mt-8 text-sm text-gray-600"
+                  className="flex items-center justify-center gap-8 mt-8 text-sm text-secondary-600"
                 >
                   <div className="flex items-center gap-2">
-                    <span className="text-green-500">●</span>
+                    <span className="text-action-500">●</span>
                     {t('contact.portuguese-support', 'Portuguese-speaking support')}
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-green-500">●</span>
+                    <span className="text-action-500">●</span>
                     {t('contact.family-friendly', 'Family-friendly assistance')}
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-green-500">●</span>
+                    <span className="text-action-500">●</span>
                     {t('contact.fast-response', 'Fast response times')}
                   </div>
                 </motion.div>
@@ -129,7 +129,7 @@ export default function Contact() {
                     
                     {submitStatus === 'success' && (
                       <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
-                        <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        <CheckCircleIcon className="h-5 w-5 text-action-500" />
                         <p className="text-green-700">{t('contact.message-sent', 'Message sent successfully! We\'ll respond within 24 hours.')}</p>
                       </div>
                     )}
@@ -137,7 +137,7 @@ export default function Contact() {
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
-                          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                          <label htmlFor="name" className="block text-sm font-medium text-secondary-700 mb-2">
                             {t('contact.your-name', 'Your Name')} *
                           </label>
                           <input
@@ -147,13 +147,13 @@ export default function Contact() {
                             value={formData.name}
                             onChange={handleInputChange}
                             required
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                            className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
                             placeholder={t('contact.name-placeholder', 'Enter your name')}
                           />
                         </div>
                         
                         <div>
-                          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                          <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-2">
                             {t('contact.email-address', 'Email Address')} *
                           </label>
                           <input
@@ -163,7 +163,7 @@ export default function Contact() {
                             value={formData.email}
                             onChange={handleInputChange}
                             required
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                            className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
                             placeholder="your@email.com"
                           />
                         </div>
@@ -171,7 +171,7 @@ export default function Contact() {
                       
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
-                          <label htmlFor="origin" className="block text-sm font-medium text-gray-700 mb-2">
+                          <label htmlFor="origin" className="block text-sm font-medium text-secondary-700 mb-2">
                             {t('contact.portuguese-origin', 'Portuguese Origin')}
                           </label>
                           <select
@@ -179,7 +179,7 @@ export default function Contact() {
                             name="origin"
                             value={formData.origin}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                            className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
                           >
                             <option value="">{t('contact.select-origin', 'Select your origin (optional)')}</option>
                             <option value="portugal">🇵🇹 Portugal</option>
@@ -193,7 +193,7 @@ export default function Contact() {
                         </div>
                         
                         <div>
-                          <label htmlFor="preferredLanguage" className="block text-sm font-medium text-gray-700 mb-2">
+                          <label htmlFor="preferredLanguage" className="block text-sm font-medium text-secondary-700 mb-2">
                             {t('contact.preferred-language', 'Preferred Language')}
                           </label>
                           <select
@@ -201,7 +201,7 @@ export default function Contact() {
                             name="preferredLanguage"
                             value={formData.preferredLanguage}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                            className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
                           >
                             <option value="en">English</option>
                             <option value="pt">Português</option>
@@ -210,7 +210,7 @@ export default function Contact() {
                       </div>
                       
                       <div>
-                        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="subject" className="block text-sm font-medium text-secondary-700 mb-2">
                           {t('contact.subject', 'Subject')} *
                         </label>
                         <select
@@ -219,7 +219,7 @@ export default function Contact() {
                           value={formData.subject}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                          className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
                         >
                           <option value="">{t('contact.select-topic', 'Select a topic')}</option>
                           <option value="events">{t('contact.events-help', 'Help with Events & Activities')}</option>
@@ -232,7 +232,7 @@ export default function Contact() {
                       </div>
                       
                       <div>
-                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="message" className="block text-sm font-medium text-secondary-700 mb-2">
                           {t('contact.message', 'Message')} *
                         </label>
                         <textarea
@@ -242,7 +242,7 @@ export default function Contact() {
                           onChange={handleInputChange}
                           required
                           rows={6}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                          className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
                           placeholder={t('contact.message-placeholder', 'Tell us how we can help you connect with the Portuguese community across the UK...')}
                         ></textarea>
                       </div>
@@ -285,7 +285,7 @@ export default function Contact() {
                     <div className="space-y-6">
                       {/* WhatsApp Contact */}
                       <div className="flex items-start space-x-4 p-4 bg-green-50 rounded-xl border border-green-100">
-                        <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                        <div className="w-12 h-12 bg-action-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
                           <span className="text-white text-lg">📱</span>
                         </div>
                         <div className="flex-1">
@@ -295,10 +295,10 @@ export default function Contact() {
                               {t('contact.most-popular', 'Most Popular')}
                             </span>
                           </h3>
-                          <p className="text-gray-600 text-sm mb-2">
+                          <p className="text-secondary-600 text-sm mb-2">
                             {t('contact.whatsapp-description', 'Quick help in Portuguese or English via WhatsApp')}
                           </p>
-                          <button className="text-green-600 font-medium text-sm hover:text-green-700 transition-colors">
+                          <button className="text-action-600 font-medium text-sm hover:text-green-700 transition-colors">
                             {t('contact.start-whatsapp-chat', 'Start WhatsApp Chat →')}
                           </button>
                           <p className="text-xs text-gray-500 mt-1">{t('contact.whatsapp-hours', 'Available 9am-9pm daily')}</p>
@@ -312,7 +312,7 @@ export default function Contact() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-gray-900">{t('contact.email-support', 'Email Support')}</h3>
-                          <p className="text-gray-600">hello@lusotown.com</p>
+                          <p className="text-secondary-600">hello@lusotown.com</p>
                           <p className="text-sm text-gray-500">{t('contact.email-response', 'We typically respond within 4 hours')}</p>
                           <p className="text-xs text-primary-600 mt-1">🇵🇹 {t('contact.portuguese-team', 'Portuguese-speaking team available')}</p>
                         </div>
@@ -325,7 +325,7 @@ export default function Contact() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-gray-900">{t('contact.community-hub', 'Community Hub')}</h3>
-                          <p className="text-gray-600">{t('contact.london-based', 'London-based Portuguese Community')}</p>
+                          <p className="text-secondary-600">{t('contact.london-based', 'London-based Portuguese Community')}</p>
                           <p className="text-sm text-gray-500">{t('contact.serving-uk', 'Proudly serving Portuguese speakers across the UK')}</p>
                           <div className="flex gap-2 mt-2">
                             <span className="text-xs bg-primary-50 text-primary-600 px-2 py-1 rounded-full">Stockwell</span>
@@ -342,8 +342,8 @@ export default function Contact() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-gray-900">{t('contact.support-hours', 'Support Hours')}</h3>
-                          <p className="text-gray-600">{t('contact.weekday-hours', 'Monday - Friday: 9am - 9pm GMT')}</p>
-                          <p className="text-gray-600">{t('contact.weekend-hours', 'Saturday - Sunday: 10am - 6pm GMT')}</p>
+                          <p className="text-secondary-600">{t('contact.weekday-hours', 'Monday - Friday: 9am - 9pm GMT')}</p>
+                          <p className="text-secondary-600">{t('contact.weekend-hours', 'Saturday - Sunday: 10am - 6pm GMT')}</p>
                           <p className="text-sm text-gray-500">{t('contact.emergency-support', 'Emergency safety support available 24/7')}</p>
                         </div>
                       </div>
@@ -355,17 +355,17 @@ export default function Contact() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
                       🏛️ {t('contact.cultural-centers', 'Portuguese Cultural Centers in London')}
                     </h3>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-secondary-600 mb-6">
                       {t('contact.cultural-centers-description', 'Visit these community spaces for in-person support and cultural connections:')}
                     </p>
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="bg-white/60 backdrop-blur-sm p-4 rounded-lg">
                         <h4 className="font-semibold text-gray-900">{t('contact.stockwell-center', 'Stockwell Portuguese Community')}</h4>
-                        <p className="text-sm text-gray-600">{t('contact.cultural-events', 'Cultural events & support')}</p>
+                        <p className="text-sm text-secondary-600">{t('contact.cultural-events', 'Cultural events & support')}</p>
                       </div>
                       <div className="bg-white/60 backdrop-blur-sm p-4 rounded-lg">
                         <h4 className="font-semibold text-gray-900">{t('contact.vauxhall-center', 'Vauxhall Cultural Centre')}</h4>
-                        <p className="text-sm text-gray-600">{t('contact.community-gatherings', 'Weekly community gatherings')}</p>
+                        <p className="text-sm text-secondary-600">{t('contact.community-gatherings', 'Weekly community gatherings')}</p>
                       </div>
                     </div>
                   </div>
@@ -382,7 +382,7 @@ export default function Contact() {
                     <div className="flex flex-col sm:flex-row gap-3">
                       <a
                         href="mailto:urgent@lusotown.com"
-                        className="bg-white text-red-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200 inline-flex items-center gap-2 justify-center"
+                        className="bg-white text-coral-600 px-6 py-3 rounded-lg font-medium hover:bg-secondary-100 transition-colors duration-200 inline-flex items-center gap-2 justify-center"
                       >
                         <EnvelopeIcon className="h-4 w-4" />
                         urgent@lusotown.com

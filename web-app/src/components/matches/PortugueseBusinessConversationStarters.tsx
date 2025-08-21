@@ -255,10 +255,10 @@ export default function PortugueseBusinessConversationStarters({
   ];
 
   const getPopularityColor = (popularity: number) => {
-    if (popularity >= 90) return "text-green-600 bg-green-50";
-    if (popularity >= 80) return "text-blue-600 bg-blue-50";
+    if (popularity >= 90) return "text-action-600 bg-green-50";
+    if (popularity >= 80) return "text-primary-600 bg-blue-50";
     if (popularity >= 70) return "text-yellow-600 bg-yellow-50";
-    return "text-gray-600 bg-gray-50";
+    return "text-secondary-600 bg-gray-50";
   };
 
   const getPopularityIcon = (popularity: number) => {
@@ -438,7 +438,7 @@ export default function PortugueseBusinessConversationStarters({
           </div>
           <div className="space-y-2 text-xs text-accent-800">
             <div className="flex items-center gap-2">
-              <CheckCircleIcon className="w-3 h-3 text-green-500" />
+              <CheckCircleIcon className="w-3 h-3 text-action-500" />
               <span>
                 {language === "pt" 
                   ? "Mencione experiências ou desafios específicos de portugueses em Londres"
@@ -446,7 +446,7 @@ export default function PortugueseBusinessConversationStarters({
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <ScaleIcon className="w-3 h-3 text-blue-500" />
+              <ScaleIcon className="w-3 h-3 text-primary-500" />
               <span>
                 {language === "pt"
                   ? "Procure oportunidades de colaboração e apoio mútuo"

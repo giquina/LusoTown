@@ -1,29 +1,51 @@
 import type { Metadata } from "next";
+import { ROUTES } from '@/config'
 import { Inter, Poppins } from "next/font/google";
+import { ROUTES } from '@/config'
 import { Toaster } from "react-hot-toast";
+import { ROUTES } from '@/config'
 import "./globals.css";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import { ROUTES } from '@/config'
 import LiveFeedNotifications from "@/components/LiveFeedNotifications";
+import { ROUTES } from '@/config'
 import UserTypeSelection from "@/components/UserTypeSelection";
+import { ROUTES } from '@/config'
 import { LanguageProvider } from "@/context/LanguageContext";
+import { ROUTES } from '@/config'
 import { FavoritesProvider } from "@/context/FavoritesContext";
+import { ROUTES } from '@/config'
 import { FollowingProvider } from "@/context/FollowingContext";
+import { ROUTES } from '@/config'
 import { CartProvider } from "@/context/CartContext";
+import { ROUTES } from '@/config'
 import { NetworkingProvider } from "@/context/NetworkingContext";
+import { ROUTES } from '@/config'
 import { SubscriptionProvider } from "@/context/SubscriptionContext";
+import { ROUTES } from '@/config'
 import { NotificationProvider } from "@/context/NotificationContext";
+import { ROUTES } from '@/config'
 import { PlatformIntegrationProvider } from "@/context/PlatformIntegrationContext";
+import { ROUTES } from '@/config'
 import { WaitingListProvider } from "@/context/WaitingListContext";
+import { ROUTES } from '@/config'
 import { AuthPopupProvider } from "@/components/AuthPopupProvider";
+import { ROUTES } from '@/config'
 import AuthPopup from "@/components/AuthPopup";
+import { ROUTES } from '@/config'
 import AuthIntentHandler from "@/components/AuthIntentHandler";
+import { ROUTES } from '@/config'
 import FavoriteNotification from "@/components/FavoriteNotification";
+import { ROUTES } from '@/config'
 import Header from "@/components/Header";
+import { ROUTES } from '@/config'
 import ScrollToTop from "@/components/ScrollToTop";
+import { ROUTES } from '@/config'
 import ErrorBoundary, {
   ComponentErrorBoundary,
 } from "@/components/ErrorBoundary";
 import { METADATA_BASE } from "@/config/site";
+import { ROUTES } from '@/config'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -236,7 +258,7 @@ export default function RootLayout({
             duration: 4000,
             style: {
               background: "#fff",
-              color: "#374151",
+              color: "var(--color-secondary-700)",
               boxShadow:
                 "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
               borderRadius: "0.75rem",

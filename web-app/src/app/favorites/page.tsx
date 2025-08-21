@@ -28,7 +28,7 @@ const mockFavorites = [
     date: '2025-08-16',
     time: '19:00',
     location: 'A Toca Restaurant, Stockwell',
-    imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format'),
     category: 'Music & Entertainment',
     liked: true
   },
@@ -41,7 +41,7 @@ const mockFavorites = [
     location: 'Shoreditch, London',
     rating: 4.8,
     reviewCount: 42,
-    imageUrl: 'https://images.unsplash.com/photo-1574329818413-10376febd3f0?w=600&h=400&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('photo-1574329818413-10376febd3f0?w=600&h=400&fit=crop&auto=format'),
     liked: true
   },
   {
@@ -50,11 +50,11 @@ const mockFavorites = [
     title: 'Beautiful sunset at Hyde Park',
     description: 'Just enjoyed a lovely evening walk at Hyde Park. The sunset was absolutely magical! #HydePark #Sunset #London',
     author: 'Maria Santos',
-    authorAvatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b1ac?w=100&h=100&fit=crop&crop=face&auto=format',
+    authorAvatar: buildUnsplashUrl('photo-1494790108755-2616b612b1ac?w=100&h=100&fit=crop&crop=face&auto=format'),
     timestamp: '2 hours ago',
     likes: 24,
     comments: 5,
-    imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&auto=format'),
     liked: true
   },
   {
@@ -65,7 +65,7 @@ const mockFavorites = [
     date: '2025-08-18',
     time: '18:30',
     location: 'Champor-Champor Restaurant, Elephant & Castle',
-    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&auto=format'),
     category: 'Books & Reading',
     liked: true
   }
@@ -119,7 +119,7 @@ export default function FavoritesPage() {
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
                 My <span className="gradient-text">Favorites</span>
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-xl text-secondary-600 leading-relaxed mb-8">
                 All the events, businesses, and posts you've saved. Easily access your favorite content anytime.
               </p>
               
@@ -129,7 +129,7 @@ export default function FavoritesPage() {
                   className={`px-6 py-3 rounded-lg font-medium transition-colors ${
                     activeTab === 'all'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-gray-50'
                   }`}
                 >
                   All Favorites
@@ -139,7 +139,7 @@ export default function FavoritesPage() {
                   className={`px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'event'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-gray-50'
                   }`}
                 >
                   <CalendarDaysIcon className="w-5 h-5" />
@@ -150,7 +150,7 @@ export default function FavoritesPage() {
                   className={`px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'business'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-gray-50'
                   }`}
                 >
                   <BuildingStorefrontIcon className="w-5 h-5" />
@@ -161,7 +161,7 @@ export default function FavoritesPage() {
                   className={`px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'feed'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-gray-50'
                   }`}
                 >
                   <ChatBubbleLeftRightIcon className="w-5 h-5" />
@@ -180,7 +180,7 @@ export default function FavoritesPage() {
                 <div className="text-center py-16">
                   <HeartIcon className="w-16 h-16 text-gray-300 mx-auto mb-6" />
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">No favorites yet</h3>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-secondary-600 mb-6">
                     Start saving your favorite events, businesses, and feed posts by clicking the heart icon.
                   </p>
                   <a 
@@ -219,7 +219,7 @@ export default function FavoritesPage() {
                         
                         {/* Type Badge */}
                         <div className="absolute top-3 left-3">
-                          <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-gray-700">
+                          <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-secondary-700">
                             {getTypeIcon(favorite.type)}
                             {getTypeLabel(favorite.type)}
                           </div>
@@ -228,14 +228,14 @@ export default function FavoritesPage() {
                         {/* Remove Button */}
                         <button
                           onClick={() => removeFavorite(favorite.id)}
-                          className="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors"
+                          className="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-secondary-600 hover:text-coral-500 transition-colors"
                         >
                           <XMarkIcon className="w-4 h-4" />
                         </button>
                         
                         {/* Liked Indicator */}
                         <div className="absolute bottom-3 right-3">
-                          <HeartSolidIcon className="w-6 h-6 text-red-500" />
+                          <HeartSolidIcon className="w-6 h-6 text-coral-500" />
                         </div>
                       </div>
                       
@@ -245,18 +245,18 @@ export default function FavoritesPage() {
                           {favorite.title}
                         </h3>
                         
-                        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                        <p className="text-secondary-600 text-sm mb-4 line-clamp-2">
                           {favorite.description}
                         </p>
                         
                         {/* Type-specific details */}
                         {favorite.type === 'event' && (
                           <div className="space-y-2 mb-4">
-                            <div className="flex items-center gap-2 text-sm text-gray-600">
+                            <div className="flex items-center gap-2 text-sm text-secondary-600">
                               <CalendarDaysIcon className="w-4 h-4" />
                               <span>{favorite.date} at {favorite.time}</span>
                             </div>
-                            <div className="flex items-center gap-2 text-sm text-gray-600">
+                            <div className="flex items-center gap-2 text-sm text-secondary-600">
                               <MapPinIcon className="w-4 h-4" />
                               <span>{favorite.location}</span>
                             </div>
@@ -268,7 +268,7 @@ export default function FavoritesPage() {
                         
                         {favorite.type === 'business' && (
                           <div className="space-y-2 mb-4">
-                            <div className="flex items-center gap-2 text-sm text-gray-600">
+                            <div className="flex items-center gap-2 text-sm text-secondary-600">
                               <MapPinIcon className="w-4 h-4" />
                               <span>{favorite.location}</span>
                             </div>
@@ -285,7 +285,7 @@ export default function FavoritesPage() {
                                   </svg>
                                 ))}
                               </div>
-                              <span className="text-sm text-gray-600">
+                              <span className="text-sm text-secondary-600">
                                 {favorite.rating} ({favorite.reviewCount} reviews)
                               </span>
                             </div>

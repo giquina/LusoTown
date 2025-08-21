@@ -428,7 +428,7 @@ export default function MatchingAchievements({
                   
                   {/* Featured Badge */}
                   {achievement.isFeatured && achievement.isUnlocked && (
-                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center">
+                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-accent-400 rounded-full flex items-center justify-center">
                       <StarSolid className="w-3 h-3 text-white" />
                     </div>
                   )}
@@ -438,7 +438,7 @@ export default function MatchingAchievements({
                   <div className="flex items-start justify-between mb-2">
                     <div className="min-w-0 flex-1">
                       <h4 className={`font-bold text-base leading-tight ${
-                        achievement.isUnlocked ? 'text-primary-900' : 'text-gray-600'
+                        achievement.isUnlocked ? 'text-primary-900' : 'text-secondary-600'
                       }`}>
                         {achievement.name}
                       </h4>
@@ -446,7 +446,7 @@ export default function MatchingAchievements({
                         <span className={`text-xs px-2 py-1 rounded ${
                           achievement.isUnlocked 
                             ? `bg-gradient-to-r ${getRarityColor(achievement.rarity)} text-white`
-                            : 'bg-gray-200 text-gray-600'
+                            : 'bg-secondary-200 text-secondary-600'
                         }`}>
                           {getRarityText(achievement.rarity)}
                         </span>
@@ -473,14 +473,14 @@ export default function MatchingAchievements({
                   {!achievement.isUnlocked && showProgressBar && (
                     <div className="mb-3">
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-xs text-gray-600">
+                        <span className="text-xs text-secondary-600">
                           {language === "pt" ? "Progresso" : "Progress"}
                         </span>
-                        <span className="text-xs text-gray-600">
+                        <span className="text-xs text-secondary-600">
                           {achievement.currentProgress}/{achievement.requiredProgress}
                         </span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-secondary-200 rounded-full h-2">
                         <div
                           className="bg-gradient-to-r from-primary-400 to-secondary-400 h-2 rounded-full transition-all duration-500"
                           style={{
@@ -528,7 +528,7 @@ export default function MatchingAchievements({
                           </span>
                         )}
                         {achievement.rewards.priorityMatching && (
-                          <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">
+                          <span className="text-xs bg-blue-100 text-primary-700 px-2 py-1 rounded">
                             {language === "pt" ? "Prioridade" : "Priority"}
                           </span>
                         )}

@@ -135,7 +135,7 @@ export default function TransportServiceCard({
         <h3 className="text-2xl font-black text-gray-900 mb-2">
           {isPortuguese ? tier.namePortuguese : tier.name}
         </h3>
-        <p className="text-gray-600 mb-4">
+        <p className="text-secondary-600 mb-4">
           {isPortuguese ? tier.descriptionPortuguese : tier.description}
         </p>
         <div className="flex items-baseline justify-center">
@@ -151,7 +151,7 @@ export default function TransportServiceCard({
           {(isPortuguese ? tier.featuresPortuguese : tier.features).map((feature, featureIndex) => (
             <li key={featureIndex} className="flex items-start">
               <CheckCircleIcon className={`w-4 h-4 ${colors.text} mt-1 mr-3 flex-shrink-0`} />
-              <span className="text-sm text-gray-700 leading-relaxed">{feature}</span>
+              <span className="text-sm text-secondary-700 leading-relaxed">{feature}</span>
             </li>
           ))}
         </ul>
@@ -181,7 +181,6 @@ export default function TransportServiceCard({
               <button
                 onClick={() => {
                   // Handle waiting list signup
-                  console.log(`Join waiting list for ${serviceKey}`);
                 }}
                 className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-3 px-6 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl"
               >
@@ -189,7 +188,7 @@ export default function TransportServiceCard({
               </button>
             )}
             {serviceStatus?.estimatedAvailability && (
-              <p className="text-xs text-gray-600 text-center">
+              <p className="text-xs text-secondary-600 text-center">
                 {isPortuguese ? 'Estimativa: ' : 'Estimated: '}
                 {isPortuguese ? serviceStatus.estimatedAvailabilityPortuguese : serviceStatus.estimatedAvailability}
               </p>

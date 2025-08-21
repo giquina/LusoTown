@@ -85,7 +85,7 @@ export default function CommunityFeedSection() {
           badges: ['Event Host', 'Community Leader']
         },
         content: 'Excited to announce our next Fado night at the Portuguese Cultural Centre! Join us for an evening of traditional music, pastéis de nata, and connecting with fellow Portuguese speakers. Bring your saudade and let\'s create beautiful memories together! 🎵🇵🇹',
-        images: ['https://images.unsplash.com/photo-1567336273898-ebbf9eb3c2bf?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('photo-1567336273898-ebbf9eb3c2bf?w=400&h=300&fit=crop&crop=center')],
         timestamp: new Date().toISOString(),
         timeAgo: '2 hours ago',
         metrics: { likes: 47, comments: 12, shares: 8, views: 234 },
@@ -114,7 +114,7 @@ export default function CommunityFeedSection() {
           badges: ['Food Enthusiast']
         },
         content: 'Found the most authentic pastéis de nata outside of Portugal at this hidden gem in Borough Market! The owner is from Porto and uses his grandmother\'s recipe. Already planning my next visit! Who wants to join? 🥮✨',
-        images: ['https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=300&fit=crop&crop=center', 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('photo-1551632811-561732d1e306?w=400&h=300&fit=crop&crop=center'), buildUnsplashUrl('photo-1551024601-bec78aea704b?w=400&h=300&fit=crop&crop=center')],
         timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(),
         timeAgo: '4 hours ago',
         metrics: { likes: 89, comments: 23, shares: 15, views: 456 },
@@ -168,7 +168,7 @@ export default function CommunityFeedSection() {
           badges: ['Property Expert']
         },
         content: 'Beautiful 2-bedroom flat available in Elephant & Castle! Perfect for Portuguese speakers - there\'s a strong community here. Walking distance to Portuguese shops and the Mercado restaurant. Looking for respectful tenants who appreciate good neighbours. 🏠',
-        images: ['https://images.unsplash.com/photo-1567336273898-ebbf9eb3c2bf?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('photo-1567336273898-ebbf9eb3c2bf?w=400&h=300&fit=crop&crop=center')],
         timestamp: new Date(Date.now() - 8 * 60 * 60 * 1000).toISOString(),
         timeAgo: '8 hours ago',
         metrics: { likes: 56, comments: 31, shares: 19, views: 389 },
@@ -196,7 +196,7 @@ export default function CommunityFeedSection() {
           badges: ['Embaixadora Cultural', 'Professora de Idiomas']
         },
         content: '🇧🇷 Ensinei os meus amigos ingleses sobre as tradições da Festa Junina hoje! Fiz pamonha, dançámos quadrilha e expliquei porque saltamos por cima das fogueiras. As caras deles quando provaram paçoca pela primeira vez! 😂 Amo partilhar a nossa cultura linda aqui em Londres! A saudade do Brasil fica mais leve quando partilhamos as nossas tradições. 🎪🌽 #BrasileirosEmLondres',
-        images: ['https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=300&fit=crop&crop=center', 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('photo-1551632811-561732d1e306?w=400&h=300&fit=crop&crop=center'), buildUnsplashUrl('photo-1551024601-bec78aea704b?w=400&h=300&fit=crop&crop=center')],
         timestamp: new Date(Date.now() - 12 * 60 * 60 * 1000).toISOString(),
         timeAgo: '12 hours ago',
         metrics: { likes: 127, comments: 45, shares: 33, views: 678 },
@@ -239,7 +239,7 @@ export default function CommunityFeedSection() {
           badges: ['Organizadora de Eventos', 'Adepta de Futebol']
         },
         content: '🇵🇹 JOGO DE PORTUGAL AMANHÃ! ⚽ Festa no pub português em Notting Hill. Ecrã grande, Super Bock à pressão e comentários apaixonados garantidos! Venham celebrar os nossos rapazes de vermelho e verde! Força Portugal! A união faz a força, principalmente aqui em Londres longe da nossa terra. Que bela forma de matar as saudades! 💪 #PortugalCaralho',
-        images: ['https://images.unsplash.com/photo-1567336273898-ebbf9eb3c2bf?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('photo-1567336273898-ebbf9eb3c2bf?w=400&h=300&fit=crop&crop=center')],
         timestamp: new Date(Date.now() - 22 * 60 * 60 * 1000).toISOString(),
         timeAgo: '22 hours ago',
         metrics: { likes: 156, comments: 67, shares: 44, views: 892 },
@@ -268,7 +268,7 @@ export default function CommunityFeedSection() {
           badges: ['Mestre Fadista', 'Guia Turístico']
         },
         content: '🇵🇹 Ontem foi noite de fado no nosso quintal português aqui em Stockwell! Que saudades senti da minha Lisboa quando a guitarra começou a chorar... A Mariazinha cantou "Lágrima" e não houve olho seco. É isto que nos faz portugueses: a capacidade de transformar a dor em beleza. Aqui em Londres, o fado ganha um sabor especial - mistura-se a saudade da terra com a esperança do futuro. 🎸💔 #FadoEmLondres #Saudade',
-        images: ['https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&crop=center')],
         timestamp: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
         timeAgo: '1 day ago',
         metrics: { likes: 203, comments: 67, shares: 45, views: 1024 },
@@ -290,7 +290,7 @@ export default function CommunityFeedSection() {
           badges: ['Chef Brasileira', 'Influencer Gastronômica']
         },
         content: '🇧🇷 Gente, hoje fiz um almoço de domingo brasileiro completo aqui em Londres! Feijoada, farofa, couve, laranja... Os ingleses da vizinhança vieram provar e ficaram apaixonados! Uma senhora me disse que nunca tinha comido algo tão saboroso. Chorei de emoção! É assim que levamos o Brasil no coração: um prato de cada vez, uma história de cada vez. Quem aí tá sentindo cheiro de dendê? 😭❤️ #BrasilNoPrato #SaudadeBoa',
-        images: ['https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('photo-1544025162-d76694265947?w=400&h=300&fit=crop&crop=center')],
         timestamp: new Date(Date.now() - 30 * 60 * 60 * 1000).toISOString(),
         timeAgo: '1 day ago',
         metrics: { likes: 289, comments: 89, shares: 67, views: 1456 },
@@ -392,22 +392,22 @@ export default function CommunityFeedSection() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <div className="h-8 bg-gray-200 rounded-lg mb-4 max-w-md mx-auto animate-pulse"></div>
-              <div className="h-12 bg-gray-200 rounded-lg mb-4 max-w-2xl mx-auto animate-pulse"></div>
-              <div className="h-6 bg-gray-200 rounded-lg max-w-xl mx-auto animate-pulse"></div>
+              <div className="h-8 bg-secondary-200 rounded-lg mb-4 max-w-md mx-auto animate-pulse"></div>
+              <div className="h-12 bg-secondary-200 rounded-lg mb-4 max-w-2xl mx-auto animate-pulse"></div>
+              <div className="h-6 bg-secondary-200 rounded-lg max-w-xl mx-auto animate-pulse"></div>
             </div>
             <div className="space-y-6">
               {[1, 2, 3].map(i => (
                 <div key={i} className="bg-white rounded-2xl p-6 animate-pulse">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
+                    <div className="w-12 h-12 bg-secondary-200 rounded-full"></div>
                     <div className="flex-1">
-                      <div className="h-4 bg-gray-200 rounded mb-2 max-w-xs"></div>
-                      <div className="h-3 bg-gray-200 rounded max-w-24"></div>
+                      <div className="h-4 bg-secondary-200 rounded mb-2 max-w-xs"></div>
+                      <div className="h-3 bg-secondary-200 rounded max-w-24"></div>
                     </div>
                   </div>
-                  <div className="h-20 bg-gray-200 rounded-lg mb-4"></div>
-                  <div className="h-48 bg-gray-200 rounded-lg"></div>
+                  <div className="h-20 bg-secondary-200 rounded-lg mb-4"></div>
+                  <div className="h-48 bg-secondary-200 rounded-lg"></div>
                 </div>
               ))}
             </div>
@@ -448,10 +448,10 @@ export default function CommunityFeedSection() {
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
               {t('community_feed.title')}
             </h2>
-            <p className="text-xl sm:text-2xl text-gray-700 mb-4 font-medium max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl sm:text-2xl text-secondary-700 mb-4 font-medium max-w-3xl mx-auto leading-relaxed">
               {t('community_feed.subtitle')}
             </p>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
               {t('community_feed.description')}
             </p>
           </header>
@@ -469,13 +469,13 @@ export default function CommunityFeedSection() {
                     className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
                       isActive 
                         ? 'bg-gradient-to-r from-secondary-500 to-accent-500 text-white shadow-lg transform scale-105' 
-                        : 'bg-white/80 text-gray-700 hover:bg-secondary-50 border border-gray-200/60 hover:border-secondary-200'
+                        : 'bg-white/80 text-secondary-700 hover:bg-secondary-50 border border-gray-200/60 hover:border-secondary-200'
                     }`}
                   >
                     <Icon className="w-4 h-4" />
                     <span>{filter.label}</span>
                     <span className={`text-xs px-2 py-0.5 rounded-full ${
-                      isActive ? 'bg-white/20' : 'bg-gray-100'
+                      isActive ? 'bg-white/20' : 'bg-secondary-100'
                     }`}>
                       {filter.count}
                     </span>
@@ -506,7 +506,7 @@ export default function CommunityFeedSection() {
                             />
                           </div>
                           {post.author.verified && (
-                            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
+                            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-primary-500 rounded-full flex items-center justify-center">
                               <CheckBadgeIcon className="w-3 h-3 text-white" />
                             </div>
                           )}
@@ -525,7 +525,7 @@ export default function CommunityFeedSection() {
                             )}
                             {post.isLive && (
                               <div className="flex items-center gap-1 bg-red-100 text-red-700 text-xs px-2 py-0.5 rounded-full animate-pulse">
-                                <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                                <div className="w-2 h-2 bg-coral-500 rounded-full"></div>
                                 <span>Live</span>
                               </div>
                             )}
@@ -556,7 +556,7 @@ export default function CommunityFeedSection() {
                           post.type === 'job' ? 'bg-premium-100 text-premium-600' :
                           post.type === 'housing' ? 'bg-coral-100 text-coral-600' :
                           post.type === 'culture' ? 'bg-action-100 text-action-600' :
-                          'bg-gray-100 text-gray-600'
+                          'bg-secondary-100 text-secondary-600'
                         }`}>
                           <PostTypeIcon className="w-4 h-4" />
                         </div>
@@ -564,7 +564,7 @@ export default function CommunityFeedSection() {
                     </div>
                     
                     {/* Post Content */}
-                    <p className="text-gray-700 mb-4 leading-relaxed whitespace-pre-line">{post.content}</p>
+                    <p className="text-secondary-700 mb-4 leading-relaxed whitespace-pre-line">{post.content}</p>
                     
                     {/* Post Images */}
                     {post.images && post.images.length > 0 && (
@@ -613,13 +613,13 @@ export default function CommunityFeedSection() {
                           <div className="flex-1">
                             <h5 className="font-semibold text-gray-900">{post.linkedContent.title}</h5>
                             {post.linkedContent.subtitle && (
-                              <p className="text-sm text-gray-600">{post.linkedContent.subtitle}</p>
+                              <p className="text-sm text-secondary-600">{post.linkedContent.subtitle}</p>
                             )}
                             {post.linkedContent.price && (
                               <p className="text-sm font-medium text-secondary-600">{post.linkedContent.price}</p>
                             )}
                             {post.linkedContent.date && (
-                              <p className="text-sm text-gray-600">{post.linkedContent.date}</p>
+                              <p className="text-sm text-secondary-600">{post.linkedContent.date}</p>
                             )}
                           </div>
                           <button className="text-secondary-600 hover:text-secondary-700 font-medium text-sm flex items-center gap-1">
@@ -644,7 +644,7 @@ export default function CommunityFeedSection() {
                   
                   {/* Post Metrics */}
                   <div className="px-6 py-3 bg-gray-50/80 border-t border-gray-100">
-                    <div className="flex items-center justify-between text-sm text-gray-600">
+                    <div className="flex items-center justify-between text-sm text-secondary-600">
                       <div className="flex items-center gap-4">
                         <span className="flex items-center gap-1">
                           <HeartIcon className="w-4 h-4" />
@@ -673,8 +673,8 @@ export default function CommunityFeedSection() {
                         onClick={() => handleLike(post.id)}
                         className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 ${
                           post.userInteraction.liked 
-                            ? 'text-red-600 bg-red-50 hover:bg-red-100' 
-                            : 'text-gray-600 hover:text-red-500 hover:bg-red-50'
+                            ? 'text-coral-600 bg-red-50 hover:bg-red-100' 
+                            : 'text-secondary-600 hover:text-coral-500 hover:bg-red-50'
                         }`}
                       >
                         {post.userInteraction.liked ? (
@@ -685,12 +685,12 @@ export default function CommunityFeedSection() {
                         <span>Like</span>
                       </button>
                       
-                      <button className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-secondary-600 hover:bg-secondary-50 rounded-lg font-medium text-sm transition-all duration-300">
+                      <button className="flex items-center gap-2 px-4 py-2 text-secondary-600 hover:text-secondary-600 hover:bg-secondary-50 rounded-lg font-medium text-sm transition-all duration-300">
                         <ChatBubbleLeftRightIcon className="w-5 h-5" />
                         <span>Comment</span>
                       </button>
                       
-                      <button className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg font-medium text-sm transition-all duration-300">
+                      <button className="flex items-center gap-2 px-4 py-2 text-secondary-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg font-medium text-sm transition-all duration-300">
                         <ShareIcon className="w-5 h-5" />
                         <span>Share</span>
                       </button>
@@ -707,7 +707,7 @@ export default function CommunityFeedSection() {
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
                 {t('community_feed.cta.title')}
               </h3>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              <p className="text-lg text-secondary-700 mb-6 leading-relaxed">
                 {t('community_feed.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -723,7 +723,7 @@ export default function CommunityFeedSection() {
                 </a>
                 <a
                   href={ROUTES.events}
-                  className="text-lg font-bold px-8 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90"
+                  className="text-lg font-bold px-8 py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90"
                 >
                   {t('community_feed.cta.browse_button')}
                 </a>

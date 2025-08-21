@@ -57,7 +57,7 @@ export default function CreateTopic() {
 
   const getMembershipBadge = (tier: string) => {
     const badges = {
-      free: { icon: <Users className="w-3 h-3" />, color: 'bg-gray-100 text-gray-600', label: 'Free' },
+      free: { icon: <Users className="w-3 h-3" />, color: 'bg-secondary-100 text-secondary-600', label: 'Free' },
       core: { icon: <Star className="w-3 h-3" />, color: 'bg-[#FF6B6B] text-white', label: 'Core' },
       premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white', label: 'Premium' }
     }
@@ -163,7 +163,7 @@ export default function CreateTopic() {
         <div className="mb-6">
           <button
             onClick={() => router.push('/forums')}
-            className="flex items-center space-x-2 text-gray-600 hover:text-[#FF6B6B] transition-colors"
+            className="flex items-center space-x-2 text-secondary-600 hover:text-[#FF6B6B] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Forums</span>
@@ -173,7 +173,7 @@ export default function CreateTopic() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Create New Topic</h1>
-          <p className="text-gray-600">
+          <p className="text-secondary-600">
             Start a meaningful conversation with the LusoTown community
           </p>
         </div>
@@ -190,7 +190,7 @@ export default function CreateTopic() {
                 value={formData.categoryId}
                 onChange={(e) => setFormData(prev => ({ ...prev, categoryId: e.target.value }))}
                 className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent ${
-                  errors.categoryId ? 'border-red-300' : 'border-gray-300'
+                  errors.categoryId ? 'border-red-300' : 'border-secondary-300'
                 }`}
               >
                 <option value="">Select a category...</option>
@@ -206,7 +206,7 @@ export default function CreateTopic() {
                 ))}
               </select>
               {errors.categoryId && (
-                <p className="mt-1 text-sm text-red-600 flex items-center space-x-1">
+                <p className="mt-1 text-sm text-coral-600 flex items-center space-x-1">
                   <AlertCircle className="w-4 h-4" />
                   <span>{errors.categoryId}</span>
                 </p>
@@ -227,7 +227,7 @@ export default function CreateTopic() {
                         </div>
                       </div>
                     </div>
-                    <p className="text-gray-600 text-sm">{selectedCategory.description}</p>
+                    <p className="text-secondary-600 text-sm">{selectedCategory.description}</p>
                   </div>
                 ) : null
               })()}
@@ -244,13 +244,13 @@ export default function CreateTopic() {
                 onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
                 placeholder="Write a clear, descriptive title..."
                 className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent ${
-                  errors.title ? 'border-red-300' : 'border-gray-300'
+                  errors.title ? 'border-red-300' : 'border-secondary-300'
                 }`}
                 maxLength={200}
               />
               <div className="flex justify-between items-center mt-1">
                 {errors.title ? (
-                  <p className="text-sm text-red-600 flex items-center space-x-1">
+                  <p className="text-sm text-coral-600 flex items-center space-x-1">
                     <AlertCircle className="w-4 h-4" />
                     <span>{errors.title}</span>
                   </p>
@@ -276,13 +276,13 @@ export default function CreateTopic() {
                 placeholder="Provide more details about your topic. What would you like to discuss? What questions do you have?"
                 rows={6}
                 className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent resize-none ${
-                  errors.description ? 'border-red-300' : 'border-gray-300'
+                  errors.description ? 'border-red-300' : 'border-secondary-300'
                 }`}
                 maxLength={2000}
               />
               <div className="flex justify-between items-center mt-1">
                 {errors.description ? (
-                  <p className="text-sm text-red-600 flex items-center space-x-1">
+                  <p className="text-sm text-coral-600 flex items-center space-x-1">
                     <AlertCircle className="w-4 h-4" />
                     <span>{errors.description}</span>
                   </p>
@@ -316,7 +316,7 @@ export default function CreateTopic() {
                     }
                   }}
                   placeholder="Add a tag..."
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+                  className="flex-1 px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
                   maxLength={20}
                   disabled={formData.tags.length >= 5}
                 />
@@ -337,14 +337,14 @@ export default function CreateTopic() {
                   {formData.tags.map(tag => (
                     <span
                       key={tag}
-                      className="flex items-center space-x-1 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                      className="flex items-center space-x-1 px-3 py-1 bg-secondary-100 text-secondary-700 rounded-full text-sm"
                     >
                       <Tag className="w-3 h-3" />
                       <span>{tag}</span>
                       <button
                         type="button"
                         onClick={() => removeTag(tag)}
-                        className="hover:bg-gray-200 rounded-full p-0.5"
+                        className="hover:bg-secondary-200 rounded-full p-0.5"
                       >
                         <X className="w-3 h-3" />
                       </button>
@@ -380,7 +380,7 @@ export default function CreateTopic() {
               <button
                 type="button"
                 onClick={() => router.push('/forums')}
-                className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="px-6 py-3 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 Cancel
               </button>

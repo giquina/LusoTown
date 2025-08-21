@@ -253,14 +253,14 @@ export default function CreateGroupPage() {
         return (
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('group.create.name')} *
               </label>
               <input
                 type="text"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 placeholder="e.g., Portuguese Young Professionals London"
                 maxLength={100}
                 required
@@ -268,14 +268,14 @@ export default function CreateGroupPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('group.create.description')} *
               </label>
               <textarea
                 value={formData.description}
                 onChange={(e) => handleInputChange('description', e.target.value)}
                 rows={4}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 placeholder="Describe your group's purpose, activities, and what members can expect..."
                 maxLength={500}
                 required
@@ -286,13 +286,13 @@ export default function CreateGroupPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('group.create.category')} *
               </label>
               <select
                 value={formData.category}
                 onChange={(e) => handleInputChange('category', e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 required
               >
                 <option value="">Select a category</option>
@@ -311,13 +311,13 @@ export default function CreateGroupPage() {
         return (
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('group.create.borough')} *
               </label>
               <select
                 value={formData.london_borough}
                 onChange={(e) => handleInputChange('london_borough', e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 required
               >
                 <option value="">Select London borough</option>
@@ -328,26 +328,26 @@ export default function CreateGroupPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('group.create.location')}
               </label>
               <input
                 type="text"
                 value={formData.location}
                 onChange={(e) => handleInputChange('location', e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 placeholder="e.g., Central London, specific venue, or area"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('group.create.meeting-frequency')} *
               </label>
               <select
                 value={formData.meeting_frequency}
                 onChange={(e) => handleInputChange('meeting_frequency', e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 required
               >
                 <option value="weekly">{t('frequency.weekly')}</option>
@@ -360,13 +360,13 @@ export default function CreateGroupPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('group.create.language')}
               </label>
               <select
                 value={formData.language_preference}
                 onChange={(e) => handleInputChange('language_preference', e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               >
                 <option value="both">English & Portuguese</option>
                 <option value="english">English primarily</option>
@@ -377,13 +377,13 @@ export default function CreateGroupPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('group.create.portuguese-origin')}
               </label>
               <select
                 value={formData.portuguese_origin}
                 onChange={(e) => handleInputChange('portuguese_origin', e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               >
                 <option value="any">{t('origin.any')}</option>
                 <option value="portugal">{t('origin.portugal')}</option>
@@ -406,7 +406,7 @@ export default function CreateGroupPage() {
         return (
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-4">
+              <label className="block text-sm font-medium text-secondary-700 mb-4">
                 {t('group.create.age-restrictions')}
               </label>
               <div className="space-y-4">
@@ -417,7 +417,7 @@ export default function CreateGroupPage() {
                       type="number"
                       value={formData.age_restrictions.min_age || ''}
                       onChange={(e) => handleInputChange('age_restrictions.min_age', e.target.value ? parseInt(e.target.value) : null)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary-500"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded focus:ring-2 focus:ring-primary-500"
                       min="16"
                       max="99"
                       placeholder="18"
@@ -429,7 +429,7 @@ export default function CreateGroupPage() {
                       type="number"
                       value={formData.age_restrictions.max_age || ''}
                       onChange={(e) => handleInputChange('age_restrictions.max_age', e.target.value ? parseInt(e.target.value) : null)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary-500"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded focus:ring-2 focus:ring-primary-500"
                       min="16"
                       max="99"
                       placeholder="Optional"
@@ -442,9 +442,9 @@ export default function CreateGroupPage() {
                     id="families_welcome"
                     checked={formData.age_restrictions.families_welcome}
                     onChange={(e) => handleInputChange('age_restrictions.families_welcome', e.target.checked)}
-                    className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                    className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                   />
-                  <label htmlFor="families_welcome" className="ml-2 text-sm text-gray-700">
+                  <label htmlFor="families_welcome" className="ml-2 text-sm text-secondary-700">
                     {t('age.families')}
                   </label>
                 </div>
@@ -452,13 +452,13 @@ export default function CreateGroupPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('group.create.verification-level')}
               </label>
               <select
                 value={formData.verification_level}
                 onChange={(e) => handleInputChange('verification_level', e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               >
                 <option value="none">{t('verification.none')}</option>
                 <option value="basic">{t('verification.basic')}</option>
@@ -468,14 +468,14 @@ export default function CreateGroupPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('group.create.max-members')}
               </label>
               <input
                 type="number"
                 value={formData.max_members || ''}
                 onChange={(e) => handleInputChange('max_members', e.target.value ? parseInt(e.target.value) : null)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 min="2"
                 max="500"
                 placeholder="No limit"
@@ -488,15 +488,15 @@ export default function CreateGroupPage() {
                 id="is_private"
                 checked={formData.is_private}
                 onChange={(e) => handleInputChange('is_private', e.target.checked)}
-                className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
               />
-              <label htmlFor="is_private" className="ml-2 text-sm text-gray-700">
+              <label htmlFor="is_private" className="ml-2 text-sm text-secondary-700">
                 {t('group.create.private')} (requires approval to join)
               </label>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-4">
+              <label className="block text-sm font-medium text-secondary-700 mb-4">
                 {t('group.create.cultural-focus')}
               </label>
               <div className="space-y-2">
@@ -512,9 +512,9 @@ export default function CreateGroupPage() {
                       id={option.key}
                       checked={formData.cultural_focus[option.key as keyof typeof formData.cultural_focus]}
                       onChange={(e) => handleInputChange(`cultural_focus.${option.key}`, e.target.checked)}
-                      className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                      className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                     />
-                    <label htmlFor={option.key} className="ml-2 text-sm text-gray-700">
+                    <label htmlFor={option.key} className="ml-2 text-sm text-secondary-700">
                       {option.label}
                     </label>
                   </div>
@@ -528,14 +528,14 @@ export default function CreateGroupPage() {
         return (
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('group.create.rules')}
               </label>
               <textarea
                 value={formData.rules}
                 onChange={(e) => handleInputChange('rules', e.target.value)}
                 rows={4}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 placeholder="Set clear expectations for group members..."
                 maxLength={1000}
               />
@@ -545,7 +545,7 @@ export default function CreateGroupPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-4">
+              <label className="block text-sm font-medium text-secondary-700 mb-4">
                 {t('group.create.contact')}
               </label>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -553,35 +553,35 @@ export default function CreateGroupPage() {
                   type="email"
                   value={formData.contact_info.email}
                   onChange={(e) => handleInputChange('contact_info.email', e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   placeholder="Email"
                 />
                 <input
                   type="tel"
                   value={formData.contact_info.phone}
                   onChange={(e) => handleInputChange('contact_info.phone', e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   placeholder="Phone"
                 />
                 <input
                   type="text"
                   value={formData.contact_info.whatsapp}
                   onChange={(e) => handleInputChange('contact_info.whatsapp', e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   placeholder="WhatsApp"
                 />
                 <input
                   type="text"
                   value={formData.contact_info.telegram}
                   onChange={(e) => handleInputChange('contact_info.telegram', e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   placeholder="Telegram"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 Group Tags
               </label>
               <div className="flex flex-wrap gap-2 mb-2">
@@ -607,7 +607,7 @@ export default function CreateGroupPage() {
                   value={newTag}
                   onChange={(e) => setNewTag(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && addTag()}
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="flex-1 px-4 py-2 border border-secondary-300 rounded-l-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   placeholder="Add a tag..."
                 />
                 <button
@@ -653,7 +653,7 @@ export default function CreateGroupPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-lg text-gray-600"
+              className="text-lg text-secondary-600"
             >
               {t('group.create.subtitle')}
             </motion.p>
@@ -670,7 +670,7 @@ export default function CreateGroupPage() {
                         ? 'bg-primary-600 text-white'
                         : step === currentStep
                         ? 'bg-primary-600 text-white'
-                        : 'bg-gray-200 text-gray-500'
+                        : 'bg-secondary-200 text-gray-500'
                     }`}
                   >
                     {step < currentStep ? (
@@ -682,14 +682,14 @@ export default function CreateGroupPage() {
                   {step < 4 && (
                     <div
                       className={`w-16 h-1 ml-4 ${
-                        step < currentStep ? 'bg-primary-600' : 'bg-gray-200'
+                        step < currentStep ? 'bg-primary-600' : 'bg-secondary-200'
                       }`}
                     />
                   )}
                 </div>
               ))}
             </div>
-            <div className="flex justify-center mt-4 space-x-20 text-sm text-gray-600">
+            <div className="flex justify-center mt-4 space-x-20 text-sm text-secondary-600">
               <span>Basic Info</span>
               <span>Location</span>
               <span>Settings</span>
@@ -714,7 +714,7 @@ export default function CreateGroupPage() {
                   <button
                     type="button"
                     onClick={prevStep}
-                    className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50"
+                    className="px-6 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50"
                   >
                     Previous
                   </button>

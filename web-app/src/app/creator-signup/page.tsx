@@ -264,7 +264,7 @@ export default function CreatorSignupPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+              className="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto"
             >
               {isPt
                 ? 'Junte-se a mais de 200 criadores portugueses que já ganham uma média de £1,200/mês partilhando a sua paixão cultural com a comunidade portuguesa em Londres.'
@@ -280,25 +280,25 @@ export default function CreatorSignupPage() {
             >
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary-600">85%</div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {isPt ? 'Das Receitas' : 'Revenue Share'}
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-action-600">£1,200</div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {isPt ? 'Média Mensal' : 'Avg Monthly'}
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-secondary-600">24/7</div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {isPt ? 'Apoio' : 'Support'}
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-accent-600">5k+</div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {isPt ? 'Audiência' : 'Audience'}
                 </div>
               </div>
@@ -334,7 +334,7 @@ export default function CreatorSignupPage() {
       <section className="bg-white border-b border-gray-200 sticky top-16 lg:top-20 z-40">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
-            <nav className="flex space-x-1 p-2 bg-gray-100 rounded-xl">
+            <nav className="flex space-x-1 p-2 bg-secondary-100 rounded-xl">
               {[
                 { id: 'overview', label: isPt ? 'Visão Geral' : 'Overview', icon: Globe },
                 { id: 'calculator', label: isPt ? 'Calculadora' : 'Calculator', icon: DollarSign },
@@ -347,7 +347,7 @@ export default function CreatorSignupPage() {
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all ${
                     activeTab === tab.id
                       ? 'bg-primary-600 text-white shadow-sm'
-                      : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
+                      : 'text-secondary-600 hover:text-gray-900 hover:bg-white/50'
                   }`}
                 >
                   <tab.icon className="w-4 h-4" />
@@ -376,7 +376,7 @@ export default function CreatorSignupPage() {
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">
                       {isPt ? 'Criadores de Toda a Lusofonia' : 'Creators from Across the Lusosphere'}
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
                       {isPt
                         ? 'A nossa plataforma une criadores de Portugal, Brasil, África Lusófona e diáspora global, partilhando cultura portuguesa com Londres.'
                         : 'Our platform unites creators from Portugal, Brazil, Lusophone Africa, and global diaspora, sharing Portuguese culture with London.'}
@@ -396,7 +396,7 @@ export default function CreatorSignupPage() {
                           {region.flag}
                         </div>
                         <h3 className="font-semibold text-gray-900 mb-2">{region.name}</h3>
-                        <div className="space-y-2 text-sm text-gray-600">
+                        <div className="space-y-2 text-sm text-secondary-600">
                           <div className="flex justify-between">
                             <span>{isPt ? 'Criadores' : 'Creators'}:</span>
                             <span className="font-medium">{region.creators}</span>
@@ -417,7 +417,7 @@ export default function CreatorSignupPage() {
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">
                       {isPt ? 'Categorias de Conteúdo Populares' : 'Popular Content Categories'}
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
                       {isPt
                         ? 'Descubra que tipo de conteúdo português ressoa mais com a audiência em Londres.'
                         : 'Discover what type of Portuguese content resonates most with London audiences.'}
@@ -439,7 +439,7 @@ export default function CreatorSignupPage() {
                           </div>
                           <div className="flex-1">
                             <h3 className="font-semibold text-gray-900 mb-2">{category.name}</h3>
-                            <p className="text-sm text-gray-600 mb-4">{category.description}</p>
+                            <p className="text-sm text-secondary-600 mb-4">{category.description}</p>
                             <div className="flex justify-between items-center">
                               <div>
                                 <div className="text-lg font-bold text-primary-600">£{category.avgEarnings}</div>
@@ -463,7 +463,7 @@ export default function CreatorSignupPage() {
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">
                       {isPt ? 'Múltiplas Fontes de Rendimento' : 'Multiple Revenue Streams'}
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
                       {isPt
                         ? 'Maximize os seus ganhos com diversas formas de monetização, todas com a divisão mais generosa do mercado.'
                         : 'Maximize your earnings with various monetization methods, all with the most generous split in the market.'}
@@ -488,7 +488,7 @@ export default function CreatorSignupPage() {
                               <h3 className="font-semibold text-gray-900">{stream.name}</h3>
                               <span className="text-lg font-bold text-primary-600">{stream.split}</span>
                             </div>
-                            <p className="text-sm text-gray-600">{stream.description}</p>
+                            <p className="text-sm text-secondary-600">{stream.description}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -540,7 +540,7 @@ export default function CreatorSignupPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 {isPt ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-secondary-600">
                 {isPt ? 'Tudo o que precisa de saber sobre o programa de criadores' : 'Everything you need to know about the creator program'}
               </p>
             </div>
@@ -572,7 +572,7 @@ export default function CreatorSignupPage() {
                       exit={{ opacity: 0, height: 0 }}
                       className="px-6 pb-6"
                     >
-                      <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                      <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
                     </motion.div>
                   )}
                 </motion.div>
@@ -598,7 +598,7 @@ export default function CreatorSignupPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => setShowApplication(true)}
-                className="px-8 py-4 bg-white hover:bg-gray-100 text-primary-600 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 transition-all transform hover:scale-105 shadow-lg"
+                className="px-8 py-4 bg-white hover:bg-secondary-100 text-primary-600 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 transition-all transform hover:scale-105 shadow-lg"
               >
                 {isPt ? 'Candidatar-me Hoje' : 'Apply Today'}
                 <ArrowRight className="w-5 h-5" />

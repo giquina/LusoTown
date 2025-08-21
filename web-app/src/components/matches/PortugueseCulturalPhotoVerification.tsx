@@ -499,18 +499,18 @@ export default function PortugueseCulturalPhotoVerification({
 
   const getRarityColor = (rarity: string) => {
     switch (rarity) {
-      case 'common': return 'text-gray-600 bg-gray-100'
-      case 'rare': return 'text-blue-600 bg-blue-100'
+      case 'common': return 'text-secondary-600 bg-secondary-100'
+      case 'rare': return 'text-primary-600 bg-blue-100'
       case 'epic': return 'text-purple-600 bg-purple-100'
       case 'legendary': return 'text-yellow-600 bg-yellow-100'
-      default: return 'text-gray-600 bg-gray-100'
+      default: return 'text-secondary-600 bg-secondary-100'
     }
   }
 
   const getCategoryColor = (color: string) => {
     const colors = {
       emerald: 'bg-emerald-100 text-emerald-700 border-emerald-200',
-      blue: 'bg-blue-100 text-blue-700 border-blue-200',
+      blue: 'bg-blue-100 text-primary-700 border-blue-200',
       orange: 'bg-orange-100 text-orange-700 border-orange-200',
       purple: 'bg-purple-100 text-purple-700 border-purple-200',
       pink: 'bg-pink-100 text-pink-700 border-pink-200',
@@ -542,7 +542,7 @@ export default function PortugueseCulturalPhotoVerification({
               {language === 'pt' ? 'Verificação Cultural Portuguesa' : 'Portuguese Cultural Verification'}
             </h3>
             <div className="flex items-center gap-2">
-              <StarSolidIcon className="w-5 h-5 text-yellow-500" />
+              <StarSolidIcon className="w-5 h-5 text-accent-500" />
               <span className="font-bold text-lg text-primary-900">
                 {Math.round(verificationResults.overallScore)}%
               </span>
@@ -552,25 +552,25 @@ export default function PortugueseCulturalPhotoVerification({
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
             <div className="text-center">
               <div className="text-2xl font-bold text-emerald-600">{verificationResults.verifiedPhotos}</div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {language === 'pt' ? 'Fotos Verificadas' : 'Verified Photos'}
               </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">{verificationResults.totalBadges}</div>
-              <div className="text-sm text-gray-600">
+              <div className="text-2xl font-bold text-primary-600">{verificationResults.totalBadges}</div>
+              <div className="text-sm text-secondary-600">
                 {language === 'pt' ? 'Distintivos' : 'Badges'}
               </div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-purple-600">{Math.round(verificationResults.heritageAuthenticity)}%</div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {language === 'pt' ? 'Autenticidade' : 'Authenticity'}
               </div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-pink-600">{Math.round(verificationResults.communityInvolvement)}%</div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {language === 'pt' ? 'Envolvimento' : 'Involvement'}
               </div>
             </div>
@@ -701,7 +701,7 @@ export default function PortugueseCulturalPhotoVerification({
             className={`px-4 py-2 rounded-xl font-medium transition-all ${
               selectedCategory === 'all'
                 ? 'bg-primary-600 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
             }`}
           >
             {language === 'pt' ? 'Todas' : 'All'} ({photos.length})
@@ -720,7 +720,7 @@ export default function PortugueseCulturalPhotoVerification({
                 className={`px-4 py-2 rounded-xl font-medium transition-all flex items-center gap-2 ${
                   selectedCategory === category.id
                     ? getCategoryColor(category.color).replace('bg-', 'bg-').replace('text-', 'text-').replace('border-', 'border-2 border-')
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                 }`}
               >
                 <span>{category.icon}</span>
@@ -770,7 +770,7 @@ export default function PortugueseCulturalPhotoVerification({
                     {/* Verification Status Overlay */}
                     <div className="absolute top-3 left-3">
                       {photo.verificationStatus === 'pending' && (
-                        <div className="bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+                        <div className="bg-accent-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
                           <ClockIcon className="w-3 h-3" />
                           {language === 'pt' ? 'Verificando...' : 'Verifying...'}
                         </div>
@@ -782,7 +782,7 @@ export default function PortugueseCulturalPhotoVerification({
                         </div>
                       )}
                       {photo.verificationStatus === 'rejected' && (
-                        <div className="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+                        <div className="bg-coral-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
                           <ExclamationTriangleIcon className="w-3 h-3" />
                           {language === 'pt' ? 'Rejeitada' : 'Rejected'}
                         </div>
@@ -793,7 +793,7 @@ export default function PortugueseCulturalPhotoVerification({
                     {photo.verificationStatus === 'verified' && (
                       <div className="absolute top-3 right-3 bg-white bg-opacity-90 backdrop-blur-sm px-2 py-1 rounded-full">
                         <div className="flex items-center gap-1">
-                          <StarSolidIcon className="w-3 h-3 text-yellow-500" />
+                          <StarSolidIcon className="w-3 h-3 text-accent-500" />
                           <span className="text-xs font-bold text-gray-900">
                             {Math.round(photo.verificationScore)}
                           </span>
@@ -856,7 +856,7 @@ export default function PortugueseCulturalPhotoVerification({
                           </span>
                         ))}
                         {photo.categories.length > 2 && (
-                          <span className="px-2 py-1 rounded-lg text-xs font-medium bg-gray-100 text-gray-600">
+                          <span className="px-2 py-1 rounded-lg text-xs font-medium bg-secondary-100 text-secondary-600">
                             +{photo.categories.length - 2}
                           </span>
                         )}
@@ -865,7 +865,7 @@ export default function PortugueseCulturalPhotoVerification({
 
                     {/* Detected Elements Preview */}
                     {photo.detectedElements.length > 0 && (
-                      <div className="text-xs text-gray-600">
+                      <div className="text-xs text-secondary-600">
                         {photo.detectedElements.slice(0, 2).map((element, index) => (
                           <span key={element.id}>
                             {index > 0 && ', '}
@@ -940,7 +940,7 @@ export default function PortugueseCulturalPhotoVerification({
                     
                     {selectedPhoto.verificationStatus === 'verified' && (
                       <div className="flex items-center gap-1">
-                        <StarSolidIcon className="w-4 h-4 text-yellow-500" />
+                        <StarSolidIcon className="w-4 h-4 text-accent-500" />
                         <span className="font-bold text-primary-900">
                           {Math.round(selectedPhoto.verificationScore)}%
                         </span>
@@ -964,7 +964,7 @@ export default function PortugueseCulturalPhotoVerification({
                               {language === 'pt' ? category.namePortuguese : category.name}
                             </span>
                           </div>
-                          <span className="text-sm font-medium text-gray-600">
+                          <span className="text-sm font-medium text-secondary-600">
                             {Math.round(category.confidence)}%
                           </span>
                         </div>
@@ -986,11 +986,11 @@ export default function PortugueseCulturalPhotoVerification({
                             <span className="font-medium text-gray-900">
                               {language === 'pt' ? element.namePortuguese : element.name}
                             </span>
-                            <span className="text-sm font-medium text-gray-600">
+                            <span className="text-sm font-medium text-secondary-600">
                               {Math.round(element.confidence)}%
                             </span>
                           </div>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-secondary-600">
                             {language === 'pt' ? element.descriptionPortuguese : element.description}
                           </p>
                         </div>

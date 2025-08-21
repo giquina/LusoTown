@@ -228,17 +228,17 @@ const EventsShowcase = memo(() => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="animate-pulse">
-              <div className="h-8 bg-gray-200 rounded w-64 mx-auto mb-4"></div>
-              <div className="h-4 bg-gray-200 rounded w-96 mx-auto"></div>
+              <div className="h-8 bg-secondary-200 rounded w-64 mx-auto mb-4"></div>
+              <div className="h-4 bg-secondary-200 rounded w-96 mx-auto"></div>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {Array(6).fill(0).map((_, i) => (
               <div key={i} className="animate-pulse">
-                <div className="bg-gray-200 h-48 rounded-t-2xl"></div>
+                <div className="bg-secondary-200 h-48 rounded-t-2xl"></div>
                 <div className="bg-white p-6 rounded-b-2xl">
-                  <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
-                  <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                  <div className="h-4 bg-secondary-200 rounded w-3/4 mb-2"></div>
+                  <div className="h-4 bg-secondary-200 rounded w-1/2"></div>
                 </div>
               </div>
             ))}
@@ -288,7 +288,7 @@ const EventsShowcase = memo(() => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-xl text-secondary-600 max-w-3xl mx-auto"
           >
             {language === "pt"
               ? "Descubra eventos culturais autênticos lusófonos pelo Reino Unido. De festivais gastronómicos tradicionais a networking profissional, conecte-se com a sua herança e construa amizades duradouras."
@@ -315,9 +315,9 @@ const EventsShowcase = memo(() => {
                 className="bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-md border border-gray-200"
               >
                 <span className="text-base">{location.icon}</span>
-                <span className="font-medium text-gray-800">{location.area}</span>
-                <span className="text-gray-600">•</span>
-                <span className="text-gray-600">{location.description}</span>
+                <span className="font-medium text-secondary-800">{location.area}</span>
+                <span className="text-secondary-600">•</span>
+                <span className="text-secondary-600">{location.description}</span>
               </div>
             ))}
           </motion.div>
@@ -342,7 +342,7 @@ const EventsShowcase = memo(() => {
               <div className="text-2xl font-bold text-gray-900 mb-1">
                 {stat.number}
               </div>
-              <div className="text-sm text-gray-600 leading-tight">{stat.label}</div>
+              <div className="text-sm text-secondary-600 leading-tight">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -373,7 +373,7 @@ const EventsShowcase = memo(() => {
                     </div>
                   )}
                 </div>
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                <p className="text-secondary-600 mb-4 text-sm leading-relaxed">
                   {event.description}
                 </p>
 
@@ -410,7 +410,7 @@ const EventsShowcase = memo(() => {
                           {event.maxAttendees - event.attendees} spots left
                         </span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-secondary-200 rounded-full h-2">
                         <div
                           className="bg-gradient-to-r from-secondary-500 to-secondary-600 h-2 rounded-full transition-all duration-300"
                           style={{
@@ -436,7 +436,7 @@ const EventsShowcase = memo(() => {
                           {event.attendees}/{event.maxAttendees} attending
                         </span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-secondary-200 rounded-full h-2">
                         <div
                           className="bg-gradient-to-r from-gray-500 to-gray-600 h-2 rounded-full transition-all duration-300"
                           style={{ width: `100%` }}
@@ -501,7 +501,7 @@ const EventsShowcase = memo(() => {
             <h3 className="text-2xl font-bold text-gray-900 mb-2">
               {language === "pt" ? "Explore por Categoria Cultural" : "Explore by Cultural Category"}
             </h3>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {language === "pt" 
                 ? "Descubra eventos autênticos da cultura lusófona em Londres" 
                 : "Discover authentic Portuguese cultural events across London"}
@@ -603,12 +603,12 @@ const EventsShowcase = memo(() => {
           
           {/* Portuguese Cultural Quote */}
           <div className="mt-8 text-center p-4 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl border border-primary-100">
-            <p className="text-sm italic text-gray-700 mb-2">
+            <p className="text-sm italic text-secondary-700 mb-2">
               {language === "pt" 
                 ? "\"A cultura é a nossa segunda alma\" - Teixeira de Pascoaes"
                 : "\"Culture is our second soul\" - Teixeira de Pascoaes"}
             </p>
-            <div className="flex items-center justify-center gap-2 text-xs text-gray-600">
+            <div className="flex items-center justify-center gap-2 text-xs text-secondary-600">
               <span>🇵🇹</span>
               <span>{language === "pt" ? "Poeta português, 1877-1952" : "Portuguese poet, 1877-1952"}</span>
             </div>
@@ -626,7 +626,7 @@ const EventsShowcase = memo(() => {
             <h3 className="text-2xl font-bold text-gray-900 mb-2">
               {language === "pt" ? "Vozes da Nossa Comunidade" : "Voices from Our Community"}
             </h3>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {language === "pt" 
                 ? "Histórias reais de lusófonos que encontraram casa em Londres"
                 : "Real stories from Portuguese speakers who found home in London"}
@@ -670,14 +670,14 @@ const EventsShowcase = memo(() => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600 flex items-center gap-1">
+                    <div className="text-sm text-secondary-600 flex items-center gap-1">
                       <MapPinIcon className="w-3 h-3" />
                       {testimonial.location}
                     </div>
                     <div className="text-xs text-gray-500">{testimonial.region}</div>
                   </div>
                 </div>
-                <blockquote className="text-gray-700 italic mb-3 text-sm leading-relaxed">
+                <blockquote className="text-secondary-700 italic mb-3 text-sm leading-relaxed">
                   {testimonial.quote}
                 </blockquote>
                 <div className="text-xs text-primary-600 font-medium bg-primary-50 px-2 py-1 rounded-full inline-block">
@@ -695,25 +695,25 @@ const EventsShowcase = memo(() => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
                 <div className="font-medium text-gray-900">Saudade</div>
-                <div className="text-gray-600 text-xs">
+                <div className="text-secondary-600 text-xs">
                   {language === "pt" ? "Sentimento únicamente português" : "Uniquely Portuguese feeling"}
                 </div>
               </div>
               <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
                 <div className="font-medium text-gray-900">Desenrascanço</div>
-                <div className="text-gray-600 text-xs">
+                <div className="text-secondary-600 text-xs">
                   {language === "pt" ? "Arte de resolver problemas" : "Art of problem-solving"}
                 </div>
               </div>
               <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
                 <div className="font-medium text-gray-900">Cafezinho</div>
-                <div className="text-gray-600 text-xs">
+                <div className="text-secondary-600 text-xs">
                   {language === "pt" ? "Pausa brasileira essencial" : "Essential Brazilian break"}
                 </div>
               </div>
               <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
                 <div className="font-medium text-gray-900">Convívio</div>
-                <div className="text-gray-600 text-xs">
+                <div className="text-secondary-600 text-xs">
                   {language === "pt" ? "Partilhar momentos juntos" : "Sharing moments together"}
                 </div>
               </div>

@@ -1,9 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ROUTES } from '@/config'
 import Image from 'next/image'
+import { ROUTES } from '@/config'
 import { HeartIcon, SparklesIcon } from '@heroicons/react/24/outline'
+import { ROUTES } from '@/config'
 import { getImageWithFallback } from '@/lib/profileImages'
+import { ROUTES } from '@/config'
 
 interface SuccessStory {
   id: string
@@ -253,7 +257,7 @@ export default function SuccessStories() {
             From Saudade to{' '}
             <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">Alma Portuguesa Realizada</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
+          <p className="text-lg sm:text-xl text-secondary-600 leading-relaxed">
             Real Portuguese souls who transformed their London saudade into thriving community connections. From pastéis de nata meetups in Stockwell to fado nights in Camden - discover how nossa gente builds lasting bonds while preserving Portuguese heart in the city\'s rhythm.
           </p>
         </motion.div>
@@ -301,7 +305,7 @@ export default function SuccessStories() {
                         className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg"
                         loading="lazy"
                       />
-                      <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
+                      <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-action-500 rounded-full border-2 border-white flex items-center justify-center">
                         <HeartIcon className="h-3 w-3 text-white fill-current" />
                       </div>
                     </motion.div>
@@ -328,13 +332,13 @@ export default function SuccessStories() {
                   <h3 className="font-bold text-lg text-gray-900">
                     {story.name} & {story.friendName}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-secondary-600 text-sm">
                     {story.age} • {story.location} • Friends for {story.timeframe}
                   </p>
                 </div>
 
                 {/* Story */}
-                <blockquote className="text-gray-700 text-left italic mb-4 leading-relaxed text-sm">
+                <blockquote className="text-secondary-700 text-left italic mb-4 leading-relaxed text-sm">
                   "{story.story}"
                 </blockquote>
 
@@ -386,12 +390,12 @@ export default function SuccessStories() {
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
             Ready to Transform Your London Saudade Into Portuguese Success?
           </h3>
-          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-secondary-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             Join 750+ almas portuguesas from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond who found their London community through real connections. From Borough Market food adventures to Vauxhall fado nights - your Portuguese community awaits at authentic London venues where nossa cultura thrives.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="/signup" 
+              href={ROUTES.auth.signup} 
               className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
             >
               JOIN NOW

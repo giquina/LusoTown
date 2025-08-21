@@ -205,7 +205,7 @@ const OptimizedTransportServiceCard = memo<OptimizedTransportServiceCardProps>((
             {isPortuguese ? tier.namePortuguese : tier.name}
           </h3>
           
-          <p className="text-gray-600 mb-4 leading-relaxed">
+          <p className="text-secondary-600 mb-4 leading-relaxed">
             {isPortuguese ? tier.descriptionPortuguese : tier.description}
           </p>
 
@@ -243,7 +243,7 @@ const OptimizedTransportServiceCard = memo<OptimizedTransportServiceCardProps>((
               </div>
             ) : (
               <div className="flex items-baseline justify-center">
-                <span className="text-sm text-gray-600 mr-1">{isPortuguese ? 'a partir de' : 'from'}</span>
+                <span className="text-sm text-secondary-600 mr-1">{isPortuguese ? 'a partir de' : 'from'}</span>
                 <span className="text-4xl font-bold text-gray-900">£{tier.price}</span>
                 <span className="text-gray-500 ml-2">{isPortuguese ? '/hora' : '/hour'}</span>
               </div>
@@ -285,7 +285,7 @@ const OptimizedTransportServiceCard = memo<OptimizedTransportServiceCardProps>((
               className="flex items-start group-hover:text-gray-900 transition-colors"
             >
               <CheckCircleIcon className={`w-4 h-4 ${colorClasses.text} mt-0.5 mr-2 flex-shrink-0`} />
-              <span className="text-gray-700 text-xs sm:text-sm leading-relaxed">{feature}</span>
+              <span className="text-secondary-700 text-xs sm:text-sm leading-relaxed">{feature}</span>
             </motion.div>
           ))}
         </div>

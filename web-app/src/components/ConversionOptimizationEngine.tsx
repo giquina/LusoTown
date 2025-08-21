@@ -567,14 +567,14 @@ export default function ConversionOptimizationEngine({
                     <h3 className="font-bold text-gray-900 text-sm leading-tight">
                       {isPortuguese ? opportunity.titlePortuguese : opportunity.title}
                     </h3>
-                    <div className="text-xs text-gray-600 mt-1">
+                    <div className="text-xs text-secondary-600 mt-1">
                       {isPortuguese ? opportunity.valuePortuguese : opportunity.value}
                     </div>
                   </div>
                 </div>
                 <button
                   onClick={() => handleDismiss(opportunity.id)}
-                  className="text-gray-400 hover:text-gray-600 transition-colors p-1"
+                  className="text-gray-400 hover:text-secondary-600 transition-colors p-1"
                 >
                   <XMarkIcon className="w-4 h-4" />
                 </button>
@@ -593,7 +593,7 @@ export default function ConversionOptimizationEngine({
               )}
 
               {/* Description */}
-              <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+              <p className="text-sm text-secondary-600 mb-6 leading-relaxed">
                 {isPortuguese ? opportunity.descriptionPortuguese : opportunity.description}
               </p>
 
@@ -620,7 +620,7 @@ export default function ConversionOptimizationEngine({
                 {opportunity.secondary && (
                   <a
                     href={opportunity.secondary.href}
-                    className="block w-full text-center py-2 px-4 text-sm text-gray-600 hover:text-gray-800 transition-colors"
+                    className="block w-full text-center py-2 px-4 text-sm text-secondary-600 hover:text-secondary-800 transition-colors"
                   >
                     {isPortuguese ? opportunity.secondary.textPortuguese : opportunity.secondary.text}
                   </a>
@@ -643,11 +643,11 @@ export default function ConversionOptimizationEngine({
               <div className="mt-3 pt-3 border-t border-gray-100">
                 <div className="flex items-center justify-between text-xs text-gray-500">
                   <div className="flex items-center gap-1">
-                    <CheckCircleIcon className="w-3 h-3 text-green-500" />
+                    <CheckCircleIcon className="w-3 h-3 text-action-500" />
                     <span>{isPortuguese ? 'Verificado' : 'Verified'}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <StarIcon className="w-3 h-3 text-yellow-500" />
+                    <StarIcon className="w-3 h-3 text-accent-500" />
                     <span>4.8/5 {isPortuguese ? 'satisfação' : 'satisfaction'}</span>
                   </div>
                 </div>

@@ -441,7 +441,7 @@ export default function CaseStudies() {
                 Changed Everything
               </span>
             </h2>
-            <p className="text-xl sm:text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed font-medium">
+            <p className="text-xl sm:text-2xl text-secondary-700 max-w-5xl mx-auto leading-relaxed font-medium">
               From strangers at a museum to business partners at The Shard to cultural leaders at the British Library. 
               These are the real transformation stories that happen when Portuguese speakers connect in London.
             </p>
@@ -486,20 +486,20 @@ export default function CaseStudies() {
                         </h4>
                         <div className="grid sm:grid-cols-2 gap-4 text-sm">
                           <div>
-                            <div className="font-semibold text-gray-700">Event</div>
-                            <div className="text-gray-600">{study.event.type}</div>
+                            <div className="font-semibold text-secondary-700">Event</div>
+                            <div className="text-secondary-600">{study.event.type}</div>
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-700">Venue</div>
-                            <div className="text-gray-600">{study.event.venue}</div>
+                            <div className="font-semibold text-secondary-700">Venue</div>
+                            <div className="text-secondary-600">{study.event.venue}</div>
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-700">Location</div>
-                            <div className="text-gray-600">{study.event.location}</div>
+                            <div className="font-semibold text-secondary-700">Location</div>
+                            <div className="text-secondary-600">{study.event.location}</div>
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-700">Date</div>
-                            <div className="text-gray-600">{study.event.date}</div>
+                            <div className="font-semibold text-secondary-700">Date</div>
+                            <div className="text-secondary-600">{study.event.date}</div>
                           </div>
                         </div>
                       </div>
@@ -514,7 +514,7 @@ export default function CaseStudies() {
                           {Object.values(study.timeline).map((phase, phaseIndex) => (
                             <div key={phaseIndex} className="flex items-start gap-3">
                               <div className="w-2 h-2 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-full mt-2 flex-shrink-0" />
-                              <p className="text-gray-600 text-sm leading-relaxed">{phase}</p>
+                              <p className="text-secondary-600 text-sm leading-relaxed">{phase}</p>
                             </div>
                           ))}
                         </div>
@@ -528,18 +528,18 @@ export default function CaseStudies() {
                         </h4>
                         <div className="grid gap-4">
                           <div>
-                            <div className="font-semibold text-gray-700 text-sm mb-1">Before</div>
-                            <p className="text-gray-600 text-sm">{study.transformation.before}</p>
+                            <div className="font-semibold text-secondary-700 text-sm mb-1">Before</div>
+                            <p className="text-secondary-600 text-sm">{study.transformation.before}</p>
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-700 text-sm mb-1">After</div>
-                            <p className="text-gray-600 text-sm">{study.transformation.after}</p>
+                            <div className="font-semibold text-secondary-700 text-sm mb-1">After</div>
+                            <p className="text-secondary-600 text-sm">{study.transformation.after}</p>
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-700 text-sm mb-2">Key Achievements</div>
+                            <div className="font-semibold text-secondary-700 text-sm mb-2">Key Achievements</div>
                             <ul className="space-y-2">
                               {study.transformation.impact.map((impact, impactIndex) => (
-                                <li key={impactIndex} className="flex items-start gap-2 text-sm text-gray-600">
+                                <li key={impactIndex} className="flex items-start gap-2 text-sm text-secondary-600">
                                   <div className="w-1.5 h-1.5 bg-secondary-500 rounded-full mt-2 flex-shrink-0" />
                                   {impact}
                                 </li>
@@ -552,10 +552,10 @@ export default function CaseStudies() {
                       {/* Current Status */}
                       <div className="bg-gradient-to-r from-green-50 to-secondary-50 rounded-2xl p-6">
                         <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                          <HeartIcon className="w-5 h-5 text-green-600" />
+                          <HeartIcon className="w-5 h-5 text-action-600" />
                           Where They Are Now
                         </h4>
-                        <p className="text-gray-600 text-sm leading-relaxed">{study.currentStatus}</p>
+                        <p className="text-secondary-600 text-sm leading-relaxed">{study.currentStatus}</p>
                       </div>
                     </div>
                   </div>
@@ -582,8 +582,8 @@ export default function CaseStudies() {
                             />
                             <div className="flex-1">
                               <h5 className="font-bold text-gray-900">{study.participants.person1.name}</h5>
-                              <p className="text-gray-600 text-sm">{study.participants.person1.age} years old</p>
-                              <p className="text-gray-600 text-sm">{study.participants.person1.background}</p>
+                              <p className="text-secondary-600 text-sm">{study.participants.person1.age} years old</p>
+                              <p className="text-secondary-600 text-sm">{study.participants.person1.background}</p>
                               <div className="text-sm font-medium text-secondary-600 mt-1">
                                 {study.participants.person1.country}
                               </div>
@@ -601,8 +601,8 @@ export default function CaseStudies() {
                             />
                             <div className="flex-1">
                               <h5 className="font-bold text-gray-900">{study.participants.person2.name}</h5>
-                              <p className="text-gray-600 text-sm">{study.participants.person2.age} years old</p>
-                              <p className="text-gray-600 text-sm">{study.participants.person2.background}</p>
+                              <p className="text-secondary-600 text-sm">{study.participants.person2.age} years old</p>
+                              <p className="text-secondary-600 text-sm">{study.participants.person2.background}</p>
                               <div className="text-sm font-medium text-secondary-600 mt-1">
                                 {study.participants.person2.country}
                               </div>
@@ -615,7 +615,7 @@ export default function CaseStudies() {
                       <div className="space-y-4">
                         {/* Individual Quotes */}
                         <div className="bg-gradient-to-r from-secondary-50/80 to-accent-50/80 rounded-2xl p-6 border border-secondary-200/40">
-                          <blockquote className="text-gray-700 italic text-sm leading-relaxed mb-3">
+                          <blockquote className="text-secondary-700 italic text-sm leading-relaxed mb-3">
                             {study.quotes.person1}
                           </blockquote>
                           <cite className="text-secondary-600 font-semibold text-sm">
@@ -624,7 +624,7 @@ export default function CaseStudies() {
                         </div>
 
                         <div className="bg-gradient-to-r from-accent-50/80 to-coral-50/80 rounded-2xl p-6 border border-accent-200/40">
-                          <blockquote className="text-gray-700 italic text-sm leading-relaxed mb-3">
+                          <blockquote className="text-secondary-700 italic text-sm leading-relaxed mb-3">
                             {study.quotes.person2}
                           </blockquote>
                           <cite className="text-accent-600 font-semibold text-sm">
@@ -664,7 +664,7 @@ export default function CaseStudies() {
                   One Event
                 </span>
               </h3>
-              <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-secondary-700 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Whether you're looking for housing, business partners, or cultural connections, these transformations began 
                 with a single LusoTown event. Your life-changing friendship could be just one museum visit, networking event, 
                 or book club away.
@@ -682,7 +682,7 @@ export default function CaseStudies() {
                 </a>
                 <a
                   href={ROUTES.signup}
-                  className="text-lg font-bold px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90"
+                  className="text-lg font-bold px-10 py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90"
                 >
                   Join the Community
                 </a>

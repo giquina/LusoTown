@@ -1,8 +1,11 @@
 'use client'
 
 import React, { useState } from 'react'
+import { SOCIAL_URLS } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { SOCIAL_URLS } from '@/config'
 import TwitterFeedWidget from './TwitterFeedWidget'
+import { SOCIAL_URLS } from '@/config'
 import { 
   Users, 
   Calendar, 
@@ -195,7 +198,7 @@ export default function TwitterHashtagTabs({
               <h3 className="font-medium text-gray-900">
                 #{activeTabData.hashtag}
               </h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-secondary-600">
                 {t(`twitter_tabs.${activeTabData.id}_desc`)}
               </p>
             </div>
@@ -232,7 +235,7 @@ export default function TwitterHashtagTabs({
               href={`https://twitter.com/hashtag/${hashtag}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-2 py-1 bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-800 rounded-full text-xs transition-colors"
+              className="inline-flex items-center px-2 py-1 bg-secondary-100 hover:bg-secondary-200 text-secondary-600 hover:text-secondary-800 rounded-full text-xs transition-colors"
             >
               #{hashtag}
             </a>
@@ -245,13 +248,13 @@ export default function TwitterHashtagTabs({
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-              <Users className="w-4 h-4 text-blue-600" />
+              <Users className="w-4 h-4 text-primary-600" />
             </div>
             <div>
               <p className="text-sm font-medium text-gray-900">
                 {t('twitter_tabs.followers')}
               </p>
-              <p className="text-xs text-gray-600">2.3K+</p>
+              <p className="text-xs text-secondary-600">2.3K+</p>
             </div>
           </div>
         </div>
@@ -259,13 +262,13 @@ export default function TwitterHashtagTabs({
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-              <TrendingUp className="w-4 h-4 text-green-600" />
+              <TrendingUp className="w-4 h-4 text-action-600" />
             </div>
             <div>
               <p className="text-sm font-medium text-gray-900">
                 {t('twitter_tabs.engagement')}
               </p>
-              <p className="text-xs text-gray-600">+12% {t('twitter_tabs.this_week')}</p>
+              <p className="text-xs text-secondary-600">+12% {t('twitter_tabs.this_week')}</p>
             </div>
           </div>
         </div>
@@ -279,7 +282,7 @@ export default function TwitterHashtagTabs({
               <p className="text-sm font-medium text-gray-900">
                 {t('twitter_tabs.activity')}
               </p>
-              <p className="text-xs text-gray-600">
+              <p className="text-xs text-secondary-600">
                 {t('twitter_tabs.daily')}
               </p>
             </div>

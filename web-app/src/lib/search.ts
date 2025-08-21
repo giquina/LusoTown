@@ -112,7 +112,7 @@ const premiumServices = [
     category: 'Transportation',
     location: 'London & UK',
     url: '/services#executive-transport',
-    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/executive-transport-london_dlqxkx.jpg',
+    image: buildCloudinaryUrl('dqhbeqttp/image/upload/v1734535200/executive-transport-london_dlqxkx.jpg'),
     price: 35,
     rating: 4.8,
     tags: ['executive transport', 'professional driver', 'premium vehicles', 'airport transfer', 'business transport']
@@ -124,7 +124,7 @@ const premiumServices = [
     category: 'Security',
     location: 'London & UK',
     url: '/services#close-protection',
-    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/close-protection-london_dlqxkx.jpg',
+    image: buildCloudinaryUrl('dqhbeqttp/image/upload/v1734535200/close-protection-london_dlqxkx.jpg'),
     price: 800,
     rating: 5.0,
     tags: ['close protection', 'security', 'sia licensed', 'vip escort', 'personal protection']
@@ -136,7 +136,7 @@ const premiumServices = [
     category: 'Premium Transport',
     location: 'London & UK',
     url: '/transport',
-    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/premium-security-service_dlqxkx.jpg',
+    image: buildCloudinaryUrl('dqhbeqttp/image/upload/v1734535200/premium-security-service_dlqxkx.jpg'),
     price: 75,
     rating: 4.9,
     tags: ['transport', 'sia compliance', 'luxury fleet', 'security transport', 'bentley', 'mercedes']

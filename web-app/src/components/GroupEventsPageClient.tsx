@@ -12,7 +12,7 @@ export default function GroupEventsPageClient() {
       {/* Breadcrumb Navigation */}
       <div className="bg-gray-50 border-b border-gray-200 py-4">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center space-x-2 text-sm text-gray-600">
+          <nav className="flex items-center space-x-2 text-sm text-secondary-600">
             <a href={ROUTES.home} className="hover:text-primary-600 transition-colors">
               {t('nav.home')}
             </a>
@@ -43,7 +43,7 @@ export default function GroupEventsPageClient() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 How Group Events Work
               </h2>
-              <p className="text-lg text-gray-700">
+              <p className="text-lg text-secondary-700">
                 Our Portuguese group events are carefully organized to create meaningful connections and unforgettable experiences.
               </p>
             </div>
@@ -54,7 +54,7 @@ export default function GroupEventsPageClient() {
                   <span className="text-2xl text-white">📅</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Browse & Reserve</h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-secondary-600 text-sm">
                   Browse upcoming group events, check availability, and reserve your spot instantly with our easy booking system.
                 </p>
               </div>
@@ -64,7 +64,7 @@ export default function GroupEventsPageClient() {
                   <span className="text-2xl text-white">🤝</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Meet & Connect</h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-secondary-600 text-sm">
                   Join fellow Portuguese speakers at the event location. Our experienced organizers ensure everyone feels welcome.
                 </p>
               </div>
@@ -74,7 +74,7 @@ export default function GroupEventsPageClient() {
                   <span className="text-2xl text-white">✨</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Experience & Share</h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-secondary-600 text-sm">
                   Enjoy the experience together, share photos, and build lasting friendships within the Portuguese community.
                 </p>
               </div>
@@ -85,7 +85,7 @@ export default function GroupEventsPageClient() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   Want to Organize Your Own Group Event?
                 </h3>
-                <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+                <p className="text-secondary-700 mb-6 max-w-2xl mx-auto">
                   Have an idea for a Portuguese group experience? We support community members who want to organize events for specific interests, age groups, or activities.
                 </p>
                 <a

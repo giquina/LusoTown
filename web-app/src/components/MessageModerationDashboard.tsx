@@ -186,7 +186,6 @@ export default function MessageModerationDashboard() {
   const handleModerationAction = async (item: ModerationItem, action: string, notes: string) => {
     try {
       // Mock API call to moderate message
-      console.log('Moderating message:', {
         messageId: item.messageId,
         action,
         notes,
@@ -355,11 +354,11 @@ export default function MessageModerationDashboard() {
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case 'urgent': return 'text-red-600 bg-red-50 border-red-200'
+      case 'urgent': return 'text-coral-600 bg-red-50 border-red-200'
       case 'high': return 'text-orange-600 bg-orange-50 border-orange-200'
       case 'medium': return 'text-yellow-600 bg-yellow-50 border-yellow-200'
-      case 'low': return 'text-blue-600 bg-blue-50 border-blue-200'
-      default: return 'text-gray-600 bg-gray-50 border-gray-200'
+      case 'low': return 'text-primary-600 bg-blue-50 border-blue-200'
+      default: return 'text-secondary-600 bg-gray-50 border-gray-200'
     }
   }
 
@@ -407,9 +406,9 @@ export default function MessageModerationDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-neutral-600">{t.stats.totalResolved}</p>
-                <p className="text-2xl font-bold text-green-600">{stats.totalResolved}</p>
+                <p className="text-2xl font-bold text-action-600">{stats.totalResolved}</p>
               </div>
-              <CheckCircle className="h-8 w-8 text-green-600" />
+              <CheckCircle className="h-8 w-8 text-action-600" />
             </div>
           </div>
           
@@ -417,12 +416,12 @@ export default function MessageModerationDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-neutral-600">{t.stats.averageResponseTime}</p>
-                <p className="text-2xl font-bold text-blue-600">
+                <p className="text-2xl font-bold text-primary-600">
                   {stats.averageResponseTime}
                   <span className="text-sm text-neutral-500 ml-1">{t.stats.hours}</span>
                 </p>
               </div>
-              <TrendingDown className="h-8 w-8 text-blue-600" />
+              <TrendingDown className="h-8 w-8 text-primary-600" />
             </div>
           </div>
           
@@ -430,9 +429,9 @@ export default function MessageModerationDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-neutral-600">{t.stats.approvalRate}</p>
-                <p className="text-2xl font-bold text-green-600">{stats.approvalRate}%</p>
+                <p className="text-2xl font-bold text-action-600">{stats.approvalRate}%</p>
               </div>
-              <TrendingUp className="h-8 w-8 text-green-600" />
+              <TrendingUp className="h-8 w-8 text-action-600" />
             </div>
           </div>
         </div>
@@ -470,7 +469,7 @@ export default function MessageModerationDashboard() {
       <div className="bg-white rounded-lg shadow-sm border border-neutral-100">
         {filteredQueue.length === 0 ? (
           <div className="p-8 text-center">
-            <Shield className="h-12 w-12 text-green-600 mx-auto mb-3" />
+            <Shield className="h-12 w-12 text-action-600 mx-auto mb-3" />
             <h3 className="font-medium text-neutral-900 mb-2">{t.queue.noItems}</h3>
             <p className="text-sm text-neutral-600">{t.queue.allClear}</p>
           </div>
@@ -523,9 +522,9 @@ export default function MessageModerationDashboard() {
                       <div className="flex items-center gap-2">
                         <span className="text-sm text-neutral-500">{t.queue.aiScore}:</span>
                         <span className={`text-sm font-medium ${
-                          item.aiAnalysis.score >= 80 ? 'text-green-600' :
+                          item.aiAnalysis.score >= 80 ? 'text-action-600' :
                           item.aiAnalysis.score >= 50 ? 'text-yellow-600' :
-                          'text-red-600'
+                          'text-coral-600'
                         }`}>
                           {item.aiAnalysis.score}%
                         </span>
@@ -605,9 +604,9 @@ export default function MessageModerationDashboard() {
                     <div>
                       <p className="text-sm text-neutral-500 mb-2">{t.queue.aiScore}</p>
                       <div className={`text-2xl font-bold ${
-                        selectedItem.aiAnalysis.score >= 80 ? 'text-green-600' :
+                        selectedItem.aiAnalysis.score >= 80 ? 'text-action-600' :
                         selectedItem.aiAnalysis.score >= 50 ? 'text-yellow-600' :
-                        'text-red-600'
+                        'text-coral-600'
                       }`}>
                         {selectedItem.aiAnalysis.score}%
                       </div>

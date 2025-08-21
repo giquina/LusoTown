@@ -34,7 +34,7 @@ export default function QuickActions({ onTabChange }: QuickActionsProps) {
         </h2>
       </div>
       <div className="text-center py-8">
-        <p className="text-gray-600">Quick actions will be displayed here</p>
+        <p className="text-secondary-600">Quick actions will be displayed here</p>
       </div>
     </div>
   )

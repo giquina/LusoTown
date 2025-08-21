@@ -192,7 +192,7 @@ export default function SaudadeMatchCard({
         {/* Compatibility Score */}
         <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-2">
           <div className="flex items-center gap-1">
-            <HeartSolid className="w-4 h-4 text-red-500" />
+            <HeartSolid className="w-4 h-4 text-coral-500" />
             <span className="text-sm font-bold text-gray-900">
               {match.compatibilityResult.compatibilityScore}%
             </span>
@@ -232,12 +232,12 @@ export default function SaudadeMatchCard({
         <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-4">
           <div className="flex items-center justify-between mb-3">
             <h4 className="font-semibold text-gray-900 flex items-center gap-2">
-              <HeartSolid className="w-5 h-5 text-red-500" />
+              <HeartSolid className="w-5 h-5 text-coral-500" />
               {language === 'pt' ? 'Perfil de Saudade' : 'Saudade Profile'}
             </h4>
             <button
               onClick={() => setShowSaudadeDetails(!showSaudadeDetails)}
-              className="text-sm text-red-600 hover:text-red-700 font-medium"
+              className="text-sm text-coral-600 hover:text-red-700 font-medium"
             >
               {showSaudadeDetails ? 
                 (language === 'pt' ? 'Menos' : 'Less') : 
@@ -249,17 +249,17 @@ export default function SaudadeMatchCard({
           <div className="grid grid-cols-2 gap-3 text-sm">
             <div className="text-center">
               <div className="text-2xl mb-1">{getSaudadeIntensityEmoji(match.saudadeProfile.saudadeIntensity)}</div>
-              <div className="font-medium text-gray-700">
+              <div className="font-medium text-secondary-700">
                 {language === 'pt' ? 'Intensidade' : 'Intensity'}
               </div>
-              <div className="text-red-600 font-bold">{match.saudadeProfile.saudadeIntensity}/10</div>
+              <div className="text-coral-600 font-bold">{match.saudadeProfile.saudadeIntensity}/10</div>
             </div>
             <div className="text-center">
               <div className="text-2xl mb-1">📅</div>
-              <div className="font-medium text-gray-700">
+              <div className="font-medium text-secondary-700">
                 {language === 'pt' ? 'Frequência' : 'Frequency'}
               </div>
-              <div className="text-red-600 font-bold text-xs">
+              <div className="text-coral-600 font-bold text-xs">
                 {getFrequencyLabel(match.saudadeProfile.frequency)}
               </div>
             </div>
@@ -276,7 +276,7 @@ export default function SaudadeMatchCard({
                 {/* Shared Triggers */}
                 {sharedTriggers.length > 0 && (
                   <div>
-                    <div className="text-xs font-medium text-gray-600 mb-2">
+                    <div className="text-xs font-medium text-secondary-600 mb-2">
                       {language === 'pt' ? 'Gatilhos Partilhados:' : 'Shared Triggers:'}
                     </div>
                     <div className="flex flex-wrap gap-1">
@@ -296,14 +296,14 @@ export default function SaudadeMatchCard({
                 {/* Shared Coping */}
                 {sharedCoping.length > 0 && (
                   <div>
-                    <div className="text-xs font-medium text-gray-600 mb-2">
+                    <div className="text-xs font-medium text-secondary-600 mb-2">
                       {language === 'pt' ? 'Estratégias Partilhadas:' : 'Shared Coping:'}
                     </div>
                     <div className="flex flex-wrap gap-1">
                       {sharedCoping.slice(0, 3).map((coping, idx) => (
                         <span
                           key={idx}
-                          className="inline-flex items-center gap-1 bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded"
+                          className="inline-flex items-center gap-1 bg-blue-100 text-primary-700 text-xs px-2 py-1 rounded"
                         >
                           <span>{getCopingEmoji(coping)}</span>
                           <span>{coping.replace('_', ' ')}</span>
@@ -320,15 +320,15 @@ export default function SaudadeMatchCard({
         {/* Cultural Compatibility Breakdown */}
         <div className="grid grid-cols-4 gap-2 text-center">
           <div className="bg-blue-50 rounded-lg p-2">
-            <div className="text-lg font-bold text-blue-600">
+            <div className="text-lg font-bold text-primary-600">
               {match.compatibilityResult.saudadeAlignment}%
             </div>
-            <div className="text-xs text-blue-700">
+            <div className="text-xs text-primary-700">
               {language === 'pt' ? 'Saudade' : 'Saudade'}
             </div>
           </div>
           <div className="bg-green-50 rounded-lg p-2">
-            <div className="text-lg font-bold text-green-600">
+            <div className="text-lg font-bold text-action-600">
               {match.compatibilityResult.emotionalSupport}%
             </div>
             <div className="text-xs text-green-700">
@@ -374,11 +374,11 @@ export default function SaudadeMatchCard({
 
         {/* Quick Compatibility Insights */}
         <div className="space-y-2">
-          <h4 className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+          <h4 className="text-sm font-semibold text-secondary-700 flex items-center gap-2">
             <SparklesIcon className="w-4 h-4" />
             {language === 'pt' ? 'Conexão Especial' : 'Special Connection'}
           </h4>
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-secondary-600">
             {match.compatibilityResult.supportStrengths[0] || 
               (language === 'pt' ? 'Compreensão cultural profunda' : 'Deep cultural understanding')}
           </div>
@@ -386,7 +386,7 @@ export default function SaudadeMatchCard({
 
         {/* Bio */}
         {match.bio && (
-          <div className="text-sm text-gray-600 italic border-l-3 border-primary-300 pl-3">
+          <div className="text-sm text-secondary-600 italic border-l-3 border-primary-300 pl-3">
             "{match.bio}"
           </div>
         )}
@@ -398,15 +398,15 @@ export default function SaudadeMatchCard({
           {/* Pass */}
           <button
             onClick={onPass}
-            className="flex items-center justify-center p-3 bg-gray-100 hover:bg-gray-200 rounded-xl transition-colors"
+            className="flex items-center justify-center p-3 bg-secondary-100 hover:bg-secondary-200 rounded-xl transition-colors"
           >
-            <XMarkIcon className="w-6 h-6 text-gray-600" />
+            <XMarkIcon className="w-6 h-6 text-secondary-600" />
           </button>
 
           {/* Message */}
           <button
             onClick={onStartConversation}
-            className="flex items-center justify-center p-3 bg-blue-500 hover:bg-blue-600 text-white rounded-xl transition-colors"
+            className="flex items-center justify-center p-3 bg-primary-500 hover:bg-primary-600 text-white rounded-xl transition-colors"
           >
             <ChatBubbleLeftRightIcon className="w-6 h-6" />
           </button>

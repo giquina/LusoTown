@@ -373,7 +373,7 @@ export default function EventFeedCard({
                 <div className="flex justify-end gap-2 mt-4">
                   <button
                     onClick={() => setShowPhotoUpload(false)}
-                    className="px-4 py-2 text-neutral-600 hover:text-gray-800 text-sm"
+                    className="px-4 py-2 text-neutral-600 hover:text-secondary-800 text-sm"
                   >
                     {isPortuguese ? 'Cancelar' : 'Cancel'}
                   </button>

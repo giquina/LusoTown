@@ -233,7 +233,7 @@ export default function HostPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-base sm:text-lg text-gray-600 mb-8"
+                className="text-base sm:text-lg text-secondary-600 mb-8"
               >
                 {isPortuguese
                   ? `Sem barreiras para criar eventos. Comece grátis com 1 evento mensal, depois escolha entre Creator Pro (${formatPrice(
@@ -265,7 +265,7 @@ export default function HostPage() {
                 </a>
                 <a
                   href="#benefits"
-                  className="text-sm sm:text-base font-bold px-6 sm:px-8 py-4 bg-white text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-premium-300 hover:-translate-y-1"
+                  className="text-sm sm:text-base font-bold px-6 sm:px-8 py-4 bg-white text-secondary-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-premium-300 hover:-translate-y-1"
                 >
                   {isPortuguese ? "Saber Mais" : "Learn More"}
                 </a>
@@ -283,7 +283,7 @@ export default function HostPage() {
                   ? "Escolha a Sua Categoria"
                   : "Choose Your Category"}
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
                 {isPortuguese
                   ? "Que tipo de experiência quer partilhar com a comunidade portuguesa?"
                   : "What type of experience do you want to share with the Portuguese community?"}
@@ -304,7 +304,7 @@ export default function HostPage() {
                     className={`relative cursor-pointer p-3 sm:p-4 lg:p-8 rounded-2xl lg:rounded-3xl border-2 transition-all duration-300 min-h-[240px] sm:min-h-[280px] lg:min-h-[320px] ${
                       isSelected
                         ? `border-${category.color}-500 bg-${category.color}-50 shadow-xl scale-105`
-                        : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-lg"
+                        : "border-gray-200 bg-white hover:border-secondary-300 hover:shadow-lg"
                     }`}
                     onClick={() => setSelectedCategory(category.id as any)}
                   >
@@ -312,12 +312,12 @@ export default function HostPage() {
                       className={`w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-6 ${
                         isSelected
                           ? `bg-gradient-to-r from-${category.color}-500 to-${category.color}-600`
-                          : "bg-gray-100"
+                          : "bg-secondary-100"
                       }`}
                     >
                       <IconComponent
                         className={`w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 ${
-                          isSelected ? "text-white" : "text-gray-600"
+                          isSelected ? "text-white" : "text-secondary-600"
                         }`}
                       />
                     </div>
@@ -326,7 +326,7 @@ export default function HostPage() {
                       {category.title}
                     </h3>
 
-                    <p className="text-gray-600 mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base leading-relaxed">
+                    <p className="text-secondary-600 mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base leading-relaxed">
                       {category.description}
                     </p>
 
@@ -337,7 +337,7 @@ export default function HostPage() {
                           className={`text-xs px-2 sm:px-3 py-1 rounded-full ${
                             isSelected
                               ? `bg-${category.color}-100 text-${category.color}-800`
-                              : "bg-gray-100 text-gray-600"
+                              : "bg-secondary-100 text-secondary-600"
                           }`}
                         >
                           {example}
@@ -368,7 +368,7 @@ export default function HostPage() {
                   ? "Preços Transparentes para Criadores"
                   : "Transparent Creator Pricing"}
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
                 {isPortuguese
                   ? "Escolha o modelo que funciona para si - sem custos escondidos"
                   : "Choose the model that works for you - no hidden costs"}
@@ -385,7 +385,7 @@ export default function HostPage() {
                   <div className="text-4xl font-bold text-gray-900 mb-2">
                     {isPortuguese ? "Gratuito" : "Free"}
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPortuguese
                       ? "1 evento grátis para começar"
                       : "1 free event to get started"}
@@ -393,27 +393,27 @@ export default function HostPage() {
                 </div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-3">
-                    <CheckIcon className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">
+                    <CheckIcon className="w-5 h-5 text-action-500" />
+                    <span className="text-secondary-700">
                       {isPortuguese ? "1 evento por mês" : "1 event per month"}
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckIcon className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">
+                    <CheckIcon className="w-5 h-5 text-action-500" />
+                    <span className="text-secondary-700">
                       {isPortuguese ? "Ferramentas básicas" : "Basic tools"}
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckIcon className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">
+                    <CheckIcon className="w-5 h-5 text-action-500" />
+                    <span className="text-secondary-700">
                       {isPortuguese
                         ? "Suporte da comunidade"
                         : "Community support"}
                     </span>
                   </li>
                 </ul>
-                <button className="w-full bg-gray-100 text-gray-700 font-semibold py-3 rounded-xl hover:bg-gray-200 transition-colors">
+                <button className="w-full bg-secondary-100 text-secondary-700 font-semibold py-3 rounded-xl hover:bg-secondary-200 transition-colors">
                   {isPortuguese ? "Começar Grátis" : "Start Free"}
                 </button>
               </div>
@@ -432,34 +432,34 @@ export default function HostPage() {
                   <div className="text-4xl font-bold text-gray-900 mb-2">
                     {formatPrice(creator.proMonthly)}
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPortuguese ? "por mês" : "per month"}
                   </p>
                 </div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-3">
-                    <CheckIcon className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">
+                    <CheckIcon className="w-5 h-5 text-action-500" />
+                    <span className="text-secondary-700">
                       {isPortuguese ? "Eventos ilimitados" : "Unlimited events"}
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckIcon className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">
+                    <CheckIcon className="w-5 h-5 text-action-500" />
+                    <span className="text-secondary-700">
                       {isPortuguese
                         ? "Ferramentas avançadas"
                         : "Advanced tools"}
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckIcon className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">
+                    <CheckIcon className="w-5 h-5 text-action-500" />
+                    <span className="text-secondary-700">
                       {isPortuguese ? "Promoção premium" : "Premium promotion"}
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckIcon className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">
+                    <CheckIcon className="w-5 h-5 text-action-500" />
+                    <span className="text-secondary-700">
                       {isPortuguese
                         ? "Analytics detalhados"
                         : "Detailed analytics"}
@@ -481,28 +481,28 @@ export default function HostPage() {
                     {creator.ticketFeePercent}% +{" "}
                     {formatPrice(creator.ticketFeeFlat)}
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPortuguese ? "por bilhete vendido" : "per ticket sold"}
                   </p>
                 </div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-3">
-                    <CheckIcon className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">
+                    <CheckIcon className="w-5 h-5 text-action-500" />
+                    <span className="text-secondary-700">
                       {isPortuguese ? "Sem custos mensais" : "No monthly fees"}
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckIcon className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">
+                    <CheckIcon className="w-5 h-5 text-action-500" />
+                    <span className="text-secondary-700">
                       {isPortuguese
                         ? "Pague só quando vender"
                         : "Only pay when you sell"}
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckIcon className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">
+                    <CheckIcon className="w-5 h-5 text-action-500" />
+                    <span className="text-secondary-700">
                       {isPortuguese ? "Eventos ilimitados" : "Unlimited events"}
                     </span>
                   </li>
@@ -524,7 +524,7 @@ export default function HostPage() {
                   ? "Porquê Escolher a LusoTown?"
                   : "Why Choose LusoTown?"}
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
                 {isPortuguese
                   ? "Comece grátis e cresça com flexibilidade"
                   : "Start free and grow with flexibility"}
@@ -548,7 +548,7 @@ export default function HostPage() {
                     <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-2 leading-tight">
                       {benefit.title}
                     </h3>
-                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                    <p className="text-secondary-600 text-xs sm:text-sm leading-relaxed">
                       {benefit.description}
                     </p>
                   </motion.div>
@@ -565,7 +565,7 @@ export default function HostPage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? "Histórias de Sucesso" : "Success Stories"}
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-secondary-600">
                 {isPortuguese
                   ? "Profissionais portugueses reais construindo negócios prósperos"
                   : "Real Portuguese professionals building thriving businesses"}
@@ -587,19 +587,19 @@ export default function HostPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-gray-900">{story.name}</h3>
-                      <p className="text-gray-600 text-sm">{story.role}</p>
+                      <p className="text-secondary-600 text-sm">{story.role}</p>
                     </div>
                     <div className="ml-auto text-right">
                       <div className="text-sm text-gray-500">
                         {isPortuguese ? "Receita Mensal" : "Monthly Revenue"}
                       </div>
-                      <div className="font-bold text-green-600">
+                      <div className="font-bold text-action-600">
                         {story.revenue}
                       </div>
                     </div>
                   </div>
 
-                  <blockquote className="text-gray-700 italic leading-relaxed">
+                  <blockquote className="text-secondary-700 italic leading-relaxed">
                     "{story.quote}"
                   </blockquote>
                 </motion.div>
@@ -615,7 +615,7 @@ export default function HostPage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? "Como Funciona" : "How It Works"}
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-secondary-600">
                 {isPortuguese
                   ? "Processo simples para começar a organizar"
                   : "Simple process to start hosting"}
@@ -637,7 +637,7 @@ export default function HostPage() {
                   <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-2 leading-tight">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                  <p className="text-secondary-600 text-xs sm:text-sm leading-relaxed">
                     {step.description}
                   </p>
 
@@ -662,7 +662,7 @@ export default function HostPage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? "Candidate-se Agora" : "Apply Now"}
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-secondary-600">
                 {isPortuguese
                   ? "Preencha o formulário e comece a partilhar a sua experiência"
                   : "Fill out the form and start sharing your expertise"}
@@ -678,7 +678,7 @@ export default function HostPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? "Nome Completo" : "Full Name"} *
                     </label>
                     <input
@@ -687,13 +687,13 @@ export default function HostPage() {
                       required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
                       placeholder={isPortuguese ? "O seu nome" : "Your name"}
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       Email *
                     </label>
                     <input
@@ -702,13 +702,13 @@ export default function HostPage() {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
                       placeholder="seu@email.com"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? "Telefone" : "Phone"} *
                     </label>
                     <input
@@ -717,13 +717,13 @@ export default function HostPage() {
                       required
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
                       placeholder="+44 7xxx xxx xxx"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? "Categoria" : "Category"} *
                     </label>
                     <select
@@ -731,7 +731,7 @@ export default function HostPage() {
                       required
                       value={formData.category}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
                     >
                       <option value="professional">
                         {isPortuguese
@@ -751,7 +751,7 @@ export default function HostPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {isPortuguese
                       ? "Experiência/Especialidade"
                       : "Experience/Expertise"}{" "}
@@ -763,7 +763,7 @@ export default function HostPage() {
                     required
                     value={formData.experience}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
                     placeholder={
                       isPortuguese
                         ? "Ex: Consultor de Tecnologia, Chef, Instrutor de Fado"
@@ -773,7 +773,7 @@ export default function HostPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {isPortuguese
                       ? "Descrição da Sua Oferta"
                       : "Description of Your Offering"}{" "}
@@ -785,7 +785,7 @@ export default function HostPage() {
                     rows={4}
                     value={formData.description}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
                     placeholder={
                       isPortuguese
                         ? "Descreva o que quer oferecer à comunidade portuguesa..."
@@ -796,7 +796,7 @@ export default function HostPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? "Localização" : "Location"} *
                     </label>
                     <input
@@ -805,7 +805,7 @@ export default function HostPage() {
                       required
                       value={formData.location}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
                       placeholder={
                         isPortuguese
                           ? "Ex: Londres, Manchester"
@@ -815,7 +815,7 @@ export default function HostPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? "Disponibilidade" : "Availability"}
                     </label>
                     <input
@@ -823,7 +823,7 @@ export default function HostPage() {
                       name="availability"
                       value={formData.availability}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
                       placeholder={
                         isPortuguese
                           ? "Ex: Fins de semana, Noites"

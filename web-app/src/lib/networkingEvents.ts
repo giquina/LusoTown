@@ -4,6 +4,7 @@
 // Specialized events for Portuguese entrepreneurs and professionals
 
 import { Event } from "@/lib/events";
+import { buildUnsplashUrl, SOCIAL_URLS } from '@/config'
 
 export interface NetworkingEvent extends Event {
   // Networking-specific fields
@@ -175,7 +176,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostId: "host-networking-001",
     hostName: "Portuguese Chamber of Commerce UK",
     hostImage:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      buildUnsplashUrl("photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"),
     hostBio:
       "Supporting Portuguese businesses in the UK since 1995. Connecting entrepreneurs, facilitating trade, and fostering growth.",
 
@@ -192,8 +193,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
 
     // Media
     images: [
-      "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      buildUnsplashUrl("photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"),
+      buildUnsplashUrl("photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"),
     ],
     photos: [],
     attendees: [],
@@ -267,7 +268,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         sponsorshipLevel: "gold",
         benefits: ["Logo display", "Speaking opportunity", "Networking table"],
         logoUrl:
-          "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
+          buildUnsplashUrl("photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"),
       },
     ],
 
@@ -335,7 +336,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostId: "host-networking-002",
     hostName: "Centro Cultural Português",
     hostImage:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      buildUnsplashUrl("photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"),
     hostBio:
       "Leading Portuguese cultural institution promoting business, cultural, and educational exchanges.",
 
@@ -350,8 +351,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     featured: true,
 
     images: [
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      buildUnsplashUrl("photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"),
+      buildUnsplashUrl("photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"),
     ],
     photos: [],
     attendees: [],
@@ -439,7 +440,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         expertise: ["innovation", "digital_transformation", "public_policy"],
         country: "Portugal",
         imageUrl:
-          "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+          buildUnsplashUrl("photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"),
         presentationTopic: "Digital Innovation: Portugal-UK Partnerships",
         presentationLanguage: "bilingual",
       },
@@ -454,7 +455,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         expertise: ["fintech", "financial_services", "regulatory"],
         country: "Brazil",
         imageUrl:
-          "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+          buildUnsplashUrl("photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"),
         presentationTopic: "Fintech Bridges: Brazil-UK Financial Innovation",
         presentationLanguage: "bilingual",
       },
@@ -502,7 +503,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostId: "host-networking-003",
     hostName: "Portuguese Women Leaders UK",
     hostImage:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      buildUnsplashUrl("photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"),
     hostBio:
       "Empowering Portuguese women to excel in business leadership across the UK.",
 
@@ -517,8 +518,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     featured: false,
 
     images: [
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      buildUnsplashUrl("photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"),
+      buildUnsplashUrl("photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"),
     ],
     photos: [],
     attendees: [],
@@ -584,7 +585,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         expertise: ["venture_capital", "startups", "technology"],
         country: "Portugal",
         imageUrl:
-          "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+          buildUnsplashUrl("photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"),
         presentationTopic:
           "Building Successful Ventures: A Woman's Perspective",
         presentationLanguage: "portuguese",
@@ -632,7 +633,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostId: "host-tech-001",
     hostName: "Portuguese Developers London",
     hostImage:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",
+      buildUnsplashUrl("photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop"),
     hostBio:
       "Community of Portuguese software developers building the future of technology in London.",
     membershipRequired: "free",
@@ -645,8 +646,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     status: "published",
     featured: true,
     images: [
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=600&fit=crop",
+      buildUnsplashUrl("photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop"),
+      buildUnsplashUrl("photo-1531482615713-2afd69097998?w=800&h=600&fit=crop"),
     ],
     photos: [],
     attendees: [],
@@ -690,7 +691,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         expertise: ["react_native", "flutter", "mobile_architecture"],
         country: "Portugal",
         imageUrl:
-          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+          buildUnsplashUrl("photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"),
         presentationTopic: "Building Scalable Mobile Apps with React Native",
         presentationLanguage: "bilingual",
       },
@@ -733,7 +734,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostId: "host-tech-002",
     hostName: "Portuguese Digital Solutions",
     hostImage:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      buildUnsplashUrl("photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"),
     hostBio:
       "Empowering Portuguese businesses with cutting-edge digital solutions and web presence.",
     membershipRequired: "free",
@@ -746,8 +747,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     status: "published",
     featured: false,
     images: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
+      buildUnsplashUrl("photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"),
+      buildUnsplashUrl("photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop"),
     ],
     photos: [],
     attendees: [],
@@ -795,7 +796,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         ],
         country: "Portugal",
         imageUrl:
-          "https://images.unsplash.com/photo-1494790108755-2616b612b632?w=400&h=400&fit=crop&crop=face",
+          buildUnsplashUrl("photo-1494790108755-2616b612b632?w=400&h=400&fit=crop&crop=face"),
         presentationTopic:
           "From Idea to Online Success: Building Your Business Website",
         presentationLanguage: "bilingual",
@@ -839,7 +840,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostId: "host-marketing-001",
     hostName: "Portuguese Marketing Collective",
     hostImage:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
+      buildUnsplashUrl("photo-1552664730-d307ca884978?w=400&h=300&fit=crop"),
     hostBio:
       "Collective of Portuguese marketing professionals helping businesses grow in international markets.",
     membershipRequired: "free",
@@ -852,8 +853,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     status: "published",
     featured: true,
     images: [
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=600&fit=crop",
+      buildUnsplashUrl("photo-1552664730-d307ca884978?w=800&h=600&fit=crop"),
+      buildUnsplashUrl("photo-1432888498266-38ffec3eaf0a?w=800&h=600&fit=crop"),
     ],
     photos: [],
     attendees: [],
@@ -901,7 +902,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         ],
         country: "Portugal",
         imageUrl:
-          "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+          buildUnsplashUrl("photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"),
         presentationTopic:
           "Scaling Portuguese Businesses with Digital Marketing",
         presentationLanguage: "bilingual",
@@ -946,7 +947,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostId: "host-business-001",
     hostName: "Portuguese Entrepreneurs UK",
     hostImage:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
+      buildUnsplashUrl("photo-1556761175-b413da4baf72?w=400&h=300&fit=crop"),
     hostBio:
       "Supporting Portuguese entrepreneurs in building successful businesses across the UK.",
     membershipRequired: "free",
@@ -959,8 +960,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     status: "published",
     featured: true,
     images: [
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop",
+      buildUnsplashUrl("photo-1556761175-b413da4baf72?w=800&h=600&fit=crop"),
+      buildUnsplashUrl("photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop"),
     ],
     photos: [],
     attendees: [],
@@ -1013,7 +1014,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         expertise: ["business_strategy", "fundraising", "scaling"],
         country: "Portugal",
         imageUrl:
-          "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop&crop=face",
+          buildUnsplashUrl("photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop&crop=face"),
         presentationTopic:
           "From Idea to Exit: Building Successful Businesses in the UK",
         presentationLanguage: "bilingual",
@@ -1057,7 +1058,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostId: "host-ai-001",
     hostName: "Portuguese AI & Data Society",
     hostImage:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+      buildUnsplashUrl("photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop"),
     hostBio:
       "Community of Portuguese data scientists and AI researchers advancing technology innovation.",
     membershipRequired: "free",
@@ -1070,8 +1071,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     status: "published",
     featured: false,
     images: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop",
+      buildUnsplashUrl("photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"),
+      buildUnsplashUrl("photo-1555255707-c07966088b7b?w=800&h=600&fit=crop"),
     ],
     photos: [],
     attendees: [],
@@ -1119,7 +1120,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         expertise: ["machine_learning", "ai_strategy", "business_applications"],
         country: "Portugal",
         imageUrl:
-          "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
+          buildUnsplashUrl("photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face"),
         presentationTopic: "AI-Powered Business Transformation for SMEs",
         presentationLanguage: "bilingual",
       },
@@ -1162,7 +1163,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostId: "host-ecommerce-001",
     hostName: "Portuguese E-commerce Collective",
     hostImage:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      buildUnsplashUrl("photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop"),
     hostBio:
       "Network of Portuguese e-commerce entrepreneurs building successful online businesses in the UK.",
     membershipRequired: "free",
@@ -1175,8 +1176,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     status: "published",
     featured: true,
     images: [
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      buildUnsplashUrl("photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"),
+      buildUnsplashUrl("photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop"),
     ],
     photos: [],
     attendees: [],
@@ -1220,7 +1221,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         expertise: ["ecommerce_strategy", "amazon_fba", "product_sourcing"],
         country: "Portugal",
         imageUrl:
-          "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
+          buildUnsplashUrl("photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face"),
         presentationTopic:
           "From Zero to £2M: Building a Portuguese Products Empire",
         presentationLanguage: "bilingual",
@@ -1264,7 +1265,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostId: "host-fintech-001",
     hostName: "Portuguese Fintech Forum",
     hostImage:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=300&fit=crop",
+      buildUnsplashUrl("photo-1611974789855-9c2a0a7236a3?w=400&h=300&fit=crop"),
     hostBio:
       "Forum for Portuguese professionals working in financial technology and innovation.",
     membershipRequired: "free",
@@ -1277,8 +1278,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     status: "published",
     featured: false,
     images: [
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=600&fit=crop",
+      buildUnsplashUrl("photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop"),
+      buildUnsplashUrl("photo-1559526324-4b87b5e36e44?w=800&h=600&fit=crop"),
     ],
     photos: [],
     attendees: [],
@@ -1322,7 +1323,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         expertise: ["blockchain", "cryptocurrency", "digital_banking"],
         country: "Portugal",
         imageUrl:
-          "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face",
+          buildUnsplashUrl("photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face"),
         presentationTopic:
           "The Future of Digital Finance: A Portuguese Perspective",
         presentationLanguage: "bilingual",
@@ -1366,7 +1367,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostId: "host-saas-001",
     hostName: "Portuguese SaaS Builders",
     hostImage:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop",
+      buildUnsplashUrl("photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop"),
     hostBio:
       "Community of Portuguese developers and entrepreneurs building successful SaaS products.",
     membershipRequired: "free",
@@ -1379,8 +1380,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     status: "published",
     featured: false,
     images: [
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+      buildUnsplashUrl("photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop"),
+      buildUnsplashUrl("photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop"),
     ],
     photos: [],
     attendees: [],
@@ -1424,7 +1425,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         expertise: ["saas_architecture", "cloud_computing", "scaling"],
         country: "Portugal",
         imageUrl:
-          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+          buildUnsplashUrl("photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"),
         presentationTopic: "From Idea to 10K Users: Scaling SaaS Products",
         presentationLanguage: "bilingual",
       },
@@ -1467,7 +1468,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostId: "host-cybersec-001",
     hostName: "Portuguese Cyber Defense Group",
     hostImage:
-      "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=300&fit=crop",
+      buildUnsplashUrl("photo-1563986768494-4dee2763ff3f?w=400&h=300&fit=crop"),
     hostBio:
       "Group of Portuguese cybersecurity professionals protecting businesses from digital threats.",
     membershipRequired: "free",
@@ -1480,8 +1481,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     status: "published",
     featured: false,
     images: [
-      "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
+      buildUnsplashUrl("photo-1563986768494-4dee2763ff3f?w=800&h=600&fit=crop"),
+      buildUnsplashUrl("photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop"),
     ],
     photos: [],
     attendees: [],
@@ -1529,7 +1530,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         ],
         country: "Portugal",
         imageUrl:
-          "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop&crop=face",
+          buildUnsplashUrl("photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop&crop=face"),
         presentationTopic: "Cybersecurity Best Practices for Small Businesses",
         presentationLanguage: "bilingual",
       },
@@ -1573,7 +1574,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostId: "host-greentech-001",
     hostName: "Portuguese Green Innovation Network",
     hostImage:
-      "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=400&h=300&fit=crop",
+      buildUnsplashUrl("photo-1497435334941-8c899ee9e8e9?w=400&h=300&fit=crop"),
     hostBio:
       "Network of Portuguese professionals and entrepreneurs driving sustainable innovation and green technology.",
     membershipRequired: "free",
@@ -1586,8 +1587,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     status: "published",
     featured: true,
     images: [
-      "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop",
+      buildUnsplashUrl("photo-1497435334941-8c899ee9e8e9?w=800&h=600&fit=crop"),
+      buildUnsplashUrl("photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop"),
     ],
     photos: [],
     attendees: [],
@@ -1639,7 +1640,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         ],
         country: "Portugal",
         imageUrl:
-          "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
+          buildUnsplashUrl("photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face"),
         presentationTopic:
           "Building Profitable Green Businesses: Lessons from Portugal",
         presentationLanguage: "bilingual",

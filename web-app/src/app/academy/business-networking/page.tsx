@@ -44,7 +44,6 @@ export default function BusinessNetworkingModule() {
 
   const handleModuleComplete = () => {
     // Module completion logic
-    console.log("Business Networking module completed!");
   };
 
   // Define the learning module structure

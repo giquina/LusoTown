@@ -78,11 +78,11 @@ function SuccessPageContent() {
                   animate={{ opacity: 1 }}
                   className="py-20"
                 >
-                  <div className="w-12 h-12 border-4 border-green-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                  <div className="w-12 h-12 border-4 border-action-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
                   <h1 className="text-2xl font-bold text-gray-900 mb-2">
                     {isPortuguese ? 'Processando a sua subscrição...' : 'Processing your subscription...'}
                   </h1>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPortuguese ? 'Aguarde um momento' : 'Please wait a moment'}
                   </p>
                 </motion.div>
@@ -94,13 +94,13 @@ function SuccessPageContent() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="mb-12"
                   >
-                    <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <div className="w-20 h-20 bg-action-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                       <CheckCircleIcon className="w-10 h-10 text-white" />
                     </div>
                     <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                       {isPortuguese ? 'Bem-vindo à LusoTown!' : 'Welcome to LusoTown!'}
                     </h1>
-                    <p className="text-lg text-gray-600 mb-6">
+                    <p className="text-lg text-secondary-600 mb-6">
                       {isPortuguese 
                         ? 'A sua subscrição foi ativada com sucesso. Agora faz parte da comunidade portuguesa de Londres!'
                         : 'Your subscription has been successfully activated. You\'re now part of London\'s Portuguese community!'
@@ -141,7 +141,7 @@ function SuccessPageContent() {
                               <IconComponent className="w-6 h-6 text-primary-600" />
                             </div>
                             <h3 className="font-bold text-gray-900 mb-3">{step.title}</h3>
-                            <p className="text-sm text-gray-600 mb-4">{step.description}</p>
+                            <p className="text-sm text-secondary-600 mb-4">{step.description}</p>
                             <a
                               href={step.link}
                               className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
@@ -174,7 +174,7 @@ function SuccessPageContent() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <button
                         onClick={() => router.push('/dashboard')}
-                        className="bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                        className="bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-secondary-100 transition-colors"
                       >
                         {isPortuguese ? 'Ir para o Dashboard' : 'Go to Dashboard'}
                       </button>
@@ -219,9 +219,9 @@ export default function SubscriptionSuccessPage() {
           <div className="pt-16">
             <section className="py-12 bg-gradient-to-br from-green-50 via-white to-primary-50 min-h-screen flex items-center justify-center">
               <div className="text-center">
-                <div className="w-12 h-12 border-4 border-green-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                <div className="w-12 h-12 border-4 border-action-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
                 <h1 className="text-2xl font-bold text-gray-900 mb-2">Loading...</h1>
-                <p className="text-gray-600">Please wait a moment</p>
+                <p className="text-secondary-600">Please wait a moment</p>
               </div>
             </section>
           </div>

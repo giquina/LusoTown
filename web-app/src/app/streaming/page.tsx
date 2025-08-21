@@ -15,7 +15,7 @@ export default function StreamingPage() {
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               {STREAMING_COPY.hero.title}
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-secondary-600 leading-relaxed">
               {STREAMING_COPY.hero.subtitle}
             </p>
             <div className="mt-8 flex items-center justify-center gap-4">
@@ -44,7 +44,7 @@ export default function StreamingPage() {
                 key={f}
                 className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center"
               >
-                <span className="text-gray-800 font-medium">{f}</span>
+                <span className="text-secondary-800 font-medium">{f}</span>
               </li>
             ))}
           </ul>

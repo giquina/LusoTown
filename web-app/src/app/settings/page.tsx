@@ -51,7 +51,7 @@ export default function SettingsPage() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="flex flex-col items-center space-y-4">
           <div className="w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
-          <p className="text-gray-600">Loading settings...</p>
+          <p className="text-secondary-600">Loading settings...</p>
         </div>
       </div>
     )
@@ -68,7 +68,7 @@ export default function SettingsPage() {
           >
             <div className="text-center mb-8">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Settings</h1>
-              <p className="text-xl text-gray-600">Customize your Portuguese community experience</p>
+              <p className="text-xl text-secondary-600">Customize your Portuguese community experience</p>
             </div>
 
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
@@ -77,7 +77,7 @@ export default function SettingsPage() {
                   <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                     <div>
                       <p className="font-medium text-gray-900">Language</p>
-                      <p className="text-sm text-gray-600">Interface language</p>
+                      <p className="text-sm text-secondary-600">Interface language</p>
                     </div>
                     <button
                       onClick={toggleLanguage}
@@ -90,7 +90,7 @@ export default function SettingsPage() {
                   <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                     <div>
                       <p className="font-medium text-gray-900">Edit Profile</p>
-                      <p className="text-sm text-gray-600">Update your profile information</p>
+                      <p className="text-sm text-secondary-600">Update your profile information</p>
                     </div>
                     <button
                       onClick={() => router.push('/profile/edit')}

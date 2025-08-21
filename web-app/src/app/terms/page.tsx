@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { ROUTES } from '@/config'
 import Footer from "@/components/Footer";
+import { ROUTES } from '@/config'
 import {
   DocumentTextIcon,
   HandRaisedIcon,
@@ -33,10 +35,10 @@ export const metadata: Metadata = {
     description:
       "Review LusoTown London's terms of service, community guidelines, and membership requirements.",
     type: "website",
-    url: "/terms",
+    url: {ROUTES.legal.terms},
   },
   alternates: {
-    canonical: "/terms",
+    canonical: {ROUTES.legal.terms},
   },
 };
 
@@ -55,7 +57,7 @@ export default function TermsOfService() {
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
                 Terms of Service
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-xl text-secondary-600 leading-relaxed">
                 Welcome to LusoTown! These terms govern your use of our platform
                 and establish the foundation for our safe, supportive community
                 of 30+ single and childfree women.
@@ -73,7 +75,7 @@ export default function TermsOfService() {
                   <HandRaisedIcon className="w-6 h-6 text-secondary-600 mr-3" />
                   Your Agreement with LusoTown
                 </h2>
-                <div className="space-y-4 text-gray-600">
+                <div className="space-y-4 text-secondary-600">
                   <p>
                     By using LusoTown, you're agreeing to these terms and
                     joining our community committed to:
@@ -86,7 +88,7 @@ export default function TermsOfService() {
                           Authentic Connection
                         </span>
                       </div>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-secondary-600">
                         Building genuine friendships based on shared values and
                         life choices
                       </p>
@@ -98,7 +100,7 @@ export default function TermsOfService() {
                           Community Safety
                         </span>
                       </div>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-secondary-600">
                         Maintaining a secure, verified, and supportive
                         environment
                       </p>
@@ -110,7 +112,7 @@ export default function TermsOfService() {
                           Respectful Interaction
                         </span>
                       </div>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-secondary-600">
                         Treating all members with kindness, respect, and
                         understanding
                       </p>
@@ -122,7 +124,7 @@ export default function TermsOfService() {
                           Fair Usage
                         </span>
                       </div>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-secondary-600">
                         Using the platform responsibly and in accordance with
                         our community guidelines
                       </p>
@@ -149,10 +151,10 @@ export default function TermsOfService() {
                     <h3 className="text-lg font-semibold text-primary-700 mb-3">
                       Membership Requirements
                     </h3>
-                    <p className="text-gray-600 mb-3">
+                    <p className="text-secondary-600 mb-3">
                       To join LusoTown, you must:
                     </p>
-                    <ul className="text-gray-600 space-y-2">
+                    <ul className="text-secondary-600 space-y-2">
                       <li className="flex items-start">
                         <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         Be at least 30 years old
@@ -185,7 +187,7 @@ export default function TermsOfService() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Account Responsibilities
                     </h3>
-                    <div className="space-y-3 text-gray-600">
+                    <div className="space-y-3 text-secondary-600">
                       <p>
                         You are responsible for maintaining the confidentiality
                         of your account credentials and for all activities that
@@ -247,7 +249,7 @@ export default function TermsOfService() {
                         <h4 className="font-semibold text-red-700 mb-2">
                           Safety Violations
                         </h4>
-                        <ul className="text-red-600 text-sm space-y-1">
+                        <ul className="text-coral-600 text-sm space-y-1">
                           <li>
                             • Harassment, bullying, or threatening behavior
                           </li>
@@ -263,7 +265,7 @@ export default function TermsOfService() {
                         <h4 className="font-semibold text-red-700 mb-2">
                           Community Disruption
                         </h4>
-                        <ul className="text-red-600 text-sm space-y-1">
+                        <ul className="text-coral-600 text-sm space-y-1">
                           <li>
                             • Hate speech, discrimination, or prejudicial
                             comments
@@ -322,7 +324,7 @@ export default function TermsOfService() {
                         <h4 className="font-semibold text-gray-900 mb-2">
                           Free Membership
                         </h4>
-                        <ul className="text-gray-600 text-sm space-y-1">
+                        <ul className="text-secondary-600 text-sm space-y-1">
                           <li>• Basic profile creation</li>
                           <li>• Limited community access</li>
                           <li>• View public events</li>
@@ -358,7 +360,7 @@ export default function TermsOfService() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Platform Rules
                     </h3>
-                    <div className="space-y-3 text-gray-600">
+                    <div className="space-y-3 text-secondary-600">
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <p>
@@ -403,7 +405,7 @@ export default function TermsOfService() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">
                       Subscription Details
                     </h3>
-                    <ul className="text-gray-600 space-y-2">
+                    <ul className="text-secondary-600 space-y-2">
                       <li>
                         • Subscription fees are charged monthly or annually in
                         advance
@@ -423,7 +425,7 @@ export default function TermsOfService() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Refund Policy
                     </h3>
-                    <div className="space-y-3 text-gray-600">
+                    <div className="space-y-3 text-secondary-600">
                       <p>We offer refunds under the following circumstances:</p>
                       <ul className="space-y-2 ml-4">
                         <li>
@@ -482,7 +484,7 @@ export default function TermsOfService() {
                     <div className="space-y-4">
                       <div className="border-l-4 border-yellow-400 pl-4">
                         <h4 className="font-semibold text-gray-900">Warning</h4>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-secondary-600 text-sm">
                           First offense or minor violations result in a formal
                           warning and guidance on community standards.
                         </p>
@@ -491,7 +493,7 @@ export default function TermsOfService() {
                         <h4 className="font-semibold text-gray-900">
                           Temporary Suspension
                         </h4>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-secondary-600 text-sm">
                           Repeated violations or more serious offenses result in
                           7-30 day account suspension.
                         </p>
@@ -500,7 +502,7 @@ export default function TermsOfService() {
                         <h4 className="font-semibold text-gray-900">
                           Permanent Ban
                         </h4>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-secondary-600 text-sm">
                           Serious safety violations, harassment, or repeated
                           offenses result in permanent account termination.
                         </p>
@@ -516,7 +518,7 @@ export default function TermsOfService() {
                       The following behaviors result in immediate permanent
                       suspension:
                     </p>
-                    <ul className="text-red-600 space-y-1">
+                    <ul className="text-coral-600 space-y-1">
                       <li>• Threats of violence or self-harm</li>
                       <li>• Sharing explicit sexual content</li>
                       <li>
@@ -536,11 +538,11 @@ export default function TermsOfService() {
                   6. Privacy and Data Protection
                 </h2>
                 <div className="space-y-4">
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     Your privacy is paramount to us. Our data practices are
                     governed by our comprehensive
                     <a
-                      href="/privacy"
+                      href={ROUTES.legal.privacy}
                       className="text-primary-600 hover:underline font-medium ml-1"
                     >
                       Privacy Policy
@@ -581,13 +583,13 @@ export default function TermsOfService() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">
                       LusoTown's Property
                     </h3>
-                    <p className="text-gray-600 mb-3">
+                    <p className="text-secondary-600 mb-3">
                       The LusoTown platform, including its design, features,
                       algorithms, and content, is protected by copyright,
                       trademark, and other intellectual property laws. You may
                       not:
                     </p>
-                    <ul className="text-gray-600 space-y-2 ml-4">
+                    <ul className="text-secondary-600 space-y-2 ml-4">
                       <li>
                         • Copy, modify, or distribute our proprietary code or
                         design
@@ -603,11 +605,11 @@ export default function TermsOfService() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">
                       Your Content
                     </h3>
-                    <p className="text-gray-600 mb-3">
+                    <p className="text-secondary-600 mb-3">
                       You retain ownership of content you share on LusoTown, but
                       grant us a license to:
                     </p>
-                    <ul className="text-gray-600 space-y-2 ml-4">
+                    <ul className="text-secondary-600 space-y-2 ml-4">
                       <li>• Display your content within the platform</li>
                       <li>• Process your content for platform functionality</li>
                       <li>• Use anonymized content for platform improvement</li>
@@ -643,11 +645,11 @@ export default function TermsOfService() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-4">
                       Member Interactions
                     </h3>
-                    <p className="text-gray-600 mb-3">
+                    <p className="text-secondary-600 mb-3">
                       LusoTown facilitates connections between members but is
                       not responsible for:
                     </p>
-                    <ul className="text-gray-600 space-y-2 ml-4">
+                    <ul className="text-secondary-600 space-y-2 ml-4">
                       <li>
                         • The accuracy of information provided by other members
                       </li>
@@ -687,7 +689,7 @@ export default function TermsOfService() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">
                       Termination by You
                     </h3>
-                    <ul className="text-gray-600 space-y-2">
+                    <ul className="text-secondary-600 space-y-2">
                       <li>• Cancel subscription anytime in account settings</li>
                       <li>
                         • Access continues until end of current billing cycle
@@ -700,7 +702,7 @@ export default function TermsOfService() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">
                       Termination by LusoTown
                     </h3>
-                    <ul className="text-gray-600 space-y-2">
+                    <ul className="text-secondary-600 space-y-2">
                       <li>• For violation of these terms</li>
                       <li>• For safety or legal concerns</li>
                       <li>• For fraudulent or suspicious activity</li>
@@ -715,7 +717,7 @@ export default function TermsOfService() {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   10. Changes to These Terms
                 </h2>
-                <div className="space-y-4 text-gray-600">
+                <div className="space-y-4 text-secondary-600">
                   <p>
                     We may update these Terms of Service to reflect changes in
                     our services, legal requirements, or community needs. When
@@ -741,7 +743,7 @@ export default function TermsOfService() {
                   11. Governing Law and Dispute Resolution
                 </h2>
                 <div className="space-y-4">
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     These terms are governed by the laws of England and Wales.
                     Any disputes will be resolved through:
                   </p>

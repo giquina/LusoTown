@@ -106,7 +106,7 @@ export default function ConsultationConfirmationPage() {
               {isPortuguese ? 'Consulta Agendada com Sucesso!' : 'Consultation Successfully Booked!'}
             </h1>
             
-            <p className="text-xl text-gray-600 mb-6">
+            <p className="text-xl text-secondary-600 mb-6">
               {isPortuguese
                 ? 'A sua consulta gratuita foi confirmada. Estamos ansiosos por ajudá-lo!'
                 : 'Your free consultation has been confirmed. We look forward to helping you!'
@@ -217,7 +217,7 @@ export default function ConsultationConfirmationPage() {
                         {isPortuguese ? item.timeframePortuguese : item.timeframe}
                       </span>
                     </div>
-                    <p className="text-gray-600">
+                    <p className="text-secondary-600">
                       {isPortuguese ? item.descriptionPortuguese : item.description}
                     </p>
                   </div>
@@ -246,7 +246,7 @@ export default function ConsultationConfirmationPage() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">
                     {isPortuguese ? benefit.titlePortuguese : benefit.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-secondary-600 text-sm">
                     {isPortuguese ? benefit.descriptionPortuguese : benefit.description}
                   </p>
                 </div>
@@ -273,15 +273,15 @@ export default function ConsultationConfirmationPage() {
                 <div className="space-y-3">
                   <div className="flex items-center">
                     <PhoneIcon className="w-5 h-5 text-primary-600 mr-3" />
-                    <span className="text-gray-700">+44 20 7123 4567</span>
+                    <span className="text-secondary-700">+44 20 7123 4567</span>
                   </div>
                   <div className="flex items-center">
                     <EnvelopeIcon className="w-5 h-5 text-primary-600 mr-3" />
-                    <span className="text-gray-700">consultations@lusotown.com</span>
+                    <span className="text-secondary-700">consultations@lusotown.com</span>
                   </div>
                   <div className="flex items-center">
                     <MessageSquare className="w-5 h-5 text-primary-600 mr-3" />
-                    <span className="text-gray-700">
+                    <span className="text-secondary-700">
                       {isPortuguese ? 'Chat ao vivo disponível' : 'Live chat available'}
                     </span>
                   </div>
@@ -292,7 +292,7 @@ export default function ConsultationConfirmationPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
                   {isPortuguese ? 'Precisa de Reagendar?' : 'Need to Reschedule?'}
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-secondary-600 mb-4">
                   {isPortuguese
                     ? 'Se precisar de alterar a sua consulta, contacte-nos até 24 horas antes.'
                     : 'If you need to change your consultation, please contact us at least 24 hours in advance.'

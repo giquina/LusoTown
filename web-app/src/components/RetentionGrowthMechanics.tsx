@@ -593,22 +593,22 @@ export default function RetentionGrowthMechanics({
         <div className="bg-white rounded-xl p-4 border border-gray-200 text-center">
           <CalendarDaysIcon className="w-6 h-6 mx-auto mb-2 text-accent-600" />
           <div className="text-2xl font-bold text-gray-900">{loyaltyProgram.totalEventsAttended}</div>
-          <div className="text-sm text-gray-600">{isPortuguese ? 'Eventos' : 'Events'}</div>
+          <div className="text-sm text-secondary-600">{isPortuguese ? 'Eventos' : 'Events'}</div>
         </div>
         <div className="bg-white rounded-xl p-4 border border-gray-200 text-center">
           <UserGroupIcon className="w-6 h-6 mx-auto mb-2 text-secondary-600" />
           <div className="text-2xl font-bold text-gray-900">{loyaltyProgram.totalNetworkConnections}</div>
-          <div className="text-sm text-gray-600">{isPortuguese ? 'Conexões' : 'Connections'}</div>
+          <div className="text-sm text-secondary-600">{isPortuguese ? 'Conexões' : 'Connections'}</div>
         </div>
         <div className="bg-white rounded-xl p-4 border border-gray-200 text-center">
           <TrophyIcon className="w-6 h-6 mx-auto mb-2 text-coral-600" />
           <div className="text-2xl font-bold text-gray-900">{achievements.filter(a => a.isUnlocked).length}</div>
-          <div className="text-sm text-gray-600">{isPortuguese ? 'Conquistas' : 'Achievements'}</div>
+          <div className="text-sm text-secondary-600">{isPortuguese ? 'Conquistas' : 'Achievements'}</div>
         </div>
         <div className="bg-white rounded-xl p-4 border border-gray-200 text-center">
           <FireIcon className="w-6 h-6 mx-auto mb-2 text-orange-600" />
           <div className="text-2xl font-bold text-gray-900">{streakData?.currentStreak || 0}</div>
-          <div className="text-sm text-gray-600">{isPortuguese ? 'Sequência' : 'Day Streak'}</div>
+          <div className="text-sm text-secondary-600">{isPortuguese ? 'Sequência' : 'Day Streak'}</div>
         </div>
       </div>
 
@@ -616,7 +616,7 @@ export default function RetentionGrowthMechanics({
       {recentAchievements.length > 0 && (
         <div className="bg-white rounded-2xl p-6 border border-gray-200">
           <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <SparklesIcon className="w-5 h-5 text-yellow-500" />
+            <SparklesIcon className="w-5 h-5 text-accent-500" />
             {isPortuguese ? 'Conquistas Recentes' : 'Recent Achievements'}
           </h3>
           <div className="space-y-3">
@@ -627,7 +627,7 @@ export default function RetentionGrowthMechanics({
                   <h4 className="font-semibold text-gray-900">
                     {isPortuguese ? achievement.namePortuguese : achievement.name}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {isPortuguese ? achievement.descriptionPortuguese : achievement.description}
                   </p>
                 </div>
@@ -649,7 +649,7 @@ export default function RetentionGrowthMechanics({
         <h2 className="text-3xl font-bold text-gray-900 mb-2">
           {isPortuguese ? 'Conquistas da Comunidade Portuguesa' : 'Portuguese Community Achievements'}
         </h2>
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {isPortuguese ? 'Celebre a sua jornada na comunidade portuguesa' : 'Celebrate your journey in the Portuguese community'}
         </p>
       </div>
@@ -692,12 +692,12 @@ export default function RetentionGrowthMechanics({
                       <h4 className="font-bold text-gray-900 mb-1">
                         {isPortuguese ? achievement.namePortuguese : achievement.name}
                       </h4>
-                      <p className="text-sm text-gray-600 mb-2">
+                      <p className="text-sm text-secondary-600 mb-2">
                         {isPortuguese ? achievement.descriptionPortuguese : achievement.description}
                       </p>
                       
                       {/* Progress Bar */}
-                      <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+                      <div className="w-full bg-secondary-200 rounded-full h-2 mb-2">
                         <motion.div
                           className={`bg-${achievement.color}-500 h-2 rounded-full`}
                           initial={{ width: 0 }}
@@ -739,10 +739,10 @@ export default function RetentionGrowthMechanics({
           <h3 className="font-bold text-gray-900 mb-2">
             {isPortuguese ? 'Conquista Desbloqueada!' : 'Achievement Unlocked!'}
           </h3>
-          <h4 className="font-semibold text-gray-800 mb-1">
+          <h4 className="font-semibold text-secondary-800 mb-1">
             {isPortuguese ? showAchievementPopup.namePortuguese : showAchievementPopup.name}
           </h4>
-          <p className="text-sm text-gray-600 mb-3">
+          <p className="text-sm text-secondary-600 mb-3">
             {isPortuguese ? showAchievementPopup.descriptionPortuguese : showAchievementPopup.description}
           </p>
           <div className="text-lg font-bold text-premium-600">

@@ -190,11 +190,11 @@ export default function LiveUpdateIndicator({
   const getConnectionIcon = () => {
     switch (connectionStatus) {
       case 'connected':
-        return <WifiIcon className="w-4 h-4 text-green-500" />
+        return <WifiIcon className="w-4 h-4 text-action-500" />
       case 'reconnecting':
-        return <ArrowPathIcon className="w-4 h-4 text-yellow-500 animate-spin" />
+        return <ArrowPathIcon className="w-4 h-4 text-accent-500 animate-spin" />
       case 'offline':
-        return <ExclamationTriangleIcon className="w-4 h-4 text-red-500" />
+        return <ExclamationTriangleIcon className="w-4 h-4 text-coral-500" />
     }
   }
 
@@ -308,7 +308,7 @@ export default function LiveUpdateIndicator({
           >
             <BellIcon className="w-5 h-5" />
             {updates.length > 0 && (
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+              <span className="absolute -top-1 -right-1 bg-coral-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
                 {updates.length > 9 ? '9+' : updates.length}
               </span>
             )}

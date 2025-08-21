@@ -158,7 +158,7 @@ export default function LearningModuleFramework({
       case 'Beginner': return 'bg-green-100 text-green-700 border-green-200';
       case 'Intermediate': return 'bg-yellow-100 text-yellow-700 border-yellow-200';
       case 'Advanced': return 'bg-red-100 text-red-700 border-red-200';
-      default: return 'bg-gray-100 text-gray-700 border-gray-200';
+      default: return 'bg-secondary-100 text-secondary-700 border-gray-200';
     }
   };
 
@@ -182,9 +182,9 @@ export default function LearningModuleFramework({
                       ...prev,
                       [`${step.id}-${index}`]: e.target.checked
                     }))}
-                    className="mt-1 w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                    className="mt-1 w-4 h-4 text-primary-600 border-secondary-300 rounded focus:ring-primary-500"
                   />
-                  <span className="text-gray-700">
+                  <span className="text-secondary-700">
                     {isPortuguese ? item.textPortuguese || item.text : item.text}
                   </span>
                 </label>
@@ -200,7 +200,7 @@ export default function LearningModuleFramework({
               {isPortuguese ? 'Árvore de Decisão' : 'Decision Tree'}
             </h4>
             {/* Decision tree implementation would go here */}
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {isPortuguese ? 'Funcionalidade interativa em desenvolvimento' : 'Interactive feature in development'}
             </p>
           </div>
@@ -228,7 +228,7 @@ export default function LearningModuleFramework({
             <h2 className="text-2xl font-bold text-gray-900 mb-2">
               {isPortuguese ? step.titlePortuguese : step.title}
             </h2>
-            <div className="flex items-center gap-4 text-sm text-gray-600">
+            <div className="flex items-center gap-4 text-sm text-secondary-600">
               <div className="flex items-center gap-1">
                 <Clock className="w-4 h-4" />
                 {step.estimatedTime} {isPortuguese ? 'min' : 'min'}
@@ -247,7 +247,7 @@ export default function LearningModuleFramework({
         {/* Step content */}
         <div className="mb-6">
           <div 
-            className="text-gray-700 leading-relaxed"
+            className="text-secondary-700 leading-relaxed"
             dangerouslySetInnerHTML={{ 
               __html: isPortuguese ? step.contentPortuguese : step.content 
             }}
@@ -261,7 +261,7 @@ export default function LearningModuleFramework({
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => toggleSection(`tips-${step.id}`)}
             >
-              <Lightbulb className="w-5 h-5 text-yellow-500" />
+              <Lightbulb className="w-5 h-5 text-accent-500" />
               <h4 className="font-semibold text-gray-900">
                 {isPortuguese ? 'Dicas Úteis' : 'Helpful Tips'}
               </h4>
@@ -280,7 +280,7 @@ export default function LearningModuleFramework({
                   <ul className="space-y-2">
                     {(isPortuguese ? step.tipsPortuguese || step.tips : step.tips).map((tip, index) => (
                       <li key={index} className="flex items-start gap-2 text-sm text-yellow-800">
-                        <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-1.5 h-1.5 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
                         {tip}
                       </li>
                     ))}
@@ -338,8 +338,8 @@ export default function LearningModuleFramework({
             disabled={currentStepIndex === 0}
             className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
               currentStepIndex === 0
-                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                ? 'bg-secondary-100 text-gray-400 cursor-not-allowed'
+                : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
             }`}
           >
             <ArrowLeft className="w-4 h-4" />
@@ -347,7 +347,7 @@ export default function LearningModuleFramework({
           </button>
 
           <div className="flex items-center gap-2">
-            <span className="text-sm text-gray-600">
+            <span className="text-sm text-secondary-600">
               {currentStepIndex + 1} {isPortuguese ? 'de' : 'of'} {module.steps.length}
             </span>
           </div>
@@ -384,11 +384,11 @@ export default function LearningModuleFramework({
                 <span className={`px-3 py-1 rounded-full text-sm font-medium border ${getDifficultyColor(module.difficulty)}`}>
                   {module.difficulty}
                 </span>
-                <div className="flex items-center gap-1 text-gray-600">
+                <div className="flex items-center gap-1 text-secondary-600">
                   <Clock className="w-4 h-4" />
                   <span className="text-sm">{module.estimatedTime} {isPortuguese ? 'minutos' : 'minutes'}</span>
                 </div>
-                <div className="flex items-center gap-1 text-gray-600">
+                <div className="flex items-center gap-1 text-secondary-600">
                   <Target className="w-4 h-4" />
                   <span className="text-sm">{module.steps.length} {isPortuguese ? 'passos' : 'steps'}</span>
                 </div>
@@ -397,10 +397,10 @@ export default function LearningModuleFramework({
             
             {showProgress && (
               <div className="text-right">
-                <div className="text-sm text-gray-600 mb-1">
+                <div className="text-sm text-secondary-600 mb-1">
                   {isPortuguese ? 'Progresso' : 'Progress'}
                 </div>
-                <div className="w-32 bg-gray-200 rounded-full h-2 mb-1">
+                <div className="w-32 bg-secondary-200 rounded-full h-2 mb-1">
                   <div 
                     className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full transition-all duration-500"
                     style={{ width: `${progressPercentage}%` }}
@@ -434,15 +434,15 @@ export default function LearningModuleFramework({
                         ? 'bg-primary-50 text-primary-700 border border-primary-200'
                         : isStepCompleted(step.id)
                         ? 'bg-green-50 text-green-700 hover:bg-green-100'
-                        : 'text-gray-600 hover:bg-gray-50'
+                        : 'text-secondary-600 hover:bg-gray-50'
                     }`}
                   >
                     <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
                       isStepCompleted(step.id)
-                        ? 'bg-green-500 text-white'
+                        ? 'bg-action-500 text-white'
                         : currentStepIndex === index
                         ? 'bg-primary-500 text-white'
-                        : 'bg-gray-300 text-gray-600'
+                        : 'bg-gray-300 text-secondary-600'
                     }`}>
                       {isStepCompleted(step.id) ? <CheckCircle className="w-4 h-4" /> : index + 1}
                     </div>
@@ -477,7 +477,7 @@ export default function LearningModuleFramework({
                   <h2 className="text-3xl font-bold text-gray-900 mb-4">
                     {isPortuguese ? 'Módulo Concluído!' : 'Module Completed!'}
                   </h2>
-                  <p className="text-gray-600 mb-8">
+                  <p className="text-secondary-600 mb-8">
                     {isPortuguese 
                       ? `Parabéns! Você concluiu com sucesso o módulo "${module.titlePortuguese}".`
                       : `Congratulations! You have successfully completed the "${module.title}" module.`
@@ -489,7 +489,7 @@ export default function LearningModuleFramework({
                     </button>
                     <button 
                       onClick={() => setShowingSummary(false)}
-                      className="border border-gray-300 text-gray-700 px-8 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-200"
+                      className="border border-secondary-300 text-secondary-700 px-8 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-200"
                     >
                       {isPortuguese ? 'Revisar Módulo' : 'Review Module'}
                     </button>

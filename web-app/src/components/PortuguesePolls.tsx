@@ -209,8 +209,8 @@ export default function PortuguesePolls({
       {/* Active Polls */}
       {activePolls.length > 0 && (
         <div className="space-y-4">
-          <h4 className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-            <PlayIcon className="w-4 h-4 text-green-600" />
+          <h4 className="text-sm font-semibold text-secondary-700 flex items-center gap-2">
+            <PlayIcon className="w-4 h-4 text-action-600" />
             {language === "pt" ? "Sondagens Ativas" : "Active Polls"} (
             {activePolls.length})
           </h4>
@@ -231,7 +231,7 @@ export default function PortuguesePolls({
       {/* Completed Polls */}
       {completedPolls.length > 0 && (
         <div className="space-y-4">
-          <h4 className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+          <h4 className="text-sm font-semibold text-secondary-700 flex items-center gap-2">
             <Trophy className="w-4 h-4 text-amber-600" />
             {language === "pt" ? "Sondagens Anteriores" : "Previous Polls"}
           </h4>
@@ -288,7 +288,7 @@ export default function PortuguesePolls({
                   </h3>
                   <button
                     onClick={() => setShowCreatePoll(false)}
-                    className="text-gray-400 hover:text-gray-600"
+                    className="text-gray-400 hover:text-secondary-600"
                   >
                     <XMarkIcon className="w-5 h-5" />
                   </button>
@@ -296,7 +296,7 @@ export default function PortuguesePolls({
 
                 {/* Poll Templates */}
                 <div className="mb-4">
-                  <h4 className="text-sm font-medium text-gray-700 mb-2">
+                  <h4 className="text-sm font-medium text-secondary-700 mb-2">
                     {language === "pt"
                       ? "Modelos Culturais"
                       : "Cultural Templates"}
@@ -317,7 +317,7 @@ export default function PortuguesePolls({
 
                 {/* Question Input */}
                 <div className="mb-4">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === "pt" ? "Pergunta" : "Question"}
                   </label>
                   <input
@@ -334,14 +334,14 @@ export default function PortuguesePolls({
                         ? "Qual é a sua pergunta?"
                         : "What's your question?"
                     }
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm 
+                    className="w-full border border-secondary-300 rounded-lg px-3 py-2 text-sm 
                       focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   />
                 </div>
 
                 {/* Options */}
                 <div className="mb-4">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === "pt" ? "Opções" : "Options"}
                   </label>
                   <div className="space-y-2">
@@ -356,13 +356,13 @@ export default function PortuguesePolls({
                           placeholder={`${
                             language === "pt" ? "Opção" : "Option"
                           } ${index + 1}`}
-                          className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm 
+                          className="flex-1 border border-secondary-300 rounded-lg px-3 py-2 text-sm 
                             focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                         />
                         {newPoll.options.length > 2 && (
                           <button
                             onClick={() => removePollOption(index)}
-                            className="p-2 text-red-500 hover:text-red-700"
+                            className="p-2 text-coral-500 hover:text-red-700"
                           >
                             <XMarkIcon className="w-4 h-4" />
                           </button>
@@ -373,8 +373,8 @@ export default function PortuguesePolls({
                     {newPoll.options.length < 6 && (
                       <button
                         onClick={addPollOption}
-                        className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 
-                          hover:text-gray-800 border-2 border-dashed border-gray-300 rounded-lg 
+                        className="flex items-center gap-2 px-3 py-2 text-sm text-secondary-600 
+                          hover:text-secondary-800 border-2 border-dashed border-secondary-300 rounded-lg 
                           hover:border-gray-400 transition-colors w-full"
                       >
                         <PlusIcon className="w-4 h-4" />
@@ -387,7 +387,7 @@ export default function PortuguesePolls({
                 {/* Settings */}
                 <div className="mb-6 space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {language === "pt"
                         ? "Duração (segundos)"
                         : "Duration (seconds)"}
@@ -400,7 +400,7 @@ export default function PortuguesePolls({
                           duration: parseInt(e.target.value),
                         }))
                       }
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
+                      className="w-full border border-secondary-300 rounded-lg px-3 py-2 text-sm"
                     >
                       <option value={30}>
                         30 {language === "pt" ? "segundos" : "seconds"}
@@ -428,11 +428,11 @@ export default function PortuguesePolls({
                           allowMultiple: e.target.checked,
                         }))
                       }
-                      className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                      className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                     />
                     <label
                       htmlFor="allowMultiple"
-                      className="ml-2 text-sm text-gray-700"
+                      className="ml-2 text-sm text-secondary-700"
                     >
                       {language === "pt"
                         ? "Permitir múltiplas escolhas"
@@ -445,8 +445,8 @@ export default function PortuguesePolls({
                 <div className="flex gap-3">
                   <button
                     onClick={() => setShowCreatePoll(false)}
-                    className="flex-1 px-4 py-2 text-gray-700 bg-gray-100 rounded-lg 
-                      hover:bg-gray-200 transition-colors"
+                    className="flex-1 px-4 py-2 text-secondary-700 bg-secondary-100 rounded-lg 
+                      hover:bg-secondary-200 transition-colors"
                   >
                     {language === "pt" ? "Cancelar" : "Cancel"}
                   </button>
@@ -535,7 +535,7 @@ function PollCard({
                 isSelected
                   ? "border-primary-300 bg-primary-100 text-primary-800"
                   : hasVoted || !isActive
-                  ? "border-gray-200 bg-gray-100 cursor-default"
+                  ? "border-gray-200 bg-secondary-100 cursor-default"
                   : "border-gray-200 bg-white hover:border-primary-300 hover:bg-primary-50"
               }`}
             >
@@ -543,7 +543,7 @@ function PollCard({
               {totalVotes > 0 && (
                 <div
                   className={`absolute inset-0 ${
-                    isSelected ? "bg-primary-200" : "bg-gray-200"
+                    isSelected ? "bg-primary-200" : "bg-secondary-200"
                   } transition-all duration-500 ease-out`}
                   style={{ width: `${percentage}%` }}
                 />
@@ -567,7 +567,7 @@ function PollCard({
       </div>
 
       {isActive && currentUser && !hasVoted && (
-        <p className="text-xs text-gray-600 mt-2">
+        <p className="text-xs text-secondary-600 mt-2">
           {language === "pt" ? "Clique para votar" : "Click to vote"}
         </p>
       )}

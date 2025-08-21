@@ -225,7 +225,6 @@ export default function AgeVerificationModal({
         requiresParentConsent
       }
       
-      console.log('Submitting verification:', verificationRequest)
       setStep(4)
     } catch (error) {
       console.error('Verification submission error:', error)
@@ -523,7 +522,7 @@ export default function AgeVerificationModal({
             {step === 4 && (
               <div className="space-y-6 text-center">
                 <div>
-                  <CheckCircle className="h-12 w-12 text-green-600 mx-auto mb-3" />
+                  <CheckCircle className="h-12 w-12 text-action-600 mx-auto mb-3" />
                   <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                     {t.step4.title}
                   </h3>
@@ -546,7 +545,7 @@ export default function AgeVerificationModal({
             {/* Data Protection Notice */}
             <div className="mt-6 p-3 bg-blue-50 rounded-lg">
               <div className="flex items-start gap-2">
-                <Shield className="h-4 w-4 text-blue-600 mt-0.5" />
+                <Shield className="h-4 w-4 text-primary-600 mt-0.5" />
                 <p className="text-xs text-blue-800">
                   {t.warnings.dataProtection}
                 </p>
@@ -591,7 +590,7 @@ export default function AgeVerificationModal({
                   onVerified(true)
                   onClose()
                 }}
-                className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700"
+                className="bg-action-600 text-white px-6 py-2 rounded-lg hover:bg-green-700"
               >
                 {t.buttons.close}
               </button>

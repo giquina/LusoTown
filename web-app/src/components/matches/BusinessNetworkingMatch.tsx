@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { SOCIAL_URLS } from '@/config'
 import { motion, AnimatePresence } from "framer-motion";
+import { SOCIAL_URLS } from '@/config'
 import {
   BriefcaseIcon,
   BuildingOfficeIcon,
@@ -24,10 +26,15 @@ import {
   ScaleIcon as ScaleSolid,
 } from "@heroicons/react/24/solid";
 import { useLanguage } from "@/context/LanguageContext";
+import { SOCIAL_URLS } from '@/config'
 import { useSubscription } from "@/context/SubscriptionContext";
+import { SOCIAL_URLS } from '@/config'
 import BusinessMatchCard from "./BusinessMatchCard";
+import { SOCIAL_URLS } from '@/config'
 import BusinessMatchFilters from "./BusinessMatchFilters";
+import { SOCIAL_URLS } from '@/config'
 import PortugueseBusinessConversationStarters from "./PortugueseBusinessConversationStarters";
+import { SOCIAL_URLS } from '@/config'
 
 interface BusinessProfile {
   id: string;
@@ -706,7 +713,7 @@ export default function BusinessNetworkingMatch({
                                   {match.profile.industry}
                                 </p>
                               </div>
-                              <div className="text-green-500">
+                              <div className="text-action-500">
                                 <ScaleSolid className="w-5 h-5" />
                               </div>
                             </div>

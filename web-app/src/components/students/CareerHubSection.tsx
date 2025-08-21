@@ -1,8 +1,11 @@
 'use client'
 
 import React, { useState } from 'react'
+import { SOCIAL_URLS } from '@/config'
 import { motion } from 'framer-motion'
+import { SOCIAL_URLS } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { SOCIAL_URLS } from '@/config'
 import {
   BriefcaseIcon,
   AcademicCapIcon,
@@ -25,6 +28,7 @@ import {
   ChatBubbleLeftRightIcon
 } from '@heroicons/react/24/outline'
 import { CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
+import { SOCIAL_URLS } from '@/config'
 
 interface CareerOpportunity {
   id: string
@@ -475,13 +479,13 @@ export default function CareerHubSection() {
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case 'internship': return 'bg-blue-100 text-blue-700'
+      case 'internship': return 'bg-blue-100 text-primary-700'
       case 'graduate_program': return 'bg-green-100 text-green-700'
       case 'part_time': return 'bg-yellow-100 text-yellow-700'
       case 'research': return 'bg-purple-100 text-purple-700'
       case 'placement': return 'bg-indigo-100 text-indigo-700'
       case 'volunteer': return 'bg-red-100 text-red-700'
-      default: return 'bg-gray-100 text-gray-700'
+      default: return 'bg-secondary-100 text-secondary-700'
     }
   }
 
@@ -523,7 +527,7 @@ export default function CareerHubSection() {
               : 'Accelerate Your Professional Career'}
           </h2>
           
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto mb-8">
             {language === 'pt' 
               ? 'Conecte-se com oportunidades de emprego, mentores experientes e eventos de carreira específicos para estudantes portugueses no Reino Unido'
               : 'Connect with job opportunities, experienced mentors, and career events specifically for Portuguese students in the UK'}
@@ -533,19 +537,19 @@ export default function CareerHubSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
             <div className="bg-secondary-50 rounded-xl p-4">
               <div className="text-2xl font-bold text-secondary-600 mb-1">{CAREER_OPPORTUNITIES.length}</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Oportunidades ativas' : 'Active opportunities'}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Oportunidades ativas' : 'Active opportunities'}</div>
             </div>
             <div className="bg-premium-50 rounded-xl p-4">
               <div className="text-2xl font-bold text-premium-600 mb-1">{PROFESSIONAL_MENTORS.length}</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Mentores profissionais' : 'Professional mentors'}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Mentores profissionais' : 'Professional mentors'}</div>
             </div>
             <div className="bg-coral-50 rounded-xl p-4">
               <div className="text-2xl font-bold text-coral-600 mb-1">{CAREER_EVENTS.length}</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Eventos este mês' : 'Events this month'}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Eventos este mês' : 'Events this month'}</div>
             </div>
             <div className="bg-accent-50 rounded-xl p-4">
               <div className="text-2xl font-bold text-accent-600 mb-1">85%</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Taxa de sucesso' : 'Success rate'}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Taxa de sucesso' : 'Success rate'}</div>
             </div>
           </div>
         </motion.div>
@@ -573,10 +577,10 @@ export default function CareerHubSection() {
                 >
                   <div className="flex items-center justify-center mb-3">
                     <div className={`p-3 rounded-xl ${
-                      activeTab === tab.id ? 'bg-secondary-100' : 'bg-gray-100'
+                      activeTab === tab.id ? 'bg-secondary-100' : 'bg-secondary-100'
                     }`}>
                       <IconComponent className={`w-6 h-6 ${
-                        activeTab === tab.id ? 'text-secondary-600' : 'text-gray-600'
+                        activeTab === tab.id ? 'text-secondary-600' : 'text-secondary-600'
                       }`} />
                     </div>
                   </div>
@@ -585,7 +589,7 @@ export default function CareerHubSection() {
                   }`}>
                     {tab.label[language]}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {tab.description[language]}
                   </p>
                 </button>
@@ -601,13 +605,13 @@ export default function CareerHubSection() {
             <div className="mb-8 bg-gray-50 rounded-2xl p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === 'pt' ? 'Tipo:' : 'Type:'}
                   </label>
                   <select
                     value={selectedType}
                     onChange={(e) => setSelectedType(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
                   >
                     {typeFilters.map(filter => (
                       <option key={filter.value} value={filter.value}>
@@ -617,13 +621,13 @@ export default function CareerHubSection() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === 'pt' ? 'Indústria:' : 'Industry:'}
                   </label>
                   <select
                     value={selectedIndustry}
                     onChange={(e) => setSelectedIndustry(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
                   >
                     {industryFilters.map(filter => (
                       <option key={filter.value} value={filter.value}>
@@ -656,14 +660,14 @@ export default function CareerHubSection() {
                         <div className="flex items-center gap-2 mb-2">
                           <span className="font-semibold text-secondary-600">{opportunity.company}</span>
                           {opportunity.isPartnership && (
-                            <CheckBadgeIcon className="w-4 h-4 text-green-500" />
+                            <CheckBadgeIcon className="w-4 h-4 text-action-500" />
                           )}
                         </div>
                         <div className="flex items-center gap-2">
                           <span className={`text-xs px-2 py-1 rounded-full ${getTypeColor(opportunity.type)}`}>
                             {getTypeLabel(opportunity.type)}
                           </span>
-                          <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                          <span className="text-xs bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full">
                             {opportunity.industry}
                           </span>
                         </div>
@@ -671,7 +675,7 @@ export default function CareerHubSection() {
                     </div>
 
                     {/* Location & Details */}
-                    <div className="space-y-2 text-sm text-gray-600">
+                    <div className="space-y-2 text-sm text-secondary-600">
                       <div className="flex items-center">
                         <MapPinIcon className="w-4 h-4 mr-2" />
                         {opportunity.location}
@@ -696,7 +700,7 @@ export default function CareerHubSection() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                    <p className="text-secondary-600 text-sm mb-4 leading-relaxed line-clamp-3">
                       {language === 'pt' ? opportunity.descriptionPortuguese : opportunity.description}
                     </p>
 
@@ -722,8 +726,8 @@ export default function CareerHubSection() {
                       </h4>
                       <div className="space-y-1">
                         {opportunity.requirements.slice(0, 3).map((req, i) => (
-                          <div key={i} className="flex items-start text-xs text-gray-600">
-                            <CheckIcon className="w-3 h-3 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <div key={i} className="flex items-start text-xs text-secondary-600">
+                            <CheckIcon className="w-3 h-3 text-action-500 mr-2 mt-0.5 flex-shrink-0" />
                             {req}
                           </div>
                         ))}
@@ -742,7 +746,7 @@ export default function CareerHubSection() {
                       </h4>
                       <div className="flex flex-wrap gap-1">
                         {opportunity.skillsRequired.map((skill, i) => (
-                          <span key={i} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                          <span key={i} className="text-xs bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full">
                             {skill}
                           </span>
                         ))}
@@ -797,10 +801,10 @@ export default function CareerHubSection() {
                       <div className="flex items-center gap-2 mb-1">
                         <h3 className="font-bold text-lg text-gray-900">{mentor.name}</h3>
                         {mentor.isTopMentor && (
-                          <TrophyIcon className="w-4 h-4 text-yellow-500" />
+                          <TrophyIcon className="w-4 h-4 text-accent-500" />
                         )}
                       </div>
-                      <p className="text-sm text-gray-600 mb-1">{mentor.title}</p>
+                      <p className="text-sm text-secondary-600 mb-1">{mentor.title}</p>
                       <p className="text-sm font-medium text-secondary-600">{mentor.company}</p>
                     </div>
                   </div>
@@ -812,23 +816,23 @@ export default function CareerHubSection() {
                   <div className="grid grid-cols-3 gap-3 mb-4 text-center">
                     <div className="bg-gray-50 rounded-lg p-2">
                       <div className="text-lg font-bold text-gray-900">{mentor.experience}</div>
-                      <div className="text-xs text-gray-600">{language === 'pt' ? 'anos exp.' : 'years exp.'}</div>
+                      <div className="text-xs text-secondary-600">{language === 'pt' ? 'anos exp.' : 'years exp.'}</div>
                     </div>
                     <div className="bg-gray-50 rounded-lg p-2">
                       <div className="text-lg font-bold text-secondary-600">{mentor.successStories}</div>
-                      <div className="text-xs text-gray-600">{language === 'pt' ? 'sucessos' : 'successes'}</div>
+                      <div className="text-xs text-secondary-600">{language === 'pt' ? 'sucessos' : 'successes'}</div>
                     </div>
                     <div className="bg-gray-50 rounded-lg p-2">
                       <div className="flex items-center justify-center mb-1">
                         <StarIconSolid className="w-4 h-4 text-yellow-400 mr-1" />
                         <span className="text-lg font-bold text-gray-900">{mentor.rating}</span>
                       </div>
-                      <div className="text-xs text-gray-600">{language === 'pt' ? 'avaliação' : 'rating'}</div>
+                      <div className="text-xs text-secondary-600">{language === 'pt' ? 'avaliação' : 'rating'}</div>
                     </div>
                   </div>
 
                   {/* Bio */}
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-secondary-600 text-sm mb-4 leading-relaxed">
                     {language === 'pt' ? mentor.bioPortuguese : mentor.bio}
                   </p>
 
@@ -858,8 +862,8 @@ export default function CareerHubSection() {
                     </h4>
                     <div className="space-y-1">
                       {mentor.mentorshipType.slice(0, 3).map((type, i) => (
-                        <div key={i} className="flex items-center text-xs text-gray-600">
-                          <CheckIcon className="w-3 h-3 text-green-500 mr-2" />
+                        <div key={i} className="flex items-center text-xs text-secondary-600">
+                          <CheckIcon className="w-3 h-3 text-action-500 mr-2" />
                           {type.replace('_', ' ')}
                         </div>
                       ))}
@@ -868,7 +872,7 @@ export default function CareerHubSection() {
 
                   {/* Availability */}
                   <div className="mb-6">
-                    <div className="flex items-center text-sm text-gray-600">
+                    <div className="flex items-center text-sm text-secondary-600">
                       <ClockIcon className="w-4 h-4 mr-2" />
                       {language === 'pt' ? 'Disponibilidade:' : 'Available:'} {mentor.availability}
                     </div>
@@ -884,7 +888,7 @@ export default function CareerHubSection() {
                         href={mentor.linkedIn}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-3 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                        className="px-3 py-3 bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-colors"
                       >
                         <LinkIcon className="w-4 h-4" />
                       </a>
@@ -925,7 +929,7 @@ export default function CareerHubSection() {
                           </span>
                         )}
                         {event.isVirtual && (
-                          <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                          <span className="text-xs bg-blue-100 text-primary-700 px-2 py-1 rounded-full">
                             Virtual
                           </span>
                         )}
@@ -934,7 +938,7 @@ export default function CareerHubSection() {
                   </div>
 
                   {/* Event Details */}
-                  <div className="space-y-2 text-sm text-gray-600">
+                  <div className="space-y-2 text-sm text-secondary-600">
                     <div className="flex items-center">
                       <CalendarDaysIcon className="w-4 h-4 mr-2" />
                       {new Date(event.date).toLocaleDateString()} • {event.time}
@@ -952,7 +956,7 @@ export default function CareerHubSection() {
 
                 {/* Content */}
                 <div className="p-6">
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-secondary-600 text-sm mb-4 leading-relaxed">
                     {language === 'pt' ? event.descriptionPortuguese : event.description}
                   </p>
 
@@ -963,7 +967,7 @@ export default function CareerHubSection() {
                     </h4>
                     <div className="flex flex-wrap gap-1">
                       {event.topics.map((topic, i) => (
-                        <span key={i} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                        <span key={i} className="text-xs bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full">
                           {topic}
                         </span>
                       ))}
@@ -977,8 +981,8 @@ export default function CareerHubSection() {
                     </h4>
                     <div className="space-y-1">
                       {event.targetAudience.map((audience, i) => (
-                        <div key={i} className="flex items-center text-xs text-gray-600">
-                          <CheckIcon className="w-3 h-3 text-green-500 mr-2" />
+                        <div key={i} className="flex items-center text-xs text-secondary-600">
+                          <CheckIcon className="w-3 h-3 text-action-500 mr-2" />
                           {audience}
                         </div>
                       ))}
@@ -987,11 +991,11 @@ export default function CareerHubSection() {
 
                   {/* Registration */}
                   <div className="mb-4">
-                    <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
+                    <div className="flex items-center justify-between text-sm text-secondary-600 mb-2">
                       <span>{language === 'pt' ? 'Inscrições:' : 'Registered:'}</span>
                       <span>{event.registered}/{event.capacity}</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="w-full bg-secondary-200 rounded-full h-2">
                       <div 
                         className="bg-secondary-500 h-2 rounded-full" 
                         style={{ width: `${(event.registered / event.capacity) * 100}%` }}
@@ -1003,7 +1007,7 @@ export default function CareerHubSection() {
                   <div className="flex items-center justify-between mb-6">
                     <div>
                       {event.studentPrice === 0 ? (
-                        <span className="text-xl font-bold text-green-600">
+                        <span className="text-xl font-bold text-action-600">
                           {language === 'pt' ? 'Grátis' : 'Free'}
                         </span>
                       ) : (
@@ -1024,7 +1028,7 @@ export default function CareerHubSection() {
                   <button 
                     className={`w-full font-semibold py-3 px-4 rounded-xl transition-all duration-200 ${
                       event.registered >= event.capacity
-                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                        ? 'bg-secondary-100 text-gray-400 cursor-not-allowed'
                         : 'bg-gradient-to-r from-secondary-500 to-premium-500 text-white hover:from-secondary-600 hover:to-premium-600 shadow-lg hover:shadow-xl'
                     }`}
                     disabled={event.registered >= event.capacity}
@@ -1060,7 +1064,7 @@ export default function CareerHubSection() {
               : 'Join over 850 Portuguese students who are building successful careers through our exclusive professional network.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-secondary-600 font-bold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-secondary-600 font-bold px-8 py-3 rounded-xl hover:bg-secondary-100 transition-colors">
               {language === 'pt' ? 'Criar Perfil Profissional' : 'Create Professional Profile'}
             </button>
             <button className="border-2 border-white text-white hover:bg-white hover:text-secondary-600 font-bold px-8 py-3 rounded-xl transition-all duration-200">

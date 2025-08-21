@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ROUTES } from '@/config'
 import { 
   CheckCircleIcon, 
   DevicePhoneMobileIcon, 
@@ -63,13 +64,13 @@ export default function SignupSuccess() {
                 <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
                   Welcome to the <span className="gradient-text">Waitlist!</span>
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed mb-6">
+                <p className="text-xl text-secondary-600 leading-relaxed mb-6">
                   Your invitation request has been received. We're excited to welcome you to our community of amazing women!
                 </p>
                 
                 <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 border border-white/70">
                   <ClockIcon className="h-5 w-5 text-primary-400" />
-                  <span className="font-medium text-gray-700">You'll hear from us within 24-48 hours</span>
+                  <span className="font-medium text-secondary-700">You'll hear from us within 24-48 hours</span>
                 </div>
               </motion.div>
 
@@ -106,7 +107,7 @@ export default function SignupSuccess() {
                           <h3 className="text-lg font-semibold text-gray-900">{step.title}</h3>
                         </div>
                         
-                        <p className="text-gray-600 mb-4">{step.description}</p>
+                        <p className="text-secondary-600 mb-4">{step.description}</p>
                         
                         <div className="inline-flex items-center gap-1 bg-primary-50 rounded-full px-3 py-1 text-sm text-primary-600 font-medium">
                           <ClockIcon className="h-4 w-4" />
@@ -131,7 +132,7 @@ export default function SignupSuccess() {
                     Your Safety is Our Priority
                   </h3>
                 </div>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   Every member goes through our verification process to ensure a safe, authentic community. 
                   This creates the trusted environment where genuine friendships flourish.
                 </p>
@@ -145,7 +146,7 @@ export default function SignupSuccess() {
                 className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
               >
                 <a 
-                  href="/"
+                  href={ROUTES.home}
                   className="btn-outline text-base px-8 py-3"
                 >
                   Return to Homepage

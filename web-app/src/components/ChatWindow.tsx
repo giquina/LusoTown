@@ -110,7 +110,6 @@ export default function ChatWindow({
 
     socketManager.onUserTimeout((userId: string, duration: number) => {
       // Handle user timeout UI update
-      console.log(`User ${userId} timed out for ${duration} seconds`)
     })
 
     socketManager.onReactionAdded((messageId: string, emoji: string, userId: string) => {
@@ -285,7 +284,7 @@ export default function ChatWindow({
             )}
             
             {canModerate && (
-              <button className="p-1 text-gray-500 hover:text-gray-700 rounded-lg">
+              <button className="p-1 text-gray-500 hover:text-secondary-700 rounded-lg">
                 <Cog6ToothIcon className="w-4 h-4" />
               </button>
             )}
@@ -374,15 +373,15 @@ export default function ChatWindow({
                 onKeyPress={handleKeyPress}
                 placeholder={language === 'pt' ? 'Escreva uma mensagem...' : 'Type a message...'}
                 disabled={slowModeCountdown > 0}
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm 
+                className="flex-1 px-3 py-2 border border-secondary-300 rounded-lg text-sm 
                   focus:ring-2 focus:ring-primary-500 focus:border-transparent
-                  disabled:bg-gray-100 disabled:cursor-not-allowed"
+                  disabled:bg-secondary-100 disabled:cursor-not-allowed"
                 maxLength={500}
               />
               
               <button
                 onClick={() => setIsEmotePickerOpen(!isEmotePickerOpen)}
-                className="px-3 py-2 text-gray-500 hover:text-gray-700 rounded-lg hover:bg-gray-100 
+                className="px-3 py-2 text-gray-500 hover:text-secondary-700 rounded-lg hover:bg-secondary-100 
                   transition-colors"
                 type="button"
               >
@@ -421,14 +420,14 @@ export default function ChatWindow({
                     {REGIONAL_INDICATORS[currentUser.region].name}
                   </span>
                   {currentUser.isSubscriber && <Crown className="w-3 h-3 text-premium-600" />}
-                  {currentUser.isModerator && <Shield className="w-3 h-3 text-blue-600" />}
+                  {currentUser.isModerator && <Shield className="w-3 h-3 text-primary-600" />}
                 </div>
               )}
             </div>
           </div>
         ) : (
           <div className="text-center py-4">
-            <div className="text-sm text-gray-600 mb-2">
+            <div className="text-sm text-secondary-600 mb-2">
               {!currentUser ? (
                 language === 'pt' ? 'Faça login para participar no chat' : 'Sign in to participate in chat'
               ) : (

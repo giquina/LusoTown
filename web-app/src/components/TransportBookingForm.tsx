@@ -252,7 +252,7 @@ export default function TransportBookingForm({
               </div>
               <button
                 onClick={onClose}
-                className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100 transition-colors"
+                className="p-2 text-gray-400 hover:text-secondary-600 rounded-lg hover:bg-secondary-100 transition-colors"
               >
                 <XMarkIcon className="w-6 h-6" />
               </button>
@@ -266,11 +266,11 @@ export default function TransportBookingForm({
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-8"
                 >
-                  <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                  <CheckCircleIcon className="w-16 h-16 text-action-500 mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {isPortuguese ? 'Reserva Adicionada!' : 'Booking Added!'}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPortuguese 
                       ? 'O seu serviço foi adicionado ao carrinho. Pode finalizar a compra quando estiver pronto.'
                       : 'Your service has been added to the cart. You can complete checkout when ready.'
@@ -294,7 +294,7 @@ export default function TransportBookingForm({
                         
                         <div className="space-y-4">
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-secondary-700 mb-2">
                               <UserIcon className="w-4 h-4 inline mr-2" />
                               {isPortuguese ? 'Nome Completo *' : 'Full Name *'}
                             </label>
@@ -303,17 +303,17 @@ export default function TransportBookingForm({
                               value={formData.fullName}
                               onChange={(e) => handleInputChange('fullName', e.target.value)}
                               className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                                errors.fullName ? 'border-red-500' : 'border-gray-300'
+                                errors.fullName ? 'border-coral-500' : 'border-secondary-300'
                               }`}
                               placeholder={isPortuguese ? 'Seu nome completo' : 'Your full name'}
                             />
                             {errors.fullName && (
-                              <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
+                              <p className="text-coral-500 text-sm mt-1">{errors.fullName}</p>
                             )}
                           </div>
 
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-secondary-700 mb-2">
                               <EnvelopeIcon className="w-4 h-4 inline mr-2" />
                               {isPortuguese ? 'Email *' : 'Email *'}
                             </label>
@@ -322,17 +322,17 @@ export default function TransportBookingForm({
                               value={formData.email}
                               onChange={(e) => handleInputChange('email', e.target.value)}
                               className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                                errors.email ? 'border-red-500' : 'border-gray-300'
+                                errors.email ? 'border-coral-500' : 'border-secondary-300'
                               }`}
                               placeholder={isPortuguese ? 'seu.email@exemplo.com' : 'your.email@example.com'}
                             />
                             {errors.email && (
-                              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                              <p className="text-coral-500 text-sm mt-1">{errors.email}</p>
                             )}
                           </div>
 
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-secondary-700 mb-2">
                               <PhoneIcon className="w-4 h-4 inline mr-2" />
                               {isPortuguese ? 'Telefone *' : 'Phone Number *'}
                             </label>
@@ -341,12 +341,12 @@ export default function TransportBookingForm({
                               value={formData.phone}
                               onChange={(e) => handleInputChange('phone', e.target.value)}
                               className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                                errors.phone ? 'border-red-500' : 'border-gray-300'
+                                errors.phone ? 'border-coral-500' : 'border-secondary-300'
                               }`}
                               placeholder={isPortuguese ? '+44 7XXX XXX XXX' : '+44 7XXX XXX XXX'}
                             />
                             {errors.phone && (
-                              <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                              <p className="text-coral-500 text-sm mt-1">{errors.phone}</p>
                             )}
                           </div>
                         </div>
@@ -369,7 +369,7 @@ export default function TransportBookingForm({
                         
                         <div className="space-y-4">
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-secondary-700 mb-2">
                               <CalendarDaysIcon className="w-4 h-4 inline mr-2" />
                               {isPortuguese ? 'Data e Hora *' : 'Date & Time *'}
                             </label>
@@ -379,16 +379,16 @@ export default function TransportBookingForm({
                               onChange={(e) => handleInputChange('dateTime', e.target.value)}
                               min={new Date().toISOString().slice(0, 16)}
                               className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                                errors.dateTime ? 'border-red-500' : 'border-gray-300'
+                                errors.dateTime ? 'border-coral-500' : 'border-secondary-300'
                               }`}
                             />
                             {errors.dateTime && (
-                              <p className="text-red-500 text-sm mt-1">{errors.dateTime}</p>
+                              <p className="text-coral-500 text-sm mt-1">{errors.dateTime}</p>
                             )}
                           </div>
 
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-secondary-700 mb-2">
                               <MapPinIcon className="w-4 h-4 inline mr-2" />
                               {isPortuguese ? 'Local de Recolha *' : 'Pickup Location *'}
                             </label>
@@ -397,17 +397,17 @@ export default function TransportBookingForm({
                               value={formData.pickupLocation}
                               onChange={(e) => handleInputChange('pickupLocation', e.target.value)}
                               className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                                errors.pickupLocation ? 'border-red-500' : 'border-gray-300'
+                                errors.pickupLocation ? 'border-coral-500' : 'border-secondary-300'
                               }`}
                               placeholder={isPortuguese ? 'Hotel, aeroporto, endereço...' : 'Hotel, airport, address...'}
                             />
                             {errors.pickupLocation && (
-                              <p className="text-red-500 text-sm mt-1">{errors.pickupLocation}</p>
+                              <p className="text-coral-500 text-sm mt-1">{errors.pickupLocation}</p>
                             )}
                           </div>
 
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-secondary-700 mb-2">
                               <MapPinIcon className="w-4 h-4 inline mr-2" />
                               {isPortuguese ? 'Destinos *' : 'Destinations *'}
                             </label>
@@ -416,7 +416,7 @@ export default function TransportBookingForm({
                               onChange={(e) => handleInputChange('destinations', e.target.value)}
                               rows={3}
                               className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                                errors.destinations ? 'border-red-500' : 'border-gray-300'
+                                errors.destinations ? 'border-coral-500' : 'border-secondary-300'
                               }`}
                               placeholder={isPortuguese 
                                 ? 'Liste os destinos que gostaria de visitar...'
@@ -424,7 +424,7 @@ export default function TransportBookingForm({
                               }
                             />
                             {errors.destinations && (
-                              <p className="text-red-500 text-sm mt-1">{errors.destinations}</p>
+                              <p className="text-coral-500 text-sm mt-1">{errors.destinations}</p>
                             )}
                           </div>
                         </div>
@@ -447,13 +447,13 @@ export default function TransportBookingForm({
                         
                         <div className="space-y-4">
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-secondary-700 mb-2">
                               {isPortuguese ? 'Tipo de Evento' : 'Event Type'}
                             </label>
                             <select
                               value={formData.eventType}
                               onChange={(e) => handleInputChange('eventType', e.target.value)}
-                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                              className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                             >
                               <option value="">
                                 {isPortuguese ? 'Selecione o tipo de evento' : 'Select event type'}
@@ -467,14 +467,14 @@ export default function TransportBookingForm({
                           </div>
 
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-secondary-700 mb-2">
                               <ShieldCheckIcon className="w-4 h-4 inline mr-2" />
                               {isPortuguese ? 'Preferência de Segurança' : 'Security Preference'}
                             </label>
                             <select
                               value={formData.securityPreference}
                               onChange={(e) => handleInputChange('securityPreference', e.target.value)}
-                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                              className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                             >
                               {securityPreferences.map((pref) => (
                                 <option key={pref.value} value={pref.value}>
@@ -485,14 +485,14 @@ export default function TransportBookingForm({
                           </div>
 
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-secondary-700 mb-2">
                               {isPortuguese ? 'Notas Adicionais' : 'Additional Notes'}
                             </label>
                             <textarea
                               value={formData.additionalNotes}
                               onChange={(e) => handleInputChange('additionalNotes', e.target.value)}
                               rows={3}
-                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                              className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                               placeholder={isPortuguese 
                                 ? 'Quaisquer pedidos especiais ou informações adicionais...'
                                 : 'Any special requests or additional information...'
@@ -514,7 +514,7 @@ export default function TransportBookingForm({
                       {currentStep > 1 && (
                         <button
                           onClick={handlePrevious}
-                          className="flex items-center px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                          className="flex items-center px-4 py-2 text-secondary-600 border border-secondary-300 rounded-lg hover:bg-gray-50 transition-colors"
                         >
                           <ArrowLeftIcon className="w-4 h-4 mr-2" />
                           {isPortuguese ? 'Anterior' : 'Previous'}

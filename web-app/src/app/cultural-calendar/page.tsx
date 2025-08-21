@@ -326,7 +326,7 @@ export default function CulturalCalendarPage() {
                   placeholder="Search cultural events, festivals, or traditions..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-transparent text-lg"
+                  className="w-full pl-12 pr-4 py-4 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-transparent text-lg"
                 />
               </div>
               <button className="bg-premium-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-premium-700 transition-colors whitespace-nowrap">
@@ -340,7 +340,7 @@ export default function CulturalCalendarPage() {
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-premium-500 focus:border-transparent"
+                  className="px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-premium-500 focus:border-transparent"
                 >
                   {categories.map(category => (
                     <option key={category} value={category}>{category}</option>
@@ -350,14 +350,14 @@ export default function CulturalCalendarPage() {
                 <select
                   value={selectedMonth}
                   onChange={(e) => setSelectedMonth(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-premium-500 focus:border-transparent"
+                  className="px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-premium-500 focus:border-transparent"
                 >
                   {months.map(month => (
                     <option key={month} value={month}>{month}</option>
                   ))}
                 </select>
 
-                <label className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                <label className="flex items-center gap-2 px-4 py-2 border border-secondary-300 rounded-lg cursor-pointer hover:bg-gray-50">
                   <input
                     type="checkbox"
                     checked={showFreeOnly}
@@ -375,7 +375,7 @@ export default function CulturalCalendarPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     viewMode === 'grid' 
                       ? 'bg-premium-600 text-white' 
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                   }`}
                 >
                   Grid View
@@ -385,7 +385,7 @@ export default function CulturalCalendarPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     viewMode === 'list' 
                       ? 'bg-premium-600 text-white' 
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                   }`}
                 >
                   List View
@@ -399,7 +399,7 @@ export default function CulturalCalendarPage() {
       {/* Results Count */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="max-w-6xl mx-auto">
-          <p className="text-gray-600">
+          <p className="text-secondary-600">
             <span className="font-semibold text-gray-900">{filteredEvents.length}</span> cultural events found
             {searchQuery && <span> for "{searchQuery}"</span>}
           </p>
@@ -432,12 +432,12 @@ export default function CulturalCalendarPage() {
                         className={`p-2 rounded-lg transition-colors ${
                           savedEvents.includes(event.id)
                             ? 'bg-premium-600 text-white'
-                            : 'bg-white/80 text-gray-600 hover:bg-white'
+                            : 'bg-white/80 text-secondary-600 hover:bg-white'
                         }`}
                       >
                         <HeartIcon className="w-5 h-5" />
                       </button>
-                      <button className="p-2 rounded-lg bg-white/80 text-gray-600 hover:bg-white transition-colors">
+                      <button className="p-2 rounded-lg bg-white/80 text-secondary-600 hover:bg-white transition-colors">
                         <ShareIcon className="w-5 h-5" />
                       </button>
                     </div>
@@ -457,13 +457,13 @@ export default function CulturalCalendarPage() {
                     <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">{event.title}</h3>
 
                     {/* Date and Time */}
-                    <div className="flex items-center gap-4 mb-3 text-sm text-gray-600">
+                    <div className="flex items-center gap-4 mb-3 text-sm text-secondary-600">
                       <div className="flex items-center gap-1">
                         <CalendarDaysIcon className="w-4 h-4" />
                         <span>{formatDate(event.date)}</span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4 mb-3 text-sm text-gray-600">
+                    <div className="flex items-center gap-4 mb-3 text-sm text-secondary-600">
                       <div className="flex items-center gap-1">
                         <ClockIcon className="w-4 h-4" />
                         <span>{event.time}</span>
@@ -471,13 +471,13 @@ export default function CulturalCalendarPage() {
                     </div>
 
                     {/* Location */}
-                    <div className="flex items-center gap-1 text-sm text-gray-600 mb-4">
+                    <div className="flex items-center gap-1 text-sm text-secondary-600 mb-4">
                       <MapPinIcon className="w-4 h-4" />
                       <span>{event.location}</span>
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-700 text-sm leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-secondary-700 text-sm leading-relaxed mb-4 line-clamp-3">
                       {event.description}
                     </p>
 
@@ -491,13 +491,13 @@ export default function CulturalCalendarPage() {
                     </div>
 
                     {/* Event Stats */}
-                    <div className="flex items-center justify-between mb-4 text-sm text-gray-600">
+                    <div className="flex items-center justify-between mb-4 text-sm text-secondary-600">
                       <div className="flex items-center gap-1">
                         <UserGroupIcon className="w-4 h-4" />
                         <span>{event.attendees}/{event.maxAttendees}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <StarIcon className="w-4 h-4 text-yellow-500 fill-current" />
+                        <StarIcon className="w-4 h-4 text-accent-500 fill-current" />
                         <span>{event.rating} ({event.reviews})</span>
                       </div>
                     </div>
@@ -539,7 +539,7 @@ export default function CulturalCalendarPage() {
                             </span>
                           )}
                           <h3 className="text-xl font-bold text-gray-900 mb-2">{event.title}</h3>
-                          <div className="flex flex-wrap items-center gap-4 mb-3 text-sm text-gray-600">
+                          <div className="flex flex-wrap items-center gap-4 mb-3 text-sm text-secondary-600">
                             <div className="flex items-center gap-1">
                               <CalendarDaysIcon className="w-4 h-4" />
                               <span>{formatDate(event.date)}</span>
@@ -553,7 +553,7 @@ export default function CulturalCalendarPage() {
                               <span>{event.location}</span>
                             </div>
                           </div>
-                          <p className="text-gray-700 mb-3">{event.description}</p>
+                          <p className="text-secondary-700 mb-3">{event.description}</p>
                           <div className="flex flex-wrap gap-2">
                             {event.tags.slice(0, 4).map((tag, idx) => (
                               <span key={idx} className="bg-premium-100 text-premium-700 px-2 py-1 rounded-full text-xs">
@@ -567,7 +567,7 @@ export default function CulturalCalendarPage() {
                         <div className="flex lg:flex-col items-start lg:items-end gap-4">
                           <div className="text-right">
                             <div className="text-xl font-bold text-premium-600 mb-1">{event.price}</div>
-                            <div className="text-sm text-gray-600">{event.attendees}/{event.maxAttendees} attending</div>
+                            <div className="text-sm text-secondary-600">{event.attendees}/{event.maxAttendees} attending</div>
                           </div>
                           <div className="flex gap-2">
                             <button
@@ -575,7 +575,7 @@ export default function CulturalCalendarPage() {
                               className={`p-2 rounded-lg transition-colors ${
                                 savedEvents.includes(event.id)
                                   ? 'bg-premium-100 text-premium-600'
-                                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                  : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                               }`}
                             >
                               <HeartIcon className="w-5 h-5" />
@@ -597,7 +597,7 @@ export default function CulturalCalendarPage() {
             <div className="text-center py-12">
               <CalendarDaysIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">No cultural events found</h3>
-              <p className="text-gray-600">Try adjusting your search criteria or browse all categories</p>
+              <p className="text-secondary-600">Try adjusting your search criteria or browse all categories</p>
             </div>
           )}
         </div>
@@ -610,7 +610,7 @@ export default function CulturalCalendarPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Organizing a Portuguese Cultural Event?
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-secondary-600 mb-8">
               Share your event with the Portuguese community in London and help preserve our culture
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

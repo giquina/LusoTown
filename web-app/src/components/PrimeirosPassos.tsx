@@ -271,7 +271,7 @@ export default function PrimeirosPassos({ isOpen, onClose, onComplete }: Primeir
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   {language === 'pt' ? 'Bem-vindo à LusoTown!' : 'Welcome to LusoTown!'}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {language === 'pt' 
                     ? 'Está tudo pronto! Vamos explorar a sua comunidade portuguesa.'
                     : 'You\'re all set! Let\'s explore your Portuguese community.'
@@ -294,7 +294,7 @@ export default function PrimeirosPassos({ isOpen, onClose, onComplete }: Primeir
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {language === 'pt' ? currentStepData.titlePt : currentStepData.titleEn}
                   </h3>
-                  <p className="text-gray-600 max-w-md mx-auto">
+                  <p className="text-secondary-600 max-w-md mx-auto">
                     {language === 'pt' ? currentStepData.descriptionPt : currentStepData.descriptionEn}
                   </p>
                 </div>
@@ -309,7 +309,7 @@ export default function PrimeirosPassos({ isOpen, onClose, onComplete }: Primeir
                           <h4 className="font-semibold text-gray-900">
                             {language === 'pt' ? 'Comunidade' : 'Community'}
                           </h4>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-secondary-600">
                             {language === 'pt' 
                               ? 'Conecte-se com portugueses'
                               : 'Connect with Portuguese speakers'
@@ -321,7 +321,7 @@ export default function PrimeirosPassos({ isOpen, onClose, onComplete }: Primeir
                           <h4 className="font-semibold text-gray-900">
                             {language === 'pt' ? 'Eventos' : 'Events'}
                           </h4>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-secondary-600">
                             {language === 'pt' 
                               ? 'Descubra atividades culturais'
                               : 'Discover cultural activities'
@@ -379,7 +379,7 @@ export default function PrimeirosPassos({ isOpen, onClose, onComplete }: Primeir
               <button
                 onClick={prevStep}
                 disabled={currentStep === 0}
-                className="flex items-center space-x-2 text-gray-500 hover:text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex items-center space-x-2 text-gray-500 hover:text-secondary-700 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <ArrowLeftIcon className="w-4 h-4" />
                 <span>{language === 'pt' ? 'Anterior' : 'Previous'}</span>

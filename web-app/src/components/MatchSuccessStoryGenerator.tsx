@@ -1,7 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { buildUnsplashUrl } from '@/config'
 import { motion, AnimatePresence } from 'framer-motion'
+import { buildUnsplashUrl } from '@/config'
 import {
   SparklesIcon,
   HeartIcon,
@@ -17,8 +19,11 @@ import {
   PlusIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon, StarIcon as StarSolidIcon } from '@heroicons/react/24/solid'
+import { buildUnsplashUrl } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { buildUnsplashUrl } from '@/config'
 import { useSubscription } from '@/context/SubscriptionContext'
+import { buildUnsplashUrl } from '@/config'
 
 interface MatchProfile {
   id: string
@@ -145,7 +150,7 @@ const mockSuccessStories: SuccessStory[] = [
     culturalElement: 'pastéis de nata',
     location: 'Borough Market',
     date: '2 days ago',
-    imageUrl: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=400&h=300&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('photo-1559925393-8be0ec4767c8?w=400&h=300&fit=crop&auto=format'),
     likes: 23,
     shares: 5,
     comments: 8,
@@ -163,7 +168,7 @@ const mockSuccessStories: SuccessStory[] = [
     culturalElement: 'fado music',
     location: 'Portuguese Cultural Centre',
     date: '1 week ago',
-    imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&auto=format'),
     likes: 45,
     shares: 12,
     comments: 15,
@@ -327,7 +332,7 @@ export default function MatchSuccessStoryGenerator({
               <ChatBubbleLeftRightIcon className="w-5 h-5 text-accent-500" />
               {isPortuguese ? 'Gerador de Histórias de Sucesso' : 'Success Story Generator'}
             </h2>
-            <p className="text-gray-600 text-sm">
+            <p className="text-secondary-600 text-sm">
               {isPortuguese 
                 ? 'Crie e partilhe momentos especiais com os seus matches portugueses'
                 : 'Create and share special moments with your Portuguese matches'
@@ -340,7 +345,7 @@ export default function MatchSuccessStoryGenerator({
             disabled={availableMatches.length === 0}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-colors ${
               availableMatches.length === 0
-                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                ? 'bg-secondary-100 text-gray-400 cursor-not-allowed'
                 : 'bg-gradient-to-r from-accent-500 to-coral-500 text-white hover:from-accent-600 hover:to-coral-600'
             }`}
           >
@@ -355,7 +360,7 @@ export default function MatchSuccessStoryGenerator({
             <div className="text-2xl font-bold text-accent-600 mb-1">
               {stories.length}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Histórias Criadas' : 'Stories Created'}
             </div>
           </div>
@@ -363,7 +368,7 @@ export default function MatchSuccessStoryGenerator({
             <div className="text-2xl font-bold text-primary-600 mb-1">
               {stories.filter(s => s.isPublished).length}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Publicadas' : 'Published'}
             </div>
           </div>
@@ -371,7 +376,7 @@ export default function MatchSuccessStoryGenerator({
             <div className="text-2xl font-bold text-secondary-600 mb-1">
               {stories.reduce((sum, story) => sum + story.likes, 0)}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Gostos Totais' : 'Total Likes'}
             </div>
           </div>
@@ -403,13 +408,13 @@ export default function MatchSuccessStoryGenerator({
               <div className="space-y-6">
                 {/* Match Selection */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {isPortuguese ? 'Escolher Match' : 'Choose Match'}
                   </label>
                   <select
                     value={selectedMatch || ''}
                     onChange={(e) => setSelectedMatch(e.target.value || null)}
-                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-accent-500 focus:ring-accent-500"
+                    className="w-full rounded-lg border-secondary-300 shadow-sm focus:border-accent-500 focus:ring-accent-500"
                   >
                     <option value="">{isPortuguese ? 'Selecionar match...' : 'Select match...'}</option>
                     {availableMatches.map(match => (
@@ -422,7 +427,7 @@ export default function MatchSuccessStoryGenerator({
 
                 {/* Story Type */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {isPortuguese ? 'Tipo de História' : 'Story Type'}
                   </label>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -435,7 +440,7 @@ export default function MatchSuccessStoryGenerator({
                           className={`flex flex-col items-center p-3 rounded-lg border-2 transition-colors ${
                             storyType === type
                               ? 'border-accent-500 bg-accent-50'
-                              : 'border-gray-200 hover:border-gray-300'
+                              : 'border-gray-200 hover:border-secondary-300'
                           }`}
                         >
                           <IconComponent className="w-6 h-6 mb-2 text-accent-600" />
@@ -451,7 +456,7 @@ export default function MatchSuccessStoryGenerator({
                 {/* Customization Fields */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? 'Local (opcional)' : 'Location (optional)'}
                     </label>
                     <input
@@ -459,18 +464,18 @@ export default function MatchSuccessStoryGenerator({
                       value={customization.location}
                       onChange={(e) => setCustomization(prev => ({ ...prev, location: e.target.value }))}
                       placeholder={isPortuguese ? 'ex: Borough Market' : 'e.g. Borough Market'}
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-accent-500 focus:ring-accent-500"
+                      className="w-full rounded-lg border-secondary-300 shadow-sm focus:border-accent-500 focus:ring-accent-500"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? 'Elemento Cultural' : 'Cultural Element'}
                     </label>
                     <select
                       value={customization.culturalElement}
                       onChange={(e) => setCustomization(prev => ({ ...prev, culturalElement: e.target.value }))}
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-accent-500 focus:ring-accent-500"
+                      className="w-full rounded-lg border-secondary-300 shadow-sm focus:border-accent-500 focus:ring-accent-500"
                     >
                       <option value="">{isPortuguese ? 'Aleatório' : 'Random'}</option>
                       {culturalElements.map(element => (
@@ -482,7 +487,7 @@ export default function MatchSuccessStoryGenerator({
 
                 {storyType === 'event_together' && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? 'Nome do Evento' : 'Event Name'}
                     </label>
                     <input
@@ -490,13 +495,13 @@ export default function MatchSuccessStoryGenerator({
                       value={customization.eventName}
                       onChange={(e) => setCustomization(prev => ({ ...prev, eventName: e.target.value }))}
                       placeholder={isPortuguese ? 'ex: Noite de Fado' : 'e.g. Fado Night'}
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-accent-500 focus:ring-accent-500"
+                      className="w-full rounded-lg border-secondary-300 shadow-sm focus:border-accent-500 focus:ring-accent-500"
                     />
                   </div>
                 )}
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {isPortuguese ? 'Nota Pessoal (opcional)' : 'Personal Note (optional)'}
                   </label>
                   <textarea
@@ -504,7 +509,7 @@ export default function MatchSuccessStoryGenerator({
                     onChange={(e) => setCustomization(prev => ({ ...prev, personalNote: e.target.value }))}
                     placeholder={isPortuguese ? 'Adicione uma nota pessoal...' : 'Add a personal note...'}
                     rows={3}
-                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-accent-500 focus:ring-accent-500"
+                    className="w-full rounded-lg border-secondary-300 shadow-sm focus:border-accent-500 focus:ring-accent-500"
                   />
                 </div>
               </div>
@@ -513,7 +518,7 @@ export default function MatchSuccessStoryGenerator({
               <div className="flex gap-3 mt-8">
                 <button
                   onClick={() => setShowGenerator(false)}
-                  className="flex-1 bg-gray-100 text-gray-700 py-3 px-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+                  className="flex-1 bg-secondary-100 text-secondary-700 py-3 px-4 rounded-lg font-semibold hover:bg-secondary-200 transition-colors"
                 >
                   {isPortuguese ? 'Cancelar' : 'Cancel'}
                 </button>
@@ -567,7 +572,7 @@ export default function MatchSuccessStoryGenerator({
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">{story.title}</h3>
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
+                      <div className="flex items-center gap-2 text-sm text-secondary-600">
                         <span>{getStoryTypeLabel(story.type)}</span>
                         {match && (
                           <>
@@ -599,10 +604,10 @@ export default function MatchSuccessStoryGenerator({
                 </div>
 
                 {/* Story Content */}
-                <p className="text-gray-700 mb-4 leading-relaxed">{story.description}</p>
+                <p className="text-secondary-700 mb-4 leading-relaxed">{story.description}</p>
 
                 {/* Cultural Element & Location */}
-                <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                <div className="flex items-center gap-4 text-sm text-secondary-600 mb-4">
                   <div className="flex items-center gap-1">
                     <SparklesIcon className="w-4 h-4" />
                     {story.culturalElement}
@@ -633,18 +638,18 @@ export default function MatchSuccessStoryGenerator({
                   <div className="flex items-center gap-4">
                     <button 
                       onClick={() => handleLikeStory(story.id)}
-                      className="flex items-center gap-2 text-gray-600 hover:text-red-500 transition-colors"
+                      className="flex items-center gap-2 text-secondary-600 hover:text-coral-500 transition-colors"
                     >
-                      <HeartSolidIcon className="w-5 h-5 text-red-500" />
+                      <HeartSolidIcon className="w-5 h-5 text-coral-500" />
                       <span className="text-sm font-medium">{story.likes}</span>
                     </button>
                     
-                    <button className="flex items-center gap-2 text-gray-600 hover:text-primary-500 transition-colors">
+                    <button className="flex items-center gap-2 text-secondary-600 hover:text-primary-500 transition-colors">
                       <ChatBubbleLeftRightIcon className="w-5 h-5" />
                       <span className="text-sm font-medium">{story.comments}</span>
                     </button>
                     
-                    <button className="flex items-center gap-2 text-gray-600 hover:text-primary-500 transition-colors">
+                    <button className="flex items-center gap-2 text-secondary-600 hover:text-primary-500 transition-colors">
                       <ShareIcon className="w-5 h-5" />
                       <span className="text-sm font-medium">{story.shares}</span>
                     </button>
@@ -672,7 +677,7 @@ export default function MatchSuccessStoryGenerator({
           <h3 className="text-lg font-semibold text-gray-900 mb-2">
             {isPortuguese ? 'Nenhuma História Criada' : 'No Stories Created Yet'}
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-secondary-600 mb-6">
             {isPortuguese 
               ? 'Comece a documentar os seus momentos especiais com matches portugueses!'
               : 'Start documenting your special moments with Portuguese matches!'
@@ -683,7 +688,7 @@ export default function MatchSuccessStoryGenerator({
             disabled={availableMatches.length === 0}
             className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
               availableMatches.length === 0
-                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                ? 'bg-secondary-100 text-gray-400 cursor-not-allowed'
                 : 'bg-gradient-to-r from-accent-500 to-coral-500 text-white hover:from-accent-600 hover:to-coral-600'
             }`}
           >
@@ -700,7 +705,7 @@ export default function MatchSuccessStoryGenerator({
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {isPortuguese ? 'Histórias Premium' : 'Premium Stories'}
               </h3>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <ul className="text-sm text-secondary-600 space-y-1">
                 <li>• {isPortuguese ? 'Geração AI avançada' : 'Advanced AI generation'}</li>
                 <li>• {isPortuguese ? 'Templates culturais exclusivos' : 'Exclusive cultural templates'}</li>
                 <li>• {isPortuguese ? 'Álbum de fotos automático' : 'Automatic photo albums'}</li>

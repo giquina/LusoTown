@@ -1,3 +1,4 @@
+import { buildUnsplashUrl } from '@/config'
 /**
  * Profile Images Management System
  * Provides local image assets for profile photos with fallback support
@@ -319,10 +320,10 @@ export const imageSpecs = {
 // URLs to replace (for reference during migration)
 export const urlMappings = {
   // Testimonials original URLs mapped to new local images
-  'https://images.unsplash.com/photo-1494790108755-2616b612b1ac': 'sarah-chen',
-  'https://images.unsplash.com/photo-1580489944761-15a19d654956': 'maya-patel',
-  'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04': 'jessica-williams',
-  'https://images.unsplash.com/photo-1438761681033-6461ffad8d80': 'emma-johnson',
-  'https://images.unsplash.com/photo-1504703395950-b89145a5425b': 'priya-sharma',
-  'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f': 'lisa-thompson',
+  buildUnsplashUrl('photo-1494790108755-2616b612b1ac'): 'sarah-chen',
+  buildUnsplashUrl('photo-1580489944761-15a19d654956'): 'maya-patel',
+  buildUnsplashUrl('photo-1531746020798-e6953c6e8e04'): 'jessica-williams',
+  buildUnsplashUrl('photo-1438761681033-6461ffad8d80'): 'emma-johnson',
+  buildUnsplashUrl('photo-1504703395950-b89145a5425b'): 'priya-sharma',
+  buildUnsplashUrl('photo-1487412720507-e7ab37603c6f'): 'lisa-thompson',
 } as const

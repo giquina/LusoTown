@@ -355,7 +355,7 @@ export default function AcademyHomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+              className="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto"
             >
               {isPortuguese
                 ? "Guias interativos para dominar cada serviço da plataforma. Crie confiança antes de usar nossos serviços."
@@ -371,20 +371,20 @@ export default function AcademyHomePage() {
                 className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 max-w-md mx-auto mb-8 border border-white/40"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-medium text-gray-700">
+                  <span className="text-sm font-medium text-secondary-700">
                     {isPortuguese ? "Seu Progresso" : "Your Progress"}
                   </span>
                   <span className="text-sm font-bold text-primary-600">
                     {getCompletionPercentage()}%
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-secondary-200 rounded-full h-2">
                   <div
                     className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full transition-all duration-500"
                     style={{ width: `${getCompletionPercentage()}%` }}
                   ></div>
                 </div>
-                <p className="text-xs text-gray-600 mt-2">
+                <p className="text-xs text-secondary-600 mt-2">
                   {completedServices.length} {isPortuguese ? "de" : "of"}{" "}
                   {services.length}{" "}
                   {isPortuguese ? "serviços concluídos" : "services completed"}
@@ -424,7 +424,7 @@ export default function AcademyHomePage() {
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
                 {isPortuguese ? "Qual é o Seu Perfil?" : "What's Your Profile?"}
               </h2>
-              <p className="text-gray-600 max-w-3xl mx-auto">
+              <p className="text-secondary-600 max-w-3xl mx-auto">
                 {isPortuguese
                   ? "Escolha o seu perfil para receber um plano de aprendizado personalizado"
                   : "Choose your profile to get a personalized learning plan"}
@@ -454,7 +454,7 @@ export default function AcademyHomePage() {
                     {isPortuguese ? userType.namePortuguese : userType.name}
                   </h3>
 
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-secondary-600 mb-4 leading-relaxed">
                     {isPortuguese
                       ? userType.descriptionPortuguese
                       : userType.description}
@@ -487,7 +487,7 @@ export default function AcademyHomePage() {
                 ? "Todos os Serviços"
                 : "All Services"}
             </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+            <p className="text-secondary-600 max-w-3xl mx-auto">
               {selectedUserType
                 ? isPortuguese
                   ? "Serviços recomendados para o seu perfil"
@@ -521,10 +521,10 @@ export default function AcademyHomePage() {
                 <div className="p-8">
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-14 h-14 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <service.icon className="w-8 h-8 text-gray-600" />
+                      <service.icon className="w-8 h-8 text-secondary-600" />
                     </div>
                     {completedServices.includes(service.id) && (
-                      <CheckCircleIcon className="w-6 h-6 text-green-500" />
+                      <CheckCircleIcon className="w-6 h-6 text-action-500" />
                     )}
                   </div>
 
@@ -532,7 +532,7 @@ export default function AcademyHomePage() {
                     {isPortuguese ? service.namePortuguese : service.name}
                   </h3>
 
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-secondary-600 text-sm mb-4 leading-relaxed">
                     {isPortuguese
                       ? service.descriptionPortuguese
                       : service.description}
@@ -584,7 +584,7 @@ export default function AcademyHomePage() {
               <div className="text-2xl font-bold text-gray-900 mb-1">
                 {services.length}
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {isPortuguese ? "Guias de Serviços" : "Service Guides"}
               </div>
             </div>
@@ -596,7 +596,7 @@ export default function AcademyHomePage() {
               <div className="text-2xl font-bold text-gray-900 mb-1">
                 {services.reduce((acc, service) => acc + service.modules, 0)}
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {isPortuguese ? "Módulos Interativos" : "Interactive Modules"}
               </div>
             </div>
@@ -608,7 +608,7 @@ export default function AcademyHomePage() {
               <div className="text-2xl font-bold text-gray-900 mb-1">
                 {getCompletionPercentage()}%
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {isPortuguese ? "Concluído" : "Completed"}
               </div>
             </div>
@@ -620,7 +620,7 @@ export default function AcademyHomePage() {
               <div className="text-2xl font-bold text-gray-900 mb-1">
                 2,150+
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {isPortuguese ? "Estudantes Ativos" : "Active Learners"}
               </div>
             </div>

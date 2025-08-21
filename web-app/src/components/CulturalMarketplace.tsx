@@ -258,7 +258,7 @@ export default function CulturalMarketplace() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="py-12 bg-gray-900 text-white"
+          className="py-12 bg-secondary-900 text-white"
         >
           <div className="container-width">
             <h2 className="text-3xl font-bold text-center mb-12">
@@ -342,7 +342,7 @@ export default function CulturalMarketplace() {
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               {isPortuguese ? 'Categorias Culturais' : 'Cultural Categories'}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Explore produtos e serviços autênticos organizados por categoria cultural portuguesa'
                 : 'Explore authentic products and services organized by Portuguese cultural category'
@@ -379,7 +379,7 @@ export default function CulturalMarketplace() {
                     <h3 className="text-xl font-bold text-gray-900 group-hover:text-secondary-600 transition-colors">
                       {isPortuguese ? category.name : category.nameEn}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-secondary-600">
                       {category.productCount} {isPortuguese ? 'produtos' : 'products'}
                     </p>
                   </div>
@@ -387,10 +387,10 @@ export default function CulturalMarketplace() {
 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-secondary-600">
                       {isPortuguese ? 'Comissão Média:' : 'Avg Commission:'}
                     </span>
-                    <span className="text-sm font-bold text-green-600">
+                    <span className="text-sm font-bold text-action-600">
                       {category.avgCommission}%
                     </span>
                   </div>
@@ -416,7 +416,7 @@ export default function CulturalMarketplace() {
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               {isPortuguese ? 'Produtos em Destaque' : 'Featured Products'}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Produtos premium selecionados com autenticidade cultural verificada por especialistas portugueses'
                 : 'Premium products selected with cultural authenticity verified by Portuguese experts'
@@ -434,7 +434,7 @@ export default function CulturalMarketplace() {
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
                 <div className="relative">
-                  <div className="aspect-w-16 aspect-h-10 bg-gray-200 rounded-t-2xl">
+                  <div className="aspect-w-16 aspect-h-10 bg-secondary-200 rounded-t-2xl">
                     <div className="flex items-center justify-center h-48 bg-gradient-to-br from-secondary-100 to-accent-100">
                       <ShoppingBagIcon className="w-16 h-16 text-secondary-400" />
                     </div>
@@ -446,7 +446,7 @@ export default function CulturalMarketplace() {
                     className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-50 transition-colors"
                   >
                     {favorites.includes(product.id) ? (
-                      <HeartIconSolid className="w-5 h-5 text-red-500" />
+                      <HeartIconSolid className="w-5 h-5 text-coral-500" />
                     ) : (
                       <HeartIcon className="w-5 h-5 text-gray-400" />
                     )}
@@ -461,7 +461,7 @@ export default function CulturalMarketplace() {
 
                   {/* Discount Badge */}
                   {product.originalPrice && (
-                    <div className="absolute bottom-4 left-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                    <div className="absolute bottom-4 left-4 bg-coral-500 text-white text-xs font-bold px-2 py-1 rounded">
                       {Math.round((1 - product.price / product.originalPrice) * 100)}% OFF
                     </div>
                   )}
@@ -474,13 +474,13 @@ export default function CulturalMarketplace() {
                         {isPortuguese ? product.name : product.nameEn}
                       </h3>
                       
-                      <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                      <p className="text-secondary-600 text-sm mb-3 line-clamp-2">
                         {isPortuguese ? product.description : product.descriptionEn}
                       </p>
 
                       <div className="flex items-center gap-4 mb-3">
                         <div className="flex items-center gap-1">
-                          <StarIconSolid className="w-4 h-4 text-yellow-500" />
+                          <StarIconSolid className="w-4 h-4 text-accent-500" />
                           <span className="font-bold text-sm">{product.rating}</span>
                           <span className="text-gray-500 text-sm">({product.reviews})</span>
                         </div>
@@ -493,7 +493,7 @@ export default function CulturalMarketplace() {
                         </div>
                       </div>
 
-                      <div className="text-sm text-gray-600 mb-4">
+                      <div className="text-sm text-secondary-600 mb-4">
                         <div className="flex items-center gap-2 mb-1">
                           <MapPinIcon className="w-4 h-4" />
                           <span>{product.sellerLocation}</span>
@@ -511,7 +511,7 @@ export default function CulturalMarketplace() {
                     {(isPortuguese ? product.tags : product.tagsEn).slice(0, 3).map((tag, idx) => (
                       <span
                         key={idx}
-                        className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full"
+                        className="bg-secondary-100 text-secondary-700 text-xs px-2 py-1 rounded-full"
                       >
                         {tag}
                       </span>
@@ -531,7 +531,7 @@ export default function CulturalMarketplace() {
                           </span>
                         )}
                       </div>
-                      <div className="text-xs text-gray-600">
+                      <div className="text-xs text-secondary-600">
                         {isPortuguese ? 'Comissão' : 'Commission'}: {product.commissionRate}%
                       </div>
                     </div>
@@ -544,10 +544,10 @@ export default function CulturalMarketplace() {
                   {/* Stock Status */}
                   <div className="mt-4 pt-4 border-t border-gray-100">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-600">
+                      <span className="text-secondary-600">
                         {isPortuguese ? 'Em stock:' : 'In stock:'}
                       </span>
-                      <span className={`font-medium ${product.inStock > 10 ? 'text-green-600' : 'text-orange-600'}`}>
+                      <span className={`font-medium ${product.inStock > 10 ? 'text-action-600' : 'text-orange-600'}`}>
                         {product.inStock > 999 ? '' : product.inStock} {isPortuguese ? 'unidades' : 'units'}
                       </span>
                     </div>

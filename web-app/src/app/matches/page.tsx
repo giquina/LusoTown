@@ -627,7 +627,7 @@ function MatchesContent() {
           
           <div className="text-center mt-8">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-50 to-secondary-50 px-4 py-2 rounded-full border border-primary-200">
-              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <div className="w-3 h-3 bg-action-500 rounded-full animate-pulse"></div>
               <span className="text-sm font-medium text-primary-800">
                 {language === "pt" ? "260+ milhões de falantes unidos" : "260+ million speakers united"}
               </span>
@@ -654,7 +654,7 @@ function MatchesContent() {
             {/* Cultural Compatibility Highlight */}
             <div className="flex justify-center items-center gap-4 flex-wrap">
               <div className="flex items-center gap-2 bg-primary-100 px-4 py-2 rounded-full">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 bg-action-500 rounded-full animate-pulse"></div>
                 <span className="text-primary-800 text-sm font-medium">
                   {language === "pt"
                     ? "Compatibilidade Cultural"
@@ -852,13 +852,13 @@ function MatchesContent() {
 
                         <div className="grid grid-cols-2 gap-1.5 mb-3">
                           <div className="flex items-center gap-1.5 bg-white/60 p-1.5 rounded-lg">
-                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-action-500 rounded-full"></div>
                             <span className="text-xs font-medium text-secondary-700">
                               Language
                             </span>
                           </div>
                           <div className="flex items-center gap-1.5 bg-white/60 p-1.5 rounded-lg">
-                            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                             <span className="text-xs font-medium text-secondary-700">
                               Traditions
                             </span>
@@ -890,14 +890,14 @@ function MatchesContent() {
                                   key={idx}
                                   className="flex items-center gap-2"
                                 >
-                                  <CheckCircleIcon className="w-3 h-3 text-green-500 flex-shrink-0" />
+                                  <CheckCircleIcon className="w-3 h-3 text-action-500 flex-shrink-0" />
                                   <span className="text-xs text-secondary-700 truncate">
                                     {interest}
                                   </span>
                                 </div>
                               ))}
                             <div className="flex items-center gap-2">
-                              <MapPinIcon className="w-3 h-3 text-blue-500 flex-shrink-0" />
+                              <MapPinIcon className="w-3 h-3 text-primary-500 flex-shrink-0" />
                               <span className="text-xs text-secondary-700 truncate">
                                 Near: {currentProfile.location}
                               </span>
@@ -924,9 +924,9 @@ function MatchesContent() {
                 aria-label={language === "pt" ? "Passar" : "Skip"}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-red-50 to-orange-50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <XMarkIcon className="relative w-8 h-8 text-gray-600 group-hover:text-red-600 transition-colors duration-300" />
+                <XMarkIcon className="relative w-8 h-8 text-secondary-600 group-hover:text-coral-600 transition-colors duration-300" />
                 <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                  <span className="bg-secondary-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
                     {language === "pt" ? "Passar" : "Skip"}
                   </span>
                 </div>
@@ -941,7 +941,7 @@ function MatchesContent() {
                 <div className="absolute inset-0 bg-gradient-to-r from-action-600 via-secondary-600 to-accent-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <HeartIconSolid className="relative w-9 h-9 text-white animate-pulse" />
                 <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                  <span className="bg-secondary-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
                     {language === "pt" ? "Gostar" : "Like"}
                   </span>
                 </div>
@@ -960,7 +960,7 @@ function MatchesContent() {
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <StarIcon className="relative w-8 h-8 text-white" />
                   <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                    <span className="bg-secondary-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
                       Super Like
                     </span>
                   </div>
@@ -1056,7 +1056,7 @@ function MatchesContent() {
               {/* Match Quality Indicator */}
               <div className="bg-gradient-to-r from-green-50 to-green-100 p-3 rounded-xl mb-6 border border-green-200">
                 <div className="flex items-center justify-center gap-2 mb-1">
-                  <StarIconSolid className="w-5 h-5 text-green-600" />
+                  <StarIconSolid className="w-5 h-5 text-action-600" />
                   <span className="text-green-800 font-semibold text-sm">
                     {matchedProfile?.compatibility}%{" "}
                     {language === "pt" ? "Compatibilidade" : "Compatibility"}
@@ -1184,32 +1184,32 @@ function MatchesContent() {
               {/* Free Plan */}
               <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-md">
                 <div className="text-center mb-6">
-                  <div className="text-2xl font-bold text-gray-600 mb-2">FREE</div>
+                  <div className="text-2xl font-bold text-secondary-600 mb-2">FREE</div>
                   <div className="text-sm text-gray-500 mb-4">
                     {language === "pt" ? "Comece a conectar-se" : "Start connecting"}
                   </div>
                 </div>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "3 matches por dia" : "3 matches per day"}
                     </span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "10 mensagens por mês" : "10 messages per month"}
                     </span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "Filtros básicos" : "Basic filters"}
                     </span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "Eventos públicos" : "Public events"}
                     </span>
@@ -1217,7 +1217,7 @@ function MatchesContent() {
                 </ul>
                 <a
                   href={ROUTES.signup}
-                  className="w-full bg-gray-100 text-gray-700 py-3 rounded-xl font-medium text-center block hover:bg-gray-200 transition-colors"
+                  className="w-full bg-secondary-100 text-secondary-700 py-3 rounded-xl font-medium text-center block hover:bg-secondary-200 transition-colors"
                 >
                   {language === "pt" ? "Começar Grátis" : "Start Free"}
                 </a>
@@ -1240,31 +1240,31 @@ function MatchesContent() {
                 </div>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "Matches ilimitados" : "Unlimited matches"}
                     </span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "Mensagens ilimitadas" : "Unlimited messaging"}
                     </span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "Filtros culturais avançados" : "Advanced cultural filters"}
                     </span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "Eventos exclusivos" : "Exclusive events"}
                     </span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "Perfil em destaque" : "Featured profile"}
                     </span>
@@ -1290,31 +1290,31 @@ function MatchesContent() {
                 </div>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "Tudo do Comunidade +" : "Everything in Community +"}
                     </span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "Super Likes ilimitados" : "Unlimited Super Likes"}
                     </span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "Hospedar eventos" : "Host events"}
                     </span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "Badges VIP" : "VIP badges"}
                     </span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span className="text-sm">
                       {language === "pt" ? "Suporte prioritário" : "Priority support"}
                     </span>
@@ -1369,7 +1369,7 @@ function MatchesContent() {
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="text-center p-4 border border-gray-200 rounded-xl">
-                      <div className="text-2xl font-bold text-gray-600 mb-1">
+                      <div className="text-2xl font-bold text-secondary-600 mb-1">
                         FREE
                       </div>
                       <div className="text-sm text-gray-500 mb-2">
@@ -1377,7 +1377,7 @@ function MatchesContent() {
                       </div>
                       <a
                         href={ROUTES.signup}
-                        className="w-full inline-block text-center bg-gray-100 text-gray-600 py-2 rounded-lg text-sm font-medium"
+                        className="w-full inline-block text-center bg-secondary-100 text-secondary-600 py-2 rounded-lg text-sm font-medium"
                       >
                         {language === "pt" ? "Começar Grátis" : "Start Free"}
                       </a>
@@ -1480,7 +1480,7 @@ function MatchesContent() {
                 </h4>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span>
                       {language === "pt"
                         ? "Matches ilimitados diários"
@@ -1488,7 +1488,7 @@ function MatchesContent() {
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span>
                       {language === "pt"
                         ? "Mensagens ilimitadas"
@@ -1496,7 +1496,7 @@ function MatchesContent() {
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span>
                       {language === "pt"
                         ? "Filtros de compatibilidade cultural"
@@ -1504,7 +1504,7 @@ function MatchesContent() {
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <CheckCircleIcon className="w-4 h-4 text-action-600" />
                     <span>
                       {language === "pt"
                         ? "Acesso a todos os eventos"
@@ -1572,18 +1572,16 @@ export default function MatchesPage() {
             showGroupMatching={true}
             onMatchAction={(matchId, action) => {
               // Handle match actions (like, skip, super_like)
-              console.log(`Match action: ${action} on match ${matchId}`);
             }}
             onEventBooking={(eventId, matchId) => {
               // Handle event booking
-              console.log(
                 `Event ${eventId} booked${matchId ? ` with match ${matchId}` : ""}`
               );
             }}
           />
         </Suspense>
       </main>
-      <footer className="bg-gray-900 text-white py-8">
+      <footer className="bg-secondary-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400">© 2025 LusoTown. All rights reserved.</p>
         </div>

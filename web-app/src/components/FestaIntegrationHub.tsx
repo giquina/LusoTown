@@ -411,7 +411,7 @@ export default function FestaIntegrationHub() {
           <select
             value={filters.festaType}
             onChange={(e) => setFilters(prev => ({ ...prev, festaType: e.target.value }))}
-            className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
+            className="rounded-xl border-secondary-300 focus:border-secondary-500 focus:ring-secondary-500"
           >
             <option value="">{t('festa.filters.all_types', 'All Festa Types')}</option>
             {festaTypes.map(type => (
@@ -424,7 +424,7 @@ export default function FestaIntegrationHub() {
           <select
             value={filters.month}
             onChange={(e) => setFilters(prev => ({ ...prev, month: e.target.value }))}
-            className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
+            className="rounded-xl border-secondary-300 focus:border-secondary-500 focus:ring-secondary-500"
           >
             <option value="">{t('festa.filters.all_months', 'All Months')}</option>
             <option value="1">{t('months.january', 'January')}</option>
@@ -436,7 +436,7 @@ export default function FestaIntegrationHub() {
           <select
             value={filters.location}
             onChange={(e) => setFilters(prev => ({ ...prev, location: e.target.value }))}
-            className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
+            className="rounded-xl border-secondary-300 focus:border-secondary-500 focus:ring-secondary-500"
           >
             <option value="">{t('festa.filters.all_locations', 'All London Areas')}</option>
             <option value="central">Central London</option>
@@ -449,7 +449,7 @@ export default function FestaIntegrationHub() {
           <select
             value={filters.priceRange}
             onChange={(e) => setFilters(prev => ({ ...prev, priceRange: e.target.value }))}
-            className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
+            className="rounded-xl border-secondary-300 focus:border-secondary-500 focus:ring-secondary-500"
           >
             <option value="">{t('festa.filters.all_prices', 'All Price Ranges')}</option>
             <option value="free">{t('festa.filters.free', 'Free Events')}</option>
@@ -507,27 +507,27 @@ export default function FestaIntegrationHub() {
 
               {/* Event Details */}
               <div className="p-6">
-                <p className="text-gray-600 mb-4 line-clamp-2">
+                <p className="text-secondary-600 mb-4 line-clamp-2">
                   {language === 'pt' ? event.descriptionPt : event.descriptionEn}
                 </p>
 
                 {/* Event Info Grid */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-secondary-600">
                     <CalendarDaysIcon className="w-5 h-5 text-secondary-500" />
                     <span className="text-sm">
                       {new Date(event.date).toLocaleDateString(language === 'pt' ? 'pt-PT' : 'en-GB')}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-secondary-600">
                     <ClockIcon className="w-5 h-5 text-secondary-500" />
                     <span className="text-sm">{event.time}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-secondary-600">
                     <MapPinIcon className="w-5 h-5 text-secondary-500" />
                     <span className="text-sm">{event.location}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-secondary-600">
                     <UsersIcon className="w-5 h-5 text-secondary-500" />
                     <span className="text-sm">{event.currentAttendees}/{event.maxAttendees}</span>
                   </div>
@@ -548,7 +548,7 @@ export default function FestaIntegrationHub() {
                       </span>
                     ))}
                     {event.traditionalElements.length > 4 && (
-                      <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
+                      <span className="px-2 py-1 bg-secondary-100 text-secondary-600 rounded-full text-xs">
                         +{event.traditionalElements.length - 4}
                       </span>
                     )}
@@ -556,7 +556,7 @@ export default function FestaIntegrationHub() {
                 </div>
 
                 {/* Features Icons */}
-                <div className="flex items-center gap-4 mb-6 text-gray-600">
+                <div className="flex items-center gap-4 mb-6 text-secondary-600">
                   {event.familyFriendly && (
                     <div className="flex items-center gap-1">
                       <HeartIcon className="w-4 h-4" />
@@ -612,7 +612,7 @@ export default function FestaIntegrationHub() {
           <h2 className="text-3xl font-black text-gray-900 mb-4">
             {t('festa.planning.title', 'Organize Your Own Portuguese Festa')}
           </h2>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-secondary-700 mb-6">
             {t('festa.planning.subtitle', 'Bring the community together with authentic Portuguese celebrations. We provide tools, guidance, and support every step of the way.')}
           </p>
           <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
@@ -639,18 +639,18 @@ export default function FestaIntegrationHub() {
               <div className="flex justify-between items-start mb-6">
                 <div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2">{planning.eventName}</h4>
-                  <p className="text-gray-600">Organized by {planning.plannerName}</p>
+                  <p className="text-secondary-600">Organized by {planning.plannerName}</p>
                   <div className="flex items-center gap-2 mt-2">
                     <div className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      planning.status === 'planning' ? 'bg-blue-100 text-blue-700' :
+                      planning.status === 'planning' ? 'bg-blue-100 text-primary-700' :
                       planning.status === 'organizing' ? 'bg-yellow-100 text-yellow-700' :
                       planning.status === 'confirmed' ? 'bg-green-100 text-green-700' :
-                      'bg-gray-100 text-gray-700'
+                      'bg-secondary-100 text-secondary-700'
                     }`}>
                       {planning.status.replace('_', ' ').toUpperCase()}
                     </div>
                     <CalendarDaysIcon className="w-4 h-4 text-gray-400" />
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-secondary-600">
                       {new Date(planning.targetDate).toLocaleDateString()}
                     </span>
                   </div>
@@ -667,15 +667,15 @@ export default function FestaIntegrationHub() {
               <div className="grid grid-cols-3 gap-4 mb-6">
                 <div className="text-center p-3 bg-gray-50 rounded-xl">
                   <div className="text-lg font-bold text-gray-900">{planning.currentVolunteers}</div>
-                  <div className="text-xs text-gray-600">/ {planning.volunteersNeeded} Volunteers</div>
+                  <div className="text-xs text-secondary-600">/ {planning.volunteersNeeded} Volunteers</div>
                 </div>
                 <div className="text-center p-3 bg-gray-50 rounded-xl">
                   <div className="text-lg font-bold text-gray-900">£{planning.currentFunding}</div>
-                  <div className="text-xs text-gray-600">/ £{planning.fundingGoal} Budget</div>
+                  <div className="text-xs text-secondary-600">/ £{planning.fundingGoal} Budget</div>
                 </div>
                 <div className="text-center p-3 bg-gray-50 rounded-xl">
                   <div className="text-lg font-bold text-gray-900">{planning.estimatedAttendees}</div>
-                  <div className="text-xs text-gray-600">Expected</div>
+                  <div className="text-xs text-secondary-600">Expected</div>
                 </div>
               </div>
 
@@ -704,7 +704,7 @@ export default function FestaIntegrationHub() {
                 <div className="space-y-2">
                   {planning.updates.slice(0, 2).map((update, index) => (
                     <div key={index} className="text-sm">
-                      <p className="text-gray-700">{update.message}</p>
+                      <p className="text-secondary-700">{update.message}</p>
                       <p className="text-xs text-gray-500 mt-1">
                         {new Date(update.date).toLocaleDateString()} - {update.author}
                       </p>
@@ -763,7 +763,7 @@ export default function FestaIntegrationHub() {
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">{resource.title}</h4>
-                <p className="text-sm text-gray-600">{resource.desc}</p>
+                <p className="text-sm text-secondary-600">{resource.desc}</p>
               </div>
             )
           })}
@@ -790,7 +790,7 @@ export default function FestaIntegrationHub() {
         <h2 className="text-3xl font-black text-gray-900 mb-4">
           {t('festa.memories.title', 'Preserve Our Festa Memories')}
         </h2>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+        <p className="text-lg text-secondary-700 max-w-3xl mx-auto">
           {t('festa.memories.subtitle', 'Share photos, videos, and stories from Portuguese celebrations to create a living archive of our cultural heritage in London')}
         </p>
       </div>
@@ -804,7 +804,7 @@ export default function FestaIntegrationHub() {
           <h3 className="text-xl font-bold text-gray-900 mb-4">
             {t('festa.memories.upload', 'Share Your Festa Memories')}
           </h3>
-          <p className="text-gray-700 mb-6">
+          <p className="text-secondary-700 mb-6">
             {t('festa.memories.upload_desc', 'Help preserve Portuguese culture by sharing your authentic festa photos and videos with cultural context')}
           </p>
           <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
@@ -853,7 +853,7 @@ export default function FestaIntegrationHub() {
 
               {/* Authenticity Score */}
               <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-2 py-1 flex items-center gap-1">
-                <SparklesIcon className="w-3 h-3 text-yellow-500" />
+                <SparklesIcon className="w-3 h-3 text-accent-500" />
                 <span className="text-xs font-semibold">{media.authenticity}%</span>
               </div>
             </div>
@@ -861,7 +861,7 @@ export default function FestaIntegrationHub() {
             {/* Media Info */}
             <div className="p-6">
               <h4 className="font-bold text-gray-900 mb-2">{media.title}</h4>
-              <p className="text-gray-600 text-sm mb-4 line-clamp-2">{media.description}</p>
+              <p className="text-secondary-600 text-sm mb-4 line-clamp-2">{media.description}</p>
               
               <div className="text-xs text-gray-500 mb-4">
                 <p className="mb-1">{t('festa.memories.from', 'From')}: {media.eventName}</p>
@@ -882,13 +882,13 @@ export default function FestaIntegrationHub() {
                 {media.tags.slice(0, 3).map((tag) => (
                   <span
                     key={tag}
-                    className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs"
+                    className="px-2 py-1 bg-secondary-100 text-secondary-600 rounded-full text-xs"
                   >
                     #{tag}
                   </span>
                 ))}
                 {media.tags.length > 3 && (
-                  <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
+                  <span className="px-2 py-1 bg-secondary-100 text-secondary-600 rounded-full text-xs">
                     +{media.tags.length - 3}
                   </span>
                 )}
@@ -898,7 +898,7 @@ export default function FestaIntegrationHub() {
               <div className="flex items-center justify-between text-gray-500 text-sm">
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-1">
-                    <HeartSolid className="w-4 h-4 text-red-500" />
+                    <HeartSolid className="w-4 h-4 text-coral-500" />
                     <span>{media.likes}</span>
                   </div>
                   <div className="flex items-center gap-1">
@@ -922,19 +922,19 @@ export default function FestaIntegrationHub() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div>
             <div className="text-3xl font-black text-secondary-600 mb-2">1,247</div>
-            <div className="text-sm text-gray-600">{t('festa.memories.photos', 'Photos Shared')}</div>
+            <div className="text-sm text-secondary-600">{t('festa.memories.photos', 'Photos Shared')}</div>
           </div>
           <div>
             <div className="text-3xl font-black text-accent-600 mb-2">89</div>
-            <div className="text-sm text-gray-600">{t('festa.memories.videos', 'Videos Archived')}</div>
+            <div className="text-sm text-secondary-600">{t('festa.memories.videos', 'Videos Archived')}</div>
           </div>
           <div>
             <div className="text-3xl font-black text-coral-600 mb-2">156</div>
-            <div className="text-sm text-gray-600">{t('festa.memories.stories', 'Cultural Stories')}</div>
+            <div className="text-sm text-secondary-600">{t('festa.memories.stories', 'Cultural Stories')}</div>
           </div>
           <div>
             <div className="text-3xl font-black text-premium-600 mb-2">23</div>
-            <div className="text-sm text-gray-600">{t('festa.memories.events', 'Events Documented')}</div>
+            <div className="text-sm text-secondary-600">{t('festa.memories.events', 'Events Documented')}</div>
           </div>
         </div>
       </div>
@@ -950,7 +950,7 @@ export default function FestaIntegrationHub() {
           animate={{ opacity: 1, y: 0 }}
           className="inline-flex items-center gap-3 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-3xl px-6 py-3 mb-6"
         >
-          <FlagIcon className="w-5 h-5 text-green-600" />
+          <FlagIcon className="w-5 h-5 text-action-600" />
           <span className="font-semibold text-green-700">
             {t('festa.traditions.badge', 'Portuguese Heritage Guide')}
           </span>
@@ -959,7 +959,7 @@ export default function FestaIntegrationHub() {
         <h2 className="text-3xl font-black text-gray-900 mb-4">
           {t('festa.traditions.title', 'Learn Our Festa Traditions')}
         </h2>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+        <p className="text-lg text-secondary-700 max-w-3xl mx-auto">
           {t('festa.traditions.subtitle', 'Discover the deep cultural meanings, regional variations, and authentic ways to celebrate Portuguese festivals in London')}
         </p>
       </div>
@@ -1049,7 +1049,7 @@ export default function FestaIntegrationHub() {
                   {(() => {
                     const festaType = festaTypes.find(t => t.key === tradition.tradition)
                     return festaType ? (
-                      <span className="text-sm text-gray-600 flex items-center gap-1">
+                      <span className="text-sm text-secondary-600 flex items-center gap-1">
                         <span>{festaType.emoji}</span>
                         {festaType.nameEn}
                       </span>
@@ -1059,7 +1059,7 @@ export default function FestaIntegrationHub() {
               </div>
               <div className="text-right">
                 <div className="flex items-center gap-1 mb-1">
-                  <SparklesIcon className="w-4 h-4 text-yellow-500" />
+                  <SparklesIcon className="w-4 h-4 text-accent-500" />
                   <span className="font-semibold">{tradition.authenticity}%</span>
                 </div>
                 <p className="text-xs text-gray-500">{t('festa.traditions.authentic', 'Authentic')}</p>
@@ -1071,7 +1071,7 @@ export default function FestaIntegrationHub() {
               <h4 className="font-semibold text-gray-900 mb-2">
                 {t('festa.traditions.significance', 'Cultural Significance')}
               </h4>
-              <p className="text-gray-700 text-sm">
+              <p className="text-secondary-700 text-sm">
                 {language === 'pt' ? tradition.significancePt : tradition.significance}
               </p>
             </div>
@@ -1081,7 +1081,7 @@ export default function FestaIntegrationHub() {
               <h4 className="font-semibold text-gray-900 mb-2">
                 {t('festa.traditions.how_to', 'How to Celebrate')}
               </h4>
-              <p className="text-gray-700 text-sm">
+              <p className="text-secondary-700 text-sm">
                 {language === 'pt' ? tradition.howToPt : tradition.howTo}
               </p>
             </div>
@@ -1091,7 +1091,7 @@ export default function FestaIntegrationHub() {
               <h4 className="font-semibold text-blue-900 mb-2">
                 {t('festa.traditions.london_adaptation', 'London Adaptation')}
               </h4>
-              <p className="text-blue-700 text-sm">{tradition.londonAdaptation}</p>
+              <p className="text-primary-700 text-sm">{tradition.londonAdaptation}</p>
             </div>
 
             {/* Materials Needed */}
@@ -1113,7 +1113,7 @@ export default function FestaIntegrationHub() {
 
             {/* Difficulty and Seasonality */}
             <div className="flex justify-between items-center">
-              <div className="flex items-center gap-4 text-sm text-gray-600">
+              <div className="flex items-center gap-4 text-sm text-secondary-600">
                 <div className="flex items-center gap-1">
                   <StarIcon className="w-4 h-4" />
                   <span>{tradition.difficulty}</span>
@@ -1194,7 +1194,7 @@ export default function FestaIntegrationHub() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto"
+            className="text-xl sm:text-2xl text-secondary-700 max-w-4xl mx-auto"
           >
             {t('festa.subtitle', 'Discover, plan, and preserve authentic Portuguese celebrations with comprehensive festa integration tools and community collaboration features')}
           </motion.p>
@@ -1218,7 +1218,7 @@ export default function FestaIntegrationHub() {
                     className={`flex items-center gap-2 px-4 py-3 rounded-xl font-semibold transition-all text-sm ${
                       activeTab === tab.key
                         ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg'
-                        : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                        : 'text-secondary-600 hover:text-secondary-800 hover:bg-gray-50'
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -1268,13 +1268,13 @@ export default function FestaIntegrationHub() {
                     <h3 className="text-3xl font-bold text-gray-900 mb-2">
                       {language === 'pt' ? selectedEvent.namePt : selectedEvent.nameEn}
                     </h3>
-                    <p className="text-gray-600 text-lg">
+                    <p className="text-secondary-600 text-lg">
                       {language === 'pt' ? selectedEvent.descriptionPt : selectedEvent.descriptionEn}
                     </p>
                   </div>
                   <button
                     onClick={() => setSelectedEvent(null)}
-                    className="text-gray-400 hover:text-gray-600 text-2xl"
+                    className="text-gray-400 hover:text-secondary-600 text-2xl"
                   >
                     ×
                   </button>

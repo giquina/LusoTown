@@ -55,7 +55,7 @@ export default function CulturalPhotoGallery({
   const getCategoryColor = (color: string) => {
     const colors = {
       emerald: 'bg-emerald-100 text-emerald-700 border-emerald-200',
-      blue: 'bg-blue-100 text-blue-700 border-blue-200',
+      blue: 'bg-blue-100 text-primary-700 border-blue-200',
       orange: 'bg-orange-100 text-orange-700 border-orange-200',
       purple: 'bg-purple-100 text-purple-700 border-purple-200',
       pink: 'bg-pink-100 text-pink-700 border-pink-200',
@@ -75,7 +75,7 @@ export default function CulturalPhotoGallery({
       case 'rejected':
         return 'bg-red-100 text-red-700 border-red-200'
       default:
-        return 'bg-gray-100 text-gray-700 border-gray-200'
+        return 'bg-secondary-100 text-secondary-700 border-gray-200'
     }
   }
 
@@ -181,7 +181,7 @@ export default function CulturalPhotoGallery({
                 {currentPhoto.verificationStatus === 'verified' && (
                   <div className="bg-white bg-opacity-90 backdrop-blur-sm px-3 py-1 rounded-full">
                     <div className="flex items-center gap-1">
-                      <StarSolid className="w-4 h-4 text-yellow-500" />
+                      <StarSolid className="w-4 h-4 text-accent-500" />
                       <span className="text-sm font-bold text-gray-900">
                         {Math.round(currentPhoto.verificationScore)}%
                       </span>
@@ -240,7 +240,7 @@ export default function CulturalPhotoGallery({
                     className={`relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
                       index === currentIndex 
                         ? 'border-white scale-110' 
-                        : 'border-transparent hover:border-gray-300'
+                        : 'border-transparent hover:border-secondary-300'
                     }`}
                   >
                     <img
@@ -273,7 +273,7 @@ export default function CulturalPhotoGallery({
                     <ShieldCheckIcon className="w-5 h-5 text-emerald-600" />
                     {language === 'pt' ? 'Detalhes da Verificação' : 'Verification Details'}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-secondary-600 text-sm">
                     {language === 'pt' 
                       ? 'Análise cultural automática desta foto'
                       : 'Automated cultural analysis of this photo'
@@ -315,7 +315,7 @@ export default function CulturalPhotoGallery({
                               {language === 'pt' ? category.namePortuguese : category.name}
                             </span>
                           </div>
-                          <span className="text-sm font-medium text-gray-600">
+                          <span className="text-sm font-medium text-secondary-600">
                             {Math.round(category.confidence)}%
                           </span>
                         </div>
@@ -337,11 +337,11 @@ export default function CulturalPhotoGallery({
                             <span className="font-medium text-gray-900">
                               {language === 'pt' ? element.namePortuguese : element.name}
                             </span>
-                            <span className="text-sm font-medium text-gray-600">
+                            <span className="text-sm font-medium text-secondary-600">
                               {Math.round(element.confidence)}%
                             </span>
                           </div>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-secondary-600">
                             {language === 'pt' ? element.descriptionPortuguese : element.description}
                           </p>
                         </div>
@@ -364,11 +364,11 @@ export default function CulturalPhotoGallery({
                             <div className="font-medium text-gray-900">
                               {language === 'pt' ? badge.namePortuguese : badge.name}
                             </div>
-                            <div className="text-sm text-gray-600">
+                            <div className="text-sm text-secondary-600">
                               {language === 'pt' ? badge.descriptionPortuguese : badge.description}
                             </div>
                           </div>
-                          <div className="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded-full capitalize">
+                          <div className="text-xs bg-secondary-200 text-secondary-600 px-2 py-1 rounded-full capitalize">
                             {badge.rarity}
                           </div>
                         </div>
@@ -382,7 +382,7 @@ export default function CulturalPhotoGallery({
                   <h4 className="font-semibold text-gray-900 mb-2">
                     {language === 'pt' ? 'Informações da Foto' : 'Photo Information'}
                   </h4>
-                  <div className="space-y-2 text-sm text-gray-600">
+                  <div className="space-y-2 text-sm text-secondary-600">
                     <div className="flex justify-between">
                       <span>{language === 'pt' ? 'Carregada em:' : 'Uploaded:'}</span>
                       <span>{new Date(currentPhoto.uploadedAt).toLocaleDateString()}</span>

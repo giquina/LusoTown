@@ -79,14 +79,14 @@ export default function HowItWorks() {
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
                 How Portuguese <span className="gradient-text">Gatherings</span> Work
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-xl text-secondary-600 leading-relaxed mb-8">
                 Join 750+ Portuguese speakers (lusófonos) meeting in real places across London & UK. Unidos pela Língua - connected through language and culture.
               </p>
               
               <div className="bg-white rounded-2xl p-6 shadow-lg max-w-2xl mx-auto">
                 <div className="flex items-center justify-center gap-4 mb-4">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <p className="text-gray-600 font-medium">
+                  <div className="w-3 h-3 bg-action-500 rounded-full animate-pulse"></div>
+                  <p className="text-secondary-600 font-medium">
                     Real places, real people, real connections
                   </p>
                 </div>
@@ -125,7 +125,7 @@ export default function HowItWorks() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">
                     {s.title}
                   </h3>
-                  <p className="text-sm text-gray-600">{s.desc}</p>
+                  <p className="text-sm text-secondary-600">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -151,7 +151,7 @@ export default function HowItWorks() {
                         <feature.icon className="h-8 w-8 text-white" />
                       </div>
                       <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                      <p className="text-gray-600 mb-6">{feature.description}</p>
+                      <p className="text-secondary-600 mb-6">{feature.description}</p>
                     </div>
                     
                     <div className="lg:w-2/3">
@@ -160,7 +160,7 @@ export default function HowItWorks() {
                           {feature.details.map((detail, idx) => (
                             <li key={idx} className="flex items-start gap-3">
                               <CheckCircleIcon className="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-700">{detail}</span>
+                              <span className="text-secondary-700">{detail}</span>
                             </li>
                           ))}
                         </ul>
@@ -187,7 +187,7 @@ export default function HowItWorks() {
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   Real-Life Meetups in Detail
                 </h2>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-secondary-600">
                   How Portuguese speakers connect at real places across London & UK
                 </p>
               </div>
@@ -200,19 +200,19 @@ export default function HowItWorks() {
                       <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-primary-600 text-xs">1</span>
                       </div>
-                      <span className="text-gray-700">Browse events at real locations: gyms, galleries, restaurants, cultural venues</span>
+                      <span className="text-secondary-700">Browse events at real locations: gyms, galleries, restaurants, cultural venues</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-primary-600 text-xs">2</span>
                       </div>
-                      <span className="text-gray-700">See exact addresses, meeting times, and who's attending each event</span>
+                      <span className="text-secondary-700">See exact addresses, meeting times, and who's attending each event</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-primary-600 text-xs">3</span>
                       </div>
-                      <span className="text-gray-700">Filter by location, date, activity type to find Portuguese gatherings near you</span>
+                      <span className="text-secondary-700">Filter by location, date, activity type to find Portuguese gatherings near you</span>
                     </li>
                   </ul>
                 </div>
@@ -224,25 +224,25 @@ export default function HowItWorks() {
                       <div className="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         ✓
                       </div>
-                      <span className="text-gray-700">RSVP to confirm your attendance at real-life events</span>
+                      <span className="text-secondary-700">RSVP to confirm your attendance at real-life events</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         📍
                       </div>
-                      <span className="text-gray-700">Get exact location details and directions to venues</span>
+                      <span className="text-secondary-700">Get exact location details and directions to venues</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         👥
                       </div>
-                      <span className="text-gray-700">See other Portuguese speakers who'll be at the same event</span>
+                      <span className="text-secondary-700">See other Portuguese speakers who'll be at the same event</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         +
                       </div>
-                      <span className="text-gray-700">Create your own Portuguese gatherings at places you love</span>
+                      <span className="text-secondary-700">Create your own Portuguese gatherings at places you love</span>
                     </li>
                   </ul>
                 </div>
@@ -265,7 +265,7 @@ export default function HowItWorks() {
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   Your Favorites System
                 </h2>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-secondary-600">
                   Save events and locations for Portuguese speaker gatherings
                 </p>
               </div>
@@ -277,15 +277,15 @@ export default function HowItWorks() {
                       <HeartIcon className="w-8 h-8 text-gray-400" />
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">Save Real Events</h3>
-                    <p className="text-gray-600 text-sm">Click the heart icon on any Portuguese gathering or venue</p>
+                    <p className="text-secondary-600 text-sm">Click the heart icon on any Portuguese gathering or venue</p>
                   </div>
                   
                   <div className="text-center">
                     <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-                      <HeartIcon className="w-8 h-8 text-red-500 fill-current" />
+                      <HeartIcon className="w-8 h-8 text-coral-500 fill-current" />
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">Access Saved Events</h3>
-                    <p className="text-gray-600 text-sm">View all your saved real-life events from your favorites page</p>
+                    <p className="text-secondary-600 text-sm">View all your saved real-life events from your favorites page</p>
                   </div>
                   
                   <div className="text-center">
@@ -293,13 +293,13 @@ export default function HowItWorks() {
                       <ArrowRightIcon className="w-8 h-8 text-primary-600" />
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">Never Miss Meetups</h3>
-                    <p className="text-gray-600 text-sm">Get notified about similar events at your favorite locations</p>
+                    <p className="text-secondary-600 text-sm">Get notified about similar events at your favorite locations</p>
                   </div>
                 </div>
                 
                 <div className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-semibold text-gray-900 mb-3">How It Works:</h3>
-                  <ol className="list-decimal pl-5 space-y-2 text-gray-700">
+                  <ol className="list-decimal pl-5 space-y-2 text-secondary-700">
                     <li>When you see a real-life event you like, click the heart icon ❤️</li>
                     <li>The heart will fill with red to show the event is saved</li>
                     <li>Go to your profile and click "My Favourites" to see all saved events</li>
@@ -326,7 +326,7 @@ export default function HowItWorks() {
                   <h3 className="font-semibold text-gray-900 mb-2 text-lg">
                     Is it free?
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     Yes. Start free. Optional VIP upgrade for premium events.
                   </p>
                 </div>
@@ -334,7 +334,7 @@ export default function HowItWorks() {
                   <h3 className="font-semibold text-gray-900 mb-2 text-lg">
                     Language
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     English and Portuguese events available. Choose your
                     preference.
                   </p>
@@ -343,7 +343,7 @@ export default function HowItWorks() {
                   <h3 className="font-semibold text-gray-900 mb-2 text-lg">
                     Safety & verification
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     Selfie checks and guidelines keep events respectful and
                     safe.
                   </p>
@@ -373,7 +373,7 @@ export default function HowItWorks() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
                   href={ROUTES.events} 
-                  className="bg-white text-primary-600 hover:bg-gray-100 font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
+                  className="bg-white text-primary-600 hover:bg-secondary-100 font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
                 >
                   Browse Real Meetups
                   <ArrowRightIcon className="w-5 h-5" />

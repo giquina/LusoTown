@@ -110,7 +110,7 @@ export default function EventCard({
           <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
             {event.title}
           </h3>
-          <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+          <p className="text-secondary-600 mb-4 text-sm leading-relaxed">
             {event.description}
           </p>
 
@@ -147,7 +147,7 @@ export default function EventCard({
                     {statusMessages.secondary}
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-secondary-200 rounded-full h-2">
                   <div 
                     className="bg-gradient-to-r from-secondary-500 to-secondary-600 h-2 rounded-full transition-all duration-300"
                     style={{ width: `${(event.attendees / event.maxAttendees) * 100}%` }}
@@ -169,7 +169,7 @@ export default function EventCard({
                     {event.attendees}/{event.maxAttendees} attending
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-secondary-200 rounded-full h-2">
                   <div 
                     className="bg-gradient-to-r from-gray-500 to-gray-600 h-2 rounded-full transition-all duration-300"
                     style={{ width: `100%` }}

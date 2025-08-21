@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react'
+import { buildUnsplashUrl } from '@/config'
 
 // Networking types
 export interface Connection {
@@ -444,7 +445,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
           id: 'user-maria',
           firstName: 'Maria',
           lastName: 'Santos',
-          profilePictureUrl: 'https://images.unsplash.com/photo-1494790108755-2616b612b1ac?w=150&h=150&fit=crop&crop=face&auto=format',
+          profilePictureUrl: buildUnsplashUrl('photo-1494790108755-2616b612b1ac?w=150&h=150&fit=crop&crop=face&auto=format'),
           location: 'Camberwell, London',
           membershipTier: 'premium',
           isVerified: true
@@ -477,7 +478,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
           id: 'user-carlos',
           firstName: 'Carlos',
           lastName: 'Oliveira',
-          profilePictureUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format',
+          profilePictureUrl: buildUnsplashUrl('photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format'),
           location: 'Kennington, London',
           membershipTier: 'core',
           isVerified: false
@@ -510,7 +511,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
           id: 'user-ana',
           firstName: 'Ana',
           lastName: 'Pereira',
-          profilePictureUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face&auto=format',
+          profilePictureUrl: buildUnsplashUrl('photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face&auto=format'),
           location: 'Vauxhall, London',
           membershipTier: 'core',
           isVerified: true
@@ -705,13 +706,11 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
 
   const checkInToEvent = async (eventId: string) => {
     // Mock implementation - in real app would call API
-    console.log('Checking in to event:', eventId)
     // This would create potential connections with other attendees
   }
 
   const markEventAttended = async (eventId: string) => {
     // Mock implementation - in real app would call API
-    console.log('Marking event as attended:', eventId)
     // This would trigger connection creation logic
   }
 
@@ -729,7 +728,6 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
 
   const refreshStats = async () => {
     // Mock implementation - in real app would call API
-    console.log('Refreshing network stats')
   }
 
   const getConversationStarters = (category?: string) => {

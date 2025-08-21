@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from 'react';
+import { ROUTES } from '@/config'
 import { BellIcon } from '@heroicons/react/24/outline';
+import { ROUTES } from '@/config'
 import { motion, AnimatePresence } from 'framer-motion';
+import { ROUTES } from '@/config'
 
 interface NotificationBellProps {
   className?: string;
@@ -24,12 +27,12 @@ export default function NotificationBell({ className, showDropdown = false }: No
     <div className={`relative ${className}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative p-2 rounded-full text-gray-600 hover:bg-gray-100 hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors"
+        className="relative p-2 rounded-full text-secondary-600 hover:bg-secondary-100 hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors"
         aria-label="Notifications"
       >
         <BellIcon className="h-6 w-6" />
         {hasNotifications && (
-          <span className="absolute top-1 right-1 block h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-white" />
+          <span className="absolute top-1 right-1 block h-2.5 w-2.5 rounded-full bg-coral-500 ring-2 ring-white" />
         )}
       </button>
 
@@ -47,7 +50,7 @@ export default function NotificationBell({ className, showDropdown = false }: No
             <ul className="divide-y divide-gray-100 max-h-96 overflow-y-auto">
               {notifications.map(notification => (
                 <li key={notification.id} className={`p-4 hover:bg-gray-50 ${!notification.read ? 'bg-blue-50' : ''}`}>
-                  <p className="text-sm text-gray-800">{notification.message}</p>
+                  <p className="text-sm text-secondary-800">{notification.message}</p>
                   <p className="text-xs text-gray-500 mt-1">{notification.time}</p>
                 </li>
               ))}

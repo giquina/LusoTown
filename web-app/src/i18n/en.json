@@ -48,6 +48,81 @@
   "messaging.start_conversation": "Start Conversation",
   "messaging.safety_tip": "Keep conversations respectful and report any concerns",
   "messaging.conversation_starters_portuguese": "Portuguese Conversation Starters",
+  
+  "transport": {
+    "hero": {
+      "title": "Exclusive Portuguese Transport Services",
+      "subtitle": "Premium transport with Portuguese-speaking drivers across London",
+      "description": "SIA-compliant luxury transport designed for Portuguese speakers in London. Professional chauffeurs who understand your culture and needs.",
+      "cta_primary": "Book Transport",
+      "cta_secondary": "View Services"
+    },
+    "services": {
+      "premium_security": {
+        "name": "Premium Security",
+        "description": "Enhanced security with licensed protection officer for London-based operations (£400/day, 3-hour minimum)",
+        "feature_1": "Portuguese-speaking driver and security officer",
+        "feature_2": "Licensed trained security officer",
+        "feature_3": "Pre-trip threat assessment for London areas",
+        "feature_4": "Discreet close protection throughout London",
+        "feature_5": "Emergency response protocols",
+        "feature_6": "Security briefing and London route planning",
+        "feature_7": "London business district expertise",
+        "feature_8": "London venue security knowledge"
+      },
+      "vip_experience": {
+        "name": "VIP London Experience",
+        "description": "Ultimate VIP experience with full close protection team (£800/day, 4-hour minimum)",
+        "feature_1": "Full close protection team",
+        "feature_2": "VIP vehicle with enhanced security features",
+        "feature_3": "Advanced route planning and security protocols",
+        "feature_4": "Emergency response coordination",
+        "feature_5": "Luxury vehicle with privacy features",
+        "feature_6": "Personal security detail",
+        "feature_7": "Exclusive London venue access",
+        "feature_8": "24/7 emergency response team"
+      },
+      "luxury_tours": {
+        "name": "Luxury London Tours",
+        "description": "Luxury guided tours with Portuguese cultural perspective (£300/day, 4-hour minimum)",
+        "feature_1": "Portuguese-speaking cultural guide",
+        "feature_2": "Luxury vehicle with climate control",
+        "feature_3": "Customized Portuguese cultural tour routes",
+        "feature_4": "London historical Portuguese connections",
+        "feature_5": "Private group tours (up to 6 people)",
+        "feature_6": "Portuguese community insights",
+        "feature_7": "Cultural bridge building experiences",
+        "feature_8": "Authentic Portuguese dining recommendations"
+      }
+    },
+    "pricing": {
+      "from": "From",
+      "per_day": "per day",
+      "minimum_hours": "minimum hours",
+      "popular": "Popular",
+      "book_now": "Book Now",
+      "view_details": "View Details"
+    },
+    "benefits": {
+      "title": "Why Choose LusoTown Transport",
+      "portuguese_speakers": "Portuguese-Speaking Drivers",
+      "portuguese_speakers_desc": "All our drivers speak Portuguese and understand cultural nuances",
+      "sia_compliant": "SIA-Compliant Security",
+      "sia_compliant_desc": "Licensed security officers with professional training",
+      "london_expertise": "London Expertise",
+      "london_expertise_desc": "Deep knowledge of London's Portuguese community areas",
+      "cultural_understanding": "Cultural Understanding",
+      "cultural_understanding_desc": "Drivers who understand Portuguese customs and preferences"
+    },
+    "membership": {
+      "title": "Membership Discounts",
+      "subtitle": "Save more with LusoTown membership",
+      "free_tier": "Free members: Standard rates",
+      "community_tier": "Community members: 5% discount",
+      "ambassador_tier": "Ambassador members: 10% discount",
+      "upgrade_cta": "Upgrade Membership"
+    }
+  },
   "messaging.connect_through_culture": "Connect through Portuguese culture",
   "messaging.messaging_unlocked": "Messaging Unlocked!",
   "messaging.can_chat_with": "You can now chat with",

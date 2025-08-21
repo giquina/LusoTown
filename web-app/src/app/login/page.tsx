@@ -182,7 +182,7 @@ export default function Login() {
                       LusoTown
                     </span>
                   </div>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-secondary-600 mb-4">
                     {isPortuguese
                       ? "Entre na sua conta"
                       : "Sign in to your account"}
@@ -199,7 +199,7 @@ export default function Login() {
                       <span>London & UK</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <CheckBadgeIcon className="h-4 w-4 text-green-500" />
+                      <CheckBadgeIcon className="h-4 w-4 text-action-500" />
                       <span>{isPortuguese ? "Verificado" : "Verified"}</span>
                     </div>
                   </div>
@@ -216,13 +216,13 @@ export default function Login() {
                       : "Use these credentials to explore the platform:"}
                   </p>
                   <div className="bg-white p-3 rounded-lg mb-3 border">
-                    <div className="text-xs text-gray-600 mb-1">
+                    <div className="text-xs text-secondary-600 mb-1">
                       Email:{" "}
                       <span className="font-mono text-gray-900">
                         demo@example.com
                       </span>
                     </div>
-                    <div className="text-xs text-gray-600">
+                    <div className="text-xs text-secondary-600">
                       Password:{" "}
                       <span className="font-mono text-gray-900">
                         demo-password
@@ -265,7 +265,7 @@ export default function Login() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3"
                   >
-                    <ExclamationCircleIcon className="h-5 w-5 text-red-500 flex-shrink-0" />
+                    <ExclamationCircleIcon className="h-5 w-5 text-coral-500 flex-shrink-0" />
                     <p className="text-sm text-red-700">{error}</p>
                   </motion.div>
                 )}
@@ -275,7 +275,7 @@ export default function Login() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      className="block text-sm font-medium text-secondary-700 mb-2"
                     >
                       {isPortuguese ? "Email" : "Email Address"}
                     </label>
@@ -290,7 +290,7 @@ export default function Login() {
                           ? "border-red-300 focus:ring-red-400"
                           : formData.email && !emailError
                           ? "border-green-300 focus:ring-green-400"
-                          : "border-gray-300 focus:ring-primary-400"
+                          : "border-secondary-300 focus:ring-primary-400"
                       }`}
                       placeholder={
                         isPortuguese ? "seu@email.com" : "your@email.com"
@@ -300,10 +300,10 @@ export default function Login() {
                       required
                     />
                     {emailError && (
-                      <p className="mt-1 text-sm text-red-600">{emailError}</p>
+                      <p className="mt-1 text-sm text-coral-600">{emailError}</p>
                     )}
                     {formData.email && !emailError && (
-                      <p className="mt-1 text-sm text-green-600 flex items-center gap-1">
+                      <p className="mt-1 text-sm text-action-600 flex items-center gap-1">
                         <CheckBadgeIcon className="h-4 w-4" />
                         {isPortuguese ? "Email válido" : "Valid email address"}
                       </p>
@@ -313,7 +313,7 @@ export default function Login() {
                   <div>
                     <label
                       htmlFor="password"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      className="block text-sm font-medium text-secondary-700 mb-2"
                     >
                       {isPortuguese ? "Palavra-passe" : "Password"}
                     </label>
@@ -324,7 +324,7 @@ export default function Login() {
                         name="password"
                         value={formData.password}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 pr-10 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
                         placeholder={
                           isPortuguese
                             ? "Introduza a sua palavra-passe"
@@ -336,7 +336,7 @@ export default function Login() {
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                        className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-secondary-600"
                       >
                         {showPassword ? (
                           <EyeSlashIcon className="h-5 w-5" />
@@ -355,12 +355,12 @@ export default function Login() {
                         type="checkbox"
                         checked={rememberMe}
                         onChange={(e) => setRememberMe(e.target.checked)}
-                        className="h-4 w-4 text-primary-400 focus:ring-primary-400 border-gray-300 rounded"
+                        className="h-4 w-4 text-primary-400 focus:ring-primary-400 border-secondary-300 rounded"
                         disabled={isLoading}
                       />
                       <label
                         htmlFor="remember-me"
-                        className="ml-2 block text-sm text-gray-700"
+                        className="ml-2 block text-sm text-secondary-700"
                       >
                         {isPortuguese ? "Lembrar-me" : "Remember me"}
                       </label>
@@ -420,7 +420,7 @@ export default function Login() {
                     <SocialLogin mode="login" />
                   </div>
                   <div className="text-center mb-4">
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-secondary-600 text-sm">
                       {isPortuguese
                         ? "Não tem conta?"
                         : "Don't have an account?"}{" "}

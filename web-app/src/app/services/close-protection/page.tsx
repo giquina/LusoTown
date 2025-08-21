@@ -233,7 +233,7 @@ export default function CloseProtectionPage() {
                 )}
               </h1>
               
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto mb-8">
                 {isPortuguese
                   ? 'Operativos de proteção pessoal licenciados SIA com especialização cultural portuguesa, fornecendo segurança discreta e profissional para indivíduos e grupos de alto perfil.'
                   : 'SIA-licensed Close Protection Operatives with Portuguese cultural expertise, providing discrete and professional security for high-profile individuals and groups.'
@@ -270,25 +270,25 @@ export default function CloseProtectionPage() {
             >
               <div className="text-center">
                 <div className="text-3xl font-bold text-premium-600 mb-2">100+</div>
-                <div className="text-gray-600 text-sm">
+                <div className="text-secondary-600 text-sm">
                   {isPortuguese ? 'Operações Seguras' : 'Secure Operations'}
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-secondary-600 mb-2">0</div>
-                <div className="text-gray-600 text-sm">
+                <div className="text-secondary-600 text-sm">
                   {isPortuguese ? 'Incidentes de Segurança' : 'Security Incidents'}
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent-600 mb-2">24/7</div>
-                <div className="text-gray-600 text-sm">
+                <div className="text-secondary-600 text-sm">
                   {isPortuguese ? 'Disponibilidade' : 'Availability'}
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-action-600 mb-2">£10M+</div>
-                <div className="text-gray-600 text-sm">
+                <div className="text-secondary-600 text-sm">
                   {isPortuguese ? 'Cobertura de Seguro' : 'Insurance Coverage'}
                 </div>
               </div>
@@ -313,7 +313,7 @@ export default function CloseProtectionPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 {isPortuguese ? 'Nossa Metodologia de Excelência' : 'Our Excellence Methodology'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto mb-8">
                 {isPortuguese
                   ? 'O Framework dos 7 Ps define o padrão de ouro para serviços de proteção pessoal premium, garantindo excelência operacional em cada aspecto do nosso trabalho.'
                   : 'The 7 Ps Framework defines the gold standard for premium close protection services, ensuring operational excellence in every aspect of our work.'
@@ -336,7 +336,7 @@ export default function CloseProtectionPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {isPortuguese ? 'Pacotes de Proteção' : 'Protection Packages'}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Soluções de proteção personalizadas projetadas para diferentes necessidades e perfis de risco'
                 : 'Tailored protection solutions designed for different needs and risk profiles'
@@ -376,7 +376,7 @@ export default function CloseProtectionPage() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {isPortuguese ? pkg.namePortuguese : pkg.name}
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-secondary-600 mb-4">
                     {isPortuguese ? pkg.descriptionPortuguese : pkg.description}
                   </p>
                   <div className="flex items-center justify-center">
@@ -391,7 +391,7 @@ export default function CloseProtectionPage() {
                   {(isPortuguese ? pkg.featuresPortuguese : pkg.features).map((feature, idx) => (
                     <li key={idx} className="flex items-start">
                       <CheckCircleIcon className="w-5 h-5 text-premium-500 mt-0.5 mr-3 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-secondary-700">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -421,7 +421,7 @@ export default function CloseProtectionPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {isPortuguese ? 'Casos de Sucesso' : 'Success Stories'}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Operações de proteção bem-sucedidas demonstrando nossa excelência e expertise'
                 : 'Successful protection operations demonstrating our excellence and expertise'
@@ -463,7 +463,7 @@ export default function CloseProtectionPage() {
                     <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
                       {isPortuguese ? 'Desafio' : 'Challenge'}
                     </span>
-                    <p className="text-gray-700">
+                    <p className="text-secondary-700">
                       {isPortuguese ? study.challengePortuguese : study.challenge}
                     </p>
                   </div>
@@ -472,7 +472,7 @@ export default function CloseProtectionPage() {
                     <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
                       {isPortuguese ? 'Solução' : 'Solution'}
                     </span>
-                    <p className="text-gray-700">
+                    <p className="text-secondary-700">
                       {isPortuguese ? study.solutionPortuguese : study.solution}
                     </p>
                   </div>
@@ -481,7 +481,7 @@ export default function CloseProtectionPage() {
                     <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
                       {isPortuguese ? 'Resultado' : 'Result'}
                     </span>
-                    <p className="text-gray-700 font-medium">
+                    <p className="text-secondary-700 font-medium">
                       {isPortuguese ? study.resultPortuguese : study.result}
                     </p>
                   </div>

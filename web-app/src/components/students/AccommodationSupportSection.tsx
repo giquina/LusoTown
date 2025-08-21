@@ -455,12 +455,12 @@ export default function AccommodationSupportSection() {
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case 'shared_house': return 'bg-blue-100 text-blue-700'
+      case 'shared_house': return 'bg-blue-100 text-primary-700'
       case 'student_halls': return 'bg-green-100 text-green-700'
       case 'private_studio': return 'bg-purple-100 text-purple-700'
       case 'homestay': return 'bg-pink-100 text-pink-700'
       case 'flat_share': return 'bg-yellow-100 text-yellow-700'
-      default: return 'bg-gray-100 text-gray-700'
+      default: return 'bg-secondary-100 text-secondary-700'
     }
   }
 
@@ -496,7 +496,7 @@ export default function AccommodationSupportSection() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-blue-100 via-indigo-50 to-purple-100 border border-blue-200 shadow-lg mb-6">
-            <HomeIcon className="w-4 h-4 mr-2 text-blue-600" />
+            <HomeIcon className="w-4 h-4 mr-2 text-primary-600" />
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-bold">
               {language === 'pt' 
                 ? "Apoio de Alojamento para Estudantes Portugueses"
@@ -510,7 +510,7 @@ export default function AccommodationSupportSection() {
               : 'Find Your Home Away From Home'}
           </h2>
           
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto mb-8">
             {language === 'pt' 
               ? 'Apoio abrangente para encontrar alojamento em Londres, conectar-se com colegas portugueses e navegar no sistema de arrendamento do Reino Unido com confiança.'
               : 'Comprehensive support to find accommodation in London, connect with Portuguese housemates, and navigate the UK rental system with confidence.'}
@@ -519,20 +519,20 @@ export default function AccommodationSupportSection() {
           {/* Quick Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
             <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
-              <div className="text-2xl font-bold text-blue-600 mb-1">{ACCOMMODATION_LISTINGS.length}</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Listagens verificadas' : 'Verified listings'}</div>
+              <div className="text-2xl font-bold text-primary-600 mb-1">{ACCOMMODATION_LISTINGS.length}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Listagens verificadas' : 'Verified listings'}</div>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
               <div className="text-2xl font-bold text-indigo-600 mb-1">{ROOMMATE_REQUESTS.length}</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Estudantes procuram' : 'Students seeking'}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Estudantes procuram' : 'Students seeking'}</div>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
               <div className="text-2xl font-bold text-purple-600 mb-1">3</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Áreas portuguesas' : 'Portuguese areas'}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Áreas portuguesas' : 'Portuguese areas'}</div>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
               <div className="text-2xl font-bold text-pink-600 mb-1">24h</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Tempo de resposta' : 'Response time'}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Tempo de resposta' : 'Response time'}</div>
             </div>
           </div>
         </motion.div>
@@ -560,10 +560,10 @@ export default function AccommodationSupportSection() {
                 >
                   <div className="flex items-center justify-center mb-3">
                     <div className={`p-3 rounded-xl ${
-                      activeTab === tab.id ? 'bg-blue-100' : 'bg-gray-100'
+                      activeTab === tab.id ? 'bg-blue-100' : 'bg-secondary-100'
                     }`}>
                       <IconComponent className={`w-6 h-6 ${
-                        activeTab === tab.id ? 'text-blue-600' : 'text-gray-600'
+                        activeTab === tab.id ? 'text-primary-600' : 'text-secondary-600'
                       }`} />
                     </div>
                   </div>
@@ -572,7 +572,7 @@ export default function AccommodationSupportSection() {
                   }`}>
                     {tab.label[language]}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {tab.description[language]}
                   </p>
                 </button>
@@ -588,13 +588,13 @@ export default function AccommodationSupportSection() {
             <div className="mb-8 bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === 'pt' ? 'Área:' : 'Area:'}
                   </label>
                   <select
                     value={selectedArea}
                     onChange={(e) => setSelectedArea(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   >
                     {areas.map(area => (
                       <option key={area.value} value={area.value}>
@@ -604,26 +604,26 @@ export default function AccommodationSupportSection() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === 'pt' ? 'Renda mínima:' : 'Min rent:'}
                   </label>
                   <input
                     type="number"
                     value={priceRange.min}
                     onChange={(e) => setPriceRange({...priceRange, min: parseInt(e.target.value)})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     placeholder="£500"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === 'pt' ? 'Renda máxima:' : 'Max rent:'}
                   </label>
                   <input
                     type="number"
                     value={priceRange.max}
                     onChange={(e) => setPriceRange({...priceRange, max: parseInt(e.target.value)})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     placeholder="£1500"
                   />
                 </div>
@@ -658,7 +658,7 @@ export default function AccommodationSupportSection() {
                             </span>
                           )}
                           {listing.verified && (
-                            <CheckBadgeIcon className="w-4 h-4 text-blue-500" />
+                            <CheckBadgeIcon className="w-4 h-4 text-primary-500" />
                           )}
                         </div>
                       </div>
@@ -670,7 +670,7 @@ export default function AccommodationSupportSection() {
                     </div>
 
                     {/* Location & Price */}
-                    <div className="space-y-2 text-sm text-gray-600 mb-4">
+                    <div className="space-y-2 text-sm text-secondary-600 mb-4">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center">
                           <MapPinIcon className="w-4 h-4 mr-2" />
@@ -700,7 +700,7 @@ export default function AccommodationSupportSection() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                    <p className="text-secondary-600 text-sm mb-4 leading-relaxed line-clamp-3">
                       {language === 'pt' ? listing.descriptionPortuguese : listing.description}
                     </p>
 
@@ -711,12 +711,12 @@ export default function AccommodationSupportSection() {
                       </h4>
                       <div className="flex flex-wrap gap-1">
                         {listing.amenities.slice(0, 4).map((amenity, i) => (
-                          <span key={i} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                          <span key={i} className="text-xs bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full">
                             {amenity}
                           </span>
                         ))}
                         {listing.amenities.length > 4 && (
-                          <span className="text-xs text-blue-600">
+                          <span className="text-xs text-primary-600">
                             +{listing.amenities.length - 4} {language === 'pt' ? 'mais' : 'more'}
                           </span>
                         )}
@@ -730,7 +730,7 @@ export default function AccommodationSupportSection() {
                       </h4>
                       <div className="space-y-1">
                         {listing.nearbyUniversities.slice(0, 2).map((uni, i) => (
-                          <div key={i} className="text-xs text-gray-600">• {uni}</div>
+                          <div key={i} className="text-xs text-secondary-600">• {uni}</div>
                         ))}
                       </div>
                     </div>
@@ -743,7 +743,7 @@ export default function AccommodationSupportSection() {
                             <StarIconSolid key={i} className={`w-4 h-4 ${i < Math.floor(listing.rating) ? '' : 'text-gray-300'}`} />
                           ))}
                         </div>
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-secondary-600">
                           {listing.rating} ({listing.reviews} {language === 'pt' ? 'avaliações' : 'reviews'})
                         </span>
                       </div>
@@ -762,7 +762,7 @@ export default function AccommodationSupportSection() {
                       <button className="flex-1 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold py-3 px-4 rounded-xl hover:from-blue-600 hover:to-indigo-600 transition-all duration-200">
                         {language === 'pt' ? 'Ver Detalhes' : 'View Details'}
                       </button>
-                      <button className="px-4 py-3 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 transition-colors">
+                      <button className="px-4 py-3 bg-secondary-100 text-secondary-700 rounded-xl hover:bg-secondary-200 transition-colors">
                         <HeartIconSolid className="w-5 h-5" />
                       </button>
                     </div>
@@ -789,7 +789,7 @@ export default function AccommodationSupportSection() {
                 <div className="p-6 border-b border-gray-100">
                   <div className="flex items-start gap-4">
                     <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                      <span className="text-blue-600 font-bold text-xl">
+                      <span className="text-primary-600 font-bold text-xl">
                         {request.name.split(' ').map(n => n[0]).join('')}
                       </span>
                     </div>
@@ -797,13 +797,13 @@ export default function AccommodationSupportSection() {
                       <div className="flex items-center gap-2 mb-1">
                         <h3 className="font-bold text-lg text-gray-900">{request.name}</h3>
                         {request.verified && (
-                          <CheckBadgeIcon className="w-4 h-4 text-blue-500" />
+                          <CheckBadgeIcon className="w-4 h-4 text-primary-500" />
                         )}
                       </div>
-                      <p className="text-sm text-gray-600 mb-1">
+                      <p className="text-sm text-secondary-600 mb-1">
                         {request.age} {language === 'pt' ? 'anos' : 'years old'} • {request.course}, {request.yearOfStudy}
                       </p>
-                      <p className="text-sm font-medium text-blue-600">{request.university}</p>
+                      <p className="text-sm font-medium text-primary-600">{request.university}</p>
                     </div>
                   </div>
                 </div>
@@ -813,7 +813,7 @@ export default function AccommodationSupportSection() {
                   {/* Budget */}
                   <div className="mb-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-700">{language === 'pt' ? 'Orçamento:' : 'Budget:'}</span>
+                      <span className="text-sm font-medium text-secondary-700">{language === 'pt' ? 'Orçamento:' : 'Budget:'}</span>
                       <span className="text-lg font-bold text-gray-900">
                         £{request.budget.min} - £{request.budget.max}
                       </span>
@@ -821,7 +821,7 @@ export default function AccommodationSupportSection() {
                   </div>
 
                   {/* Bio */}
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-secondary-600 text-sm mb-4 leading-relaxed">
                     {language === 'pt' ? request.bioPortuguese : request.bio}
                   </p>
 
@@ -832,12 +832,12 @@ export default function AccommodationSupportSection() {
                     </h4>
                     <div className="flex flex-wrap gap-1">
                       {request.preferredAreas.slice(0, 3).map((area, i) => (
-                        <span key={i} className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                        <span key={i} className="text-xs bg-blue-100 text-primary-700 px-2 py-1 rounded-full">
                           {area}
                         </span>
                       ))}
                       {request.preferredAreas.length > 3 && (
-                        <span className="text-xs text-blue-600">
+                        <span className="text-xs text-primary-600">
                           +{request.preferredAreas.length - 3}
                         </span>
                       )}
@@ -851,7 +851,7 @@ export default function AccommodationSupportSection() {
                     </h4>
                     <div className="flex flex-wrap gap-1">
                       {request.lifestyle.slice(0, 3).map((trait, i) => (
-                        <span key={i} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                        <span key={i} className="text-xs bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full">
                           {trait.replace('_', ' ')}
                         </span>
                       ))}
@@ -862,16 +862,16 @@ export default function AccommodationSupportSection() {
                   <div className="grid grid-cols-2 gap-4 mb-4 text-center">
                     <div className="bg-gray-50 rounded-lg p-3">
                       <div className="text-lg font-bold text-gray-900">{request.responseRate}%</div>
-                      <div className="text-xs text-gray-600">{language === 'pt' ? 'Taxa resposta' : 'Response rate'}</div>
+                      <div className="text-xs text-secondary-600">{language === 'pt' ? 'Taxa resposta' : 'Response rate'}</div>
                     </div>
                     <div className="bg-gray-50 rounded-lg p-3">
                       <div className="text-sm font-bold text-gray-900">{request.lastActive}</div>
-                      <div className="text-xs text-gray-600">{language === 'pt' ? 'Última atividade' : 'Last active'}</div>
+                      <div className="text-xs text-secondary-600">{language === 'pt' ? 'Última atividade' : 'Last active'}</div>
                     </div>
                   </div>
 
                   {/* Available From */}
-                  <div className="mb-6 text-sm text-gray-600">
+                  <div className="mb-6 text-sm text-secondary-600">
                     <ClockIcon className="w-4 h-4 inline mr-2" />
                     {language === 'pt' ? 'Disponível a partir de:' : 'Available from:'} {new Date(request.availableFrom).toLocaleDateString()}
                   </div>
@@ -907,7 +907,7 @@ export default function AccommodationSupportSection() {
                   <div className="p-6">
                     <div className="flex items-start gap-4 mb-4">
                       <div className="p-3 bg-white rounded-xl shadow-sm">
-                        <IconComponent className="w-6 h-6 text-gray-700" />
+                        <IconComponent className="w-6 h-6 text-secondary-700" />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
@@ -933,7 +933,7 @@ export default function AccommodationSupportSection() {
                       </div>
                     </div>
                     
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-secondary-700 leading-relaxed">
                       {language === 'pt' ? tip.contentPortuguese : tip.content}
                     </p>
                   </div>
@@ -963,10 +963,10 @@ export default function AccommodationSupportSection() {
               : 'Our support team is available to help with viewings, negotiations, and legal questions. Specialized support for Portuguese students.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-primary-600 font-bold px-8 py-3 rounded-xl hover:bg-secondary-100 transition-colors">
               {language === 'pt' ? 'Falar com Especialista' : 'Speak to Specialist'}
             </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold px-8 py-3 rounded-xl transition-all duration-200">
+            <button className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold px-8 py-3 rounded-xl transition-all duration-200">
               {language === 'pt' ? 'Criar Alerta de Alojamento' : 'Create Housing Alert'}
             </button>
           </div>

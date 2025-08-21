@@ -424,7 +424,7 @@ Contact: {contact}
                 <SparklesIcon className="w-6 h-6 text-primary-500" />
                 {isPortuguese ? 'Criar Publicação da Comunidade' : 'Create Community Post'}
               </h3>
-              <p className="text-gray-600 mt-1">
+              <p className="text-secondary-600 mt-1">
                 {isPortuguese 
                   ? 'Partilhe conteúdo relevante para a comunidade portuguesa em Londres'
                   : 'Share content relevant to the Portuguese community in London'
@@ -433,7 +433,7 @@ Contact: {contact}
             </div>
             <button 
               onClick={onClose}
-              className="text-gray-500 hover:text-gray-700 p-2"
+              className="text-gray-500 hover:text-secondary-700 p-2"
             >
               <XMarkIcon className="w-6 h-6" />
             </button>
@@ -468,7 +468,7 @@ Contact: {contact}
                           <span className={`text-xs px-2 py-1 rounded-full ${
                             canUse 
                               ? 'bg-primary-100 text-primary-700'
-                              : 'bg-gray-200 text-gray-600'
+                              : 'bg-secondary-200 text-secondary-600'
                           }`}>
                             {template.requiredTier}
                           </span>
@@ -504,7 +504,7 @@ Contact: {contact}
                 </h4>
                 <button
                   onClick={() => setSelectedTemplate(null)}
-                  className="text-gray-500 hover:text-gray-700 text-sm"
+                  className="text-gray-500 hover:text-secondary-700 text-sm"
                 >
                   {isPortuguese ? 'Mudar modelo' : 'Change template'}
                 </button>
@@ -513,9 +513,9 @@ Contact: {contact}
               <div className="grid gap-4">
                 {selectedTemplate.fields.map((field, index) => (
                   <div key={index}>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-medium text-secondary-700 mb-1">
                       {field.label}
-                      {field.required && <span className="text-red-500">*</span>}
+                      {field.required && <span className="text-coral-500">*</span>}
                     </label>
                     
                     {field.type === 'textarea' ? (
@@ -525,7 +525,7 @@ Contact: {contact}
                           ...prev,
                           [field.label]: e.target.value
                         }))}
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                        className="w-full border border-secondary-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
                         rows={3}
                         required={field.required}
                       />
@@ -536,7 +536,7 @@ Contact: {contact}
                           ...prev,
                           [field.label]: e.target.value
                         }))}
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                        className="w-full border border-secondary-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
                         required={field.required}
                       >
                         <option value="">
@@ -554,7 +554,7 @@ Contact: {contact}
                           ...prev,
                           [field.label]: e.target.value
                         }))}
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                        className="w-full border border-secondary-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
                         required={field.required}
                       />
                     )}
@@ -567,7 +567,7 @@ Contact: {contact}
           {/* Content Input */}
           {!selectedTemplate && (
             <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? 'Conteúdo da Publicação' : 'Post Content'}
               </label>
               <textarea
@@ -577,7 +577,7 @@ Contact: {contact}
                   ? 'Partilhe algo relevante para a comunidade portuguesa em Londres...'
                   : 'Share something relevant to the Portuguese community in London...'
                 }
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-400 resize-none"
+                className="w-full border border-secondary-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-400 resize-none"
                 rows={6}
               />
             </div>
@@ -595,7 +595,7 @@ Contact: {contact}
                 {validation.issues.length > 0 && (
                   <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
                     <div className="flex items-center gap-2 mb-2">
-                      <ExclamationTriangleIcon className="w-5 h-5 text-red-600" />
+                      <ExclamationTriangleIcon className="w-5 h-5 text-coral-600" />
                       <h5 className="font-semibold text-red-800">
                         {isPortuguese ? 'Conteúdo Bloqueado' : 'Content Blocked'}
                       </h5>
@@ -611,12 +611,12 @@ Contact: {contact}
                 {validation.suggestions.length > 0 && (
                   <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                     <div className="flex items-center gap-2 mb-2">
-                      <InformationCircleIcon className="w-5 h-5 text-blue-600" />
+                      <InformationCircleIcon className="w-5 h-5 text-primary-600" />
                       <h5 className="font-semibold text-blue-800">
                         {isPortuguese ? 'Sugestões de Melhoria' : 'Improvement Suggestions'}
                       </h5>
                     </div>
-                    <ul className="text-sm text-blue-700 list-disc list-inside">
+                    <ul className="text-sm text-primary-700 list-disc list-inside">
                       {validation.suggestions.map((suggestion, index) => (
                         <li key={index}>{suggestion}</li>
                       ))}
@@ -648,7 +648,7 @@ Contact: {contact}
             
             <div className="flex items-center gap-3">
               {validation?.isValid && (
-                <div className="flex items-center gap-2 text-green-600">
+                <div className="flex items-center gap-2 text-action-600">
                   <CheckCircleIcon className="w-5 h-5" />
                   <span className="text-sm font-medium">
                     {isPortuguese ? 'Conteúdo aprovado' : 'Content approved'}
@@ -658,7 +658,7 @@ Contact: {contact}
               
               <button
                 onClick={onClose}
-                className="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+                className="px-4 py-2 text-secondary-700 bg-secondary-100 rounded-lg hover:bg-secondary-200 transition-colors"
               >
                 {isPortuguese ? 'Cancelar' : 'Cancel'}
               </button>

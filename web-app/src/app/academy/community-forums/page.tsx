@@ -55,8 +55,8 @@ const communityForumsModule = {
               <UserGroupIcon class="h-4 w-4" />
               Community Life
             </h5>
-            <p class="text-sm text-blue-700">Daily life, local recommendations, neighborhood discussions</p>
-            <ul class="text-xs text-blue-600 mt-2 list-disc list-inside">
+            <p class="text-sm text-primary-700">Daily life, local recommendations, neighborhood discussions</p>
+            <ul class="text-xs text-primary-600 mt-2 list-disc list-inside">
               <li>Housing and accommodation</li>
               <li>Local services and recommendations</li>
               <li>Cultural adaptation experiences</li>
@@ -69,7 +69,7 @@ const communityForumsModule = {
               Professional Network
             </h5>
             <p class="text-sm text-green-700">Career advice, job opportunities, business networking</p>
-            <ul class="text-xs text-green-600 mt-2 list-disc list-inside">
+            <ul class="text-xs text-action-600 mt-2 list-disc list-inside">
               <li>Job market insights</li>
               <li>Professional development</li>
               <li>Business opportunities</li>
@@ -126,8 +126,8 @@ const communityForumsModule = {
               <UserGroupIcon class="h-4 w-4" />
               Vida Comunitária
             </h5>
-            <p class="text-sm text-blue-700">Vida quotidiana, recomendações locais, discussões de bairro</p>
-            <ul class="text-xs text-blue-600 mt-2 list-disc list-inside">
+            <p class="text-sm text-primary-700">Vida quotidiana, recomendações locais, discussões de bairro</p>
+            <ul class="text-xs text-primary-600 mt-2 list-disc list-inside">
               <li>Habitação e alojamento</li>
               <li>Serviços locais e recomendações</li>
               <li>Experiências de adaptação cultural</li>
@@ -140,7 +140,7 @@ const communityForumsModule = {
               Rede Profissional
             </h5>
             <p class="text-sm text-green-700">Conselhos de carreira, oportunidades de emprego, networking empresarial</p>
-            <ul class="text-xs text-green-600 mt-2 list-disc list-inside">
+            <ul class="text-xs text-action-600 mt-2 list-disc list-inside">
               <li>Insights do mercado de trabalho</li>
               <li>Desenvolvimento profissional</li>
               <li>Oportunidades de negócio</li>
@@ -228,7 +228,7 @@ const communityForumsModule = {
         <h4>Cultural Communication Style</h4>
         <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-4">
           <h5 class="font-semibold text-blue-800">Portuguese Communication Values</h5>
-          <ul class="text-sm text-blue-700 mt-2 list-disc list-inside space-y-1">
+          <ul class="text-sm text-primary-700 mt-2 list-disc list-inside space-y-1">
             <li><strong>Warmth & Hospitality:</strong> Begin posts with friendly greetings like "Olá pessoal" or "Hello everyone"</li>
             <li><strong>Respect for Hierarchy:</strong> Address experienced community members with appropriate courtesy</li>
             <li><strong>Family & Community Focus:</strong> Share personal context when relevant to your questions</li>
@@ -242,7 +242,7 @@ const communityForumsModule = {
           <div class="bg-green-50 border border-green-200 rounded-lg p-4">
             <h5 class="font-semibold text-green-800">Clear Subject Lines</h5>
             <p class="text-sm text-green-700 mt-2">Examples of effective subject lines:</p>
-            <ul class="text-xs text-green-600 mt-2 list-disc list-inside">
+            <ul class="text-xs text-action-600 mt-2 list-disc list-inside">
               <li>"Procuro médico que fale português em Camden" (Looking for Portuguese-speaking doctor in Camden)</li>
               <li>"Recomendações: melhor padaria portuguesa em Stockwell?" (Recommendations: best Portuguese bakery in Stockwell?)</li>
               <li>"Ajuda com documentos - experiência de outros portugueses" (Help with documents - other Portuguese experiences)</li>
@@ -290,7 +290,7 @@ const communityForumsModule = {
         <h4>Estilo de Comunicação Cultural</h4>
         <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-4">
           <h5 class="font-semibold text-blue-800">Valores de Comunicação Portuguesa</h5>
-          <ul class="text-sm text-blue-700 mt-2 list-disc list-inside space-y-1">
+          <ul class="text-sm text-primary-700 mt-2 list-disc list-inside space-y-1">
             <li><strong>Calor e Hospitalidade:</strong> Comece as publicações com saudações amigáveis como "Olá pessoal" ou "Hello everyone"</li>
             <li><strong>Respeito pela Hierarquia:</strong> Dirija-se a membros experientes da comunidade com cortesia apropriada</li>
             <li><strong>Foco na Família e Comunidade:</strong> Partilhe contexto pessoal quando relevante para as suas perguntas</li>
@@ -304,7 +304,7 @@ const communityForumsModule = {
           <div class="bg-green-50 border border-green-200 rounded-lg p-4">
             <h5 class="font-semibold text-green-800">Linhas de Assunto Claras</h5>
             <p class="text-sm text-green-700 mt-2">Exemplos de linhas de assunto eficazes:</p>
-            <ul class="text-xs text-green-600 mt-2 list-disc list-inside">
+            <ul class="text-xs text-action-600 mt-2 list-disc list-inside">
               <li>"Procuro médico que fale português em Camden"</li>
               <li>"Recomendações: melhor padaria portuguesa em Stockwell?"</li>
               <li>"Ajuda com documentos - experiência de outros portugueses"</li>
@@ -399,7 +399,7 @@ const communityForumsModule = {
               Verified Profiles
             </h5>
             <p class="text-sm text-green-700">Members can verify their identity through:</p>
-            <ul class="text-xs text-green-600 mt-2 list-disc list-inside">
+            <ul class="text-xs text-action-600 mt-2 list-disc list-inside">
               <li>Portuguese passport or ID verification</li>
               <li>UK address confirmation</li>
               <li>University or workplace verification</li>
@@ -412,8 +412,8 @@ const communityForumsModule = {
               <EyeIcon class="h-4 w-4" />
               Community Moderation
             </h5>
-            <p class="text-sm text-blue-700">Trusted community members help moderate:</p>
-            <ul class="text-xs text-blue-600 mt-2 list-disc list-inside">
+            <p class="text-sm text-primary-700">Trusted community members help moderate:</p>
+            <ul class="text-xs text-primary-600 mt-2 list-disc list-inside">
               <li>Experienced Portuguese residents as moderators</li>
               <li>Cultural sensitivity in moderation decisions</li>
               <li>Quick response to community concerns</li>
@@ -480,7 +480,7 @@ const communityForumsModule = {
               Perfis Verificados
             </h5>
             <p class="text-sm text-green-700">Membros podem verificar a sua identidade através de:</p>
-            <ul class="text-xs text-green-600 mt-2 list-disc list-inside">
+            <ul class="text-xs text-action-600 mt-2 list-disc list-inside">
               <li>Verificação de passaporte português ou BI</li>
               <li>Confirmação de endereço do Reino Unido</li>
               <li>Verificação universitária ou local de trabalho</li>
@@ -493,8 +493,8 @@ const communityForumsModule = {
               <EyeIcon class="h-4 w-4" />
               Moderação Comunitária
             </h5>
-            <p class="text-sm text-blue-700">Membros confiáveis da comunidade ajudam a moderar:</p>
-            <ul class="text-xs text-blue-600 mt-2 list-disc list-inside">
+            <p class="text-sm text-primary-700">Membros confiáveis da comunidade ajudam a moderar:</p>
+            <ul class="text-xs text-primary-600 mt-2 list-disc list-inside">
               <li>Residentes portugueses experientes como moderadores</li>
               <li>Sensibilidade cultural nas decisões de moderação</li>
               <li>Resposta rápida a preocupações da comunidade</li>
@@ -611,7 +611,7 @@ const communityForumsModule = {
               <HandRaisedIcon class="h-4 w-4" />
               Mentorship & Leadership
             </h5>
-            <ul class="text-sm text-blue-700 mt-2 list-disc list-inside space-y-1">
+            <ul class="text-sm text-primary-700 mt-2 list-disc list-inside space-y-1">
               <li><strong>New Member Welcoming:</strong> Actively respond to introduction posts with helpful resources</li>
               <li><strong>FAQ Development:</strong> Help create comprehensive answers to common questions</li>
               <li><strong>Event Coordination:</strong> Organize and promote community meetups through forum coordination</li>
@@ -695,7 +695,7 @@ const communityForumsModule = {
               <HandRaisedIcon class="h-4 w-4" />
               Mentoria e Liderança
             </h5>
-            <ul class="text-sm text-blue-700 mt-2 list-disc list-inside space-y-1">
+            <ul class="text-sm text-primary-700 mt-2 list-disc list-inside space-y-1">
               <li><strong>Recepção de Novos Membros:</strong> Responda ativamente a publicações de apresentação com recursos úteis</li>
               <li><strong>Desenvolvimento de FAQ:</strong> Ajude a criar respostas abrangentes para perguntas comuns</li>
               <li><strong>Coordenação de Eventos:</strong> Organize e promova encontros comunitários através da coordenação do fórum</li>

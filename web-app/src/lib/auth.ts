@@ -366,7 +366,6 @@ export class AuthService {
       //   .from('user_favorite_events')
       //   .upsert({ user_id: user.id, event_id: eventId, is_favorite: action === 'add' })
 
-      console.log(`${action} favorite event ${eventId} for user ${user.id}`);
     } catch (error) {
       console.error("Error updating favorites:", error);
     }
