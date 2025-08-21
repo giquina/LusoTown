@@ -379,7 +379,7 @@ export default function Footer() {
               </ul>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Newsletter Signup */}
         <div className="mt-16 pt-8 border-t border-gray-800">
