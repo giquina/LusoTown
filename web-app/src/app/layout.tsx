@@ -15,6 +15,7 @@ import { NotificationProvider } from "@/context/NotificationContext";
 import { PlatformIntegrationProvider } from "@/context/PlatformIntegrationContext";
 import { WaitingListProvider } from "@/context/WaitingListContext";
 import { HeritageProvider } from "@/context/HeritageContext";
+import { NavigationProvider } from "@/context/NavigationContext";
 import HeritageStyleProvider from "@/components/HeritageStyleProvider";
 import { AuthPopupProvider } from "@/components/AuthPopupProvider";
 import AuthPopup from "@/components/AuthPopup";
@@ -22,6 +23,8 @@ import AuthIntentHandler from "@/components/AuthIntentHandler";
 import FavoriteNotification from "@/components/FavoriteNotification";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
+import { ContextualMobileNav } from "@/components/LuxuryMobileNav";
+import LusoBotWidget from "@/components/LusoBotWidget";
 import ErrorBoundary, {
   ComponentErrorBoundary,
 } from "@/components/ErrorBoundary";
@@ -85,6 +88,7 @@ export default function RootLayout({
                             <AuthPopupProvider>
                               <PlatformIntegrationProvider>
                                 <WaitingListProvider>
+                                  <NavigationProvider>
                               <ComponentErrorBoundary componentName="User Type Selection">
                                 <UserTypeSelection />
                               </ComponentErrorBoundary>
@@ -119,6 +123,19 @@ export default function RootLayout({
                               <ComponentErrorBoundary componentName="Auth Intent Handler">
                                 <AuthIntentHandler />
                               </ComponentErrorBoundary>
+
+                              <ComponentErrorBoundary componentName="Luxury Mobile Navigation">
+                                <ContextualMobileNav />
+                              </ComponentErrorBoundary>
+
+                              <ComponentErrorBoundary componentName="LusoBot Widget">
+                                <LusoBotWidget 
+                                  position="bottom-right"
+                                  showWelcomeMessage={true}
+                                  theme="portuguese"
+                                />
+                              </ComponentErrorBoundary>
+                                  </NavigationProvider>
                                 </WaitingListProvider>
                               </PlatformIntegrationProvider>
                             </AuthPopupProvider>

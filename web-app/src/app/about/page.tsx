@@ -41,6 +41,289 @@ export default function About() {
         className="pt-16"
       />
 
+        {/* LusoTown Platform Overview & Vision */}
+        <section className="py-24 bg-gradient-to-br from-white via-premium-50/30 to-primary-50/30 relative overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-premium-200/20 to-primary-200/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse opacity-50" />
+            <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-secondary-200/20 to-accent-200/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse opacity-50" />
+          </div>
+          
+          <div className="container-width relative z-10">
+            <div className="max-w-6xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-8 border border-premium-200/50 shadow-lg"
+                >
+                  <GlobeAltIcon className="w-6 h-6 text-premium-600" />
+                  <span className="text-premium-700 font-bold text-lg">What is LusoTown? • O que é a LusoTown?</span>
+                </motion.div>
+                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-premium-600 via-primary-600 to-secondary-600 bg-clip-text text-transparent mb-8">
+                  Your Portuguese Community Ecosystem in the UK
+                </h2>
+                <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
+                  LusoTown is the UK's premier digital platform designed specifically for Portuguese speakers. 
+                  We're not just a social network—we're a comprehensive community ecosystem that brings together culture, 
+                  commerce, entertainment, and connections for the Portuguese diaspora across Britain.
+                </p>
+              </motion.div>
+              
+              {/* How LusoTown Works */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="mb-16"
+              >
+                <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-premium-200/50">
+                  <h3 className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent mb-8 text-center">
+                    How LusoTown Works for Portuguese Speakers
+                  </h3>
+                  
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {[
+                      {
+                        icon: UserGroupIcon,
+                        title: "Meet Your Match",
+                        titlePt: "Encontre a Sua Alma Gémea",
+                        description: "Connect with Portuguese speakers who share your saudade, cultural values, and interests. Our intelligent matching system helps you find meaningful relationships—romantic, friendship, or professional—within the Portuguese community.",
+                        features: ["Cultural compatibility matching", "Portuguese heritage preferences", "London location-based connections", "Verified Portuguese speaker profiles"]
+                      },
+                      {
+                        icon: CalendarIcon,
+                        title: "Events & Experiences",
+                        titlePt: "Eventos & Experiências",
+                        description: "Discover and join authentic Portuguese events across the UK. From intimate fado nights in Stockwell to networking events in the City, experience Portuguese culture in every corner of Britain.",
+                        features: ["Cultural festivals & celebrations", "Professional networking events", "Food markets & restaurants", "Live music & entertainment"]
+                      },
+                      {
+                        icon: MapPinIcon,
+                        title: "Portuguese Business Directory",
+                        titlePt: "Diretório de Negócios Portugueses",
+                        description: "Support and discover Portuguese-owned businesses across the UK. From restaurants and shops to professional services, keep your spending within our community while getting services in your language.",
+                        features: ["Portuguese-speaking professionals", "Cultural restaurants & cafés", "Import shops & markets", "Community services in Portuguese"]
+                      },
+                      {
+                        icon: SparklesIcon,
+                        title: "LusoTown TV",
+                        titlePt: "LusoTown TV",
+                        description: "Watch live Portuguese cultural content, from cooking shows to interviews with Portuguese community leaders. Our streaming platform brings Portuguese entertainment directly to your device.",
+                        features: ["Live cultural programming", "Portuguese cooking shows", "Community interviews", "Cultural documentaries"]
+                      },
+                      {
+                        icon: ChatBubbleLeftRightIcon,
+                        title: "Community Feed",
+                        titlePt: "Feed da Comunidade",
+                        description: "Stay connected with real-time updates from the Portuguese community. Share experiences, ask for recommendations, and stay informed about everything happening in Portuguese London.",
+                        features: ["Real-time community updates", "Portuguese-language posts", "Event recommendations", "Local community support"]
+                      },
+                      {
+                        icon: HeartIcon,
+                        title: "Premium Services",
+                        titlePt: "Serviços Premium",
+                        description: "Access exclusive Portuguese-speaking professional services including executive transport, cultural tours, and concierge services designed for the sophisticated Portuguese community in London.",
+                        features: ["Portuguese-speaking chauffeurs", "Cultural heritage tours", "Executive concierge services", "VIP event access"]
+                      }
+                    ].map((feature, index) => (
+                      <motion.div
+                        key={feature.title}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 * index }}
+                        viewport={{ once: true }}
+                        className="group"
+                      >
+                        <div className="bg-gradient-to-br from-premium-50 to-primary-50 rounded-2xl p-6 h-full border border-premium-200/30 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
+                          <div className="flex items-start gap-4 mb-4">
+                            <motion.div 
+                              className="w-12 h-12 bg-gradient-to-br from-premium-500 to-primary-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300"
+                              whileHover={{ rotate: 10 }}
+                            >
+                              <feature.icon className="w-6 h-6 text-white" />
+                            </motion.div>
+                            <div className="flex-1">
+                              <h4 className="font-bold text-gray-900 mb-1 text-lg group-hover:text-premium-700 transition-colors duration-300">{feature.title}</h4>
+                              <p className="text-sm text-premium-600 italic font-medium">{feature.titlePt}</p>
+                            </div>
+                          </div>
+                          <p className="text-gray-600 leading-relaxed mb-4">{feature.description}</p>
+                          <ul className="space-y-2">
+                            {feature.features.map((item, i) => (
+                              <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
+                                <CheckCircleIcon className="w-4 h-4 text-premium-500 flex-shrink-0" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+              
+              {/* Our Vision & Plan */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="mb-16"
+              >
+                <div className="bg-gradient-to-br from-premium-50 via-primary-50 to-secondary-50 rounded-3xl p-10 border border-premium-200/30 shadow-xl">
+                  <div className="text-center mb-10">
+                    <h3 className="text-3xl font-bold bg-gradient-to-r from-premium-600 to-primary-600 bg-clip-text text-transparent mb-4">
+                      The Complete Vision: Building Portuguese Britain
+                    </h3>
+                    <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                      Nossa visão • Our vision is to create the most comprehensive Portuguese community platform in the UK, 
+                      where every Portuguese speaker—from London to Edinburgh—feels connected, supported, and proud of their heritage.
+                    </p>
+                  </div>
+                  
+                  <div className="grid lg:grid-cols-2 gap-8">
+                    <div className="space-y-6">
+                      <h4 className="text-2xl font-bold text-gray-900 mb-4">🎯 Why Portuguese Speakers Need LusoTown</h4>
+                      <div className="space-y-4">
+                        <div className="flex items-start gap-3">
+                          <div className="w-6 h-6 bg-premium-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <span className="text-white text-xs font-bold">1</span>
+                          </div>
+                          <div>
+                            <p className="font-bold text-gray-900">Cultural Isolation in the UK</p>
+                            <p className="text-gray-600">Many Portuguese speakers feel disconnected from their heritage and struggle to find others who understand their culture, traditions, and the unique experience of saudade.</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <div className="w-6 h-6 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <span className="text-white text-xs font-bold">2</span>
+                          </div>
+                          <div>
+                            <p className="font-bold text-gray-900">Language Preservation</p>
+                            <p className="text-gray-600">Portuguese families worry about their children losing the language and cultural connection, needing a community that actively preserves and celebrates Portuguese heritage.</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <div className="w-6 h-6 bg-secondary-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <span className="text-white text-xs font-bold">3</span>
+                          </div>
+                          <div>
+                            <p className="font-bold text-gray-900">Limited Cultural Access</p>
+                            <p className="text-gray-600">Difficulty finding Portuguese-speaking services, authentic cultural events, and businesses that understand Portuguese customs and preferences.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-6">
+                      <h4 className="text-2xl font-bold text-gray-900 mb-4">🌟 How LusoTown Solves These Challenges</h4>
+                      <div className="space-y-4">
+                        <div className="flex items-start gap-3">
+                          <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                          <div>
+                            <p className="font-bold text-gray-900">Instant Community Connection</p>
+                            <p className="text-gray-600">Connect immediately with 750+ verified Portuguese speakers across London and the UK, ending cultural isolation and building meaningful relationships.</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                          <div>
+                            <p className="font-bold text-gray-900">Cultural Preservation Platform</p>
+                            <p className="text-gray-600">Active community events, Portuguese-language content, and cultural education ensuring your heritage stays alive and is passed to future generations.</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                          <div>
+                            <p className="font-bold text-gray-900">Comprehensive Portuguese Ecosystem</p>
+                            <p className="text-gray-600">Everything you need in one place: from finding Portuguese-speaking professionals to attending cultural events, watching Portuguese content, and building romantic or professional relationships.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+              
+              {/* Platform Sections Explained */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-premium-200/50">
+                  <h3 className="text-3xl font-bold bg-gradient-to-r from-premium-600 to-primary-600 bg-clip-text text-transparent mb-8 text-center">
+                    Every Section of LusoTown Explained
+                  </h3>
+                  
+                  <div className="space-y-8">
+                    {[
+                      {
+                        section: "Homepage & Feed",
+                        description: "Your central hub for Portuguese community updates, event announcements, and real-time connections with fellow Portuguese speakers across the UK.",
+                        benefits: "Stay informed, never miss events, connect instantly with your community"
+                      },
+                      {
+                        section: "Meet Your Match",
+                        description: "Sophisticated matching system connecting Portuguese speakers for romantic relationships, friendships, and professional networking based on cultural compatibility and shared values.",
+                        benefits: "Find meaningful relationships with people who understand your culture and heritage"
+                      },
+                      {
+                        section: "Events Discovery",
+                        description: "Comprehensive calendar of Portuguese cultural events, from intimate fado evenings to large community festivals, professional networking, and cultural celebrations across the UK.",
+                        benefits: "Experience authentic Portuguese culture, meet community members, preserve traditions"
+                      },
+                      {
+                        section: "Business Directory",
+                        description: "Complete directory of Portuguese-owned businesses and Portuguese-speaking professionals across the UK, from restaurants to legal services, all in your language.",
+                        benefits: "Support Portuguese businesses, get services in Portuguese, strengthen community economy"
+                      },
+                      {
+                        section: "LusoTown TV",
+                        description: "Live streaming platform featuring Portuguese cultural content, cooking shows, community interviews, and entertainment that celebrates Portuguese heritage and keeps culture alive.",
+                        benefits: "Access Portuguese content anytime, learn about your culture, stay connected to heritage"
+                      },
+                      {
+                        section: "Premium Services",
+                        description: "Exclusive Portuguese-speaking services including executive transport, heritage tours, concierge services, and VIP experiences designed for sophisticated Portuguese community members.",
+                        benefits: "Luxury services in Portuguese, cultural authenticity, premium community experiences"
+                      }
+                    ].map((item, index) => (
+                      <motion.div
+                        key={item.section}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 * index }}
+                        viewport={{ once: true }}
+                        className="bg-gradient-to-r from-premium-50 to-primary-50 rounded-2xl p-6 border border-premium-200/30"
+                      >
+                        <h4 className="text-xl font-bold text-gray-900 mb-3">{item.section}</h4>
+                        <p className="text-gray-700 mb-3 leading-relaxed">{item.description}</p>
+                        <div className="bg-white/60 rounded-lg p-3">
+                          <p className="text-sm font-medium text-premium-700">
+                            <strong>Benefits:</strong> {item.benefits}
+                          </p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Founder Story Section - Premium Design */}
         <section className="py-20 bg-gradient-to-br from-premium-50 via-white to-primary-50 relative overflow-hidden">
           {/* Decorative background elements */}
@@ -475,211 +758,357 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Portuguese-Speaking Countries Section */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
-                <div className="text-center mb-8">
-                  <h3 className="text-3xl font-semibold text-gray-900 mb-4">A Língua Portuguesa Pelo Mundo</h3>
-                  <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
-                    Portuguese is spoken by over 280 million people across four continents! Each country has evolved the language uniquely, 
-                    creating a beautiful tapestry of accents, expressions, and cultural flavors that make our community so vibrant.
-                  </p>
-                  <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-4 text-center">
-                    <p className="text-gray-700 font-medium">🌍 10 Countries • 4 Continents • 280+ Million Speakers • 1 Beautiful Language Community</p>
-                  </div>
-                </div>
+              {/* Luxury Portuguese-Speaking Nations - Premium Heritage Section */}
+              <div className="relative overflow-hidden">
+                {/* Premium background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-premium-50 via-white to-primary-50" />
+                <div className="absolute inset-0 bg-gradient-to-r from-premium-200/10 via-transparent to-primary-200/10" />
                 
-                <div className="grid lg:grid-cols-2 gap-6 mb-8">
-                  {/* Portugal */}
-                  <div className="border-2 border-primary-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-primary-200 bg-gradient-to-br from-white to-primary-50/30">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-4xl">🇵🇹</span>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-900">Portugal</h4>
-                        <p className="text-sm text-gray-600 font-medium">O berço da língua • The birthplace</p>
-                      </div>
-                    </div>
-                    <div className="space-y-3 text-sm">
-                      <p className="text-gray-700"><strong>🗣️ Language Heritage:</strong> Home to the original Portuguese with its distinctive European pronunciation, the beautiful 'ão' endings, and formal conjugations that preserve centuries of linguistic tradition.</p>
-                      <p className="text-gray-700"><strong>🎭 Cultural Gems:</strong> Fado music that captures saudade, Pastéis de Nata invented by monks, and the world's oldest bookstore (Livraria Bertrand, 1732)!</p>
-                      <p className="text-gray-700"><strong>⚡ Fun Fact:</strong> Portuguese is the oldest nation-state in Europe (1143) and gave the world the word "saudade"—untranslatable longing that every Portuguese speaker understands.</p>
-                    </div>
-                  </div>
-                  
-                  {/* Brazil */}
-                  <div className="border-2 border-secondary-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-secondary-200 bg-gradient-to-br from-white to-secondary-50/30">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-4xl">🇧🇷</span>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-900">Brazil</h4>
-                        <p className="text-sm text-gray-600 font-medium">O maior país lusófono • The largest Portuguese-speaking nation</p>
-                      </div>
-                    </div>
-                    <div className="space-y-3 text-sm">
-                      <p className="text-gray-700"><strong>🗣️ Language Evolution:</strong> Brazilian Portuguese has softer sounds, unique expressions like "tô" for "estou," and indigenous/African influences creating words like "abacaxi" (pineapple) and "cafuné" (gentle head caress).</p>
-                      <p className="text-gray-700"><strong>🎭 Cultural Powerhouse:</strong> Carnival, bossa nova, capoeira, and the world's largest Portuguese-speaking population (over 215 million people!).</p>
-                      <p className="text-gray-700"><strong>⚡ Amazing Fact:</strong> Brazil is the only Portuguese-speaking country in the Americas and has more Portuguese speakers than Portugal itself—by a factor of 20!</p>
+                <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-premium-200/50 mb-16">
+                  <div className="text-center mb-12">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.8 }}
+                      viewport={{ once: true }}
+                      className="inline-flex items-center gap-3 bg-gradient-to-r from-premium-500/10 to-primary-500/10 backdrop-blur-sm rounded-full px-8 py-4 mb-8 border border-premium-300/30"
+                    >
+                      <TrophyIcon className="w-6 h-6 text-premium-600" />
+                      <span className="text-premium-700 font-bold text-lg">Luxury Heritage • Património de Prestígio</span>
+                    </motion.div>
+                    <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-premium-600 via-primary-600 to-secondary-600 bg-clip-text text-transparent mb-6">
+                      Prestigious Portuguese-Speaking Nations
+                    </h3>
+                    <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+                      Nine distinguished nations where Portuguese culture represents sophistication, wealth, and elite heritage. 
+                      From royal palaces to diamond fortunes, oil wealth to gaming capitals—discover the luxury and prestige of the Lusophone world.
+                    </p>
+                    <div className="bg-gradient-to-r from-premium-50 via-primary-50 to-secondary-50 rounded-2xl p-6 border border-premium-200/30">
+                      <p className="text-gray-800 font-bold text-lg">💎 9 Elite Nations • 4 Continents • €4+ Trillion GDP • 280M+ Affluent Speakers</p>
                     </div>
                   </div>
                   
-                  {/* Angola */}
-                  <div className="border-2 border-purple-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-purple-200 bg-gradient-to-br from-white to-purple-50/30">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-4xl">🇦🇴</span>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-900">Angola</h4>
-                        <p className="text-sm text-gray-600 font-medium">Terra de kizomba • Land of kizomba</p>
+                  <div className="grid lg:grid-cols-2 gap-8 mb-12">
+                    {/* Portugal - Royal Heritage */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.1 }}
+                      viewport={{ once: true }}
+                      className="group relative"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-premium-400/20 to-primary-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                      <div className="relative border-2 border-premium-200/50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:border-premium-300 bg-gradient-to-br from-white via-premium-50/30 to-primary-50/30 backdrop-blur-sm">
+                        <div className="flex items-center gap-4 mb-6">
+                          <span className="text-5xl">🇵🇹</span>
+                          <div>
+                            <h4 className="text-2xl font-bold text-gray-900">Portugal</h4>
+                            <p className="text-premium-600 font-bold">The Original Empire • O Império Original</p>
+                          </div>
+                        </div>
+                        <div className="space-y-4">
+                          <p className="text-gray-700"><strong className="text-premium-700">👑 Royal Heritage:</strong> Eight centuries of monarchy, magnificent palaces from Sintra to Queluz, aristocratic quintas, and Europe's oldest noble lineages maintaining exclusive traditions in London's elite circles.</p>
+                          <p className="text-gray-700"><strong className="text-premium-700">🍷 Luxury Wine Culture:</strong> Port wine estates worth millions, Douro Valley's UNESCO terraces owned by aristocratic families, wine aristocracy connections spanning London's most exclusive private clubs.</p>
+                          <p className="text-gray-700"><strong className="text-premium-700">🏰 Elite Architecture:</strong> Royal palaces, luxury quintas, exclusive golf resorts, and Portuguese nobility maintaining prestigious properties across London's premium neighborhoods like Belgravia and Mayfair.</p>
+                          <p className="text-gray-700"><strong className="text-premium-700">💎 UK Elite Networks:</strong> Portuguese aristocrats, luxury real estate magnates, and wine dynasty heirs forming exclusive networks in London's high society and private members' clubs.</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="space-y-3 text-sm">
-                      <p className="text-gray-700"><strong>🗣️ Linguistic Blend:</strong> Angolan Portuguese mixes with Kimbundu, Umbundu, and Kikongo languages, creating unique expressions like "bué" (a lot) and "fixe" (cool)—now used across the Portuguese-speaking world!</p>
-                      <p className="text-gray-700"><strong>🎭 Cultural Gift to the World:</strong> Birthplace of kizomba dance and semba music, which influenced global Latin dance culture and Brazilian samba.</p>
-                      <p className="text-gray-700"><strong>⚡ Incredible Fact:</strong> Home to the Welwitschia plant that can live over 1,500 years—some are older than Portuguese as a language!</p>
-                    </div>
-                  </div>
-                  
-                  {/* Mozambique */}
-                  <div className="border-2 border-green-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-green-200 bg-gradient-to-br from-white to-green-50/30">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-4xl">🇲🇿</span>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-900">Mozambique</h4>
-                        <p className="text-sm text-gray-600 font-medium">Pérola do Índico • Pearl of the Indian Ocean</p>
+                    </motion.div>
+                    
+                    {/* Brazil - Economic Powerhouse */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.2 }}
+                      viewport={{ once: true }}
+                      className="group relative"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-secondary-400/20 to-accent-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                      <div className="relative border-2 border-secondary-200/50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:border-secondary-300 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30 backdrop-blur-sm">
+                        <div className="flex items-center gap-4 mb-6">
+                          <span className="text-5xl">🇧🇷</span>
+                          <div>
+                            <h4 className="text-2xl font-bold text-gray-900">Brazil</h4>
+                            <p className="text-secondary-600 font-bold">Latin America's Powerhouse • Potência da América Latina</p>
+                          </div>
+                        </div>
+                        <div className="space-y-4">
+                          <p className="text-gray-700"><strong className="text-secondary-700">🏙️ Elite Culture:</strong> São Paulo's billionaire society, Rio's luxury penthouse lifestyle, Michelin-starred restaurants, and Brazil's ultra-wealthy maintaining exclusive residences in London's most prestigious areas.</p>
+                          <p className="text-gray-700"><strong className="text-secondary-700">💰 Luxury Industries:</strong> Fashion empires, jewelry dynasties, luxury real estate development, premium mining operations, and Brazilian business magnates with significant London investments and elite networks.</p>
+                          <p className="text-gray-700"><strong className="text-secondary-700">🍽️ Premium Cuisine:</strong> World-renowned Brazilian chefs, gourmet traditions, exclusive churrascarias, and sophisticated culinary culture elevated to Michelin standards in London's finest establishments.</p>
+                          <p className="text-gray-700"><strong className="text-secondary-700">🎭 Cultural Sophistication:</strong> Opera houses, world-class art collections, classical music heritage, and Brazilian cultural elites patronizing London's premium arts scene and exclusive cultural institutions.</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="space-y-3 text-sm">
-                      <p className="text-gray-700"><strong>🗣️ Multilingual Magic:</strong> Portuguese blends with Makhuwa, Tsonga, and Sena languages, creating coastal dialects influenced by Arabic and Swahili trade languages.</p>
-                      <p className="text-gray-700"><strong>🎭 Cultural Fusion:</strong> Marrabenta music, Dhow boat traditions, and architecture blending African, Arab, and Portuguese influences in stunning ways.</p>
-                      <p className="text-gray-700"><strong>⚡ Ocean Wonder:</strong> Home to pristine coral reefs and the world's largest cashew tree, plus dugongs (sea cows) that inspired mermaid legends!</p>
-                    </div>
-                  </div>
-                  
-                  {/* Cape Verde */}
-                  <div className="border-2 border-primary-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-primary-200 bg-gradient-to-br from-white to-primary-50/30">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-4xl">🇨🇻</span>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-900">Cape Verde</h4>
-                        <p className="text-sm text-gray-600 font-medium">Ilhas da música • Islands of music</p>
+                    </motion.div>
+                    
+                    {/* Angola - Diamond Capital */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.3 }}
+                      viewport={{ once: true }}
+                      className="group relative"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                      <div className="relative border-2 border-purple-200/50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:border-purple-300 bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 backdrop-blur-sm">
+                        <div className="flex items-center gap-4 mb-6">
+                          <span className="text-5xl">🇦🇴</span>
+                          <div>
+                            <h4 className="text-2xl font-bold text-gray-900">Angola</h4>
+                            <p className="text-purple-600 font-bold">Africa's Diamond Capital • Capital Africana dos Diamantes</p>
+                          </div>
+                        </div>
+                        <div className="space-y-4">
+                          <p className="text-gray-700"><strong className="text-purple-700">💎 Oil & Diamond Wealth:</strong> Multi-billion dollar natural resource fortunes, luxury lifestyle funded by oil revenues, diamond mining dynasties, and Angolan business elites investing heavily in London's premium real estate market.</p>
+                          <p className="text-gray-700"><strong className="text-purple-700">🏛️ Elite Society:</strong> Luanda's exclusive high society, private member clubs, luxury shopping districts, and wealthy Angolan families maintaining prestigious addresses in London's most affluent neighborhoods.</p>
+                          <p className="text-gray-700"><strong className="text-purple-700">🏗️ Premium Architecture:</strong> Modern luxury developments, Portuguese colonial mansions restored to five-star standards, and sophisticated urban planning reflecting Angola's growing prosperity and elite aesthetic preferences.</p>
+                          <p className="text-gray-700"><strong className="text-purple-700">🌟 UK Elite Networks:</strong> Angolan business magnates, oil executives, and diamond trade professionals forming exclusive networks within London's financial district and luxury residential areas like Kensington and Chelsea.</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="space-y-3 text-sm">
-                      <p className="text-gray-700"><strong>🗣️ Creole Heritage:</strong> Portuguese coexists with Kriolu (Cape Verdean Creole), creating a unique bilingual culture where both languages flow naturally in daily life.</p>
-                      <p className="text-gray-700"><strong>🎭 Musical Soul:</strong> Birthplace of Morna music and legendary Cesária Évora, the "Barefoot Diva" who brought Cape Verdean music to the world.</p>
-                      <p className="text-gray-700"><strong>⚡ Island Magic:</strong> 10 volcanic islands where it almost never rains, but the music and culture are so rich they water the soul!</p>
-                    </div>
-                  </div>
-                  
-                  {/* Guinea-Bissau */}
-                  <div className="border-2 border-orange-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-orange-200 bg-gradient-to-br from-white to-orange-50/30">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-4xl">🇬🇼</span>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-900">Guinea-Bissau</h4>
-                        <p className="text-sm text-gray-600 font-medium">Terra dos cajus • Land of cashews</p>
+                    </motion.div>
+                    
+                    {/* Mozambique - Indian Ocean Jewel */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.4 }}
+                      viewport={{ once: true }}
+                      className="group relative"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-teal-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                      <div className="relative border-2 border-green-200/50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:border-green-300 bg-gradient-to-br from-white via-green-50/30 to-teal-50/30 backdrop-blur-sm">
+                        <div className="flex items-center gap-4 mb-6">
+                          <span className="text-5xl">🇲🇿</span>
+                          <div>
+                            <h4 className="text-2xl font-bold text-gray-900">Mozambique</h4>
+                            <p className="text-green-600 font-bold">The Indian Ocean Jewel • Jóia do Índico</p>
+                          </div>
+                        </div>
+                        <div className="space-y-4">
+                          <p className="text-gray-700"><strong className="text-green-700">🏝️ Coastal Luxury:</strong> Exclusive beach resorts, private island developments, premium safari lodges, and luxury eco-tourism establishing Mozambique as Africa's sophisticated coastal destination for the global elite.</p>
+                          <p className="text-gray-700"><strong className="text-green-700">🏰 Elite Heritage:</strong> Portuguese colonial architecture preserved as luxury hotels, sophisticated cultural fusion, and heritage properties converted into exclusive retreats for international high society.</p>
+                          <p className="text-gray-700"><strong className="text-green-700">⭐ High-End Tourism:</strong> Five-star resorts, private yacht charter destinations, exclusive diving experiences, and luxury wildlife viewing attracting wealthy Portuguese speakers from London's elite circles.</p>
+                          <p className="text-gray-700"><strong className="text-green-700">🎯 UK Professional Networks:</strong> Elite Mozambican professionals in London's financial services, legal sectors, and international development organizations, maintaining sophisticated cultural and business connections.</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="space-y-3 text-sm">
-                      <p className="text-gray-700"><strong>🗣️ Creole Diversity:</strong> Portuguese mixes with Kriol and over 20 local languages including Fula, Mandinka, and Balanta, creating Africa's most multilingual Portuguese-speaking society.</p>
-                      <p className="text-gray-700"><strong>🎭 Matriarchal Islands:</strong> The Bijagó archipelago features rare matriarchal societies where women choose their husbands—unique in the Portuguese-speaking world!</p>
-                      <p className="text-gray-700"><strong>⚡ Cashew Capital:</strong> Produces some of the world's finest cashews and has more languages per square kilometer than almost anywhere else on Earth!</p>
-                    </div>
-                  </div>
-                  
-                  {/* São Tomé and Príncipe */}
-                  <div className="border-2 border-yellow-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-yellow-200 bg-gradient-to-br from-white to-yellow-50/30">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-4xl">🇸🇹</span>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-900">São Tomé and Príncipe</h4>
-                        <p className="text-sm text-gray-600 font-medium">Ilhas do cacau • Chocolate islands</p>
+                    </motion.div>
+                    
+                    {/* Cape Verde - Atlantic Paradise */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.5 }}
+                      viewport={{ once: true }}
+                      className="group relative"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                      <div className="relative border-2 border-blue-200/50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:border-blue-300 bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/30 backdrop-blur-sm">
+                        <div className="flex items-center gap-4 mb-6">
+                          <span className="text-5xl">🇨🇻</span>
+                          <div>
+                            <h4 className="text-2xl font-bold text-gray-900">Cape Verde</h4>
+                            <p className="text-blue-600 font-bold">Atlantic Paradise • Paraíso Atlântico</p>
+                          </div>
+                        </div>
+                        <div className="space-y-4">
+                          <p className="text-gray-700"><strong className="text-blue-700">🏖️ Luxury Resort Destination:</strong> Five-star oceanfront properties, exclusive island retreats, premium golf courses, and elite tourism infrastructure attracting Europe's wealthy Portuguese-speaking elite seeking sophisticated Atlantic experiences.</p>
+                          <p className="text-gray-700"><strong className="text-blue-700">🎵 Elite Music Scene:</strong> World-renowned musicians, sophisticated cultural events, premium concert venues, and Cape Verdean musical royalty maintaining prestigious cultural connections in London's elite entertainment circles.</p>
+                          <p className="text-gray-700"><strong className="text-blue-700">⛵ High-End Tourism:</strong> Private yacht charters, luxury island-hopping experiences, exclusive diving expeditions, and premium hospitality services catering to London's affluent Portuguese-speaking community.</p>
+                          <p className="text-gray-700"><strong className="text-blue-700">🏡 Premium Real Estate:</strong> Exclusive coastal developments, luxury villa projects, high-end investment opportunities, and successful Cape Verdean entrepreneurs in London's property development and investment sectors.</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="space-y-3 text-sm">
-                      <p className="text-gray-700"><strong>🗣️ Creole Paradise:</strong> Portuguese coexists with Forro, Angolar, and Principense—unique creole languages that evolved on these isolated islands, preserving 500-year-old Portuguese linguistic features.</p>
-                      <p className="text-gray-700"><strong>🎭 Chocolate Heritage:</strong> First place in Africa where cocoa was cultivated, creating the world's finest chocolate with Portuguese colonial plantation architecture as a backdrop.</p>
-                      <p className="text-gray-700"><strong>⚡ Tiny Giant:</strong> Africa's second-smallest country but with such biodiversity that 95% of its plants exist nowhere else on Earth!</p>
-                    </div>
-                  </div>
-                  
-                  {/* East Timor */}
-                  <div className="border-2 border-red-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-red-200 bg-gradient-to-br from-white to-red-50/30">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-4xl">🇹🇱</span>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-900">East Timor (Timor-Leste)</h4>
-                        <p className="text-sm text-gray-600 font-medium">Nação mais nova • Youngest nation</p>
+                    </motion.div>
+                    
+                    {/* Guinea-Bissau - West Africa's Hidden Gem */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                      viewport={{ once: true }}
+                      className="group relative"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-amber-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                      <div className="relative border-2 border-orange-200/50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:border-orange-300 bg-gradient-to-br from-white via-orange-50/30 to-amber-50/30 backdrop-blur-sm">
+                        <div className="flex items-center gap-4 mb-6">
+                          <span className="text-5xl">🇬🇼</span>
+                          <div>
+                            <h4 className="text-2xl font-bold text-gray-900">Guinea-Bissau</h4>
+                            <p className="text-orange-600 font-bold">West Africa's Hidden Gem • Jóia Escondida da África Ocidental</p>
+                          </div>
+                        </div>
+                        <div className="space-y-4">
+                          <p className="text-gray-700"><strong className="text-orange-700">🌿 Natural Wealth:</strong> Pristine archipelagos with exclusive eco-luxury potential, untapped natural resources, and emerging opportunities for sophisticated sustainable tourism attracting elite environmental investors.</p>
+                          <p className="text-gray-700"><strong className="text-orange-700">🎨 Cultural Sophistication:</strong> Traditional arts elevated to international luxury markets, refined craftsmanship, unique cultural heritage, and sophisticated artistic traditions valued by London's cultural elite and collectors.</p>
+                          <p className="text-gray-700"><strong className="text-orange-700">👥 Elite Diaspora:</strong> Successful professionals in London's elite circles, distinguished academics, high-level diplomatic personnel, and business leaders contributing to UK-Guinea-Bissau sophisticated cultural and economic exchanges.</p>
+                          <p className="text-gray-700"><strong className="text-orange-700">🏆 High-Class Heritage:</strong> Portuguese colonial elegance, sophisticated traditional governance systems, cultural sophistication, and elite diaspora maintaining prestigious cultural institutions and heritage preservation initiatives in London.</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="space-y-3 text-sm">
-                      <p className="text-gray-700"><strong>🗣️ Linguistic Survivor:</strong> Portuguese survived 24 years of Indonesian occupation and became a symbol of independence, now mixing beautifully with Tetum and local languages.</p>
-                      <p className="text-gray-700"><strong>🎭 Cultural Bridge:</strong> Unique blend of Southeast Asian, Melanesian, and Portuguese influences creating distinct architecture, textiles, and spiritual practices.</p>
-                      <p className="text-gray-700"><strong>⚡ Phoenix Nation:</strong> The world's newest country (independent since 2002) and the only place where Portuguese and Asian cultures create such a unique fusion!</p>
-                    </div>
-                  </div>
-                  
-                  {/* Macau */}
-                  <div className="border-2 border-pink-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-pink-200 bg-gradient-to-br from-white to-pink-50/30">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-4xl">🇲🇴</span>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-900">Macau</h4>
-                        <p className="text-sm text-gray-600 font-medium">Oriente português • Portuguese Orient</p>
+                    </motion.div>
+                    
+                    {/* São Tomé and Príncipe - Chocolate Paradise */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.7 }}
+                      viewport={{ once: true }}
+                      className="group relative"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                      <div className="relative border-2 border-yellow-200/50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:border-yellow-300 bg-gradient-to-br from-white via-yellow-50/30 to-orange-50/30 backdrop-blur-sm">
+                        <div className="flex items-center gap-4 mb-6">
+                          <span className="text-5xl">🇸🇹</span>
+                          <div>
+                            <h4 className="text-2xl font-bold text-gray-900">São Tomé and Príncipe</h4>
+                            <p className="text-yellow-600 font-bold">Chocolate Paradise • Paraíso do Chocolate</p>
+                          </div>
+                        </div>
+                        <div className="space-y-4">
+                          <p className="text-gray-700"><strong className="text-yellow-700">🍫 Luxury Cocoa Heritage:</strong> Premium chocolate production, gourmet cocoa estates, artisanal chocolate crafting, and São Toméan chocolatiers supplying London's most exclusive patisseries and luxury food establishments.</p>
+                          <p className="text-gray-700"><strong className="text-yellow-700">🏝️ Exclusive Island Life:</strong> Private eco-luxury resorts, elite tourism experiences, pristine biodiversity, and exclusive retreat destinations attracting wealthy eco-conscious travelers from London's elite environmental circles.</p>
+                          <p className="text-gray-700"><strong className="text-yellow-700">🎭 Sophisticated Culture:</strong> Refined Portuguese-African cultural fusion, high arts, sophisticated musical traditions, and cultural sophistication preserved and celebrated within London's elite cultural and academic institutions.</p>
+                          <p className="text-gray-700"><strong className="text-yellow-700">🌟 UK Professional Networks:</strong> Distinguished diaspora in London's academic, diplomatic, and cultural sectors, maintaining sophisticated cultural exchanges and elite professional networks within Portuguese-speaking communities.</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="space-y-3 text-sm">
-                      <p className="text-gray-700"><strong>🗣️ East-West Fusion:</strong> Portuguese coexists with Cantonese and Mandarin, creating Patuá—a unique Portuguese-Chinese creole with only 50 fluent speakers left, making it critically endangered.</p>
-                      <p className="text-gray-700"><strong>🎭 Culinary Magic:</strong> Birthplace of Portuguese egg tarts (pastéis de nata), Minchi (Macanese comfort food), and fusion cuisine that influenced food culture across Asia.</p>
-                      <p className="text-gray-700"><strong>⚡ Historic Marvel:</strong> 460+ years of Portuguese heritage in China, creating the world's most unique East-West cultural blend and UNESCO World Heritage architecture!</p>
-                    </div>
-                  </div>
-                  
-                  {/* Equatorial Guinea */}
-                  <div className="border-2 border-teal-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-teal-200 bg-gradient-to-br from-white to-teal-50/30">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-4xl">🇬🇶</span>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-900">Equatorial Guinea</h4>
-                        <p className="text-sm text-gray-600 font-medium">África portuguesa • Portuguese Africa (by adoption)</p>
+                    </motion.div>
+                    
+                    {/* East Timor - Asia-Pacific's Rising Star */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.8 }}
+                      viewport={{ once: true }}
+                      className="group relative"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-red-400/20 to-pink-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                      <div className="relative border-2 border-red-200/50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:border-red-300 bg-gradient-to-br from-white via-red-50/30 to-pink-50/30 backdrop-blur-sm">
+                        <div className="flex items-center gap-4 mb-6">
+                          <span className="text-5xl">🇹🇱</span>
+                          <div>
+                            <h4 className="text-2xl font-bold text-gray-900">East Timor (Timor-Leste)</h4>
+                            <p className="text-red-600 font-bold">Asia-Pacific's Rising Star • Estrela Emergente do Ásia-Pacífico</p>
+                          </div>
+                        </div>
+                        <div className="space-y-4">
+                          <p className="text-gray-700"><strong className="text-red-700">💰 Natural Resource Wealth:</strong> Substantial oil revenues, economic development potential, emerging investment opportunities, and Timorese business leaders establishing sophisticated economic connections with London's financial elite.</p>
+                          <p className="text-gray-700"><strong className="text-red-700">🎭 Cultural Sophistication:</strong> Unique Portuguese-Asian heritage, refined arts, sophisticated cultural fusion, and distinguished cultural traditions preserved and promoted within London's exclusive multicultural elite circles.</p>
+                          <p className="text-gray-700"><strong className="text-red-700">🎓 Elite Education:</strong> International university connections, prestigious scholarship programs, high-level diplomatic training, and Timorese intellectual elite contributing to London's academic and policy-making institutions.</p>
+                          <p className="text-gray-700"><strong className="text-red-700">🏛️ UK Diplomatic Circles:</strong> Elite Timorese professionals in London's diplomatic corps, international organizations, and high-level policy circles, maintaining sophisticated cultural and political networks across the Portuguese-speaking world.</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="space-y-3 text-sm">
-                      <p className="text-gray-700"><strong>🗣️ Newest Addition:</strong> Portuguese became co-official with Spanish and French in 2010, making Equatorial Guinea the newest member of our Portuguese-speaking family!</p>
-                      <p className="text-gray-700"><strong>🎭 Cultural Crossroads:</strong> The only Portuguese-speaking country in Africa that was never colonized by Portugal, creating a unique perspective on Portuguese as a bridge language.</p>
-                      <p className="text-gray-700"><strong>⚡ Unique Position:</strong> The only Portuguese-speaking country on the equator and the only African nation where Portuguese joins Spanish and French as official languages!</p>
-                    </div>
+                    </motion.div>
+                    
+                    {/* Macau - Asia's Monte Carlo */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.9 }}
+                      viewport={{ once: true }}
+                      className="group relative"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-pink-400/20 to-rose-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                      <div className="relative border-2 border-pink-200/50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:border-pink-300 bg-gradient-to-br from-white via-pink-50/30 to-rose-50/30 backdrop-blur-sm">
+                        <div className="flex items-center gap-4 mb-6">
+                          <span className="text-5xl">🇲🇴</span>
+                          <div>
+                            <h4 className="text-2xl font-bold text-gray-900">Macau</h4>
+                            <p className="text-pink-600 font-bold">Asia's Monte Carlo • Monte Carlo da Ásia</p>
+                          </div>
+                        </div>
+                        <div className="space-y-4">
+                          <p className="text-gray-700"><strong className="text-pink-700">🎰 Gaming Capital:</strong> World's largest gambling revenue center, luxury casino resorts, high-roller entertainment, and elite gaming culture connecting Macanese professionals with London's financial and entertainment elite.</p>
+                          <p className="text-gray-700"><strong className="text-pink-700">🏛️ Portuguese Elegance:</strong> UNESCO World Heritage colonial architecture, sophisticated Portuguese-Chinese cultural fusion, elegant historic preservation, and refined aesthetic traditions maintaining prestige in London's cultural circles.</p>
+                          <p className="text-gray-700"><strong className="text-pink-700">🍽️ Culinary Excellence:</strong> Michelin-starred restaurants, fusion haute cuisine, world-renowned culinary traditions, and Macanese chefs operating London's most exclusive Portuguese-Asian fusion establishments and luxury dining experiences.</p>
+                          <p className="text-gray-700"><strong className="text-pink-700">💼 Elite Networks:</strong> Wealthy Macanese professionals in London's financial district, luxury hospitality sector, gaming industry connections, and sophisticated business networks linking Asia's wealthiest Portuguese-speaking elite with UK markets.</p>
+                        </div>
+                      </div>
+                    </motion.div>
                   </div>
-                </div>
                 
-                {/* Language Statistics */}
-                <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-6 mb-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4 text-center">🌍 A Língua Portuguesa em Números</h4>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                    <div className="bg-white/70 rounded-lg p-3">
-                      <div className="text-2xl font-bold text-primary-600">280M+</div>
-                      <div className="text-xs text-gray-600">Native Speakers</div>
-                    </div>
-                    <div className="bg-white/70 rounded-lg p-3">
-                      <div className="text-2xl font-bold text-secondary-600">5th</div>
-                      <div className="text-xs text-gray-600">Most Spoken Language</div>
-                    </div>
-                    <div className="bg-white/70 rounded-lg p-3">
-                      <div className="text-2xl font-bold text-purple-600">4</div>
-                      <div className="text-xs text-gray-600">Continents</div>
-                    </div>
-                    <div className="bg-white/70 rounded-lg p-3">
-                      <div className="text-2xl font-bold text-green-600">12+</div>
-                      <div className="text-xs text-gray-600">Unique Accents</div>
+                  {/* Luxury Statistics */}
+                  <div className="bg-gradient-to-r from-premium-50 via-primary-50 to-secondary-50 rounded-2xl p-8 border border-premium-200/30 mb-8">
+                    <motion.h4 
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6 }}
+                      viewport={{ once: true }}
+                      className="text-2xl font-bold text-gray-900 mb-6 text-center"
+                    >
+                      💎 Elite Portuguese-Speaking World Statistics
+                    </motion.h4>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                      <motion.div 
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        viewport={{ once: true }}
+                        className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-premium-200/50"
+                      >
+                        <div className="text-3xl font-bold bg-gradient-to-r from-premium-600 to-primary-600 bg-clip-text text-transparent">€4.2T+</div>
+                        <div className="text-sm text-gray-700 font-medium">Combined GDP</div>
+                        <div className="text-xs text-gray-500">Economic powerhouse</div>
+                      </motion.div>
+                      <motion.div 
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-secondary-200/50"
+                      >
+                        <div className="text-3xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent">280M+</div>
+                        <div className="text-sm text-gray-700 font-medium">Elite Speakers</div>
+                        <div className="text-xs text-gray-500">Global influence</div>
+                      </motion.div>
+                      <motion.div 
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        viewport={{ once: true }}
+                        className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-purple-200/50"
+                      >
+                        <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">9</div>
+                        <div className="text-sm text-gray-700 font-medium">Elite Nations</div>
+                        <div className="text-xs text-gray-500">Prestigious heritage</div>
+                      </motion.div>
+                      <motion.div 
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        viewport={{ once: true }}
+                        className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-green-200/50"
+                      >
+                        <div className="text-3xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">500+</div>
+                        <div className="text-sm text-gray-700 font-medium">Years Heritage</div>
+                        <div className="text-xs text-gray-500">Cultural legacy</div>
+                      </motion.div>
                     </div>
                   </div>
-                </div>
-                
-                <div className="text-center">
-                  <p className="text-gray-700 font-medium mb-2">
-                    "Do Minho ao Timor, de Cabo Verde ao Brasil—somos uma só família lusófona!"
-                  </p>
-                  <p className="text-gray-600 italic text-sm">
-                    From Portugal's northern Minho to distant Timor, from Cape Verde's islands to Brazil's vastness—we are one Portuguese-speaking family, united by language, enriched by diversity.
-                  </p>
+                  
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="text-center"
+                  >
+                    <div className="bg-gradient-to-r from-premium-100 via-primary-100 to-secondary-100 rounded-2xl p-8 border border-premium-200/30">
+                      <p className="text-gray-800 font-bold text-xl mb-4">
+                        "Do palácio real português às torres de Macau, dos diamantes angolanos ao ouro brasileiro—somos uma família de prestígio global."
+                      </p>
+                      <p className="text-gray-600 italic text-lg leading-relaxed">
+                        From Portugal's royal palaces to Macau's towers, from Angola's diamonds to Brazil's gold—we are a family of global prestige, 
+                        united by our sophisticated heritage, enriched by our collective success across four continents.
+                      </p>
+                      <div className="mt-6 flex items-center justify-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-premium-500 to-primary-500 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-xl">
+                          LT
+                        </div>
+                        <div className="text-left">
+                          <p className="font-bold text-gray-900">LusoTown London</p>
+                          <p className="text-sm text-gray-600">Celebrating Elite Portuguese Heritage</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
                 </div>
               </div>
             </div>

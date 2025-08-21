@@ -164,6 +164,11 @@ module.exports = {
         'fade-in': 'fadeIn 0.4s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
         'slide-in-right': 'slideInRight 0.5s ease-out',
+        'luxury-float': 'luxuryFloat 3s ease-in-out infinite',
+        'luxury-pulse': 'luxuryPulse 2s ease-in-out infinite',
+        'portuguese-wave': 'portugueseWave 4s ease-in-out infinite',
+        'gradient-shift': 'gradientShift 3s ease-in-out infinite',
+        'shimmer': 'shimmer 2s linear infinite',
       },
       keyframes: {
         fadeInUp: {
@@ -181,6 +186,26 @@ module.exports = {
         slideInRight: {
           '0%': { opacity: '0', transform: 'translateX(2rem)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        luxuryFloat: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        luxuryPulse: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.7' },
+        },
+        portugueseWave: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        gradientShift: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
         },
       },
     },

@@ -26,10 +26,19 @@ const getMobileFeatures = (t: any, isPortuguese: boolean) => [
     icon: HeartIcon,
     solidIcon: HeartSolidIcon,
     gradient: 'from-action-500 to-secondary-500',
-    title: isPortuguese ? 'Matches Portugueses' : 'Portuguese Matches',
+    title: isPortuguese ? 'Encontre os Seus Matches' : 'Meet Your Matches',
     description: isPortuguese 
-      ? 'Conecte-se com portugueses que partilham a sua saudade e património cultural'
-      : 'Connect with Portuguese speakers who share your saudade and cultural heritage'
+      ? 'Algoritmo inteligente liga portugueses baseado em interesses, localização e compatibilidade cultural'
+      : 'Smart algorithm connects Portuguese speakers based on interests, location, and cultural compatibility'
+  },
+  {
+    icon: CalendarIcon,
+    solidIcon: CalendarIcon,
+    gradient: 'from-secondary-500 to-accent-500',
+    title: isPortuguese ? 'Encontros & Eventos' : 'Meetups & Events',
+    description: isPortuguese
+      ? 'Desde noites íntimas de Fado em Stockwell até networking na City'
+      : 'From intimate Fado nights in Stockwell to networking in the City'
   },
   {
     icon: PlayIcon,
@@ -39,15 +48,6 @@ const getMobileFeatures = (t: any, isPortuguese: boolean) => [
     description: isPortuguese
       ? 'Assista conteúdo cultural português ao vivo e conecte-se com criadores'
       : 'Watch live Portuguese cultural content and connect with creators'
-  },
-  {
-    icon: CalendarIcon,
-    solidIcon: CalendarIcon,
-    gradient: 'from-secondary-500 to-accent-500',
-    title: isPortuguese ? 'Eventos Culturais' : 'Cultural Events',
-    description: isPortuguese
-      ? 'Desde noites íntimas de Fado em Stockwell até networking na City'
-      : 'From intimate Fado nights in Stockwell to networking in the City'
   },
   {
     icon: UserGroupIcon,
@@ -137,26 +137,26 @@ export default function AppDownloadSection() {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 {isPortuguese ? (
                   <>
-                    Leve a Sua{' '}
+                    Encontre os Seus{' '}
                     <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
-                      Comunidade Portuguesa
+                      Matches Portugueses
                     </span>
-                    {' '}Para Todo o Lado
+                    {' '}No Telemóvel
                   </>
                 ) : (
                   <>
-                    Take Your{' '}
+                    Meet Your{' '}
                     <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
-                      Portuguese Community
+                      Portuguese Matches
                     </span>
-                    {' '}Everywhere
+                    {' '}On Mobile
                   </>
                 )}
               </h2>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed">
                 {isPortuguese 
-                  ? 'Nunca perca encontros portugueses em Londres, conversas de grupo ou novas ligações. Descarregue a app LusoTown e mantenha-se conectado com a comunidade portuguesa onde quer que vá.'
-                  : 'Never miss Portuguese meetups in London, group chats or new connections. Get the LusoTown mobile app and stay connected with the Portuguese community wherever you go.'}
+                  ? 'Descubra portugueses compatíveis em Londres baseado nos seus interesses, localização e valores culturais. O nosso algoritmo inteligente conecta-o com a sua comunidade perfeita.'
+                  : 'Discover compatible Portuguese speakers in London based on your interests, location, and cultural values. Our smart algorithm connects you with your perfect community.'}
               </p>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -172,13 +172,13 @@ export default function AppDownloadSection() {
                   <div className="space-y-3">
                     <h3 className="font-bold text-gray-900 text-xl mb-2">
                       {isPortuguese 
-                        ? `Junte-se a ${communityStats.members} falantes de português verificados`
-                        : `Join ${communityStats.members} verified Portuguese speakers`}
+                        ? `Conecte-se com ${communityStats.members} portugueses verificados em Londres`
+                        : `Connect with ${communityStats.members} verified Portuguese speakers in London`}
                     </h3>
                     <p className="text-gray-700 text-lg leading-relaxed">
                       {isPortuguese 
-                        ? 'A sua comunidade Luso-Londrina já está a crescer. Descarregue a app e encontre a sua comunidade hoje.'
-                        : 'Your Portuguese London community is already growing. Download the app and find your community today.'}
+                        ? 'O nosso algoritmo inteligente já criou milhares de conexões autênticas entre portugueses. Descarregue e encontre os seus matches hoje.'
+                        : 'Our smart algorithm has already created thousands of authentic connections between Portuguese speakers. Download and find your matches today.'}
                     </p>
                     <div className="flex items-center gap-6 text-sm font-medium">
                       <div className="flex items-center gap-2">
@@ -205,10 +205,10 @@ export default function AppDownloadSection() {
             >
               <div className="text-center">
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-                  {isPortuguese ? 'Toda a Comunidade Portuguesa no Seu Telemóvel' : 'Your Entire Portuguese Community on Mobile'}
+                  {isPortuguese ? 'Encontre os Seus Matches Portugueses Perfeitos' : 'Find Your Perfect Portuguese Matches'}
                 </h3>
                 <p className="text-lg text-gray-600">
-                  {isPortuguese ? 'Acesso completo a todas as funcionalidades da plataforma' : 'Complete access to all platform features'}
+                  {isPortuguese ? 'Algoritmo inteligente conecta-o com portugueses compatíveis em Londres' : 'Smart algorithm connects you with compatible Portuguese speakers in London'}
                 </p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
@@ -254,10 +254,10 @@ export default function AppDownloadSection() {
             >
               <div className="text-center">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {isPortuguese ? 'Descarregue Grátis Hoje' : 'Download Free Today'}
+                  {isPortuguese ? 'Comece a Fazer Matches Hoje' : 'Start Matching Today'}
                 </h3>
                 <p className="text-gray-600">
-                  {isPortuguese ? 'Disponível para iOS e Android' : 'Available for iOS and Android'}
+                  {isPortuguese ? 'Grátis para iOS e Android • Encontre a sua comunidade portuguesa' : 'Free for iOS and Android • Find your Portuguese community'}
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
@@ -330,15 +330,15 @@ export default function AppDownloadSection() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-primary-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                  <span className="text-primary-700 font-semibold">
-                    {isPortuguese ? 'Comunidade Luso-Londrina' : 'Portuguese London Community'}
+                  <div className="w-3 h-3 bg-action-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                  <span className="text-action-700 font-semibold">
+                    {isPortuguese ? 'Matches Inteligentes' : 'Smart Matching'}
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-secondary-500 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
                   <span className="text-secondary-700 font-semibold">
-                    {communityStats.members} {isPortuguese ? 'membros ativos' : 'active members'}
+                    {communityStats.members} {isPortuguese ? 'portugueses conectados' : 'Portuguese connected'}
                   </span>
                 </div>
               </div>
@@ -389,161 +389,184 @@ export default function AppDownloadSection() {
                     {/* Floating Portuguese elements */}
                     <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-secondary-200/40 to-accent-200/30 rounded-full animate-bounce opacity-60" style={{ animationDuration: '3s' }}></div>
                     
-                    {/* Enhanced Portuguese-themed Header */}
+                    {/* Enhanced Portuguese-themed Header - Matches Focus */}
                     <div className="bg-gradient-to-r from-white via-primary-50/30 to-secondary-50/30 px-6 py-5 shadow-lg border-b border-primary-100/50">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center shadow-md">
-                            <span className="text-white font-bold text-lg">L</span>
+                          <div className="w-10 h-10 bg-gradient-to-br from-action-500 to-secondary-500 rounded-xl flex items-center justify-center shadow-md">
+                            <HeartSolidIcon className="h-6 w-6 text-white" />
                           </div>
                           <div>
-                            <h1 className="text-xl font-bold text-gray-900">LusoTown</h1>
-                            <p className="text-xs text-gray-600">London • Lisboa</p>
+                            <h1 className="text-xl font-bold text-gray-900">
+                              {isPortuguese ? 'Os Seus Matches' : 'Your Matches'}
+                            </h1>
+                            <p className="text-xs text-action-600 font-medium">
+                              {isPortuguese ? '8 novos matches hoje' : '8 new matches today'}
+                            </p>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
                           <div className="relative">
-                            <div className="w-9 h-9 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-xl flex items-center justify-center border border-primary-200/50">
-                              <BellIcon className="h-5 w-5 text-primary-700" />
+                            <div className="w-9 h-9 bg-gradient-to-br from-action-100 to-coral-100 rounded-xl flex items-center justify-center border border-action-200/50">
+                              <BellIcon className="h-5 w-5 text-action-700" />
                             </div>
                             <div className="absolute -top-1 -right-1 w-4 h-4 bg-coral-500 rounded-full flex items-center justify-center">
-                              <span className="text-white text-xs font-bold">3</span>
+                              <span className="text-white text-xs font-bold">5</span>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    {/* Enhanced Portuguese Content Preview */}
-                    <div className="p-6 space-y-5 flex-1 relative">
+                    {/* Enhanced Portuguese Matches Interface */}
+                    <div className="p-6 space-y-4 flex-1 relative">
                       
-                      {/* Active Groups Card with Portuguese theming */}
+                      {/* Top Portuguese Match Card */}
                       <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 2, duration: 0.8 }}
-                        className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-primary-100/60 relative overflow-hidden"
+                        className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-lg border-2 border-action-200/40 relative overflow-hidden"
                       >
-                        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-secondary-100/50 to-transparent rounded-bl-2xl"></div>
-                        <div className="flex items-center gap-4 mb-4 relative z-10">
-                          <div className="w-12 h-12 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-2xl flex items-center justify-center shadow-md">
-                            <UserGroupIcon className="h-6 w-6 text-white" />
+                        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-action-100/50 to-transparent rounded-bl-2xl"></div>
+                        <div className="flex items-start gap-4 relative z-10">
+                          <div className="relative">
+                            <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg border-2 border-white">
+                              <div className="w-full h-full bg-gradient-to-br from-orange-300 via-orange-400 to-orange-500 flex items-center justify-center">
+                                <span className="text-white font-bold text-xl">M</span>
+                              </div>
+                            </div>
+                            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full"></div>
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-bold text-gray-900 text-base">
-                              {isPortuguese ? 'Clube de Leitura Português' : 'Portuguese Reading Club'}
-                            </h3>
-                            <div className="flex items-center gap-2">
-                              <div className="w-2 h-2 bg-coral-500 rounded-full animate-pulse"></div>
-                              <p className="text-sm text-coral-600 font-medium">
-                                {isPortuguese ? '3 novas mensagens' : '3 new messages'}
-                              </p>
+                            <div className="flex items-center justify-between mb-2">
+                              <h3 className="font-bold text-gray-900 text-lg">
+                                {isPortuguese ? 'Maria Santos' : 'Maria Santos'}
+                              </h3>
+                              <div className="flex items-center gap-1">
+                                <HeartSolidIcon className="h-4 w-4 text-action-500" />
+                                <span className="text-sm font-bold text-action-600">96%</span>
+                              </div>
                             </div>
-                          </div>
-                        </div>
-                        <div className="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-xl p-4 border border-gray-100/50">
-                          <p className="text-sm text-gray-700 font-medium">
-                            &quot;{isPortuguese ? 'Alguém já leu \'Os Maias\' do Eça de Queirós?' : 'Anyone read \'Os Maias\' by Eça de Queirós?'}&quot;
-                          </p>
-                          <div className="flex items-center gap-2 mt-2">
-                            <div className="flex -space-x-1">
-                              {[1, 2, 3].map((i) => (
-                                <div
-                                  key={i}
-                                  className="w-6 h-6 rounded-full border-2 border-white shadow-sm"
-                                  style={{ backgroundColor: `hsl(${(i * 60) % 360}, 65%, 65%)` }}
-                                />
-                              ))}
+                            <p className="text-sm text-gray-600 mb-3">
+                              {isPortuguese 
+                                ? 'Lisboa • Kensington • Adora fado e literatura portuguesa'
+                                : 'Lisbon • Kensington • Loves fado and Portuguese literature'}
+                            </p>
+                            <div className="flex items-center gap-2 mb-3">
+                              <div className="px-2 py-1 bg-secondary-100 rounded-lg text-xs font-medium text-secondary-700">
+                                {isPortuguese ? 'Fado' : 'Fado'}
+                              </div>
+                              <div className="px-2 py-1 bg-accent-100 rounded-lg text-xs font-medium text-accent-700">
+                                {isPortuguese ? 'Literatura' : 'Literature'}
+                              </div>
+                              <div className="px-2 py-1 bg-primary-100 rounded-lg text-xs font-medium text-primary-700">
+                                {isPortuguese ? 'Culinária' : 'Cooking'}
+                              </div>
                             </div>
-                            <span className="text-xs text-gray-500">+12 {isPortuguese ? 'membros' : 'members'}</span>
+                            <div className="flex items-center gap-3">
+                              <button className="flex-1 bg-gradient-to-r from-action-500 to-coral-500 text-white px-4 py-2 rounded-xl font-semibold text-sm hover:shadow-md transition-all">
+                                {isPortuguese ? 'Conectar' : 'Connect'}
+                              </button>
+                              <button className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center hover:bg-gray-200 transition-colors">
+                                <ChatBubbleLeftRightIcon className="h-5 w-5 text-gray-600" />
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </motion.div>
 
-                      {/* Upcoming Portuguese Events Card */}
+                      {/* Second Portuguese Match Card */}
                       <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 2.3, duration: 0.8 }}
-                        className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-secondary-100/60 relative overflow-hidden"
+                        className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-secondary-200/60 relative overflow-hidden"
                       >
-                        <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-accent-100/50 to-transparent rounded-br-2xl"></div>
-                        <div className="flex items-center gap-4 mb-4 relative z-10">
-                          <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-coral-500 rounded-2xl flex items-center justify-center shadow-md">
-                            <CalendarIcon className="h-6 w-6 text-white" />
+                        <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-secondary-100/50 to-transparent rounded-br-2xl"></div>
+                        <div className="flex items-start gap-4 relative z-10">
+                          <div className="relative">
+                            <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg border-2 border-white">
+                              <div className="w-full h-full bg-gradient-to-br from-blue-300 via-blue-400 to-blue-500 flex items-center justify-center">
+                                <span className="text-white font-bold text-xl">J</span>
+                              </div>
+                            </div>
+                            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full"></div>
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-bold text-gray-900 text-base">
-                              {isPortuguese ? 'Noite de Fado em Stockwell' : 'Fado Night in Stockwell'}
-                            </h3>
-                            <div className="flex items-center gap-2">
-                              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                              <p className="text-sm text-green-600 font-medium">
-                                {isPortuguese ? 'Amanhã, 19:30' : 'Tomorrow, 7:30 PM'}
-                              </p>
+                            <div className="flex items-center justify-between mb-2">
+                              <h3 className="font-bold text-gray-900 text-lg">
+                                {isPortuguese ? 'João Pereira' : 'João Pereira'}
+                              </h3>
+                              <div className="flex items-center gap-1">
+                                <HeartSolidIcon className="h-4 w-4 text-secondary-500" />
+                                <span className="text-sm font-bold text-secondary-600">92%</span>
+                              </div>
                             </div>
-                          </div>
-                          <div className="text-right">
-                            <div className="text-lg font-bold text-gray-900">£25</div>
-                            <div className="text-xs text-gray-500">8 {isPortuguese ? 'lugares' : 'spots'}</div>
-                          </div>
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <MapPinIcon className="h-4 w-4 text-gray-400" />
-                            <p className="text-sm text-gray-600 font-medium">Portuguese Cultural Centre</p>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <StarSolidIcon className="h-4 w-4 text-yellow-400" />
-                            <span className="text-sm font-semibold text-gray-700">4.9</span>
+                            <p className="text-sm text-gray-600 mb-3">
+                              {isPortuguese 
+                                ? 'Porto • Camden • Futebol do Benfica e música portuguesa'
+                                : 'Porto • Camden • Benfica football and Portuguese music'}
+                            </p>
+                            <div className="flex items-center gap-2 mb-3">
+                              <div className="px-2 py-1 bg-red-100 rounded-lg text-xs font-medium text-red-700">
+                                {isPortuguese ? 'Benfica' : 'Benfica'}
+                              </div>
+                              <div className="px-2 py-1 bg-green-100 rounded-lg text-xs font-medium text-green-700">
+                                {isPortuguese ? 'Música' : 'Music'}
+                              </div>
+                              <div className="px-2 py-1 bg-yellow-100 rounded-lg text-xs font-medium text-yellow-700">
+                                {isPortuguese ? 'Viagens' : 'Travel'}
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-3">
+                              <button className="flex-1 bg-gradient-to-r from-secondary-500 to-accent-500 text-white px-4 py-2 rounded-xl font-semibold text-sm hover:shadow-md transition-all">
+                                {isPortuguese ? 'Conectar' : 'Connect'}
+                              </button>
+                              <button className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center hover:bg-gray-200 transition-colors">
+                                <ChatBubbleLeftRightIcon className="h-5 w-5 text-gray-600" />
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </motion.div>
 
-                      {/* New Portuguese Connections Card */}
+                      {/* Portuguese Matches Summary */}
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 2.6, duration: 0.8 }}
-                        className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-action-100/60 relative overflow-hidden"
+                        className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-4 border border-primary-200/50 relative overflow-hidden"
                       >
-                        <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-primary-100/50 to-transparent rounded-bl-2xl"></div>
-                        <div className="flex items-center justify-between mb-4 relative z-10">
-                          <div>
-                            <h3 className="font-bold text-gray-900 text-base mb-1">
-                              {isPortuguese ? 'Novos Portugueses na Área' : 'New Portuguese in Area'}
-                            </h3>
-                            <p className="text-sm text-gray-600">
-                              {isPortuguese ? '12 novos membros esta semana' : '12 new members this week'}
-                            </p>
-                          </div>
-                          <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-action-500 rounded-xl flex items-center justify-center shadow-md">
-                            <HeartSolidIcon className="h-5 w-5 text-white" />
-                          </div>
-                        </div>
                         <div className="flex items-center justify-between">
-                          <div className="flex -space-x-3">
-                            {[1, 2, 3, 4, 5].map((i) => (
+                          <div className="flex items-center gap-3">
+                            <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center shadow-md">
+                              <SparklesIcon className="h-6 w-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="font-bold text-gray-900 text-base">
+                                {isPortuguese ? '+6 Novos Matches' : '+6 New Matches'}
+                              </h3>
+                              <p className="text-sm text-gray-600">
+                                {isPortuguese ? 'Baseado nos seus interesses' : 'Based on your interests'}
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex -space-x-2">
+                            {[1, 2, 3, 4].map((i) => (
                               <motion.div
                                 key={i}
                                 initial={{ scale: 0 }}
                                 animate={{ scale: 1 }}
                                 transition={{ delay: 2.8 + i * 0.1, duration: 0.3 }}
-                                className="w-10 h-10 rounded-full border-3 border-white shadow-lg relative"
+                                className="w-8 h-8 rounded-full border-2 border-white shadow-sm"
                                 style={{
-                                  backgroundColor: `hsl(${(i * 72) % 360}, 65%, 65%)`,
+                                  backgroundColor: `hsl(${(i * 80) % 360}, 65%, 65%)`,
                                 }}
-                              >
-                                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
-                              </motion.div>
+                              />
                             ))}
-                            <div className="w-10 h-10 rounded-full border-3 border-white bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-sm font-bold text-gray-700 shadow-lg">
-                              +7
-                            </div>
-                          </div>
-                          <div className="text-right">
-                            <div className="text-sm text-primary-600 font-semibold">
-                              {isPortuguese ? '94% Match' : '94% Match'}
+                            <div className="w-8 h-8 rounded-full border-2 border-white bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-xs font-bold text-gray-700 shadow-sm">
+                              +2
                             </div>
                           </div>
                         </div>

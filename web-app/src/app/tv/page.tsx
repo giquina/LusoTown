@@ -50,6 +50,10 @@ import StreamViewerStats from "@/components/StreamViewerStats";
 import StreamCategories from "@/components/StreamCategories";
 import LiveChatWidget from "@/components/LiveChatWidget";
 import HowStreamingWorks from "@/components/HowStreamingWorks";
+import LuxuryLoader from "@/components/LuxuryLoader";
+import LuxuryErrorBoundary from "@/components/LuxuryErrorBoundary";
+import { LuxuryButton, LuxuryCard } from "@/components/LuxuryMicroInteractions";
+import { usePerformanceOptimization } from "@/hooks/usePerformanceOptimization";
 
 export default function TVPage() {
   const { language, t } = useLanguage();
@@ -61,11 +65,15 @@ export default function TVPage() {
 
   const [viewerCount, setViewerCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState(0);
   const [showMiniPlayer, setShowMiniPlayer] = useState(false);
   const playerContainerRef = useRef<HTMLDivElement | null>(null);
   const liveRef = useRef<HTMLDivElement | null>(null);
   const scheduleRef = useRef<HTMLDivElement | null>(null);
   const replaysRef = useRef<HTMLDivElement | null>(null);
+  
+  // Performance optimization
+  const { preloadCriticalResources } = usePerformanceOptimization();
 
   const isPortuguese = language === "pt";
 
@@ -167,7 +175,24 @@ export default function TVPage() {
     if (!window.location.hash) {
       setTimeout(() => window.scrollTo({ top: 0, behavior: "auto" }), 0);
     }
-  }, []);
+    
+    // Preload critical resources
+    preloadCriticalResources();
+    
+    // Simulate loading progress for premium experience
+    const progressTimer = setInterval(() => {
+      setLoadingProgress(prev => {
+        if (prev >= 100) {
+          setIsLoading(false);
+          clearInterval(progressTimer);
+          return 100;
+        }
+        return prev + Math.random() * 15;
+      });
+    }, 200);
+    
+    return () => clearInterval(progressTimer);
+  }, [preloadCriticalResources]);
 
   const goToTab = (tabId: string) => {
     setActiveTab(tabId);
@@ -183,7 +208,17 @@ export default function TVPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <LuxuryErrorBoundary variant="premium">
+      <LuxuryLoader 
+        isLoading={isLoading}
+        loadingText={isPortuguese ? "Carregando LusoTown TV" : "Loading LusoTown TV"}
+        subText={isPortuguese ? "Preparando experiência cultural premium" : "Preparing premium cultural experience"}
+        showProgress={true}
+        progress={loadingProgress}
+        variant="elite"
+      />
+      
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
         {/* Clean background pattern instead of image */}
@@ -251,27 +286,32 @@ export default function TVPage() {
               transition={{ delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-3 justify-center"
             >
-              <button
+              <LuxuryButton
+                variant="premium"
+                size="lg"
                 onClick={() => goToTab("live")}
-                className="inline-flex items-center justify-center bg-primary-600 text-white font-semibold py-3 px-6 rounded-xl hover:bg-primary-700 transition-colors"
               >
-                <Play className="w-4 h-4 mr-2" />
+                <Play className="w-5 h-5 mr-2" />
                 {isPortuguese ? "Assistir Agora" : "Watch Live"}
-              </button>
-              <button
+              </LuxuryButton>
+              
+              <LuxuryButton
+                variant="secondary"
+                size="lg"
                 onClick={() => goToTab("programs")}
-                className="inline-flex items-center justify-center bg-white text-primary-700 border border-primary-200 font-semibold py-3 px-6 rounded-xl hover:bg-gray-50 transition-colors"
               >
-                <Calendar className="w-4 h-4 mr-2" />
+                <Calendar className="w-5 h-5 mr-2" />
                 {isPortuguese ? "Ver Horários" : "View Schedule"}
-              </button>
-              <button
+              </LuxuryButton>
+              
+              <LuxuryButton
+                variant="elite"
+                size="lg"
                 onClick={() => goToTab("replays")}
-                className="inline-flex items-center justify-center bg-gray-900 text-white font-semibold py-3 px-6 rounded-xl hover:bg-black transition-colors"
               >
-                <Library className="w-4 h-4 mr-2" />
+                <Library className="w-5 h-5 mr-2" />
                 {isPortuguese ? "Ver Gravações" : "Explore Replays"}
-              </button>
+              </LuxuryButton>
             </motion.div>
           </div>
         </div>
@@ -306,49 +346,56 @@ export default function TVPage() {
           {/* Live Tab */}
           {activeTab === "live" && (
             <div ref={liveRef} className="space-y-8">
-              <div className="text-center mb-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center mb-8"
+              >
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
-                  {isPortuguese ? "Canal Ao Vivo" : "Live Channel"}
+                  {isPortuguese ? "Canal Cultural Ao Vivo" : "Live Cultural Channel"}
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-gray-600 max-w-2xl mx-auto">
                   {isPortuguese
-                    ? "Acompanhe quando o nosso canal cultural entra no ar diretamente de Londres"
-                    : "Follow when our cultural channel goes live directly from London"}
+                    ? "Acompanhe transmissões culturais exclusivas quando o nosso canal entra no ar diretamente de Londres com qualidade premium."
+                    : "Follow exclusive cultural broadcasts when our channel goes live directly from London with premium quality."}
                 </p>
-              </div>
+              </motion.div>
 
               <div className="grid lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2">
-                  <StreamPlayer
-                    stream={{
-                      id: "default",
-                      title: isPortuguese ? "Transmissão" : "Stream",
-                      youtubeVideoId: "dQw4w9WgXcQ",
-                      isLive: true,
-                      isPremium: false,
-                      thumbnail: "/events/networking.jpg",
-                      viewerCount: 0,
-                      previewDuration: 300,
-                    }}
-                    hasAccess={true}
-                    onInteraction={() => {}}
-                  />
-                  <div className="mt-4">
-                    <StreamViewerStats
-                      currentViewers={viewerCount}
-                      peakViewers={Math.max(viewerCount, 100)}
-                      totalViews={1000 + viewerCount}
-                      language={language}
+                <div className="lg:col-span-2 space-y-6">
+                  <LuxuryCard variant="premium" className="p-0 overflow-hidden">
+                    <StreamPlayer
+                      stream={{
+                        id: "default",
+                        title: isPortuguese ? "Transmissão Cultural" : "Cultural Stream",
+                        youtubeVideoId: "dQw4w9WgXcQ",
+                        isLive: true,
+                        isPremium: false,
+                        thumbnail: "/events/networking.jpg",
+                        viewerCount: viewerCount,
+                        previewDuration: 300,
+                      }}
+                      hasAccess={true}
+                      onInteraction={() => {}}
                     />
-                  </div>
+                  </LuxuryCard>
+                  
+                  <StreamViewerStats
+                    currentViewers={viewerCount}
+                    peakViewers={Math.max(viewerCount, 100)}
+                    totalViews={1000 + viewerCount}
+                    language={language}
+                  />
                 </div>
                 <div>
-                  <StreamCategories
-                    categories={categories}
-                    selectedCategory={selectedCategory}
-                    onCategorySelect={setSelectedCategory}
-                    hasActiveSubscription={hasActiveSubscription}
-                  />
+                  <LuxuryCard variant="premium" hoverable={true}>
+                    <StreamCategories
+                      categories={categories}
+                      selectedCategory={selectedCategory}
+                      onCategorySelect={setSelectedCategory}
+                      hasActiveSubscription={hasActiveSubscription}
+                    />
+                  </LuxuryCard>
                 </div>
               </div>
             </div>
@@ -429,7 +476,8 @@ export default function TVPage() {
         </div>
       </section>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </LuxuryErrorBoundary>
   );
 }

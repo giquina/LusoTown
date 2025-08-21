@@ -351,5 +351,174 @@ find . -name "*.tsx" | head -10                      # Sample components
 
 ---
 
+## 🔍 Specialized Advisory Agents
+
+### Agent: `instruction-compliance-advisor`
+**Purpose**: Analyzes discrepancies between user instructions and implementation, provides intelligent guidance based on documented rules.
+
+**When to Use**:
+- User reports unexpected website behavior vs. their instructions
+- Need explanation for why features behave certain ways
+- Conflicts between user requests and established rules
+- Documentation gaps or rule clarifications needed
+
+**Key Capabilities**:
+- Reviews all rule files (AGENTS.md, UI_UX_RULES.md, CLAUDE.md, TODO.md)
+- Analyzes implementation vs. documented instructions
+- Provides contextual explanations with rule citations
+- Asks clarifying questions about user intent
+- Recommends solutions that maintain platform consistency
+
+**Documentation**: See `/web-app/src/agents/InstructionComplianceAdvisor.md` for detailed specifications.
+
+---
+
+### Agent: `strategic-decision-advisor`
+**Purpose**: Acts as technical business consultant for strategic platform decisions, feature prioritization, and growth direction.
+
+**When to Use**:
+- Major feature development decisions
+- Technology choice evaluations
+- Business-tech alignment questions
+- Resource allocation decisions
+- Market expansion planning
+
+**Key Capabilities**:
+- Feature prioritization framework with Portuguese community focus
+- Technology strategy guidance and architecture decisions
+- Portuguese market intelligence and competitive analysis
+- Resource allocation optimization
+- Business impact vs. technical complexity analysis
+
+**Documentation**: See `/web-app/src/agents/StrategicDecisionAdvisor.md` for detailed specifications.
+
+---
+
+### Agent: `qa-mentor-advisor`
+**Purpose**: Personal QA expert that teaches testing strategies, prevents bugs, and builds quality into the development process.
+
+**When to Use**:
+- Before deploying new features
+- When bugs are reported by users
+- Setting up testing protocols
+- Quality standards establishment
+- Bilingual functionality validation
+
+**Key Capabilities**:
+- Comprehensive test strategy development
+- Bug prevention and detection protocols
+- Portuguese platform-specific testing (bilingual, cultural elements)
+- Quality education and mentoring
+- Automated quality gate establishment
+
+**Documentation**: See `/web-app/src/agents/QualityAssuranceMentor.md` for detailed specifications.
+
+---
+
+### Agent: `performance-coach-advisor`
+**Purpose**: Monitors and optimizes platform performance to ensure fast, smooth user experience for the Portuguese community.
+
+**When to Use**:
+- Page loading performance issues
+- Mobile experience optimization
+- High bounce rate investigations
+- Pre-launch performance validation
+- Scalability planning
+
+**Key Capabilities**:
+- Performance monitoring and Core Web Vitals tracking
+- Mobile-first optimization for Portuguese community
+- Bundle size and resource optimization
+- Portuguese platform-specific performance tuning
+- Performance education and best practices
+
+**Documentation**: See `/web-app/src/agents/PerformanceCoach.md` for detailed specifications.
+
+---
+
+### Agent: `security-guardian-advisor`
+**Purpose**: Protects platform and Portuguese community through comprehensive security, privacy compliance, and data protection guidance.
+
+**When to Use**:
+- New feature security reviews
+- Security incident response
+- GDPR compliance questions
+- Privacy policy updates
+- User data protection concerns
+
+**Key Capabilities**:
+- Security vulnerability assessment and prevention
+- GDPR and UK data protection compliance
+- Portuguese community data protection
+- Security education and best practices
+- Incident response and threat mitigation
+
+**Documentation**: See `/web-app/src/agents/SecurityGuardian.md` for detailed specifications.
+
+---
+
+### Agent: `growth-analytics-advisor`
+**Purpose**: Analyzes user behavior, drives data-driven growth strategies, and optimizes platform performance for Portuguese community expansion.
+
+**When to Use**:
+- User acquisition optimization
+- Subscription conversion improvement
+- User retention analysis
+- A/B testing guidance
+- Portuguese market expansion planning
+
+**Key Capabilities**:
+- Portuguese community behavior analysis
+- Growth strategy development and optimization
+- A/B testing framework with cultural considerations
+- Revenue and conversion optimization
+- Market intelligence and competitive analysis
+
+**Documentation**: See `/web-app/src/agents/GrowthAnalyticsStrategist.md` for detailed specifications.
+
+---
+
+## 🚀 Advisory Agent Usage Examples
+
+```bash
+# Strategic decision making
+Task tool with:
+- description: "Strategic feature evaluation"
+- subagent_type: "strategic-decision-advisor"
+- prompt: "Should we add video calls or focus on better matching algorithms first?"
+
+# Quality assurance guidance
+Task tool with:
+- description: "Testing strategy development"
+- subagent_type: "qa-mentor-advisor"
+- prompt: "What should I test before deploying the new Portuguese recipe sharing feature?"
+
+# Performance optimization
+Task tool with:
+- description: "Performance analysis"
+- subagent_type: "performance-coach-advisor"
+- prompt: "The matches page is loading slowly on mobile. What optimizations are needed?"
+
+# Security assessment
+Task tool with:
+- description: "Security review"
+- subagent_type: "security-guardian-advisor"
+- prompt: "We're adding private messaging. What security considerations do I need?"
+
+# Growth strategy
+Task tool with:
+- description: "Growth analysis"
+- subagent_type: "growth-analytics-advisor"
+- prompt: "Our subscription conversion is 5%. How can we improve it for Portuguese users?"
+
+# Rule compliance check
+Task tool with:
+- description: "Analyze instruction compliance"
+- subagent_type: "instruction-compliance-advisor"
+- prompt: "User asked for London references but we're using UK. Please explain why."
+```
+
+---
+
 *This file is automatically maintained. Last updated: August 2025*
 *For questions about AI agent integration, check the project's issue tracker.*

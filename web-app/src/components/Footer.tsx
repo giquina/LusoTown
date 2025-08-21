@@ -5,6 +5,7 @@ import {
   MapPinIcon,
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import Logo from "@/components/Logo";
 import { ROUTES } from '@/config/routes';
@@ -63,128 +64,320 @@ export default function Footer() {
   const footerLinks = getFooterLinks(t);
 
   return (
-    <footer className="bg-gray-900 text-white">
-      {/* Main Footer Content - Enhanced Multi-Column Responsive Layout */}
-      <div className="container-width py-12 sm:py-16">
-        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 xl:gap-12">
-          {/* Brand Column */}
-          <div className="md:col-span-2 lg:col-span-1 space-y-6">
-            <Logo size="medium" className="text-white" />
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-900 to-primary-900 text-white relative overflow-hidden">
+      {/* Premium background effects */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-400/30 to-transparent"></div>
+      
+      {/* Main Footer Content - Premium Multi-Column Layout */}
+      <div className="relative container-width py-12 sm:py-16">
+        <motion.div 
+          className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 xl:gap-12"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+              }
+            }
+          }}
+        >
+          {/* Premium Brand Column */}
+          <motion.div 
+            className="md:col-span-2 lg:col-span-1 space-y-6"
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+            }}
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <Logo size="medium" className="text-white" />
+            </motion.div>
 
-            <p className="text-gray-300 leading-relaxed break-words">
+            <motion.p 
+              className="text-gray-300 leading-relaxed break-words"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
               {t("footer.description")}
-            </p>
+            </motion.p>
 
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-gray-300 min-w-0">
-                <MapPinIcon className="h-5 w-5 text-action-400 flex-shrink-0" />
-                <span className="break-words">
+              <motion.div 
+                className="flex items-center gap-3 text-gray-300 min-w-0 group cursor-pointer"
+                whileHover={{ x: 4 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <MapPinIcon className="h-5 w-5 text-action-400 flex-shrink-0 group-hover:text-action-300 transition-colors duration-300" />
+                </motion.div>
+                <span className="break-words group-hover:text-white transition-colors duration-300">
                   Portuguese speakers in London & UK | Unidos pela Língua
                 </span>
-              </div>
-              <div className="flex items-center gap-3 text-gray-300 min-w-0">
-                <EnvelopeIcon className="h-5 w-5 text-secondary-400 flex-shrink-0" />
-                <span className="break-all">connect@lusotown.co.uk</span>
-              </div>
+              </motion.div>
+              <motion.div 
+                className="flex items-center gap-3 text-gray-300 min-w-0 group cursor-pointer"
+                whileHover={{ x: 4 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <EnvelopeIcon className="h-5 w-5 text-secondary-400 flex-shrink-0 group-hover:text-secondary-300 transition-colors duration-300" />
+                </motion.div>
+                <span className="break-all group-hover:text-white transition-colors duration-300">connect@lusotown.co.uk</span>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Links Columns */}
+          {/* Premium Links Columns */}
           <div className="md:col-span-2 lg:col-span-3 grid grid-cols-2 sm:grid-cols-5 gap-6 lg:gap-8">
-            {/* Community */}
-            <div>
-              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-primary-300">
+            {/* Premium Community Section */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+              }}
+            >
+              <motion.h3 
+                className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-primary-300 relative"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
                 Community
-              </h3>
+                <motion.div
+                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: '100%' }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.h3>
               <ul className="space-y-3">
-                {footerLinks.community.map((link) => (
-                  <li key={link.name}>
-                    <a
+                {footerLinks.community.map((link, index) => (
+                  <motion.li 
+                    key={link.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
+                  >
+                    <motion.a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center"
+                      className="text-gray-300 hover:text-white transition-all duration-300 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center group relative"
+                      whileHover={{ x: 4, scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      {link.name}
-                    </a>
-                  </li>
+                      <span className="relative z-10">{link.name}</span>
+                      <motion.div
+                        className="absolute inset-0 bg-primary-900/20 rounded-md"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                      />
+                    </motion.a>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
-            {/* Services */}
-            <div>
-              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-premium-300">
+            {/* Premium Services Section */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.1 } }
+              }}
+            >
+              <motion.h3 
+                className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-premium-300 relative"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
                 Services
-              </h3>
+                <motion.div
+                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-premium-400 to-action-400 rounded-full"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: '100%' }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.h3>
               <ul className="space-y-3">
-                {footerLinks.services.map((link) => (
-                  <li key={link.name}>
-                    <a
+                {footerLinks.services.map((link, index) => (
+                  <motion.li 
+                    key={link.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 + index * 0.05, duration: 0.4 }}
+                  >
+                    <motion.a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center"
+                      className="text-gray-300 hover:text-white transition-all duration-300 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center group relative"
+                      whileHover={{ x: 4, scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      {link.name}
-                    </a>
-                  </li>
+                      <span className="relative z-10">{link.name}</span>
+                      <motion.div
+                        className="absolute inset-0 bg-premium-900/20 rounded-md"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                      />
+                    </motion.a>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
-            {/* Support */}
-            <div>
-              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-secondary-300">
+            {/* Premium Support Section */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } }
+              }}
+            >
+              <motion.h3 
+                className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-secondary-300 relative"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
                 Support
-              </h3>
+                <motion.div
+                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-secondary-400 to-primary-400 rounded-full"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: '100%' }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.h3>
               <ul className="space-y-3">
-                {footerLinks.support.map((link) => (
-                  <li key={link.name}>
-                    <a
+                {footerLinks.support.map((link, index) => (
+                  <motion.li 
+                    key={link.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 + index * 0.05, duration: 0.4 }}
+                  >
+                    <motion.a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center"
+                      className="text-gray-300 hover:text-white transition-all duration-300 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center group relative"
+                      whileHover={{ x: 4, scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      {link.name}
-                    </a>
-                  </li>
+                      <span className="relative z-10">{link.name}</span>
+                      <motion.div
+                        className="absolute inset-0 bg-secondary-900/20 rounded-md"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                      />
+                    </motion.a>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
-            {/* Company */}
-            <div>
-              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-primary-300">
+            {/* Premium Company Section */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.3 } }
+              }}
+            >
+              <motion.h3 
+                className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-primary-300 relative"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
                 Company
-              </h3>
+                <motion.div
+                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: '100%' }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.h3>
               <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
-                  <li key={link.name}>
-                    <a
+                {footerLinks.company.map((link, index) => (
+                  <motion.li 
+                    key={link.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4 + index * 0.05, duration: 0.4 }}
+                  >
+                    <motion.a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center"
+                      className="text-gray-300 hover:text-white transition-all duration-300 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center group relative"
+                      whileHover={{ x: 4, scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      {link.name}
-                    </a>
-                  </li>
+                      <span className="relative z-10">{link.name}</span>
+                      <motion.div
+                        className="absolute inset-0 bg-primary-900/20 rounded-md"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                      />
+                    </motion.a>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
-            {/* Legal */}
-            <div>
-              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-secondary-300">
+            {/* Premium Legal Section */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.4 } }
+              }}
+            >
+              <motion.h3 
+                className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-secondary-300 relative"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
                 Legal
-              </h3>
+                <motion.div
+                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-secondary-400 to-gray-400 rounded-full"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: '100%' }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.h3>
               <ul className="space-y-3">
-                {footerLinks.legal.map((link) => (
-                  <li key={link.name}>
-                    <a
+                {footerLinks.legal.map((link, index) => (
+                  <motion.li 
+                    key={link.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5 + index * 0.05, duration: 0.4 }}
+                  >
+                    <motion.a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center"
+                      className="text-gray-300 hover:text-white transition-all duration-300 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center group relative"
+                      whileHover={{ x: 4, scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      {link.name}
-                    </a>
-                  </li>
+                      <span className="relative z-10">{link.name}</span>
+                      <motion.div
+                        className="absolute inset-0 bg-gray-800/20 rounded-md"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                      />
+                    </motion.a>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
 

@@ -41,6 +41,54 @@ export const authenticPortugueseTestimonials = {
       relationship: 'Educadora e Mãe Luso-Britânica',
       imageId: 'catarina-lopes',
     },
+    {
+      language: 'pt' as const,
+      isAuthentic: true,
+      name: 'João Pereira',
+      age: '42',
+      location: 'Camden, Londres',
+      quote:
+        'Sou de Cabo Verde e quando cheguei a Londres sentia falta da morna e da nossa coladeira. Na LusoTown encontrei outros cabo-verdianos e também portugueses do continente que apreciam a nossa música. Organizamos noites de música crioula no community centre. É lindo ver como a língua portuguesa nos une a todos!',
+      rating: 5,
+      relationship: 'Músico Tradicional Cabo-verdiano',
+      imageId: 'joao-pereira',
+    },
+    {
+      language: 'pt' as const,
+      isAuthentic: true,
+      name: 'Adelaide Silva',
+      age: '39',
+      location: 'Brixton, Londres',
+      quote:
+        'Vim de Angola para estudar na universidade e fiquei. Através da LusoTown conheci outras mulheres angolanas e também brasileiras que, como eu, trabalham em finanças. Criámos um grupo de networking profissional onde falamos português e apoiamo-nos mutuamente. A nossa força vem da união lusófona!',
+      rating: 5,
+      relationship: 'Consultora Financeira Angolana',
+      imageId: 'adelaide-silva',
+    },
+    {
+      language: 'pt' as const,
+      isAuthentic: true,
+      name: 'Ricardo Mendonça',
+      age: '33',
+      location: 'Elephant & Castle, Londres',
+      quote:
+        'Nasci nos Açores e trouxe comigo o amor pelas nossas festas do Espírito Santo. A LusoTown ajudou-me a encontrar outros açorianos em Londres e também madeirenses. Agora celebramos as nossas festas insulares juntos, com linguiça, massa sovada e muita nostalgia. As ilhas estão longe, mas o coração está perto!',
+      rating: 5,
+      relationship: 'Organizador Cultural Açoriano',
+      imageId: 'ricardo-mendonca',
+    },
+    {
+      language: 'pt' as const,
+      isAuthentic: true,
+      name: 'Esperança Santos',
+      age: '29',
+      location: 'South London, Londres',
+      quote:
+        'Sou de São Tomé e Príncipe e estudei medicina em Londres. Sentia-me isolada até descobrir a comunidade lusófona através da LusoTown. Conheci médicos brasileiros, enfermeiras portuguesas e outros profissionais de saúde de países lusófonos. Agora temos reuniões mensais onde partilhamos conhecimentos e apoio mútuo.',
+      rating: 5,
+      relationship: 'Médica São-tomense',
+      imageId: 'esperanca-santos',
+    },
   ],
   transport: [
     {

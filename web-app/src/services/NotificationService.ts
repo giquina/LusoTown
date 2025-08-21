@@ -14,6 +14,44 @@ export interface UserNotification {
   is_emailed: boolean
   expires_at?: string
   created_at: string
+  // AI Enhancement fields
+  ai_generated?: boolean
+  engagement_score?: number
+  optimal_send_time?: string
+  cultural_context?: CulturalContext
+  personalization_tags?: string[]
+  ab_test_variant?: string
+}
+
+export interface CulturalContext {
+  portuguese_region?: 'norte' | 'centro' | 'lisboa' | 'alentejo' | 'algarve' | 'acores' | 'madeira' | 'brasil' | 'angola' | 'mozambique' | 'cabo_verde'
+  cultural_significance?: string
+  diaspora_relevance?: 'first_generation' | 'second_generation' | 'recent_immigrant' | 'heritage_connection'
+  language_preference?: 'pt' | 'en' | 'mixed'
+  cultural_interests?: string[]
+}
+
+export interface UserBehaviorProfile {
+  user_id: string
+  engagement_patterns: {
+    peak_activity_hours: number[]
+    preferred_days: string[]
+    avg_response_time_minutes: number
+    click_through_rate: number
+    notification_open_rate: number
+  }
+  cultural_preferences: CulturalContext
+  content_affinity: {
+    event_types: string[]
+    business_categories: string[]
+    communication_style: 'formal' | 'casual' | 'friendly'
+  }
+  ai_insights: {
+    engagement_likelihood: number
+    optimal_send_times: string[]
+    content_preferences: string[]
+    churn_risk: number
+  }
 }
 
 export interface NotificationPreferences {
@@ -519,6 +557,276 @@ class NotificationService {
         .insert(notifications)
 
       if (insertError) throw insertError
+    }
+  }
+
+  /**
+   * Send AI-powered personalized notification
+   */
+  async sendAIPersonalizedNotification(
+    userId: string,
+    templateId: string,
+    dynamicData: Record<string, any> = {}
+  ): Promise<UserNotification> {
+    try {
+      const { aiNotificationEngine } = await import('./AINotificationEngine')
+      
+      // Get user behavior profile (in production, from database)
+      const userBehavior = await this.getUserBehaviorProfile(userId)
+      if (!userBehavior) {
+        throw new Error('User behavior profile not found')
+      }
+
+      // Generate AI-personalized notification
+      const personalizedNotification = await aiNotificationEngine.generatePersonalizedNotification(
+        userId,
+        templateId,
+        dynamicData,
+        userBehavior
+      )
+
+      // Save to database
+      const { data, error } = await this.supabaseClient
+        .from('user_notifications')
+        .insert(personalizedNotification)
+        .select()
+        .single()
+
+      if (error) throw error
+
+      return data
+    } catch (error) {
+      console.error('[Notification Service] AI personalized notification failed:', error)
+      // Fallback to standard notification
+      return this.createNotification({
+        user_id: userId,
+        notification_type: 'cultural',
+        title: 'Portuguese Community Update',
+        message: 'New updates available for the Portuguese community',
+        priority: 'normal'
+      })
+    }
+  }
+
+  /**
+   * Send cultural event notification with AI personalization
+   */
+  async sendAICulturalEventNotification(userId: string, eventData: {
+    event_id: string
+    event_title: string
+    event_date: string
+    cultural_significance?: string
+    portuguese_region?: string
+    event_type?: string
+  }): Promise<void> {
+    try {
+      await this.sendAIPersonalizedNotification(
+        userId,
+        'cultural_event_fado',
+        {
+          venue: eventData.event_title,
+          time: new Date(eventData.event_date).toLocaleTimeString(),
+          cultural_context: eventData.cultural_significance,
+          portuguese_region: eventData.portuguese_region
+        }
+      )
+    } catch (error) {
+      console.error('[Notification Service] AI cultural event notification failed:', error)
+      // Fallback to standard notification
+      await this.sendCulturalEventNotification(userId, eventData)
+    }
+  }
+
+  /**
+   * Predict engagement for notification before sending
+   */
+  async predictNotificationEngagement(
+    userId: string,
+    templateId: string
+  ): Promise<{
+    likelihood_score: number
+    optimal_send_time: string
+    recommendations: string[]
+  }> {
+    try {
+      const { aiNotificationEngine } = await import('./AINotificationEngine')
+      const userBehavior = await this.getUserBehaviorProfile(userId)
+      
+      if (!userBehavior) {
+        return {
+          likelihood_score: 50,
+          optimal_send_time: '19:00',
+          recommendations: ['User profile needed for better predictions']
+        }
+      }
+
+      // Find template (simplified - in production, get from database)
+      const templates = (aiNotificationEngine as any).aiTemplates
+      const template = templates.find((t: any) => t.id === templateId)
+      
+      if (!template) {
+        return {
+          likelihood_score: 30,
+          optimal_send_time: '19:00',
+          recommendations: ['Template not found']
+        }
+      }
+
+      const prediction = await aiNotificationEngine.predictEngagement(userId, template, userBehavior)
+      
+      return {
+        likelihood_score: prediction.likelihood_score,
+        optimal_send_time: prediction.optimal_send_time,
+        recommendations: prediction.reasoning
+      }
+    } catch (error) {
+      console.error('[Notification Service] Engagement prediction failed:', error)
+      return {
+        likelihood_score: 40,
+        optimal_send_time: '19:00',
+        recommendations: ['Prediction service unavailable']
+      }
+    }
+  }
+
+  /**
+   * Get or create user behavior profile for AI personalization
+   */
+  private async getUserBehaviorProfile(userId: string): Promise<UserBehaviorProfile | null> {
+    try {
+      // In production, fetch from database
+      const { data, error } = await this.supabaseClient
+        .from('user_behavior_profiles')
+        .select('*')
+        .eq('user_id', userId)
+        .single()
+
+      if (error && error.code !== 'PGRST116') { // Not found error
+        throw error
+      }
+
+      if (data) {
+        return data
+      }
+
+      // Create default profile if not exists
+      const defaultProfile: UserBehaviorProfile = {
+        user_id: userId,
+        engagement_patterns: {
+          peak_activity_hours: [18, 19, 20],
+          preferred_days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'],
+          avg_response_time_minutes: 30,
+          click_through_rate: 0.15,
+          notification_open_rate: 0.6
+        },
+        cultural_preferences: {
+          portuguese_region: 'lisboa',
+          cultural_significance: 'Community connection',
+          diaspora_relevance: 'heritage_connection',
+          language_preference: 'mixed',
+          cultural_interests: ['cultural_events', 'portuguese_cuisine']
+        },
+        content_affinity: {
+          event_types: ['cultural', 'social'],
+          business_categories: ['restaurants', 'events'],
+          communication_style: 'friendly'
+        },
+        ai_insights: {
+          engagement_likelihood: 0.6,
+          optimal_send_times: ['19:00', '20:00'],
+          content_preferences: ['cultural_events'],
+          churn_risk: 0.2
+        }
+      }
+
+      // Save default profile
+      const { data: newProfile, error: insertError } = await this.supabaseClient
+        .from('user_behavior_profiles')
+        .insert(defaultProfile)
+        .select()
+        .single()
+
+      if (insertError) {
+        console.warn('[Notification Service] Failed to create behavior profile:', insertError)
+        return defaultProfile // Return default even if save fails
+      }
+
+      return newProfile
+    } catch (error) {
+      console.error('[Notification Service] Failed to get user behavior profile:', error)
+      return null
+    }
+  }
+
+  /**
+   * Update user behavior profile based on notification interactions
+   */
+  async updateUserBehaviorFromInteraction(
+    userId: string,
+    notificationId: string,
+    interactionType: 'opened' | 'clicked' | 'dismissed' | 'converted'
+  ): Promise<void> {
+    try {
+      const profile = await this.getUserBehaviorProfile(userId)
+      if (!profile) return
+
+      // Update engagement patterns based on interaction
+      const now = new Date()
+      const currentHour = now.getHours()
+      
+      switch (interactionType) {
+        case 'opened':
+          profile.engagement_patterns.notification_open_rate = 
+            Math.min(1.0, profile.engagement_patterns.notification_open_rate + 0.01)
+          break
+        case 'clicked':
+          profile.engagement_patterns.click_through_rate = 
+            Math.min(1.0, profile.engagement_patterns.click_through_rate + 0.01)
+          // Add current hour to peak activity
+          if (!profile.engagement_patterns.peak_activity_hours.includes(currentHour)) {
+            profile.engagement_patterns.peak_activity_hours.push(currentHour)
+            profile.engagement_patterns.peak_activity_hours.sort((a, b) => a - b)
+          }
+          break
+        case 'dismissed':
+          profile.engagement_patterns.notification_open_rate = 
+            Math.max(0.0, profile.engagement_patterns.notification_open_rate - 0.005)
+          break
+      }
+
+      // Update AI insights
+      profile.ai_insights.engagement_likelihood = 
+        (profile.engagement_patterns.notification_open_rate + profile.engagement_patterns.click_through_rate) / 2
+
+      // Save updated profile
+      await this.supabaseClient
+        .from('user_behavior_profiles')
+        .update(profile)
+        .eq('user_id', userId)
+
+    } catch (error) {
+      console.error('[Notification Service] Failed to update behavior profile:', error)
+    }
+  }
+
+  /**
+   * Get notification performance analytics
+   */
+  async getAINotificationAnalytics(): Promise<{
+    insights: string[]
+    optimizations: string[]
+    cultural_patterns: Record<string, any>
+  }> {
+    try {
+      const { aiNotificationEngine } = await import('./AINotificationEngine')
+      return await aiNotificationEngine.analyzePerformanceAndOptimize()
+    } catch (error) {
+      console.error('[Notification Service] Analytics failed:', error)
+      return {
+        insights: ['Analytics unavailable'],
+        optimizations: ['Check system health'],
+        cultural_patterns: {}
+      }
     }
   }
 }

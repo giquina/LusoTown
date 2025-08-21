@@ -1,0 +1,670 @@
+/* Luxury Mobile Experience Enhancement for LusoTown Portuguese Community */
+
+/* Luxury Mobile Design System */
+:root {
+  /* Luxury Mobile Timing Functions */
+  --luxury-ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --luxury-ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --luxury-ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --luxury-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Luxury Touch Target Sizes */
+  --luxury-touch-primary: 56px;
+  --luxury-touch-secondary: 48px;
+  --luxury-touch-minimal: 44px;
+  
+  /* Luxury Spacing System */
+  --luxury-space-xs: 4px;
+  --luxury-space-sm: 8px;
+  --luxury-space-md: 16px;
+  --luxury-space-lg: 24px;
+  --luxury-space-xl: 32px;
+  --luxury-space-2xl: 48px;
+  
+  /* Premium Portuguese Color Palette */
+  --luxury-portuguese-red: #C5282F;
+  --luxury-portuguese-green: #00A859;
+  --luxury-portuguese-gold: #FFD700;
+  --luxury-accent-pearl: #F8F9FA;
+  --luxury-accent-marble: #E9ECEF;
+  --luxury-accent-platinum: #6C757D;
+  
+  /* Premium Shadows */
+  --luxury-shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --luxury-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --luxury-shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --luxury-shadow-bold: 0 16px 48px rgba(0, 0, 0, 0.16);
+  --luxury-shadow-dramatic: 0 24px 64px rgba(0, 0, 0, 0.20);
+  
+  /* Luxury Backdrop Filters */
+  --luxury-backdrop-light: blur(8px) saturate(180%);
+  --luxury-backdrop-medium: blur(16px) saturate(200%);
+  --luxury-backdrop-heavy: blur(24px) saturate(220%);
+}
+
+/* Premium Mobile Touch Interactions */
+.luxury-touch-target {
+  min-height: var(--luxury-touch-primary);
+  min-width: var(--luxury-touch-primary);
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.luxury-touch-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: luxuryRipple 0.6s var(--luxury-ease-out);
+  pointer-events: none;
+}
+
+/* Luxury Button Enhancements */
+.luxury-btn-primary {
+  background: linear-gradient(135deg, 
+    var(--luxury-portuguese-red) 0%, 
+    #E53E3E 50%, 
+    var(--luxury-portuguese-red) 100%);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: var(--luxury-space-md) var(--luxury-space-xl);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  min-height: var(--luxury-touch-primary);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: all 0.3s var(--luxury-ease-out);
+  box-shadow: var(--luxury-shadow-medium);
+  backdrop-filter: var(--luxury-backdrop-light);
+}
+
+.luxury-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--luxury-shadow-bold);
+}
+
+.luxury-btn-primary:active {
+  transform: translateY(-1px) scale(0.98);
+  transition: all 0.1s var(--luxury-ease-in);
+}
+
+.luxury-btn-secondary {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: var(--luxury-backdrop-medium);
+  color: var(--luxury-portuguese-red);
+  border: 2px solid rgba(197, 40, 47, 0.2);
+  border-radius: 16px;
+  padding: var(--luxury-space-md) var(--luxury-space-xl);
+  font-weight: 600;
+  font-size: 16px;
+  min-height: var(--luxury-touch-primary);
+  transition: all 0.3s var(--luxury-ease-out);
+  box-shadow: var(--luxury-shadow-soft);
+}
+
+.luxury-btn-secondary:hover {
+  background: rgba(197, 40, 47, 0.05);
+  border-color: var(--luxury-portuguese-red);
+  transform: translateY(-1px);
+  box-shadow: var(--luxury-shadow-medium);
+}
+
+/* Premium Glassmorphism Effects */
+.luxury-glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: var(--luxury-backdrop-medium);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  box-shadow: var(--luxury-shadow-medium);
+  transition: all 0.4s var(--luxury-ease-out);
+}
+
+.luxury-glass-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-4px);
+  box-shadow: var(--luxury-shadow-bold);
+}
+
+.luxury-glass-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: var(--luxury-backdrop-heavy);
+  transition: all 0.3s var(--luxury-ease-out);
+}
+
+/* Luxury Loading States */
+.luxury-skeleton {
+  background: linear-gradient(90deg, 
+    var(--luxury-accent-pearl) 0%, 
+    var(--luxury-accent-marble) 50%, 
+    var(--luxury-accent-pearl) 100%);
+  background-size: 200% 100%;
+  animation: luxuryShimmer 2s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+.luxury-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--luxury-accent-marble);
+  border-top: 3px solid var(--luxury-portuguese-red);
+  border-radius: 50%;
+  animation: luxurySpin 1s linear infinite;
+}
+
+.luxury-progress-bar {
+  background: var(--luxury-accent-marble);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 8px;
+  position: relative;
+}
+
+.luxury-progress-fill {
+  background: linear-gradient(90deg, 
+    var(--luxury-portuguese-green) 0%, 
+    var(--luxury-portuguese-gold) 100%);
+  height: 100%;
+  border-radius: 12px;
+  transition: width 0.5s var(--luxury-ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.4) 50%, 
+    transparent 100%);
+  animation: luxuryProgressShine 2s ease-in-out infinite;
+}
+
+/* Premium Mobile Navigation */
+.luxury-mobile-nav {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: var(--luxury-backdrop-heavy);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  padding: var(--luxury-space-md) var(--luxury-space-lg);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transform: translateY(0);
+  transition: transform 0.3s var(--luxury-ease-out);
+}
+
+.luxury-mobile-nav-hidden {
+  transform: translateY(100%);
+}
+
+.luxury-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--luxury-space-xs);
+  padding: var(--luxury-space-sm);
+  border-radius: 12px;
+  min-height: var(--luxury-touch-secondary);
+  transition: all 0.3s var(--luxury-ease-out);
+  position: relative;
+}
+
+.luxury-nav-item:hover,
+.luxury-nav-item.active {
+  background: rgba(197, 40, 47, 0.1);
+  transform: translateY(-2px);
+}
+
+.luxury-nav-icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s var(--luxury-bounce);
+}
+
+.luxury-nav-item.active .luxury-nav-icon {
+  color: var(--luxury-portuguese-red);
+  transform: scale(1.1);
+}
+
+.luxury-nav-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--luxury-accent-platinum);
+  transition: color 0.3s var(--luxury-ease-out);
+}
+
+.luxury-nav-item.active .luxury-nav-label {
+  color: var(--luxury-portuguese-red);
+}
+
+/* Premium Card Interactions */
+.luxury-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--luxury-shadow-soft);
+  transition: all 0.4s var(--luxury-ease-out);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+}
+
+.luxury-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--luxury-portuguese-red) 0%, 
+    var(--luxury-portuguese-gold) 50%, 
+    var(--luxury-portuguese-green) 100%);
+  opacity: 0;
+  transition: opacity 0.3s var(--luxury-ease-out);
+}
+
+.luxury-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--luxury-shadow-bold);
+}
+
+.luxury-card:hover::before {
+  opacity: 1;
+}
+
+.luxury-card-content {
+  padding: var(--luxury-space-lg);
+}
+
+/* Premium Form Controls */
+.luxury-input {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: var(--luxury-backdrop-light);
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: var(--luxury-space-md) var(--luxury-space-lg);
+  font-size: 16px;
+  min-height: var(--luxury-touch-secondary);
+  transition: all 0.3s var(--luxury-ease-out);
+  box-shadow: var(--luxury-shadow-subtle);
+}
+
+.luxury-input:focus {
+  outline: none;
+  border-color: var(--luxury-portuguese-red);
+  background: white;
+  box-shadow: var(--luxury-shadow-medium), 
+              0 0 0 4px rgba(197, 40, 47, 0.1);
+  transform: translateY(-1px);
+}
+
+.luxury-input::placeholder {
+  color: var(--luxury-accent-platinum);
+  opacity: 0.7;
+}
+
+/* Premium Toggle Switches */
+.luxury-toggle {
+  width: 56px;
+  height: 32px;
+  border-radius: 16px;
+  background: var(--luxury-accent-marble);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s var(--luxury-ease-out);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.luxury-toggle.active {
+  background: linear-gradient(135deg, 
+    var(--luxury-portuguese-green) 0%, 
+    #00C568 100%);
+}
+
+.luxury-toggle-handle {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  background: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s var(--luxury-bounce);
+  box-shadow: var(--luxury-shadow-soft);
+}
+
+.luxury-toggle.active .luxury-toggle-handle {
+  transform: translateX(24px);
+  box-shadow: var(--luxury-shadow-medium);
+}
+
+/* Premium Floating Action Button */
+.luxury-fab {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, 
+    var(--luxury-portuguese-red) 0%, 
+    #E53E3E  100%);
+  color: white;
+  border: none;
+  box-shadow: var(--luxury-shadow-bold);
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s var(--luxury-bounce);
+  cursor: pointer;
+}
+
+.luxury-fab:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: var(--luxury-shadow-dramatic);
+}
+
+.luxury-fab:active {
+  transform: scale(0.95);
+}
+
+/* Premium Notification Toast */
+.luxury-toast {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: var(--luxury-backdrop-heavy);
+  border-radius: 16px;
+  box-shadow: var(--luxury-shadow-bold);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: var(--luxury-space-lg);
+  margin: var(--luxury-space-md);
+  animation: luxuryToastSlide 0.4s var(--luxury-bounce);
+}
+
+.luxury-toast.success {
+  border-left: 4px solid var(--luxury-portuguese-green);
+}
+
+.luxury-toast.error {
+  border-left: 4px solid var(--luxury-portuguese-red);
+}
+
+.luxury-toast.warning {
+  border-left: 4px solid var(--luxury-portuguese-gold);
+}
+
+/* Premium Modal Overlays */
+.luxury-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: var(--luxury-backdrop-heavy);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--luxury-space-lg);
+  animation: luxuryFadeIn 0.3s var(--luxury-ease-out);
+}
+
+.luxury-modal-content {
+  background: white;
+  border-radius: 24px;
+  box-shadow: var(--luxury-shadow-dramatic);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  animation: luxuryModalSlide 0.4s var(--luxury-bounce);
+}
+
+/* Premium Pull-to-Refresh */
+.luxury-pull-refresh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--luxury-space-lg);
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(197, 40, 47, 0.05) 100%);
+  transform: translateY(-100%);
+  transition: transform 0.3s var(--luxury-ease-out);
+}
+
+.luxury-pull-refresh.active {
+  transform: translateY(0);
+}
+
+.luxury-pull-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--luxury-portuguese-red);
+  animation: luxuryPullSpin 1s linear infinite;
+}
+
+/* Premium Swipe Gestures */
+.luxury-swipe-container {
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.luxury-swipe-item {
+  transition: transform 0.3s var(--luxury-ease-out);
+  background: white;
+  border-radius: 16px;
+  margin: var(--luxury-space-sm) 0;
+}
+
+.luxury-swipe-actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: var(--luxury-portuguese-red);
+  border-radius: 0 16px 16px 0;
+  padding: 0 var(--luxury-space-lg);
+}
+
+/* Premium Haptic Feedback Simulation */
+.luxury-haptic-light {
+  animation: luxuryHapticLight 0.1s ease-out;
+}
+
+.luxury-haptic-medium {
+  animation: luxuryHapticMedium 0.15s ease-out;
+}
+
+.luxury-haptic-heavy {
+  animation: luxuryHapticHeavy 0.2s ease-out;
+}
+
+/* Luxury Animations */
+@keyframes luxuryRipple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes luxuryShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes luxurySpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes luxuryProgressShine {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+@keyframes luxuryToastSlide {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes luxuryFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes luxuryModalSlide {
+  from {
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes luxuryPullSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes luxuryHapticLight {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-1px); }
+  75% { transform: translateX(1px); }
+}
+
+@keyframes luxuryHapticMedium {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+@keyframes luxuryHapticHeavy {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+
+/* Portuguese Cultural Enhancement */
+.luxury-portuguese-accent {
+  position: relative;
+}
+
+.luxury-portuguese-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    var(--luxury-portuguese-red) 0%, 
+    var(--luxury-portuguese-gold) 50%, 
+    var(--luxury-portuguese-green) 100%);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transition: transform 0.3s var(--luxury-ease-out);
+}
+
+.luxury-portuguese-accent:hover::after {
+  transform: scaleX(1);
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 640px) {
+  .luxury-modal-content {
+    margin: var(--luxury-space-md);
+    border-radius: 20px;
+  }
+  
+  .luxury-fab {
+    bottom: 80px; /* Account for mobile navigation */
+  }
+  
+  .luxury-card {
+    margin: var(--luxury-space-sm);
+    border-radius: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .luxury-mobile-nav {
+    display: none; /* Hide on larger screens */
+  }
+  
+  .luxury-fab {
+    bottom: 24px;
+  }
+}
+
+/* Safe Area Support */
+@supports (padding: max(0px)) {
+  .luxury-mobile-nav {
+    padding-bottom: max(var(--luxury-space-md), env(safe-area-inset-bottom));
+  }
+  
+  .luxury-fab {
+    bottom: max(24px, calc(env(safe-area-inset-bottom) + 24px));
+  }
+}
+
+/* Luxury Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --luxury-accent-pearl: #1F2937;
+    --luxury-accent-marble: #374151;
+    --luxury-accent-platinum: #9CA3AF;
+  }
+  
+  .luxury-glass-card {
+    background: rgba(31, 41, 55, 0.85);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .luxury-card {
+    background: #1F2937;
+    color: white;
+  }
+  
+  .luxury-input {
+    background: rgba(31, 41, 55, 0.9);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .luxury-toggle {
+    background: #374151;
+  }
+}
+
+/* Luxury Performance Optimizations */
+.luxury-optimized {
+  will-change: transform;
+  contain: layout style paint;
+  transform: translateZ(0);
+}
+
+.luxury-gpu-accelerated {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}

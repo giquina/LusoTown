@@ -66,13 +66,13 @@ const customRender = (
 // Portuguese-specific test utilities
 export const portugueseTestUtils = {
   // Mock Portuguese user
-  mockPortugueseUser: global.testUtils.mockPortugueseUser,
+  mockPortugueseUser: (global as any).testUtils?.mockPortugueseUser,
   
   // Mock English user living in London
-  mockEnglishUser: global.testUtils.mockEnglishUser,
+  mockEnglishUser: (global as any).testUtils?.mockEnglishUser,
   
   // Mock Portuguese event
-  mockPortugueseEvent: global.testUtils.mockPortugueseEvent,
+  mockPortugueseEvent: (global as any).testUtils?.mockPortugueseEvent,
   
   // Verify Portuguese text content
   expectPortugueseText: (element: HTMLElement, expectedText: string) => {
@@ -314,5 +314,5 @@ export const culturalTestUtils = {
 
 // Re-export everything from testing-library
 export * from '@testing-library/react'
-export { screen, fireEvent, waitFor } from '@testing-library/react'
+// Already exported via export * above, no need for explicit export
 export { customRender as render }

@@ -289,25 +289,40 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
     )
   }
 
-  // Header variant - compact search bar
+  // Header variant - Premium compact search bar with intelligent features
   if (variant === 'header') {
     return (
       <div className={`relative ${className}`} ref={searchRef}>
-        <div className={`flex items-center transition-all duration-300 ${isExpanded ? 'w-80' : 'w-10'}`}>
+        <div className={`flex items-center transition-all duration-500 ease-[0.215,0.61,0.355,1] ${isExpanded ? 'w-80' : 'w-10'}`}>
           {!isExpanded ? (
-            <button
+            <motion.button
               onClick={() => {
                 setIsExpanded(true)
                 setTimeout(() => inputRef.current?.focus(), 100)
               }}
-              className="p-3 hover:bg-gray-100 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="p-3 hover:bg-gradient-to-r hover:from-primary-50 hover:to-secondary-50 rounded-full transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center group relative overflow-hidden"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <MagnifyingGlassIcon className="w-5 h-5 text-gray-600" />
-            </button>
+              {/* Premium pulse effect */}
+              <motion.div
+                className="absolute inset-0 bg-primary-100 rounded-full"
+                initial={{ scale: 0, opacity: 0 }}
+                whileHover={{ scale: 1.2, opacity: 0.6 }}
+                transition={{ duration: 0.4 }}
+              />
+              <MagnifyingGlassIcon className="w-5 h-5 text-gray-600 group-hover:text-primary-600 transition-colors duration-300 relative z-10" />
+            </motion.button>
           ) : (
-            <div className="flex items-center w-full bg-white border border-gray-200 rounded-full shadow-lg">
+            <motion.div 
+              className="flex items-center w-full bg-white/90 backdrop-blur-md border border-gray-200/60 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.4, ease: [0.215, 0.61, 0.355, 1] }}
+            >
               <div className="flex-1 relative">
-                <input
+                <motion.input
                   ref={inputRef}
                   type="text"
                   value={query}
@@ -316,54 +331,95 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                   onFocus={handleFocus}
                   placeholder={t('search.placeholder.short')}
                   className="w-full px-4 py-2 text-sm text-gray-800 placeholder-gray-500 bg-transparent focus:outline-none"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                />
+                {/* Premium focus indicator */}
+                <motion.div
+                  className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: query ? 1 : 0 }}
+                  transition={{ duration: 0.3 }}
                 />
               </div>
               <div className="flex items-center gap-1 pr-2">
                 {query && (
-                  <button
+                  <motion.button
                     onClick={clearSearch}
-                    className="p-2 hover:bg-gray-100 rounded-full transition-colors min-h-[36px] min-w-[36px] flex items-center justify-center"
+                    className="p-2 hover:bg-gray-100 rounded-full transition-colors min-h-[36px] min-w-[36px] flex items-center justify-center group"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0, opacity: 0 }}
                   >
-                    <XMarkIcon className="w-4 h-4 text-gray-400" />
-                  </button>
+                    <XMarkIcon className="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                  </motion.button>
                 )}
-                <button
+                <motion.button
                   onClick={() => handleSearch()}
-                  className="p-2 text-primary-600 hover:bg-primary-50 rounded-full transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center shadow-lg hover:shadow-xl"
+                  className="p-2 text-primary-600 hover:bg-primary-50 rounded-full transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center shadow-lg hover:shadow-xl group relative overflow-hidden"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                 >
-                  <MagnifyingGlassIcon className="w-4 h-4" />
-                </button>
+                  {/* Premium pulse effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-primary-100 rounded-full"
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileHover={{ scale: 1.2, opacity: 0.6 }}
+                    transition={{ duration: 0.4 }}
+                  />
+                  <MagnifyingGlassIcon className="w-4 h-4 relative z-10" />
+                </motion.button>
               </div>
-            </div>
+            </motion.div>
           )}
         </div>
 
-        {/* Header Search Suggestions */}
+        {/* Premium Header Search Suggestions */}
         {isExpanded && showSuggestions && suggestions.length > 0 && (
-          <div className="absolute top-full right-0 mt-2 w-96 bg-white rounded-xl shadow-2xl border border-gray-200 z-50 overflow-hidden">
+          <motion.div 
+            className="absolute top-full right-0 mt-2 w-96 bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200/60 z-50 overflow-hidden"
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.3, ease: [0.215, 0.61, 0.355, 1] }}
+          >
             <div className="max-h-80 overflow-y-auto">
               {suggestions.map((suggestion, index) => (
-                <button
+                <motion.button
                   key={`${suggestion.type}-${suggestion.id}-${index}`}
                   onClick={() => handleSuggestionClick(suggestion)}
-                  className="w-full text-left p-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 min-h-[44px] transition-all duration-200 hover:shadow-lg"
+                  className="w-full text-left p-3 hover:bg-gradient-to-r hover:from-primary-50/80 hover:to-secondary-50/80 border-b border-gray-100/60 last:border-b-0 min-h-[44px] transition-all duration-300 hover:shadow-lg group"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05, duration: 0.3 }}
+                  whileHover={{ scale: 1.02, x: 4 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-md bg-primary-100 flex items-center justify-center text-primary-600">
+                    <motion.div 
+                      className="flex-shrink-0 w-6 h-6 rounded-md bg-primary-100 group-hover:bg-primary-200 flex items-center justify-center text-primary-600 transition-all duration-300"
+                      whileHover={{ rotate: 5, scale: 1.1 }}
+                    >
                       {getResultIcon(suggestion.type)}
-                    </div>
+                    </motion.div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-medium text-gray-900 break-words line-clamp-1 text-sm leading-tight">{suggestion.title}</h4>
-                      <p className="text-xs text-gray-600 line-clamp-1 leading-relaxed">{suggestion.description}</p>
+                      <h4 className="font-medium text-gray-900 group-hover:text-primary-700 break-words line-clamp-1 text-sm leading-tight transition-colors duration-300">{suggestion.title}</h4>
+                      <p className="text-xs text-gray-600 group-hover:text-gray-700 line-clamp-1 leading-relaxed transition-colors duration-300">{suggestion.description}</p>
                     </div>
-                    <span className="flex-shrink-0 text-xs text-primary-600 bg-primary-50 px-2 py-1 rounded whitespace-nowrap">
+                    <motion.span 
+                      className="flex-shrink-0 text-xs text-primary-600 bg-primary-50 group-hover:bg-primary-100 px-2 py-1 rounded whitespace-nowrap transition-all duration-300"
+                      whileHover={{ scale: 1.05 }}
+                    >
                       {getResultTypeLabel(suggestion.type)}
-                    </span>
+                    </motion.span>
                   </div>
-                </button>
+                </motion.button>
               ))}
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
     )

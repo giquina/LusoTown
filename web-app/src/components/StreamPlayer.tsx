@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -10,11 +10,14 @@ import {
   SpeakerXMarkIcon,
   ArrowsPointingOutIcon,
 } from "@heroicons/react/24/outline";
-import { Lock, Crown, Zap } from "lucide-react";
+import { Lock, Crown, Zap, Sparkles, Loader2 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import SubscriptionGate from "@/components/SubscriptionGate";
 import { ROUTES } from "@/config/routes";
+import LuxuryLoader from "@/components/LuxuryLoader";
+import { LuxuryImageOptimizer } from "@/components/LuxuryImageOptimizer";
+import { usePerformanceOptimization, useMemoryManagement } from "@/hooks/usePerformanceOptimization";
 
 interface StreamPlayerProps {
   stream: {
@@ -46,12 +49,44 @@ export default function StreamPlayer({
     stream.previewDuration || 300
   ); // 5 minutes default
   const [showSubscriptionPrompt, setShowSubscriptionPrompt] = useState(false);
+  const [isBuffering, setIsBuffering] = useState(false);
+  const [videoQuality, setVideoQuality] = useState('auto');
+  const [connectionQuality, setConnectionQuality] = useState<'excellent' | 'good' | 'poor'>('good');
   const playerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const controlsTimeoutRef = useRef<NodeJS.Timeout>();
+  
+  // Performance optimization hooks
+  const { metrics, preloadRoute } = usePerformanceOptimization();
+  const { safeSetTimeout, isMounted } = useMemoryManagement();
 
   const canFullAccess = hasAccess || hasActiveSubscription || isInTrial;
   const isPreviewMode = !canFullAccess && stream.isPremium;
+  
+  // Monitor connection quality for adaptive streaming
+  useEffect(() => {
+    if ('connection' in navigator) {
+      const connection = (navigator as any).connection;
+      const updateQuality = () => {
+        const effectiveType = connection.effectiveType;
+        if (effectiveType === '4g') {
+          setConnectionQuality('excellent');
+          setVideoQuality('1080p');
+        } else if (effectiveType === '3g') {
+          setConnectionQuality('good');
+          setVideoQuality('720p');
+        } else {
+          setConnectionQuality('poor');
+          setVideoQuality('480p');
+        }
+      };
+      
+      updateQuality();
+      connection.addEventListener('change', updateQuality);
+      
+      return () => connection.removeEventListener('change', updateQuality);
+    }
+  }, []);
 
   useEffect(() => {
     if (isPreviewMode && isPlaying) {
@@ -70,25 +105,33 @@ export default function StreamPlayer({
     }
   }, [isPreviewMode, isPlaying]);
 
-  const handlePlay = () => {
+  const handlePlay = useCallback(() => {
     if (isPreviewMode && previewTimeLeft <= 0) {
       setShowSubscriptionPrompt(true);
       return;
     }
 
+    setIsBuffering(true);
     setIsPlaying(!isPlaying);
     onInteraction(isPlaying ? "pause" : "play");
-  };
+    
+    // Simulate buffering for premium experience
+    safeSetTimeout(() => {
+      if (isMounted()) {
+        setIsBuffering(false);
+      }
+    }, 1000);
+  }, [isPreviewMode, previewTimeLeft, isPlaying, onInteraction, safeSetTimeout, isMounted]);
 
-  const handleMouseMove = () => {
+  const handleMouseMove = useCallback(() => {
     setShowControls(true);
     if (controlsTimeoutRef.current) {
       clearTimeout(controlsTimeoutRef.current);
     }
-    controlsTimeoutRef.current = setTimeout(() => {
-      if (isPlaying) setShowControls(false);
+    controlsTimeoutRef.current = safeSetTimeout(() => {
+      if (isPlaying && isMounted()) setShowControls(false);
     }, 3000);
-  };
+  }, [isPlaying, safeSetTimeout, isMounted]);
 
   const handleFullscreen = () => {
     if (typeof document === "undefined") return;
@@ -168,15 +211,24 @@ export default function StreamPlayer({
       ))}
       {!isPlaying && (
         <>
-          {/* Stream Thumbnail */}
+          {/* Luxury Loading State */}
+          <LuxuryLoader
+            isLoading={isBuffering}
+            loadingText={language === "pt" ? "Carregando" : "Loading"}
+            subText={language === "pt" ? "Preparando transmissão premium" : "Preparing premium stream"}
+            variant="premium"
+            className="rounded-t-xl"
+          />
+          {/* Luxury Stream Thumbnail */}
           <div className="absolute inset-0">
-            <Image
+            <LuxuryImageOptimizer
               src={stream.thumbnail || "/events/networking.jpg"}
               alt={stream.title}
-              fill
               priority={false}
-              sizes="(max-width: 1024px) 100vw, 66vw"
-              className="object-cover"
+              quality={95}
+              gradient={true}
+              className="w-full h-full"
+              showLoadingState={true}
             />
           </div>
 
@@ -187,71 +239,213 @@ export default function StreamPlayer({
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="text-center text-white space-y-4"
+                className="text-center text-white space-y-6"
               >
-                <div className="bg-premium-600 p-4 rounded-full mx-auto w-fit">
-                  <Crown className="w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">
-                    {language === "pt" ? "Conteúdo Premium" : "Premium Content"}
-                  </h3>
-                  <p className="text-gray-200 mb-4 max-w-md">
-                    {language === "pt"
-                      ? "Este stream é exclusivo para membros premium da LusoTown."
-                      : "This stream is exclusive to LusoTown premium members."}
-                  </p>
-                  <button
-                    onClick={() => setShowSubscriptionPrompt(true)}
-                    className="bg-premium-600 hover:bg-premium-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                {/* Premium Crown with Luxury Animation */}
+                <div className="relative">
+                  <motion.div
+                    animate={{ 
+                      rotate: [0, 5, -5, 0],
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ 
+                      repeat: Infinity, 
+                      duration: 4,
+                      ease: "easeInOut"
+                    }}
+                    className="bg-gradient-to-br from-premium-500 to-premium-700 p-6 rounded-full mx-auto w-fit shadow-2xl"
                   >
-                    {language === "pt" ? "Tornar-se Premium" : "Go Premium"}
-                  </button>
+                    <Crown className="w-10 h-10" />
+                  </motion.div>
+                  
+                  {/* Orbiting sparkles */}
+                  {[...Array(6)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute w-2 h-2 bg-yellow-400 rounded-full"
+                      style={{
+                        top: "50%",
+                        left: "50%",
+                        marginTop: "-4px",
+                        marginLeft: "-4px",
+                      }}
+                      animate={{
+                        rotate: [0, 360],
+                        scale: [0.5, 1, 0.5],
+                        x: [0, 50 * Math.cos((i * 60 * Math.PI) / 180)],
+                        y: [0, 50 * Math.sin((i * 60 * Math.PI) / 180)],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        delay: i * 0.2,
+                        ease: "easeInOut",
+                      }}
+                    />
+                  ))}
+                </div>
+                
+                <div className="space-y-4">
+                  <motion.h3
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                    className="text-2xl font-bold mb-2 bg-gradient-to-r from-yellow-200 to-yellow-400 bg-clip-text text-transparent"
+                  >
+                    {language === "pt" ? "Conteúdo Premium Exclusivo" : "Exclusive Premium Content"}
+                  </motion.h3>
+                  
+                  <motion.p
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="text-gray-200 mb-6 max-w-md mx-auto leading-relaxed"
+                  >
+                    {language === "pt"
+                      ? "Esta transmissão cultural exclusiva é reservada para membros premium da comunidade LusoTown em Londres."
+                      : "This exclusive cultural broadcast is reserved for LusoTown premium community members in London."}
+                  </motion.p>
+                  
+                  <motion.button
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.5 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setShowSubscriptionPrompt(true)}
+                    className="group relative bg-gradient-to-r from-premium-500 via-premium-600 to-premium-700 hover:from-premium-600 hover:via-premium-700 hover:to-premium-800 text-white px-8 py-4 rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                  >
+                    {/* Button shimmer effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                    
+                    <span className="relative flex items-center gap-2">
+                      <Crown className="w-5 h-5" />
+                      {language === "pt" ? "Upgrade para Premium" : "Upgrade to Premium"}
+                      <Sparkles className="w-4 h-4" />
+                    </span>
+                  </motion.button>
                 </div>
               </motion.div>
             )}
 
-            {/* Regular Play Button */}
+            {/* Luxury Play Button */}
             {canFullAccess && (
               <motion.button
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={handlePlay}
-                className="bg-white/20 hover:bg-white/30 backdrop-blur-sm p-6 rounded-full transition-all duration-200"
+                className="group relative bg-gradient-to-br from-white/30 to-white/10 hover:from-white/40 hover:to-white/20 backdrop-blur-lg p-8 rounded-full border border-white/30 shadow-2xl transition-all duration-300"
               >
-                {isPlaying ? (
-                  <PauseIcon className="w-12 h-12 text-white" />
-                ) : (
-                  <PlayIcon className="w-12 h-12 text-white ml-1" />
-                )}
+                {/* Play button glow effect */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-400/30 to-secondary-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
+                
+                {/* Loading state */}
+                <AnimatePresence>
+                  {isBuffering ? (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      className="flex items-center justify-center"
+                    >
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+                      >
+                        <Loader2 className="w-12 h-12 text-white" />
+                      </motion.div>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                    >
+                      {isPlaying ? (
+                        <PauseIcon className="w-12 h-12 text-white relative z-10" />
+                      ) : (
+                        <PlayIcon className="w-12 h-12 text-white ml-1 relative z-10" />
+                      )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.button>
             )}
           </div>
         </>
       )}
 
-      {/* Live Badge */}
+      {/* Luxury Live Badge */}
       {stream.isLive && (
         <motion.div
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute top-4 left-4 bg-action-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-2"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0, scale: [1, 1.05, 1] }}
+          transition={{ 
+            opacity: { duration: 0.5 },
+            x: { duration: 0.5 },
+            scale: { repeat: Infinity, duration: 2 }
+          }}
+          className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg backdrop-blur-sm border border-red-400/30"
         >
-          <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-          {language === "pt" ? "AO VIVO" : "LIVE"}
+          <motion.div 
+            animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+            className="w-2 h-2 bg-white rounded-full"
+          />
+          <span className="tracking-wide">
+            {language === "pt" ? "AO VIVO" : "LIVE"}
+          </span>
+          
+          {/* Pulse ring effect */}
+          <motion.div
+            className="absolute inset-0 border-2 border-red-300 rounded-full"
+            animate={{ scale: [1, 1.5], opacity: [0.5, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          />
         </motion.div>
       )}
 
-      {/* Viewer Count */}
-      {stream.viewerCount > 0 ? (
-        <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
-          {stream.viewerCount.toLocaleString()} {language === "pt" ? "espectadores" : "viewers"}
+      {/* Luxury Viewer Count */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        className="absolute top-4 right-4 bg-gradient-to-r from-black/60 to-black/40 text-white px-4 py-2 rounded-full text-sm backdrop-blur-lg border border-white/20 shadow-lg"
+      >
+        <div className="flex items-center gap-2">
+          {stream.viewerCount > 0 ? (
+            <>
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+                className="w-2 h-2 bg-green-400 rounded-full"
+              />
+              <span className="font-medium">
+                {stream.viewerCount.toLocaleString()}
+              </span>
+              <span className="text-gray-300 text-xs">
+                {language === "pt" ? "espectadores" : "viewers"}
+              </span>
+            </>
+          ) : (
+            <>
+              <motion.div
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+                className="w-2 h-2 bg-yellow-400 rounded-full"
+              />
+              <span className="text-xs font-medium">
+                {language === "pt" ? "Seja o primeiro" : "Be the first"}
+              </span>
+            </>
+          )}
         </div>
-      ) : (
-        <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
-          {language === "pt" ? "Seja o primeiro a assistir" : "Be the first to join"}
-        </div>
-      )}
+        
+        {/* Connection quality indicator */}
+        <div className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-white ${
+          connectionQuality === 'excellent' ? 'bg-green-500' :
+          connectionQuality === 'good' ? 'bg-yellow-500' : 'bg-red-500'
+        }`} />
+      </motion.div>
 
       {/* Preview Timer for Premium Content */}
       {isPreviewMode && isPlaying && previewTimeLeft > 0 && (

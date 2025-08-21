@@ -183,6 +183,26 @@ For highlighted sections with Portuguese accents
 </div>
 ```
 
+### Luxury Service Cards
+For premium services with sophisticated styling
+```typescript
+<div className={CardStyles.luxury}>
+  <div className="luxury-service-content">
+    Premium service content with premium positioning
+  </div>
+</div>
+```
+
+### Streaming Platform Cards
+For LusoTown TV and media content
+```typescript
+<div className={CardStyles.streaming}>
+  <div className="streaming-overlay">
+    Professional video content with premium gating
+  </div>
+</div>
+```
+
 ## Icon Backgrounds
 
 Use these color combinations for consistent icon styling:

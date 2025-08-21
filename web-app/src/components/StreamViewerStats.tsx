@@ -1,12 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 import {
   EyeIcon,
   ClockIcon,
   ArrowTrendingUpIcon,
 } from "@heroicons/react/24/outline";
-import { Users, Activity, BarChart3, Globe } from "lucide-react";
+import { Users, Activity, BarChart3, Globe, TrendingUp, Zap, Crown, Sparkles } from "lucide-react";
+import { LuxuryCard } from "@/components/LuxuryMicroInteractions";
+import { usePerformanceOptimization } from "@/hooks/usePerformanceOptimization";
 
 interface StreamViewerStatsProps {
   currentViewers: number;
@@ -21,50 +24,63 @@ export default function StreamViewerStats({
   totalViews,
   language,
 }: StreamViewerStatsProps) {
-  // Calculate growth percentage (mock heuristic). If low traffic, keep neutral to avoid misleading negatives.
+  const [animatedViewers, setAnimatedViewers] = useState(0);
+  const [animatedPeak, setAnimatedPeak] = useState(0);
+  const [animatedTotal, setAnimatedTotal] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const { metrics } = usePerformanceOptimization();
+  
+  // Calculate growth percentage with improved logic
   let viewerGrowth = Math.round(
     ((currentViewers - peakViewers * 0.8) / (peakViewers * 0.8)) * 100
   );
   const isLowTraffic = peakViewers <= 5 || currentViewers <= 1;
   if (isLowTraffic || !isFinite(viewerGrowth)) viewerGrowth = 0;
-
-  const stats = [
-    {
-      id: "current",
-      label: language === "pt" ? "Espectadores Atuais" : "Current Viewers",
-      value: currentViewers.toLocaleString(),
-      icon: EyeIcon,
-      color: "text-action-600",
-      bgColor: "bg-action-100",
-      change:
-        currentViewers === 0
-          ? language === "pt" ? "aguardando" : "waiting"
-          : viewerGrowth > 0
-          ? `+${viewerGrowth}%`
-          : "—",
-      changeColor: viewerGrowth > 0 ? "text-secondary-600" : "text-gray-400",
-    },
-    {
-      id: "peak",
-      label: language === "pt" ? "Pico de Audiência" : "Peak Viewers",
-      value: peakViewers.toLocaleString(),
-      icon: ArrowTrendingUpIcon,
-      color: "text-secondary-600",
-      bgColor: "bg-secondary-100",
-      change: language === "pt" ? "hoje" : "today",
-      changeColor: "text-gray-500",
-    },
-    {
-      id: "total",
-      label: language === "pt" ? "Total de Visualizações" : "Total Views",
-      value: totalViews.toLocaleString(),
-      icon: BarChart3,
-      color: "text-primary-600",
-      bgColor: "bg-primary-100",
-      change: language === "pt" ? "histórico" : "all time",
-      changeColor: "text-gray-500",
-    },
-  ];
+  
+  // Intersection observer for animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+    
+    return () => observer.disconnect();
+  }, []);
+  
+  // Animated counters
+  useEffect(() => {
+    if (!isVisible) return;
+    
+    const animateValue = (start: number, end: number, setter: (value: number) => void, duration: number = 2000) => {
+      const startTime = Date.now();
+      const animate = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(start + (end - start) * easeOut);
+        setter(current);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+      animate();
+    };
+    
+    animateValue(0, currentViewers, setAnimatedViewers, 1500);
+    animateValue(0, peakViewers, setAnimatedPeak, 2000);
+    animateValue(0, totalViews, setAnimatedTotal, 2500);
+  }, [isVisible, currentViewers, peakViewers, totalViews]);
 
   // Mock engagement data
   const engagementStats = [
@@ -86,150 +102,254 @@ export default function StreamViewerStats({
   ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
-      className="bg-white rounded-xl shadow-sm p-6"
+    <LuxuryCard
+      ref={statsRef}
+      variant="premium"
+      hoverable={true}
+      glowEffect={true}
+      className="p-0 overflow-hidden"
     >
-      <div className="flex items-center gap-3 mb-6">
-        <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-2 rounded-lg">
-          <Users className="w-5 h-5 text-white" />
-        </div>
-        <h3 className="text-lg font-semibold text-gray-900">
-          {language === "pt" ? "Estatísticas Ao Vivo" : "Live Statistics"}
-        </h3>
-      </div>
-
-      {/* Main Stats */}
-      <div className="space-y-4 mb-6">
-        {stats.map((stat, index) => {
-          const IconComponent = stat.icon;
-
-          return (
+      {/* Premium Header */}
+      <div className="bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 p-6 text-white relative overflow-hidden">
+        {/* Background particles */}
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
             <motion.div
-              key={stat.id}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 * index }}
-              className="flex items-center justify-between p-4 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors"
+              key={i}
+              className="absolute w-1 h-1 bg-white/30 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                opacity: [0.3, 0.8, 0.3],
+                scale: [0.5, 1.2, 0.5],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
+        </div>
+        
+        <div className="relative z-10 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <motion.div
+              animate={{ rotate: [0, 360] }}
+              transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+              className="bg-white/20 p-3 rounded-xl backdrop-blur-sm"
             >
-              <div className="flex items-center gap-3">
-                <div className={`p-2 rounded-lg ${stat.bgColor}`}>
-                  <IconComponent className={`w-4 h-4 ${stat.color}`} />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
-                  <div className="text-lg font-bold text-gray-900">
-                    {stat.value}
-                  </div>
-                </div>
-              </div>
-              <div className={`text-xs ${stat.changeColor} font-medium`}>
-                {stat.change}
-              </div>
+              <BarChart3 className="w-6 h-6" />
             </motion.div>
-          );
-        })}
-      </div>
-
-      {/* Engagement Metrics */}
-      <div className="border-t border-gray-200 pt-6">
-        <h4 className="text-sm font-semibold text-gray-900 mb-4">
-          {language === "pt" ? "Métricas de Engagement" : "Engagement Metrics"}
-        </h4>
-
-        <div className="grid grid-cols-1 gap-3">
-          {engagementStats.map((metric, index) => {
-            const IconComponent = metric.icon;
-
-            return (
-              <motion.div
-                key={metric.label}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + 0.1 * index }}
-                className="flex items-center justify-between py-2"
-              >
-                <div className="flex items-center gap-2">
-                  <IconComponent className="w-4 h-4 text-gray-400" />
-                  <span className="text-sm text-gray-600">{metric.label}</span>
-                </div>
-                <span className="text-sm font-medium text-gray-900">
-                  {metric.value}
-                </span>
-              </motion.div>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Live Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        className="mt-6 p-3 bg-gradient-to-r from-action-50 to-secondary-50 border border-action-200 rounded-lg"
-      >
-        <div className="flex items-center justify-center gap-2">
+            <div>
+              <h3 className="text-xl font-bold">
+                {language === "pt" ? "Estatísticas Premium" : "Premium Analytics"}
+              </h3>
+              <p className="text-white/80 text-sm">
+                {language === "pt" ? "Dados em tempo real" : "Real-time insights"}
+              </p>
+            </div>
+          </div>
+          
           <motion.div
-            animate={{ scale: [1, 1.2, 1] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="w-2 h-2 bg-action-500 rounded-full"
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ repeat: Infinity, duration: 3 }}
+            className="bg-white/20 p-2 rounded-lg"
+          >
+            <Crown className="w-5 h-5" />
+          </motion.div>
+        </div>
+      </div>
+      
+      <div className="p-6">
+        {/* Main Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {/* Current Viewers */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+            transition={{ delay: 0.1 }}
+            className="relative bg-gradient-to-br from-action-50 to-action-100 rounded-xl p-6 border border-action-200 overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 w-20 h-20 bg-action-200/30 rounded-full -translate-y-10 translate-x-10" />
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-3">
+                <EyeIcon className="w-6 h-6 text-action-600" />
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                  className="w-3 h-3 bg-action-500 rounded-full"
+                />
+              </div>
+              <div className="text-3xl font-bold text-action-700 mb-1">
+                {animatedViewers.toLocaleString()}
+              </div>
+              <div className="text-sm text-action-600 mb-2">
+                {language === "pt" ? "Espectadores Atuais" : "Current Viewers"}
+              </div>
+              <div className="flex items-center gap-1 text-xs">
+                <TrendingUp className="w-3 h-3" />
+                <span className={viewerGrowth > 0 ? "text-green-600" : "text-gray-500"}>
+                  {viewerGrowth > 0 ? `+${viewerGrowth}%` : "—"}
+                </span>
+              </div>
+            </div>
+          </motion.div>
+          
+          {/* Peak Viewers */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+            transition={{ delay: 0.2 }}
+            className="relative bg-gradient-to-br from-secondary-50 to-secondary-100 rounded-xl p-6 border border-secondary-200 overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-20 h-20 bg-secondary-200/30 rounded-full -translate-y-10 translate-x-10" />
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-3">
+                <ArrowTrendingUpIcon className="w-6 h-6 text-secondary-600" />
+                <Sparkles className="w-4 h-4 text-secondary-500" />
+              </div>
+              <div className="text-3xl font-bold text-secondary-700 mb-1">
+                {animatedPeak.toLocaleString()}
+              </div>
+              <div className="text-sm text-secondary-600 mb-2">
+                {language === "pt" ? "Pico de Audiência" : "Peak Viewers"}
+              </div>
+              <div className="text-xs text-gray-500">
+                {language === "pt" ? "hoje" : "today"}
+              </div>
+            </div>
+          </motion.div>
+          
+          {/* Total Views */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+            transition={{ delay: 0.3 }}
+            className="relative bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl p-6 border border-primary-200 overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-20 h-20 bg-primary-200/30 rounded-full -translate-y-10 translate-x-10" />
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-3">
+                <BarChart3 className="w-6 h-6 text-primary-600" />
+                <Zap className="w-4 h-4 text-primary-500" />
+              </div>
+              <div className="text-3xl font-bold text-primary-700 mb-1">
+                {animatedTotal.toLocaleString()}
+              </div>
+              <div className="text-sm text-primary-600 mb-2">
+                {language === "pt" ? "Total de Visualizações" : "Total Views"}
+              </div>
+              <div className="text-xs text-gray-500">
+                {language === "pt" ? "histórico" : "all time"}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Enhanced Engagement Metrics */}
+        <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 mb-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="bg-gradient-to-r from-premium-500 to-premium-600 p-2 rounded-lg">
+              <Activity className="w-5 h-5 text-white" />
+            </div>
+            <h4 className="text-lg font-semibold text-gray-900">
+              {language === "pt" ? "Métricas Premium" : "Premium Metrics"}
+            </h4>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+            {engagementStats.map((metric, index) => {
+              const IconComponent = metric.icon;
+
+              return (
+                <motion.div
+                  key={metric.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8 }}
+                  transition={{ delay: 0.4 + 0.1 * index }}
+                  className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-md transition-shadow group"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="bg-gradient-to-br from-primary-100 to-secondary-100 p-2 rounded-lg group-hover:scale-110 transition-transform">
+                      <IconComponent className="w-4 h-4 text-primary-600" />
+                    </div>
+                    <span className="text-xs font-medium text-gray-600 uppercase tracking-wide">
+                      {metric.label}
+                    </span>
+                  </div>
+                  <div className="text-2xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
+                    {metric.value}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Live Indicator with Performance Metrics */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          transition={{ delay: 0.7 }}
+          className="bg-gradient-to-r from-action-50 via-secondary-50 to-primary-50 border border-action-200 rounded-xl p-4 relative overflow-hidden"
+        >
+          {/* Animated background */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-action-100/50 to-transparent"
+            animate={{ x: ["-100%", "100%"] }}
+            transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
           />
-          <span className="text-sm font-medium text-action-700">
-            {language === "pt" ? "Estatísticas ao vivo" : "Live statistics"}
-          </span>
-        </div>
-        <div className="text-xs text-center text-gray-600 mt-1">
-          {language === "pt"
-            ? "Atualizadas a cada 30 segundos"
-            : "Updated every 30 seconds"}
-        </div>
-      </motion.div>
+          
+          <div className="relative z-10">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <motion.div
+                  animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                  className="w-3 h-3 bg-green-500 rounded-full"
+                />
+                <span className="text-sm font-semibold text-gray-700">
+                  {language === "pt" ? "Sistema Ativo" : "System Active"}
+                </span>
+              </div>
+              
+              <div className="flex items-center gap-1 text-xs text-gray-500">
+                <Globe className="w-3 h-3" />
+                <span>{metrics.connectionType || 'auto'}</span>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-4 text-xs">
+              <div className="text-center">
+                <div className="font-bold text-gray-900">
+                  {Math.round(metrics.loadTime)}ms
+                </div>
+                <div className="text-gray-500">
+                  {language === "pt" ? "Carregamento" : "Load Time"}
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="font-bold text-gray-900">30s</div>
+                <div className="text-gray-500">
+                  {language === "pt" ? "Atualização" : "Update Rate"}
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
-      {/* Community Insights */}
-      <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-        <h4 className="text-sm font-semibold text-gray-900 mb-3">
-          {language === "pt" ? "Insights da Comunidade" : "Community Insights"}
-        </h4>
-
-        <div className="space-y-2 text-xs text-gray-600">
-          <div className="flex justify-between">
-            <span>
-              {language === "pt" ? "Membros Premium:" : "Premium Members:"}
-            </span>
-            <span className="font-medium">34%</span>
-          </div>
-          <div className="flex justify-between">
-            <span>
-              {language === "pt" ? "Novos Espectadores:" : "New Viewers:"}
-            </span>
-            <span className="font-medium">18%</span>
-          </div>
-          <div className="flex justify-between">
-            <span>
-              {language === "pt" ? "Dispositivos Móveis:" : "Mobile Devices:"}
-            </span>
-            <span className="font-medium">67%</span>
-          </div>
-          <div className="flex justify-between">
-            <span>
-              {language === "pt" ? "Localização Londres:" : "London Location:"}
-            </span>
-            <span className="font-medium">78%</span>
+        {/* Real-time Activity */}
+        <div className="mt-4 text-center">
+          <div className="text-xs text-gray-500">
+            {language === "pt"
+              ? `Última atualização: ${new Date().toLocaleTimeString("pt-PT")}`
+              : `Last updated: ${new Date().toLocaleTimeString("en-GB")}`}
           </div>
         </div>
       </div>
-
-      {/* Real-time Activity */}
-      <div className="mt-4">
-        <div className="text-xs text-gray-500 text-center">
-          {language === "pt"
-            ? `Última atualização: ${new Date().toLocaleTimeString("pt-PT")}`
-            : `Last updated: ${new Date().toLocaleTimeString("en-GB")}`}
-        </div>
-      </div>
-    </motion.div>
+    </LuxuryCard>
   );
 }

@@ -34,7 +34,8 @@ import SavedItemsButton from "@/components/SavedItemsButton";
 import SearchBar from "@/components/SearchBar";
 import NotificationBell from "@/components/NotificationBell";
 import { useLanguage } from "@/context/LanguageContext";
-import { ROUTES } from '@/config/routes'
+import { ROUTES } from '@/config/routes';
+import { LuxuryRipple } from "@/components/LuxuryMobileInteraction";
 
 const getNavigationLinks = (t: any) => [
   { name: t("nav.events", "London Events"), href: "/events" },
@@ -229,46 +230,94 @@ export default function Header() {
   const moreDropdownLinks = getMoreDropdownLinks(t);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[80px] lg:min-h-[88px]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/60 min-h-[80px] lg:min-h-[88px] shadow-lg shadow-gray-900/5">
       <nav className="container-width" aria-label="Top">
         <div className="flex items-center justify-between py-3 sm:py-4 lg:py-5 gap-2 sm:gap-4">
-          {/* Logo - Compact design for header */}
-          <div className="flex items-center flex-shrink-0">
-            <a href={ROUTES.home} className="flex items-center">
-              <Logo size="compact" animated />
+          {/* Logo - Premium design with sophisticated hover effects */}
+          <motion.div 
+            className="flex items-center flex-shrink-0"
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            <a href={ROUTES.home} className="flex items-center group">
+              <div className="relative">
+                <Logo size="compact" animated />
+                {/* Premium glow effect on hover */}
+                <motion.div
+                  className="absolute inset-0 rounded-lg bg-gradient-to-r from-premium-400/20 to-secondary-400/20 blur-lg"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </div>
             </a>
-          </div>
+          </motion.div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Premium with sophisticated micro-interactions */}
           <div className="hidden xl:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
             {navigationLinks.filter(link => !link.name.includes("Events")).map((link) => (
-              <a
+              <motion.a
                 key={link.name}
                 href={link.href}
-                className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                className="relative text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                {link.name}
-              </a>
+                <span className="relative z-10">{link.name}</span>
+                {/* Premium underline effect */}
+                <motion.div
+                  className="absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+                {/* Subtle background hover effect */}
+                <motion.div
+                  className="absolute inset-0 bg-primary-50 rounded-md"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.2 }}
+                />
+              </motion.a>
             ))}
 
-            {/* Events Dropdown */}
+            {/* Events Dropdown - Premium with sophisticated animations */}
             <div
               className="relative"
               onMouseEnter={() => setShowEventsDropdown(true)}
               onMouseLeave={() => setShowEventsDropdown(false)}
             >
-              <button className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1">
-                {t("nav.events", "Events")}
-                <ChevronDownIcon className="w-4 h-4" />
-              </button>
+              <motion.button 
+                className="relative text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <span className="relative z-10">{t("nav.events", "Events")}</span>
+                <motion.div
+                  animate={{ rotate: showEventsDropdown ? 180 : 0 }}
+                  transition={{ duration: 0.3, ease: [0.215, 0.61, 0.355, 1] }}
+                >
+                  <ChevronDownIcon className="w-4 h-4" />
+                </motion.div>
+                {/* Premium background hover effect */}
+                <motion.div
+                  className="absolute inset-0 bg-primary-50 rounded-md"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.2 }}
+                />
+              </motion.button>
 
               <AnimatePresence>
                 {showEventsDropdown && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1000px] max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-xl border border-gray-200 py-6 z-50"
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.4, ease: [0.215, 0.61, 0.355, 1] }}
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1000px] max-w-[calc(100vw-2rem)] bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200/60 py-8 z-50"
                     style={{
                       left: "50%",
                       transform: "translateX(-50%)",
@@ -277,19 +326,29 @@ export default function Header() {
                       marginRight: "max(-500px, calc(-50vw + 1rem))",
                     }}
                   >
-                    <div className="grid grid-cols-4 gap-4 px-6">
-                      {getEventsDropdownLinks(t).map((link) => (
-                        <a
+                    <div className="grid grid-cols-4 gap-4 px-8">
+                      {getEventsDropdownLinks(t).map((link, index) => (
+                        <motion.a
                           key={link.name}
                           href={link.href}
-                          className="block p-4 text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 rounded-lg border border-gray-100 hover:border-primary-200"
+                          className="block p-4 text-gray-600 hover:text-primary-600 hover:bg-primary-50/80 transition-all duration-300 rounded-xl border border-gray-100/80 hover:border-primary-200 hover:shadow-lg group"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.05, duration: 0.3 }}
+                          whileHover={{ scale: 1.02, y: -2 }}
+                          whileTap={{ scale: 0.98 }}
                         >
-                          <div className="flex items-center gap-3 mb-2">
-                            <link.icon className={`w-5 h-5 ${link.iconColor}`} />
-                            <div className="font-medium text-sm">{link.name}</div>
+                          <div className="flex items-center gap-3 mb-3">
+                            <motion.div
+                              className={`group-hover:scale-110 transition-transform duration-300`}
+                              whileHover={{ rotate: 5 }}
+                            >
+                              <link.icon className={`w-5 h-5 ${link.iconColor}`} />
+                            </motion.div>
+                            <div className="font-semibold text-sm group-hover:text-primary-700 transition-colors duration-300">{link.name}</div>
                           </div>
-                          <div className="text-xs text-gray-500 leading-relaxed">{link.description}</div>
-                        </a>
+                          <div className="text-xs text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors duration-300">{link.description}</div>
+                        </motion.a>
                       ))}
                     </div>
                   </motion.div>
@@ -297,16 +356,33 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            {/* Tours Dropdown */}
+            {/* Tours Dropdown - Premium with sophisticated animations */}
             <div
               className="relative"
               onMouseEnter={() => setShowToursDropdown(true)}
               onMouseLeave={() => setShowToursDropdown(false)}
             >
-              <button className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1">
-                {t("nav.tours", "Tours")}
-                <ChevronDownIcon className="w-4 h-4" />
-              </button>
+              <motion.button 
+                className="relative text-gray-600 hover:text-secondary-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <span className="relative z-10">{t("nav.tours", "Tours")}</span>
+                <motion.div
+                  animate={{ rotate: showToursDropdown ? 180 : 0 }}
+                  transition={{ duration: 0.3, ease: [0.215, 0.61, 0.355, 1] }}
+                >
+                  <ChevronDownIcon className="w-4 h-4" />
+                </motion.div>
+                {/* Premium background hover effect */}
+                <motion.div
+                  className="absolute inset-0 bg-secondary-50 rounded-md"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.2 }}
+                />
+              </motion.button>
 
               <AnimatePresence>
                 {showToursDropdown && (
@@ -343,16 +419,33 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            {/* More Dropdown */}
+            {/* More Dropdown - Premium with sophisticated animations */}
             <div
               className="relative"
               onMouseEnter={() => setShowMoreDropdown(true)}
               onMouseLeave={() => setShowMoreDropdown(false)}
             >
-              <button className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1">
-                More
-                <ChevronDownIcon className="w-4 h-4" />
-              </button>
+              <motion.button 
+                className="relative text-gray-600 hover:text-premium-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <span className="relative z-10">More</span>
+                <motion.div
+                  animate={{ rotate: showMoreDropdown ? 180 : 0 }}
+                  transition={{ duration: 0.3, ease: [0.215, 0.61, 0.355, 1] }}
+                >
+                  <ChevronDownIcon className="w-4 h-4" />
+                </motion.div>
+                {/* Premium background hover effect */}
+                <motion.div
+                  className="absolute inset-0 bg-premium-50 rounded-md"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.2 }}
+                />
+              </motion.button>
 
               <AnimatePresence>
                 {showMoreDropdown && (
@@ -501,15 +594,25 @@ export default function Header() {
                 >
                   <UserIcon className="w-5 h-5" />
                 </a>
-                <a
+                <motion.a
                   href={ROUTES.signup}
-                  className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-2 px-4 lg:px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200 whitespace-nowrap h-10 flex items-center text-sm"
+                  className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-2 px-4 lg:px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transition-all duration-300 whitespace-nowrap h-10 flex items-center text-sm relative overflow-hidden group"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <span className="hidden lg:inline">
+                  {/* Premium shimmer effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                    initial={{ x: '-100%' }}
+                    whileHover={{ x: '100%' }}
+                    transition={{ duration: 0.6 }}
+                  />
+                  <span className="relative z-10 hidden lg:inline">
                     {t("nav.start-free", "Start Free")}
                   </span>
-                  <span className="lg:hidden">START</span>
-                </a>
+                  <span className="relative z-10 lg:hidden">START</span>
+                </motion.a>
               </>
             )}
           </div>
@@ -523,28 +626,32 @@ export default function Header() {
               </>
             )}
             <LanguageToggle />
-            <button
-              type="button"
-              className="inline-flex items-center justify-center p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200 h-12 w-12 bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50 active:scale-95"
+            <LuxuryRipple
+              className="inline-flex items-center justify-center p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200 h-12 w-12 bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-expanded={mobileMenuOpen}
-              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              hapticFeedback="medium"
+              rippleColor="rgba(59, 130, 246, 0.2)"
             >
-              <span className="sr-only">
-                {mobileMenuOpen ? "Close menu" : "Open main menu"}
-              </span>
-              {mobileMenuOpen ? (
-                <XMarkIcon
-                  className="h-6 w-6 text-primary-700 stroke-2"
-                  aria-hidden="true"
-                />
-              ) : (
-                <Bars3Icon
-                  className="h-6 w-6 text-primary-700 stroke-2"
-                  aria-hidden="true"
-                />
-              )}
-            </button>
+              <motion.div
+                animate={{ rotate: mobileMenuOpen ? 180 : 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                <span className="sr-only">
+                  {mobileMenuOpen ? "Close menu" : "Open main menu"}
+                </span>
+                {mobileMenuOpen ? (
+                  <XMarkIcon
+                    className="h-6 w-6 text-primary-700 stroke-2"
+                    aria-hidden="true"
+                  />
+                ) : (
+                  <Bars3Icon
+                    className="h-6 w-6 text-primary-700 stroke-2"
+                    aria-hidden="true"
+                  />
+                )}
+              </motion.div>
+            </LuxuryRipple>
           </div>
         </div>
 
