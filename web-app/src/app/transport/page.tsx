@@ -22,6 +22,8 @@ import CustomToursSection from "@/components/CustomToursSection";
 import ServiceCommunityBridge from "@/components/ServiceCommunityBridge";
 import CrossPlatformNavigationWidget from "@/components/CrossPlatformNavigationWidget";
 import { useLanguage } from "@/context/LanguageContext";
+import { IMAGES } from "@/config/cdn";
+import { TRANSPORT_PRICING } from "@/config/pricing";
 
 // Premium security and VIP services - London-focused operations only
 const serviceTiers = [
@@ -30,10 +32,9 @@ const serviceTiers = [
     name: "Premium Security",
     namePortuguese: "Segurança Premium",
     serviceKey: "security_personal", // Maps to available service
-    price: 400,
+    price: TRANSPORT_PRICING.security.basicProtection,
     originalPrice: 450,
-    image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/premium-security-service_dlqxkx.jpg",
+    image: IMAGES.transport.security,
     imageAlt:
       "Professional security service with professional vehicle at London landmark",
     imageAltPortuguese:
@@ -77,10 +78,9 @@ const serviceTiers = [
     name: "VIP London Experience",
     namePortuguese: "Experiência VIP de Londres",
     serviceKey: "close_protection", // Maps to available service
-    price: 800,
+    price: TRANSPORT_PRICING.security.enhancedProtection,
     originalPrice: 900,
-    image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/vip-london-bridge_hml2nr.jpg",
+    image: IMAGES.transport.vipBridge,
     imageAlt:
       "VIP London experience with Tower Bridge and professional service",
     imageAltPortuguese:
@@ -126,10 +126,9 @@ const serviceTiers = [
     name: "Elite Protection",
     namePortuguese: "Proteção Elite",
     serviceKey: "executive_transport", // Maps to unavailable service
-    price: 65,
+    price: TRANSPORT_PRICING.security.closeProtection,
     originalPrice: 75,
-    image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535202/elite-protection-service_dqmxvr.jpg",
+    image: IMAGES.transport.eliteProtection,
     imageAlt: "Elite protection service with professional vehicle in London",
     imageAltPortuguese:
       "Serviço de proteção elite com veículo profissional em Londres",
@@ -180,11 +179,10 @@ const londonTourismExperiences = [
     id: "classic-london-tour",
     name: "Classic London Tour",
     namePortuguese: "Tour Clássico de Londres",
-    price: 320,
+    price: TRANSPORT_PRICING.packages.premium4Hours,
     originalPrice: 350,
     duration: "4 hours",
-    image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535203/big-ben-westminster_zlkd5m.jpg",
+    image: IMAGES.transport.bigBen,
     imageAlt: "Big Ben and Westminster Bridge - Classic London landmarks",
     imageAltPortuguese:
       "Big Ben e Westminster Bridge - Marcos clássicos de Londres",
@@ -226,11 +224,10 @@ const londonTourismExperiences = [
     id: "royal-london-experience",
     name: "Royal London Experience",
     namePortuguese: "Experiência Real de Londres",
-    price: 380,
+    price: TRANSPORT_PRICING.packages.premium6Hours,
     originalPrice: 420,
     duration: "6 hours",
-    image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg",
+    image: IMAGES.transport.buckinghamPalace,
     imageAlt: "Buckingham Palace with royal guards - Royal London experience",
     imageAltPortuguese:
       "Palácio de Buckingham com guardas reais - Experiência real de Londres",
@@ -275,8 +272,7 @@ const londonTourismExperiences = [
     price: 450,
     originalPrice: 495,
     duration: "6 hours",
-    image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg",
+    image: IMAGES.transport.theShard,
     imageAlt: "The Shard and modern London skyline with Thames river",
     imageAltPortuguese: "The Shard e skyline moderno de Londres com rio Tâmisa",
     membershipDiscounts: {
@@ -320,8 +316,7 @@ const londonTourismExperiences = [
     price: 520,
     originalPrice: 580,
     duration: "8 hours",
-    image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535206/covent-garden_dxh3qm.jpg",
+    image: IMAGES.transport.coventGarden,
     imageAlt: "Covent Garden market and shopping area in London",
     imageAltPortuguese: "Mercado de Covent Garden e área de compras em Londres",
     membershipDiscounts: {
@@ -397,7 +392,7 @@ const multiDayPackages = [
     originalPrice: 650,
     duration: "8 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535207/tower-bridge-sunset_kml8pr.jpg",
+      IMAGES.transport.towerBridge,
     imageAlt: "Tower Bridge at sunset - Complete London exploration",
     imageAltPortuguese:
       "Tower Bridge ao pôr do sol - Exploração completa de Londres",
@@ -426,7 +421,7 @@ const multiDayPackages = [
     id: "multi-day-london-discovery",
     name: "Multi-Day London Discovery",
     namePortuguese: "Descoberta de Londres de Múltiplos Dias",
-    price: 1480,
+    price: TRANSPORT_PRICING.packages.VIPWeekend,
     originalPrice: 1650,
     duration: "2-3 days",
     membershipDiscounts: {
@@ -458,7 +453,7 @@ const multiDayPackages = [
     originalPrice: 470,
     duration: "5 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535209/london-attractions-collage_dxh4mn.jpg",
+      IMAGES.transport.londonCollage,
     imageAlt: "London family attractions - Adventure and cultural activities",
     imageAltPortuguese:
       "Atrações familiares de Londres - Aventura e atividades culturais",
@@ -519,7 +514,7 @@ const standardPackages = [
     id: "airport-vip",
     name: "Airport VIP Transfer with London Introduction",
     namePortuguese: "Transferência VIP Aeroporto com Introdução a Londres",
-    price: 145,
+    price: TRANSPORT_PRICING.packages.airportPickup2Hours,
     originalPrice: 165,
     duration: "2 hours",
     membershipDiscounts: {
@@ -661,7 +656,7 @@ export default function TransportPage() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-secondary-50 via-white to-accent-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: `url('${IMAGES.backgrounds.theShard}')` }}></div>
         <div className="absolute inset-0 bg-gradient-to-br from-secondary-900/10 via-transparent to-accent-900/10"></div>
         <div className="relative container-width py-16 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">
@@ -1361,56 +1356,56 @@ export default function TransportPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {[
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535203/big-ben-westminster_zlkd5m.jpg",
+                src: IMAGES.transport.bigBen,
                 alt: "Big Ben and Westminster",
                 altPt: "Big Ben e Westminster",
                 title: "Westminster & Big Ben",
                 titlePt: "Westminster e Big Ben",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg",
+                src: IMAGES.transport.buckinghamPalace,
                 alt: "Buckingham Palace",
                 altPt: "Palácio de Buckingham",
                 title: "Buckingham Palace",
                 titlePt: "Palácio de Buckingham",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/vip-london-bridge_hml2nr.jpg",
+                src: IMAGES.transport.vipBridge,
                 alt: "Tower Bridge",
                 altPt: "Tower Bridge",
                 title: "Tower Bridge",
                 titlePt: "Tower Bridge",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg",
+                src: IMAGES.transport.theShard,
                 alt: "The Shard",
                 altPt: "The Shard",
                 title: "The Shard",
                 titlePt: "The Shard",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535206/covent-garden_dxh3qm.jpg",
+                src: IMAGES.transport.coventGarden,
                 alt: "Covent Garden",
                 altPt: "Covent Garden",
                 title: "Covent Garden",
                 titlePt: "Covent Garden",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg",
+                src: IMAGES.transport.buckinghamPalace,
                 alt: "London Eye",
                 altPt: "London Eye",
                 title: "London Eye",
                 titlePt: "London Eye",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535207/tower-of-london_kmlr5p.jpg",
+                src: IMAGES.transport.towerOfLondon,
                 alt: "Tower of London",
                 altPt: "Torre de Londres",
                 title: "Tower of London",
                 titlePt: "Torre de Londres",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535208/st-pauls-cathedral_r9nxhw.jpg",
+                src: IMAGES.transport.stPauls,
                 alt: "St Paul's Cathedral",
                 altPt: "Catedral de St. Paul",
                 title: "St Paul's Cathedral",

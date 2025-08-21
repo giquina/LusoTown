@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
+import { IMAGES } from "@/config/cdn";
 import { motion } from "framer-motion";
 import { 
   MapPinIcon, 
@@ -153,7 +154,7 @@ export default function ToursPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/london-skyline-heritage_kqw8xr.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: `url('${IMAGES.backgrounds.londonSkylineHeritage}')` }}></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
         <div className="relative container-width py-16 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">

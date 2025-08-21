@@ -3,19 +3,34 @@
  * 
  * All pricing, currency, and payment-related constants and utilities
  * to eliminate hardcoded price strings throughout the application.
+ * 
+ * Environment variables support for dynamic pricing:
+ * - NEXT_PUBLIC_COMMUNITY_PRICE_MONTHLY
+ * - NEXT_PUBLIC_AMBASSADOR_PRICE_MONTHLY
+ * - NEXT_PUBLIC_STUDENT_DISCOUNT_RATE
+ * - NEXT_PUBLIC_ANNUAL_DISCOUNT_RATE
  */
 
 export type Currency = "GBP" | "EUR" | "USD" | "BRL";
 
 export const CURRENCIES = {
-  GBP: { symbol: "£", code: "GBP", name: "British Pound" },
-  EUR: { symbol: "€", code: "EUR", name: "Euro" },
-  USD: { symbol: "$", code: "USD", name: "US Dollar" },
-  BRL: { symbol: "R$", code: "BRL", name: "Brazilian Real" }
+  GBP: { symbol: "£", code: "GBP", name: "British Pound", locale: "en-GB" },
+  EUR: { symbol: "€", code: "EUR", name: "Euro", locale: "de-DE" },
+  USD: { symbol: "$", code: "USD", name: "US Dollar", locale: "en-US" },
+  BRL: { symbol: "R$", code: "BRL", name: "Brazilian Real", locale: "pt-BR" }
 } as const;
 
 export const currency: Currency = "GBP";
 export const currencySymbol = "£";
+
+// Environment variable overrides for dynamic pricing
+const getEnvPrice = (key: string, defaultValue: number): number => {
+  if (typeof window !== 'undefined') {
+    const envValue = process.env[`NEXT_PUBLIC_${key}`];
+    return envValue ? parseFloat(envValue) : defaultValue;
+  }
+  return defaultValue;
+};
 
 // Subscription Plans (display amounts in major units)
 export const SUBSCRIPTION_PLANS = {
@@ -23,6 +38,8 @@ export const SUBSCRIPTION_PLANS = {
     id: 'free',
     monthly: 0,
     annual: 0,
+    monthlyStripe: 0, // in pence for Stripe
+    annualStripe: 0, // in pence for Stripe
     labelEn: "Free",
     labelPt: "Grátis",
     features: {
@@ -34,8 +51,10 @@ export const SUBSCRIPTION_PLANS = {
   },
   community: {
     id: 'community',
-    monthly: 19.99,
-    annual: 199.99, // ~17% discount
+    monthly: getEnvPrice('COMMUNITY_PRICE_MONTHLY', 19.99),
+    annual: getEnvPrice('COMMUNITY_PRICE_ANNUAL', 199.99), // ~17% discount
+    get monthlyStripe() { return Math.round(this.monthly * 100) }, // in pence for Stripe
+    get annualStripe() { return Math.round(this.annual * 100) }, // in pence for Stripe
     labelEn: "Community Member",
     labelPt: "Membro da Comunidade",
     features: {
@@ -48,8 +67,10 @@ export const SUBSCRIPTION_PLANS = {
   },
   ambassador: {
     id: 'ambassador',
-    monthly: 39.99,
-    annual: 399.99, // ~17% discount
+    monthly: getEnvPrice('AMBASSADOR_PRICE_MONTHLY', 39.99),
+    annual: getEnvPrice('AMBASSADOR_PRICE_ANNUAL', 399.99), // ~17% discount
+    get monthlyStripe() { return Math.round(this.monthly * 100) }, // in pence for Stripe
+    get annualStripe() { return Math.round(this.annual * 100) }, // in pence for Stripe
     labelEn: "Cultural Ambassador",
     labelPt: "Embaixador Cultural",
     features: {
@@ -71,11 +92,11 @@ export const plans = {
   ambassador: SUBSCRIPTION_PLANS.ambassador,
 } as const;
 
-// Legacy pricing (deprecated - use plans instead)
+// Legacy pricing (deprecated - use LEGACY_TRANSPORT_PRICING instead)
 export const membership = {
-  annual: 25, // Legacy £25/year - deprecated
-  studentAnnual: 12.5, // Legacy student rate - deprecated
-  groupAnnual: 20, // Legacy group pricing - deprecated
+  annual: LEGACY_TRANSPORT_PRICING.annual,
+  studentAnnual: LEGACY_TRANSPORT_PRICING.studentAnnual,
+  groupAnnual: LEGACY_TRANSPORT_PRICING.groupAnnual,
 } as const;
 
 // Creator/Events pricing
@@ -125,6 +146,26 @@ export const TRANSPORT_PRICING = {
     baseRate: 25, // per hour
     discount: 0.5, // 50% off regular pricing
     verificationRequired: true
+  },
+  // Security services
+  security: {
+    basicProtection: 400, // per day
+    enhancedProtection: 800, // per day
+    closeProtection: 65 // per hour
+  },
+  // Premium transport packages
+  packages: {
+    premium4Hours: 320,
+    premium6Hours: 380,
+    premium6HoursPlus: 450,
+    premium8Hours: 520,
+    group4Hours: 280,
+    group8Hours: 580,
+    VIPWeekend: 1480,
+    specialEvent5Hours: 420,
+    airportPickup2Hours: 145,
+    airportTransfer4Hours: 320,
+    eventTransport3Hours: 380
   }
 } as const;
 
@@ -175,12 +216,39 @@ export const PAYMENT_FEES = {
 
 // Discount and Promotion Constants
 export const DISCOUNTS = {
-  student: 0.5, // 50% off
-  annual: 0.17, // 17% off (2 months free)
+  student: getEnvPrice('STUDENT_DISCOUNT_RATE', 0.5), // 50% off
+  annual: getEnvPrice('ANNUAL_DISCOUNT_RATE', 0.17), // 17% off (2 months free)
   earlyBird: 0.2, // 20% off for early adopters
   referral: 0.1, // 10% off for successful referrals
   groupBooking: 0.15, // 15% off for group bookings (5+ people)
   portuguese: 0.05 // 5% off for Portuguese cultural events
+} as const;
+
+// Student Pricing (calculated with discount)
+export const STUDENT_PRICING = {
+  community: {
+    monthly: SUBSCRIPTION_PLANS.community.monthly * (1 - DISCOUNTS.student),
+    annual: SUBSCRIPTION_PLANS.community.annual * (1 - DISCOUNTS.student),
+    get monthlyFormatted() { return formatPrice(this.monthly) },
+    get annualFormatted() { return formatPrice(this.annual) },
+    get monthlyStripe() { return Math.round(this.monthly * 100) },
+    get annualStripe() { return Math.round(this.annual * 100) }
+  },
+  ambassador: {
+    monthly: SUBSCRIPTION_PLANS.ambassador.monthly * (1 - DISCOUNTS.student),
+    annual: SUBSCRIPTION_PLANS.ambassador.annual * (1 - DISCOUNTS.student),
+    get monthlyFormatted() { return formatPrice(this.monthly) },
+    get annualFormatted() { return formatPrice(this.annual) },
+    get monthlyStripe() { return Math.round(this.monthly * 100) },
+    get annualStripe() { return Math.round(this.annual * 100) }
+  }
+} as const;
+
+// Transport Legacy Pricing (for backward compatibility)
+export const LEGACY_TRANSPORT_PRICING = {
+  annual: getEnvPrice('TRANSPORT_ANNUAL_PRICE', 25), // £25/year
+  studentAnnual: getEnvPrice('TRANSPORT_STUDENT_ANNUAL_PRICE', 12.5), // £12.50/year student rate
+  groupAnnual: 20, // Legacy group pricing
 } as const;
 
 // Price Display Constants
@@ -205,9 +273,10 @@ export const PRICE_DISPLAY = {
 export const formatPrice = (
   amount: number, 
   currencyCode: Currency = "GBP",
-  locale: string = "en-GB"
+  locale?: string
 ) => {
-  return new Intl.NumberFormat(locale, { 
+  const defaultLocale = locale || CURRENCIES[currencyCode].locale;
+  return new Intl.NumberFormat(defaultLocale, { 
     style: "currency", 
     currency: currencyCode 
   }).format(amount);
@@ -301,8 +370,254 @@ export const annualMembershipPrice = () => membership.annual;
 export const studentAnnualPrice = () => membership.studentAnnual;
 export const groupAnnualPrice = () => membership.groupAnnual;
 
+// Comprehensive Pricing Helpers
+export const getStudentPrice = (
+  planId: keyof typeof SUBSCRIPTION_PLANS,
+  billing: 'monthly' | 'annual' = 'monthly'
+): number => {
+  return STUDENT_PRICING[planId as keyof typeof STUDENT_PRICING][billing];
+};
+
+export const getFormattedStudentPrice = (
+  planId: keyof typeof SUBSCRIPTION_PLANS,
+  billing: 'monthly' | 'annual' = 'monthly',
+  locale: 'en' | 'pt' = 'en'
+): string => {
+  const price = getStudentPrice(planId, billing);
+  const formattedPrice = formatPrice(price);
+  
+  if (price === 0) {
+    return locale === 'pt' ? PRICE_DISPLAY.freeLabelPt : PRICE_DISPLAY.freeLabel;
+  }
+  
+  const periodLabel = billing === 'annual' 
+    ? (locale === 'pt' ? PRICE_DISPLAY.perYearLabelPt : PRICE_DISPLAY.perYearLabel)
+    : (locale === 'pt' ? PRICE_DISPLAY.perMonthLabelPt : PRICE_DISPLAY.perMonthLabel);
+  
+  return `${formattedPrice}${periodLabel}`;
+};
+
+export const getPriceForStripe = (
+  planId: keyof typeof SUBSCRIPTION_PLANS,
+  billing: 'monthly' | 'annual' = 'monthly',
+  isStudent: boolean = false
+): number => {
+  if (isStudent) {
+    return STUDENT_PRICING[planId as keyof typeof STUDENT_PRICING][`${billing}Stripe` as const];
+  }
+  return SUBSCRIPTION_PLANS[planId][`${billing}Stripe` as const];
+};
+
+export const getSavingsAmount = (planId: keyof typeof SUBSCRIPTION_PLANS): number => {
+  const monthly = SUBSCRIPTION_PLANS[planId].monthly * 12;
+  const annual = SUBSCRIPTION_PLANS[planId].annual;
+  return monthly - annual;
+};
+
+export const getSavingsPercentage = (planId: keyof typeof SUBSCRIPTION_PLANS): number => {
+  const monthly = SUBSCRIPTION_PLANS[planId].monthly * 12;
+  const annual = SUBSCRIPTION_PLANS[planId].annual;
+  return Math.round(((monthly - annual) / monthly) * 100);
+};
+
+export const getFormattedSavings = (
+  planId: keyof typeof SUBSCRIPTION_PLANS,
+  locale: 'en' | 'pt' = 'en'
+): string => {
+  const percentage = getSavingsPercentage(planId);
+  const saveLabel = locale === 'pt' ? PRICE_DISPLAY.saveLabelPt : PRICE_DISPLAY.saveLabel;
+  return `${saveLabel} ${percentage}%`;
+};
+
+// Price comparison helpers
+export const comparePrices = (
+  price1: number,
+  price2: number,
+  currencyCode: Currency = "GBP"
+): {
+  difference: number;
+  percentageDifference: number;
+  formattedDifference: string;
+  cheaperOption: 'first' | 'second' | 'equal';
+} => {
+  const difference = Math.abs(price1 - price2);
+  const percentageDifference = price1 !== 0 ? Math.round((difference / price1) * 100) : 0;
+  const formattedDifference = formatPrice(difference, currencyCode);
+  
+  let cheaperOption: 'first' | 'second' | 'equal';
+  if (price1 < price2) cheaperOption = 'first';
+  else if (price2 < price1) cheaperOption = 'second';
+  else cheaperOption = 'equal';
+  
+  return {
+    difference,
+    percentageDifference,
+    formattedDifference,
+    cheaperOption
+  };
+};
+
+// Multi-currency conversion helpers (requires exchange rate API)
+export const convertPrice = (
+  amount: number,
+  fromCurrency: Currency,
+  toCurrency: Currency,
+  exchangeRate?: number
+): number => {
+  if (fromCurrency === toCurrency) return amount;
+  
+  // Placeholder for exchange rate logic
+  // In production, this would use real-time exchange rates
+  const defaultRates: Record<string, number> = {
+    'GBP-EUR': 1.17,
+    'GBP-USD': 1.27,
+    'GBP-BRL': 6.54,
+    'EUR-GBP': 0.85,
+    'USD-GBP': 0.79,
+    'BRL-GBP': 0.15
+  };
+  
+  const rateKey = `${fromCurrency}-${toCurrency}`;
+  const rate = exchangeRate || defaultRates[rateKey] || 1;
+  
+  return amount * rate;
+};
+
+// Validation helpers
+export const isPriceValid = (price: number): boolean => {
+  return typeof price === 'number' && price >= 0 && Number.isFinite(price);
+};
+
+export const validateSubscriptionTier = (tier: string): tier is keyof typeof SUBSCRIPTION_PLANS => {
+  return tier in SUBSCRIPTION_PLANS;
+};
+
+export const validateCurrency = (currency: string): currency is Currency => {
+  return currency in CURRENCIES;
+};
+
+// Tours and Events Pricing
+export const TOURS_PRICING = {
+  // Women-focused events
+  womenNetworking: {
+    wine30Plus: 85,
+    professional40Plus: 165
+  },
+  
+  // Professional development
+  professional: {
+    websiteCreation: 125,
+    businessNetworking: 165
+  },
+  
+  // Cultural experiences
+  cultural: {
+    languageExchange: 75,
+    fadoNight: 95,
+    cookingWorkshop: 95
+  },
+  
+  // Tours and experiences  
+  tours: {
+    canterburyHeritage: 145,
+    walkingTour: 35
+  },
+  
+  // Social activities
+  social: {
+    fridayNight: 25,
+    bookClub: 20
+  }
+} as const;
+
+// Extended Events Pricing (from events.ts)
+export const EVENTS_PRICING = {
+  // Cultural events
+  cultural: {
+    fadoEvening: 45,
+    portugalFestival: 55,
+    traditionalDinner: 35,
+    capeVerdeanNight: 30
+  },
+  
+  // Sports and entertainment  
+  sports: {
+    footballViewing: 15,
+    quadradoShow: 25
+  },
+  
+  // Professional and networking
+  professional: {
+    businessNetworking: 25,
+    businessBreakfast: 45,
+    womenNetworking: 38,
+    aiCodingWorkshop: 85
+  },
+  
+  // Premium experiences
+  premium: {
+    royalCulturalTour: 58,
+    luxuryNightOut: 65,
+    photographyExperience: 45,
+    culinaryTour: 52
+  },
+  
+  // Community events
+  community: {
+    languageCafe: 8,
+    carnivalCelebration: 20,
+    freeEvents: 0 // Free events
+  }
+} as const;
+
+// Legacy tours pricing structure for compatibility
+export const toursPricing = {
+  walkingTours: {
+    standard: TOURS_PRICING.tours.walkingTour,
+    heritage: TOURS_PRICING.tours.canterburyHeritage
+  },
+  womenEvents: {
+    wine30Plus: TOURS_PRICING.womenNetworking.wine30Plus,
+    professional40Plus: TOURS_PRICING.womenNetworking.professional40Plus
+  },
+  professionalEvents: {
+    websiteWorkshop: TOURS_PRICING.professional.websiteCreation,
+    networking: TOURS_PRICING.professional.businessNetworking
+  },
+  culturalEvents: {
+    languageExchange: TOURS_PRICING.cultural.languageExchange,
+    fadoNight: TOURS_PRICING.cultural.fadoNight,
+    cooking: TOURS_PRICING.cultural.cookingWorkshop
+  },
+  socialEvents: {
+    fridayNight: TOURS_PRICING.social.fridayNight,
+    bookClub: TOURS_PRICING.social.bookClub
+  }
+} as const;
+
 // Type definitions
 export type SubscriptionPlan = keyof typeof SUBSCRIPTION_PLANS;
 export type TransportService = keyof typeof TRANSPORT_PRICING;
 export type DiscountType = keyof typeof DISCOUNTS;
 export type BusinessListingType = keyof typeof BUSINESS_PRICING;
+export type ToursPricingType = keyof typeof TOURS_PRICING;
+
+// Development helpers and validation
+if (typeof window === 'undefined') {
+  // Server-side validation during build
+  console.log('[Pricing Config] Centralized pricing system loaded successfully');
+  
+  // Validate pricing consistency
+  const communityMonthly = SUBSCRIPTION_PLANS.community.monthly;
+  const ambassadorMonthly = SUBSCRIPTION_PLANS.ambassador.monthly;
+  
+  if (communityMonthly <= 0 || ambassadorMonthly <= communityMonthly) {
+    console.warn('[Pricing Config] Warning: Price hierarchy may be incorrect');
+  }
+  
+  // Validate student pricing
+  const studentCommunity = STUDENT_PRICING.community.monthly;
+  if (studentCommunity >= communityMonthly) {
+    console.warn('[Pricing Config] Warning: Student pricing should be lower than regular pricing');
+  }
+}

@@ -19,6 +19,7 @@ import {
 import { Crown, Shield, Car, Users, Award, TrendingUp } from 'lucide-react'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
+import { IMAGES } from '@/config/cdn'
 import { ROUTES } from '@/config/routes'
 import ServiceCard from '@/components/ServiceCard'
 import TrustBadges from '@/components/TrustBadges'
@@ -37,7 +38,7 @@ const services = [
     priceUnitPortuguese: 'hora',
     icon: Car,
     color: 'secondary',
-    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/executive-transport-london_dlqxkx.jpg',
+    image: IMAGES.transport.executive,
     description: 'Professional transport services with Portuguese cultural expertise',
     descriptionPortuguese: 'Serviços de transporte profissional com especialização cultural portuguesa',
     features: [
@@ -71,7 +72,7 @@ const services = [
     priceUnitPortuguese: 'dia',
     icon: ShieldCheckIcon,
     color: 'premium',
-    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/close-protection-london_dlqxkx.jpg',
+    image: IMAGES.transport.closeProtection,
     description: 'SIA-licensed CPOs providing discrete, culturally-aware security',
     descriptionPortuguese: 'CPOs licenciados SIA fornecendo segurança discreta e culturalmente consciente',
     features: [
@@ -203,7 +204,7 @@ export default function ServicesPage() {
       
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/executive-transport-london_dlqxkx.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: `url('${IMAGES.transport.executive}')` }}></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
         <div className="relative container-width py-16 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">

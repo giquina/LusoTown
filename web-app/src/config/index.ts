@@ -7,7 +7,7 @@
 
 // Community and contact information
 export { communityStats, communityMilestones, getNumericStat, formatStat } from './community';
-export { contactInfo, contactPhones, socialMedia, officeLocations } from './contact';
+export { contactInfo, contactPhones, socialMedia, officeLocations, contact } from './contact';
 
 // Brand and design system
 export { 
@@ -78,12 +78,20 @@ export {
   LEGAL_URLS,
   TICKETING_URLS,
   TRANSPORT_URLS,
+  COMMON_IMAGES,
+  URL_CONFIG,
   buildUnsplashUrl,
+  buildPortugueseImageUrl,
+  buildAvatarUrl,
   buildCloudinaryUrl,
   buildGravatarUrl,
   buildCalendarUrl,
   buildDirectionsUrl,
-  buildSocialShareUrl
+  buildSocialShareUrl,
+  buildUniversityUrl,
+  buildPortugueseResourceUrl,
+  buildStreamingUrl,
+  getEnvironmentUrl
 } from './cdn';
 
 // Analytics and tracking

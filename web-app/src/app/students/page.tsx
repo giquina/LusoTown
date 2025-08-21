@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
 import { communityStats } from '@/config/community'
+import { SUBSCRIPTION_PLANS, STUDENT_PRICING, formatPrice } from '@/config/pricing'
+import { IMAGES, UNIVERSITY_URLS } from '@/config/cdn'
 
 // Import new student-specific components
 import StudentEventsSection from '@/components/students/StudentEventsSection'
@@ -126,7 +128,7 @@ const UNIVERSITIES: University[] = [
       'Career mentorship with Portuguese professionals',
       'Exclusive networking events with Portuguese Alumni'
     ],
-    website: 'https://www.ucl.ac.uk',
+    website: UNIVERSITY_URLS.ucl,
     contact: {
       name: 'Dr. Maria Fernandes',
       title: 'Portuguese Studies Coordinator & LusoTown Liaison',
@@ -158,7 +160,7 @@ const UNIVERSITIES: University[] = [
       'Study abroad support for Portugal/Brazil',
       'Career services with Portuguese connections'
     ],
-    website: 'https://www.kcl.ac.uk',
+    website: UNIVERSITY_URLS.kcl,
     contact: {
       name: 'Prof. João Silva',
       title: 'Head of Portuguese Department',
@@ -190,7 +192,7 @@ const UNIVERSITIES: University[] = [
       'Research collaboration opportunities',
       'Alumni network in Portuguese-speaking countries'
     ],
-    website: 'https://www.ox.ac.uk',
+    website: UNIVERSITY_URLS.oxford,
     contact: {
       name: 'Dr. Ana Rebelo',
       title: 'Lecturer in Portuguese Literature',
@@ -222,7 +224,7 @@ const UNIVERSITIES: University[] = [
       'Research funding for Portuguese studies',
       'International exchange program support'
     ],
-    website: 'https://www.cam.ac.uk',
+    website: UNIVERSITY_URLS.cambridge,
     contact: {
       name: 'Dr. Carlos Mendes',
       title: 'Director of Portuguese Studies',
@@ -254,7 +256,7 @@ const UNIVERSITIES: University[] = [
       'Portuguese economist speaker series',
       'Brazil-UK business connections'
     ],
-    website: 'https://www.lse.ac.uk',
+    website: UNIVERSITY_URLS.lse,
     contact: {
       name: 'Dr. Ricardo Costa',
       title: 'Latin American Studies Programme Director',
@@ -286,7 +288,7 @@ const UNIVERSITIES: University[] = [
       'Portuguese startup ecosystem connections',
       'Research collaboration with Portuguese institutions'
     ],
-    website: 'https://www.imperial.ac.uk',
+    website: UNIVERSITY_URLS.imperial,
     contact: {
       name: 'Dr. Miguel Santos',
       title: 'International Student Support Coordinator',
@@ -318,7 +320,7 @@ const UNIVERSITIES: University[] = [
       'Portuguese cultural event organization support',
       'Mentorship with Portuguese alumni network'
     ],
-    website: 'https://www.manchester.ac.uk',
+    website: UNIVERSITY_URLS.manchester,
     contact: {
       name: 'Dr. Luisa Rodrigues',
       title: 'Portuguese Studies Programme Leader',
@@ -350,7 +352,7 @@ const UNIVERSITIES: University[] = [
       'Research funding for Portuguese studies',
       'Virtual connection to London Portuguese community'
     ],
-    website: 'https://www.ed.ac.uk',
+    website: UNIVERSITY_URLS.edinburgh,
     contact: {
       name: 'Dr. Fernando Alves',
       title: 'Senior Lecturer in Portuguese Studies',
@@ -365,8 +367,8 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     id: 'membership-discount',
     title: '50% Student Discount on Community Membership',
     titlePortuguese: '50% Desconto Estudante na Adesão Comunidade',
-    description: 'Exclusive 50% discount on LusoTown Community membership for verified students. Pay only £9.99/month instead of £19.99 for full community access.',
-    descriptionPortuguese: 'Desconto exclusivo de 50% na adesão Comunidade LusoTown para estudantes verificados. Pague apenas £9.99/mês em vez de £19.99 por acesso completo à comunidade.',
+    description: `Exclusive 50% discount on LusoTown Community membership for verified students. Pay only ${formatPrice(STUDENT_PRICING.community.monthly)}/month instead of ${formatPrice(SUBSCRIPTION_PLANS.community.monthly)} for full community access.`,
+    descriptionPortuguese: `Desconto exclusivo de 50% na adesão Comunidade LusoTown para estudantes verificados. Pague apenas ${formatPrice(STUDENT_PRICING.community.monthly)}/mês em vez de ${formatPrice(SUBSCRIPTION_PLANS.community.monthly)} por acesso completo à comunidade.`,
     category: 'financial',
     discountAmount: '50%',
     eligibility: ['Current university students', 'Valid .ac.uk email required', 'Student ID verification'],
@@ -616,7 +618,7 @@ export default function StudentsPage() {
       <div className="pt-16">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-          <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/university-students-london_q8w9xr.jpg')] bg-cover bg-center opacity-10"></div>
+          <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: `url('${IMAGES.backgrounds.universityStudents}')` }}></div>
           <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
           <div className="relative container-width py-16 lg:py-24">
             <div className="text-center max-w-4xl mx-auto">

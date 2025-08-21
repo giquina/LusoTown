@@ -13,11 +13,11 @@ export const contactPhones = {
 };
 
 export const socialMedia = {
-  instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || 'https://instagram.com/lusotown',
-  facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || 'https://facebook.com/lusotown',
-  twitter: process.env.NEXT_PUBLIC_TWITTER_URL || 'https://twitter.com/lusotown',
+  instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || 'https://instagram.com/lusotownlondon',
+  facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || 'https://facebook.com/lusotownlondon',
+  twitter: process.env.NEXT_PUBLIC_TWITTER_URL || 'https://twitter.com/lusotownlondon',
   linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || 'https://linkedin.com/company/lusotown',
-  youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL || 'https://youtube.com/@lusotown'
+  youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL || 'https://youtube.com/@lusotownlondon'
 };
 
 export const officeLocations = {
@@ -28,4 +28,29 @@ export const officeLocations = {
     phone: contactPhones.general,
     email: contactInfo.general
   }
+};
+
+// Consolidated contact object for SEO and other config uses
+export const contact = {
+  phone: contactPhones.general,
+  support: contactInfo.support,
+  general: contactInfo.general,
+  social: {
+    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || 'https://facebook.com/lusotownlondon',
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || 'https://instagram.com/lusotownlondon',
+    twitter: process.env.NEXT_PUBLIC_TWITTER_URL || 'https://twitter.com/lusotownlondon',
+    linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || 'https://linkedin.com/company/lusotown',
+    youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL || 'https://youtube.com/@lusotownlondon'
+  },
+  address: {
+    street: process.env.NEXT_PUBLIC_OFFICE_ADDRESS?.split(',')[0] || 'Portuguese Community Centre',
+    city: 'London',
+    region: 'England',
+    postcode: process.env.NEXT_PUBLIC_OFFICE_POSTCODE || 'SW8 2LG',
+    country: 'GB'
+  },
+  // Legacy structure for backward compatibility
+  info: contactInfo,
+  phones: contactPhones,
+  offices: officeLocations
 };

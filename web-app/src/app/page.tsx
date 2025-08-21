@@ -3,6 +3,7 @@
 import type { Metadata } from 'next'
 import { useLanguage } from '@/context/LanguageContext'
 import { communityStats } from '@/config/community'
+import { generateJsonLd } from '@/config/seo'
 import dynamic from 'next/dynamic'
 import Hero from '@/components/Hero'
 import Features from '@/components/Features'
@@ -67,32 +68,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 // Page-specific structured data for Portuguese social calendar
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'LusoTown London',
-  description: 'Real-life meetups for Portuguese speakers across the UK',
-  url: 'https://lusotown.london',
-  logo: 'https://lusotown.london/logo.png',
-  sameAs: [
-    'https://facebook.com/lusotownlondon',
-    'https://instagram.com/lusotownlondon',
-    'https://twitter.com/lusotownlondon'
-  ],
-  areaServed: {
-    '@type': 'Country',
-    name: 'United Kingdom',
-    addressCountry: 'GB'
-  },
-  audience: {
-    '@type': 'Audience',
-    audienceType: 'Portuguese-speaking community',
-    geographicArea: {
-      '@type': 'Country',
-      name: 'United Kingdom'
-    }
-  }
-}
+const jsonLd = generateJsonLd('organization')
 
 export default function Home() {
   const { t } = useLanguage()
@@ -105,7 +81,7 @@ export default function Home() {
       {/* Structured data for SEO */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd }}
       />
       
       <main className="min-h-screen w-full overflow-x-hidden" role="main">

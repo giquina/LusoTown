@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Video, Users, DollarSign, Settings, Mic, Camera, Monitor, Wifi } from 'lucide-react';
 import LearningModuleFramework, { LearningModule, LearningStep } from '@/components/academy/LearningModuleFramework';
 import { useLanguage } from '@/context/LanguageContext';
+import { EXTERNAL_SERVICES } from '@/config/cdn';
 
 export default function LiveStreamingModule() {
   const { language } = useLanguage();
@@ -1248,7 +1249,7 @@ export default function LiveStreamingModule() {
       {
         title: 'OBS Studio Setup Tutorial',
         titlePortuguese: 'Tutorial de Configuração OBS Studio',
-        url: 'https://obsproject.com/help',
+        url: EXTERNAL_SERVICES.obsHelp,
         type: 'external'
       }
     ]

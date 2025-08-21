@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { SUBSCRIPTION_PLANS, STUDENT_PRICING, formatPrice } from '@/config/pricing'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
@@ -68,8 +69,8 @@ const STUDENT_DISCOUNTS: StudentDiscount[] = [
     category: 'membership',
     discountType: 'percentage',
     discountValue: 50,
-    originalPrice: 19.99,
-    studentPrice: 9.99,
+    originalPrice: SUBSCRIPTION_PLANS.community.monthly,
+    studentPrice: STUDENT_PRICING.community.monthly,
     description: 'Get full access to LusoTown Community features at half the price. Unlimited matches, exclusive events, and premium support.',
     descriptionPortuguese: 'Obtenha acesso completo às funcionalidades da Comunidade LusoTown por metade do preço. Matches ilimitados, eventos exclusivos e suporte premium.',
     eligibility: ['Valid .ac.uk email address', 'Current university enrollment', 'Student ID verification'],

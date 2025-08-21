@@ -3,7 +3,10 @@ import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
 
 const getStripe = () => {
-  const key = process.env.STRIPE_SECRET_KEY || 'sk_test_51Demo123456789012345678901234567890Demo'
+  const key = process.env.STRIPE_SECRET_KEY
+  if (!key) {
+    throw new Error('STRIPE_SECRET_KEY environment variable is not set')
+  }
   return new Stripe(key, {
     apiVersion: '2024-06-20',
   })

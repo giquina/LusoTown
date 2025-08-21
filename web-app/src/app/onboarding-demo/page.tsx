@@ -58,7 +58,7 @@ export default function OnboardingDemo() {
         const whatsappMessage = isPortuguese 
           ? `Olá! Junta-te à maior comunidade portuguesa em Londres: ${(process.env.NEXT_PUBLIC_SITE_URL||'').trim() || require('@/config/site').SITE_URL}/?ref=${data?.code}`
           : `Hi! Join London's largest Portuguese community: ${(process.env.NEXT_PUBLIC_SITE_URL||'').trim() || require('@/config/site').SITE_URL}/?ref=${data?.code}`
-        window.open(`https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`, '_blank')
+        window.open(`${process.env.NEXT_PUBLIC_WHATSAPP_API_URL || 'https://wa.me'}/?text=${encodeURIComponent(whatsappMessage)}`, '_blank')
         break
       case 'share_referral_generic':
   navigator.clipboard.writeText(`${(process.env.NEXT_PUBLIC_SITE_URL||'').trim() || require('@/config/site').SITE_URL}/?ref=${data?.code}`)

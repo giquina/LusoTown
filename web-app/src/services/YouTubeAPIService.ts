@@ -1,5 +1,6 @@
 import { SITE_URL } from '@/config/site'
 import { ROUTES } from '@/config/routes'
+import { EXTERNAL_SERVICES } from '@/config/cdn'
 
 /**
  * YouTube API Service for LusoTown's Streaming Platform
@@ -79,7 +80,7 @@ export interface YouTubeAnalytics {
 class YouTubeAPIService {
   private apiKey: string;
   private channelId: string;
-  private baseUrl = 'https://www.googleapis.com/youtube/v3';
+  private baseUrl = process.env.NEXT_PUBLIC_YOUTUBE_API_URL || 'https://www.googleapis.com/youtube/v3';
 
   constructor() {
     this.apiKey = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY || '';
@@ -217,7 +218,7 @@ class YouTubeAPIService {
       ];
 
       const response = await fetch(
-        `https://youtubeanalytics.googleapis.com/v2/reports?ids=channel==${this.channelId}&startDate=${startDate}&endDate=${endDate}&metrics=${metrics.join(',')}&filters=video==${videoId}&key=${this.apiKey}`,
+        `${EXTERNAL_SERVICES.youtubeAnalytics}/reports?ids=channel==${this.channelId}&startDate=${startDate}&endDate=${endDate}&metrics=${metrics.join(',')}&filters=video==${videoId}&key=${this.apiKey}`,
         {
           headers: {
             'Authorization': `Bearer ${await this.getAccessToken()}`
@@ -467,7 +468,7 @@ class YouTubeAPIService {
   private async getGeographicAnalytics(videoId: string, startDate: string, endDate: string): Promise<Record<string, number>> {
     try {
       const response = await fetch(
-        `https://youtubeanalytics.googleapis.com/v2/reports?ids=channel==${this.channelId}&startDate=${startDate}&endDate=${endDate}&metrics=views&dimensions=country&filters=video==${videoId}&key=${this.apiKey}`,
+        `${EXTERNAL_SERVICES.youtubeAnalytics}/reports?ids=channel==${this.channelId}&startDate=${startDate}&endDate=${endDate}&metrics=views&dimensions=country&filters=video==${videoId}&key=${this.apiKey}`,
         {
           headers: {
             'Authorization': `Bearer ${await this.getAccessToken()}`

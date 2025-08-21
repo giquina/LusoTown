@@ -7,7 +7,8 @@ import {
 } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";
 import Logo from "@/components/Logo";
-import { ROUTES } from '@/config/routes'
+import { ROUTES } from '@/config/routes';
+import { socialMedia } from '@/config/contact';
 
 const getFooterLinks = (t: any) => ({
   community: [
@@ -292,7 +293,7 @@ export default function Footer() {
                 </a>
 
                 <a
-                  href="https://twitter.com/LusoTownUK"
+                  href={socialMedia.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-primary-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"

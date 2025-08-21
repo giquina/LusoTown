@@ -1,9 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
+import { SUBSCRIPTION_PLANS, getPlanPrice } from '@/config/pricing'
 
 const getStripe = () => {
-  const key = process.env.STRIPE_SECRET_KEY || 'sk_test_51Demo123456789012345678901234567890Demo'
+  const key = process.env.STRIPE_SECRET_KEY
+  if (!key) {
+    throw new Error('STRIPE_SECRET_KEY environment variable is not set')
+  }
   return new Stripe(key, {
     apiVersion: '2024-06-20',
   })
@@ -13,7 +17,10 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.text()
     const signature = request.headers.get('stripe-signature')!
-    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || 'whsec_demo123456789012345678901234567890'
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET
+    if (!webhookSecret) {
+      throw new Error('STRIPE_WEBHOOK_SECRET environment variable is not set')
+    }
 
     let event: Stripe.Event
 
@@ -87,13 +94,8 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
 
   console.log('Subscription created for user:', userId, 'tier:', tier, 'planType:', planType)
 
-  // Determine amount based on tier and plan type
-  const pricing = {
-    community: { monthly: 19.99, yearly: 199.99 },
-    ambassador: { monthly: 39.99, yearly: 399.99 }
-  }
-  
-  const amount = pricing[tier as keyof typeof pricing]?.[planType as keyof typeof pricing.community] || 19.99
+  // Use centralized pricing configuration
+  const amount = getPlanPrice(tier as keyof typeof SUBSCRIPTION_PLANS, planType as 'monthly' | 'annual')
 
   // Create subscription record
   await supabase

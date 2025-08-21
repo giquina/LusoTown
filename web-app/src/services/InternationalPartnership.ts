@@ -6,6 +6,7 @@ import {
   GlobalPortugueseEvent,
   CulturalExchangeProgram 
 } from '@/types/GlobalPortugueseExpansion'
+import { PORTUGUESE_RESOURCES } from '@/config/cdn'
 
 export interface EmbassyPartnership {
   id: string
@@ -228,7 +229,7 @@ class InternationalPartnershipService {
         address: '11 Belgrave Square, London SW1X 8PP',
         phone: '+44 20 7235 5331',
         email: 'consular@embportugal-uk.org',
-        website: 'https://london.embaixadaportugal.mne.gov.pt',
+        website: PORTUGUESE_RESOURCES.consulado,
         services: [
           {
             id: 'passport-renewal',
@@ -339,7 +340,7 @@ class InternationalPartnershipService {
           events: ['Member-only events', 'Cultural excursions']
         },
         digitalPresence: {
-          website: 'https://instituto-camoes.pt/en/centres/london',
+          website: PORTUGUESE_RESOURCES.camoesLondon,
           socialMedia: {
             facebook: 'InstitutoCamoesLondres',
             instagram: '@institutocamoeslondon'

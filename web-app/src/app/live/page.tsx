@@ -33,6 +33,7 @@ import {
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
+import { IMAGES } from "@/config/cdn";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { communityStats } from '@/config/community';
 
@@ -44,7 +45,7 @@ const creatorTiers = [
     namePortuguese: "Iniciante de Streaming", 
     price: 19,
     originalPrice: 29,
-    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/creator-starter-setup_dlqxkx.jpg",
+    image: IMAGES.streaming.creatorStarter,
     imageAlt: "UK streaming income setup with professional streaming equipment",
     imageAltPortuguese: "Configuração de renda de streaming do Reino Unido com equipamento de streaming profissional",
     membershipDiscounts: {
@@ -84,7 +85,7 @@ const creatorTiers = [
     namePortuguese: "Streamer Profissional",
     price: 49,
     originalPrice: 69,
-    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/professional-creator-studio_hml2nr.jpg",
+    image: IMAGES.streaming.professionalStudio,
     imageAlt: "Professional UK streaming studio with advanced equipment and modern backdrop",
     imageAltPortuguese: "Estúdio de streaming profissional do Reino Unido com equipamento avançado e cenário moderno",
     membershipDiscounts: {
@@ -127,7 +128,7 @@ const creatorTiers = [
     namePortuguese: "Criador Empresarial",
     price: 199,
     originalPrice: 299,
-    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535202/enterprise-streaming-setup_abc123.jpg",
+    image: IMAGES.streaming.enterpriseSetup,
     imageAlt: "Enterprise UK streaming setup for business events and community broadcasts",
     imageAltPortuguese: "Configuração de streaming empresarial do Reino Unido para eventos de negócios e transmissões comunitárias",
     membershipDiscounts: {
@@ -310,7 +311,7 @@ export default function StreamingPage() {
     <div className="min-h-screen">
       {/* Hero Section - Similar to London Transport style */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/uk-streaming-background_dlqxkx.jpg')] bg-cover bg-center opacity-5"></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-5" style={{ backgroundImage: `url('${IMAGES.backgrounds.ukStreaming}')` }}></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/5 via-transparent to-secondary-900/5"></div>
         
         <div className="relative container-width py-16 lg:py-24">

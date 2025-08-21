@@ -4,6 +4,7 @@ import { User } from '@/lib/auth'
 import { supabase, supabaseUrl, supabaseAnonKey } from '@/lib/supabase'
 import { getImageWithFallback } from '@/lib/profileImages'
 import { businessEventsLondon } from '@/lib/business-events-london'
+import { EVENTS_PRICING } from '@/config/pricing'
 
 export interface EventAttendee {
   id: string
@@ -398,7 +399,7 @@ export class EventService {
         hostImage: getImageWithFallback('miguel-santos'),
         hostBio: 'Portuguese cultural event organizer and Fado enthusiast, organizing authentic Portuguese experiences in London for 8+ years',
         membershipRequired: 'free',
-        price: 45,
+        price: EVENTS_PRICING.cultural.fadoEvening,
         currency: 'GBP',
         maxAttendees: 35,
         minAttendees: 15,
@@ -462,7 +463,7 @@ export class EventService {
         hostImage: getImageWithFallback('ricardo-ferreira'),
         hostBio: 'Die-hard Portugal fan and football enthusiast organizing match viewing events for the Portuguese community',
         membershipRequired: 'free',
-        price: 15,
+        price: EVENTS_PRICING.sports.footballViewing,
         currency: 'GBP',
         maxAttendees: 40,
         minAttendees: 10,
@@ -522,7 +523,7 @@ export class EventService {
         hostImage: getImageWithFallback('fernanda-costa'),
         hostBio: 'Portuguese psychologist and women\'s empowerment advocate, organizing supportive events for Portuguese-speaking women in London',
         membershipRequired: 'core',
-        price: 38,
+        price: EVENTS_PRICING.professional.womenNetworking,
         currency: 'GBP',
         maxAttendees: 12,
         minAttendees: 6,
@@ -588,7 +589,7 @@ export class EventService {
         hostImage: getImageWithFallback('joana-ribeiro'),
         hostBio: 'Language teacher and cultural bridge-builder, organizing Portuguese language events across London',
         membershipRequired: 'free',
-        price: 8,
+        price: EVENTS_PRICING.community.languageCafe,
         currency: 'GBP',
         maxAttendees: 45,
         minAttendees: 15,
@@ -2029,7 +2030,7 @@ export class EventService {
         hostImage: getImageWithFallback('ricardo-sousa-dev'),
         hostBio: 'Portuguese web developer and AI coding instructor, specializing in teaching modern development techniques to Portuguese-speaking professionals',
         membershipRequired: 'free',
-        price: 85,
+        price: EVENTS_PRICING.professional.aiCodingWorkshop,
         currency: 'GBP',
         maxAttendees: 16,
         minAttendees: 8,

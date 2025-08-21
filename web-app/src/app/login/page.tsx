@@ -23,6 +23,7 @@ import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import SocialLogin from "@/components/SocialLogin";
 import { ROUTES } from "@/config/routes";
+import { TEST_DISPLAY_CONFIG } from "@/config/credentials";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -126,10 +127,10 @@ export default function Login() {
     }
   };
 
-  // Test credentials for demo (placeholders only)
+  // Test credentials for demo (placeholders only - not functional)
   const testCredentials = {
-    email: "demo@example.com",
-    password: "demo-password",
+    email: TEST_DISPLAY_CONFIG.email,
+    password: TEST_DISPLAY_CONFIG.password,
   };
 
   const fillTestCredentials = () => {
@@ -219,13 +220,13 @@ export default function Login() {
                     <div className="text-xs text-gray-600 mb-1">
                       Email:{" "}
                       <span className="font-mono text-gray-900">
-                        demo@example.com
+                        {testCredentials.email}
                       </span>
                     </div>
                     <div className="text-xs text-gray-600">
                       Password:{" "}
                       <span className="font-mono text-gray-900">
-                        demo-password
+                        {testCredentials.password}
                       </span>
                     </div>
                   </div>

@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { buildPortugueseImageUrl } from '@/config/cdn'
 
 // Mock data for user favorites
 let userFavorites: Record<string, any[]> = {
@@ -8,7 +9,7 @@ let userFavorites: Record<string, any[]> = {
       type: 'event',
       title: 'Noite de Fado & Vinho Verde',
       description: 'Experience the soul of Portugal with traditional Fado music, Vinho Verde tasting, and authentic Portuguese cuisine.',
-      imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format',
+      imageUrl: buildPortugueseImageUrl('1493225457124-a3eb161ffa5f'),
       liked: true
     },
     {
@@ -16,7 +17,7 @@ let userFavorites: Record<string, any[]> = {
       type: 'business',
       title: 'Casa do Pão',
       description: 'Authentic Portuguese bakery and café in Shoreditch with the best pastéis de nata in London.',
-      imageUrl: 'https://images.unsplash.com/photo-1574329818413-10376febd3f0?w=600&h=400&fit=crop&auto=format',
+      imageUrl: buildPortugueseImageUrl('1574329818413-10376febd3f0'),
       liked: true
     }
   ]

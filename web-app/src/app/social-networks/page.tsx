@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import { TEST_DISPLAY_CONFIG } from '@/config/credentials'
 import { useLanguage } from '@/context/LanguageContext'
 import { socialNetworksService, PortugueseSocialNetwork, SocialNetworkFilter, SocialPlatform, NetworkType } from '@/lib/socialNetworks'
 import { 
@@ -100,7 +101,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
     try {
       const result = await socialNetworksService.requestNetworkJoin(network.id, {
         name: 'Demo User',
-        email: 'demo@lusotown.com',
+        email: TEST_DISPLAY_CONFIG.email,
         reason: 'I want to connect with the Portuguese community',
         lusoTownMember: true
       })

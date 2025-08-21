@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { EVENTS_PRICING, formatPrice } from '@/config/pricing';
 import {
   HeartIcon,
   PlayIcon,
@@ -112,7 +113,7 @@ export default function EnhancedHowItWorks() {
         data: {
           title: "Noite de Fado em Stockwell",
           date: "15 Set",
-          price: "£25",
+          price: formatPrice(EVENTS_PRICING.community.languageCafe),
           spots: 8,
         },
       },
@@ -167,7 +168,7 @@ export default function EnhancedHowItWorks() {
           title: "Portuguese London Heritage",
           duration: "3h",
           rating: 4.9,
-          price: "£45",
+          price: formatPrice(EVENTS_PRICING.cultural.fadoEvening),
         },
       },
     },

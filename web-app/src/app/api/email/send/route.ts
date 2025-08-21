@@ -251,7 +251,7 @@ async function sendEmailWithSendGrid(
   }
 
   try {
-    const response = await fetch("https://api.sendgrid.com/v3/mail/send", {
+    const response = await fetch(process.env.NEXT_PUBLIC_SENDGRID_API_URL || "https://api.sendgrid.com/v3/mail/send", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${EMAIL_SERVICE_CONFIG.sendgridApiKey}`,
@@ -296,7 +296,7 @@ async function sendEmailWithResend(
   }
 
   try {
-    const response = await fetch("https://api.resend.com/emails", {
+    const response = await fetch(process.env.NEXT_PUBLIC_RESEND_API_URL || "https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${EMAIL_SERVICE_CONFIG.resendApiKey}`,

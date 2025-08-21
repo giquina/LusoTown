@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import jwt from 'jsonwebtoken'
+import { buildStreamingUrl } from '@/config/cdn'
 
 // Mock streaming authentication endpoint
 // In production, this would integrate with your actual streaming server
@@ -32,13 +33,12 @@ export async function POST(request: NextRequest) {
       JWT_SECRET
     )
 
-    // Mock streaming URLs (would be real in production)
+    // Environment-aware streaming URLs
     const streamUrls = {
-      rtmp: `rtmp://localhost:1935/live/${streamId}`,
-      // Align with SRS/dev scripts: HLS served at /live/<streamId>.m3u8
-      hls: `http://localhost:8080/live/${streamId}.m3u8`,
-      webrtc: `ws://localhost:8080/webrtc/${streamId}`,
-      chat: `ws://localhost:3001/chat/${streamId}`
+      rtmp: `${buildStreamingUrl('rtmp')}/live/${streamId}`,
+      hls: buildStreamingUrl('hls', streamId),
+      webrtc: buildStreamingUrl('webrtc', streamId),
+      chat: `${process.env.NEXT_PUBLIC_SOCKET_URL || 'ws://localhost:3001'}/chat/${streamId}`
     }
 
     return NextResponse.json({

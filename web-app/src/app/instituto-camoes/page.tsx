@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+import { buildPortugueseResourceUrl } from '@/config/cdn'
 import { 
   BuildingLibraryIcon,
   GlobeAltIcon,
@@ -189,7 +190,7 @@ const CULTURAL_EVENTS: CulturalEvent[] = [
     type: 'conference',
     price: 0,
     capacity: 120,
-    registrationLink: 'https://instituto-camoes.pt/symposium',
+    registrationLink: buildPortugueseResourceUrl('symposium'),
     culturalSignificance: 'Celebrates Portugal\'s greatest literary figure and reinforces Portuguese cultural identity in the diaspora.'
   },
   {
@@ -204,7 +205,7 @@ const CULTURAL_EVENTS: CulturalEvent[] = [
     type: 'workshop',
     price: 25,
     capacity: 40,
-    registrationLink: 'https://instituto-camoes.pt/fado-masterclass',
+    registrationLink: buildPortugueseResourceUrl('fadoMasterclass'),
     culturalSignificance: 'Preserves and transmits Portugal\'s most iconic musical tradition to new generations.'
   },
   {
@@ -219,7 +220,7 @@ const CULTURAL_EVENTS: CulturalEvent[] = [
     type: 'film',
     price: 12,
     capacity: 80,
-    registrationLink: 'https://instituto-camoes.pt/cinema-festival',
+    registrationLink: buildPortugueseResourceUrl('cinemaFestival'),
     culturalSignificance: 'Promotes Portuguese artistic expression and cultural dialogue through contemporary visual narratives.'
   },
   {
@@ -234,7 +235,7 @@ const CULTURAL_EVENTS: CulturalEvent[] = [
     type: 'workshop',
     price: 35,
     capacity: 25,
-    registrationLink: 'https://instituto-camoes.pt/heritage-workshop',
+    registrationLink: buildPortugueseResourceUrl('heritageWorkshop'),
     culturalSignificance: 'Ensures traditional Portuguese cultural practices are maintained and transmitted to future generations.'
   },
   {
@@ -249,7 +250,7 @@ const CULTURAL_EVENTS: CulturalEvent[] = [
     type: 'lecture',
     price: 15,
     capacity: 60,
-    registrationLink: 'https://instituto-camoes.pt/lusophone-literature',
+    registrationLink: buildPortugueseResourceUrl('lusophoneLiterature'),
     culturalSignificance: 'Celebrates the diversity and richness of Portuguese-language literature across the global Portuguese-speaking community.'
   }
 ]
@@ -265,7 +266,7 @@ const EDUCATIONAL_RESOURCES: EducationalResource[] = [
     category: 'literature',
     level: 'all',
     accessType: 'member',
-    externalUrl: 'https://biblioteca.instituto-camoes.pt'
+    externalUrl: buildPortugueseResourceUrl('digitalLibrary')
   },
   {
     id: 'resource-pronunciation-guide',
@@ -277,7 +278,7 @@ const EDUCATIONAL_RESOURCES: EducationalResource[] = [
     category: 'language',
     level: 'beginner',
     accessType: 'free',
-    downloadUrl: 'https://instituto-camoes.pt/pronunciation-guide'
+    downloadUrl: buildPortugueseResourceUrl('pronunciationGuide')
   },
   {
     id: 'resource-business-toolkit',
@@ -289,7 +290,7 @@ const EDUCATIONAL_RESOURCES: EducationalResource[] = [
     category: 'business',
     level: 'intermediate',
     accessType: 'premium',
-    downloadUrl: 'https://instituto-camoes.pt/business-toolkit'
+    downloadUrl: buildPortugueseResourceUrl('businessToolkit')
   },
   {
     id: 'resource-cultural-calendar',
@@ -301,7 +302,7 @@ const EDUCATIONAL_RESOURCES: EducationalResource[] = [
     category: 'culture',
     level: 'all',
     accessType: 'free',
-    externalUrl: 'https://instituto-camoes.pt/cultural-calendar'
+    externalUrl: buildPortugueseResourceUrl('culturalCalendar')
   },
   {
     id: 'resource-citizenship-guide',
@@ -313,7 +314,7 @@ const EDUCATIONAL_RESOURCES: EducationalResource[] = [
     category: 'language',
     level: 'intermediate',
     accessType: 'member',
-    downloadUrl: 'https://instituto-camoes.pt/citizenship-guide'
+    downloadUrl: buildPortugueseResourceUrl('citizenshipGuide')
   }
 ]
 

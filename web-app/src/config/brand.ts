@@ -277,3 +277,6 @@ export const COMPONENT_COLORS = {
     border: SEMANTIC_COLORS.border.primary
   }
 };
+
+// Consolidated export for backward compatibility
+export const brand = brandConfig;

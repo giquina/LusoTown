@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { ROUTES } from '@/config/routes'
 import { useLanguage } from '@/context/LanguageContext'
 import { usePlatformIntegration } from '@/context/PlatformIntegrationContext'
+import { socialMedia } from '@/config/contact'
 import { useNetworking } from '@/context/NetworkingContext'
 import { useSubscription } from '@/context/SubscriptionContext'
 import Footer from '@/components/Footer'
@@ -504,7 +505,7 @@ export default function Dashboard() {
                       {t('dashboard.social.follow_desc')}
                     </p>
                     <a
-                      href="https://twitter.com/lusotown"
+                      href={socialMedia.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full px-4 py-2 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] text-white rounded-lg hover:shadow-lg transition-all flex items-center justify-center space-x-2"

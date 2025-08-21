@@ -89,7 +89,7 @@ const DUMMY_USERS: UserData[] = [
   {
     id: '1',
     name: 'Sarah Johnson',
-    email: 'user@lusotown.com',
+    email: 'user@example.com',
     role: 'user',
     membershipTier: 'core',
     joinedDate: '2024-01-15',
@@ -100,7 +100,7 @@ const DUMMY_USERS: UserData[] = [
   {
     id: '2',
     name: 'Emma Williams',
-    email: 'admin@lusotown.com',
+    email: 'admin@example.com',
     role: 'admin',
     membershipTier: 'premium',
     joinedDate: '2023-06-01',
@@ -111,7 +111,7 @@ const DUMMY_USERS: UserData[] = [
   {
     id: '3',
     name: 'Jessica Brown',
-    email: 'free@lusotown.com',
+    email: 'free@example.com',
     role: 'user',
     membershipTier: 'free',
     joinedDate: '2024-03-01',

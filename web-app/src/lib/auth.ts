@@ -9,6 +9,7 @@ import {
   LusoTownError,
   ErrorType,
 } from "@/lib/errorHandling";
+import { DEMO_CONFIG, ADMIN_CONFIG, validateDemoCredentials, isAdminEmail } from "@/config/credentials";
 
 // User interface for the application
 export interface User {
@@ -34,7 +35,7 @@ function mapProfileToUser(profile: Profile, supabaseUser: SupabaseUser): User {
     email: profile.email,
     name:
       profile.first_name + (profile.last_name ? ` ${profile.last_name}` : ""),
-    role: profile.email.includes("admin@lusotown.com") ? "admin" : "user", // Simple admin check
+    role: isAdminEmail(profile.email) ? "admin" : "user", // Admin check via secure config
     membershipTier: profile.membership_tier,
     profileImage:
       profile.profile_picture_url || getImageWithFallback("default-user"),
@@ -94,16 +95,13 @@ export class AuthService {
 
   // Demo authentication methods
   private isDemoLogin(email: string, password: string): boolean {
-    return (
-      email.trim().toLowerCase() === "demo@lusotown.com" &&
-      password === "LusoTown2025!"
-    );
+    return validateDemoCredentials(email, password);
   }
 
   private createDemoUser(): User {
     return {
-      id: "demo-user-id",
-      email: "demo@lusotown.com",
+      id: DEMO_CONFIG.userId,
+      email: DEMO_CONFIG.email,
       name: "Maria Silva",
       role: "user",
       membershipTier: "premium",
@@ -303,7 +301,7 @@ export class AuthService {
   async logout(): Promise<void> {
     try {
       // Handle demo session logout
-      if (this.currentUser?.id === "demo-user-id") {
+      if (this.currentUser?.id === DEMO_CONFIG.userId) {
         this.clearDemoSession();
         this.currentUser = null;
         this.notifyAuthStateChange(null);
@@ -331,7 +329,7 @@ export class AuthService {
   }
 
   isDemoUser(): boolean {
-    return this.currentUser?.id === "demo-user-id";
+    return this.currentUser?.id === DEMO_CONFIG.userId;
   }
 
   isAdmin(): boolean {

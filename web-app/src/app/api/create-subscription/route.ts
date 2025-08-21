@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
+import { SUBSCRIPTION_PLANS, getPriceForStripe } from '@/config/pricing'
 
 const getStripe = () => {
   const key = process.env.STRIPE_SECRET_KEY as string
@@ -60,21 +61,21 @@ export async function POST(request: NextRequest) {
         .eq('id', userId)
     }
 
-    // Determine pricing based on tier
+    // Get tier configuration from centralized pricing
     const tierConfig = {
       community: {
         name: 'LusoTown Community Member',
         namePortuguese: 'Membro da Comunidade LusoTown',
         description: 'Full access to Portuguese community network in London',
         descriptionPortuguese: 'Acesso completo à rede da comunidade portuguesa em Londres',
-        price: 1999, // £19.99 in pence
+        price: getPriceForStripe('community', planType as 'monthly' | 'annual'),
       },
       ambassador: {
         name: 'LusoTown Cultural Ambassador',
         namePortuguese: 'Embaixador Cultural LusoTown',
         description: 'Lead the Portuguese community with priority features',
         descriptionPortuguese: 'Lidere a comunidade portuguesa com funcionalidades prioritárias',
-        price: 3999, // £39.99 in pence
+        price: getPriceForStripe('ambassador', planType as 'monthly' | 'annual'),
       },
     }
 
@@ -92,7 +93,7 @@ export async function POST(request: NextRequest) {
             product_data: {
               name: selectedTier.name,
               description: selectedTier.description,
-              images: [require('@/config/site').absoluteUrl('/lusotown-membership.jpg')],
+              images: ['https://lusotown.com/lusotown-membership.jpg'],
             },
             unit_amount: selectedTier.price,
             recurring: {

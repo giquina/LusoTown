@@ -39,7 +39,14 @@ import {
 } from '@heroicons/react/24/solid'
 import { Crown } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
-import { formatPrice } from '@/config/pricing'
+import { 
+  formatPrice, 
+  SUBSCRIPTION_PLANS, 
+  getPlanPrice, 
+  getFormattedPlanPrice,
+  getFormattedSavings,
+  getSavingsPercentage 
+} from '@/config/pricing'
 import Footer from '@/components/Footer'
 import { ROUTES } from '@/config/routes'
 
@@ -102,7 +109,7 @@ const membershipPlans = [
     id: 'community',
     name: 'Membro da Comunidade',
     nameEn: 'Community Member',
-    price: 19.99,
+    price: getPlanPrice('community', 'monthly'),
     description: 'Acesso completo à comunidade portuguesa',
     descriptionEn: 'Full access to Portuguese community',
     culturalContext: 'Investimento na preservação da nossa cultura e língua em Londres',
@@ -136,7 +143,7 @@ const membershipPlans = [
     id: 'ambassador',
     name: 'Embaixador Cultural',
     nameEn: 'Cultural Ambassador',
-    price: 39.99,
+    price: getPlanPrice('ambassador', 'monthly'),
     description: 'Lidere a comunidade portuguesa em Londres',
     descriptionEn: 'Lead the Portuguese community in London',
     culturalContext: 'Torne-se um líder da comunidade portuguesa',
@@ -619,7 +626,7 @@ export default function Pricing() {
                     </p>
                   </div>
                   <div className="p-6 border-2 border-primary-200 rounded-lg bg-primary-50">
-                    <div className="text-4xl font-bold text-primary-600 mb-2">£19.99</div>
+                    <div className="text-4xl font-bold text-primary-600 mb-2">{getFormattedPlanPrice('community', 'monthly', 'en').replace('/month', '')}</div>
                     <div className="text-sm text-gray-600 mb-4">
                       {isPortuguese ? 'Por mês' : 'Per month'}
                     </div>
@@ -628,7 +635,7 @@ export default function Pricing() {
                     </p>
                   </div>
                   <div className="p-6">
-                    <div className="text-4xl font-bold text-premium-600 mb-2">£39.99</div>
+                    <div className="text-4xl font-bold text-premium-600 mb-2">{getFormattedPlanPrice('ambassador', 'monthly', 'en').replace('/month', '')}</div>
                     <div className="text-sm text-gray-600 mb-4">
                       {isPortuguese ? 'Por mês' : 'Per month'}
                     </div>
@@ -871,11 +878,11 @@ export default function Pricing() {
                       </div>
                       <div className="text-center bg-white/20 rounded-lg px-4 py-2">
                         <div className="text-yellow-200 text-sm">POPULAR</div>
-                        <div>£19.99/mês</div>
+                        <div>{getFormattedPlanPrice('community', 'monthly', 'pt')}</div>
                       </div>
                       <div className="text-center">
                         <div className="text-white/80 text-sm">VIP</div>
-                        <div>£39.99/mês</div>
+                        <div>{getFormattedPlanPrice('ambassador', 'monthly', 'pt')}</div>
                       </div>
                     </div>
                     <p className="text-lg opacity-90 mt-2">
@@ -1003,8 +1010,8 @@ export default function Pricing() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ?
-                  'Por apenas £19.99/mês, obtenha acesso a uma comunidade que vale centenas de libras em experiências e ligações' :
-                  'For just £19.99/month, get access to a community worth hundreds of pounds in experiences and connections'
+                  `Por apenas ${getFormattedPlanPrice('community', 'monthly', 'pt')}, obtenha acesso a uma comunidade que vale centenas de libras em experiências e ligações` :
+                  `For just ${getFormattedPlanPrice('community', 'monthly', 'en')}, get access to a community worth hundreds of pounds in experiences and connections`
                 }
               </p>
             </div>
