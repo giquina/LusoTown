@@ -53,8 +53,8 @@ export const SUBSCRIPTION_PLANS = {
     id: 'community',
     monthly: getEnvPrice('COMMUNITY_PRICE_MONTHLY', 19.99),
     annual: getEnvPrice('COMMUNITY_PRICE_ANNUAL', 199.99), // ~17% discount
-    monthlyStripe: 1999, // in pence for Stripe
-    annualStripe: 19999, // in pence for Stripe
+    get monthlyStripe() { return Math.round(this.monthly * 100) }, // in pence for Stripe
+    get annualStripe() { return Math.round(this.annual * 100) }, // in pence for Stripe
     labelEn: "Community Member",
     labelPt: "Membro da Comunidade",
     features: {
@@ -69,8 +69,8 @@ export const SUBSCRIPTION_PLANS = {
     id: 'ambassador',
     monthly: getEnvPrice('AMBASSADOR_PRICE_MONTHLY', 39.99),
     annual: getEnvPrice('AMBASSADOR_PRICE_ANNUAL', 399.99), // ~17% discount
-    monthlyStripe: 3999, // in pence for Stripe
-    annualStripe: 39999, // in pence for Stripe
+    get monthlyStripe() { return Math.round(this.monthly * 100) }, // in pence for Stripe
+    get annualStripe() { return Math.round(this.annual * 100) }, // in pence for Stripe
     labelEn: "Cultural Ambassador",
     labelPt: "Embaixador Cultural",
     features: {
@@ -92,6 +92,12 @@ export const plans = {
   ambassador: SUBSCRIPTION_PLANS.ambassador,
 } as const;
 
+// Legacy pricing (deprecated - use LEGACY_TRANSPORT_PRICING instead)
+export const membership = {
+  annual: LEGACY_TRANSPORT_PRICING.annual,
+  studentAnnual: LEGACY_TRANSPORT_PRICING.studentAnnual,
+  groupAnnual: LEGACY_TRANSPORT_PRICING.groupAnnual,
+} as const;
 
 // Creator/Events pricing
 export const creator = {
@@ -219,19 +225,22 @@ export const DISCOUNTS = {
 } as const;
 
 // Student Pricing (calculated with discount)
-// Student Pricing (calculated with discount - simplified for build stability)
 export const STUDENT_PRICING = {
   community: {
-    monthly: 9.99,
-    annual: 99.99,
-    monthlyStripe: 999,
-    annualStripe: 9999
+    monthly: SUBSCRIPTION_PLANS.community.monthly * (1 - DISCOUNTS.student),
+    annual: SUBSCRIPTION_PLANS.community.annual * (1 - DISCOUNTS.student),
+    get monthlyFormatted() { return formatPrice(this.monthly) },
+    get annualFormatted() { return formatPrice(this.annual) },
+    get monthlyStripe() { return Math.round(this.monthly * 100) },
+    get annualStripe() { return Math.round(this.annual * 100) }
   },
   ambassador: {
-    monthly: 19.99,
-    annual: 199.99,
-    monthlyStripe: 1999,
-    annualStripe: 19999
+    monthly: SUBSCRIPTION_PLANS.ambassador.monthly * (1 - DISCOUNTS.student),
+    annual: SUBSCRIPTION_PLANS.ambassador.annual * (1 - DISCOUNTS.student),
+    get monthlyFormatted() { return formatPrice(this.monthly) },
+    get annualFormatted() { return formatPrice(this.annual) },
+    get monthlyStripe() { return Math.round(this.monthly * 100) },
+    get annualStripe() { return Math.round(this.annual * 100) }
   }
 } as const;
 
@@ -239,17 +248,8 @@ export const STUDENT_PRICING = {
 export const LEGACY_TRANSPORT_PRICING = {
   annual: getEnvPrice('TRANSPORT_ANNUAL_PRICE', 25), // £25/year
   studentAnnual: getEnvPrice('TRANSPORT_STUDENT_ANNUAL_PRICE', 12.5), // £12.50/year student rate
-  groupAnnual: 20 // Legacy group pricing
-
+  groupAnnual: 20, // Legacy group pricing
 } as const;
-
-// Legacy pricing (deprecated - use LEGACY_TRANSPORT_PRICING)
-export const membership = {
-  annual: LEGACY_TRANSPORT_PRICING.annual,
-  studentAnnual: LEGACY_TRANSPORT_PRICING.studentAnnual,
-  groupAnnual: LEGACY_TRANSPORT_PRICING.groupAnnual,
-} as const;
-
 
 // Price Display Constants
 export const PRICE_DISPLAY = {

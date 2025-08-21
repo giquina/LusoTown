@@ -176,8 +176,6 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
 async function handlePaymentSucceeded(invoice: Stripe.Invoice) {
   if (!(invoice as any).subscription) return
 
-  // Initialize Stripe instance in the function scope
-  const stripe = getStripe()
   const subscription = await stripe.subscriptions.retrieve((invoice as any).subscription as string)
   const userId = subscription.metadata?.lusotown_user_id
   if (!userId) return
@@ -215,8 +213,6 @@ async function handlePaymentSucceeded(invoice: Stripe.Invoice) {
 async function handlePaymentFailed(invoice: Stripe.Invoice) {
   if (!(invoice as any).subscription) return
 
-  // Initialize Stripe instance in the function scope
-  const stripe = getStripe()
   const subscription = await stripe.subscriptions.retrieve((invoice as any).subscription as string)
   const userId = subscription.metadata?.lusotown_user_id
   if (!userId) return
