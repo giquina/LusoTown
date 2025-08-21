@@ -4,6 +4,75 @@ export type Language = 'en' | 'pt'
 // Translation cache to avoid repeated JSON parsing
 let translationCache: Record<Language, Record<string, string>> = {} as Record<Language, Record<string, string>>
 
+// Static translations loaded synchronously
+let staticTranslations: Record<Language, Record<string, string>> | null = null
+
+/**
+ * Initialize static translations for synchronous usage
+ * This loads translations synchronously to enable the simple t() function
+ */
+function initializeStaticTranslations() {
+  if (staticTranslations) return staticTranslations
+  
+  try {
+    // Load translations synchronously using require (Node.js) or static imports
+    const enTranslations = require('./en.json')
+    const ptTranslations = require('./pt.json')
+    
+    staticTranslations = {
+      en: enTranslations,
+      pt: ptTranslations
+    }
+    
+    // Also populate cache
+    translationCache = staticTranslations
+    
+    return staticTranslations
+  } catch (error) {
+    console.error('Failed to load static translations:', error)
+    // Return empty fallback
+    staticTranslations = { en: {}, pt: {} }
+    return staticTranslations
+  }
+}
+
+/**
+ * Simple synchronous translation function
+ * @param key - Translation key (e.g., 'safety.title')
+ * @param language - Target language (defaults to 'en')
+ * @returns Translated string or key as fallback
+ */
+export function t(key: string, language: Language = 'en'): string {
+  const translations = initializeStaticTranslations()
+  
+  const translation = translations[language]?.[key]
+  if (translation) {
+    return translation
+  }
+  
+  // Fallback to English if Portuguese translation is missing
+  if (language === 'pt') {
+    const englishFallback = translations.en?.[key]
+    if (englishFallback) {
+      return englishFallback
+    }
+  }
+  
+  // Return key as final fallback
+  console.warn(`Missing translation for key: ${key} (language: ${language})`)
+  return key
+}
+
+/**
+ * Translation function with language parameter
+ * @param key - Translation key
+ * @param language - Target language  
+ * @returns Translated string or key as fallback
+ */
+export function translate(key: string, language: Language): string {
+  return t(key, language)
+}
+
 /**
  * Dynamically loads translation files only when needed
  * This reduces initial bundle size by lazy-loading translations

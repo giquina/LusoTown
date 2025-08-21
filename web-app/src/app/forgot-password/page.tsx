@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Footer from '@/components/Footer'
 import { ROUTES } from '@/config/routes'
 import { authService } from '@/lib/auth'
+import { t } from '@/i18n'
+import { useLanguage } from '@/context/LanguageContext'
 import { 
   LockClosedIcon, 
   EnvelopeIcon, 
@@ -13,6 +15,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 export default function ForgotPassword() {
+  const { language } = useLanguage()
   const [email, setEmail] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -26,7 +29,7 @@ export default function ForgotPassword() {
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
-      setError('Please enter a valid email address')
+      setError(t('forgot.error.invalidEmail', language))
       setIsLoading(false)
       return
     }
@@ -37,11 +40,11 @@ export default function ForgotPassword() {
       if (result.success) {
         setIsSubmitted(true)
       } else {
-        setError(result.error || 'Something went wrong. Please try again.')
+        setError(result.error || t('forgot.error.generic', language))
       }
     } catch (err) {
       console.error('Password reset error:', err)
-      setError('Something went wrong. Please try again.')
+      setError(t('forgot.error.generic', language))
     } finally {
       setIsLoading(false)
     }
@@ -60,21 +63,17 @@ export default function ForgotPassword() {
                   </div>
                   
                   <h1 className="text-2xl font-bold text-gray-900 mb-4">
-                    Check Your Email
+                    {t('forgot.success.title', language)}
                   </h1>
                   
                   <p className="text-gray-600 mb-6">
-                    We've sent password reset instructions to <strong>{email}</strong>
+                    {t('forgot.success.message', language)}
                   </p>
                   
                   <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 text-left">
-                    <h3 className="font-semibold text-green-800 mb-2">What's Next?</h3>
-                    <ul className="text-green-700 space-y-1 text-sm">
-                      <li>1. Check your email inbox (and spam folder)</li>
-                      <li>2. Click the reset link in the email</li>
-                      <li>3. Create a new secure password</li>
-                      <li>4. Log in with your new password</li>
-                    </ul>
+                    <p className="text-green-700 text-sm">
+                      {t('forgot.success.note', language)}
+                    </p>
                   </div>
                   
                   <div className="space-y-3">
@@ -85,7 +84,7 @@ export default function ForgotPassword() {
                       }}
                       className="text-primary-600 hover:underline font-medium text-sm"
                     >
-                      Try a different email address
+                      {t('forgot.success.button', language)}
                     </button>
                     
                     <div className="text-xs text-gray-500 pt-2">
@@ -117,11 +116,11 @@ export default function ForgotPassword() {
                   </div>
                   
                   <h1 className="text-2xl font-bold text-gray-900 mb-2">
-                    Reset Your Password
+                    {t('forgot.title', language)}
                   </h1>
                   
                   <p className="text-gray-600">
-                    Enter your email address and we'll send you a link to reset your password.
+                    {t('forgot.subtitle', language)}
                   </p>
                 </div>
 
@@ -136,7 +135,7 @@ export default function ForgotPassword() {
                   
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address
+                      {t('forgot.emailLabel', language)}
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -147,7 +146,7 @@ export default function ForgotPassword() {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter your email address"
+                        placeholder={t('forgot.emailPlaceholder', language)}
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                         required
                       />
@@ -165,10 +164,10 @@ export default function ForgotPassword() {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
-                        Sending Reset Link...
+                        {t('forgot.submitting', language)}
                       </>
                     ) : (
-                      'Send Reset Link'
+                      t('forgot.submitButton', language)
                     )}
                   </button>
                 </form>
@@ -181,7 +180,7 @@ export default function ForgotPassword() {
                       className="text-center text-primary-600 hover:underline font-medium flex items-center justify-center"
                     >
                       <ArrowLeftIcon className="w-4 h-4 mr-2" />
-                      Back to Login
+                      {t('forgot.backToLogin', language)}
                     </a>
                     
                     <div className="text-center text-sm text-gray-500">

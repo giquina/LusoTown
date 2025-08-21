@@ -1,8 +1,21 @@
 import { createClient } from '@/lib/supabase'
 import { sign, verify } from 'jsonwebtoken'
+import { requireEnv, getEnv } from '@/config/env'
 
-const JWT_SECRET = process.env.STREAMING_JWT_SECRET || 'your-streaming-jwt-secret-key'
-const STREAM_SERVER_URL = process.env.STREAM_SERVER_URL || 'stream.lusotown.com'
+/**
+ * Get JWT secret for streaming authentication
+ * Throws error if not configured to prevent silent failures
+ */
+function getStreamingJwtSecret(): string {
+  return requireEnv('STREAMING_JWT_SECRET', 'JWT secret for streaming authentication')
+}
+
+/**
+ * Get streaming server URL with fallback
+ */
+function getStreamServerUrl(): string {
+  return getEnv('STREAM_SERVER_URL', 'localhost:8080')
+}
 
 export interface StreamAuthToken {
   token: string
@@ -83,7 +96,7 @@ export function generateStreamAuthToken(
     })
   }
 
-  return sign(payload, JWT_SECRET)
+  return sign(payload, getStreamingJwtSecret())
 }
 
 /**
@@ -91,7 +104,7 @@ export function generateStreamAuthToken(
  */
 export function verifyStreamAuthToken(token: string): any {
   try {
-    const decoded = verify(token, JWT_SECRET)
+    const decoded = verify(token, getStreamingJwtSecret())
     return decoded
   } catch (error) {
     throw new Error('Invalid token')
@@ -106,9 +119,10 @@ export function generateRTMPUrls(streamKey: string): {
   rtmpEndpoint: string
   rtmpKey: string
 } {
+  const streamServerUrl = getStreamServerUrl()
   return {
-    rtmpUrl: `rtmp://${STREAM_SERVER_URL}/live/${streamKey}`,
-    rtmpEndpoint: `rtmp://${STREAM_SERVER_URL}/live`,
+    rtmpUrl: `rtmp://${streamServerUrl}/live/${streamKey}`,
+    rtmpEndpoint: `rtmp://${streamServerUrl}/live`,
     rtmpKey: streamKey
   }
 }
@@ -122,11 +136,12 @@ export function generatePlaybackUrls(streamKey: string): {
   rtmpUrl: string
   embedUrl: string
 } {
+  const streamServerUrl = getStreamServerUrl()
   return {
-    hlsUrl: `https://${STREAM_SERVER_URL}/live/${streamKey}.m3u8`,
-    dashUrl: `https://${STREAM_SERVER_URL}/live/${streamKey}.mpd`,
-    rtmpUrl: `rtmp://${STREAM_SERVER_URL}/play/${streamKey}`,
-    embedUrl: `https://${STREAM_SERVER_URL}/embed/${streamKey}`
+    hlsUrl: `https://${streamServerUrl}/live/${streamKey}.m3u8`,
+    dashUrl: `https://${streamServerUrl}/live/${streamKey}.mpd`,
+    rtmpUrl: `rtmp://${streamServerUrl}/play/${streamKey}`,
+    embedUrl: `https://${streamServerUrl}/embed/${streamKey}`
   }
 }
 
@@ -144,7 +159,7 @@ export function generateOBSConfiguration(
   const maxBitrate = userSettings?.maxBitrate || 3000
   
   return {
-    server: `rtmp://${STREAM_SERVER_URL}/live`,
+    server: `rtmp://${getStreamServerUrl()}/live`,
     streamKey: streamKey,
     maxBitrate: maxBitrate,
     keyframeInterval: 2,
