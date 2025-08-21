@@ -15,7 +15,6 @@ const getFooterLinks = (t: any) => ({
     { name: "Community", href: "/community" },
     { name: "Become a Host", href: "/host" },
     { name: "Business Directory", href: "/directory" },
-    { name: t("footer.housing-assistance"), href: "/housing-assistance" },
     { name: t("footer.neighborhood-groups"), href: "/neighborhood-groups" },
     { name: "Mentorship Programs", href: "/mentorship" },
     { name: "Community Guidelines", href: "/community-guidelines" },
@@ -23,7 +22,7 @@ const getFooterLinks = (t: any) => ({
   services: [
     { name: "Premium Services", href: "/services" },
     { name: "Executive Transport", href: "/services#executive-transport" },
-    { name: "Close Protection", href: "/services#close-protection" },
+    { name: "Security Services", href: "/services/close-protection" },
     { name: "Transport & SIA", href: "/transport" },
     { name: "Business Networking", href: "/business-networking" },
   ],
@@ -40,7 +39,7 @@ const getFooterLinks = (t: any) => ({
     { name: "Community Chat", href: "/forums" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "Careers", href: "/careers" },
-    { name: "Streams", href: "/live" },
+    { name: "Streaming Income", href: "/live" },
     { name: "Partnerships", href: "/partnerships" },
     { name: "Corporate Partnerships", href: "/corporate-partnerships" },
     {

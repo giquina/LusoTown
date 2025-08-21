@@ -44,7 +44,7 @@ export default function LiveStreamingModule() {
     id: 'live-streaming',
     title: 'Live Streaming',
     titlePortuguese: 'Transmissão Ao Vivo',
-    description: 'Master Portuguese streaming platform, build your audience, and monetize your cultural content',
+    description: 'Master Portuguese streaming platform, build your audience, and turn your passion into profit',
     descriptionPortuguese: 'Domine a plataforma de streaming portuguesa, construa a sua audiência e monetize o seu conteúdo cultural',
     difficulty: 'Intermediate',
     estimatedTime: 35,
@@ -77,7 +77,7 @@ export default function LiveStreamingModule() {
         type: 'introduction',
         estimatedTime: 5,
         content: `
-          <p>Welcome to LusoTown TV - the premier Portuguese streaming platform in London! Our platform is specifically designed for Portuguese content creators to connect with the diaspora community.</p>
+          <p>Welcome to LusoTown TV - the premier Portuguese streaming platform in London! Our platform is specifically designed for Portuguese streamers to connect with the diaspora community and earn immediate income.</p>
           
           <h3>What Makes LusoTown Streaming Special:</h3>
           <ul>
@@ -932,7 +932,7 @@ export default function LiveStreamingModule() {
         type: 'tutorial',
         estimatedTime: 5,
         content: `
-          <p>LusoTown offers multiple revenue streams for Portuguese content creators, with industry-leading revenue sharing rates.</p>
+          <p>LusoTown offers multiple revenue streams for Portuguese streamers, with industry-leading 85/15 revenue sharing that lets you keep most of what you earn.</p>
           
           <h3>LusoTown Revenue Sharing Program (85/15 Split):</h3>
           

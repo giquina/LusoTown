@@ -5,6 +5,9 @@
 /* PWA and Mobile Optimization Styles */
 @import '../styles/pwa.css';
 
+/* Heritage-Configurable Color System */
+@import '../styles/heritage-colors.css';
+
 /* Ensure proper emoji and flag rendering across all platforms */
 .flag-emoji {
   font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Twemoji Mozilla', 'EmojiOne Color', 'Android Emoji', sans-serif;

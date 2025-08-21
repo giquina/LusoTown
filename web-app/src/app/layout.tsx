@@ -14,6 +14,8 @@ import { SubscriptionProvider } from "@/context/SubscriptionContext";
 import { NotificationProvider } from "@/context/NotificationContext";
 import { PlatformIntegrationProvider } from "@/context/PlatformIntegrationContext";
 import { WaitingListProvider } from "@/context/WaitingListContext";
+import { HeritageProvider } from "@/context/HeritageContext";
+import HeritageStyleProvider from "@/components/HeritageStyleProvider";
 import { AuthPopupProvider } from "@/components/AuthPopupProvider";
 import AuthPopup from "@/components/AuthPopup";
 import AuthIntentHandler from "@/components/AuthIntentHandler";
@@ -171,20 +173,22 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="theme-color" content="#1E40AF" />
+        <meta name="theme-color" content="#1E40AF" id="theme-color" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <ErrorBoundary>
-          <LanguageProvider>
-            <FavoritesProvider>
-              <FollowingProvider>
-                <CartProvider>
-                  <NetworkingProvider>
-                    <SubscriptionProvider>
-                      <NotificationProvider>
-                        <AuthPopupProvider>
-                          <PlatformIntegrationProvider>
-                            <WaitingListProvider>
+          <HeritageProvider>
+            <HeritageStyleProvider>
+              <LanguageProvider>
+                <FavoritesProvider>
+                  <FollowingProvider>
+                    <CartProvider>
+                      <NetworkingProvider>
+                        <SubscriptionProvider>
+                          <NotificationProvider>
+                            <AuthPopupProvider>
+                              <PlatformIntegrationProvider>
+                                <WaitingListProvider>
                               <ComponentErrorBoundary componentName="User Type Selection">
                                 <UserTypeSelection />
                               </ComponentErrorBoundary>
@@ -219,16 +223,18 @@ export default function RootLayout({
                               <ComponentErrorBoundary componentName="Auth Intent Handler">
                                 <AuthIntentHandler />
                               </ComponentErrorBoundary>
-                            </WaitingListProvider>
-                          </PlatformIntegrationProvider>
-                        </AuthPopupProvider>
-                      </NotificationProvider>
-                    </SubscriptionProvider>
-                  </NetworkingProvider>
-                </CartProvider>
-              </FollowingProvider>
-            </FavoritesProvider>
-          </LanguageProvider>
+                                </WaitingListProvider>
+                              </PlatformIntegrationProvider>
+                            </AuthPopupProvider>
+                          </NotificationProvider>
+                        </SubscriptionProvider>
+                      </NetworkingProvider>
+                    </CartProvider>
+                  </FollowingProvider>
+                </FavoritesProvider>
+              </LanguageProvider>
+            </HeritageStyleProvider>
+          </HeritageProvider>
         </ErrorBoundary>
         <Toaster
           position="top-right"
@@ -244,13 +250,13 @@ export default function RootLayout({
             },
             success: {
               iconTheme: {
-                primary: "#10b981",
+                primary: "var(--heritage-secondary, #10b981)",
                 secondary: "#fff",
               },
             },
             error: {
               iconTheme: {
-                primary: "#ef4444",
+                primary: "var(--heritage-action, #ef4444)",
                 secondary: "#fff",
               },
             },

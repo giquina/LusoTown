@@ -1,0 +1,397 @@
+/**
+ * Heritage-Aware Color Utilities
+ * Global CSS utilities that adapt to heritage configuration
+ * These classes use CSS custom properties set by HeritageStyleProvider
+ */
+
+/* Heritage Color Utilities */
+.heritage-text-primary { color: var(--heritage-primary, #1e40af); }
+.heritage-text-secondary { color: var(--heritage-secondary, #059669); }
+.heritage-text-accent { color: var(--heritage-accent, #f59e0b); }
+.heritage-text-action { color: var(--heritage-action, #dc2626); }
+.heritage-text-premium { color: var(--heritage-premium, #7c3aed); }
+.heritage-text-coral { color: var(--heritage-coral, #f97316); }
+
+/* Heritage Background Colors */
+.heritage-bg-primary { background-color: var(--heritage-primary, #1e40af); }
+.heritage-bg-secondary { background-color: var(--heritage-secondary, #059669); }
+.heritage-bg-accent { background-color: var(--heritage-accent, #f59e0b); }
+.heritage-bg-action { background-color: var(--heritage-action, #dc2626); }
+.heritage-bg-premium { background-color: var(--heritage-premium, #7c3aed); }
+.heritage-bg-coral { background-color: var(--heritage-coral, #f97316); }
+
+/* Heritage Background Colors - Light Variations */
+.heritage-bg-primary-light { background-color: var(--heritage-primary-50, #eff6ff); }
+.heritage-bg-secondary-light { background-color: var(--heritage-secondary-50, #ecfdf5); }
+.heritage-bg-accent-light { background-color: var(--heritage-accent-50, #fffbeb); }
+.heritage-bg-action-light { background-color: var(--heritage-action-50, #fef2f2); }
+.heritage-bg-premium-light { background-color: var(--heritage-premium-50, #faf5ff); }
+.heritage-bg-coral-light { background-color: var(--heritage-coral-50, #fff7ed); }
+
+/* Heritage Border Colors */
+.heritage-border-primary { border-color: var(--heritage-primary, #1e40af); }
+.heritage-border-secondary { border-color: var(--heritage-secondary, #059669); }
+.heritage-border-accent { border-color: var(--heritage-accent, #f59e0b); }
+.heritage-border-action { border-color: var(--heritage-action, #dc2626); }
+.heritage-border-premium { border-color: var(--heritage-premium, #7c3aed); }
+.heritage-border-coral { border-color: var(--heritage-coral, #f97316); }
+
+/* Heritage Gradients */
+.heritage-gradient-primary {
+  background: linear-gradient(135deg, 
+    var(--heritage-primary, #1e40af) 0%, 
+    var(--heritage-primary-600, #1e3a8a) 100%
+  );
+}
+
+.heritage-gradient-secondary {
+  background: linear-gradient(135deg, 
+    var(--heritage-secondary, #059669) 0%, 
+    var(--heritage-secondary-600, #047857) 100%
+  );
+}
+
+.heritage-gradient-accent {
+  background: linear-gradient(135deg, 
+    var(--heritage-accent, #f59e0b) 0%, 
+    var(--heritage-accent-600, #d97706) 100%
+  );
+}
+
+.heritage-gradient-action {
+  background: linear-gradient(135deg, 
+    var(--heritage-action, #dc2626) 0%, 
+    var(--heritage-action-600, #b91c1c) 100%
+  );
+}
+
+.heritage-gradient-premium {
+  background: linear-gradient(135deg, 
+    var(--heritage-premium, #7c3aed) 0%, 
+    var(--heritage-premium-600, #5b21b6) 100%
+  );
+}
+
+.heritage-gradient-brand {
+  background: linear-gradient(135deg, 
+    var(--heritage-primary, #1e40af) 0%, 
+    var(--heritage-secondary, #059669) 50%, 
+    var(--heritage-accent, #f59e0b) 100%
+  );
+}
+
+.heritage-gradient-hero {
+  background: linear-gradient(135deg, 
+    var(--heritage-primary, #1e40af) 0%, 
+    var(--heritage-action, #dc2626) 100%
+  );
+}
+
+/* Heritage Button Styles */
+.heritage-btn {
+  @apply inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  min-height: 44px; /* Touch-friendly minimum */
+}
+
+.heritage-btn-primary {
+  @apply heritage-btn heritage-bg-primary text-white shadow-lg;
+  background: linear-gradient(135deg, 
+    var(--heritage-primary, #1e40af) 0%, 
+    var(--heritage-primary-600, #1e3a8a) 100%
+  );
+}
+
+.heritage-btn-primary:hover {
+  background: linear-gradient(135deg, 
+    var(--heritage-primary-600, #1e3a8a) 0%, 
+    var(--heritage-primary-700, #1d4ed8) 100%
+  );
+  @apply shadow-xl -translate-y-0.5;
+}
+
+.heritage-btn-secondary {
+  @apply heritage-btn bg-white heritage-text-primary heritage-border-primary border-2;
+}
+
+.heritage-btn-secondary:hover {
+  @apply heritage-bg-primary text-white;
+}
+
+.heritage-btn-outline {
+  @apply heritage-btn bg-transparent heritage-text-primary heritage-border-primary border-2;
+}
+
+.heritage-btn-outline:hover {
+  @apply heritage-bg-primary text-white;
+}
+
+.heritage-btn-ghost {
+  @apply heritage-btn bg-transparent heritage-text-primary;
+}
+
+.heritage-btn-ghost:hover {
+  @apply heritage-bg-primary-light;
+}
+
+/* Heritage Card Styles */
+.heritage-card {
+  @apply bg-white rounded-2xl shadow-lg border transition-all duration-300;
+  border-color: var(--heritage-primary-200, #bfdbfe);
+}
+
+.heritage-card:hover {
+  @apply shadow-xl -translate-y-1;
+  box-shadow: 0 20px 25px -5px var(--heritage-primary, #1e40af)1a, 
+              0 10px 10px -5px var(--heritage-primary, #1e40af)0f;
+}
+
+.heritage-card-featured {
+  @apply heritage-card;
+  background: linear-gradient(to bottom right, 
+    white 0%, 
+    var(--heritage-primary-50, #eff6ff) 100%
+  );
+  border-color: var(--heritage-primary-300, #93c5fd);
+}
+
+/* Heritage Badge Styles */
+.heritage-badge {
+  @apply inline-flex items-center font-medium rounded-full text-xs;
+}
+
+.heritage-badge-primary {
+  @apply heritage-badge heritage-bg-primary-light heritage-text-primary px-2.5 py-1;
+  background-color: var(--heritage-primary-100, #dbeafe);
+  color: var(--heritage-primary-800, #1e3a8a);
+}
+
+.heritage-badge-secondary {
+  @apply heritage-badge heritage-bg-secondary-light heritage-text-secondary px-2.5 py-1;
+  background-color: var(--heritage-secondary-100, #d1fae5);
+  color: var(--heritage-secondary-800, #064e3b);
+}
+
+.heritage-badge-accent {
+  @apply heritage-badge heritage-bg-accent-light heritage-text-accent px-2.5 py-1;
+  background-color: var(--heritage-accent-100, #fef3c7);
+  color: var(--heritage-accent-800, #92400e);
+}
+
+.heritage-badge-action {
+  @apply heritage-badge heritage-bg-action-light heritage-text-action px-2.5 py-1;
+  background-color: var(--heritage-action-100, #fee2e2);
+  color: var(--heritage-action-800, #7f1d1d);
+}
+
+.heritage-badge-premium {
+  @apply heritage-badge heritage-bg-premium-light heritage-text-premium px-2.5 py-1;
+  background-color: var(--heritage-premium-100, #ede9fe);
+  color: var(--heritage-premium-800, #3730a3);
+}
+
+/* Heritage Progress Bars */
+.heritage-progress {
+  @apply w-full bg-gray-200 rounded-full overflow-hidden;
+}
+
+.heritage-progress-bar {
+  @apply h-full transition-all duration-300 rounded-full;
+  background: linear-gradient(90deg, 
+    var(--heritage-primary, #1e40af) 0%, 
+    var(--heritage-secondary, #059669) 100%
+  );
+}
+
+.heritage-progress-sm { @apply h-1; }
+.heritage-progress-md { @apply h-2; }
+.heritage-progress-lg { @apply h-3; }
+
+/* Heritage Icon Containers */
+.heritage-icon-container {
+  @apply rounded-xl flex items-center justify-center;
+}
+
+.heritage-icon-container-sm { @apply w-8 h-8; }
+.heritage-icon-container-md { @apply w-10 h-10; }
+.heritage-icon-container-lg { @apply w-12 h-12; }
+.heritage-icon-container-xl { @apply w-16 h-16; }
+
+.heritage-icon-primary {
+  @apply heritage-icon-container heritage-gradient-primary text-white;
+}
+
+.heritage-icon-secondary {
+  @apply heritage-icon-container heritage-gradient-secondary text-white;
+}
+
+.heritage-icon-accent {
+  @apply heritage-icon-container heritage-gradient-accent text-white;
+}
+
+.heritage-icon-action {
+  @apply heritage-icon-container heritage-gradient-action text-white;
+}
+
+.heritage-icon-premium {
+  @apply heritage-icon-container heritage-gradient-premium text-white;
+}
+
+/* Heritage Link Styles */
+.heritage-link {
+  @apply heritage-text-primary font-medium underline-offset-2;
+  text-decoration-color: var(--heritage-primary-300, #93c5fd);
+}
+
+.heritage-link:hover {
+  @apply underline;
+  color: var(--heritage-primary-600, #1e3a8a);
+}
+
+/* Heritage Form Elements */
+.heritage-input {
+  @apply border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2;
+  focus-ring-color: var(--heritage-primary, #1e40af);
+  border-color: var(--heritage-primary-200, #bfdbfe);
+}
+
+.heritage-input:focus {
+  border-color: var(--heritage-primary, #1e40af);
+  box-shadow: 0 0 0 3px var(--heritage-primary, #1e40af)1a;
+}
+
+.heritage-checkbox:checked {
+  background-color: var(--heritage-primary, #1e40af);
+  border-color: var(--heritage-primary, #1e40af);
+}
+
+.heritage-radio:checked {
+  background-color: var(--heritage-primary, #1e40af);
+  border-color: var(--heritage-primary, #1e40af);
+}
+
+/* Heritage Alert Styles */
+.heritage-alert {
+  @apply p-4 rounded-lg border;
+}
+
+.heritage-alert-primary {
+  @apply heritage-alert heritage-bg-primary-light heritage-text-primary heritage-border-primary;
+  background-color: var(--heritage-primary-50, #eff6ff);
+  border-color: var(--heritage-primary-200, #bfdbfe);
+  color: var(--heritage-primary-800, #1e3a8a);
+}
+
+.heritage-alert-secondary {
+  @apply heritage-alert heritage-bg-secondary-light heritage-text-secondary heritage-border-secondary;
+  background-color: var(--heritage-secondary-50, #ecfdf5);
+  border-color: var(--heritage-secondary-200, #a7f3d0);
+  color: var(--heritage-secondary-800, #064e3b);
+}
+
+.heritage-alert-accent {
+  @apply heritage-alert heritage-bg-accent-light heritage-text-accent heritage-border-accent;
+  background-color: var(--heritage-accent-50, #fffbeb);
+  border-color: var(--heritage-accent-200, #fde68a);
+  color: var(--heritage-accent-800, #92400e);
+}
+
+.heritage-alert-action {
+  @apply heritage-alert heritage-bg-action-light heritage-text-action heritage-border-action;
+  background-color: var(--heritage-action-50, #fef2f2);
+  border-color: var(--heritage-action-200, #fecaca);
+  color: var(--heritage-action-800, #7f1d1d);
+}
+
+/* Heritage Text Gradients */
+.heritage-text-gradient-primary {
+  background: linear-gradient(135deg, 
+    var(--heritage-primary, #1e40af) 0%, 
+    var(--heritage-primary-600, #1e3a8a) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  @apply font-bold;
+}
+
+.heritage-text-gradient-brand {
+  background: linear-gradient(135deg, 
+    var(--heritage-primary, #1e40af) 0%, 
+    var(--heritage-secondary, #059669) 50%, 
+    var(--heritage-accent, #f59e0b) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  @apply font-bold;
+}
+
+/* Heritage Animations */
+.heritage-pulse {
+  animation: heritage-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes heritage-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--heritage-primary, #1e40af)40;
+  }
+  50% {
+    box-shadow: 0 0 0 10px var(--heritage-primary, #1e40af)00;
+  }
+}
+
+.heritage-glow {
+  box-shadow: 0 0 20px var(--heritage-primary, #1e40af)30;
+}
+
+.heritage-glow:hover {
+  box-shadow: 0 0 30px var(--heritage-primary, #1e40af)40;
+}
+
+/* Responsive Heritage Utilities */
+@media (max-width: 640px) {
+  .heritage-btn {
+    min-height: 48px; /* Larger touch targets on mobile */
+    @apply px-6 py-3 text-base;
+  }
+  
+  .heritage-card {
+    @apply p-4; /* Consistent padding on mobile */
+  }
+}
+
+@media (min-width: 641px) {
+  .heritage-btn {
+    @apply px-6 py-2.5 text-sm;
+  }
+  
+  .heritage-card {
+    @apply p-6; /* More padding on larger screens */
+  }
+}
+
+/* Print Styles - Use neutral colors for printing */
+@media print {
+  .heritage-bg-primary,
+  .heritage-bg-secondary,
+  .heritage-bg-accent,
+  .heritage-bg-action,
+  .heritage-bg-premium,
+  .heritage-bg-coral {
+    background-color: #f5f5f5 !important;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .heritage-text-primary,
+  .heritage-text-secondary,
+  .heritage-text-accent,
+  .heritage-text-action,
+  .heritage-text-premium,
+  .heritage-text-coral {
+    color: #000000 !important;
+  }
+}

@@ -30,7 +30,7 @@ import {
   ListBulletIcon,
   PlusIcon
 } from '@heroicons/react/24/outline'
-import { StarIcon as StarSolidIcon } from '@heroicons/react/24/solid'
+import { StarIcon as StarSolidIcon, UsersIcon } from '@heroicons/react/24/solid'
 import Footer from '@/components/Footer'
 
 interface BusinessCardProps {
@@ -494,6 +494,28 @@ export default function BusinessDirectory() {
             </div>
           </div>
 
+          {/* Cross-Directory Navigation */}
+          <div className="bg-gradient-to-r from-secondary-50 to-accent-50 rounded-xl p-4 mb-6 border border-secondary-100">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-white rounded-lg">
+                  <BuildingStorefrontIcon className="w-5 h-5 text-secondary-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900">{t('directory.community_discovery')}</h3>
+                  <p className="text-sm text-gray-600">{t('directory.find_members_businesses')}</p>
+                </div>
+              </div>
+              <a 
+                href="/directory"
+                className="flex items-center gap-2 bg-white text-secondary-600 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors border border-secondary-200"
+              >
+                <Users className="w-4 h-4" />
+                <span>{t('directory.browse_members')}</span>
+              </a>
+            </div>
+          </div>
+
           {/* Search and Filter Bar */}
           <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
             <div className="flex flex-col lg:flex-row gap-4">
@@ -812,8 +834,43 @@ export default function BusinessDirectory() {
           </div>
         </div>
 
+        {/* Community Member Networking Call-to-Action */}
+        <div className="mt-12 bg-gradient-to-r from-accent-500 to-premium-500 rounded-2xl p-8 text-center text-white relative overflow-hidden">
+          {/* Portuguese Cultural Background Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-4 left-4 text-4xl">👥</div>
+            <div className="absolute top-4 right-4 text-4xl">🤝</div>
+            <div className="absolute bottom-4 left-1/4 text-3xl">🎓</div>
+            <div className="absolute bottom-4 right-1/4 text-3xl">💼</div>
+          </div>
+          
+          <div className="relative z-10">
+            <h3 className="text-2xl font-bold mb-4">
+              {t('business_directory.connect_community_title')}
+            </h3>
+            <p className="text-lg mb-6 opacity-90">
+              {t('business_directory.connect_community_subtitle')}
+            </p>
+            <div className="mb-6 text-lg italic opacity-90">
+              "{t('business_directory.business_thrives_quote')}"
+            </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a 
+                href="/directory"
+                className="bg-white text-accent-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg flex items-center gap-2"
+              >
+                <UsersIcon className="w-5 h-5" />
+                {t('business_directory.explore_members')}
+              </a>
+              <div className="text-sm opacity-75">
+                750+ {t('business_directory.verified_members')}
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Call to Action for Business Owners */}
-        <div className="mt-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 text-center text-white relative overflow-hidden">
+        <div className="mt-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 text-center text-white relative overflow-hidden">
           {/* Portuguese Cultural Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-4 left-4 text-4xl">🇵🇹</div>

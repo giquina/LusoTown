@@ -15,6 +15,7 @@ import {
   ArrowTrendingUpIcon,
 } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";
+import { useHeritage } from "@/context/HeritageContext";
 
 interface CommunityActivity {
   id: string;
@@ -62,52 +63,55 @@ interface TrustIndicator {
   };
 }
 
-const trustIndicators: TrustIndicator[] = [
-  {
-    id: 'cultural_understanding',
-    name: { en: 'Cultural Understanding', pt: 'Compreensão Cultural' },
-    description: { en: 'Deep appreciation for Portuguese heritage', pt: 'Apreço profundo pela herança portuguesa' },
-    icon: '🇵🇹',
-    score: 98,
-    culturalContext: { 
-      en: 'Members understand saudade, convívio, and Portuguese values',
-      pt: 'Membros compreendem saudade, convívio e valores portugueses'
+// Generate dynamic trust indicators based on heritage
+function generateTrustIndicators(heritage: any): TrustIndicator[] {
+  return [
+    {
+      id: 'cultural_understanding',
+      name: { en: 'Cultural Understanding', pt: 'Compreensão Cultural' },
+      description: { en: `Deep appreciation for ${heritage.identity.name} heritage`, pt: `Apreço profundo pela herança ${heritage.identity.name.toLowerCase()}` },
+      icon: heritage.branding.symbols.flag,
+      score: 98,
+      culturalContext: { 
+        en: `Members understand ${heritage.culture.values.join(', ')} and ${heritage.identity.name} values`,
+        pt: `Membros compreendem ${heritage.culture.values.join(', ')} e valores ${heritage.identity.name.toLowerCase()}s`
+      }
+    },
+    {
+      id: 'community_moderation',
+      name: { en: 'Community Moderation', pt: 'Moderação Comunitária' },
+      description: { en: `${heritage.identity.name}-speaking moderators ensure cultural sensitivity`, pt: 'Moderadores nativos garantem sensibilidade cultural' },
+      icon: '🛡️',
+      score: 96,
+      culturalContext: {
+        en: `Moderation by ${heritage.identity.name} speakers who understand cultural nuances`,
+        pt: 'Moderação por falantes nativos que compreendem nuances culturais'
+      }
+    },
+    {
+      id: 'verified_heritage',
+      name: { en: 'Verified Heritage', pt: 'Herança Verificada' },
+      description: { en: `Authentic ${heritage.identity.name} connections verified`, pt: `Conexões ${heritage.identity.name.toLowerCase()} autênticas verificadas` },
+      icon: '✅',
+      score: 94,
+      culturalContext: {
+        en: `Members with genuine ${heritage.identity.name}${heritage.geography.relatedCountries ? '/' + heritage.geography.relatedCountries.map(c => c.name.split(' ')[0]).join('/') : ''} backgrounds`,
+        pt: `Membros com origens genuinamente ${heritage.identity.name.toLowerCase()}s`
+      }
+    },
+    {
+      id: 'cultural_events',
+      name: { en: 'Cultural Events', pt: 'Eventos Culturais' },
+      description: { en: `Authentic ${heritage.identity.name} cultural experiences`, pt: `Experiências culturais ${heritage.identity.name.toLowerCase()} autênticas` },
+      icon: '🎉',
+      score: 97,
+      culturalContext: {
+        en: `Real ${heritage.culture.music[0] || 'traditional music'} nights, ${heritage.culture.traditions[0] || 'cultural celebrations'}, and traditional celebrations`,
+        pt: `Verdadeiras noites de ${heritage.culture.music[0] || 'música tradicional'}, ${heritage.culture.traditions[0] || 'celebrações culturais'} e celebrações tradicionais`
+      }
     }
-  },
-  {
-    id: 'community_moderation',
-    name: { en: 'Community Moderation', pt: 'Moderação Comunitária' },
-    description: { en: 'Portuguese-speaking moderators ensure cultural sensitivity', pt: 'Moderadores lusófonos garantem sensibilidade cultural' },
-    icon: '🛡️',
-    score: 96,
-    culturalContext: {
-      en: 'Moderation by Portuguese speakers who understand cultural nuances',
-      pt: 'Moderação por lusófonos que compreendem nuances culturais'
-    }
-  },
-  {
-    id: 'verified_heritage',
-    name: { en: 'Verified Heritage', pt: 'Herança Verificada' },
-    description: { en: 'Authentic Portuguese connections verified', pt: 'Conexões portuguesas autênticas verificadas' },
-    icon: '✅',
-    score: 94,
-    culturalContext: {
-      en: 'Members with genuine Portuguese/Brazilian/Lusophone backgrounds',
-      pt: 'Membros com origens genuinamente portuguesas/brasileiras/lusófonas'
-    }
-  },
-  {
-    id: 'cultural_events',
-    name: { en: 'Cultural Events', pt: 'Eventos Culturais' },
-    description: { en: 'Authentic Portuguese cultural experiences', pt: 'Experiências culturais portuguesas autênticas' },
-    icon: '🎉',
-    score: 97,
-    culturalContext: {
-      en: 'Real fado nights, Santos Populares, and traditional celebrations',
-      pt: 'Verdadeiras noites de fado, Santos Populares e celebrações tradicionais'
-    }
-  }
-];
+  ]
+}
 
 // Mock recent activities with Portuguese cultural context
 const mockActivities: CommunityActivity[] = [
@@ -209,8 +213,11 @@ const mockActivities: CommunityActivity[] = [
 
 const PortugueseCommunityActivity: React.FC = () => {
   const { language } = useLanguage();
+  const { heritage } = useHeritage();
   const [activities, setActivities] = useState<CommunityActivity[]>([]);
   const [loading, setLoading] = useState(true);
+  
+  const trustIndicators = generateTrustIndicators(heritage);
 
   useEffect(() => {
     // Simulate loading activities

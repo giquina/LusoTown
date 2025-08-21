@@ -166,7 +166,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
     { 
       id: 'beginner', 
       name: isPt ? 'Principiante' : 'Beginner',
-      description: isPt ? 'Novo em streaming/criação de conteúdo' : 'New to streaming/content creation'
+      description: isPt ? 'Novo em streaming/ganhação de dinheiro' : 'New to streaming/earning money'
     },
     { 
       id: 'intermediate', 

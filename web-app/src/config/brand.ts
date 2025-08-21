@@ -1,11 +1,18 @@
 export const brandConfig = {
-  name: process.env.NEXT_PUBLIC_BRAND_NAME || 'LusoTown',
-  tagline: process.env.NEXT_PUBLIC_BRAND_TAGLINE || 'Unidos pela Língua',
-  taglineEn: process.env.NEXT_PUBLIC_BRAND_TAGLINE_EN || 'United by Language',
-  domain: process.env.NEXT_PUBLIC_DOMAIN || 'lusotown.com',
-  domainLondon: process.env.NEXT_PUBLIC_DOMAIN_LONDON || 'lusotown.london',
-  description: process.env.NEXT_PUBLIC_BRAND_DESCRIPTION || 'London\'s Portuguese community platform for authentic connections',
-  descriptionPt: process.env.NEXT_PUBLIC_BRAND_DESCRIPTION_PT || 'Plataforma da comunidade portuguesa de Londres para conexões autênticas'
+  name: process.env.NEXT_PUBLIC_BRAND_NAME || 'HeritageTown',
+  tagline: process.env.NEXT_PUBLIC_BRAND_TAGLINE || 'Unidos pela Herança',
+  taglineEn: process.env.NEXT_PUBLIC_BRAND_TAGLINE_EN || 'United by Heritage',
+  domain: process.env.NEXT_PUBLIC_DOMAIN || 'heritagetown.com',
+  domainLondon: process.env.NEXT_PUBLIC_DOMAIN_LONDON || 'heritagetown.london',
+  description: process.env.NEXT_PUBLIC_BRAND_DESCRIPTION || 'London\'s heritage community platform for authentic cultural connections',
+  descriptionPt: process.env.NEXT_PUBLIC_BRAND_DESCRIPTION_PT || 'Plataforma da comunidade cultural de Londres para conexões autênticas',
+  
+  // Heritage-specific configuration
+  heritage: {
+    defaultCode: process.env.NEXT_PUBLIC_HERITAGE_CODE || 'pt',
+    allowSwitching: process.env.NEXT_PUBLIC_HERITAGE_SWITCHING === 'true',
+    autoDetect: process.env.NEXT_PUBLIC_HERITAGE_AUTO_DETECT === 'true'
+  }
 };
 
 export const defaultImages = {
@@ -18,24 +25,24 @@ export const defaultImages = {
 };
 
 export const venues = {
-  defaultEventVenue: process.env.NEXT_PUBLIC_DEFAULT_VENUE || 'Portuguese Community Centre',
-  defaultEventAddress: process.env.NEXT_PUBLIC_DEFAULT_ADDRESS || 'Vauxhall, London',
+  defaultEventVenue: process.env.NEXT_PUBLIC_DEFAULT_VENUE || 'Heritage Community Centre',
+  defaultEventAddress: process.env.NEXT_PUBLIC_DEFAULT_ADDRESS || 'Central London',
   mainHubs: [
-    'Stockwell Portuguese Centre',
-    'Vauxhall Cultural Centre', 
-    'Borough Market',
-    'Camden Portuguese Community'
+    'Cultural Centre North',
+    'Cultural Centre South', 
+    'Community Hub East',
+    'Heritage Community West'
   ]
 };
 
-// Portuguese Brand Colors - Primary Palette
+// Heritage Brand Colors - Configurable Palette
 export const brandColors = {
-  primary: '#D4A574', // Portuguese gold
-  secondary: '#8B4513', // Portuguese brown  
-  accent: '#228B22', // Portuguese green
-  action: '#DC143C', // Portuguese red
-  premium: '#8B008B', // Premium purple
-  coral: '#FF7F50' // Coral accent
+  primary: process.env.NEXT_PUBLIC_PRIMARY_COLOR || '#D4A574', // Heritage primary
+  secondary: process.env.NEXT_PUBLIC_SECONDARY_COLOR || '#8B4513', // Heritage secondary
+  accent: process.env.NEXT_PUBLIC_ACCENT_COLOR || '#228B22', // Heritage accent
+  action: process.env.NEXT_PUBLIC_ACTION_COLOR || '#DC143C', // Action color
+  premium: process.env.NEXT_PUBLIC_PREMIUM_COLOR || '#8B008B', // Premium features
+  coral: process.env.NEXT_PUBLIC_CORAL_COLOR || '#FF7F50' // Warm accent
 };
 
 // Extended Portuguese Color Palette

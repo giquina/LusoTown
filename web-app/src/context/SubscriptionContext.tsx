@@ -538,8 +538,8 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
     switch (effectiveTier) {
       case 'free':
         return {
-          dailyMatches: 2, // Optimized for conversion - Portuguese community values connections
-          monthlyMessages: 3, // Further reduced to create upgrade urgency
+          dailyMatches: 2, // Aligned with promised benefits in MembershipTiers
+          monthlyMessages: 3, // Aligned with promised benefits in MembershipTiers
           premiumEvents: 0,
           livestreamHours: 0,
           hasUnlimitedAccess: false
@@ -548,17 +548,17 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
         return {
           dailyMatches: -1, // unlimited matches
           monthlyMessages: -1, // unlimited messaging
-          premiumEvents: -1, // unlimited events
-          livestreamHours: 5,
+          premiumEvents: -1, // unlimited community events (not premium events)
+          livestreamHours: 0, // no streaming access for community tier
           hasUnlimitedAccess: false
         }
       case 'ambassador':
         return {
           dailyMatches: -1, // unlimited
           monthlyMessages: -1, // unlimited
-          premiumEvents: -1, // unlimited
-          livestreamHours: -1, // unlimited
-          hasUnlimitedAccess: true
+          premiumEvents: -1, // unlimited including premium events
+          livestreamHours: 5, // 5 hours per month as stated in benefits
+          hasUnlimitedAccess: false // Limited streaming hours, not unlimited
         }
       default:
         return {

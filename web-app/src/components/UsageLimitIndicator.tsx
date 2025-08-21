@@ -321,11 +321,11 @@ export default function UsageLimitIndicator({
                       },
                       {
                         icon: FireIcon,
-                        text: isPortuguese ? 'Prioridade nos matches' : 'Priority in matching'
+                        text: isPortuguese ? 'Perfil completo com verificação' : 'Complete verified profile'
                       },
                       {
-                        icon: CrownIcon,
-                        text: isPortuguese ? 'Acesso a eventos VIP' : 'VIP events access'
+                        icon: CheckCircleIcon,
+                        text: isPortuguese ? 'Acesso ao diretório de empresas' : 'Business directory access'
                       }
                     ].map((benefit, index) => (
                       <div key={index} className="flex items-center gap-3">

@@ -1,10 +1,14 @@
 #!/usr/bin/env node
 /**
- * LusoTown Portuguese Community Streaming Features
- * Cultural emotes, content moderation, and community tools
+ * HeritageTown Cultural Community Streaming Features
+ * Configurable cultural emotes, content moderation, and community tools
+ * Default: Portuguese community configuration
  */
 
-// Portuguese cultural emotes system
+// Load heritage configuration
+const heritageCode = process.env.HERITAGE_CODE || 'pt';
+
+// Portuguese cultural emotes system (default)
 const portugueseEmotes = {
   // Core Portuguese emotions and expressions
   ':saudade:': {

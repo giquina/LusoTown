@@ -16,100 +16,101 @@ module.exports = {
     },
     extend: {
       colors: {
-        // LusoTown Brand Colors - Unidos pela Língua (United by Language)
+        // Heritage-configurable brand colors (dynamically applied via CSS custom properties)
+        // Default fallbacks based on Portuguese heritage, configurable through HeritageContext
         
-        // Azul Atlântico (Atlantic Blue) - Primary
+        // Primary heritage color
         primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#1e40af', // Main brand color - Deep ocean blue
-          600: '#1e3a8a',
-          700: '#1d4ed8',
-          800: '#1e3a8a',
-          900: '#1e3a8a',
+          50: 'var(--heritage-primary-50, #eff6ff)',
+          100: 'var(--heritage-primary-100, #dbeafe)',
+          200: 'var(--heritage-primary-200, #bfdbfe)',
+          300: 'var(--heritage-primary-300, #93c5fd)',
+          400: 'var(--heritage-primary-400, #60a5fa)',
+          500: 'var(--heritage-primary, #1e40af)', // Main brand color - heritage configurable
+          600: 'var(--heritage-primary-600, #1e3a8a)',
+          700: 'var(--heritage-primary-700, #1d4ed8)',
+          800: 'var(--heritage-primary-800, #1e3a8a)',
+          900: 'var(--heritage-primary-900, #1e3a8a)',
         },
         
-        // Verde Esperança (Hope Green) - Secondary
+        // Secondary heritage color
         secondary: {
-          50: '#ecfdf5',
-          100: '#d1fae5',
-          200: '#a7f3d0',
-          300: '#6ee7b7',
-          400: '#34d399',
-          500: '#059669', // Main secondary - Vibrant emerald
-          600: '#047857',
-          700: '#065f46',
-          800: '#064e3b',
-          900: '#022c22',
+          50: 'var(--heritage-secondary-50, #ecfdf5)',
+          100: 'var(--heritage-secondary-100, #d1fae5)',
+          200: 'var(--heritage-secondary-200, #a7f3d0)',
+          300: 'var(--heritage-secondary-300, #6ee7b7)',
+          400: 'var(--heritage-secondary-400, #34d399)',
+          500: 'var(--heritage-secondary, #059669)', // Main secondary - heritage configurable
+          600: 'var(--heritage-secondary-600, #047857)',
+          700: 'var(--heritage-secondary-700, #065f46)',
+          800: 'var(--heritage-secondary-800, #064e3b)',
+          900: 'var(--heritage-secondary-900, #022c22)',
         },
         
-        // Dourado Sol (Golden Sun) - Accent
+        // Accent heritage color
         accent: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b', // Main accent - Warm amber
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
+          50: 'var(--heritage-accent-50, #fffbeb)',
+          100: 'var(--heritage-accent-100, #fef3c7)',
+          200: 'var(--heritage-accent-200, #fde68a)',
+          300: 'var(--heritage-accent-300, #fcd34d)',
+          400: 'var(--heritage-accent-400, #fbbf24)',
+          500: 'var(--heritage-accent, #f59e0b)', // Main accent - heritage configurable
+          600: 'var(--heritage-accent-600, #d97706)',
+          700: 'var(--heritage-accent-700, #b45309)',
+          800: 'var(--heritage-accent-800, #92400e)',
+          900: 'var(--heritage-accent-900, #78350f)',
         },
         
-        // Vermelho Paixão (Passion Red) - Action
+        // Action heritage color
         action: {
-          50: '#fef2f2',
-          100: '#fee2e2',
-          200: '#fecaca',
-          300: '#fca5a5',
-          400: '#f87171',
-          500: '#dc2626', // Main action - Bold red
-          600: '#b91c1c',
-          700: '#991b1b',
-          800: '#7f1d1d',
-          900: '#7f1d1d',
+          50: 'var(--heritage-action-50, #fef2f2)',
+          100: 'var(--heritage-action-100, #fee2e2)',
+          200: 'var(--heritage-action-200, #fecaca)',
+          300: 'var(--heritage-action-300, #fca5a5)',
+          400: 'var(--heritage-action-400, #f87171)',
+          500: 'var(--heritage-action, #dc2626)', // Main action - heritage configurable
+          600: 'var(--heritage-action-600, #b91c1c)',
+          700: 'var(--heritage-action-700, #991b1b)',
+          800: 'var(--heritage-action-800, #7f1d1d)',
+          900: 'var(--heritage-action-900, #7f1d1d)',
         },
         
-        // Roxo Fado (Fado Purple) - Premium
+        // Premium heritage color
         premium: {
-          50: '#faf5ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#7c3aed', // Main premium - Rich purple
-          600: '#5b21b6',
-          700: '#4c1d95',
-          800: '#3730a3',
-          900: '#312e81',
+          50: 'var(--heritage-premium-50, #faf5ff)',
+          100: 'var(--heritage-premium-100, #ede9fe)',
+          200: 'var(--heritage-premium-200, #ddd6fe)',
+          300: 'var(--heritage-premium-300, #c4b5fd)',
+          400: 'var(--heritage-premium-400, #a78bfa)',
+          500: 'var(--heritage-premium, #7c3aed)', // Main premium - heritage configurable
+          600: 'var(--heritage-premium-600, #5b21b6)',
+          700: 'var(--heritage-premium-700, #4c1d95)',
+          800: 'var(--heritage-premium-800, #3730a3)',
+          900: 'var(--heritage-premium-900, #312e81)',
         },
         
-        // Coral Tropical (Tropical Coral) - Warm Accent
+        // Coral heritage color
         coral: {
-          50: '#fff7ed',
-          100: '#fed7aa',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316', // Main coral - Vibrant coral
-          600: '#ea580c',
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
+          50: 'var(--heritage-coral-50, #fff7ed)',
+          100: 'var(--heritage-coral-100, #fed7aa)',
+          200: 'var(--heritage-coral-200, #fed7aa)',
+          300: 'var(--heritage-coral-300, #fdba74)',
+          400: 'var(--heritage-coral-400, #fb923c)',
+          500: 'var(--heritage-coral, #f97316)', // Main coral - heritage configurable
+          600: 'var(--heritage-coral-600, #ea580c)',
+          700: 'var(--heritage-coral-700, #c2410c)',
+          800: 'var(--heritage-coral-800, #9a3412)',
+          900: 'var(--heritage-coral-900, #7c2d12)',
         },
         
-        // Dourado Referência (Referral Gold) - For referral rewards
+        // Gold color for referral rewards (heritage neutral)
         gold: {
           50: '#fffbeb',
           100: '#fef3c7',
           200: '#fde68a',
           300: '#fcd34d',
           400: '#fbbf24',
-          500: '#f59e0b', // Main gold - Rich gold
+          500: '#f59e0b', // Main gold
           600: '#d97706',
           700: '#b45309',
           800: '#92400e',
@@ -130,10 +131,20 @@ module.exports = {
           900: '#111827',
         },
         
-        // Text colors matching mobile app
+        // Heritage-aware text colors
         text: '#1f2937',
         textSecondary: '#6b7280',
         textLight: '#9ca3af',
+        
+        // Heritage brand colors (legacy support - prefer CSS custom properties)
+        heritage: {
+          primary: 'var(--heritage-primary, #1e40af)',
+          secondary: 'var(--heritage-secondary, #059669)',
+          accent: 'var(--heritage-accent, #f59e0b)',
+          action: 'var(--heritage-action, #dc2626)',
+          premium: 'var(--heritage-premium, #7c3aed)',
+          coral: 'var(--heritage-coral, #f97316)',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

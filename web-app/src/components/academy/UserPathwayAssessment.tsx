@@ -166,11 +166,11 @@ export default function UserPathwayAssessment({
     },
     {
       id: "creator",
-      name: "Content Creator",
-      namePortuguese: "Criador de Conteúdo",
-      description: "For Portuguese content creators and influencers",
+      name: "Streamer & Earner",
+      namePortuguese: "Streamer e Ganhador",
+      description: "For Portuguese streamers and income earners",
       descriptionPortuguese:
-        "Para criadores de conteúdo portugueses e influenciadores",
+        "Para streamers portugueses e pessoas que ganham dinheiro",
       detailedDescription:
         "Learn streaming, community building, monetization strategies, and how to grow your Portuguese audience in London.",
       detailedDescriptionPortuguese:

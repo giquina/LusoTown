@@ -75,16 +75,16 @@ export default function HowItWorks() {
     },
     {
       number: 4,
-      title: "Stream & Create Content",
-      subtitle: "Transmita e Crie Conteúdo",
+      title: "Stream & Earn Income",
+      subtitle: "Transmita e Ganhe Dinheiro",
       description:
-        "Join LusoTown TV - our Portuguese streaming platform. Watch live cultural content, host your own shows, or share your London-Portuguese journey with the community.",
+        "Join LusoTown TV - our Portuguese streaming platform. Watch live cultural content, host your own profitable shows, or monetize your London-Portuguese journey with 85/15 revenue split.",
       icon: Camera,
       color: "from-yellow-500 via-red-500 to-green-500",
       bgColor: "from-yellow-50 via-red-50 to-green-50",
       accentColor: "yellow-600",
       examples:
-        "📺 Live streaming • 🎙️ Portuguese podcasts • 💰 Creator monetization • 🌟 Cultural shows",
+        "📺 Profitable streaming • 💰 85% revenue share • 📈 Immediate earnings • 🌟 Monetize passion",
       emoji: "📺",
     },
     {

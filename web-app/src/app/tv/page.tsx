@@ -139,11 +139,11 @@ export default function TVPage() {
     },
     {
       id: "programs",
-      label: isPortuguese ? "Programas" : "Programs",
+      label: isPortuguese ? "Horários" : "Schedule",
       icon: Tv,
       description: isPortuguese
-        ? "Programação portuguesa"
-        : "Portuguese programming",
+        ? "Horários do canal"
+        : "Channel schedule",
     },
     {
       id: "replays",
@@ -184,8 +184,8 @@ export default function TVPage() {
                 <TvIcon className="w-4 h-4 mr-2 text-primary-600" />
                 <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
                   {isPortuguese
-                    ? "LusoTown TV - Televisão Portuguesa"
-                    : "LusoTown TV - Portuguese Television"}
+                    ? "LusoTown TV - Canal Cultural de Londres"
+                    : "LusoTown TV - London Cultural Channel"}
                 </span>
               </span>
             </motion.div>
@@ -198,8 +198,8 @@ export default function TVPage() {
             >
               <span className="hidden sm:block">
                 {isPortuguese
-                  ? "Televisão Portuguesa em Londres"
-                  : "Portuguese Television in London"}
+                  ? "Canal Cultural Português de Londres"
+                  : "Portuguese Cultural Channel from London"}
               </span>
               <span className="sm:hidden">
                 {isPortuguese ? "LusoTown TV" : "LusoTown TV"}
@@ -217,8 +217,8 @@ export default function TVPage() {
               className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
             >
               {isPortuguese
-                ? "Assista programação portuguesa ao vivo, participe em eventos culturais e conecte-se com a comunidade portuguesa em Londres."
-                : "Watch Portuguese programming live, join cultural events, and connect with the Portuguese community in London."}
+                ? "Acompanhe transmissões culturais ao vivo ocasionalmente, quando o nosso canal entra no ar diretamente de Londres."
+                : "Follow occasional live cultural broadcasts when our channel goes live directly from London."}
             </motion.p>
           </div>
         </div>
@@ -255,12 +255,12 @@ export default function TVPage() {
             <div className="space-y-8">
               <div className="text-center mb-8">
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
-                  {isPortuguese ? "Transmissões Ao Vivo" : "Live Broadcasts"}
+                  {isPortuguese ? "Canal Ao Vivo" : "Live Channel"}
                 </h2>
                 <p className="text-gray-600">
                   {isPortuguese
-                    ? "Assista programação portuguesa ao vivo direto de Londres"
-                    : "Watch Portuguese programming live from London"}
+                    ? "Acompanhe quando o nosso canal cultural entra no ar diretamente de Londres"
+                    : "Follow when our cultural channel goes live directly from London"}
                 </p>
               </div>
 
@@ -307,13 +307,13 @@ export default function TVPage() {
               <div className="text-center mb-8">
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
                   {isPortuguese
-                    ? "Programação Portuguesa"
-                    : "Portuguese Programming"}
+                    ? "Horários do Canal"
+                    : "Channel Schedule"}
                 </h2>
                 <p className="text-gray-600">
                   {isPortuguese
-                    ? "Descubra a programação completa dos nossos canais portugueses"
-                    : "Discover the complete schedule of our Portuguese channels"}
+                    ? "Veja quando o nosso canal cultural está programado para entrar no ar"
+                    : "See when our cultural channel is scheduled to go live"}
                 </p>
               </div>
 

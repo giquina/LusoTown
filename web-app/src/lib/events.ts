@@ -226,11 +226,19 @@ export const EVENT_CATEGORIES = {
   },
   'Technology & AI': {
     icon: 'Monitor',
-    subcategories: ['AI Workshops', 'Coding Classes', 'Tech Networking', 'Digital Skills']
+    subcategories: ['AI Workshops', 'Coding Classes', 'Tech Networking', 'Digital Skills', 'Web Development', 'Mobile Apps', 'Data Science', 'Blockchain', 'Cybersecurity', 'Cloud Computing']
   },
   'Business & Entrepreneurship': {
     icon: 'TrendingUp',
-    subcategories: ['Business Strategy', 'Entrepreneurship', 'Startup Events', 'Investment']
+    subcategories: ['Business Strategy', 'Entrepreneurship', 'Startup Events', 'Investment', 'E-commerce', 'Digital Marketing', 'Leadership', 'Finance', 'Sales', 'Project Management']
+  },
+  'Professional Development': {
+    icon: 'GraduationCap',
+    subcategories: ['Career Coaching', 'Skills Training', 'Certification Courses', 'Industry Insights', 'Resume Building', 'Interview Prep', 'Personal Branding']
+  },
+  'Creative & Design': {
+    icon: 'Paintbrush',
+    subcategories: ['UI/UX Design', 'Graphic Design', 'Video Editing', 'Content Creation', 'Branding Workshops', 'Creative Writing', 'Digital Art']
   },
   'Finance & Investment': {
     icon: 'DollarSign',
@@ -1998,6 +2006,78 @@ export class EventService {
         views: 176,
         favorites: 28,
         shares: 18,
+        communityGuidelines: true,
+        verifiedEvent: true,
+        reportCount: 0
+      },
+      {
+        id: 'vibe-coding-workshop-december-2025',
+        title: 'Vibe Coding Workshop: Build Websites with AI & Claude - December Intensive',
+        description: 'Learn to build beautiful websites effortlessly using AI tools like Claude Code, GitHub Copilot, and modern web technologies. Perfect for Portuguese speakers who want to create digital solutions without traditional coding barriers.',
+        longDescription: 'Descubra o futuro da criação de websites! Join us for an intensive hands-on workshop where you\'ll learn to "vibe code" - creating professional websites and web applications using cutting-edge AI tools and modern development techniques.\n\nThis workshop is designed for Portuguese speakers who want to bring their business ideas, personal projects, or creative visions to life online without spending years learning traditional programming. Whether you\'re an entrepreneur, creative professional, or simply curious about technology, you\'ll leave with real coding skills and a deployed website.\n\nWhat you\'ll learn:\n- Setting up your development environment with VS Code and AI assistants\n- Using Claude Code and GitHub Copilot to write HTML, CSS, and JavaScript\n- Building responsive, mobile-friendly websites with modern frameworks\n- Integrating with APIs, databases, and third-party services\n- Deploying your websites to the internet (Netlify, Vercel, GitHub Pages)\n- Best practices for AI-assisted development and troubleshooting\n- Creating contact forms, image galleries, and interactive features\n- SEO optimization and performance improvement techniques\n\nOur instructor, Ricardo Sousa, is a Portuguese web developer who transitioned from traditional coding to AI-assisted development. He\'ll teach you the "vibe coding" methodology - using natural language to describe what you want, then refining with AI assistance to create professional results.\n\nWorkshop format:\n- Morning session (10:00-12:30): Environment setup and fundamentals\n- Lunch break: Networking with fellow Portuguese tech enthusiasts\n- Afternoon session (13:30-16:00): Hands-on project building\n- Final session (16:15-17:30): Deployment and next steps\n\nYou\'ll build a real website during the workshop - either a personal portfolio, business landing page, or project of your choice. By the end, you\'ll have a live website and the skills to continue developing independently.\n\nThis workshop is perfect for:\n- Portuguese entrepreneurs wanting to create business websites\n- Creative professionals needing portfolio sites\n- Anyone curious about modern web development\n- Business owners who want to understand web technology\n- Career changers interested in tech skills\n\nAll skill levels welcome - we\'ll adapt to your experience level. The focus is on practical results and building confidence with AI-assisted development tools.',
+        date: '2025-12-14',
+        time: '10:00',
+        endTime: '17:30',
+        location: 'TechHub London Portuguese Space',
+        address: '20 Ropemaker Street, Moorgate, London EC2Y 9AR',
+        coordinates: { lat: 51.5188, lng: -0.0873 },
+        category: 'Technology & AI',
+        subcategory: 'Coding Classes',
+        tags: ['AI coding', 'Claude Code', 'GitHub Copilot', 'web development', 'vibe coding', 'Portuguese tech', 'beginner-friendly', 'hands-on'],
+        hostId: 'host-ricardo-sousa',
+        hostName: 'Ricardo Sousa',
+        hostImage: getImageWithFallback('ricardo-sousa-dev'),
+        hostBio: 'Portuguese web developer and AI coding instructor, specializing in teaching modern development techniques to Portuguese-speaking professionals',
+        membershipRequired: 'free',
+        price: 85,
+        currency: 'GBP',
+        maxAttendees: 16,
+        minAttendees: 8,
+        currentAttendees: 12,
+        waitlistCount: 3,
+        status: 'published',
+        featured: true,
+        images: [
+          'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600&h=400&fit=crop&auto=format',
+          'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop&auto=format',
+          'https://images.unsplash.com/photo-1605379399642-870262d3d051?w=600&h=400&fit=crop&auto=format'
+        ],
+        photos: [
+          { id: 'photo-vibe-1', eventId: 'vibe-coding-workshop-december-2025', url: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=400&h=400&fit=crop&auto=format', caption: 'Vibe coding in action - AI-assisted development', uploadedBy: 'Ricardo Sousa', uploadedAt: '2025-11-20T14:30:00Z', featured: true },
+          { id: 'photo-vibe-2', eventId: 'vibe-coding-workshop-december-2025', url: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=400&fit=crop&auto=format', caption: 'Workshop participants building their first websites', uploadedBy: 'TechHub Portuguese', uploadedAt: '2025-11-22T16:45:00Z', featured: false }
+        ],
+        attendees: [
+          { id: 'att-vibe-1', userId: 'user-vibe-1', eventId: 'vibe-coding-workshop-december-2025', name: 'Sofia Martins', email: 'sofia.martins@example.com', membershipTier: 'core', joinedAt: '2025-11-15T09:30:00Z', status: 'confirmed' },
+          { id: 'att-vibe-2', userId: 'user-vibe-2', eventId: 'vibe-coding-workshop-december-2025', name: 'Miguel Fernandes', email: 'miguel.f@example.com', membershipTier: 'premium', joinedAt: '2025-11-18T14:15:00Z', status: 'confirmed' },
+          { id: 'att-vibe-3', userId: 'user-vibe-3', eventId: 'vibe-coding-workshop-december-2025', name: 'Ana Rodrigues', email: 'ana.rodrigues@example.com', membershipTier: 'free', joinedAt: '2025-11-20T11:00:00Z', status: 'confirmed' }
+        ],
+        waitlist: [
+          { id: 'wait-vibe-1', userId: 'user-vibe-15', eventId: 'vibe-coding-workshop-december-2025', name: 'Carlos Pereira', email: 'carlos.p@example.com', membershipTier: 'core', joinedWaitlistAt: '2025-11-25T13:00:00Z', position: 1, notified: false },
+          { id: 'wait-vibe-2', userId: 'user-vibe-16', eventId: 'vibe-coding-workshop-december-2025', name: 'Isabel Santos', email: 'isabel.santos@example.com', membershipTier: 'free', joinedWaitlistAt: '2025-11-26T16:30:00Z', position: 2, notified: false }
+        ],
+        reviews: [
+          { id: 'rev-vibe-1', eventId: 'vibe-coding-workshop-december-2025', userId: 'user-vibe-10', reviewerName: 'Pedro S.', rating: 5, comment: 'Incrível! I built my business website in one day using Claude Code. Ricardo made it so accessible and fun. The vibe coding approach is perfect for non-technical people like me. Highly recommend!', createdAt: '2025-11-10T18:30:00Z', helpful: 8, membershipTier: 'core', culturalValue: 4, organizationQuality: 5, venueRating: 5, wouldRecommend: true },
+          { id: 'rev-vibe-2', eventId: 'vibe-coding-workshop-december-2025', userId: 'user-vibe-11', reviewerName: 'Mariana L.', rating: 5, comment: 'Perfect introduction to modern web development! The AI tools are game-changers. Ricardo speaks both Portuguese and English fluently, making complex concepts easy to understand. Left feeling confident about building websites.', createdAt: '2025-11-12T20:45:00Z', helpful: 6, membershipTier: 'premium', culturalValue: 3, organizationQuality: 5, venueRating: 4, wouldRecommend: true }
+        ],
+        averageRating: 4.8,
+        totalReviews: 7,
+        whatToBring: ['Laptop (Mac or PC)', 'Notebook for taking notes', 'Your business/project idea', 'Curiosity and willingness to learn', 'Power adapter and charger'],
+        dresscode: 'Casual and comfortable for a full day of coding',
+        ageRestriction: 'Open to everyone - beginner-friendly',
+        skillLevel: 'beginner',
+        accessibility: ['Wheelchair accessible venue', 'Lift access to all floors', 'Accessible toilet facilities', 'Large screen displays for presentations'],
+        allowWaitlist: true,
+        maxWaitingList: 20,
+        requiresApproval: false,
+        refundPolicy: 'Full refund 7+ days in advance, 50% refund 3-7 days, no refund <3 days due to materials preparation',
+        lastBookingTime: '24',
+        createdAt: '2025-11-01T10:00:00Z',
+        updatedAt: '2025-11-26T15:00:00Z',
+        createdBy: 'host-ricardo-sousa',
+        isRecurring: false,
+        views: 423,
+        favorites: 67,
+        shares: 34,
         communityGuidelines: true,
         verifiedEvent: true,
         reportCount: 0

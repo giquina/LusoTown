@@ -27,12 +27,14 @@ import { ROUTES } from '@/config/routes'
 
 const getNavigationLinks = (t: any) => [
   { name: t("nav.events", "London Events"), href: "/events" },
+  { name: t("nav.tours", "London Tours"), href: "/tours" },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 
 const getAuthenticatedNavigationLinks = (t: any) => [
   { name: t("nav.events", "London Events"), href: "/events" },
+  { name: t("nav.tours", "London Tours"), href: "/tours" },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("referral.title", "Referrals"), href: "/referrals" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
@@ -43,7 +45,7 @@ const getMoreDropdownLinks = (t: any) => ({
   services: [
     { name: "Find Your Match", href: "/matches" },
     { name: "Live TV", href: "/tv" },
-    { name: "Streaming", href: "/live" },
+    { name: "Streaming Income", href: "/live" },
   ],
   community: [
     { name: "Events & Culture", href: ROUTES.events },
@@ -71,16 +73,12 @@ const getMoreDropdownLinks = (t: any) => ({
 // Footer-only links (includes the removed navigation items)
 const getFooterOnlyLinks = (t: any) => [
   {
-    name: t("footer.housing-assistance", "Housing Assistance"),
-    href: ROUTES.housingAssistance,
-  },
-  {
     name: t("footer.neighborhood-groups", "Neighborhood Groups"),
     href: ROUTES.neighborhoodGroups,
   },
   { name: "Premium Services", href: ROUTES.services },
   { name: "Community Chat", href: ROUTES.forums },
-  // Add Cultural Tools and Clothes Protection when those pages exist
+  // Add Cultural Tools and Housing Assistance when those pages are more developed
 ];
 
 export default function Header() {
@@ -445,25 +443,11 @@ export default function Header() {
                     ))}
                   </div>
 
-                  {/* Tours & Transport Section */}
+                  {/* London Services Section */}
                   <div className="pb-4 border-b border-gray-200">
                     <h3 className="text-lg font-semibold text-premium-600 mb-3">
-                      Tours & Transport
+                      London Services
                     </h3>
-                    <a
-                      href="/london-tours"
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      London Tours
-                    </a>
-                    <a
-                      href={`${ROUTES.services}#cultural-tours`}
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Cultural Tours
-                    </a>
                     <a
                       href={`${ROUTES.services}#executive-transport`}
                       className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
@@ -479,11 +463,11 @@ export default function Header() {
                       London Transport
                     </a>
                     <a
-                      href={`${ROUTES.services}#close-protection`}
+                      href={ROUTES.services + '/close-protection'}
                       className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Close Protection
+                      Security Services
                     </a>
                   </div>
 

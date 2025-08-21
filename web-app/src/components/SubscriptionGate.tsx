@@ -181,24 +181,24 @@ export default function SubscriptionGate({
             <div className="space-y-3">
               {[
                 {
-                  en: "Access to Portuguese community network",
-                  pt: "Acesso à rede da comunidade portuguesa",
+                  en: "Unlimited matches and messaging",
+                  pt: "Matches e mensagens ilimitadas",
                 },
                 {
-                  en: "Cultural events and experiences",
-                  pt: "Eventos culturais e experiências",
+                  en: "Access to community events",
+                  pt: "Acesso a eventos comunitários",
                 },
                 {
-                  en: "Business networking opportunities",
-                  pt: "Oportunidades de networking profissional",
+                  en: "Complete profile with verification",
+                  pt: "Perfil completo com verificação",
                 },
                 {
-                  en: "Premium transport booking services",
-                  pt: "Serviços premium de reserva de transporte",
+                  en: "Business directory access",
+                  pt: "Acesso ao diretório de empresas",
                 },
                 {
-                  en: "Community support and connections",
-                  pt: "Apoio comunitário e conexões",
+                  en: "Professional networking features",
+                  pt: "Funcionalidades de networking profissional",
                 },
               ].map((benefit, index) => (
                 <div key={index} className="flex items-center gap-3">
@@ -231,8 +231,8 @@ export default function SubscriptionGate({
                   </div>
                   <div className="text-xs text-gray-500">
                     {isPortuguese
-                      ? "Por mês • Matches & mensagens ilimitadas"
-                      : "Per month • Unlimited matches & messages"}
+                      ? "Por mês • Comunidade completa"
+                      : "Per month • Full community access"}
                   </div>
                 </div>
               </div>
@@ -250,8 +250,8 @@ export default function SubscriptionGate({
                   </div>
                   <div className="text-xs text-gray-500">
                     {isPortuguese
-                      ? "Por mês • Tudo + visibilidade prioritária"
-                      : "Per month • Everything + priority visibility"}
+                      ? "Por mês • Embaixador + 5h streaming"
+                      : "Per month • Ambassador + 5h streaming"}
                   </div>
                 </div>
               </div>

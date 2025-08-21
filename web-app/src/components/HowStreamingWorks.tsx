@@ -19,7 +19,7 @@ export default function HowStreamingWorks() {
     },
     {
       icon: UserGroupIcon,
-      title: t('how_streaming_works.step3_title', 'Become a Creator'),
+      title: t('how_streaming_works.step3_title', 'Start Earning'),
       description: t('how_streaming_works.step3_desc', 'Share your passion with the community. Apply to become a creator and host your own streams on LusoTown.'),
     },
     {
