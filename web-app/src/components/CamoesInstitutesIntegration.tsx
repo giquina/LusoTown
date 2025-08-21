@@ -23,7 +23,7 @@ import {
   CurrencyPoundIcon,
   ClockIcon,
   GiftIcon,
-  HandshakeIcon,
+  ScaleIcon,
   SparklesIcon,
   BuildingLibraryIcon
 } from '@heroicons/react/24/outline'
@@ -790,7 +790,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
                   <p className="text-sm text-gray-600">{language === 'pt' ? 'Eventos Mensais' : 'Monthly Events'}</p>
                 </div>
                 <div className="text-center">
-                  <HandshakeIcon className="w-8 h-8 text-accent-500 mx-auto mb-2" />
+                  <ScaleIcon className="w-8 h-8 text-accent-500 mx-auto mb-2" />
                   <p className="text-2xl font-bold text-gray-900">{selectedCenterData.partnerInstitutions}</p>
                   <p className="text-sm text-gray-600">{language === 'pt' ? 'Instituições Parceiras' : 'Partner Institutions'}</p>
                 </div>

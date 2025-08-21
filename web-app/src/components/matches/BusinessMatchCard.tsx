@@ -6,7 +6,7 @@ import {
   BriefcaseIcon,
   BuildingOfficeIcon,
   UserGroupIcon,
-  HandshakeIcon,
+  ScaleIcon,
   StarIcon,
   CheckCircleIcon,
   SparklesIcon,
@@ -21,7 +21,7 @@ import {
 } from "@heroicons/react/24/outline";
 import {
   StarIcon as StarSolid,
-  HandshakeIcon as HandshakeSolid,
+  ScaleIcon as ScaleSolid,
   BriefcaseIcon as BriefcaseSolid,
 } from "@heroicons/react/24/solid";
 import { useLanguage } from "@/context/LanguageContext";
@@ -542,7 +542,7 @@ export default function BusinessMatchCard({
             onClick={() => onConnect(profile.id)}
             className="w-16 h-16 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 group"
           >
-            <HandshakeSolid className="w-8 h-8 text-white group-hover:scale-110 transition-transform" />
+            <ScaleSolid className="w-8 h-8 text-white group-hover:scale-110 transition-transform" />
           </button>
 
           {onPriorityConnect && (

@@ -12,7 +12,7 @@ import {
   ChartBarIcon,
   LightBulbIcon,
   CheckCircleIcon,
-  HandshakeIcon,
+  ScaleIcon,
   AcademicCapIcon,
 } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";

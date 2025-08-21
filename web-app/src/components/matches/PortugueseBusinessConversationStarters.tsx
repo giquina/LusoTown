@@ -10,11 +10,11 @@ import {
   GlobeAltIcon,
   AcademicCapIcon,
   LightBulbIcon,
-  TrendingUpIcon,
+  ArrowTrendingUpIcon,
   UserGroupIcon,
   CheckCircleIcon,
   ClockIcon,
-  HandshakeIcon,
+  ScaleIcon,
 } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -446,7 +446,7 @@ export default function PortugueseBusinessConversationStarters({
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <HandshakeIcon className="w-3 h-3 text-blue-500" />
+              <ScaleIcon className="w-3 h-3 text-blue-500" />
               <span>
                 {language === "pt"
                   ? "Procure oportunidades de colaboração e apoio mútuo"
@@ -454,7 +454,7 @@ export default function PortugueseBusinessConversationStarters({
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <TrendingUpIcon className="w-3 h-3 text-purple-500" />
+              <ArrowTrendingUpIcon className="w-3 h-3 text-purple-500" />
               <span>
                 {language === "pt"
                   ? "Partilhe insights sobre mercados português e britânico"

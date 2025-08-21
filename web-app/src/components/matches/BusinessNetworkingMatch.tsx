@@ -6,7 +6,7 @@ import {
   BriefcaseIcon,
   BuildingOfficeIcon,
   UserGroupIcon,
-  HandshakeIcon,
+  ScaleIcon,
   GlobeAltIcon,
   AcademicCapIcon,
   TrophyIcon,
@@ -21,7 +21,7 @@ import {
 } from "@heroicons/react/24/outline";
 import {
   StarIcon as StarSolid,
-  HandshakeIcon as HandshakeSolid,
+  ScaleIcon as ScaleSolid,
 } from "@heroicons/react/24/solid";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
@@ -413,7 +413,7 @@ export default function BusinessNetworkingMatch({
     {
       id: 'partnerships' as const,
       label: language === "pt" ? "Parcerias" : "Partnerships",
-      icon: HandshakeIcon,
+      icon: ScaleIcon,
       count: mutualBusinessMatches.length,
     },
     {
@@ -680,7 +680,7 @@ export default function BusinessNetworkingMatch({
                 >
                   <div className="bg-white rounded-2xl p-6 shadow-lg border border-primary-100">
                     <h3 className="text-xl font-bold text-primary-900 mb-4 flex items-center gap-2">
-                      <HandshakeSolid className="w-6 h-6 text-secondary-500" />
+                      <ScaleSolid className="w-6 h-6 text-secondary-500" />
                       {language === "pt" ? "Suas Parcerias de Negócio" : "Your Business Partnerships"}
                     </h3>
                     
@@ -707,7 +707,7 @@ export default function BusinessNetworkingMatch({
                                 </p>
                               </div>
                               <div className="text-green-500">
-                                <HandshakeSolid className="w-5 h-5" />
+                                <ScaleSolid className="w-5 h-5" />
                               </div>
                             </div>
 
@@ -744,7 +744,7 @@ export default function BusinessNetworkingMatch({
                     ) : (
                       <div className="text-center py-8">
                         <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <HandshakeIcon className="w-8 h-8 text-primary-600" />
+                          <ScaleIcon className="w-8 h-8 text-primary-600" />
                         </div>
                         <h4 className="font-semibold text-primary-900 mb-2">
                           {language === "pt" ? "Nenhuma parceria estabelecida ainda" : "No partnerships established yet"}

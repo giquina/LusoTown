@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import {
   BriefcaseIcon,
   UserGroupIcon,
-  HandshakeIcon,
+  ScaleIcon,
   AcademicCapIcon,
   SparklesIcon,
   TrophyIcon,
@@ -41,7 +41,7 @@ export default function BusinessNetworkingPage() {
       stats: language === "pt" ? "85% sucesso" : "85% success rate",
     },
     {
-      icon: HandshakeIcon,
+      icon: ScaleIcon,
       title: language === "pt" ? "Parcerias de Negócio" : "Business Partnerships",
       description: language === "pt"
         ? "Identifique oportunidades de colaboração e parcerias estratégicas"
