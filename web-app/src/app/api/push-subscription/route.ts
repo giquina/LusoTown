@@ -219,7 +219,7 @@ async function sendWelcomeNotification(subscription: any, language: string = 'en
 }
 
 // Portuguese cultural event notification scheduler
-export async function schedulePortugueseCulturalNotifications() {
+async function schedulePortugueseCulturalNotifications() {
   const culturalEvents = [
     {
       date: '2025-04-25',

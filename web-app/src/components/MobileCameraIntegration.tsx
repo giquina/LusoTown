@@ -138,6 +138,7 @@ export default function MobileCameraIntegration({
 
   const initializeQRScanner = async () => {
     try {
+      if (typeof window === 'undefined') return;
       const { Html5QrcodeScanner } = await import('html5-qrcode');
       
       const scanner = new Html5QrcodeScanner(

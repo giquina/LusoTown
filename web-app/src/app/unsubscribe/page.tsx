@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { CheckCircleIcon, XMarkIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
@@ -8,7 +8,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import PageHeader from '@/components/PageHeader';
 import { ROUTES } from '@/config/routes';
 
-export default function UnsubscribePage() {
+function UnsubscribeContent() {
   const { t, language } = useLanguage();
   const isPortuguese = language === 'pt';
   const searchParams = useSearchParams();
@@ -296,5 +296,14 @@ export default function UnsubscribePage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function UnsubscribePage() {
+  // Wrap the content that uses useSearchParams in a Suspense boundary per Next.js app router requirements
+  return (
+    <Suspense fallback={<div className="min-h-screen" />}> 
+      <UnsubscribeContent />
+    </Suspense>
   );
 }

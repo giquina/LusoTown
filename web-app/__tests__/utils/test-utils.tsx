@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { render, RenderOptions } from '@testing-library/react'
+import { render, RenderOptions, screen, fireEvent, waitFor } from '@testing-library/react'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { NetworkingProvider } from '@/context/NetworkingContext'
 import { SubscriptionProvider } from '@/context/SubscriptionContext'

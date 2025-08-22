@@ -6,6 +6,7 @@
 // - Always use Portuguese gradient for main action buttons (search, join, book, etc.)
 
 import React, { useState, useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 import { 
   MagnifyingGlassIcon, 
   XMarkIcon,

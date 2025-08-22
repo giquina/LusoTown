@@ -90,7 +90,7 @@ describe('SubscriptionContext', () => {
       const { result } = renderHook(() => useSubscription(), { wrapper })
       
       await act(async () => {
-        const sessionId = await result.current.createSubscription('platinum')
+        const sessionId = await result.current.createSubscription('ambassador')
         expect(sessionId).toBe('test-session-id')
       })
 
@@ -103,7 +103,7 @@ describe('SubscriptionContext', () => {
           userId: mockUser.id,
           userEmail: mockUser.email,
           userName: mockUser.name,
-          tier: 'platinum',
+          tier: 'ambassador',
         }),
       })
     })
@@ -118,7 +118,7 @@ describe('SubscriptionContext', () => {
       const { result } = renderHook(() => useSubscription(), { wrapper })
       
       await act(async () => {
-        const sessionId = await result.current.createSubscription('bronze')
+        const sessionId = await result.current.createSubscription('community')
         expect(sessionId).toBeNull()
       })
     })
@@ -139,7 +139,7 @@ describe('SubscriptionContext', () => {
       })
 
       await act(async () => {
-        const success = await result.current.upgradeSubscription('platinum')
+        const success = await result.current.upgradeSubscription('ambassador')
         expect(success).toBe(true)
       })
 
@@ -150,7 +150,7 @@ describe('SubscriptionContext', () => {
         },
         body: JSON.stringify({
           subscriptionId: undefined, // since we mocked the subscription
-          newTier: 'platinum',
+          newTier: 'ambassador',
         }),
       })
     })
@@ -192,10 +192,10 @@ describe('SubscriptionContext', () => {
       
       // Test different tiers
       const tiers = [
-        { tier: 'bronze', expectedDiscount: 10 },
+        { tier: 'community', expectedDiscount: 10 },
         { tier: 'silver', expectedDiscount: 15 },
         { tier: 'gold', expectedDiscount: 20 },
-        { tier: 'platinum', expectedDiscount: 25 },
+        { tier: 'ambassador', expectedDiscount: 25 },
       ]
 
       tiers.forEach(({ tier, expectedDiscount }) => {
@@ -339,7 +339,7 @@ describe('SubscriptionContext', () => {
       languageContext.language = 'pt'
 
       await act(async () => {
-        await result.current.createSubscription('bronze')
+        await result.current.createSubscription('community')
       })
 
       // Should show Portuguese error message
@@ -351,7 +351,7 @@ describe('SubscriptionContext', () => {
     it('should handle Portuguese subscription tiers', () => {
       const { result } = renderHook(() => useSubscription(), { wrapper })
       
-      const portugueseTiers = ['bronze', 'silver', 'gold', 'platinum'] as const
+      const portugueseTiers = ['community', 'silver', 'gold', 'ambassador'] as const
       
       portugueseTiers.forEach(tier => {
         act(() => {
@@ -377,7 +377,7 @@ describe('SubscriptionContext', () => {
       const { result } = renderHook(() => useSubscription(), { wrapper })
       
       await act(async () => {
-        const sessionId = await result.current.createSubscription('bronze')
+        const sessionId = await result.current.createSubscription('community')
         expect(sessionId).toBeNull()
       })
     })

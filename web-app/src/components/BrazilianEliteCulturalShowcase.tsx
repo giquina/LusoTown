@@ -30,8 +30,8 @@ import {
 } from '@/config/brazilian-elite-culture'
 import { getCulturalCenterById } from '@/config/cultural-centers'
 import { SubscriptionGate } from './SubscriptionGate'
-import { PremiumGradients } from './ui/PremiumGradients'
-import { LuxuryCard } from './ui/LuxuryCard'
+import { GradientBackground, AnimatedGradient } from './ui'
+import { LuxuryCard } from './ui'
 import EliteButton from './ui/EliteButton'
 
 interface BrazilianEliteCulturalShowcaseProps {
@@ -226,14 +226,14 @@ export function BrazilianEliteCulturalShowcase({
 
   const BrazilianCulturalMagnetism = () => (
     <div className="space-y-8">
-      <PremiumGradients className="text-center py-8 rounded-xl">
+      <GradientBackground className="text-center py-8 rounded-xl">
         <h3 className="text-3xl font-bold text-white mb-2">
           🇧🇷 Brazilian Cultural Magnetism
         </h3>
         <p className="text-blue-100 text-lg">
           The incredible energy, music, dancing, food & nightlife that makes Brazilian culture absolutely irresistible
         </p>
-      </PremiumGradients>
+      </GradientBackground>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {getBrazilianCulturalMagnetism().map((magnetism, idx) => {
@@ -629,7 +629,7 @@ export function BrazilianEliteCulturalShowcase({
 
       {/* Call to Action */}
       <div className="text-center pt-8">
-        <PremiumGradients className="p-8 rounded-xl">
+        <GradientBackground className="p-8 rounded-xl">
           <h3 className="text-3xl font-bold text-white mb-4">
             🎉 Experience Amazing Brazilian Culture in London
           </h3>
@@ -653,7 +653,7 @@ export function BrazilianEliteCulturalShowcase({
               Request Invitation
             </EliteButton>
           </div>
-        </PremiumGradients>
+        </GradientBackground>
       </div>
     </div>
   )

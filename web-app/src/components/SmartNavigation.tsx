@@ -10,7 +10,7 @@ import {
   ChevronRightIcon,
   StarIcon,
   ClockIcon,
-  TrendingUpIcon,
+  ArrowArrowTrendingUpIcon,
   UserGroupIcon,
   SparklesIcon,
   BookmarkIcon,
@@ -85,7 +85,7 @@ export default function SmartNavigation({
             title: getPageTitle(path),
             description: getPageDescription(path),
             category: 'trending',
-            icon: <TrendingUpIcon className="w-4 h-4" />,
+            icon: <ArrowTrendingUpIcon className="w-4 h-4" />,
             urgency: 'high',
             metadata: { users: count * 10, trending: true }
           })

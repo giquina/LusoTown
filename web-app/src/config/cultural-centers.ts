@@ -520,6 +520,231 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
   },
 
   {
+    id: 'centro-cultural-cabo-verde-london',
+    name: process.env.NEXT_PUBLIC_CAPE_VERDE_CENTER_NAME || 'Cape Verdean Cultural Center London - Music & Soul',
+    namePortuguese: process.env.NEXT_PUBLIC_CAPE_VERDE_CENTER_NAME_PT || 'Centro Cultural Cabo-verdiano Londres - Música e Alma',
+    type: 'lusophone_center',
+    
+    address: process.env.NEXT_PUBLIC_CAPE_VERDE_CENTER_ADDRESS || 'Stockwell Community Centre, 1 Studley Road',
+    postcode: process.env.NEXT_PUBLIC_CAPE_VERDE_CENTER_POSTCODE || 'SW4 6RA',
+    city: 'London',
+    country: 'United Kingdom',
+    coordinates: {
+      latitude: 51.4622,
+      longitude: -0.1234
+    },
+    
+    phone: process.env.NEXT_PUBLIC_CAPE_VERDE_CENTER_PHONE || '+44 20 7622 4958',
+    email: process.env.NEXT_PUBLIC_CAPE_VERDE_CENTER_EMAIL || 'info@capeverdecultural.co.uk',
+    website: process.env.NEXT_PUBLIC_CAPE_VERDE_CENTER_WEBSITE || 'https://capeverdecultural.co.uk',
+    
+    services: [
+      'Heartfelt Morna music sessions - Cape Verde\'s blues',
+      'Energetic Coladeira dance parties and celebrations',
+      'Traditional Funaná accordion music workshops',
+      'Batuko women\'s music circles with vocal harmonies',
+      'Cape Verdean language and Creole conversation circles',
+      'Island food culture and traditional Cachupa cooking',
+      'Cape Verdean cultural storytelling and poetry nights',
+      'Traditional crafts: weaving, pottery, and artisan workshops',
+      'Modern Cape Verdean artist showcases and concerts',
+      'Community celebration festivals with island rhythms',
+      'Cultural film nights featuring Cape Verdean cinema',
+      'Social clubs for music, dancing, and island connections'
+    ],
+    servicesPortuguese: [
+      'Sessões emocionantes de música Morna - o blues de Cabo Verde',
+      'Festas energéticas de dança Coladeira e celebrações',
+      'Workshops tradicionais de música Funaná com acordeão',
+      'Círculos de música feminina Batuko com harmonias vocais',
+      'Círculos de conversação em língua cabo-verdiana e crioulo',
+      'Cultura alimentar das ilhas e culinária tradicional de Cachupa',
+      'Noites de contos e poesia cultural cabo-verdiana',
+      'Artesanatos tradicionais: tecelagem, cerâmica e workshops artesanais',
+      'Showcases e concertos de artistas cabo-verdianos modernos',
+      'Festivais de celebração comunitária com ritmos das ilhas',
+      'Noites de cinema cultural apresentando cinema cabo-verdiano',
+      'Clubes sociais para música, dança e conexões das ilhas'
+    ],
+    
+    programs: [
+      {
+        id: 'cape-verde-morna-soul-sessions',
+        name: 'Morna Soul Sessions - Heartfelt Music Circles',
+        namePortuguese: 'Sessões de Alma Morna - Círculos de Música do Coração',
+        description: 'Intimate acoustic sessions featuring Cape Verde\'s most emotional music genre, where participants learn traditional morna songs that touch the soul with their melancholic beauty and deep cultural meaning',
+        descriptionPortuguese: 'Sessões acústicas íntimas apresentando o gênero musical mais emocional de Cabo Verde, onde os participantes aprendem canções tradicionais de morna que tocam a alma com sua beleza melancólica e significado cultural profundo',
+        type: 'cultural_workshop',
+        targetAudience: ['Music lovers', 'Cape Verdean heritage individuals', 'Cultural enthusiasts', 'Musicians seeking soulful expression'],
+        duration: 'Weekly ongoing sessions',
+        cost: '£25 per session / £80 per month',
+        schedule: 'Thursday evenings (7:00-9:00 PM)',
+        maxParticipants: 20,
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'morna@capeverdecultural.co.uk'
+      },
+      {
+        id: 'cape-verde-coladeira-dance-celebration',
+        name: 'Coladeira Dance Celebration - Joyful Island Rhythms',
+        namePortuguese: 'Celebração de Dança Coladeira - Ritmos Alegres das Ilhas',
+        description: 'High-energy dance sessions teaching the infectious rhythms of Coladeira, Cape Verde\'s most joyful music that brings communities together in celebration with upbeat melodies and energetic movements',
+        descriptionPortuguese: 'Sessões de dança de alta energia ensinando os ritmos contagiantes da Coladeira, a música mais alegre de Cabo Verde que une comunidades em celebração com melodias animadas e movimentos energéticos',
+        type: 'cultural_workshop',
+        targetAudience: ['Dance enthusiasts', 'Community celebration lovers', 'Fitness seekers', 'Cultural dancers'],
+        duration: 'Bi-weekly dance parties',
+        cost: '£20 per session / £60 per month',
+        schedule: 'Saturday evenings (6:00-8:30 PM)',
+        maxParticipants: 35,
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'coladeira@capeverdecultural.co.uk'
+      },
+      {
+        id: 'cape-verde-cachupa-cooking-culture',
+        name: 'Cachupa Cooking Culture - Heart of Cape Verdean Food',
+        namePortuguese: 'Cultura Culinária da Cachupa - Coração da Comida Cabo-verdiana',
+        description: 'Discover the soul of Cape Verdean cuisine through hands-on Cachupa cooking workshops, learning to prepare the national dish that brings families together with its incredible one-pot meal traditions and island flavors',
+        descriptionPortuguese: 'Descubra a alma da culinária cabo-verdiana através de workshops práticos de culinária Cachupa, aprendendo a preparar o prato nacional que une famílias com suas incríveis tradições de refeições numa panela e sabores das ilhas',
+        type: 'cultural_workshop',
+        targetAudience: ['Food enthusiasts', 'Cultural cooking lovers', 'Cape Verdean families', 'Community meal organizers'],
+        duration: 'Monthly intensive workshops',
+        cost: '£45 per workshop (includes ingredients)',
+        schedule: 'Second Sunday of each month (2:00-6:00 PM)',
+        maxParticipants: 16,
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'cachupa@capeverdecultural.co.uk'
+      },
+      {
+        id: 'cape-verde-batuko-womens-circles',
+        name: 'Batuko Women\'s Music Circles - Vocal Harmonies & Sisterhood',
+        namePortuguese: 'Círculos Femininos de Batuko - Harmonias Vocais e Irmandade',
+        description: 'Traditional women\'s music circles featuring Cape Verde\'s powerful Batuko tradition, where women come together to create incredible vocal harmonies, share stories, and maintain cultural bonds through music',
+        descriptionPortuguese: 'Círculos tradicionais de música feminina apresentando a poderosa tradição Batuko de Cabo Verde, onde mulheres se reúnem para criar harmonias vocais incríveis, compartilhar histórias e manter laços culturais através da música',
+        type: 'cultural_workshop',
+        targetAudience: ['Women of all ages', 'Cape Verdean heritage women', 'Vocal harmony enthusiasts', 'Cultural tradition keepers'],
+        duration: 'Monthly women\'s gatherings',
+        cost: '£15 per session / £50 per quarter',
+        schedule: 'Third Saturday of each month (3:00-5:30 PM)',
+        maxParticipants: 25,
+        prerequisites: ['Women-only sessions', 'Respectful cultural appreciation'],
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'batuko@capeverdecultural.co.uk'
+      },
+      {
+        id: 'cape-verde-funana-accordion-energy',
+        name: 'Funaná Accordion Energy - High-Spirited Island Music',
+        namePortuguese: 'Energia do Acordeão Funaná - Música Animada das Ilhas',
+        description: 'Learn the high-energy accordion music that gets Cape Verdean communities moving, featuring traditional Funaná rhythms that create infectious joy and bring people together in spirited musical celebrations',
+        descriptionPortuguese: 'Aprenda a música energética de acordeão que faz as comunidades cabo-verdianas se moverem, apresentando ritmos tradicionais de Funaná que criam alegria contagiante e unem pessoas em celebrações musicais animadas',
+        type: 'cultural_workshop',
+        targetAudience: ['Accordion players', 'Traditional music lovers', 'Cultural enthusiasts', 'Community musicians'],
+        duration: '8-week intensive courses',
+        cost: '£35 per session / £250 per course',
+        schedule: 'Wednesday evenings (7:30-9:00 PM)',
+        maxParticipants: 12,
+        prerequisites: ['Basic accordion knowledge helpful but not required'],
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'funana@capeverdecultural.co.uk'
+      },
+      {
+        id: 'cape-verde-island-festival-celebration',
+        name: 'Cape Verdean Island Festival - Community Spirit Celebration',
+        namePortuguese: 'Festival das Ilhas Cabo-verdianas - Celebração do Espírito Comunitário',
+        description: 'Annual carnival-style celebration showcasing the incredible community spirit that makes Cape Verdean culture so special, featuring live music, traditional dancing, island food, and the warmth of Cape Verdean hospitality',
+        descriptionPortuguese: 'Celebração anual estilo carnaval mostrando o espírito comunitário incrível que torna a cultura cabo-verdiana tão especial, apresentando música ao vivo, danças tradicionais, comida das ilhas e o calor da hospitalidade cabo-verdiana',
+        type: 'event',
+        targetAudience: ['Entire Cape Verdean community', 'Cultural enthusiasts', 'Families', 'Music and dance lovers'],
+        duration: 'Annual weekend festival',
+        cost: '£15 adults / £5 children / £35 families',
+        schedule: 'Annual (July - Independence Day weekend)',
+        maxParticipants: 500,
+        certification: false,
+        registrationRequired: false,
+        contactEmail: 'festival@capeverdecultural.co.uk'
+      },
+      {
+        id: 'cape-verde-creole-language-heart',
+        name: 'Cape Verdean Creole Language Circle - Speaking from the Heart',
+        namePortuguese: 'Círculo de Língua Crioula Cabo-verdiana - Falando do Coração',
+        description: 'Warm and welcoming language circles where participants learn Cape Verdean Creole in a supportive community environment, celebrating the unique linguistic heritage that connects island hearts worldwide',
+        descriptionPortuguese: 'Círculos de língua calorosos e acolhedores onde os participantes aprendem o crioulo cabo-verdiano num ambiente comunitário de apoio, celebrando a herança linguística única que conecta corações das ilhas no mundo todo',
+        type: 'language_course',
+        targetAudience: ['Language learners', 'Cape Verdean heritage individuals', 'Cultural enthusiasts', 'Community connectors'],
+        duration: '12-week conversational courses',
+        cost: '£120 per course',
+        schedule: 'Tuesday evenings (6:30-8:00 PM)',
+        maxParticipants: 18,
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'creole@capeverdecultural.co.uk'
+      }
+    ],
+    
+    openingHours: {
+      monday: 'Closed',
+      tuesday: '18:00-21:00', // Creole language circles
+      wednesday: '19:00-21:30', // Funaná accordion workshops
+      thursday: '19:00-21:00', // Morna soul sessions
+      friday: '18:00-22:00', // Social events and community gatherings
+      saturday: '14:00-20:30', // Coladeira dance parties and cultural activities
+      sunday: '13:00-18:00' // Cachupa cooking and family programs
+    },
+    
+    director: {
+      name: process.env.NEXT_PUBLIC_CAPE_VERDE_DIRECTOR || 'Maria Antónia Fernandes',
+      title: 'Cultural Director & Master Morna Singer',
+      titlePortuguese: 'Diretora Cultural e Cantora Mestra de Morna',
+      email: 'maria@capeverdecultural.co.uk',
+      bio: 'Renowned Cape Verdean cultural ambassador and master Morna singer, dedicated to preserving the heartfelt musical traditions and community spirit that make Cape Verdean culture so beautifully unique and welcoming'
+    },
+    
+    capacity: 120,
+    facilities: [
+      'Intimate acoustic performance space for Morna sessions',
+      'Large dance hall with traditional music sound system',
+      'Community kitchen for Cachupa cooking workshops',
+      'Cultural exhibition space showcasing island heritage',
+      'Traditional crafts workshop room with artisan tools',
+      'Cozy storytelling corner for cultural sharing',
+      'Musical instrument collection including accordion and cavaquinho',
+      'Community gathering hall for festivals and celebrations',
+      'Outdoor terrace for island-style social events'
+    ],
+    languages: ['Cape Verdean Creole', 'Portuguese', 'English'],
+    
+    partnerships: [
+      'Cape Verde Embassy London',
+      'Stockwell Portuguese Community Centre',
+      'London Cape Verdean Association',
+      'Traditional Music Preservation Society',
+      'Island Cultural Heritage Foundation',
+      'Cape Verdean Musicians Network UK',
+      'Community Arts Partnership London'
+    ],
+    accreditation: [
+      'UK Registered Cultural Organization',
+      'Cape Verdean Ministry of Culture Partner',
+      'Traditional Arts Preservation Certificate'
+    ],
+    
+    socialMedia: {
+      facebook: process.env.NEXT_PUBLIC_CAPE_VERDE_FACEBOOK || 'https://facebook.com/CapeVerdeCulturalLondon',
+      instagram: process.env.NEXT_PUBLIC_CAPE_VERDE_INSTAGRAM || 'https://instagram.com/capeverde_music_soul',
+      youtube: process.env.NEXT_PUBLIC_CAPE_VERDE_YOUTUBE || 'https://youtube.com/CapeVerdeanMusicSoul'
+    },
+    
+    isActive: true,
+    establishedYear: 2010,
+    lastUpdated: '2024-08-22',
+    description: 'Heartwarming Cape Verdean cultural center celebrating the soul-stirring music, joyful dance, incredible community spirit, and beautiful island traditions that make Cape Verdean culture so welcoming and emotionally rich. A place where Morna touches hearts, Coladeira brings joy, and island hospitality creates lasting cultural connections.',
+    descriptionPortuguese: 'Centro cultural cabo-verdiano emocionante celebrando a música comovente, dança alegre, espírito comunitário incrível e belas tradições das ilhas que tornam a cultura cabo-verdiana tão acolhedora e emocionalmente rica. Um lugar onde a Morna toca corações, a Coladeira traz alegria e a hospitalidade das ilhas cria conexões culturais duradouras.'
+  },
+
+  {
     id: 'centro-cultural-angolano-london',
     name: process.env.NEXT_PUBLIC_ANGOLA_CENTER_NAME || 'Centro Cultural Angolano de Londres',
     namePortuguese: process.env.NEXT_PUBLIC_ANGOLA_CENTER_NAME_PT || 'Centro Cultural Angolano de Londres',
@@ -539,24 +764,34 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     website: process.env.NEXT_PUBLIC_ANGOLA_CENTER_WEBSITE || 'https://centroangolalondres.co.uk',
     
     services: [
-      'Luxury Angolan cultural events',
-      'Elite business networking (Oil & Gas)',
-      'Diamond industry connections',
-      'High-end Angolan restaurant partnerships',
-      'Private club memberships',
-      'Sophisticated Portuguese language refinement',
-      'Exclusive Angolan art exhibitions',
-      'Premium cultural consultancy services'
+      'Sensual Kizomba Social Dancing - Magnetic connection nights with live music',
+      'Vibrant Semba Community Dancing - High-energy traditional celebrations',
+      'Electric Kuduro Urban Dance Parties - Modern Angolan street culture',
+      'Incredible Angolan Music Festivals - Traditional to contemporary sounds',
+      'Amazing Muamba de Galinha Cooking Experiences - Family feast traditions',
+      'Angolan Nightlife Tours - Discover London\'s vibrant Angolan social scene',
+      'Traditional Drumming Circles - Powerful community percussion experiences',
+      'Bold Street Food Journeys - Urban flavors and authentic market tours',
+      'Luxury Angolan cultural events and sophisticated networking',
+      'Elite business networking (Oil & Gas) and diamond industry connections',
+      'High-end Angolan restaurant partnerships and private dining experiences',
+      'Exclusive Angolan art exhibitions and contemporary cultural showcases',
+      'Premium cultural consultancy services and heritage preservation'
     ],
     servicesPortuguese: [
-      'Eventos culturais angolanos de luxo',
-      'Networking empresarial de elite (Petróleo & Gás)',
-      'Conexões da indústria de diamantes',
-      'Parcerias com restaurantes angolanos de alta classe',
-      'Membros de clubes privados',
-      'Refinamento sofisticado da língua portuguesa',
-      'Exposições exclusivas de arte angolana',
-      'Serviços de consultoria cultural premium'
+      'Dança Social Sensual de Kizomba - Noites de conexão magnética com música ao vivo',
+      'Dança Comunitária Vibrante de Semba - Celebrações tradicionais de alta energia',
+      'Festas Urbanas Elétricas de Kuduro - Cultura de rua angolana moderna',
+      'Festivais de Música Angolana Incríveis - Sons tradicionais a contemporâneos',
+      'Experiências Culinárias Incríveis de Muamba de Galinha - Tradições de festa familiar',
+      'Tours da Vida Noturna Angolana - Descubra a vibrante cena social angolana de Londres',
+      'Círculos de Percussão Tradicionais - Experiências poderosas de percussão comunitária',
+      'Jornadas de Comida de Rua Ousada - Sabores urbanos e tours autênticos de mercado',
+      'Eventos culturais angolanos de luxo e networking sofisticado',
+      'Networking empresarial de elite (Petróleo & Gás) e conexões da indústria de diamantes',
+      'Parcerias com restaurantes angolanos de alta classe e experiências de jantar privadas',
+      'Exposições exclusivas de arte angolana e showcases culturais contemporâneos',
+      'Serviços de consultoria cultural premium e preservação do patrimônio'
     ],
     
     programs: [
@@ -626,6 +861,75 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
         certification: false,
         registrationRequired: true,
         contactEmail: 'society@centroangolalondres.co.uk'
+      },
+      
+      // NEW MAGNETIC ANGOLAN CULTURAL PROGRAMS
+      {
+        id: 'angola-magnetic-kizomba-series',
+        name: 'Sensual Kizomba Mastery - Magnetic Connection Series',
+        namePortuguese: 'Maestria de Kizomba Sensual - Série de Conexão Magnética',
+        description: 'Master the art of sensual kizomba dancing through this magnetic series that teaches the romantic partner dance creating incredible connections. Professional instruction in Angola\'s most captivating cultural export.',
+        descriptionPortuguese: 'Domine a arte da dança sensual de kizomba através desta série magnética que ensina a dança romântica de parceiros criando conexões incríveis. Instrução profissional na exportação cultural mais cativante de Angola.',
+        type: 'cultural_workshop',
+        targetAudience: ['Dance enthusiasts', 'Couples', 'Singles seeking connection', 'Cultural explorers'],
+        duration: '8-week progressive series',
+        cost: '£120 per series (£15 per class)',
+        schedule: 'Weekly evening classes (2 hours each)',
+        maxParticipants: 30,
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'kizomba@centroangolalondres.co.uk'
+      },
+      
+      {
+        id: 'angola-vibrant-music-nights',
+        name: 'Vibrant Angolan Music Nights - From Traditional to Modern',
+        namePortuguese: 'Noites de Música Angolana Vibrante - Do Tradicional ao Moderno',
+        description: 'Monthly celebration of Angola\'s incredible musical heritage featuring live performances of semba, kuduro, afrobeat fusion, and contemporary Angolan artists. Experience the sounds that make Angolan culture absolutely magnetic.',
+        descriptionPortuguese: 'Celebração mensal do incrível patrimônio musical de Angola com apresentações ao vivo de semba, kuduro, fusão afrobeat e artistas angolanos contemporâneos. Experimente os sons que tornam a cultura angolana absolutamente magnética.',
+        type: 'event',
+        targetAudience: ['Music lovers', 'Angolan community', 'Cultural enthusiasts', 'All ages welcome'],
+        duration: 'Monthly events',
+        cost: '£25 per person',
+        schedule: 'Last Saturday of each month (7pm-11pm)',
+        maxParticipants: 80,
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'music@centroangolalondres.co.uk'
+      },
+      
+      {
+        id: 'angola-incredible-food-culture',
+        name: 'Incredible Angolan Food Culture Workshop',
+        namePortuguese: 'Workshop de Cultura Alimentar Angolana Incrível',
+        description: 'Learn to prepare amazing Angolan dishes including muamba de galinha, funge, calulu, and traditional accompaniments. Discover the bold flavors and rich food traditions that bring Angolan families together.',
+        descriptionPortuguese: 'Aprenda a preparar pratos angolanos incríveis incluindo muamba de galinha, funge, calulu e acompanhamentos tradicionais. Descubra os sabores ousados e as ricas tradições alimentares que unem as famílias angolanas.',
+        type: 'cultural_workshop',
+        targetAudience: ['Food enthusiasts', 'Cultural learners', 'Angolan heritage families', 'Community members'],
+        duration: 'Monthly 4-hour workshops',
+        cost: '£45 per workshop',
+        schedule: 'Second Sunday of each month (2pm-6pm)',
+        maxParticipants: 16,
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'cuisine@centroangolalondres.co.uk'
+      },
+      
+      {
+        id: 'angola-urban-culture-experience',
+        name: 'Angolan Urban Culture & Street Art Experience',
+        namePortuguese: 'Experiência de Cultura Urbana e Arte de Rua Angolana',
+        description: 'Explore modern Angola\'s vibrant urban culture through street art workshops, contemporary music, and cultural storytelling. Connect with London\'s young Angolan artists and creators shaping contemporary culture.',
+        descriptionPortuguese: 'Explore a vibrante cultura urbana da Angola moderna através de workshops de arte de rua, música contemporânea e narrativas culturais. Conecte-se com jovens artistas e criadores angolanos de Londres moldando a cultura contemporânea.',
+        type: 'cultural_workshop',
+        targetAudience: ['Young adults', 'Artists', 'Urban culture enthusiasts', 'Creative professionals'],
+        duration: 'Bi-monthly weekend workshops',
+        cost: '£35 per workshop',
+        schedule: 'Every other Saturday (1pm-5pm)',
+        maxParticipants: 20,
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'urban@centroangolalondres.co.uk'
       }
     ],
     

@@ -1,8 +1,7 @@
 {
   "framework": "nextjs",
-  "installCommand": "cd web-app && npm ci --ignore-scripts",
-  "buildCommand": "cd web-app && npm run build",
-  "outputDirectory": "web-app/.next",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
   "headers": [
     {
       "source": "/(.*)",

@@ -22,11 +22,35 @@
   "marketing.pricing.comparison.lusotown": "Instant Portuguese cultural connection",
   "marketing.pricing.value_props.events": "Exciting Portuguese cultural events nationwide",
   "marketing.pricing.value_props.network": "Thriving Portuguese professional community",
-  "marketing.pricing.value_props.matching": "Cultural connection & friendship matching"
+  "marketing.pricing.value_props.matching": "Cultural connection & friendship matching",
   "marketing.events.santos_populares": "Santos Populares Celebration",
   "marketing.events.fado_nights": "Soulful Fado Nights & Cultural Celebrations Nationwide",
   "marketing.events.business_networking": "Portuguese Professional Networking",
   "marketing.events.wine_tasting": "Portuguese Wine Discovery",
+  "marketing.events.cape_verdean_morna_nights": "Cape Verdean Morna Soul Sessions - Heartfelt Music",
+  "marketing.events.coladeira_dance_celebration": "Coladeira Dance Celebration - Joyful Island Rhythms",
+  "marketing.events.cachupa_cooking_culture": "Cachupa Cooking Culture - Heart of Cape Verdean Food",
+  "marketing.events.batuko_womens_circles": "Batuko Women's Music Circles - Vocal Harmonies",
+  "marketing.events.funana_accordion_energy": "Funaná Accordion Energy - High-Spirited Music",
+  "marketing.events.cape_verdean_festival": "Cape Verdean Island Festival - Community Spirit",
+  "marketing.events.creole_language_circles": "Cape Verdean Creole Language Circles",
+  
+  "cape_verde.culture.title": "Cape Verdean Cultural Heritage - Music & Soul",
+  "cape_verde.culture.description": "Experience the heartfelt beauty of Cape Verdean culture through soul-stirring Morna music, energetic Coladeira celebrations, incredible community spirit, and amazing island food traditions. Cape Verde's unique blend of African, Portuguese, and island influences creates a culture of warmth, hospitality, and emotional depth.",
+  "cape_verde.music.morna.title": "Morna - Cape Verde's Blues",
+  "cape_verde.music.morna.description": "Discover Morna, Cape Verde's most emotional music genre - heartfelt, melancholic songs that touch the soul with their beautiful musical storytelling and deep cultural meaning. Like the blues, Morna expresses the deepest emotions of island life.",
+  "cape_verde.music.coladeira.title": "Coladeira - Joyful Celebration",
+  "cape_verde.music.coladeira.description": "Join the infectious joy of Coladeira dance - Cape Verde's most upbeat music that brings communities together in celebration with energetic rhythms and movements that make everyone smile and connect.",
+  "cape_verde.music.funana.title": "Funaná - High-Energy Island Music", 
+  "cape_verde.music.funana.description": "Experience the high-spirited accordion music of Funaná that gets Cape Verdean communities moving with its infectious energy and traditional rhythms that create pure joy.",
+  "cape_verde.music.batuko.title": "Batuko - Women's Musical Circles",
+  "cape_verde.music.batuko.description": "Join the powerful tradition of Batuko - women's music circles featuring incredible vocal harmonies, storytelling, and cultural bonding through the beautiful art of collective singing.",
+  "cape_verde.food.cachupa.title": "Cachupa - Heart of Cape Verdean Food",
+  "cape_verde.food.cachupa.description": "Learn to prepare Cachupa, Cape Verde's national dish that brings families together - an incredible one-pot meal with rich island flavors that represents the heart of Cape Verdean hospitality and food culture.",
+  "cape_verde.community.spirit.title": "Amazing Community Spirit",
+  "cape_verde.community.spirit.description": "Experience the incredible warmth and welcoming nature that makes Cape Verdean culture so special - where island hospitality creates lasting bonds and everyone is family.",
+  "cape_verde.language.creole.title": "Cape Verdean Creole - Speaking from the Heart",
+  "cape_verde.language.creole.description": "Connect through Cape Verdean Creole, the unique linguistic heritage that carries the soul of the islands and connects Cape Verdean hearts worldwide with its beautiful expressions and cultural depth.",
   "nav.tours": "Tours",
   "nav.transport": "UK Transport",
   "nav.services": "Services",
@@ -361,7 +385,7 @@
   "saudade.conversation_starters.cooking": "What Portuguese dish most reminds you of home?",
   "saudade.conversation_starters.general": "How do you experience saudade living in the UK?",
   "saudade.conversation_starters.family": "How do you stay connected with family back home?",
-  "saudade.conversation_starters.traditions": "Which Portuguese traditions do you maintain living in the UK?"
+  "saudade.conversation_starters.traditions": "Which Portuguese traditions do you maintain living in the UK?",
   
   "saudade.matches.title": "Saudade-Based Matches",
   "saudade.matches.subtitle": "Find authentic emotional connections",
@@ -983,6 +1007,55 @@
   "angola.events.reserve_place": "Reserve Your Place",
   "angola.events.join_waitlist": "Join Waitlist",
   "angola.events.fully_booked": "Fully Booked",
+  
+  "angola.culture.kizomba.title": "Sensual Kizomba Social Dancing",
+  "angola.culture.kizomba.subtitle": "Magnetic Connection Night",
+  "angola.culture.kizomba.description": "Experience the absolutely magnetic allure of kizomba - Angola's sensual partner dance that creates incredible connections",
+  "angola.culture.kizomba.highlights": "Live musicians, professional instruction, sensual partner dancing, romantic atmosphere",
+  
+  "angola.culture.semba.title": "Vibrant Semba Community Dancing", 
+  "angola.culture.semba.subtitle": "Energy That Gets Everyone Moving",
+  "angola.culture.semba.description": "Feel the incredible energy of semba - Angola's original community dance that brings people together in celebration",
+  "angola.culture.semba.highlights": "Traditional drumming, community dancing, cultural presentations, authentic food",
+  
+  "angola.culture.kuduro.title": "Electric Kuduro Urban Dance Party",
+  "angola.culture.kuduro.subtitle": "High-Energy Movement & Modern Angola", 
+  "angola.culture.kuduro.description": "Experience the electric energy of kuduro - Angola's high-octane urban dance that gets entire communities moving",
+  "angola.culture.kuduro.highlights": "Live DJ sets, athletic dance moves, competitions, urban street food, visual projections",
+  
+  "angola.culture.music_festival.title": "Incredible Angolan Music Festival",
+  "angola.culture.music_festival.subtitle": "From Traditional to Contemporary Sounds",
+  "angola.culture.music_festival.description": "Immerse yourself in the incredible diversity of Angolan music - from traditional drumming to contemporary afrobeat fusion",
+  "angola.culture.music_festival.highlights": "Multiple stages, live performances, instrument workshops, food vendors, art installations",
+  
+  "angola.culture.muamba.title": "Amazing Muamba de Galinha Experience",
+  "angola.culture.muamba.subtitle": "The Heart of Angolan Family Feasting", 
+  "angola.culture.muamba.description": "Experience the incredible flavors of muamba de galinha - Angola's beloved national dish that brings families together",
+  "angola.culture.muamba.highlights": "Authentic cooking instruction, traditional techniques, family-style dining, take-home recipes",
+  
+  "angola.culture.nightlife.title": "Angolan Nightlife Tour",
+  "angola.culture.nightlife.subtitle": "Discover London's Vibrant Angolan Social Scene",
+  "angola.culture.nightlife.description": "Explore the incredible energy of London's Angolan nightlife scene with guided tours of authentic venues",
+  "angola.culture.nightlife.highlights": "Multiple venues, traditional drinks, live music, community leaders, VIP access",
+  
+  "angola.culture.drumming.title": "Angolan Community Drumming Circle",
+  "angola.culture.drumming.subtitle": "Powerful Traditional Percussion",
+  "angola.culture.drumming.description": "Feel the incredible power of traditional Angolan drumming in this community percussion experience",
+  "angola.culture.drumming.highlights": "Master drummers, traditional instruments, group improvisation, cultural storytelling",
+  
+  "angola.culture.street_food.title": "Angolan Street Food Journey", 
+  "angola.culture.street_food.subtitle": "Bold Urban Flavors & Community Culture",
+  "angola.culture.street_food.description": "Discover the incredible bold flavors of Angolan street food culture through London's African markets",
+  "angola.culture.street_food.highlights": "Market tours, authentic vendors, bold spices, traditional drinks, cultural stories",
+  
+  "angola.culture.magnetic_appeal": "Magnetic Cultural Appeal",
+  "angola.culture.irresistible_experience": "Irresistible Experience",
+  "angola.culture.incredible_energy": "Incredible Energy",
+  "angola.culture.amazing_flavors": "Amazing Flavors",
+  "angola.culture.vibrant_community": "Vibrant Community",
+  "angola.culture.bold_traditions": "Bold Traditions",
+  "angola.culture.sensual_dancing": "Sensual Dancing",
+  "angola.culture.rich_heritage": "Rich Heritage",
   "conversion.subscription.ambassador.period": "/month",
   "conversion.subscription.ambassador.savings": "Save 17%",
   "conversion.subscription.ambassador.description": "Ideal for active community builders",
@@ -1076,7 +1149,7 @@
   "user-journey.optimization.description": "Discover personalized suggestions based on your interests, location, and community engagement. Find the perfect events, services, and connections for your Portuguese journey across the UK.",
   "user-journey.cta.title": "Ready to Transform Your Social Life?",
   "user-journey.cta.description": "Join 750+ Portuguese speakers creating incredible memories and lifelong friendships across the UK. Your amazing social adventure starts today!",
-  "user-journey.cta.browse-events": "Discover Adventures"
+  "user-journey.cta.browse-events": "Discover Adventures",
   "user-journey.cta.upgrade-premium": "Upgrade to Premium",
   "user-journey.view-full": "View Full Journey",
 
@@ -1321,7 +1394,7 @@
   "how-it-works.step2.subtitle": "Descubra Locais Autênticos do Reino Unido",
   "how-it-works.step3.title": "Meet at Authentic Places",
   "how-it-works.step3.subtitle": "Encontre-se em Locais Autênticos",
-  "how-it-works.step4.title": "Build Your UK Portuguese Network"
+  "how-it-works.step4.title": "Build Your UK Portuguese Network",
   "how-it-works.step4.subtitle": "Construa a Sua Rede Portuguesa no Reino Unido",
   "how-it-works.step5.title": "Build Cultural Networks",
   "how-it-works.step5.subtitle": "Construa Redes Culturais",
@@ -1353,7 +1426,7 @@
   "what-you-can-do.feed.features": "Live Cultural Updates • Celebration Stories • Portuguese Business Discoveries • Community Victory Moments",
 
   "what-you-can-do.favorites.title": "🎆 Curate Your Portuguese UK Journey",
-  "what-you-can-do.favorites.description": "Create your personalized treasure map of Portuguese experiences across the UK! Save that incredible bakery that makes you feel like home, bookmark soul-stirring Fado nights, remember magical cultural moments across Britain that made your heart sing. Build your collection of Portuguese joy!"
+  "what-you-can-do.favorites.description": "Create your personalized treasure map of Portuguese experiences across the UK! Save that incredible bakery that makes you feel like home, bookmark soul-stirring Fado nights, remember magical cultural moments across Britain that made your heart sing. Build your collection of Portuguese joy!",
   "what-you-can-do.favorites.cta": "My UK Collection",
   "what-you-can-do.favorites.types": "UK Portuguese Gems • Cultural Celebrations Nationwide • Community Businesses • Magical UK Memories",
 
@@ -1375,7 +1448,7 @@
   "host-with-us.cultural.title": "Cultural Events & Experiences",
   "host-with-us.cultural.description": "Share Portuguese heritage through cooking classes (Cataplana & Pastéis workshops), Fado nights, Santos Populares celebrations, traditional crafts workshops, and cultural experiences across the UK. Preserve our culture while earning revenue - Unidos pela Língua.",
   "host-with-us.cultural.cta": "Host Cultural Events",
-  "host-with-us.cultural.examples": "Cataplana Workshops • Fado Nights • Santos Populares • Tertúlias • Convívios • Festa Junina",
+  "host-with-us.cultural.examples": "Cataplana Workshops • Fado Nights • Santos Populares • Morna Soul Sessions • Coladeira Dance Parties • Cachupa Cooking • Batuko Women's Circles • Funaná Accordion • Tertúlias • Convívios • Festa Junina",
 
   "host-with-us.business.title": "Portuguese Business Promotion",
   "host-with-us.business.description": "LusoTown connects your Portuguese business, restaurant, shop, or service with customers who share your heritage and values. Build lasting relationships with the Portuguese community through our platform.",
@@ -2430,9 +2503,8 @@
   "community_feed.cta.description": "Share your incredible stories, connect with amazing fellow Portuguese speakers, and become part of the UK's most exciting and vibrant Portuguese social community!",
   "community_feed.cta.join_button": "Join Community", 
   "community_feed.cta.browse_button": "Explore Events",
-
   "students.title": "Portuguese Students in the UK",
-  "students.subtitle": "Your amazing support network connecting Portuguese-speaking students across UK universities with culture, community, and success!"
+  "students.subtitle": "Your amazing support network connecting Portuguese-speaking students across UK universities with culture, community, and success!",
   "students.stats.title": "Portuguese Students in the UK",
   "students.stats.total_students": "Portuguese Students",
   "students.stats.universities": "Partner Universities",
