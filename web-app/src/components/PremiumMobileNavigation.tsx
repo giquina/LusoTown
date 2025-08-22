@@ -15,13 +15,13 @@ import {
   ChevronRightIcon,
   SparklesIcon,
   GlobeEuropeAfricaIcon,
-  CrownIcon,
+  TrophyIcon as CrownIcon,
   StarIcon,
   TrophyIcon,
   FireIcon,
   BoltIcon,
-  DiamondIcon,
-  GemIcon
+  BeakerIcon as DiamondIcon,
+  CubeIcon as GemIcon
 } from '@heroicons/react/24/outline';
 import {
   HomeIcon as HomeSolidIcon,

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   SparklesIcon,
-  CrownIcon,
+  TrophyIcon as CrownIcon,
   HeartIcon,
   StarIcon,
   GlobeEuropeAfricaIcon,
@@ -17,8 +17,8 @@ import {
   TrophyIcon,
   FireIcon,
   BoltIcon,
-  DiamondIcon,
-  GemIcon
+  BeakerIcon as DiamondIcon,
+  CubeIcon as GemIcon
 } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/context/LanguageContext';
 import { EliteMobileCard, LuxuryMobileButton, LuxuryMobileInput, QuickActionsMenu, LuxuryStatusIndicator } from '@/components/LuxuryMobileComponents';

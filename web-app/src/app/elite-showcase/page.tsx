@@ -28,8 +28,8 @@ import {
   StarIcon,
   HeartIcon,
   SparklesIcon,
-  CrownIcon,
-  GemIcon
+  TrophyIcon as CrownIcon,
+  BeakerIcon as GemIcon
 } from '@heroicons/react/24/outline'
 
 export default function EliteShowcasePage() {
