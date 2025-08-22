@@ -96,6 +96,7 @@ const nextConfig = {
     ];
   },
   experimental: {
+    esmExternals: 'loose',
     scrollRestoration: true,
     optimizePackageImports: ['@heroicons/react', 'framer-motion'],
     turbo: {
