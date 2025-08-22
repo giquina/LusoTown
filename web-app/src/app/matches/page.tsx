@@ -226,7 +226,7 @@ function MatchesContent() {
 
     // If user is not logged in, redirect to signup
     if (!isLoggedIn) {
-      window.location.href = ROUTES.signup + '?redirect=' + encodeURIComponent(window.location.pathname);
+      window.location.href = `${ROUTES.signup  }?redirect=${  encodeURIComponent(window.location.pathname)}`;
       return;
     }
 
@@ -280,7 +280,7 @@ function MatchesContent() {
 
     // If user is not logged in, redirect to signup (but allow a few previews first)
     if (!isLoggedIn && currentProfileIndex >= 2) {
-      window.location.href = ROUTES.signup + '?redirect=' + encodeURIComponent(window.location.pathname);
+      window.location.href = `${ROUTES.signup  }?redirect=${  encodeURIComponent(window.location.pathname)}`;
       return;
     }
 
@@ -855,10 +855,10 @@ function MatchesContent() {
                         )
                       }
                       className={
-                        "px-3 py-1 rounded-full text-xs font-medium border transition-colors " +
-                        (active
+                        `px-3 py-1 rounded-full text-xs font-medium border transition-colors ${ 
+                        active
                           ? "bg-primary-600 text-white border-primary-600"
-                          : "bg-white text-primary-700 border-primary-200 hover:bg-primary-50")
+                          : "bg-white text-primary-700 border-primary-200 hover:bg-primary-50"}`
                       }
                       aria-pressed={active}
                     >

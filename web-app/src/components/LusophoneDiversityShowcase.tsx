@@ -245,17 +245,17 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
     ],
     culturalContributions: {
       music:
-        "Samba schools, Bossa Nova performances, Brazilian jazz fusion, Forró dance events",
+        "High-energy samba schools, smooth Bossa Nova jam sessions, electrifying funk carioca nights, infectious forró dance parties, Brazilian jazz fusion concerts",
       musicPortuguese:
-        "Escolas de samba, performances de Bossa Nova, fusão de jazz brasileiro, eventos de dança Forró",
+        "Escolas de samba cheias de energia, jam sessions suaves de Bossa Nova, noites eletrizantes de funk carioca, festas de forró contagiosas, concertos de fusão de jazz brasileiro",
       cuisine:
-        "Brazilian steakhouses, açaí bars, traditional feijoada restaurants, Brazilian street food",
+        "Vibrant Brazilian barbecue gatherings, refreshing açaí social meetups, hearty feijoada community dinners, exciting Brazilian street food markets",
       cuisinePortuguese:
-        "Churrascarias brasileiras, bares de açaí, restaurantes tradicionais de feijoada, comida de rua brasileira",
+        "Churrascos brasileiros vibrantes, encontros sociais refrescantes de açaí, jantares comunitários fartos de feijoada, mercados empolgantes de comida de rua brasileira",
       traditions:
-        "Carnival celebrations, Festa Junina parties, Capoeira demonstrations, Brazilian football gatherings",
+        "Explosive carnival street parties, joyful Festa Junina celebrations, dynamic capoeira circles, passionate football watch parties that bring everyone together",
       traditionsPortuguese:
-        "Celebrações de Carnaval, festas de Festa Junina, demonstrações de Capoeira, encontros de futebol brasileiro",
+        "Festas de carnaval explosivas nas ruas, celebrações alegres de Festa Junina, rodas dinâmicas de capoeira, festas apaixonadas de futebol que unem todos",
       literature:
         "Paulo Coelho book clubs, Brazilian poetry nights, contemporary Brazilian literature events",
       literaturePortuguese:
@@ -343,13 +343,13 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
     ],
     culturalContributions: {
       music:
-        "Kizomba dance classes, Semba music performances, Angolan gospel choirs, traditional percussion groups",
+        "Sensual kizomba dance workshops, rhythmic semba music nights, soulful gospel celebrations, hypnotic percussion circles, modern afrobeat fusion parties",
       musicPortuguese:
-        "Aulas de dança Kizomba, performances de música Semba, coros gospel angolanos, grupos de percussão tradicional",
+        "Workshops sensuais de dança kizomba, noites rítmicas de música semba, celebrações gospel cheias de alma, círculos de percussão hipnóticos, festas modernas de fusão afrobeat",
       cuisine:
-        "Angolan restaurants serving muamba, calulu, traditional African-Portuguese fusion cuisine",
+        "Flavorful Angolan cooking classes, community muamba sharing dinners, traditional calulu gatherings, African-Portuguese fusion food experiences",
       cuisinePortuguese:
-        "Restaurantes angolanos servindo muamba, calulu, culinária tradicional de fusão africano-portuguesa",
+        "Aulas de culinária angolana saborosas, jantares comunitários de partilha de muamba, encontros tradicionais de calulu, experiências gastronómicas de fusão africano-portuguesa",
       traditions:
         "Traditional Angolan wedding ceremonies, cultural heritage festivals, craft making workshops",
       traditionsPortuguese:
@@ -362,7 +362,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
     londonPresence: {
       years: "35+ years",
       description:
-        "Strong academic and cultural presence, contributing significantly to London's African Portuguese heritage",
+        "Strong cultural presence across the UK, contributing significantly to Britain's African Portuguese heritage through vibrant community celebrations",
       descriptionPortuguese:
         "Forte presença académica e cultural, contribuindo significativamente para o património português africano de Londres",
     },
@@ -423,7 +423,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
         profession: "Community Social Worker",
         professionPortuguese: "Assistente Social Comunitária",
         achievement:
-          "Established support network helping 200+ Mozambican families navigate UK systems while preserving cultural identity",
+          "Established cultural network helping 200+ Mozambican families connect across the UK while celebrating cultural identity through vibrant community gatherings",
         achievementPortuguese:
           "Estabeleceu rede de apoio ajudando 200+ famílias moçambicanas a navegar sistemas do Reino Unido enquanto preserva identidade cultural",
         quote:
@@ -698,13 +698,13 @@ export default function LusophoneDiversityShowcase() {
 
           <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-6 leading-tight">
             {language === "pt"
-              ? "Unidos Pela Língua, Diversificados Pela Cultura"
-              : "United by Language, Diverse in Culture"}
+              ? "Vibrante Diversidade Cultural Lusófona"
+              : "Vibrant Lusophone Cultural Diversity"}
           </h2>
           <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
             {language === "pt"
-              ? "Celebrando a rica diversidade das comunidades lusófonas em Londres - desde Portugal ao Brasil, Angola a Cabo Verde, todas unidas pela língua portuguesa mas únicas nas suas tradições culturais."
-              : "Celebrating the rich diversity of Portuguese-speaking communities in London - from Portugal to Brazil, Angola to Cape Verde, all united by Portuguese language but unique in their cultural traditions."}
+              ? "Descubra a energia pulsante das comunidades lusófonas no Reino Unido - desde noites de fado em Londres até samba no Manchester, kizomba em Birmingham a festivais crioulos em Liverpool. Cada nação traz música, dança, comida e celebrações únicas que conectam corações portugueses."
+              : "Discover the pulsating energy of Portuguese-speaking communities across the UK - from fado nights in London to samba in Manchester, kizomba in Birmingham to Creole festivals in Liverpool. Each nation brings unique music, dance, food and celebrations that connect Portuguese hearts."}
           </p>
         </motion.div>
 
@@ -1234,13 +1234,13 @@ export default function LusophoneDiversityShowcase() {
             <GlobeAltIcon className="w-16 h-16 mx-auto mb-4 opacity-90" />
             <h3 className="text-3xl font-bold mb-4">
               {language === "pt"
-                ? "Celebre a Diversidade Lusófona"
-                : "Celebrate Lusophone Diversity"}
+                ? "Viva a Energia Cultural Lusófona"
+                : "Experience Lusophone Cultural Energy"}
             </h3>
             <p className="text-lg mb-8 opacity-90 max-w-3xl mx-auto">
               {language === "pt"
-                ? "Junte-se à maior comunidade lusófona de Londres. Independentemente do seu país de origem, todos são bem-vindos na nossa família linguística e cultural diversificada."
-                : "Join London's largest Portuguese-speaking community. Regardless of your country of origin, everyone is welcome in our diverse linguistic and cultural family."}
+                ? "Conecte-se através de música, dança, comida incrível e celebrações vibrantes. Do fado ao samba, kizomba ao forró - encontre sua tribo cultural no Reino Unido e celebre a alegria de ser lusófono!"
+                : "Connect through music, dance, amazing food and vibrant celebrations. From fado to samba, kizomba to forró - find your cultural tribe across the UK and celebrate the joy of being Portuguese-speaking!"}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <a

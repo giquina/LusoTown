@@ -180,7 +180,7 @@ export default function LondonToursPage() {
                         <option value="Cultural Tours">{isPortuguese ? "Tours Culturais" : "Cultural Tours"}</option>
                         <option value="Business & Professional">{isPortuguese ? "Negócios & Profissional" : "Business & Professional"}</option>
                         <option value="Professional Networking">{isPortuguese ? "Networking Profissional" : "Professional Networking"}</option>
-                        <option value="Technology & AI">{isPortuguese ? "Tecnologia & IA" : "Technology & AI"}</option>
+                        <option value="Technology & Smart Systems">{isPortuguese ? "Tecnologia & Sistemas Inteligentes" : "Technology & Smart Systems"}</option>
                         <option value="Finance & Investment">{isPortuguese ? "Finanças & Investimento" : "Finance & Investment"}</option>
                         <option value="Social Experiences">{isPortuguese ? "Experiências Sociais" : "Social Experiences"}</option>
                         <option value="Arts & Entertainment">{isPortuguese ? "Arte & Entretenimento" : "Arts & Entertainment"}</option>

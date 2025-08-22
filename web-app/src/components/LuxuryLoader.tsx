@@ -46,7 +46,7 @@ export default function LuxuryLoader({
       const timer = setInterval(() => {
         setDots(prev => {
           if (prev.length >= 3) return "";
-          return prev + ".";
+          return `${prev  }.`;
         });
       }, 500);
       return () => clearInterval(timer);

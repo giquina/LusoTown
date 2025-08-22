@@ -675,7 +675,7 @@ export class LusoBotSession {
 
   private addWelcomeMessage() {
     const welcomeMessage: LusoBotMessage = {
-      id: 'welcome_' + Date.now(),
+      id: `welcome_${  Date.now()}`,
       role: 'assistant',
       content: this.language === 'pt' 
         ? "Olá! Sou o LusoBot, o teu assistente cultural português. Estou aqui para te ajudar com tudo relacionado com a nossa cultura, tradições, comunidade em Londres, e claro, para compreender e apoiar as tuas saudades. Como posso ajudar-te hoje?"
@@ -703,7 +703,7 @@ export class LusoBotSession {
   async sendMessage(content: string): Promise<LusoBotMessage> {
     // Add user message
     const userMessage: LusoBotMessage = {
-      id: 'user_' + Date.now(),
+      id: `user_${  Date.now()}`,
       role: 'user',
       content,
       timestamp: new Date(),

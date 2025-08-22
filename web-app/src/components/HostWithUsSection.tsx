@@ -66,10 +66,10 @@ export default function HostWithUsSection() {
                     Professional Services
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6 flex-grow text-xs sm:text-sm lg:text-base">
-                    AI workshops, business coaching, professional networking events.
+                    Smart technology workshops, business coaching, professional networking events.
                   </p>
                   <div className="text-xs text-gray-500 mb-2 sm:mb-3 lg:mb-4 font-medium">
-                    AI Training • Business Coaching
+                    Smart Technology Training • Business Coaching
                   </div>
                   <a 
                     href="/host?category=professional" 

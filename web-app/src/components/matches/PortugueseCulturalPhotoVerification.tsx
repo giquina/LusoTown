@@ -1061,7 +1061,7 @@ export default function PortugueseCulturalPhotoVerification({
               <li>• {language === 'pt' ? 'Defina configurações de privacidade' : 'Set privacy settings'}</li>
               <li>• {language === 'pt' ? 'Reporte representações culturais falsas' : 'Report false cultural representations'}</li>
               <li>• {language === 'pt' ? 'Respeite a representação cultural' : 'Respect cultural representation'}</li>
-              <li>• {language === 'pt' ? 'Fotos são analisadas por IA, não por humanos' : 'Photos are analyzed by AI, not humans'}</li>
+              <li>• {language === 'pt' ? 'Fotos são analisadas automaticamente, não por humanos' : 'Photos are analyzed automatically, not by humans'}</li>
             </ul>
           </div>
         </div>

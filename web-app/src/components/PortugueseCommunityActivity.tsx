@@ -95,7 +95,7 @@ function generateTrustIndicators(heritage: any): TrustIndicator[] {
       icon: '✅',
       score: 94,
       culturalContext: {
-        en: `Members with genuine ${heritage.identity.name}${heritage.geography.relatedCountries ? '/' + heritage.geography.relatedCountries.map(c => c.name.split(' ')[0]).join('/') : ''} backgrounds`,
+        en: `Members with genuine ${heritage.identity.name}${heritage.geography.relatedCountries ? `/${  heritage.geography.relatedCountries.map(c => c.name.split(' ')[0]).join('/')}` : ''} backgrounds`,
         pt: `Membros com origens genuinamente ${heritage.identity.name.toLowerCase()}s`
       }
     },

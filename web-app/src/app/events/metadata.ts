@@ -4,7 +4,7 @@ import { ROUTES } from '@/config/routes'
 
 export const metadata: Metadata = {
   title: 'Portuguese Events in London | LusoTown - Social Calendar',
-  description: 'Join Portuguese speakers in London for cultural events, business workshops, AI seminars, and social gatherings. Book authentic Portuguese experiences today.',
+  description: 'Join Portuguese speakers in London for cultural events, business workshops, smart technology seminars, and social gatherings. Book authentic Portuguese experiences today.',
   keywords: [
     'portuguese events london',
     'eventos portugueses londres',

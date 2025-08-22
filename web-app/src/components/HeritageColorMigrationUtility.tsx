@@ -214,7 +214,7 @@ function adjustColorBrightness(hexColor: string, percent: number): string {
   // Convert back to hex
   const toHex = (n: number) => {
     const hex = Math.round(n).toString(16)
-    return hex.length === 1 ? '0' + hex : hex
+    return hex.length === 1 ? `0${  hex}` : hex
   }
   
   return `#${toHex(adjustedR)}${toHex(adjustedG)}${toHex(adjustedB)}`

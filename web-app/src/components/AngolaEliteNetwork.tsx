@@ -87,27 +87,27 @@ export default function AngolaEliteNetwork({ className = '' }: AngolaEliteNetwor
               Angola Elite Network
             </h1>
             <p className="text-xl mb-4 max-w-3xl mx-auto leading-relaxed">
-              Africa's Diamond Capital Meets London's Financial Elite
+              London's Premier Angolan Professional Network
             </p>
             <p className="text-lg opacity-90 max-w-4xl mx-auto">
-              Exclusive networking for successful Angolan entrepreneurs and business leaders. 
-              Connect with London's most sophisticated Portuguese-speaking community through 
-              our premium events celebrating Angola's natural wealth and cultural sophistication.
+              Connect with successful Angolan professionals thriving in London's business districts. 
+              Join exclusive networking events in prestigious London venues, connecting the Angolan 
+              diaspora with the broader Portuguese-speaking community in sophisticated settings.
             </p>
             
-            {/* Elite Stats */}
+            {/* London Angolan Community Stats */}
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-300">$12B+</div>
-                <div className="text-sm opacity-90">Angola Diamond Industry</div>
+                <div className="text-3xl font-bold text-yellow-300">2,500+</div>
+                <div className="text-sm opacity-90">Angolan Professionals in London</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-300">50,000+</div>
-                <div className="text-sm opacity-90">Angolan Diaspora in UK</div>
+                <div className="text-3xl font-bold text-yellow-300">150+</div>
+                <div className="text-sm opacity-90">Angolan-Owned Businesses</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-300">£2.5M+</div>
-                <div className="text-sm opacity-90">Average Network Worth</div>
+                <div className="text-3xl font-bold text-yellow-300">25+</div>
+                <div className="text-sm opacity-90">Monthly London Events</div>
               </div>
             </div>
           </div>
@@ -119,9 +119,9 @@ export default function AngolaEliteNetwork({ className = '' }: AngolaEliteNetwor
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {[
             { key: 'all', label: 'All Elite Events', icon: Crown },
-            { key: 'business', label: 'Business & Investment', icon: Briefcase },
+            { key: 'business', label: 'London Business Networking', icon: Briefcase },
             { key: 'cultural', label: 'Cultural Exchange', icon: Wine },
-            { key: 'investment', label: 'Oil & Diamond Capital', icon: Diamond }
+            { key: 'investment', label: 'Professional Development', icon: Diamond }
           ].map(({ key, label, icon: Icon }) => (
             <Button
               key={key}
@@ -148,7 +148,7 @@ export default function AngolaEliteNetwork({ className = '' }: AngolaEliteNetwor
                 <h3 className="font-semibold text-yellow-800">Premium Membership Required</h3>
                 <p className="text-yellow-700 text-sm mt-1">
                   Angola Elite Network events are exclusively available to Premium members. 
-                  Upgrade to connect with London's most successful Angolan professionals.
+                  Upgrade to connect with London's most successful Angolan diaspora professionals.
                 </p>
                 <Button className="mt-3 bg-gradient-to-r from-yellow-600 to-amber-600 text-white hover:from-yellow-700 hover:to-amber-700">
                   Upgrade to Premium
@@ -280,8 +280,8 @@ export default function AngolaEliteNetwork({ className = '' }: AngolaEliteNetwor
             Ready to Join Angola's Elite Network?
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Connect with London's most successful Angolan entrepreneurs and celebrate 
-            Angola as Africa's Diamond Capital through sophisticated networking and cultural exchange.
+            Connect with London's most successful Angolan entrepreneurs and professionals 
+            through sophisticated networking events held in prestigious London venues.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 

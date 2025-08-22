@@ -787,7 +787,7 @@ export default function AIEnhancedMatchingEngine({
         <div className="flex items-center justify-center gap-3 mb-4">
           <BrainSolid className="w-8 h-8 text-purple-600" />
           <h2 className="text-2xl font-bold text-primary-900">
-            {language === 'pt' ? 'Matches Inteligentes com IA' : 'AI-Enhanced Intelligent Matches'}
+            {language === 'pt' ? 'Matches Inteligentes Personalizados' : 'Personalized Intelligent Matches'}
           </h2>
           <div className="flex items-center gap-2 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">
             <SparklesIcon className="w-4 h-4" />
@@ -796,8 +796,8 @@ export default function AIEnhancedMatchingEngine({
         </div>
         <p className="text-gray-600 max-w-3xl mx-auto">
           {language === 'pt' 
-            ? 'Sistema de IA que aprende com a cultura portuguesa e melhora continuamente para encontrar conexões emocionais autênticas baseadas em saudade e compatibilidade cultural'
-            : 'AI system that learns Portuguese culture and continuously improves to find authentic emotional connections based on saudade and cultural compatibility'}
+            ? 'Sistema inteligente que aprende com a cultura portuguesa e melhora continuamente para encontrar conexões emocionais autênticas baseadas em saudade e compatibilidade cultural'
+            : 'Intelligent system that learns Portuguese culture and continuously improves to find authentic emotional connections based on saudade and cultural compatibility'}
         </p>
       </div>
 
@@ -809,12 +809,12 @@ export default function AIEnhancedMatchingEngine({
               <BrainIcon className="w-6 h-6 text-purple-600" />
               <div>
                 <h3 className="font-semibold text-gray-900">
-                  {language === 'pt' ? 'Modo de Aprendizagem IA' : 'AI Learning Mode'}
+                  {language === 'pt' ? 'Modo de Aprendizagem Inteligente' : 'Smart Learning Mode'}
                 </h3>
                 <p className="text-sm text-gray-600">
                   {language === 'pt' 
-                    ? 'A IA aprende com suas interações para melhorar futuras recomendações'
-                    : 'AI learns from your interactions to improve future recommendations'}
+                    ? 'O sistema inteligente aprende com suas interações para melhorar futuras recomendações'
+                    : 'Smart system learns from your interactions to improve future recommendations'}
                 </p>
               </div>
             </div>
@@ -940,7 +940,7 @@ export default function AIEnhancedMatchingEngine({
                   <div className="flex items-center gap-2 mb-2">
                     <LightBulbIcon className="w-4 h-4 text-purple-600" />
                     <span className="text-sm font-medium text-purple-800">
-                      {language === 'pt' ? 'Aprendizagem IA' : 'AI Learning'}
+                      {language === 'pt' ? 'Aprendizagem Inteligente' : 'Smart Learning'}
                     </span>
                   </div>
                   <div className="text-xs text-purple-700">
@@ -1155,7 +1155,7 @@ export default function AIEnhancedMatchingEngine({
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                     <TrendingUpIcon className="w-5 h-5 text-orange-600" />
-                    {language === 'pt' ? 'Dados de Aprendizagem IA' : 'AI Learning Data'}
+                    {language === 'pt' ? 'Dados de Aprendizagem Inteligente' : 'Smart Learning Data'}
                   </h4>
                   <div className="bg-orange-50 p-4 rounded-lg">
                     <div className="grid grid-cols-2 gap-4">

@@ -872,7 +872,7 @@ class PortugueseRegionalAI {
     if (sharedDestinations.length > 0) {
       bridges.push({
         type: 'similar_experience',
-        element: 'emigration to ' + sharedDestinations.join(', '),
+        element: `emigration to ${  sharedDestinations.join(', ')}`,
         connectionStrength: 8,
         emotionalResonance: 9,
       });
@@ -982,7 +982,7 @@ export default function RegionalSpecializationAI({
         <div className="flex items-center justify-center gap-3 mb-4">
           <GlobeSolid className="w-8 h-8 text-green-600" />
           <h2 className="text-2xl font-bold text-primary-900">
-            {language === 'pt' ? 'IA de Especialização Regional' : 'Regional Specialization AI'}
+            {language === 'pt' ? 'Especialização Regional Inteligente' : 'Intelligent Regional Specialization'}
           </h2>
           <div className="flex items-center gap-2 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
             <MapPinIcon className="w-4 h-4" />
@@ -1124,7 +1124,7 @@ export default function RegionalSpecializationAI({
                     <div key={idx} className="flex items-center gap-2 text-sm text-green-700">
                       <StarSolid className="w-3 h-3" />
                       {strength.description.length > 50 ? 
-                        strength.description.substring(0, 50) + '...' : 
+                        `${strength.description.substring(0, 50)  }...` : 
                         strength.description}
                     </div>
                   ))}

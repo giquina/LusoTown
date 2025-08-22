@@ -94,8 +94,8 @@ export default function TVPage() {
       id: "business-workshops",
       name: isPortuguese ? "Workshops de Negócios" : "Business Workshops",
       description: isPortuguese
-        ? "IA, tecnologia e gestão"
-        : "AI, technology and management",
+        ? "Tecnologia inteligente, inovação e gestão"
+        : "Smart technology, innovation and management",
       icon: "briefcase",
       color: "secondary",
       isPremium: true,

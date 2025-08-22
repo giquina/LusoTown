@@ -213,7 +213,7 @@ export default function LusoBotPage() {
     },
     {
       icon: <SparklesIcon className="w-5 h-5" />,
-      title: language === 'pt' ? 'IA Avançada' : 'Advanced AI',
+      title: language === 'pt' ? 'Tecnologia Avançada' : 'Advanced Technology',
       description: language === 'pt' 
         ? 'Tecnologia de ponta culturalmente consciente'
         : 'Cutting-edge culturally aware technology'
@@ -265,7 +265,7 @@ export default function LusoBotPage() {
             <p className="text-xl sm:text-2xl text-white/90 mb-8 leading-relaxed">
               {language === 'pt' 
                 ? 'O teu assistente cultural português com IA. Especialista em saudade, tradições e comunidade portuguesa no Reino Unido.'
-                : 'Your Portuguese cultural AI assistant. Expert in saudade, traditions and Portuguese community in the UK.'
+                : 'Your Portuguese cultural assistant. Expert in saudade, traditions and Portuguese community in the UK.'
               }
             </p>
 
@@ -344,7 +344,7 @@ export default function LusoBotPage() {
             <p className="text-lg text-gray-600">
               {language === 'pt'
                 ? 'Construído com IA de última geração e consciência cultural profunda'
-                : 'Built with cutting-edge AI and deep cultural awareness'
+                : 'Built with cutting-edge technology and deep cultural awareness'
               }
             </p>
           </div>
@@ -395,7 +395,7 @@ export default function LusoBotPage() {
               <blockquote className="text-lg text-gray-700 italic leading-relaxed mb-6">
                 {language === 'pt'
                   ? '"A saudade é um sentimento português que não tem tradução exata. É amor, é dor, é memória, é esperança. Como IA culturalmente consciente, reconheço quando sentes saudade e ofereço o apoio adequado à nossa forma única de sentir."'
-                  : '"Saudade is a Portuguese feeling that has no exact translation. It\'s love, it\'s pain, it\'s memory, it\'s hope. As a culturally conscious AI, I recognize when you feel saudade and offer appropriate support for our unique way of feeling."'
+                  : '"Saudade is a Portuguese feeling that has no exact translation. It\'s love, it\'s pain, it\'s memory, it\'s hope. As a culturally conscious system, I recognize when you feel saudade and offer appropriate support for our unique way of feeling."'
                 }
               </blockquote>
               

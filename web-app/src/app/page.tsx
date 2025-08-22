@@ -284,7 +284,7 @@ export default function Home() {
                       {t('cta.title')}
                     </h3>
                     <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-                      Join {communityStats.members} Portuguese speakers from Brazil, Portugal, Africa and beyond living meaningful lives together in London - from cultural events to professional networking, family-friendly activities to weekend getaways.
+                      Join {communityStats.members} Portuguese speakers from Brazil, Portugal, Africa and beyond creating amazing memories together across the UK - from vibrant cultural events to inspiring professional networking, exciting family activities to magical weekend getaways throughout Britain!
                     </p>
                     <div className="flex flex-row gap-3 sm:gap-4 justify-center">
                       <a

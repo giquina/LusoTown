@@ -230,12 +230,12 @@ export default function CulturalVerificationDemoPage() {
                   <ShieldCheckSolid className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2">
-                  {language === 'pt' ? 'Verificação IA' : 'AI Verification'}
+                  {language === 'pt' ? 'Verificação Inteligente' : 'Smart Verification'}
                 </h3>
                 <p className="text-sm text-gray-600">
                   {language === 'pt' 
-                    ? 'Inteligência artificial detecta elementos culturais portugueses automaticamente'
-                    : 'AI automatically detects Portuguese cultural elements'
+                    ? 'Sistema inteligente detecta elementos culturais portugueses automaticamente'
+                    : 'Smart system automatically detects Portuguese cultural elements'
                   }
                 </p>
               </div>

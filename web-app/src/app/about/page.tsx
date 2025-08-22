@@ -27,10 +27,10 @@ export default function About() {
       <div>
         {/* Premium PageHeader with luxury styling */}
         <PageHeader
-        title="About LusoTown London"
-        titlePt="Sobre LusoTown London"
-        subtitle="LusoTown connects Portuguese speakers and friends through real-life meetups in London. Whether you're new to the city, have roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to meet people in person, share, and celebrate."
-        subtitlePt="LusoTown conecta falantes de português e amigos através de encontros presenciais em Londres. Seja novo na cidade, tenha raízes num país de língua portuguesa, ou simplesmente ame a nossa cultura e língua, este é o seu espaço para conhecer pessoas pessoalmente, partilhar e celebrar."
+        title="About LusoTown UK"
+        titlePt="Sobre LusoTown Reino Unido"
+        subtitle="LusoTown connects Portuguese speakers and friends through exciting real-life meetups across the United Kingdom. Whether you're exploring a new UK city, have roots in a Portuguese-speaking country, or simply love our vibrant culture and language, this is your space to socialize, meet amazing people in person, share unforgettable moments, and celebrate the richness of Portuguese heritage throughout Britain!"
+        subtitlePt="LusoTown conecta falantes de português e amigos através de encontros emocionantes por todo o Reino Unido. Seja novo numa cidade britânica, tenha raízes num país de língua portuguesa, ou simplesmente ame a nossa cultura vibrante e língua, este é o seu espaço para socializar, conhecer pessoas incríveis pessoalmente, partilhar momentos inesquecíveis e celebrar a riqueza da herança portuguesa por toda a Grã-Bretanha!"
         badge="Unidos pela Língua • United by Language"
         badgePt="Unidos pela Língua • Unidos pelo Idioma"
         theme="premium"

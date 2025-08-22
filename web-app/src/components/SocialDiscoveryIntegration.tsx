@@ -268,8 +268,8 @@ export default function SocialDiscoveryIntegration({
     
     return Array.from({ length: 2 }, (_, i) => ({
       id: `disc-new-${Date.now()}-${i}`,
-      name: names[Math.floor(Math.random() * names.length)] + ' ' + 
-            ['Silva', 'Santos', 'Oliveira', 'Costa', 'Ferreira'][Math.floor(Math.random() * 5)],
+      name: `${names[Math.floor(Math.random() * names.length)]  } ${  
+            ['Silva', 'Santos', 'Oliveira', 'Costa', 'Ferreira'][Math.floor(Math.random() * 5)]}`,
       age: 25 + Math.floor(Math.random() * 10),
       location: locations[Math.floor(Math.random() * locations.length)],
       interests: ['Portuguese Culture', 'Cultural Events', 'Community', 'Networking'].slice(0, 2 + Math.floor(Math.random() * 2)),

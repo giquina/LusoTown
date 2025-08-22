@@ -53,7 +53,7 @@ export default function LiveFeedNotifications() {
     { type: 'event', name: 'Ricardo Santos', location: 'Moorgate, London', icon: '💻', 
       message: 'registered for Vibe Coding Workshop', messagePt: 'registou-se para Workshop de Vibe Coding' },
     { type: 'event', name: 'Sofia Martins', location: 'Camden, London', icon: '🤖', 
-      message: 'joined AI Website Building Workshop', messagePt: 'juntou-se ao Workshop de Criação de Websites com IA' },
+      message: 'joined Smart Website Building Workshop', messagePt: 'juntou-se ao Workshop de Criação de Websites Inteligentes' },
     { type: 'event', name: 'Catarina Nunes', location: 'Islington, London', icon: '💼', 
       message: 'registered for Business Networking', messagePt: 'registou-se para Networking Empresarial' },
     { type: 'event', name: 'Tiago Fernandes', location: 'Shoreditch, London', icon: '🎨', 
@@ -85,7 +85,7 @@ export default function LiveFeedNotifications() {
 
     // Workshop activities  
     { type: 'workshop', name: 'Rodrigo Pereira', location: 'London Bridge, London', icon: '👨‍💻', 
-      message: 'completed AI Workshop', messagePt: 'completou Workshop de IA' },
+      message: 'completed Smart Technology Workshop', messagePt: 'completou Workshop de Tecnologia Inteligente' },
     { type: 'workshop', name: 'Carla Mendes', location: 'Angel, London', icon: '🎯', 
       message: 'finished Digital Marketing course', messagePt: 'terminou curso de Marketing Digital' },
     { type: 'workshop', name: 'Hugo Santos', location: 'Old Street, London', icon: '🚀', 

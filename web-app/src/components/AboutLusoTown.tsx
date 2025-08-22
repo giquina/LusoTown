@@ -16,7 +16,8 @@ import {
   Star,
   Award,
   Diamond,
-  Gem
+  Gem,
+  Music as MusicalNote
 } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -161,19 +162,19 @@ export default function AboutLusoTown() {
         {/* Lusophone Heritage Section */}
         <div className={`mb-20 transition-all duration-1000 delay-600 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-premium-50 via-accent-50 to-coral-50 border border-premium-200 rounded-3xl px-8 py-4 shadow-xl mb-8">
-              <Crown className="h-6 w-6 text-premium-600" />
-              <span className="text-lg font-bold bg-gradient-to-r from-premium-600 to-accent-600 bg-clip-text text-transparent">
-                Prestigious Lusophone Heritage
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50 via-accent-50 to-coral-50 border border-secondary-200 rounded-3xl px-8 py-4 shadow-xl mb-8">
+              <MusicalNote className="h-6 w-6 text-secondary-600" />
+              <span className="text-lg font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                Vibrant Lusophone Culture
               </span>
-              <Diamond className="h-5 w-5 text-premium-500 animate-pulse" />
+              <Heart className="h-5 w-5 text-accent-500 animate-pulse" />
             </div>
             <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-              Nine Nations of <span className="bg-gradient-to-r from-premium-600 via-accent-600 to-coral-600 bg-clip-text text-transparent">Excellence</span>
+              Nine Nations of <span className="bg-gradient-to-r from-secondary-600 via-accent-600 to-coral-600 bg-clip-text text-transparent">Cultural Magic</span>
             </h3>
             <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-              Discover the sophisticated cultural heritage of Portuguese-speaking nations, home to luxury resorts, Michelin-starred cuisine, 
-              world-renowned wines, and elite communities that shape global culture and commerce.
+              Experience the incredible cultural energy of Portuguese-speaking nations - from passionate fado and explosive samba to sensual kizomba and soulful morna. 
+              These communities bring amazing music, delicious food, vibrant nightlife, and heartwarming connections that make the UK more exciting and culturally rich.
             </p>
           </div>
 
@@ -183,83 +184,83 @@ export default function AboutLusoTown() {
               {
                 name: "Portugal",
                 flag: "🇵🇹",
-                heritage: "The birthplace of global exploration and maritime excellence, Portugal offers UNESCO World Heritage sites, world-class Port wine estates in Douro Valley, and luxury pousadas in historic palaces. Home to Europe's most exclusive golf resorts and Michelin-starred restaurants in Porto and Lisbon.",
-                highlights: ["Luxury Pousadas & Quintas", "Port Wine Heritage", "Michelin Dining Scene", "Exclusive Golf Resorts"],
-                ukDiaspora: "Portugal's UK community includes successful entrepreneurs, luxury property developers, and finance professionals who've established exclusive networking circles and premium cultural societies across London's most prestigious districts.",
-                traditions: "Royal heritage preservation, artisanal craftsmanship, exclusive wine tastings",
-                stats: "€45B tourism industry • 27 Michelin stars • 15 UNESCO sites"
+                heritage: "The heart of fado music and passionate folklore dancing, Portugal brings soul-stirring musical traditions and modern Portuguese pop to UK communities. From intimate acoustic guitar circles to lively Santos Populares street festivals, Portuguese culture creates warm gathering spaces where everyone feels at home.",
+                highlights: ["Fado Music Nights", "Traditional Folk Dancing", "Modern Portuguese Pop", "Community Festivals"],
+                ukDiaspora: "Portugal's UK community creates vibrant cultural hubs across London, Manchester, and beyond, organizing fado nights in cozy pubs, folklore dance workshops, and Portuguese food festivals that welcome everyone to experience the warmth of Portuguese hospitality and traditions.",
+                traditions: "Passionate fado performances, folklore dance circles, community celebrations",
+                stats: "280,000+ Portuguese speakers in UK • 100+ cultural events yearly • Fado UNESCO heritage"
               },
               {
                 name: "Brazil",
                 flag: "🇧🇷",
-                heritage: "A continental powerhouse of luxury beach resorts, world-renowned cuisine, and cultural sophistication. From São Paulo's haute couture fashion week to Rio's exclusive beach clubs, Brazil represents Latin America's pinnacle of luxury lifestyle and international business excellence.",
-                highlights: ["Exclusive Beach Clubs", "Haute Couture Fashion", "Premium Coffee Estates", "Luxury Eco-Resorts"],
-                ukDiaspora: "Brazilian professionals in London's financial district, luxury fashion industry, and high-end hospitality sector form an affluent community with strong ties to Brazil's economic elite and international business networks.",
-                traditions: "Carnival haute couture, premium cachaça tastings, exclusive samba clubs",
-                stats: "£2.1T GDP • 200+ luxury resorts • World's largest fashion week"
+                heritage: "Brazil explodes with infectious energy through samba, bossa nova, funk carioca, and forró that get everyone dancing! From passionate carnival celebrations to football watch parties that unite communities, Brazilian culture brings joy, rhythm, and that famous warm Brazilian embrace that makes everyone feel like family.",
+                highlights: ["Samba & Bossa Nova", "Carnival Energy", "Funk Carioca & Forró", "Football Watch Parties"],
+                ukDiaspora: "Brazilian communities across the UK create the most vibrant parties and gatherings - from Manchester samba schools to London capoeira circles, Birmingham Brazilian barbecues to Edinburgh carnival celebrations that fill the streets with music, dance, and infectious Brazilian joy.",
+                traditions: "Explosive carnival street parties, capoeira circles, football celebrations",
+                stats: "95,000+ Brazilians in UK • Year-round carnival energy • Samba schools in 15 cities"
               },
               {
                 name: "Angola",
                 flag: "🇦🇴",
-                heritage: "Africa's oil-rich diamond nation offering exclusive safari lodges, luxury coastal resorts, and a rapidly growing high-end hospitality sector. Angola's cultural renaissance showcases sophisticated art galleries, premium restaurants, and elite social clubs in Luanda's affluent districts.",
-                highlights: ["Diamond & Oil Wealth", "Exclusive Safari Lodges", "Contemporary Art Scene", "Premium Hospitality"],
-                ukDiaspora: "Angolan business leaders and petroleum industry executives in London maintain extensive networks with Angola's economic elite, creating sophisticated cultural exchanges and premium business opportunities between both nations.",
-                traditions: "Luxury cultural festivals, exclusive art auctions, premium traditional crafts",
-                stats: "$70B oil revenues • Africa's 3rd largest economy • Growing luxury market"
+                heritage: "Angola brings the sensual rhythm of kizomba and the energetic beats of semba that create magical dance floor moments! Combined with powerful gospel music, hypnotic percussion circles, and modern afrobeat fusion, Angolan culture creates spaces where people connect through rhythm, movement, and shared cultural pride.",
+                highlights: ["Kizomba Dance Nights", "Semba Music Sessions", "Afrobeat Fusion", "Gospel Celebrations"],
+                ukDiaspora: "Angolan communities in London, Birmingham, and Manchester host incredible kizomba dance workshops, semba music nights, and cultural festivals that celebrate African-Portuguese heritage through cooking classes, storytelling, and vibrant community gatherings that welcome everyone.",
+                traditions: "Sensual kizomba dancing, rhythmic semba nights, gospel celebrations",
+                stats: "25,000+ Angolans in UK • Kizomba classes in 20+ cities • Growing music scene"
               },
               {
                 name: "Mozambique",
                 flag: "🇲🇿",
-                heritage: "East Africa's jewel offering world-class beach resorts, exclusive diving experiences, and luxury safari lodges. Mozambique's pristine coastline attracts international elite seeking ultimate privacy and sophistication in untouched natural settings.",
-                highlights: ["Ultra-Luxury Beach Resorts", "Exclusive Diving Expeditions", "Premium Safari Lodges", "Private Island Getaways"],
-                ukDiaspora: "Mozambican professionals in London's maritime, energy, and luxury travel sectors maintain exclusive connections with the country's tourism elite and natural resource industries.",
-                traditions: "Traditional dhow sailing, exclusive cultural festivals, artisanal luxury crafts",
-                stats: "$15B GDP growth • 2,500km pristine coastline • World-class diving sites"
+                heritage: "Mozambique pulses with the energetic rhythms of marrabenta and pandza music that fill dance floors across the UK! From coastal food culture featuring amazing seafood feasts to powerful storytelling traditions and artistic expression workshops, Mozambican culture brings vibrant community celebrations that connect hearts.",
+                highlights: ["Marrabenta Music Sessions", "Pandza Dance Circles", "Coastal Food Culture", "Community Storytelling"],
+                ukDiaspora: "Mozambican communities in London, Birmingham, and Liverpool create amazing cultural experiences through marrabenta dance sessions, traditional drumming circles, coastal cuisine workshops, and heritage celebration gatherings that welcome everyone to join the cultural feast.",
+                traditions: "Energetic marrabenta dancing, traditional drumming ceremonies, storytelling marathons",
+                stats: "15,000+ Mozambicans in UK • Marrabenta classes in 10+ cities • Growing cultural scene"
               },
               {
                 name: "Cape Verde",
                 flag: "🇨🇻",
-                heritage: "The Atlantic's sophisticated island nation renowned for luxury beach resorts, world-class spas, and exclusive cultural experiences. Cape Verde's volcanic landscapes host premium eco-lodges and high-end wellness retreats attracting global luxury travelers.",
-                highlights: ["Luxury Island Resorts", "World-Class Spas", "Exclusive Cultural Tours", "Premium Eco-Lodges"],
-                ukDiaspora: "Cape Verdean professionals in London's luxury hospitality, wellness, and cultural sectors form an elite community with strong connections to the islands' growing premium tourism industry.",
-                traditions: "Morna cultural evenings, exclusive island festivals, premium craft traditions",
-                stats: "€1.8B tourism revenue • 5-star resort destinations • UNESCO cultural heritage"
+                heritage: "Cape Verde enchants with the heartfelt sounds of morna and the energetic rhythms of funaná and coladeira that create magical musical evenings! Island food culture, vibrant Creole celebrations, and traditional guitar circles bring together communities in warm, welcoming gatherings that celebrate island heritage.",
+                highlights: ["Soulful Morna Sessions", "Energetic Funaná Dancing", "Coladeira Music Nights", "Creole Celebrations"],
+                ukDiaspora: "Cape Verdean communities across the UK host incredible morna acoustic sessions, funaná dance parties, traditional food festivals, and island cultural celebrations that fill hearts with the warmth and beauty of island traditions.",
+                traditions: "Heartfelt morna performances, high-energy funaná dancing, island celebrations",
+                stats: "8,000+ Cape Verdeans in UK • Morna UNESCO heritage • Island festivals in 8 cities"
               },
               {
                 name: "Guinea-Bissau",
                 flag: "🇬🇼",
-                heritage: "West Africa's exclusive destination offering pristine archipelagos, luxury fishing lodges, and unique cultural experiences. Guinea-Bissau's untouched Bijagós Islands provide ultra-exclusive retreats for discerning travelers seeking authentic luxury experiences.",
-                highlights: ["Exclusive Island Retreats", "Premium Fishing Lodges", "Untouched Natural Beauty", "Cultural Authenticity"],
-                ukDiaspora: "Guinea-Bissau's London professionals in environmental sciences, luxury travel, and cultural preservation maintain exclusive networks focused on sustainable luxury tourism and cultural heritage projects.",
-                traditions: "Traditional mask ceremonies, exclusive cultural festivals, artisanal craftsmanship",
-                stats: "UNESCO Biosphere Reserve • 88 pristine islands • Exclusive eco-tourism"
+                heritage: "Guinea-Bissau brings the rhythmic power of gumbe music and traditional dance circles that create amazing community bonds! Through traditional rice dish celebrations, powerful oral storytelling marathons, and vibrant cultural festivals, this community preserves powerful heritage traditions.",
+                highlights: ["Gumbe Music Festivals", "Traditional Dance Circles", "Community Food Sharing", "Storytelling Traditions"],
+                ukDiaspora: "Guinea-Bissau communities in London and Manchester organize incredible gumbe music festivals, traditional drumming ceremonies, community cooking gatherings, and heritage celebration events that connect people through powerful cultural traditions.",
+                traditions: "Rhythmic gumbe festivals, traditional drumming ceremonies, storytelling marathons",
+                stats: "3,500+ Guinea-Bissauans in UK • Growing gumbe music scene • Traditional arts preservation"
               },
               {
                 name: "São Tomé and Príncipe",
                 flag: "🇸🇹",
-                heritage: "The Gulf of Guinea's luxury paradise offering exclusive eco-resorts, premium chocolate plantations, and sophisticated bird-watching retreats. These volcanic islands provide ultra-private luxury experiences for elite travelers seeking untouched tropical sophistication.",
-                highlights: ["Ultra-Exclusive Eco-Resorts", "Premium Chocolate Estates", "Luxury Bird-Watching", "Private Island Experiences"],
-                ukDiaspora: "São Tomé professionals in London's luxury food industry, eco-tourism, and sustainable development sectors form exclusive networks connecting to the islands' premium chocolate and eco-luxury markets.",
-                traditions: "Chocolate plantation tours, exclusive cultural performances, traditional craftsmanship",
-                stats: "World's finest cocoa • 95% forest coverage • Ultra-exclusive tourism"
+                heritage: "São Tomé and Príncipe brings sweet island culture through amazing chocolate-making workshops, vibrant cultural performances, and traditional music circles that celebrate island heritage! These communities create magical gatherings where people connect through food, music, and cultural traditions.",
+                highlights: ["Chocolate-Making Workshops", "Traditional Music Circles", "Island Cultural Shows", "Community Celebrations"],
+                ukDiaspora: "São Tomé communities in London create wonderful cultural experiences through chocolate-making workshops, traditional music sessions, island food festivals, and cultural celebration gatherings that share the sweetness of island culture with everyone.",
+                traditions: "Sweet chocolate workshops, traditional music circles, island celebrations",
+                stats: "Small but vibrant UK community • Amazing chocolate heritage • Growing cultural presence"
               },
               {
                 name: "East Timor",
                 flag: "🇹🇱",
-                heritage: "Southeast Asia's emerging luxury destination offering exclusive diving sites, premium eco-lodges, and sophisticated cultural experiences. East Timor's pristine mountains and coral reefs attract discerning travelers seeking authentic luxury in untouched environments.",
-                highlights: ["World-Class Diving Sites", "Premium Eco-Lodges", "Exclusive Cultural Tours", "Mountain Luxury Retreats"],
-                ukDiaspora: "East Timorese professionals in London's international development, luxury travel, and cultural sectors maintain sophisticated networks connecting to the nation's emerging premium tourism and cultural preservation initiatives.",
-                traditions: "Traditional weaving masterclasses, exclusive cultural festivals, mountain retreat ceremonies",
-                stats: "Coral triangle diving • Premium eco-tourism • UNESCO heritage sites"
+                heritage: "East Timor brings rich cultural traditions through traditional weaving workshops, vibrant cultural festivals, and mountain heritage ceremonies that connect people to ancient traditions! These communities create beautiful spaces for cultural dialogue and tradition preservation.",
+                highlights: ["Traditional Weaving Workshops", "Cultural Heritage Festivals", "Mountain Ceremonies", "Community Dialogues"],
+                ukDiaspora: "East Timorese communities in London organize beautiful traditional weaving masterclasses, cultural festivals, and heritage preservation gatherings that share the beauty of Timorese traditions and connect people through cultural dialogue.",
+                traditions: "Traditional weaving circles, cultural festivals, heritage ceremonies",
+                stats: "Emerging UK community • Rich weaving traditions • Cultural heritage preservation"
               },
               {
                 name: "Macau",
                 flag: "🇲🇴",
-                heritage: "Asia's luxury gaming and entertainment capital offering world-class casinos, Michelin-starred restaurants, and exclusive shopping experiences. Macau combines Portuguese colonial elegance with contemporary Asian sophistication, creating a unique luxury destination.",
-                highlights: ["World-Class Casinos", "Michelin Dining Excellence", "Luxury Shopping", "Colonial Elegance"],
-                ukDiaspora: "Macau's London professionals in gaming, luxury hospitality, and international finance maintain exclusive connections to Asia's premier luxury entertainment and high-end business networks.",
-                traditions: "Portuguese-Macanese fusion cuisine, exclusive cultural festivals, luxury heritage tours",
-                stats: "£45B gaming revenue • 20+ Michelin stars • Asia's Las Vegas"
+                heritage: "Macau creates unique cultural fusion through Portuguese-Macanese cuisine workshops, cultural festivals that blend Asian and Portuguese traditions, and heritage celebration events that showcase the beautiful blend of two cultures meeting in harmony.",
+                highlights: ["Portuguese-Macanese Fusion Cuisine", "Cultural Fusion Festivals", "Heritage Tours", "East-West Celebrations"],
+                ukDiaspora: "Macau communities in London create fascinating cultural fusion experiences through Portuguese-Macanese cooking classes, cultural festivals, and heritage celebration events that show the beautiful meeting of Eastern and Western traditions.",
+                traditions: "Portuguese-Macanese fusion cuisine, cultural blend festivals, heritage celebrations",
+                stats: "Unique cultural fusion heritage • Portuguese-Chinese traditions • Growing UK presence"
               }
             ].map((country, index) => (
               <div
@@ -280,8 +281,8 @@ export default function AboutLusoTown() {
                         {country.name}
                       </h4>
                       <div className="flex items-center gap-2 mt-1">
-                        <Star className="h-4 w-4 text-premium-500" />
-                        <span className="text-sm font-semibold text-premium-600">Premium Heritage</span>
+                        <MusicalNote className="h-4 w-4 text-secondary-500" />
+                        <span className="text-sm font-semibold text-secondary-600">Cultural Heritage</span>
                       </div>
                     </div>
                   </div>
@@ -291,40 +292,40 @@ export default function AboutLusoTown() {
                     {country.heritage}
                   </p>
 
-                  {/* Elite Highlights */}
+                  {/* Cultural Highlights */}
                   <div className="mb-6">
                     <div className="flex items-center gap-2 mb-3">
-                      <Award className="h-4 w-4 text-accent-500" />
-                      <span className="text-sm font-bold text-gray-800">Elite Highlights</span>
+                      <Heart className="h-4 w-4 text-accent-500" />
+                      <span className="text-sm font-bold text-gray-800">Cultural Highlights</span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {country.highlights.map((highlight, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                          <Gem className="h-3 w-3 text-coral-500" />
+                          <MusicalNote className="h-3 w-3 text-coral-500" />
                           <span>{highlight}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  {/* UK Diaspora */}
+                  {/* UK Community */}
                   <div className="mb-6 p-4 bg-gradient-to-r from-accent-50/60 to-coral-50/40 rounded-2xl">
                     <div className="flex items-center gap-2 mb-2">
                       <Users className="h-4 w-4 text-accent-600" />
-                      <span className="text-sm font-bold text-accent-700">Elite UK Community</span>
+                      <span className="text-sm font-bold text-accent-700">UK Cultural Community</span>
                     </div>
                     <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
                       {country.ukDiaspora}
                     </p>
                   </div>
 
-                  {/* Premium Stats */}
-                  <div className="bg-gradient-to-r from-premium-50/60 to-accent-50/40 rounded-2xl p-4">
+                  {/* Cultural Stats */}
+                  <div className="bg-gradient-to-r from-secondary-50/60 to-accent-50/40 rounded-2xl p-4">
                     <div className="flex items-center gap-2 mb-2">
-                      <Diamond className="h-4 w-4 text-premium-600" />
-                      <span className="text-sm font-bold text-premium-700">Luxury Statistics</span>
+                      <Heart className="h-4 w-4 text-secondary-600" />
+                      <span className="text-sm font-bold text-secondary-700">Cultural Impact</span>
                     </div>
-                    <p className="text-xs text-premium-600 font-semibold">
+                    <p className="text-xs text-secondary-600 font-semibold">
                       {country.stats}
                     </p>
                   </div>
@@ -336,19 +337,19 @@ export default function AboutLusoTown() {
 
         {/* Call-to-Action */}
         <div className={`text-center mt-12 transition-all duration-1000 delay-900 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-          <div className="bg-gradient-to-r from-premium-50/80 via-accent-50/60 to-coral-50/60 border border-premium-200/40 rounded-3xl p-8 sm:p-12 shadow-2xl max-w-4xl mx-auto backdrop-blur-sm">
+          <div className="bg-gradient-to-r from-secondary-50/80 via-accent-50/60 to-coral-50/60 border border-secondary-200/40 rounded-3xl p-8 sm:p-12 shadow-2xl max-w-4xl mx-auto backdrop-blur-sm">
             <div className="flex items-center justify-center gap-3 mb-6">
-              <Crown className="h-8 w-8 text-premium-600" />
-              <span className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-premium-600 to-accent-600 bg-clip-text text-transparent">
-                Join London's Elite Lusophone Community
+              <MusicalNote className="h-8 w-8 text-secondary-600" />
+              <span className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                Join the UK's Most Vibrant Lusophone Community
               </span>
             </div>
             <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Connect with sophisticated Portuguese speakers who share your appreciation for luxury, culture, and exclusive experiences across London's most prestigious venues.
+              Connect with passionate Portuguese speakers who love music, dancing, amazing food, and vibrant cultural celebrations! From fado nights to samba parties, kizomba dancing to carnival celebrations - find your cultural family across the UK.
             </p>
-            <div className="inline-flex items-center gap-3 text-premium-600 hover:text-premium-700 transition-colors duration-300 cursor-pointer group">
-              <Sparkles className="h-6 w-6 animate-pulse" />
-              <span className="text-lg font-bold">Ready to join London's most exclusive Portuguese-speaking network?</span>
+            <div className="inline-flex items-center gap-3 text-secondary-600 hover:text-secondary-700 transition-colors duration-300 cursor-pointer group">
+              <Heart className="h-6 w-6 animate-pulse" />
+              <span className="text-lg font-bold">Ready to experience the joy of Lusophone culture across the UK?</span>
               <ArrowRight className="h-6 w-6 transform group-hover:translate-x-1 transition-transform duration-200" />
             </div>
           </div>

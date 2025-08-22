@@ -239,7 +239,7 @@ export const isAdminRoute = (route: string): boolean => {
 // Navigation Breadcrumb Helpers
 export const getBreadcrumbPath = (route: string): string[] => {
   const segments = route.split('/').filter(Boolean);
-  return segments.map((_, index) => '/' + segments.slice(0, index + 1).join('/'));
+  return segments.map((_, index) => `/${  segments.slice(0, index + 1).join('/')}`);
 };
 
 // Portuguese Community Specific Routes

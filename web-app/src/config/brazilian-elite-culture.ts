@@ -8,7 +8,7 @@ export interface BrazilianCulturalVenue {
   id: string
   name: string
   namePortuguese: string
-  type: 'opera_house' | 'art_gallery' | 'luxury_restaurant' | 'private_club' | 'cultural_institution' | 'fashion_house'
+  type: 'opera_house' | 'art_gallery' | 'luxury_restaurant' | 'private_club' | 'cultural_institution' | 'fashion_house' | 'samba_school' | 'music_venue' | 'dance_studio' | 'brazilian_nightclub' | 'churrascaria' | 'capoeira_academy' | 'cultural_center'
   
   // Elite Status
   prestige: 'iconic' | 'prestigious' | 'luxury' | 'exclusive'
@@ -65,7 +65,7 @@ export interface EliteEvent {
   id: string
   name: string
   namePortuguese: string
-  type: 'gala' | 'exhibition' | 'concert' | 'networking' | 'cultural_exchange' | 'fashion_show'
+  type: 'gala' | 'exhibition' | 'concert' | 'networking' | 'cultural_exchange' | 'fashion_show' | 'samba_night' | 'roda_de_samba' | 'capoeira_performance' | 'brazilian_festival' | 'carnival_celebration' | 'forró_night' | 'bossa_nova_evening' | 'brazilian_bbq' | 'football_watch_party'
   description: string
   target_audience: string[]
   dress_code: string
@@ -77,7 +77,7 @@ export interface EliteEvent {
 export interface BrazilianLuxuryBrand {
   id: string
   name: string
-  category: 'fashion' | 'jewelry' | 'automotive' | 'real_estate' | 'hospitality' | 'finance'
+  category: 'fashion' | 'jewelry' | 'automotive' | 'real_estate' | 'hospitality' | 'finance' | 'music_production' | 'dance_academies' | 'food_beverage' | 'entertainment' | 'sports_clubs'
   description: string
   prestige_level: 'world_class' | 'luxury' | 'premium'
   uk_presence: {
@@ -448,6 +448,66 @@ export const RIO_LUXURY_LIFESTYLE: BrazilianCulturalVenue[] = [
  */
 export const BRAZILIAN_LUXURY_BRANDS: BrazilianLuxuryBrand[] = [
   {
+    id: 'som-livre-music',
+    name: 'Som Livre Music Production',
+    category: 'music_production',
+    description: 'Brazil\'s leading music label revolutionizing how Brazilian music reaches global audiences with cutting-edge production and artist development',
+    prestige_level: 'world_class',
+    uk_presence: {
+      london_locations: ['Abbey Road Studios partnership', 'Soho music production facilities', 'Camden recording studios'],
+      exclusive_partnerships: ['BBC Radio collaborations', 'UK music festival partnerships', 'British music industry networks'],
+      vip_services: ['International artist development', 'UK music industry introductions', 'Cross-cultural music production', 'Global music distribution']
+    },
+    target_market: ['Brazilian musicians in UK', 'International music industry professionals', 'Cultural music enthusiasts', 'Brazilian music investors'],
+    cultural_connection: 'Showcases Brazil\'s incredible musical diversity and innovation, bringing authentic Brazilian sounds to global audiences through professional production'
+  },
+  
+  {
+    id: 'espacial-dance-academy',
+    name: 'Espaçial Dance Academy',
+    category: 'dance_academies',
+    description: 'Premier Brazilian dance academy offering authentic samba, forró, and Brazilian funk instruction that connects people through the joy of movement',
+    prestige_level: 'luxury',
+    uk_presence: {
+      london_locations: ['Shoreditch dance studios', 'Camden community centers', 'Covent Garden performance spaces'],
+      exclusive_partnerships: ['London dance festival collaborations', 'Cultural center partnerships', 'International dance competitions'],
+      vip_services: ['Private dance instruction', 'Brazilian dance performance bookings', 'Cultural dance workshops', 'Community event entertainment']
+    },
+    target_market: ['Dance enthusiasts', 'Brazilian culture seekers', 'Fitness community', 'Cultural event organizers'],
+    cultural_connection: 'Preserves and shares authentic Brazilian dance traditions while creating community connections through the universal language of movement'
+  },
+  
+  {
+    id: 'guarana-antarctica-uk',
+    name: 'Guaraná Antarctica UK',
+    category: 'food_beverage',
+    description: 'Brazil\'s iconic soft drink bringing that unique guaraná energy and authentic Brazilian flavor experience to the UK market',
+    prestige_level: 'luxury',
+    uk_presence: {
+      london_locations: ['Harrods international section', 'Selfridges world foods', 'Brazilian restaurants and bars'],
+      exclusive_partnerships: ['Brazilian restaurant supply', 'Cultural event sponsorships', 'Brazilian community partnerships'],
+      vip_services: ['Event beverage catering', 'Brazilian culture education', 'Authentic flavor experiences', 'Community event support']
+    },
+    target_market: ['Brazilian expatriates', 'International flavor seekers', 'Cultural event organizers', 'Authentic beverage enthusiasts'],
+    cultural_connection: 'Delivers authentic Brazilian energy and flavor, connecting people to Brazil\'s unique cultural identity through this beloved national beverage'
+  },
+  
+  {
+    id: 'flamengo-supporters-uk',
+    name: 'Flamengo Supporters Club UK',
+    category: 'sports_clubs',
+    description: 'Official UK supporters club for Brazil\'s most passionate football team, creating incredible community celebrations and match experiences',
+    prestige_level: 'luxury',
+    uk_presence: {
+      london_locations: ['Brazilian sports bars', 'Community centers for match viewing', 'Wembley Stadium events'],
+      exclusive_partnerships: ['Brazilian Embassy cultural events', 'UK-Brazil football exchanges', 'Community integration programs'],
+      vip_services: ['VIP match viewing experiences', 'Brazilian football culture education', 'Community celebration organization', 'Player meet-and-greet events']
+    },
+    target_market: ['Brazilian football fanatics', 'Sports community enthusiasts', 'Brazilian cultural participants', 'Football culture seekers'],
+    cultural_connection: 'Channels the incredible passion and community spirit of Brazilian football culture, creating powerful social bonds through shared sporting love'
+  },
+  
+  {
     id: 'antonio-bernardo',
     name: 'Antonio Bernardo',
     category: 'jewelry',
@@ -513,6 +573,11 @@ export const BRAZILIAN_LUXURY_BRANDS: BrazilianLuxuryBrand[] = [
  * Exclusive venues and events for high-class Brazilian professionals in London
  */
 export const LONDON_BRAZILIAN_ELITE_VENUES: BrazilianCulturalVenue[] = [
+  // Add London venues from other categories
+  ...BRAZILIAN_MUSIC_DANCE_VENUES.filter(venue => venue.city === 'London'),
+  ...BRAZILIAN_NIGHTLIFE_VENUES,
+  ...BRAZILIAN_FOOD_CULTURE_VENUES.filter(venue => venue.city === 'London'),
+  
   {
     id: 'brazilian-embassy-london',
     name: 'Brazilian Embassy Cultural Centre',
@@ -708,6 +773,36 @@ export const BRAZILIAN_ECONOMIC_POWERHOUSE = {
     'Sophisticated culinary scene with Michelin-starred restaurants',
     'High-end fashion and jewelry design recognition',
     'Premium coffee culture and luxury hospitality'
+  ],
+  cultural_magnetism: [
+    'Samba: The heartbeat that gets everyone moving - infectious rhythms creating instant community',
+    'Bossa Nova: Smooth, intimate sounds perfect for sophisticated UK evening gatherings',
+    'Capoeira: Incredible martial art combining music, acrobatics, and community spirit',
+    'Brazilian BBQ (Churrasco): Amazing social dining experiences that bring people together',
+    'Football Culture: Massive community celebrations during matches creating electric atmosphere',
+    'Carnival Energy: Street parties bringing authentic Brazilian joy to UK communities',
+    'Açaí Culture: Healthy, delicious lifestyle that connects wellness with community',
+    'Forró Dancing: Traditional couples dancing that creates romantic connections',
+    'Funk Carioca: High-energy urban beats that get entire communities moving',
+    'Brigadeiro Tradition: Sweet treats that make any gathering instantly more special'
+  ]
+}
+
+/**
+ * Get all Brazilian cultural venues
+ */
+export function getAllBrazilianVenues(): BrazilianCulturalVenue[] {
+  return [
+    ...SAO_PAULO_CULTURAL_ELITE, 
+    ...RIO_LUXURY_LIFESTYLE, 
+    ...BRAZILIAN_MUSIC_DANCE_VENUES,
+    ...BRAZILIAN_NIGHTLIFE_VENUES,
+    ...BRAZILIAN_FOOD_CULTURE_VENUES,
+    ...LONDON_BRAZILIAN_ELITE_VENUES.filter(venue => 
+      !BRAZILIAN_MUSIC_DANCE_VENUES.some(mv => mv.id === venue.id) &&
+      !BRAZILIAN_NIGHTLIFE_VENUES.some(nv => nv.id === venue.id) &&
+      !BRAZILIAN_FOOD_CULTURE_VENUES.some(fv => fv.id === venue.id)
+    )
   ]
 }
 
@@ -715,8 +810,29 @@ export const BRAZILIAN_ECONOMIC_POWERHOUSE = {
  * Get Brazilian cultural venues by type
  */
 export function getBrazilianVenuesByType(type: BrazilianCulturalVenue['type']): BrazilianCulturalVenue[] {
-  const allVenues = [...SAO_PAULO_CULTURAL_ELITE, ...RIO_LUXURY_LIFESTYLE, ...LONDON_BRAZILIAN_ELITE_VENUES]
+  const allVenues = getAllBrazilianVenues()
   return allVenues.filter(venue => venue.type === type)
+}
+
+/**
+ * Get Brazilian music and dance venues
+ */
+export function getBrazilianMusicDanceVenues(): BrazilianCulturalVenue[] {
+  return BRAZILIAN_MUSIC_DANCE_VENUES
+}
+
+/**
+ * Get Brazilian nightlife venues
+ */
+export function getBrazilianNightlifeVenues(): BrazilianCulturalVenue[] {
+  return BRAZILIAN_NIGHTLIFE_VENUES
+}
+
+/**
+ * Get Brazilian food culture venues
+ */
+export function getBrazilianFoodVenues(): BrazilianCulturalVenue[] {
+  return BRAZILIAN_FOOD_CULTURE_VENUES
 }
 
 /**
@@ -734,6 +850,62 @@ export function getBrazilianEliteEventsLondon(): EliteEvent[] {
 }
 
 /**
+ * Get all Brazilian cultural events
+ */
+export function getAllBrazilianEvents(): EliteEvent[] {
+  const allVenues = getAllBrazilianVenues()
+  const allEvents: EliteEvent[] = []
+  
+  allVenues.forEach(venue => {
+    allEvents.push(...venue.signature_events)
+  })
+  
+  return allEvents
+}
+
+/**
+ * Get Brazilian music and dance events
+ */
+export function getBrazilianMusicDanceEvents(): EliteEvent[] {
+  const musicVenues = BRAZILIAN_MUSIC_DANCE_VENUES
+  const allEvents: EliteEvent[] = []
+  
+  musicVenues.forEach(venue => {
+    allEvents.push(...venue.signature_events)
+  })
+  
+  return allEvents
+}
+
+/**
+ * Get Brazilian nightlife events
+ */
+export function getBrazilianNightlifeEvents(): EliteEvent[] {
+  const nightlifeVenues = BRAZILIAN_NIGHTLIFE_VENUES
+  const allEvents: EliteEvent[] = []
+  
+  nightlifeVenues.forEach(venue => {
+    allEvents.push(...venue.signature_events)
+  })
+  
+  return allEvents
+}
+
+/**
+ * Get Brazilian food culture events
+ */
+export function getBrazilianFoodEvents(): EliteEvent[] {
+  const foodVenues = BRAZILIAN_FOOD_CULTURE_VENUES
+  const allEvents: EliteEvent[] = []
+  
+  foodVenues.forEach(venue => {
+    allEvents.push(...venue.signature_events)
+  })
+  
+  return allEvents
+}
+
+/**
  * Get Brazilian luxury brands by category
  */
 export function getBrazilianLuxuryBrandsByCategory(category: BrazilianLuxuryBrand['category']): BrazilianLuxuryBrand[] {
@@ -744,7 +916,7 @@ export function getBrazilianLuxuryBrandsByCategory(category: BrazilianLuxuryBran
  * Get high-prestige venues for business networking
  */
 export function getBusinessNetworkingVenues(): BrazilianCulturalVenue[] {
-  const allVenues = [...SAO_PAULO_CULTURAL_ELITE, ...RIO_LUXURY_LIFESTYLE, ...LONDON_BRAZILIAN_ELITE_VENUES]
+  const allVenues = getAllBrazilianVenues()
   return allVenues.filter(venue => 
     venue.business_networking && 
     (venue.prestige === 'iconic' || venue.prestige === 'prestigious')
@@ -755,7 +927,7 @@ export function getBusinessNetworkingVenues(): BrazilianCulturalVenue[] {
  * Get exclusive invitation-only events
  */
 export function getExclusiveInvitationEvents(): EliteEvent[] {
-  const allVenues = [...SAO_PAULO_CULTURAL_ELITE, ...RIO_LUXURY_LIFESTYLE, ...LONDON_BRAZILIAN_ELITE_VENUES]
+  const allVenues = getAllBrazilianVenues()
   const allEvents: EliteEvent[] = []
   
   allVenues.forEach(venue => {
@@ -764,3 +936,452 @@ export function getExclusiveInvitationEvents(): EliteEvent[] {
   
   return allEvents
 }
+
+/**
+ * Get community-focused Brazilian events (accessible and welcoming)
+ */
+export function getCommunityBrazilianEvents(): EliteEvent[] {
+  const allEvents = getAllBrazilianEvents()
+  return allEvents.filter(event => 
+    event.exclusivity === 'luxury_ticketed' && 
+    (event.type === 'roda_de_samba' || 
+     event.type === 'forró_night' || 
+     event.type === 'capoeira_performance' || 
+     event.type === 'brazilian_festival' || 
+     event.type === 'carnival_celebration')
+  )
+}
+
+/**
+ * Get food and social dining events
+ */
+export function getBrazilianSocialDiningEvents(): EliteEvent[] {
+  const allEvents = getAllBrazilianEvents()
+  return allEvents.filter(event => 
+    event.type === 'brazilian_bbq' || 
+    event.type === 'brazilian_festival'
+  )
+}
+
+/**
+ * Get Brazilian cultural magnetism highlights
+ */
+export function getBrazilianCulturalMagnetism(): string[] {
+  return BRAZILIAN_ECONOMIC_POWERHOUSE.cultural_magnetism
+}
+
+/**
+ * Brazilian Music & Dance Culture Venues
+ * Incredible spaces where Brazilian rhythms come alive and communities connect
+ */
+export const BRAZILIAN_MUSIC_DANCE_VENUES: BrazilianCulturalVenue[] = [
+  {
+    id: 'vila-madalena-samba',
+    name: 'Vila Madalena Samba Circle',
+    namePortuguese: 'Roda de Samba da Vila Madalena',
+    type: 'samba_school',
+    prestige: 'iconic',
+    membershipRequired: false,
+    dressCode: 'Casual Brazilian street style - colorful and comfortable for dancing',
+    
+    address: 'Rua Aspicuelta, Vila Madalena',
+    city: 'São Paulo',
+    neighborhood: 'Vila Madalena',
+    coordinates: {
+      latitude: -23.5562,
+      longitude: -46.6856
+    },
+    
+    phone: '+55 11 9876-5432',
+    email: 'contato@rodavilamadalena.com.br',
+    website: 'https://sambavilamadalena.com.br',
+    
+    description: 'The heartbeat of São Paulo\'s samba scene - where infectious rhythms unite people from all walks of life in pure musical joy',
+    descriptionPortuguese: 'O coração da cena do samba paulistano - onde ritmos contagiantes unem pessoas de todas as origens em pura alegria musical',
+    culturalImportance: 'Authentic community samba circle where the spirit of Brazilian music creates magical connections every weekend',
+    
+    signature_events: [
+      {
+        id: 'roda-de-samba-domingo',
+        name: 'Sunday Samba Circle',
+        namePortuguese: 'Roda de Samba de Domingo',
+        type: 'roda_de_samba',
+        description: 'Weekly community samba gathering where everyone participates - from beginners to masters, creating pure Brazilian magic',
+        target_audience: ['Samba enthusiasts', 'Brazilian community', 'Music lovers', 'Dance beginners', 'Local families'],
+        dress_code: 'Comfortable clothes ready for dancing and singing',
+        price_range: 'R$ 15 - R$ 40 (includes caipirinha)',
+        exclusivity: 'luxury_ticketed',
+        networking_potential: 'high'
+      },
+      {
+        id: 'pagode-noite-especial',
+        name: 'Special Pagode Night',
+        namePortuguese: 'Noite Especial de Pagode',
+        type: 'samba_night',
+        description: 'Monthly celebration featuring renowned pagode artists that gets the entire community moving to irresistible beats',
+        target_audience: ['Pagode lovers', 'Brazilian diaspora', 'Music enthusiasts', 'Night life lovers'],
+        dress_code: 'Brazilian party style - bright colors and dancing shoes',
+        price_range: 'R$ 50 - R$ 120',
+        exclusivity: 'luxury_ticketed',
+        networking_potential: 'high'
+      }
+    ],
+    
+    vip_services: [
+      'Personal samba instruction from masters',
+      'Premium caipirinha and Brazilian snacks',
+      'Reserved seating in the music circle',
+      'Meet-and-greet with visiting artists',
+      'Brazilian percussion instrument rentals'
+    ],
+    
+    partnership_benefits: [
+      'Community integration through music',
+      'Cultural exchange opportunities',
+      'Local musician networking',
+      'Brazilian cultural immersion',
+      'Authentic community connections'
+    ],
+    
+    target_demographic: [
+      'Brazilian music enthusiasts',
+      'International samba lovers',
+      'Community culture seekers',
+      'Dance and music students',
+      'Cultural experience seekers'
+    ],
+    
+    social_occasions: [
+      'Community celebration gatherings',
+      'Cultural exchange meetups',
+      'Musical learning experiences',
+      'Brazilian friendship building',
+      'International cultural appreciation'
+    ],
+    
+    business_networking: true,
+    
+    architectural_style: 'Open-air community space with traditional Brazilian decorations',
+    capacity: 300,
+    established_year: 1995,
+    notable_patrons: [
+      'Local samba musicians and masters',
+      'Brazilian cultural associations',
+      'International music students',
+      'Community cultural leaders'
+    ],
+    
+    socialMedia: {
+      instagram: '@rodavilamadalena',
+      facebook: 'SambaVilaMadalena'
+    }
+  },
+  
+  {
+    id: 'lapa-arches-forró',
+    name: 'Lapa Arches Forró House',
+    namePortuguese: 'Casa do Forró dos Arcos da Lapa',
+    type: 'dance_studio',
+    prestige: 'prestigious',
+    membershipRequired: false,
+    dressCode: 'Comfortable for partner dancing - flowing dresses and comfortable shoes recommended',
+    
+    address: 'Rua dos Arcos, Lapa',
+    city: 'Rio de Janeiro',
+    neighborhood: 'Lapa',
+    
+    phone: '+55 21 9876-5432',
+    email: 'contato@forrolapa.com.br',
+    website: 'https://forrolapa.com.br',
+    
+    description: 'Rio\'s premier forró destination where couples dance brings people together in the most romantic Brazilian tradition',
+    descriptionPortuguese: 'Principal destino de forró do Rio onde a dança a dois une pessoas na mais romântica tradição brasileira',
+    culturalImportance: 'Historic venue where traditional Brazilian couples dancing creates magical connections under Rio\'s iconic arches',
+    
+    signature_events: [
+      {
+        id: 'noite-de-forró-tradicional',
+        name: 'Traditional Forró Night',
+        namePortuguese: 'Noite de Forró Tradicional',
+        type: 'forró_night',
+        description: 'Weekly celebration where beginners and experts dance together to infectious northeastern Brazilian rhythms',
+        target_audience: ['Forró enthusiasts', 'Couples', 'Dance learners', 'Brazilian culture lovers', 'Social dancers'],
+        dress_code: 'Comfortable dancing attire with flowing fabrics',
+        price_range: 'R$ 25 - R$ 60 (includes dance lesson)',
+        exclusivity: 'luxury_ticketed',
+        networking_potential: 'high'
+      }
+    ],
+    
+    vip_services: [
+      'Private forró lessons with renowned instructors',
+      'Premium dance floor access',
+      'Traditional northeastern Brazilian snacks',
+      'Live accordion and zabumba performances',
+      'Partner matching for single dancers'
+    ],
+    
+    target_demographic: [
+      'Brazilian dance enthusiasts',
+      'Couples seeking cultural experiences',
+      'International dance students',
+      'Cultural immersion seekers',
+      'Social connection seekers'
+    ],
+    
+    business_networking: true,
+    architectural_style: 'Traditional Brazilian colonial with open dance spaces',
+    capacity: 200,
+    established_year: 1980,
+    
+    socialMedia: {
+      instagram: '@forrolapa',
+      facebook: 'ForroLapa'
+    }
+  },
+  
+  {
+    id: 'capoeira-cordao-de-ouro-london',
+    name: 'Capoeira Cordão de Ouro London',
+    namePortuguese: 'Capoeira Cordão de Ouro Londres',
+    type: 'capoeira_academy',
+    prestige: 'prestigious',
+    membershipRequired: true,
+    dressCode: 'Traditional white capoeira uniform (abadá) or comfortable athletic wear',
+    
+    address: '45 Great Eastern Street',
+    city: 'London',
+    neighborhood: 'Shoreditch',
+    coordinates: {
+      latitude: 51.5254,
+      longitude: -0.0844
+    },
+    
+    phone: '+44 20 7739-8234',
+    email: 'london@cordaodeouro.co.uk',
+    website: 'https://cordaodeouro.co.uk',
+    
+    description: 'London\'s premier capoeira academy where Brazilian martial arts, music, and acrobatics create an incredible community experience',
+    descriptionPortuguese: 'Principal academia de capoeira de Londres onde artes marciais, música e acrobacias brasileiras criam uma experiência comunitária incrível',
+    culturalImportance: 'Authentic Brazilian cultural institution bringing the complete capoeira experience - movement, music, and community - to London',
+    
+    signature_events: [
+      {
+        id: 'roda-de-capoeira-mensal',
+        name: 'Monthly Capoeira Roda',
+        namePortuguese: 'Roda de Capoeira Mensal',
+        type: 'capoeira_performance',
+        description: 'Spectacular monthly gathering where capoeiristas showcase incredible acrobatics while live berimbau creates magical atmosphere',
+        target_audience: ['Capoeira practitioners', 'Brazilian community', 'Martial arts enthusiasts', 'Cultural experience seekers'],
+        dress_code: 'Traditional capoeira whites or comfortable athletic wear',
+        price_range: '£15 - £35 (includes traditional Brazilian snacks)',
+        exclusivity: 'luxury_ticketed',
+        networking_potential: 'high'
+      },
+      {
+        id: 'batizado-anual',
+        name: 'Annual Batizado Ceremony',
+        namePortuguese: 'Batizado Anual',
+        type: 'brazilian_festival',
+        description: 'Incredible annual celebration where new students receive their first cordão in authentic Brazilian ceremony with master capoeiristas',
+        target_audience: ['Capoeira students', 'Brazilian cultural enthusiasts', 'Martial arts community', 'Cultural ceremony attendees'],
+        dress_code: 'Traditional white capoeira uniform',
+        price_range: '£25 - £75 (includes ceremonial meal)',
+        exclusivity: 'member_exclusive',
+        networking_potential: 'exclusive'
+      }
+    ],
+    
+    vip_services: [
+      'Private lessons with Mestre (master)',
+      'Traditional berimbau and pandeiro instruction',
+      'Brazilian Portuguese language lessons',
+      'Cultural immersion workshops',
+      'International capoeira event coordination'
+    ],
+    
+    target_demographic: [
+      'Brazilian martial arts enthusiasts',
+      'Fitness and acrobatics lovers',
+      'Cultural immersion seekers',
+      'Brazilian community members',
+      'International capoeira practitioners'
+    ],
+    
+    business_networking: true,
+    architectural_style: 'Modern studio with traditional Brazilian cultural elements',
+    capacity: 80,
+    established_year: 2005,
+    
+    socialMedia: {
+      instagram: '@cordaodeourolondon',
+      facebook: 'CapoeiraCordaoDeOuroLondon'
+    }
+  }
+]
+
+/**
+ * Brazilian Nightlife & Social Scene Venues
+ * Where Brazilian energy and community spirit create unforgettable nights
+ */
+export const BRAZILIAN_NIGHTLIFE_VENUES: BrazilianCulturalVenue[] = [
+  {
+    id: 'boteco-do-brasil-london',
+    name: 'Boteco do Brasil London',
+    namePortuguese: 'Boteco do Brasil Londres',
+    type: 'brazilian_nightclub',
+    prestige: 'luxury',
+    membershipRequired: false,
+    dressCode: 'Brazilian party style - colorful, fun, and ready to dance all night',
+    
+    address: '32 Kingsland Road',
+    city: 'London',
+    neighborhood: 'Shoreditch',
+    
+    phone: '+44 20 7739-9876',
+    email: 'festa@botecobrasilondon.com',
+    website: 'https://botecobrasilondon.com',
+    
+    description: 'London\'s hottest Brazilian nightlife destination where authentic Brazilian energy meets UK nightlife sophistication',
+    descriptionPortuguese: 'Destino noturno brasileiro mais quente de Londres onde a autêntica energia brasileira encontra a sofisticação noturna do Reino Unido',
+    culturalImportance: 'Premier venue bringing authentic Brazilian party culture to London with live music, incredible cocktails, and infectious energy',
+    
+    signature_events: [
+      {
+        id: 'samba-saturday-nights',
+        name: 'Samba Saturday Nights',
+        namePortuguese: 'Noites de Samba dos Sábados',
+        type: 'samba_night',
+        description: 'Weekly celebration where Brazilian DJs and live samba keep the dance floor packed until dawn with pure Brazilian magic',
+        target_audience: ['Brazilian nightlife lovers', 'Samba enthusiasts', 'London party scene', 'International students', 'Brazilian expatriates'],
+        dress_code: 'Party ready - colorful and comfortable for dancing',
+        price_range: '£15 - £35 (includes welcome caipirinha)',
+        exclusivity: 'luxury_ticketed',
+        networking_potential: 'high'
+      },
+      {
+        id: 'carnival-preview-party',
+        name: 'Carnival Preview Party',
+        namePortuguese: 'Festa Prévia de Carnaval',
+        type: 'carnival_celebration',
+        description: 'Epic monthly celebration bringing Rio carnival energy to London with costumes, percussion, and non-stop Brazilian dancing',
+        target_audience: ['Carnival enthusiasts', 'Brazilian community', 'Costume party lovers', 'Cultural celebration seekers'],
+        dress_code: 'Carnival costumes or bright Brazilian colors',
+        price_range: '£25 - £60 (includes Brazilian buffet)',
+        exclusivity: 'luxury_ticketed',
+        networking_potential: 'high'
+      }
+    ],
+    
+    vip_services: [
+      'Premium caipirinha and Brazilian cocktail service',
+      'VIP lounge with Brazilian snacks',
+      'Meet-and-greet with Brazilian artists',
+      'Private carnival costume consultations',
+      'Brazilian music requests and dedications'
+    ],
+    
+    target_demographic: [
+      'Brazilian nightlife enthusiasts',
+      'London party scene participants',
+      'Cultural celebration seekers',
+      'International students',
+      'Brazilian expatriate community'
+    ],
+    
+    business_networking: true,
+    architectural_style: 'Modern Brazilian-themed nightclub with authentic decorations',
+    capacity: 250,
+    established_year: 2015,
+    
+    socialMedia: {
+      instagram: '@botecobrasilondon',
+      facebook: 'BotecoBrasilLondon'
+    }
+  }
+]
+
+/**
+ * Brazilian Food Culture Venues
+ * Incredible Brazilian culinary experiences that bring people together
+ */
+export const BRAZILIAN_FOOD_CULTURE_VENUES: BrazilianCulturalVenue[] = [
+  {
+    id: 'fogo-de-chao-london',
+    name: 'Fogo de Chão London',
+    namePortuguese: 'Fogo de Chão Londres',
+    type: 'churrascaria',
+    prestige: 'luxury',
+    membershipRequired: false,
+    dressCode: 'Smart casual to business casual for the ultimate Brazilian dining experience',
+    
+    address: '25 Maiden Lane',
+    city: 'London',
+    neighborhood: 'Covent Garden',
+    coordinates: {
+      latitude: 51.5106,
+      longitude: -0.1225
+    },
+    
+    phone: '+44 20 7395-4333',
+    email: 'london@fogodechao.com',
+    website: 'https://fogodechao.com/location/london',
+    
+    description: 'London\'s premier Brazilian steakhouse where the authentic gaucho tradition creates an incredible social dining experience that brings people together',
+    descriptionPortuguese: 'Principal churrascaria brasileira de Londres onde a autêntica tradição gaúcha cria uma experiência gastronômica social incrível que une as pessoas',
+    culturalImportance: 'Authentic Brazilian churrasco experience showcasing the social dining culture that makes Brazilian gatherings so special and communal',
+    
+    signature_events: [
+      {
+        id: 'domingo-churrasco-family',
+        name: 'Sunday Family Churrasco',
+        namePortuguese: 'Churrasco Familiar de Domingo',
+        type: 'brazilian_bbq',
+        description: 'Traditional Brazilian Sunday gathering where families and friends share incredible grilled meats and create lasting memories together',
+        target_audience: ['Brazilian families', 'Food enthusiasts', 'Social dining lovers', 'Cultural experience seekers', 'Weekend celebrators'],
+        dress_code: 'Comfortable family dining attire',
+        price_range: '£45 - £85 per person (includes unlimited meat service)',
+        exclusivity: 'luxury_ticketed',
+        networking_potential: 'high'
+      },
+      {
+        id: 'feijoada-festival',
+        name: 'Monthly Feijoada Festival',
+        namePortuguese: 'Festival Mensal de Feijoada',
+        type: 'brazilian_festival',
+        description: 'Monthly celebration of Brazil\'s ultimate comfort food - bringing together the community for this beloved Saturday tradition',
+        target_audience: ['Brazilian community', 'Comfort food lovers', 'Cultural tradition seekers', 'Social dining enthusiasts'],
+        dress_code: 'Casual and comfortable for this traditional weekend meal',
+        price_range: '£35 - £65 (includes traditional feijoada and accompaniments)',
+        exclusivity: 'luxury_ticketed',
+        networking_potential: 'high'
+      }
+    ],
+    
+    vip_services: [
+      'Premium meat cuts and exclusive selections',
+      'Traditional caipirinha and Brazilian wine pairings',
+      'Private dining rooms for group celebrations',
+      'Brazilian culinary education experiences',
+      'Gaucho cultural storytelling during meals'
+    ],
+    
+    target_demographic: [
+      'Brazilian food enthusiasts',
+      'Social dining lovers',
+      'Cultural experience seekers',
+      'Business entertainment hosts',
+      'Family celebration organizers'
+    ],
+    
+    business_networking: true,
+    architectural_style: 'Authentic Brazilian steakhouse with gaucho cultural elements',
+    capacity: 220,
+    established_year: 2016,
+    
+    socialMedia: {
+      instagram: '@fogodechaolondon',
+      facebook: 'FogodeChaoLondon'
+    }
+  }
+]

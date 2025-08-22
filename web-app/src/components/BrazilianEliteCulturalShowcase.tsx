@@ -9,11 +9,24 @@ import {
   LONDON_BRAZILIAN_ELITE_VENUES,
   BRAZILIAN_LUXURY_BRANDS,
   BRAZILIAN_ECONOMIC_POWERHOUSE,
+  BRAZILIAN_MUSIC_DANCE_VENUES,
+  BRAZILIAN_NIGHTLIFE_VENUES,
+  BRAZILIAN_FOOD_CULTURE_VENUES,
   getBrazilianVenuesByType,
   getBrazilianEliteEventsLondon,
   getBrazilianLuxuryBrandsByCategory,
   getBusinessNetworkingVenues,
-  getExclusiveInvitationEvents
+  getExclusiveInvitationEvents,
+  getAllBrazilianVenues,
+  getBrazilianMusicDanceVenues,
+  getBrazilianNightlifeVenues,
+  getBrazilianFoodVenues,
+  getBrazilianMusicDanceEvents,
+  getBrazilianNightlifeEvents,
+  getBrazilianFoodEvents,
+  getCommunityBrazilianEvents,
+  getBrazilianSocialDiningEvents,
+  getBrazilianCulturalMagnetism
 } from '@/config/brazilian-elite-culture'
 import { getCulturalCenterById } from '@/config/cultural-centers'
 import { SubscriptionGate } from './SubscriptionGate'
@@ -34,7 +47,7 @@ export function BrazilianEliteCulturalShowcase({
 }: BrazilianEliteCulturalShowcaseProps) {
   const { t } = useLanguage()
   const { colors } = useHeritage()
-  const [selectedCategory, setSelectedCategory] = useState<'venues' | 'brands' | 'networking' | 'economic'>('venues')
+  const [selectedCategory, setSelectedCategory] = useState<'venues' | 'brands' | 'networking' | 'economic' | 'music_dance' | 'nightlife' | 'food_culture'>('music_dance')
   const [selectedLocation, setSelectedLocation] = useState<'sao_paulo' | 'rio' | 'london'>('london')
   const [showExclusiveContent, setShowExclusiveContent] = useState(false)
 
@@ -56,10 +69,13 @@ export function BrazilianEliteCulturalShowcase({
   const fashionBrands = getBrazilianLuxuryBrandsByCategory('fashion')
 
   const categoryTabs = [
-    { id: 'venues', label: 'Elite Venues', labelPT: 'Locais de Elite' },
-    { id: 'brands', label: 'Luxury Brands', labelPT: 'Marcas de Luxo' },
-    { id: 'networking', label: 'High Society', labelPT: 'Alta Sociedade' },
-    { id: 'economic', label: 'Economic Power', labelPT: 'Poder Econômico' }
+    { id: 'music_dance', label: '🎵 Music & Dance', labelPT: '🎵 Música e Dança', color: 'from-green-500 to-yellow-500' },
+    { id: 'nightlife', label: '🌃 Nightlife & Social', labelPT: '🌃 Vida Noturna', color: 'from-purple-500 to-pink-500' },
+    { id: 'food_culture', label: '🍽️ Food Culture', labelPT: '🍽️ Cultura Gastronômica', color: 'from-orange-500 to-red-500' },
+    { id: 'venues', label: 'Elite Venues', labelPT: 'Locais de Elite', color: 'from-blue-500 to-indigo-500' },
+    { id: 'brands', label: 'Luxury Brands', labelPT: 'Marcas de Luxo', color: 'from-gray-600 to-gray-800' },
+    { id: 'networking', label: 'High Society', labelPT: 'Alta Sociedade', color: 'from-indigo-500 to-purple-500' },
+    { id: 'economic', label: 'Economic Power', labelPT: 'Poder Econômico', color: 'from-emerald-500 to-cyan-500' }
   ]
 
   const locationTabs = [
@@ -208,67 +224,82 @@ export function BrazilianEliteCulturalShowcase({
     </LuxuryCard>
   )
 
-  const EconomicPowerShowcase = () => (
+  const BrazilianCulturalMagnetism = () => (
     <div className="space-y-8">
       <PremiumGradients className="text-center py-8 rounded-xl">
-        <h3 className="text-2xl font-bold text-white mb-2">
-          Brazil: Latin America's Economic Powerhouse
+        <h3 className="text-3xl font-bold text-white mb-2">
+          🇧🇷 Brazilian Cultural Magnetism
         </h3>
         <p className="text-blue-100 text-lg">
-          12th largest economy globally • #1 in Latin America
+          The incredible energy, music, dancing, food & nightlife that makes Brazilian culture absolutely irresistible
         </p>
       </PremiumGradients>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <LuxuryCard>
-          <div className="p-6">
-            <h4 className="text-lg font-bold text-gray-900 mb-4">Key Industries</h4>
-            <div className="space-y-4">
-              {BRAZILIAN_ECONOMIC_POWERHOUSE.key_industries.map((industry, idx) => (
-                <div key={idx} className="border-l-4 border-blue-400 pl-4">
-                  <h5 className="font-semibold text-gray-800">{industry.name}</h5>
-                  <p className="text-sm text-gray-600 mb-2">{industry.description}</p>
-                  <div className="text-xs text-gray-500">
-                    <strong>UK Presence:</strong> {industry.uk_presence}
-                  </div>
-                  <div className="flex flex-wrap gap-1 mt-2">
-                    {industry.global_companies.map((company, companyIdx) => (
-                      <span key={companyIdx} className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded">
-                        {company}
-                      </span>
-                    ))}
-                  </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {getBrazilianCulturalMagnetism().map((magnetism, idx) => {
+          const [title, description] = magnetism.split(': ')
+          const isMusic = title.includes('Samba') || title.includes('Bossa Nova') || title.includes('Funk')
+          const isFood = title.includes('BBQ') || title.includes('Açaí') || title.includes('Brigadeiro')
+          const isDance = title.includes('Capoeira') || title.includes('Forró')
+          const isNightlife = title.includes('Football') || title.includes('Carnival')
+          
+          const bgGradient = isMusic ? 'from-green-50 to-yellow-50' :
+                            isFood ? 'from-orange-50 to-red-50' :
+                            isDance ? 'from-purple-50 to-pink-50' :
+                            isNightlife ? 'from-blue-50 to-indigo-50' :
+                            'from-gray-50 to-gray-100'
+          
+          const borderColor = isMusic ? 'border-green-400' :
+                             isFood ? 'border-orange-400' :
+                             isDance ? 'border-purple-400' :
+                             isNightlife ? 'border-blue-400' :
+                             'border-gray-400'
+          
+          return (
+            <LuxuryCard key={idx} className={`bg-gradient-to-br ${bgGradient} border-l-4 ${borderColor}`}>
+              <div className="p-6">
+                <h4 className="text-lg font-bold text-gray-900 mb-3">{title}</h4>
+                <p className="text-sm text-gray-700 leading-relaxed">{description}</p>
+                <div className="mt-4">
+                  <span className={`inline-block w-3 h-3 rounded-full ${
+                    isMusic ? 'bg-gradient-to-r from-green-400 to-yellow-400' :
+                    isFood ? 'bg-gradient-to-r from-orange-400 to-red-400' :
+                    isDance ? 'bg-gradient-to-r from-purple-400 to-pink-400' :
+                    isNightlife ? 'bg-gradient-to-r from-blue-400 to-indigo-400' :
+                    'bg-gradient-to-r from-gray-400 to-gray-500'
+                  }`}></span>
+                  <span className="ml-2 text-xs font-medium text-gray-600 uppercase tracking-wider">
+                    {isMusic ? 'Music Culture' :
+                     isFood ? 'Food Culture' :
+                     isDance ? 'Dance Culture' :
+                     isNightlife ? 'Social Culture' :
+                     'Brazilian Culture'}
+                  </span>
                 </div>
-              ))}
-            </div>
-          </div>
-        </LuxuryCard>
-        
-        <LuxuryCard>
-          <div className="p-6">
-            <h4 className="text-lg font-bold text-gray-900 mb-4">Cultural Sophistication</h4>
-            <div className="space-y-3">
-              {BRAZILIAN_ECONOMIC_POWERHOUSE.cultural_sophistication.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3">
-                  <span className="w-2 h-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mt-2 flex-shrink-0"></span>
-                  <span className="text-sm text-gray-700">{item}</span>
-                </div>
-              ))}
-            </div>
-            
-            <div className="mt-6 pt-4 border-t border-gray-100">
-              <h5 className="font-semibold text-gray-800 mb-3">Luxury Lifestyle Indicators</h5>
-              <div className="space-y-2">
-                {BRAZILIAN_ECONOMIC_POWERHOUSE.luxury_lifestyle_indicators.map((indicator, idx) => (
-                  <div key={idx} className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-xs text-gray-600">{indicator}</span>
-                  </div>
-                ))}
               </div>
-            </div>
-          </div>
-        </LuxuryCard>
+            </LuxuryCard>
+          )
+        })}
+      </div>
+      
+      {/* Economic Power Stats */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div className="text-center p-6 bg-gradient-to-br from-green-50 to-yellow-50 rounded-xl">
+          <div className="text-3xl font-bold text-green-600 mb-2">12th</div>
+          <div className="text-sm text-gray-600">Largest Economy Globally</div>
+        </div>
+        <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl">
+          <div className="text-3xl font-bold text-blue-600 mb-2">#1</div>
+          <div className="text-sm text-gray-600">Economy in Latin America</div>
+        </div>
+        <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-red-50 rounded-xl">
+          <div className="text-3xl font-bold text-orange-600 mb-2">3rd</div>
+          <div className="text-sm text-gray-600">Aircraft Manufacturer</div>
+        </div>
+        <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl">
+          <div className="text-3xl font-bold text-purple-600 mb-2">4th</div>
+          <div className="text-sm text-gray-600">Luxury Car Market</div>
+        </div>
       </div>
     </div>
   )
@@ -350,6 +381,138 @@ export function BrazilianEliteCulturalShowcase({
   )
 
   const renderContent = () => {
+    if (selectedCategory === 'music_dance') {
+      return (
+        <div className="space-y-8">
+          <div className="text-center">
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">
+              🎵 Brazilian Music & Dance Culture
+            </h3>
+            <p className="text-xl text-gray-600 mb-4">
+              Where infectious rhythms create magical connections and communities come alive
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {getBrazilianMusicDanceVenues().map((venue, idx) => (
+              <VenueCard key={idx} venue={venue} isPremium={venue.prestige === 'iconic'} />
+            ))}
+          </div>
+          
+          <div className="mt-8">
+            <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">🎪 Community Events & Celebrations</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {getBrazilianMusicDanceEvents().map((event, idx) => (
+                <LuxuryCard key={idx} className="bg-gradient-to-br from-green-50 via-yellow-50 to-blue-50">
+                  <div className="p-6">
+                    <h5 className="text-lg font-bold text-gray-900 mb-2">{event.name}</h5>
+                    <p className="text-sm text-gray-700 mb-3">{event.description}</p>
+                    <div className="flex justify-between items-center text-xs mb-3">
+                      <span className="font-medium text-green-700">{event.price_range}</span>
+                      <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                        {event.type.replace('_', ' ')}
+                      </span>
+                    </div>
+                    <div className="text-xs text-gray-600">
+                      <strong>Perfect for:</strong> {event.target_audience.slice(0, 3).join(', ')}
+                    </div>
+                  </div>
+                </LuxuryCard>
+              ))}
+            </div>
+          </div>
+        </div>
+      )
+    }
+    
+    if (selectedCategory === 'nightlife') {
+      return (
+        <div className="space-y-8">
+          <div className="text-center">
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">
+              🌃 Brazilian Nightlife & Social Scene
+            </h3>
+            <p className="text-xl text-gray-600 mb-4">
+              Where Brazilian energy meets UK sophistication for unforgettable nights
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {getBrazilianNightlifeVenues().map((venue, idx) => (
+              <VenueCard key={idx} venue={venue} isPremium={true} />
+            ))}
+          </div>
+          
+          <div className="mt-8">
+            <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">🎉 Epic Night Events</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {getBrazilianNightlifeEvents().map((event, idx) => (
+                <LuxuryCard key={idx} className="bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50">
+                  <div className="p-6">
+                    <h5 className="text-lg font-bold text-gray-900 mb-2">{event.name}</h5>
+                    <p className="text-sm text-gray-700 mb-3">{event.description}</p>
+                    <div className="flex justify-between items-center text-xs mb-3">
+                      <span className="font-medium text-purple-700">{event.price_range}</span>
+                      <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full">
+                        {event.type.replace('_', ' ')}
+                      </span>
+                    </div>
+                    <div className="text-xs text-gray-600">
+                      <strong>Vibe:</strong> {event.target_audience.slice(0, 3).join(', ')}
+                    </div>
+                  </div>
+                </LuxuryCard>
+              ))}
+            </div>
+          </div>
+        </div>
+      )
+    }
+    
+    if (selectedCategory === 'food_culture') {
+      return (
+        <div className="space-y-8">
+          <div className="text-center">
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">
+              🍽️ Brazilian Food Culture
+            </h3>
+            <p className="text-xl text-gray-600 mb-4">
+              Incredible flavors and social dining experiences that bring people together
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {getBrazilianFoodVenues().map((venue, idx) => (
+              <VenueCard key={idx} venue={venue} isPremium={true} />
+            ))}
+          </div>
+          
+          <div className="mt-8">
+            <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">🎪 Food Festivals & Social Dining</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {getBrazilianFoodEvents().map((event, idx) => (
+                <LuxuryCard key={idx} className="bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50">
+                  <div className="p-6">
+                    <h5 className="text-lg font-bold text-gray-900 mb-2">{event.name}</h5>
+                    <p className="text-sm text-gray-700 mb-3">{event.description}</p>
+                    <div className="flex justify-between items-center text-xs mb-3">
+                      <span className="font-medium text-orange-700">{event.price_range}</span>
+                      <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full">
+                        {event.type.replace('_', ' ')}
+                      </span>
+                    </div>
+                    <div className="text-xs text-gray-600">
+                      <strong>Experience:</strong> {event.target_audience.slice(0, 3).join(', ')}
+                    </div>
+                  </div>
+                </LuxuryCard>
+              ))}
+            </div>
+          </div>
+        </div>
+      )
+    }
+    
     if (selectedCategory === 'venues') {
       const venues = selectedLocation === 'london' ? LONDON_BRAZILIAN_ELITE_VENUES :
                     selectedLocation === 'sao_paulo' ? SAO_PAULO_CULTURAL_ELITE :
@@ -379,7 +542,7 @@ export function BrazilianEliteCulturalShowcase({
     }
     
     if (selectedCategory === 'economic') {
-      return <EconomicPowerShowcase />
+      return <BrazilianCulturalMagnetism />
     }
     
     return null
@@ -405,17 +568,23 @@ export function BrazilianEliteCulturalShowcase({
     <div className={`space-y-8 ${className}`}>
       {/* Header */}
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">
-          Brazilian Elite Culture & Luxury Lifestyle
+        <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          🇧🇷 Amazing Brazilian Culture
         </h2>
-        <p className="text-xl text-gray-600 mb-4">
-          Discover Brazil's sophisticated cultural scene and connect with London's Brazilian elite
+        <p className="text-xl text-gray-600 mb-6">
+          Discover the incredible music, dancing, food, and nightlife that makes Brazilian culture absolutely magnetic
         </p>
-        <div className="flex items-center justify-center gap-2 text-lg">
-          <span className="font-semibold text-green-600">Brazil:</span>
-          <span className="text-gray-700">Latin America's Economic Powerhouse</span>
-          <span className="text-sm text-gray-500">(12th largest economy globally)</span>
+        <div className="bg-gradient-to-r from-green-100 via-yellow-100 to-blue-100 rounded-xl p-6 mb-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-lg">
+            <span className="bg-green-500 text-white px-4 py-2 rounded-full font-semibold">🎵 Infectious Rhythms</span>
+            <span className="bg-yellow-500 text-white px-4 py-2 rounded-full font-semibold">💃 Community Dancing</span>
+            <span className="bg-orange-500 text-white px-4 py-2 rounded-full font-semibold">🍖 Amazing Food</span>
+            <span className="bg-purple-500 text-white px-4 py-2 rounded-full font-semibold">🌃 Vibrant Nightlife</span>
+          </div>
         </div>
+        <p className="text-lg text-gray-700">
+          <span className="font-semibold text-green-600">Brazil:</span> Where culture creates instant community and every gathering becomes a celebration
+        </p>
       </div>
 
       {/* Category Navigation */}
@@ -426,8 +595,8 @@ export function BrazilianEliteCulturalShowcase({
             onClick={() => setSelectedCategory(tab.id as any)}
             className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
               selectedCategory === tab.id
-                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                ? `bg-gradient-to-r ${tab.color} text-white shadow-lg transform scale-105`
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105'
             }`}
           >
             {tab.label}
@@ -436,7 +605,7 @@ export function BrazilianEliteCulturalShowcase({
       </div>
 
       {/* Location Navigation (for venues) */}
-      {selectedCategory === 'venues' && (
+      {(selectedCategory === 'venues' || selectedCategory === 'music_dance') && (
         <div className="flex flex-wrap justify-center gap-2">
           {locationTabs.map((tab) => (
             <button
@@ -461,11 +630,11 @@ export function BrazilianEliteCulturalShowcase({
       {/* Call to Action */}
       <div className="text-center pt-8">
         <PremiumGradients className="p-8 rounded-xl">
-          <h3 className="text-2xl font-bold text-white mb-4">
-            Join London's Brazilian Elite Network
+          <h3 className="text-3xl font-bold text-white mb-4">
+            🎉 Experience Amazing Brazilian Culture in London
           </h3>
           <p className="text-blue-100 mb-6">
-            Connect with successful Brazilian professionals and experience Brazil's cultural sophistication in London
+            Join the most vibrant community in London - where Brazilian music, dance, food, and nightlife create unforgettable connections
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <EliteButton 

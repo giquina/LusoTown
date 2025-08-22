@@ -1242,7 +1242,7 @@ export default function EventsPage() {
               {/* Three CTA Options */}
               <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
                 <a
-                  href={ROUTES.events + "/create"}
+                  href={`${ROUTES.events  }/create`}
                   className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                 >
                   <CalendarIcon className="w-8 h-8 text-premium-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
@@ -1257,7 +1257,7 @@ export default function EventsPage() {
                 </a>
 
                 <a
-                  href={ROUTES.groups + "/create"}
+                  href={`${ROUTES.groups  }/create`}
                   className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                 >
                   <UserGroupIcon className="w-8 h-8 text-coral-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />

@@ -568,7 +568,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
       if (node.nodeType === Node.TEXT_NODE) {
         const nodeText = node.textContent?.trim() || '';
         if (nodeText.length > 0) {
-          text += nodeText + ' ';
+          text += `${nodeText  } `;
         }
       } else if (node.nodeType === Node.ELEMENT_NODE) {
         text += extractReadableText(node as Element);

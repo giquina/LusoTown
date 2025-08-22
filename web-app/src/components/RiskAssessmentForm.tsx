@@ -120,7 +120,7 @@ export default function RiskAssessmentForm({
   
   const [assessment, setAssessment] = useState<Partial<RiskAssessment>>({
     id: `risk-${Date.now()}`,
-    complianceDataId: 'compliance-' + Date.now(),
+    complianceDataId: `compliance-${  Date.now()}`,
     assessmentDate: new Date().toISOString(),
     assessorName: '',
     assessorLicense: '',

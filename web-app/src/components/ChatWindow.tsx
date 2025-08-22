@@ -204,7 +204,7 @@ export default function ChatWindow({
   }, [newMessage, canParticipate, currentUser, isConnected, room, lastMessageTime])
 
   const handleEmoteSelect = useCallback((emoteCode: string) => {
-    setNewMessage(prev => prev + emoteCode + ' ')
+    setNewMessage(prev => `${prev + emoteCode  } `)
     chatInputRef.current?.focus()
   }, [])
 

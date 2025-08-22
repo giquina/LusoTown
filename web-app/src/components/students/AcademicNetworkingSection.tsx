@@ -142,7 +142,7 @@ const ACADEMIC_CONNECTIONS: AcademicConnection[] = [
     role: "student",
     university: "Imperial College London",
     subject: "Computer Science",
-    specialization: ["Machine Learning", "AI", "Software Engineering"],
+    specialization: ["Machine Learning", "Intelligent Systems", "Software Engineering"],
     yearOfStudy: "3rd Year",
     researchInterests: [
       "Natural Language Processing",
@@ -404,7 +404,7 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
   },
   {
     id: "ai-portuguese-nlp",
-    title: "AI for Portuguese Language Processing",
+    title: "Intelligent Systems for Portuguese Language Processing",
     titlePortuguese: "IA para Processamento de Língua Portuguesa",
     university: "Imperial College London",
     department: "Computing",
@@ -425,7 +425,7 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
       "Python/TensorFlow",
     ],
     description:
-      "Developing AI models specifically trained on Portuguese language data for improved text analysis and translation.",
+      "Developing intelligent models specifically trained on Portuguese language data for improved text analysis and translation.",
     descriptionPortuguese:
       "Desenvolvimento de modelos de IA especificamente treinados em dados da língua portuguesa para melhor análise de texto e tradução.",
     funding: false,

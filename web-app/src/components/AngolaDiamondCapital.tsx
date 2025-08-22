@@ -53,55 +53,55 @@ interface LuxuryDevelopment {
 const investmentOpportunities: InvestmentOpportunity[] = [
   {
     id: 'diamond-001',
-    title: 'Angola Diamond Mining Partnership',
+    title: 'London Diamond Trading Partnership',
     sector: 'Diamonds',
-    description: 'Exclusive partnership opportunity in Angola\'s $12 billion diamond industry. Direct access to certified diamond deposits with established mining rights and London-based trade connections.',
-    investmentRange: '£5M - £50M',
-    expectedReturn: '18-25% annually',
+    description: 'Exclusive partnership with London-based Angolan diamond traders. Access established networks connecting UK luxury markets with premium suppliers, managed by experienced London-based professionals.',
+    investmentRange: '£500K - £5M',
+    expectedReturn: '12-18% annually',
     riskLevel: 'Medium',
-    timeframe: '5-10 years',
-    location: 'Lunda Sul Province, Angola',
+    timeframe: '3-7 years',
+    location: 'Hatton Garden, London',
     highlights: [
-      'Certified diamond reserves worth £200M+',
-      'Established mining infrastructure',
-      'Direct London Diamond Bourse connections',
-      'Government partnership agreements'
+      'Established London diamond trading network',
+      'Direct access to UK luxury markets',
+      'Experienced Angolan-British management team',
+      'Connections to major London jewelers'
     ],
     contactEmail: 'diamonds@angolaelite.co.uk'
   },
   {
     id: 'oil-001',
-    title: 'Cabinda Oil Field Development',
+    title: 'London Energy Consulting Firm',
     sector: 'Oil & Gas',
-    description: 'Strategic investment in Angola\'s proven oil reserves. Partner with established operators in one of Africa\'s most productive oil regions with direct pipeline to European markets.',
-    investmentRange: '£25M - £100M',
-    expectedReturn: '22-30% annually', 
+    description: 'Strategic partnership with London-based energy consultancy founded by former Angola oil executives. Specializes in connecting UK investors with international energy opportunities.',
+    investmentRange: '£1M - £10M',
+    expectedReturn: '15-22% annually', 
     riskLevel: 'Medium',
-    timeframe: '7-15 years',
-    location: 'Cabinda Province, Angola',
+    timeframe: '3-8 years',
+    location: 'City of London',
     highlights: [
-      'Proven oil reserves of 2.5 billion barrels',
-      'Established production infrastructure',
-      'European market pipeline access',
-      'Experienced international partners'
+      'Led by former Angola oil industry executives',
+      'Strong UK regulatory compliance track record',
+      'Established client base in London\'s financial district',
+      'Growing portfolio of international projects'
     ],
     contactEmail: 'oil@angolaelite.co.uk'
   },
   {
     id: 'real-estate-001',
-    title: 'Luanda Luxury Waterfront Development',
+    title: 'London Luxury Property Investment Fund',
     sector: 'Luxury Real Estate',
-    description: 'Premium residential and commercial development in Luanda\'s exclusive Ilha district. Ultra-luxury apartments and commercial spaces targeting Angola\'s elite and international executives.',
-    investmentRange: '£10M - £75M',
-    expectedReturn: '15-22% annually',
+    description: 'Exclusive London property investment fund managed by successful Angolan real estate professionals. Focuses on prime London locations popular with international professionals.',
+    investmentRange: '£250K - £5M',
+    expectedReturn: '8-15% annually',
     riskLevel: 'Low',
-    timeframe: '3-7 years',
-    location: 'Ilha do Cabo, Luanda',
+    timeframe: '2-5 years',
+    location: 'Mayfair & Canary Wharf, London',
     highlights: [
-      'Waterfront location in Luanda\'s most exclusive area',
-      'Luxury amenities and international standards',
-      'Growing demand from oil industry executives',
-      'Government-backed development permits'
+      'Prime London locations in Zones 1-2',
+      'Managed by experienced London-based team',
+      'Strong rental yields from international tenants',
+      'Established relationships with London property developers'
     ],
     contactEmail: 'realestate@angolaelite.co.uk'
   }
@@ -110,36 +110,36 @@ const investmentOpportunities: InvestmentOpportunity[] = [
 const luxuryDevelopments: LuxuryDevelopment[] = [
   {
     id: 'dev-001',
-    name: 'Diamond Heights Luanda',
-    location: 'Talatona, Luanda',
-    type: 'Residential',
-    description: 'Ultra-luxury residential towers featuring panoramic views of Luanda Bay. Designed for Angola\'s elite with world-class amenities and international security standards.',
-    value: '£150M development',
+    name: 'Angolan Heritage Centre London',
+    location: 'Canary Wharf, London',
+    type: 'Mixed-Use',
+    description: 'Premium cultural and business center celebrating Angolan heritage in London. Features exhibition spaces, business facilities, and luxury event venues for the Angolan diaspora community.',
+    value: '£25M development',
     completionDate: '2026',
-    features: ['24/7 Security', 'Infinity Pool', 'Private Marina', 'Helicopter Landing', 'Luxury Spa'],
-    image: '/developments/diamond-heights.jpg'
+    features: ['Cultural Exhibition Space', 'Business Center', 'Conference Facilities', 'Fine Dining Restaurant', 'Art Gallery'],
+    image: '/developments/heritage-centre.jpg'
   },
   {
     id: 'dev-002',
-    name: 'Cabinda Business Plaza',
-    location: 'Cabinda City, Cabinda',
+    name: 'Portuguese Quarter Business Hub',
+    location: 'Aldgate, London',
     type: 'Commercial',
-    description: 'Premium office and retail complex serving the oil industry. International-standard facilities designed for multinational corporations operating in Angola\'s energy sector.',
-    value: '£85M development',
+    description: 'Modern business complex designed for Portuguese and Angolan entrepreneurs in London. Premium office spaces with co-working areas, meeting rooms, and cultural facilities.',
+    value: '£12M development',
     completionDate: '2025',
-    features: ['Grade A Offices', 'Conference Centers', 'Luxury Retail', 'Executive Parking', 'Fiber Connectivity'],
-    image: '/developments/cabinda-plaza.jpg'
+    features: ['Flexible Office Spaces', 'Co-working Areas', 'Meeting Rooms', 'Portuguese Café', 'Business Incubator'],
+    image: '/developments/portuguese-quarter.jpg'
   },
   {
     id: 'dev-003',
-    name: 'Benguela Luxury Resort',
-    location: 'Benguela Province',
+    name: 'Luanda London Restaurant',
+    location: 'Fitzrovia, London',
     type: 'Hospitality',
-    description: 'Exclusive beachfront resort targeting international luxury travelers and Angola\'s wealthy elite. Premium accommodations with private beach access and world-class amenities.',
-    value: '£120M development',
-    completionDate: '2027',
-    features: ['Private Beach', '5-Star Spa', 'Championship Golf', 'Marina Club', 'Fine Dining'],
-    image: '/developments/benguela-resort.jpg'
+    description: 'Premium Angolan restaurant bringing authentic high-end cuisine to London. Designed as a cultural hub for the Angolan community and fine dining destination for London food enthusiasts.',
+    value: '£3M development',
+    completionDate: '2025',
+    features: ['Authentic Angolan Cuisine', 'Wine Cellar', 'Private Dining', 'Cultural Events Space', 'Chef\'s Table'],
+    image: '/developments/luanda-restaurant.jpg'
   }
 ]
 
@@ -200,38 +200,39 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
             </div>
             
             <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-yellow-300 to-white bg-clip-text text-transparent">
-              Angola: Africa's Diamond Capital
+              London-Angola Business Excellence
             </h1>
             <p className="text-2xl mb-6 max-w-4xl mx-auto leading-relaxed">
-              Unlock the Wealth of a Nation Rich in Natural Resources
+              Connecting London's Financial Expertise with Angolan Heritage
             </p>
             <p className="text-lg opacity-90 max-w-5xl mx-auto mb-10">
-              Discover exclusive investment opportunities in Angola's $12 billion diamond industry, 
-              $45 billion oil sector, and emerging luxury real estate market. Connect with London's 
-              most sophisticated Angolan business network and access Africa's most promising wealth-building opportunities.
+              Connect with London's most sophisticated Angolan business professionals who bridge 
+              UK financial expertise with Angola's rich heritage. Network with successful diaspora 
+              entrepreneurs, access London-based business opportunities, and join the elite community 
+              that celebrates Angola's legacy while thriving in London's business districts.
             </p>
 
             {/* Key Statistics */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
               <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 text-center">
                 <Diamond className="h-8 w-8 text-yellow-300 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-yellow-300">$12B+</div>
-                <div className="text-sm opacity-90">Diamond Industry Value</div>
+                <div className="text-2xl font-bold text-yellow-300">2,500+</div>
+                <div className="text-sm opacity-90">Angolan Professionals in London</div>
               </div>
               <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 text-center">
                 <BarChart3 className="h-8 w-8 text-yellow-300 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-yellow-300">$45B+</div>
-                <div className="text-sm opacity-90">Oil & Gas Sector</div>
+                <div className="text-2xl font-bold text-yellow-300">150+</div>
+                <div className="text-sm opacity-90">London-Based Businesses</div>
               </div>
               <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 text-center">
                 <Building2 className="h-8 w-8 text-yellow-300 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-yellow-300">£8B+</div>
-                <div className="text-sm opacity-90">UK Investment Flow</div>
+                <div className="text-2xl font-bold text-yellow-300">£500M+</div>
+                <div className="text-sm opacity-90">London Business Network Value</div>
               </div>
               <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 text-center">
                 <Users className="h-8 w-8 text-yellow-300 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-yellow-300">50,000+</div>
-                <div className="text-sm opacity-90">UK Angolan Diaspora</div>
+                <div className="text-2xl font-bold text-yellow-300">35+</div>
+                <div className="text-sm opacity-90">Monthly London Networking Events</div>
               </div>
             </div>
 
@@ -261,9 +262,9 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
         <div className="flex justify-center mb-12">
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-1">
             {[
-              { key: 'overview', label: 'Market Overview', icon: Globe },
-              { key: 'investments', label: 'Investment Opportunities', icon: TrendingUp },
-              { key: 'developments', label: 'Luxury Developments', icon: Building2 }
+              { key: 'overview', label: 'Community Overview', icon: Globe },
+              { key: 'investments', label: 'Business Opportunities', icon: TrendingUp },
+              { key: 'developments', label: 'London Projects', icon: Building2 }
             ].map(({ key, label, icon: Icon }) => (
               <Button
                 key={key}
@@ -290,22 +291,22 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
               <Card className="bg-gradient-to-br from-yellow-50 to-amber-50 border-yellow-200">
                 <CardContent className="p-8 text-center">
                   <Diamond className="h-16 w-16 text-yellow-600 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Diamond Wealth</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">London Business Excellence</h3>
                   <p className="text-gray-700 mb-4">
-                    Angola is the world's 4th largest diamond producer, with over $12 billion in annual production
+                    London's Angolan community includes successful professionals across finance, consulting, and luxury sectors
                   </p>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span>Annual Production:</span>
-                      <span className="font-semibold">$12B+</span>
+                      <span>Business Professionals:</span>
+                      <span className="font-semibold">2,500+</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Global Market Share:</span>
-                      <span className="font-semibold">7.5%</span>
+                      <span>London Businesses:</span>
+                      <span className="font-semibold">150+</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Proven Reserves:</span>
-                      <span className="font-semibold">180M carats</span>
+                      <span>Network Events:</span>
+                      <span className="font-semibold">25+ monthly</span>
                     </div>
                   </div>
                 </CardContent>
@@ -314,22 +315,22 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
               <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
                 <CardContent className="p-8 text-center">
                   <BarChart3 className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Oil & Gas</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Professional Success</h3>
                   <p className="text-gray-700 mb-4">
-                    Africa's 2nd largest oil producer with $45 billion industry value and European pipeline access
+                    Angolan professionals excelling in London's competitive business environment across multiple sectors
                   </p>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span>Daily Production:</span>
-                      <span className="font-semibold">1.4M barrels</span>
+                      <span>City Finance:</span>
+                      <span className="font-semibold">800+ professionals</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Proven Reserves:</span>
-                      <span className="font-semibold">9.5B barrels</span>
+                      <span>Consulting:</span>
+                      <span className="font-semibold">450+ consultants</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Export Revenue:</span>
-                      <span className="font-semibold">$45B annually</span>
+                      <span>Entrepreneurs:</span>
+                      <span className="font-semibold">300+ business owners</span>
                     </div>
                   </div>
                 </CardContent>
@@ -338,22 +339,22 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
               <Card className="bg-gradient-to-br from-emerald-50 to-green-50 border-emerald-200">
                 <CardContent className="p-8 text-center">
                   <Building2 className="h-16 w-16 text-emerald-600 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Luxury Real Estate</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Cultural Heritage</h3>
                   <p className="text-gray-700 mb-4">
-                    Rapidly growing luxury property market in Luanda and coastal regions, targeting elite clientele
+                    London's Angolan community maintains strong cultural connections while building successful careers in the UK
                   </p>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span>Market Growth:</span>
-                      <span className="font-semibold">15-25% annually</span>
+                      <span>Cultural Events:</span>
+                      <span className="font-semibold">15+ monthly</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Luanda Premium:</span>
-                      <span className="font-semibold">$5,000/m²</span>
+                      <span>Art Galleries:</span>
+                      <span className="font-semibold">8 active spaces</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>International Demand:</span>
-                      <span className="font-semibold">Growing</span>
+                      <span>Restaurants:</span>
+                      <span className="font-semibold">12 establishments</span>
                     </div>
                   </div>
                 </CardContent>
@@ -364,11 +365,12 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
             <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-12">
               <div className="text-center mb-10">
                 <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                  The London-Angola Advantage
+                  London's Angolan Business Excellence
                 </h2>
                 <p className="text-xl text-gray-700 max-w-4xl mx-auto">
-                  London's financial expertise combined with Angola's natural wealth creates 
-                  unprecedented opportunities for sophisticated investors and entrepreneurs.
+                  London's world-class business environment attracts Angola's most talented entrepreneurs 
+                  and professionals, creating a thriving diaspora community that bridges cultures while 
+                  achieving remarkable success in the UK market.
                 </p>
               </div>
 
@@ -376,23 +378,23 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
                 {[
                   {
                     icon: <Crown className="h-8 w-8 text-amber-600" />,
-                    title: 'Financial Hub',
-                    description: 'Access London\'s world-class financial services and investment expertise'
+                    title: 'Business Excellence',
+                    description: 'London-based Angolan professionals excelling in finance, consulting, and luxury sectors'
                   },
                   {
                     icon: <Globe className="h-8 w-8 text-blue-600" />,
-                    title: 'Trade Networks',
-                    description: 'Established trade relationships between UK and Angola worth £8B+ annually'
+                    title: 'Cultural Bridge',
+                    description: 'Connecting London\'s business opportunities with Angola\'s rich cultural heritage'
                   },
                   {
                     icon: <Users className="h-8 w-8 text-emerald-600" />,
-                    title: 'Elite Diaspora',
-                    description: '50,000+ affluent Angolans in UK providing cultural and business bridges'
+                    title: 'Professional Network',
+                    description: 'Thriving community of successful Angolan entrepreneurs and executives in London'
                   },
                   {
                     icon: <DollarSign className="h-8 w-8 text-purple-600" />,
-                    title: 'Investment Flow',
-                    description: 'Growing UK investment in Angola\'s luxury and resource sectors'
+                    title: 'Business Success',
+                    description: 'London-based Angolan businesses creating value and employment in the UK market'
                   }
                 ].map((item, index) => (
                   <div key={index} className="text-center">
@@ -553,12 +555,12 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
               <Diamond className="h-16 w-16 text-yellow-300" />
             </div>
             <h2 className="text-4xl font-bold mb-6">
-              Ready to Unlock Angola's Wealth?
+              Ready to Join London's Angolan Business Elite?
             </h2>
             <p className="text-xl mb-8 opacity-90 leading-relaxed">
-              Join London's most exclusive network of Angolan investors and entrepreneurs. 
-              Access premium investment opportunities in Africa's diamond capital and connect 
-              with the sophisticated wealth-building community that bridges London and Luanda.
+              Connect with London's most successful Angolan professionals and entrepreneurs. 
+              Access exclusive networking opportunities, business partnerships, and cultural events 
+              that celebrate Angola's heritage while building success in London's dynamic business environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -566,7 +568,7 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
                 className="bg-gradient-to-r from-yellow-400 to-amber-500 text-black hover:from-yellow-300 hover:to-amber-400 px-10 py-5 text-lg font-semibold"
               >
                 <Crown className="h-6 w-6 mr-3" />
-                Schedule Private Consultation
+                Join Network
               </Button>
               <Button 
                 size="lg" 
@@ -574,7 +576,7 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
                 className="border-white text-white hover:bg-white hover:text-amber-800 px-10 py-5 text-lg backdrop-blur-sm"
               >
                 <ExternalLink className="h-6 w-6 mr-3" />
-                Download Investment Portfolio
+                View Business Directory
               </Button>
             </div>
           </div>

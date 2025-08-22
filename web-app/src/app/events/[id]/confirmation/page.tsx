@@ -26,7 +26,7 @@ const BookingConfirmationPage = () => {
   const router = useRouter()
   const eventId = params?.id as string
   
-  // Only show for the AI Workshop event (ID 4)
+  // Only show for the Smart Technology Workshop event (ID 4)
   useEffect(() => {
     if (eventId !== '4') {
   router.push(ROUTES.events)
@@ -35,13 +35,13 @@ const BookingConfirmationPage = () => {
 
   const event = {
     id: 4,
-    title: "AI Business App Creation Workshop",
+    title: "Smart Business App Creation Workshop",
     date: "Monday, 2nd December 2025",
     time: "2:00 PM - 6:00 PM",
     location: "Tech Hub Central London",
     address: "123 Innovation Street, London EC2A 3LT",
     price: 30,
-    bookingReference: "AI2025-" + Math.random().toString(36).substr(2, 9).toUpperCase(),
+    bookingReference: `ST2025-${  Math.random().toString(36).substr(2, 9).toUpperCase()}`,
     specialOffer: "Free app creation for business ideas"
   }
 
@@ -52,7 +52,7 @@ const BookingConfirmationPage = () => {
     const calendarData = {
       text: event.title,
       dates: `${startDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z/${endDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z`,
-      details: `Join us for this exciting AI workshop! Learn to create business applications using AI tools like ChatGPT and Claude. Free app creation for your business idea included!`,
+      details: `Join us for this exciting smart technology workshop! Learn to create business applications using advanced tools like ChatGPT and Claude. Free app creation for your business idea included!`,
       location: `${event.location}, ${event.address}`,
       ctz: 'Europe/London'
     }
@@ -65,9 +65,9 @@ const BookingConfirmationPage = () => {
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: 'I\'m attending the AI Business App Creation Workshop!',
-        text: `Just booked my spot at the ${event.title} on ${event.date}. Excited to learn AI tools and get a free app created for my business idea!`,
-        url: window.location.origin + `/events/${eventId}`
+        title: 'I\'m attending the Smart Business App Creation Workshop!',
+        text: `Just booked my spot at the ${event.title} on ${event.date}. Excited to learn smart technology tools and get a free app created for my business idea!`,
+        url: `${window.location.origin  }/events/${eventId}`
       })
     } else {
       // Fallback to copying to clipboard
@@ -106,7 +106,7 @@ const BookingConfirmationPage = () => {
                 transition={{ delay: 0.3 }}
                 className="text-xl text-white/90 mb-6"
               >
-                You're all set for the AI Business App Creation Workshop
+                You're all set for the Smart Business App Creation Workshop
               </motion.p>
               
               <motion.div
@@ -209,8 +209,8 @@ const BookingConfirmationPage = () => {
                           <span className="text-blue-600 font-bold text-sm">1</span>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-gray-900 mb-1">Welcome & AI Tools Overview</h4>
-                          <p className="text-gray-600 text-sm">Introduction to ChatGPT, Claude, and other business AI tools</p>
+                          <h4 className="font-semibold text-gray-900 mb-1">Welcome & Smart Tools Overview</h4>
+                          <p className="text-gray-600 text-sm">Introduction to ChatGPT, Claude, and other intelligent business tools</p>
                         </div>
                       </div>
 

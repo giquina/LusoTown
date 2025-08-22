@@ -50,7 +50,7 @@ export default function HowItWorks() {
       title: "Discover Your Matches",
       subtitle: "Descubra os Seus Matches",
       description:
-        "AI-powered cultural compatibility matching. Find Portuguese speakers who share your saudade, love the same football team, or understand your professional journey in London.",
+        "Smart cultural compatibility matching. Find Portuguese speakers who share your saudade, love the same football team, or understand your professional journey in London.",
       icon: Heart,
       color: "from-red-600 via-green-500 to-red-500",
       bgColor: "from-red-50 via-green-50 to-red-50",

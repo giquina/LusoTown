@@ -360,7 +360,7 @@ export default function SuccessStories() {
             Ready to Transform Your {heritage.geography.diasporaHub.city} Longing Into {heritage.identity.name} Success?
           </h3>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Join 750+ {heritage.identity.name} souls from {heritage.geography.mainCountry.name}{heritage.geography.relatedCountries ? ', ' + heritage.geography.relatedCountries.map(c => c.name).join(', ') : ''} & beyond who found their {heritage.geography.diasporaHub.city} community through real connections. From cultural market adventures to traditional music nights - your {heritage.identity.name} community awaits at authentic {heritage.geography.diasporaHub.city} venues where our culture thrives.
+            Join 750+ {heritage.identity.name} souls from {heritage.geography.mainCountry.name}{heritage.geography.relatedCountries ? `, ${  heritage.geography.relatedCountries.map(c => c.name).join(', ')}` : ''} & beyond who found their {heritage.geography.diasporaHub.city} community through real connections. From cultural market adventures to traditional music nights - your {heritage.identity.name} community awaits at authentic {heritage.geography.diasporaHub.city} venues where our culture thrives.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 

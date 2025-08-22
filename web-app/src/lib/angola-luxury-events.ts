@@ -29,8 +29,8 @@ export const ANGOLA_LUXURY_PRICING = {
 export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
   {
     id: 'angola-001',
-    title: 'Angola: Africa\'s Diamond Capital - Elite Investment Breakfast',
-    description: 'Exclusive investment presentation showcasing Angola\'s natural resource wealth and luxury development opportunities. Connect with London\'s most successful Angolan entrepreneurs and international investors in this sophisticated networking environment.',
+    title: 'London Angolan Business Leaders - Elite Networking Breakfast',
+    description: 'Exclusive networking breakfast connecting London\'s most successful Angolan entrepreneurs and business leaders. Share experiences, build partnerships, and celebrate Angola\'s heritage while thriving in London\'s business environment.','
     date: '2025-09-15',
     time: '08:00',
     endTime: '11:00',
@@ -55,9 +55,9 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
     portugueseOrigin: ['Angola'],
     tags: ['Diamond Industry', 'Investment', 'Elite Networking', 'Mayfair', 'Oil & Gas', 'Luxury Development'],
     highlights: [
-      'Presentation on Angola\'s $12 billion diamond industry',
-      'Private networking with UHNW Angolan diaspora',
-      'Investment opportunities in Luanda luxury developments',
+      'Networking with London\'s top Angolan business leaders',
+      'Private discussions with successful diaspora entrepreneurs',
+      'Business opportunities in London\'s diverse markets',
       'Premium breakfast at The Dorchester\'s private dining room'
     ],
     whatToExpect: [
@@ -66,8 +66,8 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
       'Strategic business networking opportunities',
       'Access to Angola-UK investment partnerships'
     ],
-    whatToHear: 'Insights from successful Angolan entrepreneurs about leveraging London\'s financial markets for Angola investments',
-    whatToLearn: 'How to navigate Angola\'s natural resource sector and luxury development opportunities',
+    whatToHear: 'Success stories from Angolan entrepreneurs who have built thriving businesses in London\'s competitive markets',
+    whatToLearn: 'How to leverage London\'s business opportunities while maintaining strong cultural connections to Angola','
     groupSize: 'Ultra-Exclusive (12-15 people)',
     difficulty: 'Advanced',
     averageRating: 4.9,
@@ -85,8 +85,8 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
   
   {
     id: 'angola-002',
-    title: 'Luanda High Society Cultural Salon - London Edition',
-    description: 'Sophisticated cultural exchange connecting London\'s Angolan elite with Luanda\'s refined social circles. Experience the elegance of Angolan high culture through curated art, refined conversation, and exclusive networking in Mayfair\'s most prestigious setting.',
+    title: 'London Angolan Cultural Salon - Heritage & Excellence',
+    description: 'Sophisticated cultural event celebrating Angolan heritage and contemporary success in London. Experience the elegance of Angolan culture through curated art, refined conversation, and exclusive networking with London\'s Angolan elite in Mayfair\'s most prestigious setting.','
     date: '2025-09-28',
     time: '18:30',
     endTime: '22:30',
@@ -122,8 +122,8 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
       'Exclusive access to Annabel\'s private art collection',
       'Strategic connections with cultural institutions'
     ],
-    whatToHear: 'Stories from Luanda\'s sophisticated social scene and how to bridge cultural excellence between Angola and London',
-    whatToLearn: 'The evolution of contemporary Angolan culture and its place in London\'s luxury lifestyle',
+    whatToHear: 'Stories from London\'s sophisticated Angolan community and how cultural heritage enhances professional success',
+    whatToLearn: 'How to celebrate Angolan culture while building meaningful connections in London\'s elite social circles','
     groupSize: 'Exclusive (18-20 people)',
     difficulty: 'Easy',
     averageRating: 4.9,
@@ -141,8 +141,8 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
 
   {
     id: 'angola-003',
-    title: 'Oil & Gas Elite: Angola-UK Strategic Partnership Dinner',
-    description: 'Premier networking dinner for senior executives in Angola\'s oil and gas sector. Connect with London\'s energy finance elite while exploring strategic partnerships between Angola\'s energy wealth and UK\'s financial expertise.',
+    title: 'Energy Professionals: London-Angola Business Connection Dinner',
+    description: 'Premier networking dinner for London-based energy professionals with Angola connections. Connect with London\'s finance elite while exploring business opportunities that bridge UK expertise with Angola heritage and international markets.','
     date: '2025-10-12',
     time: '19:00',
     endTime: '23:00',
@@ -167,9 +167,9 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
     portugueseOrigin: ['Angola'],
     tags: ['Oil & Gas', 'Energy Sector', 'Strategic Partnerships', 'City of London', 'Executive Networking'],
     highlights: [
-      'Strategic discussion on Angola\'s $45 billion oil industry',
+      'Strategic discussions on London\'s international energy business',
       'Networking with City of London energy finance leaders',
-      'Exclusive partnerships and joint venture opportunities',
+      'Business partnership and collaboration opportunities',
       'Premium dinner with Angolan-inspired haute cuisine'
     ],
     whatToExpect: [
@@ -178,8 +178,8 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
       'Access to exclusive investment opportunities',
       'High-level business relationship development'
     ],
-    whatToHear: 'Insights from energy sector leaders on maximizing Angola\'s oil wealth through London financial markets',
-    whatToLearn: 'Strategic approaches to Angola-UK energy sector partnerships and investment opportunities',
+    whatToHear: 'Insights from London-based energy professionals on building international business bridges',
+    whatToLearn: 'Strategic approaches to leveraging London\'s energy sector connections for global business opportunities','
     groupSize: 'Executive Level (15-18 people)',
     difficulty: 'Advanced',
     averageRating: 4.8,
@@ -234,8 +234,8 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
       'Behind-the-scenes kitchen experience at Sketch',
       'Recipe collection and culinary techniques to take home'
     ],
-    whatToHear: 'Stories about the evolution of Angolan cuisine and its place in London\'s fine dining scene',
-    whatToLearn: 'How to appreciate and prepare sophisticated Angolan dishes with modern techniques',
+    whatToHear: 'Stories about bringing authentic Angolan cuisine to London\'s sophisticated dining scene',
+    whatToLearn: 'How to appreciate and prepare refined Angolan dishes using London\'s finest ingredients and techniques','
     groupSize: 'Intimate (10-12 people)',
     difficulty: 'Moderate',
     averageRating: 4.9,
@@ -290,8 +290,8 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
       'Opportunities to acquire unique Angolan artworks',
       'Cultural bridge-building between Angola and London art scenes'
     ],
-    whatToHear: 'Stories from contemporary Angolan artists about expressing cultural identity through modern art',
-    whatToLearn: 'Understanding contemporary Angolan art and its investment potential in London markets',
+    whatToHear: 'Stories from Angolan artists working in London about expressing cultural identity through contemporary art',
+    whatToLearn: 'Understanding how Angolan art is gaining recognition and value in London\'s sophisticated art market','
     groupSize: 'Medium (20-25 people)',
     difficulty: 'Easy',
     averageRating: 4.7,
@@ -345,8 +345,8 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
       'Action plan development for UK market entry or expansion',
       'Follow-up support and networking introductions'
     ],
-    whatToHear: 'Expert insights into navigating UK business culture while leveraging Angolan heritage',
-    whatToLearn: 'Strategic approaches to building successful Angola-UK business relationships',
+    whatToHear: 'Expert insights into building successful businesses in London while celebrating Angolan heritage',
+    whatToLearn: 'Strategic approaches to leveraging cultural diversity for business success in the UK market','
     groupSize: 'Private (1-on-1)',
     difficulty: 'Advanced',
     averageRating: 5.0,
@@ -395,7 +395,7 @@ export const getAngolaEventsByRegion = (region: AngolaLuxuryEvent['angolanRegion
   )
 }
 
-// Premium networking and cultural exchange events for Angola diaspora
+// Premium networking and cultural exchange events for London-based Angola diaspora
 export const getAngolaNetworkingEvents = (): AngolaLuxuryEvent[] => {
   return angolaLuxuryEvents.filter(event => 
     event.networkingValue === 'Business Development' || 

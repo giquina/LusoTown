@@ -137,7 +137,7 @@ export default function FeedPost({
             <FavoriteButton
               itemId={id}
               itemType="feed"
-              itemTitle={content.substring(0, 50) + '...'}
+              itemTitle={`${content.substring(0, 50)  }...`}
               itemDescription={content}
               itemImageUrl={imageUrl}
               size="sm"

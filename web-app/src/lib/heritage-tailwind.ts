@@ -87,7 +87,7 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
 }
 
 function rgbToHex(r: number, g: number, b: number): string {
-  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+  return `#${  ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`
 }
 
 function lightenColor(hex: string, amount: number): string {

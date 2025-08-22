@@ -572,7 +572,7 @@ export class MobileUXTestSuite {
     console.log('- Monitor performance on slower mobile networks');
     console.log('- Validate with assistive technologies for accessibility');
     
-    console.log('\n' + '='.repeat(50));
+    console.log(`\n${  '='.repeat(50)}`);
   }
 
   /**

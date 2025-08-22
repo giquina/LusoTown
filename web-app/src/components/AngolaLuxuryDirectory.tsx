@@ -59,7 +59,7 @@ const angolaLuxuryBusinesses: LuxuryBusiness[] = [
     name: 'Luanda Prime',
     namePortuguese: 'Luanda Prime',
     category: 'Fine Dining',
-    description: 'Michelin-worthy Angolan cuisine elevated to international fine dining standards. Our Executive Chef, trained in Luanda\'s finest establishments and London\'s top kitchens, creates sophisticated interpretations of traditional Angolan dishes.',
+    description: 'Michelin-worthy Angolan cuisine elevated to international fine dining standards. Our Executive Chef, who moved from Luanda to London and trained in London\'s top kitchens, creates sophisticated interpretations of traditional Angolan dishes for London\'s discerning diners.','
     descriptionPortuguese: 'Culinária angolana digna de Michelin elevada aos padrões internacionais de alta gastronomia. Nosso Chef Executivo, treinado nos melhores estabelecimentos de Luanda e nas melhores cozinhas de Londres, cria interpretações sofisticadas dos pratos tradicionais angolanos.',
     address: '15 Berkeley Street, Mayfair',
     postcode: 'W1J 8DY',
@@ -83,7 +83,7 @@ const angolaLuxuryBusinesses: LuxuryBusiness[] = [
     name: 'Diamond Capital Investments',
     namePortuguese: 'Investimentos Capital dos Diamantes',
     category: 'Investment',
-    description: 'Exclusive investment advisory specializing in Angola\'s natural resource sector and luxury real estate. Our team of former oil industry executives and diamond trade specialists provide strategic investment guidance for UHNW individuals.',
+    description: 'Exclusive London-based investment advisory serving Angolan diaspora professionals. Our team of former oil industry executives, now based in London\'s financial district, provide strategic investment guidance and wealth management for successful Angolans living in the UK.','
     descriptionPortuguese: 'Consultoria de investimento exclusiva especializada no setor de recursos naturais de Angola e imóveis de luxo. Nossa equipe de ex-executivos da indústria petrolífera e especialistas em comércio de diamantes oferece orientação estratégica de investimento para indivíduos UHNW.',
     address: '1 Poultry, City of London',
     postcode: 'EC2R 8EJ',
@@ -108,7 +108,7 @@ const angolaLuxuryBusinesses: LuxuryBusiness[] = [
     name: 'Esperança Luxury Chauffeur',
     namePortuguese: 'Esperança Motorista de Luxo',
     category: 'Luxury Services',
-    description: 'Premium chauffeur service exclusively for London\'s Angolan elite. Portuguese-speaking drivers with diplomatic training provide discreet, luxury transportation in executive vehicles for business and cultural events.',
+    description: 'Premium chauffeur service exclusively for London\'s Angolan diaspora professionals. Portuguese-speaking drivers provide discreet, luxury transportation throughout London for business meetings, cultural events, and airport transfers to Angola.','
     descriptionPortuguese: 'Serviço de motorista premium exclusivamente para a elite angolana de Londres. Motoristas que falam português com treinamento diplomático fornecem transporte de luxo discreto em veículos executivos para eventos empresariais e culturais.',
     address: '25 Curzon Street, Mayfair',
     postcode: 'W1J 7TX',
@@ -132,7 +132,7 @@ const angolaLuxuryBusinesses: LuxuryBusiness[] = [
     name: 'Benguela Art Gallery',
     namePortuguese: 'Galeria de Arte Benguela',
     category: 'Art & Culture',
-    description: 'London\'s premier gallery for contemporary Angolan art. Showcasing works by established and emerging artists from Luanda\'s vibrant cultural scene, with regular exhibitions and private viewing events for collectors.',
+    description: 'London\'s premier gallery for contemporary Angolan art, owned by London-based Angolan art collectors. Showcasing works by Angolan artists with regular exhibitions in Mayfair and private viewing events for London\'s Portuguese-speaking art enthusiasts.','
     descriptionPortuguese: 'A principal galeria de Londres para arte angolana contemporânea. Mostrando obras de artistas estabelecidos e emergentes da vibrante cena cultural de Luanda, com exposições regulares e eventos de visualização privada para colecionadores.',
     address: '12 Dover Street, Mayfair',
     postcode: 'W1S 4LJ',
@@ -156,7 +156,7 @@ const angolaLuxuryBusinesses: LuxuryBusiness[] = [
     name: 'Cabinda Oil & Gas Consultancy',
     namePortuguese: 'Consultoria de Petróleo e Gás Cabinda',
     category: 'Oil & Gas',
-    description: 'Strategic consulting for energy sector investments in Angola. Our senior partners, former executives from Angola\'s major oil companies, provide expert guidance on upstream, midstream, and downstream opportunities.',
+    description: 'Strategic consulting for energy sector investments, operated by Angolan executives based in London\'s financial district. Our senior partners provide expert guidance on international energy investments and Angola-UK business partnerships.','
     descriptionPortuguese: 'Consultoria estratégica para investimentos no setor energético em Angola. Nossos sócios seniores, ex-executivos das principais companhias petrolíferas de Angola, fornecem orientação especializada sobre oportunidades upstream, midstream e downstream.',
     address: '20 Fenchurch Street, City of London',
     postcode: 'EC3M 3BY',
@@ -180,7 +180,7 @@ const angolaLuxuryBusinesses: LuxuryBusiness[] = [
     name: 'Quilombo Private Members Club',
     namePortuguese: 'Clube de Membros Privados Quilombo',
     category: 'Professional Services',
-    description: 'Exclusive private members club for successful Angolan professionals and entrepreneurs in London. Features fine dining, business facilities, and cultural programming in an elegant Mayfair setting.',
+    description: 'Exclusive private members club for successful Angolan professionals working in London. Located in Westminster, features fine dining, business facilities, and cultural programming connecting London\'s Angolan community with the broader Portuguese-speaking network.',
     descriptionPortuguese: 'Clube de membros privados exclusivo para profissionais e empresários angolanos bem-sucedidos em Londres. Apresenta jantar fino, instalações de negócios e programação cultural em um elegante ambiente de Mayfair.',
     address: '8 St. James\'s Square, Westminster',
     postcode: 'SW1Y 4JU',
@@ -275,12 +275,12 @@ export default function AngolaLuxuryDirectory({ className = '' }: AngolaLuxuryDi
               Angola Luxury Directory
             </h1>
             <p className="text-xl mb-4 max-w-3xl mx-auto leading-relaxed">
-              London's Premier Angolan Business Network
+              London's Premier Angolan Business Directory
             </p>
             <p className="text-lg opacity-90 max-w-4xl mx-auto">
-              Discover London's most sophisticated Angolan-owned and Angolan-focused businesses. 
-              From Michelin-worthy restaurants to exclusive investment services, connect with 
-              the finest establishments serving Angola's elite diaspora community.
+              Discover London's most sophisticated Angolan-owned businesses and services. 
+              From exclusive restaurants in Mayfair to premium professional services in the City, 
+              connect with establishments owned and operated by London's thriving Angolan community.
             </p>
           </div>
         </div>
@@ -480,8 +480,8 @@ export default function AngolaLuxuryDirectory({ className = '' }: AngolaLuxuryDi
             List Your Premium Business
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Join London's most exclusive Angolan business directory. Showcase your luxury 
-            services to the affluent Angolan diaspora and sophisticated Portuguese-speaking community.
+            Join London's most exclusive Angolan business directory. Showcase your London-based 
+            business to the affluent Angolan diaspora and sophisticated Portuguese-speaking community living in the UK.
           </p>
           <Button 
             size="lg" 

@@ -662,8 +662,8 @@ export default function ChatMessagingPreview() {
                           <div className="flex items-center text-secondary-700">
                             <CheckCircleIcon className="w-4 h-4 mr-2" />
                             {language === "pt"
-                              ? "IA Anti-Toxicidade"
-                              : "AI Anti-Toxicity"}
+                              ? "Sistema Anti-Toxicidade"
+                              : "Smart Anti-Toxicity"}
                           </div>
                           <div className="flex items-center text-secondary-700">
                             <CheckCircleIcon className="w-4 h-4 mr-2" />
@@ -786,7 +786,7 @@ export default function ChatMessagingPreview() {
               <div className="text-center">
                 <ShieldCheckIcon className="w-6 h-6 mx-auto mb-2 opacity-80" />
                 <p className="text-sm opacity-90">
-                  {language === "pt" ? "Moderação IA" : "AI Moderation"}
+                  {language === "pt" ? "Moderação Inteligente" : "Smart Moderation"}
                 </p>
               </div>
               <div className="text-center">

@@ -92,12 +92,12 @@ export default function StreamSchedule({
       id: "ai-workshop-tomorrow",
       title:
         language === "pt"
-          ? "Workshop de IA para Negócios Portugueses"
-          : "AI Workshop for Portuguese Businesses",
+          ? "Workshop de Tecnologia Inteligente para Negócios Portugueses"
+          : "Smart Technology Workshop for Portuguese Businesses",
       description:
         language === "pt"
-          ? "Como implementar IA no seu negócio - sessão exclusiva para empreendedores"
-          : "How to implement AI in your business - exclusive session for entrepreneurs",
+          ? "Como implementar tecnologia inteligente no seu negócio - sessão exclusiva para empreendedores"
+          : "How to implement smart technology in your business - exclusive session for entrepreneurs",
       category: "business-workshops",
       categoryName:
         language === "pt" ? "Workshops de Negócios" : "Business Workshops",
