@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react'
-import { render, RenderOptions, screen, fireEvent, waitFor } from '@testing-library/react'
+import { render, RenderOptions } from '@testing-library/react'
+import { screen, fireEvent, waitFor } from '@testing-library/react'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { NetworkingProvider } from '@/context/NetworkingContext'
 import { SubscriptionProvider } from '@/context/SubscriptionContext'
@@ -314,5 +315,4 @@ export const culturalTestUtils = {
 
 // Re-export everything from testing-library
 export * from '@testing-library/react'
-// Already exported via export * above, no need for explicit export
 export { customRender as render }

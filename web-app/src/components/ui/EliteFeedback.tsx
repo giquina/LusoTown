@@ -358,7 +358,7 @@ export function EliteFeedbackSystem({
                 {emoji}
               </motion.button>
             ))}
-          </div>
+          </motion.div>
         )}
 
         {/* Comment Section */}
