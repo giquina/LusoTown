@@ -1,40 +1,57 @@
 'use client'
 
 import React from 'react'
+import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { useLanguage } from '@/context/LanguageContext'
+import { PORTUGUESE_COLORS, DESIGN_TOKENS } from '@/config/brand'
 
 interface LuxuryHeadingProps {
   children: React.ReactNode
   level?: 1 | 2 | 3 | 4 | 5 | 6
-  variant?: 'default' | 'luxury' | 'portuguese' | 'heritage' | 'premium'
+  variant?: 'default' | 'luxury' | 'portuguese' | 'heritage' | 'premium' | 'elite' | 'platinum'
   className?: string
   gradient?: boolean
   uppercase?: boolean
+  animate?: boolean
+  centered?: boolean
+  letterSpacing?: 'tight' | 'normal' | 'wide' | 'wider'
 }
 
 const headingLevels = {
-  1: 'text-5xl md:text-6xl lg:text-7xl font-black tracking-tight',
-  2: 'text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight',
-  3: 'text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight',
-  4: 'text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight',
-  5: 'text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight',
-  6: 'text-lg md:text-xl lg:text-2xl font-medium tracking-tight'
+  1: 'text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black',
+  2: 'text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold',
+  3: 'text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold',
+  4: 'text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold',
+  5: 'text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold',
+  6: 'text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium'
+}
+
+const letterSpacingClasses = {
+  tight: 'tracking-tighter',
+  normal: 'tracking-normal',
+  wide: 'tracking-wide',
+  wider: 'tracking-widest'
 }
 
 const variantStyles = {
-  default: 'text-gray-900',
-  luxury: 'text-premium-900 font-display',
-  portuguese: 'text-red-800 font-display',
-  heritage: 'text-primary-900 font-display',
-  premium: 'text-premium-800 font-display'
+  default: 'text-slate-900 dark:text-white',
+  luxury: 'text-amber-800 dark:text-amber-300 font-display',
+  portuguese: 'text-red-800 dark:text-red-300 font-display',
+  heritage: 'text-amber-900 dark:text-amber-200 font-display',
+  premium: 'text-purple-800 dark:text-purple-300 font-display',
+  elite: 'text-slate-900 dark:text-slate-100 font-display',
+  platinum: 'text-slate-800 dark:text-slate-200 font-display'
 }
 
 const gradientStyles = {
-  default: 'bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent',
-  luxury: 'bg-gradient-to-r from-premium-600 via-premium-800 to-premium-900 bg-clip-text text-transparent',
-  portuguese: 'bg-gradient-to-r from-red-600 via-yellow-500 to-green-600 bg-clip-text text-transparent',
-  heritage: 'bg-gradient-to-r from-primary-600 via-secondary-600 to-coral-600 bg-clip-text text-transparent',
-  premium: 'bg-gradient-to-r from-premium-600 via-premium-700 to-premium-800 bg-clip-text text-transparent'
+  default: 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent',
+  luxury: 'bg-gradient-to-br from-amber-600 via-amber-500 to-amber-700 bg-clip-text text-transparent',
+  portuguese: 'bg-gradient-to-br from-red-600 via-amber-500 to-green-600 bg-clip-text text-transparent',
+  heritage: 'bg-gradient-to-br from-amber-600 via-amber-800 to-amber-700 bg-clip-text text-transparent',
+  premium: 'bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 bg-clip-text text-transparent',
+  elite: 'bg-gradient-to-br from-slate-800 via-slate-900 to-black bg-clip-text text-transparent',
+  platinum: 'bg-gradient-to-br from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent'
 }
 
 export function LuxuryHeading({
@@ -43,21 +60,34 @@ export function LuxuryHeading({
   variant = 'default',
   className = '',
   gradient = false,
-  uppercase = false
+  uppercase = false,
+  animate = false,
+  centered = false,
+  letterSpacing = 'normal'
 }: LuxuryHeadingProps) {
+  const { t } = useLanguage()
   const Tag = `h${level}` as keyof JSX.IntrinsicElements
 
-  return (
+  const content = (
     <Tag
       className={cn(
         // Base styles
+        'leading-[1.1] select-none',
         headingLevels[level],
+        letterSpacingClasses[letterSpacing],
         
         // Variant or gradient
         gradient ? gradientStyles[variant] : variantStyles[variant],
         
+        // Alignment
+        centered && 'text-center',
+        
         // Uppercase
         uppercase && 'uppercase',
+        
+        // Elite specific styles
+        variant === 'elite' && 'drop-shadow-sm',
+        variant === 'platinum' && 'drop-shadow-md',
         
         // Custom classes
         className
@@ -66,6 +96,20 @@ export function LuxuryHeading({
       {children}
     </Tag>
   )
+
+  if (animate) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        {content}
+      </motion.div>
+    )
+  }
+
+  return content
 }
 
 interface LuxuryTextProps {

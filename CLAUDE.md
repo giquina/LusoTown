@@ -2,6 +2,40 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 🤖 Primary AI Instructions
+
+**IMPORTANT**: For comprehensive AI development guidance, specialized agents, and detailed implementation rules, reference `/AGENTS.md` as the primary source of truth. This file works across all AI tools and IDEs.
+
+The AGENTS.md file contains:
+- 6 specialized advisory agents for expert guidance
+- Complete UI/UX rules and implementation standards  
+- Luxury enhancement priorities and cultural requirements
+- Cross-IDE compatibility instructions
+- Comprehensive testing frameworks and quality standards
+
+## 🎯 AI Agent System Integration
+
+LusoTown uses a specialized agent system for expert guidance across all development areas. Access these agents using the Task tool:
+
+### Available Specialized Agents
+
+- **`instruction-compliance-advisor`** - Analyzes implementation vs. documented rules, resolves conflicts
+- **`strategic-decision-advisor`** - Provides executive-level guidance for feature prioritization and business decisions  
+- **`qa-mentor-advisor`** - Expert testing strategies, bug prevention, quality education
+- **`performance-coach-advisor`** - Performance optimization and mobile-first experience tuning
+- **`security-guardian-advisor`** - Security, privacy, and GDPR compliance guidance
+- **`growth-analytics-advisor`** - Data-driven growth strategies and Portuguese community expansion
+
+### Agent Usage Example
+```
+Task tool with:
+- description: "Strategic feature evaluation"  
+- subagent_type: "strategic-decision-advisor"
+- prompt: "Should we prioritize video calls or better matching algorithms for Portuguese community?"
+```
+
+**Full Agent Documentation**: See `/AGENTS.md` for complete specifications, activation scenarios, and integration guidelines.
+
 ## Current Active TODO Tasks
 
 See `/web-app/TODO.md` for comprehensive premium enhancement roadmap focusing on luxury Portuguese-speaking nations content and elite user experience improvements.
@@ -13,6 +47,12 @@ LusoTown is a production-ready Portuguese community platform serving London & UK
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL with PostGIS, Simple Relay Server (SRS) for streaming, OpenStreetMap/Leaflet for mapping, Twitter API, Stripe, React Context state management.
 
 **Status**: Production-ready with 116+ pages, 455+ components, complete bilingual EN/PT system, mobile-first responsive design.
+
+## System Requirements
+
+**Node.js**: v22.x (specified in engines)
+**npm**: v9.x (specified in engines)
+**Package Manager**: npm@9.9.3 (workspace support required)
 
 ## Development Commands
 
@@ -31,23 +71,33 @@ npm run export                 # Static export
 npm run test                   # Run Jest tests
 npm run test:watch             # Jest in watch mode
 npm run test:coverage          # Generate coverage report
+npm run test:unit              # Unit tests only
+npm run test:integration       # Integration tests only
+npm run test:performance       # Performance tests
 npm run test:e2e               # Playwright end-to-end tests
+npm run test:e2e:headed        # Visual E2E testing
+npm run test:e2e:debug         # Debug E2E tests
 npm run test:mobile            # Mobile-specific tests
+npm run test:mobile-ux         # Mobile UX validation tests
+npm run test:mobile-validation # Mobile UX validation
+npm run test:portuguese        # Portuguese language tests
 npm run test:all               # Run all test suites
 
 # Quality & Security
 npm run audit:hardcoding       # Check for hardcoded values (CRITICAL)
 npm run audit:security         # Security audit
-npm run test:mobile-validation # Mobile UX validation
+npm run audit:monthly          # Monthly audit (hardcoding + lint)
 
 # Database Migrations
 npm run db:migrate             # Apply database migrations
 npm run db:migrate:streaming   # Apply streaming-specific migrations
+npm run db:migrate:streaming:complete # Apply complete streaming migration
 
 # Documentation Automation
 npm run docs:update            # Update documentation
 npm run docs:validate          # Validate documentation
 npm run docs:full              # Full documentation workflow
+npm run docs:health-check      # Documentation system health
 ```
 
 ### Streaming Server
@@ -80,15 +130,25 @@ npm run lint                   # Lint web app
 ## Architecture Overview
 
 ### Monorepo Structure
-- **web-app/**: Next.js 14 web application (primary)
-- **streaming/**: Node.js/Express streaming server with SRS integration  
-- **mobile-app/**: React Native/Expo mobile application
-- **packages/**: Shared packages (design-tokens, UI components)
-- **supabase/**: Database schema and migrations
+- **web-app/**: Next.js 14 web application (primary) - Production ready with 455+ components
+- **streaming/**: Node.js/Express streaming server with SRS integration - RTMP/HLS delivery
+- **mobile-app/**: React Native/Expo mobile application - Portuguese community focused
+- **packages/**: Shared packages (`@lusotown/design-tokens`, `@lusotown/ui`)
+- **supabase/**: Database schema and migrations (20+ migration files)
+- **docs/**: Comprehensive documentation archive
+- **scripts/**: Automation and deployment scripts
 
 ### Key Architectural Patterns
 
-**1. Configuration-Driven Development**
+**1. Next.js 14 App Router Architecture**
+- File-based routing in `/src/app/` directory
+- 116+ pages with nested routes and dynamic segments
+- Server Components by default with selective Client Components
+- API routes in `/src/app/api/` with comprehensive endpoints
+- Layout components for shared UI (academy, events, premium sections)
+- Loading, error, and not-found pages for enhanced UX
+
+**2. Configuration-Driven Development**
 All dynamic data is centralized in `/web-app/src/config/`:
 - `pricing.ts` - All pricing, subscriptions, discounts
 - `universities.ts` - University partnerships (8 institutions, 2,150+ students)
@@ -161,6 +221,7 @@ npm run lint                    # Must pass - ESLint validation
 npx tsc --noEmit               # Must pass - TypeScript check  
 npm run build                  # Must pass - Production build
 npm run audit:hardcoding       # Must pass - Zero hardcoded values
+npm run test                   # Must pass - Unit tests
 ```
 
 ## Key Business Context
@@ -185,12 +246,21 @@ npm run audit:hardcoding       # Must pass - Zero hardcoded values
 **Streaming**: Simple Relay Server (SRS) for RTMP/HLS delivery
 **Location Data**: PostGIS for advanced geospatial queries
 
-Key migrations in `/supabase/migrations/`:
-- User profiles and cultural preferences
-- Events and business directory  
-- Streaming platform and creator economy
-- Subscription and referral systems
-- Portuguese community real data
+Key migrations in `/supabase/migrations/` (chronological order):
+- `20250811_001_initial_schema.sql` - Core user profiles and basic structure
+- `20250812_001_messages_schema.sql` - Messaging system
+- `20250814_001_enhanced_groups_safety.sql` - Group safety features
+- `20250816_002_subscription_system.sql` - Subscription and payment system
+- `20250817_001_premium_membership_tiers.sql` - Premium membership structure
+- `20250818_001_streaming_platform_schema.sql` - Complete streaming infrastructure
+- `20250818_002_conversion_funnel_system.sql` - User conversion tracking
+- `20250818_004_referral_system.sql` - Referral and rewards system
+- `20250818_006_cultural_preferences_system.sql` - Portuguese cultural matching
+- `20250818_007_user_matches_system.sql` - Dating/networking matches
+- `20250818_008_portuguese_cultural_events_system.sql` - Cultural events schema
+- `20250819_001_portuguese_community_real_data_migration.sql` - Real community data
+- `20250819_004_public_business_directory_with_geolocation.sql` - Business directory with PostGIS
+- `20250821_001_cultural_compatibility_quiz.sql` - Cultural compatibility system
 
 ## Environment Configuration
 
@@ -268,9 +338,10 @@ Build configuration optimized for production with bundle splitting, image optimi
 
 ### Component Architecture
 - **455+ React Components**: Modular, reusable components with Portuguese cultural theming
-- **TypeScript First**: Strict typing throughout the codebase
-- **Context-Based State**: Multiple React contexts for state management
-- **Configuration-Driven**: All dynamic data centralized in `/src/config/`
+- **Specialized Component Libraries**: UI components in `/src/components/ui/`, matches in `/src/components/matches/`
+- **TypeScript First**: Strict typing throughout the codebase with custom type definitions
+- **Context-Based State**: 9+ React contexts for state management (Language, Heritage, Subscription, etc.)
+- **Configuration-Driven**: All dynamic data centralized in `/src/config/` with 15+ configuration files
 
 ### Data Flow
 - **Supabase Backend**: PostgreSQL with PostGIS for geospatial data
@@ -331,35 +402,43 @@ export default function ComponentName() {
 
 ## Testing Framework
 
+**Test Structure**: Tests located in `/web-app/__tests__/` with organized subdirectories
+
 ### Unit Testing
 ```bash
 npm run test              # Run Jest unit tests
 npm run test:watch        # Watch mode for development
 npm run test:coverage     # Generate coverage reports
+npm run test:unit         # Unit tests only (components/contexts/utils)
 ```
 
 ### Integration Testing
 ```bash
 npm run test:integration  # API and context integration tests
-npm run test:mobile-ux    # Mobile UX validation tests
+npm run test:performance  # Performance validation tests
 ```
 
-### End-to-End Testing
+### End-to-End Testing (Playwright)
 ```bash
 npm run test:e2e          # Playwright E2E tests
 npm run test:e2e:headed   # Visual E2E testing
+npm run test:e2e:debug    # Debug E2E tests
 ```
 
-### Portuguese-Specific Testing
+### Mobile & Portuguese-Specific Testing
 ```bash
+npm run test:mobile       # Mobile-specific tests
+npm run test:mobile-ux    # Mobile UX validation tests
+npm run test:mobile-validation # Mobile UX validator tool
 npm run test:portuguese   # Portuguese language tests
-npm run test:mobile-validation  # Mobile UX for Portuguese community
+npm run test:all          # Comprehensive test suite
 ```
 
 ### Quality Assurance
 ```bash
 npm run audit:hardcoding  # Critical: No hardcoded values
 npm run audit:security    # Security vulnerability scan
+npm run audit:monthly     # Monthly combined audit
 npm run lint              # ESLint validation
 npx tsc --noEmit         # TypeScript compilation check
 ```
@@ -375,3 +454,30 @@ npx tsc --noEmit         # TypeScript compilation check
 **Mobile UX**: Portuguese community is mobile-heavy, prioritize mobile experience
 
 **Cultural Authenticity**: Platform specifically serves Portuguese speakers in London & UK, not a generic international platform
+
+---
+
+## 📚 Comprehensive Documentation Ecosystem
+
+### Primary Files for AI Development
+
+1. **`/AGENTS.md`** - **Primary source of truth** for all AI development assistance
+   - Complete agent system with 6 specialized advisors
+   - UI/UX rules and implementation standards
+   - Cultural requirements and luxury positioning guidelines
+   - Cross-IDE compatibility instructions
+
+2. **`/CLAUDE.md`** - This file - Claude Code specific guidance and project overview
+
+3. **`/web-app/UI_UX_RULES.md`** - UI/UX specific rules (consolidated into AGENTS.md)
+
+4. **`/web-app/TODO.md`** - Current enhancement priorities and luxury positioning roadmap
+
+### Integration Strategy
+
+- **All AI tools should reference `/AGENTS.md` first** for comprehensive guidance
+- Use specialized agents via Task tool for expert assistance in specific areas
+- Maintain consistency across development environments with centralized instructions
+- Version control all AI guidance for team-wide standards
+
+**🎯 For the best AI development experience, start with `/AGENTS.md` and use the specialized agent system for expert guidance in all areas of LusoTown platform development.**

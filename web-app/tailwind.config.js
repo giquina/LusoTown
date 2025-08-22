@@ -169,6 +169,9 @@ module.exports = {
         'portuguese-wave': 'portugueseWave 4s ease-in-out infinite',
         'gradient-shift': 'gradientShift 3s ease-in-out infinite',
         'shimmer': 'shimmer 2s linear infinite',
+        'shimmer-slow': 'shimmerSlow 3s linear infinite',
+        'elite-glow': 'eliteGlow 2s ease-in-out infinite alternate',
+        'portuguese-pattern': 'portuguesePattern 8s linear infinite',
       },
       keyframes: {
         fadeInUp: {
@@ -206,6 +209,25 @@ module.exports = {
         shimmer: {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(100%)' },
+        },
+        shimmerSlow: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        eliteGlow: {
+          '0%': { 
+            boxShadow: '0 0 20px rgba(245, 158, 11, 0.3), 0 0 40px rgba(245, 158, 11, 0.1)',
+          },
+          '100%': { 
+            boxShadow: '0 0 30px rgba(245, 158, 11, 0.5), 0 0 60px rgba(245, 158, 11, 0.2)',
+          },
+        },
+        portuguesePattern: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '25%': { backgroundPosition: '50% 0%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '75%': { backgroundPosition: '50% 100%' },
+          '100%': { backgroundPosition: '0% 50%' },
         },
       },
     },

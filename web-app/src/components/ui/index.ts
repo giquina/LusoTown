@@ -15,12 +15,30 @@ export {
   LuxuryStats
 } from './LuxuryTypography'
 
+// Glassmorphism Components
+export {
+  default as Glassmorphism,
+  GlassCard,
+  PortugueseGlassCard,
+  EliteGlassCard,
+  PremiumGlassModal,
+  HeritageGlassPanel
+} from './Glassmorphism'
+
+// Navigation Components
+export {
+  default as LuxuryBreadcrumbs,
+  EliteBreadcrumbs,
+  PortugueseBreadcrumbs,
+  HeritageBreadcrumbs,
+  GlassBreadcrumbs
+} from './LuxuryBreadcrumbs'
+
 // Premium Gradients & Visual Effects
 export {
   GradientBackground,
   GradientText,
   AnimatedGradient,
-  Glassmorphism,
   PatternOverlay
 } from './PremiumGradients'
 
@@ -51,3 +69,6 @@ export {
   GradientShift,
   PageTransition
 } from './LuxuryAnimations'
+
+// Showcase Component
+export { default as LuxuryComponentShowcase } from './LuxuryComponentShowcase'

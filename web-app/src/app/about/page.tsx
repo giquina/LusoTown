@@ -758,7 +758,7 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Luxury Portuguese-Speaking Nations - Premium Heritage Section */}
+              {/* Royal Portuguese Heritage - Aristocratic Legacy Section */}
               <div className="relative overflow-hidden">
                 {/* Premium background gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-premium-50 via-white to-primary-50" />
@@ -774,17 +774,205 @@ export default function About() {
                       className="inline-flex items-center gap-3 bg-gradient-to-r from-premium-500/10 to-primary-500/10 backdrop-blur-sm rounded-full px-8 py-4 mb-8 border border-premium-300/30"
                     >
                       <TrophyIcon className="w-6 h-6 text-premium-600" />
-                      <span className="text-premium-700 font-bold text-lg">Luxury Heritage • Património de Prestígio</span>
+                      <span className="text-premium-700 font-bold text-lg">Royal Portuguese Heritage • Património Real Português</span>
                     </motion.div>
                     <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-premium-600 via-primary-600 to-secondary-600 bg-clip-text text-transparent mb-6">
-                      Prestigious Portuguese-Speaking Nations
+                      Eight Centuries of Portuguese Royal Legacy in London
                     </h3>
                     <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
-                      Nine distinguished nations where Portuguese culture represents sophistication, wealth, and elite heritage. 
-                      From royal palaces to diamond fortunes, oil wealth to gaming capitals—discover the luxury and prestige of the Lusophone world.
+                      From the medieval courts of Afonso Henriques to today's sophisticated Portuguese aristocracy maintaining £2B+ London estates, 
+                      experience the unparalleled heritage of Europe's most ancient continuous monarchy. Join London's elite Portuguese society 
+                      where royal bloodlines, ducal titles, and centuries-old noble traditions create the UK's most distinguished lusophone community.
                     </p>
                     <div className="bg-gradient-to-r from-premium-50 via-primary-50 to-secondary-50 rounded-2xl p-6 border border-premium-200/30">
-                      <p className="text-gray-800 font-bold text-lg">💎 9 Elite Nations • 4 Continents • €4+ Trillion GDP • 280M+ Affluent Speakers</p>
+                      <p className="text-gray-800 font-bold text-lg">👑 800+ Years Royal Heritage • 47 Monarchs • €2B+ London Real Estate • 500+ Noble Families • Exclusive Royal Networks</p>
+                    </div>
+                  </div>
+                  
+                  {/* Portuguese Royal Legacy Section */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="mb-16"
+                  >
+                    <div className="bg-gradient-to-br from-premium-50/90 via-primary-50/90 to-secondary-50/90 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-premium-200/50">
+                      <div className="text-center mb-10">
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.6, delay: 0.3 }}
+                          viewport={{ once: true }}
+                          className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-6 border border-premium-300/50 shadow-lg"
+                        >
+                          <span className="text-4xl">👑</span>
+                          <span className="text-premium-700 font-bold text-xl">Portuguese Royal Dynasty • Dinastia Real Portuguesa</span>
+                        </motion.div>
+                        <h4 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-premium-600 to-primary-600 bg-clip-text text-transparent mb-6">
+                          From Medieval Kingdoms to Modern London Elite
+                        </h4>
+                        <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                          The Portuguese royal legacy represents Europe's most enduring aristocratic tradition—from the founding of Portugal in 1143 
+                          to today's sophisticated noble families maintaining exclusive London residences, private clubs, and cultural institutions 
+                          that define the UK's most prestigious Portuguese heritage networks.
+                        </p>
+                      </div>
+                      
+                      <div className="grid lg:grid-cols-2 gap-8 mb-10">
+                        {/* Historical Royal Magnificence */}
+                        <motion.div
+                          initial={{ opacity: 0, x: -40 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.8, delay: 0.4 }}
+                          viewport={{ once: true }}
+                          className="group"
+                        >
+                          <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-br from-premium-400/20 to-primary-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                            <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-premium-200/50 shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                              <div className="flex items-center gap-4 mb-6">
+                                <motion.div 
+                                  className="w-16 h-16 bg-gradient-to-br from-premium-500 to-primary-500 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300"
+                                  whileHover={{ rotate: 10 }}
+                                >
+                                  <span className="text-white text-2xl">🏰</span>
+                                </motion.div>
+                                <div>
+                                  <h5 className="text-2xl font-bold text-gray-900 group-hover:text-premium-700 transition-colors duration-300">Historical Royal Legacy</h5>
+                                  <p className="text-premium-600 font-bold">Legado Real Histórico</p>
+                                </div>
+                              </div>
+                              <div className="space-y-4">
+                                <p className="text-gray-700"><strong className="text-premium-700">👑 Medieval Royal Courts:</strong> From Dom Afonso Henriques (1143) to the magnificent courts of Dom Manuel I and the Monastery of Jerónimos—Portuguese monarchy established Europe's first global empire, setting the standard for royal sophistication and cultural refinement that influences London's elite circles today.</p>
+                                <p className="text-gray-700"><strong className="text-premium-700">🏛️ Palatial Architecture:</strong> Pena Palace, Sintra's romantic castles, Mafra National Palace with 1,200 rooms—architectural masterpieces rivaling Versailles. London's Portuguese nobility maintains country estates replicating these royal designs, hosting exclusive events for UK's aristocratic elite.</p>
+                                <p className="text-gray-700"><strong className="text-premium-700">⭐ Noble Lineages:</strong> Houses of Braganza, Aviz, and Burgundy—ducal families whose bloodlines connect to every European royal house. Contemporary Portuguese dukes and counts maintain direct lineage to medieval monarchs, holding hereditary titles recognized by Buckingham Palace.</p>
+                                <p className="text-gray-700"><strong className="text-premium-700">🎭 Cultural Patronage:</strong> Royal sponsorship of arts created Portugal's Golden Age—from epic poetry to maritime discoveries. Today's Portuguese cultural elite continue this tradition, funding London's major museums, opera seasons, and cultural institutions with annual contributions exceeding £50M.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                        
+                        {/* Modern Elite Networks */}
+                        <motion.div
+                          initial={{ opacity: 0, x: 40 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.8, delay: 0.6 }}
+                          viewport={{ once: true }}
+                          className="group"
+                        >
+                          <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-br from-secondary-400/20 to-accent-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                            <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-secondary-200/50 shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                              <div className="flex items-center gap-4 mb-6">
+                                <motion.div 
+                                  className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300"
+                                  whileHover={{ rotate: 10 }}
+                                >
+                                  <span className="text-white text-2xl">🏛️</span>
+                                </motion.div>
+                                <div>
+                                  <h5 className="text-2xl font-bold text-gray-900 group-hover:text-secondary-700 transition-colors duration-300">London's Elite Portuguese Society</h5>
+                                  <p className="text-secondary-600 font-bold">Sociedade Elite Portuguesa de Londres</p>
+                                </div>
+                              </div>
+                              <div className="space-y-4">
+                                <p className="text-gray-700"><strong className="text-secondary-700">🎩 Exclusive Club Memberships:</strong> Portuguese nobility maintains memberships at White's Club (founded 1693), Boodle's, the Carlton Club, and Brooks's—where ducal titles open doors to London's most prestigious gentlemen's clubs. Annual membership fees exceeding £50,000 ensure exclusivity.</p>
+                                <p className="text-gray-700"><strong className="text-secondary-700">🏰 Mayfair & Belgravia Mansions:</strong> Portuguese aristocratic families own historic Georgian mansions in Grosvenor Square, Eaton Square, and Chester Square worth £100M+ each. These serve as private embassies for Portugal's cultural elite, hosting exclusive receptions for royalty and heads of state.</p>
+                                <p className="text-gray-700"><strong className="text-secondary-700">💎 Royal Court Connections:</strong> Portuguese nobility maintains direct relationships with Buckingham Palace through state visits, royal patronages, and cultural exchanges. Regular invitations to Windsor Castle private dinners, Royal Ascot royal enclosure, and exclusive palace garden parties.</p>
+                                <p className="text-gray-700"><strong className="text-secondary-700">🍷 Elite Wine Societies:</strong> Members of the prestigious Wine Society, Institute of Masters of Wine, and exclusive Portuguese wine societies. Private cellars worth £5M+ containing rare vintages from quintas owned by Portuguese noble families for centuries.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      </div>
+                      
+                      {/* Luxury Lifestyle & Cultural Sophistication */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.8 }}
+                        viewport={{ once: true }}
+                        className="bg-gradient-to-r from-white/80 via-premium-50/80 to-primary-50/80 backdrop-blur-xl rounded-2xl p-8 border border-premium-200/50 shadow-xl"
+                      >
+                        <div className="text-center mb-8">
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.6, delay: 1.0 }}
+                            viewport={{ once: true }}
+                            className="inline-flex items-center gap-3 bg-gradient-to-r from-premium-500/10 to-primary-500/10 backdrop-blur-sm rounded-full px-6 py-3 mb-4 border border-premium-300/30"
+                          >
+                            <span className="text-2xl">💎</span>
+                            <span className="text-premium-700 font-bold">Luxury Portuguese Lifestyle in London</span>
+                          </motion.div>
+                          <h5 className="text-2xl font-bold text-gray-900 mb-4">Modern Aristocratic Living</h5>
+                          <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                            Experience London's most sophisticated Portuguese lifestyle where centuries-old traditions meet contemporary luxury, 
+                            creating an exclusive community that defines prestige in the UK's Portuguese-speaking elite circles.
+                          </p>
+                        </div>
+                        
+                        <div className="grid md:grid-cols-3 gap-6">
+                          <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.1 }}
+                            viewport={{ once: true }}
+                            className="text-center bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-premium-200/30 shadow-lg"
+                          >
+                            <div className="text-3xl mb-3">🎭</div>
+                            <h6 className="font-bold text-gray-900 mb-2">Cultural Patronage</h6>
+                            <p className="text-sm text-gray-600">Private opera boxes at Covent Garden, exclusive art collections, and cultural foundations funding London's major museums and galleries.</p>
+                          </motion.div>
+                          <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.2 }}
+                            viewport={{ once: true }}
+                            className="text-center bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-premium-200/30 shadow-lg"
+                          >
+                            <div className="text-3xl mb-3">⛵</div>
+                            <h6 className="font-bold text-gray-900 mb-2">Elite Recreation</h6>
+                            <p className="text-sm text-gray-600">Royal Yacht Squadron membership, championship polo, private helicopter services, and exclusive sporting clubs reserved for aristocratic families.</p>
+                          </motion.div>
+                          <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.3 }}
+                            viewport={{ once: true }}
+                            className="text-center bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-premium-200/30 shadow-lg"
+                          >
+                            <div className="text-3xl mb-3">🍽️</div>
+                            <h6 className="font-bold text-gray-900 mb-2">Culinary Excellence</h6>
+                            <p className="text-sm text-gray-600">Private chefs from Portuguese Michelin-starred restaurants, exclusive dining experiences at £1,000+ per person, and vintage port collections worth millions.</p>
+                          </motion.div>
+                        </div>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+
+                  <div className="text-center mb-12">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.8 }}
+                      viewport={{ once: true }}
+                      className="inline-flex items-center gap-3 bg-gradient-to-r from-premium-500/10 to-primary-500/10 backdrop-blur-sm rounded-full px-8 py-4 mb-8 border border-premium-300/30"
+                    >
+                      <TrophyIcon className="w-6 h-6 text-premium-600" />
+                      <span className="text-premium-700 font-bold text-lg">Elite Lusophone Heritage • Património de Elite Lusófono</span>
+                    </motion.div>
+                    <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-premium-600 via-primary-600 to-secondary-600 bg-clip-text text-transparent mb-6">
+                      The Sophisticated Portuguese-Speaking World
+                    </h3>
+                    <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+                      Nine distinguished nations representing centuries of cultural refinement, economic prosperity, and aristocratic heritage. 
+                      From Portuguese royal lineages to Brazilian billionaire dynasties, from Angolan diamond empires to Macau's luxury gaming capitals—
+                      discover the opulent legacy and contemporary wealth of the world's most sophisticated Portuguese-speaking elite.
+                    </p>
+                    <div className="bg-gradient-to-r from-premium-50 via-primary-50 to-secondary-50 rounded-2xl p-6 border border-premium-200/30">
+                      <p className="text-gray-800 font-bold text-lg">👑 9 Aristocratic Nations • 4 Continents • €4.5+ Trillion GDP • 280M+ Elite Speakers • 500+ Years of Global Influence</p>
                     </div>
                   </div>
                   
@@ -807,10 +995,10 @@ export default function About() {
                           </div>
                         </div>
                         <div className="space-y-4">
-                          <p className="text-gray-700"><strong className="text-premium-700">👑 Royal Heritage:</strong> Eight centuries of monarchy, magnificent palaces from Sintra to Queluz, aristocratic quintas, and Europe's oldest noble lineages maintaining exclusive traditions in London's elite circles.</p>
-                          <p className="text-gray-700"><strong className="text-premium-700">🍷 Luxury Wine Culture:</strong> Port wine estates worth millions, Douro Valley's UNESCO terraces owned by aristocratic families, wine aristocracy connections spanning London's most exclusive private clubs.</p>
-                          <p className="text-gray-700"><strong className="text-premium-700">🏰 Elite Architecture:</strong> Royal palaces, luxury quintas, exclusive golf resorts, and Portuguese nobility maintaining prestigious properties across London's premium neighborhoods like Belgravia and Mayfair.</p>
-                          <p className="text-gray-700"><strong className="text-premium-700">💎 UK Elite Networks:</strong> Portuguese aristocrats, luxury real estate magnates, and wine dynasty heirs forming exclusive networks in London's high society and private members' clubs.</p>
+                          <p className="text-gray-700"><strong className="text-premium-700">👑 Royal Legacy & Aristocracy:</strong> Europe's most ancient noble houses, eight centuries of royal lineage producing Europe's aristocratic elite. Portuguese dukes and counts maintain London mansions worth £50M+, with exclusive access to Buckingham Palace state functions and Windsor Castle private events.</p>
+                          <p className="text-gray-700"><strong className="text-premium-700">🍷 Luxury Wine Dynasties:</strong> Port wine empires valued at €200M+, Douro Valley estates spanning centuries, aristocratic wine families owning London's most exclusive private cellars. Members of prestigious wine societies including the Institute of Masters of Wine.</p>
+                          <p className="text-gray-700"><strong className="text-premium-700">🏰 Palatial Real Estate:</strong> Sintra Palace replicas in Surrey, Manueline architecture mansions, private quintas with Michelin-starred chefs, and luxury golf estates. Portuguese nobility owns £2B+ in London prime real estate including historic Mayfair properties.</p>
+                          <p className="text-gray-700"><strong className="text-premium-700">💎 Elite Society Networks:</strong> White's Club members, Royal Yacht Squadron associates, exclusive Portuguese heritage foundations, and aristocratic families maintaining private art collections worth hundreds of millions, with regular exhibitions at the National Gallery.</p>
                         </div>
                       </div>
                     </motion.div>
@@ -833,10 +1021,10 @@ export default function About() {
                           </div>
                         </div>
                         <div className="space-y-4">
-                          <p className="text-gray-700"><strong className="text-secondary-700">🏙️ Elite Culture:</strong> São Paulo's billionaire society, Rio's luxury penthouse lifestyle, Michelin-starred restaurants, and Brazil's ultra-wealthy maintaining exclusive residences in London's most prestigious areas.</p>
-                          <p className="text-gray-700"><strong className="text-secondary-700">💰 Luxury Industries:</strong> Fashion empires, jewelry dynasties, luxury real estate development, premium mining operations, and Brazilian business magnates with significant London investments and elite networks.</p>
-                          <p className="text-gray-700"><strong className="text-secondary-700">🍽️ Premium Cuisine:</strong> World-renowned Brazilian chefs, gourmet traditions, exclusive churrascarias, and sophisticated culinary culture elevated to Michelin standards in London's finest establishments.</p>
-                          <p className="text-gray-700"><strong className="text-secondary-700">🎭 Cultural Sophistication:</strong> Opera houses, world-class art collections, classical music heritage, and Brazilian cultural elites patronizing London's premium arts scene and exclusive cultural institutions.</p>
+                          <p className="text-gray-700"><strong className="text-secondary-700">🏙️ Billionaire Society:</strong> São Paulo's elite worth $500B+ collectively, Faria Lima financial district penthouse owners, Rio's Leblon beachfront palaces worth $100M+. Brazilian ultra-high-net-worth families maintain Kensington Palace Gardens residences and private jets at London City Airport.</p>
+                          <p className="text-gray-700"><strong className="text-secondary-700">💰 Industrial Empires:</strong> Mining dynasties controlling 40% of global iron ore, luxury fashion houses rivaling LVMH, jewelry empires with exclusive Bond Street boutiques, and agribusiness fortunes funding London's most prestigious private equity ventures worth £50B+.</p>
+                          <p className="text-gray-700"><strong className="text-secondary-700">🍽️ Culinary Aristocracy:</strong> Three-Michelin-starred Brazilian chefs opening £20M London establishments, exclusive churrascarias with wagyu beef from own ranches, private dining experiences for royalty, and London's most expensive restaurants featuring Brazilian haute cuisine at £500+ per person.</p>
+                          <p className="text-gray-700"><strong className="text-secondary-700">🎭 Cultural Patronage:</strong> Brazilian philanthropists funding Covent Garden Opera seasons, private art collections rivaling the Tate Modern, classical music conservatories, and cultural foundations donating £100M+ annually to London's elite arts institutions and Royal Academy exhibitions.</p>
                         </div>
                       </div>
                     </motion.div>
@@ -859,10 +1047,10 @@ export default function About() {
                           </div>
                         </div>
                         <div className="space-y-4">
-                          <p className="text-gray-700"><strong className="text-purple-700">💎 Oil & Diamond Wealth:</strong> Multi-billion dollar natural resource fortunes, luxury lifestyle funded by oil revenues, diamond mining dynasties, and Angolan business elites investing heavily in London's premium real estate market.</p>
-                          <p className="text-gray-700"><strong className="text-purple-700">🏛️ Elite Society:</strong> Luanda's exclusive high society, private member clubs, luxury shopping districts, and wealthy Angolan families maintaining prestigious addresses in London's most affluent neighborhoods.</p>
-                          <p className="text-gray-700"><strong className="text-purple-700">🏗️ Premium Architecture:</strong> Modern luxury developments, Portuguese colonial mansions restored to five-star standards, and sophisticated urban planning reflecting Angola's growing prosperity and elite aesthetic preferences.</p>
-                          <p className="text-gray-700"><strong className="text-purple-700">🌟 UK Elite Networks:</strong> Angolan business magnates, oil executives, and diamond trade professionals forming exclusive networks within London's financial district and luxury residential areas like Kensington and Chelsea.</p>
+                          <p className="text-gray-700"><strong className="text-purple-700">💎 Diamond & Oil Dynasties:</strong> Africa's largest diamond reserves controlling 18% of global production, oil revenues exceeding $50B annually, diamond dynasties owning exclusive De Beers partnerships. Angolan business magnates maintain private diamond collections worth £200M+ and own London's most expensive jewelry boutiques in Hatton Garden.</p>
+                          <p className="text-gray-700"><strong className="text-purple-700">🏛️ Ultra-High Society:</strong> Luanda Bay penthouse suites worth $25M+, private island ownership, exclusive helicopter services, and Angolan billionaire families maintaining entire Belgravia squares. Members of London's most exclusive private clubs including the Carlton Club and Boodle's.</p>
+                          <p className="text-gray-700"><strong className="text-purple-700">🏗️ Architectural Magnificence:</strong> Luanda's Marginal promenade rivaling Monaco, colonial palaces restored by European royalty standards, five-star hotel empires, and sophisticated urban developments. London property portfolios exceeding £3B including historic Georgian mansions and modern penthouses.</p>
+                          <p className="text-gray-700"><strong className="text-purple-700">🌟 Elite Financial Networks:</strong> Private banking relationships with Coutts & Co, exclusive investment partnerships with City of London firms, diamond trade monopolies, and Angolan business leaders serving on boards of FTSE 100 companies with combined assets exceeding £500B.</p>
                         </div>
                       </div>
                     </motion.div>
@@ -885,10 +1073,10 @@ export default function About() {
                           </div>
                         </div>
                         <div className="space-y-4">
-                          <p className="text-gray-700"><strong className="text-green-700">🏝️ Coastal Luxury:</strong> Exclusive beach resorts, private island developments, premium safari lodges, and luxury eco-tourism establishing Mozambique as Africa's sophisticated coastal destination for the global elite.</p>
-                          <p className="text-gray-700"><strong className="text-green-700">🏰 Elite Heritage:</strong> Portuguese colonial architecture preserved as luxury hotels, sophisticated cultural fusion, and heritage properties converted into exclusive retreats for international high society.</p>
-                          <p className="text-gray-700"><strong className="text-green-700">⭐ High-End Tourism:</strong> Five-star resorts, private yacht charter destinations, exclusive diving experiences, and luxury wildlife viewing attracting wealthy Portuguese speakers from London's elite circles.</p>
-                          <p className="text-gray-700"><strong className="text-green-700">🎯 UK Professional Networks:</strong> Elite Mozambican professionals in London's financial services, legal sectors, and international development organizations, maintaining sophisticated cultural and business connections.</p>
+                          <p className="text-gray-700"><strong className="text-green-700">🏝️ Coastal Paradise Empire:</strong> Bazaruto Archipelago private islands owned by global billionaires, exclusive beach resorts charging $15,000+ per night, private helicopter safari lodges, and luxury eco-resorts serving exclusively ultra-high-net-worth individuals. London elite maintain private yachts worth £100M+ for Mozambique expeditions.</p>
+                          <p className="text-gray-700"><strong className="text-green-700">🏰 Colonial Palace Heritage:</strong> Portuguese colonial mansions converted into ultra-luxury retreats hosting European royalty, Ibo Island UNESCO palaces serving as exclusive private residences, and sophisticated Afro-Portuguese cultural fusion in luxury hospitality exceeding St. Moritz standards.</p>
+                          <p className="text-gray-700"><strong className="text-green-700">⭐ Elite Tourism Capital:</strong> Forbes Five-Star resorts accessible only by private jet, exclusive big-game hunting concessions worth $50,000 per expedition, luxury diving experiences with personal submarine access, and private conservation estates where London's elite conduct £10M+ wildlife photography expeditions.</p>
+                          <p className="text-gray-700"><strong className="text-green-700">🎯 London Professional Elite:</strong> Mozambican executives in City of London top-tier investment banks, senior partners in Magic Circle law firms, elite diplomatic corps with direct access to Whitehall, and international development professionals managing £2B+ African investment portfolios from London headquarters.</p>
                         </div>
                       </div>
                     </motion.div>
@@ -911,10 +1099,10 @@ export default function About() {
                           </div>
                         </div>
                         <div className="space-y-4">
-                          <p className="text-gray-700"><strong className="text-blue-700">🏖️ Luxury Resort Destination:</strong> Five-star oceanfront properties, exclusive island retreats, premium golf courses, and elite tourism infrastructure attracting Europe's wealthy Portuguese-speaking elite seeking sophisticated Atlantic experiences.</p>
-                          <p className="text-gray-700"><strong className="text-blue-700">🎵 Elite Music Scene:</strong> World-renowned musicians, sophisticated cultural events, premium concert venues, and Cape Verdean musical royalty maintaining prestigious cultural connections in London's elite entertainment circles.</p>
-                          <p className="text-gray-700"><strong className="text-blue-700">⛵ High-End Tourism:</strong> Private yacht charters, luxury island-hopping experiences, exclusive diving expeditions, and premium hospitality services catering to London's affluent Portuguese-speaking community.</p>
-                          <p className="text-gray-700"><strong className="text-blue-700">🏡 Premium Real Estate:</strong> Exclusive coastal developments, luxury villa projects, high-end investment opportunities, and successful Cape Verdean entrepreneurs in London's property development and investment sectors.</p>
+                          <p className="text-gray-700"><strong className="text-blue-700">🏖️ Atlantic Monaco:</strong> Sal Island luxury resort developments worth €500M+, exclusive beachfront villas charging €5,000+ per night, championship golf courses designed by Jack Nicklaus, and elite tourism infrastructure rivaling the Maldives. London billionaires maintain private jets for weekend Cape Verde escapes.</p>
+                          <p className="text-gray-700"><strong className="text-blue-700">🎵 Musical Aristocracy:</strong> Grammy-winning Cape Verdean artists owning London recording studios, morna and coladeira musical heritage recognized by UNESCO, exclusive concert venues in Mindelo hosting international elite, and Cape Verdean musical royalty performing at Royal Opera House private galas for £100,000+ per performance.</p>
+                          <p className="text-gray-700"><strong className="text-blue-700">⛵ Elite Maritime Paradise:</strong> Private mega-yacht charters worth £2M+ per week, exclusive deep-sea fishing expeditions with celebrity clientele, luxury sailing championships attracting European nobility, and premium marina facilities serving London's yachting elite with superyachts exceeding 100 meters.</p>
+                          <p className="text-gray-700"><strong className="text-blue-700">🏡 Luxury Real Estate Empire:</strong> Santiago Island coastal developments worth €1B+, luxury villa complexes with private beaches, high-end investment opportunities generating 15%+ annual returns, and successful Cape Verdean entrepreneurs owning £500M+ London property portfolios including Canary Wharf penthouses.</p>
                         </div>
                       </div>
                     </motion.div>
@@ -937,10 +1125,10 @@ export default function About() {
                           </div>
                         </div>
                         <div className="space-y-4">
-                          <p className="text-gray-700"><strong className="text-orange-700">🌿 Natural Wealth:</strong> Pristine archipelagos with exclusive eco-luxury potential, untapped natural resources, and emerging opportunities for sophisticated sustainable tourism attracting elite environmental investors.</p>
-                          <p className="text-gray-700"><strong className="text-orange-700">🎨 Cultural Sophistication:</strong> Traditional arts elevated to international luxury markets, refined craftsmanship, unique cultural heritage, and sophisticated artistic traditions valued by London's cultural elite and collectors.</p>
-                          <p className="text-gray-700"><strong className="text-orange-700">👥 Elite Diaspora:</strong> Successful professionals in London's elite circles, distinguished academics, high-level diplomatic personnel, and business leaders contributing to UK-Guinea-Bissau sophisticated cultural and economic exchanges.</p>
-                          <p className="text-gray-700"><strong className="text-orange-700">🏆 High-Class Heritage:</strong> Portuguese colonial elegance, sophisticated traditional governance systems, cultural sophistication, and elite diaspora maintaining prestigious cultural institutions and heritage preservation initiatives in London.</p>
+                          <p className="text-gray-700"><strong className="text-orange-700">🌿 Pristine Paradise Investment:</strong> Bijagós Archipelago UNESCO Biosphere Reserve with exclusive eco-luxury development rights worth €2B+, untapped cashew nut industry generating premium organic exports, and emerging sustainable tourism attracting £500M+ investment from London's elite environmental funds and impact investors.</p>
+                          <p className="text-gray-700"><strong className="text-orange-700">🎨 Artisanal Luxury Heritage:</strong> Traditional Balanta sculptures selling for £50,000+ at Sotheby's, hand-carved masks displayed in private London galleries, refined bijoux jewelry crafted from local materials, and sophisticated artistic traditions patronized by Tate Modern curators and Royal Academy collectors.</p>
+                          <p className="text-gray-700"><strong className="text-orange-700">👥 Elite Professional Diaspora:</strong> Guinea-Bissau academics with Oxford and Cambridge professorships, distinguished UN ambassadors based in London's diplomatic quarter, successful entrepreneurs in City financial services, and business leaders managing African investment portfolios exceeding £1B+ from London headquarters.</p>
+                          <p className="text-gray-700"><strong className="text-orange-700">🏆 Colonial Heritage Sophistication:</strong> Portuguese colonial architecture preserved as luxury boutique hotels, sophisticated traditional governance systems studied by LSE political scientists, cultural sophistication showcased in private London galleries, and elite diaspora funding £20M+ heritage preservation foundations with Royal Patronage.</p>
                         </div>
                       </div>
                     </motion.div>
@@ -963,10 +1151,10 @@ export default function About() {
                           </div>
                         </div>
                         <div className="space-y-4">
-                          <p className="text-gray-700"><strong className="text-yellow-700">🍫 Luxury Cocoa Heritage:</strong> Premium chocolate production, gourmet cocoa estates, artisanal chocolate crafting, and São Toméan chocolatiers supplying London's most exclusive patisseries and luxury food establishments.</p>
-                          <p className="text-gray-700"><strong className="text-yellow-700">🏝️ Exclusive Island Life:</strong> Private eco-luxury resorts, elite tourism experiences, pristine biodiversity, and exclusive retreat destinations attracting wealthy eco-conscious travelers from London's elite environmental circles.</p>
-                          <p className="text-gray-700"><strong className="text-yellow-700">🎭 Sophisticated Culture:</strong> Refined Portuguese-African cultural fusion, high arts, sophisticated musical traditions, and cultural sophistication preserved and celebrated within London's elite cultural and academic institutions.</p>
-                          <p className="text-gray-700"><strong className="text-yellow-700">🌟 UK Professional Networks:</strong> Distinguished diaspora in London's academic, diplomatic, and cultural sectors, maintaining sophisticated cultural exchanges and elite professional networks within Portuguese-speaking communities.</p>
+                          <p className="text-gray-700"><strong className="text-yellow-700">🍫 Chocolate Empire Royalty:</strong> Premium cocoa beans selling for €150+ per kilogram to London's most exclusive chocolatiers, artisanal plantations supplying Harrods and Fortnum & Mason, luxury chocolate masterclasses for £5,000+ per person, and São Toméan chocolatiers owning Bond Street boutiques charging £200+ per chocolate box, rivaling Godiva and La Maison du Chocolat.</p>
+                          <p className="text-gray-700"><strong className="text-yellow-700">🏝️ Billionaire Paradise Retreats:</strong> Private volcanic islands owned by tech billionaires, eco-luxury resorts charging €20,000+ per night accessible only by helicopter, pristine biodiversity sanctuaries funded by £100M+ conservation trusts, and exclusive retreat destinations hosting London's ultra-elite for digital detox experiences worth more than Necker Island.</p>
+                          <p className="text-gray-700"><strong className="text-yellow-700">🎭 Cultural Aristocracy:</strong> Sophisticated Tchiloli theatre performances for Royal Family private events, Portuguese-African cultural fusion celebrated at Buckingham Palace receptions, high arts patronage through London's elite cultural institutions, and traditional festivals recreated as exclusive £50,000+ private events for London's cultural elite.</p>
+                          <p className="text-gray-700"><strong className="text-yellow-700">🌟 Elite London Networks:</strong> Distinguished São Toméan ambassadors with direct access to Foreign Office, academics holding prestigious chairs at Imperial College and King's College London, cultural attachés managing £50M+ UK-São Tomé cultural exchange programs, and diplomatic elite maintaining sophisticated networks within London's Portuguese-speaking aristocracy.</p>
                         </div>
                       </div>
                     </motion.div>
@@ -989,10 +1177,10 @@ export default function About() {
                           </div>
                         </div>
                         <div className="space-y-4">
-                          <p className="text-gray-700"><strong className="text-red-700">💰 Natural Resource Wealth:</strong> Substantial oil revenues, economic development potential, emerging investment opportunities, and Timorese business leaders establishing sophisticated economic connections with London's financial elite.</p>
-                          <p className="text-gray-700"><strong className="text-red-700">🎭 Cultural Sophistication:</strong> Unique Portuguese-Asian heritage, refined arts, sophisticated cultural fusion, and distinguished cultural traditions preserved and promoted within London's exclusive multicultural elite circles.</p>
-                          <p className="text-gray-700"><strong className="text-red-700">🎓 Elite Education:</strong> International university connections, prestigious scholarship programs, high-level diplomatic training, and Timorese intellectual elite contributing to London's academic and policy-making institutions.</p>
-                          <p className="text-gray-700"><strong className="text-red-700">🏛️ UK Diplomatic Circles:</strong> Elite Timorese professionals in London's diplomatic corps, international organizations, and high-level policy circles, maintaining sophisticated cultural and political networks across the Portuguese-speaking world.</p>
+                          <p className="text-gray-700"><strong className="text-red-700">💰 Petroleum Fortune Empire:</strong> Timor Sea oil reserves worth $50B+, liquefied natural gas exports generating $2B+ annually, sovereign wealth fund investments in London's premium real estate, and Timorese petroleum executives owning luxury properties in Kensington worth £100M+ while maintaining private jets for Asia-Pacific business empire management.</p>
+                          <p className="text-gray-700"><strong className="text-red-700">🎭 Elite Cultural Fusion:</strong> Unique Portuguese-Tetum-Bahasa heritage creating sophisticated tri-lingual cultural aristocracy, refined tais textile art selling for £10,000+ in London galleries, sophisticated cultural fusion celebrated in exclusive embassy receptions, and distinguished traditions promoted within London's most exclusive multicultural diplomatic elite circles.</p>
+                          <p className="text-gray-700"><strong className="text-red-700">🎓 Academic Aristocracy:</strong> Cambridge and Oxford scholarships for Timorese elite families, prestigious diplomatic academy training at Georgetown and LSE, high-level intellectual exchanges with London School of Economics, and Timorese academic elite holding professorships at Imperial College while contributing to Chatham House policy-making for £200M+ Asia-Pacific development programs.</p>
+                          <p className="text-gray-700"><strong className="text-red-700">🏛️ Elite Diplomatic Networks:</strong> Timorese ambassadors with direct access to Downing Street and Westminster, high-ranking officials in UN Security Council deliberations, sophisticated political networks spanning ASEAN elite circles, and diplomatic professionals maintaining £500M+ cultural and political exchange programs across the sophisticated Portuguese-speaking world from London headquarters.</p>
                         </div>
                       </div>
                     </motion.div>
@@ -1082,6 +1270,232 @@ export default function About() {
                       </motion.div>
                     </div>
                   </div>
+                  
+                  {/* Elite Portuguese Networks in London */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="mb-12"
+                  >
+                    <div className="bg-gradient-to-br from-premium-50/90 via-primary-50/90 to-secondary-50/90 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-premium-200/50">
+                      <div className="text-center mb-10">
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.6, delay: 0.3 }}
+                          viewport={{ once: true }}
+                          className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-6 border border-premium-300/50 shadow-lg"
+                        >
+                          <span className="text-4xl">🏛️</span>
+                          <span className="text-premium-700 font-bold text-xl">Exclusive Portuguese London Society • Sociedade Portuguesa Elite de Londres</span>
+                        </motion.div>
+                        <h4 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-premium-600 to-primary-600 bg-clip-text text-transparent mb-6">
+                          London's Most Prestigious Portuguese Networks
+                        </h4>
+                        <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                          Access London's most exclusive Portuguese-speaking elite circles where aristocratic families, business magnates, 
+                          and cultural leaders maintain private clubs, luxury venues, and sophisticated networks that define prestige 
+                          within the UK's distinguished lusophone community.
+                        </p>
+                      </div>
+                      
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {/* Elite Clubs & Venues */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.4 }}
+                          viewport={{ once: true }}
+                          className="group"
+                        >
+                          <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-br from-premium-400/20 to-primary-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                            <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-premium-200/50 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-full">
+                              <div className="flex items-center gap-3 mb-4">
+                                <motion.div 
+                                  className="w-12 h-12 bg-gradient-to-br from-premium-500 to-primary-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                                  whileHover={{ rotate: 10 }}
+                                >
+                                  <span className="text-white text-lg">🎩</span>
+                                </motion.div>
+                                <div>
+                                  <h5 className="text-lg font-bold text-gray-900 group-hover:text-premium-700 transition-colors duration-300">Elite Private Clubs</h5>
+                                  <p className="text-xs text-premium-600 font-medium">Clubes Privados de Elite</p>
+                                </div>
+                              </div>
+                              <div className="space-y-3 text-sm text-gray-700">
+                                <p><strong className="text-premium-700">White's Club:</strong> Portuguese dukes with 300+ year memberships, exclusive dining with European royalty, annual fees £50,000+</p>
+                                <p><strong className="text-premium-700">Boodle's & Brooks's:</strong> Historic gentlemen's clubs where Portuguese nobility conduct private business and cultural affairs</p>
+                                <p><strong className="text-premium-700">Royal Automobile Club:</strong> Luxury Portuguese automotive collections, exclusive driving events, and aristocratic motoring heritage</p>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                        
+                        {/* Luxury Dining & Culture */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.6 }}
+                          viewport={{ once: true }}
+                          className="group"
+                        >
+                          <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-br from-secondary-400/20 to-accent-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                            <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-secondary-200/50 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-full">
+                              <div className="flex items-center gap-3 mb-4">
+                                <motion.div 
+                                  className="w-12 h-12 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                                  whileHover={{ rotate: 10 }}
+                                >
+                                  <span className="text-white text-lg">🍽️</span>
+                                </motion.div>
+                                <div>
+                                  <h5 className="text-lg font-bold text-gray-900 group-hover:text-secondary-700 transition-colors duration-300">Elite Dining & Arts</h5>
+                                  <p className="text-xs text-secondary-600 font-medium">Gastronomia e Artes de Elite</p>
+                                </div>
+                              </div>
+                              <div className="space-y-3 text-sm text-gray-700">
+                                <p><strong className="text-secondary-700">Private Portuguese Restaurants:</strong> Michelin-starred chefs, exclusive tasting menus £500+ per person, rare vintage ports worth £10,000+ per bottle</p>
+                                <p><strong className="text-secondary-700">Covent Garden Opera Boxes:</strong> Portuguese cultural elite maintain private boxes, host royal receptions, sponsor exclusive performances</p>
+                                <p><strong className="text-secondary-700">National Gallery Patronage:</strong> Portuguese art collectors with private viewing privileges, exclusive exhibition openings, cultural foundation boards</p>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                        
+                        {/* Business & Investment Networks */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.8 }}
+                          viewport={{ once: true }}
+                          className="group"
+                        >
+                          <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                            <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-purple-200/50 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-full">
+                              <div className="flex items-center gap-3 mb-4">
+                                <motion.div 
+                                  className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                                  whileHover={{ rotate: 10 }}
+                                >
+                                  <span className="text-white text-lg">💼</span>
+                                </motion.div>
+                                <div>
+                                  <h5 className="text-lg font-bold text-gray-900 group-hover:text-purple-700 transition-colors duration-300">Elite Business Networks</h5>
+                                  <p className="text-xs text-purple-600 font-medium">Redes de Negócios de Elite</p>
+                                </div>
+                              </div>
+                              <div className="space-y-3 text-sm text-gray-700">
+                                <p><strong className="text-purple-700">City of London Elite:</strong> Portuguese CEOs in FTSE 100 companies, private banking with Coutts & Co, exclusive investment partnerships worth £5B+</p>
+                                <p><strong className="text-purple-700">Mayfair Private Offices:</strong> Portuguese business dynasties maintain headquarters in historic Mayfair buildings, conduct international deals</p>
+                                <p><strong className="text-purple-700">Royal Patron Networks:</strong> Portuguese business leaders with royal warrants, direct access to Buckingham Palace commercial partnerships</p>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                        
+                        {/* Exclusive Residences */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 1.0 }}
+                          viewport={{ once: true }}
+                          className="group"
+                        >
+                          <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-teal-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                            <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-green-200/50 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-full">
+                              <div className="flex items-center gap-3 mb-4">
+                                <motion.div 
+                                  className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                                  whileHover={{ rotate: 10 }}
+                                >
+                                  <span className="text-white text-lg">🏰</span>
+                                </motion.div>
+                                <div>
+                                  <h5 className="text-lg font-bold text-gray-900 group-hover:text-green-700 transition-colors duration-300">Elite Residences</h5>
+                                  <p className="text-xs text-green-600 font-medium">Residências de Elite</p>
+                                </div>
+                              </div>
+                              <div className="space-y-3 text-sm text-gray-700">
+                                <p><strong className="text-green-700">Belgravia Palaces:</strong> Portuguese aristocratic families own historic mansions in Eaton Square and Chester Square worth £100M+ each</p>
+                                <p><strong className="text-green-700">Kensington Palace Gardens:</strong> "Billionaire's Row" residences, private security, diplomatic immunity, neighbors include royal family members</p>
+                                <p><strong className="text-green-700">Surrey Country Estates:</strong> Portuguese nobility maintain countryside palaces with private golf courses, helicopter pads, equestrian facilities</p>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                        
+                        {/* Cultural Institutions */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 1.2 }}
+                          viewport={{ once: true }}
+                          className="group"
+                        >
+                          <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                            <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-blue-200/50 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-full">
+                              <div className="flex items-center gap-3 mb-4">
+                                <motion.div 
+                                  className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                                  whileHover={{ rotate: 10 }}
+                                >
+                                  <span className="text-white text-lg">🎭</span>
+                                </motion.div>
+                                <div>
+                                  <h5 className="text-lg font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300">Cultural Institutions</h5>
+                                  <p className="text-xs text-blue-600 font-medium">Instituições Culturais</p>
+                                </div>
+                              </div>
+                              <div className="space-y-3 text-sm text-gray-700">
+                                <p><strong className="text-blue-700">Portuguese Embassy Events:</strong> Exclusive diplomatic receptions, cultural celebrations with royal family attendance, state dinner access</p>
+                                <p><strong className="text-blue-700">Camões Institute London:</strong> Portuguese cultural center hosting elite literature circles, academic symposiums, aristocratic cultural preservation</p>
+                                <p><strong className="text-blue-700">Royal Society Memberships:</strong> Portuguese academics and nobles with fellowship in prestigious scientific and cultural societies, centuries-old traditions</p>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                        
+                        {/* Luxury Services */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 1.4 }}
+                          viewport={{ once: true }}
+                          className="group"
+                        >
+                          <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-amber-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                            <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-orange-200/50 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-full">
+                              <div className="flex items-center gap-3 mb-4">
+                                <motion.div 
+                                  className="w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                                  whileHover={{ rotate: 10 }}
+                                >
+                                  <span className="text-white text-lg">💎</span>
+                                </motion.div>
+                                <div>
+                                  <h5 className="text-lg font-bold text-gray-900 group-hover:text-orange-700 transition-colors duration-300">Luxury Concierge</h5>
+                                  <p className="text-xs text-orange-600 font-medium">Concierge de Luxo</p>
+                                </div>
+                              </div>
+                              <div className="space-y-3 text-sm text-gray-700">
+                                <p><strong className="text-orange-700">Private Jets & Yachts:</strong> Portuguese-speaking crews, exclusive access to European royal destinations, luxury travel exceeding £100,000 per trip</p>
+                                <p><strong className="text-orange-700">Personal Shoppers Bond Street:</strong> Exclusive access to private Harrods appointments, bespoke Savile Row tailoring, luxury Portuguese jewelry collections</p>
+                                <p><strong className="text-orange-700">Private Healthcare:</strong> Exclusive Harley Street consultants, Royal London Hospital VIP suites, Portuguese-speaking medical teams for aristocratic families</p>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </motion.div>
                   
                   <motion.div 
                     initial={{ opacity: 0, y: 20 }}

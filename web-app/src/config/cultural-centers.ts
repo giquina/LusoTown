@@ -329,8 +329,8 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
   
   {
     id: 'casa-do-brasil-london',
-    name: process.env.NEXT_PUBLIC_CASA_BRASIL_NAME || 'Casa do Brasil in London',
-    namePortuguese: process.env.NEXT_PUBLIC_CASA_BRASIL_NAME_PT || 'Casa do Brasil em Londres',
+    name: process.env.NEXT_PUBLIC_CASA_BRASIL_NAME || 'Casa do Brasil in London - Elite Cultural Centre',
+    namePortuguese: process.env.NEXT_PUBLIC_CASA_BRASIL_NAME_PT || 'Casa do Brasil em Londres - Centro Cultural de Elite',
     type: 'brazilian_center',
     
     address: process.env.NEXT_PUBLIC_CASA_BRASIL_ADDRESS || '32 The Cut, Waterloo',
@@ -347,90 +347,342 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     website: process.env.NEXT_PUBLIC_CASA_BRASIL_WEBSITE || 'https://www.casadobrasil.org.uk',
     
     services: [
-      'Brazilian cultural events',
-      'Portuguese language classes',
-      'Capoeira classes',
-      'Samba workshops',
-      'Brazilian film screenings',
-      'Community support',
-      'Arts workshops'
+      'Elite Brazilian cultural events and galas',
+      'Executive Portuguese language programs',
+      'Luxury Brazilian lifestyle workshops',
+      'High-society networking events',
+      'Brazilian art exhibitions and auctions',
+      'Business development seminars',
+      'Cultural diplomacy programs',
+      'Premium capoeira and dance classes',
+      'Brazilian fine dining experiences',
+      'Investment and trade facilitation',
+      'Corporate cultural consulting'
     ],
     servicesPortuguese: [
-      'Eventos culturais brasileiros',
-      'Aulas de língua portuguesa',
-      'Aulas de capoeira',
-      'Workshops de samba',
-      'Exibições de filmes brasileiros',
-      'Apoio comunitário',
-      'Workshops de artes'
+      'Eventos culturais brasileiros de elite e galas',
+      'Programas executivos de língua portuguesa',
+      'Workshops de estilo de vida brasileiro de luxo',
+      'Eventos de networking da alta sociedade',
+      'Exposições e leilões de arte brasileira',
+      'Seminários de desenvolvimento empresarial',
+      'Programas de diplomacia cultural',
+      'Aulas premium de capoeira e dança',
+      'Experiências gastronômicas brasileiras refinadas',
+      'Facilitação de investimentos e comércio',
+      'Consultoria cultural corporativa'
     ],
     
     programs: [
       {
-        id: 'casa-capoeira',
-        name: 'Capoeira Classes',
-        namePortuguese: 'Aulas de Capoeira',
-        description: 'Traditional Brazilian martial art and cultural expression classes for all levels',
-        descriptionPortuguese: 'Aulas de arte marcial tradicional brasileira e expressão cultural para todos os níveis',
-        type: 'cultural_workshop',
-        targetAudience: ['All ages', 'Beginners to advanced'],
-        duration: 'Ongoing',
-        cost: '£12 per class',
-        schedule: 'Twice weekly',
-        maxParticipants: 25,
-        registrationRequired: false
+        id: 'casa-executive-portuguese',
+        name: 'Executive Brazilian Portuguese Program',
+        namePortuguese: 'Programa Executivo de Português Brasileiro',
+        description: 'Exclusive Portuguese language program for C-suite executives focusing on business communication and cultural nuances',
+        descriptionPortuguese: 'Programa exclusivo de língua portuguesa para executivos C-level focando em comunicação empresarial e nuances culturais',
+        type: 'language_course',
+        targetAudience: ['C-suite executives', 'Investment bankers', 'International business leaders', 'Diplomatic personnel'],
+        duration: '12 weeks intensive',
+        cost: '£2,500 per executive program',
+        schedule: 'Private or small group sessions (3 hours/week)',
+        maxParticipants: 6,
+        certification: true,
+        registrationRequired: true,
+        contactEmail: 'executive@casadobrasil.org.uk'
       },
       {
-        id: 'casa-samba',
-        name: 'Samba Dance Workshops',
-        namePortuguese: 'Workshops de Dança Samba',
-        description: 'Learn traditional Brazilian samba dance with professional instructors',
-        descriptionPortuguese: 'Aprenda dança samba tradicional brasileira com instrutores profissionais',
+        id: 'casa-business-networking-gala',
+        name: 'Brazilian Business Excellence Gala',
+        namePortuguese: 'Gala de Excelência Empresarial Brasileira',
+        description: 'Annual black-tie networking gala celebrating Brazilian business success in the UK, featuring keynote speakers from Fortune 500 Brazilian companies',
+        descriptionPortuguese: 'Gala anual de networking em traje de gala celebrando o sucesso empresarial brasileiro no Reino Unido, com palestrantes de empresas brasileiras Fortune 500',
+        type: 'event',
+        targetAudience: ['Brazilian expatriate executives', 'UK-Brazil trade officials', 'Investment fund managers', 'Cultural ambassadors'],
+        duration: 'Annual event',
+        cost: '£350 - £2,500 per table',
+        schedule: 'Annual (September)',
+        maxParticipants: 200,
+        prerequisites: ['Professional references required', 'Invitation or membership'],
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'gala@casadobrasil.org.uk'
+      },
+      {
+        id: 'casa-luxury-capoeira',
+        name: 'Premium Capoeira & Brazilian Martial Arts',
+        namePortuguese: 'Capoeira Premium e Artes Marciais Brasileiras',
+        description: 'Exclusive capoeira classes with master instructors from Brazil, including cultural history and philosophy for discerning practitioners',
+        descriptionPortuguese: 'Aulas exclusivas de capoeira com mestres instrutores do Brasil, incluindo história cultural e filosofia para praticantes exigentes',
         type: 'cultural_workshop',
-        targetAudience: ['Adults', 'Dance enthusiasts'],
-        duration: 'Ongoing',
-        cost: '£15 per workshop',
-        schedule: 'Weekly',
-        maxParticipants: 20,
-        registrationRequired: true
+        targetAudience: ['Fitness enthusiasts', 'Cultural connoisseurs', 'Stress-relief seekers', 'Brazilian heritage individuals'],
+        duration: 'Ongoing with intensive workshops',
+        cost: '£45 per class / £450 per month unlimited',
+        schedule: 'Three times weekly + monthly intensives',
+        maxParticipants: 15,
+        registrationRequired: true,
+        contactEmail: 'capoeira@casadobrasil.org.uk'
+      },
+      {
+        id: 'casa-cultural-investment',
+        name: 'Brazilian Art & Cultural Investment Seminars',
+        namePortuguese: 'Seminários de Investimento em Arte e Cultura Brasileira',
+        description: 'Educational seminars on investing in Brazilian art, cultural properties, and heritage assets for high-net-worth individuals',
+        descriptionPortuguese: 'Seminários educacionais sobre investimento em arte brasileira, propriedades culturais e ativos patrimoniais para indivíduos de alto patrimônio',
+        type: 'certification',
+        targetAudience: ['Art collectors', 'Investment advisors', 'Cultural institution leaders', 'Wealth managers'],
+        duration: '6-week intensive course',
+        cost: '£1,200 per participant',
+        schedule: 'Quarterly offerings',
+        maxParticipants: 12,
+        certification: true,
+        registrationRequired: true,
+        contactEmail: 'investment@casadobrasil.org.uk'
+      },
+      {
+        id: 'casa-luxury-culinary',
+        name: 'Brazilian Fine Dining & Wine Experience',
+        namePortuguese: 'Experiência de Gastronomia Fina e Vinhos Brasileiros',
+        description: 'Curated dining experiences featuring Brazil\'s sophisticated culinary scene, premium cachaças, and wine pairings',
+        descriptionPortuguese: 'Experiências gastronômicas curadas apresentando a sofisticada cena culinária brasileira, cachaças premium e harmonização de vinhos',
+        type: 'cultural_workshop',
+        targetAudience: ['Food connoisseurs', 'Wine enthusiasts', 'Business entertainment hosts', 'Cultural tourists'],
+        duration: 'Monthly events',
+        cost: '£150 - £350 per person',
+        schedule: 'Monthly themed dinners',
+        maxParticipants: 24,
+        registrationRequired: true,
+        contactEmail: 'culinary@casadobrasil.org.uk'
       }
     ],
     
     openingHours: {
-      monday: 'Closed',
-      tuesday: '10:00-18:00',
-      wednesday: '10:00-18:00',
-      thursday: '10:00-18:00',
-      friday: '10:00-18:00',
-      saturday: '10:00-16:00'
+      monday: '09:00-18:00',
+      tuesday: '09:00-21:00',
+      wednesday: '09:00-21:00',
+      thursday: '09:00-21:00',
+      friday: '09:00-21:00',
+      saturday: '10:00-18:00',
+      sunday: '12:00-17:00'
     },
     
     director: {
-      name: process.env.NEXT_PUBLIC_CASA_BRASIL_DIRECTOR || 'Ana Beatriz Costa',
-      title: 'Cultural Director',
-      titlePortuguese: 'Diretora Cultural',
-      email: 'ana@casadobrasil.org.uk',
-      bio: 'Cultural director and artist passionate about promoting Brazilian culture in London'
+      name: process.env.NEXT_PUBLIC_CASA_BRASIL_DIRECTOR || 'Dr. Fernanda Almeida Santos',
+      title: 'Executive Cultural Director & Brazil-UK Trade Liaison',
+      titlePortuguese: 'Diretora Cultural Executiva e Ligação Comercial Brasil-Reino Unido',
+      email: 'fernanda.santos@casadobrasil.org.uk',
+      bio: 'Former São Paulo Opera House cultural director and international business consultant specializing in Brazil-UK cultural and economic partnerships. MBA from INSEAD, PhD in Cultural Studies from USP.'
     },
     
-    capacity: 100,
-    facilities: ['Theatre', 'Gallery', 'Dance studio', 'Office space', 'Café'],
-    languages: ['Portuguese', 'English'],
+    capacity: 250,
+    facilities: [
+      'Premium theatre with state-of-the-art audio-visual',
+      'Contemporary art gallery with rotating exhibitions',
+      'Professional dance studios with Marley floors',
+      'Executive conference rooms',
+      'VIP reception lounges',
+      'Brazilian specialty café and wine bar',
+      'Business center with translation services',
+      'Private dining rooms',
+      'Cultural library and research center'
+    ],
+    languages: ['Portuguese', 'English', 'Spanish'],
     
-    partnerships: ['Brazilian Embassy', 'Southwark Council', 'Local Brazilian community'],
-    accreditation: ['UK Registered Charity'],
+    partnerships: [
+      'Brazilian Embassy London',
+      'UK-Brazil Chamber of Commerce',
+      'São Paulo State Cultural Department',
+      'Rio de Janeiro Tourism Board',
+      'Itaú Cultural London',
+      'Vale Foundation UK',
+      'British Council Brazil',
+      'London Business School Brazil Centre',
+      'Brazilian Development Bank (BNDES) London Office'
+    ],
+    accreditation: [
+      'UK Registered Charity',
+      'Brazilian Ministry of Culture official partner',
+      'UK Trade & Investment cultural partner',
+      'Instituto Camões collaborative institution'
+    ],
     
     socialMedia: {
-      facebook: process.env.NEXT_PUBLIC_CASA_BRASIL_FACEBOOK || 'https://facebook.com/CasaDoBrasilLondon',
-      instagram: process.env.NEXT_PUBLIC_CASA_BRASIL_INSTAGRAM || 'https://instagram.com/casadobrasillondon',
-      twitter: process.env.NEXT_PUBLIC_CASA_BRASIL_TWITTER || 'https://twitter.com/CasaBrasilLDN'
+      facebook: process.env.NEXT_PUBLIC_CASA_BRASIL_FACEBOOK || 'https://facebook.com/CasaDoBrasilEliteLondon',
+      instagram: process.env.NEXT_PUBLIC_CASA_BRASIL_INSTAGRAM || 'https://instagram.com/casadobrasil_elite',
+      twitter: process.env.NEXT_PUBLIC_CASA_BRASIL_TWITTER || 'https://twitter.com/CasaBrasilElite',
+      linkedin: 'https://linkedin.com/company/casa-do-brasil-london-elite'
     },
     
     isActive: true,
     establishedYear: 1995,
-    lastUpdated: '2024-08-21',
-    description: 'Cultural center promoting Brazilian arts, culture, and community connections in London',
-    descriptionPortuguese: 'Centro cultural promovendo artes brasileiras, cultura e conexões comunitárias em Londres'
+    lastUpdated: '2024-08-22',
+    description: 'Premier Brazilian cultural institution in London, fostering sophisticated cultural exchange and business development between Brazil and the UK. Serving as the epicenter for Brazilian elite networking, luxury cultural experiences, and high-level diplomatic engagement.',
+    descriptionPortuguese: 'Principal instituição cultural brasileira em Londres, promovendo intercâmbio cultural sofisticado e desenvolvimento empresarial entre Brasil e Reino Unido. Servindo como epicentro para networking da elite brasileira, experiências culturais de luxo e engajamento diplomático de alto nível.'
+  },
+
+  {
+    id: 'centro-cultural-angolano-london',
+    name: process.env.NEXT_PUBLIC_ANGOLA_CENTER_NAME || 'Centro Cultural Angolano de Londres',
+    namePortuguese: process.env.NEXT_PUBLIC_ANGOLA_CENTER_NAME_PT || 'Centro Cultural Angolano de Londres',
+    type: 'lusophone_center',
+    
+    address: process.env.NEXT_PUBLIC_ANGOLA_CENTER_ADDRESS || 'Mayfair Business Centre, 8 Shepherd Street',
+    postcode: process.env.NEXT_PUBLIC_ANGOLA_CENTER_POSTCODE || 'W1J 7JE',
+    city: 'London',
+    country: 'United Kingdom',
+    coordinates: {
+      latitude: 51.5074,
+      longitude: -0.1478
+    },
+    
+    phone: process.env.NEXT_PUBLIC_ANGOLA_CENTER_PHONE || '+44 20 7495 1752',
+    email: process.env.NEXT_PUBLIC_ANGOLA_CENTER_EMAIL || 'info@centroangolalondres.co.uk',
+    website: process.env.NEXT_PUBLIC_ANGOLA_CENTER_WEBSITE || 'https://centroangolalondres.co.uk',
+    
+    services: [
+      'Luxury Angolan cultural events',
+      'Elite business networking (Oil & Gas)',
+      'Diamond industry connections',
+      'High-end Angolan restaurant partnerships',
+      'Private club memberships',
+      'Sophisticated Portuguese language refinement',
+      'Exclusive Angolan art exhibitions',
+      'Premium cultural consultancy services'
+    ],
+    servicesPortuguese: [
+      'Eventos culturais angolanos de luxo',
+      'Networking empresarial de elite (Petróleo & Gás)',
+      'Conexões da indústria de diamantes',
+      'Parcerias com restaurantes angolanos de alta classe',
+      'Membros de clubes privados',
+      'Refinamento sofisticado da língua portuguesa',
+      'Exposições exclusivas de arte angolana',
+      'Serviços de consultoria cultural premium'
+    ],
+    
+    programs: [
+      {
+        id: 'angola-business-elite',
+        name: 'Angola Business Elite Network',
+        namePortuguese: 'Rede Empresarial de Elite Angolana',
+        description: 'Exclusive networking for successful Angolan entrepreneurs and business leaders in oil, gas, diamonds, and luxury sectors',
+        descriptionPortuguese: 'Networking exclusivo para empresários angolanos de sucesso e líderes empresariais em petróleo, gás, diamantes e setores de luxo',
+        type: 'event',
+        targetAudience: ['C-suite executives', 'Oil & Gas professionals', 'Diamond industry leaders', 'Luxury entrepreneurs'],
+        duration: 'Monthly exclusive events',
+        cost: '£150 per member per month',
+        schedule: 'First Thursday of each month (Private dining)',
+        maxParticipants: 25,
+        prerequisites: ['Business verification', 'Net worth assessment', 'Professional referrals'],
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'elite@centroangolalondres.co.uk'
+      },
+      {
+        id: 'angola-diamond-capital-series',
+        name: 'Angola: Africa\'s Diamond Capital - Investment Series',
+        namePortuguese: 'Angola: Capital dos Diamantes de África - Série de Investimentos',
+        description: 'High-level investment seminars showcasing Angola\'s natural resource wealth and luxury development opportunities',
+        descriptionPortuguese: 'Seminários de investimento de alto nível mostrando a riqueza de recursos naturais de Angola e oportunidades de desenvolvimento de luxo',
+        type: 'certification',
+        targetAudience: ['Investment professionals', 'Wealth managers', 'High-net-worth individuals', 'Private equity partners'],
+        duration: '6-month series',
+        cost: '£2,500 per series',
+        schedule: 'Bi-monthly (3 hours per session)',
+        maxParticipants: 15,
+        prerequisites: ['Investment portfolio verification', 'Professional credentials'],
+        certification: true,
+        registrationRequired: true,
+        contactEmail: 'investments@centroangolalondres.co.uk'
+      },
+      {
+        id: 'angola-luxury-cuisine-masterclass',
+        name: 'Sophisticated Angolan Cuisine & Wine Masterclass',
+        namePortuguese: 'Masterclass de Culinária Angolana Sofisticada e Vinhos',
+        description: 'Refined culinary experiences featuring elevated Angolan gastronomy paired with premium Portuguese and international wines',
+        descriptionPortuguese: 'Experiências culinárias refinadas apresentando gastronomia angolana elevada combinada com vinhos portugueses e internacionais premium',
+        type: 'cultural_workshop',
+        targetAudience: ['Gastronomy enthusiasts', 'Luxury lifestyle connoisseurs', 'Cultural sophisticates'],
+        duration: 'Weekend intensive',
+        cost: '£450 per weekend',
+        schedule: 'Monthly weekend sessions',
+        maxParticipants: 12,
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'cuisine@centroangolalondres.co.uk'
+      },
+      {
+        id: 'angola-luanda-society-connections',
+        name: 'Luanda High Society Cultural Exchange',
+        namePortuguese: 'Intercâmbio Cultural da Alta Sociedade de Luanda',
+        description: 'Exclusive cultural program connecting London\'s Angolan elite with Luanda\'s sophisticated social circles',
+        descriptionPortuguese: 'Programa cultural exclusivo conectando a elite angolana de Londres com os círculos sociais sofisticados de Luanda',
+        type: 'event',
+        targetAudience: ['Angolan diaspora elite', 'Cultural ambassadors', 'High-society professionals'],
+        duration: 'Quarterly programs',
+        cost: '£800 per program',
+        schedule: 'Quarterly weekend events',
+        maxParticipants: 20,
+        prerequisites: ['Social verification', 'Cultural ambassador status'],
+        certification: false,
+        registrationRequired: true,
+        contactEmail: 'society@centroangolalondres.co.uk'
+      }
+    ],
+    
+    openingHours: {
+      monday: '09:00-18:00',
+      tuesday: '09:00-18:00', 
+      wednesday: '09:00-18:00',
+      thursday: '09:00-20:00', // Extended for business networking
+      friday: '09:00-18:00',
+      saturday: '10:00-16:00' // Weekend cultural events
+    },
+    
+    director: {
+      name: process.env.NEXT_PUBLIC_ANGOLA_DIRECTOR || 'Dr. Esperança Burity',
+      title: 'Cultural & Business Director',
+      titlePortuguese: 'Diretora Cultural e Empresarial',
+      email: 'director@centroangolalondres.co.uk',
+      bio: 'Former Angolan diplomatic attaché and luxury business consultant, specializing in high-end cultural programming and elite networking for the Angolan diaspora in London'
+    },
+    
+    capacity: 80,
+    facilities: [
+      'Private dining room',
+      'Executive boardroom',
+      'Art gallery space', 
+      'VIP lounge',
+      'Cultural exhibition hall',
+      'Business consultation suites',
+      'Premium event space'
+    ],
+    languages: ['Portuguese', 'English', 'French'],
+    
+    partnerships: [
+      'Angolan Embassy London',
+      'London Diamond Bourse',
+      'City of London Corporation',
+      'Mayfair Private Members Clubs',
+      'Anglo-Angolan Chamber of Commerce',
+      'Luanda International Business Forum'
+    ],
+    accreditation: [
+      'Angolan Ministry of Culture',
+      'UK Registered Cultural Organization',
+      'City of London Business Partner'
+    ],
+    
+    socialMedia: {
+      linkedin: process.env.NEXT_PUBLIC_ANGOLA_LINKEDIN || 'https://linkedin.com/company/centro-angolano-londres',
+      instagram: process.env.NEXT_PUBLIC_ANGOLA_INSTAGRAM || 'https://instagram.com/angolacentrelondon',
+      facebook: process.env.NEXT_PUBLIC_ANGOLA_FACEBOOK || 'https://facebook.com/CentroAngolanoLondres'
+    },
+    
+    isActive: true,
+    establishedYear: 2018,
+    lastUpdated: '2024-08-22',
+    description: 'Elite cultural center serving London\'s affluent Angolan diaspora, focusing on sophisticated cultural exchange, luxury business networking, and celebrating Angola as Africa\'s diamond capital',
+    descriptionPortuguese: 'Centro cultural de elite servindo a próspera diáspora angolana de Londres, focando no intercâmbio cultural sofisticado, networking empresarial de luxo e celebrando Angola como a capital dos diamantes de África'
   }
 ]
 

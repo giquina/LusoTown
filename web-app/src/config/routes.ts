@@ -73,6 +73,9 @@ export const ROUTES = {
   corporatePartnerships: '/corporate-partnerships',
   portugueseInstitutionalPartnerships: '/portuguese-institutional-partnerships',
   
+  // Cultural Communities
+  brazilianEliteCulture: '/brazilian-elite-culture',
+  
   // Support & Information
   help: '/help',
   faq: '/faq',
@@ -168,7 +171,7 @@ export const ROUTE_PATTERNS = {
 export const ROUTE_CATEGORIES = {
   public: [
     'home', 'events', 'businessDirectory', 'about', 'contact', 
-    'pricing', 'howItWorks', 'tours', 'instituteCamoes'
+    'pricing', 'howItWorks', 'tours', 'instituteCamoes', 'brazilianEliteCulture'
   ],
   auth: [
     'signup', 'login', 'forgotPassword'
@@ -247,4 +250,15 @@ export const PORTUGUESE_ROUTES = {
   portugueseClasses: '/portuguese-classes',
   fadoEvents: buildRouteWithQuery(ROUTES.events, { category: 'fado' }),
   footballGroups: buildRouteWithQuery(ROUTES.groups, { category: 'football' })
+} as const;
+
+// Brazilian Community Specific Routes
+export const BRAZILIAN_ROUTES = {
+  eliteCulture: ROUTES.brazilianEliteCulture,
+  casaDoBrasil: '/casa-do-brasil',
+  brazilianBusiness: buildRouteWithQuery(ROUTES.businessDirectory, { country: 'brazil' }),
+  brazilianEvents: buildRouteWithQuery(ROUTES.events, { category: 'brazilian' }),
+  carnivalEvents: buildRouteWithQuery(ROUTES.events, { category: 'carnival' }),
+  festaJunina: buildRouteWithQuery(ROUTES.events, { category: 'festa-junina' }),
+  capoeira: buildRouteWithQuery(ROUTES.events, { category: 'capoeira' })
 } as const;

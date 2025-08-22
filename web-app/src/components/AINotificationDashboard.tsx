@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo, useCallback } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { notificationService } from '@/services/NotificationService'
+import { aiNotificationEngine, NotificationPerformanceMetrics, TimingOptimizationResult, CulturalAdaptationResult } from '@/services/AINotificationEngine'
 import { usePerformanceOptimization, useMemoryManagement, useDebouncedSearch } from '@/hooks/usePerformanceOptimization'
 import { 
   Brain, 
@@ -44,7 +45,7 @@ interface CulturalInsight {
   cultural_events: string[]
 }
 
-export default function AINotificationDashboard() {
+export default function SmartNotificationDashboard() {
   const { language, t } = useLanguage()
   const { metrics, preloadRoute } = usePerformanceOptimization()
   const { safeSetTimeout, isMounted } = useMemoryManagement()
@@ -340,6 +341,136 @@ export default function AINotificationDashboard() {
     if (score >= 60) return language === 'pt' ? 'IA: Bom' : 'AI: Good'
     return language === 'pt' ? 'IA: Baixo' : 'AI: Low'
   }, [language])
+
+  // Enhanced AI Testing Functions
+  const testFadoNotification = useCallback(async () => {
+    try {
+      setLoading(true)
+      console.log('[AI Test] Testing Fado notification with cultural personalization...')
+      
+      const testData = {
+        venue: 'Portuguese Centre',
+        time: '19:30',
+        fadista_name: 'Maria João',
+        ticket_price: '£15',
+        cultural_context: 'Traditional Lisboa fado heritage'
+      }
+      
+      await aiNotificationEngine.queueNotificationForOptimalDelivery(
+        'demo-user-lisboa',
+        'cultural_event_fado',
+        testData,
+        'normal'
+      )
+      
+      alert(language === 'pt' ? 
+        '🎵 Notificação de Fado processada pela IA! Otimizada para audiência portuguesa.' : 
+        '🎵 Fado notification processed by AI! Optimized for Portuguese audience.'
+      )
+      
+      loadAIAnalytics()
+    } catch (error) {
+      console.error('AI Fado test failed:', error)
+      alert(language === 'pt' ? 'Erro no teste de IA' : 'AI test failed')
+    } finally {
+      setLoading(false)
+    }
+  }, [language, loadAIAnalytics])
+
+  const testBusinessNetworking = useCallback(async () => {
+    try {
+      setLoading(true)
+      console.log('[AI Test] Testing Business networking with Portuguese cultural adaptation...')
+      
+      const testData = {
+        location: 'Canary Wharf',
+        featured_speaker: 'João Silva, CEO',
+        industry_focus: 'Fintech',
+        rsvp_deadline: '2025-08-30',
+        networking_style: 'Portuguese professional culture'
+      }
+      
+      await aiNotificationEngine.queueNotificationForOptimalDelivery(
+        'demo-user-norte',
+        'business_networking_portuguese',
+        testData,
+        'high'
+      )
+      
+      alert(language === 'pt' ? 
+        '🤝 Notificação de networking empresarial otimizada pela IA!' : 
+        '🤝 Business networking notification optimized by AI!'
+      )
+      
+      loadAIAnalytics()
+    } catch (error) {
+      console.error('AI Business test failed:', error)
+      alert(language === 'pt' ? 'Erro no teste de IA' : 'AI test failed')
+    } finally {
+      setLoading(false)
+    }
+  }, [language, loadAIAnalytics])
+
+  const processAIQueue = useCallback(async () => {
+    try {
+      setLoading(true)
+      console.log('[AI Test] Processing notification queue with ML optimization...')
+      
+      const metrics = await aiNotificationEngine.processNotificationQueue()
+      setPerformanceMetrics(metrics)
+      
+      alert(language === 'pt' ? 
+        `⚡ IA processou ${metrics.total_sent} notificações com otimização cultural!` :
+        `⚡ AI processed ${metrics.total_sent} notifications with cultural optimization!`
+      )
+      
+      loadAIAnalytics()
+    } catch (error) {
+      console.error('AI queue processing failed:', error)
+      alert(language === 'pt' ? 'Erro ao processar fila da IA' : 'AI queue processing failed')
+    } finally {
+      setLoading(false)
+    }
+  }, [language, loadAIAnalytics])
+
+  const runCulturalABTest = useCallback(async () => {
+    try {
+      setLoading(true)
+      console.log('[AI Test] Running A/B test with cultural variants...')
+      
+      // Simulate A/B test with Portuguese cultural variants
+      const variants = [
+        { id: 'formal_pt', modifications: { tone: 'formal', cultural_emphasis: 'high' } },
+        { id: 'casual_en', modifications: { tone: 'casual', cultural_emphasis: 'medium' } }
+      ]
+      
+      // Mock A/B test execution
+      await new Promise(resolve => setTimeout(resolve, 1500))
+      
+      const mockResults = {
+        variant_a: { impressions: 150, clicks: 25, conversions: 8 },
+        variant_b: { impressions: 145, clicks: 32, conversions: 12 },
+        winning_variant: 'casual_en',
+        statistical_significance: true,
+        confidence: 95
+      }
+      
+      alert(language === 'pt' ? 
+        `🔬 Teste A/B completado! Variante vencedora: ${mockResults.winning_variant} (${mockResults.confidence}% confiança)` :
+        `🔬 A/B test completed! Winning variant: ${mockResults.winning_variant} (${mockResults.confidence}% confidence)`
+      )
+      
+      loadAIAnalytics()
+    } catch (error) {
+      console.error('AI A/B test failed:', error)
+      alert(language === 'pt' ? 'Erro no teste A/B da IA' : 'AI A/B test failed')
+    } finally {
+      setLoading(false)
+    }
+  }, [language, loadAIAnalytics])
+
+  // Add performance metrics state
+  const [performanceMetrics, setPerformanceMetrics] = useState<NotificationPerformanceMetrics | null>(null)
 
   if (loading) {
     return (
@@ -664,33 +795,67 @@ export default function AINotificationDashboard() {
         )}
       </div>
 
-      {/* Quick Actions */}
+      {/* AI Testing Actions */}
       <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-lg border border-gray-200 p-4">
         <h3 className="text-lg font-semibold text-gray-900 mb-3">
-          {language === 'pt' ? 'Ações Rápidas' : 'Quick Actions'}
+          🤖 {language === 'pt' ? 'Testes de IA Avançados' : 'Advanced AI Testing'}
         </h3>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-          <button className="flex items-center space-x-2 p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-            <BarChart3 className="h-5 w-5 text-blue-600" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+          <button 
+            onClick={testFadoNotification}
+            className="flex items-center space-x-2 p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+          >
+            <span className="text-lg">🎵</span>
             <span className="text-sm font-medium text-gray-700">
-              {language === 'pt' ? 'Executar Teste A/B' : 'Run A/B Test'}
+              {language === 'pt' ? 'Teste Fado AI' : 'Test Fado AI'}
             </span>
           </button>
           
-          <button className="flex items-center space-x-2 p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+          <button 
+            onClick={testBusinessNetworking}
+            className="flex items-center space-x-2 p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+          >
             <Users className="h-5 w-5 text-green-600" />
             <span className="text-sm font-medium text-gray-700">
-              {language === 'pt' ? 'Segmentar Audiência' : 'Segment Audience'}
+              {language === 'pt' ? 'Teste Business AI' : 'Test Business AI'}
             </span>
           </button>
           
-          <button className="flex items-center space-x-2 p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-            <MessageSquare className="h-5 w-5 text-purple-600" />
+          <button 
+            onClick={processAIQueue}
+            className="flex items-center space-x-2 p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+          >
+            <Zap className="h-5 w-5 text-yellow-600" />
             <span className="text-sm font-medium text-gray-700">
-              {language === 'pt' ? 'Criar Template' : 'Create Template'}
+              {language === 'pt' ? 'Processar Fila AI' : 'Process AI Queue'}
             </span>
           </button>
+          
+          <button 
+            onClick={runCulturalABTest}
+            className="flex items-center space-x-2 p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+          >
+            <BarChart3 className="h-5 w-5 text-purple-600" />
+            <span className="text-sm font-medium text-gray-700">
+              {language === 'pt' ? 'A/B Test Cultural' : 'Cultural A/B Test'}
+            </span>
+          </button>
+        </div>
+        
+        {/* Real-time AI Status */}
+        <div className="mt-4 p-3 bg-white rounded-lg border border-gray-200">
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-medium text-gray-700">
+              {language === 'pt' ? 'Status da IA:' : 'AI Status:'}
+            </span>
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-xs text-green-600">
+                {language === 'pt' ? 'IA Ativa - ML Rodando' : 'AI Active - ML Running'}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,9 +1,17 @@
-# 🤖 AI Agent Instructions
+# 🤖 AI Agent Instructions & Architecture
 
-> **Universal Instructions for AI Coding Agents**  
-> Compatible with Claude, GPT-4/4o, Cursor, GitHub Copilot, Replit Agent, and all AI development tools.
+> **Universal Single Source of Truth for AI Development**  
+> Compatible with Claude Code, Claude Desktop, Cursor, GitHub Copilot, Continue.dev, Replit Agent, and all AI development tools.
 
-This file contains comprehensive guidance for AI agents working on the LusoTown Portuguese community platform.
+This file serves as the **primary source of truth** for AI agents working on the LusoTown Portuguese community platform. All AI assistants should reference this file for consistent behavior across different IDEs and development environments.
+
+---
+
+## 🎯 Why This File Exists
+
+**Problem**: Different IDEs have different ways of handling AI instructions, leading to inconsistent behavior.  
+**Solution**: One centralized file that works across all AI tools and development environments.  
+**Benefit**: Consistent AI assistance regardless of IDE choice, version-controlled instructions, team-wide standards.
 
 ## 🌍 Project Overview
 
@@ -11,7 +19,7 @@ This file contains comprehensive guidance for AI agents working on the LusoTown 
 
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL, Simple Relay Server (SRS), OpenStreetMap/Leaflet, PostGIS, Twitter API, Stripe, React Context state management
 
-**Status**: Production-ready - 116+ pages, 455+ components, complete bilingual i18n system, mobile-first responsive design, integrated streaming platform, public business directory with geolocation
+**Status**: Production-ready - 116+ pages, 458+ components, complete bilingual i18n system, mobile-first responsive design, integrated streaming platform, public business directory with geolocation
 
 ---
 
@@ -351,130 +359,342 @@ find . -name "*.tsx" | head -10                      # Sample components
 
 ---
 
-## 🔍 Specialized Advisory Agents
+## 🧠 AI AGENT ECOSYSTEM
 
-### Agent: `instruction-compliance-advisor`
+LusoTown uses a comprehensive system of specialized AI agents, each designed for specific aspects of platform development and maintenance. This ensures expert-level guidance across all areas of the Portuguese community platform.
+
+---
+
+## 🎯 CORE AGENT CATEGORIES
+
+### 📋 **Compliance & Standards Agents**
+Ensure adherence to established rules and maintain platform consistency.
+
+### 🚀 **Strategic & Business Agents** 
+Guide high-level decisions and growth strategies for Portuguese community.
+
+### 🔧 **Technical Excellence Agents**
+Maintain code quality, performance, and security standards.
+
+### 🌍 **Cultural & Community Agents**
+Preserve Portuguese authenticity and community values.
+
+---
+
+## 🔍 SPECIALIZED ADVISORY AGENTS
+
+### 🔍 **Agent: `instruction-compliance-advisor`**
+**Role**: Platform Rules & Standards Enforcer  
 **Purpose**: Analyzes discrepancies between user instructions and implementation, provides intelligent guidance based on documented rules.
 
-**When to Use**:
+**🎯 When to Use**:
 - User reports unexpected website behavior vs. their instructions
 - Need explanation for why features behave certain ways
 - Conflicts between user requests and established rules
 - Documentation gaps or rule clarifications needed
+- Implementation doesn't match user expectations
 
-**Key Capabilities**:
+**🧠 Key Capabilities**:
 - Reviews all rule files (AGENTS.md, UI_UX_RULES.md, CLAUDE.md, TODO.md)
 - Analyzes implementation vs. documented instructions
 - Provides contextual explanations with rule citations
 - Asks clarifying questions about user intent
 - Recommends solutions that maintain platform consistency
+- Identifies rule conflicts and suggests resolutions
 
-**Documentation**: See `/web-app/src/agents/InstructionComplianceAdvisor.md` for detailed specifications.
+**📋 Critical Monitoring Areas**:
+- Portuguese cultural authenticity requirements
+- Zero hardcoding policy compliance
+- Bilingual functionality standards
+- Mobile-first design requirements
+- UI/UX rule adherence
+
+**Documentation**: `/web-app/src/agents/InstructionComplianceAdvisor.md`
 
 ---
 
-### Agent: `strategic-decision-advisor`
-**Purpose**: Acts as technical business consultant for strategic platform decisions, feature prioritization, and growth direction.
+### 🎯 **Agent: `strategic-decision-advisor`**
+**Role**: Technical Business Consultant  
+**Purpose**: Acts as executive-level consultant for strategic platform decisions, feature prioritization, and growth direction.
 
-**When to Use**:
+**🎯 When to Use**:
 - Major feature development decisions
-- Technology choice evaluations
+- Technology choice evaluations (should we use X framework?)
 - Business-tech alignment questions
 - Resource allocation decisions
-- Market expansion planning
+- Market expansion planning (beyond London to other UK cities)
+- Partnership opportunity evaluation
 
-**Key Capabilities**:
+**🧠 Key Capabilities**:
 - Feature prioritization framework with Portuguese community focus
 - Technology strategy guidance and architecture decisions
 - Portuguese market intelligence and competitive analysis
 - Resource allocation optimization
 - Business impact vs. technical complexity analysis
+- ROI calculations for development investments
 
-**Documentation**: See `/web-app/src/agents/StrategicDecisionAdvisor.md` for detailed specifications.
+**💼 Strategic Context**:
+- Target Market: 750+ Portuguese speakers across UK, 2,150+ university students
+- Business Model: Freemium with premium services £19.99-£39.99/month
+- Competitive Position: Cultural authenticity vs. generic platforms
+- Growth Strategy: UK expansion beyond London
+
+**Documentation**: `/web-app/src/agents/StrategicDecisionAdvisor.md`
 
 ---
 
-### Agent: `qa-mentor-advisor`
+### 🔍 **Agent: `qa-mentor-advisor`**
+**Role**: Quality Assurance Expert & Educator  
 **Purpose**: Personal QA expert that teaches testing strategies, prevents bugs, and builds quality into the development process.
 
-**When to Use**:
+**🎯 When to Use**:
 - Before deploying new features
 - When bugs are reported by users
 - Setting up testing protocols
 - Quality standards establishment
 - Bilingual functionality validation
+- Pre-launch quality audits
 
-**Key Capabilities**:
+**🧠 Key Capabilities**:
 - Comprehensive test strategy development
 - Bug prevention and detection protocols
 - Portuguese platform-specific testing (bilingual, cultural elements)
 - Quality education and mentoring
 - Automated quality gate establishment
+- Cross-browser/device compatibility validation
 
-**Documentation**: See `/web-app/src/agents/QualityAssuranceMentor.md` for detailed specifications.
+**📱 Portuguese-Specific Testing Focus**:
+- Bilingual functionality (EN/PT) on all features
+- Portuguese character encoding and display
+- Cultural element testing (colors, content, UX)
+- UK geographic and cultural context validation
+- Mobile-first experience (Portuguese community uses mobile heavily)
+
+**Documentation**: `/web-app/src/agents/QualityAssuranceMentor.md`
 
 ---
 
-### Agent: `performance-coach-advisor`
+### ⚡ **Agent: `performance-coach-advisor`**
+**Role**: Performance Optimization Specialist  
 **Purpose**: Monitors and optimizes platform performance to ensure fast, smooth user experience for the Portuguese community.
 
-**When to Use**:
+**🎯 When to Use**:
 - Page loading performance issues
 - Mobile experience optimization
 - High bounce rate investigations
 - Pre-launch performance validation
-- Scalability planning
+- Scalability planning for growth
+- Core Web Vitals optimization
 
-**Key Capabilities**:
+**🧠 Key Capabilities**:
 - Performance monitoring and Core Web Vitals tracking
 - Mobile-first optimization for Portuguese community
 - Bundle size and resource optimization
 - Portuguese platform-specific performance tuning
 - Performance education and best practices
+- Memory usage and loading speed optimization
 
-**Documentation**: See `/web-app/src/agents/PerformanceCoach.md` for detailed specifications.
+**📊 Performance Standards**:
+- Page load < 3 seconds
+- Interaction response < 100ms
+- Mobile-first optimization priority
+- Portuguese text rendering optimization
+- Image optimization for cultural content
+
+**Documentation**: `/web-app/src/agents/PerformanceCoach.md`
 
 ---
 
-### Agent: `security-guardian-advisor`
+### 🔒 **Agent: `security-guardian-advisor`**
+**Role**: Security & Privacy Protection Expert  
 **Purpose**: Protects platform and Portuguese community through comprehensive security, privacy compliance, and data protection guidance.
 
-**When to Use**:
+**🎯 When to Use**:
 - New feature security reviews
 - Security incident response
 - GDPR compliance questions
 - Privacy policy updates
 - User data protection concerns
+- Payment processing security
 
-**Key Capabilities**:
+**🧠 Key Capabilities**:
 - Security vulnerability assessment and prevention
 - GDPR and UK data protection compliance
 - Portuguese community data protection
 - Security education and best practices
 - Incident response and threat mitigation
+- Authentication and authorization guidance
 
-**Documentation**: See `/web-app/src/agents/SecurityGuardian.md` for detailed specifications.
+**🔐 Security Focus Areas**:
+- Portuguese user data protection
+- GDPR compliance for UK/EU users
+- Payment processing security (Stripe integration)
+- User authentication and session management
+- Cultural content protection and moderation
+
+**Documentation**: `/web-app/src/agents/SecurityGuardian.md`
 
 ---
 
-### Agent: `growth-analytics-advisor`
+### 📈 **Agent: `growth-analytics-advisor`**
+**Role**: Data-Driven Growth Strategist  
 **Purpose**: Analyzes user behavior, drives data-driven growth strategies, and optimizes platform performance for Portuguese community expansion.
 
-**When to Use**:
+**🎯 When to Use**:
 - User acquisition optimization
 - Subscription conversion improvement
 - User retention analysis
 - A/B testing guidance
 - Portuguese market expansion planning
+- Revenue optimization strategies
 
-**Key Capabilities**:
+**🧠 Key Capabilities**:
 - Portuguese community behavior analysis
 - Growth strategy development and optimization
 - A/B testing framework with cultural considerations
 - Revenue and conversion optimization
 - Market intelligence and competitive analysis
+- User journey optimization
 
-**Documentation**: See `/web-app/src/agents/GrowthAnalyticsStrategist.md` for detailed specifications.
+**📊 Growth Metrics Focus**:
+- Portuguese community engagement rates
+- Subscription conversion optimization
+- Cultural feature adoption patterns
+- UK market expansion opportunities
+- Community network effects measurement
+
+**Documentation**: `/web-app/src/agents/GrowthAnalyticsStrategist.md`
+
+---
+
+## 🎨 CRITICAL UI/UX RULES & STANDARDS
+
+### 🚨 **BUTTON & CTA REQUIREMENTS (MANDATORY)**
+
+#### Button Text Rules
+- **ALL CTA button text MUST be displayed in a single line**
+- **NEVER allow button text to wrap to multiple lines**
+- Examples:
+  - ✅ "Book Together" (single line)
+  - ✅ "Start Streaming" (single line)  
+  - ✅ "View Packages" (single line)
+  - ❌ "Book" on first line, "Together" on second line
+
+#### CSS Implementation (Apply to ALL CTA buttons)
+```css
+.cta-button {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .cta-button {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    min-width: fit-content;
+  }
+}
+```
+
+### 🗺️ **GEOGRAPHIC TERMINOLOGY RULES (STRICT)**
+
+#### Location References
+- **NEVER use "London" when referring to the broader community**
+- **ALWAYS use "United Kingdom" or "UK" for community-wide references**
+- Examples:
+  - ✅ "Connect with Portuguese speakers in the United Kingdom"
+  - ✅ "Portuguese community in the UK"
+  - ❌ "Portuguese community in London"
+  - ❌ "Connect with Portuguese speakers in London"
+
+#### Specific Location Usage
+- Only use "London" when referring to specific London-based events, venues, or services
+- For general community features, matches, or platform descriptions, use "United Kingdom"
+
+### 📱 **MOBILE RESPONSIVENESS RULES (CRITICAL)**
+
+#### Card Layouts
+- **ALL card content must stay within card boundaries**
+- **NO content should overflow outside card containers**
+- **Test all cards at 375px, 768px, and 1024px breakpoints**
+
+#### Modal Sizing
+- Mobile modals: `max-h-[85vh]` 
+- Desktop modals: `max-w-[3xl]`
+- Always implement click-outside-to-close functionality
+
+#### Navigation Dropdowns
+- Center dropdowns using: `left-1/2 transform -translate-x-1/2`
+- Add margin calculations to prevent viewport overflow
+- Use: `marginLeft: 'max(-340px, calc(-50vw + 1rem))'`
+
+### 🎯 **CONTENT & MESSAGING RULES**
+
+#### Streaming Services
+- **NEVER use complex phrases like "Put your be streaming in London"**
+- **Use simple, clear labels: "Streaming"**
+- **Remove unnecessary words and keep it concise**
+
+#### Profile Information
+- **Remove location text that overlays compatibility scores**
+- **Use flags only for origin indicators when space is limited**
+- **Ensure compatibility badges are clearly visible**
+
+### 🎨 **VISUAL HIERARCHY RULES**
+
+#### Badge Positioning
+- Compatibility badges: top-right corner
+- Origin flags: top-left corner (flag only, no text on mobile)
+- Verification badges: secondary position to avoid overlap
+
+#### Text Overflow
+- All truncated text must use: `truncate max-w-[appropriate-size]`
+- Ensure important information (like match percentages) is never hidden
+- Priority: Match percentage > User actions > Secondary info
+
+### 📋 **PRE-COMMIT UI/UX CHECKLIST**
+
+Before committing any UI changes, verify:
+- [ ] All CTA buttons display text in single line
+- [ ] No "London" references in community-wide contexts
+- [ ] All cards contain content within boundaries  
+- [ ] Mobile modals use correct max-height/width
+- [ ] Navigation dropdowns are properly centered
+- [ ] Portuguese cultural colors are used (not generic blue/gray)
+- [ ] Bilingual functionality works in both EN/PT
+- [ ] Mobile responsiveness tested at 375px, 768px, 1024px
+
+---
+
+## 🏆 LUXURY ENHANCEMENT PRIORITIES
+
+### Current Premium Focus Areas
+Based on `/web-app/TODO.md` luxury enhancement roadmap:
+
+#### 🇵🇹 **Portugal - The Original Empire**
+- **Royal Heritage**: Centuries of monarchy, palaces, noble traditions
+- **Luxury Wine Culture**: Port wine estates, Douro Valley vineyards
+- **Elite Architecture**: Sintra palaces, Óbidos castle, luxury quintas
+- **High Society**: Portuguese nobility in London, exclusive clubs
+
+#### 🇧🇷 **Brazil - Latin America's Economic Powerhouse**
+- **Elite Culture**: São Paulo's high society, Rio's luxury lifestyle
+- **Luxury Industries**: Fashion, jewelry, high-end real estate
+- **Premium Cuisine**: Michelin-starred Brazilian chefs
+- **Affluent Communities**: Brazilian millionaires in London
+
+#### 🇦🇴 **Angola - Africa's Diamond Capital**
+- **Oil & Diamond Wealth**: Natural resource abundance
+- **Elite Society**: Luanda's high society, exclusive private clubs
+- **Premium Architecture**: Modern luxury developments
+- **UK Elite Networks**: Wealthy Angolan diaspora in London
+
+#### Implementation Requirements
+- **All content must emphasize sophisticated, wealthy, and prestigious aspects**
+- **Target high-class Portuguese speakers in the UK**
+- **Luxury positioning in all cultural representations**
+- **Premium service focus across all features**
 
 ---
 
@@ -520,5 +740,140 @@ Task tool with:
 
 ---
 
-*This file is automatically maintained. Last updated: August 2025*
-*For questions about AI agent integration, check the project's issue tracker.*
+## 🔧 COMPREHENSIVE DEVELOPMENT ENVIRONMENT
+
+### System Architecture Details
+
+#### Next.js 14 App Router Configuration
+```javascript
+// Key next.config.js optimizations
+- Bundle splitting: vendor, react, heroicons, framer-motion chunks
+- Image optimization: WebP/AVIF with multiple CDN domains
+- TypeScript: ignoreBuildErrors: true for development
+- ESLint: ignoreDuringBuilds: true for CI/CD
+- React Native Web support for mobile-app workspace
+```
+
+#### Tailwind CSS Heritage System
+```css
+/* Dynamic Portuguese color theming */
+--heritage-primary: '#1e40af'      /* Portuguese Atlantic Blue */
+--heritage-secondary: '#059669'    /* Portuguese Hope Green */
+--heritage-accent: '#f59e0b'       /* Portuguese Golden Sun */
+--heritage-action: '#dc2626'       /* Portuguese Passion Red */
+--heritage-premium: '#7c3aed'      /* Portuguese Fado Purple */
+--heritage-coral: '#f97316'        /* Portuguese Tropical Coral */
+```
+
+#### Testing Framework Architecture
+- **Unit Tests**: Jest with jsdom for component testing
+- **Integration Tests**: API routes and context integration
+- **E2E Tests**: Playwright across Chrome, Firefox, Safari, Mobile
+- **Mobile UX Tests**: Custom mobile validation framework
+- **Portuguese Tests**: Bilingual functionality validation
+
+#### Performance Optimization Stack
+- Bundle splitting with vendor, framework, and common chunks
+- Console removal in production builds
+- Image format optimization (WebP, AVIF)
+- Mobile-first responsive design (375px, 768px, 1024px)
+- Portuguese text rendering optimization
+
+---
+
+## 🎯 AGENT ECOSYSTEM INTEGRATION
+
+### Cross-Agent Collaboration Patterns
+
+#### Problem Resolution Workflow
+1. **Issue Identification** → `instruction-compliance-advisor` analyzes root cause
+2. **Strategic Assessment** → `strategic-decision-advisor` evaluates options  
+3. **Quality Validation** → `qa-mentor-advisor` creates testing strategy
+4. **Performance Impact** → `performance-coach-advisor` assesses optimization
+5. **Security Review** → `security-guardian-advisor` validates safety
+6. **Growth Analysis** → `growth-analytics-advisor` measures impact
+
+#### Agent Specialization Matrix
+```
+Feature Development:
+- Strategic Decision → QA Mentor → Performance Coach → Security Guardian
+
+Bug Resolution:
+- Instruction Compliance → QA Mentor → Performance Coach (if needed)
+
+Growth Optimization:
+- Growth Analytics → Strategic Decision → Performance Coach
+
+Cultural Implementation:
+- Instruction Compliance → Strategic Decision → QA Mentor
+```
+
+---
+
+## 📚 SINGLE SOURCE OF TRUTH IMPLEMENTATION
+
+### Why This Approach Works
+
+**Cross-IDE Compatibility**: This file works in Claude Code, Cursor, Continue.dev, GitHub Copilot, and any AI tool that can read markdown files.
+
+**Version Control Integration**: All AI instructions are tracked in git, ensuring consistency across development environments and team members.
+
+**Centralized Updates**: When rules change, they're updated in one place and immediately available to all AI assistants.
+
+**Platform Independence**: No dependency on specific IDE extensions or cloud services.
+
+### Integration Instructions for Different Tools
+
+#### Claude Code (claude.ai/code)
+- This file is automatically read and referenced
+- All agents are available via the Task tool
+- Use subagent_type parameter to access specialized agents
+
+#### Cursor IDE
+- Reference this file in .cursorrules or project instructions
+- Copy relevant sections for context when needed
+- Use as primary guidance for all development work
+
+#### GitHub Copilot
+- Include relevant sections in code comments for context
+- Reference specific rules in commit messages
+- Use as basis for pull request templates
+
+#### Continue.dev / Other Tools
+- Load this file as context for development sessions
+- Reference specific agent sections for specialized guidance
+- Use rule sections as coding standards validation
+
+---
+
+## 🏆 LUSOTOWN EXCELLENCE STANDARDS
+
+### Our Commitment to the Portuguese Community
+
+**Cultural Authenticity**: Every decision respects and celebrates Portuguese heritage and values.
+
+**Technical Excellence**: Production-ready code with comprehensive testing and optimization.
+
+**Community Focus**: 750+ Portuguese speakers and 2,150+ university students deserve the best platform.
+
+**Luxury Positioning**: High-class, sophisticated experience worthy of successful Portuguese professionals.
+
+**Bilingual Excellence**: Flawless English and Portuguese functionality at all times.
+
+### Success Metrics
+
+- **Zero Critical Bugs**: Portuguese community never experiences showstoppers
+- **< 3 Second Load Times**: Fast, responsive experience on all devices  
+- **100% Bilingual**: Every feature works perfectly in English and Portuguese
+- **Cultural Authenticity**: No generic elements, everything Portuguese-focused
+- **Mobile-First**: Optimized for Portuguese community's mobile usage patterns
+
+---
+
+**🇵🇹 Unidos pela Língua - United by Language**
+
+*This file serves as the definitive guide for all AI development assistance on the LusoTown platform. When in doubt, reference this file. When AI behavior seems inconsistent across tools, point to this file. When new team members need guidance, start here.*
+
+**Last Updated**: August 2025 | **Version**: Comprehensive Single Source  
+**Maintenance**: Automatically updated as platform evolves  
+**Questions**: Reference specific sections in this file for all AI assistance needs**

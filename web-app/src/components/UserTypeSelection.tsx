@@ -219,7 +219,7 @@ export default function UserTypeSelection() {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 30, opacity: 0, scale: 0.95 }}
               transition={{ type: "spring", duration: 0.6 }}
-              className="bg-white w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
+              className="bg-white w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden max-h-[85vh] flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Mobile Header */}
@@ -277,7 +277,7 @@ export default function UserTypeSelection() {
               </div>
 
               {/* Mobile Options */}
-              <div className="flex-1 p-4 overflow-y-auto">
+              <div className="flex-1 p-4 overflow-hidden">
                 <div className="space-y-3">
                   {t.options.map((option, index) => (
                     <motion.button
@@ -289,14 +289,14 @@ export default function UserTypeSelection() {
                       className="group w-full text-left rounded-2xl border-2 border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-lg transition-all duration-300 bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 active:scale-95"
                     >
                       <div className={`h-2 w-full bg-gradient-to-r ${option.color}`} />
-                      <div className="p-4">
-                        <div className="flex items-start gap-3 mb-3">
-                          <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
-                            <option.icon className="h-6 w-6 text-primary-600" />
+                      <div className="p-3">
+                        <div className="flex items-start gap-2 mb-2">
+                          <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                            <option.icon className="h-5 w-5 text-primary-600" />
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 mb-1">
-                              <div className="text-base font-bold text-gray-900">{option.title}</div>
+                              <div className="text-sm font-bold text-gray-900">{option.title}</div>
                               {option.isFree && (
                                 <span className="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-full">
                                   {option.subtitle}
@@ -308,15 +308,15 @@ export default function UserTypeSelection() {
                                 </span>
                               )}
                             </div>
-                            <div className="text-xs text-primary-600 font-medium mb-1">{option.benefit}</div>
+                            <div className="text-xs text-primary-600 font-medium">{option.benefit}</div>
                           </div>
                         </div>
-                        <div className="text-sm text-gray-600 leading-relaxed mb-3">{option.desc}</div>
+                        <div className="text-xs text-gray-600 leading-relaxed mb-2 line-clamp-2">{option.desc}</div>
                         <div className="flex items-center justify-between">
                           <div className="text-xs text-gray-500 font-medium">{option.stats}</div>
-                          <div className="inline-flex items-center text-primary-700 text-sm font-semibold group-hover:gap-2 transition-all">
+                          <div className="inline-flex items-center text-primary-700 text-xs font-semibold group-hover:gap-2 transition-all">
                             {option.cta}
-                            <ArrowRightIcon className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                            <ArrowRightIcon className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-1" />
                           </div>
                         </div>
                       </div>
@@ -345,7 +345,7 @@ export default function UserTypeSelection() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ type: "spring", duration: 0.6 }}
-              className="bg-white max-w-5xl w-full rounded-3xl shadow-2xl overflow-hidden max-h-[85vh] flex flex-col"
+              className="bg-white max-w-4xl w-full rounded-3xl shadow-2xl overflow-hidden max-h-[85vh] flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Desktop Header */}
@@ -403,8 +403,8 @@ export default function UserTypeSelection() {
               </div>
 
               {/* Desktop Options */}
-              <div className="flex-1 p-8 overflow-y-auto">
-                <div className="grid grid-cols-3 gap-6">
+              <div className="flex-1 p-8 overflow-hidden">
+                <div className="grid grid-cols-3 gap-4 h-full">
                   {t.options.map((option, index) => (
                     <motion.button
                       key={option.title}
@@ -412,24 +412,24 @@ export default function UserTypeSelection() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 * index, duration: 0.5, type: "spring" }}
                       onClick={() => go(option.href, selectedRole || 'user')}
-                      className="group text-left rounded-2xl border-2 border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 hover:scale-105 hover:border-gray-300"
+                      className="group text-left rounded-2xl border-2 border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 hover:scale-105 hover:border-gray-300 h-full flex flex-col"
                     >
                       <div className={`h-3 w-full bg-gradient-to-r ${option.color}`} />
-                      <div className="p-6">
-                        <div className="flex items-start gap-4 mb-4">
-                          <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                            <option.icon className="h-7 w-7 text-primary-600" />
+                      <div className="p-5 flex-1 flex flex-col">
+                        <div className="flex items-start gap-3 mb-3">
+                          <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                            <option.icon className="h-6 w-6 text-primary-600" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-3 mb-2">
-                              <div className="text-xl font-bold text-gray-900">{option.title}</div>
+                            <div className="flex items-center gap-2 mb-2 flex-wrap">
+                              <div className="text-lg font-bold text-gray-900">{option.title}</div>
                               {option.isFree && (
-                                <span className="bg-green-100 text-green-800 text-sm font-bold px-3 py-1 rounded-full">
+                                <span className="bg-green-100 text-green-800 text-sm font-bold px-2 py-1 rounded-full">
                                   {option.subtitle}
                                 </span>
                               )}
                               {!option.isFree && (
-                                <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">
+                                <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-2 py-1 rounded-full">
                                   {option.subtitle}
                                 </span>
                               )}
@@ -437,12 +437,12 @@ export default function UserTypeSelection() {
                             <div className="text-sm text-primary-600 font-medium">{option.benefit}</div>
                           </div>
                         </div>
-                        <div className="text-base text-gray-600 leading-relaxed mb-4">{option.desc}</div>
-                        <div className="flex items-center justify-between">
+                        <div className="text-sm text-gray-600 leading-relaxed mb-3 flex-1">{option.desc}</div>
+                        <div className="flex items-center justify-between mt-auto">
                           <div className="text-sm text-gray-500 font-medium">{option.stats}</div>
-                          <div className="inline-flex items-center text-primary-700 text-base font-semibold group-hover:gap-3 transition-all">
+                          <div className="inline-flex items-center text-primary-700 text-sm font-semibold group-hover:gap-2 transition-all">
                             {option.cta}
-                            <ArrowRightIcon className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                            <ArrowRightIcon className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                           </div>
                         </div>
                       </div>
