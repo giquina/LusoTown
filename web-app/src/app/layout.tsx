@@ -32,20 +32,24 @@ import { METADATA_BASE } from "@/config/site";
 import { generateMetadata as generateSEOMetadata, generateJsonLd } from "@/config/seo";
 
 // Font loading disabled for deployment environments due to network restrictions
-// const inter = Inter({
-//   subsets: ["latin"],
-//   variable: "--font-inter",
-//   display: "swap",
-//   fallback: ["system-ui", "arial"],
-// });
+// // Conditional font loading for deployment environments
+const shouldLoadFonts = process.env.NODE_ENV === 'development' || 
+                       process.env.NEXT_PUBLIC_DISABLE_FONTS !== 'true';
 
-// const poppins = Poppins({
-//   subsets: ["latin"],
-//   weights: ["400", "500", "600", "700"],
-//   variable: "--font-poppins",
-//   display: "swap",
-//   fallback: ["system-ui", "arial"],
-// });
+const inter = shouldLoadFonts ? Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "optional",
+  fallback: ["system-ui", "Arial", "sans-serif"],
+});
+
+// const poppins = shouldLoadFonts ? Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "optional",
+  fallback: ["system-ui", "Arial", "sans-serif"],
+});
 
 export const metadata: Metadata = {
   metadataBase: METADATA_BASE,

@@ -389,6 +389,108 @@ const inter = shouldLoadFonts ? Inter({`
     });
   }
 
+  // Fix 8: Framer Motion SSR compatibility
+  async fixFramerMotionSSR() {
+    await this.runFix('Framer Motion SSR compatibility', () => {
+      const nextConfigPath = path.join(this.webAppPath, 'next.config.js');
+      
+      if (fs.existsSync(nextConfigPath)) {
+        let nextConfig = fs.readFileSync(nextConfigPath, 'utf8');
+        
+        // Add SSR configuration for framer-motion
+        if (!nextConfig.includes('experimental') || !nextConfig.includes('esmExternals')) {
+          // Find the nextConfig object and add experimental settings
+          if (nextConfig.includes('experimental: {')) {
+            // Add esmExternals if experimental section exists
+            if (!nextConfig.includes('esmExternals')) {
+              nextConfig = nextConfig.replace(
+                'experimental: {',
+                `experimental: {
+    esmExternals: 'loose',`
+              );
+            }
+          } else {
+            // Add experimental section if it doesn't exist
+            nextConfig = nextConfig.replace(
+              'const nextConfig = {',
+              `const nextConfig = {
+  experimental: {
+    esmExternals: 'loose',
+  },`
+            );
+          }
+
+          // Also add transpilePackages for framer-motion
+          if (!nextConfig.includes('transpilePackages')) {
+            nextConfig = nextConfig.replace(
+              'transpilePackages: ["@lusotown/ui", "@lusotown/design-tokens"],',
+              'transpilePackages: ["@lusotown/ui", "@lusotown/design-tokens", "framer-motion"],'
+            );
+          } else if (!nextConfig.includes('"framer-motion"')) {
+            nextConfig = nextConfig.replace(
+              /transpilePackages: \[(.*?)\],/,
+              'transpilePackages: [$1, "framer-motion"],'
+            );
+          }
+
+          fs.writeFileSync(nextConfigPath, nextConfig);
+          this.log('Fixed Framer Motion SSR compatibility');
+        }
+      }
+    });
+  }
+
+  // Create health check endpoint
+  async createHealthCheck() {
+    await this.runFix('Framer Motion SSR compatibility', () => {
+      const nextConfigPath = path.join(this.webAppPath, 'next.config.js');
+      
+      if (fs.existsSync(nextConfigPath)) {
+        let nextConfig = fs.readFileSync(nextConfigPath, 'utf8');
+        
+        // Add SSR configuration for framer-motion
+        if (!nextConfig.includes('experimental') || !nextConfig.includes('esmExternals')) {
+          // Find the nextConfig object and add experimental settings
+          if (nextConfig.includes('experimental: {')) {
+            // Add esmExternals if experimental section exists
+            if (!nextConfig.includes('esmExternals')) {
+              nextConfig = nextConfig.replace(
+                'experimental: {',
+                `experimental: {
+    esmExternals: 'loose',`
+              );
+            }
+          } else {
+            // Add experimental section if it doesn't exist
+            nextConfig = nextConfig.replace(
+              'const nextConfig = {',
+              `const nextConfig = {
+  experimental: {
+    esmExternals: 'loose',
+  },`
+            );
+          }
+
+          // Also add transpilePackages for framer-motion
+          if (!nextConfig.includes('transpilePackages')) {
+            nextConfig = nextConfig.replace(
+              'transpilePackages: ["@lusotown/ui", "@lusotown/design-tokens"],',
+              'transpilePackages: ["@lusotown/ui", "@lusotown/design-tokens", "framer-motion"],'
+            );
+          } else if (!nextConfig.includes('"framer-motion"')) {
+            nextConfig = nextConfig.replace(
+              /transpilePackages: \[(.*?)\],/,
+              'transpilePackages: [$1, "framer-motion"],'
+            );
+          }
+
+          fs.writeFileSync(nextConfigPath, nextConfig);
+          this.log('Fixed Framer Motion SSR compatibility');
+        }
+      }
+    });
+  }
+
   // Create health check endpoint
   async createHealthCheck() {
     await this.runFix('Health check endpoint', () => {
@@ -443,6 +545,7 @@ export async function GET() {
     await this.fixVercelConfiguration();
     await this.fixTypeScriptESLint();
     await this.fixFontLoading();
+    await this.fixFramerMotionSSR();
     await this.createHealthCheck();
 
     // Generate fix report
