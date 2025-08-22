@@ -7,7 +7,7 @@
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import PremiumBreadcrumb, { BreadcrumbItem } from '@/components/PremiumBreadcrumb'
-import { InlineSmartNavigation } from '@/components/SmartNavigation'
+// import { InlineSmartNavigation } from '@/components/SmartNavigation'
 import { useNavigation } from '@/context/NavigationContext'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -182,7 +182,7 @@ function PremiumPageLayout({
                   variants={itemVariants}
                   className="mb-8"
                 >
-                  <InlineSmartNavigation maxSuggestions={4} />
+                  {/* <InlineSmartNavigation maxSuggestions={4} /> */}
                 </motion.div>
               )}
             </motion.div>

@@ -23,10 +23,12 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
   // Load saved language preference with English as default
   useEffect(() => {
-    const savedLanguage = localStorage.getItem('lusotown-language')
-    
-    if (savedLanguage && isValidLanguage(savedLanguage)) {
-      setLanguage(savedLanguage)
+    if (typeof window !== 'undefined') {
+      const savedLanguage = localStorage.getItem('lusotown-language')
+      
+      if (savedLanguage && isValidLanguage(savedLanguage)) {
+        setLanguage(savedLanguage)
+      }
     }
     // Always default to English unless user explicitly saved a preference
     // This ensures English is the true default language
@@ -65,10 +67,12 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   // Save language preference - memoized to prevent unnecessary re-renders
   const handleSetLanguage = useCallback((lang: Language) => {
     setLanguage(lang)
-    try {
-      localStorage.setItem('lusotown-language', lang)
-    } catch (error) {
-      console.error('Failed to save language preference:', error)
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.setItem('lusotown-language', lang)
+      } catch (error) {
+        console.error('Failed to save language preference:', error)
+      }
     }
   }, [])
 

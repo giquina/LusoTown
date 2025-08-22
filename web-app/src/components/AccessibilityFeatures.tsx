@@ -667,13 +667,37 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
 
   return (
     <div className={`accessibility-features ${className}`}>
-      {/* Focus indicator for keyboard navigation */}
+      {/* Premium focus indicator for keyboard navigation */}
       <div
         ref={focusIndicatorRef}
-        className="fixed pointer-events-none z-50 border-2 border-blue-500 rounded-lg shadow-lg"
-        style={{ display: 'none' }}
+        className="fixed pointer-events-none z-50 border-2 border-primary-500 rounded-lg shadow-lg transition-all duration-200"
+        style={{ 
+          display: 'none',
+          background: 'linear-gradient(45deg, rgba(197, 40, 47, 0.1), rgba(0, 168, 89, 0.1))',
+          boxShadow: '0 0 0 4px rgba(197, 40, 47, 0.2), 0 8px 24px rgba(0, 0, 0, 0.15)'
+        }}
         aria-hidden="true"
       />
+
+      {/* High contrast overlay */}
+      {settings.highContrast && (
+        <div
+          className="fixed inset-0 pointer-events-none z-40"
+          style={{
+            mixBlendMode: 'difference',
+            background: 'radial-gradient(circle, transparent 40%, rgba(255, 255, 255, 0.1) 100%)'
+          }}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Portuguese cultural accessibility landmark */}
+      <div className="sr-only" aria-live="polite">
+        {language === 'pt' 
+          ? 'Sistema de acessibilidade ativo para a comunidade portuguesa'
+          : 'Accessibility system active for Portuguese community'
+        }
+      </div>
 
       {/* Accessibility controls */}
       <div className="fixed top-4 right-4 z-40">

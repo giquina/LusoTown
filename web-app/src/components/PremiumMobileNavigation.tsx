@@ -159,6 +159,26 @@ export function PremiumMobileNavigation({
   const handleNavigation = (item: PremiumTabItem) => {
     setActiveTab(item.id);
     router.push(item.href);
+    
+    // Announce navigation for screen readers
+    announceToScreenReader(
+      language === 'pt' 
+        ? `Navegando para ${item.labelPt || item.label}` 
+        : `Navigating to ${item.label}`
+    );
+  };
+
+  const announceToScreenReader = (message: string) => {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    document.body.appendChild(announcement);
+    
+    setTimeout(() => {
+      document.body.removeChild(announcement);
+    }, 1000);
   };
 
   const navStyle = {
@@ -183,6 +203,8 @@ export function PremiumMobileNavigation({
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      role="navigation"
+      aria-label={language === 'pt' ? 'Navegação principal da LusoTown' : 'LusoTown main navigation'}
     >
       {/* Premium accent line */}
       <motion.div
@@ -197,7 +219,11 @@ export function PremiumMobileNavigation({
       />
 
       <div className="px-4 py-3 pb-safe-bottom">
-        <div className="flex items-center justify-around">
+        <div 
+          className="flex items-center justify-around"
+          role="tablist"
+          aria-label={language === 'pt' ? 'Navegação por abas' : 'Tab navigation'}
+        >
           {premiumNavItems.map((item, index) => {
             const isActive = activeTab === item.id;
             const IconComponent = isActive ? item.solidIcon : item.icon;
@@ -210,10 +236,28 @@ export function PremiumMobileNavigation({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
+                role="tab"
+                aria-selected={isActive}
+                aria-controls={`panel-${item.id}`}
+                tabIndex={isActive ? 0 : -1}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleNavigation(item);
+                  }
+                  if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const currentIndex = premiumNavItems.findIndex(nav => nav.id === item.id);
+                    const nextIndex = e.key === 'ArrowRight' 
+                      ? (currentIndex + 1) % premiumNavItems.length
+                      : (currentIndex - 1 + premiumNavItems.length) % premiumNavItems.length;
+                    handleNavigation(premiumNavItems[nextIndex]);
+                  }
+                }}
               >
                 <LuxuryRipple
                   className={`
-                    relative p-3 rounded-2xl transition-all duration-300 flex flex-col items-center gap-1
+                    relative p-3 rounded-2xl transition-all duration-300 flex flex-col items-center gap-1 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2
                     ${isActive 
                       ? (style === 'elite' 
                           ? 'bg-amber-400/20 shadow-lg'
@@ -229,6 +273,10 @@ export function PremiumMobileNavigation({
                       : 'rgba(197, 40, 47, 0.2)'
                   }
                 >
+                  {/* Accessibility label for screen readers */}
+                  <span className="sr-only">
+                    {`${label}${isActive ? (language === 'pt' ? ' - ativo' : ' - active') : ''}${item.premium ? (language === 'pt' ? ' - premium' : ' - premium') : ''}${item.heritage ? (language === 'pt' ? ' - herança portuguesa' : ' - Portuguese heritage') : ''}${notifications > 0 && item.id === 'profile' ? ` - ${notifications} ${language === 'pt' ? 'notificações' : 'notifications'}` : ''}`}
+                  </span>
                   {/* Premium indicators */}
                   {item.premium && (
                     <motion.div

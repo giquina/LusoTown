@@ -125,7 +125,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   const { t } = useLanguage()
 
   const [state, setState] = useState<NavigationState>({
-    currentPath: pathname,
+    currentPath: pathname || '/',
     previousPath: null,
     breadcrumbs: [],
     userJourney: [],
@@ -152,7 +152,12 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
 
   // Track navigation changes
   useEffect(() => {
+    if (!pathname) return; // Guard against null pathname
+    
     setState(prev => {
+      // Prevent unnecessary state updates if the path hasn't changed
+      if (prev.currentPath === pathname) return prev;
+      
       const newState = {
         ...prev,
         previousPath: prev.currentPath,
@@ -195,7 +200,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
 
   const addToJourney = (step: Partial<NavigationStep>) => {
     const fullStep: NavigationStep = {
-      path: pathname,
+      path: pathname || '/',
       timestamp: new Date(),
       userAction: 'click',
       ...step
@@ -305,19 +310,18 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   }
 
   const getBreadcrumbsForPath = (path: string): BreadcrumbItem[] => {
-    // Translate breadcrumb labels
-    const breadcrumbs = ROUTE_HIERARCHY[path] || []
-    return breadcrumbs.map(crumb => ({
-      ...crumb,
-      label: crumb.label.includes('Events') ? t('navigation.events', crumb.label) :
-             crumb.label.includes('Community') ? t('navigation.community', crumb.label) :
-             crumb.label.includes('Services') ? t('navigation.services', crumb.label) :
-             crumb.label.includes('Transport') ? t('navigation.transport', crumb.label) :
-             crumb.label.includes('Tours') ? t('navigation.london-tours', crumb.label) :
-             crumb.label.includes('Students') ? t('navigation.students', crumb.label) :
-             crumb.label.includes('Pricing') ? t('navigation.pricing', crumb.label) :
-             crumb.label
-    }))
+    try {
+      // Translate breadcrumb labels safely - avoid using t() during SSR or infinite loops
+      const breadcrumbs = ROUTE_HIERARCHY[path] || []
+      return breadcrumbs.map(crumb => ({
+        ...crumb,
+        // Use fallback labels initially, translations can be applied later in client-side rendering
+        label: crumb.label // Keep original labels to avoid translation loops
+      }))
+    } catch (error) {
+      console.error('Error generating breadcrumbs for path:', path, error)
+      return []
+    }
   }
 
   const isCurrentPage = (path: string): boolean => {

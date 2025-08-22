@@ -10,7 +10,7 @@ import {
   ChevronRightIcon,
   StarIcon,
   ClockIcon,
-  ArrowArrowTrendingUpIcon,
+  ArrowTrendingUpIcon,
   UserGroupIcon,
   SparklesIcon,
   BookmarkIcon,
@@ -48,7 +48,7 @@ export default function SmartNavigation({
   maxSuggestions = 5,
   className = ''
 }: SmartNavProps) {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const { state, getRelatedPages, markPageAsFavorite, addToJourney } = useNavigation()
   const { getTopPages, getRecentSearches, getJourneyInsights } = useNavigationAnalytics()
   
@@ -190,6 +190,28 @@ export default function SmartNavigation({
       userAction: 'click',
       referrer: state.currentPath
     })
+    
+    // Announce navigation for screen readers
+    announceNavigation(
+      language === 'pt' 
+        ? `Navegando para ${suggestion.title}` 
+        : `Navigating to ${suggestion.title}`
+    )
+  }
+
+  const announceNavigation = (message: string) => {
+    // Create temporary announcement element
+    const announcement = document.createElement('div')
+    announcement.setAttribute('aria-live', 'assertive')
+    announcement.setAttribute('aria-atomic', 'true')
+    announcement.className = 'sr-only'
+    announcement.textContent = message
+    document.body.appendChild(announcement)
+    
+    // Remove after announcement
+    setTimeout(() => {
+      document.body.removeChild(announcement)
+    }, 1000)
   }
 
   const getCategoryColor = (category: string) => {
@@ -208,43 +230,70 @@ export default function SmartNavigation({
 
   if (variant === 'minimal') {
     return (
-      <div className={`flex items-center gap-2 ${className}`}>
+      <nav 
+        className={`flex items-center gap-2 ${className}`}
+        role="navigation"
+        aria-label={t('navigation.smart-suggestions-minimal', 'Quick navigation suggestions')}
+      >
         {suggestions.slice(0, 3).map((suggestion, index) => (
           <motion.a
             key={suggestion.path}
             href={suggestion.path}
-            className="text-sm text-gray-600 hover:text-primary-600 transition-colors duration-200"
+            className="text-sm text-gray-600 hover:text-primary-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded px-2 py-1"
             onClick={() => handleSuggestionClick(suggestion)}
             whileHover={{ scale: 1.05 }}
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
+            aria-label={`${suggestion.title}: ${suggestion.description}`}
+            tabIndex={0}
           >
             {suggestion.title}
           </motion.a>
         ))}
-      </div>
+      </nav>
     )
   }
 
   if (variant === 'inline') {
     return (
-      <div className={`bg-white rounded-xl border border-gray-200 p-4 ${className}`}>
-        <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-          <SparklesIcon className="w-5 h-5 text-premium-500" />
+      <section 
+        className={`bg-white rounded-xl border border-gray-200 p-4 ${className}`}
+        role="region"
+        aria-labelledby="smart-suggestions-heading"
+      >
+        <h3 
+          id="smart-suggestions-heading"
+          className="font-semibold text-gray-900 mb-3 flex items-center gap-2"
+        >
+          <SparklesIcon className="w-5 h-5 text-premium-500" aria-hidden="true" />
           {t('navigation.suggestions', 'Suggested for You')}
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div 
+          className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+          role="list"
+          aria-label={t('navigation.suggestions-list', 'Navigation suggestions')}
+        >
           {filteredSuggestions.map((suggestion, index) => (
             <motion.a
               key={suggestion.path}
               href={suggestion.path}
-              className="group p-3 rounded-lg border border-gray-100 hover:border-primary-200 hover:bg-primary-50 transition-all duration-300"
+              className="group p-3 rounded-lg border border-gray-100 hover:border-primary-200 hover:bg-primary-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
               onClick={() => handleSuggestionClick(suggestion)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
+              role="listitem"
+              aria-label={`${suggestion.title}: ${suggestion.description}${suggestion.metadata?.trending ? '. Trending' : ''}${suggestion.metadata?.new ? '. New' : ''}${suggestion.metadata?.premium ? '. Premium' : ''}`}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  handleSuggestionClick(suggestion)
+                  window.location.href = suggestion.path
+                }
+              }}
             >
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary-100 group-hover:bg-primary-200 flex items-center justify-center transition-colors">
@@ -281,17 +330,19 @@ export default function SmartNavigation({
             </motion.a>
           ))}
         </div>
-      </div>
+      </section>
     )
   }
 
   // Floating variant (default)
   return (
-    <motion.div
+    <motion.aside
       className={`fixed right-4 top-1/2 transform -translate-y-1/2 z-40 ${className}`}
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 2, duration: 0.6 }}
+      role="complementary"
+      aria-label={t('navigation.smart-suggestions-widget', 'Smart navigation suggestions')}
     >
       <motion.div
         className={`bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200/60 overflow-hidden transition-all duration-500 ${
@@ -302,24 +353,38 @@ export default function SmartNavigation({
         {!isExpanded ? (
           <motion.button
             onClick={() => setIsExpanded(true)}
-            className="w-12 h-12 flex items-center justify-center text-premium-600 hover:text-premium-700 hover:bg-premium-50 transition-all duration-300"
+            className="w-12 h-12 flex items-center justify-center text-premium-600 hover:text-premium-700 hover:bg-premium-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
             whileHover={{ rotate: 5 }}
             whileTap={{ scale: 0.95 }}
+            aria-label={t('navigation.expand-suggestions', 'Expand navigation suggestions')}
+            aria-expanded={isExpanded}
+            aria-controls="smart-navigation-panel"
           >
-            <SparklesIcon className="w-5 h-5" />
+            <SparklesIcon className="w-5 h-5" aria-hidden="true" />
           </motion.button>
         ) : (
-          <div className="p-4">
+          <div 
+            id="smart-navigation-panel"
+            className="p-4"
+            role="region"
+            aria-labelledby="smart-navigation-heading"
+          >
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-gray-900 flex items-center gap-2">
-                <SparklesIcon className="w-4 h-4 text-premium-500" />
+              <h3 
+                id="smart-navigation-heading"
+                className="font-semibold text-gray-900 flex items-center gap-2"
+              >
+                <SparklesIcon className="w-4 h-4 text-premium-500" aria-hidden="true" />
                 {t('navigation.smart-suggestions', 'Smart Suggestions')}
               </h3>
               <button
                 onClick={() => setIsExpanded(false)}
-                className="text-gray-400 hover:text-gray-600 transition-colors"
+                className="text-gray-400 hover:text-gray-600 transition-colors p-1 rounded focus:outline-none focus:ring-2 focus:ring-primary-400"
+                aria-label={t('navigation.close-suggestions', 'Close suggestions panel')}
+                aria-expanded={isExpanded}
+                aria-controls="smart-navigation-panel"
               >
-                ×
+                <span aria-hidden="true">×</span>
               </button>
             </div>
 
@@ -339,17 +404,34 @@ export default function SmartNavigation({
               </div>
             )}
 
-            <div className="space-y-2">
+            <div 
+              className="space-y-2"
+              role="list"
+              aria-label={t('navigation.floating-suggestions-list', 'Smart navigation suggestions')}
+            >
               {filteredSuggestions.map((suggestion, index) => (
                 <motion.a
                   key={suggestion.path}
                   href={suggestion.path}
-                  className="group block p-3 rounded-lg hover:bg-gray-50 transition-all duration-300"
+                  className="group block p-3 rounded-lg hover:bg-gray-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-1"
                   onClick={() => handleSuggestionClick(suggestion)}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ x: 4 }}
+                  role="listitem"
+                  aria-label={`${suggestion.title}: ${suggestion.description}${suggestion.metadata?.users ? `. ${suggestion.metadata.users}+ users` : ''}`}
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      handleSuggestionClick(suggestion)
+                      window.location.href = suggestion.path
+                    }
+                    if (e.key === 'Escape') {
+                      setIsExpanded(false)
+                    }
+                  }}
                 >
                   <div className="flex items-start gap-3">
                     <div className={`flex-shrink-0 w-6 h-6 rounded-md bg-gradient-to-r ${getCategoryColor(suggestion.category)} flex items-center justify-center text-white text-xs`}>
@@ -375,7 +457,7 @@ export default function SmartNavigation({
           </div>
         )}
       </motion.div>
-    </motion.div>
+    </motion.aside>
   )
 }
 
