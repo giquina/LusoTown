@@ -9,29 +9,34 @@ import { PORTUGUESE_COLORS, DESIGN_TOKENS } from '@/config/brand'
 interface LuxuryHeadingProps {
   children: React.ReactNode
   level?: 1 | 2 | 3 | 4 | 5 | 6
-  variant?: 'default' | 'luxury' | 'portuguese' | 'heritage' | 'premium' | 'elite' | 'platinum'
+  variant?: 'default' | 'luxury' | 'portuguese' | 'heritage' | 'premium' | 'elite' | 'platinum' | 'aristocratic' | 'royal' | 'imperial' | 'diamond'
   className?: string
   gradient?: boolean
   uppercase?: boolean
   animate?: boolean
   centered?: boolean
-  letterSpacing?: 'tight' | 'normal' | 'wide' | 'wider'
+  letterSpacing?: 'tight' | 'normal' | 'wide' | 'wider' | 'widest'
+  sophistication?: 'refined' | 'opulent' | 'majestic'
+  culturalAccent?: boolean
+  goldLeaf?: boolean
+  serif?: boolean
 }
 
 const headingLevels = {
-  1: 'text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black',
-  2: 'text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold',
-  3: 'text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold',
-  4: 'text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold',
-  5: 'text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold',
-  6: 'text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium'
+  1: 'text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.9]',
+  2: 'text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.95]',
+  3: 'text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight',
+  4: 'text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold leading-tight',
+  5: 'text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold leading-snug',
+  6: 'text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium leading-normal'
 }
 
 const letterSpacingClasses = {
   tight: 'tracking-tighter',
   normal: 'tracking-normal',
   wide: 'tracking-wide',
-  wider: 'tracking-widest'
+  wider: 'tracking-widest',
+  widest: 'tracking-[0.25em]'
 }
 
 const variantStyles = {
@@ -41,7 +46,11 @@ const variantStyles = {
   heritage: 'text-amber-900 dark:text-amber-200 font-display',
   premium: 'text-purple-800 dark:text-purple-300 font-display',
   elite: 'text-slate-900 dark:text-slate-100 font-display',
-  platinum: 'text-slate-800 dark:text-slate-200 font-display'
+  platinum: 'text-slate-800 dark:text-slate-200 font-display',
+  aristocratic: 'text-red-900 dark:text-red-200 font-display font-bold',
+  royal: 'text-purple-900 dark:text-purple-200 font-display font-bold',
+  imperial: 'text-amber-900 dark:text-amber-200 font-display font-black',
+  diamond: 'text-cyan-900 dark:text-cyan-200 font-display font-semibold'
 }
 
 const gradientStyles = {
@@ -51,7 +60,11 @@ const gradientStyles = {
   heritage: 'bg-gradient-to-br from-amber-600 via-amber-800 to-amber-700 bg-clip-text text-transparent',
   premium: 'bg-gradient-to-br from-purple-600 via-pink-600 to-purple-700 bg-clip-text text-transparent',
   elite: 'bg-gradient-to-br from-slate-800 via-slate-900 to-black bg-clip-text text-transparent',
-  platinum: 'bg-gradient-to-br from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent'
+  platinum: 'bg-gradient-to-br from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent',
+  aristocratic: 'bg-gradient-to-br from-red-700 via-amber-600 to-green-700 bg-clip-text text-transparent',
+  royal: 'bg-gradient-to-br from-purple-700 via-indigo-600 to-blue-700 bg-clip-text text-transparent',
+  imperial: 'bg-gradient-to-br from-amber-600 via-yellow-500 to-orange-600 bg-clip-text text-transparent',
+  diamond: 'bg-gradient-to-br from-cyan-600 via-blue-500 to-slate-600 bg-clip-text text-transparent'
 }
 
 export function LuxuryHeading({
@@ -63,18 +76,34 @@ export function LuxuryHeading({
   uppercase = false,
   animate = false,
   centered = false,
-  letterSpacing = 'normal'
+  letterSpacing = 'normal',
+  sophistication = 'refined',
+  culturalAccent = false,
+  goldLeaf = false,
+  serif = false
 }: LuxuryHeadingProps) {
   const { t } = useLanguage()
   const Tag = `h${level}` as keyof JSX.IntrinsicElements
 
+  const getSophisticationClasses = () => {
+    const classes = {
+      refined: 'drop-shadow-sm hover:drop-shadow-md transition-all duration-300',
+      opulent: 'drop-shadow-md hover:drop-shadow-lg transition-all duration-400 hover:scale-[1.02]',
+      majestic: 'drop-shadow-lg hover:drop-shadow-xl transition-all duration-500 hover:scale-[1.03] hover:text-shadow-lg'
+    }
+    return classes[sophistication]
+  }
+
   const content = (
     <Tag
       className={cn(
-        // Base styles
-        'leading-[1.1] select-none',
+        // Base styles with enhanced luxury
+        'select-none relative',
         headingLevels[level],
         letterSpacingClasses[letterSpacing],
+        
+        // Font family selection
+        serif ? 'font-serif' : 'font-display',
         
         // Variant or gradient
         gradient ? gradientStyles[variant] : variantStyles[variant],
@@ -85,15 +114,51 @@ export function LuxuryHeading({
         // Uppercase
         uppercase && 'uppercase',
         
+        // Sophistication effects
+        getSophisticationClasses(),
+        
         // Elite specific styles
         variant === 'elite' && 'drop-shadow-sm',
         variant === 'platinum' && 'drop-shadow-md',
+        ['aristocratic', 'royal', 'imperial'].includes(variant) && 'drop-shadow-lg',
+        
+        // Gold leaf effect
+        goldLeaf && 'relative overflow-visible',
+        
+        // Cultural accent
+        culturalAccent && 'border-l-4 border-amber-400 pl-4',
+        
+        // Premium text shadow for aristocratic variants
+        ['aristocratic', 'royal', 'imperial'].includes(variant) && 'text-shadow-sm',
         
         // Custom classes
         className
       )}
     >
+      {/* Gold leaf decorative elements */}
+      {goldLeaf && (
+        <>
+          <span className="absolute -top-2 -left-2 w-4 h-4 bg-gradient-to-br from-amber-300 to-amber-500 rounded-full opacity-60 animate-pulse" />
+          <span className="absolute -bottom-2 -right-2 w-3 h-3 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full opacity-50 animate-pulse delay-500" />
+        </>
+      )}
+      
+      {/* Cultural accent line for Portuguese variants */}
+      {(variant === 'portuguese' || variant === 'aristocratic' || culturalAccent) && (
+        <span className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-6 w-1 h-8 bg-gradient-to-b from-red-500 via-amber-500 to-green-500 rounded-full opacity-40" />
+      )}
+      
       {children}
+      
+      {/* Royal crown symbol for royal variant */}
+      {variant === 'royal' && (
+        <span className="ml-2 text-amber-500 opacity-70" style={{ fontSize: '0.6em' }}>👑</span>
+      )}
+      
+      {/* Imperial eagle for imperial variant */}
+      {variant === 'imperial' && (
+        <span className="ml-2 text-amber-600 opacity-70" style={{ fontSize: '0.6em' }}>🦅</span>
+      )}
     </Tag>
   )
 
@@ -114,12 +179,15 @@ export function LuxuryHeading({
 
 interface LuxuryTextProps {
   children: React.ReactNode
-  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl'
-  weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold'
-  variant?: 'default' | 'muted' | 'accent' | 'premium' | 'portuguese'
+  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl'
+  weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'black'
+  variant?: 'default' | 'muted' | 'accent' | 'premium' | 'portuguese' | 'aristocratic' | 'royal' | 'imperial'
   className?: string
   gradient?: boolean
-  spacing?: 'tight' | 'normal' | 'relaxed' | 'loose'
+  spacing?: 'tight' | 'normal' | 'relaxed' | 'loose' | 'extra-loose'
+  sophistication?: 'refined' | 'opulent' | 'majestic'
+  serif?: boolean
+  culturalAccent?: boolean
 }
 
 const textSizes = {
@@ -128,7 +196,8 @@ const textSizes = {
   base: 'text-base',
   lg: 'text-lg',
   xl: 'text-xl',
-  '2xl': 'text-2xl'
+  '2xl': 'text-2xl',
+  '3xl': 'text-3xl'
 }
 
 const textWeights = {
@@ -136,7 +205,8 @@ const textWeights = {
   normal: 'font-normal',
   medium: 'font-medium',
   semibold: 'font-semibold',
-  bold: 'font-bold'
+  bold: 'font-bold',
+  black: 'font-black'
 }
 
 const textVariants = {
@@ -144,7 +214,10 @@ const textVariants = {
   muted: 'text-gray-600',
   accent: 'text-accent-600',
   premium: 'text-premium-700',
-  portuguese: 'text-red-700'
+  portuguese: 'text-red-700',
+  aristocratic: 'text-red-800',
+  royal: 'text-purple-800',
+  imperial: 'text-amber-800'
 }
 
 const textGradients = {
@@ -152,14 +225,18 @@ const textGradients = {
   muted: 'bg-gradient-to-r from-gray-500 to-gray-700 bg-clip-text text-transparent',
   accent: 'bg-gradient-to-r from-accent-500 to-accent-700 bg-clip-text text-transparent',
   premium: 'bg-gradient-to-r from-premium-600 to-premium-800 bg-clip-text text-transparent',
-  portuguese: 'bg-gradient-to-r from-red-600 to-green-600 bg-clip-text text-transparent'
+  portuguese: 'bg-gradient-to-r from-red-600 to-green-600 bg-clip-text text-transparent',
+  aristocratic: 'bg-gradient-to-r from-red-700 via-amber-600 to-green-700 bg-clip-text text-transparent',
+  royal: 'bg-gradient-to-r from-purple-700 to-indigo-800 bg-clip-text text-transparent',
+  imperial: 'bg-gradient-to-r from-amber-700 to-orange-700 bg-clip-text text-transparent'
 }
 
 const textSpacing = {
   tight: 'leading-tight',
   normal: 'leading-normal',
   relaxed: 'leading-relaxed',
-  loose: 'leading-loose'
+  loose: 'leading-loose',
+  'extra-loose': 'leading-[2.5]'
 }
 
 export function LuxuryText({
@@ -169,23 +246,52 @@ export function LuxuryText({
   variant = 'default',
   className = '',
   gradient = false,
-  spacing = 'normal'
+  spacing = 'normal',
+  sophistication = 'refined',
+  serif = false,
+  culturalAccent = false
 }: LuxuryTextProps) {
+  
+  const getSophisticationEffect = () => {
+    const effects = {
+      refined: 'hover:text-opacity-80 transition-all duration-200',
+      opulent: 'hover:text-opacity-90 hover:scale-[1.01] transition-all duration-300',
+      majestic: 'hover:text-opacity-95 hover:scale-[1.02] hover:drop-shadow-sm transition-all duration-400'
+    }
+    return effects[sophistication]
+  }
   return (
     <p
       className={cn(
         // Base styles
+        'relative',
         textSizes[size],
         textWeights[weight],
         textSpacing[spacing],
         
+        // Font family
+        serif ? 'font-serif' : 'font-sans',
+        
         // Variant or gradient
         gradient ? textGradients[variant] : textVariants[variant],
+        
+        // Sophistication effects
+        getSophisticationEffect(),
+        
+        // Cultural accent border
+        culturalAccent && 'border-l-2 border-amber-400/40 pl-3',
+        
+        // Enhanced styles for aristocratic variants
+        ['aristocratic', 'royal', 'imperial'].includes(variant) && 'font-display',
         
         // Custom classes
         className
       )}
     >
+      {/* Cultural decoration for Portuguese variants */}
+      {(variant === 'portuguese' || variant === 'aristocratic') && culturalAccent && (
+        <span className="absolute -left-1 top-0 bottom-0 w-0.5 bg-gradient-to-b from-red-500 via-amber-500 to-green-500 rounded-full opacity-30" />
+      )}
       {children}
     </p>
   )

@@ -11,6 +11,9 @@
 /* Luxury Mobile Experience Enhancement */
 @import '../styles/luxury-mobile.css';
 
+/* Elite Mobile Experience for Affluent Portuguese Community */
+@import '../styles/elite-mobile.css';
+
 /* Ensure proper emoji and flag rendering across all platforms */
 .flag-emoji {
   font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Twemoji Mozilla', 'EmojiOne Color', 'Android Emoji', sans-serif;
