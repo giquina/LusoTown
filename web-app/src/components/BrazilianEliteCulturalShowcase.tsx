@@ -29,7 +29,7 @@ import {
   getBrazilianCulturalMagnetism
 } from '@/config/brazilian-elite-culture'
 import { getCulturalCenterById } from '@/config/cultural-centers'
-import { SubscriptionGate } from './SubscriptionGate'
+import SubscriptionGate from './SubscriptionGate'
 import { GradientBackground, AnimatedGradient } from './ui'
 import { LuxuryCard } from './ui'
 import EliteButton from './ui/EliteButton'

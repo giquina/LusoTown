@@ -6,7 +6,7 @@ import {
   StarIcon, 
   HeartIcon, 
   SparklesIcon,
-  CrownIcon,
+  AcademicCapIcon,
   GlobeEuropeAfricaIcon
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
@@ -82,7 +82,7 @@ export default function LuxuryComponentShowcase() {
             <LuxuryText size="lg" weight="semibold">Ultra Premium</LuxuryText>
             <div className="space-y-3">
               <EliteButton variant="elite" size="lg" glow>
-                <CrownIcon className="w-5 h-5" />
+                <AcademicCapIcon className="w-5 h-5" />
                 Elite Experience
               </EliteButton>
               <EliteButton variant="platinum" size="md" shimmer>
@@ -142,7 +142,7 @@ export default function LuxuryComponentShowcase() {
               </LuxuryText>
               <div className="flex items-center space-x-2 mt-6">
                 <LuxuryBadge variant="default">Elite</LuxuryBadge>
-                <CrownIcon className="w-5 h-5 text-amber-400" />
+                <AcademicCapIcon className="w-5 h-5 text-amber-400" />
               </div>
             </EliteGlassCard>
 
