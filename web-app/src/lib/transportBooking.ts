@@ -598,4 +598,3 @@ class ValidationRules {
 }
 
 export { BookingFormManager }
-export type { FormStep, FormValidationError }

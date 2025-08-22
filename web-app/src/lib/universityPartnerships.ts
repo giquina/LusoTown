@@ -703,12 +703,4 @@ export class UniversityPartnershipsService {
 
 export const universityPartnershipsService = UniversityPartnershipsService.getInstance()
 
-// Export types and constants for use in components
-export type {
-  University,
-  PortugueseProgram,
-  UniversityStudentBenefit,
-  UniversityEvent,
-  StudentVerification,
-  UniversityPartnershipMetrics
-}
+// Types are already exported at declaration

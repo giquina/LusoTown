@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react'
-import { render, RenderOptions, screen, fireEvent, waitFor } from '@testing-library/react'
+import { render, RenderOptions } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { NetworkingProvider } from '@/context/NetworkingContext'
 import { SubscriptionProvider } from '@/context/SubscriptionContext'
@@ -205,19 +206,23 @@ export const mobileTestUtils = {
   
   // Mock touch events
   mockTouchStart: (element: HTMLElement, x: number = 0, y: number = 0) => {
+    const touch = {
+      clientX: x,
+      clientY: y,
+      identifier: 0,
+      pageX: x,
+      pageY: y,
+      screenX: x,
+      screenY: y,
+      target: element,
+      force: 1,
+      radiusX: 1,
+      radiusY: 1,
+      rotationAngle: 0
+    } as unknown as Touch
+
     const event = new TouchEvent('touchstart', {
-      touches: [
-        {
-          clientX: x,
-          clientY: y,
-          identifier: 0,
-          pageX: x,
-          pageY: y,
-          screenX: x,
-          screenY: y,
-          target: element,
-        } as Touch
-      ]
+      touches: [touch]
     })
     element.dispatchEvent(event)
   }
@@ -314,5 +319,5 @@ export const culturalTestUtils = {
 
 // Re-export everything from testing-library
 export * from '@testing-library/react'
-// Already exported via export * above, no need for explicit export
+// Custom render for LusoTown components
 export { customRender as render }
