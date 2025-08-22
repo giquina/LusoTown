@@ -68,7 +68,14 @@
     "docs:workflow": "node -e \"const Orchestrator = require('./scripts/docs/intelligent-documentation-orchestrator'); const workflow = process.argv[2]; if (!workflow) { console.log('Usage: npm run docs:workflow <workflow-name>'); process.exit(1); } new Orchestrator().executeWorkflow(workflow, 'manual').then(() => console.log('Workflow executed')).catch(console.error);\"",
     "docs:analytics": "node scripts/docs/intelligent-documentation-engine.js && node scripts/docs/conversation-intelligence.js && node scripts/docs/integration-hub.js && node scripts/docs/automation-rules-engine.js",
     "docs:queue": "node -e \"const Rules = require('./scripts/docs/automation-rules-engine'); new Rules().getTaskQueueStatus().then(r => console.log('Queue:', r.pending, 'pending tasks')).catch(console.error);\"",
-    "postinstall": "npm run docs:install-hooks || true"
+    "postinstall": "npm run docs:install-hooks || true",
+    "type-check": "npx tsc --noEmit",
+    "auto-fix": "node ../scripts/auto-fix.js",
+    "deployment-monitor": "node ../scripts/deployment-monitor.js",
+    "build:production": "NODE_ENV=production next build",
+    "build:analyze": "ANALYZE=true next build",
+    "build:debug": "next build --debug",
+    "deploy:auto": "npm run auto-fix && npm run build && npm run deploy"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.7",

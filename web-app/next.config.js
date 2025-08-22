@@ -98,6 +98,7 @@ const nextConfig = {
     ];
   },
   experimental: {
+    esmExternals: 'loose',
     scrollRestoration: true,
     optimizePackageImports: ['@heroicons/react', 'framer-motion'],
   serverComponentsExternalPackages: ['html5-qrcode', 'socket.io-client'],
