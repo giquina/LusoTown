@@ -60,7 +60,11 @@ export default function UserTypeSelection() {
   }
 
   const skipForNow = () => {
-    try { localStorage.setItem('lusotown-skipped-onboarding', '1') } catch {}
+    // Treat skip as completed onboarding so it won't show again
+    try {
+      localStorage.setItem('lusotown-onboarded-v3', '1')
+      localStorage.setItem('lusotown-skipped-onboarding', '1')
+    } catch {}
     setDismissed(true)
     setShowModal(false)
   }
@@ -209,8 +213,8 @@ export default function UserTypeSelection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md"
-          onClick={skipForNow}
+          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm"
+          onClick={closeAndRemember}
         >
           {/* Mobile Layout */}
           <div className="md:hidden flex items-center justify-center min-h-full p-4">

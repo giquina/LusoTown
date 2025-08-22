@@ -1,9 +1,9 @@
 export const brandConfig = {
-  name: process.env.NEXT_PUBLIC_BRAND_NAME || 'HeritageTown',
+  name: process.env.NEXT_PUBLIC_BRAND_NAME || 'LusoTown',
   tagline: process.env.NEXT_PUBLIC_BRAND_TAGLINE || 'Unidos pela Herança',
   taglineEn: process.env.NEXT_PUBLIC_BRAND_TAGLINE_EN || 'United by Heritage',
-  domain: process.env.NEXT_PUBLIC_DOMAIN || 'heritagetown.com',
-  domainLondon: process.env.NEXT_PUBLIC_DOMAIN_LONDON || 'heritagetown.london',
+  domain: process.env.NEXT_PUBLIC_DOMAIN || 'lusotown.com',
+  domainLondon: process.env.NEXT_PUBLIC_DOMAIN_LONDON || 'lusotown.uk',
   description: process.env.NEXT_PUBLIC_BRAND_DESCRIPTION || 'London\'s heritage community platform for authentic cultural connections',
   descriptionPt: process.env.NEXT_PUBLIC_BRAND_DESCRIPTION_PT || 'Plataforma da comunidade cultural de Londres para conexões autênticas',
   
