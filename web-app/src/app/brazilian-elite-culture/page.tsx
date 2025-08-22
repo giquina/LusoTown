@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { PageHeader } from '@/components/PageHeader'
 import BrazilianEliteCulturalShowcase from '@/components/BrazilianEliteCulturalShowcase'
-import { PremiumPageLayout } from '@/components/PremiumPageLayout'
+import PremiumPageLayout from '@/components/PremiumPageLayout'
 import { generateSEOMetadata } from '@/lib/next-metadata'
 
 export async function generateMetadata(): Promise<Metadata> {
