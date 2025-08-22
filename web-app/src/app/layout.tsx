@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
-import WhatsAppWidget from "@/components/WhatsAppWidget";
 import LiveFeedNotifications from "@/components/LiveFeedNotifications";
 import UserTypeSelection from "@/components/UserTypeSelection";
 import { LanguageProvider } from "@/context/LanguageContext";
@@ -113,9 +112,7 @@ export default function RootLayout({
                                           {children}
                                         </ErrorBoundary>
 
-                                        <ComponentErrorBoundary componentName="WhatsApp Widget">
-                                          <WhatsAppWidget />
-                                        </ComponentErrorBoundary>
+                                        {/* WhatsApp widget removed per request; keeping LusoBot only */}
 
                                         <ComponentErrorBoundary componentName="Live Feed Notifications">
                                           <LiveFeedNotifications />

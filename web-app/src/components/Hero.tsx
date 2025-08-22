@@ -52,7 +52,7 @@ export default function Hero() {
             }`}
           >
             {/* Concise Dynamic Badge */}
-            <motion.div
+    <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -61,7 +61,7 @@ export default function Hero() {
               <div className="flex items-center gap-1">
                 <span className="text-xs">🇵🇹</span>
                 <span className="text-xs font-semibold text-gray-700">
-                  UK Portuguese Community
+      UK Portuguese-speaking Community
                 </span>
               </div>
               <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
@@ -78,10 +78,7 @@ export default function Hero() {
                 <span className="bg-gradient-to-r from-red-600 via-amber-600 to-green-600 bg-clip-text text-transparent">
                   Connect
                 </span>{" "}
-                <span className="text-gray-900">with Portuguese</span>{" "}
-                <span className="bg-gradient-to-r from-blue-600 to-gray-800 bg-clip-text text-transparent">
-                  UK
-                </span>
+                <span className="text-gray-900">with Portuguese speakers across the United Kingdom</span>
               </motion.h1>
               
               <motion.p 
@@ -342,7 +339,7 @@ export default function Hero() {
                 {/* Header Section */}
                 <div className="text-center space-y-4">
                   <h3 className="text-2xl font-bold text-gray-800">
-                    Join the Portuguese Community
+                    Join the Portuguese-speaking Community
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
                     From {formatPrice(plans.community.monthly)}/month - Connect
