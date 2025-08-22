@@ -16,7 +16,7 @@ import { useSubscription } from "@/context/SubscriptionContext";
 import SubscriptionGate from "@/components/SubscriptionGate";
 import { ROUTES } from "@/config/routes";
 import LuxuryLoader from "@/components/LuxuryLoader";
-import { LuxuryImageOptimizer } from "@/components/LuxuryImageOptimizer";
+import LuxuryImageOptimizer from "@/components/LuxuryImageOptimizer";
 import { usePerformanceOptimization, useMemoryManagement } from "@/hooks/usePerformanceOptimization";
 
 interface StreamPlayerProps {
