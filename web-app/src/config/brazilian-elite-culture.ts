@@ -572,11 +572,12 @@ export const BRAZILIAN_LUXURY_BRANDS: BrazilianLuxuryBrand[] = [
  * London-Based Brazilian Elite Networking Opportunities
  * Exclusive venues and events for high-class Brazilian professionals in London
  */
-export const LONDON_BRAZILIAN_ELITE_VENUES: BrazilianCulturalVenue[] = [
-  // Add London venues from other categories
-  ...BRAZILIAN_MUSIC_DANCE_VENUES.filter(venue => venue.city === 'London'),
-  ...BRAZILIAN_NIGHTLIFE_VENUES,
-  ...BRAZILIAN_FOOD_CULTURE_VENUES.filter(venue => venue.city === 'London'),
+export function getLondonBrazilianEliteVenues(): BrazilianCulturalVenue[] {
+  return [
+    // Add London venues from other categories
+    ...BRAZILIAN_MUSIC_DANCE_VENUES.filter(venue => venue.city === 'London'),
+    ...BRAZILIAN_NIGHTLIFE_VENUES,
+    ...BRAZILIAN_FOOD_CULTURE_VENUES.filter(venue => venue.city === 'London'),
   
   {
     id: 'brazilian-embassy-london',
@@ -726,7 +727,8 @@ export const LONDON_BRAZILIAN_ELITE_VENUES: BrazilianCulturalVenue[] = [
       instagram: '@gilgameshrestaurant'
     }
   }
-]
+  ]
+}
 
 /**
  * Elite Brazilian Industries & Economic Powerhouse Showcase
@@ -798,7 +800,7 @@ export function getAllBrazilianVenues(): BrazilianCulturalVenue[] {
     ...BRAZILIAN_MUSIC_DANCE_VENUES,
     ...BRAZILIAN_NIGHTLIFE_VENUES,
     ...BRAZILIAN_FOOD_CULTURE_VENUES,
-    ...LONDON_BRAZILIAN_ELITE_VENUES.filter(venue => 
+    ...getLondonBrazilianEliteVenues().filter(venue => 
       !BRAZILIAN_MUSIC_DANCE_VENUES.some(mv => mv.id === venue.id) &&
       !BRAZILIAN_NIGHTLIFE_VENUES.some(nv => nv.id === venue.id) &&
       !BRAZILIAN_FOOD_CULTURE_VENUES.some(fv => fv.id === venue.id)
@@ -839,7 +841,7 @@ export function getBrazilianFoodVenues(): BrazilianCulturalVenue[] {
  * Get elite networking events in London
  */
 export function getBrazilianEliteEventsLondon(): EliteEvent[] {
-  const londonVenues = LONDON_BRAZILIAN_ELITE_VENUES
+  const londonVenues = getLondonBrazilianEliteVenues()
   const allEvents: EliteEvent[] = []
   
   londonVenues.forEach(venue => {

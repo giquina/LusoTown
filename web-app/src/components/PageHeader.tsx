@@ -129,7 +129,7 @@ const sizeClasses = {
   },
 };
 
-export default function PageHeader({
+function PageHeader({
   title,
   titlePt,
   subtitle,
@@ -249,3 +249,7 @@ export default function PageHeader({
     </section>
   );
 }
+
+// Export both default and named export
+export default PageHeader
+export { PageHeader }

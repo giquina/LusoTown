@@ -6,7 +6,7 @@ import { useHeritage } from '@/context/HeritageContext'
 import { 
   SAO_PAULO_CULTURAL_ELITE, 
   RIO_LUXURY_LIFESTYLE, 
-  LONDON_BRAZILIAN_ELITE_VENUES,
+  getLondonBrazilianEliteVenues,
   BRAZILIAN_LUXURY_BRANDS,
   BRAZILIAN_ECONOMIC_POWERHOUSE,
   BRAZILIAN_MUSIC_DANCE_VENUES,
@@ -514,7 +514,7 @@ export function BrazilianEliteCulturalShowcase({
     }
     
     if (selectedCategory === 'venues') {
-      const venues = selectedLocation === 'london' ? LONDON_BRAZILIAN_ELITE_VENUES :
+      const venues = selectedLocation === 'london' ? getLondonBrazilianEliteVenues() :
                     selectedLocation === 'sao_paulo' ? SAO_PAULO_CULTURAL_ELITE :
                     RIO_LUXURY_LIFESTYLE
       
