@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import PWAManager from '@/components/PWAManager';
-import MobileCameraIntegration from '@/components/MobileCameraIntegration';
+import dynamic from 'next/dynamic';
+const MobileCameraIntegration = dynamic(() => import('@/components/MobileCameraIntegration'), { ssr: false });
 import MobileGeolocationServices from '@/components/MobileGeolocationServices';
 import PushNotificationSystem from '@/components/PushNotificationSystem';
 import PerformanceOptimization from '@/components/PerformanceOptimization';

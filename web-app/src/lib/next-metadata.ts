@@ -43,3 +43,59 @@ export function metadataFor(page: keyof typeof SEO_PAGES, path: string, lang: 'e
     },
   }
 }
+
+interface SEOMetadataOptions {
+  title: string
+  description: string
+  keywords?: string
+  canonicalUrl: string
+  openGraph?: {
+    title?: string
+    description?: string
+    images?: Array<{
+      url: string
+      width?: number
+      height?: number
+      alt?: string
+    }>
+  }
+}
+
+export function generateSEOMetadata(options: SEOMetadataOptions): Metadata {
+  const canonical = `${BASE}${options.canonicalUrl}`
+  
+  return {
+    metadataBase: new URL(BASE),
+    title: options.title,
+    description: options.description,
+    alternates: {
+      canonical,
+      languages: {
+        'en-GB': canonical,
+        'pt-PT': `${canonical}?lang=pt`,
+      },
+    },
+    keywords: options.keywords?.split(',').map(k => k.trim()),
+    openGraph: {
+      type: 'website',
+      url: canonical,
+      title: options.openGraph?.title || options.title,
+      description: options.openGraph?.description || options.description,
+      siteName: 'LusoTown London',
+      images: options.openGraph?.images,
+      locale: 'en_GB',
+      alternateLocale: ['pt_PT'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: options.openGraph?.title || options.title,
+      description: options.openGraph?.description || options.description,
+      images: options.openGraph?.images?.map(img => img.url),
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true },
+    },
+  }
+}

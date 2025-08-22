@@ -35,18 +35,10 @@ export default function BrazilianEliteCulturePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <PageHeader
           title="Brazilian Elite Culture & Luxury Lifestyle"
-          subtitle="Discover Brazil's sophisticated cultural scene and connect with London's Brazilian elite"
-          description="Experience the cultural sophistication of Latin America's largest economy through exclusive venues, luxury brands, and elite networking opportunities connecting São Paulo high society, Rio luxury lifestyle, and London's Brazilian professionals."
-          badges={[
-            { text: '12th Largest Economy Globally', variant: 'success' },
-            { text: '#1 in Latin America', variant: 'primary' },
-            { text: 'Exclusive Access', variant: 'premium' }
-          ]}
-          breadcrumbs={[
-            { label: 'Home', href: '/' },
-            { label: 'Cultural Centers', href: '/instituto-camoes' },
-            { label: 'Brazilian Elite Culture', href: '/brazilian-elite-culture' }
-          ]}
+          subtitle="Discover Brazil's sophisticated cultural scene and connect with London's Brazilian elite. Experience the cultural sophistication of Latin America's largest economy through exclusive venues, luxury brands, and elite networking opportunities connecting São Paulo high society, Rio luxury lifestyle, and London's Brazilian professionals."
+          badge="12th Largest Economy Globally"
+          theme="premium"
+          size="xl"
           className="mb-12"
         />
 

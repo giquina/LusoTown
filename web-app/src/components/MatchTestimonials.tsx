@@ -29,11 +29,11 @@ interface MatchTestimonial {
 
 // Generate dynamic testimonials based on heritage context
 function generateMatchTestimonials(heritage: any, geography: any): MatchTestimonial[] {
-  const culturalEvents = Object.keys(heritage.streaming.contentCategories)
-  const mainTradition = heritage.culture.traditions[0] || 'Cultural celebration'
-  const culturalAreas = geography.culturalAreas
-  const mainCountry = geography.mainCountry.name
-  const diasporaCity = geography.city
+  const culturalEvents = heritage?.streaming?.contentCategories ? Object.keys(heritage.streaming.contentCategories) : []
+  const mainTradition = heritage?.culture?.traditions?.[0] || 'Cultural celebration'
+  const culturalAreas = geography?.culturalAreas || ['Central', 'South']
+  const mainCountry = geography?.mainCountry?.name || 'Portugal'
+  const diasporaCity = geography?.city || 'London'
 
   return [
     {
@@ -48,11 +48,11 @@ function generateMatchTestimonials(heritage: any, geography: any): MatchTestimon
       connectionType: 'Heritage Sweethearts',
       timeframe: '18 months ago',
       category: 'Found Love',
-      heritage_quote: `Encontrei não só o amor, mas alguém que entende a minha alma ${heritage.identity.name.toLowerCase()}.`,
-      english_translation: `I found not just love, but someone who understands my ${heritage.identity.name} soul.`,
-      cultural_bond: `${mainTradition} celebration and shared nostalgia for ${heritage.identity.name} traditions`,
+      heritage_quote: `Encontrei não só o amor, mas alguém que entende a minha alma ${heritage?.identity?.name?.toLowerCase() || 'portuguesa'}.`,
+      english_translation: `I found not just love, but someone who understands my ${heritage?.identity?.name || 'Portuguese'} soul.`,
+      cultural_bond: `${mainTradition} celebration and shared nostalgia for ${heritage?.identity?.name || 'Portuguese'} traditions`,
       how_they_met: `Mutual match through cultural compatibility algorithm, met at HeritageTown's ${mainTradition} event`,
-      current_status: `Engaged, planning ${heritage.identity.name} wedding with traditional music and ${diasporaCity} reception`
+      current_status: `Engaged, planning ${heritage?.identity?.name || 'Portuguese'} wedding with traditional music and ${diasporaCity} reception`
     },
     {
       id: 'business-1',
@@ -62,13 +62,13 @@ function generateMatchTestimonials(heritage: any, geography: any): MatchTestimon
       profileImage: getImageWithFallback('mariana-santos'),
       partnerName: 'João Pereira',
       partnerImage: getImageWithFallback('joao-pereira'),
-      story: `From ${mainCountry}'s business district to ${diasporaCity}'s financial towers, carrying MBA dreams and ${heritage.identity.name} determination. Met João at HeritageTown's "${heritage.identity.name} Professionals" breakfast - an entrepreneur struggling with the same cultural isolation in ${diasporaCity}'s business world. "We need to create something of our own," he said over traditional coffee. Our startup now connects 500+ ${heritage.identity.name} SMEs across Europe.`,
+      story: `From ${mainCountry}'s business district to ${diasporaCity}'s financial towers, carrying MBA dreams and ${heritage?.identity?.name || 'Portuguese'} determination. Met João at HeritageTown's "${heritage?.identity?.name || 'Portuguese'} Professionals" breakfast - an entrepreneur struggling with the same cultural isolation in ${diasporaCity}'s business world. "We need to create something of our own," he said over traditional coffee. Our startup now connects 500+ ${heritage?.identity?.name || 'Portuguese'} SMEs across Europe.`,
       connectionType: 'Heritage Entrepreneurs',
       timeframe: '3 years ago',
       category: 'Business Partners',
-      heritage_quote: `Dois ${heritage.identity.name.toLowerCase()}s em ${diasporaCity} podem conquistar a Europa inteira.`,
-      english_translation: `Two ${heritage.identity.name} people in ${diasporaCity} can conquer all of Europe.`,
-      cultural_bond: `Shared entrepreneurial spirit and ${heritage.identity.name} business ethics in global finance`,
+      heritage_quote: `Dois ${heritage?.identity?.name?.toLowerCase() || 'portugueses'} em ${diasporaCity} podem conquistar a Europa inteira.`,
+      english_translation: `Two ${heritage?.identity?.name || 'Portuguese'} people in ${diasporaCity} can conquer all of Europe.`,
+      cultural_bond: `Shared entrepreneurial spirit and ${heritage?.identity?.name || 'Portuguese'} business ethics in global finance`,
       how_they_met: 'Professional networking match through business interests filter',
       current_status: 'Business partners who raised £3.2M Series A, planning European expansion'
     },
@@ -80,14 +80,14 @@ function generateMatchTestimonials(heritage: any, geography: any): MatchTestimon
       profileImage: getImageWithFallback('beatriz-oliveira'),
       partnerName: 'Luciana Santos', 
       partnerImage: getImageWithFallback('luciana-santos'),
-      story: `From ${heritage.geography.relatedCountries?.[0]?.name || mainCountry} to ${diasporaCity}'s cultural scene, bringing diverse energy and ${heritage.identity.name} heritage. Luciana connected through HeritageTown's "${heritage.identity.name} Artists" network - a performer mixing traditional and modern sounds. "Let's show that our culture is universal," she proposed. Our collective performs monthly, blending traditional and contemporary ${heritage.identity.name} arts.`,
+      story: `From ${heritage?.geography?.relatedCountries?.[0]?.name || mainCountry} to ${diasporaCity}'s cultural scene, bringing diverse energy and ${heritage?.identity?.name || 'Portuguese'} heritage. Luciana connected through HeritageTown's "${heritage?.identity?.name || 'Portuguese'} Artists" network - a performer mixing traditional and modern sounds. "Let's show that our culture is universal," she proposed. Our collective performs monthly, blending traditional and contemporary ${heritage?.identity?.name || 'Portuguese'} arts.`,
       connectionType: 'Cultural Voices',
       timeframe: '2 years ago',
       category: 'Cultural Connection',
-      heritage_quote: `A cultura ${heritage.identity.name.toLowerCase()} não tem fronteiras - somos um só povo.`,
-      english_translation: `${heritage.identity.name} culture has no borders - we are one people.`,
-      cultural_bond: `Shared ${heritage.identity.name} cultural heritage spanning continents and communities`,
-      how_they_met: `Arts and culture match through creative interests and ${heritage.identity.name} heritage`,
+      heritage_quote: `A cultura ${heritage?.identity?.name?.toLowerCase() || 'portuguesa'} não tem fronteiras - somos um só povo.`,
+      english_translation: `${heritage?.identity?.name || 'Portuguese'} culture has no borders - we are one people.`,
+      cultural_bond: `Shared ${heritage?.identity?.name || 'Portuguese'} cultural heritage spanning continents and communities`,
+      how_they_met: `Arts and culture match through creative interests and ${heritage?.identity?.name || 'Portuguese'} heritage`,
       current_status: `Cultural collective featured on BBC, performing monthly shows across ${diasporaCity}`
     }
   ]
@@ -120,7 +120,7 @@ export default function MatchTestimonials() {
   const { heritage } = useHeritage()
   
   const matchTestimonials = useMemo(() => 
-    generateMatchTestimonials(heritage, heritage.geography.diasporaHub),
+    generateMatchTestimonials(heritage, heritage?.geography?.diasporaHub || { city: 'London', culturalAreas: ['Central', 'South'], mainCountry: { name: 'Portugal' } }),
     [heritage]
   )
 
@@ -244,7 +244,7 @@ export default function MatchTestimonials() {
                 {/* Portuguese Quote */}
                 <div className="bg-gradient-to-r from-secondary-50 via-accent-50 to-coral-50 p-3 rounded-xl border border-secondary-200 mb-4">
                   <blockquote className="text-secondary-800 font-medium text-center mb-2 text-sm">
-                    "{testimonial.portuguese_quote}"
+                    "{testimonial.heritage_quote}"
                   </blockquote>
                   <p className="text-secondary-600 text-center text-xs italic">
                     "{testimonial.english_translation}"

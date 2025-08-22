@@ -172,6 +172,13 @@ module.exports = {
         'shimmer-slow': 'shimmerSlow 3s linear infinite',
         'elite-glow': 'eliteGlow 2s ease-in-out infinite alternate',
         'portuguese-pattern': 'portuguesePattern 8s linear infinite',
+        'aristocratic-float': 'aristocraticFloat 4s ease-in-out infinite',
+        'royal-sparkle': 'royalSparkle 3s ease-in-out infinite',
+        'imperial-shine': 'imperialShine 2.5s linear infinite',
+        'diamond-rotate': 'diamondRotate 4s linear infinite',
+        'cultural-pulse': 'culturalPulse 3s ease-in-out infinite',
+        'majestic-hover': 'majesticHover 0.5s ease-out',
+        'luxury-breathe': 'luxuryBreathe 6s ease-in-out infinite',
       },
       keyframes: {
         fadeInUp: {
@@ -228,6 +235,40 @@ module.exports = {
           '50%': { backgroundPosition: '100% 50%' },
           '75%': { backgroundPosition: '50% 100%' },
           '100%': { backgroundPosition: '0% 50%' },
+        },
+        aristocraticFloat: {
+          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+          '33%': { transform: 'translateY(-8px) rotate(1deg)' },
+          '66%': { transform: 'translateY(-4px) rotate(-0.5deg)' },
+        },
+        royalSparkle: {
+          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+          '50%': { opacity: '1', transform: 'scale(1.2)' },
+        },
+        imperialShine: {
+          '0%': { transform: 'translateX(-100%) skewX(-15deg)' },
+          '100%': { transform: 'translateX(200%) skewX(-15deg)' },
+        },
+        diamondRotate: {
+          '0%': { transform: 'rotate(0deg) scale(1)' },
+          '50%': { transform: 'rotate(180deg) scale(1.1)' },
+          '100%': { transform: 'rotate(360deg) scale(1)' },
+        },
+        culturalPulse: {
+          '0%, 100%': { 
+            boxShadow: '0 0 20px rgba(245, 158, 11, 0.3), 0 0 40px rgba(220, 38, 38, 0.2), 0 0 60px rgba(22, 163, 74, 0.1)',
+          },
+          '50%': { 
+            boxShadow: '0 0 30px rgba(245, 158, 11, 0.5), 0 0 60px rgba(220, 38, 38, 0.3), 0 0 90px rgba(22, 163, 74, 0.2)',
+          },
+        },
+        majesticHover: {
+          '0%': { transform: 'scale(1) translateY(0px)' },
+          '100%': { transform: 'scale(1.03) translateY(-2px)' },
+        },
+        luxuryBreathe: {
+          '0%, 100%': { transform: 'scale(1)', filter: 'brightness(1)' },
+          '50%': { transform: 'scale(1.02)', filter: 'brightness(1.1)' },
         },
       },
     },

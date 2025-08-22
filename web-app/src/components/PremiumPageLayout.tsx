@@ -24,7 +24,7 @@ interface PremiumPageLayoutProps {
   headerActions?: React.ReactNode
 }
 
-export default function PremiumPageLayout({
+function PremiumPageLayout({
   children,
   breadcrumbs,
   title,
@@ -205,6 +205,10 @@ export default function PremiumPageLayout({
     </motion.div>
   )
 }
+
+// Export both default and named export
+export default PremiumPageLayout
+export { PremiumPageLayout }
 
 // Specialized layout variants
 export function LuxuryPageLayout(props: Omit<PremiumPageLayoutProps, 'variant'>) {
