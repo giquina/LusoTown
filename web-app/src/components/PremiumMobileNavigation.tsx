@@ -171,6 +171,7 @@ export function PremiumMobileNavigation({
     <motion.nav
       className={`
         fixed bottom-0 left-0 right-0 z-50 transition-all duration-500
+        md:hidden
         ${navStyle[style]}
         ${isVisible ? 'translate-y-0' : 'translate-y-full'}
         ${className}

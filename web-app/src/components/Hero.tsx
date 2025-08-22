@@ -51,41 +51,48 @@ export default function Hero() {
                 : "opacity-0 -translate-x-12"
             }`}
           >
-            {/* Smart Welcome Badge */}
-            <div
-              className={`inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50 via-accent-50 to-action-50 border border-secondary-200 rounded-2xl px-6 py-3 shadow-lg transition-all duration-700 delay-100 ${
-                mounted
-                  ? "opacity-100 scale-100 translate-y-0"
-                  : "opacity-0 scale-95 -translate-y-5"
-              }`}
+            {/* Concise Dynamic Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-red-50 via-amber-50 to-green-50 border border-red-200/40 rounded-full px-4 py-2 shadow-md"
             >
-              <div className="flex items-center gap-2">
-                <SparklesIcon className="h-5 w-5 text-secondary-600" />
-                <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 to-action-600 bg-clip-text text-transparent">
-                  COMMUNITY MEMBER - FROM {formatPrice(plans.community.monthly)}
-                  /MONTH
+              <div className="flex items-center gap-1">
+                <span className="text-xs">🇵🇹</span>
+                <span className="text-xs font-semibold text-gray-700">
+                  UK Portuguese Community
                 </span>
               </div>
-              <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-                OFFICIAL
-              </div>
-              <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>
-            </div>
+              <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
+            </motion.div>
 
-            {/* Main Headlines */}
-            <div
-              className={`space-y-6 transition-all duration-1000 delay-300 ${
-                mounted
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-5"
-              }`}
-            >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight tracking-tight">
-                {t("hero.title")}
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl font-medium">
-                {t("hero.subtitle")}
-              </p>
+            {/* Dynamic Headlines */}
+            <div className="space-y-4">
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight"
+              >
+                <span className="bg-gradient-to-r from-red-600 via-amber-600 to-green-600 bg-clip-text text-transparent">
+                  Connect
+                </span>{" "}
+                <span className="text-gray-900">with Portuguese</span>{" "}
+                <span className="bg-gradient-to-r from-blue-600 to-gray-800 bg-clip-text text-transparent">
+                  UK
+                </span>
+              </motion.h1>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl"
+              >
+                Join 750+ Portuguese speakers across the UK. 
+                <span className="font-semibold text-gray-800"> Events, networking, culture.</span>
+              </motion.p>
             </div>
 
             {/* Search Bar */}
