@@ -1,4 +1,5 @@
 'use client'
+export const dynamic = 'force-dynamic'
 
 import { useState, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
@@ -63,7 +64,7 @@ function ProfilesPageContent() {
       if (!user) {
         router.push('/login')
         return
-      }
+  }
       
       setCurrentUser(user)
 

@@ -5,11 +5,24 @@ import {
   MapPinIcon,
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
+import { Instagram, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import Logo from "@/components/Logo";
 import { ROUTES } from '@/config/routes';
 import { socialMedia } from '@/config/contact';
+
+// Build a safe, render-ready social links array from config object
+const getSocialLinks = () => {
+  const links = [
+    { name: 'Instagram', url: socialMedia?.instagram, icon: Instagram },
+    { name: 'Facebook', url: socialMedia?.facebook, icon: Facebook },
+    { name: 'Twitter', url: socialMedia?.twitter, icon: Twitter },
+    { name: 'LinkedIn', url: socialMedia?.linkedin, icon: Linkedin },
+    { name: 'YouTube', url: socialMedia?.youtube, icon: Youtube },
+  ];
+  return links.filter((l) => typeof l.url === "string" && l.url.length > 0);
+};
 
 const getFooterLinks = (t: any) => ({
   community: [
@@ -62,6 +75,7 @@ const getFooterLinks = (t: any) => ({
 export default function Footer() {
   const { t } = useLanguage();
   const footerLinks = getFooterLinks(t);
+  // Social links derived from config
 
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-900 to-primary-900 text-white relative overflow-hidden">
@@ -158,18 +172,21 @@ export default function Footer() {
             <div className="flex items-center gap-6">
               {/* Social Media */}
               <div className="flex items-center gap-4">
-                {socialMedia.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
-                  >
-                    <span className="sr-only">{social.name}</span>
-                    <social.icon className="h-5 w-5" />
-                  </a>
-                ))}
+                {getSocialLinks().map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                    >
+                      <span className="sr-only">{social.name}</span>
+                      <Icon className="h-5 w-5" />
+                    </a>
+                  );
+                })}
               </div>
 
               <div className="flex items-center gap-2 text-sm text-gray-400">
