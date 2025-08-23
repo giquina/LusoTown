@@ -2,6 +2,15 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## ⚡ Quick Reference
+
+**Start Development**: `cd web-app && npm run dev` (http://localhost:3000)  
+**Demo Access**: demo@lusotown.com / LusoTown2025!  
+**Must Pass Before Commit**: `npm run lint && npx tsc --noEmit && npm run build && npm run audit:hardcoding`  
+**Primary Rule**: ZERO hardcoding - import from `/src/config/` files  
+**Cultural Rule**: Use "Portuguese-speaking community" (not "Portuguese community")  
+**Testing Rule**: Mobile-first responsive design (test at 375px, 768px, 1024px)  
+
 ## 🤖 Primary AI Instructions
 
 **IMPORTANT**: For comprehensive AI development guidance, specialized agents, and detailed implementation rules, reference `/AGENTS.md` as the primary source of truth. This file works across all AI tools and IDEs.
@@ -13,39 +22,62 @@ The AGENTS.md file contains:
 - Cross-IDE compatibility instructions
 - Comprehensive testing frameworks and quality standards
 
-## 🎯 AI Agent System Integration
+## 🎯 Proactive AI Advisory System ⚡
 
-LusoTown uses a specialized agent system for expert guidance across all development areas. Access these agents using the Task tool:
+LusoTown employs **intelligent advisory agents** that automatically activate based on context, errors, and development needs. These agents act as **proactive consultants** that provide expert guidance without requiring manual activation.
 
-### Available Specialized Agents
+### 🤖 Automatic Advisory Activation
 
-- **`instruction-compliance-advisor`** - Analyzes implementation vs. documented rules, resolves conflicts
-- **`strategic-decision-advisor`** - Provides executive-level guidance for feature prioritization and business decisions  
-- **`qa-mentor-advisor`** - Expert testing strategies, bug prevention, quality education
-- **`performance-coach-advisor`** - Performance optimization and mobile-first experience tuning
-- **`security-guardian-advisor`** - Security, privacy, and GDPR compliance guidance
-- **`growth-analytics-advisor`** - Data-driven growth strategies and Portuguese-speaking community expansion
-- **`development-troubleshooting-advisor`** - Development environment setup, dependency management, and build issues resolution
+**CORE PRINCIPLE**: Agents are **always active** and automatically provide expert guidance based on what you're doing:
 
-### Automatic Agent Activation ⚡
+#### 🛠️ Development Issues → **Instant Troubleshooting**
+- Build errors, dependency conflicts, port conflicts
+- **Auto-Response**: Step-by-step diagnosis and solution
+- **Prevention Mode**: Suggests preventive measures
 
-**IMPORTANT**: Agents now activate **automatically** based on context - no manual calls needed!
+#### 🌍 Community Content → **Inclusivity Validation**  
+- Portuguese community references, event planning
+- **Auto-Response**: Validates community guidelines, suggests corrections
+- **Cultural Check**: Ensures authentic Portuguese representation
 
-**Auto-Activation Examples**:
-- Development errors → `development-troubleshooting-advisor` activates instantly
-- Community content → `instruction-compliance-advisor` validates inclusivity  
-- Performance issues → `performance-coach-advisor` provides optimizations
-- Strategic decisions → `strategic-decision-advisor` offers guidance
+#### 📊 Performance Issues → **Optimization Coaching**
+- Mobile experience problems, loading speed issues
+- **Auto-Response**: Performance analysis and optimization recommendations
+- **Mobile-First**: Prioritizes Portuguese-speaking community mobile usage
 
-**Manual Override** (if needed):
-```
-Task tool with:
-- description: "Strategic feature evaluation"  
-- subagent_type: "strategic-decision-advisor"  
-- prompt: "Should we prioritize video calls or better matching algorithms?"
-```
+#### 🚀 Strategic Decisions → **Executive Consultation**
+- Feature prioritization, business strategy questions
+- **Auto-Response**: Executive-level guidance with business context
+- **Growth Focus**: Portuguese-speaking community expansion strategies
 
-**Full Agent Documentation**: See `/AGENTS.md` and `/web-app/src/agents/AutomaticAgentActivation.md`
+#### 🔒 Security Concerns → **Guardian Protection**
+- Privacy questions, GDPR compliance, authentication
+- **Auto-Response**: Security validation and compliance guidance
+- **Data Protection**: UK/EU user protection standards
+
+#### 🎯 Quality Assurance → **Testing Mentorship**
+- Bug reports, testing discussions, code reviews
+- **Auto-Response**: Testing strategies and quality improvement suggestions
+- **Bilingual Testing**: EN/PT functionality validation
+
+### ⚡ Seamless Experience Examples
+
+**Traditional (Manual)**: "Should I use X framework? Let me call the strategic advisor..."  
+**LusoTown (Automatic)**: Discussing frameworks → **Strategic advisor instantly activated** → Provides framework analysis with Portuguese-speaking community context
+
+**Traditional (Manual)**: "Getting build errors, need to troubleshoot..."  
+**LusoTown (Automatic)**: Build error detected → **Development advisor instantly activated** → Provides diagnosis and fix automatically
+
+**Traditional (Manual)**: "Let me check if this content is inclusive..."  
+**LusoTown (Automatic)**: Community content detected → **Inclusivity advisor instantly activated** → Validates and suggests improvements automatically
+
+### 🎯 Agent Intelligence Levels
+
+- **🚨 High Priority**: Development errors, security issues → **Immediate activation**
+- **📋 Medium Priority**: Community content, performance → **Contextual activation** 
+- **💡 Low Priority**: Quality, analytics → **Proactive suggestions**
+
+**Result**: Expert guidance feels natural and integrated into your workflow, not like calling separate tools.
 
 ## 🌍 Community Inclusivity Guidelines
 
@@ -87,7 +119,7 @@ kill -9 <PID>  # Kill the process
 # Or use different port: npm run dev -- -p 3002
 ```
 
-**For complex issues**: Use `development-troubleshooting-advisor` agent for step-by-step guidance.
+**For complex issues**: Development troubleshooting advisor automatically activates to provide step-by-step guidance.
 
 ## Current Active TODO Tasks
 
@@ -109,7 +141,23 @@ LusoTown is a production-ready Portuguese-speaking community platform serving Lo
 
 ## Development Commands
 
-### Web Application (Primary)
+### Essential Commands (Use These Daily)
+```bash
+cd web-app
+
+# Primary development
+npm run dev                    # Start development server (localhost:3000)
+npm run build                  # Production build (REQUIRED before commit)
+npm run lint                   # ESLint validation (REQUIRED before commit)
+npx tsc --noEmit               # TypeScript check (REQUIRED before commit)
+
+# Critical quality checks
+npm run audit:hardcoding       # Check for hardcoded values (CRITICAL - must pass)
+npm run test                   # Run Jest tests
+npm run test:all               # Run comprehensive test suite
+```
+
+### Complete Command Reference
 ```bash
 cd web-app
 
@@ -120,7 +168,7 @@ npm run start                  # Start production server
 npm run lint                   # ESLint validation
 npm run export                 # Static export
 
-# Testing
+# Testing Framework
 npm run test                   # Run Jest tests
 npm run test:watch             # Jest in watch mode
 npm run test:coverage          # Generate coverage report
@@ -278,7 +326,7 @@ npm run lint                    # Must pass - ESLint validation
 npx tsc --noEmit               # Must pass - TypeScript check  
 npm run build                  # Must pass - Production build
 npm run audit:hardcoding       # Must pass - Zero hardcoded values
-npm run test                   # Must pass - Unit tests
+npm run test                   # Recommended - Unit tests
 ```
 
 ## Key Business Context
@@ -362,15 +410,59 @@ Test files located in `/web-app/__tests__/` with organized subdirectories.
 
 ## Common Issues & Solutions
 
-**Build Failures**: Usually TypeScript errors or missing config imports - check console and fix imports from `/src/config/`
+### Build & Development Issues
+**Build Failures**: Usually TypeScript errors or missing config imports
+- Check console output for specific error
+- Fix imports from `/src/config/` directory
+- Run `npx tsc --noEmit` to isolate TypeScript issues
 
-**Translation Missing**: Add keys to both `/web-app/src/i18n/en.json` and `pt.json`
+**Port Conflicts**: If port 3000 is already in use
+```bash
+lsof -i :3000                  # Find process using port
+kill -9 <PID>                 # Kill the process
+# OR use different port
+npm run dev -- --port 3001
+```
+
+**Node Modules Issues**: ENOTEMPTY errors or module conflicts
+```bash
+npm cache clean --force
+rm -rf node_modules package-lock.json
+npm install
+```
+
+### Development Workflow Issues
+**Translation Missing**: Add keys to both language files
+- `/web-app/src/i18n/en.json` 
+- `/web-app/src/i18n/pt.json`
 
 **Hardcoding Audit Failures**: Remove hardcoded values and import from config files
+- Use `/src/config/pricing.ts` for pricing data
+- Use `/src/config/contact.ts` for contact information
+- Use `/src/config/universities.ts` for university data
 
-**Mobile Responsiveness**: Test at 375px, 768px, 1024px breakpoints using browser dev tools
+**Mobile Responsiveness**: Test at key breakpoints using browser dev tools
+- 375px (mobile), 768px (tablet), 1024px (desktop)
+- Use responsive design mode in Chrome/Firefox dev tools
 
-**Portuguese Cultural Context**: Ensure cultural elements are integrated naturally, not generic or separated
+**Portuguese Cultural Context**: Ensure authentic representation
+- Use "Portuguese-speaking community" not "Portuguese community"
+- Include all lusophone nations (Portugal, Brazil, Cape Verde, Angola, etc.)
+- Reference "United Kingdom" not just "London"
+
+### Performance Issues
+**Slow Development Server**: 
+```bash
+cd web-app
+rm -rf .next
+npm run dev
+```
+
+**Build Memory Issues**:
+```bash
+export NODE_OPTIONS="--max-old-space-size=4096"
+npm run build
+```
 
 ## Deployment
 
@@ -394,17 +486,41 @@ Build configuration optimized for production with bundle splitting, image optimi
 ## Core Architecture
 
 ### Component Architecture
-- **497+ React Components**: Modular, reusable components with Portuguese cultural theming and AI integration
-- **Specialized Component Libraries**: UI components in `/src/components/ui/`, matches in `/src/components/matches/`
-- **TypeScript First**: Strict typing throughout the codebase with custom type definitions
-- **Context-Based State**: 9+ React contexts for state management (Language, Heritage, Subscription, etc.)
-- **Configuration-Driven**: All dynamic data centralized in `/src/config/` with 15+ configuration files
+- **522+ React Components**: Modular, reusable components with Portuguese cultural theming and AI integration
+- **Specialized Component Libraries**: 
+  - UI components in `/src/components/ui/` (buttons, cards, inputs)
+  - Matching system in `/src/components/matches/` (AI-powered matching)
+  - AI systems in `/src/components/ai/` (notification dashboards, analytics)
+- **TypeScript First**: Strict typing with `exactOptionalPropertyTypes` and `noUncheckedIndexedAccess`
+- **Context-Based State**: 9+ React contexts for state management
+- **Configuration-Driven**: All dynamic data centralized in `/src/config/` (15+ config files)
 
-### Data Flow
-- **Supabase Backend**: PostgreSQL with PostGIS for geospatial data
-- **React Context**: Client-side state management
-- **API Routes**: Next.js API routes for server-side operations
-- **Real-time Updates**: Supabase real-time subscriptions
+### File Organization Patterns
+```
+/src/app/                    # Next.js 14 App Router pages
+/src/components/             # Reusable React components
+  ├── ui/                   # Base UI components (button, card, input)
+  ├── matches/              # AI matching system components  
+  ├── students/             # University partnership components
+  └── [feature]/            # Feature-specific components
+/src/config/                 # Configuration files (NO hardcoding)
+/src/context/                # React context providers
+/src/hooks/                  # Custom React hooks
+/src/i18n/                   # Bilingual translations (en.json, pt.json)
+/src/lib/                    # Utility functions and helpers
+  ├── ai/                   # AI engine implementations
+  └── privacy/              # GDPR compliance utilities
+/src/services/               # Business logic and API clients
+/src/types/                  # TypeScript type definitions
+/src/utils/                  # Generic utility functions
+```
+
+### Data Flow Architecture
+- **Supabase Backend**: PostgreSQL with PostGIS extension for geolocation
+- **React Context**: Client-side state management (Language, Heritage, Subscription)
+- **API Routes**: Next.js API routes in `/src/app/api/` for server operations
+- **Real-time Updates**: Supabase real-time subscriptions for live data
+- **AI Integration**: 4 production AI systems with Portuguese cultural context
 
 ## Critical Patterns
 

@@ -3,7 +3,7 @@ const nextConfig = {
   distDir: ".next",
   transpilePackages: ["@lusotown/ui", "@lusotown/design-tokens"],
   productionBrowserSourceMaps: false,
-  swcMinify: true,
+  swcMinify: false,
   images: {
     unoptimized: false,
     remotePatterns: [
@@ -80,9 +80,6 @@ const nextConfig = {
       },
     ],
     formats: ["image/webp", "image/avif"],
-    deviceSizes: [640, 768, 1024, 1280, 1536],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60,
   },
   trailingSlash: true,
   typescript: {
@@ -102,29 +99,14 @@ const nextConfig = {
   },
   experimental: {
     scrollRestoration: true,
-    optimizePackageImports: ['@heroicons/react', 'framer-motion', 'react-hot-toast', 'lucide-react'],
-    serverComponentsExternalPackages: ['html5-qrcode', 'socket.io-client'],
-    optimizeServerReact: true,
-    serverMinification: true,
-    webVitalsAttribution: ['CLS', 'FCP', 'FID', 'INP', 'LCP', 'TTFB'],
+    optimizePackageImports: ['@heroicons/react', 'framer-motion'],
+  serverComponentsExternalPackages: ['html5-qrcode', 'socket.io-client'],
     // Disable turbo experiment in production builds due to instability/perf issues
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   webpack: (config, { dev, isServer }) => {
-    // Suppress SWC binary warnings for unused platforms
-    config.infrastructureLogging = {
-      level: 'error',
-    };
-    
-    // Suppress specific webpack cache warnings for missing SWC binaries
-    const originalWarnings = config.ignoreWarnings || [];
-    config.ignoreWarnings = [
-      ...originalWarnings,
-      /Managed item.*@next\/swc-.*isn't a directory or doesn't contain a package\.json/,
-    ];
-    
     // Enable react-native-web + monorepo shared packages
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
@@ -173,63 +155,30 @@ const nextConfig = {
         chunks: "all",
         maxAsyncRequests: 10,
         maxInitialRequests: 5,
-        minSize: 20000,
-        maxSize: 244000, // ~240KB
         cacheGroups: {
-          // Portuguese-speaking community specific bundles
-          portuguese: {
-            test: /[\\/]portuguese[\\/]/,
-            name: 'portuguese-features',
-            chunks: 'all',
-            priority: 35,
-          },
-          cultural: {
-            test: /[\\/]cultural[\\/]/,
-            name: 'cultural-components',
-            chunks: 'all',
-            priority: 30,
-          },
-          // Core framework bundles
-          react: {
-            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-            name: "react",
-            chunks: "all",
-            priority: 40,
-          },
-          // UI Library bundles
-          heroicons: {
-            test: /[\\/]node_modules[\\/]@heroicons[\\/]/,
-            name: "heroicons",
-            chunks: "all",
-            priority: 25,
-          },
-          framer: {
-            test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
-            name: "framer-motion",
-            chunks: "all",
-            priority: 25,
-          },
-          // Animation and interaction bundles
-          animations: {
-            test: /[\\/]node_modules[\\/](framer-motion|react-spring|@react-spring)[\\/]/,
-            name: "animations",
-            chunks: "all",
-            priority: 20,
-          },
-          // Utility libraries
-          utils: {
-            test: /[\\/]node_modules[\\/](date-fns|clsx|tailwind-merge|lucide-react)[\\/]/,
-            name: "utils",
-            chunks: "all",
-            priority: 15,
-          },
-          // Large vendor libraries
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: "vendors",
             chunks: "all",
             priority: 10,
-            maxSize: 244000, // ~240KB
+          },
+          heroicons: {
+            test: /[\\/]node_modules[\\/]@heroicons[\\/]/,
+            name: "heroicons",
+            chunks: "all",
+            priority: 20,
+          },
+          framer: {
+            test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+            name: "framer-motion",
+            chunks: "all",
+            priority: 20,
+          },
+          react: {
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            name: "react",
+            chunks: "all",
+            priority: 30,
           },
           common: {
             name: "common",
@@ -241,32 +190,10 @@ const nextConfig = {
         },
       };
       
-  // Performance optimizations for production
+  // Add performance optimizations but avoid costly minification in CI
   config.optimization.usedExports = true;
   config.optimization.sideEffects = false;
-  config.optimization.providedExports = true;
-  config.optimization.concatenateModules = true;
-  config.optimization.minimize = true;
-  
-  // Enable tree shaking for better bundle sizes
-  if (config.optimization.minimizer) {
-    config.optimization.minimizer.forEach(minimizer => {
-      if (minimizer.constructor.name === 'TerserPlugin') {
-        minimizer.options.terserOptions = {
-          ...minimizer.options.terserOptions,
-          compress: {
-            ...minimizer.options.terserOptions?.compress,
-            drop_console: true,
-            drop_debugger: true,
-            pure_funcs: ['console.log', 'console.info'],
-          },
-          mangle: {
-            safari10: true,
-          },
-        };
-      }
-    });
-  }
+  config.optimization.minimize = false;
     }
 
     // Add bundle analyzer in development

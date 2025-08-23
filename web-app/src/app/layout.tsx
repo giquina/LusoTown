@@ -6,7 +6,7 @@ import LiveFeedNotifications from "@/components/LiveFeedNotifications";
 import UserTypeSelection from "@/components/UserTypeSelection";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { FavoritesProvider } from "@/context/FavoritesContext";
-import { FollowingProvider } from "@/context/EnhancedFollowingContext";
+import { FollowingProvider } from "@/context/FollowingContext";
 import { CartProvider } from "@/context/CartContext";
 import { NetworkingProvider } from "@/context/NetworkingContext";
 import { SubscriptionProvider } from "@/context/SubscriptionContext";
@@ -27,12 +27,9 @@ import { PremiumMobileNavigation } from "@/components/PremiumMobileNavigation";
 import { MobileExperienceOptimizer } from "@/components/MobileExperienceOptimizer";
 import MobileCriticalFixes from "@/components/MobileCriticalFixes";
 import LusoBotWidget from "@/components/LusoBotWidget";
-import FramerMotionFix from "@/components/FramerMotionFix";
 import ErrorBoundary, {
   ComponentErrorBoundary,
 } from "@/components/ErrorBoundary";
-import CoreWebVitalsMonitor from "@/components/CoreWebVitalsMonitor";
-import MobilePerformanceOptimizer from "@/components/MobilePerformanceOptimizer";
 import { METADATA_BASE } from "@/config/site";
 import { generateMetadata as generateSEOMetadata, generateJsonLd } from "@/config/seo";
 
@@ -44,11 +41,9 @@ const inter = Inter({
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   variable: "--font-poppins",
   display: "swap",
-  preload: true,
-  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -82,18 +77,17 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} antialiased`}>
-        <FramerMotionFix />
         <ErrorBoundary>
           <HeritageProvider>
             <HeritageStyleProvider>
               <LanguageProvider>
                 <FavoritesProvider>
-                  <CartProvider>
-                    <NetworkingProvider>
-                      <SubscriptionProvider>
-                        <NotificationProvider>
-                          <AuthPopupProvider>
-                            <FollowingProvider>
+                  <FollowingProvider>
+                    <CartProvider>
+                      <NetworkingProvider>
+                        <SubscriptionProvider>
+                          <NotificationProvider>
+                            <AuthPopupProvider>
                               <PlatformIntegrationProvider>
                                 <WaitingListProvider>
                                   <NavigationProvider>
@@ -158,23 +152,6 @@ export default function RootLayout({
                                                 theme="portuguese"
                                               />
                                             </ComponentErrorBoundary>
-
-                                            {/* Performance Optimization Components */}
-                                            <ComponentErrorBoundary componentName="Core Web Vitals Monitor">
-                                              <CoreWebVitalsMonitor 
-                                                enableReporting={process.env.NODE_ENV === 'production'}
-                                                enableNotifications={process.env.NODE_ENV === 'development'}
-                                                reportingEndpoint="/api/performance/vitals"
-                                              />
-                                            </ComponentErrorBoundary>
-
-                                            <ComponentErrorBoundary componentName="Mobile Performance Optimizer">
-                                              <MobilePerformanceOptimizer 
-                                                enableAggressive={false}
-                                                enableDataSaver={true}
-                                                enableBatteryOptimization={true}
-                                              />
-                                            </ComponentErrorBoundary>
                                           </MobileCriticalFixes>
                                         </ComponentErrorBoundary>
                                       </MobileExperienceOptimizer>
@@ -182,12 +159,12 @@ export default function RootLayout({
                                   </NavigationProvider>
                                 </WaitingListProvider>
                               </PlatformIntegrationProvider>
-                            </FollowingProvider>
-                          </AuthPopupProvider>
-                        </NotificationProvider>
-                      </SubscriptionProvider>
-                    </NetworkingProvider>
-                  </CartProvider>
+                            </AuthPopupProvider>
+                          </NotificationProvider>
+                        </SubscriptionProvider>
+                      </NetworkingProvider>
+                    </CartProvider>
+                  </FollowingProvider>
                 </FavoritesProvider>
               </LanguageProvider>
             </HeritageStyleProvider>

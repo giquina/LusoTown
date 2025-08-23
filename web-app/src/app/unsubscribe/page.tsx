@@ -51,8 +51,8 @@ function UnsubscribeContent() {
       id: 'community',
       title: isPortuguese ? 'Atualizações da Comunidade' : 'Community Updates',
       description: isPortuguese
-        ? 'Novidades e histórias da comunidade de falantes de português'
-        : 'News and stories from the Portuguese-speaking community'
+        ? 'Novidades e histórias da comunidade portuguesa'
+        : 'News and stories from the Portuguese community'
     },
     {
       id: 'all',

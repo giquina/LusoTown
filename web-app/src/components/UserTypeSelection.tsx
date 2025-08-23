@@ -54,23 +54,6 @@ export default function UserTypeSelection() {
     }
   }, [showModal])
 
-  // ESC key handler for easier closing
-  useEffect(() => {
-    const handleEscKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && showModal) {
-        skipForNow()
-      }
-    }
-
-    if (showModal) {
-      document.addEventListener('keydown', handleEscKey)
-    }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscKey)
-    }
-  }, [showModal])
-
   const closeAndRemember = () => {
     try { localStorage.setItem('lusotown-onboarded-v3', '1') } catch {}
     setDismissed(true)
@@ -110,7 +93,7 @@ export default function UserTypeSelection() {
   const strings = {
     en: {
       title: 'Welcome to LusoTown',
-      subtitle: "London's Portuguese-speaking community platform • 2,750+ verified members",
+      subtitle: "London's Portuguese community platform • 2,750+ verified members",
       skipForNow: 'Skip for now',
       roleQuestion: 'How would you like to participate?',
       userRole: 'Join as Member',
@@ -136,7 +119,7 @@ export default function UserTypeSelection() {
         { 
           title: 'Events Discovery', 
           subtitle: 'From £5',
-          desc: 'Authentic fado nights, Santos Populares, networking events, and cultural celebrations. Curated by Portuguese-speaking community leaders.', 
+          desc: 'Authentic fado nights, Santos Populares, networking events, and cultural celebrations. Curated by Portuguese community leaders.', 
           cta: 'Browse Events', 
           href: ROUTES.events, 
           icon: CalendarDaysIcon, 
@@ -165,7 +148,7 @@ export default function UserTypeSelection() {
     },
     pt: {
       title: 'Bem-vindo à LusoTown',
-      subtitle: 'Plataforma da comunidade de falantes de português em Londres • 2.750+ membros verificados',
+      subtitle: 'Plataforma da comunidade portuguesa em Londres • 2.750+ membros verificados',
       skipForNow: 'Pular por agora',
       roleQuestion: 'Como gostaria de participar?',
       userRole: 'Juntar como Membro',
@@ -191,7 +174,7 @@ export default function UserTypeSelection() {
         { 
           title: 'Descoberta de Eventos', 
           subtitle: 'A partir de £5',
-          desc: 'Noites de fado autênticas, Santos Populares, eventos de networking e celebrações culturais. Curados por líderes da comunidade de falantes de português.', 
+          desc: 'Noites de fado autênticas, Santos Populares, eventos de networking e celebrações culturais. Curados por líderes da comunidade portuguesa.', 
           cta: 'Ver Eventos', 
           href: ROUTES.events, 
           icon: CalendarDaysIcon, 
@@ -231,27 +214,19 @@ export default function UserTypeSelection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[60] bg-black/85 backdrop-blur-md"
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md"
       onClick={closeAndRemember}
         >
-          {/* Mobile Layout - Fixed positioning and accessibility */}
-          <div className="md:hidden flex items-center justify-center min-h-full p-4 py-8">
+          {/* Mobile Layout */}
+          <div className="md:hidden flex items-center justify-center min-h-full p-4">
             <motion.div
               initial={{ y: 50, opacity: 0, scale: 0.95 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 30, opacity: 0, scale: 0.95 }}
               transition={{ type: "spring", duration: 0.6 }}
-              className="bg-white w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden max-h-[85vh] flex flex-col relative"
+              className="bg-white w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden max-h-[85vh] flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Floating Close Button - Always visible on mobile */}
-              <button
-                aria-label="Close welcome popup"
-                onClick={closeAndRemember}
-                className="absolute top-3 right-3 z-20 p-2.5 rounded-full bg-gray-900/80 hover:bg-gray-900 transition-all duration-200 shadow-xl backdrop-blur-sm"
-              >
-                <XMarkIcon className="h-5 w-5 text-white" />
-              </button>
               {/* Mobile Header */}
               <div className="relative px-6 pt-8 pb-6 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
                 <motion.div 
@@ -269,7 +244,7 @@ export default function UserTypeSelection() {
                 <button
                   aria-label="Close"
                   onClick={closeAndRemember}
-                  className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/90 hover:bg-white transition-all duration-200 shadow-lg backdrop-blur-sm border border-gray-200"
+                  className="absolute top-4 right-4 p-2 rounded-full bg-white/80 hover:bg-white transition-all duration-200 shadow-lg"
                 >
                   <XMarkIcon className="h-5 w-5 text-gray-600" />
                 </button>
@@ -307,8 +282,8 @@ export default function UserTypeSelection() {
               </div>
 
               {/* Mobile Options */}
-              <div className="flex-1 p-4 overflow-y-auto min-h-0">
-                <div className="space-y-3 pb-2">
+              <div className="flex-1 p-4 overflow-hidden">
+                <div className="space-y-3">
                   {t.options.map((option, index) => (
                     <motion.button
                       key={option.title}
@@ -359,7 +334,7 @@ export default function UserTypeSelection() {
               <div className="p-4 border-t bg-gray-50">
                 <button
                   onClick={skipForNow}
-                  className="w-full py-3 px-4 text-sm text-gray-700 hover:text-gray-900 text-center font-medium rounded-xl bg-gray-100 hover:bg-gray-200 transition-all duration-200 flex items-center justify-center gap-2 border border-gray-200"
+                  className="w-full py-3 px-4 text-sm text-gray-600 hover:text-gray-800 text-center font-medium rounded-xl hover:bg-gray-100 transition-all duration-200 flex items-center justify-center gap-2"
                 >
                   <ClockIcon className="w-4 h-4" />
                   {t.skipForNow}
@@ -485,7 +460,7 @@ export default function UserTypeSelection() {
               <div className="p-6 border-t bg-gray-50 text-center">
                 <button
                   onClick={skipForNow}
-                  className="px-8 py-3 text-base text-gray-700 hover:text-gray-900 font-medium rounded-xl bg-gray-100 hover:bg-gray-200 transition-all duration-200 inline-flex items-center gap-2 border border-gray-200"
+                  className="px-8 py-3 text-base text-gray-600 hover:text-gray-800 font-medium rounded-xl hover:bg-gray-100 transition-all duration-200 inline-flex items-center gap-2"
                 >
                   <ClockIcon className="w-5 h-5" />
                   {t.skipForNow}

@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return generateSEOMetadata({
     title: 'Brazilian Elite Culture & Luxury Lifestyle in London',
     description: 'Discover Brazil\'s sophisticated cultural scene and connect with London\'s Brazilian elite. Access exclusive venues, luxury brands, and high-society networking opportunities.',
-    keywords: 'Brazilian elite London, São Paulo high society, Rio luxury lifestyle, Brazilian business networking, Brazilian cultural institutions, luxury Brazilian brands, Brazilian professionals United Kingdom, Casa do Brasil London, Brazilian Embassy events, Copacabana Palace, Teatro Municipal, Brazilian art investment',
+    keywords: 'Brazilian elite London, São Paulo high society, Rio luxury lifestyle, Brazilian business networking, Brazilian cultural institutions, luxury Brazilian brands, Brazilian professionals UK, Casa do Brasil London, Brazilian Embassy events, Copacabana Palace, Teatro Municipal, Brazilian art investment',
     canonicalUrl: '/brazilian-elite-culture',
     openGraph: {
       title: 'Brazilian Elite Culture & Luxury Lifestyle | LusoTown London',
@@ -108,7 +108,7 @@ export default function BrazilianEliteCulturePage() {
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
-                    <span className="text-sm text-gray-700">Annual Brazil-United Kingdom Business Excellence Forum</span>
+                    <span className="text-sm text-gray-700">Annual Brazil-UK Business Excellence Forum</span>
                   </div>
                 </div>
               </div>
