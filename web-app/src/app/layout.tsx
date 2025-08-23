@@ -27,6 +27,7 @@ import { PremiumMobileNavigation } from "@/components/PremiumMobileNavigation";
 import { MobileExperienceOptimizer } from "@/components/MobileExperienceOptimizer";
 import MobileCriticalFixes from "@/components/MobileCriticalFixes";
 import LusoBotWidget from "@/components/LusoBotWidget";
+import FramerMotionFix from "@/components/FramerMotionFix";
 import ErrorBoundary, {
   ComponentErrorBoundary,
 } from "@/components/ErrorBoundary";
@@ -77,6 +78,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} antialiased`}>
+        <FramerMotionFix />
         <ErrorBoundary>
           <HeritageProvider>
             <HeritageStyleProvider>

@@ -30,7 +30,7 @@ export const ROUTES = {
   tours: '/tours',
   
   // Community Features
-  matches: '/lusomatch',
+  matches: '/matches',
   feed: '/feed',
   community: '/community',
   myNetwork: '/my-network',
@@ -39,24 +39,24 @@ export const ROUTES = {
   saved: '/saved',
   
   // Services
-  transport: '/lusoride',
-  transportGroup: '/lusoride?mode=group',
-  transportLuxury: '/lusoride?type=luxury',
+  transport: '/transport',
+  transportGroup: '/transport?mode=group',
+  transportLuxury: '/transport?type=luxury',
   services: '/services',
   
   // Business
   businessDirectory: '/business-directory',
-  businessNetworking: '/lusoconnect',
+  businessNetworking: '/business-networking',
   directory: '/directory',
   businessSubmit: '/business-directory/submit',
   businessClaim: '/business-directory/claim',
   
   // Streaming & Media
-  live: '/lusostream',
+  live: '/live',
   tv: '/tv',
-  streaming: '/lusostream',
-  streamingDashboard: '/lusostream/dashboard',
-  streamingCreate: '/lusostream/create',
+  streaming: '/streaming',
+  streamingDashboard: '/streaming/dashboard',
+  streamingCreate: '/streaming/create',
   
   // Membership & Subscriptions
   subscription: '/subscription',

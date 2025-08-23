@@ -6,7 +6,6 @@
  */
 
 import React from 'react'
-import { getTailwindColorHex } from '@/utils/framer-colors'
 
 // Problematic color classes that cause animation errors
 const PROBLEMATIC_CLASSES = [
@@ -20,6 +19,22 @@ const PROBLEMATIC_CLASSES = [
   'bg-blue-50', 'bg-blue-100', 'bg-blue-600'
 ]
 
+// Static color mappings to avoid runtime errors
+const COLOR_MAPPINGS: Record<string, string> = {
+  'text-red-600': '#dc2626',
+  'text-red-500': '#ef4444',
+  'text-red-700': '#b91c1c',
+  'text-primary-600': '#D4A574',
+  'text-secondary-600': '#8B4513',
+  'text-blue-600': '#2563eb',
+  'text-blue-500': '#3b82f6',
+  'text-blue-700': '#1d4ed8',
+  'bg-red-50': '#fef2f2',
+  'bg-red-100': '#fee2e2',
+  'bg-blue-50': '#eff6ff',
+  'bg-blue-100': '#dbeafe',
+}
+
 /**
  * Initialize Framer Motion fixes on page load
  */
@@ -30,21 +45,21 @@ export function initializeFramerMotionFixes() {
   const style = document.createElement('style')
   style.textContent = `
     /* Prevent Framer Motion from animating Tailwind color classes */
-    .motion-prevent-animate .text-red-600 { color: ${getTailwindColorHex('text-red-600')} !important; }
-    .motion-prevent-animate .text-red-500 { color: ${getTailwindColorHex('text-red-500')} !important; }
-    .motion-prevent-animate .text-primary-600 { color: ${getTailwindColorHex('text-primary-600')} !important; }
-    .motion-prevent-animate .text-secondary-600 { color: ${getTailwindColorHex('text-secondary-600')} !important; }
-    .motion-prevent-animate .text-blue-600 { color: ${getTailwindColorHex('text-blue-600')} !important; }
+    .motion-prevent-animate .text-red-600 { color: #dc2626 !important; }
+    .motion-prevent-animate .text-red-500 { color: #ef4444 !important; }
+    .motion-prevent-animate .text-primary-600 { color: #D4A574 !important; }
+    .motion-prevent-animate .text-secondary-600 { color: #8B4513 !important; }
+    .motion-prevent-animate .text-blue-600 { color: #2563eb !important; }
     
     /* Prevent background color animation conflicts */
-    .motion-prevent-animate .bg-red-50 { background-color: ${getTailwindColorHex('text-red-50')} !important; }
-    .motion-prevent-animate .bg-red-100 { background-color: ${getTailwindColorHex('text-red-100')} !important; }
+    .motion-prevent-animate .bg-red-50 { background-color: #fef2f2 !important; }
+    .motion-prevent-animate .bg-red-100 { background-color: #fee2e2 !important; }
     .motion-prevent-animate .bg-primary-50 { background-color: #FDF8F3 !important; }
     .motion-prevent-animate .bg-primary-100 { background-color: #F9F0E5 !important; }
     .motion-prevent-animate .bg-secondary-50 { background-color: #FAF5F0 !important; }
     .motion-prevent-animate .bg-secondary-100 { background-color: #F3E8D6 !important; }
-    .motion-prevent-animate .bg-blue-50 { background-color: ${getTailwindColorHex('text-blue-50')} !important; }
-    .motion-prevent-animate .bg-blue-100 { background-color: ${getTailwindColorHex('text-blue-100')} !important; }
+    .motion-prevent-animate .bg-blue-50 { background-color: #eff6ff !important; }
+    .motion-prevent-animate .bg-blue-100 { background-color: #dbeafe !important; }
   `
   document.head.appendChild(style)
 
@@ -81,7 +96,7 @@ export function createSafeAnimationProps(props: any) {
   // Convert color animations to hex values
   Object.keys(safeProps).forEach(key => {
     if (typeof safeProps[key] === 'string' && PROBLEMATIC_CLASSES.includes(safeProps[key])) {
-      safeProps[key] = getTailwindColorHex(safeProps[key])
+      safeProps[key] = COLOR_MAPPINGS[safeProps[key]] || safeProps[key]
     }
     
     if (typeof safeProps[key] === 'object' && safeProps[key] !== null) {
