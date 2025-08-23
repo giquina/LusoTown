@@ -293,7 +293,12 @@ export default function HelpCenter() {
                         <EnvelopeIcon className="w-4 h-4 mr-2" />
                         <a
                           href={`mailto:${channel.contact}`}
-                          className={`text-${channel.color}-600 hover:underline font-medium`}
+                          className={`hover:underline font-medium ${
+                            channel.color === 'primary' ? 'text-primary-600' :
+                            channel.color === 'red' ? 'text-red-600' :
+                            channel.color === 'blue' ? 'text-blue-600' :
+                            'text-gray-600'
+                          }`}
                         >
                           {channel.contact}
                         </a>
@@ -353,10 +358,18 @@ export default function HelpCenter() {
                     className="bg-white rounded-2xl border border-gray-200 overflow-hidden"
                   >
                     <div
-                      className={`bg-${category.color}-50 px-6 py-4 border-b border-${category.color}-100`}
+                      className={`px-6 py-4 border-b ${
+                        category.color === 'primary' ? 'bg-primary-50 border-primary-100' :
+                        category.color === 'secondary' ? 'bg-secondary-50 border-secondary-100' :
+                        'bg-gray-50 border-gray-100'
+                      }`}
                     >
                       <h3
-                        className={`text-xl font-bold text-${category.color}-700 flex items-center`}
+                        className={`text-xl font-bold flex items-center ${
+                          category.color === 'primary' ? 'text-primary-700' :
+                          category.color === 'secondary' ? 'text-secondary-700' :
+                          'text-gray-700'
+                        }`}
                       >
                         <category.icon className="w-6 h-6 mr-3" />
                         {category.title}
@@ -368,7 +381,11 @@ export default function HelpCenter() {
                         <div key={faq.question} className="px-6 py-6">
                           <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-start">
                             <QuestionMarkCircleIcon
-                              className={`w-5 h-5 text-${category.color}-500 mr-2 mt-0.5 flex-shrink-0`}
+                              className={`w-5 h-5 mr-2 mt-0.5 flex-shrink-0 ${
+                                category.color === 'primary' ? 'text-primary-500' :
+                                category.color === 'secondary' ? 'text-secondary-500' :
+                                'text-gray-500'
+                              }`}
                             />
                             {faq.question}
                           </h4>
