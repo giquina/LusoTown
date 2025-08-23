@@ -46,7 +46,7 @@ LusoTown is a production-ready Portuguese community platform serving London & UK
 
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL with PostGIS, Simple Relay Server (SRS) for streaming, OpenStreetMap/Leaflet for mapping, Twitter API, Stripe, React Context state management.
 
-**Status**: Production-ready with 120+ pages, 497+ components, complete bilingual EN/PT system, mobile-first responsive design, 4 integrated AI systems. **Live Platform**: https://lusotown-bzkyz77ez-giquinas-projects.vercel.app
+**Status**: Production-ready with 120+ pages, 505+ components, complete bilingual EN/PT system, mobile-first responsive design, 4 integrated AI systems. **Live Platform**: https://lusotown-bzkyz77ez-giquinas-projects.vercel.app
 
 ## System Requirements
 
