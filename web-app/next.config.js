@@ -113,6 +113,18 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   webpack: (config, { dev, isServer }) => {
+    // Suppress SWC binary warnings for unused platforms
+    config.infrastructureLogging = {
+      level: 'error',
+    };
+    
+    // Suppress specific webpack cache warnings for missing SWC binaries
+    const originalWarnings = config.ignoreWarnings || [];
+    config.ignoreWarnings = [
+      ...originalWarnings,
+      /Managed item.*@next\/swc-.*isn't a directory or doesn't contain a package\.json/,
+    ];
+    
     // Enable react-native-web + monorepo shared packages
     config.resolve.alias = {
       ...(config.resolve.alias || {}),

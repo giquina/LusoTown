@@ -18,9 +18,9 @@ export const COMMUNITY_INCLUSIVITY_GUIDELINES = {
     
     // ❌ AVOID: Exclusive terms
     avoid: [
-      'Portuguese community' (excludes Brazilian, Cape Verdean, etc.),
-      'Portuguese speakers community' (grammatically incorrect),
-      'Portuguese people' (excludes non-Portuguese lusophone speakers)
+      'Portuguese community', // excludes Brazilian, Cape Verdean, etc.
+      'Portuguese speakers community', // grammatically incorrect
+      'Portuguese people' // excludes non-Portuguese lusophone speakers
     ]
   },
 
@@ -30,7 +30,7 @@ export const COMMUNITY_INCLUSIVITY_GUIDELINES = {
     preferred: 'United Kingdom',
     
     // ❌ AVOID: London-centric language
-    avoid: 'London' (when referring to platform scope)
+    avoid: 'London' // when referring to platform scope
   },
 
   // Event and Activity Representation
