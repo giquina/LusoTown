@@ -19,7 +19,7 @@ import {
 import { Crown } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
-import { plans, formatPrice } from "@/config/pricing";
+import { SUBSCRIPTION_PLANS, PORTUGUESE_PREMIUM_BENEFITS, CULTURAL_VALUE_PROPOSITIONS, formatPrice } from "@/config/pricing";
 import { communityStats } from "@/config/community";
 
 interface MembershipTiersProps {
@@ -31,16 +31,16 @@ interface MembershipTiersProps {
   promoCode?: string;
 }
 
-// New 3-Tier Pricing Structure - Matches recent agreement
+// Portuguese-speaking community Optimized Membership Tiers
 const membershipTiers = [
   {
     id: "free",
-    name: "Grátis",
-    nameEn: "Free",
-    price: 0,
-    monthlyPrice: 0,
-    description: "Comece a explorar a comunidade de falantes de português",
-    descriptionEn: "Start exploring the Portuguese-speaking community",
+    name: SUBSCRIPTION_PLANS.free.labelPt,
+    nameEn: SUBSCRIPTION_PLANS.free.labelEn,
+    price: SUBSCRIPTION_PLANS.free.monthly,
+    monthlyPrice: SUBSCRIPTION_PLANS.free.monthly,
+    description: SUBSCRIPTION_PLANS.free.culturalValuePt,
+    descriptionEn: SUBSCRIPTION_PLANS.free.culturalValueEn,
     icon: <HeartIcon className="w-6 h-6" />,
     solidIcon: <HeartIconSolid className="w-6 h-6" />,
     color: "gray",
@@ -48,25 +48,27 @@ const membershipTiers = [
       "2 matches por dia",
       "3 mensagens por mês",
       "Perfil básico",
-      "Acesso limitado a eventos",
+      "2 eventos culturais por mês",
+      "Acesso limitado ao diretório",
     ],
     featuresEn: [
       "2 matches per day",
       "3 messages per month",
       "Basic profile",
-      "Limited events access",
+      "2 cultural events per month",
+      "Limited directory access",
     ],
     limitations: [
-      "Apenas 2 matches diários",
-      "Máximo 3 mensagens por mês",
-      "Sem acesso a streaming ou eventos premium",
-      "Sem serviços de transporte",
+      "Sem descontos em restaurantes portugueses",
+      "Sem acesso a eventos premium",
+      "Sem planos familiares",
+      "Sem concierge pessoal",
     ],
     limitationsEn: [
-      "Only 2 daily matches",
-      "Maximum 3 messages per month",
-      "No streaming or premium events access",
-      "No transport services",
+      "No Portuguese restaurant discounts",
+      "No premium events access",
+      "No family plans",
+      "No personal concierge",
     ],
     buttonText: "Começar Grátis",
     buttonTextEn: "Start Free",
@@ -74,32 +76,39 @@ const membershipTiers = [
   },
   {
     id: "community",
-    name: "Membro da Comunidade",
-    nameEn: "Community Member",
-    price: plans.community.monthly,
-    monthlyPrice: plans.community.monthly,
-    description: "Acesso completo à comunidade de falantes de português",
-    descriptionEn: "Full access to Portuguese-speaking community",
+    name: SUBSCRIPTION_PLANS.community.labelPt,
+    nameEn: SUBSCRIPTION_PLANS.community.labelEn,
+    price: SUBSCRIPTION_PLANS.community.monthly,
+    monthlyPrice: SUBSCRIPTION_PLANS.community.monthly,
+    description: SUBSCRIPTION_PLANS.community.culturalValuePt,
+    descriptionEn: SUBSCRIPTION_PLANS.community.culturalValueEn,
     icon: <UsersIcon className="w-6 h-6" />,
     solidIcon: <StarIconSolid className="w-6 h-6" />,
     color: "primary",
     features: [
       "Matches ilimitados",
       "Mensagens ilimitadas",
-      "Acesso a eventos comunitários",
-      "Perfil completo com verificação",
-      "Pesquisa avançada por interesses",
-      "Networking profissional básico",
-      "Acesso ao diretório de empresas",
+      "Eventos culturais ilimitados",
+      "10% desconto em restaurantes portugueses",
+      "Acesso prioritário às Noites de Fado",
+      "Newsletter cultural mensal",
+      "Suporte para até 4 familiares",
+      "Recursos de aprendizagem portuguesa",
     ],
     featuresEn: [
       "Unlimited matches",
-      "Unlimited messaging",
-      "Access to community events",
-      "Complete profile with verification",
-      "Advanced search by interests",
-      "Basic professional networking",
-      "Access to business directory",
+      "Unlimited messaging",  
+      "Unlimited cultural events",
+      "10% discount at Portuguese restaurants",
+      "Priority access to Fado Nights",
+      "Monthly cultural newsletter",
+      "Support for up to 4 family members",
+      "Portuguese learning resources",
+    ],
+    culturalBenefits: [
+      PORTUGUESE_PREMIUM_BENEFITS.cultural.fadoNightsAccess,
+      PORTUGUESE_PREMIUM_BENEFITS.cultural.portugueseRestaurantNetwork,
+      PORTUGUESE_PREMIUM_BENEFITS.business.businessDiscountNetwork,
     ],
     limitations: [],
     limitationsEn: [],
@@ -107,38 +116,45 @@ const membershipTiers = [
     buttonTextEn: "Join Community",
     highlighted: true,
     badge: "Popular",
-    badgeEn: "Popular",
+    badgeEn: "Most Popular",
+    savings: "2 meses grátis anualmente",
+    savingsEn: "2 months free annually",
   },
   {
     id: "ambassador",
-    name: "Embaixador Cultural",
-    nameEn: "Cultural Ambassador",
-    price: plans.ambassador.monthly,
-    monthlyPrice: plans.ambassador.monthly,
-    description: "Lidere a comunidade de falantes de português em Londres",
-    descriptionEn: "Lead the Portuguese-speaking community in London",
+    name: SUBSCRIPTION_PLANS.ambassador.labelPt,
+    nameEn: SUBSCRIPTION_PLANS.ambassador.labelEn,
+    price: SUBSCRIPTION_PLANS.ambassador.monthly,
+    monthlyPrice: SUBSCRIPTION_PLANS.ambassador.monthly,
+    description: SUBSCRIPTION_PLANS.ambassador.culturalValuePt,
+    descriptionEn: SUBSCRIPTION_PLANS.ambassador.culturalValueEn,
     icon: <Crown className="w-6 h-6" />,
     solidIcon: <TrophyIcon className="w-6 h-6" />,
     color: "premium",
     features: [
       "Tudo do Membro da Comunidade",
-      "Visibilidade prioritária nos matches",
-      "Criação de eventos básicos",
-      "Perfil destacado na pesquisa",
-      "Acesso a 5h de streaming por mês",
-      "Participação em eventos exclusivos",
-      "Suporte prioritário por email",
+      "20% desconto em empresas portuguesas",
+      "Acesso VIP a Santos Populares",
+      "Entrega mensal de vinhos portugueses",
+      "Concierge cultural pessoal",
+      "Eventos exclusivos de networking",
       "Badge de embaixador cultural",
+      "Projetos de preservação cultural",
     ],
     featuresEn: [
       "Everything in Community Member",
-      "Priority visibility in matches",
-      "Basic event creation",
-      "Featured profile in search",
-      "Access to 5h streaming per month",
-      "Exclusive events participation",
-      "Priority email support",
+      "20% discount at Portuguese businesses",
+      "VIP access to Santos Populares",
+      "Monthly Portuguese wine delivery", 
+      "Personal cultural concierge",
+      "Exclusive networking events",
       "Cultural ambassador badge",
+      "Cultural preservation projects",
+    ],
+    culturalBenefits: [
+      PORTUGUESE_PREMIUM_BENEFITS.cultural.culturalFestivalPriority,
+      PORTUGUESE_PREMIUM_BENEFITS.cultural.monthlyPortugueseWineBox,
+      PORTUGUESE_PREMIUM_BENEFITS.business.portugueseNetworking,
     ],
     limitations: [],
     limitationsEn: [],
@@ -147,6 +163,54 @@ const membershipTiers = [
     highlighted: false,
     badge: "Premium",
     badgeEn: "Premium",
+    savings: "£120 de valor em benefícios/mês",
+    savingsEn: "£120 value in benefits/month",
+  },
+  {
+    id: "familia",
+    name: SUBSCRIPTION_PLANS.familia.labelPt,
+    nameEn: SUBSCRIPTION_PLANS.familia.labelEn,
+    price: SUBSCRIPTION_PLANS.familia.monthly,
+    monthlyPrice: SUBSCRIPTION_PLANS.familia.monthly,
+    description: SUBSCRIPTION_PLANS.familia.culturalValuePt,
+    descriptionEn: SUBSCRIPTION_PLANS.familia.culturalValueEn,
+    icon: <UserGroupIcon className="w-6 h-6" />,
+    solidIcon: <HeartIconSolid className="w-6 h-6" />,
+    color: "secondary",
+    features: [
+      "Todos os benefícios premium",
+      "Suporte para até 8 familiares",
+      "Aulas de português para crianças",
+      "Rede de encontros familiares",
+      "Programas de inclusão de avós",
+      "Prioridade em eventos familiares",
+      "15% desconto familiar",
+      "Preservação do património cultural",
+    ],
+    featuresEn: [
+      "All premium benefits",
+      "Support for up to 8 family members", 
+      "Portuguese classes for children",
+      "Family playdate network",
+      "Grandparent inclusion programs",
+      "Family event priority",
+      "15% family discount",
+      "Cultural heritage preservation",
+    ],
+    culturalBenefits: [
+      PORTUGUESE_PREMIUM_BENEFITS.family.childrenPortugueseClasses,
+      PORTUGUESE_PREMIUM_BENEFITS.family.familyPlaydateNetwork,
+      PORTUGUESE_PREMIUM_BENEFITS.family.grandparentInclusion,
+    ],
+    limitations: [],
+    limitationsEn: [],
+    buttonText: "Plano Familiar",
+    buttonTextEn: "Family Plan",
+    highlighted: false,
+    badge: "Família",
+    badgeEn: "Family",
+    savings: "£5/pessoa por mês",
+    savingsEn: "£5/person per month",
   },
 ];
 
@@ -167,10 +231,15 @@ export default function MembershipTiers({
   const handleSubscribe = async (tierId: string) => {
     setIsCreating(tierId);
     try {
-      await createSubscription(
-        tierId === "community" ? "community" : tierId === "ambassador" ? "ambassador" : "community",
-        "monthly"
-      );
+      // Map tier IDs to subscription types
+      const tierMapping: { [key: string]: 'community' | 'ambassador' | 'familia' } = {
+        'community': 'community',
+        'ambassador': 'ambassador', 
+        'familia': 'familia'
+      };
+      
+      const subscriptionTier = tierMapping[tierId] || 'community';
+      await createSubscription(subscriptionTier as any, "monthly");
     } catch (error) {
       console.error("Error creating subscription:", error);
     } finally {
@@ -193,16 +262,24 @@ export default function MembershipTiers({
         bg: "bg-primary-50",
         iconBg: "bg-primary-100",
         iconText: "text-primary-600",
-        button: "bg-primary-500 hover:bg-primary-600 text-white",
+        button: "bg-primary-600 hover:bg-primary-700 text-white shadow-lg hover:shadow-xl transform hover:scale-[1.02]",
         badge: "bg-primary-100 text-primary-800",
       },
       premium: {
-        border: "border-premium-300",
-        bg: "bg-premium-50",
-        iconBg: "bg-premium-100",
-        iconText: "text-premium-600",
-        button: "bg-premium-500 hover:bg-premium-600 text-white",
-        badge: "bg-premium-100 text-premium-800",
+        border: "border-amber-300",
+        bg: "bg-gradient-to-br from-amber-50 to-yellow-50",
+        iconBg: "bg-gradient-to-br from-amber-100 to-yellow-100",
+        iconText: "text-amber-600",
+        button: "bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white shadow-lg hover:shadow-xl transform hover:scale-[1.02]",
+        badge: "bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800",
+      },
+      secondary: {
+        border: "border-emerald-300",
+        bg: "bg-gradient-to-br from-emerald-50 to-green-50",
+        iconBg: "bg-gradient-to-br from-emerald-100 to-green-100",
+        iconText: "text-emerald-600",
+        button: "bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white shadow-lg hover:shadow-xl transform hover:scale-[1.02]",
+        badge: "bg-gradient-to-r from-emerald-100 to-green-100 text-emerald-800",
       },
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.gray;
@@ -314,6 +391,14 @@ export default function MembershipTiers({
                       <div className="text-sm text-gray-500">
                         {isPortuguese ? "por mês" : "per month"}
                       </div>
+                      {tier.savings && (
+                        <div className="mt-2">
+                          <div className="inline-flex items-center bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-medium">
+                            <SparklesIcon className="w-3 h-3 mr-1" />
+                            {isPortuguese ? tier.savings : tier.savingsEn}
+                          </div>
+                        </div>
+                      )}
                     </>
                   )}
                 </div>
@@ -385,66 +470,104 @@ export default function MembershipTiers({
           })}
         </div>
 
-        {/* Value Proposition */}
+        {/* Portuguese Cultural Value Proposition */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8">
+          <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-accent-50 rounded-2xl p-8 border border-primary-200">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              {isPortuguese ? "Porquê LusoTown?" : "Why LusoTown?"}
+              {isPortuguese ? "Mais Que Uma Comunidade - É Saudade de Casa" : "More Than Community - It's Saudade for Home"}
             </h3>
-            <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="grid md:grid-cols-4 gap-6 text-center mb-8">
               <div>
-                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full flex items-center justify-center mx-auto mb-4">
                   <HeartIcon className="w-6 h-6 text-primary-600" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">
-                  {isPortuguese
-                    ? "Comunidade Autêntica"
-                    : "Authentic Community"}
+                  {isPortuguese ? "Saudade Partilhada" : "Shared Saudade"}
                 </h4>
                 <p className="text-sm text-gray-600">
                   {isPortuguese
-                    ? "Conecte-se com portugueses reais em Londres"
-                    : "Connect with real Portuguese speakers in London"}
+                    ? "Conecte-se com quem compreende esta emoção única"
+                    : "Connect with those who understand this unique emotion"}
                 </p>
               </div>
               <div>
-                <div className="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <ShieldCheckIcon className="w-6 h-6 text-secondary-600" />
+                <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MapPinIcon className="w-6 h-6 text-amber-600" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">
-                  {isPortuguese ? "Perfis Verificados" : "Verified Profiles"}
+                  {isPortuguese ? "Negócios Portugueses" : "Portuguese Businesses"}
                 </h4>
                 <p className="text-sm text-gray-600">
                   {isPortuguese
-                    ? "Todos os membros são verificados para segurança"
-                    : "All members are verified for safety"}
+                    ? "Descontos em 200+ empresas portuguesas no Reino Unido"
+                    : "Discounts at 200+ Portuguese businesses across UK"}
                 </p>
               </div>
               <div>
-                <div className="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <SparklesIcon className="w-6 h-6 text-accent-600" />
+                <div className="w-12 h-12 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CalendarDaysIcon className="w-6 h-6 text-emerald-600" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">
-                  {isPortuguese ? "Eventos Culturais" : "Cultural Events"}
+                  {isPortuguese ? "Santos Populares & Fado" : "Santos Populares & Fado"}
                 </h4>
                 <p className="text-sm text-gray-600">
                   {isPortuguese
-                    ? "Participe em eventos e atividades portuguesas"
-                    : "Join Portuguese events and activities"}
+                    ? "Celebre as tradições portuguesas autenticamente"
+                    : "Celebrate Portuguese traditions authentically"}
+                </p>
+              </div>
+              <div>
+                <div className="w-12 h-12 bg-gradient-to-br from-red-100 to-red-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <UserGroupIcon className="w-6 h-6 text-red-600" />
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">
+                  {isPortuguese ? "Famílias Portuguesas" : "Portuguese Families"}
+                </h4>
+                <p className="text-sm text-gray-600">
+                  {isPortuguese
+                    ? "Crianças aprendem português, avós participam"
+                    : "Children learn Portuguese, grandparents participate"}
                 </p>
               </div>
             </div>
-            <div className="mt-8 text-center">
-              <p className="text-sm text-gray-600">
-                {isPortuguese
-                  ? `Junte-se a ${communityStats.members} portugueses que já encontraram a sua comunidade`
-                  : `Join ${communityStats.members} Portuguese speakers who found their community`}
-              </p>
+            
+            {/* Portuguese Community Stats */}
+            <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/50">
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="text-2xl font-bold text-primary-600">750+</div>
+                  <div className="text-sm text-gray-600">
+                    {isPortuguese ? "Membros Portugueses" : "Portuguese Members"}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-amber-600">200+</div>
+                  <div className="text-sm text-gray-600">
+                    {isPortuguese ? "Empresas Parceiras" : "Partner Businesses"}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-emerald-600">50+</div>
+                  <div className="text-sm text-gray-600">
+                    {isPortuguese ? "Eventos Mensais" : "Monthly Events"}
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 text-center">
+                <p className="text-sm font-medium text-gray-700">
+                  {isPortuguese
+                    ? '"Finalmente encontrei a minha família portuguesa no Reino Unido!"'
+                    : '"Finally found my Portuguese family in the UK!"'}
+                </p>
+                <p className="text-xs text-gray-500 mt-1">
+                  - Maria, {isPortuguese ? "Membro da Comunidade" : "Community Member"}
+                </p>
+              </div>
             </div>
           </div>
         </motion.div>

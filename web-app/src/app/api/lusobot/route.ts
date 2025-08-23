@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { LusoBotEngine, MessageMetadata } from '@/lib/lusobot-engine'
 import { Language } from '@/i18n'
+import { validateInput, sanitizeText, validatePortugueseContent, ValidationError } from '@/lib/security/input-validation'
+import { createClient } from '@/lib/supabase'
 
-// Rate limiting and security
+// Enhanced rate limiting and security
 const rateLimitMap = new Map()
 const RATE_LIMIT_WINDOW = 60000 // 1 minute
 const RATE_LIMIT_MAX_REQUESTS = 10
@@ -27,23 +29,32 @@ function checkRateLimit(identifier: string): boolean {
 
 export async function POST(request: NextRequest) {
   try {
-    // Rate limiting
-    const clientIp = request.headers.get('x-forwarded-for') || 
-                     request.headers.get('x-real-ip') || 
-                     'unknown'
+    // Authentication check
+    const supabase = createClient()
+    const { data: { user }, error: authError } = await supabase.auth.getUser()
+
+    if (authError || !user) {
+      return NextResponse.json(
+        { error: 'Authentication required' },
+        { status: 401 }
+      )
+    }
+
+    // Rate limiting with user ID
+    const rateLimitKey = user.id
     
-    if (!checkRateLimit(clientIp)) {
+    if (!checkRateLimit(rateLimitKey)) {
       return NextResponse.json(
         { error: 'Rate limit exceeded. Please wait before sending another message.' },
         { status: 429 }
       )
     }
 
-    // Parse request body
+    // Parse and validate request body
     const body = await request.json()
     const { message, userContext, language } = body
 
-    // Validate input
+    // Enhanced input validation
     if (!message || typeof message !== 'string') {
       return NextResponse.json(
         { error: 'Message is required and must be a string' },
@@ -54,6 +65,18 @@ export async function POST(request: NextRequest) {
     if (message.length > 500) {
       return NextResponse.json(
         { error: 'Message too long. Maximum 500 characters allowed.' },
+        { status: 400 }
+      )
+    }
+
+    // Portuguese-specific content validation
+    const contentValidation = validatePortugueseContent(message)
+    if (!contentValidation.isValid) {
+      return NextResponse.json(
+        { 
+          error: 'Invalid message content', 
+          details: contentValidation.issues 
+        },
         { status: 400 }
       )
     }

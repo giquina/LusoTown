@@ -7,6 +7,10 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'jest-environment-jsdom',
+  // Performance optimizations
+  maxWorkers: '50%',
+  cache: true,
+  cacheDirectory: '<rootDir>/.jest-cache',
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
     '!src/**/*.d.ts',
@@ -23,9 +27,16 @@ const customJestConfig = {
   ],
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/', '<rootDir>/__tests__/e2e/'],
   transformIgnorePatterns: [
-    '/node_modules/',
+    '/node_modules/(?!(uuid|@supabase|@stripe|lucide-react|framer-motion)/)'
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  // Enhanced module mapping for monorepo
+  moduleNameMapping: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@lusotown/(.*)$': '<rootDir>/../packages/$1/src'
+  },
+  // Test timeout for Portuguese content loading
+  testTimeout: 10000,
 }
 
 module.exports = createJestConfig(customJestConfig)

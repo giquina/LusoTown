@@ -2,14 +2,17 @@
   "name": "LusoTown - Portuguese-speaking community London",
   "short_name": "LusoTown",
   "description": "Connect with Portuguese speakers in London. Discover events, businesses, and cultural activities. Unidos pela Língua.",
-  "start_url": "/",
+  "start_url": "/?utm_source=pwa&utm_medium=homescreen",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "background_color": "#ffffff",
   "theme_color": "#DC2626",
   "orientation": "portrait-primary",
-  "categories": ["social", "lifestyle", "business", "entertainment"],
+  "categories": ["social", "lifestyle", "business", "entertainment", "community"],
   "lang": "en-GB",
   "dir": "ltr",
+  "scope": "/",
+  "id": "/?lusotown-pwa=true",
   "icons": [
     {
       "src": "/icons/icon-72x72.png",
@@ -130,6 +133,38 @@
       ]
     }
   ],
+  "file_handlers": [
+    {
+      "action": "/share",
+      "accept": {
+        "image/*": [".jpg", ".jpeg", ".png", ".gif", ".webp"],
+        "text/plain": [".txt"]
+      }
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": ["image/*", ".pdf", ".txt"]
+        }
+      ]
+    }
+  },
+  "edge_side_panel": {
+    "preferred_width": 350
+  },
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "handle_links": "preferred",
   "related_applications": [
     {
       "platform": "play",

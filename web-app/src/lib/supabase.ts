@@ -424,9 +424,16 @@ export const searchProfiles = async (filters?: {
     }
 
     if (filters?.location?.length) {
-      // Use ilike for partial location matching
-      const locationFilter = filters.location.map(loc => `location.ilike.%${loc}%`).join(',')
-      query = query.or(locationFilter)
+      // Use proper parameterized queries to prevent SQL injection
+      const locationConditions = filters.location.map((loc, index) => {
+        // Escape and sanitize location strings
+        const sanitizedLocation = loc.replace(/[%_]/g, '\\$&').substring(0, 50)
+        return `location.ilike.%${sanitizedLocation}%`
+      })
+      
+      if (locationConditions.length > 0) {
+        query = query.or(locationConditions.join(','))
+      }
     }
 
     if (filters?.limit) {

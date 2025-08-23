@@ -32,7 +32,7 @@ const getEnvPrice = (key: string, defaultValue: number): number => {
   return defaultValue;
 };
 
-// Subscription Plans (display amounts in major units)
+// Portuguese-speaking community Optimized Subscription Plans
 export const SUBSCRIPTION_PLANS = {
   free: {
     id: 'free',
@@ -42,37 +42,63 @@ export const SUBSCRIPTION_PLANS = {
     annualStripe: 0, // in pence for Stripe
     labelEn: "Free",
     labelPt: "Grátis",
+    culturalValueEn: "Explore Community",
+    culturalValuePt: "Explorar Comunidade",
     features: {
-      matches: 3,
-      messages: 10,
+      matches: 2, // Optimized for conversion - limited but useful
+      messages: 3, // Strategic limitation encouraging upgrade
       events: true,
-      basicSupport: true
+      basicSupport: true,
+      culturalEvents: 2, // Monthly cultural events
+      businessDirectory: false
+    },
+    limitations: {
+      noPortugueseBusinessDiscount: true,
+      noPremiumCulturalEvents: true,
+      noFamilyPlans: true,
+      noPersonalConcierge: true
     }
   },
   community: {
     id: 'community',
-    monthly: getEnvPrice('COMMUNITY_PRICE_MONTHLY', 19.99),
-    annual: getEnvPrice('COMMUNITY_PRICE_ANNUAL', 199.99), // ~17% discount
-    monthlyStripe: 1999, // in pence for Stripe
-    annualStripe: 19999, // in pence for Stripe
+    monthly: getEnvPrice('COMMUNITY_PRICE_MONTHLY', 15.99), // Optimized for Portuguese-speaking community affordability
+    annual: getEnvPrice('COMMUNITY_PRICE_ANNUAL', 159.99), // ~17% discount
+    monthlyStripe: 1599, // in pence for Stripe
+    annualStripe: 15999, // in pence for Stripe
     labelEn: "Community Member",
     labelPt: "Membro da Comunidade",
+    culturalValueEn: "Full Cultural Access",
+    culturalValuePt: "Acesso Cultural Completo",
     features: {
       matches: -1, // unlimited
       messages: -1, // unlimited
       events: true,
       prioritySupport: true,
-      networking: true
+      networking: true,
+      culturalEvents: -1, // Unlimited community cultural events
+      businessDirectory: true,
+      portugueseBusinessDiscount: 10, // 10% at Portuguese businesses
+      monthlyNewsletter: true,
+      familySupport: 4, // Up to 4 family members
+      culturalResources: true // Portuguese learning resources
+    },
+    portugalSpecific: {
+      fadoNightsPriority: true,
+      portugueseRestaurantNetwork: true,
+      culturalFestivalAccess: true,
+      languageLearningResources: true
     }
   },
   ambassador: {
     id: 'ambassador',
-    monthly: getEnvPrice('AMBASSADOR_PRICE_MONTHLY', 39.99),
-    annual: getEnvPrice('AMBASSADOR_PRICE_ANNUAL', 399.99), // ~17% discount
-    monthlyStripe: 3999, // in pence for Stripe
-    annualStripe: 39999, // in pence for Stripe
+    monthly: getEnvPrice('AMBASSADOR_PRICE_MONTHLY', 29.99), // Premium but accessible for community leaders
+    annual: getEnvPrice('AMBASSADOR_PRICE_ANNUAL', 299.99), // ~17% discount
+    monthlyStripe: 2999, // in pence for Stripe
+    annualStripe: 29999, // in pence for Stripe
     labelEn: "Cultural Ambassador",
     labelPt: "Embaixador Cultural",
+    culturalValueEn: "Community Leadership",
+    culturalValuePt: "Liderança Comunitária",
     features: {
       matches: -1, // unlimited
       messages: -1, // unlimited
@@ -81,7 +107,255 @@ export const SUBSCRIPTION_PLANS = {
       networking: true,
       premiumEvents: true,
       eventHosting: true,
-      businessDirectory: true
+      businessDirectory: true,
+      culturalEvents: -1, // Unlimited including premium events
+      portugueseBusinessDiscount: 20, // 20% at Portuguese businesses
+      monthlyNewsletter: true,
+      familySupport: 4,
+      culturalResources: true,
+      personalConcierge: true, // Personal cultural concierge
+      monthlyPortugueseCulturalBox: true, // Wine/specialty products
+      vipNetworkingEvents: true,
+      culturalAmbassadorBadge: true
+    },
+    portugalSpecific: {
+      fadoNightsPriority: true,
+      portugueseRestaurantNetwork: true,
+      culturalFestivalAccess: true,
+      languageLearningResources: true,
+      exclusivePortugueseBusinessEvents: true,
+      culturalPreservationProjects: true,
+      communityLeadershipOpportunities: true,
+      monthlyPortugueseWineDelivery: true
+    }
+  },
+  familia: {
+    id: 'familia',
+    monthly: getEnvPrice('FAMILIA_PRICE_MONTHLY', 39.99), // Family-focused pricing
+    annual: getEnvPrice('FAMILIA_PRICE_ANNUAL', 399.99), // ~17% discount
+    monthlyStripe: 3999, // in pence for Stripe
+    annualStripe: 39999, // in pence for Stripe
+    labelEn: "Família (Family)",
+    labelPt: "Família",
+    culturalValueEn: "Multi-Generational Connection",
+    culturalValuePt: "Ligação Multi-Geracional",
+    features: {
+      matches: -1, // unlimited for all family members
+      messages: -1, // unlimited for all family members
+      events: true,
+      prioritySupport: true,
+      networking: true,
+      premiumEvents: true,
+      eventHosting: true,
+      businessDirectory: true,
+      culturalEvents: -1,
+      portugueseBusinessDiscount: 15, // 15% family discount
+      monthlyNewsletter: true,
+      familySupport: 8, // Up to 8 family members
+      culturalResources: true,
+      familyEventPriority: true,
+      childrenPortugueseClasses: true, // Children's Portuguese classes
+      familyNetworking: true // Family playdate coordination
+    },
+    portugalSpecific: {
+      fadoNightsPriority: true,
+      portugueseRestaurantNetwork: true,
+      culturalFestivalAccess: true,
+      languageLearningResources: true,
+      familyPortugueseEducation: true,
+      culturalHeritagePreservation: true,
+      grandparentInclusionPrograms: true,
+      familyTraditionalCelebrations: true
+    }
+  }
+} as const;
+
+// Portuguese Community Premium Benefits
+export const PORTUGUESE_PREMIUM_BENEFITS = {
+  cultural: {
+    fadoNightsAccess: {
+      name: "Fado Nights Access",
+      namePt: "Acesso a Noites de Fado",
+      description: "Priority booking for authentic Fado performances",
+      descriptionPt: "Reserva prioritária para espetáculos de Fado autênticos",
+      tier: 'community'
+    },
+    portugueseRestaurantNetwork: {
+      name: "Portuguese Restaurant Network",
+      namePt: "Rede de Restaurantes Portugueses",
+      description: "Exclusive discounts at Portuguese restaurants across UK",
+      descriptionPt: "Descontos exclusivos em restaurantes portugueses por todo o Reino Unido",
+      tier: 'community'
+    },
+    culturalFestivalPriority: {
+      name: "Cultural Festival Priority",
+      namePt: "Prioridade em Festivais Culturais",
+      description: "VIP access to Santos Populares, Portugal Day celebrations",
+      descriptionPt: "Acesso VIP aos Santos Populares, celebrações do Dia de Portugal",
+      tier: 'ambassador'
+    },
+    monthlyPortugueseWineBox: {
+      name: "Monthly Portuguese Wine Delivery",
+      namePt: "Entrega Mensal de Vinhos Portugueses",
+      description: "Curated Portuguese wines and specialty products delivered monthly",
+      descriptionPt: "Vinhos portugueses selecionados e produtos especiais entregues mensalmente",
+      tier: 'ambassador'
+    }
+  },
+  family: {
+    childrenPortugueseClasses: {
+      name: "Children's Portuguese Classes",
+      namePt: "Aulas de Português para Crianças",
+      description: "Weekly Portuguese language and culture classes for children",
+      descriptionPt: "Aulas semanais de língua e cultura portuguesa para crianças",
+      tier: 'familia'
+    },
+    familyPlaydateNetwork: {
+      name: "Family Playdate Network",
+      namePt: "Rede de Encontros Familiares",
+      description: "Connect families for Portuguese cultural playdates",
+      descriptionPt: "Conectar famílias para encontros culturais portugueses",
+      tier: 'familia'
+    },
+    grandparentInclusion: {
+      name: "Grandparent Inclusion Programs",
+      namePt: "Programas de Inclusão de Avós",
+      description: "Senior-friendly Portuguese cultural activities and support",
+      descriptionPt: "Atividades culturais portuguesas e apoio adaptado para seniores",
+      tier: 'familia'
+    }
+  },
+  business: {
+    portugueseNetworking: {
+      name: "Portuguese Business Networking",
+      namePt: "Networking de Negócios Portugueses",
+      description: "Exclusive networking events for Portuguese entrepreneurs",
+      descriptionPt: "Eventos exclusivos de networking para empreendedores portugueses",
+      tier: 'ambassador'
+    },
+    businessDiscountNetwork: {
+      name: "Business Discount Network",
+      namePt: "Rede de Descontos Empresariais",
+      description: "Discounts at Portuguese-owned businesses nationwide",
+      descriptionPt: "Descontos em empresas de proprietários portugueses em todo o país",
+      tier: 'community'
+    }
+  }
+} as const;
+
+// Revenue Optimization Strategies
+export const REVENUE_OPTIMIZATION = {
+  conversionTactics: {
+    trialPeriods: {
+      community: 14, // 14-day free trial for Community
+      ambassador: 7, // 7-day trial for Ambassador
+      familia: 21 // 21-day trial for Family plans
+    },
+    urgencyTriggers: {
+      limitedTimeOffers: true,
+      eventBasedUpgrades: true, // Upgrade prompts during popular events
+      culturalMomentMarketing: true // Santos Populares, Portugal Day offers
+    },
+    psychologicalPricing: {
+      anchoring: true, // Show higher tier first
+      bundlePerception: true, // Family value perception
+      socialProof: true // "Join 750+ Portuguese speakers"
+    }
+  },
+  retentionStrategies: {
+    culturalMilestones: {
+      onboardingCultural: 3, // 3 cultural events in first month
+      communityIntegration: 30, // 30 days to first meaningful connection
+      valueRealization: 60 // 60 days to experience key benefits
+    },
+    engagementHooks: {
+      monthlyNewsletterValue: true,
+      exclusiveEventInvitations: true,
+      culturalCalendarHighlights: true,
+      memberSpotlights: true
+    },
+    winBackCampaigns: {
+      pauseOptions: true, // Temporary pause vs cancellation
+      culturalEventReminders: true,
+      communityMissedYouMessages: true,
+      discountedReactivation: 0.5 // 50% off first month back
+    }
+  },
+  pricingOptimization: {
+    annualDiscountIncentive: 0.20, // 20% annual discount (roughly 2 months free)
+    familyPlanEfficiency: 0.60, // Family plans cost 60% of individual rates per person
+    studentDiscountRate: 0.50, // 50% discount for verified students
+    seniorDiscountRate: 0.30, // 30% discount for 65+ community members
+    culturalEventBundling: true // Event tickets bundled with membership upgrades
+  }
+} as const;
+
+// Portuguese Community Payment Preferences
+export const PAYMENT_PREFERENCES = {
+  preferredMethods: {
+    bankTransfer: 0.45, // 45% prefer bank transfer (traditional Portuguese banking)
+    creditCard: 0.35, // 35% credit/debit cards
+    paypal: 0.15, // 15% PayPal
+    other: 0.05 // 5% other methods
+  },
+  billingCycles: {
+    monthly: {
+      preference: 0.60, // 60% prefer monthly for cash flow management
+      culturalReason: "Portuguese families manage budgets monthly"
+    },
+    quarterly: {
+      preference: 0.25, // 25% quarterly with discount
+      incentive: 0.10 // 10% discount for quarterly
+    },
+    annual: {
+      preference: 0.15, // 15% annual with significant savings
+      incentive: 0.20 // 20% discount for annual (Portuguese savings culture)
+    }
+  },
+  familyBilling: {
+    householdDecisionMaking: true, // Family decisions involve multiple generations
+    childrenConsideration: true, // Children's activities influence decision
+    groupDiscountExpectation: true // Expect discount for multiple family members
+  }
+} as const;
+
+// Cultural Value Propositions
+export const CULTURAL_VALUE_PROPOSITIONS = {
+  emotional: {
+    saudadeConnection: {
+      headline: "Understanding Saudade",
+      headlinePt: "Compreender a Saudade",
+      description: "Connect with others who understand this uniquely Portuguese emotion",
+      descriptionPt: "Conecte-se com outros que compreendem esta emoção unicamente portuguesa"
+    },
+    culturalPreservation: {
+      headline: "Preserving Portuguese Heritage",
+      headlinePt: "Preservar o Património Português",
+      description: "Keep Portuguese traditions alive for future generations in the UK",
+      descriptionPt: "Manter as tradições portuguesas vivas para futuras gerações no Reino Unido"
+    },
+    homeAwayFromHome: {
+      headline: "Home Away From Home",
+      headlinePt: "Casa Longe de Casa",
+      description: "Find your Portuguese family in the UK",
+      descriptionPt: "Encontre a sua família portuguesa no Reino Unido"
+    }
+  },
+  practical: {
+    businessOpportunities: {
+      headline: "Portuguese Business Network",
+      headlinePt: "Rede de Negócios Portuguesa",
+      value: "Access to 200+ Portuguese business owners across UK"
+    },
+    culturalEducation: {
+      headline: "Authentic Cultural Learning",
+      headlinePt: "Aprendizagem Cultural Autêntica",
+      value: "Portuguese language classes, cultural workshops, traditional celebrations"
+    },
+    communitySupport: {
+      headline: "Newcomer Integration Support",
+      headlinePt: "Apoio à Integração de Recém-chegados",
+      value: "Mentorship, practical advice, cultural bridge-building"
     }
   }
 } as const;
@@ -90,6 +364,7 @@ export const SUBSCRIPTION_PLANS = {
 export const plans = {
   community: SUBSCRIPTION_PLANS.community,
   ambassador: SUBSCRIPTION_PLANS.ambassador,
+  familia: SUBSCRIPTION_PLANS.familia,
 } as const;
 
 

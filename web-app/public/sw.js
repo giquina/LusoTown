@@ -1,10 +1,31 @@
 // Service Worker for LusoTown Portuguese-speaking community Platform
-// Version: 2.0.0 - Portuguese Cultural PWA
+// Version: 3.0.0 - Enhanced Mobile PWA with Portuguese Cultural Features
 
-const CACHE_NAME = 'lusotown-v2-portuguese-community';
-const OFFLINE_URL = '/offline';
-const PORTUGUESE_CULTURAL_CACHE = 'portuguese-cultural-v1';
-const API_CACHE = 'api-cache-v1';
+const CACHE_VERSION = '3.0.0';
+const CACHE_NAME = `lusotown-v${CACHE_VERSION}-portuguese-community`;
+const OFFLINE_URL = '/offline.html';
+const PORTUGUESE_CULTURAL_CACHE = `portuguese-cultural-v${CACHE_VERSION}`;
+const API_CACHE = `api-cache-v${CACHE_VERSION}`;
+const IMAGES_CACHE = `images-v${CACHE_VERSION}`;
+const STATIC_CACHE = `static-v${CACHE_VERSION}`;
+
+// Portuguese cultural priorities
+const CULTURAL_PRIORITY_ROUTES = [
+  '/events',
+  '/community', 
+  '/business-directory',
+  '/cultural-calendar',
+  '/portuguese-heritage'
+];
+
+// Mobile-first optimization settings
+const MOBILE_OPTIMIZATION = {
+  maxImageSize: 500 * 1024, // 500KB for mobile
+  maxApiCacheTime: 5 * 60 * 1000, // 5 minutes
+  backgroundSyncInterval: 30 * 1000, // 30 seconds
+  offlineQueueLimit: 50,
+  compressionEnabled: true
+};
 
 // Portuguese cultural assets that should be cached
 const PORTUGUESE_ASSETS = [

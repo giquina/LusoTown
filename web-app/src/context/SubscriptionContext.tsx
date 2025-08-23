@@ -18,7 +18,7 @@ export interface Subscription {
   stripe_customer_id?: string
   status: 'active' | 'inactive' | 'cancelled' | 'past_due' | 'trialing'
   plan_type: 'monthly' | 'yearly'
-  tier: 'free' | 'community' | 'ambassador'
+  tier: 'free' | 'community' | 'ambassador' | 'familia'
   current_period_start?: string
   current_period_end?: string
   trial_end?: string
@@ -65,7 +65,7 @@ interface SubscriptionContextType {
   trialDaysRemaining: number
   subscriptionRequired: boolean
   stripe: Stripe | null
-  membershipTier: 'none' | 'free' | 'community' | 'ambassador'
+  membershipTier: 'none' | 'free' | 'community' | 'ambassador' | 'familia'
   serviceDiscount: number
   usageLimits: SubscriptionUsageLimits
   
@@ -79,8 +79,8 @@ interface SubscriptionContextType {
   
   // Actions
   checkSubscriptionStatus: () => Promise<void>
-  createSubscription: (tier?: 'free' | 'community' | 'ambassador', planType?: 'monthly' | 'yearly') => Promise<string | null>
-  upgradeSubscription: (newTier: 'free' | 'community' | 'ambassador') => Promise<boolean>
+  createSubscription: (tier?: 'free' | 'community' | 'ambassador' | 'familia', planType?: 'monthly' | 'yearly') => Promise<string | null>
+  upgradeSubscription: (newTier: 'free' | 'community' | 'ambassador' | 'familia') => Promise<boolean>
   cancelSubscription: () => Promise<boolean>
   redirectToSubscription: () => void
   markTrialAsUsed: () => Promise<void>
@@ -176,7 +176,7 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
   }
 
   const createSubscription = async (
-    tier: 'free' | 'community' | 'ambassador' = 'community',
+    tier: 'free' | 'community' | 'ambassador' | 'familia' = 'community',
     planType: 'monthly' | 'yearly' = 'monthly'
   ): Promise<string | null> => {
     try {
@@ -522,13 +522,14 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
     hasActiveSubscription && subscription?.tier ? subscription.tier : 'none'
 
   // Normalize to an effective tier for limits/discounts
-  const effectiveTier: 'free' | 'community' | 'ambassador' = membershipTier === 'none' ? 'free' : membershipTier
+  const effectiveTier: 'free' | 'community' | 'ambassador' | 'familia' = membershipTier === 'none' ? 'free' : membershipTier
 
-  // Calculate service discount based on tier
+  // Calculate service discount based on tier - Portuguese-speaking community optimized
   const serviceDiscount = (() => {
     switch (effectiveTier) {
       case 'community': return 10 // 10% member discount
-      case 'ambassador': return 20 // 20% ambassador discount
+      case 'ambassador': return 20 // 20% ambassador discount  
+      case 'familia': return 15 // 15% family discount
       default: return 0
     }
   })()
@@ -538,8 +539,8 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
     switch (effectiveTier) {
       case 'free':
         return {
-          dailyMatches: 2, // Aligned with promised benefits in MembershipTiers
-          monthlyMessages: 3, // Aligned with promised benefits in MembershipTiers
+          dailyMatches: 2, // Strategic limitation encouraging upgrade
+          monthlyMessages: 3, // Strategic limitation encouraging upgrade
           premiumEvents: 0,
           livestreamHours: 0,
           hasUnlimitedAccess: false
@@ -560,10 +561,18 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
           livestreamHours: 5, // 5 hours per month as stated in benefits
           hasUnlimitedAccess: false // Limited streaming hours, not unlimited
         }
+      case 'familia':
+        return {
+          dailyMatches: -1, // unlimited for all family members
+          monthlyMessages: -1, // unlimited for all family members
+          premiumEvents: -1, // unlimited including premium events
+          livestreamHours: 3, // 3 hours per month for family plan
+          hasUnlimitedAccess: false // Family-appropriate limitations
+        }
       default:
         return {
-          dailyMatches: 3,
-          monthlyMessages: 10,
+          dailyMatches: 2,
+          monthlyMessages: 3,
           premiumEvents: 0,
           livestreamHours: 0,
           hasUnlimitedAccess: false
