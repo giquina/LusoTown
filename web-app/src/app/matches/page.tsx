@@ -6,7 +6,7 @@ import { communityStats } from "@/config/community";
 import { mockProfileImages } from "@/config/mockData";
 import {
   HeartIcon,
-  UserGroupIcon,
+  UsersIcon,
   CalendarIcon,
   ChatBubbleLeftRightIcon,
   SparklesIcon,
@@ -376,7 +376,7 @@ function MatchesContent() {
 
   const steps = [
     {
-      icon: UserGroupIcon,
+      icon: UsersIcon,
       title: "Complete Your Profile",
       description:
         "Share your interests, your United Kingdom location, and what you're looking for in the Portuguese-speaking community",
@@ -642,7 +642,7 @@ function MatchesContent() {
           <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-accent-50 rounded-2xl p-6 md:p-8 border border-primary-200 shadow-sm">
             <div className="flex items-start gap-4">
               <div className="bg-primary-600 rounded-full p-3 flex-shrink-0">
-                <UserGroupIcon className="w-6 h-6 text-white" />
+                <UsersIcon className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1">
                 <h2 className="text-xl md:text-2xl font-bold text-primary-900 mb-3">

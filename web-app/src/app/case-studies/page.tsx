@@ -4,7 +4,7 @@ import CaseStudies from '@/components/CaseStudies'
 import CTA from '@/components/CTA'
 import { 
   HeartIcon, 
-  UserGroupIcon, 
+  UsersIcon, 
   SparklesIcon,
   CalendarIcon,
   MapPinIcon,
@@ -154,7 +154,7 @@ export default function CaseStudiesPage() {
                   
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-accent-100 to-coral-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <UserGroupIcon className="w-8 h-8 text-accent-600" />
+                      <UsersIcon className="w-8 h-8 text-accent-600" />
                     </div>
                     <div className="text-3xl font-bold text-gray-900 mb-2">150+</div>
                     <div className="text-sm text-gray-600">Meaningful Friendships Formed</div>
@@ -211,7 +211,7 @@ export default function CaseStudiesPage() {
                   </div>
                   
                   <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <UserGroupIcon className="w-8 h-8 text-coral-600 mb-4" />
+                    <UsersIcon className="w-8 h-8 text-coral-600 mb-4" />
                     <h3 className="text-xl font-semibold text-gray-900 mb-4">Diverse Portuguese Heritage</h3>
                     <p className="text-gray-600">
                       Stories include speakers from Portugal, Brazil, Angola - showcasing how all Portuguese 
@@ -299,7 +299,7 @@ export default function CaseStudiesPage() {
                       href={ROUTES.signup}
                       className="bg-white text-secondary-600 hover:bg-gray-50 border-2 border-secondary-200 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
                     >
-                      <UserGroupIcon className="w-5 h-5 mr-2" />
+                      <UsersIcon className="w-5 h-5 mr-2" />
                       Join the Community
                     </a>
                   </div>

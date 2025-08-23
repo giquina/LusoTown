@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer'
 import { ROUTES } from '@/config/routes'
-import { ShieldCheckIcon, HeartIcon, UserGroupIcon, ExclamationTriangleIcon, GlobeAltIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
+import { ShieldCheckIcon, HeartIcon, UsersIcon, ExclamationTriangleIcon, GlobeAltIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
 
 export const metadata = {
   title: 'Community Guidelines | LusoTown London - Portuguese-speaking community Standards',
@@ -25,7 +25,7 @@ export default function CommunityGuidelines() {
       description: "Support each other through professional and personal connections. Help fellow Portuguese speakers navigate life in London and build strong community networks."
     },
     {
-      icon: UserGroupIcon,
+      icon: UsersIcon,
       title: "Cultura (Culture)",
       description: "Preserve and celebrate Portuguese culture through language, traditions, and cultural events. Share our rich cultural diversity with the wider London community."
     },
@@ -146,7 +146,7 @@ export default function CommunityGuidelines() {
                   
                   <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 mt-6">
                     <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                      <UserGroupIcon className="w-5 h-5 mr-2 text-indigo-500" />
+                      <UsersIcon className="w-5 h-5 mr-2 text-indigo-500" />
                       Professional & Community Support
                     </h3>
                     <ul className="list-none space-y-3">

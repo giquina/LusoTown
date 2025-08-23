@@ -3,7 +3,7 @@
 import React from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { 
-  UserGroupIcon,
+  UsersIcon,
   CalendarDaysIcon,
   ChatBubbleLeftRightIcon,
   MegaphoneIcon,
@@ -85,7 +85,7 @@ const jobRoles: JobRole[] = [
       'Conhecimento profundo da cultura portuguesa e diáspora',
       'Experiência com plataformas de redes sociais'
     ],
-    icon: UserGroupIcon,
+    icon: UsersIcon,
     isHot: true
   },
   {
@@ -903,7 +903,7 @@ export default function CareersPage() {
                 <span>{isPortuguese ? 'Londres, Reino Unido' : 'London, United Kingdom'}</span>
               </div>
               <div className="flex items-center gap-2">
-                <UserGroupIcon className="w-6 h-6" />
+                <UsersIcon className="w-6 h-6" />
                 <span>{isPortuguese ? '21 Posições Abertas' : '21 Open Positions'}</span>
               </div>
               <div className="flex items-center gap-2">
@@ -963,7 +963,7 @@ export default function CareersPage() {
 
             <div className="text-center p-6 bg-white rounded-xl shadow-lg">
               <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <UserGroupIcon className="w-8 h-8 text-accent-600" />
+                <UsersIcon className="w-8 h-8 text-accent-600" />
               </div>
               <h3 className="text-xl font-semibold mb-3">
                 {isPortuguese ? 'Equipa Diversa' : 'Diverse Team'}

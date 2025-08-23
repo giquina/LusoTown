@@ -9,7 +9,7 @@ import {
   StarIcon,
   GlobeEuropeAfricaIcon,
   CalendarDaysIcon,
-  UserGroupIcon,
+  UsersIcon,
   MagnifyingGlassIcon,
   BellIcon,
   ChatBubbleLeftRightIcon,
@@ -52,7 +52,7 @@ export default function EliteMobileShowcasePage() {
     {
       label: 'Find Community',
       labelPt: 'Encontrar Comunidade',
-      icon: UserGroupIcon,
+      icon: UsersIcon,
       onClick: () => alert('Find Community'),
       variant: 'primary' as const,
       badge: 5

@@ -8,7 +8,7 @@ import {
   CalendarIcon,
   ClockIcon,
   MapPinIcon,
-  UserGroupIcon,
+  UsersIcon,
   StarIcon,
   HeartIcon,
   ShareIcon,
@@ -538,7 +538,7 @@ export default function EventDetailsPage() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                        <UserGroupIcon className="w-5 h-5 text-green-600" />
+                        <UsersIcon className="w-5 h-5 text-green-600" />
                       </div>
                       <div>
                         <div className="font-medium text-gray-900">{event.currentAttendees} / {event.maxAttendees}</div>

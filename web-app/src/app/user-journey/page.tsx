@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   ChartBarIcon, 
-  UserGroupIcon, 
+  UsersIcon, 
   TruckIcon, 
   CalendarDaysIcon,
   CogIcon,
@@ -292,7 +292,7 @@ export default function UserJourneyPage() {
                     </h2>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                       <div className="text-center p-6 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl">
-                        <UserGroupIcon className="w-8 h-8 mx-auto mb-3 text-primary-600" />
+                        <UsersIcon className="w-8 h-8 mx-auto mb-3 text-primary-600" />
                         <div className="text-3xl font-bold text-primary-700">{analyticsData.totalUsers}</div>
                         <div className="text-sm text-primary-600">{isPortuguese ? 'Total de Membros' : 'Total Members'}</div>
                       </div>

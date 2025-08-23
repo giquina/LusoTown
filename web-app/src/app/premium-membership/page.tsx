@@ -12,7 +12,7 @@ import {
   SparklesIcon,
   ArrowRightIcon,
   StarIcon,
-  UsersIcon as UserGroupIcon,
+  UsersIcon as UsersIcon,
   CalendarDaysIcon,
   ShieldCheckIcon
 } from '@heroicons/react/24/outline'
@@ -74,7 +74,7 @@ export default function PremiumMembershipPage() {
                 <div className="grid md:grid-cols-3 gap-8">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <UserGroupIcon className="w-8 h-8 text-primary-600" />
+                      <UsersIcon className="w-8 h-8 text-primary-600" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       {isPortuguese ? 'Integração Comunitária' : 'Community Integration'}

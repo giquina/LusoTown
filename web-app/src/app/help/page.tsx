@@ -8,7 +8,7 @@ import {
   QuestionMarkCircleIcon,
   ChatBubbleLeftRightIcon,
   ShieldCheckIcon,
-  UserGroupIcon,
+  UsersIcon,
   CogIcon,
   ExclamationTriangleIcon,
   EnvelopeIcon,
@@ -51,7 +51,7 @@ export default function HelpCenter() {
   const faqCategories = [
     {
       title: "Getting Started",
-      icon: UserGroupIcon,
+      icon: UsersIcon,
       color: "primary",
       faqs: [
         {
@@ -134,7 +134,7 @@ export default function HelpCenter() {
     },
     {
       title: "Account Management",
-      icon: UserGroupIcon,
+      icon: UsersIcon,
       color: "green",
       faqs: [
         {
@@ -195,17 +195,17 @@ export default function HelpCenter() {
     {
       title: "Complete Your Profile",
       description: "Members with complete profiles get 3x more connections",
-      icon: UserGroupIcon,
+      icon: UsersIcon,
     },
     {
       title: "Join Local Groups",
       description: "Active group members make friends 40% faster",
-      icon: UserGroupIcon,
+      icon: UsersIcon,
     },
     {
       title: "Attend Events",
       description: "In-person meetups lead to stronger friendships",
-      icon: UserGroupIcon,
+      icon: UsersIcon,
     },
     {
       title: "Be Authentic",

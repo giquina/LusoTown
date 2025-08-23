@@ -9,7 +9,7 @@ import {
   MagnifyingGlassIcon, 
   MapPinIcon,
   HeartIcon,
-  UserGroupIcon,
+  UsersIcon,
   AdjustmentsHorizontalIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline'
@@ -218,7 +218,7 @@ function ProfilesPageContent() {
             }`}
           >
             <div className="flex items-center gap-2">
-              <UserGroupIcon className="w-4 h-4" />
+              <UsersIcon className="w-4 h-4" />
               <span>Browse All</span>
             </div>
           </button>
@@ -445,7 +445,7 @@ function ProfilesPageContent() {
             </div>
           ) : (
             <div className="text-center py-12">
-              <UserGroupIcon className="w-16 h-16 mx-auto text-gray-300 mb-4" />
+              <UsersIcon className="w-16 h-16 mx-auto text-gray-300 mb-4" />
               <h3 className="text-lg font-medium text-gray-900 mb-2">No members found</h3>
               <p className="text-gray-600 mb-4">
                 Try adjusting your search criteria or filters

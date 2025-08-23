@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import {
   ChatBubbleLeftRightIcon,
-  UserGroupIcon,
+  UsersIcon,
   ShieldCheckIcon,
   HeartIcon,
   ExclamationTriangleIcon,
@@ -52,7 +52,7 @@ const communityForumsModule = {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
           <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
             <h5 class="font-semibold text-blue-800 flex items-center gap-2">
-              <UserGroupIcon class="h-4 w-4" />
+              <UsersIcon class="h-4 w-4" />
               Community Life
             </h5>
             <p class="text-sm text-blue-700">Daily life, local recommendations, neighborhood discussions</p>
@@ -123,7 +123,7 @@ const communityForumsModule = {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
           <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
             <h5 class="font-semibold text-blue-800 flex items-center gap-2">
-              <UserGroupIcon class="h-4 w-4" />
+              <UsersIcon class="h-4 w-4" />
               Vida Comunitária
             </h5>
             <p class="text-sm text-blue-700">Vida quotidiana, recomendações locais, discussões de bairro</p>

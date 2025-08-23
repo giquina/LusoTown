@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import {
   AcademicCapIcon,
   CurrencyPoundIcon,
-  UserGroupIcon,
+  UsersIcon,
   DocumentTextIcon,
   BuildingOfficeIcon,
   BookOpenIcon,
@@ -431,7 +431,7 @@ const studentSupportModule = {
           
           <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
             <h5 class="font-semibold text-indigo-800 flex items-center gap-2">
-              <UserGroupIcon class="h-4 w-4" />
+              <UsersIcon class="h-4 w-4" />
               Study Sessions
             </h5>
             <p class="text-sm text-indigo-700">Group study sessions at London libraries with Portuguese students</p>
@@ -496,7 +496,7 @@ const studentSupportModule = {
           
           <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
             <h5 class="font-semibold text-indigo-800 flex items-center gap-2">
-              <UserGroupIcon class="h-4 w-4" />
+              <UsersIcon class="h-4 w-4" />
               Sessões de Estudo
             </h5>
             <p class="text-sm text-indigo-700">Sessões de estudo em grupo em bibliotecas de Londres com estudantes portugueses</p>
@@ -545,7 +545,7 @@ const studentSupportModule = {
           <p><strong>História de Sucesso:</strong> "Através da rede estudantil da LusoTown, conectei-me com 3 outros estudantes portugueses de engenharia no Imperial. Formámos um grupo de estudo, partilhámos alojamento, e agora todos temos empregos de graduação garantidos com conexões portuguesas!" - Maria Santos, Imperial College London</p>
         </div>
       `,
-      icon: UserGroupIcon,
+      icon: UsersIcon,
       estimatedTime: 4,
       interactiveElements: [
         {

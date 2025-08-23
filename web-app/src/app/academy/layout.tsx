@@ -7,7 +7,7 @@ import { useRouter, usePathname } from "next/navigation";
 import {
   BookOpenIcon,
   ChartBarIcon,
-  UserGroupIcon,
+  UsersIcon,
   CogIcon,
   HomeIcon,
   ArrowLeftIcon,

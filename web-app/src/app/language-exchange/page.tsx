@@ -7,7 +7,7 @@ import {
   MagnifyingGlassIcon, 
   MapPinIcon, 
   ClockIcon,
-  UserGroupIcon,
+  UsersIcon,
   AcademicCapIcon,
   GlobeAltIcon,
   StarIcon,

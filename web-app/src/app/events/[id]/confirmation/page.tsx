@@ -16,7 +16,7 @@ import {
   GiftIcon,
   DocumentTextIcon,
   BellIcon,
-  UserGroupIcon
+  UsersIcon
 } from '@heroicons/react/24/outline'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
@@ -315,7 +315,7 @@ const BookingConfirmationPage = () => {
                           href={ROUTES.myEvents}
                           className="w-full flex items-center gap-3 p-3 bg-purple-50 border border-purple-200 rounded-lg hover:bg-purple-100 transition-colors"
                         >
-                          <UserGroupIcon className="w-5 h-5 text-purple-600" />
+                          <UsersIcon className="w-5 h-5 text-purple-600" />
                           <span className="text-purple-700 font-medium">View My Events</span>
                         </Link>
                       </div>

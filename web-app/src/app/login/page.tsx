@@ -9,7 +9,7 @@ import {
   ExclamationCircleIcon,
   CalendarDaysIcon,
   MapPinIcon,
-  UserGroupIcon,
+  UsersIcon,
   StarIcon,
   ShieldCheckIcon,
   HomeIcon,
@@ -192,7 +192,7 @@ export default function Login() {
                   {/* Social Proof */}
                   <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
                     <div className="flex items-center gap-1">
-                      <UserGroupIcon className="h-4 w-4" />
+                      <UsersIcon className="h-4 w-4" />
                       <span>750+ {isPortuguese ? "Membros" : "Members"}</span>
                     </div>
                     <div className="flex items-center gap-1">

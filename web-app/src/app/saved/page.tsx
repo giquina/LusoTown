@@ -17,7 +17,7 @@ import {
   ShoppingCartIcon,
   TrashIcon,
   BuildingStorefrontIcon,
-  UserGroupIcon,
+  UsersIcon,
   StarIcon,
   ClockIcon
 } from '@heroicons/react/24/solid'
@@ -60,7 +60,7 @@ export default function SavedItemsPage() {
       case 'feed':
         return <ChatBubbleLeftRightIcon className="w-5 h-5 text-purple-500" />
       case 'group':
-        return <UserGroupIcon className="w-5 h-5 text-green-500" />
+        return <UsersIcon className="w-5 h-5 text-green-500" />
       default:
         return <HeartIcon className="w-5 h-5 text-gray-500" />
     }

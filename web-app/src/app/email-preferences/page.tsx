@@ -7,7 +7,7 @@ import {
   BellIcon, 
   CalendarDaysIcon,
   HeartIcon,
-  UserGroupIcon,
+  UsersIcon,
   CheckCircleIcon,
   XMarkIcon
 } from '@heroicons/react/24/outline';
@@ -61,7 +61,7 @@ export default function EmailPreferencesPage() {
         description: isPortuguese
           ? 'Novidades, histórias de sucesso e destaques da comunidade'
           : 'News, success stories, and community highlights',
-        icon: UserGroupIcon,
+        icon: UsersIcon,
         enabled: true,
         frequency: isPortuguese ? 'Bi-semanal' : 'Bi-weekly'
       },

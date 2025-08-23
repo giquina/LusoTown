@@ -9,7 +9,7 @@ import {
   CurrencyDollarIcon,
   CalendarDaysIcon,
   BriefcaseIcon,
-  UserGroupIcon,
+  UsersIcon,
   BuildingOfficeIcon,
   ChartBarIcon,
   InformationCircleIcon,
@@ -446,7 +446,7 @@ export default function PortugueseSpeakingNationsPage() {
                       : 'Business networking and investment opportunities'
                   },
                   {
-                    icon: UserGroupIcon,
+                    icon: UsersIcon,
                     title: isPortuguese ? 'Conexões Comunitárias' : 'Community Connections',
                     description: isPortuguese
                       ? 'Conecte-se com nacionais e organizações em Londres'
@@ -580,7 +580,7 @@ export default function PortugueseSpeakingNationsPage() {
                       <div className="grid grid-cols-2 gap-4 mb-6">
                         <div className="bg-primary-50 rounded-lg p-3">
                           <div className="flex items-center gap-2 mb-1">
-                            <UserGroupIcon className="w-4 h-4 text-primary-600" />
+                            <UsersIcon className="w-4 h-4 text-primary-600" />
                             <span className="text-xs font-medium text-primary-800">
                               {isPortuguese ? 'População' : 'Population'}
                             </span>

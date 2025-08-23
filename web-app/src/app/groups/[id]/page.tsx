@@ -13,7 +13,7 @@ import {
   FlagIcon,
   ExclamationCircleIcon,
   HeartIcon,
-  UserGroupIcon,
+  UsersIcon,
   ChatBubbleLeftRightIcon,
   PhoneIcon,
   EnvelopeIcon
@@ -214,7 +214,7 @@ export default function GroupDetailPage({ params }: PageProps) {
     return (
       <div className="min-h-screen bg-gray-50 pt-16 flex items-center justify-center">
         <div className="text-center">
-          <UserGroupIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+          <UsersIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Group not found</h2>
           <p className="text-gray-600 mb-6">This group may have been removed or doesn't exist.</p>
           <button
@@ -248,7 +248,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
-                  <UserGroupIcon className="w-20 h-20 text-white opacity-60" />
+                  <UsersIcon className="w-20 h-20 text-white opacity-60" />
                 </div>
               )}
               

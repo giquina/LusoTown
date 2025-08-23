@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   BriefcaseIcon,
-  UserGroupIcon,
+  UsersIcon,
   ScaleIcon,
   AcademicCapIcon,
   SparklesIcon,
@@ -50,7 +50,7 @@ export default function BusinessNetworkingPage() {
       stats: language === "pt" ? "150+ parcerias" : "150+ partnerships",
     },
     {
-      icon: UserGroupIcon,
+      icon: UsersIcon,
       title: language === "pt" ? "Eventos de Networking" : "Networking Events",
       description: language === "pt"
         ? "Participe em eventos exclusivos para profissionais portugueses em Londres"
@@ -140,7 +140,7 @@ export default function BusinessNetworkingPage() {
     {
       id: 'matching' as const,
       label: language === "pt" ? "Sistema de Matches" : "Matching System",
-      icon: UserGroupIcon,
+      icon: UsersIcon,
     },
     {
       id: 'algorithm' as const,

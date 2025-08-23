@@ -6,7 +6,7 @@ import {
   HomeIcon,
   MapPinIcon,
   HeartIcon,
-  UserGroupIcon,
+  UsersIcon,
   PlusIcon,
   MagnifyingGlassIcon,
   PhoneIcon,
@@ -497,7 +497,7 @@ export default function HousingAssistancePage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <UserGroupIcon className="w-12 h-12 text-primary-600 mx-auto mb-4" />
+              <UsersIcon className="w-12 h-12 text-primary-600 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {isPortuguese ? "Comunidade" : "Community"}
               </h3>

@@ -14,7 +14,7 @@ import {
 } from '@heroicons/react/24/solid'
 import { 
   HeartIcon,
-  UserGroupIcon,
+  UsersIcon,
   BuildingStorefrontIcon
 } from '@heroicons/react/24/outline'
 

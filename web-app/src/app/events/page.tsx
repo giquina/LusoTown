@@ -7,7 +7,7 @@ import {
   AdjustmentsHorizontalIcon,
   CalendarIcon,
   MapPinIcon,
-  UserGroupIcon,
+  UsersIcon,
   StarIcon,
   HeartIcon,
   ShareIcon,
@@ -1345,7 +1345,7 @@ export default function EventsPage() {
                   href={`${ROUTES.groups  }/create`}
                   className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                 >
-                  <UserGroupIcon className="w-8 h-8 text-coral-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                  <UsersIcon className="w-8 h-8 text-coral-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
                   <h3 className="font-bold text-gray-900 mb-2">
                     {isPortuguese ? "Criar Grupo" : "Create Group"}
                   </h3>
@@ -1402,7 +1402,7 @@ export default function EventsPage() {
                 href={ROUTES.myNetwork}
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold px-8 py-3 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
-                <UserGroupIcon className="w-5 h-5" />
+                <UsersIcon className="w-5 h-5" />
                 {isPortuguese ? "Ver A Minha Rede" : "View My Network"}
               </a>
             </div>

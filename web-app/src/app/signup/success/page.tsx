@@ -5,7 +5,7 @@ import {
   CheckCircleIcon, 
   DevicePhoneMobileIcon, 
   CameraIcon, 
-  UserGroupIcon,
+  UsersIcon,
   ClockIcon,
   ShieldCheckIcon
 } from '@heroicons/react/24/outline'
@@ -27,7 +27,7 @@ const nextSteps = [
   },
   {
     step: 3,
-    icon: UserGroupIcon,
+    icon: UsersIcon,
     title: "Join Your Groups",
     description: "Connect with women in your area and interests",
     timeframe: "Instantly"

@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { 
   ShieldCheckIcon, 
   ExclamationTriangleIcon, 
-  UserGroupIcon,
+  UsersIcon,
   EyeIcon,
   LockClosedIcon,
   PhoneIcon,
@@ -242,7 +242,7 @@ export default function SafetyCenter() {
                   {isPortuguese ? 'Suporte Bilingue 24/7' : '24/7 Bilingual Support'}
                 </div>
                 <div className="flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 border border-secondary-200/40">
-                  <UserGroupIcon className="w-4 h-4 mr-2 text-coral-500" />
+                  <UsersIcon className="w-4 h-4 mr-2 text-coral-500" />
                   {isPortuguese ? 'Comunidade Verificada' : 'Verified Community'}
                 </div>
               </div>
@@ -709,7 +709,7 @@ export default function SafetyCenter() {
                   24/7 Safety Monitoring
                 </div>
                 <div className="flex items-center justify-center">
-                  <UserGroupIcon className="w-5 h-5 mr-2" />
+                  <UsersIcon className="w-5 h-5 mr-2" />
                   Community-First Approach
                 </div>
               </div>

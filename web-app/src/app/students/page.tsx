@@ -22,7 +22,7 @@ import {
   GlobeAltIcon,
   CheckBadgeIcon,
   CurrencyPoundIcon,
-  UserGroupIcon,
+  UsersIcon,
   BookOpenIcon,
   BuildingLibraryIcon,
   MapPinIcon,
@@ -835,7 +835,7 @@ export default function StudentsPage() {
                         {benefit.category === 'academic' && <BookOpenIcon className="w-6 h-6" />}
                         {benefit.category === 'professional' && <BriefcaseIcon className="w-6 h-6" />}
                         {benefit.category === 'cultural' && <HeartIcon className="w-6 h-6" />}
-                        {benefit.category === 'social' && <UserGroupIcon className="w-6 h-6" />}
+                        {benefit.category === 'social' && <UsersIcon className="w-6 h-6" />}
                       </div>
                       {benefit.discountAmount && (
                         <span className="bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full text-xs font-medium">

@@ -11,7 +11,7 @@ import {
   CurrencyPoundIcon,
   ArrowRightIcon,
   CheckCircleIcon,
-  UserGroupIcon,
+  UsersIcon,
   BuildingOfficeIcon,
   EyeIcon,
   AcademicCapIcon,

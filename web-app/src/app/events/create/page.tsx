@@ -8,7 +8,7 @@ import {
   CalendarIcon,
   ClockIcon,
   MapPinIcon,
-  UserGroupIcon,
+  UsersIcon,
   PhotoIcon,
   InformationCircleIcon,
   PlusIcon,

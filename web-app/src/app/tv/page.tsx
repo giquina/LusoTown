@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import {
   PlayIcon,
   ClockIcon,
-  UserGroupIcon,
+  UsersIcon,
   EyeIcon,
   HeartIcon,
   ShareIcon,

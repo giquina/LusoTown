@@ -12,7 +12,7 @@ import {
   HandRaisedIcon,
   TrophyIcon,
   CurrencyPoundIcon,
-  UserGroupIcon,
+  UsersIcon,
   GlobeAltIcon,
   SparklesIcon,
   ArrowRightIcon,
@@ -87,7 +87,7 @@ export default function CorporatePartnerships() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <UserGroupIcon className="w-8 h-8 text-white" />
+                    <UsersIcon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">450,000+</h3>
                   <p className="text-sm opacity-75">

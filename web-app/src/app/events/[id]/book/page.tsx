@@ -8,7 +8,7 @@ import {
   CalendarIcon,
   ClockIcon,
   MapPinIcon,
-  UserGroupIcon,
+  UsersIcon,
   CpuChipIcon,
   GiftIcon,
   CheckCircleIcon,
@@ -184,7 +184,7 @@ const TechnologyWorkshopBookingPage = () => {
                       <span className="text-sm">{event.location}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <UserGroupIcon className="w-5 h-5 text-white/80" />
+                      <UsersIcon className="w-5 h-5 text-white/80" />
                       <span className="text-sm">{event.spotsLeft} spots left</span>
                     </div>
                   </div>
@@ -567,7 +567,7 @@ const TechnologyWorkshopBookingPage = () => {
                           <span className="text-sm text-gray-700">Free app for your business idea</span>
                         </div>
                         <div className="flex items-start gap-3">
-                          <UserGroupIcon className="w-5 h-5 text-green-500 mt-0.5" />
+                          <UsersIcon className="w-5 h-5 text-green-500 mt-0.5" />
                           <span className="text-sm text-gray-700">Network with Portuguese entrepreneurs</span>
                         </div>
                       </div>

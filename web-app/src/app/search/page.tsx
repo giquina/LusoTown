@@ -8,7 +8,7 @@ import {
   FunnelIcon as FilterIcon,
   CalendarDaysIcon,
   BuildingStorefrontIcon,
-  UserGroupIcon,
+  UsersIcon,
   DocumentTextIcon,
   MapPinIcon,
   ClockIcon,
@@ -118,7 +118,7 @@ function SearchContent() {
       case "business":
         return <BuildingStorefrontIcon className="w-5 h-5" />;
       case "group":
-        return <UserGroupIcon className="w-5 h-5" />;
+        return <UsersIcon className="w-5 h-5" />;
       case "page":
         return <DocumentTextIcon className="w-5 h-5" />;
       default:

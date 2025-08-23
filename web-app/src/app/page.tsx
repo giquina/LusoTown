@@ -64,7 +64,7 @@ import {
   CalendarDaysIcon,
   ArrowRightIcon as ArrowRight,
   ArrowRightIcon,
-  UserGroupIcon,
+  UsersIcon,
   RssIcon,
   BookmarkIcon,
   AcademicCapIcon,
@@ -354,7 +354,7 @@ export default function Home() {
                       
                       <div className="relative z-10 flex flex-col h-full">
                         <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-accent-500 to-coral-500 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-                          <UserGroupIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
+                          <UsersIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
                         <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-accent-600 transition-colors duration-300">
                           {t('what-you-can-do.groups.title')}

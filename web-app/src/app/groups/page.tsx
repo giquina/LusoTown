@@ -13,7 +13,7 @@ import {
   MagnifyingGlassIcon,
   FunnelIcon,
   HeartIcon,
-  UserGroupIcon
+  UsersIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import { useLanguage } from '@/context/LanguageContext'
@@ -147,7 +147,7 @@ export default function GroupsPage() {
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
-              <UserGroupIcon className="w-16 h-16 text-white opacity-60" />
+              <UsersIcon className="w-16 h-16 text-white opacity-60" />
             </div>
           )}
           
@@ -432,7 +432,7 @@ export default function GroupsPage() {
             transition={{ delay: 0.6 }}
             className="text-center py-12"
           >
-            <UserGroupIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+            <UsersIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               No groups found
             </h3>

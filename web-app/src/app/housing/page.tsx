@@ -7,7 +7,7 @@ import {
   MagnifyingGlassIcon, 
   MapPinIcon, 
   CurrencyPoundIcon,
-  UserGroupIcon,
+  UsersIcon,
   WifiIcon,
   BanknotesIcon,
   KeyIcon,

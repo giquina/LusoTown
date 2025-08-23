@@ -9,7 +9,7 @@ import {
   SparklesIcon,
   ArrowRightIcon,
   ClockIcon,
-  UserGroupIcon,
+  UsersIcon,
   StarIcon,
   CheckCircleIcon,
   UserIcon,
@@ -379,7 +379,7 @@ export default function ToursPage() {
                         <span className="text-sm">{tour.duration}</span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-600">
-                        <UserGroupIcon className="w-5 h-5 text-secondary-600" />
+                        <UsersIcon className="w-5 h-5 text-secondary-600" />
                         <span className="text-sm">{tour.groupSize} {isPortuguese ? "pessoas" : "people"}</span>
                       </div>
                     </div>
@@ -603,7 +603,7 @@ export default function ToursPage() {
               
               <div className="text-center group">
                 <div className="w-20 h-20 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <UserGroupIcon className="w-10 h-10 text-secondary-600" />
+                  <UsersIcon className="w-10 h-10 text-secondary-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {isPortuguese ? "Grupos Íntimos" : "Intimate Groups"}

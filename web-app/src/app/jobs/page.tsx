@@ -9,7 +9,7 @@ import {
   CurrencyPoundIcon,
   ClockIcon,
   BuildingOfficeIcon,
-  UserGroupIcon,
+  UsersIcon,
   ChevronDownIcon,
   HeartIcon,
   ShareIcon,

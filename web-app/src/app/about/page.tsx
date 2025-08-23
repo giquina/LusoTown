@@ -5,7 +5,7 @@ import PageHeader from '@/components/PageHeader'
 import { ROUTES } from '@/config/routes'
 import { 
   HeartIcon, 
-  UserGroupIcon, 
+  UsersIcon, 
   ShieldCheckIcon,
   SparklesIcon,
   CheckCircleIcon,
@@ -93,7 +93,7 @@ export default function About() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
                       {
-                        icon: UserGroupIcon,
+                        icon: UsersIcon,
                         title: "Meet Your Match",
                         titlePt: "Encontre a Sua Alma Gémea",
                         description: "Connect with Portuguese speakers who share your saudade, cultural values, and interests. Our intelligent matching system helps you find meaningful relationships—romantic, friendship, or professional—within the Portuguese-speaking community.",
@@ -534,7 +534,7 @@ export default function About() {
                         bgGradient: "from-premium-50 to-primary-50"
                       },
                       {
-                        icon: UserGroupIcon,
+                        icon: UsersIcon,
                         title: "Connect with People Like You",
                         description: "Meet new friends, share experiences, and keep your language and traditions alive in London.",
                         gradient: "from-primary-500 to-secondary-500",
@@ -647,7 +647,7 @@ export default function About() {
                     delay: 0.4
                   },
                   {
-                    icon: UserGroupIcon,
+                    icon: UsersIcon,
                     title: "Community Support",
                     titlePt: "Apoio Comunitário",
                     description: "From finding Portuguese schools to navigating United Kingdom systems, we help each other with the practical and emotional challenges of life in London as Portuguese speakers.",
@@ -743,7 +743,7 @@ export default function About() {
                       <p><strong>All Portuguese-speaking countries.</strong> Portugal, Brazil, Angola, Mozambique, Cape Verde—todos são bem-vindos.</p>
                     </div>
                     <div className="flex items-start">
-                      <UserGroupIcon className="w-5 h-5 text-secondary-500 mt-1 mr-3 flex-shrink-0" />
+                      <UsersIcon className="w-5 h-5 text-secondary-500 mt-1 mr-3 flex-shrink-0" />
                       <p><strong>Community-focused platform.</strong> Supporting Portuguese speakers and connecting our diaspora.</p>
                     </div>
                     <div className="flex items-start">
@@ -1691,7 +1691,7 @@ export default function About() {
               
               <div className="grid md:grid-cols-3 gap-8 text-center mb-12">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <UserGroupIcon className="w-8 h-8 mx-auto mb-3" />
+                  <UsersIcon className="w-8 h-8 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">5,000+ Families</h3>
                   <p className="text-sm opacity-80">Connected across Greater London</p>
                 </div>

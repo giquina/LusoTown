@@ -15,7 +15,7 @@ import {
   ExclamationTriangleIcon,
   ShieldCheckIcon,
   HeartIcon,
-  UsersIcon as UserGroupIcon,
+  UsersIcon as UsersIcon,
   CalendarDaysIcon,
   ArrowRightIcon
 } from '@heroicons/react/24/outline'
@@ -264,7 +264,7 @@ export default function SubscriptionPage() {
                     <div className="grid sm:grid-cols-2 gap-4">
                       {[
                         {
-                          icon: UserGroupIcon,
+                          icon: UsersIcon,
                           title: isPortuguese ? 'Rede Comunitária' : 'Community Network',
                           description: isPortuguese ? 'Conecte-se com 750+ falantes de português' : 'Connect with 750+ Portuguese speakers'
                         },

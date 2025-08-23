@@ -8,7 +8,7 @@ import EnhancedFollowButton from '@/components/EnhancedFollowButton'
 import { useFollowing, FollowableEntity } from '@/context/EnhancedFollowingContext'
 import { useLanguage } from '@/context/LanguageContext'
 import { 
-  UserGroupIcon,
+  UsersIcon,
   UserIcon,
   CalendarDaysIcon,
   MapPinIcon,
@@ -61,7 +61,7 @@ export default function FollowingPage() {
       case 'person':
         return <UserIcon className="w-5 h-5" />
       case 'group':
-        return <UserGroupIcon className="w-5 h-5" />
+        return <UsersIcon className="w-5 h-5" />
       case 'community':
         return <UsersIcon className="w-5 h-5" />
       case 'event_organizer':
@@ -123,7 +123,7 @@ export default function FollowingPage() {
                 <div className="bg-white rounded-lg p-4 shadow-sm">
                   <div className="text-2xl font-bold text-secondary-600 mb-1">{stats.groups}</div>
                   <div className="text-sm text-gray-600 flex items-center gap-1">
-                    <UserGroupIcon className="w-4 h-4" />
+                    <UsersIcon className="w-4 h-4" />
 {isPortuguese ? 'Grupos' : 'Groups'}
                   </div>
                 </div>
@@ -181,7 +181,7 @@ export default function FollowingPage() {
                       : 'bg-white text-gray-700 hover:bg-gray-50'
                   }`}
                 >
-                  <UserGroupIcon className="w-4 h-4" />
+                  <UsersIcon className="w-4 h-4" />
 {isPortuguese ? 'Grupos' : 'Groups'} ({stats.groups})
                 </button>
                 <button
@@ -322,7 +322,7 @@ export default function FollowingPage() {
             <div className="max-w-6xl mx-auto">
               {tabData.length === 0 ? (
                 <div className="text-center py-16">
-                  <UserGroupIcon className="w-16 h-16 text-gray-300 mx-auto mb-6" />
+                  <UsersIcon className="w-16 h-16 text-gray-300 mx-auto mb-6" />
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
 {isPortuguese ? 'Ainda não segues ninguém' : 'Not following anyone yet'}
                   </h3>

@@ -5,7 +5,7 @@ import {
   HandRaisedIcon,
   ShieldCheckIcon,
   ExclamationTriangleIcon,
-  UserGroupIcon,
+  UsersIcon,
   HeartIcon,
   LockClosedIcon,
   ScaleIcon,
@@ -105,7 +105,7 @@ export default function TermsOfService() {
                     </div>
                     <div className="bg-white rounded-lg p-4 border border-secondary-200">
                       <div className="flex items-center mb-2">
-                        <UserGroupIcon className="w-5 h-5 text-secondary-600 mr-2" />
+                        <UsersIcon className="w-5 h-5 text-secondary-600 mr-2" />
                         <span className="font-semibold text-gray-900">
                           Respectful Interaction
                         </span>
@@ -141,7 +141,7 @@ export default function TermsOfService() {
               {/* Eligibility and Account Creation */}
               <div className="bg-white rounded-2xl p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <UserGroupIcon className="w-6 h-6 text-primary-600 mr-3" />
+                  <UsersIcon className="w-6 h-6 text-primary-600 mr-3" />
                   1. Eligibility and Account Creation
                 </h2>
                 <div className="space-y-6">

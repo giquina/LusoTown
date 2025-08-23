@@ -9,7 +9,7 @@ import {
   CurrencyPoundIcon,
   HeartIcon,
   ArrowRightIcon,
-  UserGroupIcon,
+  UsersIcon,
   BriefcaseIcon,
   CheckCircleIcon,
   ChartBarIcon,
@@ -108,7 +108,7 @@ export default function HostPage() {
 
   const benefits = [
     {
-      icon: UserGroupIcon,
+      icon: UsersIcon,
       title: isPortuguese
         ? "Alcance 750+ Portugueses"
         : "Reach 750+ Portuguese Speakers",

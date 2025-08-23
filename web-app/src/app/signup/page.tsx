@@ -13,7 +13,7 @@ import {
   HeartIcon,
   CheckIcon,
   ShieldCheckIcon,
-  UserGroupIcon,
+  UsersIcon,
   SparklesIcon,
   LockClosedIcon,
   CameraIcon,
@@ -37,7 +37,7 @@ const benefits = [
     subtext: "No membership fees or barriers to participation",
   },
   {
-    icon: UserGroupIcon,
+    icon: UsersIcon,
     text: `Connect with ${communityStats.members} Portuguese speakers`,
     subtext: "From Portugal, Brazil, Angola, Mozambique & beyond",
   },
@@ -526,7 +526,7 @@ function SignupInner() {
                     {/* Social Proof */}
                     <div className="flex items-center justify-center gap-4 text-xs text-gray-500 mb-4">
                       <div className="flex items-center gap-1">
-                        <UserGroupIcon className="h-4 w-4" />
+                        <UsersIcon className="h-4 w-4" />
                         <span>{communityStats.members} Members</span>
                       </div>
                       <div className="flex items-center gap-1">

@@ -11,7 +11,7 @@ import {
   CheckCircleIcon, 
   HeartIcon,
   ArrowRightIcon,
-  UserGroupIcon,
+  UsersIcon,
   CalendarDaysIcon,
   ShieldCheckIcon
 } from '@heroicons/react/24/outline'
@@ -45,7 +45,7 @@ function SuccessPageContent() {
 
   const nextSteps = [
     {
-      icon: UserGroupIcon,
+      icon: UsersIcon,
       title: isPortuguese ? 'Explore a Comunidade' : 'Explore the Community',
       description: isPortuguese ? 'Conecte-se com outros membros portugueses em Londres' : 'Connect with other Portuguese members in London',
       action: isPortuguese ? 'Ver Membros' : 'View Members',

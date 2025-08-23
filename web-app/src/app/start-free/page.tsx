@@ -11,7 +11,7 @@ import {
   HeartIcon,
   CheckIcon,
   SparklesIcon,
-  UserGroupIcon,
+  UsersIcon,
   ShieldCheckIcon,
   StarIcon,
   MapPinIcon,
@@ -34,7 +34,7 @@ const freeFeatures = [
     subtitlePt: "Conecte-se com falantes de português instantaneamente",
   },
   {
-    icon: UserGroupIcon,
+    icon: UsersIcon,
     title: `${communityStats.members} Members Waiting`,
     titlePt: `${communityStats.members} Membros à Espera`,
     subtitle: "From Portugal, Brazil, Angola & beyond",

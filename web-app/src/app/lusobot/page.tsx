@@ -6,7 +6,7 @@ import {
   SparklesIcon,
   HeartIcon,
   LanguageIcon,
-  UserGroupIcon,
+  UsersIcon,
   AcademicCapIcon,
   ChatBubbleLeftRightIcon,
   MapPinIcon,
@@ -120,7 +120,7 @@ export default function LusoBotPage() {
       color: 'from-green-500 to-emerald-600'
     },
     {
-      icon: <UserGroupIcon className="w-6 h-6" />,
+      icon: <UsersIcon className="w-6 h-6" />,
       title: language === 'pt' ? 'Navegação Comunitária' : 'Community Navigation',
       description: language === 'pt'
         ? 'Guio-te para encontrar eventos, negócios portugueses, grupos e recursos na tua área.'

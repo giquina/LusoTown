@@ -11,7 +11,7 @@ import {
   CheckCircleIcon,
   ArrowRightIcon,
   StarIcon,
-  UserGroupIcon,
+  UsersIcon,
   CalendarDaysIcon,
   HeartIcon
 } from '@heroicons/react/24/outline'
@@ -44,7 +44,7 @@ export default function PrimeirosPassosPage() {
 
   const features = [
     {
-      icon: UserGroupIcon,
+      icon: UsersIcon,
       titleEn: 'Connect with Community',
       titlePt: 'Conectar com a Comunidade',
       descriptionEn: 'Find Your Match among Portuguese speakers from all over London and the United Kingdom',

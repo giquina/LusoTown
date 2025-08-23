@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   HeartIcon, 
   CalendarDaysIcon, 
-  UserGroupIcon, 
+  UsersIcon, 
   MapPinIcon,
   PhotoIcon,
   PlusIcon,
@@ -275,7 +275,7 @@ export default function MobilePreviewPage() {
 
                         <div className="flex items-center justify-between pt-2">
                           <div className="flex items-center gap-1">
-                            <UserGroupIcon className="w-4 h-4 text-gray-500" />
+                            <UsersIcon className="w-4 h-4 text-gray-500" />
                             <span className="text-sm text-gray-600">
                               {event.attendees} attending
                             </span>

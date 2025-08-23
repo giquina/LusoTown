@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import {
   PlayIcon,
   VideoCameraIcon,
-  UserGroupIcon,
+  UsersIcon,
   StarIcon,
   ClockIcon,
   CurrencyPoundIcon,

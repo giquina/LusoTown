@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 import { 
   ChatBubbleLeftRightIcon,
   HeartIcon,
-  UserGroupIcon,
+  UsersIcon,
   CalendarDaysIcon,
   CheckCircleIcon,
   ArrowRightIcon
@@ -39,7 +39,7 @@ export default function HowItWorks() {
       ]
     },
     {
-      icon: UserGroupIcon,
+      icon: UsersIcon,
       title: 'Create & Join Portuguese Gatherings',
       description: 'Create your own Portuguese speaker gatherings or join existing ones. Meet fellow lusófonos for activities you enjoy.',
       details: [

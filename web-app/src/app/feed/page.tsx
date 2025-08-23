@@ -11,7 +11,7 @@ import {
   LinkIcon,
   MapPinIcon,
   CalendarDaysIcon,
-  UserGroupIcon,
+  UsersIcon,
   LanguageIcon,
   FunnelIcon,
   AdjustmentsHorizontalIcon,

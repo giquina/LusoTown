@@ -8,7 +8,7 @@ import {
   ArrowRightIcon,
   CheckCircleIcon,
   BookOpenIcon,
-  UserGroupIcon,
+  UsersIcon,
   TrophyIcon,
   BriefcaseIcon,
   HeartIcon,

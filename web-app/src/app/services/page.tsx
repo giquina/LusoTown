@@ -12,7 +12,7 @@ import {
   ArrowRightIcon,
   CheckCircleIcon,
   AcademicCapIcon,
-  UserGroupIcon,
+  UsersIcon,
   BuildingOfficeIcon,
   IdentificationIcon,
 } from '@heroicons/react/24/outline'

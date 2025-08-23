@@ -6,7 +6,7 @@ import {
   ShieldCheckIcon,
   StarIcon,
   HeartIcon,
-  UserGroupIcon,
+  UsersIcon,
   SparklesIcon,
   ArrowLeftIcon
 } from '@heroicons/react/24/outline'
@@ -272,7 +272,7 @@ export default function CulturalVerificationDemoPage() {
 
               <div className="text-center p-6 bg-gradient-to-b from-pink-50 to-pink-100 rounded-xl">
                 <div className="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <UserGroupIcon className="w-8 h-8 text-white" />
+                  <UsersIcon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2">
                   {language === 'pt' ? 'Confiança da Comunidade' : 'Community Trust'}
@@ -410,7 +410,7 @@ export default function CulturalVerificationDemoPage() {
 
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <UserGroupIcon className="w-8 h-8 text-white" />
+                  <UsersIcon className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="font-bold text-gray-900 mb-2">
                   {language === 'pt' ? 'Prioridade na Comunidade' : 'Community Priority'}

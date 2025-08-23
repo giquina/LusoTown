@@ -7,7 +7,7 @@ import {
   MagnifyingGlassIcon, 
   MapPinIcon, 
   ClockIcon,
-  UserGroupIcon,
+  UsersIcon,
   MusicalNoteIcon,
   CakeIcon,
   SparklesIcon,
@@ -259,7 +259,7 @@ export default function CulturalCalendarPage() {
       case 'National Holiday': return <FlagIcon className="w-5 h-5" />
       case 'Food & Drink': return <CakeIcon className="w-5 h-5" />
       case 'Education': return <CalendarDaysIcon className="w-5 h-5" />
-      case 'Sports': return <UserGroupIcon className="w-5 h-5" />
+      case 'Sports': return <UsersIcon className="w-5 h-5" />
       case 'Holiday': return <SparklesIcon className="w-5 h-5" />
       default: return <CalendarDaysIcon className="w-5 h-5" />
     }
@@ -493,7 +493,7 @@ export default function CulturalCalendarPage() {
                     {/* Event Stats */}
                     <div className="flex items-center justify-between mb-4 text-sm text-gray-600">
                       <div className="flex items-center gap-1">
-                        <UserGroupIcon className="w-4 h-4" />
+                        <UsersIcon className="w-4 h-4" />
                         <span>{event.attendees}/{event.maxAttendees}</span>
                       </div>
                       <div className="flex items-center gap-1">
