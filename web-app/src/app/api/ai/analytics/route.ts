@@ -546,7 +546,7 @@ function generatePerformanceRecommendations(
         'Enhance traditional knowledge accuracy'
       ],
       expected_improvement: 'Increase cultural authenticity rating to 90%+',
-      cultural_impact: 'Essential for maintaining trust and respect within Portuguese community'
+      cultural_impact: 'Essential for maintaining trust and respect within Portuguese-speaking community'
     })
   }
 

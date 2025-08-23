@@ -51,7 +51,7 @@ Self-hosted ad-revenue system for LusoTown streaming platform with Google AdSens
 📍 Targeting Engine
 ├── IP-based GeoLocation
 ├── Country-specific Campaigns
-├── Portuguese Community Focus
+├── Portuguese-speaking community Focus
 └── Fallback LusoTown Promotions
 ```
 
@@ -642,4 +642,4 @@ curl -H "Authorization: Bearer your_token" \
 
 ---
 
-**🚀 This system will generate significant revenue while maintaining the Portuguese community focus of LusoTown!**
+**🚀 This system will generate significant revenue while maintaining the Portuguese-speaking community focus of LusoTown!**

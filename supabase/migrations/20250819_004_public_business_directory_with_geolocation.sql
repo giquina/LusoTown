@@ -72,7 +72,7 @@ CREATE TABLE portuguese_businesses (
   latitude DECIMAL(10, 8),
   longitude DECIMAL(11, 8),
   
-  -- Portuguese Community Details
+  -- Portuguese-speaking community Details
   owner_name VARCHAR(255) NOT NULL,
   owner_region VARCHAR(50) NOT NULL CHECK (owner_region IN (
     'portugal_mainland', 'portugal_azores', 'portugal_madeira', 'brazil', 
@@ -337,7 +337,7 @@ CREATE TABLE business_submissions (
   email VARCHAR(255),
   website VARCHAR(500),
   
-  -- Portuguese Community Details
+  -- Portuguese-speaking community Details
   owner_name VARCHAR(255) NOT NULL,
   owner_region VARCHAR(50) NOT NULL,
   languages_spoken TEXT[],
@@ -345,7 +345,7 @@ CREATE TABLE business_submissions (
   
   -- Additional Information
   why_portuguese TEXT, -- Why this business should be in Portuguese directory
-  community_connection TEXT, -- How they connect to Portuguese community
+  community_connection TEXT, -- How they connect to Portuguese-speaking community
   special_offers_info TEXT,
   cultural_events_info TEXT,
   
@@ -838,7 +838,7 @@ UNION ALL SELECT
   true,
   4.9,
   312,
-  ARRAY['portuguese cultural center', 'portuguese language classes', 'portuguese community', 'cultural events london', 'high street'],
+  ARRAY['portuguese cultural center', 'portuguese language classes', 'Portuguese-speaking community', 'cultural events london', 'high street'],
   'southeast_london',
   ARRAY['Penge East Station', 'Anerley Station'],
   '{"monday": "09:00-21:00", "tuesday": "09:00-21:00", "wednesday": "09:00-21:00", "thursday": "09:00-21:00", "friday": "09:00-18:00", "saturday": "10:00-17:00", "sunday": "Event days only"}'::jsonb;

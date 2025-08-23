@@ -2,7 +2,7 @@
  * Privacy Policy Management System
  * 
  * Manages privacy policies, consent tracking, and compliance monitoring
- * for Portuguese community data protection standards
+ * for Portuguese-speaking community data protection standards
  */
 
 import { createPortuguesePrivacyFramework } from '@/lib/privacy/PrivacyProtectionFramework'
@@ -272,8 +272,8 @@ export class PrivacyPolicyManager {
       sections: [
         {
           id: 'introduction',
-          title: 'Introduction and Portuguese Community Focus',
-          content: 'LusoTown is committed to protecting the privacy of our Portuguese community members in the UK. We understand the cultural importance of family privacy, heritage protection, and the sensitive nature of saudade and personal connections to Portugal.',
+          title: 'Introduction and Portuguese-speaking community Focus',
+          content: 'LusoTown is committed to protecting the privacy of our Portuguese-speaking community members in the UK. We understand the cultural importance of family privacy, heritage protection, and the sensitive nature of saudade and personal connections to Portugal.',
           importance: 'critical',
           culturalRelevance: true,
           requiresConsent: false
@@ -337,8 +337,8 @@ export class PrivacyPolicyManager {
       sections: [
         {
           id: 'introduction',
-          title: 'Introdução e Foco na Comunidade Portuguesa',
-          content: 'A LusoTown está comprometida em proteger a privacidade dos membros da nossa comunidade portuguesa no Reino Unido. Compreendemos a importância cultural da privacidade familiar, proteção do património, e a natureza sensível da saudade e das ligações pessoais com Portugal.',
+          title: 'Introdução e Foco na Comunidade de Falantes de Português',
+          content: 'A LusoTown está comprometida em proteger a privacidade dos membros da nossa comunidade de falantes de português no Reino Unido. Compreendemos a importância cultural da privacidade familiar, proteção do património, e a natureza sensível da saudade e das ligações pessoais com Portugal.',
           importance: 'critical',
           culturalRelevance: true,
           requiresConsent: false
@@ -615,7 +615,7 @@ export class PrivacyPolicyManager {
           'Request data export through privacy dashboard',
           'Choose format (JSON, CSV, PDF) and language',
           'Cultural data package with context preservation',
-          'Secure transfer to another Portuguese community platform'
+          'Secure transfer to another Portuguese-speaking community platform'
         ],
         formats: ['JSON with cultural metadata', 'CSV for basic data', 'PDF with cultural context'],
         culturalDataIncluded: true
@@ -711,7 +711,7 @@ export class PrivacyPolicyManager {
   }
 
   private async validateCulturalPreferences(preferences: ConsentRecord['culturalPreferences']): Promise<void> {
-    // Validate that cultural preferences align with Portuguese community standards
+    // Validate that cultural preferences align with Portuguese-speaking community standards
     const culturalAssessment = await this.privacyFramework.culturalSensitivity.assessCulturalImpact(preferences)
     
     if (culturalAssessment.sensitivityScore > 80 && preferences.sensitivityLevel === 'standard') {

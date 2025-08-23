@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 /**
- * Portuguese Community Image Optimization Script
+ * Portuguese-speaking community Image Optimization Script
  * 
- * This script helps download, resize, and optimize images for the Portuguese community
+ * This script helps download, resize, and optimize images for the Portuguese-speaking community
  * sections of the LusoTown website. It ensures consistent formatting and web optimization.
  */
 
@@ -45,7 +45,7 @@ const portugueseTestimonials = [
   {
     id: 'carlos-silva',
     name: 'Carlos Silva',
-    description: 'Portuguese community organizer from Camden, London',
+    description: 'Portuguese-speaking community organizer from Camden, London',
     category: 'testimonials',
     keywords: ['Portuguese man professional', 'young entrepreneur', 'community leader']
   },
@@ -142,7 +142,7 @@ const portugueseEvents = [
     name: 'Portuguese Football Screening',
     description: 'Portuguese football viewing party (Benfica vs Porto)',
     category: 'events',
-    keywords: ['Portuguese football fans', 'sports bar', 'Portuguese community']
+    keywords: ['Portuguese football fans', 'sports bar', 'Portuguese-speaking community']
   },
   {
     id: 'portuguese-networking',
@@ -163,7 +163,7 @@ const portugueseEvents = [
     name: 'Mozambican Seafood BBQ',
     description: 'Mozambican seafood BBQ community gathering',
     category: 'events',
-    keywords: ['Mozambican culture', 'seafood BBQ', 'Portuguese community']
+    keywords: ['Mozambican culture', 'seafood BBQ', 'Portuguese-speaking community']
   },
   {
     id: 'portuguese-cinema',
@@ -257,7 +257,7 @@ async function generatePlaceholder(item, outputPath) {
       </text>
       <text x="${specs.width/2}" y="${specs.height/2 + 20}" text-anchor="middle" 
             fill="white" font-size="12" font-family="Arial, sans-serif">
-        Portuguese Community
+        Portuguese-speaking community
       </text>
     </svg>
   `;
@@ -277,7 +277,7 @@ async function generatePlaceholder(item, outputPath) {
  * Main execution function
  */
 async function main() {
-  console.log('🇵🇹 Portuguese Community Image Optimization Script');
+  console.log('🇵🇹 Portuguese-speaking community Image Optimization Script');
   console.log('=================================================');
   
   const publicDir = path.join(__dirname, '../public');
@@ -353,10 +353,10 @@ async function main() {
   console.log('5. 🏃 Run this script again to optimize: npm run optimize-images');
   console.log('');
   console.log('💡 Pro tip: Look for images with Portuguese flag colors, cultural elements,');
-  console.log('   London backgrounds, or authentic Portuguese community settings.');
+  console.log('   London backgrounds, or authentic Portuguese-speaking community settings.');
   
   console.log('\\n✅ Placeholder generation complete!');
-  console.log('🎯 Ready for authentic Portuguese community images.');
+  console.log('🎯 Ready for authentic Portuguese-speaking community images.');
 }
 
 // Error handling

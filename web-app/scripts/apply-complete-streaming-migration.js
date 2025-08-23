@@ -31,7 +31,7 @@ const MIGRATIONS = [
 async function applyCompleteStreamingMigration() {
   console.log('🎬 LusoTown Complete Streaming Platform Migration');
   console.log('==================================================');
-  console.log('🇵🇹 Applying Portuguese Community Streaming Database Schema');
+  console.log('🇵🇹 Applying Portuguese-speaking community Streaming Database Schema');
   console.log('');
   
   // Validate environment variables
@@ -162,7 +162,7 @@ async function applyCompleteStreamingMigration() {
     if (successfulTables === totalTables) {
       console.log('🎉 ALL STREAMING TABLES SUCCESSFULLY CREATED!');
       console.log('');
-      console.log('🇵🇹 Portuguese Community Streaming Platform Features:');
+      console.log('🇵🇹 Portuguese-speaking community Streaming Platform Features:');
       console.log('   • Stream categories with cultural context');
       console.log('   • Portuguese emotes system (:saudade:, :festa:, :futebol:)');
       console.log('   • Creator monetization (85/15 revenue split)');

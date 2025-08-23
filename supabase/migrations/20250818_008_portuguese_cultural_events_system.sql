@@ -1,6 +1,6 @@
 -- Portuguese Cultural Events System Enhancement
 -- Created: 2025-08-18
--- Purpose: Enhance events system to be the primary driver for Portuguese community engagement
+-- Purpose: Enhance events system to be the primary driver for Portuguese-speaking community engagement
 
 -- Add Portuguese cultural categories to events
 alter table public.events add column if not exists cultural_category varchar(100);
@@ -92,7 +92,7 @@ create table public.event_recommendations (
     unique(user_id, event_id)
 );
 
--- Create RSVP verification table for Portuguese community events
+-- Create RSVP verification table for Portuguese-speaking community events
 create table public.event_rsvp_verification (
     id uuid default uuid_generate_v4() primary key,
     event_id uuid references public.events(id) on delete cascade,
@@ -155,7 +155,7 @@ insert into public.portuguese_cultural_calendar (name, description, cultural_sig
  array['sopas', 'massa sovada', 'linguiça', 'traditional bread'],
  array['hymns', 'traditional azorean music']),
 
--- London-specific Portuguese community events
+-- London-specific Portuguese-speaking community events
 ('Festa Junina Londres', 'London Brazilian-Portuguese June Festival', 'Celebration bringing together all Lusophone communities in London', 'community', 'diaspora', 'fixed', '2025-06-21', false, 4,
  array['quadrilha dancing', 'traditional games', 'bonfire celebrations', 'flag ceremonies'],
  array['pamonha', 'quentão', 'pé de moleque', 'canjica'],

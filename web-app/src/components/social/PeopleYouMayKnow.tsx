@@ -270,7 +270,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
         </div>
       </div>
 
-      {/* Portuguese Community Connection */}
+      {/* Portuguese-speaking community Connection */}
       <div className="px-6 pb-6">
         <div className="bg-gradient-to-r from-accent-50 to-coral-50 rounded-lg p-4">
           <div className="flex items-center space-x-2 mb-3">

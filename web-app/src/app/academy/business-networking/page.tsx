@@ -68,14 +68,14 @@ export default function BusinessNetworkingModule() {
       "Navigate business etiquette in bilingual environments",
       "Leverage cultural heritage for business advantages",
       "Create lasting partnerships and collaborations",
-      "Develop your personal brand within the Portuguese community",
+      "Develop your personal brand within the Portuguese-speaking community",
     ],
     learningObjectivesPortuguese: [
       "Construir conexões profissionais significativas com empreendedores portugueses",
       "Navegar etiqueta empresarial em ambientes bilingues",
       "Aproveitar herança cultural para vantagens empresariais",
       "Criar parcerias e colaborações duradouras",
-      "Desenvolver sua marca pessoal dentro da comunidade portuguesa",
+      "Desenvolver sua marca pessoal dentro da comunidade de falantes de português",
     ],
     steps: [
       {
@@ -177,7 +177,7 @@ export default function BusinessNetworkingModule() {
             <li><strong>Patience:</strong> Don't rush into business propositions</li>
             <li><strong>Consistency:</strong> Regular, meaningful contact over time</li>
             <li><strong>Reciprocity:</strong> Always look for ways to help others first</li>
-            <li><strong>Community Contribution:</strong> Support Portuguese community initiatives</li>
+            <li><strong>Community Contribution:</strong> Support Portuguese-speaking community initiatives</li>
           </ul>
           
           <h3>Conversation Starters for Professional Settings:</h3>
@@ -214,7 +214,7 @@ export default function BusinessNetworkingModule() {
             <li><strong>Paciência:</strong> Não se apresse em proposições empresariais</li>
             <li><strong>Consistência:</strong> Contacto regular e significativo ao longo do tempo</li>
             <li><strong>Reciprocidade:</strong> Procure sempre formas de ajudar outros primeiro</li>
-            <li><strong>Contribuição Comunitária:</strong> Apoie iniciativas da comunidade portuguesa</li>
+            <li><strong>Contribuição Comunitária:</strong> Apoie iniciativas da comunidade de falantes de português</li>
           </ul>
           
           <h3>Iniciadores de Conversa para Ambientes Profissionais:</h3>
@@ -492,7 +492,7 @@ export default function BusinessNetworkingModule() {
           <h4>In Business Development:</h4>
           <ul>
             <li>Identify partnership opportunities with Portuguese companies</li>
-            <li>Develop products/services for Portuguese community needs</li>
+            <li>Develop products/services for Portuguese-speaking community needs</li>
             <li>Create authentic marketing for Portuguese audiences</li>
             <li>Build bridges between British and Portuguese business practices</li>
           </ul>
@@ -556,7 +556,7 @@ export default function BusinessNetworkingModule() {
           <h4>No Desenvolvimento de Negócios:</h4>
           <ul>
             <li>Identifique oportunidades de parceria com empresas portuguesas</li>
-            <li>Desenvolva produtos/serviços para necessidades da comunidade portuguesa</li>
+            <li>Desenvolva produtos/serviços para necessidades da comunidade de falantes de português</li>
             <li>Crie marketing autêntico para audiências portuguesas</li>
             <li>Construa pontes entre práticas empresariais britânicas e portuguesas</li>
           </ul>
@@ -633,7 +633,7 @@ export default function BusinessNetworkingModule() {
                 <li>Share insights about Portuguese business culture</li>
                 <li>Comment thoughtfully on Portuguese professionals' posts</li>
                 <li>Write articles about cross-cultural business</li>
-                <li>Share success stories from the Portuguese community</li>
+                <li>Share success stories from the Portuguese-speaking community</li>
               </ul>
             </li>
           </ul>
@@ -731,7 +731,7 @@ export default function BusinessNetworkingModule() {
                 <li>Partilhe insights sobre cultura empresarial portuguesa</li>
                 <li>Comente reflexivamente em posts de profissionais portugueses</li>
                 <li>Escreva artigos sobre negócios interculturais</li>
-                <li>Partilhe histórias de sucesso da comunidade portuguesa</li>
+                <li>Partilhe histórias de sucesso da comunidade de falantes de português</li>
               </ul>
             </li>
           </ul>

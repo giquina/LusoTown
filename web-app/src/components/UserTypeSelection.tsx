@@ -110,7 +110,7 @@ export default function UserTypeSelection() {
   const strings = {
     en: {
       title: 'Welcome to LusoTown',
-      subtitle: "London's Portuguese community platform • 2,750+ verified members",
+      subtitle: "London's Portuguese-speaking community platform • 2,750+ verified members",
       skipForNow: 'Skip for now',
       roleQuestion: 'How would you like to participate?',
       userRole: 'Join as Member',
@@ -136,7 +136,7 @@ export default function UserTypeSelection() {
         { 
           title: 'Events Discovery', 
           subtitle: 'From £5',
-          desc: 'Authentic fado nights, Santos Populares, networking events, and cultural celebrations. Curated by Portuguese community leaders.', 
+          desc: 'Authentic fado nights, Santos Populares, networking events, and cultural celebrations. Curated by Portuguese-speaking community leaders.', 
           cta: 'Browse Events', 
           href: ROUTES.events, 
           icon: CalendarDaysIcon, 
@@ -165,7 +165,7 @@ export default function UserTypeSelection() {
     },
     pt: {
       title: 'Bem-vindo à LusoTown',
-      subtitle: 'Plataforma da comunidade portuguesa em Londres • 2.750+ membros verificados',
+      subtitle: 'Plataforma da comunidade de falantes de português em Londres • 2.750+ membros verificados',
       skipForNow: 'Pular por agora',
       roleQuestion: 'Como gostaria de participar?',
       userRole: 'Juntar como Membro',
@@ -191,7 +191,7 @@ export default function UserTypeSelection() {
         { 
           title: 'Descoberta de Eventos', 
           subtitle: 'A partir de £5',
-          desc: 'Noites de fado autênticas, Santos Populares, eventos de networking e celebrações culturais. Curados por líderes da comunidade portuguesa.', 
+          desc: 'Noites de fado autênticas, Santos Populares, eventos de networking e celebrações culturais. Curados por líderes da comunidade de falantes de português.', 
           cta: 'Ver Eventos', 
           href: ROUTES.events, 
           icon: CalendarDaysIcon, 

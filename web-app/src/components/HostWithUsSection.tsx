@@ -124,7 +124,7 @@ export default function HostWithUsSection() {
                     Business Promotion
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6 flex-grow text-xs sm:text-sm lg:text-base">
-                    Promote restaurants, shops, professional services to Portuguese community.
+                    Promote restaurants, shops, professional services to Portuguese-speaking community.
                   </p>
                   <div className="text-xs text-gray-500 mb-2 sm:mb-3 lg:mb-4 font-medium">
                     Restaurants • Shops • Services

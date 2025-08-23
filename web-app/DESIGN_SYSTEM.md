@@ -134,7 +134,7 @@ Use for card actions and secondary interactions
 import { Typography } from '@/lib/design'
 
 // Display Large (Hero titles)
-<h1 className={Typography.displayLarge}>Your Portuguese Community</h1>
+<h1 className={Typography.displayLarge}>Your Portuguese-speaking community</h1>
 
 // Display (Section titles)
 <h2 className={Typography.display}>Unidos pela Língua</h2>
@@ -366,7 +366,7 @@ Use intelligent centering to prevent viewport overflow:
     <HeartIcon className="w-8 h-8 text-white" />
   </div>
   <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-secondary-600 transition-colors duration-300">
-    Portuguese Community
+    Portuguese-speaking community
   </h3>
   <p className="text-gray-600 leading-relaxed">
     Connect with Portuguese speakers who share your culture and heritage.

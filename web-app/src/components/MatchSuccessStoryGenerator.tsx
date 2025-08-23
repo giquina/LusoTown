@@ -94,12 +94,12 @@ const storyTemplates = {
     en: [
       "Shared a Portuguese cultural tour with {name} today! Our guide's stories about {cultural_element} brought back so many memories from home. Perfect day! 🗺️",
       "Took the transport service to {location} with {name} - having a Portuguese-speaking driver made all the difference! Talked about {cultural_element} the whole way. 🚗",
-      "Found the perfect apartment in {location} with help from {name}! The Portuguese community here is incredible. Can't wait to host our first {cultural_element} dinner! 🏠"
+      "Found the perfect apartment in {location} with help from {name}! The Portuguese-speaking community here is incredible. Can't wait to host our first {cultural_element} dinner! 🏠"
     ],
     pt: [
       "Partilhei um tour cultural português com {name} hoje! As histórias do nosso guia sobre {cultural_element} trouxeram tantas memórias de casa. Dia perfeito! 🗺️",
       "Apanhámos o serviço de transporte para {location} com {name} - ter um motorista que fala português fez toda a diferença! Falámos sobre {cultural_element} todo o caminho. 🚗",
-      "Encontrámos o apartamento perfeito em {location} com ajuda de {name}! A comunidade portuguesa aqui é incrível. Mal posso esperar para organizar o nosso primeiro jantar de {cultural_element}! 🏠"
+      "Encontrámos o apartamento perfeito em {location} com ajuda de {name}! A comunidade de falantes de português aqui é incrível. Mal posso esperar para organizar o nosso primeiro jantar de {cultural_element}! 🏠"
     ]
   },
   cultural_moment: {

@@ -36,7 +36,7 @@ When a user says *"I asked for X but the website shows Y"*, the ICA should:
 - Ask clarifying questions to understand user intent
 - Explain trade-offs between different approaches
 - Recommend solutions that align with platform goals
-- Guide users toward best practices for Portuguese community platform
+- Guide users toward best practices for Portuguese-speaking community platform
 
 ### 4. **Documentation Maintenance**
 - Identify gaps in rules or instructions
@@ -217,7 +217,7 @@ ICA Analysis:
 ✅ Checked /src/config/brand.ts: Portuguese cultural colors defined
 ✅ Found reasoning: Green represents Portuguese flag heritage
 
-Explanation: The platform uses green because it's part of the Portuguese cultural color palette (Portuguese flag: green and red). This maintains cultural authenticity for the Portuguese community.
+Explanation: The platform uses green because it's part of the Portuguese cultural color palette (Portuguese flag: green and red). This maintains cultural authenticity for the Portuguese-speaking community.
 
 Question: Would you prefer to:
 A) Add blue as an accent color while keeping Portuguese green primary?
@@ -244,4 +244,4 @@ C) Clarify which specific options you'd prefer to keep?
 
 ---
 
-*This agent specializes in maintaining consistency between user intentions and platform implementation while respecting established rules and best practices for the Portuguese community platform.*
+*This agent specializes in maintaining consistency between user intentions and platform implementation while respecting established rules and best practices for the Portuguese-speaking community platform.*

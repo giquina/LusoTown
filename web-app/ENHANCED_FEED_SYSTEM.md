@@ -1,14 +1,14 @@
 # Enhanced LusoTown Social Feed System with Content Moderation & Service Integration
 
 ## Overview
-Successfully implemented a comprehensive enhanced social feed system for LusoTown that enforces strict content moderation while seamlessly integrating community services. The system ensures all content remains relevant to the Portuguese community in London while promoting authentic service offerings.
+Successfully implemented a comprehensive enhanced social feed system for LusoTown that enforces strict content moderation while seamlessly integrating community services. The system ensures all content remains relevant to the Portuguese-speaking community in London while promoting authentic service offerings.
 
 ## Key Components Created
 
 ### 1. Enhanced Post Creator (`/src/components/EnhancedPostCreator.tsx`)
 **Features:**
 - Service-specific post templates for different community offerings
-- Real-time content validation with Portuguese community relevance scoring
+- Real-time content validation with Portuguese-speaking community relevance scoring
 - Subscription tier-based template access (Free/Community/Ambassador)
 - Guided posting process with structured fields for service posts
 - Content moderation system that blocks non-relevant posts
@@ -18,11 +18,11 @@ Successfully implemented a comprehensive enhanced social feed system for LusoTow
 - 🏛️ **Tour Experience Shared** (Free tier) - Cultural tour experiences and recommendations
 - 🎉 **Portuguese Event Promotion** (Community tier) - Community events with transport coordination
 - 💼 **Business Recommendation** (Free tier) - Portuguese business recommendations
-- 🏠 **Housing Opportunity** (Free tier) - Housing in Portuguese community areas
+- 🏠 **Housing Opportunity** (Free tier) - Housing in Portuguese-speaking community areas
 
 ### 2. Service Integration Feed (`/src/components/ServiceIntegrationFeed.tsx`)
 **Features:**
-- Dedicated feed for Portuguese community service posts
+- Dedicated feed for Portuguese-speaking community service posts
 - Service provider verification badges and ratings
 - Booking integration with service details (price, availability, areas, languages)
 - Featured service highlighting for premium members
@@ -39,7 +39,7 @@ Successfully implemented a comprehensive enhanced social feed system for LusoTow
 **Comprehensive Moderation Rules:**
 
 **ALLOWED CONTENT (Positive Scoring):**
-- Portuguese Community Keywords (+30 points): português, brasil, fado, saudade, etc.
+- Portuguese-speaking community Keywords (+30 points): português, brasil, fado, saudade, etc.
 - Transport Services (+25 points): transport, tour, chauffeur, airport transfers
 - Community Events (+20 points): cultural events, workshops, meetups, networking
 - Business Services (+15 points): Portuguese restaurants, bakeries, professional services
@@ -91,17 +91,17 @@ Successfully implemented a comprehensive enhanced social feed system for LusoTow
 
 ### **Allowed Content Categories:**
 1. **Transport & Tours:** Service availability, experience sharing, cultural tours
-2. **Cultural Events:** Portuguese community events, cultural celebrations
+2. **Cultural Events:** Portuguese-speaking community events, cultural celebrations
 3. **Business Services:** Portuguese businesses, professional networking
-4. **Housing:** Rentals/sales in Portuguese community areas
+4. **Housing:** Rentals/sales in Portuguese-speaking community areas
 5. **Community Support:** Helping fellow Portuguese speakers
 6. **Cultural Sharing:** Language learning, traditions, food experiences
 
 ### **Blocked Content Types:**
-1. General social media posts unrelated to Portuguese community
-2. Non-Portuguese business promotion (unless serving Portuguese community)
+1. General social media posts unrelated to Portuguese-speaking community
+2. Non-Portuguese business promotion (unless serving Portuguese-speaking community)
 3. Personal relationship drama
-4. Political content not related to Portuguese community interests
+4. Political content not related to Portuguese-speaking community interests
 5. Random lifestyle posts without community connection
 
 ## Technical Implementation
@@ -131,7 +131,7 @@ Successfully implemented a comprehensive enhanced social feed system for LusoTow
 - Community trust indicators and social proof
 
 ### **For Community Members:**
-- Easy discovery of Portuguese community services
+- Easy discovery of Portuguese-speaking community services
 - Verified service provider information
 - Cultural context and Portuguese language support
 - Community recommendations and reviews
@@ -173,6 +173,6 @@ Successfully implemented a comprehensive enhanced social feed system for LusoTow
 
 ## Conclusion
 
-The enhanced social feed system successfully transforms LusoTown from a simple social platform into a comprehensive Portuguese community ecosystem. By enforcing strict content moderation while seamlessly integrating essential community services, the platform ensures all content serves the Portuguese community's authentic needs while driving real-world connections and service utilization.
+The enhanced social feed system successfully transforms LusoTown from a simple social platform into a comprehensive Portuguese-speaking community ecosystem. By enforcing strict content moderation while seamlessly integrating essential community services, the platform ensures all content serves the Portuguese-speaking community's authentic needs while driving real-world connections and service utilization.
 
 The system maintains LusoTown's core values of cultural authenticity, community connection, and Portuguese heritage while providing practical value through verified community services and professional networking opportunities.

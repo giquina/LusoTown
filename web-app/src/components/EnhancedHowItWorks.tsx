@@ -261,8 +261,8 @@ export default function EnhancedHowItWorks() {
             className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
           >
             {isPortuguese
-              ? "Descubra tudo o que pode fazer na maior comunidade portuguesa de Londres"
-              : "Discover everything you can do in London's largest Portuguese community"}
+              ? "Descubra tudo o que pode fazer na maior comunidade de falantes de português de Londres"
+              : "Discover everything you can do in London's largest Portuguese-speaking community"}
           </motion.p>
         </div>
 

@@ -1,4 +1,4 @@
--- Enhanced subscription system for Portuguese community networking and business features
+-- Enhanced subscription system for Portuguese-speaking community networking and business features
 -- This migration adds support for the new tier structure, usage tracking, and feature gating
 
 -- Update subscriptions table with new tier structure
@@ -307,10 +307,10 @@ $$ LANGUAGE plpgsql;
 
 -- Insert default promotional codes
 INSERT INTO pricing_promotions (promo_code, discount_percentage, valid_until, target_audience, description_en, description_pt) VALUES
-  ('LUSO2025', 25, '2025-12-31 23:59:59+00', 'general', 'New Year Portuguese Community Special', 'Especial de Ano Novo da Comunidade Portuguesa'),
-  ('STUDENT50', 50, '2025-09-30 23:59:59+00', 'students', 'Student Back-to-School Discount', 'Desconto de Volta às Aulas para Estudantes'),
-  ('FAMILY20', 20, '2025-06-30 23:59:59+00', 'families', 'Family Membership Discount', 'Desconto para Membros de Família'),
-  ('BUSINESS15', 15, '2025-08-31 23:59:59+00', 'businesses', 'Business Network Early Bird', 'Early Bird da Rede de Negócios')
+  ('LUSO2025', 25, '2025-12-31 23:59:59+00', 'general', 'New Year Portuguese-speaking community Special', 'Especial de Ano Novo da Comunidade de Falantes de PortuguÃªs'),
+  ('STUDENT50', 50, '2025-09-30 23:59:59+00', 'students', 'Student Back-to-School Discount', 'Desconto de Volta ï¿½s Aulas para Estudantes'),
+  ('FAMILY20', 20, '2025-06-30 23:59:59+00', 'families', 'Family Membership Discount', 'Desconto para Membros de Famï¿½lia'),
+  ('BUSINESS15', 15, '2025-08-31 23:59:59+00', 'businesses', 'Business Network Early Bird', 'Early Bird da Rede de Negï¿½cios')
 ON CONFLICT (promo_code) DO NOTHING;
 
 -- Add RLS policies for new tables
@@ -376,6 +376,6 @@ COMMENT ON TABLE subscription_usage IS 'Tracks feature usage per user to enforce
 COMMENT ON TABLE subscription_features IS 'Logs all feature usage for analytics and billing';
 COMMENT ON TABLE student_verifications IS 'Manages student email verification for discounted subscriptions';
 COMMENT ON TABLE corporate_accounts IS 'Corporate subscription accounts with bulk pricing';
-COMMENT ON TABLE pricing_promotions IS 'Promotional codes and discounts for Portuguese community';
+COMMENT ON TABLE pricing_promotions IS 'Promotional codes and discounts for Portuguese-speaking community';
 
 -- End of migration

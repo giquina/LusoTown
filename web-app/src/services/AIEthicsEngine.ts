@@ -1,5 +1,5 @@
 /**
- * AI Ethics & Community Guidelines Engine for LusoTown Portuguese Community Platform
+ * AI Ethics & Community Guidelines Engine for LusoTown Portuguese-speaking community Platform
  * 
  * Comprehensive AI ethics framework that respects Portuguese cultural values, protects 
  * community privacy, and ensures transparent AI usage with regular community feedback.
@@ -7,9 +7,9 @@
  * Implementation covers:
  * ✅ Heritage Respect Protocol for Portuguese cultural values
  * ✅ Language Preservation AI promoting Portuguese while supporting bilingual needs
- * ✅ Privacy Protection Framework for Portuguese community data
+ * ✅ Privacy Protection Framework for Portuguese-speaking community data
  * ✅ Transparency Implementation with clear AI disclosure and user controls
- * ✅ Community Feedback Integration for regular Portuguese community input on AI features
+ * ✅ Community Feedback Integration for regular Portuguese-speaking community input on AI features
  */
 
 import { supabase } from '@/lib/supabase'
@@ -142,7 +142,7 @@ export interface CulturalContextValidation {
 export class AIEthicsEngine {
   private supabaseClient = supabase
   
-  // Portuguese community metrics for ethical decisions
+  // Portuguese-speaking community metrics for ethical decisions
   private communityMetrics = {
     totalMembers: parseInt(process.env.NEXT_PUBLIC_TOTAL_MEMBERS || '750'),
     totalStudents: parseInt(process.env.NEXT_PUBLIC_TOTAL_STUDENTS || '2150'),
@@ -556,7 +556,7 @@ export class AIEthicsEngine {
   }
 
   /**
-   * Monitor cultural data protection specifically for Portuguese community
+   * Monitor cultural data protection specifically for Portuguese-speaking community
    */
   async monitorCulturalDataProtection(): Promise<{
     heritage_data_protection: number
@@ -668,7 +668,7 @@ export class AIEthicsEngine {
   }
 
   /**
-   * Provide bilingual AI explanations for Portuguese community
+   * Provide bilingual AI explanations for Portuguese-speaking community
    */
   async explainAIFeatureToUser(
     feature: 'notifications' | 'matching' | 'analytics' | 'lusobot',
@@ -694,7 +694,7 @@ export class AIEthicsEngine {
               "Opt out of any AI features at any time"
             ],
             privacy_assurances: "Your cultural data is encrypted and never shared without explicit consent. Portuguese heritage information receives maximum protection.",
-            community_benefits: "Helps strengthen Portuguese community connections and preserves cultural traditions through relevant content sharing."
+            community_benefits: "Helps strengthen Portuguese-speaking community connections and preserves cultural traditions through relevant content sharing."
           },
           matching: {
             explanation: "AI suggests compatible connections using cultural compatibility factors, shared interests, and community involvement patterns while respecting Portuguese social values.",
@@ -706,10 +706,10 @@ export class AIEthicsEngine {
               "Report inappropriate suggestions"
             ],
             privacy_assurances: "Matching data is private and secure. Cultural preferences are protected with enhanced encryption and require explicit consent.",
-            community_benefits: "Strengthens Portuguese community bonds and helps preserve cultural values through compatible connections."
+            community_benefits: "Strengthens Portuguese-speaking community bonds and helps preserve cultural values through compatible connections."
           },
           analytics: {
-            explanation: "AI analyzes anonymized community patterns to improve platform features, understand Portuguese community needs, and enhance cultural experiences.",
+            explanation: "AI analyzes anonymized community patterns to improve platform features, understand Portuguese-speaking community needs, and enhance cultural experiences.",
             cultural_relevance: "Insights help preserve Portuguese culture, support diaspora needs, and celebrate regional diversity within the community.",
             user_controls: [
               "Control participation in analytics",
@@ -718,7 +718,7 @@ export class AIEthicsEngine {
               "Request data deletion at any time"
             ],
             privacy_assurances: "Analytics use only aggregated, anonymized data. Individual privacy is fully protected with GDPR compliance.",
-            community_benefits: "Helps understand Portuguese community trends and improve services for better cultural preservation and community growth."
+            community_benefits: "Helps understand Portuguese-speaking community trends and improve services for better cultural preservation and community growth."
           },
           lusobot: {
             explanation: "AI-powered cultural assistant trained on Portuguese heritage, traditions, and community knowledge to provide authentic cultural support and guidance.",
@@ -744,7 +744,7 @@ export class AIEthicsEngine {
               "Sair de qualquer funcionalidade de IA a qualquer momento"
             ],
             privacy_assurances: "Os seus dados culturais são encriptados e nunca partilhados sem consentimento explícito. Informações do património português recebem proteção máxima.",
-            community_benefits: "Ajuda a fortalecer as conexões da comunidade portuguesa e preserva tradições culturais através da partilha de conteúdo relevante."
+            community_benefits: "Ajuda a fortalecer as conexões da comunidade de falantes de português e preserva tradições culturais através da partilha de conteúdo relevante."
           },
           matching: {
             explanation: "A IA sugere conexões compatíveis usando fatores de compatibilidade cultural, interesses partilhados e padrões de envolvimento comunitário, respeitando valores sociais portugueses.",
@@ -756,10 +756,10 @@ export class AIEthicsEngine {
               "Reportar sugestões inadequadas"
             ],
             privacy_assurances: "Os dados de correspondência são privados e seguros. Preferências culturais são protegidas com encriptação melhorada e requerem consentimento explícito.",
-            community_benefits: "Fortalece laços da comunidade portuguesa e ajuda a preservar valores culturais através de conexões compatíveis."
+            community_benefits: "Fortalece laços da comunidade de falantes de português e ajuda a preservar valores culturais através de conexões compatíveis."
           },
           analytics: {
-            explanation: "A IA analisa padrões comunitários anonimizados para melhorar funcionalidades da plataforma, compreender necessidades da comunidade portuguesa e melhorar experiências culturais.",
+            explanation: "A IA analisa padrões comunitários anonimizados para melhorar funcionalidades da plataforma, compreender necessidades da comunidade de falantes de português e melhorar experiências culturais.",
             cultural_relevance: "Insights ajudam a preservar a cultura portuguesa, apoiar necessidades da diáspora e celebrar diversidade regional dentro da comunidade.",
             user_controls: [
               "Controlar participação em análises",
@@ -768,7 +768,7 @@ export class AIEthicsEngine {
               "Solicitar eliminação de dados a qualquer momento"
             ],
             privacy_assurances: "Análises usam apenas dados agregados e anonimizados. Privacidade individual é totalmente protegida com conformidade GDPR.",
-            community_benefits: "Ajuda a compreender tendências da comunidade portuguesa e melhorar serviços para melhor preservação cultural e crescimento comunitário."
+            community_benefits: "Ajuda a compreender tendências da comunidade de falantes de português e melhorar serviços para melhor preservação cultural e crescimento comunitário."
           },
           lusobot: {
             explanation: "Assistente cultural com IA treinado no património português, tradições e conhecimento comunitário para fornecer apoio cultural autêntico e orientação.",
@@ -800,7 +800,7 @@ export class AIEthicsEngine {
   // =============================================================================
 
   /**
-   * Collect regular Portuguese community feedback on AI features
+   * Collect regular Portuguese-speaking community feedback on AI features
    */
   async collectCommunityFeedback(
     feedbackType: 'monthly_survey' | 'feature_specific' | 'cultural_accuracy' | 'privacy_concerns',
@@ -980,7 +980,7 @@ export class AIEthicsEngine {
     try {
       // Setup monitoring tables if they don't exist
       // In production, these would be created via Supabase migrations
-      console.log('[AI Ethics Engine] Ethics monitoring initialized for Portuguese community')
+      console.log('[AI Ethics Engine] Ethics monitoring initialized for Portuguese-speaking community')
     } catch (error) {
       console.error('[AI Ethics Engine] Failed to initialize ethics monitoring:', error)
     }

@@ -106,8 +106,8 @@ function ReferralsPageInner() {
                 </h3>
                 <p className="text-sm text-red-100">
                   {language === "pt"
-                    ? "Ajude a crescer a comunidade portuguesa"
-                    : "Help grow the Portuguese community"}
+                    ? "Ajude a crescer a comunidade de falantes de português"
+                    : "Help grow the Portuguese-speaking community"}
                 </p>
               </div>
             </div>
@@ -129,7 +129,7 @@ function ReferralsPageInner() {
               description={
                 language === "pt"
                   ? "Acesse o sistema de indicações e comece a ganhar recompensas por trazer amigos portugueses à comunidade."
-                  : "Access the referral system and start earning rewards for bringing Portuguese friends to the community."
+                  : "Access the referral system and start earning rewards for bringing Portuguese-speaking friends to the community."
               }
               features={[
                 language === "pt"

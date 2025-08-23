@@ -72,8 +72,8 @@ export default function SubscriptionGate({
             ? "Subscrição Necessária para Entrar"
             : "Subscription Required to Login",
           description: isPortuguese
-            ? "Para aceder à sua conta LusoTown e conectar-se com a comunidade portuguesa, precisa de uma subscrição ativa."
-            : "To access your LusoTown account and connect with the Portuguese community, you need an active subscription.",
+            ? "Para aceder à sua conta LusoTown e conectar-se com a comunidade de falantes de português, precisa de uma subscrição ativa."
+            : "To access your LusoTown account and connect with the Portuguese-speaking community, you need an active subscription.",
           icon: ShieldCheckIcon,
           buttonText: isPortuguese
             ? `Começar com ${formatPrice(plans.community.monthly)}/mês`
@@ -120,8 +120,8 @@ export default function SubscriptionGate({
           description:
             description ||
             (isPortuguese
-              ? "Esta funcionalidade requer uma subscrição ativa para aceder à comunidade portuguesa completa."
-              : "This feature requires an active subscription to access the full Portuguese community."),
+              ? "Esta funcionalidade requer uma subscrição ativa para aceder à comunidade de falantes de português completa."
+              : "This feature requires an active subscription to access the full Portuguese-speaking community."),
           icon: ShieldCheckIcon,
           buttonText: isPortuguese ? "Ver Subscrição" : "View Subscription",
         };

@@ -598,7 +598,7 @@ INSERT INTO public.youtube_playlists (youtube_playlist_id, title, description, c
 ('PLLusoSuccessStories', 'LusoTown: Histórias de Sucesso da Comunidade', 'Histórias inspiradoras de portugueses que alcançaram sucesso em Londres', 'success_stories', 'diaspora', 'public'),
 ('PLLusoCulturalEvents', 'LusoTown: Eventos Culturais Portugueses', 'Prévias e destaques dos nossos eventos culturais portugueses', 'events', 'universal', 'public'),
 ('PLLusoTraditions', 'LusoTown: Tradições Portuguesas em Londres', 'Preservando e celebrando tradições portuguesas na capital britânica', 'traditions', 'portugal', 'public'),
-('PLLusoBusiness', 'LusoTown: Negócios e Empreendedorismo', 'Histórias de sucesso empresarial da comunidade portuguesa', 'business', 'universal', 'public'),
+('PLLusoBusiness', 'LusoTown: Negócios e Empreendedorismo', 'Histórias de sucesso empresarial da comunidade de falantes de português', 'business', 'universal', 'public'),
 ('PLLusoMusic', 'LusoTown: Música e Fado', 'A alma portuguesa através da música e do Fado', 'music', 'portugal', 'public'),
 ('PLLusoGastronomy', 'LusoTown: Sabores de Portugal', 'Culinária portuguesa autêntica em Londres', 'gastronomy', 'portugal', 'public');
 
@@ -608,7 +608,7 @@ INSERT INTO public.youtube_playlists (youtube_playlist_id, title, description, c
 
 COMMENT ON TABLE public.youtube_videos IS 'Central repository for all LusoTown YouTube videos with Portuguese cultural metadata and performance tracking';
 COMMENT ON TABLE public.youtube_playlists IS 'YouTube playlists organized by Portuguese cultural categories and themes';
-COMMENT ON TABLE public.member_spotlights IS 'Member spotlight video system showcasing Portuguese community success stories and cultural preservation';
+COMMENT ON TABLE public.member_spotlights IS 'Member spotlight video system showcasing Portuguese-speaking community success stories and cultural preservation';
 COMMENT ON TABLE public.event_previews IS 'Event preview video system with Portuguese cultural context and host introductions';
 COMMENT ON TABLE public.event_highlights IS 'Automated highlight reel generation from Portuguese cultural events with AI processing';
 COMMENT ON TABLE public.youtube_content_calendar IS 'Content planning and scheduling system for Portuguese cultural YouTube content';
@@ -624,6 +624,6 @@ COMMENT ON TABLE public.cultural_content_analytics IS 'Detailed analytics tracki
 -- 3. Event preview generation with cultural context and host scripts
 -- 4. Automated event highlight compilation with cultural moment detection
 -- 5. Content calendar and scheduling system for Portuguese cultural content
--- 6. Advanced analytics tracking Portuguese community engagement
+-- 6. Advanced analytics tracking Portuguese-speaking community engagement
 -- 7. Cultural authenticity scoring and Portuguese heritage preservation focus
 -- 8. Full integration with existing LusoTown events and member systems

@@ -72,7 +72,7 @@ export default function Contact() {
                   className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-2 text-primary-600 font-medium mb-6 shadow-lg border border-primary-100"
                 >
                   <HeartIcon className="h-5 w-5" />
-                  {t('contact.portuguese-community', 'Portuguese Community Support')}
+                  {t('contact.portuguese-community', 'Portuguese-speaking community Support')}
                 </motion.div>
                 
                 <motion.h1 
@@ -91,7 +91,7 @@ export default function Contact() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto"
                 >
-                  {t('contact.subtitle', 'Your Portuguese community across the UK is here to support you. Whether you need help finding events, connecting with other Portuguese speakers, or have questions about our community - we\'re here with a warm welcome.')}
+                  {t('contact.subtitle', 'Your Portuguese-speaking community across the UK is here to support you. Whether you need help finding events, connecting with other Portuguese speakers, or have questions about our community - we\'re here with a warm welcome.')}
                 </motion.p>
                 
                 <motion.div 
@@ -243,7 +243,7 @@ export default function Contact() {
                           required
                           rows={6}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
-                          placeholder={t('contact.message-placeholder', 'Tell us how we can help you connect with the Portuguese community across the UK...')}
+                          placeholder={t('contact.message-placeholder', 'Tell us how we can help you connect with the Portuguese-speaking community across the UK...')}
                         ></textarea>
                       </div>
                       
@@ -325,7 +325,7 @@ export default function Contact() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-gray-900">{t('contact.community-hub', 'Community Hub')}</h3>
-                          <p className="text-gray-600">{t('contact.london-based', 'London-based Portuguese Community')}</p>
+                          <p className="text-gray-600">{t('contact.london-based', 'London-based Portuguese-speaking community')}</p>
                           <p className="text-sm text-gray-500">{t('contact.serving-uk', 'Proudly serving Portuguese speakers across the UK')}</p>
                           <div className="flex gap-2 mt-2">
                             <span className="text-xs bg-primary-50 text-primary-600 px-2 py-1 rounded-full">Stockwell</span>
@@ -360,7 +360,7 @@ export default function Contact() {
                     </p>
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="bg-white/60 backdrop-blur-sm p-4 rounded-lg">
-                        <h4 className="font-semibold text-gray-900">{t('contact.stockwell-center', 'Stockwell Portuguese Community')}</h4>
+                        <h4 className="font-semibold text-gray-900">{t('contact.stockwell-center', 'Stockwell Portuguese-speaking community')}</h4>
                         <p className="text-sm text-gray-600">{t('contact.cultural-events', 'Cultural events & support')}</p>
                       </div>
                       <div className="bg-white/60 backdrop-blur-sm p-4 rounded-lg">
@@ -377,7 +377,7 @@ export default function Contact() {
                       <h3 className="text-xl font-semibold">{t('contact.need-immediate-help', 'Need immediate help?')}</h3>
                     </div>
                     <p className="mb-6 opacity-90">
-                      {t('contact.emergency-description', 'For urgent safety concerns, harassment reports, or technical issues preventing community access, please reach out immediately. We\'re here to protect and support our Portuguese community.')}
+                      {t('contact.emergency-description', 'For urgent safety concerns, harassment reports, or technical issues preventing community access, please reach out immediately. We\'re here to protect and support our Portuguese-speaking community.')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <a

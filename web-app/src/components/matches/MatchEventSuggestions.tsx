@@ -123,8 +123,8 @@ export default function MatchEventSuggestions({
         id: "3",
         title: language === "pt" ? "Portugal vs Espanha - Final" : "Portugal vs Spain - Final",
         description: language === "pt"
-          ? "Assistam ao grande jogo juntos com a comunidade portuguesa de Londres"
-          : "Watch the big game together with London's Portuguese community",
+          ? "Assistam ao grande jogo juntos com a comunidade de falantes de português de Londres"
+          : "Watch the big game together with London's Portuguese-speaking community",
         category: "Sports",
         culturalCategory: "Football",
         date: "2025-09-01",

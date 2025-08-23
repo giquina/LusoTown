@@ -310,7 +310,7 @@ export function ContextualMobileNav({ user, className }: ContextualMobileNavProp
                       </div>
                       <div className="flex-1 text-left">
                         <h4 className="font-semibold text-gray-900">{action.label}</h4>
-                        <p className="text-sm text-gray-600">Share with the Portuguese community</p>
+                        <p className="text-sm text-gray-600">Share with the Portuguese-speaking community</p>
                       </div>
                     </LuxuryRipple>
                   </motion.div>

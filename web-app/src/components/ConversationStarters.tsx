@@ -192,12 +192,12 @@ export default function ConversationStarters({
     },
     {
       id: 'london_2',
-      textEn: "Favorite Portuguese community spot in London? I love discovering new places!",
-      textPt: "Sítio favorito da comunidade portuguesa em Londres? Adoro descobrir novos lugares!",
+      textEn: "Favorite Portuguese-speaking community spot in London? I love discovering new places!",
+      textPt: "Sítio favorito da comunidade de falantes de português em Londres? Adoro descobrir novos lugares!",
       category: 'London Portuguese Life',
       categoryPt: 'Vida Portuguesa em Londres',
-      culturalContext: 'Portuguese community spaces are vital for cultural connection',
-      culturalContextPt: 'Espaços da comunidade portuguesa são vitais para a conexão cultural',
+      culturalContext: 'Portuguese-speaking community spaces are vital for cultural connection',
+      culturalContextPt: 'Espaços da comunidade de falantes de português são vitais para a conexão cultural',
       popularity: 77,
       matchType: 'both'
     },
@@ -221,8 +221,8 @@ export default function ConversationStarters({
       textPt: "O que te levou a este evento? Estou animado(a) para conhecer outros falantes de português!",
       category: 'Event Planning',
       categoryPt: 'Planeamento de Eventos',
-      culturalContext: 'Events are opportunities to strengthen Portuguese community bonds',
-      culturalContextPt: 'Eventos são oportunidades para fortalecer laços da comunidade portuguesa',
+      culturalContext: 'Events are opportunities to strengthen Portuguese-speaking community bonds',
+      culturalContextPt: 'Eventos são oportunidades para fortalecer laços da comunidade de falantes de português',
       popularity: 85,
       matchType: 'event',
       eventType: 'general'

@@ -85,8 +85,8 @@ const VERIFICATION_STEPS: VerificationStep[] = [
     id: 'community_photos',
     title: 'Community Photos',
     titlePortuguese: 'Fotos da Comunidade',
-    description: 'Demonstrate involvement in Portuguese community',
-    descriptionPortuguese: 'Demonstre envolvimento na comunidade portuguesa',
+    description: 'Demonstrate involvement in Portuguese-speaking community',
+    descriptionPortuguese: 'Demonstre envolvimento na comunidade de falantes de português',
     icon: UserGroupIcon,
     completed: false,
     required: false,
@@ -226,8 +226,8 @@ export default function CulturalVerificationIntegration({
             </h3>
             <p className="text-primary-600 max-w-lg mx-auto">
               {language === 'pt' 
-                ? 'Aumente a sua credibilidade e conecte-se com outros membros da comunidade portuguesa através da verificação cultural'
-                : 'Boost your credibility and connect with other Portuguese community members through cultural verification'
+                ? 'Aumente a sua credibilidade e conecte-se com outros membros da comunidade de falantes de português através da verificação cultural'
+                : 'Boost your credibility and connect with other Portuguese-speaking community members through cultural verification'
               }
             </p>
           </div>

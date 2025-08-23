@@ -3,7 +3,7 @@
 /**
  * Community Feedback Panel for Portuguese AI Ethics
  * 
- * Provides interface for Portuguese community members to give feedback on AI features,
+ * Provides interface for Portuguese-speaking community members to give feedback on AI features,
  * cultural accuracy, privacy concerns, and heritage respect. Implements culturally-sensitive
  * feedback collection with bilingual support and community values respect.
  */
@@ -113,8 +113,8 @@ export default function CommunityFeedbackPanel() {
       icon: Shield,
       name_en: 'Privacy Protection',
       name_pt: 'Proteção da Privacidade',
-      description_en: 'Trust in AI privacy measures for Portuguese community data',
-      description_pt: 'Confiança nas medidas de privacidade da IA para dados da comunidade portuguesa'
+      description_en: 'Trust in AI privacy measures for Portuguese-speaking community data',
+      description_pt: 'Confiança nas medidas de privacidade da IA para dados da comunidade de falantes de português'
     },
     cultural_accuracy: {
       icon: Flag,
@@ -127,8 +127,8 @@ export default function CommunityFeedbackPanel() {
       icon: Users,
       name_en: 'Community Benefits',
       name_pt: 'Benefícios Comunitários',
-      description_en: 'How AI features strengthen Portuguese community connections',
-      description_pt: 'Como as funcionalidades de IA fortalecem as conexões da comunidade portuguesa'
+      description_en: 'How AI features strengthen Portuguese-speaking community connections',
+      description_pt: 'Como as funcionalidades de IA fortalecem as conexões da comunidade de falantes de português'
     }
   }
 
@@ -304,7 +304,7 @@ export default function CommunityFeedbackPanel() {
       }
 
       // In production, this would submit to the backend
-      console.log('Submitting Portuguese community AI ethics feedback:', {
+      console.log('Submitting Portuguese-speaking community AI ethics feedback:', {
         survey_id: feedbackState.current_survey.id,
         responses,
         cultural_context: culturalContext

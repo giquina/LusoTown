@@ -607,7 +607,7 @@ export default function SaudadeConnectionMatcher() {
               {t('saudade.cta.title', 'Ready to Heal Your Saudade?')}
             </h3>
             <p className="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
-              {t('saudade.cta.desc', 'Join our Portuguese community platform to connect with people who truly understand your journey')}
+              {t('saudade.cta.desc', 'Join our Portuguese-speaking community platform to connect with people who truly understand your journey')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-3 bg-gradient-to-r from-secondary-600 to-accent-600 text-white rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">

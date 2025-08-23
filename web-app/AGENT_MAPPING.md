@@ -73,11 +73,11 @@ Task tool with:
 const enhancedPrompt = `
 ADVISORY CONTEXT: Following strategic-decision-advisor guidance from AGENTS.md
 EXECUTION AGENT: general-purpose
-TASK: Feature prioritization for Portuguese community platform
+TASK: Feature prioritization for Portuguese-speaking community platform
 
 Apply the strategic decision framework to evaluate:
 1. Business impact vs technical complexity
-2. Portuguese community cultural fit  
+2. Portuguese-speaking community cultural fit  
 3. Resource requirements and timeline
 4. Expected ROI and community growth
 
@@ -123,12 +123,12 @@ Task tool with:
 // ❌ WRONG  
 Task tool with:
 - subagent_type: "growth-analytics-advisor"
-- description: "Portuguese community analytics"
+- description: "Portuguese-speaking community analytics"
 
 // ✅ CORRECT
 Task tool with:
 - subagent_type: "luso-growth-agent"
-- description: "Portuguese community analytics"  
+- description: "Portuguese-speaking community analytics"  
 - prompt: "Using growth-analytics-advisor framework from AGENTS.md, develop:
   - Portuguese diaspora growth patterns
   - Cultural event engagement analysis
@@ -148,10 +148,10 @@ Task tool with:
 - subagent_type: "backend-engineer"
 - description: "AI privacy framework"
 - prompt: "Following security-guardian-advisor standards from AGENTS.md, implement:
-  - GDPR compliance for Portuguese community data
+  - GDPR compliance for Portuguese-speaking community data
   - Cultural sensitivity in AI data handling
   - Privacy-by-design for AI features
-  - Portuguese community trust protection"
+  - Portuguese-speaking community trust protection"
 ```
 
 ---

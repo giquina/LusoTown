@@ -202,7 +202,7 @@ export default function CulturalPreferences({
       id: 'diaspora-connection', 
       label: 'Diaspora Connection', 
       labelPt: 'Conexão da Diáspora',
-      description: 'Stay connected with global Portuguese community'
+      description: 'Stay connected with global Portuguese-speaking community'
     }
   ]
 

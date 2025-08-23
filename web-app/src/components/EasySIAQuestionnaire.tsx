@@ -113,8 +113,8 @@ const serviceTypeOptions = [
     iconEn: ShieldCheckIcon,
     labelEn: 'Personal Protection Detail', 
     labelPt: 'Proteção Pessoal',
-    exampleEn: 'VIP protection, high-profile Portuguese community member',
-    examplePt: 'Proteção VIP, membro proeminente da comunidade portuguesa',
+    exampleEn: 'VIP protection, high-profile Portuguese-speaking community member',
+    examplePt: 'Proteção VIP, membro proeminente da comunidade de falantes de português',
     riskBase: 5
   },
   { 
@@ -138,17 +138,17 @@ const serviceTypeOptions = [
   { 
     value: 'other', 
     iconEn: ExclamationTriangleIcon,
-    labelEn: 'Other Portuguese Community Service', 
-    labelPt: 'Outro Serviço da Comunidade Portuguesa',
-    exampleEn: 'Please specify your Portuguese community needs',
-    examplePt: 'Por favor especifique as suas necessidades da comunidade portuguesa',
+    labelEn: 'Other Portuguese-speaking community Service', 
+    labelPt: 'Outro Serviço da Comunidade de Falantes de Português',
+    exampleEn: 'Please specify your Portuguese-speaking community needs',
+    examplePt: 'Por favor especifique as suas necessidades da comunidade de falantes de português',
     riskBase: 3
   }
 ]
 
 const riskFactorOptions = [
   { value: 'media-attention', labelEn: 'Portuguese media/press attention expected', labelPt: 'Atenção da imprensa/mídia portuguesa esperada', risk: 3 },
-  { value: 'public-event', labelEn: 'Large Portuguese community gathering', labelPt: 'Grande reunião da comunidade portuguesa', risk: 2 },
+  { value: 'public-event', labelEn: 'Large Portuguese-speaking community gathering', labelPt: 'Grande reunião da comunidade de falantes de português', risk: 2 },
   { value: 'previous-incidents', labelEn: 'Previous security incidents', labelPt: 'Incidentes de segurança anteriores', risk: 4 },
   { value: 'stalking-harassment', labelEn: 'Stalking/harassment concerns', labelPt: 'Preocupações com perseguição/assédio', risk: 4 },
   { value: 'business-disputes', labelEn: 'Portuguese business disputes/conflicts', labelPt: 'Disputas/conflitos de negócios portugueses', risk: 3 },
@@ -190,11 +190,11 @@ const specialRequirementsOptions = [
   { value: 'familiar-portuguese-areas', labelEn: 'Familiar with Portuguese areas of London', labelPt: 'Familiarizado com áreas portuguesas de Londres', priority: false },
   { value: 'medical-conditions', labelEn: 'Medical conditions to be aware of', labelPt: 'Condições médicas a considerar', priority: false },
   { value: 'wheelchair-access', labelEn: 'Wheelchair accessibility required', labelPt: 'Acessibilidade para cadeira de rodas necessária', priority: false },
-  { value: 'multiple-stops', labelEn: 'Multiple stops in Portuguese community areas', labelPt: 'Múltiplas paragens em áreas da comunidade portuguesa', priority: false },
+  { value: 'multiple-stops', labelEn: 'Multiple stops in Portuguese-speaking community areas', labelPt: 'Múltiplas paragens em áreas da comunidade de falantes de português', priority: false },
   { value: 'photography-restrictions', labelEn: 'Photography restrictions (cultural/religious)', labelPt: 'Restrições de fotografia (cultural/religiosa)', priority: false },
   { value: 'family-friendly', labelEn: 'Family-friendly service (children present)', labelPt: 'Serviço adequado para famílias (crianças presentes)', priority: false },
   { value: 'female-officer', labelEn: 'Female officer preferred', labelPt: 'Oficial feminina preferida', priority: false },
-  { value: 'elder-assistance', labelEn: 'Elderly Portuguese community member assistance', labelPt: 'Assistência a membro idoso da comunidade portuguesa', priority: false },
+  { value: 'elder-assistance', labelEn: 'Elderly Portuguese-speaking community member assistance', labelPt: 'Assistência a membro idoso da comunidade de falantes de português', priority: false },
   { value: 'armed-protection', labelEn: 'Armed protection (special licensing required)', labelPt: 'Proteção armada (licenciamento especial obrigatório)', priority: false }
 ]
 
@@ -883,7 +883,7 @@ export default function EasySIAQuestionnaire({
                   >
                     <div className="text-center mb-6">
                       <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
-                        {isPortuguese ? 'Requisitos para a Comunidade Portuguesa' : 'Portuguese Community Requirements'}
+                        {isPortuguese ? 'Requisitos para a Comunidade de Falantes de Português' : 'Portuguese-speaking community Requirements'}
                       </h3>
                       <p className="text-sm text-gray-600">
                         {isPortuguese 

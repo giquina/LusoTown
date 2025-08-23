@@ -83,7 +83,7 @@ describe('LusoBot Engine Production Tests', () => {
     })
 
     test('should detect community longing', () => {
-      const message = "Preciso de encontrar a comunidade portuguesa em Londres"
+      const message = "Preciso de encontrar a comunidade de falantes de português em Londres"
       const emotionalTone = SaudadeEngine.detectSaudade(message, 'pt')
       
       expect(emotionalTone.community).toBeGreaterThan(0.4)

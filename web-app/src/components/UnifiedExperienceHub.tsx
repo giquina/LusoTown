@@ -248,8 +248,8 @@ export default function UnifiedExperienceHub({
       <div className="bg-gradient-to-r from-accent-50 to-coral-50 rounded-xl p-6 border border-accent-200">
         <h3 className="text-xl font-bold text-gray-900 mb-6">
           {isPortuguese
-            ? "Comunidade Portuguesa em Londres"
-            : "Portuguese Community in London"}
+            ? "Comunidade de Falantes de Português em Londres"
+            : "Portuguese-speaking community in London"}
         </h3>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="text-center">
@@ -595,8 +595,8 @@ export default function UnifiedExperienceHub({
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           {isPortuguese
-            ? "Descubra, reserve e conecte-se numa plataforma integrada para a comunidade portuguesa"
-            : "Discover, book, and connect in one integrated platform for the Portuguese community"}
+            ? "Descubra, reserve e conecte-se numa plataforma integrada para a comunidade de falantes de português"
+            : "Discover, book, and connect in one integrated platform for the Portuguese-speaking community"}
         </p>
       </div>
 

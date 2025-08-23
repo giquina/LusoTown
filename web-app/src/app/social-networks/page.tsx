@@ -102,7 +102,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
       const result = await socialNetworksService.requestNetworkJoin(network.id, {
         name: 'Demo User',
         email: TEST_DISPLAY_CONFIG.email,
-        reason: 'I want to connect with the Portuguese community',
+        reason: 'I want to connect with the Portuguese-speaking community',
         lusoTownMember: true
       })
       
@@ -427,7 +427,7 @@ export default function SocialNetworks() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            {language === 'pt' ? 'Redes Sociais da Comunidade Portuguesa' : 'Portuguese Community Social Networks'}
+            {language === 'pt' ? 'Redes Sociais da Comunidade de Falantes de Português' : 'Portuguese-speaking community Social Networks'}
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'pt' 

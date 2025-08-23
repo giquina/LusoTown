@@ -1,7 +1,7 @@
 {
   "name": "lusotown-streaming-server",
   "version": "1.0.0",
-  "description": "LusoTown Portuguese Community Streaming Infrastructure",
+  "description": "LusoTown Portuguese-speaking community Streaming Infrastructure",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

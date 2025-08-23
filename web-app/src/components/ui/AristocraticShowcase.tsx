@@ -73,8 +73,8 @@ export default function AristocraticShowcase({
           className="max-w-3xl mx-auto"
         >
           {language === 'pt' 
-            ? 'Experiência de interface luxuosa para a comunidade portuguesa de elite em Londres'
-            : 'Luxury interface experience for the elite Portuguese community in London'
+            ? 'Experiência de interface luxuosa para a comunidade de falantes de português de elite em Londres'
+            : 'Luxury interface experience for the elite Portuguese-speaking community in London'
           }
         </LuxuryText>
 
@@ -266,7 +266,7 @@ export default function AristocraticShowcase({
                 className="mt-4"
               >
                 Experience the sophisticated elegance of Portuguese heritage with our aristocratic 
-                design system, crafted for the discerning tastes of London's elite Portuguese community.
+                design system, crafted for the discerning tastes of London's elite Portuguese-speaking community.
               </LuxuryText>
               <div className="mt-6 flex gap-3">
                 <EliteButton
@@ -380,7 +380,7 @@ export default function AristocraticShowcase({
               className="text-center mt-4 max-w-2xl mx-auto"
             >
               Our component library represents the pinnacle of design sophistication, 
-              crafted exclusively for London's elite Portuguese community with uncompromising attention to cultural detail.
+              crafted exclusively for London's elite Portuguese-speaking community with uncompromising attention to cultural detail.
             </LuxuryText>
           </div>
         </Glassmorphism>
@@ -397,8 +397,8 @@ export default function AristocraticShowcase({
         </div>
         <LuxuryText variant="muted" size="sm" className="mt-4">
           {language === 'pt' 
-            ? 'Experiência de luxo para a comunidade portuguesa de elite'
-            : 'Luxury experience for the elite Portuguese community'
+            ? 'Experiência de luxo para a comunidade de falantes de português de elite'
+            : 'Luxury experience for the elite Portuguese-speaking community'
           }
         </LuxuryText>
       </motion.div>

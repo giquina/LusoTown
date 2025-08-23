@@ -1,10 +1,10 @@
-# LusoTown Portuguese Community Streaming Infrastructure
+# LusoTown Portuguese-speaking community Streaming Infrastructure
 # Development Docker Compose Configuration
 
 version: '3.8'
 
 services:
-  # SRS Media Server for Portuguese community streaming
+  # SRS Media Server for Portuguese-speaking community streaming
   srs-server:
     build:
       context: ../
@@ -45,7 +45,7 @@ services:
       retries: 3
       start_period: 10s
 
-  # Redis for Portuguese community real-time features
+  # Redis for Portuguese-speaking community real-time features
   redis-streaming:
     image: redis:7-alpine
     container_name: lusotown-redis-streaming-dev
@@ -94,7 +94,7 @@ volumes:
   grafana-data:
     driver: local
 
-# Network for Portuguese community streaming services
+# Network for Portuguese-speaking community streaming services
 networks:
   lusotown-streaming:
     driver: bridge

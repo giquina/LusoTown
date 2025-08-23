@@ -84,7 +84,7 @@ Quarterly Reviews:
    - Event networking and face-to-face relationship building
 
 3. **Qualification Criteria**
-   - Genuine connection to Portuguese community
+   - Genuine connection to Portuguese-speaking community
    - Financial capacity for partnership investment
    - Alignment with LusoTown values and community focus
    - Potential for long-term collaborative relationship
@@ -94,7 +94,7 @@ Quarterly Reviews:
 **Proposal Development Process**
 1. **Partner Needs Assessment**
    - Business objectives and growth goals
-   - Current Portuguese community engagement level
+   - Current Portuguese-speaking community engagement level
    - Marketing and customer acquisition challenges
    - Employee or student Portuguese demographic analysis
 
@@ -337,7 +337,7 @@ CONTRACT AND RENEWAL DISCUSSION
 
 **High Risk Factors**
 - Partner financial instability or business closure
-- Misalignment with Portuguese community values
+- Misalignment with Portuguese-speaking community values
 - Poor member engagement or satisfaction with partner
 - Contract disputes or legal issues
 
@@ -373,4 +373,4 @@ CONTRACT AND RENEWAL DISCUSSION
 - Regular community satisfaction surveys about partnerships
 - Transparent partner selection and evaluation criteria
 
-This comprehensive partnership management system ensures LusoTown can build, maintain, and optimize strategic partnerships that create authentic value for the Portuguese community while generating sustainable revenue and growth for the platform.
+This comprehensive partnership management system ensures LusoTown can build, maintain, and optimize strategic partnerships that create authentic value for the Portuguese-speaking community while generating sustainable revenue and growth for the platform.

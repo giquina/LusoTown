@@ -1,4 +1,4 @@
-// Beginner-Friendly Business Events for Portuguese Community in London
+// Beginner-Friendly Business Events for Portuguese-speaking community in London
 
 export const businessEventsLondon = [
   // STARTING YOUR FIRST BUSINESS
@@ -10,7 +10,7 @@ export const businessEventsLondon = [
     date: '2025-09-15',
     time: '10:00',
     endTime: '15:00',
-    location: 'Portuguese Community Centre',
+    location: 'Portuguese-speaking community Centre',
     address: '12 Little Portugal, London SW8 1XE',
     coordinates: { lat: 51.4851, lng: -0.1294 },
     category: 'Business Basics',
@@ -52,7 +52,7 @@ export const businessEventsLondon = [
     date: '2025-09-22',
     time: '14:00',
     endTime: '17:00',
-    location: 'Portuguese Community Centre',
+    location: 'Portuguese-speaking community Centre',
     address: '12 Little Portugal, London SW8 1XE',
     coordinates: { lat: 51.4851, lng: -0.1294 },
     category: 'Digital Marketing',
@@ -94,7 +94,7 @@ export const businessEventsLondon = [
     date: '2025-10-06',
     time: '11:00',
     endTime: '14:00',
-    location: 'Portuguese Community Centre',
+    location: 'Portuguese-speaking community Centre',
     address: '12 Little Portugal, London SW8 1XE',
     coordinates: { lat: 51.4851, lng: -0.1294 },
     category: 'Personal Finance',
@@ -102,7 +102,7 @@ export const businessEventsLondon = [
     tags: ['money management', 'UK banking', 'saving', 'budgeting', 'credit score', 'beginner'],
     hostId: 'host-joao-costa',
     hostName: 'João Costa',
-    hostBio: 'Portuguese financial adviser specializing in basic money management for Portuguese community',
+    hostBio: 'Portuguese financial adviser specializing in basic money management for Portuguese-speaking community',
     membershipRequired: 'free',
     price: 20,
     currency: 'GBP',
@@ -178,7 +178,7 @@ export const businessEventsLondon = [
     date: '2025-10-20',
     time: '13:00',
     endTime: '16:00',
-    location: 'Portuguese Community Centre',
+    location: 'Portuguese-speaking community Centre',
     address: '12 Little Portugal, London SW8 1XE',
     coordinates: { lat: 51.4851, lng: -0.1294 },
     category: 'LusoTown Business Networking',

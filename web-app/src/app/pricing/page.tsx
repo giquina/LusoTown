@@ -80,10 +80,10 @@ const membershipPlans = [
     name: 'Membro Grátis',
     nameEn: 'Free Member',
     price: 0,
-    description: 'Comece a explorar a comunidade portuguesa',
-    descriptionEn: 'Start exploring the Portuguese community',
-    culturalContext: 'Descubra a sua comunidade portuguesa em Londres',
-    culturalContextEn: 'Discover your Portuguese community in London',
+    description: 'Comece a explorar a comunidade de falantes de português',
+    descriptionEn: 'Start exploring the Portuguese-speaking community',
+    culturalContext: 'Descubra a sua comunidade de falantes de português em Londres',
+    culturalContextEn: 'Discover your Portuguese-speaking community in London',
     icon: <HeartIcon className="w-6 h-6" />,
     solidIcon: <HeartIconSolid className="w-6 h-6" />,
     features: [
@@ -110,8 +110,8 @@ const membershipPlans = [
     name: 'Membro da Comunidade',
     nameEn: 'Community Member',
     price: getPlanPrice('community', 'monthly'),
-    description: 'Acesso completo à comunidade portuguesa',
-    descriptionEn: 'Full access to Portuguese community',
+    description: 'Acesso completo à comunidade de falantes de português',
+    descriptionEn: 'Full access to Portuguese-speaking community',
     culturalContext: 'Investimento na preservação da nossa cultura e língua em Londres',
     culturalContextEn: 'Investment in preserving our culture and language in London',
     icon: <UsersIcon className="w-6 h-6" />,
@@ -144,10 +144,10 @@ const membershipPlans = [
     name: 'Embaixador Cultural',
     nameEn: 'Cultural Ambassador',
     price: getPlanPrice('ambassador', 'monthly'),
-    description: 'Lidere a comunidade portuguesa em Londres',
-    descriptionEn: 'Lead the Portuguese community in London',
-    culturalContext: 'Torne-se um líder da comunidade portuguesa',
-    culturalContextEn: 'Become a Portuguese community leader',
+    description: 'Lidere a comunidade de falantes de português em Londres',
+    descriptionEn: 'Lead the Portuguese-speaking community in London',
+    culturalContext: 'Torne-se um líder da comunidade de falantes de português',
+    culturalContextEn: 'Become a Portuguese-speaking community leader',
     icon: <Crown className="w-6 h-6" />,
     solidIcon: <TrophyIcon className="w-6 h-6" />,
     features: [
@@ -182,8 +182,8 @@ const features = [
     icon: <HomeIcon className="w-5 h-5" />,
     title: 'Authentic Portuguese Venues',
     titlePt: 'Locais Portugueses Autênticos',
-    description: 'Connect at real Portuguese venues - from Stockwell\'s beloved bakeries to Vauxhall\'s cultural centers, where the Portuguese community truly gathers',
-    descriptionPt: 'Conecta-te em locais portugueses reais - desde as padarias queridas de Stockwell aos centros culturais de Vauxhall, onde a comunidade portuguesa se reúne verdadeiramente'
+    description: 'Connect at real Portuguese venues - from Stockwell\'s beloved bakeries to Vauxhall\'s cultural centers, where the Portuguese-speaking community truly gathers',
+    descriptionPt: 'Conecta-te em locais portugueses reais - desde as padarias queridas de Stockwell aos centros culturais de Vauxhall, onde a comunidade de falantes de português se reúne verdadeiramente'
   },
   {
     icon: <HeartIcon className="w-5 h-5" />,
@@ -215,8 +215,8 @@ const features = [
   },
   {
     icon: <ShieldCheckIcon className="w-5 h-5" />,
-    title: 'Verified Portuguese Community',
-    titlePt: 'Comunidade Portuguesa Verificada',
+    title: 'Verified Portuguese-speaking community',
+    titlePt: 'Comunidade de Falantes de Português Verificada',
     description: 'Safe, authenticated space for Portuguese speakers - verified profiles ensure genuine connections for individuals and professionals',
     descriptionPt: 'Espaço seguro e autenticado para falantes de português - perfis verificados garantem conexões genuínas para indivíduos e profissionais'
   }
@@ -251,7 +251,7 @@ const testimonials = [
     location: 'Camden, Londres',
     membership: 'Membro da Comunidade',
     quote: 'Com o plano da comunidade por £19.99/mês, encontrei amigos portugueses genuínos, um grupo de caminhadas, e até um mentor de carreira. Melhor investimento da minha vida.',
-    quoteEn: 'With the community plan at £19.99/month, I found genuine Portuguese friends, a hiking group, and even a career mentor. Best investment of my life.',
+    quoteEn: 'With the community plan at £19.99/month, I found genuine Portuguese-speaking friends, a hiking group, and even a career mentor. Best investment of my life.',
     rating: 5,
     cultural: 'Jovem profissional, do Algarve',
     roi: 'Bem-estar mental: inestimável'
@@ -261,8 +261,8 @@ const testimonials = [
     age: 55,
     location: 'South Kensington, Londres',
     membership: 'Membro da Comunidade',
-    quote: 'Há 20 anos em Londres, o LusoTown finalmente me conectou à comunidade portuguesa. £19.99/mês por acesso a eventos premium que custam centenas? Sem dúvida o melhor valor.',
-    quoteEn: 'After 20 years in London, LusoTown finally connected me to the Portuguese community. £19.99/month for access to premium events that cost hundreds? Absolutely the best value.',
+    quote: 'Há 20 anos em Londres, o LusoTown finalmente me conectou à comunidade de falantes de português. £19.99/mês por acesso a eventos premium que custam centenas? Sem dúvida o melhor valor.',
+    quoteEn: 'After 20 years in London, LusoTown finally connected me to the Portuguese-speaking community. £19.99/month for access to premium events that cost hundreds? Absolutely the best value.',
     rating: 5,
     cultural: 'Consultor sénior, de Coimbra',
     roi: '£400+ valor em eventos e networking'
@@ -381,8 +381,8 @@ export default function Pricing() {
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {isPortuguese ? 
-                  'Escolha o plano perfeito para se conectar com a comunidade portuguesa de Londres.' :
-                  'Choose the perfect plan to connect with London\'s Portuguese community.'
+                  'Escolha o plano perfeito para se conectar com a comunidade de falantes de português de Londres.' :
+                  'Choose the perfect plan to connect with London\'s Portuguese-speaking community.'
                 }
               </p>
               
@@ -603,8 +603,8 @@ export default function Pricing() {
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed mb-8">
                   {isPortuguese ?
-                    'A única plataforma dedicada exclusivamente à comunidade portuguesa de Londres.' :
-                    'The only platform dedicated exclusively to London\'s Portuguese community.'
+                    'A única plataforma dedicada exclusivamente à comunidade de falantes de português de Londres.' :
+                    'The only platform dedicated exclusively to London\'s Portuguese-speaking community.'
                   }
                 </p>
               </div>
@@ -631,7 +631,7 @@ export default function Pricing() {
                       {isPortuguese ? 'Por mês' : 'Per month'}
                     </div>
                     <p className="text-sm text-gray-700">
-                      {isPortuguese ? 'Acesso completo à comunidade portuguesa de Londres' : 'Full access to London\'s Portuguese community'}
+                      {isPortuguese ? 'Acesso completo à comunidade de falantes de português de Londres' : 'Full access to London\'s Portuguese-speaking community'}
                     </p>
                   </div>
                   <div className="p-6">
@@ -785,7 +785,7 @@ export default function Pricing() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ? 
-                  'Criamos opções de pagamento que funcionam para todos os membros da comunidade portuguesa, com descontos especiais e flexibilidade total' :
+                  'Criamos opções de pagamento que funcionam para todos os membros da comunidade de falantes de português, com descontos especiais e flexibilidade total' :
                   'We\'ve created payment options that work for all Portuguese Portuguese speakers, with special discounts and full flexibility'
                 }
               </p>
@@ -839,8 +839,8 @@ export default function Pricing() {
                   </div>
                   <div className="mt-6 text-sm text-gray-600">
                     {isPortuguese 
-                      ? '🇵🇹 Apoiamos estudantes e seniores da comunidade portuguesa com preços especiais'
-                      : '🇵🇹 We support Portuguese community students and seniors with special pricing'
+                      ? '🇵🇹 Apoiamos estudantes e seniores da comunidade de falantes de português com preços especiais'
+                      : '🇵🇹 We support Portuguese-speaking community students and seniors with special pricing'
                     }
                   </div>
                 </div>
@@ -858,8 +858,8 @@ export default function Pricing() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ?
-                  'Escolha o plano perfeito para si e desbloqueie o acesso à comunidade portuguesa de Londres' :
-                  'Choose the perfect plan for you and unlock access to London\'s Portuguese community'
+                  'Escolha o plano perfeito para si e desbloqueie o acesso à comunidade de falantes de português de Londres' :
+                  'Choose the perfect plan for you and unlock access to London\'s Portuguese-speaking community'
                 }
               </p>
             </div>
@@ -886,7 +886,7 @@ export default function Pricing() {
                       </div>
                     </div>
                     <p className="text-lg opacity-90 mt-2">
-                      {isPortuguese ? 'Acesso flexível à comunidade portuguesa' : 'Flexible access to Portuguese community'}
+                      {isPortuguese ? 'Acesso flexível à comunidade de falantes de português' : 'Flexible access to Portuguese-speaking community'}
                     </p>
                   </div>
                 </div>
@@ -1150,8 +1150,8 @@ export default function Pricing() {
               </h2>
               <p className="text-xl text-gray-600 mb-8">
                 {isPortuguese ?
-                  'Estamos tão confiantes de que vai adorar fazer parte da nossa comunidade portuguesa que oferecemos uma garantia completa de 30 dias. Se não se sentir completamente em casa, devolvemos todo o dinheiro - sem perguntas.' :
-                  'We\'re so confident you\'ll love being part of our Portuguese community that we offer a complete 30-day guarantee. If you don\'t feel completely at home, we\'ll refund everything - no questions asked.'
+                  'Estamos tão confiantes de que vai adorar fazer parte da nossa comunidade de falantes de português que oferecemos uma garantia completa de 30 dias. Se não se sentir completamente em casa, devolvemos todo o dinheiro - sem perguntas.' :
+                  'We\'re so confident you\'ll love being part of our Portuguese-speaking community that we offer a complete 30-day guarantee. If you don\'t feel completely at home, we\'ll refund everything - no questions asked.'
                 }
               </p>
               <div className="bg-white rounded-lg p-6 inline-block">
@@ -1177,7 +1177,7 @@ export default function Pricing() {
           </div>
         </section>
 
-        {/* Portuguese Community FAQ Section */}
+        {/* Portuguese-speaking community FAQ Section */}
         <section className="py-20 bg-gray-50">
           <div className="container-width">
             <div className="text-center mb-16">
@@ -1186,8 +1186,8 @@ export default function Pricing() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ?
-                  'Tudo o que precisa de saber sobre se juntar à comunidade portuguesa de Londres' :
-                  'Everything you need to know about joining London\'s Portuguese community'
+                  'Tudo o que precisa de saber sobre se juntar à comunidade de falantes de português de Londres' :
+                  'Everything you need to know about joining London\'s Portuguese-speaking community'
                 }
               </p>
             </div>
@@ -1195,34 +1195,34 @@ export default function Pricing() {
             <div className="max-w-4xl mx-auto space-y-6">
               {[
                 {
-                  questionPt: "Como funciona a verificação da comunidade portuguesa?",
-                  questionEn: "How does the Portuguese community verification work?",
-                  answerPt: "A nossa verificação multi-etapas garante conexões autênticas com a comunidade portuguesa: (1) Verificação de identidade portuguesa/lusófona, (2) Revisão do perfil cultural para garantir autenticidade, (3) Moderação da comunidade para manter um ambiente acolhedor. Este processo demora 24-48 horas e assegura que encontra pessoas genuinamente conectadas à cultura portuguesa.",
-                  answerEn: "Our multi-step verification ensures authentic connections with the Portuguese community: (1) Portuguese/Portuguese-speaking identity verification, (2) Cultural profile review to ensure authenticity, (3) Community moderation to maintain a welcoming environment. This process takes 24-48 hours and ensures you meet people genuinely connected to Portuguese culture."
+                  questionPt: "Como funciona a verificação da comunidade de falantes de português?",
+                  questionEn: "How does the Portuguese-speaking community verification work?",
+                  answerPt: "A nossa verificação multi-etapas garante conexões autênticas com a comunidade de falantes de português: (1) Verificação de identidade portuguesa/lusófona, (2) Revisão do perfil cultural para garantir autenticidade, (3) Moderação da comunidade para manter um ambiente acolhedor. Este processo demora 24-48 horas e assegura que encontra pessoas genuinamente conectadas à cultura portuguesa.",
+                  answerEn: "Our multi-step verification ensures authentic connections with the Portuguese-speaking community: (1) Portuguese/Portuguese-speaking identity verification, (2) Cultural profile review to ensure authenticity, (3) Community moderation to maintain a welcoming environment. This process takes 24-48 hours and ensures you meet people genuinely connected to Portuguese culture."
                 },
                 {
                   questionPt: "O que torna LusoTown diferente de outras plataformas?",
                   questionEn: "What makes LusoTown different from other platforms?",
-                  answerPt: "LusoTown é exclusivamente para a comunidade portuguesa de Londres. Focamos em locais autênticos - desde as padarias de Stockwell às noites de fado em South Kensington. Não somos apenas uma app - somos o teu sistema de apoio para preservar a cultura portuguesa, criar amizades verdadeiras e sentires-te em casa em Londres.",
-                  answerEn: "LusoTown is exclusively for London's Portuguese community. We focus on authentic venues - from Stockwell's bakeries to fado nights in South Kensington. We're not just an app - we're your support system for preserving Portuguese culture, creating real friendships, and feeling at home in London."
+                  answerPt: "LusoTown é exclusivamente para a comunidade de falantes de português de Londres. Focamos em locais autênticos - desde as padarias de Stockwell às noites de fado em South Kensington. Não somos apenas uma app - somos o teu sistema de apoio para preservar a cultura portuguesa, criar amizades verdadeiras e sentires-te em casa em Londres.",
+                  answerEn: "LusoTown is exclusively for London's Portuguese-speaking community. We focus on authentic venues - from Stockwell's bakeries to fado nights in South Kensington. We're not just an app - we're your support system for preserving Portuguese culture, creating real friendships, and feeling at home in London."
                 },
                 {
                   questionPt: "Posso alterar ou cancelar a minha adesão?",
                   questionEn: "Can I change or cancel my membership?",
-                  answerPt: "Absolutamente! Entendemos que os membros da comunidade portuguesa têm necessidades que mudam. Pode fazer upgrade, downgrade, ou cancelar a qualquer momento. Upgrades têm efeito imediato, cancelamentos mantêm-se ativos até ao fim do ciclo atual. Oferecemos também pausas temporárias para dificuldades financeiras.",
+                  answerPt: "Absolutamente! Entendemos que os membros da comunidade de falantes de português têm necessidades que mudam. Pode fazer upgrade, downgrade, ou cancelar a qualquer momento. Upgrades têm efeito imediato, cancelamentos mantêm-se ativos até ao fim do ciclo atual. Oferecemos também pausas temporárias para dificuldades financeiras.",
                   answerEn: "Absolutely! We understand that Portuguese Portuguese speakers have changing needs. You can upgrade, downgrade, or cancel anytime. Upgrades take effect immediately, cancellations remain active until the current cycle ends. We also offer temporary pauses for financial difficulties."
                 },
                 {
                   questionPt: "Que tipos de eventos culturais organizam?",
                   questionEn: "What types of cultural events do you organize?",
                   answerPt: "Os nossos eventos celebram a verdadeira cultura portuguesa: noites de fado íntimas em restaurantes autênticos, festivais de Santo António, jantares comunitários portugueses, workshops de culinária tradicional, eventos de networking empresarial português, e celebrações culturais para todos conectarem com as suas raízes.",
-                  answerEn: "Our events celebrate true Portuguese culture: intimate fado nights at authentic restaurants, Santo António festivals, Portuguese community dinners, traditional cooking workshops, Portuguese business networking events, and cultural celebrations for everyone to connect with their roots."
+                  answerEn: "Our events celebrate true Portuguese culture: intimate fado nights at authentic restaurants, Santo António festivals, Portuguese-speaking community dinners, traditional cooking workshops, Portuguese business networking events, and cultural celebrations for everyone to connect with their roots."
                 },
                 {
                   questionPt: "A minha informação pessoal está segura?",
                   questionEn: "Is my personal information safe?",
-                  answerPt: "Sim. Somos compatíveis com GDPR e levamos a segurança da comunidade portuguesa a sério. Os seus dados são encriptados, nunca vendidos, e você controla totalmente a sua privacidade. O nosso processo de verificação garante membros autênticos enquanto protege a sua privacidade pessoal.",
-                  answerEn: "Yes. We're GDPR compliant and take Portuguese community security seriously. Your data is encrypted, never sold, and you have complete control over your privacy. Our verification process ensures authentic members while protecting your personal privacy."
+                  answerPt: "Sim. Somos compatíveis com GDPR e levamos a segurança da comunidade de falantes de português a sério. Os seus dados são encriptados, nunca vendidos, e você controla totalmente a sua privacidade. O nosso processo de verificação garante membros autênticos enquanto protege a sua privacidade pessoal.",
+                  answerEn: "Yes. We're GDPR compliant and take Portuguese-speaking community security seriously. Your data is encrypted, never sold, and you have complete control over your privacy. Our verification process ensures authentic members while protecting your personal privacy."
                 },
                 {
                   questionPt: "E se não encontrar imediatamente a minha 'tribo' portuguesa?",
@@ -1233,12 +1233,12 @@ export default function Pricing() {
                 {
                   questionPt: "Têm membros portugueses na minha área de Londres?",
                   questionEn: "Do you have Portuguese members in my London area?",
-                  answerPt: "Temos comunidades ativas por todo Londres, com concentrações especiais em Stockwell (o coração da comunidade portuguesa), Vauxhall, Camden, East London, e South Kensington. A nossa plataforma mostra eventos e membros na tua área, crescendo baseado na procura da comunidade.",
-                  answerEn: "We have active communities throughout London, with special concentrations in Stockwell (the heart of the Portuguese community), Vauxhall, Camden, East London, and South Kensington. Our platform shows events and members in your area, growing based on community demand."
+                  answerPt: "Temos comunidades ativas por todo Londres, com concentrações especiais em Stockwell (o coração da comunidade de falantes de português), Vauxhall, Camden, East London, e South Kensington. A nossa plataforma mostra eventos e membros na tua área, crescendo baseado na procura da comunidade.",
+                  answerEn: "We have active communities throughout London, with special concentrations in Stockwell (the heart of the Portuguese-speaking community), Vauxhall, Camden, East London, and South Kensington. Our platform shows events and members in your area, growing based on community demand."
                 },
                 {
-                  questionPt: "Como sei se esta é a minha comunidade portuguesa?",
-                  questionEn: "How do I know if this is my Portuguese community?",
+                  questionPt: "Como sei se esta é a minha comunidade de falantes de português?",
+                  questionEn: "How do I know if this is my Portuguese-speaking community?",
                   answerPt: "Comece grátis como Visitante para sentir a nossa cultura. Se tens raízes portuguesas, sentes saudades da cultura, queres melhorar o teu português, procuras oportunidades profissionais ou simplesmente procuras pessoas que entendem a tua jornada em Londres - provavelmente encontraste a tua comunidade.",
                   answerEn: "Start free as a Visitor to feel our culture. If you have Portuguese roots, miss the culture, want to improve your Portuguese, seek professional opportunities or simply seek people who understand your London journey - you've probably found your community."
                 }
@@ -1277,15 +1277,15 @@ export default function Pricing() {
               <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
                 <HeartIconSolid className="w-4 h-4 mr-2" />
                 {isPortuguese ? 
-                  `Unidos pela Língua • Junta-te a ${communityStats.members} membros da comunidade portuguesa` :
+                  `Unidos pela Língua • Junta-te a ${communityStats.members} membros da comunidade de falantes de português` :
                   `United by Language • Join ${communityStats.members} Portuguese speakers`
                 }
               </div>
               
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 {isPortuguese ? 
-                  'Junte-se à Sua Comunidade Portuguesa' :
-                  'Join Your Portuguese Community'
+                  'Junte-se à Sua Comunidade de Falantes de Português' :
+                  'Join Your Portuguese-speaking community'
                 }
               </h2>
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">

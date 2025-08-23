@@ -59,37 +59,37 @@ create table if not exists public.portuguese_community_partnerships (
 
 -- Insert default membership benefits for each tier
 INSERT INTO public.membership_benefits (tier, benefit_type, benefit_name, benefit_description, benefit_value, sort_order) VALUES
--- Bronze Tier (£3,000/year)
+-- Bronze Tier (ï¿½3,000/year)
 ('bronze', 'cultural_events', 'Quarterly Cultural Tours', 'Exclusive quarterly cultural tours highlighting Portuguese heritage in London & UK', 'quarterly', 1),
 ('bronze', 'premium_access', 'Priority Event Booking', 'Priority booking for all LusoTown cultural events and experiences', 'priority', 2),
 ('bronze', 'service_discount', 'Service Discounts', 'Receive 10% discount on all premium transport and concierge services', '10%', 3),
 ('bronze', 'business_networking', 'Community Directory Access', 'Access to Portuguese business and professional directory', 'full_access', 4),
 
--- Silver Tier (£6,000/year)
+-- Silver Tier (ï¿½6,000/year)
 ('silver', 'cultural_events', 'Monthly Cultural Tours', 'Monthly exclusive cultural tours and heritage experiences', 'monthly', 1),
 ('silver', 'concierge_support', 'Dedicated Relationship Manager', 'Personal relationship manager for all your community needs', 'dedicated', 2),
 ('silver', 'service_discount', 'Enhanced Service Discounts', 'Receive 15% discount on all premium services', '15%', 3),
 ('silver', 'business_networking', 'Portuguese Chamber Access', 'Access to Portuguese Chamber of Commerce networking events', 'chamber_access', 4),
 ('silver', 'premium_access', 'Member Directory Listing', 'Featured listing in exclusive member business directory', 'featured_listing', 5),
 
--- Gold Tier (£12,000/year)
+-- Gold Tier (ï¿½12,000/year)
 ('gold', 'cultural_events', 'All Exclusive Events', 'Access to all LusoTown cultural events and VIP experiences', 'unlimited', 1),
 ('gold', 'concierge_support', 'Personal Concierge Support', 'Dedicated personal concierge for cultural and business needs', 'personal', 2),
 ('gold', 'service_discount', 'Premium Service Discounts', 'Receive 20% discount on all services', '20%', 3),
 ('gold', 'business_networking', 'Executive Business Network', 'Access to executive-level Portuguese business networking', 'executive', 4),
-('gold', 'premium_access', 'Instituto Camões Partnership', 'Exclusive access to Instituto Camões cultural programs', 'institute_access', 5),
+('gold', 'premium_access', 'Instituto Camï¿½es Partnership', 'Exclusive access to Instituto Camï¿½es cultural programs', 'institute_access', 5),
 
--- Platinum Tier (£15,000/year)
+-- Platinum Tier (ï¿½15,000/year)
 ('platinum', 'cultural_events', 'VIP Cultural Experiences', 'Exclusive VIP cultural experiences and private events', 'vip_unlimited', 1),
 ('platinum', 'concierge_support', 'Personal Account Manager', 'Dedicated personal account manager for all services', 'account_manager', 2),
 ('platinum', 'service_discount', 'Maximum Service Discounts', 'Receive 25% discount on all premium services', '25%', 3),
 ('platinum', 'business_networking', 'Platinum Business Network', 'Access to highest-level Portuguese business networking', 'platinum_network', 4),
-('platinum', 'premium_access', 'Exclusive Partnership Benefits', 'Access to all exclusive Portuguese community partnerships', 'all_partnerships', 5);
+('platinum', 'premium_access', 'Exclusive Partnership Benefits', 'Access to all exclusive Portuguese-speaking community partnerships', 'all_partnerships', 5);
 
--- Insert Portuguese community partnerships
+-- Insert Portuguese-speaking community partnerships
 INSERT INTO public.portuguese_community_partnerships (partner_name, partner_type, partnership_description, member_benefits, required_tier, contact_info) VALUES
 ('Portuguese Chamber of Commerce UK', 'chamber_of_commerce', 'Official partnership with Portuguese Chamber of Commerce for business networking and professional development', 'Access to chamber events, business networking, professional development workshops', 'silver', '{"email": "info@portuguesechamber.co.uk", "website": "https://portuguesechamber.co.uk"}'),
-('Instituto Camões London', 'cultural_institute', 'Cultural partnership for Portuguese language and heritage preservation', 'Cultural workshops, language classes, heritage preservation programs', 'gold', '{"email": "london@instituto-camoes.pt", "website": "https://instituto-camoes.pt"}'),
+('Instituto Camï¿½es London', 'cultural_institute', 'Cultural partnership for Portuguese language and heritage preservation', 'Cultural workshops, language classes, heritage preservation programs', 'gold', '{"email": "london@instituto-camoes.pt", "website": "https://instituto-camoes.pt"}'),
 ('Anglo-Portuguese Society', 'community_organization', 'Historic society promoting Portuguese-British cultural exchange', 'Cultural events, networking opportunities, historical programs', 'bronze', '{"email": "info@angloportuguesesociety.org.uk", "website": "https://angloportuguesesociety.org.uk"}'),
 ('Portuguese Business Association London', 'business_association', 'Professional association for Portuguese entrepreneurs and business leaders', 'Business development, mentorship, networking events', 'silver', '{"email": "contact@pbalondon.org", "website": "https://pbalondon.org"}');
 
@@ -211,7 +211,7 @@ $$ language plpgsql security definer;
 -- Comments for documentation
 comment on table public.membership_benefits is 'Tier-specific benefits for LusoTown premium membership system';
 comment on table public.membership_usage is 'Tracking usage of membership benefits for analytics and reporting';
-comment on table public.portuguese_community_partnerships is 'Portuguese community organization partnerships and member benefits';
+comment on table public.portuguese_community_partnerships is 'Portuguese-speaking community organization partnerships and member benefits';
 comment on function public.get_user_membership_tier is 'Get user''s current membership tier';
 comment on function public.get_user_service_discount is 'Calculate service discount percentage based on membership tier';
 comment on function public.track_membership_usage is 'Track usage of membership benefits for reporting and analytics';

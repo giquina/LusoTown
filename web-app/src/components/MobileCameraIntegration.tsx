@@ -297,8 +297,8 @@ export default function MobileCameraIntegration({
         type: 'success',
         title: language === 'pt' ? 'Foto Capturada!' : 'Photo Captured!',
         message: language === 'pt' 
-          ? 'Foto pronta para a comunidade portuguesa' 
-          : 'Photo ready for Portuguese community',
+          ? 'Foto pronta para a comunidade de falantes de português' 
+          : 'Photo ready for Portuguese-speaking community',
         duration: 3000
       });
 
@@ -435,8 +435,8 @@ export default function MobileCameraIntegration({
       await navigator.share({
         title: language === 'pt' ? 'Foto da LusoTown' : 'LusoTown Photo',
         text: language === 'pt' 
-          ? 'Partilhado da comunidade portuguesa em Londres' 
-          : 'Shared from Portuguese community in London',
+          ? 'Partilhado da comunidade de falantes de português em Londres' 
+          : 'Shared from Portuguese-speaking community in London',
         files: [file]
       });
 

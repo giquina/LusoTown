@@ -1,10 +1,10 @@
 #!/bin/bash
 # LusoTown Streaming Infrastructure Startup Script
-# Optimized for Portuguese community streaming
+# Optimized for Portuguese-speaking community streaming
 
 set -e
 
-echo "Starting LusoTown Portuguese Community Streaming Infrastructure..."
+echo "Starting LusoTown Portuguese-speaking Community Streaming Infrastructure..."
 
 # Environment validation
 if [[ -z "$LUSOTOWN_STREAMING_SECRET" ]]; then

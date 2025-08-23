@@ -113,7 +113,7 @@ export const INSTITUTIONAL_PARTNERSHIP_STRATEGIES: InstitutionalPartnershipStrat
       completion: 'Full partnership implementation (Months 10-12)'
     },
     expectedOutcomes: [
-      'Official recognition as primary Portuguese community platform',
+      'Official recognition as primary Portuguese-speaking community platform',
       'Access to 25,000+ additional Portuguese nationals',
       'Integration with government service directories',
       'Enhanced credibility and trust in community',
@@ -575,7 +575,7 @@ export class InstitutionalPartnershipsService {
       {
         priority: 'medium',
         institution: 'Portuguese Cultural Institute Edinburgh',
-        rationale: 'Strategic expansion to Scotland. Growing Portuguese community in Edinburgh area.',
+        rationale: 'Strategic expansion to Scotland. Growing Portuguese-speaking community in Edinburgh area.',
         expectedValue: 25000,
         timeToImplement: '8-12 months'
       },

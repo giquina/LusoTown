@@ -316,7 +316,7 @@ const UNIVERSITIES: University[] = [
     benefits: [
       '50% discount on LusoTown membership',
       'Manchester Portuguese Society support',
-      'Northern Portuguese community connections',
+      'Northern Portuguese-speaking community connections',
       'Portuguese cultural event organization support',
       'Mentorship with Portuguese alumni network'
     ],
@@ -350,7 +350,7 @@ const UNIVERSITIES: University[] = [
       'Edinburgh Portuguese Society partnership',
       'Scottish-Portuguese cultural exchange',
       'Research funding for Portuguese studies',
-      'Virtual connection to London Portuguese community'
+      'Virtual connection to London Portuguese-speaking community'
     ],
     website: UNIVERSITY_URLS.edinburgh,
     contact: {
@@ -459,7 +459,7 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     description: 'Weekly live streams covering study tips, career advice, Portuguese culture, and academic life in the UK. Interactive Q&A sessions with experts.',
     descriptionPortuguese: 'Transmissões ao vivo semanais cobrindo dicas de estudo, conselhos de carreira, cultura portuguesa e vida acadêmica no Reino Unido. Sessões interativas de perguntas e respostas com especialistas.',
     category: 'academic',
-    eligibility: ['University students', 'Portuguese community interest'],
+    eligibility: ['University students', 'Portuguese-speaking community interest'],
     verificationRequired: true,
     value: 'Weekly educational content'
   },
@@ -1267,15 +1267,15 @@ export default function StudentsPage() {
                   university: 'UCL - Portuguese Studies',
                   year: '3º ano',
                   quote: 'A LusoTown mudou completamente a minha experiência universitária. Encontrei amigos portugueses, oportunidades de estágio e até um mentor na minha área.',
-                  quoteEn: 'LusoTown completely changed my university experience. I found Portuguese friends, internship opportunities, and even a mentor in my field.',
+                  quoteEn: 'LusoTown completely changed my university experience. I found Portuguese-speaking friends, internship opportunities, and even a mentor in my field.',
                   benefits: ['Estágio em empresa portuguesa', 'Rede de contactos profissionais', 'Eventos culturais gratuitos']
                 },
                 {
                   name: 'Miguel Santos',
                   university: 'Imperial College - Engineering',
                   year: '2º ano',
-                  quote: 'Como estudante de engenharia, não esperava encontrar uma comunidade portuguesa tão forte. Os eventos de networking abriram-me muitas portas.',
-                  quoteEn: 'As an engineering student, I didn\'t expect to find such a strong Portuguese community. The networking events opened many doors for me.',
+                  quote: 'Como estudante de engenharia, não esperava encontrar uma comunidade de falantes de português tão forte. Os eventos de networking abriram-me muitas portas.',
+                  quoteEn: 'As an engineering student, I didn\'t expect to find such a strong Portuguese-speaking community. The networking events opened many doors for me.',
                   benefits: ['Networking tech português', 'Mentoria profissional', 'Desconto na adesão']
                 },
                 {

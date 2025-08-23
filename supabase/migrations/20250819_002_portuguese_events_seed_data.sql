@@ -1,4 +1,4 @@
--- Portuguese Community Events Seed Data
+-- Portuguese-speaking community Events Seed Data
 -- Created: 2025-08-19
 -- Purpose: Populate database with real Portuguese cultural events and businesses
 
@@ -141,7 +141,7 @@ insert into public.events (
   'Portuguese Christmas Traditions Workshop',
   'Learn about Portuguese Christmas traditions, make traditional decorations, and taste seasonal Portuguese sweets. Family-friendly event.',
   'in_person',
-  'Portuguese Community Hall',
+  'Portuguese-speaking community Hall',
   '2025-12-15 15:00:00+00',
   '2025-12-15 18:00:00+00',
   40, 22, 12.00, 'GBP',
@@ -284,7 +284,7 @@ set
   professional_status = 'software_engineer',
   cultural_connection_level = 4,
   london_neighborhood = 'stockwell',
-  bio = 'Portuguese software engineer living in London for 5 years. Love connecting with the Portuguese community, attending Fado nights, and sharing our beautiful culture.',
+  bio = 'Portuguese software engineer living in London for 5 years. Love connecting with the Portuguese-speaking community, attending Fado nights, and sharing our beautiful culture.',
   location = 'Stockwell, London'
 where email = 'demo@lusotown.com';
 
@@ -300,7 +300,7 @@ select
   4,
   array['portuguese_culture', 'london_community'],
   array['stockwell', 'london'],
-  'Connected through Portuguese community events',
+  'Connected through Portuguese-speaking community events',
   false,
   'active'
 from public.profiles 
@@ -334,7 +334,7 @@ insert into public.user_notifications (
   (select id from public.profiles where email = 'demo@lusotown.com' limit 1),
   'system',
   'Bem-vindo à LusoTown! 🇵🇹',
-  'Welcome to London''s Portuguese community! Your cultural preferences have been saved. Start connecting with fellow Portuguese speakers.',
+  'Welcome to London''s Portuguese-speaking community! Your cultural preferences have been saved. Start connecting with fellow Portuguese speakers.',
   '/dashboard',
   '{"welcome": true, "cultural_setup": "complete"}',
   'normal'
@@ -342,5 +342,5 @@ insert into public.user_notifications (
 
 -- Comments for seed data
 comment on table public.events is 'Portuguese cultural events in London with authentic cultural data';
-comment on table public.portuguese_businesses is 'Verified Portuguese businesses directory for London Portuguese community';
+comment on table public.portuguese_businesses is 'Verified Portuguese businesses directory for London Portuguese-speaking community';
 comment on table public.business_reviews is 'Community reviews of Portuguese businesses with cultural authenticity ratings';

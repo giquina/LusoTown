@@ -6,10 +6,10 @@ import { CULTURAL_CENTERS } from '@/config/cultural-centers'
 import { UNIVERSITY_PARTNERSHIPS } from '@/config/universities'
 
 /**
- * AI-Powered Notification Engine for Portuguese Community Platform
+ * AI-Powered Notification Engine for Portuguese-speaking community Platform
  * 
  * Phase 1 Implementation - Enhanced:
- * ✅ Intelligent timing optimization based on Portuguese community behavior patterns
+ * ✅ Intelligent timing optimization based on Portuguese-speaking community behavior patterns
  * ✅ Cultural personalization engine for Portuguese regions (Minho, Porto, Lisboa, Azores)
  * ✅ Engagement prediction AI using machine learning algorithms
  * ✅ Dynamic content generation with Portuguese cultural context
@@ -140,7 +140,7 @@ export class SmartNotificationEngine {
   private readonly MAX_BATCH_SIZE = 100
   private readonly RATE_LIMIT_PER_MINUTE = 1000
   
-  // Portuguese community behavior patterns (learned from real data)
+  // Portuguese-speaking community behavior patterns (learned from real data)
   private communityBehaviorPatterns = {
     peak_engagement_hours: [18, 19, 20, 21], // After work hours
     cultural_event_peak_days: ['friday', 'saturday', 'sunday'],
@@ -363,7 +363,7 @@ export class SmartNotificationEngine {
   }
   
   /**
-   * Load real Portuguese community behavior data from analytics with caching
+   * Load real Portuguese-speaking community behavior data from analytics with caching
    */
   private async loadCommunityBehaviorData(): Promise<void> {
     const cacheKey = 'community_behavior_data'
@@ -753,7 +753,7 @@ export class SmartNotificationEngine {
   }
 
   /**
-   * Advanced timing optimization using Portuguese community patterns and AI
+   * Advanced timing optimization using Portuguese-speaking community patterns and AI
    */
   async optimizeTimingForCommunity(notifications: UserNotification[]): Promise<{
     optimized_notifications: UserNotification[]
@@ -1195,7 +1195,7 @@ export class SmartNotificationEngine {
     
     const overallEngagement = performanceData.opened / performanceData.total_sent
     if (overallEngagement > 0.6) {
-      insights.push('Strong overall engagement from Portuguese community')
+      insights.push('Strong overall engagement from Portuguese-speaking community')
     }
     
     // Analyze cultural patterns
@@ -1226,7 +1226,7 @@ export class SmartNotificationEngine {
       console.error('[AI Notification Engine] Failed to update ML models:', error)
     }
   }
-  // New Enhanced Methods for Portuguese Community AI
+  // New Enhanced Methods for Portuguese-speaking community AI
   
   /**
    * Get template from database (zero hardcoding policy)
@@ -1501,7 +1501,7 @@ export class SmartNotificationEngine {
   }
   
   /**
-   * Advanced timing calculation with Portuguese community patterns
+   * Advanced timing calculation with Portuguese-speaking community patterns
    */
   private async calculateAdvancedOptimalTiming(
     userBehavior: UserBehaviorProfile,
@@ -1544,7 +1544,7 @@ export class SmartNotificationEngine {
     // Cultural factors affecting timing
     const culturalFactors = [
       `Região ${culturalRules.region} preferences`,
-      `Portuguese community peak hours`,
+      `Portuguese-speaking community peak hours`,
       ...culturalRules.optimal_timing.cultural_events_awareness
     ]
     
@@ -1732,7 +1732,7 @@ export class SmartNotificationEngine {
   }
   
   /**
-   * Production-ready engagement prediction model with Portuguese community insights
+   * Production-ready engagement prediction model with Portuguese-speaking community insights
    */
   private createProductionEngagementPredictionModel() {
     return {
@@ -1747,7 +1747,7 @@ export class SmartNotificationEngine {
             features.community_behavior_alignment * 0.05
           )
           
-          // Apply Portuguese community specific adjustments
+          // Apply Portuguese-speaking community specific adjustments
           let adjustedScore = baseScore
           
           // Cultural authenticity bonus
@@ -1779,13 +1779,13 @@ export class SmartNotificationEngine {
   }
   
   /**
-   * Advanced timing optimization with Portuguese community patterns
+   * Advanced timing optimization with Portuguese-speaking community patterns
    */
   private createProductionTimingOptimizationModel() {
     return {
       optimize: async (userActivity: number[], culturalEvents: string[], userPreferences: any) => {
         try {
-          // Combine user activity with Portuguese community patterns
+          // Combine user activity with Portuguese-speaking community patterns
           const communityPeakHours = this.communityBehaviorPatterns.peak_engagement_hours
           const userPeakHours = userActivity
             .map((activity, hour) => ({ hour, activity }))
@@ -2214,7 +2214,7 @@ export class SmartNotificationEngine {
     }
     
     if (reasons.length === 0) {
-      reasons.push('Standard prediction based on Portuguese community patterns')
+      reasons.push('Standard prediction based on Portuguese-speaking community patterns')
     }
     
     return reasons
@@ -2231,7 +2231,7 @@ export class SmartNotificationEngine {
     const historicalCTR = userBehavior.engagement_patterns.click_through_rate
     responseRate = (responseRate * 0.7) + (historicalCTR * 100 * 0.3)
     
-    // Portuguese community specific adjustments
+    // Portuguese-speaking community specific adjustments
     if (userBehavior.cultural_preferences.diaspora_relevance === 'first_generation') {
       responseRate *= 1.1 // First generation more responsive
     }
@@ -2409,5 +2409,5 @@ export class SmartNotificationEngine {
   }
 }
 
-// Export enhanced singleton instance with Portuguese community AI
+// Export enhanced singleton instance with Portuguese-speaking community AI
 export const aiNotificationEngine = new SmartNotificationEngine()

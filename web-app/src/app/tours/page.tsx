@@ -233,8 +233,8 @@ export default function ToursPage() {
               {/* Desktop full subtitle */}
               <span className="hidden sm:block">
                 {isPortuguese
-                  ? "Explore os marcos icónicos de Londres com guias portugueses qualificados. Experiências culturais autênticas, storytelling em português e descoberta dos segredos da capital britânica através dos olhos da comunidade portuguesa."
-                  : "Explore London's iconic landmarks with qualified Portuguese guides. Authentic cultural experiences, Portuguese storytelling, and discover British capital secrets through the eyes of the Portuguese community."}
+                  ? "Explore os marcos icónicos de Londres com guias portugueses qualificados. Experiências culturais autênticas, storytelling em português e descoberta dos segredos da capital britânica através dos olhos da comunidade de falantes de português."
+                  : "Explore London's iconic landmarks with qualified Portuguese guides. Authentic cultural experiences, Portuguese storytelling, and discover British capital secrets through the eyes of the Portuguese-speaking community."}
               </span>
               {/* Mobile short subtitle */}
               <span className="sm:hidden">
@@ -625,8 +625,8 @@ export default function ToursPage() {
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   {isPortuguese 
-                    ? "Descobrimos locais que só a comunidade portuguesa conhece - restaurantes, lojas e marcos históricos"
-                    : "We uncover places only the Portuguese community knows - restaurants, shops and historic landmarks"
+                    ? "Descobrimos locais que só a comunidade de falantes de português conhece - restaurantes, lojas e marcos históricos"
+                    : "We uncover places only the Portuguese-speaking community knows - restaurants, shops and historic landmarks"
                   }
                 </p>
               </div>

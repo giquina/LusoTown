@@ -69,8 +69,8 @@ export async function POST(request: NextRequest) {
         referral_id: newReferral.id,
         reward_type: 'discount',
         reward_value: 25, // 25% discount
-        description_en: 'Welcome discount for joining Portuguese community',
-        description_pt: 'Desconto de boas-vindas por se juntar à comunidade portuguesa',
+        description_en: 'Welcome discount for joining Portuguese-speaking community',
+        description_pt: 'Desconto de boas-vindas por se juntar à comunidade de falantes de português',
         expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString() // 90 days
       })
 

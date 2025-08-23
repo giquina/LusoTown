@@ -288,7 +288,7 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
         </div>
       </motion.div>
 
-      {/* Portuguese Community Partnerships */}
+      {/* Portuguese-speaking community Partnerships */}
       {partnerships.length > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}

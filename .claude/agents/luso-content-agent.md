@@ -23,7 +23,7 @@ Portuguese language and cultural content management specialist for the LusoTown 
 2. **Cultural Adaptation**: Ensure content resonates with Portuguese speakers in London
 3. **Regional Sensitivity**: Handle differences between Portuguese-speaking countries
 4. **Event Content**: Create compelling descriptions for Portuguese cultural events
-5. **Community Voice**: Develop authentic Portuguese community messaging
+5. **Community Voice**: Develop authentic Portuguese-speaking community messaging
 
 ## Integration Points
 - Works with `web-app/src/context/LanguageContext.tsx` for bilingual content

@@ -249,7 +249,7 @@ export default function Home() {
                 </div>
               )}
               
-              {/* Portuguese Community Testimonial - Mobile Only */}
+              {/* Portuguese-speaking community Testimonial - Mobile Only */}
               <div className="mt-4 bg-gradient-to-r from-green-50 to-red-50 rounded-2xl p-4 border border-green-100">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-red-500 flex items-center justify-center text-white font-bold text-sm">
@@ -268,7 +268,7 @@ export default function Home() {
                   Os eventos de fado são autênticos e a comunidade é muito acolhedora."
                 </p>
                 <div className="mt-2 text-xs text-green-600 font-medium">
-                  🇵🇹 Joined 8 events • Found 12+ Portuguese friends
+                  🇵🇹 Joined 8 events • Found 12+ Portuguese-speaking friends
                 </div>
               </div>
             </div>
@@ -279,7 +279,7 @@ export default function Home() {
           <HowItWorks />
           <MatchHowItWorks />
           <AboutLusoTown />
-          {/* Portuguese Community Activities Section */}
+          {/* Portuguese-speaking community Activities Section */}
           <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30 relative overflow-hidden border-t border-gray-100" aria-labelledby="community-activities">
             {/* Portuguese-inspired background decorative elements */}
             <div className="absolute inset-0" aria-hidden="true">
@@ -315,8 +315,8 @@ export default function Home() {
                   </blockquote>
                 </header>
                 
-                {/* Portuguese Community Activities Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-20" role="group" aria-label="Portuguese community activities">
+                {/* Portuguese-speaking community Activities Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-20" role="group" aria-label="Portuguese-speaking community activities">
                   {/* Find & Join Events */}
                   <article className="group relative">
                     <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">

@@ -1,7 +1,7 @@
 'use client'
 
 // Portuguese Embassy and Cultural Center Partnerships
-// Real organizations and institutions serving the Portuguese community in London
+// Real organizations and institutions serving the Portuguese-speaking community in London
 
 export interface PartnershipOrganization {
   id: string
@@ -112,8 +112,8 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     name: 'Portuguese Embassy in London',
     namePortuguese: 'Embaixada de Portugal em Londres',
     type: 'embassy',
-    description: 'Official diplomatic mission of Portugal to the United Kingdom, providing consular services and cultural programming for Portuguese citizens and the Portuguese community.',
-    descriptionPortuguese: 'Missão diplomática oficial de Portugal no Reino Unido, prestando serviços consulares e programação cultural para cidadãos portugueses e a comunidade portuguesa.',
+    description: 'Official diplomatic mission of Portugal to the United Kingdom, providing consular services and cultural programming for Portuguese citizens and the Portuguese-speaking community.',
+    descriptionPortuguese: 'Missão diplomática oficial de Portugal no Reino Unido, prestando serviços consulares e programação cultural para cidadãos portugueses e a comunidade de falantes de português.',
     
     website: 'https://londres.embaixadaportugal.mne.gov.pt',
     email: 'embaixada.londres@mne.pt',
@@ -175,7 +175,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         name: 'Cultural Programming',
         namePortuguese: 'Programação Cultural',
         description: 'Art exhibitions, music concerts, film screenings, literary events',
-        targetAudience: ['Portuguese community', 'General public'],
+        targetAudience: ['Portuguese-speaking community', 'General public'],
         frequency: 'Monthly',
         cost: 'Free to £15',
         registrationRequired: true,
@@ -910,7 +910,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       title: 'Director of Portuguese Client Services & LusoTown Partnership Lead',
       email: 'carlos.ferreira@millenniumbank.co.uk',
       phone: '+44 20 7816 4000',
-      bio: 'Senior banking executive specializing in Portuguese client services and cross-border financial solutions. Leads the strategic partnership with LusoTown to provide premium banking services to the Portuguese community in the UK.'
+      bio: 'Senior banking executive specializing in Portuguese client services and cross-border financial solutions. Leads the strategic partnership with LusoTown to provide premium banking services to the Portuguese-speaking community in the UK.'
     }
   },
 
@@ -1299,7 +1299,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         name: 'Portuguese Heritage Language Programme',
         namePortuguese: 'Programa de Língua Portuguesa como Herança',
         description: 'Specialized program for Portuguese heritage speakers to develop academic and professional language skills',
-        targetAudience: ['Heritage speakers', 'Portuguese community families', 'Second-generation Portuguese'],
+        targetAudience: ['Heritage speakers', 'Portuguese-speaking community families', 'Second-generation Portuguese'],
         frequency: 'Weekly sessions throughout academic year',
         cost: '£180 per term (LusoTown members: £135)',
         registrationRequired: true,
@@ -1540,7 +1540,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         date: '2024-11-22',
         time: '14:00',
         location: 'Lincoln\'s Inn Old Hall, London',
-        description: 'Annual legal forum focusing on Portuguese community rights and immigration law updates',
+        description: 'Annual legal forum focusing on Portuguese-speaking community rights and immigration law updates',
         capacity: 100,
         price: 35,
         partnerId: 'partner-portuguese-lawyers-network'
@@ -1552,7 +1552,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       title: 'Network Director & Community Legal Advocate',
       email: 'm.santos@plnuk.org',
       phone: '+44 20 7242 5555',
-      bio: 'Immigration and community law specialist with 12 years of experience serving the Portuguese community in the UK. Leads the network\'s partnership with LusoTown to provide accessible legal services and support.'
+      bio: 'Immigration and community law specialist with 12 years of experience serving the Portuguese-speaking community in the UK. Leads the network\'s partnership with LusoTown to provide accessible legal services and support.'
     }
   },
 
@@ -1631,8 +1631,8 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         id: 'prog-pht-preservation',
         name: 'Community Heritage Preservation Project',
         namePortuguese: 'Projeto de Preservação do Património Comunitário',
-        description: 'Collaborative project documenting and preserving Portuguese community heritage through oral histories and cultural artifacts',
-        targetAudience: ['Portuguese community elders', 'Heritage volunteers', 'Researchers'],
+        description: 'Collaborative project documenting and preserving Portuguese-speaking community heritage through oral histories and cultural artifacts',
+        targetAudience: ['Portuguese-speaking community elders', 'Heritage volunteers', 'Researchers'],
         frequency: 'Monthly project meetings',
         cost: 'Free for volunteers',
         registrationRequired: true,

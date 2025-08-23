@@ -20,10 +20,10 @@ import { ROUTES } from '@/config/routes'
 // Portuguese success stories dedicated page
 
 export const metadata: Metadata = {
-  title: 'Success Stories - Portuguese Community Connections | LusoTown London',
+  title: 'Success Stories - Portuguese-speaking community Connections | LusoTown London',
   description: 'Real success stories from Portuguese speakers who found their community in London. From Portugal to Brazil, Angola to Mozambique - discover how LusoTown connects Portuguese hearts across the UK.',
   keywords: [
-    'Portuguese community London success stories',
+    'Portuguese-speaking community London success stories',
     'Brazilian community UK testimonials',
     'Angolan community London connections',
     'Mozambican community UK experiences',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     'Portuguese business partnerships UK',
     'Lusophone community success',
     'Portuguese cultural preservation London',
-    'Portuguese friendship networks UK',
+    'Portuguese-speaking friendship networks UK',
     'Portuguese heritage community'
   ],
   openGraph: {
@@ -143,7 +143,7 @@ export default function SuccessStories() {
               </h3>
               <p className="text-gray-600 mb-8">
                 Subscribe to receive monthly success stories, community highlights, and tips for building 
-                meaningful connections in London's Portuguese community.
+                meaningful connections in London's Portuguese-speaking community.
               </p>
               
               <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">

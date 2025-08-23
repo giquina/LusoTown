@@ -178,8 +178,8 @@ export default function SubscriptionCancelledPage() {
                 </h3>
                 <p className="text-sm text-gray-600 mb-4">
                   {isPortuguese 
-                    ? 'A comunidade portuguesa de Londres está sempre aqui para si. Pode explorar o que oferecemos sem compromisso.'
-                    : 'London\'s Portuguese community is always here for you. You can explore what we offer without commitment.'
+                    ? 'A comunidade de falantes de português de Londres está sempre aqui para si. Pode explorar o que oferecemos sem compromisso.'
+                    : 'London\'s Portuguese-speaking community is always here for you. You can explore what we offer without commitment.'
                   }
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">

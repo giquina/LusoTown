@@ -197,7 +197,7 @@ export default function LuxuryComponentShowcase() {
                 Premium service dedicated to affluent Portuguese professionals
               </LuxuryText>
               <LuxuryText size="lg" variant="portuguese">
-                Conectando a comunidade portuguesa de Londres com experiências exclusivas
+                Conectando a comunidade de falantes de português de Londres com experiências exclusivas
               </LuxuryText>
               <LuxuryText size="base" variant="muted">
                 Sophisticated design meets cultural authenticity in every detail

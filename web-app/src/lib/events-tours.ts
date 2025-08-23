@@ -1,4 +1,4 @@
-// Events & Tours Data and Management for LusoTown Portuguese Community
+// Events & Tours Data and Management for LusoTown Portuguese-speaking community
 
 import { TOURS_PRICING } from '@/config/pricing'
 
@@ -52,7 +52,7 @@ export interface EventToursFilters {
   groupSize?: 'small' | 'medium' | 'large'
 }
 
-// Sample Events & Tours Data for Portuguese Community in London
+// Sample Events & Tours Data for Portuguese-speaking community in London
 export const eventsTours: EventTour[] = [
   {
     id: 'et-001',
@@ -317,7 +317,7 @@ export const eventsTours: EventTour[] = [
     tags: ['Day Trip', 'Heritage', 'Family-Friendly', 'History', 'Canterbury'],
     highlights: [
       'Guided tour of Canterbury Cathedral with Portuguese historical context',
-      'Coach transport from London with Portuguese community',
+      'Coach transport from London with Portuguese-speaking community',
       'Group lunch at traditional English pub',
       'Historical exploration of Portuguese-English connections'
     ],
@@ -373,7 +373,7 @@ export const eventsTours: EventTour[] = [
       'Dancing and socializing until late'
     ],
     whatToHear: 'Portuguese pop, fado remixes, Brazilian funk, and international hits',
-    whatToLearn: 'How to connect with Portuguese community through music and socializing',
+    whatToLearn: 'How to connect with Portuguese-speaking community through music and socializing',
     groupSize: 'Large (50-60 people)',
     difficulty: 'Easy',
     averageRating: 4.4,

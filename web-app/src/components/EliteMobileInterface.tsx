@@ -257,7 +257,7 @@ export function EliteMobileSearch({
                 handleSearch(value);
               }
             }}
-            placeholder={placeholder || (language === 'pt' ? 'Procurar na comunidade portuguesa...' : 'Search Portuguese community...')}
+            placeholder={placeholder || (language === 'pt' ? 'Procurar na comunidade de falantes de português...' : 'Search Portuguese-speaking community...')}
             className="flex-1 bg-transparent border-none outline-none text-gray-900 placeholder-gray-500 text-base"
           />
           

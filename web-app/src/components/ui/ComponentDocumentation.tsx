@@ -123,7 +123,7 @@ export default function ComponentDocumentation() {
       Heritage Premium
     </LuxuryHeading>
     <LuxuryText variant="muted" className="mt-2">
-      Experience the finest Portuguese community features.
+      Experience the finest Portuguese-speaking community features.
     </LuxuryText>
     <div className="mt-6">
       <EliteButton variant="heritage" size="md" fullWidth>
@@ -142,7 +142,7 @@ export default function ComponentDocumentation() {
               Heritage Premium
             </LuxuryHeading>
             <LuxuryText variant="muted" className="mt-2">
-              Experience the finest Portuguese community features.
+              Experience the finest Portuguese-speaking community features.
             </LuxuryText>
             <div className="mt-6">
               <EliteButton variant="heritage" size="md" fullWidth>
@@ -164,7 +164,7 @@ export default function ComponentDocumentation() {
   portuguese
   icon={<CrownIcon className="w-5 h-5" />}
 >
-  Join Portuguese Community
+  Join Portuguese-speaking community
 </EliteButton>`,
       preview: (
         <div className="flex justify-center">
@@ -175,7 +175,7 @@ export default function ComponentDocumentation() {
             portuguese
             icon={<span className="text-lg">👑</span>}
           >
-            Join Portuguese Community
+            Join Portuguese-speaking community
           </EliteButton>
         </div>
       )
@@ -229,7 +229,7 @@ export default function ComponentDocumentation() {
 </LuxuryHeading>
 
 <LuxuryText size="lg" variant="muted" className="text-center mt-4">
-  Welcome to the Portuguese community platform
+  Welcome to the Portuguese-speaking community platform
 </LuxuryText>`,
       preview: (
         <div className="text-center">
@@ -242,7 +242,7 @@ export default function ComponentDocumentation() {
             Bem-vindos à Comunidade
           </LuxuryHeading>
           <LuxuryText size="lg" variant="muted" className="text-center mt-4">
-            Welcome to the Portuguese community platform
+            Welcome to the Portuguese-speaking community platform
           </LuxuryText>
         </div>
       )
@@ -376,7 +376,7 @@ export default function ComponentDocumentation() {
               Ready to Build with Luxury?
             </LuxuryHeading>
             <LuxuryText size="lg" variant="muted" className="mb-8 max-w-2xl mx-auto">
-              Start creating sophisticated Portuguese community features with our premium component library.
+              Start creating sophisticated Portuguese-speaking community features with our premium component library.
               Every component is designed with cultural authenticity and luxury aesthetics.
             </LuxuryText>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

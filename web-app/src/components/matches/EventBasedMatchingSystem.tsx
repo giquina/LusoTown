@@ -429,8 +429,8 @@ export default function EventBasedMatchingSystem({
     } else if (attendee.origin.includes("Brasil")) {
       starters.push(
         language === "pt"
-          ? `Oi! Somos ambos lusófonos em Londres. Como achas a comunidade portuguesa aqui?`
-          : `Hi! We're both Portuguese speakers in London. What do you think of the Portuguese community here?`
+          ? `Oi! Somos ambos lusófonos em Londres. Como achas a comunidade de falantes de português aqui?`
+          : `Hi! We're both Portuguese speakers in London. What do you think of the Portuguese-speaking community here?`
       );
     }
 

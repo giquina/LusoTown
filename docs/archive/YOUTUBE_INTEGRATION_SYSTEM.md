@@ -9,7 +9,7 @@ A comprehensive YouTube integration system for LusoTown's streaming platform wit
 ### Core Components
 
 1. **YouTubeAPIService.ts** - Complete YouTube API integration service
-2. **MemberSpotlightManager.tsx** - Portuguese community success stories system
+2. **MemberSpotlightManager.tsx** - Portuguese-speaking community success stories system
 3. **EventPreviewGenerator.tsx** - "What to expect" event preview system  
 4. **EventHighlightAutomation.tsx** - Automated event highlight compilation
 5. **YouTubeContentManager.tsx** - Central content management dashboard
@@ -24,13 +24,13 @@ A comprehensive YouTube integration system for LusoTown's streaming platform wit
 - `event_previews` - Event preview content system
 - `event_highlights` - Automated highlight compilations
 - `youtube_content_calendar` - Content scheduling and planning
-- `cultural_content_analytics` - Portuguese community engagement tracking
+- `cultural_content_analytics` - Portuguese-speaking community engagement tracking
 
 ## 🌟 Key Features
 
 ### 1. Member Spotlight Videos System
 
-**Purpose**: Feature Portuguese community success stories and cultural preservation journeys
+**Purpose**: Feature Portuguese-speaking community success stories and cultural preservation journeys
 
 **Features**:
 - 5 story templates (immigration journey, business success, cultural preservation, community leadership, intergenerational stories)
@@ -175,16 +175,16 @@ Complete Portuguese/English translation support through i18n:
 
 ## 📊 Analytics & Performance Tracking
 
-### Portuguese Community Engagement Metrics
+### Portuguese-speaking community Engagement Metrics
 
 - **Geographic Distribution**: Focus on Portuguese-speaking regions
 - **Cultural Authenticity Rating**: Automated scoring system
-- **Community Response Score**: Portuguese community specific engagement
+- **Community Response Score**: Portuguese-speaking community specific engagement
 - **Heritage Preservation Impact**: Cultural content effectiveness tracking
 
 ### Key Performance Indicators
 
-- Total views with Portuguese community breakdown
+- Total views with Portuguese-speaking community breakdown
 - Subscriber growth from Portuguese-speaking regions
 - Cultural content engagement rates
 - Heritage preservation content effectiveness
@@ -246,12 +246,12 @@ import YouTubeContentManager from '@/components/YouTubeContentManager';
 2. AI analysis of event footage for cultural moments
 3. Automated compilation with testimonials
 4. Manual review for cultural authenticity
-5. Publishing with Portuguese community focus
+5. Publishing with Portuguese-speaking community focus
 
 ## 🌍 Cultural Heritage Preservation Goals
 
 ### Primary Objectives
-- Document Portuguese community growth in London
+- Document Portuguese-speaking community growth in London
 - Preserve traditional Portuguese arts, crafts, and music
 - Feature Portuguese business success stories
 - Highlight intergenerational cultural transmission
@@ -282,7 +282,7 @@ import YouTubeContentManager from '@/components/YouTubeContentManager';
 ## 📈 Success Metrics
 
 ### Quantitative Measures
-- Portuguese community video engagement rates
+- Portuguese-speaking community video engagement rates
 - Heritage preservation content views
 - Cultural authenticity scores
 - Geographic distribution improvements

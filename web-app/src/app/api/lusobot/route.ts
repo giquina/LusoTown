@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
         id: `filtered_${Date.now()}`,
         role: 'assistant',
         content: requestLanguage === 'pt' 
-          ? 'Desculpa, mas não posso responder a esse tipo de conteúdo. Como posso ajudar-te com questões relacionadas com a cultura e comunidade portuguesa?'
+          ? 'Desculpa, mas não posso responder a esse tipo de conteúdo. Como posso ajudar-te com questões relacionadas com a cultura e comunidade de falantes de português?'
           : 'Sorry, but I cannot respond to that type of content. How can I help you with Portuguese culture and community questions?',
         timestamp: new Date().toISOString(),
         language: requestLanguage,

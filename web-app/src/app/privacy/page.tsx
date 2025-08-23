@@ -13,13 +13,13 @@ import {
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | LusoTown London - GDPR Compliant Data Protection',
-  description: 'Learn how LusoTown London protects your privacy and personal data. Our GDPR-compliant privacy policy for the UK\'s premier Portuguese community platform.',
+  description: 'Learn how LusoTown London protects your privacy and personal data. Our GDPR-compliant privacy policy for the UK\'s premier Portuguese-speaking community platform.',
   keywords: [
     'privacy policy',
     'GDPR compliance',
     'data protection',
     'UK privacy',
-    'Portuguese community privacy',
+    'Portuguese-speaking community privacy',
     'personal data protection',
     'privacy rights UK',
     'data security',

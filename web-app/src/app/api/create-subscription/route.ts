@@ -64,15 +64,15 @@ export async function POST(request: NextRequest) {
       community: {
         name: 'LusoTown Community Member',
         namePortuguese: 'Membro da Comunidade LusoTown',
-        description: 'Full access to Portuguese community network in London',
-        descriptionPortuguese: 'Acesso completo à rede da comunidade portuguesa em Londres',
+        description: 'Full access to Portuguese-speaking community network in London',
+        descriptionPortuguese: 'Acesso completo à rede da comunidade de falantes de português em Londres',
         price: getPriceForStripe('community', planType as 'monthly' | 'annual'),
       },
       ambassador: {
         name: 'LusoTown Cultural Ambassador',
         namePortuguese: 'Embaixador Cultural LusoTown',
-        description: 'Lead the Portuguese community with priority features',
-        descriptionPortuguese: 'Lidere a comunidade portuguesa com funcionalidades prioritárias',
+        description: 'Lead the Portuguese-speaking community with priority features',
+        descriptionPortuguese: 'Lidere a comunidade de falantes de português com funcionalidades prioritárias',
         price: getPriceForStripe('ambassador', planType as 'monthly' | 'annual'),
       },
     }

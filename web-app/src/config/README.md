@@ -137,7 +137,7 @@ trackConversion(ANALYTICS_EVENTS.SUBSCRIPTION_COMPLETE, 19.99);
 
 ## Portuguese Cultural Integration
 
-The configuration system is designed specifically for the Portuguese community:
+The configuration system is designed specifically for the Portuguese-speaking community:
 
 ### Cultural Colors
 ```typescript

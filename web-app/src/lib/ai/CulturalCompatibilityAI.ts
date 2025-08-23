@@ -92,7 +92,7 @@ export class CulturalCompatibilityAI {
   }
 
   /**
-   * Calculate cultural compatibility between two Portuguese community members
+   * Calculate cultural compatibility between two Portuguese-speaking community members
    */
   public calculateCompatibility(
     profile1: PortugueseCulturalProfile,

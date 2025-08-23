@@ -18,7 +18,7 @@ Comprehensive URL configuration system implemented to eliminate hardcoded URLs t
 
 **Helper Functions**
 - `buildUnsplashUrl()` - Enhanced image URL building with optimization
-- `buildPortugueseImageUrl()` - Portuguese community-focused images
+- `buildPortugueseImageUrl()` - Portuguese-speaking community-focused images
 - `buildAvatarUrl()` - Profile/avatar image URLs
 - `buildUniversityUrl()` - University website URLs
 - `buildPortugueseResourceUrl()` - Portuguese cultural resource URLs

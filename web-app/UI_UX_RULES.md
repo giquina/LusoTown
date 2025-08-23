@@ -41,8 +41,8 @@ This file contains critical UI/UX rules that must be followed for all developmen
 - **ALWAYS use "United Kingdom" or "UK" for community-wide references**
 - Examples:
   - ✅ "Connect with Portuguese speakers in the United Kingdom"
-  - ✅ "Portuguese community in the UK"
-  - ❌ "Portuguese community in London"
+  - ✅ "Portuguese-speaking community in the UK"
+  - ❌ "Portuguese-speaking community in London"
   - ❌ "Connect with Portuguese speakers in London"
 
 ### Specific Location Usage

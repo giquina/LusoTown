@@ -1,6 +1,6 @@
 # LusoTown Automation Scripts Documentation
 
-This document outlines the automation scripts developed for the LusoTown Portuguese community platform to streamline documentation maintenance and deployment verification.
+This document outlines the automation scripts developed for the LusoTown Portuguese-speaking community platform to streamline documentation maintenance and deployment verification.
 
 ## Overview
 
@@ -161,10 +161,10 @@ Both scripts can be integrated into CI/CD pipelines:
   run: ./scripts/post-deployment-update.sh
 ```
 
-## Portuguese Community Context
+## Portuguese-speaking community Context
 
 ### Cultural Considerations
-- Scripts include Portuguese community-specific checks
+- Scripts include Portuguese-speaking community-specific checks
 - Bilingual functionality verification reminders
 - Portuguese cultural feature validation prompts
 
@@ -238,7 +238,7 @@ Current version: **v1.0** (August 2025)
 #### Documentation Maintenance
 - Update scripts when project structure changes
 - Include new features in verification process
-- Maintain Portuguese community context
+- Maintain Portuguese-speaking community context
 - Keep automation scripts documented
 
 ## Security Considerations
@@ -271,6 +271,6 @@ Current version: **v1.0** (August 2025)
 
 ---
 
-**Unidos pela Língua** - Automated excellence for the Portuguese community platform.
+**Unidos pela Língua** - Automated excellence for the Portuguese-speaking community platform.
 
 *LusoTown Automation Scripts - Streamlining development for Portuguese heritage preservation.*

@@ -123,13 +123,13 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
         profession: "NHS Senior Consultant",
         professionPortuguese: "Consultora Sénior do NHS",
         achievement:
-          "Led COVID-19 Portuguese community health initiatives, improving health outcomes for 10,000+ Portuguese residents",
+          "Led COVID-19 Portuguese-speaking community health initiatives, improving health outcomes for 10,000+ Portuguese residents",
         achievementPortuguese:
-          "Liderou iniciativas de saúde da comunidade portuguesa durante COVID-19, melhorando resultados de saúde para 10.000+ residentes portugueses",
+          "Liderou iniciativas de saúde da comunidade de falantes de português durante COVID-19, melhorando resultados de saúde para 10.000+ residentes portugueses",
         quote:
-          "Working with the Portuguese community in the NHS showed me how cultural understanding improves healthcare. We reduced hospital readmissions by 30% through culturally sensitive care.",
+          "Working with the Portuguese-speaking community in the NHS showed me how cultural understanding improves healthcare. We reduced hospital readmissions by 30% through culturally sensitive care.",
         quotePortuguese:
-          "Trabalhar com a comunidade portuguesa no NHS mostrou-me como a compreensão cultural melhora os cuidados de saúde. Reduzimos as readmissões hospitalares em 30% através de cuidados culturalmente sensíveis.",
+          "Trabalhar com a comunidade de falantes de português no NHS mostrou-me como a compreensão cultural melhora os cuidados de saúde. Reduzimos as readmissões hospitalares em 30% através de cuidados culturalmente sensíveis.",
       },
       {
         name: "João Pereira",
@@ -140,9 +140,9 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
         achievementPortuguese:
           "Fundou startup fintech Portugal-Reino Unido avaliada em £5M, conectando negócios portugueses com mercados do Reino Unido",
         quote:
-          "London's Portuguese community provided the cultural bridges I needed to build trust between Portuguese and British business partners.",
+          "London's Portuguese-speaking community provided the cultural bridges I needed to build trust between Portuguese and British business partners.",
         quotePortuguese:
-          "A comunidade portuguesa de Londres forneceu as pontes culturais que precisava para construir confiança entre parceiros de negócios portugueses e britânicos.",
+          "A comunidade de falantes de português de Londres forneceu as pontes culturais que precisava para construir confiança entre parceiros de negócios portugueses e britânicos.",
       },
     ],
     culturalContributions: {

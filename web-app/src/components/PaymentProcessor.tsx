@@ -108,8 +108,8 @@ const PAYMENT_METHODS: PaymentMethod[] = [
   {
     id: 'portuguese-installments',
     type: 'installments',
-    name: 'Portuguese Community Installments',
-    namePortuguese: 'Prestações da Comunidade Portuguesa',
+    name: 'Portuguese-speaking community Installments',
+    namePortuguese: 'Prestações da Comunidade de Falantes de Português',
     description: 'Split payment into 3-6 monthly installments',
     descriptionPortuguese: 'Dividir pagamento em 3-6 prestações mensais',
     icon: GlobeEuropeAfricaIcon,
@@ -118,12 +118,12 @@ const PAYMENT_METHODS: PaymentMethod[] = [
     isAvailable: true,
     requirements: [
       'Minimum £300 booking value',
-      'Portuguese community member verification',
+      'Portuguese-speaking community member verification',
       'Credit check approval'
     ],
     requirementsPortuguese: [
       'Valor mínimo de reserva £300',
-      'Verificação de membro da comunidade portuguesa',
+      'Verificação de membro da comunidade de falantes de português',
       'Aprovação de verificação de crédito'
     ]
   }

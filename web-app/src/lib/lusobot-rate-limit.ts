@@ -2,7 +2,7 @@
  * LusoBot Rate Limiting and Abuse Prevention
  * 
  * Production-grade rate limiting system for LusoBot AI assistant
- * with Portuguese community-specific considerations and fair usage policies.
+ * with Portuguese-speaking community-specific considerations and fair usage policies.
  */
 
 // Dynamic import for Redis to handle missing dependency gracefully
@@ -77,7 +77,7 @@ export const RATE_LIMIT_TIERS = {
 
 export type RateLimitTier = keyof typeof RATE_LIMIT_TIERS
 
-// Portuguese community-specific rate limiting rules
+// Portuguese-speaking community-specific rate limiting rules
 export const COMMUNITY_RATE_RULES = {
   // Emotional support conversations get special treatment
   saudadeSupport: {

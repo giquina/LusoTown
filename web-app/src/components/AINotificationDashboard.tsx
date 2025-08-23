@@ -477,7 +477,7 @@ export default function SmartNotificationDashboard() {
       <div className="flex items-center justify-center p-8">
         <div className="animate-spin w-8 h-8 border-4 border-primary-600 border-t-transparent rounded-full"></div>
         <span className="ml-3 text-gray-600">
-          {language === 'pt' ? 'IA processando dados da comunidade portuguesa...' : 'AI processing Portuguese community data...'}
+          {language === 'pt' ? 'IA processando dados da comunidade de falantes de português...' : 'AI processing Portuguese-speaking community data...'}
         </span>
         <div className="ml-4 text-xs text-gray-500">
           {language === 'pt' ? `Tempo: ${Math.round(metrics.loadTime)}ms` : `Time: ${Math.round(metrics.loadTime)}ms`}
@@ -506,8 +506,8 @@ export default function SmartNotificationDashboard() {
             </h1>
             <p className="text-white/90 mt-1">
               {language === 'pt' 
-                ? 'Machine Learning para comunidade portuguesa em Londres'
-                : 'Machine Learning for Portuguese community in London'
+                ? 'Machine Learning para comunidade de falantes de português em Londres'
+                : 'Machine Learning for Portuguese-speaking community in London'
               }
             </p>
             <div className="flex items-center gap-4 mt-2 text-sm text-white/80">

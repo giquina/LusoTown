@@ -1,16 +1,16 @@
 # LusoTown Supabase Comprehensive Database Plan
 *Created: August 14, 2025*
-*Status: Production-Ready Database Structure for Portuguese Community Platform*
+*Status: Production-Ready Database Structure for Portuguese-speaking community Platform*
 
 ## Executive Summary
 
-This comprehensive plan outlines the complete Supabase database structure needed to support LusoTown's Portuguese community platform. The database is designed to handle all community features including events, reviews, business directory, cultural preservation, multi-language support, and advanced safety features.
+This comprehensive plan outlines the complete Supabase database structure needed to support LusoTown's Portuguese-speaking community platform. The database is designed to handle all community features including events, reviews, business directory, cultural preservation, multi-language support, and advanced safety features.
 
 ## Current Database Status ✅
 
 ### Existing Schema (Fully Implemented)
 - **Core Tables**: profiles, interests, groups, events, messages ✅
-- **Portuguese Community Features**: Enhanced groups with cultural focus ✅
+- **Portuguese-speaking community Features**: Enhanced groups with cultural focus ✅
 - **Safety & Moderation**: Group reports, moderation logs, join requests ✅
 - **Real-time Chat**: Messages, reactions, typing indicators, presence ✅
 - **File Storage**: Profile pictures, verification selfies, group/event images ✅
@@ -22,7 +22,7 @@ This comprehensive plan outlines the complete Supabase database structure needed
 
 #### 1.1 Enhanced Events Table
 ```sql
--- Add Portuguese community specific columns to events table
+-- Add Portuguese-speaking community specific columns to events table
 ALTER TABLE public.events ADD COLUMN IF NOT EXISTS
 long_description text,
 event_category varchar(100),
@@ -219,7 +219,7 @@ CREATE TABLE public.business_categories (
 
 ### Phase 3: Enhanced User System (PRIORITY 3)
 
-#### 3.1 Enhanced Profiles for Portuguese Community
+#### 3.1 Enhanced Profiles for Portuguese-speaking community
 ```sql
 -- Add Portuguese-specific columns to profiles table
 ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS
@@ -263,7 +263,7 @@ CREATE TABLE public.user_favorites (
 
 ### Phase 4: Community Feed System (PRIORITY 4)
 
-#### 4.1 Social Feed for Portuguese Community
+#### 4.1 Social Feed for Portuguese-speaking community
 ```sql
 -- Community posts/feed table
 CREATE TABLE public.community_posts (
@@ -334,7 +334,7 @@ CREATE TABLE public.comment_likes (
 
 ### Phase 5: Forum Enhancement (PRIORITY 5)
 
-#### 5.1 Portuguese Community Forums
+#### 5.1 Portuguese-speaking community Forums
 ```sql
 -- Forum categories table
 CREATE TABLE public.forum_categories (
@@ -591,7 +591,7 @@ CREATE INDEX idx_posts_public ON public.community_posts(is_public);
 1. Create Portuguese-focused forum categories
 2. Set up topics and replies systems
 3. Test Portuguese language support
-4. Launch Portuguese community forums
+4. Launch Portuguese-speaking community forums
 
 ## Environment Variables Required
 
@@ -607,7 +607,7 @@ SUPABASE_STORAGE_URL=https://your-project.supabase.co/storage/v1
 # Database Configuration
 DATABASE_URL=postgresql://postgres:password@db.your-project.supabase.co:5432/postgres
 
-# Portuguese Community Settings
+# Portuguese-speaking community Settings
 DEFAULT_LANGUAGE=en
 SUPPORTED_LANGUAGES=en,pt-pt,pt-br
 PORTUGUESE_CULTURAL_FOCUS=true
@@ -660,7 +660,7 @@ ENABLE_PORTUGUESE_FORUMS=true
 - Privacy settings for profiles
 - Anonymous posting options
 
-### Portuguese Community Safety
+### Portuguese-speaking community Safety
 - Content moderation for Portuguese language
 - Cultural sensitivity guidelines
 - Community reporting system
@@ -737,10 +737,10 @@ ENABLE_PORTUGUESE_FORUMS=true
 
 ## Conclusion
 
-This comprehensive Supabase plan provides a complete database structure to support all LusoTown Portuguese community features. The database is designed for scalability, security, and cultural authenticity while maintaining high performance for real-time community interactions.
+This comprehensive Supabase plan provides a complete database structure to support all LusoTown Portuguese-speaking community features. The database is designed for scalability, security, and cultural authenticity while maintaining high performance for real-time community interactions.
 
 **Key Benefits:**
-- ✅ Complete Portuguese community focus
+- ✅ Complete Portuguese-speaking community focus
 - ✅ Scalable event management system
 - ✅ Comprehensive business directory
 - ✅ Real-time community interactions

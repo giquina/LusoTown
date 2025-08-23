@@ -226,7 +226,7 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
     // Set initial language for screen readers
     document.documentElement.setAttribute('lang', language === 'pt' ? 'pt-PT' : 'en-GB');
     
-    // Announce Portuguese community accessibility ready
+    // Announce Portuguese-speaking community accessibility ready
     setTimeout(() => {
       announceWithCulturalContext(
         language === 'pt' 

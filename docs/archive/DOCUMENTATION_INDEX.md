@@ -11,7 +11,7 @@ This document provides a comprehensive index of all LusoTown platform documentat
 - **[CLAUDE.md](./CLAUDE.md)** - Comprehensive development guide for Claude Code integration
 
 ### 🤖 Agent System Documentation
-- **[.claude/AGENTS_DOCUMENTATION.md](./.claude/AGENTS_DOCUMENTATION.md)** - Complete guide to Portuguese community specialist agents
+- **[.claude/AGENTS_DOCUMENTATION.md](./.claude/AGENTS_DOCUMENTATION.md)** - Complete guide to Portuguese-speaking community specialist agents
 - **[.claude/HOOKS_AND_WORKFLOWS.md](./.claude/HOOKS_AND_WORKFLOWS.md)** - Automated workflows and hook system
 - **[.claude/agents/](./claude/agents/)** - Individual agent configuration files
 
@@ -109,17 +109,17 @@ Connect Portuguese-speaking adults instantly with people to do activities with -
 - **Sports**: Adult football viewing/playing, yoga classes, park runs, gym partnerships
 - **Nightlife**: Portuguese DJ events, live music, adult karaoke, salsa nights, clubbing (18+)
 - **Professional**: Business networking, career meetups, adult learning workshops, entrepreneur events
-- **Day Trips**: Adult Brighton trips, countryside hikes, weekend getaways with Portuguese friends
+- **Day Trips**: Adult Brighton trips, countryside hikes, weekend getaways with Portuguese-speaking friends
 
 ## 🤖 Agent System Overview
 
-The LusoTown platform features a comprehensive agent system with specialized AI assistants for Portuguese community management:
+The LusoTown platform features a comprehensive agent system with specialized AI assistants for Portuguese-speaking community management:
 
-### Portuguese Community Specialists (Deployed)
+### Portuguese-speaking community Specialists (Deployed)
 - **luso-content-agent**: Portuguese language and cultural content management
 - **luso-safety-agent**: Adult community moderation and safety (18+ focus)
 - **luso-events-agent**: Portuguese cultural events curation and adult social activities
-- **luso-growth-agent**: Portuguese community outreach and growth optimization
+- **luso-growth-agent**: Portuguese-speaking community outreach and growth optimization
 - **luso-business-agent**: Portuguese business directory and professional networking
 - **luso-heritage-agent**: Portuguese heritage preservation and storytelling
 - **luso-membership-agent**: Adult community membership optimization
@@ -129,7 +129,7 @@ The LusoTown platform features a comprehensive agent system with specialized AI 
 - **doc-writer**: Technical and project documentation
 - **bug-finder**: Quality assurance and bug detection
 - **refactor-helper**: Code optimization and architecture improvement
-- **feature-builder**: New feature development for Portuguese community needs
+- **feature-builder**: New feature development for Portuguese-speaking community needs
 - **deploy-manager**: Production deployment and DevOps management
 - **ui-specialist**: User interface design and optimization
 - **ux-specialist**: User experience design and optimization
@@ -138,15 +138,15 @@ The LusoTown platform features a comprehensive agent system with specialized AI 
 - **luso-payment-agent**: Portuguese payment preferences and processing optimization
 - **luso-location-agent**: London Portuguese neighborhoods and venue specialist
 - **luso-messaging-agent**: Portuguese communication styles and cultural messaging
-- **luso-analytics-agent**: Portuguese community behavior and engagement analytics
-- **luso-mobile-agent**: Mobile app features optimized for Portuguese community
+- **luso-analytics-agent**: Portuguese-speaking community behavior and engagement analytics
+- **luso-mobile-agent**: Mobile app features optimized for Portuguese-speaking community
 - **luso-seo-agent**: Portuguese keyword research and search optimization
 - **luso-integration-agent**: Portuguese business system and API integrations
 - **luso-compliance-agent**: UK/Portuguese legal compliance and regulatory specialist
-- **luso-feedback-agent**: Portuguese community feedback collection and analysis
+- **luso-feedback-agent**: Portuguese-speaking community feedback collection and analysis
 - **luso-onboarding-agent**: Portuguese cultural onboarding experience optimization
 
-**Agent Research Status:** All 10 proposed agents have completed research phase with detailed specifications for Portuguese community enhancement. Pending strategic approval for implementation.
+**Agent Research Status:** All 10 proposed agents have completed research phase with detailed specifications for Portuguese-speaking community enhancement. Pending strategic approval for implementation.
 
 ## 🛠️ Technical Architecture
 
@@ -161,7 +161,7 @@ The LusoTown platform features a comprehensive agent system with specialized AI 
 ### Backend Infrastructure
 - **Supabase** (PostgreSQL, Authentication, Storage)
 - **Vercel** deployment with automatic CI/CD
-- **Complete database schema** for Portuguese community
+- **Complete database schema** for Portuguese-speaking community
 - **Row Level Security (RLS)** for data privacy
 
 ### Key Features
@@ -215,13 +215,13 @@ npm run dev
 ### Testing and Quality
 - **Manual Testing**: Focus on adult community features and bilingual functionality
 - **Agent Testing**: Use .claude/agents/ for specialized testing scenarios
-- **Demo Login**: Complete authentication system with Portuguese community features
+- **Demo Login**: Complete authentication system with Portuguese-speaking community features
 
 ## 📞 Support and Contribution
 
 ### Documentation Updates
 - Use **doc-writer** agent for technical documentation
-- Follow Portuguese community guidelines for cultural content
+- Follow Portuguese-speaking community guidelines for cultural content
 - Maintain adult focus (18+) across all documentation
 
 ### Agent System

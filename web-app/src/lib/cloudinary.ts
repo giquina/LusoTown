@@ -1,6 +1,6 @@
 /**
  * Cloudinary CDN Integration for LusoTown
- * Provides optimized image delivery for Portuguese community platform
+ * Provides optimized image delivery for Portuguese-speaking community platform
  */
 
 // Cloudinary configuration
@@ -21,7 +21,7 @@ export const QUALITY_PRESETS = {
 
 export type QualityPreset = keyof typeof QUALITY_PRESETS
 
-// Portuguese community specific transformations
+// Portuguese-speaking community specific transformations
 export const COMMUNITY_TRANSFORMATIONS = {
   // Add Portuguese flag overlay for official content
   officialContent: 'l_lusotown:portuguese_flag,w_50,g_north_east,x_10,y_10',
@@ -64,7 +64,7 @@ export function getCloudinaryUrl(
 }
 
 /**
- * Generate URL for Portuguese community assets
+ * Generate URL for Portuguese-speaking community assets
  * @param assetPath - Path to community asset
  * @param preset - Quality preset
  * @param isOfficial - Whether to add official overlay
@@ -185,7 +185,7 @@ export function optimizeExistingImage(
 }
 
 /**
- * Portuguese community specific image enhancements
+ * Portuguese-speaking community specific image enhancements
  */
 export const PORTUGUESE_ENHANCEMENTS = {
   /**

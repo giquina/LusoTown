@@ -47,8 +47,8 @@ export default function UnifiedExperiencePage() {
               </h1>
               <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
                 {isPortuguese
-                  ? "Uma plataforma integrada onde transporte premium, eventos culturais e networking da comunidade portuguesa se conectam perfeitamente"
-                  : "An integrated platform where premium transport, cultural events, and Portuguese community networking connect seamlessly"}
+                  ? "Uma plataforma integrada onde transporte premium, eventos culturais e networking da comunidade de falantes de português se conectam perfeitamente"
+                  : "An integrated platform where premium transport, cultural events, and Portuguese-speaking community networking connect seamlessly"}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
@@ -235,8 +235,8 @@ export default function UnifiedExperiencePage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {isPortuguese
-                    ? "Comunidade Portuguesa Autêntica"
-                    : "Authentic Portuguese Community"}
+                    ? "Comunidade de Falantes de Português Autêntica"
+                    : "Authentic Portuguese-speaking community"}
                 </h3>
                 <p className="text-gray-600">
                   {isPortuguese

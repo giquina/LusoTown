@@ -107,12 +107,12 @@ export default function CulturalCompatibilityResults({
 
   const profileDescriptions = {
     'Guardião da Tradição': {
-      pt: 'Você é o coração da comunidade portuguesa, preservando e transmitindo tradições para as futuras gerações.',
-      en: 'You are the heart of the Portuguese community, preserving and passing traditions to future generations.'
+      pt: 'Você é o coração da comunidade de falantes de português, preservando e transmitindo tradições para as futuras gerações.',
+      en: 'You are the heart of the Portuguese-speaking community, preserving and passing traditions to future generations.'
     },
     'Tradition Guardian': {
-      pt: 'Você é o coração da comunidade portuguesa, preservando e transmitindo tradições para as futuras gerações.',
-      en: 'You are the heart of the Portuguese community, preserving and passing traditions to future generations.'
+      pt: 'Você é o coração da comunidade de falantes de português, preservando e transmitindo tradições para as futuras gerações.',
+      en: 'You are the heart of the Portuguese-speaking community, preserving and passing traditions to future generations.'
     },
     'Ponte Cultural': {
       pt: 'Você conecta mundos, ajudando outros portugueses a integrar-se enquanto mantém suas raízes culturais.',

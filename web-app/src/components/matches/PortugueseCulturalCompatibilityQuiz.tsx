@@ -244,8 +244,8 @@ const quizQuestions: QuizQuestion[] = [
     type: 'multiple_choice',
     category: 'community',
     weight: 3.0,
-    titleEn: 'How involved are you in the Portuguese community in London?',
-    titlePt: 'Quão envolvido(a) está na comunidade portuguesa em Londres?',
+    titleEn: 'How involved are you in the Portuguese-speaking community in London?',
+    titlePt: 'Quão envolvido(a) está na comunidade de falantes de português em Londres?',
     options: [
       { id: 'very_active', labelEn: 'Very active - organize events', labelPt: 'Muito ativo(a) - organizo eventos', value: 10, emoji: '👑' },
       { id: 'regular_attendee', labelEn: 'Regular attendee at events', labelPt: 'Participo regularmente em eventos', value: 8, emoji: '🎉' },
@@ -583,8 +583,8 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
     if (scores.community >= 6) {
       recommendations.push(
         lang === 'pt'
-          ? 'Junte-se ao Portuguese Community Centre em Stockwell'
-          : 'Join the Portuguese Community Centre in Stockwell'
+          ? 'Junte-se ao Portuguese-speaking community Centre em Stockwell'
+          : 'Join the Portuguese-speaking community Centre in Stockwell'
       );
     }
 

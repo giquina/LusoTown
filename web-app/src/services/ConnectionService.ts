@@ -483,7 +483,7 @@ class ConnectionService {
   }
 
   /**
-   * Search for Portuguese community members to connect with
+   * Search for Portuguese-speaking community members to connect with
    */
   async searchPotentialConnections(filters: {
     location?: string

@@ -13,7 +13,7 @@ export default function ProfileSetupPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              {t('profile.setup.title', 'Complete Your Portuguese Community Profile')}
+              {t('profile.setup.title', 'Complete Your Portuguese-speaking community Profile')}
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               {t('profile.setup.subtitle', 'Connect with Portuguese speakers in London who share your cultural heritage and interests')}

@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# LusoTown Portuguese Community Streaming Server
+# LusoTown Portuguese-speaking Community Streaming Server
 # Production Deployment Script
 
 set -e
 
-echo "<õ<ù LusoTown Streaming Server - Production Deployment"
+echo "<ï¿½<ï¿½ LusoTown Streaming Server - Production Deployment"
 echo "====================================================="
 
 # Check if Node.js and npm are installed
@@ -29,11 +29,11 @@ fi
 echo " Node.js $(node -v) detected"
 
 # Install dependencies
-echo "=æ Installing production dependencies..."
+echo "=ï¿½ Installing production dependencies..."
 npm ci --only=production
 
 # Create necessary directories
-echo "=Á Creating required directories..."
+echo "=ï¿½ Creating required directories..."
 mkdir -p media www logs recordings recordings/cultural recordings/business
 
 # Copy production environment
@@ -41,7 +41,7 @@ if [ -f ".env.production" ]; then
     echo "=' Using production environment configuration"
     cp .env.production .env
 else
-    echo "  No .env.production found, using development configuration"
+    echo "ï¿½ No .env.production found, using development configuration"
     cp .env.dev .env
 fi
 
@@ -52,17 +52,17 @@ export HOST=${HOST:-0.0.0.0}
 export RTMP_PORT=${RTMP_PORT:-1935}
 export HTTP_PORT=${HTTP_PORT:-8080}
 
-echo ">ê Running health check..."
+echo ">ï¿½ Running health check..."
 node health-check.js
 
-echo "=€ Starting LusoTown Portuguese Community Streaming Server..."
+echo "=ï¿½ Starting LusoTown Portuguese-speaking Community Streaming Server..."
 echo ""
-echo "=á RTMP Ingestion: rtmp://YOUR_DOMAIN:1935/live/[stream_key]"
-echo "=ú HLS Output: https://YOUR_DOMAIN/live/[stream_key].m3u8"
+echo "=ï¿½ RTMP Ingestion: rtmp://YOUR_DOMAIN:1935/live/[stream_key]"
+echo "=ï¿½ HLS Output: https://YOUR_DOMAIN/live/[stream_key].m3u8"
 echo "=' API: https://YOUR_DOMAIN/api/v1/"
-echo "=Ê Health: https://YOUR_DOMAIN/health"
+echo "=ï¿½ Health: https://YOUR_DOMAIN/health"
 echo ""
-echo " Ready for Portuguese community streaming!"
+echo " Ready for Portuguese-speaking community streaming!"
 
 # Start the server
 exec npm start

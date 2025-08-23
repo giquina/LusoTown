@@ -2,7 +2,7 @@
 
 ## Overview
 
-LusoTown Connections is a comprehensive event-based networking system designed specifically for the Portuguese community in London. It automatically connects community members who attend the same events, fostering meaningful relationships within the Portuguese diaspora.
+LusoTown Connections is a comprehensive event-based networking system designed specifically for the Portuguese-speaking community in London. It automatically connects community members who attend the same events, fostering meaningful relationships within the Portuguese diaspora.
 
 ## System Philosophy
 
@@ -153,7 +153,7 @@ interface NetworkingContextType {
 - Shows existing connections attending events
 - Cultural context hints
 - Connection strength indicators
-- Portuguese community insights
+- Portuguese-speaking community insights
 
 ### Portuguese Cultural Integration
 
@@ -190,7 +190,7 @@ const conversationStarters = {
     "Which Portuguese festival means the most to you?"
   ],
   professional: [
-    "Como encontrou trabalho na comunidade portuguesa?",
+    "Como encontrou trabalho na comunidade de falantes de português?",
     "What Portuguese business connections have helped you?",
     "Que conselhos daria a outros portugueses em Londres?",
     "How do you balance Portuguese culture with British workplace?"
@@ -331,7 +331,7 @@ interface NetworkingTranslations {
 - Portuguese naming conventions respected
 - Cultural references maintained in both languages
 - Regional Portuguese variations considered
-- Brazilian Portuguese community included
+- Brazilian Portuguese-speaking community included
 
 ## Performance Optimization
 
@@ -359,7 +359,7 @@ interface NetworkingTranslations {
 1. **Data Encryption**: Sensitive data encrypted in localStorage
 2. **Connection Validation**: Prevent fake connections
 3. **Event Verification**: Verify actual event attendance
-4. **Cultural Authenticity**: Verify Portuguese community membership
+4. **Cultural Authenticity**: Verify Portuguese-speaking community membership
 
 ## Integration Points
 
@@ -367,7 +367,7 @@ interface NetworkingTranslations {
 - Seamless integration with event booking
 - Automatic connection creation on RSVP
 - Cultural event recognition
-- Portuguese community event prioritization
+- Portuguese-speaking community event prioritization
 
 ### Profile System Integration
 - Connection data enhances profiles
@@ -379,7 +379,7 @@ interface NetworkingTranslations {
 - Connections can share event recommendations
 - Cultural event suggestions based on network
 - Group booking facilitation
-- Portuguese community discounts
+- Portuguese-speaking community discounts
 
 ## Future Enhancements
 
@@ -387,7 +387,7 @@ interface NetworkingTranslations {
 1. **Connection Recommendations**: Suggest connections based on cultural interests
 2. **Cultural Mentorship**: Connect new arrivals with established community members
 3. **Heritage Projects**: Collaborative cultural preservation initiatives
-4. **Business Networking**: Professional Portuguese community connections
+4. **Business Networking**: Professional Portuguese-speaking community connections
 5. **Multi-Generational Connections**: Connect different age groups
 
 ### Technical Improvements
@@ -397,7 +397,7 @@ interface NetworkingTranslations {
 4. **Voice Integration**: Portuguese voice interface for accessibility
 5. **Mobile App Sync**: Seamless mobile application integration
 
-### Portuguese Community Expansion
+### Portuguese-speaking community Expansion
 1. **Regional Representation**: Support for all Portuguese regions
 2. **Diaspora Connections**: Connect Portuguese communities globally
 3. **Cultural Events Calendar**: Integration with Portuguese cultural institutions
@@ -424,4 +424,4 @@ interface NetworkingTranslations {
 
 **Unidos pela Língua, Conectados pelo Coração** - United by Language, Connected by Heart
 
-*LusoTown Connections - Building bridges within the Portuguese community, one meaningful connection at a time.*
+*LusoTown Connections - Building bridges within the Portuguese-speaking community, one meaningful connection at a time.*

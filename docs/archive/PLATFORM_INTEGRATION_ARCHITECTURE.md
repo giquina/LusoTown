@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document outlines the comprehensive service-to-community bridge architecture that unifies LusoTown's transport services and community features into one cohesive Portuguese community ecosystem.
+This document outlines the comprehensive service-to-community bridge architecture that unifies LusoTown's transport services and community features into one cohesive Portuguese-speaking community ecosystem.
 
 ## 🎯 Integration Goals Achieved
 
@@ -21,7 +21,7 @@ This document outlines the comprehensive service-to-community bridge architectur
 ### 3. Cross-Platform Value Creation
 - **Event-Based Transport Coordination**: Users can book transport to events with other attendees from their network, creating both cost savings and networking opportunities
 - **Premium Transport as Networking**: Premium transport experiences include networking opportunities with other Portuguese professionals
-- **Community-Driven Route Recommendations**: Transport routes are recommended based on Portuguese community member preferences and cultural locations
+- **Community-Driven Route Recommendations**: Transport routes are recommended based on Portuguese-speaking community member preferences and cultural locations
 - **Integrated Cultural Tours**: Community events can integrate with transport services for comprehensive cultural experiences
 
 ### 4. Progressive User Journey Integration
@@ -138,7 +138,7 @@ interface CrossPlatformActivity {
 5. Post-service, user receives community networking suggestions
 
 ### 2. Community to Transport Flow
-1. User attends Portuguese community events
+1. User attends Portuguese-speaking community events
 2. System builds network of connections and preferences
 3. Transport recommendations include group booking opportunities with connections
 4. Premium upgrade offers include transport benefits
@@ -215,11 +215,11 @@ interface CrossPlatformActivity {
 - [x] Language context integration for bilingual Portuguese/English experience
 - [x] Cart context integration for unified booking experience
 
-### 📱 Portuguese Community Features
+### 📱 Portuguese-speaking community Features
 - [x] Cultural conversation starters for networking
 - [x] Portuguese business connection identification
 - [x] Cultural event and transport pairing recommendations
-- [x] Portuguese community insights and statistics
+- [x] Portuguese-speaking community insights and statistics
 - [x] Heritage-focused tour route integration
 
 ## 🎯 User Stories Satisfied
@@ -253,7 +253,7 @@ interface CrossPlatformActivity {
 - **Cultural Event Creation**: Community-driven event creation with integrated transport planning
 
 ### Expanded Services
-- **Housing Integration**: Connect transport services with Portuguese community housing assistance
+- **Housing Integration**: Connect transport services with Portuguese-speaking community housing assistance
 - **Educational Integration**: Language classes, cultural workshops with coordinated transport
 - **Healthcare Integration**: Transport to Portuguese-speaking healthcare providers
 - **Legal/Financial Integration**: Professional services with premium transport included

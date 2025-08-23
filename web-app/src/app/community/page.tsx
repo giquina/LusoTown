@@ -11,7 +11,7 @@ import { communityStats as stats } from '@/config/community'
 import { ROUTES } from '@/config/routes'
 
 const communityStatsConfig = [
-  { number: `${stats.members}`, label: 'Portuguese Community Members', labelPt: 'Membros da Comunidade Portuguesa', icon: UsersIcon },
+  { number: `${stats.members}`, label: 'Portuguese-speaking community Members', labelPt: 'Membros da Comunidade de Falantes de Português', icon: UsersIcon },
   { number: `${stats.events}`, label: 'Monthly Experiences', labelPt: 'Experiências Mensais', icon: CalendarDaysIcon },
   { number: '8', label: 'London Boroughs', labelPt: 'Bairros de Londres', icon: MapPinIcon },
   { number: '15+', label: 'Countries Represented', labelPt: 'Países Representados', icon: HeartIcon }
@@ -104,7 +104,7 @@ const memberSpotlight = [
   }
 ]
 
-// Portuguese community areas in London
+// Portuguese-speaking community areas in London
 const communityAreas = [
   {
     name: 'Stockwell',
@@ -126,8 +126,8 @@ const communityAreas = [
   },
   {
     name: 'South Kensington',
-    description: 'Professional Portuguese community with business networking',
-    descriptionPt: 'Comunidade portuguesa profissional com networking empresarial',
+    description: 'Professional Portuguese-speaking community with business networking',
+    descriptionPt: 'Comunidade de falantes de português profissional com networking empresarial',
     highlights: ['Business networking', 'Language exchange', 'Professional meetups'],
     highlightsPt: ['Networking empresarial', 'Intercâmbio linguístico', 'Encontros profissionais'],
     members: '80+',
@@ -380,7 +380,7 @@ export default function Community() {
           </div>
         </section>
 
-        {/* Portuguese Community Areas */}
+        {/* Portuguese-speaking community Areas */}
         <section className="py-16 bg-gradient-to-br from-secondary-50 to-primary-50">
           <div className="container-width">
             <motion.div
@@ -392,16 +392,16 @@ export default function Community() {
             >
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? (
-                  <>Bairros da <span className="gradient-text">Comunidade Portuguesa</span></>
+                  <>Bairros da <span className="gradient-text">Comunidade de Falantes de Português</span></>
                 ) : (
-                  <>Portuguese Community <span className="gradient-text">Areas</span></>
+                  <>Portuguese-speaking community <span className="gradient-text">Areas</span></>
                 )}
               </h2>
               <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
                 {isPortuguese ? (
-                  'Descobre onde a comunidade portuguesa se reúne em Londres. Cada bairro tem a sua própria personalidade, desde padarias autênticas a centros culturais vibrantes.'
+                  'Descobre onde a comunidade de falantes de português se reúne em Londres. Cada bairro tem a sua própria personalidade, desde padarias autênticas a centros culturais vibrantes.'
                 ) : (
-                  'Discover where the Portuguese community gathers in London. Each area has its own personality, from authentic bakeries to vibrant cultural centers.'
+                  'Discover where the Portuguese-speaking community gathers in London. Each area has its own personality, from authentic bakeries to vibrant cultural centers.'
                 )}
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -529,9 +529,9 @@ export default function Community() {
               </h2>
               <p className="text-lg text-gray-600 mb-12">
                 {isPortuguese ? (
-                  'Pessoas reais fazendo conexões reais através de Londres - histórias da comunidade portuguesa'
+                  'Pessoas reais fazendo conexões reais através de Londres - histórias da comunidade de falantes de português'
                 ) : (
-                  'Real people making real connections across London - stories from the Portuguese community'
+                  'Real people making real connections across London - stories from the Portuguese-speaking community'
                 )}
               </p>
 

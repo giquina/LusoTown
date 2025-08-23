@@ -96,7 +96,7 @@ This document summarizes all documentation updates made to reflect recent projec
 - **update-claude-md.sh**: Documentation maintenance automation
 - **post-deployment-update.sh**: Comprehensive deployment verification
 - **Integration Workflow**: Pre and post-deployment procedures
-- **Portuguese Community Context**: Cultural considerations in automation
+- **Portuguese-speaking community Context**: Cultural considerations in automation
 - **Error Handling**: Troubleshooting and debugging guidance
 - **Maintenance**: Script versioning and update procedures
 - **Security Considerations**: Safety and access control measures
@@ -104,7 +104,7 @@ This document summarizes all documentation updates made to reflect recent projec
 **Key Features**:
 - Automatic project statistics collection
 - Build verification and quality checks
-- Portuguese community feature validation
+- Portuguese-speaking community feature validation
 - Integration with CI/CD pipelines
 - Cultural context preservation in automation
 
@@ -156,7 +156,7 @@ All new documentation includes:
 - **English**: Primary documentation language
 - **Portuguese Context**: Cultural elements and Portuguese terminology
 - **Bilingual Examples**: Code examples with Portuguese text
-- **Cultural Sensitivity**: Respect for Portuguese community values
+- **Cultural Sensitivity**: Respect for Portuguese-speaking community values
 
 ## Development Impact
 
@@ -168,7 +168,7 @@ All new documentation includes:
 
 ### Cultural Authenticity
 - **Portuguese Heritage**: Documentation reflects Portuguese values
-- **Community Focus**: Portuguese community needs prioritized
+- **Community Focus**: Portuguese-speaking community needs prioritized
 - **Cultural Preservation**: Heritage considerations in all features
 - **Bilingual Support**: Complete English/Portuguese documentation
 
@@ -187,10 +187,10 @@ All new documentation includes:
 4. **Bilingual Consistency**: Maintain language balance throughout
 
 ### Community Feedback Integration
-1. **Portuguese Community Input**: Gather feedback on cultural accuracy
+1. **Portuguese-speaking community Input**: Gather feedback on cultural accuracy
 2. **Developer Experience**: Collect feedback on documentation usefulness
 3. **Feature Requests**: Document community-requested features
-4. **Cultural Evolution**: Adapt to changing Portuguese community needs
+4. **Cultural Evolution**: Adapt to changing Portuguese-speaking community needs
 
 ## Next Steps
 
@@ -211,12 +211,12 @@ All new documentation includes:
 ### Documentation Quality
 - **Completeness**: All features fully documented
 - **Accuracy**: Technical accuracy verified
-- **Cultural Authenticity**: Portuguese community validation
+- **Cultural Authenticity**: Portuguese-speaking community validation
 - **Developer Usability**: Easy to follow and implement
 
-### Portuguese Community Impact
+### Portuguese-speaking community Impact
 - **Cultural Preservation**: Heritage considerations documented
-- **Community Engagement**: Features serve Portuguese community needs
+- **Community Engagement**: Features serve Portuguese-speaking community needs
 - **Bilingual Excellence**: Complete bilingual support documented
 - **Cultural Education**: Documentation teaches Portuguese culture
 

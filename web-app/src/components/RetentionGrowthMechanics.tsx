@@ -106,8 +106,8 @@ export default function RetentionGrowthMechanics({
       category: 'networking',
       name: 'First Portuguese Connection',
       namePortuguese: 'Primeira Conexão Portuguesa',
-      description: 'Made your first connection in the Portuguese community',
-      descriptionPortuguese: 'Fez a sua primeira conexão na comunidade portuguesa',
+      description: 'Made your first connection in the Portuguese-speaking community',
+      descriptionPortuguese: 'Fez a sua primeira conexão na comunidade de falantes de português',
       icon: '🤝',
       color: 'secondary',
       rarity: 'common',
@@ -160,8 +160,8 @@ export default function RetentionGrowthMechanics({
       category: 'networking',
       name: 'Community Connector',
       namePortuguese: 'Conector Comunitário',
-      description: 'Connected with 10+ Portuguese community members',
-      descriptionPortuguese: 'Conectado com 10+ membros da comunidade portuguesa',
+      description: 'Connected with 10+ Portuguese-speaking community members',
+      descriptionPortuguese: 'Conectado com 10+ membros da comunidade de falantes de português',
       icon: '🌐',
       color: 'secondary',
       rarity: 'rare',
@@ -255,8 +255,8 @@ export default function RetentionGrowthMechanics({
       category: 'business',
       name: 'Premium Pioneer',
       namePortuguese: 'Pioneiro Premium',
-      description: 'Early adopter of premium Portuguese community services',
-      descriptionPortuguese: 'Adotante precoce dos serviços premium da comunidade portuguesa',
+      description: 'Early adopter of premium Portuguese-speaking community services',
+      descriptionPortuguese: 'Adotante precoce dos serviços premium da comunidade de falantes de português',
       icon: '⭐',
       color: 'premium',
       rarity: 'epic',
@@ -647,10 +647,10 @@ export default function RetentionGrowthMechanics({
     <div className="space-y-6">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">
-          {isPortuguese ? 'Conquistas da Comunidade Portuguesa' : 'Portuguese Community Achievements'}
+          {isPortuguese ? 'Conquistas da Comunidade de Falantes de Português' : 'Portuguese-speaking community Achievements'}
         </h2>
         <p className="text-gray-600">
-          {isPortuguese ? 'Celebre a sua jornada na comunidade portuguesa' : 'Celebrate your journey in the Portuguese community'}
+          {isPortuguese ? 'Celebre a sua jornada na comunidade de falantes de português' : 'Celebrate your journey in the Portuguese-speaking community'}
         </p>
       </div>
 

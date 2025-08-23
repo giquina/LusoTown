@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **PredictiveCommunityAnalytics** system is a sophisticated, production-ready machine learning engine designed specifically for the luxury Portuguese community platform. It provides GDPR-compliant analytics, advanced cultural insights, and premium user experience predictions.
+The **PredictiveCommunityAnalytics** system is a sophisticated, production-ready machine learning engine designed specifically for the luxury Portuguese-speaking community platform. It provides GDPR-compliant analytics, advanced cultural insights, and premium user experience predictions.
 
 ## Key Features
 
@@ -27,7 +27,7 @@ The **PredictiveCommunityAnalytics** system is a sophisticated, production-ready
 ### ⚡ Production Performance
 - **Sub-2-Second Response Times**: Optimized for real-time user experience
 - **Intelligent Caching**: 5-minute TTL with consent-aware cache validation
-- **Concurrent Load Handling**: Tested for 50+ concurrent Portuguese community users
+- **Concurrent Load Handling**: Tested for 50+ concurrent Portuguese-speaking community users
 - **Memory Optimization**: Efficient processing of 5,000+ community members
 
 ## Core Analytics Capabilities
@@ -196,7 +196,7 @@ const luxuryServices = recommendations.luxuryServiceRecommendations
 - **Performance Metrics**: Real-time response time tracking
 - **Error Rates**: < 1% failure rate target
 - **User Consent**: 100% compliance verification
-- **Cultural Accuracy**: Ongoing Portuguese community validation
+- **Cultural Accuracy**: Ongoing Portuguese-speaking community validation
 
 ## Future Enhancements
 
@@ -224,7 +224,7 @@ import { predictiveCommunityAnalytics } from '@/lib/ai/PredictiveCommunityAnalyt
 ### 2. Get Community Insights
 ```typescript
 const trends = await predictiveCommunityAnalytics.predictCommunityTrends('month')
-console.log('Top Portuguese community trends:', trends)
+console.log('Top Portuguese-speaking community trends:', trends)
 ```
 
 ### 3. Optimize Events

@@ -255,7 +255,7 @@ jobs:
             # WebRTC endpoint check
             curl -f https://stream.lusotown.com:8000 || exit 1
             
-            echo "Production deployment is healthy and ready for Portuguese community"
+            echo "Production deployment is healthy and ready for Portuguese-speaking community"
           EOF
 
   # Notify on deployment success/failure
@@ -270,7 +270,7 @@ jobs:
           status: ${{ job.status }}
           channel: "#lusotown-deployments"
           text: |
-            LusoTown Portuguese Community Streaming Infrastructure Deployment
+            LusoTown Portuguese-speaking community Streaming Infrastructure Deployment
             Environment: ${{ github.event.inputs.environment || 'staging' }}
             Status: ${{ job.status }}
             Commit: ${{ github.sha }}

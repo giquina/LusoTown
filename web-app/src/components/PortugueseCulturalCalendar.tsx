@@ -281,7 +281,7 @@ export default function PortugueseCulturalCalendar() {
             date: '2024-12-24',
             time: '19:00',
             venue: 'Portuguese Cultural Centre',
-            organizer: 'Portuguese Community London',
+            organizer: 'Portuguese-speaking community London',
             ticketPrice: 25,
             maxAttendees: 150,
             currentAttendees: 0,

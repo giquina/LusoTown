@@ -1,13 +1,13 @@
 #!/bin/bash
-# LusoTown Portuguese Community Streaming - Production Deployment
-# Secure, scalable deployment for Portuguese community streaming
+# LusoTown Portuguese-speaking Community Streaming - Production Deployment
+# Secure, scalable deployment for Portuguese-speaking community streaming
 
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 STREAMING_DIR="$(dirname "$SCRIPT_DIR")"
 
-echo "<õ<ù LusoTown Portuguese Community Streaming - Production Deployment"
+echo "<ï¿½<ï¿½ LusoTown Portuguese-speaking Community Streaming - Production Deployment"
 echo "==================================================================="
 
 # Validate production environment
@@ -55,7 +55,7 @@ check_production_prerequisites() {
         echo " Kubernetes cluster is accessible"
         DEPLOYMENT_MODE="kubernetes"
     elif command -v docker-compose &> /dev/null; then
-        echo "   Using Docker Compose for production (consider upgrading to Swarm/K8s)"
+        echo "ï¿½  Using Docker Compose for production (consider upgrading to Swarm/K8s)"
         DEPLOYMENT_MODE="compose"
     else
         echo "L No suitable container orchestration platform found"
@@ -67,12 +67,12 @@ check_production_prerequisites() {
     local cpu_cores=$(nproc)
     
     if [[ $total_memory -lt 8 ]]; then
-        echo "   Warning: Less than 8GB RAM available ($total_memory GB)"
+        echo "ï¿½  Warning: Less than 8GB RAM available ($total_memory GB)"
         echo "   Recommended: 8GB+ for production streaming"
     fi
     
     if [[ $cpu_cores -lt 4 ]]; then
-        echo "   Warning: Less than 4 CPU cores available ($cpu_cores cores)"
+        echo "ï¿½  Warning: Less than 4 CPU cores available ($cpu_cores cores)"
         echo "   Recommended: 4+ CPU cores for concurrent streaming"
     fi
     
@@ -102,7 +102,7 @@ setup_ssl_certificates() {
     echo "Setting up SSL certificates..."
     
     if [[ ! -f "/etc/ssl/lusotown/lusotown-streaming.crt" ]]; then
-        echo "   SSL certificates not found. Generating self-signed certificates for development."
+        echo "ï¿½  SSL certificates not found. Generating self-signed certificates for development."
         echo "   For production, replace with valid certificates from Let's Encrypt or your CA."
         
         sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
@@ -190,36 +190,36 @@ verify_deployment() {
             return 0
         fi
         
-        echo "ó Attempt $attempt/$max_attempts - waiting for services..."
+        echo "ï¿½ Attempt $attempt/$max_attempts - waiting for services..."
         sleep 10
         ((attempt++))
     done
     
-    echo "   Deployment verification timed out. Check logs for issues."
+    echo "ï¿½  Deployment verification timed out. Check logs for issues."
 }
 
 # Display production information
 show_production_info() {
     echo ""
-    echo "<¯ LusoTown Portuguese Community Streaming - Production Endpoints"
+    echo "<ï¿½ LusoTown Portuguese-speaking Community Streaming - Production Endpoints"
     echo "=============================================================="
     echo ""
-    echo "<¥ RTMP Ingest (Secure):"
+    echo "<ï¿½ RTMP Ingest (Secure):"
     echo "   rtmp://stream.lusotown.com:1935/live/[stream_key]"
     echo ""
     echo "< HLS Streaming (CDN):"
     echo "   https://stream.lusotown.com/live/[stream_key].m3u8"
     echo ""
-    echo "¡ WebRTC Low-latency:"
+    echo "ï¿½ WebRTC Low-latency:"
     echo "   https://stream.lusotown.com:8000"
     echo ""
     echo "=' Management API (Secured):"
     echo "   https://stream.lusotown.com/api/v1/"
     echo ""
-    echo "=Ê Health Check:"
+    echo "=ï¿½ Health Check:"
     echo "   https://stream.lusotown.com/health"
     echo ""
-    echo "=Ë Production Services Status:"
+    echo "=ï¿½ Production Services Status:"
     if [[ "$DEPLOYMENT_MODE" == "swarm" ]]; then
         docker stack services lusotown-streaming
     else
@@ -232,7 +232,7 @@ show_production_info() {
     echo "    CDN integration (BunnyCDN)"
     echo "    Stream authentication"
     echo "    Rate limiting"
-    echo "    Portuguese community access control"
+    echo "    Portuguese-speaking community access control"
 }
 
 # Main production deployment
@@ -261,14 +261,14 @@ main() {
     show_production_info
     
     echo ""
-    echo "<‰ LusoTown Portuguese Community Streaming is now live in production!"
-    echo "   Serving the Portuguese community in London & UK with professional streaming"
+    echo "<ï¿½ LusoTown Portuguese-speaking Community Streaming is now live in production!"
+    echo "   Serving the Portuguese-speaking community in London & UK with professional streaming"
     echo ""
-    echo "=Ý Next Steps:"
-    echo "   1. Configure DNS: stream.lusotown.com ’ your_server_ip"
+    echo "=ï¿½ Next Steps:"
+    echo "   1. Configure DNS: stream.lusotown.com ï¿½ your_server_ip"
     echo "   2. Setup monitoring alerts"
     echo "   3. Configure backup procedures"
-    echo "   4. Test with Portuguese community creators"
+    echo "   4. Test with Portuguese-speaking community creators"
 }
 
 # Execute main function

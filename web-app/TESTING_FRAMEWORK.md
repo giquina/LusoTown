@@ -2,7 +2,7 @@
 
 ## Overview
 
-This comprehensive testing framework ensures the reliability, performance, and cultural accuracy of the LusoTown Portuguese community platform. The framework covers unit testing, integration testing, end-to-end testing, performance testing, and Portuguese-specific cultural validation.
+This comprehensive testing framework ensures the reliability, performance, and cultural accuracy of the LusoTown Portuguese-speaking community platform. The framework covers unit testing, integration testing, end-to-end testing, performance testing, and Portuguese-specific cultural validation.
 
 ## Testing Architecture
 
@@ -29,7 +29,7 @@ __tests__/
 ### Cultural Content Validation
 - **Portuguese Character Support**: Testing ã, ç, ñ, and other special characters
 - **Cultural Term Preservation**: Ensuring terms like "Fado", "Saudade", and "Santos Populares" are not translated
-- **UK Location Context**: Verifying all content emphasizes London & UK Portuguese community
+- **UK Location Context**: Verifying all content emphasizes London & UK Portuguese-speaking community
 - **Bilingual Consistency**: Testing EN/PT content switching and accuracy
 
 ### Portuguese User Journey Testing
@@ -66,7 +66,7 @@ __tests__/
 - Connection management and Portuguese conversation starters
 - Network statistics and achievement tracking
 - Premium matching features and cultural compatibility
-- Portuguese community messaging and safety features
+- Portuguese-speaking community messaging and safety features
 
 ### 2. Context Testing (`__tests__/contexts/`)
 
@@ -183,13 +183,13 @@ npm run test:all
 
 ## Cultural Sensitivity Testing
 
-### Portuguese Community Features
+### Portuguese-speaking community Features
 - **Fado Night Events**: Testing cultural event creation and attendance
 - **Business Directory**: Portuguese business listings and search functionality
 - **Cultural Calendar**: Santos Populares, Portuguese holidays, and celebrations
 - **Language Preservation**: Ensuring Portuguese terms maintain cultural authenticity
 
-### UK Portuguese Community Context
+### UK Portuguese-speaking community Context
 - **London Focus**: All content emphasizes London & UK locations
 - **Portuguese Areas**: Vauxhall, Kennington, Camberwell location testing
 - **Cultural Integration**: Support for Portuguese families and professionals
@@ -206,7 +206,7 @@ npm run test:all
 ### Inclusive Design Testing
 - Color contrast compliance for Portuguese brand colors
 - Font readability with Portuguese characters
-- Mobile accessibility for Portuguese community features
+- Mobile accessibility for Portuguese-speaking community features
 - Cultural sensitivity in accessibility implementations
 
 ## Security and Data Protection
@@ -229,10 +229,10 @@ npm run test:all
 - Efficient rendering of Portuguese characters and cultural content
 - Optimized image loading for Portuguese cultural events
 - Fast language switching between English and Portuguese
-- Mobile performance optimization for Portuguese community features
+- Mobile performance optimization for Portuguese-speaking community features
 
 ### Network Optimization
-- CDN performance for UK Portuguese community
+- CDN performance for UK Portuguese-speaking community
 - API response times for Portuguese business directory
 - Real-time features for networking and messaging
 - Subscription validation and premium feature access
@@ -240,7 +240,7 @@ npm run test:all
 ## Quality Assurance Metrics
 
 ### Code Coverage Targets
-- **Components**: 90% coverage for all Portuguese community features
+- **Components**: 90% coverage for all Portuguese-speaking community features
 - **Contexts**: 95% coverage for state management and data persistence
 - **Integration**: 85% coverage for complete user journeys
 - **E2E**: 80% coverage for critical Portuguese platform workflows
@@ -292,6 +292,6 @@ npm run test:all
 - Monitor Portuguese content rendering performance
 - Test language switching speed and efficiency
 - Validate memory usage with large Portuguese datasets
-- Ensure network optimization for UK Portuguese community
+- Ensure network optimization for UK Portuguese-speaking community
 
-This comprehensive testing framework ensures the LusoTown platform maintains high quality, cultural authenticity, and optimal performance for the Portuguese community in London and the UK.
+This comprehensive testing framework ensures the LusoTown platform maintains high quality, cultural authenticity, and optimal performance for the Portuguese-speaking community in London and the UK.

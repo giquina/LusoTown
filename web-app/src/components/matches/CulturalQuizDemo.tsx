@@ -50,8 +50,8 @@ export default function CulturalQuizDemo({ showAsPrompt = true, className = "" }
         ? 'Visite noites de fado autênticas em Soho'
         : 'Visit authentic fado nights in Soho',
       language === 'pt'
-        ? 'Junte-se ao Portuguese Community Centre em Stockwell'
-        : 'Join the Portuguese Community Centre in Stockwell',
+        ? 'Junte-se ao Portuguese-speaking community Centre em Stockwell'
+        : 'Join the Portuguese-speaking community Centre in Stockwell',
       language === 'pt'
         ? 'Organize celebrações dos Santos Populares em Londres'
         : 'Organize Santos Populares celebrations in London',

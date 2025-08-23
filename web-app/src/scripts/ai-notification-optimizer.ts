@@ -4,11 +4,11 @@
  * AI Notification System Production Optimizer
  * 
  * This script provides comprehensive optimization and monitoring for the AI notification
- * system specifically designed for the Portuguese community platform.
+ * system specifically designed for the Portuguese-speaking community platform.
  * 
  * Features:
  * - Performance monitoring and optimization
- * - Portuguese community behavior analysis
+ * - Portuguese-speaking community behavior analysis
  * - Cultural personalization effectiveness measurement
  * - A/B testing results analysis
  * - Queue management and optimization
@@ -47,7 +47,7 @@ class AINotificationOptimizer {
   private recommendations: string[] = []
 
   async run(command: string, options: any = {}): Promise<void> {
-    console.log('🤖 AI Notification System Optimizer for Portuguese Community')
+    console.log('🤖 AI Notification System Optimizer for Portuguese-speaking community')
     console.log('🇵🇹 LusoTown Platform - Production Optimization')
     console.log(`📅 Started: ${new Date().toISOString()}`)
     console.log('================================================\n')
@@ -105,7 +105,7 @@ class AINotificationOptimizer {
       // Database connectivity
       await this.checkDatabaseHealth()
 
-      // Portuguese community data integrity
+      // Portuguese-speaking community data integrity
       await this.checkPortugueseCommunityData()
 
       console.log('\n📊 Health Check Summary:')
@@ -338,7 +338,7 @@ class AINotificationOptimizer {
       // Performance metrics
       report.performance_metrics = await aiNotificationEngine.getPerformanceMetrics()
 
-      // Portuguese community insights
+      // Portuguese-speaking community insights
       report.portuguese_community_insights = await this.gatherPortugueseCommunityInsights()
 
       // Cultural effectiveness analysis
@@ -474,7 +474,7 @@ class AINotificationOptimizer {
       }
 
     } catch (error) {
-      this.errors.push('Portuguese community data check failed')
+      this.errors.push('Portuguese-speaking community data check failed')
     }
   }
 
@@ -521,7 +521,7 @@ class AINotificationOptimizer {
         total_active_users: profiles?.length || 0,
         cultural_centers_available: CULTURAL_CENTERS.length,
         university_partnerships: UNIVERSITY_PARTNERSHIPS.length,
-        platform_focus: 'Portuguese community in London & UK',
+        platform_focus: 'Portuguese-speaking community in London & UK',
         luxury_positioning: true
       }
     } catch (error) {

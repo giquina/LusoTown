@@ -157,8 +157,8 @@ export default function TransportTestimonials() {
             className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
             {isPortuguese 
-              ? 'Experiências reais de membros da comunidade portuguesa em Londres'
-              : 'Real experiences from Portuguese community members in London'
+              ? 'Experiências reais de membros da comunidade de falantes de português em Londres'
+              : 'Real experiences from Portuguese-speaking community members in London'
             }
           </motion.p>
         </div>

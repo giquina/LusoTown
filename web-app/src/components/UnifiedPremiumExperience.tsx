@@ -254,7 +254,7 @@ export default function UnifiedPremiumExperience({
   };
 
   const calculateAnnualSavings = (discountPercent: number) => {
-    // Average Portuguese community member uses £200 in transport services per year
+    // Average Portuguese-speaking community member uses £200 in transport services per year
     const averageSpending = 200;
     return Math.round(averageSpending * (discountPercent / 100));
   };
@@ -416,8 +416,8 @@ export default function UnifiedPremiumExperience({
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {isPortuguese
-                ? "Transporte premium, eventos exclusivos, networking VIP e suporte da comunidade portuguesa - tudo numa só subscrição"
-                : "Premium transport, exclusive events, VIP networking, and Portuguese community support - all in one subscription"}
+                ? "Transporte premium, eventos exclusivos, networking VIP e suporte da comunidade de falantes de português - tudo numa só subscrição"
+                : "Premium transport, exclusive events, VIP networking, and Portuguese-speaking community support - all in one subscription"}
             </p>
           </motion.div>
         </div>
@@ -631,8 +631,8 @@ export default function UnifiedPremiumExperience({
           </h3>
           <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
             {isPortuguese
-              ? "LusoTown Premium não é apenas um desconto - é o seu passaporte para a comunidade portuguesa mais vibrante de Londres. Transporte seguro, eventos exclusivos, networking profissional e amizades para a vida."
-              : "LusoTown Premium isn't just a discount - it's your passport to London's most vibrant Portuguese community. Safe transport, exclusive events, professional networking, and friendships for life."}
+              ? "LusoTown Premium não é apenas um desconto - é o seu passaporte para a comunidade de falantes de português mais vibrante de Londres. Transporte seguro, eventos exclusivos, networking profissional e amizades para a vida."
+              : "LusoTown Premium isn't just a discount - it's your passport to London's most vibrant Portuguese-speaking community. Safe transport, exclusive events, professional networking, and friendships for life."}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="text-center">

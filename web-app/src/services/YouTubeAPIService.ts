@@ -258,7 +258,7 @@ class YouTubeAPIService {
           portugal: 'Portugal português tradição',
           brazil: 'Brasil brasileiro cultura',
           africa: 'África lusófono PALOP',
-          diaspora: 'comunidade portuguesa emigração',
+          diaspora: 'comunidade de falantes de português emigração',
           universal: 'lusófono português'
         };
         enhancedQuery += ` ${contextKeywords[culturalContext]}`;
@@ -322,7 +322,7 @@ class YouTubeAPIService {
       },
       {
         title: 'LusoTown: Negócios e Empreendedorismo',
-        description: 'Histórias de sucesso empresarial da comunidade portuguesa',
+        description: 'Histórias de sucesso empresarial da comunidade de falantes de português',
         culturalContext: 'universal'
       },
       {
@@ -380,7 +380,7 @@ class YouTubeAPIService {
       portugal: '🇵🇹 Portugal em Londres: ',
       brazil: '🇧🇷 Brasil em Londres: ',
       africa: '🌍 África Lusófona: ',
-      diaspora: '🏘️ Comunidade Portuguesa: ',
+      diaspora: '🏘️ Comunidade de Falantes de Português: ',
       universal: '🇵🇹 LusoTown: '
     };
 
@@ -440,7 +440,7 @@ class YouTubeAPIService {
     culturalContext?: 'portugal' | 'brazil' | 'africa' | 'diaspora' | 'universal'
   ): string[] {
     const basePortugueseTags = [
-      'LusoTown', 'Portuguese Community', 'London Portuguese', 'Comunidade Portuguesa',
+      'LusoTown', 'Portuguese-speaking community', 'London Portuguese', 'Comunidade de Falantes de Português',
       'Portuguese Culture', 'Lusitanian', 'Portuguese Events', 'Cultural Heritage'
     ];
 

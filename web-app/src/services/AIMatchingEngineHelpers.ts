@@ -161,7 +161,7 @@ export class AIMatchingEngineHelpers {
     // Professional and academic topics
     const professionalOverlap = this.analyzeProfessionalTopicOverlap(profile1, profile2)
 
-    // Portuguese community topics
+    // Portuguese-speaking community topics
     const communityTopicOverlap = this.analyzeCommunityTopicOverlap(profile1, profile2)
 
     return Math.round(

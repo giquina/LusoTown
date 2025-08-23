@@ -244,4 +244,4 @@ Once deployed, save these URLs:
 
 **🔴 START HERE: Begin with Phase 1 and work through each step!**
 
-**🇵🇹 You're about to have a complete Portuguese community streaming platform! 🇵🇹**
+**🇵🇹 You're about to have a complete Portuguese-speaking community streaming platform! 🇵🇹**

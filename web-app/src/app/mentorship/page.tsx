@@ -11,11 +11,11 @@ import MentorshipProgramsSection from '@/components/MentorshipProgramsSection'
 // import MentorshipRegistrationSection from '@/components/MentorshipRegistrationSection'
 // import MentorshipCommunityImpact from '@/components/MentorshipCommunityImpact'
 
-// Mentorship page structured data for Portuguese community integration
+// Mentorship page structured data for Portuguese-speaking community integration
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
-  name: 'LusoTown Portuguese Community Mentorship',
+  name: 'LusoTown Portuguese-speaking community Mentorship',
   description: 'Three-tier mentorship system connecting Portuguese professionals, language learners, and cultural knowledge sharers in London',
   url: 'https://lusotown.london/mentorship',
   serviceType: [
@@ -39,7 +39,7 @@ const jsonLd = {
   educationalCredentialAwarded: 'Portuguese Cultural Preservation Certificate',
   offers: {
     '@type': 'Offer',
-    name: 'Portuguese Community Mentorship Programs',
+    name: 'Portuguese-speaking community Mentorship Programs',
     description: 'Professional integration, language exchange, and cultural skill sharing'
   }
 }

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide provides instructions for applying the streaming platform database migration (`20250818_001_streaming_platform_schema.sql`) to your Supabase database. This migration creates the complete streaming infrastructure for the Portuguese community platform.
+This guide provides instructions for applying the streaming platform database migration (`20250818_001_streaming_platform_schema.sql`) to your Supabase database. This migration creates the complete streaming infrastructure for the Portuguese-speaking community platform.
 
 ## What the Migration Includes
 
@@ -76,18 +76,18 @@ npm run db:migrate:streaming
 #### Expected Output
 
 ```
-<¬ LusoTown Streaming Platform Migration Script
+<ï¿½ LusoTown Streaming Platform Migration Script
 ================================================
 = Connecting to Supabase...
-=Ö Reading migration file: .../20250818_001_streaming_platform_schema.sql
+=ï¿½ Reading migration file: .../20250818_001_streaming_platform_schema.sql
  Migration file loaded successfully
-=Ê Migration size: 23.11 KB
+=ï¿½ Migration size: 23.11 KB
 = Checking migration status...
-=æ Migration contains XX SQL statements
-¡ Applying chunk 1/X...
+=ï¿½ Migration contains XX SQL statements
+ï¿½ Applying chunk 1/X...
  Chunk applied successfully
 ...
-<‰ SUCCESS! Streaming platform migration applied successfully!
+<ï¿½ SUCCESS! Streaming platform migration applied successfully!
 ```
 
 ### Method 2: Manual SQL Application
@@ -168,7 +168,7 @@ Error: insufficient privileges
 
 #### 3. Migration Already Applied
 ```
-  Migration already applied. Skipping...
+ï¿½ Migration already applied. Skipping...
 ```
 **Result**: This is normal if the migration was already run successfully.
 
@@ -200,7 +200,7 @@ DROP TABLE IF EXISTS portuguese_emotes CASCADE;
 
 ### 1. Configure Streaming Infrastructure
 - Set up SRS (Simple Relay Server) for RTMP streaming
-- Configure CDN endpoints for Portuguese community content
+- Configure CDN endpoints for Portuguese-speaking community content
 - Set up SSL certificates for streaming domains
 
 ### 2. Test Portuguese Features
@@ -211,7 +211,7 @@ DROP TABLE IF EXISTS portuguese_emotes CASCADE;
 ### 3. Set Up Creator Monetization
 - Configure payment processing for creator revenue
 - Set up subscription tiers for premium streaming
-- Test revenue sharing calculations (70/30 ’ 85/15 for Portuguese creators)
+- Test revenue sharing calculations (70/30 ï¿½ 85/15 for Portuguese creators)
 
 ### 4. Enable Content Moderation
 - Configure Portuguese language toxicity detection
@@ -249,4 +249,4 @@ If you encounter issues during migration:
 For additional support, refer to:
 - [Supabase Documentation](https://supabase.com/docs)
 - [LusoTown Development Documentation](../README.md)
-- [Portuguese Community Platform Architecture](../../STREAMING_INTEGRATION_MASTER_PLAN.md)
+- [Portuguese-speaking community Platform Architecture](../../STREAMING_INTEGRATION_MASTER_PLAN.md)

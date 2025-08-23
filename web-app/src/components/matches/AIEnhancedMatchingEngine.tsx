@@ -231,7 +231,7 @@ class PortugueseCulturalAI {
     
     // Community involvement
     if (user.communityInvolvement >= 6 && potential.communityInvolvement >= 6) {
-      topics.push('Participação na comunidade portuguesa em Londres');
+      topics.push('Participação na comunidade de falantes de português em Londres');
     }
     
     return topics.slice(0, 4);

@@ -59,7 +59,7 @@ const CorporatePartnershipProgram: React.FC = () => {
         'Co-branded marketing campaigns and events',
         'Direct access to LusoTown leadership team',
         'Premium placement across all LusoTown platforms',
-        'Dedicated Portuguese community liaison',
+        'Dedicated Portuguese-speaking community liaison',
         'Quarterly business development meetings',
         'Access to Portuguese business intelligence reports',
         'Priority partnership announcements',
@@ -71,7 +71,7 @@ const CorporatePartnershipProgram: React.FC = () => {
         'Campanhas de marketing e eventos co-marcados',
         'Acesso direto à equipa de liderança da LusoTown',
         'Colocação premium em todas as plataformas LusoTown',
-        'Liaison dedicado da comunidade portuguesa',
+        'Liaison dedicado da comunidade de falantes de português',
         'Reuniões de desenvolvimento de negócios trimestrais',
         'Acesso a relatórios de inteligência empresarial portuguesa',
         'Anúncios de parceria prioritários',
@@ -90,7 +90,7 @@ const CorporatePartnershipProgram: React.FC = () => {
       features: [
         'Strategic partner recognition and branding',
         'Featured placement in business directory',
-        'Monthly Portuguese community insights',
+        'Monthly Portuguese-speaking community insights',
         'Preferred vendor status for LusoTown events',
         'Co-marketing opportunities and content',
         'Access to premium networking events',
@@ -101,7 +101,7 @@ const CorporatePartnershipProgram: React.FC = () => {
       featuresPortuguese: [
         'Reconhecimento e marca de parceiro estratégico',
         'Colocação em destaque no diretório de negócios',
-        'Insights mensais da comunidade portuguesa',
+        'Insights mensais da comunidade de falantes de português',
         'Status de fornecedor preferido para eventos LusoTown',
         'Oportunidades de co-marketing e conteúdo',
         'Acesso a eventos de networking premium',
@@ -144,7 +144,7 @@ const CorporatePartnershipProgram: React.FC = () => {
       namePortuguese: 'Parceiro Empresarial Comunitário',
       price: '£2,500/year',
       targetRevenue: 'Emerging businesses',
-      clientBase: 'Portuguese community focus',
+      clientBase: 'Portuguese-speaking community focus',
       features: [
         'Community business directory listing',
         'Access to community networking events',
@@ -152,7 +152,7 @@ const CorporatePartnershipProgram: React.FC = () => {
         'Local Portuguese market insights',
         'Community event participation opportunities',
         'Basic partnership recognition',
-        'Portuguese community newsletter features'
+        'Portuguese-speaking community newsletter features'
       ],
       featuresPortuguese: [
         'Listagem no diretório de negócios comunitários',
@@ -161,7 +161,7 @@ const CorporatePartnershipProgram: React.FC = () => {
         'Insights do mercado português local',
         'Oportunidades de participação em eventos comunitários',
         'Reconhecimento básico de parceria',
-        'Destaques no boletim informativo da comunidade portuguesa'
+        'Destaques no boletim informativo da comunidade de falantes de português'
       ]
     }
   ]
@@ -185,8 +185,8 @@ const CorporatePartnershipProgram: React.FC = () => {
       category: 'Brand Recognition & Trust',
       categoryPortuguese: 'Reconhecimento e Confiança da Marca',
       annualValue: '£12,000 - £45,000',
-      description: 'Enhanced credibility and trust within the Portuguese community',
-      descriptionPortuguese: 'Credibilidade e confiança aprimoradas dentro da comunidade portuguesa'
+      description: 'Enhanced credibility and trust within the Portuguese-speaking community',
+      descriptionPortuguese: 'Credibilidade e confiança aprimoradas dentro da comunidade de falantes de português'
     },
     {
       category: 'Networking & Business Development',

@@ -68,7 +68,7 @@ Comprehensive premium navigation system designed for affluent Portuguese speaker
 - Portuguese cultural context awareness
 - Recent search history integration
 - Trending content prioritization
-- Location-aware suggestions for London Portuguese community
+- Location-aware suggestions for London Portuguese-speaking community
 
 ### 5. Smart Navigation System (`/src/components/SmartNavigation.tsx`)
 **AI-powered navigation suggestions based on user behavior**
@@ -84,7 +84,7 @@ Comprehensive premium navigation system designed for affluent Portuguese speaker
 #### Intelligence Features:
 - User journey analysis
 - Behavioral recommendation engine
-- Portuguese community trend tracking
+- Portuguese-speaking community trend tracking
 - Personalized content suggestions
 - Cross-page relationship mapping
 
@@ -195,7 +195,7 @@ Comprehensive premium navigation system designed for affluent Portuguese speaker
 
 ### For Affluent Portuguese Speakers
 1. **Sophisticated Feel**: Premium visual hierarchy and interactions
-2. **Cultural Relevance**: Portuguese community-focused navigation
+2. **Cultural Relevance**: Portuguese-speaking community-focused navigation
 3. **Intelligent Suggestions**: AI-powered content recommendations
 4. **Seamless Journey**: Effortless navigation between related content
 5. **Premium Performance**: Fast, smooth, responsive interactions
@@ -285,7 +285,7 @@ The premium navigation enhancement transforms LusoTown into a sophisticated plat
 1. **Elite Visual Hierarchy**: Premium design with Portuguese cultural authenticity
 2. **Intelligent User Journey**: AI-powered navigation suggestions and personalization
 3. **Sophisticated Micro-interactions**: Framer Motion animations with custom easing
-4. **Cultural Integration**: Portuguese community-focused navigation and search
+4. **Cultural Integration**: Portuguese-speaking community-focused navigation and search
 5. **Analytics Intelligence**: Comprehensive user behavior tracking and insights
 6. **Mobile Excellence**: Premium touch interactions and responsive design
 7. **Performance Optimization**: Fast, smooth, 60fps animations throughout

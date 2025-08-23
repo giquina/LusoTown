@@ -719,7 +719,7 @@ export class PortugueseComputerVisionAI {
         'Comunidade Lusitana em Londres'
       ],
       english_text: [
-        'Portuguese Community Festival',
+        'Portuguese-speaking community Festival',
         'Traditional Celebrations'
       ],
       mixed_text: [
@@ -928,7 +928,7 @@ export class PortugueseComputerVisionAI {
           confidence: 80
         }
       ],
-      historical_context: 'Portuguese community establishment period in London',
+      historical_context: 'Portuguese-speaking community establishment period in London',
       verification_needed: false
     }
   }
@@ -1175,7 +1175,7 @@ export class PortugueseComputerVisionAI {
     // Mock language categorization
     return {
       portuguese_text: ['Festa de São João', 'Tradições Portuguesas'],
-      english_text: ['Portuguese Community Festival'],
+      english_text: ['Portuguese-speaking community Festival'],
       mixed_text: ['LusoTown Community Event']
     }
   }

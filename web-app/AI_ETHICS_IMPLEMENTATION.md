@@ -2,15 +2,15 @@
 
 ## 🌟 Overview
 
-This document outlines the comprehensive AI Ethics & Community Guidelines framework implemented for the LusoTown Portuguese community platform. The implementation respects Portuguese cultural values, protects community privacy, ensures transparent AI usage, and integrates regular community feedback.
+This document outlines the comprehensive AI Ethics & Community Guidelines framework implemented for the LusoTown Portuguese-speaking community platform. The implementation respects Portuguese cultural values, protects community privacy, ensures transparent AI usage, and integrates regular community feedback.
 
 ## 🎯 Implementation Goals Achieved
 
 ✅ **Heritage Respect Protocol** - Portuguese cultural values protection  
 ✅ **Language Preservation AI** - Portuguese language promotion with bilingual support  
-✅ **Privacy Protection Framework** - Portuguese community data protection  
+✅ **Privacy Protection Framework** - Portuguese-speaking community data protection  
 ✅ **Transparency Implementation** - Clear AI disclosure and user controls  
-✅ **Community Feedback Integration** - Regular Portuguese community input on AI features  
+✅ **Community Feedback Integration** - Regular Portuguese-speaking community input on AI features  
 
 ## 🏗️ Architecture Overview
 
@@ -193,7 +193,7 @@ const learningSupport = await languagePreservationAI.provideLearningSupport(
 ## 🔒 3. Privacy Protection Framework
 
 ### Purpose
-Protects Portuguese community data with enhanced cultural sensitivity and GDPR compliance.
+Protects Portuguese-speaking community data with enhanced cultural sensitivity and GDPR compliance.
 
 ### Key Features
 
@@ -240,7 +240,7 @@ const protection = await aiEthicsEngine.monitorCulturalDataProtection()
 ## 👁️ 4. Transparency Implementation
 
 ### Purpose
-Provides clear AI disclosure, user controls, and bilingual explanations for Portuguese community.
+Provides clear AI disclosure, user controls, and bilingual explanations for Portuguese-speaking community.
 
 ### Key Features
 
@@ -294,7 +294,7 @@ const explanation = await aiEthicsEngine.explainAIFeatureToUser(
 ## 💬 5. Community Feedback Integration
 
 ### Purpose
-Collects regular Portuguese community input on AI features, cultural accuracy, and privacy concerns.
+Collects regular Portuguese-speaking community input on AI features, cultural accuracy, and privacy concerns.
 
 ### Key Features
 
@@ -305,7 +305,7 @@ Collects regular Portuguese community input on AI features, cultural accuracy, a
 - **Privacy Concerns**: Data protection and trust assessment
 
 #### Culturally-Sensitive Invitations
-- Portuguese community leader partnerships
+- Portuguese-speaking community leader partnerships
 - University student representative networks
 - Cultural center collaborations
 - WhatsApp group integration
@@ -471,7 +471,7 @@ const data = await dashboard.json()
 - User flow validation
 
 ### Community Testing
-- Portuguese community beta testing
+- Portuguese-speaking community beta testing
 - Cultural leader validation
 - University student feedback
 - Heritage expert review
@@ -506,7 +506,7 @@ const data = await dashboard.json()
 - University research collaborations
 - Heritage expert advisory board
 - Community leader feedback loops
-- International Portuguese community connections
+- International Portuguese-speaking community connections
 
 ## 📚 Documentation References
 

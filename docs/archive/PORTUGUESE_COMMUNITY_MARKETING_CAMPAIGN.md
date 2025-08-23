@@ -1,4 +1,4 @@
-# LusoTown Portuguese Community Marketing Campaign
+# LusoTown Portuguese-speaking community Marketing Campaign
 **Target: £19.99 Premium Subscription for Portuguese Speakers in London**
 
 ## Campaign Overview
@@ -114,7 +114,7 @@
 
 #### **Email 1: Bem-vindo à Comunidade! (Welcome)**
 ```
-Subject: Welcome to London's largest Portuguese community! 🇵🇹
+Subject: Welcome to London's largest Portuguese-speaking community! 🇵🇹
 
 Dear [Name],
 
@@ -145,7 +145,7 @@ Subject: Santos Populares is coming - are you ready? 🎉
 
 Olá [Name],
 
-June means Santos Populares season! And this year, we're making it special for our Portuguese community in London.
+June means Santos Populares season! And this year, we're making it special for our Portuguese-speaking community in London.
 
 🎊 EXCLUSIVE LUSOTOWN EVENTS THIS MONTH:
 - June 12: Santos Antônio Pre-Party (London Bridge)
@@ -169,7 +169,7 @@ Maria & João, Community Managers
 
 ### **Re-engagement Campaign**
 
-#### **"Your Portuguese Community Misses You"**
+#### **"Your Portuguese-speaking community Misses You"**
 ```
 Subject: Your Portuguese match could be waiting...
 
@@ -187,7 +187,7 @@ Don't let your Portuguese soulmate slip away because you weren't there to meet t
 
 [Reactivate Your Profile - 2 Minutes]
 
-Special welcome back offer: Invite 3 Portuguese friends and get your next month free!
+Special welcome back offer: Invite 3 Portuguese-speaking friends and get your next month free!
 
 Esperamos por si,
 The LusoTown Team
@@ -195,7 +195,7 @@ The LusoTown Team
 
 ---
 
-## 4. Portuguese Community Outreach Strategy
+## 4. Portuguese-speaking community Outreach Strategy
 
 ### **Cultural Centers & Organizations**
 
@@ -212,7 +212,7 @@ The LusoTown Team
    - Official event calendar integration
    - Budget: £500 for official recognition/endorsement
 
-3. **Casa do Bacalhau** (Portuguese Community Centre)
+3. **Casa do Bacalhau** (Portuguese-speaking community Centre)
    - Weekly meetup hosting rights
    - Member directory cross-promotion
    - Budget: £1,000 annual partnership
@@ -305,7 +305,7 @@ The LusoTown Team
 
 ### **Target Keywords (English)**
 - "Portuguese dating London" (390 searches/month)
-- "Portuguese community London" (1,200 searches/month)
+- "Portuguese-speaking community London" (1,200 searches/month)
 - "Portuguese events London" (2,800 searches/month) 
 - "Meet Portuguese people London" (410 searches/month)
 - "Portuguese singles London" (320 searches/month)
@@ -313,7 +313,7 @@ The LusoTown Team
 
 ### **Target Keywords (Portuguese)**
 - "Encontros portugueses Londres" (150 searches/month)
-- "Comunidade portuguesa Londres" (2,100 searches/month)
+- "Comunidade de falantes de português Londres" (2,100 searches/month)
 - "Eventos portugueses Londres" (1,400 searches/month)
 - "Portugueses em Londres" (3,200 searches/month)
 - "Namoro português Londres" (89 searches/month)
@@ -355,7 +355,7 @@ The LusoTown Team
 
 **Community Focus:**
 - "2,847 Portuguese speakers already connected through LusoTown"
-- "Your London Portuguese community update"
+- "Your London Portuguese-speaking community update"
 - "Portuguese events this weekend - are you coming?"
 
 ---
@@ -403,9 +403,9 @@ The LusoTown Team
 
 ### **Primary Metrics**
 - **Subscription Conversions:** Target 500 new £19.99/month subscribers
-- **Portuguese Community Engagement:** 75%+ of new signups attend at least one cultural event
+- **Portuguese-speaking community Engagement:** 75%+ of new signups attend at least one cultural event
 - **Customer Acquisition Cost (CAC):** <£37 per subscriber (2-month payback)
-- **Net Promoter Score (NPS):** >50 among Portuguese community members
+- **Net Promoter Score (NPS):** >50 among Portuguese-speaking community members
 
 ### **Secondary Metrics**
 - Social media follower growth: 2,000+ Instagram, 1,500+ Facebook

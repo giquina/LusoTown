@@ -176,7 +176,7 @@ class EventManagementService {
         updated_at: event.updatedAt,
         group: event.hostId ? {
           id: event.hostId,
-          name: event.hostName || 'Portuguese Community Group',
+          name: event.hostName || 'Portuguese-speaking community Group',
           category: 'Cultural'
         } : undefined,
         creator: {
@@ -190,7 +190,7 @@ class EventManagementService {
   }
 
   /**
-   * Get upcoming Portuguese community events
+   * Get upcoming Portuguese-speaking community events
    */
   async getUpcomingEvents(filters?: {
     cultural_category?: string
@@ -274,7 +274,7 @@ class EventManagementService {
         updated_at: event.updatedAt,
         group: event.hostId ? {
           id: event.hostId,
-          name: event.hostName || 'Portuguese Community Group',
+          name: event.hostName || 'Portuguese-speaking community Group',
           category: 'Cultural'
         } : undefined,
         creator: {

@@ -148,7 +148,7 @@ Tips for Portuguese visitors: {tips}
       icon: CalendarDaysIcon,
       category: 'event',
       requiredTier: 'community',
-      template: `🎉 Portuguese Community Event
+      template: `🎉 Portuguese-speaking community Event
 
 Event: {eventName}
 Date & Time: {dateTime}
@@ -242,12 +242,12 @@ Portuguese connection: {connection}
       title: isPortuguese ? '🏠 Oportunidade de Habitação' : '🏠 Housing Opportunity',
       icon: HomeIcon,
       category: 'housing',
-      template: `🏠 Housing Opportunity - Portuguese Community Area
+      template: `🏠 Housing Opportunity - Portuguese-speaking community Area
 
 Property: {propertyType}
 Location: {location}
 Price: {price}
-Why great for Portuguese community: {communityBenefits}
+Why great for Portuguese-speaking community: {communityBenefits}
 Contact: {contact}
 
 #HousingLondon #PortugueseCommunity #LusoTownHousing`,
@@ -309,8 +309,8 @@ Contact: {contact}
     for (const pattern of blockedPatterns) {
       if (pattern.test(content)) {
         issues.push(isPortuguese ? 
-          'Conteúdo não relacionado à comunidade portuguesa detectado' : 
-          'Non-Portuguese community content detected'
+          'Conteúdo não relacionado à comunidade de falantes de português detectado' : 
+          'Non-Portuguese-speaking community content detected'
         )
       }
     }
@@ -332,8 +332,8 @@ Contact: {contact}
     
     if (!hasPortugueseConnection && !hasCommunityRelevance) {
       issues.push(isPortuguese ? 
-        'Adicione conexão com a comunidade portuguesa' : 
-        'Add Portuguese community connection'
+        'Adicione conexão com a comunidade de falantes de português' : 
+        'Add Portuguese-speaking community connection'
       )
       suggestions.push(isPortuguese ? 
         'Mencione aspectos culturais portugueses ou relevância para a comunidade' :
@@ -426,8 +426,8 @@ Contact: {contact}
               </h3>
               <p className="text-gray-600 mt-1">
                 {isPortuguese 
-                  ? 'Partilhe conteúdo relevante para a comunidade portuguesa em Londres'
-                  : 'Share content relevant to the Portuguese community in London'
+                  ? 'Partilhe conteúdo relevante para a comunidade de falantes de português em Londres'
+                  : 'Share content relevant to the Portuguese-speaking community in London'
                 }
               </p>
             </div>
@@ -574,8 +574,8 @@ Contact: {contact}
                 value={content}
                 onChange={(e) => handleContentChange(e.target.value)}
                 placeholder={isPortuguese 
-                  ? 'Partilhe algo relevante para a comunidade portuguesa em Londres...'
-                  : 'Share something relevant to the Portuguese community in London...'
+                  ? 'Partilhe algo relevante para a comunidade de falantes de português em Londres...'
+                  : 'Share something relevant to the Portuguese-speaking community in London...'
                 }
                 className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-400 resize-none"
                 rows={6}

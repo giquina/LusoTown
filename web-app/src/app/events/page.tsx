@@ -1235,8 +1235,8 @@ export default function EventsPage() {
               </h2>
               <p className="text-lg text-white/90 mb-12 max-w-2xl mx-auto">
                 {isPortuguese
-                  ? "Partilhe a sua experiência com a comunidade portuguesa. Organize eventos, crie grupos ou ofereça experiências únicas em Londres."
-                  : "Share your expertise with the Portuguese community. Host events, create groups, or offer unique experiences in London."}
+                  ? "Partilhe a sua experiência com a comunidade de falantes de português. Organize eventos, crie grupos ou ofereça experiências únicas em Londres."
+                  : "Share your expertise with the Portuguese-speaking community. Host events, create groups, or offer unique experiences in London."}
               </p>
 
               {/* Three CTA Options */}

@@ -40,7 +40,7 @@ The LusoTown platform features an automated workflow system that triggers specia
 
 **Process**:
 1. Auto-scan user submissions for potential safety issues
-2. Cultural appropriateness review for Portuguese community
+2. Cultural appropriateness review for Portuguese-speaking community
 3. Adult community standards verification (18+ focus)
 4. Automated response or escalation to human moderators
 
@@ -60,7 +60,7 @@ The LusoTown platform features an automated workflow system that triggers specia
 - `luso-content-agent` → Bilingual welcome experience
 - `luso-events-agent` → Personalized event recommendations
 
-#### Portuguese Community Outreach Workflow
+#### Portuguese-speaking community Outreach Workflow
 **Trigger**: Low engagement periods or community growth targets
 **Auto-Activated Agents**:
 - `luso-growth-agent` → SEO and marketing campaign activation
@@ -138,7 +138,7 @@ export const useContentCreationHook = () => {
 
 #### Event Management Hooks
 **Location**: `web-app/src/hooks/useEventHooks.ts`
-**Purpose**: Automatically optimize events for Portuguese community
+**Purpose**: Automatically optimize events for Portuguese-speaking community
 
 ```typescript
 export const useEventManagementHook = () => {
@@ -198,7 +198,7 @@ export const useCommunitysafety Hooks = () => {
 
 ### Weekly Workflows
 
-#### Portuguese Community Engagement Analysis
+#### Portuguese-speaking community Engagement Analysis
 **Schedule**: Weekly on Mondays at 10:00 AM UTC
 **Activated Agents**:
 - `luso-growth-agent` → Weekly growth metrics analysis
@@ -293,7 +293,7 @@ The workflow system integrates with the LusoTown admin dashboard to provide:
 - Implement fallback mechanisms for agent failures
 
 ### Cultural Sensitivity
-- Always include Portuguese community specialists in cultural content workflows
+- Always include Portuguese-speaking community specialists in cultural content workflows
 - Maintain adult focus (18+) across all automated processes
 - Respect Portuguese regional variations and diaspora experiences
 

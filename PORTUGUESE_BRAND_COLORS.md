@@ -1,7 +1,7 @@
 # LusoTown Portuguese Brand Color System
 ## Unidos pela Língua (United by Language)
 
-This document outlines the comprehensive color system for the LusoTown Portuguese community platform, designed to reflect Portuguese culture and heritage while maintaining accessibility and modern design standards.
+This document outlines the comprehensive color system for the LusoTown Portuguese-speaking community platform, designed to reflect Portuguese culture and heritage while maintaining accessibility and modern design standards.
 
 ## Core Brand Philosophy
 
@@ -230,7 +230,7 @@ Each color has been chosen to reflect Portuguese heritage:
 
 // Secondary text
 <p className="text-neutral-600">
-  Comunidade portuguesa em Londres
+  Comunidade de falantes de português em Londres
 </p>
 
 // Light text

@@ -163,7 +163,7 @@ export const buildUnsplashUrl = (imageId: string, width?: number, height?: numbe
   return params.toString() ? `${baseUrl}?${params.toString()}` : baseUrl;
 };
 
-// Build full Unsplash photo URL with sensible defaults for Portuguese community images
+// Build full Unsplash photo URL with sensible defaults for Portuguese-speaking community images
 export const buildPortugueseImageUrl = (photoId: string, width: number = 600, height: number = 400): string => {
   return buildUnsplashUrl(`photo-${photoId}`, width, height, {
     fit: 'crop',

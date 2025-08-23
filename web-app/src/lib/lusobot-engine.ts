@@ -316,8 +316,8 @@ export class SaudadeEngine {
     }
 
     return language === 'pt'
-      ? "Estou aqui para te ajudar a navegar tanto as emoções como a vida prática na comunidade portuguesa."
-      : "I'm here to help you navigate both emotions and practical life in the Portuguese community."
+      ? "Estou aqui para te ajudar a navegar tanto as emoções como a vida prática na comunidade de falantes de português."
+      : "I'm here to help you navigate both emotions and practical life in the Portuguese-speaking community."
   }
 }
 
@@ -536,8 +536,8 @@ export class LusoBotEngine {
     language: Language
   ): string {
     return language === 'pt'
-      ? "As nossas festas são momentos de união, tradição e alegria! Desde os Santos Populares em junho até ao Natal em família, cada celebração tem a sua magia. Em Londres, a comunidade portuguesa organiza eventos lindos. Queres saber sobre festivais tradicionais ou eventos atuais da comunidade?"
-      : "Our festivals are moments of unity, tradition and joy! From Santos Populares in June to Christmas with family, each celebration has its magic. In London, the Portuguese community organizes beautiful events. Want to know about traditional festivals or current community events?"
+      ? "As nossas festas são momentos de união, tradição e alegria! Desde os Santos Populares em junho até ao Natal em família, cada celebração tem a sua magia. Em Londres, a comunidade de falantes de português organiza eventos lindos. Queres saber sobre festivais tradicionais ou eventos atuais da comunidade?"
+      : "Our festivals are moments of unity, tradition and joy! From Santos Populares in June to Christmas with family, each celebration has its magic. In London, the Portuguese-speaking community organizes beautiful events. Want to know about traditional festivals or current community events?"
   }
 
   private static generateBusinessResponse(
@@ -556,8 +556,8 @@ export class LusoBotEngine {
     language: Language
   ): string {
     return language === 'pt'
-      ? "A comunidade portuguesa no Reino Unido é forte, acolhedora e sempre pronta a ajudar. Seja para encontrar produtos portugueses, eventos culturais, ou simplesmente para um café e uma conversa, estamos todos ligados pela mesma herança. Como posso ajudar-te a sentires-te mais integrado na nossa comunidade?"
-      : "The Portuguese community in the UK is strong, welcoming and always ready to help. Whether to find Portuguese products, cultural events, or simply for a coffee and conversation, we're all connected by the same heritage. How can I help you feel more integrated into our community?"
+      ? "A comunidade de falantes de português no Reino Unido é forte, acolhedora e sempre pronta a ajudar. Seja para encontrar produtos portugueses, eventos culturais, ou simplesmente para um café e uma conversa, estamos todos ligados pela mesma herança. Como posso ajudar-te a sentires-te mais integrado na nossa comunidade?"
+      : "The Portuguese-speaking community in the UK is strong, welcoming and always ready to help. Whether to find Portuguese products, cultural events, or simply for a coffee and conversation, we're all connected by the same heritage. How can I help you feel more integrated into our community?"
   }
 
   private static generateSuggestions(

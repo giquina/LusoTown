@@ -75,7 +75,7 @@ export default function GroupEventsPageClient() {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Experience & Share</h3>
                 <p className="text-gray-600 text-sm">
-                  Enjoy the experience together, share photos, and build lasting friendships within the Portuguese community.
+                  Enjoy the experience together, share photos, and build lasting friendships within the Portuguese-speaking community.
                 </p>
               </div>
             </div>

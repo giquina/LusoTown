@@ -57,8 +57,8 @@ export default function PWAFeaturesPage() {
       title: language === 'pt' ? 'Instalação PWA' : 'PWA Installation',
       titlePortuguese: 'Instalação PWA',
       description: language === 'pt' 
-        ? 'Instala a LusoTown como app nativo no teu dispositivo para acesso rápido à comunidade portuguesa'
-        : 'Install LusoTown as a native app on your device for quick access to the Portuguese community',
+        ? 'Instala a LusoTown como app nativo no teu dispositivo para acesso rápido à comunidade de falantes de português'
+        : 'Install LusoTown as a native app on your device for quick access to the Portuguese-speaking community',
       icon: Download,
       color: 'blue',
       component: PWAManager
@@ -189,8 +189,8 @@ export default function PWAFeaturesPage() {
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
             {language === 'pt'
-              ? 'Experiência móvel completa para a comunidade portuguesa em Londres. App nativo, câmara, localização, notificações e muito mais.'
-              : 'Complete mobile experience for the Portuguese community in London. Native app experience, camera, location, notifications, and much more.'
+              ? 'Experiência móvel completa para a comunidade de falantes de português em Londres. App nativo, câmara, localização, notificações e muito mais.'
+              : 'Complete mobile experience for the Portuguese-speaking community in London. Native app experience, camera, location, notifications, and much more.'
             }
           </p>
           
@@ -243,8 +243,8 @@ export default function PWAFeaturesPage() {
           
           <p className="text-gray-600">
             {language === 'pt'
-              ? `Explora todas as funcionalidades PWA da comunidade portuguesa. ${completedFeatures === 5 ? 'Parabéns! Completaste toda a experiência.' : `${5 - completedFeatures} funcionalidades por explorar.`}`
-              : `Explore all PWA features for the Portuguese community. ${completedFeatures === 5 ? 'Congratulations! You\'ve completed the entire experience.' : `${5 - completedFeatures} features left to explore.`}`
+              ? `Explora todas as funcionalidades PWA da comunidade de falantes de português. ${completedFeatures === 5 ? 'Parabéns! Completaste toda a experiência.' : `${5 - completedFeatures} funcionalidades por explorar.`}`
+              : `Explore all PWA features for the Portuguese-speaking community. ${completedFeatures === 5 ? 'Congratulations! You\'ve completed the entire experience.' : `${5 - completedFeatures} features left to explore.`}`
             }
           </p>
         </div>
@@ -355,8 +355,8 @@ export default function PWAFeaturesPage() {
             </h2>
             <p className="text-xl mb-8">
               {language === 'pt'
-                ? 'Exploraste todas as funcionalidades PWA da LusoTown! Agora podes desfrutar da experiência completa da comunidade portuguesa em Londres.'
-                : 'You\'ve explored all LusoTown PWA features! Now you can enjoy the complete Portuguese community experience in London.'
+                ? 'Exploraste todas as funcionalidades PWA da LusoTown! Agora podes desfrutar da experiência completa da comunidade de falantes de português em Londres.'
+                : 'You\'ve explored all LusoTown PWA features! Now you can enjoy the complete Portuguese-speaking community experience in London.'
               }
             </p>
             

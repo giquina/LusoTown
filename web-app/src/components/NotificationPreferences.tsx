@@ -82,8 +82,8 @@ export default function NotificationPreferences({ className = '' }: Notification
       key: 'whatsapp',
       label: 'WhatsApp Messages',
       labelPT: 'Mensagens WhatsApp',
-      description: 'Portuguese community updates via WhatsApp',
-      descriptionPT: 'Atualizações da comunidade portuguesa via WhatsApp',
+      description: 'Portuguese-speaking community updates via WhatsApp',
+      descriptionPT: 'Atualizações da comunidade de falantes de português via WhatsApp',
       icon: ChatBubbleLeftRightIcon,
       available: true
     },
@@ -321,8 +321,8 @@ export default function NotificationPreferences({ className = '' }: Notification
         </h2>
         <p className="text-sm text-neutral-600">
           {language === 'pt' 
-            ? 'Personalize como e quando recebe notificações da comunidade portuguesa em Londres'
-            : 'Customize how and when you receive notifications from the Portuguese community in London'
+            ? 'Personalize como e quando recebe notificações da comunidade de falantes de português em Londres'
+            : 'Customize how and when you receive notifications from the Portuguese-speaking community in London'
           }
         </p>
       </div>

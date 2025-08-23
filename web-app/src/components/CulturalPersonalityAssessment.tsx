@@ -165,8 +165,8 @@ const CULTURAL_ARCHETYPES: CulturalArchetype[] = [
     id: 'guardião_comunidade',
     nameEn: 'Community Guardian',
     namePt: 'Guardião da Comunidade',
-    descriptionEn: 'Dedicated to preserving and nurturing Portuguese community bonds',
-    descriptionPt: 'Dedicado a preservar e nutrir os laços da comunidade portuguesa',
+    descriptionEn: 'Dedicated to preserving and nurturing Portuguese-speaking community bonds',
+    descriptionPt: 'Dedicado a preservar e nutrir os laços da comunidade de falantes de português',
     characteristics: ['High collectivism', 'Strong group harmony', 'Deep hospitality values'],
     strengthsEn: ['Community organization', 'Cultural transmission', 'Social cohesion'],
     strengthsPt: ['Organização comunitária', 'Transmissão cultural', 'Coesão social'],
@@ -175,7 +175,7 @@ const CULTURAL_ARCHETYPES: CulturalArchetype[] = [
     recommendedActivities: ['Community leadership', 'Event organization', 'Cultural education'],
     compatibleArchetypes: ['traditional_nostalgic', 'cultural_bridge_builder'],
     prevalenceInDiaspora: 10,
-    culturalSignificance: 'Pillars of Portuguese community structure'
+    culturalSignificance: 'Pillars of Portuguese-speaking community structure'
   }
 ]
 
@@ -843,7 +843,7 @@ export default function CulturalPersonalityAssessment() {
       <div className="text-center">
         <div className="bg-gradient-to-r from-secondary-50 to-accent-50 border border-secondary-200 rounded-3xl p-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            {t('assessment.next_steps', 'Ready to Connect with Your Portuguese Community?')}
+            {t('assessment.next_steps', 'Ready to Connect with Your Portuguese-speaking community?')}
           </h3>
           
           <p className="text-lg text-gray-700 mb-6">

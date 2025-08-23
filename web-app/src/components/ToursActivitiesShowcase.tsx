@@ -141,7 +141,7 @@ const toursData: Tour[] = [
     featured: true,
     availability: 'limited',
     nextAvailableDate: "2025-08-25",
-    tags: ["Food", "Culture", "Portuguese Community", "Authentic"],
+    tags: ["Food", "Culture", "Portuguese-speaking community", "Authentic"],
     culturalFocus: ["Portuguese Cuisine", "Community Connections", "Language Practice"],
   },
   {
@@ -224,7 +224,7 @@ const toursData: Tour[] = [
   {
     id: "portobello-portuguese-markets",
     title: "Portuguese Life in Portobello & Notting Hill",
-    description: "Discover the vibrant Portuguese community in Portobello Road and Notting Hill. Experience authentic Portuguese lifestyle, markets, and community gathering places.",
+    description: "Discover the vibrant Portuguese-speaking community in Portobello Road and Notting Hill. Experience authentic Portuguese lifestyle, markets, and community gathering places.",
     category: 'neighborhoods',
     duration: "3 hours",
     price: 40,
@@ -233,7 +233,7 @@ const toursData: Tour[] = [
     location: "Portobello Road & Notting Hill",
     meetingPoint: "Notting Hill Gate Station",
     highlights: [
-      "Portuguese community hubs in Notting Hill",
+      "Portuguese-speaking community hubs in Notting Hill",
       "Traditional Portuguese shops and services",
       "Community gathering places and cafés",
       "Portuguese influence on local culture",

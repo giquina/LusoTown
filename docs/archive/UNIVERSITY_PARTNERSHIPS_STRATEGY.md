@@ -43,7 +43,7 @@ LusoTown's University Partnerships Strategy establishes a comprehensive framewor
 - **Commitment**: Pilot programs, student engagement, cultural activities
 
 #### 4. Pilot Programs (Tier 4)
-- **Criteria**: Interest in Portuguese community, trial partnership
+- **Criteria**: Interest in Portuguese-speaking community, trial partnership
 - **Benefits**: Limited student benefits, trial events, assessment period
 - **Target Universities**: Universities without significant Portuguese presence
 - **Commitment**: 6-month trial, performance evaluation, potential upgrade
@@ -456,7 +456,7 @@ LusoTown's University Partnerships Strategy establishes a comprehensive framewor
 - Student memberships (8,000 × £12.50): £100,000
 - Mature platform operations: £1,400,000
 - Premium services and programs: £400,000
-- Global Portuguese community connections: £100,000
+- Global Portuguese-speaking community connections: £100,000
 
 ## Partnership Development Outreach Strategy
 
@@ -489,7 +489,7 @@ Subject: Partnership Opportunity - Supporting Portuguese Students at [University
 
 Dear [Contact Name],
 
-I hope this email finds you well. My name is [Name] from LusoTown, the UK's largest Portuguese community platform, currently serving 750+ members across London and the UK.
+I hope this email finds you well. My name is [Name] from LusoTown, the UK's largest Portuguese-speaking community platform, currently serving 750+ members across London and the UK.
 
 We are developing a comprehensive University Partnerships Program to better support Portuguese students and Portuguese Studies programs across UK universities. Given [University Name]'s [specific program/strength], we believe there could be significant mutual benefit in exploring a partnership.
 
@@ -568,6 +568,6 @@ LusoTown University Partnerships
 
 The LusoTown University Partnerships Strategy provides a comprehensive framework for engaging with UK universities to support Portuguese students and Portuguese Studies programs. Through strategic partnerships, innovative programming, and student-focused benefits, this initiative will establish LusoTown as the premier platform for Portuguese students in the UK while contributing to the preservation and growth of Portuguese language education and cultural heritage.
 
-Success will be measured through student engagement, academic integration, cultural preservation, and professional development outcomes, ensuring that this program delivers significant value to students, universities, and the broader Portuguese community in the UK.
+Success will be measured through student engagement, academic integration, cultural preservation, and professional development outcomes, ensuring that this program delivers significant value to students, universities, and the broader Portuguese-speaking community in the UK.
 
 The implementation of this strategy represents a major step forward in LusoTown's mission to unite and support the Portuguese diaspora community, creating lasting connections and opportunities for Portuguese students across the United Kingdom.

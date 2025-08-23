@@ -52,7 +52,7 @@ export default function TrendingSection({ className = '' }: { className?: string
       growth: 23,
       icon: <MapPin className="w-4 h-4" />,
       category: 'location',
-      description: 'Portuguese community hub'
+      description: 'Portuguese-speaking community hub'
     },
     {
       id: 'pasteis_de_nata',
@@ -133,7 +133,7 @@ export default function TrendingSection({ className = '' }: { className?: string
                 {t('trending.title') || 'Trending'}
               </h3>
               <p className="text-sm text-gray-600">
-                {t('trending.subtitle') || 'Popular in Portuguese community'}
+                {t('trending.subtitle') || 'Popular in Portuguese-speaking community'}
               </p>
             </div>
           </div>
@@ -219,7 +219,7 @@ export default function TrendingSection({ className = '' }: { className?: string
               {t('trending.fado_weekend') || 'Fado Weekend in London'}
             </h5>
             <p className="text-sm text-primary-700">
-              {t('trending.fado_description') || 'Join the Portuguese community for an authentic Fado experience across London venues this weekend.'}
+              {t('trending.fado_description') || 'Join the Portuguese-speaking community for an authentic Fado experience across London venues this weekend.'}
             </p>
             <div className="flex items-center space-x-4 text-xs text-primary-600 mt-3">
               <span className="flex items-center space-x-1">

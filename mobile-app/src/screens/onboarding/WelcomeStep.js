@@ -160,7 +160,7 @@ const WelcomeStep = ({ onComplete, userData }) => {
             Welcome to LusoTown, {userData?.firstName}!
           </Text>
           <Text style={styles.welcomeSubtitle}>
-            {getGreeting()}! You're now part of our amazing Portuguese community in London.
+            {getGreeting()}! You're now part of our amazing Portuguese-speaking community in London.
           </Text>
         </View>
 
@@ -239,7 +239,7 @@ const WelcomeStep = ({ onComplete, userData }) => {
           <View style={styles.guideline}>
             <Text style={styles.guidelineIcon}>💬</Text>
             <Text style={styles.guidelineText}>
-              <Text style={styles.guidelineBold}>Authentic Connections</Text> - Build genuine Portuguese friendships
+              <Text style={styles.guidelineBold}>Authentic Connections</Text> - Build genuine Portuguese-speaking friendships
             </Text>
           </View>
 
@@ -272,7 +272,7 @@ const WelcomeStep = ({ onComplete, userData }) => {
           <View style={styles.nextStep}>
             <Text style={styles.nextStepNumber}>3</Text>
             <Text style={styles.nextStepText}>
-              Attend events and build your Portuguese community
+              Attend events and build your Portuguese-speaking community
             </Text>
           </View>
         </View>
@@ -289,7 +289,7 @@ const WelcomeStep = ({ onComplete, userData }) => {
         {/* Footer Message */}
         <View style={styles.footerContainer}>
           <Text style={styles.footerText}>
-            Ready to connect with Portuguese speakers and discover London's Portuguese community?
+            Ready to connect with Portuguese speakers and discover London's Portuguese-speaking community?
           </Text>
           <Text style={styles.footerSubtext}>
             Bem-vindo à LusoTown! 🇵🇹

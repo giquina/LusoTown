@@ -21,7 +21,7 @@ import {
 import { useLanguage } from '@/context/LanguageContext'
 import Footer from '@/components/Footer'
 
-// Mock housing data for Portuguese community
+// Mock housing data for Portuguese-speaking community
 const mockListings = [
   {
     id: 1,
@@ -57,7 +57,7 @@ const mockListings = [
     bathrooms: 1,
     available: 'Available from 1st Nov',
     description: 'Modern 2-bedroom flat perfect for Portuguese professionals or students sharing.',
-    amenities: ['Fully Furnished', 'Washing Machine', 'Close to Portuguese Community', 'Transport Links'],
+    amenities: ['Fully Furnished', 'Washing Machine', 'Close to Portuguese-speaking community', 'Transport Links'],
     images: ['/images/housing/flat1.jpg'],
     landlord: {
       name: 'João Silva',

@@ -171,7 +171,7 @@ export default function AIMonitoringDashboard() {
             AI Performance Dashboard
           </h1>
           <p className="text-gray-600 mt-1">
-            Portuguese Community AI Systems Monitoring
+            Portuguese-speaking community AI Systems Monitoring
           </p>
         </div>
         <div className="flex gap-3">

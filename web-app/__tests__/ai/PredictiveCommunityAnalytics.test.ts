@@ -1,6 +1,6 @@
 /**
  * Comprehensive Test Suite for Production-Ready Predictive Community Analytics
- * Tests luxury Portuguese community analytics with GDPR compliance and performance optimization
+ * Tests luxury Portuguese-speaking community analytics with GDPR compliance and performance optimization
  */
 
 import { PredictiveCommunityAnalytics, predictiveCommunityAnalytics } from '@/lib/ai/PredictiveCommunityAnalytics'
@@ -172,7 +172,7 @@ describe('PredictiveCommunityAnalytics', () => {
       expect(winterFado).toBeGreaterThan(0.8)
     })
 
-    it('should evaluate location accessibility for Portuguese community', () => {
+    it('should evaluate location accessibility for Portuguese-speaking community', () => {
       const vauxhallScore = (analytics as any).analyzeLocationAccessibility('vauxhall')
       const stockwellScore = (analytics as any).analyzeLocationAccessibility('stockwell')
       const eastLondonScore = (analytics as any).analyzeLocationAccessibility('east_london')

@@ -142,8 +142,8 @@ export default function EliteMobileShowcasePage() {
         
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           {language === 'pt'
-            ? 'Uma experiência móvel de luxo desenhada especificamente para a comunidade portuguesa affluente em Londres.'
-            : 'A luxury mobile experience designed specifically for the affluent Portuguese community in London.'}
+            ? 'Uma experiência móvel de luxo desenhada especificamente para a comunidade de falantes de português affluente em Londres.'
+            : 'A luxury mobile experience designed specifically for the affluent Portuguese-speaking community in London.'}
         </p>
       </motion.div>
 
@@ -259,7 +259,7 @@ export default function EliteMobileShowcasePage() {
         <LuxuryMobileInput
           label={language === 'pt' ? 'Busca Elite' : 'Elite Search'}
           type="search"
-          placeholder={language === 'pt' ? 'Procurar na comunidade portuguesa...' : 'Search Portuguese community...'}
+          placeholder={language === 'pt' ? 'Procurar na comunidade de falantes de português...' : 'Search Portuguese-speaking community...'}
           variant="elite"
           icon={<MagnifyingGlassIcon className="w-5 h-5" />}
         />

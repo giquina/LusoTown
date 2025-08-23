@@ -6,7 +6,7 @@
  * Advanced AI-powered documentation automation system with:
  * - Real-time conversation monitoring and analysis
  * - Predictive maintenance and smart dependency tracking
- * - Portuguese community-specific intelligence
+ * - Portuguese-speaking community-specific intelligence
  * - Advanced analytics and ROI tracking
  * - Integration hooks for team collaboration
  */
@@ -297,7 +297,7 @@ class IntelligentDocumentationEngine extends EventEmitter {
     return `## ${componentName} Component
 
 **File:** \`${fileName}\`
-**Type:** React Component${hasPortuguese ? ' (Portuguese Community)' : ''}
+**Type:** React Component${hasPortuguese ? ' (Portuguese-speaking community)' : ''}
 
 ### Description
 Auto-generated documentation for ${componentName} component.
@@ -315,7 +315,7 @@ import { ${functionName} } from '@/components/${componentName}';
 \`\`\`
 
 ${hasPortuguese ? '### Portuguese Features
-This component includes Portuguese community-specific features and bilingual support.
+This component includes Portuguese-speaking community-specific features and bilingual support.
 
 ' : ''}### Implementation Notes
 - Component follows LusoTown design patterns
@@ -548,7 +548,7 @@ Ensure provider is wrapped in app/layout.tsx for global access.
   }
 
   // ====================
-  // PORTUGUESE COMMUNITY INTELLIGENCE
+  // Portuguese-speaking community INTELLIGENCE
   // ====================
 
   async initializeCulturalTracker() {
@@ -568,7 +568,7 @@ Ensure provider is wrapped in app/layout.tsx for global access.
         'Cultural insensitivity'
       ],
       qualityIndicators: [
-        'Portuguese community context',
+        'Portuguese-speaking community context',
         'London & UK specific features',
         'Cultural comfort elements',
         'Portuguese-speaking focus'
@@ -606,7 +606,7 @@ Ensure provider is wrapped in app/layout.tsx for global access.
         strengths.push({
           type: 'portuguese-integration',
           file: relativePath,
-          description: 'Properly integrated with Portuguese community features'
+          description: 'Properly integrated with Portuguese-speaking community features'
         });
       }
       
@@ -1272,7 +1272,7 @@ Execution Time: ${(data.executionTime / 1000).toFixed(2)} seconds
 
 ## 🎯 Executive Summary
 
-The Intelligent Documentation Engine has completed a comprehensive analysis of the LusoTown codebase, providing AI-powered insights, predictive maintenance recommendations, and Portuguese community-specific intelligence.
+The Intelligent Documentation Engine has completed a comprehensive analysis of the LusoTown codebase, providing AI-powered insights, predictive maintenance recommendations, and Portuguese-speaking community-specific intelligence.
 
 ### Key Metrics
 - **Files Analyzed:** ${data.results.filesAnalyzed}
@@ -1303,7 +1303,7 @@ ${data.analytics.predictions.nextMaintenanceDate ?
 ### Risk Areas
 ${data.analytics.health.riskAreas.map(risk => `- **${risk.file}**: ${risk.type} risk (${risk.impact} impact)`).join('\n')}
 
-## 🇵🇹 Portuguese Community Intelligence
+## 🇵🇹 Portuguese-speaking community Intelligence
 
 ### Cultural Consistency Status
 - **Issues Detected:** ${data.analytics.overview.culturalIssues}
@@ -1373,7 +1373,7 @@ ${this.getMaintenanceQueue().slice(0, 5).map(task => `- **${task.file}** - ${tas
 
 1. **Review immediate action items** and prioritize based on business impact
 2. **Schedule predicted maintenance** for high-risk files
-3. **Address cultural consistency issues** to maintain Portuguese community focus
+3. **Address cultural consistency issues** to maintain Portuguese-speaking community focus
 4. **Monitor automation health** and adjust rules as needed
 5. **Implement strategic recommendations** for long-term documentation sustainability
 

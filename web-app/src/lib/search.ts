@@ -189,7 +189,7 @@ const mockPages = [
   {
     id: 'safety',
     title: 'Safety Center',
-    description: 'Learn about our safety measures and how to stay safe in the Portuguese community',
+    description: 'Learn about our safety measures and how to stay safe in the Portuguese-speaking community',
     url: '/safety',
     category: 'Safety',
     tags: ['safety', 'security', 'protection', 'community safety', 'guidelines']

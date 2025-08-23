@@ -1,6 +1,6 @@
 /**
  * Comprehensive AI Matching System Integration Tests
- * Tests end-to-end functionality for Portuguese community elite matching experience
+ * Tests end-to-end functionality for Portuguese-speaking community elite matching experience
  */
 
 import { render, screen, waitFor, fireEvent } from '@/test-utils';

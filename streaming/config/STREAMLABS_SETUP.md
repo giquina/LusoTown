@@ -1,5 +1,5 @@
 
-🇵🇹 LusoTown Portuguese Community - Streamlabs Mobile Setup
+🇵🇹 LusoTown Portuguese-speaking community - Streamlabs Mobile Setup
 ==========================================================
 
 📱 STREAMLABS MOBILE CONFIGURATION:
@@ -28,7 +28,7 @@
    🖥️ Web Player: https://fluffy-space-system-rx4vw4769q6hx7j-3000-app.github.dev/live/streamlabs_lusotown_2025
    📊 Stream Stats: https://fluffy-space-system-rx4vw4769q6hx7j-1985-app.github.dev/api/v1/streams
 
-🇵🇹 PORTUGUESE COMMUNITY FEATURES:
+🇵🇹 Portuguese-speaking community FEATURES:
    😊 Cultural Emotes: :saudade:, :festa:, :futebol:, :fado:, :portugal:, :brasil:
    🗣️ Languages: pt, en
    🏷️ Content Tags: portuguese, cultural, business, lusotown
@@ -56,4 +56,4 @@
 
 ✅ Ready to stream Portuguese cultural content to the London community!
 
-📞 Support: Visit https://fluffy-space-system-rx4vw4769q6hx7j-3000-app.github.dev/help for Portuguese community assistance
+📞 Support: Visit https://fluffy-space-system-rx4vw4769q6hx7j-3000-app.github.dev/help for Portuguese-speaking community assistance

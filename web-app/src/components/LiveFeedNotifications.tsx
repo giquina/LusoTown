@@ -29,7 +29,7 @@ export default function LiveFeedNotifications() {
     { type: 'signup', name: 'Sofia Pereira', location: 'Camden, London', icon: '👋', 
       message: 'just joined LusoTown', messagePt: 'juntou-se ao LusoTown' },
     { type: 'signup', name: 'Miguel Santos', location: 'Vauxhall, London', icon: '🎉', 
-      message: 'joined the Portuguese community', messagePt: 'juntou-se à comunidade portuguesa' },
+      message: 'joined the Portuguese-speaking community', messagePt: 'juntou-se à comunidade de falantes de português' },
     { type: 'signup', name: 'Ana Costa', location: 'Stockwell, London', icon: '💚', 
       message: 'signed up for events', messagePt: 'registou-se para eventos' },
     { type: 'signup', name: 'João Ferreira', location: 'Greenwich, London', icon: '🇵🇹', 

@@ -127,7 +127,7 @@ export default function SmartNavigation({
         })
       })
 
-      // Add trending pages with Portuguese community metrics
+      // Add trending pages with Portuguese-speaking community metrics
       topPages.forEach(({ path, count }) => {
         if (path !== state.currentPath && !suggestions.find(s => s.path === path)) {
           suggestions.push({
@@ -318,7 +318,7 @@ export default function SmartNavigation({
 
   const getPageDescription = (path: string): string => {
     const descriptions: Record<string, string> = {
-      [ROUTES.events]: t('nav.events-desc', 'Portuguese community events in London'),
+      [ROUTES.events]: t('nav.events-desc', 'Portuguese-speaking community events in London'),
       [ROUTES.community]: t('nav.community-desc', 'Connect with Portuguese speakers'),
       [ROUTES.services]: t('nav.services-desc', 'Exclusive Portuguese services'),
       [ROUTES.transport]: t('nav.transport-desc', 'Portuguese-speaking drivers'),
@@ -336,7 +336,7 @@ export default function SmartNavigation({
   const getElitePageIcon = (path: string): React.ReactNode => {
     const iconMap: Record<string, React.ReactNode> = {
       '/events': <span className="text-red-600" title={CULTURAL_SYMBOLS.music}>{CULTURAL_SYMBOLS.flag}</span>,
-      '/community': <span className="text-green-600" title="Portuguese Community">{CULTURAL_SYMBOLS.heart}</span>,
+      '/community': <span className="text-green-600" title="Portuguese-speaking community">{CULTURAL_SYMBOLS.heart}</span>,
       '/services': <span className="text-amber-600" title="Premium Services">{CULTURAL_SYMBOLS.crown}</span>,
       '/transport': <span className="text-blue-600" title="Luxury Transport">{CULTURAL_SYMBOLS.ship}</span>,
       '/london-tours': <span className="text-amber-600" title="Heritage Tours">{CULTURAL_SYMBOLS.castle}</span>,

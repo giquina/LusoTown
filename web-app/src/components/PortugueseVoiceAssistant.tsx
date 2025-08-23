@@ -377,7 +377,7 @@ export default function PortugueseVoiceAssistant() {
           'How can I connect with other Portuguese people?',
           'What helps with homesickness?'
         ],
-        relatedTopics: ['Portuguese community', 'Cultural events', 'Emotional support'],
+        relatedTopics: ['Portuguese-speaking community', 'Cultural events', 'Emotional support'],
         confidence: 0.95
       }
     }
@@ -433,7 +433,7 @@ export default function PortugueseVoiceAssistant() {
           'How to maintain culture in London',
           'Portuguese values and customs'
         ],
-        relatedTopics: ['Family traditions', 'Cultural events', 'Portuguese community'],
+        relatedTopics: ['Family traditions', 'Cultural events', 'Portuguese-speaking community'],
         confidence: 0.85
       }
     }
@@ -446,10 +446,10 @@ export default function PortugueseVoiceAssistant() {
       emotionalTone: 'supportive',
       followUpSuggestions: [
         'Tell me about Portuguese events in London',
-        'Help me connect with Portuguese community',
+        'Help me connect with Portuguese-speaking community',
         'I need emotional support today'
       ],
-      relatedTopics: ['Portuguese community', 'Cultural guidance', 'Practical help'],
+      relatedTopics: ['Portuguese-speaking community', 'Cultural guidance', 'Practical help'],
       confidence: 0.75
     }
   }

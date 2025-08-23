@@ -92,8 +92,8 @@ const socialExperiences: SocialExperience[] = [
     londonSpots: ["Stockwell Park", "Portuguese Centre courtyards", "Borough Market area", "Community squares across London"],
     typicalTiming: "June 13th (Santo António), June 24th (São João), June 29th (São Pedro)",
     communityVibe: {
-      en: "The entire Portuguese community comes together in joyous celebration, creating the most welcoming and inclusive atmosphere imaginable.",
-      pt: "Toda a comunidade portuguesa junta-se em celebração alegre, criando a atmosfera mais acolhedora e inclusiva imaginável."
+      en: "The entire Portuguese-speaking community comes together in joyous celebration, creating the most welcoming and inclusive atmosphere imaginable.",
+      pt: "Toda a comunidade de falantes de português junta-se em celebração alegre, criando a atmosfera mais acolhedora e inclusiva imaginável."
     },
     whatToExpect: ["Grilled sardines", "Traditional decorations", "Community dancing", "Live music", "Street parties", "Traditional games"],
     culturalAuthenticity: {
@@ -285,15 +285,15 @@ const PortugueseNightlifeSocialScene: React.FC = () => {
 
           <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-4">
             {language === "pt"
-              ? "Descubra a cultura de tasca íntima, festivais de rua incríveis, círculos de guitarra, cultura de café e casas de fado onde a comunidade portuguesa cria experiências sociais mágicas em Londres."
-              : "Discover intimate tasca culture, incredible street festivals, guitar circles, café culture, and fado houses where the Portuguese community creates magical social experiences in London."
+              ? "Descubra a cultura de tasca íntima, festivais de rua incríveis, círculos de guitarra, cultura de café e casas de fado onde a comunidade de falantes de português cria experiências sociais mágicas em Londres."
+              : "Discover intimate tasca culture, incredible street festivals, guitar circles, café culture, and fado houses where the Portuguese-speaking community creates magical social experiences in London."
             }
           </p>
 
           <div className="inline-flex items-center gap-2 text-lg text-indigo-600 font-medium">
             <HeartIcon className="w-5 h-5" />
             <span>
-              {language === "pt" ? "Onde a comunidade portuguesa se conecta" : "Where the Portuguese community connects"}
+              {language === "pt" ? "Onde a comunidade de falantes de português se conecta" : "Where the Portuguese-speaking community connects"}
             </span>
           </div>
         </motion.div>
@@ -467,8 +467,8 @@ const PortugueseNightlifeSocialScene: React.FC = () => {
           <div className="mt-6">
             <p className="text-lg opacity-95">
               {language === "pt"
-                ? "Junte-se à nossa vibrante cena social e descubra como a comunidade portuguesa cria conexões mágicas em Londres."
-                : "Join our vibrant social scene and discover how the Portuguese community creates magical connections in London."
+                ? "Junte-se à nossa vibrante cena social e descubra como a comunidade de falantes de português cria conexões mágicas em Londres."
+                : "Join our vibrant social scene and discover how the Portuguese-speaking community creates magical connections in London."
               }
             </p>
           </div>

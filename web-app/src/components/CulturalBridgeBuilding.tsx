@@ -236,8 +236,8 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
         role: 'Indian Community Leader',
         rolePortuguese: 'Líder da Comunidade Indiana',
         nationality: 'British-Indian',
-        quote: 'The Portuguese community\'s warmth and openness at cultural festivals created beautiful friendships between our communities. We now collaborate on many projects.',
-        quotePortuguese: 'O calor e abertura da comunidade portuguesa nos festivais culturais criaram belas amizades entre nossas comunidades. Agora colaboramos em muitos projetos.'
+        quote: 'The Portuguese-speaking community\'s warmth and openness at cultural festivals created beautiful friendships between our communities. We now collaborate on many projects.',
+        quotePortuguese: 'O calor e abertura da comunidade de falantes de português nos festivais culturais criaram belas amizades entre nossas comunidades. Agora colaboramos em muitos projetos.'
       },
       {
         name: 'Isabel Costa',
@@ -259,8 +259,8 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
     title: 'Portuguese-NHS Healthcare Cultural Competency Programme',
     titlePortuguese: 'Programa de Competência Cultural Português-NHS em Cuidados de Saúde',
     category: 'social',
-    description: 'Healthcare initiative training NHS staff in Portuguese cultural competency while providing Portuguese community with culturally sensitive healthcare access, improving health outcomes for Portuguese families.',
-    descriptionPortuguese: 'Iniciativa de cuidados de saúde treinando funcionários do NHS em competência cultural portuguesa enquanto fornece à comunidade portuguesa acesso a cuidados de saúde culturalmente sensíveis, melhorando resultados de saúde para famílias portuguesas.',
+    description: 'Healthcare initiative training NHS staff in Portuguese cultural competency while providing Portuguese-speaking community with culturally sensitive healthcare access, improving health outcomes for Portuguese families.',
+    descriptionPortuguese: 'Iniciativa de cuidados de saúde treinando funcionários do NHS em competência cultural portuguesa enquanto fornece à comunidade de falantes de português acesso a cuidados de saúde culturalmente sensíveis, melhorando resultados de saúde para famílias portuguesas.',
     participants: {
       portuguese: 2800,
       british: 450,
@@ -271,15 +271,15 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
     objectives: [
       'Train NHS staff in Portuguese cultural healthcare practices and communication',
       'Provide Portuguese-speaking healthcare advocates and translators',
-      'Educate Portuguese community about NHS services and rights',
-      'Reduce health disparities in Portuguese community',
+      'Educate Portuguese-speaking community about NHS services and rights',
+      'Reduce health disparities in Portuguese-speaking community',
       'Create culturally appropriate health education materials'
     ],
     objectivesPortuguese: [
       'Treinar funcionários do NHS em práticas culturais portuguesas de cuidados de saúde e comunicação',
       'Fornecer defensores e tradutores de cuidados de saúde que falam português',
-      'Educar comunidade portuguesa sobre serviços e direitos do NHS',
-      'Reduzir disparidades de saúde na comunidade portuguesa',
+      'Educar comunidade de falantes de português sobre serviços e direitos do NHS',
+      'Reduzir disparidades de saúde na comunidade de falantes de português',
       'Criar materiais de educação em saúde culturalmente apropriados'
     ],
     outcomes: {
@@ -313,19 +313,19 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
         quotePortuguese: 'Ter profissionais de saúde que entendem nossa cultura faz tanta diferença. Minha mãe idosa finalmente sente-se confortável procurando cuidados médicos.'
       }
     ],
-    futurePlans: 'Expand to 25 NHS trusts, launch Portuguese community health champions programme, create digital health resources.',
-    futurePlansPortuguese: 'Expandir para 25 trusts do NHS, lançar programa de campeões de saúde da comunidade portuguesa, criar recursos digitais de saúde.',
+    futurePlans: 'Expand to 25 NHS trusts, launch Portuguese-speaking community health champions programme, create digital health resources.',
+    futurePlansPortuguese: 'Expandir para 25 trusts do NHS, lançar programa de campeões de saúde da comunidade de falantes de português, criar recursos digitais de saúde.',
     mediaRecognition: ['NHS Health Publication', 'Portuguese Medical Journal', 'Healthcare Professional Magazine', 'Community Health Newsletter'],
     icon: HeartIcon,
     color: 'coral'
   },
   {
     id: 'government-liaison',
-    title: 'Portuguese Community-Local Government Partnership Programme',
-    titlePortuguese: 'Programa de Parceria Comunidade Portuguesa-Governo Local',
+    title: 'Portuguese-speaking community-Local Government Partnership Programme',
+    titlePortuguese: 'Programa de Parceria Comunidade de Falantes de Português-Governo Local',
     category: 'governmental',
-    description: 'Formal partnership between Portuguese community leaders and London borough councils, ensuring Portuguese voices are heard in local government decisions while helping Portuguese residents understand and engage with local democracy.',
-    descriptionPortuguese: 'Parceria formal entre líderes da comunidade portuguesa e conselhos de distrito de Londres, garantindo que vozes portuguesas sejam ouvidas nas decisões do governo local enquanto ajuda residentes portugueses a entender e envolver-se com democracia local.',
+    description: 'Formal partnership between Portuguese-speaking community leaders and London borough councils, ensuring Portuguese voices are heard in local government decisions while helping Portuguese residents understand and engage with local democracy.',
+    descriptionPortuguese: 'Parceria formal entre líderes da comunidade de falantes de português e conselhos de distrito de Londres, garantindo que vozes portuguesas sejam ouvidas nas decisões do governo local enquanto ajuda residentes portugueses a entender e envolver-se com democracia local.',
     participants: {
       portuguese: 1200,
       british: 350,
@@ -334,18 +334,18 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
     duration: '2020-Present',
     location: '8 London Borough Councils',
     objectives: [
-      'Represent Portuguese community interests in local government',
+      'Represent Portuguese-speaking community interests in local government',
       'Educate Portuguese residents about local democracy and civic participation',
-      'Facilitate communication between Portuguese community and council services',
+      'Facilitate communication between Portuguese-speaking community and council services',
       'Ensure Portuguese cultural needs are considered in local planning',
-      'Build trust between Portuguese community and British institutions'
+      'Build trust between Portuguese-speaking community and British institutions'
     ],
     objectivesPortuguese: [
-      'Representar interesses da comunidade portuguesa no governo local',
+      'Representar interesses da comunidade de falantes de português no governo local',
       'Educar residentes portugueses sobre democracia local e participação cívica',
-      'Facilitar comunicação entre comunidade portuguesa e serviços do conselho',
+      'Facilitar comunicação entre comunidade de falantes de português e serviços do conselho',
       'Garantir que necessidades culturais portuguesas sejam consideradas no planeamento local',
-      'Construir confiança entre comunidade portuguesa e instituições britânicas'
+      'Construir confiança entre comunidade de falantes de português e instituições britânicas'
     ],
     outcomes: {
       title: 'Government Partnership Achievements',
@@ -366,13 +366,13 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
         role: 'British Councillor',
         rolePortuguese: 'Vereador Britânico',
         nationality: 'British',
-        quote: 'The Portuguese community liaison programme opened my eyes to needs I never knew existed. Their input has made our policies more inclusive and effective.',
-        quotePortuguese: 'O programa de ligação da comunidade portuguesa abriu meus olhos para necessidades que nunca soube que existiam. Sua contribuição tornou nossas políticas mais inclusivas e eficazes.'
+        quote: 'The Portuguese-speaking community liaison programme opened my eyes to needs I never knew existed. Their input has made our policies more inclusive and effective.',
+        quotePortuguese: 'O programa de ligação da comunidade de falantes de português abriu meus olhos para necessidades que nunca soube que existiam. Sua contribuição tornou nossas políticas mais inclusivas e eficazes.'
       },
       {
         name: 'António Silva',
-        role: 'Portuguese Community Representative',
-        rolePortuguese: 'Representante da Comunidade Portuguesa',
+        role: 'Portuguese-speaking community Representative',
+        rolePortuguese: 'Representante da Comunidade de Falantes de Português',
         nationality: 'Portuguese',
         quote: 'Having a voice in local government means our children have better Portuguese language support in schools and our elderly have culturally appropriate social services.',
         quotePortuguese: 'Ter voz no governo local significa que nossos filhos têm melhor apoio de língua portuguesa nas escolas e nossos idosos têm serviços sociais culturalmente apropriados.'
@@ -540,8 +540,8 @@ export default function CulturalBridgeBuilding() {
           </h2>
           <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
             {language === 'pt' 
-              ? 'Iniciativas inovadoras que conectam a comunidade portuguesa com comunidades britânicas e outras, construindo pontes de compreensão mútua, amizade e colaboração através de programas educacionais, profissionais e sociais.'
-              : 'Innovative initiatives connecting the Portuguese community with British and other communities, building bridges of mutual understanding, friendship, and collaboration through educational, professional, and social programmes.'}
+              ? 'Iniciativas inovadoras que conectam a comunidade de falantes de português com comunidades britânicas e outras, construindo pontes de compreensão mútua, amizade e colaboração através de programas educacionais, profissionais e sociais.'
+              : 'Innovative initiatives connecting the Portuguese-speaking community with British and other communities, building bridges of mutual understanding, friendship, and collaboration through educational, professional, and social programmes.'}
           </p>
         </motion.div>
 

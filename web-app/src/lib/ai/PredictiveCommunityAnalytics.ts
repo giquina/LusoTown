@@ -1,13 +1,13 @@
 /**
  * PredictiveCommunityAnalytics.ts
- * Production-Ready Luxury Portuguese Community Analytics
+ * Production-Ready Luxury Portuguese-speaking community Analytics
  * 
  * Sophisticated ML system for predicting Portuguese diaspora trends in London,
  * optimizing luxury event success, analyzing culturally-aware behavior patterns,
  * providing actionable insights for premium community growth,
- * and ensuring GDPR compliance for Portuguese community data.
+ * and ensuring GDPR compliance for Portuguese-speaking community data.
  * 
- * Built for luxury Portuguese community platform with advanced privacy controls.
+ * Built for luxury Portuguese-speaking community platform with advanced privacy controls.
  * @version 2.0.0
  * @production-ready true
  */
@@ -255,7 +255,7 @@ export class PredictiveCommunityAnalytics {
   }
 
   /**
-   * Predict luxury Portuguese community trends based on sophisticated behavior patterns
+   * Predict luxury Portuguese-speaking community trends based on sophisticated behavior patterns
    * Ensures GDPR compliance and privacy-first analytics
    */
   public async predictCommunityTrends(
@@ -356,7 +356,7 @@ export class PredictiveCommunityAnalytics {
     // Location accessibility analysis
     const locationScore = this.analyzeLocationAccessibility(eventDetails.location)
     
-    // Portuguese community timing preferences
+    // Portuguese-speaking community timing preferences
     const timingScore = this.analyzePortugueseTimingPreferences(eventDetails.date, eventDetails.time)
     
     // Target audience fit
@@ -745,7 +745,7 @@ export class PredictiveCommunityAnalytics {
   }
 
   private analyzeLocationAccessibility(location: string): number {
-    // Mock location scoring based on Portuguese community concentration
+    // Mock location scoring based on Portuguese-speaking community concentration
     const locationScores: Record<string, number> = {
       'vauxhall': 95,
       'stockwell': 92,
@@ -937,7 +937,7 @@ export class PredictiveCommunityAnalytics {
       throw new Error('Cultural authenticity must be between 1-10')
     }
     
-    // Convert to percentage and boost for Portuguese community engagement
+    // Convert to percentage and boost for Portuguese-speaking community engagement
     return Math.min(authenticity * 10, 100)
   }
   
@@ -1102,7 +1102,7 @@ export class PredictiveCommunityAnalytics {
   private calculateOptimalContactTime(member: CommunityMember): Date {
     // Calculate best time to contact based on user activity patterns
     const optimalTime = new Date()
-    optimalTime.setHours(19, 0, 0, 0) // 7 PM default for Portuguese community
+    optimalTime.setHours(19, 0, 0, 0) // 7 PM default for Portuguese-speaking community
     return optimalTime
   }
 
@@ -1353,7 +1353,7 @@ export class PredictiveCommunityAnalytics {
   }
 
   private analyzePortugueseTimingPreferences(date: Date, time: string): number {
-    // Portuguese community typically prefers evening events
+    // Portuguese-speaking community typically prefers evening events
     const hour = parseInt(time.split(':')[0])
     
     if (hour >= 18 && hour <= 21) return 90 // 6-9 PM is optimal
@@ -1381,7 +1381,7 @@ export class PredictiveCommunityAnalytics {
   }
 
   private analyzePriceSensitivity(price: number, eventType: string): number {
-    // Portuguese community price sensitivity analysis
+    // Portuguese-speaking community price sensitivity analysis
     if (price === 0) return 90 // Free events highly preferred
     if (price <= 15) return 80 // Affordable range
     if (price <= 30) return 75 // Moderate range

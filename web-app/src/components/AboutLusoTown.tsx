@@ -147,7 +147,7 @@ export default function AboutLusoTown() {
           <div className={`inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50 via-primary-50 to-accent-50 border border-secondary-200 rounded-2xl px-6 py-3 shadow-lg mb-6 transition-all duration-700 delay-100 ${mounted ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-5'}`}>
             <Globe className="h-5 w-5 text-secondary-600" />
             <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 to-primary-600 bg-clip-text text-transparent">
-              {t('about.hero.badge', 'Unidos pela Língua • Portuguese Community')}
+              {t('about.hero.badge', 'Unidos pela Língua • Portuguese-speaking community')}
             </span>
             <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>
           </div>

@@ -2,7 +2,7 @@
  * Mobile Development Standards for LusoTown
  * 
  * Comprehensive mobile-first development guidelines specifically tailored
- * for the Portuguese community platform's needs and cultural considerations.
+ * for the Portuguese-speaking community platform's needs and cultural considerations.
  */
 
 export interface MobileStandard {
@@ -31,7 +31,7 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
     mobileFirst: {
       title: 'Mobile-First Design Philosophy',
       description: 'Design for the smallest screen first, then progressively enhance for larger screens',
-      reasoning: '75% of Portuguese community members access LusoTown primarily via mobile devices',
+      reasoning: '75% of Portuguese-speaking community members access LusoTown primarily via mobile devices',
       implementation: 'Use min-width media queries, not max-width. Start with mobile layout as the base.'
     },
     
@@ -173,7 +173,7 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
     },
     
     {
-      name: 'Portuguese Community Form',
+      name: 'Portuguese-speaking community Form',
       description: 'Mobile-friendly form with Portuguese labels and validation',
       mobileImplementation: 'Single column layout, large input fields, clear Portuguese labels',
       portugueseConsiderations: 'Form labels are longer in Portuguese, error messages need more space',
@@ -207,7 +207,7 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
     
     {
       name: 'Mobile Navigation Menu',
-      description: 'Portuguese community navigation optimized for mobile devices',
+      description: 'Portuguese-speaking community navigation optimized for mobile devices',
       mobileImplementation: 'Bottom tab bar with Portuguese cultural terms, large touch targets',
       portugueseConsiderations: 'Navigation terms like "Comunidade" vs "Community" affect spacing',
       codeExample: `
@@ -294,7 +294,7 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
     }
   },
 
-  // Accessibility Standards for Portuguese Community
+  // Accessibility Standards for Portuguese-speaking community
   accessibilityStandards: {
     screenReader: {
       language: 'Proper lang attributes for Portuguese content',

@@ -283,8 +283,8 @@ export default function ServicesPage() {
               {/* Desktop full subtitle */}
               <span className="hidden sm:block">
                 {isPortuguese
-                  ? "Serviços de transporte executivo, segurança pessoal e tours culturais de nível mundial com especialização cultural portuguesa. Conectando a comunidade portuguesa de Londres com experiências premium e culturalmente autênticas."
-                  : "World-class executive transport, personal security, and cultural tour services with Portuguese cultural expertise. Connecting London's Portuguese community with premium and culturally authentic experiences."}
+                  ? "Serviços de transporte executivo, segurança pessoal e tours culturais de nível mundial com especialização cultural portuguesa. Conectando a comunidade de falantes de português de Londres com experiências premium e culturalmente autênticas."
+                  : "World-class executive transport, personal security, and cultural tour services with Portuguese cultural expertise. Connecting London's Portuguese-speaking community with premium and culturally authentic experiences."}
               </span>
               {/* Mobile short subtitle */}
               <span className="sm:hidden">
@@ -394,8 +394,8 @@ export default function ServicesPage() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {isPortuguese
-                ? 'Serviços especializados projetados para a comunidade portuguesa em Londres e no Reino Unido'
-                : 'Specialized services designed for the Portuguese community in London & UK'
+                ? 'Serviços especializados projetados para a comunidade de falantes de português em Londres e no Reino Unido'
+                : 'Specialized services designed for the Portuguese-speaking community in London & UK'
               }
             </p>
           </div>

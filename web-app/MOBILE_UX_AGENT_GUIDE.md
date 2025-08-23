@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Mobile UX Agent is a specialized development assistant designed specifically for LusoTown's Portuguese community platform. It ensures all UI changes are optimized for mobile devices while preserving Portuguese cultural elements and accommodating longer Portuguese text lengths.
+The Mobile UX Agent is a specialized development assistant designed specifically for LusoTown's Portuguese-speaking community platform. It ensures all UI changes are optimized for mobile devices while preserving Portuguese cultural elements and accommodating longer Portuguese text lengths.
 
 ## 📱 Agent Capabilities
 
@@ -190,7 +190,7 @@ const EventCard: React.FC<EventProps> = ({ event }) => {
 };
 ```
 
-### Mobile Navigation (Portuguese Community)
+### Mobile Navigation (Portuguese-speaking community)
 
 ```typescript
 const MobileNavigation: React.FC = () => {
@@ -389,7 +389,7 @@ npm run test:all
 
 ### Production Monitoring
 - [ ] Mobile user experience metrics tracked
-- [ ] Portuguese community feedback collected
+- [ ] Portuguese-speaking community feedback collected
 - [ ] Performance monitoring active
 - [ ] Accessibility compliance maintained
 - [ ] Cultural element effectiveness measured
@@ -425,4 +425,4 @@ To improve the Mobile UX Agent system:
 4. **Document Changes**: Update this guide with new patterns and guidelines
 5. **Share Knowledge**: Help other developers understand mobile-first Portuguese UX
 
-The Mobile UX Agent ensures LusoTown provides an exceptional mobile experience for the Portuguese community in London and the UK. By following these guidelines and using the automated validation tools, we maintain cultural authenticity while delivering modern, accessible mobile interfaces.
+The Mobile UX Agent ensures LusoTown provides an exceptional mobile experience for the Portuguese-speaking community in London and the UK. By following these guidelines and using the automated validation tools, we maintain cultural authenticity while delivering modern, accessible mobile interfaces.

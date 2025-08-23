@@ -100,7 +100,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     ],
     modernCelebrations: [
       {
-        location: 'London Portuguese Community',
+        location: 'London Portuguese-speaking community',
         adaptations: ['Community centers host bolo-rei sharing', 'Digital janeiras on social media'],
         communityInvolvement: ['Portuguese families', 'Cultural associations', 'Churches']
       }
@@ -300,7 +300,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     ],
     modernCelebrations: [
       {
-        location: 'London Portuguese Community Centers',
+        location: 'London Portuguese-speaking community Centers',
         adaptations: [
           'Indoor sardine grilling events',
           'Manjerico workshops for children',
@@ -619,8 +619,8 @@ export class LusoBotCulturalEvents {
       case 'modern':
         if (event.modernCelebrations.length > 0) {
           explanation += language === 'pt'
-            ? ` Atualmente, a comunidade portuguesa no Reino Unido celebra esta data através de eventos comunitários e adaptações culturais.`
-            : ` Currently, the Portuguese community in the UK celebrates this date through community events and cultural adaptations.`
+            ? ` Atualmente, a comunidade de falantes de português no Reino Unido celebra esta data através de eventos comunitários e adaptações culturais.`
+            : ` Currently, the Portuguese-speaking community in the UK celebrates this date through community events and cultural adaptations.`
         }
         break
 

@@ -2,7 +2,7 @@
  * LusoBot Chat Component Production Tests
  * 
  * Tests for the React chat interface component, including mobile optimization,
- * accessibility, and Portuguese community-specific features.
+ * accessibility, and Portuguese-speaking community-specific features.
  */
 
 import React from 'react'

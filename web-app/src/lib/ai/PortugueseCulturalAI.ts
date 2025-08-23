@@ -388,7 +388,7 @@ export class PortugueseCulturalAI {
         name: 'Santos Populares',
         nameEn: 'Popular Saints Festivals',
         explanation: 'June festivals honoring Saints Anthony, John, and Peter with street parties, grilled sardines, and colorful decorations',
-        significance: 'These festivals represent the height of Portuguese community celebration and cultural identity'
+        significance: 'These festivals represent the height of Portuguese-speaking community celebration and cultural identity'
       },
       {
         name: 'Queima das Fitas',

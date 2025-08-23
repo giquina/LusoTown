@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Luxury Skeleton Loader for Portuguese community content
+// Luxury Skeleton Loader for Portuguese-speaking community content
 interface LuxurySkeletonProps {
   variant?: 'text' | 'card' | 'avatar' | 'image' | 'button';
   width?: string;
@@ -343,7 +343,7 @@ export function LuxuryFullScreenLoader({
             )}
             
             <p className="text-sm text-gray-600 mt-2">
-              Please wait while we prepare your Portuguese community experience
+              Please wait while we prepare your Portuguese-speaking community experience
             </p>
           </motion.div>
         </motion.div>

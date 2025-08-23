@@ -86,7 +86,7 @@ export default function LiveStreamingModule() {
             <li><strong>Cultural Emotes System:</strong> Express yourself with Portuguese-specific emotes like :saudade:, :festa:, :futebol:, :pastelnata:</li>
             <li><strong>Revenue Sharing (85/15):</strong> Keep 85% of your earnings - industry-leading rates for creators</li>
             <li><strong>Multi-Platform Integration:</strong> Simultaneously stream to YouTube, Twitch, and TikTok</li>
-            <li><strong>London Portuguese Events:</strong> Integrate with local Portuguese community events and venues</li>
+            <li><strong>London Portuguese Events:</strong> Integrate with local Portuguese-speaking community events and venues</li>
           </ul>
           
           <h3>Content Categories That Thrive:</h3>
@@ -112,11 +112,11 @@ export default function LiveStreamingModule() {
           
           <h3>O Que Torna o Streaming da LusoTown Especial:</h3>
           <ul>
-            <li><strong>Comunidade Portuguesa Primeiro:</strong> A sua audiência entende as suas referências culturais, nuances linguísticas e experiências partilhadas</li>
+            <li><strong>Comunidade de Falantes de Português Primeiro:</strong> A sua audiência entende as suas referências culturais, nuances linguísticas e experiências partilhadas</li>
             <li><strong>Sistema de Emotes Culturais:</strong> Expresse-se com emotes específicos portugueses como :saudade:, :festa:, :futebol:, :pastelnata:</li>
             <li><strong>Partilha de Receitas (85/15):</strong> Mantenha 85% dos seus ganhos - taxas líderes da indústria para criadores</li>
             <li><strong>Integração Multi-Plataforma:</strong> Transmita simultaneamente para YouTube, Twitch e TikTok</li>
-            <li><strong>Eventos Portugueses de Londres:</strong> Integre com eventos e locais da comunidade portuguesa local</li>
+            <li><strong>Eventos Portugueses de Londres:</strong> Integre com eventos e locais da comunidade de falantes de português local</li>
           </ul>
           
           <h3>Categorias de Conteúdo Que Prosperam:</h3>
@@ -215,7 +215,7 @@ export default function LiveStreamingModule() {
           </ul>
           
           <h3>Mobile Streaming Setup (Streamlabs Mobile):</h3>
-          <p>For Portuguese community events and on-the-go content:</p>
+          <p>For Portuguese-speaking community events and on-the-go content:</p>
           <ul>
             <li>Download Streamlabs Mobile app</li>
             <li>Configure LusoTown RTMP settings</li>
@@ -284,7 +284,7 @@ export default function LiveStreamingModule() {
           </ul>
           
           <h3>Setup de Streaming Móvel (Streamlabs Mobile):</h3>
-          <p>Para eventos da comunidade portuguesa e conteúdo em movimento:</p>
+          <p>Para eventos da comunidade de falantes de português e conteúdo em movimento:</p>
           <ul>
             <li>Descarregar app Streamlabs Mobile</li>
             <li>Configurar definições RTMP da LusoTown</li>
@@ -383,7 +383,7 @@ export default function LiveStreamingModule() {
               <ul>
                 <li>CV writing tips for Portuguese professionals</li>
                 <li>Interview preparation in English vs Portuguese contexts</li>
-                <li>Networking strategies in London's Portuguese community</li>
+                <li>Networking strategies in London's Portuguese-speaking community</li>
                 <li>Industry-specific guidance (tech, finance, healthcare)</li>
               </ul>
             </li>
@@ -515,7 +515,7 @@ export default function LiveStreamingModule() {
               <ul>
                 <li>Dicas de escrita de CV para profissionais portugueses</li>
                 <li>Preparação de entrevistas em contextos ingleses vs portugueses</li>
-                <li>Estratégias de networking na comunidade portuguesa de Londres</li>
+                <li>Estratégias de networking na comunidade de falantes de português de Londres</li>
                 <li>Orientação específica da indústria (tech, finanças, saúde)</li>
               </ul>
             </li>
@@ -656,16 +656,16 @@ export default function LiveStreamingModule() {
             </li>
           </ul>
           
-          <h3>Growth Strategies Specific to Portuguese Community:</h3>
+          <h3>Growth Strategies Specific to Portuguese-speaking community:</h3>
           
           <h4>1. Community Integration Approach</h4>
           <ul>
-            <li><strong>Portuguese Community Events:</strong>
+            <li><strong>Portuguese-speaking community Events:</strong>
               <ul>
                 <li>Stream live from Portuguese festivals and events in London</li>
                 <li>Cover Portuguese religious celebrations and cultural gatherings</li>
                 <li>Interview community leaders and Portuguese business owners</li>
-                <li>Document Portuguese community milestones and achievements</li>
+                <li>Document Portuguese-speaking community milestones and achievements</li>
               </ul>
             </li>
             <li><strong>Portuguese Social Media Groups:</strong>
@@ -682,7 +682,7 @@ export default function LiveStreamingModule() {
           <ul>
             <li><strong>Portuguese SEO Keywords:</strong>
               <ul>
-                <li>"Portugueses em Londres", "Comunidade Portuguesa Londres"</li>
+                <li>"Portugueses em Londres", "Comunidade de Falantes de Português Londres"</li>
                 <li>"Fado Londres", "Comida Portuguesa Londres"</li>
                 <li>"Trabalhar em Londres sendo português"</li>
                 <li>"Estudar em Londres português"</li>
@@ -738,7 +738,7 @@ export default function LiveStreamingModule() {
           
           <h3>Audience Retention Strategies:</h3>
           
-          <h4>Creating Portuguese Community Value:</h4>
+          <h4>Creating Portuguese-speaking community Value:</h4>
           <ul>
             <li><strong>Practical Information:</strong> Visa updates, Brexit implications, travel information</li>
             <li><strong>Emotional Connection:</strong> Shared experiences of missing Portugal, cultural pride</li>
@@ -750,13 +750,13 @@ export default function LiveStreamingModule() {
           <ul>
             <li><strong>Regular Schedule:</strong> Same day/time each week for main content</li>
             <li><strong>Reliable Quality:</strong> Consistent audio/video quality in Portuguese</li>
-            <li><strong>Community Updates:</strong> Regular updates on Portuguese community news</li>
+            <li><strong>Community Updates:</strong> Regular updates on Portuguese-speaking community news</li>
             <li><strong>Responsive Engagement:</strong> Quick responses to community questions</li>
           </ul>
           
           <h3>Measuring Growth Success:</h3>
           
-          <h4>Portuguese Community Metrics:</h4>
+          <h4>Portuguese-speaking community Metrics:</h4>
           <ul>
             <li><strong>Engagement Quality:</strong> Comments in Portuguese, cultural discussions</li>
             <li><strong>Community Building:</strong> Viewers connecting with each other</li>
@@ -809,16 +809,16 @@ export default function LiveStreamingModule() {
             </li>
           </ul>
           
-          <h3>Estratégias de Crescimento Específicas para Comunidade Portuguesa:</h3>
+          <h3>Estratégias de Crescimento Específicas para Comunidade de Falantes de Português:</h3>
           
           <h4>1. Abordagem de Integração Comunitária</h4>
           <ul>
-            <li><strong>Eventos da Comunidade Portuguesa:</strong>
+            <li><strong>Eventos da Comunidade de Falantes de Português:</strong>
               <ul>
                 <li>Transmitir ao vivo de festivais e eventos portugueses em Londres</li>
                 <li>Cobrir celebrações religiosas portuguesas e encontros culturais</li>
                 <li>Entrevistar líderes comunitários e proprietários de negócios portugueses</li>
-                <li>Documentar marcos e conquistas da comunidade portuguesa</li>
+                <li>Documentar marcos e conquistas da comunidade de falantes de português</li>
               </ul>
             </li>
             <li><strong>Grupos de Redes Sociais Portuguesas:</strong>
@@ -835,7 +835,7 @@ export default function LiveStreamingModule() {
           <ul>
             <li><strong>Palavras-chave SEO Portuguesas:</strong>
               <ul>
-                <li>"Portugueses em Londres", "Comunidade Portuguesa Londres"</li>
+                <li>"Portugueses em Londres", "Comunidade de Falantes de Português Londres"</li>
                 <li>"Fado Londres", "Comida Portuguesa Londres"</li>
                 <li>"Trabalhar em Londres sendo português"</li>
                 <li>"Estudar em Londres português"</li>
@@ -891,7 +891,7 @@ export default function LiveStreamingModule() {
           
           <h3>Estratégias de Retenção de Audiência:</h3>
           
-          <h4>Criando Valor da Comunidade Portuguesa:</h4>
+          <h4>Criando Valor da Comunidade de Falantes de Português:</h4>
           <ul>
             <li><strong>Informação Prática:</strong> Atualizações de visto, implicações do Brexit, informações de viagem</li>
             <li><strong>Conexão Emocional:</strong> Experiências partilhadas de sentir falta de Portugal, orgulho cultural</li>
@@ -903,13 +903,13 @@ export default function LiveStreamingModule() {
           <ul>
             <li><strong>Horário Regular:</strong> Mesmo dia/hora cada semana para conteúdo principal</li>
             <li><strong>Qualidade Confiável:</strong> Qualidade de áudio/vídeo consistente em português</li>
-            <li><strong>Atualizações da Comunidade:</strong> Atualizações regulares sobre notícias da comunidade portuguesa</li>
+            <li><strong>Atualizações da Comunidade:</strong> Atualizações regulares sobre notícias da comunidade de falantes de português</li>
             <li><strong>Envolvimento Responsivo:</strong> Respostas rápidas a questões da comunidade</li>
           </ul>
           
           <h3>Medindo Sucesso de Crescimento:</h3>
           
-          <h4>Métricas da Comunidade Portuguesa:</h4>
+          <h4>Métricas da Comunidade de Falantes de Português:</h4>
           <ul>
             <li><strong>Qualidade de Envolvimento:</strong> Comentários em português, discussões culturais</li>
             <li><strong>Construção de Comunidade:</strong> Espectadores conectando-se uns com os outros</li>
@@ -952,7 +952,7 @@ export default function LiveStreamingModule() {
             <li><strong>Monthly Subscriptions:</strong> £2.99-£9.99/month based on your tier</li>
             <li><strong>Annual Subscriptions:</strong> 15% discount for yearly payments</li>
             <li><strong>Subscriber Benefits:</strong> Ad-free viewing, exclusive content, Portuguese emotes</li>
-            <li><strong>Portuguese Community Focus:</strong> Market to Portuguese speakers specifically</li>
+            <li><strong>Portuguese-speaking community Focus:</strong> Market to Portuguese speakers specifically</li>
           </ul>
           
           <h4>2. Live Stream Donations (Secondary Income)</h4>
@@ -1011,17 +1011,17 @@ export default function LiveStreamingModule() {
                 <li>One-on-one Portuguese cultural consultations</li>
                 <li>Custom content requests</li>
                 <li>Priority support in Portuguese</li>
-                <li>Exclusive Portuguese community events</li>
+                <li>Exclusive Portuguese-speaking community events</li>
               </ul>
             </li>
           </ul>
           
           <h3>Revenue Optimization Strategies:</h3>
           
-          <h4>Portuguese Community Marketing:</h4>
+          <h4>Portuguese-speaking community Marketing:</h4>
           <ul>
             <li><strong>Cultural Value Proposition:</strong> "Support Portuguese culture preservation in London"</li>
-            <li><strong>Community Building:</strong> "Join exclusive Portuguese community"</li>
+            <li><strong>Community Building:</strong> "Join exclusive Portuguese-speaking community"</li>
             <li><strong>Language Maintenance:</strong> "Help your children maintain Portuguese"</li>
             <li><strong>Professional Networking:</strong> "Connect with Portuguese professionals"</li>
           </ul>
@@ -1089,7 +1089,7 @@ export default function LiveStreamingModule() {
             <li><strong>Subscrições Mensais:</strong> £2.99-£9.99/mês baseado no seu nível</li>
             <li><strong>Subscrições Anuais:</strong> 15% desconto para pagamentos anuais</li>
             <li><strong>Benefícios de Subscritor:</strong> Visualização sem anúncios, conteúdo exclusivo, emotes portugueses</li>
-            <li><strong>Foco na Comunidade Portuguesa:</strong> Marketing para falantes de português especificamente</li>
+            <li><strong>Foco na Comunidade de Falantes de Português:</strong> Marketing para falantes de português especificamente</li>
           </ul>
           
           <h4>2. Doações de Live Stream (Receita Secundária)</h4>
@@ -1148,17 +1148,17 @@ export default function LiveStreamingModule() {
                 <li>Consultas culturais portuguesas individuais</li>
                 <li>Pedidos de conteúdo personalizado</li>
                 <li>Apoio prioritário em português</li>
-                <li>Eventos exclusivos da comunidade portuguesa</li>
+                <li>Eventos exclusivos da comunidade de falantes de português</li>
               </ul>
             </li>
           </ul>
           
           <h3>Estratégias de Otimização de Receita:</h3>
           
-          <h4>Marketing da Comunidade Portuguesa:</h4>
+          <h4>Marketing da Comunidade de Falantes de Português:</h4>
           <ul>
             <li><strong>Proposta de Valor Cultural:</strong> "Apoie a preservação da cultura portuguesa em Londres"</li>
-            <li><strong>Construção de Comunidade:</strong> "Junte-se à comunidade portuguesa exclusiva"</li>
+            <li><strong>Construção de Comunidade:</strong> "Junte-se à comunidade de falantes de português exclusiva"</li>
             <li><strong>Manutenção do Idioma:</strong> "Ajude os seus filhos a manter o português"</li>
             <li><strong>Networking Profissional:</strong> "Conecte-se com profissionais portugueses"</li>
           </ul>

@@ -342,8 +342,8 @@ export default function InstitutoCamoes() {
       'nav.events': { en: 'Cultural Events', pt: 'Eventos Culturais' },
       'nav.resources': { en: 'Learning Resources', pt: 'Recursos de Aprendizagem' },
       'partnership.title': {
-        en: 'Official Recognition as UK\'s Premier Portuguese Community Platform',
-        pt: 'Reconhecimento Oficial como Principal Plataforma da Comunidade Portuguesa no Reino Unido'
+        en: 'Official Recognition as UK\'s Premier Portuguese-speaking community Platform',
+        pt: 'Reconhecimento Oficial como Principal Plataforma da Comunidade de Falantes de Português no Reino Unido'
       },
       'partnership.description': {
         en: 'LusoTown London has been officially recognized by Instituto Camões as the preferred digital platform for Portuguese cultural promotion and community engagement in the United Kingdom. This strategic partnership establishes LusoTown as the authoritative hub for Portuguese language, culture, and community services.',
@@ -494,8 +494,8 @@ export default function InstitutoCamoes() {
                         </h4>
                         <p className="text-gray-600 text-sm">
                           {language === 'pt' 
-                            ? 'Única plataforma digital reconhecida para a comunidade portuguesa no Reino Unido.'
-                            : 'The only recognized digital platform for the Portuguese community in the UK.'}
+                            ? 'Única plataforma digital reconhecida para a comunidade de falantes de português no Reino Unido.'
+                            : 'The only recognized digital platform for the Portuguese-speaking community in the UK.'}
                         </p>
                       </div>
                     </div>

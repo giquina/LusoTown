@@ -1,6 +1,6 @@
 /**
  * PortugueseBusinessIntelligence.ts
- * Advanced Business Intelligence System for Portuguese Community Platform
+ * Advanced Business Intelligence System for Portuguese-speaking community Platform
  * 
  * Provides market analysis, revenue optimization, and growth insights
  * specifically tailored for the Portuguese diaspora in the UK.
@@ -202,7 +202,7 @@ export class PortugueseBusinessIntelligence {
   }
 
   /**
-   * Identify business opportunities specific to Portuguese community
+   * Identify business opportunities specific to Portuguese-speaking community
    */
   public async identifyBusinessOpportunities(): Promise<BusinessOpportunity[]> {
     const opportunities: BusinessOpportunity[] = []
@@ -283,7 +283,7 @@ export class PortugueseBusinessIntelligence {
   }
 
   /**
-   * Optimize revenue strategies for Portuguese community platform
+   * Optimize revenue strategies for Portuguese-speaking community platform
    */
   public async optimizeRevenue(): Promise<RevenueOptimization> {
     const currentMetrics = this.getCurrentRevenueMetrics()
@@ -311,7 +311,7 @@ export class PortugueseBusinessIntelligence {
   }
 
   /**
-   * Analyze optimal pricing for Portuguese community services
+   * Analyze optimal pricing for Portuguese-speaking community services
    */
   public analyzePricingStrategy(): PricingRecommendation[] {
     return [
@@ -427,7 +427,7 @@ export class PortugueseBusinessIntelligence {
   public analyzeMarketExpansion(): MarketExpansionStrategy[] {
     return [
       {
-        targetArea: 'Manchester Portuguese Community',
+        targetArea: 'Manchester Portuguese-speaking community',
         marketSize: 1200,
         competitiveAnalysis: 'Limited Portuguese-specific services, strong community presence',
         culturalFactors: ['Large Madeira community', 'Strong cultural associations', 'Family-oriented'],
@@ -436,7 +436,7 @@ export class PortugueseBusinessIntelligence {
         timeframe: '18 months'
       },
       {
-        targetArea: 'Birmingham Portuguese Community',
+        targetArea: 'Birmingham Portuguese-speaking community',
         marketSize: 800,
         competitiveAnalysis: 'Growing community, underserved market',
         culturalFactors: ['Young professionals', 'Mixed regional backgrounds', 'Business opportunities'],
@@ -445,7 +445,7 @@ export class PortugueseBusinessIntelligence {
         timeframe: '12 months'
       },
       {
-        targetArea: 'Edinburgh Portuguese Community',
+        targetArea: 'Edinburgh Portuguese-speaking community',
         marketSize: 400,
         competitiveAnalysis: 'Small but affluent community, no direct competitors',
         culturalFactors: ['High education levels', 'Cultural appreciation', 'Premium services demand'],
@@ -482,7 +482,7 @@ export class PortugueseBusinessIntelligence {
         averageIncome: 42000
       },
       {
-        name: 'Stockwell Portuguese Community',
+        name: 'Stockwell Portuguese-speaking community',
         borough: 'Lambeth',
         coordinates: { lat: 51.4721, lon: -0.1235 },
         portuguesePopulation: 2200,
@@ -505,7 +505,7 @@ export class PortugueseBusinessIntelligence {
   }
 
   /**
-   * Predict seasonal business patterns for Portuguese community
+   * Predict seasonal business patterns for Portuguese-speaking community
    */
   public predictSeasonalPatterns(): SeasonalTrend[] {
     return [

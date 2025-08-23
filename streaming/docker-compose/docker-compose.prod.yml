@@ -1,4 +1,4 @@
-# LusoTown Portuguese Community Streaming Infrastructure
+# LusoTown Portuguese-speaking community Streaming Infrastructure
 # Production Docker Compose Configuration
 
 version: '3.8'
@@ -52,7 +52,7 @@ services:
       retries: 3
       start_period: 30s
 
-  # Nginx Load Balancer for Portuguese Community
+  # Nginx Load Balancer for Portuguese-speaking community
   nginx-streaming:
     image: nginx:1.24-alpine
     container_name: lusotown-nginx-streaming-prod

@@ -27,7 +27,7 @@ import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
 import { getImageWithFallback } from '@/lib/profileImages'
 
-// London Borough Data with Portuguese Community Statistics
+// London Borough Data with Portuguese-speaking community Statistics
 const neighborhoodGroups = [
   {
     id: 'lambeth-stockwell',
@@ -72,8 +72,8 @@ const neighborhoodGroups = [
     area: 'Central South London',
     areaPt: 'Centro Sul de Londres',
     portugueseSpeakers: 4200,
-    description: 'Growing Portuguese community in modern developments near cultural venues',
-    descriptionPt: 'Comunidade portuguesa crescente em desenvolvimentos modernos perto de locais culturais',
+    description: 'Growing Portuguese-speaking community in modern developments near cultural venues',
+    descriptionPt: 'Comunidade de falantes de português crescente em desenvolvimentos modernos perto de locais culturais',
     displacement: 'New settlement area for displaced families',
     displacementPt: 'Nova área de assentamento para famílias deslocadas',
     activeGroups: 5,
@@ -180,8 +180,8 @@ const neighborhoodGroups = [
     area: 'South East London',
     areaPt: 'Sudeste de Londres',
     portugueseSpeakers: 2400,
-    description: 'Emerging Portuguese community near waterside developments',
-    descriptionPt: 'Comunidade portuguesa emergente perto de desenvolvimentos ribeirinhos',
+    description: 'Emerging Portuguese-speaking community near waterside developments',
+    descriptionPt: 'Comunidade de falantes de português emergente perto de desenvolvimentos ribeirinhos',
     displacement: 'Secondary displacement area with growing community',
     displacementPt: 'Área de deslocamento secundário com comunidade crescente',
     activeGroups: 4,
@@ -412,9 +412,9 @@ export default function NeighborhoodGroups() {
                 <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-5xl mx-auto">
                   <span className="hidden sm:block">
                     {isPortuguese ? (
-                      'Mantém conexões da tua comunidade portuguesa mesmo após mudanças devido à gentrificação. Encontra o teu grupo de bairro, coordena transporte para eventos e constrói redes de apoio local em toda Londres.'
+                      'Mantém conexões da tua comunidade de falantes de português mesmo após mudanças devido à gentrificação. Encontra o teu grupo de bairro, coordena transporte para eventos e constrói redes de apoio local em toda Londres.'
                     ) : (
-                      'Maintain Portuguese community connections even after displacement due to gentrification. Find your neighborhood group, coordinate transport to events, and build local support networks across London.'
+                      'Maintain Portuguese-speaking community connections even after displacement due to gentrification. Find your neighborhood group, coordinate transport to events, and build local support networks across London.'
                     )}
                   </span>
                   <span className="sm:hidden">
@@ -558,7 +558,7 @@ export default function NeighborhoodGroups() {
                   {isPortuguese ? (
                     'Encontra a tua comunidade local portuguesa em Londres. Cada bairro tem a sua própria personalidade e necessidades únicas.'
                   ) : (
-                    'Find your local Portuguese community in London. Each neighborhood has its own personality and unique needs.'
+                    'Find your local Portuguese-speaking community in London. Each neighborhood has its own personality and unique needs.'
                   )}
                 </p>
               </motion.div>
@@ -1127,7 +1127,7 @@ export default function NeighborhoodGroups() {
                 </label>
                 <textarea
                   rows={4}
-                  placeholder={isPortuguese ? 'Descreve a comunidade portuguesa na tua área...' : 'Describe the Portuguese community in your area...'}
+                  placeholder={isPortuguese ? 'Descreve a comunidade de falantes de português na tua área...' : 'Describe the Portuguese-speaking community in your area...'}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
               </div>

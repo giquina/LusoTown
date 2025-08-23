@@ -231,7 +231,7 @@ Examples:
 
   console.log(`\n💬 **How to use:**`);
   console.log(`Simply mention the agent's specialty in your prompt to Claude Code, for example:`);
-  console.log(`"I need help with ${taskDescription}. Please use the appropriate Portuguese community specialist agent."`);
+  console.log(`"I need help with ${taskDescription}. Please use the appropriate Portuguese-speaking community specialist agent."`);
 }
 
 // Export for module usage

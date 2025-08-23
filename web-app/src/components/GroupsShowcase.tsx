@@ -163,7 +163,7 @@ export default function GroupsShowcase() {
                 <UserGroupIcon className="w-10 h-10 text-white" />
               </div>
               <div className="text-sm font-medium opacity-90 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full">
-                Portuguese Community
+                Portuguese-speaking community
               </div>
             </div>
           </div>
@@ -271,7 +271,7 @@ export default function GroupsShowcase() {
               <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 to-red-500 animate-pulse shadow-sm"></div>
               <UserGroupIcon className="w-5 h-5 text-secondary-600" />
               <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 bg-clip-text text-transparent">
-                Portuguese Community Groups
+                Portuguese-speaking community Groups
               </span>
             </div>
             <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>

@@ -104,7 +104,7 @@ export default function PremiumSearchInterface({
   const portugueseSuggestions = [
     t('search.suggestions.events', 'Portuguese events London'),
     t('search.suggestions.restaurants', 'Portuguese restaurants'),
-    t('search.suggestions.community', 'Portuguese community'),
+    t('search.suggestions.community', 'Portuguese-speaking community'),
     t('search.suggestions.language', 'Portuguese language exchange'),
     t('search.suggestions.business', 'Portuguese business networking'),
     t('search.suggestions.culture', 'Portuguese cultural events'),
@@ -241,7 +241,7 @@ export default function PremiumSearchInterface({
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder={placeholder || t('search.placeholder.compact', 'Search Portuguese community...')}
+            placeholder={placeholder || t('search.placeholder.compact', 'Search Portuguese-speaking community...')}
             className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg bg-white/90 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300"
           />
           <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />

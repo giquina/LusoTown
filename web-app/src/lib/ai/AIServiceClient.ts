@@ -1,6 +1,6 @@
 /**
  * Centralized AI Service Client
- * Integrates multiple cloud AI services for Portuguese community platform
+ * Integrates multiple cloud AI services for Portuguese-speaking community platform
  */
 
 import { supabase } from '@/lib/supabase'
@@ -476,7 +476,7 @@ export class AIServiceClient {
   private async callAzureOpenAI(service: AIServiceConfig, request: any): Promise<any> {
     // Mock Azure OpenAI implementation
     return {
-      text: "Azure AI response adapted for Portuguese community",
+      text: "Azure AI response adapted for Portuguese-speaking community",
       deployment: service.configuration.deployment_name,
       confidence: 0.85
     }

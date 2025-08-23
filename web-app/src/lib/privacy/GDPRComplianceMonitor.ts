@@ -1,7 +1,7 @@
 /**
  * GDPR Compliance Monitoring System
  * 
- * Monitors and ensures GDPR compliance for Portuguese community data
+ * Monitors and ensures GDPR compliance for Portuguese-speaking community data
  * protection with cultural sensitivity considerations
  */
 
@@ -374,7 +374,7 @@ export class GDPRComplianceMonitor {
     // Bilingual transparency
     culturalConsiderations.push('Privacy notices available in Portuguese')
     culturalConsiderations.push('Cultural context provided in transparency information')
-    culturalConsiderations.push('AI processing explained with Portuguese community examples')
+    culturalConsiderations.push('AI processing explained with Portuguese-speaking community examples')
 
     // Check AI transparency
     const aiTransparency = this.checkAITransparency()
@@ -546,7 +546,7 @@ export class GDPRComplianceMonitor {
       status: 'partial',
       issues: ['Documentation could be more comprehensive'],
       improvements: ['Enhance cultural compliance documentation'],
-      culturalConsiderations: ['Accountability measures consider Portuguese community impact']
+      culturalConsiderations: ['Accountability measures consider Portuguese-speaking community impact']
     }
   }
 
@@ -637,7 +637,7 @@ export class GDPRComplianceMonitor {
             area: area.area,
             description: issue,
             culturalImpact: area.culturalConsiderations.length > 0 ? 
-              'May impact Portuguese community trust and cultural values' : undefined,
+              'May impact Portuguese-speaking community trust and cultural values' : undefined,
             affectedUsers: this.estimateAffectedUsers(area.area, issue),
             detectedAt: new Date().toISOString(),
             preventiveMeasures: area.improvements
@@ -663,7 +663,7 @@ export class GDPRComplianceMonitor {
         area: violation.area,
         recommendation: `Address ${violation.description}`,
         culturalBenefits: violation.culturalImpact ? 
-          'Will improve Portuguese community trust and cultural alignment' : undefined,
+          'Will improve Portuguese-speaking community trust and cultural alignment' : undefined,
         implementationEffort: this.estimateImplementationEffort(violation.description),
         timeline: this.estimateTimeline(violation.severity),
         expectedImpact: `Improve ${violation.area} compliance by 10-20 points`
@@ -693,7 +693,7 @@ export class GDPRComplianceMonitor {
 
   private estimateAffectedUsers(area: GDPRComplianceArea, issue: string): number {
     // Estimate based on area and issue severity
-    const baseUsers = 750 // Total Portuguese community members
+    const baseUsers = 750 // Total Portuguese-speaking community members
     
     switch (area) {
       case 'consent':
@@ -703,7 +703,7 @@ export class GDPRComplianceMonitor {
       case 'data_subject_rights':
         return Math.floor(baseUsers * 0.8)
       case 'cultural_sensitivity':
-        return baseUsers // Critical for all Portuguese community
+        return baseUsers // Critical for all Portuguese-speaking community
       default:
         return Math.floor(baseUsers * 0.5)
     }

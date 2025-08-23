@@ -2,7 +2,7 @@
  * Mobile UX Validation Utilities for LusoTown
  * 
  * Automated validation functions to ensure mobile compatibility
- * and Portuguese community accessibility standards.
+ * and Portuguese-speaking community accessibility standards.
  */
 
 import { MOBILE_UX_AGENT_CONFIG } from '@/config/mobile-ux-agent';

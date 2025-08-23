@@ -60,11 +60,11 @@ interface NavigationAnalytics {
 
 const NavigationContext = createContext<NavigationContextType | undefined>(undefined)
 
-// Premium route mapping for Portuguese community
+// Premium route mapping for Portuguese-speaking community
 const ROUTE_HIERARCHY: Record<string, BreadcrumbItem[]> = {
   '/': [],
   '/events': [
-    { label: 'Events', isActive: true, category: 'event', subtitle: 'Portuguese Community Events' }
+    { label: 'Events', isActive: true, category: 'event', subtitle: 'Portuguese-speaking community Events' }
   ],
   '/events/create': [
     { label: 'Events', href: ROUTES.events, category: 'event' },

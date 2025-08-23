@@ -896,7 +896,7 @@ export default function EventDetailsPage() {
                     <div className="space-y-3 mb-4">
                       <h5 className="font-semibold text-gray-900 text-sm">{t('event.contact-organizer', 'Contact Organizer')}</h5>
                       <div className="space-y-2">
-                        {/* WhatsApp Contact - Common for Portuguese community */}
+                        {/* WhatsApp Contact - Common for Portuguese-speaking community */}
                         <button className="w-full flex items-center gap-3 p-3 bg-green-50 border border-green-200 rounded-lg hover:bg-green-100 transition-colors">
                           <span className="text-green-600">📱</span>
                           <div className="text-left">

@@ -164,7 +164,7 @@ export default function BusinessNetworkingMatch({
           networkingGoals: ["Mentorship", "Investment", "Partnership"],
           businessInterests: ["FinTech", "Portuguese Market", "Cross-border Payments", "Blockchain"],
           origin: "Lisboa, Portugal",
-          bio: "Fundador da LusoFinance, especializada em soluções de pagamento para a comunidade portuguesa no Reino Unido. Procuro mentorar jovens empreendedores portugueses e expandir para novos mercados.",
+          bio: "Fundador da LusoFinance, especializada em soluções de pagamento para a comunidade de falantes de português no Reino Unido. Procuro mentorar jovens empreendedores portugueses e expandir para novos mercados.",
           skills: ["Financial Services", "Product Strategy", "Team Leadership", "Fundraising"],
           achievements: ["Series A £5M raised", "100k+ Portuguese users", "Featured in FinTech Times"],
           languages: ["Portuguese (Native)", "English (Fluent)", "Spanish (Conversational)"],
@@ -184,7 +184,7 @@ export default function BusinessNetworkingMatch({
           conversationStarters: [
             {
               id: "bcs1",
-              text: "Vi que fundaste uma FinTech focada na comunidade portuguesa. Como identificaste esta oportunidade de mercado?",
+              text: "Vi que fundaste uma FinTech focada na comunidade de falantes de português. Como identificaste esta oportunidade de mercado?",
               category: "Empreendedorismo",
               culturalContext: "Focado no mercado português no Reino Unido",
               businessRelevance: "Estratégia de negócio e identificação de oportunidades",

@@ -1,4 +1,4 @@
-// Service Worker for LusoTown Portuguese Community Platform
+// Service Worker for LusoTown Portuguese-speaking community Platform
 // Version: 2.0.0 - Portuguese Cultural PWA
 
 const CACHE_NAME = 'lusotown-v2-portuguese-community';
@@ -59,7 +59,7 @@ const PORTUGUESE_EVENT_CATEGORIES = [
 
 // Install event - Cache Portuguese cultural assets
 self.addEventListener('install', event => {
-  console.log('[SW] Installing LusoTown Portuguese Community Service Worker');
+  console.log('[SW] Installing LusoTown Portuguese-speaking community Service Worker');
   
   event.waitUntil(
     (async () => {
@@ -101,7 +101,7 @@ self.addEventListener('install', event => {
 
 // Activate event - Clean up old caches
 self.addEventListener('activate', event => {
-  console.log('[SW] Activating LusoTown Portuguese Community Service Worker');
+  console.log('[SW] Activating LusoTown Portuguese-speaking community Service Worker');
   
   event.waitUntil(
     (async () => {
@@ -213,7 +213,7 @@ async function handleApiRequest(request) {
     const response = await fetch(request);
     
     if (response.ok) {
-      // Cache Portuguese community data
+      // Cache Portuguese-speaking community data
       if (isPortugueseApiEndpoint(url.pathname)) {
         const apiCache = await caches.open(API_CACHE);
         await apiCache.put(request, response.clone());
@@ -222,7 +222,7 @@ async function handleApiRequest(request) {
     
     return response;
   } catch (error) {
-    // Try to serve from cache for Portuguese community endpoints
+    // Try to serve from cache for Portuguese-speaking community endpoints
     if (isPortugueseApiEndpoint(url.pathname)) {
       const apiCache = await caches.open(API_CACHE);
       const cachedResponse = await apiCache.match(request);
@@ -365,7 +365,7 @@ function createPortugueseOfflineResponse() {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>LusoTown - Offline | Comunidade Portuguesa</title>
+        <title>LusoTown - Offline | Comunidade de Falantes de Português</title>
         <style>
           body {
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -412,8 +412,8 @@ function createPortugueseOfflineResponse() {
         <div class="container">
           <div class="icon">🇵🇹</div>
           <h1>You're Offline</h1>
-          <p>Can't connect to the Portuguese community right now. Check your internet connection and try again.</p>
-          <p class="portuguese">Não consegues conectar à comunidade portuguesa. Verifica a tua ligação à internet.</p>
+          <p>Can't connect to the Portuguese-speaking community right now. Check your internet connection and try again.</p>
+          <p class="portuguese">Não consegues conectar à comunidade de falantes de português. Verifica a tua ligação à internet.</p>
           <button class="retry-btn" onclick="window.location.reload()">
             Try Again | Tentar Novamente
           </button>
@@ -521,7 +521,7 @@ function createPortugueseNotificationOptions(data) {
   return defaultOptions;
 }
 
-// Background sync for Portuguese community content
+// Background sync for Portuguese-speaking community content
 self.addEventListener('sync', event => {
   console.log('[SW] Background sync triggered:', event.tag);
   
@@ -536,7 +536,7 @@ self.addEventListener('sync', event => {
 
 async function syncPortugueseCommunityContent() {
   try {
-    console.log('[SW] Syncing Portuguese community content...');
+    console.log('[SW] Syncing Portuguese-speaking community content...');
     
     const apiCache = await caches.open(API_CACHE);
     const culturalCache = await caches.open(PORTUGUESE_CULTURAL_CACHE);
@@ -553,9 +553,9 @@ async function syncPortugueseCommunityContent() {
       await apiCache.put('/api/businesses?lang=pt&featured=true', businessResponse);
     }
     
-    console.log('[SW] Portuguese community content synced successfully');
+    console.log('[SW] Portuguese-speaking community content synced successfully');
   } catch (error) {
-    console.error('[SW] Failed to sync Portuguese community content:', error);
+    console.error('[SW] Failed to sync Portuguese-speaking community content:', error);
   }
 }
 
@@ -607,4 +607,4 @@ async function syncBusinessDirectory() {
   }
 }
 
-console.log('[SW] LusoTown Portuguese Community Service Worker loaded successfully');
+console.log('[SW] LusoTown Portuguese-speaking community Service Worker loaded successfully');

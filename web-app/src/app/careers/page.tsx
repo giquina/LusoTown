@@ -48,8 +48,8 @@ interface JobRole {
 const jobRoles: JobRole[] = [
   {
     id: 'community-manager',
-    title: 'Portuguese Community Manager',
-    titlePt: 'Gestor de Comunidade Portuguesa',
+    title: 'Portuguese-speaking community Manager',
+    titlePt: 'Gestor de Comunidade de Falantes de Português',
     department: 'Community',
     departmentPt: 'Comunidade',
     location: 'London, UK',
@@ -58,14 +58,14 @@ const jobRoles: JobRole[] = [
     description: 'Lead and grow our Portuguese-speaking community across London. Build authentic connections and foster cultural engagement.',
     descriptionPt: 'Lidere e faça crescer a nossa comunidade lusófona em Londres. Construa conexões autênticas e promova o envolvimento cultural.',
     responsibilities: [
-      'Manage and grow Portuguese community engagement',
+      'Manage and grow Portuguese-speaking community engagement',
       'Create culturally authentic content for Portuguese speakers',
       'Coordinate community events and meetups',
       'Handle community moderation with cultural sensitivity',
       'Build partnerships with Portuguese organizations'
     ],
     responsibilitiesPt: [
-      'Gerir e expandir o envolvimento da comunidade portuguesa',
+      'Gerir e expandir o envolvimento da comunidade de falantes de português',
       'Criar conteúdo culturalmente autêntico para lusófonos',
       'Coordenar eventos e encontros comunitários',
       'Moderar a comunidade com sensibilidade cultural',
@@ -116,14 +116,14 @@ const jobRoles: JobRole[] = [
     requirements: [
       'Portuguese speaker with cultural knowledge',
       'Experience in event planning or coordination',
-      'Knowledge of London venues and Portuguese community',
+      'Knowledge of London venues and Portuguese-speaking community',
       'Strong organizational and project management skills',
       'Ability to work evenings and weekends for events'
     ],
     requirementsPt: [
       'Falante de português com conhecimento cultural',
       'Experiência em planeamento ou coordenação de eventos',
-      'Conhecimento de locais em Londres e comunidade portuguesa',
+      'Conhecimento de locais em Londres e comunidade de falantes de português',
       'Fortes competências organizacionais e de gestão de projetos',
       'Disponibilidade para trabalhar noites e fins de semana para eventos'
     ],
@@ -158,14 +158,14 @@ const jobRoles: JobRole[] = [
     requirements: [
       'Bilingual Portuguese-English content creation experience',
       'Photography and video editing skills',
-      'Understanding of Portuguese culture and London Portuguese community',
+      'Understanding of Portuguese culture and London Portuguese-speaking community',
       'Experience with social media platforms and content scheduling',
       'Creative storytelling abilities'
     ],
     requirementsPt: [
       'Experiência em criação de conteúdo bilingue português-inglês',
       'Competências em fotografia e edição de vídeo',
-      'Compreensão da cultura portuguesa e comunidade portuguesa de Londres',
+      'Compreensão da cultura portuguesa e comunidade de falantes de português de Londres',
       'Experiência com plataformas de redes sociais e agendamento de conteúdo',
       'Capacidades criativas de storytelling'
     ],
@@ -180,20 +180,20 @@ const jobRoles: JobRole[] = [
     location: 'London, UK',
     type: 'Full-time',
     typePt: 'Tempo integral',
-    description: 'Drive Portuguese community growth through strategic social media management across platforms.',
-    descriptionPt: 'Impulsione o crescimento da comunidade portuguesa através da gestão estratégica de redes sociais.',
+    description: 'Drive Portuguese-speaking community growth through strategic social media management across platforms.',
+    descriptionPt: 'Impulsione o crescimento da comunidade de falantes de português através da gestão estratégica de redes sociais.',
     responsibilities: [
       'Manage Portuguese-focused social media strategy',
       'Grow follower base within Portuguese diaspora in UK',
       'Create and schedule Portuguese and English content',
-      'Engage with Portuguese community online',
+      'Engage with Portuguese-speaking community online',
       'Analyze social media metrics and optimize strategy'
     ],
     responsibilitiesPt: [
       'Gerir estratégia de redes sociais focada em portugueses',
       'Aumentar base de seguidores na diáspora portuguesa no Reino Unido',
       'Criar e agendar conteúdo em português e inglês',
-      'Envolver-se com a comunidade portuguesa online',
+      'Envolver-se com a comunidade de falantes de português online',
       'Analisar métricas de redes sociais e otimizar estratégia'
     ],
     requirements: [
@@ -221,18 +221,18 @@ const jobRoles: JobRole[] = [
     location: 'London, UK',
     type: 'Freelance/Part-time',
     typePt: 'Freelance/Meio período',
-    description: 'Provide high-quality translation and interpretation services for Portuguese community events and content.',
-    descriptionPt: 'Forneça serviços de tradução e interpretação de alta qualidade para eventos e conteúdo da comunidade portuguesa.',
+    description: 'Provide high-quality translation and interpretation services for Portuguese-speaking community events and content.',
+    descriptionPt: 'Forneça serviços de tradução e interpretação de alta qualidade para eventos e conteúdo da comunidade de falantes de português.',
     responsibilities: [
       'Translate website content between Portuguese and English',
-      'Interpret at Portuguese community events',
+      'Interpret at Portuguese-speaking community events',
       'Ensure cultural accuracy in all translations',
       'Work with legal and business documents',
       'Support Portuguese speakers with UK services navigation'
     ],
     responsibilitiesPt: [
       'Traduzir conteúdo do website entre português e inglês',
-      'Interpretar em eventos da comunidade portuguesa',
+      'Interpretar em eventos da comunidade de falantes de português',
       'Garantir precisão cultural em todas as traduções',
       'Trabalhar com documentos legais e empresariais',
       'Apoiar lusófonos na navegação de serviços do Reino Unido'
@@ -337,15 +337,15 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'safety-moderator',
-    title: 'Portuguese Community Safety Moderator',
-    titlePt: 'Moderador de Segurança da Comunidade Portuguesa',
+    title: 'Portuguese-speaking community Safety Moderator',
+    titlePt: 'Moderador de Segurança da Comunidade de Falantes de Português',
     department: 'Safety',
     departmentPt: 'Segurança',
     location: 'Remote/London',
     type: 'Part-time',
     typePt: 'Meio período',
-    description: 'Ensure community safety through culturally-sensitive moderation of Portuguese community interactions.',
-    descriptionPt: 'Garanta a segurança da comunidade através da moderação culturalmente sensível das interações da comunidade portuguesa.',
+    description: 'Ensure community safety through culturally-sensitive moderation of Portuguese-speaking community interactions.',
+    descriptionPt: 'Garanta a segurança da comunidade através da moderação culturalmente sensível das interações da comunidade de falantes de português.',
     responsibilities: [
       'Moderate Portuguese and English community discussions',
       'Handle community reports and safety concerns',
@@ -461,8 +461,8 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'community-social-media-manager',
-    title: 'Portuguese Community Social Media Manager',
-    titlePt: 'Gestor de Redes Sociais da Comunidade Portuguesa',
+    title: 'Portuguese-speaking community Social Media Manager',
+    titlePt: 'Gestor de Redes Sociais da Comunidade de Falantes de Português',
     department: 'Marketing',
     departmentPt: 'Marketing',
     location: 'London, UK',
@@ -474,14 +474,14 @@ const jobRoles: JobRole[] = [
       'Develop Portuguese-focused social media strategy across Instagram, Facebook, TikTok, LinkedIn',
       'Create culturally authentic content for Portuguese diaspora in London',
       'Manage bilingual community engagement and respond to comments/messages',
-      'Analyze social media metrics and optimize for Portuguese community growth',
+      'Analyze social media metrics and optimize for Portuguese-speaking community growth',
       'Collaborate with Portuguese influencers and community leaders'
     ],
     responsibilitiesPt: [
       'Desenvolver estratégia de redes sociais focada em portugueses no Instagram, Facebook, TikTok, LinkedIn',
       'Criar conteúdo culturalmente autêntico para a diáspora portuguesa em Londres',
       'Gerir envolvimento comunitário bilingue e responder a comentários/mensagens',
-      'Analisar métricas de redes sociais e otimizar para crescimento da comunidade portuguesa',
+      'Analisar métricas de redes sociais e otimizar para crescimento da comunidade de falantes de português',
       'Colaborar com influenciadores portugueses e líderes comunitários'
     ],
     requirements: [
@@ -516,14 +516,14 @@ const jobRoles: JobRole[] = [
       'Develop and maintain API integrations with London venues and booking systems',
       'Create technical partnerships with Portuguese restaurants and cultural venues',
       'Build efficient systems for event booking and venue management',
-      'Ensure platform scalability for Portuguese community growth',
+      'Ensure platform scalability for Portuguese-speaking community growth',
       'Provide technical support for business directory integrations'
     ],
     responsibilitiesPt: [
       'Desenvolver e manter integrações de API com locais de Londres e sistemas de reserva',
       'Criar parcerias técnicas com restaurantes portugueses e locais culturais',
       'Construir sistemas automatizados para reserva de eventos e gestão de locais',
-      'Garantir escalabilidade da plataforma para o crescimento da comunidade portuguesa',
+      'Garantir escalabilidade da plataforma para o crescimento da comunidade de falantes de português',
       'Fornecer suporte técnico para integrações do diretório de negócios'
     ],
     requirements: [
@@ -627,40 +627,40 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'data-analytics-growth',
-    title: 'Portuguese Community Data Analytics & Growth Specialist',
-    titlePt: 'Especialista em Análise de Dados e Crescimento da Comunidade Portuguesa',
+    title: 'Portuguese-speaking community Data Analytics & Growth Specialist',
+    titlePt: 'Especialista em Análise de Dados e Crescimento da Comunidade de Falantes de Português',
     department: 'Analytics',
     departmentPt: 'Análises',
     location: 'London, UK',
     type: 'Full-time',
     typePt: 'Tempo integral',
-    description: 'Analyze Portuguese community behavior and optimize growth strategies through data-driven insights and cultural understanding.',
-    descriptionPt: 'Analisar o comportamento da comunidade portuguesa e otimizar estratégias de crescimento através de insights baseados em dados e compreensão cultural.',
+    description: 'Analyze Portuguese-speaking community behavior and optimize growth strategies through data-driven insights and cultural understanding.',
+    descriptionPt: 'Analisar o comportamento da comunidade de falantes de português e otimizar estratégias de crescimento através de insights baseados em dados e compreensão cultural.',
     responsibilities: [
-      'Analyze Portuguese community engagement patterns and user behavior',
+      'Analyze Portuguese-speaking community engagement patterns and user behavior',
       'Develop growth strategies specific to Portuguese diaspora in London',
       'Create data-driven insights for community feature development',
-      'Monitor KPIs and measure success of Portuguese community initiatives',
+      'Monitor KPIs and measure success of Portuguese-speaking community initiatives',
       'Provide analytics support for marketing and business development teams'
     ],
     responsibilitiesPt: [
-      'Analisar padrões de envolvimento da comunidade portuguesa e comportamento do utilizador',
+      'Analisar padrões de envolvimento da comunidade de falantes de português e comportamento do utilizador',
       'Desenvolver estratégias de crescimento específicas para a diáspora portuguesa em Londres',
       'Criar insights baseados em dados para desenvolvimento de funcionalidades da comunidade',
-      'Monitorizar KPIs e medir sucesso de iniciativas da comunidade portuguesa',
+      'Monitorizar KPIs e medir sucesso de iniciativas da comunidade de falantes de português',
       'Fornecer suporte de análises para equipas de marketing e desenvolvimento de negócios'
     ],
     requirements: [
       'Bachelor\'s degree in Data Science, Statistics, or related field',
       'Experience with data analytics tools and platforms',
-      'Understanding of Portuguese community demographics and behavior',
+      'Understanding of Portuguese-speaking community demographics and behavior',
       'Strong analytical and statistical skills',
       'Experience with growth marketing and community analytics'
     ],
     requirementsPt: [
       'Licenciatura em Ciência de Dados, Estatísticas ou área relacionada',
       'Experiência com ferramentas e plataformas de análise de dados',
-      'Compreensão de demografia e comportamento da comunidade portuguesa',
+      'Compreensão de demografia e comportamento da comunidade de falantes de português',
       'Fortes competências analíticas e estatísticas',
       'Experiência com marketing de crescimento e análises comunitárias'
     ],
@@ -679,14 +679,14 @@ const jobRoles: JobRole[] = [
     description: 'Lead bilingual customer service team with deep Portuguese cultural understanding and exceptional service delivery.',
     descriptionPt: 'Liderar equipa de atendimento ao cliente bilingue com profunda compreensão cultural portuguesa e entrega de serviço excecional.',
     responsibilities: [
-      'Manage multilingual customer support team for Portuguese community',
+      'Manage multilingual customer support team for Portuguese-speaking community',
       'Develop customer service protocols with Portuguese cultural sensitivity',
       'Handle complex customer issues requiring cultural understanding',
       'Train support staff in Portuguese culture and language nuances',
       'Maintain high customer satisfaction rates for Portuguese speakers'
     ],
     responsibilitiesPt: [
-      'Gerir equipa de suporte ao cliente multilingue para a comunidade portuguesa',
+      'Gerir equipa de suporte ao cliente multilingue para a comunidade de falantes de português',
       'Desenvolver protocolos de atendimento ao cliente com sensibilidade cultural portuguesa',
       'Lidar com questões complexas de clientes que requerem compreensão cultural',
       'Treinar staff de suporte em cultura portuguesa e nuances linguísticas',
@@ -710,8 +710,8 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'community-growth-marketing',
-    title: 'Portuguese Community Growth & Acquisition Marketing Manager',
-    titlePt: 'Gestor de Marketing de Crescimento e Aquisição da Comunidade Portuguesa',
+    title: 'Portuguese-speaking community Growth & Acquisition Marketing Manager',
+    titlePt: 'Gestor de Marketing de Crescimento e Aquisição da Comunidade de Falantes de Português',
     department: 'Marketing',
     departmentPt: 'Marketing',
     location: 'London, UK',
@@ -724,14 +724,14 @@ const jobRoles: JobRole[] = [
       'Create user acquisition strategies for Portuguese diaspora community',
       'Manage digital advertising across Portuguese-focused channels',
       'Partner with Portuguese organizations and influencers for marketing',
-      'Analyze campaign performance and optimize for Portuguese community growth'
+      'Analyze campaign performance and optimize for Portuguese-speaking community growth'
     ],
     responsibilitiesPt: [
       'Desenvolver e executar campanhas de marketing direcionadas a falantes de português em Londres',
       'Criar estratégias de aquisição de utilizadores para a comunidade da diáspora portuguesa',
       'Gerir publicidade digital através de canais focados em portugueses',
       'Fazer parcerias com organizações portuguesas e influenciadores para marketing',
-      'Analisar desempenho de campanhas e otimizar para crescimento da comunidade portuguesa'
+      'Analisar desempenho de campanhas e otimizar para crescimento da comunidade de falantes de português'
     ],
     requirements: [
       'Digital marketing experience with focus on community growth',
@@ -842,20 +842,20 @@ const jobRoles: JobRole[] = [
     location: 'London, UK',
     type: 'Full-time',
     typePt: 'Tempo integral',
-    description: 'Conduct comprehensive market research on Portuguese community demographics and business intelligence for strategic planning.',
-    descriptionPt: 'Conduzir investigação de mercado abrangente sobre demografia da comunidade portuguesa e business intelligence para planeamento estratégico.',
+    description: 'Conduct comprehensive market research on Portuguese-speaking community demographics and business intelligence for strategic planning.',
+    descriptionPt: 'Conduzir investigação de mercado abrangente sobre demografia da comunidade de falantes de português e business intelligence para planeamento estratégico.',
     responsibilities: [
-      'Research Portuguese community demographics and migration patterns in London',
+      'Research Portuguese-speaking community demographics and migration patterns in London',
       'Analyze economic impact and business opportunities within Portuguese diaspora',
       'Provide market intelligence for business development and expansion strategies',
-      'Create detailed reports on Portuguese community trends and behaviors',
+      'Create detailed reports on Portuguese-speaking community trends and behaviors',
       'Support strategic decision-making with data-driven insights'
     ],
     responsibilitiesPt: [
-      'Investigar demografia da comunidade portuguesa e padrões de migração em Londres',
+      'Investigar demografia da comunidade de falantes de português e padrões de migração em Londres',
       'Analisar impacto económico e oportunidades de negócio dentro da diáspora portuguesa',
       'Fornecer inteligência de mercado para estratégias de desenvolvimento e expansão de negócios',
-      'Criar relatórios detalhados sobre tendências e comportamentos da comunidade portuguesa',
+      'Criar relatórios detalhados sobre tendências e comportamentos da comunidade de falantes de português',
       'Apoiar tomada de decisões estratégicas com insights baseados em dados'
     ],
     requirements: [
@@ -893,8 +893,8 @@ export default function CareersPage() {
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90">
               {isPortuguese 
-                ? 'Ajude a construir a maior comunidade portuguesa em Londres'
-                : 'Help build London\'s largest Portuguese community'
+                ? 'Ajude a construir a maior comunidade de falantes de português em Londres'
+                : 'Help build London\'s largest Portuguese-speaking community'
               }
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6 text-lg">
@@ -924,8 +924,8 @@ export default function CareersPage() {
             </h2>
             <p className="text-xl text-gray-600">
               {isPortuguese 
-                ? 'Somos uma startup em crescimento dedicada a unir a comunidade portuguesa em Londres através de experiências autênticas.'
-                : 'We\'re a growing startup dedicated to uniting the Portuguese community in London through authentic experiences.'
+                ? 'Somos uma startup em crescimento dedicada a unir a comunidade de falantes de português em Londres através de experiências autênticas.'
+                : 'We\'re a growing startup dedicated to uniting the Portuguese-speaking community in London through authentic experiences.'
               }
             </p>
           </div>
@@ -955,8 +955,8 @@ export default function CareersPage() {
               </h3>
               <p className="text-gray-600">
                 {isPortuguese 
-                  ? 'Oportunidades de desenvolvimento em uma startup dinâmica com foco na comunidade portuguesa.'
-                  : 'Development opportunities in a dynamic startup focused on the Portuguese community.'
+                  ? 'Oportunidades de desenvolvimento em uma startup dinâmica com foco na comunidade de falantes de português.'
+                  : 'Development opportunities in a dynamic startup focused on the Portuguese-speaking community.'
                 }
               </p>
             </div>
@@ -988,8 +988,8 @@ export default function CareersPage() {
             </h2>
             <p className="text-lg text-gray-600">
               {isPortuguese 
-                ? 'Encontre a posição perfeita para ajudar a nossa comunidade portuguesa a crescer'
-                : 'Find the perfect position to help our Portuguese community grow'
+                ? 'Encontre a posição perfeita para ajudar a nossa comunidade de falantes de português a crescer'
+                : 'Find the perfect position to help our Portuguese-speaking community grow'
               }
             </p>
           </div>

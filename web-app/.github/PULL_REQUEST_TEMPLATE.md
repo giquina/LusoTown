@@ -38,7 +38,7 @@ Brief description of changes
 - [ ] ✅ Performance impact considered
 - [ ] ✅ Bundle size impact minimal
 
-## Portuguese Community Focus
+## Portuguese-speaking community Focus
 - [ ] ✅ UK-wide messaging (not London-only)
 - [ ] ✅ Portuguese cultural authenticity maintained
 - [ ] ✅ Community guidelines respected

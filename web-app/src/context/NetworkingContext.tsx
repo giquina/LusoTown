@@ -302,8 +302,8 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'professional-1',
       category: 'professional',
-      text_en: "How has being part of the Portuguese community helped your career in London?",
-      text_pt: "Como é que fazer parte da comunidade portuguesa ajudou a tua carreira em Londres?",
+      text_en: "How has being part of the Portuguese-speaking community helped your career in London?",
+      text_pt: "Como é que fazer parte da comunidade de falantes de português ajudou a tua carreira em Londres?",
       context: 'Professional networking'
     },
     {

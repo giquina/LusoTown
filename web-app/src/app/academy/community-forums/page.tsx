@@ -26,9 +26,9 @@ const communityForumsModule = {
   title: "Community Forums",
   titlePortuguese: "Fóruns da Comunidade",
   description:
-    "Navigate and contribute to Portuguese community discussions with confidence and cultural awareness",
+    "Navigate and contribute to Portuguese-speaking community discussions with confidence and cultural awareness",
   descriptionPortuguese:
-    "Navegue e contribua para discussões da comunidade portuguesa com confiança e consciência cultural",
+    "Navegue e contribua para discussões da comunidade de falantes de português com confiança e consciência cultural",
   difficulty: "Beginner",
   estimatedTime: 22,
   category: "community",
@@ -223,7 +223,7 @@ const communityForumsModule = {
       title: "Community Posting Guidelines",
       titlePortuguese: "Diretrizes de Publicação da Comunidade",
       content: `
-        <p>Create meaningful, respectful posts that contribute to our vibrant Portuguese community. Learn the cultural norms and best practices that make LusoTown forums a welcoming space for all Portuguese speakers.</p>
+        <p>Create meaningful, respectful posts that contribute to our vibrant Portuguese-speaking community. Learn the cultural norms and best practices that make LusoTown forums a welcoming space for all Portuguese speakers.</p>
         
         <h4>Cultural Communication Style</h4>
         <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-4">
@@ -285,7 +285,7 @@ const communityForumsModule = {
         </div>
       `,
       contentPortuguese: `
-        <p>Crie publicações significativas e respeitosas que contribuam para a nossa vibrante comunidade portuguesa. Aprenda as normas culturais e melhores práticas que fazem dos fóruns da LusoTown um espaço acolhedor para todos os falantes de português.</p>
+        <p>Crie publicações significativas e respeitosas que contribuam para a nossa vibrante comunidade de falantes de português. Aprenda as normas culturais e melhores práticas que fazem dos fóruns da LusoTown um espaço acolhedor para todos os falantes de português.</p>
         
         <h4>Estilo de Comunicação Cultural</h4>
         <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-4">
@@ -389,7 +389,7 @@ const communityForumsModule = {
       title: "Safety & Moderation Standards",
       titlePortuguese: "Segurança e Padrões de Moderação",
       content: `
-        <p>LusoTown forums maintain high safety standards while preserving the warmth and openness of Portuguese community culture. Learn how our moderation works and how to contribute to a safe, welcoming environment.</p>
+        <p>LusoTown forums maintain high safety standards while preserving the warmth and openness of Portuguese-speaking community culture. Learn how our moderation works and how to contribute to a safe, welcoming environment.</p>
         
         <h4>Community Safety Features</h4>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
@@ -433,7 +433,7 @@ const communityForumsModule = {
               <li><strong>Harassment or discrimination</strong> based on origin (Portugal vs. Brazil vs. African countries)</li>
               <li><strong>Scams or fraudulent services</strong> targeting Portuguese speakers</li>
               <li><strong>Inappropriate personal information sharing</strong> without consent</li>
-              <li><strong>Off-topic content</strong> that doesn't serve the Portuguese community</li>
+              <li><strong>Off-topic content</strong> that doesn't serve the Portuguese-speaking community</li>
               <li><strong>Spam or excessive self-promotion</strong> without community value</li>
             </ul>
           </div>
@@ -514,7 +514,7 @@ const communityForumsModule = {
               <li><strong>Assédio ou discriminação</strong> baseado em origem (Portugal vs. Brasil vs. países africanos)</li>
               <li><strong>Esquemas ou serviços fraudulentos</strong> visando falantes de português</li>
               <li><strong>Partilha inadequada de informações pessoais</strong> sem consentimento</li>
-              <li><strong>Conteúdo fora de tópico</strong> que não serve a comunidade portuguesa</li>
+              <li><strong>Conteúdo fora de tópico</strong> que não serve a comunidade de falantes de português</li>
               <li><strong>Spam ou autopromoção excessiva</strong> sem valor comunitário</li>
             </ul>
           </div>
@@ -588,7 +588,7 @@ const communityForumsModule = {
       title: "Building Meaningful Connections",
       titlePortuguese: "Construir Conexões Significativas",
       content: `
-        <p>Master the art of forum engagement to build lasting relationships within the Portuguese community. Learn advanced techniques for meaningful participation that leads to real friendships and professional opportunities.</p>
+        <p>Master the art of forum engagement to build lasting relationships within the Portuguese-speaking community. Learn advanced techniques for meaningful participation that leads to real friendships and professional opportunities.</p>
         
         <h4>Advanced Engagement Strategies</h4>
         <div class="space-y-4">
@@ -656,7 +656,7 @@ const communityForumsModule = {
         
         <h4>Long-term Community Building</h4>
         <div class="bg-gradient-to-r from-primary-50 to-secondary-50 border border-primary-200 rounded-lg p-4 my-4">
-          <h5 class="font-semibold text-primary-800">Your Portuguese Community Legacy</h5>
+          <h5 class="font-semibold text-primary-800">Your Portuguese-speaking community Legacy</h5>
           <p class="text-sm text-primary-700 mt-2">Consider how you want to contribute to the long-term growth and success of Portuguese speakers in London:</p>
           <ul class="text-xs text-primary-600 mt-2 list-disc list-inside space-y-1">
             <li>Mentor new Portuguese arrivals in your professional field</li>
@@ -672,7 +672,7 @@ const communityForumsModule = {
         </div>
       `,
       contentPortuguese: `
-        <p>Domine a arte do envolvimento nos fóruns para construir relacionamentos duradouros dentro da comunidade portuguesa. Aprenda técnicas avançadas para participação significativa que leva a amizades reais e oportunidades profissionais.</p>
+        <p>Domine a arte do envolvimento nos fóruns para construir relacionamentos duradouros dentro da comunidade de falantes de português. Aprenda técnicas avançadas para participação significativa que leva a amizades reais e oportunidades profissionais.</p>
         
         <h4>Estratégias Avançadas de Envolvimento</h4>
         <div class="space-y-4">
@@ -740,7 +740,7 @@ const communityForumsModule = {
         
         <h4>Construção Comunitária a Longo Prazo</h4>
         <div class="bg-gradient-to-r from-primary-50 to-secondary-50 border border-primary-200 rounded-lg p-4 my-4">
-          <h5 class="font-semibold text-primary-800">O Seu Legado da Comunidade Portuguesa</h5>
+          <h5 class="font-semibold text-primary-800">O Seu Legado da Comunidade de Falantes de Português</h5>
           <p class="text-sm text-primary-700 mt-2">Considere como quer contribuir para o crescimento e sucesso a longo prazo de falantes de português em Londres:</p>
           <ul class="text-xs text-primary-600 mt-2 list-disc list-inside space-y-1">
             <li>Mentorar novos portugueses na sua área profissional</li>

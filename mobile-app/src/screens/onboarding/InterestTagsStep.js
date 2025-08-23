@@ -118,7 +118,7 @@ const InterestTagsStep = ({ onNext, onBack, selectedInterests, setSelectedIntere
     if (interests.length < 3) {
       Alert.alert(
         'Select More Interests',
-        'Please select at least 3 interests to help us connect you with like-minded Portuguese community members.',
+        'Please select at least 3 interests to help us connect you with like-minded Portuguese-speaking community members.',
         [{ text: 'OK' }]
       );
       return;
@@ -145,7 +145,7 @@ const InterestTagsStep = ({ onNext, onBack, selectedInterests, setSelectedIntere
           <Text style={styles.stepNumber}>6 of 7</Text>
           <Text style={styles.title}>What are your interests?</Text>
           <Text style={styles.subtitle}>
-            Select activities you enjoy so we can connect you with like-minded Portuguese community members.
+            Select activities you enjoy so we can connect you with like-minded Portuguese-speaking community members.
           </Text>
         </View>
 

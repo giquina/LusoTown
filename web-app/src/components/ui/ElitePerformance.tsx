@@ -38,12 +38,12 @@ export function ElitePerformanceMonitor({
       
       setPerformanceScore(score)
       
-      // Report metrics for Portuguese community platform optimization
+      // Report metrics for Portuguese-speaking community platform optimization
       if (reportMetrics && typeof window !== 'undefined') {
         if ('gtag' in window) {
           (window as any).gtag('event', 'page_load_time', {
             event_category: 'Performance',
-            event_label: culturalTheme ? 'Portuguese Community' : 'General',
+            event_label: culturalTheme ? 'Portuguese-speaking community' : 'General',
             value: duration,
             custom_map: {
               performance_score: score,
@@ -52,9 +52,9 @@ export function ElitePerformanceMonitor({
           })
         }
         
-        // Send to Portuguese community analytics
+        // Send to Portuguese-speaking community analytics
         if (culturalTheme) {
-          console.log(`🇵🇹 Portuguese Community Performance: ${duration}ms (${score})`)
+          console.log(`🇵🇹 Portuguese-speaking community Performance: ${duration}ms (${score})`)
         }
       }
       
@@ -167,7 +167,7 @@ function ElitePerformanceIndicator({
                   {config.label} Performance
                 </p>
                 <p className="text-xs text-gray-600">
-                  {loadTime}ms {culturalTheme ? 'para a comunidade portuguesa' : 'load time'}
+                  {loadTime}ms {culturalTheme ? 'para a comunidade de falantes de português' : 'load time'}
                 </p>
               </div>
               <motion.button
@@ -425,8 +425,8 @@ export function EliteInfiniteScroll({
                 )}>
                   {culturalTheme
                     ? language === 'pt'
-                      ? 'Parabéns! Viu tudo o que a nossa comunidade portuguesa tem para oferecer'
-                      : 'Congratulations! You\'ve seen everything our Portuguese community has to offer'
+                      ? 'Parabéns! Viu tudo o que a nossa comunidade de falantes de português tem para oferecer'
+                      : 'Congratulations! You\'ve seen everything our Portuguese-speaking community has to offer'
                     : 'You\'ve reached the end'
                   }
                 </p>

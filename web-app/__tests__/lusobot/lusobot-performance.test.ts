@@ -109,7 +109,7 @@ describe('LusoBot Performance Tests', () => {
         'I really miss Portugal and my family',
         'Estou com saudades da minha terra natal',
         'Feeling homesick today',
-        'Miss the Portuguese community'
+        'Miss the Portuguese-speaking community'
       ]
       
       testMessages.forEach(message => {
@@ -271,7 +271,7 @@ describe('LusoBot Performance Tests', () => {
       const startTime = performance.now()
       
       const response = await LusoBotEngine.generateResponse(
-        'I need help with Portuguese community events',
+        'I need help with Portuguese-speaking community events',
         mockUserContext,
         'en'
       )

@@ -68,7 +68,7 @@ export default function SettingsPage() {
           >
             <div className="text-center mb-8">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Settings</h1>
-              <p className="text-xl text-gray-600">Customize your Portuguese community experience</p>
+              <p className="text-xl text-gray-600">Customize your Portuguese-speaking community experience</p>
             </div>
 
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">

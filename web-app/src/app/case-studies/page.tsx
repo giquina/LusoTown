@@ -16,22 +16,22 @@ import {
 import { ROUTES } from '@/config/routes'
 
 export const metadata: Metadata = {
-  title: 'Case Studies - Real Portuguese Community Connections | LusoTown London',
+  title: 'Case Studies - Real Portuguese-speaking community Connections | LusoTown London',
   description: 'Discover how Portuguese speakers from Brazil, Portugal, Angola, and beyond have transformed their London lives through LusoTown connections. Real stories of friendship, business partnerships, and cultural impact.',
   keywords: [
     'LusoTown case studies',
-    'Portuguese community London',
+    'Portuguese-speaking community London',
     'Portuguese speakers UK',
-    'Portuguese friendship stories',
+    'Portuguese-speaking friendship stories',
     'Portuguese business partnerships',
     'Portuguese cultural connections',
     'Brazilian Portuguese London',
     'Angola Portuguese UK',
     'Portuguese diaspora success',
-    'Portuguese community transformation'
+    'Portuguese-speaking community transformation'
   ],
   openGraph: {
-    title: 'Case Studies - Real Portuguese Community Connections | LusoTown London',
+    title: 'Case Studies - Real Portuguese-speaking community Connections | LusoTown London',
     description: 'Discover how Portuguese speakers have transformed their London lives through meaningful connections at LusoTown events.',
     type: 'website',
     url: 'https://lusotown.london/case-studies',
@@ -40,28 +40,28 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'LusoTown Case Studies - Portuguese Community Connections',
+        alt: 'LusoTown Case Studies - Portuguese-speaking community Connections',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Case Studies - Real Portuguese Community Connections | LusoTown London',
+    title: 'Case Studies - Real Portuguese-speaking community Connections | LusoTown London',
     description: 'Real stories of how Portuguese speakers transformed their London lives through LusoTown connections.',
     images: ['/og-image.jpg'],
   },
 }
 
-// Page-specific structured data for Portuguese community case studies
+// Page-specific structured data for Portuguese-speaking community case studies
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: 'LusoTown Portuguese Community Case Studies',
+  name: 'LusoTown Portuguese-speaking community Case Studies',
   description: 'Real transformation stories from Portuguese speakers who connected through LusoTown events in London',
   url: 'https://lusotown.london/case-studies',
   mainEntity: {
     '@type': 'ItemList',
-    name: 'Portuguese Community Success Stories',
+    name: 'Portuguese-speaking community Success Stories',
     description: 'Detailed case studies showing how Portuguese speakers built meaningful connections in London',
     numberOfItems: 3,
     itemListElement: [
@@ -135,12 +135,12 @@ export default function CaseStudiesPage() {
             </div>
           </section>
 
-          {/* Portuguese Community Impact Stats */}
+          {/* Portuguese-speaking community Impact Stats */}
           <section className="py-16 bg-white">
             <div className="container-width">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-2xl font-bold text-center text-gray-900 mb-12">
-                  Portuguese Community Impact in London
+                  Portuguese-speaking community Impact in London
                 </h2>
                 
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -206,7 +206,7 @@ export default function CaseStudiesPage() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-4">Authentic Timelines</h3>
                     <p className="text-gray-600">
                       From first meeting to life transformation - these timelines show realistic progression 
-                      of Portuguese community relationships over months, not overnight magic.
+                      of Portuguese-speaking community relationships over months, not overnight magic.
                     </p>
                   </div>
                   
@@ -313,7 +313,7 @@ export default function CaseStudiesPage() {
             <div className="container-width">
               <div className="max-w-2xl mx-auto text-center">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Get More Portuguese Community Stories
+                  Get More Portuguese-speaking community Stories
                 </h3>
                 <p className="text-gray-600 mb-8">
                   Subscribe to receive monthly case studies, community highlights, and inspiring stories 
@@ -335,7 +335,7 @@ export default function CaseStudiesPage() {
                 </form>
                 
                 <p className="text-xs text-gray-500 mt-4">
-                  We respect your privacy. Unsubscribe anytime. No spam, just inspiring Portuguese community stories.
+                  We respect your privacy. Unsubscribe anytime. No spam, just inspiring Portuguese-speaking community stories.
                 </p>
               </div>
             </div>

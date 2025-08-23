@@ -90,7 +90,7 @@ const mockExchanges = [
       verified: true,
       teacher: false
     },
-    topics: ['Culture', 'History', 'Portuguese Community'],
+    topics: ['Culture', 'History', 'Portuguese-speaking community'],
     price: '£10/session',
     featured: true,
     category: 'Cultural'

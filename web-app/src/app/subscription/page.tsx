@@ -101,8 +101,8 @@ export default function SubscriptionPage() {
                 </h1>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   {isPortuguese 
-                    ? 'Gerir a sua subscrição da comunidade portuguesa de Londres'
-                    : 'Manage your London Portuguese community subscription'
+                    ? 'Gerir a sua subscrição da comunidade de falantes de português de Londres'
+                    : 'Manage your London Portuguese-speaking community subscription'
                   }
                 </p>
               </motion.div>
@@ -317,7 +317,7 @@ export default function SubscriptionPage() {
                         {isPortuguese ? 'por mês' : 'per month'}
                       </div>
                       <div className="text-xs text-gray-500 mb-4">
-                        {isPortuguese ? 'Comunidade portuguesa em Londres' : 'London Portuguese community'}
+                        {isPortuguese ? 'Comunidade de falantes de português em Londres' : 'London Portuguese-speaking community'}
                       </div>
                       {!hasActiveSubscription && !isInTrial && (
                         <button

@@ -116,7 +116,7 @@ CREATE TABLE portuguese_nations (
 ### Enhanced Portuguese Professional Networking Page
 - **Brand-consistent styling** using Portuguese heritage colors
 - **Cultural authenticity** integrated throughout the design
-- **Mobile-first responsive** design optimized for Portuguese community
+- **Mobile-first responsive** design optimized for Portuguese-speaking community
 - **Footer integration** for consistent navigation
 
 ## 🔐 Security & Performance
@@ -175,14 +175,14 @@ CREATE POLICY user_following_select_policy ON user_following
 ### Touch-Optimized Interface
 - **44px minimum touch targets** for accessibility compliance
 - **Gesture-friendly interactions** with proper feedback
-- **Portuguese community mobile-first** design approach
+- **Portuguese-speaking community mobile-first** design approach
 - **Responsive breakpoints** optimized for Portuguese users
 
 ### Progressive Enhancement
 - **Base functionality** works without JavaScript
 - **Enhanced features** for authenticated users
 - **Offline-first** approach where applicable
-- **Performance budgets** for Portuguese community usage patterns
+- **Performance budgets** for Portuguese-speaking community usage patterns
 
 ## 🎯 Value Propositions
 
@@ -283,4 +283,4 @@ npm run dev
 npm run test:all
 ```
 
-This comprehensive enhancement transforms the basic follow feature into a sophisticated, culturally-authentic system that provides clear value to Portuguese community members while maintaining the highest standards of security, performance, and user experience.
+This comprehensive enhancement transforms the basic follow feature into a sophisticated, culturally-authentic system that provides clear value to Portuguese-speaking community members while maintaining the highest standards of security, performance, and user experience.

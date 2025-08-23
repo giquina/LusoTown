@@ -2,7 +2,7 @@
 -- LUSOTOWN SOCIAL FEED SYSTEM MIGRATION
 -- ======================================
 -- This migration replaces the Twitter integration with a comprehensive
--- internal social media platform for the Portuguese community in London
+-- internal social media platform for the Portuguese-speaking community in London
 
 -- ======================================
 -- SOCIAL POSTS SYSTEM
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS social_posts (
   
   -- Feed algorithm data
   engagement_score DECIMAL(10,2) DEFAULT 0, -- Calculated engagement score
-  cultural_relevance_score DECIMAL(3,2) DEFAULT 0, -- Portuguese community relevance (0-1)
+  cultural_relevance_score DECIMAL(3,2) DEFAULT 0, -- Portuguese-speaking community relevance (0-1)
   boost_level VARCHAR(10) DEFAULT 'none' CHECK (boost_level IN ('none', 'low', 'medium', 'high')), -- For premium content
   
   -- Post metadata
@@ -397,7 +397,7 @@ SELECT id FROM profiles
 WHERE id NOT IN (SELECT user_id FROM social_feed_preferences WHERE user_id IS NOT NULL)
 ON CONFLICT (user_id) DO NOTHING;
 
--- Sample Portuguese community posts for development
+-- Sample Portuguese-speaking community posts for development
 INSERT INTO social_posts (user_id, content, cultural_tags, location_tags, content_type, cultural_relevance_score, language) VALUES
 ((SELECT id FROM profiles LIMIT 1), 
  'Excited for tonight''s Fado performance at Canteen in Borough Market! Who else is going? 🎵 #FadoNight #PortugueseCulture', 
@@ -482,12 +482,12 @@ WHERE p.deleted_at IS NULL
 GROUP BY p.user_id, pr.first_name, pr.last_name, pr.membership_tier
 ORDER BY avg_engagement_score DESC;
 
-COMMENT ON TABLE social_posts IS 'Core social media posts for Portuguese community in London - replaces Twitter integration';
-COMMENT ON TABLE social_follows IS 'User following relationships for Portuguese community social network';
+COMMENT ON TABLE social_posts IS 'Core social media posts for Portuguese-speaking community in London - replaces Twitter integration';
+COMMENT ON TABLE social_follows IS 'User following relationships for Portuguese-speaking community social network';
 COMMENT ON TABLE social_feed_preferences IS 'User preferences for Portuguese cultural content feed algorithm';
 COMMENT ON VIEW portuguese_trending_topics IS 'Trending Portuguese cultural topics and hashtags in the community';
-COMMENT ON VIEW portuguese_location_activity IS 'Portuguese community activity by London location/area';
-COMMENT ON VIEW user_social_analytics IS 'User engagement analytics for Portuguese community members';
+COMMENT ON VIEW portuguese_location_activity IS 'Portuguese-speaking community activity by London location/area';
+COMMENT ON VIEW user_social_analytics IS 'User engagement analytics for Portuguese-speaking community members';
 
 -- Migration complete
 SELECT 'LusoTown Social Feed System Migration Completed Successfully!' AS migration_status;

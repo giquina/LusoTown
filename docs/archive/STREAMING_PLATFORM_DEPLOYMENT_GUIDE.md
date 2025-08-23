@@ -6,7 +6,7 @@
 
 ## Overview
 
-This guide provides complete instructions for deploying LusoTown's Portuguese community streaming platform with creator monetization, cultural content management, and community features.
+This guide provides complete instructions for deploying LusoTown's Portuguese-speaking community streaming platform with creator monetization, cultural content management, and community features.
 
 ## Database Migrations Status
 
@@ -188,7 +188,7 @@ Expected output: `🎯 Overall System Readiness: 14/16 (87.5%+)`
 - ✅ Creator dashboard endpoints
 - ✅ Revenue tracking system
 - ✅ Cultural content analytics
-- ✅ Portuguese community moderation
+- ✅ Portuguese-speaking community moderation
 - ✅ Multi-currency payout system
 
 ## Testing and Verification
@@ -221,13 +221,13 @@ npm run dev
 ### Required Infrastructure
 - **Streaming Server:** RTMP/HLS media server
 - **Chat Server:** Real-time messaging with Portuguese emotes
-- **Analytics Service:** Portuguese community engagement tracking
+- **Analytics Service:** Portuguese-speaking community engagement tracking
 - **Payment Processor:** Multi-currency creator payouts
 - **CDN:** Portuguese cultural content delivery
 
 ### Monitoring and Analytics
 - **Creator Dashboard:** Revenue tracking and analytics
-- **Cultural Metrics:** Portuguese community engagement
+- **Cultural Metrics:** Portuguese-speaking community engagement
 - **Performance Monitoring:** Stream quality and viewer experience
 - **Content Moderation:** Portuguese cultural sensitivity alerts
 
@@ -273,7 +273,7 @@ With Cultural Bonus (Portugal +20%):
 - **Integration Issues:** Component documentation in `/web-app/src/components/`
 
 ### Community Support
-- **Portuguese Community:** Cultural authenticity guidelines
+- **Portuguese-speaking community:** Cultural authenticity guidelines
 - **Creator Economy:** Revenue sharing and payout documentation
 - **Content Moderation:** Portuguese cultural sensitivity training
 
@@ -296,7 +296,7 @@ DROP TABLE IF EXISTS streams CASCADE;
 
 ## Success Metrics
 
-### Portuguese Community Engagement
+### Portuguese-speaking community Engagement
 - **Creator Adoption:** Target 50+ Portuguese creators in first 3 months
 - **Cultural Content:** 70%+ of streams in Portuguese categories
 - **Community Growth:** 25% increase in Portuguese user engagement
@@ -310,7 +310,7 @@ DROP TABLE IF EXISTS streams CASCADE;
 
 ## Conclusion
 
-The LusoTown streaming platform is **production-ready** with comprehensive Portuguese community features, fair creator monetization, and cultural content management. The database schema is optimized, security is implemented, and all components are integrated.
+The LusoTown streaming platform is **production-ready** with comprehensive Portuguese-speaking community features, fair creator monetization, and cultural content management. The database schema is optimized, security is implemented, and all components are integrated.
 
 **Next Steps:**
 1. Apply database migrations

@@ -618,8 +618,8 @@ export default function PerformanceOptimization({
         type: 'success',
         title: language === 'pt' ? 'Cache Limpo!' : 'Cache Cleared!',
         message: language === 'pt' 
-          ? 'Dados antigos da comunidade portuguesa removidos' 
-          : 'Old Portuguese community data removed',
+          ? 'Dados antigos da comunidade de falantes de português removidos' 
+          : 'Old Portuguese-speaking community data removed',
         duration: 3000
       });
 

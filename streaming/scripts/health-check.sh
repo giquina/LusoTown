@@ -1,6 +1,6 @@
 #!/bin/bash
 # LusoTown Streaming Health Check Script
-# Monitors Portuguese community streaming infrastructure
+# Monitors Portuguese-speaking community streaming infrastructure
 
 set -e
 
@@ -90,7 +90,7 @@ check_memory() {
 
 # Main health check function
 main() {
-    echo "LusoTown Portuguese Community Streaming Health Check"
+    echo "LusoTown Portuguese-speaking Community Streaming Health Check"
     echo "=================================================="
     
     local failed=0

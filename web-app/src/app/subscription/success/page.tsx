@@ -103,8 +103,8 @@ function SuccessPageContent() {
                     </h1>
                     <p className="text-lg text-gray-600 mb-6">
                       {isPortuguese 
-                        ? 'A sua subscrição foi ativada com sucesso. Agora faz parte da comunidade portuguesa de Londres!'
-                        : 'Your subscription has been successfully activated. You\'re now part of London\'s Portuguese community!'
+                        ? 'A sua subscrição foi ativada com sucesso. Agora faz parte da comunidade de falantes de português de Londres!'
+                        : 'Your subscription has been successfully activated. You\'re now part of London\'s Portuguese-speaking community!'
                       }
                     </p>
                     
@@ -168,8 +168,8 @@ function SuccessPageContent() {
                     </h3>
                     <p className="text-primary-100 mb-6">
                       {isPortuguese 
-                        ? 'Explore o seu novo lar digital na comunidade portuguesa de Londres.'
-                        : 'Explore your new digital home in London\'s Portuguese community.'
+                        ? 'Explore o seu novo lar digital na comunidade de falantes de português de Londres.'
+                        : 'Explore your new digital home in London\'s Portuguese-speaking community.'
                       }
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

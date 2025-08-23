@@ -281,7 +281,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
           duration: '12 months',
           durationPortuguese: '12 meses',
           eligibility: [
-            'Portuguese community organizations in the UK',
+            'Portuguese-speaking community organizations in the UK',
             'Cultural associations promoting Portuguese heritage',
             'Educational institutions with Portuguese programs'
           ],
@@ -356,7 +356,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
           durationPortuguese: '3 meses',
           eligibility: [
             'Portuguese artists and cultural professionals',
-            'UK-based Portuguese community leaders',
+            'UK-based Portuguese-speaking community leaders',
             'Cultural organizations with bilateral projects'
           ],
           eligibilityPortuguese: [
@@ -572,8 +572,8 @@ const PortugalGovernmentIntegration: React.FC = () => {
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           {language === 'pt'
-            ? 'Parcerias oficiais com instituições governamentais portuguesas para apoiar a comunidade portuguesa no Reino Unido através de programas culturais, educacionais e de apoio à diáspora.'
-            : 'Official partnerships with Portuguese government institutions to support the Portuguese community in the United Kingdom through cultural, educational, and diaspora support programs.'
+            ? 'Parcerias oficiais com instituições governamentais portuguesas para apoiar a comunidade de falantes de português no Reino Unido através de programas culturais, educacionais e de apoio à diáspora.'
+            : 'Official partnerships with Portuguese government institutions to support the Portuguese-speaking community in the United Kingdom through cultural, educational, and diaspora support programs.'
           }
         </p>
       </div>

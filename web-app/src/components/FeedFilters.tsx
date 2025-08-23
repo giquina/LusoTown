@@ -66,7 +66,7 @@ export default function FeedFilters({
     { key: 'family', label: isPortuguese ? 'Família' : 'Family' }
   ]
 
-  // London areas popular with Portuguese community
+  // London areas popular with Portuguese-speaking community
   const locations = [
     { key: 'stockwell', label: 'Stockwell' },
     { key: 'elephant_castle', label: 'Elephant & Castle' },

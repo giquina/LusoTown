@@ -50,12 +50,12 @@ export default function ContentModerationSystem({
   
   const isPortuguese = language === 'pt'
 
-  // Portuguese Community Content Rules
+  // Portuguese-speaking community Content Rules
   const moderationRules: ModerationRule[] = [
-    // ALLOWED CONTENT - Portuguese Community Focus
+    // ALLOWED CONTENT - Portuguese-speaking community Focus
     {
       id: 'portuguese_keywords',
-      name: 'Portuguese Community Keywords',
+      name: 'Portuguese-speaking community Keywords',
       type: 'allow',
       keywords: [
         'portuguese', 'português', 'portuguesa', 'portugues',
@@ -232,8 +232,8 @@ export default function ContentModerationSystem({
         blockedReasons: [],
         suggestedImprovements: [
           isPortuguese 
-            ? 'Adicione mais detalhes sobre a relevância para a comunidade portuguesa'
-            : 'Add more details about Portuguese community relevance'
+            ? 'Adicione mais detalhes sobre a relevância para a comunidade de falantes de português'
+            : 'Add more details about Portuguese-speaking community relevance'
         ]
       }
     }
@@ -311,8 +311,8 @@ export default function ContentModerationSystem({
       })
       suggestedImprovements.push(
         isPortuguese 
-          ? 'Adicione referência a áreas de Londres onde a comunidade portuguesa está presente'
-          : 'Add reference to London areas where Portuguese community is present'
+          ? 'Adicione referência a áreas de Londres onde a comunidade de falantes de português está presente'
+          : 'Add reference to London areas where Portuguese-speaking community is present'
       )
     }
 
@@ -321,14 +321,14 @@ export default function ContentModerationSystem({
       issues.push({
         type: 'error',
         message: isPortuguese 
-          ? 'Conteúdo não é relevante para a comunidade portuguesa'
-          : 'Content is not relevant to Portuguese community',
+          ? 'Conteúdo não é relevante para a comunidade de falantes de português'
+          : 'Content is not relevant to Portuguese-speaking community',
         severity: 'high'
       })
       blockedReasons.push('Low community relevance')
       suggestedImprovements.push(
         isPortuguese 
-          ? 'Adicione conexão com cultura, serviços ou comunidade portuguesa'
+          ? 'Adicione conexão com cultura, serviços ou comunidade de falantes de português'
           : 'Add connection to Portuguese culture, services, or community'
       )
     }
@@ -337,8 +337,8 @@ export default function ContentModerationSystem({
     if (score > 0 && score < 30) {
       suggestedImprovements.push(
         isPortuguese 
-          ? 'Adicione mais detalhes específicos da comunidade portuguesa'
-          : 'Add more specific Portuguese community details'
+          ? 'Adicione mais detalhes específicos da comunidade de falantes de português'
+          : 'Add more specific Portuguese-speaking community details'
       )
     }
 

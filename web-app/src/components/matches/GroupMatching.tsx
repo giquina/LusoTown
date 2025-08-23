@@ -195,7 +195,7 @@ export default function GroupMatching({
         requestType: "friend_introduction",
         targetGroupSize: 4,
         preferredActivityTypes: ["Professional Networking", "Social", "Sports"],
-        preferredCulturalFocus: ["Business", "Football", "Portuguese Community"],
+        preferredCulturalFocus: ["Business", "Football", "Portuguese-speaking community"],
         ageRangeMin: 28,
         ageRangeMax: 40,
         genderPreferences: "any",

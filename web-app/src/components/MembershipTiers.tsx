@@ -39,8 +39,8 @@ const membershipTiers = [
     nameEn: "Free",
     price: 0,
     monthlyPrice: 0,
-    description: "Comece a explorar a comunidade portuguesa",
-    descriptionEn: "Start exploring the Portuguese community",
+    description: "Comece a explorar a comunidade de falantes de português",
+    descriptionEn: "Start exploring the Portuguese-speaking community",
     icon: <HeartIcon className="w-6 h-6" />,
     solidIcon: <HeartIconSolid className="w-6 h-6" />,
     color: "gray",
@@ -78,8 +78,8 @@ const membershipTiers = [
     nameEn: "Community Member",
     price: plans.community.monthly,
     monthlyPrice: plans.community.monthly,
-    description: "Acesso completo à comunidade portuguesa",
-    descriptionEn: "Full access to Portuguese community",
+    description: "Acesso completo à comunidade de falantes de português",
+    descriptionEn: "Full access to Portuguese-speaking community",
     icon: <UsersIcon className="w-6 h-6" />,
     solidIcon: <StarIconSolid className="w-6 h-6" />,
     color: "primary",
@@ -115,8 +115,8 @@ const membershipTiers = [
     nameEn: "Cultural Ambassador",
     price: plans.ambassador.monthly,
     monthlyPrice: plans.ambassador.monthly,
-    description: "Lidere a comunidade portuguesa em Londres",
-    descriptionEn: "Lead the Portuguese community in London",
+    description: "Lidere a comunidade de falantes de português em Londres",
+    descriptionEn: "Lead the Portuguese-speaking community in London",
     icon: <Crown className="w-6 h-6" />,
     solidIcon: <TrophyIcon className="w-6 h-6" />,
     color: "premium",
@@ -228,8 +228,8 @@ export default function MembershipTiers({
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
             {isPortuguese
-              ? "Escolha o plano ideal para se conectar com a comunidade portuguesa de Londres."
-              : "Choose the perfect plan to connect with London's Portuguese community."}
+              ? "Escolha o plano ideal para se conectar com a comunidade de falantes de português de Londres."
+              : "Choose the perfect plan to connect with London's Portuguese-speaking community."}
           </p>
         </motion.div>
 

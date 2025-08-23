@@ -86,7 +86,7 @@ const marketplaceCategories: MarketplaceCategory[] = [
   },
   {
     id: 'books_media',
-    name: 'Livros e Mídia',
+    name: 'Livros e Mï¿½dia',
     nameEn: 'Books & Media',
     icon: <CheckCircleIcon className="w-6 h-6" />,
     productCount: 234,
@@ -95,7 +95,7 @@ const marketplaceCategories: MarketplaceCategory[] = [
   },
   {
     id: 'home_decor',
-    name: 'Decoração do Lar',
+    name: 'Decoraï¿½ï¿½o do Lar',
     nameEn: 'Home Decor',
     icon: <HeartIcon className="w-6 h-6" />,
     productCount: 128,
@@ -104,7 +104,7 @@ const marketplaceCategories: MarketplaceCategory[] = [
   },
   {
     id: 'services',
-    name: 'Serviços Culturais',
+    name: 'Serviï¿½os Culturais',
     nameEn: 'Cultural Services',
     icon: <ShieldCheckIcon className="w-6 h-6" />,
     productCount: 67,
@@ -116,9 +116,9 @@ const marketplaceCategories: MarketplaceCategory[] = [
 const featuredProducts: MarketplaceProduct[] = [
   {
     id: 'vinho-verde-collection',
-    name: 'Coleção de Vinho Verde Premium',
+    name: 'Coleï¿½ï¿½o de Vinho Verde Premium',
     nameEn: 'Premium Vinho Verde Collection',
-    description: 'Seleção autêntica de vinhos verdes diretamente do Minho, incluindo variedades tradicionais e modernas',
+    description: 'Seleï¿½ï¿½o autï¿½ntica de vinhos verdes diretamente do Minho, incluindo variedades tradicionais e modernas',
     descriptionEn: 'Authentic selection of vinho verde wines directly from Minho, including traditional and modern varieties',
     price: 89.99,
     originalPrice: 120.00,
@@ -131,9 +131,9 @@ const featuredProducts: MarketplaceProduct[] = [
     inStock: 45,
     featured: true,
     culturalAuthenticity: 98,
-    shippingTime: '3-5 dias úteis',
+    shippingTime: '3-5 dias ï¿½teis',
     shippingTimeEn: '3-5 business days',
-    tags: ['Vinho Verde', 'Premium', 'Direto do Produtor', 'Sustentável'],
+    tags: ['Vinho Verde', 'Premium', 'Direto do Produtor', 'Sustentï¿½vel'],
     tagsEn: ['Vinho Verde', 'Premium', 'Direct from Producer', 'Sustainable'],
     commissionRate: 12.0
   },
@@ -141,11 +141,11 @@ const featuredProducts: MarketplaceProduct[] = [
     id: 'azulejo-handcrafted',
     name: 'Azulejos Artesanais Tradicionais',
     nameEn: 'Traditional Handcrafted Azulejos',
-    description: 'Azulejos portugueses pintados à mão por artesãos em Caldas da Rainha, perfeitos para decoração autêntica',
+    description: 'Azulejos portugueses pintados ï¿½ mï¿½o por artesï¿½os em Caldas da Rainha, perfeitos para decoraï¿½ï¿½o autï¿½ntica',
     descriptionEn: 'Hand-painted Portuguese azulejos by artisans in Caldas da Rainha, perfect for authentic decoration',
     price: 145.00,
     category: 'handicrafts',
-    seller: 'Cerâmicas Tradicionais Lda',
+    seller: 'Cerï¿½micas Tradicionais Lda',
     sellerLocation: 'Caldas da Rainha, Portugal',
     rating: 4.8,
     reviews: 89,
@@ -153,9 +153,9 @@ const featuredProducts: MarketplaceProduct[] = [
     inStock: 23,
     featured: true,
     culturalAuthenticity: 96,
-    shippingTime: '7-10 dias úteis',
+    shippingTime: '7-10 dias ï¿½teis',
     shippingTimeEn: '7-10 business days',
-    tags: ['Azulejos', 'Artesanal', 'Pintado à Mão', 'Decoração'],
+    tags: ['Azulejos', 'Artesanal', 'Pintado ï¿½ Mï¿½o', 'Decoraï¿½ï¿½o'],
     tagsEn: ['Azulejos', 'Handcrafted', 'Hand-painted', 'Decoration'],
     commissionRate: 18.5
   },
@@ -163,11 +163,11 @@ const featuredProducts: MarketplaceProduct[] = [
     id: 'fado-guitar-lessons',
     name: 'Aulas de Guitarra Portuguesa Online',
     nameEn: 'Portuguese Guitar Lessons Online',
-    description: 'Aulas personalizadas de guitarra portuguesa com mestre fadista, incluindo técnicas tradicionais e repertório clássico',
+    description: 'Aulas personalizadas de guitarra portuguesa com mestre fadista, incluindo tï¿½cnicas tradicionais e repertï¿½rio clï¿½ssico',
     descriptionEn: 'Personalized Portuguese guitar lessons with fado master, including traditional techniques and classic repertoire',
     price: 75.00,
     category: 'services',
-    seller: 'Mestre João Fado',
+    seller: 'Mestre Joï¿½o Fado',
     sellerLocation: 'Lisboa, Portugal / London, UK',
     rating: 5.0,
     reviews: 34,
@@ -219,19 +219,19 @@ export default function CulturalMarketplace() {
           >
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium mb-8">
               <ShoppingBagIcon className="w-5 h-5 mr-2" />
-              {isPortuguese ? 'Marketplace Cultural Português' : 'Portuguese Cultural Marketplace'}
+              {isPortuguese ? 'Marketplace Cultural Portuguï¿½s' : 'Portuguese Cultural Marketplace'}
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               {isPortuguese 
-                ? 'Descubra Produtos Autênticos Portugueses'
+                ? 'Descubra Produtos Autï¿½nticos Portugueses'
                 : 'Discover Authentic Portuguese Products'
               }
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               {isPortuguese
-                ? 'Conecte-se diretamente com produtores e artesãos portugueses. Produtos verificados, autenticidade cultural garantida e entrega em Londres.'
+                ? 'Conecte-se diretamente com produtores e artesï¿½os portugueses. Produtos verificados, autenticidade cultural garantida e entrega em Londres.'
                 : 'Connect directly with Portuguese producers and artisans. Verified products, guaranteed cultural authenticity, and London delivery.'
               }
             </p>
@@ -273,9 +273,9 @@ export default function CulturalMarketplace() {
                     {isPortuguese ? 'Receita Mensal' : 'Monthly Revenue'}
                   </h3>
                 </div>
-                <p className="text-3xl font-bold">£{monthlyRevenue.toLocaleString()}</p>
+                <p className="text-3xl font-bold">ï¿½{monthlyRevenue.toLocaleString()}</p>
                 <p className="text-green-100 text-sm">
-                  {isPortuguese ? '+22% mês anterior' : '+22% from previous month'}
+                  {isPortuguese ? '+22% mï¿½s anterior' : '+22% from previous month'}
                 </p>
               </div>
 
@@ -287,18 +287,18 @@ export default function CulturalMarketplace() {
                   </h3>
                 </div>
                 <p className="text-3xl font-bold">{monthlyOrders.toLocaleString()}</p>
-                <p className="text-blue-100 text-sm">£{avgOrderValue} {isPortuguese ? 'valor médio' : 'average value'}</p>
+                <p className="text-blue-100 text-sm">ï¿½{avgOrderValue} {isPortuguese ? 'valor mï¿½dio' : 'average value'}</p>
               </div>
 
               <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <TagIcon className="w-8 h-8" />
                   <h3 className="text-lg font-semibold">
-                    {isPortuguese ? 'Comissões' : 'Commissions'}
+                    {isPortuguese ? 'Comissï¿½es' : 'Commissions'}
                   </h3>
                 </div>
-                <p className="text-3xl font-bold">£{platformCommission.toLocaleString()}</p>
-                <p className="text-purple-100 text-sm">8% {isPortuguese ? 'comissão média' : 'average commission'}</p>
+                <p className="text-3xl font-bold">ï¿½{platformCommission.toLocaleString()}</p>
+                <p className="text-purple-100 text-sm">8% {isPortuguese ? 'comissï¿½o mï¿½dia' : 'average commission'}</p>
               </div>
 
               <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-6">
@@ -309,20 +309,20 @@ export default function CulturalMarketplace() {
                   </h3>
                 </div>
                 <p className="text-3xl font-bold">{totalProducts}</p>
-                <p className="text-orange-100 text-sm">{isPortuguese ? '+45 este mês' : '+45 this month'}</p>
+                <p className="text-orange-100 text-sm">{isPortuguese ? '+45 este mï¿½s' : '+45 this month'}</p>
               </div>
             </div>
 
             <div className="bg-gradient-to-r from-secondary-600 to-accent-600 rounded-2xl p-8 text-center">
               <h3 className="text-2xl font-bold mb-4">
-                {isPortuguese ? 'Projeção Anual (2025)' : 'Annual Projection (2025)'}
+                {isPortuguese ? 'Projeï¿½ï¿½o Anual (2025)' : 'Annual Projection (2025)'}
               </h3>
               <p className="text-4xl font-bold mb-2">
-                £{annualProjection.toLocaleString()}
+                ï¿½{annualProjection.toLocaleString()}
               </p>
               <p className="text-white/80">
                 {isPortuguese 
-                  ? 'Incluindo crescimento de 20% no marketplace cultural português'
+                  ? 'Incluindo crescimento de 20% no marketplace cultural portuguï¿½s'
                   : 'Including 20% growth in Portuguese cultural marketplace'
                 }
               </p>
@@ -344,7 +344,7 @@ export default function CulturalMarketplace() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {isPortuguese
-                ? 'Explore produtos e serviços autênticos organizados por categoria cultural portuguesa'
+                ? 'Explore produtos e serviï¿½os autï¿½nticos organizados por categoria cultural portuguesa'
                 : 'Explore authentic products and services organized by Portuguese cultural category'
               }
             </p>
@@ -388,7 +388,7 @@ export default function CulturalMarketplace() {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600">
-                      {isPortuguese ? 'Comissão Média:' : 'Avg Commission:'}
+                      {isPortuguese ? 'Comissï¿½o Mï¿½dia:' : 'Avg Commission:'}
                     </span>
                     <span className="text-sm font-bold text-green-600">
                       {category.avgCommission}%
@@ -488,7 +488,7 @@ export default function CulturalMarketplace() {
                         <div className="flex items-center gap-2">
                           <SparklesIcon className="w-4 h-4 text-secondary-500" />
                           <span className="text-xs text-secondary-600 font-medium">
-                            {product.culturalAuthenticity}% {isPortuguese ? 'Autêntico' : 'Authentic'}
+                            {product.culturalAuthenticity}% {isPortuguese ? 'Autï¿½ntico' : 'Authentic'}
                           </span>
                         </div>
                       </div>
@@ -523,16 +523,16 @@ export default function CulturalMarketplace() {
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="text-2xl font-bold text-gray-900">
-                          £{product.price}
+                          ï¿½{product.price}
                         </span>
                         {product.originalPrice && (
                           <span className="text-lg text-gray-500 line-through">
-                            £{product.originalPrice}
+                            ï¿½{product.originalPrice}
                           </span>
                         )}
                       </div>
                       <div className="text-xs text-gray-600">
-                        {isPortuguese ? 'Comissão' : 'Commission'}: {product.commissionRate}%
+                        {isPortuguese ? 'Comissï¿½o' : 'Commission'}: {product.commissionRate}%
                       </div>
                     </div>
                     
@@ -575,8 +575,8 @@ export default function CulturalMarketplace() {
             
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               {isPortuguese
-                ? 'Conecte-se diretamente com a comunidade portuguesa em Londres. Zero custos iniciais, comissões competitivas e suporte especializado.'
-                : 'Connect directly with the Portuguese community in London. Zero startup costs, competitive commissions, and specialized support.'
+                ? 'Conecte-se diretamente com a comunidade de falantes de portuguÃªs em Londres. Zero custos iniciais, comissï¿½es competitivas e suporte especializado.'
+                : 'Connect directly with the Portuguese-speaking community in London. Zero startup costs, competitive commissions, and specialized support.'
               }
             </p>
 
@@ -584,7 +584,7 @@ export default function CulturalMarketplace() {
               <div className="bg-white/10 rounded-xl p-6">
                 <ShieldCheckIcon className="w-12 h-12 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-2">
-                  {isPortuguese ? 'Verificação Cultural' : 'Cultural Verification'}
+                  {isPortuguese ? 'Verificaï¿½ï¿½o Cultural' : 'Cultural Verification'}
                 </h3>
                 <p className="text-white/80">
                   {isPortuguese
@@ -597,7 +597,7 @@ export default function CulturalMarketplace() {
               <div className="bg-white/10 rounded-xl p-6">
                 <CurrencyPoundIcon className="w-12 h-12 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-2">
-                  {isPortuguese ? 'Comissões Justas' : 'Fair Commissions'}
+                  {isPortuguese ? 'Comissï¿½es Justas' : 'Fair Commissions'}
                 </h3>
                 <p className="text-white/80">
                   {isPortuguese
@@ -610,11 +610,11 @@ export default function CulturalMarketplace() {
               <div className="bg-white/10 rounded-xl p-6">
                 <TruckIcon className="w-12 h-12 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-2">
-                  {isPortuguese ? 'Logística Integrada' : 'Integrated Logistics'}
+                  {isPortuguese ? 'Logï¿½stica Integrada' : 'Integrated Logistics'}
                 </h3>
                 <p className="text-white/80">
                   {isPortuguese
-                    ? 'Entrega rápida em Londres e Reino Unido'
+                    ? 'Entrega rï¿½pida em Londres e Reino Unido'
                     : 'Fast delivery in London and across the UK'
                   }
                 </p>

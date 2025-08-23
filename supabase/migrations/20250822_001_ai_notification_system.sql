@@ -242,7 +242,7 @@ create trigger handle_notification_queue_updated_at before update on public.noti
     for each row execute procedure handle_updated_at();
 
 -- Comments for documentation
-comment on table public.user_behavior_profiles is 'AI behavioral analytics for Portuguese community notification optimization';
+comment on table public.user_behavior_profiles is 'AI behavioral analytics for Portuguese-speaking community notification optimization';
 comment on table public.ai_notification_templates is 'AI-powered notification templates with cultural personalization';
 comment on table public.notification_ab_tests is 'A/B testing framework for notification optimization';
 comment on table public.notification_analytics is 'Performance analytics for AI notification system';

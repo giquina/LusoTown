@@ -7,7 +7,7 @@ const MockHomePage = () => (
   <div data-testid="home-page">
     <h1>Bem-vindo ao LusoTown</h1>
     <button>Explorar Eventos</button>
-    <div>Comunidade Portuguesa em Londres</div>
+    <div>Comunidade de Falantes de Português em Londres</div>
   </div>
 )
 
@@ -40,7 +40,7 @@ describe('Portuguese User Journey Integration Tests', () => {
       
       // Should show Portuguese welcome message
       expect(screen.getByText('Bem-vindo ao LusoTown')).toBeInTheDocument()
-      expect(screen.getByText('Comunidade Portuguesa em Londres')).toBeInTheDocument()
+      expect(screen.getByText('Comunidade de Falantes de Português em Londres')).toBeInTheDocument()
       
       // Step 2: Language preference should be maintained
       expect(localStorage.getItem('lusotown-language')).toBe('pt')

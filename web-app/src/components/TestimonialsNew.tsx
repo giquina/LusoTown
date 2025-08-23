@@ -250,7 +250,7 @@ export default function TestimonialsNew() {
         >
           <div className="text-center mb-12">
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              Meet Your <span className="gradient-text">London Portuguese Community</span>
+              Meet Your <span className="gradient-text">London Portuguese-speaking community</span>
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Join thousands of Portuguese speakers across London who are organizing events, building communities, and connecting throughout the city.

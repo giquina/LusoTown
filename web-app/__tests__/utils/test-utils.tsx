@@ -87,7 +87,7 @@ export const portugueseTestUtils = {
     expect(hasEnglish || hasPortuguese).toBe(true)
   },
   
-  // Mock networking connections for Portuguese community
+  // Mock networking connections for Portuguese-speaking community
   mockPortugueseConnections: [
     {
       id: 'conn-1',

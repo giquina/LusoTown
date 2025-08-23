@@ -722,8 +722,8 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                     rows={4}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     placeholder={isPt 
-                      ? 'Descreva o tipo de conteúdo que pretende criar, o seu público-alvo, e como planeia envolver a comunidade portuguesa...'
-                      : 'Describe the type of content you plan to create, your target audience, and how you plan to engage the Portuguese community...'
+                      ? 'Descreva o tipo de conteúdo que pretende criar, o seu público-alvo, e como planeia envolver a comunidade de falantes de português...'
+                      : 'Describe the type of content you plan to create, your target audience, and how you plan to engage the Portuguese-speaking community...'
                     }
                   />
                   <div className="text-sm text-gray-500 mt-1">

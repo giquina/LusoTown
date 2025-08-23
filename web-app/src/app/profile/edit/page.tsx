@@ -99,7 +99,7 @@ export default function ProfileEditPage() {
                 Edit Your Profile
               </h1>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Update your information to connect better with the Portuguese community
+                Update your information to connect better with the Portuguese-speaking community
               </p>
             </div>
 

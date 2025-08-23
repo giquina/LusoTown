@@ -1,6 +1,6 @@
 -- Comprehensive AI Infrastructure and Cloud Services Integration
 -- Created: 2025-08-22
--- Purpose: Complete AI infrastructure for Portuguese community platform
+-- Purpose: Complete AI infrastructure for Portuguese-speaking community platform
 
 -- =====================================================
 -- AI CLOUD SERVICES CONFIGURATION
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS public.ai_model_performance (
     UNIQUE(model_name, model_version, performance_metric, measurement_date, cultural_context)
 );
 
--- AI feature performance tracking for Portuguese community features
+-- AI feature performance tracking for Portuguese-speaking community features
 CREATE TABLE IF NOT EXISTS public.ai_feature_performance (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     feature_name TEXT NOT NULL CHECK (feature_name IN (
@@ -192,7 +192,7 @@ CREATE TABLE IF NOT EXISTS public.api_usage_analytics (
 -- AI RECOMMENDATION ENGINE
 -- =====================================================
 
--- AI-powered recommendation system for Portuguese community
+-- AI-powered recommendation system for Portuguese-speaking community
 CREATE TABLE IF NOT EXISTS public.ai_recommendations (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE NOT NULL,
@@ -228,7 +228,7 @@ CREATE TABLE IF NOT EXISTS public.ai_recommendations (
 -- AI DATA PIPELINE MANAGEMENT
 -- =====================================================
 
--- AI data processing jobs for Portuguese community analytics
+-- AI data processing jobs for Portuguese-speaking community analytics
 CREATE TABLE IF NOT EXISTS public.ai_data_processing_jobs (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     job_name TEXT NOT NULL,
@@ -607,7 +607,7 @@ INSERT INTO public.ai_service_configs (service_name, service_type, configuration
  ARRAY['sentiment_analysis', 'emotion_detection', 'saudade_detection'],
  '{"requests_per_minute": 1000, "text_records_per_minute": 5000}', 0.000010, true, true);
 
--- Insert AI cultural guidelines for Portuguese community
+-- Insert AI cultural guidelines for Portuguese-speaking community
 INSERT INTO public.ai_cultural_guidelines (guideline_category, guideline_title, guideline_description, implementation_rules, violations_to_avoid, severity_level, compliance_required) VALUES
 ('saudade_sensitivity', 'Proper Saudade Recognition and Response', 
  'AI systems must recognize and respond appropriately to expressions of saudade, avoiding dismissive or overly clinical responses',
@@ -668,8 +668,8 @@ INSERT INTO public.lusobot_knowledge_base (knowledge_category, topic_title, cont
  ARRAY['saudade', 'homesick', 'miss Portugal', 'feel lost', 'don''t belong'],
  ARRAY['sadness', 'longing', 'disconnection', 'identity_crisis']),
 
-('uk_portuguese_community', 'Portuguese Community in London Areas',
- 'Detailed information about Portuguese community concentrations and resources in London',
+('uk_portuguese_community', 'Portuguese-speaking community in London Areas',
+ 'Detailed information about Portuguese-speaking community concentrations and resources in London',
  '{"main_areas": {"vauxhall": {"population": "highest", "businesses": "many", "cultural_centers": "Portuguese Centre"}, "stockwell": {"population": "high", "transport": "excellent", "community": "tight_knit"}, "east_london": {"population": "growing", "families": "many", "schools": "portuguese_weekend_schools"}}, "resources": {"cultural_centers": ["Portuguese Centre Vauxhall", "Casa do Bacalhau"], "churches": ["Portuguese Catholic communities"], "businesses": ["restaurants", "services", "shops"]}}',
  ARRAY['all_regions'], ARRAY['all_generations'],
  ARRAY['where are Portuguese', 'Portuguese area', 'community center', 'Portuguese church'],
@@ -686,15 +686,15 @@ INSERT INTO public.lusobot_knowledge_base (knowledge_category, topic_title, cont
 -- COMMENTS FOR DOCUMENTATION
 -- =====================================================
 
-COMMENT ON TABLE public.ai_service_configs IS 'Configuration and management of AI cloud services for Portuguese community platform';
+COMMENT ON TABLE public.ai_service_configs IS 'Configuration and management of AI cloud services for Portuguese-speaking community platform';
 COMMENT ON TABLE public.ai_service_usage IS 'Tracking AI service usage for cost monitoring and performance optimization';
 COMMENT ON TABLE public.ai_model_performance IS 'AI model performance metrics with Portuguese cultural accuracy measures';
-COMMENT ON TABLE public.ai_feature_performance IS 'Performance tracking for Portuguese community AI features';
+COMMENT ON TABLE public.ai_feature_performance IS 'Performance tracking for Portuguese-speaking community AI features';
 COMMENT ON TABLE public.ai_cultural_guidelines IS 'Ethical guidelines for AI interactions with Portuguese culture';
 COMMENT ON TABLE public.ai_ethics_violations IS 'Tracking and management of AI ethics violations in Portuguese cultural context';
-COMMENT ON TABLE public.ai_enhanced_endpoints IS 'API endpoints enhanced with AI capabilities for Portuguese community';
+COMMENT ON TABLE public.ai_enhanced_endpoints IS 'API endpoints enhanced with AI capabilities for Portuguese-speaking community';
 COMMENT ON TABLE public.api_usage_analytics IS 'Analytics for AI-enhanced API usage and Portuguese cultural features';
-COMMENT ON TABLE public.ai_recommendations IS 'AI-powered recommendation system for Portuguese community members';
-COMMENT ON TABLE public.ai_data_processing_jobs IS 'Management of AI data processing jobs for Portuguese community analytics';
+COMMENT ON TABLE public.ai_recommendations IS 'AI-powered recommendation system for Portuguese-speaking community members';
+COMMENT ON TABLE public.ai_data_processing_jobs IS 'Management of AI data processing jobs for Portuguese-speaking community analytics';
 COMMENT ON TABLE public.lusobot_conversation_context IS 'Enhanced conversation context for LusoBot Portuguese cultural assistant';
 COMMENT ON TABLE public.lusobot_knowledge_base IS 'Portuguese cultural knowledge base for LusoBot AI assistant';

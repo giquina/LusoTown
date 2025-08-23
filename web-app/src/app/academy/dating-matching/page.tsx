@@ -240,7 +240,7 @@ export default function DatingMatchingModule() {
             <li><strong>Portuguese Heritage:</strong> Regional connections, family traditions</li>
             <li><strong>Language Comfort:</strong> Preference for Portuguese vs English in relationships</li>
             <li><strong>Cultural Values:</strong> Family importance, traditional vs modern outlook</li>
-            <li><strong>Portuguese Community Involvement:</strong> How active you are in Portuguese events</li>
+            <li><strong>Portuguese-speaking community Involvement:</strong> How active you are in Portuguese events</li>
           </ul>
           
           <h4>2. Location & Lifestyle (30%)</h4>
@@ -279,7 +279,7 @@ export default function DatingMatchingModule() {
             <li><strong>Herança Portuguesa:</strong> Conexões regionais, tradições familiares</li>
             <li><strong>Conforto com Idioma:</strong> Preferência por português vs inglês em relacionamentos</li>
             <li><strong>Valores Culturais:</strong> Importância da família, perspetiva tradicional vs moderna</li>
-            <li><strong>Envolvimento na Comunidade Portuguesa:</strong> Quão ativo é em eventos portugueses</li>
+            <li><strong>Envolvimento na Comunidade de Falantes de Português:</strong> Quão ativo é em eventos portugueses</li>
           </ul>
           
           <h4>2. Localização e Estilo de Vida (30%)</h4>
@@ -355,7 +355,7 @@ export default function DatingMatchingModule() {
           <h3>London Life Starters:</h3>
           <ul>
             <li>"What's your favorite London neighborhood that reminds you of Portugal?"</li>
-            <li>"Have you found any good Portuguese community spots here?"</li>
+            <li>"Have you found any good Portuguese-speaking community spots here?"</li>
             <li>"What's been your biggest London culture shock as a Portuguese person?"</li>
             <li>"Do you prefer English breakfast or a proper Portuguese coffee and pastry?"</li>
           </ul>
@@ -398,7 +398,7 @@ export default function DatingMatchingModule() {
           <h3>Iniciadores de Vida em Londres:</h3>
           <ul>
             <li>"Qual é o teu bairro favorito de Londres que te lembra Portugal?"</li>
-            <li>"Encontraste algum bom local da comunidade portuguesa aqui?"</li>
+            <li>"Encontraste algum bom local da comunidade de falantes de português aqui?"</li>
             <li>"Qual foi o teu maior choque cultural de Londres como português?"</li>
             <li>"Preferes pequeno-almoço inglês ou um café e pastel português a sério?"</li>
           </ul>
@@ -437,12 +437,12 @@ export default function DatingMatchingModule() {
       },
       {
         id: 'safety-and-meeting',
-        title: 'Safe Dating in London\'s Portuguese Community',
-        titlePortuguese: 'Encontros Seguros na Comunidade Portuguesa de Londres',
+        title: 'Safe Dating in London\'s Portuguese-speaking community',
+        titlePortuguese: 'Encontros Seguros na Comunidade de Falantes de Português de Londres',
         type: 'tutorial',
         estimatedTime: 4,
         content: `
-          <p>Safety is paramount when meeting someone new, even within our close Portuguese community. Here's how to date safely while building genuine connections:</p>
+          <p>Safety is paramount when meeting someone new, even within our close Portuguese-speaking community. Here's how to date safely while building genuine connections:</p>
           
           <h3>Before Meeting In Person:</h3>
           <ol>
@@ -470,7 +470,7 @@ export default function DatingMatchingModule() {
             <li><strong>Choose Public Portuguese Venues:</strong>
               <ul>
                 <li>Meet at popular Portuguese restaurants or cafés in London</li>
-                <li>Consider Portuguese community events as casual meeting spots</li>
+                <li>Consider Portuguese-speaking community events as casual meeting spots</li>
                 <li>Stay in areas you know well with good transport links</li>
                 <li>Avoid isolated locations, even if they seem romantic</li>
               </ul>
@@ -493,12 +493,12 @@ export default function DatingMatchingModule() {
             <li><strong>Communication Red Flags:</strong> Overly romantic language too quickly, deflecting personal questions</li>
           </ul>
           
-          <h3>Portuguese Community Resources:</h3>
+          <h3>Portuguese-speaking community Resources:</h3>
           <p>Leverage our community for safer dating:</p>
           <ul>
-            <li>Join Portuguese community groups on social media for references</li>
-            <li>Attend Portuguese community events to meet people organically</li>
-            <li>Ask other Portuguese friends about good dating venues</li>
+            <li>Join Portuguese-speaking community groups on social media for references</li>
+            <li>Attend Portuguese-speaking community events to meet people organically</li>
+            <li>Ask other Portuguese-speaking friends about good dating venues</li>
             <li>Use the Portuguese network for informal background checks</li>
           </ul>
           
@@ -511,7 +511,7 @@ export default function DatingMatchingModule() {
           </ul>
         `,
         contentPortuguese: `
-          <p>A segurança é fundamental ao conhecer alguém novo, mesmo dentro da nossa comunidade portuguesa próxima. Aqui está como namorar com segurança enquanto constrói conexões genuínas:</p>
+          <p>A segurança é fundamental ao conhecer alguém novo, mesmo dentro da nossa comunidade de falantes de português próxima. Aqui está como namorar com segurança enquanto constrói conexões genuínas:</p>
           
           <h3>Antes de Se Encontrar Pessoalmente:</h3>
           <ol>
@@ -539,7 +539,7 @@ export default function DatingMatchingModule() {
             <li><strong>Escolher Locais Portugueses Públicos:</strong>
               <ul>
                 <li>Encontrar-se em restaurantes ou cafés portugueses populares em Londres</li>
-                <li>Considerar eventos da comunidade portuguesa como locais casuais de encontro</li>
+                <li>Considerar eventos da comunidade de falantes de português como locais casuais de encontro</li>
                 <li>Ficar em áreas que conhece bem com boas ligações de transporte</li>
                 <li>Evitar locais isolados, mesmo que pareçam românticos</li>
               </ul>
@@ -562,11 +562,11 @@ export default function DatingMatchingModule() {
             <li><strong>Sinais de Comunicação:</strong> Linguagem excessivamente romântica muito rapidamente, desviar questões pessoais</li>
           </ul>
           
-          <h3>Recursos da Comunidade Portuguesa:</h3>
+          <h3>Recursos da Comunidade de Falantes de Português:</h3>
           <p>Aproveitar a nossa comunidade para encontros mais seguros:</p>
           <ul>
-            <li>Juntar-se a grupos da comunidade portuguesa nas redes sociais para referências</li>
-            <li>Participar em eventos da comunidade portuguesa para conhecer pessoas organicamente</li>
+            <li>Juntar-se a grupos da comunidade de falantes de português nas redes sociais para referências</li>
+            <li>Participar em eventos da comunidade de falantes de português para conhecer pessoas organicamente</li>
             <li>Perguntar a outros amigos portugueses sobre bons locais para encontros</li>
             <li>Usar a rede portuguesa para verificações informais de antecedentes</li>
           </ul>
@@ -582,13 +582,13 @@ export default function DatingMatchingModule() {
         warnings: [
           'Never share your home address on first meetings',
           'Always meet in public places for first few dates',
-          'Trust your Portuguese community instincts about people',
+          'Trust your Portuguese-speaking community instincts about people',
           'Don\'t feel pressured to continue if something feels off'
         ],
         warningsPortuguese: [
           'Nunca partilhe a sua morada em primeiros encontros',
           'Sempre se encontre em locais públicos nos primeiros encontros',
-          'Confie nos seus instintos da comunidade portuguesa sobre pessoas',
+          'Confie nos seus instintos da comunidade de falantes de português sobre pessoas',
           'Não se sinta pressionado a continuar se algo parece estranho'
         ]
       }
@@ -608,8 +608,8 @@ export default function DatingMatchingModule() {
         type: 'download'
       },
       {
-        title: 'Portuguese Community Events Calendar',
-        titlePortuguese: 'Calendário de Eventos da Comunidade Portuguesa',
+        title: 'Portuguese-speaking community Events Calendar',
+        titlePortuguese: 'Calendário de Eventos da Comunidade de Falantes de Português',
         url: '/events',
         type: 'external'
       }

@@ -367,8 +367,8 @@ export default function ProfessionalNetworking({
             </h3>
             <p className="text-gray-600 mb-6">
               {isPortuguese 
-                ? 'O que espera alcançar através do networking na comunidade portuguesa?'
-                : 'What do you hope to achieve through networking in the Portuguese community?'
+                ? 'O que espera alcançar através do networking na comunidade de falantes de português?'
+                : 'What do you hope to achieve through networking in the Portuguese-speaking community?'
               }
             </p>
 

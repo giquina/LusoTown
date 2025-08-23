@@ -61,8 +61,8 @@ export default function PortugueseSpeakingNationsPage() {
       name: 'Portugal',
       title: 'Republic of Portugal',
       description: isPortuguese 
-        ? 'Siga Portugal para eventos culturais, oportunidades de negócio e atualizações da comunidade portuguesa em Londres'
-        : 'Follow Portugal for cultural events, business opportunities, and Portuguese community updates in London',
+        ? 'Siga Portugal para eventos culturais, oportunidades de negócio e atualizações da comunidade de falantes de português em Londres'
+        : 'Follow Portugal for cultural events, business opportunities, and Portuguese-speaking community updates in London',
       imageUrl: '/images/nations/portugal-landscape.jpg',
       flag: '🇵🇹',
       location: 'Europe',
@@ -93,7 +93,7 @@ export default function PortugueseSpeakingNationsPage() {
       londonCommunity: {
         size: '95,000+',
         mainAreas: ['Stockwell', 'Vauxhall', 'Lambeth', 'Tufnell Park'],
-        organizations: ['Portuguese Cultural Centre', 'Casa do Bacalhau', 'Portuguese Community Association']
+        organizations: ['Portuguese Cultural Centre', 'Casa do Bacalhau', 'Portuguese-speaking community Association']
       },
       benefits: [
         'Portuguese Embassy event invitations',
@@ -739,8 +739,8 @@ export default function PortugueseSpeakingNationsPage() {
                 </h2>
                 <p className="text-xl mb-8 opacity-90">
                   {isPortuguese
-                    ? 'Crie conta gratuita para seguir países, receber notificações e conectar-se com a comunidade portuguesa em Londres.'
-                    : 'Create a free account to follow countries, receive notifications, and connect with the Portuguese community in London.'
+                    ? 'Crie conta gratuita para seguir países, receber notificações e conectar-se com a comunidade de falantes de português em Londres.'
+                    : 'Create a free account to follow countries, receive notifications, and connect with the Portuguese-speaking community in London.'
                   }
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

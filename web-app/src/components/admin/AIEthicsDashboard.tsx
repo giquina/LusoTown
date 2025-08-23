@@ -1,11 +1,11 @@
 'use client'
 
 /**
- * AI Ethics Dashboard for Portuguese Community Platform
+ * AI Ethics Dashboard for Portuguese-speaking community Platform
  * 
  * Comprehensive transparency dashboard showing AI ethics status, heritage respect,
  * language preservation metrics, privacy protection, and community feedback for
- * the Portuguese community. Provides bilingual interface and cultural context.
+ * the Portuguese-speaking community. Provides bilingual interface and cultural context.
  */
 
 import { useState, useEffect } from 'react'
@@ -234,8 +234,8 @@ export default function AIEthicsDashboard() {
               </CardTitle>
               <p className="text-muted-foreground mt-1">
                 {language === 'pt' ? 
-                  'Transparência completa sobre ética da IA na comunidade portuguesa' :
-                  'Complete transparency on AI ethics in the Portuguese community'
+                  'Transparência completa sobre ética da IA na comunidade de falantes de português' :
+                  'Complete transparency on AI ethics in the Portuguese-speaking community'
                 }
               </p>
             </div>

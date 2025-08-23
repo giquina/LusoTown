@@ -830,7 +830,7 @@ export default function BusinessDirectory() {
             </p>
             <div className="flex items-center justify-center gap-2 text-xs text-gray-600">
               <span>🌍</span>
-              <span>{isPortuguese ? 'Comunidade Lusófona Mundial' : 'Global Portuguese Community'}</span>
+              <span>{isPortuguese ? 'Comunidade Lusófona Mundial' : 'Global Portuguese-speaking community'}</span>
             </div>
           </div>
         </div>

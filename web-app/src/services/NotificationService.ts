@@ -247,14 +247,14 @@ class NotificationService {
   }
 
   /**
-   * Send Portuguese community welcome notification
+   * Send Portuguese-speaking community welcome notification
    */
   async sendWelcomeNotification(userId: string): Promise<void> {
     await this.createNotification({
       user_id: userId,
       notification_type: 'system',
       title: 'Bem-vindo à LusoTown! 🇵🇹',
-      message: 'Welcome to London\'s Portuguese community! Complete your cultural preferences to get personalized event recommendations and connect with fellow Portuguese speakers.',
+      message: 'Welcome to London\'s Portuguese-speaking community! Complete your cultural preferences to get personalized event recommendations and connect with fellow Portuguese speakers.',
       action_url: '/profile/cultural-preferences',
       action_data: {
         type: 'cultural_onboarding',
@@ -306,7 +306,7 @@ class NotificationService {
       user_id: userId,
       notification_type: 'match',
       title: `Nova conexão! 💫`,
-      message: `You have a ${matchData.compatibility_score}% compatibility with ${matchData.matched_user_name} from the Portuguese community.${sharedInterestsText}`,
+      message: `You have a ${matchData.compatibility_score}% compatibility with ${matchData.matched_user_name} from the Portuguese-speaking community.${sharedInterestsText}`,
       action_url: `/matches/${matchData.match_id}`,
       action_data: {
         type: 'new_match',
@@ -500,7 +500,7 @@ class NotificationService {
   }
 
   /**
-   * Send bulk notifications to Portuguese community members
+   * Send bulk notifications to Portuguese-speaking community members
    */
   async sendCommunityAnnouncement(announcement: {
     title: string
@@ -601,8 +601,8 @@ class NotificationService {
       return this.createNotification({
         user_id: userId,
         notification_type: 'cultural',
-        title: 'Portuguese Community Update',
-        message: 'New updates available for the Portuguese community',
+        title: 'Portuguese-speaking community Update',
+        message: 'New updates available for the Portuguese-speaking community',
         priority: 'normal'
       })
     }

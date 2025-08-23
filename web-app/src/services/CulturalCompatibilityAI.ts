@@ -3,13 +3,13 @@
  * 
  * Complete implementation of Portuguese cultural matching with machine learning:
  * ✅ Cultural Compatibility ML for Portuguese heritage and saudade analysis
- * ✅ Behavioral Learning Engine that learns from successful Portuguese community connections
+ * ✅ Behavioral Learning Engine that learns from successful Portuguese-speaking community connections
  * ✅ Regional Specialization AI for different Portuguese regions in UK
  * ✅ Conversation Quality Prediction for relationship potential
  * ✅ Success Feedback Loop for continuous improvement
  * 
  * This system integrates with existing AINotificationEngine and CulturalPreferences services
- * to provide comprehensive AI-powered matching for the Portuguese community in London.
+ * to provide comprehensive AI-powered matching for the Portuguese-speaking community in London.
  */
 
 import { supabase } from '@/lib/supabase'
@@ -1171,9 +1171,9 @@ export class CulturalCompatibilityAI {
     conversation_potential: number
     shared_values: number
   }): number {
-    // Portuguese community specific weights
+    // Portuguese-speaking community specific weights
     const weights = {
-      cultural_harmony: 0.25,        // Most important for Portuguese community
+      cultural_harmony: 0.25,        // Most important for Portuguese-speaking community
       saudade_resonance: 0.20,       // Unique Portuguese emotional connection
       shared_values: 0.18,           // Strong family and community values
       lifestyle_match: 0.15,         // Daily life compatibility
@@ -1339,7 +1339,7 @@ export class CulturalCompatibilityAI {
     // Relationship longevity based on compatibility and cultural harmony
     const baseScore = (compatibilityScore + culturalHarmony) / 2
     
-    // Portuguese community specific factors that increase longevity
+    // Portuguese-speaking community specific factors that increase longevity
     let longevityBonus = 0
     
     if (culturalHarmony > 85) longevityBonus += 5  // Strong cultural connection

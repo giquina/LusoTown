@@ -342,7 +342,7 @@ class ConversationIntelligence extends EventEmitter {
         decisions.push({
           type: 'architectural',
           category: 'portuguese-community',
-          content: `Creating Portuguese community-specific component: ${componentName}`,
+          content: `Creating Portuguese-speaking community-specific component: ${componentName}`,
           source: 'code-analysis',
           file: path.relative(this.webAppRoot, filePath),
           timestamp: Date.now(),
@@ -541,7 +541,7 @@ class ConversationIntelligence extends EventEmitter {
     const complexityInsight = await this.generateComplexityInsight(filePath, content);
     if (complexityInsight) insights.push(complexityInsight);
     
-    // Analyze Portuguese community relevance
+    // Analyze Portuguese-speaking community relevance
     const culturalInsight = await this.generateCulturalInsight(filePath, content);
     if (culturalInsight) insights.push(culturalInsight);
     
@@ -592,7 +592,7 @@ class ConversationIntelligence extends EventEmitter {
         return {
           type: 'cultural-consistency',
           level: hasI18n ? 'info' : 'warning',
-          title: 'Portuguese Community Enhancement Opportunity',
+          title: 'Portuguese-speaking community Enhancement Opportunity',
           description: 'File contains Portuguese elements but could be enhanced for better cultural integration.',
           file: path.relative(this.webAppRoot, filePath),
           suggestions: [
@@ -768,7 +768,7 @@ class ConversationIntelligence extends EventEmitter {
         keyChanges.push({
           type: 'portuguese-feature',
           file: relativePath,
-          description: 'Portuguese community feature development',
+          description: 'Portuguese-speaking community feature development',
           significance: 'high'
         });
       } else if (file.path.includes('/components/')) {
@@ -925,7 +925,7 @@ class ConversationIntelligence extends EventEmitter {
     
     // Documentation needs
     if (hasPortugueseChanges) {
-      impact.documentationNeeds.push('Update Portuguese community feature documentation');
+      impact.documentationNeeds.push('Update Portuguese-speaking community feature documentation');
     }
     if (hasArchitecturalChanges) {
       impact.documentationNeeds.push('Update architecture documentation');
@@ -1147,7 +1147,7 @@ class ConversationIntelligence extends EventEmitter {
       recommendations.push({
         type: 'cultural-focus',
         priority: 'medium',
-        suggestion: 'Increase focus on Portuguese community features',
+        suggestion: 'Increase focus on Portuguese-speaking community features',
         reason: 'Limited Portuguese-specific development patterns detected'
       });
     }
@@ -1197,4 +1197,4 @@ class ConversationIntelligence extends EventEmitter {
   async saveConversationReport(report) {
     const reportPath = path.join(this.webAppRoot, 'CONVERSATION_INTELLIGENCE_REPORT.md');
     
-    const markdown = `# Conversation Intelligence Report\n\nGenerated: ${report.generated}\n\n## Executive Summary\n\n### Session Metrics\n- **Total Sessions Monitored:** ${report.metrics.sessionsMonitored}\n- **Decisions Extracted:** ${report.metrics.decisionsExtracted}\n- **Patterns Identified:** ${report.metrics.patternsIdentified}\n- **Insights Generated:** ${report.metrics.insightsGenerated}\n\n### Portuguese Community Integration\n- **Integration Rate:** ${report.summary.portugueseIntegration.percentage.toFixed(1)}%\n- **Trend:** ${report.summary.portugueseIntegration.trend}\n- **Quality:** ${report.summary.portugueseIntegration.quality}\n\n### Architectural Evolution\n- **Stability:** ${report.summary.architecturalEvolution.stability}\n- **Major Changes:** ${report.summary.architecturalEvolution.frequency}\n- **Last Change:** ${report.summary.architecturalEvolution.lastMajorChange || 'None'}\n\n## Key Insights\n\n### Top Development Patterns\n${report.insights.topPatterns.map(p => `- **${p.name}** (${p.category}) - ${(p.confidence * 100).toFixed(0)}% confidence`).join('\\n')}\n\n### Recent Key Decisions\n${report.insights.keyDecisions.map(d => `- **${d.content}** (${d.category}) - ${new Date(d.timestamp).toLocaleDateString()}`).join('\\n')}\n\n### Development Trends\n- **Velocity:** ${report.insights.developmentTrends.velocity} sessions analyzed\n- **Primary Focus Areas:** ${Object.keys(report.insights.developmentTrends.focus).join(', ')}\n- **Complexity:** ${report.insights.developmentTrends.complexity}\n\n## Health Assessment\n\n### Conversation Quality: ${report.health.conversationQuality.score}%\n- **Trend:** ${report.health.conversationQuality.trend}\n- **Strong Areas:** ${report.health.conversationQuality.areas.join(', ')}\n\n### Decision Tracking: ${report.health.decisionTracking.coverage}\n- **Categories Covered:** ${report.health.decisionTracking.categories.length}\n- **Average Confidence:** ${(report.health.decisionTracking.confidence * 100).toFixed(0)}%\n\n### Pattern Recognition: ${(report.health.patternRecognition.accuracy * 100).toFixed(0)}% Accuracy\n- **Categories:** ${report.health.patternRecognition.categories.length}\n- **Learning Status:** ${report.health.patternRecognition.learning}\n\n## Recommendations\n\n${report.insights.recommendations.map(r => `### ${r.type} (${r.priority} priority)\\n${r.suggestion}\\n\\n*Reason: ${r.reason}*\\n`).join('\\n')}\n\n## Next Steps\n\n1. **Continue monitoring** active Claude Code sessions\n2. **Refine pattern recognition** based on identified trends\n3. **Enhance Portuguese community tracking** for cultural consistency\n4. **Implement recommended improvements** based on conversation analysis\n\n---\n\n*This report was generated automatically by the Conversation Intelligence System*\n`;\n    \n    fs.writeFileSync(reportPath, markdown);\n    console.log(`📄 Conversation intelligence report saved to: ${reportPath}`);\n  }\n}\n\n// Run conversation intelligence if called directly\nif (require.main === module) {\n  const intelligence = new ConversationIntelligence();\n  \n  // Generate immediate report\n  intelligence.generateFullConversationReport().then(() => {\n    console.log('✅ Conversation intelligence report generated');\n  }).catch(console.error);\n}\n\nmodule.exports = ConversationIntelligence;\n
+    const markdown = `# Conversation Intelligence Report\n\nGenerated: ${report.generated}\n\n## Executive Summary\n\n### Session Metrics\n- **Total Sessions Monitored:** ${report.metrics.sessionsMonitored}\n- **Decisions Extracted:** ${report.metrics.decisionsExtracted}\n- **Patterns Identified:** ${report.metrics.patternsIdentified}\n- **Insights Generated:** ${report.metrics.insightsGenerated}\n\n### Portuguese-speaking community Integration\n- **Integration Rate:** ${report.summary.portugueseIntegration.percentage.toFixed(1)}%\n- **Trend:** ${report.summary.portugueseIntegration.trend}\n- **Quality:** ${report.summary.portugueseIntegration.quality}\n\n### Architectural Evolution\n- **Stability:** ${report.summary.architecturalEvolution.stability}\n- **Major Changes:** ${report.summary.architecturalEvolution.frequency}\n- **Last Change:** ${report.summary.architecturalEvolution.lastMajorChange || 'None'}\n\n## Key Insights\n\n### Top Development Patterns\n${report.insights.topPatterns.map(p => `- **${p.name}** (${p.category}) - ${(p.confidence * 100).toFixed(0)}% confidence`).join('\\n')}\n\n### Recent Key Decisions\n${report.insights.keyDecisions.map(d => `- **${d.content}** (${d.category}) - ${new Date(d.timestamp).toLocaleDateString()}`).join('\\n')}\n\n### Development Trends\n- **Velocity:** ${report.insights.developmentTrends.velocity} sessions analyzed\n- **Primary Focus Areas:** ${Object.keys(report.insights.developmentTrends.focus).join(', ')}\n- **Complexity:** ${report.insights.developmentTrends.complexity}\n\n## Health Assessment\n\n### Conversation Quality: ${report.health.conversationQuality.score}%\n- **Trend:** ${report.health.conversationQuality.trend}\n- **Strong Areas:** ${report.health.conversationQuality.areas.join(', ')}\n\n### Decision Tracking: ${report.health.decisionTracking.coverage}\n- **Categories Covered:** ${report.health.decisionTracking.categories.length}\n- **Average Confidence:** ${(report.health.decisionTracking.confidence * 100).toFixed(0)}%\n\n### Pattern Recognition: ${(report.health.patternRecognition.accuracy * 100).toFixed(0)}% Accuracy\n- **Categories:** ${report.health.patternRecognition.categories.length}\n- **Learning Status:** ${report.health.patternRecognition.learning}\n\n## Recommendations\n\n${report.insights.recommendations.map(r => `### ${r.type} (${r.priority} priority)\\n${r.suggestion}\\n\\n*Reason: ${r.reason}*\\n`).join('\\n')}\n\n## Next Steps\n\n1. **Continue monitoring** active Claude Code sessions\n2. **Refine pattern recognition** based on identified trends\n3. **Enhance Portuguese-speaking community tracking** for cultural consistency\n4. **Implement recommended improvements** based on conversation analysis\n\n---\n\n*This report was generated automatically by the Conversation Intelligence System*\n`;\n    \n    fs.writeFileSync(reportPath, markdown);\n    console.log(`📄 Conversation intelligence report saved to: ${reportPath}`);\n  }\n}\n\n// Run conversation intelligence if called directly\nif (require.main === module) {\n  const intelligence = new ConversationIntelligence();\n  \n  // Generate immediate report\n  intelligence.generateFullConversationReport().then(() => {\n    console.log('✅ Conversation intelligence report generated');\n  }).catch(console.error);\n}\n\nmodule.exports = ConversationIntelligence;\n

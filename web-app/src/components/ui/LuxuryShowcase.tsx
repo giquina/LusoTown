@@ -116,7 +116,7 @@ export default function LuxuryShowcase() {
                       Heritage Premium
                     </LuxuryHeading>
                     <LuxuryText variant="muted" className="mt-2">
-                      Experience the finest Portuguese community features with luxury design.
+                      Experience the finest Portuguese-speaking community features with luxury design.
                     </LuxuryText>
                     <div className="mt-6">
                       <EliteButton variant="heritage" size="md" fullWidth>
@@ -369,7 +369,7 @@ export default function LuxuryShowcase() {
             <div className="text-center space-y-8">
               <div>
                 <GradientText variant="portuguese" size="3xl" className="font-display">
-                  Bem-vindos à Comunidade Portuguesa
+                  Bem-vindos à Comunidade de Falantes de Português
                 </GradientText>
                 <LuxuryText variant="muted" size="lg" className="mt-2">
                   Portuguese Gradient Text - Heritage Colors

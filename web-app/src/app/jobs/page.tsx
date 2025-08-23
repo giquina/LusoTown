@@ -106,7 +106,7 @@ const mockJobs = [
     posted: '4 days ago',
     description: 'Support Portuguese-speaking patients in London hospitals. Make a difference in your community.',
     requirements: ['Healthcare experience preferred', 'Fluent Portuguese and English', 'Compassionate nature'],
-    benefits: ['NHS pension', 'Career progression', 'Serve Portuguese community'],
+    benefits: ['NHS pension', 'Career progression', 'Serve Portuguese-speaking community'],
     featured: false,
     remote: false,
     category: 'Healthcare'

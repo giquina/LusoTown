@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document outlines the comprehensive implementation of LusoTown's official streaming channel feature, designed to serve the Portuguese community in London & UK with culturally relevant content, business workshops, and community events.
+This document outlines the comprehensive implementation of LusoTown's official streaming channel feature, designed to serve the Portuguese-speaking community in London & UK with culturally relevant content, business workshops, and community events.
 
 ## 🎯 Feature Objectives
 
@@ -148,7 +148,7 @@ This document outlines the comprehensive implementation of LusoTown's official s
 **Analytics Features**:
 - **Real-time Metrics**: Current viewers, peak audience, total views
 - **Engagement Data**: Average watch time, engagement rate
-- **Community Stats**: Portuguese community percentage
+- **Community Stats**: Portuguese-speaking community percentage
 - **Device Analytics**: Mobile vs desktop viewing patterns
 - **Growth Tracking**: Viewer growth and retention metrics
 
@@ -352,7 +352,7 @@ This document outlines the comprehensive implementation of LusoTown's official s
 - **Bilingual Presentation**: Portuguese and English support
 - **Cultural Authenticity**: Genuine Portuguese cultural content
 - **Educational Value**: Learning opportunities in all content
-- **Community Relevance**: Content relevant to London Portuguese community
+- **Community Relevance**: Content relevant to London Portuguese-speaking community
 
 ## 🎯 Success Metrics
 
@@ -449,11 +449,11 @@ web-app/src/
 - **Accessibility**: WCAG compliant with keyboard navigation
 - **Testing Ready**: Components structured for easy unit testing
 
-### Portuguese Community Focus
+### Portuguese-speaking community Focus
 - **Cultural Authenticity**: Content reflects genuine Portuguese culture
 - **Bilingual Support**: Complete English and Portuguese translations
-- **London Context**: Specifically designed for London Portuguese community
+- **London Context**: Specifically designed for London Portuguese-speaking community
 - **Community Values**: Supports community building and cultural preservation
 - **Business Development**: Enables Portuguese entrepreneurship and networking
 
-This implementation provides a comprehensive foundation for LusoTown's official streaming channel, serving both cultural and business needs of the Portuguese community in London while maintaining high technical standards and user experience quality.
+This implementation provides a comprehensive foundation for LusoTown's official streaming channel, serving both cultural and business needs of the Portuguese-speaking community in London while maintaining high technical standards and user experience quality.

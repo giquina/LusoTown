@@ -1,6 +1,6 @@
 # LusoTown Intelligent Documentation System
 
-This directory contains the **most advanced documentation automation system ever built for a production codebase**, featuring AI-powered intelligence, real-time conversation monitoring, and comprehensive Portuguese community-specific features.
+This directory contains the **most advanced documentation automation system ever built for a production codebase**, featuring AI-powered intelligence, real-time conversation monitoring, and comprehensive Portuguese-speaking community-specific features.
 
 ## 🚀 Quick Start
 
@@ -25,7 +25,7 @@ npm run docs:cultural-audit
 1. **📚 Intelligent Documentation Engine** (`intelligent-documentation-engine.js`)
    - AI-powered documentation analysis and generation
    - Predictive maintenance with staleness prediction
-   - Portuguese community-specific intelligence
+   - Portuguese-speaking community-specific intelligence
    - Dependency graph analysis and impact tracking
 
 2. **🧠 Conversation Intelligence System** (`conversation-intelligence.js`)
@@ -69,11 +69,11 @@ npm run docs:cultural-audit
 - **Smart dependency tracking** - Understands file relationships and cascade effects
 - **Automated pattern recognition** - Learns from development patterns
 
-### Portuguese Community Specific
+### Portuguese-speaking community Specific
 - **Cultural consistency validation** - Ensures authentic Portuguese branding
 - **Bilingual system monitoring** - Tracks EN/PT translation drift
 - **Hardcoding prevention** - Prevents non-i18n strings automatically
-- **Cultural authenticity scoring** - Measures Portuguese community integration
+- **Cultural authenticity scoring** - Measures Portuguese-speaking community integration
 
 ### Advanced Integrations
 - **Slack/Discord notifications** - Real-time team collaboration
@@ -108,7 +108,7 @@ npm run docs:health-check             # Check all system health
 npm run docs:analytics                # Generate all system analytics
 npm run docs:queue                    # View automation task queue
 
-# Portuguese community specific
+# Portuguese-speaking community specific
 npm run docs:cultural-audit           # Cultural consistency audit
 npm run docs:workflow portuguese-feature-development  # Portuguese workflow
 ```
@@ -205,7 +205,7 @@ The system continuously monitors:
 - **Individual system health** - Each component's operational status
 - **Integration connectivity** - External service connections
 - **Performance metrics** - Memory usage, response times, error rates
-- **Cultural consistency** - Portuguese community authenticity scores
+- **Cultural consistency** - Portuguese-speaking community authenticity scores
 - **Automation effectiveness** - Rule execution success rates
 
 ### Troubleshooting
@@ -267,10 +267,10 @@ npm run docs:analytics
 - **Adaptive Rules**: Rules adjust based on effectiveness over time
 
 ### Portuguese Cultural Intelligence
-- **Authenticity Validation**: Ensures genuine Portuguese community focus
+- **Authenticity Validation**: Ensures genuine Portuguese-speaking community focus
 - **Translation Consistency**: Monitors EN/PT language drift
 - **Cultural Element Tracking**: Maintains Portuguese brand consistency
-- **Community Engagement Metrics**: Tracks Portuguese community integration
+- **Community Engagement Metrics**: Tracks Portuguese-speaking community integration
 
 ## 🛠️ Architecture Deep Dive
 
@@ -315,7 +315,7 @@ Integration Hub ← Analytics Collection ← Master Orchestrator
 This intelligent documentation system represents the **most sophisticated documentation automation ever built for a production codebase**. It combines:
 
 - **AI-powered intelligence** for predictive and adaptive behavior
-- **Portuguese community specificity** for authentic cultural integration  
+- **Portuguese-speaking community specificity** for authentic cultural integration  
 - **Enterprise-grade integrations** for seamless team collaboration
 - **Advanced automation** with smart rules and workflow orchestration
 - **Comprehensive analytics** for data-driven documentation management

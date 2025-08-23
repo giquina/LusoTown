@@ -1,10 +1,10 @@
 # Cloudinary CDN Integration for LusoTown
 
-This document explains the Cloudinary integration for optimized image delivery in the LusoTown Portuguese community platform.
+This document explains the Cloudinary integration for optimized image delivery in the LusoTown Portuguese-speaking community platform.
 
 ## Overview
 
-LusoTown uses Cloudinary for advanced image optimization, transformation, and delivery. The integration includes Portuguese community-specific enhancements and cultural content optimizations.
+LusoTown uses Cloudinary for advanced image optimization, transformation, and delivery. The integration includes Portuguese-speaking community-specific enhancements and cultural content optimizations.
 
 ## Features
 
@@ -12,9 +12,9 @@ LusoTown uses Cloudinary for advanced image optimization, transformation, and de
 - **Automatic Format Selection**: WebP, AVIF based on browser support
 - **Responsive Images**: Auto-generated srcSets for different screen sizes
 - **Quality Optimization**: Adaptive quality based on content type
-- **Portuguese Community Enhancements**: Cultural color grading and filters
+- **Portuguese-speaking community Enhancements**: Cultural color grading and filters
 
-### 🇵🇹 Portuguese Community Specific
+### 🇵🇹 Portuguese-speaking community Specific
 - **Heritage Preservation Filters**: Optimized for cultural documentation
 - **Official Content Overlay**: Portuguese flag overlay for verified content
 - **Mediterranean Lighting**: Warm color grading for Portuguese aesthetics
@@ -69,7 +69,7 @@ import CloudinaryImage from '@/components/CloudinaryImage'
   preset="medium"
 />
 
-// With Portuguese community enhancements
+// With Portuguese-speaking community enhancements
 <CloudinaryImage
   src="community/festival/festa-do-fado"
   alt="Festa do Fado"
@@ -156,7 +156,7 @@ const culturalUrl = getCulturalAssetUrl('heritage', 'azulejo-tiles', 'large')
 | `event` | 400x300 | Event cards and listings |
 | `gallery` | 800x600 | Photo galleries |
 
-## Portuguese Community Transformations
+## Portuguese-speaking community Transformations
 
 ### Heritage Preservation
 ```
@@ -220,7 +220,7 @@ const optimized = optimizeExistingImage('/images/old-image.jpg', 'medium')
 1. Upload assets to Cloudinary with proper folder structure
 2. Replace Image components with CloudinaryImage
 3. Update alt text to be bilingual
-4. Apply appropriate Portuguese community enhancements
+4. Apply appropriate Portuguese-speaking community enhancements
 
 ## Troubleshooting
 
@@ -289,7 +289,7 @@ For issues with Cloudinary integration:
 3. Review component props and transformations
 4. Check browser console for errors
 
-## Portuguese Community Guidelines
+## Portuguese-speaking community Guidelines
 
 When working with Portuguese cultural content:
 - Respect historical accuracy in heritage images
@@ -300,4 +300,4 @@ When working with Portuguese cultural content:
 
 ---
 
-This integration ensures that LusoTown delivers optimized, culturally-appropriate images that enhance the Portuguese community experience while maintaining excellent performance and accessibility.
+This integration ensures that LusoTown delivers optimized, culturally-appropriate images that enhance the Portuguese-speaking community experience while maintaining excellent performance and accessibility.

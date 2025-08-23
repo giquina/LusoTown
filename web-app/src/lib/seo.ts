@@ -1,6 +1,6 @@
 // Note: This module is server-safe. Do not add client-only APIs here.
 
-// Portuguese Community SEO Strategy
+// Portuguese-speaking community SEO Strategy
 // Optimized for Portuguese speakers seeking community and business connections in London
 
 import { SITE_URL, absoluteUrl } from "@/config/site";
@@ -22,7 +22,7 @@ export interface SEOMetadata {
 // Primary Portuguese SEO Keywords
 export const PRIMARY_PORTUGUESE_KEYWORDS = [
   // Community focused
-  "comunidade portuguesa londres",
+  "comunidade de falantes de português londres",
   "portugueses em londres",
   "brasileiros em londres",
   "lusófonos londres",
@@ -53,7 +53,7 @@ export const PRIMARY_PORTUGUESE_KEYWORDS = [
   "empreendedores portugueses",
 
   // Location specific
-  "portuguese community london",
+  "Portuguese-speaking community london",
   "portuguese people london",
   "brazilian community london",
   "lusophone london",
@@ -125,14 +125,14 @@ export const LOCATION_KEYWORDS = [
   "portugueses victoria station",
   "portugueses liverpool street",
   "portugueses paddington",
-  "portuguese community tube stations",
+  "Portuguese-speaking community tube stations",
 
   // Nearby cities
-  "portuguese community birmingham",
-  "portuguese community manchester",
-  "portuguese community glasgow",
-  "portuguese community dublin",
-  "portuguese community paris",
+  "Portuguese-speaking community birmingham",
+  "Portuguese-speaking community manchester",
+  "Portuguese-speaking community glasgow",
+  "Portuguese-speaking community dublin",
+  "Portuguese-speaking community paris",
 ];
 
 // Competitor Analysis Keywords
@@ -169,8 +169,8 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     keywords: [
       "portuguese social calendar london",
       "agenda social portuguesa londres",
-      "portuguese community london",
-      "comunidade portuguesa londres",
+      "Portuguese-speaking community london",
+      "comunidade de falantes de português londres",
       "portuguese events london",
       "eventos portugueses londres",
       "brazilian community london",
@@ -296,16 +296,16 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
   },
 
   community: {
-    title: "Portuguese Community London - Your Lusophone Family in the UK",
+    title: "Portuguese-speaking community London - Your Lusophone Family in the UK",
     titlePortuguese:
-      "Comunidade Portuguesa Londres - A Sua Família Lusófona no Reino Unido",
+      "Comunidade de Falantes de Português Londres - A Sua Família Lusófona no Reino Unido",
     description:
-      "Join London's vibrant Portuguese community where saudade transforms into joy. Make lifelong friends, celebrate our heritage, and stay connected to Portuguese culture while living in the UK.",
+      "Join London's vibrant Portuguese-speaking community where saudade transforms into joy. Make lifelong friends, celebrate our heritage, and stay connected to Portuguese culture while living in the UK.",
     descriptionPortuguese:
-      "Junte-se à vibrante comunidade portuguesa de Londres onde a saudade se transforma em alegria. Faça amizades para a vida, celebre a nossa herança, e mantenha-se conectado à cultura portuguesa enquanto vive no Reino Unido.",
+      "Junte-se à vibrante comunidade de falantes de português de Londres onde a saudade se transforma em alegria. Faça amizades para a vida, celebre a nossa herança, e mantenha-se conectado à cultura portuguesa enquanto vive no Reino Unido.",
     keywords: [
-      "portuguese community london",
-      "comunidade portuguesa londres",
+      "Portuguese-speaking community london",
+      "comunidade de falantes de português londres",
       "familia portuguesa londres",
       "casa portuguesa londres",
       "portuguese friends london",
@@ -411,9 +411,9 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     titlePortuguese:
       "Matches Portugueses em Londres - Compatibilidade Cultural e Networking",
     description:
-      "Discover premium matches across the Portuguese community in London with cultural compatibility and professional networking.",
+      "Discover premium matches across the Portuguese-speaking community in London with cultural compatibility and professional networking.",
     descriptionPortuguese:
-      "Descubra matches premium na comunidade portuguesa em Londres com compatibilidade cultural e networking profissional.",
+      "Descubra matches premium na comunidade de falantes de português em Londres com compatibilidade cultural e networking profissional.",
     keywords: [
       "portuguese matches london",
       "matches portugueses londres",
@@ -424,12 +424,12 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     ogImage: absoluteUrl("/og-matches.jpg"),
   },
   londonTours: {
-    title: "London Tours for Portuguese Community | LusoTown",
-    titlePortuguese: "Tours em Londres para a Comunidade Portuguesa | LusoTown",
+    title: "London Tours for Portuguese-speaking community | LusoTown",
+    titlePortuguese: "Tours em Londres para a Comunidade de Falantes de Português | LusoTown",
     description:
-      "Browse cultural London tours and iconic landmarks curated for the Portuguese community. Discover and book authentic experiences.",
+      "Browse cultural London tours and iconic landmarks curated for the Portuguese-speaking community. Discover and book authentic experiences.",
     descriptionPortuguese:
-      "Descubra tours culturais de Londres e marcos icónicos com curadoria para a comunidade portuguesa. Explore e reserve experiências autênticas.",
+      "Descubra tours culturais de Londres e marcos icónicos com curadoria para a comunidade de falantes de português. Explore e reserve experiências autênticas.",
     keywords: [
       "london tours portuguese",
       "tours londres português",
@@ -648,8 +648,8 @@ Crawl-delay: 1`;
   static getPortugueseContentTemplates() {
     return {
       welcomeMessage: {
-        en: "Welcome to London's Portuguese community platform",
-        pt: "Bem-vindos à plataforma da comunidade portuguesa de Londres",
+        en: "Welcome to London's Portuguese-speaking community platform",
+        pt: "Bem-vindos à plataforma da comunidade de falantes de português de Londres",
       },
       ctaButtons: {
         exploreEvents: { en: "Explore Events", pt: "Explorar Eventos" },
@@ -690,7 +690,7 @@ Crawl-delay: 1`;
         networking_signup: "Business networking signup",
       },
       conversions: {
-        community_join: "Joined Portuguese community",
+        community_join: "Joined Portuguese-speaking community",
         business_verified: "Portuguese business verified",
         event_attended: "Portuguese event attended",
       },

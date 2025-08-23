@@ -46,7 +46,7 @@ interface FormData {
   website: string
   londonArea: LondonArea | ''
   
-  // Portuguese Community Details
+  // Portuguese-speaking community Details
   ownerName: string
   ownerRegion: PortugueseRegion | ''
   languagesSpoken: Language[]

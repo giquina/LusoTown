@@ -129,7 +129,7 @@ class DocumentationAgent {
         patterns.push('New feature implementations');
       }
       if (recentCommits.includes('Portuguese')) {
-        patterns.push('Portuguese community enhancements');
+        patterns.push('Portuguese-speaking community enhancements');
       }
       
     } catch (error) {
@@ -257,7 +257,7 @@ class DocumentationAgent {
       if (status === 'completed') {
         section += `**✅ ${feature}:**\n`;
         section += `- Implementation completed and verified\n`;
-        section += `- Production ready with full Portuguese community integration\n\n`;
+        section += `- Production ready with full Portuguese-speaking community integration\n\n`;
       }
     }
     

@@ -154,8 +154,8 @@ const CAREER_OPPORTUNITIES: CareerOpportunity[] = [
       'Reference letter guaranteed',
       'Potential full-time offer'
     ],
-    description: 'Assist Portuguese clients with visa applications, conduct legal research, and support immigration casework. Perfect opportunity to help the Portuguese community.',
-    descriptionPortuguese: 'Assista clientes portugueses com candidaturas de visto, conduza investigação jurídica e apoie trabalho de casos de imigração. Oportunidade perfeita para ajudar a comunidade portuguesa.',
+    description: 'Assist Portuguese clients with visa applications, conduct legal research, and support immigration casework. Perfect opportunity to help the Portuguese-speaking community.',
+    descriptionPortuguese: 'Assista clientes portugueses com candidaturas de visto, conduza investigação jurídica e apoie trabalho de casos de imigração. Oportunidade perfeita para ajudar a comunidade de falantes de português.',
     applicationDeadline: '2024-09-30',
     startDate: '2024-10-15',
     contactPerson: 'Dr. Maria Fernandes - Senior Partner',
@@ -1051,8 +1051,8 @@ export default function CareerHubSection() {
           <BriefcaseIcon className="w-16 h-16 text-white mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-4">
             {language === 'pt' 
-              ? 'Impulsione a Sua Carreira com a Comunidade Portuguesa'
-              : 'Boost Your Career with the Portuguese Community'}
+              ? 'Impulsione a Sua Carreira com a Comunidade de Falantes de Português'
+              : 'Boost Your Career with the Portuguese-speaking community'}
           </h3>
           <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
             {language === 'pt' 

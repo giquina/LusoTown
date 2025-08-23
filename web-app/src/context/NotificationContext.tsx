@@ -329,7 +329,7 @@ const defaultPreferences: NotificationPreferences = {
   subscriptionTierPreferences: true,
 }
 
-// Notification templates for Portuguese community
+// Notification templates for Portuguese-speaking community
 const notificationTemplates: NotificationTemplate[] = [
   {
     id: 'new_connection',
@@ -342,7 +342,7 @@ const notificationTemplates: NotificationTemplate[] = [
     defaultPriority: 'medium',
     variables: ['senderName', 'eventName'],
     channels: ['in_app', 'email', 'push'],
-    culturalContext: 'Portuguese community networking',
+    culturalContext: 'Portuguese-speaking community networking',
   },
   {
     id: 'cultural_event',
@@ -394,7 +394,7 @@ const notificationTemplates: NotificationTemplate[] = [
     defaultPriority: 'medium',
     variables: ['universityName', 'eventName'],
     channels: ['in_app', 'email', 'push'],
-    culturalContext: 'Student Portuguese community',
+    culturalContext: 'Student Portuguese-speaking community',
   },
 ]
 
@@ -711,16 +711,16 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
 
     const messages = {
       new_connection: { 
-        en: `You connected with ${data.name} through Portuguese community events`, 
-        pt: `Conectou-se com ${data.name} através de eventos da comunidade portuguesa` 
+        en: `You connected with ${data.name} through Portuguese-speaking community events`, 
+        pt: `Conectou-se com ${data.name} através de eventos da comunidade de falantes de português` 
       },
       new_match: { 
         en: `${data.name} shares your interests in Portuguese culture and business`, 
         pt: `${data.name} partilha os seus interesses na cultura e negócios portugueses` 
       },
       event_invitation: { 
-        en: `You're invited to ${data.eventName} - Portuguese community gathering`, 
-        pt: `Está convidado para ${data.eventName} - encontro da comunidade portuguesa` 
+        en: `You're invited to ${data.eventName} - Portuguese-speaking community gathering`, 
+        pt: `Está convidado para ${data.eventName} - encontro da comunidade de falantes de português` 
       }
     }
 
@@ -768,7 +768,7 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
       type: type === 'chat_message' ? 'chat_message' : type === 'group_activity' ? 'group_activity' : 'cultural_event',
       category: 'community',
       title: titles[type][language as 'en' | 'pt'],
-      message: data.message || (language === 'pt' ? 'Nova atividade na comunidade portuguesa' : 'New activity in Portuguese community'),
+      message: data.message || (language === 'pt' ? 'Nova atividade na comunidade de falantes de português' : 'New activity in Portuguese-speaking community'),
       userId: 'current-user',
       priority: 'medium',
       data,

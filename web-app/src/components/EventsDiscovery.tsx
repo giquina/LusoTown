@@ -88,7 +88,7 @@ const PORTUGUESE_NEIGHBORHOODS: NeighborhoodData[] = [
     name: 'Vauxhall',
     portuguese_population: 2100,
     authenticity_level: 90,
-    popular_venues: ['Portuguese Community Hall', 'Vauxhall Portuguese Market', 'Taberna Real'],
+    popular_venues: ['Portuguese-speaking community Hall', 'Vauxhall Portuguese Market', 'Taberna Real'],
     cultural_significance: 'Historic Portuguese settlement area with traditional businesses'
   },
   {
@@ -96,14 +96,14 @@ const PORTUGUESE_NEIGHBORHOODS: NeighborhoodData[] = [
     portuguese_population: 1900,
     authenticity_level: 85,
     popular_venues: ['Golborne Road Market', 'Portuguese Church', 'Casa Madeira'],
-    cultural_significance: 'Established Portuguese community with strong cultural roots'
+    cultural_significance: 'Established Portuguese-speaking community with strong cultural roots'
   },
   {
     name: 'Brixton',
     portuguese_population: 1200,
     authenticity_level: 70,
     popular_venues: ['Brixton Portuguese Club', 'Portuguese Bakery', 'Cultural Centre'],
-    cultural_significance: 'Growing Portuguese community with vibrant cultural scene'
+    cultural_significance: 'Growing Portuguese-speaking community with vibrant cultural scene'
   },
   {
     name: 'Camden',
@@ -197,7 +197,7 @@ export default function EventsDiscovery({
       date: '2025-06-13',
       time: '18:00',
       location: 'Portuguese Centre, South Lambeth Road',
-      venue: 'Portuguese Community Centre',
+      venue: 'Portuguese-speaking community Centre',
       price: 15,
       currency: 'GBP',
       max_attendees: 200,

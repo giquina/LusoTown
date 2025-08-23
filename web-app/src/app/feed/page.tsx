@@ -244,8 +244,8 @@ export default function CommunityFeed() {
               </div>
               <p className="text-lg text-gray-600 mb-8">
                 {isPortuguese 
-                  ? 'Partilha atualizações, conecta-te com outros e mantém-te a par das últimas novidades da nossa comunidade portuguesa em Londres'
-                  : 'Share updates, connect with others, and stay in the loop with the latest from our Portuguese community in London'
+                  ? 'Partilha atualizações, conecta-te com outros e mantém-te a par das últimas novidades da nossa comunidade de falantes de português em Londres'
+                  : 'Share updates, connect with others, and stay in the loop with the latest from our Portuguese-speaking community in London'
                 }
               </p>
               
@@ -360,8 +360,8 @@ export default function CommunityFeed() {
                     value={newPost}
                     onChange={(e) => setNewPost(e.target.value)}
                     placeholder={isPortuguese 
-                      ? 'O que está a acontecer na tua comunidade portuguesa?'
-                      : "What's happening in your Portuguese community?"
+                      ? 'O que está a acontecer na tua comunidade de falantes de português?'
+                      : "What's happening in your Portuguese-speaking community?"
                     }
                     className="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent resize-none"
                     rows={4}
@@ -455,8 +455,8 @@ export default function CommunityFeed() {
                       )}
                       {feedType === 'community' && (
                         isPortuguese 
-                          ? 'Partilhas da comunidade portuguesa'
-                          : 'Shares from the Portuguese community'
+                          ? 'Partilhas da comunidade de falantes de português'
+                          : 'Shares from the Portuguese-speaking community'
                       )}
                     </p>
                   </div>

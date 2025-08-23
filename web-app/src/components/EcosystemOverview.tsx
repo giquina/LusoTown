@@ -71,8 +71,8 @@ export default function EcosystemOverview() {
             </h1>
             <p className="text-primary-100 text-lg mb-4">
               {language === 'pt' 
-                ? 'Conectando serviços premium com a comunidade portuguesa em Londres'
-                : 'Connecting premium services with the Portuguese community in London'
+                ? 'Conectando serviços premium com a comunidade de falantes de português em Londres'
+                : 'Connecting premium services with the Portuguese-speaking community in London'
               }
             </p>
             <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${journeyStage.color} bg-white/20`}>

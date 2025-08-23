@@ -38,7 +38,7 @@ LusoTown/
 ├── 📄 HOOKS_AND_WORKFLOWS.md                   # Automated workflow system
 ├── 📄 IMPLEMENTATION_SUMMARY.md                # Implementation summaries
 ├── 🔧 agents/                                  # Individual agent configurations
-│   ├── 🇵🇹 Portuguese Community Specialists
+│   ├── 🇵🇹 Portuguese-speaking community Specialists
 │   │   ├── 📄 luso-content-agent.md           # Portuguese content & translation
 │   │   ├── 📄 luso-safety-agent.md            # Adult community safety (18+)
 │   │   ├── 📄 luso-events-agent.md            # Portuguese events curation
@@ -174,7 +174,7 @@ app/
 components/
 ├── 🏠 Layout & Navigation
 │   ├── 📄 Header.tsx                           # Main navigation with language toggle
-│   ├── 📄 Footer.tsx                           # Footer with Portuguese community focus
+│   ├── 📄 Footer.tsx                           # Footer with Portuguese-speaking community focus
 │   ├── 📄 Logo.tsx                             # LusoTown branding
 │   └── 📄 LanguageToggle.tsx                   # English/Portuguese switcher
 ├── 🎭 Core Page Components
@@ -394,7 +394,7 @@ mobile-app/                                     # React Native + Expo (Future De
 #### Backend Infrastructure
 - **Supabase** (PostgreSQL, Authentication, Storage, Edge Functions)
 - **Vercel** deployment with automatic CI/CD
-- **Complete database schema** for Portuguese community
+- **Complete database schema** for Portuguese-speaking community
 - **Row Level Security (RLS)** for data privacy
 
 #### Development Tools
@@ -405,7 +405,7 @@ mobile-app/                                     # React Native + Expo (Future De
 
 ### Key Features
 
-#### Portuguese Community Focus
+#### Portuguese-speaking community Focus
 - **Adult-Only Platform**: 18+ community with age-appropriate activities
 - **Bilingual Support**: Complete English/Portuguese interface
 - **Cultural Authenticity**: Deep Portuguese heritage integration
@@ -428,13 +428,13 @@ mobile-app/                                     # React Native + Expo (Future De
 ### Administrative Roles Research (Completed August 15, 2025)
 The platform has completed comprehensive research for 10 key administrative and management positions:
 
-1. **Portuguese Community Social Media Manager** - Bilingual social media strategy and community engagement
+1. **Portuguese-speaking community Social Media Manager** - Bilingual social media strategy and community engagement
 2. **API Integration & Platform Technical Specialist** - Technical integrations and system management  
 3. **Portuguese Business Development & Partnerships Manager** - Business relationships and strategic partnerships
 4. **Community Platform Administrator & User Experience Manager** - Day-to-day operations and user management
-5. **Portuguese Community Data Analytics & Growth Specialist** - Data-driven growth and community insights
+5. **Portuguese-speaking community Data Analytics & Growth Specialist** - Data-driven growth and community insights
 6. **Multilingual Customer Support Manager (Portuguese Focus)** - Customer service and community support
-7. **Portuguese Community Growth & Acquisition Marketing Manager** - Marketing and member acquisition
+7. **Portuguese-speaking community Growth & Acquisition Marketing Manager** - Marketing and member acquisition
 8. **Event Operations & Portuguese Cultural Programming Manager** - Event coordination and cultural programming
 9. **Content Strategy & Portuguese Heritage Manager** - Content creation and cultural preservation
 10. **Business Intelligence & Portuguese Market Research Analyst** - Market research and business intelligence
@@ -451,7 +451,7 @@ The platform has completed comprehensive research for 10 key administrative and 
 - luso-analytics-agent, luso-mobile-agent, luso-seo-agent  
 - luso-integration-agent, luso-compliance-agent, luso-feedback-agent, luso-onboarding-agent
 
-Each proposed agent addresses specific Portuguese community needs and would enhance platform capabilities for cultural authenticity and user experience.
+Each proposed agent addresses specific Portuguese-speaking community needs and would enhance platform capabilities for cultural authenticity and user experience.
 
 ## 🚀 Development Workflow
 
@@ -478,7 +478,7 @@ npm run deploy       # Deploy to Vercel
 
 ### Agent System Usage
 ```bash
-# Invoke Portuguese community specialists
+# Invoke Portuguese-speaking community specialists
 /agents luso-content-agent    # Portuguese content management
 /agents luso-events-agent     # Event curation
 /agents luso-safety-agent     # Community safety
@@ -493,7 +493,7 @@ npm run deploy       # Deploy to Vercel
 
 ### Current Status: 100% Complete ✅ (Updated August 15, 2025)
 - **Web Application**: Production-ready with all features implemented + recent performance fixes
-- **Portuguese Community Features**: Complete adult-focused social platform
+- **Portuguese-speaking community Features**: Complete adult-focused social platform
 - **Agent System**: Comprehensive automation and specialist support (16 agents deployed + 10 proposed agents researched)
 - **Administrative Structure**: 10 management roles defined with strategic business decisions
 - **Career Management**: Salary information removed per business decision, focus on cultural competency
@@ -503,9 +503,9 @@ npm run deploy       # Deploy to Vercel
 - **Brand Consistency**: 100% Portuguese brand compliance achieved
 
 ### Key Metrics
-- **60+ Static Pages**: All functional with Portuguese community focus
+- **60+ Static Pages**: All functional with Portuguese-speaking community focus
 - **140+ React Components**: Advanced community and interaction features
-- **16+ Specialized Agents**: Portuguese community and development specialists (deployed)
+- **16+ Specialized Agents**: Portuguese-speaking community and development specialists (deployed)
 - **10+ Proposed Agents**: Additional specialists researched and pending approval
 - **10 Administrative Roles**: Management positions defined with comprehensive job specifications
 - **Complete Bilingual Interface**: English/Portuguese throughout platform

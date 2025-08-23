@@ -24,14 +24,14 @@ LusoTown uses a specialized agent system for expert guidance across all developm
 - **`qa-mentor-advisor`** - Expert testing strategies, bug prevention, quality education
 - **`performance-coach-advisor`** - Performance optimization and mobile-first experience tuning
 - **`security-guardian-advisor`** - Security, privacy, and GDPR compliance guidance
-- **`growth-analytics-advisor`** - Data-driven growth strategies and Portuguese community expansion
+- **`growth-analytics-advisor`** - Data-driven growth strategies and Portuguese-speaking community expansion
 
 ### Agent Usage Example
 ```
 Task tool with:
 - description: "Strategic feature evaluation"  
 - subagent_type: "strategic-decision-advisor"
-- prompt: "Should we prioritize video calls or better matching algorithms for Portuguese community?"
+- prompt: "Should we prioritize video calls or better matching algorithms for Portuguese-speaking community?"
 ```
 
 **Full Agent Documentation**: See `/AGENTS.md` for complete specifications, activation scenarios, and integration guidelines.
@@ -42,7 +42,7 @@ See `/web-app/TODO.md` for comprehensive premium enhancement roadmap focusing on
 
 ## Project Overview
 
-LusoTown is a production-ready Portuguese community platform serving London & UK Portuguese speakers. It's a comprehensive social network with event discovery, business directory, streaming platform, transport services, and university partnerships.
+LusoTown is a production-ready Portuguese-speaking community platform serving London & UK Portuguese speakers. It's a comprehensive social network with event discovery, business directory, streaming platform, transport services, and university partnerships.
 
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL with PostGIS, Simple Relay Server (SRS) for streaming, OpenStreetMap/Leaflet for mapping, Twitter API, Stripe, React Context state management.
 
@@ -136,7 +136,7 @@ npm run lint                   # Lint web app
 ### Monorepo Structure
 - **web-app/**: Next.js 14 web application (primary) - Production ready with 497+ components and 4 AI systems
 - **streaming/**: Node.js/Express streaming server with SRS integration - RTMP/HLS delivery
-- **mobile-app/**: React Native/Expo mobile application - Portuguese community focused
+- **mobile-app/**: React Native/Expo mobile application - Portuguese-speaking community focused
 - **packages/**: Shared packages (`@lusotown/design-tokens`, `@lusotown/ui`)
 - **supabase/**: Database schema and migrations (20+ migration files)
 - **docs/**: Comprehensive documentation archive
@@ -166,7 +166,7 @@ All dynamic data is centralized in `/web-app/src/config/`:
 - Complete English/Portuguese translations in `/web-app/src/i18n/`
 - `LanguageContext` for state management
 - Dynamic language switching throughout the platform
-- Cultural-specific content for Portuguese community
+- Cultural-specific content for Portuguese-speaking community
 
 **3. Context-Based State Management**
 Multiple React contexts in `/web-app/src/context/`:
@@ -185,7 +185,7 @@ Dynamic Portuguese heritage colors using CSS custom properties:
 **5. Mobile-First Design**
 - Responsive breakpoints: xs(475px), sm(640px), md(768px), lg(1024px), xl(1280px), 2xl(1536px)
 - Touch-optimized components
-- Portuguese community uses mobile heavily
+- Portuguese-speaking community uses mobile heavily
 
 ## Critical Development Rules
 
@@ -230,7 +230,7 @@ npm run test                   # Must pass - Unit tests
 
 ## Key Business Context
 
-**Target Audience**: 750+ Portuguese community members, 2,150+ Portuguese university students across London & UK
+**Target Audience**: 750+ Portuguese-speaking community members, 2,150+ Portuguese university students across London & UK
 
 **University Partnerships**: 8 institutions (UCL, King's, Imperial, LSE, Oxford, Cambridge, Manchester, Edinburgh)
 
@@ -274,7 +274,7 @@ Essential variables for `/web-app/.env.local`:
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 
-# Portuguese Community Metrics
+# Portuguese-speaking community Metrics
 NEXT_PUBLIC_TOTAL_MEMBERS=750
 NEXT_PUBLIC_TOTAL_STUDENTS=2150
 NEXT_PUBLIC_UNIVERSITY_PARTNERSHIPS=8
@@ -302,7 +302,7 @@ NEXT_PUBLIC_AMBASSADOR_PRICE_MONTHLY=39.99
 **Unit Tests**: Jest with Testing Library for components and utilities
 **Integration Tests**: API routes and context integration  
 **E2E Tests**: Playwright across Chrome, Firefox, Safari, Mobile Chrome/Safari
-**Performance Tests**: Mobile UX validation and Portuguese community metrics
+**Performance Tests**: Mobile UX validation and Portuguese-speaking community metrics
 **Security Tests**: Hardcoding audits and vulnerability scanning
 
 Test files located in `/web-app/__tests__/` with organized subdirectories.
@@ -455,7 +455,7 @@ npx tsc --noEmit         # TypeScript compilation check
 
 **Geolocation**: PostGIS-powered business directory with Portuguese cultural areas pre-configured
 
-**Mobile UX**: Portuguese community is mobile-heavy, prioritize mobile experience
+**Mobile UX**: Portuguese-speaking community is mobile-heavy, prioritize mobile experience
 
 **Cultural Authenticity**: Platform specifically serves Portuguese speakers in London & UK, not a generic international platform
 

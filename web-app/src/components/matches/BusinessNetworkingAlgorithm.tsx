@@ -159,8 +159,8 @@ export default function BusinessNetworkingAlgorithm({
             </h3>
             <p className="text-sm text-primary-600">
               {language === "pt" 
-                ? "Sistema inteligente de correspondência profissional para a comunidade portuguesa"
-                : "Intelligent professional matching system for the Portuguese community"}
+                ? "Sistema inteligente de correspondência profissional para a comunidade de falantes de português"
+                : "Intelligent professional matching system for the Portuguese-speaking community"}
             </p>
           </div>
         </div>

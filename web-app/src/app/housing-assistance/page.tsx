@@ -61,7 +61,7 @@ const sampleListings: HousingListing[] = [
     type: "flatmate",
     title: "Portuguese Flatmate Wanted",
     description:
-      "Looking for Portuguese-speaking flatmate to share modern 2-bedroom flat near Vauxhall Portuguese community.",
+      "Looking for Portuguese-speaking flatmate to share modern 2-bedroom flat near Vauxhall Portuguese-speaking community.",
     location: "Vauxhall, SW8",
     price: 800,
     currency: "GBP",
@@ -92,7 +92,7 @@ const sampleListings: HousingListing[] = [
     postedDate: "2025-01-10",
     features: [
       "Well-connected area",
-      "Near Portuguese community center",
+      "Near Portuguese-speaking community center",
       "Balcony",
       "Parking space",
       "Portuguese neighbors",
@@ -160,7 +160,7 @@ export default function HousingAssistancePage() {
                     Habitação
                   </span>
                   <br />
-                  para a Comunidade Portuguesa
+                  para a Comunidade de Falantes de Português
                 </>
               ) : (
                 <>
@@ -168,7 +168,7 @@ export default function HousingAssistancePage() {
                     Housing Assistance
                   </span>
                   <br />
-                  for the Portuguese Community
+                  for the Portuguese-speaking community
                 </>
               )}
             </motion.h1>
@@ -421,8 +421,8 @@ export default function HousingAssistancePage() {
                       rows={4}
                       placeholder={
                         isPortuguese
-                          ? "Descreva a habitação, características especiais, proximidade à comunidade portuguesa..."
-                          : "Describe the housing, special features, proximity to Portuguese community..."
+                          ? "Descreva a habitação, características especiais, proximidade à comunidade de falantes de português..."
+                          : "Describe the housing, special features, proximity to Portuguese-speaking community..."
                       }
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     />
@@ -492,8 +492,8 @@ export default function HousingAssistancePage() {
           </h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             {isPortuguese
-              ? "Não está sozinho nesta jornada. A comunidade portuguesa está aqui para ajudar com conselhos, apoio e conexões."
-              : "You're not alone in this journey. The Portuguese community is here to help with advice, support, and connections."}
+              ? "Não está sozinho nesta jornada. A comunidade de falantes de português está aqui para ajudar com conselhos, apoio e conexões."
+              : "You're not alone in this journey. The Portuguese-speaking community is here to help with advice, support, and connections."}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
@@ -525,8 +525,8 @@ export default function HousingAssistancePage() {
               </h3>
               <p className="text-gray-600 text-sm">
                 {isPortuguese
-                  ? "Perto da comunidade portuguesa"
-                  : "Near Portuguese community"}
+                  ? "Perto da comunidade de falantes de português"
+                  : "Near Portuguese-speaking community"}
               </p>
             </div>
           </div>

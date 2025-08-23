@@ -41,16 +41,16 @@ export default function ConnectionNotificationBanner({ notifications }: Connecti
         pt: `🤝 Nova conexão portuguesa! Está a construir a sua comunidade em Londres.`
       },
       milestone: {
-        en: `🎉 Portuguese community milestone achieved! Your cultural network is growing.`,
-        pt: `🎉 Marco da comunidade portuguesa alcançado! A sua rede cultural está a crescer.`
+        en: `🎉 Portuguese-speaking community milestone achieved! Your cultural network is growing.`,
+        pt: `🎉 Marco da comunidade de falantes de português alcançado! A sua rede cultural está a crescer.`
       },
       upcoming_event_with_connections: {
         en: `📅 Portuguese cultural event coming up! Connect with fellow Lusitanians.`,
         pt: `📅 Evento cultural português a aproximar-se! Conecte-se com outros lusitanos.`
       },
       connection_activity: {
-        en: `👋 Portuguese community activity! Someone from your network is active.`,
-        pt: `👋 Atividade da comunidade portuguesa! Alguém da sua rede está ativo.`
+        en: `👋 Portuguese-speaking community activity! Someone from your network is active.`,
+        pt: `👋 Atividade da comunidade de falantes de português! Alguém da sua rede está ativo.`
       }
     }
     
@@ -117,8 +117,8 @@ export default function ConnectionNotificationBanner({ notifications }: Connecti
                       <div className="flex items-center mt-1 text-xs text-gray-500">
                         <span className="mr-1">🇵🇹</span>
                         {isPortuguese 
-                          ? 'Comunidade portuguesa a crescer' 
-                          : 'Portuguese community growing'
+                          ? 'Comunidade de falantes de português a crescer' 
+                          : 'Portuguese-speaking community growing'
                         }
                       </div>
                     )}

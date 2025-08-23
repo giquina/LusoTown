@@ -478,8 +478,8 @@ export function PlatformIntegrationProvider({
           language === "pt" ? "Bem-vindo ao LusoTown!" : "Welcome to LusoTown!",
         message:
           language === "pt"
-            ? "Explore nossa comunidade portuguesa e serviços premium em Londres"
-            : "Explore our Portuguese community and premium services in London",
+            ? "Explore nossa comunidade de falantes de português e serviços premium em Londres"
+            : "Explore our Portuguese-speaking community and premium services in London",
   actionType: "redirect",
   actionData: { url: ROUTES.myNetwork },
         priority: "medium",
@@ -533,7 +533,7 @@ export function PlatformIntegrationProvider({
           type: "event",
           title: isPortuguese
             ? "Eventos Comunitários Portugueses"
-            : "Portuguese Community Events",
+            : "Portuguese-speaking community Events",
           description: isPortuguese
             ? "Conecte-se com outros portugueses em eventos culturais exclusivos"
             : "Connect with other Portuguese speakers at exclusive cultural events",
@@ -669,8 +669,8 @@ export function PlatformIntegrationProvider({
         title: language === "pt" ? "Serviço Concluído!" : "Service Completed!",
         message:
           language === "pt"
-            ? "Explore eventos da comunidade portuguesa relacionados"
-            : "Explore related Portuguese community events",
+            ? "Explore eventos da comunidade de falantes de português relacionados"
+            : "Explore related Portuguese-speaking community events",
   actionType: "redirect",
   actionData: { url: ROUTES.events },
         priority: "medium",

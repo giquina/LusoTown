@@ -3,7 +3,7 @@
 > **Universal Single Source of Truth for AI Development**  
 > Compatible with Claude Code, Claude Desktop, Cursor, GitHub Copilot, Continue.dev, Replit Agent, and all AI development tools.
 
-This file serves as the **primary source of truth** for AI agents working on the LusoTown Portuguese community platform. All AI assistants should reference this file for consistent behavior across different IDEs and development environments.
+This file serves as the **primary source of truth** for AI agents working on the LusoTown Portuguese-speaking community platform. All AI assistants should reference this file for consistent behavior across different IDEs and development environments.
 
 ---
 
@@ -15,7 +15,7 @@ This file serves as the **primary source of truth** for AI agents working on the
 
 ## 🌍 Project Overview
 
-**LusoTown**: Production-ready bilingual Portuguese community platform serving London & UK Portuguese speakers with event discovery, group activities, premium matching, transport services, streaming platform, business directory, and university partnerships.
+**LusoTown**: Production-ready bilingual Portuguese-speaking community platform serving London & UK Portuguese speakers with event discovery, group activities, premium matching, transport services, streaming platform, business directory, and university partnerships.
 
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL, Simple Relay Server (SRS), OpenStreetMap/Leaflet, PostGIS, Twitter API, Stripe, React Context state management
 
@@ -259,7 +259,7 @@ className="bg-gray-500"    // ❌ Wrong!
 1. **Read existing code** - Understand patterns and conventions
 2. **Check config files** - See what's already centralized
 3. **Review translations** - Ensure bilingual support
-4. **Test mobile-first** - Portuguese community uses mobile heavily
+4. **Test mobile-first** - Portuguese-speaking community uses mobile heavily
 
 ### During Development
 1. **Follow patterns** - Use existing component structures
@@ -284,7 +284,7 @@ NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
 
-# Portuguese Community
+# Portuguese-speaking community
 NEXT_PUBLIC_TOTAL_MEMBERS=750
 NEXT_PUBLIC_TOTAL_STUDENTS=2150
 NEXT_PUBLIC_UNIVERSITY_PARTNERSHIPS=8
@@ -326,7 +326,7 @@ find . -name "*.tsx" | head -10                      # Sample components
 - **750+ community members**, **2,150+ Portuguese students**
 - **8 university partnerships** (UCL, King's, Imperial, LSE, Oxford, Cambridge, Manchester, Edinburgh)
 - **Never generic** - always Portuguese cultural context
-- **Mobile-first** - Portuguese community uses mobile heavily
+- **Mobile-first** - Portuguese-speaking community uses mobile heavily
 - **Production-ready** - 111+ pages, 421+ components
 
 ---
@@ -361,7 +361,7 @@ find . -name "*.tsx" | head -10                      # Sample components
 
 ## 🧠 AI AGENT ECOSYSTEM
 
-LusoTown uses a comprehensive system of specialized AI agents, each designed for specific aspects of platform development and maintenance. This ensures expert-level guidance across all areas of the Portuguese community platform.
+LusoTown uses a comprehensive system of specialized AI agents, each designed for specific aspects of platform development and maintenance. This ensures expert-level guidance across all areas of the Portuguese-speaking community platform.
 
 ---
 
@@ -371,7 +371,7 @@ LusoTown uses a comprehensive system of specialized AI agents, each designed for
 Ensure adherence to established rules and maintain platform consistency.
 
 ### 🚀 **Strategic & Business Agents** 
-Guide high-level decisions and growth strategies for Portuguese community.
+Guide high-level decisions and growth strategies for Portuguese-speaking community.
 
 ### 🔧 **Technical Excellence Agents**
 Maintain code quality, performance, and security standards.
@@ -426,7 +426,7 @@ Preserve Portuguese authenticity and community values.
 - Partnership opportunity evaluation
 
 **🧠 Key Capabilities**:
-- Feature prioritization framework with Portuguese community focus
+- Feature prioritization framework with Portuguese-speaking community focus
 - Technology strategy guidance and architecture decisions
 - Portuguese market intelligence and competitive analysis
 - Resource allocation optimization
@@ -468,7 +468,7 @@ Preserve Portuguese authenticity and community values.
 - Portuguese character encoding and display
 - Cultural element testing (colors, content, UX)
 - UK geographic and cultural context validation
-- Mobile-first experience (Portuguese community uses mobile heavily)
+- Mobile-first experience (Portuguese-speaking community uses mobile heavily)
 
 **Documentation**: `/web-app/src/agents/QualityAssuranceMentor.md`
 
@@ -476,7 +476,7 @@ Preserve Portuguese authenticity and community values.
 
 ### ⚡ **Agent: `performance-coach-advisor`**
 **Role**: Performance Optimization Specialist  
-**Purpose**: Monitors and optimizes platform performance to ensure fast, smooth user experience for the Portuguese community.
+**Purpose**: Monitors and optimizes platform performance to ensure fast, smooth user experience for the Portuguese-speaking community.
 
 **🎯 When to Use**:
 - Page loading performance issues
@@ -488,7 +488,7 @@ Preserve Portuguese authenticity and community values.
 
 **🧠 Key Capabilities**:
 - Performance monitoring and Core Web Vitals tracking
-- Mobile-first optimization for Portuguese community
+- Mobile-first optimization for Portuguese-speaking community
 - Bundle size and resource optimization
 - Portuguese platform-specific performance tuning
 - Performance education and best practices
@@ -507,7 +507,7 @@ Preserve Portuguese authenticity and community values.
 
 ### 🔒 **Agent: `security-guardian-advisor`**
 **Role**: Security & Privacy Protection Expert  
-**Purpose**: Protects platform and Portuguese community through comprehensive security, privacy compliance, and data protection guidance.
+**Purpose**: Protects platform and Portuguese-speaking community through comprehensive security, privacy compliance, and data protection guidance.
 
 **🎯 When to Use**:
 - New feature security reviews
@@ -520,7 +520,7 @@ Preserve Portuguese authenticity and community values.
 **🧠 Key Capabilities**:
 - Security vulnerability assessment and prevention
 - GDPR and UK data protection compliance
-- Portuguese community data protection
+- Portuguese-speaking community data protection
 - Security education and best practices
 - Incident response and threat mitigation
 - Authentication and authorization guidance
@@ -538,7 +538,7 @@ Preserve Portuguese authenticity and community values.
 
 ### 📈 **Agent: `growth-analytics-advisor`**
 **Role**: Data-Driven Growth Strategist  
-**Purpose**: Analyzes user behavior, drives data-driven growth strategies, and optimizes platform performance for Portuguese community expansion.
+**Purpose**: Analyzes user behavior, drives data-driven growth strategies, and optimizes platform performance for Portuguese-speaking community expansion.
 
 **🎯 When to Use**:
 - User acquisition optimization
@@ -549,7 +549,7 @@ Preserve Portuguese authenticity and community values.
 - Revenue optimization strategies
 
 **🧠 Key Capabilities**:
-- Portuguese community behavior analysis
+- Portuguese-speaking community behavior analysis
 - Growth strategy development and optimization
 - A/B testing framework with cultural considerations
 - Revenue and conversion optimization
@@ -557,7 +557,7 @@ Preserve Portuguese authenticity and community values.
 - User journey optimization
 
 **📊 Growth Metrics Focus**:
-- Portuguese community engagement rates
+- Portuguese-speaking community engagement rates
 - Subscription conversion optimization
 - Cultural feature adoption patterns
 - UK market expansion opportunities
@@ -604,8 +604,8 @@ Preserve Portuguese authenticity and community values.
 - **ALWAYS use "United Kingdom" or "UK" for community-wide references**
 - Examples:
   - ✅ "Connect with Portuguese speakers in the United Kingdom"
-  - ✅ "Portuguese community in the UK"
-  - ❌ "Portuguese community in London"
+  - ✅ "Portuguese-speaking community in the UK"
+  - ❌ "Portuguese-speaking community in London"
   - ❌ "Connect with Portuguese speakers in London"
 
 #### Specific Location Usage
@@ -848,7 +848,7 @@ Cultural Implementation:
 
 ## 🏆 LUSOTOWN EXCELLENCE STANDARDS
 
-### Our Commitment to the Portuguese Community
+### Our Commitment to the Portuguese-speaking community
 
 **Cultural Authenticity**: Every decision respects and celebrates Portuguese heritage and values.
 
@@ -862,11 +862,11 @@ Cultural Implementation:
 
 ### Success Metrics
 
-- **Zero Critical Bugs**: Portuguese community never experiences showstoppers
+- **Zero Critical Bugs**: Portuguese-speaking community never experiences showstoppers
 - **< 3 Second Load Times**: Fast, responsive experience on all devices  
 - **100% Bilingual**: Every feature works perfectly in English and Portuguese
 - **Cultural Authenticity**: No generic elements, everything Portuguese-focused
-- **Mobile-First**: Optimized for Portuguese community's mobile usage patterns
+- **Mobile-First**: Optimized for Portuguese-speaking community's mobile usage patterns
 
 ---
 

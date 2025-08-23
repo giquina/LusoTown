@@ -704,7 +704,7 @@ export function StreamPlayer({
           <p className="max-w-md">
             {t({ 
               pt: 'Este stream é exclusivo para membros premium da comunidade lusófona.',
-              en: 'This stream is exclusive to premium members of the Portuguese community.'
+              en: 'This stream is exclusive to premium members of the Portuguese-speaking community.'
             })}
           </p>
           <button className="bg-premium-600 hover:bg-premium-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
@@ -1968,7 +1968,7 @@ export class StreamingMonitor {
       : 0;
       
     if (portuguesePercentage < 0.7) {
-      console.warn('Portuguese community engagement below threshold:', portuguesePercentage);
+      console.warn('Portuguese-speaking community engagement below threshold:', portuguesePercentage);
       // Trigger cultural content promotion
     }
   }

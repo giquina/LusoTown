@@ -253,7 +253,7 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
                 Share Your Experience • Partilhe a Sua Experiência
               </button>
               <p className="text-sm text-gray-600 mt-2">
-                Help fellow Portuguese community members by sharing your honest feedback
+                Help fellow Portuguese-speaking community members by sharing your honest feedback
               </p>
             </div>
           ) : (
@@ -265,7 +265,7 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
               <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-lg border border-primary-100">
                 <h3 className="font-semibold text-gray-900 mb-2">Como foi a sua experiência? • How was your experience?</h3>
                 <p className="text-sm text-gray-700">
-                  Your honest feedback helps strengthen our Portuguese community in London
+                  Your honest feedback helps strengthen our Portuguese-speaking community in London
                 </p>
               </div>
 
@@ -340,8 +340,8 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
                 <textarea
                   value={formData.comment}
                   onChange={(e) => setFormData(prev => ({ ...prev, comment: e.target.value }))}
-                  placeholder="Share what made this event special for you and our Portuguese community... 
-Partilhe o que tornou este evento especial para si e para a nossa comunidade portuguesa..."
+                  placeholder="Share what made this event special for you and our Portuguese-speaking community... 
+Partilhe o que tornou este evento especial para si e para a nossa comunidade de falantes de português..."
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent resize-none"
                   rows={4}
                   minLength={20}
@@ -364,7 +364,7 @@ Partilhe o que tornou este evento especial para si e para a nossa comunidade por
                   className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
                 />
                 <label htmlFor="recommend" className="text-sm text-gray-700">
-                  I would recommend this event to fellow Portuguese community members
+                  I would recommend this event to fellow Portuguese-speaking community members
                 </label>
               </div>
 

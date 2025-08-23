@@ -170,8 +170,8 @@ const musicDanceExperiences: MusicDanceExperience[] = [
     },
     participationLevel: "participate",
     communityConnection: {
-      en: "Everyone joins in - families, children, elderly. It's the Portuguese community at its most joyful and welcoming.",
-      pt: "Todos participam - famílias, crianças, idosos. É a comunidade portuguesa no seu estado mais alegre e acolhedor."
+      en: "Everyone joins in - families, children, elderly. It's the Portuguese-speaking community at its most joyful and welcoming.",
+      pt: "Todos participam - famílias, crianças, idosos. É a comunidade de falantes de português no seu estado mais alegre e acolhedor."
     },
     soulFactors: ["Street celebrations", "Grilled sardines", "Community dancing", "Traditional decorations", "Infectious joy"]
   },

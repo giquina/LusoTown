@@ -66,7 +66,7 @@ export default function MessagingInterface({
       yesterday: 'Yesterday',
       reportMessage: 'Report message',
       backToConversations: 'Back to conversations',
-      safetyNotice: 'All messages are monitored for safety in our Portuguese community',
+      safetyNotice: 'All messages are monitored for safety in our Portuguese-speaking community',
       connectionType: {
         mutual_match: 'Connected through mutual match',
         event_based: 'Met at a community event',
@@ -92,7 +92,7 @@ export default function MessagingInterface({
       yesterday: 'Ontem',
       reportMessage: 'Reportar mensagem',
       backToConversations: 'Voltar às conversas',
-      safetyNotice: 'Todas as mensagens são monitorizadas para segurança na nossa comunidade portuguesa',
+      safetyNotice: 'Todas as mensagens são monitorizadas para segurança na nossa comunidade de falantes de português',
       connectionType: {
         mutual_match: 'Conectados através de match mútuo',
         event_based: 'Conheceram-se num evento da comunidade',

@@ -1,7 +1,7 @@
 # LusoTown Developer Setup Guide
 
 **Version**: 1.0.0  
-**Platform**: Premium Portuguese Community Platform  
+**Platform**: Premium Portuguese-speaking community Platform  
 **Last Updated**: August 2025
 
 ---
@@ -263,8 +263,8 @@ const { language, t } = useLanguage()
 // Bilingual content
 <h1 className="text-3xl font-bold">
   {language === 'pt' 
-    ? 'Bem-vindos à Comunidade Portuguesa' 
-    : 'Welcome to the Portuguese Community'
+    ? 'Bem-vindos à Comunidade de Falantes de Português' 
+    : 'Welcome to the Portuguese-speaking community'
   }
 </h1>
 
@@ -522,7 +522,7 @@ node scripts/validate-portuguese-content.js
 ### Community Support
 - **GitHub Issues** - Bug reports and feature requests
 - **Discord Community** - Developer discussions
-- **WhatsApp Support** - Portuguese community support
+- **WhatsApp Support** - Portuguese-speaking community support
 
 ---
 
@@ -539,10 +539,10 @@ node scripts/validate-portuguese-content.js
 - All code must support Portuguese/English bilingual interface
 - Mobile-first responsive design required
 - Premium features must include subscription gating
-- Cultural sensitivity and Portuguese community focus
+- Cultural sensitivity and Portuguese-speaking community focus
 - Comprehensive testing coverage required
 
 ---
 
-**Built with ❤️ for the Portuguese community in London & UK**  
+**Built with ❤️ for the Portuguese-speaking community in London & UK**  
 **Developer Setup Guide v1.0.0 | Last Updated: August 2025**

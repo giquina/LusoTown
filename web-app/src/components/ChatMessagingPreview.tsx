@@ -75,7 +75,7 @@ export default function ChatMessagingPreview() {
   const [showModerationFeatures, setShowModerationFeatures] = useState(false);
   const [viewerCount, setViewerCount] = useState(1247);
 
-  // Mock Portuguese community messages with cultural mixing
+  // Mock Portuguese-speaking community messages with cultural mixing
   const mockMessages: ChatMessage[] = useMemo(
     () => [
       {
@@ -323,8 +323,8 @@ export default function ChatMessagingPreview() {
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             {language === "pt"
-              ? "Conversas da Comunidade Portuguesa"
-              : "Portuguese Community Conversations"}
+              ? "Conversas da Comunidade de Falantes de Português"
+              : "Portuguese-speaking community Conversations"}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             {language === "pt"

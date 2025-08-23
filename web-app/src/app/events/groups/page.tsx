@@ -5,8 +5,8 @@ import GroupEventsPageClient from '@/components/GroupEventsPageClient'
 // Page metadata
 export const metadata: Metadata = {
   title: 'Portuguese Group Events & Tours in London | LusoTown',
-  description: 'Join Portuguese-speaking groups for cultural tours, museum visits, and London adventures. Connect with Portuguese community through organized group experiences.',
-  keywords: 'Portuguese groups London, Portuguese tours London, Portuguese cultural events, Portuguese community groups UK',
+  description: 'Join Portuguese-speaking groups for cultural tours, museum visits, and London adventures. Connect with Portuguese-speaking community through organized group experiences.',
+  keywords: 'Portuguese groups London, Portuguese tours London, Portuguese cultural events, Portuguese-speaking community groups UK',
   openGraph: {
     title: 'Portuguese Group Events & Tours in London | LusoTown',
     description: 'Join Portuguese-speaking groups for cultural tours, museum visits, and London adventures.',
@@ -73,7 +73,7 @@ const jsonLd = {
   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
   eventStatus: 'https://schema.org/EventScheduled',
   inLanguage: ['en', 'pt'],
-  keywords: ['Portuguese community', 'London tours', 'cultural events', 'group activities'],
+  keywords: ['Portuguese-speaking community', 'London tours', 'cultural events', 'group activities'],
   offers: {
     '@type': 'AggregateOffer',
     lowPrice: 25,

@@ -20,7 +20,7 @@ describe('LusoTown Testing Framework Setup', () => {
   })
 
   it('should support Portuguese text', () => {
-    const portugueseText = 'Bem-vindo à comunidade portuguesa em Londres'
+    const portugueseText = 'Bem-vindo à comunidade de falantes de português em Londres'
     expect(portugueseText).toContain('à')
     expect(portugueseText).toContain('Bem-vindo')
     expect(portugueseText.length).toBeGreaterThan(0)

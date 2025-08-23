@@ -184,7 +184,7 @@ const generatePersonalizedPosts = (followedEntities: FollowableEntity[]): FeedPo
     },
     {
       id: 'post-8',
-      content: 'Procuro apartamento T1/T2 na área portuguesa de Londres (Stockwell/Vauxhall). Preferência por propriedades perto da comunidade portuguesa. Sou profissional, não fumador, referências disponíveis! 🏠',
+      content: 'Procuro apartamento T1/T2 na área portuguesa de Londres (Stockwell/Vauxhall). Preferência por propriedades perto da comunidade de falantes de português. Sou profissional, não fumador, referências disponíveis! 🏠',
       createdAt: '1 day ago',
       likes: 23,
       comments: 11,
@@ -644,8 +644,8 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
               </h3>
               <p className="text-sm text-gray-600">
                 {isPortuguese 
-                  ? 'Serviços da comunidade portuguesa verificada'
-                  : 'Services from verified Portuguese community'
+                  ? 'Serviços da comunidade de falantes de português verificada'
+                  : 'Services from verified Portuguese-speaking community'
                 }
               </p>
             </div>

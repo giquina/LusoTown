@@ -216,7 +216,7 @@ class IntelligentDocumentationOrchestrator extends EventEmitter {
     // Share project context
     this.sharedDataStore.set('project-context', {
       name: 'LusoTown',
-      focus: 'Portuguese community platform',
+      focus: 'Portuguese-speaking community platform',
       technologies: ['Next.js', 'TypeScript', 'Tailwind', 'Supabase'],
       keyFeatures: ['bilingual', 'cultural-authentic', 'mobile-first']
     });
@@ -393,7 +393,7 @@ class IntelligentDocumentationOrchestrator extends EventEmitter {
   // ====================
 
   async detectPortugueseFeature(system, context) {
-    // Detect if recent changes involve Portuguese community features
+    // Detect if recent changes involve Portuguese-speaking community features
     if (system.scanCulturalConsistency) {
       await system.scanCulturalConsistency();
       return { detected: true, type: 'portuguese-feature' };
@@ -473,7 +473,7 @@ class IntelligentDocumentationOrchestrator extends EventEmitter {
     const notifications = {
       'notifyTeams': {
         title: 'Portuguese Feature Development Complete',
-        description: 'New Portuguese community feature has been documented and validated',
+        description: 'New Portuguese-speaking community feature has been documented and validated',
         type: 'cultural',
         priority: 'high'
       },
@@ -794,7 +794,7 @@ class IntelligentDocumentationOrchestrator extends EventEmitter {
   }
 
   async analyzePortugueseIntegration() {
-    // Analyze Portuguese community-specific metrics across all systems
+    // Analyze Portuguese-speaking community-specific metrics across all systems
     const portugueseMetrics = {
       culturalConsistencyScore: 85, // Simplified
       bilingualCoverage: 90, // Simplified
@@ -882,7 +882,7 @@ ${Object.entries(analytics.workflows).map(([id, workflow]) => `
 - **Last Execution:** ${workflow.lastExecution}
 `).join('')}
 
-## 🇵🇹 Portuguese Community Integration
+## 🇵🇹 Portuguese-speaking community Integration
 
 - **Cultural Consistency Score:** ${analytics.portuguese.culturalConsistencyScore}%
 - **Bilingual Coverage:** ${analytics.portuguese.bilingualCoverage}%

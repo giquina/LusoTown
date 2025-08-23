@@ -36,7 +36,7 @@ export default function SafetyCenter() {
       color: 'secondary'
     },
     {
-      title: isPortuguese ? 'Verificação Comunitária Portuguesa' : 'Portuguese Community Verification',
+      title: isPortuguese ? 'Verificação Comunitária Portuguesa' : 'Portuguese-speaking community Verification',
       description: isPortuguese ? 
         'Verificação de perfil assegura conexões genuínas com falantes de português em Londres' :
         'Profile verification ensures genuine connections with Portuguese speakers in London',
@@ -211,12 +211,12 @@ export default function SafetyCenter() {
                   <>
                     Centro de Segurança<br />
                     <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
-                      Comunidade Portuguesa
+                      Comunidade de Falantes de Português
                     </span>
                   </>
                 ) : (
                   <>
-                    Portuguese Community<br />
+                    Portuguese-speaking community<br />
                     <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
                       Safety Center
                     </span>
@@ -226,12 +226,12 @@ export default function SafetyCenter() {
               
               <p className="text-xl sm:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8">
                 {isPortuguese ? 
-                  'O LusoTown foi construído com a segurança da comunidade portuguesa no centro. Aprenda sobre as nossas funcionalidades de segurança abrangentes, obtenha dicas para encontros seguros, e aceda a recursos para navegar amizades com confiança em Londres.' :
-                  'LusoTown is built with Portuguese community safety at its core. Learn about our comprehensive safety features, get tips for safe meetups, and access resources to help you navigate friendships with confidence in London.'
+                  'O LusoTown foi construído com a segurança da comunidade de falantes de português no centro. Aprenda sobre as nossas funcionalidades de segurança abrangentes, obtenha dicas para encontros seguros, e aceda a recursos para navegar amizades com confiança em Londres.' :
+                  'LusoTown is built with Portuguese-speaking community safety at its core. Learn about our comprehensive safety features, get tips for safe meetups, and access resources to help you navigate friendships with confidence in London.'
                 }
               </p>
               
-              {/* Portuguese Community Trust Elements */}
+              {/* Portuguese-speaking community Trust Elements */}
               <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-8">
                 <div className="flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 border border-secondary-200/40">
                   <HomeIcon className="w-4 h-4 mr-2 text-secondary-500" />
@@ -313,7 +313,7 @@ export default function SafetyCenter() {
                       </div>
                     </div>
                     
-                    {/* Portuguese Community Emergency Resources */}
+                    {/* Portuguese-speaking community Emergency Resources */}
                     <div className="mt-8 bg-gradient-to-r from-secondary-50/60 via-accent-50/40 to-coral-50/40 rounded-2xl p-6">
                       <h3 className="font-bold text-gray-800 mb-4 text-lg flex items-center">
                         <GlobeAltIcon className="w-5 h-5 mr-2 text-secondary-600" />
@@ -366,8 +366,8 @@ export default function SafetyCenter() {
                 
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                   {isPortuguese ? 
-                    'Funcionalidades de Segurança da Comunidade Portuguesa' :
-                    'Portuguese Community Safety Features'
+                    'Funcionalidades de Segurança da Comunidade de Falantes de Português' :
+                    'Portuguese-speaking community Safety Features'
                   }
                 </h2>
                 <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto">

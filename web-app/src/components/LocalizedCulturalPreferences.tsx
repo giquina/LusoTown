@@ -293,7 +293,7 @@ export default function LocalizedCulturalPreferences({
                   <h4 className="font-medium text-gray-900">{feature}</h4>
                 </div>
                 <p className="text-sm text-gray-600">
-                  Active in {currentRegion.name} Portuguese community
+                  Active in {currentRegion.name} Portuguese-speaking community
                 </p>
               </div>
             ))}

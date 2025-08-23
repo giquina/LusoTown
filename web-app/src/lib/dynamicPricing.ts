@@ -480,7 +480,7 @@ export class DynamicPricingEngine {
       'GBP': 1,
       'EUR': 1.17,
       'USD': 1.25,
-      'BRL': 6.5, // Brazilian Real for Portuguese community
+      'BRL': 6.5, // Brazilian Real for Portuguese-speaking community
       'MXN': 25.0 // Mexican Peso
     }
 
@@ -591,7 +591,7 @@ export const portugueseMarketSegments: MarketSegment[] = [
   }
 ]
 
-// Dynamic pricing based on Portuguese community preferences and spending patterns
+// Dynamic pricing based on Portuguese-speaking community preferences and spending patterns
 export class PortuguesePricingEngine {
   
   // Calculate optimized pricing for Portuguese market
@@ -624,7 +624,7 @@ export class PortuguesePricingEngine {
     }
   }
   
-  // Special promotional pricing for Portuguese community events
+  // Special promotional pricing for Portuguese-speaking community events
   static getPromotionalPricing(tier: import('./supabase').MembershipTier, promoCode: string): PricingConfig | null {
     const baseConfig = this.calculateOptimizedPricing(tier)
     
@@ -632,7 +632,7 @@ export class PortuguesePricingEngine {
       'LUSO2025': {
         discount: 25,
         validUntil: new Date('2025-12-31'),
-        description: 'New Year Portuguese Community Special'
+        description: 'New Year Portuguese-speaking community Special'
       },
       'STUDENT50': {
         discount: 50,
@@ -734,7 +734,7 @@ export class PortuguesePricingEngine {
       if (userProfile.age > 45) return 'business'
     }
     
-    // Default professional tier for most Portuguese community members
+    // Default professional tier for most Portuguese-speaking community members
     return 'professional'
   }
   

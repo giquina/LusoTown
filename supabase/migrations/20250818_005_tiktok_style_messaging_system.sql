@@ -1,6 +1,6 @@
 -- LusoTown TikTok-Style Messaging System
 -- Created: 2025-08-18
--- Purpose: Comprehensive messaging system with Portuguese community focus
+-- Purpose: Comprehensive messaging system with Portuguese-speaking community focus
 
 -- Create conversations table for one-on-one matches messaging
 CREATE TABLE IF NOT EXISTS public.conversations (
@@ -214,7 +214,7 @@ INSERT INTO public.conversation_starters (category, prompt_en, prompt_pt, cultur
     ('holidays', 'How do you celebrate Portuguese holidays like Santos Populares in London?', 'Como celebra as festas portuguesas como os Santos Populares em Londres?', 'Traditional June festivals'),
     ('family', 'Do you visit Portugal often to see family?', 'Visita Portugal frequentemente para ver a família?', 'Connection to homeland'),
     ('work', 'What brings you to London professionally?', 'O que o trouxe profissionalmente para Londres?', 'Professional networking opportunity'),
-    ('community', 'How important is staying connected to the Portuguese community here?', 'Que importância tem manter-se ligado à comunidade portuguesa aqui?', 'Community belonging and identity');
+    ('community', 'How important is staying connected to the Portuguese-speaking community here?', 'Que importância tem manter-se ligado à comunidade de falantes de português aqui?', 'Community belonging and identity');
 
 -- Function to auto-expire conversations after 7 days without event booking
 CREATE OR REPLACE FUNCTION expire_inactive_conversations()

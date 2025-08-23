@@ -1,6 +1,6 @@
 /**
  * AI Notification System Test Suite
- * Portuguese Community Platform - Bilingual Testing
+ * Portuguese-speaking community Platform - Bilingual Testing
  */
 
 import { aiNotificationEngine } from '@/services/AINotificationEngine'
@@ -259,7 +259,7 @@ export async function testCulturalPersonalization(): Promise<void> {
 export async function runAllAITests(): Promise<void> {
   console.log('🚀 Starting Comprehensive AI Notification System Tests')
   console.log('📅 Date:', new Date().toISOString())
-  console.log('🇵🇹 Platform: LusoTown Portuguese Community')
+  console.log('🇵🇹 Platform: LusoTown Portuguese-speaking community')
   console.log('================================================\n')
   
   try {
@@ -267,7 +267,7 @@ export async function runAllAITests(): Promise<void> {
     await testCulturalPersonalization()
     
     console.log('\n🏆 ALL TESTS PASSED SUCCESSFULLY!')
-    console.log('🤖 AI Notification System is ready for Portuguese community!')
+    console.log('🤖 AI Notification System is ready for Portuguese-speaking community!')
     
   } catch (error) {
     console.error('\n💥 TEST SUITE FAILED:', error)

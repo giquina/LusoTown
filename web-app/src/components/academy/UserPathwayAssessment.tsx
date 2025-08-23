@@ -214,13 +214,13 @@ export default function UserPathwayAssessment({
       id: "social",
       name: "Social Explorer",
       namePortuguese: "Explorador Social",
-      description: "Perfect for connecting with Portuguese community socially",
+      description: "Perfect for connecting with Portuguese-speaking community socially",
       descriptionPortuguese:
-        "Perfeito para se conectar socialmente com a comunidade portuguesa",
+        "Perfeito para se conectar socialmente com a comunidade de falantes de português",
       detailedDescription:
-        "Discover dating opportunities, cultural events, community connections, and build meaningful relationships within London's Portuguese community.",
+        "Discover dating opportunities, cultural events, community connections, and build meaningful relationships within London's Portuguese-speaking community.",
       detailedDescriptionPortuguese:
-        "Descubra oportunidades de encontros, eventos culturais, conexões comunitárias e construa relacionamentos significativos na comunidade portuguesa de Londres.",
+        "Descubra oportunidades de encontros, eventos culturais, conexões comunitárias e construa relacionamentos significativos na comunidade de falantes de português de Londres.",
       icon: Heart,
       color: "from-pink-500 to-red-500",
       services: [

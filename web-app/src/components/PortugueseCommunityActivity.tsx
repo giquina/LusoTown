@@ -380,7 +380,7 @@ const PortugueseCommunityActivity: React.FC = () => {
               <p className="text-gray-600 text-lg">
                 {language === "pt" 
                   ? "Últimas atualizações da nossa comunidade lusófona"
-                  : "Latest updates from our Portuguese community"}
+                  : "Latest updates from our Portuguese-speaking community"}
               </p>
             </div>
             <div className="text-right bg-white rounded-2xl p-6 shadow-lg border border-primary-200">

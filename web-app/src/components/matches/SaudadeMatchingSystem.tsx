@@ -182,11 +182,11 @@ const saudadeAssessmentQuestions: SaudadeAssessment[] = [
       { id: 'cook_portuguese', labelEn: 'Cook traditional Portuguese meals', labelPt: 'Cozinhar refeições tradicionais portuguesas', value: 8, emoji: '👩‍🍳' },
       { id: 'call_family', labelEn: 'Long phone calls with family back home', labelPt: 'Longas chamadas com a família em casa', value: 9, emoji: '📱' },
       { id: 'listen_fado', labelEn: 'Listen to Fado and cry it out', labelPt: 'Ouvir fado e chorar', value: 8, emoji: '😢' },
-      { id: 'portuguese_community', labelEn: 'Seek Portuguese community events', labelPt: 'Procurar eventos da comunidade portuguesa', value: 7, emoji: '👥' },
+      { id: 'portuguese_community', labelEn: 'Seek Portuguese-speaking community events', labelPt: 'Procurar eventos da comunidade de falantes de português', value: 7, emoji: '👥' },
       { id: 'visit_portugal', labelEn: 'Plan visits to Portugal/homeland', labelPt: 'Planear visitas a Portugal/terra natal', value: 9, emoji: '✈️' },
       { id: 'portuguese_media', labelEn: 'Watch Portuguese TV and films', labelPt: 'Ver TV e filmes portugueses', value: 6, emoji: '📺' },
       { id: 'write_journal', labelEn: 'Write in Portuguese/keep diary', labelPt: 'Escrever em português/manter diário', value: 5, emoji: '✍️' },
-      { id: 'talk_portuguese_friends', labelEn: 'Talk with other Portuguese friends', labelPt: 'Conversar com outros amigos portugueses', value: 8, emoji: '💬' },
+      { id: 'talk_portuguese_friends', labelEn: 'Talk with other Portuguese-speaking friends', labelPt: 'Conversar com outros amigos portugueses', value: 8, emoji: '💬' },
       { id: 'portuguese_markets', labelEn: 'Visit Portuguese shops and markets', labelPt: 'Visitar lojas e mercados portugueses', value: 7, emoji: '🛒' },
       { id: 'embrace_sadness', labelEn: 'Embrace the sadness as part of me', labelPt: 'Abraçar a tristeza como parte de mim', value: 6, emoji: '🤗' },
       { id: 'share_culture', labelEn: 'Share Portuguese culture with others', labelPt: 'Partilhar cultura portuguesa com outros', value: 7, emoji: '🎭' },
@@ -269,7 +269,7 @@ const saudadeAssessmentQuestions: SaudadeAssessment[] = [
       { id: 'share_traditions', labelEn: 'Partner to maintain traditions together', labelPt: 'Parceiro(a) para manter tradições juntos', value: 9, emoji: '🎭' },
       { id: 'portuguese_children', labelEn: 'Raise Portuguese-speaking children together', labelPt: 'Criar filhos que falam português juntos', value: 8, emoji: '👶' },
       { id: 'homeland_visits', labelEn: 'Someone to visit Portugal/homeland with', labelPt: 'Alguém com quem visitar Portugal/terra natal', value: 8, emoji: '✈️' },
-      { id: 'community_building', labelEn: 'Build Portuguese community together in London', labelPt: 'Construir comunidade portuguesa juntos em Londres', value: 7, emoji: '🏗️' },
+      { id: 'community_building', labelEn: 'Build Portuguese-speaking community together in London', labelPt: 'Construir comunidade de falantes de português juntos em Londres', value: 7, emoji: '🏗️' },
       { id: 'cultural_healing', labelEn: 'Help heal cultural loneliness', labelPt: 'Ajudar a curar a solidão cultural', value: 9, emoji: '💚' },
       { id: 'integration_balance', labelEn: 'Balance integration with heritage preservation', labelPt: 'Equilibrar integração com preservação da herança', value: 7, emoji: '⚖️' },
       { id: 'independence', labelEn: 'Mostly independent, light cultural connection', labelPt: 'Maioritariamente independente, ligação cultural leve', value: 3, emoji: '🦋' },
@@ -559,7 +559,7 @@ export default function SaudadeMatchingSystem({
       activities.push(
         lang === 'pt'
           ? 'Participação ativa em eventos comunitários portugueses'
-          : 'Active participation in Portuguese community events'
+          : 'Active participation in Portuguese-speaking community events'
       );
     }
 

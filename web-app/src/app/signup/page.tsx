@@ -33,7 +33,7 @@ import toast from "react-hot-toast";
 const benefits = [
   {
     icon: CheckIcon,
-    text: "Free to join the Portuguese community",
+    text: "Free to join the Portuguese-speaking community",
     subtext: "No membership fees or barriers to participation",
   },
   {
@@ -375,7 +375,7 @@ function SignupInner() {
                   </span>{" "}
                   to Join the{" "}
                   <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                    Portuguese Community
+                    Portuguese-speaking community
                   </span>
                 </h1>
 
@@ -724,13 +724,13 @@ function SignupInner() {
                       />
                     </div>
 
-                    {/* Portuguese Community Onboarding */}
+                    {/* Portuguese-speaking community Onboarding */}
                     <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-6 rounded-xl border border-primary-100">
                       <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
                         🇵🇹{" "}
                         {t(
                           "signup.portuguese-community",
-                          "Join the Portuguese Community"
+                          "Join the Portuguese-speaking community"
                         )}
                       </h3>
 

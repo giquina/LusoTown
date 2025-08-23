@@ -1,4 +1,4 @@
-/* Premium Accessibility Enhancements for LusoTown Portuguese Community */
+/* Premium Accessibility Enhancements for LusoTown Portuguese-speaking community */
 
 /* High-End Accessibility Color System */
 :root {
@@ -62,7 +62,7 @@
 
 /* Premium High Contrast Mode */
 .high-contrast {
-  /* Enhanced contrast for Portuguese community */
+  /* Enhanced contrast for Portuguese-speaking community */
   --primary-50: #ffffff;
   --primary-100: #f5f5f5;
   --primary-500: var(--a11y-portuguese-red-high);
@@ -160,7 +160,7 @@
   box-shadow: var(--a11y-focus-ring-secondary), 0 8px 32px rgba(0, 168, 89, 0.3) !important;
 }
 
-/* Skip Links for Portuguese Community */
+/* Skip Links for Portuguese-speaking community */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -311,7 +311,7 @@
   }
 }
 
-/* Portuguese Community Announcements */
+/* Portuguese-speaking community Announcements */
 .portuguese-announcement[aria-live] {
   position: fixed;
   bottom: 1rem;
@@ -422,7 +422,7 @@
   isolation: isolate;
 }
 
-/* Portuguese Community Theming */
+/* Portuguese-speaking community Theming */
 .portuguese-heritage-a11y {
   --focus-color: var(--a11y-portuguese-red-high);
   --active-color: var(--a11y-portuguese-green-high);

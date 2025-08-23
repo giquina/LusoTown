@@ -78,7 +78,7 @@ INSERT INTO chauffeur_services (service_name, service_type, description, base_ho
 ('Executive Transport', 'executive', 'Premium executive transport service for business meetings and corporate events', 65.00, 2, 450.00, 8, 25.00, 1.2, 'GBP'),
 ('Tourism & Sightseeing', 'tourism', 'Guided chauffeur service for Portuguese cultural sites and tourist attractions in London', 55.00, 3, 400.00, 8, 20.00, 1.15, 'GBP'),
 ('Airport Transfer Premium', 'airport', 'Premium airport transfer with flight monitoring and meet & greet service', 70.00, 1, NULL, 0, 30.00, 1.25, 'GBP'),
-('Event Transport', 'events', 'Specialized transport for cultural events, celebrations, and Portuguese community gatherings', 60.00, 2, 420.00, 8, 25.00, 1.3, 'GBP'),
+('Event Transport', 'events', 'Specialized transport for cultural events, celebrations, and Portuguese-speaking community gatherings', 60.00, 2, 420.00, 8, 25.00, 1.3, 'GBP'),
 ('Business Travel Plus', 'business', 'Professional business travel with Portuguese-speaking chauffeurs', 65.00, 2, 480.00, 8, 25.00, 1.2, 'GBP'),
 ('Personal Service Deluxe', 'personal', 'Personalized chauffeur service for shopping, dining, and leisure activities', 50.00, 2, 350.00, 8, 20.00, 1.1, 'GBP');
 

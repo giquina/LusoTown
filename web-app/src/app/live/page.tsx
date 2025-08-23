@@ -69,8 +69,8 @@ const mockLiveStreams = [
   },
   {
     id: "stream-3",
-    title: "London Portuguese Community Chat",
-    titlePt: "Chat da Comunidade Portuguesa de Londres",
+    title: "London Portuguese-speaking community Chat",
+    titlePt: "Chat da Comunidade de Falantes de Português de Londres",
     streamer: "Beatriz Costa",
     category: "Community",
     categoryPt: "Comunidade", 
@@ -201,8 +201,8 @@ export default function LivePage() {
                 <br />
                 <span className="text-2xl md:text-3xl text-white/90">
                   {isPortuguese 
-                    ? "Streaming da Comunidade Portuguesa"
-                    : "Portuguese Community Streaming"
+                    ? "Streaming da Comunidade de Falantes de Português"
+                    : "Portuguese-speaking community Streaming"
                   }
                 </span>
               </motion.h1>
@@ -214,8 +214,8 @@ export default function LivePage() {
                 className="text-xl text-white/90 mb-8 max-w-3xl mx-auto"
               >
                 {isPortuguese
-                  ? "Assista transmissões ao vivo da comunidade portuguesa no Reino Unido. Música, negócios, cultura e muito mais."
-                  : "Watch live streams from the Portuguese community in the UK. Music, business, culture, and more."
+                  ? "Assista transmissões ao vivo da comunidade de falantes de português no Reino Unido. Música, negócios, cultura e muito mais."
+                  : "Watch live streams from the Portuguese-speaking community in the UK. Music, business, culture, and more."
                 }
               </motion.p>
 
@@ -273,8 +273,8 @@ export default function LivePage() {
             </h2>
             <p className="text-xl text-gray-600">
               {isPortuguese 
-                ? "Conecte-se com a comunidade portuguesa através de conteúdo ao vivo"
-                : "Connect with the Portuguese community through live content"
+                ? "Conecte-se com a comunidade de falantes de português através de conteúdo ao vivo"
+                : "Connect with the Portuguese-speaking community through live content"
               }
             </p>
           </div>
@@ -391,8 +391,8 @@ export default function LivePage() {
               </h2>
               <p className="text-xl mb-8 max-w-3xl mx-auto">
                 {isPortuguese
-                  ? "Partilhe o seu talento, construa uma audiência e ganhe dinheiro fazendo streaming para a comunidade portuguesa."
-                  : "Share your talent, build an audience, and earn money streaming to the Portuguese community."
+                  ? "Partilhe o seu talento, construa uma audiência e ganhe dinheiro fazendo streaming para a comunidade de falantes de português."
+                  : "Share your talent, build an audience, and earn money streaming to the Portuguese-speaking community."
                 }
               </p>
               

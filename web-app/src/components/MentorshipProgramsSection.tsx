@@ -23,7 +23,7 @@ export default function MentorshipProgramsSection() {
       icon: BriefcaseIcon,
       title: t('mentorship.programs.professional.title', 'Professional Integration Mentorship'),
       subtitle: t('mentorship.programs.professional.subtitle', 'Career advancement with Portuguese professionals'),
-      description: t('mentorship.programs.professional.description', 'Connect with established Portuguese professionals across finance, healthcare, hospitality, construction, and technology sectors. Get industry-specific guidance, CV reviews, interview practice, and business networking within the Portuguese community.'),
+      description: t('mentorship.programs.professional.description', 'Connect with established Portuguese professionals across finance, healthcare, hospitality, construction, and technology sectors. Get industry-specific guidance, CV reviews, interview practice, and business networking within the Portuguese-speaking community.'),
       features: [
         t('mentorship.programs.professional.feature1', 'Industry-specific career guidance'),
         t('mentorship.programs.professional.feature2', 'CV review and interview preparation'),
@@ -129,7 +129,7 @@ export default function MentorshipProgramsSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight"
             >
-              {t('mentorship.programs.title', 'Portuguese Community')}
+              {t('mentorship.programs.title', 'Portuguese-speaking community')}
               <br />
               <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
                 {t('mentorship.programs.title.highlight', 'Mentorship Programs')}

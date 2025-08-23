@@ -115,8 +115,8 @@ export default function ProgressiveUserJourney({
       id: 'discovery',
       name: 'Discovery & Entry',
       namePortuguese: 'Descoberta e Entrada',
-      description: 'Welcome to the Portuguese community in London! Start exploring our services and connect with fellow Portuguese speakers.',
-      descriptionPortuguese: 'Bem-vindo à comunidade portuguesa em Londres! Comece a explorar os nossos serviços e conecte-se com outros falantes de português.',
+      description: 'Welcome to the Portuguese-speaking community in London! Start exploring our services and connect with fellow Portuguese speakers.',
+      descriptionPortuguese: 'Bem-vindo à comunidade de falantes de português em Londres! Comece a explorar os nossos serviços e conecte-se com outros falantes de português.',
       icon: MapPinIcon,
       color: 'secondary',
       progress: calculateDiscoveryProgress(),
@@ -227,7 +227,7 @@ export default function ProgressiveUserJourney({
       benefits: [
         'Build meaningful connections at cultural events',
         'Access premium transport with Portuguese-speaking staff',
-        'Join location-based Portuguese community groups'
+        'Join location-based Portuguese-speaking community groups'
       ],
       benefitsPortuguese: [
         'Construa conexões significativas em eventos culturais',
@@ -239,8 +239,8 @@ export default function ProgressiveUserJourney({
       id: 'investment',
       name: 'Premium Investment',
       namePortuguese: 'Investimento Premium',
-      description: 'Unlock the full Portuguese community experience with premium membership.',
-      descriptionPortuguese: 'Desbloqueie a experiência completa da comunidade portuguesa com a subscrição premium.',
+      description: 'Unlock the full Portuguese-speaking community experience with premium membership.',
+      descriptionPortuguese: 'Desbloqueie a experiência completa da comunidade de falantes de português com a subscrição premium.',
       icon: StarIcon,
       color: 'premium',
       progress: calculateInvestmentProgress(),
@@ -276,8 +276,8 @@ export default function ProgressiveUserJourney({
           id: 'get-housing-help',
           title: 'Get Housing Assistance',
           titlePortuguese: 'Obter Assistência Habitacional',
-          description: 'Access housing support specifically for the Portuguese community',
-          descriptionPortuguese: 'Acesse apoio habitacional especificamente para a comunidade portuguesa',
+          description: 'Access housing support specifically for the Portuguese-speaking community',
+          descriptionPortuguese: 'Acesse apoio habitacional especificamente para a comunidade de falantes de português',
           href: '/housing-assistance',
           type: 'tertiary',
           estimatedTime: '20 minutes',
@@ -303,8 +303,8 @@ export default function ProgressiveUserJourney({
       id: 'advocacy',
       name: 'Community Advocacy',
       namePortuguese: 'Advocacia Comunitária',
-      description: 'Become a Portuguese community leader and help others discover LusoTown.',
-      descriptionPortuguese: 'Torne-se um líder da comunidade portuguesa e ajude outros a descobrir o LusoTown.',
+      description: 'Become a Portuguese-speaking community leader and help others discover LusoTown.',
+      descriptionPortuguese: 'Torne-se um líder da comunidade de falantes de português e ajude outros a descobrir o LusoTown.',
       icon: MegaphoneIcon,
       color: 'coral',
       progress: calculateAdvocacyProgress(),
@@ -312,10 +312,10 @@ export default function ProgressiveUserJourney({
       nextActions: [
         {
           id: 'refer-friends',
-          title: 'Refer Portuguese Friends',
+          title: 'Refer Portuguese-speaking Friends',
           titlePortuguese: 'Indicar Amigos Portugueses',
-          description: 'Help grow the Portuguese community by inviting friends and family',
-          descriptionPortuguese: 'Ajude a crescer a comunidade portuguesa convidando amigos e família',
+          description: 'Help grow the Portuguese-speaking community by inviting friends and family',
+          descriptionPortuguese: 'Ajude a crescer a comunidade de falantes de português convidando amigos e família',
           href: '/referrals',
           type: 'primary',
           estimatedTime: '10 minutes',
@@ -340,8 +340,8 @@ export default function ProgressiveUserJourney({
           id: 'share-story',
           title: 'Share Your Success Story',
           titlePortuguese: 'Partilhar a Sua História de Sucesso',
-          description: 'Inspire others with your Portuguese community journey',
-          descriptionPortuguese: 'Inspire outros com a sua jornada na comunidade portuguesa',
+          description: 'Inspire others with your Portuguese-speaking community journey',
+          descriptionPortuguese: 'Inspire outros com a sua jornada na comunidade de falantes de português',
           href: '/success-stories',
           type: 'tertiary',
           estimatedTime: '30 minutes',
@@ -351,16 +351,16 @@ export default function ProgressiveUserJourney({
         }
       ],
       benefits: [
-        'Become a recognized Portuguese community leader',
+        'Become a recognized Portuguese-speaking community leader',
         'Earn rewards for successful referrals',
         'Help preserve and share Portuguese culture',
-        'Build a legacy in the London Portuguese community'
+        'Build a legacy in the London Portuguese-speaking community'
       ],
       benefitsPortuguese: [
-        'Torne-se um líder reconhecido da comunidade portuguesa',
+        'Torne-se um líder reconhecido da comunidade de falantes de português',
         'Ganhe recompensas por indicações bem-sucedidas',
         'Ajude a preservar e partilhar a cultura portuguesa',
-        'Construa um legado na comunidade portuguesa de Londres'
+        'Construa um legado na comunidade de falantes de português de Londres'
       ]
     }
   ], [calculateDiscoveryProgress, calculateEngagementProgress, calculateInvestmentProgress, calculateAdvocacyProgress])
@@ -481,12 +481,12 @@ export default function ProgressiveUserJourney({
       {/* Header */}
       <div className="text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">
-          {isPortuguese ? 'Sua Jornada na Comunidade Portuguesa' : 'Your Portuguese Community Journey'}
+          {isPortuguese ? 'Sua Jornada na Comunidade de Falantes de Português' : 'Your Portuguese-speaking community Journey'}
         </h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
           {isPortuguese 
-            ? 'Descubra, conecte-se e torne-se parte da vibrante comunidade portuguesa em Londres. Cada passo aproxima-o mais de casa.'
-            : 'Discover, connect, and become part of London\'s vibrant Portuguese community. Each step brings you closer to home.'
+            ? 'Descubra, conecte-se e torne-se parte da vibrante comunidade de falantes de português em Londres. Cada passo aproxima-o mais de casa.'
+            : 'Discover, connect, and become part of London\'s vibrant Portuguese-speaking community. Each step brings you closer to home.'
           }
         </p>
       </div>

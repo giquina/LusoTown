@@ -51,16 +51,16 @@ interface PortugueseVoiceSettings {
 // Portuguese accessibility texts for screen readers
 const PORTUGUESE_ACCESSIBILITY_TEXTS = {
   'pt-PT': {
-    welcome: 'Bem-vindo à LusoTown, a comunidade portuguesa em Londres',
-    navigation: 'Navegação principal da comunidade portuguesa',
+    welcome: 'Bem-vindo à LusoTown, a comunidade de falantes de português em Londres',
+    navigation: 'Navegação principal da comunidade de falantes de português',
     events: 'Eventos culturais portugueses próximos',
     businesses: 'Diretório de negócios portugueses',
     community: 'Membros da comunidade lusófona',
     cultural: 'Conteúdo cultural e património português'
   },
   'pt-BR': {
-    welcome: 'Bem-vindo à LusoTown, a comunidade portuguesa em Londres',
-    navigation: 'Navegação principal da comunidade portuguesa',
+    welcome: 'Bem-vindo à LusoTown, a comunidade de falantes de português em Londres',
+    navigation: 'Navegação principal da comunidade de falantes de português',
     events: 'Eventos culturais portugueses próximos',
     businesses: 'Diretório de negócios portugueses',
     community: 'Membros da comunidade lusófona',
@@ -149,7 +149,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
     // Setup focus management
     setupFocusManagement();
     
-    console.log('[Accessibility] Initialized for Portuguese community platform');
+    console.log('[Accessibility] Initialized for Portuguese-speaking community platform');
   };
 
   const loadAccessibilitySettings = () => {
@@ -605,8 +605,8 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
         type: 'info',
         title: language === 'pt' ? 'Controlo de Voz Ativo' : 'Voice Control Active',
         message: language === 'pt' 
-          ? 'Diz comandos para navegar na comunidade portuguesa' 
-          : 'Say commands to navigate the Portuguese community',
+          ? 'Diz comandos para navegar na comunidade de falantes de português' 
+          : 'Say commands to navigate the Portuguese-speaking community',
         duration: 3000
       });
     }
@@ -694,8 +694,8 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
       {/* Portuguese cultural accessibility landmark */}
       <div className="sr-only" aria-live="polite">
         {language === 'pt' 
-          ? 'Sistema de acessibilidade ativo para a comunidade portuguesa'
-          : 'Accessibility system active for Portuguese community'
+          ? 'Sistema de acessibilidade ativo para a comunidade de falantes de português'
+          : 'Accessibility system active for Portuguese-speaking community'
         }
       </div>
 

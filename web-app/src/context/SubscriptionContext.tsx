@@ -533,7 +533,7 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
     }
   })()
 
-  // Usage limits based on tier - Optimized for Portuguese community conversion
+  // Usage limits based on tier - Optimized for Portuguese-speaking community conversion
   const usageLimits: SubscriptionUsageLimits = (() => {
     switch (effectiveTier) {
       case 'free':

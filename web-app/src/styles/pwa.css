@@ -1,4 +1,4 @@
-/* PWA and Mobile Optimization Styles for LusoTown Portuguese Community Platform */
+/* PWA and Mobile Optimization Styles for LusoTown Portuguese-speaking community Platform */
 
 /* Mobile-first responsive design with Portuguese cultural elements */
 .mobile-optimized {
@@ -526,7 +526,7 @@
   font-size: 1.2em;
 }
 
-/* Responsive Design Breakpoints for Portuguese Community */
+/* Responsive Design Breakpoints for Portuguese-speaking community */
 @media (max-width: 640px) {
   .mobile-optimized {
     padding: var(--mobile-padding);

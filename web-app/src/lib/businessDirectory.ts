@@ -18,7 +18,7 @@ export interface PortugueseBusiness {
   email: string
   website?: string
   
-  // Portuguese Community Details
+  // Portuguese-speaking community Details
   ownerName: string
   ownerRegion: PortugueseRegion
   languagesSpoken: Language[]
@@ -165,7 +165,7 @@ export const PORTUGUESE_BUSINESS_KEYWORDS = [
   'restaurante português',
   'comida portuguesa',
   'negócio português',
-  'comunidade portuguesa',
+  'comunidade de falantes de português',
   'serviços em português',
   'falar português',
   'empresa portuguesa',
@@ -176,7 +176,7 @@ export const PORTUGUESE_BUSINESS_KEYWORDS = [
   // English
   'portuguese restaurant london',
   'portuguese business london',
-  'portuguese community london',
+  'Portuguese-speaking community london',
   'brazilian business london',
   'lusophone services london',
   'portuguese speaking london',
@@ -561,7 +561,7 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
       'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     ],
     
-    keywords: ['portuguese cultural center', 'portuguese language classes', 'portuguese community', 'cultural events london', 'high street'],
+    keywords: ['portuguese cultural center', 'portuguese language classes', 'Portuguese-speaking community', 'cultural events london', 'high street'],
     londonArea: 'southeast_london',
     nearbyTransport: ['Penge East Station', 'Anerley Station'],
     

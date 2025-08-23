@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * LusoTown Portuguese Community Streaming Server
+ * LusoTown Portuguese-speaking community Streaming Server
  * Simple Relay Server (SRS) implementation using Node.js
  * Optimized for Portuguese speakers in London & UK
  */
@@ -15,7 +15,7 @@ const path = require('path');
 const fs = require('fs');
 const Redis = require('redis');
 
-// Configuration for Portuguese community streaming
+// Configuration for Portuguese-speaking community streaming
 const config = {
   // Server configuration
   server: {
@@ -23,7 +23,7 @@ const config = {
     host: process.env.HOST || '0.0.0.0'
   },
   
-  // Redis configuration for Portuguese community features
+  // Redis configuration for Portuguese-speaking community features
   redis: {
     url: process.env.REDIS_URL || 'redis://localhost:6379',
     password: process.env.REDIS_PASSWORD || 'lusotown_redis_2025'
@@ -47,7 +47,7 @@ const config = {
     api: true
   },
   
-  // Authentication for Portuguese community
+  // Authentication for Portuguese-speaking community
   auth: {
     api: true,
     api_user: 'lusotown',
@@ -113,7 +113,7 @@ const createDirectories = () => {
   });
 };
 
-// Initialize Redis client for Portuguese community features (optional)
+// Initialize Redis client for Portuguese-speaking community features (optional)
 let redisClient;
 const initRedis = async () => {
   try {
@@ -123,16 +123,16 @@ const initRedis = async () => {
     });
     
     redisClient.on('error', (err) => {
-      console.log('⚠️ Redis not available, using in-memory storage for Portuguese community');
+      console.log('⚠️ Redis not available, using in-memory storage for Portuguese-speaking community');
     });
     
     redisClient.on('connect', () => {
-      console.log('✅ Redis Portuguese community connected');
+      console.log('✅ Redis Portuguese-speaking community connected');
     });
     
     await redisClient.connect();
     
-    // Initialize Portuguese community data
+    // Initialize Portuguese-speaking community data
     await redisClient.hSet('lusotown:stats', {
       activeStreams: '0',
       totalConnections: '0',
@@ -141,12 +141,12 @@ const initRedis = async () => {
     });
     
   } catch (error) {
-    console.log('⚠️ Redis not available, using in-memory storage for Portuguese community');
+    console.log('⚠️ Redis not available, using in-memory storage for Portuguese-speaking community');
     redisClient = null;
   }
 };
 
-// Portuguese community streaming analytics
+// Portuguese-speaking community streaming analytics
 const streamingStats = {
   activeStreams: new Map(),
   totalConnections: 0,
@@ -159,10 +159,10 @@ const nms = new NodeMediaServer({
   ...config,
   logType: 3, // Enable detailed logging
   
-  // Portuguese community hooks
+  // Portuguese-speaking community hooks
   http: {
     ...config.http,
-    // Custom API endpoints for Portuguese community
+    // Custom API endpoints for Portuguese-speaking community
     api: {
       enable: true,
       auth: {
@@ -173,9 +173,9 @@ const nms = new NodeMediaServer({
   }
 });
 
-// Portuguese community event handlers
+// Portuguese-speaking community event handlers
 nms.on('preConnect', (id, args) => {
-  console.log(`🇵🇹 Portuguese community connection: ${id}`, args);
+  console.log(`🇵🇹 Portuguese-speaking community connection: ${id}`, args);
   streamingStats.totalConnections++;
 });
 
@@ -250,7 +250,7 @@ nms.on('donePlay', (id, StreamPath, args) => {
   streamingStats.portugueseViewers--;
 });
 
-// API Routes for Portuguese community integration
+// API Routes for Portuguese-speaking community integration
 
 // Health check endpoint
 app.get('/health', (req, res) => {
@@ -263,7 +263,7 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Streaming statistics for Portuguese community
+// Streaming statistics for Portuguese-speaking community
 app.get('/api/v1/stats', (req, res) => {
   const stats = {
     activeStreams: streamingStats.activeStreams.size,
@@ -281,7 +281,7 @@ app.get('/api/v1/stats', (req, res) => {
   res.json(stats);
 });
 
-// Portuguese community stream management
+// Portuguese-speaking community stream management
 app.get('/api/v1/streams', (req, res) => {
   const streams = Array.from(streamingStats.activeStreams.entries()).map(([key, stream]) => ({
     streamKey: key,
@@ -312,20 +312,20 @@ app.get('/api/v1/cultural-streams', (req, res) => {
   res.json({ culturalStreams });
 });
 
-// Stream authentication for Portuguese community
+// Stream authentication for Portuguese-speaking community
 app.post('/api/streaming/auth/publish', (req, res) => {
   // Simplified authentication - in production, validate against Supabase
   console.log('🔐 Publish authentication request:', req.body);
-  res.json({ allowed: true, message: 'Portuguese community publishing approved' });
+  res.json({ allowed: true, message: 'Portuguese-speaking community publishing approved' });
 });
 
 app.post('/api/streaming/auth/play', (req, res) => {
   // Simplified authentication - in production, validate subscriptions
   console.log('👁️ Play authentication request:', req.body);
-  res.json({ allowed: true, message: 'Portuguese community viewing approved' });
+  res.json({ allowed: true, message: 'Portuguese-speaking community viewing approved' });
 });
 
-// Portuguese community webhooks (for integration with main app)
+// Portuguese-speaking community webhooks (for integration with main app)
 app.post('/api/streaming/hooks/connect', (req, res) => {
   console.log('🔗 Stream connect hook:', req.body);
   res.json({ code: 0 });
@@ -349,9 +349,9 @@ app.post('/api/streaming/heartbeat', (req, res) => {
   });
 });
 
-// WebSocket for real-time Portuguese community features
+// WebSocket for real-time Portuguese-speaking community features
 io.on('connection', (socket) => {
-  console.log(`🔌 Portuguese community websocket connected: ${socket.id}`);
+  console.log(`🔌 Portuguese-speaking community websocket connected: ${socket.id}`);
   
   // Send current stats
   socket.emit('stats', streamingStats);
@@ -375,7 +375,7 @@ io.on('connection', (socket) => {
   });
   
   socket.on('disconnect', () => {
-    console.log(`🔌 Portuguese community websocket disconnected: ${socket.id}`);
+    console.log(`🔌 Portuguese-speaking community websocket disconnected: ${socket.id}`);
   });
 });
 
@@ -411,7 +411,7 @@ const startServer = async () => {
     // Create necessary directories
     createDirectories();
     
-    // Initialize Redis for Portuguese community
+    // Initialize Redis for Portuguese-speaking community
     await initRedis();
     
     // Start Node Media Server (RTMP/HLS)
@@ -421,9 +421,9 @@ const startServer = async () => {
     
     // Start Express API server
     server.listen(config.server.port, config.server.host, () => {
-      console.log(`🚀 LusoTown Portuguese Community Streaming API started on ${config.server.host}:${config.server.port}`);
+      console.log(`🚀 LusoTown Portuguese-speaking community Streaming API started on ${config.server.host}:${config.server.port}`);
       console.log('');
-      console.log('🇵🇹 LusoTown Portuguese Community Streaming Infrastructure');
+      console.log('🇵🇹 LusoTown Portuguese-speaking community Streaming Infrastructure');
       console.log('============================================================');
       console.log('');
       console.log('📡 RTMP Ingestion (OBS/Streaming Software):');
@@ -447,7 +447,7 @@ const startServer = async () => {
       console.log('   3. Stream Key: portuguese_test');
       console.log(`   4. Watch: http://localhost:${config.http.port}/live/portuguese_test.m3u8`);
       console.log('');
-      console.log('✅ Ready for Portuguese community streaming!');
+      console.log('✅ Ready for Portuguese-speaking community streaming!');
     });
     
   } catch (error) {

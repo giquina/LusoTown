@@ -761,7 +761,7 @@ export default function CreateGroupPage() {
                 <p className="font-medium mb-1">Safety & Moderation</p>
                 <p>
                   All groups are subject to review by our safety team. Groups must comply with our 
-                  community guidelines and Portuguese community values. Inappropriate content will 
+                  community guidelines and Portuguese-speaking community values. Inappropriate content will 
                   result in group removal.
                 </p>
               </div>

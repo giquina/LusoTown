@@ -291,7 +291,7 @@ BEGIN
       pn.name,
       pn.name AS title,
       CASE 
-        WHEN pn.id = 'nation-portugal' THEN 'Follow for cultural events, business opportunities, and Portuguese community updates in London'
+        WHEN pn.id = 'nation-portugal' THEN 'Follow for cultural events, business opportunities, and Portuguese-speaking community updates in London'
         WHEN pn.id = 'nation-brazil' THEN 'Connect with Brazilian culture, Carnival events, and business opportunities in London'
         WHEN pn.id = 'nation-angola' THEN 'Discover Angolan culture, music, and business opportunities in London'
         WHEN pn.id = 'nation-mozambique' THEN 'Connect with Mozambican culture and opportunities in London'

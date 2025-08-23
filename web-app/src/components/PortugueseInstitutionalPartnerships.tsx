@@ -335,8 +335,8 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           {language === 'pt'
-            ? 'Construindo pontes estratégicas entre a comunidade portuguesa e instituições de prestígio no Reino Unido para fortalecer conexões culturais, empresariais e educacionais.'
-            : 'Building strategic bridges between the Portuguese community and prestigious institutions in the United Kingdom to strengthen cultural, business, and educational connections.'
+            ? 'Construindo pontes estratégicas entre a comunidade de falantes de português e instituições de prestígio no Reino Unido para fortalecer conexões culturais, empresariais e educacionais.'
+            : 'Building strategic bridges between the Portuguese-speaking community and prestigious institutions in the United Kingdom to strengthen cultural, business, and educational connections.'
           }
         </p>
       </div>
@@ -545,8 +545,8 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
             </h3>
             <p className="text-sm text-gray-600">
               {language === 'pt'
-                ? 'Oportunidades de networking e crescimento profissional para a comunidade portuguesa'
-                : 'Networking opportunities and professional growth for the Portuguese community'
+                ? 'Oportunidades de networking e crescimento profissional para a comunidade de falantes de português'
+                : 'Networking opportunities and professional growth for the Portuguese-speaking community'
               }
             </p>
           </div>
@@ -586,8 +586,8 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
         </h2>
         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
           {language === 'pt'
-            ? 'Seja parte de uma rede exclusiva de instituições portuguesas que estão a construir o futuro da comunidade portuguesa no Reino Unido.'
-            : 'Be part of an exclusive network of Portuguese institutions building the future of the Portuguese community in the United Kingdom.'
+            ? 'Seja parte de uma rede exclusiva de instituições portuguesas que estão a construir o futuro da comunidade de falantes de português no Reino Unido.'
+            : 'Be part of an exclusive network of Portuguese institutions building the future of the Portuguese-speaking community in the United Kingdom.'
           }
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

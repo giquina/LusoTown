@@ -636,8 +636,8 @@ INSERT INTO ai_cultural_content (
   ARRAY['all_generations'],
   'The Baker Who Built Bridges',
   'O Padeiro Que Construiu Pontes',
-  'Maria opened her bakery in Vauxhall in 1985, not knowing she would become the heart of London''s Portuguese community, connecting generations through the aroma of fresh broa.',
-  'A Maria abriu a sua padaria em Vauxhall em 1985, sem saber que se tornaria o coração da comunidade portuguesa de Londres, ligando gerações através do aroma de broa fresca.',
+  'Maria opened her bakery in Vauxhall in 1985, not knowing she would become the heart of London''s Portuguese-speaking community, connecting generations through the aroma of fresh broa.',
+  'A Maria abriu a sua padaria em Vauxhall em 1985, sem saber que se tornaria o coração da comunidade de falantes de português de Londres, ligando gerações através do aroma de broa fresca.',
   'Portuguese entrepreneurship and community building in London diaspora',
   'inspiring',
   92,
@@ -684,9 +684,9 @@ INSERT INTO community_analytics_predictions (
 );
 
 COMMENT ON TABLE cultural_personality_profiles IS 'Advanced Portuguese cultural personality profiling for AI-powered matching and community insights';
-COMMENT ON TABLE cultural_compatibility_matches IS 'AI-calculated cultural compatibility scores and insights between Portuguese community members';
+COMMENT ON TABLE cultural_compatibility_matches IS 'AI-calculated cultural compatibility scores and insights between Portuguese-speaking community members';
 COMMENT ON TABLE ai_cultural_content IS 'AI-generated Portuguese cultural content personalized for diaspora community';
-COMMENT ON TABLE community_analytics_predictions IS 'Predictive analytics for Portuguese community trends and behavior patterns';
+COMMENT ON TABLE community_analytics_predictions IS 'Predictive analytics for Portuguese-speaking community trends and behavior patterns';
 COMMENT ON TABLE user_cultural_behavior IS 'Behavioral tracking for Portuguese cultural engagement and adaptation patterns';
 COMMENT ON TABLE portuguese_cultural_events_ai IS 'AI analysis and predictions for Portuguese cultural events success and impact';
 COMMENT ON TABLE voice_assistant_interactions IS 'Portuguese voice assistant interactions with cultural intelligence and saudade support';

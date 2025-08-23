@@ -114,12 +114,12 @@ interface AIConsentProviderProps {
 export function AIConsentProvider({ children, userId }: AIConsentProviderProps) {
   const { language, t } = useLanguage()
   
-  // Initial state with Portuguese community defaults
+  // Initial state with Portuguese-speaking community defaults
   const [consentState, setConsentState] = useState<AIConsentState>({
     hasGivenConsent: false,
     consentVersion: '1.0.0',
     
-    // Feature consents - conservative defaults for Portuguese community
+    // Feature consents - conservative defaults for Portuguese-speaking community
     notifications: false,
     matching: false,
     analytics: false,
@@ -140,7 +140,7 @@ export function AIConsentProvider({ children, userId }: AIConsentProviderProps) 
     // Conservative privacy by default
     privacyTemplate: 'conservative',
     
-    // Enhanced cultural sensitivity for Portuguese community
+    // Enhanced cultural sensitivity for Portuguese-speaking community
     culturalSensitivityLevel: 'enhanced',
     languagePreference: language,
     dialectPreservation: true,

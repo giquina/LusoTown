@@ -269,7 +269,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
         description: 'Portuguese language instruction for all levels, from beginner to advanced',
         descriptionPortuguese: 'Ensino de língua portuguesa para todos os níveis, do iniciante ao avançado',
         type: 'language_course',
-        targetAudience: ['All ages', 'Portuguese community', 'Heritage speakers'],
+        targetAudience: ['All ages', 'Portuguese-speaking community', 'Heritage speakers'],
         duration: '30 weeks',
         cost: '£150 per term',
         schedule: 'Weekly (2 hours)',
@@ -313,7 +313,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     facilities: ['Main hall', 'Classrooms', 'Kitchen', 'Library', 'Office space'],
     languages: ['Portuguese', 'English'],
     
-    partnerships: ['Portuguese Embassy', 'Local Portuguese community', 'Golborne Portuguese Community'],
+    partnerships: ['Portuguese Embassy', 'Local Portuguese-speaking community', 'Golborne Portuguese-speaking community'],
     accreditation: ['UK Registered Charity'],
     
     socialMedia: {
@@ -718,7 +718,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     
     partnerships: [
       'Cape Verde Embassy London',
-      'Stockwell Portuguese Community Centre',
+      'Stockwell Portuguese-speaking community Centre',
       'London Cape Verdean Association',
       'Traditional Music Preservation Society',
       'Island Cultural Heritage Foundation',

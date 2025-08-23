@@ -1,6 +1,6 @@
 # 🔄 LusoTown Development Workflow
 
-**Purpose**: Streamlined development process for Portuguese community platform  
+**Purpose**: Streamlined development process for Portuguese-speaking community platform  
 **Version**: 2.0  
 **Status**: Active
 
@@ -50,7 +50,7 @@ Based on the ${advisoryAgent} guidance from AGENTS.md, implement:
 
 ADVISORY CONTEXT: ${advisoryFramework}
 EXECUTION FOCUS: ${specificRequirements}
-CULTURAL REQUIREMENTS: Portuguese community authenticity
+CULTURAL REQUIREMENTS: Portuguese-speaking community authenticity
 QUALITY STANDARDS: ${qualityFramework}
 
 [Detailed implementation requirements...]
@@ -83,7 +83,7 @@ const guidance = await consultAdvisoryAgent('strategic-decision-advisor')
 const implementation = await executeWithAgent('feature-builder', {
   advisory: guidance,
   requirements: specificNeeds,
-  culturalContext: 'Portuguese community platform'
+  culturalContext: 'Portuguese-speaking community platform'
 })
 
 // Step 3: Update tracking (IMPLEMENTATION.md)
@@ -235,7 +235,7 @@ After Completing Any Task:
 # Automated deployment with implementation tracking
 1. Implementation complete → Update IMPLEMENTATION.md
 2. All tests pass → Mobile optimization verified
-3. Cultural authenticity validated → Portuguese community standards met
+3. Cultural authenticity validated → Portuguese-speaking community standards met
 4. Performance benchmarks achieved → Ready for production
 5. Documentation updated → Deploy to Vercel
 6. Post-deployment monitoring → Update success metrics

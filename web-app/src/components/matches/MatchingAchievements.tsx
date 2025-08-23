@@ -90,8 +90,8 @@ export default function MatchingAchievements({
         type: "first_match",
         name: language === "pt" ? "Primeiro Match" : "First Match",
         description: language === "pt" 
-          ? "Fez a sua primeira ligação na comunidade portuguesa!"
-          : "Made your first connection in the Portuguese community!",
+          ? "Fez a sua primeira ligação na comunidade de falantes de português!"
+          : "Made your first connection in the Portuguese-speaking community!",
         category: "matching",
         level: 1,
         maxLevel: 1,
@@ -162,8 +162,8 @@ export default function MatchingAchievements({
         type: "community_builder",
         name: language === "pt" ? "Construtor de Comunidade" : "Community Builder",
         description: language === "pt"
-          ? "Apresentou 10 pessoas da comunidade portuguesa umas às outras"
-          : "Introduced 10 Portuguese community members to each other",
+          ? "Apresentou 10 pessoas da comunidade de falantes de português umas às outras"
+          : "Introduced 10 Portuguese-speaking community members to each other",
         category: "community",
         level: 1,
         maxLevel: 3,

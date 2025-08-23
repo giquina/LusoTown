@@ -119,8 +119,8 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
           type: 'success',
           title: language === 'pt' ? 'Conectado!' : 'Back Online!',
           message: language === 'pt' 
-            ? 'Ligação à comunidade portuguesa restaurada' 
-            : 'Connection to Portuguese community restored',
+            ? 'Ligação à comunidade de falantes de português restaurada' 
+            : 'Connection to Portuguese-speaking community restored',
           duration: 3000
         });
       } else {
@@ -315,8 +315,8 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
       type: 'info',
       title: language === 'pt' ? 'Atualização Disponível' : 'Update Available',
       message: language === 'pt' 
-        ? 'Nova versão da comunidade portuguesa' 
-        : 'New version of the Portuguese community',
+        ? 'Nova versão da comunidade de falantes de português' 
+        : 'New version of the Portuguese-speaking community',
       duration: 0,
       actions: [
         {
@@ -333,8 +333,8 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
         language === 'pt' ? '🇵🇹 Bem-vindo à LusoTown!' : '🇵🇹 Welcome to LusoTown!',
         {
           body: language === 'pt' 
-            ? 'A tua comunidade portuguesa em Londres está aqui!' 
-            : 'Your Portuguese community in London is here!',
+            ? 'A tua comunidade de falantes de português em Londres está aqui!' 
+            : 'Your Portuguese-speaking community in London is here!',
           icon: '/icons/icon-192x192.png',
           badge: '/icons/badge-72x72.png',
           tag: 'welcome',
@@ -429,8 +429,8 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
               </h3>
               <p className="text-sm text-gray-600 mt-1">
                 {language === 'pt' 
-                  ? 'Acesso rápido à comunidade portuguesa no teu dispositivo' 
-                  : 'Quick access to the Portuguese community on your device'}
+                  ? 'Acesso rápido à comunidade de falantes de português no teu dispositivo' 
+                  : 'Quick access to the Portuguese-speaking community on your device'}
               </p>
               <div className="mt-3 flex space-x-3">
                 <button
@@ -498,8 +498,8 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
               </h3>
               <p className="text-sm text-gray-600 mt-1">
                 {language === 'pt' 
-                  ? 'Nova versão com melhorias para a comunidade portuguesa' 
-                  : 'New version with improvements for the Portuguese community'}
+                  ? 'Nova versão com melhorias para a comunidade de falantes de português' 
+                  : 'New version with improvements for the Portuguese-speaking community'}
               </p>
               <div className="mt-3">
                 <button

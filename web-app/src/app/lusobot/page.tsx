@@ -128,11 +128,11 @@ export default function LusoBotPage() {
       examples: language === 'pt' ? [
         'Onde posso encontrar restaurantes portugueses em Londres?',
         'Há eventos portugueses este fim de semana?',
-        'Como me posso ligar à comunidade portuguesa?'
+        'Como me posso ligar à comunidade de falantes de português?'
       ] : [
         'Where can I find Portuguese restaurants in London?',
         'Are there Portuguese events this weekend?',
-        'How can I connect with the Portuguese community?'
+        'How can I connect with the Portuguese-speaking community?'
       ],
       color: 'from-orange-500 to-red-600'
     },
@@ -264,8 +264,8 @@ export default function LusoBotPage() {
 
             <p className="text-xl sm:text-2xl text-white/90 mb-8 leading-relaxed">
               {language === 'pt' 
-                ? 'O teu assistente cultural português com IA. Especialista em saudade, tradições e comunidade portuguesa no Reino Unido.'
-                : 'Your Portuguese cultural assistant. Expert in saudade, traditions and Portuguese community in the UK.'
+                ? 'O teu assistente cultural português com IA. Especialista em saudade, tradições e comunidade de falantes de português no Reino Unido.'
+                : 'Your Portuguese cultural assistant. Expert in saudade, traditions and Portuguese-speaking community in the UK.'
               }
             </p>
 

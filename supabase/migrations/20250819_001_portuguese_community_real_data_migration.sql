@@ -1,4 +1,4 @@
--- Portuguese Community Real Data Migration
+-- Portuguese-speaking community Real Data Migration
 -- Created: 2025-08-19
 -- Purpose: Complete real data integration replacing all mock data
 
@@ -269,8 +269,8 @@ create trigger update_business_rating_on_review
     for each row execute procedure trigger_update_business_rating();
 
 -- Comments for documentation
-comment on table public.community_connections is 'Portuguese community networking and connections';
+comment on table public.community_connections is 'Portuguese-speaking community networking and connections';
 comment on table public.portuguese_businesses is 'Directory of Portuguese businesses in London';
 comment on table public.business_reviews is 'Reviews and ratings for Portuguese businesses';
-comment on table public.professional_networking is 'Professional networking profiles for Portuguese community';
+comment on table public.professional_networking is 'Professional networking profiles for Portuguese-speaking community';
 comment on table public.user_notifications is 'Real-time notifications for users';

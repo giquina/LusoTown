@@ -96,7 +96,7 @@ I've designed and implemented a comprehensive UI/UX solution for the "Upcoming G
 ### **Portuguese Cultural Elements**
 - **"Unidos pela Língua"** (United by Language) branding integration
 - **Cultural authenticity** in event descriptions and locations
-- **Portuguese community context** in all messaging
+- **Portuguese-speaking community context** in all messaging
 - **Bilingual support** throughout all components
 
 ## Homepage Integration
@@ -164,7 +164,7 @@ The implementation delivers:
 ✅ **Responsive design** for desktop and mobile
 ✅ **Interactive booking system** with real event data
 ✅ **Cultural authenticity** throughout the experience
-✅ **SEO optimization** for Portuguese community discovery
+✅ **SEO optimization** for Portuguese-speaking community discovery
 ✅ **Accessibility compliance** for inclusive design
 ✅ **Performance optimization** for fast loading
 

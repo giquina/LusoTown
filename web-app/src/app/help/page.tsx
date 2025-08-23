@@ -22,7 +22,7 @@ import {
 export const metadata: Metadata = {
   title: "Help Center | LusoTown London - Support, FAQs & User Guides",
   description:
-    "Get help with LusoTown London! Find answers to common questions, contact support, and learn how to make the most of our Portuguese community platform.",
+    "Get help with LusoTown London! Find answers to common questions, contact support, and learn how to make the most of our Portuguese-speaking community platform.",
   keywords: [
     "help center",
     "support",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "platform help",
     "user support",
     "how to use",
-    "Portuguese community help",
+    "Portuguese-speaking community help",
   ],
   openGraph: {
     title: "Help Center | LusoTown",

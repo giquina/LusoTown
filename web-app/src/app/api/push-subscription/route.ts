@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
     }
     */
 
-    // Send welcome notification for Portuguese community
+    // Send welcome notification for Portuguese-speaking community
     await sendWelcomeNotification(subscription, language);
 
     return NextResponse.json({
@@ -184,8 +184,8 @@ async function sendWelcomeNotification(subscription: any, language: string = 'en
     const welcomeMessage = {
       title: language === 'pt' ? '🇵🇹 Bem-vindo à LusoTown!' : '🇵🇹 Welcome to LusoTown!',
       body: language === 'pt'
-        ? 'A tua comunidade portuguesa em Londres está agora conectada!'
-        : 'Your Portuguese community in London is now connected!',
+        ? 'A tua comunidade de falantes de português em Londres está agora conectada!'
+        : 'Your Portuguese-speaking community in London is now connected!',
       icon: '/icons/icon-192x192.png',
       badge: '/icons/badge-72x72.png',
       tag: 'welcome',

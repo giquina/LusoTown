@@ -138,8 +138,8 @@ export default function LusoBotWidget({
         : 'Looking for specific Portuguese businesses?'
     } else if (pathname.includes('/community')) {
       suggestion = language === 'pt'
-        ? 'Quer conectar-se com a comunidade portuguesa?'
-        : 'Want to connect with the Portuguese community?'
+        ? 'Quer conectar-se com a comunidade de falantes de português?'
+        : 'Want to connect with the Portuguese-speaking community?'
     }
 
     if (suggestion && !hasInteracted) {

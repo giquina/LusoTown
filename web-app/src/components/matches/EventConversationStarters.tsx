@@ -209,8 +209,8 @@ export default function EventConversationStarters({
           id: "origin-brazil",
           category: "personal_connection",
           text: language === "pt"
-            ? `Oi! Que bom encontrar outro(a) lusófono(a) em Londres! Como achas a comunidade portuguesa aqui?`
-            : `Hi! So good to find another Portuguese speaker in London! What do you think of the Portuguese community here?`,
+            ? `Oi! Que bom encontrar outro(a) lusófono(a) em Londres! Como achas a comunidade de falantes de português aqui?`
+            : `Hi! So good to find another Portuguese speaker in London! What do you think of the Portuguese-speaking community here?`,
           context: "Lusophone connection",
           appropriateness: "high",
           culturalRelevance: 80,

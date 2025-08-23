@@ -39,8 +39,8 @@ export const BRANDED_FEATURES = {
     en: 'LusoChat', 
     pt: 'LusoChat',
     description: {
-      en: 'Portuguese community chat system',
-      pt: 'Sistema de chat da comunidade portuguesa'
+      en: 'Portuguese-speaking community chat system',
+      pt: 'Sistema de chat da comunidade de falantes de português'
     }
   },
   
@@ -66,8 +66,8 @@ export const BRANDED_FEATURES = {
     en: 'LusoLearn',
     pt: 'LusoLearn',
     description: {
-      en: 'Portuguese community learning center',
-      pt: 'Centro de aprendizagem da comunidade portuguesa'
+      en: 'Portuguese-speaking community learning center',
+      pt: 'Centro de aprendizagem da comunidade de falantes de português'
     }
   }
 } as const;
@@ -90,8 +90,8 @@ export const BRANDED_TAGLINES = {
   },
   
   LUSOCHAT: {
-    en: 'Real-Time Portuguese Community',
-    pt: 'Comunidade Portuguesa em Tempo Real'
+    en: 'Real-Time Portuguese-speaking community',
+    pt: 'Comunidade de Falantes de Português em Tempo Real'
   },
   
   LUSOCONNECT: {
@@ -271,7 +271,7 @@ export const MAIN_BRAND = {
     pt: 'Conectando falantes de português em todo o Reino Unido'
   },
   community: {
-    en: 'Portuguese Community London & UK',
-    pt: 'Comunidade Portuguesa Londres e Reino Unido'
+    en: 'Portuguese-speaking community London & UK',
+    pt: 'Comunidade de Falantes de Português Londres e Reino Unido'
   }
 } as const;

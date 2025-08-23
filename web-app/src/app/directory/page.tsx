@@ -467,7 +467,7 @@ export default function Directory() {
           <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                {t('directory.title', 'Portuguese Community Directory')}
+                {t('directory.title', 'Portuguese-speaking community Directory')}
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
                 {t('directory.subtitle', 'Connect with Portuguese speakers across London. Build your network, find business partners, and discover cultural connections.')}
@@ -503,7 +503,7 @@ export default function Directory() {
                   <Users className="w-5 h-5 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">{t('directory.community_discovery', 'Portuguese Community Discovery')}</h3>
+                  <h3 className="font-semibold text-gray-900">{t('directory.community_discovery', 'Portuguese-speaking community Discovery')}</h3>
                   <p className="text-sm text-gray-600">{t('directory.find_members_businesses', 'Find both community members and local businesses')}</p>
                 </div>
               </div>

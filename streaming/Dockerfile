@@ -1,4 +1,4 @@
-# LusoTown Portuguese Community Streaming Dockerfile
+# LusoTown Portuguese-speaking Community Streaming Dockerfile
 FROM node:18-alpine
 
 # Install FFmpeg for Portuguese content processing
@@ -16,7 +16,7 @@ COPY package*.json ./
 # Install dependencies
 RUN npm ci --only=production && npm cache clean --force
 
-# Create necessary directories for Portuguese community
+# Create necessary directories for Portuguese-speaking community
 RUN mkdir -p \
     /app/media \
     /app/www \
@@ -32,12 +32,12 @@ COPY . .
 RUN chown -R node:node /app
 USER node
 
-# Health check for Portuguese community streaming
+# Health check for Portuguese-speaking community streaming
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:3002/health || exit 1
 
-# Expose ports for Portuguese community streaming
+# Expose ports for Portuguese-speaking community streaming
 EXPOSE 3002
 
-# Portuguese community streaming command
+# Portuguese-speaking community streaming command
 CMD ["node", "server.js"]

@@ -425,8 +425,8 @@ export default function MatchHowItWorks() {
             </h3>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               {language === 'pt' 
-                ? 'Mais que um app de encontros - uma comunidade portuguesa autêntica em Londres'
-                : 'More than a dating app - an authentic Portuguese community in London'
+                ? 'Mais que um app de encontros - uma comunidade de falantes de português autêntica em Londres'
+                : 'More than a dating app - an authentic Portuguese-speaking community in London'
               }
             </p>
           </div>

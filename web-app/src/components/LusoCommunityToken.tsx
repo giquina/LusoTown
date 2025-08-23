@@ -176,8 +176,8 @@ const LusoCommunityToken: React.FC = () => {
       activityPt: 'Orientar Recém-chegado',
       amount: 75,
       multiplier: 1.8,
-      description: 'Guide new Portuguese community members in London',
-      descriptionPt: 'Orientar novos membros da comunidade portuguesa em Londres',
+      description: 'Guide new Portuguese-speaking community members in London',
+      descriptionPt: 'Orientar novos membros da comunidade de falantes de português em Londres',
       category: 'community',
       requirements: ['Complete mentor training', 'Minimum 10 hours monthly', 'Positive feedback'],
       requirementsPt: ['Completar formação de mentor', 'Mínimo 10 horas mensais', 'Feedback positivo'],
@@ -468,8 +468,8 @@ const LusoCommunityToken: React.FC = () => {
             className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
           >
             {language === 'pt'
-              ? 'Ganhe tokens participando na comunidade portuguesa, apoie projetos culturais e tenha voz na governança comunitária.'
-              : 'Earn tokens by participating in the Portuguese community, support cultural projects, and have a voice in community governance.'}
+              ? 'Ganhe tokens participando na comunidade de falantes de português, apoie projetos culturais e tenha voz na governança comunitária.'
+              : 'Earn tokens by participating in the Portuguese-speaking community, support cultural projects, and have a voice in community governance.'}
           </motion.p>
 
           {/* Wallet Connection */}

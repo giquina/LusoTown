@@ -119,7 +119,7 @@ const ProfilePictureStep = ({ onNext, onBack, profilePicture, setProfilePicture 
     if (!profilePicture) {
       Alert.alert(
         'Profile Picture Required',
-        'Adding a profile picture helps other Portuguese community members get to know you better and builds trust.',
+        'Adding a profile picture helps other Portuguese-speaking community members get to know you better and builds trust.',
         [
           { text: 'Add Photo', onPress: showPhotoOptions },
           { text: 'Skip for Now', onPress: onNext, style: 'cancel' },
@@ -142,7 +142,7 @@ const ProfilePictureStep = ({ onNext, onBack, profilePicture, setProfilePicture 
         <Text style={styles.stepNumber}>4 of 7</Text>
         <Text style={styles.title}>Add your profile picture</Text>
         <Text style={styles.subtitle}>
-          Help other Portuguese community members get to know you! A friendly photo builds trust and connection.
+          Help other Portuguese-speaking community members get to know you! A friendly photo builds trust and connection.
         </Text>
       </View>
 

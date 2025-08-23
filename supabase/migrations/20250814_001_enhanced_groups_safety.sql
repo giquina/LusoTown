@@ -1,4 +1,4 @@
--- Enhanced Groups Schema with Safety and Portuguese Community Features
+-- Enhanced Groups Schema with Safety and Portuguese-speaking community Features
 -- Created: 2025-08-14
 
 -- Add new columns to the existing groups table for enhanced safety and community features
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS public.group_join_requests (
     UNIQUE(group_id, user_id)
 );
 
--- Portuguese community focused group categories
+-- Portuguese-speaking community focused group categories
 CREATE TABLE IF NOT EXISTS public.group_categories (
     id uuid default uuid_generate_v4() primary key,
     name_en varchar(100) not null,
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS public.group_categories (
     created_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
 
--- Insert Portuguese community focused categories
+-- Insert Portuguese-speaking community focused categories
 INSERT INTO public.group_categories (name_en, name_pt, description_en, description_pt, icon, color_class, is_age_restricted, min_age, display_order) VALUES
 ('Young Professionals (18-25)', 'Jovens Profissionais (18-25)', 'Networking and career development for young Portuguese professionals', 'Networking e desenvolvimento de carreira para jovens profissionais portugueses', 'briefcase', 'bg-primary-500', true, 18, 1),
 ('Professionals (25-35)', 'Profissionais (25-35)', 'Career networking and business connections', 'Networking profissional e conexões de negócios', 'users', 'bg-secondary-500', true, 25, 2),
@@ -89,7 +89,7 @@ INSERT INTO public.group_categories (name_en, name_pt, description_en, descripti
 ('Students', 'Estudantes', 'Portuguese students in UK universities and colleges', 'Estudantes portugueses em universidades e faculdades do Reino Unido', 'graduation-cap', 'bg-indigo-500', true, 16, 11),
 ('Newcomers to London', 'Recém-chegados a Londres', 'Support for new Portuguese arrivals', 'Apoio para recém-chegados portugueses', 'map', 'bg-teal-500', false, null, 12),
 ('Portuguese from Portugal', 'Portugueses de Portugal', 'Specific to those from mainland Portugal', 'Específico para os de Portugal continental', 'flag', 'bg-red-500', false, null, 13),
-('Portuguese from Brazil', 'Portugueses do Brasil', 'Brazilian Portuguese community', 'Comunidade portuguesa brasileira', 'flag', 'bg-green-600', false, null, 14),
+('Portuguese from Brazil', 'Portugueses do Brasil', 'Brazilian Portuguese-speaking community', 'Comunidade de falantes de português brasileira', 'flag', 'bg-green-600', false, null, 14),
 ('Portuguese from Africa', 'Portugueses de África', 'African Portuguese communities (Angola, Mozambique, etc.)', 'Comunidades portuguesas africanas (Angola, Moçambique, etc.)', 'flag', 'bg-orange-500', false, null, 15),
 ('Language Exchange', 'Intercâmbio de Línguas', 'Practice Portuguese and English together', 'Praticar português e inglês juntos', 'message-circle', 'bg-sky-500', false, null, 16);
 
@@ -224,7 +224,7 @@ WHERE moderation_status IS NULL;
 COMMENT ON TABLE public.group_reports IS 'Safety reporting system for groups';
 COMMENT ON TABLE public.group_moderation_log IS 'Audit trail for group moderation actions';
 COMMENT ON TABLE public.group_join_requests IS 'Join requests for private groups';
-COMMENT ON TABLE public.group_categories IS 'Portuguese community focused group categories';
+COMMENT ON TABLE public.group_categories IS 'Portuguese-speaking community focused group categories';
 COMMENT ON COLUMN public.groups.portuguese_origin IS 'Portuguese-speaking origin country/region';
 COMMENT ON COLUMN public.groups.language_preference IS 'Preferred language for group communication';
 COMMENT ON COLUMN public.groups.age_restrictions IS 'Age-based restrictions and family-friendly settings';

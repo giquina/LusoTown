@@ -314,7 +314,7 @@ export interface RegionalPreferences {
   religiousConsiderations: string[]
 }
 
-// Portuguese community growth metrics
+// Portuguese-speaking community growth metrics
 export interface CommunityGrowthMetrics {
   countryCode: PortugueseCountry
   totalPortugueseSpeakers: number

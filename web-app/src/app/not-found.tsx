@@ -88,8 +88,8 @@ export default function NotFound() {
           <div className="mt-8 p-4 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl border border-primary-100">
             <p className="text-xs text-gray-600 italic">
               {isPortuguese 
-                ? '"Onde há portugueses, há sempre uma mesa para mais um" - A comunidade portuguesa de Londres espera por si!'
-                : '"Where there are Portuguese, there\'s always room for one more" - The Portuguese community in London awaits you!'
+                ? '"Onde há portugueses, há sempre uma mesa para mais um" - A comunidade de falantes de português de Londres espera por si!'
+                : '"Where there are Portuguese, there\'s always room for one more" - The Portuguese-speaking community in London awaits you!'
               }
             </p>
           </div>

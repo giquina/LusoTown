@@ -1,4 +1,4 @@
-# LusoTown Portuguese Community Campaign Timeline & Budget
+# LusoTown Portuguese-speaking community Campaign Timeline & Budget
 **Premium Subscription Growth Campaign: £19.99/month**
 
 ---
@@ -47,7 +47,7 @@
 - [ ] SEO content publishing begins
 
 **Thursday-Friday:**
-- [ ] First Portuguese community event planning
+- [ ] First Portuguese-speaking community event planning
 - [ ] User-generated content campaign launch (#MinhaHistoriaPortuguesa)
 - **Budget allocation:** Event planning £300
 
@@ -291,7 +291,7 @@
 - [ ] Premium conversions: 300-500
 
 ### **Quality Metrics:**
-- **Portuguese Community Authenticity:** 75%+ of signups identify as Portuguese speakers
+- **Portuguese-speaking community Authenticity:** 75%+ of signups identify as Portuguese speakers
 - **Community Engagement:** 60%+ of premium members attend at least one cultural event
 - **Customer Satisfaction:** Net Promoter Score >50
 - **Cultural Connection Success:** 70%+ report "feeling more connected to Portuguese culture in London"
@@ -329,7 +329,7 @@
 - Portuguese cultural advisor consultation
 - Community guidelines in Portuguese and English
 - Cultural sensitivity training for customer support
-- Portuguese community leadership council
+- Portuguese-speaking community leadership council
 
 ---
 
@@ -344,7 +344,7 @@
 ✅ 500+ premium Portuguese subscribers
 ✅ £120,000+ annual recurring revenue established
 ✅ 20+ Portuguese business partnerships
-✅ London's recognized Portuguese community platform
+✅ London's recognized Portuguese-speaking community platform
 ✅ Self-sustaining community growth engine
 
 **Long-term Vision:** Establish LusoTown as the definitive Portuguese cultural community platform in London, with expansion potential to other UK cities with significant Portuguese populations (Manchester, Birmingham, Bristol).

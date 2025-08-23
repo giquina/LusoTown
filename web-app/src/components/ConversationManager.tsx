@@ -160,8 +160,8 @@ export default function ConversationManager({
         {
           id: 'cs-8',
           category: 'community',
-          promptEn: "How important is staying connected to the Portuguese community here?",
-          promptPt: 'Que importância tem manter-se ligado à comunidade portuguesa aqui?',
+          promptEn: "How important is staying connected to the Portuguese-speaking community here?",
+          promptPt: 'Que importância tem manter-se ligado à comunidade de falantes de português aqui?',
           culturalContext: 'Community belonging and identity',
           usageCount: 112
         }
@@ -207,7 +207,7 @@ export default function ConversationManager({
         professional: 'Professional Network'
       },
       tips: {
-        title: 'Portuguese Community Tips',
+        title: 'Portuguese-speaking community Tips',
         tip1: 'Portuguese speakers love sharing cultural experiences',
         tip2: 'Food is always a safe conversation starter',
         tip3: 'Showing interest in Portuguese culture goes a long way',
@@ -233,7 +233,7 @@ export default function ConversationManager({
         professional: 'Rede Profissional'
       },
       tips: {
-        title: 'Dicas da Comunidade Portuguesa',
+        title: 'Dicas da Comunidade de Falantes de Português',
         tip1: 'Portugueses adoram partilhar experiências culturais',
         tip2: 'Comida é sempre um bom tópico de conversa',
         tip3: 'Mostrar interesse na cultura portuguesa é muito valorizado',
@@ -390,7 +390,7 @@ export default function ConversationManager({
                 ))}
               </div>
 
-              {/* Portuguese Community Tips */}
+              {/* Portuguese-speaking community Tips */}
               <div className="bg-gradient-to-r from-green-50 to-red-50 rounded-lg p-4 border border-green-200">
                 <h4 className="font-medium text-neutral-900 mb-3">{t.tips.title}</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

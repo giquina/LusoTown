@@ -74,7 +74,7 @@ export default function DiasporaNetwork({
         'LusoTown helped us find family we never knew existed. The reunion was magical!',
         'Our children finally understood their Portuguese heritage.'
       ],
-      mediaAttention: ['CBC Portuguese Community Feature', 'Açoriano Oriental Newspaper']
+      mediaAttention: ['CBC Portuguese-speaking community Feature', 'Açoriano Oriental Newspaper']
     },
     {
       id: 'business-partnership-uk-brazil',

@@ -4,7 +4,7 @@ import { heritageRespectProtocol } from '@/services/HeritageRespectProtocol'
 import { languagePreservationAI } from '@/services/LanguagePreservationAI'
 
 /**
- * AI Ethics API Endpoints for Portuguese Community Platform
+ * AI Ethics API Endpoints for Portuguese-speaking community Platform
  * 
  * Provides REST API access to AI ethics monitoring, heritage respect validation,
  * language preservation metrics, and community feedback systems.

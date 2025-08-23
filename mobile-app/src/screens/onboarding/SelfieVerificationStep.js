@@ -20,7 +20,7 @@ const SelfieVerificationStep = ({ onNext, onBack, selfieVerification, setSelfieV
     if (status !== 'granted') {
       Alert.alert(
         'Camera Permission Required',
-        'We need camera access for identity verification to keep our Portuguese community safe. Please enable camera permissions in your device settings.',
+        'We need camera access for identity verification to keep our Portuguese-speaking community safe. Please enable camera permissions in your device settings.',
         [{ text: 'OK' }]
       );
       return false;
@@ -75,7 +75,7 @@ const SelfieVerificationStep = ({ onNext, onBack, selfieVerification, setSelfieV
     if (!selfieVerification?.verified) {
       Alert.alert(
         'Verification Required',
-        'Identity verification helps us maintain a safe, trusted Portuguese community for all members. This step is required to continue.',
+        'Identity verification helps us maintain a safe, trusted Portuguese-speaking community for all members. This step is required to continue.',
         [
           { text: 'Take Verification Photo', onPress: takeVerificationSelfie },
           { text: 'Learn More', onPress: showVerificationInfo },
@@ -109,7 +109,7 @@ const SelfieVerificationStep = ({ onNext, onBack, selfieVerification, setSelfieV
         <Text style={styles.stepNumber}>5 of 7</Text>
         <Text style={styles.title}>Identity Verification</Text>
         <Text style={styles.subtitle}>
-          Take a quick verification selfie to keep our Portuguese community safe and trusted.
+          Take a quick verification selfie to keep our Portuguese-speaking community safe and trusted.
         </Text>
       </View>
 
@@ -144,7 +144,7 @@ const SelfieVerificationStep = ({ onNext, onBack, selfieVerification, setSelfieV
             </View>
             <Text style={styles.captureTitle}>Ready for verification?</Text>
             <Text style={styles.captureText}>
-              We'll take a quick photo to verify your identity and keep our Portuguese community safe.
+              We'll take a quick photo to verify your identity and keep our Portuguese-speaking community safe.
             </Text>
             <TouchableOpacity 
               style={styles.captureButton} 

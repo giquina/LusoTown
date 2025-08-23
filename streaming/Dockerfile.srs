@@ -16,7 +16,7 @@ RUN mkdir -p /usr/local/srs/conf \
     && mkdir -p /etc/nginx/sites-available \
     && mkdir -p /etc/nginx/sites-enabled
 
-# Copy SRS configuration for Portuguese community streaming
+# Copy SRS configuration for Portuguese-speaking community streaming
 COPY conf/srs.conf /usr/local/srs/conf/srs.conf
 
 # Copy nginx configuration for CDN integration

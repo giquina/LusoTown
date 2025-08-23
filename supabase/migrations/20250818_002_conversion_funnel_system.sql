@@ -436,15 +436,15 @@ GRANT USAGE ON SCHEMA public TO authenticated;
 GRANT ALL ON ALL TABLES IN SCHEMA public TO authenticated;
 GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO authenticated;
 
--- Insert sample promotional codes for Portuguese community
+-- Insert sample promotional codes for Portuguese-speaking community
 INSERT INTO pricing_promotions (promo_code, discount_percentage, valid_until, target_audience, description_en, description_pt, max_uses) VALUES
-  ('LUSO20', 20, '2025-12-31 23:59:59+00', 'general', 'Portuguese Community Welcome Discount', 'Desconto de Boas-Vindas da Comunidade Portuguesa', 1000),
+  ('LUSO20', 20, '2025-12-31 23:59:59+00', 'general', 'Portuguese-speaking community Welcome Discount', 'Desconto de Boas-Vindas da Comunidade de Falantes de Português', 1000),
   ('TRIAL2025', 15, '2025-09-30 23:59:59+00', 'trial_expired', 'Trial Conversion Incentive', 'Incentivo de Conversão de Teste', 500),
   ('COMMUNITY50', 50, '2025-08-31 23:59:59+00', 'students', 'Student Community Discount', 'Desconto Comunitário para Estudantes', 200)
 ON CONFLICT (promo_code) DO NOTHING;
 
 -- Comments
-COMMENT ON TABLE subscription_trials IS 'Manages 7-day free trials for Portuguese community members';
+COMMENT ON TABLE subscription_trials IS 'Manages 7-day free trials for Portuguese-speaking community members';
 COMMENT ON TABLE conversion_events IS 'Tracks conversion funnel events for analytics and optimization';
 COMMENT ON TABLE email_queue IS 'Automated email sequences for trial reminders and retention';
 COMMENT ON TABLE email_logs IS 'Logs all emails sent for delivery tracking and compliance';

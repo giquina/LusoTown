@@ -81,7 +81,7 @@ const mockServicePosts: ServicePost[] = [
       availability: 'This Weekend',
       areas: ['Heathrow', 'Gatwick', 'Central London', 'Windsor'],
       languages: ['Portuguese', 'English'],
-      includes: ['Cultural commentary', 'Portuguese community areas', 'Historical context'],
+      includes: ['Cultural commentary', 'Portuguese-speaking community areas', 'Historical context'],
       booking: 'WhatsApp: +44 7xxx xxx xxx'
     },
     images: ['https://images.unsplash.com/photo-1583677995106-1594c4bf5d90?w=600&h=400&fit=crop'],
@@ -104,7 +104,7 @@ const mockServicePosts: ServicePost[] = [
       rating: 4.8,
       completedServices: 189
     },
-    content: 'Amazing cultural tour of Stockwell Portuguese community today! Visited the best Portuguese bakeries, explored the Portuguese murals, and ended at the Portuguese Cultural Centre. My guests loved learning about our community\'s history in London! 🇵🇹',
+    content: 'Amazing cultural tour of Stockwell Portuguese-speaking community today! Visited the best Portuguese bakeries, explored the Portuguese murals, and ended at the Portuguese Cultural Centre. My guests loved learning about our community\'s history in London! 🇵🇹',
     serviceDetails: {
       type: 'Cultural Walking Tour',
       price: 'From £25 per person',
@@ -234,8 +234,8 @@ export default function ServiceIntegrationFeed() {
             </h2>
             <p className="text-gray-600">
               {isPortuguese 
-                ? 'Serviços disponíveis de membros verificados da comunidade portuguesa'
-                : 'Available services from verified Portuguese community members'
+                ? 'Serviços disponíveis de membros verificados da comunidade de falantes de português'
+                : 'Available services from verified Portuguese-speaking community members'
               }
             </p>
           </div>

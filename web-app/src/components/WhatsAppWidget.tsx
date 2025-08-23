@@ -30,7 +30,7 @@ export default function WhatsAppWidget() {
       en: [
         {
           message:
-            "Ola! 👋 Welcome to LusoTown - London's Portuguese community!\n\nI'm here to help you discover:\n🤝 Meet Your Match\n📺 Live Streams\n🚗 Premium Transport\n\nWhat interests you most?",
+            "Ola! 👋 Welcome to LusoTown - London's Portuguese-speaking community!\n\nI'm here to help you discover:\n🤝 Meet Your Match\n📺 Live Streams\n🚗 Premium Transport\n\nWhat interests you most?",
           options: [
             '🤝 Find my Portuguese match',
             '📺 Watch Portuguese streams',
@@ -55,7 +55,7 @@ export default function WhatsAppWidget() {
         },
         {
           message:
-            "LusoTown is London's complete Portuguese community platform. Which area interests you most?",
+            "LusoTown is London's complete Portuguese-speaking community platform. Which area interests you most?",
           options: ['❤️ Find my Portuguese match', '📺 Explore streaming platform', '🚗 Book premium transport', '🎪 Join events & groups'],
         },
         {
@@ -72,7 +72,7 @@ export default function WhatsAppWidget() {
       pt: [
         {
           message:
-            'Ola! 👋 Bem-vindo a LusoTown - a comunidade portuguesa de Londres! O que te interessa mais?',
+            'Ola! 👋 Bem-vindo a LusoTown - a comunidade de falantes de português de Londres! O que te interessa mais?',
           options: [
             '🤝 Encontrar o meu match',
             '📺 Ver streams',
@@ -97,7 +97,7 @@ export default function WhatsAppWidget() {
         },
         {
           message:
-            'LusoTown e a plataforma completa da comunidade portuguesa de Londres. O que te interessa mais?',
+            'LusoTown e a plataforma completa da comunidade de falantes de português de Londres. O que te interessa mais?',
           options: [
             '❤️ Encontrar o meu match portugues',
             '📺 Explorar plataforma streaming',
@@ -229,7 +229,7 @@ export default function WhatsAppWidget() {
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   <p className="text-xs text-white/90 font-medium">
-                    {isPortuguese ? 'Comunidade Portuguesa Online' : 'Portuguese Community Online'}
+                    {isPortuguese ? 'Comunidade de Falantes de Português Online' : 'Portuguese-speaking community Online'}
                   </p>
                 </div>
               </div>
@@ -307,7 +307,7 @@ export default function WhatsAppWidget() {
             <div className="mt-3 text-center">
               <p className="text-xs text-gray-600 font-medium flex items-center justify-center gap-2">
                 <div className="w-2 h-2 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-full"></div>
-                {isPortuguese ? 'Comunidade Portuguesa em Londres' : 'Portuguese Community in London'}
+                {isPortuguese ? 'Comunidade de Falantes de Português em Londres' : 'Portuguese-speaking community in London'}
                 <div className="w-2 h-2 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-full"></div>
               </p>
             </div>

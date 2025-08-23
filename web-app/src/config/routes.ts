@@ -243,7 +243,7 @@ export const getBreadcrumbPath = (route: string): string[] => {
   return segments.map((_, index) => `/${  segments.slice(0, index + 1).join('/')}`);
 };
 
-// Portuguese Community Specific Routes
+// Portuguese-speaking community Specific Routes
 export const PORTUGUESE_ROUTES = {
   culturalEvents: buildRouteWithQuery(ROUTES.events, { category: 'cultural' }),
   portugueseBusiness: buildRouteWithQuery(ROUTES.businessDirectory, { language: 'pt' }),

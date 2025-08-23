@@ -4,7 +4,7 @@
  * Mobile UX Validation Script for LusoTown
  * 
  * This script provides command-line access to the mobile UX validation system
- * for Portuguese community platform development.
+ * for Portuguese-speaking community platform development.
  * 
  * Usage:
  *   node scripts/mobile-ux-validator.js [options]
@@ -50,7 +50,7 @@ if (breakpointsIndex !== -1 && args[breakpointsIndex + 1]) {
  * Mobile UX Validation Configuration
  */
 const MOBILE_VALIDATION_CONFIG = {
-  // Critical breakpoints for Portuguese community
+  // Critical breakpoints for Portuguese-speaking community
   defaultBreakpoints: [
     { width: 375, height: 667, name: 'iPhone SE' },
     { width: 414, height: 896, name: 'iPhone 12/13/14' },
@@ -99,7 +99,7 @@ const MOBILE_VALIDATION_CONFIG = {
  */
 async function validateMobileUX() {
   console.log('🚀 LusoTown Mobile UX Validator\n');
-  console.log('Validating Portuguese community platform mobile experience...\n');
+  console.log('Validating Portuguese-speaking community platform mobile experience...\n');
 
   try {
     // Import validation utilities (would need to be adapted for Node.js)
@@ -375,7 +375,7 @@ function calculateOverallScore(results) {
   const weights = {
     breakpoints: 25,    // Critical for mobile experience
     touchTargets: 20,   // Essential for usability
-    portugueseText: 20, // Core for Portuguese community
+    portugueseText: 20, // Core for Portuguese-speaking community
     accessibility: 15,  // Important for inclusivity
     performance: 10,    // Good for user experience
     cultural: 10        // Important for community feel
@@ -445,7 +445,7 @@ function displayResults(results) {
   }
   
   // Portuguese-specific guidance
-  console.log('\n🇵🇹 Portuguese Community Guidance:');
+  console.log('\n🇵🇹 Portuguese-speaking community Guidance:');
   console.log('  - Test with actual Portuguese users on mobile devices');
   console.log('  - Validate cultural elements resonate with the community');
   console.log('  - Ensure text doesn\'t overflow on Portuguese translations');
@@ -536,8 +536,8 @@ function generateDetailedReport(results) {
     }).join('')}
     
     <div class="section">
-        <h2>🇵🇹 Portuguese Community Guidelines</h2>
-        <p>This validation specifically considers the needs of the Portuguese community in London and the UK:</p>
+        <h2>🇵🇹 Portuguese-speaking community Guidelines</h2>
+        <p>This validation specifically considers the needs of the Portuguese-speaking community in London and the UK:</p>
         <ul>
             <li><strong>Text Length:</strong> Portuguese text is typically 20-40% longer than English</li>
             <li><strong>Cultural Colors:</strong> Red and green heritage colors maintain cultural identity</li>

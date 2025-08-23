@@ -1,6 +1,6 @@
 /**
  * AI Notification Engine Test Suite
- * Production-ready testing for Portuguese Community Platform
+ * Production-ready testing for Portuguese-speaking community Platform
  * 
  * Tests cover:
  * - Production deployment readiness
@@ -305,7 +305,7 @@ describe('AI Notification Engine - Production Readiness', () => {
   })
 
   describe('Timing Optimization', () => {
-    test('should optimize notification timing for Portuguese community', async () => {
+    test('should optimize notification timing for Portuguese-speaking community', async () => {
       const notifications = [mockNotificationData] as any[]
       
       const result = await engine.optimizeTimingForCommunity(notifications)

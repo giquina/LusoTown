@@ -29,10 +29,10 @@ export default function PremiumMatchesGate() {
   const translations = {
     en: {
       title: "Unlock Premium Matches",
-      subtitle: "Connect with More Portuguese Community Members",
+      subtitle: "Connect with More Portuguese-speaking community Members",
       dailyLimitReached: "Daily free match limit reached",
       upgradeMessage:
-        "Join our Portuguese community matching to discover meaningful connections with fellow Portuguese speakers in London.",
+        "Join our Portuguese-speaking community matching to discover meaningful connections with fellow Portuguese speakers in London.",
       freeFeatures: {
         title: "Free Matching",
         matches: "3 matches per day",
@@ -47,7 +47,7 @@ export default function PremiumMatchesGate() {
         verification: "Profile verification badge",
         ambassador_priority: "Priority profile visibility",
         ambassador_coordination: "Event hosting privileges",
-        ambassador_support: "Direct Portuguese community support",
+        ambassador_support: "Direct Portuguese-speaking community support",
         ambassador_streaming: "Unlimited livestream hours",
       },
       pricing: {
@@ -63,7 +63,7 @@ export default function PremiumMatchesGate() {
         backToMatches: "Back to Free Matches",
       },
       testimonials: {
-        title: "What Portuguese Community Members Say",
+        title: "What Portuguese-speaking community Members Say",
         maria: {
           text: "Found amazing business connections through LusoTown Premium. The advanced filters helped me connect with Portuguese entrepreneurs in my field.",
           author: "Maria Santos, Finance Professional",
@@ -80,10 +80,10 @@ export default function PremiumMatchesGate() {
     },
     pt: {
       title: "Desbloqueie Matches Premium",
-      subtitle: "Conecte-se com Mais Membros da Comunidade Portuguesa",
+      subtitle: "Conecte-se com Mais Membros da Comunidade de Falantes de Português",
       dailyLimitReached: "Limite diário de matches gratuitos atingido",
       upgradeMessage:
-        "Junte-se à nossa comunidade portuguesa para descobrir conexões significativas com outros falantes de português em Londres.",
+        "Junte-se à nossa comunidade de falantes de português para descobrir conexões significativas com outros falantes de português em Londres.",
       freeFeatures: {
         title: "Matches Gratuitos",
         matches: "3 matches por dia",
@@ -98,7 +98,7 @@ export default function PremiumMatchesGate() {
         verification: "Distintivo de perfil verificado",
         ambassador_priority: "Visibilidade prioritária do perfil",
         ambassador_coordination: "Privilégios de organização de eventos",
-        ambassador_support: "Suporte direto da comunidade portuguesa",
+        ambassador_support: "Suporte direto da comunidade de falantes de português",
         ambassador_streaming: "Horas de transmissão ilimitadas",
       },
       pricing: {
@@ -114,7 +114,7 @@ export default function PremiumMatchesGate() {
         backToMatches: "Voltar aos Matches Gratuitos",
       },
       testimonials: {
-        title: "O Que Dizem os Membros da Comunidade Portuguesa",
+        title: "O Que Dizem os Membros da Comunidade de Falantes de Português",
         maria: {
           text: "Encontrei conexões empresariais incríveis através do LusoTown Premium. Os filtros avançados ajudaram-me a conectar com empreendedores portugueses na minha área.",
           author: "Maria Santos, Profissional de Finanças",
@@ -218,8 +218,8 @@ export default function PremiumMatchesGate() {
               <Sparkles className="h-5 w-5 text-primary-600" />
               <span className="font-semibold text-primary-900">
                 {language === "pt"
-                  ? "Conecte-se com a Comunidade Portuguesa em Londres"
-                  : "Connect with the Portuguese Community in London"}
+                  ? "Conecte-se com a Comunidade de Falantes de Português em Londres"
+                  : "Connect with the Portuguese-speaking community in London"}
               </span>
             </div>
             <p className="text-primary-800">{t.upgradeMessage}</p>

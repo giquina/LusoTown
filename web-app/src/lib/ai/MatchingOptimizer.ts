@@ -1,6 +1,6 @@
 /**
  * AI Matching System Performance Optimizer
- * Ensures elite user experience for Portuguese community matching
+ * Ensures elite user experience for Portuguese-speaking community matching
  */
 
 export class MatchingOptimizer {
@@ -16,7 +16,7 @@ export class MatchingOptimizer {
   }
 
   /**
-   * Optimize cultural compatibility calculations for Portuguese community
+   * Optimize cultural compatibility calculations for Portuguese-speaking community
    */
   public optimizeCulturalCompatibility(
     userProfile: any,

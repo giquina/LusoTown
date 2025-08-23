@@ -71,7 +71,7 @@ export function EliteFeedbackSystem({
       if (culturalTheme) {
         showCultural(
           language === 'pt' ? 'Obrigado!' : 'Thank you!',
-          language === 'pt' ? 'O seu apoio fortalece a nossa comunidade portuguesa' : 'Your support strengthens our Portuguese community'
+          language === 'pt' ? 'O seu apoio fortalece a nossa comunidade de falantes de português' : 'Your support strengthens our Portuguese-speaking community'
         )
       } else {
         showSuccess('Thank you!', 'Your feedback helps us improve')
@@ -396,8 +396,8 @@ export function EliteFeedbackSystem({
                     placeholder={
                       culturalTheme
                         ? language === 'pt'
-                          ? 'Partilhe os seus pensamentos sobre a nossa comunidade portuguesa...'
-                          : 'Share your thoughts about our Portuguese community...'
+                          ? 'Partilhe os seus pensamentos sobre a nossa comunidade de falantes de português...'
+                          : 'Share your thoughts about our Portuguese-speaking community...'
                         : 'Share your thoughts...'
                     }
                     className={cn(
@@ -509,8 +509,8 @@ export function EliteReviewSystem({
         showCultural(
           language === 'pt' ? 'Avaliação enviada!' : 'Review submitted!',
           language === 'pt' 
-            ? 'Obrigado por ajudar a nossa comunidade portuguesa'
-            : 'Thank you for helping our Portuguese community'
+            ? 'Obrigado por ajudar a nossa comunidade de falantes de português'
+            : 'Thank you for helping our Portuguese-speaking community'
         )
       } else {
         showSuccess('Review submitted!', 'Thank you for your feedback')
@@ -567,8 +567,8 @@ export function EliteReviewSystem({
         )}>
           {culturalTheme
             ? language === 'pt'
-              ? 'A sua opinião fortalece a nossa comunidade portuguesa'
-              : 'Your opinion strengthens our Portuguese community'
+              ? 'A sua opinião fortalece a nossa comunidade de falantes de português'
+              : 'Your opinion strengthens our Portuguese-speaking community'
             : 'Thank you for helping others make informed decisions'
           }
         </p>

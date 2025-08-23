@@ -23,7 +23,7 @@ export const socialMedia = {
 export const officeLocations = {
   london: {
     name: process.env.NEXT_PUBLIC_OFFICE_NAME || 'LusoTown London HQ',
-    address: process.env.NEXT_PUBLIC_OFFICE_ADDRESS || 'Portuguese Community Centre, Vauxhall, London',
+    address: process.env.NEXT_PUBLIC_OFFICE_ADDRESS || 'Portuguese-speaking community Centre, Vauxhall, London',
     postcode: process.env.NEXT_PUBLIC_OFFICE_POSTCODE || 'SW8 2LG',
     phone: contactPhones.general,
     email: contactInfo.general
@@ -43,7 +43,7 @@ export const contact = {
     youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL || 'https://youtube.com/@lusotownlondon'
   },
   address: {
-    street: process.env.NEXT_PUBLIC_OFFICE_ADDRESS?.split(',')[0] || 'Portuguese Community Centre',
+    street: process.env.NEXT_PUBLIC_OFFICE_ADDRESS?.split(',')[0] || 'Portuguese-speaking community Centre',
     city: 'London',
     region: 'England',
     postcode: process.env.NEXT_PUBLIC_OFFICE_POSTCODE || 'SW8 2LG',

@@ -22,8 +22,8 @@ export default function ToolsPage() {
           </h1>
           <p className="text-gray-600 mb-8">
             {isPt
-              ? "Estamos a abrir a nossa suíte de ferramentas para criadores e empresas da comunidade portuguesa. Enquanto isso, podes explorar as áreas abaixo."
-              : "We’re bringing our creator and business tools online for the Portuguese community. In the meantime, explore the areas below."}
+              ? "Estamos a abrir a nossa suíte de ferramentas para criadores e empresas da comunidade de falantes de português. Enquanto isso, podes explorar as áreas abaixo."
+              : "We’re bringing our creator and business tools online for the Portuguese-speaking community. In the meantime, explore the areas below."}
           </p>
         </div>
 

@@ -272,7 +272,7 @@ const allCaseStudies: CaseStudy[] = [
     quotes: {
       person1: '"Mariana became my London sister. When I was homesick, she\'d cook Portuguese comfort food. When I doubted my English, she practiced presentations with me."',
       person2: '"Ana brought such joy and perspective. Through her eyes, I rediscovered why I loved London. We balanced each other perfectly - my experience, her optimism."',
-      joint: '"Living together has been the best decision. We share costs, culture, and create a piece of Portugal in London. Our flat is now the gathering place for the whole Portuguese community."'
+      joint: '"Living together has been the best decision. We share costs, culture, and create a piece of Portugal in London. Our flat is now the gathering place for the whole Portuguese-speaking community."'
     },
     currentStatus: 'Still living together in their Stockwell flat, planning to buy a property together in 2025. They host monthly Portuguese dinner parties and have helped 15+ newcomers settle in London.',
     icon: HomeIcon
@@ -433,7 +433,7 @@ export default function CaseStudies() {
           >
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-secondary-50/80 via-accent-50/80 to-coral-50/80 backdrop-blur-sm rounded-full px-8 py-4 text-secondary-600 font-bold mb-8 border border-secondary-200/40 shadow-xl">
               <SparklesIcon className="h-5 w-5 text-accent-600" />
-              Real Portuguese Community Case Studies
+              Real Portuguese-speaking community Case Studies
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
               Three London Stories That{' '}

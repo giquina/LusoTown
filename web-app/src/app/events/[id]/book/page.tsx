@@ -499,7 +499,7 @@ const TechnologyWorkshopBookingPage = () => {
                                   className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                                 />
                                 <label className="text-sm text-gray-700">
-                                  I'd like to receive updates about future technology workshops and Portuguese community events
+                                  I'd like to receive updates about future technology workshops and Portuguese-speaking community events
                                 </label>
                               </div>
                             </div>

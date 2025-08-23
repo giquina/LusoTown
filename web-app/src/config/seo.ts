@@ -21,7 +21,7 @@ export const seo = {
     // Primary Portuguese SEO Keywords
     "portuguese social calendar london",
     "agenda social portuguesa londres",
-    "comunidade portuguesa londres",
+    "comunidade de falantes de português londres",
     "portugueses em londres",
     "brasileiros em londres",
     "lusófonos londres",
@@ -68,7 +68,7 @@ export const seo = {
     "portuguese heritage preservation",
     "diaspora community london",
     // Portuguese Keywords
-    "comunidade portuguesa londres",
+    "comunidade de falantes de português londres",
     "comunidade brasileira londres",
     "comunidade angolana londres",
     "comunidade moçambicana londres",
@@ -147,7 +147,7 @@ export const seo = {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       name: brand.name,
-      description: 'Portuguese community services in London',
+      description: 'Portuguese-speaking community services in London',
       url: process.env.NEXT_PUBLIC_SITE_URL || 'https://lusotown.london',
       telephone: contact.phone,
       email: contact.support,
@@ -178,7 +178,7 @@ export const pageSEO = {
   home: {
     title: seo.defaultTitle,
     description: seo.defaultDescription,
-    keywords: 'portuguese london, portuguese community, portuguese events, portuguese business, lusitanian, luso town'
+    keywords: 'portuguese london, Portuguese-speaking community, portuguese events, portuguese business, lusitanian, luso town'
   },
   
   events: {
@@ -189,7 +189,7 @@ export const pageSEO = {
   
   transport: {
     title: `Portuguese Transport Services London | ${brand.name}`,
-    description: 'Premium transport services for the Portuguese community in London. Executive cars, airport transfers, and cultural tour transport.',
+    description: 'Premium transport services for the Portuguese-speaking community in London. Executive cars, airport transfers, and cultural tour transport.',
     keywords: 'portuguese transport london, executive cars, airport transfer, portuguese driver'
   },
   
@@ -201,7 +201,7 @@ export const pageSEO = {
   
   streaming: {
     title: `Portuguese Live Streaming Platform | ${brand.name}`,
-    description: 'Get paid to stream for the Portuguese community. 85/15 revenue split, cultural emotes, and monetize your Portuguese content.',
+    description: 'Get paid to stream for the Portuguese-speaking community. 85/15 revenue split, cultural emotes, and monetize your Portuguese content.',
     keywords: 'portuguese streaming, live streaming income, portuguese content creator, monetize streaming'
   },
   

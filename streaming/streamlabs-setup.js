@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * LusoTown Portuguese Community - Streamlabs Mobile Setup
+ * LusoTown Portuguese-speaking community - Streamlabs Mobile Setup
  * Automatic configuration generator for Streamlabs mobile streaming
  */
 
@@ -16,7 +16,7 @@ const getCodespaceUrl = () => {
   return codespaceUrl;
 };
 
-// Portuguese community streaming configuration
+// Portuguese-speaking community streaming configuration
 const generateStreamlabsConfig = () => {
   const baseUrl = getCodespaceUrl();
   
@@ -43,7 +43,7 @@ const generateStreamlabsConfig = () => {
         encoder: 'AAC'
       },
       
-      // Portuguese community specific settings
+      // Portuguese-speaking community specific settings
       advanced: {
         bufferSize: '2048KB',
         lowLatencyMode: true,
@@ -52,7 +52,7 @@ const generateStreamlabsConfig = () => {
       }
     },
     
-    // Viewing URLs for Portuguese community
+    // Viewing URLs for Portuguese-speaking community
     playback: {
       hlsUrl: baseUrl.replace('{PORT}', '8080') + '/live/streamlabs_lusotown_2025.m3u8',
       webPlayerUrl: baseUrl.replace('{PORT}', '3000') + '/live/streamlabs_lusotown_2025',
@@ -60,7 +60,7 @@ const generateStreamlabsConfig = () => {
       statsUrl: baseUrl.replace('{PORT}', '1985') + '/api/v1/streams'
     },
     
-    // Portuguese community features
+    // Portuguese-speaking community features
     community: {
       emotes: [':saudade:', ':festa:', ':futebol:', ':fado:', ':portugal:', ':brasil:'],
       chatLanguages: ['pt', 'en'],
@@ -80,10 +80,10 @@ const generateStreamlabsConfig = () => {
   return config;
 };
 
-// Generate Portuguese community stream keys
+// Generate Portuguese-speaking community stream keys
 const generateStreamKeys = () => {
   const keys = {
-    // Main Portuguese community streams
+    // Main Portuguese-speaking community streams
     cultural: 'portuguese_cultural_' + Date.now(),
     business: 'portuguese_business_' + Date.now(),
     social: 'portuguese_social_' + Date.now(),
@@ -102,12 +102,12 @@ const generateStreamKeys = () => {
   return keys;
 };
 
-// Create setup instructions for Portuguese community
+// Create setup instructions for Portuguese-speaking community
 const createSetupInstructions = (config, streamKeys) => {
   const baseUrl = getCodespaceUrl();
   
   return `
-🇵🇹 LusoTown Portuguese Community - Streamlabs Mobile Setup
+🇵🇹 LusoTown Portuguese-speaking community - Streamlabs Mobile Setup
 ==========================================================
 
 📱 STREAMLABS MOBILE CONFIGURATION:
@@ -136,7 +136,7 @@ const createSetupInstructions = (config, streamKeys) => {
    🖥️ Web Player: ${config.playback.webPlayerUrl}
    📊 Stream Stats: ${config.playback.statsUrl}
 
-🇵🇹 PORTUGUESE COMMUNITY FEATURES:
+🇵🇹 Portuguese-speaking community FEATURES:
    😊 Cultural Emotes: ${config.community.emotes.join(', ')}
    🗣️ Languages: ${config.community.chatLanguages.join(', ')}
    🏷️ Content Tags: ${config.community.culturalTags.join(', ')}
@@ -164,13 +164,13 @@ const createSetupInstructions = (config, streamKeys) => {
 
 ✅ Ready to stream Portuguese cultural content to the London community!
 
-📞 Support: Visit ${baseUrl.replace('{PORT}', '3000')}/help for Portuguese community assistance
+📞 Support: Visit ${baseUrl.replace('{PORT}', '3000')}/help for Portuguese-speaking community assistance
 `;
 };
 
 // Main execution
 const main = () => {
-  console.log('🇵🇹 Generating LusoTown Portuguese Community Streamlabs Configuration...\n');
+  console.log('🇵🇹 Generating LusoTown Portuguese-speaking community Streamlabs Configuration...\n');
   
   const config = generateStreamlabsConfig();
   const streamKeys = generateStreamKeys();
@@ -205,12 +205,12 @@ const main = () => {
   
   console.log('\n📁 Configuration files saved to ./config/');
   console.log('   • streamlabs-config.json - Complete configuration');
-  console.log('   • stream-keys.json - Portuguese community stream keys');
+  console.log('   • stream-keys.json - Portuguese-speaking community stream keys');
   console.log('   • STREAMLABS_SETUP.md - Setup instructions');
   
   console.log('\n🚀 Start the streaming infrastructure with:');
   console.log('   docker-compose up -d');
-  console.log('\n🇵🇹 LusoTown Portuguese Community streaming ready for Streamlabs mobile!');
+  console.log('\n🇵🇹 LusoTown Portuguese-speaking community streaming ready for Streamlabs mobile!');
 };
 
 // Run if called directly

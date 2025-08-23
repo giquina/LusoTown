@@ -160,6 +160,6 @@ create index idx_saudade_support_groups_active on public.saudade_support_groups(
 create index idx_cultural_comfort_activities_category on public.cultural_comfort_activities(activity_category, comfort_level);
 
 -- Comments for documentation
-comment on table public.saudade_assessments is 'Captures emotional longing and homesickness patterns of Portuguese community members for targeted support matching';
+comment on table public.saudade_assessments is 'Captures emotional longing and homesickness patterns of Portuguese-speaking community members for targeted support matching';
 comment on table public.saudade_support_groups is 'Peer support groups focused on helping Portuguese speakers cope with saudade and cultural displacement';
 comment on table public.cultural_comfort_activities is 'Therapeutic and comforting activities rooted in Portuguese cultural traditions for emotional support';

@@ -56,8 +56,8 @@ export default function OnboardingDemo() {
         break
       case 'share_referral_whatsapp':
         const whatsappMessage = isPortuguese 
-          ? `Olá! Junta-te à maior comunidade portuguesa em Londres: ${(process.env.NEXT_PUBLIC_SITE_URL||'').trim() || require('@/config/site').SITE_URL}/?ref=${data?.code}`
-          : `Hi! Join London's largest Portuguese community: ${(process.env.NEXT_PUBLIC_SITE_URL||'').trim() || require('@/config/site').SITE_URL}/?ref=${data?.code}`
+          ? `Olá! Junta-te à maior comunidade de falantes de português em Londres: ${(process.env.NEXT_PUBLIC_SITE_URL||'').trim() || require('@/config/site').SITE_URL}/?ref=${data?.code}`
+          : `Hi! Join London's largest Portuguese-speaking community: ${(process.env.NEXT_PUBLIC_SITE_URL||'').trim() || require('@/config/site').SITE_URL}/?ref=${data?.code}`
         window.open(`${process.env.NEXT_PUBLIC_WHATSAPP_API_URL || 'https://wa.me'}/?text=${encodeURIComponent(whatsappMessage)}`, '_blank')
         break
       case 'share_referral_generic':
@@ -167,8 +167,8 @@ export default function OnboardingDemo() {
                 
                 <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
                   {isPortuguese 
-                    ? 'Experimente o fluxo completo de onboarding e funcionalidades de crescimento para a comunidade portuguesa em Londres.'
-                    : 'Experience the complete onboarding flow and growth features for the Portuguese community in London.'
+                    ? 'Experimente o fluxo completo de onboarding e funcionalidades de crescimento para a comunidade de falantes de português em Londres.'
+                    : 'Experience the complete onboarding flow and growth features for the Portuguese-speaking community in London.'
                   }
                 </p>
 

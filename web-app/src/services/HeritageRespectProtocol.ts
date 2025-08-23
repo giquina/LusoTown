@@ -922,7 +922,7 @@ export class HeritageRespectProtocol {
     enhancements.push('Add authentic Portuguese cultural context')
     enhancements.push('Include regional diversity perspectives')
     enhancements.push('Provide bilingual content for diaspora inclusion')
-    enhancements.push('Reference Portuguese community values and traditions')
+    enhancements.push('Reference Portuguese-speaking community values and traditions')
     
     if (context.target_audience.includes('students')) {
       enhancements.push('Include educational cultural background information')

@@ -14,9 +14,9 @@ Este guia abrangente ajudará criadores portugueses a começar na plataforma de 
 
 ### O que é a LusoTown TV | What is LusoTown TV
 
-A LusoTown TV é a primeira plataforma de streaming dedicada exclusivamente à comunidade portuguesa, oferecendo:
+A LusoTown TV é a primeira plataforma de streaming dedicada exclusivamente à comunidade de falantes de português, oferecendo:
 
-*LusoTown TV is the first streaming platform dedicated exclusively to the Portuguese community, offering:*
+*LusoTown TV is the first streaming platform dedicated exclusively to the Portuguese-speaking community, offering:*
 
 - **Conteúdo Cultural Autêntico** | *Authentic Cultural Content*
 - **Workshops de Negócios** | *Business Workshops* 
@@ -313,7 +313,7 @@ Digite :futebol: para jogos/discussões desportivas
 - Responder em português sempre que possível
 - Criar conteúdo específico para cada região lusófona
 - Promover eventos culturais locais
-- Apoiar causas da comunidade portuguesa
+- Apoiar causas da comunidade de falantes de português
 
 ---
 

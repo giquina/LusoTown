@@ -133,8 +133,8 @@ const CULTURAL_CATEGORIES: CulturalCategory[] = [
   },
   {
     id: 'community',
-    name: 'Portuguese Community',
-    namePortuguese: 'Comunidade Portuguesa',
+    name: 'Portuguese-speaking community',
+    namePortuguese: 'Comunidade de Falantes de Português',
     confidence: 0,
     color: 'pink',
     icon: '👥'
@@ -178,8 +178,8 @@ const VERIFICATION_BADGES: VerificationBadge[] = [
     id: 'community_member',
     name: 'Community Member',
     namePortuguese: 'Membro da Comunidade',
-    description: 'Active member of Portuguese community in London',
-    descriptionPortuguese: 'Membro ativo da comunidade portuguesa em Londres',
+    description: 'Active member of Portuguese-speaking community in London',
+    descriptionPortuguese: 'Membro ativo da comunidade de falantes de português em Londres',
     icon: '👑',
     color: 'pink',
     rarity: 'rare',

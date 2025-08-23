@@ -1,4 +1,4 @@
-# LusoTown London - Premium Portuguese Community Platform
+# LusoTown London - Premium Portuguese-speaking community Platform
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.0-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue?logo=typescript)](https://typescriptlang.org/)
@@ -6,7 +6,7 @@
 [![Production Ready](https://img.shields.io/badge/Status-Production%20Ready-success)](https://lusotown.vercel.app/)
 
 **Unidos pela Língua (United by Language)**  
-*The premium Portuguese community platform connecting London's Portuguese diaspora through luxury services, cultural events, and authentic connections.*
+*The premium Portuguese-speaking community platform connecting London's Portuguese diaspora through luxury services, cultural events, and authentic connections.*
 
 ---
 
@@ -16,7 +16,7 @@ LusoTown London is a sophisticated community platform designed exclusively for P
 
 ### 🏆 Premium Features
 
-- **🎭 Cultural Events & Networking** - Authentic Portuguese community gatherings
+- **🎭 Cultural Events & Networking** - Authentic Portuguese-speaking community gatherings
 - **📺 LusoTown TV** - Professional Portuguese cultural broadcasting platform
 - **🚗 Executive Transport & Concierge** - Luxury services with Portuguese-speaking staff
 - **🏛️ Premium Business Directory** - Connecting Portuguese professionals and businesses
@@ -208,7 +208,7 @@ npm run docs:validate    # Validate documentation consistency
 - **Portuguese Date Formats** - DD/MM/YYYY
 - **Currency Support** - GBP for UK events, EUR for European events
 - **Cultural Context** - Portuguese holidays, traditions, and places
-- **London Integration** - UK Portuguese community focus
+- **London Integration** - UK Portuguese-speaking community focus
 
 ---
 
@@ -253,7 +253,7 @@ npm run deploy
 
 ## 📈 Community Impact
 
-### Portuguese Community Benefits
+### Portuguese-speaking community Benefits
 - **Cultural Preservation** - Authentic Portuguese experiences in London
 - **Professional Networking** - Business connections within the diaspora
 - **Luxury Services** - Premium experiences with cultural understanding
@@ -281,7 +281,7 @@ npm run deploy
 - **Inclusive Environment** - Welcome all Portuguese speakers
 - **Respectful Communication** - Professional and friendly interactions
 - **Cultural Pride** - Celebrate Portuguese heritage and achievements
-- **London Focus** - Serve the Portuguese community in London and UK
+- **London Focus** - Serve the Portuguese-speaking community in London and UK
 
 ---
 
@@ -316,11 +316,11 @@ npm run deploy
 
 ## 🏆 Awards & Recognition
 
-*Building the premier Portuguese community platform in London with authentic cultural values, professional services, and genuine community connections.*
+*Building the premier Portuguese-speaking community platform in London with authentic cultural values, professional services, and genuine community connections.*
 
 **Unidos pela Língua - United by Language** 🇵🇹
 
 ---
 
-**Built with ❤️ for the Portuguese community in London & UK**  
+**Built with ❤️ for the Portuguese-speaking community in London & UK**  
 **Copyright © 2025 LusoTown London. All rights reserved.**

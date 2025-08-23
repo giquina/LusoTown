@@ -73,8 +73,8 @@ export default function CreatorTestimonials() {
       joinedDate: '2024-05-20',
       rating: 4.8,
       quote: isPt
-        ? 'Ensinar receitas brasileiras para a comunidade portuguesa em Londres tem sido incrivelmente gratificante. A partilha de receitas e a monetização acontecem naturalmente na plataforma. Nunca pensei que podia ganhar dinheiro a ensinar como fazer coxinhas!'
-        : 'Teaching Brazilian recipes to the Portuguese community in London has been incredibly rewarding. Recipe sharing and monetization happen naturally on the platform. I never thought I could make money teaching how to make coxinhas!',
+        ? 'Ensinar receitas brasileiras para a comunidade de falantes de português em Londres tem sido incrivelmente gratificante. A partilha de receitas e a monetização acontecem naturalmente na plataforma. Nunca pensei que podia ganhar dinheiro a ensinar como fazer coxinhas!'
+        : 'Teaching Brazilian recipes to the Portuguese-speaking community in London has been incredibly rewarding. Recipe sharing and monetization happen naturally on the platform. I never thought I could make money teaching how to make coxinhas!',
       achievements: [
         { 
           icon: PlayCircle, 

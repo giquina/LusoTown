@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 
-// Premium Accessibility Hook for Portuguese Community
+// Premium Accessibility Hook for Portuguese-speaking community
 interface AccessibilitySettings {
   highContrast: boolean;
   largeText: boolean;
@@ -111,7 +111,7 @@ export function useAccessibility() {
     // Add skip links
     addSkipLinks();
 
-    console.log('[Accessibility] Premium accessibility initialized for Portuguese community');
+    console.log('[Accessibility] Premium accessibility initialized for Portuguese-speaking community');
   }, [language]);
 
   const loadSettings = useCallback(() => {
@@ -288,8 +288,8 @@ export function useAccessibility() {
       if (!nav.hasAttribute('aria-label')) {
         nav.setAttribute('aria-label', 
           language === 'pt' 
-            ? 'Navegação da comunidade portuguesa'
-            : 'Portuguese community navigation'
+            ? 'Navegação da comunidade de falantes de português'
+            : 'Portuguese-speaking community navigation'
         );
       }
       nav.setAttribute('data-cultural-nav', 'portuguese');

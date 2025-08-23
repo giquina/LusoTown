@@ -3,7 +3,7 @@ import { ROUTES } from '@/config/routes'
 import { ShieldCheckIcon, HeartIcon, UserGroupIcon, ExclamationTriangleIcon, GlobeAltIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
 
 export const metadata = {
-  title: 'Community Guidelines | LusoTown London - Portuguese Community Standards',
+  title: 'Community Guidelines | LusoTown London - Portuguese-speaking community Standards',
   description: 'Learn about LusoTown London community guidelines that ensure a respectful, inclusive environment for the Portuguese diaspora community in London.',
 }
 

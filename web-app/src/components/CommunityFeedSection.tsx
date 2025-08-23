@@ -69,7 +69,7 @@ export default function CommunityFeedSection() {
   const [activeFilter, setActiveFilter] = useState<string>('all')
   const feedRef = useRef<HTMLDivElement>(null)
 
-  // Mock community posts with authentic Portuguese community content
+  // Mock community posts with authentic Portuguese-speaking community content
   useEffect(() => {
     const mockPosts: CommunityPost[] = [
       {

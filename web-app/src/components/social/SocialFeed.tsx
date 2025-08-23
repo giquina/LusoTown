@@ -265,7 +265,7 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
             </div>
             <div>
               <h2 className="text-xl font-semibold text-gray-900">
-                {t('social_feed.title') || 'Portuguese Community Feed'}
+                {t('social_feed.title') || 'Portuguese-speaking community Feed'}
               </h2>
               <p className="text-gray-600">
                 {t('social_feed.subtitle') || 'Connect with Portuguese speakers in London'}
@@ -377,7 +377,7 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
                   {t('social_feed.no_posts_title') || 'No posts yet'}
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  {t('social_feed.no_posts_subtitle') || 'Be the first to share something with the Portuguese community!'}
+                  {t('social_feed.no_posts_subtitle') || 'Be the first to share something with the Portuguese-speaking community!'}
                 </p>
                 <button
                   onClick={() => setShowCreatePost(true)}

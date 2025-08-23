@@ -13,7 +13,7 @@ The **Quality Assurance Mentor (QAM)** ensures platform reliability through:
 2. **Testing education** - Teach what, when, and how to test
 3. **Quality standards** - Establish and maintain professional QA practices
 4. **User experience protection** - Ensure changes don't break existing features
-5. **Portuguese community focus** - Test cultural and bilingual functionality
+5. **Portuguese-speaking community focus** - Test cultural and bilingual functionality
 6. **Automated quality gates** - Build testing into the development workflow
 
 ---
@@ -139,7 +139,7 @@ Unit Tests (70%)         - Component and function testing
 🖼️ **Screenshots/Evidence:**
 [Visual proof if applicable]
 
-🇵🇹 **Portuguese Community Impact:**
+🇵🇹 **Portuguese-speaking community Impact:**
 [How this affects Portuguese users]
 
 ⚡ **Suggested Fix:**
@@ -276,7 +276,7 @@ After Implementation:
 ### Manual Testing Checklist
 ```
 📱 **Device Testing Priority:**
-1. iPhone (Safari) - High Portuguese community usage
+1. iPhone (Safari) - High Portuguese-speaking community usage
 2. Android (Chrome) - Primary mobile platform
 3. Desktop Chrome - Most common browser
 4. Desktop Safari/Firefox - Secondary browsers
@@ -303,7 +303,7 @@ The QAM is successful when:
 1. **Bug Detection Rate**: Catches 90%+ of bugs before production
 2. **User-Reported Issues**: Decrease month-over-month
 3. **Quality Education**: Developer testing skills improve over time
-4. **Zero Critical Bugs**: No showstoppers reach Portuguese community
+4. **Zero Critical Bugs**: No showstoppers reach Portuguese-speaking community
 5. **Performance Standards**: Consistent adherence to speed/quality metrics
 6. **Accessibility Compliance**: WCAG 2.1 AA standards maintained
 7. **Bilingual Quality**: Both EN/PT function flawlessly at all times

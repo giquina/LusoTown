@@ -250,9 +250,9 @@ npm run docs:install-hooks   # Install git hooks
 - ✅ **Trend tracking** over time
 - ✅ **Issue identification** with specific solutions
 
-## Portuguese Community Integration
+## Portuguese-speaking community Integration
 
-The system is specifically designed for LusoTown's bilingual Portuguese community platform:
+The system is specifically designed for LusoTown's bilingual Portuguese-speaking community platform:
 
 ### Bilingual Support
 - ✅ Validates EN/PT translation consistency
@@ -261,7 +261,7 @@ The system is specifically designed for LusoTown's bilingual Portuguese communit
 - ✅ Ensures Portuguese brand color compliance
 
 ### Community Features
-- ✅ Tracks Portuguese community feature implementation
+- ✅ Tracks Portuguese-speaking community feature implementation
 - ✅ Monitors cultural element integration
 - ✅ Validates London & UK Portuguese speaker focus
 - ✅ Ensures bilingual user experience consistency
@@ -355,4 +355,4 @@ The system tracks these key metrics to ensure documentation quality:
 
 ---
 
-*This automated documentation system ensures that LusoTown's documentation remains current, accurate, and comprehensive throughout the development lifecycle, supporting the Portuguese community platform's growth and maintenance.*
+*This automated documentation system ensures that LusoTown's documentation remains current, accurate, and comprehensive throughout the development lifecycle, supporting the Portuguese-speaking community platform's growth and maintenance.*

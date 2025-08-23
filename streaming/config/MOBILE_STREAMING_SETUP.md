@@ -1,8 +1,8 @@
-# LusoTown Portuguese Community - Mobile Streaming Setup
+# LusoTown Portuguese-speaking community - Mobile Streaming Setup
 
 ## Production Streaming Infrastructure
 
-### =€ **DEPLOYMENT OPTIONS**
+### =ï¿½ **DEPLOYMENT OPTIONS**
 
 #### Option 1: Railway (Recommended)
 ```bash
@@ -28,7 +28,7 @@ docker build -t lusotown-streaming .
 docker run -p 3002:3002 -p 8080:8080 -p 1935:1935 lusotown-streaming
 ```
 
-### =ñ **STREAMLABS MOBILE CONFIGURATION**
+### =ï¿½ **STREAMLABS MOBILE CONFIGURATION**
 
 #### **Stream Settings in Streamlabs Mobile:**
 ```
@@ -57,7 +57,7 @@ NEXT_PUBLIC_STREAMING_SERVER_URL=https://[PRODUCTION_URL]:3002
 NEXT_PUBLIC_HLS_BASE_URL=https://[PRODUCTION_URL]:8080
 NEXT_PUBLIC_RTMP_SERVER_URL=rtmp://[PRODUCTION_URL]:1935
 
-# Portuguese Community Features
+# Portuguese-speaking community Features
 NEXT_PUBLIC_PORTUGUESE_STREAMING_ENABLED=true
 NEXT_PUBLIC_CULTURAL_CONTENT_PRIORITY=true
 NEXT_PUBLIC_PORTUGUESE_EMOTES_ENABLED=true
@@ -74,13 +74,13 @@ Once deployed, your infrastructure will be available at:
 
 ```
 < API Server: https://[PRODUCTION_URL]:3002
-=ú HLS Streams: https://[PRODUCTION_URL]:8080/live/[stream_key].m3u8
-=á RTMP Ingestion: rtmp://[PRODUCTION_URL]:1935/live/[stream_key]
-=Ê Health Check: https://[PRODUCTION_URL]:3002/health
-=È Stream Stats: https://[PRODUCTION_URL]:3002/api/v1/stats
+=ï¿½ HLS Streams: https://[PRODUCTION_URL]:8080/live/[stream_key].m3u8
+=ï¿½ RTMP Ingestion: rtmp://[PRODUCTION_URL]:1935/live/[stream_key]
+=ï¿½ Health Check: https://[PRODUCTION_URL]:3002/health
+=ï¿½ Stream Stats: https://[PRODUCTION_URL]:3002/api/v1/stats
 ```
 
-### <¯ **TESTING WORKFLOW**
+### <ï¿½ **TESTING WORKFLOW**
 
 1. **Deploy Streaming Server**
    ```bash
@@ -99,10 +99,10 @@ Once deployed, your infrastructure will be available at:
 
 4. **Verify on Website**
    - Visit https://lusotown-london.vercel.app/live
-   - Confirm stream appears in Portuguese community section
+   - Confirm stream appears in Portuguese-speaking community section
    - Test Portuguese emotes and chat features
 
-### =ñ **STREAMLABS MOBILE APP SETUP**
+### =ï¿½ **STREAMLABS MOBILE APP SETUP**
 
 #### **Step-by-Step Configuration:**
 
@@ -125,12 +125,12 @@ Once deployed, your infrastructure will be available at:
    Audio: 128 kbps, 44.1 kHz
    ```
 
-4. **Portuguese Community Features**
-   - Stream Title: "LusoTown Portuguese Community Live"
+4. **Portuguese-speaking community Features**
+   - Stream Title: "LusoTown Portuguese-speaking community Live"
    - Description: "Portuguese speakers in London - Cultural content"
    - Tags: #Portuguese #London #Community #Cultural
 
-### <¨ **PORTUGUESE STREAMING FEATURES**
+### <ï¿½ **PORTUGUESE STREAMING FEATURES**
 
 #### **Cultural Content Integration**
 - Portuguese emotes: :saudade:, :festa:, :futebol:
@@ -139,7 +139,7 @@ Once deployed, your infrastructure will be available at:
 - Business workshop streaming for Portuguese entrepreneurs
 
 #### **Community Engagement**
-- Live viewer count for Portuguese community
+- Live viewer count for Portuguese-speaking community
 - Chat moderation in Portuguese/English
 - Stream notifications for community members
 - Recording capabilities for cultural events
@@ -148,7 +148,7 @@ Once deployed, your infrastructure will be available at:
 
 #### **Production Security**
 - Stream key validation
-- CORS protection for Portuguese community domains
+- CORS protection for Portuguese-speaking community domains
 - Rate limiting for API endpoints
 - Health check monitoring
 
@@ -164,7 +164,7 @@ curl https://[PRODUCTION_URL]:3002/api/v1/stats
 curl https://[PRODUCTION_URL]:3002/api/v1/cultural-streams
 ```
 
-### =¨ **TROUBLESHOOTING**
+### =ï¿½ **TROUBLESHOOTING**
 
 #### **Common Issues & Solutions**
 
@@ -188,10 +188,10 @@ curl https://[PRODUCTION_URL]:3002/api/v1/cultural-streams
    - Check Portuguese emotes configuration
    - Confirm community chat settings
 
-### =Þ **SUPPORT CHANNELS**
+### =ï¿½ **SUPPORT CHANNELS**
 
 - **Technical Issues:** Check /streaming/logs/ directory
-- **Community Support:** Portuguese community Discord
+- **Community Support:** Portuguese-speaking community Discord
 - **Production Monitoring:** Health check endpoints
 - **Performance:** Stream statistics API
 
@@ -202,7 +202,7 @@ curl https://[PRODUCTION_URL]:3002/api/v1/cultural-streams
 - [ ] Streamlabs mobile app configured
 - [ ] Test stream successfully broadcast
 - [ ] Website integration verified
-- [ ] Portuguese community features tested
+- [ ] Portuguese-speaking community features tested
 - [ ] Health monitoring configured
 - [ ] Security settings validated
 - [ ] Community notification setup
@@ -210,4 +210,4 @@ curl https://[PRODUCTION_URL]:3002/api/v1/cultural-streams
 
 ---
 
-**<õ<ù Ready for Portuguese Community Mobile Streaming!**
+**<ï¿½<ï¿½ Ready for Portuguese-speaking community Mobile Streaming!**

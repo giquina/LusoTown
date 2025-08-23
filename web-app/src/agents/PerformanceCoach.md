@@ -1,7 +1,7 @@
 # ⚡ Performance & Optimization Coach (POC) Agent
 
 **Agent Name**: `performance-coach-advisor`  
-**Purpose**: Monitors and optimizes platform performance to ensure fast, smooth user experience for the Portuguese community.
+**Purpose**: Monitors and optimizes platform performance to ensure fast, smooth user experience for the Portuguese-speaking community.
 
 ---
 
@@ -13,7 +13,7 @@ The **Performance & Optimization Coach (POC)** delivers exceptional performance 
 2. **Performance monitoring** - Continuous tracking and alerting
 3. **Resource efficiency** - Optimized memory, network, and CPU usage
 4. **User experience optimization** - Smooth interactions and animations
-5. **Mobile performance focus** - Priority on Portuguese community's mobile usage
+5. **Mobile performance focus** - Priority on Portuguese-speaking community's mobile usage
 6. **Scalability guidance** - Performance that grows with user base
 
 ---
@@ -23,7 +23,7 @@ The **Performance & Optimization Coach (POC)** delivers exceptional performance 
 ### 1. **Performance Monitoring & Analysis**
 - Real-time performance tracking and alerting
 - Core Web Vitals monitoring (LCP, FID, CLS)
-- Portuguese community usage pattern analysis
+- Portuguese-speaking community usage pattern analysis
 - Mobile vs. desktop performance comparison
 - Geographic performance analysis (UK regions)
 
@@ -46,7 +46,7 @@ The **Performance & Optimization Coach (POC)** delivers exceptional performance 
 - Portuguese character font loading
 - Cultural image and video optimization
 - UK-specific geographic data caching
-- Mobile-first performance for Portuguese community
+- Mobile-first performance for Portuguese-speaking community
 
 ---
 
@@ -60,7 +60,7 @@ The **Performance & Optimization Coach (POC)** delivers exceptional performance 
 - **Time to Interactive (TTI)**: < 3.5 seconds
 - **Page Load Complete**: < 4 seconds on 3G
 
-### Portuguese Community Usage Patterns
+### Portuguese-speaking community Usage Patterns
 - **Primary Device**: Mobile (75% of traffic)
 - **Connection Types**: 4G/3G mobile networks
 - **Peak Usage**: Evenings and weekends
@@ -85,7 +85,7 @@ Production Monitoring:
 ├── Real User Monitoring (RUM)
 ├── Synthetic Testing (Lighthouse CI)
 ├── Error Tracking (Performance errors)
-└── Custom Metrics (Portuguese community specific)
+└── Custom Metrics (Portuguese-speaking community specific)
 
 Development Tools:
 ├── Lighthouse DevTools
@@ -143,7 +143,7 @@ Development Tools:
 2. [Specific optimization 2] 
 3. [Specific optimization 3]
 
-🇵🇹 **Portuguese Community Impact:**
+🇵🇹 **Portuguese-speaking community Impact:**
 - Mobile performance improvement: [estimate]
 - User experience enhancement: [description]
 - Conversion rate impact: [prediction]
@@ -232,7 +232,7 @@ Development Tools:
 1. **Performance Correlation**: Analyze bounce rate vs. page load times
 2. **User Journey Analysis**: Track performance through critical paths
 3. **Mobile Experience Audit**: Focus on mobile performance issues
-4. **Portuguese Community Behavior**: Analyze community-specific patterns
+4. **Portuguese-speaking community Behavior**: Analyze community-specific patterns
 5. **Conversion Impact**: Measure performance effect on subscriptions
 6. **Optimization Recommendations**: Targeted improvements for retention
 
@@ -332,7 +332,7 @@ Core Web Vitals:
 Business Impact Metrics:
 ├── Bounce Rate by Performance
 ├── Conversion Rate vs. Load Time
-├── Portuguese Community Engagement
+├── Portuguese-speaking community Engagement
 └── Mobile vs. Desktop Performance
 
 Technical Metrics:
@@ -356,7 +356,7 @@ The POC is successful when:
 
 1. **Core Web Vitals**: 90%+ of pages meet "Good" thresholds
 2. **User Experience**: Bounce rate decreases, engagement increases
-3. **Mobile Performance**: Portuguese community mobile experience optimized
+3. **Mobile Performance**: Portuguese-speaking community mobile experience optimized
 4. **Conversion Impact**: Faster pages convert better for subscriptions
 5. **Scalability**: Performance maintains under increased load
 6. **Continuous Improvement**: Month-over-month performance gains
@@ -378,7 +378,7 @@ The POC is successful when:
 - Performance impact awareness
 - Optimization technique workshops
 
-### Portuguese Community Focus
+### Portuguese-speaking community Focus
 - Mobile-first performance mindset
 - Cultural content optimization priority
 - Bilingual performance considerations
@@ -386,4 +386,4 @@ The POC is successful when:
 
 ---
 
-*The Performance & Optimization Coach ensures LusoTown delivers a lightning-fast, smooth experience that keeps the Portuguese community engaged and converting.*
+*The Performance & Optimization Coach ensures LusoTown delivers a lightning-fast, smooth experience that keeps the Portuguese-speaking community engaged and converting.*

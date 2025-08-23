@@ -85,7 +85,7 @@ export default function TransportChauffeurModule() {
             <li><strong>SIA-Compliant Security:</strong> Drivers are SIA (Security Industry Authority) licensed for executive protection</li>
             <li><strong>Professional Fleet:</strong> Modern, well-maintained vehicles with professional standards</li>
             <li><strong>Cultural Comfort:</strong> Drivers understand Portuguese business culture, social customs, and can assist with cultural navigation</li>
-            <li><strong>London Expertise:</strong> Extensive knowledge of London's Portuguese community, businesses, and cultural venues</li>
+            <li><strong>London Expertise:</strong> Extensive knowledge of London's Portuguese-speaking community, businesses, and cultural venues</li>
           </ul>
           
           <h3>Service Categories Available:</h3>
@@ -149,7 +149,7 @@ export default function TransportChauffeurModule() {
             <li><strong>Segurança Conforme SIA:</strong> Motoristas são licenciados pela SIA (Security Industry Authority) para proteção executiva</li>
             <li><strong>Frota Profissional:</strong> Veículos modernos e bem mantidos com padrões profissionais</li>
             <li><strong>Conforto Cultural:</strong> Motoristas entendem cultura empresarial portuguesa, costumes sociais e podem ajudar com navegação cultural</li>
-            <li><strong>Experiência em Londres:</strong> Conhecimento extenso da comunidade portuguesa de Londres, negócios e locais culturais</li>
+            <li><strong>Experiência em Londres:</strong> Conhecimento extenso da comunidade de falantes de português de Londres, negócios e locais culturais</li>
           </ul>
           
           <h3>Categorias de Serviço Disponíveis:</h3>
@@ -552,7 +552,7 @@ export default function TransportChauffeurModule() {
         type: 'tutorial',
         estimatedTime: 4,
         content: `
-          <p>LusoTown maintains the highest safety and security standards for all transport services, with additional cultural sensitivity training for Portuguese community needs.</p>
+          <p>LusoTown maintains the highest safety and security standards for all transport services, with additional cultural sensitivity training for Portuguese-speaking community needs.</p>
           
           <h3>Driver Vetting & Certification Process:</h3>
           
@@ -617,12 +617,12 @@ export default function TransportChauffeurModule() {
           <h4>Cultural Sensitivity Protocols:</h4>
           <ul>
             <li><strong>Language Accommodation:</strong> Drivers respect passenger language preferences (Portuguese/English mix)</li>
-            <li><strong>Cultural Events Security:</strong> Special awareness for Portuguese community events and potential crowd situations</li>
+            <li><strong>Cultural Events Security:</strong> Special awareness for Portuguese-speaking community events and potential crowd situations</li>
             <li><strong>Business Culture Understanding:</strong> Knowledge of Portuguese business customs and meeting protocols</li>
             <li><strong>Family Service Considerations:</strong> Appropriate behavior when transporting families with children</li>
           </ul>
           
-          <h4>Portuguese Community Venues:</h4>
+          <h4>Portuguese-speaking community Venues:</h4>
           <ul>
             <li><strong>Venue Familiarity:</strong> Drivers know Portuguese restaurants, cultural centers, and community spaces</li>
             <li><strong>Event Security:</strong> Awareness of Portuguese cultural events and associated security considerations</li>
@@ -663,7 +663,7 @@ export default function TransportChauffeurModule() {
           <h4>Continuous Improvement:</h4>
           <ul>
             <li><strong>Monthly Quality Reviews:</strong> Analysis of all feedback and performance metrics</li>
-            <li><strong>Portuguese Community Input:</strong> Regular consultation with Portuguese community leaders</li>
+            <li><strong>Portuguese-speaking community Input:</strong> Regular consultation with Portuguese-speaking community leaders</li>
             <li><strong>Service Enhancement:</strong> Continuous improvement based on community needs</li>
             <li><strong>Cultural Training Updates:</strong> Regular updates to cultural awareness training</li>
           </ul>
@@ -678,7 +678,7 @@ export default function TransportChauffeurModule() {
           </ul>
         `,
         contentPortuguese: `
-          <p>A LusoTown mantém os mais altos padrões de segurança e proteção para todos os serviços de transporte, com formação adicional de sensibilidade cultural para as necessidades da comunidade portuguesa.</p>
+          <p>A LusoTown mantém os mais altos padrões de segurança e proteção para todos os serviços de transporte, com formação adicional de sensibilidade cultural para as necessidades da comunidade de falantes de português.</p>
           
           <h3>Processo de Verificação e Certificação de Motoristas:</h3>
           
@@ -743,12 +743,12 @@ export default function TransportChauffeurModule() {
           <h4>Protocolos de Sensibilidade Cultural:</h4>
           <ul>
             <li><strong>Acomodação de Idioma:</strong> Motoristas respeitam preferências de idioma do passageiro (mistura português/inglês)</li>
-            <li><strong>Segurança de Eventos Culturais:</strong> Consciência especial para eventos da comunidade portuguesa e situações potenciais de multidão</li>
+            <li><strong>Segurança de Eventos Culturais:</strong> Consciência especial para eventos da comunidade de falantes de português e situações potenciais de multidão</li>
             <li><strong>Compreensão da Cultura Empresarial:</strong> Conhecimento de costumes empresariais portugueses e protocolos de reunião</li>
             <li><strong>Considerações de Serviço Familiar:</strong> Comportamento apropriado ao transportar famílias com crianças</li>
           </ul>
           
-          <h4>Locais da Comunidade Portuguesa:</h4>
+          <h4>Locais da Comunidade de Falantes de Português:</h4>
           <ul>
             <li><strong>Familiaridade com Locais:</strong> Motoristas conhecem restaurantes portugueses, centros culturais e espaços comunitários</li>
             <li><strong>Segurança de Eventos:</strong> Consciência de eventos culturais portugueses e considerações de segurança associadas</li>
@@ -789,7 +789,7 @@ export default function TransportChauffeurModule() {
           <h4>Melhoria Contínua:</h4>
           <ul>
             <li><strong>Revisões de Qualidade Mensais:</strong> Análise de todo o feedback e métricas de desempenho</li>
-            <li><strong>Input da Comunidade Portuguesa:</strong> Consulta regular com líderes da comunidade portuguesa</li>
+            <li><strong>Input da Comunidade de Falantes de Português:</strong> Consulta regular com líderes da comunidade de falantes de português</li>
             <li><strong>Melhoria de Serviço:</strong> Melhoria contínua baseada nas necessidades da comunidade</li>
             <li><strong>Atualizações de Formação Cultural:</strong> Atualizações regulares à formação de consciência cultural</li>
           </ul>

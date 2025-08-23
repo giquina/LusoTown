@@ -2,7 +2,7 @@
 
 ## Overview
 
-LusoTown features a comprehensive agent system specifically designed for Portuguese community management and platform optimization. Each agent is a specialized AI assistant that can be invoked to handle specific aspects of the Portuguese adult social calendar platform.
+LusoTown features a comprehensive agent system specifically designed for Portuguese-speaking community management and platform optimization. Each agent is a specialized AI assistant that can be invoked to handle specific aspects of the Portuguese adult social calendar platform.
 
 ## How to Use Agents
 
@@ -19,7 +19,7 @@ LusoTown features a comprehensive agent system specifically designed for Portugu
 /agents luso-safety-agent
 ```
 
-## Portuguese Community Specialists
+## Portuguese-speaking community Specialists
 
 ### 🌐 luso-content-agent
 **Role**: Portuguese language and cultural content management specialist
@@ -33,7 +33,7 @@ LusoTown features a comprehensive agent system specifically designed for Portugu
 **Key Capabilities:**
 - Handle Portuguese regional variations (Portugal, Brazil, Angola, etc.)
 - Create culturally appropriate event descriptions
-- Develop authentic Portuguese community messaging
+- Develop authentic Portuguese-speaking community messaging
 - Review bilingual content for cultural appropriateness
 
 **Integration Points:**
@@ -44,10 +44,10 @@ LusoTown features a comprehensive agent system specifically designed for Portugu
 ---
 
 ### 🛡️ luso-safety-agent
-**Role**: Portuguese community-specific content moderation and safety specialist
+**Role**: Portuguese-speaking community-specific content moderation and safety specialist
 
 **Use When:**
-- Moderating Portuguese community discussions and forums
+- Moderating Portuguese-speaking community discussions and forums
 - Handling safety reports and community conflicts
 - Implementing adult community guidelines (18+ focus)
 - Ensuring safe environment for Portuguese social activities
@@ -88,11 +88,11 @@ LusoTown features a comprehensive agent system specifically designed for Portugu
 ---
 
 ### 📈 luso-growth-agent
-**Role**: Portuguese community outreach and growth optimization specialist
+**Role**: Portuguese-speaking community outreach and growth optimization specialist
 
 **Use When:**
 - Optimizing platform for Portuguese keywords and SEO
-- Developing social media strategies for Portuguese community
+- Developing social media strategies for Portuguese-speaking community
 - Creating marketing campaigns targeting Portuguese speakers
 - Building partnerships with Portuguese organizations
 
@@ -100,7 +100,7 @@ LusoTown features a comprehensive agent system specifically designed for Portugu
 - Multilingual SEO optimization (Portuguese and English)
 - Portuguese diaspora engagement strategies
 - Community outreach to Portuguese organizations and businesses
-- Growth strategies for adult Portuguese community engagement
+- Growth strategies for adult Portuguese-speaking community engagement
 
 **Integration Points:**
 - Optimizes content in sitemap and SEO elements
@@ -116,7 +116,7 @@ LusoTown features a comprehensive agent system specifically designed for Portugu
 - Research and verify Portuguese-owned businesses in London
 - Creating business profiles with cultural relevance
 - Organizing professional networking events
-- Facilitating B2B connections within Portuguese community
+- Facilitating B2B connections within Portuguese-speaking community
 
 **Key Capabilities:**
 - Maintain comprehensive Portuguese business directory
@@ -137,7 +137,7 @@ LusoTown features a comprehensive agent system specifically designed for Portugu
 **Use When:**
 - Creating Portuguese heritage and cultural preservation content
 - Developing educational materials about Portuguese culture
-- Documenting Portuguese community success stories
+- Documenting Portuguese-speaking community success stories
 - Organizing cultural preservation events
 
 **Key Capabilities:**
@@ -157,7 +157,7 @@ LusoTown features a comprehensive agent system specifically designed for Portugu
 **Role**: Community membership optimization specialist
 
 **Use When:**
-- Optimizing membership features for Portuguese community needs
+- Optimizing membership features for Portuguese-speaking community needs
 - Handling Portuguese-specific payment preferences
 - Creating membership benefits tailored to community
 - Managing subscription and premium features
@@ -224,7 +224,7 @@ LusoTown features a comprehensive agent system specifically designed for Portugu
 **Role**: New feature development specialist
 
 **Use When:**
-- Building new features for Portuguese community needs
+- Building new features for Portuguese-speaking community needs
 - Implementing user-requested functionality
 - Developing innovative community features
 - Extending platform capabilities
@@ -268,7 +268,7 @@ LusoTown features a comprehensive agent system specifically designed for Portugu
 - Leverage agent specializations for optimal results
 
 ### Cultural Authenticity
-- Always involve Portuguese community specialists for cultural content
+- Always involve Portuguese-speaking community specialists for cultural content
 - Ensure adult focus (18+) is maintained across all agent activities
 - Respect Portuguese regional variations and diaspora experiences
 

@@ -679,7 +679,7 @@ class PortugueseBehavioralAI {
         id: 'community_engagement_growth',
         type: 'cultural_evolution',
         title: 'Crescimento do Envolvimento Comunitário',
-        description: 'O seu envolvimento na comunidade portuguesa tem crescido consistentemente.',
+        description: 'O seu envolvimento na comunidade de falantes de português tem crescido consistentemente.',
         confidence: 0.9,
         actionable: true,
         culturalRelevance: 0.9,

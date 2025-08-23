@@ -344,7 +344,7 @@ export default function AccessibilityWidget({
                         {language === 'pt' ? 'Acessibilidade' : 'Accessibility'}
                       </h2>
                       <p className="text-xs text-gray-600">
-                        {language === 'pt' ? 'Comunidade Portuguesa' : 'Portuguese Community'}
+                        {language === 'pt' ? 'Comunidade de Falantes de Português' : 'Portuguese-speaking community'}
                       </p>
                     </div>
                   </div>
@@ -398,8 +398,8 @@ export default function AccessibilityWidget({
                       </h3>
                       <p className="text-sm text-gray-600">
                         {language === 'pt' 
-                          ? 'Personalize a sua experiência na comunidade portuguesa'
-                          : 'Customize your Portuguese community experience'
+                          ? 'Personalize a sua experiência na comunidade de falantes de português'
+                          : 'Customize your Portuguese-speaking community experience'
                         }
                       </p>
                     </div>
@@ -516,8 +516,8 @@ export default function AccessibilityWidget({
               <div className="p-4 border-t border-gray-200/60 bg-gray-50/50">
                 <div className="text-xs text-gray-600 text-center">
                   {language === 'pt' 
-                    ? 'Acessibilidade premium para a comunidade portuguesa'
-                    : 'Premium accessibility for the Portuguese community'
+                    ? 'Acessibilidade premium para a comunidade de falantes de português'
+                    : 'Premium accessibility for the Portuguese-speaking community'
                   }
                 </div>
               </div>

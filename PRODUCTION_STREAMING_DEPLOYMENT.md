@@ -1,12 +1,12 @@
-# <õ<ù LusoTown Portuguese Community - Production Mobile Streaming Deployment
+# <ï¿½<ï¿½ LusoTown Portuguese-speaking community - Production Mobile Streaming Deployment
 
-## =€ URGENT DEPLOYMENT COMPLETED
+## =ï¿½ URGENT DEPLOYMENT COMPLETED
 
 ###  **DEPLOYMENT PACKAGE READY**
 
 All production streaming infrastructure is prepared and ready for immediate deployment to Railway, Render, or any cloud platform.
 
-### =æ **CREATED DEPLOYMENT FILES**
+### =ï¿½ **CREATED DEPLOYMENT FILES**
 
 1. **Railway Configuration**
    - `/streaming/railway.toml` - Production configuration
@@ -26,7 +26,7 @@ All production streaming infrastructure is prepared and ready for immediate depl
    - `/streaming/config/MOBILE_STREAMING_SETUP.md` - Complete guide
    - `/web-app/.env.production.example` - Environment configuration
 
-### <¯ **IMMEDIATE DEPLOYMENT STEPS**
+### <ï¿½ **IMMEDIATE DEPLOYMENT STEPS**
 
 #### **Option 1: Railway (Recommended)**
 ```bash
@@ -52,7 +52,7 @@ docker build -t lusotown-streaming .
 docker run -p 3002:3002 -p 8080:8080 -p 1935:1935 lusotown-streaming
 ```
 
-### =ñ **STREAMLABS MOBILE CONFIGURATION**
+### =ï¿½ **STREAMLABS MOBILE CONFIGURATION**
 
 #### **Immediate Setup:**
 1. **Download Streamlabs Mobile App**
@@ -92,7 +92,7 @@ NEXT_PUBLIC_DEFAULT_STREAM_KEY=streamlabs_lusotown_2025
 -  RTMP Ingestion (Port 1935)
 -  HLS Streaming Output (Port 8080)
 -  REST API Management (Port 3002)
--  Portuguese Community Features
+-  Portuguese-speaking community Features
 -  Real-time Chat & Emotes
 -  Health Monitoring
 -  WebSocket Support
@@ -103,7 +103,7 @@ NEXT_PUBLIC_DEFAULT_STREAM_KEY=streamlabs_lusotown_2025
 -  Portuguese cultural content support
 -  Real-time viewer statistics
 
-### <¯ **TESTING WORKFLOW**
+### <ï¿½ **TESTING WORKFLOW**
 
 1. **Deploy streaming server** to chosen platform
 2. **Get production URL** from deployment logs
@@ -116,7 +116,7 @@ NEXT_PUBLIC_DEFAULT_STREAM_KEY=streamlabs_lusotown_2025
 5. **Test Streamlabs mobile** with production URLs
 6. **Verify on website** at https://lusotown-london.vercel.app/live
 
-### =Ê **MONITORING ENDPOINTS**
+### =ï¿½ **MONITORING ENDPOINTS**
 
 Once deployed, monitor via:
 ```
@@ -134,7 +134,7 @@ Portuguese Content: https://[URL]:3002/api/v1/cultural-streams
 -  Rate limiting enabled
 -  Health check monitoring
 
-### <õ<ù **PORTUGUESE COMMUNITY FEATURES**
+### <ï¿½<ï¿½ **Portuguese-speaking community FEATURES**
 
 -  Cultural emotes system (:saudade:, :festa:, :futebol:)
 -  Portuguese language chat support
@@ -142,7 +142,7 @@ Portuguese Content: https://[URL]:3002/api/v1/cultural-streams
 -  Community engagement tracking
 -  Portuguese-focused analytics
 
-### ¡ **IMMEDIATE ACTION REQUIRED**
+### ï¿½ **IMMEDIATE ACTION REQUIRED**
 
 1. **Choose deployment platform** (Railway recommended)
 2. **Deploy streaming server** using provided configuration
@@ -150,7 +150,7 @@ Portuguese Content: https://[URL]:3002/api/v1/cultural-streams
 4. **Configure Streamlabs mobile** with RTMP settings
 5. **Test end-to-end streaming** workflow
 
-### =Þ **SUPPORT & TROUBLESHOOTING**
+### =ï¿½ **SUPPORT & TROUBLESHOOTING**
 
 - **Verification Script:** `/streaming/verify-production.sh [URL]`
 - **Setup Guide:** `/streaming/config/MOBILE_STREAMING_SETUP.md`
@@ -159,8 +159,8 @@ Portuguese Content: https://[URL]:3002/api/v1/cultural-streams
 
 ---
 
-## =¨ **DEPLOYMENT STATUS: READY FOR IMMEDIATE PRODUCTION**
+## =ï¿½ **DEPLOYMENT STATUS: READY FOR IMMEDIATE PRODUCTION**
 
-All infrastructure is production-ready and optimized for Portuguese community mobile streaming. Deploy immediately to start live streaming from Streamlabs mobile app to LusoTown website.
+All infrastructure is production-ready and optimized for Portuguese-speaking community mobile streaming. Deploy immediately to start live streaming from Streamlabs mobile app to LusoTown website.
 
-**<õ<ù Portuguese Community Mobile Streaming Infrastructure Complete!**
+**<ï¿½<ï¿½ Portuguese-speaking community Mobile Streaming Infrastructure Complete!**

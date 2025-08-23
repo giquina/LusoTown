@@ -145,8 +145,8 @@ const culturalExperiences: CulturalExperience[] = [
     descriptionEn: "Cultural film screenings building community through Portuguese cinema, exploring contemporary and classic films that showcase Portuguese storytelling and cultural perspectives.",
     descriptionPt: "Exibições de filmes culturais construindo comunidade através do cinema português, explorando filmes contemporâneos e clássicos que mostram narrativa portuguesa e perspectivas culturais.",
     culturalDepth: {
-      en: "Portuguese cinema nights create cultural dialogue through visual storytelling, connecting London's Portuguese community while introducing others to Portuguese perspectives and experiences.",
-      pt: "As noites de cinema português criam diálogo cultural através de narrativa visual, conectando a comunidade portuguesa de Londres enquanto introduz outros às perspectivas e experiências portuguesas."
+      en: "Portuguese cinema nights create cultural dialogue through visual storytelling, connecting London's Portuguese-speaking community while introducing others to Portuguese perspectives and experiences.",
+      pt: "As noites de cinema português criam diálogo cultural através de narrativa visual, conectando a comunidade de falantes de português de Londres enquanto introduz outros às perspectivas e experiências portuguesas."
     },
     londonVenues: ["Community cinemas", "Portuguese centres", "Cultural venues", "Universities", "Private screenings"],
     typicalSchedule: "Monthly Friday evenings, 7pm - 10pm",
@@ -207,8 +207,8 @@ const culturalExperiences: CulturalExperience[] = [
     londonVenues: ["Art studios", "Community centres", "Portuguese institutions", "Creative spaces", "Cultural workshops"],
     typicalSchedule: "Weekend workshops, flexible timing",
     learningOutcomes: {
-      en: "Develop artistic skills, understand Portuguese art traditions, create personal artwork, and connect with creative Portuguese community members.",
-      pt: "Desenvolver habilidades artísticas, compreender tradições de arte portuguesa, criar obra de arte pessoal e conectar-se com membros criativos da comunidade portuguesa."
+      en: "Develop artistic skills, understand Portuguese art traditions, create personal artwork, and connect with creative Portuguese-speaking community members.",
+      pt: "Desenvolver habilidades artísticas, compreender tradições de arte portuguesa, criar obra de arte pessoal e conectar-se com membros criativos da comunidade de falantes de português."
     },
     skillsGained: ["Artistic techniques", "Cultural patterns", "Creative expression", "Traditional methods", "Contemporary applications"],
     culturalInsight: {

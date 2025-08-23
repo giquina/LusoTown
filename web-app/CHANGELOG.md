@@ -1,6 +1,6 @@
 # LusoTown Platform Changelog
 
-All notable changes to the LusoTown Portuguese community platform will be documented in this file.
+All notable changes to the LusoTown Portuguese-speaking community platform will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
@@ -31,7 +31,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Smart Cart System** - Multi-service shopping cart supporting events, transport, and premium services
 - **Premium Membership Tiers** - Free, Premium, and VIP business subscription levels
 - **Professional Networking** - Event-based connections with Portuguese business focus
-- **Cultural Event Integration** - Authentic Portuguese community gathering management
+- **Cultural Event Integration** - Authentic Portuguese-speaking community gathering management
 
 ### 🏗️ Technical Infrastructure Improvements
 
@@ -72,7 +72,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 #### Enhanced Portuguese Support
 - **Complete Bilingual Platform** - Professional Portuguese/English interface
 - **Cultural Context Integration** - Portuguese holidays, traditions, and cultural references
-- **London Portuguese Community Focus** - Specific UK Portuguese diaspora features
+- **London Portuguese-speaking community Focus** - Specific UK Portuguese diaspora features
 - **Currency Support** - GBP/EUR pricing with membership discounts
 
 ### 📊 Analytics & Business Intelligence
@@ -80,7 +80,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 #### Premium Analytics Suite
 - **Streaming Analytics** - Viewer demographics, engagement rates, watch time
 - **Service Booking Analytics** - Premium service performance and customer insights
-- **Community Engagement Metrics** - Portuguese community interaction tracking
+- **Community Engagement Metrics** - Portuguese-speaking community interaction tracking
 - **Revenue Analytics** - Subscription tier performance and conversion tracking
 
 ### 🔐 Security & Compliance
@@ -129,12 +129,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.3.0] - 2025-08-01 - Cultural Event Enhancement
 
-### 🎭 Portuguese Community Features
+### 🎭 Portuguese-speaking community Features
 - **Cultural Event Discovery** - Enhanced event browsing and filtering
 - **Business Directory Integration** - Portuguese business ecosystem
 - **Instituto Camões Integration** - Portuguese language learning features
 - **Community Guidelines** - Bilingual community standards
-- **Cultural Authenticity** - London Portuguese community focus
+- **Cultural Authenticity** - London Portuguese-speaking community focus
 
 ### 📅 Event Management System
 - **Advanced Event Cards** - Rich media event presentation
@@ -163,7 +163,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [1.1.0] - 2025-07-01 - Community Platform Launch
 
 ### 👥 Core Community Features
-- **User Profiles** - Portuguese community member profiles
+- **User Profiles** - Portuguese-speaking community member profiles
 - **Event Discovery** - Basic event browsing and management
 - **Business Listings** - Portuguese business directory
 - **Community Chat** - Basic messaging and communication
@@ -184,7 +184,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Vercel Deployment** - Production hosting platform
 
 ### 📱 Basic Features
-- **Landing Page** - Portuguese community introduction
+- **Landing Page** - Portuguese-speaking community introduction
 - **Static Pages** - About, Contact, Privacy, Terms
 - **Responsive Design** - Mobile and desktop compatibility
 - **SEO Optimization** - Search engine optimization basics
@@ -214,7 +214,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Features**: 100+ platform features
 - **Languages**: 2 (Portuguese, English)
 - **Pages**: 51+ pages (46 static, 5 dynamic)
-- **Users**: Production ready for thousands of Portuguese community members
+- **Users**: Production ready for thousands of Portuguese-speaking community members
 
 ### Technical Metrics
 - **Build Size**: 337MB optimized production build
@@ -226,7 +226,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## 🤝 Contributing
 
-We welcome contributions from the Portuguese community and developers who share our vision of connecting and serving the Portuguese diaspora in London and the UK.
+We welcome contributions from the Portuguese-speaking community and developers who share our vision of connecting and serving the Portuguese diaspora in London and the UK.
 
 ### How to Contribute
 1. **Fork the repository**
@@ -245,5 +245,5 @@ We welcome contributions from the Portuguese community and developers who share 
 
 **Unidos pela Língua - United by Language** 🇵🇹
 
-**Built with ❤️ for the Portuguese community in London & UK**  
+**Built with ❤️ for the Portuguese-speaking community in London & UK**  
 **Changelog Last Updated: August 21, 2025**

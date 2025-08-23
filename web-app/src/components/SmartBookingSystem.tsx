@@ -72,8 +72,8 @@ export default function SmartBookingSystem({
         id: 'service',
         title: 'Service Selection',
         titlePortuguese: 'Seleção de Serviço',
-        description: 'Choose your premium Portuguese community service',
-        descriptionPortuguese: 'Escolha o seu serviço premium da comunidade portuguesa',
+        description: 'Choose your premium Portuguese-speaking community service',
+        descriptionPortuguese: 'Escolha o seu serviço premium da comunidade de falantes de português',
         icon: SparklesIcon,
         isCompleted: !!bookingData?.serviceType,
         isActive: currentStage === 'service-selection'

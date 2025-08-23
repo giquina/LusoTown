@@ -564,16 +564,16 @@ CREATE TRIGGER handle_success_analytics_updated_at BEFORE UPDATE ON public.match
 INSERT INTO public.ai_notification_templates (id, name, category, content_variations, cultural_contexts, ai_personalization_level) VALUES
 ('ai_matches_found', 'AI Matches Found', 'ai_matching', '{
     "formal": {
-        "title": "Compatible Portuguese Community Matches Found",
+        "title": "Compatible Portuguese-speaking community Matches Found",
         "message": "Our AI system has identified highly compatible matches based on your Portuguese cultural preferences.",
-        "title_pt": "Encontradas Combinações Compatíveis da Comunidade Portuguesa",
+        "title_pt": "Encontradas Combinações Compatíveis da Comunidade de Falantes de Português",
         "message_pt": "O nosso sistema de IA identificou combinações altamente compatíveis baseadas nas suas preferências culturais portuguesas."
     },
     "casual": {
         "title": "Great Portuguese Matches Found! 🇵🇹",
-        "message": "We found some amazing Portuguese community members who share your cultural values and interests!",
+        "message": "We found some amazing Portuguese-speaking community members who share your cultural values and interests!",
         "title_pt": "Encontradas Ótimas Combinações Portuguesas! 🇵🇹",
-        "message_pt": "Encontrámos alguns membros incríveis da comunidade portuguesa que partilham os seus valores culturais e interesses!"
+        "message_pt": "Encontrámos alguns membros incríveis da comunidade de falantes de português que partilham os seus valores culturais e interesses!"
     },
     "friendly": {
         "title": "Your Portuguese Soul Mates Await! 💙",
@@ -586,9 +586,9 @@ INSERT INTO public.ai_notification_templates (id, name, category, content_variat
 ('cultural_compatibility_high', 'High Cultural Compatibility Match', 'ai_matching', '{
     "formal": {
         "title": "Exceptional Cultural Compatibility Detected",
-        "message": "A Portuguese community member with remarkable cultural alignment has been identified for you.",
+        "message": "A Portuguese-speaking community member with remarkable cultural alignment has been identified for you.",
         "title_pt": "Compatibilidade Cultural Excepcional Detectada",
-        "message_pt": "Foi identificado um membro da comunidade portuguesa com alinhamento cultural notável para si."
+        "message_pt": "Foi identificado um membro da comunidade de falantes de português com alinhamento cultural notável para si."
     },
     "casual": {
         "title": "Amazing Cultural Connection Found! ✨",
@@ -656,7 +656,7 @@ INSERT INTO public.cultural_personalization_rules (region, content_adaptations, 
 
 ('london_central', '{
     "greeting_style": "Hello there",
-    "cultural_references": ["Portuguese community", "cultural events", "heritage"],
+    "cultural_references": ["Portuguese-speaking community", "cultural events", "heritage"],
     "local_context": ["London", "UK Portuguese", "diaspora"],
     "communication_tone": "warm"
 }', '{
@@ -679,7 +679,7 @@ INSERT INTO public.cultural_personalization_rules (region, content_adaptations, 
 }');
 
 -- Comments for documentation
-COMMENT ON TABLE public.cultural_compatibility_profiles IS 'AI-enhanced cultural compatibility profiles for Portuguese community matching';
+COMMENT ON TABLE public.cultural_compatibility_profiles IS 'AI-enhanced cultural compatibility profiles for Portuguese-speaking community matching';
 COMMENT ON TABLE public.ai_match_predictions IS 'AI-generated match predictions with cultural compatibility analysis';
 COMMENT ON TABLE public.behavioral_learning_data IS 'Behavioral learning data for continuous AI improvement';
 COMMENT ON TABLE public.user_learning_data IS 'Individual user learning data for personalization';

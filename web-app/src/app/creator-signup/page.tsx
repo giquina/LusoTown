@@ -140,8 +140,8 @@ export default function CreatorSignupPage() {
       avatar: '/images/creators/joao.jpg',
       monthlyEarnings: 1340,
       quote: isPt
-        ? 'Ensinar receitas brasileiras para a comunidade portuguesa em Londres tem sido incrivelmente gratificante. A partilha de receitas e a monetização acontecem naturalmente na plataforma.'
-        : 'Teaching Brazilian recipes to the Portuguese community in London has been incredibly rewarding. Recipe sharing and monetization happen naturally on the platform.',
+        ? 'Ensinar receitas brasileiras para a comunidade de falantes de português em Londres tem sido incrivelmente gratificante. A partilha de receitas e a monetização acontecem naturalmente na plataforma.'
+        : 'Teaching Brazilian recipes to the Portuguese-speaking community in London has been incredibly rewarding. Recipe sharing and monetization happen naturally on the platform.',
       followers: 1890,
       streams: 52
     },
@@ -218,8 +218,8 @@ export default function CreatorSignupPage() {
     {
       question: isPt ? 'Posso transmitir do meu país de origem?' : 'Can I stream from my home country?',
       answer: isPt
-        ? 'Sim! Criadores de Portugal, Brasil, África Lusófona e diáspora global são bem-vindos. A plataforma conecta criadores globais com a comunidade portuguesa em Londres.'
-        : 'Yes! Creators from Portugal, Brazil, Lusophone Africa, and global diaspora are welcome. The platform connects global creators with the Portuguese community in London.'
+        ? 'Sim! Criadores de Portugal, Brasil, África Lusófona e diáspora global são bem-vindos. A plataforma conecta criadores globais com a comunidade de falantes de português em Londres.'
+        : 'Yes! Creators from Portugal, Brazil, Lusophone Africa, and global diaspora are welcome. The platform connects global creators with the Portuguese-speaking community in London.'
     },
     {
       question: isPt ? 'Há apoio para criadores iniciantes?' : 'Is there support for beginner creators?',
@@ -267,8 +267,8 @@ export default function CreatorSignupPage() {
               className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
             >
               {isPt
-                ? 'Junte-se a mais de 200 criadores portugueses que já ganham uma média de £1,200/mês partilhando a sua paixão cultural com a comunidade portuguesa em Londres.'
-                : 'Join 200+ Portuguese creators already earning an average of £1,200/month sharing their cultural passion with the Portuguese community in London.'}
+                ? 'Junte-se a mais de 200 criadores portugueses que já ganham uma média de £1,200/mês partilhando a sua paixão cultural com a comunidade de falantes de português em Londres.'
+                : 'Join 200+ Portuguese creators already earning an average of £1,200/month sharing their cultural passion with the Portuguese-speaking community in London.'}
             </motion.p>
 
             {/* Key Stats */}

@@ -235,7 +235,7 @@ export default function MessageModerationDashboard() {
   const translations = {
     en: {
       title: 'Message Moderation Dashboard',
-      subtitle: 'Review and moderate flagged messages for Portuguese community safety',
+      subtitle: 'Review and moderate flagged messages for Portuguese-speaking community safety',
       stats: {
         totalPending: 'Pending Review',
         totalResolved: 'Resolved Today',
@@ -293,7 +293,7 @@ export default function MessageModerationDashboard() {
     },
     pt: {
       title: 'Painel de Moderação de Mensagens',
-      subtitle: 'Reveja e modere mensagens sinalizadas para a segurança da comunidade portuguesa',
+      subtitle: 'Reveja e modere mensagens sinalizadas para a segurança da comunidade de falantes de português',
       stats: {
         totalPending: 'Pendente Revisão',
         totalResolved: 'Resolvidas Hoje',

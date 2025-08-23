@@ -1,6 +1,6 @@
 -- LusoTown User Matches System
 -- Created: 2025-08-18
--- Purpose: Create comprehensive matching system for Portuguese community
+-- Purpose: Create comprehensive matching system for Portuguese-speaking community
 
 -- Create user_matches table for mutual matching system
 CREATE TABLE IF NOT EXISTS public.user_matches (

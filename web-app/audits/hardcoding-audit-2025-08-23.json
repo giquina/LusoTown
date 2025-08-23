@@ -121,7 +121,7 @@
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Comunidade Portuguesa em Londres'",
+      "code": "'Comunidade de Falantes de Português em Londres'",
       "timestamp": "2025-08-23T10:07:07.738Z"
     },
     {
@@ -130,7 +130,7 @@
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Descubra a vibrante comunidade portuguesa em Londres através dos nossos eventos culturais autênticos'",
+      "code": "'Descubra a vibrante comunidade de falantes de português em Londres através dos nossos eventos culturais autênticos'",
       "timestamp": "2025-08-23T10:07:07.738Z"
     },
     {

@@ -356,8 +356,8 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           {language === 'pt'
-            ? 'Conectando a comunidade portuguesa mundial através de parcerias oficiais com governos, universidades, organizações culturais e meios de comunicação para criar uma plataforma autêntica e reconhecida oficialmente.'
-            : 'Connecting the global Portuguese community through official partnerships with governments, universities, cultural organizations, and media outlets to create an authentic and officially recognized platform.'
+            ? 'Conectando a comunidade de falantes de português mundial através de parcerias oficiais com governos, universidades, organizações culturais e meios de comunicação para criar uma plataforma autêntica e reconhecida oficialmente.'
+            : 'Connecting the global Portuguese-speaking community through official partnerships with governments, universities, cultural organizations, and media outlets to create an authentic and officially recognized platform.'
           }
         </p>
       </div>
@@ -824,7 +824,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
           {language === 'pt'
             ? 'Junte-se à nossa rede global de instituições portuguesas de prestígio e ajude-nos a construir a maior plataforma comunitária portuguesa do mundo.'
-            : 'Join our global network of prestigious Portuguese institutions and help us build the world\'s largest Portuguese community platform.'
+            : 'Join our global network of prestigious Portuguese institutions and help us build the world\'s largest Portuguese-speaking community platform.'
           }
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

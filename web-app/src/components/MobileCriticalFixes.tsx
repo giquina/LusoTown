@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Critical Mobile Fixes for LusoTown Portuguese Community Platform
+ * Critical Mobile Fixes for LusoTown Portuguese-speaking community Platform
  * 
  * This component addresses all critical mobile UX issues identified in the
  * comprehensive mobile experience review and implements Portuguese-specific optimizations.
@@ -169,7 +169,7 @@ export function MobileCriticalFixes({
     const imagesWithoutAlt = document.querySelectorAll('img:not([alt])');
     imagesWithoutAlt.forEach((img) => {
       if (img instanceof HTMLImageElement) {
-        img.alt = language === 'pt' ? 'Imagem da comunidade portuguesa' : 'Portuguese community image';
+        img.alt = language === 'pt' ? 'Imagem da comunidade de falantes de português' : 'Portuguese-speaking community image';
         fixes++;
       }
     });
@@ -333,7 +333,7 @@ export function MobileCriticalFixes({
     }
   }, [deviceInfo, applyScrollSensitivityFixes, applyPortugueseTextFixes, applyTouchTargetFixes, applyPerformanceFixes, applyAccessibilityFixes]);
 
-  // Add critical CSS variables for Portuguese community mobile experience
+  // Add critical CSS variables for Portuguese-speaking community mobile experience
   useEffect(() => {
     const root = document.documentElement;
     root.style.setProperty('--portuguese-red', '#C5282F');
@@ -371,7 +371,7 @@ export function MobileCriticalFixes({
       {/* Critical Viewport Meta Fix */}
       {deviceInfo.isMobile && (
         <style jsx global>{`
-          /* Critical mobile fixes for Portuguese community */
+          /* Critical mobile fixes for Portuguese-speaking community */
           @media (max-width: 768px) {
             /* Prevent horizontal scrolling and improve scroll behavior */
             body {
@@ -433,7 +433,7 @@ export function MobileCriticalFixes({
             }
           }
 
-          /* Extra small devices (Portuguese community priority) */
+          /* Extra small devices (Portuguese-speaking community priority) */
           @media (max-width: 375px) {
             .container, .max-w-7xl, .max-w-6xl {
               padding-left: 16px;

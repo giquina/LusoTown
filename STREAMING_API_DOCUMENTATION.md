@@ -453,10 +453,10 @@ Retrieve Portuguese cultural emotes catalog.
 
 ## 📊 Analytics & Insights
 
-### Portuguese Community Analytics
+### Portuguese-speaking community Analytics
 
 #### `GET /analytics/cultural-insights`
-Analytics focused on Portuguese community engagement.
+Analytics focused on Portuguese-speaking community engagement.
 
 **Response:**
 ```json
@@ -522,7 +522,7 @@ Analytics focused on Portuguese community engagement.
 ```
 
 #### `GET /analytics/creator/{creator_id}/portuguese-metrics`
-Creator-specific Portuguese community metrics.
+Creator-specific Portuguese-speaking community metrics.
 
 **Response:**
 ```json
@@ -603,8 +603,8 @@ Portuguese cultural content categories.
         "en": "Lusophone Business"
       },
       "description": {
-        "pt": "Empreendedorismo e desenvolvimento de negócios para a comunidade portuguesa",
-        "en": "Entrepreneurship and business development for the Portuguese community"
+        "pt": "Empreendedorismo e desenvolvimento de negócios para a comunidade de falantes de português",
+        "en": "Entrepreneurship and business development for the Portuguese-speaking community"
       },
       "access_level": "premium",
       "cultural_focus": 75,
@@ -690,7 +690,7 @@ AI-powered Portuguese content analysis.
     ],
     "suggested_response": {
       "pt": "Lembramos que devemos manter respeito na comunidade lusófona.",
-      "en": "We remind everyone to maintain respect in the Portuguese community."
+      "en": "We remind everyone to maintain respect in the Portuguese-speaking community."
     }
   }
 }
@@ -958,7 +958,7 @@ const stream = await client.createStream({
   enablePortugueseEmotes: true
 });
 
-// Monitor Portuguese community engagement
+// Monitor Portuguese-speaking community engagement
 client.onPortugueseEmote((emote) => {
   console.log(`Portuguese emote used: ${emote.code} by ${emote.region}`);
 });
@@ -995,7 +995,7 @@ print(f"Cultural sensitivity score: {result.cultural_score}")
 - **Documentation:** https://docs.lusotown.com
 - **Status Page:** https://status.lusotown.com
 
-### Portuguese Community Support
+### Portuguese-speaking community Support
 - **Email:** comunidade@lusotown.com
 - **WhatsApp:** +44 7XXX XXXXXX
 - **Telegram:** @LusoTownPortugues

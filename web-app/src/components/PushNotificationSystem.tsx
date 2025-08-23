@@ -276,8 +276,8 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
         type: 'success',
         title: language === 'pt' ? 'Subscrição Ativa!' : 'Subscription Active!',
         message: language === 'pt' 
-          ? 'Notificações da comunidade portuguesa ativadas' 
-          : 'Portuguese community notifications enabled',
+          ? 'Notificações da comunidade de falantes de português ativadas' 
+          : 'Portuguese-speaking community notifications enabled',
         duration: 5000
       });
 
@@ -456,8 +456,8 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
         language === 'pt' ? '🇵🇹 Bem-vindo à LusoTown!' : '🇵🇹 Welcome to LusoTown!',
         {
           body: language === 'pt'
-            ? 'A tua comunidade portuguesa em Londres está conectada!'
-            : 'Your Portuguese community in London is now connected!',
+            ? 'A tua comunidade de falantes de português em Londres está conectada!'
+            : 'Your Portuguese-speaking community in London is now connected!',
           icon: '/icons/icon-192x192.png',
           badge: '/icons/badge-72x72.png',
           tag: 'welcome',
@@ -814,8 +814,8 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
           </div>
           <p className="text-sm text-green-700 mt-1">
             {language === 'pt' 
-              ? 'A comunidade portuguesa pode enviar-te notificações sobre eventos e atualizações' 
-              : 'The Portuguese community can send you notifications about events and updates'}
+              ? 'A comunidade de falantes de português pode enviar-te notificações sobre eventos e atualizações' 
+              : 'The Portuguese-speaking community can send you notifications about events and updates'}
           </p>
         </div>
       )}

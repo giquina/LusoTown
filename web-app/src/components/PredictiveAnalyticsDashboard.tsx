@@ -260,8 +260,8 @@ export default function PredictiveAnalyticsDashboard() {
               </h1>
               <p className="text-gray-600">
                 {isPortuguese 
-                  ? 'Insights de IA para otimização da comunidade portuguesa' 
-                  : 'AI-powered insights for Portuguese community optimization'
+                  ? 'Insights de IA para otimização da comunidade de falantes de português' 
+                  : 'AI-powered insights for Portuguese-speaking community optimization'
                 }
               </p>
             </div>
@@ -649,7 +649,7 @@ export default function PredictiveAnalyticsDashboard() {
                     },
                     {
                       title: isPortuguese ? 'Expansão para Manchester' : 'Expand to Manchester',
-                      description: isPortuguese ? 'Demanda crescente identificada na comunidade portuguesa' : 'Growing demand identified in Portuguese community',
+                      description: isPortuguese ? 'Demanda crescente identificada na comunidade de falantes de português' : 'Growing demand identified in Portuguese-speaking community',
                       priority: 'medium'
                     },
                     {

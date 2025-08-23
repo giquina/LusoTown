@@ -1,4 +1,4 @@
-# LusoTown Portuguese Community Web Platform Dockerfile
+# LusoTown Portuguese-speaking Community Web Platform Dockerfile
 FROM node:18-alpine AS deps
 
 # Install dependencies only when needed
@@ -15,7 +15,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Build Portuguese community platform
+# Build Portuguese-speaking community platform
 RUN npm run build
 
 # Production image, copy all the files and run next
@@ -40,7 +40,7 @@ EXPOSE 3000
 
 ENV PORT 3000
 
-# Health check for Portuguese community platform
+# Health check for Portuguese-speaking community platform
 HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost:3000/health || exit 1
 

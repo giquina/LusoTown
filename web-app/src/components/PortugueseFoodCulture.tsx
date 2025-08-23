@@ -108,13 +108,13 @@ const foodExperiences: FoodExperience[] = [
     category: "bbq",
     mealTime: "dinner",
     icon: "🔥",
-    descriptionEn: "Social grilling culture with amazing flavors that brings the Portuguese community together for incredible barbecue experiences filled with laughter and connection.",
-    descriptionPt: "Cultura social de grelhados com sabores incríveis que une a comunidade portuguesa para experiências de churrasco extraordinárias cheias de riso e conexão.",
+    descriptionEn: "Social grilling culture with amazing flavors that brings the Portuguese-speaking community together for incredible barbecue experiences filled with laughter and connection.",
+    descriptionPt: "Cultura social de grelhados com sabores incríveis que une a comunidade de falantes de português para experiências de churrasco extraordinárias cheias de riso e conexão.",
     culturalMagic: {
       en: "Portuguese BBQ creates instant community. The smell of grilled sardines, chicken, and chorizo brings neighbors together, creating spontaneous celebrations and lasting friendships.",
       pt: "O churrasco português cria comunidade instantânea. O aroma de sardinhas grelhadas, frango e chouriço une vizinhos, criando celebrações espontâneas e amizades duradouras."
     },
-    londonSpots: ["Portuguese community BBQs", "Parks during Santos Populares", "Private gardens", "Cultural events"],
+    londonSpots: ["Portuguese-speaking community BBQs", "Parks during Santos Populares", "Private gardens", "Cultural events"],
     bestTime: "Summer evenings and Portuguese festivals",
     socialAspect: {
       en: "Portuguese BBQs are legendary social events where everyone contributes something and leaves with new friends. The grilling is as much about community as it is about food.",
@@ -225,8 +225,8 @@ const foodExperiences: FoodExperience[] = [
     londonSpots: ["Portuguese cafés", "Local bakeries", "Community centres", "Workplace break rooms"],
     bestTime: "Early morning, 7am - 10am",
     socialAspect: {
-      en: "Morning coffee culture creates daily touchpoints for the Portuguese community, maintaining connections and sharing news while starting the day together.",
-      pt: "A cultura do café matinal cria pontos de contacto diários para a comunidade portuguesa, mantendo conexões e partilhando notícias enquanto começam o dia juntos."
+      en: "Morning coffee culture creates daily touchpoints for the Portuguese-speaking community, maintaining connections and sharing news while starting the day together.",
+      pt: "A cultura do café matinal cria pontos de contacto diários para a comunidade de falantes de português, mantendo conexões e partilhando notícias enquanto começam o dia juntos."
     },
     tasteProfile: ["Strong coffee", "Sweet pastries", "Fresh bread", "Simple pleasures", "Morning comfort"],
     culturalStory: {
@@ -243,11 +243,11 @@ const foodExperiences: FoodExperience[] = [
     category: "regional",
     mealTime: "special_occasion",
     icon: "🍲",
-    descriptionEn: "Incredible regional dishes from across Portugal that celebrate local traditions and bring authentic Portuguese flavors to London's Portuguese community.",
-    descriptionPt: "Pratos regionais incríveis de todo o Portugal que celebram tradições locais e trazem sabores portugueses autênticos para a comunidade portuguesa de Londres.",
+    descriptionEn: "Incredible regional dishes from across Portugal that celebrate local traditions and bring authentic Portuguese flavors to London's Portuguese-speaking community.",
+    descriptionPt: "Pratos regionais incríveis de todo o Portugal que celebram tradições locais e trazem sabores portugueses autênticos para a comunidade de falantes de português de Londres.",
     culturalMagic: {
-      en: "Regional dishes connect London's Portuguese community to their roots, evoking memories of home while creating new traditions in their adopted city.",
-      pt: "Os pratos regionais conectam a comunidade portuguesa de Londres às suas raízes, evocando memórias de casa enquanto criam novas tradições na sua cidade adoptiva."
+      en: "Regional dishes connect London's Portuguese-speaking community to their roots, evoking memories of home while creating new traditions in their adopted city.",
+      pt: "Os pratos regionais conectam a comunidade de falantes de português de Londres às suas raízes, evocando memórias de casa enquanto criam novas tradições na sua cidade adoptiva."
     },
     londonSpots: ["Regional Portuguese restaurants", "Cultural festivals", "Private family dinners", "Community celebrations"],
     bestTime: "Special occasions and cultural celebrations",

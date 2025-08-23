@@ -70,8 +70,8 @@ export default function ServiceCommunityBridge({
             ? "Transforme seu Transporte numa Experiência Social"
             : "Turn Your Transport Into a Social Experience",
           subtitle: isPortuguese
-            ? "Conecte-se com a comunidade portuguesa durante suas viagens"
-            : "Connect with the Portuguese community during your travels",
+            ? "Conecte-se com a comunidade de falantes de português durante suas viagens"
+            : "Connect with the Portuguese-speaking community during your travels",
           integrations: [
             {
               id: "transport-to-events",

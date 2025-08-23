@@ -232,8 +232,8 @@ export default function TwitterFeedWidget({
             data-aria-polite="polite"
           >
             {language === 'pt' 
-              ? 'Tweets sobre a comunidade portuguesa em Londres'
-              : 'Tweets about Portuguese community in London'
+              ? 'Tweets sobre a comunidade de falantes de português em Londres'
+              : 'Tweets about Portuguese-speaking community in London'
             }
           </a>
         )}

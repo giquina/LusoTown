@@ -179,7 +179,7 @@ cancelSubscription(): Promise<boolean>
 ### Bilingual Support:
 - All subscription gates support English/Portuguese
 - Contextual messaging based on user action
-- Cultural design elements for Portuguese community
+- Cultural design elements for Portuguese-speaking community
 
 ### Mobile Responsive:
 - Subscription gates work on all screen sizes

@@ -2,7 +2,7 @@
 /**
  * HeritageTown Cultural Community Streaming Features
  * Configurable cultural emotes, content moderation, and community tools
- * Default: Portuguese community configuration
+ * Default: Portuguese-speaking community configuration
  */
 
 // Load heritage configuration
@@ -73,7 +73,7 @@ const portugueseEmotes = {
   },
   ':london:': {
     unicode: '🇬🇧',
-    description: 'Portuguese community in London',
+    description: 'Portuguese-speaking community in London',
     regions: ['diaspora', 'uk'],
     cultural: true
   },
@@ -137,9 +137,9 @@ const contentCategories = {
   }
 };
 
-// Portuguese community moderation keywords
+// Portuguese-speaking community moderation keywords
 const moderationKeywords = {
-  // Positive Portuguese community terms (encouraged)
+  // Positive Portuguese-speaking community terms (encouraged)
   positive: [
     'comunidade', 'união', 'família', 'tradição', 'cultura',
     'saudade', 'respeito', 'solidariedade', 'lusófono',
@@ -199,9 +199,9 @@ const regionalSettings = {
   }
 };
 
-// Content recommendation engine for Portuguese community
+// Content recommendation engine for Portuguese-speaking community
 const contentRecommendations = {
-  // Peak viewing times for Portuguese community in London
+  // Peak viewing times for Portuguese-speaking community in London
   scheduleOptimal: {
     weekdays: {
       morning: '09:00-11:00',  // Portuguese breakfast shows
@@ -227,7 +227,7 @@ const contentRecommendations = {
   }
 };
 
-// Portuguese community analytics tracking
+// Portuguese-speaking community analytics tracking
 const analyticsEvents = {
   streamStart: {
     category: 'portuguese_streaming',
@@ -255,7 +255,7 @@ const analyticsEvents = {
   }
 };
 
-// Export all Portuguese community features
+// Export all Portuguese-speaking community features
 module.exports = {
   portugueseEmotes,
   contentCategories,
@@ -293,7 +293,7 @@ module.exports = {
       lowerText.includes(keyword.toLowerCase())
     );
     
-    // Check for positive Portuguese community content
+    // Check for positive Portuguese-speaking community content
     const isPositive = moderationKeywords.positive.some(keyword =>
       lowerText.includes(keyword.toLowerCase())
     );

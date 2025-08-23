@@ -257,7 +257,7 @@ export default function AppDownloadSection() {
                   {isPortuguese ? 'Comece a Fazer Matches Hoje' : 'Start Matching Today'}
                 </h3>
                 <p className="text-gray-600">
-                  {isPortuguese ? 'Grátis para iOS e Android • Encontre a sua comunidade portuguesa' : 'Free for iOS and Android • Find your Portuguese community'}
+                  {isPortuguese ? 'Grátis para iOS e Android • Encontre a sua comunidade de falantes de português' : 'Free for iOS and Android • Find your Portuguese-speaking community'}
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">

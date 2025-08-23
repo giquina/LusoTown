@@ -414,8 +414,8 @@ export function QuickActionsMenu({
                 </h3>
                 <p className="text-gray-600">
                   {language === 'pt' 
-                    ? 'Escolha uma ação para a comunidade portuguesa' 
-                    : 'Choose an action for the Portuguese community'}
+                    ? 'Escolha uma ação para a comunidade de falantes de português' 
+                    : 'Choose an action for the Portuguese-speaking community'}
                 </p>
               </div>
               
@@ -465,7 +465,7 @@ export function QuickActionsMenu({
   );
 }
 
-// Premium Status Indicator for Portuguese Community Features
+// Premium Status Indicator for Portuguese-speaking community Features
 interface LuxuryStatusIndicatorProps {
   status: 'online' | 'busy' | 'away' | 'offline' | 'premium' | 'elite';
   size?: 'sm' | 'md' | 'lg';

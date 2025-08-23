@@ -118,7 +118,7 @@ const culturalActivities: CulturalActivity[] = [
     triggers: ['family_voices', 'childhood_friends', 'homeland_memories'],
     copingMechanisms: ['talk_portuguese_friends', 'embrace_sadness', 'cultural_healing'],
     duration: '1.5 hours',
-    location: 'Portuguese Community Centre',
+    location: 'Portuguese-speaking community Centre',
     emotionalBenefit: 'Emotional validation and mutual support',
     culturalConnection: 8,
     icon: HandHeartIcon,

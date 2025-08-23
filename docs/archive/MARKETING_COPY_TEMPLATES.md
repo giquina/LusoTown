@@ -18,7 +18,7 @@ Subtext: From Fado nights to football matches, connect with Portuguese speakers 
 
 **Version B - Community Focus:**
 ```
-H1: London's Portuguese Community Awaits You
+H1: London's Portuguese-speaking community Awaits You
 H2: Cultural connection beyond generic dating apps
 Subtext: Join 2,500+ Portuguese speakers who found love, friendship, and business partnerships through authentic cultural matching.
 ```
@@ -58,7 +58,7 @@ Connect with Portuguese entrepreneurs, from tech startups to traditional busines
 
 #### **Pricing Comparison Table:**
 ```
-Generic Dating Apps          vs.        LusoTown Portuguese Community
+Generic Dating Apps          vs.        LusoTown Portuguese-speaking community
 ❌ Explain your culture                  ✅ Shared Portuguese heritage
 ❌ Generic conversations                 ✅ Cultural conversation starters  
 ❌ Random events                         ✅ Portuguese festivals & celebrations
@@ -136,7 +136,7 @@ This month's LusoTown exclusive events:
 
 Premium members get FREE entry (worth £45+ per event) + traditional Portuguese food & drinks included.
 
-Tag your Portuguese friends who need to join our London community! 
+Tag your Portuguese-speaking friends who need to join our London community! 
 
 #SantosPopulares #PortugueseLondon #LusoTown #PortugueseCommunity #LondonEvents"
 ```
@@ -145,7 +145,7 @@ Tag your Portuguese friends who need to join our London community!
 Post 2 - Food Culture:
 "🥐 Pastéis de nata taste better when shared with someone who understands 💕
 
-Where do you get the best pastéis in London? Our Portuguese community members swear by:
+Where do you get the best pastéis in London? Our Portuguese-speaking community members swear by:
 1️⃣ Pastéis de Belém (multiple locations)
 2️⃣ Lisboa Patisserie (Vauxhall)  
 3️⃣ Portuguese Deli (Borough Market)
@@ -185,7 +185,7 @@ Did you know London has over 45,000 Portuguese speakers? But how many do you act
 
 Our monthly Portuguese Business Network events connect:
 • Tech entrepreneurs from Lisbon working in Shoreditch
-• Traditional business owners serving the Portuguese community  
+• Traditional business owners serving the Portuguese-speaking community  
 • Finance professionals from Porto in Canary Wharf
 • Creative professionals bringing Portuguese culture to London
 
@@ -256,7 +256,7 @@ Ready to complete your Portuguese cultural profile?
 
 Here's what makes LusoTown different:
 🎯 Cultural compatibility matching (not just physical attraction)
-📍 London-specific Portuguese community insights
+📍 London-specific Portuguese-speaking community insights
 🎭 Exclusive access to Portuguese cultural events
 💼 Professional networking opportunities
 
@@ -310,7 +310,7 @@ P.S. Vegetarian and vegan Portuguese options available. Just let us know!"
 
 ### **Re-engagement Email**
 ```
-Subject: Sua comunidade portuguesa sente a sua falta... 😔
+Subject: Sua comunidade de falantes de português sente a sua falta... 😔
 
 [FirstName], we miss seeing you at Portuguese events...
 
@@ -334,9 +334,9 @@ Don't let your Portuguese soulmate connect with someone else because you weren't
 [Reactivate Your Profile - Takes 30 Seconds]
 
 Special welcome back offer: 
-Invite 3 Portuguese friends to join LusoTown and get your next month FREE!
+Invite 3 Portuguese-speaking friends to join LusoTown and get your next month FREE!
 
-Your Portuguese community in London is waiting for you.
+Your Portuguese-speaking community in London is waiting for you.
 
 Esperamos por si,
 The LusoTown Team
@@ -386,7 +386,7 @@ Campaign: "Portuguese London Ambassador"
 Content Package:
 1. Instagram Feed Posts (4 posts over 6 weeks)
 2. Instagram Stories (2-3 stories per week)  
-3. YouTube Video: "Finding Portuguese Community in London"
+3. YouTube Video: "Finding Portuguese-speaking community in London"
 4. Community Event Hosting: Lead one LusoTown cultural event
 
 Storytelling Arc:
@@ -420,7 +420,7 @@ Subject: Partnership Opportunity: LusoTown + [Business Name]
 
 Dear [Owner/Manager Name],
 
-LusoTown is London's fastest-growing Portuguese community platform, connecting 2,500+ Portuguese speakers across London for cultural, professional, and romantic connections.
+LusoTown is London's fastest-growing Portuguese-speaking community platform, connecting 2,500+ Portuguese speakers across London for cultural, professional, and romantic connections.
 
 Partnership Opportunity:
 We'd like to offer your business exclusive access to our community through a member benefits program.
@@ -428,7 +428,7 @@ We'd like to offer your business exclusive access to our community through a mem
 What we offer you:
 ✅ 2,500+ Portuguese speakers as potential customers
 ✅ Monthly guaranteed group bookings (15-30 people events)
-✅ Social media promotion to Portuguese community  
+✅ Social media promotion to Portuguese-speaking community  
 ✅ Cultural event co-hosting opportunities
 ✅ Business listing in our Portuguese London directory
 
@@ -467,7 +467,7 @@ Dear [Organization Leader],
 
 Portugal's cultural heritage in London deserves to be celebrated, preserved, and shared with future generations.
 
-LusoTown is London's Portuguese community platform, connecting 2,500+ Portuguese speakers who are passionate about maintaining our cultural identity while thriving in London.
+LusoTown is London's Portuguese-speaking community platform, connecting 2,500+ Portuguese speakers who are passionate about maintaining our cultural identity while thriving in London.
 
 Cultural Partnership Proposal:
 
@@ -476,7 +476,7 @@ Your Organization Benefits:
 ✅ Guaranteed attendance for cultural events and workshops  
 ✅ Younger demographic engagement (25-45 age group)
 ✅ Professional Portuguese network for organizational support
-✅ Co-marketing to broader London Portuguese community
+✅ Co-marketing to broader London Portuguese-speaking community
 
 LusoTown Community Benefits:
 ✅ Authentic cultural experiences and education
@@ -510,4 +510,4 @@ LusoTown London
 "Preserving Portuguese heritage, one connection at a time."
 ```
 
-This comprehensive marketing campaign provides LusoTown with authentic, culturally-focused messaging that differentiates the platform from generic dating apps while building a strong Portuguese community in London. The £19.99 price point is positioned as premium value for cultural connection rather than just another subscription cost.
+This comprehensive marketing campaign provides LusoTown with authentic, culturally-focused messaging that differentiates the platform from generic dating apps while building a strong Portuguese-speaking community in London. The £19.99 price point is positioned as premium value for cultural connection rather than just another subscription cost.

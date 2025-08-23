@@ -593,7 +593,7 @@ export class AIMatchingIntegration {
         'ai_matches_found',
         {
           match_count: matchCount,
-          personalized_message: `Found ${matchCount} highly compatible Portuguese community matches`,
+          personalized_message: `Found ${matchCount} highly compatible Portuguese-speaking community matches`,
           cultural_context: 'ai_matching_success',
           next_action: 'view_matches'
         },

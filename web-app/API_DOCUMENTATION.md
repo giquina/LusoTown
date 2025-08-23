@@ -8,7 +8,7 @@
 
 ## 📋 API Overview
 
-The LusoTown API provides comprehensive endpoints for managing the Portuguese community platform, including premium services, streaming platform, events, and user management. All endpoints support bilingual content (Portuguese/English) and implement robust security measures.
+The LusoTown API provides comprehensive endpoints for managing the Portuguese-speaking community platform, including premium services, streaming platform, events, and user management. All endpoints support bilingual content (Portuguese/English) and implement robust security measures.
 
 ---
 
@@ -630,5 +630,5 @@ const events = await api.events.list({ category: 'cultural' })
 
 ---
 
-**Built with ❤️ for the Portuguese community in London & UK**  
+**Built with ❤️ for the Portuguese-speaking community in London & UK**  
 **API Version 1.0.0 | Documentation Last Updated: August 2025**

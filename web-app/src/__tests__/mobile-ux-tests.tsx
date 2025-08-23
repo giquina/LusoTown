@@ -2,7 +2,7 @@
  * Mobile UX Testing Suite for LusoTown
  * 
  * Comprehensive mobile testing framework specifically designed for
- * Portuguese community platform requirements and cultural considerations.
+ * Portuguese-speaking community platform requirements and cultural considerations.
  */
 
 import React from 'react';
@@ -45,8 +45,8 @@ const createTouchEvent = (type: string, touches: Array<{ clientX: number; client
 // Portuguese test content for validation
 const PORTUGUESE_TEST_CONTENT = {
   shortText: 'Eventos',
-  mediumText: 'Comunidade Portuguesa em Londres',
-  longText: 'Descubra a vibrante comunidade portuguesa em Londres através dos nossos eventos culturais autênticos',
+  mediumText: 'Comunidade de Falantes de Português em Londres',
+  longText: 'Descubra a vibrante comunidade de falantes de português em Londres através dos nossos eventos culturais autênticos',
   veryLongText: 'Participe em experiências únicas da cultura portuguesa, incluindo noites de fado tradicional, workshops de culinária portuguesa, festivais culturais e oportunidades de networking profissional',
   
   // Common UI elements in Portuguese
@@ -467,7 +467,7 @@ export class MobileUXTestSuite {
   }
 
   /**
-   * Test cultural compliance for Portuguese community
+   * Test cultural compliance for Portuguese-speaking community
    */
   async testCulturalCompliance(component: React.ReactElement): Promise<void> {
     console.log('🏛️ Testing cultural compliance...');
@@ -568,7 +568,7 @@ export class MobileUXTestSuite {
     }
     
     console.log('- Test on real devices before production deployment');
-    console.log('- Consider Portuguese community feedback for cultural elements');
+    console.log('- Consider Portuguese-speaking community feedback for cultural elements');
     console.log('- Monitor performance on slower mobile networks');
     console.log('- Validate with assistive technologies for accessibility');
     

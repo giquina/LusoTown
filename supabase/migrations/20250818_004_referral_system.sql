@@ -1,5 +1,5 @@
--- Referral System for LusoTown Portuguese Community
--- This migration creates the complete referral program with Portuguese community focus
+-- Referral System for LusoTown Portuguese-speaking community
+-- This migration creates the complete referral program with Portuguese-speaking community focus
 
 -- Create referral codes table
 CREATE TABLE IF NOT EXISTS referral_codes (
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS referral_rewards (
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Create referral campaigns table (for special Portuguese community campaigns)
+-- Create referral campaigns table (for special Portuguese-speaking community campaigns)
 CREATE TABLE IF NOT EXISTS referral_campaigns (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name VARCHAR(100) NOT NULL,
@@ -104,7 +104,7 @@ BEGIN
   base_code := UPPER(SUBSTR(COALESCE(user_data.first_name, 'USER'), 1, 4) || 
                     SUBSTR(COALESCE(user_data.last_name, ''), 1, 3));
   
-  -- Remove special characters and ensure it's Portuguese community friendly
+  -- Remove special characters and ensure it's Portuguese-speaking community friendly
   base_code := REGEXP_REPLACE(base_code, '[^A-Z0-9]', '', 'g');
   
   -- Ensure minimum length
@@ -177,8 +177,8 @@ BEGIN
     referral_record.id,
     COALESCE(campaign_record.reward_referrer_type, 'free_month'),
     COALESCE(campaign_record.reward_referrer_value, 30),
-    'Free month for successful Portuguese community referral',
-    'Mês grátis por referência bem-sucedida da comunidade portuguesa',
+    'Free month for successful Portuguese-speaking community referral',
+    'Mês grátis por referência bem-sucedida da comunidade de falantes de português',
     NOW() + INTERVAL '1 year'
   );
   
@@ -196,8 +196,8 @@ BEGIN
     referral_record.id,
     COALESCE(campaign_record.reward_referee_type, 'discount'),
     COALESCE(campaign_record.reward_referee_value, 20),
-    'Welcome discount for joining Portuguese community',
-    'Desconto de boas-vindas por se juntar à comunidade portuguesa',
+    'Welcome discount for joining Portuguese-speaking community',
+    'Desconto de boas-vindas por se juntar à comunidade de falantes de português',
     NOW() + INTERVAL '3 months'
   );
   
@@ -307,7 +307,7 @@ CREATE POLICY "System can manage rewards" ON referral_rewards FOR INSERT WITH CH
 -- RLS Policies for referral_campaigns
 CREATE POLICY "Everyone can view active campaigns" ON referral_campaigns FOR SELECT USING (is_active = TRUE);
 
--- Insert default "Bring Portuguese Friends" campaign
+-- Insert default "Bring Portuguese-speaking Friends" campaign
 INSERT INTO referral_campaigns (
   name,
   slug,
@@ -325,12 +325,12 @@ INSERT INTO referral_campaigns (
   target_audience,
   end_date
 ) VALUES (
-  'Bring Portuguese Friends 2025',
+  'Bring Portuguese-speaking Friends 2025',
   'bring-portuguese-friends-2025',
-  'Bring Portuguese Friends to LusoTown',
+  'Bring Portuguese-speaking Friends to LusoTown',
   'Convide Amigos Portugueses para o LusoTown',
-  'Help grow our Portuguese community in London! Get a free month for each friend who joins and stays active for 30 days. Bring 5 friends and get 2 months free!',
-  'Ajude a crescer a nossa comunidade portuguesa em Londres! Ganhe um mês grátis por cada amigo que se junte e permaneça ativo por 30 dias. Convide 5 amigos e ganhe 2 meses grátis!',
+  'Help grow our Portuguese-speaking community in London! Get a free month for each friend who joins and stays active for 30 days. Bring 5 friends and get 2 months free!',
+  'Ajude a crescer a nossa comunidade de falantes de português em Londres! Ganhe um mês grátis por cada amigo que se junte e permaneça ativo por 30 dias. Convide 5 amigos e ganhe 2 meses grátis!',
   'free_month',
   30,
   'discount',
@@ -357,5 +357,5 @@ GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO authenticated;
 COMMENT ON TABLE referral_codes IS 'Unique referral codes for each user to track referrals';
 COMMENT ON TABLE referrals IS 'Tracks all referral relationships and their status';
 COMMENT ON TABLE referral_rewards IS 'Manages rewards given for successful referrals';
-COMMENT ON TABLE referral_campaigns IS 'Special Portuguese community referral campaigns';
-COMMENT ON VIEW referral_leaderboard IS 'Leaderboard showing top referrers in Portuguese community';
+COMMENT ON TABLE referral_campaigns IS 'Special Portuguese-speaking community referral campaigns';
+COMMENT ON VIEW referral_leaderboard IS 'Leaderboard showing top referrers in Portuguese-speaking community';

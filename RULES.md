@@ -458,7 +458,7 @@ const handleKeyDown = (e) => {
 
 ### Image Standards (MANDATORY)
 1. **Use Cloudinary URLs** only: `https://res.cloudinary.com/dqhbeqttp/image/upload/...`
-2. **Professional Portuguese community images** preferred
+2. **Professional Portuguese-speaking community images** preferred
 3. **London landmarks** for tourism/transport pages
 4. **Always include alt text** in both English and Portuguese
 

@@ -88,7 +88,7 @@ class AutomationRulesEngine extends EventEmitter {
         'portuguese-community': {
           enabled: true,
           priority: 'high',
-          description: 'Rules for Portuguese community-specific features'
+          description: 'Rules for Portuguese-speaking community-specific features'
         },
         'documentation': {
           enabled: true,
@@ -138,7 +138,7 @@ class AutomationRulesEngine extends EventEmitter {
   async initializeBuiltInRules() {
     console.log('📋 Initializing built-in automation rules...');
 
-    // Portuguese Community Rules
+    // Portuguese-speaking community Rules
     this.registerRule({
       id: 'portuguese-component-documentation',
       name: 'Portuguese Component Documentation',
@@ -164,7 +164,7 @@ class AutomationRulesEngine extends EventEmitter {
         'notify-cultural-team'
       ],
       cooldown: 300000, // 5 minutes
-      description: 'Automatically documents Portuguese community components'
+      description: 'Automatically documents Portuguese-speaking community components'
     });
 
     this.registerRule({

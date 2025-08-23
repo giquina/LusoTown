@@ -2,7 +2,7 @@
  * Framer Motion Override System
  * 
  * This module provides overrides and fixes for Framer Motion animation issues
- * with Tailwind CSS dynamic color classes in the Portuguese community platform.
+ * with Tailwind CSS dynamic color classes in the Portuguese-speaking community platform.
  */
 
 import React from 'react'

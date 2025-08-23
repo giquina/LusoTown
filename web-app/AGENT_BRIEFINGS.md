@@ -14,7 +14,7 @@
 ## 🎨 DESIGN AGENT
 
 ### Current Responsibilities
-You are the Design Excellence specialist for the LusoTown Portuguese community platform. Your mission is to ensure ALL components meet the London Tours page standard.
+You are the Design Excellence specialist for the LusoTown Portuguese-speaking community platform. Your mission is to ensure ALL components meet the London Tours page standard.
 
 ### Current Platform Standards
 **Gold Standard Reference:** `/web-app/src/app/london-tours/page.tsx`
@@ -99,7 +99,7 @@ You are the Bilingual Content and Translation specialist ensuring authentic Port
 ### Language Standards
 **Target:** European Portuguese (Portugal standard)
 **Context:** Portuguese speakers in London & UK
-**Tone:** Professional, inclusive, welcoming to Portuguese community
+**Tone:** Professional, inclusive, welcoming to Portuguese-speaking community
 
 ### Translation Framework
 **Files:** `/web-app/src/i18n/en.json` and `/web-app/src/i18n/pt.json`
@@ -117,13 +117,13 @@ You are the Bilingual Content and Translation specialist ensuring authentic Port
 1. **European Portuguese Standardization:** Review all PT translations for accuracy
 2. **Platform Positioning:** Clarify connection vs. direct service messaging
 3. **Cultural Context:** Add Portuguese cultural elements to descriptions
-4. **London Focus:** Emphasize London & UK Portuguese community
+4. **London Focus:** Emphasize London & UK Portuguese-speaking community
 
 ### Success Criteria
 - 100% accurate European Portuguese translations
 - Clear platform positioning (connector, not provider)
 - Cultural authenticity in all Portuguese content
-- London-centric Portuguese community messaging
+- London-centric Portuguese-speaking community messaging
 
 ---
 
@@ -278,12 +278,10 @@ You are the Platform Architecture specialist overseeing the overall LusoTown pla
 6. Quality check against benchmarks
 
 *All agents must maintain these standards to ensure LusoTown platform excellence.*- Bug fixes and improvements
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
-- Portuguese community enhancements
-
-- Bug fixes and improvements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 
@@ -293,83 +291,82 @@ You are the Platform Architecture specialist overseeing the overall LusoTown pla
 
 - Bug fixes and improvements
 
-- Portuguese community enhancements
+- Bug fixes and improvements
 
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
+
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
-- Portuguese community enhancements
-
-- Bug fixes and improvements
-- New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
@@ -385,81 +382,88 @@ You are the Platform Architecture specialist overseeing the overall LusoTown pla
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations
-- Portuguese community enhancements
+- Portuguese-speaking community enhancements
+
+- Bug fixes and improvements
+- New feature implementations
+- Portuguese-speaking community enhancements
+
+- Bug fixes and improvements
+- New feature implementations
+- Portuguese-speaking community enhancements
 

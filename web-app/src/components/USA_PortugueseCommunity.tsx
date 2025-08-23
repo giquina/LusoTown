@@ -32,7 +32,7 @@ export default function USA_PortugueseCommunity({
   const [selectedCategory, setSelectedCategory] = useState<'overview' | 'events' | 'business' | 'professionals' | 'organizations'>('overview')
   const [showRegistrationModal, setShowRegistrationModal] = useState<string | null>(null)
 
-  // USA Portuguese Community Data
+  // USA Portuguese-speaking community Data
   const usaCommunityData = {
     totalPopulation: 1500000,
     majorCities: {
@@ -218,7 +218,7 @@ export default function USA_PortugueseCommunity({
       targetMarket: 'portuguese-community',
       establishedYear: 1995,
       employeeCount: 12,
-      portugueseSpecialties: ['Portuguese language services', 'Understanding of Portuguese community needs'],
+      portugueseSpecialties: ['Portuguese language services', 'Understanding of Portuguese-speaking community needs'],
       communityInvolvement: ['Portuguese festival sponsor', 'Community financial literacy programs'],
       internationalShipping: false,
       supportedCurrencies: ['USD'],

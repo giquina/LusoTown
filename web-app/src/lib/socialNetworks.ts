@@ -1,6 +1,6 @@
 'use client'
 
-// Portuguese Community Social Networks Integration
+// Portuguese-speaking community Social Networks Integration
 // Connect with existing Portuguese WhatsApp groups, Facebook communities, and social networks
 
 export interface PortugueseSocialNetwork {
@@ -115,12 +115,12 @@ export type CommunityFocus =
   | 'buying_selling'
   | 'services_exchange'
 
-// Real Portuguese Community Networks in London
+// Real Portuguese-speaking community Networks in London
 export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
   {
     id: 'network-whatsapp-portuguese-london',
-    name: 'Portuguese Community London',
-    namePortuguese: 'Comunidade Portuguesa Londres',
+    name: 'Portuguese-speaking community London',
+    namePortuguese: 'Comunidade de Falantes de Português Londres',
     platform: 'whatsapp',
     type: 'general_community',
     description: 'Main WhatsApp group for Portuguese speakers in London. Share events, ask questions, make friends, and stay connected with the community.',
@@ -339,7 +339,7 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
     location: 'London & UK',
     
     focus: ['cultural_events', 'festivals', 'music_concerts', 'food_events', 'art_exhibitions'],
-    targetAudience: ['Cultural enthusiasts', 'Event organizers', 'Portuguese community'],
+    targetAudience: ['Cultural enthusiasts', 'Event organizers', 'Portuguese-speaking community'],
     ageGroup: '18-70',
     
     joinMethod: 'open',

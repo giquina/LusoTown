@@ -288,7 +288,7 @@ async function verifyCreatorMonetization() {
     console.log('3. Set up creator onboarding workflow');
     console.log('4. Enable Portuguese cultural content analytics');
     console.log('5. Test revenue sharing calculations');
-    console.log('6. Launch creator beta program with Portuguese community');
+    console.log('6. Launch creator beta program with Portuguese-speaking community');
     
   } catch (error) {
     console.error('');

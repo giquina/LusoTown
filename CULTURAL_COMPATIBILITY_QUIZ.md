@@ -21,7 +21,7 @@ The Portuguese Cultural Compatibility Quiz is an interactive assessment tool tha
 - **Family**: Family values, traditions maintained in the UK
 - **Language**: Daily language use, importance of Portuguese preservation
 - **Integration**: Balance between Portuguese heritage and UK integration
-- **Community**: Involvement in Portuguese community activities
+- **Community**: Involvement in Portuguese-speaking community activities
 - **Values**: Social behaviors, cultural priorities, future plans
 - **Holidays**: Celebration preferences and cultural adaptation
 - **Regional**: Connection to specific Portuguese-speaking regions
@@ -156,7 +156,7 @@ Added comprehensive translations for:
 - "How do you balance Portuguese heritage with British integration?"
 
 #### Community & Values
-- "How involved are you in the Portuguese community in London?"
+- "How involved are you in the Portuguese-speaking community in London?"
 - "Your ideal Christmas celebration in London would be..."
 
 ### Compatibility Algorithm

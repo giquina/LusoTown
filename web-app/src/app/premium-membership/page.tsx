@@ -58,8 +58,8 @@ export default function PremiumMembershipPage() {
                 </h1>
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                   {isPortuguese 
-                    ? 'Experiência completa da comunidade portuguesa de Londres com serviços premium e benefícios exclusivos'
-                    : 'Complete London Portuguese community experience with premium services and exclusive benefits'
+                    ? 'Experiência completa da comunidade de falantes de português de Londres com serviços premium e benefícios exclusivos'
+                    : 'Complete London Portuguese-speaking community experience with premium services and exclusive benefits'
                   }
                 </p>
               </motion.div>

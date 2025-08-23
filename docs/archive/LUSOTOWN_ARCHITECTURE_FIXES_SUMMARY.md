@@ -114,7 +114,7 @@ useEffect(() => {
 ### 3. Enhanced User Experience
 - Bilingual community bridge notifications
 - Personalized group and event recommendations
-- Automatic enrollment in relevant Portuguese community groups
+- Automatic enrollment in relevant Portuguese-speaking community groups
 - Incentivized community participation with exclusive offers
 
 ### 4. Business Growth Opportunities
@@ -134,7 +134,7 @@ useEffect(() => {
 ### Service-to-Community Integration
 - ✅ Automatic community bridge for transport completions
 - ✅ Personalized community recommendations
-- ✅ Auto-enrollment in Portuguese community groups
+- ✅ Auto-enrollment in Portuguese-speaking community groups
 - ✅ Bilingual notification system
 - ✅ Incentive system for community participation
 

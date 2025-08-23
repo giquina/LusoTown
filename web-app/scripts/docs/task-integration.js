@@ -91,7 +91,7 @@ class TaskIntegration {
       const matches = text.match(pattern);
       if (matches) {
         instructions.push(...matches.map(match => 
-          `Portuguese Community: ${match.trim()}`
+          `Portuguese-speaking community: ${match.trim()}`
         ));
       }
     }

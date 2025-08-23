@@ -28,8 +28,8 @@ import Footer from "@/components/Footer";
 const freeFeatures = [
   {
     icon: CheckIcon,
-    title: "Join Portuguese Community",
-    titlePt: "Junte-se à Comunidade Portuguesa",
+    title: "Join Portuguese-speaking community",
+    titlePt: "Junte-se à Comunidade de Falantes de Português",
     subtitle: "Connect with Portuguese speakers instantly",
     subtitlePt: "Conecte-se com falantes de português instantaneamente",
   },
@@ -226,7 +226,7 @@ export default function StartFree() {
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                     <Image
                       src={getImageWithFallback("portuguese-london-community")}
-                      alt="Portuguese community in London"
+                      alt="Portuguese-speaking community in London"
                       width={600}
                       height={400}
                       className="w-full h-auto object-cover"
@@ -297,8 +297,8 @@ export default function StartFree() {
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   {isPortuguese 
-                    ? "Tudo o que precisa para começar a sua jornada na comunidade portuguesa de Londres."
-                    : "Everything you need to start your journey in London's Portuguese community."}
+                    ? "Tudo o que precisa para começar a sua jornada na comunidade de falantes de português de Londres."
+                    : "Everything you need to start your journey in London's Portuguese-speaking community."}
                 </p>
               </div>
 
@@ -476,8 +476,8 @@ export default function StartFree() {
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">
                 {isPortuguese 
-                  ? "A Sua Comunidade Portuguesa Está à Espera" 
-                  : "Your Portuguese Community is Waiting"}
+                  ? "A Sua Comunidade de Falantes de Português Está à Espera" 
+                  : "Your Portuguese-speaking community is Waiting"}
               </h2>
               
               <p className="text-xl mb-8 text-primary-100">

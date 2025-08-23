@@ -7,7 +7,7 @@ import { aiNotificationEngine } from '@/services/AINotificationEngine'
  * AI Notification System Production Monitoring API
  * 
  * Provides comprehensive monitoring and health checking for the AI notification system
- * designed specifically for the Portuguese community platform
+ * designed specifically for the Portuguese-speaking community platform
  */
 
 export async function GET(request: NextRequest) {
@@ -130,7 +130,7 @@ export async function GET(request: NextRequest) {
       monitoringData.system_status = 'unknown'
     }
 
-    // Add Portuguese community specific insights
+    // Add Portuguese-speaking community specific insights
     monitoringData.community_insights = await getCommunityInsights(supabase)
 
     return NextResponse.json(monitoringData, { 
@@ -311,7 +311,7 @@ async function getNotificationAnalytics(supabase: any) {
 }
 
 /**
- * Get Portuguese community specific insights
+ * Get Portuguese-speaking community specific insights
  */
 async function getCommunityInsights(supabase: any) {
   try {

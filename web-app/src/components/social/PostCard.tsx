@@ -368,7 +368,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
           </button>
         </div>
 
-        {/* Portuguese Community Relevance Score (for development) */}
+        {/* Portuguese-speaking community Relevance Score (for development) */}
         {process.env.NODE_ENV === 'development' && (
           <div className="mt-4 pt-4 border-t border-gray-100">
             <div className="flex items-center justify-between text-xs text-gray-400">

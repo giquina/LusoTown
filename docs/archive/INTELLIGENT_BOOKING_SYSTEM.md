@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Intelligent Booking Flow System automatically determines the appropriate booking path based on service selection, creating a seamless experience for the Portuguese community in London & UK.
+The Intelligent Booking Flow System automatically determines the appropriate booking path based on service selection, creating a seamless experience for the Portuguese-speaking community in London & UK.
 
 ## System Architecture
 
@@ -45,7 +45,7 @@ The Intelligent Booking Flow System automatically determines the appropriate boo
 - Operational logistics (venues, timing, special requirements)
 - Confidentiality agreements and privacy expectations
 
-**Portuguese Community Context:**
+**Portuguese-speaking community Context:**
 - Portuguese-speaking officer requirements
 - Cultural customs and religious considerations
 - Familiarity with Portuguese areas of London
@@ -59,7 +59,7 @@ The Intelligent Booking Flow System automatically determines the appropriate boo
 - Group size adjustments (>4 people)
 - Vehicle premiums (Standard/Premium/Luxury)
 - SIA compliance complexity fees
-- Portuguese community add-on services
+- Portuguese-speaking community add-on services
 - Seasonal multipliers (peak/high/standard/low)
 - Membership tier discounts (Free 0%, Core 10%, Premium 20%)
 - Bundle discounts (Cultural Explorer 15%, Business Professional 12%, Complete Experience 18%)
@@ -67,7 +67,7 @@ The Intelligent Booking Flow System automatically determines the appropriate boo
 
 **Multi-Currency Support:**
 - 135+ currencies via Stripe integration
-- Portuguese community focus: GBP, EUR, USD, BRL (Brazilian Real), MXN (Mexican Peso)
+- Portuguese-speaking community focus: GBP, EUR, USD, BRL (Brazilian Real), MXN (Mexican Peso)
 - Real-time currency conversion
 - Regional payment method preferences
 
@@ -79,11 +79,11 @@ The Intelligent Booking Flow System automatically determines the appropriate boo
 - PCI DSS compliance
 - Mobile-optimized payment flows
 
-**Portuguese Community Payment Options:**
+**Portuguese-speaking community Payment Options:**
 1. **Credit/Debit Cards**: Visa, Mastercard, Amex (all currencies)
 2. **Corporate Account Billing**: Invoice billing for approved business accounts
 3. **Subscription Credit**: LusoTown membership credits
-4. **Portuguese Community Installments**: 3-6 month payment plans (minimum £300)
+4. **Portuguese-speaking community Installments**: 3-6 month payment plans (minimum £300)
 
 **Corporate Billing Workflow:**
 - Pre-approved corporate accounts
@@ -98,7 +98,7 @@ The Intelligent Booking Flow System automatically determines the appropriate boo
 - All transport bookings require active £25/year LusoTown subscription
 - Automatic subscription validation
 - Graceful upgrade prompts for non-subscribers
-- Portuguese community benefits messaging
+- Portuguese-speaking community benefits messaging
 
 ## Component Architecture
 
@@ -159,7 +159,7 @@ interface EasySIAData {
 ```
 
 #### 4. `PaymentProcessor.tsx`
-Multi-currency payment processing with Portuguese community features.
+Multi-currency payment processing with Portuguese-speaking community features.
 
 ```typescript
 interface PaymentMethod {
@@ -360,7 +360,7 @@ const BUNDLE_DISCOUNTS = [
 - Audit trail maintenance
 - Professional review workflow
 
-## Portuguese Community Features
+## Portuguese-speaking community Features
 
 ### Cultural Considerations
 - Portuguese language support throughout
@@ -382,7 +382,7 @@ const BUNDLE_DISCOUNTS = [
 - Payment method preferences
 - Currency usage statistics
 
-### Portuguese Community Metrics
+### Portuguese-speaking community Metrics
 - Cultural service popularity
 - Geographic service distribution
 - Community engagement levels
@@ -404,4 +404,4 @@ const BUNDLE_DISCOUNTS = [
 4. **Advanced Analytics**: Business intelligence dashboard
 5. **Third-party Integrations**: Calendar sync, CRM integration
 
-This intelligent booking system represents a significant advancement in Portuguese community service booking, providing a professional, culturally-aware, and technically sophisticated platform for the LusoTown community in London & UK.
+This intelligent booking system represents a significant advancement in Portuguese-speaking community service booking, providing a professional, culturally-aware, and technically sophisticated platform for the LusoTown community in London & UK.

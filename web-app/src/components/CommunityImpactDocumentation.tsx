@@ -159,8 +159,8 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       secondary: { value: '45,000', label: 'Annual Event Attendees', labelPortuguese: 'Participantes Anuais em Eventos' },
       tertiary: { value: '25', label: 'Cultural Partnerships', labelPortuguese: 'Parcerias Culturais' }
     },
-    beneficiaries: 'Portuguese community, London cultural scene, tourists, and cultural institutions',
-    beneficiariesPortuguese: 'Comunidade portuguesa, cena cultural londrina, turistas e instituições culturais',
+    beneficiaries: 'Portuguese-speaking community, London cultural scene, tourists, and cultural institutions',
+    beneficiariesPortuguese: 'Comunidade de falantes de português, cena cultural londrina, turistas e instituições culturais',
     timeframe: '2019-2024',
     location: 'London Cultural Venues & Public Spaces',
     keyAchievements: [
@@ -180,8 +180,8 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       'Coordenadas contribuições culturais portuguesas para os principais festivais de Londres'
     ],
     testimonial: {
-      quote: 'The Santos Populares festival brought tears to my eyes - seeing London\'s Portuguese community celebrating our traditions with such joy and pride. My British neighbors joined us, learned our dances, tasted our food. It showed me how culture builds bridges between communities.',
-      quotePortuguese: 'O festival dos Santos Populares trouxe lágrimas aos meus olhos - ver a comunidade portuguesa de Londres celebrando nossas tradições com tanta alegria e orgulho. Meus vizinhos britânicos juntaram-se a nós, aprenderam nossas danças, provaram nossa comida. Mostrou-me como a cultura constrói pontes entre comunidades.',
+      quote: 'The Santos Populares festival brought tears to my eyes - seeing London\'s Portuguese-speaking community celebrating our traditions with such joy and pride. My British neighbors joined us, learned our dances, tasted our food. It showed me how culture builds bridges between communities.',
+      quotePortuguese: 'O festival dos Santos Populares trouxe lágrimas aos meus olhos - ver a comunidade de falantes de português de Londres celebrando nossas tradições com tanta alegria e orgulho. Meus vizinhos britânicos juntaram-se a nós, aprenderam nossas danças, provaram nossa comida. Mostrou-me como a cultura constrói pontes entre comunidades.',
       author: 'Isabel Ferreira',
       role: 'Cultural Event Coordinator',
       rolePortuguese: 'Coordenadora de Eventos Culturais'
@@ -195,8 +195,8 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
   },
   {
     id: 'social-community-support',
-    title: 'Portuguese Community Social Support Network',
-    titlePortuguese: 'Rede de Apoio Social da Comunidade Portuguesa',
+    title: 'Portuguese-speaking community Social Support Network',
+    titlePortuguese: 'Rede de Apoio Social da Comunidade de Falantes de Português',
     category: 'social',
     description: 'Comprehensive social support systems providing practical assistance, emotional support, and community integration services for Portuguese speakers.',
     descriptionPortuguese: 'Sistemas abrangentes de apoio social fornecendo assistência prática, apoio emocional e serviços de integração comunitária para falantes de português.',
@@ -226,14 +226,14 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       'Organizados 300+ eventos de integração comunitária facilitando conexões sociais'
     ],
     testimonial: {
-      quote: 'When I arrived in London with my children, everything felt overwhelming. The Portuguese community support network became our lifeline - helping with school applications, NHS registration, even connecting us with Portuguese-speaking doctors. They didn\'t just help us survive; they helped us thrive.',
-      quotePortuguese: 'Quando cheguei a Londres com meus filhos, tudo parecia esmagador. A rede de apoio da comunidade portuguesa tornou-se nossa tábua de salvação - ajudando com inscrições escolares, registo no NHS, até conectando-nos com médicos que falam português. Não apenas nos ajudaram a sobreviver; ajudaram-nos a prosperar.',
+      quote: 'When I arrived in London with my children, everything felt overwhelming. The Portuguese-speaking community support network became our lifeline - helping with school applications, NHS registration, even connecting us with Portuguese-speaking doctors. They didn\'t just help us survive; they helped us thrive.',
+      quotePortuguese: 'Quando cheguei a Londres com meus filhos, tudo parecia esmagador. A rede de apoio da comunidade de falantes de português tornou-se nossa tábua de salvação - ajudando com inscrições escolares, registo no NHS, até conectando-nos com médicos que falam português. Não apenas nos ajudaram a sobreviver; ajudaram-nos a prosperar.',
       author: 'Mariana Silva',
       role: 'Single Mother, Community Advocate',
       rolePortuguese: 'Mãe Solteira, Defensora Comunitária'
     },
     partnerships: ['Citizens Advice Bureau', 'Portuguese Church Community', 'Local Council Services', 'NHS Community Liaisons'],
-    futureGoals: 'Establish Portuguese community centers in 5 London boroughs, train 50+ new community advocates, create 24/7 Portuguese helpline.',
+    futureGoals: 'Establish Portuguese-speaking community centers in 5 London boroughs, train 50+ new community advocates, create 24/7 Portuguese helpline.',
     futureGoalsPortuguese: 'Estabelecer centros comunitários portugueses em 5 distritos de Londres, treinar 50+ novos defensores comunitários, criar linha de ajuda portuguesa 24/7.',
     mediaRecognition: ['Guardian Community Features', 'Portuguese Radio London', 'Local Borough Newsletters'],
     icon: HeartIcon,
@@ -244,8 +244,8 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
     title: 'Portuguese Civic Engagement & Political Participation',
     titlePortuguese: 'Envolvimento Cívico e Participação Política Portuguesa',
     category: 'civic',
-    description: 'Increasing Portuguese community political participation, civic engagement, and representation in UK democratic processes and community leadership.',
-    descriptionPortuguese: 'Aumentar a participação política da comunidade portuguesa, envolvimento cívico e representação nos processos democráticos do Reino Unido e liderança comunitária.',
+    description: 'Increasing Portuguese-speaking community political participation, civic engagement, and representation in UK democratic processes and community leadership.',
+    descriptionPortuguese: 'Aumentar a participação política da comunidade de falantes de português, envolvimento cívico e representação nos processos democráticos do Reino Unido e liderança comunitária.',
     metrics: {
       primary: { value: '75%', label: 'Voter Registration Rate', labelPortuguese: 'Taxa de Registo Eleitoral' },
       secondary: { value: '12', label: 'Portuguese Elected Officials', labelPortuguese: 'Funcionários Eleitos Portugueses' },
@@ -272,8 +272,8 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       'Defendidos serviços em língua portuguesa em 8 escritórios de conselhos de Londres'
     ],
     testimonial: {
-      quote: 'For years, I felt disconnected from UK politics because I didn\'t understand the system. The civic engagement program taught me how my vote matters and how to make my voice heard. Now I\'m a local councillor representing Portuguese community interests.',
-      quotePortuguese: 'Durante anos, senti-me desconectado da política do Reino Unido porque não entendia o sistema. O programa de envolvimento cívico ensinou-me como meu voto importa e como fazer minha voz ser ouvida. Agora sou vereador local representando os interesses da comunidade portuguesa.',
+      quote: 'For years, I felt disconnected from UK politics because I didn\'t understand the system. The civic engagement program taught me how my vote matters and how to make my voice heard. Now I\'m a local councillor representing Portuguese-speaking community interests.',
+      quotePortuguese: 'Durante anos, senti-me desconectado da política do Reino Unido porque não entendia o sistema. O programa de envolvimento cívico ensinou-me como meu voto importa e como fazer minha voz ser ouvida. Agora sou vereador local representando os interesses da comunidade de falantes de português.',
       author: 'António Pereira',
       role: 'Local Councillor, Camden Borough',
       rolePortuguese: 'Vereador Local, Distrito de Camden'
@@ -416,13 +416,13 @@ export default function CommunityImpactDocumentation() {
           
           <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-6 leading-tight">
             {language === 'pt' 
-              ? 'Transformando Londres Através da Comunidade Portuguesa'
-              : 'Transforming London Through Portuguese Community'}
+              ? 'Transformando Londres Através da Comunidade de Falantes de Português'
+              : 'Transforming London Through Portuguese-speaking community'}
           </h2>
           <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
             {language === 'pt' 
-              ? 'Impacto quantificável e documentado da comunidade portuguesa em Londres através de contribuições económicas, educacionais, culturais e sociais mensuráveis.'
-              : 'Quantifiable and documented impact of the Portuguese community in London through measurable economic, educational, cultural, and social contributions.'}
+              ? 'Impacto quantificável e documentado da comunidade de falantes de português em Londres através de contribuições económicas, educacionais, culturais e sociais mensuráveis.'
+              : 'Quantifiable and documented impact of the Portuguese-speaking community in London through measurable economic, educational, cultural, and social contributions.'}
           </p>
         </motion.div>
 
@@ -694,8 +694,8 @@ export default function CommunityImpactDocumentation() {
             </h3>
             <p className="text-lg mb-8 opacity-90 max-w-3xl mx-auto">
               {language === 'pt' 
-                ? 'Junte-se à comunidade portuguesa mais impactante de Londres. Juntos, continuamos a transformar Londres através da nossa cultura, valores e contribuições positivas.'
-                : 'Join London\'s most impactful Portuguese community. Together, we continue transforming London through our culture, values, and positive contributions.'}
+                ? 'Junte-se à comunidade de falantes de português mais impactante de Londres. Juntos, continuamos a transformar Londres através da nossa cultura, valores e contribuições positivas.'
+                : 'Join London\'s most impactful Portuguese-speaking community. Together, we continue transforming London through our culture, values, and positive contributions.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <a

@@ -365,8 +365,8 @@ create trigger update_compatibility_on_preferences_change
     for each row execute procedure trigger_compatibility_update();
 
 -- Comments for documentation
-comment on table public.cultural_preferences is 'Stores user cultural preference quiz results for Portuguese community matching';
-comment on table public.cultural_compatibility is 'Calculated compatibility scores between Portuguese community members';
+comment on table public.cultural_preferences is 'Stores user cultural preference quiz results for Portuguese-speaking community matching';
+comment on table public.cultural_compatibility is 'Calculated compatibility scores between Portuguese-speaking community members';
 comment on table public.cultural_insights is 'Reference table for cultural matching insights and explanations';
 comment on table public.portuguese_cultural_elements is 'Reference table for Portuguese cultural elements used in matching';
 comment on function calculate_cultural_compatibility(uuid, uuid) is 'Calculates cultural compatibility scores between two users';

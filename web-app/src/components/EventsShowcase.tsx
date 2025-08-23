@@ -296,7 +296,7 @@ const EventsShowcase = memo(() => {
             }
           </motion.p>
           
-          {/* Portuguese Community Areas in London */}
+          {/* Portuguese-speaking community Areas in London */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -615,7 +615,7 @@ const EventsShowcase = memo(() => {
           </div>
         </motion.div>
 
-        {/* Portuguese Community Testimonials */}
+        {/* Portuguese-speaking community Testimonials */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -741,8 +741,8 @@ const EventsShowcase = memo(() => {
             <div className="relative z-10">
               <h3 className="text-3xl font-bold mb-6">
                 {language === "pt" 
-                  ? "Junte-se à Comunidade Portuguesa em Londres & Reino Unido"
-                  : "Join the Portuguese Community in London & UK"}
+                  ? "Junte-se à Comunidade de Falantes de Português em Londres & Reino Unido"
+                  : "Join the Portuguese-speaking community in London & UK"}
               </h3>
               <p className="text-xl opacity-95 mb-8 max-w-3xl mx-auto leading-relaxed">
                 {language === "pt"

@@ -85,8 +85,8 @@ export default function NotificationPreferencesPage() {
               </h1>
               <p className="text-xl lg:text-2xl text-primary-100 max-w-3xl mx-auto">
                 {language === 'pt' 
-                  ? 'Personalize como recebe atualizações da comunidade portuguesa em Londres & Reino Unido'
-                  : 'Customize how you receive updates from the Portuguese community in London & UK'
+                  ? 'Personalize como recebe atualizações da comunidade de falantes de português em Londres & Reino Unido'
+                  : 'Customize how you receive updates from the Portuguese-speaking community in London & UK'
                 }
               </p>
             </motion.div>
@@ -138,7 +138,7 @@ export default function NotificationPreferencesPage() {
           </motion.div>
         </div>
 
-        {/* Portuguese Community Features */}
+        {/* Portuguese-speaking community Features */}
         <div className="container-width py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -148,7 +148,7 @@ export default function NotificationPreferencesPage() {
           >
             <div className="text-center mb-8">
               <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-4">
-                🇵🇹 {language === 'pt' ? 'Funcionalidades da Comunidade Portuguesa' : 'Portuguese Community Features'}
+                🇵🇹 {language === 'pt' ? 'Funcionalidades da Comunidade de Falantes de Português' : 'Portuguese-speaking community Features'}
               </h2>
               <p className="text-lg text-neutral-600">
                 {language === 'pt' 

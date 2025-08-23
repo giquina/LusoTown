@@ -219,8 +219,8 @@ export default function MobileGeolocationServices({
         type: 'success',
         title: language === 'pt' ? 'Localização Obtida!' : 'Location Found!',
         message: language === 'pt' 
-          ? 'A descobrir comunidade portuguesa próxima' 
-          : 'Discovering nearby Portuguese community',
+          ? 'A descobrir comunidade de falantes de português próxima' 
+          : 'Discovering nearby Portuguese-speaking community',
         duration: 3000
       });
 
@@ -381,7 +381,7 @@ export default function MobileGeolocationServices({
       <div className="text-center">
         <MapPin className="h-12 w-12 text-red-600 mx-auto mb-4" />
         <h3 className="text-lg font-semibold text-gray-900 mb-2">
-          {language === 'pt' ? 'Descobrir Comunidade Portuguesa' : 'Discover Portuguese Community'}
+          {language === 'pt' ? 'Descobrir Comunidade de Falantes de Português' : 'Discover Portuguese-speaking community'}
         </h3>
         <p className="text-gray-600 mb-4">
           {language === 'pt' 
@@ -419,8 +419,8 @@ export default function MobileGeolocationServices({
           </h3>
           <p className="text-sm text-yellow-700 mt-1">
             {language === 'pt' 
-              ? 'Para descobrir a comunidade portuguesa próxima, ativa a localização nas definições do navegador'
-              : 'To discover nearby Portuguese community, enable location in your browser settings'}
+              ? 'Para descobrir a comunidade de falantes de português próxima, ativa a localização nas definições do navegador'
+              : 'To discover nearby Portuguese-speaking community, enable location in your browser settings'}
           </p>
           <button
             onClick={() => window.open('https://support.google.com/chrome/answer/142065', '_blank')}

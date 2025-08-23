@@ -1,5 +1,5 @@
 #!/bin/bash
-# LusoTown Portuguese Community Streaming - Development Deployment
+# LusoTown Portuguese-speaking Community Streaming - Development Deployment
 # Quick setup for local development and testing
 
 set -e
@@ -7,7 +7,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 STREAMING_DIR="$(dirname "$SCRIPT_DIR")"
 
-echo "<õ<ù LusoTown Portuguese Community Streaming - Development Deployment"
+echo "<ï¿½<ï¿½ LusoTown Portuguese-speaking Community Streaming - Development Deployment"
 echo "=================================================================="
 
 # Check prerequisites
@@ -109,43 +109,43 @@ wait_for_services() {
             return 0
         fi
         
-        echo "ó Attempt $attempt/$max_attempts - waiting for services..."
+        echo "ï¿½ Attempt $attempt/$max_attempts - waiting for services..."
         sleep 10
         ((attempt++))
     done
     
-    echo "   Services may not be fully healthy yet, but deployment completed"
+    echo "ï¿½  Services may not be fully healthy yet, but deployment completed"
 }
 
 # Display service information
 show_service_info() {
     echo ""
-    echo "<¯ LusoTown Portuguese Community Streaming - Development Services"
+    echo "<ï¿½ LusoTown Portuguese-speaking Community Streaming - Development Services"
     echo "=============================================================="
     echo ""
-    echo "<¥ RTMP Ingest (OBS/Streaming Software):"
+    echo "<ï¿½ RTMP Ingest (OBS/Streaming Software):"
     echo "   rtmp://localhost:1935/live/[stream_key]"
     echo ""
     echo "< HLS Streaming Output:"
     echo "   http://localhost:8080/live/[stream_key].m3u8"
     echo ""
-    echo "¡ WebRTC Low-latency Streaming:"
+    echo "ï¿½ WebRTC Low-latency Streaming:"
     echo "   http://localhost:8000"
     echo ""
     echo "=' SRS API Management:"
     echo "   http://localhost:1985/api/v1/"
     echo ""
-    echo "=Ê Development Monitoring (Grafana):"
+    echo "=ï¿½ Development Monitoring (Grafana):"
     echo "   http://localhost:3001 (admin/lusotown2025)"
     echo ""
     echo "= Redis (Real-time features):"
     echo "   localhost:6379"
     echo ""
-    echo "=Ë Service Status:"
+    echo "=ï¿½ Service Status:"
     cd "$STREAMING_DIR/docker-compose"
     docker-compose --env-file="../.env.dev" -f docker-compose.yml ps
     echo ""
-    echo "=¡ Quick Test:"
+    echo "=ï¿½ Quick Test:"
     echo "   1. Open OBS Studio"
     echo "   2. Add Stream: rtmp://localhost:1935/live/"
     echo "   3. Stream Key: test_stream"
@@ -163,7 +163,7 @@ main() {
     show_service_info
     
     echo ""
-    echo "<‰ LusoTown Portuguese Community Streaming development environment is ready!"
+    echo "<ï¿½ LusoTown Portuguese-speaking Community Streaming development environment is ready!"
     echo "   Perfect for testing Portuguese cultural streaming features"
 }
 

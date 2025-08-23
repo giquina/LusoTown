@@ -190,7 +190,7 @@ export default function ProtectionTestimonials() {
           >
             {t(
               "framework.testimonials.title",
-              "Portuguese Community Trust & Excellence"
+              "Portuguese-speaking community Trust & Excellence"
             )}
           </motion.h2>
           <motion.p

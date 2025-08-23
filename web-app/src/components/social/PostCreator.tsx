@@ -144,7 +144,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-lg font-semibold text-gray-900">
-            {t('post_creator.title') || 'Share with the Portuguese Community'}
+            {t('post_creator.title') || 'Share with the Portuguese-speaking community'}
           </h3>
           <button
             onClick={onCancel}
@@ -160,7 +160,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
             <textarea
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              placeholder={t('post_creator.placeholder') || "What's happening in the Portuguese community?"}
+              placeholder={t('post_creator.placeholder') || "What's happening in the Portuguese-speaking community?"}
               className="w-full min-h-[120px] p-4 border border-gray-200 rounded-lg resize-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400"
               maxLength={maxContentLength}
             />

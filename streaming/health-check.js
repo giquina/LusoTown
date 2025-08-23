@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * LusoTown Portuguese Community Streaming Health Check
+ * LusoTown Portuguese-speaking community Streaming Health Check
  * Validates all streaming infrastructure components
  */
 
@@ -72,7 +72,7 @@ const checkEndpoint = (port, path = '/health', description) => {
 };
 
 const performHealthCheck = async () => {
-  console.log('🇵🇹 LusoTown Portuguese Community Streaming Health Check');
+  console.log('🇵🇹 LusoTown Portuguese-speaking community Streaming Health Check');
   console.log('========================================================');
   console.log('');
 
@@ -156,7 +156,7 @@ const performHealthCheck = async () => {
 
   if (healthy === total) {
     console.log('');
-    console.log('🎉 All LusoTown Portuguese Community Streaming services are healthy!');
+    console.log('🎉 All LusoTown Portuguese-speaking community Streaming services are healthy!');
     process.exit(0);
   } else {
     console.log('');

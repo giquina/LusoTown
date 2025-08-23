@@ -224,7 +224,7 @@ export default function MobilePreviewPage() {
           {/* Portuguese Events with Swipe Gestures */}
           <section className="space-y-4">
             <h2 className="text-lg font-bold text-gray-900 luxury-portuguese-accent">
-              Portuguese Community Events
+              Portuguese-speaking community Events
             </h2>
             
             <div className="space-y-4">
@@ -364,7 +364,7 @@ export default function MobilePreviewPage() {
       >
         <div className="space-y-4">
           <p className="text-gray-600">
-            Choose an action for the selected Portuguese community event.
+            Choose an action for the selected Portuguese-speaking community event.
           </p>
           
           <div className="grid grid-cols-2 gap-3">

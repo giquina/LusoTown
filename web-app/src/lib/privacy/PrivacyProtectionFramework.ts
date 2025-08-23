@@ -1,5 +1,5 @@
 /**
- * Portuguese Community Privacy Protection Framework
+ * Portuguese-speaking community Privacy Protection Framework
  * 
  * Comprehensive privacy protection system specifically designed for Portuguese 
  * community data protection standards, following GDPR, UK DPA 2018, and 

@@ -334,20 +334,20 @@ class ReferralService {
     
     const messages = {
       en: {
-        whatsapp: `Join me on LusoTown - the Portuguese community platform in London! Use my code ${code} and get 25% off your first month. Perfect for connecting with Portuguese speakers. ${referralUrl}`,
+        whatsapp: `Join me on LusoTown - the Portuguese-speaking community platform in London! Use my code ${code} and get 25% off your first month. Perfect for connecting with Portuguese speakers. ${referralUrl}`,
         email: {
-          subject: 'Join the Portuguese Community in London - LusoTown',
-          body: `Hi!\n\nI wanted to invite you to join LusoTown, the Portuguese community platform I've been using in London. It's been amazing for connecting with other Portuguese speakers, finding cultural events, and accessing Portuguese-speaking services.\n\nUse my referral code ${code} when you sign up and you'll get 25% off your first month!\n\nJoin here: ${referralUrl}\n\nLooking forward to seeing you in the community!\n\nBest regards`
+          subject: 'Join the Portuguese-speaking community in London - LusoTown',
+          body: `Hi!\n\nI wanted to invite you to join LusoTown, the Portuguese-speaking community platform I've been using in London. It's been amazing for connecting with other Portuguese speakers, finding cultural events, and accessing Portuguese-speaking services.\n\nUse my referral code ${code} when you sign up and you'll get 25% off your first month!\n\nJoin here: ${referralUrl}\n\nLooking forward to seeing you in the community!\n\nBest regards`
         },
-        generic: `Join LusoTown - London's Portuguese community platform! Use code ${code} for 25% off. Connect with Portuguese speakers, discover cultural events, and access Portuguese services. ${referralUrl}`
+        generic: `Join LusoTown - London's Portuguese-speaking community platform! Use code ${code} for 25% off. Connect with Portuguese speakers, discover cultural events, and access Portuguese services. ${referralUrl}`
       },
       pt: {
-        whatsapp: `Junte-se a mim no LusoTown - a plataforma da comunidade portuguesa em Londres! Use o meu código ${code} e ganhe 25% de desconto no primeiro mês. Perfeito para conectar com falantes de português. ${referralUrl}`,
+        whatsapp: `Junte-se a mim no LusoTown - a plataforma da comunidade de falantes de português em Londres! Use o meu código ${code} e ganhe 25% de desconto no primeiro mês. Perfeito para conectar com falantes de português. ${referralUrl}`,
         email: {
-          subject: 'Junte-se à Comunidade Portuguesa em Londres - LusoTown',
-          body: `Olá!\n\nQueria convidá-lo a juntar-se ao LusoTown, a plataforma da comunidade portuguesa que tenho usado em Londres. Tem sido fantástico para conectar com outros falantes de português, encontrar eventos culturais e aceder a serviços em português.\n\nUse o meu código de indicação ${code} quando se inscrever e terá 25% de desconto no primeiro mês!\n\nJunte-se aqui: ${referralUrl}\n\nEspero vê-lo na comunidade!\n\nCumprimentos`
+          subject: 'Junte-se à Comunidade de Falantes de Português em Londres - LusoTown',
+          body: `Olá!\n\nQueria convidá-lo a juntar-se ao LusoTown, a plataforma da comunidade de falantes de português que tenho usado em Londres. Tem sido fantástico para conectar com outros falantes de português, encontrar eventos culturais e aceder a serviços em português.\n\nUse o meu código de indicação ${code} quando se inscrever e terá 25% de desconto no primeiro mês!\n\nJunte-se aqui: ${referralUrl}\n\nEspero vê-lo na comunidade!\n\nCumprimentos`
         },
-        generic: `Junte-se ao LusoTown - a plataforma da comunidade portuguesa de Londres! Use o código ${code} para 25% de desconto. Conecte-se com falantes de português, descubra eventos culturais e aceda a serviços portugueses. ${referralUrl}`
+        generic: `Junte-se ao LusoTown - a plataforma da comunidade de falantes de português de Londres! Use o código ${code} para 25% de desconto. Conecte-se com falantes de português, descubra eventos culturais e aceda a serviços portugueses. ${referralUrl}`
       }
     }
 

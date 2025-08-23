@@ -45,14 +45,14 @@ function MessagesContent() {
 
   const content = {
     title: isPortuguese ? 'Mensagens' : 'Messages',
-    subtitle: isPortuguese ? 'Conecta com a comunidade portuguesa' : 'Connect with Portuguese community',
+    subtitle: isPortuguese ? 'Conecta com a comunidade de falantes de português' : 'Connect with Portuguese-speaking community',
     noConversation: isPortuguese ? 'Seleciona uma conversa para começar' : 'Select a conversation to start',
     instructions: isPortuguese 
       ? 'Só podes enviar mensagens a pessoas com quem fizeste match ou que participaram no mesmo evento.'
       : 'You can only message people you\'ve matched with or who attended the same event.',
     getStarted: isPortuguese ? 'Como Começar:' : 'Get Started:',
     step1: isPortuguese ? '1. Vai a "Encontrar Match" para encontrar compatibilidades' : '1. Go to "Find Matches" to find compatible connections',
-    step2: isPortuguese ? '2. Participa em eventos da comunidade portuguesa' : '2. Attend Portuguese community events',
+    step2: isPortuguese ? '2. Participa em eventos da comunidade de falantes de português' : '2. Attend Portuguese-speaking community events',
     step3: isPortuguese ? '3. Faz match ou conecta em eventos para desbloquear mensagens' : '3. Match or connect at events to unlock messaging',
     findMatches: isPortuguese ? 'Encontrar Matches' : 'Find Matches',
     browseEvents: isPortuguese ? 'Ver Eventos' : 'Browse Events',

@@ -40,8 +40,8 @@ const defaultSteps: OnboardingStep[] = [
     id: 'welcome',
     titleEn: 'Welcome to LusoTown',
     titlePt: 'Bem-vindo à LusoTown',
-    descriptionEn: 'Your Portuguese community awaits! Let\'s get you started with finding your people in London.',
-    descriptionPt: 'A sua comunidade portuguesa espera! Vamos começar a encontrar a sua gente em Londres.',
+    descriptionEn: 'Your Portuguese-speaking community awaits! Let\'s get you started with finding your people in London.',
+    descriptionPt: 'A sua comunidade de falantes de português espera! Vamos começar a encontrar a sua gente em Londres.',
     icon: UserGroupIcon,
     action: 'Get Started',
     actionPt: 'Começar',
@@ -273,8 +273,8 @@ export default function PrimeirosPassos({ isOpen, onClose, onComplete }: Primeir
                 </h3>
                 <p className="text-gray-600">
                   {language === 'pt' 
-                    ? 'Está tudo pronto! Vamos explorar a sua comunidade portuguesa.'
-                    : 'You\'re all set! Let\'s explore your Portuguese community.'
+                    ? 'Está tudo pronto! Vamos explorar a sua comunidade de falantes de português.'
+                    : 'You\'re all set! Let\'s explore your Portuguese-speaking community.'
                   }
                 </p>
               </motion.div>

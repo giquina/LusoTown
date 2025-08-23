@@ -611,7 +611,7 @@ export default function CulturalCalendarPage() {
               Organizing a Portuguese Cultural Event?
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Share your event with the Portuguese community in London and help preserve our culture
+              Share your event with the Portuguese-speaking community in London and help preserve our culture
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-premium-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-premium-700 transition-colors">

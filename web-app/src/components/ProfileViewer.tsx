@@ -240,7 +240,7 @@ export default function ProfileViewer({
                   <div className="flex items-center gap-1">
                     <GlobeAltIcon className="w-4 h-4" />
                     <span className="text-sm">
-                      {isPortuguese ? 'Comunidade Portuguesa' : 'Portuguese Community'}
+                      {isPortuguese ? 'Comunidade de Falantes de Português' : 'Portuguese-speaking community'}
                     </span>
                   </div>
                 </div>

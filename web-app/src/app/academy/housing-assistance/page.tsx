@@ -44,8 +44,8 @@ export default function HousingAssistanceModule() {
     id: 'housing-assistance',
     title: 'Housing Assistance',
     titlePortuguese: 'Assistência Habitacional',
-    description: 'Navigate London\'s housing market with Portuguese community support and resources',
-    descriptionPortuguese: 'Navegar no mercado habitacional de Londres com apoio e recursos da comunidade portuguesa',
+    description: 'Navigate London\'s housing market with Portuguese-speaking community support and resources',
+    descriptionPortuguese: 'Navegar no mercado habitacional de Londres com apoio e recursos da comunidade de falantes de português',
     difficulty: 'Intermediate',
     estimatedTime: 28,
     icon: Home,
@@ -55,14 +55,14 @@ export default function HousingAssistanceModule() {
     prerequisitesPortuguese: [],
     learningObjectives: [
       'Understand London\'s housing market from a Portuguese perspective',
-      'Access Portuguese community housing networks and resources',
+      'Access Portuguese-speaking community housing networks and resources',
       'Navigate UK rental processes and legal requirements',
       'Find Portuguese-friendly neighborhoods and communities',
       'Build support networks for housing stability and growth'
     ],
     learningObjectivesPortuguese: [
       'Compreender o mercado habitacional de Londres numa perspetiva portuguesa',
-      'Aceder a redes e recursos habitacionais da comunidade portuguesa',
+      'Aceder a redes e recursos habitacionais da comunidade de falantes de português',
       'Navegar processos de arrendamento do Reino Unido e requisitos legais',
       'Encontrar bairros e comunidades amigáveis aos portugueses',
       'Construir redes de apoio para estabilidade e crescimento habitacional'
@@ -75,13 +75,13 @@ export default function HousingAssistanceModule() {
         type: 'introduction',
         estimatedTime: 5,
         content: `
-          <p>London's housing market can be complex, but understanding it from a Portuguese community perspective makes navigation easier and more successful.</p>
+          <p>London's housing market can be complex, but understanding it from a Portuguese-speaking community perspective makes navigation easier and more successful.</p>
           
           <h3>London Housing Market Overview:</h3>
           
           <h4>Types of Housing Available:</h4>
           <ul>
-            <li><strong>Private Rental (Most Common for Portuguese Community):</strong>
+            <li><strong>Private Rental (Most Common for Portuguese-speaking community):</strong>
               <ul>
                 <li>Studio apartments: £1,200-£2,000+ per month</li>
                 <li>1-bedroom flats: £1,500-£3,000+ per month</li>
@@ -108,18 +108,18 @@ export default function HousingAssistanceModule() {
               <ul>
                 <li>First-time buyer schemes available</li>
                 <li>Help to Buy and Shared Ownership programs</li>
-                <li>Portuguese community mortgage advisors available</li>
+                <li>Portuguese-speaking community mortgage advisors available</li>
               </ul>
             </li>
           </ul>
           
-          <h3>Portuguese Community Housing Advantages:</h3>
+          <h3>Portuguese-speaking community Housing Advantages:</h3>
           
           <h4>Community Networks:</h4>
           <ul>
             <li><strong>Portuguese Landlords:</strong> Better cultural understanding and communication</li>
             <li><strong>Portuguese Flatmates:</strong> Shared language and cultural comfort</li>
-            <li><strong>Community Recommendations:</strong> Trusted referrals from Portuguese friends</li>
+            <li><strong>Community Recommendations:</strong> Trusted referrals from Portuguese-speaking friends</li>
             <li><strong>Portuguese Estate Agents:</strong> Bilingual service and cultural sensitivity</li>
           </ul>
           
@@ -127,7 +127,7 @@ export default function HousingAssistanceModule() {
           <ul>
             <li><strong>South London:</strong>
               <ul>
-                <li>Stockwell: Large Portuguese community, good transport links</li>
+                <li>Stockwell: Large Portuguese-speaking community, good transport links</li>
                 <li>Vauxhall: Close to central London, Portuguese businesses</li>
                 <li>Lambeth: Affordable options, established Portuguese families</li>
                 <li>Elephant & Castle: Portuguese shops and services</li>
@@ -135,20 +135,20 @@ export default function HousingAssistanceModule() {
             </li>
             <li><strong>West London:</strong>
               <ul>
-                <li>Shepherd's Bush: Portuguese community presence</li>
+                <li>Shepherd's Bush: Portuguese-speaking community presence</li>
                 <li>Hammersmith: Good transport, family-friendly</li>
                 <li>Golborne Road area: Portuguese businesses and culture</li>
               </ul>
             </li>
             <li><strong>East London:</strong>
               <ul>
-                <li>Bethnal Green: Growing Portuguese community</li>
-                <li>Canary Wharf area: Professional Portuguese community</li>
+                <li>Bethnal Green: Growing Portuguese-speaking community</li>
+                <li>Canary Wharf area: Professional Portuguese-speaking community</li>
               </ul>
             </li>
           </ul>
           
-          <h3>Financial Considerations for Portuguese Community:</h3>
+          <h3>Financial Considerations for Portuguese-speaking community:</h3>
           <ul>
             <li><strong>Salary Multiples:</strong> Generally need 30-40x monthly rent as annual salary</li>
             <li><strong>Deposit Requirements:</strong> Usually 1-6 weeks rent upfront</li>
@@ -159,13 +159,13 @@ export default function HousingAssistanceModule() {
           <p><strong>Transportation Note:</strong> When viewing properties or moving, our professional transport service is available separately to assist with property visits or moving logistics, but is not included with housing services.</p>
         `,
         contentPortuguese: `
-          <p>O mercado habitacional de Londres pode ser complexo, mas compreendê-lo numa perspetiva da comunidade portuguesa torna a navegação mais fácil e bem-sucedida.</p>
+          <p>O mercado habitacional de Londres pode ser complexo, mas compreendê-lo numa perspetiva da comunidade de falantes de português torna a navegação mais fácil e bem-sucedida.</p>
           
           <h3>Visão Geral do Mercado Habitacional de Londres:</h3>
           
           <h4>Tipos de Habitação Disponível:</h4>
           <ul>
-            <li><strong>Arrendamento Privado (Mais Comum para Comunidade Portuguesa):</strong>
+            <li><strong>Arrendamento Privado (Mais Comum para Comunidade de Falantes de Português):</strong>
               <ul>
                 <li>Estúdios: £1,200-£2,000+ por mês</li>
                 <li>Apartamentos de 1 quarto: £1,500-£3,000+ por mês</li>
@@ -192,12 +192,12 @@ export default function HousingAssistanceModule() {
               <ul>
                 <li>Esquemas para compradores de primeira vez disponíveis</li>
                 <li>Programas Help to Buy e Shared Ownership</li>
-                <li>Conselheiros hipotecários da comunidade portuguesa disponíveis</li>
+                <li>Conselheiros hipotecários da comunidade de falantes de português disponíveis</li>
               </ul>
             </li>
           </ul>
           
-          <h3>Vantagens Habitacionais da Comunidade Portuguesa:</h3>
+          <h3>Vantagens Habitacionais da Comunidade de Falantes de Português:</h3>
           
           <h4>Redes Comunitárias:</h4>
           <ul>
@@ -211,7 +211,7 @@ export default function HousingAssistanceModule() {
           <ul>
             <li><strong>Sul de Londres:</strong>
               <ul>
-                <li>Stockwell: Grande comunidade portuguesa, boas ligações de transporte</li>
+                <li>Stockwell: Grande comunidade de falantes de português, boas ligações de transporte</li>
                 <li>Vauxhall: Perto do centro de Londres, negócios portugueses</li>
                 <li>Lambeth: Opções acessíveis, famílias portuguesas estabelecidas</li>
                 <li>Elephant & Castle: Lojas e serviços portugueses</li>
@@ -219,20 +219,20 @@ export default function HousingAssistanceModule() {
             </li>
             <li><strong>Oeste de Londres:</strong>
               <ul>
-                <li>Shepherd's Bush: Presença da comunidade portuguesa</li>
+                <li>Shepherd's Bush: Presença da comunidade de falantes de português</li>
                 <li>Hammersmith: Bom transporte, adequado para famílias</li>
                 <li>Área de Golborne Road: Negócios e cultura portugueses</li>
               </ul>
             </li>
             <li><strong>Leste de Londres:</strong>
               <ul>
-                <li>Bethnal Green: Comunidade portuguesa crescente</li>
-                <li>Área de Canary Wharf: Comunidade portuguesa profissional</li>
+                <li>Bethnal Green: Comunidade de falantes de português crescente</li>
+                <li>Área de Canary Wharf: Comunidade de falantes de português profissional</li>
               </ul>
             </li>
           </ul>
           
-          <h3>Considerações Financeiras para a Comunidade Portuguesa:</h3>
+          <h3>Considerações Financeiras para a Comunidade de Falantes de Português:</h3>
           <ul>
             <li><strong>Múltiplos de Salário:</strong> Geralmente precisa de 30-40x a renda mensal como salário anual</li>
             <li><strong>Requisitos de Depósito:</strong> Normalmente 1-6 semanas de renda antecipadamente</li>
@@ -255,14 +255,14 @@ export default function HousingAssistanceModule() {
       },
       {
         id: 'portuguese-community-resources',
-        title: 'Portuguese Community Housing Resources and Networks',
-        titlePortuguese: 'Recursos e Redes Habitacionais da Comunidade Portuguesa',
+        title: 'Portuguese-speaking community Housing Resources and Networks',
+        titlePortuguese: 'Recursos e Redes Habitacionais da Comunidade de Falantes de Português',
         type: 'tutorial',
         estimatedTime: 6,
         content: `
-          <p>The Portuguese community in London has developed strong networks and resources to help each other navigate housing challenges. Here's how to access and contribute to these support systems.</p>
+          <p>The Portuguese-speaking community in London has developed strong networks and resources to help each other navigate housing challenges. Here's how to access and contribute to these support systems.</p>
           
-          <h3>Portuguese Community Housing Networks:</h3>
+          <h3>Portuguese-speaking community Housing Networks:</h3>
           
           <h4>1. Online Portuguese Housing Groups:</h4>
           <ul>
@@ -297,7 +297,7 @@ export default function HousingAssistanceModule() {
             <li><strong>Portuguese Property Management:</strong>
               <ul>
                 <li>Portuguese landlords with multiple properties</li>
-                <li>Property management companies serving Portuguese community</li>
+                <li>Property management companies serving Portuguese-speaking community</li>
                 <li>Maintenance services with Portuguese-speaking staff</li>
               </ul>
             </li>
@@ -305,7 +305,7 @@ export default function HousingAssistanceModule() {
           
           <h4>3. Community Organizations Housing Support:</h4>
           <ul>
-            <li><strong>Portuguese Community Centers:</strong>
+            <li><strong>Portuguese-speaking community Centers:</strong>
               <ul>
                 <li>Housing advice and support services</li>
                 <li>Translation assistance for housing documents</li>
@@ -335,7 +335,7 @@ export default function HousingAssistanceModule() {
           
           <h4>Step 2: Build Relationships</h4>
           <ul>
-            <li><strong>Attend Portuguese Community Events:</strong> Meet potential roommates and landlords</li>
+            <li><strong>Attend Portuguese-speaking community Events:</strong> Meet potential roommates and landlords</li>
             <li><strong>Network at Portuguese Businesses:</strong> Portuguese restaurants, shops, services</li>
             <li><strong>Connect with Portuguese Professionals:</strong> Business networking with housing benefits</li>
             <li><strong>Engage with Portuguese Families:</strong> Learn from established community members</li>
@@ -344,7 +344,7 @@ export default function HousingAssistanceModule() {
           <h4>Step 3: Leverage Community Recommendations</h4>
           <ul>
             <li><strong>Ask for Referrals:</strong> Request recommendations from trusted community members</li>
-            <li><strong>Seek References:</strong> Get character references from Portuguese community leaders</li>
+            <li><strong>Seek References:</strong> Get character references from Portuguese-speaking community leaders</li>
             <li><strong>Share Experiences:</strong> Contribute your own housing reviews and recommendations</li>
             <li><strong>Build Reputation:</strong> Establish yourself as a trustworthy community member</li>
           </ul>
@@ -398,13 +398,13 @@ export default function HousingAssistanceModule() {
             <li><strong>Provide References:</strong> Offer character references for trustworthy community members</li>
             <li><strong>Recommend Services:</strong> Share positive experiences with Portuguese housing services</li>
             <li><strong>Mentor Newcomers:</strong> Guide new Portuguese arrivals through housing processes</li>
-            <li><strong>Volunteer:</strong> Help Portuguese community organizations with housing support programs</li>
+            <li><strong>Volunteer:</strong> Help Portuguese-speaking community organizations with housing support programs</li>
           </ul>
         `,
         contentPortuguese: `
-          <p>A comunidade portuguesa em Londres desenvolveu redes e recursos fortes para se ajudarem mutuamente a navegar desafios habitacionais. Aqui está como aceder e contribuir para estes sistemas de apoio.</p>
+          <p>A comunidade de falantes de português em Londres desenvolveu redes e recursos fortes para se ajudarem mutuamente a navegar desafios habitacionais. Aqui está como aceder e contribuir para estes sistemas de apoio.</p>
           
-          <h3>Redes Habitacionais da Comunidade Portuguesa:</h3>
+          <h3>Redes Habitacionais da Comunidade de Falantes de Português:</h3>
           
           <h4>1. Grupos Habitacionais Portugueses Online:</h4>
           <ul>
@@ -439,7 +439,7 @@ export default function HousingAssistanceModule() {
             <li><strong>Gestão de Propriedades Portuguesas:</strong>
               <ul>
                 <li>Senhorios portugueses com múltiplas propriedades</li>
-                <li>Empresas de gestão de propriedades servindo a comunidade portuguesa</li>
+                <li>Empresas de gestão de propriedades servindo a comunidade de falantes de português</li>
                 <li>Serviços de manutenção com pessoal falante de português</li>
               </ul>
             </li>
@@ -477,7 +477,7 @@ export default function HousingAssistanceModule() {
           
           <h4>Passo 2: Construir Relacionamentos</h4>
           <ul>
-            <li><strong>Participar em Eventos da Comunidade Portuguesa:</strong> Conhecer potenciais colegas de quarto e senhorios</li>
+            <li><strong>Participar em Eventos da Comunidade de Falantes de Português:</strong> Conhecer potenciais colegas de quarto e senhorios</li>
             <li><strong>Fazer Networking em Negócios Portugueses:</strong> Restaurantes, lojas, serviços portugueses</li>
             <li><strong>Conectar com Profissionais Portugueses:</strong> Networking empresarial com benefícios habitacionais</li>
             <li><strong>Envolver-se com Famílias Portuguesas:</strong> Aprender com membros comunitários estabelecidos</li>
@@ -486,7 +486,7 @@ export default function HousingAssistanceModule() {
           <h4>Passo 3: Aproveitar Recomendações Comunitárias</h4>
           <ul>
             <li><strong>Pedir Referências:</strong> Solicitar recomendações de membros comunitários confiáveis</li>
-            <li><strong>Procurar Referências:</strong> Obter referências de carácter de líderes da comunidade portuguesa</li>
+            <li><strong>Procurar Referências:</strong> Obter referências de carácter de líderes da comunidade de falantes de português</li>
             <li><strong>Partilhar Experiências:</strong> Contribuir com as suas próprias avaliações e recomendações habitacionais</li>
             <li><strong>Construir Reputação:</strong> Estabelecer-se como um membro comunitário confiável</li>
           </ul>
@@ -540,7 +540,7 @@ export default function HousingAssistanceModule() {
             <li><strong>Fornecer Referências:</strong> Oferecer referências de carácter para membros comunitários confiáveis</li>
             <li><strong>Recomendar Serviços:</strong> Partilhar experiências positivas com serviços habitacionais portugueses</li>
             <li><strong>Orientar Recém-chegados:</strong> Guiar novos portugueses através de processos habitacionais</li>
-            <li><strong>Voluntariar:</strong> Ajudar organizações da comunidade portuguesa com programas de apoio habitacional</li>
+            <li><strong>Voluntariar:</strong> Ajudar organizações da comunidade de falantes de português com programas de apoio habitacional</li>
           </ul>
         `,
         interactive: {
@@ -549,20 +549,20 @@ export default function HousingAssistanceModule() {
             items: [
               { text: 'Join 3 Portuguese housing WhatsApp or Facebook groups', textPortuguese: 'Junte-se a 3 grupos habitacionais portugueses no WhatsApp ou Facebook' },
               { text: 'Research Portuguese estate agents in London', textPortuguese: 'Pesquise agentes imobiliários portugueses em Londres' },
-              { text: 'Connect with Portuguese community centers for housing advice', textPortuguese: 'Conecte-se com centros comunitários portugueses para aconselhamento habitacional' },
-              { text: 'Attend a Portuguese community event to network about housing', textPortuguese: 'Participe num evento da comunidade portuguesa para fazer networking sobre habitação' }
+              { text: 'Connect with Portuguese-speaking community centers for housing advice', textPortuguese: 'Conecte-se com centros comunitários portugueses para aconselhamento habitacional' },
+              { text: 'Attend a Portuguese-speaking community event to network about housing', textPortuguese: 'Participe num evento da comunidade de falantes de português para fazer networking sobre habitação' }
             ]
           }
         },
         tips: [
           'Always verify the legitimacy of housing offers from online groups',
           'Build relationships before asking for housing help - contribute to the community first',
-          'Keep your Portuguese community housing contacts organized for future reference'
+          'Keep your Portuguese-speaking community housing contacts organized for future reference'
         ],
         tipsPortuguese: [
           'Sempre verifique a legitimidade de ofertas habitacionais de grupos online',
           'Construa relacionamentos antes de pedir ajuda habitacional - contribua para a comunidade primeiro',
-          'Mantenha os seus contactos habitacionais da comunidade portuguesa organizados para referência futura'
+          'Mantenha os seus contactos habitacionais da comunidade de falantes de português organizados para referência futura'
         ]
       },
       {
@@ -760,9 +760,9 @@ export default function HousingAssistanceModule() {
             </li>
           </ul>
           
-          <h4>Portuguese Community Solutions:</h4>
+          <h4>Portuguese-speaking community Solutions:</h4>
           <ul>
-            <li><strong>Community References:</strong> Portuguese community leaders can provide character references</li>
+            <li><strong>Community References:</strong> Portuguese-speaking community leaders can provide character references</li>
             <li><strong>Portuguese Landlords:</strong> May be more flexible with requirements for Portuguese tenants</li>
             <li><strong>Portuguese Estate Agents:</strong> Understand unique challenges and have alternative solutions</li>
             <li><strong>Community Guarantor Networks:</strong> Established Portuguese residents helping newcomers</li>
@@ -957,9 +957,9 @@ export default function HousingAssistanceModule() {
             </li>
           </ul>
           
-          <h4>Soluções da Comunidade Portuguesa:</h4>
+          <h4>Soluções da Comunidade de Falantes de Português:</h4>
           <ul>
-            <li><strong>Referências Comunitárias:</strong> Líderes da comunidade portuguesa podem fornecer referências de carácter</li>
+            <li><strong>Referências Comunitárias:</strong> Líderes da comunidade de falantes de português podem fornecer referências de carácter</li>
             <li><strong>Senhorios Portugueses:</strong> Podem ser mais flexíveis com requisitos para inquilinos portugueses</li>
             <li><strong>Agentes Imobiliários Portugueses:</strong> Compreendem desafios únicos e têm soluções alternativas</li>
             <li><strong>Redes de Fiador Comunitário:</strong> Residentes portugueses estabelecidos ajudando recém-chegados</li>
@@ -997,7 +997,7 @@ export default function HousingAssistanceModule() {
         type: 'interactive',
         estimatedTime: 9,
         content: `
-          <p>Building long-term housing stability requires strategic planning, community integration, and ongoing support networks within the Portuguese community in London.</p>
+          <p>Building long-term housing stability requires strategic planning, community integration, and ongoing support networks within the Portuguese-speaking community in London.</p>
           
           <h3>Long-term Housing Planning Strategy:</h3>
           
@@ -1009,7 +1009,7 @@ export default function HousingAssistanceModule() {
                 <li>Focus on location and transport links</li>
                 <li>Build UK credit history and references</li>
                 <li>Establish employment and income stability</li>
-                <li>Connect with Portuguese community for support</li>
+                <li>Connect with Portuguese-speaking community for support</li>
               </ul>
             </li>
             <li><strong>Stage 2: Stability Building (1-3 years)</strong>
@@ -1026,7 +1026,7 @@ export default function HousingAssistanceModule() {
                 <li>Family-sized accommodation or property purchase</li>
                 <li>Established neighborhood connections</li>
                 <li>Property ownership consideration</li>
-                <li>Contributing to Portuguese community housing support</li>
+                <li>Contributing to Portuguese-speaking community housing support</li>
               </ul>
             </li>
           </ul>
@@ -1038,7 +1038,7 @@ export default function HousingAssistanceModule() {
                 <li>Save 3-6 months of rent for emergencies</li>
                 <li>Set aside funds for potential deposit forfeitures</li>
                 <li>Plan for unexpected housing moves</li>
-                <li>Consider Portuguese community emergency support networks</li>
+                <li>Consider Portuguese-speaking community emergency support networks</li>
               </ul>
             </li>
             <li><strong>Housing Upgrade Planning:</strong>
@@ -1061,7 +1061,7 @@ export default function HousingAssistanceModule() {
           
           <h3>Community Integration for Housing Security:</h3>
           
-          <h4>1. Neighborhood Portuguese Community Building</h4>
+          <h4>1. Neighborhood Portuguese-speaking community Building</h4>
           <ul>
             <li><strong>Local Portuguese Networks:</strong>
               <ul>
@@ -1081,7 +1081,7 @@ export default function HousingAssistanceModule() {
             </li>
           </ul>
           
-          <h4>2. Portuguese Community Support Networks</h4>
+          <h4>2. Portuguese-speaking community Support Networks</h4>
           <ul>
             <li><strong>Mentorship and Guidance:</strong>
               <ul>
@@ -1123,11 +1123,11 @@ export default function HousingAssistanceModule() {
             </li>
           </ul>
           
-          <h4>2. Portuguese Community Advocacy</h4>
+          <h4>2. Portuguese-speaking community Advocacy</h4>
           <ul>
             <li><strong>Collective Voice for Housing Issues:</strong>
               <ul>
-                <li>Participate in Portuguese community housing forums</li>
+                <li>Participate in Portuguese-speaking community housing forums</li>
                 <li>Support fair housing initiatives for immigrants</li>
                 <li>Share experiences to help improve community housing access</li>
                 <li>Advocate for Portuguese-friendly housing policies</li>
@@ -1158,19 +1158,19 @@ export default function HousingAssistanceModule() {
             <li><strong>Property Search Strategy:</strong>
               <ul>
                 <li>Research Portuguese-friendly areas for investment</li>
-                <li>Consider properties near Portuguese community hubs</li>
+                <li>Consider properties near Portuguese-speaking community hubs</li>
                 <li>Evaluate transport links and future development plans</li>
                 <li>Assess potential for property value growth</li>
               </ul>
             </li>
           </ul>
           
-          <h4>2. Portuguese Community Property Support</h4>
+          <h4>2. Portuguese-speaking community Property Support</h4>
           <ul>
             <li><strong>Portuguese Property Professionals:</strong>
               <ul>
                 <li>Mortgage advisors who understand Portuguese financial situations</li>
-                <li>Estate agents specializing in Portuguese community needs</li>
+                <li>Estate agents specializing in Portuguese-speaking community needs</li>
                 <li>Solicitors with Portuguese language skills</li>
                 <li>Portuguese surveyors and property inspectors</li>
               </ul>
@@ -1179,7 +1179,7 @@ export default function HousingAssistanceModule() {
               <ul>
                 <li>Group purchasing opportunities with other Portuguese families</li>
                 <li>Shared ownership arrangements within the community</li>
-                <li>Portuguese community property investment clubs</li>
+                <li>Portuguese-speaking community property investment clubs</li>
                 <li>Inter-generational property planning and support</li>
               </ul>
             </li>
@@ -1214,15 +1214,15 @@ export default function HousingAssistanceModule() {
                 <li>Establish formal Portuguese housing support groups</li>
                 <li>Create resource databases for Portuguese housing services</li>
                 <li>Organize housing workshops and information sessions</li>
-                <li>Advocate for improved housing policies affecting Portuguese community</li>
+                <li>Advocate for improved housing policies affecting Portuguese-speaking community</li>
               </ul>
             </li>
             <li><strong>Building Long-term Community Assets:</strong>
               <ul>
-                <li>Support development of Portuguese community centers</li>
-                <li>Contribute to Portuguese community housing funds</li>
+                <li>Support development of Portuguese-speaking community centers</li>
+                <li>Contribute to Portuguese-speaking community housing funds</li>
                 <li>Help establish Portuguese housing cooperatives</li>
-                <li>Work toward sustainable Portuguese community growth in London</li>
+                <li>Work toward sustainable Portuguese-speaking community growth in London</li>
               </ul>
             </li>
           </ul>
@@ -1230,7 +1230,7 @@ export default function HousingAssistanceModule() {
           <p><strong>Transportation Integration:</strong> As you establish housing stability, our professional transport service remains available as a separate service for any housing-related needs such as property viewings, moving assistance, or accessing housing services across London.</p>
         `,
         contentPortuguese: `
-          <p>Construir estabilidade habitacional a longo prazo requer planeamento estratégico, integração comunitária e redes de apoio contínuas dentro da comunidade portuguesa em Londres.</p>
+          <p>Construir estabilidade habitacional a longo prazo requer planeamento estratégico, integração comunitária e redes de apoio contínuas dentro da comunidade de falantes de português em Londres.</p>
           
           <h3>Estratégia de Planeamento Habitacional a Longo Prazo:</h3>
           
@@ -1242,7 +1242,7 @@ export default function HousingAssistanceModule() {
                 <li>Foco na localização e ligações de transporte</li>
                 <li>Construir histórico de crédito do Reino Unido e referências</li>
                 <li>Estabelecer estabilidade de emprego e rendimento</li>
-                <li>Conectar com a comunidade portuguesa para apoio</li>
+                <li>Conectar com a comunidade de falantes de português para apoio</li>
               </ul>
             </li>
             <li><strong>Fase 2: Construção de Estabilidade (1-3 anos)</strong>
@@ -1259,7 +1259,7 @@ export default function HousingAssistanceModule() {
                 <li>Acomodação de tamanho familiar ou compra de propriedade</li>
                 <li>Conexões de bairro estabelecidas</li>
                 <li>Consideração de propriedade imobiliária</li>
-                <li>Contribuir para apoio habitacional da comunidade portuguesa</li>
+                <li>Contribuir para apoio habitacional da comunidade de falantes de português</li>
               </ul>
             </li>
           </ul>
@@ -1271,7 +1271,7 @@ export default function HousingAssistanceModule() {
                 <li>Poupar 3-6 meses de renda para emergências</li>
                 <li>Reservar fundos para potenciais perdas de depósito</li>
                 <li>Planear para mudanças habitacionais inesperadas</li>
-                <li>Considerar redes de apoio de emergência da comunidade portuguesa</li>
+                <li>Considerar redes de apoio de emergência da comunidade de falantes de português</li>
               </ul>
             </li>
             <li><strong>Planeamento de Melhoria Habitacional:</strong>
@@ -1294,7 +1294,7 @@ export default function HousingAssistanceModule() {
           
           <h3>Integração Comunitária para Segurança Habitacional:</h3>
           
-          <h4>1. Construção de Comunidade Portuguesa de Bairro</h4>
+          <h4>1. Construção de Comunidade de Falantes de Português de Bairro</h4>
           <ul>
             <li><strong>Redes Portuguesas Locais:</strong>
               <ul>
@@ -1314,7 +1314,7 @@ export default function HousingAssistanceModule() {
             </li>
           </ul>
           
-          <h4>2. Redes de Apoio da Comunidade Portuguesa</h4>
+          <h4>2. Redes de Apoio da Comunidade de Falantes de Português</h4>
           <ul>
             <li><strong>Mentoria e Orientação:</strong>
               <ul>
@@ -1356,11 +1356,11 @@ export default function HousingAssistanceModule() {
             </li>
           </ul>
           
-          <h4>2. Advocacia da Comunidade Portuguesa</h4>
+          <h4>2. Advocacia da Comunidade de Falantes de Português</h4>
           <ul>
             <li><strong>Voz Coletiva para Questões Habitacionais:</strong>
               <ul>
-                <li>Participar em fóruns habitacionais da comunidade portuguesa</li>
+                <li>Participar em fóruns habitacionais da comunidade de falantes de português</li>
                 <li>Apoiar iniciativas de habitação justa para imigrantes</li>
                 <li>Partilhar experiências para ajudar a melhorar o acesso habitacional comunitário</li>
                 <li>Advogar por políticas habitacionais amigáveis aos portugueses</li>
@@ -1398,12 +1398,12 @@ export default function HousingAssistanceModule() {
             </li>
           </ul>
           
-          <h4>2. Apoio de Propriedade da Comunidade Portuguesa</h4>
+          <h4>2. Apoio de Propriedade da Comunidade de Falantes de Português</h4>
           <ul>
             <li><strong>Profissionais de Propriedade Portugueses:</strong>
               <ul>
                 <li>Conselheiros hipotecários que compreendem situações financeiras portuguesas</li>
-                <li>Agentes imobiliários especializados em necessidades da comunidade portuguesa</li>
+                <li>Agentes imobiliários especializados em necessidades da comunidade de falantes de português</li>
                 <li>Advogados com competências em língua portuguesa</li>
                 <li>Avaliadores e inspetores de propriedade portugueses</li>
               </ul>
@@ -1412,7 +1412,7 @@ export default function HousingAssistanceModule() {
               <ul>
                 <li>Oportunidades de compra em grupo com outras famílias portuguesas</li>
                 <li>Arranjos de propriedade partilhada dentro da comunidade</li>
-                <li>Clubes de investimento imobiliário da comunidade portuguesa</li>
+                <li>Clubes de investimento imobiliário da comunidade de falantes de português</li>
                 <li>Planeamento e apoio imobiliário intergeracional</li>
               </ul>
             </li>
@@ -1447,15 +1447,15 @@ export default function HousingAssistanceModule() {
                 <li>Estabelecer grupos formais de apoio habitacional português</li>
                 <li>Criar bases de dados de recursos para serviços habitacionais portugueses</li>
                 <li>Organizar workshops habitacionais e sessões de informação</li>
-                <li>Advogar por políticas habitacionais melhoradas que afetem a comunidade portuguesa</li>
+                <li>Advogar por políticas habitacionais melhoradas que afetem a comunidade de falantes de português</li>
               </ul>
             </li>
             <li><strong>Construir Ativos Comunitários de Longo Prazo:</strong>
               <ul>
                 <li>Apoiar desenvolvimento de centros comunitários portugueses</li>
-                <li>Contribuir para fundos habitacionais da comunidade portuguesa</li>
+                <li>Contribuir para fundos habitacionais da comunidade de falantes de português</li>
                 <li>Ajudar a estabelecer cooperativas habitacionais portuguesas</li>
-                <li>Trabalhar para crescimento sustentável da comunidade portuguesa em Londres</li>
+                <li>Trabalhar para crescimento sustentável da comunidade de falantes de português em Londres</li>
               </ul>
             </li>
           </ul>

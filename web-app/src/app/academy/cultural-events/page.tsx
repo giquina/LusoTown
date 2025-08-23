@@ -56,14 +56,14 @@ export default function CulturalEventsModule() {
     learningObjectives: [
       'Navigate London\'s Portuguese cultural events calendar',
       'Understand Portuguese cultural traditions and celebrations',
-      'Connect with the Portuguese community through cultural activities',
+      'Connect with the Portuguese-speaking community through cultural activities',
       'Organize your own Portuguese cultural events',
       'Blend Portuguese heritage with London lifestyle'
     ],
     learningObjectivesPortuguese: [
       'Navegar no calendário de eventos culturais portugueses de Londres',
       'Compreender tradições e celebrações culturais portuguesas',
-      'Conectar-se com a comunidade portuguesa através de atividades culturais',
+      'Conectar-se com a comunidade de falantes de português através de atividades culturais',
       'Organizar os seus próprios eventos culturais portugueses',
       'Misturar herança portuguesa com estilo de vida londrino'
     ],
@@ -75,7 +75,7 @@ export default function CulturalEventsModule() {
         type: 'introduction',
         estimatedTime: 4,
         content: `
-          <p>London's Portuguese community maintains a rich cultural calendar that celebrates our heritage while embracing our new home. Understanding this calendar helps you stay connected to your roots and build meaningful relationships.</p>
+          <p>London's Portuguese-speaking community maintains a rich cultural calendar that celebrates our heritage while embracing our new home. Understanding this calendar helps you stay connected to your roots and build meaningful relationships.</p>
           
           <h3>Major Portuguese Cultural Events in London:</h3>
           
@@ -115,7 +115,7 @@ export default function CulturalEventsModule() {
           
           <h4>Weekly Community Gatherings:</h4>
           <ul>
-            <li><strong>Portuguese Community Centers:</strong> Regular cultural activities</li>
+            <li><strong>Portuguese-speaking community Centers:</strong> Regular cultural activities</li>
             <li><strong>Portuguese Churches:</strong> Cultural and religious events</li>
             <li><strong>Portuguese Restaurants:</strong> Live music and cultural nights</li>
             <li><strong>Portuguese Schools:</strong> Family-oriented cultural education</li>
@@ -134,7 +134,7 @@ export default function CulturalEventsModule() {
           <p><strong>Important Note:</strong> These events are standalone cultural experiences. If you need transportation to attend events, our professional transport service is available as a separate service that can be arranged independently.</p>
         `,
         contentPortuguese: `
-          <p>A comunidade portuguesa de Londres mantém um calendário cultural rico que celebra a nossa herança enquanto abraça o nosso novo lar. Compreender este calendário ajuda-o a manter-se conectado às suas raízes e a construir relacionamentos significativos.</p>
+          <p>A comunidade de falantes de português de Londres mantém um calendário cultural rico que celebra a nossa herança enquanto abraça o nosso novo lar. Compreender este calendário ajuda-o a manter-se conectado às suas raízes e a construir relacionamentos significativos.</p>
           
           <h3>Principais Eventos Culturais Portugueses em Londres:</h3>
           
@@ -436,7 +436,7 @@ export default function CulturalEventsModule() {
               </ul>
             </li>
             <li><strong>Cultural Significance:</strong> Represents community sharing and charity</li>
-            <li><strong>London Adaptation:</strong> Portuguese community centers and churches organize scaled versions</li>
+            <li><strong>London Adaptation:</strong> Portuguese-speaking community centers and churches organize scaled versions</li>
           </ul>
           
           <h4>2. Festa de São João (St. John's Festival)</h4>
@@ -755,7 +755,7 @@ export default function CulturalEventsModule() {
           <ul>
             <li><strong>Venue Selection:</strong>
               <ul>
-                <li>Portuguese community centers</li>
+                <li>Portuguese-speaking community centers</li>
                 <li>Portuguese church halls</li>
                 <li>Portuguese restaurants (private events)</li>
                 <li>London cultural venues</li>
@@ -774,7 +774,7 @@ export default function CulturalEventsModule() {
             <li><strong>Community Engagement:</strong>
               <ul>
                 <li>Partner with existing Portuguese organizations</li>
-                <li>Invite Portuguese community leaders</li>
+                <li>Invite Portuguese-speaking community leaders</li>
                 <li>Recruit volunteers from the community</li>
                 <li>Promote through Portuguese social networks</li>
               </ul>
@@ -943,7 +943,7 @@ export default function CulturalEventsModule() {
             <li><strong>Envolvimento Comunitário:</strong>
               <ul>
                 <li>Parceria com organizações portuguesas existentes</li>
-                <li>Convidar líderes da comunidade portuguesa</li>
+                <li>Convidar líderes da comunidade de falantes de português</li>
                 <li>Recrutar voluntários da comunidade</li>
                 <li>Promover através de redes sociais portuguesas</li>
               </ul>
@@ -1005,7 +1005,7 @@ export default function CulturalEventsModule() {
               { text: 'Create a detailed event planning timeline', textPortuguese: 'Crie um cronograma detalhado de planeamento de eventos' },
               { text: 'Research authentic Portuguese decorations and materials', textPortuguese: 'Pesquise decorações e materiais portugueses autênticos' },
               { text: 'Develop a list of traditional Portuguese activities for your event', textPortuguese: 'Desenvolva uma lista de atividades tradicionais portuguesas para o seu evento' },
-              { text: 'Connect with local Portuguese community organizations', textPortuguese: 'Conecte-se com organizações da comunidade portuguesa local' }
+              { text: 'Connect with local Portuguese-speaking community organizations', textPortuguese: 'Conecte-se com organizações da comunidade de falantes de português local' }
             ]
           }
         },
@@ -1042,8 +1042,8 @@ export default function CulturalEventsModule() {
         type: 'download'
       },
       {
-        title: 'London Portuguese Community Directory',
-        titlePortuguese: 'Diretório da Comunidade Portuguesa de Londres',
+        title: 'London Portuguese-speaking community Directory',
+        titlePortuguese: 'Diretório da Comunidade de Falantes de Português de Londres',
         url: '/community/portuguese-organizations',
         type: 'external'
       }

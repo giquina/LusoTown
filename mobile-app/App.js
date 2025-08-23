@@ -39,7 +39,7 @@ export default function App() {
           Welcome to LusoTown, {user?.firstName}! 🎉
         </Text>
         <Text style={styles.subText}>
-          Your Portuguese community in London awaits...
+          Your Portuguese-speaking community in London awaits...
         </Text>
       </View>
     </SafeAreaProvider>

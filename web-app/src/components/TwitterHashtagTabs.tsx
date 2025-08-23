@@ -37,8 +37,8 @@ const HASHTAG_TABS: HashtagTab[] = [
       pt: 'Comunidade'
     },
     description: {
-      en: 'General Portuguese community in London',
-      pt: 'Comunidade portuguesa geral em Londres'
+      en: 'General Portuguese-speaking community in London',
+      pt: 'Comunidade de falantes de português geral em Londres'
     },
     icon: <Users className="w-4 h-4" />,
     color: 'primary'
@@ -93,8 +93,8 @@ const HASHTAG_TABS: HashtagTab[] = [
       pt: 'Todo Reino Unido'
     },
     description: {
-      en: 'Portuguese community across the UK',
-      pt: 'Comunidade portuguesa em todo o Reino Unido'
+      en: 'Portuguese-speaking community across the UK',
+      pt: 'Comunidade de falantes de português em todo o Reino Unido'
     },
     icon: <MapPin className="w-4 h-4" />,
     color: 'action'

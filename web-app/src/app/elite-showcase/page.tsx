@@ -106,8 +106,8 @@ export default function EliteShowcasePage() {
               </h1>
               <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
                 {language === 'pt' 
-                  ? 'Experiência sofisticada para a elite da comunidade portuguesa'
-                  : 'Sophisticated Experience for Portuguese Community Elite'
+                  ? 'Experiência sofisticada para a elite da comunidade de falantes de português'
+                  : 'Sophisticated Experience for Portuguese-speaking community Elite'
                 }
               </p>
             </motion.div>
@@ -342,8 +342,8 @@ export default function EliteShowcasePage() {
               </h2>
               <p className="text-amber-600 max-w-2xl mx-auto">
                 {language === 'pt'
-                  ? 'Componentes otimizados para a experiência mais sofisticada da comunidade portuguesa'
-                  : 'Optimized components for the most sophisticated Portuguese community experience'
+                  ? 'Componentes otimizados para a experiência mais sofisticada da comunidade de falantes de português'
+                  : 'Optimized components for the most sophisticated Portuguese-speaking community experience'
                 }
               </p>
             </motion.div>
@@ -356,7 +356,7 @@ export default function EliteShowcasePage() {
                 </h4>
                 <LazyImage
                   src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b"
-                  alt="Portuguese community"
+                  alt="Portuguese-speaking community"
                   luxury={true}
                   culturalTheme={true}
                   aspectRatio="landscape"
@@ -384,8 +384,8 @@ export default function EliteShowcasePage() {
                           </h5>
                           <p className="text-amber-600 text-sm">
                             {language === 'pt' 
-                              ? 'Conteúdo premium da comunidade portuguesa'
-                              : 'Premium Portuguese community content'
+                              ? 'Conteúdo premium da comunidade de falantes de português'
+                              : 'Premium Portuguese-speaking community content'
                             }
                           </p>
                         </div>
@@ -410,8 +410,8 @@ export default function EliteShowcasePage() {
               </h2>
               <p className="text-amber-600 max-w-2xl mx-auto">
                 {language === 'pt'
-                  ? 'Ferramentas sofisticadas de feedback com sensibilidade cultural para a comunidade portuguesa'
-                  : 'Sophisticated feedback tools with cultural sensitivity for the Portuguese community'
+                  ? 'Ferramentas sofisticadas de feedback com sensibilidade cultural para a comunidade de falantes de português'
+                  : 'Sophisticated feedback tools with cultural sensitivity for the Portuguese-speaking community'
                 }
               </p>
             </motion.div>
@@ -462,8 +462,8 @@ export default function EliteShowcasePage() {
                 onClick={() => showCultural(
                   language === 'pt' ? 'Actualização Cultural' : 'Cultural Update',
                   language === 'pt' 
-                    ? 'Nova funcionalidade disponível para a comunidade portuguesa!'
-                    : 'New feature available for the Portuguese community!'
+                    ? 'Nova funcionalidade disponível para a comunidade de falantes de português!'
+                    : 'New feature available for the Portuguese-speaking community!'
                 )}
               >
                 {language === 'pt' ? 'Notificação Cultural' : 'Cultural Notification'}

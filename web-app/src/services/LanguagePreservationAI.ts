@@ -1,5 +1,5 @@
 /**
- * Language Preservation AI for Portuguese Community
+ * Language Preservation AI for Portuguese-speaking community
  * 
  * Advanced AI system promoting Portuguese language while supporting bilingual needs.
  * Implements dialect preservation, cultural context maintenance, and intelligent
@@ -275,7 +275,7 @@ export class LanguagePreservationAI {
       diaspora_adaptations: {
         uk_usage: 'that deep Portuguese longing for home and heritage',
         community_evolution: [
-          'Used in English conversations with Portuguese friends',
+          'Used in English conversations with Portuguese-speaking friends',
           'Taught to British partners and friends',
           'Preserved in community gatherings'
         ],
@@ -369,7 +369,7 @@ export class LanguagePreservationAI {
   // =============================================================================
 
   /**
-   * Optimize content for bilingual Portuguese community members
+   * Optimize content for bilingual Portuguese-speaking community members
    */
   async optimizeBilingualContent(
     content: { en: string; pt: string },
@@ -672,7 +672,7 @@ export class LanguagePreservationAI {
   private async initializeLanguageResources(): Promise<void> {
     try {
       // Initialize language preservation resources
-      console.log('[Language Preservation AI] Language resources initialized for Portuguese community')
+      console.log('[Language Preservation AI] Language resources initialized for Portuguese-speaking community')
     } catch (error) {
       console.error('[Language Preservation AI] Failed to initialize language resources:', error)
     }
@@ -763,7 +763,7 @@ export class LanguagePreservationAI {
     const enhancements: string[] = []
     
     enhancements.push('Regional cultural references added')
-    enhancements.push('Portuguese community context included')
+    enhancements.push('Portuguese-speaking community context included')
     enhancements.push('Diaspora perspective considered')
     
     if (userProfile.dialect_familiarity.length > 0) {
@@ -887,7 +887,7 @@ export class LanguagePreservationAI {
     connections.push('Portuguese Cultural Centre language exchange')
     connections.push('University Portuguese society events')
     connections.push('Portuguese business networking in Portuguese')
-    connections.push('Family-friendly Portuguese community gatherings')
+    connections.push('Family-friendly Portuguese-speaking community gatherings')
     
     return connections
   }

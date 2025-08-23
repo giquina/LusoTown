@@ -84,7 +84,7 @@ export default function CTA() {
                 <span className="text-lg">🇬🇧</span>
               </div>
               <SparklesIcon className="h-5 w-5" />
-              Portuguese Community in the UK
+              Portuguese-speaking community in the UK
             </div>
             
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -96,7 +96,7 @@ export default function CTA() {
                 Connect with Portuguese speakers across the UK
               </p>
               <p className="text-lg text-white/90 leading-relaxed">
-                From London to Manchester, Birmingham to Edinburgh - join the largest Portuguese community platform in the UK. 
+                From London to Manchester, Birmingham to Edinburgh - join the largest Portuguese-speaking community platform in the UK. 
                 Unlimited matches, cultural events, and professional networking nationwide.
               </p>
             </div>
@@ -230,7 +230,7 @@ export default function CTA() {
                 23 Portuguese speakers from across the UK joined today
               </p>
               <p className="text-white/80 text-lg">
-                Connect with your Portuguese community nationwide within 48 hours
+                Connect with your Portuguese-speaking community nationwide within 48 hours
               </p>
             </div>
 

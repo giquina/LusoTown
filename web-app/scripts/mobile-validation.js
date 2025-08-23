@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 /**
- * Mobile UX Validation Script for LusoTown Portuguese Community Platform
+ * Mobile UX Validation Script for LusoTown Portuguese-speaking community Platform
  * 
  * Comprehensive mobile experience validation that checks all critical
- * mobile UX factors for the Portuguese community in London & UK.
+ * mobile UX factors for the Portuguese-speaking community in London & UK.
  */
 
 const fs = require('fs');
@@ -503,7 +503,7 @@ function generateFinalReport() {
   // Overall assessment
   console.log(`\n🎯 ASSESSMENT:`);
   if (successRate >= 95) {
-    console.log('   🏆 EXCELLENT: Your mobile experience meets luxury Portuguese community standards!');
+    console.log('   🏆 EXCELLENT: Your mobile experience meets luxury Portuguese-speaking community standards!');
   } else if (successRate >= 85) {
     console.log('   ✅ GOOD: Strong mobile foundation with minor improvements needed.');
   } else if (successRate >= 70) {
@@ -512,12 +512,12 @@ function generateFinalReport() {
     console.log('   🚨 POOR: Critical mobile issues must be resolved immediately.');
   }
   
-  console.log(`\n📱 NEXT STEPS FOR PORTUGUESE COMMUNITY:`);
+  console.log(`\n📱 NEXT STEPS FOR Portuguese-speaking community:`);
   console.log('   1. Test on real iPhone SE (375px) and iPhone 12 (414px) devices');
   console.log('   2. Validate Portuguese text overflow in all UI components');
   console.log('   3. Test with Portuguese keyboard on iOS/Android');
   console.log('   4. Verify cultural colors and Portuguese flag gradients');
-  console.log('   5. Performance test on slow 3G networks common in Portuguese community');
+  console.log('   5. Performance test on slow 3G networks common in Portuguese-speaking community');
   
   console.log('\n' + '='.repeat(60));
   
@@ -527,7 +527,7 @@ function generateFinalReport() {
     console.log('❌ BLOCKING ISSUES FOUND - Fix critical issues before deployment\n');
     process.exit(1);
   } else {
-    console.log('✅ Mobile validation complete - Ready for Portuguese community deployment\n');
+    console.log('✅ Mobile validation complete - Ready for Portuguese-speaking community deployment\n');
     process.exit(0);
   }
 }

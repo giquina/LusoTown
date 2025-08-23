@@ -41,7 +41,7 @@ export default function SafetyCenter() {
   const translations = {
     en: {
       title: 'Safety & Security Center',
-      subtitle: 'Your safety is our priority in the Portuguese community',
+      subtitle: 'Your safety is our priority in the Portuguese-speaking community',
       
       sections: {
         guidelines: {
@@ -62,7 +62,7 @@ export default function SafetyCenter() {
           title: 'Safety Features',
           verification: {
             title: 'Profile Verification',
-            description: 'All premium members undergo identity verification using government ID and Portuguese community references.'
+            description: 'All premium members undergo identity verification using government ID and Portuguese-speaking community references.'
           },
           reporting: {
             title: 'Easy Reporting',
@@ -88,7 +88,7 @@ export default function SafetyCenter() {
         
         report: {
           title: 'Report a Safety Concern',
-          description: 'Help us keep the Portuguese community safe by reporting any concerns.',
+          description: 'Help us keep the Portuguese-speaking community safe by reporting any concerns.',
           types: {
             inappropriate: 'Inappropriate behavior or messages',
             fake: 'Fake or suspicious profile',
@@ -111,7 +111,7 @@ export default function SafetyCenter() {
           emergency: {
             title: 'Emergency Contacts',
             police: 'UK Police: 999',
-            support: 'Portuguese Community Support: +44 20 7946 0958',
+            support: 'Portuguese-speaking community Support: +44 20 7946 0958',
             helpline: 'National Domestic Violence Helpline: 0808 2000 247',
             mental: 'Mental Health Crisis: 116 123 (Samaritans)'
           },
@@ -123,7 +123,7 @@ export default function SafetyCenter() {
               'Tell a friend where you\'re going and when to expect you back',
               'Keep your phone charged and accessible',
               'Meet during daylight hours when possible',
-              'Trust Portuguese community members\' recommendations for venues',
+              'Trust Portuguese-speaking community members\' recommendations for venues',
               'Consider group activities for first meetings',
               'Avoid isolated locations like parks or private homes'
             ]
@@ -141,7 +141,7 @@ export default function SafetyCenter() {
     
     pt: {
       title: 'Centro de Segurança e Proteção',
-      subtitle: 'A sua segurança é a nossa prioridade na comunidade portuguesa',
+      subtitle: 'A sua segurança é a nossa prioridade na comunidade de falantes de português',
       
       sections: {
         guidelines: {
@@ -162,7 +162,7 @@ export default function SafetyCenter() {
           title: 'Funcionalidades de Segurança',
           verification: {
             title: 'Verificação de Perfil',
-            description: 'Todos os membros premium passam por verificação de identidade usando documento oficial e referências da comunidade portuguesa.'
+            description: 'Todos os membros premium passam por verificação de identidade usando documento oficial e referências da comunidade de falantes de português.'
           },
           reporting: {
             title: 'Denúncia Fácil',
@@ -188,7 +188,7 @@ export default function SafetyCenter() {
         
         report: {
           title: 'Reportar uma Preocupação de Segurança',
-          description: 'Ajude-nos a manter a comunidade portuguesa segura reportando qualquer preocupação.',
+          description: 'Ajude-nos a manter a comunidade de falantes de português segura reportando qualquer preocupação.',
           types: {
             inappropriate: 'Comportamento ou mensagens inadequadas',
             fake: 'Perfil falso ou suspeito',
@@ -211,7 +211,7 @@ export default function SafetyCenter() {
           emergency: {
             title: 'Contactos de Emergência',
             police: 'Polícia do Reino Unido: 999',
-            support: 'Suporte Comunidade Portuguesa: +44 20 7946 0958',
+            support: 'Suporte Comunidade de Falantes de Português: +44 20 7946 0958',
             helpline: 'Linha de Apoio Violência Doméstica: 0808 2000 247',
             mental: 'Crise de Saúde Mental: 116 123 (Samaritans)'
           },
@@ -223,7 +223,7 @@ export default function SafetyCenter() {
               'Informe um amigo onde vai e quando esperar o seu regresso',
               'Mantenha o telefone carregado e acessível',
               'Encontre-se durante o dia quando possível',
-              'Confie nas recomendações de locais da comunidade portuguesa',
+              'Confie nas recomendações de locais da comunidade de falantes de português',
               'Considere atividades em grupo para primeiros encontros',
               'Evite locais isolados como parques ou casas privadas'
             ]

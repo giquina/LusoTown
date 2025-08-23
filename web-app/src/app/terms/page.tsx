@@ -12,15 +12,15 @@ import {
 } from "@heroicons/react/24/outline";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | LusoTown London - Portuguese Community Guidelines",
+  title: "Terms of Service | LusoTown London - Portuguese-speaking community Guidelines",
   description:
-    "Review LusoTown London's terms of service, community guidelines, and membership requirements for our Portuguese community platform.",
+    "Review LusoTown London's terms of service, community guidelines, and membership requirements for our Portuguese-speaking community platform.",
   keywords: [
     "terms of service",
     "community guidelines",
     "platform rules",
     "membership terms",
-    "Portuguese community rules",
+    "Portuguese-speaking community rules",
     "UK terms",
     "community standards",
     "platform policy",

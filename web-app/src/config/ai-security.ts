@@ -2,7 +2,7 @@
  * AI Security and Privacy Framework Configuration
  * 
  * Comprehensive AI security and privacy standards specifically designed for
- * the Portuguese community platform, following security-guardian-advisor guidelines.
+ * the Portuguese-speaking community platform, following security-guardian-advisor guidelines.
  */
 
 import { Language } from '@/i18n'

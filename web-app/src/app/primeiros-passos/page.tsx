@@ -142,8 +142,8 @@ export default function PrimeirosPassosPage() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {language === 'pt' 
-                  ? 'Descubra tudo o que a LusoTown tem para oferecer à comunidade portuguesa'
-                  : 'Discover everything LusoTown has to offer the Portuguese community'
+                  ? 'Descubra tudo o que a LusoTown tem para oferecer à comunidade de falantes de português'
+                  : 'Discover everything LusoTown has to offer the Portuguese-speaking community'
                 }
               </p>
             </div>

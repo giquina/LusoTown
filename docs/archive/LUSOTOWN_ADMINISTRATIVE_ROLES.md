@@ -1,11 +1,11 @@
 # LusoTown London - Administrative & Management Job Roles
 
 ## Overview
-This document outlines 10 key administrative and management positions needed for LusoTown platform operations, focusing on Portuguese community engagement, London-based operations, and platform growth. Each role emphasizes cross-cultural competency and digital platform management skills specific to serving the Portuguese diaspora.
+This document outlines 10 key administrative and management positions needed for LusoTown platform operations, focusing on Portuguese-speaking community engagement, London-based operations, and platform growth. Each role emphasizes cross-cultural competency and digital platform management skills specific to serving the Portuguese diaspora.
 
 ---
 
-## 1. Portuguese Community Social Media Manager
+## 1. Portuguese-speaking community Social Media Manager
 
 **Department:** Marketing & Communications  
 **Reports to:** Head of Marketing  
@@ -13,17 +13,17 @@ This document outlines 10 key administrative and management positions needed for
 **Location:** London (Hybrid)  
 
 ### UK Salary Research (2025)
-- **Base Salary Range:** £42,000 - £65,000
-- **Market Average:** £48,500
-- **Language Premium:** +£5,000-£8,000 for Portuguese fluency
-- **Total Compensation:** £47,000 - £73,000
+- **Base Salary Range:** ï¿½42,000 - ï¿½65,000
+- **Market Average:** ï¿½48,500
+- **Language Premium:** +ï¿½5,000-ï¿½8,000 for Portuguese fluency
+- **Total Compensation:** ï¿½47,000 - ï¿½73,000
 
 ### Core Responsibilities
 - Manage LusoTown's social media presence across Instagram, Facebook, TikTok, and LinkedIn
 - Create culturally authentic Portuguese content for both Portugal-born and Brazilian community segments
 - Develop bilingual content calendars featuring London-based Portuguese events and activities
 - Engage with Portuguese cultural organizations, restaurants, and community leaders
-- Monitor Portuguese community conversations and trends across London
+- Monitor Portuguese-speaking community conversations and trends across London
 - Coordinate with event organizers for real-time social media coverage
 - Track engagement metrics and community growth across Portuguese-speaking demographics
 
@@ -33,7 +33,7 @@ This document outlines 10 key administrative and management positions needed for
 - Deep understanding of Portuguese cultural nuances and diaspora community dynamics
 - Experience with content creation tools (Canva, Adobe Creative Suite)
 - Analytics proficiency (Facebook Insights, Instagram Analytics, Google Analytics)
-- Knowledge of London's Portuguese community landscape and key venues
+- Knowledge of London's Portuguese-speaking community landscape and key venues
 - Cultural sensitivity and ability to navigate diverse Portuguese-speaking backgrounds
 
 ### Key Performance Metrics
@@ -53,10 +53,10 @@ This document outlines 10 key administrative and management positions needed for
 **Location:** London (Hybrid)  
 
 ### UK Salary Research (2025)
-- **Base Salary Range:** £55,000 - £85,000
-- **Market Average:** £68,000
-- **Senior Level:** £75,000 - £95,000
-- **Total Compensation:** £60,000 - £100,000 (including benefits)
+- **Base Salary Range:** ï¿½55,000 - ï¿½85,000
+- **Market Average:** ï¿½68,000
+- **Senior Level:** ï¿½75,000 - ï¿½95,000
+- **Total Compensation:** ï¿½60,000 - ï¿½100,000 (including benefits)
 
 ### Core Responsibilities
 - Integrate external event APIs from London venues, ticketing platforms, and Portuguese cultural centers
@@ -93,11 +93,11 @@ This document outlines 10 key administrative and management positions needed for
 **Location:** London (Field-based with office time)  
 
 ### UK Salary Research (2025)
-- **Base Salary Range:** £50,000 - £75,000
-- **Commission/Bonus:** £10,000 - £25,000
-- **Market Average:** £65,000 total compensation
-- **Senior Level:** £80,000 - £110,000
-- **Total Compensation:** £60,000 - £135,000
+- **Base Salary Range:** ï¿½50,000 - ï¿½75,000
+- **Commission/Bonus:** ï¿½10,000 - ï¿½25,000
+- **Market Average:** ï¿½65,000 total compensation
+- **Senior Level:** ï¿½80,000 - ï¿½110,000
+- **Total Compensation:** ï¿½60,000 - ï¿½135,000
 
 ### Core Responsibilities
 - Establish partnerships with Portuguese restaurants, cultural centers, and businesses across London
@@ -135,10 +135,10 @@ This document outlines 10 key administrative and management positions needed for
 **Location:** London (Hybrid)  
 
 ### UK Salary Research (2025)
-- **Base Salary Range:** £38,000 - £55,000
-- **Market Average:** £45,000
-- **Community Platform Specialization:** +£3,000-£5,000
-- **Total Compensation:** £41,000 - £60,000
+- **Base Salary Range:** ï¿½38,000 - ï¿½55,000
+- **Market Average:** ï¿½45,000
+- **Community Platform Specialization:** +ï¿½3,000-ï¿½5,000
+- **Total Compensation:** ï¿½41,000 - ï¿½60,000
 
 ### Core Responsibilities
 - Oversee daily platform operations and user account management
@@ -168,7 +168,7 @@ This document outlines 10 key administrative and management positions needed for
 
 ---
 
-## 5. Portuguese Community Data Analytics & Growth Specialist
+## 5. Portuguese-speaking community Data Analytics & Growth Specialist
 
 **Department:** Analytics & Strategy  
 **Reports to:** Head of Marketing  
@@ -176,17 +176,17 @@ This document outlines 10 key administrative and management positions needed for
 **Location:** London (Hybrid)  
 
 ### UK Salary Research (2025)
-- **Base Salary Range:** £45,000 - £70,000
-- **Market Average:** £55,000
-- **Marketing Analytics Focus:** £48,000 - £75,000
-- **Total Compensation:** £50,000 - £80,000
+- **Base Salary Range:** ï¿½45,000 - ï¿½70,000
+- **Market Average:** ï¿½55,000
+- **Marketing Analytics Focus:** ï¿½48,000 - ï¿½75,000
+- **Total Compensation:** ï¿½50,000 - ï¿½80,000
 
 ### Core Responsibilities
-- Analyze Portuguese community engagement patterns and platform usage data
+- Analyze Portuguese-speaking community engagement patterns and platform usage data
 - Track member acquisition costs and lifetime value across different Portuguese demographics
 - Create dashboards monitoring event attendance, business directory usage, and membership conversions
-- Identify growth opportunities within London's Portuguese community segments
-- Monitor competitor platforms and Portuguese community app usage trends
+- Identify growth opportunities within London's Portuguese-speaking community segments
+- Monitor competitor platforms and Portuguese-speaking community app usage trends
 - Provide data-driven insights for Portuguese content strategy and event programming
 - Analyze geographic distribution of users across London boroughs
 
@@ -200,7 +200,7 @@ This document outlines 10 key administrative and management positions needed for
 - Statistical analysis skills and experience with predictive modeling
 
 ### Key Performance Metrics
-- Monthly active user growth rates in Portuguese community segments
+- Monthly active user growth rates in Portuguese-speaking community segments
 - Event booking conversion rates and member engagement levels
 - Business directory utilization and revenue attribution
 - Cost per acquisition for different marketing channels
@@ -217,10 +217,10 @@ This document outlines 10 key administrative and management positions needed for
 **Location:** London (Hybrid)  
 
 ### UK Salary Research (2025)
-- **Base Salary Range:** £40,000 - £55,000
-- **Multilingual Premium:** +£3,000-£6,000
-- **Market Average:** £47,000
-- **Total Compensation:** £43,000 - £61,000
+- **Base Salary Range:** ï¿½40,000 - ï¿½55,000
+- **Multilingual Premium:** +ï¿½3,000-ï¿½6,000
+- **Market Average:** ï¿½47,000
+- **Total Compensation:** ï¿½43,000 - ï¿½61,000
 
 ### Core Responsibilities
 - Lead customer support team providing bilingual assistance to Portuguese-speaking members
@@ -250,7 +250,7 @@ This document outlines 10 key administrative and management positions needed for
 
 ---
 
-## 7. Portuguese Community Growth & Acquisition Marketing Manager
+## 7. Portuguese-speaking community Growth & Acquisition Marketing Manager
 
 **Department:** Marketing & Growth  
 **Reports to:** Head of Marketing  
@@ -258,35 +258,35 @@ This document outlines 10 key administrative and management positions needed for
 **Location:** London (Hybrid)  
 
 ### UK Salary Research (2025)
-- **Base Salary Range:** £50,000 - £75,000
-- **Growth Marketing Premium:** £55,000 - £82,000
-- **Market Average:** £65,000
-- **Total Compensation:** £60,000 - £90,000
+- **Base Salary Range:** ï¿½50,000 - ï¿½75,000
+- **Growth Marketing Premium:** ï¿½55,000 - ï¿½82,000
+- **Market Average:** ï¿½65,000
+- **Total Compensation:** ï¿½60,000 - ï¿½90,000
 
 ### Core Responsibilities
 - Develop acquisition strategies targeting Portuguese speakers across London
-- Manage digital marketing campaigns for Portuguese community events and platform growth
+- Manage digital marketing campaigns for Portuguese-speaking community events and platform growth
 - Coordinate outreach to Portuguese cultural organizations, churches, and community centers
-- Create referral programs leveraging Portuguese community networks and family connections
+- Create referral programs leveraging Portuguese-speaking community networks and family connections
 - Optimize conversion funnels for different Portuguese demographic segments
 - Partner with Portuguese influencers, bloggers, and community leaders
-- Track and analyze acquisition costs across different Portuguese community channels
+- Track and analyze acquisition costs across different Portuguese-speaking community channels
 
 ### Required Skills & Experience
 - 4-7 years growth marketing experience, preferably in community or cultural platforms
 - Working knowledge of Portuguese language for cultural context and content review
 - Experience with digital marketing tools (Google Ads, Facebook Ads, SEO)
-- Understanding of Portuguese community media consumption habits and preferred platforms
+- Understanding of Portuguese-speaking community media consumption habits and preferred platforms
 - Knowledge of growth hacking techniques and community-driven acquisition strategies
 - Experience with multicultural marketing campaigns and community outreach
 - Analytical skills and experience with conversion optimization
 
 ### Key Performance Metrics
-- Portuguese community member acquisition rates and quality scores
+- Portuguese-speaking community member acquisition rates and quality scores
 - Cost per acquisition across different marketing channels and Portuguese demographics
 - Referral program performance and community-driven growth rates
 - Marketing campaign ROI for Portuguese cultural events and content
-- Geographic expansion success in Portuguese community areas of London
+- Geographic expansion success in Portuguese-speaking community areas of London
 - Member lifetime value and retention from different acquisition channels
 
 ---
@@ -299,10 +299,10 @@ This document outlines 10 key administrative and management positions needed for
 **Location:** London (Field-based with office time)  
 
 ### UK Salary Research (2025)
-- **Base Salary Range:** £42,000 - £60,000
-- **Event Management Specialization:** £45,000 - £65,000
-- **Cultural Programming Premium:** +£2,000-£4,000
-- **Total Compensation:** £47,000 - £69,000
+- **Base Salary Range:** ï¿½42,000 - ï¿½60,000
+- **Event Management Specialization:** ï¿½45,000 - ï¿½65,000
+- **Cultural Programming Premium:** +ï¿½2,000-ï¿½4,000
+- **Total Compensation:** ï¿½47,000 - ï¿½69,000
 
 ### Core Responsibilities
 - Coordinate Portuguese cultural events, festivals, and community celebrations
@@ -311,7 +311,7 @@ This document outlines 10 key administrative and management positions needed for
 - Coordinate with Portuguese Embassy and cultural organizations for official events
 - Oversee platform event listings, approval processes, and member communications
 - Manage event attendance tracking, feedback collection, and post-event analysis
-- Ensure events meet Portuguese community cultural expectations and safety standards
+- Ensure events meet Portuguese-speaking community cultural expectations and safety standards
 
 ### Required Skills & Experience
 - **Essential:** Strong Portuguese cultural knowledge and language skills
@@ -340,17 +340,17 @@ This document outlines 10 key administrative and management positions needed for
 **Location:** London (Hybrid)  
 
 ### UK Salary Research (2025)
-- **Base Salary Range:** £40,000 - £58,000
-- **Content Strategy Specialization:** £45,000 - £63,000
-- **Cultural Expertise Premium:** +£3,000-£5,000
-- **Total Compensation:** £48,000 - £68,000
+- **Base Salary Range:** ï¿½40,000 - ï¿½58,000
+- **Content Strategy Specialization:** ï¿½45,000 - ï¿½63,000
+- **Cultural Expertise Premium:** +ï¿½3,000-ï¿½5,000
+- **Total Compensation:** ï¿½48,000 - ï¿½68,000
 
 ### Core Responsibilities
 - Develop content strategy highlighting Portuguese heritage, success stories, and cultural preservation
 - Create bilingual content showcasing Portuguese businesses, community leaders, and cultural contributions
 - Manage blog content, newsletter, and educational resources about Portuguese culture in London
 - Coordinate with Portuguese cultural institutions for authentic content partnerships
-- Document Portuguese community stories, traditions, and London integration experiences
+- Document Portuguese-speaking community stories, traditions, and London integration experiences
 - Develop content calendars around Portuguese holidays, cultural milestones, and community celebrations
 - Ensure all platform content maintains cultural authenticity and represents diverse Portuguese voices
 
@@ -381,33 +381,33 @@ This document outlines 10 key administrative and management positions needed for
 **Location:** London (Hybrid)  
 
 ### UK Salary Research (2025)
-- **Base Salary Range:** £48,000 - £72,000
-- **Business Intelligence Focus:** £52,000 - £78,000
-- **Market Research Specialization:** £50,000 - £75,000
-- **Total Compensation:** £55,000 - £83,000
+- **Base Salary Range:** ï¿½48,000 - ï¿½72,000
+- **Business Intelligence Focus:** ï¿½52,000 - ï¿½78,000
+- **Market Research Specialization:** ï¿½50,000 - ï¿½75,000
+- **Total Compensation:** ï¿½55,000 - ï¿½83,000
 
 ### Core Responsibilities
-- Conduct market research on Portuguese community size, demographics, and needs across London
-- Analyze competitive landscape of Portuguese community platforms and cultural organizations
+- Conduct market research on Portuguese-speaking community size, demographics, and needs across London
+- Analyze competitive landscape of Portuguese-speaking community platforms and cultural organizations
 - Develop business intelligence dashboards tracking platform performance and community growth
 - Research Portuguese spending habits, cultural preferences, and community engagement patterns
-- Provide strategic insights for platform expansion into new London Portuguese community areas
+- Provide strategic insights for platform expansion into new London Portuguese-speaking community areas
 - Monitor Portuguese business ecosystem in London and identify partnership opportunities
-- Create market reports and strategic recommendations for Portuguese community platform development
+- Create market reports and strategic recommendations for Portuguese-speaking community platform development
 
 ### Required Skills & Experience
 - 4-6 years business intelligence or market research experience
 - Working knowledge of Portuguese language for primary research and community engagement
 - Proficiency in data analysis tools (SQL, Python, R) and business intelligence platforms
 - Experience with market research methodologies and community demographic analysis
-- Understanding of Portuguese community structures and cultural organization networks
+- Understanding of Portuguese-speaking community structures and cultural organization networks
 - Statistical analysis skills and experience with predictive business modeling
-- Knowledge of London's Portuguese community geography and demographic distribution
+- Knowledge of London's Portuguese-speaking community geography and demographic distribution
 
 ### Key Performance Metrics
 - Market research accuracy and actionable insights delivery
 - Business intelligence dashboard utilization and strategic impact
-- Portuguese community market penetration and growth opportunity identification
+- Portuguese-speaking community market penetration and growth opportunity identification
 - Competitive analysis quality and strategic recommendation success
 - Research-driven feature development adoption and community response
 - Revenue growth attribution to market research insights and recommendations
@@ -418,16 +418,16 @@ This document outlines 10 key administrative and management positions needed for
 
 | Role | Base Salary Range | Total Compensation | Key Requirements |
 |------|------------------|-------------------|------------------|
-| Portuguese Social Media Manager | £42,000 - £65,000 | £47,000 - £73,000 | Native Portuguese fluency |
-| API Integration Specialist | £55,000 - £85,000 | £60,000 - £100,000 | Technical expertise |
-| Business Development Manager | £50,000 - £75,000 | £60,000 - £135,000 | Portuguese business network |
-| Platform Administrator | £38,000 - £55,000 | £41,000 - £60,000 | Community management |
-| Data Analytics Specialist | £45,000 - £70,000 | £50,000 - £80,000 | Analytics expertise |
-| Customer Support Manager | £40,000 - £55,000 | £43,000 - £61,000 | Multilingual support |
-| Growth Marketing Manager | £50,000 - £75,000 | £60,000 - £90,000 | Growth marketing |
-| Event Operations Manager | £42,000 - £60,000 | £47,000 - £69,000 | Portuguese cultural knowledge |
-| Content Strategy Manager | £40,000 - £58,000 | £48,000 - £68,000 | Cultural authenticity |
-| Business Intelligence Analyst | £48,000 - £72,000 | £55,000 - £83,000 | Market research skills |
+| Portuguese Social Media Manager | ï¿½42,000 - ï¿½65,000 | ï¿½47,000 - ï¿½73,000 | Native Portuguese fluency |
+| API Integration Specialist | ï¿½55,000 - ï¿½85,000 | ï¿½60,000 - ï¿½100,000 | Technical expertise |
+| Business Development Manager | ï¿½50,000 - ï¿½75,000 | ï¿½60,000 - ï¿½135,000 | Portuguese business network |
+| Platform Administrator | ï¿½38,000 - ï¿½55,000 | ï¿½41,000 - ï¿½60,000 | Community management |
+| Data Analytics Specialist | ï¿½45,000 - ï¿½70,000 | ï¿½50,000 - ï¿½80,000 | Analytics expertise |
+| Customer Support Manager | ï¿½40,000 - ï¿½55,000 | ï¿½43,000 - ï¿½61,000 | Multilingual support |
+| Growth Marketing Manager | ï¿½50,000 - ï¿½75,000 | ï¿½60,000 - ï¿½90,000 | Growth marketing |
+| Event Operations Manager | ï¿½42,000 - ï¿½60,000 | ï¿½47,000 - ï¿½69,000 | Portuguese cultural knowledge |
+| Content Strategy Manager | ï¿½40,000 - ï¿½58,000 | ï¿½48,000 - ï¿½68,000 | Cultural authenticity |
+| Business Intelligence Analyst | ï¿½48,000 - ï¿½72,000 | ï¿½55,000 - ï¿½83,000 | Market research skills |
 
 ## Additional Benefits Package Considerations
 
@@ -435,14 +435,14 @@ This document outlines 10 key administrative and management positions needed for
 - 25-28 days annual leave plus UK bank holidays
 - Pension contribution (3-5% employer contribution)
 - Health insurance or health cash plan
-- Professional development budget (£1,000-£2,500 annually)
+- Professional development budget (ï¿½1,000-ï¿½2,500 annually)
 - Flexible working arrangements (hybrid London-based)
 
-### Portuguese Community-Specific Benefits
+### Portuguese-speaking community-Specific Benefits
 - Portuguese language learning budget for non-native speakers
 - Annual travel budget for Portuguese cultural research and networking
 - Portuguese cultural event attendance budget
 - Community networking and partnership development opportunities
 - Cross-cultural competency training and development
 
-These roles are designed to build a comprehensive team capable of serving London's Portuguese community with cultural authenticity, technical excellence, and sustainable business growth.
+These roles are designed to build a comprehensive team capable of serving London's Portuguese-speaking community with cultural authenticity, technical excellence, and sustainable business growth.

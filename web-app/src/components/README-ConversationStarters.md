@@ -282,7 +282,7 @@ CREATE TABLE message_authorizations (
 ### Community Features
 1. **User-Submitted Starters**: Community contributions to starter database
 2. **Cultural Calendar**: Event-based conversation suggestions
-3. **Regional Groups**: Location-specific Portuguese community starters
+3. **Regional Groups**: Location-specific Portuguese-speaking community starters
 4. **Mentorship Program**: Newcomer conversation guidance
 
 ## Installation & Usage

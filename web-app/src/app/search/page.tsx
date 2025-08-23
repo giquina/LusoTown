@@ -433,8 +433,8 @@ function SearchContent() {
                       </h3>
                       <p className="text-gray-600 max-w-md mx-auto">
                         {language === "pt"
-                          ? "Use a barra de pesquisa acima para encontrar eventos, negócios, grupos e conteúdo da comunidade portuguesa."
-                          : "Use the search bar above to find events, businesses, groups, and Portuguese community content."}
+                          ? "Use a barra de pesquisa acima para encontrar eventos, negócios, grupos e conteúdo da comunidade de falantes de português."
+                          : "Use the search bar above to find events, businesses, groups, and Portuguese-speaking community content."}
                       </p>
                     </div>
                   )}

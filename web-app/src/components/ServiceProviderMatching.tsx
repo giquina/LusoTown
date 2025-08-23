@@ -70,7 +70,7 @@ const mockServiceProviders: ServiceProvider[] = [
     languages: ['Portuguese', 'English', 'Spanish'],
     verified: true,
     matchCompatibility: 95,
-    description: 'Authentic Portuguese cultural tours with deep knowledge of London\'s Portuguese community.',
+    description: 'Authentic Portuguese cultural tours with deep knowledge of London\'s Portuguese-speaking community.',
     responseTime: '< 2 hours',
     bookingPrice: 65,
     discount: 15
@@ -85,7 +85,7 @@ const mockServiceProviders: ServiceProvider[] = [
     priceRange: '£25-50',
     availability: 'available',
     specialties: ['Airport Transfers', 'Event Transport', 'Cultural Tours'],
-    culturalFocus: ['Portuguese Community', 'Cultural Events', 'Business Travel'],
+    culturalFocus: ['Portuguese-speaking community', 'Cultural Events', 'Business Travel'],
     languages: ['Portuguese', 'English'],
     verified: true,
     matchCompatibility: 92,
@@ -108,7 +108,7 @@ const mockServiceProviders: ServiceProvider[] = [
     languages: ['Portuguese', 'English'],
     verified: true,
     matchCompatibility: 88,
-    description: 'Specialized housing services in Portuguese community areas with cultural support.',
+    description: 'Specialized housing services in Portuguese-speaking community areas with cultural support.',
     responseTime: '< 4 hours',
     bookingPrice: 1200,
     discount: 5

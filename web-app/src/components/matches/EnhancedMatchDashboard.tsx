@@ -193,7 +193,7 @@ export default function EnhancedMatchDashboard({
               id: "cs3",
               text: "Viste o último jogo do Benfica? Que loucura!",
               category: "Desporto",
-              culturalContext: "Futebol une a comunidade portuguesa",
+              culturalContext: "Futebol une a comunidade de falantes de português",
               popularity: 95,
             },
           ],

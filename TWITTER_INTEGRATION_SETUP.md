@@ -1,12 +1,12 @@
 # Twitter Feed Integration Setup Guide
 
 ## Overview
-This guide provides setup instructions for the Twitter feed integration in the LusoTown post-login dashboard, focusing on Portuguese community hashtags and engagement.
+This guide provides setup instructions for the Twitter feed integration in the LusoTown post-login dashboard, focusing on Portuguese-speaking community hashtags and engagement.
 
 ## Components Created
 
 ### 1. TwitterFeedWidget (`/workspaces/LusoTown/web-app/src/components/TwitterFeedWidget.tsx`)
-- **Purpose**: Embedded Twitter feed component with Portuguese community hashtags
+- **Purpose**: Embedded Twitter feed component with Portuguese-speaking community hashtags
 - **Features**: 
   - Twitter Embed API integration (official widgets)
   - Portuguese/English bilingual support
@@ -14,13 +14,13 @@ This guide provides setup instructions for the Twitter feed integration in the L
   - Loading states and error handling
   - Portuguese brand styling
   
-- **Portuguese Community Hashtags**:
+- **Portuguese-speaking community Hashtags**:
   - Primary: #LusoLondon, #PortugueseUK, #LusoTown
   - Secondary: #PortuguesesemLondres, #ComunidadePortuguesa, #PortugueseEvents
   - Cultural: #PortugueseBusiness, #PortugueseCulture, #FadoLondon, #PortugueseFood
 
 ### 2. TwitterHashtagTabs (`/workspaces/LusoTown/web-app/src/components/TwitterHashtagTabs.tsx`)
-- **Purpose**: Tabbed interface for different Portuguese community hashtag feeds
+- **Purpose**: Tabbed interface for different Portuguese-speaking community hashtag feeds
 - **Features**:
   - 5 hashtag categories: Community, Events, Business, Culture, UK Wide
   - Live activity indicators
@@ -42,14 +42,14 @@ This guide provides setup instructions for the Twitter feed integration in the L
 Add these to your `.env.local.example` and `.env.local` files:
 
 ```env
-# Twitter Integration for Portuguese Community Feed
+# Twitter Integration for Portuguese-speaking community Feed
 NEXT_PUBLIC_TWITTER_BEARER_TOKEN=your_twitter_bearer_token_here
 NEXT_PUBLIC_TWITTER_API_KEY=your_twitter_api_key_here
 NEXT_PUBLIC_TWITTER_API_SECRET=your_twitter_api_secret_here
 TWITTER_ACCESS_TOKEN=your_twitter_access_token_here
 TWITTER_ACCESS_TOKEN_SECRET=your_twitter_access_token_secret_here
 
-# Portuguese Community Twitter Hashtags (Space separated)
+# Portuguese-speaking community Twitter Hashtags (Space separated)
 NEXT_PUBLIC_PORTUGUESE_HASHTAGS=LusoLondon PortugueseUK LusoTown PortuguesesemLondres ComunidadePortuguesa PortugueseEvents PortugueseBusiness PortugueseCulture FadoLondon PortugueseFood
 
 # Twitter Widget Configuration
@@ -63,9 +63,9 @@ NEXT_PUBLIC_TWITTER_WIDGET_MAX_TWEETS=6
 
 1. **Create Twitter Developer Account**: https://developer.twitter.com/
 2. **Create Project and App**:
-   - Project Name: "LusoTown Portuguese Community"
+   - Project Name: "LusoTown Portuguese-speaking community"
    - App Name: "LusoTown London"
-   - Description: "Portuguese community platform in London/UK"
+   - Description: "Portuguese-speaking community platform in London/UK"
 
 3. **Get API Credentials**:
    - API Key and Secret
@@ -81,11 +81,11 @@ NEXT_PUBLIC_TWITTER_WIDGET_MAX_TWEETS=6
 ### English (`/workspaces/LusoTown/web-app/src/i18n/en.json`)
 ```json
 {
-  "twitter_feed.title": "Portuguese Community",
+  "twitter_feed.title": "Portuguese-speaking community",
   "twitter_feed.subtitle": "Latest from Twitter",
   "twitter_feed.view_more": "View More",
   "twitter_feed.unavailable_title": "Twitter Feed Unavailable",
-  "twitter_feed.unavailable_subtitle": "Connect with the Portuguese community on Twitter",
+  "twitter_feed.unavailable_subtitle": "Connect with the Portuguese-speaking community on Twitter",
   "twitter_feed.view_on_twitter": "View on Twitter",
 
   "twitter_tabs.community": "Community",
@@ -96,7 +96,7 @@ NEXT_PUBLIC_TWITTER_WIDGET_MAX_TWEETS=6
   "twitter_tabs.live_indicator": "Live",
   "twitter_tabs.popular_hashtags": "Other popular hashtags",
 
-  "dashboard.social.title": "Portuguese Community on Twitter",
+  "dashboard.social.title": "Portuguese-speaking community on Twitter",
   "dashboard.social.subtitle": "Follow the latest conversations from our community",
   "dashboard.social.share_events": "Share Events",
   "dashboard.social.follow": "Follow"
@@ -106,11 +106,11 @@ NEXT_PUBLIC_TWITTER_WIDGET_MAX_TWEETS=6
 ### Portuguese (`/workspaces/LusoTown/web-app/src/i18n/pt.json`)
 ```json
 {
-  "twitter_feed.title": "Comunidade Portuguesa",
+  "twitter_feed.title": "Comunidade de Falantes de Português",
   "twitter_feed.subtitle": "Últimas do Twitter",
   "twitter_feed.view_more": "Ver Mais",
   "twitter_feed.unavailable_title": "Feed do Twitter Indisponível",
-  "twitter_feed.unavailable_subtitle": "Conecte-se com a comunidade portuguesa no Twitter",
+  "twitter_feed.unavailable_subtitle": "Conecte-se com a comunidade de falantes de português no Twitter",
   "twitter_feed.view_on_twitter": "Ver no Twitter",
 
   "twitter_tabs.community": "Comunidade",
@@ -121,7 +121,7 @@ NEXT_PUBLIC_TWITTER_WIDGET_MAX_TWEETS=6
   "twitter_tabs.live_indicator": "Ao vivo",
   "twitter_tabs.popular_hashtags": "Outras hashtags populares",
 
-  "dashboard.social.title": "Comunidade Portuguesa no Twitter",
+  "dashboard.social.title": "Comunidade de Falantes de Português no Twitter",
   "dashboard.social.subtitle": "Acompanhe as últimas conversas da nossa comunidade",
   "dashboard.social.share_events": "Partilhar Eventos",
   "dashboard.social.follow": "Seguir"
@@ -175,7 +175,7 @@ import TwitterFeedWidget from '@/components/TwitterFeedWidget'
 - **GDPR Compliant**: Follows Twitter's privacy standards
 - **Mobile Responsive**: Optimized for all device sizes
 
-### Portuguese Community Focus
+### Portuguese-speaking community Focus
 - **Targeted Hashtags**: Focus on Portuguese speakers in London/UK
 - **Cultural Content**: Santos Populares, Fado, Portuguese food, business
 - **Bilingual Support**: Complete Portuguese/English translations
@@ -196,7 +196,7 @@ import TwitterFeedWidget from '@/components/TwitterFeedWidget'
 - **Gradients**: Portuguese flag-inspired color combinations
 
 ### Responsive Design
-- **Mobile First**: Optimized for mobile Portuguese community
+- **Mobile First**: Optimized for mobile Portuguese-speaking community
 - **Touch Targets**: Enhanced accessibility for mobile users
 - **Grid Layouts**: Responsive grid systems for tabs and content
 
@@ -228,7 +228,7 @@ import TwitterFeedWidget from '@/components/TwitterFeedWidget'
    - Community reporting features
 
 3. **Enhanced Analytics**:
-   - Portuguese community engagement metrics
+   - Portuguese-speaking community engagement metrics
    - Hashtag performance tracking
    - Cultural event correlation
 
@@ -328,4 +328,4 @@ import TwitterFeedWidget from '@/components/TwitterFeedWidget'
 
 ---
 
-This Twitter integration enhances the LusoTown platform by connecting users with the broader Portuguese community conversation happening on social media, while maintaining the platform's focus on cultural authenticity and bilingual accessibility.
+This Twitter integration enhances the LusoTown platform by connecting users with the broader Portuguese-speaking community conversation happening on social media, while maintaining the platform's focus on cultural authenticity and bilingual accessibility.

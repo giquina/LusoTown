@@ -305,7 +305,7 @@ class UserProfileService {
   }
 
   /**
-   * Search for Portuguese community members
+   * Search for Portuguese-speaking community members
    */
   async searchCommunityMembers(filters: {
     location?: string

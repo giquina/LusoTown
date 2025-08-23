@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  # SRS Media Server - Portuguese Community Streaming
+  # SRS Media Server - Portuguese-speaking community Streaming
   srs:
     image: ossrs/srs:5
     container_name: lusotown-srs
@@ -23,7 +23,7 @@ services:
     networks:
       - lusotown
 
-  # Redis for Portuguese community real-time features
+  # Redis for Portuguese-speaking community real-time features
   redis:
     image: redis:7-alpine
     container_name: lusotown-redis

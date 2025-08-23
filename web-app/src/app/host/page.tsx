@@ -113,7 +113,7 @@ export default function HostPage() {
         ? "Alcance 750+ Portugueses"
         : "Reach 750+ Portuguese Speakers",
       description: isPortuguese
-        ? "Conecte com profissionais e membros da comunidade portuguesa"
+        ? "Conecte com profissionais e membros da comunidade de falantes de português"
         : "Connect with Portuguese professionals and Portuguese speakers",
     },
     {
@@ -285,8 +285,8 @@ export default function HostPage() {
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 {isPortuguese
-                  ? "Que tipo de experiência quer partilhar com a comunidade portuguesa?"
-                  : "What type of experience do you want to share with the Portuguese community?"}
+                  ? "Que tipo de experiência quer partilhar com a comunidade de falantes de português?"
+                  : "What type of experience do you want to share with the Portuguese-speaking community?"}
               </p>
             </div>
 
@@ -788,8 +788,8 @@ export default function HostPage() {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
                     placeholder={
                       isPortuguese
-                        ? "Descreva o que quer oferecer à comunidade portuguesa..."
-                        : "Describe what you want to offer to the Portuguese community..."
+                        ? "Descreva o que quer oferecer à comunidade de falantes de português..."
+                        : "Describe what you want to offer to the Portuguese-speaking community..."
                     }
                   />
                 </div>

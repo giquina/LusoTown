@@ -25,7 +25,7 @@ export default function FeedFilters({ activeFilter, onFilterChange, className = 
     {
       id: 'all' as const,
       label: t('feed_filters.all') || 'All Posts',
-      description: t('feed_filters.all_desc') || 'Everything from the Portuguese community',
+      description: t('feed_filters.all_desc') || 'Everything from the Portuguese-speaking community',
       icon: <Globe className="w-4 h-4" />,
       color: 'primary'
     },

@@ -2,7 +2,7 @@
  * Mobile UX Agent Configuration for LusoTown
  * 
  * This configuration defines the specialized mobile UX agent that automatically
- * reviews UI changes for mobile compatibility and Portuguese community needs.
+ * reviews UI changes for mobile compatibility and Portuguese-speaking community needs.
  */
 
 export interface MobileBreakpoint {
@@ -41,7 +41,7 @@ export const MOBILE_UX_AGENT_CONFIG = {
   // Agent Identity and Role
   agent: {
     name: 'LusoTown Mobile UX Specialist',
-    role: 'Mobile-first responsive design expert for Portuguese community platform',
+    role: 'Mobile-first responsive design expert for Portuguese-speaking community platform',
     expertise: [
       'Mobile-first responsive design',
       'Portuguese text length considerations',
@@ -60,7 +60,7 @@ export const MOBILE_UX_AGENT_CONFIG = {
     ]
   },
 
-  // Mobile Breakpoints (Portuguese community focused)
+  // Mobile Breakpoints (Portuguese-speaking community focused)
   breakpoints: {
     mobile: {
       xs: { name: 'Mobile Small', width: 375, description: 'iPhone SE, small Android phones', priority: 'critical' },
@@ -89,7 +89,7 @@ export const MOBILE_UX_AGENT_CONFIG = {
       id: 'mobile-first',
       category: 'layout',
       rule: 'Design mobile-first, then enhance for larger screens',
-      rationale: 'Portuguese community primarily uses mobile devices for social interaction',
+      rationale: 'Portuguese-speaking community primarily uses mobile devices for social interaction',
       priority: 'critical'
     },
     {
@@ -191,7 +191,7 @@ export const MOBILE_UX_AGENT_CONFIG = {
     ]
   },
 
-  // Enhanced Quality Assurance Checklist for Portuguese Community
+  // Enhanced Quality Assurance Checklist for Portuguese-speaking community
   qaChecklist: {
     layout: [
       '✓ Mobile-first responsive design implemented',

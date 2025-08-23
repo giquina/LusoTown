@@ -328,7 +328,7 @@ export default function Dashboard() {
 
             {activeTab === 'activity' && (
               <div className="space-y-6">
-                {/* Portuguese Community Activity Timeline */}
+                {/* Portuguese-speaking community Activity Timeline */}
                 <PortugueseCommunityActivity />
                 
                 {/* Platform Stats Summary */}
@@ -417,7 +417,7 @@ export default function Dashboard() {
                         <Car className="w-6 h-6 text-primary-500" />
                         <h3 className="font-semibold text-gray-900">{language === 'pt' ? 'Transporte Premium' : 'Premium Transport'}</h3>
                       </div>
-                      <p className="text-gray-600 mb-4">{language === 'pt' ? 'Serviços de transporte profissional com foco na comunidade portuguesa' : 'Professional transport services with Portuguese community focus'}</p>
+                      <p className="text-gray-600 mb-4">{language === 'pt' ? 'Serviços de transporte profissional com foco na comunidade de falantes de português' : 'Professional transport services with Portuguese-speaking community focus'}</p>
                       <div className="space-y-2 text-sm text-gray-600 mb-4">
                         <p>• {language === 'pt' ? 'Motoristas que falam português' : 'Portuguese-speaking drivers'}</p>
                         <p>• {language === 'pt' ? 'Segurança licenciada SIA' : 'SIA-licensed security'}</p>

@@ -1,7 +1,7 @@
 /**
  * Heritage Community Configuration System
  * Configurable cultural elements for different heritage communities
- * Default: Portuguese community
+ * Default: Portuguese-speaking community
  */
 
 export interface HeritageConfig {

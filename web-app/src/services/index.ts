@@ -1,5 +1,5 @@
 // Central export for all LusoTown API services
-// Portuguese Community Platform - Real Supabase Integration
+// Portuguese-speaking community Platform - Real Supabase Integration
 
 export { userProfileService } from './UserProfileService'
 export type { 
@@ -144,7 +144,7 @@ export const PortugueseServiceUtils = {
     {
       value: 'south_lambeth',
       label: 'South Lambeth',
-      description: 'Historic Portuguese community area'
+      description: 'Historic Portuguese-speaking community area'
     },
     {
       value: 'vauxhall',
@@ -154,7 +154,7 @@ export const PortugueseServiceUtils = {
     {
       value: 'north_kensington',
       label: 'North Kensington',
-      description: 'Golborne Road Portuguese community'
+      description: 'Golborne Road Portuguese-speaking community'
     },
     {
       value: 'hammersmith',

@@ -343,8 +343,8 @@ export default function CommunityEventCreation({
           </h3>
           <p className="text-gray-600 mb-6">
             {isPortuguese
-              ? 'Para criar eventos da comunidade portuguesa, necessita de verificação como membro verificado, proprietário de negócio ou líder cultural.'
-              : 'To create Portuguese community events, you need verification as a verified member, business owner, or cultural leader.'}
+              ? 'Para criar eventos da comunidade de falantes de português, necessita de verificação como membro verificado, proprietário de negócio ou líder cultural.'
+              : 'To create Portuguese-speaking community events, you need verification as a verified member, business owner, or cultural leader.'}
           </p>
           <button className="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors font-medium">
             {isPortuguese ? 'Solicitar Verificação' : 'Request Verification'}
@@ -592,7 +592,7 @@ export default function CommunityEventCreation({
                   className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
                     errors.venue ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  placeholder={isPortuguese ? 'ex: Centro Comunitário Português' : 'e.g. Portuguese Community Centre'}
+                  placeholder={isPortuguese ? 'ex: Centro Comunitário Português' : 'e.g. Portuguese-speaking community Centre'}
                 />
                 {errors.venue && <p className="text-red-500 text-xs mt-1">{errors.venue}</p>}
               </div>
@@ -706,14 +706,14 @@ export default function CommunityEventCreation({
                   />
                   <span className="text-sm text-gray-700">
                     {isPortuguese 
-                      ? 'Requer verificação de comunidade portuguesa' 
-                      : 'Require Portuguese community verification'}
+                      ? 'Requer verificação de comunidade de falantes de português' 
+                      : 'Require Portuguese-speaking community verification'}
                   </span>
                 </label>
                 <p className="text-xs text-gray-600 mt-1">
                   {isPortuguese
-                    ? 'Apenas membros verificados da comunidade portuguesa podem participar'
-                    : 'Only verified Portuguese community members can attend'}
+                    ? 'Apenas membros verificados da comunidade de falantes de português podem participar'
+                    : 'Only verified Portuguese-speaking community members can attend'}
                 </p>
               </div>
             </motion.div>

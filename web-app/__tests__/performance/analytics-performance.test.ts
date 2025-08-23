@@ -1,6 +1,6 @@
 /**
  * Production Performance Tests for Predictive Community Analytics
- * Tests performance under realistic load conditions for luxury Portuguese community
+ * Tests performance under realistic load conditions for luxury Portuguese-speaking community
  */
 
 import { PredictiveCommunityAnalytics } from '@/lib/ai/PredictiveCommunityAnalytics'
@@ -310,16 +310,16 @@ describe('Analytics Performance Tests', () => {
   })
 
   describe('Production Load Simulation', () => {
-    it('should handle realistic Portuguese community load', async () => {
+    it('should handle realistic Portuguese-speaking community load', async () => {
       // Simulate realistic load:
       // - 750 community members
       // - Peak usage: 50 concurrent users
-      // - Mixed operations typical for Portuguese community
+      // - Mixed operations typical for Portuguese-speaking community
 
       const peakConcurrentUsers = 50
       const operations = []
 
-      // Simulate typical Portuguese community usage patterns
+      // Simulate typical Portuguese-speaking community usage patterns
       for (let i = 0; i < peakConcurrentUsers; i++) {
         const userId = `portuguese_user_${i}`
         const operationType = i % 4

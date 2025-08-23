@@ -300,7 +300,7 @@ export default function SaudadeCompatibilityEngine({
       activities.push(
         lang === 'pt'
           ? 'Participar em eventos comunitários portugueses'
-          : 'Attend Portuguese community events together'
+          : 'Attend Portuguese-speaking community events together'
       );
     }
 

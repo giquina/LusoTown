@@ -1,15 +1,15 @@
-# LusoTown Portuguese Community Streaming Infrastructure
+# LusoTown Portuguese-speaking community Streaming Infrastructure
 
 **Professional streaming platform serving Portuguese speakers in London & UK**
 
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue)](https://docker.com)
 [![SRS](https://img.shields.io/badge/SRS-6.0-green)](https://github.com/ossrs/srs)
-[![Portuguese](https://img.shields.io/badge/Language-Português-red)](https://lusotown.com)
+[![Portuguese](https://img.shields.io/badge/Language-Portuguï¿½s-red)](https://lusotown.com)
 [![Production Ready](https://img.shields.io/badge/Production-Ready-brightgreen)](https://stream.lusotown.com)
 
 ## Overview
 
-This infrastructure provides a complete streaming solution optimized for the Portuguese community in London & UK, featuring:
+This infrastructure provides a complete streaming solution optimized for the Portuguese-speaking community in London & UK, featuring:
 
 - **RTMP Ingestion** - OBS Studio integration for content creators
 - **WebRTC Distribution** - Ultra-low latency streaming (<1 second)
@@ -64,7 +64,7 @@ curl https://stream.lusotown.com/health
 
 - **RTMP** - Content ingestion from OBS/streaming software
 - **WebRTC** - Ultra-low latency viewer experience
-- **HLS** - Mobile-first streaming for Portuguese community
+- **HLS** - Mobile-first streaming for Portuguese-speaking community
 - **SRT** - Professional broadcasting quality
 
 ## Configuration
@@ -83,7 +83,7 @@ BUNNYCDN_API_KEY=your_api_key
 SSL_CERTIFICATE_PATH=/etc/ssl/lusotown/cert.crt
 SSL_PRIVATE_KEY_PATH=/etc/ssl/lusotown/private.key
 
-# Portuguese community features
+# Portuguese-speaking community features
 CULTURAL_CONTENT_BOOST=true
 PORTUGUESE_LANGUAGE_PRIORITY=true
 COMMUNITY_CHAT_ENABLED=true
@@ -104,7 +104,7 @@ See [.env.production.example](./.env.production.example) for complete configurat
 - Load balancer + multiple servers
 - CDN integration
 
-## Portuguese Community Features
+## Portuguese-speaking community Features
 
 ### Cultural Optimization
 
@@ -116,7 +116,7 @@ See [.env.production.example](./.env.production.example) for complete configurat
 ### Community Tools
 
 - **Portuguese Emotes** - Cultural expressions and slang
-- **Regional Chat Channels** - Brazil ” Portugal ” Diaspora
+- **Regional Chat Channels** - Brazil ï¿½ Portugal ï¿½ Diaspora
 - **Community Safety** - Portuguese language toxicity detection
 - **Creator Support** - Portuguese-language documentation
 
@@ -162,13 +162,13 @@ All API endpoints require authentication via:
 ### Metrics Collected
 
 - **Stream Performance** - Bitrate, latency, viewer count
-- **Portuguese Community** - Regional engagement metrics
+- **Portuguese-speaking community** - Regional engagement metrics
 - **Technical Metrics** - CPU, memory, network usage
 - **Business Metrics** - Creator retention, watch time
 
 ### Grafana Dashboards
 
-- Portuguese Community Engagement
+- Portuguese-speaking community Engagement
 - Streaming Infrastructure Health
 - Creator Performance Analytics
 - Regional Content Distribution
@@ -185,7 +185,7 @@ All API endpoints require authentication via:
 
 ### Access Control
 
-- **Creator Authentication** - Verified Portuguese community members
+- **Creator Authentication** - Verified Portuguese-speaking community members
 - **Viewer Permissions** - Premium content gating
 - **Admin Controls** - Community management tools
 - **API Security** - Token-based authentication
@@ -320,17 +320,17 @@ docker logs lusotown-srs-prod --follow
 
 1. Fork the repository
 2. Create feature branch (`git checkout -b feature/portuguese-feature`)
-3. Test with Portuguese community scenarios
+3. Test with Portuguese-speaking community scenarios
 4. Submit pull request with Portuguese context
 
 ## Support
 
-### Portuguese Community Support
+### Portuguese-speaking community Support
 
 - **Documentation** - Available in Portuguese and English
 - **Community Forum** - Portuguese-speaking developers
 - **Technical Support** - London timezone (GMT/BST)
-- **Cultural Guidance** - Portuguese community advisors
+- **Cultural Guidance** - Portuguese-speaking community advisors
 
 ### Professional Support
 
@@ -341,12 +341,12 @@ docker logs lusotown-srs-prod --follow
 
 ## License
 
-This streaming infrastructure is part of the LusoTown Portuguese Community Platform.
+This streaming infrastructure is part of the LusoTown Portuguese-speaking community Platform.
 
-© 2025 LusoTown - Connecting Portuguese Speakers in London & UK
+ï¿½ 2025 LusoTown - Connecting Portuguese Speakers in London & UK
 
 ---
 
-**Built with d for the Portuguese community in London & UK**
+**Built with d for the Portuguese-speaking community in London & UK**
 
 For more information, visit [lusotown.com](https://lusotown.com) or contact our team at technical@lusotown.com

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * LusoTown Portuguese Community Streaming Test Suite
+ * LusoTown Portuguese-speaking community Streaming Test Suite
  * Tests RTMP ingestion and HLS output
  */
 
@@ -13,7 +13,7 @@ const config = {
 };
 
 const testStreamingPipeline = async () => {
-  console.log('🇵🇹 LusoTown Portuguese Community Streaming Pipeline Test');
+  console.log('🇵🇹 LusoTown Portuguese-speaking community Streaming Pipeline Test');
   console.log('=========================================================');
   console.log('');
 
@@ -133,7 +133,7 @@ const testStreamingPipeline = async () => {
   console.log('5. Start Streaming');
   console.log(`6. Open: http://localhost:${config.hls_port}/live/portuguese_test.m3u8 in VLC`);
   console.log('');
-  console.log('✅ LusoTown Portuguese Community Streaming Infrastructure Ready!');
+  console.log('✅ LusoTown Portuguese-speaking community Streaming Infrastructure Ready!');
 };
 
 // Add global fetch polyfill for older Node.js versions

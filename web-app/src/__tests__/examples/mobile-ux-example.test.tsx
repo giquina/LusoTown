@@ -2,7 +2,7 @@
  * Example Mobile UX Tests for LusoTown Components
  * 
  * This file demonstrates how to use the Mobile UX Testing Suite
- * to validate components for Portuguese community platform requirements.
+ * to validate components for Portuguese-speaking community platform requirements.
  */
 
 import React from 'react';

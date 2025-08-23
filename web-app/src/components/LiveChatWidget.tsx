@@ -272,7 +272,7 @@ export default function LiveChatWidget({
           <div className="flex items-center justify-between text-xs text-gray-600">
             <div className="flex items-center gap-2">
               <span className="flex items-center gap-1">
-                🇵🇹 <span>{language === 'pt' ? 'Comunidade Portuguesa' : 'Portuguese Community'}</span>
+                🇵🇹 <span>{language === 'pt' ? 'Comunidade de Falantes de Português' : 'Portuguese-speaking community'}</span>
               </span>
             </div>
             <div className="flex items-center gap-4">

@@ -68,7 +68,7 @@ export default function HowConnectionsWork() {
     },
     {
       icon: '🇵🇹',
-      title: isPortuguese ? 'Comunidade Lusófona' : 'Portuguese Community',
+      title: isPortuguese ? 'Comunidade Lusófona' : 'Portuguese-speaking community',
       description: isPortuguese 
         ? 'Conecte-se especificamente com falantes de português na sua área'
         : 'Connect specifically with Portuguese speakers in your area'

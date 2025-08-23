@@ -1,6 +1,6 @@
 # Enhanced Matches System for LusoTown
 
-This directory contains the complete enhanced matches system for LusoTown, designed to strengthen Portuguese community connections in London through event-based matching, cultural achievements, and group activities.
+This directory contains the complete enhanced matches system for LusoTown, designed to strengthen Portuguese-speaking community connections in London through event-based matching, cultural achievements, and group activities.
 
 ## 🎯 Key Features Implemented
 
@@ -102,7 +102,7 @@ Progress Tracking → Badge Unlocking → Rewards → Premium Features
 - **Persistent Storage**: localStorage for user preferences and achievements
 
 ### API Integration
-- **Mock Data**: Comprehensive Portuguese community profiles
+- **Mock Data**: Comprehensive Portuguese-speaking community profiles
 - **Real-time Updates**: Achievement unlocking and match notifications
 - **Database Ready**: Compatible with Supabase PostgreSQL schema
 - **Event Integration**: Connects with existing events system
@@ -113,7 +113,7 @@ Progress Tracking → Badge Unlocking → Rewards → Premium Features
 - **Virtualization**: Large lists use virtual scrolling
 - **Image Optimization**: Next.js Image component with WebP support
 
-## 🎯 Portuguese Community Focus
+## 🎯 Portuguese-speaking community Focus
 
 ### Cultural Authenticity
 - **Regional Representation**: Porto, Lisboa, Açores, Brasil, Angola, etc.
@@ -125,7 +125,7 @@ Progress Tracking → Badge Unlocking → Rewards → Premium Features
 - **Portuguese Neighborhoods**: Stockwell, Vauxhall, Borough Market focus
 - **Community Venues**: Portuguese restaurants, cultural centers, churches
 - **Public Transport**: Integration with London travel for meetups
-- **Local Knowledge**: London Portuguese community insights
+- **Local Knowledge**: London Portuguese-speaking community insights
 
 ### Community Building
 - **Mentorship**: Experienced community members help newcomers
@@ -182,4 +182,4 @@ Progress Tracking → Badge Unlocking → Rewards → Premium Features
 - **Cultural Preservation**: Active use of Portuguese traditions
 - **Business Support**: Increased patronage of Portuguese businesses
 
-This enhanced matches system represents the next evolution of Portuguese community connection in London, combining modern technology with authentic cultural values to create meaningful, lasting relationships.
+This enhanced matches system represents the next evolution of Portuguese-speaking community connection in London, combining modern technology with authentic cultural values to create meaningful, lasting relationships.

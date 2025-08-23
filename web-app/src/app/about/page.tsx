@@ -68,7 +68,7 @@ export default function About() {
                   <span className="text-premium-700 font-bold text-lg">What is LusoTown? • O que é a LusoTown?</span>
                 </motion.div>
                 <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-premium-600 via-primary-600 to-secondary-600 bg-clip-text text-transparent mb-8">
-                  Your Portuguese Community Ecosystem in the UK
+                  Your Portuguese-speaking community Ecosystem in the UK
                 </h2>
                 <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
                   LusoTown is the UK's premier digital platform designed specifically for Portuguese speakers. 
@@ -96,7 +96,7 @@ export default function About() {
                         icon: UserGroupIcon,
                         title: "Meet Your Match",
                         titlePt: "Encontre a Sua Alma Gémea",
-                        description: "Connect with Portuguese speakers who share your saudade, cultural values, and interests. Our intelligent matching system helps you find meaningful relationships—romantic, friendship, or professional—within the Portuguese community.",
+                        description: "Connect with Portuguese speakers who share your saudade, cultural values, and interests. Our intelligent matching system helps you find meaningful relationships—romantic, friendship, or professional—within the Portuguese-speaking community.",
                         features: ["Cultural compatibility matching", "Portuguese heritage preferences", "London location-based connections", "Verified Portuguese speaker profiles"]
                       },
                       {
@@ -117,21 +117,21 @@ export default function About() {
                         icon: SparklesIcon,
                         title: "LusoTown TV",
                         titlePt: "LusoTown TV",
-                        description: "Watch live Portuguese cultural content, from cooking shows to interviews with Portuguese community leaders. Our streaming platform brings Portuguese entertainment directly to your device.",
+                        description: "Watch live Portuguese cultural content, from cooking shows to interviews with Portuguese-speaking community leaders. Our streaming platform brings Portuguese entertainment directly to your device.",
                         features: ["Live cultural programming", "Portuguese cooking shows", "Community interviews", "Cultural documentaries"]
                       },
                       {
                         icon: ChatBubbleLeftRightIcon,
                         title: "Community Feed",
                         titlePt: "Feed da Comunidade",
-                        description: "Stay connected with real-time updates from the Portuguese community. Share experiences, ask for recommendations, and stay informed about everything happening in Portuguese London.",
+                        description: "Stay connected with real-time updates from the Portuguese-speaking community. Share experiences, ask for recommendations, and stay informed about everything happening in Portuguese London.",
                         features: ["Real-time community updates", "Portuguese-language posts", "Event recommendations", "Local community support"]
                       },
                       {
                         icon: HeartIcon,
                         title: "Premium Services",
                         titlePt: "Serviços Premium",
-                        description: "Access exclusive Portuguese-speaking professional services including executive transport, cultural tours, and concierge services designed for the sophisticated Portuguese community in London.",
+                        description: "Access exclusive Portuguese-speaking professional services including executive transport, cultural tours, and concierge services designed for the sophisticated Portuguese-speaking community in London.",
                         features: ["Portuguese-speaking chauffeurs", "Cultural heritage tours", "Executive concierge services", "VIP event access"]
                       }
                     ].map((feature, index) => (
@@ -186,7 +186,7 @@ export default function About() {
                       The Complete Vision: Building Portuguese Britain
                     </h3>
                     <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                      Nossa visão • Our vision is to create the most comprehensive Portuguese community platform in the UK, 
+                      Nossa visão • Our vision is to create the most comprehensive Portuguese-speaking community platform in the UK, 
                       where every Portuguese speaker—from London to Edinburgh—feels connected, supported, and proud of their heritage.
                     </p>
                   </div>
@@ -271,7 +271,7 @@ export default function About() {
                     {[
                       {
                         section: "Homepage & Feed",
-                        description: "Your central hub for Portuguese community updates, event announcements, and real-time connections with fellow Portuguese speakers across the UK.",
+                        description: "Your central hub for Portuguese-speaking community updates, event announcements, and real-time connections with fellow Portuguese speakers across the UK.",
                         benefits: "Stay informed, never miss events, connect instantly with your community"
                       },
                       {
@@ -296,7 +296,7 @@ export default function About() {
                       },
                       {
                         section: "Premium Services",
-                        description: "Exclusive Portuguese-speaking services including executive transport, heritage tours, concierge services, and VIP experiences designed for sophisticated Portuguese community members.",
+                        description: "Exclusive Portuguese-speaking services including executive transport, heritage tours, concierge services, and VIP experiences designed for sophisticated Portuguese-speaking community members.",
                         benefits: "Luxury services in Portuguese, cultural authenticity, premium community experiences"
                       }
                     ].map((item, index) => (
@@ -615,7 +615,7 @@ export default function About() {
                   <span className="text-premium-700 font-bold text-sm">O Coração da Nossa Comunidade</span>
                 </motion.div>
                 <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-premium-600 via-primary-600 to-secondary-600 bg-clip-text text-transparent mb-6">
-                  The Heart of Our Portuguese Community
+                  The Heart of Our Portuguese-speaking community
                 </h2>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -714,7 +714,7 @@ export default function About() {
 
               <div className="grid lg:grid-cols-2 gap-12 mb-16">
                 <div className="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-8">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">Why Portuguese Community Matters</h3>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">Why Portuguese-speaking community Matters</h3>
                   <div className="space-y-4 text-gray-600">
                     <div className="flex items-start">
                       <CheckCircleIcon className="w-5 h-5 text-primary-500 mt-1 mr-3 flex-shrink-0" />
@@ -1534,7 +1534,7 @@ export default function About() {
           <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Growing London's Portuguese Community
+                Growing London's Portuguese-speaking community
               </h2>
               <p className="text-xl text-gray-600 mb-12">
                 Since launching, LusoTown has brought together Portuguese speakers from across London,
@@ -1544,7 +1544,7 @@ export default function About() {
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                 <div className="bg-white rounded-xl p-6 shadow-sm">
                   <div className="text-3xl font-bold text-primary-600 mb-2">750+</div>
-                  <div className="text-sm text-gray-600">Portuguese Community Members</div>
+                  <div className="text-sm text-gray-600">Portuguese-speaking community Members</div>
                   <div className="text-xs text-gray-500 mt-1">Connected in London</div>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-sm">
@@ -1685,7 +1685,7 @@ export default function About() {
                 Nossa Visão • Our Vision for the Future
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                By 2027, we envision LusoTown as London's strongest Portuguese community platform, 
+                By 2027, we envision LusoTown as London's strongest Portuguese-speaking community platform, 
                 connecting families across all boroughs and ensuring our language and culture thrive for generations.
               </p>
               
@@ -1744,7 +1744,7 @@ export default function About() {
                 JOIN NOW
               </a>
               <p className="text-gray-500 text-sm mt-4">
-                Free to join • Immediate access • UK Portuguese community
+                Free to join • Immediate access • UK Portuguese-speaking community
               </p>
             </div>
           </div>

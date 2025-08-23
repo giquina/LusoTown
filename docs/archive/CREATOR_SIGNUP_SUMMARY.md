@@ -240,6 +240,6 @@ supabase migration up
 
 ## 🏁 Conclusion
 
-This implementation provides a complete, production-ready creator signup system specifically designed for the Portuguese community. The combination of cultural authenticity, generous revenue sharing, and user-friendly design creates a compelling platform for Portuguese creators to monetize their cultural knowledge while serving the diaspora community in London and beyond.
+This implementation provides a complete, production-ready creator signup system specifically designed for the Portuguese-speaking community. The combination of cultural authenticity, generous revenue sharing, and user-friendly design creates a compelling platform for Portuguese creators to monetize their cultural knowledge while serving the diaspora community in London and beyond.
 
 The system is built with scalability in mind, supporting creators from Portugal, Brazil, Africa, and the global Portuguese diaspora, while maintaining the cultural authenticity that makes LusoTown unique in the market.

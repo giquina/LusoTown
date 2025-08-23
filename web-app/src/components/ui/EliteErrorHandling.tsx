@@ -113,8 +113,8 @@ function EliteErrorDisplay({
       : 'We sincerely apologize for the inconvenience',
     
     description: language === 'pt'
-      ? 'Algo inesperado aconteceu na nossa plataforma da comunidade portuguesa. A nossa equipa está a trabalhar para resolver esta situação.'
-      : 'Something unexpected occurred on our Portuguese community platform. Our team is working to resolve this situation.',
+      ? 'Algo inesperado aconteceu na nossa plataforma da comunidade de falantes de português. A nossa equipa está a trabalhar para resolver esta situação.'
+      : 'Something unexpected occurred on our Portuguese-speaking community platform. Our team is working to resolve this situation.',
     
     technical: language === 'pt'
       ? 'Detalhes técnicos (para desenvolvimento)'
@@ -287,8 +287,8 @@ function EliteErrorDisplay({
             >
               <p className="text-sm text-amber-700">
                 {language === 'pt' 
-                  ? '🇵🇹 A nossa comunidade portuguesa está sempre aqui para si. Entre em contacto connosco em'
-                  : '🇵🇹 Our Portuguese community is always here for you. Contact us at'
+                  ? '🇵🇹 A nossa comunidade de falantes de português está sempre aqui para si. Entre em contacto connosco em'
+                  : '🇵🇹 Our Portuguese-speaking community is always here for you. Contact us at'
                 } <a href="mailto:support@lusotown.com" className="font-semibold underline hover:text-amber-800">support@lusotown.com</a>
               </p>
             </motion.div>

@@ -93,7 +93,7 @@ export default function PortugueseBusinessConversationStarters({
           ? `Vejo que procuras ${profile.networkingGoals[0]}. Como posso ajudar-te a alcançar esse objetivo?`
           : `I see you're looking for ${profile.networkingGoals[0]}. How can I help you achieve that goal?`,
         category: language === "pt" ? "Objetivos de Networking" : "Networking Goals",
-        culturalContext: language === "pt" ? "Colaboração dentro da comunidade portuguesa" : "Collaboration within Portuguese community",
+        culturalContext: language === "pt" ? "Colaboração dentro da comunidade de falantes de português" : "Collaboration within Portuguese-speaking community",
         businessRelevance: language === "pt" ? "Parcerias estratégicas e apoio mútuo" : "Strategic partnerships and mutual support",
         popularity: 87,
       },
@@ -123,10 +123,10 @@ export default function PortugueseBusinessConversationStarters({
       {
         id: "bs7",
         text: language === "pt"
-          ? "Já pensaste em empreender ou tens algum projeto secundário? A comunidade portuguesa tem muito potencial empresarial!"
-          : "Have you thought about entrepreneurship or have any side projects? The Portuguese community has so much business potential!",
+          ? "Já pensaste em empreender ou tens algum projeto secundário? A comunidade de falantes de português tem muito potencial empresarial!"
+          : "Have you thought about entrepreneurship or have any side projects? The Portuguese-speaking community has so much business potential!",
         category: language === "pt" ? "Empreendedorismo" : "Entrepreneurship",
-        culturalContext: language === "pt" ? "Espírito empreendedor da comunidade portuguesa" : "Entrepreneurial spirit of Portuguese community",
+        culturalContext: language === "pt" ? "Espírito empreendedor da comunidade de falantes de português" : "Entrepreneurial spirit of Portuguese-speaking community",
         businessRelevance: language === "pt" ? "Inovação e criação de negócios" : "Innovation and business creation",
         popularity: 91,
       },
@@ -163,14 +163,14 @@ export default function PortugueseBusinessConversationStarters({
         businessRelevance: language === "pt" ? "Modelos de trabalho híbrido e global" : "Hybrid and global work models",
         popularity: 82,
       },
-      // Portuguese community business networking
+      // Portuguese-speaking community business networking
       {
         id: "bs11",
         text: language === "pt"
           ? "Participas em alguma associação ou rede profissional portuguesa em Londres?"
           : "Do you participate in any Portuguese professional association or network in London?",
         category: language === "pt" ? "Redes Profissionais" : "Professional Networks",
-        culturalContext: language === "pt" ? "Engagement com organizações da comunidade portuguesa" : "Engagement with Portuguese community organizations",
+        culturalContext: language === "pt" ? "Engagement com organizações da comunidade de falantes de português" : "Engagement with Portuguese-speaking community organizations",
         businessRelevance: language === "pt" ? "Networking estruturado e desenvolvimento profissional" : "Structured networking and professional development",
         popularity: 79,
       },

@@ -95,8 +95,8 @@ export default function WhatsAppNotificationWidget({
       category: 'system',
       title: language === 'pt' ? 'WhatsApp Ativado' : 'WhatsApp Enabled',
       message: language === 'pt' 
-        ? 'Receberá atualizações da comunidade portuguesa via WhatsApp'
-        : 'You\'ll receive Portuguese community updates via WhatsApp',
+        ? 'Receberá atualizações da comunidade de falantes de português via WhatsApp'
+        : 'You\'ll receive Portuguese-speaking community updates via WhatsApp',
       userId: 'current-user',
       priority: 'medium',
       actionUrl: '/notification-preferences',
@@ -163,8 +163,8 @@ export default function WhatsAppNotificationWidget({
                     </h3>
                     <p className="text-xs text-neutral-600">
                       {language === 'pt' 
-                        ? 'Junte-se à nossa comunidade portuguesa'
-                        : 'Join our Portuguese community'
+                        ? 'Junte-se à nossa comunidade de falantes de português'
+                        : 'Join our Portuguese-speaking community'
                       }
                     </p>
                   </div>
@@ -180,8 +180,8 @@ export default function WhatsAppNotificationWidget({
               <div className="space-y-3">
                 <p className="text-sm text-neutral-700">
                   {language === 'pt' 
-                    ? 'Receba atualizações exclusivas da comunidade portuguesa em Londres via WhatsApp:'
-                    : 'Get exclusive Portuguese community updates in London via WhatsApp:'
+                    ? 'Receba atualizações exclusivas da comunidade de falantes de português em Londres via WhatsApp:'
+                    : 'Get exclusive Portuguese-speaking community updates in London via WhatsApp:'
                   }
                 </p>
                 

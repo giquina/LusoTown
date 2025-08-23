@@ -91,8 +91,8 @@ export default function LondonToursPage() {
               className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-6 font-medium max-w-4xl mx-auto leading-relaxed"
             >
               {isPortuguese
-                ? "Descubra os destinos turísticos mais populares de Londres com a comunidade portuguesa — tours culturais, marcos icónicos e experiências autênticas."
-                : "Discover London's most popular tourist destinations with the Portuguese community — cultural tours, iconic landmarks, and authentic experiences."}
+                ? "Descubra os destinos turísticos mais populares de Londres com a comunidade de falantes de português — tours culturais, marcos icónicos e experiências autênticas."
+                : "Discover London's most popular tourist destinations with the Portuguese-speaking community — cultural tours, iconic landmarks, and authentic experiences."}
             </motion.p>
 
             <motion.div

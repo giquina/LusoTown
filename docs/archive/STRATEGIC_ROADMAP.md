@@ -34,7 +34,7 @@ Based on the strategic recommendations for serving London's **268,000 Portuguese
    - Integration with London borough data
 
 2. Neighborhood Groups
-   - Local Portuguese community groups by area
+   - Local Portuguese-speaking community groups by area
    - Transport coordination for dispersed families
    - Event carpooling from outer areas to central events
 ```
@@ -258,7 +258,7 @@ Based on the existing codebase, you have solid foundations:
 - Community cohesion: Event creation, mentorship hours, content sharing
 
 **Ultimate Goal:**
-Transform LusoTown from a useful tool into essential community infrastructure that preserves Portuguese culture while facilitating integration into British society. The platform should become so embedded in Portuguese community life that members cannot imagine organizing events, finding services, or maintaining connections without it.
+Transform LusoTown from a useful tool into essential community infrastructure that preserves Portuguese culture while facilitating integration into British society. The platform should become so embedded in Portuguese-speaking community life that members cannot imagine organizing events, finding services, or maintaining connections without it.
 
 **Key Success Indicator:**
 When gentrification displaces Portuguese families from Lambeth, LusoTown maintains their community connections and helps them rebuild Portuguese cultural hubs in new areas across London.

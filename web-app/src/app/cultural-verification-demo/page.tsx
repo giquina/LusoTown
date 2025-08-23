@@ -279,8 +279,8 @@ export default function CulturalVerificationDemoPage() {
                 </h3>
                 <p className="text-sm text-gray-600">
                   {language === 'pt' 
-                    ? 'Construa confiança na comunidade portuguesa através da verificação autêntica'
-                    : 'Build trust in the Portuguese community through authentic verification'
+                    ? 'Construa confiança na comunidade de falantes de português através da verificação autêntica'
+                    : 'Build trust in the Portuguese-speaking community through authentic verification'
                   }
                 </p>
               </div>
@@ -386,8 +386,8 @@ export default function CulturalVerificationDemoPage() {
               </h3>
               <p className="text-primary-700 max-w-2xl mx-auto">
                 {language === 'pt' 
-                  ? 'Descubra como a verificação cultural transforma a sua experiência de matches e conexões na comunidade portuguesa'
-                  : 'Discover how cultural verification transforms your matching experience and connections in the Portuguese community'
+                  ? 'Descubra como a verificação cultural transforma a sua experiência de matches e conexões na comunidade de falantes de português'
+                  : 'Discover how cultural verification transforms your matching experience and connections in the Portuguese-speaking community'
                 }
               </p>
             </div>

@@ -382,7 +382,7 @@ function MatchesContent() {
         "Share your interests, your UK location, and what you're looking for in the Portuguese-speaking community",
       titlePt: "Complete o Seu Perfil",
       descriptionPt:
-        "Partilhe os seus interesses, localização no Reino Unido e o que procura na comunidade portuguesa",
+        "Partilhe os seus interesses, localização no Reino Unido e o que procura na comunidade de falantes de português",
     },
     {
       icon: SparklesIcon,
@@ -1328,8 +1328,8 @@ function MatchesContent() {
               </h3>
               <p className="text-primary-700 max-w-2xl mx-auto">
                 {language === "pt" 
-                  ? "Escolha o plano que melhor se adapta às suas necessidades de networking na comunidade portuguesa."
-                  : "Choose the plan that best fits your Portuguese community networking needs."}
+                  ? "Escolha o plano que melhor se adapta às suas necessidades de networking na comunidade de falantes de português."
+                  : "Choose the plan that best fits your Portuguese-speaking community networking needs."}
               </p>
             </div>
 
@@ -1485,8 +1485,8 @@ function MatchesContent() {
             <div className="text-center mt-8">
               <p className="text-sm text-primary-600">
                 {language === "pt" 
-                  ? "Todos os planos incluem acesso à comunidade portuguesa no Reino Unido • Cancele a qualquer momento"
-                  : "All plans include access to the Portuguese community in the UK • Cancel anytime"}
+                  ? "Todos os planos incluem acesso à comunidade de falantes de português no Reino Unido • Cancele a qualquer momento"
+                  : "All plans include access to the Portuguese-speaking community in the UK • Cancel anytime"}
               </p>
             </div>
           </div>
@@ -1601,8 +1601,8 @@ function MatchesContent() {
             </h2>
             <p className="text-primary-700 max-w-3xl mx-auto">
               {language === "pt"
-                ? "Um guia simples para navegar e usar o nosso sistema de correspondências na comunidade portuguesa do Reino Unido"
-                : "A simple guide to navigate and use our Portuguese community matching system in the United Kingdom"}
+                ? "Um guia simples para navegar e usar o nosso sistema de correspondências na comunidade de falantes de português do Reino Unido"
+                : "A simple guide to navigate and use our Portuguese-speaking community matching system in the United Kingdom"}
             </p>
           </div>
 
@@ -1786,8 +1786,8 @@ function MatchesContent() {
               </h3>
               <p className="text-primary-700 mb-6">
                 {language === "pt"
-                  ? "Usou os seus 3 matches diários gratuitos. Faça upgrade para matches ilimitados e continue a conectar-se com mais membros da comunidade portuguesa."
-                  : "You've used your 3 free daily matches. Upgrade to unlimited matches and continue connecting with more Portuguese community members."}
+                  ? "Usou os seus 3 matches diários gratuitos. Faça upgrade para matches ilimitados e continue a conectar-se com mais membros da comunidade de falantes de português."
+                  : "You've used your 3 free daily matches. Upgrade to unlimited matches and continue connecting with more Portuguese-speaking community members."}
               </p>
 
               {/* Quick Benefits */}

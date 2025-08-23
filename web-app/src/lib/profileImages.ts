@@ -194,11 +194,11 @@ export const profileImages: Record<string, ProfileImage> = {
     category: 'forum'
   },
 
-  // Portuguese Community Testimonials (authentic Portuguese speakers)
+  // Portuguese-speaking community Testimonials (authentic Portuguese speakers)
   'carlos-silva': {
     id: 'carlos-silva',
     path: '/profiles/testimonials/portuguese/carlos-silva.jpg',
-    alt: 'Carlos Silva - Portuguese community organizer from Camden, London',
+    alt: 'Carlos Silva - Portuguese-speaking community organizer from Camden, London',
     category: 'testimonial'
   },
   'ana-ferreira': {
