@@ -46,7 +46,7 @@ LusoTown is a production-ready Portuguese community platform serving London & UK
 
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL with PostGIS, Simple Relay Server (SRS) for streaming, OpenStreetMap/Leaflet for mapping, Twitter API, Stripe, React Context state management.
 
-**Status**: Production-ready with 120+ pages, 486+ components, complete bilingual EN/PT system, mobile-first responsive design.
+**Status**: Production-ready with 120+ pages, 497+ components, complete bilingual EN/PT system, mobile-first responsive design.
 
 ## System Requirements
 
@@ -130,7 +130,7 @@ npm run lint                   # Lint web app
 ## Architecture Overview
 
 ### Monorepo Structure
-- **web-app/**: Next.js 14 web application (primary) - Production ready with 486+ components
+- **web-app/**: Next.js 14 web application (primary) - Production ready with 497+ components
 - **streaming/**: Node.js/Express streaming server with SRS integration - RTMP/HLS delivery
 - **mobile-app/**: React Native/Expo mobile application - Portuguese community focused
 - **packages/**: Shared packages (`@lusotown/design-tokens`, `@lusotown/ui`)
@@ -337,7 +337,7 @@ Build configuration optimized for production with bundle splitting, image optimi
 ## Core Architecture
 
 ### Component Architecture
-- **486+ React Components**: Modular, reusable components with Portuguese cultural theming
+- **497+ React Components**: Modular, reusable components with Portuguese cultural theming
 - **Specialized Component Libraries**: UI components in `/src/components/ui/`, matches in `/src/components/matches/`
 - **TypeScript First**: Strict typing throughout the codebase with custom type definitions
 - **Context-Based State**: 9+ React contexts for state management (Language, Heritage, Subscription, etc.)
