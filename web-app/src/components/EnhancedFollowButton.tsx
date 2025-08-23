@@ -272,7 +272,9 @@ export default function EnhancedFollowButton({
               ) : (
                 getIcon()
               )}
-              <span className={isCurrentlyFollowing && isHovered ? 'text-red-600' : ''}>
+              <span 
+                style={isCurrentlyFollowing && isHovered ? { color: '#dc2626' } : {}}
+              >
                 {getButtonText()}
               </span>
             </motion.button>
@@ -333,7 +335,9 @@ export default function EnhancedFollowButton({
           getIcon()
         )}
         {variant !== 'icon-only' && (
-          <span className={isCurrentlyFollowing && isHovered ? 'text-red-600' : ''}>
+          <span 
+            style={isCurrentlyFollowing && isHovered ? { color: '#dc2626' } : {}}
+          >
             {getButtonText()}
           </span>
         )}

@@ -118,12 +118,7 @@ export function MobileExperienceOptimizer({
         ease: [0.215, 0.61, 0.355, 1]
       }}
     >
-      {/* Performance indicator for development */}
-      {process.env.NODE_ENV === 'development' && (
-        <div className="fixed top-4 left-4 z-[9999] px-3 py-1 bg-black/80 text-white text-xs rounded-full">
-          {performanceMode} | {deviceInfo.isMobile ? 'Mobile' : 'Desktop'}
-        </div>
-      )}
+      {/* Performance indicator removed for cleaner UI */}
 
       {/* Optimized content wrapper */}
       <motion.div

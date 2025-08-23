@@ -54,6 +54,23 @@ export default function UserTypeSelection() {
     }
   }, [showModal])
 
+  // ESC key handler for easier closing
+  useEffect(() => {
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && showModal) {
+        skipForNow()
+      }
+    }
+
+    if (showModal) {
+      document.addEventListener('keydown', handleEscKey)
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscKey)
+    }
+  }, [showModal])
+
   const closeAndRemember = () => {
     try { localStorage.setItem('lusotown-onboarded-v3', '1') } catch {}
     setDismissed(true)
@@ -214,7 +231,7 @@ export default function UserTypeSelection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md"
+          className="fixed inset-0 z-[60] bg-black/85 backdrop-blur-md"
       onClick={closeAndRemember}
         >
           {/* Mobile Layout - Fixed positioning and accessibility */}
@@ -342,7 +359,7 @@ export default function UserTypeSelection() {
               <div className="p-4 border-t bg-gray-50">
                 <button
                   onClick={skipForNow}
-                  className="w-full py-3 px-4 text-sm text-gray-600 hover:text-gray-800 text-center font-medium rounded-xl hover:bg-gray-100 transition-all duration-200 flex items-center justify-center gap-2"
+                  className="w-full py-3 px-4 text-sm text-gray-700 hover:text-gray-900 text-center font-medium rounded-xl bg-gray-100 hover:bg-gray-200 transition-all duration-200 flex items-center justify-center gap-2 border border-gray-200"
                 >
                   <ClockIcon className="w-4 h-4" />
                   {t.skipForNow}
@@ -468,7 +485,7 @@ export default function UserTypeSelection() {
               <div className="p-6 border-t bg-gray-50 text-center">
                 <button
                   onClick={skipForNow}
-                  className="px-8 py-3 text-base text-gray-600 hover:text-gray-800 font-medium rounded-xl hover:bg-gray-100 transition-all duration-200 inline-flex items-center gap-2"
+                  className="px-8 py-3 text-base text-gray-700 hover:text-gray-900 font-medium rounded-xl bg-gray-100 hover:bg-gray-200 transition-all duration-200 inline-flex items-center gap-2 border border-gray-200"
                 >
                   <ClockIcon className="w-5 h-5" />
                   {t.skipForNow}

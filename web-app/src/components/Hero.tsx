@@ -73,19 +73,19 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight"
+                className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight tracking-tight"
               >
                 <span className="bg-gradient-to-r from-red-600 via-amber-600 to-green-600 bg-clip-text text-transparent">
                   Connect
                 </span>{" "}
-                <span className="text-gray-900">with Portuguese speakers across the United Kingdom</span>
+                <span className="text-gray-900">with Portuguese speakers across the UK</span>
               </motion.h1>
               
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl"
+                className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl"
               >
                 Join 750+ Portuguese speakers across the UK. 
                 <span className="font-semibold text-gray-800"> Events, networking, culture.</span>

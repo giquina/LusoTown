@@ -93,7 +93,7 @@ export default function CTA() {
             
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-4xl mx-auto mb-8 border border-white/20">
               <p className="text-2xl sm:text-3xl text-white font-bold mb-4 leading-tight">
-                Connect with Portuguese speakers across the United Kingdom
+                Connect with Portuguese speakers across the UK
               </p>
               <p className="text-lg text-white/90 leading-relaxed">
                 From London to Manchester, Birmingham to Edinburgh - join the largest Portuguese community platform in the UK. 

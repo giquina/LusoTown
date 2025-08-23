@@ -83,7 +83,7 @@ export default function Features() {
   const features = getFeatures(t)
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 bg-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-10 w-32 h-32 bg-secondary-100 rounded-full opacity-40"></div>
@@ -114,7 +114,7 @@ export default function Features() {
 
         {/* Features Grid - Enhanced Multi-Column Responsive Layout */}
         <div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10 opacity-0 translate-y-5 animate-fade-in-up"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 opacity-0 translate-y-5 animate-fade-in-up"
           style={{
             animation: 'fadeInUp 0.6s ease-out 0.2s forwards'
           }}
@@ -127,14 +127,14 @@ export default function Features() {
                 animation: `fadeInUp 0.6s ease-out ${0.3 + index * 0.1}s both`
               }}
             >
-              <div className="card p-4 sm:p-6 md:p-7 lg:p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl">
-                <div className={`w-14 h-14 ${feature.bgColor} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <feature.icon className={`h-7 w-7 ${feature.color}`} />
+              <div className="card p-4 sm:p-5 md:p-6 h-full min-h-[200px] sm:min-h-[220px] md:min-h-[240px] hover:scale-105 transition-all duration-300 group-hover:shadow-2xl">
+                <div className={`w-12 h-12 ${feature.bgColor} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <feature.icon className={`h-6 w-6 ${feature.color}`} />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed">
                   {feature.description}
                 </p>
               </div>

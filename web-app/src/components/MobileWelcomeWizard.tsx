@@ -106,15 +106,14 @@ export default function MobileWelcomeWizard({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
         >
-          <div className="h-full overflow-y-auto">
-            <motion.div
-              initial={{ y: 100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 50, opacity: 0 }}
-              className="min-h-full bg-white"
-            >
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 50, opacity: 0 }}
+            className="w-full max-w-lg max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+          >
               {/* Header */}
               <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-6 py-4">
                 <div className="flex items-center justify-between">
@@ -150,7 +149,7 @@ export default function MobileWelcomeWizard({
               </div>
 
               {/* Content */}
-              <div className="flex-1 p-6">
+              <div className="flex-1 p-6 overflow-y-auto">
                 {CurrentStepComponent && (
                   <CurrentStepComponent
                     selectedReason={selectedReason}
@@ -164,8 +163,7 @@ export default function MobileWelcomeWizard({
                   />
                 )}
               </div>
-            </motion.div>
-          </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
@@ -177,32 +175,32 @@ function PurposeStep({ selectedReason, onReasonSelect, onNext, isPortuguese }: a
   const reasons = [
     {
       id: 'events',
-      title: isPortuguese ? 'Eventos Portugueses' : 'Portuguese Events',
-      description: isPortuguese ? 'Fado, festas, Santos Populares' : 'Fado, festivals, Santos Populares',
+      title: isPortuguese ? 'Eventos' : 'Events',
+      description: isPortuguese ? 'Música, festivais e celebrações' : 'Music, festivals and celebrations',
       icon: CalendarDaysIcon,
       color: 'from-blue-500 to-blue-600',
       emoji: '🎉'
     },
     {
-      id: 'friends',
-      title: isPortuguese ? 'Fazer Amigos' : 'Make Friends',
-      description: isPortuguese ? 'Conhecer outros portugueses' : 'Meet other Portuguese speakers',
+      id: 'community',
+      title: isPortuguese ? 'Comunidade' : 'Community',
+      description: isPortuguese ? 'Conhecer outros falantes de português' : 'Meet other Portuguese speakers',
       icon: UsersIcon,
       color: 'from-green-500 to-green-600',
       emoji: '👥'
     },
     {
-      id: 'dating',
-      title: isPortuguese ? 'Encontrar Alguém' : 'Find Someone',
-      description: isPortuguese ? 'Relacionamentos e amor' : 'Relationships and love',
+      id: 'relationships',
+      title: isPortuguese ? 'Relacionamentos' : 'Relationships',
+      description: isPortuguese ? 'Encontrar alguém especial' : 'Find someone special',
       icon: HeartIcon,
       color: 'from-red-500 to-pink-500',
       emoji: '❤️'
     },
     {
-      id: 'business',
+      id: 'networking',
       title: isPortuguese ? 'Networking' : 'Networking',
-      description: isPortuguese ? 'Conectar profissionalmente' : 'Connect professionally',
+      description: isPortuguese ? 'Oportunidades profissionais' : 'Professional opportunities',
       icon: StarIcon,
       color: 'from-purple-500 to-purple-600',
       emoji: '💼'
@@ -301,7 +299,7 @@ function CulturalConnectionStep({ onNext, onPrevious, isPortuguese }: any) {
           transition={{ delay: 0.3 }}
           className="text-2xl font-bold text-gray-900"
         >
-          {isPortuguese ? 'Perfeito para portugueses!' : 'Perfect for Portuguese speakers!'}
+          {isPortuguese ? 'Bem-vindo à comunidade lusófona do Reino Unido!' : 'Welcome to the UK Portuguese-speaking community!'}
         </motion.h2>
         
         <motion.p
@@ -311,8 +309,8 @@ function CulturalConnectionStep({ onNext, onPrevious, isPortuguese }: any) {
           className="text-lg text-gray-600 leading-relaxed"
         >
           {isPortuguese 
-            ? 'Junta-te à maior comunidade de falantes de português em Londres'
-            : 'Join London\'s largest Portuguese-speaking community'
+            ? 'Conecta-te com outros falantes de português por todo o Reino Unido'
+            : 'Connect with other Portuguese speakers across the United Kingdom'
           }
         </motion.p>
       </div>
@@ -328,7 +326,7 @@ function CulturalConnectionStep({ onNext, onPrevious, isPortuguese }: any) {
           <div>
             <div className="text-3xl font-bold text-green-600">{COMMUNITY_STATS.members}</div>
             <div className="text-xs text-green-700 font-medium">
-              {isPortuguese ? 'Portugueses' : 'Portuguese'}
+              {isPortuguese ? 'Membros' : 'Members'}
             </div>
           </div>
           <div>
@@ -356,19 +354,19 @@ function CulturalConnectionStep({ onNext, onPrevious, isPortuguese }: any) {
         {[
           {
             emoji: '🎵',
-            text: isPortuguese ? 'Noites de Fado autênticas' : 'Authentic Fado nights'
+            text: isPortuguese ? 'Música e entretenimento' : 'Music and entertainment'
           },
           {
-            emoji: '🍷',
-            text: isPortuguese ? 'Provas de vinhos portugueses' : 'Portuguese wine tastings'
+            emoji: '🍽️',
+            text: isPortuguese ? 'Experiências gastronómicas diversas' : 'Diverse dining experiences'
           },
           {
             emoji: '⚽',
-            text: isPortuguese ? 'Ver jogos de futebol juntos' : 'Watch football matches together'
+            text: isPortuguese ? 'Desportos e atividades' : 'Sports and activities'
           },
           {
-            emoji: '🏰',
-            text: isPortuguese ? 'Passeios culturais em Londres' : 'Cultural tours in London'
+            emoji: '🎭',
+            text: isPortuguese ? 'Eventos culturais e sociais' : 'Cultural and social events'
           }
         ].map((item, index) => (
           <motion.div
@@ -444,7 +442,7 @@ function ActionStep({ onPrevious, onComplete, isPortuguese }: any) {
           className="text-lg text-gray-600 leading-relaxed"
         >
           {isPortuguese 
-            ? 'Encontre portugueses perto de si sem pagar nada'
+            ? 'Encontre falantes de português perto de si sem pagar nada'
             : 'Find Portuguese speakers near you at no cost'
           }
         </motion.p>
@@ -461,7 +459,7 @@ function ActionStep({ onPrevious, onComplete, isPortuguese }: any) {
         <div className="flex items-center justify-between">
           <div className="text-left">
             <div className="text-xl font-bold mb-1">
-              {isPortuguese ? 'Encontrar Portugueses' : 'Find Portuguese Matches'}
+              {isPortuguese ? 'Encontrar Falantes de Português' : 'Find Portuguese Speakers'}
             </div>
             <div className="text-sm text-white/90">
               {isPortuguese ? 'Completamente GRATUITO' : 'Completely FREE'}
@@ -514,7 +512,7 @@ function ActionStep({ onPrevious, onComplete, isPortuguese }: any) {
           {[
             isPortuguese ? '✓ Matching gratuito para sempre' : '✓ Free matching forever',
             isPortuguese ? '✓ Primeiro evento gratuito' : '✓ First event free',
-            isPortuguese ? '✓ Acesso à comunidade portuguesa' : '✓ Access to Portuguese community'
+            isPortuguese ? '✓ Acesso à comunidade lusófona do Reino Unido' : '✓ Access to UK Portuguese-speaking community'
           ].map((benefit, index) => (
             <div key={index} className="text-sm text-green-700 flex items-center gap-2">
               <CheckIcon className="w-4 h-4 text-green-600" />

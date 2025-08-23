@@ -297,7 +297,7 @@ export default function GroupsShowcase() {
             transition={{ delay: 0.2 }}
             className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium"
           >
-            Connect with Portuguese speakers across the United Kingdom. From business networking in London
+            Connect with Portuguese speakers across the UK. From business networking in London
             to cultural events in Manchester, discover groups nationwide that match your interests and make lasting friendships.
           </motion.p>
         </div>

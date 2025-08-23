@@ -102,17 +102,17 @@ return isPortuguese ? 'Seguir' : 'Follow'
   const variantClasses = {
     default: `px-4 py-2 rounded-lg ${
       isCurrentlyFollowing 
-        ? `bg-gray-100 text-gray-700 border border-gray-300 hover:bg-red-50 hover:text-red-600 hover:border-red-300`
+        ? `bg-gray-100 text-gray-700 border border-gray-300 hover:bg-red-50 hover:border-red-300`
         : `bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600 shadow-sm hover:shadow-md`
     }`,
     compact: `px-3 py-1.5 text-sm rounded-md ${
       isCurrentlyFollowing 
-        ? `bg-gray-100 text-gray-700 border border-gray-300 hover:bg-red-50 hover:text-red-600 hover:border-red-300`
+        ? `bg-gray-100 text-gray-700 border border-gray-300 hover:bg-red-50 hover:border-red-300`
         : `bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600`
     }`,
     'icon-only': `p-2 rounded-full ${
       isCurrentlyFollowing 
-        ? `bg-gray-100 text-gray-700 hover:bg-red-50 hover:text-red-600`
+        ? `bg-gray-100 text-gray-700 hover:bg-red-50`
         : `bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600`
     }`
   }
@@ -130,7 +130,9 @@ return isPortuguese ? 'Seguir' : 'Follow'
       >
         {getIcon()}
         {variant !== 'icon-only' && (
-          <span className={isCurrentlyFollowing && isHovered ? 'text-red-600' : ''}>
+          <span 
+            style={isCurrentlyFollowing && isHovered ? { color: '#dc2626' } : {}}
+          >
             {getButtonText()}
           </span>
         )}
