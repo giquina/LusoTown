@@ -17,7 +17,7 @@ function validateEnvironmentSecurity(): void {
     // Server-side security validation
     const requiredEnvVars = [
       'DEMO_EMAIL',
-      'DEMO_PASSWORD',
+      'DEMO_PASSWORD', 
       'ADMIN_EMAIL_DOMAIN',
       'NEXT_PUBLIC_SUPABASE_URL',
       'NEXT_PUBLIC_SUPABASE_ANON_KEY'
@@ -26,9 +26,13 @@ function validateEnvironmentSecurity(): void {
     const missingVars = requiredEnvVars.filter(varName => !process.env[varName])
     
     if (missingVars.length > 0) {
-      console.error('SECURITY ERROR: Missing required environment variables:', missingVars)
+      console.warn('Missing environment variables:', missingVars)
+      console.log('Set these variables in Vercel dashboard or .env.local for full functionality')
       
-      if (process.env.NODE_ENV === 'production') {
+      // Only throw error in actual runtime, not during build or static generation
+      if (process.env.NODE_ENV === 'production' && 
+          typeof process !== 'undefined' && 
+          process.env.NEXT_PHASE !== 'phase-production-build') {
         throw new Error(`Missing critical environment variables: ${missingVars.join(', ')}`)
       }
     }

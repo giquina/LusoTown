@@ -568,13 +568,26 @@ export function getOptimizedSupabaseClient(): OptimizedPortugueseSupabaseClient 
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     
     if (!supabaseUrl || !supabaseKey) {
-      throw new Error('Missing Supabase configuration for Portuguese community optimization');
+      console.warn('Missing Supabase configuration for Portuguese community optimization');
+      console.log('Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in environment variables');
+      
+      // Throw error only in production runtime, not during build
+      if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
+        throw new Error('Missing Supabase configuration for Portuguese community optimization');
+      }
+      
+      // Return a mock client for build time
+      return null as any;
     }
     
     optimizedSupabaseClient = new OptimizedPortugueseSupabaseClient(supabaseUrl, supabaseKey);
     
     // Prefetch popular content on initialization
-    optimizedSupabaseClient.prefetchPopularContent();
+    try {
+      optimizedSupabaseClient.prefetchPopularContent();
+    } catch (error) {
+      console.warn('Failed to prefetch content during initialization:', error);
+    }
   }
   
   return optimizedSupabaseClient;

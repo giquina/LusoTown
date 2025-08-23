@@ -1,9 +1,15 @@
 # 🚀 LusoTown - Complete Vercel Deployment Guide
 
-## ✅ Deployment Status: BUILD SUCCESSFUL
-- **Build Verified**: 149 pages generated successfully
-- **Dependencies**: Installed successfully
-- **Production Ready**: ✅ All systems go
+## ⚠️ Deployment Status: BUILD REQUIRES ENVIRONMENT VARIABLES
+
+**Latest Build Error**: Missing critical environment variable `NEXT_PUBLIC_SUPABASE_URL`
+
+**Solution**: Configure environment variables in Vercel dashboard before deployment.
+
+- **Build Status**: ✅ Build process verified (149 pages generated locally)
+- **Dependencies**: ✅ Installed successfully  
+- **Issue**: ❌ Missing environment variables cause deployment failure
+- **Fix**: 📋 [Complete Environment Setup Guide](./VERCEL_ENVIRONMENT_SETUP.md)
 
 ## 🔐 Authentication Required
 
@@ -53,8 +59,30 @@ The repository has GitHub Actions configured at `.github/workflows/deploy.yml`. 
 
 ## 📋 Required Environment Variables
 
-Configure these in Vercel dashboard or add to GitHub secrets:
+⚠️ **CRITICAL**: The deployment failed because `NEXT_PUBLIC_SUPABASE_URL` was missing.
 
+**📋 [Complete Setup Guide](./VERCEL_ENVIRONMENT_SETUP.md)** - Follow this for step-by-step environment variable configuration.
+
+### Quick Fix - Essential Variables Only
+
+Configure these in Vercel dashboard to resolve the deployment error:
+
+```env
+# Essential (Required for deployment)
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+DEMO_EMAIL=demo@lusotown.com
+DEMO_PASSWORD=LusoTown2025!
+ADMIN_EMAIL_DOMAIN=lusotown.com
+```
+
+### How to Add in Vercel Dashboard
+1. Go to your Vercel project dashboard
+2. **Settings** → **Environment Variables**  
+3. Add each variable for **Production**, **Preview**, and **Development**
+4. **Redeploy** from Deployments tab
+
+### Complete Variables (Optional)
 ```env
 # Essential (Required)
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url_here
