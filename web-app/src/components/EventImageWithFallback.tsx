@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import Image from 'next/image'
 import { getEventPlaceholder } from '@/lib/placeholders'
 
@@ -27,7 +27,45 @@ export default function EventImageWithFallback({
 }: EventImageWithFallbackProps) {
   const [imageError, setImageError] = useState(false)
   const hasValidSrc = typeof src === 'string' && src.trim().length > 0
-  const safeSrc = hasValidSrc ? src : getEventPlaceholder(category)
+
+  // Allowed hosts based on next.config.js images.remotePatterns
+  const allowedHosts = useMemo(
+    () => [
+      'images.unsplash.com',
+      'unsplash.com',
+      'res.cloudinary.com',
+      'lusotown-london.vercel.app',
+      'stream.lusotown.com',
+      'portuguese-content.lusotown.com',
+      'lusotown-portuguese-content.b-cdn.net',
+      'lusotown-portuguese-streams.b-cdn.net',
+      // wildcard domain: *.b-cdn.net (handle via endsWith check)
+      '.b-cdn.net',
+      // YouTube thumbnails
+      'img.youtube.com',
+      'i.ytimg.com',
+    ],
+    []
+  )
+
+  const isAllowedExternal = (url: string) => {
+    try {
+      // Allow data, blob and relative paths immediately
+      if (url.startsWith('data:') || url.startsWith('blob:') || url.startsWith('/')) return true
+      const u = new URL(url)
+      const host = u.hostname.toLowerCase()
+      // direct host match
+      if (allowedHosts.includes(host)) return true
+      // support wildcard for *.b-cdn.net
+      if (host.endsWith('.b-cdn.net')) return true
+      return false
+    } catch {
+      // If URL parsing fails, treat as not allowed and use placeholder
+      return false
+    }
+  }
+
+  const safeSrc = hasValidSrc && isAllowedExternal(src) ? src : getEventPlaceholder(category)
   
   if (imageError || !hasValidSrc) {
     if (fill) {
