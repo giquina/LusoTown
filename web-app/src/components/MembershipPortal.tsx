@@ -6,7 +6,7 @@ import {
   ChartBarIcon,
   CalendarDaysIcon,
   GiftIcon,
-  UserGroupIcon,
+  UsersIcon as UserGroupIcon,
   SparklesIcon,
   TrophyIcon,
   ArrowTrendingUpIcon,

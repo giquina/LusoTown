@@ -174,7 +174,7 @@ const membershipTiers = [
     monthlyPrice: SUBSCRIPTION_PLANS.familia.monthly,
     description: SUBSCRIPTION_PLANS.familia.culturalValuePt,
     descriptionEn: SUBSCRIPTION_PLANS.familia.culturalValueEn,
-    icon: <UserGroupIcon className="w-6 h-6" />,
+    icon: <UsersIcon className="w-6 h-6" />,
     solidIcon: <HeartIconSolid className="w-6 h-6" />,
     color: "secondary",
     features: [
@@ -523,7 +523,7 @@ export default function MembershipTiers({
               </div>
               <div>
                 <div className="w-12 h-12 bg-gradient-to-br from-red-100 to-red-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <UserGroupIcon className="w-6 h-6 text-red-600" />
+                  <UsersIcon className="w-6 h-6 text-red-600" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">
                   {isPortuguese ? "Famílias Portuguesas" : "Portuguese Families"}
