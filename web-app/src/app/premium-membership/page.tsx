@@ -12,7 +12,7 @@ import {
   SparklesIcon,
   ArrowRightIcon,
   StarIcon,
-  UserGroupIcon,
+  UsersIcon as UserGroupIcon,
   CalendarDaysIcon,
   ShieldCheckIcon
 } from '@heroicons/react/24/outline'
