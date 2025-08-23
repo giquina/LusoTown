@@ -25,18 +25,18 @@
     "helmet": "^7.0.0",
     "node-fetch": "^3.3.2",
     "node-media-server": "^2.6.2",
-    "redis": "^4.6.7",
-    "socket.io": "^4.7.2",
+    "redis": "^5.8.2",
+    "socket.io": "^4.8.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "jest": "^29.5.0",
+    "jest": "^30.0.5",
     "nodemon": "^3.0.1"
   },
   "author": "LusoTown Team",
   "license": "MIT",
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
+    "node": "22.x",
+    "npm": "9.x"
   }
 }

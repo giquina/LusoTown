@@ -25,16 +25,69 @@ LusoTown uses a specialized agent system for expert guidance across all developm
 - **`performance-coach-advisor`** - Performance optimization and mobile-first experience tuning
 - **`security-guardian-advisor`** - Security, privacy, and GDPR compliance guidance
 - **`growth-analytics-advisor`** - Data-driven growth strategies and Portuguese-speaking community expansion
+- **`development-troubleshooting-advisor`** - Development environment setup, dependency management, and build issues resolution
 
-### Agent Usage Example
+### Automatic Agent Activation ⚡
+
+**IMPORTANT**: Agents now activate **automatically** based on context - no manual calls needed!
+
+**Auto-Activation Examples**:
+- Development errors → `development-troubleshooting-advisor` activates instantly
+- Community content → `instruction-compliance-advisor` validates inclusivity  
+- Performance issues → `performance-coach-advisor` provides optimizations
+- Strategic decisions → `strategic-decision-advisor` offers guidance
+
+**Manual Override** (if needed):
 ```
 Task tool with:
 - description: "Strategic feature evaluation"  
-- subagent_type: "strategic-decision-advisor"
-- prompt: "Should we prioritize video calls or better matching algorithms for Portuguese-speaking community?"
+- subagent_type: "strategic-decision-advisor"  
+- prompt: "Should we prioritize video calls or better matching algorithms?"
 ```
 
-**Full Agent Documentation**: See `/AGENTS.md` for complete specifications, activation scenarios, and integration guidelines.
+**Full Agent Documentation**: See `/AGENTS.md` and `/web-app/src/agents/AutomaticAgentActivation.md`
+
+## 🌍 Community Inclusivity Guidelines
+
+**CRITICAL**: LusoTown serves Portuguese speakers from ALL lusophone nations (Portugal, Brazil, Cape Verde, Angola, Mozambique, etc.) across the entire United Kingdom.
+
+**Essential Guidelines**:
+- Use "Portuguese-speaking community" NOT "Portuguese community" 
+- Reference "United Kingdom" NOT just "London"
+- Always mix events from multiple Portuguese-speaking nations (Portugal, Brazil, Cape Verde, etc.)
+- Include diverse user testimonials from all lusophone backgrounds
+
+**Documentation**: See `/web-app/src/config/community-guidelines.ts` for comprehensive inclusivity rules, validation functions, and usage examples.
+
+## 🛠️ Development Troubleshooting
+
+**Common Issues and Solutions**:
+
+### TailwindCSS Module Not Found
+```bash
+# Error: Cannot find module 'tailwindcss'
+cd /workspaces/LusoTown
+npm install tailwindcss autoprefixer postcss --save-dev
+# Restart development server
+```
+
+### npm ENOTEMPTY Errors
+```bash
+# Error: ENOTEMPTY directory rename conflicts
+npm cache clean --force
+rm -rf node_modules package-lock.json
+npm install
+```
+
+### Port Conflicts
+```bash
+# If port 3000 is in use
+lsof -i :3000  # Find process using port
+kill -9 <PID>  # Kill the process
+# Or use different port: npm run dev -- -p 3002
+```
+
+**For complex issues**: Use `development-troubleshooting-advisor` agent for step-by-step guidance.
 
 ## Current Active TODO Tasks
 

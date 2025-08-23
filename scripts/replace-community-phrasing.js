@@ -18,44 +18,18 @@ const targets = [
 
 const replacements = [
   // English variants
-  { from: /United Kingdom's Portuguese-speaking community platform/g, to: "United Kingdom's Portuguese-speaking community platform" },
-  { from: /Portuguese-speaking community/g, to: 'Portuguese-speaking community' },
+  { from: /UK's Portuguese-speaking community platform/g, to: "UK's Portuguese-speaking community platform" },
+  { from: /Portuguese-speaking Community/g, to: 'Portuguese-speaking Community' },
   { from: /Portuguese-speaking community/gi, to: 'Portuguese-speaking community' },
   { from: /Portuguese-speaking Friends/g, to: 'Portuguese-speaking Friends' },
   { from: /Portuguese-speaking friends/g, to: 'Portuguese-speaking friends' },
-  { from: /Portuguese-speaking community Centre/g, to: 'Portuguese-speaking community Centre' },
-
-  // United Kingdom -> United Kingdom (case sensitive and common patterns)
-  // Note: avoid blindly replacing lowercase 'uk' to prevent breaking .uk domains/URLs
-  // Standalone uppercase United Kingdom
-  { from: /\bUK\b/g, to: 'United Kingdom' },
-  // Dotted variant often used in prose
-  { from: /\bU\.K\.?\b/g, to: 'United Kingdom' },
-  // In parentheses or with prepositions
-  { from: /\bUK\)/g, to: 'United Kingdom)' },
-  { from: /\(United Kingdom\b/g, to: '(United Kingdom' },
-  { from: /in the United Kingdom\b/g, to: 'in the United Kingdom' },
-  { from: /across the United Kingdom\b/g, to: 'across the United Kingdom' },
-  { from: /throughout the United Kingdom\b/g, to: 'throughout the United Kingdom' },
-  { from: /within the United Kingdom\b/g, to: 'within the United Kingdom' },
-  { from: /United Kingdom-wide\b/g, to: 'United Kingdom-wide' },
-  { from: /\bUK-/g, to: 'United Kingdom-' },
-  { from: /United Kingdom market\b/g, to: 'United Kingdom market' },
-  { from: /United Kingdom economy\b/g, to: 'United Kingdom economy' },
-  { from: /United Kingdom community\b/g, to: 'United Kingdom community' },
-  { from: /United Kingdom Portuguese/gi, to: 'United Kingdom Portuguese' },
-  { from: /Portuguese in the United Kingdom/gi, to: 'Portuguese in the United Kingdom' },
-
+  { from: /Portuguese-speaking Community Centre/g, to: 'Portuguese-speaking Community Centre' },
 
   // Portuguese (pt) variants - preserve accents and common casings
   { from: /Comunidade de Falantes de Português/g, to: 'Comunidade de Falantes de Português' },
   { from: /comunidade de falantes de português/g, to: 'comunidade de falantes de português' },
   { from: /Comunidade de falantes de português/g, to: 'Comunidade de falantes de português' },
   { from: /comunidade de Falantes de Português/g, to: 'comunidade de Falantes de Português' },
-  // Portuguese equivalents of United Kingdom (ensure correct phrasing)
-  { from: /\bReino Unido\b/g, to: 'Reino Unido' },
-  { from: /no United Kingdom\b/g, to: 'no Reino Unido' },
-  { from: /no Reino Unido\b/g, to: 'no Reino Unido' },
 ];
 
 function isSpecialName(file) {
