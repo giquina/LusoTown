@@ -1,0 +1,72 @@
+/**
+ * Framer Motion CSS Fixes
+ * 
+ * This file contains fixes for Framer Motion animation issues with Tailwind CSS
+ * dynamic color classes that can't be properly animated by Framer Motion.
+ */
+
+/* Prevent color class animation conflicts */
+[data-framer-component] .text-red-600,
+[data-framer-component] .text-red-500,
+[data-framer-component] .text-red-700,
+[data-framer-component] .bg-red-600,
+[data-framer-component] .bg-red-500,
+[data-framer-component] .bg-red-50,
+[data-framer-component] .bg-red-100 {
+  animation: none !important;
+  transition: color 0.2s ease, background-color 0.2s ease !important;
+}
+
+/* Portuguese brand color fixes */
+[data-framer-component] .text-primary-600,
+[data-framer-component] .text-primary-500,
+[data-framer-component] .text-primary-700,
+[data-framer-component] .bg-primary-50,
+[data-framer-component] .bg-primary-100,
+[data-framer-component] .bg-primary-600 {
+  animation: none !important;
+  transition: color 0.2s ease, background-color 0.2s ease !important;
+}
+
+[data-framer-component] .text-secondary-600,
+[data-framer-component] .text-secondary-500,
+[data-framer-component] .text-secondary-700,
+[data-framer-component] .bg-secondary-50,
+[data-framer-component] .bg-secondary-100 {
+  animation: none !important;
+  transition: color 0.2s ease, background-color 0.2s ease !important;
+}
+
+[data-framer-component] .text-blue-600,
+[data-framer-component] .text-blue-500,
+[data-framer-component] .text-blue-700,
+[data-framer-component] .bg-blue-50,
+[data-framer-component] .bg-blue-100 {
+  animation: none !important;
+  transition: color 0.2s ease, background-color 0.2s ease !important;
+}
+
+/* Fallback for any motion components with problematic classes */
+.motion-component .text-red-600 { color: #dc2626 !important; }
+.motion-component .text-red-500 { color: #ef4444 !important; }
+.motion-component .text-red-700 { color: #b91c1c !important; }
+.motion-component .bg-red-50 { background-color: #fef2f2 !important; }
+.motion-component .bg-red-100 { background-color: #fee2e2 !important; }
+
+.motion-component .text-primary-600 { color: #D4A574 !important; }
+.motion-component .text-primary-500 { color: #D4A574 !important; }
+.motion-component .text-primary-700 { color: #B8935F !important; }
+.motion-component .bg-primary-50 { background-color: #FDF8F3 !important; }
+.motion-component .bg-primary-100 { background-color: #F9F0E5 !important; }
+
+.motion-component .text-secondary-600 { color: #8B4513 !important; }
+.motion-component .text-secondary-500 { color: #A0522D !important; }
+.motion-component .text-secondary-700 { color: #6B3410 !important; }
+.motion-component .bg-secondary-50 { background-color: #FAF5F0 !important; }
+.motion-component .bg-secondary-100 { background-color: #F3E8D6 !important; }
+
+.motion-component .text-blue-600 { color: #2563eb !important; }
+.motion-component .text-blue-500 { color: #3b82f6 !important; }
+.motion-component .text-blue-700 { color: #1d4ed8 !important; }
+.motion-component .bg-blue-50 { background-color: #eff6ff !important; }
+.motion-component .bg-blue-100 { background-color: #dbeafe !important; }

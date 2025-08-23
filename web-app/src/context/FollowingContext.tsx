@@ -1,10 +1,12 @@
 'use client'
 
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react'
+import { supabase, getCurrentUser } from '@/lib/supabase'
+import { useAuthRequired } from '@/hooks/useAuthRequired'
 
 export interface FollowableEntity {
   id: string
-  type: 'person' | 'group' | 'community' | 'event_organizer'
+  type: 'person' | 'group' | 'community' | 'event_organizer' | 'portuguese_nation'
   name: string
   title?: string
   description?: string
@@ -15,21 +17,39 @@ export interface FollowableEntity {
   isVerified?: boolean
   culturalFocus?: string[] // Portuguese cultural interests
   lastActive?: string
+  // Portuguese nation specific fields
+  countryCode?: string // For portuguese_nation type
+  capital?: string
+  language?: string
+  currency?: string
+  benefits?: string[] // What following this nation provides
+  upcomingEvents?: number
+  businessOpportunities?: number
+}
+
+export interface FollowBenefits {
+  notifications: string[]
+  events: string[]
+  networking: string[]
+  opportunities: string[]
+  content: string[]
 }
 
 export interface Following {
+  id?: string // Database ID
   entity: FollowableEntity
   followedAt: string
   notificationsEnabled: boolean
+  userId?: string // For database storage
 }
 
 interface FollowingContextType {
   following: Following[]
-  followEntity: (entity: FollowableEntity) => void
-  unfollowEntity: (entityId: string) => void
+  followEntity: (entity: FollowableEntity) => Promise<boolean>
+  unfollowEntity: (entityId: string) => Promise<boolean>
   isFollowing: (entityId: string) => boolean
-  toggleFollow: (entity: FollowableEntity) => void
-  toggleNotifications: (entityId: string) => void
+  toggleFollow: (entity: FollowableEntity) => Promise<boolean>
+  toggleNotifications: (entityId: string) => Promise<boolean>
   getFollowingByType: (type: FollowableEntity['type']) => Following[]
   getFollowingSuggestions: () => FollowableEntity[]
   getTotalFollowingCount: () => number
@@ -38,30 +58,78 @@ interface FollowingContextType {
     groups: number
     communities: number
     eventOrganizers: number
+    portugueseNations: number
   }
+  getFollowBenefits: (entityType: FollowableEntity['type']) => FollowBenefits
+  loading: boolean
+  isAuthenticated: boolean
 }
 
 const FollowingContext = createContext<FollowingContextType | undefined>(undefined)
 
 export function FollowingProvider({ children }: { children: ReactNode }) {
   const [following, setFollowing] = useState<Following[]>([])
+  const [loading, setLoading] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const { requireAuth } = useAuthRequired()
 
-  // Load following data from localStorage on mount
+  // Load following data from database on mount
   useEffect(() => {
-    const savedFollowing = localStorage.getItem('lusotown-following')
-    if (savedFollowing) {
-      try {
-        setFollowing(JSON.parse(savedFollowing))
-      } catch (error) {
-        console.error('Error parsing saved following data:', error)
-      }
-    }
+    loadFollowingData()
+    checkAuthStatus()
   }, [])
 
-  // Save following data to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem('lusotown-following', JSON.stringify(following))
-  }, [following])
+  const checkAuthStatus = async () => {
+    try {
+      const user = await getCurrentUser()
+      setIsAuthenticated(!!user)
+    } catch {
+      setIsAuthenticated(false)
+    }
+  }
+
+  const loadFollowingData = async () => {
+    if (!isAuthenticated) return
+    
+    setLoading(true)
+    try {
+      const user = await getCurrentUser()
+      if (!user) return
+
+      const { data, error } = await supabase
+        .from('user_following')
+        .select(`
+          id,
+          entity_id,
+          entity_type,
+          notifications_enabled,
+          followed_at,
+          entity_data
+        `)
+        .eq('user_id', user.id)
+        .eq('is_active', true)
+
+      if (error) throw error
+
+      const followingData: Following[] = (data || []).map(item => ({
+        id: item.id,
+        entity: {
+          id: item.entity_id,
+          type: item.entity_type,
+          ...item.entity_data
+        },
+        followedAt: item.followed_at,
+        notificationsEnabled: item.notifications_enabled,
+        userId: user.id
+      }))
+
+      setFollowing(followingData)
+    } catch (error) {
+      console.error('Error loading following data:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   const followEntity = (entity: FollowableEntity) => {
     setFollowing(prev => {
