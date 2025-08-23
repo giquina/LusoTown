@@ -141,13 +141,13 @@ export const COMPETITOR_KEYWORDS = [
   "meetup portuguese london",
   "facebook grupos portugueses londres",
   "portuguese meetup groups london",
-  "whatsapp grupos portugueses uk",
+  "whatsapp grupos portugueses united kingdom",
 
   // Business platforms
-  "portuguese chamber commerce uk",
+  "portuguese chamber commerce united kingdom",
   "luso british chamber commerce",
-  "portuguese trade association uk",
-  "invest portugal uk",
+  "portuguese trade association united kingdom",
+  "invest portugal united kingdom",
 
   // Cultural organizations
   "instituto camões londres",
@@ -318,7 +318,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       "comunidade angolana londres",
       "mozambican community london",
       "cabo-verdianos londres",
-      "lusophone community uk",
+  "lusophone community united kingdom",
       "comunidade lusófona reino unido",
       "saudade portugal london",
       "heritage preservation portuguese",
@@ -346,7 +346,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       "preservação cultural portuguesa",
       "portuguese traditions london",
       "tradições portuguesas londres",
-      "lusophone culture uk",
+  "lusophone culture united kingdom",
       "património lusófono reino unido",
       "fado traditions london",
       "tradições fado londres",
@@ -383,9 +383,9 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     descriptionPortuguese:
       "Apoio exclusivo para estudantes portugueses em universidades no Reino Unido. Descontos, programas culturais e desenvolvimento de carreira.",
     keywords: [
-      "portuguese students uk",
+  "portuguese students united kingdom",
       "estudantes portugueses reino unido",
-      "university partnerships portugal uk",
+  "university partnerships portugal united kingdom",
       "student discounts portuguese",
     ],
     canonicalUrl: absoluteUrl(ROUTES.students),
