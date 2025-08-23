@@ -13,7 +13,6 @@ import {
   FlagIcon,
   ExclamationCircleIcon,
   HeartIcon,
-  UsersIcon,
   ChatBubbleLeftRightIcon,
   PhoneIcon,
   EnvelopeIcon

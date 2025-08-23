@@ -13,7 +13,6 @@ import {
   GlobeAltIcon,
   DevicePhoneMobileIcon,
   ComputerDesktopIcon,
-  UsersIcon,
   BriefcaseIcon,
   AcademicCapIcon,
   HeartIcon,

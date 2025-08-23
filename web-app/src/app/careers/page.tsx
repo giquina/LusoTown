@@ -18,7 +18,6 @@ import {
   CheckCircleIcon,
   CogIcon,
   ChartBarIcon,
-  UsersIcon,
   DocumentTextIcon,
   GlobeAltIcon,
   AcademicCapIcon,
