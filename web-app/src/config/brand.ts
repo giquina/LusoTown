@@ -1,11 +1,11 @@
 export const brandConfig = {
   name: process.env.NEXT_PUBLIC_BRAND_NAME || 'LusoTown',
-  tagline: process.env.NEXT_PUBLIC_BRAND_TAGLINE || 'Unidos pela Herança',
-  taglineEn: process.env.NEXT_PUBLIC_BRAND_TAGLINE_EN || 'United by Heritage',
+  tagline: process.env.NEXT_PUBLIC_BRAND_TAGLINE || 'Conectando a Comunidade Lusófona',
+  taglineEn: process.env.NEXT_PUBLIC_BRAND_TAGLINE_EN || 'Connecting the Portuguese-speaking community',
   domain: process.env.NEXT_PUBLIC_DOMAIN || 'lusotown.com',
-  domainLondon: process.env.NEXT_PUBLIC_DOMAIN_LONDON || 'lusotown.uk',
-  description: process.env.NEXT_PUBLIC_BRAND_DESCRIPTION || 'London\'s heritage community platform for authentic cultural connections',
-  descriptionPt: process.env.NEXT_PUBLIC_BRAND_DESCRIPTION_PT || 'Plataforma da comunidade cultural de Londres para conexões autênticas',
+  domainLondon: process.env.NEXT_PUBLIC_DOMAIN_LONDON || 'lusotown.london',
+  description: process.env.NEXT_PUBLIC_BRAND_DESCRIPTION || 'London\'s Portuguese-speaking community platform for authentic connections',
+  descriptionPt: process.env.NEXT_PUBLIC_BRAND_DESCRIPTION_PT || 'Plataforma da comunidade lusófona em Londres para conexões autênticas',
   
   // Heritage-specific configuration
   heritage: {

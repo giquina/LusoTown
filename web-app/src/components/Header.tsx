@@ -36,6 +36,7 @@ import NotificationBell from "@/components/NotificationBell";
 import { useLanguage } from "@/context/LanguageContext";
 import { ROUTES } from '@/config/routes';
 import { LuxuryRipple } from "@/components/LuxuryMobileInteraction";
+import { EliteMobileHeader } from "@/components/EliteMobileInterface";
 
 const getNavigationLinks = (t: any) => [
   { name: t("nav.events", "London Events"), href: "/events" },

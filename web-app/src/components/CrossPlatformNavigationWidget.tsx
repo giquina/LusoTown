@@ -26,12 +26,20 @@ interface CrossPlatformNavigationWidgetProps {
   currentPage: 'transport' | 'events' | 'community' | 'networking' | 'home'
   position?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left'
   alwaysVisible?: boolean
+  style?: 'standard' | 'luxury' | 'elite'
+  culturalTheme?: boolean
+  enableAnimations?: boolean
+  showCulturalContext?: boolean
 }
 
 export default function CrossPlatformNavigationWidget({ 
   currentPage,
   position = 'bottom-right',
-  alwaysVisible = false 
+  alwaysVisible = false,
+  style = 'luxury',
+  culturalTheme = true,
+  enableAnimations = true,
+  showCulturalContext = true
 }: CrossPlatformNavigationWidgetProps) {
   const { language, t } = useLanguage()
   const { 

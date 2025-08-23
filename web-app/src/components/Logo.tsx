@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { useHeritage } from '@/context/HeritageContext'
-import { brandConfig } from '@/config/brand'
 
 // Cultural flag component for heritage-aware rendering
 const CulturalFlag = ({ type, className = "" }: { type: 'heritage' | 'local', className?: string }) => {
@@ -76,7 +75,7 @@ export default function Logo({ size = 'medium', className = '', animated = false
         <div className="flex flex-col">
           <div className="flex items-center space-x-1">
             <h1 className={`text-lg font-black ${gradientText} leading-none tracking-tight`}>
-              {process.env.NEXT_PUBLIC_BRAND_NAME || brandConfig.name}
+              {process.env.NEXT_PUBLIC_BRAND_NAME || 'LusoTown'}
             </h1>
             <div className="flex items-center space-x-0.5 ml-1">
               <CulturalFlag type="heritage" className="text-xs" />
@@ -120,7 +119,7 @@ export default function Logo({ size = 'medium', className = '', animated = false
       {/* Brand Name */}
       <div className="flex flex-col">
         <h1 className={`${textSizes[size]} font-black ${gradientText} leading-none tracking-tight`}>
-          {process.env.NEXT_PUBLIC_BRAND_NAME || brandConfig.name}
+          {process.env.NEXT_PUBLIC_BRAND_NAME || 'LusoTown'}
         </h1>
         {size !== 'small' && (
           <span className={`text-xs font-bold text-gray-600 uppercase tracking-widest ${size === 'large' ? 'sm:text-sm' : ''} flex items-center gap-1`}>

@@ -109,6 +109,10 @@ interface PremiumMobileNavigationProps {
   notifications?: number;
   onCreateNew?: () => void;
   style?: 'standard' | 'luxury' | 'elite';
+  culturalTheme?: boolean;
+  voiceAnnouncements?: boolean;
+  hapticFeedback?: boolean;
+  adaptiveLayout?: boolean;
 }
 
 export function PremiumMobileNavigation({ 

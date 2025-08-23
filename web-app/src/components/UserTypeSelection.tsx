@@ -29,8 +29,9 @@ export default function UserTypeSelection() {
 
   useEffect(() => {
     try {
-      const hasSeen = localStorage.getItem('lusotown-onboarded-v3')
-      if (!hasSeen) setShowModal(true)
+  const hasSeen = localStorage.getItem('lusotown-onboarded-v3')
+  const skipped = localStorage.getItem('lusotown-skipped-onboarding')
+  if (!hasSeen && !skipped) setShowModal(true)
     } catch {}
   }, [])
 
@@ -60,10 +61,10 @@ export default function UserTypeSelection() {
   }
 
   const skipForNow = () => {
-    // Treat skip as completed onboarding so it won't show again
     try {
-      localStorage.setItem('lusotown-onboarded-v3', '1')
+      // Treat skip as onboarded to prevent repeat popups
       localStorage.setItem('lusotown-skipped-onboarding', '1')
+      localStorage.setItem('lusotown-onboarded-v3', '1')
     } catch {}
     setDismissed(true)
     setShowModal(false)
@@ -208,13 +209,13 @@ export default function UserTypeSelection() {
 
   return (
     <AnimatePresence>
-      {showModal && (
+    {showModal && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm"
-          onClick={closeAndRemember}
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md"
+      onClick={closeAndRemember}
         >
           {/* Mobile Layout */}
           <div className="md:hidden flex items-center justify-center min-h-full p-4">
@@ -242,7 +243,7 @@ export default function UserTypeSelection() {
                 </motion.div>
                 <button
                   aria-label="Close"
-                  onClick={skipForNow}
+                  onClick={closeAndRemember}
                   className="absolute top-4 right-4 p-2 rounded-full bg-white/80 hover:bg-white transition-all duration-200 shadow-lg"
                 >
                   <XMarkIcon className="h-5 w-5 text-gray-600" />
@@ -368,7 +369,7 @@ export default function UserTypeSelection() {
                 </motion.div>
                 <button
                   aria-label="Close"
-                  onClick={skipForNow}
+                  onClick={closeAndRemember}
                   className="absolute top-6 right-6 p-2 rounded-full bg-white/80 hover:bg-white transition-all duration-200 shadow-lg"
                 >
                   <XMarkIcon className="h-6 w-6 text-gray-600" />

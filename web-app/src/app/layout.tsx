@@ -25,6 +25,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { ContextualMobileNav } from "@/components/LuxuryMobileNav";
 import { PremiumMobileNavigation } from "@/components/PremiumMobileNavigation";
 import { MobileExperienceOptimizer } from "@/components/MobileExperienceOptimizer";
+import MobileCriticalFixes from "@/components/MobileCriticalFixes";
 import LusoBotWidget from "@/components/LusoBotWidget";
 import ErrorBoundary, {
   ComponentErrorBoundary,
@@ -97,53 +98,61 @@ export default function RootLayout({
                                         enableLuxuryEffects={true}
                                         enablePortugueseTheming={true}
                                       >
-                                        <ComponentErrorBoundary componentName="User Type Selection">
-                                          <UserTypeSelection />
-                                        </ComponentErrorBoundary>
+                                        <ComponentErrorBoundary componentName="Mobile Critical Fixes">
+                                          <MobileCriticalFixes
+                                            enablePortugueseFixes={true}
+                                            enableTouchOptimizations={true}
+                                            enablePerformanceMode={true}
+                                          >
+                                            <ComponentErrorBoundary componentName="User Type Selection">
+                                              <UserTypeSelection />
+                                            </ComponentErrorBoundary>
 
-                                        <ComponentErrorBoundary componentName="Header">
-                                          <Header />
-                                        </ComponentErrorBoundary>
+                                            <ComponentErrorBoundary componentName="Header">
+                                              <Header />
+                                            </ComponentErrorBoundary>
 
-                                        <ScrollToTop />
+                                            <ScrollToTop />
 
-                                        <ErrorBoundary>
-                                          {/* Demo removed from SSR path to avoid server/client boundary issues */}
-                                          {children}
-                                        </ErrorBoundary>
+                                            <ErrorBoundary>
+                                              {/* Demo removed from SSR path to avoid server/client boundary issues */}
+                                              {children}
+                                            </ErrorBoundary>
 
-                                        {/* WhatsApp widget removed per request; keeping LusoBot only */}
+                                            {/* WhatsApp widget removed per request; keeping LusoBot only */}
 
-                                        <ComponentErrorBoundary componentName="Live Feed Notifications">
-                                          <LiveFeedNotifications />
-                                        </ComponentErrorBoundary>
+                                            <ComponentErrorBoundary componentName="Live Feed Notifications">
+                                              <LiveFeedNotifications />
+                                            </ComponentErrorBoundary>
 
-                                        <ComponentErrorBoundary componentName="Favorite Notification">
-                                          <FavoriteNotification />
-                                        </ComponentErrorBoundary>
+                                            <ComponentErrorBoundary componentName="Favorite Notification">
+                                              <FavoriteNotification />
+                                            </ComponentErrorBoundary>
 
-                                        <ComponentErrorBoundary componentName="Auth Popup">
-                                          <AuthPopup />
-                                        </ComponentErrorBoundary>
+                                            <ComponentErrorBoundary componentName="Auth Popup">
+                                              <AuthPopup />
+                                            </ComponentErrorBoundary>
 
-                                        <ComponentErrorBoundary componentName="Auth Intent Handler">
-                                          <AuthIntentHandler />
-                                        </ComponentErrorBoundary>
+                                            <ComponentErrorBoundary componentName="Auth Intent Handler">
+                                              <AuthIntentHandler />
+                                            </ComponentErrorBoundary>
 
-                                        {/* Premium Mobile Navigation with Elite Design */}
-                                        <ComponentErrorBoundary componentName="Premium Mobile Navigation">
-                                          <PremiumMobileNavigation 
-                                            style="luxury"
-                                            notifications={0}
-                                          />
-                                        </ComponentErrorBoundary>
+                                            {/* Premium Mobile Navigation with Elite Design */}
+                                            <ComponentErrorBoundary componentName="Premium Mobile Navigation">
+                                              <PremiumMobileNavigation 
+                                                style="luxury"
+                                                notifications={0}
+                                              />
+                                            </ComponentErrorBoundary>
 
-                                        <ComponentErrorBoundary componentName="LusoBot Widget">
-                                          <LusoBotWidget 
-                                            position="bottom-right"
-                                            showWelcomeMessage={true}
-                                            theme="portuguese"
-                                          />
+                                            <ComponentErrorBoundary componentName="LusoBot Widget">
+                                              <LusoBotWidget 
+                                                position="bottom-right"
+                                                showWelcomeMessage={true}
+                                                theme="portuguese"
+                                              />
+                                            </ComponentErrorBoundary>
+                                          </MobileCriticalFixes>
                                         </ComponentErrorBoundary>
                                       </MobileExperienceOptimizer>
                                     </ComponentErrorBoundary>
