@@ -86,7 +86,7 @@ INSERT INTO public.group_categories (name_en, name_pt, description_en, descripti
 ('Culture & Arts', 'Cultura & Artes', 'Fado, traditional music, and Portuguese arts', 'Fado, música tradicional e artes portuguesas', 'music', 'bg-purple-500', false, null, 8),
 ('Business Networking', 'Networking de Negócios', 'Portuguese business connections and opportunities', 'Conexões de negócios portugueses e oportunidades', 'building', 'bg-blue-500', true, 18, 9),
 ('Single Parents', 'Pais Solteiros', 'Support network for Portuguese single parents', 'Rede de apoio para pais solteiros portugueses', 'user-heart', 'bg-pink-500', true, 18, 10),
-('Students', 'Estudantes', 'Portuguese students in UK universities and colleges', 'Estudantes portugueses em universidades e faculdades do Reino Unido', 'graduation-cap', 'bg-indigo-500', true, 16, 11),
+('Students', 'Estudantes', 'Portuguese students in United Kingdom universities and colleges', 'Estudantes portugueses em universidades e faculdades do Reino Unido', 'graduation-cap', 'bg-indigo-500', true, 16, 11),
 ('Newcomers to London', 'Recém-chegados a Londres', 'Support for new Portuguese arrivals', 'Apoio para recém-chegados portugueses', 'map', 'bg-teal-500', false, null, 12),
 ('Portuguese from Portugal', 'Portugueses de Portugal', 'Specific to those from mainland Portugal', 'Específico para os de Portugal continental', 'flag', 'bg-red-500', false, null, 13),
 ('Portuguese from Brazil', 'Portugueses do Brasil', 'Brazilian Portuguese-speaking community', 'Comunidade de falantes de português brasileira', 'flag', 'bg-green-600', false, null, 14),

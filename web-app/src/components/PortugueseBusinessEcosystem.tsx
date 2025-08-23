@@ -227,7 +227,7 @@ export default function PortugueseBusinessEcosystem() {
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'A maior plataforma de neg�cios portugueses no Reino Unido. Descubra servi�os aut�nticos, conecte-se com profissionais e fa�a crescer a sua empresa dentro da comunidade de falantes de português.'
-                : 'The largest Portuguese business platform in the UK. Discover authentic services, connect with professionals, and grow your business within the Portuguese-speaking community.'
+                : 'The largest Portuguese business platform in the United Kingdom. Discover authentic services, connect with professionals, and grow your business within the Portuguese-speaking community.'
               }
             </p>
 
@@ -559,7 +559,7 @@ export default function PortugueseBusinessEcosystem() {
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Junte-se a centenas de neg�cios portugueses que crescem atrav�s da nossa plataforma. Acesso exclusivo � maior comunidade de falantes de português do Reino Unido.'
-                : 'Join hundreds of Portuguese businesses growing through our platform. Exclusive access to the largest Portuguese-speaking community in the UK.'
+                : 'Join hundreds of Portuguese businesses growing through our platform. Exclusive access to the largest Portuguese-speaking community in the United Kingdom.'
               }
             </p>
 

@@ -51,7 +51,7 @@ export async function GET(request: NextRequest) {
       timestamp: new Date().toISOString(),
       system_status: 'checking',
       portuguese_community_context: {
-        target_audience: 'Portuguese speakers in UK',
+        target_audience: 'Portuguese speakers in United Kingdom',
         total_members: process.env.NEXT_PUBLIC_TOTAL_MEMBERS || '750',
         university_partnerships: process.env.NEXT_PUBLIC_UNIVERSITY_PARTNERSHIPS || '8',
         platform_focus: 'Cultural authenticity and luxury positioning'

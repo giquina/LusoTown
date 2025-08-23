@@ -314,7 +314,7 @@ export default function SIAComplianceQuestionnaire({
                   <p className="text-sm text-gray-600">
                     {isPortuguese 
                       ? 'Obrigatório para todos os serviços de proteção próxima no Reino Unido'
-                      : 'Required for all close protection services in the UK'
+                      : 'Required for all close protection services in the United Kingdom'
                     }
                   </p>
                 </div>
@@ -826,7 +826,7 @@ export default function SIAComplianceQuestionnaire({
                           <p className="text-sm text-red-600 mb-3">
                             {isPortuguese 
                               ? 'Nota: Proteção próxima no Reino Unido é normalmente desarmada exceto em circunstâncias especiais. Justificação detalhada é obrigatória.'
-                              : 'Note: Close protection in the UK is typically unarmed except under special circumstances. Detailed justification is required.'
+                              : 'Note: Close protection in the United Kingdom is typically unarmed except under special circumstances. Detailed justification is required.'
                             }
                           </p>
                           {formData.armedProtection && (

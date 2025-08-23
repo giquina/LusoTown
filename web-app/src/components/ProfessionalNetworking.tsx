@@ -156,9 +156,9 @@ export default function ProfessionalNetworking({
     },
     { 
       id: 'uk-market', 
-      label: 'UK Market Integration', 
+      label: 'United Kingdom Market Integration', 
       labelPt: 'Integração no Mercado Britânico',
-      description: 'Better integrate into UK business culture',
+      description: 'Better integrate into United Kingdom business culture',
       descriptionPt: 'Integrar melhor na cultura empresarial britânica',
       icon: BuildingOfficeIcon 
     }

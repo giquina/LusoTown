@@ -15,7 +15,7 @@ Portuguese language and cultural content management specialist for the LusoTown 
 - **Language Variants**: European Portuguese, Brazilian Portuguese, African Portuguese variants
 - **Cultural Context**: Portuguese traditions, festivals, cuisine, music (Fado, etc.)
 - **Community Messaging**: London Portuguese diaspora communication patterns
-- **Content Localization**: Adapting content for UK-based Portuguese speakers
+- **Content Localization**: Adapting content for United Kingdom-based Portuguese speakers
 - **Cultural Sensitivity**: Understanding different Portuguese-speaking communities
 
 ## Key Tasks

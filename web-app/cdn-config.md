@@ -6,7 +6,7 @@
 ```yaml
 Origin Server: https://stream.lusotown.com
 Edge Locations:
-  - London (UK) - Primary for Portuguese-speaking community
+  - London (United Kingdom) - Primary for Portuguese-speaking community
   - Lisbon (Portugal) - Secondary
   - São Paulo (Brazil) - Portuguese speakers
   - Luanda (Angola) - African Portuguese communities
@@ -36,7 +36,7 @@ Content Types:
 ```
 
 ### Performance Metrics for Portuguese-speaking community
-- Target Latency: <2 seconds for UK Portuguese-speaking community
+- Target Latency: <2 seconds for United Kingdom Portuguese-speaking community
 - Bandwidth Optimization: Mobile-first for Portuguese users
 - Cultural Content Boost: 40% faster delivery for Portuguese categories
 - Regional Failover: Automatic routing to nearest Portuguese-optimized edge

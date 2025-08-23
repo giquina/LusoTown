@@ -454,7 +454,7 @@ export class GDPRComplianceMonitor {
     }
 
     // Portuguese-specific transfers
-    culturalConsiderations.push('UK-Portugal transfers use adequacy decision')
+    culturalConsiderations.push('United Kingdom-Portugal transfers use adequacy decision')
     culturalConsiderations.push('Brazil transfers use appropriate safeguards')
     culturalConsiderations.push('Cultural data transfers respect community boundaries')
 
@@ -588,7 +588,7 @@ export class GDPRComplianceMonitor {
       crossBorderCompliance: {
         score: 81,
         transferMechanisms: [
-          'UK-Portugal adequacy decision utilization',
+          'United Kingdom-Portugal adequacy decision utilization',
           'Standard contractual clauses for Brazil',
           'Explicit consent for global transfers',
           'Cultural data transfer restrictions'

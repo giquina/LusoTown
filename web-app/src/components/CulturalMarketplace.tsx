@@ -168,7 +168,7 @@ const featuredProducts: MarketplaceProduct[] = [
     price: 75.00,
     category: 'services',
     seller: 'Mestre Jo�o Fado',
-    sellerLocation: 'Lisboa, Portugal / London, UK',
+    sellerLocation: 'Lisboa, Portugal / London, United Kingdom',
     rating: 5.0,
     reviews: 34,
     image: '/images/products/fado-guitar-lessons.jpg',
@@ -615,7 +615,7 @@ export default function CulturalMarketplace() {
                 <p className="text-white/80">
                   {isPortuguese
                     ? 'Entrega r�pida em Londres e Reino Unido'
-                    : 'Fast delivery in London and across the UK'
+                    : 'Fast delivery in London and across the United Kingdom'
                   }
                 </p>
               </div>

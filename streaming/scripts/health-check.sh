@@ -90,7 +90,7 @@ check_memory() {
 
 # Main health check function
 main() {
-    echo "LusoTown Portuguese-speaking Community Streaming Health Check"
+    echo "LusoTown Portuguese-speaking community Streaming Health Check"
     echo "=================================================="
     
     local failed=0

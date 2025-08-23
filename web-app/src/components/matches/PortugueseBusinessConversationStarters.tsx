@@ -115,7 +115,7 @@ export default function PortugueseBusinessConversationStarters({
           ? `Interessante veres ${profile.businessInterests[0]} como área de interesse. Já colaboraste com empresas portuguesas nesta área?`
           : `Interesting to see ${profile.businessInterests[0]} as an area of interest. Have you collaborated with Portuguese companies in this field?`,
         category: language === "pt" ? "Interesses Comerciais" : "Business Interests",
-        culturalContext: language === "pt" ? "Conexões comerciais Portugal-Reino Unido" : "Portugal-UK business connections",
+        culturalContext: language === "pt" ? "Conexões comerciais Portugal-Reino Unido" : "Portugal-United Kingdom business connections",
         businessRelevance: language === "pt" ? "Oportunidades de colaboração e parcerias" : "Collaboration and partnership opportunities",
         popularity: 78,
       },
@@ -179,7 +179,7 @@ export default function PortugueseBusinessConversationStarters({
         id: "bs12",
         text: language === "pt"
           ? "Que tecnologias ou inovações achas que Portugal poderia exportar para o Reino Unido?"
-          : "What technologies or innovations do you think Portugal could export to the UK?",
+          : "What technologies or innovations do you think Portugal could export to the United Kingdom?",
         category: language === "pt" ? "Inovação e Tecnologia" : "Innovation & Technology",
         culturalContext: language === "pt" ? "Potencial tecnológico e inovador de Portugal" : "Portugal's technological and innovation potential",
         businessRelevance: language === "pt" ? "Oportunidades de transferência tecnológica" : "Technology transfer opportunities",

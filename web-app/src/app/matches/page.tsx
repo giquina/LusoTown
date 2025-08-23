@@ -379,7 +379,7 @@ function MatchesContent() {
       icon: UserGroupIcon,
       title: "Complete Your Profile",
       description:
-        "Share your interests, your UK location, and what you're looking for in the Portuguese-speaking community",
+        "Share your interests, your United Kingdom location, and what you're looking for in the Portuguese-speaking community",
       titlePt: "Complete o Seu Perfil",
       descriptionPt:
         "Partilhe os seus interesses, localização no Reino Unido e o que procura na comunidade de falantes de português",
@@ -465,7 +465,7 @@ function MatchesContent() {
                 <HeartIcon className="w-10 h-10 md:w-12 md:h-12 text-white/90 animate-pulse" />
               </div>
               <h1 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                {language === "pt" ? "Encontre Falantes de Português no Reino Unido" : "Connect with Portuguese Speakers in the UK"}
+                {language === "pt" ? "Encontre Falantes de Português no Reino Unido" : "Connect with Portuguese Speakers in the United Kingdom"}
               </h1>
               <p className="text-sm md:text-base text-white/90 mb-6 leading-relaxed max-w-3xl mx-auto">
                 {language === "pt"
@@ -703,7 +703,7 @@ function MatchesContent() {
             <p className="text-sm md:text-base text-primary-700 max-w-2xl mx-auto">
               {language === "pt" 
                 ? "Conectamos falantes de português de todas as nações lusófonas no Reino Unido"
-                : "Connecting Portuguese speakers from all Lusophone nations across the UK"}
+                : "Connecting Portuguese speakers from all Lusophone nations across the United Kingdom"}
             </p>
           </div>
           
@@ -794,7 +794,7 @@ function MatchesContent() {
                 <p className="text-primary-700 text-sm mb-4 leading-relaxed">
                   {language === "pt"
                     ? "Para mostrar correspondências relevantes, precisamos conhecer os seus interesses, localização no Reino Unido e preferências culturais. O nosso algoritmo usa esta informação para conectá-lo com falantes de português compatíveis."
-                    : "To show you relevant matches, we need to know your interests, UK location, and cultural preferences. Our algorithm uses this information to connect you with compatible Portuguese speakers."}
+                    : "To show you relevant matches, we need to know your interests, United Kingdom location, and cultural preferences. Our algorithm uses this information to connect you with compatible Portuguese speakers."}
                 </p>
                 
                 <div className="bg-white/80 rounded-lg p-3 mb-4 text-left">
@@ -802,7 +802,7 @@ function MatchesContent() {
                     {language === "pt" ? "O que precisamos saber:" : "What we need to know:"}
                   </div>
                   <ul className="text-primary-700 text-xs space-y-1">
-                    <li>📍 {language === "pt" ? "A sua localização no Reino Unido" : "Your location in the UK"}</li>
+                    <li>📍 {language === "pt" ? "A sua localização no Reino Unido" : "Your location in the United Kingdom"}</li>
                     <li>🎯 {language === "pt" ? "Os seus interesses e hobbies" : "Your interests and hobbies"}</li>
                     <li>🇵🇹 {language === "pt" ? "Preferências culturais portuguesas" : "Portuguese cultural preferences"}</li>
                     <li>👥 {language === "pt" ? "Tipo de conexões que procura" : "Type of connections you're seeking"}</li>
@@ -1273,7 +1273,7 @@ function MatchesContent() {
             <p className="text-sm md:text-base text-primary-700 max-w-3xl mx-auto mb-8">
               {language === "pt"
                 ? "O nosso algoritmo de correspondência foi especificamente desenvolvido para falantes de português no Reino Unido, focando na compatibilidade cultural e experiências partilhadas."
-                : "Our matching algorithm is specifically designed for Portuguese speakers in the UK, focusing on cultural compatibility and shared experiences."}
+                : "Our matching algorithm is specifically designed for Portuguese speakers in the United Kingdom, focusing on cultural compatibility and shared experiences."}
             </p>
             
             {/* Algorithm Highlights */}
@@ -1486,7 +1486,7 @@ function MatchesContent() {
               <p className="text-sm text-primary-600">
                 {language === "pt" 
                   ? "Todos os planos incluem acesso à comunidade de falantes de português no Reino Unido • Cancele a qualquer momento"
-                  : "All plans include access to the Portuguese-speaking community in the UK • Cancel anytime"}
+                  : "All plans include access to the Portuguese-speaking community in the United Kingdom • Cancel anytime"}
               </p>
             </div>
           </div>
@@ -1576,7 +1576,7 @@ function MatchesContent() {
                 </h3>
                 <p className="text-primary-700 mb-5 text-sm md:text-base">
                   {t("joinCommunityDescription") ||
-                    "Connect with Portuguese speakers from all backgrounds who understand your language, culture, and journey in the UK"}
+                    "Connect with Portuguese speakers from all backgrounds who understand your language, culture, and journey in the United Kingdom"}
                 </p>
                 <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-xl border border-primary-100">
                   <div className="text-xl md:text-2xl font-bold text-primary-600">

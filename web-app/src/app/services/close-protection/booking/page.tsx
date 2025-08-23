@@ -185,7 +185,7 @@ function BookingContent() {
                 value={formData.location}
                 onChange={handleInputChange}
                 placeholder={
-                  isPortuguese ? "Londres, Reino Unido" : "London, UK"
+                  isPortuguese ? "Londres, Reino Unido" : "London, United Kingdom"
                 }
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-premium-500 focus:border-premium-500"
                 required

@@ -56,7 +56,7 @@ export default function HousingAssistanceModule() {
     learningObjectives: [
       'Understand London\'s housing market from a Portuguese perspective',
       'Access Portuguese-speaking community housing networks and resources',
-      'Navigate UK rental processes and legal requirements',
+      'Navigate United Kingdom rental processes and legal requirements',
       'Find Portuguese-friendly neighborhoods and communities',
       'Build support networks for housing stability and growth'
     ],
@@ -94,7 +94,7 @@ export default function HousingAssistanceModule() {
                 <li>Heavily subsidized housing for eligible residents</li>
                 <li>Long waiting lists (2-10+ years)</li>
                 <li>Priority given to families and vulnerable individuals</li>
-                <li>Portuguese families may qualify if settled in UK</li>
+                <li>Portuguese families may qualify if settled in United Kingdom</li>
               </ul>
             </li>
             <li><strong>Housing Association Properties:</strong>
@@ -152,8 +152,8 @@ export default function HousingAssistanceModule() {
           <ul>
             <li><strong>Salary Multiples:</strong> Generally need 30-40x monthly rent as annual salary</li>
             <li><strong>Deposit Requirements:</strong> Usually 1-6 weeks rent upfront</li>
-            <li><strong>Guarantors:</strong> May need UK-based guarantor or international guarantor service</li>
-            <li><strong>Portuguese Banking:</strong> Some Portuguese banks offer UK mortgage services</li>
+            <li><strong>Guarantors:</strong> May need United Kingdom-based guarantor or international guarantor service</li>
+            <li><strong>Portuguese Banking:</strong> Some Portuguese banks offer United Kingdom mortgage services</li>
           </ul>
           
           <p><strong>Transportation Note:</strong> When viewing properties or moving, our professional transport service is available separately to assist with property visits or moving logistics, but is not included with housing services.</p>
@@ -291,7 +291,7 @@ export default function HousingAssistanceModule() {
                 <li>Bilingual property consultations</li>
                 <li>Understanding of Portuguese financial situations</li>
                 <li>Cultural sensitivity in property matching</li>
-                <li>Assistance with UK rental procedures</li>
+                <li>Assistance with United Kingdom rental procedures</li>
               </ul>
             </li>
             <li><strong>Portuguese Property Management:</strong>
@@ -377,7 +377,7 @@ export default function HousingAssistanceModule() {
               <ul>
                 <li>Mortgage advice from Portuguese financial advisors</li>
                 <li>Help to Buy scheme guidance</li>
-                <li>Credit building advice for new UK residents</li>
+                <li>Credit building advice for new United Kingdom residents</li>
                 <li>International money transfer for deposits</li>
               </ul>
             </li>
@@ -567,14 +567,14 @@ export default function HousingAssistanceModule() {
       },
       {
         id: 'rental-process-navigation',
-        title: 'Navigating UK Rental Processes and Legal Requirements',
+        title: 'Navigating United Kingdom Rental Processes and Legal Requirements',
         titlePortuguese: 'Navegando Processos de Arrendamento do Reino Unido e Requisitos Legais',
         type: 'tutorial',
         estimatedTime: 8,
         content: `
-          <p>Understanding UK rental processes and legal requirements is essential for Portuguese speakers to secure housing and protect their rights as tenants.</p>
+          <p>Understanding United Kingdom rental processes and legal requirements is essential for Portuguese speakers to secure housing and protect their rights as tenants.</p>
           
-          <h3>UK Rental Application Process:</h3>
+          <h3>United Kingdom Rental Application Process:</h3>
           
           <h4>Step 1: Property Viewing and Application</h4>
           <ul>
@@ -602,11 +602,11 @@ export default function HousingAssistanceModule() {
           
           <h4>Step 2: Right to Rent Checks</h4>
           <ul>
-            <li><strong>Legal Requirement:</strong> All tenants must prove legal right to rent in UK</li>
+            <li><strong>Legal Requirement:</strong> All tenants must prove legal right to rent in United Kingdom</li>
             <li><strong>Acceptable Documents for Portuguese Citizens:</strong>
               <ul>
                 <li>Portuguese passport with indefinite leave to remain</li>
-                <li>Portuguese passport with valid UK visa</li>
+                <li>Portuguese passport with valid United Kingdom visa</li>
                 <li>Biometric Residence Permit (BRP)</li>
                 <li>EU Settlement Scheme document (pre-settled/settled status)</li>
               </ul>
@@ -626,8 +626,8 @@ export default function HousingAssistanceModule() {
             <li><strong>Credit Check Process:</strong>
               <ul>
                 <li>Most landlords require credit check</li>
-                <li>New UK residents may have limited credit history</li>
-                <li>Some agencies specialize in applications with limited UK credit</li>
+                <li>New United Kingdom residents may have limited credit history</li>
+                <li>Some agencies specialize in applications with limited United Kingdom credit</li>
                 <li>Portuguese bank references may be accepted as alternative</li>
               </ul>
             </li>
@@ -744,7 +744,7 @@ export default function HousingAssistanceModule() {
           <ul>
             <li><strong>When Required:</strong>
               <ul>
-                <li>Limited UK credit history</li>
+                <li>Limited United Kingdom credit history</li>
                 <li>Income below required threshold</li>
                 <li>Student or new professional status</li>
                 <li>Self-employed with irregular income</li>
@@ -752,7 +752,7 @@ export default function HousingAssistanceModule() {
             </li>
             <li><strong>Guarantor Options:</strong>
               <ul>
-                <li>UK-based friend or family member</li>
+                <li>United Kingdom-based friend or family member</li>
                 <li>Professional guarantor services</li>
                 <li>International guarantor companies</li>
                 <li>Advance rent payment instead of guarantor</li>
@@ -971,7 +971,7 @@ export default function HousingAssistanceModule() {
             items: [
               { text: 'Gather all required documents for rental applications', textPortuguese: 'Reúna todos os documentos necessários para candidaturas de arrendamento' },
               { text: 'Check your credit score and improve if necessary', textPortuguese: 'Verifique a sua pontuação de crédito e melhore se necessário' },
-              { text: 'Research deposit protection schemes in the UK', textPortuguese: 'Pesquise esquemas de proteção de depósitos no Reino Unido' },
+              { text: 'Research deposit protection schemes in the United Kingdom', textPortuguese: 'Pesquise esquemas de proteção de depósitos no Reino Unido' },
               { text: 'Understand your rights and responsibilities as a tenant', textPortuguese: 'Compreenda os seus direitos e responsabilidades como inquilino' },
               { text: 'Find potential guarantors or guarantor services', textPortuguese: 'Encontre potenciais fiadores ou serviços de fiador' }
             ]
@@ -1007,7 +1007,7 @@ export default function HousingAssistanceModule() {
               <ul>
                 <li>House shares or studio apartments</li>
                 <li>Focus on location and transport links</li>
-                <li>Build UK credit history and references</li>
+                <li>Build United Kingdom credit history and references</li>
                 <li>Establish employment and income stability</li>
                 <li>Connect with Portuguese-speaking community for support</li>
               </ul>
@@ -1052,7 +1052,7 @@ export default function HousingAssistanceModule() {
             <li><strong>Portuguese Banking Integration:</strong>
               <ul>
                 <li>Maintain Portuguese bank accounts for flexibility</li>
-                <li>Use Portuguese bank UK services where available</li>
+                <li>Use Portuguese bank United Kingdom services where available</li>
                 <li>Build credit history in both countries</li>
                 <li>Consider international mortgage options</li>
               </ul>
@@ -1107,7 +1107,7 @@ export default function HousingAssistanceModule() {
           <ul>
             <li><strong>Tenant Rights Education:</strong>
               <ul>
-                <li>Regularly update knowledge of UK tenant rights</li>
+                <li>Regularly update knowledge of United Kingdom tenant rights</li>
                 <li>Understand deposit protection and return processes</li>
                 <li>Know eviction procedures and protection measures</li>
                 <li>Learn about rent increase limitations and procedures</li>
@@ -1150,7 +1150,7 @@ export default function HousingAssistanceModule() {
             <li><strong>Financial Preparation:</strong>
               <ul>
                 <li>Build substantial deposit (typically 5-20% of property value)</li>
-                <li>Establish strong UK credit history</li>
+                <li>Establish strong United Kingdom credit history</li>
                 <li>Maintain stable employment for mortgage applications</li>
                 <li>Consider government first-time buyer schemes</li>
               </ul>
@@ -1490,7 +1490,7 @@ export default function HousingAssistanceModule() {
     practicalExercises: [],
     resources: [
       {
-        title: 'UK Tenant Rights and Responsibilities Guide',
+        title: 'United Kingdom Tenant Rights and Responsibilities Guide',
         titlePortuguese: 'Guia de Direitos e Responsabilidades de Inquilinos do Reino Unido',
         url: '/downloads/uk-tenant-rights-guide.pdf',
         type: 'download'

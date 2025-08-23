@@ -59,10 +59,10 @@ export default function BusinessNetworkingPage() {
     },
     {
       icon: GlobeAltIcon,
-      title: language === "pt" ? "Mercado Portugal-Reino Unido" : "Portugal-UK Market",
+      title: language === "pt" ? "Mercado Portugal-Reino Unido" : "Portugal-United Kingdom Market",
       description: language === "pt"
         ? "Acesso a oportunidades de negócio entre Portugal e Reino Unido"
-        : "Access business opportunities between Portugal and the UK",
+        : "Access business opportunities between Portugal and the United Kingdom",
       stats: language === "pt" ? "£2.5B comércio" : "£2.5B trade volume",
     },
     {
@@ -166,7 +166,7 @@ export default function BusinessNetworkingPage() {
               <p className="text-xl text-primary-600 mt-2">
                 {language === "pt" 
                   ? "A maior rede de profissionais portugueses no Reino Unido"
-                  : "The largest network of Portuguese professionals in the UK"}
+                  : "The largest network of Portuguese professionals in the United Kingdom"}
               </p>
             </div>
           </div>

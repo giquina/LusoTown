@@ -309,7 +309,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'personal-1',
       category: 'personal',
-      text_en: "What do you miss most about Portuguese culture living in the UK?",
+      text_en: "What do you miss most about Portuguese culture living in the United Kingdom?",
       text_pt: "Do que sente mais saudades da cultura portuguesa vivendo no Reino Unido?",
       context: 'Experiências pessoais e saudade'
     },
@@ -379,7 +379,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'personal-3',
       category: 'personal',
-      text_en: "What's the biggest challenge you've faced living in the UK?",
+      text_en: "What's the biggest challenge you've faced living in the United Kingdom?",
       text_pt: "Qual foi o maior desafio que enfrentaste vivendo no Reino Unido?",
       context: 'Immigration challenges'
     },

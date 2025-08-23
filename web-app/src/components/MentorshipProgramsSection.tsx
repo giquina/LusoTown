@@ -28,7 +28,7 @@ export default function MentorshipProgramsSection() {
         t('mentorship.programs.professional.feature1', 'Industry-specific career guidance'),
         t('mentorship.programs.professional.feature2', 'CV review and interview preparation'),
         t('mentorship.programs.professional.feature3', 'Portuguese business networking'),
-        t('mentorship.programs.professional.feature4', 'NHS and UK job market insights'),
+        t('mentorship.programs.professional.feature4', 'NHS and United Kingdom job market insights'),
         t('mentorship.programs.professional.feature5', 'Legal and immigration advice'),
         t('mentorship.programs.professional.feature6', 'Professional certification guidance')
       ],

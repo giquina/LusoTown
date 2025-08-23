@@ -55,7 +55,7 @@ const investmentOpportunities: InvestmentOpportunity[] = [
     id: 'diamond-001',
     title: 'London Diamond Trading Partnership',
     sector: 'Diamonds',
-    description: 'Exclusive partnership with London-based Angolan diamond traders. Access established networks connecting UK luxury markets with premium suppliers, managed by experienced London-based professionals.',
+    description: 'Exclusive partnership with London-based Angolan diamond traders. Access established networks connecting United Kingdom luxury markets with premium suppliers, managed by experienced London-based professionals.',
     investmentRange: '£500K - £5M',
     expectedReturn: '12-18% annually',
     riskLevel: 'Medium',
@@ -63,7 +63,7 @@ const investmentOpportunities: InvestmentOpportunity[] = [
     location: 'Hatton Garden, London',
     highlights: [
       'Established London diamond trading network',
-      'Direct access to UK luxury markets',
+      'Direct access to United Kingdom luxury markets',
       'Experienced Angolan-British management team',
       'Connections to major London jewelers'
     ],
@@ -73,7 +73,7 @@ const investmentOpportunities: InvestmentOpportunity[] = [
     id: 'oil-001',
     title: 'London Energy Consulting Firm',
     sector: 'Oil & Gas',
-    description: 'Strategic partnership with London-based energy consultancy founded by former Angola oil executives. Specializes in connecting UK investors with international energy opportunities.',
+    description: 'Strategic partnership with London-based energy consultancy founded by former Angola oil executives. Specializes in connecting United Kingdom investors with international energy opportunities.',
     investmentRange: '£1M - £10M',
     expectedReturn: '15-22% annually', 
     riskLevel: 'Medium',
@@ -81,7 +81,7 @@ const investmentOpportunities: InvestmentOpportunity[] = [
     location: 'City of London',
     highlights: [
       'Led by former Angola oil industry executives',
-      'Strong UK regulatory compliance track record',
+      'Strong United Kingdom regulatory compliance track record',
       'Established client base in London\'s financial district',
       'Growing portfolio of international projects'
     ],
@@ -207,7 +207,7 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
             </p>
             <p className="text-lg opacity-90 max-w-5xl mx-auto mb-10">
               Connect with London's most sophisticated Angolan business professionals who bridge 
-              UK financial expertise with Angola's rich heritage. Network with successful diaspora 
+              United Kingdom financial expertise with Angola's rich heritage. Network with successful diaspora 
               entrepreneurs, access London-based business opportunities, and join the elite community 
               that celebrates Angola's legacy while thriving in London's business districts.
             </p>
@@ -341,7 +341,7 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
                   <Building2 className="h-16 w-16 text-emerald-600 mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">Cultural Heritage</h3>
                   <p className="text-gray-700 mb-4">
-                    London's Angolan community maintains strong cultural connections while building successful careers in the UK
+                    London's Angolan community maintains strong cultural connections while building successful careers in the United Kingdom
                   </p>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
@@ -370,7 +370,7 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
                 <p className="text-xl text-gray-700 max-w-4xl mx-auto">
                   London's world-class business environment attracts Angola's most talented entrepreneurs 
                   and professionals, creating a thriving diaspora community that bridges cultures while 
-                  achieving remarkable success in the UK market.
+                  achieving remarkable success in the United Kingdom market.
                 </p>
               </div>
 
@@ -394,7 +394,7 @@ export default function AngolaDiamondCapital({ className = '' }: AngolaDiamondCa
                   {
                     icon: <DollarSign className="h-8 w-8 text-purple-600" />,
                     title: 'Business Success',
-                    description: 'London-based Angolan businesses creating value and employment in the UK market'
+                    description: 'London-based Angolan businesses creating value and employment in the United Kingdom market'
                   }
                 ].map((item, index) => (
                   <div key={index} className="text-center">

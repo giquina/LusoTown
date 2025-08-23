@@ -273,7 +273,7 @@ export class AIMatchingIntegration {
   }
 
   /**
-   * Get regional matching insights for Portuguese diaspora in specific UK areas
+   * Get regional matching insights for Portuguese diaspora in specific United Kingdom areas
    */
   async getRegionalMatchingInsights(region: string): Promise<RegionalMatchingInsights> {
     try {
@@ -777,7 +777,7 @@ export class AIMatchingIntegration {
       potentialChallenges: ['Different regional backgrounds'],
       conversationStarters: ['Portuguese childhood memories', 'London adaptation experiences'],
       topicRecommendations: ['Cultural traditions', 'Family stories', 'Future goals'],
-      culturalBridges: ['Shared Portuguese values', 'Common UK experiences'],
+      culturalBridges: ['Shared Portuguese values', 'Common United Kingdom experiences'],
       communicationTips: ['Use Portuguese expressions naturally', 'Share cultural references']
     }
   }

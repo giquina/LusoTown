@@ -887,7 +887,7 @@ export default function BusinessDirectory() {
             <p className="text-lg mb-6 opacity-90">
               {isPortuguese 
                 ? 'Junte-se ao maior diretório de negócios portugueses no Reino Unido. Conecte-se com a comunidade lusófona e preserve a nossa cultura através do comércio.'
-                : 'Join the UK\'s premier Portuguese business directory. Connect with the Portuguese-speaking community and preserve our culture through commerce.'}
+                : 'Join the United Kingdom\'s premier Portuguese business directory. Connect with the Portuguese-speaking community and preserve our culture through commerce.'}
             </p>
             <div className="mb-6 text-lg italic opacity-90">
               {isPortuguese 

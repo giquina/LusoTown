@@ -13,18 +13,18 @@ import {
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | LusoTown London - GDPR Compliant Data Protection',
-  description: 'Learn how LusoTown London protects your privacy and personal data. Our GDPR-compliant privacy policy for the UK\'s premier Portuguese-speaking community platform.',
+  description: 'Learn how LusoTown London protects your privacy and personal data. Our GDPR-compliant privacy policy for the United Kingdom\'s premier Portuguese-speaking community platform.',
   keywords: [
     'privacy policy',
     'GDPR compliance',
     'data protection',
-    'UK privacy',
+    'United Kingdom privacy',
     'Portuguese-speaking community privacy',
     'personal data protection',
-    'privacy rights UK',
+    'privacy rights United Kingdom',
     'data security',
     'privacy policy Portuguese',
-    'UK GDPR',
+    'United Kingdom GDPR',
     'LusoTown London'
   ],
   openGraph: {
@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
                 Privacy Policy
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Your privacy is fundamental to everything we do at LusoTown. This policy explains how we collect, use, and protect your personal data in accordance with UK GDPR and Data Protection Act 2018.
+                Your privacy is fundamental to everything we do at LusoTown. This policy explains how we collect, use, and protect your personal data in accordance with United Kingdom GDPR and Data Protection Act 2018.
               </p>
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function PrivacyPolicy() {
                     </div>
                     <div className="flex items-start">
                       <div className="w-2 h-2 bg-secondary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <p className="text-gray-600"><strong>UK-based processing</strong> - your data remains within the UK/EU</p>
+                      <p className="text-gray-600"><strong>United Kingdom-based processing</strong> - your data remains within the United Kingdom/EU</p>
                     </div>
                     <div className="flex items-start">
                       <div className="w-2 h-2 bg-secondary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -119,7 +119,7 @@ export default function PrivacyPolicy() {
                   <p>
                     LusoTown is operated by LusoTown Ltd, a company registered in England and Wales. 
                     We are committed to protecting and respecting your privacy in accordance with the 
-                    UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
+                    United Kingdom General Data Protection Regulation (United Kingdom GDPR) and the Data Protection Act 2018.
                   </p>
                   <div className="bg-gray-50 rounded-lg p-4">
                     <p className="font-semibold text-gray-900 mb-2">Data Controller Details:</p>
@@ -293,7 +293,7 @@ export default function PrivacyPolicy() {
                       <div className="border-l-4 border-primary-400 pl-4">
                         <h4 className="font-semibold text-gray-900">Service Providers</h4>
                         <p className="text-gray-600">
-                          We use trusted UK/EU-based service providers for hosting (Supabase), email delivery, 
+                          We use trusted United Kingdom/EU-based service providers for hosting (Supabase), email delivery, 
                           and payment processing. These providers are bound by strict data protection agreements.
                         </p>
                       </div>

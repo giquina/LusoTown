@@ -64,11 +64,11 @@ INSERT INTO public.interests (name, category, description, icon) VALUES
 
 -- Insert some sample groups
 INSERT INTO public.groups (name, description, group_type, category, location, created_by, is_private) VALUES 
-    ('London Photography Walks', 'Weekly photography meetups exploring London''s hidden gems', 'interest', 'Arts & Creative', 'London, UK', (SELECT id FROM auth.users LIMIT 1), false),
-    ('Yoga & Mindfulness Circle', 'Morning yoga sessions and mindfulness practices', 'interest', 'Health & Wellness', 'Manchester, UK', (SELECT id FROM auth.users LIMIT 1), false),
-    ('Culinary Adventures Club', 'Trying new restaurants and cooking together', 'interest', 'Food & Cooking', 'Birmingham, UK', (SELECT id FROM auth.users LIMIT 1), false),
+    ('London Photography Walks', 'Weekly photography meetups exploring London''s hidden gems', 'interest', 'Arts & Creative', 'London, United Kingdom', (SELECT id FROM auth.users LIMIT 1), false),
+    ('Yoga & Mindfulness Circle', 'Morning yoga sessions and mindfulness practices', 'interest', 'Health & Wellness', 'Manchester, United Kingdom', (SELECT id FROM auth.users LIMIT 1), false),
+    ('Culinary Adventures Club', 'Trying new restaurants and cooking together', 'interest', 'Food & Cooking', 'Birmingham, United Kingdom', (SELECT id FROM auth.users LIMIT 1), false),
     ('Solo Travel Support Network', 'Tips, stories, and planning for solo female travelers', 'interest', 'Travel & Adventure', 'Online', (SELECT id FROM auth.users LIMIT 1), false),
-    ('Women in Tech Leadership', 'Career development and networking for tech professionals', 'interest', 'Career & Business', 'Edinburgh, UK', (SELECT id FROM auth.users LIMIT 1), true);
+    ('Women in Tech Leadership', 'Career development and networking for tech professionals', 'interest', 'Career & Business', 'Edinburgh, United Kingdom', (SELECT id FROM auth.users LIMIT 1), true);
 
 -- Note: Sample data creation requires existing users. 
 -- In production, these would be created after user registration.
@@ -96,12 +96,12 @@ INSERT INTO chauffeur_vehicles (make, model, year, category, max_passengers, fea
 
 -- Insert Chauffeur Drivers
 INSERT INTO chauffeur_drivers (first_name, last_name, license_number, languages_spoken, years_experience, specializations, background_check_date, hourly_rate_premium) VALUES
-('João', 'Silva', 'UK-CH-001-JS', ARRAY['portuguese', 'english'], 12, ARRAY['executive', 'tourism', 'airport'], '2024-01-15', 5.00),
-('Maria', 'Santos', 'UK-CH-002-MS', ARRAY['portuguese', 'english', 'spanish'], 8, ARRAY['tourism', 'events', 'personal'], '2024-02-01', 3.00),
-('António', 'Ferreira', 'UK-CH-003-AF', ARRAY['portuguese', 'english'], 15, ARRAY['executive', 'business', 'airport'], '2024-01-20', 8.00),
-('Cristina', 'Oliveira', 'UK-CH-004-CO', ARRAY['portuguese', 'english', 'french'], 6, ARRAY['personal', 'events', 'tourism'], '2024-02-10', 2.00),
-('Ricardo', 'Pereira', 'UK-CH-005-RP', ARRAY['portuguese', 'english'], 10, ARRAY['executive', 'business', 'events'], '2024-01-25', 6.00),
-('Ana', 'Costa', 'UK-CH-006-AC', ARRAY['portuguese', 'english'], 7, ARRAY['tourism', 'personal', 'airport'], '2024-02-05', 4.00);
+('João', 'Silva', 'United Kingdom-CH-001-JS', ARRAY['portuguese', 'english'], 12, ARRAY['executive', 'tourism', 'airport'], '2024-01-15', 5.00),
+('Maria', 'Santos', 'United Kingdom-CH-002-MS', ARRAY['portuguese', 'english', 'spanish'], 8, ARRAY['tourism', 'events', 'personal'], '2024-02-01', 3.00),
+('António', 'Ferreira', 'United Kingdom-CH-003-AF', ARRAY['portuguese', 'english'], 15, ARRAY['executive', 'business', 'airport'], '2024-01-20', 8.00),
+('Cristina', 'Oliveira', 'United Kingdom-CH-004-CO', ARRAY['portuguese', 'english', 'french'], 6, ARRAY['personal', 'events', 'tourism'], '2024-02-10', 2.00),
+('Ricardo', 'Pereira', 'United Kingdom-CH-005-RP', ARRAY['portuguese', 'english'], 10, ARRAY['executive', 'business', 'events'], '2024-01-25', 6.00),
+('Ana', 'Costa', 'United Kingdom-CH-006-AC', ARRAY['portuguese', 'english'], 7, ARRAY['tourism', 'personal', 'airport'], '2024-02-05', 4.00);
 
 -- Insert Pricing Tiers for Block Bookings
 INSERT INTO chauffeur_pricing_tiers (tier_name, block_hours_min, block_hours_max, discount_percentage, description) VALUES

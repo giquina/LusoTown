@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "platform rules",
     "membership terms",
     "Portuguese-speaking community rules",
-    "UK terms",
+    "United Kingdom terms",
     "community standards",
     "platform policy",
     "user agreement",
@@ -167,7 +167,7 @@ export default function TermsOfService() {
                       </li>
                       <li className="flex items-start">
                         <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        Reside in the UK
+                        Reside in the United Kingdom
                       </li>
                       <li className="flex items-start">
                         <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -294,7 +294,7 @@ export default function TermsOfService() {
                         • Be appropriate for a professional women's community
                       </li>
                       <li>• Respect intellectual property rights</li>
-                      <li>• Comply with UK laws and regulations</li>
+                      <li>• Comply with United Kingdom laws and regulations</li>
                       <li>
                         • Not contain offensive, explicit, or harmful material
                       </li>
@@ -408,7 +408,7 @@ export default function TermsOfService() {
                         • Subscription fees are charged monthly or annually in
                         advance
                       </li>
-                      <li>• All prices include applicable UK VAT</li>
+                      <li>• All prices include applicable United Kingdom VAT</li>
                       <li>
                         • Automatic renewal unless cancelled before the next
                         billing cycle
@@ -561,10 +561,10 @@ export default function TermsOfService() {
                         • You control your profile visibility and contact
                         preferences
                       </li>
-                      <li>• All data is stored securely within the UK/EU</li>
+                      <li>• All data is stored securely within the United Kingdom/EU</li>
                       <li>• You can request data deletion at any time</li>
                       <li>
-                        • We comply with UK GDPR and Data Protection Act 2018
+                        • We comply with United Kingdom GDPR and Data Protection Act 2018
                       </li>
                     </ul>
                   </div>
@@ -667,7 +667,7 @@ export default function TermsOfService() {
                       Liability Limitations
                     </h3>
                     <p className="text-red-700 text-sm">
-                      To the fullest extent permitted by UK law, LusoTown's
+                      To the fullest extent permitted by United Kingdom law, LusoTown's
                       liability is limited to the amount paid for your
                       subscription in the 12 months prior to any claim. We are
                       not liable for indirect, incidental, or consequential

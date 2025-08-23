@@ -21,12 +21,12 @@ export const metadata: Metadata = {
   keywords: [
     'LusoTown case studies',
     'Portuguese-speaking community London',
-    'Portuguese speakers UK',
+    'Portuguese speakers United Kingdom',
     'Portuguese-speaking friendship stories',
     'Portuguese business partnerships',
     'Portuguese cultural connections',
     'Brazilian Portuguese London',
-    'Angola Portuguese UK',
+    'Angola Portuguese United Kingdom',
     'Portuguese diaspora success',
     'Portuguese-speaking community transformation'
   ],
@@ -317,7 +317,7 @@ export default function CaseStudiesPage() {
                 </h3>
                 <p className="text-gray-600 mb-8">
                   Subscribe to receive monthly case studies, community highlights, and inspiring stories 
-                  from Portuguese speakers across London and the UK.
+                  from Portuguese speakers across London and the United Kingdom.
                 </p>
                 
                 <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">

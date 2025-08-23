@@ -74,7 +74,7 @@ The app is designed specifically for Portuguese speakers in London, featuring:
 ### 🏙️ London Integration  
 - Portuguese-speaking community events in London
 - Portuguese restaurants and businesses
-- UK travel with Portuguese cultural context
+- United Kingdom travel with Portuguese cultural context
 - London walks and Portuguese meetups
 
 ## Environment Variables

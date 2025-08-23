@@ -302,9 +302,9 @@ const saudadeAssessmentQuestions: SaudadeAssessment[] = [
     type: 'intensity',
     category: 'heritage_connection',
     weight: 4.2,
-    titleEn: 'How do you balance Portuguese heritage preservation with UK integration?',
+    titleEn: 'How do you balance Portuguese heritage preservation with United Kingdom integration?',
     titlePt: 'Como equilibra a preservação da herança portuguesa com a integração no Reino Unido?',
-    descriptionEn: 'Your approach to maintaining cultural identity while adapting to life in the UK',
+    descriptionEn: 'Your approach to maintaining cultural identity while adapting to life in the United Kingdom',
     descriptionPt: 'A sua abordagem para manter a identidade cultural enquanto se adapta à vida no Reino Unido',
     sliderConfig: {
       min: 1,
@@ -328,7 +328,7 @@ const saudadeAssessmentQuestions: SaudadeAssessment[] = [
     options: [
       { id: 'fully_portuguese_home', labelEn: 'Maintain fully Portuguese household in London', labelPt: 'Manter casa totalmente portuguesa em Londres', value: 10, emoji: '🏠' },
       { id: 'bilingual_bicultural', labelEn: 'Raise bilingual, bicultural children', labelPt: 'Criar filhos bilingues e biculturais', value: 9, emoji: '👨‍👩‍👧‍👦' },
-      { id: 'portuguese_summers', labelEn: 'UK life, Portuguese summers and holidays', labelPt: 'Vida no Reino Unido, verões e feriados portugueses', value: 8, emoji: '☀️' },
+      { id: 'portuguese_summers', labelEn: 'United Kingdom life, Portuguese summers and holidays', labelPt: 'Vida no Reino Unido, verões e feriados portugueses', value: 8, emoji: '☀️' },
       { id: 'cultural_events_active', labelEn: 'Active in Portuguese cultural events and community', labelPt: 'Ativo(a) em eventos culturais portugueses e comunidade', value: 8, emoji: '🎪' },
       { id: 'selective_traditions', labelEn: 'Keep select meaningful traditions', labelPt: 'Manter tradições selecionadas e significativas', value: 7, emoji: '🎯' },
       { id: 'portuguese_food_music', labelEn: 'Portuguese food and music, British lifestyle', labelPt: 'Comida e música portuguesa, estilo de vida britânico', value: 6, emoji: '🍽️' },

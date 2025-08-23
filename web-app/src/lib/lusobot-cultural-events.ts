@@ -146,7 +146,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     ],
     modernCelebrations: [
       {
-        location: 'UK Portuguese Schools',
+        location: 'United Kingdom Portuguese Schools',
         adaptations: ['Children\'s costume parties', 'Traditional dance workshops'],
         communityInvolvement: ['Portuguese schools', 'Dance groups', 'Families']
       }
@@ -238,7 +238,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     ],
     modernCelebrations: [
       {
-        location: 'Portuguese Restaurants UK',
+        location: 'Portuguese Restaurants United Kingdom',
         adaptations: ['Special Mother\'s Day menus', 'Family celebration packages'],
         communityInvolvement: ['Portuguese restaurants', 'Families', 'Community groups']
       }
@@ -448,7 +448,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     ],
     modernCelebrations: [
       {
-        location: 'Portuguese Churches & Community Centers UK',
+        location: 'Portuguese Churches & Community Centers United Kingdom',
         adaptations: [
           'Portuguese Christmas markets',
           'Traditional carol singing',
@@ -620,7 +620,7 @@ export class LusoBotCulturalEvents {
         if (event.modernCelebrations.length > 0) {
           explanation += language === 'pt'
             ? ` Atualmente, a comunidade de falantes de português no Reino Unido celebra esta data através de eventos comunitários e adaptações culturais.`
-            : ` Currently, the Portuguese-speaking community in the UK celebrates this date through community events and cultural adaptations.`
+            : ` Currently, the Portuguese-speaking community in the United Kingdom celebrates this date through community events and cultural adaptations.`
         }
         break
 

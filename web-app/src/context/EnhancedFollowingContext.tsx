@@ -433,7 +433,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         name: 'Maria Santos',
         description: 'Cultural events organizer and Fado enthusiast',
         imageUrl: 'https://images.unsplash.com/photo-1494790108755-2616b612b1ac?w=150&h=150&fit=crop&crop=face&auto=format',
-        location: 'London, UK',
+        location: 'London, United Kingdom',
         followers: 245,
         isVerified: true,
         culturalFocus: ['Fado', 'Portuguese Music', 'Cultural Events'],
@@ -446,7 +446,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         title: 'Traditional Portuguese Music Community',
         description: 'Dedicated to preserving and celebrating Fado music in London',
         imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=150&h=150&fit=crop&auto=format',
-        location: 'London, UK',
+        location: 'London, United Kingdom',
         followers: 1240,
         category: 'Music & Culture',
         culturalFocus: ['Fado', 'Portuguese Music', 'Traditional Culture']
@@ -454,9 +454,9 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
       {
         id: 'community-portuguese-families-uk',
         type: 'community',
-        name: 'Portuguese Families UK',
+        name: 'Portuguese Families United Kingdom',
         title: 'Supporting Portuguese families across Britain',
-        description: 'A supportive community for Portuguese families living in the UK',
+        description: 'A supportive community for Portuguese families living in the United Kingdom',
         imageUrl: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=150&h=150&fit=crop&auto=format',
         location: 'United Kingdom',
         followers: 2180,
@@ -470,7 +470,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         title: 'Portuguese Cultural Events Organizer',
         description: 'Organizing authentic Portuguese cultural experiences across London',
         imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format',
-        location: 'London, UK',
+        location: 'London, United Kingdom',
         followers: 892,
         isVerified: true,
         culturalFocus: ['Portuguese Cuisine', 'Cultural Festivals', 'Community Events']

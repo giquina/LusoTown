@@ -131,7 +131,7 @@ C) Update the rules to clarify [specific point]
 
 **ICA Response Pattern**:
 - Reference `UI_UX_RULES.md` geographic terminology rules
-- Explain the "UK vs London" rule and its reasoning
+- Explain the "United Kingdom vs London" rule and its reasoning
 - Show where the rule is documented
 - Ask if user wants to update the rule or find alternative messaging
 
@@ -178,14 +178,14 @@ The ICA is successful when it:
 ## 📊 ICA Knowledge Base
 
 ### Portuguese Platform Context
-- Target audience: Portuguese speakers in UK
+- Target audience: Portuguese speakers in United Kingdom
 - Cultural requirements: Authentic Portuguese branding
 - Business model: Community-focused with premium services
 - Technical requirements: Bilingual, mobile-first, configuration-driven
 
 ### Common Rule Categories
 1. **Cultural Authenticity**: Portuguese colors, terminology, community focus
-2. **Geographic Scope**: UK-wide vs London-specific messaging
+2. **Geographic Scope**: United Kingdom-wide vs London-specific messaging
 3. **User Experience**: Button behavior, mobile responsiveness, accessibility
 4. **Technical Standards**: Zero hardcoding, bilingual support, configuration-driven
 5. **Performance**: Luxury experience vs loading speed balance

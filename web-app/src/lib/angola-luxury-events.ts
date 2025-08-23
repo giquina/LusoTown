@@ -1,4 +1,4 @@
-// Luxury Angola Events for Elite Angolan Diaspora in UK
+// Luxury Angola Events for Elite Angolan Diaspora in United Kingdom
 // Sophisticated cultural and business networking events targeting wealthy Angolan professionals
 
 import { EventTour } from './events-tours'
@@ -75,7 +75,7 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
       'Exclusive group of verified high-net-worth individuals',
       'Professional presentations by industry leaders',
       'Strategic business networking opportunities',
-      'Access to Angola-UK investment partnerships'
+      'Access to Angola-United Kingdom investment partnerships'
     ],
     whatToHear: 'Success stories from Angolan entrepreneurs who have built thriving businesses in London\'s competitive markets',
     whatToLearn: 'How to leverage London\'s business opportunities while maintaining strong cultural connections to Angola',
@@ -153,7 +153,7 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
   {
     id: 'angola-003',
     title: 'Energy Professionals: London-Angola Business Connection Dinner',
-    description: 'Premier networking dinner for London-based energy professionals with Angola connections. Connect with London\'s finance elite while exploring business opportunities that bridge UK expertise with Angola heritage and international markets.',
+    description: 'Premier networking dinner for London-based energy professionals with Angola connections. Connect with London\'s finance elite while exploring business opportunities that bridge United Kingdom expertise with Angola heritage and international markets.',
     date: '2025-10-12',
     time: '19:00',
     endTime: '23:00',
@@ -185,7 +185,7 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
     ],
     whatToExpect: [
       'Senior executives from major energy companies',
-      'Strategic presentations on Angola-UK energy partnerships',
+      'Strategic presentations on Angola-United Kingdom energy partnerships',
       'Access to exclusive investment opportunities',
       'High-level business relationship development'
     ],
@@ -321,7 +321,7 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
   {
     id: 'angola-006',
     title: 'Private Angolan Business Consultation & Strategy Session',
-    description: 'Exclusive one-on-one consultation for high-net-worth Angolan professionals seeking strategic business advice for UK operations, investments, or cultural ventures. Benefit from expert guidance in a confidential, luxury setting.',
+    description: 'Exclusive one-on-one consultation for high-net-worth Angolan professionals seeking strategic business advice for United Kingdom operations, investments, or cultural ventures. Benefit from expert guidance in a confidential, luxury setting.',
     date: '2025-11-20',
     time: '10:00',
     endTime: '16:00',
@@ -346,18 +346,18 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
     tags: ['Business Strategy', 'Private Consultation', 'Investment Advice', 'Executive Coaching'],
     highlights: [
       'Confidential one-on-one business strategy session',
-      'Expert advice on UK-Angola business opportunities',
+      'Expert advice on United Kingdom-Angola business opportunities',
       'Strategic planning for cultural and business ventures',
       'Premium business suite with complete privacy'
     ],
     whatToExpect: [
       'Personalized strategic business guidance',
       'Confidential discussion of business challenges and opportunities',
-      'Action plan development for UK market entry or expansion',
+      'Action plan development for United Kingdom market entry or expansion',
       'Follow-up support and networking introductions'
     ],
     whatToHear: 'Expert insights into building successful businesses in London while celebrating Angolan heritage',
-    whatToLearn: 'Strategic approaches to leveraging cultural diversity for business success in the UK market',
+    whatToLearn: 'Strategic approaches to leveraging cultural diversity for business success in the United Kingdom market',
     groupSize: 'Private (1-on-1)',
     difficulty: 'Advanced',
     averageRating: 5.0,
@@ -391,7 +391,7 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
     status: 'published',
     allowWaitlist: true,
     maxWaitingList: 20,
-    hostName: 'Mestre Carlos & Dança Angola UK',
+    hostName: 'Mestre Carlos & Dança Angola United Kingdom',
     hostImage: '/profiles/community/angola-kizomba-master.jpg',
     imageUrl: '/events/angola/sensual-kizomba-night.jpg',
     featured: true,
@@ -509,7 +509,7 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
     status: 'published',
     allowWaitlist: true,
     maxWaitingList: 50,
-    hostName: 'Kuduro UK & Urban Angola Collective',
+    hostName: 'Kuduro United Kingdom & Urban Angola Collective',
     hostImage: '/profiles/community/angola-kuduro-crew.jpg',
     imageUrl: '/events/angola/electric-kuduro-party.jpg',
     featured: true,
@@ -568,7 +568,7 @@ export const angolaLuxuryEvents: AngolaLuxuryEvent[] = [
     status: 'published',
     allowWaitlist: true,
     maxWaitingList: 75,
-    hostName: 'Angola Music UK & Lusophone Arts Collective',
+    hostName: 'Angola Music United Kingdom & Lusophone Arts Collective',
     hostImage: '/profiles/community/angola-music-collective.jpg',
     imageUrl: '/events/angola/incredible-music-festival.jpg',
     featured: true,

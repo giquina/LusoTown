@@ -153,7 +153,7 @@ export default function LocalizedCulturalPreferences({
           description: 'Annual celebration of Portuguese culture',
           date: '2025-09-15',
           location: 'London',
-          significance: 'Largest Portuguese cultural event in the UK',
+          significance: 'Largest Portuguese cultural event in the United Kingdom',
           traditions: ['Traditional music', 'Portuguese cuisine', 'Folk dancing'],
           modernCelebration: 'Combines traditional and contemporary Portuguese culture'
         }

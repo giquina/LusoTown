@@ -592,7 +592,7 @@ export default function EventsPage() {
                     <span className="hidden sm:block">
                       {isPortuguese
                         ? "Reserve experiências exclusivas com falantes de português em todo o Reino Unido. Desde grupos especializados para mulheres 30+ e 40+ até experiências familiares - encontre sua comunidade e explore o Reino Unido juntos."
-                        : "Book exclusive group experiences with Portuguese speakers across the UK. From specialized groups for Women 30+ and 40+ to family-friendly activities - find your community and explore the UK together."}
+                        : "Book exclusive group experiences with Portuguese speakers across the United Kingdom. From specialized groups for Women 30+ and 40+ to family-friendly activities - find your community and explore the United Kingdom together."}
                     </span>
                     {/* Mobile short subtitle */}
                     <span className="sm:hidden">

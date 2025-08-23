@@ -29,7 +29,7 @@ export default function HowItWorksSection() {
       title: isPortuguese ? 'Perfil Cultural Detalhado' : 'Detailed Cultural Profile',
       description: isPortuguese 
         ? 'Crie um perfil que reflete a sua herança portuguesa, interesses culturais, localização no Reino Unido e o que procura numa conexão.'
-        : 'Create a profile that reflects your Portuguese heritage, cultural interests, UK location, and what you\'re looking for in a connection.',
+        : 'Create a profile that reflects your Portuguese heritage, cultural interests, United Kingdom location, and what you\'re looking for in a connection.',
       features: [
         isPortuguese ? 'Região portuguesa de origem' : 'Portuguese region of origin',
         isPortuguese ? 'Tradições culturais favoritas' : 'Favorite cultural traditions',
@@ -46,7 +46,7 @@ export default function HowItWorksSection() {
         : 'Our algorithm analyzes multiple dimensions of Portuguese cultural compatibility to find your best matches.',
       features: [
         isPortuguese ? 'Valores culturais partilhados' : 'Shared cultural values',
-        isPortuguese ? 'Proximidade geográfica no Reino Unido' : 'Geographic proximity in the UK',
+        isPortuguese ? 'Proximidade geográfica no Reino Unido' : 'Geographic proximity in the United Kingdom',
         isPortuguese ? 'Interesses e objetivos comuns' : 'Common interests and goals',
         isPortuguese ? 'Preferências de comunicação' : 'Communication preferences'
       ]
@@ -91,7 +91,7 @@ export default function HowItWorksSection() {
     },
     {
       icon: MapPinIcon,
-      title: isPortuguese ? 'Localização no Reino Unido' : 'UK Location-Based',
+      title: isPortuguese ? 'Localização no Reino Unido' : 'United Kingdom Location-Based',
       description: isPortuguese
         ? 'Encontre pessoas na sua área - Londres, Manchester, Birmingham, ou qualquer cidade no Reino Unido.'
         : 'Find people in your area - London, Manchester, Birmingham, or any city across the United Kingdom.'
@@ -101,14 +101,14 @@ export default function HowItWorksSection() {
       title: isPortuguese ? 'Verificação Cultural' : 'Cultural Verification',
       description: isPortuguese
         ? 'Todos os perfis são verificados para garantir ligações autênticas entre falantes de português no Reino Unido.'
-        : 'All profiles are verified to ensure authentic connections between Portuguese speakers in the UK.'
+        : 'All profiles are verified to ensure authentic connections between Portuguese speakers in the United Kingdom.'
     },
     {
       icon: CalendarIcon,
       title: isPortuguese ? 'Integração de Eventos' : 'Event Integration',
       description: isPortuguese
         ? 'Conecte-se com outros falantes de português em eventos culturais lusófonos no Reino Unido.'
-        : 'Connect with fellow Portuguese speakers at Lusophone cultural events across the UK.'
+        : 'Connect with fellow Portuguese speakers at Lusophone cultural events across the United Kingdom.'
     }
   ];
 
@@ -125,7 +125,7 @@ export default function HowItWorksSection() {
       title: isPortuguese ? 'Seja Autêntico' : 'Be Authentic',
       description: isPortuguese
         ? 'Partilhe as suas experiências reais como falante de português no Reino Unido. A autenticidade cria conexões mais profundas.'
-        : 'Share your real experiences as a Portuguese speaker in the UK. Authenticity creates deeper connections.'
+        : 'Share your real experiences as a Portuguese speaker in the United Kingdom. Authenticity creates deeper connections.'
     },
     {
       icon: TrophyIcon,
@@ -167,7 +167,7 @@ export default function HowItWorksSection() {
               <p className="text-gray-700 text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-medium">
                 {isPortuguese
                   ? 'Desenvolvemos um algoritmo especializado que conecta falantes de português no Reino Unido, independentemente da sua origem. Se você fala português, você pertence aqui.'
-                  : 'We\'ve developed a specialized algorithm that connects Portuguese speakers across the UK, regardless of your origin. If you speak Portuguese, you belong here.'}
+                  : 'We\'ve developed a specialized algorithm that connects Portuguese speakers across the United Kingdom, regardless of your origin. If you speak Portuguese, you belong here.'}
               </p>
             </motion.div>
           </div>
@@ -299,7 +299,7 @@ export default function HowItWorksSection() {
               <p className="text-gray-600 text-lg max-w-3xl mx-auto">
                 {isPortuguese
                   ? 'Siga estas dicas comprovadas para obter melhores correspondências e conectar-se com outros falantes de português no Reino Unido.'
-                  : 'Follow these proven tips to get better matches and connect with fellow Portuguese speakers across the UK.'}
+                  : 'Follow these proven tips to get better matches and connect with fellow Portuguese speakers across the United Kingdom.'}
               </p>
             </motion.div>
           </div>
@@ -360,7 +360,7 @@ export default function HowItWorksSection() {
               >
                 {isPortuguese 
                   ? 'Os números falam por si - nossa plataforma realmente conecta falantes de português no Reino Unido'
-                  : 'The numbers speak for themselves - our platform truly connects Portuguese speakers across the UK'}
+                  : 'The numbers speak for themselves - our platform truly connects Portuguese speakers across the United Kingdom'}
               </motion.p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

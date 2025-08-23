@@ -354,7 +354,7 @@ const ACCOMMODATION_TIPS: AccommodationTip[] = [
     category: 'legal',
     title: 'Deposit Protection Schemes',
     titlePortuguese: 'Esquemas de Proteção de Depósito',
-    content: 'In the UK, landlords must protect your deposit in a government-approved scheme. This protects your money and helps resolve disputes. Always check your deposit is protected within 30 days.',
+    content: 'In the United Kingdom, landlords must protect your deposit in a government-approved scheme. This protects your money and helps resolve disputes. Always check your deposit is protected within 30 days.',
     contentPortuguese: 'No Reino Unido, os senhorios devem proteger o seu depósito num esquema aprovado pelo governo. Isto protege o seu dinheiro e ajuda a resolver disputas. Verifique sempre se o seu depósito está protegido em 30 dias.',
     importance: 'high',
     icon: ShieldCheckIcon
@@ -434,7 +434,7 @@ export default function AccommodationSupportSection() {
       id: 'tips', 
       label: { en: 'Housing Tips', pt: 'Dicas de Alojamento' },
       icon: InformationCircleIcon,
-      description: { en: 'Essential advice for renting in the UK', pt: 'Conselhos essenciais para alugar no Reino Unido' }
+      description: { en: 'Essential advice for renting in the United Kingdom', pt: 'Conselhos essenciais para alugar no Reino Unido' }
     }
   ]
 
@@ -513,7 +513,7 @@ export default function AccommodationSupportSection() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             {language === 'pt' 
               ? 'Apoio abrangente para encontrar alojamento em Londres, conectar-se com colegas portugueses e navegar no sistema de arrendamento do Reino Unido com confiança.'
-              : 'Comprehensive support to find accommodation in London, connect with Portuguese housemates, and navigate the UK rental system with confidence.'}
+              : 'Comprehensive support to find accommodation in London, connect with Portuguese housemates, and navigate the United Kingdom rental system with confidence.'}
           </p>
 
           {/* Quick Stats */}

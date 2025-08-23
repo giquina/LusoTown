@@ -147,7 +147,7 @@ export default function BusinessNetworkingMatch({
         businessCompatibility: 95,
         culturalAlignment: 89,
         professionalAlignment: 94,
-        sharedInterests: ["FinTech", "Portuguese Market", "UK-Portugal Trade", "Startup Ecosystem"],
+        sharedInterests: ["FinTech", "Portuguese Market", "United Kingdom-Portugal Trade", "Startup Ecosystem"],
         sharedGoals: ["Business Expansion", "Mentorship", "Investment Opportunities"],
         isMutual: false,
         matchType: "mentorship",
@@ -179,7 +179,7 @@ export default function BusinessNetworkingMatch({
           availableForMentorship: true,
           businessEvents: [
             { id: "be1", title: "FinTech Portuguese Network", category: "Networking", date: "2025-08-30", price: 0 },
-            { id: "be2", title: "Portugal-UK Trade Summit", category: "Conference", date: "2025-09-15", price: 150 },
+            { id: "be2", title: "Portugal-United Kingdom Trade Summit", category: "Conference", date: "2025-09-15", price: 150 },
           ],
           conversationStarters: [
             {
@@ -779,7 +779,7 @@ export default function BusinessNetworkingMatch({
                       {[
                         {
                           id: "bev1",
-                          title: language === "pt" ? "Portugal-UK Business Summit" : "Portugal-UK Business Summit",
+                          title: language === "pt" ? "Portugal-United Kingdom Business Summit" : "Portugal-United Kingdom Business Summit",
                           category: language === "pt" ? "Conferência" : "Conference",
                           date: "2025-09-15",
                           price: 150,

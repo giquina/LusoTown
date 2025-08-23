@@ -363,7 +363,7 @@ export default function EnhancedMatchDashboard({
               >
                 {language === "pt" 
                   ? "Conecte-se com falantes de português em todo o Reino Unido"
-                  : "Connect with Portuguese speakers across the UK"}
+                  : "Connect with Portuguese speakers across the United Kingdom"}
               </motion.p>
             </div>
           </div>

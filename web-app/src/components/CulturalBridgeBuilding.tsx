@@ -118,7 +118,7 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
         quotePortuguese: 'Através deste programa, fiz amigos britânicos que agora são como família. Visitaram Portugal, e eu visitei Londres. Partilhamos culturas e ajudamo-nos com línguas.'
       }
     ],
-    futurePlans: 'Expand to 50 UK schools by 2025, launch virtual reality cultural exchange experiences, establish university pathway programmes.',
+    futurePlans: 'Expand to 50 United Kingdom schools by 2025, launch virtual reality cultural exchange experiences, establish university pathway programmes.',
     futurePlansPortuguese: 'Expandir para 50 escolas do Reino Unido até 2025, lançar experiências de intercâmbio cultural em realidade virtual, estabelecer programas de via universitária.',
     mediaRecognition: ['BBC Education', 'Times Educational Supplement', 'Portuguese National Television', 'Guardian Education'],
     icon: AcademicCapIcon,

@@ -89,7 +89,7 @@ You are a deployment and DevOps specialist for the LusoTown London Portuguese-sp
 - Cache policy configuration and management
 - Portuguese cultural content delivery optimization
 - Image optimization and responsive delivery
-- Geographic distribution for UK Portuguese-speaking community
+- Geographic distribution for United Kingdom Portuguese-speaking community
 
 ## Monitoring and Alerting:
 

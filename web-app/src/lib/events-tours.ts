@@ -181,7 +181,7 @@ export const eventsTours: EventTour[] = [
       'Exclusive dining at authentic Portuguese restaurant',
       'Professional mentorship opportunities',
       'Business card exchange and LinkedIn connections',
-      'Discussion about career advancement in UK market'
+      'Discussion about career advancement in United Kingdom market'
     ],
     whatToExpect: [
       'Intimate dinner with successful Portuguese women',
@@ -190,7 +190,7 @@ export const eventsTours: EventTour[] = [
       'Strategic partnerships and collaboration opportunities'
     ],
     whatToHear: 'Career success stories from Portuguese women who built businesses in London',
-    whatToLearn: 'Professional strategies for advancing in UK market while maintaining Portuguese identity',
+    whatToLearn: 'Professional strategies for advancing in United Kingdom market while maintaining Portuguese identity',
     groupSize: 'Small (12-16 people)',
     difficulty: 'Easy',
     averageRating: 4.9,

@@ -232,9 +232,9 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
           errors.email = t('validation.email_invalid', 'Please enter a valid email address')
         }
         
-        // UK postcode validation (basic)
+        // United Kingdom postcode validation (basic)
         if (formData.postcode && !/^[A-Z]{1,2}[0-9R][0-9A-Z]? [0-9][A-Z]{2}$/i.test(formData.postcode)) {
-          errors.postcode = t('validation.postcode_invalid', 'Please enter a valid UK postcode')
+          errors.postcode = t('validation.postcode_invalid', 'Please enter a valid United Kingdom postcode')
         }
         break
       
@@ -746,7 +746,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
           )}
         </div>
         <p className="text-white/90 mt-2">
-          {t('form.subtitle', 'Join the largest directory of Portuguese businesses in the UK')}
+          {t('form.subtitle', 'Join the largest directory of Portuguese businesses in the United Kingdom')}
         </p>
       </div>
 

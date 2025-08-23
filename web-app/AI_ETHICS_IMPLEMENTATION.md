@@ -139,7 +139,7 @@ const optimization = await languagePreservationAI.optimizeBilingualContent(
 - **Minhoto**: Northern Portuguese dialect preservation
 - **Açoriano**: Azorean dialect support (critical preservation priority)
 - **Madeirense**: Madeiran dialect maintenance
-- **Brasileiro**: Brazilian Portuguese in UK context
+- **Brasileiro**: Brazilian Portuguese in United Kingdom context
 
 #### Cultural Context Preservation
 - **Saudade**: Untranslatable Portuguese emotional concept

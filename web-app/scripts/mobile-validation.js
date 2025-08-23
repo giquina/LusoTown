@@ -4,7 +4,7 @@
  * Mobile UX Validation Script for LusoTown Portuguese-speaking community Platform
  * 
  * Comprehensive mobile experience validation that checks all critical
- * mobile UX factors for the Portuguese-speaking community in London & UK.
+ * mobile UX factors for the Portuguese-speaking community in London & United Kingdom.
  */
 
 const fs = require('fs');

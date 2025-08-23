@@ -105,7 +105,7 @@ export type PartnershipLevel =
   | 'community_partner'
   | 'supporting_partner'
 
-// Real Portuguese Organizations in London and UK
+// Real Portuguese Organizations in London and United Kingdom
 export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
   {
     id: 'partner-embassy',
@@ -147,7 +147,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     communitySize: 50000,
     yearsActive: 47,
     languagesSupported: ['Portuguese', 'English'],
-    regionsServed: ['London', 'UK', 'Ireland'],
+    regionsServed: ['London', 'United Kingdom', 'Ireland'],
     
     socialMedia: {
       facebook: 'https://facebook.com/EmbaixadaPortugalLondres',
@@ -203,7 +203,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       title: 'Cultural Attaché',
       email: 'cultura.londres@mne.pt',
       phone: '+44 20 7235 5331',
-      bio: 'Cultural Attaché responsible for promoting Portuguese culture and fostering community connections in the UK.'
+      bio: 'Cultural Attaché responsible for promoting Portuguese culture and fostering community connections in the United Kingdom.'
     }
   },
   
@@ -322,7 +322,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         name: 'Portuguese Citizenship Language Test Preparation',
         namePortuguese: 'Preparação para Teste de Língua para Cidadania Portuguesa',
         description: 'Intensive preparation for Portuguese language proficiency test required for citizenship. Includes legal guidance and document preparation.',
-        targetAudience: ['Citizenship applicants', 'Heritage speakers', 'Long-term UK residents'],
+        targetAudience: ['Citizenship applicants', 'Heritage speakers', 'Long-term United Kingdom residents'],
         frequency: 'Twice weekly (2 hours) - 8 weeks',
         cost: '£320 per course (LusoTown members: £240)',
         registrationRequired: true,
@@ -374,16 +374,16 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       title: 'Centre Director & LusoTown Partnership Coordinator',
       email: 'director.londres@instituto-camoes.pt',
       phone: '+44 20 7589 8755',
-      bio: 'Director of Instituto Camões London and official coordinator of the LusoTown strategic partnership. Specialist in Portuguese language education, cultural programming, and digital community engagement with 15 years of experience in UK Portuguese cultural promotion.'
+      bio: 'Director of Instituto Camões London and official coordinator of the LusoTown strategic partnership. Specialist in Portuguese language education, cultural programming, and digital community engagement with 15 years of experience in United Kingdom Portuguese cultural promotion.'
     }
   },
   
   {
     id: 'partner-chamber',
-    name: 'Portugal-UK Chamber of Commerce',
+    name: 'Portugal-United Kingdom Chamber of Commerce',
     namePortuguese: 'Câmara de Comércio Portugal-Reino Unido',
     type: 'chamber_commerce',
-    description: 'Bilateral chamber promoting trade and investment between Portugal and the UK, supporting Portuguese businesses and professionals.',
+    description: 'Bilateral chamber promoting trade and investment between Portugal and the United Kingdom, supporting Portuguese businesses and professionals.',
     descriptionPortuguese: 'Câmara bilateral promovendo comércio e investimento entre Portugal e o Reino Unido, apoiando empresas e profissionais portugueses.',
     
     website: 'https://www.portugal-uk.com',
@@ -418,7 +418,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     communitySize: 800,
     yearsActive: 25,
     languagesSupported: ['Portuguese', 'English'],
-    regionsServed: ['UK', 'Portugal'],
+    regionsServed: ['United Kingdom', 'Portugal'],
     
     socialMedia: {
       linkedin: 'https://linkedin.com/company/portugal-uk-chamber',
@@ -456,7 +456,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     upcomingEvents: [
       {
         id: 'event-trade-mission',
-        title: 'UK-Portugal Trade Mission',
+        title: 'United Kingdom-Portugal Trade Mission',
         titlePortuguese: 'Missão Comercial Reino Unido-Portugal',
         date: '2024-04-18',
         time: '09:00',
@@ -473,7 +473,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       title: 'Executive Director',
       email: 'carlos.santos@portugal-uk.com',
       phone: '+44 20 7383 5055',
-      bio: 'Executive Director with 15 years of experience in UK-Portugal trade relations and business development.'
+      bio: 'Executive Director with 15 years of experience in United Kingdom-Portugal trade relations and business development.'
     }
   },
   
@@ -684,7 +684,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     name: 'Anglo-Portuguese Society',
     namePortuguese: 'Sociedade Anglo-Portuguesa',
     type: 'cultural_center',
-    description: 'Premier cultural organization fostering UK-Portugal relations through high-level diplomatic, business, and cultural exchanges. LusoTown\'s founding cultural partner, officially endorsed by the Portuguese Ambassador.',
+    description: 'Premier cultural organization fostering United Kingdom-Portugal relations through high-level diplomatic, business, and cultural exchanges. LusoTown\'s founding cultural partner, officially endorsed by the Portuguese Ambassador.',
     descriptionPortuguese: 'Organização cultural de prestígio promovendo relações Reino Unido-Portugal através de intercâmbios diplomáticos, empresariais e culturais de alto nível. Parceiro cultural fundador da LusoTown, oficialmente apoiado pelo Embaixador Português.',
     
     website: 'https://www.angloportuguesesociety.org.uk',
@@ -704,7 +704,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       'Academic research collaboration',
       'Professional Portuguese language certification',
       'Ambassador-hosted exclusive events',
-      'UK-Portugal trade mission coordination',
+      'United Kingdom-Portugal trade mission coordination',
       'Elite membership networking opportunities'
     ],
     eventsHosted: [
@@ -713,7 +713,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       'Camões Prize Literary Celebration',
       'Port Wine & Business Networking Evenings',
       'Portuguese Heritage Preservation Symposium',
-      'UK-Portugal Trade Delegation Dinners',
+      'United Kingdom-Portugal Trade Delegation Dinners',
       'Cultural Exchange Academic Conferences',
       'Portuguese Art & Antiques Exhibitions'
     ],
@@ -760,7 +760,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         id: 'prog-cultural-preservation',
         name: 'Portuguese Cultural Heritage Preservation Initiative',
         namePortuguese: 'Iniciativa de Preservação do Património Cultural Português',
-        description: 'Collaborative program documenting and preserving Portuguese cultural heritage in the UK through digital archives and cultural events.',
+        description: 'Collaborative program documenting and preserving Portuguese cultural heritage in the United Kingdom through digital archives and cultural events.',
         targetAudience: ['Cultural historians', 'Portuguese heritage families', 'Academic researchers'],
         frequency: 'Monthly workshops and quarterly symposiums',
         cost: '£125 per program (LusoTown members: £94)',
@@ -789,7 +789,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         date: '2024-11-14',
         time: '09:00',
         location: 'Canary Wharf Conference Centre',
-        description: 'High-level investment summit connecting Portuguese and UK investors, featuring government officials and industry leaders',
+        description: 'High-level investment summit connecting Portuguese and United Kingdom investors, featuring government officials and industry leaders',
         capacity: 150,
         price: 95,
         partnerId: 'partner-anglo-portuguese-society'
@@ -801,16 +801,16 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       title: 'Honorary Secretary & LusoTown Partnership Director',
       email: 'partnerships@angloportuguesesociety.org.uk',
       phone: '+44 20 7235 2581',
-      bio: 'Diplomatic liaison and cultural programming director with 20 years of experience in UK-Portugal relations. Official coordinator of the LusoTown strategic partnership, working closely with the Portuguese Ambassador to support premium community services.'
+      bio: 'Diplomatic liaison and cultural programming director with 20 years of experience in United Kingdom-Portugal relations. Official coordinator of the LusoTown strategic partnership, working closely with the Portuguese Ambassador to support premium community services.'
     }
   },
 
   {
     id: 'partner-millennium-bank',
-    name: 'Millennium Bank UK (Portuguese Banking)',
-    namePortuguese: 'Millennium Bank UK (Banca Portuguesa)',
+    name: 'Millennium Bank United Kingdom (Portuguese Banking)',
+    namePortuguese: 'Millennium Bank United Kingdom (Banca Portuguesa)',
     type: 'business_association',
-    description: 'Leading Portuguese bank serving the UK market with specialized services for Portuguese nationals, businesses, and investors. Official banking partner providing exclusive financial services to LusoTown premium members.',
+    description: 'Leading Portuguese bank serving the United Kingdom market with specialized services for Portuguese nationals, businesses, and investors. Official banking partner providing exclusive financial services to LusoTown premium members.',
     descriptionPortuguese: 'Banco português líder no mercado do Reino Unido com serviços especializados para nacionais, empresas e investidores portugueses. Parceiro bancário oficial oferecendo serviços financeiros exclusivos aos membros premium da LusoTown.',
     
     website: 'https://www.millenniumbank.co.uk',
@@ -823,7 +823,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     partnershipStartDate: '2024-01-15',
     servicesOffered: [
       'Portuguese-speaking personal banking',
-      'International money transfers (UK-Portugal)',
+      'International money transfers (United Kingdom-Portugal)',
       'Portuguese property investment financing',
       'Business banking for Portuguese entrepreneurs',
       'Investment advisory services',
@@ -841,7 +841,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       'Entrepreneur Finance Networking Events'
     ],
     memberBenefits: [
-      'No fees on UK-Portugal transfers (saves £240/year)',
+      'No fees on United Kingdom-Portugal transfers (saves £240/year)',
       'Preferential mortgage rates for Portuguese property',
       'Free Portuguese investment advisory consultations',
       'Priority banking services in Portuguese',
@@ -870,7 +870,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         id: 'prog-property-investment',
         name: 'Portuguese Property Investment Advisory',
         namePortuguese: 'Consultoria de Investimento Imobiliário Português',
-        description: 'Comprehensive advisory service for UK residents investing in Portuguese property, including financing, legal guidance, and market analysis.',
+        description: 'Comprehensive advisory service for United Kingdom residents investing in Portuguese property, including financing, legal guidance, and market analysis.',
         targetAudience: ['Property investors', 'Portuguese diaspora', 'Retirees', 'Business professionals'],
         frequency: 'Monthly seminars, ongoing consultations',
         cost: 'Free for LusoTown members (normally £150/consultation)',
@@ -881,7 +881,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         id: 'prog-business-expansion',
         name: 'Cross-border Business Expansion Support',
         namePortuguese: 'Apoio à Expansão Empresarial Transfronteiriça',
-        description: 'Banking and financial services supporting Portuguese businesses expanding to UK and UK businesses entering Portuguese markets.',
+        description: 'Banking and financial services supporting Portuguese businesses expanding to United Kingdom and United Kingdom businesses entering Portuguese markets.',
         targetAudience: ['Business owners', 'Entrepreneurs', 'SME executives'],
         frequency: 'Bi-weekly workshops',
         cost: '£85 per workshop (LusoTown members: free)',
@@ -910,16 +910,16 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       title: 'Director of Portuguese Client Services & LusoTown Partnership Lead',
       email: 'carlos.ferreira@millenniumbank.co.uk',
       phone: '+44 20 7816 4000',
-      bio: 'Senior banking executive specializing in Portuguese client services and cross-border financial solutions. Leads the strategic partnership with LusoTown to provide premium banking services to the Portuguese-speaking community in the UK.'
+      bio: 'Senior banking executive specializing in Portuguese client services and cross-border financial solutions. Leads the strategic partnership with LusoTown to provide premium banking services to the Portuguese-speaking community in the United Kingdom.'
     }
   },
 
   {
     id: 'partner-tap-air-portugal',
-    name: 'TAP Air Portugal UK',
+    name: 'TAP Air Portugal United Kingdom',
     namePortuguese: 'TAP Air Portugal Reino Unido',
     type: 'business_association',
-    description: 'Portugal\'s national airline serving the UK market with direct flights to Lisbon, Porto, and seasonal destinations. Official travel partner offering exclusive benefits to LusoTown members.',
+    description: 'Portugal\'s national airline serving the United Kingdom market with direct flights to Lisbon, Porto, and seasonal destinations. Official travel partner offering exclusive benefits to LusoTown members.',
     descriptionPortuguese: 'Companhia aérea nacional de Portugal servindo o mercado do Reino Unido com voos diretos para Lisboa, Porto e destinos sazonais. Parceiro oficial de viagens oferecendo benefícios exclusivos aos membros da LusoTown.',
     
     website: 'https://www.flytap.com/en-gb',
@@ -988,9 +988,9 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       },
       {
         id: 'prog-business-travel',
-        name: 'UK-Portugal Business Travel Solutions',
+        name: 'United Kingdom-Portugal Business Travel Solutions',
         namePortuguese: 'Soluções de Viagens Empresariais Reino Unido-Portugal',
-        description: 'Corporate travel program supporting business connections between UK and Portugal with flexible booking and priority services.',
+        description: 'Corporate travel program supporting business connections between United Kingdom and Portugal with flexible booking and priority services.',
         targetAudience: ['Business travelers', 'Entrepreneurs', 'Corporate executives'],
         frequency: 'On-demand',
         cost: 'Corporate rates with LusoTown discounts',
@@ -1015,7 +1015,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     
     contactPerson: {
       name: 'Ana Sofia Rodrigues',
-      title: 'UK Market Manager & LusoTown Partnership Coordinator',
+      title: 'United Kingdom Market Manager & LusoTown Partnership Coordinator',
       email: 'ana.rodrigues@tap.pt',
       phone: '+44 20 7630 0025',
       bio: 'Aviation industry professional specializing in Portuguese diaspora travel and community partnerships. Coordinates exclusive travel benefits for LusoTown members and Portuguese cultural events.'
@@ -1024,10 +1024,10 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
 
   {
     id: 'partner-portugal-foods',
-    name: 'Portugal Foods UK Distribution Network',
+    name: 'Portugal Foods United Kingdom Distribution Network',
     namePortuguese: 'Rede de Distribuição Portugal Foods Reino Unido',
     type: 'business_association',
-    description: 'Premium Portuguese food import and distribution network serving authentic Portuguese restaurants, delicatessens, and specialty food stores across the UK. Official culinary partner supporting Portuguese gastronomy businesses.',
+    description: 'Premium Portuguese food import and distribution network serving authentic Portuguese restaurants, delicatessens, and specialty food stores across the United Kingdom. Official culinary partner supporting Portuguese gastronomy businesses.',
     descriptionPortuguese: 'Rede premium de importação e distribuição de alimentos portugueses servindo restaurantes, delicatessens e lojas especializadas autênticas portuguesas em todo o Reino Unido. Parceiro culinário oficial apoiando negócios de gastronomia portuguesa.',
     
     website: 'https://www.portugalfoods.co.uk',
@@ -1177,7 +1177,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     communitySize: 450,
     yearsActive: 12,
     languagesSupported: ['Portuguese', 'English'],
-    regionsServed: ['London', 'UK', 'International'],
+    regionsServed: ['London', 'United Kingdom', 'International'],
     
     socialMedia: {
       twitter: 'https://twitter.com/UCLPortuguese',
@@ -1344,10 +1344,10 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
 
   {
     id: 'partner-portuguese-medical-association',
-    name: 'Portuguese Medical Association UK',
+    name: 'Portuguese Medical Association United Kingdom',
     namePortuguese: 'Associação Médica Portuguesa do Reino Unido',
     type: 'business_association',
-    description: 'Professional association representing Portuguese healthcare professionals in the UK. Provides career support, professional development, and advocacy for Portuguese medical practitioners and healthcare workers.',
+    description: 'Professional association representing Portuguese healthcare professionals in the United Kingdom. Provides career support, professional development, and advocacy for Portuguese medical practitioners and healthcare workers.',
     descriptionPortuguese: 'Associação profissional representando profissionais de saúde portugueses no Reino Unido. Fornece apoio na carreira, desenvolvimento profissional e advocacia para médicos portugueses e trabalhadores de saúde.',
     
     website: 'https://www.pmauk.org',
@@ -1406,7 +1406,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         name: 'Portuguese Medical Mentorship Programme',
         namePortuguese: 'Programa de Mentoria Médica Portuguesa',
         description: 'Comprehensive mentorship program pairing experienced Portuguese doctors with newly qualified or relocating medical professionals',
-        targetAudience: ['Newly qualified doctors', 'Portuguese doctors moving to UK', 'Medical students'],
+        targetAudience: ['Newly qualified doctors', 'Portuguese doctors moving to United Kingdom', 'Medical students'],
         frequency: 'Ongoing individual mentorship',
         cost: 'Free for LusoTown medical professional members',
         registrationRequired: true,
@@ -1416,7 +1416,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         id: 'prog-pma-cme',
         name: 'Continuing Medical Education in Portuguese',
         namePortuguese: 'Educação Médica Continuada em Português',
-        description: 'Professional development courses delivered in Portuguese covering latest medical advances and UK healthcare system',
+        description: 'Professional development courses delivered in Portuguese covering latest medical advances and United Kingdom healthcare system',
         targetAudience: ['Practicing doctors', 'Medical specialists', 'Healthcare professionals'],
         frequency: 'Monthly seminars and annual conference',
         cost: '£85 per seminar (LusoTown members: £60)',
@@ -1433,7 +1433,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         date: '2024-10-18',
         time: '08:30',
         location: 'Royal College of Physicians, London',
-        description: 'Annual conference showcasing Portuguese medical excellence and innovation in UK healthcare',
+        description: 'Annual conference showcasing Portuguese medical excellence and innovation in United Kingdom healthcare',
         capacity: 200,
         price: 120,
         partnerId: 'partner-portuguese-medical-association'
@@ -1445,16 +1445,16 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       title: 'President & LusoTown Professional Partnership Director',
       email: 'presidente@pmauk.org',
       phone: '+44 20 7935 4444',
-      bio: 'Consultant cardiologist and President of the Portuguese Medical Association UK. Leads strategic partnerships with community organizations to support Portuguese healthcare professionals throughout their careers in the UK.'
+      bio: 'Consultant cardiologist and President of the Portuguese Medical Association United Kingdom. Leads strategic partnerships with community organizations to support Portuguese healthcare professionals throughout their careers in the United Kingdom.'
     }
   },
 
   {
     id: 'partner-portuguese-lawyers-network',
-    name: 'Portuguese Lawyers Network UK',
+    name: 'Portuguese Lawyers Network United Kingdom',
     namePortuguese: 'Rede de Advogados Portugueses do Reino Unido',
     type: 'business_association',
-    description: 'Professional network of Portuguese legal practitioners in the UK providing legal services, professional development, and advocacy for Portuguese legal professionals and community legal needs.',
+    description: 'Professional network of Portuguese legal practitioners in the United Kingdom providing legal services, professional development, and advocacy for Portuguese legal professionals and community legal needs.',
     descriptionPortuguese: 'Rede profissional de advogados portugueses no Reino Unido fornecendo serviços jurídicos, desenvolvimento profissional e advocacia para profissionais jurídicos portugueses e necessidades legais da comunidade.',
     
     website: 'https://www.plnuk.org',
@@ -1523,7 +1523,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         id: 'prog-pln-professional',
         name: 'Portuguese Legal Professional Development',
         namePortuguese: 'Desenvolvimento Profissional Jurídico Português',
-        description: 'Professional development program for Portuguese lawyers and legal professionals in the UK',
+        description: 'Professional development program for Portuguese lawyers and legal professionals in the United Kingdom',
         targetAudience: ['Portuguese lawyers', 'Legal professionals', 'Law students'],
         frequency: 'Monthly seminars and workshops',
         cost: '£65 per session (LusoTown members: £45)',
@@ -1552,16 +1552,16 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       title: 'Network Director & Community Legal Advocate',
       email: 'm.santos@plnuk.org',
       phone: '+44 20 7242 5555',
-      bio: 'Immigration and community law specialist with 12 years of experience serving the Portuguese-speaking community in the UK. Leads the network\'s partnership with LusoTown to provide accessible legal services and support.'
+      bio: 'Immigration and community law specialist with 12 years of experience serving the Portuguese-speaking community in the United Kingdom. Leads the network\'s partnership with LusoTown to provide accessible legal services and support.'
     }
   },
 
   {
     id: 'partner-portuguese-heritage-trust',
-    name: 'Portuguese Heritage Trust UK',
+    name: 'Portuguese Heritage Trust United Kingdom',
     namePortuguese: 'Fundação do Património Português Reino Unido',
     type: 'charity',
-    description: 'Charitable organization dedicated to preserving and promoting Portuguese cultural heritage in the UK through education, cultural programs, and heritage preservation projects.',
+    description: 'Charitable organization dedicated to preserving and promoting Portuguese cultural heritage in the United Kingdom through education, cultural programs, and heritage preservation projects.',
     descriptionPortuguese: 'Organização de caridade dedicada à preservação e promoção do património cultural português no Reino Unido através de educação, programas culturais e projetos de preservação patrimonial.',
     
     website: 'https://www.portugueseheritage.org.uk',
@@ -1706,7 +1706,7 @@ export const PARTNERSHIP_BENEFITS: PartnershipBenefit[] = [
     id: 'benefit-chamber-networking',
     title: 'Free Business Networking Events',
     titlePortuguese: 'Eventos de Networking Empresarial Gratuitos',
-    description: 'Complimentary access to Portugal-UK Chamber of Commerce networking events.',
+    description: 'Complimentary access to Portugal-United Kingdom Chamber of Commerce networking events.',
     descriptionPortuguese: 'Acesso gratuito a eventos de networking da Câmara de Comércio Portugal-Reino Unido.',
     category: 'business',
     membershipRequired: true,
@@ -1741,7 +1741,7 @@ export const PARTNERSHIP_BENEFITS: PartnershipBenefit[] = [
     id: 'benefit-millennium-banking',
     title: 'Premium Portuguese Banking Services',
     titlePortuguese: 'Serviços Bancários Portugueses Premium',
-    description: 'No fees on UK-Portugal transfers, preferential property investment rates, and free financial consultations (save £240/year).',
+    description: 'No fees on United Kingdom-Portugal transfers, preferential property investment rates, and free financial consultations (save £240/year).',
     descriptionPortuguese: 'Sem taxas em transferências Reino Unido-Portugal, taxas preferenciais para investimento imobiliário e consultas financeiras gratuitas (poupança £240/ano).',
     category: 'professional',
     membershipRequired: true,
@@ -1794,7 +1794,7 @@ export const PARTNERSHIP_BENEFITS: PartnershipBenefit[] = [
     id: 'benefit-business-expansion',
     title: 'Cross-border Business Support',
     titlePortuguese: 'Apoio Empresarial Transfronteiriço',
-    description: 'Free workshops on UK-Portugal business expansion and investment opportunities.',
+    description: 'Free workshops on United Kingdom-Portugal business expansion and investment opportunities.',
     descriptionPortuguese: 'Workshops gratuitos sobre expansão empresarial e oportunidades de investimento Reino Unido-Portugal.',
     category: 'business',
     membershipRequired: true,

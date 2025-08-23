@@ -146,7 +146,7 @@ export default function CreatorTestimonials() {
       rating: 4.8,
       quote: isPt
         ? 'Como empresário português em Londres, uso a LusoTown para partilhar conhecimentos sobre como montar negócios no Reino Unido. A comunidade é muito engajada e os workshops sobre vistos de negócios e networking profissional são sempre muito procurados.'
-        : 'As a Portuguese entrepreneur in London, I use LusoTown to share knowledge about setting up businesses in the UK. The community is very engaged and workshops about business visas and professional networking are always in high demand.',
+        : 'As a Portuguese entrepreneur in London, I use LusoTown to share knowledge about setting up businesses in the United Kingdom. The community is very engaged and workshops about business visas and professional networking are always in high demand.',
       achievements: [
         { 
           icon: DollarSign, 

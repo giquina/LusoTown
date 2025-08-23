@@ -1,7 +1,7 @@
 /**
  * University Partnerships Configuration
  * 
- * Centralized configuration for all UK university partnerships,
+ * Centralized configuration for all United Kingdom university partnerships,
  * Portuguese student counts, and academic contacts.
  */
 

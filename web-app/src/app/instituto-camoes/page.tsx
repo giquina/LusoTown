@@ -342,7 +342,7 @@ export default function InstitutoCamoes() {
       'nav.events': { en: 'Cultural Events', pt: 'Eventos Culturais' },
       'nav.resources': { en: 'Learning Resources', pt: 'Recursos de Aprendizagem' },
       'partnership.title': {
-        en: 'Official Recognition as UK\'s Premier Portuguese-speaking community Platform',
+        en: 'Official Recognition as United Kingdom\'s Premier Portuguese-speaking community Platform',
         pt: 'Reconhecimento Oficial como Principal Plataforma da Comunidade de Falantes de Português no Reino Unido'
       },
       'partnership.description': {
@@ -467,7 +467,7 @@ export default function InstitutoCamoes() {
                         <p className="text-gray-600 text-sm">
                           {language === 'pt' 
                             ? 'Endossado pelo Instituto Camões e pela Embaixada Portuguesa no Reino Unido.'
-                            : 'Endorsed by Instituto Camões and the Portuguese Embassy in the UK.'}
+                            : 'Endorsed by Instituto Camões and the Portuguese Embassy in the United Kingdom.'}
                         </p>
                       </div>
                     </div>
@@ -495,7 +495,7 @@ export default function InstitutoCamoes() {
                         <p className="text-gray-600 text-sm">
                           {language === 'pt' 
                             ? 'Única plataforma digital reconhecida para a comunidade de falantes de português no Reino Unido.'
-                            : 'The only recognized digital platform for the Portuguese-speaking community in the UK.'}
+                            : 'The only recognized digital platform for the Portuguese-speaking community in the United Kingdom.'}
                         </p>
                       </div>
                     </div>
@@ -516,7 +516,7 @@ export default function InstitutoCamoes() {
                       </div>
                       <div className="flex items-center justify-center gap-2">
                         <CalendarDaysIcon className="w-4 h-4" />
-                        <span>{language === 'pt' ? '30 anos no Reino Unido' : '30 years in the UK'}</span>
+                        <span>{language === 'pt' ? '30 anos no Reino Unido' : '30 years in the United Kingdom'}</span>
                       </div>
                       <div className="flex items-center justify-center gap-2">
                         <UsersIcon className="w-4 h-4" />
@@ -836,7 +836,7 @@ export default function InstitutoCamoes() {
           <p className="text-lg mb-8 opacity-90 max-w-3xl mx-auto">
             {language === 'pt' 
               ? 'Torne-se membro da LusoTown e aceda a todos os benefícios exclusivos da nossa parceria oficial com o Instituto Camões. A única plataforma portuguesa oficialmente reconhecida no Reino Unido.'
-              : 'Become a LusoTown member and access all exclusive benefits from our official partnership with Instituto Camões. The only officially recognized Portuguese platform in the UK.'}
+              : 'Become a LusoTown member and access all exclusive benefits from our official partnership with Instituto Camões. The only officially recognized Portuguese platform in the United Kingdom.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <a

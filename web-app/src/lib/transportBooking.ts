@@ -433,7 +433,7 @@ class ValidationRules {
     if (!value || !phoneRegex.test(value.trim())) {
       return {
         field: 'phone',
-        message: 'Please enter a valid UK phone number',
+        message: 'Please enter a valid United Kingdom phone number',
         messagePortuguese: 'Por favor, insira um número de telefone do Reino Unido válido'
       }
     }

@@ -432,7 +432,7 @@ export class CulturalCompatibilityAI {
     // Generational experiences
     if (p1.generationInUK === p2.generationInUK) {
       if (p1.generationInUK === 1) {
-        experiences.push('Immigration journey and first UK experiences')
+        experiences.push('Immigration journey and first United Kingdom experiences')
         experiences.push('Learning English while maintaining Portuguese')
       } else {
         experiences.push(`${p1.generationInUK}nd/3rd generation identity navigation`)
@@ -642,7 +642,7 @@ export class CulturalCompatibilityAI {
     const opportunities: string[] = []
     
     if (p1.adaptationStyle !== p2.adaptationStyle) {
-      opportunities.push('Learning from different UK adaptation approaches')
+      opportunities.push('Learning from different United Kingdom adaptation approaches')
     }
     
     if (Math.abs(p1.generationInUK - p2.generationInUK) > 0) {

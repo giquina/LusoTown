@@ -479,7 +479,7 @@ export default function Directory() {
                 </div>
                 <div className="flex items-center gap-1">
                   <MapPin className="w-4 h-4 text-secondary-500" />
-                  <span>{t('directory.london_uk_focused', 'London & UK focused')}</span>
+                  <span>{t('directory.london_uk_focused', 'London & United Kingdom focused')}</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Globe className="w-4 h-4 text-accent-500" />

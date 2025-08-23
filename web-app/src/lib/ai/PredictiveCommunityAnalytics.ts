@@ -313,7 +313,7 @@ export class PredictiveCommunityAnalytics {
 
   /**
    * Predict luxury event success with Portuguese cultural sophistication
-   * Advanced ML model considering diaspora patterns in London/UK
+   * Advanced ML model considering diaspora patterns in London/United Kingdom
    */
   public async predictEventSuccess(
     eventDetails: {
@@ -770,7 +770,7 @@ export class PredictiveCommunityAnalytics {
   }
 
   private calculateCrossGenerationalAppeal(eventDetails: any): Record<string, number> {
-    // Calculate appeal across Portuguese generations in UK
+    // Calculate appeal across Portuguese generations in United Kingdom
     const baseAppeal = {
       'first_generation': 70,
       'second_generation': 60,
@@ -1060,7 +1060,7 @@ export class PredictiveCommunityAnalytics {
       strategies.push(
         'Dedicated luxury account manager for personalized service',
         'Exclusive access to ultra-premium Portuguese cultural experiences',
-        'Private networking events with Portuguese business elite in UK'
+        'Private networking events with Portuguese business elite in United Kingdom'
       )
     }
     
@@ -1073,7 +1073,7 @@ export class PredictiveCommunityAnalytics {
     if (member.profile.saudadeIntensity >= 7) {
       interventions.push(
         'Premium fado music therapy with renowned Portuguese musicians',
-        'Luxury Portuguese cultural immersion retreats in UK countryside',
+        'Luxury Portuguese cultural immersion retreats in United Kingdom countryside',
         'Exclusive access to Portuguese art and heritage exhibitions',
         'Private Portuguese cooking experiences with Michelin-starred chefs'
       )
@@ -1138,7 +1138,7 @@ export class PredictiveCommunityAnalytics {
       `Elite Portuguese professionals from ${member.profile.region} in prestigious London positions`,
       'Sophisticated Portuguese speakers with luxury lifestyle and cultural interests',
       'Distinguished Portuguese cultural mentors and community leaders',
-      'Successful Portuguese entrepreneurs and business leaders in UK'
+      'Successful Portuguese entrepreneurs and business leaders in United Kingdom'
     ]
     
     if (member.profile.premiumEngagementLevel === 'ultra_luxury') {
@@ -1255,7 +1255,7 @@ export class PredictiveCommunityAnalytics {
     
     if (eventDetails.luxuryLevel === 'luxury') {
       baseRecommendations.push(
-        'Target Portuguese business owners and executives in UK',
+        'Target Portuguese business owners and executives in United Kingdom',
         'Collaborate with high-end Portuguese restaurants and wine establishments',
         'Market through exclusive Portuguese professional networks'
       )

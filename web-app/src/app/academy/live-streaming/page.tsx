@@ -389,7 +389,7 @@ export default function LiveStreamingModule() {
             </li>
             <li><strong>Business and Entrepreneurship:</strong>
               <ul>
-                <li>Starting a business in the UK as a Portuguese speaker</li>
+                <li>Starting a business in the United Kingdom as a Portuguese speaker</li>
                 <li>Portuguese market insights and opportunities</li>
                 <li>Cross-cultural business communication</li>
                 <li>Technology trends affecting Portuguese businesses</li>
@@ -1043,7 +1043,7 @@ export default function LiveStreamingModule() {
             <li><strong>Year 2+:</strong> £1,500-5,000/month (successful Portuguese cultural creator)</li>
           </ul>
           
-          <h4>Tax Considerations (UK):</h4>
+          <h4>Tax Considerations (United Kingdom):</h4>
           <ul>
             <li><strong>Self-Employment Registration:</strong> Register as self-employed with HMRC</li>
             <li><strong>VAT Registration:</strong> Required if earning over £85,000/year</li>

@@ -21,22 +21,22 @@ import { ROUTES } from '@/config/routes'
 
 export const metadata: Metadata = {
   title: 'Success Stories - Portuguese-speaking community Connections | LusoTown London',
-  description: 'Real success stories from Portuguese speakers who found their community in London. From Portugal to Brazil, Angola to Mozambique - discover how LusoTown connects Portuguese hearts across the UK.',
+  description: 'Real success stories from Portuguese speakers who found their community in London. From Portugal to Brazil, Angola to Mozambique - discover how LusoTown connects Portuguese hearts across the United Kingdom.',
   keywords: [
     'Portuguese-speaking community London success stories',
-    'Brazilian community UK testimonials',
+    'Brazilian community United Kingdom testimonials',
     'Angolan community London connections',
-    'Mozambican community UK experiences',
+    'Mozambican community United Kingdom experiences',
     'Cape Verdean London networking',
-    'Portuguese business partnerships UK',
+    'Portuguese business partnerships United Kingdom',
     'Lusophone community success',
     'Portuguese cultural preservation London',
-    'Portuguese-speaking friendship networks UK',
+    'Portuguese-speaking friendship networks United Kingdom',
     'Portuguese heritage community'
   ],
   openGraph: {
     title: 'Success Stories - Real Women, Real Connections | LusoTown',
-    description: 'Discover how LusoTown has helped thousands of women 30+ across the UK build lasting friendships, launch businesses, and create meaningful support networks.',
+    description: 'Discover how LusoTown has helped thousands of women 30+ across the United Kingdom build lasting friendships, launch businesses, and create meaningful support networks.',
     type: 'website',
     url: 'https://adyatribe.com/success-stories',
     images: [
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Success Stories - Real Women, Real Connections | LusoTown',
-    description: 'Discover how LusoTown has helped thousands of women 30+ across the UK build lasting friendships and support networks.',
+    description: 'Discover how LusoTown has helped thousands of women 30+ across the United Kingdom build lasting friendships and support networks.',
     images: ['/og-image.jpg'],
   },
 }
@@ -127,7 +127,7 @@ export default function SuccessStories() {
                 </div>
                 <div className="flex items-center justify-center">
                   <MapPinIcon className="w-4 h-4 mr-2" />
-                  UK-Wide Community
+                  United Kingdom-Wide Community
                 </div>
               </div>
             </div>

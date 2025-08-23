@@ -61,7 +61,7 @@ export default function Hero() {
               <div className="flex items-center gap-1">
                 <span className="text-xs">🇵🇹</span>
                 <span className="text-xs font-semibold text-gray-700">
-      UK Portuguese-speaking Community
+      United Kingdom Portuguese-speaking community
                 </span>
               </div>
               <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
@@ -78,7 +78,7 @@ export default function Hero() {
                 <span className="bg-gradient-to-r from-red-600 via-amber-600 to-green-600 bg-clip-text text-transparent">
                   Connect
                 </span>{" "}
-                <span className="text-gray-900">with Portuguese speakers across the UK</span>
+                <span className="text-gray-900">with Portuguese speakers across the United Kingdom</span>
               </motion.h1>
               
               <motion.p 
@@ -87,7 +87,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl"
               >
-                Join 750+ Portuguese speakers across the UK. 
+                Join 750+ Portuguese speakers across the United Kingdom. 
                 <span className="font-semibold text-gray-800"> Events, networking, culture.</span>
               </motion.p>
             </div>
@@ -339,7 +339,7 @@ export default function Hero() {
                 {/* Header Section */}
                 <div className="text-center space-y-4">
                   <h3 className="text-2xl font-bold text-gray-800">
-                    Join the Portuguese-speaking Community
+                    Join the Portuguese-speaking community
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
                     From {formatPrice(plans.community.monthly)}/month - Connect
@@ -400,7 +400,7 @@ export default function Hero() {
                     <div className="text-3xl font-bold text-action-600 mb-1">
                       25+
                     </div>
-                    <div className="text-sm text-gray-600 font-medium">UK Cities</div>
+                    <div className="text-sm text-gray-600 font-medium">United Kingdom Cities</div>
                   </div>
                 </div>
 

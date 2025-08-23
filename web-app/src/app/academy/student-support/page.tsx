@@ -26,7 +26,7 @@ const studentSupportModule = {
   title: "Student Support",
   titlePortuguese: "Apoio ao Estudante",
   description:
-    "Comprehensive support system for Portuguese students in UK universities",
+    "Comprehensive support system for Portuguese students in United Kingdom universities",
   descriptionPortuguese:
     "Sistema abrangente de apoio para estudantes portugueses em universidades do Reino Unido",
   difficulty: "Beginner",
@@ -46,7 +46,7 @@ const studentSupportModule = {
       title: "University Partnership Network",
       titlePortuguese: "Rede de Parcerias Universitárias",
       content: `
-        <p>LusoTown has established partnerships with 8 leading UK universities to provide dedicated support for Portuguese-speaking students. Our network ensures you have access to cultural familiarity and language support throughout your academic journey.</p>
+        <p>LusoTown has established partnerships with 8 leading United Kingdom universities to provide dedicated support for Portuguese-speaking students. Our network ensures you have access to cultural familiarity and language support throughout your academic journey.</p>
         
         <div class="bg-blue-50 border-l-4 border-blue-400 p-4 my-4">
           <p><strong>University Partner Network:</strong></p>
@@ -142,13 +142,13 @@ const studentSupportModule = {
       title: "Financial Support & Scholarships",
       titlePortuguese: "Apoio Financeiro e Bolsas",
       content: `
-        <p>Navigate the complex landscape of UK university funding with dedicated support for Portuguese students. We help you access scholarships, understand student finance, and manage costs effectively.</p>
+        <p>Navigate the complex landscape of United Kingdom university funding with dedicated support for Portuguese students. We help you access scholarships, understand student finance, and manage costs effectively.</p>
         
         <h4>Portuguese Student Scholarships (2025)</h4>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
           <div class="bg-green-50 border border-green-200 rounded-lg p-4">
             <h5 class="font-semibold text-green-800">Camões Scholarship</h5>
-            <p class="text-sm text-green-700">Up to £15,000/year for Portuguese nationals studying in the UK</p>
+            <p class="text-sm text-green-700">Up to £15,000/year for Portuguese nationals studying in the United Kingdom</p>
             <p class="text-xs text-green-600 mt-2">Application deadline: March 2025</p>
           </div>
           <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
@@ -171,10 +171,10 @@ const studentSupportModule = {
         <h4>Financial Planning Support</h4>
         <ul class="list-disc list-inside space-y-2">
           <li><strong>Budgeting Workshops:</strong> Monthly sessions in Portuguese on managing student finances</li>
-          <li><strong>Part-time Work Guidance:</strong> Understanding UK work regulations for students</li>
-          <li><strong>Banking Support:</strong> Help opening UK bank accounts with Portuguese documentation</li>
+          <li><strong>Part-time Work Guidance:</strong> Understanding United Kingdom work regulations for students</li>
+          <li><strong>Banking Support:</strong> Help opening United Kingdom bank accounts with Portuguese documentation</li>
           <li><strong>Emergency Fund:</strong> LusoTown community emergency assistance for urgent needs</li>
-          <li><strong>Tax Guidance:</strong> Understanding UK tax obligations for Portuguese students</li>
+          <li><strong>Tax Guidance:</strong> Understanding United Kingdom tax obligations for Portuguese students</li>
         </ul>
         
         <div class="bg-green-50 border-l-4 border-green-400 p-4 my-4">
@@ -235,7 +235,7 @@ const studentSupportModule = {
                 "Pesquisar e candidatar-se a bolsas específicas para portugueses",
             },
             {
-              text: "Open UK bank account with Portuguese documentation support",
+              text: "Open United Kingdom bank account with Portuguese documentation support",
               textPortuguese:
                 "Abrir conta bancária do Reino Unido com apoio de documentação portuguesa",
             },
@@ -258,7 +258,7 @@ const studentSupportModule = {
       title: "Academic Integration & Support",
       titlePortuguese: "Integração e Apoio Académico",
       content: `
-        <p>Thrive academically with culturally-aware support systems designed specifically for Portuguese students navigating UK higher education.</p>
+        <p>Thrive academically with culturally-aware support systems designed specifically for Portuguese students navigating United Kingdom higher education.</p>
         
         <h4>Academic Support Services</h4>
         <div class="space-y-4">
@@ -280,7 +280,7 @@ const studentSupportModule = {
               <ComputerDesktopIcon class="h-5 w-5" />
               Technology Support
             </h5>
-            <p class="text-sm text-green-700 mt-2">Technical assistance for UK university systems, software, and digital learning platforms.</p>
+            <p class="text-sm text-green-700 mt-2">Technical assistance for United Kingdom university systems, software, and digital learning platforms.</p>
             <ul class="text-xs text-green-600 mt-2 list-disc list-inside">
               <li>University portal navigation</li>
               <li>Digital library access</li>
@@ -308,7 +308,7 @@ const studentSupportModule = {
           <li><strong>Academic Mentors:</strong> Portuguese postgraduate students and academics</li>
           <li><strong>Professional Mentors:</strong> Portuguese professionals working in your field of study</li>
           <li><strong>Peer Mentors:</strong> Portuguese students one year ahead in your program</li>
-          <li><strong>Cultural Mentors:</strong> Long-term Portuguese residents who can guide UK integration</li>
+          <li><strong>Cultural Mentors:</strong> Long-term Portuguese residents who can guide United Kingdom integration</li>
         </ul>
         
         <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-4">
@@ -416,7 +416,7 @@ const studentSupportModule = {
       title: "Student Community & Social Integration",
       titlePortuguese: "Comunidade Estudantil e Integração Social",
       content: `
-        <p>Build lasting friendships and professional networks with fellow Portuguese students across London and the UK. Our community events are designed to create meaningful connections while celebrating Portuguese culture.</p>
+        <p>Build lasting friendships and professional networks with fellow Portuguese students across London and the United Kingdom. Our community events are designed to create meaningful connections while celebrating Portuguese culture.</p>
         
         <h4>Student-Specific Events</h4>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
@@ -469,11 +469,11 @@ const studentSupportModule = {
         <h4>Professional Development</h4>
         <p>Prepare for your career while building Portuguese professional networks:</p>
         <ul class="list-disc list-inside space-y-2 mt-3">
-          <li><strong>CV Workshops:</strong> UK CV formatting with Portuguese perspective</li>
+          <li><strong>CV Workshops:</strong> United Kingdom CV formatting with Portuguese perspective</li>
           <li><strong>Interview Practice:</strong> Mock interviews with Portuguese professionals</li>
           <li><strong>Networking Events:</strong> Connect with Portuguese employers and recruitment agencies</li>
           <li><strong>Internship Opportunities:</strong> Access to Portuguese businesses offering student placements</li>
-          <li><strong>Graduate Programs:</strong> Information sessions about Portuguese companies hiring in the UK</li>
+          <li><strong>Graduate Programs:</strong> Information sessions about Portuguese companies hiring in the United Kingdom</li>
         </ul>
         
         <div class="bg-blue-50 border-l-4 border-blue-400 p-4 my-4">

@@ -3,7 +3,7 @@
  * 
  * Centralized configuration for Phase 2 AI matching system with
  * Portuguese cultural compatibility analysis, behavioral learning,
- * and regional specialization for UK Portuguese diaspora.
+ * and regional specialization for United Kingdom Portuguese diaspora.
  * 
  * Zero hardcoding policy - all values configurable via environment variables
  */
@@ -217,7 +217,7 @@ export const PORTUGUESE_CULTURAL_CONFIG = {
   }
 } as const
 
-// UK Regional Configuration for Portuguese Diaspora
+// United Kingdom Regional Configuration for Portuguese Diaspora
 
 export const UK_REGIONAL_CONFIG = {
   london_central: {
@@ -343,7 +343,7 @@ export const CONVERSATION_CONFIG = {
       'Há alguma música portuguesa que te emociona particularmente?',
       'Is there any Portuguese music that particularly moves you?',
       'Como é que manténs a ligação com Portugal estando aqui no Reino Unido?',
-      'How do you maintain your connection to Portugal while living in the UK?'
+      'How do you maintain your connection to Portugal while living in the United Kingdom?'
     ],
     london_experience: [
       'Qual foi a tua maior descoberta em Londres?',
@@ -353,7 +353,7 @@ export const CONVERSATION_CONFIG = {
     ],
     future_aspirations: [
       'Quais são os teus planos para o futuro - ficar no Reino Unido ou voltar a Portugal?',
-      'What are your future plans - staying in the UK or returning to Portugal?',
+      'What are your future plans - staying in the United Kingdom or returning to Portugal?',
       'Como vês a criação de uma família mantendo as tradições portuguesas?',
       'How do you see raising a family while maintaining Portuguese traditions?'
     ]

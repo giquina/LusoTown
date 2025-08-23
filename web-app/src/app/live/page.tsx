@@ -215,7 +215,7 @@ export default function LivePage() {
               >
                 {isPortuguese
                   ? "Assista transmissões ao vivo da comunidade de falantes de português no Reino Unido. Música, negócios, cultura e muito mais."
-                  : "Watch live streams from the Portuguese-speaking community in the UK. Music, business, culture, and more."
+                  : "Watch live streams from the Portuguese-speaking community in the United Kingdom. Music, business, culture, and more."
                 }
               </motion.p>
 

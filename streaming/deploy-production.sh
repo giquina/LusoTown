@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# LusoTown Portuguese-speaking Community Streaming Server
+# LusoTown Portuguese-speaking community Streaming Server
 # Production Deployment Script
 
 set -e
@@ -55,7 +55,7 @@ export HTTP_PORT=${HTTP_PORT:-8080}
 echo ">� Running health check..."
 node health-check.js
 
-echo "=� Starting LusoTown Portuguese-speaking Community Streaming Server..."
+echo "=� Starting LusoTown Portuguese-speaking community Streaming Server..."
 echo ""
 echo "=� RTMP Ingestion: rtmp://YOUR_DOMAIN:1935/live/[stream_key]"
 echo "=� HLS Output: https://YOUR_DOMAIN/live/[stream_key].m3u8"

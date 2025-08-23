@@ -95,7 +95,7 @@ This implementation provides a TikTok-style messaging restriction system with Po
 - Family heritage stories
 
 #### 4. **Portuguese Festivals**
-- São João celebrations in UK
+- São João celebrations in United Kingdom
 - Santos Populares traditions
 - Carnival experiences
 - Holiday celebrations abroad
@@ -133,7 +133,7 @@ This implementation provides a TikTok-style messaging restriction system with Po
 - **PT**: "De que região és? Adoro aprender sobre diferentes tradições portuguesas!"
 
 #### Festivals
-- **EN**: "How do you celebrate São João in the UK? I miss the festivities from home!"
+- **EN**: "How do you celebrate São João in the United Kingdom? I miss the festivities from home!"
 - **PT**: "Como celebras o São João no Reino Unido? Tenho saudades das festividades de casa!"
 
 ## Technical Architecture
@@ -240,7 +240,7 @@ CREATE TABLE message_authorizations (
 - Content reflects real immigrant experiences
 - Acknowledges homesickness and cultural adaptation
 - Celebrates Portuguese heritage preservation
-- Supports community building in the UK
+- Supports community building in the United Kingdom
 
 ### Lusophone Inclusivity
 - Content for Portugal, Brazil, Angola, Mozambique, etc.
@@ -315,6 +315,6 @@ Update i18n files with new conversation starter translations (already added to e
 
 ## Conclusion
 
-This Portuguese cultural conversation starter system provides a secure, culturally authentic, and engaging way for Portuguese speakers in the UK to connect. By combining TikTok-style safety restrictions with rich Portuguese cultural content, it ensures meaningful connections while preserving the community's heritage and values.
+This Portuguese cultural conversation starter system provides a secure, culturally authentic, and engaging way for Portuguese speakers in the United Kingdom to connect. By combining TikTok-style safety restrictions with rich Portuguese cultural content, it ensures meaningful connections while preserving the community's heritage and values.
 
 The system respects user safety, celebrates Portuguese culture, and facilitates genuine connections through shared experiences and cultural understanding.

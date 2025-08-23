@@ -1,6 +1,6 @@
 # LusoTown Portuguese-speaking community Streaming Infrastructure
 
-**Professional streaming platform serving Portuguese speakers in London & UK**
+**Professional streaming platform serving Portuguese speakers in London & United Kingdom**
 
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue)](https://docker.com)
 [![SRS](https://img.shields.io/badge/SRS-6.0-green)](https://github.com/ossrs/srs)
@@ -9,7 +9,7 @@
 
 ## Overview
 
-This infrastructure provides a complete streaming solution optimized for the Portuguese-speaking community in London & UK, featuring:
+This infrastructure provides a complete streaming solution optimized for the Portuguese-speaking community in London & United Kingdom, featuring:
 
 - **RTMP Ingestion** - OBS Studio integration for content creators
 - **WebRTC Distribution** - Ultra-low latency streaming (<1 second)
@@ -230,7 +230,7 @@ Kubernetes deployment manifests coming in Phase 2.
 
 ### Performance Optimization
 
-- **European Edge Locations** - Portugal, UK, Germany
+- **European Edge Locations** - Portugal, United Kingdom, Germany
 - **Smart Routing** - Automatic best-path selection
 - **Compression** - Gzip/Brotli for Portuguese content
 - **Caching** - Optimized for streaming media
@@ -343,10 +343,10 @@ docker logs lusotown-srs-prod --follow
 
 This streaming infrastructure is part of the LusoTown Portuguese-speaking community Platform.
 
-� 2025 LusoTown - Connecting Portuguese Speakers in London & UK
+� 2025 LusoTown - Connecting Portuguese Speakers in London & United Kingdom
 
 ---
 
-**Built with d for the Portuguese-speaking community in London & UK**
+**Built with d for the Portuguese-speaking community in London & United Kingdom**
 
 For more information, visit [lusotown.com](https://lusotown.com) or contact our team at technical@lusotown.com

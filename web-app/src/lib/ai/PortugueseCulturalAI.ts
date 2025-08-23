@@ -304,7 +304,7 @@ export class PortugueseCulturalAI {
       ],
       culturalStory: recipe.culturalStory,
       familyVariations: ['Grandmother\'s secret spice', 'Regional herb additions'],
-      diasporaSubstitutions: ['UK ingredients for authentic taste'],
+      diasporaSubstitutions: ['United Kingdom ingredients for authentic taste'],
       memoryTriggers: ['Sunday family meals', 'Festival celebrations']
     }
 

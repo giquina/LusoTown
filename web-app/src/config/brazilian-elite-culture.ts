@@ -1,6 +1,6 @@
 /**
  * Brazilian Elite Cultural Configuration
- * Sophisticated luxury content for high-class Brazilian community in UK
+ * Sophisticated luxury content for high-class Brazilian community in United Kingdom
  * Targeting affluent Brazilian professionals, executives, and cultural elites
  */
 
@@ -443,7 +443,7 @@ export const RIO_LUXURY_LIFESTYLE: BrazilianCulturalVenue[] = [
 ]
 
 /**
- * Brazilian Luxury Brands with UK Presence
+ * Brazilian Luxury Brands with United Kingdom Presence
  * Representing Brazil's economic powerhouse status and luxury market sophistication
  */
 export const BRAZILIAN_LUXURY_BRANDS: BrazilianLuxuryBrand[] = [
@@ -455,10 +455,10 @@ export const BRAZILIAN_LUXURY_BRANDS: BrazilianLuxuryBrand[] = [
     prestige_level: 'world_class',
     uk_presence: {
       london_locations: ['Abbey Road Studios partnership', 'Soho music production facilities', 'Camden recording studios'],
-      exclusive_partnerships: ['BBC Radio collaborations', 'UK music festival partnerships', 'British music industry networks'],
-      vip_services: ['International artist development', 'UK music industry introductions', 'Cross-cultural music production', 'Global music distribution']
+      exclusive_partnerships: ['BBC Radio collaborations', 'United Kingdom music festival partnerships', 'British music industry networks'],
+      vip_services: ['International artist development', 'United Kingdom music industry introductions', 'Cross-cultural music production', 'Global music distribution']
     },
-    target_market: ['Brazilian musicians in UK', 'International music industry professionals', 'Cultural music enthusiasts', 'Brazilian music investors'],
+    target_market: ['Brazilian musicians in United Kingdom', 'International music industry professionals', 'Cultural music enthusiasts', 'Brazilian music investors'],
     cultural_connection: 'Showcases Brazil\'s incredible musical diversity and innovation, bringing authentic Brazilian sounds to global audiences through professional production'
   },
   
@@ -479,9 +479,9 @@ export const BRAZILIAN_LUXURY_BRANDS: BrazilianLuxuryBrand[] = [
   
   {
     id: 'guarana-antarctica-uk',
-    name: 'Guaraná Antarctica UK',
+    name: 'Guaraná Antarctica United Kingdom',
     category: 'food_beverage',
-    description: 'Brazil\'s iconic soft drink bringing that unique guaraná energy and authentic Brazilian flavor experience to the UK market',
+    description: 'Brazil\'s iconic soft drink bringing that unique guaraná energy and authentic Brazilian flavor experience to the United Kingdom market',
     prestige_level: 'luxury',
     uk_presence: {
       london_locations: ['Harrods international section', 'Selfridges world foods', 'Brazilian restaurants and bars'],
@@ -494,13 +494,13 @@ export const BRAZILIAN_LUXURY_BRANDS: BrazilianLuxuryBrand[] = [
   
   {
     id: 'flamengo-supporters-uk',
-    name: 'Flamengo Supporters Club UK',
+    name: 'Flamengo Supporters Club United Kingdom',
     category: 'sports_clubs',
-    description: 'Official UK supporters club for Brazil\'s most passionate football team, creating incredible community celebrations and match experiences',
+    description: 'Official United Kingdom supporters club for Brazil\'s most passionate football team, creating incredible community celebrations and match experiences',
     prestige_level: 'luxury',
     uk_presence: {
       london_locations: ['Brazilian sports bars', 'Community centers for match viewing', 'Wembley Stadium events'],
-      exclusive_partnerships: ['Brazilian Embassy cultural events', 'UK-Brazil football exchanges', 'Community integration programs'],
+      exclusive_partnerships: ['Brazilian Embassy cultural events', 'United Kingdom-Brazil football exchanges', 'Community integration programs'],
       vip_services: ['VIP match viewing experiences', 'Brazilian football culture education', 'Community celebration organization', 'Player meet-and-greet events']
     },
     target_market: ['Brazilian football fanatics', 'Sports community enthusiasts', 'Brazilian cultural participants', 'Football culture seekers'],
@@ -530,8 +530,8 @@ export const BRAZILIAN_LUXURY_BRANDS: BrazilianLuxuryBrand[] = [
     prestige_level: 'world_class',
     uk_presence: {
       london_locations: ['Farnborough Airport VIP terminal', 'London Biggin Hill Airport', 'Exclusive aircraft showroom'],
-      exclusive_partnerships: ['NetJets Europe fleet', 'Flexjet UK operations', 'Private aviation concierge services'],
-      vip_services: ['Private jet consultations', 'Custom interior design', 'UK-Brazil flight planning', 'Luxury ground transportation']
+      exclusive_partnerships: ['NetJets Europe fleet', 'Flexjet United Kingdom operations', 'Private aviation concierge services'],
+      vip_services: ['Private jet consultations', 'Custom interior design', 'United Kingdom-Brazil flight planning', 'Luxury ground transportation']
     },
     target_market: ['Ultra-high-net-worth individuals', 'Corporate executives', 'International business leaders', 'Brazilian expatriate executives'],
     cultural_connection: 'Showcases Brazil as a global technology leader and represents the sophistication of Brazilian engineering and design'
@@ -560,8 +560,8 @@ export const BRAZILIAN_LUXURY_BRANDS: BrazilianLuxuryBrand[] = [
     prestige_level: 'world_class',
     uk_presence: {
       london_locations: ['Mayfair private banking suite', 'Canary Wharf corporate office', 'Exclusive client lounges'],
-      exclusive_partnerships: ['London Metal Exchange access', 'UK real estate investment services', 'Art acquisition financing'],
-      vip_services: ['Private banking consultations', 'International wealth planning', 'Brazil-UK investment corridor', 'Cultural investment advisory']
+      exclusive_partnerships: ['London Metal Exchange access', 'United Kingdom real estate investment services', 'Art acquisition financing'],
+      vip_services: ['Private banking consultations', 'International wealth planning', 'Brazil-United Kingdom investment corridor', 'Cultural investment advisory']
     },
     target_market: ['Brazilian expatriate executives', 'International investors in Brazil', 'Family offices', 'Cultural institution investors'],
     cultural_connection: 'Represents Brazil\'s position as Latin America\'s financial powerhouse and sophisticated banking ecosystem'
@@ -619,7 +619,7 @@ export function getLondonBrazilianEliteVenues(): BrazilianCulturalVenue[] {
       },
       {
         id: 'uk-brazil-business-forum',
-        name: 'UK-Brazil Business Excellence Forum',
+        name: 'United Kingdom-Brazil Business Excellence Forum',
         namePortuguese: 'Fórum de Excelência Empresarial Reino Unido-Brasil',
         type: 'networking',
         description: 'Exclusive networking event for C-suite executives facilitating high-level business partnerships',
@@ -654,7 +654,7 @@ export function getLondonBrazilianEliteVenues(): BrazilianCulturalVenue[] {
     established_year: 1825,
     notable_patrons: [
       'Brazilian government officials',
-      'UK-Brazil Chamber of Commerce',
+      'United Kingdom-Brazil Chamber of Commerce',
       'Brazilian multinational corporations',
       'British diplomatic community'
     ],
@@ -778,11 +778,11 @@ export const BRAZILIAN_ECONOMIC_POWERHOUSE = {
   ],
   cultural_magnetism: [
     'Samba: The heartbeat that gets everyone moving - infectious rhythms creating instant community',
-    'Bossa Nova: Smooth, intimate sounds perfect for sophisticated UK evening gatherings',
+    'Bossa Nova: Smooth, intimate sounds perfect for sophisticated United Kingdom evening gatherings',
     'Capoeira: Incredible martial art combining music, acrobatics, and community spirit',
     'Brazilian BBQ (Churrasco): Amazing social dining experiences that bring people together',
     'Football Culture: Massive community celebrations during matches creating electric atmosphere',
-    'Carnival Energy: Street parties bringing authentic Brazilian joy to UK communities',
+    'Carnival Energy: Street parties bringing authentic Brazilian joy to United Kingdom communities',
     'Açaí Culture: Healthy, delicious lifestyle that connects wellness with community',
     'Forró Dancing: Traditional couples dancing that creates romantic connections',
     'Funk Carioca: High-energy urban beats that get entire communities moving',
@@ -1244,7 +1244,7 @@ export const BRAZILIAN_NIGHTLIFE_VENUES: BrazilianCulturalVenue[] = [
     email: 'festa@botecobrasilondon.com',
     website: 'https://botecobrasilondon.com',
     
-    description: 'London\'s hottest Brazilian nightlife destination where authentic Brazilian energy meets UK nightlife sophistication',
+    description: 'London\'s hottest Brazilian nightlife destination where authentic Brazilian energy meets United Kingdom nightlife sophistication',
     descriptionPortuguese: 'Destino noturno brasileiro mais quente de Londres onde a autêntica energia brasileira encontra a sofisticação noturna do Reino Unido',
     culturalImportance: 'Premier venue bringing authentic Brazilian party culture to London with live music, incredible cocktails, and infectious energy',
     

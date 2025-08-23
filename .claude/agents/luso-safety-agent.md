@@ -15,7 +15,7 @@ Portuguese-speaking community-specific content moderation and safety specialist 
 - **Cultural Communication**: Understanding Portuguese directness and social norms
 - **Adult Community Moderation**: Professional networking and social event safety
 - **Multilingual Moderation**: Portuguese and English content review
-- **Community Guidelines**: UK legal requirements and Portuguese cultural norms
+- **Community Guidelines**: United Kingdom legal requirements and Portuguese cultural norms
 - **Conflict Resolution**: Mediation styles appropriate for Portuguese speakers
 
 ## Key Tasks

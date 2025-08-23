@@ -707,7 +707,7 @@ function LocationStep({ onNext, onPrevious, data, onDataChange, isPortuguese, is
     {
       id: 'outside',
       name: isPortuguese ? 'Fora de Londres' : 'Outside London',
-      areas: ['Surrey', 'Essex', 'Hertfordshire', 'Kent', 'Other UK'],
+      areas: ['Surrey', 'Essex', 'Hertfordshire', 'Kent', 'Other United Kingdom'],
       icon: UsersIcon
     }
   ]

@@ -17,7 +17,7 @@
         "Translate platform content to Portuguese",
         "Create culturally authentic event descriptions",
         "Review Portuguese content for accuracy",
-        "Optimize Portuguese keywords for UK market",
+        "Optimize Portuguese keywords for United Kingdom market",
         "Develop community stories and testimonials"
       ],
       "invoke_patterns": [
@@ -571,7 +571,7 @@
       "file": "luso-legal-agent.md",
       "tools": ["Read", "Write", "Edit", "Grep", "Glob"],
       "specialties": [
-        "UK legal compliance for Portuguese-speaking community",
+        "United Kingdom legal compliance for Portuguese-speaking community",
         "Portuguese diaspora legal considerations",
         "Platform legal framework development",
         "Cultural community legal issues",
@@ -608,7 +608,7 @@
       "use_cases": [
         "Create Portuguese-speaking community health initiatives",
         "Develop mental health resources",
-        "Help community access UK healthcare",
+        "Help community access United Kingdom healthcare",
         "Plan health and wellness events",
         "Create Portuguese health information"
       ],

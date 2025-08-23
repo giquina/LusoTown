@@ -176,7 +176,7 @@ const luxuryServices = recommendations.luxuryServiceRecommendations
 - **GDPR Article 6**: Lawful basis for processing
 - **GDPR Article 7**: Consent management
 - **GDPR Article 17**: Right to erasure (3-year retention)
-- **UK GDPR**: Post-Brexit compliance maintained
+- **United Kingdom GDPR**: Post-Brexit compliance maintained
 
 ### Privacy Controls
 - **Granular Consent**: Analytics, personalization, marketing
@@ -203,7 +203,7 @@ const luxuryServices = recommendations.luxuryServiceRecommendations
 ### Planned Features
 - **AI-Powered Saudade Therapy**: Personalized cultural comfort recommendations
 - **Luxury Concierge Integration**: Premium service coordination
-- **Cross-Community Analytics**: Portuguese diaspora insights across UK cities
+- **Cross-Community Analytics**: Portuguese diaspora insights across United Kingdom cities
 - **Predictive Cultural Calendar**: AI-generated cultural event recommendations
 
 ### Scalability Roadmap

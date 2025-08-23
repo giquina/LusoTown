@@ -118,7 +118,7 @@ function generateHeritageTestimonials(heritage: any): HeritageTestimonial[] {
         profileImage: getImageWithFallback('alessandro-ferrari'),
         partnerName: 'Sofia Rossi',
         partnerImage: getImageWithFallback('sofia-rossi'),
-        story: `From Roma's fashion district to ${geography.diasporaHub.city}'s design scene, bringing Italian style and craftsmanship. Met Sofia at HeritageTown's "Italian Creatives" networking event in Soho - a designer from Firenze with the same vision for bringing authentic Italian design to the UK market. "Let's show them what real Italian design means," she said over espresso. Our design studio "Bella Creatività" now works with luxury brands across Europe.`,
+        story: `From Roma's fashion district to ${geography.diasporaHub.city}'s design scene, bringing Italian style and craftsmanship. Met Sofia at HeritageTown's "Italian Creatives" networking event in Soho - a designer from Firenze with the same vision for bringing authentic Italian design to the United Kingdom market. "Let's show them what real Italian design means," she said over espresso. Our design studio "Bella Creatività" now works with luxury brands across Europe.`,
         connectionType: 'Creativi Italiani',
         timeframe: '2 years ago',
         category: 'Business Partners',

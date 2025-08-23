@@ -173,11 +173,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
 
     // Host Info
     hostId: "host-networking-001",
-    hostName: "Portuguese Chamber of Commerce UK",
+    hostName: "Portuguese Chamber of Commerce United Kingdom",
     hostImage:
       "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
     hostBio:
-      "Supporting Portuguese businesses in the UK since 1995. Connecting entrepreneurs, facilitating trade, and fostering growth.",
+      "Supporting Portuguese businesses in the United Kingdom since 1995. Connecting entrepreneurs, facilitating trade, and fostering growth.",
 
     // Event Details
     membershipRequired: "free",
@@ -250,7 +250,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       },
       {
         id: "partner-002",
-        name: "UK-Portugal Chamber of Commerce",
+        name: "United Kingdom-Portugal Chamber of Commerce",
         type: "chamber_commerce",
         website: "https://uk-portugal.com",
         representative: "Maria Santos",
@@ -285,7 +285,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         country: "Portugal",
         imageUrl: "/profiles/default-avatar.svg",
         linkedinUrl: "https://linkedin.com/in/ana-ferreira-ceo",
-        presentationTopic: "Scaling Portuguese Tech Startups in the UK Market",
+        presentationTopic: "Scaling Portuguese Tech Startups in the United Kingdom Market",
         presentationLanguage: "bilingual",
       },
     ],
@@ -440,7 +440,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         country: "Portugal",
         imageUrl:
           "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        presentationTopic: "Digital Innovation: Portugal-UK Partnerships",
+        presentationTopic: "Digital Innovation: Portugal-United Kingdom Partnerships",
         presentationLanguage: "bilingual",
       },
       {
@@ -455,7 +455,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         country: "Brazil",
         imageUrl:
           "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        presentationTopic: "Fintech Bridges: Brazil-UK Financial Innovation",
+        presentationTopic: "Fintech Bridges: Brazil-United Kingdom Financial Innovation",
         presentationLanguage: "bilingual",
       },
     ],
@@ -500,11 +500,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     ],
 
     hostId: "host-networking-003",
-    hostName: "Portuguese Women Leaders UK",
+    hostName: "Portuguese Women Leaders United Kingdom",
     hostImage:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
     hostBio:
-      "Empowering Portuguese women to excel in business leadership across the UK.",
+      "Empowering Portuguese women to excel in business leadership across the United Kingdom.",
 
     membershipRequired: "premium",
     price: 25,
@@ -612,7 +612,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     description:
       "Learn mobile app development from experienced Portuguese developers. Hands-on coding session with React Native and Flutter.",
     longDescription:
-      "Join our intensive mobile app development workshop led by successful Portuguese developers working at top UK tech companies. Learn React Native and Flutter through practical projects. Build your first app during the session with live coding, Q&A, and personalized mentorship. Perfect for aspiring developers and entrepreneurs looking to enter the mobile app market. All skill levels welcome - we'll provide different tracks for beginners and intermediate developers.",
+      "Join our intensive mobile app development workshop led by successful Portuguese developers working at top United Kingdom tech companies. Learn React Native and Flutter through practical projects. Build your first app during the session with live coding, Q&A, and personalized mentorship. Perfect for aspiring developers and entrepreneurs looking to enter the mobile app market. All skill levels welcome - we'll provide different tracks for beginners and intermediate developers.",
     date: "2024-03-20",
     time: "18:00",
     endTime: "21:00",
@@ -818,9 +818,9 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     id: "tech-003",
     title: "Digital Marketing Mastery for Portuguese Businesses",
     description:
-      "Learn advanced digital marketing strategies tailored for Portuguese businesses in the UK market. SEO, social media, and paid advertising.",
+      "Learn advanced digital marketing strategies tailored for Portuguese businesses in the United Kingdom market. SEO, social media, and paid advertising.",
     longDescription:
-      "Master digital marketing specifically designed for Portuguese businesses targeting UK customers. Learn SEO strategies, social media marketing, Google Ads, Facebook advertising, and content marketing. Our expert will share case studies from successful Portuguese businesses and provide hands-on practice with real campaigns. Understand the unique challenges of marketing Portuguese services to UK audiences and how to leverage your cultural advantage.",
+      "Master digital marketing specifically designed for Portuguese businesses targeting United Kingdom customers. Learn SEO strategies, social media marketing, Google Ads, Facebook advertising, and content marketing. Our expert will share case studies from successful Portuguese businesses and provide hands-on practice with real campaigns. Understand the unique challenges of marketing Portuguese services to United Kingdom audiences and how to leverage your cultural advantage.",
     date: "2024-04-10",
     time: "19:00",
     endTime: "22:00",
@@ -890,8 +890,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         id: "speaker-marketing-001",
         name: "Carlos Miguel Santos",
         title: "Digital Marketing Director",
-        company: "Google UK",
-        bio: "Senior digital marketing executive at Google with 10+ years helping international businesses scale in the UK market.",
+        company: "Google United Kingdom",
+        bio: "Senior digital marketing executive at Google with 10+ years helping international businesses scale in the United Kingdom market.",
         bioPortuguese:
           "Executivo sénior de marketing digital no Google com mais de 10 anos a ajudar empresas internacionais a crescer no mercado britânico.",
         expertise: [
@@ -923,11 +923,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     // Tech Event 4: Start Your Own Business Workshop
     id: "business-001",
     title:
-      "Start Your Own Business: Portuguese Entrepreneur's Guide to UK Success",
+      "Start Your Own Business: Portuguese Entrepreneur's Guide to United Kingdom Success",
     description:
-      "Complete guide to starting a business in the UK for Portuguese entrepreneurs. Legal requirements, funding, and growth strategies.",
+      "Complete guide to starting a business in the United Kingdom for Portuguese entrepreneurs. Legal requirements, funding, and growth strategies.",
     longDescription:
-      "Everything you need to know about starting a successful business in the UK as a Portuguese entrepreneur. Learn about legal requirements, business registration, tax implications, funding options, and growth strategies. Our panel of successful Portuguese business owners will share their experiences, challenges, and success stories. Includes practical workshops on business planning, financial projections, and networking strategies. Perfect for aspiring entrepreneurs ready to take the leap.",
+      "Everything you need to know about starting a successful business in the United Kingdom as a Portuguese entrepreneur. Learn about legal requirements, business registration, tax implications, funding options, and growth strategies. Our panel of successful Portuguese business owners will share their experiences, challenges, and success stories. Includes practical workshops on business planning, financial projections, and networking strategies. Perfect for aspiring entrepreneurs ready to take the leap.",
     date: "2024-04-15",
     time: "10:00",
     endTime: "16:00",
@@ -944,11 +944,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       "portuguese entrepreneurs",
     ],
     hostId: "host-business-001",
-    hostName: "Portuguese Entrepreneurs UK",
+    hostName: "Portuguese Entrepreneurs United Kingdom",
     hostImage:
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
     hostBio:
-      "Supporting Portuguese entrepreneurs in building successful businesses across the UK.",
+      "Supporting Portuguese entrepreneurs in building successful businesses across the United Kingdom.",
     membershipRequired: "free",
     price: 45,
     currency: "GBP",
@@ -993,7 +993,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     partnerOrganizations: [
       {
         id: "partner-business-001",
-        name: "Portuguese Chamber of Commerce UK",
+        name: "Portuguese Chamber of Commerce United Kingdom",
         type: "chamber_commerce",
         website: "https://uk-portugal.com",
         representative: "Dr. Ana Silva",
@@ -1007,7 +1007,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         name: "Ricardo Oliveira",
         title: "Serial Entrepreneur & Investor",
         company: "Oliveira Ventures",
-        bio: "Portuguese serial entrepreneur who built and sold 3 successful companies in the UK. Now mentors and invests in Portuguese startups.",
+        bio: "Portuguese serial entrepreneur who built and sold 3 successful companies in the United Kingdom. Now mentors and invests in Portuguese startups.",
         bioPortuguese:
           "Empresário em série português que construiu e vendeu 3 empresas bem-sucedidas no Reino Unido. Agora mentoriza e investe em startups portuguesas.",
         expertise: ["business_strategy", "fundraising", "scaling"],
@@ -1015,7 +1015,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         imageUrl:
           "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop&crop=face",
         presentationTopic:
-          "From Idea to Exit: Building Successful Businesses in the UK",
+          "From Idea to Exit: Building Successful Businesses in the United Kingdom",
         presentationLanguage: "bilingual",
       },
     ],
@@ -1139,11 +1139,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
   {
     // Tech Event 6: E-commerce & Online Business
     id: "ecommerce-001",
-    title: "Build Your E-commerce Empire: Portuguese Products in UK Markets",
+    title: "Build Your E-commerce Empire: Portuguese Products in United Kingdom Markets",
     description:
-      "Complete guide to launching and scaling e-commerce businesses selling Portuguese products in the UK. From Shopify to Amazon FBA.",
+      "Complete guide to launching and scaling e-commerce businesses selling Portuguese products in the United Kingdom. From Shopify to Amazon FBA.",
     longDescription:
-      "Master e-commerce selling Portuguese products to UK customers. Learn platform selection (Shopify, Amazon, eBay), product sourcing from Portugal, logistics, customs, marketing, and scaling strategies. Our expert panel includes successful Portuguese e-commerce entrepreneurs who will share their journey from startup to 6-figure revenues. Includes hands-on workshops on setting up your first online store, product photography, and digital marketing for e-commerce.",
+      "Master e-commerce selling Portuguese products to United Kingdom customers. Learn platform selection (Shopify, Amazon, eBay), product sourcing from Portugal, logistics, customs, marketing, and scaling strategies. Our expert panel includes successful Portuguese e-commerce entrepreneurs who will share their journey from startup to 6-figure revenues. Includes hands-on workshops on setting up your first online store, product photography, and digital marketing for e-commerce.",
     date: "2024-05-20",
     time: "13:00",
     endTime: "17:00",
@@ -1164,7 +1164,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostImage:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
     hostBio:
-      "Network of Portuguese e-commerce entrepreneurs building successful online businesses in the UK.",
+      "Network of Portuguese e-commerce entrepreneurs building successful online businesses in the United Kingdom.",
     membershipRequired: "free",
     price: 50,
     currency: "GBP",
@@ -1213,7 +1213,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         id: "speaker-ecommerce-001",
         name: "Ana Rita Mendes",
         title: "E-commerce Entrepreneur",
-        company: "Portuguese Delights UK",
+        company: "Portuguese Delights United Kingdom",
         bio: "Built a £2M e-commerce business selling Portuguese food and crafts online. Expert in Amazon FBA and international shipping.",
         bioPortuguese:
           "Construiu um negócio de e-commerce de £2M vendendo comida e artesanato português online. Especialista em Amazon FBA e envios internacionais.",
@@ -1448,7 +1448,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     description:
       "Protect your business from cyber threats. Practical cybersecurity workshop covering threat prevention, data protection, and compliance.",
     longDescription:
-      "Essential cybersecurity training designed specifically for Portuguese small businesses operating in the UK. Learn to identify and prevent cyber threats, implement data protection measures, and ensure GDPR compliance. Our expert will cover password management, phishing prevention, backup strategies, and incident response. Includes hands-on exercises with security tools and real case studies of cyber attacks on small businesses. Perfect for business owners and managers who want to protect their operations.",
+      "Essential cybersecurity training designed specifically for Portuguese small businesses operating in the United Kingdom. Learn to identify and prevent cyber threats, implement data protection measures, and ensure GDPR compliance. Our expert will cover password management, phishing prevention, backup strategies, and incident response. Includes hands-on exercises with security tools and real case studies of cyber attacks on small businesses. Perfect for business owners and managers who want to protect their operations.",
     date: "2024-07-10",
     time: "19:00",
     endTime: "22:00",
@@ -1518,7 +1518,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         id: "speaker-cybersec-001",
         name: "Luís Campos",
         title: "Senior Cybersecurity Consultant",
-        company: "SecureGuard UK",
+        company: "SecureGuard United Kingdom",
         bio: "Cybersecurity expert with 12+ years protecting small and medium businesses from cyber threats.",
         bioPortuguese:
           "Especialista em cibersegurança com mais de 12 anos a proteger pequenas e médias empresas de ameaças cibernéticas.",

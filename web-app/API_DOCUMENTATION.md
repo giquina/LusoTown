@@ -630,5 +630,5 @@ const events = await api.events.list({ category: 'cultural' })
 
 ---
 
-**Built with ❤️ for the Portuguese-speaking community in London & UK**  
+**Built with ❤️ for the Portuguese-speaking community in London & United Kingdom**  
 **API Version 1.0.0 | Documentation Last Updated: August 2025**

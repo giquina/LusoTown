@@ -676,7 +676,7 @@ INSERT INTO public.lusobot_knowledge_base (knowledge_category, topic_title, cont
  ARRAY['seeking_community', 'practical_help', 'connection']),
 
 ('cultural_traditions', 'Portuguese Regional Festivals and Celebrations',
- 'Information about Portuguese festivals and how they are celebrated in the UK diaspora',
+ 'Information about Portuguese festivals and how they are celebrated in the United Kingdom diaspora',
  '{"major_festivals": {"santos_populares": {"date": "June", "traditions": ["sardines", "music", "dancing"], "uk_celebrations": "community_organized"}, "natal": {"date": "December", "traditions": ["family_dinner", "midnight_mass", "presents"], "diaspora_adaptations": ["mixed_traditions", "cultural_fusion"]}, "pascoa": {"date": "Easter", "traditions": ["folar", "religious_observance"], "community_events": "portuguese_churches"}}}',
  ARRAY['all_regions'], ARRAY['all_generations'],
  ARRAY['festival', 'celebration', 'Santos Populares', 'Christmas', 'Easter', 'tradition'],

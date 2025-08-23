@@ -95,7 +95,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
           title: 'New Strategic Partnership Agreement Signed',
           titlePortuguese: 'Novo Acordo de Parceria Estratégica Assinado',
           partnerId: 'partner-millennium-bank',
-          partnerName: 'Millennium Bank UK',
+          partnerName: 'Millennium Bank United Kingdom',
           date: '2024-08-15',
           value: 12500,
           status: 'completed'
@@ -127,7 +127,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
           title: 'Partnership Renewal Discussion Scheduled',
           titlePortuguese: 'Discussão de Renovação de Parceria Agendada',
           partnerId: 'partner-chamber',
-          partnerName: 'Portugal-UK Chamber of Commerce',
+          partnerName: 'Portugal-United Kingdom Chamber of Commerce',
           date: '2024-08-20',
           status: 'scheduled'
         },
@@ -137,7 +137,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
           title: 'Quarterly Business Review',
           titlePortuguese: 'Revisão Empresarial Trimestral',
           partnerId: 'partner-tap-air-portugal',
-          partnerName: 'TAP Air Portugal UK',
+          partnerName: 'TAP Air Portugal United Kingdom',
           date: '2024-08-18',
           status: 'scheduled'
         }

@@ -26,8 +26,10 @@ export default function EventImageWithFallback({
   priority = false
 }: EventImageWithFallbackProps) {
   const [imageError, setImageError] = useState(false)
+  const hasValidSrc = typeof src === 'string' && src.trim().length > 0
+  const safeSrc = hasValidSrc ? src : getEventPlaceholder(category)
   
-  if (imageError) {
+  if (imageError || !hasValidSrc) {
     if (fill) {
       return (
         <Image
@@ -55,7 +57,7 @@ export default function EventImageWithFallback({
   if (fill) {
     return (
       <Image
-        src={src}
+        src={safeSrc}
         alt={alt}
         fill
         className={className}
@@ -68,7 +70,7 @@ export default function EventImageWithFallback({
   
   return (
     <Image
-      src={src}
+      src={safeSrc}
       alt={alt}
       width={width || 400}
       height={height || 300}

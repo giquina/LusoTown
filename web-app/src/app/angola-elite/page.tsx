@@ -86,7 +86,7 @@ export default function AngolaElitePage() {
             LusoTown's Angola Elite Network serves as the cultural and business bridge 
             connecting London's sophisticated Angolan diaspora with their homeland's wealth 
             and opportunities. We celebrate Angola's position as Africa's Diamond Capital 
-            while fostering the next generation of Angola-UK business relationships.
+            while fostering the next generation of Angola-United Kingdom business relationships.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">

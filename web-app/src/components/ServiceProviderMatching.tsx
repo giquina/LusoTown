@@ -142,11 +142,11 @@ const mockServiceProviders: ServiceProvider[] = [
     priceRange: '£100-300',
     availability: 'available',
     specialties: ['Business Setup', 'Legal Services', 'Tax Consultation'],
-    culturalFocus: ['Portuguese Entrepreneurs', 'UK Business Law', 'Cross-border Trade'],
+    culturalFocus: ['Portuguese Entrepreneurs', 'United Kingdom Business Law', 'Cross-border Trade'],
     languages: ['Portuguese', 'English'],
     verified: true,
     matchCompatibility: 85,
-    description: 'Professional business services for Portuguese entrepreneurs and professionals in the UK.',
+    description: 'Professional business services for Portuguese entrepreneurs and professionals in the United Kingdom.',
     responseTime: '< 6 hours',
     bookingPrice: 200,
     discount: 12

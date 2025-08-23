@@ -7,6 +7,7 @@ import { communityStats } from '@/config/community'
 import { generateJsonLd } from '@/config/seo'
 import dynamic from 'next/dynamic'
 import Hero from '@/components/Hero'
+import MeetYourMatchUpsell from '@/components/MeetYourMatchUpsell'
 import Features from '@/components/Features'
 import Footer from '@/components/Footer'
 import { ROUTES } from '@/config/routes'
@@ -123,6 +124,10 @@ export default function Home() {
       <main className="min-h-screen w-full overflow-x-hidden" role="main">
         <div className="pt-24 w-full">
           <Hero />
+          {/* Meet Your Match upsell under the hero community section */}
+          <div className="mt-4 px-4 sm:px-6 lg:px-8">
+            <MeetYourMatchUpsell />
+          </div>
           
           {/* Mobile Quick Actions - Simplified Portuguese focus */}
           <section className="md:hidden bg-white py-6 border-b border-gray-100" aria-label="Quick actions for mobile users">
@@ -133,7 +138,7 @@ export default function Home() {
                   <div className="flex items-center gap-2 text-sm">
                     <span className="text-green-600 font-semibold">750+ portugueses</span>
                     <span className="text-gray-400">•</span>
-                    <span className="text-blue-600 font-semibold">Londres & UK</span>
+                    <span className="text-blue-600 font-semibold">Londres & United Kingdom</span>
                   </div>
                 </div>
                 <div className="text-center">
@@ -471,7 +476,7 @@ export default function Home() {
                       {t('cta.title')}
                     </h3>
                     <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-                      Join {communityStats.members} Portuguese speakers from Brazil, Portugal, Africa and beyond creating amazing memories together across the UK - from vibrant cultural events to inspiring professional networking, exciting family activities to magical weekend getaways throughout Britain!
+                      Join {communityStats.members} Portuguese speakers from Brazil, Portugal, Africa and beyond creating amazing memories together across the United Kingdom - from vibrant cultural events to inspiring professional networking, exciting family activities to magical weekend getaways throughout Britain!
                     </p>
                     <div className="flex flex-row gap-3 sm:gap-4 justify-center">
                       <a

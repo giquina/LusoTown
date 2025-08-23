@@ -310,7 +310,7 @@ Subject: Partnership Opportunity - Portuguese-speaking community Platform LusoTo
 
 Dear [Business Owner/Manager Name],
 
-LusoTown is London's fastest-growing Portuguese-speaking community platform, serving 15,000+ Portuguese speakers across the UK. We're reaching out because [specific business relevance].
+LusoTown is London's fastest-growing Portuguese-speaking community platform, serving 15,000+ Portuguese speakers across the United Kingdom. We're reaching out because [specific business relevance].
 
 Our corporate partnership program offers [business name] the opportunity to:
 - Connect authentically with the Portuguese-speaking community
@@ -333,7 +333,7 @@ Subject: Portuguese Student Community Partnership - LusoTown Platform
 
 Dear [University Portuguese Studies/International Office],
 
-LusoTown is working with universities across the UK to better support Portuguese students and strengthen cultural connections within the Portuguese-speaking academic community.
+LusoTown is working with universities across the United Kingdom to better support Portuguese students and strengthen cultural connections within the Portuguese-speaking academic community.
 
 Our university partnership program offers:
 - Subsidized memberships for Portuguese students

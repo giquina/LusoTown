@@ -214,10 +214,10 @@ class PortugueseRegionalAI {
       },
       emigrationPatterns: {
         historicalWaves: [
-          { period: '1960s-1970s', intensity: 9, destinations: ['France', 'Germany', 'UK'], characteristics: ['economic', 'family_chain'] },
-          { period: '2008-2015', intensity: 6, destinations: ['UK', 'Switzerland', 'Luxembourg'], characteristics: ['economic_crisis', 'youth_emigration'] },
+          { period: '1960s-1970s', intensity: 9, destinations: ['France', 'Germany', 'United Kingdom'], characteristics: ['economic', 'family_chain'] },
+          { period: '2008-2015', intensity: 6, destinations: ['United Kingdom', 'Switzerland', 'Luxembourg'], characteristics: ['economic_crisis', 'youth_emigration'] },
         ],
-        primaryDestinations: ['France', 'UK', 'Germany', 'Switzerland'],
+        primaryDestinations: ['France', 'United Kingdom', 'Germany', 'Switzerland'],
         motivations: ['economic_opportunity', 'family_reunification', 'better_life'],
         communityFormation: 'tight',
         generationalRetention: 7,
@@ -273,10 +273,10 @@ class PortugueseRegionalAI {
       },
       emigrationPatterns: {
         historicalWaves: [
-          { period: '1960s-1980s', intensity: 8, destinations: ['France', 'UK', 'Canada'], characteristics: ['economic', 'skilled_workers'] },
-          { period: '2010s', intensity: 7, destinations: ['UK', 'Germany', 'Netherlands'], characteristics: ['youth_mobility', 'higher_education'] },
+          { period: '1960s-1980s', intensity: 8, destinations: ['France', 'United Kingdom', 'Canada'], characteristics: ['economic', 'skilled_workers'] },
+          { period: '2010s', intensity: 7, destinations: ['United Kingdom', 'Germany', 'Netherlands'], characteristics: ['youth_mobility', 'higher_education'] },
         ],
-        primaryDestinations: ['UK', 'France', 'Germany', 'Canada'],
+        primaryDestinations: ['United Kingdom', 'France', 'Germany', 'Canada'],
         motivations: ['economic_opportunity', 'career_advancement', 'education'],
         communityFormation: 'moderate',
         generationalRetention: 6,
@@ -333,10 +333,10 @@ class PortugueseRegionalAI {
       },
       emigrationPatterns: {
         historicalWaves: [
-          { period: '1970s-1990s', intensity: 7, destinations: ['UK', 'Canada', 'Australia'], characteristics: ['professional', 'educated'] },
-          { period: '2010s-present', intensity: 8, destinations: ['UK', 'Germany', 'Netherlands'], characteristics: ['economic_crisis', 'professional_mobility'] },
+          { period: '1970s-1990s', intensity: 7, destinations: ['United Kingdom', 'Canada', 'Australia'], characteristics: ['professional', 'educated'] },
+          { period: '2010s-present', intensity: 8, destinations: ['United Kingdom', 'Germany', 'Netherlands'], characteristics: ['economic_crisis', 'professional_mobility'] },
         ],
-        primaryDestinations: ['UK', 'France', 'Canada', 'Australia'],
+        primaryDestinations: ['United Kingdom', 'France', 'Canada', 'Australia'],
         motivations: ['career_opportunities', 'lifestyle', 'economic_crisis'],
         communityFormation: 'moderate',
         generationalRetention: 5,
@@ -393,10 +393,10 @@ class PortugueseRegionalAI {
       },
       emigrationPatterns: {
         historicalWaves: [
-          { period: '1950s-1970s', intensity: 10, destinations: ['USA', 'Canada', 'UK'], characteristics: ['mass_emigration', 'family_chain'] },
-          { period: '1980s-2000s', intensity: 6, destinations: ['mainland_portugal', 'UK', 'Canada'], characteristics: ['continued_flow', 'family_reunification'] },
+          { period: '1950s-1970s', intensity: 10, destinations: ['USA', 'Canada', 'United Kingdom'], characteristics: ['mass_emigration', 'family_chain'] },
+          { period: '1980s-2000s', intensity: 6, destinations: ['mainland_portugal', 'United Kingdom', 'Canada'], characteristics: ['continued_flow', 'family_reunification'] },
         ],
-        primaryDestinations: ['USA', 'Canada', 'UK', 'Brazil'],
+        primaryDestinations: ['USA', 'Canada', 'United Kingdom', 'Brazil'],
         motivations: ['economic_necessity', 'family_reunification', 'tradition'],
         communityFormation: 'tight',
         generationalRetention: 9,
@@ -453,10 +453,10 @@ class PortugueseRegionalAI {
       },
       emigrationPatterns: {
         historicalWaves: [
-          { period: '1960s-1980s', intensity: 8, destinations: ['Venezuela', 'South Africa', 'UK'], characteristics: ['economic', 'adventure'] },
-          { period: '1990s-2010s', intensity: 5, destinations: ['UK', 'mainland_portugal', 'Canada'], characteristics: ['professional', 'family'] },
+          { period: '1960s-1980s', intensity: 8, destinations: ['Venezuela', 'South Africa', 'United Kingdom'], characteristics: ['economic', 'adventure'] },
+          { period: '1990s-2010s', intensity: 5, destinations: ['United Kingdom', 'mainland_portugal', 'Canada'], characteristics: ['professional', 'family'] },
         ],
-        primaryDestinations: ['Venezuela', 'UK', 'South Africa', 'Canada'],
+        primaryDestinations: ['Venezuela', 'United Kingdom', 'South Africa', 'Canada'],
         motivations: ['economic_opportunity', 'adventure', 'family'],
         communityFormation: 'moderate',
         generationalRetention: 7,
@@ -511,10 +511,10 @@ class PortugueseRegionalAI {
       },
       emigrationPatterns: {
         historicalWaves: [
-          { period: '1960s-1970s', intensity: 7, destinations: ['France', 'Germany', 'UK'], characteristics: ['agricultural_workers', 'economic'] },
-          { period: '2010s', intensity: 4, destinations: ['UK', 'Germany', 'Angola'], characteristics: ['youth_emigration', 'professional'] },
+          { period: '1960s-1970s', intensity: 7, destinations: ['France', 'Germany', 'United Kingdom'], characteristics: ['agricultural_workers', 'economic'] },
+          { period: '2010s', intensity: 4, destinations: ['United Kingdom', 'Germany', 'Angola'], characteristics: ['youth_emigration', 'professional'] },
         ],
-        primaryDestinations: ['France', 'UK', 'Germany', 'Angola'],
+        primaryDestinations: ['France', 'United Kingdom', 'Germany', 'Angola'],
         motivations: ['economic_opportunity', 'better_conditions'],
         communityFormation: 'loose',
         generationalRetention: 4,
@@ -992,7 +992,7 @@ export default function RegionalSpecializationAI({
         <p className="text-gray-600 max-w-3xl mx-auto">
           {language === 'pt' 
             ? 'Sistema inteligente que otimiza matches baseado nas especificidades regionais portuguesas e experiências de emigração no Reino Unido'
-            : 'Intelligent system that optimizes matches based on Portuguese regional specificities and emigration experiences in the UK'}
+            : 'Intelligent system that optimizes matches based on Portuguese regional specificities and emigration experiences in the United Kingdom'}
         </p>
       </div>
 

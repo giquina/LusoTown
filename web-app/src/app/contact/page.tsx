@@ -91,7 +91,7 @@ export default function Contact() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto"
                 >
-                  {t('contact.subtitle', 'Your Portuguese-speaking community across the UK is here to support you. Whether you need help finding events, connecting with other Portuguese speakers, or have questions about our community - we\'re here with a warm welcome.')}
+                  {t('contact.subtitle', 'Your Portuguese-speaking community across the United Kingdom is here to support you. Whether you need help finding events, connecting with other Portuguese speakers, or have questions about our community - we\'re here with a warm welcome.')}
                 </motion.p>
                 
                 <motion.div 
@@ -188,7 +188,7 @@ export default function Contact() {
                             <option value="mozambique">🇲🇿 Mozambique</option>
                             <option value="cape-verde">🇨🇻 Cape Verde</option>
                             <option value="other">🌍 Other Portuguese-speaking</option>
-                            <option value="uk-born">🇬🇧 UK-born with Portuguese heritage</option>
+                            <option value="uk-born">🇬🇧 United Kingdom-born with Portuguese heritage</option>
                           </select>
                         </div>
                         
@@ -243,7 +243,7 @@ export default function Contact() {
                           required
                           rows={6}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
-                          placeholder={t('contact.message-placeholder', 'Tell us how we can help you connect with the Portuguese-speaking community across the UK...')}
+                          placeholder={t('contact.message-placeholder', 'Tell us how we can help you connect with the Portuguese-speaking community across the United Kingdom...')}
                         ></textarea>
                       </div>
                       
@@ -326,7 +326,7 @@ export default function Contact() {
                         <div>
                           <h3 className="font-semibold text-gray-900">{t('contact.community-hub', 'Community Hub')}</h3>
                           <p className="text-gray-600">{t('contact.london-based', 'London-based Portuguese-speaking community')}</p>
-                          <p className="text-sm text-gray-500">{t('contact.serving-uk', 'Proudly serving Portuguese speakers across the UK')}</p>
+                          <p className="text-sm text-gray-500">{t('contact.serving-uk', 'Proudly serving Portuguese speakers across the United Kingdom')}</p>
                           <div className="flex gap-2 mt-2">
                             <span className="text-xs bg-primary-50 text-primary-600 px-2 py-1 rounded-full">Stockwell</span>
                             <span className="text-xs bg-primary-50 text-primary-600 px-2 py-1 rounded-full">Vauxhall</span>

@@ -121,7 +121,7 @@ global.testUtils = {
     name: 'John Smith',
     email: 'john@example.com',
     language: 'en',
-    location: 'London, UK',
+    location: 'London, United Kingdom',
     membershipTier: 'free',
   },
   mockPortugueseEvent: {

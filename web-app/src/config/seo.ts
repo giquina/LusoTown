@@ -236,7 +236,7 @@ export const generateMetadata = (page?: keyof typeof pageSEO) => {
           url: seo.ogImage,
           width: 1200,
           height: 630,
-          alt: 'LusoTown - Real-Life Portuguese Meetups in London & UK',
+          alt: 'LusoTown - Real-Life Portuguese Meetups in London & United Kingdom',
         },
       ],
     },

@@ -94,9 +94,9 @@ export default function OnboardingFlowEnhanced({
       id: 'welcome',
       title: 'Welcome to LusoTown!',
       titlePortuguese: 'Bem-vindo ao LusoTown!',
-      subtitle: 'Your Portuguese-speaking community in London & UK',
+      subtitle: 'Your Portuguese-speaking community in London & United Kingdom',
       subtitlePortuguese: 'A Sua Comunidade de Falantes de Português em Londres e Reino Unido',
-      description: 'Connect with Portuguese speakers, discover cultural events, access premium transport services, and build meaningful relationships across the UK.',
+      description: 'Connect with Portuguese speakers, discover cultural events, access premium transport services, and build meaningful relationships across the United Kingdom.',
       descriptionPortuguese: 'Conecte-se com falantes de português, descubra eventos culturais, acesse serviços de transporte premium e construa relacionamentos significativos por todo o Reino Unido.',
       icon: HeartIcon,
       color: 'primary',
@@ -117,7 +117,7 @@ export default function OnboardingFlowEnhanced({
         {
           id: 'region',
           type: 'select',
-          label: 'Where are you located in the UK?',
+          label: 'Where are you located in the United Kingdom?',
           labelPortuguese: 'Onde está localizado no Reino Unido?',
           required: true,
           options: [
@@ -129,7 +129,7 @@ export default function OnboardingFlowEnhanced({
             { value: 'greater-london', label: 'Greater London', labelPortuguese: 'Grande Londres' },
             { value: 'manchester', label: 'Manchester', labelPortuguese: 'Manchester' },
             { value: 'birmingham', label: 'Birmingham', labelPortuguese: 'Birmingham' },
-            { value: 'other-uk', label: 'Other UK Location', labelPortuguese: 'Outra Localização no Reino Unido' }
+            { value: 'other-uk', label: 'Other United Kingdom Location', labelPortuguese: 'Outra Localização no Reino Unido' }
           ]
         }
       ]
@@ -239,7 +239,7 @@ export default function OnboardingFlowEnhanced({
         {
           id: 'timeInUK',
           type: 'select',
-          label: 'How long have you been in the UK?',
+          label: 'How long have you been in the United Kingdom?',
           labelPortuguese: 'Há quanto tempo está no Reino Unido?',
           required: true,
           options: [
@@ -248,7 +248,7 @@ export default function OnboardingFlowEnhanced({
             { value: '3-5-years', label: '3-5 years', labelPortuguese: '3-5 anos' },
             { value: '5-10-years', label: '5-10 years', labelPortuguese: '5-10 anos' },
             { value: 'more-than-10', label: 'More than 10 years', labelPortuguese: 'Mais de 10 anos' },
-            { value: 'born-in-uk', label: 'Born in the UK', labelPortuguese: 'Nascido no Reino Unido' }
+            { value: 'born-in-uk', label: 'Born in the United Kingdom', labelPortuguese: 'Nascido no Reino Unido' }
           ]
         },
         {
@@ -319,7 +319,7 @@ export default function OnboardingFlowEnhanced({
             { value: 'business-opportunities', label: 'Find business opportunities', labelPortuguese: 'Encontrar oportunidades de negócio' },
             { value: 'cultural-preservation', label: 'Preserve Portuguese culture', labelPortuguese: 'Preservar a cultura portuguesa' },
             { value: 'professional-growth', label: 'Professional growth & mentorship', labelPortuguese: 'Crescimento profissional e mentoria' },
-            { value: 'family-integration', label: 'Help family integrate into UK life', labelPortuguese: 'Ajudar a família a integrar-se na vida do Reino Unido' },
+            { value: 'family-integration', label: 'Help family integrate into United Kingdom life', labelPortuguese: 'Ajudar a família a integrar-se na vida do Reino Unido' },
             { value: 'give-back', label: 'Give back to the community', labelPortuguese: 'Retribuir à comunidade' },
             { value: 'stay-connected', label: 'Stay connected to Portuguese roots', labelPortuguese: 'Manter-se conectado às raízes portuguesas' }
           ]
@@ -347,7 +347,7 @@ export default function OnboardingFlowEnhanced({
             { value: 'settled', label: 'Settled and happy with current housing', labelPortuguese: 'Estabelecido e satisfeito com a habitação atual' },
             { value: 'looking-to-move', label: 'Looking to move/find better housing', labelPortuguese: 'À procura de mudança/melhor habitação' },
             { value: 'temporary-housing', label: 'In temporary housing', labelPortuguese: 'Em habitação temporária' },
-            { value: 'new-to-uk', label: 'New to UK, need housing assistance', labelPortuguese: 'Novo no Reino Unido, preciso de assistência habitacional' },
+            { value: 'new-to-uk', label: 'New to United Kingdom, need housing assistance', labelPortuguese: 'Novo no Reino Unido, preciso de assistência habitacional' },
             { value: 'help-others', label: 'Can help others with housing advice', labelPortuguese: 'Posso ajudar outros com conselhos habitacionais' }
           ]
         },

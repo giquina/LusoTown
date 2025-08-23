@@ -80,7 +80,7 @@ export default function EmailPreferencesPage() {
         title: isPortuguese ? 'Newsletter LusoTown' : 'LusoTown Newsletter',
         description: isPortuguese
           ? 'Resumo mensal da comunidade de falantes de português no Reino Unido'
-          : 'Monthly summary of the Portuguese-speaking community in the UK',
+          : 'Monthly summary of the Portuguese-speaking community in the United Kingdom',
         icon: EnvelopeIcon,
         enabled: true,
         frequency: isPortuguese ? 'Mensal' : 'Monthly'

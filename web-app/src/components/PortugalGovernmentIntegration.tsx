@@ -156,7 +156,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
           monthlyEngagement: 1200,
           fundingProvided: 150000,
           programsOffered: 12,
-          description: 'Official partnership for promoting Portuguese culture and heritage in the UK through funded programs and cultural initiatives.',
+          description: 'Official partnership for promoting Portuguese culture and heritage in the United Kingdom through funded programs and cultural initiatives.',
           descriptionPortuguese: 'Parceria oficial para promover a cultura e património português no Reino Unido através de programas financiados e iniciativas culturais.',
           officialWebsite: 'https://www.cultura.gov.pt',
           logo: '/images/government/ministry-culture-pt.png'
@@ -238,12 +238,12 @@ const PortugalGovernmentIntegration: React.FC = () => {
           institution: 'AICEP Portugal Global',
           institutionPortuguese: 'AICEP Portugal Global',
           type: 'agency',
-          location: 'Porto, Portugal / London, UK',
+          location: 'Porto, Portugal / London, United Kingdom',
           status: 'negotiating',
           establishedDate: '2024-01-15',
           keyContact: {
             name: 'Dr. Carla Mendes',
-            title: 'UK Regional Director',
+            title: 'United Kingdom Regional Director',
             titlePortuguese: 'Diretora Regional do Reino Unido',
             email: 'carla.mendes@aicep.pt',
             phone: '+44 20 7201 6666'
@@ -264,7 +264,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
           monthlyEngagement: 850,
           fundingProvided: 120000,
           programsOffered: 8,
-          description: 'Portuguese trade and investment promotion agency supporting Portuguese business expansion in the UK.',
+          description: 'Portuguese trade and investment promotion agency supporting Portuguese business expansion in the United Kingdom.',
           descriptionPortuguese: 'Agência portuguesa de promoção comercial e de investimento que apoia a expansão de negócios portugueses no Reino Unido.',
           officialWebsite: 'https://www.portugalglobal.pt',
           logo: '/images/government/aicep-portugal.png'
@@ -274,14 +274,14 @@ const PortugalGovernmentIntegration: React.FC = () => {
       setCulturalPrograms([
         {
           id: 'heritage-preservation-2024',
-          name: 'Portuguese Heritage Preservation Program UK',
+          name: 'Portuguese Heritage Preservation Program United Kingdom',
           namePortuguese: 'Programa de Preservação do Património Português Reino Unido',
           provider: 'Ministry of Culture',
           type: 'heritage_preservation',
           duration: '12 months',
           durationPortuguese: '12 meses',
           eligibility: [
-            'Portuguese-speaking community organizations in the UK',
+            'Portuguese-speaking community organizations in the United Kingdom',
             'Cultural associations promoting Portuguese heritage',
             'Educational institutions with Portuguese programs'
           ],
@@ -348,7 +348,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
         },
         {
           id: 'cultural-exchange-2024',
-          name: 'UK-Portugal Cultural Exchange Program',
+          name: 'United Kingdom-Portugal Cultural Exchange Program',
           namePortuguese: 'Programa de Intercâmbio Cultural Reino Unido-Portugal',
           provider: 'Secretariat for Portuguese Communities',
           type: 'cultural_exchange',
@@ -356,7 +356,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
           durationPortuguese: '3 meses',
           eligibility: [
             'Portuguese artists and cultural professionals',
-            'UK-based Portuguese-speaking community leaders',
+            'United Kingdom-based Portuguese-speaking community leaders',
             'Cultural organizations with bilateral projects'
           ],
           eligibilityPortuguese: [
@@ -388,10 +388,10 @@ const PortugalGovernmentIntegration: React.FC = () => {
       setDiasporaSupport([
         {
           id: 'consular-services-uk',
-          program: 'Portuguese Consular Services UK',
+          program: 'Portuguese Consular Services United Kingdom',
           programPortuguese: 'Serviços Consulares Portugueses Reino Unido',
           category: 'consular_services',
-          description: 'Comprehensive consular services for Portuguese citizens and descendants living in the UK.',
+          description: 'Comprehensive consular services for Portuguese citizens and descendants living in the United Kingdom.',
           descriptionPortuguese: 'Serviços consulares abrangentes para cidadãos portugueses e descendentes que vivem no Reino Unido.',
           eligibility: 'Portuguese citizens and eligible descendants',
           eligibilityPortuguese: 'Cidadãos portugueses e descendentes elegíveis',
@@ -428,7 +428,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
           },
           documentsRequired: [
             'Valid Portuguese ID or Passport',
-            'Proof of UK residence',
+            'Proof of United Kingdom residence',
             'Birth certificate (if applicable)',
             'Marriage certificate (if applicable)'
           ],
@@ -443,12 +443,12 @@ const PortugalGovernmentIntegration: React.FC = () => {
         },
         {
           id: 'business-support-uk',
-          program: 'Portuguese Business Development Support UK',
+          program: 'Portuguese Business Development Support United Kingdom',
           programPortuguese: 'Apoio ao Desenvolvimento de Negócios Portugueses Reino Unido',
           category: 'business_support',
-          description: 'Comprehensive business support for Portuguese entrepreneurs and companies expanding to the UK.',
+          description: 'Comprehensive business support for Portuguese entrepreneurs and companies expanding to the United Kingdom.',
           descriptionPortuguese: 'Apoio empresarial abrangente para empreendedores portugueses e empresas que expandem para o Reino Unido.',
-          eligibility: 'Portuguese businesses and entrepreneurs in the UK',
+          eligibility: 'Portuguese businesses and entrepreneurs in the United Kingdom',
           eligibilityPortuguese: 'Empresas e empreendedores portugueses no Reino Unido',
           benefits: [
             'Business registration assistance',
@@ -559,7 +559,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
             <span className="text-2xl">🤝</span>
             <img 
               src="/images/flags/uk.png" 
-              alt="UK Flag" 
+              alt="United Kingdom Flag" 
               className="w-8 h-6 rounded"
             />
           </div>

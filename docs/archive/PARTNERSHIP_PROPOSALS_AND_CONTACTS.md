@@ -7,7 +7,7 @@
 
 **Partnership Proposal: [Business Name] x LusoTown Community Platform**
 
-LusoTown serves 15,000+ Portuguese speakers across London and the UK through our bilingual community platform. We're proposing a strategic partnership that will:
+LusoTown serves 15,000+ Portuguese speakers across London and the United Kingdom through our bilingual community platform. We're proposing a strategic partnership that will:
 
 - Connect [Business Name] authentically with the Portuguese-speaking community
 - Provide valuable employee benefits for your Portuguese staff
@@ -107,7 +107,7 @@ LusoTown serves 15,000+ Portuguese speakers across London and the UK through our
 
 ### Portuguese Embassy London Strategic Partnership
 
-**Partnership Objective:** Establish LusoTown as the official digital community platform for Portuguese citizens in the UK
+**Partnership Objective:** Establish LusoTown as the official digital community platform for Portuguese citizens in the United Kingdom
 
 #### Benefits for Portuguese Embassy
 
@@ -202,7 +202,7 @@ LusoTown serves 15,000+ Portuguese speakers across London and the UK through our
 - Value Proposition: Exclusive Portuguese dining event hosting + member discounts
 
 **Nando's Corporate Portuguese Connection**
-- Contact: Nando's UK Head Office Community Relations
+- Contact: Nando's United Kingdom Head Office Community Relations
 - Value Proposition: Portuguese heritage celebration + employee Portuguese-speaking community connection
 
 **Tier 2 Targets (£750-2,500/month partnerships)**
@@ -311,4 +311,4 @@ LusoTown serves 15,000+ Portuguese speakers across London and the UK through our
 - Portuguese market brand recognition increase
 - Long-term customer loyalty development
 
-This comprehensive partnership framework provides LusoTown with the tools and strategies necessary to build meaningful, profitable relationships with Portuguese businesses, institutions, and cultural organizations while strengthening the entire Portuguese-speaking community ecosystem in London and the UK.
+This comprehensive partnership framework provides LusoTown with the tools and strategies necessary to build meaningful, profitable relationships with Portuguese businesses, institutions, and cultural organizations while strengthening the entire Portuguese-speaking community ecosystem in London and the United Kingdom.

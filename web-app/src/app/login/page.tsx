@@ -197,7 +197,7 @@ export default function Login() {
                     </div>
                     <div className="flex items-center gap-1">
                       <MapPinIcon className="h-4 w-4" />
-                      <span>London & UK</span>
+                      <span>London & United Kingdom</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <CheckBadgeIcon className="h-4 w-4 text-green-500" />

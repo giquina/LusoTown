@@ -248,7 +248,7 @@ export default function EventCoordinationSystem({
       },
       organizer: {
         id: 'portuguese-business-uk',
-        name: 'Portuguese Business Network UK',
+        name: 'Portuguese Business Network United Kingdom',
         isMatch: false,
         verified: true
       },

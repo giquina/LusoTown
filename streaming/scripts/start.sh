@@ -4,7 +4,7 @@
 
 set -e
 
-echo "Starting LusoTown Portuguese-speaking Community Streaming Infrastructure..."
+echo "Starting LusoTown Portuguese-speaking community Streaming Infrastructure..."
 
 # Environment validation
 if [[ -z "$LUSOTOWN_STREAMING_SECRET" ]]; then

@@ -45,7 +45,7 @@ export class AIMatchingEngineHelpers {
     // Weighted linguistic compatibility
     return Math.round(
       portugueseScore * 0.50 +    // Portuguese is most important
-      englishScore * 0.30 +       // English for UK communication
+      englishScore * 0.30 +       // English for United Kingdom communication
       dialectOverlap * 0.20       // Regional connection
     )
   }
@@ -771,7 +771,7 @@ export class AIMatchingEngineHelpers {
   }
 
   private calculateAreaDistance(area1: string, area2: string): number {
-    // Simplified distance calculation between UK areas
+    // Simplified distance calculation between United Kingdom areas
     const distanceMatrix: Record<string, Record<string, number>> = {
       'london_central': { 'london_central': 0, 'london_outer': 15, 'manchester': 200, 'edinburgh': 400 },
       'london_outer': { 'london_central': 15, 'london_outer': 0, 'manchester': 220, 'edinburgh': 420 },

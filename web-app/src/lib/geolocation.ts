@@ -246,7 +246,7 @@ export class GeolocationService {
 
     try {
       // Using Nominatim (OpenStreetMap) for free geocoding
-      const encodedAddress = encodeURIComponent(`${address}, London, UK`)
+      const encodedAddress = encodeURIComponent(`${address}, London, United Kingdom`)
       const response = await fetch(
         `https://nominatim.openstreetmap.org/search?format=json&q=${encodedAddress}&limit=1`,
         {

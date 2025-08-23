@@ -2,7 +2,7 @@
  * Portuguese-speaking community Privacy Protection Framework
  * 
  * Comprehensive privacy protection system specifically designed for Portuguese 
- * community data protection standards, following GDPR, UK DPA 2018, and 
+ * community data protection standards, following GDPR, United Kingdom DPA 2018, and 
  * Portuguese CNPD regulations.
  */
 
@@ -647,7 +647,7 @@ class PortugueseDataMinimizationEngine {
 }
 
 class CrossBorderDataProtectionSystem {
-  // TODO: Implement cross-border data protection (UK-Portugal-Brazil-EU)
+  // TODO: Implement cross-border data protection (United Kingdom-Portugal-Brazil-EU)
 }
 
 class DataSubjectRightsManager {

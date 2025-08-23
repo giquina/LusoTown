@@ -60,7 +60,7 @@ create table if not exists public.portuguese_community_partnerships (
 -- Insert default membership benefits for each tier
 INSERT INTO public.membership_benefits (tier, benefit_type, benefit_name, benefit_description, benefit_value, sort_order) VALUES
 -- Bronze Tier (�3,000/year)
-('bronze', 'cultural_events', 'Quarterly Cultural Tours', 'Exclusive quarterly cultural tours highlighting Portuguese heritage in London & UK', 'quarterly', 1),
+('bronze', 'cultural_events', 'Quarterly Cultural Tours', 'Exclusive quarterly cultural tours highlighting Portuguese heritage in London & United Kingdom', 'quarterly', 1),
 ('bronze', 'premium_access', 'Priority Event Booking', 'Priority booking for all LusoTown cultural events and experiences', 'priority', 2),
 ('bronze', 'service_discount', 'Service Discounts', 'Receive 10% discount on all premium transport and concierge services', '10%', 3),
 ('bronze', 'business_networking', 'Community Directory Access', 'Access to Portuguese business and professional directory', 'full_access', 4),
@@ -88,7 +88,7 @@ INSERT INTO public.membership_benefits (tier, benefit_type, benefit_name, benefi
 
 -- Insert Portuguese-speaking community partnerships
 INSERT INTO public.portuguese_community_partnerships (partner_name, partner_type, partnership_description, member_benefits, required_tier, contact_info) VALUES
-('Portuguese Chamber of Commerce UK', 'chamber_of_commerce', 'Official partnership with Portuguese Chamber of Commerce for business networking and professional development', 'Access to chamber events, business networking, professional development workshops', 'silver', '{"email": "info@portuguesechamber.co.uk", "website": "https://portuguesechamber.co.uk"}'),
+('Portuguese Chamber of Commerce United Kingdom', 'chamber_of_commerce', 'Official partnership with Portuguese Chamber of Commerce for business networking and professional development', 'Access to chamber events, business networking, professional development workshops', 'silver', '{"email": "info@portuguesechamber.co.uk", "website": "https://portuguesechamber.co.uk"}'),
 ('Instituto Cam�es London', 'cultural_institute', 'Cultural partnership for Portuguese language and heritage preservation', 'Cultural workshops, language classes, heritage preservation programs', 'gold', '{"email": "london@instituto-camoes.pt", "website": "https://instituto-camoes.pt"}'),
 ('Anglo-Portuguese Society', 'community_organization', 'Historic society promoting Portuguese-British cultural exchange', 'Cultural events, networking opportunities, historical programs', 'bronze', '{"email": "info@angloportuguesesociety.org.uk", "website": "https://angloportuguesesociety.org.uk"}'),
 ('Portuguese Business Association London', 'business_association', 'Professional association for Portuguese entrepreneurs and business leaders', 'Business development, mentorship, networking events', 'silver', '{"email": "contact@pbalondon.org", "website": "https://pbalondon.org"}');

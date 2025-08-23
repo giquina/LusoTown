@@ -222,7 +222,7 @@ export default function StreamReplayLibrary({
       description:
         language === "pt"
           ? "Conselhos de carreira e oportunidades para estudantes portugueses no Reino Unido"
-          : "Career advice and opportunities for Portuguese students in the UK",
+          : "Career advice and opportunities for Portuguese students in the United Kingdom",
       category: "student-sessions",
       categoryName:
         language === "pt" ? "Sessões de Estudantes" : "Student Sessions",
@@ -238,7 +238,7 @@ export default function StreamReplayLibrary({
       keyMoments: [
         {
           time: 12,
-          title: language === "pt" ? "Mercado de Trabalho UK" : "UK Job Market",
+          title: language === "pt" ? "Mercado de Trabalho United Kingdom" : "United Kingdom Job Market",
           description:
             language === "pt" ? "Panorama atual" : "Current landscape",
         },

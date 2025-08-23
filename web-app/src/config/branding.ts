@@ -271,7 +271,7 @@ export const MAIN_BRAND = {
     pt: 'Conectando falantes de português em todo o Reino Unido'
   },
   community: {
-    en: 'Portuguese-speaking community London & UK',
+    en: 'Portuguese-speaking community London & United Kingdom',
     pt: 'Comunidade de Falantes de Português Londres e Reino Unido'
   }
 } as const;

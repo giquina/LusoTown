@@ -446,7 +446,7 @@ const handleKeyDown = (e) => {
 
 ### Messaging Standards (MANDATORY)
 1. **Always mention "Portuguese speakers"** not just "community members"
-2. **London & UK focus**: Target Portuguese speakers living in London & UK
+2. **London & United Kingdom focus**: Target Portuguese speakers living in London & United Kingdom
 3. **Cultural comfort**: Emphasize Portuguese-speaking hosts, guides, and cultural familiarity
 4. **Professional tone**: Welcoming, inclusive, professional
 5. **No family targeting**: Focus on individuals and professionals

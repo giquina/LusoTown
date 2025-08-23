@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document outlines the comprehensive implementation of LusoTown's official streaming channel feature, designed to serve the Portuguese-speaking community in London & UK with culturally relevant content, business workshops, and community events.
+This document outlines the comprehensive implementation of LusoTown's official streaming channel feature, designed to serve the Portuguese-speaking community in London & United Kingdom with culturally relevant content, business workshops, and community events.
 
 ## 🎯 Feature Objectives
 

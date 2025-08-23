@@ -121,7 +121,7 @@ interface BusinessEcosystemPlatform {
     portugueseBusinessLoans: LoanService;
     culturalMarketingServices: MarketingService;
     portugueseBusinessMentorship: MentorshipService;
-    internationalTrade: TradeService; // Portugal-UK business connections
+    internationalTrade: TradeService; // Portugal-United Kingdom business connections
   };
   
   // Marketplace features

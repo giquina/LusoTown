@@ -31,7 +31,7 @@ interface CommunityPost {
     avatar: string
     location: string
     verified: boolean
-    heritage: 'Portugal' | 'Brazil' | 'Angola' | 'Mozambique' | 'Cape Verde' | 'Guinea-Bissau' | 'UK Diaspora'
+    heritage: 'Portugal' | 'Brazil' | 'Angola' | 'Mozambique' | 'Cape Verde' | 'Guinea-Bissau' | 'United Kingdom Diaspora'
     badges?: string[]
   }
   content: string
@@ -368,7 +368,7 @@ export default function CommunityFeedSection() {
       'Mozambique': '🇲🇿',
       'Cape Verde': '🇨🇻',
       'Guinea-Bissau': '🇬🇼',
-      'UK Diaspora': '🇬🇧'
+      'United Kingdom Diaspora': '🇬🇧'
     }
     return flags[heritage] || '🌍'
   }

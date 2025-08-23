@@ -188,7 +188,7 @@ export default function PortugueseSpeakingNationsPage() {
       londonCommunity: {
         size: '18,000+',
         mainAreas: ['Peckham', 'Tottenham', 'Hackney', 'Croydon'],
-        organizations: ['Angolan Community UK', 'Kizomba London', 'Angola Cultural Centre']
+        organizations: ['Angolan Community United Kingdom', 'Kizomba London', 'Angola Cultural Centre']
       },
       benefits: [
         'Angolan cultural events',
@@ -234,7 +234,7 @@ export default function PortugueseSpeakingNationsPage() {
       londonCommunity: {
         size: '12,000+',
         mainAreas: ['Newham', 'Tower Hamlets', 'Southwark', 'Lewisham'],
-        organizations: ['Mozambican Community UK', 'Marrabenta Cultural Group']
+        organizations: ['Mozambican Community United Kingdom', 'Marrabenta Cultural Group']
       },
       benefits: [
         'Cultural celebrations',
@@ -280,7 +280,7 @@ export default function PortugueseSpeakingNationsPage() {
       londonCommunity: {
         size: '8,500+',
         mainAreas: ['Brixton', 'Elephant and Castle', 'Greenwich', 'Woolwich'],
-        organizations: ['Cape Verdean Community UK', 'Morna Cultural Centre']
+        organizations: ['Cape Verdean Community United Kingdom', 'Morna Cultural Centre']
       },
       benefits: [
         'Morna music events',
@@ -326,7 +326,7 @@ export default function PortugueseSpeakingNationsPage() {
       londonCommunity: {
         size: '3,200+',
         mainAreas: ['Tottenham', 'Haringey', 'Barking', 'Dagenham'],
-        organizations: ['Guinea-Bissau Community UK']
+        organizations: ['Guinea-Bissau Community United Kingdom']
       },
       benefits: [
         'Cultural preservation events',
@@ -711,7 +711,7 @@ export default function PortugueseSpeakingNationsPage() {
                             <div>
                               <h4 className="font-semibold text-primary-900 mb-2 flex items-center gap-2">
                                 <ChartBarIcon className="w-4 h-4" />
-                                {isPortuguese ? 'Comércio UK' : 'UK Trade'}
+                                {isPortuguese ? 'Comércio United Kingdom' : 'United Kingdom Trade'}
                               </h4>
                               <div className="text-sm text-primary-700">
                                 <div><strong>GDP:</strong> {nation.gdp}</div>
@@ -735,7 +735,7 @@ export default function PortugueseSpeakingNationsPage() {
             <div className="container-width text-center">
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-3xl font-bold mb-4">
-                  {isPortuguese ? 'Junte-se à Comunidade Lusófona' : 'Join the Portuguese-Speaking Community'}
+                  {isPortuguese ? 'Junte-se à Comunidade Lusófona' : 'Join the Portuguese-speaking community'}
                 </h2>
                 <p className="text-xl mb-8 opacity-90">
                   {isPortuguese

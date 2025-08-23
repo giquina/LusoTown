@@ -98,7 +98,7 @@ const ROUTE_HIERARCHY: Record<string, BreadcrumbItem[]> = {
     { label: 'Streaming Income', isActive: true, category: 'service', subtitle: 'Monetize Your Portuguese Content' }
   ],
   '/students': [
-    { label: 'Students', isActive: true, category: 'community', subtitle: 'Portuguese Students in UK' }
+    { label: 'Students', isActive: true, category: 'community', subtitle: 'Portuguese Students in United Kingdom' }
   ],
   '/pricing': [
     { label: 'Pricing', isActive: true, category: 'service', subtitle: 'Membership Plans' }

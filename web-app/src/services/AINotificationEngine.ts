@@ -293,7 +293,7 @@ export class SmartNotificationEngine {
         },
         friendly: {
           title: 'Growing Together - Portuguese Style! 🚀',
-          message: 'Join fellow Portuguese professionals building successful businesses in the UK.',
+          message: 'Join fellow Portuguese professionals building successful businesses in the United Kingdom.',
           title_pt: 'Crescer Juntos - À Portuguesa! 🚀',
           message_pt: 'Junta-te a outros profissionais portugueses que constroem negócios de sucesso no Reino Unido.'
         }

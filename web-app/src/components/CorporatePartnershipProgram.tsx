@@ -232,7 +232,7 @@ const CorporatePartnershipProgram: React.FC = () => {
         <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-6">
           {language === 'pt'
             ? 'Junte-se ao mercado português de £450M no Reino Unido. Parcerias estratégicas para empresas que servem a comunidade lusófona.'
-            : 'Join the £450M Portuguese market in the UK. Strategic partnerships for businesses serving the Portuguese-speaking community.'
+            : 'Join the £450M Portuguese market in the United Kingdom. Strategic partnerships for businesses serving the Portuguese-speaking community.'
           }
         </p>
         
@@ -241,7 +241,7 @@ const CorporatePartnershipProgram: React.FC = () => {
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
             <div className="text-2xl font-bold text-primary-600">450,000+</div>
             <div className="text-sm text-gray-600">
-              {language === 'pt' ? 'Portugueses no Reino Unido' : 'Portuguese in UK'}
+              {language === 'pt' ? 'Portugueses no Reino Unido' : 'Portuguese in United Kingdom'}
             </div>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
@@ -418,7 +418,7 @@ const CorporatePartnershipProgram: React.FC = () => {
                 <BanknotesIcon className="w-6 h-6 text-primary-600" />
               </div>
               <div className="ml-4">
-                <h4 className="font-semibold text-gray-900">Millennium Bank UK</h4>
+                <h4 className="font-semibold text-gray-900">Millennium Bank United Kingdom</h4>
                 <p className="text-sm text-gray-600">
                   {language === 'pt' ? 'Parceiro Bancário' : 'Banking Partner'}
                 </p>
@@ -564,7 +564,7 @@ const CorporatePartnershipProgram: React.FC = () => {
         <p className="text-lg mb-6 opacity-90 max-w-3xl mx-auto">
           {language === 'pt'
             ? 'Junte-se a empresas líderes que já estão a capitalizar no mercado português de £450M no Reino Unido.'
-            : 'Join leading companies already capitalizing on the £450M Portuguese market in the UK.'
+            : 'Join leading companies already capitalizing on the £450M Portuguese market in the United Kingdom.'
           }
         </p>
         

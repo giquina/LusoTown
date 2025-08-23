@@ -239,7 +239,7 @@ export default function NotificationPreferences({ className = '' }: Notification
     { value: 'north_london', label: 'North London', labelPT: 'Norte de Londres' },
     { value: 'portuguese_areas', label: 'Portuguese Areas', labelPT: 'Áreas Portuguesas' },
     { value: 'greater_london', label: 'Greater London', labelPT: 'Grande Londres' },
-    { value: 'uk_wide', label: 'UK Wide', labelPT: 'Todo o Reino Unido' }
+    { value: 'uk_wide', label: 'United Kingdom Wide', labelPT: 'Todo o Reino Unido' }
   ]
 
   const handleChannelToggle = async (channel: DeliveryChannel, enabled: boolean) => {

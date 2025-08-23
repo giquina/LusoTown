@@ -1,7 +1,7 @@
 'use client'
 
 // University Partnerships and Student Community Management
-// Comprehensive system for managing Portuguese student community across UK universities
+// Comprehensive system for managing Portuguese student community across United Kingdom universities
 
 export interface University {
   id: string
@@ -326,7 +326,7 @@ export interface UniversityPartnershipMetrics {
   communityIntegrationScore: number
 }
 
-// Portuguese Studies Department Information for UK Universities
+// Portuguese Studies Department Information for United Kingdom Universities
 export const PORTUGUESE_STUDIES_DEPARTMENTS = {
   'ucl': {
     name: 'Department of Spanish, Portuguese and Latin American Studies',
@@ -357,7 +357,7 @@ export const PORTUGUESE_STUDIES_DEPARTMENTS = {
   }
 }
 
-// Major Portuguese Student Societies in UK Universities
+// Major Portuguese Student Societies in United Kingdom Universities
 export const PORTUGUESE_STUDENT_SOCIETIES = [
   {
     universityId: 'ucl',
@@ -643,7 +643,7 @@ export class UniversityPartnershipsService {
   }> {
     const domain = email.split('@')[1]
     
-    // Check if domain is a UK university domain
+    // Check if domain is a United Kingdom university domain
     const isUkUniversity = domain?.endsWith('.ac.uk') || false
     
     if (!isUkUniversity) {
@@ -669,7 +669,7 @@ export class UniversityPartnershipsService {
     const year = now.getFullYear()
     const month = now.getMonth() + 1
 
-    // UK academic year typically starts in September/October
+    // United Kingdom academic year typically starts in September/October
     if (month >= 9) {
       return `${year}-${year + 1}`
     } else {

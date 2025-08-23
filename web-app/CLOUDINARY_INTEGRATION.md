@@ -44,7 +44,7 @@ lusotown/
 │   ├── culture/         # Cultural events, traditions
 │   ├── food/           # Portuguese cuisine
 │   ├── festival/       # Community festivals
-│   └── landmark/       # Portuguese landmarks in UK
+│   └── landmark/       # Portuguese landmarks in United Kingdom
 ├── profiles/
 │   └── {userId}/       # User profile images
 ├── events/

@@ -23,7 +23,7 @@ const explanations = {
     titlePt: "Porque perguntamos sobre o tipo de serviço?",
     contentEn: "We need to assign the right type of SIA-licensed officer for your specific needs. Different services require different training levels and certifications.",
     contentPt: "Precisamos de atribuir o tipo correto de oficial licenciado SIA para as suas necessidades específicas. Diferentes serviços requerem diferentes níveis de treino e certificações.",
-    complianceEn: "UK law requires specific qualifications for different security services",
+    complianceEn: "United Kingdom law requires specific qualifications for different security services",
     compliancePt: "A lei do Reino Unido exige qualificações específicas para diferentes serviços de segurança"
   },
   2: {
@@ -39,7 +39,7 @@ const explanations = {
     icon: ExclamationTriangleIcon,
     titleEn: "Why do we assess risks?",
     titlePt: "Porque avaliamos riscos?",
-    contentEn: "UK law requires us to assess potential risks to ensure your safety and our officer's safety. This helps us prepare appropriate security measures.",
+    contentEn: "United Kingdom law requires us to assess potential risks to ensure your safety and our officer's safety. This helps us prepare appropriate security measures.",
     contentPt: "A lei do Reino Unido exige que avaliemos riscos potenciais para garantir a sua segurança e a segurança do nosso oficial. Isto ajuda-nos a preparar medidas de segurança apropriadas.",
     complianceEn: "SIA regulations mandate risk assessment for all protection services",
     compliancePt: "Regulamentações SIA obrigam avaliação de riscos para todos os serviços de proteção"

@@ -90,14 +90,14 @@ export const INSTITUTIONAL_PARTNERSHIP_STRATEGIES: InstitutionalPartnershipStrat
     name: 'Government and Diplomatic Expansion Strategy',
     namePortuguese: 'Estratégia de Expansão Governamental e Diplomática',
     category: 'government_diplomatic',
-    description: 'Comprehensive strategy to establish partnerships with all major Portuguese government institutions and diplomatic missions in the UK',
+    description: 'Comprehensive strategy to establish partnerships with all major Portuguese government institutions and diplomatic missions in the United Kingdom',
     targetInstitutions: [
       'Portuguese Consulate Manchester',
-      'Portuguese Trade Office UK',
+      'Portuguese Trade Office United Kingdom',
       'AICEP Portugal Global',
-      'Portuguese Tourism Board UK',
+      'Portuguese Tourism Board United Kingdom',
       'Portuguese Investment Agency',
-      'Portuguese Maritime Administration UK'
+      'Portuguese Maritime Administration United Kingdom'
     ],
     strategicObjectives: [
       'Official government endorsement for LusoTown platform',
@@ -137,7 +137,7 @@ export const INSTITUTIONAL_PARTNERSHIP_STRATEGIES: InstitutionalPartnershipStrat
     name: 'University Partnership Enhancement Strategy',
     namePortuguese: 'Estratégia de Melhoria de Parcerias Universitárias',
     category: 'cultural_educational',
-    description: 'Expand and deepen partnerships with UK universities offering Portuguese studies and serving Portuguese student communities',
+    description: 'Expand and deepen partnerships with United Kingdom universities offering Portuguese studies and serving Portuguese student communities',
     targetInstitutions: [
       'Oxford University Portuguese Department',
       'Cambridge University Portuguese Studies',
@@ -160,7 +160,7 @@ export const INSTITUTIONAL_PARTNERSHIP_STRATEGIES: InstitutionalPartnershipStrat
       completion: 'Full university network activation (Year 2)'
     },
     expectedOutcomes: [
-      'Partnership with 12+ UK universities',
+      'Partnership with 12+ United Kingdom universities',
       'Support for 3,000+ Portuguese students',
       'Academic research collaborations',
       'Cultural exchange programs',
@@ -186,9 +186,9 @@ export const INSTITUTIONAL_PARTNERSHIP_STRATEGIES: InstitutionalPartnershipStrat
     category: 'business_professional',
     description: 'Build comprehensive network of Portuguese professional associations and business organizations across all major industries',
     targetInstitutions: [
-      'Portuguese Engineers Association UK',
+      'Portuguese Engineers Association United Kingdom',
       'Portuguese Architects Society',
-      'Portuguese Teachers Union UK',
+      'Portuguese Teachers Union United Kingdom',
       'Portuguese Nurses Association',
       'Portuguese Tech Professionals Network',
       'Portuguese Entrepreneurs Club London'
@@ -232,7 +232,7 @@ export const INSTITUTIONAL_PARTNERSHIP_STRATEGIES: InstitutionalPartnershipStrat
 export const PARTNERSHIP_OUTREACH_PIPELINE: PartnershipOutreach[] = [
   {
     id: 'outreach-1',
-    institutionName: 'Portuguese Engineers Association UK',
+    institutionName: 'Portuguese Engineers Association United Kingdom',
     institutionType: 'Professional Association',
     contactPerson: {
       name: 'Eng. João Silva',
@@ -567,7 +567,7 @@ export class InstitutionalPartnershipsService {
       },
       {
         priority: 'high',
-        institution: 'Portuguese Engineers Association UK',
+        institution: 'Portuguese Engineers Association United Kingdom',
         rationale: 'Large professional community with high earning potential. Strong demand for professional services.',
         expectedValue: 38000,
         timeToImplement: '4-6 months'
@@ -581,14 +581,14 @@ export class InstitutionalPartnershipsService {
       },
       {
         priority: 'medium',
-        institution: 'Portuguese Teachers Union UK',
+        institution: 'Portuguese Teachers Union United Kingdom',
         rationale: 'Educational sector partnerships. Important for cultural preservation and language education.',
         expectedValue: 22000,
         timeToImplement: '6-8 months'
       },
       {
         priority: 'low',
-        institution: 'Portuguese Sports Federation UK',
+        institution: 'Portuguese Sports Federation United Kingdom',
         rationale: 'Community engagement through sports. Potential for family-oriented programming.',
         expectedValue: 15000,
         timeToImplement: '10-12 months'

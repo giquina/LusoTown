@@ -42,7 +42,7 @@ See `/web-app/TODO.md` for comprehensive premium enhancement roadmap focusing on
 
 ## Project Overview
 
-LusoTown is a production-ready Portuguese-speaking community platform serving London & UK Portuguese speakers. It's a comprehensive social network with event discovery, business directory, streaming platform, transport services, and university partnerships.
+LusoTown is a production-ready Portuguese-speaking community platform serving London & United Kingdom Portuguese speakers. It's a comprehensive social network with event discovery, business directory, streaming platform, transport services, and university partnerships.
 
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL with PostGIS, Simple Relay Server (SRS) for streaming, OpenStreetMap/Leaflet for mapping, Twitter API, Stripe, React Context state management.
 
@@ -215,7 +215,7 @@ const { t } = useLanguage()
 ### 3. Portuguese Cultural Authenticity
 - Use Portuguese brand colors from `@/config/brand.ts`
 - Integrate cultural elements naturally (not as separate sections)
-- Target Portuguese speakers in London & UK specifically
+- Target Portuguese speakers in London & United Kingdom specifically
 - Maintain cultural context throughout development
 
 ### 4. Pre-Commit Quality Checks (REQUIRED)
@@ -230,7 +230,7 @@ npm run test                   # Must pass - Unit tests
 
 ## Key Business Context
 
-**Target Audience**: 750+ Portuguese-speaking community members, 2,150+ Portuguese university students across London & UK
+**Target Audience**: 750+ Portuguese-speaking community members, 2,150+ Portuguese university students across London & United Kingdom
 
 **University Partnerships**: 8 institutions (UCL, King's, Imperial, LSE, Oxford, Cambridge, Manchester, Edinburgh)
 
@@ -457,7 +457,7 @@ npx tsc --noEmit         # TypeScript compilation check
 
 **Mobile UX**: Portuguese-speaking community is mobile-heavy, prioritize mobile experience
 
-**Cultural Authenticity**: Platform specifically serves Portuguese speakers in London & UK, not a generic international platform
+**Cultural Authenticity**: Platform specifically serves Portuguese speakers in London & United Kingdom, not a generic international platform
 
 **AI Integration**: 4 production AI systems with Portuguese language support and cultural context awareness
 

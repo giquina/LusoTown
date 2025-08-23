@@ -890,7 +890,7 @@ export default function TransportPage() {
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               {isPortuguese
                 ? "Nosso sistema garante total conformidade com regulamentações SIA do Reino Unido e os mais altos padrões de segurança"
-                : "Our system ensures full compliance with UK SIA regulations and the highest security standards"}
+                : "Our system ensures full compliance with United Kingdom SIA regulations and the highest security standards"}
             </p>
           </div>
 
@@ -1044,7 +1044,7 @@ export default function TransportPage() {
               <p className="text-gray-600">
                 {isPortuguese
                   ? "Todos os oficiais são licenciados SIA e seguem protocolos rigorosos do Reino Unido"
-                  : "All officers are SIA licensed and follow strict UK protocols"}
+                  : "All officers are SIA licensed and follow strict United Kingdom protocols"}
               </p>
             </motion.div>
 

@@ -299,7 +299,7 @@ function CulturalConnectionStep({ onNext, onPrevious, isPortuguese }: any) {
           transition={{ delay: 0.3 }}
           className="text-2xl font-bold text-gray-900"
         >
-          {isPortuguese ? 'Bem-vindo à comunidade lusófona do Reino Unido!' : 'Welcome to the UK Portuguese-speaking community!'}
+          {isPortuguese ? 'Bem-vindo à comunidade lusófona do Reino Unido!' : 'Welcome to the United Kingdom Portuguese-speaking community!'}
         </motion.h2>
         
         <motion.p
@@ -512,7 +512,7 @@ function ActionStep({ onPrevious, onComplete, isPortuguese }: any) {
           {[
             isPortuguese ? '✓ Matching gratuito para sempre' : '✓ Free matching forever',
             isPortuguese ? '✓ Primeiro evento gratuito' : '✓ First event free',
-            isPortuguese ? '✓ Acesso à comunidade lusófona do Reino Unido' : '✓ Access to UK Portuguese-speaking community'
+            isPortuguese ? '✓ Acesso à comunidade lusófona do Reino Unido' : '✓ Access to United Kingdom Portuguese-speaking community'
           ].map((benefit, index) => (
             <div key={index} className="text-sm text-green-700 flex items-center gap-2">
               <CheckIcon className="w-4 h-4 text-green-600" />

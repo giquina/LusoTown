@@ -537,7 +537,7 @@ function generateDetailedReport(results) {
     
     <div class="section">
         <h2>🇵🇹 Portuguese-speaking community Guidelines</h2>
-        <p>This validation specifically considers the needs of the Portuguese-speaking community in London and the UK:</p>
+        <p>This validation specifically considers the needs of the Portuguese-speaking community in London and the United Kingdom:</p>
         <ul>
             <li><strong>Text Length:</strong> Portuguese text is typically 20-40% longer than English</li>
             <li><strong>Cultural Colors:</strong> Red and green heritage colors maintain cultural identity</li>

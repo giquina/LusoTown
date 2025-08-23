@@ -158,7 +158,7 @@ export default function LusoBotPage() {
       title: language === 'pt' ? 'Apoio Prático' : 'Practical Support',
       description: language === 'pt'
         ? 'Assistência com questões práticas da vida no Reino Unido enquanto preservas a tua identidade portuguesa.'
-        : 'Assistance with practical UK life issues while preserving your Portuguese identity.',
+        : 'Assistance with practical United Kingdom life issues while preserving your Portuguese identity.',
       examples: language === 'pt' ? [
         'Como renovar o meu passaporte português em Londres?',
         'Onde posso fazer o reconhecimento de habilitações?',
@@ -265,7 +265,7 @@ export default function LusoBotPage() {
             <p className="text-xl sm:text-2xl text-white/90 mb-8 leading-relaxed">
               {language === 'pt' 
                 ? 'O teu assistente cultural português com IA. Especialista em saudade, tradições e comunidade de falantes de português no Reino Unido.'
-                : 'Your Portuguese cultural assistant. Expert in saudade, traditions and Portuguese-speaking community in the UK.'
+                : 'Your Portuguese cultural assistant. Expert in saudade, traditions and Portuguese-speaking community in the United Kingdom.'
               }
             </p>
 

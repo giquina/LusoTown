@@ -27,7 +27,7 @@ const socialProviders = [
   { name: 'LinkedIn', icon: '💼', href: '/auth/linkedin' },
 ];
 
-// Enhanced community highlights with UK focus
+// Enhanced community highlights with United Kingdom focus
 const communityHighlights = [
   { 
     label: "Portuguese Speakers", 
@@ -36,13 +36,13 @@ const communityHighlights = [
     description: "Across the United Kingdom"
   },
   { 
-    label: "Monthly UK Events", 
+    label: "Monthly United Kingdom Events", 
     value: "150+", 
     icon: CalendarDaysIcon,
     description: "London, Manchester, Birmingham & more"
   },
   { 
-    label: "UK Cities", 
+    label: "United Kingdom Cities", 
     value: "25+", 
     icon: GlobeAltIcon,
     description: "From Edinburgh to Brighton"
@@ -51,7 +51,7 @@ const communityHighlights = [
     label: "Success Stories", 
     value: "500+", 
     icon: HeartIcon,
-    description: "Portuguese connections made in the UK"
+    description: "Portuguese connections made in the United Kingdom"
   },
 ];
 
@@ -84,7 +84,7 @@ export default function CTA() {
                 <span className="text-lg">🇬🇧</span>
               </div>
               <SparklesIcon className="h-5 w-5" />
-              Portuguese-speaking community in the UK
+              Portuguese-speaking community in the United Kingdom
             </div>
             
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -93,18 +93,18 @@ export default function CTA() {
             
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-4xl mx-auto mb-8 border border-white/20">
               <p className="text-2xl sm:text-3xl text-white font-bold mb-4 leading-tight">
-                Connect with Portuguese speakers across the UK
+                Connect with Portuguese speakers across the United Kingdom
               </p>
               <p className="text-lg text-white/90 leading-relaxed">
-                From London to Manchester, Birmingham to Edinburgh - join the largest Portuguese-speaking community platform in the UK. 
+                From London to Manchester, Birmingham to Edinburgh - join the largest Portuguese-speaking community platform in the United Kingdom. 
                 Unlimited matches, cultural events, and professional networking nationwide.
               </p>
             </div>
 
-            {/* Pricing Tiers - UK Focused */}
+            {/* Pricing Tiers - United Kingdom Focused */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-center">
-                <h3 className="text-white font-bold text-xl mb-2">UK Community Member</h3>
+                <h3 className="text-white font-bold text-xl mb-2">United Kingdom Community Member</h3>
                 <p className="text-white/90 text-2xl font-bold">{formatPrice(plans.community.monthly)}/month</p>
                 <p className="text-white/80 text-sm mt-3 leading-relaxed">
                   Connect with Portuguese speakers across England, Scotland, Wales & Northern Ireland
@@ -117,7 +117,7 @@ export default function CTA() {
                 <h3 className="text-white font-bold text-xl mb-2">Cultural Ambassador</h3>
                 <p className="text-white/90 text-2xl font-bold">{formatPrice(plans.ambassador.monthly)}/month</p>
                 <p className="text-white/80 text-sm mt-3 leading-relaxed">
-                  Premium access + priority visibility across all UK Portuguese events
+                  Premium access + priority visibility across all United Kingdom Portuguese events
                 </p>
               </div>
             </div>
@@ -211,7 +211,7 @@ export default function CTA() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 max-w-4xl mx-auto"
           >
-            {/* Social Proof - UK Focused */}
+            {/* Social Proof - United Kingdom Focused */}
             <div className="text-center mb-8">
               <div className="flex justify-center -space-x-3 mb-4">
                 {[1, 2, 3, 4, 5, 6, 7].map((i) => (
@@ -222,12 +222,12 @@ export default function CTA() {
                       backgroundColor: `hsl(${(i * 51) % 360}, 65%, 55%)`,
                     }}
                   >
-                    UK
+                    United Kingdom
                   </div>
                 ))}
               </div>
               <p className="text-white font-bold text-xl mb-2">
-                23 Portuguese speakers from across the UK joined today
+                23 Portuguese speakers from across the United Kingdom joined today
               </p>
               <p className="text-white/80 text-lg">
                 Connect with your Portuguese-speaking community nationwide within 48 hours

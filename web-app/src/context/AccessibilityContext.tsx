@@ -174,7 +174,7 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
       // Add Portuguese pronunciation hints
       const enhancedText = text
         .replace(/LusoTown/g, 'Luso Town')
-        .replace(/UK/g, 'Reino Unido')
+        .replace(/United Kingdom/g, 'Reino Unido')
         .replace(/London/g, 'Londres');
       
       accessibility.speakText(enhancedText, { language: 'pt-PT' });

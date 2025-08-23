@@ -202,7 +202,7 @@ BUNNYCDN_STORAGE_ZONE=lusotown-streaming
 ```
 
 ### Geographic Distribution
-- **Primary**: London (UK) for Portuguese-speaking community
+- **Primary**: London (United Kingdom) for Portuguese-speaking community
 - **Secondary**: Lisbon (Portugal), São Paulo (Brazil)
 - **Edge Locations**: European Portuguese diaspora regions
 
@@ -278,7 +278,7 @@ curl http://localhost:3002/health
 
 ✅ **LusoTown Portuguese-speaking community Streaming Infrastructure is LIVE and READY**
 
-The streaming platform is fully operational and optimized for the Portuguese-speaking community in London & UK. All core functionality has been tested and validated.
+The streaming platform is fully operational and optimized for the Portuguese-speaking community in London & United Kingdom. All core functionality has been tested and validated.
 
 **Ready for Portuguese creators to start streaming!** 🇵🇹🎥
 

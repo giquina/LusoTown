@@ -16,21 +16,21 @@ const customTourFeatures = [
     icon: ShieldCheckIcon,
     title: 'Professional Security Driver',
     titlePortuguese: 'Motorista de Segurança Profissional',
-    description: 'Dedicated private security-trained driver with extensive UK and London knowledge',
+    description: 'Dedicated private security-trained driver with extensive United Kingdom and London knowledge',
     descriptionPortuguese: 'Motorista dedicado com treino de segurança e amplo conhecimento do Reino Unido e Londres'
   },
   {
     icon: MapPinIcon,
     title: 'Take You Anywhere',
     titlePortuguese: 'Levamos-te a Qualquer Lugar',
-    description: 'Complete freedom to explore any destination across the UK with Portuguese-speaking support',
+    description: 'Complete freedom to explore any destination across the United Kingdom with Portuguese-speaking support',
     descriptionPortuguese: 'Liberdade completa para explorar qualquer destino no Reino Unido com apoio falante de português'
   },
   {
     icon: CameraIcon,
     title: 'Photography Included',
     titlePortuguese: 'Fotografia Incluída',
-    description: 'Professional photography at every stop to capture your perfect UK memories',
+    description: 'Professional photography at every stop to capture your perfect United Kingdom memories',
     descriptionPortuguese: 'Fotografia profissional em cada paragem para capturar as suas memórias perfeitas do Reino Unido'
   },
   {
@@ -110,7 +110,7 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               {isPortuguese 
                 ? 'Com um motorista de segurança dedicado que conhece profundamente o Reino Unido e Londres, pode ir a qualquer lugar com total segurança e apoio em português'
-                : 'With a dedicated security driver who knows the UK and London inside out, you can go anywhere with complete safety and Portuguese-speaking support'
+                : 'With a dedicated security driver who knows the United Kingdom and London inside out, you can go anywhere with complete safety and Portuguese-speaking support'
               }
             </p>
           </div>
@@ -194,7 +194,7 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               {isPortuguese 
                 ? 'Contacte-nos para desenhar a sua experiência perfeita no Reino Unido. Desde castelos históricos a paisagens deslumbrantes, levamo-lo onde quiser ir com total segurança e conforto.'
-                : 'Contact us to design your perfect UK experience. From historic castles to stunning landscapes, we\'ll take you wherever you want to go with complete safety and comfort.'
+                : 'Contact us to design your perfect United Kingdom experience. From historic castles to stunning landscapes, we\'ll take you wherever you want to go with complete safety and comfort.'
               }
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

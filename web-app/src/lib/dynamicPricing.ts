@@ -226,7 +226,7 @@ const ADDON_RATES = {
 }
 
 export class DynamicPricingEngine {
-  private vatRate = 0.20 // UK VAT rate
+  private vatRate = 0.20 // United Kingdom VAT rate
 
   async calculatePrice(options: DynamicPricingOptions): Promise<PricingResult> {
     const breakdown: PricingBreakdownItem[] = []
@@ -556,7 +556,7 @@ export const portugueseMarketSegments: MarketSegment[] = [
     targetAudience: ['25-35', 'recent-graduates', 'career-focused'],
     priceMultiplier: 0.8,
     features: ['career-networking', 'professional-events', 'mentorship'],
-    description: 'Portuguese professionals starting their UK careers',
+    description: 'Portuguese professionals starting their United Kingdom careers',
     descriptionPortuguese: 'Profissionais portugueses a iniciar carreira no Reino Unido'
   },
   {
@@ -566,7 +566,7 @@ export const portugueseMarketSegments: MarketSegment[] = [
     targetAudience: ['35-50', 'families', 'homeowners'],
     priceMultiplier: 1.2,
     features: ['family-events', 'education-support', 'community-integration'],
-    description: 'Portuguese families with children settled in UK',
+    description: 'Portuguese families with children settled in United Kingdom',
     descriptionPortuguese: 'Famílias portuguesas com filhos estabelecidas no Reino Unido'
   },
   {
@@ -586,7 +586,7 @@ export const portugueseMarketSegments: MarketSegment[] = [
     targetAudience: ['18-25', 'university-students', 'recent-arrivals'],
     priceMultiplier: 0.5,
     features: ['student-events', 'academic-support', 'social-integration'],
-    description: 'Portuguese students in UK universities',
+    description: 'Portuguese students in United Kingdom universities',
     descriptionPortuguese: 'Estudantes portugueses em universidades britânicas'
   }
 ]

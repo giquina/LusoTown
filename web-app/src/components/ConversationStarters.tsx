@@ -144,7 +144,7 @@ export default function ConversationStarters({
     // Festivals & Celebrations
     {
       id: 'festival_1',
-      textEn: "How do you celebrate São João in the UK? I miss the festivities from home!",
+      textEn: "How do you celebrate São João in the United Kingdom? I miss the festivities from home!",
       textPt: "Como celebras o São João no Reino Unido? Tenho saudades das festividades de casa!",
       category: 'Portuguese Festivals',
       categoryPt: 'Festas Portuguesas',

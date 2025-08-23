@@ -206,7 +206,7 @@ export function BrazilianEliteCulturalShowcase({
         <p className="text-gray-700 text-sm mb-4">{brand.description}</p>
         
         <div className="mb-4">
-          <div className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">UK Presence</div>
+          <div className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">United Kingdom Presence</div>
           <div className="space-y-1">
             {brand.uk_presence.london_locations.slice(0, 2).map((location: string, idx: number) => (
               <div key={idx} className="text-xs text-gray-700 flex items-center gap-1">
@@ -433,7 +433,7 @@ export function BrazilianEliteCulturalShowcase({
               🌃 Brazilian Nightlife & Social Scene
             </h3>
             <p className="text-xl text-gray-600 mb-4">
-              Where Brazilian energy meets UK sophistication for unforgettable nights
+              Where Brazilian energy meets United Kingdom sophistication for unforgettable nights
             </p>
           </div>
           

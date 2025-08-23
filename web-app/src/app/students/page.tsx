@@ -254,7 +254,7 @@ const UNIVERSITIES: University[] = [
       'Portuguese business networking events',
       'Career services for Portuguese market',
       'Portuguese economist speaker series',
-      'Brazil-UK business connections'
+      'Brazil-United Kingdom business connections'
     ],
     website: UNIVERSITY_URLS.lse,
     contact: {
@@ -401,7 +401,7 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     id: 'study-groups',
     title: 'Portuguese Student Study Groups',
     titlePortuguese: 'Grupos de Estudo de Estudantes Portugueses',
-    description: 'Subject-specific study groups connecting Portuguese students across UK universities. Share resources, collaborate on projects, and support each other academically.',
+    description: 'Subject-specific study groups connecting Portuguese students across United Kingdom universities. Share resources, collaborate on projects, and support each other academically.',
     descriptionPortuguese: 'Grupos de estudo específicos por disciplina conectando estudantes portugueses em universidades do Reino Unido. Partilhe recursos, colabore em projetos e apoiem-se mutuamente academicamente.',
     category: 'academic',
     eligibility: ['University students', 'All subjects welcome'],
@@ -423,7 +423,7 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     id: 'internship-opportunities',
     title: 'Portuguese Business Internship Network',
     titlePortuguese: 'Rede de Estágios em Negócios Portugueses',
-    description: 'Exclusive access to internship opportunities with Portuguese businesses in London, UK, and Portugal. Gain professional experience in Portuguese-speaking environments.',
+    description: 'Exclusive access to internship opportunities with Portuguese businesses in London, United Kingdom, and Portugal. Gain professional experience in Portuguese-speaking environments.',
     descriptionPortuguese: 'Acesso exclusivo a oportunidades de estágio com empresas portuguesas em Londres, Reino Unido e Portugal. Ganhe experiência profissional em ambientes de língua portuguesa.',
     category: 'professional',
     eligibility: ['University students', 'Recent graduates', 'All disciplines considered'],
@@ -456,7 +456,7 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     id: 'live-streams',
     title: 'Student-Only Live Stream Content',
     titlePortuguese: 'Conteúdo de Transmissão ao Vivo Exclusivo para Estudantes',
-    description: 'Weekly live streams covering study tips, career advice, Portuguese culture, and academic life in the UK. Interactive Q&A sessions with experts.',
+    description: 'Weekly live streams covering study tips, career advice, Portuguese culture, and academic life in the United Kingdom. Interactive Q&A sessions with experts.',
     descriptionPortuguese: 'Transmissões ao vivo semanais cobrindo dicas de estudo, conselhos de carreira, cultura portuguesa e vida acadêmica no Reino Unido. Sessões interativas de perguntas e respostas com especialistas.',
     category: 'academic',
     eligibility: ['University students', 'Portuguese-speaking community interest'],
@@ -516,7 +516,7 @@ const STUDENT_EVENTS: StudentEvent[] = [
     type: 'networking',
     date: '2024-09-25',
     time: '18:30',
-    location: 'Portugal-UK Chamber of Commerce',
+    location: 'Portugal-United Kingdom Chamber of Commerce',
     price: 10,
     originalPrice: 35,
     capacity: 60,
@@ -659,7 +659,7 @@ export default function StudentsPage() {
                       Portuguese students at
                       <br />
                       <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
-                        UK universities
+                        United Kingdom universities
                       </span>
                     </>
                   )}
@@ -696,13 +696,13 @@ export default function StudentsPage() {
                 <span className="hidden sm:block">
                   {language === 'pt'
                     ? "Conecte-se com a maior comunidade de estudantes portugueses em universidades de Londres e do Reino Unido. Descontos exclusivos de 50%, eventos culturais autênticos, networking profissional e apoio académico especializado."
-                    : "Connect with the largest community of Portuguese students at London and UK universities. Exclusive 50% discounts, authentic cultural events, professional networking, and specialized academic support."}
+                    : "Connect with the largest community of Portuguese students at London and United Kingdom universities. Exclusive 50% discounts, authentic cultural events, professional networking, and specialized academic support."}
                 </span>
                 {/* Mobile short subtitle */}
                 <span className="sm:hidden">
                   {language === 'pt'
                     ? "Conecte-se com estudantes portugueses em universidades do Reino Unido. Descontos exclusivos, eventos culturais e networking profissional."
-                    : "Connect with Portuguese students at UK universities. Exclusive discounts, cultural events, and professional networking."}
+                    : "Connect with Portuguese students at United Kingdom universities. Exclusive discounts, cultural events, and professional networking."}
                 </span>
               </motion.p>
 
@@ -767,7 +767,7 @@ export default function StudentsPage() {
               >
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                   <div className="text-2xl font-bold text-primary-600 mb-1">{communityStats.viewers}</div>
-                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Estudantes Portugueses no Reino Unido' : 'Portuguese Students in UK'}</div>
+                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Estudantes Portugueses no Reino Unido' : 'Portuguese Students in United Kingdom'}</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                   <div className="text-2xl font-bold text-secondary-600 mb-1">8</div>
@@ -796,7 +796,7 @@ export default function StudentsPage() {
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {language === 'pt' ?
                   'Descontos especiais, eventos exclusivos e apoio acadêmico para estudantes portugueses que estudam em universidades de Londres e do Reino Unido' :
-                  'Special discounts, exclusive events, and academic support for Portuguese students studying at London and UK universities'
+                  'Special discounts, exclusive events, and academic support for Portuguese students studying at London and United Kingdom universities'
                 }
               </p>
 
@@ -907,12 +907,12 @@ export default function StudentsPage() {
           <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {language === 'pt' ? 'Universidades Parceiras no Reino Unido' : 'UK Partner Universities'}
+                {language === 'pt' ? 'Universidades Parceiras no Reino Unido' : 'United Kingdom Partner Universities'}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {language === 'pt' ?
                   'Colaboramos com as principais universidades de Londres e do Reino Unido para apoiar estudantes portugueses e programas de estudos portugueses' :
-                  'We collaborate with leading London and UK universities to support Portuguese students and Portuguese studies programs'
+                  'We collaborate with leading London and United Kingdom universities to support Portuguese students and Portuguese studies programs'
                 }
               </p>
 
@@ -1339,14 +1339,14 @@ export default function StudentsPage() {
                 <AcademicCapIcon className="w-4 h-4 mr-2" />
                 {language === 'pt' ? 
                   `Comunidade Estudantil • ${communityStats.viewers} estudantes portugueses em universidades do Reino Unido` :
-                  `Student Community • ${communityStats.viewers} Portuguese students at UK universities`
+                  `Student Community • ${communityStats.viewers} Portuguese students at United Kingdom universities`
                 }
               </div>
               
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 {language === 'pt' ? 
                   'Junte-se à Maior Comunidade de Estudantes Portugueses em Universidades do Reino Unido' :
-                  'Join the UK\'s Largest Community of Portuguese Students at UK Universities'
+                  'Join the United Kingdom\'s Largest Community of Portuguese Students at United Kingdom Universities'
                 }
               </h2>
               

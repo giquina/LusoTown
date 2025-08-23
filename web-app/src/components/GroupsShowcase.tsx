@@ -108,7 +108,7 @@ export default function GroupsShowcase() {
         },
         {
           id: 'group-3',
-          name: 'Portuguese Families London & UK',
+          name: 'Portuguese Families London & United Kingdom',
           description: 'Supporting Portuguese families with children, family-friendly events, and cultural education.',
           category: 'family',
           current_member_count: 156,
@@ -297,7 +297,7 @@ export default function GroupsShowcase() {
             transition={{ delay: 0.2 }}
             className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium"
           >
-            Connect with Portuguese speakers across the UK. From business networking in London
+            Connect with Portuguese speakers across the United Kingdom. From business networking in London
             to cultural events in Manchester, discover groups nationwide that match your interests and make lasting friendships.
           </motion.p>
         </div>
@@ -320,7 +320,7 @@ export default function GroupsShowcase() {
               Ready to Connect?
             </h3>
             <p className="text-lg sm:text-xl opacity-95 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Join Portuguese speakers who share your interests and build lasting friendships in London & UK.
+              Join Portuguese speakers who share your interests and build lasting friendships in London & United Kingdom.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

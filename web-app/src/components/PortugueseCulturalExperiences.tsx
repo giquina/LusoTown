@@ -164,13 +164,13 @@ const culturalExperiences: CulturalExperience[] = [
   },
   {
     id: "heritage_walking_tours",
-    titleEn: "Heritage Walking Tours - Exploring Portuguese Influence in UK Cities",
+    titleEn: "Heritage Walking Tours - Exploring Portuguese Influence in United Kingdom Cities",
     titlePt: "Tours de Herança a Pé - Explorando Influência Portuguesa em Cidades do Reino Unido",
     category: "walking_tours",
     experienceLevel: "all_levels",
     duration: "2-3 hours",
     icon: "🚶",
-    descriptionEn: "Guided walks exploring Portuguese historical influence and contemporary presence in UK cities, discovering hidden stories and cultural connections throughout London and beyond.",
+    descriptionEn: "Guided walks exploring Portuguese historical influence and contemporary presence in United Kingdom cities, discovering hidden stories and cultural connections throughout London and beyond.",
     descriptionPt: "Caminhadas guiadas explorando a influência histórica portuguesa e presença contemporânea em cidades do Reino Unido, descobrindo histórias escondidas e conexões culturais por Londres e além.",
     culturalDepth: {
       en: "Heritage tours reveal the deep Portuguese connections to British history, from maritime exploration to modern communities, uncovering stories often hidden in plain sight.",

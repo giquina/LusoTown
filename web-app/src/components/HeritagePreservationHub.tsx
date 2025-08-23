@@ -63,7 +63,7 @@ const HERITAGE_PROJECTS: HeritageProject[] = [
     outcomes: [
       'Created audio archive of 75 elder interviews',
       'Documented traditional Portuguese recipes and cooking methods',
-      'Recorded stories of Portuguese immigration journeys to UK',
+      'Recorded stories of Portuguese immigration journeys to United Kingdom',
       'Preserved religious traditions and cultural practices',
       'Built family heritage collections for 30+ families',
       'Established Portuguese Oral History Archive at British Library'
@@ -92,7 +92,7 @@ const HERITAGE_PROJECTS: HeritageProject[] = [
     participants: 120,
     location: 'Various London Portuguese Communities',
     yearStarted: '2022',
-    impact: 'Digitally preserved 2,500+ historical items, creating the UK\'s most comprehensive Portuguese heritage database accessible to researchers worldwide.',
+    impact: 'Digitally preserved 2,500+ historical items, creating the United Kingdom\'s most comprehensive Portuguese heritage database accessible to researchers worldwide.',
     impactPortuguese: 'Preservados digitalmente 2.500+ itens históricos, criando a base de dados de património português mais abrangente do Reino Unido, acessível a investigadores mundialmente.',
     outcomes: [
       'Digitized 1,800 historic photographs of Portuguese-speaking community events',

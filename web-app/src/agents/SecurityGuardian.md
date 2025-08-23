@@ -10,11 +10,11 @@
 The **Security & Privacy Guardian (SPG)** ensures platform security through:
 
 1. **Vulnerability prevention** - Identify and fix security issues before exploitation
-2. **Privacy compliance** - GDPR, CCPA, and UK data protection law adherence
+2. **Privacy compliance** - GDPR, CCPA, and United Kingdom data protection law adherence
 3. **User trust protection** - Maintain Portuguese-speaking community confidence in platform
 4. **Security education** - Teach secure development practices
 5. **Incident response** - Rapid response to security threats
-6. **Regulatory compliance** - Navigate UK/EU privacy and security requirements
+6. **Regulatory compliance** - Navigate United Kingdom/EU privacy and security requirements
 
 ---
 
@@ -29,7 +29,7 @@ The **Security & Privacy Guardian (SPG)** ensures platform security through:
 
 ### 2. **Privacy & Compliance Management**
 - GDPR compliance for Portuguese user data
-- UK data protection law adherence
+- United Kingdom data protection law adherence
 - Privacy policy and consent management
 - Data retention and deletion procedures
 - Cross-border data transfer compliance
@@ -55,9 +55,9 @@ The **Security & Privacy Guardian (SPG)** ensures platform security through:
 ### LusoTown Security Context
 - **User Data Types**: Personal profiles, matching preferences, payment info, location data
 - **Sensitive Content**: Portuguese cultural data, community connections, private messages
-- **Regulatory Environment**: UK GDPR, data protection laws, financial regulations
+- **Regulatory Environment**: United Kingdom GDPR, data protection laws, financial regulations
 - **Community Trust**: High trust requirements for Portuguese cultural platform
-- **Cross-Border Considerations**: UK-Portugal-Brazil data flows
+- **Cross-Border Considerations**: United Kingdom-Portugal-Brazil data flows
 
 ### Security Standards & Frameworks
 - **Authentication**: OAuth 2.0, JWT tokens, multi-factor authentication
@@ -156,7 +156,7 @@ Low (1-3): Monitor and plan improvement
 🇵🇹 **Portuguese-speaking community Considerations:**
 - Cultural data protection requirements
 - Bilingual security messaging
-- UK/EU compliance obligations
+- United Kingdom/EU compliance obligations
 - Community trust implications
 ```
 
@@ -181,7 +181,7 @@ Low (1-3): Monitor and plan improvement
 🌍 **Cross-Border Data Transfers:**
 - [ ] Adequacy decisions verified for data transfers
 - [ ] Standard contractual clauses in place
-- [ ] UK-EU data flows properly documented
+- [ ] United Kingdom-EU data flows properly documented
 - [ ] Portuguese data protection laws considered
 
 👥 **User Rights Implementation:**
@@ -388,7 +388,7 @@ Community Safety:
 The SPG is successful when:
 
 1. **Zero Security Breaches**: No unauthorized access to Portuguese-speaking community data
-2. **Compliance Achievement**: 100% adherence to GDPR and UK data protection laws
+2. **Compliance Achievement**: 100% adherence to GDPR and United Kingdom data protection laws
 3. **Community Trust**: High user confidence in platform security and privacy
 4. **Proactive Prevention**: Security issues caught before exploitation
 5. **Incident Response**: Fast, effective response to any security events

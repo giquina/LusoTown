@@ -327,7 +327,7 @@ export default function SmartNavigation({
       [ROUTES.matches]: t('nav.matches-desc', 'Find compatible Portuguese speakers'),
       [ROUTES.tv]: t('nav.tv-desc', 'Portuguese content and shows'),
       [ROUTES.live]: t('nav.live-desc', 'Monetize your Portuguese content'),
-      [ROUTES.students]: t('nav.students-desc', 'Portuguese students in UK'),
+      [ROUTES.students]: t('nav.students-desc', 'Portuguese students in United Kingdom'),
       [ROUTES.pricing]: t('nav.pricing-desc', 'Membership plans')
     }
     return descriptions[path] || 'Explore this page'

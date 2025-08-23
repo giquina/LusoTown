@@ -74,56 +74,56 @@ const getEventsDropdownLinks = (t: any) => [
   { 
     name: t("nav.cultural-events", "Cultural Events"), 
     href: `${ROUTES.events}?category=Cultural`,
-    description: t("nav.cultural-events-desc", "Music nights in Camden, cultural celebrations in Stockwell, festivals for Portuguese speakers across London & UK"),
+    description: t("nav.cultural-events-desc", "Music nights in Camden, cultural celebrations in Stockwell, festivals for Portuguese speakers across London & United Kingdom"),
     icon: MusicalNoteIcon,
     iconColor: "text-purple-500"
   },
   { 
     name: t("nav.business-networking", "Business Networking"), 
     href: ROUTES.businessNetworking,
-    description: t("nav.business-networking-desc", "Professional meetups for Portuguese speakers in London, startup events, UK career workshops"),
+    description: t("nav.business-networking-desc", "Professional meetups for Portuguese speakers in London, startup events, United Kingdom career workshops"),
     icon: BriefcaseIcon,
     iconColor: "text-blue-500"
   },
   { 
     name: t("nav.social-meetups", "Social Meetups"), 
     href: `${ROUTES.events}?category=Social`,
-    description: t("nav.social-meetups-desc", "Portuguese-speaking community gatherings in London pubs, UK social events, weekend meetups"),
+    description: t("nav.social-meetups-desc", "Portuguese-speaking community gatherings in London pubs, United Kingdom social events, weekend meetups"),
     icon: UserGroupIcon,
     iconColor: "text-green-500"
   },
   { 
     name: t("nav.portuguese-language", "Portuguese Language"), 
     href: `${ROUTES.events}?category=Language`,
-    description: t("nav.portuguese-language-desc", "Portuguese conversation groups in London, language practice sessions across UK cities"),
+    description: t("nav.portuguese-language-desc", "Portuguese conversation groups in London, language practice sessions across United Kingdom cities"),
     icon: ChatBubbleLeftRightIcon,
     iconColor: "text-orange-500"
   },
   { 
     name: t("nav.food-dining", "Food & Dining"), 
     href: `${ROUTES.events}?category=Food`,
-    description: t("nav.food-dining-desc", "Cooking classes in London, wine tastings, dining experiences at UK restaurants"),
+    description: t("nav.food-dining-desc", "Cooking classes in London, wine tastings, dining experiences at United Kingdom restaurants"),
     icon: FireIcon,
     iconColor: "text-red-500"
   },
   { 
     name: t("nav.arts-entertainment", "Arts & Entertainment"), 
     href: `${ROUTES.events}?category=Arts`,
-    description: t("nav.arts-entertainment-desc", "Live music in London venues, cultural shows, art exhibitions across the UK"),
+    description: t("nav.arts-entertainment-desc", "Live music in London venues, cultural shows, art exhibitions across the United Kingdom"),
     icon: PaintBrushIcon,
     iconColor: "text-pink-500"
   },
   { 
     name: t("nav.sports-fitness", "Sports & Fitness"), 
     href: `${ROUTES.events}?category=Sports`,
-    description: t("nav.sports-fitness-desc", "Football viewing parties in London pubs, sports clubs, fitness groups across UK"),
+    description: t("nav.sports-fitness-desc", "Football viewing parties in London pubs, sports clubs, fitness groups across United Kingdom"),
     icon: TrophyIcon,
     iconColor: "text-yellow-500"
   },
   { 
     name: t("nav.all-events", "All Events"), 
     href: ROUTES.events,
-    description: t("nav.all-events-desc", "Complete calendar of events for Portuguese speakers happening across London & the UK"),
+    description: t("nav.all-events-desc", "Complete calendar of events for Portuguese speakers happening across London & the United Kingdom"),
     icon: CalendarDaysIcon,
     iconColor: "text-indigo-500"
   },
@@ -142,7 +142,7 @@ const getMoreDropdownLinks = (t: any) => ({
     { 
       name: "Live TV", 
       href: ROUTES.tv,
-      description: "Watch shows for Portuguese speakers, UK business workshops, and cultural content from London",
+      description: "Watch shows for Portuguese speakers, United Kingdom business workshops, and cultural content from London",
       icon: TvIcon,
       iconColor: "text-purple-500"
     },

@@ -165,7 +165,7 @@ export default function Footer() {
         <div className="container-width py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm break-words leading-relaxed">
-              © {new Date().getFullYear()} LusoTown UK. All rights reserved.{" "}
+              © {new Date().getFullYear()} LusoTown United Kingdom. All rights reserved.{" "}
               {t("footer.tagline")}
             </p>
 

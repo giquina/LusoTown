@@ -171,7 +171,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
           id: 'london',
           name: 'Camões Centre London',
           namePortuguese: 'Centro Camões Londres',
-          location: 'London, UK',
+          location: 'London, United Kingdom',
           address: 'King\'s College London, Strand, London WC2R 2LS',
           established: '2019',
           director: {
@@ -311,7 +311,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
           id: 'manchester',
           name: 'Camões Centre Manchester',
           namePortuguese: 'Centro Camões Manchester',
-          location: 'Manchester, UK',
+          location: 'Manchester, United Kingdom',
           address: 'University of Manchester, Oxford Rd, Manchester M13 9PL',
           established: '2021',
           director: {

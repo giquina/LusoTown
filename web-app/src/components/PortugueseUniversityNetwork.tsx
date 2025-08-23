@@ -229,7 +229,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
           ],
           partnerships: [
             'Harvard University (USA)',
-            'Oxford University (UK)',
+            'Oxford University (United Kingdom)',
             'Sorbonne University (France)',
             'MIT (USA)',
             'ETH Zurich (Switzerland)'
@@ -340,7 +340,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
           partnerships: [
             'Carnegie Mellon University (USA)',
             'Technical University of Munich (Germany)',
-            'King\'s College London (UK)',
+            'King\'s College London (United Kingdom)',
             'University of São Paulo (Brazil)',
             'McGill University (Canada)'
           ],
@@ -446,7 +446,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
             'Saúde Pública'
           ],
           partnerships: [
-            'London School of Economics (UK)',
+            'London School of Economics (United Kingdom)',
             'HEC Paris (France)',
             'Georgetown University (USA)',
             'IE Business School (Spain)',

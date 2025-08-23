@@ -191,7 +191,7 @@ const regionalSettings = {
     culturalEvents: ['independence_day', 'traditional_dance']
   },
   diaspora: {
-    timezone: 'Europe/London',  // UK-focused
+    timezone: 'Europe/London',  // United Kingdom-focused
     currency: 'GBP',
     language: 'pt-PT',  // Default to Portuguese Portuguese
     dialects: ['mixed', 'london_portuguese'],

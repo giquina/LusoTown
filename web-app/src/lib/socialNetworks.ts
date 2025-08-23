@@ -330,13 +330,13 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
     namePortuguese: 'Eventos Portugueses Londres',
     platform: 'telegram',
     type: 'cultural_events',
-    description: 'Telegram channel dedicated to Portuguese cultural events, festivals, and community gatherings in London and the UK.',
+    description: 'Telegram channel dedicated to Portuguese cultural events, festivals, and community gatherings in London and the United Kingdom.',
     descriptionPortuguese: 'Canal do Telegram dedicado a eventos culturais portugueses, festivais e encontros comunitários em Londres e no Reino Unido.',
     
     memberCount: 890,
     activeMembers: 420,
     primaryLanguage: 'bilingual',
-    location: 'London & UK',
+    location: 'London & United Kingdom',
     
     focus: ['cultural_events', 'festivals', 'music_concerts', 'food_events', 'art_exhibitions'],
     targetAudience: ['Cultural enthusiasts', 'Event organizers', 'Portuguese-speaking community'],
@@ -394,17 +394,17 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
   
   {
     id: 'network-linkedin-portuguese-professionals',
-    name: 'Portuguese Professionals UK',
+    name: 'Portuguese Professionals United Kingdom',
     namePortuguese: 'Profissionais Portugueses Reino Unido',
     platform: 'linkedin',
     type: 'business_networking',
-    description: 'LinkedIn group for Portuguese professionals working in the UK. Career development, job opportunities, and professional networking.',
+    description: 'LinkedIn group for Portuguese professionals working in the United Kingdom. Career development, job opportunities, and professional networking.',
     descriptionPortuguese: 'Grupo do LinkedIn para profissionais portugueses que trabalham no Reino Unido. Desenvolvimento de carreira, oportunidades de emprego e networking profissional.',
     
     memberCount: 2800,
     activeMembers: 850,
     primaryLanguage: 'bilingual',
-    location: 'UK-wide',
+    location: 'United Kingdom-wide',
     
     focus: ['career_development', 'job_opportunities', 'professional_networking', 'industry_insights'],
     targetAudience: ['Professionals', 'Job seekers', 'Career changers', 'Graduates'],

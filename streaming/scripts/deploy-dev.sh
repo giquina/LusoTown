@@ -1,5 +1,5 @@
 #!/bin/bash
-# LusoTown Portuguese-speaking Community Streaming - Development Deployment
+# LusoTown Portuguese-speaking community Streaming - Development Deployment
 # Quick setup for local development and testing
 
 set -e
@@ -7,7 +7,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 STREAMING_DIR="$(dirname "$SCRIPT_DIR")"
 
-echo "<�<� LusoTown Portuguese-speaking Community Streaming - Development Deployment"
+echo "<�<� LusoTown Portuguese-speaking community Streaming - Development Deployment"
 echo "=================================================================="
 
 # Check prerequisites
@@ -120,7 +120,7 @@ wait_for_services() {
 # Display service information
 show_service_info() {
     echo ""
-    echo "<� LusoTown Portuguese-speaking Community Streaming - Development Services"
+    echo "<� LusoTown Portuguese-speaking community Streaming - Development Services"
     echo "=============================================================="
     echo ""
     echo "<� RTMP Ingest (OBS/Streaming Software):"
@@ -163,7 +163,7 @@ main() {
     show_service_info
     
     echo ""
-    echo "<� LusoTown Portuguese-speaking Community Streaming development environment is ready!"
+    echo "<� LusoTown Portuguese-speaking community Streaming development environment is ready!"
     echo "   Perfect for testing Portuguese cultural streaming features"
 }
 

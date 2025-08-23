@@ -69,9 +69,9 @@ interface LearningPath {
 const courses: Course[] = [
   {
     id: 'portuguese-foundations',
-    title: 'Fundações do Português',
+    title: 'Fundaï¿½ï¿½es do Portuguï¿½s',
     titleEn: 'Portuguese Foundations',
-    description: 'Curso completo para iniciantes absolutos. Aprenda gramática, vocabulário essencial e pronúncia correta.',
+    description: 'Curso completo para iniciantes absolutos. Aprenda gramï¿½tica, vocabulï¿½rio essencial e pronï¿½ncia correta.',
     descriptionEn: 'Complete course for absolute beginners. Learn grammar, essential vocabulary, and correct pronunciation.',
     level: 'beginner',
     price: 149.99,
@@ -83,15 +83,15 @@ const courses: Course[] = [
     rating: 4.9,
     reviews: 334,
     instructor: 'Professora Maria Santos',
-    instructorBio: 'Mestre em Linguística pela Universidade de Lisboa, 15 anos de experiência no ensino',
+    instructorBio: 'Mestre em Linguï¿½stica pela Universidade de Lisboa, 15 anos de experiï¿½ncia no ensino',
     instructorBioEn: 'Master in Linguistics from University of Lisbon, 15 years teaching experience',
     features: [
-      'Vídeo-aulas interativas',
-      'Exercícios práticos diários',
-      'Conversação com nativos',
-      'Material didático incluído',
-      'Certificado de conclusão',
-      'Acesso vitalício'
+      'Vï¿½deo-aulas interativas',
+      'Exercï¿½cios prï¿½ticos diï¿½rios',
+      'Conversaï¿½ï¿½o com nativos',
+      'Material didï¿½tico incluï¿½do',
+      'Certificado de conclusï¿½o',
+      'Acesso vitalï¿½cio'
     ],
     featuresEn: [
       'Interactive video lessons',
@@ -108,9 +108,9 @@ const courses: Course[] = [
   },
   {
     id: 'business-portuguese',
-    title: 'Português Empresarial',
+    title: 'Portuguï¿½s Empresarial',
     titleEn: 'Business Portuguese',
-    description: 'Domine o português profissional. Ideal para negócios, apresentações e networking empresarial.',
+    description: 'Domine o portuguï¿½s profissional. Ideal para negï¿½cios, apresentaï¿½ï¿½es e networking empresarial.',
     descriptionEn: 'Master professional Portuguese. Ideal for business, presentations, and corporate networking.',
     level: 'intermediate',
     price: 299.99,
@@ -120,15 +120,15 @@ const courses: Course[] = [
     students: 1234,
     rating: 4.8,
     reviews: 187,
-    instructor: 'Dr. João Pereira',
-    instructorBio: 'PhD em Negócios Internacionais, consultor para empresas portuguesas no Reino Unido',
-    instructorBioEn: 'PhD in International Business, consultant for Portuguese companies in the UK',
+    instructor: 'Dr. Joï¿½o Pereira',
+    instructorBio: 'PhD em Negï¿½cios Internacionais, consultor para empresas portuguesas no Reino Unido',
+    instructorBioEn: 'PhD in International Business, consultant for Portuguese companies in the United Kingdom',
     features: [
-      'Vocabulário empresarial especializado',
-      'Simulações de reuniões',
-      'Apresentações profissionais',
-      'Networking em português',
-      'Certificação profissional',
+      'Vocabulï¿½rio empresarial especializado',
+      'Simulaï¿½ï¿½es de reuniï¿½es',
+      'Apresentaï¿½ï¿½es profissionais',
+      'Networking em portuguï¿½s',
+      'Certificaï¿½ï¿½o profissional',
       'Mentorias individuais'
     ],
     featuresEn: [
@@ -146,9 +146,9 @@ const courses: Course[] = [
   },
   {
     id: 'cultural-immersion',
-    title: 'Imersão Cultural Portuguesa',
+    title: 'Imersï¿½o Cultural Portuguesa',
     titleEn: 'Portuguese Cultural Immersion',
-    description: 'Aprenda português através da cultura. Explore tradições, história e costumes dos países lusófonos.',
+    description: 'Aprenda portuguï¿½s atravï¿½s da cultura. Explore tradiï¿½ï¿½es, histï¿½ria e costumes dos paï¿½ses lusï¿½fonos.',
     descriptionEn: 'Learn Portuguese through culture. Explore traditions, history, and customs of Portuguese-speaking countries.',
     level: 'intermediate',
     price: 199.99,
@@ -159,13 +159,13 @@ const courses: Course[] = [
     rating: 4.9,
     reviews: 156,
     instructor: 'Ana Rodrigues',
-    instructorBio: 'Especialista em Estudos Culturais Lusófonos, autora de 3 livros sobre cultura portuguesa',
+    instructorBio: 'Especialista em Estudos Culturais Lusï¿½fonos, autora de 3 livros sobre cultura portuguesa',
     instructorBioEn: 'Specialist in Lusophone Cultural Studies, author of 3 books on Portuguese culture',
     features: [
-      'Exploração de tradições culturais',
-      'História dos países lusófonos',
-      'Culinária tradicional portuguesa',
-      'Música e literatura',
+      'Exploraï¿½ï¿½o de tradiï¿½ï¿½es culturais',
+      'Histï¿½ria dos paï¿½ses lusï¿½fonos',
+      'Culinï¿½ria tradicional portuguesa',
+      'Mï¿½sica e literatura',
       'Eventos culturais virtuais',
       'Projeto cultural final'
     ],
@@ -187,28 +187,28 @@ const courses: Course[] = [
 const learningPaths: LearningPath[] = [
   {
     id: 'complete-fluency',
-    name: 'Fluência Completa',
+    name: 'Fluï¿½ncia Completa',
     nameEn: 'Complete Fluency',
-    description: 'Do zero à fluência completa. Percurso estruturado de 6 meses para dominar o português.',
+    description: 'Do zero ï¿½ fluï¿½ncia completa. Percurso estruturado de 6 meses para dominar o portuguï¿½s.',
     descriptionEn: 'From zero to complete fluency. Structured 6-month path to master Portuguese.',
     courses: ['portuguese-foundations', 'cultural-immersion', 'business-portuguese'],
     totalHours: 120,
     price: 499.99,
     discount: 25,
-    level: 'Iniciante a Avançado',
+    level: 'Iniciante a Avanï¿½ado',
     levelEn: 'Beginner to Advanced'
   },
   {
     id: 'professional-path',
     name: 'Percurso Profissional',
     nameEn: 'Professional Path',
-    description: 'Especialização em português empresarial. Perfeito para profissionais e empresários.',
+    description: 'Especializaï¿½ï¿½o em portuguï¿½s empresarial. Perfeito para profissionais e empresï¿½rios.',
     descriptionEn: 'Specialization in business Portuguese. Perfect for professionals and entrepreneurs.',
     courses: ['portuguese-foundations', 'business-portuguese'],
     totalHours: 80,
     price: 349.99,
     discount: 20,
-    level: 'Iniciante a Intermédio',
+    level: 'Iniciante a Intermï¿½dio',
     levelEn: 'Beginner to Intermediate'
   }
 ];
@@ -239,26 +239,26 @@ export default function PortugueseLanguageLearning() {
           >
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium mb-8">
               <AcademicCapIcon className="w-5 h-5 mr-2" />
-              {isPortuguese ? 'Academia de Português LusoTown' : 'LusoTown Portuguese Academy'}
+              {isPortuguese ? 'Academia de Portuguï¿½s LusoTown' : 'LusoTown Portuguese Academy'}
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               {isPortuguese 
-                ? 'Aprenda Português com Especialistas Nativos'
+                ? 'Aprenda Portuguï¿½s com Especialistas Nativos'
                 : 'Learn Portuguese with Native Experts'
               }
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               {isPortuguese
-                ? 'A plataforma mais completa de ensino de português. Cursos estruturados, professores certificados e imersão cultural autêntica.'
+                ? 'A plataforma mais completa de ensino de portuguï¿½s. Cursos estruturados, professores certificados e imersï¿½o cultural autï¿½ntica.'
                 : 'The most complete Portuguese learning platform. Structured courses, certified teachers, and authentic cultural immersion.'
               }
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-accent-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/95 transition-all">
-                {isPortuguese ? 'Começar Gratuitamente' : 'Start Free Trial'}
+                {isPortuguese ? 'Comeï¿½ar Gratuitamente' : 'Start Free Trial'}
               </button>
               
               <button 
@@ -282,7 +282,7 @@ export default function PortugueseLanguageLearning() {
         >
           <div className="container-width">
             <h2 className="text-3xl font-bold text-center mb-12">
-              {isPortuguese ? 'Dashboard Educacional - Monetização' : 'Educational Dashboard - Monetization'}
+              {isPortuguese ? 'Dashboard Educacional - Monetizaï¿½ï¿½o' : 'Educational Dashboard - Monetization'}
             </h2>
             
             <div className="grid md:grid-cols-4 gap-6 mb-12">
@@ -293,7 +293,7 @@ export default function PortugueseLanguageLearning() {
                     {isPortuguese ? 'Receita Mensal' : 'Monthly Revenue'}
                   </h3>
                 </div>
-                <p className="text-3xl font-bold">£{monthlyRevenue.toLocaleString()}</p>
+                <p className="text-3xl font-bold">ï¿½{monthlyRevenue.toLocaleString()}</p>
                 <p className="text-green-100 text-sm">
                   {isPortuguese ? '+35% crescimento' : '+35% growth'}
                 </p>
@@ -307,18 +307,18 @@ export default function PortugueseLanguageLearning() {
                   </h3>
                 </div>
                 <p className="text-3xl font-bold">{totalStudents.toLocaleString()}</p>
-                <p className="text-blue-100 text-sm">{isPortuguese ? '+250 este mês' : '+250 this month'}</p>
+                <p className="text-blue-100 text-sm">{isPortuguese ? '+250 este mï¿½s' : '+250 this month'}</p>
               </div>
 
               <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <TrophyIcon className="w-8 h-8" />
                   <h3 className="text-lg font-semibold">
-                    {isPortuguese ? 'Taxa Conclusão' : 'Completion Rate'}
+                    {isPortuguese ? 'Taxa Conclusï¿½o' : 'Completion Rate'}
                   </h3>
                 </div>
                 <p className="text-3xl font-bold">89%</p>
-                <p className="text-purple-100 text-sm">{isPortuguese ? 'Acima da média' : 'Above average'}</p>
+                <p className="text-purple-100 text-sm">{isPortuguese ? 'Acima da mï¿½dia' : 'Above average'}</p>
               </div>
 
               <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-6">
@@ -329,20 +329,20 @@ export default function PortugueseLanguageLearning() {
                   </h3>
                 </div>
                 <p className="text-3xl font-bold">1,847</p>
-                <p className="text-orange-100 text-sm">{isPortuguese ? '+125 este mês' : '+125 this month'}</p>
+                <p className="text-orange-100 text-sm">{isPortuguese ? '+125 este mï¿½s' : '+125 this month'}</p>
               </div>
             </div>
 
             <div className="bg-gradient-to-r from-accent-600 to-primary-600 rounded-2xl p-8 text-center">
               <h3 className="text-2xl font-bold mb-4">
-                {isPortuguese ? 'Projeção Anual (2025)' : 'Annual Projection (2025)'}
+                {isPortuguese ? 'Projeï¿½ï¿½o Anual (2025)' : 'Annual Projection (2025)'}
               </h3>
               <p className="text-4xl font-bold mb-2">
-                £{annualProjection.toLocaleString()}
+                ï¿½{annualProjection.toLocaleString()}
               </p>
               <p className="text-white/80">
                 {isPortuguese 
-                  ? 'Baseado em 30% de crescimento na demanda por ensino de português'
+                  ? 'Baseado em 30% de crescimento na demanda por ensino de portuguï¿½s'
                   : 'Based on 30% growth in Portuguese language learning demand'
                 }
               </p>
@@ -387,11 +387,11 @@ export default function PortugueseLanguageLearning() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                {isPortuguese ? 'Cursos de Português' : 'Portuguese Courses'}
+                {isPortuguese ? 'Cursos de Portuguï¿½s' : 'Portuguese Courses'}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese
-                  ? 'Cursos estruturados por níveis, com certificação internacional e professores nativos qualificados'
+                  ? 'Cursos estruturados por nï¿½veis, com certificaï¿½ï¿½o internacional e professores nativos qualificados'
                   : 'Structured courses by levels, with international certification and qualified native teachers'
                 }
               </p>
@@ -431,8 +431,8 @@ export default function PortugueseLanguageLearning() {
                             'bg-purple-100 text-purple-800'
                           }`}>
                             {course.level === 'beginner' ? (isPortuguese ? 'Iniciante' : 'Beginner') :
-                             course.level === 'intermediate' ? (isPortuguese ? 'Intermédio' : 'Intermediate') :
-                             course.level === 'advanced' ? (isPortuguese ? 'Avançado' : 'Advanced') :
+                             course.level === 'intermediate' ? (isPortuguese ? 'Intermï¿½dio' : 'Intermediate') :
+                             course.level === 'advanced' ? (isPortuguese ? 'Avanï¿½ado' : 'Advanced') :
                              (isPortuguese ? 'Nativo' : 'Native')}
                           </span>
                           
@@ -507,11 +507,11 @@ export default function PortugueseLanguageLearning() {
                           <div>
                             <div className="flex items-center gap-2">
                               <span className="text-3xl font-bold text-gray-900">
-                                £{course.price}
+                                ï¿½{course.price}
                               </span>
                               {course.originalPrice && (
                                 <span className="text-xl text-gray-500 line-through">
-                                  £{course.originalPrice}
+                                  ï¿½{course.originalPrice}
                                 </span>
                               )}
                             </div>
@@ -524,7 +524,7 @@ export default function PortugueseLanguageLearning() {
 
                           <div className="text-right">
                             <div className="text-sm text-gray-600">
-                              {isPortuguese ? 'Taxa de conclusão:' : 'Completion rate:'}
+                              {isPortuguese ? 'Taxa de conclusï¿½o:' : 'Completion rate:'}
                             </div>
                             <div className="text-2xl font-bold text-accent-600">
                               {course.completionRate}%
@@ -568,7 +568,7 @@ export default function PortugueseLanguageLearning() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese
-                  ? 'Programas estruturados que combinam múltiplos cursos para objetivos específicos de aprendizagem'
+                  ? 'Programas estruturados que combinam mï¿½ltiplos cursos para objetivos especï¿½ficos de aprendizagem'
                   : 'Structured programs that combine multiple courses for specific learning objectives'
                 }
               </p>
@@ -606,7 +606,7 @@ export default function PortugueseLanguageLearning() {
 
                   <div className="mb-6">
                     <h4 className="font-semibold text-gray-900 mb-3">
-                      {isPortuguese ? 'Cursos incluídos:' : 'Courses included:'}
+                      {isPortuguese ? 'Cursos incluï¿½dos:' : 'Courses included:'}
                     </h4>
                     <div className="space-y-2">
                       {path.courses.map((courseId) => {
@@ -632,7 +632,7 @@ export default function PortugueseLanguageLearning() {
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="text-3xl font-bold text-gray-900">
-                          £{path.price}
+                          ï¿½{path.price}
                         </span>
                         <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full font-bold">
                           {path.discount}% {isPortuguese ? 'desconto' : 'off'}
@@ -640,11 +640,11 @@ export default function PortugueseLanguageLearning() {
                       </div>
                       <div className="text-sm text-gray-600">
                         {isPortuguese 
-                          ? `Em vez de £${path.courses.reduce((sum, courseId) => {
+                          ? `Em vez de ï¿½${path.courses.reduce((sum, courseId) => {
                               const course = courses.find(c => c.id === courseId);
                               return sum + (course?.price || 0);
                             }, 0)}`
-                          : `Instead of £${path.courses.reduce((sum, courseId) => {
+                          : `Instead of ï¿½${path.courses.reduce((sum, courseId) => {
                               const course = courses.find(c => c.id === courseId);
                               return sum + (course?.price || 0);
                             }, 0)}`
@@ -655,7 +655,7 @@ export default function PortugueseLanguageLearning() {
 
                   <div className="space-y-3">
                     <button className="w-full bg-accent-500 text-white py-4 rounded-xl font-semibold hover:bg-accent-600 transition-colors">
-                      {isPortuguese ? 'Começar Percurso' : 'Start Path'}
+                      {isPortuguese ? 'Comeï¿½ar Percurso' : 'Start Path'}
                     </button>
                     
                     <button className="w-full border border-accent-200 text-accent-600 py-3 rounded-xl font-semibold hover:bg-accent-50 transition-colors">
@@ -698,7 +698,7 @@ export default function PortugueseLanguageLearning() {
               
               <p className="text-gray-600 mb-8">
                 {isPortuguese
-                  ? 'Estamos a desenvolver uma experiência única de aulas ao vivo com professores nativos. Registe o seu interesse para ser notificado quando lançarmos.'
+                  ? 'Estamos a desenvolver uma experiï¿½ncia ï¿½nica de aulas ao vivo com professores nativos. Registe o seu interesse para ser notificado quando lanï¿½armos.'
                   : "We're developing a unique live class experience with native teachers. Register your interest to be notified when we launch."
                 }
               </p>
@@ -707,11 +707,11 @@ export default function PortugueseLanguageLearning() {
                 <div className="text-center">
                   <ChatBubbleLeftRightIcon className="w-12 h-12 mx-auto mb-3 text-accent-500" />
                   <h4 className="font-semibold mb-2">
-                    {isPortuguese ? 'Interação em Tempo Real' : 'Real-time Interaction'}
+                    {isPortuguese ? 'Interaï¿½ï¿½o em Tempo Real' : 'Real-time Interaction'}
                   </h4>
                   <p className="text-sm text-gray-600">
                     {isPortuguese
-                      ? 'Conversação direta com professores e colegas'
+                      ? 'Conversaï¿½ï¿½o direta com professores e colegas'
                       : 'Direct conversation with teachers and peers'
                     }
                   </p>
@@ -733,11 +733,11 @@ export default function PortugueseLanguageLearning() {
                 <div className="text-center">
                   <MicrophoneIcon className="w-12 h-12 mx-auto mb-3 text-accent-500" />
                   <h4 className="font-semibold mb-2">
-                    {isPortuguese ? 'Prática de Pronúncia' : 'Pronunciation Practice'}
+                    {isPortuguese ? 'Prï¿½tica de Pronï¿½ncia' : 'Pronunciation Practice'}
                   </h4>
                   <p className="text-sm text-gray-600">
                     {isPortuguese
-                      ? 'Correção instantânea da pronúncia'
+                      ? 'Correï¿½ï¿½o instantï¿½nea da pronï¿½ncia'
                       : 'Instant pronunciation correction'
                     }
                   </p>
@@ -761,21 +761,21 @@ export default function PortugueseLanguageLearning() {
           >
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               {isPortuguese 
-                ? 'Comece a Sua Jornada no Português Hoje'
+                ? 'Comece a Sua Jornada no Portuguï¿½s Hoje'
                 : 'Start Your Portuguese Journey Today'
               }
             </h2>
             
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               {isPortuguese
-                ? 'Junte-se a milhares de estudantes que já dominam o português com os nossos cursos especializados.'
+                ? 'Junte-se a milhares de estudantes que jï¿½ dominam o portuguï¿½s com os nossos cursos especializados.'
                 : 'Join thousands of students who already master Portuguese with our specialized courses.'
               }
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-accent-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/95 transition-all">
-                {isPortuguese ? 'Começar Gratuitamente' : 'Start Free Trial'}
+                {isPortuguese ? 'Comeï¿½ar Gratuitamente' : 'Start Free Trial'}
               </button>
               <button className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all">
                 {isPortuguese ? 'Falar com Conselheiro' : 'Speak to Advisor'}

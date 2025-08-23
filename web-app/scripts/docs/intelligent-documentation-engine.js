@@ -569,7 +569,7 @@ Ensure provider is wrapped in app/layout.tsx for global access.
       ],
       qualityIndicators: [
         'Portuguese-speaking community context',
-        'London & UK specific features',
+        'London & United Kingdom specific features',
         'Cultural comfort elements',
         'Portuguese-speaking focus'
       ]

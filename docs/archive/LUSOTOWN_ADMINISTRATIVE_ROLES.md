@@ -12,7 +12,7 @@ This document outlines 10 key administrative and management positions needed for
 **Employment Type:** Full-time  
 **Location:** London (Hybrid)  
 
-### UK Salary Research (2025)
+### United Kingdom Salary Research (2025)
 - **Base Salary Range:** �42,000 - �65,000
 - **Market Average:** �48,500
 - **Language Premium:** +�5,000-�8,000 for Portuguese fluency
@@ -52,7 +52,7 @@ This document outlines 10 key administrative and management positions needed for
 **Employment Type:** Full-time  
 **Location:** London (Hybrid)  
 
-### UK Salary Research (2025)
+### United Kingdom Salary Research (2025)
 - **Base Salary Range:** �55,000 - �85,000
 - **Market Average:** �68,000
 - **Senior Level:** �75,000 - �95,000
@@ -92,7 +92,7 @@ This document outlines 10 key administrative and management positions needed for
 **Employment Type:** Full-time  
 **Location:** London (Field-based with office time)  
 
-### UK Salary Research (2025)
+### United Kingdom Salary Research (2025)
 - **Base Salary Range:** �50,000 - �75,000
 - **Commission/Bonus:** �10,000 - �25,000
 - **Market Average:** �65,000 total compensation
@@ -134,7 +134,7 @@ This document outlines 10 key administrative and management positions needed for
 **Employment Type:** Full-time  
 **Location:** London (Hybrid)  
 
-### UK Salary Research (2025)
+### United Kingdom Salary Research (2025)
 - **Base Salary Range:** �38,000 - �55,000
 - **Market Average:** �45,000
 - **Community Platform Specialization:** +�3,000-�5,000
@@ -175,7 +175,7 @@ This document outlines 10 key administrative and management positions needed for
 **Employment Type:** Full-time  
 **Location:** London (Hybrid)  
 
-### UK Salary Research (2025)
+### United Kingdom Salary Research (2025)
 - **Base Salary Range:** �45,000 - �70,000
 - **Market Average:** �55,000
 - **Marketing Analytics Focus:** �48,000 - �75,000
@@ -216,7 +216,7 @@ This document outlines 10 key administrative and management positions needed for
 **Employment Type:** Full-time  
 **Location:** London (Hybrid)  
 
-### UK Salary Research (2025)
+### United Kingdom Salary Research (2025)
 - **Base Salary Range:** �40,000 - �55,000
 - **Multilingual Premium:** +�3,000-�6,000
 - **Market Average:** �47,000
@@ -257,7 +257,7 @@ This document outlines 10 key administrative and management positions needed for
 **Employment Type:** Full-time  
 **Location:** London (Hybrid)  
 
-### UK Salary Research (2025)
+### United Kingdom Salary Research (2025)
 - **Base Salary Range:** �50,000 - �75,000
 - **Growth Marketing Premium:** �55,000 - �82,000
 - **Market Average:** �65,000
@@ -298,7 +298,7 @@ This document outlines 10 key administrative and management positions needed for
 **Employment Type:** Full-time  
 **Location:** London (Field-based with office time)  
 
-### UK Salary Research (2025)
+### United Kingdom Salary Research (2025)
 - **Base Salary Range:** �42,000 - �60,000
 - **Event Management Specialization:** �45,000 - �65,000
 - **Cultural Programming Premium:** +�2,000-�4,000
@@ -339,7 +339,7 @@ This document outlines 10 key administrative and management positions needed for
 **Employment Type:** Full-time  
 **Location:** London (Hybrid)  
 
-### UK Salary Research (2025)
+### United Kingdom Salary Research (2025)
 - **Base Salary Range:** �40,000 - �58,000
 - **Content Strategy Specialization:** �45,000 - �63,000
 - **Cultural Expertise Premium:** +�3,000-�5,000
@@ -380,7 +380,7 @@ This document outlines 10 key administrative and management positions needed for
 **Employment Type:** Full-time  
 **Location:** London (Hybrid)  
 
-### UK Salary Research (2025)
+### United Kingdom Salary Research (2025)
 - **Base Salary Range:** �48,000 - �72,000
 - **Business Intelligence Focus:** �52,000 - �78,000
 - **Market Research Specialization:** �50,000 - �75,000
@@ -431,8 +431,8 @@ This document outlines 10 key administrative and management positions needed for
 
 ## Additional Benefits Package Considerations
 
-### Standard UK Benefits (All Roles)
-- 25-28 days annual leave plus UK bank holidays
+### Standard United Kingdom Benefits (All Roles)
+- 25-28 days annual leave plus United Kingdom bank holidays
 - Pension contribution (3-5% employer contribution)
 - Health insurance or health cash plan
 - Professional development budget (�1,000-�2,500 annually)

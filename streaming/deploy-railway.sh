@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# LusoTown Portuguese-speaking Community Streaming - Railway Deployment
+# LusoTown Portuguese-speaking community Streaming - Railway Deployment
 echo "<�<� Deploying LusoTown Portuguese Streaming Infrastructure to Railway..."
 
 # Check if Railway CLI is installed

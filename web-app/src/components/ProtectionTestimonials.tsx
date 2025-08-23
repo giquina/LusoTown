@@ -71,7 +71,7 @@ export default function ProtectionTestimonials() {
         pt: "Família Empresarial Portuguesa",
       },
       company: "Fernandes Holdings",
-      location: "UK Cultural Tour",
+      location: "United Kingdom Cultural Tour",
       service: {
         en: "Family Protection",
         pt: "Proteção Familiar",
@@ -81,7 +81,7 @@ export default function ProtectionTestimonials() {
       image:
         IMAGES.testimonials.family,
       testimonial: {
-        en: "Traveling with our children across the UK required a unique approach to security. The team's preparation was meticulous - they understood our family dynamics and created a protection plan that felt natural, not intrusive. Our children felt safe and comfortable throughout the entire journey. The Portuguese cultural guidance made our experience even more enriching.",
+        en: "Traveling with our children across the United Kingdom required a unique approach to security. The team's preparation was meticulous - they understood our family dynamics and created a protection plan that felt natural, not intrusive. Our children felt safe and comfortable throughout the entire journey. The Portuguese cultural guidance made our experience even more enriching.",
         pt: "Viajar com nossos filhos pelo Reino Unido exigiu uma abordagem única à segurança. A preparação da equipe foi meticulosa - eles entenderam nossa dinâmica familiar e criaram um plano de proteção que pareceu natural, não intrusivo. Nossos filhos se sentiram seguros e confortáveis durante toda a jornada. A orientação cultural portuguesa tornou nossa experiência ainda mais enriquecedora.",
       },
       highlight: {

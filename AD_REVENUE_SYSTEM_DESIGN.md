@@ -628,15 +628,15 @@ curl -H "Authorization: Bearer your_token" \
 
 ### **Revenue Projections**
 - **Daily Impressions**: 10,000-50,000 (based on stream viewers)
-- **Average CPM**: £2-5 (UK market, Portuguese content)
+- **Average CPM**: £2-5 (United Kingdom market, Portuguese content)
 - **Daily Revenue**: £20-250
 - **Monthly Revenue**: £600-7,500
 - **Annual Revenue**: £7,200-90,000
 
 ### **Optimization Strategies**
-1. **High-Value Keywords**: Target "Portuguese business London", "Portuguese events UK"
+1. **High-Value Keywords**: Target "Portuguese business London", "Portuguese events United Kingdom"
 2. **Premium Placements**: Mid-roll ads during business workshops
-3. **Geographic Focus**: Higher CPM for UK/Ireland visitors
+3. **Geographic Focus**: Higher CPM for United Kingdom/Ireland visitors
 4. **Cultural Targeting**: Portuguese festival seasons, cultural events
 5. **Direct Sponsors**: Local Portuguese businesses and services
 

@@ -59,7 +59,7 @@ interface CompatibilityScore {
   overall: number // 75-95%
   cultural: number // 80-95% (Portuguese heritage, language, interests)
   professional: number // 70-95% (career background, networking goals)
-  location: number // 60-90% (London boroughs, UK cities)
+  location: number // 60-90% (London boroughs, United Kingdom cities)
 }
 ```
 
@@ -599,4 +599,4 @@ interface RateLimit {
 5. **Respect daily usage limits** for free tier users
 6. **Maintain bilingual support** (English/Portuguese) for all user-facing content
 7. **Follow Portuguese cultural context** in all community features
-8. **Ensure London & UK geographic focus** in location-based features
+8. **Ensure London & United Kingdom geographic focus** in location-based features

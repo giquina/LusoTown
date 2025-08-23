@@ -70,11 +70,11 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
     beneficiaries: 'Portuguese-speaking entrepreneurs, employees, and London\'s broader business ecosystem',
     beneficiariesPortuguese: 'Empreendedores lusófonos, funcionários e o ecossistema empresarial mais amplo de Londres',
     timeframe: '2022-2024',
-    location: 'Greater London & UK',
+    location: 'Greater London & United Kingdom',
     keyAchievements: [
       'Facilitated £800,000 in Portuguese business investment into London market',
-      'Connected 50+ Portuguese startups with UK accelerators and funding',
-      'Established Portuguese-UK trade relationships worth £1.2M annually',
+      'Connected 50+ Portuguese startups with United Kingdom accelerators and funding',
+      'Established Portuguese-United Kingdom trade relationships worth £1.2M annually',
       'Created Portuguese Business Mentorship Program serving 75+ entrepreneurs',
       'Launched "Empreendedores Portugueses" quarterly networking events (300+ attendees)',
       'Supported 12 Portuguese businesses in securing government grants totaling £150,000'
@@ -94,8 +94,8 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       role: 'Founder, Verde Digital Consultancy',
       rolePortuguese: 'Fundador, Consultoria Verde Digital'
     },
-    partnerships: ['Portuguese Chamber of Commerce', 'UK Trade & Investment', 'London Business Hub', 'Enterprise Europe Network'],
-    futureGoals: 'Expand to support 500+ Portuguese businesses by 2025, establish Portugal-UK trade office, and create £5M Portuguese investment fund.',
+    partnerships: ['Portuguese Chamber of Commerce', 'United Kingdom Trade & Investment', 'London Business Hub', 'Enterprise Europe Network'],
+    futureGoals: 'Expand to support 500+ Portuguese businesses by 2025, establish Portugal-United Kingdom trade office, and create £5M Portuguese investment fund.',
     futureGoalsPortuguese: 'Expandir para apoiar 500+ negócios portugueses até 2025, estabelecer escritório comercial Portugal-Reino Unido e criar fundo de investimento português de £5M.',
     mediaRecognition: ['BBC London Portuguese Business Feature', 'Portuguese Embassy Newsletter', 'London Chamber of Commerce Spotlight'],
     icon: BuildingOffice2Icon,
@@ -121,7 +121,7 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       'Established Portuguese weekend schools in 8 London boroughs',
       'Trained 45 community members as certified Portuguese language instructors',
       'Created digital Portuguese learning resources used by 2,000+ families',
-      'Partnered with 12 UK primary schools to introduce Portuguese language programs',
+      'Partnered with 12 United Kingdom primary schools to introduce Portuguese language programs',
       'Developed cultural education curriculum covering Portuguese history, music, and traditions',
       'Organized annual "Portuguese Language & Culture Week" in 25 London schools'
     ],
@@ -141,7 +141,7 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       rolePortuguese: 'Mãe Portuguesa de Dois Filhos, Professora'
     },
     partnerships: ['Instituto Camões', 'Portuguese Embassy Education Dept', 'British Council', 'Local Education Authorities'],
-    futureGoals: 'Launch Portuguese studies program in 5 UK universities, establish Portuguese cultural curriculum in 100+ schools, train 100+ new instructors.',
+    futureGoals: 'Launch Portuguese studies program in 5 United Kingdom universities, establish Portuguese cultural curriculum in 100+ schools, train 100+ new instructors.',
     futureGoalsPortuguese: 'Lançar programa de estudos portugueses em 5 universidades do Reino Unido, estabelecer currículo cultural português em 100+ escolas, treinar 100+ novos instrutores.',
     mediaRecognition: ['Times Educational Supplement', 'Portuguese National Television', 'BBC Education Features'],
     icon: AcademicCapIcon,
@@ -187,7 +187,7 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       rolePortuguese: 'Coordenadora de Eventos Culturais'
     },
     partnerships: ['Portuguese Cultural Centre', 'Southbank Centre', 'Museum of London', 'Greater London Authority'],
-    futureGoals: 'Establish permanent Portuguese cultural center in London, expand festivals to 10 UK cities, create Portuguese heritage trail across London.',
+    futureGoals: 'Establish permanent Portuguese cultural center in London, expand festivals to 10 United Kingdom cities, create Portuguese heritage trail across London.',
     futureGoalsPortuguese: 'Estabelecer centro cultural português permanente em Londres, expandir festivais para 10 cidades do Reino Unido, criar trilha patrimonial portuguesa através de Londres.',
     mediaRecognition: ['Time Out London', 'Evening Standard Culture', 'Portuguese National Media', 'BBC Arts & Culture'],
     icon: SparklesIcon,
@@ -208,7 +208,7 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
     beneficiaries: 'New Portuguese immigrants, families in need, elderly community members, and vulnerable individuals',
     beneficiariesPortuguese: 'Novos imigrantes portugueses, famílias necessitadas, membros idosos da comunidade e indivíduos vulneráveis',
     timeframe: '2020-2024',
-    location: 'London & Greater UK',
+    location: 'London & Greater United Kingdom',
     keyAchievements: [
       'Assisted 450+ families with housing searches and accommodation issues',
       `Provided translation services for ${communityStats.streamingHours} NHS and government appointments`,
@@ -244,19 +244,19 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
     title: 'Portuguese Civic Engagement & Political Participation',
     titlePortuguese: 'Envolvimento Cívico e Participação Política Portuguesa',
     category: 'civic',
-    description: 'Increasing Portuguese-speaking community political participation, civic engagement, and representation in UK democratic processes and community leadership.',
+    description: 'Increasing Portuguese-speaking community political participation, civic engagement, and representation in United Kingdom democratic processes and community leadership.',
     descriptionPortuguese: 'Aumentar a participação política da comunidade de falantes de português, envolvimento cívico e representação nos processos democráticos do Reino Unido e liderança comunitária.',
     metrics: {
       primary: { value: '75%', label: 'Voter Registration Rate', labelPortuguese: 'Taxa de Registo Eleitoral' },
       secondary: { value: '12', label: 'Portuguese Elected Officials', labelPortuguese: 'Funcionários Eleitos Portugueses' },
       tertiary: { value: '350', label: 'Civic Volunteers', labelPortuguese: 'Voluntários Cívicos' }
     },
-    beneficiaries: 'Portuguese voters, community leaders, and UK democratic institutions',
+    beneficiaries: 'Portuguese voters, community leaders, and United Kingdom democratic institutions',
     beneficiariesPortuguese: 'Eleitores portugueses, líderes comunitários e instituições democráticas do Reino Unido',
     timeframe: '2019-2024',
-    location: 'UK Electoral Districts with Portuguese Communities',
+    location: 'United Kingdom Electoral Districts with Portuguese Communities',
     keyAchievements: [
-      'Registered 2,500+ eligible Portuguese citizens to vote in UK elections',
+      'Registered 2,500+ eligible Portuguese citizens to vote in United Kingdom elections',
       'Elected 3 Portuguese councillors in London borough elections',
       'Established Portuguese Civic Engagement Forum with 200+ active members',
       'Organized candidate meet-and-greet events in Portuguese for 500+ voters',
@@ -272,7 +272,7 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       'Defendidos serviços em língua portuguesa em 8 escritórios de conselhos de Londres'
     ],
     testimonial: {
-      quote: 'For years, I felt disconnected from UK politics because I didn\'t understand the system. The civic engagement program taught me how my vote matters and how to make my voice heard. Now I\'m a local councillor representing Portuguese-speaking community interests.',
+      quote: 'For years, I felt disconnected from United Kingdom politics because I didn\'t understand the system. The civic engagement program taught me how my vote matters and how to make my voice heard. Now I\'m a local councillor representing Portuguese-speaking community interests.',
       quotePortuguese: 'Durante anos, senti-me desconectado da política do Reino Unido porque não entendia o sistema. O programa de envolvimento cívico ensinou-me como meu voto importa e como fazer minha voz ser ouvida. Agora sou vereador local representando os interesses da comunidade de falantes de português.',
       author: 'António Pereira',
       role: 'Local Councillor, Camden Borough',
@@ -297,15 +297,15 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       secondary: { value: '£1.8M', label: 'Investment Raised', labelPortuguese: 'Investimento Captado' },
       tertiary: { value: '40', label: 'Patents Filed', labelPortuguese: 'Patentes Registadas' }
     },
-    beneficiaries: 'Portuguese entrepreneurs, tech innovators, investors, and UK innovation economy',
+    beneficiaries: 'Portuguese entrepreneurs, tech innovators, investors, and United Kingdom innovation economy',
     beneficiariesPortuguese: 'Empreendedores portugueses, inovadores tech, investidores e economia de inovação do Reino Unido',
     timeframe: '2021-2024',
     location: 'London Tech Hubs & Innovation Centers',
     keyAchievements: [
       'Launched Portuguese Innovation Lab in partnership with Imperial College London',
-      'Facilitated technology transfer partnerships between UK and Portuguese universities',
+      'Facilitated technology transfer partnerships between United Kingdom and Portuguese universities',
       'Created angel investor network of 25+ Portuguese business leaders',
-      'Established "Portugal-UK Tech Bridge" connecting ecosystems',
+      'Established "Portugal-United Kingdom Tech Bridge" connecting ecosystems',
       'Supported 15+ Portuguese startups in raising Series A funding',
       'Organized quarterly "Portuguese Innovation Showcase" events (200+ attendees)'
     ],
@@ -324,7 +324,7 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       role: 'CEO, AI Solutions Startup',
       rolePortuguese: 'CEO, Startup de Soluções de IA'
     },
-    partnerships: ['Imperial College Innovation Hub', 'Lisbon Tech Hub', 'Portuguese Investment Bank', 'UK Innovation Agency'],
+    partnerships: ['Imperial College Innovation Hub', 'Lisbon Tech Hub', 'Portuguese Investment Bank', 'United Kingdom Innovation Agency'],
     futureGoals: 'Launch Portuguese-focused accelerator program, establish £5M venture fund, create innovation exchanges with 5 Portuguese cities.',
     futureGoalsPortuguese: 'Lançar programa acelerador focado em portugueses, estabelecer fundo de venture de £5M, criar intercâmbios de inovação com 5 cidades portuguesas.',
     mediaRecognition: ['TechCrunch London', 'Portuguese Tech Media', 'Innovation Week Features'],

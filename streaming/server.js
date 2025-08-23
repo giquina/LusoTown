@@ -2,7 +2,7 @@
 /**
  * LusoTown Portuguese-speaking community Streaming Server
  * Simple Relay Server (SRS) implementation using Node.js
- * Optimized for Portuguese speakers in London & UK
+ * Optimized for Portuguese speakers in London & United Kingdom
  */
 
 const express = require('express');

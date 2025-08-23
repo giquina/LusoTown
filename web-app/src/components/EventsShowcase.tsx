@@ -139,7 +139,7 @@ const eventStats = [
   },
   {
     number: "25+",
-    label: "Cidades Reino Unido | UK Cities",
+    label: "Cidades Reino Unido | United Kingdom Cities",
     icon: <MapPinIcon className="w-5 h-5" />,
     flag: "🇬🇧"
   },
@@ -292,7 +292,7 @@ const EventsShowcase = memo(() => {
           >
             {language === "pt"
               ? "Descubra eventos culturais autênticos lusófonos pelo Reino Unido. De festivais gastronómicos tradicionais a networking profissional, conecte-se com a sua herança e construa amizades duradouras."
-              : "Discover authentic Portuguese-speaking cultural events across the UK. From traditional food festivals to professional networking, connect with your heritage and build lasting friendships."
+              : "Discover authentic Portuguese-speaking cultural events across the United Kingdom. From traditional food festivals to professional networking, connect with your heritage and build lasting friendships."
             }
           </motion.p>
           
@@ -742,7 +742,7 @@ const EventsShowcase = memo(() => {
               <h3 className="text-3xl font-bold mb-6">
                 {language === "pt" 
                   ? "Junte-se à Comunidade de Falantes de Português em Londres & Reino Unido"
-                  : "Join the Portuguese-speaking community in London & UK"}
+                  : "Join the Portuguese-speaking community in London & United Kingdom"}
               </h3>
               <p className="text-xl opacity-95 mb-8 max-w-3xl mx-auto leading-relaxed">
                 {language === "pt"

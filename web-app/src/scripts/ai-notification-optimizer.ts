@@ -521,7 +521,7 @@ class AINotificationOptimizer {
         total_active_users: profiles?.length || 0,
         cultural_centers_available: CULTURAL_CENTERS.length,
         university_partnerships: UNIVERSITY_PARTNERSHIPS.length,
-        platform_focus: 'Portuguese-speaking community in London & UK',
+        platform_focus: 'Portuguese-speaking community in London & United Kingdom',
         luxury_positioning: true
       }
     } catch (error) {

@@ -15,7 +15,7 @@ This file serves as the **primary source of truth** for AI agents working on the
 
 ## 🌍 Project Overview
 
-**LusoTown**: Production-ready bilingual Portuguese-speaking community platform serving London & UK Portuguese speakers with event discovery, group activities, premium matching, transport services, streaming platform, business directory, and university partnerships.
+**LusoTown**: Production-ready bilingual Portuguese-speaking community platform serving London & United Kingdom Portuguese speakers with event discovery, group activities, premium matching, transport services, streaming platform, business directory, and university partnerships.
 
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL, Simple Relay Server (SRS), OpenStreetMap/Leaflet, PostGIS, Twitter API, Stripe, React Context state management
 
@@ -215,7 +215,7 @@ className="bg-gray-500"    // ❌ Wrong!
 ## 🎯 Project-Specific Context
 
 ### LusoTown is NOT a Generic Platform
-- **Target**: Portuguese speakers in London & UK
+- **Target**: Portuguese speakers in London & United Kingdom
 - **Culture**: Portuguese/Brazilian/Cape Verdean cultural elements
 - **Language**: Portuguese language preservation focus
 - **Community**: Real Portuguese cultural institutions (Instituto Camões, etc.)
@@ -322,7 +322,7 @@ find . -name "*.tsx" | head -10                      # Sample components
 
 ### 🧠 Context Preservation
 **Remember These Key Facts Throughout Conversation:**
-- LusoTown serves **Portuguese speakers in London & UK**
+- LusoTown serves **Portuguese speakers in London & United Kingdom**
 - **750+ community members**, **2,150+ Portuguese students**
 - **8 university partnerships** (UCL, King's, Imperial, LSE, Oxford, Cambridge, Manchester, Edinburgh)
 - **Never generic** - always Portuguese cultural context
@@ -422,7 +422,7 @@ Preserve Portuguese authenticity and community values.
 - Technology choice evaluations (should we use X framework?)
 - Business-tech alignment questions
 - Resource allocation decisions
-- Market expansion planning (beyond London to other UK cities)
+- Market expansion planning (beyond London to other United Kingdom cities)
 - Partnership opportunity evaluation
 
 **🧠 Key Capabilities**:
@@ -434,10 +434,10 @@ Preserve Portuguese authenticity and community values.
 - ROI calculations for development investments
 
 **💼 Strategic Context**:
-- Target Market: 750+ Portuguese speakers across UK, 2,150+ university students
+- Target Market: 750+ Portuguese speakers across United Kingdom, 2,150+ university students
 - Business Model: Freemium with premium services £19.99-£39.99/month
 - Competitive Position: Cultural authenticity vs. generic platforms
-- Growth Strategy: UK expansion beyond London
+- Growth Strategy: United Kingdom expansion beyond London
 
 **Documentation**: `/web-app/src/agents/StrategicDecisionAdvisor.md`
 
@@ -467,7 +467,7 @@ Preserve Portuguese authenticity and community values.
 - Bilingual functionality (EN/PT) on all features
 - Portuguese character encoding and display
 - Cultural element testing (colors, content, UX)
-- UK geographic and cultural context validation
+- United Kingdom geographic and cultural context validation
 - Mobile-first experience (Portuguese-speaking community uses mobile heavily)
 
 **Documentation**: `/web-app/src/agents/QualityAssuranceMentor.md`
@@ -519,7 +519,7 @@ Preserve Portuguese authenticity and community values.
 
 **🧠 Key Capabilities**:
 - Security vulnerability assessment and prevention
-- GDPR and UK data protection compliance
+- GDPR and United Kingdom data protection compliance
 - Portuguese-speaking community data protection
 - Security education and best practices
 - Incident response and threat mitigation
@@ -527,7 +527,7 @@ Preserve Portuguese authenticity and community values.
 
 **🔐 Security Focus Areas**:
 - Portuguese user data protection
-- GDPR compliance for UK/EU users
+- GDPR compliance for United Kingdom/EU users
 - Payment processing security (Stripe integration)
 - User authentication and session management
 - Cultural content protection and moderation
@@ -560,7 +560,7 @@ Preserve Portuguese authenticity and community values.
 - Portuguese-speaking community engagement rates
 - Subscription conversion optimization
 - Cultural feature adoption patterns
-- UK market expansion opportunities
+- United Kingdom market expansion opportunities
 - Community network effects measurement
 
 **Documentation**: `/web-app/src/agents/GrowthAnalyticsStrategist.md`
@@ -601,10 +601,10 @@ Preserve Portuguese authenticity and community values.
 
 #### Location References
 - **NEVER use "London" when referring to the broader community**
-- **ALWAYS use "United Kingdom" or "UK" for community-wide references**
+- **ALWAYS use "United Kingdom" or "United Kingdom" for community-wide references**
 - Examples:
   - ✅ "Connect with Portuguese speakers in the United Kingdom"
-  - ✅ "Portuguese-speaking community in the UK"
+  - ✅ "Portuguese-speaking community in the United Kingdom"
   - ❌ "Portuguese-speaking community in London"
   - ❌ "Connect with Portuguese speakers in London"
 
@@ -688,11 +688,11 @@ Based on `/web-app/TODO.md` luxury enhancement roadmap:
 - **Oil & Diamond Wealth**: Natural resource abundance
 - **Elite Society**: Luanda's high society, exclusive private clubs
 - **Premium Architecture**: Modern luxury developments
-- **UK Elite Networks**: Wealthy Angolan diaspora in London
+- **United Kingdom Elite Networks**: Wealthy Angolan diaspora in London
 
 #### Implementation Requirements
 - **All content must emphasize sophisticated, wealthy, and prestigious aspects**
-- **Target high-class Portuguese speakers in the UK**
+- **Target high-class Portuguese speakers in the United Kingdom**
 - **Luxury positioning in all cultural representations**
 - **Premium service focus across all features**
 
@@ -735,7 +735,7 @@ Task tool with:
 Task tool with:
 - description: "Analyze instruction compliance"
 - subagent_type: "instruction-compliance-advisor"
-- prompt: "User asked for London references but we're using UK. Please explain why."
+- prompt: "User asked for London references but we're using United Kingdom. Please explain why."
 ```
 
 ---

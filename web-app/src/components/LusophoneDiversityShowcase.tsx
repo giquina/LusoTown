@@ -136,7 +136,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
         profession: "Tech Entrepreneur",
         professionPortuguese: "Empreendedor Tecnológico",
         achievement:
-          "Founded Portuguese-UK fintech startup valued at £5M, connecting Portuguese businesses with UK markets",
+          "Founded Portuguese-United Kingdom fintech startup valued at £5M, connecting Portuguese businesses with United Kingdom markets",
         achievementPortuguese:
           "Fundou startup fintech Portugal-Reino Unido avaliada em £5M, conectando negócios portugueses com mercados do Reino Unido",
         quote:
@@ -332,7 +332,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
         profession: "Cultural Event Organizer",
         professionPortuguese: "Organizadora de Eventos Culturais",
         achievement:
-          'Founded "Angola in London" festival attracting 5,000+ attendees and showcasing Angolan culture across the UK',
+          'Founded "Angola in London" festival attracting 5,000+ attendees and showcasing Angolan culture across the United Kingdom',
         achievementPortuguese:
           'Fundou festival "Angola em Londres" atraindo 5.000+ participantes e exibindo cultura angolana por todo o Reino Unido',
         quote:
@@ -362,7 +362,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
     londonPresence: {
       years: "35+ years",
       description:
-        "Strong cultural presence across the UK, contributing significantly to Britain's African Portuguese heritage through vibrant community celebrations",
+        "Strong cultural presence across the United Kingdom, contributing significantly to Britain's African Portuguese heritage through vibrant community celebrations",
       descriptionPortuguese:
         "Forte presença académica e cultural, contribuindo significativamente para o património português africano de Londres",
     },
@@ -423,7 +423,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
         profession: "Community Social Worker",
         professionPortuguese: "Assistente Social Comunitária",
         achievement:
-          "Established cultural network helping 200+ Mozambican families connect across the UK while celebrating cultural identity through vibrant community gatherings",
+          "Established cultural network helping 200+ Mozambican families connect across the United Kingdom while celebrating cultural identity through vibrant community gatherings",
         achievementPortuguese:
           "Estabeleceu rede de apoio ajudando 200+ famílias moçambicanas a navegar sistemas do Reino Unido enquanto preserva identidade cultural",
         quote:
@@ -704,7 +704,7 @@ export default function LusophoneDiversityShowcase() {
           <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
             {language === "pt"
               ? "Descubra a energia pulsante das comunidades lusófonas no Reino Unido - desde noites de fado em Londres até samba no Manchester, kizomba em Birmingham a festivais crioulos em Liverpool. Cada nação traz música, dança, comida e celebrações únicas que conectam corações portugueses."
-              : "Discover the pulsating energy of Portuguese-speaking communities across the UK - from fado nights in London to samba in Manchester, kizomba in Birmingham to Creole festivals in Liverpool. Each nation brings unique music, dance, food and celebrations that connect Portuguese hearts."}
+              : "Discover the pulsating energy of Portuguese-speaking communities across the United Kingdom - from fado nights in London to samba in Manchester, kizomba in Birmingham to Creole festivals in Liverpool. Each nation brings unique music, dance, food and celebrations that connect Portuguese hearts."}
           </p>
         </motion.div>
 
@@ -1240,7 +1240,7 @@ export default function LusophoneDiversityShowcase() {
             <p className="text-lg mb-8 opacity-90 max-w-3xl mx-auto">
               {language === "pt"
                 ? "Conecte-se através de música, dança, comida incrível e celebrações vibrantes. Do fado ao samba, kizomba ao forró - encontre sua tribo cultural no Reino Unido e celebre a alegria de ser lusófono!"
-                : "Connect through music, dance, amazing food and vibrant celebrations. From fado to samba, kizomba to forró - find your cultural tribe across the UK and celebrate the joy of being Portuguese-speaking!"}
+                : "Connect through music, dance, amazing food and vibrant celebrations. From fado to samba, kizomba to forró - find your cultural tribe across the United Kingdom and celebrate the joy of being Portuguese-speaking!"}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <a

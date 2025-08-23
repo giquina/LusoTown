@@ -48,7 +48,7 @@ Successfully implemented a comprehensive enhanced social feed system for LusoTow
 **BLOCKED CONTENT (Negative Scoring):**
 - Non-Portuguese Business Promotion (-30 points): Generic business promotion
 - Personal Relationship Drama (-25 points): Unrelated personal issues
-- Non-Community Political Content (-20 points): UK politics without Portuguese context
+- Non-Community Political Content (-20 points): United Kingdom politics without Portuguese context
 - Random Lifestyle Posts (-15 points): General lifestyle content without community relevance
 
 **Content Scoring System:**

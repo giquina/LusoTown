@@ -1,4 +1,4 @@
-# LusoTown Portuguese-speaking Community Streaming Dockerfile
+# LusoTown Portuguese-speaking community Streaming Dockerfile
 FROM node:18-alpine
 
 # Install FFmpeg for Portuguese content processing

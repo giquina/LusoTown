@@ -274,7 +274,7 @@ export default function BookingConfirmationPage() {
                 <span>
                   {isPortuguese
                     ? 'Serviços disponíveis em Londres e em todo o Reino Unido'
-                    : 'Services available in London and throughout the UK'
+                    : 'Services available in London and throughout the United Kingdom'
                   }
                 </span>
               </div>

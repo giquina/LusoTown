@@ -169,7 +169,7 @@ const CAREER_OPPORTUNITIES: CareerOpportunity[] = [
     id: 'portugal-uk-chamber',
     title: 'Business Development Graduate Program',
     titlePortuguese: 'Programa de Graduados em Desenvolvimento de Negócios',
-    company: 'Portugal-UK Chamber of Commerce',
+    company: 'Portugal-United Kingdom Chamber of Commerce',
     type: 'graduate_program',
     industry: 'Business Development',
     location: 'London',
@@ -180,21 +180,21 @@ const CAREER_OPPORTUNITIES: CareerOpportunity[] = [
       'Recent graduate or final year student',
       'Business, Economics, or International Relations degree',
       'Fluent Portuguese and English',
-      'Interest in UK-Portugal trade'
+      'Interest in United Kingdom-Portugal trade'
     ],
     benefits: [
       'Structured career development program',
-      'Rotations in Portugal and UK',
+      'Rotations in Portugal and United Kingdom',
       'Direct mentorship from executives',
       'Professional qualifications support'
     ],
-    description: 'Comprehensive graduate program focusing on UK-Portugal business relations, trade development, and commercial partnerships.',
+    description: 'Comprehensive graduate program focusing on United Kingdom-Portugal business relations, trade development, and commercial partnerships.',
     descriptionPortuguese: 'Programa abrangente de graduados focado nas relações comerciais Reino Unido-Portugal, desenvolvimento comercial e parcerias comerciais.',
     applicationDeadline: '2024-11-15',
     startDate: '2025-01-08',
     contactPerson: 'João Santos - Programme Director',
     isPartnership: true,
-    portugueseConnection: 'Dedicated to strengthening UK-Portugal business ties',
+    portugueseConnection: 'Dedicated to strengthening United Kingdom-Portugal business ties',
     skillsRequired: ['Business Development', 'Relationship Building', 'Analysis', 'Portuguese Market Knowledge'],
     preferredYears: ['Final Year', 'Masters', 'Recent Graduate'],
     logo: '/images/companies/portugal-uk-chamber.png'
@@ -222,7 +222,7 @@ const CAREER_OPPORTUNITIES: CareerOpportunity[] = [
       'Academic conference presentations',
       'Professional development courses'
     ],
-    description: 'Support research on Portuguese cultural presence in the UK, diaspora studies, and cultural exchange programs.',
+    description: 'Support research on Portuguese cultural presence in the United Kingdom, diaspora studies, and cultural exchange programs.',
     descriptionPortuguese: 'Apoie investigação sobre presença cultural portuguesa no Reino Unido, estudos da diáspora e programas de intercâmbio cultural.',
     applicationDeadline: '2024-10-15',
     startDate: '2024-11-01',
@@ -356,9 +356,9 @@ const CAREER_EVENTS: CareerEvent[] = [
     type: 'job_fair',
     date: '2024-10-12',
     time: '10:00-16:00',
-    location: 'Portugal-UK Chamber of Commerce',
+    location: 'Portugal-United Kingdom Chamber of Commerce',
     isVirtual: false,
-    organizer: 'LusoTown & Portugal-UK Chamber',
+    organizer: 'LusoTown & Portugal-United Kingdom Chamber',
     targetAudience: ['Final Year Students', 'Recent Graduates', 'Career Changers'],
     price: 0,
     studentPrice: 0,
@@ -526,7 +526,7 @@ export default function CareerHubSection() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             {language === 'pt' 
               ? 'Conecte-se com oportunidades de emprego, mentores experientes e eventos de carreira específicos para estudantes portugueses no Reino Unido'
-              : 'Connect with job opportunities, experienced mentors, and career events specifically for Portuguese students in the UK'}
+              : 'Connect with job opportunities, experienced mentors, and career events specifically for Portuguese students in the United Kingdom'}
           </p>
 
           {/* Quick Stats */}

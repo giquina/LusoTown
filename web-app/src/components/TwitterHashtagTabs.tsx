@@ -89,11 +89,11 @@ const HASHTAG_TABS: HashtagTab[] = [
     id: 'uk',
     hashtag: 'PortugueseUK',
     label: {
-      en: 'UK Wide',
+      en: 'United Kingdom Wide',
       pt: 'Todo Reino Unido'
     },
     description: {
-      en: 'Portuguese-speaking community across the UK',
+      en: 'Portuguese-speaking community across the United Kingdom',
       pt: 'Comunidade de falantes de português em todo o Reino Unido'
     },
     icon: <MapPin className="w-4 h-4" />,

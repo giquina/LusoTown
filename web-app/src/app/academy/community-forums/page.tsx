@@ -274,7 +274,7 @@ const communityForumsModule = {
         <h4>Content Guidelines</h4>
         <ul class="list-disc list-inside space-y-2">
           <li><strong>Language Choice:</strong> Post in Portuguese, English, or both - community members are multilingual</li>
-          <li><strong>Local Relevance:</strong> Focus on London and UK-specific content and experiences</li>
+          <li><strong>Local Relevance:</strong> Focus on London and United Kingdom-specific content and experiences</li>
           <li><strong>Constructive Tone:</strong> Even when discussing challenges, maintain hope and community spirit</li>
           <li><strong>Privacy Awareness:</strong> Avoid sharing personal details like full addresses or phone numbers publicly</li>
           <li><strong>Photo Sharing:</strong> Include relevant photos when helpful (restaurants, locations, documents needing translation)</li>
@@ -401,7 +401,7 @@ const communityForumsModule = {
             <p class="text-sm text-green-700">Members can verify their identity through:</p>
             <ul class="text-xs text-green-600 mt-2 list-disc list-inside">
               <li>Portuguese passport or ID verification</li>
-              <li>UK address confirmation</li>
+              <li>United Kingdom address confirmation</li>
               <li>University or workplace verification</li>
               <li>Community member referrals</li>
             </ul>

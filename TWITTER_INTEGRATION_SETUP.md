@@ -22,7 +22,7 @@ This guide provides setup instructions for the Twitter feed integration in the L
 ### 2. TwitterHashtagTabs (`/workspaces/LusoTown/web-app/src/components/TwitterHashtagTabs.tsx`)
 - **Purpose**: Tabbed interface for different Portuguese-speaking community hashtag feeds
 - **Features**:
-  - 5 hashtag categories: Community, Events, Business, Culture, UK Wide
+  - 5 hashtag categories: Community, Events, Business, Culture, United Kingdom Wide
   - Live activity indicators
   - Community engagement stats
   - Responsive mobile-first design
@@ -65,7 +65,7 @@ NEXT_PUBLIC_TWITTER_WIDGET_MAX_TWEETS=6
 2. **Create Project and App**:
    - Project Name: "LusoTown Portuguese-speaking community"
    - App Name: "LusoTown London"
-   - Description: "Portuguese-speaking community platform in London/UK"
+   - Description: "Portuguese-speaking community platform in London/United Kingdom"
 
 3. **Get API Credentials**:
    - API Key and Secret
@@ -92,7 +92,7 @@ NEXT_PUBLIC_TWITTER_WIDGET_MAX_TWEETS=6
   "twitter_tabs.events": "Events", 
   "twitter_tabs.business": "Business",
   "twitter_tabs.culture": "Culture",
-  "twitter_tabs.uk_wide": "UK Wide",
+  "twitter_tabs.uk_wide": "United Kingdom Wide",
   "twitter_tabs.live_indicator": "Live",
   "twitter_tabs.popular_hashtags": "Other popular hashtags",
 
@@ -176,7 +176,7 @@ import TwitterFeedWidget from '@/components/TwitterFeedWidget'
 - **Mobile Responsive**: Optimized for all device sizes
 
 ### Portuguese-speaking community Focus
-- **Targeted Hashtags**: Focus on Portuguese speakers in London/UK
+- **Targeted Hashtags**: Focus on Portuguese speakers in London/United Kingdom
 - **Cultural Content**: Santos Populares, Fado, Portuguese food, business
 - **Bilingual Support**: Complete Portuguese/English translations
 - **Community Engagement**: Stats showing followers, engagement, activity

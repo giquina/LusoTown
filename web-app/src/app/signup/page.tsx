@@ -491,7 +491,7 @@ function SignupInner() {
                       </div>
                       <div className="flex items-center gap-1">
                         <MapPinIcon className="h-4 w-4" />
-                        <span>London & UK</span>
+                        <span>London & United Kingdom</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <StarIcon className="h-4 w-4 text-yellow-400" />
@@ -769,7 +769,7 @@ function SignupInner() {
                             <option value="east-timor">🇹🇱 Timor-Leste</option>
                             <option value="macau">🇲🇴 Macau</option>
                             <option value="uk-born">
-                              🇬🇧 UK-born with Portuguese heritage
+                              🇬🇧 United Kingdom-born with Portuguese heritage
                             </option>
                             <option value="other">
                               🌍 Other Portuguese-speaking background

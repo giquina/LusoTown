@@ -1,5 +1,5 @@
 #!/bin/bash
-# LusoTown Portuguese-speaking Community Streaming - Production Deployment
+# LusoTown Portuguese-speaking community Streaming - Production Deployment
 # Secure, scalable deployment for Portuguese-speaking community streaming
 
 set -e
@@ -7,7 +7,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 STREAMING_DIR="$(dirname "$SCRIPT_DIR")"
 
-echo "<�<� LusoTown Portuguese-speaking Community Streaming - Production Deployment"
+echo "<�<� LusoTown Portuguese-speaking community Streaming - Production Deployment"
 echo "==================================================================="
 
 # Validate production environment
@@ -201,7 +201,7 @@ verify_deployment() {
 # Display production information
 show_production_info() {
     echo ""
-    echo "<� LusoTown Portuguese-speaking Community Streaming - Production Endpoints"
+    echo "<� LusoTown Portuguese-speaking community Streaming - Production Endpoints"
     echo "=============================================================="
     echo ""
     echo "<� RTMP Ingest (Secure):"
@@ -261,8 +261,8 @@ main() {
     show_production_info
     
     echo ""
-    echo "<� LusoTown Portuguese-speaking Community Streaming is now live in production!"
-    echo "   Serving the Portuguese-speaking community in London & UK with professional streaming"
+    echo "<� LusoTown Portuguese-speaking community Streaming is now live in production!"
+    echo "   Serving the Portuguese-speaking community in London & United Kingdom with professional streaming"
     echo ""
     echo "=� Next Steps:"
     echo "   1. Configure DNS: stream.lusotown.com � your_server_ip"

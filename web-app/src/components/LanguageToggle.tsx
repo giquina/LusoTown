@@ -36,7 +36,7 @@ export default function LanguageToggle() {
     if (language.startsWith('pt')) {
       return '🇵🇹' // Show PT flag for any Portuguese variant
     }
-    return '🇬🇧' // UK flag for English
+    return '🇬🇧' // United Kingdom flag for English
   }
 
   const currentLang = getLanguageDisplay(language)

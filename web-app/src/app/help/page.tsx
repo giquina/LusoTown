@@ -75,7 +75,7 @@ export default function HelpCenter() {
         {
           question: "What areas does LusoTown cover?",
           answer:
-            "We currently serve women across the UK, with the largest communities in London, Manchester, Birmingham, Edinburgh, and Bristol. We're expanding to more cities based on member demand.",
+            "We currently serve women across the United Kingdom, with the largest communities in London, Manchester, Birmingham, Edinburgh, and Bristol. We're expanding to more cities based on member demand.",
         },
       ],
     },
@@ -419,7 +419,7 @@ export default function HelpCenter() {
                     </h3>
                     <div className="space-y-3 text-gray-600">
                       <p>
-                        • <strong>Immediate danger:</strong> Call 999 (UK
+                        • <strong>Immediate danger:</strong> Call 999 (United Kingdom
                         emergency services)
                       </p>
                       <p>

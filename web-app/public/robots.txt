@@ -5,4 +5,4 @@ Allow: /
 Sitemap: https://lusotown.vercel.app/sitemap.xml
 
 # Portuguese-speaking community Platform
-# LusoTown - Connecting Portuguese speakers across the UK
+# LusoTown - Connecting Portuguese speakers across the United Kingdom

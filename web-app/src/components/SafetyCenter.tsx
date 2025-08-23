@@ -110,7 +110,7 @@ export default function SafetyCenter() {
           title: 'Safety Resources',
           emergency: {
             title: 'Emergency Contacts',
-            police: 'UK Police: 999',
+            police: 'United Kingdom Police: 999',
             support: 'Portuguese-speaking community Support: +44 20 7946 0958',
             helpline: 'National Domestic Violence Helpline: 0808 2000 247',
             mental: 'Mental Health Crisis: 116 123 (Samaritans)'

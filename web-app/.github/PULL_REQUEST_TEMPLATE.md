@@ -39,7 +39,7 @@ Brief description of changes
 - [ ] ✅ Bundle size impact minimal
 
 ## Portuguese-speaking community Focus
-- [ ] ✅ UK-wide messaging (not London-only)
+- [ ] ✅ United Kingdom-wide messaging (not London-only)
 - [ ] ✅ Portuguese cultural authenticity maintained
 - [ ] ✅ Community guidelines respected
 - [ ] ✅ Inclusive Portuguese speaker targeting

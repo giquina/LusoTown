@@ -86,7 +86,7 @@ export default function NotificationPreferencesPage() {
               <p className="text-xl lg:text-2xl text-primary-100 max-w-3xl mx-auto">
                 {language === 'pt' 
                   ? 'Personalize como recebe atualizações da comunidade de falantes de português em Londres & Reino Unido'
-                  : 'Customize how you receive updates from the Portuguese-speaking community in London & UK'
+                  : 'Customize how you receive updates from the Portuguese-speaking community in London & United Kingdom'
                 }
               </p>
             </motion.div>
@@ -153,7 +153,7 @@ export default function NotificationPreferencesPage() {
               <p className="text-lg text-neutral-600">
                 {language === 'pt' 
                   ? 'Descubra notificações especializadas para a nossa comunidade em Londres & Reino Unido'
-                  : 'Discover specialized notifications for our community in London & UK'
+                  : 'Discover specialized notifications for our community in London & United Kingdom'
                 }
               </p>
             </div>

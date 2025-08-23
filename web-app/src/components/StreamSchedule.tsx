@@ -148,7 +148,7 @@ export default function StreamSchedule({
       description:
         language === "pt"
           ? "Conselhos de carreira e oportunidades de estágio no Reino Unido"
-          : "Career advice and internship opportunities in the UK",
+          : "Career advice and internship opportunities in the United Kingdom",
       category: "student-sessions",
       categoryName:
         language === "pt" ? "Sessões de Estudantes" : "Student Sessions",

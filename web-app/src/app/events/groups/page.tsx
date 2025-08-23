@@ -6,7 +6,7 @@ import GroupEventsPageClient from '@/components/GroupEventsPageClient'
 export const metadata: Metadata = {
   title: 'Portuguese Group Events & Tours in London | LusoTown',
   description: 'Join Portuguese-speaking groups for cultural tours, museum visits, and London adventures. Connect with Portuguese-speaking community through organized group experiences.',
-  keywords: 'Portuguese groups London, Portuguese tours London, Portuguese cultural events, Portuguese-speaking community groups UK',
+  keywords: 'Portuguese groups London, Portuguese tours London, Portuguese cultural events, Portuguese-speaking community groups United Kingdom',
   openGraph: {
     title: 'Portuguese Group Events & Tours in London | LusoTown',
     description: 'Join Portuguese-speaking groups for cultural tours, museum visits, and London adventures.',

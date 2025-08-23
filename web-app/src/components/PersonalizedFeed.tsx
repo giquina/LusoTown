@@ -129,7 +129,7 @@ const generatePersonalizedPosts = (followedEntities: FollowableEntity[]): FeedPo
       culturalTags: ['Business', 'Professional Network'],
       linkedBusiness: {
         id: 'business1',
-        name: 'Portuguese Business Network UK',
+        name: 'Portuguese Business Network United Kingdom',
         category: 'Professional Services'
       }
     },

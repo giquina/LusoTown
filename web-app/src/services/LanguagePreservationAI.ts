@@ -3,7 +3,7 @@
  * 
  * Advanced AI system promoting Portuguese language while supporting bilingual needs.
  * Implements dialect preservation, cultural context maintenance, and intelligent
- * language learning support for the Portuguese diaspora in the UK.
+ * language learning support for the Portuguese diaspora in the United Kingdom.
  */
 
 import { supabase } from '@/lib/supabase'
@@ -221,7 +221,7 @@ export class LanguagePreservationAI {
     },
     brasileiro_uk: {
       dialect_id: 'brasileiro_uk',
-      name: 'Português Brasileiro (UK)',
+      name: 'Português Brasileiro (United Kingdom)',
       region: 'brasil',
       speakers_estimate: 8000000, // Global estimate
       preservation_priority: 'medium',

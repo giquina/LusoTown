@@ -273,7 +273,7 @@ export class PrivacyPolicyManager {
         {
           id: 'introduction',
           title: 'Introduction and Portuguese-speaking community Focus',
-          content: 'LusoTown is committed to protecting the privacy of our Portuguese-speaking community members in the UK. We understand the cultural importance of family privacy, heritage protection, and the sensitive nature of saudade and personal connections to Portugal.',
+          content: 'LusoTown is committed to protecting the privacy of our Portuguese-speaking community members in the United Kingdom. We understand the cultural importance of family privacy, heritage protection, and the sensitive nature of saudade and personal connections to Portugal.',
           importance: 'critical',
           culturalRelevance: true,
           requiresConsent: false
@@ -307,7 +307,7 @@ export class PrivacyPolicyManager {
         {
           id: 'cross_border',
           title: 'Cross-Border Data Transfers',
-          content: 'Data may be transferred between the UK, Portugal, EU, and other Portuguese-speaking nations. We ensure adequate protection through GDPR adequacy decisions and standard contractual clauses.',
+          content: 'Data may be transferred between the United Kingdom, Portugal, EU, and other Portuguese-speaking nations. We ensure adequate protection through GDPR adequacy decisions and standard contractual clauses.',
           importance: 'high',
           culturalRelevance: true,
           requiresConsent: true,
@@ -459,7 +459,7 @@ export class PrivacyPolicyManager {
       diasporaSpecific: {
         description: 'Portuguese diaspora communities have unique privacy needs related to their cross-cultural experience.',
         crossBorderProtections: [
-          'UK-Portugal data transfer protections',
+          'United Kingdom-Portugal data transfer protections',
           'Diaspora community privacy considerations',
           'Cross-cultural identity protection',
           'Homeland connection privacy'
@@ -597,7 +597,7 @@ export class PrivacyPolicyManager {
           'Community consultation for significant cultural contributions'
         ],
         exceptions: [
-          'Legal obligations under UK and Portuguese law',
+          'Legal obligations under United Kingdom and Portuguese law',
           'Community heritage preservation with consent',
           'Ongoing consent processing records',
           'Legitimate interests in fraud prevention'

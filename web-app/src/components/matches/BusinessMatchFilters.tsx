@@ -93,7 +93,7 @@ export default function BusinessMatchFilters({
   const businessInterestsOptions = [
     { value: "FinTech", label: "FinTech" },
     { value: "Portuguese Market", label: language === "pt" ? "Mercado Português" : "Portuguese Market" },
-    { value: "UK-Portugal Trade", label: language === "pt" ? "Comércio Reino Unido-Portugal" : "UK-Portugal Trade" },
+    { value: "United Kingdom-Portugal Trade", label: language === "pt" ? "Comércio Reino Unido-Portugal" : "United Kingdom-Portugal Trade" },
     { value: "Startup Ecosystem", label: language === "pt" ? "Ecossistema Startup" : "Startup Ecosystem" },
     { value: "Sustainable Business", label: language === "pt" ? "Negócio Sustentável" : "Sustainable Business" },
     { value: "Portuguese Crafts", label: language === "pt" ? "Artesanato Português" : "Portuguese Crafts" },
@@ -372,7 +372,7 @@ export default function BusinessMatchFilters({
           <button
             onClick={() => onFiltersChange({
               ...filters,
-              businessInterests: ["Portuguese Market", "UK-Portugal Trade"],
+              businessInterests: ["Portuguese Market", "United Kingdom-Portugal Trade"],
               networkingGoals: ["Business Expansion"],
             })}
             className="w-full text-left p-2 bg-coral-50 hover:bg-coral-100 text-coral-800 rounded-lg text-sm font-medium transition-colors"

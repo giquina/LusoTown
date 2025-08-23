@@ -14,7 +14,7 @@ const CulturalFlag = ({ type, className = "" }: { type: 'heritage' | 'local', cl
       label: `${heritage.identity.name} flag`
     },
     local: {
-      emoji: '🇬🇧', // Always UK for diaspora hub
+      emoji: '🇬🇧', // Always United Kingdom for diaspora hub
       fallback: 'GB',
       label: 'United Kingdom flag'
     }

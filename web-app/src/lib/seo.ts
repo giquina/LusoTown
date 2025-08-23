@@ -247,7 +247,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     titlePortuguese:
       "Diretório de Negócios Portugueses Londres - Serviços Lusófonos Autênticos",
     description:
-      "Find verified Portuguese-owned businesses in London. Restaurants, services, consulting, and more from authentic Portuguese entrepreneurs across the UK.",
+      "Find verified Portuguese-owned businesses in London. Restaurants, services, consulting, and more from authentic Portuguese entrepreneurs across the United Kingdom.",
     descriptionPortuguese:
       "Encontre negócios verificados de proprietários portugueses em Londres. Restaurantes, serviços, consultoria e mais de empreendedores portugueses autênticos no Reino Unido.",
     keywords: [
@@ -296,11 +296,11 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
   },
 
   community: {
-    title: "Portuguese-speaking community London - Your Lusophone Family in the UK",
+    title: "Portuguese-speaking community London - Your Lusophone Family in the United Kingdom",
     titlePortuguese:
       "Comunidade de Falantes de Português Londres - A Sua Família Lusófona no Reino Unido",
     description:
-      "Join London's vibrant Portuguese-speaking community where saudade transforms into joy. Make lifelong friends, celebrate our heritage, and stay connected to Portuguese culture while living in the UK.",
+      "Join London's vibrant Portuguese-speaking community where saudade transforms into joy. Make lifelong friends, celebrate our heritage, and stay connected to Portuguese culture while living in the United Kingdom.",
     descriptionPortuguese:
       "Junte-se à vibrante comunidade de falantes de português de Londres onde a saudade se transforma em alegria. Faça amizades para a vida, celebre a nossa herança, e mantenha-se conectado à cultura portuguesa enquanto vive no Reino Unido.",
     keywords: [
@@ -375,11 +375,11 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     ogImage: absoluteUrl("/og-live.jpg"),
   },
   students: {
-    title: "Portuguese Students UK - Partnerships, Discounts, Support",
+    title: "Portuguese Students United Kingdom - Partnerships, Discounts, Support",
     titlePortuguese:
       "Estudantes Portugueses no Reino Unido - Parcerias, Descontos, Apoio",
     description:
-      "Exclusive support for Portuguese students across UK universities. Discounts, cultural programs, and career development.",
+      "Exclusive support for Portuguese students across United Kingdom universities. Discounts, cultural programs, and career development.",
     descriptionPortuguese:
       "Apoio exclusivo para estudantes portugueses em universidades no Reino Unido. Descontos, programas culturais e desenvolvimento de carreira.",
     keywords: [
@@ -395,7 +395,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     title: "LusoTown Premium Membership - Unlock VIP Portuguese Network",
     titlePortuguese: "LusoTown Assinatura Premium - Rede VIP Portuguesa",
     description:
-      "Join premium to unlock transport services, VIP events, and exclusive Portuguese networking in London & UK.",
+      "Join premium to unlock transport services, VIP events, and exclusive Portuguese networking in London & United Kingdom.",
     descriptionPortuguese:
       "Assine premium para desbloquear serviços de transporte, eventos VIP e networking português exclusivo em Londres e no Reino Unido.",
     keywords: [

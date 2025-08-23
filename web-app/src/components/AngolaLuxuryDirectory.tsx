@@ -83,7 +83,7 @@ const angolaLuxuryBusinesses: LuxuryBusiness[] = [
     name: 'Diamond Capital Investments',
     namePortuguese: 'Investimentos Capital dos Diamantes',
     category: 'Investment',
-    description: 'Exclusive London-based investment advisory serving Angolan diaspora professionals. Our team of former oil industry executives, now based in London\'s financial district, provide strategic investment guidance and wealth management for successful Angolans living in the UK.',
+    description: 'Exclusive London-based investment advisory serving Angolan diaspora professionals. Our team of former oil industry executives, now based in London\'s financial district, provide strategic investment guidance and wealth management for successful Angolans living in the United Kingdom.',
     descriptionPortuguese: 'Consultoria de investimento exclusiva especializada no setor de recursos naturais de Angola e imóveis de luxo. Nossa equipe de ex-executivos da indústria petrolífera e especialistas em comércio de diamantes oferece orientação estratégica de investimento para indivíduos UHNW.',
     address: '1 Poultry, City of London',
     postcode: 'EC2R 8EJ',
@@ -156,7 +156,7 @@ const angolaLuxuryBusinesses: LuxuryBusiness[] = [
     name: 'Cabinda Oil & Gas Consultancy',
     namePortuguese: 'Consultoria de Petróleo e Gás Cabinda',
     category: 'Oil & Gas',
-    description: 'Strategic consulting for energy sector investments, operated by Angolan executives based in London\'s financial district. Our senior partners provide expert guidance on international energy investments and Angola-UK business partnerships.',
+    description: 'Strategic consulting for energy sector investments, operated by Angolan executives based in London\'s financial district. Our senior partners provide expert guidance on international energy investments and Angola-United Kingdom business partnerships.',
     descriptionPortuguese: 'Consultoria estratégica para investimentos no setor energético em Angola. Nossos sócios seniores, ex-executivos das principais companhias petrolíferas de Angola, fornecem orientação especializada sobre oportunidades upstream, midstream e downstream.',
     address: '20 Fenchurch Street, City of London',
     postcode: 'EC3M 3BY',
@@ -481,7 +481,7 @@ export default function AngolaLuxuryDirectory({ className = '' }: AngolaLuxuryDi
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Join London's most exclusive Angolan business directory. Showcase your London-based 
-            business to the affluent Angolan diaspora and sophisticated Portuguese-speaking community living in the UK.
+            business to the affluent Angolan diaspora and sophisticated Portuguese-speaking community living in the United Kingdom.
           </p>
           <Button 
             size="lg" 

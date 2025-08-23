@@ -11,7 +11,7 @@ export interface PortugueseCountry {
   continent: string;
   population: number;
   isPrimary: boolean; // Major Portuguese-speaking countries
-  diasporaSize?: string; // Diaspora population in UK
+  diasporaSize?: string; // Diaspora population in United Kingdom
 }
 
 export const PORTUGUESE_SPEAKING_COUNTRIES: PortugueseCountry[] = [

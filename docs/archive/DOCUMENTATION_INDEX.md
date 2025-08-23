@@ -142,7 +142,7 @@ The LusoTown platform features a comprehensive agent system with specialized AI 
 - **luso-mobile-agent**: Mobile app features optimized for Portuguese-speaking community
 - **luso-seo-agent**: Portuguese keyword research and search optimization
 - **luso-integration-agent**: Portuguese business system and API integrations
-- **luso-compliance-agent**: UK/Portuguese legal compliance and regulatory specialist
+- **luso-compliance-agent**: United Kingdom/Portuguese legal compliance and regulatory specialist
 - **luso-feedback-agent**: Portuguese-speaking community feedback collection and analysis
 - **luso-onboarding-agent**: Portuguese cultural onboarding experience optimization
 

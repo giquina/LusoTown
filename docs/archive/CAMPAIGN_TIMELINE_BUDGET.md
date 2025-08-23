@@ -164,7 +164,7 @@
 
 **Activities:**
 - [ ] "1,000 Portuguese Connections" milestone event
-- [ ] Press outreach to Portuguese media in UK
+- [ ] Press outreach to Portuguese media in United Kingdom
 - [ ] Partnership expansion (target 20 total partners)
 - **Budget allocation:** Milestone event £1,200, PR outreach £500, Partnership expansion £500
 
@@ -347,6 +347,6 @@
 ✅ London's recognized Portuguese-speaking community platform
 ✅ Self-sustaining community growth engine
 
-**Long-term Vision:** Establish LusoTown as the definitive Portuguese cultural community platform in London, with expansion potential to other UK cities with significant Portuguese populations (Manchester, Birmingham, Bristol).
+**Long-term Vision:** Establish LusoTown as the definitive Portuguese cultural community platform in London, with expansion potential to other United Kingdom cities with significant Portuguese populations (Manchester, Birmingham, Bristol).
 
 This campaign positions LusoTown not just as a dating app, but as the cultural home for Portuguese speakers in London - creating lasting community value that justifies premium pricing and generates sustainable growth.

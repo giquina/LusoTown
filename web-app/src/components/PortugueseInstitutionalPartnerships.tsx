@@ -120,7 +120,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       const pipeline: PartnershipDevelopmentPipeline[] = [
         {
           id: 'pipeline-1',
-          institutionName: 'Portuguese Medical Association UK',
+          institutionName: 'Portuguese Medical Association United Kingdom',
           institutionType: 'Professional Association',
           stage: 'negotiations',
           stagePortuguese: 'Negociações',
@@ -154,7 +154,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
         },
         {
           id: 'pipeline-3',
-          institutionName: 'Portuguese Tech Professionals Network UK',
+          institutionName: 'Portuguese Tech Professionals Network United Kingdom',
           institutionType: 'Technology Professional Network',
           stage: 'initial_contact',
           stagePortuguese: 'Contacto Inicial',
@@ -282,7 +282,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       memberBenefits: ['Event coverage', 'Sports activities', 'Entertainment discounts'],
       totalCommunityReach: partnerships.filter(p => p.type === 'media_organization' || p.type === 'sports_club').reduce((sum, p) => sum + p.communitySize, 0),
       establishedPartnerships: partnerships.filter(p => p.type === 'media_organization' || p.type === 'sports_club'),
-      upcomingPartnerships: ['Portuguese Radio London', 'Benfica Supporters Club', 'Portuguese Football Federation UK']
+      upcomingPartnerships: ['Portuguese Radio London', 'Benfica Supporters Club', 'Portuguese Football Federation United Kingdom']
     }
   ]
 

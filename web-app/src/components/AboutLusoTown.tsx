@@ -223,7 +223,7 @@ export default function AboutLusoTown() {
             </h3>
             <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8">
               Experience the incredible cultural energy of Portuguese-speaking nations - from passionate fado and explosive samba to sensual kizomba and soulful morna. 
-              These communities bring amazing music, delicious food, vibrant nightlife, and heartwarming connections that make the UK more exciting and culturally rich.
+              These communities bring amazing music, delicious food, vibrant nightlife, and heartwarming connections that make the United Kingdom more exciting and culturally rich.
               <strong> Join LusoTown to access our exclusive annual food festival calendar</strong> - featuring authentic cuisine from all nine Portuguese-speaking nations throughout the year at premium London venues!
             </p>
             
@@ -268,20 +268,20 @@ export default function AboutLusoTown() {
               {
                 name: "Portugal",
                 flag: "🇵🇹",
-                heritage: "The heart of fado music and legendary pastéis de nata, Portugal brings soul-stirring musical traditions and incredible cuisine to UK communities. From intimate acoustic guitar circles with francesinha sandwiches to lively Santos Populares festivals featuring bifana, bacalhau dishes, and vinho verde, Portuguese culture creates warm gathering spaces where everyone feels at home.",
+                heritage: "The heart of fado music and legendary pastéis de nata, Portugal brings soul-stirring musical traditions and incredible cuisine to United Kingdom communities. From intimate acoustic guitar circles with francesinha sandwiches to lively Santos Populares festivals featuring bifana, bacalhau dishes, and vinho verde, Portuguese culture creates warm gathering spaces where everyone feels at home.",
                 highlights: ["Fado Music Nights", "Traditional Folk Dancing", "Modern Portuguese Pop", "Community Festivals"],
-                ukDiaspora: "Portugal's UK community creates vibrant cultural hubs across London, Manchester, and beyond, organizing fado nights in cozy pubs, folklore dance workshops, and Portuguese food festivals. Join LusoTown for exclusive access to our annual January Pastéis de Nata Festival at the Portuguese Cultural Centre, where everyone can experience the warmth of Portuguese hospitality and traditions.",
+                ukDiaspora: "Portugal's United Kingdom community creates vibrant cultural hubs across London, Manchester, and beyond, organizing fado nights in cozy pubs, folklore dance workshops, and Portuguese food festivals. Join LusoTown for exclusive access to our annual January Pastéis de Nata Festival at the Portuguese Cultural Centre, where everyone can experience the warmth of Portuguese hospitality and traditions.",
                 traditions: "Passionate fado performances, folklore dance circles, community celebrations",
-                stats: "280,000+ Portuguese speakers in UK • 100+ cultural events yearly • Fado UNESCO heritage"
+                stats: "280,000+ Portuguese speakers in United Kingdom • 100+ cultural events yearly • Fado UNESCO heritage"
               },
               {
                 name: "Brazil",
                 flag: "🇧🇷",
                 heritage: "Brazil explodes with infectious energy through samba, bossa nova, funk carioca, and incredible cuisine featuring pão de açúcar, feijoada, brigadeiros, and caipirinha! From passionate carnival celebrations with churrasco feasts to football watch parties featuring coxinha and açaí bowls, Brazilian culture brings joy, rhythm, amazing food, and that famous warm Brazilian embrace that makes everyone feel like family.",
                 highlights: ["Samba & Bossa Nova", "Carnival Energy", "Funk Carioca & Forró", "Football Watch Parties"],
-                ukDiaspora: "Brazilian communities across the UK create the most vibrant parties and gatherings - from Manchester samba schools to London capoeira circles, Birmingham Brazilian barbecues to Edinburgh carnival celebrations. Join LusoTown for exclusive access to our annual February Carnival Food Fiesta at the Brazilian Embassy Cultural Hall, where the streets fill with music, dance, feijoada, and infectious Brazilian joy.",
+                ukDiaspora: "Brazilian communities across the United Kingdom create the most vibrant parties and gatherings - from Manchester samba schools to London capoeira circles, Birmingham Brazilian barbecues to Edinburgh carnival celebrations. Join LusoTown for exclusive access to our annual February Carnival Food Fiesta at the Brazilian Embassy Cultural Hall, where the streets fill with music, dance, feijoada, and infectious Brazilian joy.",
                 traditions: "Explosive carnival street parties, capoeira circles, football celebrations",
-                stats: "95,000+ Brazilians in UK • Year-round carnival energy • Samba schools in 15 cities"
+                stats: "95,000+ Brazilians in United Kingdom • Year-round carnival energy • Samba schools in 15 cities"
               },
               {
                 name: "Angola",
@@ -290,7 +290,7 @@ export default function AboutLusoTown() {
                 highlights: ["Kizomba Dance Nights", "Semba Music Sessions", "Afrobeat Fusion", "Gospel Celebrations"],
                 ukDiaspora: "Angolan communities in London, Birmingham, and Manchester host incredible kizomba dance workshops, semba music nights, and cultural festivals celebrating African-Portuguese heritage. Join LusoTown for exclusive access to our annual April Muamba Masterclass at Peckham Multi-Cultural Centre, featuring cooking classes, storytelling, and vibrant community gatherings that welcome everyone.",
                 traditions: "Sensual kizomba dancing, rhythmic semba nights, gospel celebrations",
-                stats: "25,000+ Angolans in UK • Kizomba classes in 20+ cities • Growing music scene"
+                stats: "25,000+ Angolans in United Kingdom • Kizomba classes in 20+ cities • Growing music scene"
               },
               {
                 name: "Mozambique",
@@ -299,16 +299,16 @@ export default function AboutLusoTown() {
                 highlights: ["Marrabenta Music Sessions", "Pandza Dance Circles", "Coastal Food Culture", "Community Storytelling"],
                 ukDiaspora: "Mozambican communities in London, Birmingham, and Liverpool create amazing cultural experiences through marrabenta dance sessions, traditional drumming circles, and coastal cuisine workshops. Join LusoTown for exclusive access to our annual May Peri-Peri Experience at East London Cultural Hub, featuring heritage celebration gatherings that welcome everyone to join the cultural feast.",
                 traditions: "Energetic marrabenta dancing, traditional drumming ceremonies, storytelling marathons",
-                stats: "15,000+ Mozambicans in UK • Marrabenta classes in 10+ cities • Growing cultural scene"
+                stats: "15,000+ Mozambicans in United Kingdom • Marrabenta classes in 10+ cities • Growing cultural scene"
               },
               {
                 name: "Cape Verde",
                 flag: "🇨🇻",
                 heritage: "Cape Verde enchants with heartfelt morna melodies and incredible island cuisine featuring cachupa, pastéis, fresh grilled tuna, and grogue cocktails alongside energetic funaná and coladeira rhythms! Island food culture with amazing seafood caldeirada, vibrant Creole celebrations, and traditional guitar circles bring together communities over delicious meals in warm, welcoming gatherings that celebrate island heritage.",
                 highlights: ["Soulful Morna Sessions", "Energetic Funaná Dancing", "Coladeira Music Nights", "Creole Celebrations"],
-                ukDiaspora: "Cape Verdean communities across the UK host incredible morna acoustic sessions, funaná dance parties, and traditional food festivals. Join LusoTown for exclusive access to our annual March Island Flavors Night at Hackney Community Kitchen, featuring island cultural celebrations that fill hearts with the warmth and beauty of Cape Verdean traditions.",
+                ukDiaspora: "Cape Verdean communities across the United Kingdom host incredible morna acoustic sessions, funaná dance parties, and traditional food festivals. Join LusoTown for exclusive access to our annual March Island Flavors Night at Hackney Community Kitchen, featuring island cultural celebrations that fill hearts with the warmth and beauty of Cape Verdean traditions.",
                 traditions: "Heartfelt morna performances, high-energy funaná dancing, island celebrations",
-                stats: "8,000+ Cape Verdeans in UK • Morna UNESCO heritage • Island festivals in 8 cities"
+                stats: "8,000+ Cape Verdeans in United Kingdom • Morna UNESCO heritage • Island festivals in 8 cities"
               },
               {
                 name: "Guinea-Bissau",
@@ -317,7 +317,7 @@ export default function AboutLusoTown() {
                 highlights: ["Gumbe Music Festivals", "Traditional Dance Circles", "Community Food Sharing", "Storytelling Traditions"],
                 ukDiaspora: "Guinea-Bissau communities in London and Manchester organize incredible gumbe music festivals, traditional drumming ceremonies, and community cooking gatherings. Join LusoTown for exclusive access to our annual June Jollof Rice Celebration at North London Community Centre, featuring heritage events that connect people through powerful cultural traditions.",
                 traditions: "Rhythmic gumbe festivals, traditional drumming ceremonies, storytelling marathons",
-                stats: "3,500+ Guinea-Bissauans in UK • Growing gumbe music scene • Traditional arts preservation"
+                stats: "3,500+ Guinea-Bissauans in United Kingdom • Growing gumbe music scene • Traditional arts preservation"
               },
               {
                 name: "São Tomé and Príncipe",
@@ -326,7 +326,7 @@ export default function AboutLusoTown() {
                 highlights: ["Chocolate-Making Workshops", "Traditional Music Circles", "Island Cultural Shows", "Community Celebrations"],
                 ukDiaspora: "São Tomé communities in London create wonderful cultural experiences through chocolate-making workshops, traditional music sessions, and island food festivals. Join LusoTown for exclusive access to our annual July Chocolate Paradise at Borough Market Demonstration Kitchen, featuring cultural celebration gatherings that share the sweetness of island culture with everyone.",
                 traditions: "Sweet chocolate workshops, traditional music circles, island celebrations",
-                stats: "Small but vibrant UK community • Amazing chocolate heritage • Growing cultural presence"
+                stats: "Small but vibrant United Kingdom community • Amazing chocolate heritage • Growing cultural presence"
               },
               {
                 name: "East Timor",
@@ -335,7 +335,7 @@ export default function AboutLusoTown() {
                 highlights: ["Traditional Weaving Workshops", "Cultural Heritage Festivals", "Mountain Ceremonies", "Community Dialogues"],
                 ukDiaspora: "East Timorese communities in London organize beautiful traditional weaving masterclasses, cultural festivals, and heritage preservation gatherings. Join LusoTown for exclusive access to our annual August Mountain Cuisine Workshop at Camden Cultural Exchange, where we share the beauty of Timorese traditions and connect people through cultural dialogue.",
                 traditions: "Traditional weaving circles, cultural festivals, heritage ceremonies",
-                stats: "Emerging UK community • Rich weaving traditions • Cultural heritage preservation"
+                stats: "Emerging United Kingdom community • Rich weaving traditions • Cultural heritage preservation"
               },
               {
                 name: "Macau",
@@ -344,7 +344,7 @@ export default function AboutLusoTown() {
                 highlights: ["Portuguese-Macanese Fusion Cuisine", "Cultural Fusion Festivals", "Heritage Tours", "East-West Celebrations"],
                 ukDiaspora: "Macau communities in London create fascinating cultural fusion experiences through Portuguese-Macanese cooking classes, cultural festivals, and heritage celebration events. Join LusoTown for exclusive access to our annual September East-West Fusion Feast at Chinatown Cultural Centre, showcasing the beautiful meeting of Eastern and Western culinary traditions.",
                 traditions: "Portuguese-Macanese fusion cuisine, cultural blend festivals, heritage celebrations",
-                stats: "Unique cultural fusion heritage • Portuguese-Chinese traditions • Growing UK presence"
+                stats: "Unique cultural fusion heritage • Portuguese-Chinese traditions • Growing United Kingdom presence"
               }
             ].map((country, index) => (
               <div
@@ -430,11 +430,11 @@ export default function AboutLusoTown() {
                     </div>
                   </div>
 
-                  {/* UK Community */}
+                  {/* United Kingdom Community */}
                   <div className="mb-6 p-4 bg-gradient-to-r from-accent-50/60 to-coral-50/40 rounded-2xl">
                     <div className="flex items-center gap-2 mb-2">
                       <Users className="h-4 w-4 text-accent-600" />
-                      <span className="text-sm font-bold text-accent-700">UK Cultural Community</span>
+                      <span className="text-sm font-bold text-accent-700">United Kingdom Cultural Community</span>
                     </div>
                     <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
                       {country.ukDiaspora}
@@ -550,15 +550,15 @@ export default function AboutLusoTown() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <MusicalNote className="h-8 w-8 text-secondary-600" />
               <span className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent">
-                Join the UK's Most Vibrant Lusophone Community
+                Join the United Kingdom's Most Vibrant Lusophone Community
               </span>
             </div>
             <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Connect with passionate Portuguese speakers who love music, dancing, amazing food, and vibrant cultural celebrations! From fado nights to samba parties, kizomba dancing to carnival celebrations - find your cultural family across the UK.
+              Connect with passionate Portuguese speakers who love music, dancing, amazing food, and vibrant cultural celebrations! From fado nights to samba parties, kizomba dancing to carnival celebrations - find your cultural family across the United Kingdom.
             </p>
             <div className="inline-flex items-center gap-3 text-secondary-600 hover:text-secondary-700 transition-colors duration-300 cursor-pointer group">
               <Heart className="h-6 w-6 animate-pulse" />
-              <span className="text-lg font-bold">Ready to experience the joy of Lusophone culture across the UK?</span>
+              <span className="text-lg font-bold">Ready to experience the joy of Lusophone culture across the United Kingdom?</span>
               <ArrowRight className="h-6 w-6 transform group-hover:translate-x-1 transition-transform duration-200" />
             </div>
           </div>

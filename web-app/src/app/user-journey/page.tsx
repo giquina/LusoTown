@@ -187,7 +187,7 @@ export default function UserJourneyPage() {
               <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
                 {isPortuguese
                   ? 'Descubra como está a progredir na nossa vibrante comunidade de falantes de português em Londres e Reino Unido. Cada passo aproxima-o mais de casa.'
-                  : 'Discover how you\'re progressing in our vibrant Portuguese-speaking community across London and the UK. Each step brings you closer to home.'
+                  : 'Discover how you\'re progressing in our vibrant Portuguese-speaking community across London and the United Kingdom. Each step brings you closer to home.'
                 }
               </p>
               

@@ -219,7 +219,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     isActive: true,
     establishedYear: 1995,
     lastUpdated: '2024-08-21',
-    description: 'Official Portuguese government cultural institution promoting Portuguese language and culture in the UK',
+    description: 'Official Portuguese government cultural institution promoting Portuguese language and culture in the United Kingdom',
     descriptionPortuguese: 'Instituição cultural oficial do governo português promovendo língua e cultura portuguesas no Reino Unido'
   },
   
@@ -314,7 +314,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     languages: ['Portuguese', 'English'],
     
     partnerships: ['Portuguese Embassy', 'Local Portuguese-speaking community', 'Golborne Portuguese-speaking community'],
-    accreditation: ['UK Registered Charity'],
+    accreditation: ['United Kingdom Registered Charity'],
     
     socialMedia: {
       facebook: process.env.NEXT_PUBLIC_CENTRO_FACEBOOK || 'https://facebook.com/CentroCulturalPortuguesLondres'
@@ -394,10 +394,10 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
         id: 'casa-business-networking-gala',
         name: 'Brazilian Business Excellence Gala',
         namePortuguese: 'Gala de Excelência Empresarial Brasileira',
-        description: 'Annual black-tie networking gala celebrating Brazilian business success in the UK, featuring keynote speakers from Fortune 500 Brazilian companies',
+        description: 'Annual black-tie networking gala celebrating Brazilian business success in the United Kingdom, featuring keynote speakers from Fortune 500 Brazilian companies',
         descriptionPortuguese: 'Gala anual de networking em traje de gala celebrando o sucesso empresarial brasileiro no Reino Unido, com palestrantes de empresas brasileiras Fortune 500',
         type: 'event',
-        targetAudience: ['Brazilian expatriate executives', 'UK-Brazil trade officials', 'Investment fund managers', 'Cultural ambassadors'],
+        targetAudience: ['Brazilian expatriate executives', 'United Kingdom-Brazil trade officials', 'Investment fund managers', 'Cultural ambassadors'],
         duration: 'Annual event',
         cost: '£350 - £2,500 per table',
         schedule: 'Annual (September)',
@@ -467,10 +467,10 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     
     director: {
       name: process.env.NEXT_PUBLIC_CASA_BRASIL_DIRECTOR || 'Dr. Fernanda Almeida Santos',
-      title: 'Executive Cultural Director & Brazil-UK Trade Liaison',
+      title: 'Executive Cultural Director & Brazil-United Kingdom Trade Liaison',
       titlePortuguese: 'Diretora Cultural Executiva e Ligação Comercial Brasil-Reino Unido',
       email: 'fernanda.santos@casadobrasil.org.uk',
-      bio: 'Former São Paulo Opera House cultural director and international business consultant specializing in Brazil-UK cultural and economic partnerships. MBA from INSEAD, PhD in Cultural Studies from USP.'
+      bio: 'Former São Paulo Opera House cultural director and international business consultant specializing in Brazil-United Kingdom cultural and economic partnerships. MBA from INSEAD, PhD in Cultural Studies from USP.'
     },
     
     capacity: 250,
@@ -489,19 +489,19 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     
     partnerships: [
       'Brazilian Embassy London',
-      'UK-Brazil Chamber of Commerce',
+      'United Kingdom-Brazil Chamber of Commerce',
       'São Paulo State Cultural Department',
       'Rio de Janeiro Tourism Board',
       'Itaú Cultural London',
-      'Vale Foundation UK',
+      'Vale Foundation United Kingdom',
       'British Council Brazil',
       'London Business School Brazil Centre',
       'Brazilian Development Bank (BNDES) London Office'
     ],
     accreditation: [
-      'UK Registered Charity',
+      'United Kingdom Registered Charity',
       'Brazilian Ministry of Culture official partner',
-      'UK Trade & Investment cultural partner',
+      'United Kingdom Trade & Investment cultural partner',
       'Instituto Camões collaborative institution'
     ],
     
@@ -515,7 +515,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     isActive: true,
     establishedYear: 1995,
     lastUpdated: '2024-08-22',
-    description: 'Premier Brazilian cultural institution in London, fostering sophisticated cultural exchange and business development between Brazil and the UK. Serving as the epicenter for Brazilian elite networking, luxury cultural experiences, and high-level diplomatic engagement.',
+    description: 'Premier Brazilian cultural institution in London, fostering sophisticated cultural exchange and business development between Brazil and the United Kingdom. Serving as the epicenter for Brazilian elite networking, luxury cultural experiences, and high-level diplomatic engagement.',
     descriptionPortuguese: 'Principal instituição cultural brasileira em Londres, promovendo intercâmbio cultural sofisticado e desenvolvimento empresarial entre Brasil e Reino Unido. Servindo como epicentro para networking da elite brasileira, experiências culturais de luxo e engajamento diplomático de alto nível.'
   },
 
@@ -722,11 +722,11 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
       'London Cape Verdean Association',
       'Traditional Music Preservation Society',
       'Island Cultural Heritage Foundation',
-      'Cape Verdean Musicians Network UK',
+      'Cape Verdean Musicians Network United Kingdom',
       'Community Arts Partnership London'
     ],
     accreditation: [
-      'UK Registered Cultural Organization',
+      'United Kingdom Registered Cultural Organization',
       'Cape Verdean Ministry of Culture Partner',
       'Traditional Arts Preservation Certificate'
     ],
@@ -972,7 +972,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     ],
     accreditation: [
       'Angolan Ministry of Culture',
-      'UK Registered Cultural Organization',
+      'United Kingdom Registered Cultural Organization',
       'City of London Business Partner'
     ],
     

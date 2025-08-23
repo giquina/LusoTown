@@ -1009,6 +1009,6 @@ print(f"Cultural sensitivity score: {result.cultural_score}")
 
 **API Version:** v1.0  
 **Last Updated:** August 18, 2025  
-**Languages:** Portuguese (PT), Portuguese (BR), English (UK)
+**Languages:** Portuguese (PT), Portuguese (BR), English (United Kingdom)
 
 *© 2025 LusoTown. All rights reserved. | Todos os direitos reservados.*

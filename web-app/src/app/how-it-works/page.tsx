@@ -17,7 +17,7 @@ export default function HowItWorks() {
     {
       icon: CalendarDaysIcon,
       title: 'Real-Life Event Feed',
-      description: 'Browse live events happening at real places across London & UK. From gyms to galleries, restaurants to tours.',
+      description: 'Browse live events happening at real places across London & United Kingdom. From gyms to galleries, restaurants to tours.',
       details: [
         'See events happening at gyms, galleries, restaurants, tours & more',
         'All events are for Portuguese speakers to meet in person',
@@ -80,7 +80,7 @@ export default function HowItWorks() {
                 How Portuguese <span className="gradient-text">Gatherings</span> Work
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Join 750+ Portuguese speakers (lusófonos) meeting in real places across London & UK. Unidos pela Língua - connected through language and culture.
+                Join 750+ Portuguese speakers (lusófonos) meeting in real places across London & United Kingdom. Unidos pela Língua - connected through language and culture.
               </p>
               
               <div className="bg-white rounded-2xl p-6 shadow-lg max-w-2xl mx-auto">
@@ -91,7 +91,7 @@ export default function HowItWorks() {
                   </p>
                 </div>
                 <p className="text-gray-500 text-sm">
-                  From gyms and galleries to restaurants and tours, meet Portuguese speakers at actual locations across London & UK. All events are designed for in-person connections.
+                  From gyms and galleries to restaurants and tours, meet Portuguese speakers at actual locations across London & United Kingdom. All events are designed for in-person connections.
                 </p>
               </div>
             </motion.div>
@@ -188,7 +188,7 @@ export default function HowItWorks() {
                   Real-Life Meetups in Detail
                 </h2>
                 <p className="text-lg text-gray-600">
-                  How Portuguese speakers connect at real places across London & UK
+                  How Portuguese speakers connect at real places across London & United Kingdom
                 </p>
               </div>
               
@@ -367,7 +367,7 @@ export default function HowItWorks() {
                 Ready to Join Real-Life Portuguese Meetups?
               </h2>
               <p className="text-xl opacity-90 leading-relaxed mb-8">
-                Find Your Match among Portuguese speakers at real places across London & UK. Join gyms, galleries, restaurants, tours and more.
+                Find Your Match among Portuguese speakers at real places across London & United Kingdom. Join gyms, galleries, restaurants, tours and more.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -387,7 +387,7 @@ export default function HowItWorks() {
               </div>
               
               <p className="text-sm opacity-75 mt-6">
-                Real places, real people, real connections • Completely free • Portuguese speakers across London & UK
+                Real places, real people, real connections • Completely free • Portuguese speakers across London & United Kingdom
               </p>
             </motion.div>
           </div>

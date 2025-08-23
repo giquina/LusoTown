@@ -4,7 +4,7 @@
  * Complete implementation of Portuguese cultural matching with machine learning:
  * ✅ Cultural Compatibility ML for Portuguese heritage and saudade analysis
  * ✅ Behavioral Learning Engine that learns from successful Portuguese-speaking community connections
- * ✅ Regional Specialization AI for different Portuguese regions in UK
+ * ✅ Regional Specialization AI for different Portuguese regions in United Kingdom
  * ✅ Conversation Quality Prediction for relationship potential
  * ✅ Success Feedback Loop for continuous improvement
  * 
@@ -289,7 +289,7 @@ export class CulturalCompatibilityAI {
     }
   }
 
-  // Regional matching configurations for Portuguese diaspora in UK
+  // Regional matching configurations for Portuguese diaspora in United Kingdom
   private regionalConfigs: Record<string, RegionalMatchingConfig> = {
     'london_central': {
       region: 'Central London',
@@ -738,7 +738,7 @@ export class CulturalCompatibilityAI {
   }
 
   /**
-   * Analyze regional specialization factors for Portuguese diaspora in UK
+   * Analyze regional specialization factors for Portuguese diaspora in United Kingdom
    */
   async analyzeRegionalCompatibility(
     profile1: CulturalCompatibilityProfile,
@@ -1245,7 +1245,7 @@ export class CulturalCompatibilityAI {
     )
     if (regionDiff > 20) {
       insights.potential_challenges.push('Geographic distance may require travel commitment')
-      insights.reasoning.practical_factors.push('Different areas of residence in UK')
+      insights.reasoning.practical_factors.push('Different areas of residence in United Kingdom')
     }
 
     const heritageDiff = Math.abs(
@@ -1446,7 +1446,7 @@ export class CulturalCompatibilityAI {
 
   private inferHomelandAttachment(userProfile: any): number {
     const yearsInUK = userProfile?.years_in_uk || 0
-    return Math.max(20, 100 - (yearsInUK * 2)) // Decreases with time in UK
+    return Math.max(20, 100 - (yearsInUK * 2)) // Decreases with time in United Kingdom
   }
 
   private inferNostalgiaLevel(culturalPrefs: any): number {

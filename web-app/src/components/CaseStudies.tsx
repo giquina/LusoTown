@@ -314,7 +314,7 @@ const allCaseStudies: CaseStudy[] = [
       after: 'Combined their strengths to build a thriving consultancy serving 25+ clients across Europe',
       impact: [
         'Generated £150,000 revenue in first 6 months',
-        'Carlos gained UK business credibility and network',
+        'Carlos gained United Kingdom business credibility and network',
         'Sofia achieved entrepreneurial independence',
         'Hired 3 additional Portuguese-speaking consultants',
         'Featured in Portuguese Embassy\'s "Diaspora Success Stories"',
@@ -322,7 +322,7 @@ const allCaseStudies: CaseStudy[] = [
       ]
     },
     quotes: {
-      person1: '"Sofia understood both Portuguese work culture and London business dynamics. She helped me navigate UK partnerships I never could have secured alone."',
+      person1: '"Sofia understood both Portuguese work culture and London business dynamics. She helped me navigate United Kingdom partnerships I never could have secured alone."',
       person2: '"Carlos brought technical innovation I\'d never seen in traditional marketing. Together we created something neither could achieve individually."',
       joint: '"Our partnership works because we share values but bring different perspectives. We\'re proving Portuguese speakers can lead innovation in London\'s tech scene."'
     },
@@ -378,7 +378,7 @@ const allCaseStudies: CaseStudy[] = [
       person2: '"Isabel brought the academic rigor I needed to legitimize our cultural work. We\'re not just preserving culture - we\'re evolving it for a new generation."',
       joint: '"Through literature, we\'ve built bridges between Portugal, Brazil, and all Portuguese speakers in London. We\'re creating a cultural legacy our grandchildren will be proud of."'
     },
-    currentStatus: 'Palavras de Londres now runs 12 programs annually, has published an anthology of London Portuguese writers, and is establishing partnerships with universities in Portugal and Brazil. They\'re planning a documentary about Portuguese literary heritage in the UK.',
+    currentStatus: 'Palavras de Londres now runs 12 programs annually, has published an anthology of London Portuguese writers, and is establishing partnerships with universities in Portugal and Brazil. They\'re planning a documentary about Portuguese literary heritage in the United Kingdom.',
     icon: AcademicCapIcon
   }
 ]

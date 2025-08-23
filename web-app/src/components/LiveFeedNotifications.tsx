@@ -23,7 +23,7 @@ export default function LiveFeedNotifications() {
   const [currentNotification, setCurrentNotification] = useState<Notification | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  // Portuguese names and UK locations
+  // Portuguese names and United Kingdom locations
   const portugalMockData = [
     // Recent signups
     { type: 'signup', name: 'Sofia Pereira', location: 'Camden, London', icon: '👋', 

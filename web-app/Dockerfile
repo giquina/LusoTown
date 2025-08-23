@@ -1,4 +1,4 @@
-# LusoTown Portuguese-speaking Community Web Platform Dockerfile
+# LusoTown Portuguese-speaking community Web Platform Dockerfile
 FROM node:18-alpine AS deps
 
 # Install dependencies only when needed

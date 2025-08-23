@@ -3,7 +3,7 @@
  * Advanced Business Intelligence System for Portuguese-speaking community Platform
  * 
  * Provides market analysis, revenue optimization, and growth insights
- * specifically tailored for the Portuguese diaspora in the UK.
+ * specifically tailored for the Portuguese diaspora in the United Kingdom.
  */
 
 import { predictiveCommunityAnalytics } from '@/lib/ai/PredictiveCommunityAnalytics'
@@ -183,7 +183,7 @@ export class PortugueseBusinessIntelligence {
   }
 
   /**
-   * Analyze Portuguese market segments in the UK
+   * Analyze Portuguese market segments in the United Kingdom
    */
   public async analyzePortugueseMarket(): Promise<PortugueseMarketInsights> {
     const marketData = this.getPortugueseMarketData()
@@ -275,7 +275,7 @@ export class PortugueseBusinessIntelligence {
       culturalImpact: 92,
       implementationComplexity: 'high',
       targetSegments: ['all_segments'],
-      geographicFocus: ['UK-wide'],
+      geographicFocus: ['United Kingdom-wide'],
       culturalFactors: ['Emotional support', 'Cultural understanding', 'Mental health']
     })
 
@@ -551,7 +551,7 @@ export class PortugueseBusinessIntelligence {
 
   private getPortugueseMarketData() {
     return {
-      totalMarketSize: 25000, // Total Portuguese speakers in UK target areas
+      totalMarketSize: 25000, // Total Portuguese speakers in United Kingdom target areas
       servicedMarketSize: 3200, // Currently addressable market
       marketPenetration: 12.8 // Current platform penetration percentage
     }

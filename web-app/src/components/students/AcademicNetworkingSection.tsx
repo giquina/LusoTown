@@ -434,7 +434,7 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
   },
   {
     id: "portugal-brexit-impact",
-    title: "Portugal-UK Relations Post-Brexit: Economic and Social Impact",
+    title: "Portugal-United Kingdom Relations Post-Brexit: Economic and Social Impact",
     titlePortuguese:
       "Relações Portugal-Reino Unido Pós-Brexit: Impacto Económico e Social",
     university: "London School of Economics",
@@ -452,7 +452,7 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
     ],
     skills: ["Economic analysis", "Policy research", "Statistical analysis"],
     description:
-      "Comprehensive analysis of how Brexit has affected Portugal-UK relations across economic, social, and political dimensions.",
+      "Comprehensive analysis of how Brexit has affected Portugal-United Kingdom relations across economic, social, and political dimensions.",
     descriptionPortuguese:
       "Análise abrangente de como o Brexit afetou as relações Portugal-Reino Unido nas dimensões económica, social e política.",
     funding: true,
@@ -1159,7 +1159,7 @@ export default function AcademicNetworkingSection() {
           <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
             {language === "pt"
               ? "Conecte-se com mais de 2.150 estudantes portugueses em universidades do Reino Unido. Colabore, aprenda e cresça em conjunto."
-              : "Connect with over 2,150 Portuguese students at UK universities. Collaborate, learn, and grow together."}
+              : "Connect with over 2,150 Portuguese students at United Kingdom universities. Collaborate, learn, and grow together."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-primary-600 font-bold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">

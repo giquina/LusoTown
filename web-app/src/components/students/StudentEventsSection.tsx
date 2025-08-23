@@ -138,7 +138,7 @@ const STUDENT_EVENTS: StudentEvent[] = [
     type: 'networking',
     date: '2024-10-05',
     time: '18:00-21:00',
-    location: 'Portugal-UK Chamber of Commerce',
+    location: 'Portugal-United Kingdom Chamber of Commerce',
     price: 15,
     studentPrice: 10,
     originalPrice: 40,

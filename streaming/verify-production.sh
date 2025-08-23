@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# LusoTown Portuguese-speaking Community - Production Streaming Verification
+# LusoTown Portuguese-speaking community - Production Streaming Verification
 echo "<�<� Verifying LusoTown Portuguese Streaming Infrastructure..."
 
 # Check if environment URL is provided

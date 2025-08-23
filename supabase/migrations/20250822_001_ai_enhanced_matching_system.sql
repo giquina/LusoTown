@@ -657,12 +657,12 @@ INSERT INTO public.cultural_personalization_rules (region, content_adaptations, 
 ('london_central', '{
     "greeting_style": "Hello there",
     "cultural_references": ["Portuguese-speaking community", "cultural events", "heritage"],
-    "local_context": ["London", "UK Portuguese", "diaspora"],
+    "local_context": ["London", "United Kingdom Portuguese", "diaspora"],
     "communication_tone": "warm"
 }', '{
     "preferred_hours": [18, 19, 20],
     "cultural_events_awareness": ["Portuguese festivals", "cultural center events"],
-    "holiday_considerations": ["UK holidays", "Portuguese holidays"]
+    "holiday_considerations": ["United Kingdom holidays", "Portuguese holidays"]
 }', '{
     "heritage_importance": 0.85,
     "language_priority": 0.75,

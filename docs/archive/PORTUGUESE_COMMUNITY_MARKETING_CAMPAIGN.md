@@ -272,12 +272,12 @@ The LusoTown Team
 #### **Tier 1: Macro-Influencers (2-3 partnerships)**
 - **Budget:** £3,000-5,000 per creator
 - **Deliverables:** 4 Instagram posts + 8 Stories + 1 YouTube video
-- **Target:** Portuguese lifestyle/culture creators with 50k+ UK-based followers
+- **Target:** Portuguese lifestyle/culture creators with 50k+ United Kingdom-based followers
 
 **Ideal Creator Profile:**
 - Portuguese/Brazilian living in London 2+ years
 - Content focus: London lifestyle, Portuguese culture, food
-- Engaged audience of Portuguese speakers in UK
+- Engaged audience of Portuguese speakers in United Kingdom
 - Previous brand partnership experience
 
 #### **Tier 2: Micro-Influencers (8-10 partnerships)**

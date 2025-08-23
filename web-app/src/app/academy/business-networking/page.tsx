@@ -96,7 +96,7 @@ export default function BusinessNetworkingModule() {
             <li><strong>Hospitality & Tourism:</strong> Restaurants, hotels, and travel services</li>
             <li><strong>Healthcare & Life Sciences:</strong> Medical professionals and researchers</li>
             <li><strong>Creative Industries:</strong> Design, marketing, and digital agencies</li>
-            <li><strong>Import/Export:</strong> Trade connections between UK, Portugal, and Brazil</li>
+            <li><strong>Import/Export:</strong> Trade connections between United Kingdom, Portugal, and Brazil</li>
           </ul>
           
           <h3>Business Community Advantages:</h3>
@@ -169,7 +169,7 @@ export default function BusinessNetworkingModule() {
             <li><strong>Expertise Sharing:</strong> Offer genuine value and insights</li>
             <li><strong>Success Stories:</strong> Share achievements without boasting</li>
             <li><strong>Challenge Solutions:</strong> Discuss how you've overcome business obstacles</li>
-            <li><strong>Industry Knowledge:</strong> Demonstrate understanding of both UK and Portuguese markets</li>
+            <li><strong>Industry Knowledge:</strong> Demonstrate understanding of both United Kingdom and Portuguese markets</li>
           </ul>
           
           <h4>3. Long-term Relationship Mindset</h4>
@@ -184,7 +184,7 @@ export default function BusinessNetworkingModule() {
           <ul>
             <li>"What brought you from Portugal to London in your career?"</li>
             <li>"How has your Portuguese background influenced your business approach?"</li>
-            <li>"What opportunities do you see in connecting UK and Portuguese markets?"</li>
+            <li>"What opportunities do you see in connecting United Kingdom and Portuguese markets?"</li>
             <li>"Which Portuguese business traditions do you maintain in London?"</li>
           </ul>
         `,
@@ -499,9 +499,9 @@ export default function BusinessNetworkingModule() {
           
           <h3>Success Stories Examples:</h3>
           <ul>
-            <li><strong>Tech Entrepreneur:</strong> Created UK-Portugal startup accelerator</li>
+            <li><strong>Tech Entrepreneur:</strong> Created United Kingdom-Portugal startup accelerator</li>
             <li><strong>Restaurant Owner:</strong> Authentic Portuguese cuisine with business networking events</li>
-            <li><strong>Financial Advisor:</strong> Specialized in Portugal-UK property investment</li>
+            <li><strong>Financial Advisor:</strong> Specialized in Portugal-United Kingdom property investment</li>
             <li><strong>Marketing Agency:</strong> Focus on European market entry for British companies</li>
           </ul>
         `,
@@ -853,7 +853,7 @@ export default function BusinessNetworkingModule() {
     practicalExercises: [],
     resources: [
       {
-        title: "Portuguese Chamber of Commerce UK Events",
+        title: "Portuguese Chamber of Commerce United Kingdom Events",
         titlePortuguese: "Eventos da Câmara de Comércio Portuguesa Reino Unido",
         url: "/business-networking/chamber-events",
         type: "external",

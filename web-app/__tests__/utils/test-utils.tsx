@@ -297,18 +297,18 @@ export const culturalTestUtils = {
     })
   },
   
-  // UK-specific location terms
+  // United Kingdom-specific location terms
   ukLocationTerms: [
     'London',
     'Greater London',
     'Camden',
     'Vauxhall',
     'Kennington',
-    'UK',
+    'United Kingdom',
     'United Kingdom'
   ],
   
-  // Verify UK focus in content
+  // Verify United Kingdom focus in content
   expectUKLocationFocus: (element: HTMLElement) => {
     const hasUKReference = culturalTestUtils.ukLocationTerms.some(term => 
       element.textContent?.includes(term)

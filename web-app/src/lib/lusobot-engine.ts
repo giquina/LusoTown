@@ -547,7 +547,7 @@ export class LusoBotEngine {
   ): string {
     return language === 'pt'
       ? "A cultura empresarial portuguesa valoriza as relações pessoais, a confiança e o respeito mútuo. No Reino Unido, muitos empresários portugueses destacam-se pela criatividade e pelo 'desenrascanço'. Como posso ajudar-te no teu percurso profissional ou empresarial?"
-      : "Portuguese business culture values personal relationships, trust and mutual respect. In the UK, many Portuguese entrepreneurs stand out for their creativity and 'desenrascanço'. How can I help you in your professional or business journey?"
+      : "Portuguese business culture values personal relationships, trust and mutual respect. In the United Kingdom, many Portuguese entrepreneurs stand out for their creativity and 'desenrascanço'. How can I help you in your professional or business journey?"
   }
 
   private static generateCommunityResponse(
@@ -557,7 +557,7 @@ export class LusoBotEngine {
   ): string {
     return language === 'pt'
       ? "A comunidade de falantes de português no Reino Unido é forte, acolhedora e sempre pronta a ajudar. Seja para encontrar produtos portugueses, eventos culturais, ou simplesmente para um café e uma conversa, estamos todos ligados pela mesma herança. Como posso ajudar-te a sentires-te mais integrado na nossa comunidade?"
-      : "The Portuguese-speaking community in the UK is strong, welcoming and always ready to help. Whether to find Portuguese products, cultural events, or simply for a coffee and conversation, we're all connected by the same heritage. How can I help you feel more integrated into our community?"
+      : "The Portuguese-speaking community in the United Kingdom is strong, welcoming and always ready to help. Whether to find Portuguese products, cultural events, or simply for a coffee and conversation, we're all connected by the same heritage. How can I help you feel more integrated into our community?"
   }
 
   private static generateSuggestions(

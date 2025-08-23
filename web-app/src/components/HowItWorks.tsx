@@ -372,7 +372,7 @@ export default function HowItWorks() {
             </div>
             <div className="text-3xl font-black text-gray-800 mb-2">15+</div>
             <div className="text-sm font-bold text-gray-600 tracking-wide mb-2">
-              UK CITIES
+              United Kingdom CITIES
             </div>
             <div className="text-xs text-gray-500 italic">
               London boroughs with Portuguese communities

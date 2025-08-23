@@ -268,7 +268,7 @@ export default function SafetyCenter() {
                       <div className="bg-red-50/50 rounded-2xl p-6">
                         <h3 className="font-bold text-red-700 mb-4 text-lg flex items-center">
                           <PhoneIcon className="w-5 h-5 mr-2" />
-                          {isPortuguese ? 'Serviços de Emergência UK' : 'UK Emergency Services'}
+                          {isPortuguese ? 'Serviços de Emergência United Kingdom' : 'United Kingdom Emergency Services'}
                         </h3>
                         <div className="space-y-3 text-red-600">
                           <div className="flex items-center bg-white/80 rounded-lg p-3">
@@ -655,7 +655,7 @@ export default function SafetyCenter() {
                     <div>
                       <h4 className="font-semibold">Get Safe Online</h4>
                       <p className="text-sm">Website: getsafeonline.org</p>
-                      <p className="text-sm">UK's leading source for online safety advice</p>
+                      <p className="text-sm">United Kingdom's leading source for online safety advice</p>
                     </div>
                     <div>
                       <h4 className="font-semibold">Action Fraud</h4>

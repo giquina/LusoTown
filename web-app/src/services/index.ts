@@ -70,7 +70,7 @@ export const PortugueseServiceUtils = {
       return `+351 ${digits.slice(3, 6)} ${digits.slice(6, 9)} ${digits.slice(9)}`
     }
     
-    // UK mobile: +44 7XXX XXX XXX
+    // United Kingdom mobile: +44 7XXX XXX XXX
     if (digits.startsWith('44') && digits.length === 12) {
       return `+44 ${digits.slice(2, 6)} ${digits.slice(6, 9)} ${digits.slice(9)}`
     }

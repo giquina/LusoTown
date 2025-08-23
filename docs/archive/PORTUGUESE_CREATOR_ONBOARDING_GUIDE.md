@@ -427,7 +427,7 @@ Portugal (WET): 9h-21h, Segunda-Domingo
 #### Idiomas Disponíveis | Available Languages
 - Português (Brasil) 🇧🇷
 - Português (Portugal) 🇵🇹
-- English (UK) 🇬🇧
+- English (United Kingdom) 🇬🇧
 - Crioulos (suporte básico) 🌍
 
 ### Parcerias e Negócios | Partnerships & Business
@@ -534,7 +534,7 @@ Portugal (WET): 9h-21h, Segunda-Domingo
 
 ### Websites Úteis | Useful Websites
 - [LusoTown Creator Hub](https://creators.lusotown.com)
-- [Portuguese Business Network UK](https://pbn.org.uk)
+- [Portuguese Business Network United Kingdom](https://pbn.org.uk)
 - [Câmara de Comércio Luso-Brasileira](https://cclb.org.uk)
 - [Portuguese Cultural Centre](https://portuguese-centre.org.uk)
 

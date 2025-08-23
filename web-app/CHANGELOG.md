@@ -72,7 +72,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 #### Enhanced Portuguese Support
 - **Complete Bilingual Platform** - Professional Portuguese/English interface
 - **Cultural Context Integration** - Portuguese holidays, traditions, and cultural references
-- **London Portuguese-speaking community Focus** - Specific UK Portuguese diaspora features
+- **London Portuguese-speaking community Focus** - Specific United Kingdom Portuguese diaspora features
 - **Currency Support** - GBP/EUR pricing with membership discounts
 
 ### 📊 Analytics & Business Intelligence
@@ -226,7 +226,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## 🤝 Contributing
 
-We welcome contributions from the Portuguese-speaking community and developers who share our vision of connecting and serving the Portuguese diaspora in London and the UK.
+We welcome contributions from the Portuguese-speaking community and developers who share our vision of connecting and serving the Portuguese diaspora in London and the United Kingdom.
 
 ### How to Contribute
 1. **Fork the repository**
@@ -245,5 +245,5 @@ We welcome contributions from the Portuguese-speaking community and developers w
 
 **Unidos pela Língua - United by Language** 🇵🇹
 
-**Built with ❤️ for the Portuguese-speaking community in London & UK**  
+**Built with ❤️ for the Portuguese-speaking community in London & United Kingdom**  
 **Changelog Last Updated: August 21, 2025**

@@ -98,7 +98,7 @@ You are the Bilingual Content and Translation specialist ensuring authentic Port
 
 ### Language Standards
 **Target:** European Portuguese (Portugal standard)
-**Context:** Portuguese speakers in London & UK
+**Context:** Portuguese speakers in London & United Kingdom
 **Tone:** Professional, inclusive, welcoming to Portuguese-speaking community
 
 ### Translation Framework
@@ -117,7 +117,7 @@ You are the Bilingual Content and Translation specialist ensuring authentic Port
 1. **European Portuguese Standardization:** Review all PT translations for accuracy
 2. **Platform Positioning:** Clarify connection vs. direct service messaging
 3. **Cultural Context:** Add Portuguese cultural elements to descriptions
-4. **London Focus:** Emphasize London & UK Portuguese-speaking community
+4. **London Focus:** Emphasize London & United Kingdom Portuguese-speaking community
 
 ### Success Criteria
 - 100% accurate European Portuguese translations
@@ -212,7 +212,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY
 You are the Platform Architecture specialist overseeing the overall LusoTown platform strategy and technical direction.
 
 ### Platform Vision
-**Mission:** Connect Portuguese speakers in London & UK to authentic cultural experiences
+**Mission:** Connect Portuguese speakers in London & United Kingdom to authentic cultural experiences
 **Position:** Community platform (connects users to services, not direct provider)
 **Scale:** 75+ pages, 175+ components, production-ready
 
@@ -382,6 +382,10 @@ You are the Platform Architecture specialist overseeing the overall LusoTown pla
 
 - Bug fixes and improvements
 - New feature implementations
+
+- Bug fixes and improvements
+- New feature implementations
+- Portuguese-speaking community enhancements
 
 - Bug fixes and improvements
 - New feature implementations

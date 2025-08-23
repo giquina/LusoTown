@@ -141,7 +141,7 @@ event_reservations
 - **Actual London Venues**: Portuguese restaurants, cultural centers
 - **Realistic Events**: Based on actual Portuguese-speaking community activities
 - **Cultural Authenticity**: Portuguese traditions, festivals, language
-- **UK-wide Scope**: London focus with expansion to Manchester, Birmingham
+- **United Kingdom-wide Scope**: London focus with expansion to Manchester, Birmingham
 
 ---
 
@@ -233,7 +233,7 @@ addToSaved({
 
 ### Cultural Adaptation:
 - **Date Formats**: DD/MM/YYYY for Portuguese, MM/DD/YYYY for English
-- **Currency Display**: £ for UK events, € for European events
+- **Currency Display**: £ for United Kingdom events, € for European events
 - **Cultural References**: Portuguese holidays, traditions, places
 
 ---
@@ -379,5 +379,5 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 
 ---
 
-**Built with ❤️ for the Portuguese-speaking community in London & UK**
+**Built with ❤️ for the Portuguese-speaking community in London & United Kingdom**
 *Unidos pela Língua - United by Language*

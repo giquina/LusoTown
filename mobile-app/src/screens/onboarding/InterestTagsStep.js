@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { Colors, Spacing, Typography, CommonStyles } from '../../constants/Styles';
 
-// Interest categories perfect for Portuguese speakers in London/UK
+// Interest categories perfect for Portuguese speakers in London/United Kingdom
 const INTEREST_CATEGORIES = {
   'Portuguese Culture': [
     { id: 'fado-music', name: 'Fado Music', icon: '🎵' },
@@ -65,7 +65,7 @@ const INTEREST_CATEGORIES = {
     { id: 'portugal-visits', name: 'Portugal Visits', icon: '🇵🇹' },
     { id: 'azores-travel', name: 'Azores Travel', icon: '🌋' },
     { id: 'madeira-trips', name: 'Madeira Trips', icon: '🌺' },
-    { id: 'uk-travel', name: 'UK Travel', icon: '✈️' },
+    { id: 'uk-travel', name: 'United Kingdom Travel', icon: '✈️' },
     { id: 'weekend-getaways', name: 'Weekend Getaways', icon: '🎒' },
     { id: 'coastal-walks', name: 'Coastal Walks', icon: '🌊' },
     { id: 'historic-sites', name: 'Historic Sites', icon: '🏰' },

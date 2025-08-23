@@ -27,9 +27,9 @@ export default function About() {
       <div>
         {/* Premium PageHeader with luxury styling */}
         <PageHeader
-        title="About LusoTown UK"
+        title="About LusoTown United Kingdom"
         titlePt="Sobre LusoTown Reino Unido"
-        subtitle="LusoTown connects Portuguese speakers and friends through exciting real-life meetups across the United Kingdom. Whether you're exploring a new UK city, have roots in a Portuguese-speaking country, or simply love our vibrant culture and language, this is your space to socialize, meet amazing people in person, share unforgettable moments, and celebrate the richness of Portuguese heritage throughout Britain!"
+        subtitle="LusoTown connects Portuguese speakers and friends through exciting real-life meetups across the United Kingdom. Whether you're exploring a new United Kingdom city, have roots in a Portuguese-speaking country, or simply love our vibrant culture and language, this is your space to socialize, meet amazing people in person, share unforgettable moments, and celebrate the richness of Portuguese heritage throughout Britain!"
         subtitlePt="LusoTown conecta falantes de português e amigos através de encontros emocionantes por todo o Reino Unido. Seja novo numa cidade britânica, tenha raízes num país de língua portuguesa, ou simplesmente ame a nossa cultura vibrante e língua, este é o seu espaço para socializar, conhecer pessoas incríveis pessoalmente, partilhar momentos inesquecíveis e celebrar a riqueza da herança portuguesa por toda a Grã-Bretanha!"
         badge="Unidos pela Língua • United by Language"
         badgePt="Unidos pela Língua • Unidos pelo Idioma"
@@ -68,10 +68,10 @@ export default function About() {
                   <span className="text-premium-700 font-bold text-lg">What is LusoTown? • O que é a LusoTown?</span>
                 </motion.div>
                 <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-premium-600 via-primary-600 to-secondary-600 bg-clip-text text-transparent mb-8">
-                  Your Portuguese-speaking community Ecosystem in the UK
+                  Your Portuguese-speaking community Ecosystem in the United Kingdom
                 </h2>
                 <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
-                  LusoTown is the UK's premier digital platform designed specifically for Portuguese speakers. 
+                  LusoTown is the United Kingdom's premier digital platform designed specifically for Portuguese speakers. 
                   We're not just a social network—we're a comprehensive community ecosystem that brings together culture, 
                   commerce, entertainment, and connections for the Portuguese diaspora across Britain.
                 </p>
@@ -103,14 +103,14 @@ export default function About() {
                         icon: CalendarIcon,
                         title: "Events & Experiences",
                         titlePt: "Eventos & Experiências",
-                        description: "Discover and join authentic Portuguese events across the UK. From intimate fado nights in Stockwell to networking events in the City, experience Portuguese culture in every corner of Britain.",
+                        description: "Discover and join authentic Portuguese events across the United Kingdom. From intimate fado nights in Stockwell to networking events in the City, experience Portuguese culture in every corner of Britain.",
                         features: ["Cultural festivals & celebrations", "Professional networking events", "Food markets & restaurants", "Live music & entertainment"]
                       },
                       {
                         icon: MapPinIcon,
                         title: "LusoTown Business Directory",
                         titlePt: "Diretório de Negócios LusoTown",
-                        description: "Support and discover Portuguese-owned businesses across the UK. From restaurants and shops to professional services, keep your spending within our community while getting services in your language.",
+                        description: "Support and discover Portuguese-owned businesses across the United Kingdom. From restaurants and shops to professional services, keep your spending within our community while getting services in your language.",
                         features: ["Portuguese-speaking professionals", "Cultural restaurants & cafés", "Import shops & markets", "Community services in Portuguese"]
                       },
                       {
@@ -186,7 +186,7 @@ export default function About() {
                       The Complete Vision: Building Portuguese Britain
                     </h3>
                     <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                      Nossa visão • Our vision is to create the most comprehensive Portuguese-speaking community platform in the UK, 
+                      Nossa visão • Our vision is to create the most comprehensive Portuguese-speaking community platform in the United Kingdom, 
                       where every Portuguese speaker—from London to Edinburgh—feels connected, supported, and proud of their heritage.
                     </p>
                   </div>
@@ -200,7 +200,7 @@ export default function About() {
                             <span className="text-white text-xs font-bold">1</span>
                           </div>
                           <div>
-                            <p className="font-bold text-gray-900">Cultural Isolation in the UK</p>
+                            <p className="font-bold text-gray-900">Cultural Isolation in the United Kingdom</p>
                             <p className="text-gray-600">Many Portuguese speakers feel disconnected from their heritage and struggle to find others who understand their culture, traditions, and the unique experience of saudade.</p>
                           </div>
                         </div>
@@ -232,7 +232,7 @@ export default function About() {
                           <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                           <div>
                             <p className="font-bold text-gray-900">Instant Community Connection</p>
-                            <p className="text-gray-600">Connect immediately with 750+ verified Portuguese speakers across London and the UK, ending cultural isolation and building meaningful relationships.</p>
+                            <p className="text-gray-600">Connect immediately with 750+ verified Portuguese speakers across London and the United Kingdom, ending cultural isolation and building meaningful relationships.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -271,7 +271,7 @@ export default function About() {
                     {[
                       {
                         section: "Homepage & Feed",
-                        description: "Your central hub for Portuguese-speaking community updates, event announcements, and real-time connections with fellow Portuguese speakers across the UK.",
+                        description: "Your central hub for Portuguese-speaking community updates, event announcements, and real-time connections with fellow Portuguese speakers across the United Kingdom.",
                         benefits: "Stay informed, never miss events, connect instantly with your community"
                       },
                       {
@@ -281,12 +281,12 @@ export default function About() {
                       },
                       {
                         section: "Events Discovery",
-                        description: "Comprehensive calendar of Portuguese cultural events, from intimate fado evenings to large community festivals, professional networking, and cultural celebrations across the UK.",
+                        description: "Comprehensive calendar of Portuguese cultural events, from intimate fado evenings to large community festivals, professional networking, and cultural celebrations across the United Kingdom.",
                         benefits: "Experience authentic Portuguese culture, meet community members, preserve traditions"
                       },
                       {
                         section: "LusoTown Business Directory",
-                        description: "Complete directory of Portuguese-owned businesses and Portuguese-speaking professionals across the UK, from restaurants to legal services, all in your language.",
+                        description: "Complete directory of Portuguese-owned businesses and Portuguese-speaking professionals across the United Kingdom, from restaurants to legal services, all in your language.",
                         benefits: "Support Portuguese businesses, get services in Portuguese, strengthen community economy"
                       },
                       {
@@ -390,9 +390,9 @@ export default function About() {
                         viewport={{ once: true }}
                         className="text-lg leading-relaxed"
                       >
-                        <span className="font-bold text-premium-700">As Portuguese speakers across the UK,</span> we understand the deep connection 
+                        <span className="font-bold text-premium-700">As Portuguese speakers across the United Kingdom,</span> we understand the deep connection 
                         to our heritage and the importance of preserving our beautiful language. Whether you're 
-                        from Portugal, Brazil, Angola, or any Portuguese-speaking nation, the UK is now home.
+                        from Portugal, Brazil, Angola, or any Portuguese-speaking nation, the United Kingdom is now home.
                       </motion.p>
                       <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -650,7 +650,7 @@ export default function About() {
                     icon: UserGroupIcon,
                     title: "Community Support",
                     titlePt: "Apoio Comunitário",
-                    description: "From finding Portuguese schools to navigating UK systems, we help each other with the practical and emotional challenges of life in London as Portuguese speakers.",
+                    description: "From finding Portuguese schools to navigating United Kingdom systems, we help each other with the practical and emotional challenges of life in London as Portuguese speakers.",
                     gradient: "from-secondary-500 to-accent-500",
                     bgGradient: "from-secondary-50/80 to-accent-50/80",
                     delay: 0.6
@@ -748,7 +748,7 @@ export default function About() {
                     </div>
                     <div className="flex items-start">
                       <MapPinIcon className="w-5 h-5 text-secondary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>London-specific resources.</strong> Practical help for Portuguese speakers navigating UK life.</p>
+                      <p><strong>London-specific resources.</strong> Practical help for Portuguese speakers navigating United Kingdom life.</p>
                     </div>
                     <div className="flex items-start">
                       <HeartIcon className="w-5 h-5 text-secondary-500 mt-1 mr-3 flex-shrink-0" />
@@ -782,7 +782,7 @@ export default function About() {
                     <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
                       From the medieval courts of Afonso Henriques to today's sophisticated Portuguese aristocracy maintaining £2B+ London estates, 
                       experience the unparalleled heritage of Europe's most ancient continuous monarchy. Join London's elite Portuguese society 
-                      where royal bloodlines, ducal titles, and centuries-old noble traditions create the UK's most distinguished lusophone community.
+                      where royal bloodlines, ducal titles, and centuries-old noble traditions create the United Kingdom's most distinguished lusophone community.
                     </p>
                     <div className="bg-gradient-to-r from-premium-50 via-primary-50 to-secondary-50 rounded-2xl p-6 border border-premium-200/30">
                       <p className="text-gray-800 font-bold text-lg">👑 800+ Years Royal Heritage • 47 Monarchs • €2B+ London Real Estate • 500+ Noble Families • Exclusive Royal Networks</p>
@@ -815,7 +815,7 @@ export default function About() {
                         <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
                           The Portuguese royal legacy represents Europe's most enduring aristocratic tradition—from the founding of Portugal in 1143 
                           to today's sophisticated noble families maintaining exclusive London residences, private clubs, and cultural institutions 
-                          that define the UK's most prestigious Portuguese heritage networks.
+                          that define the United Kingdom's most prestigious Portuguese heritage networks.
                         </p>
                       </div>
                       
@@ -845,7 +845,7 @@ export default function About() {
                               </div>
                               <div className="space-y-4">
                                 <p className="text-gray-700"><strong className="text-premium-700">👑 Medieval Royal Courts:</strong> From Dom Afonso Henriques (1143) to the magnificent courts of Dom Manuel I and the Monastery of Jerónimos—Portuguese monarchy established Europe's first global empire, setting the standard for royal sophistication and cultural refinement that influences London's elite circles today.</p>
-                                <p className="text-gray-700"><strong className="text-premium-700">🏛️ Palatial Architecture:</strong> Pena Palace, Sintra's romantic castles, Mafra National Palace with 1,200 rooms—architectural masterpieces rivaling Versailles. London's Portuguese nobility maintains country estates replicating these royal designs, hosting exclusive events for UK's aristocratic elite.</p>
+                                <p className="text-gray-700"><strong className="text-premium-700">🏛️ Palatial Architecture:</strong> Pena Palace, Sintra's romantic castles, Mafra National Palace with 1,200 rooms—architectural masterpieces rivaling Versailles. London's Portuguese nobility maintains country estates replicating these royal designs, hosting exclusive events for United Kingdom's aristocratic elite.</p>
                                 <p className="text-gray-700"><strong className="text-premium-700">⭐ Noble Lineages:</strong> Houses of Braganza, Aviz, and Burgundy—ducal families whose bloodlines connect to every European royal house. Contemporary Portuguese dukes and counts maintain direct lineage to medieval monarchs, holding hereditary titles recognized by Buckingham Palace.</p>
                                 <p className="text-gray-700"><strong className="text-premium-700">🎭 Cultural Patronage:</strong> Royal sponsorship of arts created Portugal's Golden Age—from epic poetry to maritime discoveries. Today's Portuguese cultural elite continue this tradition, funding London's major museums, opera seasons, and cultural institutions with annual contributions exceeding £50M.</p>
                               </div>
@@ -909,7 +909,7 @@ export default function About() {
                           <h5 className="text-2xl font-bold text-gray-900 mb-4">Modern Aristocratic Living</h5>
                           <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
                             Experience London's most sophisticated Portuguese lifestyle where centuries-old traditions meet contemporary luxury, 
-                            creating an exclusive community that defines prestige in the UK's Portuguese-speaking elite circles.
+                            creating an exclusive community that defines prestige in the United Kingdom's Portuguese-speaking elite circles.
                           </p>
                         </div>
                         
@@ -1154,7 +1154,7 @@ export default function About() {
                           <p className="text-gray-700"><strong className="text-yellow-700">🍫 Chocolate Empire Royalty:</strong> Premium cocoa beans selling for €150+ per kilogram to London's most exclusive chocolatiers, artisanal plantations supplying Harrods and Fortnum & Mason, luxury chocolate masterclasses for £5,000+ per person, and São Toméan chocolatiers owning Bond Street boutiques charging £200+ per chocolate box, rivaling Godiva and La Maison du Chocolat.</p>
                           <p className="text-gray-700"><strong className="text-yellow-700">🏝️ Billionaire Paradise Retreats:</strong> Private volcanic islands owned by tech billionaires, eco-luxury resorts charging €20,000+ per night accessible only by helicopter, pristine biodiversity sanctuaries funded by £100M+ conservation trusts, and exclusive retreat destinations hosting London's ultra-elite for digital detox experiences worth more than Necker Island.</p>
                           <p className="text-gray-700"><strong className="text-yellow-700">🎭 Cultural Aristocracy:</strong> Sophisticated Tchiloli theatre performances for Royal Family private events, Portuguese-African cultural fusion celebrated at Buckingham Palace receptions, high arts patronage through London's elite cultural institutions, and traditional festivals recreated as exclusive £50,000+ private events for London's cultural elite.</p>
-                          <p className="text-gray-700"><strong className="text-yellow-700">🌟 Elite London Networks:</strong> Distinguished São Toméan ambassadors with direct access to Foreign Office, academics holding prestigious chairs at Imperial College and King's College London, cultural attachés managing £50M+ UK-São Tomé cultural exchange programs, and diplomatic elite maintaining sophisticated networks within London's Portuguese-speaking aristocracy.</p>
+                          <p className="text-gray-700"><strong className="text-yellow-700">🌟 Elite London Networks:</strong> Distinguished São Toméan ambassadors with direct access to Foreign Office, academics holding prestigious chairs at Imperial College and King's College London, cultural attachés managing £50M+ United Kingdom-São Tomé cultural exchange programs, and diplomatic elite maintaining sophisticated networks within London's Portuguese-speaking aristocracy.</p>
                         </div>
                       </div>
                     </motion.div>
@@ -1206,7 +1206,7 @@ export default function About() {
                           <p className="text-gray-700"><strong className="text-pink-700">🎰 Gaming Capital:</strong> World's largest gambling revenue center, luxury casino resorts, high-roller entertainment, and elite gaming culture connecting Macanese professionals with London's financial and entertainment elite.</p>
                           <p className="text-gray-700"><strong className="text-pink-700">🏛️ Portuguese Elegance:</strong> UNESCO World Heritage colonial architecture, sophisticated Portuguese-Chinese cultural fusion, elegant historic preservation, and refined aesthetic traditions maintaining prestige in London's cultural circles.</p>
                           <p className="text-gray-700"><strong className="text-pink-700">🍽️ Culinary Excellence:</strong> Michelin-starred restaurants, fusion haute cuisine, world-renowned culinary traditions, and Macanese chefs operating London's most exclusive Portuguese-Asian fusion establishments and luxury dining experiences.</p>
-                          <p className="text-gray-700"><strong className="text-pink-700">💼 Elite Networks:</strong> Wealthy Macanese professionals in London's financial district, luxury hospitality sector, gaming industry connections, and sophisticated business networks linking Asia's wealthiest Portuguese-speaking elite with UK markets.</p>
+                          <p className="text-gray-700"><strong className="text-pink-700">💼 Elite Networks:</strong> Wealthy Macanese professionals in London's financial district, luxury hospitality sector, gaming industry connections, and sophisticated business networks linking Asia's wealthiest Portuguese-speaking elite with United Kingdom markets.</p>
                         </div>
                       </div>
                     </motion.div>
@@ -1297,7 +1297,7 @@ export default function About() {
                         <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
                           Access London's most exclusive Portuguese-speaking elite circles where aristocratic families, business magnates, 
                           and cultural leaders maintain private clubs, luxury venues, and sophisticated networks that define prestige 
-                          within the UK's distinguished lusophone community.
+                          within the United Kingdom's distinguished lusophone community.
                         </p>
                       </div>
                       
@@ -1744,7 +1744,7 @@ export default function About() {
                 JOIN NOW
               </a>
               <p className="text-gray-500 text-sm mt-4">
-                Free to join • Immediate access • UK Portuguese-speaking community
+                Free to join • Immediate access • United Kingdom Portuguese-speaking community
               </p>
             </div>
           </div>

@@ -2,14 +2,14 @@
 
 export type RegionConfig = {
   code: "uk";
-  labelShort: "U.K.";
+  labelShort: "United Kingdom.";
   labelLong: "United Kingdom";
   emoji: "🇬🇧";
 };
 
 export const REGION: RegionConfig = {
   code: "uk",
-  labelShort: "U.K.",
+  labelShort: "United Kingdom.",
   labelLong: "United Kingdom",
   emoji: "🇬🇧",
 } as const;

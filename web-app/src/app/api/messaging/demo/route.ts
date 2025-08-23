@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
               first_name: 'Maria',
               last_name: 'Silva',
               profile_picture_url: '/images/avatars/maria.jpg',
-              location: 'London, UK',
+              location: 'London, United Kingdom',
               verification_status: 'verified'
             },
             last_message: {
@@ -58,7 +58,7 @@ export async function GET(request: NextRequest) {
               first_name: 'João',
               last_name: 'Santos',
               profile_picture_url: '/images/avatars/joao.jpg',
-              location: 'London, UK',
+              location: 'London, United Kingdom',
               verification_status: 'verified'
             },
             last_message: {
@@ -83,7 +83,7 @@ export async function GET(request: NextRequest) {
               first_name: 'Ana',
               last_name: 'Costa',
               profile_picture_url: '/images/avatars/ana.jpg',
-              location: 'London, UK',
+              location: 'London, United Kingdom',
               verification_status: 'verified'
             },
             last_message: {
@@ -184,7 +184,7 @@ export async function GET(request: NextRequest) {
               first_name: 'Maria',
               last_name: 'Silva',
               profile_picture_url: '/images/avatars/maria.jpg',
-              location: 'London, UK',
+              location: 'London, United Kingdom',
               membership_tier: 'community'
             }
           },
@@ -203,7 +203,7 @@ export async function GET(request: NextRequest) {
               first_name: 'Ana',
               last_name: 'Costa',
               profile_picture_url: '/images/avatars/ana.jpg',
-              location: 'London, UK',
+              location: 'London, United Kingdom',
               membership_tier: 'cultural_ambassador'
             }
           }

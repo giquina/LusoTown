@@ -544,5 +544,5 @@ node scripts/validate-portuguese-content.js
 
 ---
 
-**Built with ❤️ for the Portuguese-speaking community in London & UK**  
+**Built with ❤️ for the Portuguese-speaking community in London & United Kingdom**  
 **Developer Setup Guide v1.0.0 | Last Updated: August 2025**

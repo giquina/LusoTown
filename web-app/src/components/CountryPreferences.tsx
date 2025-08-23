@@ -102,7 +102,7 @@ export default function CountryPreferences({
             </p>
             {showDiasporaInfo && country.diasporaSize && (
               <p className="text-xs text-primary-600 mt-1">
-                {country.diasporaSize} {isPortuguese ? 'no Reino Unido' : 'in UK'}
+                {country.diasporaSize} {isPortuguese ? 'no Reino Unido' : 'in United Kingdom'}
               </p>
             )}
           </div>
