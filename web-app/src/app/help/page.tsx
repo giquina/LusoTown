@@ -3,6 +3,7 @@ import { ROUTES } from "@/config/routes";
 import Footer from "@/components/Footer";
 import { plans, formatPrice } from "@/config/pricing";
 import { contactInfo } from "@/config/contact";
+import { getTailwindColorHex } from "@/utils/framer-colors";
 import {
   QuestionMarkCircleIcon,
   ChatBubbleLeftRightIcon,
@@ -273,7 +274,12 @@ export default function HelpCenter() {
                     className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
                   >
                     <div
-                      className={`w-12 h-12 bg-${channel.color}-100 text-${channel.color}-600 rounded-xl flex items-center justify-center mb-4`}
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
+                        channel.color === 'primary' ? 'bg-primary-100 text-primary-600' :
+                        channel.color === 'red' ? 'bg-red-100 text-red-600' :
+                        channel.color === 'blue' ? 'bg-blue-100 text-blue-600' :
+                        'bg-gray-100 text-gray-600'
+                      }`}
                     >
                       <channel.icon className="w-6 h-6" />
                     </div>

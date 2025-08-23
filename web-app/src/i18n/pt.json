@@ -3237,5 +3237,9 @@
   "elite.performance.good": "Bom",
   "elite.performance.needs_improvement": "Precisa Melhorar",
   "elite.performance.load_time": "tempo de carregamento",
-  "elite.performance.community_performance": "para a comunidade portuguesa"
+  "elite.performance.community_performance": "para a comunidade portuguesa",
+
+  "match_how_it_works.badge": "Encontre o Seu Match Português",
+  "match_how_it_works.subtitle": "Conecte-se com falantes de português que realmente entendem a sua cultura e valores no Reino Unido",
+  "match_how_it_works.quote": "Finalmente encontrei alguém que se emociona durante o Fado e celebra o Natal no dia 24 de dezembro sem precisar explicar!"
 }

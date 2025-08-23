@@ -2652,5 +2652,9 @@
   "elite.performance.good": "Good",
   "elite.performance.needs_improvement": "Needs Improvement",
   "elite.performance.load_time": "load time",
-  "elite.performance.community_performance": "for the Portuguese community"
+  "elite.performance.community_performance": "for the Portuguese community",
+
+  "match_how_it_works.badge": "Meet Your Portuguese Match",
+  "match_how_it_works.subtitle": "Connect with Portuguese speakers who truly understand your culture and values across the UK",
+  "match_how_it_works.quote": "Finally found someone who gets emotional during Fado and celebrates Christmas on December 24th without explanation!"
 }

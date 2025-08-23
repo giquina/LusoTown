@@ -193,6 +193,18 @@ export const ACCESSIBILITY_COLORS = {
   info: '#3B82F6'
 };
 
+// Tailwind Color Hex Values for Framer Motion
+export const TAILWIND_COLORS = {
+  'text-red-600': '#dc2626',
+  'text-green-600': '#16a34a',
+  'text-blue-600': '#2563eb',
+  'text-yellow-600': '#ca8a04',
+  'text-orange-600': '#ea580c',
+  'text-purple-600': '#9333ea',
+  'text-pink-600': '#db2777',
+  'text-gray-600': '#4b5563'
+};
+
 // Semantic Color System
 export const SEMANTIC_COLORS = {
   // Text colors

@@ -8,17 +8,71 @@ import { getImagesByCategory, getImageWithFallback, getAltTextWithFallback } fro
 import { useLanguage } from '@/context/LanguageContext'
 import { createMixedTestimonials, getTestimonialText, authenticPortugueseTestimonials } from '@/lib/testimonialMixer'
 
-// Combined testimonials with language indicators for mixed display
+// Curated testimonials - Shortened and focused on LusoTown features
 const allTestimonials = [
-  // Authentic Portuguese testimonials (always displayed in Portuguese)
-  ...authenticPortugueseTestimonials.community.map(t => ({
-    ...t,
-    id: `auth-pt-${t.name.toLowerCase().replace(/\s+/g, '-')}`,
+  // Portuguese testimonials (70%) - Shortened and LusoTown-focused
+  {
+    id: "fernanda-oliveira",
+    name: "Fernanda Oliveira",
+    age: "31",
+    location: "Stockwell, Londres",
+    imageId: "fernanda-oliveira",
+    quote: "Através da LusoTown descobri eventos de fado e organizamos saraus mensais. É como ter Portugal em Londres!",
+    rating: 5,
+    relationship: "Organizadora de Eventos Culturais",
     language: 'pt' as const,
     isAuthentic: true
-  })),
+  },
+  {
+    id: "marco-santos", 
+    name: "Marco Santos",
+    age: "28",
+    location: "Bermondsey, Londres",
+    imageId: "marco-santos",
+    quote: "A LusoTown ajudou-me a encontrar brasileiros e portugueses que amam samba. Temos roda de samba aos domingos!",
+    rating: 5,
+    relationship: "Músico Brasileiro",
+    language: 'pt' as const,
+    isAuthentic: true
+  },
+  {
+    id: "catarina-lopes",
+    name: "Catarina Lopes", 
+    age: "35",
+    location: "Nine Elms, Londres",
+    imageId: "catarina-lopes",
+    quote: "Organizamos workshops de português para crianças. Ver os pequenos cantar em português é a minha alegria!",
+    rating: 5,
+    relationship: "Educadora Luso-Britânica",
+    language: 'pt' as const,
+    isAuthentic: true
+  },
+  {
+    id: "joao-pereira",
+    name: "João Pereira",
+    age: "42", 
+    location: "Camden, Londres",
+    imageId: "joao-pereira",
+    quote: "Na LusoTown encontrei cabo-verdianos e portugueses. Organizamos noites de música crioula juntos!",
+    rating: 5,
+    relationship: "Músico Cabo-verdiano",
+    language: 'pt' as const,
+    isAuthentic: true
+  },
+  {
+    id: "adelaide-silva",
+    name: "Adelaide Silva",
+    age: "39",
+    location: "Brixton, Londres", 
+    imageId: "adelaide-silva",
+    quote: "Conheci mulheres angolanas e brasileiras em finanças. Criámos um grupo de networking profissional!",
+    rating: 5,
+    relationship: "Consultora Angolana",
+    language: 'pt' as const,
+    isAuthentic: true
+  },
   
-  // Limited English testimonials from Portuguese speakers (30% total)
+  // English testimonials (30%) - Shortened and feature-focused  
   {
     id: "sofia-costa",
     name: "Sofia Costa",
@@ -26,42 +80,27 @@ const allTestimonials = [
     location: "Greenwich, London",
     locationPortuguese: "Greenwich, Londres",
     imageId: "sofia-costa",
-    quote: "As a Portuguese professional in London, I struggled to find networking events that understood nossa cultura. Through LusoTown I discovered 'Negócios & Networking' meetups where we discuss business opportunities while sharing pastéis de nata. Building professional relationships while preserving our Portuguese identity!",
-    text: "As a Portuguese professional in London, I struggled to find networking events that understood nossa cultura. Through LusoTown I discovered 'Negócios & Networking' meetups where we discuss business opportunities while sharing pastéis de nata. Building professional relationships while preserving our Portuguese identity!",
-    textPortuguese: "Como profissional portuguesa em Londres, lutava para encontrar eventos de networking que entendessem nossa cultura. Através da LusoTown descobri meetups 'Negócios & Networking' onde discutimos oportunidades de negócio enquanto partilhamos pastéis de nata. Construindo relações profissionais preservando nossa identidade!",
+    quote: "LusoTown's business networking events help me connect with Portuguese professionals while sharing pastéis de nata!",
+    text: "LusoTown's business networking events help me connect with Portuguese professionals while sharing pastéis de nata!",
+    textPortuguese: "Os eventos de networking da LusoTown ajudam-me a conectar com profissionais portugueses partilhando pastéis de nata!",
     rating: 5,
     relationship: "Portuguese Business Professional",
-    relationshipPortuguese: "Profissional Portuguesa de Negócios",
+    relationshipPortuguese: "Profissional Portuguesa",
     language: 'en' as const
   },
   {
-    id: "paulo-rodrigues",
+    id: "paulo-rodrigues", 
     name: "Paulo Rodrigues",
     age: "34",
-    location: "Canary Wharf, London",
+    location: "Canary Wharf, London", 
     locationPortuguese: "Canary Wharf, Londres",
     imageId: "paulo-rodrigues",
-    quote: "Moving from São Paulo to London was challenging until I found the Brazilian community through LusoTown. Nossa saudade disappeared when we started organizing churrasco weekends in London parks. Now we have a strong rede de apoio of Brazilian families helping each other succeed in the UK!",
-    text: "Moving from São Paulo to London was challenging until I found the Brazilian community through LusoTown. Nossa saudade disappeared when we started organizing churrasco weekends in London parks. Now we have a strong rede de apoio of Brazilian families helping each other succeed in the UK!",
-    textPortuguese: "Mudar de São Paulo para Londres foi desafiador até encontrar a comunidade brasileira através da LusoTown. Nossa saudade desapareceu quando começámos a organizar fins de semana de churrasco nos parques de Londres. Agora temos uma forte rede de apoio de famílias brasileiras ajudando-se mutuamente a ter sucesso no Reino Unido!",
+    quote: "Found my Brazilian community through LusoTown. Now we organize churrasco weekends in London parks!",
+    text: "Found my Brazilian community through LusoTown. Now we organize churrasco weekends in London parks!",
+    textPortuguese: "Encontrei minha comunidade brasileira na LusoTown. Agora organizamos churrascos nos parques!",
     rating: 5,
     relationship: "Brazilian Community Organizer",
-    relationshipPortuguese: "Organizador da Comunidade Brasileira",
-    language: 'en' as const
-  },
-  {
-    id: "ines-ferreira",
-    name: "Inês Ferreira",
-    age: "31",
-    location: "Hampstead, London",
-    locationPortuguese: "Hampstead, Londres",
-    imageId: "ines-ferreira",
-    quote: "From Madeira to London, I missed our traditional festivals until LusoTown helped me connect with other madeirenses. We now celebrate Festa da Flor and Festa do Vinho in London community halls, maintaining our island traditions while building new friendships. As ilhas podem estar longe, mas o coração está presente!",
-    text: "From Madeira to London, I missed our traditional festivals until LusoTown helped me connect with other madeirenses. We now celebrate Festa da Flor and Festa do Vinho in London community halls, maintaining our island traditions while building new friendships. As ilhas podem estar longe, mas o coração está presente!",
-    textPortuguese: "Da Madeira para Londres, sentia falta dos nossos festivais tradicionais até a LusoTown me ajudar a conectar com outros madeirenses. Agora celebramos Festa da Flor e Festa do Vinho em salas comunitárias de Londres, mantendo tradições insulares enquanto construímos novas amizades. As ilhas podem estar longe, mas o coração está presente!",
-    rating: 5,
-    relationship: "Madeiran Cultural Organizer",
-    relationshipPortuguese: "Organizadora Cultural Madeirense",
+    relationshipPortuguese: "Organizador Brasileiro", 
     language: 'en' as const
   }
 ]
