@@ -39,7 +39,8 @@ export function MobileCriticalFixes({
     touchTargetsApplied: 0,
     portugueseTextOptimized: 0,
     performanceEnhanced: 0,
-    accessibilityFixed: 0
+    accessibilityFixed: 0,
+    scrollSensitivityFixed: 0
   });
 
   const { language } = useLanguage();
@@ -206,6 +207,83 @@ export function MobileCriticalFixes({
     setFixes(prev => ({ ...prev, accessibilityFixed: fixes }));
   }, [language, colors.primary]);
 
+  // Critical Fix 5: Mobile Scroll Sensitivity and Touch Interaction
+  const applyScrollSensitivityFixes = useCallback(() => {
+    if (!deviceInfo.isTouch || !deviceInfo.isMobile) return;
+
+    let fixedElements = 0;
+
+    // Fix scroll sensitivity issues by preventing accidental clicks during scroll
+    let isScrolling = false;
+    let touchStartTime = 0;
+    let touchStartY = 0;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartTime = Date.now();
+      touchStartY = e.touches[0].clientY;
+      isScrolling = false;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      const touchMoveY = e.touches[0].clientY;
+      const deltaY = Math.abs(touchMoveY - touchStartY);
+      
+      // If user moved more than 10px vertically, consider it scrolling
+      if (deltaY > 10) {
+        isScrolling = true;
+      }
+    };
+
+    // Prevent click events during scroll
+    const preventScrollClicks = (e: Event) => {
+      const touchDuration = Date.now() - touchStartTime;
+      
+      // If user was scrolling or touch was too brief (likely accidental), prevent click
+      if (isScrolling || touchDuration < 100) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+
+    // Apply to all interactive elements
+    const interactiveElements = document.querySelectorAll('button, a, [role="button"], [onclick], input[type="submit"], input[type="button"]');
+    
+    interactiveElements.forEach((element) => {
+      if (element instanceof HTMLElement) {
+        // Remove existing listeners if any
+        element.removeEventListener('touchstart', handleTouchStart);
+        element.removeEventListener('touchmove', handleTouchMove);
+        element.removeEventListener('click', preventScrollClicks);
+        
+        // Add improved touch handling
+        element.addEventListener('touchstart', handleTouchStart, { passive: true });
+        element.addEventListener('touchmove', handleTouchMove, { passive: true });
+        element.addEventListener('click', preventScrollClicks, { capture: true });
+        
+        // Add visual feedback for better UX
+        element.style.webkitTapHighlightColor = 'rgba(59, 130, 246, 0.1)';
+        element.style.tapHighlightColor = 'rgba(59, 130, 246, 0.1)';
+        
+        // Improve touch responsiveness
+        element.style.touchAction = 'manipulation';
+        
+        fixedElements++;
+      }
+    });
+
+    // Add global scroll improvement
+    document.body.style.touchAction = 'pan-y pan-x';
+    document.body.style.webkitOverflowScrolling = 'touch';
+    
+    // Improve scroll physics on iOS
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+      document.body.style.webkitOverflowScrolling = 'touch';
+      document.body.style.overflowScrolling = 'touch';
+    }
+
+    setFixes(prev => ({ ...prev, scrollSensitivityFixed: fixedElements }));
+  }, [deviceInfo.isTouch, deviceInfo.isMobile]);
+
   // Device detection and initialization
   useEffect(() => {
     const detectDevice = () => {
@@ -247,12 +325,13 @@ export function MobileCriticalFixes({
   useEffect(() => {
     if (deviceInfo.viewport.width > 0) {
       // Apply fixes in order of priority
+      applyScrollSensitivityFixes(); // Apply first to prevent touch conflicts
       applyPortugueseTextFixes();
       applyTouchTargetFixes();
       applyPerformanceFixes();
       applyAccessibilityFixes();
     }
-  }, [deviceInfo, applyPortugueseTextFixes, applyTouchTargetFixes, applyPerformanceFixes, applyAccessibilityFixes]);
+  }, [deviceInfo, applyScrollSensitivityFixes, applyPortugueseTextFixes, applyTouchTargetFixes, applyPerformanceFixes, applyAccessibilityFixes]);
 
   // Add critical CSS variables for Portuguese community mobile experience
   useEffect(() => {
@@ -276,6 +355,7 @@ export function MobileCriticalFixes({
           transition={{ delay: 1 }}
         >
           <div>📱 Mobile Fixes Applied:</div>
+          <div>Scroll Sensitivity: {fixes.scrollSensitivityFixed}</div>
           <div>Portuguese Text: {fixes.portugueseTextOptimized}</div>
           <div>Touch Targets: {fixes.touchTargetsApplied}</div>
           <div>Performance: {fixes.performanceEnhanced}</div>
@@ -293,10 +373,18 @@ export function MobileCriticalFixes({
         <style jsx global>{`
           /* Critical mobile fixes for Portuguese community */
           @media (max-width: 768px) {
-            /* Prevent horizontal scrolling */
+            /* Prevent horizontal scrolling and improve scroll behavior */
             body {
               overflow-x: hidden;
               -webkit-text-size-adjust: 100%;
+              -webkit-overflow-scrolling: touch;
+              touch-action: pan-y pan-x;
+              scroll-behavior: smooth;
+            }
+
+            /* Improve scroll momentum on iOS */
+            html {
+              -webkit-overflow-scrolling: touch;
             }
 
             /* Portuguese text optimization */
@@ -305,11 +393,25 @@ export function MobileCriticalFixes({
               hyphens: auto;
             }
 
-            /* Touch target enforcement */
+            /* Touch target enforcement with improved touch behavior */
             button, a[href], input, select, textarea, [role="button"] {
               min-height: var(--touch-target-min, 44px);
               min-width: var(--touch-target-min, 44px);
               margin: var(--touch-spacing-min, 8px) 0;
+              touch-action: manipulation;
+              -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+              tap-highlight-color: rgba(59, 130, 246, 0.1);
+            }
+
+            /* Prevent accidental clicks while scrolling */
+            .scrolling * {
+              pointer-events: none !important;
+            }
+
+            /* Improve scroll areas */
+            .overflow-scroll, .overflow-y-auto, .overflow-x-auto {
+              -webkit-overflow-scrolling: touch;
+              scroll-behavior: smooth;
             }
 
             /* Portuguese cultural colors */

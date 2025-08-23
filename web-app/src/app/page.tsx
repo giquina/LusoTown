@@ -64,7 +64,9 @@ import {
   BookmarkIcon,
   AcademicCapIcon,
   BriefcaseIcon,
-  HomeIcon
+  HomeIcon,
+  HeartIcon,
+  MapPinIcon
 } from '@heroicons/react/24/outline'
 
 // Page-specific structured data for Portuguese social calendar
@@ -87,6 +89,83 @@ export default function Home() {
       <main className="min-h-screen w-full overflow-x-hidden" role="main">
         <div className="pt-24 w-full">
           <Hero />
+          
+          {/* Mobile Quick Actions - Only show on mobile */}
+          <section className="md:hidden bg-white py-6 border-b border-gray-100" aria-label="Quick actions for mobile users">
+            <div className="container mx-auto px-4">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-lg font-bold text-gray-900">Quick Start</h2>
+                <div className="text-xs text-gray-500 bg-gradient-to-r from-secondary-100 to-accent-100 px-3 py-1 rounded-full">
+                  Most Popular
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-3 mb-4">
+                {/* Free Matching - Most popular */}
+                <a
+                  href="/matches"
+                  className="group bg-gradient-to-br from-secondary-50 to-accent-50 border border-secondary-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all duration-200 active:scale-95"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 bg-gradient-to-br from-secondary-500 to-action-500 rounded-lg flex items-center justify-center">
+                      <HeartIcon className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="text-green-600 text-xs font-bold bg-green-100 px-2 py-1 rounded-full">FREE</div>
+                  </div>
+                  <div className="text-sm font-semibold text-gray-900 mb-1">Find Your Match</div>
+                  <div className="text-xs text-gray-600">Portuguese speakers near you</div>
+                </a>
+
+                {/* Events */}
+                <a
+                  href={ROUTES.events}
+                  className="group bg-gradient-to-br from-primary-50 to-secondary-50 border border-primary-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all duration-200 active:scale-95"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+                      <CalendarDaysIcon className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="text-blue-600 text-xs font-bold bg-blue-100 px-2 py-1 rounded-full">£5+</div>
+                  </div>
+                  <div className="text-sm font-semibold text-gray-900 mb-1">Events</div>
+                  <div className="text-xs text-gray-600">Fado nights & more</div>
+                </a>
+              </div>
+
+              {/* Secondary Actions Row */}
+              <div className="flex gap-2 text-center">
+                <a
+                  href={ROUTES.feed}
+                  className="flex-1 bg-gray-50 border border-gray-200 rounded-xl p-3 hover:bg-gray-100 transition-colors active:scale-95"
+                >
+                  <RssIcon className="w-5 h-5 text-coral-500 mx-auto mb-1" />
+                  <div className="text-xs font-medium text-gray-700">Feed</div>
+                </a>
+                <a
+                  href="/tours"
+                  className="flex-1 bg-gray-50 border border-gray-200 rounded-xl p-3 hover:bg-gray-100 transition-colors active:scale-95"
+                >
+                  <MapPinIcon className="w-5 h-5 text-accent-500 mx-auto mb-1" />
+                  <div className="text-xs font-medium text-gray-700">Tours</div>
+                </a>
+                <a
+                  href={ROUTES.saved}
+                  className="flex-1 bg-gray-50 border border-gray-200 rounded-xl p-3 hover:bg-gray-100 transition-colors active:scale-95"
+                >
+                  <BookmarkIcon className="w-5 h-5 text-action-500 mx-auto mb-1" />
+                  <div className="text-xs font-medium text-gray-700">Saved</div>
+                </a>
+                <a
+                  href={ROUTES.host}
+                  className="flex-1 bg-gray-50 border border-gray-200 rounded-xl p-3 hover:bg-gray-100 transition-colors active:scale-95"
+                >
+                  <BriefcaseIcon className="w-5 h-5 text-premium-500 mx-auto mb-1" />
+                  <div className="text-xs font-medium text-gray-700">Host</div>
+                </a>
+              </div>
+            </div>
+          </section>
+
           <CoreFeaturesShowcase />
           <TestimonialsNew />
           <HowItWorks />
@@ -325,6 +404,26 @@ export default function Home() {
           
           <CTA />
           <Footer />
+        </div>
+        
+        {/* Mobile Floating Action Button - Only show on mobile */}
+        <div className="md:hidden fixed bottom-20 right-4 z-40">
+          <button
+            onClick={() => window.location.href = '/matches'}
+            className="group w-14 h-14 bg-gradient-to-br from-secondary-600 to-action-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center active:scale-95"
+            aria-label="Find your Portuguese match"
+          >
+            <HeartIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
+              <span className="text-xs font-bold text-white">!</span>
+            </div>
+          </button>
+          
+          {/* Tooltip */}
+          <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-xs px-3 py-2 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+            Find matches - FREE
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-0 h-0 border-l-[6px] border-l-gray-900 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent"></div>
+          </div>
         </div>
         
         {/* Cross-Platform Engagement Triggers */}

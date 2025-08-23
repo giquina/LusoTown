@@ -217,16 +217,24 @@ export default function UserTypeSelection() {
           className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md"
       onClick={closeAndRemember}
         >
-          {/* Mobile Layout */}
-          <div className="md:hidden flex items-center justify-center min-h-full p-4">
+          {/* Mobile Layout - Fixed positioning and accessibility */}
+          <div className="md:hidden flex items-center justify-center min-h-full p-4 py-8">
             <motion.div
               initial={{ y: 50, opacity: 0, scale: 0.95 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 30, opacity: 0, scale: 0.95 }}
               transition={{ type: "spring", duration: 0.6 }}
-              className="bg-white w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden max-h-[85vh] flex flex-col"
+              className="bg-white w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden max-h-[85vh] flex flex-col relative"
               onClick={(e) => e.stopPropagation()}
             >
+              {/* Floating Close Button - Always visible on mobile */}
+              <button
+                aria-label="Close welcome popup"
+                onClick={closeAndRemember}
+                className="absolute top-3 right-3 z-20 p-2.5 rounded-full bg-gray-900/80 hover:bg-gray-900 transition-all duration-200 shadow-xl backdrop-blur-sm"
+              >
+                <XMarkIcon className="h-5 w-5 text-white" />
+              </button>
               {/* Mobile Header */}
               <div className="relative px-6 pt-8 pb-6 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
                 <motion.div 
@@ -244,7 +252,7 @@ export default function UserTypeSelection() {
                 <button
                   aria-label="Close"
                   onClick={closeAndRemember}
-                  className="absolute top-4 right-4 p-2 rounded-full bg-white/80 hover:bg-white transition-all duration-200 shadow-lg"
+                  className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/90 hover:bg-white transition-all duration-200 shadow-lg backdrop-blur-sm border border-gray-200"
                 >
                   <XMarkIcon className="h-5 w-5 text-gray-600" />
                 </button>
@@ -282,8 +290,8 @@ export default function UserTypeSelection() {
               </div>
 
               {/* Mobile Options */}
-              <div className="flex-1 p-4 overflow-hidden">
-                <div className="space-y-3">
+              <div className="flex-1 p-4 overflow-y-auto min-h-0">
+                <div className="space-y-3 pb-2">
                   {t.options.map((option, index) => (
                     <motion.button
                       key={option.title}
