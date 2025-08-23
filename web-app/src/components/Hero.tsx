@@ -18,6 +18,7 @@ import { plans, formatPrice } from "@/config/pricing";
 import { ROUTES } from "@/config/routes";
 import { motion, AnimatePresence } from "framer-motion";
 import { LuxuryRipple } from "./LuxuryMobileInteraction";
+import MobileOptimizedCard from "./MobileOptimizedCard";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -61,7 +62,7 @@ export default function Hero() {
               <div className="flex items-center gap-1">
                 <span className="text-xs">🇵🇹</span>
                 <span className="text-xs font-semibold text-gray-700">
-      United Kingdom Portuguese-speaking community
+      United Kingdom Portuguese-speaking Community
                 </span>
               </div>
               <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
@@ -339,7 +340,7 @@ export default function Hero() {
                 {/* Header Section */}
                 <div className="text-center space-y-4">
                   <h3 className="text-2xl font-bold text-gray-800">
-                    Join the Portuguese-speaking community
+                    Join the Portuguese-speaking Community
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
                     From {formatPrice(plans.community.monthly)}/month - Connect

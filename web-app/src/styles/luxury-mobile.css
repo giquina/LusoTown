@@ -594,15 +594,49 @@
   .luxury-modal-content {
     margin: var(--luxury-space-md);
     border-radius: 20px;
+    max-height: 85vh;
+    overflow-y: auto;
   }
   
   .luxury-fab {
     bottom: 80px; /* Account for mobile navigation */
+    right: 16px;
   }
   
   .luxury-card {
     margin: var(--luxury-space-sm);
     border-radius: 16px;
+  }
+  
+  /* Portuguese text mobile optimizations */
+  .luxury-btn-primary,
+  .luxury-btn-secondary {
+    font-size: 15px;
+    padding: var(--luxury-space-md) var(--luxury-space-lg);
+    min-height: var(--luxury-touch-primary);
+  }
+  
+  /* Mobile form optimizations for Portuguese content */
+  .luxury-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: var(--luxury-space-md);
+  }
+  
+  /* Mobile navigation touch targets */
+  .luxury-nav-item {
+    min-height: var(--luxury-touch-primary);
+    padding: var(--luxury-space-md) var(--luxury-space-sm);
+  }
+  
+  /* Portuguese text scaling on mobile */
+  .portuguese-content {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .portuguese-title {
+    font-size: 18px;
+    line-height: 1.3;
   }
 }
 
@@ -656,6 +690,150 @@
   }
 }
 
+/* Portuguese Text Length Handling */
+.portuguese-text-container {
+  /* Portuguese text is typically 20-30% longer than English */
+  --text-scale-factor: 1.25;
+}
+
+.portuguese-btn-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .portuguese-btn-text {
+    font-size: 14px;
+  }
+  
+  .portuguese-nav-label {
+    font-size: 11px;
+    max-width: 60px;
+    text-align: center;
+  }
+}
+
+/* Portuguese Character Support */
+.portuguese-input {
+  font-feature-settings: 'liga' 1, 'calt' 1, 'ccmp' 1;
+  text-rendering: optimizeLegibility;
+}
+
+.portuguese-input::placeholder {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* Mobile Portuguese Text Scaling */
+@media (max-width: 475px) {
+  .portuguese-responsive-text {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  .portuguese-responsive-title {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  
+  .portuguese-responsive-heading {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+}
+
+@media (min-width: 476px) and (max-width: 640px) {
+  .portuguese-responsive-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .portuguese-responsive-title {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  
+  .portuguese-responsive-heading {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+}
+
+/* Mobile Touch Gestures for Portuguese Content */
+.portuguese-swipe-hint {
+  position: relative;
+}
+
+.portuguese-swipe-hint::after {
+  content: '👈 Deslizar';
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portuguese-swipe-hint:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .portuguese-swipe-hint::after {
+    content: '👈';
+    font-size: 14px;
+  }
+}
+
+/* Portuguese Cultural Loading States */
+.portuguese-loading {
+  background: linear-gradient(90deg, 
+    rgba(197, 40, 47, 0.1) 0%, 
+    rgba(255, 215, 0, 0.2) 50%, 
+    rgba(0, 168, 89, 0.1) 100%);
+  background-size: 200% 100%;
+  animation: portugueseShimmer 2s linear infinite;
+}
+
+@keyframes portugueseShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Mobile Form Adaptations for Portuguese */
+.portuguese-form-mobile {
+  --form-padding: 16px;
+  --input-height: 56px;
+  --button-height: 56px;
+}
+
+.portuguese-form-mobile .luxury-input {
+  min-height: var(--input-height);
+  padding: var(--form-padding);
+  font-size: 16px; /* Prevent zoom on iOS */
+}
+
+.portuguese-form-mobile .luxury-btn-primary {
+  min-height: var(--button-height);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Portuguese Accessibility Voice Hints */
+.portuguese-voice-hint {
+  position: relative;
+}
+
+.portuguese-voice-hint[aria-describedby] {
+  outline: 2px solid rgba(197, 40, 47, 0.3);
+  outline-offset: 2px;
+}
+
 /* Luxury Performance Optimizations */
 .luxury-optimized {
   will-change: transform;
@@ -667,4 +845,14 @@
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
+}
+
+/* Portuguese Mobile Performance */
+.portuguese-performance-optimized {
+  contain: strict;
+  will-change: transform, opacity;
+}
+
+.portuguese-performance-optimized * {
+  will-change: auto;
 }

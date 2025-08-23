@@ -1,5 +1,4 @@
 import { createClient as createSupabaseClient } from '@supabase/supabase-js'
-import { cookies } from 'next/headers'
 
 export const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
 export const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key'
@@ -12,19 +11,31 @@ export const supabase = createSupabaseClient(supabaseUrl, supabaseAnonKey, {
   }
 })
 
-// Server-side client for API routes
-export function createClient(cookieStore?: ReturnType<typeof cookies>) {
-  return createSupabaseClient(
-    supabaseUrl,
-    supabaseAnonKey,
-    {
-      cookies: cookieStore ? {
-        get(name: string) {
-          return cookieStore.get(name)?.value
-        },
-      } : undefined,
+// Server-side client for API routes (safe for client bundles)
+// Avoid importing `next/headers` at module scope to keep this file client-compatible.
+type CookieStoreLike = {
+  get: (name: string) => { value?: string } | string | undefined
+} | undefined
+
+export function createClient(cookieStore?: CookieStoreLike) {
+  const options: any = {
+    auth: {
+      autoRefreshToken: true,
+      persistSession: true,
+      detectSessionInUrl: true,
+    },
+  }
+
+  if (cookieStore) {
+    options.cookies = {
+      get(name: string) {
+        const v = typeof (cookieStore as any)?.get === 'function' ? (cookieStore as any).get(name) : undefined
+        return typeof v === 'string' ? v : v?.value
+      },
     }
-  )
+  }
+
+  return createSupabaseClient(supabaseUrl, supabaseAnonKey, options)
 }
 
 // Types for our database

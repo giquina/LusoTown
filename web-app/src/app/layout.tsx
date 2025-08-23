@@ -31,6 +31,8 @@ import FramerMotionFix from "@/components/FramerMotionFix";
 import ErrorBoundary, {
   ComponentErrorBoundary,
 } from "@/components/ErrorBoundary";
+import CoreWebVitalsMonitor from "@/components/CoreWebVitalsMonitor";
+import MobilePerformanceOptimizer from "@/components/MobilePerformanceOptimizer";
 import { METADATA_BASE } from "@/config/site";
 import { generateMetadata as generateSEOMetadata, generateJsonLd } from "@/config/seo";
 
@@ -152,6 +154,23 @@ export default function RootLayout({
                                                 position="bottom-right"
                                                 showWelcomeMessage={true}
                                                 theme="portuguese"
+                                              />
+                                            </ComponentErrorBoundary>
+
+                                            {/* Performance Optimization Components */}
+                                            <ComponentErrorBoundary componentName="Core Web Vitals Monitor">
+                                              <CoreWebVitalsMonitor 
+                                                enableReporting={process.env.NODE_ENV === 'production'}
+                                                enableNotifications={process.env.NODE_ENV === 'development'}
+                                                reportingEndpoint="/api/performance/vitals"
+                                              />
+                                            </ComponentErrorBoundary>
+
+                                            <ComponentErrorBoundary componentName="Mobile Performance Optimizer">
+                                              <MobilePerformanceOptimizer 
+                                                enableAggressive={false}
+                                                enableDataSaver={true}
+                                                enableBatteryOptimization={true}
                                               />
                                             </ComponentErrorBoundary>
                                           </MobileCriticalFixes>

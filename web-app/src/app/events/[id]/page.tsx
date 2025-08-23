@@ -1,6 +1,5 @@
 'use client'
 import Image from 'next/image'
-import EventImageWithFallback from '@/components/EventImageWithFallback'
 
 import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
@@ -359,11 +358,10 @@ export default function EventDetailsPage() {
           <div className="relative h-96 bg-gradient-to-r from-primary-200 to-secondary-200">
             {event.images.length > 0 ? (
               <>
-                <EventImageWithFallback 
-                  src={event.images[currentImageIndex] || event.images[0] || ''} 
+                <Image 
+                  src={event.images[currentImageIndex] || event.images[0]} 
                   alt={event.title}
-                  fill
-                  className="object-cover"
+                  fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
                 />
                 
                 {event.images.length > 1 && (
@@ -396,12 +394,9 @@ export default function EventDetailsPage() {
                 )}
               </>
             ) : (
-              <EventImageWithFallback
-                src=""
-                alt={event.title}
-                fill
-                className="object-cover"
-              />
+              <div className="w-full h-full flex items-center justify-center text-8xl">
+                🎉
+              </div>
             )}
             
             {/* Overlay Actions */}
