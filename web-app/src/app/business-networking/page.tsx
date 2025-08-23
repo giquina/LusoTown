@@ -18,6 +18,7 @@ import {
 import { useLanguage } from "@/context/LanguageContext";
 import BusinessNetworkingMatch from "@/components/matches/BusinessNetworkingMatch";
 import BusinessNetworkingAlgorithm from "@/components/matches/BusinessNetworkingAlgorithm";
+import Footer from "@/components/Footer";
 
 export default function BusinessNetworkingPage() {
   const { language } = useLanguage();
@@ -149,7 +150,8 @@ export default function BusinessNetworkingPage() {
   ];
 
   return (
-    <div className="min-h-screen pt-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+      <div className="pt-20">
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -339,6 +341,9 @@ export default function BusinessNetworkingPage() {
           </motion.div>
         )}
       </div>
+      </div>
+      
+      <Footer />
     </div>
   );
 }

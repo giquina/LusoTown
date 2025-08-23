@@ -625,7 +625,7 @@ export class LusoBotEngine {
     if (culturalContext.topic === 'business') {
       suggestions.push({
         type: 'community',
-        title: language === 'pt' ? 'Networking Empresarial Português' : 'Portuguese Business Networking',
+        title: language === 'pt' ? 'Networking Empresarial LusoTown' : 'LusoTown Business Networking',
         description: language === 'pt' 
           ? 'Conecta-te com empresários portugueses'
           : 'Connect with Portuguese entrepreneurs',

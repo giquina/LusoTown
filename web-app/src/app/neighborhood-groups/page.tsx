@@ -250,8 +250,8 @@ const neighborhoodGroups = [
 // Community Resources
 const communityResources = [
   {
-    category: 'Portuguese Businesses',
-    categoryPt: 'Negócios Portugueses',
+    category: 'LusoTown Businesses',
+    categoryPt: 'Negócios LusoTown',
     icon: BuildingStorefrontIcon,
     items: [
       { name: 'Portuguese bakeries', namePt: 'Padarias portuguesas', count: 25 },
@@ -326,8 +326,8 @@ const transportRoutes = [
   {
     from: 'Bermondsey',
     fromPt: 'Bermondsey',
-    to: 'Central Portuguese Events',
-    toPt: 'Eventos Portugueses Centrais',
+    to: 'Central LusoTown Events',
+    toPt: 'Eventos LusoTown Centrais',
     schedule: 'Fridays 7:00 PM',
     schedulePt: 'Sextas 19:00',
     cost: '£4 per person',

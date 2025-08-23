@@ -29,7 +29,7 @@ const getFooterLinks = (t: any) => ({
     { name: "Events & Culture", href: ROUTES.events },
     { name: "Community", href: ROUTES.community },
     { name: "Become a Host", href: ROUTES.host },
-    { name: "Business Directory", href: ROUTES.directory },
+    { name: "LusoTown Business Directory", href: ROUTES.directory },
     { name: t("footer.neighborhood-groups"), href: ROUTES.neighborhoodGroups },
     { name: "Mentorship Programs", href: ROUTES.mentorship },
     { name: "Community Guidelines", href: ROUTES.communityGuidelines },

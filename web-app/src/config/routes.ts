@@ -30,7 +30,7 @@ export const ROUTES = {
   tours: '/tours',
   
   // Community Features
-  matches: '/matches',
+  matches: '/lusomatch',
   feed: '/feed',
   community: '/community',
   myNetwork: '/my-network',
@@ -39,24 +39,24 @@ export const ROUTES = {
   saved: '/saved',
   
   // Services
-  transport: '/transport',
-  transportGroup: '/transport?mode=group',
-  transportLuxury: '/transport?type=luxury',
+  transport: '/lusoride',
+  transportGroup: '/lusoride?mode=group',
+  transportLuxury: '/lusoride?type=luxury',
   services: '/services',
   
   // Business
   businessDirectory: '/business-directory',
-  businessNetworking: '/business-networking',
+  businessNetworking: '/lusoconnect',
   directory: '/directory',
   businessSubmit: '/business-directory/submit',
   businessClaim: '/business-directory/claim',
   
   // Streaming & Media
-  live: '/live',
+  live: '/lusostream',
   tv: '/tv',
-  streaming: '/streaming',
-  streamingDashboard: '/streaming/dashboard',
-  streamingCreate: '/streaming/create',
+  streaming: '/lusostream',
+  streamingDashboard: '/lusostream/dashboard',
+  streamingCreate: '/lusostream/create',
   
   // Membership & Subscriptions
   subscription: '/subscription',
@@ -75,6 +75,7 @@ export const ROUTES = {
   
   // Cultural Communities
   brazilianEliteCulture: '/brazilian-elite-culture',
+  portugueseSpeakingNations: '/portuguese-speaking-nations',
   
   // Support & Information
   help: '/help',
@@ -171,7 +172,7 @@ export const ROUTE_PATTERNS = {
 export const ROUTE_CATEGORIES = {
   public: [
     'home', 'events', 'businessDirectory', 'about', 'contact', 
-    'pricing', 'howItWorks', 'tours', 'instituteCamoes', 'brazilianEliteCulture'
+    'pricing', 'howItWorks', 'tours', 'instituteCamoes', 'brazilianEliteCulture', 'portugueseSpeakingNations'
   ],
   auth: [
     'signup', 'login', 'forgotPassword'

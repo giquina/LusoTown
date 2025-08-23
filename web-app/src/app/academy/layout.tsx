@@ -114,8 +114,8 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
         {
           id: "business-networking",
           label: isPortuguese
-            ? "Networking Empresarial"
-            : "Business Networking",
+            ? "Networking Empresarial LusoTown"
+            : "LusoTown Business Networking",
           href: "/academy/business-networking",
           icon: Users,
           difficulty: "Intermediate",
@@ -210,7 +210,7 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
                 </div>
                 <div>
                   <h1 className="text-lg font-bold text-gray-900">
-                    {isPortuguese ? "Academia LusoTown" : "LusoTown Academy"}
+                    {isPortuguese ? "LusoLearn Academia" : "LusoLearn Academy"}
                   </h1>
                   <p className="text-xs text-gray-600 hidden sm:block">
                     {isPortuguese ? "Centro de Aprendizado" : "Learning Center"}

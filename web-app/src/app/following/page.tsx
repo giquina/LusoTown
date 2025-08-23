@@ -4,8 +4,8 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Footer from '@/components/Footer'
-import FollowButton from '@/components/FollowButton'
-import { useFollowing, FollowableEntity } from '@/context/FollowingContext'
+import EnhancedFollowButton from '@/components/EnhancedFollowButton'
+import { useFollowing, FollowableEntity } from '@/context/EnhancedFollowingContext'
 import { useLanguage } from '@/context/LanguageContext'
 import { 
   UserGroupIcon,
@@ -30,7 +30,7 @@ export default function FollowingPage() {
     getFollowingSuggestions 
   } = useFollowing()
   const { language, t } = useLanguage()
-  const [activeTab, setActiveTab] = useState<'all' | 'people' | 'groups' | 'communities' | 'organizers'>('all')
+  const [activeTab, setActiveTab] = useState<'all' | 'people' | 'groups' | 'communities' | 'organizers' | 'nations'>('all')
   const [showSuggestions, setShowSuggestions] = useState(false)
 
   const stats = getFollowingStats()
@@ -49,6 +49,8 @@ export default function FollowingPage() {
         return getFollowingByType('community')
       case 'organizers':
         return getFollowingByType('event_organizer')
+      case 'nations':
+        return getFollowingByType('portuguese_nation')
       default:
         return following
     }
@@ -64,6 +66,8 @@ export default function FollowingPage() {
         return <UsersIcon className="w-5 h-5" />
       case 'event_organizer':
         return <CalendarDaysIcon className="w-5 h-5" />
+      case 'portuguese_nation':
+        return <span className="text-lg">🌍</span>
     }
   }
 
@@ -73,13 +77,15 @@ export default function FollowingPage() {
         person: 'Person',
         group: 'Group',
         community: 'Community',
-        event_organizer: 'Event Organizer'
+        event_organizer: 'Event Organizer',
+        portuguese_nation: 'Portuguese-Speaking Nation'
       },
       pt: {
         person: 'Pessoa',
         group: 'Grupo',
         community: 'Comunidade',
-        event_organizer: 'Organizador'
+        event_organizer: 'Organizador',
+        portuguese_nation: 'País Lusófono'
       }
     }
     return labels[language][type]
@@ -133,6 +139,13 @@ export default function FollowingPage() {
                   <div className="text-sm text-gray-600 flex items-center gap-1">
                     <CalendarDaysIcon className="w-4 h-4" />
 {isPortuguese ? 'Organizadores' : 'Organizers'}
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 shadow-sm">
+                  <div className="text-2xl font-bold text-primary-600 mb-1">{stats.portugueseNations}</div>
+                  <div className="text-sm text-gray-600 flex items-center gap-1">
+                    🌍
+{isPortuguese ? 'Países Lusófonos' : 'Portuguese Nations'}
                   </div>
                 </div>
               </div>
@@ -192,6 +205,17 @@ export default function FollowingPage() {
                 >
                   <CalendarDaysIcon className="w-4 h-4" />
 {isPortuguese ? 'Organizadores' : 'Organizers'} ({stats.eventOrganizers})
+                </button>
+                <button
+                  onClick={() => setActiveTab('nations')}
+                  className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${
+                    activeTab === 'nations'
+                      ? 'bg-primary-500 text-white shadow-lg'
+                      : 'bg-white text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  🌍
+{isPortuguese ? 'Países Lusófonos' : 'Portuguese Nations'} ({stats.portugueseNations})
                 </button>
               </div>
 
@@ -280,7 +304,7 @@ export default function FollowingPage() {
                                 </span>
                               )}
                             </div>
-                            <FollowButton entity={entity} variant="compact" />
+                            <EnhancedFollowButton entity={entity} variant="compact" />
                           </div>
                         </div>
                       </div>
@@ -416,10 +440,11 @@ export default function FollowingPage() {
                         </div>
                       </div>
                       
-                      <FollowButton 
+                      <EnhancedFollowButton 
                         entity={entity} 
                         variant="default"
                         className="w-full justify-center"
+                        showBenefits={true}
                       />
                     </motion.div>
                   ))}

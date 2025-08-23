@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import type { Metadata } from 'next'
 import { useLanguage } from '@/context/LanguageContext'
 import { communityStats } from '@/config/community'
@@ -9,6 +10,9 @@ import Hero from '@/components/Hero'
 import Features from '@/components/Features'
 import Footer from '@/components/Footer'
 import { ROUTES } from '@/config/routes'
+import MobileWelcomeWizard from '@/components/MobileWelcomeWizard'
+import ResponsiveButton from '@/components/ResponsiveButton'
+import PortugueseText from '@/components/PortugueseText'
 
 // Optimized lazy loading with priority-based loading and better placeholders
 const HowItWorks = dynamic(() => import('@/components/HowItWorks'), {
@@ -59,6 +63,7 @@ import {
   ChatBubbleLeftRightIcon, 
   CalendarDaysIcon,
   ArrowRightIcon as ArrowRight,
+  ArrowRightIcon,
   UserGroupIcon,
   RssIcon,
   BookmarkIcon,
@@ -74,9 +79,38 @@ const jsonLd = generateJsonLd('organization')
 
 export default function Home() {
   const { t } = useLanguage()
+  const [showWelcomeWizard, setShowWelcomeWizard] = useState(false)
+  const [showMoreOptions, setShowMoreOptions] = useState(false)
 
   // Mock user activity for homepage
   const userActivity = ['visited_homepage', 'viewed_events', 'explored_services']
+
+  // Show welcome wizard on first visit (mobile only)
+  useEffect(() => {
+    const hasSeenWelcome = localStorage.getItem('lusotown_welcome_seen')
+    const isMobile = window.innerWidth < 768
+    
+    if (!hasSeenWelcome && isMobile) {
+      setTimeout(() => setShowWelcomeWizard(true), 2000)
+    }
+  }, [])
+
+  const handleWelcomeComplete = (action: string) => {
+    localStorage.setItem('lusotown_welcome_seen', 'true')
+    
+    // Navigate based on selection
+    switch (action) {
+      case 'matches':
+        window.location.href = '/matches'
+        break
+      case 'events':
+        window.location.href = ROUTES.events
+        break
+      default:
+        // Stay on homepage
+        break
+    }
+  }
 
   return (
     <>
@@ -90,78 +124,152 @@ export default function Home() {
         <div className="pt-24 w-full">
           <Hero />
           
-          {/* Mobile Quick Actions - Only show on mobile */}
+          {/* Mobile Quick Actions - Simplified Portuguese focus */}
           <section className="md:hidden bg-white py-6 border-b border-gray-100" aria-label="Quick actions for mobile users">
             <div className="container mx-auto px-4">
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-lg font-bold text-gray-900">Quick Start</h2>
-                <div className="text-xs text-gray-500 bg-gradient-to-r from-secondary-100 to-accent-100 px-3 py-1 rounded-full">
-                  Most Popular
+                <div>
+                  <h2 className="text-lg font-bold text-gray-900">{t('mobile.quick_start_title', 'Quick Start')}</h2>
+                  <div className="flex items-center gap-2 text-sm">
+                    <span className="text-green-600 font-semibold">750+ portugueses</span>
+                    <span className="text-gray-400">•</span>
+                    <span className="text-blue-600 font-semibold">Londres & UK</span>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-xs text-green-600 bg-green-100 px-3 py-1 rounded-full font-bold mb-1">
+                    FREE
+                  </div>
+                  <div className="flex items-center text-xs text-gray-500">
+                    <span className="text-yellow-500">⭐</span>
+                    <span className="ml-1">4.9/5</span>
+                  </div>
                 </div>
               </div>
               
-              <div className="grid grid-cols-2 gap-3 mb-4">
-                {/* Free Matching - Most popular */}
-                <a
+              <div className="space-y-3 mb-4">
+                {/* Primary Action - Find Portuguese Matches */}
+                <ResponsiveButton
                   href="/matches"
-                  className="group bg-gradient-to-br from-secondary-50 to-accent-50 border border-secondary-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all duration-200 active:scale-95"
+                  variant="primary"
+                  size="lg"
+                  fullWidth
+                  portugueseTextFallback={t('mobile.find_matches_short', 'Find Matches')}
+                  aria-label="Find Portuguese matches near you for free"
+                  className="!p-5 !justify-between !text-left"
                 >
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-8 h-8 bg-gradient-to-br from-secondary-500 to-action-500 rounded-lg flex items-center justify-center">
-                      <HeartIcon className="w-4 h-4 text-white" />
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                      <HeartIcon className="w-6 h-6 text-white" />
                     </div>
-                    <div className="text-green-600 text-xs font-bold bg-green-100 px-2 py-1 rounded-full">FREE</div>
+                    <div>
+                      <PortugueseText 
+                        className="text-lg font-bold mb-1 text-white" 
+                        maxLength={25}
+                        fallback={t('mobile.find_matches_short', 'Find Matches')}
+                      >
+                        {t('mobile.find_matches_title', 'Find Portuguese Matches')}
+                      </PortugueseText>
+                      <PortugueseText 
+                        className="text-sm text-white/90"
+                        maxLength={35}
+                        fallback={t('mobile.connect_free', 'Connect FREE')}
+                      >
+                        {t('mobile.find_matches_subtitle', 'Connect with speakers near you - FREE')}
+                      </PortugueseText>
+                    </div>
                   </div>
-                  <div className="text-sm font-semibold text-gray-900 mb-1">Find Your Match</div>
-                  <div className="text-xs text-gray-600">Portuguese speakers near you</div>
-                </a>
+                  <div className="bg-white/20 px-3 py-1 rounded-full">
+                    <span className="text-sm font-bold">FREE</span>
+                  </div>
+                </ResponsiveButton>
 
-                {/* Events */}
-                <a
+                {/* Secondary Action - Cultural Events */}
+                <ResponsiveButton
                   href={ROUTES.events}
-                  className="group bg-gradient-to-br from-primary-50 to-secondary-50 border border-primary-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all duration-200 active:scale-95"
+                  variant="secondary"
+                  size="md"
+                  fullWidth
+                  portugueseTextFallback={t('mobile.events_short', 'Cultural Events')}
+                  aria-label="Browse Portuguese cultural events and festivals"
+                  className="!p-4 !justify-between !text-left"
                 >
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
-                      <CalendarDaysIcon className="w-4 h-4 text-white" />
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full flex items-center justify-center">
+                      <CalendarDaysIcon className="w-5 h-5 text-blue-600" />
                     </div>
-                    <div className="text-blue-600 text-xs font-bold bg-blue-100 px-2 py-1 rounded-full">£5+</div>
+                    <div>
+                      <PortugueseText 
+                        className="font-semibold text-gray-900 mb-1"
+                        maxLength={22}
+                        fallback={t('mobile.events_short', 'Cultural Events')}
+                      >
+                        {t('mobile.cultural_events_title', 'Browse Cultural Events')}
+                      </PortugueseText>
+                      <PortugueseText 
+                        className="text-sm text-gray-600"
+                        maxLength={28}
+                        fallback={t('mobile.fado_more', 'Fado & more')}
+                      >
+                        {t('mobile.cultural_events_subtitle', 'Fado nights, festivals & more')}
+                      </PortugueseText>
+                    </div>
                   </div>
-                  <div className="text-sm font-semibold text-gray-900 mb-1">Events</div>
-                  <div className="text-xs text-gray-600">Fado nights & more</div>
-                </a>
+                  <ArrowRightIcon className="w-5 h-5 text-gray-400" />
+                </ResponsiveButton>
               </div>
 
-              {/* Secondary Actions Row */}
-              <div className="flex gap-2 text-center">
-                <a
-                  href={ROUTES.feed}
-                  className="flex-1 bg-gray-50 border border-gray-200 rounded-xl p-3 hover:bg-gray-100 transition-colors active:scale-95"
-                >
-                  <RssIcon className="w-5 h-5 text-coral-500 mx-auto mb-1" />
-                  <div className="text-xs font-medium text-gray-700">Feed</div>
-                </a>
-                <a
-                  href="/tours"
-                  className="flex-1 bg-gray-50 border border-gray-200 rounded-xl p-3 hover:bg-gray-100 transition-colors active:scale-95"
-                >
-                  <MapPinIcon className="w-5 h-5 text-accent-500 mx-auto mb-1" />
-                  <div className="text-xs font-medium text-gray-700">Tours</div>
-                </a>
-                <a
-                  href={ROUTES.saved}
-                  className="flex-1 bg-gray-50 border border-gray-200 rounded-xl p-3 hover:bg-gray-100 transition-colors active:scale-95"
-                >
-                  <BookmarkIcon className="w-5 h-5 text-action-500 mx-auto mb-1" />
-                  <div className="text-xs font-medium text-gray-700">Saved</div>
-                </a>
-                <a
-                  href={ROUTES.host}
-                  className="flex-1 bg-gray-50 border border-gray-200 rounded-xl p-3 hover:bg-gray-100 transition-colors active:scale-95"
-                >
-                  <BriefcaseIcon className="w-5 h-5 text-premium-500 mx-auto mb-1" />
-                  <div className="text-xs font-medium text-gray-700">Host</div>
-                </a>
+              {/* More Options Button */}
+              <button
+                onClick={() => setShowMoreOptions(!showMoreOptions)}
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-center hover:bg-gray-100 transition-colors active:scale-95"
+              >
+                <div className="text-sm font-medium text-gray-700">{t('mobile.more_features', 'Explore All Features')}</div>
+              </button>
+              
+              {/* Expandable More Options */}
+              {showMoreOptions && (
+                <div className="mt-3 grid grid-cols-4 gap-2">
+                  <a href={ROUTES.feed} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center hover:bg-gray-100 transition-colors">
+                    <RssIcon className="w-5 h-5 text-coral-500 mx-auto mb-1" />
+                    <div className="text-xs font-medium text-gray-700">Feed</div>
+                  </a>
+                  <a href="/tours" className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center hover:bg-gray-100 transition-colors">
+                    <MapPinIcon className="w-5 h-5 text-accent-500 mx-auto mb-1" />
+                    <div className="text-xs font-medium text-gray-700">Tours</div>
+                  </a>
+                  <a href={ROUTES.saved} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center hover:bg-gray-100 transition-colors">
+                    <BookmarkIcon className="w-5 h-5 text-action-500 mx-auto mb-1" />
+                    <div className="text-xs font-medium text-gray-700">Saved</div>
+                  </a>
+                  <a href={ROUTES.host} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center hover:bg-gray-100 transition-colors">
+                    <BriefcaseIcon className="w-5 h-5 text-premium-500 mx-auto mb-1" />
+                    <div className="text-xs font-medium text-gray-700">Host</div>
+                  </a>
+                </div>
+              )}
+              
+              {/* Portuguese Community Testimonial - Mobile Only */}
+              <div className="mt-4 bg-gradient-to-r from-green-50 to-red-50 rounded-2xl p-4 border border-green-100">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-red-500 flex items-center justify-center text-white font-bold text-sm">
+                    M
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">Maria, Lisboa → London</div>
+                    <div className="flex items-center text-xs text-gray-600">
+                      <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>
+                      <span className="ml-1">Verified Portuguese</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-700 italic leading-relaxed">
+                  "Encontrei portugueses incríveis aqui! Sinto-me em casa em Londres. 
+                  Os eventos de fado são autênticos e a comunidade é muito acolhedora."
+                </p>
+                <div className="mt-2 text-xs text-green-600 font-medium">
+                  🇵🇹 Joined 8 events • Found 12+ Portuguese friends
+                </div>
               </div>
             </div>
           </section>
@@ -428,6 +536,13 @@ export default function Home() {
         
         {/* Cross-Platform Engagement Triggers */}
         {/* CrossPlatformEngagementTriggers component removed */}
+        
+        {/* Mobile Welcome Wizard */}
+        <MobileWelcomeWizard
+          isOpen={showWelcomeWizard}
+          onClose={() => setShowWelcomeWizard(false)}
+          onComplete={handleWelcomeComplete}
+        />
       </main>
     </>
   )

@@ -172,7 +172,7 @@ export const businessEventsLondon = [
   // SIMPLE NETWORKING
   {
     id: 'london-basic-networking-workshop-1',
-    title: 'Business Networking for Beginners: Making Connections in London',
+    title: 'LusoTown Business Networking for Beginners: Making Connections in London',
     description: 'Learn how to network and make business connections. Perfect for shy people or anyone new to business networking in London.',
     longDescription: 'Faça conexões de negócio em Londres! A friendly workshop for Portuguese speakers who want to learn networking but feel nervous or don\'t know where to start.\n\nLed by Sofia Pereira, a Portuguese business coach who helps shy people become confident networkers.\n\nWhat you\'ll learn:\n\n• How to introduce yourself confidently\n• What to say at networking events (simple conversation starters)\n• Finding the right networking events in London\n• Following up with new contacts (without being pushy)\n• Building long-term business relationships\n• Networking online (LinkedIn basics)\n• Overcoming shyness and nerves\n• Portuguese business etiquette vs UK business culture\n\nReal examples:\n• Portuguese graphic designer who found clients through networking\n• Shy accountant who built a successful practice\n• Restaurant owner who partnered with other Portuguese businesses\n• Cleaner who got referrals from networking\n\nPerfect for:\n• People who are shy or nervous about networking\n• Anyone new to business networking\n• Those wanting to grow their business through connections\n• Portuguese speakers wanting to understand UK business culture\n\nIncludes:\n• Practice networking during the workshop\n• Simple conversation starter cards\n• List of Portuguese-friendly networking events in London\n• Follow-up email templates\n• LinkedIn profile tips\n\nWe\'ll practice networking in a safe, friendly environment!',
     date: '2025-10-20',
@@ -181,7 +181,7 @@ export const businessEventsLondon = [
     location: 'Portuguese Community Centre',
     address: '12 Little Portugal, London SW8 1XE',
     coordinates: { lat: 51.4851, lng: -0.1294 },
-    category: 'Business Networking',
+    category: 'LusoTown Business Networking',
     subcategory: 'Communication Skills',
     tags: ['networking', 'communication', 'business connections', 'confidence', 'beginner'],
     hostId: 'host-sofia-pereira',

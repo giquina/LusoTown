@@ -50,8 +50,8 @@ export default function BusinessNetworkingModule() {
   // Define the learning module structure
   const businessNetworkingModule: LearningModule = {
     id: "business-networking",
-    title: "Business Networking",
-    titlePortuguese: "Networking Empresarial",
+    title: "LusoTown Business Networking",
+    titlePortuguese: "Networking Empresarial LusoTown",
     description:
       "Master professional networking within the Portuguese business community in London",
     descriptionPortuguese:

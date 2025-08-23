@@ -70,7 +70,7 @@ export function EliteMobileCard({
       className={`
         luxury-card relative overflow-hidden border-2 transition-all duration-500
         ${variants[variant]} ${sizes[size]} ${className}
-        ${corner !== 'standard' ? 'after:absolute after:top-0 after:right-0 after:w-16 after:h-1 after:rounded-bl-lg ' + cornerAccents[corner] : ''}
+        ${corner !== 'standard' ? `after:absolute after:top-0 after:right-0 after:w-16 after:h-1 after:rounded-bl-lg ${  cornerAccents[corner]}` : ''}
         ${onClick ? 'cursor-pointer' : ''}
       `}
       style={{

@@ -108,8 +108,8 @@ export default function About() {
                       },
                       {
                         icon: MapPinIcon,
-                        title: "Portuguese Business Directory",
-                        titlePt: "Diretório de Negócios Portugueses",
+                        title: "LusoTown Business Directory",
+                        titlePt: "Diretório de Negócios LusoTown",
                         description: "Support and discover Portuguese-owned businesses across the UK. From restaurants and shops to professional services, keep your spending within our community while getting services in your language.",
                         features: ["Portuguese-speaking professionals", "Cultural restaurants & cafés", "Import shops & markets", "Community services in Portuguese"]
                       },
@@ -285,7 +285,7 @@ export default function About() {
                         benefits: "Experience authentic Portuguese culture, meet community members, preserve traditions"
                       },
                       {
-                        section: "Business Directory",
+                        section: "LusoTown Business Directory",
                         description: "Complete directory of Portuguese-owned businesses and Portuguese-speaking professionals across the UK, from restaurants to legal services, all in your language.",
                         benefits: "Support Portuguese businesses, get services in Portuguese, strengthen community economy"
                       },

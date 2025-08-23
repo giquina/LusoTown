@@ -275,7 +275,7 @@ export default function EventBasedMatchingSystem({
     },
     {
       id: "portuguese-business-networking",
-      title: language === "pt" ? "Networking Empresarial Português" : "Portuguese Business Networking",
+      title: language === "pt" ? "Networking Empresarial LusoTown" : "LusoTown Business Networking",
       description: language === "pt"
         ? "Conecte-se com empresários e profissionais portugueses em Londres. Networking, palestras e oportunidades de negócio."
         : "Connect with Portuguese entrepreneurs and professionals in London. Networking, talks and business opportunities.",

@@ -233,8 +233,8 @@ export default function AcademyHomePage() {
     },
     {
       id: "business-networking",
-      name: "Business Networking",
-      namePortuguese: "Networking Empresarial",
+      name: "LusoTown Business Networking",
+      namePortuguese: "Networking Empresarial LusoTown",
       description: "Professional connections and business opportunities",
       descriptionPortuguese:
         "Conexões profissionais e oportunidades de negócio",

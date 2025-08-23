@@ -544,8 +544,8 @@ export default function EventsPage() {
                     {/* Mobile short title */}
                     <span className="sm:hidden">
                       {isPortuguese
-                        ? "Eventos Portugueses"
-                        : "Portuguese Events"}
+                        ? "Eventos LusoTown"
+                        : "LusoTown Events"}
                     </span>
                   </>
                 ) : (

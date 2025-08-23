@@ -158,7 +158,7 @@ export default function StartFree() {
                       {isPortuguese ? "Encontre a Sua" : "Find Your"}
                     </span>
                     <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent block">
-                      {isPortuguese ? "Comunidade Portuguesa" : "Portuguese Community"}
+                      {isPortuguese ? "Comunidade LusoTown" : "LusoTown Community"}
                     </span>
                     <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-600 mt-2">
                       {isPortuguese ? "em Londres" : "in London"}

@@ -272,7 +272,7 @@ export class SmartNotificationEngine {
     },
     {
       id: 'business_networking_portuguese',
-      name: 'Portuguese Business Networking',
+      name: 'LusoTown Business Networking',
       category: 'business',
       cultural_contexts: [
         { portuguese_region: 'lisboa', cultural_significance: 'Entrepreneurial spirit' },
@@ -280,7 +280,7 @@ export class SmartNotificationEngine {
       ],
       content_variations: {
         formal: {
-          title: 'Portuguese Professional Networking Event',
+          title: 'LusoTown Professional Networking Event',
           message: 'Connect with successful Portuguese entrepreneurs and business leaders in London.',
           title_pt: 'Evento de Networking Profissional Português',
           message_pt: 'Conecta-te com empresários e líderes empresariais portugueses de sucesso em Londres.'

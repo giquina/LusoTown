@@ -78,9 +78,9 @@
   ],
   "shortcuts": [
     {
-      "name": "Portuguese Events",
+      "name": "LusoTown Events",
       "short_name": "Eventos",
-      "description": "Browse upcoming Portuguese cultural events",
+      "description": "Browse upcoming LusoTown cultural events",
       "url": "/events?utm_source=pwa_shortcut",
       "icons": [
         {
@@ -91,8 +91,8 @@
       ]
     },
     {
-      "name": "Community Chat",
-      "short_name": "Chat",
+      "name": "LusoChat Community",
+      "short_name": "LusoChat",
       "description": "Connect with Portuguese speakers",
       "url": "/my-network?utm_source=pwa_shortcut",
       "icons": [
@@ -104,9 +104,9 @@
       ]
     },
     {
-      "name": "Portuguese Businesses",
+      "name": "LusoTown Businesses",
       "short_name": "Negócios",
-      "description": "Discover Portuguese businesses in London",
+      "description": "Discover LusoTown businesses in London",
       "url": "/business-directory?utm_source=pwa_shortcut",
       "icons": [
         {
@@ -117,10 +117,10 @@
       ]
     },
     {
-      "name": "Live Streaming",
-      "short_name": "Ao Vivo",
+      "name": "LusoStream Live",
+      "short_name": "LusoStream",
       "description": "Watch Portuguese cultural streams",
-      "url": "/live?utm_source=pwa_shortcut",
+      "url": "/lusostream?utm_source=pwa_shortcut",
       "icons": [
         {
           "src": "/icons/live-shortcut.png",

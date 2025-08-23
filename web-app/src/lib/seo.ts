@@ -270,9 +270,9 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
 
   businessNetworking: {
     title:
-      "Portuguese Business Networking London - Entrepreneur Events & Partnerships",
+      "LusoTown Business Networking London - Entrepreneur Events & Partnerships",
     titlePortuguese:
-      "Networking Empresarial Português Londres - Eventos e Parcerias",
+      "Networking Empresarial LusoTown Londres - Eventos e Parcerias",
     description:
       "Connect with Portuguese entrepreneurs and business professionals in London. Networking events, investor meetups, and partnership opportunities for the Portuguese business community.",
     descriptionPortuguese:

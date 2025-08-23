@@ -6,7 +6,7 @@ import LiveFeedNotifications from "@/components/LiveFeedNotifications";
 import UserTypeSelection from "@/components/UserTypeSelection";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { FavoritesProvider } from "@/context/FavoritesContext";
-import { FollowingProvider } from "@/context/FollowingContext";
+import { FollowingProvider } from "@/context/EnhancedFollowingContext";
 import { CartProvider } from "@/context/CartContext";
 import { NetworkingProvider } from "@/context/NetworkingContext";
 import { SubscriptionProvider } from "@/context/SubscriptionContext";
@@ -82,12 +82,12 @@ export default function RootLayout({
             <HeritageStyleProvider>
               <LanguageProvider>
                 <FavoritesProvider>
-                  <FollowingProvider>
-                    <CartProvider>
-                      <NetworkingProvider>
-                        <SubscriptionProvider>
-                          <NotificationProvider>
-                            <AuthPopupProvider>
+                  <CartProvider>
+                    <NetworkingProvider>
+                      <SubscriptionProvider>
+                        <NotificationProvider>
+                          <AuthPopupProvider>
+                            <FollowingProvider>
                               <PlatformIntegrationProvider>
                                 <WaitingListProvider>
                                   <NavigationProvider>
@@ -159,12 +159,12 @@ export default function RootLayout({
                                   </NavigationProvider>
                                 </WaitingListProvider>
                               </PlatformIntegrationProvider>
-                            </AuthPopupProvider>
-                          </NotificationProvider>
-                        </SubscriptionProvider>
-                      </NetworkingProvider>
-                    </CartProvider>
-                  </FollowingProvider>
+                            </FollowingProvider>
+                          </AuthPopupProvider>
+                        </NotificationProvider>
+                      </SubscriptionProvider>
+                    </NetworkingProvider>
+                  </CartProvider>
                 </FavoritesProvider>
               </LanguageProvider>
             </HeritageStyleProvider>

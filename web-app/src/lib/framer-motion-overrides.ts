@@ -101,7 +101,7 @@ export function withSafeMotion<T extends Record<string, any>>(
 ) {
   return function SafeMotionComponent(props: T) {
     const safeProps = createSafeAnimationProps(props)
-    return <MotionComponent {...safeProps} className={`${props.className || ''} motion-prevent-animate`} />
+    return React.createElement(MotionComponent, { ...safeProps, className: `${(props as any).className || ''} motion-prevent-animate` })
   }
 }
 

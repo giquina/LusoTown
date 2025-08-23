@@ -702,7 +702,7 @@ export class EventService {
       },
       {
         id: 'event-pt-6',
-        title: 'Portuguese Business Networking Breakfast - Stockwell',
+        title: 'LusoTown Business Networking Breakfast - Stockwell',
         description: 'Professional networking breakfast for Portuguese-speaking entrepreneurs and professionals in London\'s Little Portugal',
         longDescription: 'Networking para profissionais de língua portuguesa! Start your day right with fellow Portuguese-speaking professionals at our monthly business networking breakfast in the heart of Little Portugal. This event is designed for entrepreneurs, freelancers, and corporate professionals who want to build meaningful business connections within London\'s vibrant Portuguese-speaking community.\n\nWe meet at O Cantinho de Portugal, one of Stockwell\'s most beloved Portuguese restaurants, for an authentic Portuguese breakfast featuring fresh pastéis de nata, galão coffee, and traditional breakfast options. The intimate setting encourages genuine conversations and relationship building.\n\nEach month features a different networking focus: this month we\'re highlighting "Digital Innovation in Portuguese Markets" with guest speaker Dr. Sofia Carvalho, a Portuguese tech entrepreneur who successfully expanded her fintech startup from Lisbon to London.\n\nAttendees include Portuguese, Brazilian, Angolan, and other Portuguese-speaking professionals across various industries - from finance and tech to creative industries and consulting. Come ready to share your expertise, learn from others, and potentially find your next business partner or client.\n\nAll conversations welcome in Portuguese, English, or both!',
         date: '2025-08-21',

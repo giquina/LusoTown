@@ -67,11 +67,37 @@ interface FollowingContextType {
 
 const FollowingContext = createContext<FollowingContextType | undefined>(undefined)
 
+// Create a safe wrapper for useAuthRequired that handles SSG
+function useAuthRequiredSafe() {
+  const [isClient, setIsClient] = useState(false)
+  
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+  
+  try {
+    const authRequired = useAuthRequired()
+    return {
+      ...authRequired,
+      isClient
+    }
+  } catch (error) {
+    // Fallback for SSG when AuthPopupProvider is not available
+    return {
+      requireAuth: () => {},
+      requireAuthForCart: () => {},
+      requireAuthForDetails: () => {},
+      isAuthenticated: false,
+      isClient
+    }
+  }
+}
+
 export function FollowingProvider({ children }: { children: ReactNode }) {
   const [following, setFollowing] = useState<Following[]>([])
   const [loading, setLoading] = useState(false)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const { requireAuth } = useAuthRequired()
+  const { requireAuth, isClient } = useAuthRequiredSafe()
 
   // Load following data from database on mount
   useEffect(() => {
@@ -133,10 +159,13 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
 
   const followEntity = async (entity: FollowableEntity): Promise<boolean> => {
     if (!isAuthenticated) {
-      requireAuth(() => followEntity(entity), 'view-details', {
-        type: 'follow',
-        data: { entityName: entity.name, entityType: entity.type }
-      })
+      // Only show auth popup on client-side
+      if (isClient) {
+        requireAuth(() => followEntity(entity), 'view-details', {
+          type: 'follow',
+          data: { entityName: entity.name, entityType: entity.type }
+        })
+      }
       return false
     }
 

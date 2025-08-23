@@ -66,8 +66,8 @@ export default function LiveUpdateIndicator({
     {
       type: 'event_update',
       message: isPortuguese
-        ? 'Localização atualizada para "Portuguese Business Networking"'
-        : 'Location updated for "Portuguese Business Networking"',
+        ? 'Localização atualizada para "LusoTown Business Networking"'
+        : 'Location updated for "LusoTown Business Networking"',
       eventId: 'event-126'
     },
     {
