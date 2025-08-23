@@ -89,7 +89,7 @@ export async function GET(request: NextRequest) {
 
       // Filter expired recommendations unless requested
       if (!include_expired) {
-        query = query.or('expires_at.is.null,expires_at.gt.' + new Date().toISOString())
+        query = query.or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
       }
 
       const { data: recommendations, error: queryError } = await query

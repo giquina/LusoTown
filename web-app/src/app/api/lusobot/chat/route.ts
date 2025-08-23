@@ -2,6 +2,7 @@ import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 import { LusoBotEngine, SaudadeEngine } from '@/lib/lusobot-engine'
+import { withRateLimit } from '@/lib/lusobot-rate-limit'
 import type { Language } from '@/i18n'
 import type { LusoBotMessage, MessageMetadata } from '@/lib/lusobot-engine'
 
@@ -51,6 +52,69 @@ export async function POST(request: NextRequest) {
     
     if (!message?.trim()) {
       return NextResponse.json({ error: 'Message is required' }, { status: 400 })
+    }
+
+    // Get user profiles for rate limiting context
+    const [culturalProfileResult, userProfileResult, subscriptionResult] = await Promise.all([
+      supabase
+        .from('cultural_personality_profiles')
+        .select('*')
+        .eq('user_id', user.id)
+        .single(),
+      supabase
+        .from('profiles')
+        .select('first_name, heritage_story, cultural_background, community_role, community_contributions, verified_heritage')
+        .eq('id', user.id)
+        .single(),
+      supabase
+        .from('subscriptions')
+        .select('status, tier')
+        .eq('user_id', user.id)
+        .eq('status', 'active')
+        .single()
+    ])
+
+    const culturalProfile = culturalProfileResult.data
+    const userProfile = userProfileResult.data
+    const hasActiveSubscription = !!subscriptionResult.data
+
+    // Detect emotional tone and cultural context for rate limiting
+    const emotionalTone = SaudadeEngine.detectSaudade(message, language)
+    const culturalContext = (LusoBotEngine as any).identifyCulturalContext(message, language)
+
+    // Apply rate limiting with context
+    const rateLimitCheck = await withRateLimit('free')(
+      user.id,
+      request,
+      {
+        userProfile,
+        culturalProfile,
+        hasActiveSubscription,
+        emotionalTone,
+        culturalContext
+      }
+    )
+
+    if (!rateLimitCheck.allowed) {
+      return NextResponse.json(
+        { 
+          error: 'Rate limit exceeded', 
+          message: rateLimitCheck.message,
+          retryAfter: Math.ceil((rateLimitCheck.resetTime - Date.now()) / 1000),
+          limit: rateLimitCheck.limit,
+          remaining: rateLimitCheck.remaining,
+          tier: rateLimitCheck.tier
+        }, 
+        { 
+          status: 429,
+          headers: {
+            'X-RateLimit-Limit': rateLimitCheck.limit.toString(),
+            'X-RateLimit-Remaining': rateLimitCheck.remaining.toString(),
+            'X-RateLimit-Reset': new Date(rateLimitCheck.resetTime).toISOString(),
+            'Retry-After': Math.ceil((rateLimitCheck.resetTime - Date.now()) / 1000).toString()
+          }
+        }
+      )
     }
 
     const startTime = Date.now()
@@ -300,7 +364,7 @@ function extractInterestsFromProfile(culturalProfile: any): string[] {
 
 function extractCulturalTopics(userMessage: string, botResponse: string): string[] {
   const topics = []
-  const combinedText = (userMessage + ' ' + botResponse).toLowerCase()
+  const combinedText = `${userMessage} ${botResponse}`.toLowerCase()
   
   const topicKeywords = {
     'fado': ['fado', 'música', 'amália', 'coimbra', 'lisboa'],
