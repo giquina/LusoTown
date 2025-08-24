@@ -1,3 +1,20 @@
 {
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": "https://placeholder.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "placeholder-key",
+    "DEMO_EMAIL": "demo@lusotown.com",
+    "DEMO_PASSWORD": "LusoTown2025!",
+    "ADMIN_EMAIL_DOMAIN": "lusotown.com"
+  },
+  "build": {
+    "env": {
+      "PUPPETEER_SKIP_DOWNLOAD": "true",
+      "NEXT_PUBLIC_TOTAL_MEMBERS": "750",
+      "NEXT_PUBLIC_TOTAL_STUDENTS": "2150",
+      "NEXT_PUBLIC_UNIVERSITY_PARTNERSHIPS": "8",
+      "NEXT_PUBLIC_APP_NAME": "LusoTown London",
+      "NEXT_PUBLIC_MAP_SERVICE": "openstreetmap"
+    }
+  }
 }
