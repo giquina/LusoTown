@@ -1,3 +1,20 @@
 {
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "buildCommand": "PUPPETEER_SKIP_DOWNLOAD=true npm run build",
+  "outputDirectory": ".next",
+  "build": {
+    "env": {
+      "PUPPETEER_SKIP_DOWNLOAD": "true"
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "origin-when-cross-origin" }
+      ]
+    }
+  ]
 }

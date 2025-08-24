@@ -9,7 +9,7 @@
   "scripts": {
     "preinstall": "npx --yes npm@9 --version >/dev/null 2>&1 && (node -e \"try{require('child_process').execSync('npm -v',{stdio:'inherit'})}catch(e){}\") || true",
     "dev": "next dev",
-    "build": "next build",
+    "build": "PUPPETEER_SKIP_DOWNLOAD=true next build",
     "start": "next start",
     "lint": "next lint",
     "export": "next build && next export",
