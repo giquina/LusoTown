@@ -242,12 +242,22 @@ export default function HelpCenter() {
           <div className="container-width">
             <div className="max-w-2xl mx-auto">
               <div className="relative">
+                <label htmlFor="help-search" className="sr-only">
+                  Search help articles
+                </label>
                 <input
-                  type="text"
+                  id="help-search"
+                  type="search"
                   placeholder="Search help..."
                   className="w-full px-6 py-4 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  role="searchbox"
+                  aria-label="Search help articles"
                 />
-                <button className="absolute right-3 top-1/2 transform -translate-y-1/2 btn-primary px-6 py-2">
+                <button 
+                  type="button" 
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 btn-primary px-6 py-2"
+                  aria-label="Search"
+                >
                   Search
                 </button>
               </div>

@@ -48,6 +48,43 @@
   }
   
   body {
+    overflow-x: hidden;
+  }
+
+  /* Mobile UX Improvements for Portuguese-speaking community */
+  @media (max-width: 768px) {
+    /* Ensure all touch targets meet 44px minimum */
+    button, 
+    a[role="button"],
+    .btn,
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Prevent horizontal scroll on all elements */
+    * {
+      max-width: 100vw;
+      box-sizing: border-box;
+    }
+
+    /* Improve text readability on Portuguese content */
+    p, span, div {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+
+    /* Optimize container widths */
+    .container, 
+    .container-width {
+      max-width: 100vw;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  body {
     font-feature-settings: 'rlig' 1, 'calt' 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;

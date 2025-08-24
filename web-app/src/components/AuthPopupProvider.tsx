@@ -59,6 +59,15 @@ export function AuthPopupProvider({ children }: { children: ReactNode }) {
 export function useAuthPopup() {
   const context = useContext(AuthPopupContext)
   if (context === undefined) {
+    // Return safe fallback for SSR
+    if (typeof window === 'undefined') {
+      return {
+        showPopup: () => {},
+        hidePopup: () => {},
+        currentPopup: null,
+        authIntent: null
+      }
+    }
     throw new Error('useAuthPopup must be used within an AuthPopupProvider')
   }
   return context

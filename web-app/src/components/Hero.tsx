@@ -18,6 +18,7 @@ import { plans, formatPrice } from "@/config/pricing";
 import { ROUTES } from "@/config/routes";
 import { motion, AnimatePresence } from "framer-motion";
 import { LuxuryRipple } from "./LuxuryMobileInteraction";
+import "../styles/hero-mobile-enhancements.css";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -28,20 +29,21 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden w-full bg-gradient-to-br from-white via-gray-50 to-secondary-50">
-      {/* Background decorative elements - CSS animations instead of framer-motion */}
+    <section className="relative min-h-[100vh] md:min-h-screen flex items-center overflow-hidden w-full bg-gradient-to-br from-white via-gray-50 to-secondary-50">
+      {/* Background decorative elements - Mobile optimized */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-accent-200 via-coral-100 to-secondary-100 rounded-full opacity-30 animate-pulse" />
+        <div className="absolute -top-20 -right-20 md:-top-40 md:-right-40 w-40 h-40 md:w-80 md:h-80 bg-gradient-to-br from-accent-200 via-coral-100 to-secondary-100 rounded-full opacity-30 animate-pulse" />
         <div
-          className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-tr from-secondary-200 via-accent-100 to-action-100 rounded-full opacity-25 animate-bounce"
+          className="absolute -bottom-16 -left-16 md:-bottom-32 md:-left-32 w-32 h-32 md:w-64 md:h-64 bg-gradient-to-tr from-secondary-200 via-accent-100 to-action-100 rounded-full opacity-25 animate-bounce"
           style={{ animationDuration: "4s" }}
         />
-        <div className="absolute top-1/4 left-1/4 w-6 h-6 bg-secondary-400 rounded-full opacity-40" />
-        <div className="absolute top-3/4 right-1/3 w-4 h-4 bg-accent-400 rounded-full" />
-        <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-action-400 rounded-full opacity-50" />
+        {/* Mobile-friendly decorative dots */}
+        <div className="absolute top-1/4 left-1/4 w-3 h-3 md:w-6 md:h-6 bg-secondary-400 rounded-full opacity-40" />
+        <div className="absolute top-3/4 right-1/3 w-2 h-2 md:w-4 md:h-4 bg-accent-400 rounded-full" />
+        <div className="absolute bottom-1/3 left-2/3 w-2 h-2 md:w-3 md:h-3 bg-action-400 rounded-full opacity-50" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12 sm:py-16 lg:py-20">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-8 relative z-10 py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 max-w-full overflow-hidden">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Column - Content */}
           <div
@@ -51,48 +53,69 @@ export default function Hero() {
                 : "opacity-0 -translate-x-12"
             }`}
           >
-            {/* Concise Dynamic Badge */}
-    <motion.div
+            {/* Enhanced Portuguese Community Badge - Mobile Optimized */}
+            <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-red-50 via-amber-50 to-green-50 border border-red-200/40 rounded-full px-4 py-2 shadow-md"
+              className="portuguese-community-badge inline-flex items-center gap-2 sm:gap-3 rounded-2xl px-3 py-2 sm:px-4 sm:py-3 transition-all duration-300"
             >
-              <div className="flex items-center gap-1">
-                <span className="text-xs">🇵🇹</span>
-                <span className="text-xs font-semibold text-gray-700">
-      UK Portuguese-speaking Community
+              <div className="flex items-center gap-1 sm:gap-2">
+                {/* Enhanced Portuguese Flag - More Prominent */}
+                <div className="portuguese-flag-enhanced flex items-center gap-1 portuguese-flag-pulse">
+                  <span className="text-lg sm:text-xl">🇵🇹</span>
+                  <div className="hidden xs:block w-0.5 h-4 bg-gradient-to-b from-red-300 via-amber-300 to-green-300"></div>
+                  <span className="text-lg sm:text-xl">🇬🇧</span>
+                </div>
+                <span className="text-xs sm:text-sm font-bold text-gray-800 tracking-wide">
+                  {/* Mobile-friendly text */}
+                  <span className="block sm:hidden">Portuguese Community UK</span>
+                  <span className="hidden sm:block">UK Portuguese-speaking Community</span>
                 </span>
               </div>
-              <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
+              <div className="flex items-center gap-1">
+                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+              </div>
             </motion.div>
 
-            {/* Dynamic Headlines */}
-            <div className="space-y-4">
+            {/* Mobile-Optimized Headlines */}
+            <div className="space-y-3 sm:space-y-4">
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight"
+                className="hero-mobile-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 leading-[1.1] sm:leading-tight"
               >
-                <span className="bg-gradient-to-r from-red-600 via-amber-600 to-green-600 bg-clip-text text-transparent">
-                  Connect
+                {/* Mobile-first headline structure */}
+                <span className="block sm:inline">
+                  <span className="bg-gradient-to-r from-red-600 via-amber-600 to-green-600 bg-clip-text text-transparent">
+                    Connect
+                  </span>{" "}
+                  <span className="text-gray-900">with</span>
                 </span>{" "}
-                <span className="text-gray-900">with Portuguese speakers across the United Kingdom</span>
+                <span className="block sm:inline text-gray-900">
+                  Portuguese speakers
+                </span>{" "}
+                <span className="block sm:inline text-gray-700 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
+                  across the UK
+                </span>
               </motion.h1>
               
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl"
+                className="hero-mobile-subtitle text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl"
               >
-                Join 750+ Portuguese speakers across the UK. 
-                <span className="font-semibold text-gray-800"> Events, networking, culture.</span>
+                <span className="font-bold text-red-600">750+ Portuguese speakers</span> waiting for you. 
+                <span className="block sm:inline mt-1 sm:mt-0">
+                  <span className="font-semibold text-gray-800">Events • Networking • Culture • Friendship</span>
+                </span>
               </motion.p>
             </div>
 
-            {/* Search Bar */}
+            {/* Mobile-Optimized Search Bar */}
             <div
               className={`transition-all duration-1000 delay-400 ${
                 mounted
@@ -100,12 +123,17 @@ export default function Hero() {
                   : "opacity-0 translate-y-5"
               }`}
             >
-              <SearchBar variant="homepage" className="max-w-3xl w-full" />
+              <div className="w-full max-w-3xl">
+                <SearchBar variant="homepage" className="w-full h-14 sm:h-16" />
+                <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center px-2">
+                  🔍 Search events, people, or Portuguese businesses
+                </p>
+              </div>
             </div>
 
-            {/* Feature highlights - Clean 4-column grid with better spacing */}
+            {/* Mobile-Enhanced Feature Grid - Touch-Optimized */}
             <motion.div
-              className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+              className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6"
               initial={{ opacity: 0, y: 20 }}
               animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 1, delay: 0.6 }}
@@ -114,29 +142,37 @@ export default function Hero() {
                 {
                   href: ROUTES.events,
                   icon: HeartIcon,
-                  label: "BOOK & EXPERIENCE",
+                  label: "DISCOVER EVENTS",
+                  mobileLabel: "EVENTS",
                   gradient: "from-action-500 to-action-600",
+                  color: "red",
                   delay: 0
                 },
                 {
                   href: ROUTES.community,
                   icon: UsersIcon,
-                  label: "PORTUGUESE SPEAKERS",
+                  label: "PORTUGUESE COMMUNITY",
+                  mobileLabel: "COMMUNITY", 
                   gradient: "from-secondary-500 to-secondary-600",
+                  color: "green",
                   delay: 0.1
                 },
                 {
                   href: ROUTES.groups,
                   icon: SparklesIcon,
-                  label: "LIVE TOGETHER",
+                  label: "JOIN GROUPS",
+                  mobileLabel: "GROUPS",
                   gradient: "from-accent-500 to-coral-500",
+                  color: "yellow",
                   delay: 0.2
                 },
                 {
                   href: ROUTES.myNetwork,
                   icon: ArrowRightIcon,
-                  label: "GROW NETWORK",
+                  label: "EXPAND NETWORK",
+                  mobileLabel: "NETWORK",
                   gradient: "from-premium-500 to-premium-600",
+                  color: "blue",
                   delay: 0.3
                 }
               ].map((item, index) => (
@@ -152,28 +188,30 @@ export default function Hero() {
                   }}
                 >
                   <LuxuryRipple
-                    className="luxury-glass-card min-h-[96px] sm:min-h-[104px] cursor-pointer"
+                    className="hero-feature-card hero-mobile-touch-target luxury-glass-card min-h-[80px] sm:min-h-[96px] md:min-h-[104px] cursor-pointer"
                     hapticFeedback="light"
                     rippleColor="rgba(255, 255, 255, 0.4)"
                     onClick={() => window.location.href = item.href}
                   >
                     <motion.div
-                      className="flex flex-col items-center gap-3 p-4"
+                      className="flex flex-col items-center justify-center gap-2 sm:gap-3 p-3 sm:p-4 h-full"
                       whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.98 }}
                     >
                       <motion.div
-                        className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg`}
+                        className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg`}
                         whileHover={{ 
                           rotate: [0, -5, 5, 0],
                           scale: 1.05
                         }}
                         transition={{ duration: 0.3 }}
                       >
-                        <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                        <item.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" />
                       </motion.div>
-                      <span className="text-xs font-bold text-gray-800 tracking-wide text-center leading-tight">
-                        {item.label}
+                      <span className="text-[10px] sm:text-xs font-bold text-gray-800 tracking-wide text-center leading-tight px-1">
+                        {/* Responsive label text */}
+                        <span className="block sm:hidden">{item.mobileLabel}</span>
+                        <span className="hidden sm:block">{item.label}</span>
                       </span>
                     </motion.div>
                   </LuxuryRipple>
@@ -181,7 +219,7 @@ export default function Hero() {
               ))}
             </motion.div>
 
-            {/* Premium Services Quick Access (mobile-first). Hidden on desktop and placed under the right card there. */}
+            {/* Mobile-Enhanced Premium Services - Touch-Optimized */}
             <div
               className={`transition-all duration-1000 delay-700 lg:hidden ${
                 mounted
@@ -189,56 +227,64 @@ export default function Hero() {
                   : "opacity-0 translate-y-5"
               }`}
             >
-              <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg">
-                <h3 className="text-lg font-bold text-gray-800 mb-4 text-center">
-                  {t("hero.services.title", "Premium Portuguese Services")}
-                </h3>
-                <div className="grid grid-cols-3 gap-3">
-                  <a
-                    href={ROUTES.londonTours}
-                    className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-primary-50 hover:bg-primary-100 transition-all duration-200 hover:scale-105 min-h-[44px] shadow-lg hover:shadow-xl"
+              <div className="hero-premium-services bg-white/70 backdrop-blur-lg rounded-3xl p-4 sm:p-5 shadow-xl">
+                <div className="text-center mb-4">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-1">
+                    🇵🇹 {t("hero.services.title", "Premium Portuguese Services")}
+                  </h3>
+                  <p className="text-xs text-gray-600">Luxury experiences for Portuguese speakers</p>
+                </div>
+                <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                  <LuxuryRipple
+                    onClick={() => window.location.href = ROUTES.londonTours}
+                    className="group flex flex-col items-center gap-2 p-3 rounded-2xl bg-gradient-to-br from-red-50 to-red-100 hover:from-red-100 hover:to-red-150 transition-all duration-300 hover:scale-105 min-h-[70px] sm:min-h-[80px] shadow-lg hover:shadow-xl border border-red-200/50"
+                    hapticFeedback="light"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center">
-                      <MapPinIcon className="h-5 w-5 text-white" />
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center shadow-md">
+                      <MapPinIcon className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                     </div>
-                    <span className="text-xs font-semibold text-gray-700 text-center">
-                      London Tours
+                    <span className="text-[10px] sm:text-xs font-bold text-red-800 text-center leading-tight">
+                      UK Tours
                     </span>
-                  </a>
-                  <a
-                    href={ROUTES.transport}
-                    className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-all duration-200 hover:scale-105 min-h-[44px] shadow-lg hover:shadow-xl"
+                  </LuxuryRipple>
+
+                  <LuxuryRipple
+                    onClick={() => window.location.href = ROUTES.transport}
+                    className="group flex flex-col items-center gap-2 p-3 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 hover:from-green-100 hover:to-green-150 transition-all duration-300 hover:scale-105 min-h-[70px] sm:min-h-[80px] shadow-lg hover:shadow-xl border border-green-200/50"
+                    hapticFeedback="light"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-secondary-600 flex items-center justify-center">
-                      <ArrowRightIcon className="h-5 w-5 text-white" />
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-br from-green-600 to-green-700 flex items-center justify-center shadow-md">
+                      <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                     </div>
-                    <span className="text-xs font-semibold text-gray-700 text-center">
+                    <span className="text-[10px] sm:text-xs font-bold text-green-800 text-center leading-tight">
                       Executive Transport
                     </span>
-                  </a>
-                  <a
-                    href={ROUTES.transport}
-                    className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-premium-50 hover:bg-premium-100 transition-all duration-200 hover:scale-105 min-h-[44px] shadow-lg hover:shadow-xl"
+                  </LuxuryRipple>
+
+                  <LuxuryRipple
+                    onClick={() => window.location.href = ROUTES.transport}
+                    className="group flex flex-col items-center gap-2 p-3 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 hover:from-amber-100 hover:to-amber-150 transition-all duration-300 hover:scale-105 min-h-[70px] sm:min-h-[80px] shadow-lg hover:shadow-xl border border-amber-200/50"
+                    hapticFeedback="light"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-premium-600 flex items-center justify-center">
-                      <ShieldCheckIcon className="h-5 w-5 text-white" />
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-br from-amber-600 to-amber-700 flex items-center justify-center shadow-md">
+                      <ShieldCheckIcon className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                     </div>
-                    <span className="text-xs font-semibold text-gray-700 text-center">
-                      Close Protection
+                    <span className="text-[10px] sm:text-xs font-bold text-amber-800 text-center leading-tight">
+                      Protection
                     </span>
-                  </a>
+                  </LuxuryRipple>
                 </div>
               </div>
             </div>
 
-            {/* Streamlined CTA Section - Primary action focus */}
+            {/* Mobile-Enhanced CTA Section - Touch-Optimized */}
             <motion.div
-              className="space-y-4"
+              className="space-y-3 sm:space-y-4"
               initial={{ opacity: 0, y: 30 }}
               animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 1, delay: 0.8 }}
             >
-              {/* Primary CTA - Most prominent */}
+              {/* Primary CTA - Mobile-Optimized */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={mounted ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
@@ -250,35 +296,37 @@ export default function Hero() {
                 }}
               >
                 <LuxuryRipple
-                  className="luxury-btn-primary bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 relative overflow-hidden rounded-2xl text-center min-h-[56px] w-full"
-                  onClick={() => window.location.href = ROUTES.events}
+                  className="hero-cta-primary-mobile hero-mobile-primary-cta luxury-btn-primary relative overflow-hidden rounded-2xl text-center min-h-[56px] sm:min-h-[60px] w-full shadow-2xl"
+                  onClick={() => window.location.href = ROUTES.signup}
                   hapticFeedback="medium"
                   rippleColor="rgba(255, 255, 255, 0.3)"
                 >
                   <motion.div
-                    className="relative z-10 flex items-center justify-center gap-3 px-8 py-4 text-lg font-bold text-white"
+                    className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-4 text-base sm:text-lg font-bold text-white"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0"
+                      className="absolute inset-0 bg-gradient-to-r from-red-700 via-red-800 to-red-900 opacity-0 rounded-2xl"
                       whileHover={{ opacity: 1 }}
                       transition={{ duration: 0.3 }}
                     />
-                    <span className="relative z-10">{t("hero.cta.primary")}</span>
+                    <span className="relative z-10 flex items-center gap-2">
+                      🇵🇹 {t("hero.cta.primary", "Join Community - FREE")}
+                    </span>
                     <motion.div
                       whileHover={{ x: 4 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <ArrowRightIcon className="h-6 w-6" />
+                      <ArrowRightIcon className="h-5 w-5 sm:h-6 sm:w-6" />
                     </motion.div>
                   </motion.div>
                 </LuxuryRipple>
               </motion.div>
 
-              {/* Secondary CTAs - Smaller, side by side */}
+              {/* Secondary CTAs - Mobile Stack on Small Screens */}
               <motion.div
-                className="grid grid-cols-2 gap-3"
+                className="flex flex-col sm:grid sm:grid-cols-2 gap-2 sm:gap-3"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={mounted ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ 
@@ -289,32 +337,32 @@ export default function Hero() {
                 }}
               >
                 <LuxuryRipple
-                  className="luxury-btn-secondary relative overflow-hidden rounded-2xl text-center min-h-[48px]"
+                  className="luxury-btn-secondary bg-white/90 backdrop-blur-sm border-2 border-red-200 hover:border-red-300 relative overflow-hidden rounded-2xl text-center min-h-[48px] sm:min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300"
                   onClick={() => window.location.href = ROUTES.services}
                   hapticFeedback="light"
-                  rippleColor="rgba(197, 40, 47, 0.2)"
+                  rippleColor="rgba(197, 40, 47, 0.1)"
                 >
                   <motion.div
-                    className="relative z-10 flex items-center justify-center px-4 py-3 text-sm font-bold"
+                    className="relative z-10 flex items-center justify-center gap-2 px-4 py-3 text-sm sm:text-base font-bold text-red-700"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <span>{t("hero.cta.services", "Premium Services")}</span>
+                    <span>🏆 {t("hero.cta.services", "Premium Services")}</span>
                   </motion.div>
                 </LuxuryRipple>
 
                 <LuxuryRipple
-                  className="luxury-btn-secondary relative overflow-hidden rounded-2xl text-center min-h-[48px]"
+                  className="luxury-btn-secondary bg-white/90 backdrop-blur-sm border-2 border-green-200 hover:border-green-300 relative overflow-hidden rounded-2xl text-center min-h-[48px] sm:min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300"
                   onClick={() => window.location.href = ROUTES.host}
                   hapticFeedback="light"
-                  rippleColor="rgba(197, 40, 47, 0.2)"
+                  rippleColor="rgba(0, 168, 89, 0.1)"
                 >
                   <motion.div
-                    className="relative z-10 flex items-center justify-center gap-2 px-4 py-3 text-sm font-bold"
+                    className="relative z-10 flex items-center justify-center gap-2 px-4 py-3 text-sm sm:text-base font-bold text-green-700"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <span>{t("hero.cta.host")}</span>
+                    <span>{t("hero.cta.host", "Create Magic")}</span>
                     <motion.div
                       whileHover={{ rotate: 15 }}
                       transition={{ duration: 0.2 }}
@@ -324,92 +372,127 @@ export default function Hero() {
                   </motion.div>
                 </LuxuryRipple>
               </motion.div>
+              
+              {/* Mobile-Specific Trust Indicators */}
+              <motion.div
+                className="hero-trust-indicators"
+                initial={{ opacity: 0 }}
+                animate={mounted ? { opacity: 0.8 } : { opacity: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+              >
+                <div className="hero-trust-indicator">
+                  <div className="hero-trust-dot green"></div>
+                  <span>750+ Members</span>
+                </div>
+                <div className="hero-trust-indicator">
+                  <div className="hero-trust-dot red"></div>
+                  <span>UK-Wide</span>
+                </div>
+                <div className="hero-trust-indicator">
+                  <div className="hero-trust-dot gold"></div>
+                  <span>Portuguese Culture</span>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
 
-          {/* Right Column - Community Showcase */}
+          {/* Right Column - Mobile-Optimized Community Showcase */}
           <div
             className={`relative transition-all duration-1000 delay-600 ${
               mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
-            } self-start lg:-mt-8`}
+            } self-start lg:-mt-8 mt-8 lg:mt-0`}
           >
-            {/* Membership Card - More elegant design */}
-            <div className="relative z-10 bg-white/25 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/40">
-              <div className="space-y-8">
-                {/* Header Section */}
-                <div className="text-center space-y-4">
-                  <h3 className="text-2xl font-bold text-gray-800">
+            {/* Mobile-Enhanced Membership Card */}
+            <div className="hero-membership-card-mobile relative z-10 rounded-3xl p-5 sm:p-6 lg:p-8 shadow-2xl">
+              <div className="space-y-6 sm:space-y-7 lg:space-y-8">
+                {/* Mobile-Optimized Header Section */}
+                <div className="text-center space-y-3 sm:space-y-4">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <span className="text-2xl">🇵🇹</span>
+                    <div className="w-px h-6 bg-gray-400"></div>
+                    <span className="text-2xl">🇬🇧</span>
+                  </div>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 leading-tight">
                     Join the Portuguese-speaking Community
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    From {formatPrice(plans.community.monthly)}/month - Connect
-                    with Portuguese speakers across the United Kingdom.
-                    Unlimited matches, events, and networking nationwide.
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed px-2">
+                    From <span className="font-bold text-red-600">{formatPrice(plans.community.monthly)}/month</span> - Connect
+                    with Portuguese speakers across the UK.
+                    <span className="block mt-1 text-xs sm:text-sm text-gray-500">
+                      Unlimited matches, events, and networking nationwide.
+                    </span>
                   </p>
                 </div>
 
-                {/* Pricing Section - More elegant presentation */}
-                <div className="bg-white/40 rounded-2xl p-6 space-y-3">
+                {/* Mobile-Optimized Pricing Section */}
+                <div className="bg-white/50 rounded-2xl p-4 sm:p-5 lg:p-6 space-y-3 border border-white/30">
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-primary-600">
+                    <span className="font-semibold text-red-600 text-sm sm:text-base">
                       Community Member:
                     </span>
-                    <span className="text-lg font-bold text-gray-800">
-                      {formatPrice(plans.community.monthly)}/month
+                    <span className="text-base sm:text-lg font-bold text-gray-800">
+                      {formatPrice(plans.community.monthly)}/mo
                     </span>
                   </div>
-                  <div className="w-full h-px bg-gray-200"></div>
+                  <div className="w-full h-px bg-gradient-to-r from-red-200 via-gray-200 to-green-200"></div>
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-premium-600">
+                    <span className="font-semibold text-green-600 text-sm sm:text-base">
                       Cultural Ambassador:
                     </span>
-                    <span className="text-lg font-bold text-gray-800">
-                      {formatPrice(plans.ambassador.monthly)}/month
+                    <span className="text-base sm:text-lg font-bold text-gray-800">
+                      {formatPrice(plans.ambassador.monthly)}/mo
                     </span>
                   </div>
                 </div>
 
-                {/* Member avatars */}
+                {/* Mobile-Enhanced Member Avatars */}
                 <div className="flex justify-center">
-                  <div className="flex -space-x-3">
+                  <div className="flex -space-x-2 sm:-space-x-3">
                     {Array.from({ length: 4 }).map((_, i) => (
                       <div
                         key={i}
-                        className="w-12 h-12 rounded-full border-3 border-white shadow-lg bg-gradient-to-br from-green-400 via-red-400 to-yellow-400 flex items-center justify-center text-white font-bold text-sm"
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 sm:border-3 border-white shadow-lg bg-gradient-to-br from-green-400 via-red-400 to-yellow-400 flex items-center justify-center text-white font-bold text-xs sm:text-sm"
                       >
                         {["M", "A", "J", "L"][i]}
                       </div>
                     ))}
-                    <div className="w-12 h-12 rounded-full border-3 border-white shadow-lg bg-gradient-to-r from-green-500 to-red-500 flex items-center justify-center text-white text-xs font-bold">
-                      +500
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 sm:border-3 border-white shadow-lg bg-gradient-to-r from-green-500 to-red-500 flex items-center justify-center text-white text-[10px] sm:text-xs font-bold">
+                      +746
                     </div>
                   </div>
                 </div>
 
-                {/* Stats - Improved layout */}
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div className="bg-white/50 rounded-2xl p-4 border border-white/30">
-                    <div className="text-3xl font-bold text-secondary-600 mb-1">
+                {/* Mobile-Enhanced Stats */}
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 text-center">
+                  <div className="bg-white/60 rounded-2xl p-3 sm:p-4 border border-white/40 shadow-sm">
+                    <div className="text-2xl sm:text-3xl font-bold text-green-600 mb-1">
                       150+
                     </div>
-                    <div className="text-sm text-gray-600 font-medium">
-                      Monthly Experiences
+                    <div className="text-xs sm:text-sm text-gray-600 font-medium leading-tight">
+                      Monthly Events
                     </div>
                   </div>
-                  <div className="bg-white/50 rounded-2xl p-4 border border-white/30">
-                    <div className="text-3xl font-bold text-action-600 mb-1">
+                  <div className="bg-white/60 rounded-2xl p-3 sm:p-4 border border-white/40 shadow-sm">
+                    <div className="text-2xl sm:text-3xl font-bold text-red-600 mb-1">
                       25+
                     </div>
-                    <div className="text-sm text-gray-600 font-medium">UK Cities</div>
+                    <div className="text-xs sm:text-sm text-gray-600 font-medium leading-tight">UK Cities</div>
                   </div>
                 </div>
 
-                {/* Quick Social Login */}
-                <div className="space-y-4">
+                {/* Mobile-Optimized Social Login */}
+                <div className="space-y-3 sm:space-y-4">
                   <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider text-center">
-                    Quick Join
+                    🚀 Quick Join - Start Today
                   </div>
-                  <SocialLogin mode="signup" />
+                  <div className="px-2">
+                    <SocialLogin mode="signup" />
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-xs text-gray-500 px-4">
+                    <div className="flex-1 h-px bg-gray-300"></div>
+                    <span>Free to start connecting</span>
+                    <div className="flex-1 h-px bg-gray-300"></div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -83,16 +83,16 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         <ErrorBoundary>
-          <HeritageProvider>
-            <HeritageStyleProvider>
-              <LanguageProvider>
-                <FavoritesProvider>
-                  <FollowingProvider>
-                    <CartProvider>
-                      <NetworkingProvider>
-                        <SubscriptionProvider>
-                          <NotificationProvider>
-                            <AuthPopupProvider>
+          <AuthPopupProvider>
+            <HeritageProvider>
+              <HeritageStyleProvider>
+                <LanguageProvider>
+                  <FavoritesProvider>
+                    <FollowingProvider>
+                      <CartProvider>
+                        <NetworkingProvider>
+                          <SubscriptionProvider>
+                            <NotificationProvider>
                               <PlatformIntegrationProvider>
                                 <WaitingListProvider>
                                   <NavigationProvider>
@@ -164,16 +164,16 @@ export default function RootLayout({
                                   </NavigationProvider>
                                 </WaitingListProvider>
                               </PlatformIntegrationProvider>
-                            </AuthPopupProvider>
-                          </NotificationProvider>
-                        </SubscriptionProvider>
-                      </NetworkingProvider>
-                    </CartProvider>
-                  </FollowingProvider>
-                </FavoritesProvider>
-              </LanguageProvider>
-            </HeritageStyleProvider>
-          </HeritageProvider>
+                            </NotificationProvider>
+                          </SubscriptionProvider>
+                        </NetworkingProvider>
+                      </CartProvider>
+                    </FollowingProvider>
+                  </FavoritesProvider>
+                </LanguageProvider>
+              </HeritageStyleProvider>
+            </HeritageProvider>
+          </AuthPopupProvider>
         </ErrorBoundary>
         <Toaster
           position="top-right"

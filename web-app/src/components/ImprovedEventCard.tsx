@@ -329,6 +329,22 @@ const ImprovedEventCard = ({
                     getButtonStyles('primary', 'medium'),
                     "flex-1 text-center"
                   )}
+                  role="button"
+                  aria-label={`${isFull 
+                    ? isPortuguese
+                      ? "Aderir à lista de espera para"
+                      : "Join waitlist for"
+                    : isPortuguese
+                    ? "Ver mais detalhes sobre"
+                    : "View more details about"
+                  } ${event.title}`}
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      window.location.href = `/events/${event.id}`;
+                    }
+                  }}
                 >
                   {isFull
                     ? isPortuguese

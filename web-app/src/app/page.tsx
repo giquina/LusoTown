@@ -14,50 +14,56 @@ import MobileWelcomeWizard from '@/components/MobileWelcomeWizard'
 import ResponsiveButton from '@/components/ResponsiveButton'
 import PortugueseText from '@/components/PortugueseText'
 
-// Optimized lazy loading with priority-based loading and better placeholders
+// Optimized mobile-first lazy loading - Only load what's critical for mobile
+const EventsShowcase = dynamic(() => import('@/components/EventsShowcase'), {
+  loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />
+})
+
+// Defer everything below-the-fold with intersection observer for mobile performance
 const HowItWorks = dynamic(() => import('@/components/HowItWorks'), {
-  loading: () => <div className="h-80 bg-gradient-to-r from-gray-50 to-gray-100 animate-pulse rounded-xl" />
+  loading: () => <div className="h-60 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
 })
 const AboutLusoTown = dynamic(() => import('@/components/AboutLusoTown'), {
-  loading: () => <div className="h-80 bg-gradient-to-r from-secondary-50 to-accent-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-60 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
 })
-// Critical above-the-fold - load immediately
-const EventsShowcase = dynamic(() => import('@/components/EventsShowcase'))
 const GroupsShowcase = dynamic(() => import('@/components/GroupsShowcase'), {
-  loading: () => <div className="h-96 bg-gradient-to-r from-accent-50 to-coral-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
 })
-// Lower priority components - defer loading
 const SuccessStories = dynamic(() => import('@/components/SuccessStories'), {
-  loading: () => <div className="h-80 bg-gradient-to-r from-coral-50 to-secondary-50 animate-pulse rounded-xl" />,
-  ssr: false // Client-side only for better initial load
+  loading: () => <div className="h-60 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
 })
 const AppDownloadSection = dynamic(() => import('@/components/AppDownloadSection'), {
-  loading: () => <div className="h-64 bg-gradient-to-r from-action-50 to-premium-50 animate-pulse rounded-xl" />,
+  loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
 const TestimonialsNew = dynamic(() => import('@/components/TestimonialsNew'), {
-  loading: () => <div className="h-64 bg-gradient-to-r from-premium-50 to-secondary-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />
 })
 const CustomToursSection = dynamic(() => import('@/components/CustomToursSection'), {
-  loading: () => <div className="h-96 bg-gradient-to-r from-accent-50 to-coral-50 animate-pulse rounded-xl" />,
+  loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
 const MatchHowItWorks = dynamic(() => import('@/components/MatchHowItWorks'), {
-  loading: () => <div className="h-screen bg-gradient-to-r from-secondary-50 to-action-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-80 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
 })
 const CTA = dynamic(() => import('@/components/CTA'), {
-  loading: () => <div className="h-48 bg-gradient-to-r from-secondary-600 to-accent-600 animate-pulse rounded-xl" />
+  loading: () => <div className="h-32 bg-gray-100 animate-pulse rounded-xl" />
 })
 const StudentSupportSection = dynamic(() => import('@/components/StudentSupportSection'), {
-  loading: () => <div className="h-64 bg-gradient-to-r from-premium-50 to-coral-50 animate-pulse rounded-xl" />,
+  loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
 const CoreFeaturesShowcase = dynamic(() => import('@/components/CoreFeaturesShowcase'), {
-  loading: () => <div className="h-screen bg-gradient-to-r from-secondary-50 to-accent-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />
 })
 const CommunityFeedSection = dynamic(() => import('@/components/CommunityFeedSection'), {
-  loading: () => <div className="h-screen bg-gradient-to-r from-coral-50 to-action-50 animate-pulse rounded-xl" />,
-  ssr: false // Client-side only for Twitter API calls
+  loading: () => <div className="h-60 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
 })
 import { 
   ChatBubbleLeftRightIcon, 
@@ -71,7 +77,9 @@ import {
   BriefcaseIcon,
   HomeIcon,
   HeartIcon,
-  MapPinIcon
+  MapPinIcon,
+  StarIcon,
+  CheckIcon
 } from '@heroicons/react/24/outline'
 
 // Page-specific structured data for Portuguese social calendar
@@ -85,13 +93,22 @@ export default function Home() {
   // Mock user activity for homepage
   const userActivity = ['visited_homepage', 'viewed_events', 'explored_services']
 
-  // Show welcome wizard on first visit (mobile only)
+  // Show welcome wizard on first visit (mobile only) - Less aggressive
   useEffect(() => {
     const hasSeenWelcome = localStorage.getItem('lusotown_welcome_seen')
     const isMobile = window.innerWidth < 768
     
+    // Only show after user has been active for 10 seconds to avoid blocking immediate access
     if (!hasSeenWelcome && isMobile) {
-      setTimeout(() => setShowWelcomeWizard(true), 2000)
+      const timer = setTimeout(() => {
+        // Double-check user is still on page and hasn't navigated away
+        if (!localStorage.getItem('lusotown_welcome_seen')) {
+          setShowWelcomeWizard(true)
+        }
+      }, 10000) // 10 seconds instead of 2
+
+      // Clean up timer if component unmounts
+      return () => clearTimeout(timer)
     }
   }, [])
 
@@ -124,6 +141,59 @@ export default function Home() {
         <div className="pt-24 w-full">
           <Hero />
           
+          {/* Prominent Homepage CTAs - Above the fold */}
+          <section className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 py-8 px-4">
+            <div className="container mx-auto text-center">
+              <div className="max-w-4xl mx-auto space-y-6">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                  {t('homepage.cta.title', 'Join 750+ Portuguese Speakers in the UK')}
+                </h2>
+                <p className="text-lg sm:text-xl text-white/90 leading-relaxed">
+                  {t('homepage.cta.subtitle', 'Free to join • Events • Networking • Culture • Friendship')}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
+                  {/* Primary Sign Up Button */}
+                  <a
+                    href={ROUTES.signup}
+                    className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white text-primary-700 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl hover:bg-gray-50 transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 min-h-[56px] min-w-[200px]"
+                  >
+                    <span className="mr-2">🇵🇹</span>
+                    {t('homepage.cta.signup', 'Join Community - FREE')}
+                    <ArrowRightIcon className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  
+                  {/* Secondary Demo Button */}
+                  <a
+                    href={ROUTES.login}
+                    className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 border-2 border-white/30 text-white rounded-2xl font-semibold text-base hover:border-white hover:bg-white/10 transition-all duration-300 min-h-[56px] min-w-[160px]"
+                  >
+                    {t('homepage.cta.demo', 'Try Demo')}
+                  </a>
+                </div>
+                
+                {/* Trust indicators */}
+                <div className="flex flex-wrap justify-center items-center gap-6 text-white/80 text-sm">
+                  <div className="flex items-center gap-2">
+                    <UsersIcon className="h-4 w-4" />
+                    <span>750+ Members</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPinIcon className="h-4 w-4" />
+                    <span>London & UK</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <StarIcon className="h-4 w-4 text-yellow-300" />
+                    <span>4.9/5 Rating</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckIcon className="h-4 w-4" />
+                    <span>Free to Join</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
           {/* Mobile Quick Actions - Simplified Portuguese focus */}
           <section className="md:hidden bg-white py-6 border-b border-gray-100" aria-label="Quick actions for mobile users">
             <div className="container mx-auto px-4">
@@ -148,34 +218,34 @@ export default function Home() {
               </div>
               
               <div className="space-y-3 mb-4">
-                {/* Primary Action - Find Portuguese Matches */}
+                {/* Primary Action - Join Community */}
                 <ResponsiveButton
-                  href="/matches"
+                  href={ROUTES.signup}
                   variant="primary"
                   size="lg"
                   fullWidth
-                  portugueseTextFallback={t('mobile.find_matches_short', 'Find Matches')}
-                  aria-label="Find Portuguese matches near you for free"
+                  portugueseTextFallback={t('mobile.join_community_short', 'Join Free')}
+                  aria-label="Join Portuguese community for free"
                   className="!p-5 !justify-between !text-left"
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                      <HeartIcon className="w-6 h-6 text-white" />
+                      <UsersIcon className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <PortugueseText 
                         className="text-lg font-bold mb-1 text-white" 
                         maxLength={25}
-                        fallback={t('mobile.find_matches_short', 'Find Matches')}
+                        fallback={t('mobile.join_community_short', 'Join Free')}
                       >
-                        {t('mobile.find_matches_title', 'Find Portuguese Matches')}
+                        {t('mobile.join_community_title', 'Join Portuguese Community')}
                       </PortugueseText>
                       <PortugueseText 
                         className="text-sm text-white/90"
                         maxLength={35}
-                        fallback={t('mobile.connect_free', 'Connect FREE')}
+                        fallback={t('mobile.free_signup', 'FREE Signup')}
                       >
-                        {t('mobile.find_matches_subtitle', 'Connect with speakers near you - FREE')}
+                        {t('mobile.join_community_subtitle', '750+ Portuguese speakers - FREE to join')}
                       </PortugueseText>
                     </div>
                   </div>

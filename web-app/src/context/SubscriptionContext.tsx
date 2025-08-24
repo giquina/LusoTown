@@ -8,8 +8,8 @@ import { supabase } from '@/lib/supabase'
 import toast from 'react-hot-toast'
 import { ROUTES } from '@/config/routes'
 
-// Initialize Stripe
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '')
+// Initialize Stripe - with fallback for development
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || 'pk_test_placeholder')
 
 export interface Subscription {
   id: string

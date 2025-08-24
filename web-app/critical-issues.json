@@ -1,0 +1,57 @@
+{
+  "critical": [],
+  "warnings": [],
+  "broken_links": [
+    {
+      "page": "Homepage",
+      "link": "Events",
+      "issue": "Navigation link not found"
+    },
+    {
+      "page": "Homepage",
+      "link": "Business Directory",
+      "issue": "Navigation link not found"
+    },
+    {
+      "page": "Homepage",
+      "link": "Matches",
+      "issue": "Navigation link not found"
+    }
+  ],
+  "broken_ctas": [],
+  "js_errors": [
+    {
+      "page": "Homepage",
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 ()",
+        "Failed to load resource: the server responded with a status of 404 ()",
+        "Failed to load resource: the server responded with a status of 404 ()",
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    }
+  ],
+  "form_issues": [
+    {
+      "page": "Login",
+      "issue": "Multiple forms found: 2",
+      "severity": "warning"
+    },
+    {
+      "page": "Login",
+      "issue": "Multiple email inputs found: 2",
+      "severity": "critical"
+    },
+    {
+      "page": "Login",
+      "issue": "Demo login test failed: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form').first().locator('button[type=\"submit\"], button:has-text(\"Sign In\")').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"submit\" class=\"btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all\">Welcome Home</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - element is outside of the viewport\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - element is outside of the viewport\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    48 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - element is outside of the viewport\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "severity": "critical"
+    }
+  ],
+  "mobile_issues": [
+    {
+      "page": "Homepage",
+      "issue": "No mobile menu button found",
+      "severity": "critical"
+    }
+  ]
+}

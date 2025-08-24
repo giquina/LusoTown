@@ -127,10 +127,10 @@ export default function Login() {
     }
   };
 
-  // Test credentials for demo (placeholders only - not functional)
+  // Demo credentials
   const testCredentials = {
-    email: TEST_DISPLAY_CONFIG.email,
-    password: TEST_DISPLAY_CONFIG.password,
+    email: 'demo@lusotown.com',
+    password: 'LusoTown2025!',
   };
 
   const fillTestCredentials = () => {

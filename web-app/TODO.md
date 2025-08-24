@@ -1,13 +1,77 @@
 # LusoTown Platform Development TODO
 
-## 🎯 Current Development Priorities (Q4 2025)
+## 🚨 **CRITICAL ISSUES - IMMEDIATE ACTION REQUIRED (24-48 Hours)**
+
+### **Website Currently Broken - Audit Findings January 2025**
+*Based on comprehensive Playwright MCP audit of https://web-rms4m4wbx-giquinas-projects.vercel.app*
+
+#### **🔥 BLOCKING ISSUES (Fix Today)**
+- [ ] **LOGIN SYSTEM COMPLETELY BROKEN** 🚨
+  - [ ] Remove duplicate forms causing conflicts in `/src/app/login/page.tsx`
+  - [ ] Fix demo account access (demo@lusotown.com)
+  - [ ] Ensure submit button is visible and clickable on mobile
+  - [ ] Test authentication flow end-to-end
+
+- [ ] **MOBILE NAVIGATION MISSING** 📱
+  - [ ] Implement hamburger menu for mobile screens
+  - [ ] Add mobile navigation component in `Header.tsx`
+  - [ ] Ensure touch targets ≥44px for Portuguese community (multi-generational users)
+  - [ ] Test on iPhone SE (375px) - most common device
+
+- [ ] **MAIN NAVIGATION BROKEN** 🧭
+  - [ ] Restore missing navigation links: Events, Business Directory, Matches
+  - [ ] Fix navigation component in `/src/components/Header.tsx`
+  - [ ] Ensure all routes are properly connected
+  - [ ] Test navigation hierarchy
+
+- [ ] **JAVASCRIPT ERRORS SITE-WIDE** 💥
+  - [ ] Fix 404 resource loading failures (18+ errors found)
+  - [ ] Resolve React Context Provider issues
+  - [ ] Fix Stripe configuration errors
+  - [ ] Clean up console errors across all pages
+
+#### **⚠️ HIGH PRIORITY (This Week)**
+- [ ] **MOBILE UX CRISIS** (Score: 65/100)
+  - [ ] Fix 6.2 second load time → target <3 seconds
+  - [ ] Fix modal blocking mobile users on entry
+  - [ ] Add PT/EN language toggle to onboarding modal
+  - [ ] Fix horizontal scroll issues
+  - [ ] Optimize touch interface (82% compliance → 100%)
+
+- [ ] **MISSING PRIMARY CTAs**
+  - [ ] Add clear "Sign Up" buttons on homepage
+  - [ ] Implement prominent "Join Community" CTAs
+  - [ ] Fix event booking buttons
+  - [ ] Test conversion funnel
+
+- [ ] **PERFORMANCE OPTIMIZATION**
+  - [ ] Reduce JavaScript bundle size
+  - [ ] Implement dynamic imports for AI systems
+  - [ ] Optimize images for mobile networks
+  - [ ] Fix page timeouts on /dashboard, /students, /community
+
+#### **🛠️ TECHNICAL DEBT (Next Week)**
+- [ ] **Form Accessibility Issues**
+  - [ ] Add missing form labels (accessibility compliance)
+  - [ ] Fix keyboard navigation
+  - [ ] Improve screen reader support for Portuguese content
+
+- [ ] **Events System Problems**
+  - [ ] Fix missing event cards display
+  - [ ] Implement proper event filtering
+  - [ ] Test booking system end-to-end
+  - [ ] Optimize event search for Portuguese cultural events
+
+---
+
+## 🎯 **ORIGINAL DEVELOPMENT PRIORITIES (Post-Fixes)**
 
 ### Core Philosophy: **Production-Ready Portuguese-Speaking Community Platform**
 Focus on practical enhancements, bug fixes, performance optimization, and user experience improvements for the Portuguese-speaking community in the United Kingdom.
 
 ---
 
-## 🚀 **HIGH PRIORITY - Platform Stability & Performance**
+## 🚀 **HIGH PRIORITY - Platform Stability & Performance** (After Critical Fixes)
 
 ### 1. Core Infrastructure Improvements
 - [ ] **Performance Optimization**

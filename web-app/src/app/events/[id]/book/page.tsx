@@ -255,12 +255,13 @@ const TechnologyWorkshopBookingPage = () => {
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                               <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
                                   First Name *
                                 </label>
                                 <div className="relative">
-                                  <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                                  <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" aria-hidden="true" />
                                   <input
+                                    id="firstName"
                                     type="text"
                                     name="firstName"
                                     value={formData.firstName}
@@ -268,17 +269,20 @@ const TechnologyWorkshopBookingPage = () => {
                                     placeholder="Your first name"
                                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                     required
+                                    aria-describedby="firstName-required"
                                   />
+                                  <div id="firstName-required" className="sr-only">Required field</div>
                                 </div>
                               </div>
 
                               <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
                                   Last Name *
                                 </label>
                                 <div className="relative">
-                                  <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                                  <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" aria-hidden="true" />
                                   <input
+                                    id="lastName"
                                     type="text"
                                     name="lastName"
                                     value={formData.lastName}
@@ -286,18 +290,21 @@ const TechnologyWorkshopBookingPage = () => {
                                     placeholder="Your last name"
                                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                     required
+                                    aria-describedby="lastName-required"
                                   />
+                                  <div id="lastName-required" className="sr-only">Required field</div>
                                 </div>
                               </div>
                             </div>
 
                             <div>
-                              <label className="block text-sm font-medium text-gray-700 mb-2">
+                              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                                 Email Address *
                               </label>
                               <div className="relative">
-                                <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                                <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" aria-hidden="true" />
                                 <input
+                                  id="email"
                                   type="email"
                                   name="email"
                                   value={formData.email}
@@ -305,7 +312,10 @@ const TechnologyWorkshopBookingPage = () => {
                                   placeholder="your@email.com"
                                   className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                   required
+                                  aria-describedby="email-required"
+                                  autoComplete="email"
                                 />
+                                <div id="email-required" className="sr-only">Required field for event confirmation</div>
                               </div>
                             </div>
 

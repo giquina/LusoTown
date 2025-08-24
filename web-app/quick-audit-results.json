@@ -1,0 +1,55 @@
+{
+  "homepage": {
+    "status": "loaded",
+    "issues": [
+      "No signup CTAs found"
+    ],
+    "loadTime": 4096
+  },
+  "criticalPages": {
+    "/about": {
+      "status": "loaded",
+      "loadTime": 651,
+      "title": "LusoTown - London | Portuguese Social & Business Network",
+      "issues": []
+    },
+    "/events": {
+      "status": "loaded",
+      "loadTime": 338,
+      "title": "Portuguese Events in London - Cultural Activities & Social Calendar",
+      "issues": []
+    },
+    "/pricing": {
+      "status": "loaded",
+      "loadTime": 421,
+      "title": "LusoTown - London | Portuguese Social & Business Network",
+      "issues": []
+    },
+    "/login": {
+      "status": "loaded",
+      "loadTime": 375,
+      "title": "LusoTown - London | Portuguese Social & Business Network",
+      "issues": []
+    },
+    "/signup": {
+      "status": "loaded",
+      "loadTime": 564,
+      "title": "Join LusoTown | Exclusive Community for Women 30+ in London & United Kingdom",
+      "issues": []
+    }
+  },
+  "brokenFeatures": [
+    "Login: Submit button not found",
+    "Demo login failed: locator.fill: Error: strict mode violation: locator('input[type=\"email\"], input[name=\"email\"]') resolved to 2 elements:\n    1) <input value=\"\" id=\"email\" required=\"\" type=\"email\" autofocus=\"\" name=\"email\" placeholder=\"your@email.com\" class=\"w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all border-gray-300 focus:ring-primary-400\"/> aka getByRole('textbox', { name: 'Email Address' })\n    2) <input type=\"email\" placeholder=\"Enter your email\" class=\"flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent min-w-0 min-h-[44px]\"/> aka getByRole('textbox', { name: 'Enter your email' })\n\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"]')\u001b[22m\n"
+  ],
+  "jsErrorSummary": [
+    {
+      "page": "homepage",
+      "errors": 2,
+      "examples": [
+        "Failed to load resource: the server responded with a status of 404 ()",
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    }
+  ]
+}

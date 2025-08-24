@@ -1,0 +1,3565 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - img [ref=e11]
+          - heading "Welcome to LusoTown" [level=2] [ref=e13]
+          - paragraph [ref=e14]: London's Portuguese community platform • 2,750+ verified members
+        - button "Close" [ref=e15] [cursor=pointer]:
+          - img [ref=e16] [cursor=pointer]
+      - generic [ref=e18]:
+        - heading "How would you like to participate?" [level=3] [ref=e19]
+        - generic [ref=e20]:
+          - button "Join as Member Discover events, make connections, enjoy experiences" [ref=e21] [cursor=pointer]:
+            - img [ref=e22] [cursor=pointer]
+            - generic [ref=e24] [cursor=pointer]: Join as Member
+            - generic [ref=e25] [cursor=pointer]: Discover events, make connections, enjoy experiences
+          - button "Become a Curator Create events, build community, earn through hosting" [ref=e26] [cursor=pointer]:
+            - img [ref=e27] [cursor=pointer]
+            - generic [ref=e29] [cursor=pointer]: Become a Curator
+            - generic [ref=e30] [cursor=pointer]: Create events, build community, earn through hosting
+      - generic [ref=e32]:
+        - button "Meet Your Match FREE 2,750+ verified Portuguese speakers Find Portuguese speakers who share your values, culture, and location. Perfect matches based on heritage, interests, and lifestyle. 94% success rate Start Matching for Free" [ref=e33] [cursor=pointer]:
+          - generic [ref=e35] [cursor=pointer]:
+            - generic [ref=e36] [cursor=pointer]:
+              - img [ref=e38] [cursor=pointer]
+              - generic [ref=e40] [cursor=pointer]:
+                - generic [ref=e41] [cursor=pointer]:
+                  - generic [ref=e42] [cursor=pointer]: Meet Your Match
+                  - generic [ref=e43] [cursor=pointer]: FREE
+                - generic [ref=e44] [cursor=pointer]: 2,750+ verified Portuguese speakers
+            - generic [ref=e45] [cursor=pointer]: Find Portuguese speakers who share your values, culture, and location. Perfect matches based on heritage, interests, and lifestyle.
+            - generic [ref=e46] [cursor=pointer]:
+              - generic [ref=e47] [cursor=pointer]: 94% success rate
+              - generic [ref=e48] [cursor=pointer]:
+                - text: Start Matching for Free
+                - img [ref=e49] [cursor=pointer]
+        - button "Events Discovery From £5 150+ monthly events Authentic fado nights, Santos Populares, networking events, and cultural celebrations. Curated by Portuguese community leaders. Across 12 London boroughs Browse Events" [ref=e51] [cursor=pointer]:
+          - generic [ref=e53] [cursor=pointer]:
+            - generic [ref=e54] [cursor=pointer]:
+              - img [ref=e56] [cursor=pointer]
+              - generic [ref=e58] [cursor=pointer]:
+                - generic [ref=e59] [cursor=pointer]:
+                  - generic [ref=e60] [cursor=pointer]: Events Discovery
+                  - generic [ref=e61] [cursor=pointer]: From £5
+                - generic [ref=e62] [cursor=pointer]: 150+ monthly events
+            - generic [ref=e63] [cursor=pointer]: Authentic fado nights, Santos Populares, networking events, and cultural celebrations. Curated by Portuguese community leaders.
+            - generic [ref=e64] [cursor=pointer]:
+              - generic [ref=e65] [cursor=pointer]: Across 12 London boroughs
+              - generic [ref=e66] [cursor=pointer]:
+                - text: Browse Events
+                - img [ref=e67] [cursor=pointer]
+        - button "Premium Tours From £49 Expert Portuguese guides Exclusive Portuguese-led London experiences. Hidden gems, cultural tours, food walks, and business networking tours. Small groups (max 12) Explore Tours" [ref=e69] [cursor=pointer]:
+          - generic [ref=e71] [cursor=pointer]:
+            - generic [ref=e72] [cursor=pointer]:
+              - img [ref=e74] [cursor=pointer]
+              - generic [ref=e77] [cursor=pointer]:
+                - generic [ref=e78] [cursor=pointer]:
+                  - generic [ref=e79] [cursor=pointer]: Premium Tours
+                  - generic [ref=e80] [cursor=pointer]: From £49
+                - generic [ref=e81] [cursor=pointer]: Expert Portuguese guides
+            - generic [ref=e82] [cursor=pointer]: Exclusive Portuguese-led London experiences. Hidden gems, cultural tours, food walks, and business networking tours.
+            - generic [ref=e83] [cursor=pointer]:
+              - generic [ref=e84] [cursor=pointer]: Small groups (max 12)
+              - generic [ref=e85] [cursor=pointer]:
+                - text: Explore Tours
+                - img [ref=e86] [cursor=pointer]
+      - button "Skip for now" [ref=e89] [cursor=pointer]:
+        - img [ref=e90] [cursor=pointer]
+        - text: Skip for now
+    - banner [ref=e92]:
+      - navigation "Top" [ref=e93]:
+        - generic [ref=e94]:
+          - link "🏛️ LusoTown Portuguese flag United Kingdom flag London" [ref=e96] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e99] [cursor=pointer]:
+              - generic [ref=e102] [cursor=pointer]: 🏛️
+              - generic [ref=e103] [cursor=pointer]:
+                - generic [ref=e104] [cursor=pointer]:
+                  - heading "LusoTown" [level=1] [ref=e105] [cursor=pointer]
+                  - generic [ref=e106] [cursor=pointer]:
+                    - img "Portuguese flag" [ref=e107] [cursor=pointer]: 🇵🇹
+                    - img "United Kingdom flag" [ref=e108] [cursor=pointer]: 🇬🇧
+                - generic [ref=e109] [cursor=pointer]: London
+          - generic [ref=e111]:
+            - button "🇬🇧" [ref=e113] [cursor=pointer]:
+              - generic [ref=e114] [cursor=pointer]: 🇬🇧
+            - generic [ref=e116]:
+              - generic [ref=e117]: Open main menu
+              - img [ref=e118]
+    - main [ref=e120]:
+      - generic [ref=e121]:
+        - generic [ref=e130]:
+          - generic [ref=e131]:
+            - generic [ref=e133]:
+              - generic [ref=e134]: 🇵🇹
+              - generic [ref=e135]: UK Portuguese-speaking Community
+            - generic [ref=e137]:
+              - heading "Connect with Portuguese speakers across the United Kingdom" [level=1] [ref=e138]:
+                - generic [ref=e139]: Connect
+                - generic [ref=e140]: with Portuguese speakers across the United Kingdom
+              - paragraph [ref=e141]:
+                - text: Join 750+ Portuguese speakers across the UK.
+                - generic [ref=e142]: Events, networking, culture.
+            - generic [ref=e147]:
+              - textbox "Search..." [ref=e149]
+              - button "Search" [ref=e150] [cursor=pointer]:
+                - img [ref=e152] [cursor=pointer]
+            - generic [ref=e154]:
+              - generic [ref=e157] [cursor=pointer]:
+                - img [ref=e159] [cursor=pointer]
+                - generic [ref=e161] [cursor=pointer]: BOOK & EXPERIENCE
+              - generic [ref=e164] [cursor=pointer]:
+                - img [ref=e166] [cursor=pointer]
+                - generic [ref=e168] [cursor=pointer]: PORTUGUESE SPEAKERS
+              - generic [ref=e171] [cursor=pointer]:
+                - img [ref=e173] [cursor=pointer]
+                - generic [ref=e175] [cursor=pointer]: LIVE TOGETHER
+              - generic [ref=e178] [cursor=pointer]:
+                - img [ref=e180] [cursor=pointer]
+                - generic [ref=e182] [cursor=pointer]: GROW NETWORK
+            - generic [ref=e184]:
+              - heading "Premium Portuguese Services" [level=3] [ref=e185]
+              - generic [ref=e186]:
+                - link "London Tours" [ref=e187] [cursor=pointer]:
+                  - /url: /london-tours
+                  - img [ref=e189] [cursor=pointer]
+                  - generic [ref=e192] [cursor=pointer]: London Tours
+                - link "Executive Transport" [ref=e193] [cursor=pointer]:
+                  - /url: /transport
+                  - img [ref=e195] [cursor=pointer]
+                  - generic [ref=e197] [cursor=pointer]: Executive Transport
+                - link "Close Protection" [ref=e198] [cursor=pointer]:
+                  - /url: /transport
+                  - img [ref=e200] [cursor=pointer]
+                  - generic [ref=e202] [cursor=pointer]: Close Protection
+            - generic [ref=e203]:
+              - generic [ref=e206]:
+                - generic [ref=e208]: Start Socializing
+                - img [ref=e210]
+              - generic [ref=e212]:
+                - generic [ref=e215]: Premium Services
+                - generic [ref=e217]:
+                  - generic [ref=e218]: Create Magic
+                  - img [ref=e220]
+          - generic [ref=e224]:
+            - generic [ref=e225]:
+              - heading "Join the Portuguese-speaking Community" [level=3] [ref=e226]
+              - paragraph [ref=e227]: From £15.99/month - Connect with Portuguese speakers across the United Kingdom. Unlimited matches, events, and networking nationwide.
+            - generic [ref=e228]:
+              - generic [ref=e229]:
+                - generic [ref=e230]: "Community Member:"
+                - generic [ref=e231]: £15.99/month
+              - generic [ref=e233]:
+                - generic [ref=e234]: "Cultural Ambassador:"
+                - generic [ref=e235]: £29.99/month
+            - generic [ref=e237]:
+              - generic [ref=e238]: M
+              - generic [ref=e239]: A
+              - generic [ref=e240]: J
+              - generic [ref=e241]: L
+              - generic [ref=e242]: "+500"
+            - generic [ref=e243]:
+              - generic [ref=e244]:
+                - generic [ref=e245]: 150+
+                - generic [ref=e246]: Monthly Experiences
+              - generic [ref=e247]:
+                - generic [ref=e248]: 25+
+                - generic [ref=e249]: UK Cities
+            - generic [ref=e250]:
+              - generic [ref=e251]: Quick Join
+              - generic [ref=e252]:
+                - generic [ref=e253]:
+                  - button "Google" [ref=e254] [cursor=pointer]:
+                    - img [ref=e255] [cursor=pointer]
+                    - generic [ref=e260] [cursor=pointer]: Google
+                  - button "Facebook" [ref=e261] [cursor=pointer]:
+                    - img [ref=e262] [cursor=pointer]
+                    - generic [ref=e264] [cursor=pointer]: Facebook
+                  - button "Instagram" [ref=e265] [cursor=pointer]:
+                    - img [ref=e266] [cursor=pointer]
+                    - generic [ref=e268] [cursor=pointer]: Instagram
+                  - button "LinkedIn" [ref=e269] [cursor=pointer]:
+                    - img [ref=e270] [cursor=pointer]
+                    - generic [ref=e272] [cursor=pointer]: LinkedIn
+                - generic [ref=e277]: or continue with email
+        - region "Quick actions for mobile users" [ref=e278]:
+          - generic [ref=e279]:
+            - generic [ref=e280]:
+              - generic [ref=e281]:
+                - heading "Quick Start" [level=2] [ref=e282]
+                - generic [ref=e283]:
+                  - generic [ref=e284]: 750+ portugueses
+                  - generic [ref=e285]: •
+                  - generic [ref=e286]: Londres & UK
+              - generic [ref=e287]:
+                - generic [ref=e288]: FREE
+                - generic [ref=e289]:
+                  - generic [ref=e290]: ⭐
+                  - generic [ref=e291]: 4.9/5
+            - generic [ref=e292]:
+              - link "Find Portuguese matches near you for free" [ref=e293] [cursor=pointer]:
+                - /url: /matches
+                - generic [ref=e294] [cursor=pointer]:
+                  - generic [ref=e295] [cursor=pointer]:
+                    - img [ref=e297] [cursor=pointer]
+                    - generic [ref=e299] [cursor=pointer]:
+                      - generic [ref=e300] [cursor=pointer]: Find Portuguese Matches
+                      - generic [ref=e301] [cursor=pointer]: Connect with speakers near you - FR...
+                  - generic [ref=e303] [cursor=pointer]: FREE
+              - link "Browse Portuguese cultural events and festivals" [ref=e304] [cursor=pointer]:
+                - /url: /events
+                - generic [ref=e305] [cursor=pointer]:
+                  - generic [ref=e306] [cursor=pointer]:
+                    - img [ref=e308] [cursor=pointer]
+                    - generic [ref=e310] [cursor=pointer]:
+                      - generic [ref=e311] [cursor=pointer]: Browse Cultural Events
+                      - generic [ref=e312] [cursor=pointer]: Fado nights, festivals & mor...
+                  - img [ref=e313] [cursor=pointer]
+            - button "Explore All Features" [ref=e315] [cursor=pointer]:
+              - generic [ref=e316] [cursor=pointer]: Explore All Features
+            - generic [ref=e317]:
+              - generic [ref=e318]:
+                - generic [ref=e319]: M
+                - generic [ref=e320]:
+                  - generic [ref=e321]: Maria, Lisboa → London
+                  - generic [ref=e322]:
+                    - generic [ref=e323]: ⭐⭐⭐⭐⭐
+                    - generic [ref=e324]: Verified Portuguese
+              - paragraph [ref=e325]: "\"Encontrei portugueses incríveis aqui! Sinto-me em casa em Londres. Os eventos de fado são autênticos e a comunidade é muito acolhedora.\""
+              - generic [ref=e326]: 🇵🇹 Joined 8 events • Found 12+ Portuguese-speaking friends
+        - region "Your Vibrant Portuguese Life Across the UK" [ref=e327]:
+          - generic [ref=e335]:
+            - generic [ref=e336]:
+              - generic [ref=e337]:
+                - generic [ref=e340]: UK's Portuguese Social Hub
+                - img [ref=e341]
+              - heading "Your Vibrant Portuguese Life Across the UK" [level=2] [ref=e343]
+              - paragraph [ref=e344]: Everything you need to socialize, explore, learn, and create amazing memories with the UK's most exciting Portuguese community
+              - generic [ref=e345]:
+                - generic [ref=e346]:
+                  - img [ref=e347]
+                  - generic [ref=e349]: Our Community
+                - generic [ref=e350]:
+                  - generic [ref=e353]: UK Cities (375+)
+                  - generic [ref=e356]: UK-wide (188+)
+                  - generic [ref=e359]: International (187+)
+              - generic [ref=e360]:
+                - button "Carousel View" [ref=e361] [cursor=pointer]
+                - button "Grid View" [ref=e362] [cursor=pointer]
+            - generic [ref=e363]:
+              - generic [ref=e365]:
+                - generic [ref=e366]:
+                  - generic [ref=e368]: 5 booking now
+                  - img [ref=e369]
+                - generic [ref=e372]:
+                  - generic [ref=e373]:
+                    - generic [ref=e374]:
+                      - img [ref=e376]
+                      - generic [ref=e378]:
+                        - heading "Portuguese-led Tours" [level=3] [ref=e379]
+                        - generic [ref=e380]:
+                          - img [ref=e381]
+                          - generic [ref=e383]: Premium Feature
+                    - paragraph [ref=e384]: Explore the UK with passionate Portuguese guides who bring culture to life! Discover hidden gems, meaningful cultural connections, and authentic experiences created especially for Portuguese speakers living in or visiting any UK city. Your cultural adventure awaits!
+                    - generic [ref=e385]:
+                      - generic [ref=e388]: Native Portuguese-speaking guides
+                      - generic [ref=e391]: Culturally authentic experiences
+                      - generic [ref=e394]: Deep cultural insights
+                      - generic [ref=e397]: Small, intimate groups
+                    - generic [ref=e398]:
+                      - link "Book Tours" [ref=e399] [cursor=pointer]:
+                        - /url: /tours
+                        - generic [ref=e400] [cursor=pointer]: Book Tours
+                        - img [ref=e401] [cursor=pointer]
+                      - button "Learn More" [ref=e403] [cursor=pointer]:
+                        - generic [ref=e404] [cursor=pointer]: Learn More
+                  - generic [ref=e405]:
+                    - generic [ref=e406]:
+                      - heading "Live Stats" [level=4] [ref=e407]
+                      - generic [ref=e408]:
+                        - generic [ref=e409]:
+                          - generic [ref=e410]: 25+ unique tours
+                          - generic [ref=e411]: Today's Activity
+                        - generic [ref=e412]:
+                          - generic [ref=e413]: 98% satisfaction
+                          - generic [ref=e414]: Success Rate
+                        - generic [ref=e415]:
+                          - generic [ref=e416]: 150+ locations covered
+                          - generic [ref=e417]: Community Highlights
+                    - generic [ref=e418]:
+                      - generic [ref=e419]:
+                        - img [ref=e420]
+                        - heading "How This Works" [level=5] [ref=e422]
+                      - paragraph [ref=e423]: Book unique London experiences led by Portuguese guides who understand your cultural perspective. From Portuguese business districts to hidden cultural gems—see London through Portuguese eyes.
+              - generic [ref=e424]:
+                - button [ref=e425] [cursor=pointer]:
+                  - img [ref=e426] [cursor=pointer]
+                - generic [ref=e428]:
+                  - button [ref=e429] [cursor=pointer]
+                  - button [ref=e430] [cursor=pointer]
+                  - button [ref=e431] [cursor=pointer]
+                  - button [ref=e432] [cursor=pointer]
+                  - button [ref=e433] [cursor=pointer]
+                - generic [ref=e434]:
+                  - button [ref=e435] [cursor=pointer]:
+                    - img [ref=e436] [cursor=pointer]
+                  - button [ref=e438] [cursor=pointer]:
+                    - img [ref=e439] [cursor=pointer]
+            - generic [ref=e442]:
+              - img [ref=e443]
+              - heading "Ready to Join the UK's Most Exciting Portuguese Community?" [level=3] [ref=e445]
+              - paragraph [ref=e446]: Connect with 750 Portuguese speakers across the entire United Kingdom! From electrifying cultural events to inspiring professional networking—your amazing Portuguese adventure starts here in every UK city.
+              - generic [ref=e447]:
+                - link "Join the Community" [ref=e448] [cursor=pointer]:
+                  - /url: /signup
+                  - generic [ref=e450] [cursor=pointer]:
+                    - text: Join the Community
+                    - img [ref=e451] [cursor=pointer]
+                - link "Explore Features" [ref=e453] [cursor=pointer]:
+                  - /url: /events
+        - generic [ref=e462]:
+          - generic [ref=e463]:
+            - generic [ref=e464]:
+              - img [ref=e465]
+              - text: Portuguese Hearts United, Stories Shared
+            - heading "From Saudade to Community - Real UK Lives" [level=2] [ref=e467]:
+              - generic [ref=e468]: From Saudade to Community - Real UK Lives
+            - paragraph [ref=e469]: Discover how Portuguese speakers found their UK family through cultural experiences, social connections, and natural networking. From cinema nights to dance workshops across UK cities - authentic stories of community, friendship, and shared culture.
+          - generic [ref=e470]:
+            - generic [ref=e472]:
+              - img [ref=e474]
+              - generic [ref=e477]: 🇵🇹 Português
+              - generic [ref=e478]:
+                - img [ref=e479]
+                - img [ref=e481]
+                - img [ref=e483]
+                - img [ref=e485]
+                - img [ref=e487]
+              - blockquote [ref=e489]: "\"Conheci mulheres angolanas e brasileiras em finanças. Criámos um grupo de networking profissional!\""
+              - generic [ref=e490]:
+                - img "Default profile avatar" [ref=e492]
+                - generic [ref=e493]:
+                  - heading "Adelaide Silva, 39" [level=4] [ref=e494]
+                  - paragraph [ref=e495]: Brixton, Londres
+                  - paragraph [ref=e496]: Consultora Angolana
+            - generic [ref=e498]:
+              - img [ref=e500]
+              - generic [ref=e502]:
+                - img [ref=e503]
+                - img [ref=e505]
+                - img [ref=e507]
+                - img [ref=e509]
+                - img [ref=e511]
+              - blockquote [ref=e513]: "\"Found my Brazilian community through LusoTown. Now we organize churrasco weekends in London parks!\""
+              - generic [ref=e514]:
+                - img "Default profile avatar" [ref=e516]
+                - generic [ref=e517]:
+                  - heading "Paulo Rodrigues, 34" [level=4] [ref=e518]
+                  - paragraph [ref=e519]: Canary Wharf, London
+                  - paragraph [ref=e520]: Brazilian Community Organizer
+            - generic [ref=e522]:
+              - img [ref=e524]
+              - generic [ref=e526]:
+                - img [ref=e527]
+                - img [ref=e529]
+                - img [ref=e531]
+                - img [ref=e533]
+                - img [ref=e535]
+              - blockquote [ref=e537]: "\"LusoTown's business networking events help me connect with Portuguese professionals while sharing pastéis de nata!\""
+              - generic [ref=e538]:
+                - img "Default profile avatar" [ref=e540]
+                - generic [ref=e541]:
+                  - heading "Sofia Costa, 27" [level=4] [ref=e542]
+                  - paragraph [ref=e543]: Greenwich, London
+                  - paragraph [ref=e544]: Portuguese Business Professional
+            - generic [ref=e546]:
+              - img [ref=e548]
+              - generic [ref=e551]: 🇵🇹 Português
+              - generic [ref=e552]:
+                - img [ref=e553]
+                - img [ref=e555]
+                - img [ref=e557]
+                - img [ref=e559]
+                - img [ref=e561]
+              - blockquote [ref=e563]: "\"Através da LusoTown descobri eventos de fado e organizamos saraus mensais. É como ter Portugal em Londres!\""
+              - generic [ref=e564]:
+                - img "Fernanda Oliveira - Cultural events organizer from Stockwell, London" [ref=e566]
+                - generic [ref=e567]:
+                  - heading "Fernanda Oliveira, 31" [level=4] [ref=e568]
+                  - paragraph [ref=e569]: Stockwell, Londres
+                  - paragraph [ref=e570]: Organizadora de Eventos Culturais
+            - generic [ref=e572]:
+              - img [ref=e574]
+              - generic [ref=e577]: 🇵🇹 Português
+              - generic [ref=e578]:
+                - img [ref=e579]
+                - img [ref=e581]
+                - img [ref=e583]
+                - img [ref=e585]
+                - img [ref=e587]
+              - blockquote [ref=e589]: "\"A LusoTown ajudou-me a encontrar brasileiros e portugueses que amam samba. Temos roda de samba aos domingos!\""
+              - generic [ref=e590]:
+                - img "Marco Santos - Brazilian musician and community organizer from Bermondsey, London" [ref=e592]
+                - generic [ref=e593]:
+                  - heading "Marco Santos, 28" [level=4] [ref=e594]
+                  - paragraph [ref=e595]: Bermondsey, Londres
+                  - paragraph [ref=e596]: Músico Brasileiro
+            - generic [ref=e598]:
+              - img [ref=e600]
+              - generic [ref=e603]: 🇵🇹 Português
+              - generic [ref=e604]:
+                - img [ref=e605]
+                - img [ref=e607]
+                - img [ref=e609]
+                - img [ref=e611]
+                - img [ref=e613]
+              - blockquote [ref=e615]: "\"Organizamos workshops de português para crianças. Ver os pequenos cantar em português é a minha alegria!\""
+              - generic [ref=e616]:
+                - img "Catarina Lopes - Portuguese educator and Luso-British mother from Nine Elms, London" [ref=e618]
+                - generic [ref=e619]:
+                  - heading "Catarina Lopes, 35" [level=4] [ref=e620]
+                  - paragraph [ref=e621]: Nine Elms, Londres
+                  - paragraph [ref=e622]: Educadora Luso-Britânica
+            - generic [ref=e624]:
+              - img [ref=e626]
+              - generic [ref=e629]: 🇵🇹 Português
+              - generic [ref=e630]:
+                - img [ref=e631]
+                - img [ref=e633]
+                - img [ref=e635]
+                - img [ref=e637]
+                - img [ref=e639]
+              - blockquote [ref=e641]: "\"Na LusoTown encontrei cabo-verdianos e portugueses. Organizamos noites de música crioula juntos!\""
+              - generic [ref=e642]:
+                - img "Default profile avatar" [ref=e644]
+                - generic [ref=e645]:
+                  - heading "João Pereira, 42" [level=4] [ref=e646]
+                  - paragraph [ref=e647]: Camden, Londres
+                  - paragraph [ref=e648]: Músico Cabo-verdiano
+          - generic [ref=e649]:
+            - generic [ref=e650]:
+              - heading "Meet Your London Portuguese-speaking community" [level=3] [ref=e651]:
+                - text: Meet Your
+                - generic [ref=e652]: London Portuguese-speaking community
+              - paragraph [ref=e653]: Join thousands of Portuguese speakers across London who are organizing events, building communities, and connecting throughout the city.
+            - generic [ref=e654]:
+              - img "LusoTown member - Professional woman smiling" [ref=e656]
+              - img "LusoTown member - Confident woman in professional setting" [ref=e658]
+              - img "LusoTown member - Diverse professional woman" [ref=e660]
+              - img "LusoTown member - Woman with warm smile" [ref=e662]
+              - img "LusoTown member - Professional woman outdoors" [ref=e664]
+              - img "LusoTown member - Confident professional woman" [ref=e666]
+              - img "LusoTown member - Woman with authentic smile" [ref=e668]
+              - img "LusoTown member - Approachable professional woman" [ref=e670]
+              - img "LusoTown member - Confident woman in natural lighting" [ref=e672]
+              - img "LusoTown member - Professional woman with warm expression" [ref=e674]
+              - img "LusoTown member - Diverse woman with bright smile" [ref=e676]
+              - img "LusoTown member - Woman with authentic expression" [ref=e678]
+          - generic [ref=e681]:
+            - generic [ref=e682]:
+              - paragraph [ref=e683]: 4.9/5
+              - paragraph [ref=e684]: Average Rating
+            - generic [ref=e685]:
+              - paragraph [ref=e686]: 8K+
+              - paragraph [ref=e687]: London Members
+            - generic [ref=e688]:
+              - paragraph [ref=e689]: 32+
+              - paragraph [ref=e690]: London Boroughs
+          - generic [ref=e691]:
+            - heading "Ready to Connect with Portuguese Speakers in London?" [level=3] [ref=e692]
+            - paragraph [ref=e693]: Join thousands of Portuguese speakers across London who are organizing events, building communities, and creating lasting connections throughout the city.
+            - link "Join the London Community" [ref=e694] [cursor=pointer]:
+              - /url: /signup
+        - generic [ref=e702]:
+          - generic [ref=e703]:
+            - generic [ref=e705]:
+              - img [ref=e707]
+              - generic [ref=e709]: Como Funciona • How It Works
+            - heading "Fill Your Social Calendar" [level=2] [ref=e711]:
+              - text: Fill Your Social
+              - generic [ref=e712]: Calendar
+            - paragraph [ref=e713]: Connect, experience, and preserve Portuguese culture in London through six meaningful steps
+            - paragraph [ref=e714]: "\"A vida é melhor quando vivida em comunidade\" - Life is better when lived together"
+            - generic [ref=e715]:
+              - generic [ref=e716]:
+                - img [ref=e717]
+                - generic [ref=e720]: Café Culture
+              - generic [ref=e721]:
+                - img [ref=e722]
+                - generic [ref=e726]: Fado Nights
+              - generic [ref=e727]:
+                - img [ref=e728]
+                - generic [ref=e733]: Portuguese Cuisine
+              - generic [ref=e734]:
+                - img [ref=e735]
+                - generic [ref=e738]: Cultural Tours
+          - generic [ref=e739]:
+            - generic [ref=e741]:
+              - generic [ref=e742]:
+                - generic [ref=e743]: 🏠
+                - generic [ref=e744]: 🇵🇹
+                - generic [ref=e745]: 🏠
+              - generic [ref=e746]:
+                - generic [ref=e747]:
+                  - generic [ref=e748]: "01"
+                  - img [ref=e750]
+                - generic [ref=e753]:
+                  - heading "Create Your Portuguese Profile" [level=3] [ref=e754]
+                  - paragraph [ref=e755]: Crie o Seu Perfil Português
+                  - paragraph [ref=e756]: "Join 750 Portuguese speakers in London. Share your heritage: Portugal, Brazil, or Lusophone countries. Add your interests from fado to football, pastéis de nata to professional networking."
+                  - generic [ref=e757]: 🇵🇹 Heritage verification • 💼 Professional interests • ⚽ Cultural passions • 📍 London area
+                - button "Learn More" [ref=e759] [cursor=pointer]:
+                  - generic [ref=e760] [cursor=pointer]: Learn More
+                  - img [ref=e761] [cursor=pointer]
+            - generic [ref=e764]:
+              - generic [ref=e765]:
+                - generic [ref=e766]: ❤️
+                - generic [ref=e767]: 🇵🇹
+                - generic [ref=e768]: ❤️
+              - generic [ref=e769]:
+                - generic [ref=e770]:
+                  - generic [ref=e771]: "02"
+                  - img [ref=e773]
+                - generic [ref=e775]:
+                  - heading "Discover Your Matches" [level=3] [ref=e776]
+                  - paragraph [ref=e777]: Descubra os Seus Matches
+                  - paragraph [ref=e778]: Smart cultural compatibility matching. Find Portuguese speakers who share your saudade, love the same football team, or understand your professional journey in London.
+                  - generic [ref=e779]: 💕 Cultural compatibility • ⚽ Team loyalties • 🎭 Music tastes • 💼 Career paths
+                - button "Learn More" [ref=e781] [cursor=pointer]:
+                  - generic [ref=e782] [cursor=pointer]: Learn More
+                  - img [ref=e783] [cursor=pointer]
+            - generic [ref=e786]:
+              - generic [ref=e787]:
+                - generic [ref=e788]: 🎉
+                - generic [ref=e789]: 🇵🇹
+                - generic [ref=e790]: 🎉
+              - generic [ref=e791]:
+                - generic [ref=e792]:
+                  - generic [ref=e793]: "03"
+                  - img [ref=e795]
+                - generic [ref=e797]:
+                  - heading "Book Authentic Portuguese Events" [level=3] [ref=e798]
+                  - paragraph [ref=e799]: Reserve Eventos Portugueses Autênticos
+                  - paragraph [ref=e800]: From intimate fado nights in Stockwell to Portuguese business networking in the City. Real venues, real culture, real connections.
+                  - generic [ref=e801]: 🎭 Fado nights • ☕ Portuguese café meetups • 🍷 Wine & networking • 🥐 Cooking classes
+                - button "Learn More" [ref=e803] [cursor=pointer]:
+                  - generic [ref=e804] [cursor=pointer]: Learn More
+                  - img [ref=e805] [cursor=pointer]
+            - generic [ref=e808]:
+              - generic [ref=e809]:
+                - generic [ref=e810]: 📺
+                - generic [ref=e811]: 🇵🇹
+                - generic [ref=e812]: 📺
+              - generic [ref=e813]:
+                - generic [ref=e814]:
+                  - generic [ref=e815]: "04"
+                  - img [ref=e817]
+                - generic [ref=e820]:
+                  - heading "Stream & Earn Income" [level=3] [ref=e821]
+                  - paragraph [ref=e822]: Transmita e Ganhe Dinheiro
+                  - paragraph [ref=e823]: Join LusoTown TV - our Portuguese streaming platform. Watch live cultural content, host your own profitable shows, or monetize your London-Portuguese journey with 85/15 revenue split.
+                  - generic [ref=e824]: 📺 Profitable streaming • 💰 85% revenue share • 📈 Immediate earnings • 🌟 Monetize passion
+                - button "Learn More" [ref=e826] [cursor=pointer]:
+                  - generic [ref=e827] [cursor=pointer]: Learn More
+                  - img [ref=e828] [cursor=pointer]
+            - generic [ref=e831]:
+              - generic [ref=e832]:
+                - generic [ref=e833]: ⭐
+                - generic [ref=e834]: 🇵🇹
+                - generic [ref=e835]: ⭐
+              - generic [ref=e836]:
+                - generic [ref=e837]:
+                  - generic [ref=e838]: "05"
+                  - img [ref=e840]
+                - generic [ref=e842]:
+                  - heading "Access Premium Services" [level=3] [ref=e843]
+                  - paragraph [ref=e844]: Aceda a Serviços Premium
+                  - paragraph [ref=e845]: Luxury transport with Portuguese-speaking drivers, priority event booking, exclusive networking events, and premium matches.
+                  - generic [ref=e846]: 🚗 Portuguese chauffeurs • 🎫 VIP event access • ⭐ Premium matching • 🍾 Exclusive gatherings
+                - button "Learn More" [ref=e848] [cursor=pointer]:
+                  - generic [ref=e849] [cursor=pointer]: Learn More
+                  - img [ref=e850] [cursor=pointer]
+            - generic [ref=e853]:
+              - generic [ref=e854]:
+                - generic [ref=e855]: 🇵🇹
+                - generic [ref=e856]: 🇵🇹
+                - generic [ref=e857]: 🇵🇹
+              - generic [ref=e858]:
+                - generic [ref=e859]:
+                  - generic [ref=e860]: "06"
+                  - img [ref=e862]
+                - generic [ref=e865]:
+                  - heading "Build Your Portuguese Legacy" [level=3] [ref=e866]
+                  - paragraph [ref=e867]: Construa o Seu Legado Português
+                  - paragraph [ref=e868]: Share family recipes, connect with university partnerships, mentor other Portuguese speakers, and help preserve our culture for future generations in London.
+                  - generic [ref=e869]: 👨‍🍳 Family recipes • 🎓 Student mentoring • 📚 Cultural stories • 🏛️ Heritage preservation
+                - button "Learn More" [ref=e871] [cursor=pointer]:
+                  - generic [ref=e872] [cursor=pointer]: Learn More
+                  - img [ref=e873] [cursor=pointer]
+          - generic [ref=e875]:
+            - generic [ref=e876]:
+              - img [ref=e878]
+              - generic [ref=e883]: "750"
+              - generic [ref=e884]: PORTUGUESE SPEAKERS
+              - generic [ref=e885]: From Portugal, Brazil, Angola & more in London
+            - generic [ref=e886]:
+              - img [ref=e888]
+              - generic [ref=e890]: 40+
+              - generic [ref=e891]: MONTHLY MEETUPS
+              - generic [ref=e892]: At real Portuguese venues in London
+            - generic [ref=e893]:
+              - img [ref=e895]
+              - generic [ref=e898]: 75+
+              - generic [ref=e899]: PORTUGUESE VENUES
+              - generic [ref=e900]: Stockwell, Vauxhall, Elephant & Castle
+            - generic [ref=e901]:
+              - img [ref=e903]
+              - generic [ref=e908]: 15+
+              - generic [ref=e909]: United Kingdom CITIES
+              - generic [ref=e910]: London boroughs with Portuguese communities
+          - generic [ref=e912]:
+            - heading "Ready toJoin Our Community?" [level=3] [ref=e913]:
+              - text: Ready to
+              - generic [ref=e914]: Join Our Community?
+            - paragraph [ref=e915]:
+              - text: Book experiences with
+              - strong [ref=e916]: 750 Portuguese speakers
+              - text: in London.
+              - strong [ref=e917]: Real experiences, real venues, active social life.
+            - generic [ref=e918]:
+              - paragraph [ref=e919]: "\"Viver é conviver - há sempre algo para fazer juntos\""
+              - paragraph [ref=e920]: "\"To live is to live together - there's always something to do together\""
+            - generic [ref=e921]:
+              - link "Browse Events" [ref=e922] [cursor=pointer]:
+                - /url: /events
+                - generic [ref=e924] [cursor=pointer]:
+                  - text: Browse Events
+                  - img [ref=e925] [cursor=pointer]
+              - link "Join Now" [ref=e927] [cursor=pointer]:
+                - /url: /signup
+        - generic [ref=e935]:
+          - generic [ref=e936]:
+            - generic [ref=e938]:
+              - img [ref=e940]
+              - generic [ref=e942]: match_how_it_works.badge
+            - heading "Meet Your Portuguese Match" [level=2] [ref=e944]:
+              - text: Meet Your
+              - generic [ref=e945]: Portuguese Match
+            - paragraph [ref=e946]: match_how_it_works.subtitle
+            - paragraph [ref=e947]: "\"match_how_it_works.quote\""
+          - generic [ref=e949]:
+            - generic [ref=e951]:
+              - generic [ref=e952]:
+                - generic [ref=e953]: 🇵🇹
+                - generic [ref=e954]: 🇵🇹
+                - generic [ref=e955]: 🇵🇹
+              - generic:
+                - generic: 🏠
+                - generic: 📍
+                - generic: 💼
+                - generic: ❤️
+              - generic [ref=e956]:
+                - generic [ref=e957]:
+                  - generic [ref=e958]: "01"
+                  - img [ref=e960]
+                - generic [ref=e962]:
+                  - heading "Create Your Portuguese Profile" [level=3] [ref=e963]
+                  - paragraph [ref=e964]: Join our community of Portuguese speakers in London. Share your heritage, interests, and what you're looking for in authentic connections.
+                  - generic [ref=e965]:
+                    - generic [ref=e966]:
+                      - img [ref=e967]
+                      - generic [ref=e969]: Portuguese heritage verification
+                    - generic [ref=e970]:
+                      - img [ref=e971]
+                      - generic [ref=e973]: Cultural interests & preferences
+                    - generic [ref=e974]:
+                      - img [ref=e975]
+                      - generic [ref=e977]: London area & location
+                - button "Learn More" [ref=e979] [cursor=pointer]:
+                  - generic [ref=e980] [cursor=pointer]: Learn More
+                  - img [ref=e981] [cursor=pointer]
+            - generic [ref=e984]:
+              - generic [ref=e985]:
+                - generic [ref=e986]: 💕
+                - generic [ref=e987]: 🇵🇹
+                - generic [ref=e988]: 💕
+              - generic:
+                - generic: 🎭
+                - generic: 🍷
+                - generic: ⚽
+                - generic: 🎵
+              - generic [ref=e989]:
+                - generic [ref=e990]:
+                  - generic [ref=e991]: "02"
+                  - img [ref=e993]
+                - generic [ref=e995]:
+                  - heading "Discover Cultural Matches" [level=3] [ref=e996]
+                  - paragraph [ref=e997]: Our intelligent algorithm connects you with Portuguese speakers based on cultural compatibility, shared traditions, and common interests.
+                  - generic [ref=e998]:
+                    - generic [ref=e999]:
+                      - img [ref=e1000]
+                      - generic [ref=e1002]: Cultural compatibility scoring
+                    - generic [ref=e1003]:
+                      - img [ref=e1004]
+                      - generic [ref=e1006]: Portuguese traditions matching
+                    - generic [ref=e1007]:
+                      - img [ref=e1008]
+                      - generic [ref=e1010]: Language preference alignment
+                - button "Learn More" [ref=e1012] [cursor=pointer]:
+                  - generic [ref=e1013] [cursor=pointer]: Learn More
+                  - img [ref=e1014] [cursor=pointer]
+            - generic [ref=e1017]:
+              - generic [ref=e1018]:
+                - generic [ref=e1019]: 🎉
+                - generic [ref=e1020]: 🇵🇹
+                - generic [ref=e1021]: 🎉
+              - generic:
+                - generic: 🎭
+                - generic: ☕
+                - generic: 🍽️
+                - generic: 🎪
+              - generic [ref=e1022]:
+                - generic [ref=e1023]:
+                  - generic [ref=e1024]: "03"
+                  - img [ref=e1026]
+                - generic [ref=e1028]:
+                  - heading "Meet at Portuguese Events" [level=3] [ref=e1029]
+                  - paragraph [ref=e1030]: Connect through authentic Portuguese cultural events, from intimate fado nights to professional networking gatherings across London.
+                  - generic [ref=e1031]:
+                    - generic [ref=e1032]:
+                      - img [ref=e1033]
+                      - generic [ref=e1035]: Fado nights in Stockwell
+                    - generic [ref=e1036]:
+                      - img [ref=e1037]
+                      - generic [ref=e1039]: Portuguese business networking
+                    - generic [ref=e1040]:
+                      - img [ref=e1041]
+                      - generic [ref=e1043]: Cultural workshops & classes
+                - button "Learn More" [ref=e1045] [cursor=pointer]:
+                  - generic [ref=e1046] [cursor=pointer]: Learn More
+                  - img [ref=e1047] [cursor=pointer]
+            - generic [ref=e1050]:
+              - generic [ref=e1051]:
+                - generic [ref=e1052]: 🤝
+                - generic [ref=e1053]: 🇵🇹
+                - generic [ref=e1054]: 🤝
+              - generic:
+                - generic: 💬
+                - generic: 🌟
+                - generic: 🏆
+                - generic: 🎯
+              - generic [ref=e1055]:
+                - generic [ref=e1056]:
+                  - generic [ref=e1057]: "04"
+                  - img [ref=e1059]
+                - generic [ref=e1061]:
+                  - heading "Build Lasting Connections" [level=3] [ref=e1062]
+                  - paragraph [ref=e1063]: Develop meaningful relationships through shared cultural understanding, from friendships to romance to professional partnerships.
+                  - generic [ref=e1064]:
+                    - generic [ref=e1065]:
+                      - img [ref=e1066]
+                      - generic [ref=e1068]: Bilingual conversations
+                    - generic [ref=e1069]:
+                      - img [ref=e1070]
+                      - generic [ref=e1072]: Cultural mentorship
+                    - generic [ref=e1073]:
+                      - img [ref=e1074]
+                      - generic [ref=e1076]: Long-term relationships
+                - button "Learn More" [ref=e1078] [cursor=pointer]:
+                  - generic [ref=e1079] [cursor=pointer]: Learn More
+                  - img [ref=e1080] [cursor=pointer]
+          - generic [ref=e1087]:
+            - generic [ref=e1088]:
+              - heading "Why Choose LusoTown?" [level=3] [ref=e1089]
+              - paragraph [ref=e1090]: More than a dating app - an authentic Portuguese-speaking community in London
+            - generic [ref=e1091]:
+              - generic [ref=e1092]:
+                - img [ref=e1094]
+                - heading "Verified Portuguese Speakers" [level=4] [ref=e1096]
+                - paragraph [ref=e1097]: All members are verified Portuguese speakers from Portugal, Brazil, and other Lusophone countries
+              - generic [ref=e1098]:
+                - img [ref=e1100]
+                - heading "London-Focused Matching" [level=4] [ref=e1103]
+                - paragraph [ref=e1104]: Connect with Portuguese speakers living in your London borough or nearby areas
+              - generic [ref=e1105]:
+                - img [ref=e1107]
+                - heading "Cultural Compatibility" [level=4] [ref=e1109]
+                - paragraph [ref=e1110]: Match based on shared Portuguese traditions, from fado music to Santos Populares celebrations
+              - generic [ref=e1111]:
+                - img [ref=e1113]
+                - heading "Professional Networking" [level=4] [ref=e1115]
+                - paragraph [ref=e1116]: Connect with Portuguese professionals across industries for career opportunities
+              - generic [ref=e1117]:
+                - img [ref=e1119]
+                - heading "Community Events" [level=4] [ref=e1121]
+                - paragraph [ref=e1122]: Meet your matches at real Portuguese cultural events and gatherings
+              - generic [ref=e1123]:
+                - img [ref=e1125]
+                - heading "Educational Support" [level=4] [ref=e1127]
+                - paragraph [ref=e1128]: Connect with students and mentors through our university partnerships
+          - generic [ref=e1130]:
+            - generic [ref=e1131]:
+              - heading "Our Community in Numbers" [level=3] [ref=e1132]
+              - paragraph [ref=e1133]: Real results from Portuguese connections in London
+            - generic [ref=e1134]:
+              - generic [ref=e1135]:
+                - generic [ref=e1136]: 2,750+
+                - generic [ref=e1137]: Portuguese Speakers
+                - generic [ref=e1138]: Active in London
+              - generic [ref=e1139]:
+                - generic [ref=e1140]: 94%
+                - generic [ref=e1141]: Match Success Rate
+                - generic [ref=e1142]: Meet within 2 weeks
+              - generic [ref=e1143]:
+                - generic [ref=e1144]: 85+
+                - generic [ref=e1145]: Monthly Events
+                - generic [ref=e1146]: Across London
+              - generic [ref=e1147]:
+                - generic [ref=e1148]: 4.8/5
+                - generic [ref=e1149]: Community Rating
+                - generic [ref=e1150]: Member satisfaction
+          - generic [ref=e1151]:
+            - generic [ref=e1152]:
+              - heading "Success Stories" [level=3] [ref=e1153]
+              - paragraph [ref=e1154]: Real connections that became lasting relationships
+            - generic [ref=e1155]:
+              - generic [ref=e1156]:
+                - generic [ref=e1157]:
+                  - img [ref=e1158]
+                  - img [ref=e1160]
+                  - img [ref=e1162]
+                  - img [ref=e1164]
+                  - img [ref=e1166]
+                - blockquote [ref=e1168]: "\"Finally found someone who understands why I get emotional during fado music and celebrates Christmas on December 24th!\""
+                - generic [ref=e1169]:
+                  - generic [ref=e1170]: Sofia, 29, Stockwell
+                  - generic [ref=e1171]: Met through a Portuguese wine tasting event
+              - generic [ref=e1172]:
+                - generic [ref=e1173]:
+                  - img [ref=e1174]
+                  - img [ref=e1176]
+                  - img [ref=e1178]
+                  - img [ref=e1180]
+                  - img [ref=e1182]
+                - blockquote [ref=e1184]: "\"Connected with my business partner through LusoTown. We now run a Portuguese catering company together!\""
+                - generic [ref=e1185]:
+                  - generic [ref=e1186]: Miguel, 34, Vauxhall
+                  - generic [ref=e1187]: Met at a Portuguese business networking event
+          - generic [ref=e1189]:
+            - generic [ref=e1190]:
+              - generic [ref=e1191]: 💕
+              - heading "Ready to Find Your Match?" [level=3] [ref=e1192]:
+                - text: Ready to Find
+                - generic [ref=e1193]: Your Match?
+              - paragraph [ref=e1194]: Join thousands of Portuguese speakers in London. Find someone who understands your culture, traditions, and dreams.
+            - generic [ref=e1195]:
+              - paragraph [ref=e1196]: "\"Quem tem amigos tem tudo\" - Who has friends has everything"
+              - paragraph [ref=e1197]: Portuguese proverb about the value of human connections
+            - generic [ref=e1198]:
+              - link "Find Matches" [ref=e1199] [cursor=pointer]:
+                - /url: /matches
+                - generic [ref=e1201] [cursor=pointer]: Find Matches
+              - link "Start Free" [ref=e1203] [cursor=pointer]:
+                - /url: /signup
+            - generic [ref=e1204]:
+              - generic [ref=e1205]:
+                - img [ref=e1206]
+                - generic [ref=e1208]: Verified Profiles
+              - generic [ref=e1209]:
+                - img [ref=e1210]
+                - generic [ref=e1212]: Global Community
+              - generic [ref=e1213]:
+                - img [ref=e1214]
+                - generic [ref=e1216]: Bilingual PT/EN
+        - generic [ref=e1224]:
+          - generic [ref=e1225]:
+            - generic [ref=e1226]:
+              - img [ref=e1227]
+              - generic [ref=e1230]: Unidos pela Língua • United by Language
+            - heading "About LusoTown" [level=2] [ref=e1232]:
+              - text: About
+              - generic [ref=e1233]: LusoTown
+            - paragraph [ref=e1234]: LusoTown is where Portuguese hearts find their London network. Whether you're homesick, building your career while honoring your heritage, or simply miss the warmth of Portuguese conversation, this is your professional home. Every person here understands your journey and opens their networks to support you.
+          - generic [ref=e1235]:
+            - generic [ref=e1237]:
+              - img [ref=e1238]
+              - generic [ref=e1240]: "When you join LusoTown, you can:"
+            - generic [ref=e1241]:
+              - generic [ref=e1242]:
+                - img [ref=e1246]
+                - generic [ref=e1248]:
+                  - heading "Discover & Join Events" [level=3] [ref=e1249]
+                  - paragraph [ref=e1250]: Find Portuguese cultural events at authentic London venues - from Fado nights to food festivals at real Portuguese locations.
+                - img [ref=e1252]
+              - generic [ref=e1254]:
+                - img [ref=e1258]
+                - generic [ref=e1260]:
+                  - heading "Stay Updated on LusoTown Feed" [level=3] [ref=e1261]
+                  - paragraph [ref=e1262]: See the latest events, posts, and community updates in real time.
+                - img [ref=e1264]
+              - generic [ref=e1266]:
+                - img [ref=e1270]
+                - generic [ref=e1272]:
+                  - heading "Post & Share with the Community" [level=3] [ref=e1273]
+                  - paragraph [ref=e1274]: Add your own updates, photos, and tips, and tag events or businesses.
+                - img [ref=e1276]
+              - generic [ref=e1278]:
+                - img [ref=e1282]
+                - generic [ref=e1284]:
+                  - heading "Save Your Favourites" [level=3] [ref=e1285]
+                  - paragraph [ref=e1286]: Bookmark events, businesses, and posts you love so you never miss out.
+                - img [ref=e1288]
+              - generic [ref=e1290]:
+                - img [ref=e1294]
+                - generic [ref=e1299]:
+                  - heading "Support Portuguese Businesses" [level=3] [ref=e1300]
+                  - paragraph [ref=e1301]: Explore our directory and discover places run by or for Portuguese speakers.
+                - img [ref=e1303]
+              - generic [ref=e1305]:
+                - img [ref=e1309]
+                - generic [ref=e1314]:
+                  - heading "Connect with Portuguese Speakers" [level=3] [ref=e1315]
+                  - paragraph [ref=e1316]: Find Your Match among Portuguese speakers through real-life meetups at authentic London venues, share experiences, and keep your language and traditions alive.
+                - img [ref=e1318]
+          - generic [ref=e1320]:
+            - generic [ref=e1321]:
+              - generic [ref=e1322]:
+                - img [ref=e1323]
+                - generic [ref=e1327]: Vibrant Lusophone Culture
+                - img [ref=e1328]
+              - heading "Nine Nations of Cultural Magic" [level=3] [ref=e1330]:
+                - text: Nine Nations of
+                - generic [ref=e1331]: Cultural Magic
+              - paragraph [ref=e1332]:
+                - text: Experience the incredible cultural energy of Portuguese-speaking nations - from passionate fado and explosive samba to sensual kizomba and soulful morna. These communities bring amazing music, delicious food, vibrant nightlife, and heartwarming connections that make the United Kingdom more exciting and culturally rich.
+                - strong [ref=e1333]: Join LusoTown to access our exclusive annual food festival calendar
+                - text: "- featuring authentic cuisine from all nine Portuguese-speaking nations throughout the year at premium London venues!"
+              - generic [ref=e1334]:
+                - generic [ref=e1335]:
+                  - img [ref=e1336]
+                  - generic [ref=e1341]: Follow Your Favorite Nations
+                  - img [ref=e1342]
+                - paragraph [ref=e1344]: Click "Follow" on any nation below to get personalized updates on cultural events, food festivals, music shows, and community activities!
+            - generic [ref=e1345]:
+              - generic [ref=e1348]:
+                - generic [ref=e1349]:
+                  - generic [ref=e1350]:
+                    - generic [ref=e1351]: 🇵🇹
+                    - generic [ref=e1352]:
+                      - heading "Portugal" [level=4] [ref=e1353]
+                      - generic [ref=e1354]:
+                        - img [ref=e1355]
+                        - generic [ref=e1359]: Cultural Heritage
+                  - button "Follow Follow for Portugal events" [ref=e1360] [cursor=pointer]:
+                    - generic [ref=e1361] [cursor=pointer]:
+                      - img [ref=e1362] [cursor=pointer]
+                      - generic [ref=e1363] [cursor=pointer]: Follow
+                      - img [ref=e1364] [cursor=pointer]
+                    - generic: Follow for Portugal events
+                - paragraph [ref=e1367]: The heart of fado music and legendary pastéis de nata, Portugal brings soul-stirring musical traditions and incredible cuisine to United Kingdom communities. From intimate acoustic guitar circles with francesinha sandwiches to lively Santos Populares festivals featuring bifana, bacalhau dishes, and vinho verde, Portuguese culture creates warm gathering spaces where everyone feels at home.
+                - generic [ref=e1368]:
+                  - generic [ref=e1369]:
+                    - img [ref=e1370]
+                    - generic [ref=e1372]: Cultural Highlights
+                  - generic [ref=e1373]:
+                    - generic [ref=e1374]:
+                      - img [ref=e1375]
+                      - generic [ref=e1379]: Fado Music Nights
+                    - generic [ref=e1380]:
+                      - img [ref=e1381]
+                      - generic [ref=e1385]: Traditional Folk Dancing
+                    - generic [ref=e1386]:
+                      - img [ref=e1387]
+                      - generic [ref=e1391]: Modern Portuguese Pop
+                    - generic [ref=e1392]:
+                      - img [ref=e1393]
+                      - generic [ref=e1397]: Community Festivals
+                - generic [ref=e1398]:
+                  - generic [ref=e1399]:
+                    - img [ref=e1400]
+                    - generic [ref=e1405]: United Kingdom Cultural Community
+                  - paragraph [ref=e1406]: Portugal's United Kingdom community creates vibrant cultural hubs across London, Manchester, and beyond, organizing fado nights in cozy pubs, folklore dance workshops, and Portuguese food festivals. Join LusoTown for exclusive access to our annual January Pastéis de Nata Festival at the Portuguese Cultural Centre, where everyone can experience the warmth of Portuguese hospitality and traditions.
+                - generic [ref=e1407]:
+                  - generic [ref=e1408]:
+                    - img [ref=e1409]
+                    - generic [ref=e1411]: Cultural Impact
+                  - paragraph [ref=e1412]: 280,000+ Portuguese speakers in United Kingdom • 100+ cultural events yearly • Fado UNESCO heritage
+              - generic [ref=e1415]:
+                - generic [ref=e1416]:
+                  - generic [ref=e1417]:
+                    - generic [ref=e1418]: 🇧🇷
+                    - generic [ref=e1419]:
+                      - heading "Brazil" [level=4] [ref=e1420]
+                      - generic [ref=e1421]:
+                        - img [ref=e1422]
+                        - generic [ref=e1426]: Cultural Heritage
+                  - button "Follow Follow for Brazil events" [ref=e1427] [cursor=pointer]:
+                    - generic [ref=e1428] [cursor=pointer]:
+                      - img [ref=e1429] [cursor=pointer]
+                      - generic [ref=e1430] [cursor=pointer]: Follow
+                      - img [ref=e1431] [cursor=pointer]
+                    - generic: Follow for Brazil events
+                - paragraph [ref=e1434]: Brazil explodes with infectious energy through samba, bossa nova, funk carioca, and incredible cuisine featuring pão de açúcar, feijoada, brigadeiros, and caipirinha! From passionate carnival celebrations with churrasco feasts to football watch parties featuring coxinha and açaí bowls, Brazilian culture brings joy, rhythm, amazing food, and that famous warm Brazilian embrace that makes everyone feel like family.
+                - generic [ref=e1435]:
+                  - generic [ref=e1436]:
+                    - img [ref=e1437]
+                    - generic [ref=e1439]: Cultural Highlights
+                  - generic [ref=e1440]:
+                    - generic [ref=e1441]:
+                      - img [ref=e1442]
+                      - generic [ref=e1446]: Samba & Bossa Nova
+                    - generic [ref=e1447]:
+                      - img [ref=e1448]
+                      - generic [ref=e1452]: Carnival Energy
+                    - generic [ref=e1453]:
+                      - img [ref=e1454]
+                      - generic [ref=e1458]: Funk Carioca & Forró
+                    - generic [ref=e1459]:
+                      - img [ref=e1460]
+                      - generic [ref=e1464]: Football Watch Parties
+                - generic [ref=e1465]:
+                  - generic [ref=e1466]:
+                    - img [ref=e1467]
+                    - generic [ref=e1472]: United Kingdom Cultural Community
+                  - paragraph [ref=e1473]: Brazilian communities across the United Kingdom create the most vibrant parties and gatherings - from Manchester samba schools to London capoeira circles, Birmingham Brazilian barbecues to Edinburgh carnival celebrations. Join LusoTown for exclusive access to our annual February Carnival Food Fiesta at the Brazilian Embassy Cultural Hall, where the streets fill with music, dance, feijoada, and infectious Brazilian joy.
+                - generic [ref=e1474]:
+                  - generic [ref=e1475]:
+                    - img [ref=e1476]
+                    - generic [ref=e1478]: Cultural Impact
+                  - paragraph [ref=e1479]: 95,000+ Brazilians in United Kingdom • Year-round carnival energy • Samba schools in 15 cities
+              - generic [ref=e1482]:
+                - generic [ref=e1483]:
+                  - generic [ref=e1484]:
+                    - generic [ref=e1485]: 🇦🇴
+                    - generic [ref=e1486]:
+                      - heading "Angola" [level=4] [ref=e1487]
+                      - generic [ref=e1488]:
+                        - img [ref=e1489]
+                        - generic [ref=e1493]: Cultural Heritage
+                  - button "Follow Follow for Angola events" [ref=e1494] [cursor=pointer]:
+                    - generic [ref=e1495] [cursor=pointer]:
+                      - img [ref=e1496] [cursor=pointer]
+                      - generic [ref=e1497] [cursor=pointer]: Follow
+                      - img [ref=e1498] [cursor=pointer]
+                    - generic: Follow for Angola events
+                - paragraph [ref=e1501]: Angola brings the sensual rhythm of kizomba and incredible cuisine featuring muamba de galinha, calulu, and refreshing kuduro alongside energetic semba beats! Combined with powerful gospel music, hypnotic percussion circles, modern afrobeat fusion, and amazing grilled seafood platters, Angolan culture creates spaces where people connect through rhythm, movement, delicious food, and shared cultural pride.
+                - generic [ref=e1502]:
+                  - generic [ref=e1503]:
+                    - img [ref=e1504]
+                    - generic [ref=e1506]: Cultural Highlights
+                  - generic [ref=e1507]:
+                    - generic [ref=e1508]:
+                      - img [ref=e1509]
+                      - generic [ref=e1513]: Kizomba Dance Nights
+                    - generic [ref=e1514]:
+                      - img [ref=e1515]
+                      - generic [ref=e1519]: Semba Music Sessions
+                    - generic [ref=e1520]:
+                      - img [ref=e1521]
+                      - generic [ref=e1525]: Afrobeat Fusion
+                    - generic [ref=e1526]:
+                      - img [ref=e1527]
+                      - generic [ref=e1531]: Gospel Celebrations
+                - generic [ref=e1532]:
+                  - generic [ref=e1533]:
+                    - img [ref=e1534]
+                    - generic [ref=e1539]: United Kingdom Cultural Community
+                  - paragraph [ref=e1540]: Angolan communities in London, Birmingham, and Manchester host incredible kizomba dance workshops, semba music nights, and cultural festivals celebrating African-Portuguese heritage. Join LusoTown for exclusive access to our annual April Muamba Masterclass at Peckham Multi-Cultural Centre, featuring cooking classes, storytelling, and vibrant community gatherings that welcome everyone.
+                - generic [ref=e1541]:
+                  - generic [ref=e1542]:
+                    - img [ref=e1543]
+                    - generic [ref=e1545]: Cultural Impact
+                  - paragraph [ref=e1546]: 25,000+ Angolans in United Kingdom • Kizomba classes in 20+ cities • Growing music scene
+              - generic [ref=e1549]:
+                - generic [ref=e1550]:
+                  - generic [ref=e1551]:
+                    - generic [ref=e1552]: 🇲🇿
+                    - generic [ref=e1553]:
+                      - heading "Mozambique" [level=4] [ref=e1554]
+                      - generic [ref=e1555]:
+                        - img [ref=e1556]
+                        - generic [ref=e1560]: Cultural Heritage
+                  - button "Follow Follow for Mozambique events" [ref=e1561] [cursor=pointer]:
+                    - generic [ref=e1562] [cursor=pointer]:
+                      - img [ref=e1563] [cursor=pointer]
+                      - generic [ref=e1564] [cursor=pointer]: Follow
+                      - img [ref=e1565] [cursor=pointer]
+                    - generic: Follow for Mozambique events
+                - paragraph [ref=e1568]: Mozambique pulses with energetic marrabenta rhythms and incredible coastal cuisine featuring peri-peri prawns, matapa, xima, and fresh coconut curries that make every gathering unforgettable! From amazing seafood feasts with chamussa appetizers to powerful storytelling traditions over traditional cashew wine, Mozambican culture brings vibrant community celebrations that connect hearts through music and incredible flavors.
+                - generic [ref=e1569]:
+                  - generic [ref=e1570]:
+                    - img [ref=e1571]
+                    - generic [ref=e1573]: Cultural Highlights
+                  - generic [ref=e1574]:
+                    - generic [ref=e1575]:
+                      - img [ref=e1576]
+                      - generic [ref=e1580]: Marrabenta Music Sessions
+                    - generic [ref=e1581]:
+                      - img [ref=e1582]
+                      - generic [ref=e1586]: Pandza Dance Circles
+                    - generic [ref=e1587]:
+                      - img [ref=e1588]
+                      - generic [ref=e1592]: Coastal Food Culture
+                    - generic [ref=e1593]:
+                      - img [ref=e1594]
+                      - generic [ref=e1598]: Community Storytelling
+                - generic [ref=e1599]:
+                  - generic [ref=e1600]:
+                    - img [ref=e1601]
+                    - generic [ref=e1606]: United Kingdom Cultural Community
+                  - paragraph [ref=e1607]: Mozambican communities in London, Birmingham, and Liverpool create amazing cultural experiences through marrabenta dance sessions, traditional drumming circles, and coastal cuisine workshops. Join LusoTown for exclusive access to our annual May Peri-Peri Experience at East London Cultural Hub, featuring heritage celebration gatherings that welcome everyone to join the cultural feast.
+                - generic [ref=e1608]:
+                  - generic [ref=e1609]:
+                    - img [ref=e1610]
+                    - generic [ref=e1612]: Cultural Impact
+                  - paragraph [ref=e1613]: 15,000+ Mozambicans in United Kingdom • Marrabenta classes in 10+ cities • Growing cultural scene
+              - generic [ref=e1616]:
+                - generic [ref=e1617]:
+                  - generic [ref=e1618]:
+                    - generic [ref=e1619]: 🇨🇻
+                    - generic [ref=e1620]:
+                      - heading "Cape Verde" [level=4] [ref=e1621]
+                      - generic [ref=e1622]:
+                        - img [ref=e1623]
+                        - generic [ref=e1627]: Cultural Heritage
+                  - button "Follow Follow for Cape Verde events" [ref=e1628] [cursor=pointer]:
+                    - generic [ref=e1629] [cursor=pointer]:
+                      - img [ref=e1630] [cursor=pointer]
+                      - generic [ref=e1631] [cursor=pointer]: Follow
+                      - img [ref=e1632] [cursor=pointer]
+                    - generic: Follow for Cape Verde events
+                - paragraph [ref=e1635]: Cape Verde enchants with heartfelt morna melodies and incredible island cuisine featuring cachupa, pastéis, fresh grilled tuna, and grogue cocktails alongside energetic funaná and coladeira rhythms! Island food culture with amazing seafood caldeirada, vibrant Creole celebrations, and traditional guitar circles bring together communities over delicious meals in warm, welcoming gatherings that celebrate island heritage.
+                - generic [ref=e1636]:
+                  - generic [ref=e1637]:
+                    - img [ref=e1638]
+                    - generic [ref=e1640]: Cultural Highlights
+                  - generic [ref=e1641]:
+                    - generic [ref=e1642]:
+                      - img [ref=e1643]
+                      - generic [ref=e1647]: Soulful Morna Sessions
+                    - generic [ref=e1648]:
+                      - img [ref=e1649]
+                      - generic [ref=e1653]: Energetic Funaná Dancing
+                    - generic [ref=e1654]:
+                      - img [ref=e1655]
+                      - generic [ref=e1659]: Coladeira Music Nights
+                    - generic [ref=e1660]:
+                      - img [ref=e1661]
+                      - generic [ref=e1665]: Creole Celebrations
+                - generic [ref=e1666]:
+                  - generic [ref=e1667]:
+                    - img [ref=e1668]
+                    - generic [ref=e1673]: United Kingdom Cultural Community
+                  - paragraph [ref=e1674]: Cape Verdean communities across the United Kingdom host incredible morna acoustic sessions, funaná dance parties, and traditional food festivals. Join LusoTown for exclusive access to our annual March Island Flavors Night at Hackney Community Kitchen, featuring island cultural celebrations that fill hearts with the warmth and beauty of Cape Verdean traditions.
+                - generic [ref=e1675]:
+                  - generic [ref=e1676]:
+                    - img [ref=e1677]
+                    - generic [ref=e1679]: Cultural Impact
+                  - paragraph [ref=e1680]: 8,000+ Cape Verdeans in United Kingdom • Morna UNESCO heritage • Island festivals in 8 cities
+              - generic [ref=e1683]:
+                - generic [ref=e1684]:
+                  - generic [ref=e1685]:
+                    - generic [ref=e1686]: 🇬🇼
+                    - generic [ref=e1687]:
+                      - heading "Guinea-Bissau" [level=4] [ref=e1688]
+                      - generic [ref=e1689]:
+                        - img [ref=e1690]
+                        - generic [ref=e1694]: Cultural Heritage
+                  - button "Follow Follow for Guinea-Bissau events" [ref=e1695] [cursor=pointer]:
+                    - generic [ref=e1696] [cursor=pointer]:
+                      - img [ref=e1697] [cursor=pointer]
+                      - generic [ref=e1698] [cursor=pointer]: Follow
+                      - img [ref=e1699] [cursor=pointer]
+                    - generic: Follow for Guinea-Bissau events
+                - paragraph [ref=e1702]: Guinea-Bissau brings rhythmic gumbe music and incredible cuisine featuring jollof rice, caldou de peixe, and traditional palm wine alongside traditional dance circles that create amazing community bonds! Through festive rice dish celebrations with fresh grilled fish, powerful oral storytelling marathons over cashew fruit feasts, and vibrant cultural festivals, this community preserves powerful heritage traditions through music and amazing food.
+                - generic [ref=e1703]:
+                  - generic [ref=e1704]:
+                    - img [ref=e1705]
+                    - generic [ref=e1707]: Cultural Highlights
+                  - generic [ref=e1708]:
+                    - generic [ref=e1709]:
+                      - img [ref=e1710]
+                      - generic [ref=e1714]: Gumbe Music Festivals
+                    - generic [ref=e1715]:
+                      - img [ref=e1716]
+                      - generic [ref=e1720]: Traditional Dance Circles
+                    - generic [ref=e1721]:
+                      - img [ref=e1722]
+                      - generic [ref=e1726]: Community Food Sharing
+                    - generic [ref=e1727]:
+                      - img [ref=e1728]
+                      - generic [ref=e1732]: Storytelling Traditions
+                - generic [ref=e1733]:
+                  - generic [ref=e1734]:
+                    - img [ref=e1735]
+                    - generic [ref=e1740]: United Kingdom Cultural Community
+                  - paragraph [ref=e1741]: Guinea-Bissau communities in London and Manchester organize incredible gumbe music festivals, traditional drumming ceremonies, and community cooking gatherings. Join LusoTown for exclusive access to our annual June Jollof Rice Celebration at North London Community Centre, featuring heritage events that connect people through powerful cultural traditions.
+                - generic [ref=e1742]:
+                  - generic [ref=e1743]:
+                    - img [ref=e1744]
+                    - generic [ref=e1746]: Cultural Impact
+                  - paragraph [ref=e1747]: 3,500+ Guinea-Bissauans in United Kingdom • Growing gumbe music scene • Traditional arts preservation
+              - generic [ref=e1750]:
+                - generic [ref=e1751]:
+                  - generic [ref=e1752]:
+                    - generic [ref=e1753]: 🇸🇹
+                    - generic [ref=e1754]:
+                      - heading "São Tomé and Príncipe" [level=4] [ref=e1755]
+                      - generic [ref=e1756]:
+                        - img [ref=e1757]
+                        - generic [ref=e1761]: Cultural Heritage
+                  - button "Follow Follow for São Tomé and Príncipe events" [ref=e1762] [cursor=pointer]:
+                    - generic [ref=e1763] [cursor=pointer]:
+                      - img [ref=e1764] [cursor=pointer]
+                      - generic [ref=e1765] [cursor=pointer]: Follow
+                      - img [ref=e1766] [cursor=pointer]
+                    - generic: Follow for São Tomé and Príncipe events
+                - paragraph [ref=e1769]: São Tomé and Príncipe brings incredibly sweet island culture through world-famous chocolate-making workshops, amazing cocoa plantations experiences, fresh tropical fruit feasts with breadfruit, and traditional calulu stews alongside vibrant cultural performances! These communities create magical gatherings where people connect through incredible island chocolate, exotic cuisine, traditional music circles, and rich cultural traditions.
+                - generic [ref=e1770]:
+                  - generic [ref=e1771]:
+                    - img [ref=e1772]
+                    - generic [ref=e1774]: Cultural Highlights
+                  - generic [ref=e1775]:
+                    - generic [ref=e1776]:
+                      - img [ref=e1777]
+                      - generic [ref=e1781]: Chocolate-Making Workshops
+                    - generic [ref=e1782]:
+                      - img [ref=e1783]
+                      - generic [ref=e1787]: Traditional Music Circles
+                    - generic [ref=e1788]:
+                      - img [ref=e1789]
+                      - generic [ref=e1793]: Island Cultural Shows
+                    - generic [ref=e1794]:
+                      - img [ref=e1795]
+                      - generic [ref=e1799]: Community Celebrations
+                - generic [ref=e1800]:
+                  - generic [ref=e1801]:
+                    - img [ref=e1802]
+                    - generic [ref=e1807]: United Kingdom Cultural Community
+                  - paragraph [ref=e1808]: São Tomé communities in London create wonderful cultural experiences through chocolate-making workshops, traditional music sessions, and island food festivals. Join LusoTown for exclusive access to our annual July Chocolate Paradise at Borough Market Demonstration Kitchen, featuring cultural celebration gatherings that share the sweetness of island culture with everyone.
+                - generic [ref=e1809]:
+                  - generic [ref=e1810]:
+                    - img [ref=e1811]
+                    - generic [ref=e1813]: Cultural Impact
+                  - paragraph [ref=e1814]: Small but vibrant United Kingdom community • Amazing chocolate heritage • Growing cultural presence
+              - generic [ref=e1817]:
+                - generic [ref=e1818]:
+                  - generic [ref=e1819]:
+                    - generic [ref=e1820]: 🇹🇱
+                    - generic [ref=e1821]:
+                      - heading "East Timor" [level=4] [ref=e1822]
+                      - generic [ref=e1823]:
+                        - img [ref=e1824]
+                        - generic [ref=e1828]: Cultural Heritage
+                  - button "Follow Follow for East Timor events" [ref=e1829] [cursor=pointer]:
+                    - generic [ref=e1830] [cursor=pointer]:
+                      - img [ref=e1831] [cursor=pointer]
+                      - generic [ref=e1832] [cursor=pointer]: Follow
+                      - img [ref=e1833] [cursor=pointer]
+                    - generic: Follow for East Timor events
+                - paragraph [ref=e1836]: East Timor brings rich cultural traditions through amazing mountain cuisine featuring ikan sabuku, batar daan, and traditional tais weaving workshops alongside vibrant cultural festivals and heritage ceremonies! These communities create beautiful spaces for cultural dialogue, incredible spiced dishes with fresh herbs, traditional coffee ceremonies, and ancient tradition preservation that connects hearts through food and heritage.
+                - generic [ref=e1837]:
+                  - generic [ref=e1838]:
+                    - img [ref=e1839]
+                    - generic [ref=e1841]: Cultural Highlights
+                  - generic [ref=e1842]:
+                    - generic [ref=e1843]:
+                      - img [ref=e1844]
+                      - generic [ref=e1848]: Traditional Weaving Workshops
+                    - generic [ref=e1849]:
+                      - img [ref=e1850]
+                      - generic [ref=e1854]: Cultural Heritage Festivals
+                    - generic [ref=e1855]:
+                      - img [ref=e1856]
+                      - generic [ref=e1860]: Mountain Ceremonies
+                    - generic [ref=e1861]:
+                      - img [ref=e1862]
+                      - generic [ref=e1866]: Community Dialogues
+                - generic [ref=e1867]:
+                  - generic [ref=e1868]:
+                    - img [ref=e1869]
+                    - generic [ref=e1874]: United Kingdom Cultural Community
+                  - paragraph [ref=e1875]: East Timorese communities in London organize beautiful traditional weaving masterclasses, cultural festivals, and heritage preservation gatherings. Join LusoTown for exclusive access to our annual August Mountain Cuisine Workshop at Camden Cultural Exchange, where we share the beauty of Timorese traditions and connect people through cultural dialogue.
+                - generic [ref=e1876]:
+                  - generic [ref=e1877]:
+                    - img [ref=e1878]
+                    - generic [ref=e1880]: Cultural Impact
+                  - paragraph [ref=e1881]: Emerging United Kingdom community • Rich weaving traditions • Cultural heritage preservation
+              - generic [ref=e1884]:
+                - generic [ref=e1885]:
+                  - generic [ref=e1886]:
+                    - generic [ref=e1887]: 🇲🇴
+                    - generic [ref=e1888]:
+                      - heading "Macau" [level=4] [ref=e1889]
+                      - generic [ref=e1890]:
+                        - img [ref=e1891]
+                        - generic [ref=e1895]: Cultural Heritage
+                  - button "Follow Follow for Macau events" [ref=e1896] [cursor=pointer]:
+                    - generic [ref=e1897] [cursor=pointer]:
+                      - img [ref=e1898] [cursor=pointer]
+                      - generic [ref=e1899] [cursor=pointer]: Follow
+                      - img [ref=e1900] [cursor=pointer]
+                    - generic: Follow for Macau events
+                - paragraph [ref=e1903]: Macau creates unique cultural fusion through incredible Portuguese-Macanese cuisine featuring minchi, galinha portuguesa, egg tarts, and serradura desserts alongside cultural festivals that blend Asian and Portuguese traditions! Heritage celebration events showcase amazing fusion dishes like African chicken, Portuguese-style dim sum, and unique East-meets-West flavors that demonstrate the beautiful blend of two culinary worlds meeting in delicious harmony.
+                - generic [ref=e1904]:
+                  - generic [ref=e1905]:
+                    - img [ref=e1906]
+                    - generic [ref=e1908]: Cultural Highlights
+                  - generic [ref=e1909]:
+                    - generic [ref=e1910]:
+                      - img [ref=e1911]
+                      - generic [ref=e1915]: Portuguese-Macanese Fusion Cuisine
+                    - generic [ref=e1916]:
+                      - img [ref=e1917]
+                      - generic [ref=e1921]: Cultural Fusion Festivals
+                    - generic [ref=e1922]:
+                      - img [ref=e1923]
+                      - generic [ref=e1927]: Heritage Tours
+                    - generic [ref=e1928]:
+                      - img [ref=e1929]
+                      - generic [ref=e1933]: East-West Celebrations
+                - generic [ref=e1934]:
+                  - generic [ref=e1935]:
+                    - img [ref=e1936]
+                    - generic [ref=e1941]: United Kingdom Cultural Community
+                  - paragraph [ref=e1942]: Macau communities in London create fascinating cultural fusion experiences through Portuguese-Macanese cooking classes, cultural festivals, and heritage celebration events. Join LusoTown for exclusive access to our annual September East-West Fusion Feast at Chinatown Cultural Centre, showcasing the beautiful meeting of Eastern and Western culinary traditions.
+                - generic [ref=e1943]:
+                  - generic [ref=e1944]:
+                    - img [ref=e1945]
+                    - generic [ref=e1947]: Cultural Impact
+                  - paragraph [ref=e1948]: Unique cultural fusion heritage • Portuguese-Chinese traditions • Growing United Kingdom presence
+          - generic [ref=e1949]:
+            - generic [ref=e1950]:
+              - generic [ref=e1951]:
+                - img [ref=e1952]
+                - generic [ref=e1954]: Annual LusoTown Food Festival Calendar
+                - img [ref=e1955]
+              - heading "Taste the World in London" [level=3] [ref=e1957]:
+                - text: Taste the World in
+                - generic [ref=e1958]: London
+              - paragraph [ref=e1959]: Every year, LusoTown organizes exclusive culinary festivals celebrating each Portuguese-speaking nation's incredible cuisine. Join our community to access these authentic food experiences, cooking masterclasses, and cultural celebrations across London!
+            - generic [ref=e1960]:
+              - generic [ref=e1963]:
+                - generic [ref=e1964]:
+                  - generic [ref=e1965]: January
+                  - generic [ref=e1966]: 🇵🇹
+                - heading "Pastéis de Nata Festival" [level=4] [ref=e1967]
+                - generic [ref=e1968]: Portugal
+                - generic [ref=e1969]:
+                  - generic [ref=e1970]: Featured Cuisine
+                  - generic [ref=e1971]: Pastéis de nata, francesinha, bifana, bacalhau
+                - generic [ref=e1972]:
+                  - img [ref=e1973]
+                  - generic [ref=e1975]: Portuguese Cultural Centre, South Kensington
+              - generic [ref=e1978]:
+                - generic [ref=e1979]:
+                  - generic [ref=e1980]: February
+                  - generic [ref=e1981]: 🇧🇷
+                - heading "Carnival Food Fiesta" [level=4] [ref=e1982]
+                - generic [ref=e1983]: Brazil
+                - generic [ref=e1984]:
+                  - generic [ref=e1985]: Featured Cuisine
+                  - generic [ref=e1986]: Feijoada, brigadeiros, coxinha, caipirinha
+                - generic [ref=e1987]:
+                  - img [ref=e1988]
+                  - generic [ref=e1990]: Brazilian Embassy Cultural Hall
+              - generic [ref=e1993]:
+                - generic [ref=e1994]:
+                  - generic [ref=e1995]: March
+                  - generic [ref=e1996]: 🇨🇻
+                - heading "Island Flavors Night" [level=4] [ref=e1997]
+                - generic [ref=e1998]: Cape Verde
+                - generic [ref=e1999]:
+                  - generic [ref=e2000]: Featured Cuisine
+                  - generic [ref=e2001]: Cachupa, grilled tuna, caldeirada, grogue cocktails
+                - generic [ref=e2002]:
+                  - img [ref=e2003]
+                  - generic [ref=e2005]: Hackney Community Kitchen
+              - generic [ref=e2008]:
+                - generic [ref=e2009]:
+                  - generic [ref=e2010]: April
+                  - generic [ref=e2011]: 🇦🇴
+                - heading "Muamba Masterclass" [level=4] [ref=e2012]
+                - generic [ref=e2013]: Angola
+                - generic [ref=e2014]:
+                  - generic [ref=e2015]: Featured Cuisine
+                  - generic [ref=e2016]: Muamba de galinha, calulu, grilled seafood
+                - generic [ref=e2017]:
+                  - img [ref=e2018]
+                  - generic [ref=e2020]: Peckham Multi-Cultural Centre
+              - generic [ref=e2023]:
+                - generic [ref=e2024]:
+                  - generic [ref=e2025]: May
+                  - generic [ref=e2026]: 🇲🇿
+                - heading "Peri-Peri Experience" [level=4] [ref=e2027]
+                - generic [ref=e2028]: Mozambique
+                - generic [ref=e2029]:
+                  - generic [ref=e2030]: Featured Cuisine
+                  - generic [ref=e2031]: Peri-peri prawns, matapa, chamussa, coconut curry
+                - generic [ref=e2032]:
+                  - img [ref=e2033]
+                  - generic [ref=e2035]: East London Cultural Hub
+              - generic [ref=e2038]:
+                - generic [ref=e2039]:
+                  - generic [ref=e2040]: June
+                  - generic [ref=e2041]: 🇬🇼
+                - heading "Jollof Rice Celebration" [level=4] [ref=e2042]
+                - generic [ref=e2043]: Guinea-Bissau
+                - generic [ref=e2044]:
+                  - generic [ref=e2045]: Featured Cuisine
+                  - generic [ref=e2046]: Jollof rice, caldou de peixe, cashew wine
+                - generic [ref=e2047]:
+                  - img [ref=e2048]
+                  - generic [ref=e2050]: North London Community Centre
+              - generic [ref=e2053]:
+                - generic [ref=e2054]:
+                  - generic [ref=e2055]: July
+                  - generic [ref=e2056]: 🇸🇹
+                - heading "Chocolate Paradise" [level=4] [ref=e2057]
+                - generic [ref=e2058]: São Tomé
+                - generic [ref=e2059]:
+                  - generic [ref=e2060]: Featured Cuisine
+                  - generic [ref=e2061]: Artisan chocolate, tropical fruits, calulu
+                - generic [ref=e2062]:
+                  - img [ref=e2063]
+                  - generic [ref=e2065]: Borough Market Demonstration Kitchen
+              - generic [ref=e2068]:
+                - generic [ref=e2069]:
+                  - generic [ref=e2070]: August
+                  - generic [ref=e2071]: 🇹🇱
+                - heading "Mountain Cuisine Workshop" [level=4] [ref=e2072]
+                - generic [ref=e2073]: East Timor
+                - generic [ref=e2074]:
+                  - generic [ref=e2075]: Featured Cuisine
+                  - generic [ref=e2076]: Ikan sabuku, batar daan, traditional coffee
+                - generic [ref=e2077]:
+                  - img [ref=e2078]
+                  - generic [ref=e2080]: Camden Cultural Exchange
+              - generic [ref=e2083]:
+                - generic [ref=e2084]:
+                  - generic [ref=e2085]: September
+                  - generic [ref=e2086]: 🇲🇴
+                - heading "East-West Fusion Feast" [level=4] [ref=e2087]
+                - generic [ref=e2088]: Macau
+                - generic [ref=e2089]:
+                  - generic [ref=e2090]: Featured Cuisine
+                  - generic [ref=e2091]: Minchi, galinha portuguesa, egg tarts, serradura
+                - generic [ref=e2092]:
+                  - img [ref=e2093]
+                  - generic [ref=e2095]: Chinatown Cultural Centre
+            - generic [ref=e2096]:
+              - generic [ref=e2097]:
+                - img [ref=e2098]
+                - generic [ref=e2100]: Exclusive Members-Only Events
+              - paragraph [ref=e2101]:
+                - text: Access cooking masterclasses with authentic chefs, early-bird tickets, exclusive tastings, and intimate cultural dining experiences.
+                - strong [ref=e2102]: Join LusoTown today
+                - text: to receive your annual food festival calendar and never miss these incredible culinary celebrations!
+              - generic [ref=e2103] [cursor=pointer]:
+                - generic [ref=e2104] [cursor=pointer]: Join LusoTown for Exclusive Food Events
+                - img [ref=e2105] [cursor=pointer]
+          - generic [ref=e2108]:
+            - generic [ref=e2109]:
+              - img [ref=e2110]
+              - generic [ref=e2114]: Join the United Kingdom's Most Vibrant Lusophone Community
+            - paragraph [ref=e2115]: Connect with passionate Portuguese speakers who love music, dancing, amazing food, and vibrant cultural celebrations! From fado nights to samba parties, kizomba dancing to carnival celebrations - find your cultural family across the United Kingdom.
+            - generic [ref=e2116] [cursor=pointer]:
+              - img [ref=e2117] [cursor=pointer]
+              - generic [ref=e2119] [cursor=pointer]: Ready to experience the joy of Lusophone culture across the United Kingdom?
+              - img [ref=e2120] [cursor=pointer]
+        - region "Experience the UK's Most Exciting Portuguese Social Scene" [ref=e2122]:
+          - generic [ref=e2130]:
+            - generic [ref=e2131]:
+              - generic [ref=e2135]: Your UK Portuguese Social Calendar • O Seu Calendário Social no Reino Unido
+              - heading "Experience the UK's Most Exciting Portuguese Social Scene" [level=2] [ref=e2137]
+              - paragraph [ref=e2138]: From electric Fado nights that give you chills to exhilarating weekend adventures across the UK, passionate football celebrations in Manchester to vibrant cultural festivals in Birmingham - dive into Britain's most exciting Portuguese social scene with people who truly understand your soul!
+              - blockquote [ref=e2139]: "\"This community changed my life! Every weekend is a new adventure - last month I danced at Santos Populares in Liverpool, this weekend it's a Fado night in Glasgow. I've made lifelong friends across the entire UK!\" - Maria, Edinburgh"
+            - group "Portuguese-speaking community activities" [ref=e2140]:
+              - article [ref=e2141]:
+                - generic [ref=e2144]:
+                  - img [ref=e2146]
+                  - heading "🎆 Experience Britain's Portuguese Magic" [level=3] [ref=e2148]
+                  - paragraph [ref=e2149]: Immerse yourself in extraordinary experiences designed for Portuguese hearts across the United Kingdom! From exclusive cultural tours in London to electrifying football celebrations in Manchester, soul-stirring Fado concerts in Edinburgh to magical weekend escapes across the British Isles. Connect, celebrate, and create unforgettable memories with your Portuguese community!
+                  - generic [ref=e2150]: Cultural Adventures in Manchester • Football Celebrations in Liverpool • Fado Magic in Edinburgh • Weekend Escapes Across Britain
+                  - link "Join the Adventure" [ref=e2151] [cursor=pointer]:
+                    - /url: /events
+                    - text: Join the Adventure
+                    - img [ref=e2152] [cursor=pointer]
+              - generic [ref=e2157]:
+                - img [ref=e2159]
+                - heading "🎉 Create Your Portuguese Social Circle" [level=3] [ref=e2161]
+                - paragraph [ref=e2162]: Whether you're 25 or 65, from vibrant Lisbon or bustling São Paulo, tech innovator or passionate artist - ignite meaningful connections that transform your UK experience! Start exciting groups based on age, shared passions, or celebrate the diverse tapestry of Portuguese heritage together.
+                - generic [ref=e2163]: Vibrant Women 30+ • Young Professionals Network • Cultural Celebration Circle • Portuguese Heritage Society
+                - link "Create Group" [ref=e2164] [cursor=pointer]:
+                  - /url: /groups/create
+                  - text: Create Group
+                  - img [ref=e2165] [cursor=pointer]
+              - generic [ref=e2170]:
+                - img [ref=e2172]
+                - heading "🌟 Stay in the Portuguese Loop" [level=3] [ref=e2174]
+                - paragraph [ref=e2175]: Never miss a beat of the Portuguese community pulse! Discover exciting weekend events, share your cultural celebration moments, spotlight amazing Portuguese businesses, and join in celebrating each other's victories. Stay connected to the heartbeat of Portuguese life across the UK!
+                - generic [ref=e2176]: Live Cultural Updates • Celebration Stories • Portuguese Business Discoveries • Community Victory Moments
+                - link "View Feed" [ref=e2177] [cursor=pointer]:
+                  - /url: /feed
+                  - text: View Feed
+                  - img [ref=e2178] [cursor=pointer]
+              - generic [ref=e2183]:
+                - img [ref=e2185]
+                - heading "🎆 Curate Your Portuguese UK Journey" [level=3] [ref=e2187]
+                - paragraph [ref=e2188]: Create your personalized treasure map of Portuguese experiences across the UK! Save that incredible bakery that makes you feel like home, bookmark soul-stirring Fado nights, remember magical cultural moments across Britain that made your heart sing. Build your collection of Portuguese joy!
+                - generic [ref=e2189]: UK Portuguese Gems • Cultural Celebrations Nationwide • Community Businesses • Magical UK Memories
+                - link "My UK Collection" [ref=e2190] [cursor=pointer]:
+                  - /url: /saved
+                  - text: My UK Collection
+                  - img [ref=e2191] [cursor=pointer]
+              - generic [ref=e2196]:
+                - img [ref=e2198]
+                - heading "🌟 Share Your Portuguese Passion" [level=3] [ref=e2200]
+                - paragraph [ref=e2201]: Transform your passion into community magic! Host inspiring workshops for fellow Portuguese entrepreneurs, teach beloved traditional recipes, create exciting networking experiences, or share the richness of our cultural heritage. Build connections, share knowledge, and create income doing what you love!
+                - generic [ref=e2202]: Tech Innovation Workshops • Cultural Heritage Classes • Business Success Training • Vibrant Networking Celebrations
+                - link "Start Hosting" [ref=e2203] [cursor=pointer]:
+                  - /url: /host
+                  - text: Start Hosting
+                  - img [ref=e2204] [cursor=pointer]
+            - generic [ref=e2207]:
+              - heading "Your Social Calendar Awaits" [level=3] [ref=e2208]
+              - paragraph [ref=e2209]: Join 750 Portuguese speakers from Brazil, Portugal, Africa and beyond creating amazing memories together across the UK - from vibrant cultural events to inspiring professional networking, exciting family activities to magical weekend getaways throughout Britain!
+              - generic [ref=e2210]:
+                - link "Join the Fun" [ref=e2211] [cursor=pointer]:
+                  - /url: /signup
+                  - generic [ref=e2213] [cursor=pointer]: Join the Fun
+                - link "Explore Features" [ref=e2215] [cursor=pointer]:
+                  - /url: /events
+        - generic [ref=e2221]:
+          - generic [ref=e2222]:
+            - generic [ref=e2223]:
+              - img [ref=e2224]
+              - text: Why Portuguese Hearts Choose LusoTown
+            - heading "Your Social & Professional Hub for Portuguese Speakers Living Across the UK" [level=2] [ref=e2226]:
+              - generic [ref=e2227]: Your Social & Professional Hub for Portuguese Speakers Living Across the UK
+            - paragraph [ref=e2228]: Fill your social calendar with lusophone speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde, and beyond who share the joy of meals together, the comfort of our shared language, and the richness of diverse Portuguese-speaking cultures. Book experiences at places where Portuguese hearts from all corners of the world gather - from Stockwell's authentic bakeries to Vauxhall's multicultural centers.
+          - generic [ref=e2229]:
+            - generic [ref=e2231]:
+              - img [ref=e2233]
+              - heading "Network and Celebrate Together" [level=3] [ref=e2235]
+              - paragraph [ref=e2236]: LusoTown connects you with organizers of intimate Fado nights to Santos Populares celebrations, tertúlias culturais to business networking events. Meet fellow lusófonos who share your heritage, traditions, and ambitions.
+            - generic [ref=e2238]:
+              - img [ref=e2240]
+              - heading "Find Your People" [level=3] [ref=e2242]
+              - paragraph [ref=e2243]: Whether you're interested in cultural activities, weekend adventures, or professional development, find your community. We're all from different backgrounds and interests, but we connect and thrive together.
+            - generic [ref=e2245]:
+              - img [ref=e2247]
+              - heading "Support Our Portuguese Businesses" [level=3] [ref=e2249]
+              - paragraph [ref=e2250]: Discover Portuguese businesses connected through our platform that understand our saudade - the bakery making pastéis like your avó's, restaurants hosting convívios with bacalhau feasts, services run by people who share our Portuguese values. Unidos pela Língua, prosperamos juntos.
+            - generic [ref=e2252]:
+              - img [ref=e2254]
+              - heading "Portuguese Cultural Heritage" [level=3] [ref=e2256]
+              - paragraph [ref=e2257]: Celebrate Portuguese traditions at authentic venues across the UK. From Fado nights at traditional restaurants to festas at Portuguese churches - keep our culture alive in real places.
+            - generic [ref=e2259]:
+              - img [ref=e2261]
+              - heading "In-Person Language Exchange" [level=3] [ref=e2263]
+              - paragraph [ref=e2264]: Book exciting Portuguese language sessions with native speakers at cozy coffee shops, vibrant cultural centers, and inspiring activity spaces across the UK. Build real connections through active language exchange adventures!
+            - generic [ref=e2266]:
+              - img [ref=e2268]
+              - heading "Heritage Preservation" [level=3] [ref=e2270]
+              - paragraph [ref=e2271]: Experience Portuguese culture through real cultural activities - book sessions at Portuguese churches, cultural associations, and family-run businesses that celebrate our traditions across the UK.
+          - generic [ref=e2273]:
+            - generic [ref=e2275]:
+              - img "LusoTown member - Professional woman smiling" [ref=e2277]
+              - img "LusoTown member - Confident woman in professional setting" [ref=e2279]
+              - img "LusoTown member - Diverse professional woman" [ref=e2281]
+              - img "LusoTown member - Woman with warm smile" [ref=e2283]
+              - img "LusoTown member - Professional woman outdoors" [ref=e2285]
+              - img "LusoTown member - Confident professional woman" [ref=e2287]
+              - img "LusoTown member - Professional woman smiling" [ref=e2289]
+              - img "LusoTown member - Confident woman in professional setting" [ref=e2291]
+              - img "LusoTown member - Diverse professional woman" [ref=e2293]
+              - img "LusoTown member - Woman with warm smile" [ref=e2295]
+              - img "LusoTown member - Professional woman outdoors" [ref=e2297]
+              - img "LusoTown member - Confident professional woman" [ref=e2299]
+              - img "LusoTown member - Professional woman smiling" [ref=e2301]
+              - img "LusoTown member - Confident woman in professional setting" [ref=e2303]
+              - img "LusoTown member - Diverse professional woman" [ref=e2305]
+              - img "LusoTown member - Woman with warm smile" [ref=e2307]
+              - img "LusoTown member - Professional woman outdoors" [ref=e2309]
+              - img "LusoTown member - Confident professional woman" [ref=e2311]
+              - img "LusoTown member - Professional woman smiling" [ref=e2313]
+              - img "LusoTown member - Confident woman in professional setting" [ref=e2315]
+              - img "LusoTown member - Diverse professional woman" [ref=e2317]
+              - img "LusoTown member - Woman with warm smile" [ref=e2319]
+              - img "LusoTown member - Professional woman outdoors" [ref=e2321]
+              - img "LusoTown member - Confident professional woman" [ref=e2323]
+            - generic [ref=e2324]:
+              - generic [ref=e2325]:
+                - img [ref=e2326]
+                - heading "Your Portuguese Professional Network" [level=3] [ref=e2328]
+              - generic [ref=e2329]:
+                - generic [ref=e2330]:
+                  - img "LusoTown London member" [ref=e2332]
+                  - generic [ref=e2333]:
+                    - paragraph [ref=e2334]: Carlos Silva
+                    - paragraph [ref=e2335]: Portuguese Professional, moved from Porto to Stockwell
+                - paragraph [ref=e2336]: "\"I was homesick and felt lost in London. Through LusoTown, I found my Portuguese network - professionals who understand my story and welcome me into their circles. Now I have colleagues, mentors, and friends everywhere I go.\""
+              - paragraph [ref=e2337]: Built by lusophone professionals from Portugal 🇵🇹, Brazil 🇧🇷, Angola 🇦🇴, Mozambique 🇲🇿, Cape Verde 🇨🇻, and beyond who know what it's like to thrive in London while honoring diverse Portuguese-speaking heritages. Every feature celebrates our shared language while respecting unique cultural traditions from across the Portuguese-speaking world.
+        - generic [ref=e2345]:
+          - generic [ref=e2346]:
+            - generic [ref=e2347]:
+              - img [ref=e2348]
+              - generic [ref=e2350]: Discover Amazing Events
+            - heading "From Feijoada Lunches to Fado Evenings" [level=2] [ref=e2351]
+            - paragraph [ref=e2352]: Discover authentic Portuguese-speaking cultural events across the United Kingdom. From traditional food festivals to professional networking, connect with your heritage and build lasting friendships.
+            - generic [ref=e2353]:
+              - generic [ref=e2354]:
+                - generic [ref=e2355]: 🇵🇹
+                - generic [ref=e2356]: Stockwell
+                - generic [ref=e2357]: •
+                - generic [ref=e2358]: Heart of community
+              - generic [ref=e2359]:
+                - generic [ref=e2360]: 🇧🇷
+                - generic [ref=e2361]: Vauxhall
+                - generic [ref=e2362]: •
+                - generic [ref=e2363]: Brazilian hub
+              - generic [ref=e2364]:
+                - generic [ref=e2365]: 🇦🇴
+                - generic [ref=e2366]: Elephant & Castle
+                - generic [ref=e2367]: •
+                - generic [ref=e2368]: Lusophone diversity
+              - generic [ref=e2369]:
+                - generic [ref=e2370]: 🍷
+                - generic [ref=e2371]: Borough Market
+                - generic [ref=e2372]: •
+                - generic [ref=e2373]: Portuguese flavors
+              - generic [ref=e2374]:
+                - generic [ref=e2375]: 🎵
+                - generic [ref=e2376]: Kentish Town
+                - generic [ref=e2377]: •
+                - generic [ref=e2378]: Fado nights
+          - generic [ref=e2379]:
+            - generic [ref=e2380]:
+              - generic [ref=e2381]:
+                - img [ref=e2382]
+                - generic [ref=e2384]: 🇵🇹
+              - generic [ref=e2385]: 200+
+              - generic [ref=e2386]: Eventos Mensais | Monthly Events
+            - generic [ref=e2387]:
+              - generic [ref=e2388]:
+                - img [ref=e2389]
+                - generic [ref=e2391]: 🇧🇷
+              - generic [ref=e2392]: 1,200+
+              - generic [ref=e2393]: Lusófonos | Portuguese Speakers
+            - generic [ref=e2394]:
+              - generic [ref=e2395]:
+                - img [ref=e2396]
+                - generic [ref=e2398]: 🌍
+              - generic [ref=e2399]: 98%
+              - generic [ref=e2400]: Satisfação Cultural | Cultural Satisfaction
+            - generic [ref=e2401]:
+              - generic [ref=e2402]:
+                - img [ref=e2403]
+                - generic [ref=e2406]: 🇬🇧
+              - generic [ref=e2407]: 25+
+              - generic [ref=e2408]: Cidades Reino Unido | United Kingdom Cities
+          - generic [ref=e2409]:
+            - generic [ref=e2410]:
+              - generic [ref=e2411]:
+                - generic:
+                  - 'img "Starting Your First Business: Complete Beginner''s Guide event image"'
+                - generic [ref=e2414]:
+                  - img [ref=e2416]
+                  - generic [ref=e2418]: Business Basics
+                - generic [ref=e2420]: Mon, 15 Sept
+                - generic [ref=e2422]: £25.00
+                - generic [ref=e2424]:
+                  - img [ref=e2425]
+                  - text: FREE GIVEAWAY
+                - generic [ref=e2428]: NEW EVENT
+              - generic [ref=e2429]:
+                - 'heading "Starting Your First Business: Complete Beginner''s Guide" [level=3] [ref=e2431]'
+                - paragraph [ref=e2432]: Learn the basics of starting a business in the United Kingdom. Perfect for complete beginners with no business experience. Simple, practical steps to get started.
+                - generic [ref=e2433]:
+                  - generic [ref=e2434]:
+                    - img [ref=e2435]
+                    - text: Portuguese-speaking community Centre
+                  - generic [ref=e2438]:
+                    - img [ref=e2439]
+                    - text: 10:00 am
+                  - generic [ref=e2441]:
+                    - img [ref=e2442]
+                    - text: 14/20 attending
+                  - generic [ref=e2444]:
+                    - img [ref=e2445]
+                    - text: Welcome to Portuguese speakers and friends
+                - generic [ref=e2448]:
+                  - generic [ref=e2449]:
+                    - img [ref=e2450]
+                    - text: Available to book
+                  - generic [ref=e2452]: 6 spots left
+                - generic [ref=e2455]:
+                  - link "Book Now - £25.00" [ref=e2456] [cursor=pointer]:
+                    - /url: /events/NaN/book
+                  - button "Book Together" [ref=e2457] [cursor=pointer]:
+                    - img [ref=e2458] [cursor=pointer]
+                    - text: Book Together
+            - generic [ref=e2460]:
+              - generic [ref=e2461]:
+                - generic:
+                  - 'img "Social Media for Small Business: Instagram & Facebook Basics event image"'
+                - generic [ref=e2464]:
+                  - img [ref=e2466]
+                  - generic [ref=e2468]: Digital Marketing
+                - generic [ref=e2470]: Mon, 22 Sept
+                - generic [ref=e2472]: £15.00
+              - generic [ref=e2473]:
+                - 'heading "Social Media for Small Business: Instagram & Facebook Basics" [level=3] [ref=e2475]'
+                - paragraph [ref=e2476]: Learn simple social media marketing for your business. Perfect for beginners who want to use Instagram and Facebook to find customers.
+                - generic [ref=e2477]:
+                  - generic [ref=e2478]:
+                    - img [ref=e2479]
+                    - text: Portuguese-speaking community Centre
+                  - generic [ref=e2482]:
+                    - img [ref=e2483]
+                    - text: 02:00 pm
+                  - generic [ref=e2485]:
+                    - img [ref=e2486]
+                    - text: 9/15 attending
+                  - generic [ref=e2488]:
+                    - img [ref=e2489]
+                    - text: Welcome to Portuguese speakers and friends
+                - generic [ref=e2492]:
+                  - generic [ref=e2493]:
+                    - img [ref=e2494]
+                    - text: Available to book
+                  - generic [ref=e2496]: 6 spots left
+                - link "Book Now - £15.00" [ref=e2500] [cursor=pointer]:
+                  - /url: /events/NaN/book
+            - generic [ref=e2501]:
+              - generic [ref=e2502]:
+                - generic:
+                  - 'img "Managing Money in the United Kingdom: Banking and Saving Basics event image"'
+                - generic [ref=e2505]:
+                  - img [ref=e2507]
+                  - generic [ref=e2509]: Personal Finance
+                - generic [ref=e2511]: Mon, 6 Oct
+                - generic [ref=e2513]: £20.00
+              - generic [ref=e2514]:
+                - 'heading "Managing Money in the United Kingdom: Banking and Saving Basics" [level=3] [ref=e2516]'
+                - paragraph [ref=e2517]: Learn the basics of managing money in the United Kingdom. Perfect for anyone who wants to understand United Kingdom banking, saving, and simple budgeting.
+                - generic [ref=e2518]:
+                  - generic [ref=e2519]:
+                    - img [ref=e2520]
+                    - text: Portuguese-speaking community Centre
+                  - generic [ref=e2523]:
+                    - img [ref=e2524]
+                    - text: 11:00 am
+                  - generic [ref=e2526]:
+                    - img [ref=e2527]
+                    - text: 12/18 attending
+                  - generic [ref=e2529]:
+                    - img [ref=e2530]
+                    - text: Welcome to Portuguese speakers and friends
+                - generic [ref=e2533]:
+                  - generic [ref=e2534]:
+                    - img [ref=e2535]
+                    - text: Available to book
+                  - generic [ref=e2537]: 6 spots left
+                - link "Book Now - £20.00" [ref=e2541] [cursor=pointer]:
+                  - /url: /events/NaN/book
+          - generic [ref=e2542]:
+            - generic [ref=e2543]:
+              - heading "Explore by Cultural Category" [level=3] [ref=e2544]
+              - paragraph [ref=e2545]: Discover authentic Portuguese cultural events across London
+            - generic [ref=e2546]:
+              - generic [ref=e2547] [cursor=pointer]:
+                - generic [ref=e2548] [cursor=pointer]: 🇵🇹
+                - generic [ref=e2549] [cursor=pointer]: 🎵
+                - generic [ref=e2550] [cursor=pointer]: Fado & Music
+                - generic [ref=e2551] [cursor=pointer]: 15+ events
+              - generic [ref=e2552] [cursor=pointer]:
+                - generic [ref=e2553] [cursor=pointer]: 🇵🇹
+                - generic [ref=e2554] [cursor=pointer]: ⚽
+                - generic [ref=e2555] [cursor=pointer]: Football & Sports
+                - generic [ref=e2556] [cursor=pointer]: 20+ matches
+              - generic [ref=e2557] [cursor=pointer]:
+                - generic [ref=e2558] [cursor=pointer]: 🇧🇷
+                - generic [ref=e2559] [cursor=pointer]: 🍷
+                - generic [ref=e2560] [cursor=pointer]: Portuguese Cuisine
+                - generic [ref=e2561] [cursor=pointer]: 25+ events
+              - generic [ref=e2562] [cursor=pointer]:
+                - generic [ref=e2563] [cursor=pointer]: 🇵🇹
+                - generic [ref=e2564] [cursor=pointer]: 🎉
+                - generic [ref=e2565] [cursor=pointer]: Popular Saints
+                - generic [ref=e2566] [cursor=pointer]: 12+ festivals
+              - generic [ref=e2567] [cursor=pointer]:
+                - generic [ref=e2568] [cursor=pointer]: 🌍
+                - generic [ref=e2569] [cursor=pointer]: 🤝
+                - generic [ref=e2570] [cursor=pointer]: Business Network
+                - generic [ref=e2571] [cursor=pointer]: 30+ events
+              - generic [ref=e2572] [cursor=pointer]:
+                - generic [ref=e2573] [cursor=pointer]: 🇵🇹
+                - generic [ref=e2574] [cursor=pointer]: 🧁
+                - generic [ref=e2575] [cursor=pointer]: Pastéis de Nata
+                - generic [ref=e2576] [cursor=pointer]: 8+ workshops
+              - generic [ref=e2577] [cursor=pointer]:
+                - generic [ref=e2578] [cursor=pointer]: 🇵🇹
+                - generic [ref=e2579] [cursor=pointer]: 🍾
+                - generic [ref=e2580] [cursor=pointer]: Wine Tasting
+                - generic [ref=e2581] [cursor=pointer]: 10+ tastings
+              - generic [ref=e2582] [cursor=pointer]:
+                - generic [ref=e2583] [cursor=pointer]: 🇧🇷
+                - generic [ref=e2584] [cursor=pointer]: 📚
+                - generic [ref=e2585] [cursor=pointer]: Literature
+                - generic [ref=e2586] [cursor=pointer]: 6+ events
+              - generic [ref=e2587] [cursor=pointer]:
+                - generic [ref=e2588] [cursor=pointer]: 🇵🇹
+                - generic [ref=e2589] [cursor=pointer]: ⛵
+                - generic [ref=e2590] [cursor=pointer]: Maritime History
+                - generic [ref=e2591] [cursor=pointer]: 4+ tours
+              - generic [ref=e2592] [cursor=pointer]:
+                - generic [ref=e2593] [cursor=pointer]: 🇵🇹
+                - generic [ref=e2594] [cursor=pointer]: 💃
+                - generic [ref=e2595] [cursor=pointer]: Traditional Dance
+                - generic [ref=e2596] [cursor=pointer]: 12+ classes
+              - generic [ref=e2597] [cursor=pointer]:
+                - generic [ref=e2598] [cursor=pointer]: 🇧🇷
+                - generic [ref=e2599] [cursor=pointer]: 🌽
+                - generic [ref=e2600] [cursor=pointer]: June Festivals
+                - generic [ref=e2601] [cursor=pointer]: 6+ festivals
+              - generic [ref=e2602] [cursor=pointer]:
+                - generic [ref=e2603] [cursor=pointer]: 🌍
+                - generic [ref=e2604] [cursor=pointer]: 👨‍👩‍👧‍👦
+                - generic [ref=e2605] [cursor=pointer]: Family Events
+                - generic [ref=e2606] [cursor=pointer]: 18+ events
+            - generic [ref=e2607]:
+              - paragraph [ref=e2608]: "\"Culture is our second soul\" - Teixeira de Pascoaes"
+              - generic [ref=e2609]:
+                - generic [ref=e2610]: 🇵🇹
+                - generic [ref=e2611]: Portuguese poet, 1877-1952
+          - generic [ref=e2612]:
+            - generic [ref=e2613]:
+              - heading "Voices from Our Community" [level=3] [ref=e2614]
+              - paragraph [ref=e2615]: Real stories from Portuguese speakers who found home in London
+            - generic [ref=e2616]:
+              - generic [ref=e2617]:
+                - generic [ref=e2618]:
+                  - generic [ref=e2619]: MS
+                  - generic [ref=e2620]:
+                    - generic [ref=e2621]: Maria Santos
+                    - generic [ref=e2622]:
+                      - img [ref=e2623]
+                      - text: Stockwell
+                    - generic [ref=e2626]: 🇵🇹 Porto
+                - blockquote [ref=e2627]: "\"I finally found people who understand saudade. The fado nights feel like being home.\""
+                - generic [ref=e2628]: Fado Nights in Soho
+              - generic [ref=e2629]:
+                - generic [ref=e2630]:
+                  - generic [ref=e2631]: JS
+                  - generic [ref=e2632]:
+                    - generic [ref=e2633]: João Silva
+                    - generic [ref=e2634]:
+                      - img [ref=e2635]
+                      - text: Vauxhall
+                    - generic [ref=e2638]: 🇧🇷 São Paulo
+                - blockquote [ref=e2639]: "\"The festa junina in London was amazing! My kids loved it and I felt connected to my roots.\""
+                - generic [ref=e2640]: Brazilian June Festival
+              - generic [ref=e2641]:
+                - generic [ref=e2642]:
+                  - generic [ref=e2643]: AP
+                  - generic [ref=e2644]:
+                    - generic [ref=e2645]: Ana Pereira
+                    - generic [ref=e2646]:
+                      - img [ref=e2647]
+                      - text: Borough Market
+                    - generic [ref=e2650]: 🇦🇴 Luanda
+                - blockquote [ref=e2651]: "\"The pastéis de nata workshop taught me my grandmother's recipes. Such a special experience!\""
+                - generic [ref=e2652]: Pastéis de Nata Workshop
+            - generic [ref=e2653]:
+              - heading "Expressions That Unite Us" [level=4] [ref=e2654]
+              - generic [ref=e2655]:
+                - generic [ref=e2656]:
+                  - generic [ref=e2657]: Saudade
+                  - generic [ref=e2658]: Uniquely Portuguese feeling
+                - generic [ref=e2659]:
+                  - generic [ref=e2660]: Desenrascanço
+                  - generic [ref=e2661]: Art of problem-solving
+                - generic [ref=e2662]:
+                  - generic [ref=e2663]: Cafezinho
+                  - generic [ref=e2664]: Essential Brazilian break
+                - generic [ref=e2665]:
+                  - generic [ref=e2666]: Convívio
+                  - generic [ref=e2667]: Sharing moments together
+          - generic [ref=e2669]:
+            - generic [ref=e2670]:
+              - generic [ref=e2671]: 🇵🇹
+              - generic [ref=e2672]: 🇧🇷
+              - generic [ref=e2673]: ⚽
+              - generic [ref=e2674]: 🎵
+              - generic [ref=e2675]: 🍷
+            - generic [ref=e2676]:
+              - heading "Join the Portuguese-speaking community in London & United Kingdom" [level=3] [ref=e2677]
+              - paragraph [ref=e2678]: From business networking to traditional cooking, transport services to cultural events. Connect with fellow Portuguese speakers and build meaningful relationships.
+              - generic [ref=e2679]: "\"Those who have friends, have everything\" - Portuguese Proverb"
+              - generic [ref=e2680]:
+                - link "View Events" [ref=e2681] [cursor=pointer]:
+                  - /url: /events/
+                  - text: View Events
+                  - img [ref=e2682] [cursor=pointer]
+                - link "Join Now" [ref=e2684] [cursor=pointer]:
+                  - /url: /signup/
+        - generic [ref=e2691]:
+          - generic [ref=e2692]:
+            - generic [ref=e2694]:
+              - img [ref=e2696]
+              - generic [ref=e2698]: Portuguese-speaking community Groups
+            - heading "Find Your Portuguese Community" [level=2] [ref=e2700]:
+              - text: Find Your Portuguese
+              - generic [ref=e2701]: Community
+            - paragraph [ref=e2702]: Connect with Portuguese speakers across the United Kingdom. From business networking in London to cultural events in Manchester, discover groups nationwide that match your interests and make lasting friendships.
+          - generic [ref=e2703]:
+            - generic [ref=e2704]:
+              - generic [ref=e2705]:
+                - generic [ref=e2708]:
+                  - img [ref=e2710]
+                  - generic [ref=e2712]: Portuguese-speaking community
+                - generic [ref=e2716]:
+                  - img [ref=e2717]
+                  - generic [ref=e2719]: "245"
+              - generic [ref=e2720]:
+                - heading "Portuguese Professionals London" [level=3] [ref=e2721]
+                - paragraph [ref=e2722]: Connecting Portuguese-speaking professionals across London for networking, career development, and cultural exchange.
+                - link "Join Group" [ref=e2723] [cursor=pointer]:
+                  - /url: /groups/group-1/
+                  - text: Join Group
+                  - img [ref=e2724] [cursor=pointer]
+            - generic [ref=e2726]:
+              - generic [ref=e2727]:
+                - generic [ref=e2730]:
+                  - img [ref=e2732]
+                  - generic [ref=e2734]: Portuguese-speaking community
+                - generic [ref=e2738]:
+                  - img [ref=e2739]
+                  - generic [ref=e2741]: "189"
+              - generic [ref=e2742]:
+                - heading "Fado & Portuguese Culture" [level=3] [ref=e2743]
+                - paragraph [ref=e2744]: Preserving and sharing Portuguese musical heritage through Fado sessions and cultural events.
+                - link "Join Group" [ref=e2745] [cursor=pointer]:
+                  - /url: /groups/group-2/
+                  - text: Join Group
+                  - img [ref=e2746] [cursor=pointer]
+            - generic [ref=e2748]:
+              - generic [ref=e2749]:
+                - generic [ref=e2752]:
+                  - img [ref=e2754]
+                  - generic [ref=e2756]: Portuguese-speaking community
+                - generic [ref=e2760]:
+                  - img [ref=e2761]
+                  - generic [ref=e2763]: "156"
+              - generic [ref=e2764]:
+                - heading "Portuguese Families London & United Kingdom" [level=3] [ref=e2765]
+                - paragraph [ref=e2766]: Supporting Portuguese families with children, family-friendly events, and cultural education.
+                - link "Join Group" [ref=e2767] [cursor=pointer]:
+                  - /url: /groups/group-3/
+                  - text: Join Group
+                  - img [ref=e2768] [cursor=pointer]
+          - generic [ref=e2771]:
+            - heading "Ready to Connect?" [level=3] [ref=e2772]
+            - paragraph [ref=e2773]: Join Portuguese speakers who share your interests and build lasting friendships in London & United Kingdom.
+            - generic [ref=e2774]:
+              - link "Browse Groups" [ref=e2775] [cursor=pointer]:
+                - /url: /groups/
+                - img [ref=e2776] [cursor=pointer]
+                - text: Browse Groups
+                - img [ref=e2778] [cursor=pointer]
+              - link "Create Group" [ref=e2780] [cursor=pointer]:
+                - /url: /groups/create/
+          - generic [ref=e2781]:
+            - generic [ref=e2782]:
+              - img [ref=e2784]
+              - generic [ref=e2786]: 15+
+              - generic [ref=e2787]: Active Groups
+            - generic [ref=e2788]:
+              - img [ref=e2790]
+              - generic [ref=e2792]: 200+
+              - generic [ref=e2793]: Community Members
+            - generic [ref=e2794]:
+              - img [ref=e2796]
+              - generic [ref=e2798]: 50+
+              - generic [ref=e2799]: Weekly Meetups
+        - generic [ref=e2808]:
+          - generic [ref=e2809]:
+            - generic [ref=e2810]:
+              - generic [ref=e2813]: Community Pulse
+              - generic [ref=e2814]:
+                - img [ref=e2815]
+                - generic [ref=e2818]: Live
+            - heading "Portuguese Community Feed" [level=2] [ref=e2819]
+            - paragraph [ref=e2820]: See what's happening in the Portuguese community across London
+            - paragraph [ref=e2821]: From thrilling cultural events to exciting job opportunities, housing discoveries to dynamic business networking - discover the vibrant pulse of Portuguese life across the UK through authentic community posts and inspiring connections from Manchester to Edinburgh!
+          - generic [ref=e2823]:
+            - button "All 10" [ref=e2824] [cursor=pointer]:
+              - img [ref=e2825] [cursor=pointer]
+              - generic [ref=e2827] [cursor=pointer]: All
+              - generic [ref=e2828] [cursor=pointer]: "10"
+            - button "Events 2" [ref=e2829] [cursor=pointer]:
+              - img [ref=e2830] [cursor=pointer]
+              - generic [ref=e2832] [cursor=pointer]: Events
+              - generic [ref=e2833] [cursor=pointer]: "2"
+            - button "Photos 1" [ref=e2834] [cursor=pointer]:
+              - img [ref=e2835] [cursor=pointer]
+              - generic [ref=e2838] [cursor=pointer]: Photos
+              - generic [ref=e2839] [cursor=pointer]: "1"
+            - button "Jobs 1" [ref=e2840] [cursor=pointer]:
+              - img [ref=e2841] [cursor=pointer]
+              - generic [ref=e2843] [cursor=pointer]: Jobs
+              - generic [ref=e2844] [cursor=pointer]: "1"
+            - button "Housing 1" [ref=e2845] [cursor=pointer]:
+              - img [ref=e2846] [cursor=pointer]
+              - generic [ref=e2848] [cursor=pointer]: Housing
+              - generic [ref=e2849] [cursor=pointer]: "1"
+            - button "Culture 3" [ref=e2850] [cursor=pointer]:
+              - img [ref=e2851] [cursor=pointer]
+              - generic [ref=e2853] [cursor=pointer]: Culture
+              - generic [ref=e2854] [cursor=pointer]: "3"
+          - generic [ref=e2855]:
+            - article [ref=e2856]:
+              - generic [ref=e2857]:
+                - generic [ref=e2858]:
+                  - generic [ref=e2859]:
+                    - generic [ref=e2860]:
+                      - img "Maria Santos" [ref=e2862]
+                      - img [ref=e2864]
+                    - generic [ref=e2866]:
+                      - generic [ref=e2867]:
+                        - heading "Maria Santos" [level=4] [ref=e2868]
+                        - 'generic "Heritage: Portugal" [ref=e2869]': 🇵🇹
+                        - generic [ref=e2870]:
+                          - img [ref=e2871]
+                          - generic [ref=e2874]: Trending
+                      - generic [ref=e2875]:
+                        - img [ref=e2876]
+                        - generic [ref=e2879]: Vauxhall, London
+                        - generic [ref=e2880]: •
+                        - img [ref=e2881]
+                        - generic [ref=e2883]: 2 hours ago
+                      - generic [ref=e2884]:
+                        - generic [ref=e2885]: Event Host
+                        - generic [ref=e2886]: Community Leader
+                  - img [ref=e2889]
+                - paragraph [ref=e2891]: Excited to announce our next Fado night at the Portuguese Cultural Centre! Join us for an evening of traditional music, pastéis de nata, and connecting with fellow Portuguese speakers. Bring your saudade and let's create beautiful memories together! 🎵🇵🇹
+                - img "Post image" [ref=e2894]
+                - generic [ref=e2896]:
+                  - img [ref=e2898]
+                  - generic [ref=e2900]:
+                    - heading "Traditional Fado Night" [level=5] [ref=e2901]
+                    - paragraph [ref=e2902]: Portuguese Cultural Centre
+                    - paragraph [ref=e2903]: March 15, 7:30 PM
+                  - button "View" [ref=e2904] [cursor=pointer]:
+                    - text: View
+                    - img [ref=e2905] [cursor=pointer]
+                - generic [ref=e2907]:
+                  - generic [ref=e2908] [cursor=pointer]: "#FadoNight"
+                  - generic [ref=e2909] [cursor=pointer]: "#PortugueseCulture"
+                  - generic [ref=e2910] [cursor=pointer]: "#LondonEvents"
+              - generic [ref=e2912]:
+                - generic [ref=e2913]:
+                  - generic [ref=e2914]:
+                    - img [ref=e2915]
+                    - text: "47"
+                  - generic [ref=e2917]:
+                    - img [ref=e2918]
+                    - text: "12"
+                  - generic [ref=e2920]:
+                    - img [ref=e2921]
+                    - text: "8"
+                - generic [ref=e2923]:
+                  - img [ref=e2924]
+                  - generic [ref=e2927]: 234 views
+              - generic [ref=e2929]:
+                - button "Like" [ref=e2930] [cursor=pointer]:
+                  - img [ref=e2931] [cursor=pointer]
+                  - generic [ref=e2933] [cursor=pointer]: Like
+                - button "Comment" [ref=e2934] [cursor=pointer]:
+                  - img [ref=e2935] [cursor=pointer]
+                  - generic [ref=e2937] [cursor=pointer]: Comment
+                - button "Share" [ref=e2938] [cursor=pointer]:
+                  - img [ref=e2939] [cursor=pointer]
+                  - generic [ref=e2941] [cursor=pointer]: Share
+            - article [ref=e2942]:
+              - generic [ref=e2943]:
+                - generic [ref=e2944]:
+                  - generic [ref=e2945]:
+                    - generic [ref=e2946]:
+                      - img "João Silva" [ref=e2948]
+                      - img [ref=e2950]
+                    - generic [ref=e2952]:
+                      - generic [ref=e2953]:
+                        - heading "João Silva" [level=4] [ref=e2954]
+                        - 'generic "Heritage: Brazil" [ref=e2955]': 🇧🇷
+                      - generic [ref=e2956]:
+                        - img [ref=e2957]
+                        - generic [ref=e2960]: Stockwell, London
+                        - generic [ref=e2961]: •
+                        - img [ref=e2962]
+                        - generic [ref=e2964]: 4 hours ago
+                      - generic [ref=e2966]: Food Enthusiast
+                  - img [ref=e2969]
+                - paragraph [ref=e2972]: Found the most authentic pastéis de nata outside of Portugal at this hidden gem in Borough Market! The owner is from Porto and uses his grandmother's recipe. Already planning my next visit! Who wants to join? 🥮✨
+                - generic [ref=e2974]:
+                  - img "Post image 1" [ref=e2976]
+                  - img "Post image 2" [ref=e2978]
+                - generic [ref=e2980]:
+                  - img [ref=e2982]
+                  - generic [ref=e2985]:
+                    - heading "Porto Authentic Bakery" [level=5] [ref=e2986]
+                    - paragraph [ref=e2987]: Traditional Portuguese pastries
+                  - button "View" [ref=e2988] [cursor=pointer]:
+                    - text: View
+                    - img [ref=e2989] [cursor=pointer]
+                - generic [ref=e2991]:
+                  - generic [ref=e2992] [cursor=pointer]: "#PasteisDeNata"
+                  - generic [ref=e2993] [cursor=pointer]: "#PortugueseFood"
+                  - generic [ref=e2994] [cursor=pointer]: "#BoroughMarket"
+              - generic [ref=e2996]:
+                - generic [ref=e2997]:
+                  - generic [ref=e2998]:
+                    - img [ref=e2999]
+                    - text: "89"
+                  - generic [ref=e3001]:
+                    - img [ref=e3002]
+                    - text: "23"
+                  - generic [ref=e3004]:
+                    - img [ref=e3005]
+                    - text: "15"
+                - generic [ref=e3007]:
+                  - img [ref=e3008]
+                  - generic [ref=e3011]: 456 views
+              - generic [ref=e3013]:
+                - button "Like" [ref=e3014] [cursor=pointer]:
+                  - img [ref=e3015] [cursor=pointer]
+                  - generic [ref=e3017] [cursor=pointer]: Like
+                - button "Comment" [ref=e3018] [cursor=pointer]:
+                  - img [ref=e3019] [cursor=pointer]
+                  - generic [ref=e3021] [cursor=pointer]: Comment
+                - button "Share" [ref=e3022] [cursor=pointer]:
+                  - img [ref=e3023] [cursor=pointer]
+                  - generic [ref=e3025] [cursor=pointer]: Share
+            - article [ref=e3026]:
+              - generic [ref=e3027]:
+                - generic [ref=e3028]:
+                  - generic [ref=e3029]:
+                    - generic [ref=e3030]:
+                      - img "Ana Costa" [ref=e3032]
+                      - img [ref=e3034]
+                    - generic [ref=e3036]:
+                      - generic [ref=e3037]:
+                        - heading "Ana Costa" [level=4] [ref=e3038]
+                        - 'generic "Heritage: Portugal" [ref=e3039]': 🇵🇹
+                      - generic [ref=e3040]:
+                        - img [ref=e3041]
+                        - generic [ref=e3044]: Canary Wharf, London
+                        - generic [ref=e3045]: •
+                        - img [ref=e3046]
+                        - generic [ref=e3048]: 6 hours ago
+                      - generic [ref=e3049]:
+                        - generic [ref=e3050]: HR Professional
+                        - generic [ref=e3051]: Recruiter
+                  - img [ref=e3054]
+                - paragraph [ref=e3056]: Exciting opportunity at my company! We're looking for a Portuguese-speaking Customer Success Manager. Perfect for someone who understands both Portuguese and Brazilian markets. Remote-friendly with office in Canary Wharf. DM me for details! 💼
+                - generic [ref=e3058]:
+                  - img [ref=e3060]
+                  - generic [ref=e3062]:
+                    - heading "Customer Success Manager" [level=5] [ref=e3063]
+                    - paragraph [ref=e3064]: Fintech Company
+                    - paragraph [ref=e3065]: £45k - £55k
+                  - button "View" [ref=e3066] [cursor=pointer]:
+                    - text: View
+                    - img [ref=e3067] [cursor=pointer]
+                - generic [ref=e3069]:
+                  - generic [ref=e3070] [cursor=pointer]: "#JobOpportunity"
+                  - generic [ref=e3071] [cursor=pointer]: "#PortugueseSpeaking"
+                  - generic [ref=e3072] [cursor=pointer]: "#CustomerSuccess"
+              - generic [ref=e3074]:
+                - generic [ref=e3075]:
+                  - generic [ref=e3076]:
+                    - img [ref=e3077]
+                    - text: "34"
+                  - generic [ref=e3079]:
+                    - img [ref=e3080]
+                    - text: "18"
+                  - generic [ref=e3082]:
+                    - img [ref=e3083]
+                    - text: "22"
+                - generic [ref=e3085]:
+                  - img [ref=e3086]
+                  - generic [ref=e3089]: 178 views
+              - generic [ref=e3091]:
+                - button "Like" [ref=e3092] [cursor=pointer]:
+                  - img [ref=e3093] [cursor=pointer]
+                  - generic [ref=e3095] [cursor=pointer]: Like
+                - button "Comment" [ref=e3096] [cursor=pointer]:
+                  - img [ref=e3097] [cursor=pointer]
+                  - generic [ref=e3099] [cursor=pointer]: Comment
+                - button "Share" [ref=e3100] [cursor=pointer]:
+                  - img [ref=e3101] [cursor=pointer]
+                  - generic [ref=e3103] [cursor=pointer]: Share
+            - article [ref=e3104]:
+              - generic [ref=e3105]:
+                - generic [ref=e3106]:
+                  - generic [ref=e3107]:
+                    - generic [ref=e3108]:
+                      - img "Carlos Mendes" [ref=e3110]
+                      - img [ref=e3112]
+                    - generic [ref=e3114]:
+                      - generic [ref=e3115]:
+                        - heading "Carlos Mendes" [level=4] [ref=e3116]
+                        - 'generic "Heritage: Angola" [ref=e3117]': 🇦🇴
+                      - generic [ref=e3118]:
+                        - img [ref=e3119]
+                        - generic [ref=e3122]: Elephant & Castle, London
+                        - generic [ref=e3123]: •
+                        - img [ref=e3124]
+                        - generic [ref=e3126]: 8 hours ago
+                      - generic [ref=e3128]: Property Expert
+                  - img [ref=e3131]
+                - paragraph [ref=e3133]: Beautiful 2-bedroom flat available in Elephant & Castle! Perfect for Portuguese speakers - there's a strong community here. Walking distance to Portuguese shops and the Mercado restaurant. Looking for respectful tenants who appreciate good neighbours. 🏠
+                - img "Post image" [ref=e3136]
+                - generic [ref=e3138]:
+                  - img [ref=e3140]
+                  - generic [ref=e3142]:
+                    - heading "2-Bedroom Flat Available" [level=5] [ref=e3143]
+                    - paragraph [ref=e3144]: Elephant & Castle
+                    - paragraph [ref=e3145]: £1,800/month
+                  - button "View" [ref=e3146] [cursor=pointer]:
+                    - text: View
+                    - img [ref=e3147] [cursor=pointer]
+                - generic [ref=e3149]:
+                  - generic [ref=e3150] [cursor=pointer]: "#HousingLondon"
+                  - generic [ref=e3151] [cursor=pointer]: "#PortugueseCommunity"
+                  - generic [ref=e3152] [cursor=pointer]: "#ElephantCastle"
+              - generic [ref=e3154]:
+                - generic [ref=e3155]:
+                  - generic [ref=e3156]:
+                    - img [ref=e3157]
+                    - text: "56"
+                  - generic [ref=e3159]:
+                    - img [ref=e3160]
+                    - text: "31"
+                  - generic [ref=e3162]:
+                    - img [ref=e3163]
+                    - text: "19"
+                - generic [ref=e3165]:
+                  - img [ref=e3166]
+                  - generic [ref=e3169]: 389 views
+              - generic [ref=e3171]:
+                - button "Like" [ref=e3172] [cursor=pointer]:
+                  - img [ref=e3173] [cursor=pointer]
+                  - generic [ref=e3175] [cursor=pointer]: Like
+                - button "Comment" [ref=e3176] [cursor=pointer]:
+                  - img [ref=e3177] [cursor=pointer]
+                  - generic [ref=e3179] [cursor=pointer]: Comment
+                - button "Share" [ref=e3180] [cursor=pointer]:
+                  - img [ref=e3181] [cursor=pointer]
+                  - generic [ref=e3183] [cursor=pointer]: Share
+            - article [ref=e3184]:
+              - generic [ref=e3185]:
+                - generic [ref=e3186]:
+                  - generic [ref=e3187]:
+                    - generic [ref=e3188]:
+                      - img "Fernanda Oliveira" [ref=e3190]
+                      - img [ref=e3192]
+                    - generic [ref=e3194]:
+                      - generic [ref=e3195]:
+                        - heading "Fernanda Oliveira" [level=4] [ref=e3196]
+                        - 'generic "Heritage: Brazil" [ref=e3197]': 🇧🇷
+                      - generic [ref=e3198]:
+                        - img [ref=e3199]
+                        - generic [ref=e3202]: Camden, London
+                        - generic [ref=e3203]: •
+                        - img [ref=e3204]
+                        - generic [ref=e3206]: 12 hours ago
+                      - generic [ref=e3207]:
+                        - generic [ref=e3208]: Embaixadora Cultural
+                        - generic [ref=e3209]: Professora de Idiomas
+                  - img [ref=e3212]
+                - paragraph [ref=e3214]: "🇧🇷 Ensinei os meus amigos ingleses sobre as tradições da Festa Junina hoje! Fiz pamonha, dançámos quadrilha e expliquei porque saltamos por cima das fogueiras. As caras deles quando provaram paçoca pela primeira vez! 😂 Amo partilhar a nossa cultura linda aqui em Londres! A saudade do Brasil fica mais leve quando partilhamos as nossas tradições. 🎪🌽 #BrasileirosEmLondres"
+                - generic [ref=e3216]:
+                  - img "Post image 1" [ref=e3218]
+                  - img "Post image 2" [ref=e3220]
+                - generic [ref=e3221]:
+                  - generic [ref=e3222] [cursor=pointer]: "#FestaJunina"
+                  - generic [ref=e3223] [cursor=pointer]: "#CulturaBrasileira"
+                  - generic [ref=e3224] [cursor=pointer]: "#BrasileirosEmLondres"
+              - generic [ref=e3226]:
+                - generic [ref=e3227]:
+                  - generic [ref=e3228]:
+                    - img [ref=e3229]
+                    - text: "127"
+                  - generic [ref=e3231]:
+                    - img [ref=e3232]
+                    - text: "45"
+                  - generic [ref=e3234]:
+                    - img [ref=e3235]
+                    - text: "33"
+                - generic [ref=e3237]:
+                  - img [ref=e3238]
+                  - generic [ref=e3241]: 678 views
+              - generic [ref=e3243]:
+                - button "Like" [ref=e3244] [cursor=pointer]:
+                  - img [ref=e3245] [cursor=pointer]
+                  - generic [ref=e3247] [cursor=pointer]: Like
+                - button "Comment" [ref=e3248] [cursor=pointer]:
+                  - img [ref=e3249] [cursor=pointer]
+                  - generic [ref=e3251] [cursor=pointer]: Comment
+                - button "Share" [ref=e3252] [cursor=pointer]:
+                  - img [ref=e3253] [cursor=pointer]
+                  - generic [ref=e3255] [cursor=pointer]: Share
+            - article [ref=e3256]:
+              - generic [ref=e3257]:
+                - generic [ref=e3258]:
+                  - generic [ref=e3259]:
+                    - generic [ref=e3260]:
+                      - img "Miguel Rodrigues" [ref=e3262]
+                      - img [ref=e3264]
+                    - generic [ref=e3266]:
+                      - generic [ref=e3267]:
+                        - heading "Miguel Rodrigues" [level=4] [ref=e3268]
+                        - 'generic "Heritage: Cape Verde" [ref=e3269]': 🇨🇻
+                        - generic [ref=e3270]:
+                          - img [ref=e3271]
+                          - generic [ref=e3274]: Trending
+                      - generic [ref=e3275]:
+                        - img [ref=e3276]
+                        - generic [ref=e3279]: Brixton, London
+                        - generic [ref=e3280]: •
+                        - img [ref=e3281]
+                        - generic [ref=e3283]: 18 hours ago
+                      - generic [ref=e3285]: Community Moderator
+                  - img [ref=e3288]
+                - paragraph [ref=e3290]: Had an interesting conversation about maintaining our mother tongue while living abroad. How do you keep Portuguese alive in your daily life here in London? My kids are starting to prefer English, and I want them to stay connected to our roots. Any tips? 🤔
+                - generic [ref=e3291]:
+                  - generic [ref=e3292] [cursor=pointer]: "#PortugueseLanguage"
+                  - generic [ref=e3293] [cursor=pointer]: "#Parenting"
+                  - generic [ref=e3294] [cursor=pointer]: "#CulturalIdentity"
+              - generic [ref=e3296]:
+                - generic [ref=e3297]:
+                  - generic [ref=e3298]:
+                    - img [ref=e3299]
+                    - text: "73"
+                  - generic [ref=e3301]:
+                    - img [ref=e3302]
+                    - text: "58"
+                  - generic [ref=e3304]:
+                    - img [ref=e3305]
+                    - text: "12"
+                - generic [ref=e3307]:
+                  - img [ref=e3308]
+                  - generic [ref=e3311]: 456 views
+              - generic [ref=e3313]:
+                - button "Like" [ref=e3314] [cursor=pointer]:
+                  - img [ref=e3315] [cursor=pointer]
+                  - generic [ref=e3317] [cursor=pointer]: Like
+                - button "Comment" [ref=e3318] [cursor=pointer]:
+                  - img [ref=e3319] [cursor=pointer]
+                  - generic [ref=e3321] [cursor=pointer]: Comment
+                - button "Share" [ref=e3322] [cursor=pointer]:
+                  - img [ref=e3323] [cursor=pointer]
+                  - generic [ref=e3325] [cursor=pointer]: Share
+            - article [ref=e3326]:
+              - generic [ref=e3327]:
+                - generic [ref=e3328]:
+                  - generic [ref=e3329]:
+                    - generic [ref=e3330]:
+                      - img "Rita Pereira" [ref=e3332]
+                      - img [ref=e3334]
+                    - generic [ref=e3336]:
+                      - generic [ref=e3337]:
+                        - heading "Rita Pereira" [level=4] [ref=e3338]
+                        - 'generic "Heritage: Portugal" [ref=e3339]': 🇵🇹
+                        - generic [ref=e3342]: Live
+                      - generic [ref=e3343]:
+                        - img [ref=e3344]
+                        - generic [ref=e3347]: Notting Hill, London
+                        - generic [ref=e3348]: •
+                        - img [ref=e3349]
+                        - generic [ref=e3351]: 22 hours ago
+                      - generic [ref=e3352]:
+                        - generic [ref=e3353]: Organizadora de Eventos
+                        - generic [ref=e3354]: Adepta de Futebol
+                  - img [ref=e3357]
+                - paragraph [ref=e3359]: "🇵🇹 JOGO DE PORTUGAL AMANHÃ! ⚽ Festa no pub português em Notting Hill. Ecrã grande, Super Bock à pressão e comentários apaixonados garantidos! Venham celebrar os nossos rapazes de vermelho e verde! Força Portugal! A união faz a força, principalmente aqui em Londres longe da nossa terra. Que bela forma de matar as saudades! 💪 #PortugalCaralho"
+                - img "Post image" [ref=e3362]
+                - generic [ref=e3364]:
+                  - img [ref=e3366]
+                  - generic [ref=e3368]:
+                    - heading "Portugal vs Espanha - Ver Juntos" [level=5] [ref=e3369]
+                    - paragraph [ref=e3370]: The Portuguese Pub
+                    - paragraph [ref=e3371]: Amanhã, 20:00
+                  - button "View" [ref=e3372] [cursor=pointer]:
+                    - text: View
+                    - img [ref=e3373] [cursor=pointer]
+                - generic [ref=e3375]:
+                  - generic [ref=e3376] [cursor=pointer]: "#PortugalCaralho"
+                  - generic [ref=e3377] [cursor=pointer]: "#Futebol"
+                  - generic [ref=e3378] [cursor=pointer]: "#TugasEmLondres"
+              - generic [ref=e3380]:
+                - generic [ref=e3381]:
+                  - generic [ref=e3382]:
+                    - img [ref=e3383]
+                    - text: "156"
+                  - generic [ref=e3385]:
+                    - img [ref=e3386]
+                    - text: "67"
+                  - generic [ref=e3388]:
+                    - img [ref=e3389]
+                    - text: "44"
+                - generic [ref=e3391]:
+                  - img [ref=e3392]
+                  - generic [ref=e3395]: 892 views
+              - generic [ref=e3397]:
+                - button "Like" [ref=e3398] [cursor=pointer]:
+                  - img [ref=e3399] [cursor=pointer]
+                  - generic [ref=e3401] [cursor=pointer]: Like
+                - button "Comment" [ref=e3402] [cursor=pointer]:
+                  - img [ref=e3403] [cursor=pointer]
+                  - generic [ref=e3405] [cursor=pointer]: Comment
+                - button "Share" [ref=e3406] [cursor=pointer]:
+                  - img [ref=e3407] [cursor=pointer]
+                  - generic [ref=e3409] [cursor=pointer]: Share
+            - article [ref=e3410]:
+              - generic [ref=e3411]:
+                - generic [ref=e3412]:
+                  - generic [ref=e3413]:
+                    - generic [ref=e3414]:
+                      - img "Carlos Lisboa" [ref=e3416]
+                      - img [ref=e3418]
+                    - generic [ref=e3420]:
+                      - generic [ref=e3421]:
+                        - heading "Carlos Lisboa" [level=4] [ref=e3422]
+                        - 'generic "Heritage: Portugal" [ref=e3423]': 🇵🇹
+                      - generic [ref=e3424]:
+                        - img [ref=e3425]
+                        - generic [ref=e3428]: Stockwell, London
+                        - generic [ref=e3429]: •
+                        - img [ref=e3430]
+                        - generic [ref=e3432]: 1 day ago
+                      - generic [ref=e3433]:
+                        - generic [ref=e3434]: Mestre Fadista
+                        - generic [ref=e3435]: Guia Turístico
+                  - img [ref=e3438]
+                - paragraph [ref=e3440]: "🇵🇹 Ontem foi noite de fado no nosso quintal português aqui em Stockwell! Que saudades senti da minha Lisboa quando a guitarra começou a chorar... A Mariazinha cantou \"Lágrima\" e não houve olho seco. É isto que nos faz portugueses: a capacidade de transformar a dor em beleza. Aqui em Londres, o fado ganha um sabor especial - mistura-se a saudade da terra com a esperança do futuro. 🎸💔 #FadoEmLondres #Saudade"
+                - img "Post image" [ref=e3443]
+                - generic [ref=e3444]:
+                  - generic [ref=e3445] [cursor=pointer]: "#FadoEmLondres"
+                  - generic [ref=e3446] [cursor=pointer]: "#Saudade"
+                  - generic [ref=e3447] [cursor=pointer]: "#CulturaPortuguesa"
+              - generic [ref=e3449]:
+                - generic [ref=e3450]:
+                  - generic [ref=e3451]:
+                    - img [ref=e3452]
+                    - text: "203"
+                  - generic [ref=e3454]:
+                    - img [ref=e3455]
+                    - text: "67"
+                  - generic [ref=e3457]:
+                    - img [ref=e3458]
+                    - text: "45"
+                - generic [ref=e3460]:
+                  - img [ref=e3461]
+                  - generic [ref=e3464]: 1024 views
+              - generic [ref=e3466]:
+                - button "Like" [ref=e3467] [cursor=pointer]:
+                  - img [ref=e3468] [cursor=pointer]
+                  - generic [ref=e3470] [cursor=pointer]: Like
+                - button "Comment" [ref=e3471] [cursor=pointer]:
+                  - img [ref=e3472] [cursor=pointer]
+                  - generic [ref=e3474] [cursor=pointer]: Comment
+                - button "Share" [ref=e3475] [cursor=pointer]:
+                  - img [ref=e3476] [cursor=pointer]
+                  - generic [ref=e3478] [cursor=pointer]: Share
+            - article [ref=e3479]:
+              - generic [ref=e3480]:
+                - generic [ref=e3481]:
+                  - generic [ref=e3482]:
+                    - generic [ref=e3483]:
+                      - img "Luciana Santos" [ref=e3485]
+                      - img [ref=e3487]
+                    - generic [ref=e3489]:
+                      - generic [ref=e3490]:
+                        - heading "Luciana Santos" [level=4] [ref=e3491]
+                        - 'generic "Heritage: Brazil" [ref=e3492]': 🇧🇷
+                      - generic [ref=e3493]:
+                        - img [ref=e3494]
+                        - generic [ref=e3497]: Elephant & Castle, London
+                        - generic [ref=e3498]: •
+                        - img [ref=e3499]
+                        - generic [ref=e3501]: 1 day ago
+                      - generic [ref=e3502]:
+                        - generic [ref=e3503]: Chef Brasileira
+                        - generic [ref=e3504]: Influencer Gastronômica
+                  - img [ref=e3507]
+                - paragraph [ref=e3509]: "🇧🇷 Gente, hoje fiz um almoço de domingo brasileiro completo aqui em Londres! Feijoada, farofa, couve, laranja... Os ingleses da vizinhança vieram provar e ficaram apaixonados! Uma senhora me disse que nunca tinha comido algo tão saboroso. Chorei de emoção! É assim que levamos o Brasil no coração: um prato de cada vez, uma história de cada vez. Quem aí tá sentindo cheiro de dendê? 😭❤️ #BrasilNoPrato #SaudadeBoa"
+                - img "Post image" [ref=e3512]
+                - generic [ref=e3513]:
+                  - generic [ref=e3514] [cursor=pointer]: "#BrasilNoPrato"
+                  - generic [ref=e3515] [cursor=pointer]: "#Feijoada"
+                  - generic [ref=e3516] [cursor=pointer]: "#CozinhaBrasileira"
+              - generic [ref=e3518]:
+                - generic [ref=e3519]:
+                  - generic [ref=e3520]:
+                    - img [ref=e3521]
+                    - text: "289"
+                  - generic [ref=e3523]:
+                    - img [ref=e3524]
+                    - text: "89"
+                  - generic [ref=e3526]:
+                    - img [ref=e3527]
+                    - text: "67"
+                - generic [ref=e3529]:
+                  - img [ref=e3530]
+                  - generic [ref=e3533]: 1456 views
+              - generic [ref=e3535]:
+                - button "Like" [ref=e3536] [cursor=pointer]:
+                  - img [ref=e3537] [cursor=pointer]
+                  - generic [ref=e3539] [cursor=pointer]: Like
+                - button "Comment" [ref=e3540] [cursor=pointer]:
+                  - img [ref=e3541] [cursor=pointer]
+                  - generic [ref=e3543] [cursor=pointer]: Comment
+                - button "Share" [ref=e3544] [cursor=pointer]:
+                  - img [ref=e3545] [cursor=pointer]
+                  - generic [ref=e3547] [cursor=pointer]: Share
+            - article [ref=e3548]:
+              - generic [ref=e3549]:
+                - generic [ref=e3550]:
+                  - generic [ref=e3551]:
+                    - generic [ref=e3552]:
+                      - img "Maria do Porto" [ref=e3554]
+                      - img [ref=e3556]
+                    - generic [ref=e3558]:
+                      - generic [ref=e3559]:
+                        - heading "Maria do Porto" [level=4] [ref=e3560]
+                        - 'generic "Heritage: Portugal" [ref=e3561]': 🇵🇹
+                        - generic [ref=e3562]:
+                          - img [ref=e3563]
+                          - generic [ref=e3566]: Trending
+                      - generic [ref=e3567]:
+                        - img [ref=e3568]
+                        - generic [ref=e3571]: Camden, London
+                        - generic [ref=e3572]: •
+                        - img [ref=e3573]
+                        - generic [ref=e3575]: 1 day ago
+                      - generic [ref=e3576]:
+                        - generic [ref=e3577]: Professora
+                        - generic [ref=e3578]: Mãe Portuguesa
+                  - img [ref=e3581]
+                - paragraph [ref=e3583]: "🇵🇹 Alguém mais aqui luta para que os filhos não percam o sotaque português? O meu pequeno já começa a dizer \"mum\" em vez de \"mãe\" e o coração aperta-se-me todo... Como é que mantemos viva a nossa língua quando estamos rodeados de inglês? Preciso de dicas das outras mães portuguesas! A nossa identidade passa tanto pela forma como falamos... #MãesPortuguesasEmLondres #LínguaMaterna"
+                - generic [ref=e3584]:
+                  - generic [ref=e3585] [cursor=pointer]: "#MãesPortuguesas"
+                  - generic [ref=e3586] [cursor=pointer]: "#LínguaPortuguesa"
+                  - generic [ref=e3587] [cursor=pointer]: "#Identidade"
+              - generic [ref=e3589]:
+                - generic [ref=e3590]:
+                  - generic [ref=e3591]:
+                    - img [ref=e3592]
+                    - text: "156"
+                  - generic [ref=e3594]:
+                    - img [ref=e3595]
+                    - text: "94"
+                  - generic [ref=e3597]:
+                    - img [ref=e3598]
+                    - text: "23"
+                - generic [ref=e3600]:
+                  - img [ref=e3601]
+                  - generic [ref=e3604]: 789 views
+              - generic [ref=e3606]:
+                - button "Like" [ref=e3607] [cursor=pointer]:
+                  - img [ref=e3608] [cursor=pointer]
+                  - generic [ref=e3610] [cursor=pointer]: Like
+                - button "Comment" [ref=e3611] [cursor=pointer]:
+                  - img [ref=e3612] [cursor=pointer]
+                  - generic [ref=e3614] [cursor=pointer]: Comment
+                - button "Share" [ref=e3615] [cursor=pointer]:
+                  - img [ref=e3616] [cursor=pointer]
+                  - generic [ref=e3618] [cursor=pointer]: Share
+          - generic [ref=e3620]:
+            - heading "Join the Conversation" [level=3] [ref=e3621]
+            - paragraph [ref=e3622]: Share your incredible stories, connect with amazing fellow Portuguese speakers, and become part of the UK's most exciting and vibrant Portuguese social community!
+            - generic [ref=e3623]:
+              - link "Join Community" [ref=e3624] [cursor=pointer]:
+                - /url: /signup
+                - generic [ref=e3626] [cursor=pointer]:
+                  - text: Join Community
+                  - img [ref=e3627] [cursor=pointer]
+              - link "Explore Events" [ref=e3629] [cursor=pointer]:
+                - /url: /events
+        - generic [ref=e3634]:
+          - generic [ref=e3635]:
+            - generic [ref=e3636]:
+              - img [ref=e3637]
+              - text: Portuguese Heritage Success Stories
+            - heading "From Longing to Portuguese Dreams Realized" [level=2] [ref=e3639]:
+              - text: From Longing to
+              - generic [ref=e3640]: Portuguese Dreams Realized
+            - paragraph [ref=e3641]: Real Portuguese souls who transformed their London longing into thriving community connections. From Pastéis de Nata meetups in Vauxhall to Fado nights in cultural venues - discover how our people build lasting bonds while preserving Portuguese heart in the city's rhythm.
+          - generic [ref=e3642]:
+            - generic [ref=e3644]:
+              - generic [ref=e3645]:
+                - generic [ref=e3646]:
+                  - img [ref=e3647]
+                  - text: Found Love
+                - generic [ref=e3649]:
+                  - img [ref=e3650]
+                  - text: Heritage Sweethearts
+              - generic [ref=e3653]:
+                - generic [ref=e3654]:
+                  - img "Ana Catarina profile" [ref=e3655]
+                  - img [ref=e3657]
+                - generic [ref=e3659]:
+                  - img "Ricardo Manuel profile" [ref=e3660]
+                  - img [ref=e3662]
+              - generic [ref=e3664]:
+                - heading "Ana Catarina & Ricardo Manuel" [level=3] [ref=e3665]
+                - paragraph [ref=e3666]: 28 • Stockwell, London • Friends for 18 months ago
+              - blockquote [ref=e3667]: "\"Moved from Portugal to London for banking, but the city felt cold like winter rain. Ricardo appeared at HeritageTown's Fado event in Stockwell - someone with the same longing for home. \"Do you miss our traditional celebrations?\" he asked, offering traditional food. Six months later, we're planning our engagement party at The Heritage Centre. From first meeting to sharing apartment in Vauxhall, love grew in the warmth of shared culture. Now we cook Pastéis de Nata on Sundays, planning Portuguese wedding with Fado and London guests.\""
+              - generic [ref=e3668]:
+                - blockquote [ref=e3669]: "\"Encontrei não só o amor, mas alguém que entende a minha alma portuguesa.\""
+                - paragraph [ref=e3670]: "\"I found not just love, but someone who understands my Portuguese soul.\""
+              - paragraph [ref=e3672]:
+                - generic [ref=e3673]: "Cultural Bond:"
+                - text: Fado celebration and shared nostalgia for Portuguese traditions
+              - generic [ref=e3674]:
+                - generic [ref=e3675]: Portuguese cultural events
+                - generic [ref=e3676]: Cooking traditional meals
+                - generic [ref=e3677]: London wedding planning
+                - generic [ref=e3678]: Weekend market trips
+            - generic [ref=e3680]:
+              - generic [ref=e3681]:
+                - generic [ref=e3682]:
+                  - img [ref=e3683]
+                  - text: Found Love
+                - generic [ref=e3685]:
+                  - img [ref=e3686]
+                  - text: Heritage Hearts
+              - generic [ref=e3689]:
+                - generic [ref=e3690]:
+                  - img "Diogo Fernandes profile" [ref=e3691]
+                  - img [ref=e3693]
+                - generic [ref=e3695]:
+                  - img "Sofia Lopes profile" [ref=e3696]
+                  - img [ref=e3698]
+              - generic [ref=e3700]:
+                - heading "Diogo Fernandes & Sofia Lopes" [level=3] [ref=e3701]
+                - paragraph [ref=e3702]: 32 • Bermondsey, London • Friends for 2 years ago
+              - blockquote [ref=e3703]: "\"From Brazil's coastal regions to London's waterways, carrying traditional skills and cultural heart. Sofia caught my attention at HeritageTown's professional networking event near the city center - a lawyer with books and longing for home's landscapes. \"Do you also dream of home's natural beauty?\" she asked. Over Bacalhau at a cultural restaurant, we shared stories of growing up in our homeland, missing familiar landscapes while building London careers. Now every weekend, we explore nearby nature, collecting memories and planning return to Portugal someday, together.\""
+              - generic [ref=e3704]:
+                - blockquote [ref=e3705]: "\"O mar trouxe-nos juntos em Londres, longe das nossas praias.\""
+                - paragraph [ref=e3706]: "\"The sea brought us together in London, far from our beaches.\""
+              - paragraph [ref=e3708]:
+                - generic [ref=e3709]: "Cultural Bond:"
+                - text: Shared connection to Portuguese natural heritage and traditional landscapes
+              - generic [ref=e3710]:
+                - generic [ref=e3711]: Weekend coastal trips
+                - generic [ref=e3712]: Portuguese cooking
+                - generic [ref=e3713]: Career planning
+                - generic [ref=e3714]: Ocean photography
+            - generic [ref=e3716]:
+              - generic [ref=e3717]:
+                - generic [ref=e3718]:
+                  - img [ref=e3719]
+                  - text: Business Partners
+                - generic [ref=e3721]:
+                  - img [ref=e3722]
+                  - text: Heritage Flavors Partnership
+              - generic [ref=e3725]:
+                - generic [ref=e3726]:
+                  - img "Carlos Ribeiro profile" [ref=e3727]
+                  - img [ref=e3729]
+                - generic [ref=e3731]:
+                  - img "Ana Miguel profile" [ref=e3732]
+                  - img [ref=e3734]
+              - generic [ref=e3736]:
+                - heading "Carlos Ribeiro & Ana Miguel" [level=3] [ref=e3737]
+                - paragraph [ref=e3738]: 41 • East London • Friends for 2.5 years ago
+              - blockquote [ref=e3739]: "\"From Portugal's main commercial street to London's food markets, bringing culinary skills and Portuguese flavors. Ana found me through HeritageTown's \"Food Entrepreneurs\" meetup - a food blogger missing authentic Francesinha in London. \"Let's show locals what good Portuguese food is,\" she challenged over traditional cocktails. Our food truck \"Heritage Flavors\" now serves authentic Portuguese street food across London markets. Featured in local media, planning brick-and-mortar restaurant while teaching local palates the joy of Bacalhau and Pastéis de Nata.\""
+              - generic [ref=e3740]:
+                - blockquote [ref=e3741]: "\"A comida portuguesa une corações em qualquer cidade do mundo.\""
+                - paragraph [ref=e3742]: "\"Portuguese food unites hearts in any city in the world.\""
+              - paragraph [ref=e3744]:
+                - generic [ref=e3745]: "Cultural Bond:"
+                - text: Shared passion for authentic Portuguese cuisine and cultural preservation through food
+              - generic [ref=e3746]:
+                - generic [ref=e3747]: Food truck operations
+                - generic [ref=e3748]: London market circuits
+                - generic [ref=e3749]: Restaurant planning
+                - generic [ref=e3750]: Portuguese cooking classes
+            - generic [ref=e3752]:
+              - generic [ref=e3753]:
+                - generic [ref=e3754]:
+                  - img [ref=e3755]
+                  - text: Community Family
+                - generic [ref=e3757]:
+                  - img [ref=e3758]
+                  - text: Heritage Warriors
+              - generic [ref=e3761]:
+                - generic [ref=e3762]:
+                  - img "Isabel Rodrigues profile" [ref=e3763]
+                  - img [ref=e3765]
+                - generic [ref=e3767]:
+                  - img "Teresa Costa profile" [ref=e3768]
+                  - img [ref=e3770]
+              - generic [ref=e3772]:
+                - heading "Isabel Rodrigues & Teresa Costa" [level=3] [ref=e3773]
+                - paragraph [ref=e3774]: 38 • North London • Friends for 4 years ago
+              - blockquote [ref=e3775]: "\"From Portugal's historic districts to London's suburbs, raising children while preserving Portuguese identity. Teresa joined our HeritageTown \"Heritage Families\" group at local playground - a parent facing same struggles teaching pt-PT to English-speaking children. \"My children are forgetting who they are,\" she worried, watching her daughter play. Together we created \"Little Heritage London\" - Saturday Portuguese school at community centre. Now 120+ children learn pt-PT through stories, songs, and traditional games. Our children are proud of being Portuguese-British, speaking both languages with confidence.\""
+              - generic [ref=e3776]:
+                - blockquote [ref=e3777]: "\"As nossas crianças não vão esquecer de onde vêm.\""
+                - paragraph [ref=e3778]: "\"Our children will not forget where they come from.\""
+              - paragraph [ref=e3780]:
+                - generic [ref=e3781]: "Cultural Bond:"
+                - text: Shared mission to preserve Portuguese language and culture in next generation
+              - generic [ref=e3782]:
+                - generic [ref=e3783]: Portuguese Saturday school
+                - generic [ref=e3784]: Cultural children's events
+                - generic [ref=e3785]: Language preservation
+                - generic [ref=e3786]: Community playground meetups
+            - generic [ref=e3788]:
+              - generic [ref=e3789]:
+                - generic [ref=e3790]:
+                  - img [ref=e3791]
+                  - text: Cultural Connection
+                - generic [ref=e3793]:
+                  - img [ref=e3794]
+                  - text: Heritage Voices
+              - generic [ref=e3797]:
+                - generic [ref=e3798]:
+                  - img "Beatriz Oliveira profile" [ref=e3799]
+                  - img [ref=e3801]
+                - generic [ref=e3803]:
+                  - img "Luciana Santos profile" [ref=e3804]
+                  - img [ref=e3806]
+              - generic [ref=e3808]:
+                - heading "Beatriz Oliveira & Luciana Santos" [level=3] [ref=e3809]
+                - paragraph [ref=e3810]: 26 • Camden, London • Friends for 2 years ago
+              - blockquote [ref=e3811]: "\"From Brazil's cultural districts to London's markets, bringing diverse energy and Portuguese heritage. Luciana connected through HeritageTown's \"Portuguese Artists\" network at cultural venue - a performer mixing traditional sounds with London influences. \"Let's show that our culture creates universal music,\" she proposed over traditional drinks. Our collective \"Heritage Voices\" performs monthly at cultural venues, blending Fado, modern beats, and international rhythms. BBC featured our \"Portuguese Cultural Sounds\" concert, proving that Portuguese language creates music that transcends borders.\""
+              - generic [ref=e3812]:
+                - blockquote [ref=e3813]: "\"A música portuguesa não tem fronteiras - do fado ao samba, somos um só povo.\""
+                - paragraph [ref=e3814]: "\"Portuguese music has no borders - from fado to samba, we are one people.\""
+              - paragraph [ref=e3816]:
+                - generic [ref=e3817]: "Cultural Bond:"
+                - text: Shared Portuguese musical heritage spanning continents and cultures
+              - generic [ref=e3818]:
+                - generic [ref=e3819]: Multicultural music events
+                - generic [ref=e3820]: Portuguese language concerts
+                - generic [ref=e3821]: BBC radio appearances
+                - generic [ref=e3822]: Cultural education workshops
+            - generic [ref=e3824]:
+              - generic [ref=e3825]:
+                - generic [ref=e3826]:
+                  - img [ref=e3827]
+                  - text: Cultural Connection
+                - generic [ref=e3829]:
+                  - img [ref=e3830]
+                  - text: Heritage Political Partnership
+              - generic [ref=e3833]:
+                - generic [ref=e3834]:
+                  - img "Pedro Gonçalves profile" [ref=e3835]
+                  - img [ref=e3837]
+                - generic [ref=e3839]:
+                  - img "Fátima Lopes profile" [ref=e3840]
+                  - img [ref=e3842]
+              - generic [ref=e3844]:
+                - heading "Pedro Gonçalves & Fátima Lopes" [level=3] [ref=e3845]
+                - paragraph [ref=e3846]: 30 • Westminster, London • Friends for 5 years ago
+              - blockquote [ref=e3847]: "\"From Portugal's university halls to London's policy corridors, studying International Relations while feeling disconnected from Portuguese diaspora politics. Fátima joined HeritageTown's \"Political Engagement\" group at local library - a lawyer passionate about Portuguese-speaking communities' representation. \"We need political voice in London,\" she declared during policy discussions. Together we founded \"Heritage London Voices\" - advocacy group ensuring Portuguese speakers' interests in local and national politics. Now advising Mayor of London on Portuguese community needs, proving our voice counts in British democracy.\""
+              - generic [ref=e3848]:
+                - blockquote [ref=e3849]: "\"A nossa voz portuguesa faz diferença na democracia britânica.\""
+                - paragraph [ref=e3850]: "\"Our Portuguese voice makes a difference in British democracy.\""
+              - paragraph [ref=e3852]:
+                - generic [ref=e3853]: "Cultural Bond:"
+                - text: Shared commitment to Portuguese community political representation and civic engagement
+              - generic [ref=e3854]:
+                - generic [ref=e3855]: Political advocacy
+                - generic [ref=e3856]: Community representation
+                - generic [ref=e3857]: Local council engagement
+                - generic [ref=e3858]: Policy research
+            - generic [ref=e3860]:
+              - generic [ref=e3861]:
+                - generic [ref=e3862]:
+                  - img [ref=e3863]
+                  - text: Student Success
+                - generic [ref=e3865]:
+                  - img [ref=e3866]
+                  - text: Heritage Medical Mentorship
+              - generic [ref=e3869]:
+                - generic [ref=e3870]:
+                  - img "Inês Ferreira profile" [ref=e3871]
+                  - img [ref=e3873]
+                - generic [ref=e3875]:
+                  - img "Prof. Manuel Sousa profile" [ref=e3876]
+                  - img [ref=e3878]
+              - generic [ref=e3880]:
+                - heading "Inês Ferreira & Prof. Manuel Sousa" [level=3] [ref=e3881]
+                - paragraph [ref=e3882]: 22 • King's Cross, London • Friends for 3 years ago
+              - blockquote [ref=e3883]: "\"From Portugal's academic cities to London's universities, pursuing Medicine while missing Portuguese mentorship and guidance. Professor Sousa reached out through HeritageTown's \"Academic Mentorship\" program - a professor from Portugal teaching at local college, understanding international student struggles. \"Medicine taught in pt-PT has different soul,\" he explained during our first meeting at library. Under his mentorship, I'm excelling in Medical School while researching Portuguese genetic factors in health. Now helping organize \"Future Portuguese Doctors United Kingdom\" network, ensuring next generation maintains connection to Portuguese medical traditions.\""
+              - generic [ref=e3884]:
+                - blockquote [ref=e3885]: "\"Um mentor português fez toda a diferença na minha carreira médica.\""
+                - paragraph [ref=e3886]: "\"A Portuguese mentor made all the difference in my medical career.\""
+              - paragraph [ref=e3888]:
+                - generic [ref=e3889]: "Cultural Bond:"
+                - text: Portuguese medical tradition and academic excellence across generations
+              - generic [ref=e3890]:
+                - generic [ref=e3891]: Medical school excellence
+                - generic [ref=e3892]: Research collaboration
+                - generic [ref=e3893]: Student mentorship program
+                - generic [ref=e3894]: Portuguese medical network
+          - generic [ref=e3895]:
+            - heading "Ready to Transform Your London Longing Into Portuguese Success?" [level=3] [ref=e3896]
+            - paragraph [ref=e3897]: Join 750+ Portuguese souls from Portugal, Brazil, Angola, Mozambique & beyond who found their London community through real connections. From cultural market adventures to traditional music nights - your Portuguese community awaits at authentic London venues where our culture thrives.
+            - generic [ref=e3898]:
+              - link "JOIN NOW" [ref=e3899] [cursor=pointer]:
+                - /url: /signup
+              - link "Read Detailed Case Studies" [ref=e3900] [cursor=pointer]:
+                - /url: /case-studies
+        - generic [ref=e3902]:
+          - generic [ref=e3903]:
+            - generic [ref=e3905]:
+              - img [ref=e3906]
+              - text: Custom Tours
+            - heading "Create Your Perfect Tour" [level=2] [ref=e3909]
+            - paragraph [ref=e3910]: With a dedicated security driver who knows the United Kingdom and London inside out, you can go anywhere with complete safety and Portuguese-speaking support
+          - generic [ref=e3911]:
+            - generic [ref=e3912]:
+              - img [ref=e3914]
+              - heading "Professional Security Driver" [level=3] [ref=e3916]
+              - paragraph [ref=e3917]: Dedicated private security-trained driver with extensive United Kingdom and London knowledge
+            - generic [ref=e3918]:
+              - img [ref=e3920]
+              - heading "Take You Anywhere" [level=3] [ref=e3923]
+              - paragraph [ref=e3924]: Complete freedom to explore any destination across the United Kingdom with Portuguese-speaking support
+            - generic [ref=e3925]:
+              - img [ref=e3927]
+              - heading "Photography Included" [level=3] [ref=e3930]
+              - paragraph [ref=e3931]: Professional photography at every stop to capture your perfect United Kingdom memories
+            - generic [ref=e3932]:
+              - img [ref=e3934]
+              - heading "Fully Customizable" [level=3] [ref=e3936]
+              - paragraph [ref=e3937]: Design your perfect tour - timing, destinations, and experiences tailored just for you
+          - generic [ref=e3938]:
+            - heading "Popular Destinations" [level=3] [ref=e3939]
+            - generic [ref=e3940]:
+              - generic [ref=e3941] [cursor=pointer]:
+                - generic [ref=e3942] [cursor=pointer]:
+                  - img "London Landmarks" [ref=e3943] [cursor=pointer]
+                  - heading "London Landmarks" [level=4] [ref=e3946] [cursor=pointer]
+                - paragraph [ref=e3948] [cursor=pointer]: Big Ben, Tower Bridge, Buckingham Palace, Westminster
+              - generic [ref=e3949] [cursor=pointer]:
+                - generic [ref=e3950] [cursor=pointer]:
+                  - img "Windsor & Countryside" [ref=e3951] [cursor=pointer]
+                  - heading "Windsor & Countryside" [level=4] [ref=e3954] [cursor=pointer]
+                - paragraph [ref=e3956] [cursor=pointer]: Windsor Castle, Cotswolds villages, English countryside
+              - generic [ref=e3957] [cursor=pointer]:
+                - generic [ref=e3958] [cursor=pointer]:
+                  - img "Oxford & Cambridge" [ref=e3959] [cursor=pointer]
+                  - heading "Oxford & Cambridge" [level=4] [ref=e3962] [cursor=pointer]
+                - paragraph [ref=e3964] [cursor=pointer]: Historic universities, beautiful architecture, academic heritage
+              - generic [ref=e3965] [cursor=pointer]:
+                - generic [ref=e3966] [cursor=pointer]:
+                  - img "Bath & Stonehenge" [ref=e3967] [cursor=pointer]
+                  - heading "Bath & Stonehenge" [level=4] [ref=e3970] [cursor=pointer]
+                - paragraph [ref=e3972] [cursor=pointer]: Roman baths, ancient mysteries, Georgian architecture
+          - generic [ref=e3974]:
+            - heading "Ready for Your Adventure?" [level=3] [ref=e3975]
+            - paragraph [ref=e3976]: Contact us to design your perfect United Kingdom experience. From historic castles to stunning landscapes, we'll take you wherever you want to go with complete safety and comfort.
+            - generic [ref=e3977]:
+              - button "Plan Tour" [ref=e3978] [cursor=pointer]
+              - link "Call Now" [ref=e3979] [cursor=pointer]:
+                - /url: tel:+447777777777
+        - generic [ref=e3991]:
+          - generic [ref=e3992]:
+            - generic [ref=e3993]:
+              - img [ref=e3997]
+              - generic [ref=e3999]: Mobile App Available • Disponível no Telemóvel
+            - generic [ref=e4000]:
+              - heading "Meet Your Portuguese Matches On Mobile" [level=2] [ref=e4001]:
+                - text: Meet Your
+                - generic [ref=e4002]: Portuguese Matches
+                - text: On Mobile
+              - paragraph [ref=e4003]: Discover compatible Portuguese speakers in London based on your interests, location, and cultural values. Our smart algorithm connects you with your perfect community.
+              - generic [ref=e4005]:
+                - img [ref=e4007]
+                - generic [ref=e4009]:
+                  - heading "Connect with 750 verified Portuguese speakers in London" [level=3] [ref=e4010]
+                  - paragraph [ref=e4011]: Our smart algorithm has already created thousands of authentic connections between Portuguese speakers. Download and find your matches today.
+                  - generic [ref=e4012]:
+                    - generic [ref=e4015]: 12+ monthly events
+                    - generic [ref=e4018]: 45+ active creators
+            - generic [ref=e4019]:
+              - generic [ref=e4020]:
+                - heading "Find Your Perfect Portuguese Matches" [level=3] [ref=e4021]
+                - paragraph [ref=e4022]: Smart algorithm connects you with compatible Portuguese speakers in London
+              - generic [ref=e4023]:
+                - generic [ref=e4026]:
+                  - img [ref=e4028]
+                  - heading "Meet Your Matches" [level=4] [ref=e4030]
+                  - paragraph [ref=e4031]: Smart algorithm connects Portuguese speakers based on interests, location, and cultural compatibility
+                - generic [ref=e4034]:
+                  - img [ref=e4036]
+                  - heading "Meetups & Events" [level=4] [ref=e4038]
+                  - paragraph [ref=e4039]: From intimate Fado nights in Stockwell to networking in the City
+                - generic [ref=e4042]:
+                  - img [ref=e4044]
+                  - heading "LusoTown TV" [level=4] [ref=e4046]
+                  - paragraph [ref=e4047]: Watch live Portuguese cultural content and connect with creators
+                - generic [ref=e4050]:
+                  - img [ref=e4052]
+                  - heading "Active Communities" [level=4] [ref=e4054]
+                  - paragraph [ref=e4055]: Connect through shared interests - from Portuguese cuisine to football
+                - generic [ref=e4058]:
+                  - img [ref=e4060]
+                  - heading "Smart Notifications" [level=4] [ref=e4062]
+                  - paragraph [ref=e4063]: Never miss event invites or community messages
+                - generic [ref=e4066]:
+                  - img [ref=e4068]
+                  - heading "Portuguese London" [level=4] [ref=e4071]
+                  - paragraph [ref=e4072]: Discover Portuguese history and culture throughout London
+            - generic [ref=e4073]:
+              - generic [ref=e4074]:
+                - heading "Start Matching Today" [level=3] [ref=e4075]
+                - paragraph [ref=e4076]: Free for iOS and Android • Find your Portuguese-speaking community
+              - generic [ref=e4077]:
+                - link "Download LusoTown on the App Store" [ref=e4078] [cursor=pointer]:
+                  - /url: https://apps.apple.com/app/lusotown-london
+                  - img [ref=e4080] [cursor=pointer]
+                  - generic [ref=e4082] [cursor=pointer]:
+                    - generic [ref=e4083] [cursor=pointer]: Download on the
+                    - generic [ref=e4084] [cursor=pointer]: App Store
+                - link "Get LusoTown on Google Play" [ref=e4085] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=com.lusotown.london
+                  - img [ref=e4087] [cursor=pointer]
+                  - generic [ref=e4089] [cursor=pointer]:
+                    - generic [ref=e4090] [cursor=pointer]: Get it on
+                    - generic [ref=e4091] [cursor=pointer]: Google Play
+            - generic [ref=e4092]:
+              - paragraph [ref=e4093]: Free to download • Available on iOS 14+ and Android 8+
+              - generic [ref=e4094]:
+                - generic [ref=e4097]: 100% Safe and Verified
+                - generic [ref=e4100]: Smart Matching
+                - generic [ref=e4103]: 750 Portuguese connected
+          - generic [ref=e4109]:
+            - generic [ref=e4111]:
+              - generic [ref=e4112]: 9:41
+              - generic [ref=e4115]: LusoTown
+            - generic [ref=e4124]:
+              - generic [ref=e4127]:
+                - generic [ref=e4128]:
+                  - img [ref=e4130]
+                  - generic [ref=e4132]:
+                    - heading "Your Matches" [level=1] [ref=e4133]
+                    - paragraph [ref=e4134]: 8 new matches today
+                - generic [ref=e4136]:
+                  - img [ref=e4138]
+                  - generic [ref=e4141]: "5"
+              - generic [ref=e4142]:
+                - generic [ref=e4145]:
+                  - generic [ref=e4149]: M
+                  - generic [ref=e4151]:
+                    - generic [ref=e4152]:
+                      - heading "Maria Santos" [level=3] [ref=e4153]
+                      - generic [ref=e4154]:
+                        - img [ref=e4155]
+                        - generic [ref=e4157]: 96%
+                    - paragraph [ref=e4158]: Lisbon • Kensington • Loves fado and Portuguese literature
+                    - generic [ref=e4159]:
+                      - generic [ref=e4160]: Fado
+                      - generic [ref=e4161]: Literature
+                      - generic [ref=e4162]: Cooking
+                    - generic [ref=e4163]:
+                      - button "Connect" [ref=e4164] [cursor=pointer]
+                      - button [ref=e4165] [cursor=pointer]:
+                        - img [ref=e4166] [cursor=pointer]
+                - generic [ref=e4170]:
+                  - generic [ref=e4174]: J
+                  - generic [ref=e4176]:
+                    - generic [ref=e4177]:
+                      - heading "João Pereira" [level=3] [ref=e4178]
+                      - generic [ref=e4179]:
+                        - img [ref=e4180]
+                        - generic [ref=e4182]: 92%
+                    - paragraph [ref=e4183]: Porto • Camden • Benfica football and Portuguese music
+                    - generic [ref=e4184]:
+                      - generic [ref=e4185]: Benfica
+                      - generic [ref=e4186]: Music
+                      - generic [ref=e4187]: Travel
+                    - generic [ref=e4188]:
+                      - button "Connect" [ref=e4189] [cursor=pointer]
+                      - button [ref=e4190] [cursor=pointer]:
+                        - img [ref=e4191] [cursor=pointer]
+                - generic [ref=e4194]:
+                  - generic [ref=e4195]:
+                    - img [ref=e4197]
+                    - generic [ref=e4199]:
+                      - heading "+6 New Matches" [level=3] [ref=e4200]
+                      - paragraph [ref=e4201]: Based on your interests
+                  - generic [ref=e4207]: "+2"
+        - generic [ref=e4209]:
+          - generic [ref=e4210]:
+            - img [ref=e4213]
+            - heading "Portuguese Students in the UK" [level=2] [ref=e4217]
+            - paragraph [ref=e4218]: Your amazing support network connecting Portuguese-speaking students across UK universities with culture, community, and success!
+          - generic [ref=e4220]:
+            - heading "Portuguese Students in the UK" [level=3] [ref=e4221]
+            - generic [ref=e4222]:
+              - generic [ref=e4223]:
+                - img [ref=e4225]
+                - generic [ref=e4227]: 2,150+
+                - generic [ref=e4228]: Portuguese Students
+              - generic [ref=e4229]:
+                - img [ref=e4231]
+                - generic [ref=e4233]: "8"
+                - generic [ref=e4234]: Partner Universities
+              - generic [ref=e4235]:
+                - img [ref=e4237]
+                - generic [ref=e4240]: "12"
+                - generic [ref=e4241]: Major Cities
+              - generic [ref=e4242]:
+                - img [ref=e4244]
+                - generic [ref=e4246]: 94%
+                - generic [ref=e4247]: Success Rate
+          - generic [ref=e4248]:
+            - generic [ref=e4249]:
+              - heading "Student Support Services" [level=3] [ref=e4250]
+              - paragraph [ref=e4251]: Everything you need to succeed in your UK studies
+            - generic [ref=e4252]:
+              - generic [ref=e4253]:
+                - img [ref=e4256]
+                - heading "Housing Assistance" [level=4] [ref=e4258]
+                - paragraph [ref=e4259]: Find verified accommodation and Portuguese flatmates
+              - generic [ref=e4260]:
+                - img [ref=e4263]
+                - heading "Job Opportunities" [level=4] [ref=e4265]
+                - paragraph [ref=e4266]: Exclusive access to job listings and career guidance for Portuguese speakers
+              - generic [ref=e4267]:
+                - img [ref=e4270]
+                - heading "Study Groups" [level=4] [ref=e4272]
+                - paragraph [ref=e4273]: Join Portuguese study groups and academic support networks
+              - generic [ref=e4274]:
+                - img [ref=e4277]
+                - heading "Career Counselling" [level=4] [ref=e4279]
+                - paragraph [ref=e4280]: Professional mentoring and career development resources
+              - generic [ref=e4281]:
+                - img [ref=e4284]
+                - heading "Language Exchange" [level=4] [ref=e4286]
+                - paragraph [ref=e4287]: Practice English with native speakers and help others with Portuguese
+              - generic [ref=e4288]:
+                - img [ref=e4291]
+                - heading "Academic Support" [level=4] [ref=e4293]
+                - paragraph [ref=e4294]: Tutoring, study resources, and academic guidance from Portuguese mentors
+          - generic [ref=e4295]:
+            - generic [ref=e4296]:
+              - heading "Portuguese Students Across the UK" [level=3] [ref=e4297]
+              - paragraph [ref=e4298]: Our community spans major university cities throughout Britain
+            - generic [ref=e4299]:
+              - generic [ref=e4300] [cursor=pointer]:
+                - generic [ref=e4301] [cursor=pointer]:
+                  - generic [ref=e4302] [cursor=pointer]:
+                    - img [ref=e4304] [cursor=pointer]
+                    - generic [ref=e4306] [cursor=pointer]: London Universities
+                  - generic [ref=e4308] [cursor=pointer]: 850+ students
+                - paragraph [ref=e4310] [cursor=pointer]: LSE, UCL, Imperial, King's College and more
+              - generic [ref=e4311] [cursor=pointer]:
+                - generic [ref=e4312] [cursor=pointer]:
+                  - generic [ref=e4313] [cursor=pointer]:
+                    - img [ref=e4315] [cursor=pointer]
+                    - generic [ref=e4317] [cursor=pointer]: Manchester Area
+                  - generic [ref=e4319] [cursor=pointer]: 550+ students
+                - paragraph [ref=e4321] [cursor=pointer]: University of Manchester and local institutions
+              - generic [ref=e4322] [cursor=pointer]:
+                - generic [ref=e4323] [cursor=pointer]:
+                  - generic [ref=e4324] [cursor=pointer]:
+                    - img [ref=e4326] [cursor=pointer]
+                    - generic [ref=e4328] [cursor=pointer]: Birmingham Region
+                  - generic [ref=e4330] [cursor=pointer]: 420+ students
+                - paragraph [ref=e4332] [cursor=pointer]: University of Birmingham and surrounding colleges
+              - generic [ref=e4333] [cursor=pointer]:
+                - generic [ref=e4334] [cursor=pointer]:
+                  - generic [ref=e4335] [cursor=pointer]:
+                    - img [ref=e4337] [cursor=pointer]
+                    - generic [ref=e4339] [cursor=pointer]: Scotland Universities
+                  - generic [ref=e4341] [cursor=pointer]: 330+ students
+                - paragraph [ref=e4343] [cursor=pointer]: Edinburgh, Glasgow, St Andrews and Scottish institutions
+          - generic [ref=e4344]:
+            - generic [ref=e4345]:
+              - heading "Essential Resources" [level=3] [ref=e4346]
+              - paragraph [ref=e4347]: Practical guides and support for Portuguese students
+            - generic [ref=e4348]:
+              - generic [ref=e4349]:
+                - img [ref=e4352]
+                - heading "Visa & Immigration" [level=4] [ref=e4354]
+                - paragraph [ref=e4355]: Complete guidance on student visas, work permits, and immigration processes
+              - generic [ref=e4356]:
+                - img [ref=e4359]
+                - heading "Healthcare & NHS" [level=4] [ref=e4361]
+                - paragraph [ref=e4362]: Register with NHS, understand healthcare rights, and access mental health support
+              - generic [ref=e4363]:
+                - img [ref=e4366]
+                - heading "Banking & Finance" [level=4] [ref=e4368]
+                - paragraph [ref=e4369]: Open UK bank accounts, understand student loans, and manage finances
+              - generic [ref=e4370]:
+                - img [ref=e4373]
+                - heading "Student Discounts" [level=4] [ref=e4375]
+                - paragraph [ref=e4376]: Access exclusive discounts for Portuguese students and community offers
+          - generic [ref=e4377]:
+            - generic [ref=e4378]:
+              - heading "Student Success Stories" [level=3] [ref=e4379]
+              - paragraph [ref=e4380]: Real experiences from Portuguese students across the UK
+            - generic [ref=e4381]:
+              - generic [ref=e4382]:
+                - generic [ref=e4384]:
+                  - img [ref=e4385]
+                  - img [ref=e4387]
+                  - img [ref=e4389]
+                  - img [ref=e4391]
+                  - img [ref=e4393]
+                - blockquote [ref=e4395]: "\"LusoTown helped me find amazing Portuguese flatmates at UCL. We support each other academically and culturally - it's like having family in London.\""
+                - generic [ref=e4396]:
+                  - generic [ref=e4397]: M
+                  - generic [ref=e4398]:
+                    - generic [ref=e4399]: Maria Silva
+                    - generic [ref=e4400]: University College London
+              - generic [ref=e4401]:
+                - generic [ref=e4403]:
+                  - img [ref=e4404]
+                  - img [ref=e4406]
+                  - img [ref=e4408]
+                  - img [ref=e4410]
+                  - img [ref=e4412]
+                - blockquote [ref=e4414]: "\"The career guidance from Portuguese mentors was invaluable. I landed my dream internship at a tech company through the LusoTown network.\""
+                - generic [ref=e4415]:
+                  - generic [ref=e4416]: J
+                  - generic [ref=e4417]:
+                    - generic [ref=e4418]: João Santos
+                    - generic [ref=e4419]: University of Manchester
+              - generic [ref=e4420]:
+                - generic [ref=e4422]:
+                  - img [ref=e4423]
+                  - img [ref=e4425]
+                  - img [ref=e4427]
+                  - img [ref=e4429]
+                  - img [ref=e4431]
+                - blockquote [ref=e4433]: "\"Being part of the Portuguese study groups made my Masters so much easier. We help each other and celebrate our culture together.\""
+                - generic [ref=e4434]:
+                  - generic [ref=e4435]: A
+                  - generic [ref=e4436]:
+                    - generic [ref=e4437]: Ana Rodrigues
+                    - generic [ref=e4438]: University of Edinburgh
+          - generic [ref=e4439]:
+            - generic [ref=e4440]:
+              - heading "University Partnerships" [level=3] [ref=e4441]
+              - paragraph [ref=e4442]: Official partnerships with leading UK universities
+            - generic [ref=e4444]:
+              - generic [ref=e4445]:
+                - generic [ref=e4446]:
+                  - img [ref=e4448]
+                  - generic [ref=e4450]: 380 students
+                - generic [ref=e4451]: London School of Economics
+              - generic [ref=e4452]:
+                - generic [ref=e4453]:
+                  - img [ref=e4455]
+                  - generic [ref=e4457]: 320 students
+                - generic [ref=e4458]: University College London
+              - generic [ref=e4459]:
+                - generic [ref=e4460]:
+                  - img [ref=e4462]
+                  - generic [ref=e4464]: 280 students
+                - generic [ref=e4465]: Imperial College London
+              - generic [ref=e4466]:
+                - generic [ref=e4467]:
+                  - img [ref=e4469]
+                  - generic [ref=e4471]: 250 students
+                - generic [ref=e4472]: King's College London
+              - generic [ref=e4473]:
+                - generic [ref=e4474]:
+                  - img [ref=e4476]
+                  - generic [ref=e4478]: 550 students
+                - generic [ref=e4479]: University of Manchester
+              - generic [ref=e4480]:
+                - generic [ref=e4481]:
+                  - img [ref=e4483]
+                  - generic [ref=e4485]: 420 students
+                - generic [ref=e4486]: University of Birmingham
+              - generic [ref=e4487]:
+                - generic [ref=e4488]:
+                  - img [ref=e4490]
+                  - generic [ref=e4492]: 330 students
+                - generic [ref=e4493]: University of Edinburgh
+              - generic [ref=e4494]:
+                - generic [ref=e4495]:
+                  - img [ref=e4497]
+                  - generic [ref=e4499]: 120 students
+                - generic [ref=e4500]: Heriot-Watt University
+          - generic [ref=e4503]:
+            - img [ref=e4505]
+            - heading "Ready to Join the Portuguese Student Community?" [level=3] [ref=e4507]
+            - paragraph [ref=e4508]: Connect with 2,150+ Portuguese students across 8 universities
+            - generic [ref=e4509]:
+              - button "Verify Student Status" [ref=e4510] [cursor=pointer]:
+                - img [ref=e4511] [cursor=pointer]
+                - text: Verify Student Status
+              - link "Join Student Network" [ref=e4513] [cursor=pointer]:
+                - /url: /students/
+                - img [ref=e4514] [cursor=pointer]
+                - text: Join Student Network
+            - link "Learn More" [ref=e4517] [cursor=pointer]:
+              - /url: /students/
+              - text: Learn More
+              - img [ref=e4518] [cursor=pointer]
+        - generic [ref=e4526]:
+          - generic [ref=e4527]:
+            - generic [ref=e4528]:
+              - generic [ref=e4529]:
+                - generic [ref=e4530]: 🇵🇹
+                - generic [ref=e4531]: 🇬🇧
+              - img [ref=e4532]
+              - text: Portuguese-speaking community in the United Kingdom
+            - heading "From £15.99/month" [level=2] [ref=e4534]
+            - generic [ref=e4535]:
+              - paragraph [ref=e4536]: Connect with Portuguese speakers across the United Kingdom
+              - paragraph [ref=e4537]: From London to Manchester, Birmingham to Edinburgh - join the largest Portuguese-speaking community platform in the United Kingdom. Unlimited matches, cultural events, and professional networking nationwide.
+            - generic [ref=e4538]:
+              - generic [ref=e4539]:
+                - heading "United Kingdom Community Member" [level=3] [ref=e4540]
+                - paragraph [ref=e4541]: £15.99/month
+                - paragraph [ref=e4542]: Connect with Portuguese speakers across England, Scotland, Wales & Northern Ireland
+              - generic [ref=e4543]:
+                - generic [ref=e4544]: Most Popular
+                - heading "Cultural Ambassador" [level=3] [ref=e4545]
+                - paragraph [ref=e4546]: £29.99/month
+                - paragraph [ref=e4547]: Premium access + priority visibility across all United Kingdom Portuguese events
+          - generic [ref=e4548]:
+            - generic [ref=e4549]:
+              - img [ref=e4551]
+              - generic [ref=e4553]: "750"
+              - generic [ref=e4554]: Portuguese Speakers
+              - generic [ref=e4555]: Across the United Kingdom
+            - generic [ref=e4556]:
+              - img [ref=e4558]
+              - generic [ref=e4560]: 150+
+              - generic [ref=e4561]: Monthly United Kingdom Events
+              - generic [ref=e4562]: London, Manchester, Birmingham & more
+            - generic [ref=e4563]:
+              - img [ref=e4565]
+              - generic [ref=e4567]: 25+
+              - generic [ref=e4568]: United Kingdom Cities
+              - generic [ref=e4569]: From Edinburgh to Brighton
+            - generic [ref=e4570]:
+              - img [ref=e4572]
+              - generic [ref=e4574]: 500+
+              - generic [ref=e4575]: Success Stories
+              - generic [ref=e4576]: Portuguese connections made in the United Kingdom
+          - generic [ref=e4578]:
+            - link "Quick Join" [ref=e4579] [cursor=pointer]:
+              - /url: /signup
+              - text: Quick Join
+              - img [ref=e4580] [cursor=pointer]
+            - generic [ref=e4582]:
+              - generic [ref=e4585]: or continue with
+              - generic [ref=e4587]:
+                - link "🔍 Google" [ref=e4588] [cursor=pointer]:
+                  - /url: /auth/google
+                  - generic [ref=e4589] [cursor=pointer]: 🔍
+                  - generic [ref=e4590] [cursor=pointer]: Google
+                - link "📘 Facebook" [ref=e4591] [cursor=pointer]:
+                  - /url: /auth/facebook
+                  - generic [ref=e4592] [cursor=pointer]: 📘
+                  - generic [ref=e4593] [cursor=pointer]: Facebook
+                - link "📸 Instagram" [ref=e4594] [cursor=pointer]:
+                  - /url: /auth/instagram
+                  - generic [ref=e4595] [cursor=pointer]: 📸
+                  - generic [ref=e4596] [cursor=pointer]: Instagram
+                - link "💼 LinkedIn" [ref=e4597] [cursor=pointer]:
+                  - /url: /auth/linkedin
+                  - generic [ref=e4598] [cursor=pointer]: 💼
+                  - generic [ref=e4599] [cursor=pointer]: LinkedIn
+              - paragraph [ref=e4600]: or continue with email
+          - generic [ref=e4601]:
+            - generic [ref=e4602]:
+              - generic [ref=e4603]:
+                - generic [ref=e4604]: United Kingdom
+                - generic [ref=e4605]: United Kingdom
+                - generic [ref=e4606]: United Kingdom
+                - generic [ref=e4607]: United Kingdom
+                - generic [ref=e4608]: United Kingdom
+                - generic [ref=e4609]: United Kingdom
+                - generic [ref=e4610]: United Kingdom
+              - paragraph [ref=e4611]: 23 Portuguese speakers from across the United Kingdom joined today
+              - paragraph [ref=e4612]: Connect with your Portuguese-speaking community nationwide within 48 hours
+            - generic [ref=e4613]:
+              - generic [ref=e4614]:
+                - generic [ref=e4615]: 100%
+                - generic [ref=e4616]: Verified Profiles
+              - generic [ref=e4617]:
+                - generic [ref=e4618]: 24/7
+                - generic [ref=e4619]: Community Support
+              - generic [ref=e4620]:
+                - generic [ref=e4621]: 30-Day
+                - generic [ref=e4622]: Money Back Guarantee
+        - generic [ref=e4623]:
+          - generic [ref=e4626]:
+            - generic [ref=e4627]:
+              - generic [ref=e4628]:
+                - generic [ref=e4629]:
+                  - generic [ref=e4633]: 🏛️
+                  - generic [ref=e4635]:
+                    - heading "LusoTown" [level=1] [ref=e4636]
+                    - generic [ref=e4637]:
+                      - img "Portuguese flag" [ref=e4638]: 🇵🇹
+                      - text: London
+                      - img "United Kingdom flag" [ref=e4639]: 🇬🇧
+                - paragraph [ref=e4640]: LusoTown connects Portuguese speakers living across the UK through social and professional experiences. Where Portuguese speakers discover, learn, and thrive together. Unidos pela Língua - United by Language.
+                - generic [ref=e4641]:
+                  - generic [ref=e4642]:
+                    - img [ref=e4644]
+                    - generic [ref=e4647]: London, United Kingdom
+                  - generic [ref=e4648]:
+                    - img [ref=e4650]
+                    - generic [ref=e4652]: hello@lusotown.com
+              - generic [ref=e4653]:
+                - heading "footer.community" [level=3] [ref=e4654]
+                - list [ref=e4655]:
+                  - listitem [ref=e4656]:
+                    - link "Events & Culture" [ref=e4657] [cursor=pointer]:
+                      - /url: /events
+                  - listitem [ref=e4658]:
+                    - link "Community" [ref=e4659] [cursor=pointer]:
+                      - /url: /community
+                  - listitem [ref=e4660]:
+                    - link "Become a Host" [ref=e4661] [cursor=pointer]:
+                      - /url: /host
+                  - listitem [ref=e4662]:
+                    - link "Business Directory" [ref=e4663] [cursor=pointer]:
+                      - /url: /directory
+                  - listitem [ref=e4664]:
+                    - link "Neighborhood Groups" [ref=e4665] [cursor=pointer]:
+                      - /url: /neighborhood-groups
+                  - listitem [ref=e4666]:
+                    - link "Mentorship Programs" [ref=e4667] [cursor=pointer]:
+                      - /url: /mentorship
+                  - listitem [ref=e4668]:
+                    - link "Community Guidelines" [ref=e4669] [cursor=pointer]:
+                      - /url: /community-guidelines
+              - generic [ref=e4670]:
+                - heading "footer.services" [level=3] [ref=e4671]
+                - list [ref=e4672]:
+                  - listitem [ref=e4673]:
+                    - link "Premium Services" [ref=e4674] [cursor=pointer]:
+                      - /url: /services
+                  - listitem [ref=e4675]:
+                    - link "Executive Transport" [ref=e4676] [cursor=pointer]:
+                      - /url: /services#executive-transport
+                  - listitem [ref=e4677]:
+                    - link "Security Services" [ref=e4678] [cursor=pointer]:
+                      - /url: /services/close-protection
+                  - listitem [ref=e4679]:
+                    - link "Transport & SIA" [ref=e4680] [cursor=pointer]:
+                      - /url: /transport
+                  - listitem [ref=e4681]:
+                    - link "Business Networking" [ref=e4682] [cursor=pointer]:
+                      - /url: /business-networking
+              - generic [ref=e4683]:
+                - heading "footer.support" [level=3] [ref=e4684]
+                - list [ref=e4685]:
+                  - listitem [ref=e4686]:
+                    - link "How It Works" [ref=e4687] [cursor=pointer]:
+                      - /url: /how-it-works
+                  - listitem [ref=e4688]:
+                    - link "Help Center" [ref=e4689] [cursor=pointer]:
+                      - /url: /help
+                  - listitem [ref=e4690]:
+                    - link "Contact Us" [ref=e4691] [cursor=pointer]:
+                      - /url: /contact
+                  - listitem [ref=e4692]:
+                    - link "Safety & Verification" [ref=e4693] [cursor=pointer]:
+                      - /url: /safety
+              - generic [ref=e4694]:
+                - heading "footer.company" [level=3] [ref=e4695]
+                - list [ref=e4696]:
+                  - listitem [ref=e4697]:
+                    - link "About LusoTown" [ref=e4698] [cursor=pointer]:
+                      - /url: /about
+                  - listitem [ref=e4699]:
+                    - link "Pricing" [ref=e4700] [cursor=pointer]:
+                      - /url: /pricing
+                  - listitem [ref=e4701]:
+                    - link "Success Stories" [ref=e4702] [cursor=pointer]:
+                      - /url: /success-stories
+                  - listitem [ref=e4703]:
+                    - link "Community Chat" [ref=e4704] [cursor=pointer]:
+                      - /url: /forums
+                  - listitem [ref=e4705]:
+                    - link "Case Studies" [ref=e4706] [cursor=pointer]:
+                      - /url: /case-studies
+                  - listitem [ref=e4707]:
+                    - link "Careers" [ref=e4708] [cursor=pointer]:
+                      - /url: /careers
+                  - listitem [ref=e4709]:
+                    - link "Streaming Income" [ref=e4710] [cursor=pointer]:
+                      - /url: /live
+                  - listitem [ref=e4711]:
+                    - link "Partnerships" [ref=e4712] [cursor=pointer]:
+                      - /url: /partnerships
+                  - listitem [ref=e4713]:
+                    - link "Corporate Partnerships" [ref=e4714] [cursor=pointer]:
+                      - /url: /corporate-partnerships
+                  - listitem [ref=e4715]:
+                    - link "Institutional Partnerships" [ref=e4716] [cursor=pointer]:
+                      - /url: /portuguese-institutional-partnerships
+                  - listitem [ref=e4717]:
+                    - link "Instituto Camões Partnership" [ref=e4718] [cursor=pointer]:
+                      - /url: /instituto-camoes
+              - generic [ref=e4719]:
+                - heading "footer.legal" [level=3] [ref=e4720]
+                - list [ref=e4721]:
+                  - listitem [ref=e4722]:
+                    - link "Community Guidelines" [ref=e4723] [cursor=pointer]:
+                      - /url: /community-guidelines
+                  - listitem [ref=e4724]:
+                    - link "Rules" [ref=e4725] [cursor=pointer]:
+                      - /url: /rules
+                  - listitem [ref=e4726]:
+                    - link "Privacy Policy" [ref=e4727] [cursor=pointer]:
+                      - /url: /privacy
+                  - listitem [ref=e4728]:
+                    - link "Terms of Service" [ref=e4729] [cursor=pointer]:
+                      - /url: /terms
+                  - listitem [ref=e4730]:
+                    - link "Community Safety" [ref=e4731] [cursor=pointer]:
+                      - /url: /safety
+            - generic [ref=e4733]:
+              - heading "Stay Connected" [level=3] [ref=e4734]
+              - paragraph [ref=e4735]: Get updates on Portuguese cultural events, social activities, and experiences happening at authentic venues across the UK.
+              - generic [ref=e4736]:
+                - textbox "Enter your email" [ref=e4737]
+                - button "Subscribe" [ref=e4738] [cursor=pointer]
+          - generic [ref=e4741]:
+            - paragraph [ref=e4742]: © 2025 LusoTown UK. All rights reserved. Book experiences with Portuguese hearts at real venues across the UK
+            - generic [ref=e4743]:
+              - generic [ref=e4744]:
+                - link "Instagram" [ref=e4745] [cursor=pointer]:
+                  - /url: https://instagram.com/lusotownlondon
+                  - generic [ref=e4746] [cursor=pointer]: Instagram
+                  - img [ref=e4747] [cursor=pointer]
+                - link "Facebook" [ref=e4750] [cursor=pointer]:
+                  - /url: https://facebook.com/lusotownlondon
+                  - generic [ref=e4751] [cursor=pointer]: Facebook
+                  - img [ref=e4752] [cursor=pointer]
+                - link "Twitter" [ref=e4754] [cursor=pointer]:
+                  - /url: https://twitter.com/lusotownlondon
+                  - generic [ref=e4755] [cursor=pointer]: Twitter
+                  - img [ref=e4756] [cursor=pointer]
+                - link "LinkedIn" [ref=e4758] [cursor=pointer]:
+                  - /url: https://linkedin.com/company/lusotown
+                  - generic [ref=e4759] [cursor=pointer]: LinkedIn
+                  - img [ref=e4760] [cursor=pointer]
+                - link "YouTube" [ref=e4764] [cursor=pointer]:
+                  - /url: https://youtube.com/@lusotownlondon
+                  - generic [ref=e4765] [cursor=pointer]: YouTube
+                  - img [ref=e4766] [cursor=pointer]
+              - generic [ref=e4769]:
+                - img [ref=e4770]
+                - generic [ref=e4772]: Unidos pela Língua • UK Community
+      - generic [ref=e4773]:
+        - button "Find your Portuguese match" [ref=e4774] [cursor=pointer]:
+          - img [ref=e4775] [cursor=pointer]
+          - generic [ref=e4778] [cursor=pointer]: "!"
+        - generic: Find matches - FREE
+      - generic [ref=e4780]:
+        - generic [ref=e4782]:
+          - generic [ref=e4783]:
+            - generic [ref=e4785]: 🇵🇹
+            - generic [ref=e4786]: LusoTown
+          - button [ref=e4787] [cursor=pointer]:
+            - img [ref=e4788] [cursor=pointer]
+        - generic [ref=e4795]:
+          - generic [ref=e4796]:
+            - generic [ref=e4798]: 🤗
+            - heading "What brings you here?" [level=2] [ref=e4799]
+            - paragraph [ref=e4800]: Choose what interests you most to get started
+          - generic [ref=e4801]:
+            - button "🎉 Events Music, festivals and celebrations" [ref=e4802] [cursor=pointer]:
+              - generic [ref=e4803] [cursor=pointer]:
+                - generic [ref=e4805] [cursor=pointer]: 🎉
+                - generic [ref=e4806] [cursor=pointer]:
+                  - generic [ref=e4807] [cursor=pointer]: Events
+                  - generic [ref=e4808] [cursor=pointer]: Music, festivals and celebrations
+                - img [ref=e4809] [cursor=pointer]
+            - button "👥 Community Meet other Portuguese speakers" [ref=e4811] [cursor=pointer]:
+              - generic [ref=e4812] [cursor=pointer]:
+                - generic [ref=e4814] [cursor=pointer]: 👥
+                - generic [ref=e4815] [cursor=pointer]:
+                  - generic [ref=e4816] [cursor=pointer]: Community
+                  - generic [ref=e4817] [cursor=pointer]: Meet other Portuguese speakers
+                - img [ref=e4818] [cursor=pointer]
+            - button "❤️ Relationships Find someone special" [ref=e4820] [cursor=pointer]:
+              - generic [ref=e4821] [cursor=pointer]:
+                - generic [ref=e4823] [cursor=pointer]: ❤️
+                - generic [ref=e4824] [cursor=pointer]:
+                  - generic [ref=e4825] [cursor=pointer]: Relationships
+                  - generic [ref=e4826] [cursor=pointer]: Find someone special
+                - img [ref=e4827] [cursor=pointer]
+            - button "💼 Networking Professional opportunities" [ref=e4829] [cursor=pointer]:
+              - generic [ref=e4830] [cursor=pointer]:
+                - generic [ref=e4832] [cursor=pointer]: 💼
+                - generic [ref=e4833] [cursor=pointer]:
+                  - generic [ref=e4834] [cursor=pointer]: Networking
+                  - generic [ref=e4835] [cursor=pointer]: Professional opportunities
+                - img [ref=e4836] [cursor=pointer]
+    - generic [ref=e4839]:
+      - button [ref=e4841] [cursor=pointer]:
+        - img [ref=e4842] [cursor=pointer]
+      - generic [ref=e4844]:
+        - generic [ref=e4845]: 🎭
+        - generic [ref=e4846]:
+          - generic [ref=e4847]:
+            - generic [ref=e4848]: Inês Rodrigues
+            - generic [ref=e4849]: Hampstead, London
+          - paragraph [ref=e4850]: booked Fado Night in Camden
+          - generic [ref=e4851]:
+            - generic [ref=e4852]: 04:38 AM
+            - generic [ref=e4855]: LIVE
+    - navigation "LusoTown main navigation" [ref=e4856]:
+      - tablist "Tab navigation" [ref=e4859]:
+        - tab "Home - active - Portuguese heritage Home" [selected] [ref=e4860]:
+          - generic [ref=e4861]:
+            - generic [ref=e4862]: Home - active - Portuguese heritage
+            - img [ref=e4865]
+            - generic [ref=e4869]: Home
+        - tab "Events - Portuguese heritage Events" [ref=e4871]:
+          - generic [ref=e4872]:
+            - generic [ref=e4873]: Events - Portuguese heritage
+            - img [ref=e4876]
+            - generic [ref=e4878]: Events
+        - tab "Community - premium Community" [ref=e4879]:
+          - generic [ref=e4880]:
+            - generic [ref=e4881]: Community - premium
+            - img [ref=e4884]
+            - generic [ref=e4886]: Community
+        - tab "Discover - premium Discover" [ref=e4887]:
+          - generic [ref=e4888]:
+            - generic [ref=e4889]: Discover - premium
+            - img [ref=e4892]
+            - generic [ref=e4894]: Discover
+        - tab "Profile - premium Profile" [ref=e4895]:
+          - generic [ref=e4896]:
+            - generic [ref=e4897]: Profile - premium
+            - img [ref=e4900]
+            - generic [ref=e4902]: Profile
+    - button "1 Chat with LusoBot" [ref=e4904] [cursor=pointer]:
+      - generic [ref=e4906] [cursor=pointer]:
+        - img [ref=e4907] [cursor=pointer]
+        - generic [ref=e4910] [cursor=pointer]: "1"
+      - generic: Chat with LusoBot
+  - alert [ref=e4911]
+```

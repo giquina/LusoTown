@@ -543,7 +543,7 @@ export function LuxuryModal({
               <div className="flex items-center justify-between p-6 border-b border-gray-200">
                 <h2 className="text-xl font-bold text-gray-900">{title}</h2>
                 {showCloseButton && (
-                  <LuxuryRipple onClick={onClose} className="p-2 rounded-full hover:bg-gray-100">
+                  <LuxuryRipple onClick={onClose} className="p-3 rounded-full hover:bg-gray-100 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Close modal">
                     <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>

@@ -16,6 +16,26 @@ import {
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import { useLanguage } from '@/context/LanguageContext'
 
+// Simple mobile language toggle component
+function MobileLanguageToggle() {
+  const { language, setLanguage } = useLanguage()
+  
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'pt' : 'en')
+  }
+  
+  return (
+    <button
+      onClick={toggleLanguage}
+      className="flex items-center gap-1 px-2 py-1 bg-white/90 backdrop-blur-sm rounded-lg border border-gray-200 hover:border-primary-300 transition-all text-xs font-medium min-h-[32px] min-w-[44px]"
+      title="Toggle language / Alternar idioma"
+    >
+      <span className="text-sm">{language === 'en' ? '🇬🇧' : '🇵🇹'}</span>
+      <span className="text-xs font-bold text-gray-600">{language === 'en' ? 'EN' : 'PT'}</span>
+    </button>
+  )
+}
+
 interface MobileWelcomeWizardProps {
   isOpen: boolean
   onClose: () => void
@@ -123,12 +143,17 @@ export default function MobileWelcomeWizard({
                     </div>
                     <span className="font-bold text-gray-900">LusoTown</span>
                   </div>
-                  <button
-                    onClick={onClose}
-                    className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-all"
-                  >
-                    <XMarkIcon className="w-5 h-5" />
-                  </button>
+                  <div className="flex items-center gap-2">
+                    {/* Simple Language Toggle */}
+                    <MobileLanguageToggle />
+                    <button
+                      onClick={onClose}
+                      className="p-3 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-all min-w-[44px] min-h-[44px] flex items-center justify-center"
+                      aria-label="Close welcome wizard"
+                    >
+                      <XMarkIcon className="w-6 h-6" />
+                    </button>
+                  </div>
                 </div>
                 
                 {/* Progress dots */}

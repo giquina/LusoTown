@@ -123,8 +123,9 @@ const FilterSidebar = ({
                           })
                         }
                         className="text-primary-500 focus:ring-primary-400"
+                        aria-describedby={`category-${category.replace(/\s+/g, '-').toLowerCase()}`}
                       />
-                      <span className="text-sm">{category}</span>
+                      <span className="text-sm" id={`category-${category.replace(/\s+/g, '-').toLowerCase()}`}>{category}</span>
                     </label>
                   ))}
                   <label className="flex items-center gap-2 cursor-pointer">
@@ -817,7 +818,17 @@ export default function EventsPage() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="relative max-w-2xl mx-auto px-4"
               >
+                <label htmlFor="event-search" className="sr-only">
+                  {activeTab === "events"
+                    ? isPortuguese
+                      ? "Buscar eventos"
+                      : "Search events"
+                    : isPortuguese
+                    ? "Buscar tours"
+                    : "Search tours"}
+                </label>
                 <input
+                  id="event-search"
                   type="text"
                   placeholder={
                     activeTab === "events"
@@ -832,6 +843,7 @@ export default function EventsPage() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={(e) => e.key === "Enter" && handleSearch()}
                   className="w-full pl-10 sm:pl-12 pr-20 sm:pr-32 py-3 sm:py-4 text-base sm:text-lg rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-lg bg-white backdrop-blur-sm"
+                  aria-label={activeTab === "events" ? "Search events" : "Search tours"}
                 />
                 <MagnifyingGlassIcon className="absolute left-6 sm:left-8 top-1/2 transform -translate-y-1/2 w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
                 <button
@@ -1089,10 +1101,15 @@ export default function EventsPage() {
                     </div>
                   </div>
 
+                  <label htmlFor="sort-events" className="sr-only">
+                    {isPortuguese ? "Ordenar eventos" : "Sort events"}
+                  </label>
                   <select
+                    id="sort-events"
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as any)}
                     className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 w-full sm:w-auto min-w-[120px]"
+                    aria-label={isPortuguese ? "Ordenar eventos" : "Sort events"}
                   >
                     <option value="date">
                       {isPortuguese ? "Ordenar por Data" : "Sort by Date"}

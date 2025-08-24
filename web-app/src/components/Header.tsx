@@ -40,12 +40,14 @@ import { EliteMobileHeader } from "@/components/EliteMobileInterface";
 
 const getNavigationLinks = (t: any) => [
   { name: t("nav.events", "London Events"), href: "/events" },
+  { name: t("nav.business-directory", "Business Directory"), href: ROUTES.businessDirectory },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 
 const getAuthenticatedNavigationLinks = (t: any) => [
   { name: t("nav.events", "London Events"), href: "/events" },
+  { name: t("nav.business-directory", "Business Directory"), href: ROUTES.businessDirectory },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("referral.title", "Referrals"), href: "/referrals" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
@@ -628,7 +630,7 @@ export default function Header() {
             )}
             <LanguageToggle />
             <LuxuryRipple
-              className="inline-flex items-center justify-center p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200 h-12 w-12 bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50"
+              className="inline-flex items-center justify-center p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200 min-h-[48px] min-w-[48px] bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               hapticFeedback="medium"
               rippleColor="rgba(59, 130, 246, 0.2)"
@@ -711,7 +713,7 @@ export default function Header() {
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
+                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-4 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[48px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -728,7 +730,7 @@ export default function Header() {
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
+                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-4 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[48px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -745,7 +747,7 @@ export default function Header() {
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
+                        className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-4 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[48px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -760,21 +762,21 @@ export default function Header() {
                     </h3>
                     <a
                       href={`${ROUTES.services}#executive-transport`}
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-4 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[48px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Executive Transport
                     </a>
                     <a
                       href={ROUTES.transport}
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-4 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[48px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       London Transport
                     </a>
                     <a
                       href={`${ROUTES.services  }/close-protection`}
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-4 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[48px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Security Services

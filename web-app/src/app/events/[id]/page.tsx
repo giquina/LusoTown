@@ -84,29 +84,41 @@ const RSVPModal = ({
                 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="rsvp-notes" className="block text-sm font-medium text-gray-700 mb-2">
                       Notes (Optional)
                     </label>
                     <textarea
+                      id="rsvp-notes"
+                      name="notes"
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
                       placeholder="Any questions or special requests..."
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
                       rows={3}
+                      aria-describedby="notes-help"
                     />
+                    <div id="notes-help" className="sr-only">
+                      Optional field for any questions or special requests for the event organizer
+                    </div>
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="dietary-requirements" className="block text-sm font-medium text-gray-700 mb-2">
                       Dietary Requirements (Optional)
                     </label>
                     <input
+                      id="dietary-requirements"
+                      name="dietaryRequirements"
                       type="text"
                       value={dietaryRequirements}
                       onChange={(e) => setDietaryRequirements(e.target.value)}
                       placeholder="e.g., Vegetarian, Gluten-free, Allergies..."
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
+                      aria-describedby="dietary-help"
                     />
+                    <div id="dietary-help" className="sr-only">
+                      Please specify any dietary requirements or allergies to help the event organizer prepare accordingly
+                    </div>
                   </div>
 
                   {event.price > 0 && (
@@ -841,7 +853,9 @@ export default function EventDetailsPage() {
                         ) : (
                           <button
                             onClick={() => setShowRSVPModal(true)}
-                            className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-bold py-4 px-6 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg"
+                            className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-bold py-4 px-6 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
+                            aria-label={`${isFull ? 'Join waitlist for' : 'RSVP to'} ${event.title}`}
+                            type="button"
                           >
                             {isFull ? 'Join Waitlist' : 'RSVP Now'}
                           </button>

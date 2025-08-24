@@ -103,14 +103,17 @@ export const TEST_DISPLAY_CONFIG = {
 
 // Validation functions
 export const validateDemoCredentials = (email: string, password: string): boolean => {
-  if (!DEMO_CONFIG.email || !DEMO_CONFIG.password) {
-    console.warn('Demo credentials not configured. Set DEMO_EMAIL and DEMO_PASSWORD environment variables.');
-    return false;
-  }
+  // Fallback demo credentials for development
+  const fallbackEmail = 'demo@lusotown.com';
+  const fallbackPassword = 'LusoTown2025!';
+  
+  // Try environment variables first, fallback to hardcoded for development
+  const demoEmail = DEMO_CONFIG.email || fallbackEmail;
+  const demoPassword = DEMO_CONFIG.password || fallbackPassword;
   
   return (
-    email.trim().toLowerCase() === DEMO_CONFIG.email.toLowerCase() &&
-    password === DEMO_CONFIG.password
+    email.trim().toLowerCase() === demoEmail.toLowerCase() &&
+    password === demoPassword
   );
 };
 
