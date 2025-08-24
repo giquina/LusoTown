@@ -15,6 +15,7 @@
 function validateEnvironmentSecurity(): void {
   if (typeof window === 'undefined') {
     // Server-side security validation
+    const isBuildPhase = process.env.NEXT_PHASE === 'phase-production-build'
     const requiredEnvVars = [
       'DEMO_EMAIL',
       'DEMO_PASSWORD',
@@ -28,7 +29,8 @@ function validateEnvironmentSecurity(): void {
     if (missingVars.length > 0) {
       console.error('SECURITY ERROR: Missing required environment variables:', missingVars)
       
-      if (process.env.NODE_ENV === 'production') {
+      // Do not fail the build step; enforce at runtime only
+      if (process.env.NODE_ENV === 'production' && !isBuildPhase) {
         throw new Error(`Missing critical environment variables: ${missingVars.join(', ')}`)
       }
     }
