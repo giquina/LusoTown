@@ -118,6 +118,7 @@
     "@types/react-dom": "^18.2.0",
     "@types/react-native": "^0.72.5",
     "autoprefixer": "^10.4.16",
+    "critters": "^0.0.23",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.0.0",
     "eslint-plugin-react": "^7.37.5",

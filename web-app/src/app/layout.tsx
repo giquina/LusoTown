@@ -22,53 +22,52 @@ import ErrorBoundary, {
 } from "@/components/ErrorBoundary";
 import { METADATA_BASE } from "@/config/site";
 import { generateMetadata as generateSEOMetadata, generateJsonLd } from "@/config/seo";
-import dynamic from 'next/dynamic';
-
 // Performance optimization
 import Script from 'next/script';
+import dynamicImport from 'next/dynamic';
 
 // Dynamic imports for heavy components - loads only when needed
-const LiveFeedNotifications = dynamic(() => import("@/components/LiveFeedNotifications"), {
+const LiveFeedNotifications = dynamicImport(() => import("@/components/LiveFeedNotifications"), {
   loading: () => null,
   ssr: false
 });
 
-const UserTypeSelection = dynamic(() => import("@/components/UserTypeSelection"), {
+const UserTypeSelection = dynamicImport(() => import("@/components/UserTypeSelection"), {
   loading: () => null,
   ssr: false
 });
 
-const AuthPopup = dynamic(() => import("@/components/AuthPopup"), {
+const AuthPopup = dynamicImport(() => import("@/components/AuthPopup"), {
   loading: () => null,
   ssr: false
 });
 
-const AuthIntentHandler = dynamic(() => import("@/components/AuthIntentHandler"), {
+const AuthIntentHandler = dynamicImport(() => import("@/components/AuthIntentHandler"), {
   loading: () => null,
   ssr: false
 });
 
-const FavoriteNotification = dynamic(() => import("@/components/FavoriteNotification"), {
+const FavoriteNotification = dynamicImport(() => import("@/components/FavoriteNotification"), {
   loading: () => null,
   ssr: false
 });
 
-const PremiumMobileNavigation = dynamic(() => import("@/components/PremiumMobileNavigation"), {
+const PremiumMobileNavigation = dynamicImport(() => import("@/components/PremiumMobileNavigation"), {
   loading: () => null,
   ssr: false
 });
 
-const MobileExperienceOptimizer = dynamic(() => import("@/components/MobileExperienceOptimizer"), {
+const MobileExperienceOptimizer = dynamicImport(() => import("@/components/MobileExperienceOptimizer"), {
   loading: () => null,
   ssr: false
 });
 
-const MobileCriticalFixes = dynamic(() => import("@/components/MobileCriticalFixes"), {
+const MobileCriticalFixes = dynamicImport(() => import("@/components/MobileCriticalFixes"), {
   loading: () => null,
   ssr: false
 });
 
-const LusoBotWidget = dynamic(() => import("@/components/LusoBotWidget"), {
+const LusoBotWidget = dynamicImport(() => import("@/components/LusoBotWidget"), {
   loading: () => null,
   ssr: false
 });

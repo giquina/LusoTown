@@ -4,12 +4,20 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
-import { EnhancedSignupForm } from '@/types/enhanced-signup'
-import { sendCulturalWelcomeEmail } from '@/lib/email/cultural-welcome'
-import { processPartnerEventInterests } from '@/lib/partnership/event-processor'
+// import { createClient } from '@/lib/supabase/server'
+import { createClient } from '@/lib/supabase'
+// import { EnhancedSignupForm } from '@/types/enhanced-signup'
+// import { sendCulturalWelcomeEmail } from '@/lib/email/cultural-welcome'
+// import { processPartnerEventInterests } from '@/lib/partnership/event-processor'
 import { validateCulturalBackground } from '@/lib/validation/cultural-validator'
-import { registerForInitialEvents } from '@/lib/events/auto-registration'
+// import { registerForInitialEvents } from '@/lib/events/auto-registration'
+
+// Temporary placeholder types and functions for build
+interface EnhancedSignupForm {
+  email: string;
+  name: string;
+  culturalBackground?: string;
+}
 
 interface EnhancedSignupRequest extends EnhancedSignupForm {
   password: string

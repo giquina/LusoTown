@@ -1,14 +1,11 @@
-'use client'
-
 import React from 'react'
 import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
 import { HomeIcon, ArrowLeftIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-import { useLanguage } from '@/context/LanguageContext'
 
 export default function NotFound() {
-  const { language } = useLanguage()
-  const isPortuguese = language === 'pt'
+  // Use static content for better server-side rendering
+  const isPortuguese = false // Default to English for server-side rendering
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center justify-center px-4">

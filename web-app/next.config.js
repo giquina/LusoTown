@@ -101,15 +101,15 @@ const nextConfig = {
     scrollRestoration: true,
     optimizePackageImports: ['@heroicons/react', 'framer-motion', 'lucide-react'],
     serverComponentsExternalPackages: ['html5-qrcode', 'socket.io-client'],
-    optimizeCss: true,
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    },
+    // optimizeCss: true, // Temporarily disabled due to critters build issues
+    // turbo: { // Temporarily disabled for stable build
+    //   rules: {
+    //     '*.svg': {
+    //       loaders: ['@svgr/webpack'],
+    //       as: '*.js',
+    //     },
+    //   },
+    // },
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
