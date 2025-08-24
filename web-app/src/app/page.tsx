@@ -1,85 +1,38 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import type { Metadata } from 'next'
 import { useLanguage } from '@/context/LanguageContext'
 import { communityStats } from '@/config/community'
 import { generateJsonLd } from '@/config/seo'
 import dynamic from 'next/dynamic'
-import Hero from '@/components/Hero'
-import Features from '@/components/Features'
 import Footer from '@/components/Footer'
 import { ROUTES } from '@/config/routes'
 import MobileWelcomeWizard from '@/components/MobileWelcomeWizard'
 import ResponsiveButton from '@/components/ResponsiveButton'
-import PortugueseText from '@/components/PortugueseText'
 
-// Optimized mobile-first lazy loading - Only load what's critical for mobile
-const EventsShowcase = dynamic(() => import('@/components/EventsShowcase'), {
-  loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />
-})
-
-// Defer everything below-the-fold with intersection observer for mobile performance
-const HowItWorks = dynamic(() => import('@/components/HowItWorks'), {
-  loading: () => <div className="h-60 bg-gray-100 animate-pulse rounded-xl" />,
-  ssr: false
-})
-const AboutLusoTown = dynamic(() => import('@/components/AboutLusoTown'), {
-  loading: () => <div className="h-60 bg-gray-100 animate-pulse rounded-xl" />,
-  ssr: false
-})
-const GroupsShowcase = dynamic(() => import('@/components/GroupsShowcase'), {
-  loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />,
-  ssr: false
-})
+// Strategic component loading for cohesive experience
 const SuccessStories = dynamic(() => import('@/components/SuccessStories'), {
-  loading: () => <div className="h-60 bg-gray-100 animate-pulse rounded-xl" />,
-  ssr: false
-})
-const AppDownloadSection = dynamic(() => import('@/components/AppDownloadSection'), {
-  loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />,
-  ssr: false
+  loading: () => <div className="h-60 bg-gray-100 animate-pulse rounded-xl" />
 })
 const TestimonialsNew = dynamic(() => import('@/components/TestimonialsNew'), {
   loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />
 })
-const CustomToursSection = dynamic(() => import('@/components/CustomToursSection'), {
-  loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />,
-  ssr: false
-})
-const MatchHowItWorks = dynamic(() => import('@/components/MatchHowItWorks'), {
-  loading: () => <div className="h-80 bg-gray-100 animate-pulse rounded-xl" />,
-  ssr: false
-})
-const CTA = dynamic(() => import('@/components/CTA'), {
-  loading: () => <div className="h-32 bg-gray-100 animate-pulse rounded-xl" />
-})
-const StudentSupportSection = dynamic(() => import('@/components/StudentSupportSection'), {
-  loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />,
-  ssr: false
-})
-const CoreFeaturesShowcase = dynamic(() => import('@/components/CoreFeaturesShowcase'), {
+const EventsShowcase = dynamic(() => import('@/components/EventsShowcase'), {
   loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />
 })
-const CommunityFeedSection = dynamic(() => import('@/components/CommunityFeedSection'), {
-  loading: () => <div className="h-60 bg-gray-100 animate-pulse rounded-xl" />,
-  ssr: false
-})
+
 import { 
-  ChatBubbleLeftRightIcon, 
-  CalendarDaysIcon,
-  ArrowRightIcon as ArrowRight,
-  ArrowRightIcon,
-  UsersIcon,
-  RssIcon,
-  BookmarkIcon,
-  AcademicCapIcon,
-  BriefcaseIcon,
-  HomeIcon,
   HeartIcon,
+  UsersIcon,
+  CalendarDaysIcon,
+  ChatBubbleLeftRightIcon,
+  ArrowRightIcon,
   MapPinIcon,
   StarIcon,
-  CheckIcon
+  CheckIcon,
+  SparklesIcon,
+  BuildingOffice2Icon,
+  AcademicCapIcon
 } from '@heroicons/react/24/outline'
 
 // Page-specific structured data for Portuguese social calendar
@@ -88,26 +41,18 @@ const jsonLd = generateJsonLd('organization')
 export default function Home() {
   const { t } = useLanguage()
   const [showWelcomeWizard, setShowWelcomeWizard] = useState(false)
-  const [showMoreOptions, setShowMoreOptions] = useState(false)
-
-  // Mock user activity for homepage
-  const userActivity = ['visited_homepage', 'viewed_events', 'explored_services']
 
   // Show welcome wizard on first visit (mobile only) - Less aggressive
   useEffect(() => {
     const hasSeenWelcome = localStorage.getItem('lusotown_welcome_seen')
     const isMobile = window.innerWidth < 768
     
-    // Only show after user has been active for 10 seconds to avoid blocking immediate access
     if (!hasSeenWelcome && isMobile) {
       const timer = setTimeout(() => {
-        // Double-check user is still on page and hasn't navigated away
         if (!localStorage.getItem('lusotown_welcome_seen')) {
           setShowWelcomeWizard(true)
         }
-      }, 10000) // 10 seconds instead of 2
-
-      // Clean up timer if component unmounts
+      }, 15000)
       return () => clearTimeout(timer)
     }
   }, [])
@@ -115,7 +60,6 @@ export default function Home() {
   const handleWelcomeComplete = (action: string) => {
     localStorage.setItem('lusotown_welcome_seen', 'true')
     
-    // Navigate based on selection
     switch (action) {
       case 'matches':
         window.location.href = '/matches'
@@ -124,14 +68,12 @@ export default function Home() {
         window.location.href = ROUTES.events
         break
       default:
-        // Stay on homepage
         break
     }
   }
 
   return (
     <>
-      {/* Structured data for SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd }}
@@ -139,473 +81,493 @@ export default function Home() {
       
       <main className="min-h-screen w-full overflow-x-hidden" role="main">
         <div className="pt-24 w-full">
-          <Hero />
+          {/* HERO SECTION - Redesigned for cohesion and free signup emphasis */}
+          <section className="relative min-h-[600px] lg:min-h-[700px] bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center overflow-hidden">
+            {/* Portuguese flag inspired background */}
+            <div className="absolute inset-0" aria-hidden="true">
+              <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-r from-green-100/30 to-green-200/20"></div>
+              <div className="absolute bottom-0 right-0 w-full h-1/3 bg-gradient-to-l from-red-100/30 to-red-200/20"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-yellow-50/20 to-transparent"></div>
+            </div>
+            
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+                {/* Left Column - Value Proposition */}
+                <div className="text-center lg:text-left space-y-8">
+                  {/* Free Badge */}
+                  <div className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg animate-pulse">
+                    <CheckIcon className="w-4 h-4" />
+                    {t('hero.free_badge', '100% FREE TO JOIN')}
+                  </div>
+                  
+                  {/* Main Headline */}
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
+                    <span className="text-primary-600">Find Your</span><br />
+                    <span className="bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 bg-clip-text text-transparent">
+                      Portuguese
+                    </span><br />
+                    <span className="text-secondary-600">Match</span> 🇵🇹
+                  </h1>
+                  
+                  {/* Sub-headline */}
+                  <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl">
+                    {t('hero.subheadline', 'Connect with 750+ Portuguese speakers across the UK. Find friends, dates, business partners, or your soulmate.')}
+                  </p>
+                  
+                  {/* Trust indicators */}
+                  <div className="flex flex-wrap justify-center lg:justify-start gap-6 text-gray-600">
+                    <div className="flex items-center gap-2">
+                      <UsersIcon className="w-5 h-5 text-primary-500" />
+                      <span className="font-semibold">750+ Members</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPinIcon className="w-5 h-5 text-secondary-500" />
+                      <span className="font-semibold">UK-Wide</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <StarIcon className="w-5 h-5 text-yellow-500" />
+                      <span className="font-semibold">4.9/5 Rating</span>
+                    </div>
+                  </div>
+                  
+                  {/* CTA Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a
+                      href={ROUTES.signup}
+                      className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 text-white text-lg font-bold rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 min-h-[60px] min-w-[200px]"
+                    >
+                      <span className="mr-3">🇵🇹</span>
+                      {t('hero.cta_primary', 'JOIN FREE NOW')}
+                      <ArrowRightIcon className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                    
+                    <a
+                      href="#how-matching-works"
+                      className="inline-flex items-center justify-center px-6 py-4 border-2 border-primary-300 text-primary-700 text-lg font-semibold rounded-2xl hover:bg-primary-50 transition-all duration-300 min-h-[60px] min-w-[160px]"
+                    >
+                      {t('hero.cta_secondary', 'See How It Works')}
+                    </a>
+                  </div>
+                  
+                  {/* Social proof */}
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg max-w-md mx-auto lg:mx-0">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="flex -space-x-2">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-400 to-red-400 flex items-center justify-center text-white font-bold text-sm">M</div>
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 flex items-center justify-center text-white font-bold text-sm">J</div>
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 flex items-center justify-center text-white font-bold text-sm">A</div>
+                      </div>
+                      <div>
+                        <div className="font-bold text-gray-900">Maria & João</div>
+                        <div className="text-sm text-gray-600">Found love through LusoTown 💕</div>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-700 italic">
+                      "Conhecemo-nos aqui e agora estamos noivos! A comunidade portuguesa em Londres é incrível." ⭐⭐⭐⭐⭐
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Right Column - Visual Content */}
+                <div className="relative">
+                  <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                    {/* Mock Portuguese profile cards */}
+                    <div className="space-y-4">
+                      <div className="bg-gradient-to-r from-green-50 to-red-50 rounded-2xl p-4 border border-green-200/50">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-red-500 flex items-center justify-center text-white font-bold">C</div>
+                          <div>
+                            <div className="font-bold text-gray-900">Carlos, 28</div>
+                            <div className="text-sm text-gray-600">🇵🇹 Lisboa → London</div>
+                          </div>
+                          <div className="ml-auto bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">95% MATCH</div>
+                        </div>
+                        <p className="text-sm text-gray-700 mb-2">"Adoro fado e procuro alguém para explorar Londres comigo. Trabalho em tech e amo futebol!"</p>
+                        <div className="flex gap-2">
+                          <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Fado</span>
+                          <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Tech</span>
+                          <span className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">Futebol</span>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-4 border border-blue-200/50">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold">A</div>
+                          <div>
+                            <div className="font-bold text-gray-900">Ana, 26</div>
+                            <div className="text-sm text-gray-600">🇧🇷 São Paulo → Manchester</div>
+                          </div>
+                          <div className="ml-auto bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">92% MATCH</div>
+                        </div>
+                        <p className="text-sm text-gray-700 mb-2">"Brasileira apaixonada por cultura portuguesa. Vamos tomar um café?"</p>
+                        <div className="flex gap-2">
+                          <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Café</span>
+                          <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">Arte</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-6 text-center">
+                      <div className="inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold animate-bounce">
+                        <HeartIcon className="w-4 h-4" />
+                        New matches daily!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
           
-          {/* Prominent Homepage CTAs - Above the fold */}
-          <section className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 py-8 px-4">
-            <div className="container mx-auto text-center">
-              <div className="max-w-4xl mx-auto space-y-6">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                  {t('homepage.cta.title', 'Join 750+ Portuguese Speakers in the UK')}
-                </h2>
-                <p className="text-lg sm:text-xl text-white/90 leading-relaxed">
-                  {t('homepage.cta.subtitle', 'Free to join • Events • Networking • Culture • Friendship')}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
-                  {/* Primary Sign Up Button */}
+          {/* HOW MATCHING WORKS SECTION - Core Value Proposition */}
+          <section id="how-matching-works" className="py-20 bg-white">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-6xl mx-auto">
+                {/* Section Header */}
+                <div className="text-center mb-16">
+                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 via-yellow-100 to-red-100 px-6 py-3 rounded-full text-primary-700 font-bold text-sm mb-6">
+                    <SparklesIcon className="w-4 h-4" />
+                    {t('matching.badge', 'SMART PORTUGUESE MATCHING')}
+                  </div>
+                  
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6">
+                    {t('matching.title', 'Find Your Perfect Portuguese Match')}
+                  </h2>
+                  
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                    {t('matching.subtitle', 'Our AI matches you with Portuguese speakers based on culture, interests, location, and what you\'re looking for.')}
+                  </p>
+                  
+                  {/* Free Emphasis */}
+                  <div className="bg-green-50 border border-green-200 rounded-2xl p-6 max-w-md mx-auto">
+                    <div className="flex items-center justify-center gap-3 mb-2">
+                      <CheckIcon className="w-6 h-6 text-green-600" />
+                      <span className="text-lg font-bold text-green-800">100% FREE to start matching</span>
+                    </div>
+                    <p className="text-sm text-green-700">No credit card required • Cancel anytime</p>
+                  </div>
+                </div>
+                
+                {/* Matching Types Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                  {/* Romance */}
+                  <div className="text-center group hover:scale-105 transition-transform duration-300">
+                    <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-pink-500 to-red-500 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                      <HeartIcon className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{t('matching.romance.title', 'Find Love')}</h3>
+                    <p className="text-gray-600 text-sm">{t('matching.romance.description', 'Dates, relationships, Portuguese soulmates')}</p>
+                  </div>
+                  
+                  {/* Friendship */}
+                  <div className="text-center group hover:scale-105 transition-transform duration-300">
+                    <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                      <UsersIcon className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{t('matching.friendship.title', 'Make Friends')}</h3>
+                    <p className="text-gray-600 text-sm">{t('matching.friendship.description', 'Portuguese-speaking friends for life')}</p>
+                  </div>
+                  
+                  {/* Business */}
+                  <div className="text-center group hover:scale-105 transition-transform duration-300">
+                    <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                      <BuildingOffice2Icon className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{t('matching.business.title', 'Network')}</h3>
+                    <p className="text-gray-600 text-sm">{t('matching.business.description', 'Business partners, mentors, careers')}</p>
+                  </div>
+                  
+                  {/* Cultural */}
+                  <div className="text-center group hover:scale-105 transition-transform duration-300">
+                    <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                      <AcademicCapIcon className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{t('matching.cultural.title', 'Learn')}</h3>
+                    <p className="text-gray-600 text-sm">{t('matching.cultural.description', 'Language exchange, cultural sharing')}</p>
+                  </div>
+                </div>
+                
+                {/* How It Works Steps */}
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 lg:p-12 mb-16">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-center text-gray-900 mb-12">
+                    {t('matching.how_it_works.title', 'How Portuguese Matching Works')}
+                  </h3>
+                  
+                  <div className="grid md:grid-cols-3 gap-8">
+                    {/* Step 1 */}
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-600 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                        1
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-3">{t('matching.step1.title', 'Join Free')}</h4>
+                      <p className="text-gray-600">{t('matching.step1.description', 'Sign up with your Portuguese heritage and what you\'re looking for')}</p>
+                    </div>
+                    
+                    {/* Step 2 */}
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                        2
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-3">{t('matching.step2.title', 'Get Matches')}</h4>
+                      <p className="text-gray-600">{t('matching.step2.description', 'AI finds compatible Portuguese speakers near you in the UK')}</p>
+                    </div>
+                    
+                    {/* Step 3 */}
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-yellow-600 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                        3
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-3">{t('matching.step3.title', 'Connect')}</h4>
+                      <p className="text-gray-600">{t('matching.step3.description', 'Chat, meet at events, build relationships that matter')}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Success Stories Preview */}
+                <div className="grid md:grid-cols-2 gap-8 mb-12">
+                  <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-red-500 flex items-center justify-center text-white font-bold">M</div>
+                      <div>
+                        <div className="font-bold text-gray-900">Miguel & Sofia</div>
+                        <div className="text-sm text-gray-600">🇵🇹 Matched 3 months ago</div>
+                      </div>
+                      <div className="ml-auto text-2xl">💕</div>
+                    </div>
+                    <p className="text-gray-700 italic mb-3">
+                      "Conhecemo-nos através do LusoTown e descobrimos que tínhamos tanto em comum! Agora estamos a planear viajar juntos por Portugal."
+                    </p>
+                    <div className="flex items-center gap-2 text-sm text-green-600">
+                      <CheckIcon className="w-4 h-4" />
+                      <span className="font-medium">Found through Portuguese Culture Match</span>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold">C</div>
+                      <div>
+                        <div className="font-bold text-gray-900">Carlos & Business Partner</div>
+                        <div className="text-sm text-gray-600">🇧🇷 Business Network Match</div>
+                      </div>
+                      <div className="ml-auto text-2xl">🤝</div>
+                    </div>
+                    <p className="text-gray-700 italic mb-3">
+                      "Encontrei o meu sócio de negócios aqui! Criámos uma empresa de importação Brasil-Reino Unido. O networking português funciona!"
+                    </p>
+                    <div className="flex items-center gap-2 text-sm text-blue-600">
+                      <CheckIcon className="w-4 h-4" />
+                      <span className="font-medium">Found through Business Networking</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* CTA */}
+                <div className="text-center">
                   <a
                     href={ROUTES.signup}
-                    className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white text-primary-700 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl hover:bg-gray-50 transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 min-h-[56px] min-w-[200px]"
+                    className="inline-flex items-center justify-center px-12 py-6 bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 text-white text-xl font-bold rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-2 hover:scale-105"
                   >
-                    <span className="mr-2">🇵🇹</span>
-                    {t('homepage.cta.signup', 'Join Community - FREE')}
-                    <ArrowRightIcon className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <HeartIcon className="w-6 h-6 mr-3" />
+                    {t('matching.cta', 'Start Matching - FREE')}
+                    <ArrowRightIcon className="w-6 h-6 ml-3" />
                   </a>
                   
-                  {/* Secondary Demo Button */}
-                  <a
-                    href={ROUTES.login}
-                    className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 border-2 border-white/30 text-white rounded-2xl font-semibold text-base hover:border-white hover:bg-white/10 transition-all duration-300 min-h-[56px] min-w-[160px]"
-                  >
-                    {t('homepage.cta.demo', 'Try Demo')}
-                  </a>
-                </div>
-                
-                {/* Trust indicators */}
-                <div className="flex flex-wrap justify-center items-center gap-6 text-white/80 text-sm">
-                  <div className="flex items-center gap-2">
-                    <UsersIcon className="h-4 w-4" />
-                    <span>750+ Members</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPinIcon className="h-4 w-4" />
-                    <span>London & UK</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <StarIcon className="h-4 w-4 text-yellow-300" />
-                    <span>4.9/5 Rating</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckIcon className="h-4 w-4" />
-                    <span>Free to Join</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          
-          {/* Mobile Quick Actions - Simplified Portuguese focus */}
-          <section className="md:hidden bg-white py-6 border-b border-gray-100" aria-label="Quick actions for mobile users">
-            <div className="container mx-auto px-4">
-              <div className="flex justify-between items-center mb-4">
-                <div>
-                  <h2 className="text-lg font-bold text-gray-900">{t('mobile.quick_start_title', 'Quick Start')}</h2>
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="text-green-600 font-semibold">750+ portugueses</span>
-                    <span className="text-gray-400">•</span>
-                    <span className="text-blue-600 font-semibold">Londres & UK</span>
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xs text-green-600 bg-green-100 px-3 py-1 rounded-full font-bold mb-1">
-                    FREE
-                  </div>
-                  <div className="flex items-center text-xs text-gray-500">
-                    <span className="text-yellow-500">⭐</span>
-                    <span className="ml-1">4.9/5</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="space-y-3 mb-4">
-                {/* Primary Action - Join Community */}
-                <ResponsiveButton
-                  href={ROUTES.signup}
-                  variant="primary"
-                  size="lg"
-                  fullWidth
-                  portugueseTextFallback={t('mobile.join_community_short', 'Join Free')}
-                  aria-label="Join Portuguese community for free"
-                  className="!p-5 !justify-between !text-left"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                      <UsersIcon className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <PortugueseText 
-                        className="text-lg font-bold mb-1 text-white" 
-                        maxLength={25}
-                        fallback={t('mobile.join_community_short', 'Join Free')}
-                      >
-                        {t('mobile.join_community_title', 'Join Portuguese Community')}
-                      </PortugueseText>
-                      <PortugueseText 
-                        className="text-sm text-white/90"
-                        maxLength={35}
-                        fallback={t('mobile.free_signup', 'FREE Signup')}
-                      >
-                        {t('mobile.join_community_subtitle', '750+ Portuguese speakers - FREE to join')}
-                      </PortugueseText>
-                    </div>
-                  </div>
-                  <div className="bg-white/20 px-3 py-1 rounded-full">
-                    <span className="text-sm font-bold">FREE</span>
-                  </div>
-                </ResponsiveButton>
-
-                {/* Secondary Action - Cultural Events */}
-                <ResponsiveButton
-                  href={ROUTES.events}
-                  variant="secondary"
-                  size="md"
-                  fullWidth
-                  portugueseTextFallback={t('mobile.events_short', 'Cultural Events')}
-                  aria-label="Browse Portuguese cultural events and festivals"
-                  className="!p-4 !justify-between !text-left"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full flex items-center justify-center">
-                      <CalendarDaysIcon className="w-5 h-5 text-blue-600" />
-                    </div>
-                    <div>
-                      <PortugueseText 
-                        className="font-semibold text-gray-900 mb-1"
-                        maxLength={22}
-                        fallback={t('mobile.events_short', 'Cultural Events')}
-                      >
-                        {t('mobile.cultural_events_title', 'Browse Cultural Events')}
-                      </PortugueseText>
-                      <PortugueseText 
-                        className="text-sm text-gray-600"
-                        maxLength={28}
-                        fallback={t('mobile.fado_more', 'Fado & more')}
-                      >
-                        {t('mobile.cultural_events_subtitle', 'Fado nights, festivals & more')}
-                      </PortugueseText>
-                    </div>
-                  </div>
-                  <ArrowRightIcon className="w-5 h-5 text-gray-400" />
-                </ResponsiveButton>
-              </div>
-
-              {/* More Options Button */}
-              <button
-                onClick={() => setShowMoreOptions(!showMoreOptions)}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-center hover:bg-gray-100 transition-colors active:scale-95"
-              >
-                <div className="text-sm font-medium text-gray-700">{t('mobile.more_features', 'Explore All Features')}</div>
-              </button>
-              
-              {/* Expandable More Options */}
-              {showMoreOptions && (
-                <div className="mt-3 grid grid-cols-4 gap-2">
-                  <a href={ROUTES.feed} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center hover:bg-gray-100 transition-colors">
-                    <RssIcon className="w-5 h-5 text-coral-500 mx-auto mb-1" />
-                    <div className="text-xs font-medium text-gray-700">Feed</div>
-                  </a>
-                  <a href="/tours" className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center hover:bg-gray-100 transition-colors">
-                    <MapPinIcon className="w-5 h-5 text-accent-500 mx-auto mb-1" />
-                    <div className="text-xs font-medium text-gray-700">Tours</div>
-                  </a>
-                  <a href={ROUTES.saved} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center hover:bg-gray-100 transition-colors">
-                    <BookmarkIcon className="w-5 h-5 text-action-500 mx-auto mb-1" />
-                    <div className="text-xs font-medium text-gray-700">Saved</div>
-                  </a>
-                  <a href={ROUTES.host} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-center hover:bg-gray-100 transition-colors">
-                    <BriefcaseIcon className="w-5 h-5 text-premium-500 mx-auto mb-1" />
-                    <div className="text-xs font-medium text-gray-700">Host</div>
-                  </a>
-                </div>
-              )}
-              
-              {/* Portuguese-speaking community Testimonial - Mobile Only */}
-              <div className="mt-4 bg-gradient-to-r from-green-50 to-red-50 rounded-2xl p-4 border border-green-100">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-red-500 flex items-center justify-center text-white font-bold text-sm">
-                    M
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">Maria, Lisboa → London</div>
-                    <div className="flex items-center text-xs text-gray-600">
-                      <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>
-                      <span className="ml-1">Verified Portuguese</span>
-                    </div>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-700 italic leading-relaxed">
-                  "Encontrei portugueses incríveis aqui! Sinto-me em casa em Londres. 
-                  Os eventos de fado são autênticos e a comunidade é muito acolhedora."
-                </p>
-                <div className="mt-2 text-xs text-green-600 font-medium">
-                  🇵🇹 Joined 8 events • Found 12+ Portuguese-speaking friends
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <CoreFeaturesShowcase />
-          <TestimonialsNew />
-          <HowItWorks />
-          <MatchHowItWorks />
-          <AboutLusoTown />
-          {/* Portuguese-speaking community Activities Section */}
-          <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30 relative overflow-hidden border-t border-gray-100" aria-labelledby="community-activities">
-            {/* Portuguese-inspired background decorative elements */}
-            <div className="absolute inset-0" aria-hidden="true">
-              <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/40 via-accent-100/30 to-coral-100/30 rounded-full opacity-60 animate-pulse" />
-              <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-tr from-action-200/40 via-secondary-100/30 to-accent-100/30 rounded-full opacity-50 animate-bounce" style={{ animationDuration: '8s' }} />
-              <div className="absolute top-1/4 left-1/6 w-6 h-6 bg-secondary-300/50 rounded-full opacity-40" />
-              <div className="absolute top-3/4 right-1/5 w-4 h-4 bg-accent-300/50 rounded-full opacity-30" />
-              <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-coral-300/50 rounded-full opacity-35" />
-            </div>
-
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-              <div className="max-w-7xl mx-auto">
-                {/* Section Header with Portuguese Cultural Elements */}
-                <header className="text-center mb-20">
-                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50/80 via-accent-50/60 to-coral-50/60 border border-secondary-200/40 rounded-3xl px-10 py-5 shadow-2xl mb-10 backdrop-blur-sm">
-                    <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 to-red-500 animate-pulse shadow-sm" aria-hidden="true"></div>
-                      <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
-                        {t('what-you-can-do.badge')}
-                      </span>
-                    </div>
-                    <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse" aria-hidden="true"></div>
-                  </div>
-                  
-                  <h2 id="community-activities" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-tight">
-                    {t('what-you-can-do.title')}
-                  </h2>
-                  <p className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-6 font-medium max-w-6xl mx-auto leading-relaxed">
-                    {t('what-you-can-do.subtitle')}
+                  <p className="text-sm text-gray-600 mt-4">
+                    {t('matching.guarantee', 'Free to join • No credit card • 750+ Portuguese speakers waiting')}
                   </p>
-                  <blockquote className="text-lg sm:text-xl lg:text-2xl text-gray-600 italic max-w-5xl mx-auto font-medium" cite="Maria, London">
-                    {t('what-you-can-do.testimonial')}
-                  </blockquote>
-                </header>
-                
-                {/* Portuguese-speaking community Activities Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-20" role="group" aria-label="Portuguese-speaking community activities">
-                  {/* Find & Join Events */}
-                  <article className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
-                      <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/60 via-transparent to-accent-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" aria-hidden="true" />
-                      
-                      <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl" aria-hidden="true">
-                          <ChatBubbleLeftRightIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
-                        </div>
-                        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-secondary-600 transition-colors duration-300">
-                          {t('what-you-can-do.events.title')}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
-                          {t('what-you-can-do.events.description')}
-                        </p>
-                        <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
-                          {t('what-you-can-do.events.locations')}
-                        </div>
-                        <a 
-                          href={ROUTES.events} 
-                          className="inline-flex items-center gap-2 text-secondary-600 font-semibold hover:text-secondary-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
-                          aria-describedby="events-description"
-                        >
-                          {t('what-you-can-do.events.cta')}
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-
-                  {/* Create Your Own Groups */}
-                  <div className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
-                      <div className="absolute inset-0 bg-gradient-to-br from-accent-50/60 via-transparent to-coral-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                      
-                      <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-accent-500 to-coral-500 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-                          <UsersIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
-                        </div>
-                        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-accent-600 transition-colors duration-300">
-                          {t('what-you-can-do.groups.title')}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
-                          {t('what-you-can-do.groups.description')}
-                        </p>
-                        <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
-                          {t('what-you-can-do.groups.examples')}
-                        </div>
-                          <a 
-                            href={`${ROUTES.groups}/create`} 
-                            className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
-                          >
-                            {t('what-you-can-do.groups.cta')}
-                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                          </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Stay Updated on LusoFeed */}
-                  <div className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
-                      <div className="absolute inset-0 bg-gradient-to-br from-coral-50/60 via-transparent to-secondary-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                      
-                      <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-coral-500 to-action-500 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-                          <RssIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
-                        </div>
-                        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-coral-500 transition-colors duration-300">
-                          {t('what-you-can-do.feed.title')}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
-                          {t('what-you-can-do.feed.description')}
-                        </p>
-                        <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
-                          {t('what-you-can-do.feed.features')}
-                        </div>
-                        <a 
-                          href={ROUTES.feed} 
-                          className="inline-flex items-center gap-2 text-coral-500 font-semibold hover:text-coral-600 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
-                        >
-                          {t('what-you-can-do.feed.cta')}
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Save Your Favourites */}
-                  <div className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
-                      <div className="absolute inset-0 bg-gradient-to-br from-action-50/60 via-transparent to-premium-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                      
-                      <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-action-500 to-premium-500 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-                          <BookmarkIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
-                        </div>
-                        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-action-600 transition-colors duration-300">
-                          {t('what-you-can-do.favorites.title')}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
-                          {t('what-you-can-do.favorites.description')}
-                        </p>
-                        <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
-                          {t('what-you-can-do.favorites.types')}
-                        </div>
-                        <a 
-                          href={ROUTES.saved} 
-                          className="inline-flex items-center gap-2 text-action-600 font-semibold hover:text-action-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
-                        >
-                          {t('what-you-can-do.favorites.cta')}
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Share Your Expertise - NEW */}
-                  <div className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
-                      <div className="absolute inset-0 bg-gradient-to-br from-premium-50/60 via-transparent to-coral-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                      
-                      <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-premium-500 to-coral-500 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-                          <AcademicCapIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
-                        </div>
-                        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-premium-600 transition-colors duration-300">
-                          {t('what-you-can-do.host.title')}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
-                          {t('what-you-can-do.host.description')}
-                        </p>
-                        <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
-                          {t('what-you-can-do.host.examples')}
-                        </div>
-                          <a 
-                            href={ROUTES.host} 
-                            className="inline-flex items-center gap-2 text-premium-600 font-semibold hover:text-premium-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
-                          >
-                            {t('what-you-can-do.host.cta')}
-                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                          </a>
-                      </div>
-                    </div>
-                  </div>
                 </div>
+              </div>
+            </div>
+          </section>
 
-                {/* Call-to-Action Section */}
-                <div className="text-center">
-                  <div className="bg-gradient-to-r from-white/80 via-secondary-50/60 to-accent-50/60 backdrop-blur-lg border border-white/40 rounded-3xl p-12 shadow-2xl max-w-5xl mx-auto">
-                    <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                      {t('cta.title')}
-                    </h3>
-                    <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-                      Join {communityStats.members} Portuguese speakers from Brazil, Portugal, Africa and beyond creating amazing memories together across the UK - from vibrant cultural events to inspiring professional networking, exciting family activities to magical weekend getaways throughout Britain!
-                    </p>
-                    <div className="flex flex-row gap-3 sm:gap-4 justify-center">
-                      <a
-                        href={ROUTES.signup}
-                        className="group relative text-base sm:text-lg font-bold px-6 sm:px-10 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden flex-1 max-w-[180px] sm:max-w-none"
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 whitespace-nowrap">
-                          {t('hero.cta.secondary')}
-                          <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform duration-200" />
-                        </span>
-                      </a>
+          {/* EVENTS & COMMUNITY SECTION - Connected Experience */}
+          <section className="py-20 bg-gradient-to-br from-secondary-50 to-accent-50">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-16">
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6">
+                    {t('events.title', 'Meet Your Matches at Portuguese Events')}
+                  </h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    {t('events.subtitle', 'Join cultural events, festivals, and meetups where Portuguese speakers connect naturally.')}
+                  </p>
+                </div>
+                
+                <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                  {/* Left - Event Types */}
+                  <div>
+                    <div className="space-y-6">
+                      <div className="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-lg">
+                        <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-red-500 rounded-xl flex items-center justify-center text-white font-bold">
+                          🎵
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-gray-900 mb-1">Fado Nights</h3>
+                          <p className="text-gray-600 text-sm">Authentic Portuguese music evenings in London pubs</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-lg">
+                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white font-bold">
+                          🍷
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-gray-900 mb-1">Wine Tastings</h3>
+                          <p className="text-gray-600 text-sm">Portuguese wine discovery with fellow lusófonos</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-lg">
+                        <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center text-white font-bold">
+                          ⚽
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-gray-900 mb-1">Football Screenings</h3>
+                          <p className="text-gray-600 text-sm">Watch Portugal & Brazil games with passionate fans</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-lg">
+                        <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-xl flex items-center justify-center text-white font-bold">
+                          🎭
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-gray-900 mb-1">Cultural Festivals</h3>
+                          <p className="text-gray-600 text-sm">Santos Populares, Festa Junina, and more</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-8">
                       <a
                         href={ROUTES.events}
-                        className="text-base sm:text-lg font-bold px-6 sm:px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90 whitespace-nowrap flex-1 max-w-[180px] sm:max-w-none text-center"
+                        className="inline-flex items-center justify-center px-8 py-4 bg-secondary-600 text-white font-bold rounded-2xl hover:bg-secondary-700 transition-colors duration-300"
                       >
-                        {t('core_features.explore_features')}
+                        <CalendarDaysIcon className="w-5 h-5 mr-2" />
+                        {t('events.cta', 'Browse All Events')}
+                        <ArrowRightIcon className="w-5 h-5 ml-2" />
                       </a>
+                    </div>
+                  </div>
+                  
+                  {/* Right - Success Story */}
+                  <div className="bg-white rounded-3xl p-8 shadow-2xl">
+                    <div className="text-center mb-6">
+                      <div className="flex justify-center -space-x-4 mb-4">
+                        <div className="w-16 h-16 rounded-full bg-gradient-to-r from-green-500 to-red-500 border-4 border-white flex items-center justify-center text-white font-bold text-lg">J</div>
+                        <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 border-4 border-white flex items-center justify-center text-white font-bold text-lg">A</div>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">João & Ana</h3>
+                      <p className="text-gray-600 mb-4">Met at Fado Night • Now Dating 💕</p>
+                    </div>
+                    
+                    <blockquote className="text-gray-700 italic text-center mb-6">
+                      "Conhecemo-nos numa noite de fado no Camden. A música portuguesa criou uma conexão instantânea. Agora exploramos Londres juntos todos os fins de semana!"
+                    </blockquote>
+                    
+                    <div className="bg-green-50 rounded-2xl p-4 text-center">
+                      <div className="text-sm font-medium text-green-800 mb-1">
+                        ⭐⭐⭐⭐⭐ "Perfect Match"
+                      </div>
+                      <div className="text-xs text-green-600">
+                        🇵🇹 Both from Porto • Love for Fado • Now inseparable
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-
-
-          <Features />
+          
+          <TestimonialsNew />
+          {/* FINAL FREE SIGNUP CTA - Cohesive ending */}
+          <section className="py-20 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 text-white">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <div className="max-w-4xl mx-auto">
+                <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-bold mb-8">
+                  <CheckIcon className="w-4 h-4" />
+                  {t('final_cta.badge', 'JOIN 750+ PORTUGUESE SPEAKERS')}
+                </div>
+                
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6">
+                  {t('final_cta.title', 'Ready to Find Your Portuguese Match?')}
+                </h2>
+                
+                <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
+                  {t('final_cta.subtitle', 'Join free today and start connecting with Portuguese speakers across the UK. No credit card required.')}
+                </p>
+                
+                {/* Trust indicators */}
+                <div className="flex flex-wrap justify-center gap-8 mb-12 text-white/80">
+                  <div className="flex items-center gap-2">
+                    <CheckIcon className="w-5 h-5 text-green-300" />
+                    <span className="font-semibold">100% Free to Join</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <UsersIcon className="w-5 h-5" />
+                    <span className="font-semibold">750+ Active Members</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <HeartIcon className="w-5 h-5 text-red-300" />
+                    <span className="font-semibold">Daily New Matches</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPinIcon className="w-5 h-5" />
+                    <span className="font-semibold">Across UK</span>
+                  </div>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                  <a
+                    href={ROUTES.signup}
+                    className="group inline-flex items-center justify-center px-12 py-6 bg-white text-primary-700 text-xl font-bold rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+                  >
+                    <span className="mr-3">🇵🇹</span>
+                    {t('final_cta.primary', 'JOIN FREE NOW')}
+                    <ArrowRightIcon className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  
+                  <a
+                    href={ROUTES.login}
+                    className="inline-flex items-center justify-center px-8 py-6 border-2 border-white/30 text-white text-lg font-semibold rounded-2xl hover:border-white hover:bg-white/10 transition-all duration-300"
+                  >
+                    {t('final_cta.secondary', 'Try Demo Account')}
+                  </a>
+                </div>
+                
+                <p className="text-sm text-white/70 mt-8">
+                  {t('final_cta.guarantee', 'No spam, no credit card required. Cancel anytime. Join the UK\'s largest Portuguese-speaking community.')}
+                </p>
+              </div>
+            </div>
+          </section>
 
           <EventsShowcase />
-          <GroupsShowcase />
-          <CommunityFeedSection />
           <SuccessStories />
-          <CustomToursSection showHeader={true} />
-          <AppDownloadSection />
-          
-          {/* Student Support Section */}
-          <StudentSupportSection />
-          
-          <CTA />
           <Footer />
         </div>
         
-        {/* Mobile Floating Action Button - Only show on mobile */}
+        {/* Mobile Floating CTA - Prominent matching action */}
         <div className="md:hidden fixed bottom-20 right-4 z-40">
-          <button
-            onClick={() => window.location.href = '/matches'}
-            className="group w-14 h-14 bg-gradient-to-br from-secondary-600 to-action-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center active:scale-95"
-            aria-label="Find your Portuguese match"
+          <a
+            href={ROUTES.matches}
+            className="group w-16 h-16 bg-gradient-to-br from-green-600 via-yellow-500 to-red-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center active:scale-95 animate-pulse"
+            aria-label="Find your Portuguese match - FREE"
           >
-            <HeartIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />
-            <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
-              <span className="text-xs font-bold text-white">!</span>
+            <HeartIcon className="w-7 h-7 group-hover:scale-110 transition-transform" />
+            <div className="absolute -top-2 -right-2 w-7 h-7 bg-green-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+              <span className="text-xs font-bold text-white">FREE</span>
             </div>
-          </button>
+          </a>
           
-          {/* Tooltip */}
-          <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-xs px-3 py-2 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
-            Find matches - FREE
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-0 h-0 border-l-[6px] border-l-gray-900 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent"></div>
+          {/* Enhanced Tooltip */}
+          <div className="absolute right-20 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-4 py-2 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+            🇵🇹 Find Portuguese matches - FREE!
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-0 h-0 border-l-[8px] border-l-gray-900 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent"></div>
           </div>
         </div>
         
-        {/* Cross-Platform Engagement Triggers */}
-        {/* CrossPlatformEngagementTriggers component removed */}
         
         {/* Mobile Welcome Wizard */}
         <MobileWelcomeWizard

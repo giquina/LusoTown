@@ -1,17 +1,4 @@
 {
-  "version": 2,
-  "name": "lusotown",
-  "builds": [
-    {
-      "src": "web-app/package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "env": {
-    "NODE_VERSION": "18.x"
-  },
-  "installCommand": "cd web-app && npm install",
-  "buildCommand": "cd web-app && npm run build",
   "headers": [
     {
       "source": "/(.*)",
