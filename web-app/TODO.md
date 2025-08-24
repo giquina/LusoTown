@@ -51,7 +51,7 @@
   - [ ] Test on iPhone SE (375px) - most common device
 
 - [ ] **MAIN NAVIGATION BROKEN** 🧭
-  - [ ] Restore missing navigation links: Events, Business Directory, Matches
+  - [x] Restore missing navigation links: Events, Business Directory, Matches
   - [ ] Fix navigation component in `/src/components/Header.tsx`
   - [ ] Ensure all routes are properly connected
   - [ ] Test navigation hierarchy
@@ -80,7 +80,7 @@
   - [ ] Reduce JavaScript bundle size
   - [ ] Implement dynamic imports for AI systems
   - [ ] Optimize images for mobile networks
-  - [ ] Fix page timeouts on /dashboard, /students, /community
+  - [x] Fix page timeouts on /dashboard, /students, /community
 
 #### **🛠️ TECHNICAL DEBT (Next Week)**
 - [ ] **Form Accessibility Issues**

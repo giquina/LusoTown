@@ -1,11 +1,11 @@
 # Documentation Maintenance Report
-Generated: 2025-08-24T03:38:20.533Z
+Generated: 2025-08-24T14:13:59.979Z
 
 ## Codebase Statistics
-- **Components:** 522
+- **Components:** 567
 - **Pages:** 121
-- **Contexts:** 522
-- **Hooks:** 522
+- **Contexts:** 567
+- **Hooks:** 567
 
 ## Feature Implementation Status
 - **Business Directory with Geolocation:** ✅ Completed
@@ -15,7 +15,7 @@ Generated: 2025-08-24T03:38:20.533Z
 - **Premium Membership Tiers:** ✅ Completed
 
 ## Changes Made
-- Updated component count to 522
+- Updated component count to 567
 - Updated page count to 121
 - Updated AGENTS.md with current architecture
 

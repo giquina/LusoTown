@@ -22,53 +22,53 @@ import ErrorBoundary, {
 } from "@/components/ErrorBoundary";
 import { METADATA_BASE } from "@/config/site";
 import { generateMetadata as generateSEOMetadata, generateJsonLd } from "@/config/seo";
-import dynamic from 'next/dynamic';
+import nextDynamic from 'next/dynamic';
 
 // Performance optimization
 import Script from 'next/script';
 
 // Dynamic imports for heavy components - loads only when needed
-const LiveFeedNotifications = dynamic(() => import("@/components/LiveFeedNotifications"), {
+const LiveFeedNotifications = nextDynamic(() => import("@/components/LiveFeedNotifications"), {
   loading: () => null,
   ssr: false
 });
 
-const UserTypeSelection = dynamic(() => import("@/components/UserTypeSelection"), {
+const UserTypeSelection = nextDynamic(() => import("@/components/UserTypeSelection"), {
   loading: () => null,
   ssr: false
 });
 
-const AuthPopup = dynamic(() => import("@/components/AuthPopup"), {
+const AuthPopup = nextDynamic(() => import("@/components/AuthPopup"), {
   loading: () => null,
   ssr: false
 });
 
-const AuthIntentHandler = dynamic(() => import("@/components/AuthIntentHandler"), {
+const AuthIntentHandler = nextDynamic(() => import("@/components/AuthIntentHandler"), {
   loading: () => null,
   ssr: false
 });
 
-const FavoriteNotification = dynamic(() => import("@/components/FavoriteNotification"), {
+const FavoriteNotification = nextDynamic(() => import("@/components/FavoriteNotification"), {
   loading: () => null,
   ssr: false
 });
 
-const PremiumMobileNavigation = dynamic(() => import("@/components/PremiumMobileNavigation"), {
+const PremiumMobileNavigation = nextDynamic(() => import("@/components/PremiumMobileNavigation"), {
   loading: () => null,
   ssr: false
 });
 
-const MobileExperienceOptimizer = dynamic(() => import("@/components/MobileExperienceOptimizer"), {
+const MobileExperienceOptimizer = nextDynamic(() => import("@/components/MobileExperienceOptimizer"), {
   loading: () => null,
   ssr: false
 });
 
-const MobileCriticalFixes = dynamic(() => import("@/components/MobileCriticalFixes"), {
+const MobileCriticalFixes = nextDynamic(() => import("@/components/MobileCriticalFixes"), {
   loading: () => null,
   ssr: false
 });
 
-const LusoBotWidget = dynamic(() => import("@/components/LusoBotWidget"), {
+const LusoBotWidget = nextDynamic(() => import("@/components/LusoBotWidget"), {
   loading: () => null,
   ssr: false
 });
@@ -77,6 +77,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  fallback: ["system-ui", "sans-serif"]
 });
 
 const poppins = Poppins({
@@ -84,6 +85,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
   display: "swap",
+  fallback: ["system-ui", "sans-serif"]
 });
 
 export const metadata = {
