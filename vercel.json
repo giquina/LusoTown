@@ -7,12 +7,6 @@
       "use": "@vercel/next"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "web-app/$1"
-    }
-  ],
   "env": {
     "NODE_VERSION": "18.x"
   },
