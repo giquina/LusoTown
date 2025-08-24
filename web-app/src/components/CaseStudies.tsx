@@ -227,6 +227,58 @@ const allCaseStudies: CaseStudy[] = [
   
   // English Case Studies (30%)
   {
+    id: 'student-nightlife-1',
+    language: 'en' as const,
+    title: 'From Strangers to Study Squad: A Nightclub Meeting That Built Academic Success',
+    participants: {
+      person1: {
+        name: 'Miguel Santos',
+        age: 21,
+        background: 'Computer Science student from Braga',
+        country: 'Portugal 🇵🇹',
+        image: getImageWithFallback('community-3')
+      },
+      person2: {
+        name: 'Carla Mendes',
+        age: 20,
+        background: 'Economics student from Rio de Janeiro',
+        country: 'Brazil 🇧🇷',
+        image: getImageWithFallback('sarah-chen')
+      }
+    },
+    event: {
+      type: 'LusoTown Student Nightlife: Portuguese Night at Ministry',
+      venue: 'Ministry of Sound',
+      location: 'Elephant & Castle, London',
+      date: 'October 14, 2023'
+    },
+    timeline: {
+      initial: 'October 2023 - Met on the dance floor during Portuguese music set at Ministry of Sound',
+      meeting: 'October 2023 - Bonded over shared academic struggles and love for Portuguese music',
+      friendship: 'November 2023-February 2024 - Weekly study sessions combined with weekend nightlife adventures',
+      outcome: 'March 2024 - Created "Study Hard, Party Harder" Portuguese student group with 85+ members'
+    },
+    transformation: {
+      before: 'Miguel was struggling with isolation and failing calculus; Carla felt homesick and overwhelmed by London university life',
+      after: 'Built an unbreakable friendship while creating London\'s most successful Portuguese-speaking student support network',
+      impact: [
+        'Miguel improved from D grades to First Class Honours with Carla\'s study support',
+        'Carla overcame homesickness through weekend Portuguese cultural parties',
+        'Created study groups that helped 40+ Portuguese students improve grades',
+        'Organized monthly Portuguese student nights at top London clubs',
+        'Established scholarship fund for Portuguese students (£15,000 raised)',
+        'Featured in LSE and UCL student newspapers for community building'
+      ]
+    },
+    quotes: {
+      person1: '"Carla saved my academic life. We balance study intensity with Portuguese party culture perfectly. She taught me that success doesn\'t mean giving up fun."',
+      person2: '"Miguel showed me London nightlife could feel like home. Our friendship proves Portuguese students can excel academically while celebrating our culture."',
+      joint: '"We created the perfect balance - serious about studies during the week, celebrating Portuguese culture every weekend. Our group shows that academic success and cultural pride go hand in hand."'
+    },
+    currentStatus: 'Leading a network of 120+ Portuguese-speaking students across 8 London universities. They host monthly academic workshops and weekend cultural events, with 95% of members reporting improved grades and social connections.',
+    icon: AcademicCapIcon
+  },
+  {
     id: '1',
     language: 'en' as const,
     title: 'From Strangers to Flatmates: A Museum Meeting That Changed Two Lives',
@@ -380,6 +432,110 @@ const allCaseStudies: CaseStudy[] = [
     },
     currentStatus: 'Palavras de Londres now runs 12 programs annually, has published an anthology of London Portuguese writers, and is establishing partnerships with universities in Portugal and Brazil. They\'re planning a documentary about Portuguese literary heritage in the United Kingdom.',
     icon: AcademicCapIcon
+  },
+  {
+    id: 'food-entrepreneurs',
+    language: 'en' as const,
+    title: 'From Pop-up to Permanent: A Food Market Connection That Built a Restaurant Empire',
+    participants: {
+      person1: {
+        name: 'Helena Rodrigues',
+        age: 35,
+        background: 'Chef from Aveiro specializing in Portuguese seafood',
+        country: 'Portugal 🇵🇹',
+        image: getImageWithFallback('ava-davis')
+      },
+      person2: {
+        name: 'Roberto Costa',
+        age: 38,
+        background: 'Business owner from Salvador with Brazilian fusion expertise',
+        country: 'Brazil 🇧🇷',
+        image: getImageWithFallback('community-5')
+      }
+    },
+    event: {
+      type: 'Portuguese-Brazilian Food Festival',
+      venue: 'Southbank Centre Food Market',
+      location: 'South Bank, London',
+      date: 'August 12, 2023'
+    },
+    timeline: {
+      initial: 'August 2023 - Both running competing food stalls at Southbank Centre Food Festival',
+      meeting: 'August 2023 - Discovered complementary culinary skills and shared business vision',
+      friendship: 'September 2023-January 2024 - Collaborated on weekend pop-ups, developed signature fusion dishes',
+      outcome: 'February 2024 - Opened "Lusitânia" - London\'s first Portuguese-Brazilian fusion restaurant'
+    },
+    transformation: {
+      before: 'Helena struggled with limited Portuguese cuisine market; Roberto faced challenges scaling his Brazilian food truck business',
+      after: 'Combined their expertise to create London\'s most innovative Portuguese-Brazilian dining experience',
+      impact: [
+        'Lusitânia booked solid for 3 months in advance within first month',
+        'Generated £400,000 revenue in first 8 months',
+        'Featured in Time Out London, Evening Standard, and Michelin Guide',
+        'Hired 12 staff members (8 from Portuguese-speaking community)',
+        'Won "Best New Restaurant" at London Portuguese Business Awards',
+        'Launched catering service for Portuguese cultural events'
+      ]
+    },
+    quotes: {
+      person1: '"Roberto taught me that Portuguese cuisine could evolve beyond tradition. Together we created something completely new while honoring both our cultures."',
+      person2: '"Helena showed me the depth of Portuguese culinary heritage. Our fusion represents the future of Portuguese-speaking community dining."',
+      joint: '"Lusitânia proves Portuguese and Brazilian cuisines create magic together. We\'re not just serving food - we\'re sharing our heritage with London."'
+    },
+    currentStatus: 'Lusitânia has a 6-week waiting list and plans to open a second location in Canary Wharf. They\'re launching a cookbook and culinary school focused on Portuguese-Brazilian fusion techniques.',
+    icon: BuildingOffice2Icon
+  },
+  {
+    id: 'tech-startup',
+    language: 'en' as const, 
+    title: 'From Code to Community: A Tech Meetup That Launched a £2M Startup',
+    participants: {
+      person1: {
+        name: 'Pedro Almeida',
+        age: 27,
+        background: 'Software engineer from Porto with fintech experience',
+        country: 'Portugal 🇵🇹',
+        image: getImageWithFallback('community-4')
+      },
+      person2: {
+        name: 'Lucas Ferreira',
+        age: 29,
+        background: 'Product manager from Belo Horizonte with blockchain expertise',
+        country: 'Brazil 🇧🇷',
+        image: getImageWithFallback('community-3')
+      }
+    },
+    event: {
+      type: 'Portuguese Tech Professionals Meetup',
+      venue: 'Google Campus London',
+      location: 'Shoreditch, London',
+      date: 'November 8, 2023'
+    },
+    timeline: {
+      initial: 'November 2023 - Met during Portuguese tech professionals meetup at Google Campus',
+      meeting: 'November 2023 - Discovered shared vision for Portuguese-speaking community financial inclusion',
+      friendship: 'December 2023-March 2024 - Weekend hackathons developing fintech prototype',
+      outcome: 'April 2024 - Launched "LusoFinance" - remittance app for Portuguese-speaking diaspora'
+    },
+    transformation: {
+      before: 'Pedro wanted to create social impact through technology; Lucas sought to use his product skills for meaningful projects',
+      after: 'Built a fintech startup serving 15,000+ Portuguese speakers across Europe with money transfer solutions',
+      impact: [
+        'Processed £3.2M in remittances in first 6 months',
+        'Reduced transfer costs by 60% for Portuguese-speaking families',
+        'Secured £2M Series A funding from leading London VC',
+        'Team grew to 18 employees across London, Lisbon, and São Paulo',
+        'Featured in TechCrunch, Financial Times, and Wired',
+        'Partnership with Portuguese banks and credit unions'
+      ]
+    },
+    quotes: {
+      person1: '"Lucas brought the product vision I needed to turn my technical ideas into reality. Together we\'re solving real problems for our community."',
+      person2: '"Pedro\'s engineering excellence combined with my product experience created something neither of us could build alone. We\'re helping families stay connected."',
+      joint: '"LusoFinance started as weekend conversations and became a mission to serve Portuguese speakers globally. Technology with cultural purpose is incredibly powerful."'
+    },
+    currentStatus: 'LusoFinance serves 25,000+ users across 12 countries, planning IPO by 2026. They sponsor Portuguese tech education programs and mentor 50+ entrepreneurs.',
+    icon: SparklesIcon
   }
 ]
 
