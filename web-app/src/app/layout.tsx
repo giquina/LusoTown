@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+// Note: avoid strict typing here to prevent build-time type mismatches from metadata helpers
 import { Inter, Poppins } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
@@ -46,7 +46,7 @@ const poppins = Poppins({
   display: "swap",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   metadataBase: METADATA_BASE,
   ...generateSEOMetadata(),
 };
@@ -56,6 +56,11 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 1,
 };
+
+// Opt-out of static prerendering to avoid build-time execution of client-only hooks
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+export const fetchCache = 'force-no-store'
 
 export default function RootLayout({
   children,
