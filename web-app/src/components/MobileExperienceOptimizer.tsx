@@ -439,9 +439,5 @@ export function useMobilePerformance() {
   return metrics;
 }
 
-export default {
-  MobileExperienceOptimizer,
-  LuxuryMobileLayout,
-  MobileGestureHandler,
-  useMobilePerformance
-};
+// Export the main component as default for dynamic imports
+export default MobileExperienceOptimizer;
