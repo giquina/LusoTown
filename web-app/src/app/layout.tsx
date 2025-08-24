@@ -2,8 +2,6 @@
 import { Inter, Poppins } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
-import LiveFeedNotifications from "@/components/LiveFeedNotifications";
-import UserTypeSelection from "@/components/UserTypeSelection";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { FavoritesProvider } from "@/context/FavoritesContext";
 import { FollowingProvider } from "@/context/FollowingContext";
@@ -17,21 +15,63 @@ import { HeritageProvider } from "@/context/HeritageContext";
 import { NavigationProvider } from "@/context/NavigationContext";
 import HeritageStyleProvider from "@/components/HeritageStyleProvider";
 import { AuthPopupProvider } from "@/components/AuthPopupProvider";
-import AuthPopup from "@/components/AuthPopup";
-import AuthIntentHandler from "@/components/AuthIntentHandler";
-import FavoriteNotification from "@/components/FavoriteNotification";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
-import { ContextualMobileNav } from "@/components/LuxuryMobileNav";
-import { PremiumMobileNavigation } from "@/components/PremiumMobileNavigation";
-import { MobileExperienceOptimizer } from "@/components/MobileExperienceOptimizer";
-import MobileCriticalFixes from "@/components/MobileCriticalFixes";
-import LusoBotWidget from "@/components/LusoBotWidget";
 import ErrorBoundary, {
   ComponentErrorBoundary,
 } from "@/components/ErrorBoundary";
 import { METADATA_BASE } from "@/config/site";
 import { generateMetadata as generateSEOMetadata, generateJsonLd } from "@/config/seo";
+import dynamic from 'next/dynamic';
+
+// Performance optimization
+import Script from 'next/script';
+
+// Dynamic imports for heavy components - loads only when needed
+const LiveFeedNotifications = dynamic(() => import("@/components/LiveFeedNotifications"), {
+  loading: () => null,
+  ssr: false
+});
+
+const UserTypeSelection = dynamic(() => import("@/components/UserTypeSelection"), {
+  loading: () => null,
+  ssr: false
+});
+
+const AuthPopup = dynamic(() => import("@/components/AuthPopup"), {
+  loading: () => null,
+  ssr: false
+});
+
+const AuthIntentHandler = dynamic(() => import("@/components/AuthIntentHandler"), {
+  loading: () => null,
+  ssr: false
+});
+
+const FavoriteNotification = dynamic(() => import("@/components/FavoriteNotification"), {
+  loading: () => null,
+  ssr: false
+});
+
+const PremiumMobileNavigation = dynamic(() => import("@/components/PremiumMobileNavigation"), {
+  loading: () => null,
+  ssr: false
+});
+
+const MobileExperienceOptimizer = dynamic(() => import("@/components/MobileExperienceOptimizer"), {
+  loading: () => null,
+  ssr: false
+});
+
+const MobileCriticalFixes = dynamic(() => import("@/components/MobileCriticalFixes"), {
+  loading: () => null,
+  ssr: false
+});
+
+const LusoBotWidget = dynamic(() => import("@/components/LusoBotWidget"), {
+  loading: () => null,
+  ssr: false
+});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -82,6 +122,40 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} antialiased`}>
+        {/* Performance optimization script */}
+        <Script
+          id="performance-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Critical performance optimizations
+              if (typeof window !== 'undefined') {
+                // Preconnect to external domains
+                ['https://images.unsplash.com', 'https://res.cloudinary.com'].forEach(domain => {
+                  const link = document.createElement('link');
+                  link.rel = 'preconnect';
+                  link.href = domain;
+                  document.head.appendChild(link);
+                });
+                
+                // Monitor Core Web Vitals
+                if ('PerformanceObserver' in window) {
+                  const observer = new PerformanceObserver((list) => {
+                    for (const entry of list.getEntries()) {
+                      if (entry.entryType === 'largest-contentful-paint') {
+                        if (entry.startTime > 2500) {
+                          console.warn('LCP is slow:', entry.startTime + 'ms');
+                        }
+                      }
+                    }
+                  });
+                  observer.observe({type: 'largest-contentful-paint', buffered: true});
+                }
+              }
+            `,
+          }}
+        />
+        
         <ErrorBoundary>
           <AuthPopupProvider>
             <HeritageProvider>

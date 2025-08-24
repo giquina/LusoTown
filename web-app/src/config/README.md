@@ -18,7 +18,48 @@ import { ANALYTICS_EVENTS, trackEvent } from '@/config/analytics';
 
 ## Configuration Files
 
-### 1. Routes (`routes.ts`)
+### 1. Lusophone Celebrations (`lusophone-celebrations.ts`)
+Comprehensive celebration of Portuguese-speaking cultures across all nations with cultural wisdom rotation system.
+
+**Features:**
+```typescript
+import { 
+  LUSOPHONE_CELEBRATIONS, 
+  CULTURAL_WISDOM, 
+  getFeaturedCelebrations, 
+  getRandomCulturalWisdom 
+} from '@/config';
+
+// Display cultural celebrations
+const celebrations = getFeaturedCelebrations(6);
+
+// Rotate cultural wisdom
+const wisdom = getRandomCulturalWisdom();
+
+// Filter by country or category
+const brazilianEvents = getCelebrationsByCountry('Brazil');
+const musicEvents = getCelebrationsByCategory('music');
+```
+
+### 2. Community Guidelines (`community-guidelines.ts`)
+Comprehensive inclusivity rules and validation functions for the Portuguese-speaking community.
+
+**Usage:**
+```typescript
+import { 
+  validateCommunityContent, 
+  INCLUSIVITY_RULES, 
+  getInclusiveTerminology 
+} from '@/config';
+
+// Validate content for inclusivity
+const validation = validateCommunityContent('Portuguese community in London');
+if (!validation.isValid) {
+  console.log(validation.suggestions); // Use "Portuguese-speaking community in the United Kingdom"
+}
+```
+
+### 3. Routes (`routes.ts`)
 Centralizes all application routes and URL management.
 
 **Before (hardcoded):**
@@ -45,7 +86,7 @@ if (isProtectedRoute(pathname)) {
 }
 ```
 
-### 2. Pricing (`pricing.ts`)
+### 4. Pricing (`pricing.ts`)
 Manages all pricing, currency, and payment-related constants.
 
 **Before (hardcoded):**
@@ -67,7 +108,7 @@ const price = SUBSCRIPTION_PLANS.community.monthly;
 const quote = getTransportQuote('luxury', 3, 2); // 3 hours, 2 passengers
 ```
 
-### 3. Brand System (`brand.ts`)
+### 5. Brand System (`brand.ts`)
 Portuguese cultural design system with colors, typography, and design tokens.
 
 **Before (hardcoded):**
@@ -92,7 +133,7 @@ import { brandColors, PORTUGUESE_COLORS, COMPONENT_COLORS } from '@/config';
 <span>{CULTURAL_SYMBOLS.flag} {CULTURAL_EMOJIS[':saudade:']}</span>
 ```
 
-### 4. CDN and External URLs (`cdn.ts`)
+### 6. CDN and External URLs (`cdn.ts`)
 Centralizes all external URLs and resource management.
 
 **Before (hardcoded):**
@@ -112,7 +153,7 @@ import { buildUnsplashUrl, SOCIAL_URLS } from '@/config';
 const calendarUrl = buildCalendarUrl('Portuguese Night', '20250825T190000Z', '20250825T220000Z');
 ```
 
-### 5. Analytics (`analytics.ts`)
+### 7. Analytics (`analytics.ts`)
 Event tracking and analytics constants.
 
 **Before (hardcoded):**
@@ -137,7 +178,28 @@ trackConversion(ANALYTICS_EVENTS.SUBSCRIPTION_COMPLETE, 19.99);
 
 ## Portuguese Cultural Integration
 
-The configuration system is designed specifically for the Portuguese-speaking community:
+The configuration system is designed specifically for the Portuguese-speaking community across ALL Lusophone nations:
+
+### Lusophone Cultural Celebrations
+```typescript
+import { LUSOPHONE_CELEBRATIONS, getCelebrationsByCountry } from '@/config';
+
+// Display celebrations from all Portuguese-speaking nations
+const allCelebrations = LUSOPHONE_CELEBRATIONS;
+const portugueseCelebrations = getCelebrationsByCountry('Portugal');
+const brazilianCelebrations = getCelebrationsByCountry('Brazil');
+const angolanCelebrations = getCelebrationsByCountry('Angola');
+```
+
+### Cultural Wisdom System
+```typescript
+import { CULTURAL_WISDOM, getRandomCulturalWisdom } from '@/config';
+
+// Rotate cultural wisdom from across the Lusophone world
+const wisdom = getRandomCulturalWisdom();
+console.log(wisdom.quote.en); // "Commerce unites peoples and cultures"
+console.log(wisdom.origin.pt); // "Provérbio Marítimo Português"
+```
 
 ### Cultural Colors
 ```typescript
@@ -154,13 +216,18 @@ const styles = {
 
 ### Cultural Elements
 ```typescript
-import { CULTURAL_SYMBOLS, CULTURAL_EMOJIS } from '@/config';
+import { CULTURAL_SYMBOLS, CULTURAL_EMOJIS, LUSOPHONE_CELEBRATIONS } from '@/config';
+
+// Cultural celebrations with flags and context
+const celebration = LUSOPHONE_CELEBRATIONS[0];
+console.log(celebration.flagEmoji); // "🇵🇹🇧🇷"
+console.log(celebration.traditionalElements); // ['Sardines & Grilled Corn', 'Quadrilha Dancing']
 
 // Streaming chat emojis
 const message = `Great fado performance! ${CULTURAL_EMOJIS[':fado:']} ${CULTURAL_EMOJIS[':saudade:']}`;
 
-// Cultural icons
-<span>{CULTURAL_SYMBOLS.flag} Portuguese Events</span>
+// Cultural icons with proper nation representation
+<span>{celebration.flagEmoji} {celebration.name.en}</span>
 ```
 
 ### Portuguese Resources

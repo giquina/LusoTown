@@ -179,9 +179,14 @@ export default function EventDetailsPage() {
   const [userHasRSVPd, setUserHasRSVPd] = useState(false)
 
   useEffect(() => {
-    // Get current user
-    const user = authService.getCurrentUser()
-    setCurrentUser(user)
+    // Get current user safely
+    try {
+      const user = authService.getCurrentUser()
+      setCurrentUser(user)
+    } catch (error) {
+      console.error('Error getting current user:', error)
+      // Continue without user - this shouldn't break the page
+    }
     loadEvent()
   }, [eventId])
 
@@ -192,33 +197,51 @@ export default function EventDetailsPage() {
   }
 
   const loadEvent = async () => {
-    if (!eventId) return
+    if (!eventId) {
+      setError('No event ID provided')
+      setLoading(false)
+      return
+    }
     
     setLoading(true)
+    setError(null) // Clear any previous errors
+    
     try {
-      const eventData = await eventService.getEventById(eventId)
+      console.log('Loading event with ID:', eventId)
+      const eventData = await eventService.getEventById(eventId as string)
+      
       if (!eventData) {
+        console.log('Event not found for ID:', eventId)
         setError('Event not found')
+        setLoading(false)
         return
       }
+      
+      console.log('Event loaded successfully:', eventData.title)
       setEvent(eventData)
       
       // Check if user has already RSVP'd (mock for now)
-      const user = authService.getCurrentUser()
-      if (user) {
-        // This would be a real API call
-        const userRSVPs = await eventService.getUserRSVPs(user.id)
-        const existingRSVP = userRSVPs.find(rsvp => rsvp.eventId === eventId)
-        if (existingRSVP) {
-          setUserRSVP(existingRSVP.status === 'confirmed' ? 'going' : 'waitlist')
-          setUserHasRSVPd(true)
+      try {
+        const user = authService.getCurrentUser()
+        if (user) {
+          // This would be a real API call
+          const userRSVPs = await eventService.getUserRSVPs(user.id)
+          const existingRSVP = userRSVPs.find(rsvp => rsvp.eventId === eventId)
+          if (existingRSVP) {
+            setUserRSVP(existingRSVP.status === 'confirmed' ? 'going' : 'waitlist')
+            setUserHasRSVPd(true)
+          }
         }
+      } catch (userError) {
+        console.error('Error checking user RSVP:', userError)
+        // Don't fail the entire page load for user RSVP check
       }
     } catch (err) {
-      setError('Failed to load event')
       console.error('Error loading event:', err)
+      setError('Failed to load event')
+    } finally {
+      setLoading(false)
     }
-    setLoading(false)
   }
 
   const handleRSVP = async (status: 'going' | 'waitlist') => {

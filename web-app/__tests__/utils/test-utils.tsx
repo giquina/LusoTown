@@ -321,3 +321,6 @@ export const culturalTestUtils = {
 export * from '@testing-library/react'
 // Custom render for LusoTown components
 export { customRender as render }
+
+// Additional missing exports for test compatibility
+export { screen, fireEvent, waitFor } from '@testing-library/react'

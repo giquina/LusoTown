@@ -1,140 +1,234 @@
-/**
- * Testing utilities for LusoTown platform
- * Provides reusable test helpers, mocks, and setup functions
- */
+// Test utilities for LusoTown platform
+// Portuguese-speaking community focused testing helpers
 
-import { render, RenderOptions } from '@testing-library/react';
-import { ReactElement } from 'react';
-
-// Re-export everything from React Testing Library
-export * from '@testing-library/react';
-export { default as userEvent } from '@testing-library/user-event';
-
-// Custom render function with providers
-export function renderWithProviders(
-  ui: ReactElement,
-  options?: Omit<RenderOptions, 'wrapper'>
-) {
-  // TODO: Add providers wrapper when contexts are needed
-  return render(ui, options);
+// Mock IntersectionObserver with proper interface compliance
+global.IntersectionObserver = class IntersectionObserver implements IntersectionObserver {
+  constructor(
+    public callback: IntersectionObserverCallback,
+    public options?: IntersectionObserverInit
+  ) {}
+  
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+  
+  get root() { return null }
+  get rootMargin() { return '0px' }
+  get thresholds() { return [0] }
+  
+  takeRecords(): IntersectionObserverEntry[] {
+    return []
+  }
 }
 
-// Mock data generators
-export const mockUser = {
-  id: 'test-user-123',
-  email: 'test@lusotown.com',
-  name: 'Test User',
-  role: 'user' as const,
-  membershipTier: 'premium' as const,
-  profileImage: '/test-avatar.jpg',
-  joinedDate: '2024-01-01',
-  interests: ['Portuguese Culture', 'Networking'],
-  favoriteEvents: ['event-1', 'event-2'],
-  location: 'London, United Kingdom',
-};
+// Mock ResizeObserver
+global.ResizeObserver = class ResizeObserver implements ResizeObserver {
+  constructor(public callback: ResizeObserverCallback) {}
+  
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
 
-export const mockEvent = {
-  id: 'test-event-123',
-  title: 'Portuguese Cultural Night',
-  description: 'Join us for an evening of Portuguese culture',
-  date: '2024-12-25',
-  time: '19:00',
-  location: 'Camden, London',
-  price: 25.00,
-  currency: 'GBP',
-  category: 'Cultural',
-  attendees: 45,
-  maxAttendees: 100,
-};
+// Mock MutationObserver
+global.MutationObserver = class MutationObserver implements MutationObserver {
+  constructor(public callback: MutationCallback) {}
+  
+  observe() {}
+  disconnect() {}
+  
+  takeRecords(): MutationRecord[] {
+    return []
+  }
+}
 
-// Test helper functions
-export const createMockEvent = (overrides = {}) => ({
-  ...mockEvent,
-  ...overrides,
-});
-
-export const createMockUser = (overrides = {}) => ({
-  ...mockUser,
-  ...overrides,
-});
+// Mock matchMedia
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: jest.fn().mockImplementation(query => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(), // deprecated
+    removeListener: jest.fn(), // deprecated
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  })),
+})
 
 // Mock localStorage
-export const mockLocalStorage = {
+const localStorageMock = {
   getItem: jest.fn(),
   setItem: jest.fn(),
   removeItem: jest.fn(),
   clear: jest.fn(),
-};
+  length: 0,
+  key: jest.fn()
+}
+Object.defineProperty(window, 'localStorage', {
+  value: localStorageMock
+})
 
-// Setup test environment
-export const setupTestEnvironment = () => {
-  // Mock localStorage
-  Object.defineProperty(window, 'localStorage', {
-    value: mockLocalStorage,
-  });
+// Mock sessionStorage
+Object.defineProperty(window, 'sessionStorage', {
+  value: localStorageMock
+})
 
-  // Mock window.matchMedia
-  Object.defineProperty(window, 'matchMedia', {
-    writable: true,
-    value: jest.fn().mockImplementation(query => ({
-      matches: false,
-      media: query,
-      onchange: null,
-      addListener: jest.fn(),
-      removeListener: jest.fn(),
-      addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
-      dispatchEvent: jest.fn(),
-    })),
-  });
-
-  // Mock IntersectionObserver
-  global.IntersectionObserver = class IntersectionObserver {
-    constructor() {}
-    observe() {}
-    disconnect() {}
-    unobserve() {}
-  };
-
-  // Mock ResizeObserver
-  global.ResizeObserver = class ResizeObserver {
-    constructor() {}
-    observe() {}
-    disconnect() {}
-    unobserve() {}
-  };
-};
-
-// Async test helpers
-export const waitForAsync = (ms: number = 0) =>
-  new Promise(resolve => setTimeout(resolve, ms));
-
-export const flushPromises = () => new Promise(setImmediate);
-
-// Mock API responses
-export const mockApiResponse = <T>(data: T) =>
+// Mock fetch for API testing
+global.fetch = jest.fn(() =>
   Promise.resolve({
     ok: true,
-    status: 200,
-    json: () => Promise.resolve(data),
-  } as Response);
+    json: () => Promise.resolve({}),
+    text: () => Promise.resolve(''),
+  })
+) as jest.MockedFunction<typeof fetch>
 
-export const mockApiError = (status: number = 400, message: string = 'Bad Request') =>
-  Promise.reject({
-    ok: false,
-    status,
-    json: () => Promise.resolve({ error: message }),
-  });
+// Export test utilities
+export const testUtils = {
+  // Mock Portuguese user data
+  mockPortugueseUser: {
+    id: 'user-123',
+    firstName: 'João',
+    lastName: 'Silva',
+    email: 'joao@example.com',
+    location: 'London, UK',
+    culturalBackground: 'Portuguese',
+    membershipTier: 'premium',
+    isVerified: true,
+    preferences: {
+      language: 'pt',
+      culturalInterests: ['fado', 'food', 'festivals'],
+      notificationSettings: {
+        events: true,
+        matches: true,
+        messages: true
+      }
+    }
+  },
 
-export default {
-  renderWithProviders,
-  setupTestEnvironment,
-  mockUser,
-  mockEvent,
-  createMockEvent,
-  createMockUser,
-  waitForAsync,
-  flushPromises,
-  mockApiResponse,
-  mockApiError,
-};
+  // Mock English user living in London
+  mockEnglishUser: {
+    id: 'user-456',
+    firstName: 'Sarah',
+    lastName: 'Johnson',
+    email: 'sarah@example.com',
+    location: 'Camden, London',
+    culturalBackground: 'British',
+    membershipTier: 'community',
+    isVerified: false,
+    preferences: {
+      language: 'en',
+      culturalInterests: ['networking', 'cultural-exchange'],
+      notificationSettings: {
+        events: true,
+        matches: false,
+        messages: true
+      }
+    }
+  },
+
+  // Mock Portuguese cultural events
+  mockPortugueseEvent: {
+    id: 'event-123',
+    title: 'Festa de São João',
+    title_en: 'St. John Festival',
+    description: 'Celebração tradicional portuguesa com música, dança e comida',
+    description_en: 'Traditional Portuguese celebration with music, dance and food',
+    date: '2024-06-24T19:00:00Z',
+    location: 'Portuguese Cultural Centre, London',
+    price: 20,
+    currency: 'GBP',
+    category: 'cultural',
+    cultural_tags: ['traditional', 'music', 'food', 'santos_populares'],
+    capacity: 100,
+    registered_count: 45,
+    image_url: 'https://example.com/sao-joao.jpg',
+    organizer: {
+      name: 'Centro Cultural Português',
+      verified: true
+    }
+  },
+
+  // Mock API responses
+  mockApiResponse: (data: any, status = 200) => {
+    return Promise.resolve({
+      ok: status >= 200 && status < 300,
+      status,
+      json: () => Promise.resolve(data),
+      text: () => Promise.resolve(JSON.stringify(data))
+    })
+  },
+
+  // Mock Supabase client
+  mockSupabaseClient: {
+    from: jest.fn().mockReturnThis(),
+    select: jest.fn().mockReturnThis(),
+    insert: jest.fn().mockReturnThis(),
+    update: jest.fn().mockReturnThis(),
+    delete: jest.fn().mockReturnThis(),
+    eq: jest.fn().mockReturnThis(),
+    order: jest.fn().mockReturnThis(),
+    limit: jest.fn().mockReturnThis(),
+    single: jest.fn().mockResolvedValue({ data: null, error: null })
+  },
+
+  // Mock Next.js router
+  mockRouter: {
+    push: jest.fn(),
+    replace: jest.fn(),
+    back: jest.fn(),
+    forward: jest.fn(),
+    refresh: jest.fn(),
+    pathname: '/',
+    query: {},
+    asPath: '/',
+    route: '/',
+    basePath: '',
+    isLocaleDomain: true,
+    isReady: true,
+    isPreview: false,
+    events: {
+      on: jest.fn(),
+      off: jest.fn(),
+      emit: jest.fn()
+    }
+  },
+
+  // Setup function for common test environment
+  setupTestEnvironment: () => {
+    // Mock window methods
+    window.scrollTo = jest.fn()
+    window.alert = jest.fn()
+    window.confirm = jest.fn(() => true)
+    
+    // Mock performance API
+    if (!window.performance) {
+      window.performance = {
+        now: jest.fn(() => Date.now()),
+        mark: jest.fn(),
+        measure: jest.fn()
+      } as any
+    }
+
+    // Mock getUserMedia for streaming tests
+    Object.defineProperty(navigator, 'mediaDevices', {
+      value: {
+        getUserMedia: jest.fn().mockResolvedValue({
+          getTracks: () => [],
+          getVideoTracks: () => [],
+          getAudioTracks: () => []
+        }),
+        enumerateDevices: jest.fn().mockResolvedValue([])
+      }
+    })
+  },
+
+  // Cleanup function
+  cleanupTestEnvironment: () => {
+    jest.clearAllMocks()
+    localStorageMock.clear()
+  }
+}
+
+export default testUtils

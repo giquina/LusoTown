@@ -8,12 +8,33 @@ import { communityStats } from '@/config/community'
 import { SUBSCRIPTION_PLANS, STUDENT_PRICING, formatPrice } from '@/config/pricing'
 import { IMAGES, UNIVERSITY_URLS } from '@/config/cdn'
 
-// Import new student-specific components
-import StudentEventsSection from '@/components/students/StudentEventsSection'
-import AcademicNetworkingSection from '@/components/students/AcademicNetworkingSection'
-import CareerHubSection from '@/components/students/CareerHubSection'
-import StudentDiscountsSection from '@/components/students/StudentDiscountsSection'
-import AccommodationSupportSection from '@/components/students/AccommodationSupportSection'
+import dynamic from 'next/dynamic'
+
+// Dynamic imports for heavy student components to improve performance
+const StudentEventsSection = dynamic(() => import('@/components/students/StudentEventsSection'), {
+  loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
+
+const AcademicNetworkingSection = dynamic(() => import('@/components/students/AcademicNetworkingSection'), {
+  loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
+
+const CareerHubSection = dynamic(() => import('@/components/students/CareerHubSection'), {
+  loading: () => <div className="h-56 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
+
+const StudentDiscountsSection = dynamic(() => import('@/components/students/StudentDiscountsSection'), {
+  loading: () => <div className="h-40 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
+
+const AccommodationSupportSection = dynamic(() => import('@/components/students/AccommodationSupportSection'), {
+  loading: () => <div className="h-44 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
 import { 
   AcademicCapIcon,
   StarIcon,
@@ -43,6 +64,13 @@ import {
   LanguageIcon
 } from '@heroicons/react/24/outline'
 import { CheckIcon as CheckIconSolid, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
+
+// Import new enhanced components
+import LusophoneFlagGrid from '@/components/students/LusophoneFlagGrid'
+import CulturalEventCards from '@/components/students/CulturalEventCards'
+import StudentJourneyVisualization from '@/components/students/StudentJourneyVisualization'
+import AccommodationHostFamilies from '@/components/students/AccommodationHostFamilies'
+import SuccessStoriesCarousel from '@/components/students/SuccessStoriesCarousel'
 
 interface University {
   id: string
@@ -378,78 +406,78 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     id: 'language-exchange',
     title: 'Free Portuguese Language Exchange Programs',
     titlePortuguese: 'Programas Gratuitos de Intercâmbio de Língua Portuguesa',
-    description: 'Weekly language exchange sessions with native Portuguese speakers and heritage learners. Improve your Portuguese while helping others learn English.',
-    descriptionPortuguese: 'Sessões semanais de intercâmbio linguístico com falantes nativos de português e estudantes de herança. Melhore o seu português enquanto ajuda outros a aprender inglês.',
+    description: 'Weekly language exchange sessions with native speakers from all Portuguese-speaking countries - from Lisbon to São Paulo, Luanda to Praia. Experience diverse accents, cultural expressions, and regional variations.',
+    descriptionPortuguese: 'Sessões semanais de intercâmbio linguístico com falantes nativos de todos os países lusófonos - de Lisboa a São Paulo, Luanda à Praia. Experiencie sotaques diversos, expressões culturais e variações regionais.',
     category: 'academic',
-    eligibility: ['University students', 'All Portuguese levels welcome'],
+    eligibility: ['University students', 'All Portuguese levels welcome', 'All Lusophone backgrounds'],
     verificationRequired: true,
     value: '£200 equivalent value'
   },
   {
     id: 'career-mentorship',
-    title: 'Portuguese Professional Mentorship Program',
-    titlePortuguese: 'Programa de Mentoria Profissional Portuguesa',
-    description: 'One-on-one mentorship with established Portuguese professionals in your field of study. Career guidance, industry insights, and networking opportunities.',
-    descriptionPortuguese: 'Mentoria individual com profissionais portugueses estabelecidos na sua área de estudo. Orientação profissional, insights da indústria e oportunidades de networking.',
+    title: 'Lusophone Professional Mentorship Program',
+    titlePortuguese: 'Programa de Mentoria Profissional Lusófona',
+    description: 'One-on-one mentorship with established Portuguese-speaking professionals from your cultural background - whether São Paulo business leaders, Luanda entrepreneurs, or Portuguese tech innovators. Find your mentor from any Portuguese-speaking nation.',
+    descriptionPortuguese: 'Mentoria individual com profissionais lusófonos estabelecidos da sua origem cultural - sejam líderes empresariais de São Paulo, empresários de Luanda, ou inovadores tecnológicos portugueses. Encontre o seu mentor de qualquer nação lusófona.',
     category: 'professional',
-    eligibility: ['Final year students', 'Recent graduates', 'All academic disciplines'],
+    eligibility: ['Final year students', 'Recent graduates', 'All academic disciplines', 'All Lusophone backgrounds'],
     verificationRequired: true,
     value: '£300+ equivalent value'
   },
   {
     id: 'study-groups',
-    title: 'Portuguese Student Study Groups',
-    titlePortuguese: 'Grupos de Estudo de Estudantes Portugueses',
-    description: 'Subject-specific study groups connecting Portuguese students across United Kingdom universities. Share resources, collaborate on projects, and support each other academically.',
-    descriptionPortuguese: 'Grupos de estudo específicos por disciplina conectando estudantes portugueses em universidades do Reino Unido. Partilhe recursos, colabore em projetos e apoiem-se mutuamente academicamente.',
+    title: 'Lusophone Student Study Groups',
+    titlePortuguese: 'Grupos de Estudo de Estudantes Lusófonos',
+    description: 'Subject-specific study groups connecting Portuguese-speaking students across United Kingdom universities. From Brazilian study groups to Portuguese academic workshops - collaborate with students who share your cultural background and language.',
+    descriptionPortuguese: 'Grupos de estudo específicos por disciplina conectando estudantes lusófonos em universidades do Reino Unido. De grupos de estudo brasileiros a workshops acadêmicos portugueses - colabore com estudantes que partilham a sua origem cultural e linguística.',
     category: 'academic',
-    eligibility: ['University students', 'All subjects welcome'],
+    eligibility: ['University students', 'All subjects welcome', 'All Lusophone backgrounds'],
     verificationRequired: true,
     value: 'Free collaboration platform'
   },
   {
     id: 'cultural-events',
-    title: 'Student-Exclusive Cultural Events',
-    titlePortuguese: 'Eventos Culturais Exclusivos para Estudantes',
-    description: 'Monthly cultural events designed specifically for Portuguese students: movie nights, traditional food experiences, fado evenings, and festival celebrations.',
-    descriptionPortuguese: 'Eventos culturais mensais desenhados especificamente para estudantes portugueses: noites de cinema, experiências de comida tradicional, noites de fado e celebrações de festivais.',
+    title: 'Student-Exclusive Lusophone Cultural Events',
+    titlePortuguese: 'Eventos Culturais Lusófonos Exclusivos para Estudantes',
+    description: 'Monthly multicultural events celebrating all Portuguese-speaking nations: Lusophone Music nights (Fado, Samba, Kizomba), Brazilian carnival celebrations, Angolan traditional dance, Cape Verdean morna evenings, and pan-Lusophone festivals.',
+    descriptionPortuguese: 'Eventos multiculturais mensais celebrando todas as nações lusófonas: noites de Música Lusófona (Fado, Samba, Kizomba), celebrações de carnaval brasileiro, dança tradicional angolana, noites de morna cabo-verdiana e festivais pan-lusófonos.',
     category: 'cultural',
-    eligibility: ['University students', 'Student verification required'],
+    eligibility: ['University students', 'Student verification required', 'All Lusophone backgrounds welcome'],
     verificationRequired: true,
-    value: 'Monthly cultural programming'
+    value: 'Monthly multicultural programming'
   },
   {
     id: 'internship-opportunities',
-    title: 'Portuguese Business Internship Network',
-    titlePortuguese: 'Rede de Estágios em Negócios Portugueses',
-    description: 'Exclusive access to internship opportunities with Portuguese businesses in London, United Kingdom, and Portugal. Gain professional experience in Portuguese-speaking environments.',
-    descriptionPortuguese: 'Acesso exclusivo a oportunidades de estágio com empresas portuguesas em Londres, Reino Unido e Portugal. Ganhe experiência profissional em ambientes de língua portuguesa.',
+    title: 'Lusophone Business Internship Network',
+    titlePortuguese: 'Rede de Estágios em Negócios Lusófonos',
+    description: 'Exclusive access to internship opportunities with Portuguese-speaking businesses in London, United Kingdom, Portugal, Brazil, Angola, and other Lusophone markets. Gain professional experience in culturally familiar environments.',
+    descriptionPortuguese: 'Acesso exclusivo a oportunidades de estágio com empresas lusófonas em Londres, Reino Unido, Portugal, Brasil, Angola e outros mercados lusófonos. Ganhe experiência profissional em ambientes culturalmente familiares.',
     category: 'professional',
-    eligibility: ['University students', 'Recent graduates', 'All disciplines considered'],
+    eligibility: ['University students', 'Recent graduates', 'All disciplines considered', 'All Lusophone backgrounds'],
     verificationRequired: true,
-    value: 'Career advancement opportunities'
+    value: 'Global career opportunities'
   },
   {
     id: 'academic-support',
-    title: 'Portuguese Academic Support Services',
-    titlePortuguese: 'Serviços de Apoio Acadêmico Português',
-    description: 'Academic writing support, research guidance, and dissertation help specifically for Portuguese-related studies. Connect with Portuguese academic mentors.',
-    descriptionPortuguese: 'Apoio à escrita acadêmica, orientação de pesquisa e ajuda com dissertações especificamente para estudos relacionados com Portugal. Conecte-se com mentores acadêmicos portugueses.',
+    title: 'Lusophone Academic Support Services',
+    titlePortuguese: 'Serviços de Apoio Acadêmico Lusófono',
+    description: 'Academic writing support, research guidance, and dissertation help for any Lusophone-related studies. Connect with academic mentors specializing in Portuguese, Brazilian, Angolan, Cape Verdean, and other Lusophone academic fields.',
+    descriptionPortuguese: 'Apoio à escrita acadêmica, orientação de pesquisa e ajuda com dissertações para estudos relacionados com qualquer área lusófona. Conecte-se com mentores acadêmicos especializados em áreas acadêmicas portuguesas, brasileiras, angolanas, cabo-verdianas e outras lusófonas.',
     category: 'academic',
-    eligibility: ['Students in Portuguese studies', 'Lusophone research students', 'Any Portuguese-related academic work'],
+    eligibility: ['Students in Lusophone studies', 'Portuguese-speaking research students', 'Any Lusophone-related academic work'],
     verificationRequired: true,
-    value: 'Specialized academic guidance'
+    value: 'Specialized multicultural guidance'
   },
   {
     id: 'networking-events',
-    title: 'Student Professional Networking Events',
-    titlePortuguese: 'Eventos de Networking Profissional para Estudantes',
-    description: 'Quarterly networking events connecting students with Portuguese professionals, entrepreneurs, and recent graduates. Build your professional network early.',
-    descriptionPortuguese: 'Eventos trimestrais de networking conectando estudantes com profissionais portugueses, empresários e recém-graduados. Construa a sua rede profissional desde cedo.',
+    title: 'Lusophone Professional Networking Events',
+    titlePortuguese: 'Eventos de Networking Profissional Lusófono',
+    description: 'Quarterly networking events connecting students with Portuguese-speaking professionals, entrepreneurs, and recent graduates from all 10 Lusophone countries. Build meaningful connections with professionals who understand your cultural background.',
+    descriptionPortuguese: 'Eventos trimestrais de networking conectando estudantes com profissionais lusófonos, empresários e recém-graduados dos 10 países lusófonos. Construa conexões significativas com profissionais que compreendem a sua origem cultural.',
     category: 'professional',
-    eligibility: ['University students', 'All years and disciplines'],
+    eligibility: ['University students', 'All years and disciplines', 'All Lusophone backgrounds'],
     verificationRequired: true,
-    value: 'Professional network building'
+    value: 'Multicultural professional network'
   },
   {
     id: 'live-streams',
@@ -554,18 +582,18 @@ const STUDENT_EVENTS: StudentEvent[] = [
     isStudentExclusive: true
   },
   {
-    id: 'fado-workshop',
-    title: 'Traditional Fado Workshop for Students',
-    titlePortuguese: 'Workshop de Fado Tradicional para Estudantes',
+    id: 'lusophone-music-workshop',
+    title: 'Lusophone Music Workshop: Fado, Samba & Kizomba',
+    titlePortuguese: 'Workshop de Música Lusófona: Fado, Samba e Kizomba',
     type: 'cultural',
     date: '2024-10-15',
     time: '19:30',
     location: 'Instituto Camões Centre London',
     price: 8,
     originalPrice: 25,
-    capacity: 30,
-    description: 'Learn about the history and techniques of Fado with professional Fado singers. Workshop includes basic guitar techniques and singing fundamentals.',
-    speakers: ['Maria João - Professional Fadista', 'António Silva - Portuguese Guitar Master'],
+    capacity: 50,
+    description: 'Explore the rich musical heritage of Portuguese-speaking countries! Learn Fado from Portugal 🇵🇹, Samba from Brazil 🇧🇷, and Kizomba from Angola 🇦🇴. Workshop includes instruments, dance basics, and cultural history.',
+    speakers: ['Maria João - Professional Fadista (Portugal)', 'Carlos Silva - Samba Musician (Brazil)', 'Ana Santos - Kizomba Dance Teacher (Angola)'],
     isStudentExclusive: true
   }
 ]
@@ -621,6 +649,22 @@ export default function StudentsPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
           <div className="relative container-width py-16 lg:py-24">
             <div className="text-center max-w-4xl mx-auto">
+              {/* PALOP Student Recognition Banner */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="mb-8"
+              >
+                <div className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500 text-white px-6 py-3 rounded-full font-bold text-sm shadow-xl">
+                  <GlobeAltIcon className="w-5 h-5" />
+                  <span>{t('palop.students.support', 'PALOP Student Support Network')}</span>
+                  <div className="flex gap-1">
+                    <span className="text-xs">🇦🇴🇨🇻🇬🇼🇲🇿🇸🇹</span>
+                  </div>
+                </div>
+              </motion.div>
+              
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -631,8 +675,8 @@ export default function StudentsPage() {
                   <AcademicCapIcon className="w-4 h-4 mr-2 text-secondary-600" />
                   <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
                     {language === 'pt'
-                      ? "Estudantes Portugueses • 8 Universidades Parceiras"
-                      : "Portuguese Students • 8 Partner Universities"}
+                      ? "Estudantes Lusófonos • 8 Universidades Parceiras"
+                      : "Lusophone Students • 8 Partner Universities"}
                   </span>
                 </span>
               </motion.div>
@@ -647,7 +691,7 @@ export default function StudentsPage() {
                 <span className="hidden sm:block">
                   {language === 'pt' ? (
                     <>
-                      Estudantes portugueses em
+                      Estudantes de língua portuguesa em
                       <br />
                       <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
                         universidades do Reino Unido
@@ -655,7 +699,7 @@ export default function StudentsPage() {
                     </>
                   ) : (
                     <>
-                      Portuguese students at
+                      Portuguese-speaking students at
                       <br />
                       <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
                         United Kingdom universities
@@ -670,12 +714,12 @@ export default function StudentsPage() {
                       Estudantes
                       <br />
                       <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
-                        Portugueses
+                        Lusófonos
                       </span>
                     </>
                   ) : (
                     <>
-                      Portuguese
+                      Lusophone
                       <br />
                       <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
                         Students
@@ -684,6 +728,18 @@ export default function StudentsPage() {
                   )}
                 </span>
               </motion.h1>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="text-lg font-medium text-gray-700 mb-6 max-w-4xl mx-auto"
+              >
+                {language === 'pt' ? 
+                  "Conecte-se com estudantes de Portugal 🇵🇹 Brasil 🇧🇷 Angola 🇦🇴 Cabo Verde 🇨🇻 Moçambique 🇲🇿 Guiné-Bissau 🇬🇼 São Tomé e Príncipe 🇸🇹 Timor-Leste 🇹🇱 Macau 🇲🇴 e Guiné Equatorial 🇬🇶" :
+                  "Connect with students from Portugal 🇵🇹 Brazil 🇧🇷 Angola 🇦🇴 Cape Verde 🇨🇻 Mozambique 🇲🇿 Guinea-Bissau 🇬🇼 São Tomé & Príncipe 🇸🇹 East Timor 🇹🇱 Macau 🇲🇴 and Equatorial Guinea 🇬🇶"
+                }
+              </motion.div>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -694,14 +750,14 @@ export default function StudentsPage() {
                 {/* Desktop full subtitle */}
                 <span className="hidden sm:block">
                   {language === 'pt'
-                    ? "Conecte-se com a maior comunidade de estudantes portugueses em universidades de Londres e do Reino Unido. Descontos exclusivos de 50%, eventos culturais autênticos, networking profissional e apoio académico especializado."
-                    : "Connect with the largest community of Portuguese students at London and United Kingdom universities. Exclusive 50% discounts, authentic cultural events, professional networking, and specialized academic support."}
+                    ? "Conecte-se com a maior comunidade de estudantes lusófonos em universidades de Londres e do Reino Unido. Descontos exclusivos de 50%, eventos culturais autênticos dos 10 países lusófonos, networking profissional e apoio académico especializado."
+                    : "Connect with the largest community of Portuguese-speaking students at London and United Kingdom universities. Exclusive 50% discounts, authentic cultural events from all 10 Lusophone countries, professional networking, and specialized academic support."}
                 </span>
                 {/* Mobile short subtitle */}
                 <span className="sm:hidden">
                   {language === 'pt'
-                    ? "Conecte-se com estudantes portugueses em universidades do Reino Unido. Descontos exclusivos, eventos culturais e networking profissional."
-                    : "Connect with Portuguese students at United Kingdom universities. Exclusive discounts, cultural events, and professional networking."}
+                    ? "Conecte-se com estudantes lusófonos em universidades do Reino Unido. Descontos exclusivos, eventos culturais multiculturais e networking profissional."
+                    : "Connect with Portuguese-speaking students at United Kingdom universities. Exclusive discounts, multicultural events, and professional networking."}
                 </span>
               </motion.p>
 
@@ -712,27 +768,27 @@ export default function StudentsPage() {
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6"
               >
                 <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                  <span>
+                  <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
+                  <span className="font-medium">
                     {language === 'pt'
-                      ? `${communityStats.viewers} Estudantes Portugueses`
-                      : `${communityStats.viewers} Portuguese Students`}
+                      ? `${communityStats.viewers} Estudantes de 10 Países Lusófonos`
+                      : `${communityStats.viewers} Students from 10 Lusophone Countries`}
                   </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
-                  <span>
+                  <div className="w-2 h-2 bg-secondary-500 rounded-full animate-pulse"></div>
+                  <span className="font-bold text-secondary-600">
                     {language === 'pt'
-                      ? "50% Desconto na Adesão"
-                      : "50% Membership Discount"}
+                      ? "50% DESCONTO - Apenas £9.99/mês"
+                      : "50% OFF - Only £9.99/month"}
                   </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
+                  <div className="w-2 h-2 bg-accent-500 rounded-full animate-pulse"></div>
                   <span>
                     {language === 'pt'
-                      ? "Eventos Exclusivos"
-                      : "Exclusive Events"}
+                      ? "Eventos Exclusivos + Mentoria"
+                      : "Exclusive Events + Mentorship"}
                   </span>
                 </div>
               </motion.div>
@@ -745,40 +801,77 @@ export default function StudentsPage() {
               >
                 <button
                   onClick={handleVerification}
-                  className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1"
+                  className="relative bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-10 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1 group"
                 >
-                  {language === 'pt' ? "Verificar Email Estudante" : "Verify Student Email"}
+                  <span className="flex items-center justify-center">
+                    <AcademicCapIcon className="w-5 h-5 mr-2" />
+                    {language === 'pt' ? "Junte-se à sua Comunidade Cultural" : "Join Your Cultural Academic Community"}
+                  </span>
+                  <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-bounce">
+                    {language === 'pt' ? "50% OFF" : "50% OFF"}
+                  </div>
                 </button>
                 <button
                   onClick={() => document.getElementById('partner-universities')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="border border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="border-2 border-primary-400 text-primary-700 px-8 py-4 rounded-2xl font-semibold hover:bg-primary-50 hover:border-primary-500 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center"
                 >
-                  {language === 'pt' ? "Ver Universidades Parceiras" : "View Partner Universities"}
+                  <GlobeAltIcon className="w-5 h-5 mr-2" />
+                  {language === 'pt' ? "Explorar 8 Universidades Parceiras" : "Explore 8 Partner Universities"}
                 </button>
               </motion.div>
+              
+              {/* Urgency Banner */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.35 }}
+                className="bg-gradient-to-r from-yellow-100 to-orange-100 border border-orange-200 rounded-xl p-4 mb-8 text-center max-w-2xl mx-auto"
+              >
+                <div className="flex items-center justify-center mb-2">
+                  <ClockIcon className="w-5 h-5 text-orange-600 mr-2" />
+                  <span className="font-bold text-orange-800">
+                    {language === 'pt' ? "Oferta Limitada para Estudantes" : "Limited Time Student Offer"}
+                  </span>
+                </div>
+                <p className="text-sm text-orange-700">
+                  {language === 'pt' 
+                    ? "Verificação gratuita + 30 dias de garantia de devolução do dinheiro. Já aderiram mais de 2150+ estudantes!"
+                    : "Free verification + 30-day money back guarantee. Over 2150+ students already joined!"}
+                </p>
+              </motion.div>
 
-              {/* Key Statistics */}
+              {/* Enhanced Success Metrics */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.35 }}
-                className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto"
               >
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                  <div className="text-2xl font-bold text-primary-600 mb-1">{communityStats.viewers}</div>
-                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Estudantes Portugueses no Reino Unido' : 'Portuguese Students in United Kingdom'}</div>
+                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-primary-100 hover:shadow-xl transition-all duration-300">
+                  <div className="text-2xl font-bold text-primary-600 mb-1 flex items-center">
+                    {communityStats.viewers}
+                    <span className="text-xs ml-1">🇵🇹🇧🇷🇦🇴</span>
+                  </div>
+                  <div className="text-xs text-gray-600 font-medium">{language === 'pt' ? 'Estudantes Lusófonos' : 'Lusophone Students'}</div>
+                  <div className="text-xs text-primary-600 mt-1">{language === 'pt' ? 'De 10 países' : 'From 10 countries'}</div>
                 </div>
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                  <div className="text-2xl font-bold text-secondary-600 mb-1">8</div>
-                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Universidades Parceiras' : 'Partner Universities'}</div>
+                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-secondary-100 hover:shadow-xl transition-all duration-300">
+                  <div className="text-2xl font-bold text-secondary-600 mb-1">94%</div>
+                  <div className="text-xs text-gray-600 font-medium">{language === 'pt' ? 'Taxa de Sucesso' : 'Success Rate'}</div>
+                  <div className="text-xs text-secondary-600 mt-1">{language === 'pt' ? 'Graduação' : 'Graduation'}</div>
                 </div>
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                  <div className="text-2xl font-bold text-accent-600 mb-1">50%</div>
-                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Desconto Estudante' : 'Student Discount'}</div>
+                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-accent-100 hover:shadow-xl transition-all duration-300">
+                  <div className="text-2xl font-bold text-accent-600 mb-1">87%</div>
+                  <div className="text-xs text-gray-600 font-medium">{language === 'pt' ? 'Colocação Career' : 'Career Placement'}</div>
+                  <div className="text-xs text-accent-600 mt-1">{language === 'pt' ? '6 meses' : '6 months'}</div>
                 </div>
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-premium-100 hover:shadow-xl transition-all duration-300 relative">
                   <div className="text-2xl font-bold text-premium-600 mb-1">£9.99</div>
-                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Por mês (estudante)' : 'Per month (student)'}</div>
+                  <div className="text-xs text-gray-600 font-medium">{language === 'pt' ? 'Por mês' : 'Per month'}</div>
+                  <div className="text-xs text-red-600 mt-1 font-semibold">{language === 'pt' ? '50% desconto!' : '50% off!'}</div>
+                  <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
+                    {language === 'pt' ? 'OFERTA' : 'OFFER'}
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -794,8 +887,8 @@ export default function StudentsPage() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {language === 'pt' ?
-                  'Descontos especiais, eventos exclusivos e apoio acadêmico para estudantes portugueses que estudam em universidades de Londres e do Reino Unido' :
-                  'Special discounts, exclusive events, and academic support for Portuguese students studying at London and United Kingdom universities'
+                  'Descontos especiais, eventos exclusivos e apoio acadêmico para estudantes lusófonos de todas as 10 nações que falam português, estudando em universidades de Londres e do Reino Unido' :
+                  'Special discounts, exclusive events, and academic support for Portuguese-speaking students from all 10 Lusophone nations studying at London and United Kingdom universities'
                 }
               </p>
 
@@ -878,24 +971,52 @@ export default function StudentsPage() {
               ))}
             </div>
 
-            {/* Value Proposition */}
-            <div className="bg-gradient-to-r from-secondary-50 to-primary-50 rounded-2xl p-8 text-center">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {language === 'pt' ? 'Valor Total dos Benefícios para Estudantes' : 'Total Value of Student Benefits'}
+            {/* Enhanced Value Proposition */}
+            <div className="bg-gradient-to-br from-secondary-50 via-primary-50 to-accent-50 rounded-2xl p-8 text-center border border-secondary-200 shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                {language === 'pt' ? '🎯 Valor Excepcional para Sua Educação Cultural' : '🎯 Exceptional Value for Your Cultural Education'}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div>
-                  <div className="text-3xl font-bold text-secondary-600 mb-2">£800+</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Valor anual em benefícios' : 'Annual value in benefits'}</div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
+                  <div className="text-4xl font-bold text-secondary-600 mb-2">£1,200+</div>
+                  <div className="text-sm text-gray-600 mb-2">{language === 'pt' ? 'Valor anual em benefícios' : 'Annual value in benefits'}</div>
+                  <div className="text-xs text-secondary-600">{language === 'pt' ? 'Mentoria + Eventos + Networking' : 'Mentorship + Events + Networking'}</div>
                 </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary-600 mb-2">£9.99</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Custo anual para estudantes' : 'Annual cost for students'}</div>
+                <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border-2 border-primary-200">
+                  <div className="text-4xl font-bold text-primary-600 mb-2">£9.99</div>
+                  <div className="text-sm text-gray-600 mb-2">{language === 'pt' ? 'Custo mensal estudante' : 'Monthly student cost'}</div>
+                  <div className="text-xs text-primary-600 font-semibold">{language === 'pt' ? '50% desconto garantido' : '50% discount guaranteed'}</div>
                 </div>
-                <div>
-                  <div className="text-3xl font-bold text-secondary-600 mb-2">6400%</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Retorno do investimento' : 'Return on investment'}</div>
+                <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
+                  <div className="text-4xl font-bold text-accent-600 mb-2">1200%</div>
+                  <div className="text-sm text-gray-600 mb-2">{language === 'pt' ? 'Retorno do investimento' : 'Return on investment'}</div>
+                  <div className="text-xs text-accent-600">{language === 'pt' ? 'ROI comprovado' : 'Proven ROI'}</div>
                 </div>
+              </div>
+              
+              {/* Multiple Strong CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={handleVerification}
+                  className="bg-gradient-to-r from-secondary-600 to-primary-600 text-white px-8 py-4 rounded-xl font-bold hover:from-secondary-700 hover:to-primary-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center"
+                >
+                  <SparklesIcon className="w-5 h-5 mr-2" />
+                  {language === 'pt' ? 'Começar Agora - Verificação Gratuita' : 'Start Now - Free Verification'}
+                </button>
+                <button
+                  onClick={() => window.open('https://calendly.com/lusotown-demo', '_blank')}
+                  className="border-2 border-primary-600 text-primary-700 px-6 py-4 rounded-xl font-semibold hover:bg-primary-50 transition-all duration-300 flex items-center justify-center"
+                >
+                  <VideoCameraIcon className="w-5 h-5 mr-2" />
+                  {language === 'pt' ? 'Demo Personalizada' : 'Personal Demo'}
+                </button>
+              </div>
+              
+              <div className="mt-4 text-sm text-gray-600">
+                {language === 'pt' ? 
+                  '✅ 30 dias garantia de devolução • ✅ Sem taxas ocultas • ✅ Cancele quando quiser' :
+                  '✅ 30-day money back guarantee • ✅ No hidden fees • ✅ Cancel anytime'
+                }
               </div>
             </div>
           </div>
@@ -1062,7 +1183,7 @@ export default function StudentsPage() {
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary-600 mb-2">{communityStats.viewers}</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Estudantes Portugueses Apoiados' : 'Portuguese Students Supported'}</div>
+                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Estudantes Lusófonos Apoiados' : 'Portuguese-speaking Students Supported'}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-secondary-600 mb-2">45</div>
@@ -1081,8 +1202,935 @@ export default function StudentsPage() {
           </div>
         </section>
 
+        {/* University Societies Network Section */}
+        <section className="py-20 bg-gradient-to-br from-accent-50 via-white to-primary-50">
+          <div className="container-width">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center bg-gradient-to-r from-accent-100 to-primary-100 px-6 py-3 rounded-full mb-6">
+                <UsersIcon className="w-5 h-5 mr-2 text-accent-600" />
+                <span className="font-bold text-accent-700">
+                  {language === 'pt' ? '🤝 50+ Sociedades • Unidos pela Língua' : '🤝 50+ Societies • United by Language'}
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                {language === 'pt' ? 'Rede de Sociedades Universitárias' : 'University Societies Network'}
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                {language === 'pt'
+                  ? 'Conecte sociedades lusófonas de universidades do Reino Unido. Planeie eventos em conjunto, partilhe recursos e crie celebrações culturais maiores.'
+                  : 'Connect Portuguese-speaking societies across UK universities. Plan joint events, share resources, and create larger cultural celebrations together.'
+                }
+              </p>
+              
+              {/* Key Statistics */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
+                <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100">
+                  <div className="text-2xl font-bold text-accent-600 mb-1">50+</div>
+                  <div className="text-sm text-gray-600">
+                    {language === 'pt' ? 'Sociedades Lusófonas' : 'Portuguese-speaking Societies'}
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100">
+                  <div className="text-2xl font-bold text-primary-600 mb-1">300+</div>
+                  <div className="text-sm text-gray-600">
+                    {language === 'pt' ? 'Participação Conjunta' : 'Combined Attendance'}
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100">
+                  <div className="text-2xl font-bold text-secondary-600 mb-1">12</div>
+                  <div className="text-sm text-gray-600">
+                    {language === 'pt' ? 'Cidades do Reino Unido' : 'UK Cities Connected'}
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100">
+                  <div className="text-2xl font-bold text-green-600 mb-1">£15k</div>
+                  <div className="text-sm text-gray-600">
+                    {language === 'pt' ? 'Arrecadado para Caridade' : 'Raised for Charity'}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* How It Works - Simple Steps */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-16">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {language === 'pt' ? 'Como Funciona?' : 'How It Works?'}
+                </h3>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  {language === 'pt'
+                    ? 'Três passos simples para conectar sua sociedade lusófona com outras em todo o Reino Unido'
+                    : 'Three simple steps to connect your Portuguese-speaking society with others across the UK'
+                  }
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="bg-gradient-to-br from-blue-100 to-primary-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-3xl font-bold text-primary-600">1</span>
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">
+                    {language === 'pt' ? '📝 Crie o Perfil da Sociedade' : '📝 Create Society Profile'}
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    {language === 'pt'
+                      ? 'Registe a sua sociedade lusófona gratuitamente. Adicione informações básicas, número de membros e contacto do presidente.'
+                      : 'Register your Portuguese-speaking society for free. Add basic info, member count, and president contact.'
+                    }
+                  </p>
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                    <span className="text-green-700 font-medium text-sm">
+                      {language === 'pt' ? '💰 Plano Gratuito Disponível' : '💰 Free Plan Available'}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <div className="bg-gradient-to-br from-green-100 to-accent-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-3xl font-bold text-accent-600">2</span>
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">
+                    {language === 'pt' ? '🤝 Conecte com Outras Sociedades' : '🤝 Connect with Other Societies'}
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    {language === 'pt'
+                      ? 'Navegue no diretório de 50+ sociedades lusófonas. Contacte presidentes de Oxford a Edimburgo, Manchester a Cardiff.'
+                      : 'Browse directory of 50+ Portuguese-speaking societies. Contact presidents from Oxford to Edinburgh, Manchester to Cardiff.'
+                    }
+                  </p>
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                    <span className="text-blue-700 font-medium text-sm">
+                      {language === 'pt' ? '🌍 50+ Sociedades no Reino Unido' : '🌍 50+ Societies Across UK'}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <div className="bg-gradient-to-br from-yellow-100 to-orange-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-3xl font-bold text-orange-600">3</span>
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">
+                    {language === 'pt' ? '🎉 Planeie Eventos Conjuntos' : '🎉 Plan Joint Events'}
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    {language === 'pt'
+                      ? 'Use ferramentas de planeamento para organizar eventos culturais maiores. Divida custos, partilhe receitas, conecte comunidades.'
+                      : 'Use planning tools to organize bigger cultural events. Split costs, share revenues, connect communities.'
+                    }
+                  </p>
+                  <div className="bg-purple-50 border border-purple-200 rounded-lg p-3">
+                    <span className="text-purple-700 font-medium text-sm">
+                      {language === 'pt' ? '🏆 Eventos de 300+ Pessoas' : '🏆 Events with 300+ Attendance'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Real Example */}
+              <div className="mt-12 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6 border border-yellow-200">
+                <div className="text-center mb-4">
+                  <h4 className="text-lg font-bold text-gray-900 flex items-center justify-center">
+                    <TrophyIcon className="w-5 h-5 mr-2 text-yellow-600" />
+                    {language === 'pt' ? 'Exemplo Real: Como Funciona na Prática' : 'Real Example: How It Works in Practice'}
+                  </h4>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                  <div className="bg-white rounded-lg p-4 border border-yellow-100">
+                    <div className="text-sm font-medium text-gray-900 mb-1">
+                      {language === 'pt' ? '1. UCL Sociedade Portuguesa' : '1. UCL Portuguese Society'}
+                    </div>
+                    <div className="text-xs text-gray-600">
+                      {language === 'pt' ? 'Propõe festival cultural' : 'Proposes cultural festival'}
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 border border-yellow-100">
+                    <div className="text-sm font-medium text-gray-900 mb-1">
+                      {language === 'pt' ? '2. + 7 Sociedades de Londres' : '2. + 7 London Societies'}
+                    </div>
+                    <div className="text-xs text-gray-600">
+                      {language === 'pt' ? 'Juntam-se no planeamento' : 'Join planning platform'}
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 border border-yellow-100">
+                    <div className="text-sm font-medium text-gray-900 mb-1">
+                      {language === 'pt' ? '3. Planeamento Conjunto' : '3. Joint Planning'}
+                    </div>
+                    <div className="text-xs text-gray-600">
+                      {language === 'pt' ? 'Orçamento, locais, performers' : 'Budget, venues, performers'}
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 border border-yellow-100">
+                    <div className="text-sm font-medium text-gray-900 mb-1">
+                      {language === 'pt' ? '4. Festival de Herança' : '4. Heritage Festival'}
+                    </div>
+                    <div className="text-xs text-gray-600">
+                      {language === 'pt' ? '1.200+ estudantes, £15k caridade' : '1,200+ students, £15k charity'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Student Benefits Explanation */}
+              <div className="mt-8 bg-gradient-to-r from-blue-50 to-green-50 rounded-xl p-6 border border-blue-200">
+                <h4 className="text-lg font-bold text-gray-900 mb-4 text-center">
+                  {language === 'pt' ? 'O Que Isto Significa Para Estudantes?' : 'What Does This Mean for Students?'}
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-2 flex items-center">
+                      <SparklesIcon className="w-4 h-4 mr-2 text-blue-600" />
+                      {language === 'pt' ? 'Eventos Maiores e Melhores' : 'Bigger & Better Events'}
+                    </h5>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      <li>• {language === 'pt' ? 'Festivais com 300+ estudantes lusófonos' : 'Festivals with 300+ Portuguese-speaking students'}</li>
+                      <li>• {language === 'pt' ? 'Mais patrocinadores e melhores locais' : 'More sponsors and better venues'}</li>
+                      <li>• {language === 'pt' ? 'Performers de qualidade profissional' : 'Professional-quality performers'}</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-900 mb-2 flex items-center">
+                      <HeartIcon className="w-4 h-4 mr-2 text-green-600" />
+                      {language === 'pt' ? 'Mais Conexões Culturais' : 'More Cultural Connections'}
+                    </h5>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      <li>• {language === 'pt' ? 'Conhecer estudantes de outras universidades' : 'Meet students from other universities'}</li>
+                      <li>• {language === 'pt' ? 'Celebrar TODAS as culturas lusófonas' : 'Celebrate ALL Portuguese-speaking cultures'}</li>
+                      <li>• {language === 'pt' ? 'Network profissional mais forte' : 'Stronger professional network'}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Features Showcase */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="bg-accent-100 rounded-lg p-3 w-fit mb-4">
+                  <BuildingLibraryIcon className="w-6 h-6 text-accent-600" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {language === 'pt' ? 'Diretório de Sociedades' : 'Society Directory & Networking'}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {language === 'pt'
+                    ? 'Navegue sociedades lusófonas de todas as universidades do Reino Unido. Conecte-se com presidentes e membros do comité.'
+                    : 'Browse Portuguese-speaking societies across all UK universities. Connect with presidents and committee members.'
+                  }
+                </p>
+                <div className="flex items-center text-accent-600 font-medium text-sm">
+                  <UsersIcon className="w-4 h-4 mr-2" />
+                  {language === 'pt' ? 'Londres a Edimburgo' : 'London to Edinburgh'}
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="bg-primary-100 rounded-lg p-3 w-fit mb-4">
+                  <CalendarDaysIcon className="w-6 h-6 text-primary-600" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {language === 'pt' ? 'Planeamento de Eventos' : 'Joint Event Planning Tools'}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {language === 'pt'
+                    ? 'Coordene eventos culturais multi-universitários. Partilha de orçamentos e divisão automática de custos.'
+                    : 'Coordinate multi-university cultural events. Shared budget tracking and automatic cost splitting.'
+                  }
+                </p>
+                <div className="flex items-center text-primary-600 font-medium text-sm">
+                  <BanknotesIcon className="w-4 h-4 mr-2" />
+                  {language === 'pt' ? 'Gestão de Receitas' : 'Revenue Sharing'}
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="bg-secondary-100 rounded-lg p-3 w-fit mb-4">
+                  <LinkIcon className="w-6 h-6 text-secondary-600" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {language === 'pt' ? 'Partilha de Recursos' : 'Resource Sharing Network'}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {language === 'pt'
+                    ? 'Partilhe performers culturais, oradores e equipamento. Coordene reservas de locais entre cidades.'
+                    : 'Share cultural performers, speakers, and equipment. Coordinate venue bookings across cities.'
+                  }
+                </p>
+                <div className="flex items-center text-secondary-600 font-medium text-sm">
+                  <SparklesIcon className="w-4 h-4 mr-2" />
+                  {language === 'pt' ? 'Base de Patrocinadores' : 'Sponsor Database'}
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="bg-green-100 rounded-lg p-3 w-fit mb-4">
+                  <TrophyIcon className="w-6 h-6 text-green-600" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {language === 'pt' ? 'Histórias de Sucesso' : 'Success Stories Showcase'}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {language === 'pt'
+                    ? 'Celebre conquistas conjuntas. Festival de Herança Portuguesa de Londres 2024: 8 sociedades, 1.200+ estudantes.'
+                    : 'Celebrate joint achievements. London Portuguese Heritage Festival 2024: 8 societies, 1,200+ students.'
+                  }
+                </p>
+                <div className="flex items-center text-green-600 font-medium text-sm">
+                  <StarIcon className="w-4 h-4 mr-2" />
+                  {language === 'pt' ? 'Eventos Premiados' : 'Award-Winning Events'}
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Society Directory Preview */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-16">
+              <div className="flex items-center justify-between mb-8">
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {language === 'pt' ? 'Sociedades Lusófonas em Destaque' : 'Featured Portuguese-Speaking University Societies'}
+                </h3>
+                <button className="flex items-center text-accent-600 font-medium hover:text-accent-700 transition-colors">
+                  {language === 'pt' ? 'Ver Todas' : 'View All'}
+                  <ArrowRightIcon className="w-4 h-4 ml-2" />
+                </button>
+              </div>
+
+              {/* London Universities */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                  <MapPinIcon className="w-5 h-5 mr-2 text-primary-600" />
+                  {language === 'pt' ? '🏫 Universidades de Londres' : '🏫 London Universities'}
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {[
+                    { name: 'UCL Portuguese-Speaking Society', members: 420, university: 'University College London' },
+                    { name: "King's College Lusophone Society", members: 380, university: "King's College London" },
+                    { name: 'Imperial Portuguese Language Society', members: 290, university: 'Imperial College London' },
+                    { name: 'LSE Portuguese-Speaking Students', members: 350, university: 'London School of Economics' },
+                    { name: 'Queen Mary Portuguese Cultural Society', members: 180, university: 'Queen Mary University' }
+                  ].slice(0, 3).map((society, index) => (
+                    <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                      <h5 className="font-medium text-gray-900 mb-1 text-sm">{society.name}</h5>
+                      <p className="text-xs text-gray-600 mb-2">{society.university}</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-primary-600 font-medium">
+                          {society.members} {language === 'pt' ? 'membros' : 'members'}
+                        </span>
+                        <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-medium">
+                          {language === 'pt' ? 'Ativa' : 'Active'}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Major UK Universities */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                  <GlobeAltIcon className="w-5 h-5 mr-2 text-secondary-600" />
+                  {language === 'pt' ? '🎓 Principais Universidades do Reino Unido' : '🎓 Major UK Universities'}
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {[
+                    { name: 'Oxford Portuguese-Speaking Society', members: 95, city: 'Oxford' },
+                    { name: 'Cambridge Lusophone Cultural Society', members: 110, city: 'Cambridge' },
+                    { name: 'Manchester Portuguese Language Society', members: 290, city: 'Manchester' },
+                    { name: 'Edinburgh Portuguese-Speaking Society', members: 180, city: 'Edinburgh' }
+                  ].map((society, index) => (
+                    <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                      <h5 className="font-medium text-gray-900 mb-1 text-sm">{society.name}</h5>
+                      <p className="text-xs text-gray-600 mb-2">{society.city}</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-secondary-600 font-medium">
+                          {society.members} {language === 'pt' ? 'membros' : 'members'}
+                        </span>
+                        <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium">
+                          {language === 'pt' ? 'Parceira' : 'Partner'}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Regional Networks */}
+              <div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                  <MapPinIcon className="w-5 h-5 mr-2 text-green-600" />
+                  {language === 'pt' ? '🌍 Redes Regionais' : '🌍 Regional Networks'}
+                </h4>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                  {[
+                    { name: 'Birmingham Portuguese-Speaking Students', members: 200 },
+                    { name: 'Leeds Portuguese Cultural Society', members: 150 },
+                    { name: 'Bristol Lusophone Society', members: 160 },
+                    { name: 'Glasgow Portuguese Language Society', members: 90 },
+                    { name: 'Cardiff Portuguese-Speaking Society', members: 110 }
+                  ].map((society, index) => (
+                    <div key={index} className="bg-gradient-to-br from-green-50 to-blue-50 rounded-lg p-3 border border-green-100">
+                      <h5 className="font-medium text-gray-900 mb-1 text-xs">{society.name}</h5>
+                      <span className="text-xs text-green-600 font-medium">
+                        {society.members} {language === 'pt' ? 'membros' : 'members'}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Yearly Subscription Pricing */}
+            <div className="bg-gradient-to-r from-accent-500 to-primary-500 rounded-2xl p-8 text-white mb-16">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                  {language === 'pt' ? 'Planos Anuais para Sociedades Universitárias' : 'University Society Annual Plans'}
+                </h3>
+                <p className="text-accent-100 max-w-2xl mx-auto">
+                  {language === 'pt'
+                    ? 'Conecte sua sociedade lusófona com 50+ outras sociedades em todo o Reino Unido'
+                    : 'Connect your Portuguese-speaking society with 50+ others across the United Kingdom'
+                  }
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Free Starter Plan */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                  <div className="text-center mb-6">
+                    <h4 className="text-xl font-bold mb-2">
+                      {language === 'pt' ? 'Plano Inicial' : 'Free Starter Plan'}
+                    </h4>
+                    <div className="text-3xl font-bold mb-1">£0</div>
+                    <div className="text-accent-100 text-sm">
+                      {language === 'pt' ? 'Para sempre' : 'Forever'}
+                    </div>
+                  </div>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-300 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Perfil básico no diretório' : 'Basic society profile in directory'}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-300 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Contactos de outras sociedades' : 'Browse other society contacts'}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-300 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Partilha simples de eventos' : 'Simple event sharing'}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-300 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Mensagens básicas' : 'Basic messaging between societies'}
+                      </span>
+                    </li>
+                  </ul>
+                  <button className="w-full bg-white/20 hover:bg-white/30 text-white font-medium py-3 px-4 rounded-lg transition-colors">
+                    {language === 'pt' ? 'Começar Grátis' : 'Start Free'}
+                  </button>
+                </div>
+
+                {/* Premium Collaboration Plan */}
+                <div className="bg-white rounded-xl p-6 text-gray-900 relative border-2 border-yellow-300">
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-yellow-300 text-yellow-800 px-3 py-1 rounded-full text-xs font-bold">
+                      {language === 'pt' ? 'MAIS POPULAR' : 'MOST POPULAR'}
+                    </span>
+                  </div>
+                  <div className="text-center mb-6">
+                    <h4 className="text-xl font-bold mb-2">
+                      {language === 'pt' ? 'Plano Colaboração' : 'Premium Collaboration Plan'}
+                    </h4>
+                    <div className="text-3xl font-bold mb-1 text-accent-600">£75</div>
+                    <div className="text-gray-600 text-sm mb-2">
+                      {language === 'pt' ? 'por ano' : 'per year'}
+                    </div>
+                    <div className="text-green-600 text-xs font-medium">
+                      {language === 'pt' ? 'Poupe £21 (era £8/mês)' : 'Save £21 (was £8/month)'}
+                    </div>
+                  </div>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-500 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Dashboard avançado de planeamento' : 'Advanced joint event planning dashboard'}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-500 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Divisão automática de orçamentos' : 'Shared budget tracking and expense splitting'}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-500 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Base de dados de patrocinadores' : 'Corporate sponsor matching database'}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-500 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Gestão de projetos multi-sociedade' : 'Multi-society project management tools'}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-500 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Partilha de receitas (2% comissão)' : 'Revenue sharing for ticket sales (2% commission)'}
+                      </span>
+                    </li>
+                  </ul>
+                  <button className="w-full bg-gradient-to-r from-accent-500 to-primary-500 hover:from-accent-600 hover:to-primary-600 text-white font-medium py-3 px-4 rounded-lg transition-all">
+                    {language === 'pt' ? 'Escolher Plano' : 'Choose Plan'}
+                  </button>
+                </div>
+
+                {/* Multi-Society University Plan */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                  <div className="text-center mb-6">
+                    <h4 className="text-xl font-bold mb-2">
+                      {language === 'pt' ? 'Plano Multi-Sociedade' : 'Multi-Society University Plan'}
+                    </h4>
+                    <div className="text-3xl font-bold mb-1">£120</div>
+                    <div className="text-accent-100 text-sm">
+                      {language === 'pt' ? 'por ano' : 'per year'}
+                    </div>
+                  </div>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-300 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Múltiplas sociedades numa conta' : 'Manage multiple societies under one account'}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-300 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Coordenação entre sociedades' : 'Cross-society coordination tools'}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-300 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Planeamento universitário completo' : 'University-wide event planning'}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-300 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Parcerias corporativas avançadas' : 'Enhanced corporate partnership opportunities'}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckIconSolid className="w-5 h-5 text-green-300 mr-3" />
+                      <span className="text-sm">
+                        {language === 'pt' ? 'Gestão de conta dedicada' : 'Dedicated account management support'}
+                      </span>
+                    </li>
+                  </ul>
+                  <button className="w-full bg-white/20 hover:bg-white/30 text-white font-medium py-3 px-4 rounded-lg transition-colors">
+                    {language === 'pt' ? 'Contactar Vendas' : 'Contact Sales'}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Success Stories */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-16">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {language === 'pt' ? 'Histórias de Sucesso em Colaboração' : 'Collaboration Success Stories'}
+                </h3>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  {language === 'pt'
+                    ? 'Celebrando conquistas extraordinárias quando sociedades lusófonas se unem'
+                    : 'Celebrating extraordinary achievements when Portuguese-speaking societies unite'
+                  }
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-6 border border-yellow-100">
+                  <div className="text-center mb-4">
+                    <TrophyIcon className="w-8 h-8 text-yellow-600 mx-auto mb-2" />
+                    <h4 className="font-bold text-gray-900">
+                      {language === 'pt' ? 'Festival de Herança Portuguesa de Londres 2024' : 'London Portuguese Heritage Festival 2024'}
+                    </h4>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 text-center mb-4">
+                    <div>
+                      <div className="text-xl font-bold text-yellow-600">8</div>
+                      <div className="text-xs text-gray-600">
+                        {language === 'pt' ? 'Sociedades' : 'Societies'}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-xl font-bold text-yellow-600">1,200+</div>
+                      <div className="text-xs text-gray-600">
+                        {language === 'pt' ? 'Estudantes' : 'Students'}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-xl font-bold text-yellow-600">£15k</div>
+                      <div className="text-xs text-gray-600">
+                        {language === 'pt' ? 'Caridade' : 'Charity'}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-600">
+                    {language === 'pt'
+                      ? 'O maior evento cultural lusófono estudantil do Reino Unido'
+                      : 'The largest student Portuguese-speaking cultural event in the UK'
+                    }
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl p-6 border border-blue-100">
+                  <div className="text-center mb-4">
+                    <GlobeAltIcon className="w-8 h-8 text-blue-600 mx-auto mb-2" />
+                    <h4 className="font-bold text-gray-900">
+                      {language === 'pt' ? 'Mês Cultural de Estudantes Lusófonos do Reino Unido' : 'UK Portuguese-Speaking Students Cultural Month'}
+                    </h4>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 text-center mb-4">
+                    <div>
+                      <div className="text-xl font-bold text-blue-600">12</div>
+                      <div className="text-xs text-gray-600">
+                        {language === 'pt' ? 'Universidades' : 'Universities'}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-xl font-bold text-blue-600">30</div>
+                      <div className="text-xs text-gray-600">
+                        {language === 'pt' ? 'Eventos' : 'Events'}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-xl font-bold text-blue-600">2,000+</div>
+                      <div className="text-xs text-gray-600">
+                        {language === 'pt' ? 'Participação' : 'Attendance'}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-600">
+                    {language === 'pt'
+                      ? 'Celebração coordenada da diversidade lusófona em todo o Reino Unido'
+                      : 'Coordinated celebration of Lusophone diversity across the United Kingdom'
+                    }
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-green-50 to-purple-50 rounded-xl p-6 border border-green-100">
+                  <div className="text-center mb-4">
+                    <MapPinIcon className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                    <h4 className="font-bold text-gray-900">
+                      {language === 'pt' ? 'Circuito de Celebrações Culturais' : 'Cultural Celebration Circuit'}
+                    </h4>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 text-center mb-4">
+                    <div>
+                      <div className="text-xl font-bold text-green-600">6</div>
+                      <div className="text-xs text-gray-600">
+                        {language === 'pt' ? 'Cidades' : 'Cities'}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-xl font-bold text-green-600">3,000+</div>
+                      <div className="text-xs text-gray-600">
+                        {language === 'pt' ? 'Participação' : 'Combined'}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-xl font-bold text-green-600">95%</div>
+                      <div className="text-xs text-gray-600">
+                        {language === 'pt' ? 'Satisfação' : 'Satisfaction'}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-600">
+                    {language === 'pt'
+                      ? 'Turnê cultural conectando sociedades lusófonas de Londres a Edimburgo'
+                      : 'Cultural tour connecting Portuguese-speaking societies from London to Edinburgh'
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Cultural Event Categories */}
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 mb-16">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  {language === 'pt' ? 'Tipos de Eventos em Colaboração' : 'Joint Event Categories'}
+                </h3>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  {language === 'pt'
+                    ? 'Explore as categorias de eventos culturais que as sociedades lusófonas organizam em conjunto'
+                    : 'Explore the cultural event categories that Portuguese-speaking societies organize together'
+                  }
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  { 
+                    icon: '🎭', 
+                    title: language === 'pt' ? 'Eventos de Herança Cultural' : 'Cultural Heritage Events',
+                    description: language === 'pt' ? 'Festivais de língua portuguesa, celebrações de herança cultural' : 'Portuguese language festivals, cultural heritage celebrations'
+                  },
+                  { 
+                    icon: '🎵', 
+                    title: language === 'pt' ? 'Música e Artes' : 'Music & Arts',
+                    description: language === 'pt' ? 'Música tradicional e contemporânea lusófona, workshops de dança' : 'Traditional and contemporary Portuguese-speaking music events, dance workshops'
+                  },
+                  { 
+                    icon: '🏢', 
+                    title: language === 'pt' ? 'Desenvolvimento Profissional' : 'Professional Development',
+                    description: language === 'pt' ? 'Networking de carreira, conexões empresariais lusófonas' : 'Career networking, Portuguese-speaking business connections'
+                  },
+                  { 
+                    icon: '🎓', 
+                    title: language === 'pt' ? 'Acadêmico e Educacional' : 'Academic & Educational',
+                    description: language === 'pt' ? 'Conferências de língua portuguesa, apresentações de pesquisa cultural' : 'Portuguese language conferences, cultural research presentations'
+                  },
+                  { 
+                    icon: '🚌', 
+                    title: language === 'pt' ? 'Experiências Culturais' : 'Cultural Experiences',
+                    description: language === 'pt' ? 'Tours de herança, experiências de imersão cultural' : 'Heritage tours, cultural immersion experiences'
+                  },
+                  { 
+                    icon: '🍽️', 
+                    title: language === 'pt' ? 'Comida e Tradição' : 'Food & Tradition',
+                    description: language === 'pt' ? 'Festivais de culinária lusófona, celebrações tradicionais' : 'Portuguese-speaking cuisine festivals, traditional celebrations'
+                  }
+                ].map((category, index) => (
+                  <div key={index} className="bg-white rounded-lg p-4 border border-gray-200 hover:shadow-md transition-shadow">
+                    <div className="text-2xl mb-2">{category.icon}</div>
+                    <h4 className="font-semibold text-gray-900 mb-2">{category.title}</h4>
+                    <p className="text-sm text-gray-600">{category.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center">
+              <div className="bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl p-8 text-white">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                  {language === 'pt' ? 'Conecte Sua Sociedade Lusófona' : 'Connect Your Portuguese-Speaking Society'}
+                </h3>
+                <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
+                  {language === 'pt'
+                    ? 'Junte-se a 50+ sociedades lusófonas planeando eventos culturais incríveis juntas. Unidos pela língua, fortalecidos pela colaboração.'
+                    : 'Join 50+ Portuguese-speaking societies planning amazing cultural events together. United by language, strengthened by collaboration.'
+                  }
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="bg-white text-primary-600 hover:bg-gray-50 font-bold py-3 px-8 rounded-lg transition-colors">
+                    {language === 'pt' ? 'Conectar Sociedade - A partir de £75/ano' : 'Connect Your Society - Starting £75/year'}
+                  </button>
+                  <button className="border-2 border-white text-white hover:bg-white/10 font-medium py-3 px-6 rounded-lg transition-colors">
+                    {language === 'pt' ? 'Começar Grátis' : 'Start Free'}
+                  </button>
+                </div>
+                <div className="mt-6 text-sm text-primary-100">
+                  {language === 'pt' 
+                    ? 'Celebramos TODAS as culturas lusófonas - Portugal, Brasil, Cabo Verde, Angola, Moçambique e muito mais'
+                    : 'We celebrate ALL Portuguese-speaking cultures - Portugal, Brazil, Cape Verde, Angola, Mozambique and more'
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Portuguese-Speaking Countries Flag Grid */}
+        <section className="py-20 bg-white">
+          <div className="container-width">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                {language === 'pt' 
+                  ? 'Estudantes de Países Lusófonos' 
+                  : 'Students from Portuguese-Speaking Countries'
+                }
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                {language === 'pt'
+                  ? 'Celebrando a diversidade cultural dos estudantes portugueses de todas as nações lusófonas no Reino Unido'
+                  : 'Celebrating the cultural diversity of Portuguese students from all Lusophone nations in United Kingdom'
+                }
+              </p>
+            </div>
+            <LusophoneFlagGrid showStudentCounts={true} />
+          </div>
+        </section>
+
+        {/* Cultural Events for Students */}
+        <CulturalEventCards limit={6} showPricing={true} />
+
+        {/* Student Journey Visualization */}
+        <StudentJourneyVisualization />
+
         {/* Enhanced Student Events Section */}
         <StudentEventsSection />
+
+        {/* Exclusive Multicultural Student Programming */}
+        <section className="py-20 bg-gradient-to-br from-green-50 via-blue-50 to-yellow-50">
+          <div className="container-width">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center bg-gradient-to-r from-green-100 to-blue-100 px-6 py-3 rounded-full mb-6">
+                <GlobeAltIcon className="w-5 h-5 mr-2 text-green-600" />
+                <span className="font-bold text-green-700">
+                  {language === 'pt' ? '🌍 Eventos Exclusivos • 10 Culturas Lusófonas' : '🌍 Exclusive Events • 10 Lusophone Cultures'}
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                {language === 'pt' ? 'Programação Cultural Exclusiva para Estudantes' : 'Exclusive Cultural Programming for Students'}
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                {language === 'pt' ?
+                  'Celebre sua herança cultural com eventos únicos que conectam estudantes de Portugal, Brasil, Angola, Cabo Verde, Moçambique e todos os países lusófonos.' :
+                  'Celebrate your cultural heritage with unique events connecting students from Portugal, Brazil, Angola, Cape Verde, Mozambique and all Lusophone countries.'
+                }
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {[
+                {
+                  title: language === 'pt' ? 'Feira de Carreiras Lusófona' : 'Lusophone Career Fair',
+                  subtitle: language === 'pt' ? '10 Países • 50+ Empresas' : '10 Countries • 50+ Companies',
+                  icon: '🌍',
+                  date: '25 Oct',
+                  price: 'FREE',
+                  description: language === 'pt' ?
+                    'Conecte-se com empregadores de todos os países lusófonos. Oportunidades exclusivas em Portugal, Brasil, Angola e mais.' :
+                    'Connect with employers from all Lusophone countries. Exclusive opportunities in Portugal, Brazil, Angola and more.',
+                  highlights: [
+                    language === 'pt' ? 'Empresas de 10 países' : 'Companies from 10 countries',
+                    language === 'pt' ? 'CV em português/inglês' : 'Portuguese/English CV reviews',
+                    language === 'pt' ? 'Networking multicultural' : 'Multicultural networking'
+                  ]
+                },
+                {
+                  title: language === 'pt' ? 'Intercâmbio Linguístico Intensivo' : 'Intensive Language Exchange',
+                  subtitle: language === 'pt' ? 'Sotaques Autênticos' : 'Authentic Accents',
+                  icon: '🗣️',
+                  date: '1 Nov',
+                  price: '£5',
+                  description: language === 'pt' ?
+                    'Pratique português com falantes nativos do Brasil, Angola, Cabo Verde. Diferentes sotaques, mesma paixão cultural.' :
+                    'Practice Portuguese with native speakers from Brazil, Angola, Cape Verde. Different accents, same cultural passion.',
+                  highlights: [
+                    language === 'pt' ? 'Falantes de 8 países' : 'Speakers from 8 countries',
+                    language === 'pt' ? 'Grupos por nível' : 'Level-based groups',
+                    language === 'pt' ? 'Certificado participação' : 'Participation certificate'
+                  ]
+                },
+                {
+                  title: language === 'pt' ? 'Noite Cultural Lusófona' : 'Lusophone Cultural Night',
+                  subtitle: language === 'pt' ? 'Música • Dança • Gastronomia' : 'Music • Dance • Cuisine',
+                  icon: '🎭',
+                  date: '8 Nov',
+                  price: '£12',
+                  description: language === 'pt' ?
+                    'Uma noite celebrando Fado português, Samba brasileiro, Kizomba angolana, Morna cabo-verdiana e muito mais.' :
+                    'A night celebrating Portuguese Fado, Brazilian Samba, Angolan Kizomba, Cape Verdean Morna and much more.',
+                  highlights: [
+                    language === 'pt' ? 'Música ao vivo' : 'Live music',
+                    language === 'pt' ? 'Comida tradicional' : 'Traditional food',
+                    language === 'pt' ? 'Aulas de dança' : 'Dance lessons'
+                  ]
+                }
+              ].map((event, index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="text-4xl">{event.icon}</div>
+                      <div className="text-right">
+                        <div className="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium mb-2">
+                          {event.date}
+                        </div>
+                        <div className={`px-3 py-1 rounded-full text-sm font-bold ${
+                          event.price === 'FREE' 
+                            ? 'bg-green-100 text-green-700' 
+                            : 'bg-blue-100 text-blue-700'
+                        }`}>
+                          {event.price}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{event.title}</h3>
+                    <p className="text-sm text-primary-600 font-medium mb-3">{event.subtitle}</p>
+                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">{event.description}</p>
+                    
+                    <div className="space-y-2 mb-6">
+                      {event.highlights.map((highlight, idx) => (
+                        <div key={idx} className="flex items-center text-xs text-gray-600">
+                          <CheckBadgeIcon className="w-4 h-4 text-secondary-500 mr-2 flex-shrink-0" />
+                          {highlight}
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <button 
+                      onClick={handleVerification}
+                      className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 flex items-center justify-center"
+                    >
+                      <CalendarDaysIcon className="w-4 h-4 mr-2" />
+                      {language === 'pt' ? 'Reservar Lugar' : 'Reserve Spot'}
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA for More Events */}
+            <div className="text-center">
+              <button
+                onClick={handleVerification}
+                className="bg-gradient-to-r from-accent-600 to-secondary-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-accent-700 hover:to-secondary-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 inline-flex items-center"
+              >
+                <SparklesIcon className="w-6 h-6 mr-3" />
+                {language === 'pt' ? 'Ver Todos os Eventos Exclusivos' : 'See All Exclusive Events'}
+                <ArrowRightIcon className="w-6 h-6 ml-3" />
+              </button>
+              <p className="text-sm text-gray-600 mt-4 max-w-2xl mx-auto">
+                {language === 'pt' ?
+                  'Acesso instantâneo a 12+ eventos mensais exclusivos para estudantes. Networking, cultura e apoio acadêmico.' :
+                  'Instant access to 12+ monthly exclusive student events. Networking, culture, and academic support.'
+                }
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* New Enhanced Student Sections */}
         
@@ -1095,8 +2143,14 @@ export default function StudentsPage() {
         {/* Student Discounts Section */}
         <StudentDiscountsSection />
         
+        {/* Portuguese-Speaking Host Families */}
+        <AccommodationHostFamilies limit={5} showPricing={true} />
+        
         {/* Accommodation Support Section */}
         <AccommodationSupportSection />
+
+        {/* Success Stories Carousel */}
+        <SuccessStoriesCarousel autoplay={true} autoplayInterval={10000} />
 
         {/* Student Verification Section */}
         <section className="py-20 bg-gray-50">
@@ -1263,38 +2317,47 @@ export default function StudentsPage() {
               {[
                 {
                   name: 'Sofia Martins',
+                  flag: '🇵🇹',
+                  country: 'Portugal',
                   university: 'UCL - Portuguese Studies',
                   year: '3º ano',
-                  quote: 'A LusoTown mudou completamente a minha experiência universitária. Encontrei amigos portugueses, oportunidades de estágio e até um mentor na minha área.',
-                  quoteEn: 'LusoTown completely changed my university experience. I found Portuguese-speaking friends, internship opportunities, and even a mentor in my field.',
-                  benefits: ['Estágio em empresa portuguesa', 'Rede de contactos profissionais', 'Eventos culturais gratuitos']
+                  quote: 'A LusoTown mudou completamente a minha experiência universitária. Encontrei amigos de todos os países lusófonos, oportunidades de estágio e até um mentor brasileiro na minha área.',
+                  quoteEn: 'LusoTown completely changed my university experience. I found friends from all Portuguese-speaking countries, internship opportunities, and even a Brazilian mentor in my field.',
+                  benefits: ['Estágio em empresa brasileira', 'Rede lusófona profissional', 'Eventos multiculturais gratuitos']
                 },
                 {
-                  name: 'Miguel Santos',
+                  name: 'Carlos da Silva',
+                  flag: '🇧🇷',
+                  country: 'Brasil',
                   university: 'Imperial College - Engineering',
                   year: '2º ano',
-                  quote: 'Como estudante de engenharia, não esperava encontrar uma comunidade de falantes de português tão forte. Os eventos de networking abriram-me muitas portas.',
-                  quoteEn: 'As an engineering student, I didn\'t expect to find such a strong Portuguese-speaking community. The networking events opened many doors for me.',
-                  benefits: ['Networking tech português', 'Mentoria profissional', 'Desconto na adesão']
+                  quote: 'Como brasileiro estudando engenharia, encontrei uma comunidade incrível que celebra nossa diversidade. Os eventos de Samba e networking tech abriram muitas portas.',
+                  quoteEn: 'As a Brazilian engineering student, I found an incredible community that celebrates our diversity. The Samba events and tech networking opened many doors.',
+                  benefits: ['Networking tech lusófono', 'Eventos de Samba/Fado', 'Mentoria multicultural']
                 },
                 {
-                  name: 'Ana Rodrigues',
+                  name: 'Ana Fernandes',
+                  flag: '🇦🇴',
+                  country: 'Angola',
                   university: 'King\'s College - Literatura',
                   year: 'Mestrado',
-                  quote: 'A ligação com o Instituto Camões através da LusoTown foi crucial para a minha investigação. Tive acesso a recursos únicos.',
-                  quoteEn: 'The connection with Instituto Camões through LusoTown was crucial for my research. I had access to unique resources.',
-                  benefits: ['Acesso biblioteca digital', 'Apoio académico', 'Conferências gratuitas']
+                  quote: 'Como estudante angolana, encontrei aqui não só apoio acadêmico mas também eventos de Kizomba e conexão com a minha cultura. Sinto-me verdadeiramente incluída.',
+                  quoteEn: 'As an Angolan student, I found not only academic support but also Kizomba events and connection with my culture. I feel truly included.',
+                  benefits: ['Eventos de Kizomba', 'Apoio acadêmico', 'Comunidade angolana ativa']
                 }
               ].map((testimonial, index) => (
                 <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
-                      <span className="text-primary-600 font-bold text-lg">
-                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      <span className="text-2xl">
+                        {testimonial.flag}
                       </span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+                      <div className="flex items-center gap-2">
+                        <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+                        <span className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">{testimonial.country}</span>
+                      </div>
                       <p className="text-sm text-gray-600">{testimonial.university}</p>
                       <p className="text-xs text-primary-600">{testimonial.year}</p>
                     </div>
@@ -1337,15 +2400,15 @@ export default function StudentsPage() {
               <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
                 <AcademicCapIcon className="w-4 h-4 mr-2" />
                 {language === 'pt' ? 
-                  `Comunidade Estudantil • ${communityStats.viewers} estudantes portugueses em universidades do Reino Unido` :
-                  `Student Community • ${communityStats.viewers} Portuguese students at United Kingdom universities`
+                  `Comunidade Estudantil Lusófona • ${communityStats.viewers}+ estudantes de 10 países lusófonos em universidades do Reino Unido` :
+                  `Lusophone Student Community • ${communityStats.viewers}+ students from 10 Portuguese-speaking countries at United Kingdom universities`
                 }
               </div>
               
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 {language === 'pt' ? 
-                  'Junte-se à Maior Comunidade de Estudantes Portugueses em Universidades do Reino Unido' :
-                  'Join the United Kingdom\'s Largest Community of Portuguese Students at United Kingdom Universities'
+                  'Junte-se à Maior Comunidade de Estudantes Lusófonos em Universidades do Reino Unido' :
+                  'Join the United Kingdom\'s Largest Community of Portuguese-Speaking Students'
                 }
               </h2>
               
@@ -1359,16 +2422,42 @@ export default function StudentsPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <button 
                   onClick={handleVerification}
-                  className="bg-white text-primary-600 font-bold py-4 px-8 rounded-xl hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-200 group"
+                  className="relative bg-white text-primary-600 font-bold py-5 px-10 rounded-xl hover:bg-gray-100 shadow-2xl hover:shadow-3xl transition-all duration-300 group transform hover:scale-105"
                 >
                   <span className="flex items-center justify-center">
-                    {language === 'pt' ? 'Verificar Email Universitário' : 'Verify University Email'}
+                    <AcademicCapIcon className="w-6 h-6 mr-3" />
+                    {language === 'pt' ? 'Juntar à Comunidade Agora - £9.99/mês' : 'Join Community Now - £9.99/month'}
                     <ArrowRightIcon className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </span>
+                  <div className="absolute -top-3 -right-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full animate-bounce font-bold">
+                    {language === 'pt' ? '50% OFF' : '50% OFF'}
+                  </div>
                 </button>
-                <button className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold py-4 px-8 rounded-xl transition-all duration-200">
-                  {language === 'pt' ? 'Saber Mais sobre Benefícios' : 'Learn About Benefits'}
+                <button 
+                  onClick={() => window.open('https://calendly.com/lusotown-student-demo', '_blank')}
+                  className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold py-5 px-8 rounded-xl transition-all duration-300 flex items-center justify-center transform hover:scale-105"
+                >
+                  <VideoCameraIcon className="w-6 h-6 mr-2" />
+                  {language === 'pt' ? 'Demo Gratuita (15 min)' : 'Free Demo (15 min)'}
                 </button>
+              </div>
+              
+              {/* Additional Social Proof & Urgency */}
+              <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 mb-8 max-w-3xl mx-auto">
+                <div className="flex flex-wrap justify-center items-center gap-4 text-sm">
+                  <div className="flex items-center text-white/90">
+                    <CheckBadgeIcon className="w-5 h-5 mr-2 text-green-300" />
+                    <span className="font-medium">{language === 'pt' ? '2150+ estudantes já aderiram' : '2150+ students already joined'}</span>
+                  </div>
+                  <div className="flex items-center text-white/90">
+                    <ClockIcon className="w-5 h-5 mr-2 text-yellow-300" />
+                    <span className="font-medium">{language === 'pt' ? 'Verificação em 24h' : '24h verification'}</span>
+                  </div>
+                  <div className="flex items-center text-white/90">
+                    <GlobeAltIcon className="w-5 h-5 mr-2 text-blue-300" />
+                    <span className="font-medium">{language === 'pt' ? '10 países lusófonos' : '10 Lusophone countries'}</span>
+                  </div>
+                </div>
               </div>
 
               {/* Trust Signals */}

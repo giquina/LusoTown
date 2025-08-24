@@ -11,12 +11,38 @@ import { useNetworking } from '@/context/NetworkingContext'
 import { useSubscription } from '@/context/SubscriptionContext'
 import Footer from '@/components/Footer'
 import EventImageWithFallback from '@/components/EventImageWithFallback'
-import EcosystemOverview from '@/components/EcosystemOverview'
-import PortugueseCommunityActivity from '@/components/PortugueseCommunityActivity'
-import SmartRecommendations from '@/components/SmartRecommendations'
-import QuickActions from '@/components/QuickActions'
-import EcosystemStats from '@/components/EcosystemStats'
-import SocialFeed from '@/components/social/SocialFeed'
+import dynamic from 'next/dynamic'
+
+// Dynamic imports to reduce initial bundle size and improve load time
+const EcosystemOverview = dynamic(() => import('@/components/EcosystemOverview'), {
+  loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
+
+const PortugueseCommunityActivity = dynamic(() => import('@/components/PortugueseCommunityActivity'), {
+  loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
+
+const SmartRecommendations = dynamic(() => import('@/components/SmartRecommendations'), {
+  loading: () => <div className="h-40 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
+
+const QuickActions = dynamic(() => import('@/components/QuickActions'), {
+  loading: () => <div className="h-32 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
+
+const EcosystemStats = dynamic(() => import('@/components/EcosystemStats'), {
+  loading: () => <div className="h-24 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
+
+const SocialFeed = dynamic(() => import('@/components/social/SocialFeed'), {
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
 import { 
   Heart, 
   Calendar, 

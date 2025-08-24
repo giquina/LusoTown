@@ -37,18 +37,21 @@ import { useLanguage } from "@/context/LanguageContext";
 import { ROUTES } from '@/config/routes';
 import { LuxuryRipple } from "@/components/LuxuryMobileInteraction";
 import { EliteMobileHeader } from "@/components/EliteMobileInterface";
+import MobileNavigation, { MobileNavButton } from "@/components/MobileNavigation";
 
 const getNavigationLinks = (t: any) => [
-  { name: t("nav.events", "London Events"), href: "/events" },
-  { name: t("nav.business-directory", "Business Directory"), href: ROUTES.businessDirectory },
-  { name: t("nav.students", "Students"), href: "/students" },
+  { name: t("nav.whats_on", "What's On"), href: "/events" },
+  { name: t("nav.discover_businesses", "Discover Businesses"), href: ROUTES.businessDirectory },
+  { name: t("nav.matches", "Matches"), href: ROUTES.matches },
+  { name: t("nav.discover_students", "Discover Student Life"), href: "/students" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 
 const getAuthenticatedNavigationLinks = (t: any) => [
-  { name: t("nav.events", "London Events"), href: "/events" },
-  { name: t("nav.business-directory", "Business Directory"), href: ROUTES.businessDirectory },
-  { name: t("nav.students", "Students"), href: "/students" },
+  { name: t("nav.whats_on", "What's On"), href: "/events" },
+  { name: t("nav.discover_businesses", "Discover Businesses"), href: ROUTES.businessDirectory },
+  { name: t("nav.matches", "Matches"), href: ROUTES.matches },
+  { name: t("nav.discover_students", "Discover Student Life"), href: "/students" },
   { name: t("referral.title", "Referrals"), href: "/referrals" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
@@ -79,6 +82,13 @@ const getEventsDropdownLinks = (t: any) => [
     description: t("nav.cultural-events-desc", "Music nights in Camden, cultural celebrations in Stockwell, festivals for Portuguese speakers across London & United Kingdom"),
     icon: MusicalNoteIcon,
     iconColor: "text-purple-500"
+  },
+  { 
+    name: t("palop.events.independence.celebrations", "PALOP Independence Celebrations"), 
+    href: `${ROUTES.events}?category=PALOP`,
+    description: "🇦🇴 🇨🇻 🇬🇼 🇲🇿 🇸🇹 - Angola, Cape Verde, Guinea-Bissau, Mozambique, São Tomé independence festivals & cultural celebrations",
+    icon: TrophyIcon,
+    iconColor: "text-orange-500"
   },
   { 
     name: t("nav.business-networking", "Business Networking"), 
@@ -140,6 +150,13 @@ const getMoreDropdownLinks = (t: any) => ({
       description: "Connect with Portuguese speakers throughout the United Kingdom who share your interests and lifestyle",
       icon: HeartIcon,
       iconColor: "text-red-500"
+    },
+    { 
+      name: t("palop.business.directory.title", "PALOP Business Directory"), 
+      href: `${ROUTES.businessDirectory}?filter=palop`,
+      description: "🇦🇴🇨🇻🇬🇼🇲🇿🇸🇹 - Discover businesses from Angola, Cape Verde, Guinea-Bissau, Mozambique, São Tomé entrepreneurs in the UK",
+      icon: BriefcaseIcon,
+      iconColor: "text-orange-500"
     },
     { 
       name: "Live TV", 
@@ -258,11 +275,11 @@ export default function Header() {
 
           {/* Desktop Navigation - Premium with sophisticated micro-interactions */}
           <div className="hidden xl:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
-            {navigationLinks.filter(link => !link.name.includes("Events")).map((link) => (
+            {navigationLinks.map((link) => (
               <motion.a
                 key={link.name}
                 href={link.href}
-                className="relative text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 group"
+                className="relative text-gray-600 hover:text-primary-600 px-3 py-3 rounded-md text-sm font-medium transition-all duration-300 group min-h-[44px] flex items-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -292,7 +309,7 @@ export default function Header() {
               onMouseLeave={() => setShowEventsDropdown(false)}
             >
               <motion.button 
-                className="relative text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group"
+                className="relative text-gray-600 hover:text-primary-600 px-3 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group min-h-[44px]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -366,7 +383,7 @@ export default function Header() {
               onMouseLeave={() => setShowToursDropdown(false)}
             >
               <motion.button 
-                className="relative text-gray-600 hover:text-secondary-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group"
+                className="relative text-gray-600 hover:text-secondary-600 px-3 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group min-h-[44px]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -429,7 +446,7 @@ export default function Header() {
               onMouseLeave={() => setShowMoreDropdown(false)}
             >
               <motion.button 
-                className="relative text-gray-600 hover:text-premium-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group"
+                className="relative text-gray-600 hover:text-premium-600 px-3 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group min-h-[44px]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -508,7 +525,7 @@ export default function Header() {
               <div className="relative">
                 <button
                   onClick={() => setShowUserMenu(!showUserMenu)}
-                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 transition-colors h-10"
+                  className="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-100 transition-colors min-h-[44px] min-w-[44px]"
                 >
                   <div className="w-8 h-8 bg-gradient-to-r from-action-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                     {user.name
@@ -592,14 +609,14 @@ export default function Header() {
               <>
                 <a
                   href={ROUTES.login}
-                  className="text-gray-600 hover:text-primary-600 p-2 rounded-md transition-colors duration-200 h-10 w-10 flex items-center justify-center"
+                  className="text-gray-600 hover:text-primary-600 p-3 rounded-md transition-colors duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center"
                   title="Login"
                 >
                   <UserIcon className="w-5 h-5" />
                 </a>
                 <motion.a
                   href={ROUTES.signup}
-                  className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-2 px-4 lg:px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transition-all duration-300 whitespace-nowrap h-10 flex items-center text-sm relative overflow-hidden group"
+                  className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-3 px-4 lg:px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-h-[44px] flex items-center text-sm relative overflow-hidden group"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -620,7 +637,7 @@ export default function Header() {
             )}
           </div>
 
-          {/* Mobile menu button - Fixed spacing for better touch targets */}
+          {/* Mobile menu button - Optimized for Portuguese-speaking community */}
           <div className="flex xl:hidden items-center gap-1 relative z-50 flex-shrink-0">
             {/* Only show notifications when user is signed in */}
             {user && (
@@ -629,32 +646,10 @@ export default function Header() {
               </>
             )}
             <LanguageToggle />
-            <LuxuryRipple
-              className="inline-flex items-center justify-center p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200 min-h-[48px] min-w-[48px] bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50"
+            <MobileNavButton 
+              isOpen={mobileMenuOpen}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              hapticFeedback="medium"
-              rippleColor="rgba(59, 130, 246, 0.2)"
-            >
-              <motion.div
-                animate={{ rotate: mobileMenuOpen ? 180 : 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-              >
-                <span className="sr-only">
-                  {mobileMenuOpen ? "Close menu" : "Open main menu"}
-                </span>
-                {mobileMenuOpen ? (
-                  <XMarkIcon
-                    className="h-6 w-6 text-primary-700 stroke-2"
-                    aria-hidden="true"
-                  />
-                ) : (
-                  <Bars3Icon
-                    className="h-6 w-6 text-primary-700 stroke-2"
-                    aria-hidden="true"
-                  />
-                )}
-              </motion.div>
-            </LuxuryRipple>
+            />
           </div>
         </div>
 
@@ -709,7 +704,7 @@ export default function Header() {
                     <h3 className="text-lg font-semibold text-primary-600 mb-3">
                       Navigation
                     </h3>
-                    {navigationLinks.filter(link => !link.name.includes("Events")).map((link) => (
+                    {navigationLinks.map((link) => (
                       <a
                         key={link.name}
                         href={link.href}

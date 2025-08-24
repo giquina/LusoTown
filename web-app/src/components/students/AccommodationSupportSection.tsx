@@ -222,8 +222,8 @@ const ACCOMMODATION_LISTINGS: AccommodationListing[] = [
   },
   {
     id: 'portuguese-homestay-family',
-    title: 'Homestay with Portuguese Family',
-    titlePortuguese: 'Homestay com Família Portuguesa',
+    title: 'Homestay with Portuguese-Speaking Family',
+    titlePortuguese: 'Homestay com Família de Língua Portuguesa',
     type: 'homestay',
     location: 'Tulse Hill, London',
     area: 'Tulse Hill',
@@ -236,8 +236,8 @@ const ACCOMMODATION_LISTINGS: AccommodationListing[] = [
     maxHousemates: 2,
     portugueseSpeaking: true,
     portugueseOwner: true,
-    description: 'Live with a welcoming Portuguese family who has been hosting students for 10+ years. Perfect for students wanting cultural immersion and family support away from home.',
-    descriptionPortuguese: 'Viva com uma família portuguesa acolhedora que tem recebido estudantes há mais de 10 anos. Perfeito para estudantes que querem imersão cultural e apoio familiar longe de casa.',
+    description: 'Live with a welcoming Portuguese-speaking family who has been hosting students from all Lusophone countries for 10+ years. Perfect for students wanting cultural immersion and family support away from home - whether you\'re from Lisbon, São Paulo, Luanda, or Praia.',
+    descriptionPortuguese: 'Viva com uma família lusófona acolhedora que tem recebido estudantes de todos os países lusófonos há mais de 10 anos. Perfeito para estudantes que querem imersão cultural e apoio familiar longe de casa - seja de Lisboa, São Paulo, Luanda ou Praia.',
     amenities: ['Meals included', 'Family support', 'Portuguese conversation practice', 'Laundry included', 'WiFi'],
     nearbyUniversities: ['King\'s College (30 min)', 'UCL (35 min)', 'Various universities accessible'],
     transportLinks: ['Tulse Hill Station (5 min)', 'Direct trains to central London', 'Bus connections'],
@@ -422,13 +422,13 @@ export default function AccommodationSupportSection() {
       id: 'listings', 
       label: { en: 'Accommodation Listings', pt: 'Listagens de Alojamento' },
       icon: HomeIcon,
-      description: { en: 'Find verified Portuguese-friendly housing', pt: 'Encontre alojamento verificado e amigável aos portugueses' }
+      description: { en: 'Find verified Lusophone-friendly housing', pt: 'Encontre alojamento verificado e amigável aos lusófonos' }
     },
     { 
       id: 'roommates', 
       label: { en: 'Roommate Matching', pt: 'Correspondência de Colegas' },
       icon: UsersIcon,
-      description: { en: 'Connect with Portuguese students seeking housing', pt: 'Conecte-se com estudantes portugueses que procuram alojamento' }
+      description: { en: 'Connect with Portuguese-speaking students seeking housing', pt: 'Conecte-se com estudantes lusófonos que procuram alojamento' }
     },
     { 
       id: 'tips', 
@@ -499,8 +499,8 @@ export default function AccommodationSupportSection() {
             <HomeIcon className="w-4 h-4 mr-2 text-blue-600" />
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-bold">
               {language === 'pt' 
-                ? "Apoio de Alojamento para Estudantes Portugueses"
-                : "Portuguese Student Accommodation Support"}
+                ? "Apoio de Alojamento para Estudantes Lusófonos"
+                : "Portuguese-Speaking Student Accommodation Support"}
             </span>
           </div>
 
@@ -512,8 +512,8 @@ export default function AccommodationSupportSection() {
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             {language === 'pt' 
-              ? 'Apoio abrangente para encontrar alojamento em Londres, conectar-se com colegas portugueses e navegar no sistema de arrendamento do Reino Unido com confiança.'
-              : 'Comprehensive support to find accommodation in London, connect with Portuguese housemates, and navigate the United Kingdom rental system with confidence.'}
+              ? 'Apoio abrangente para encontrar alojamento em Londres, conectar-se com estudantes lusófonos de Portugal 🇵🇹 Brasil 🇧🇷 Angola 🇦🇴 Cabo Verde 🇨🇻 e todas as nações que falam português, e navegar no sistema de arrendamento do Reino Unido com confiança.'
+              : 'Comprehensive support to find accommodation in London, connect with Portuguese-speaking students from Portugal 🇵🇹 Brazil 🇧🇷 Angola 🇦🇴 Cape Verde 🇨🇻 and all Portuguese-speaking nations, and navigate the United Kingdom rental system with confidence.'}
           </p>
 
           {/* Quick Stats */}
@@ -959,8 +959,8 @@ export default function AccommodationSupportSection() {
           </h3>
           <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
             {language === 'pt' 
-              ? 'Nossa equipa de apoio está disponível para ajudar com visitas, negociações e questões legais. Suporte especializado para estudantes portugueses.'
-              : 'Our support team is available to help with viewings, negotiations, and legal questions. Specialized support for Portuguese students.'}
+              ? 'Nossa equipa de apoio está disponível para ajudar com visitas, negociações e questões legais. Suporte especializado para estudantes de todas as 10 nações lusófonas.'
+              : 'Our support team is available to help with viewings, negotiations, and legal questions. Specialized support for students from all 10 Portuguese-speaking countries.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">

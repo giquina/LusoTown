@@ -3,7 +3,7 @@ const nextConfig = {
   distDir: ".next",
   transpilePackages: ["@lusotown/ui", "@lusotown/design-tokens"],
   productionBrowserSourceMaps: false,
-  swcMinify: false,
+  swcMinify: true,
   images: {
     unoptimized: false,
     remotePatterns: [
@@ -99,9 +99,17 @@ const nextConfig = {
   },
   experimental: {
     scrollRestoration: true,
-    optimizePackageImports: ['@heroicons/react', 'framer-motion'],
-  serverComponentsExternalPackages: ['html5-qrcode', 'socket.io-client'],
-    // Disable turbo experiment in production builds due to instability/perf issues
+    optimizePackageImports: ['@heroicons/react', 'framer-motion', 'lucide-react'],
+    serverComponentsExternalPackages: ['html5-qrcode', 'socket.io-client'],
+    optimizeCss: true,
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -190,10 +198,10 @@ const nextConfig = {
         },
       };
       
-  // Add performance optimizations but avoid costly minification in CI
+  // Add performance optimizations with smart minification
   config.optimization.usedExports = true;
   config.optimization.sideEffects = false;
-  config.optimization.minimize = false;
+  config.optimization.minimize = true; // Enable minification for better performance
     }
 
     // Add bundle analyzer in development

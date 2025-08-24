@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## ⚡ Quick Reference
 
 **Start Development**: `cd web-app && npm run dev` (http://localhost:3000)  
+**Streaming Server**: `cd streaming && npm start` (http://localhost:8080)  
 **Demo Access**: demo@lusotown.com / LusoTown2025!  
 **Must Pass Before Commit**: `npm run lint && npx tsc --noEmit && npm run build && npm run audit:hardcoding`  
 **Primary Rule**: ZERO hardcoding - import from `/src/config/` files  
@@ -91,6 +92,8 @@ LusoTown employs **intelligent advisory agents** that automatically activate bas
 
 **Documentation**: See `/web-app/src/config/community-guidelines.ts` for comprehensive inclusivity rules, validation functions, and usage examples.
 
+**Latest Enhancement**: See `/web-app/PLATFORM_ENHANCEMENTS_SUMMARY.md` for detailed overview of recent cultural inclusivity improvements, Lusophone cultural celebrations system, and enhanced business directory features.
+
 ## 🛠️ Development Troubleshooting
 
 **Common Issues and Solutions**:
@@ -127,17 +130,17 @@ See `/web-app/TODO.md` for comprehensive premium enhancement roadmap focusing on
 
 ## Project Overview
 
-LusoTown is a production-ready Portuguese-speaking community platform serving London & United Kingdom Portuguese speakers. It's a comprehensive social network with event discovery, business directory, streaming platform, transport services, and university partnerships.
+LusoTown is a production-ready Portuguese-speaking community platform serving the United Kingdom Portuguese speakers. It's a comprehensive social network with event discovery, enhanced business directory celebrating ALL Lusophone cultures, streaming platform, transport services, and university partnerships.
 
-**Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL with PostGIS, Simple Relay Server (SRS) for streaming, OpenStreetMap/Leaflet for mapping, Twitter API, Stripe, React Context state management.
+**Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL with PostGIS, Simple Relay Server (SRS) for streaming, OpenStreetMap/Leaflet for mapping, Twitter API, Stripe, React Context state management, enhanced cultural celebrations system.
 
-**Status**: Production-ready with 120+ pages, 522+ components, complete bilingual EN/PT system, mobile-first responsive design, 4 integrated AI systems. **Live Platform**: https://lusotown-bzkyz77ez-giquinas-projects.vercel.app
+**Status**: Production-ready with 120+ pages, 522+ components, complete bilingual EN/PT system, mobile-first responsive design, 4 integrated AI systems, enhanced Lusophone cultural celebrations system. **Live Platform**: https://lusotown-bzkyz77ez-giquinas-projects.vercel.app
 
 ## System Requirements
 
-**Node.js**: v22.x (specified in engines)
+**Node.js**: v22.x (specified in engines - streaming server requires this version)
 **npm**: v9.x (specified in engines)
-**Package Manager**: npm@9.9.3 (workspace support required)
+**Package Manager**: npm@9.9.3 (workspace support required for monorepo)
 
 ## Development Commands
 
@@ -167,6 +170,9 @@ npm run build                  # Production build
 npm run start                  # Start production server
 npm run lint                   # ESLint validation
 npm run export                 # Static export
+npm run auto-fix               # Auto-fix ESLint issues
+npm run deploy                 # Build and deploy to Vercel
+npm run deploy:auto            # Auto-fix, build, and deploy
 
 # Testing Framework
 npm run test                   # Run Jest tests
@@ -183,6 +189,10 @@ npm run test:mobile-ux         # Mobile UX validation tests
 npm run test:mobile-validation # Mobile UX validation
 npm run test:portuguese        # Portuguese language tests
 npm run test:all               # Run all test suites
+npm run test:security          # Security-specific tests
+npm run test:accessibility     # Accessibility tests
+npm run test:responsive        # Responsive design tests
+npm run test:touch-targets     # Touch interaction tests
 
 # Quality & Security
 npm run audit:hardcoding       # Check for hardcoded values (CRITICAL)
@@ -213,6 +223,11 @@ npm start                      # Start streaming server (localhost:8080)
 npm run dev                    # Development with nodemon
 npm run health-check           # Check server health
 npm test                       # Run streaming tests
+
+# Streaming server provides:
+# - RTMP ingest endpoint for Portuguese cultural content
+# - HLS streaming for web/mobile playback
+# - Portuguese content moderation and analytics
 ```
 
 ### Mobile App (React Native/Expo)
@@ -291,16 +306,25 @@ Dynamic Portuguese heritage colors using CSS custom properties:
 ## Critical Development Rules
 
 ### 1. ZERO HARDCODING POLICY (MANDATORY)
+**Audit Command**: `npm run audit:hardcoding` - MUST pass before commit
+
 ```typescript
 // ❌ NEVER DO THIS:
 const price = "£19.99"
 const contact = "demo@lusotown.com"  
 const university = "University College London"
+const eventName = "Portuguese Wine Tasting"
 
 // ✅ ALWAYS DO THIS:
 import { formatPrice, SUBSCRIPTION_PLANS } from '@/config/pricing'
 import { UNIVERSITY_PARTNERSHIPS } from '@/config/universities'
+import { CONTACT_INFO } from '@/config/contact'
+import { CULTURAL_EVENTS } from '@/config/events'
+
 const price = formatPrice(SUBSCRIPTION_PLANS.community.monthly)
+const contact = CONTACT_INFO.demo.email
+const university = UNIVERSITY_PARTNERSHIPS.ucl.name
+const eventName = CULTURAL_EVENTS.wine_tasting.title
 ```
 
 ### 2. Bilingual Text Requirements
@@ -327,6 +351,9 @@ npx tsc --noEmit               # Must pass - TypeScript check
 npm run build                  # Must pass - Production build
 npm run audit:hardcoding       # Must pass - Zero hardcoded values
 npm run test                   # Recommended - Unit tests
+
+# Note: TypeScript/ESLint errors ignored in builds for faster CI
+# But must be fixed in development for code quality
 ```
 
 ## Key Business Context
@@ -464,6 +491,11 @@ export NODE_OPTIONS="--max-old-space-size=4096"
 npm run build
 ```
 
+**Bundle Analysis**: Enable in development for optimization
+```bash
+ANALYZE=true npm run dev  # Opens webpack bundle analyzer
+```
+
 ## Deployment
 
 **Primary**: Vercel with automatic CI/CD from GitHub
@@ -472,6 +504,13 @@ npm run build
 **CDN**: BunnyCDN for Portuguese cultural content
 
 Build configuration optimized for production with bundle splitting, image optimization for multiple domains, and Portuguese content delivery.
+
+**Key Next.js Optimizations**:
+- Bundle splitting for React, Heroicons, Framer Motion
+- Image optimization for Unsplash, Cloudinary, BunnyCDN domains
+- Server-side externalization of browser-only libraries (html5-qrcode, socket.io-client)
+- Portuguese content CDN integration (BunnyCDN, YouTube thumbnails)
+- Webpack optimization for react-native-web compatibility
 
 ## Development Workflow
 

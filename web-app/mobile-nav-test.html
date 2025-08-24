@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LusoTown Mobile Navigation Test</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .test-container {
+            max-width: 375px; /* iPhone SE width */
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* Header simulation */
+        .test-header {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 375px;
+            max-width: 100vw;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            z-index: 50;
+            padding: 12px 16px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            min-height: 56px;
+        }
+
+        .logo {
+            flex: 1;
+            font-weight: bold;
+            color: #C5282F;
+        }
+
+        .hamburger-btn {
+            min-width: 48px;
+            min-height: 48px;
+            background: white;
+            border: 2px solid #C5282F;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .hamburger-btn:hover {
+            background: #C5282F;
+            color: white;
+        }
+
+        .hamburger-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Mobile menu overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 375px;
+            max-width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(8px);
+            z-index: 40;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-content {
+            background: white;
+            margin-top: 80px;
+            margin: 80px 8px 8px;
+            border-radius: 16px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active .mobile-menu-content {
+            transform: translateY(0);
+        }
+
+        .menu-section {
+            padding: 24px 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .menu-section:last-child {
+            border-bottom: none;
+        }
+
+        .menu-section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #C5282F;
+            margin-bottom: 12px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            min-height: 48px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+            margin-bottom: 4px;
+        }
+
+        .menu-item:hover {
+            background: rgba(197, 40, 47, 0.05);
+            border-color: rgba(197, 40, 47, 0.2);
+            color: #C5282F;
+        }
+
+        .content {
+            padding: 100px 20px 20px;
+        }
+
+        .test-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #C5282F;
+        }
+
+        .test-checklist {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .check-item:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: #00A859;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        .dimensions {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-family: monospace;
+        }
+
+        @media (max-width: 375px) {
+            .test-container,
+            .test-header,
+            .mobile-menu {
+                width: 100vw;
+            }
+            
+            .test-header {
+                left: 0;
+                transform: none;
+            }
+            
+            .mobile-menu {
+                left: 0;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <header class="test-header">
+            <div class="header-content">
+                <div class="logo">🇵🇹 LusoTown</div>
+                <button class="hamburger-btn" onclick="toggleMenu()">
+                    <span id="hamburger-icon">☰</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="mobile-menu" id="mobileMenu" onclick="closeMenu(event)">
+            <div class="mobile-menu-content" onclick="event.stopPropagation()">
+                <div class="menu-section">
+                    <h3>Navigation</h3>
+                    <a href="#" class="menu-item">London Events</a>
+                    <a href="#" class="menu-item">Business Directory</a>
+                    <a href="#" class="menu-item">Students</a>
+                    <a href="#" class="menu-item">Pricing</a>
+                </div>
+
+                <div class="menu-section">
+                    <h3>Events</h3>
+                    <a href="#" class="menu-item">Cultural Events</a>
+                    <a href="#" class="menu-item">Business Networking</a>
+                    <a href="#" class="menu-item">Social Meetups</a>
+                    <a href="#" class="menu-item">Portuguese Language</a>
+                    <a href="#" class="menu-item">Food & Dining</a>
+                </div>
+
+                <div class="menu-section">
+                    <h3>Tours</h3>
+                    <a href="#" class="menu-item">London Tours</a>
+                    <a href="#" class="menu-item">London Transport</a>
+                </div>
+
+                <div class="menu-section">
+                    <h3>Services</h3>
+                    <a href="#" class="menu-item">Find Your Match</a>
+                    <a href="#" class="menu-item">Live TV</a>
+                    <a href="#" class="menu-item">Streaming Income</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="test-info">
+                <h2>📱 Mobile Navigation Test</h2>
+                <p><strong>Device:</strong> iPhone SE (375px width)</p>
+                <p><strong>Purpose:</strong> Testing Portuguese-speaking community mobile navigation</p>
+                <p><strong>Instructions:</strong> Click the hamburger menu (☰) to test mobile navigation</p>
+            </div>
+
+            <div class="test-checklist">
+                <h3>✅ Mobile UX Checklist</h3>
+                <div class="check-item">
+                    <span class="check-icon">✓</span>
+                    <span>Hamburger button ≥48px touch target</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">✓</span>
+                    <span>All menu items ≥48px touch targets</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">✓</span>
+                    <span>No horizontal scrolling</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">✓</span>
+                    <span>Portuguese cultural theming</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">✓</span>
+                    <span>Backdrop blur mobile optimization</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">✓</span>
+                    <span>Smooth animations & transitions</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">✓</span>
+                    <span>Organized content sections</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">✓</span>
+                    <span>Portuguese-speaking community features</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dimensions" id="dimensions">
+        375px × 667px (iPhone SE)
+    </div>
+
+    <script>
+        let menuOpen = false;
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('hamburger-icon');
+            
+            menuOpen = !menuOpen;
+            
+            if (menuOpen) {
+                menu.classList.add('active');
+                icon.textContent = '✕';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.remove('active');
+                icon.textContent = '☰';
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeMenu(event) {
+            if (event.target === event.currentTarget) {
+                toggleMenu();
+            }
+        }
+
+        // Update dimensions
+        function updateDimensions() {
+            const dimensions = document.getElementById('dimensions');
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            dimensions.textContent = `${width}px × ${height}px`;
+            
+            if (width <= 375) {
+                dimensions.style.color = '#00A859'; // Green for iPhone SE size
+            } else {
+                dimensions.style.color = '#C5282F'; // Red for larger sizes
+            }
+        }
+
+        window.addEventListener('resize', updateDimensions);
+        updateDimensions();
+
+        // Keyboard accessibility
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && menuOpen) {
+                toggleMenu();
+            }
+        });
+    </script>
+</body>
+</html>

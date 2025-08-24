@@ -320,3 +320,6 @@ export function getEmergencyContactInfo(): {
     address: `${embassy.address}, ${embassy.city} ${embassy.postcode}`
   }
 }
+// Export alias for backward compatibility with HeritageRespectProtocol
+export const PORTUGUESE_INSTITUTIONS = EMBASSY_CONTACTS
+export type PortugueseInstitution = EmbassyContact

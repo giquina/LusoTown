@@ -1,22 +1,22 @@
 {
   "summary": {
-    "totalViolations": 130977,
+    "totalViolations": 138639,
     "byCategory": {
-      "hardcoded_text": 127753,
-      "console_logs": 398,
-      "hardcoded_routes": 1112,
-      "hardcoded_colors": 700,
-      "hardcoded_analytics": 71,
-      "hardcoded_urls": 713,
-      "hardcoded_prices": 230
+      "hardcoded_text": 135271,
+      "hardcoded_routes": 1177,
+      "console_logs": 353,
+      "hardcoded_colors": 722,
+      "hardcoded_analytics": 73,
+      "hardcoded_urls": 778,
+      "hardcoded_prices": 265
     },
     "bySeverity": {
-      "high": 128696,
-      "medium": 1883,
-      "low": 398
+      "high": 136314,
+      "medium": 1972,
+      "low": 353
     },
-    "filesAffected": 709,
-    "timestamp": "2025-08-24T08:17:56.581Z",
+    "filesAffected": 743,
+    "timestamp": "2025-08-24T13:43:24.729Z",
     "recommendations": [
       "🚨 CRITICAL: Implement bilingual system with t() function",
       "🔧 Create config/cdn.ts for URL management",
@@ -26,905 +26,905 @@
   },
   "violations": [
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 8,
+      "file": "src/app/about/page.tsx",
+      "line": 1,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'react'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "'use client'",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 9,
+      "file": "src/app/about/page.tsx",
+      "line": 3,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'@testing-library/react'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "'@/components/Footer'",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 10,
+      "file": "src/app/about/page.tsx",
+      "line": 4,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'@/utils/mobile-ux-validator'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "'@/components/PageHeader'",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 11,
+      "file": "src/app/about/page.tsx",
+      "line": 5,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'@/config/mobile-ux-agent'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "'@/config/routes'",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 12,
+      "file": "src/app/about/page.tsx",
+      "line": 19,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'@/config/mobile-development-standards'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "'@heroicons/react/24/outline'",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 16,
+      "file": "src/app/about/page.tsx",
+      "line": 20,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'innerWidth'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "'@/context/LanguageContext'",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
       "line": 21,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'innerHeight'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "'framer-motion'",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 28,
+      "file": "src/app/about/page.tsx",
+      "line": 26,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'resize'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"min-h-screen\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
+      "line": 30,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"About LusoTown United Kingdom\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 31,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Sobre LusoTown Reino Unido\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 32,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"LusoTown connects Portuguese speakers and friends through exciting real-life meetups across the United Kingdom. Whether you'",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 33,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"LusoTown conecta falantes de português e amigos através de encontros emocionantes por todo o Reino Unido. Seja novo numa cidade britânica, tenha raízes num país de língua portuguesa, ou simplesmente ame a nossa cultura vibrante e língua, este é o seu espaço para socializar, conhecer pessoas incríveis pessoalmente, partilhar momentos inesquecíveis e celebrar a riqueza da herança portuguesa por toda a Grã-Bretanha!\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
       "line": 34,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'touches'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"Unidos pela Língua • United by Language\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
+      "line": 35,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Unidos pela Língua • Unidos pelo Idioma\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 36,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"premium\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 37,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"gradient\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 45,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"py-24 bg-gradient-to-br from-white via-premium-50/30 to-primary-50/30 relative overflow-hidden\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 46,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"absolute inset-0 overflow-hidden\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
       "line": 47,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Eventos'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-premium-200/20 to-primary-200/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse opacity-50\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
       "line": 48,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Comunidade de Falantes de Português em Londres'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-secondary-200/20 to-accent-200/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse opacity-50\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 49,
+      "file": "src/app/about/page.tsx",
+      "line": 51,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Descubra a vibrante comunidade de falantes de português em Londres através dos nossos eventos culturais autênticos'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"container-width relative z-10\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 50,
+      "file": "src/app/about/page.tsx",
+      "line": 52,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Participe em experiências únicas da cultura portuguesa, incluindo noites de fado tradicional, workshops de culinária portuguesa, festivais culturais e oportunidades de networking profissional'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"max-w-6xl mx-auto\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 54,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'Início'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 47,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'Eventos'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 56,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'Comunidade'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 57,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'Combinações'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
       "line": 58,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Mensagens'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"text-center mb-16\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 59,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'Perfil'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 63,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'Participar no Evento'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 64,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'Enviar Mensagem'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
       "line": 65,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Guardar nos Favoritos'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-8 border border-premium-200/50 shadow-lg\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 66,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'Partilhar Evento'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
       "line": 67,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Reservar Transporte'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"w-6 h-6 text-premium-600\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 71,
+      "file": "src/app/about/page.tsx",
+      "line": 68,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Nome Completo'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"text-premium-700 font-bold text-lg\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 72,
+      "file": "src/app/about/page.tsx",
+      "line": 70,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Endereço de Email'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"text-4xl md:text-5xl font-bold bg-gradient-to-r from-premium-600 via-primary-600 to-secondary-600 bg-clip-text text-transparent mb-8\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
       "line": 73,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Número de Telefone'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
       "line": 74,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Data de Nascimento'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "'s premier digital platform designed specifically for Portuguese speakers. \n                  We'",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
       "line": 75,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Localização'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "'re a comprehensive community ecosystem that brings together culture, \n                  commerce, entertainment, and connections for the Portuguese diaspora across Britain.\n                </p>\n              </motion.div>\n              \n              {/* How LusoTown Works */}\n              <motion.div\n                initial={{ opacity: 0, y: 40 }}\n                whileInView={{ opacity: 1, y: 0 }}\n                transition={{ duration: 0.8, delay: 0.3 }}\n                viewport={{ once: true }}\n                className=\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 76,
+      "file": "src/app/about/page.tsx",
+      "line": 88,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Interesses Culturais'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"bg-white/90 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-premium-200/50\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 90,
+      "file": "src/app/about/page.tsx",
+      "line": 89,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'🚀 Starting Mobile UX Test Suite for LusoTown...\\n'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"text-3xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent mb-8 text-center\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 122,
+      "file": "src/app/about/page.tsx",
+      "line": 93,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'iPhone SE'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"grid md:grid-cols-2 lg:grid-cols-3 gap-8\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 122,
+      "file": "src/app/about/page.tsx",
+      "line": 97,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'critical'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"Meet Your Match\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 123,
+      "file": "src/app/about/page.tsx",
+      "line": 98,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'iPhone 12'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"Encontre a Sua Alma Gémea\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 122,
+      "file": "src/app/about/page.tsx",
+      "line": 99,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'critical'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"Connect with Portuguese speakers who share your saudade, cultural values, and interests. Our intelligent matching system helps you find meaningful relationships—romantic, friendship, or professional—within the Portuguese-speaking community.\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 124,
+      "file": "src/app/about/page.tsx",
+      "line": 100,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'iPhone 13'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"Cultural compatibility matching\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 124,
+      "file": "src/app/about/page.tsx",
+      "line": 100,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'high'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"Portuguese heritage preferences\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
+      "line": 100,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"London location-based connections\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 100,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Verified Portuguese speaker profiles\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 104,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Events & Experiences\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 105,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Eventos & Experiências\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 106,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Discover and join authentic Portuguese events across the United Kingdom. From intimate fado nights in Stockwell to networking events in the City, experience Portuguese culture in every corner of Britain.\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 107,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Cultural festivals & celebrations\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 107,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Professional networking events\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 107,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Food markets & restaurants\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 107,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Live music & entertainment\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 111,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"LusoTown Business Directory\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 112,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Diretório de Negócios LusoTown\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 113,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Support and discover Portuguese-owned businesses across the United Kingdom. From restaurants and shops to professional services, keep your spending within our community while getting services in your language.\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 114,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Portuguese-speaking professionals\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 114,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Cultural restaurants & cafés\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 114,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Import shops & markets\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 114,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Community services in Portuguese\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 118,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"LusoTown TV\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 118,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"LusoTown TV\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 120,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Watch live Portuguese cultural content, from cooking shows to interviews with Portuguese-speaking community leaders. Our streaming platform brings Portuguese entertainment directly to your device.\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 121,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Live cultural programming\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 121,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Portuguese cooking shows\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 121,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Community interviews\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 121,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Cultural documentaries\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
       "line": 125,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'iPad Portrait'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"Community Feed\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 125,
+      "file": "src/app/about/page.tsx",
+      "line": 126,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'medium'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"Feed da Comunidade\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 129,
+      "file": "src/app/about/page.tsx",
+      "line": 127,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "`📱 Testing ${breakpoint.name} (${breakpoint.width}x${breakpoint.height}px)...`",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"Stay connected with real-time updates from the Portuguese-speaking community. Share experiences, ask for recommendations, and stay informed about everything happening in Portuguese London.\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
+      "line": 128,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Real-time community updates\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 128,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Portuguese-language posts\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 128,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Event recommendations\"",
+      "timestamp": "2025-08-24T13:43:20.482Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 128,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Local community support\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 132,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Premium Services\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 133,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Serviços Premium\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 134,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Access exclusive Portuguese-speaking professional services including executive transport, cultural tours, and concierge services designed for the sophisticated Portuguese-speaking community in London.\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 135,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Portuguese-speaking chauffeurs\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 135,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Cultural heritage tours\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 135,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Executive concierge services\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 135,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"VIP event access\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 144,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"group\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
       "line": 146,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n      const overflowElements = Array.from(elements).filter(el => {\n        if (el instanceof HTMLElement) {\n          const rect = el.getBoundingClientRect();\n          return rect.right > breakpoint.width;\n        }\n        return false;\n      });\n\n      const testResult = {\n        name: `",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"bg-gradient-to-br from-premium-50 to-primary-50 rounded-2xl p-6 h-full border border-premium-200/30 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
+      "line": 147,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start gap-4 mb-4\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 149,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-12 h-12 bg-gradient-to-br from-premium-500 to-primary-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 152,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-6 h-6 text-white\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 154,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex-1\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 155,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"font-bold text-gray-900 mb-1 text-lg group-hover:text-premium-700 transition-colors duration-300\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
       "line": 156,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "`,\n        breakpoint,\n        validationScore: result.score,\n        hasHorizontalScroll,\n        overflowElements: overflowElements.length,\n        issues: result.issues,\n        passed: result.passed && !hasHorizontalScroll && overflowElements.length === 0\n      };\n\n      this.testResults.push(testResult);\n      \n      if (testResult.passed) {\n        console.log(`",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"text-sm text-premium-600 italic font-medium\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 168,
+      "file": "src/app/about/page.tsx",
+      "line": 159,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "`);\n      } else {\n        console.log(`",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"text-gray-600 leading-relaxed mb-4\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 170,
+      "file": "src/app/about/page.tsx",
+      "line": 160,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "`);\n        if (hasHorizontalScroll) console.log('",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"space-y-2\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 171,
+      "file": "src/app/about/page.tsx",
+      "line": 162,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n        if (overflowElements.length > 0) console.log(`",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"flex items-center gap-2 text-sm text-gray-600\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 172,
+      "file": "src/app/about/page.tsx",
+      "line": 163,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "`);\n      }\n    }\n  }\n\n  /**\n   * Test touch target sizes and interactions\n   */\n  async testTouchInteractions(component: React.ReactElement): Promise<void> {\n    console.log('",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"w-4 h-4 text-premium-500 flex-shrink-0\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 181,
+      "file": "src/app/about/page.tsx",
+      "line": 183,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    \n    mockViewport(375, 667); // Test on smallest critical viewport\n    const { container } = render(component);\n    \n    // Find all interactive elements\n    const interactiveElements = container.querySelectorAll(\n      '",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"bg-gradient-to-br from-premium-50 via-primary-50 to-secondary-50 rounded-3xl p-10 border border-premium-200/30 shadow-xl\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
+      "file": "src/app/about/page.tsx",
+      "line": 184,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-center mb-10\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 185,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-3xl font-bold bg-gradient-to-r from-premium-600 to-primary-600 bg-clip-text text-transparent mb-4\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
       "line": 188,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "\"button\"",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 231,
+      "file": "src/app/about/page.tsx",
+      "line": 194,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'touchstart'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"grid lg:grid-cols-2 gap-8\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 240,
+      "file": "src/app/about/page.tsx",
+      "line": 195,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'Touch Interactions'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"space-y-6\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 251,
+      "file": "src/app/about/page.tsx",
+      "line": 196,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'✅ Touch interactions test passed'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"text-2xl font-bold text-gray-900 mb-4\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 253,
+      "file": "src/app/about/page.tsx",
+      "line": 197,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "'❌ Touch interactions test failed'",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"space-y-4\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 254,
+      "file": "src/app/about/page.tsx",
+      "line": 198,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "`);\n      if (spacingIssues > 0) console.log(`",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"flex items-start gap-3\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 255,
+      "file": "src/app/about/page.tsx",
+      "line": 199,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "`);\n    }\n  }\n\n  /**\n   * Test Portuguese text handling and overflow\n   */\n  async testPortugueseTextHandling(component: React.ReactElement): Promise<void> {\n    console.log('",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"w-6 h-6 bg-premium-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 263,
+      "file": "src/app/about/page.tsx",
+      "line": 200,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    \n    // Test different text lengths\n    const textTests = [\n      { name: '",
-      "timestamp": "2025-08-24T08:17:52.993Z"
+      "code": "\"text-white text-xs font-bold\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 267,
+      "file": "src/app/about/page.tsx",
+      "line": 203,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "', content: PORTUGUESE_TEST_CONTENT.shortText },\n      { name: '",
-      "timestamp": "2025-08-24T08:17:52.994Z"
+      "code": "\"font-bold text-gray-900\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     },
     {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 268,
+      "file": "src/app/about/page.tsx",
+      "line": 204,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
-      "code": "', content: PORTUGUESE_TEST_CONTENT.mediumText },\n      { name: '",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 269,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "', content: PORTUGUESE_TEST_CONTENT.longText },\n      { name: '",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 270,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "', content: PORTUGUESE_TEST_CONTENT.veryLongText },\n    ];\n\n    let overflowIssues = 0;\n    let fontSizeIssues = 0;\n\n    for (const textTest of textTests) {\n      // Create test component with Portuguese text\n      const TestComponent = () => (\n        <div>\n          {React.cloneElement(component)}\n          <div data-testid=\"",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 281,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\">\n            <p>{textTest.content}</p>\n            <button>{PORTUGUESE_TEST_CONTENT.buttons.joinEvent}</button>\n            <label>{PORTUGUESE_TEST_CONTENT.forms.fullName}</label>\n          </div>\n        </div>\n      );\n\n      mockViewport(375, 667);\n      const { container } = render(<TestComponent />);\n      \n      // Check for text overflow\n      const textElements = container.querySelectorAll('",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 293,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n      Array.from(textElements).forEach((element) => {\n        if (element instanceof HTMLElement) {\n          if (element.scrollWidth > element.clientWidth || \n              element.scrollHeight > element.clientHeight) {\n            overflowIssues++;\n          }\n          \n          // Check font size\n          const fontSize = parseInt(window.getComputedStyle(element).fontSize);\n          if (fontSize < 14) {\n            fontSizeIssues++;\n          }\n        }\n      });\n    }\n\n    const testResult = {\n      name: '",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 311,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "',\n      overflowIssues,\n      fontSizeIssues,\n      passed: overflowIssues === 0 && fontSizeIssues === 0\n    };\n\n    this.testResults.push(testResult);\n    \n    if (testResult.passed) {\n      console.log('",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 251,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    } else {\n      console.log('",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 322,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n      if (overflowIssues > 0) console.log(`",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 323,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "`);\n      if (fontSizeIssues > 0) console.log(`",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 324,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "`);\n    }\n  }\n\n  /**\n   * Test mobile accessibility compliance\n   */\n  async testMobileAccessibility(component: React.ReactElement): Promise<void> {\n    console.log('",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 332,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    \n    mockViewport(375, 667);\n    const { container } = render(component);\n    \n    // Check for proper heading structure\n    const headings = container.querySelectorAll('",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 338,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    const hasHeadings = headings.length > 0;\n    \n    // Check for alt text on images\n    const images = container.querySelectorAll('",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 342,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    const imagesWithoutAlt = Array.from(images).filter(img => \n      !img.alt && !img.getAttribute('",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 344,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "')\n    ).length;\n    \n    // Check for form labels\n    const inputs = container.querySelectorAll('",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 348,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    const inputsWithoutLabels = Array.from(inputs).filter(input => {\n      const label = container.querySelector(`",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 350,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"${input.id}\"",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 350,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "`);\n      const ariaLabel = input.getAttribute('",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 351,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n      const ariaLabelledBy = input.getAttribute('",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 352,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n      return !label && !ariaLabel && !ariaLabelledBy;\n    }).length;\n    \n    // Check for Portuguese lang attributes\n    const portugueseElements = container.querySelectorAll('",
-      "timestamp": "2025-08-24T08:17:52.994Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 357,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"], [lang=\"",
-      "timestamp": "2025-08-24T08:17:52.996Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 357,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    const hasPortugueseLangAttributes = portugueseElements.length > 0;\n\n    const testResult = {\n      name: '",
-      "timestamp": "2025-08-24T08:17:52.996Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 361,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "',\n      hasHeadings,\n      imagesWithoutAlt,\n      inputsWithoutLabels,\n      hasPortugueseLangAttributes,\n      passed: hasHeadings && imagesWithoutAlt === 0 && inputsWithoutLabels === 0\n    };\n\n    this.testResults.push(testResult);\n    \n    if (testResult.passed) {\n      console.log('",
-      "timestamp": "2025-08-24T08:17:52.996Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 251,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    } else {\n      console.log('",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 374,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n      if (!hasHeadings) console.log('",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 375,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n      if (imagesWithoutAlt > 0) console.log(`",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 376,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "`);\n      if (inputsWithoutLabels > 0) console.log(`",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 377,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "`);\n    }\n  }\n\n  /**\n   * Test mobile performance considerations\n   */\n  async testMobilePerformance(component: React.ReactElement): Promise<void> {\n    console.log('",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 385,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    \n    const { container } = render(component);\n    \n    // Check for lazy loading\n    const images = container.querySelectorAll('",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 390,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    const imagesWithoutLazyLoading = Array.from(images).filter(img => \n      !img.loading || img.loading !== '",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 401,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'[class*=\"",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 401,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    const tooManyAnimations = animatedElements.length > 5;\n    \n    // Check bundle size considerations (simplified)\n    const totalElements = container.querySelectorAll('",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 405,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "').length;\n    const complexLayout = totalElements > 100;\n\n    const testResult = {\n      name: '",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 409,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "',\n      imagesWithoutLazyLoading,\n      imagesWithoutResponsive,\n      tooManyAnimations,\n      complexLayout,\n      totalElements,\n      passed: imagesWithoutLazyLoading <= 2 && !tooManyAnimations && !complexLayout\n    };\n\n    this.testResults.push(testResult);\n    \n    if (testResult.passed) {\n      console.log('",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 251,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    } else {\n      console.log('",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 423,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n      if (imagesWithoutLazyLoading > 2) console.log(`",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 424,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "`);\n      if (tooManyAnimations) console.log('",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 425,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n      if (complexLayout) console.log(`",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 426,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "`);\n    }\n  }\n\n  /**\n   * Test gesture support\n   */\n  async testGestureSupport(component: React.ReactElement): Promise<void> {\n    console.log('",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 434,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    \n    const { container } = render(component);\n    \n    // Check for swipeable elements\n    const swipeElements = container.querySelectorAll('",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 439,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"swipe\"",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 439,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    const hasSwipeSupport = swipeElements.length > 0;\n    \n    // Test basic touch events\n    let touchEventSupported = false;\n    try {\n      const touchEvent = createTouchEvent('",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 445,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "', [{ clientX: 100, clientY: 100 }]);\n      container.dispatchEvent(touchEvent);\n      touchEventSupported = true;\n    } catch (error) {\n      // Touch events not supported\n    }\n\n    const testResult = {\n      name: '",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 453,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "',\n      hasSwipeSupport,\n      touchEventSupported,\n      swipeElementsCount: swipeElements.length,\n      passed: hasSwipeSupport || touchEventSupported\n    };\n\n    this.testResults.push(testResult);\n    \n    if (testResult.passed) {\n      console.log('",
-      "timestamp": "2025-08-24T08:17:52.997Z"
-    },
-    {
-      "file": "src/__tests__/mobile-ux-tests.tsx",
-      "line": 251,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "');\n    } else {\n      console.log('",
-      "timestamp": "2025-08-24T08:17:52.997Z"
+      "code": "\"text-gray-600\"",
+      "timestamp": "2025-08-24T13:43:20.483Z"
     }
   ],
-  "fullViolationCount": 130977
+  "fullViolationCount": 138639
 }

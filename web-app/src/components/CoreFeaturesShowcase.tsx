@@ -348,14 +348,14 @@ export default function CoreFeaturesShowcase() {
                 onTouchEnd={handleTouchEnd}
               >
                 <div className={`min-h-[600px] lg:min-h-[700px] p-8 lg:p-12 ${currentFeature.bgPattern} backdrop-blur-sm border border-white/60 shadow-2xl transition-all duration-500 transform`}>
-                  {/* Live Activity Indicator */}
+                  {/* Live Activity Indicator - Enhanced contrast */}
                   {currentFeature.liveActivity && (
-                    <div className="absolute top-6 right-6 flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-200/60 rounded-full px-4 py-2 shadow-lg">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                      <span className="text-sm font-semibold text-gray-800">
+                    <div className="absolute top-6 right-6 flex items-center gap-3 bg-gray-900/95 backdrop-blur-md border-2 border-green-500/60 rounded-full px-5 py-3 shadow-2xl">
+                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50" />
+                      <span className="text-sm font-bold text-white">
                         {currentFeature.liveActivity.count} {t(currentFeature.liveActivity.labelKey)}
                       </span>
-                      <FireIcon className="w-4 h-4 text-orange-500" />
+                      <FireIcon className="w-5 h-5 text-orange-400 animate-pulse" />
                     </div>
                   )}
 
@@ -530,13 +530,14 @@ export default function CoreFeaturesShowcase() {
                     setIsAutoPlaying(false)
                   }}
                 >
-                  {/* Live Activity Indicator */}
+                  {/* Live Activity Indicator - Enhanced contrast */}
                   {feature.liveActivity && (
-                    <div className="absolute top-4 right-4 flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 shadow-md">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                      <span className="text-xs font-semibold text-gray-700">
+                    <div className="absolute top-4 right-4 flex items-center gap-2 bg-gray-900/95 backdrop-blur-md border border-green-500/60 rounded-full px-3 py-2 shadow-xl">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-md shadow-green-400/50" />
+                      <span className="text-xs font-bold text-white">
                         {feature.liveActivity.count}
                       </span>
+                      <FireIcon className="w-3 h-3 text-orange-400 animate-pulse" />
                     </div>
                   )}
 

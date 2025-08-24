@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { PortugueseAvatar } from "@/components/OptimizedImage";
 
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -28,6 +29,9 @@ import { referralService } from "@/lib/referral";
 import Footer from "@/components/Footer";
 import UserOnboardingFlow from "@/components/UserOnboardingFlow";
 import GrowthFeatures from "@/components/GrowthFeatures";
+import { getSignupPageTestimonials } from "@/config/success-stories";
+import { getUpcomingEventsForSignup } from "@/config/cultural-events";
+import { getSignupPageBadges } from "@/config/verification-badges";
 import toast from "react-hot-toast";
 
 const benefits = [
@@ -35,21 +39,29 @@ const benefits = [
     icon: CheckIcon,
     text: "Free to join the Portuguese-speaking community",
     subtext: "No membership fees or barriers to participation",
+    mobileText: "Free Community Access",
+    mobileSubtext: "No barriers • All welcome"
   },
   {
     icon: UsersIcon,
     text: `Connect with ${communityStats.members} Portuguese speakers`,
     subtext: "From Portugal, Brazil, Angola, Mozambique & beyond",
+    mobileText: `${communityStats.members} Members`,
+    mobileSubtext: "10 Countries • 1 UK Community 🌍🇬🇧"
   },
   {
     icon: SparklesIcon,
     text: "Start free, upgrade when ready",
     subtext: "Access VIP events and exclusive experiences optionally",
+    mobileText: "Business & Romance",
+    mobileSubtext: "Culture & Connection"
   },
   {
     icon: ShieldCheckIcon,
     text: "Premium features available",
     subtext: "Priority booking, secret societies, exclusive events",
+    mobileText: "Elite Portuguese Events",
+    mobileSubtext: "Exclusive experiences"
   },
 ];
 
@@ -60,23 +72,86 @@ const trustSignals = [
   { icon: StarIcon, text: "4.9/5 member satisfaction" },
 ];
 
-const testimonials = [
+// Get authentic Portuguese-speaking community content
+const successStories = getSignupPageTestimonials();
+const upcomingEvents = getUpcomingEventsForSignup();
+const verificationBadges = getSignupPageBadges();
+
+const testimonials = successStories.map(story => ({
+  name: story.name,
+  age: story.age,
+  location: story.location,
+  origin: `${story.origin} ${story.flag}`,
+  quote: story.quote,
+  quotePortuguese: story.quotePortuguese,
+  avatar: story.avatar,
+  category: story.category,
+  verificationBadges: story.verificationBadges,
+  heritage: story.origin.split(',')[1]?.trim() || story.origin,
+  flag: story.flag
+}));
+
+// Mobile-optimized event showcase data
+const mobileEvents = [
   {
-    name: "Sarah C.",
-    age: "34",
-    location: "Clapham",
-    quote:
-      "Filled my social calendar with Portuguese experiences through LusoTown. Never have boring weekends!",
-    avatar: getImageWithFallback("sarah-chen"),
+    title: "Kizomba Tonight",
+    subtitle: "Sensual dancing • 8PM",
+    location: "Stockwell",
+    emoji: "💃",
+    flag: "🇦🇴",
+    attending: 47,
+    type: "cultural"
   },
   {
-    name: "Maya P.",
-    age: "38",
-    location: "Shoreditch",
-    quote:
-      "Finally found other Portuguese speakers in London. The events are amazing!",
-    avatar: getImageWithFallback("maya-patel"),
+    title: "Business Breakfast Tomorrow",
+    subtitle: "Portuguese networking • 8AM",
+    location: "Canary Wharf",
+    emoji: "☕",
+    flag: "🇵🇹",
+    attending: 23,
+    type: "business"
   },
+  {
+    title: "Fado This Weekend",
+    subtitle: "Soulful music • Saturday",
+    location: "Camden",
+    emoji: "🎵",
+    flag: "🇵🇹",
+    attending: 65,
+    type: "cultural"
+  },
+  {
+    title: "Morna Soul Session",
+    subtitle: "Cape Verdean blues • Sunday",
+    location: "Vauxhall",
+    emoji: "🎤",
+    flag: "🇨🇻",
+    attending: 32,
+    type: "cultural"
+  },
+  {
+    title: "Cachupa Cooking",
+    subtitle: "Traditional cooking • Weekend",
+    location: "Bermondsey",
+    emoji: "🍽️",
+    flag: "🇨🇻",
+    attending: 18,
+    type: "cultural"
+  }
+];
+
+// Portuguese-speaking nations flags for mobile carousel
+const portugueseNations = [
+  { flag: "🇵🇹", name: "Portugal", namePort: "Portugal" },
+  { flag: "🇧🇷", name: "Brazil", namePort: "Brasil" },
+  { flag: "🇦🇴", name: "Angola", namePort: "Angola" },
+  { flag: "🇲🇿", name: "Mozambique", namePort: "Moçambique" },
+  { flag: "🇨🇻", name: "Cape Verde", namePort: "Cabo Verde" },
+  { flag: "🇬🇼", name: "Guinea-Bissau", namePort: "Guiné-Bissau" },
+  { flag: "🇸🇹", name: "São Tomé", namePort: "São Tomé e Príncipe" },
+  { flag: "🇹🇱", name: "East Timor", namePort: "Timor-Leste" },
+  { flag: "🇲🇴", name: "Macau", namePort: "Macau" },
+  { flag: "🇬🇧", name: "UK Heritage", namePort: "Herança no Reino Unido" }
 ];
 
 function SignupInner() {
@@ -309,6 +384,132 @@ function SignupInner() {
 
   const isPortuguese = language === "pt";
 
+  // Mobile Event Carousel Component
+  const MobileEventCarousel = () => (
+    <div className="lg:hidden mb-6 -mx-4 sm:-mx-6">
+      <h3 className="text-lg font-bold text-gray-900 mb-3 px-4 sm:px-6">
+        🔥 This Week's Hot Events
+      </h3>
+      <div className="flex overflow-x-auto snap-x snap-mandatory gap-3 px-4 sm:px-6 pb-2">
+        {mobileEvents.map((event, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: index * 0.1 }}
+            className="min-w-[280px] max-w-[280px] snap-start bg-gradient-to-br from-white to-primary-50 rounded-xl shadow-lg p-4 border border-primary-100"
+          >
+            <div className="flex items-start gap-3 mb-3">
+              <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-xl">
+                {event.emoji}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-lg font-bold text-gray-900 truncate">
+                    {event.title}
+                  </span>
+                  <span className="text-xl">{event.flag}</span>
+                </div>
+                <p className="text-sm text-gray-600 mb-1">{event.subtitle}</p>
+                <p className="text-sm text-primary-600 font-medium">
+                  📍 {event.location}
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-3 border-t border-gray-200">
+              <span className="text-xs text-gray-500 font-medium">
+                {event.attending} attending
+              </span>
+              <span className={`text-xs px-2 py-1 rounded-full font-medium ${
+                event.type === 'cultural' 
+                  ? 'bg-purple-100 text-purple-700' 
+                  : 'bg-blue-100 text-blue-700'
+              }`}>
+                {event.type === 'cultural' ? 'Culture' : 'Business'}
+              </span>
+            </div>
+          </motion.div>
+        ))}
+        <div className="min-w-[120px] snap-start flex items-center justify-center">
+          <button className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg hover:shadow-xl transition-all">
+            <span className="text-sm">See All</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Mobile Flag Carousel Component
+  const MobileFlagCarousel = () => (
+    <div className="lg:hidden mb-6">
+      <div className="text-center mb-3">
+        <h3 className="text-lg font-bold text-gray-900 mb-1">
+          From 10 Countries 🌍 to One UK Community 🇬🇧
+        </h3>
+        <p className="text-sm text-gray-600">Swipe to explore Portuguese-speaking nations</p>
+      </div>
+      <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 px-4 pb-2">
+        {portugueseNations.map((nation, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.05 }}
+            className="min-w-[100px] snap-start text-center"
+          >
+            <div className="w-16 h-16 mx-auto mb-2 bg-white rounded-full flex items-center justify-center text-3xl shadow-md border border-gray-200">
+              {nation.flag}
+            </div>
+            <p className="text-xs font-medium text-gray-700 truncate">
+              {isPortuguese ? nation.namePort : nation.name}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+
+  // Mobile Testimonial Carousel Component
+  const MobileTestimonialCarousel = () => (
+    <div className="lg:hidden mt-6">
+      <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">
+        💬 Our Portuguese Community
+      </h3>
+      <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 px-2 pb-2">
+        {testimonials.map((testimonial, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: index * 0.1 }}
+            className="min-w-[300px] snap-start bg-white/60 backdrop-blur-sm rounded-xl border border-white/80 p-4 shadow-sm"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <PortugueseAvatar
+                src={testimonial.avatar}
+                alt={testimonial.name}
+                size="md"
+                flag={testimonial.flag}
+                heritage={testimonial.heritage}
+              />
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold text-gray-900">{testimonial.name}</span>
+                </div>
+                <p className="text-xs text-gray-500">
+                  {testimonial.age} • {testimonial.location} • {testimonial.heritage}
+                </p>
+              </div>
+            </div>
+            <p className="text-sm text-gray-700 italic leading-relaxed">
+              "{testimonial.quote}"
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+
   // Onboarding flow handlers
   const handleOnboardingComplete = (data: any) => {
     setOnboardingData(data);
@@ -350,9 +551,15 @@ function SignupInner() {
   return (
     <main className="min-h-screen">
       <div className="pt-16">
-        <section className="py-8 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width w-full">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <section className="py-4 sm:py-8 bg-gradient-to-br from-primary-50 to-secondary-50">
+          <div className="container-width w-full px-4 sm:px-6 lg:px-8">
+            {/* Mobile Portuguese Nations Showcase */}
+            <MobileFlagCarousel />
+            
+            {/* Mobile Events Carousel */}
+            <MobileEventCarousel />
+            
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6 lg:gap-12 items-start">
               {/* Left side - Benefits */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -386,15 +593,15 @@ function SignupInner() {
                   </motion.div>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight">
+                <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black text-gray-900 mb-3 sm:mb-6 leading-tight">
                   <span className="bg-gradient-to-r from-green-600 to-red-600 bg-clip-text text-transparent">
                     Finally!
                   </span>{" "}
-                  Join{" "}
+                  <span className="block sm:inline">Connect with{" "}</span>
                   <span className="bg-gradient-to-r from-green-600 to-red-600 bg-clip-text text-transparent">
-                    750+ Portuguese Speakers
+                    Portuguese Speakers Who Get You
                   </span>{" "}
-                  in London
+                  <span className="block sm:inline">in the United Kingdom</span>
                 </h1>
 
                 {/* Social Proof Stats */}
@@ -414,8 +621,35 @@ function SignupInner() {
                   </div>
                   
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    <span className="font-semibold text-red-600">Next event:</span> Porto Night this Friday (47 attending)
+                    <span className="font-semibold text-red-600">Next event:</span> Chocolate Kizomba tonight at One Regent Street (85 attending)
                   </p>
+                </div>
+
+                {/* Chocolate Kizomba Cultural Integration */}
+                <div className="bg-gradient-to-r from-amber-50 via-red-50 to-green-50 p-6 rounded-2xl border border-amber-200 mb-6">
+                  <div className="flex items-start gap-4">
+                    <div className="text-3xl">🇦🇴💃</div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-2">
+                        Experience Authentic Kizomba - Angola's Sensual Dance Gift to the Portuguese-speaking World
+                      </h3>
+                      <p className="text-gray-700 leading-relaxed mb-3">
+                        Whether you're single and looking to connect or wanting to celebrate our African Lusophone heritage, 
+                        our partner event <strong>Chocolate Kizomba</strong> (@chocolatekizomba) welcomes all skill levels 
+                        every <strong>Tuesday & Thursday at One Regent Street, 8pm-Late</strong>.
+                      </p>
+                      <div className="bg-white/70 p-4 rounded-lg border border-amber-200">
+                        <p className="text-sm text-gray-600 mb-2">
+                          <strong>Cultural Education:</strong> Kizomba originated in 1980s Angola, blending traditional Semba 
+                          with Portuguese influences. Today it's the heartbeat of romantic connection across all Portuguese-speaking 
+                          communities - from Luanda to London.
+                        </p>
+                        <div className="flex items-center gap-2 text-sm text-amber-700">
+                          <span className="font-semibold">🎵 Ana & Miguel met here → 🤵👰 Married 6 months later!</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <p className="text-lg text-gray-600 mb-3 leading-relaxed">
@@ -426,7 +660,7 @@ function SignupInner() {
                   No credit card required
                 </p>
 
-                <div className="space-y-4 sm:space-y-6 mb-8">
+                <div className="space-y-3 sm:space-y-6 mb-6 sm:mb-8">
                   {benefits.map((benefit, index) => {
                     const IconComponent = benefit.icon;
                     return (
@@ -438,17 +672,19 @@ function SignupInner() {
                           delay: 0.2 + index * 0.1,
                           duration: 0.6,
                         }}
-                        className="flex items-start gap-4 p-4 bg-white/50 backdrop-blur-sm rounded-xl border border-white/70"
+                        className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-white/50 backdrop-blur-sm rounded-xl border border-white/70"
                       >
                         <div className="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
                           <IconComponent className="h-4 w-4 text-white" />
                         </div>
-                        <div>
-                          <span className="font-semibold text-gray-900 block">
-                            {benefit.text}
+                        <div className="flex-1 min-w-0">
+                          <span className="font-semibold text-gray-900 block text-sm sm:text-base">
+                            <span className="sm:hidden">{benefit.mobileText}</span>
+                            <span className="hidden sm:block">{benefit.text}</span>
                           </span>
-                          <span className="text-sm text-gray-600">
-                            {benefit.subtext}
+                          <span className="text-xs sm:text-sm text-gray-600 leading-snug">
+                            <span className="sm:hidden">{benefit.mobileSubtext}</span>
+                            <span className="hidden sm:block">{benefit.subtext}</span>
                           </span>
                         </div>
                       </motion.div>
@@ -457,7 +693,7 @@ function SignupInner() {
                 </div>
 
                 {/* Trust Signals */}
-                <div className="grid grid-cols-2 gap-3 mb-8">
+                <div className="grid grid-cols-2 gap-3 mb-6">
                   {trustSignals.map((signal, index) => {
                     const IconComponent = signal.icon;
                     return (
@@ -472,34 +708,96 @@ function SignupInner() {
                   })}
                 </div>
 
-                {/* Quick Testimonials */}
+                {/* Cultural Verification Badges Preview */}
+                <div className="mb-8">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <ShieldCheckIcon className="h-5 w-5 text-green-600" />
+                    Cultural Verification Badges
+                  </h3>
+                  <div className="grid grid-cols-2 gap-2 mb-4">
+                    {verificationBadges.slice(0, 6).map((badge) => (
+                      <div
+                        key={badge.id}
+                        className="flex items-center gap-2 p-2 bg-white/60 rounded-lg border border-gray-200 text-xs"
+                      >
+                        <span className="text-lg">{badge.emoji}</span>
+                        <div className="min-w-0">
+                          <div className="font-medium text-gray-900 truncate">
+                            {badge.name}
+                          </div>
+                          <div className="text-gray-600 truncate">
+                            {badge.type === 'business' ? 'Business Owner' : 
+                             badge.type === 'heritage' ? 'Heritage Verified' :
+                             badge.type === 'cultural' ? 'Cultural Leader' : 'Community Member'}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    🌟 Earn badges by contributing to the Portuguese-speaking community
+                  </p>
+                </div>
+
+                {/* Authentic Community Success Stories */}
                 <div className="space-y-4 hidden lg:block">
-                  {testimonials.map((testimonial, index) => (
+                  <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+                    <StarIcon className="h-5 w-5 text-yellow-500" />
+                    Real Portuguese-speaking Community Success Stories
+                  </h3>
+                  {testimonials.slice(0, 3).map((testimonial, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.8 + index * 0.2 }}
-                      className="flex items-center gap-3 p-3 bg-white/60 backdrop-blur-sm rounded-lg border border-white/80"
+                      className="flex items-start gap-3 p-4 bg-white/70 backdrop-blur-sm rounded-lg border border-white/90 shadow-sm"
                     >
                       <Image
                         src={testimonial.avatar}
                         alt={testimonial.name}
                         width={40}
                         height={40}
-                        className="rounded-full object-cover ring-2 ring-white shadow-sm"
+                        className="rounded-full object-cover ring-2 ring-white shadow-sm flex-shrink-0"
                       />
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm text-gray-700 italic mb-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-lg">{testimonial.flag}</span>
+                          <span className="text-sm font-semibold text-gray-900">
+                            {testimonial.name}, {testimonial.age}
+                          </span>
+                          <span className="text-xs text-gray-500">
+                            • {testimonial.location}
+                          </span>
+                        </div>
+                        <p className="text-sm text-gray-700 italic mb-2 leading-relaxed">
                           "{testimonial.quote}"
                         </p>
-                        <p className="text-xs text-gray-500">
-                          {testimonial.name}, {testimonial.age} •{" "}
-                          {testimonial.location}
-                        </p>
+                        <div className="flex items-center gap-1">
+                          {testimonial.category === 'business' && (
+                            <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                              💼 Business Success
+                            </span>
+                          )}
+                          {testimonial.category === 'romance' && (
+                            <span className="text-xs bg-pink-100 text-pink-700 px-2 py-1 rounded-full">
+                              💕 Love & Connection
+                            </span>
+                          )}
+                          {testimonial.category === 'cultural' && (
+                            <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
+                              🎭 Cultural Leader
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </motion.div>
                   ))}
+                  <div className="text-center pt-2">
+                    <p className="text-xs text-gray-500">
+                      📈 Join {communityStats.members}+ Portuguese speakers building success stories
+                    </p>
+                  </div>
                 </div>
               </motion.div>
 
@@ -510,32 +808,35 @@ function SignupInner() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="order-1 lg:order-2"
               >
-                <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 border border-white/50">
-                  <div className="text-center mb-6 sm:mb-8">
-                    <div className="inline-flex items-center gap-2 bg-green-50 rounded-full px-4 py-2 text-green-600 font-medium mb-4 text-sm">
-                      <CheckIcon className="h-4 w-4" />
+                <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8 border border-white/50">
+                  <div className="text-center mb-4 sm:mb-6 lg:mb-8">
+                    <div className="inline-flex items-center gap-2 bg-green-50 rounded-full px-3 sm:px-4 py-2 text-green-600 font-medium mb-3 sm:mb-4 text-xs sm:text-sm">
+                      <CheckIcon className="h-3 w-3 sm:h-4 sm:w-4" />
                       Free to Join
                     </div>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-                      Start Free Today
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+                      <span className="sm:hidden">Join Free Today</span>
+                      <span className="hidden sm:block">Start Free Today</span>
                     </h2>
-                    <p className="text-gray-600 text-sm sm:text-base mb-4">
-                      Free community access • No barriers to participation
+                    <p className="text-gray-600 text-xs sm:text-sm lg:text-base mb-3 sm:mb-4">
+                      <span className="sm:hidden">750+ Members • Business & Romance • No barriers</span>
+                      <span className="hidden sm:block">Free community access • No barriers to participation</span>
                     </p>
 
                     {/* Social Proof */}
-                    <div className="flex items-center justify-center gap-4 text-xs text-gray-500 mb-4">
-                      <div className="flex items-center gap-1">
-                        <UsersIcon className="h-4 w-4" />
-                        <span>{communityStats.members} Members</span>
+                    <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs text-gray-500 mb-4">
+                      <div className="flex items-center gap-1 bg-gray-50 rounded-full px-2 py-1">
+                        <UsersIcon className="h-3 w-3 sm:h-4 sm:w-4" />
+                        <span className="font-medium">{communityStats.members}</span>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <MapPinIcon className="h-4 w-4" />
-                        <span>London & United Kingdom</span>
+                      <div className="flex items-center gap-1 bg-gray-50 rounded-full px-2 py-1">
+                        <MapPinIcon className="h-3 w-3 sm:h-4 sm:w-4" />
+                        <span className="font-medium hidden sm:inline">London & UK</span>
+                        <span className="font-medium sm:hidden">UK</span>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <StarIcon className="h-4 w-4 text-yellow-400" />
-                        <span>4.9/5 Rating</span>
+                      <div className="flex items-center gap-1 bg-gray-50 rounded-full px-2 py-1">
+                        <StarIcon className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400" />
+                        <span className="font-medium">4.9★</span>
                       </div>
                     </div>
                   </div>
@@ -586,7 +887,8 @@ function SignupInner() {
                         htmlFor="email"
                         className="block text-sm font-medium text-gray-700 mb-2"
                       >
-                        Professional Email Address
+                        <span className="sm:hidden">Email Address</span>
+                        <span className="hidden sm:block">Professional Email Address</span>
                       </label>
                       <input
                         type="email"
@@ -596,7 +898,7 @@ function SignupInner() {
                         onChange={handleInputChange}
                         disabled={isSubmitting}
                         required
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50 transition-colors ${
+                        className={`w-full px-4 py-4 sm:py-3 text-base sm:text-sm border rounded-lg focus:ring-2 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50 transition-colors min-h-[48px] ${
                           emailError
                             ? "border-red-300 focus:ring-red-400"
                             : formData.email && !emailError
@@ -604,6 +906,8 @@ function SignupInner() {
                             : "border-gray-300 focus:ring-primary-400"
                         }`}
                         placeholder="sarah@company.com"
+                        autoComplete="email"
+                        inputMode="email"
                       />
                       {emailError && (
                         <p className="mt-1 text-sm text-red-600">
@@ -633,8 +937,9 @@ function SignupInner() {
                         onChange={handleInputChange}
                         disabled={isSubmitting}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50"
+                        className="w-full px-4 py-4 sm:py-3 text-base sm:text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50 min-h-[48px]"
                         placeholder="Sarah"
+                        autoComplete="given-name"
                       />
                     </div>
 
@@ -658,7 +963,7 @@ function SignupInner() {
                         value={formData.referralCode}
                         onChange={handleInputChange}
                         disabled={isSubmitting}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50 uppercase"
+                        className="w-full px-4 py-4 sm:py-3 text-base sm:text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50 uppercase min-h-[48px]"
                         placeholder={
                           language === "pt" ? "Ex: JOÃO1234" : "e.g., MARIA1234"
                         }
@@ -689,8 +994,9 @@ function SignupInner() {
                         onChange={handleInputChange}
                         disabled={isSubmitting}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50"
+                        className="w-full px-4 py-4 sm:py-3 text-base sm:text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50 min-h-[48px]"
                         placeholder="Enter a secure password"
+                        autoComplete="new-password"
                         minLength={6}
                       />
                       {formData.password && (
@@ -755,23 +1061,33 @@ function SignupInner() {
                         onChange={handleInputChange}
                         disabled={isSubmitting}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50"
+                        className="w-full px-4 py-4 sm:py-3 text-base sm:text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50 min-h-[48px]"
                         placeholder={t(
                           "signup.confirm-password-placeholder",
                           "Confirm your password"
                         )}
+                        autoComplete="new-password"
                         minLength={6}
                       />
                     </div>
 
                     {/* Portuguese-speaking community Onboarding */}
-                    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-6 rounded-xl border border-primary-100">
-                      <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                        🇵🇹{" "}
-                        {t(
-                          "signup.portuguese-community",
-                          "Join the Portuguese-speaking community"
-                        )}
+                    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 sm:p-6 rounded-xl border border-primary-100">
+                      <h3 className="font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
+                        <div className="flex items-center gap-1">
+                          <span title="Portugal">🇵🇹</span>
+                          <span title="Brazil">🇧🇷</span>
+                          <span title="Angola">🇦🇴</span>
+                          <span title="Cape Verde">🇨🇻</span>
+                          <span title="Mozambique">🇲🇿</span>
+                        </div>
+                        <span className="sm:hidden">Portuguese Community</span>
+                        <span className="hidden sm:block">
+                          {t(
+                            "signup.portuguese-community",
+                            "Join the Portuguese-speaking community"
+                          )}
+                        </span>
                       </h3>
 
                       <div className="grid sm:grid-cols-2 gap-4 mb-4">
@@ -787,7 +1103,7 @@ function SignupInner() {
                             name="portugueseOrigin"
                             value={formData.portugueseOrigin}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                            className="w-full px-4 py-4 sm:py-3 text-base sm:text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 min-h-[48px]"
                           >
                             <option value="">
                               {t(
@@ -829,7 +1145,7 @@ function SignupInner() {
                             name="londonArea"
                             value={formData.londonArea}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                            className="w-full px-4 py-4 sm:py-3 text-base sm:text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 min-h-[48px]"
                           >
                             <option value="">
                               {t(
@@ -916,7 +1232,7 @@ function SignupInner() {
                             "What interests you? (Select all that apply)"
                           )}
                         </label>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
                           {[
                             {
                               key: "fado",
@@ -983,7 +1299,7 @@ function SignupInner() {
                               key={interest.key}
                               type="button"
                               onClick={() => handleInterestToggle(interest.key)}
-                              className={`text-left p-2 rounded-lg text-xs transition-all ${
+                              className={`text-left p-3 sm:p-2 rounded-lg text-sm sm:text-xs transition-all min-h-[48px] sm:min-h-auto flex items-center justify-center sm:justify-start ${
                                 formData.interests.includes(interest.key)
                                   ? "bg-primary-500 text-white shadow-md transform scale-105"
                                   : "bg-white/60 text-gray-700 hover:bg-white border border-gray-200 hover:shadow-sm"
@@ -1004,7 +1320,7 @@ function SignupInner() {
                       >
                         Community Guidelines
                       </label>
-                      <div className="flex items-center p-3 border border-gray-300 rounded-lg bg-white/90 backdrop-blur-sm">
+                      <div className="flex items-start p-3 sm:p-4 border border-gray-300 rounded-lg bg-white/90 backdrop-blur-sm min-h-[48px]">
                         <input
                           id="ageConfirmation"
                           name="ageConfirmation"
@@ -1013,7 +1329,7 @@ function SignupInner() {
                           onChange={handleInputChange}
                           disabled={isSubmitting}
                           required
-                          className="h-4 w-4 text-primary-400 focus:ring-primary-400 border-gray-300 rounded disabled:opacity-50"
+                          className="h-5 w-5 sm:h-4 sm:w-4 text-primary-400 focus:ring-primary-400 border-gray-300 rounded disabled:opacity-50 mt-0.5 sm:mt-0 flex-shrink-0"
                         />
                         <label
                           htmlFor="ageConfirmation"
@@ -1082,19 +1398,22 @@ function SignupInner() {
                         </p>
                         <div className="flex flex-wrap gap-1">
                           <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">
-                            ☕ Coffee Meetup (Stockwell)
+                            💃🇦🇴 Chocolate Kizomba (One Regent Street)
                           </span>
                           <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">
-                            🎵 Fado Night (Camden)
+                            💼🇵🇹 Portuguese Business Breakfast (City)
                           </span>
                           <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">
-                            🍽️ Sunday Brunch (Vauxhall)
+                            🍽️🌍 Lusophone Sunday Brunch (Vauxhall)
+                          </span>
+                          <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">
+                            🎵🇵🇹 Authentic Fado Night (Camden)
                           </span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex items-start space-x-3">
+                    <div className="flex items-start space-x-3 p-3 sm:p-0">
                       <input
                         id="agreeTerms"
                         name="agreeTerms"
@@ -1103,7 +1422,7 @@ function SignupInner() {
                         onChange={handleInputChange}
                         disabled={isSubmitting}
                         required
-                        className="h-4 w-4 text-primary-400 focus:ring-primary-400 border-gray-300 rounded mt-1 flex-shrink-0 disabled:opacity-50"
+                        className="h-5 w-5 sm:h-4 sm:w-4 text-primary-400 focus:ring-primary-400 border-gray-300 rounded mt-1 flex-shrink-0 disabled:opacity-50"
                       />
                       <label
                         htmlFor="agreeTerms"
@@ -1136,23 +1455,28 @@ function SignupInner() {
                     <button
                       type="submit"
                       disabled={isSubmitting || !!success}
-                      className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer group py-6 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                      className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] cursor-pointer group py-4 sm:py-6 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none min-h-[56px] sm:min-h-auto"
                     >
                       {isSubmitting ? (
-                        <span className="flex items-center justify-center gap-2 text-xl font-black">
+                        <span className="flex items-center justify-center gap-2 text-lg sm:text-xl font-black">
                           <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                          Creating Account...
+                          <span className="sm:hidden">Creating...</span>
+                          <span className="hidden sm:block">Creating Account...</span>
                         </span>
                       ) : success ? (
-                        <span className="flex items-center justify-center gap-2 text-xl font-black">
-                          <CheckIcon className="h-6 w-6" />
-                          Account Created!
+                        <span className="flex items-center justify-center gap-2 text-lg sm:text-xl font-black">
+                          <CheckIcon className="h-5 w-5 sm:h-6 sm:w-6" />
+                          <span className="sm:hidden">Created!</span>
+                          <span className="hidden sm:block">Account Created!</span>
                         </span>
                       ) : (
-                        <span className="flex items-center justify-center gap-4 text-xl font-black">
-                          <span className="text-xl">🇵🇹</span>
-                          <span>Join 750+ Portuguese Speakers - FREE</span>
-                          <span className="text-2xl">→</span>
+                        <span className="flex items-center justify-center gap-2 sm:gap-4 text-lg sm:text-xl font-black">
+                          <span className="text-lg sm:text-xl">🇵🇹</span>
+                          <span className="text-center leading-tight">
+                            <span className="sm:hidden">Join 750+ Portuguese Speakers FREE</span>
+                            <span className="hidden sm:block">Join 750+ Portuguese Speakers - FREE</span>
+                          </span>
+                          <span className="text-xl sm:text-2xl">→</span>
                         </span>
                       )}
                     </button>
@@ -1176,8 +1500,11 @@ function SignupInner() {
                   </form>
                 </div>
 
-                {/* Mobile testimonials */}
-                <div className="mt-6 space-y-3 lg:hidden">
+                {/* Mobile testimonial carousel */}
+                <MobileTestimonialCarousel />
+
+                {/* Legacy Mobile testimonials - keeping for fallback */}
+                <div className="mt-6 space-y-3 lg:hidden hidden">
                   {testimonials.map((testimonial, index) => (
                     <div
                       key={index}

@@ -19,7 +19,7 @@ This file serves as the **primary source of truth** for AI agents working on the
 
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL, Simple Relay Server (SRS), OpenStreetMap/Leaflet, PostGIS, Twitter API, Stripe, React Context state management
 
-**Status**: Production-ready - 121+ pages, 522+ components, complete bilingual i18n system, mobile-first responsive design, integrated streaming platform, public business directory with geolocation
+**Status**: Production-ready - 121+ pages, 522+ components, complete bilingual i18n system, mobile-first responsive design, integrated streaming platform, enhanced business directory with cultural celebrations and cultural wisdom rotation system
 
 ---
 
@@ -92,6 +92,8 @@ All dynamic data lives in `/src/config/`:
 - `routes.ts` - All URL routing
 - `brand.ts` - Brand colors, styling
 - `contact.ts` - Contact information
+- `lusophone-celebrations.ts` - Cultural celebrations and wisdom from all Portuguese-speaking nations
+- `community-guidelines.ts` - Comprehensive inclusivity rules and validation functions
 
 ---
 
@@ -245,6 +247,11 @@ className="bg-gray-500"    // ❌ Wrong!
 - **Cultural Centers**: Instituto Camões, Portuguese cultural institutions
 
 ### Recent Updates
+- ✅ Enhanced footer redesign with conversion optimization (January 2025)
+- ✅ Business directory transformation celebrating ALL Portuguese-speaking cultures
+- ✅ New Lusophone celebrations system with cultural wisdom rotation
+- ✅ Enhanced mobile responsiveness and user experience improvements
+- ✅ Cultural inclusivity features for entire Lusophone diaspora
 - ✅ Complete hardcoding refactoring (August 2025)
 - ✅ Centralized pricing system with environment variables
 - ✅ Portuguese cultural data configuration

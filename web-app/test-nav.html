@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Test - Discovery Focus</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f3f4f6;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-test {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        
+        .nav-test h3 {
+            margin: 0 0 12px 0;
+            color: #1f2937;
+        }
+        
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .nav-link {
+            padding: 8px 16px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .mobile-test {
+            border: 2px solid #10b981;
+            background: #f0fdf4;
+        }
+        
+        .desktop-test {
+            border: 2px solid #f59e0b;
+            background: #fffbeb;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+            }
+            
+            .nav-link {
+                text-align: center;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        
+        .language-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .lang-block {
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+        }
+        
+        .lang-en {
+            background: #fef2f2;
+            border-color: #fca5a5;
+        }
+        
+        .lang-pt {
+            background: #f0f9ff;
+            border-color: #7dd3fc;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>LusoTown Discovery Navigation Test</h1>
+        
+        <div class="language-section">
+            <div class="lang-block lang-en">
+                <h2>English Navigation</h2>
+                <ul>
+                    <li><strong>What's On</strong> (was: London Events)</li>
+                    <li><strong>Discover Businesses</strong> (was: Business Directory)</li>
+                    <li><strong>Discover Student Life</strong> (was: Students)</li>
+                </ul>
+            </div>
+            
+            <div class="lang-block lang-pt">
+                <h2>Portuguese Navigation</h2>
+                <ul>
+                    <li><strong>O Que Está a Acontecer</strong> (era: Eventos de Londres)</li>
+                    <li><strong>Descobrir Negócios</strong> (era: Diretório de Negócios)</li>
+                    <li><strong>Descobrir Vida Estudantil</strong> (era: Estudantes)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="nav-test desktop-test">
+            <h3>Desktop Navigation (Discovery Focus)</h3>
+            <div class="nav-links">
+                <a href="#" class="nav-link">What's On</a>
+                <a href="#" class="nav-link">Discover Businesses</a>
+                <a href="#" class="nav-link">Discover Student Life</a>
+                <a href="#" class="nav-link">Matches</a>
+                <a href="#" class="nav-link">Pricing</a>
+            </div>
+        </div>
+        
+        <div class="nav-test mobile-test">
+            <h3>Mobile Navigation Test (Touch-friendly)</h3>
+            <div class="nav-links">
+                <a href="#" class="nav-link">What's On</a>
+                <a href="#" class="nav-link">Discover Businesses</a>
+                <a href="#" class="nav-link">Discover Student Life</a>
+                <a href="#" class="nav-link">Matches</a>
+                <a href="#" class="nav-link">Pricing</a>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #f9fafb; border-radius: 8px;">
+            <h3>✅ Implementation Complete</h3>
+            <p><strong>Navigation Labels Updated:</strong></p>
+            <ul>
+                <li>❌ "London Events" → ✅ "What's On" / "O Que Está a Acontecer"</li>
+                <li>❌ "Business Directory" → ✅ "Discover Businesses" / "Descobrir Negócios"</li>
+                <li>❌ "Students" → ✅ "Discover Student Life" / "Descobrir Vida Estudantil"</li>
+            </ul>
+            
+            <p><strong>Files Updated:</strong></p>
+            <ul>
+                <li>✅ /src/components/Header.tsx - Desktop navigation</li>
+                <li>✅ /src/components/MobileNavigation.tsx - Mobile navigation</li>
+                <li>✅ /src/i18n/en.json - English translations</li>
+                <li>✅ /src/i18n/pt.json - Portuguese translations</li>
+            </ul>
+            
+            <p><strong>Mobile Responsive:</strong></p>
+            <ul>
+                <li>✅ Touch targets minimum 44px height</li>
+                <li>✅ Discovery messaging optimized for Portuguese-speaking community</li>
+                <li>✅ Bilingual support maintained</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

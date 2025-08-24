@@ -103,3 +103,80 @@ export const measurePerformance = (name: string, fn: () => void) => {
     fn()
   }
 }
+
+// Monitor Core Web Vitals
+export interface WebVitals {
+  fcp: number // First Contentful Paint
+  lcp: number // Largest Contentful Paint  
+  fid: number // First Input Delay
+  cls: number // Cumulative Layout Shift
+}
+
+export const monitorWebVitals = () => {
+  if (typeof window === 'undefined') return
+
+  const vitals: Partial<WebVitals> = {}
+
+  // Monitor LCP
+  if ('PerformanceObserver' in window) {
+    const observer = new PerformanceObserver((entryList) => {
+      const entries = entryList.getEntries()
+      const lastEntry = entries[entries.length - 1]
+      vitals.lcp = lastEntry.startTime
+      
+      // Log if performance is poor (LCP > 2.5s)
+      if (lastEntry.startTime > 2500) {
+        console.warn('Poor LCP detected:', lastEntry.startTime + 'ms')
+      }
+    })
+    observer.observe({ type: 'largest-contentful-paint', buffered: true })
+  }
+
+  // Monitor CLS
+  let clsValue = 0
+  const observer = new PerformanceObserver((entryList) => {
+    for (const entry of entryList.getEntries()) {
+      if (!(entry as any).hadRecentInput) {
+        clsValue += (entry as any).value
+      }
+    }
+    vitals.cls = clsValue
+    
+    // Log if CLS is poor (> 0.1)
+    if (clsValue > 0.1) {
+      console.warn('Poor CLS detected:', clsValue)
+    }
+  })
+  
+  if ('PerformanceObserver' in window) {
+    observer.observe({ type: 'layout-shift', buffered: true })
+  }
+
+  return vitals
+}
+
+// Optimize bundle loading
+export const optimizeBundle = () => {
+  // Preload critical chunks
+  if (typeof document !== 'undefined') {
+    const criticalChunks = [
+      '/_next/static/chunks/main.js',
+      '/_next/static/chunks/webpack.js'
+    ]
+
+    criticalChunks.forEach(chunk => {
+      const link = document.createElement('link')
+      link.rel = 'modulepreload'
+      link.href = chunk
+      document.head.appendChild(link)
+    })
+  }
+}
+
+// Initialize all performance optimizations
+export const initPerformanceOptimizations = () => {
+  preloadCriticalResources()
+  lazyLoadImages()
+  monitorWebVitals()
+  optimizeBundle()
+}

@@ -11,6 +11,8 @@ import { geolocationService, BusinessDistance } from '@/lib/geolocation'
 import BusinessMap from '@/components/BusinessMap'
 import NearMeButton, { DistanceIndicator } from '@/components/NearMeButton'
 import BusinessSubmissionForm from '@/components/BusinessSubmissionForm'
+import { LUSOPHONE_CELEBRATIONS, CULTURAL_WISDOM, getFeaturedCelebrations, getRandomCulturalWisdom } from '@/config/lusophone-celebrations'
+import { PALOP_BUSINESS_DIRECTORY, getFeaturedPALOPBusinesses, getPALOPBusinessesByCategory } from '@/config/palop-business-directory'
 import { 
   MapPinIcon,
   PhoneIcon,
@@ -33,6 +35,55 @@ import {
 } from '@heroicons/react/24/outline'
 import { StarIcon as StarSolidIcon, UsersIcon } from '@heroicons/react/24/solid'
 import Footer from '@/components/Footer'
+
+// Cultural Wisdom Display Component
+const CulturalWisdomDisplay: React.FC = () => {
+  const { language } = useLanguage()
+  const isPortuguese = language === 'pt'
+  const [currentWisdom, setCurrentWisdom] = useState(() => getRandomCulturalWisdom())
+  const [fadeClass, setFadeClass] = useState('opacity-100')
+
+  // Rotate wisdom every 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFadeClass('opacity-0')
+      setTimeout(() => {
+        setCurrentWisdom(getRandomCulturalWisdom())
+        setFadeClass('opacity-100')
+      }, 300)
+    }, 10000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <div className="mt-8 text-center p-6 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl border border-primary-100">
+      <div className={`transition-opacity duration-300 ${fadeClass}`}>
+        <div className="flex items-center justify-center gap-3 mb-3">
+          <span className="text-2xl">{currentWisdom.flagEmoji}</span>
+          <span className="text-sm font-medium text-primary-700">
+            {currentWisdom.origin[language]}
+          </span>
+        </div>
+        
+        <p className="text-lg italic text-gray-800 mb-3 font-medium">
+          "{currentWisdom.quote[language]}"
+        </p>
+        
+        <div className="flex items-center justify-center gap-2 text-sm text-gray-600 mb-2">
+          <span>🌍</span>
+          <span>{currentWisdom.philosophy[language].slice(0, 80)}...</span>
+        </div>
+        
+        <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
+          <span>{isPortuguese ? 'Comunidade Lusófona Mundial' : 'Global Lusophone Community'}</span>
+          <span>•</span>
+          <span>{isPortuguese ? 'Tradições Empresariais' : 'Business Traditions'}</span>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 interface BusinessCardProps {
   business: PortugueseBusiness
@@ -444,11 +495,70 @@ export default function BusinessDirectory() {
         <div className="mb-8">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              {t('business_directory.title', 'Portuguese Business Directory')}
+              {t('business_directory.title', 'Lusophone Business Directory')}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t('business_directory.subtitle', 'Discover and support authentic Portuguese-owned businesses across London. United by language, united by business.')}
+              {t('business_directory.subtitle', 'Discover and support authentic businesses owned by Portuguese speakers across London. From Portugal to Brazil, Angola to Cape Verde - united by language, united by business.')}
             </p>
+            
+            {/* PALOP Business Excellence Recognition */}
+            <div className="mt-6 bg-gradient-to-r from-orange-50 via-yellow-50 to-green-50 rounded-xl p-6 border border-orange-200 max-w-4xl mx-auto">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <SparklesIcon className="w-6 h-6 text-orange-600" />
+                <h2 className="text-2xl font-bold text-gray-900">
+                  {t('palop.business.directory.title', 'PALOP Business Excellence Directory')}
+                </h2>
+              </div>
+              <div className="text-3xl mb-4 text-center">🇦🇴 🇨🇻 🇬🇼 🇲🇿 🇸🇹</div>
+              <p className="text-lg text-gray-700 leading-relaxed text-center mb-6">
+                {t('palop.success.entrepreneurs', 'PALOP Entrepreneurs Changing London\'s Landscape')} - From Angola's diamond traders to Cape Verde's music schools, Mozambique's spice importers to Guinea-Bissau's cultural centers.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div className="text-center">
+                  <div className="text-2xl mb-1 hover:scale-110 transition-transform cursor-pointer">🇦🇴</div>
+                  <div className="text-sm font-semibold text-red-800">Angola</div>
+                  <div className="text-xs text-red-600">Diamond & Kizomba</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl mb-1 hover:scale-110 transition-transform cursor-pointer">🇨🇻</div>
+                  <div className="text-sm font-semibold text-blue-800">Cape Verde</div>
+                  <div className="text-xs text-blue-600">Music & Food</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl mb-1 hover:scale-110 transition-transform cursor-pointer">🇬🇼</div>
+                  <div className="text-sm font-semibold text-purple-800">Guinea-Bissau</div>
+                  <div className="text-xs text-purple-600">Cultural Heritage</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl mb-1 hover:scale-110 transition-transform cursor-pointer">🇲🇿</div>
+                  <div className="text-sm font-semibold text-green-800">Mozambique</div>
+                  <div className="text-xs text-green-600">Spices & Cuisine</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl mb-1 hover:scale-110 transition-transform cursor-pointer">🇸🇹</div>
+                  <div className="text-sm font-semibold text-orange-800">São Tomé</div>
+                  <div className="text-xs text-orange-600">Cocoa Paradise</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Lusophone Unity Flag Strip */}
+            <div className="mt-4 flex justify-center items-center gap-2 p-3 bg-white/60 backdrop-blur-sm rounded-xl">
+              <span className="text-sm text-gray-700 font-medium mr-2">Heritage:</span>
+              <div className="flex gap-1">
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="Portugal">🇵🇹</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="Brazil">🇧🇷</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="Angola">🇦🇴</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="Mozambique">🇲🇿</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="Cape Verde">🇨🇻</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="Guinea-Bissau">🇬🇼</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="São Tomé and Príncipe">🇸🇹</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="East Timor">🇹🇱</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="Macau">🇲🇴</span>
+              </div>
+              <div className="text-gray-400 mx-1">→</div>
+              <span className="text-lg" title="United Kingdom - Our Business Home">🇬🇧</span>
+            </div>
             <div className="mt-4 flex items-center justify-center gap-4 text-sm text-gray-600">
               <div className="flex items-center gap-1">
                 <CheckBadgeIcon className="w-4 h-4 text-green-500" />
@@ -456,7 +566,7 @@ export default function BusinessDirectory() {
               </div>
               <div className="flex items-center gap-1">
                 <FlagIcon className="w-4 h-4 text-primary-500" />
-                <span>{isPortuguese ? 'Proprietários lusófonos' : 'Portuguese-speaking owners'}</span>
+                <span>{isPortuguese ? 'Proprietários lusófonos' : 'Lusophone-owned businesses'}</span>
               </div>
             </div>
             
@@ -753,98 +863,101 @@ export default function BusinessDirectory() {
           </>
         )}
 
-        {/* Portuguese Cultural Celebrations Section */}
+        {/* Lusophone Cultural Celebrations Section - Enhanced */}
         <div className="mt-12 bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">
-              {isPortuguese ? 'Celebrações Culturais Portuguesas' : 'Portuguese Cultural Celebrations'}
+              {t('business_directory.cultural_celebrations_title')}
             </h3>
             <p className="text-gray-600">
-              {isPortuguese 
-                ? 'Encontre negócios que participam nas nossas tradições culturais'
-                : 'Find businesses that participate in our cultural traditions'}
+              {t('business_directory.cultural_celebrations_subtitle')}
             </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {[
-              { 
-                name: isPortuguese ? 'Santos Populares' : 'Popular Saints', 
-                icon: '🎉', 
-                date: isPortuguese ? 'Junho' : 'June',
-                businesses: 15 
-              },
-              { 
-                name: isPortuguese ? 'Festa do Fado' : 'Fado Festival', 
-                icon: '🎵', 
-                date: isPortuguese ? 'Todo o ano' : 'Year-round',
-                businesses: 8 
-              },
-              { 
-                name: isPortuguese ? 'Festa Junina' : 'June Festival', 
-                icon: '🌽', 
-                date: isPortuguese ? 'Junho-Julho' : 'June-July',
-                businesses: 12 
-              },
-              { 
-                name: isPortuguese ? 'Dia de Portugal' : 'Portugal Day', 
-                icon: '🇵🇹', 
-                date: isPortuguese ? '10 de Junho' : 'June 10th',
-                businesses: 25 
-              },
-              { 
-                name: isPortuguese ? 'Carnaval' : 'Carnival', 
-                icon: '🎭', 
-                date: isPortuguese ? 'Fevereiro' : 'February',
-                businesses: 18 
-              },
-              { 
-                name: isPortuguese ? 'Vindimas' : 'Harvest', 
-                icon: '🍇', 
-                date: isPortuguese ? 'Setembro' : 'September',
-                businesses: 10 
-              }
-            ].map((celebration, index) => (
-              <div
-                key={index}
-                className="text-center p-4 rounded-xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer border border-gray-100 hover:shadow-md"
-              >
-                <div className="text-3xl mb-2">{celebration.icon}</div>
-                <div className="text-sm font-semibold text-gray-900 mb-1 leading-tight">
-                  {celebration.name}
-                </div>
-                <div className="text-xs text-gray-600 mb-2">
-                  {celebration.date}
-                </div>
-                <div className="text-xs text-primary-600 font-medium bg-primary-50 px-2 py-1 rounded-full">
-                  {celebration.businesses} {isPortuguese ? 'negócios' : 'businesses'}
-                </div>
+            
+            {/* Heritage Flags Strip */}
+            <div className="mt-4 flex justify-center items-center gap-2 p-3 bg-gradient-to-r from-primary-50/50 to-secondary-50/50 rounded-xl">
+              <span className="text-sm text-gray-700 font-medium mr-2">{isPortuguese ? 'Culturas:' : 'Cultures:'}</span>
+              <div className="flex gap-1">
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="Portugal">🇵🇹</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="Brazil">🇧🇷</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="Angola">🇦🇴</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="Cape Verde">🇨🇻</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="Mozambique">🇲🇿</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="Guinea-Bissau">🇬🇼</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="São Tomé and Príncipe">🇸🇹</span>
+                <span className="text-lg hover:scale-110 transition-transform cursor-pointer" title="East Timor">🇹🇱</span>
               </div>
-            ))}
-          </div>
-
-          {/* Portuguese Cultural Quote */}
-          <div className="mt-8 text-center p-4 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl border border-primary-100">
-            <p className="text-sm italic text-gray-700 mb-2">
-              {isPortuguese 
-                ? "\"O comércio une os povos e as culturas\" - Provérbio Lusófono"
-                : "\"Commerce unites peoples and cultures\" - Portuguese Proverb"}
-            </p>
-            <div className="flex items-center justify-center gap-2 text-xs text-gray-600">
-              <span>🌍</span>
-              <span>{isPortuguese ? 'Comunidade Lusófona Mundial' : 'Global Portuguese-speaking community'}</span>
             </div>
           </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+            {getFeaturedCelebrations(8).map((celebration, index) => {
+              // Handle special flag emojis for multi-flag celebrations
+              const displayFlags = celebration.flagEmoji?.includes('🇵🇹') ? 
+                celebration.flagEmoji : celebration.icon
+              
+              return (
+                <div
+                  key={celebration.id}
+                  className="text-center p-4 rounded-xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer border border-gray-100 hover:shadow-md group"
+                  title={celebration.description[language]}
+                >
+                  <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">
+                    {celebration.icon}
+                  </div>
+                  
+                  {/* Show countries represented */}
+                  {celebration.countries.length > 1 && (
+                    <div className="text-xs mb-1 flex justify-center gap-1">
+                      {celebration.countries.slice(0, 3).map((country, idx) => {
+                        const countryFlags = {
+                          'Portugal': '🇵🇹',
+                          'Brazil': '🇧🇷', 
+                          'Angola': '🇦🇴',
+                          'Cape Verde': '🇨🇻',
+                          'Mozambique': '🇲🇿'
+                        }
+                        return (
+                          <span key={idx} className="text-xs opacity-70">
+                            {countryFlags[country as keyof typeof countryFlags]}
+                          </span>
+                        )
+                      })}
+                    </div>
+                  )}
+                  
+                  <div className="text-sm font-semibold text-gray-900 mb-1 leading-tight">
+                    {celebration.name[language]}
+                  </div>
+                  <div className="text-xs text-gray-600 mb-2">
+                    {celebration.period[language]}
+                  </div>
+                  <div className="text-xs text-primary-600 font-medium bg-primary-50 px-2 py-1 rounded-full">
+                    {celebration.businessCount} {isPortuguese ? 'negócios' : 'businesses'}
+                  </div>
+                  {celebration.countries.length > 1 && (
+                    <div className="text-xs text-secondary-600 mt-1 opacity-75">
+                      {celebration.countries.length} {isPortuguese ? 'culturas' : 'cultures'}
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Enhanced Cultural Wisdom with Rotation */}
+          <CulturalWisdomDisplay />
         </div>
 
-        {/* Community Member Networking Call-to-Action */}
+        {/* Enhanced Community Member Networking Call-to-Action */}
         <div className="mt-12 bg-gradient-to-r from-accent-500 to-premium-500 rounded-2xl p-8 text-center text-white relative overflow-hidden">
-          {/* Portuguese Cultural Background Pattern */}
+          {/* Lusophone Cultural Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-4 left-4 text-4xl">👥</div>
             <div className="absolute top-4 right-4 text-4xl">🤝</div>
             <div className="absolute bottom-4 left-1/4 text-3xl">🎓</div>
             <div className="absolute bottom-4 right-1/4 text-3xl">💼</div>
+            <div className="absolute top-1/2 left-8 text-2xl transform -translate-y-1/2">🌍</div>
+            <div className="absolute top-1/2 right-8 text-2xl transform -translate-y-1/2">🇬🇧</div>
           </div>
           
           <div className="relative z-10">
@@ -857,6 +970,16 @@ export default function BusinessDirectory() {
             <div className="mb-6 text-lg italic opacity-90">
               "{t('business_directory.business_thrives_quote')}"
             </div>
+            
+            {/* Heritage Connection Indicator */}
+            <div className="mb-6 flex justify-center items-center gap-2 text-sm opacity-80">
+              <span className="bg-white/20 px-3 py-1 rounded-full">🇵🇹 Portugal</span>
+              <span className="bg-white/20 px-3 py-1 rounded-full">🇧🇷 Brasil</span>
+              <span className="bg-white/20 px-3 py-1 rounded-full">🇦🇴 Angola</span>
+              <span className="bg-white/20 px-3 py-1 rounded-full">🇨🇻 Cabo Verde</span>
+              <span className="text-white/60">+ more</span>
+            </div>
+            
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a 
                 href={ROUTES.directory}
@@ -872,36 +995,64 @@ export default function BusinessDirectory() {
           </div>
         </div>
 
-        {/* Call to Action for Business Owners */}
+        {/* Enhanced Call to Action for Business Owners */}
         <div className="mt-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 text-center text-white relative overflow-hidden">
-          {/* Portuguese Cultural Background Pattern */}
+          {/* Complete Lusophone Cultural Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-4 left-4 text-4xl">🇵🇹</div>
             <div className="absolute top-4 right-4 text-4xl">🇧🇷</div>
-            <div className="absolute bottom-4 left-1/4 text-3xl">🍷</div>
-            <div className="absolute bottom-4 right-1/4 text-3xl">🎵</div>
+            <div className="absolute bottom-4 left-8 text-3xl">🇦🇴</div>
+            <div className="absolute bottom-4 right-8 text-3xl">🇨🇻</div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl">🇲🇿</div>
+            <div className="absolute top-1/4 right-1/4 text-xl">🇬🇼</div>
+            <div className="absolute bottom-1/4 left-1/4 text-xl">🇸🇹</div>
+            <div className="absolute top-3/4 left-3/4 text-xl">🇹🇱</div>
           </div>
           
           <div className="relative z-10">
             <h3 className="text-2xl font-bold mb-4">
-              {isPortuguese ? 'Tem um negócio português?' : 'Own a Portuguese business?'}
+              {t('business_directory.own_business_cta_title')}
             </h3>
             <p className="text-lg mb-6 opacity-90">
-              {isPortuguese 
-                ? 'Junte-se ao maior diretório de negócios portugueses no Reino Unido. Conecte-se com a comunidade lusófona e preserve a nossa cultura através do comércio.'
-                : 'Join the United Kingdom\'s premier Portuguese business directory. Connect with the Portuguese-speaking community and preserve our culture through commerce.'}
+              {t('business_directory.own_business_cta_subtitle')}
             </p>
-            <div className="mb-6 text-lg italic opacity-90">
-              {isPortuguese 
-                ? '"Onde há portugueses, há esperança" - Ditado Popular'
-                : '"Where there are Portuguese people, there is hope" - Popular Saying'}
+            
+            {/* Cultural Diversity Showcase */}
+            <div className="mb-6 grid grid-cols-2 md:grid-cols-4 gap-2 text-sm opacity-80">
+              <div className="bg-white/10 px-3 py-2 rounded-lg">
+                🇵🇹 {isPortuguese ? 'Portugal' : 'Portugal'}
+              </div>
+              <div className="bg-white/10 px-3 py-2 rounded-lg">
+                🇧🇷 {isPortuguese ? 'Brasil' : 'Brazil'}
+              </div>
+              <div className="bg-white/10 px-3 py-2 rounded-lg">
+                🇦🇴 {isPortuguese ? 'Angola' : 'Angola'}
+              </div>
+              <div className="bg-white/10 px-3 py-2 rounded-lg">
+                🇨🇻 {isPortuguese ? 'Cabo Verde' : 'Cape Verde'}
+              </div>
             </div>
+            
+            <div className="mb-6 text-lg italic opacity-90">
+              "{t('business_directory.one_language_many_cultures')}" - {t('business_directory.lusophone_proverb')}
+            </div>
+            
+            {/* Enhanced CTA with Business Categories */}
+            <div className="mb-6 text-sm opacity-75">
+              {isPortuguese ? 'Restaurantes • Serviços • Arte • Tecnologia • Saúde • E muito mais...' : 'Restaurants • Services • Arts • Technology • Healthcare • And much more...'}
+            </div>
+            
             <button 
               onClick={() => setShowSubmissionForm(true)}
-              className="bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
+              className="bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg flex items-center gap-2 mx-auto"
             >
+              <PlusIcon className="w-5 h-5" />
               {t('business_directory.add_business', 'Add My Business')}
             </button>
+            
+            <div className="mt-4 text-xs opacity-70">
+              {isPortuguese ? 'Gratuito para listar • Verificação rápida • Suporte em português' : 'Free to list • Quick verification • Portuguese support'}
+            </div>
           </div>
         </div>
       </div>

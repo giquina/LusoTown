@@ -373,7 +373,7 @@ export function getSafeColorClass(
   prefix: ColorPrefix = 'text'
 ): string {
   const colorName = color as ColorName
-  const colorShade = String(shade) as ColorShade
+  const colorShade = (String(shade) as unknown) as ColorShade
   
   // Map to appropriate color system
   const colorMap = prefix === 'bg' ? COLOR_MAP : 
