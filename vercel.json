@@ -1,15 +1,21 @@
 {
-  "framework": "nextjs",
-  "buildCommand": "npm run build",
-  "outputDirectory": ".next",
-  "headers": [
+  "version": 2,
+  "name": "lusotown",
+  "builds": [
     {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "origin-when-cross-origin" }
-      ]
+      "src": "web-app/package.json",
+      "use": "@vercel/next"
     }
-  ]
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "web-app/$1"
+    }
+  ],
+  "env": {
+    "NODE_VERSION": "18.x"
+  },
+  "buildCommand": "cd web-app && npm run build",
+  "installCommand": "cd web-app && npm install"
 }

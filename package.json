@@ -1,44 +1,26 @@
 {
-  "name": "lusotown",
+  "name": "lusotown-deploy",
   "version": "1.0.0",
-  "description": "LusoTown - Your Lusophone Home in London 🇵🇹",
   "private": true,
-  "workspaces": [
-    "web-app",
-    "mobile-app",
-    "streaming",
-    "packages/*"
-  ],
-  "engines": {
-    "node": "22.x",
-    "npm": "9.x"
-  },
-  "packageManager": "npm@9.9.3",
+  "description": "LusoTown - Portuguese Community Platform - Production Ready",
   "scripts": {
-    "dev": "cd web-app && npm run dev",
     "build": "cd web-app && npm run build",
+    "dev": "cd web-app && npm run dev", 
     "start": "cd web-app && npm run start",
     "lint": "cd web-app && npm run lint",
-    "install:web-only": "npm --workspaces=false ci --ignore-scripts && cd web-app && npm ci --ignore-scripts",
-    "prebuild:web": "cd web-app && npx -y npm@9 run build"
+    "deploy": "vercel --prod"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yourusername/LusoTown.git"
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   },
   "keywords": [
     "portuguese",
-    "lusophone",
     "community",
     "london",
-    "culture",
-    "events",
-    "social-network"
-  ],
-  "author": "LusoTown Team",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/yourusername/LusoTown/issues"
-  },
-  "homepage": "https://github.com/yourusername/LusoTown#readme"
+    "uk",
+    "nextjs",
+    "react",
+    "typescript"
+  ]
 }
