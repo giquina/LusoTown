@@ -10,15 +10,18 @@ import { ROUTES } from '@/config/routes'
 import MobileWelcomeWizard from '@/components/MobileWelcomeWizard'
 import ResponsiveButton from '@/components/ResponsiveButton'
 
-// Strategic component loading for cohesive experience
-const SuccessStories = dynamic(() => import('@/components/SuccessStories'), {
-  loading: () => <div className="h-60 bg-gray-100 animate-pulse rounded-xl" />
+// Strategic component loading for cohesive experience  
+const SuccessStories = dynamic(() => import('@/components/SuccessStories').then(mod => ({ default: mod.default })), {
+  loading: () => <div className="h-60 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
 })
-const TestimonialsNew = dynamic(() => import('@/components/TestimonialsNew'), {
-  loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />
+const TestimonialsNew = dynamic(() => import('@/components/TestimonialsNew').then(mod => ({ default: mod.default })), {
+  loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
 })
-const EventsShowcase = dynamic(() => import('@/components/EventsShowcase'), {
-  loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />
+const EventsShowcase = dynamic(() => import('@/components/EventsShowcase').then(mod => ({ default: mod.default })), {
+  loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
 })
 
 import { 

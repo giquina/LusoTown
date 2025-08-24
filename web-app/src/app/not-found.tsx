@@ -1,10 +1,12 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
 import { HomeIcon, ArrowLeftIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
 export default function NotFound() {
-  // Use static content for better server-side rendering
+  // Use static content to avoid hydration issues
   const isPortuguese = false // Default to English for server-side rendering
 
   return (
@@ -51,13 +53,13 @@ export default function NotFound() {
               {isPortuguese ? 'Explorar Eventos' : 'Explore Events'}
             </Link>
 
-            <button
-              onClick={() => window.history.back()}
+            <Link
+              href={ROUTES.home}
               className="w-full inline-flex items-center justify-center gap-2 text-gray-600 hover:text-primary-600 font-medium transition-colors duration-200"
             >
               <ArrowLeftIcon className="w-4 h-4" />
-              {isPortuguese ? 'Página Anterior' : 'Previous Page'}
-            </button>
+              {isPortuguese ? 'Ir ao Início' : 'Go to Home'}
+            </Link>
           </div>
 
           {/* Helpful Links */}
