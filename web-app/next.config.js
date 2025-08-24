@@ -120,8 +120,8 @@ const nextConfig = {
       ...config.resolve.extensions,
     ];
 
-    // Fix chunk loading issues in development
-    if (dev) {
+  // Fix chunk loading issues in development (client only)
+  if (dev && !isServer) {
       config.optimization.splitChunks = {
         chunks: "all",
         cacheGroups: {
@@ -149,8 +149,8 @@ const nextConfig = {
       ]
     }
 
-    // Enhanced optimization for production
-  if (!dev) {
+    // Enhanced optimization for production (client only)
+  if (!dev && !isServer) {
       config.optimization.splitChunks = {
         chunks: "all",
         maxAsyncRequests: 10,
