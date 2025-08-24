@@ -3259,5 +3259,51 @@
 
   "match_how_it_works.badge": "Encontre o Seu Match Português",
   "match_how_it_works.subtitle": "Conecte-se com falantes de português que realmente entendem a sua cultura e valores no Reino Unido",
-  "match_how_it_works.quote": "Finalmente encontrei alguém que se emociona durante o Fado e celebra o Natal no dia 24 de dezembro sem precisar explicar!"
+  "match_how_it_works.quote": "Finalmente encontrei alguém que se emociona durante o Fado e celebra o Natal no dia 24 de dezembro sem precisar explicar!",
+
+  "hero.free_badge": "100% GRÁTIS PARA SE JUNTAR",
+  "hero.subheadline": "Conecte-se com 750+ falantes de português em todo o Reino Unido. Encontre amigos, encontros, parceiros de negócios ou a sua alma gêmea.",
+  "hero.cta_primary": "JUNTAR GRÁTIS AGORA",
+  "hero.cta_secondary": "Ver Como Funciona",
+
+  "matching.badge": "COMPATIBILIDADE PORTUGUESA INTELIGENTE",
+  "matching.title": "Encontre o Seu Match Português Perfeito",
+  "matching.subtitle": "A nossa IA conecta-o com falantes de português baseado na cultura, interesses, localização e no que procura.",
+  
+  "matching.romance.title": "Encontre Amor",
+  "matching.romance.description": "Encontros, relacionamentos, almas gêmeas portuguesas",
+  
+  "matching.friendship.title": "Faça Amigos",
+  "matching.friendship.description": "Amigos lusófonos para toda a vida",
+  
+  "matching.business.title": "Networking",
+  "matching.business.description": "Parceiros de negócios, mentores, carreiras",
+  
+  "matching.cultural.title": "Aprender",
+  "matching.cultural.description": "Intercâmbio de idiomas, partilha cultural",
+  
+  "matching.how_it_works.title": "Como Funciona a Compatibilidade Portuguesa",
+  
+  "matching.step1.title": "Juntar Grátis",
+  "matching.step1.description": "Registe-se com a sua herança portuguesa e o que procura",
+  
+  "matching.step2.title": "Obter Matches",
+  "matching.step2.description": "IA encontra falantes de português compatíveis perto de si no Reino Unido",
+  
+  "matching.step3.title": "Conectar",
+  "matching.step3.description": "Converse, encontre-se em eventos, construa relacionamentos que importam",
+  
+  "matching.cta": "Começar Matching - GRÁTIS",
+  "matching.guarantee": "Grátis para se juntar • Sem cartão de crédito • 750+ falantes de português à espera",
+
+  "events.title": "Conheça os Seus Matches em Eventos Portugueses",
+  "events.subtitle": "Participe em eventos culturais, festivais e encontros onde lusófonos se conectam naturalmente.",
+  "events.cta": "Ver Todos os Eventos",
+
+  "final_cta.badge": "JUNTE-SE A 750+ FALANTES DE PORTUGUÊS",
+  "final_cta.title": "Pronto para Encontrar o Seu Match Português?",
+  "final_cta.subtitle": "Junte-se gratuitamente hoje e comece a conectar-se com falantes de português em todo o Reino Unido. Sem cartão de crédito necessário.",
+  "final_cta.primary": "JUNTAR GRÁTIS AGORA",
+  "final_cta.secondary": "Experimentar Conta Demo",
+  "final_cta.guarantee": "Sem spam, sem cartão de crédito necessário. Cancele a qualquer momento. Junte-se à maior comunidade de falantes de português do Reino Unido."
 }

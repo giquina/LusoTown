@@ -30,7 +30,7 @@ export const mockUser = {
   joinedDate: '2024-01-01',
   interests: ['Portuguese Culture', 'Networking'],
   favoriteEvents: ['event-1', 'event-2'],
-  location: 'London, UK',
+  location: 'London, United Kingdom',
 };
 
 export const mockEvent = {

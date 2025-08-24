@@ -21,6 +21,7 @@ import {
   PlayCircleIcon,
   PauseCircleIcon,
   StopCircleIcon,
+  ExclamationTriangleIcon,
 } from '@heroicons/react/24/outline';
 import {
   HeartIcon as HeartSolid,

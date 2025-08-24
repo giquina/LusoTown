@@ -110,7 +110,7 @@ export const USAGE_EXAMPLES = {
   correct: {
     title: 'Join 1,247 Portuguese Speakers in the United Kingdom',
     community: 'Portuguese-speaking community from Portugal, Brazil, Cape Verde & more',
-    events: 'Events from all Portuguese-speaking nations across the UK'
+    events: 'Events from all Portuguese-speaking nations across the United Kingdom'
   },
   
   incorrect: {
@@ -131,10 +131,10 @@ export function validateContentInclusivity(content: string): {
   const issues: string[] = [];
   const suggestions: string[] = [];
   
-  // Check for London-centric language when should be UK-wide
+  // Check for London-centric language when should be United Kingdom-wide
   if (content.includes('in London') && !content.includes('United Kingdom')) {
     issues.push('Content is London-centric - should reference United Kingdom');
-    suggestions.push('Replace "in London" with "in the United Kingdom" or "across the UK"');
+    suggestions.push('Replace "in London" with "in the United Kingdom" or "across the United Kingdom"');
   }
   
   // Check for exclusive Portuguese terminology

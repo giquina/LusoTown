@@ -24,7 +24,8 @@ import {
   FlagIcon,
   MusicalNoteIcon,
   CakeIcon,
-  GlobeAltIcon
+  GlobeAltIcon,
+  ClockIcon,
 } from '@heroicons/react/24/outline'
 import { 
   StarIcon as StarSolidIcon,

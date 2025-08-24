@@ -1,22 +1,22 @@
 {
   "summary": {
-    "totalViolations": 130922,
+    "totalViolations": 130977,
     "byCategory": {
-      "hardcoded_text": 127702,
+      "hardcoded_text": 127753,
       "console_logs": 398,
-      "hardcoded_routes": 1114,
-      "hardcoded_colors": 694,
+      "hardcoded_routes": 1112,
+      "hardcoded_colors": 700,
       "hardcoded_analytics": 71,
       "hardcoded_urls": 713,
       "hardcoded_prices": 230
     },
     "bySeverity": {
-      "high": 128645,
-      "medium": 1879,
+      "high": 128696,
+      "medium": 1883,
       "low": 398
     },
     "filesAffected": 709,
-    "timestamp": "2025-08-24T07:40:25.822Z",
+    "timestamp": "2025-08-24T08:17:56.581Z",
     "recommendations": [
       "🚨 CRITICAL: Implement bilingual system with t() function",
       "🔧 Create config/cdn.ts for URL management",
@@ -32,7 +32,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'react'",
-      "timestamp": "2025-08-24T07:40:21.128Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -41,7 +41,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'@testing-library/react'",
-      "timestamp": "2025-08-24T07:40:21.128Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -50,7 +50,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'@/utils/mobile-ux-validator'",
-      "timestamp": "2025-08-24T07:40:21.128Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -59,7 +59,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'@/config/mobile-ux-agent'",
-      "timestamp": "2025-08-24T07:40:21.128Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -68,7 +68,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'@/config/mobile-development-standards'",
-      "timestamp": "2025-08-24T07:40:21.128Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -77,7 +77,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'innerWidth'",
-      "timestamp": "2025-08-24T07:40:21.128Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -86,7 +86,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'innerHeight'",
-      "timestamp": "2025-08-24T07:40:21.128Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -95,7 +95,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'resize'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -104,7 +104,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'touches'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -113,7 +113,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Eventos'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -122,7 +122,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Comunidade de Falantes de Português em Londres'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -131,7 +131,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Descubra a vibrante comunidade de falantes de português em Londres através dos nossos eventos culturais autênticos'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -140,7 +140,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Participe em experiências únicas da cultura portuguesa, incluindo noites de fado tradicional, workshops de culinária portuguesa, festivais culturais e oportunidades de networking profissional'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -149,7 +149,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Início'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -158,7 +158,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Eventos'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -167,7 +167,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Comunidade'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -176,7 +176,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Combinações'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -185,7 +185,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Mensagens'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -194,7 +194,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Perfil'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -203,7 +203,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Participar no Evento'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -212,7 +212,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Enviar Mensagem'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -221,7 +221,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Guardar nos Favoritos'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -230,7 +230,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Partilhar Evento'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -239,7 +239,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Reservar Transporte'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -248,7 +248,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Nome Completo'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -257,7 +257,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Endereço de Email'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -266,7 +266,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Número de Telefone'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -275,7 +275,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Data de Nascimento'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -284,7 +284,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Localização'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -293,7 +293,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Interesses Culturais'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -302,7 +302,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'🚀 Starting Mobile UX Test Suite for LusoTown...\\n'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -311,7 +311,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'iPhone SE'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -320,7 +320,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'critical'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -329,7 +329,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'iPhone 12'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -338,7 +338,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'critical'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -347,7 +347,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'iPhone 13'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -356,7 +356,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'high'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -365,7 +365,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'iPad Portrait'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -374,7 +374,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'medium'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -383,7 +383,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`📱 Testing ${breakpoint.name} (${breakpoint.width}x${breakpoint.height}px)...`",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -392,7 +392,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n      const overflowElements = Array.from(elements).filter(el => {\n        if (el instanceof HTMLElement) {\n          const rect = el.getBoundingClientRect();\n          return rect.right > breakpoint.width;\n        }\n        return false;\n      });\n\n      const testResult = {\n        name: `",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -401,7 +401,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`,\n        breakpoint,\n        validationScore: result.score,\n        hasHorizontalScroll,\n        overflowElements: overflowElements.length,\n        issues: result.issues,\n        passed: result.passed && !hasHorizontalScroll && overflowElements.length === 0\n      };\n\n      this.testResults.push(testResult);\n      \n      if (testResult.passed) {\n        console.log(`",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -410,7 +410,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`);\n      } else {\n        console.log(`",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -419,7 +419,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`);\n        if (hasHorizontalScroll) console.log('",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -428,7 +428,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n        if (overflowElements.length > 0) console.log(`",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -437,7 +437,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`);\n      }\n    }\n  }\n\n  /**\n   * Test touch target sizes and interactions\n   */\n  async testTouchInteractions(component: React.ReactElement): Promise<void> {\n    console.log('",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -446,7 +446,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    \n    mockViewport(375, 667); // Test on smallest critical viewport\n    const { container } = render(component);\n    \n    // Find all interactive elements\n    const interactiveElements = container.querySelectorAll(\n      '",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -455,7 +455,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "\"button\"",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -464,7 +464,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'touchstart'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -473,7 +473,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'Touch Interactions'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -482,7 +482,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'✅ Touch interactions test passed'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -491,7 +491,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'❌ Touch interactions test failed'",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -500,7 +500,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`);\n      if (spacingIssues > 0) console.log(`",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -509,7 +509,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`);\n    }\n  }\n\n  /**\n   * Test Portuguese text handling and overflow\n   */\n  async testPortugueseTextHandling(component: React.ReactElement): Promise<void> {\n    console.log('",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -518,7 +518,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    \n    // Test different text lengths\n    const textTests = [\n      { name: '",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.993Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -527,7 +527,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "', content: PORTUGUESE_TEST_CONTENT.shortText },\n      { name: '",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -536,7 +536,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "', content: PORTUGUESE_TEST_CONTENT.mediumText },\n      { name: '",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -545,7 +545,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "', content: PORTUGUESE_TEST_CONTENT.longText },\n      { name: '",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -554,7 +554,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "', content: PORTUGUESE_TEST_CONTENT.veryLongText },\n    ];\n\n    let overflowIssues = 0;\n    let fontSizeIssues = 0;\n\n    for (const textTest of textTests) {\n      // Create test component with Portuguese text\n      const TestComponent = () => (\n        <div>\n          {React.cloneElement(component)}\n          <div data-testid=\"",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -563,7 +563,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "\">\n            <p>{textTest.content}</p>\n            <button>{PORTUGUESE_TEST_CONTENT.buttons.joinEvent}</button>\n            <label>{PORTUGUESE_TEST_CONTENT.forms.fullName}</label>\n          </div>\n        </div>\n      );\n\n      mockViewport(375, 667);\n      const { container } = render(<TestComponent />);\n      \n      // Check for text overflow\n      const textElements = container.querySelectorAll('",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -572,7 +572,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n      Array.from(textElements).forEach((element) => {\n        if (element instanceof HTMLElement) {\n          if (element.scrollWidth > element.clientWidth || \n              element.scrollHeight > element.clientHeight) {\n            overflowIssues++;\n          }\n          \n          // Check font size\n          const fontSize = parseInt(window.getComputedStyle(element).fontSize);\n          if (fontSize < 14) {\n            fontSizeIssues++;\n          }\n        }\n      });\n    }\n\n    const testResult = {\n      name: '",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -581,7 +581,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "',\n      overflowIssues,\n      fontSizeIssues,\n      passed: overflowIssues === 0 && fontSizeIssues === 0\n    };\n\n    this.testResults.push(testResult);\n    \n    if (testResult.passed) {\n      console.log('",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -590,7 +590,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    } else {\n      console.log('",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -599,7 +599,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n      if (overflowIssues > 0) console.log(`",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -608,7 +608,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`);\n      if (fontSizeIssues > 0) console.log(`",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -617,7 +617,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`);\n    }\n  }\n\n  /**\n   * Test mobile accessibility compliance\n   */\n  async testMobileAccessibility(component: React.ReactElement): Promise<void> {\n    console.log('",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -626,7 +626,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    \n    mockViewport(375, 667);\n    const { container } = render(component);\n    \n    // Check for proper heading structure\n    const headings = container.querySelectorAll('",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -635,7 +635,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    const hasHeadings = headings.length > 0;\n    \n    // Check for alt text on images\n    const images = container.querySelectorAll('",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -644,7 +644,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    const imagesWithoutAlt = Array.from(images).filter(img => \n      !img.alt && !img.getAttribute('",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -653,7 +653,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "')\n    ).length;\n    \n    // Check for form labels\n    const inputs = container.querySelectorAll('",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -662,7 +662,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    const inputsWithoutLabels = Array.from(inputs).filter(input => {\n      const label = container.querySelector(`",
-      "timestamp": "2025-08-24T07:40:21.129Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -671,7 +671,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "\"${input.id}\"",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -680,7 +680,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`);\n      const ariaLabel = input.getAttribute('",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -689,7 +689,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n      const ariaLabelledBy = input.getAttribute('",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -698,7 +698,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n      return !label && !ariaLabel && !ariaLabelledBy;\n    }).length;\n    \n    // Check for Portuguese lang attributes\n    const portugueseElements = container.querySelectorAll('",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.994Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -707,7 +707,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "\"], [lang=\"",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.996Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -716,7 +716,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    const hasPortugueseLangAttributes = portugueseElements.length > 0;\n\n    const testResult = {\n      name: '",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.996Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -725,7 +725,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "',\n      hasHeadings,\n      imagesWithoutAlt,\n      inputsWithoutLabels,\n      hasPortugueseLangAttributes,\n      passed: hasHeadings && imagesWithoutAlt === 0 && inputsWithoutLabels === 0\n    };\n\n    this.testResults.push(testResult);\n    \n    if (testResult.passed) {\n      console.log('",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.996Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -734,7 +734,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    } else {\n      console.log('",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -743,7 +743,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n      if (!hasHeadings) console.log('",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -752,7 +752,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n      if (imagesWithoutAlt > 0) console.log(`",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -761,7 +761,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`);\n      if (inputsWithoutLabels > 0) console.log(`",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -770,7 +770,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`);\n    }\n  }\n\n  /**\n   * Test mobile performance considerations\n   */\n  async testMobilePerformance(component: React.ReactElement): Promise<void> {\n    console.log('",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -779,7 +779,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    \n    const { container } = render(component);\n    \n    // Check for lazy loading\n    const images = container.querySelectorAll('",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -788,7 +788,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    const imagesWithoutLazyLoading = Array.from(images).filter(img => \n      !img.loading || img.loading !== '",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -797,7 +797,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "'[class*=\"",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -806,7 +806,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    const tooManyAnimations = animatedElements.length > 5;\n    \n    // Check bundle size considerations (simplified)\n    const totalElements = container.querySelectorAll('",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -815,7 +815,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "').length;\n    const complexLayout = totalElements > 100;\n\n    const testResult = {\n      name: '",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -824,7 +824,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "',\n      imagesWithoutLazyLoading,\n      imagesWithoutResponsive,\n      tooManyAnimations,\n      complexLayout,\n      totalElements,\n      passed: imagesWithoutLazyLoading <= 2 && !tooManyAnimations && !complexLayout\n    };\n\n    this.testResults.push(testResult);\n    \n    if (testResult.passed) {\n      console.log('",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -833,7 +833,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    } else {\n      console.log('",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -842,7 +842,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n      if (imagesWithoutLazyLoading > 2) console.log(`",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -851,7 +851,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`);\n      if (tooManyAnimations) console.log('",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -860,7 +860,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n      if (complexLayout) console.log(`",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -869,7 +869,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "`);\n    }\n  }\n\n  /**\n   * Test gesture support\n   */\n  async testGestureSupport(component: React.ReactElement): Promise<void> {\n    console.log('",
-      "timestamp": "2025-08-24T07:40:21.130Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -878,7 +878,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    \n    const { container } = render(component);\n    \n    // Check for swipeable elements\n    const swipeElements = container.querySelectorAll('",
-      "timestamp": "2025-08-24T07:40:21.131Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -887,7 +887,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "\"swipe\"",
-      "timestamp": "2025-08-24T07:40:21.131Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -896,7 +896,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    const hasSwipeSupport = swipeElements.length > 0;\n    \n    // Test basic touch events\n    let touchEventSupported = false;\n    try {\n      const touchEvent = createTouchEvent('",
-      "timestamp": "2025-08-24T07:40:21.131Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -905,7 +905,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "', [{ clientX: 100, clientY: 100 }]);\n      container.dispatchEvent(touchEvent);\n      touchEventSupported = true;\n    } catch (error) {\n      // Touch events not supported\n    }\n\n    const testResult = {\n      name: '",
-      "timestamp": "2025-08-24T07:40:21.131Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -914,7 +914,7 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "',\n      hasSwipeSupport,\n      touchEventSupported,\n      swipeElementsCount: swipeElements.length,\n      passed: hasSwipeSupport || touchEventSupported\n    };\n\n    this.testResults.push(testResult);\n    \n    if (testResult.passed) {\n      console.log('",
-      "timestamp": "2025-08-24T07:40:21.131Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     },
     {
       "file": "src/__tests__/mobile-ux-tests.tsx",
@@ -923,8 +923,8 @@
       "severity": "high",
       "message": "Hardcoded text detected - should use t() function",
       "code": "');\n    } else {\n      console.log('",
-      "timestamp": "2025-08-24T07:40:21.131Z"
+      "timestamp": "2025-08-24T08:17:52.997Z"
     }
   ],
-  "fullViolationCount": 130922
+  "fullViolationCount": 130977
 }

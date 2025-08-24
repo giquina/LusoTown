@@ -174,7 +174,7 @@ export default function EventsDiscovery({
   culturalCategory
 }: EventsDiscoveryProps) {
   const { language } = useLanguage()
-  const { favorites, addToFavorites, removeFromFavorites } = useFavorites()
+  const { isFavorite, toggleFavorite } = useFavorites()
   const [events, setEvents] = useState<PortugueseEvent[]>([])
   const [loading, setLoading] = useState(true)
   const [searchQuery, setSearchQuery] = useState('')
@@ -430,7 +430,7 @@ export default function EventsDiscovery({
 
         <div className="space-y-3">
           {sortedEvents.slice(0, 3).map((event) => {
-            const isFavorite = favorites.events?.includes(event.id)
+            const eventIsFavorite = isFavorite(event.id)
             const attendancePercentage = getAttendancePercentage(event.current_attendees, event.max_attendees)
 
             return (
@@ -453,15 +453,17 @@ export default function EventsDiscovery({
                   <button
                     onClick={(e) => {
                       e.stopPropagation()
-                      if (isFavorite) {
-                        removeFromFavorites('events', event.id)
-                      } else {
-                        addToFavorites('events', event.id)
-                      }
+                      toggleFavorite({
+                        id: event.id,
+                        type: 'event',
+                        title: event.title,
+                        description: event.description,
+                        imageUrl: event.image
+                      })
                     }}
                     className="text-gray-400 hover:text-red-500 transition-colors"
                   >
-                    {isFavorite ? (
+                    {eventIsFavorite ? (
                       <HeartSolidIcon className="w-4 h-4 text-red-500" />
                     ) : (
                       <HeartIcon className="w-4 h-4" />
@@ -572,7 +574,7 @@ export default function EventsDiscovery({
 
         <div className="space-y-4">
           {sortedEvents.map((event) => {
-            const isFavorite = favorites.events?.includes(event.id)
+            const eventIsFavorite = isFavorite(event.id)
             const attendancePercentage = getAttendancePercentage(event.current_attendees, event.max_attendees)
             const eventDate = new Date(event.date)
 
@@ -632,15 +634,17 @@ export default function EventsDiscovery({
                       <button
                         onClick={(e) => {
                           e.stopPropagation()
-                          if (isFavorite) {
-                            removeFromFavorites('events', event.id)
-                          } else {
-                            addToFavorites('events', event.id)
-                          }
+                          toggleFavorite({
+                            id: event.id,
+                            type: 'event',
+                            title: event.title,
+                            description: event.description,
+                            imageUrl: event.image
+                          })
                         }}
                         className="text-gray-400 hover:text-red-500 transition-colors"
                       >
-                        {isFavorite ? (
+                        {eventIsFavorite ? (
                           <HeartSolidIcon className="w-5 h-5 text-red-500" />
                         ) : (
                           <HeartIcon className="w-5 h-5" />

@@ -69,8 +69,8 @@ export default function Hero() {
                 </div>
                 <span className="text-xs sm:text-sm font-bold text-gray-800 tracking-wide">
                   {/* Mobile-friendly text */}
-                  <span className="block sm:hidden">Portuguese Community UK</span>
-                  <span className="hidden sm:block">UK Portuguese-speaking Community</span>
+                  <span className="block sm:hidden">Portuguese Community United Kingdom</span>
+                  <span className="hidden sm:block">United Kingdom Portuguese-speaking Community</span>
                 </span>
               </div>
               <div className="flex items-center gap-1">
@@ -98,7 +98,7 @@ export default function Hero() {
                   Portuguese speakers
                 </span>{" "}
                 <span className="block sm:inline text-gray-700 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
-                  across the UK
+                  across the United Kingdom
                 </span>
               </motion.h1>
               
@@ -244,7 +244,7 @@ export default function Hero() {
                       <MapPinIcon className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                     </div>
                     <span className="text-[10px] sm:text-xs font-bold text-red-800 text-center leading-tight">
-                      UK Tours
+                      United Kingdom Tours
                     </span>
                   </LuxuryRipple>
 
@@ -386,7 +386,7 @@ export default function Hero() {
                 </div>
                 <div className="hero-trust-indicator">
                   <div className="hero-trust-dot red"></div>
-                  <span>UK-Wide</span>
+                  <span>United Kingdom-Wide</span>
                 </div>
                 <div className="hero-trust-indicator">
                   <div className="hero-trust-dot gold"></div>
@@ -417,7 +417,7 @@ export default function Hero() {
                   </h3>
                   <p className="text-sm sm:text-base text-gray-600 leading-relaxed px-2">
                     From <span className="font-bold text-red-600">{formatPrice(plans.community.monthly)}/month</span> - Connect
-                    with Portuguese speakers across the UK.
+                    with Portuguese speakers across the United Kingdom.
                     <span className="block mt-1 text-xs sm:text-sm text-gray-500">
                       Unlimited matches, events, and networking nationwide.
                     </span>
@@ -476,7 +476,7 @@ export default function Hero() {
                     <div className="text-2xl sm:text-3xl font-bold text-red-600 mb-1">
                       25+
                     </div>
-                    <div className="text-xs sm:text-sm text-gray-600 font-medium leading-tight">UK Cities</div>
+                    <div className="text-xs sm:text-sm text-gray-600 font-medium leading-tight">United Kingdom Cities</div>
                   </div>
                 </div>
 

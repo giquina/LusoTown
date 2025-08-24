@@ -11,6 +11,8 @@ import {
   SparklesIcon,
   UsersIcon,
   TrophyIcon,
+  MapPinIcon,
+  CalendarDaysIcon,
 } from "@heroicons/react/24/outline";
 import {
   HeartIcon as HeartIconSolid,
@@ -505,7 +507,7 @@ export default function MembershipTiers({
                 <p className="text-sm text-gray-600">
                   {isPortuguese
                     ? "Descontos em 200+ empresas portuguesas no Reino Unido"
-                    : "Discounts at 200+ Portuguese businesses across UK"}
+                    : "Discounts at 200+ Portuguese businesses across the United Kingdom"}
                 </p>
               </div>
               <div>
@@ -562,7 +564,7 @@ export default function MembershipTiers({
                 <p className="text-sm font-medium text-gray-700">
                   {isPortuguese
                     ? '"Finalmente encontrei a minha família portuguesa no Reino Unido!"'
-                    : '"Finally found my Portuguese family in the UK!"'}
+                    : '"Finally found my Portuguese family in the United Kingdom!"'}
                 </p>
                 <p className="text-xs text-gray-500 mt-1">
                   - Maria, {isPortuguese ? "Membro da Comunidade" : "Community Member"}

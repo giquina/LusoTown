@@ -111,7 +111,7 @@ export default function Home() {
                   
                   {/* Sub-headline */}
                   <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl">
-                    {t('hero.subheadline', 'Connect with 750+ Portuguese speakers across the UK. Find friends, dates, business partners, or your soulmate.')}
+                    {t('hero.subheadline', 'Connect with 750+ Portuguese speakers across the United Kingdom. Find friends, dates, business partners, or your soulmate.')}
                   </p>
                   
                   {/* Trust indicators */}
@@ -122,7 +122,7 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPinIcon className="w-5 h-5 text-secondary-500" />
-                      <span className="font-semibold">UK-Wide</span>
+                      <span className="font-semibold">United Kingdom-Wide</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <StarIcon className="w-5 h-5 text-yellow-500" />
@@ -163,7 +163,7 @@ export default function Home() {
                       </div>
                     </div>
                     <p className="text-sm text-gray-700 italic">
-                      "Conhecemo-nos aqui e agora estamos noivos! A comunidade portuguesa em Londres é incrível." ⭐⭐⭐⭐⭐
+                      "Conhecemo-nos aqui e agora estamos noivos! A comunidade portuguesa no Reino Unido é incrível." ⭐⭐⭐⭐⭐
                     </p>
                   </div>
                 </div>
@@ -182,7 +182,7 @@ export default function Home() {
                           </div>
                           <div className="ml-auto bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">95% MATCH</div>
                         </div>
-                        <p className="text-sm text-gray-700 mb-2">"Adoro fado e procuro alguém para explorar Londres comigo. Trabalho em tech e amo futebol!"</p>
+                        <p className="text-sm text-gray-700 mb-2">"Adoro fado e procuro alguém para explorar o Reino Unido comigo. Trabalho em tech e amo futebol!"</p>
                         <div className="flex gap-2">
                           <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Fado</span>
                           <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Tech</span>
@@ -309,7 +309,7 @@ export default function Home() {
                         2
                       </div>
                       <h4 className="text-xl font-bold text-gray-900 mb-3">{t('matching.step2.title', 'Get Matches')}</h4>
-                      <p className="text-gray-600">{t('matching.step2.description', 'AI finds compatible Portuguese speakers near you in the UK')}</p>
+                      <p className="text-gray-600">{t('matching.step2.description', 'AI finds compatible Portuguese speakers near you in the United Kingdom')}</p>
                     </div>
                     
                     {/* Step 3 */}
@@ -335,7 +335,7 @@ export default function Home() {
                       <div className="ml-auto text-2xl">💕</div>
                     </div>
                     <p className="text-gray-700 italic mb-3">
-                      "Conhecemo-nos através do LusoTown e descobrimos que tínhamos tanto em comum! Agora estamos a planear viajar juntos por Portugal."
+                      "Conhecemo-nos através do LusoTown e descobrimos que tínhamos tanto em comum! Agora estamos a planear viajar juntos por Portugal e explorar o Reino Unido."
                     </p>
                     <div className="flex items-center gap-2 text-sm text-green-600">
                       <CheckIcon className="w-4 h-4" />
@@ -463,7 +463,7 @@ export default function Home() {
                     </div>
                     
                     <blockquote className="text-gray-700 italic text-center mb-6">
-                      "Conhecemo-nos numa noite de fado no Camden. A música portuguesa criou uma conexão instantânea. Agora exploramos Londres juntos todos os fins de semana!"
+                      "Conhecemo-nos numa noite de fado no Camden. A música portuguesa criou uma conexão instantânea. Agora exploramos o Reino Unido juntos todos os fins de semana!"
                     </blockquote>
                     
                     <div className="bg-green-50 rounded-2xl p-4 text-center">
@@ -495,7 +495,7 @@ export default function Home() {
                 </h2>
                 
                 <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
-                  {t('final_cta.subtitle', 'Join free today and start connecting with Portuguese speakers across the UK. No credit card required.')}
+                  {t('final_cta.subtitle', 'Join free today and start connecting with Portuguese speakers across the United Kingdom. No credit card required.')}
                 </p>
                 
                 {/* Trust indicators */}
@@ -514,7 +514,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPinIcon className="w-5 h-5" />
-                    <span className="font-semibold">Across UK</span>
+                    <span className="font-semibold">Across United Kingdom</span>
                   </div>
                 </div>
                 
@@ -537,7 +537,7 @@ export default function Home() {
                 </div>
                 
                 <p className="text-sm text-white/70 mt-8">
-                  {t('final_cta.guarantee', 'No spam, no credit card required. Cancel anytime. Join the UK\'s largest Portuguese-speaking community.')}
+                  {t('final_cta.guarantee', 'No spam, no credit card required. Cancel anytime. Join the United Kingdom\'s largest Portuguese-speaking community.')}
                 </p>
               </div>
             </div>
@@ -551,19 +551,22 @@ export default function Home() {
         {/* Mobile Floating CTA - Prominent matching action */}
         <div className="md:hidden fixed bottom-20 right-4 z-40">
           <a
-            href={ROUTES.matches}
-            className="group w-16 h-16 bg-gradient-to-br from-green-600 via-yellow-500 to-red-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center active:scale-95 animate-pulse"
-            aria-label="Find your Portuguese match - FREE"
+            href={ROUTES.signup}
+            className="group w-18 h-18 bg-gradient-to-br from-green-600 via-yellow-500 to-red-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center active:scale-95 animate-pulse"
+            aria-label="Join Portuguese community - FREE"
           >
-            <HeartIcon className="w-7 h-7 group-hover:scale-110 transition-transform" />
+            <div className="flex flex-col items-center">
+              <HeartIcon className="w-6 h-6 group-hover:scale-110 transition-transform mb-1" />
+              <span className="text-xs font-bold leading-tight">JOIN<br />FREE</span>
+            </div>
             <div className="absolute -top-2 -right-2 w-7 h-7 bg-green-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
-              <span className="text-xs font-bold text-white">FREE</span>
+              <span className="text-xs font-bold text-white">🇵🇹</span>
             </div>
           </a>
           
           {/* Enhanced Tooltip */}
           <div className="absolute right-20 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-4 py-2 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
-            🇵🇹 Find Portuguese matches - FREE!
+            🇵🇹 Join 750+ Portuguese speakers - FREE!
             <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-0 h-0 border-l-[8px] border-l-gray-900 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent"></div>
           </div>
         </div>

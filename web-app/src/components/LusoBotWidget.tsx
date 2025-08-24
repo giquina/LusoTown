@@ -42,14 +42,60 @@ export default function LusoBotWidget({
   const [floatingMessages, setFloatingMessages] = useState<FloatingMessage[]>([])
   const [hasInteracted, setHasInteracted] = useState(false)
   const [unreadCount, setUnreadCount] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  const [isKeyboardOpen, setIsKeyboardOpen] = useState(false)
 
-  // Position classes
+  // Position classes with mobile-safe positioning
   const positionClasses = {
-    'bottom-right': 'bottom-6 right-6',
-    'bottom-left': 'bottom-6 left-6',
+    'bottom-right': 'bottom-6 right-6 md:bottom-6 md:right-6',
+    'bottom-left': 'bottom-6 left-6 md:bottom-6 md:left-6',
     'top-right': 'top-6 right-6',
     'top-left': 'top-6 left-6'
   }
+
+  // Mobile-safe positioning that avoids navigation conflicts
+  const mobilePositionClasses = {
+    'bottom-right': 'bottom-24 right-16 safe-area-bottom', // Above mobile nav + avoid FloatingNavigation FAB
+    'bottom-left': 'bottom-24 left-4 safe-area-bottom',
+    'top-right': 'top-20 right-4 safe-area-top', // Below header
+    'top-left': 'top-20 left-4 safe-area-top'
+  }
+
+  // Choose positioning based on screen size - mobile uses safe positioning
+  const getCurrentPositionClass = () => {
+    return isMobile ? mobilePositionClasses[position] : positionClasses[position]
+  }
+
+  // Mobile detection and resize handler
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  // Keyboard detection for mobile - hide widget when keyboard is open
+  useEffect(() => {
+    if (!isMobile) return
+
+    const initialViewportHeight = window.visualViewport?.height || window.innerHeight
+    
+    const handleViewportChange = () => {
+      if (window.visualViewport) {
+        const currentHeight = window.visualViewport.height
+        const heightDifference = initialViewportHeight - currentHeight
+        setIsKeyboardOpen(heightDifference > 150) // Keyboard likely open if viewport shrunk by 150px+
+      }
+    }
+
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', handleViewportChange)
+      return () => window.visualViewport?.removeEventListener('resize', handleViewportChange)
+    }
+  }, [isMobile])
 
   // Theme configurations
   const themes = {
@@ -208,7 +254,7 @@ export default function LusoBotWidget({
               initial={{ opacity: 0, y: 20, scale: 0.8 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.8 }}
-              className={`fixed ${positionClasses[position]} z-40 mb-20 max-w-xs`}
+              className={`fixed ${getCurrentPositionClass()} z-40 ${isMobile ? 'mb-16' : 'mb-20'} max-w-xs`}
             >
               <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-4 relative">
                 {/* Close button */}
@@ -251,7 +297,7 @@ export default function LusoBotWidget({
       </AnimatePresence>
 
       {/* Main Chat Widget */}
-      <div className={`fixed ${positionClasses[position]} z-50`}>
+      <div className={`fixed ${getCurrentPositionClass()} z-40`}>
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -259,8 +305,11 @@ export default function LusoBotWidget({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: 20 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className={`mb-4 ${isMinimized ? 'w-80 h-16' : 'w-96 h-[600px]'} 
-                ${currentTheme.chatBg} rounded-2xl shadow-2xl border border-gray-200 overflow-hidden`}
+              className={`mb-4 ${
+                isMinimized 
+                  ? 'w-80 h-16 md:w-80 md:h-16' 
+                  : 'w-[90vw] max-w-sm h-[70vh] max-h-[500px] md:w-96 md:h-[600px]'
+              } ${currentTheme.chatBg} rounded-2xl shadow-2xl border border-gray-200 overflow-hidden`}
             >
               {isMinimized ? (
                 <div className="h-full flex items-center justify-between p-4">
@@ -336,15 +385,24 @@ export default function LusoBotWidget({
         </AnimatePresence>
 
         {/* Floating Action Button */}
-        {!isOpen && (
+        {!isOpen && !isKeyboardOpen && (
           <motion.button
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={handleOpen}
-            className={`w-16 h-16 rounded-full ${currentTheme.buttonBg} ${currentTheme.buttonHover}
-              flex items-center justify-center transition-all duration-200 relative group`}
+            className={`${isMobile ? 'w-14 h-14' : 'w-16 h-16'} rounded-full ${currentTheme.buttonBg} ${currentTheme.buttonHover}
+              flex items-center justify-center transition-all duration-200 relative group min-h-[44px] min-w-[44px]`}
+            aria-label={language === 'pt' ? 'Abrir LusoBot - Assistente Cultural Português' : 'Open LusoBot - Portuguese Cultural Assistant'}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleOpen();
+              }
+            }}
           >
             {/* Pulse animation for attention */}
             {unreadCount > 0 && (
@@ -355,13 +413,18 @@ export default function LusoBotWidget({
               />
             )}
 
-            {/* Main Icon */}
+            {/* Main Icon with Portuguese Context */}
             <div className="relative">
               {unreadCount > 0 ? (
-                <HeartSolidIcon className={`w-6 h-6 ${currentTheme.iconColor}`} />
+                <HeartSolidIcon className={`${isMobile ? 'w-5 h-5' : 'w-6 h-6'} ${currentTheme.iconColor}`} />
               ) : (
-                <ChatBubbleLeftRightIcon className={`w-6 h-6 ${currentTheme.iconColor}`} />
+                <ChatBubbleLeftRightIcon className={`${isMobile ? 'w-5 h-5' : 'w-6 h-6'} ${currentTheme.iconColor}`} />
               )}
+              
+              {/* Portuguese heritage indicator */}
+              <div className="absolute -top-1 -left-1 w-3 h-3 text-[10px] flex items-center justify-center">
+                🇵🇹
+              </div>
               
               {/* Unread count badge */}
               {unreadCount > 0 && (

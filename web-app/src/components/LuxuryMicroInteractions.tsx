@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useSpring, useMotionValue, useTransform } from "framer-motion";
+import { motion, useSpring, useMotionValue, useTransform, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { Heart, Star, Share2, Bookmark, ThumbsUp, Eye, Crown } from "lucide-react";
 

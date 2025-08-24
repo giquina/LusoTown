@@ -511,7 +511,7 @@ export default function BusinessDirectory() {
                 href={ROUTES.directory}
                 className="flex items-center gap-2 bg-white text-secondary-600 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors border border-secondary-200"
               >
-                <Users className="w-4 h-4" />
+                <UsersIcon className="w-4 h-4" />
                 <span>{t('directory.browse_members')}</span>
               </a>
             </div>

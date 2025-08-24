@@ -13,6 +13,7 @@ import {
   CheckBadgeIcon,
   StarIcon,
   ArrowTrendingUpIcon,
+  FireIcon,
 } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";
 import { useHeritage } from "@/context/HeritageContext";

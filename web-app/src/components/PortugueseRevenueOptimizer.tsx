@@ -52,12 +52,12 @@ export default function PortugueseRevenueOptimizer({
       id: "cultural_moment",
       name: isPortuguese ? "Oferta Santos Populares" : "Santos Populares Offer",
       description: isPortuguese 
-        ? "Especial para celebrar as tradições portuguesas - só até domingo!"
+        ? "Especial para celebrar as tradiï¿½ï¿½es portuguesas - sï¿½ atï¿½ domingo!"
         : "Special offer to celebrate Portuguese traditions - until Sunday only!",
       discount: 0.25, // 25% off
       urgency: true,
       culturalContext: isPortuguese 
-        ? "Não perca os Santos Populares com a sua comunidade portuguesa"
+        ? "Nï¿½o perca os Santos Populares com a sua comunidade portuguesa"
         : "Don't miss Santos Populares with your Portuguese community",
       icon: <FireIcon className="w-5 h-5 text-orange-500" />,
     },
@@ -65,25 +65,25 @@ export default function PortugueseRevenueOptimizer({
       id: "family_value",
       name: isPortuguese ? "Plano Familiar Especial" : "Special Family Plan",
       description: isPortuguese
-        ? "4 pessoas por £5 cada - perfeito para famílias portuguesas"
-        : "4 people for £5 each - perfect for Portuguese families",
+        ? "4 pessoas por ï¿½5 cada - perfeito para famï¿½lias portuguesas"
+        : "4 people for ï¿½5 each - perfect for Portuguese families",
       discount: 0.50, // 50% off per person for families
       familyFocused: true,
       culturalContext: isPortuguese
-        ? "As famílias portuguesas fazem tudo juntas - por que não LusoTown?"
+        ? "As famï¿½lias portuguesas fazem tudo juntas - por que nï¿½o LusoTown?"
         : "Portuguese families do everything together - why not LusoTown?",
       icon: <UserGroupIcon className="w-5 h-5 text-emerald-500" />,
     },
     newcomerSpecial: {
       id: "newcomer_special", 
-      name: isPortuguese ? "Bem-vindos ao Reino Unido" : "Welcome to the UK",
+      name: isPortuguese ? "Bem-vindos ao Reino Unido" : "Welcome to the United Kingdom",
       description: isPortuguese
-        ? "50% desconto para recém-chegados - encontre a sua comunidade"
+        ? "50% desconto para recï¿½m-chegados - encontre a sua comunidade"
         : "50% discount for newcomers - find your community",
       discount: 0.50,
       supportFocused: true,
       culturalContext: isPortuguese
-        ? "Sabemos como é difícil estar longe de casa - nós ajudamos"
+        ? "Sabemos como ï¿½ difï¿½cil estar longe de casa - nï¿½s ajudamos"
         : "We know how hard it is being away from home - we help",
       icon: <HeartIcon className="w-5 h-5 text-red-500" />,
     },
@@ -96,7 +96,7 @@ export default function PortugueseRevenueOptimizer({
       eventContext: true,
       immediateValue: true,
       culturalContext: isPortuguese
-        ? "Não seja o único sem acesso premium neste evento português"
+        ? "Nï¿½o seja o ï¿½nico sem acesso premium neste evento portuguï¿½s"
         : "Don't be the only one without premium access at this Portuguese event",
       icon: <CalendarDaysIcon className="w-5 h-5 text-purple-500" />,
     }
@@ -115,14 +115,14 @@ export default function PortugueseRevenueOptimizer({
     pause: {
       name: isPortuguese ? "Pausar em Vez de Cancelar" : "Pause Instead of Cancel",
       description: isPortuguese
-        ? "Pause por até 3 meses - mantenha o seu lugar na comunidade"
+        ? "Pause por atï¿½ 3 meses - mantenha o seu lugar na comunidade"
         : "Pause for up to 3 months - keep your place in the community",
       flexibilityFocused: true,
     },
     culturalCalendar: {
       name: isPortuguese ? "Calendario Cultural" : "Cultural Calendar",
       description: isPortuguese
-        ? "Santos Populares aproxima-se - não perca a celebração!"
+        ? "Santos Populares aproxima-se - nï¿½o perca a celebraï¿½ï¿½o!"
         : "Santos Populares is coming - don't miss the celebration!",
       eventReminder: true,
     }
@@ -131,19 +131,19 @@ export default function PortugueseRevenueOptimizer({
   // Payment Optimization for Portuguese-speaking community
   const paymentOptimizations = {
     bankTransfer: {
-      name: isPortuguese ? "Transferência Bancária" : "Bank Transfer",
+      name: isPortuguese ? "Transferï¿½ncia Bancï¿½ria" : "Bank Transfer",
       preference: PAYMENT_PREFERENCES.preferredMethods.bankTransfer,
       benefit: isPortuguese ? "5% desconto extra" : "5% extra discount",
       culturalNote: isPortuguese 
-        ? "Método preferido por 45% dos portugueses no Reino Unido"
-        : "Preferred by 45% of Portuguese speakers in UK",
+        ? "Mï¿½todo preferido por 45% dos portugueses no Reino Unido"
+        : "Preferred by 45% of Portuguese speakers in the United Kingdom",
     },
     quarterly: {
       name: isPortuguese ? "Pagamento Trimestral" : "Quarterly Payment",
       preference: PAYMENT_PREFERENCES.billingCycles.quarterly.preference,
       discount: PAYMENT_PREFERENCES.billingCycles.quarterly.incentive,
       culturalNote: isPortuguese
-        ? "Pague menos, planeie melhor - ao estilo português"
+        ? "Pague menos, planeie melhor - ao estilo portuguï¿½s"
         : "Pay less, plan better - Portuguese style",
     }
   };
@@ -179,8 +179,8 @@ export default function PortugueseRevenueOptimizer({
         </div>
         <h3 className="text-xl font-bold text-gray-900 mb-2">
           {isPortuguese 
-            ? "Encontre a Sua Família Portuguesa no Reino Unido" 
-            : "Find Your Portuguese Family in the UK"}
+            ? "Encontre a Sua Famï¿½lia Portuguesa no Reino Unido" 
+            : "Find Your Portuguese Family in the United Kingdom"}
         </h3>
         <p className="text-gray-600">
           {getCulturalValueProposition().emotional}
@@ -257,7 +257,7 @@ export default function PortugueseRevenueOptimizer({
       {/* Payment Preferences for Portuguese-speaking community */}
       <div className="mt-6 p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-white/50">
         <h4 className="font-semibold text-gray-900 mb-3 text-sm">
-          {isPortuguese ? "Métodos de Pagamento Preferidos" : "Preferred Payment Methods"}
+          {isPortuguese ? "Mï¿½todos de Pagamento Preferidos" : "Preferred Payment Methods"}
         </h4>
         <div className="grid grid-cols-2 gap-3">
           {Object.entries(paymentOptimizations).map(([key, method]) => (

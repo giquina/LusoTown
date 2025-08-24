@@ -183,7 +183,7 @@ export const PORTUGUESE_PREMIUM_BENEFITS = {
     portugueseRestaurantNetwork: {
       name: "Portuguese Restaurant Network",
       namePt: "Rede de Restaurantes Portugueses",
-      description: "Exclusive discounts at Portuguese restaurants across UK",
+      description: "Exclusive discounts at Portuguese restaurants across the United Kingdom",
       descriptionPt: "Descontos exclusivos em restaurantes portugueses por todo o Reino Unido",
       tier: 'community'
     },
@@ -331,13 +331,13 @@ export const CULTURAL_VALUE_PROPOSITIONS = {
     culturalPreservation: {
       headline: "Preserving Portuguese Heritage",
       headlinePt: "Preservar o Património Português",
-      description: "Keep Portuguese traditions alive for future generations in the UK",
+      description: "Keep Portuguese traditions alive for future generations in the United Kingdom",
       descriptionPt: "Manter as tradições portuguesas vivas para futuras gerações no Reino Unido"
     },
     homeAwayFromHome: {
       headline: "Home Away From Home",
       headlinePt: "Casa Longe de Casa",
-      description: "Find your Portuguese family in the UK",
+      description: "Find your Portuguese family in the United Kingdom",
       descriptionPt: "Encontre a sua família portuguesa no Reino Unido"
     }
   },
@@ -345,7 +345,7 @@ export const CULTURAL_VALUE_PROPOSITIONS = {
     businessOpportunities: {
       headline: "Portuguese Business Network",
       headlinePt: "Rede de Negócios Portuguesa",
-      value: "Access to 200+ Portuguese business owners across UK"
+      value: "Access to 200+ Portuguese business owners across the United Kingdom"
     },
     culturalEducation: {
       headline: "Authentic Cultural Learning",
