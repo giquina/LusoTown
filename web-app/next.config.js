@@ -4,6 +4,7 @@ const nextConfig = {
   transpilePackages: ["@lusotown/ui", "@lusotown/design-tokens"],
   productionBrowserSourceMaps: false,
   swcMinify: true,
+  optimizeFonts: false, // Disable font optimization to prevent build-time fetching
   images: {
     unoptimized: false,
     remotePatterns: [

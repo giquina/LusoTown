@@ -22,7 +22,6 @@ import {
   GlobeAltIcon,
   CheckBadgeIcon,
   CurrencyPoundIcon,
-  UsersIcon,
   BookOpenIcon,
   BuildingLibraryIcon,
   MapPinIcon,

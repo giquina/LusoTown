@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import LiveFeedNotifications from "@/components/LiveFeedNotifications";
@@ -36,20 +35,8 @@ import MobilePerformanceOptimizer from "@/components/MobilePerformanceOptimizer"
 import { METADATA_BASE } from "@/config/site";
 import { generateMetadata as generateSEOMetadata, generateJsonLd } from "@/config/seo";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-poppins",
-  display: "swap",
-  preload: true,
-  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
-});
+// Use system fonts during build to avoid Google Fonts fetching
+const fontClasses = "font-sans antialiased";
 
 export const metadata: Metadata = {
   metadataBase: METADATA_BASE,
@@ -68,12 +55,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en" className={fontClasses}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#1E40AF" id="theme-color" />
+        {/* Load fonts asynchronously after build */}
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossOrigin=""
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -81,7 +83,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className={fontClasses}>
         <FramerMotionFix />
         <ErrorBoundary>
           <HeritageProvider>
