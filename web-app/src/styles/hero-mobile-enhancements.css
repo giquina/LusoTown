@@ -321,3 +321,149 @@
     hyphens: auto;
   }
 }
+
+/* Testimonial Spacing Enhancements for Portuguese Content */
+.testimonial-section {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 2rem;
+}
+
+/* Ensure testimonial cards don't get cut off */
+.testimonial-card {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 1.5rem;
+  min-height: fit-content;
+  overflow: visible;
+}
+
+/* Mobile testimonial spacing fixes */
+@media (max-width: 768px) {
+  .testimonial-card {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    min-height: fit-content;
+    overflow: visible;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Ensure Portuguese text doesn't overflow */
+  .testimonial-card blockquote {
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    margin-bottom: 1rem;
+  }
+  
+  /* Hero testimonial mobile spacing */
+  .hero-testimonial-mobile {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    min-height: auto;
+    position: relative;
+    z-index: 20;
+    overflow: visible;
+  }
+  
+  /* Prevent testimonial sections from overlapping */
+  .testimonial-section {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    position: relative;
+    z-index: 10;
+    overflow: visible;
+  }
+  
+  /* Specific fixes for grid layouts */
+  .testimonials-grid {
+    grid-gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Ensure section borders don't overlap */
+  section + .testimonial-section {
+    margin-top: 3rem;
+  }
+  
+  .testimonial-section + section {
+    margin-top: 3rem;
+  }
+}
+
+/* Tablet testimonial improvements */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .testimonial-card {
+    margin-bottom: 2rem;
+  }
+  
+  .testimonial-section {
+    margin-bottom: 3rem;
+  }
+}
+
+/* Portuguese testimonial visual enhancements */
+.portuguese-testimonial {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(248, 249, 250, 0.9) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 40, 47, 0.1);
+  box-shadow: 
+    0 8px 30px rgba(197, 40, 47, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.portuguese-testimonial:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 20px 60px rgba(197, 40, 47, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border-color: rgba(197, 40, 47, 0.2);
+}
+
+/* Star rating Portuguese colors */
+.testimonial-stars {
+  color: #FFD700;
+  text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+}
+
+/* Portuguese profile picture styling */
+.testimonial-profile-pic {
+  border: 3px solid rgba(197, 40, 47, 0.2);
+  box-shadow: 0 4px 15px rgba(197, 40, 47, 0.1);
+}
+
+/* Ensure proper section transitions */
+.section-transition {
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.section-transition::before {
+  content: '';
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5));
+  z-index: 1;
+}
+
+.section-transition::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.5));
+  z-index: 1;
+}

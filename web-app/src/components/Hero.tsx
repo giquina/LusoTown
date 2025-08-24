@@ -108,10 +108,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="hero-mobile-subtitle text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl"
               >
-                <span className="font-bold text-red-600">750+ Portuguese speakers</span> waiting for you. 
-                <span className="block sm:inline mt-1 sm:mt-0">
-                  <span className="font-semibold text-gray-800">Events • Networking • Culture • Friendship</span>
-                </span>
+                {t('hero.subheadline')}
               </motion.p>
             </div>
 
@@ -382,15 +379,15 @@ export default function Hero() {
               >
                 <div className="hero-trust-indicator">
                   <div className="hero-trust-dot green"></div>
-                  <span>750+ Members</span>
+                  <span>{t('hero.trust.members', 'Active Members')}</span>
                 </div>
                 <div className="hero-trust-indicator">
                   <div className="hero-trust-dot red"></div>
-                  <span>United Kingdom-Wide</span>
+                  <span>{t('hero.trust.nationwide', 'United Kingdom-Wide')}</span>
                 </div>
                 <div className="hero-trust-indicator">
                   <div className="hero-trust-dot gold"></div>
-                  <span>Portuguese Culture</span>
+                  <span>{t('hero.trust.culture', 'Portuguese Culture')}</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -457,7 +454,7 @@ export default function Hero() {
                       </div>
                     ))}
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 sm:border-3 border-white shadow-lg bg-gradient-to-r from-green-500 to-red-500 flex items-center justify-center text-white text-[10px] sm:text-xs font-bold">
-                      +746
+                      {t('hero.stats.more', '+more')}
                     </div>
                   </div>
                 </div>
@@ -466,17 +463,17 @@ export default function Hero() {
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 text-center">
                   <div className="bg-white/60 rounded-2xl p-3 sm:p-4 border border-white/40 shadow-sm">
                     <div className="text-2xl sm:text-3xl font-bold text-green-600 mb-1">
-                      150+
+                      {t('hero.stats.events', 'Many')}
                     </div>
                     <div className="text-xs sm:text-sm text-gray-600 font-medium leading-tight">
-                      Monthly Events
+                      {t('hero.stats.events_label', 'Monthly Events')}
                     </div>
                   </div>
                   <div className="bg-white/60 rounded-2xl p-3 sm:p-4 border border-white/40 shadow-sm">
                     <div className="text-2xl sm:text-3xl font-bold text-red-600 mb-1">
-                      25+
+                      {t('hero.stats.cities', 'Many')}
                     </div>
-                    <div className="text-xs sm:text-sm text-gray-600 font-medium leading-tight">United Kingdom Cities</div>
+                    <div className="text-xs sm:text-sm text-gray-600 font-medium leading-tight">{t('hero.stats.cities_label', 'United Kingdom Cities')}</div>
                   </div>
                 </div>
 

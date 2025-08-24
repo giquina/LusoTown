@@ -134,7 +134,7 @@ export default function TestimonialsNew() {
   const mixedTestimonials = createMixedTestimonials(allTestimonials, { portuguesePercentage: 70 })
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-br from-accent-200 via-coral-100 to-secondary-100 rounded-full opacity-30 animate-pulse"></div>
@@ -172,7 +172,7 @@ export default function TestimonialsNew() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10"
+          className="testimonials-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10"
         >
           {mixedTestimonials.map((testimonial, index) => {
             const displayContent = getTestimonialText(testimonial, language)
@@ -181,9 +181,9 @@ export default function TestimonialsNew() {
               <motion.div
                 key={testimonial.id || testimonial.name}
                 variants={cardVariants}
-                className="group"
+                className="group h-full"
               >
-                <div className="card p-4 sm:p-6 md:p-7 lg:p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl bg-white/80 backdrop-blur-sm border border-white/50">
+                <div className="testimonial-card portuguese-testimonial p-4 sm:p-6 md:p-7 lg:p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl relative z-10">
                   {/* Quote Icon */}
                   <div className="mb-6">
                     <ChatBubbleLeftIcon className="h-8 w-8 text-primary-300" />
@@ -201,7 +201,7 @@ export default function TestimonialsNew() {
                   {/* Rating */}
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <StarIcon key={i} className="h-5 w-5 text-yellow-400" />
+                      <StarIcon key={i} className="h-5 w-5 testimonial-stars" />
                     ))}
                   </div>
 
@@ -212,7 +212,7 @@ export default function TestimonialsNew() {
 
                   {/* Author Info */}
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full overflow-hidden shadow-lg ring-2 ring-white">
+                    <div className="testimonial-profile-pic w-14 h-14 rounded-full overflow-hidden shadow-lg ring-2 ring-white">
                       <Image 
                         width={56}
                         height={56}
@@ -314,7 +314,7 @@ export default function TestimonialsNew() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="text-center mt-12"
+          className="text-center mt-12 mb-8 sm:mb-12 lg:mb-16"
         >
           <h3 className="text-2xl font-semibold text-gray-900 mb-4">
             Ready to Connect with Portuguese Speakers in London?

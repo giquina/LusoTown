@@ -126,6 +126,8 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
           <Image 
             src={business.photos[0]} 
             alt={business.name}
+            width={800}
+            height={600}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         ) : (

@@ -100,25 +100,25 @@ export default function Home() {
                     {t('hero.free_badge', '100% FREE TO JOIN')}
                   </div>
                   
-                  {/* Main Headline */}
+                  {/* Main Headline - Prestigious Portuguese Hub */}
                   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
-                    <span className="text-primary-600">Find Your</span><br />
+                    <span className="text-primary-600">{t('hero.title.welcome', 'Welcome to the')}</span><br />
                     <span className="bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 bg-clip-text text-transparent">
-                      Portuguese
+                      {t('hero.title.main', 'Portuguese Hub')}
                     </span><br />
-                    <span className="text-secondary-600">Match</span> 🇵🇹
+                    <span className="text-secondary-600">{t('hero.title.location', 'of the United Kingdom')}</span> 🇵🇹
                   </h1>
                   
                   {/* Sub-headline */}
                   <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl">
-                    {t('hero.subheadline', 'Connect with 750+ Portuguese speakers across the United Kingdom. Find friends, dates, business partners, or your soulmate.')}
+                    {t('hero.subheadline', 'Connect with Portuguese speakers across the United Kingdom. Discover authentic relationships, cultural events, business opportunities, and celebrate your heritage together.')}
                   </p>
                   
                   {/* Trust indicators */}
                   <div className="flex flex-wrap justify-center lg:justify-start gap-6 text-gray-600">
                     <div className="flex items-center gap-2">
                       <UsersIcon className="w-5 h-5 text-primary-500" />
-                      <span className="font-semibold">750+ Members</span>
+                      <span className="font-semibold">{t('hero.trust.members', 'Active Members')}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPinIcon className="w-5 h-5 text-secondary-500" />
@@ -149,22 +149,25 @@ export default function Home() {
                     </a>
                   </div>
                   
-                  {/* Social proof */}
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg max-w-md mx-auto lg:mx-0">
-                    <div className="flex items-center gap-4 mb-3">
+                  {/* Social proof - Enhanced testimonial with proper spacing */}
+                  <div className="portuguese-testimonial hero-testimonial-mobile rounded-2xl p-6 shadow-lg max-w-md mx-auto lg:mx-0 mb-8 lg:mb-0">
+                    <div className="flex items-center gap-4 mb-4">
                       <div className="flex -space-x-2">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-400 to-red-400 flex items-center justify-center text-white font-bold text-sm">M</div>
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 flex items-center justify-center text-white font-bold text-sm">J</div>
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 flex items-center justify-center text-white font-bold text-sm">A</div>
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-400 to-red-400 flex items-center justify-center text-white font-bold text-sm border-2 border-white shadow-md">M</div>
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 flex items-center justify-center text-white font-bold text-sm border-2 border-white shadow-md">J</div>
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 flex items-center justify-center text-white font-bold text-sm border-2 border-white shadow-md">A</div>
                       </div>
-                      <div>
-                        <div className="font-bold text-gray-900">Maria & João</div>
+                      <div className="flex-1">
+                        <div className="font-bold text-gray-900 text-base">Maria & João</div>
                         <div className="text-sm text-gray-600">Found love through LusoTown 💕</div>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-700 italic">
-                      "Conhecemo-nos aqui e agora estamos noivos! A comunidade portuguesa no Reino Unido é incrível." ⭐⭐⭐⭐⭐
+                    <p className="text-sm text-gray-700 italic leading-relaxed mb-3">
+                      "Conhecemo-nos aqui e agora estamos noivos! A comunidade portuguesa no Reino Unido é incrível."
                     </p>
+                    <div className="flex items-center justify-center gap-1">
+                      <span className="testimonial-stars text-lg">⭐⭐⭐⭐⭐</span>
+                    </div>
                   </div>
                 </div>
                 
@@ -480,9 +483,13 @@ export default function Home() {
             </div>
           </section>
           
-          <TestimonialsNew />
+          {/* TESTIMONIALS SECTION - Proper spacing and layout */}
+          <div className="testimonial-section section-transition">
+            <TestimonialsNew />
+          </div>
+          
           {/* FINAL FREE SIGNUP CTA - Cohesive ending */}
-          <section className="py-20 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 text-white">
+          <section className="py-20 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 text-white relative z-10">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <div className="max-w-4xl mx-auto">
                 <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-bold mb-8">
@@ -506,7 +513,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-2">
                     <UsersIcon className="w-5 h-5" />
-                    <span className="font-semibold">750+ Active Members</span>
+                    <span className="font-semibold">{t('hero.trust.members', 'Active Members')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <HeartIcon className="w-5 h-5 text-red-300" />
@@ -566,7 +573,7 @@ export default function Home() {
           
           {/* Enhanced Tooltip */}
           <div className="absolute right-20 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-4 py-2 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
-            🇵🇹 Join 750+ Portuguese speakers - FREE!
+            🇵🇹 {t('cta.tooltip', 'Join Portuguese community - FREE!')}
             <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-0 h-0 border-l-[8px] border-l-gray-900 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent"></div>
           </div>
         </div>

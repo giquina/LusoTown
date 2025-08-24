@@ -104,7 +104,7 @@ export default function QuickTestimonials() {
               variants={cardVariants}
               className="group"
             >
-              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/60 h-full flex flex-col">
+              <div className="testimonial-card portuguese-testimonial rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                 {/* Category Badge */}
                 <div className="inline-flex items-center gap-1 bg-gradient-to-r from-secondary-100 to-accent-100 text-secondary-800 text-xs font-bold px-3 py-1 rounded-full mb-4 self-start">
                   <HeartIcon className="h-3 w-3" />
@@ -116,7 +116,7 @@ export default function QuickTestimonials() {
                   {Array.from({ length: 5 }).map((_, i) => (
                     <StarIcon
                       key={i}
-                      className="w-4 h-4 text-yellow-400 fill-current"
+                      className="w-4 h-4 testimonial-stars fill-current"
                     />
                   ))}
                 </div>
