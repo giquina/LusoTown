@@ -128,7 +128,7 @@ export default function Home() {
                     </span>
                     <br />
                     <span className="text-gray-900">
-                      Lusophone-Speaking Community
+                      Portuguese-speaking Community
                     </span>
                     <div className="flex justify-center lg:justify-start gap-2 mt-4 text-4xl" aria-label="Featured flags: Portugal, Brazil, United Kingdom">
                       <span role="img" aria-label="Portugal flag">🇵🇹</span>
@@ -139,9 +139,7 @@ export default function Home() {
 
                   {/* Single Clear Value Proposition */}
                   <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl mb-8">
-                    From Lisboa to São Paulo, Luanda to Praia, Maputo to Bissau
-                    - discover events, businesses, and opportunities across the
-                    United Kingdom's Portuguese-speaking community.
+                    Discover events, businesses, and opportunities for Portuguese speakers across the UK.
                   </p>
 
                   {/* PALOP Recognition - Simplified */}

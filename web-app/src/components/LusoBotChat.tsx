@@ -347,28 +347,28 @@ export default function LusoBotChat({ className = '', isEmbedded = false, onClos
 
   const quickStarters = [
     {
-      pt: "Sou do Porto e estou novo em Londres. Por onde começar?",
-      en: "I'm from Porto and new to London. Where should I start?"
+  pt: "Sou novo no Reino Unido. Por onde começo?",
+  en: "I’m new to the UK. Where do I start?"
     },
     {
-      pt: "Procuro eventos portugueses este fim de semana",
-      en: "I'm looking for Lusophone events this weekend"
+  pt: "Quero encontrar eventos portugueses este fim de semana",
+  en: "Find Portuguese events this weekend"
     },
     {
       pt: "Quero encontrar outros brasileiros na minha área",
-      en: "I want to find other Brazilians in my area"
+  en: "Find other Brazilians near me"
     },
     {
-      pt: "Preciso de negócios portugueses - restaurantes e serviços",
-      en: "I need Portuguese businesses - restaurants and services"
+  pt: "Preciso de negócios portugueses (restaurantes, serviços)",
+  en: "Find Portuguese businesses (restaurants, services)"
     },
     {
-      pt: "Como posso conhecer pessoas da comunidade lusófona?",
-      en: "How can I meet people from the Portuguese-speaking community?"
+  pt: "Como posso conhecer pessoas da comunidade?",
+  en: "How can I meet people in the community?"
     },
     {
-      pt: "Sou estudante português - que recursos têm para mim?",
-      en: "I'm a Lusophone student - what resources do you have for me?"
+  pt: "Sou estudante - que recursos têm para mim?",
+  en: "I’m a student — what resources do you have?"
     }
   ]
 
@@ -400,7 +400,7 @@ export default function LusoBotChat({ className = '', isEmbedded = false, onClos
                 <SparklesIcon className="w-4 h-4 text-primary-500" />
               </h1>
               <p className="text-xs text-gray-600">
-                {language === 'pt' ? 'Assistente Cultural Português' : 'Lusophone Cultural Assistant'}
+                {language === 'pt' ? 'Assistente Cultural Português' : 'Portuguese-speaking Cultural Assistant'}
               </p>
             </div>
           </div>

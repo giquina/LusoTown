@@ -14,19 +14,13 @@ import { HeartIcon as HeartSolidIcon } from "@heroicons/react/24/solid";
 import { useLanguage } from "@/context/LanguageContext";
 import LusoBotChat from "./LusoBotChat";
 
-// Static welcome messages (module scope to keep referential stability for hooks)
+// Simple, consistent welcome messages (no randomization)
 const WELCOME_MESSAGES = {
   pt: [
-    "Olá! De onde és e como posso ajudar-te no LusoTown? 🇵🇹",
-    "Procuras eventos, negócios ou pessoas portuguesas? 🔍",
-    "Quer conectar-se com a comunidade lusófona? Diz-me o que procuras!",
-    "Novo no Reino Unido? Posso ajudar-te a navegar na plataforma!",
+    "Olá! Sou o LusoBot. Como posso ajudar-te hoje?",
   ],
   en: [
-    "Hello! Where are you from and how can I help you navigate LusoTown? 🇵🇹",
-    "Looking for events, businesses, or Lusophone people? 🔍",
-    "Want to connect with the Portuguese-speaking community? Tell me what you're looking for!",
-    "New to the UK? I can help you navigate the platform!",
+    "Hi! I’m LusoBot. How can I help you today?",
   ],
 };
 
@@ -62,6 +56,15 @@ export default function LusoBotWidget({
   const [unreadCount, setUnreadCount] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
+  // Feature flag to disable extra contextual popups
+  const ENABLE_CONTEXTUAL_SUGGESTIONS = false;
+  
+  // Lightweight routes for quick actions (fallbacks if import is unavailable)
+  const ROUTES_SAFE = {
+    events: "/events",
+    businessDirectory: "/business-directory",
+    signup: "/signup",
+  } as const;
 
   // Position classes with mobile-safe positioning
   const positionClasses = {
@@ -152,19 +155,19 @@ export default function LusoBotWidget({
 
   // Welcome messages based on language and navigation guidance
 
-  // Initialize floating messages
+  // Initialize floating messages (no randomization)
   useEffect(() => {
     if (!showWelcomeMessage || hasInteracted) return;
 
     const timer = setTimeout(() => {
-      const messages =
-        WELCOME_MESSAGES[language as keyof typeof WELCOME_MESSAGES];
-      const randomMessage =
-        messages[Math.floor(Math.random() * messages.length)];
+      const messages = WELCOME_MESSAGES[
+        language as keyof typeof WELCOME_MESSAGES
+      ];
+      const welcomeText = messages[0];
 
       const newMessage: FloatingMessage = {
         id: `welcome_${Date.now()}`,
-        text: (customGreeting ?? randomMessage) as string,
+        text: (customGreeting ?? welcomeText) as string,
         type: "welcome",
         visible: true,
       };
@@ -183,8 +186,9 @@ export default function LusoBotWidget({
     return () => clearTimeout(timer);
   }, [language, showWelcomeMessage, hasInteracted, customGreeting]);
 
-  // Add contextual suggestions based on page
+  // (Optional) contextual suggestions based on page — disabled when flag is false
   useEffect(() => {
+    if (!ENABLE_CONTEXTUAL_SUGGESTIONS) return;
     const pathname = window.location.pathname;
     let suggestion = "";
 
@@ -238,7 +242,7 @@ export default function LusoBotWidget({
 
       return () => clearTimeout(timer);
     }
-  }, [language, hasInteracted, showWelcomeMessage]);
+  }, [language, hasInteracted, showWelcomeMessage, ENABLE_CONTEXTUAL_SUGGESTIONS]);
 
   const handleOpen = () => {
     setIsOpen(true);
@@ -311,6 +315,28 @@ export default function LusoBotWidget({
                     <p className="text-sm text-gray-700 leading-relaxed">
                       {message.text}
                     </p>
+
+                    {/* Beginner-friendly quick actions */}
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <a
+                        href={ROUTES_SAFE.events}
+                        className="text-xs px-2 py-1 rounded-full bg-primary-50 text-primary-700 border border-primary-200 hover:bg-primary-100"
+                      >
+                        {language === "pt" ? "Encontrar eventos" : "Find events"}
+                      </a>
+                      <a
+                        href={ROUTES_SAFE.businessDirectory}
+                        className="text-xs px-2 py-1 rounded-full bg-yellow-50 text-yellow-700 border border-yellow-200 hover:bg-yellow-100"
+                      >
+                        {language === "pt" ? "Negócios portugueses" : "Portuguese businesses"}
+                      </a>
+                      <a
+                        href={ROUTES_SAFE.signup}
+                        className="text-xs px-2 py-1 rounded-full bg-green-50 text-green-700 border border-green-200 hover:bg-green-100"
+                      >
+                        {language === "pt" ? "Começar" : "Get started"}
+                      </a>
+                    </div>
 
                     <button
                       onClick={handleOpen}
@@ -442,7 +468,7 @@ export default function LusoBotWidget({
             aria-label={
               language === "pt"
                 ? "Abrir LusoBot - Assistente Cultural Português"
-                : "Open LusoBot - Lusophone Cultural Assistant"
+                : "Open LusoBot - Portuguese-speaking Cultural Assistant"
             }
             role="button"
             tabIndex={0}
