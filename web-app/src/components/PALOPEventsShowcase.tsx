@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useRouter } from 'next/navigation'
 import { useLanguage } from '@/context/LanguageContext'
 import { PALOP_CULTURAL_EVENTS, getHighPriorityPALOPEvents, getCurrentMonthPALOPEvents } from '@/config/palop-cultural-events'
 import { 
@@ -35,6 +36,7 @@ const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
   showDescription = true
 }) => {
   const { t } = useLanguage()
+  const router = useRouter()
 
   // Get events based on variant
   const getEvents = () => {
@@ -104,7 +106,7 @@ const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
           
           {showDescription && (
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              {t('palop.success.subtitle', 'Where PALOP Cultures Thrive in Britain')} - Join 750+ members celebrating the incredible heritage of African Lusophone nations with exclusive access to premium cultural experiences across the United Kingdom.
+              {t('palop.success.subtitle', 'Where PALOP Cultures Thrive in Britain')} - Join the community celebrating the incredible heritage of African Lusophone nations with exclusive access to premium cultural experiences across the United Kingdom.
             </p>
           )}
         </div>
@@ -112,9 +114,14 @@ const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
         {/* Events Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {events.map((event) => (
-            <div 
-              key={event.id} 
-              className={`bg-white rounded-2xl p-6 shadow-xl border-l-4 ${getCountryColor(event.country)} hover:shadow-2xl transition-all duration-300 hover:-translate-y-1`}
+            <div
+              key={event.id}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}/${event.id}`)}
+              onClick={() => router.push(`${ROUTES.events}/${event.id}`)}
+              className={`bg-white rounded-2xl p-6 shadow-xl border-l-4 ${getCountryColor(event.country)} hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-300`}
+              aria-label={`${event.title} — view details`}
             >
               {/* Country Badge */}
               <div className="flex items-center justify-between mb-4">
@@ -194,15 +201,26 @@ const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
                 <div className="flex gap-2">
                   <a
                     href={`${ROUTES.events}/${event.id}/book`}
+                    onClick={(e) => e.stopPropagation()}
                     className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold py-2 px-4 rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-200 text-center"
                   >
                     Get Tickets
                   </a>
                   <a
                     href={`${ROUTES.events}/${event.id}`}
+                    onClick={(e) => e.stopPropagation()}
                     className="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors font-medium"
                   >
                     RSVP
+                  </a>
+                </div>
+                <div className="text-right mt-2">
+                  <a
+                    href={`${ROUTES.events}/${event.id}`}
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-sm font-medium text-primary-700 hover:underline"
+                  >
+                    {t('common.view_more', 'View more')}
                   </a>
                 </div>
                 <div className="text-xs text-center text-gray-600 bg-amber-50 px-2 py-1 rounded border border-amber-200">

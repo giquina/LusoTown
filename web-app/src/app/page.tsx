@@ -1103,7 +1103,13 @@ export default function Home() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                   {/* Angola */}
-                  <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-red-500">
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&country=ao`)}
+                    onClick={() => router.push(`${ROUTES.events}?ref=home&country=ao`)}
+                    className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-red-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
+                  >
                     <div className="text-center mb-4">
                       <div className="text-4xl mb-3">🇦🇴</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -1142,7 +1148,13 @@ export default function Home() {
                   </div>
 
                   {/* Cape Verde */}
-                  <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-blue-500">
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&country=cv`)}
+                    onClick={() => router.push(`${ROUTES.events}?ref=home&country=cv`)}
+                    className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-blue-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
+                  >
                     <div className="text-center mb-4">
                       <div className="text-4xl mb-3">🇨🇻</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -1181,7 +1193,13 @@ export default function Home() {
                   </div>
 
                   {/* Mozambique */}
-                  <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-green-500">
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&country=mz`)}
+                    onClick={() => router.push(`${ROUTES.events}?ref=home&country=mz`)}
+                    className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-green-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
+                  >
                     <div className="text-center mb-4">
                       <div className="text-4xl mb-3">🇲🇿</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -1220,7 +1238,13 @@ export default function Home() {
                   </div>
 
                   {/* Guinea-Bissau */}
-                  <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-purple-500">
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&country=gw`)}
+                    onClick={() => router.push(`${ROUTES.events}?ref=home&country=gw`)}
+                    className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-purple-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
+                  >
                     <div className="text-center mb-4">
                       <div className="text-4xl mb-3">🇬🇼</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -1259,7 +1283,13 @@ export default function Home() {
                   </div>
 
                   {/* São Tomé and Príncipe */}
-                  <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-orange-500">
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&country=st`)}
+                    onClick={() => router.push(`${ROUTES.events}?ref=home&country=st`)}
+                    className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-orange-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
+                  >
                     <div className="text-center mb-4">
                       <div className="text-4xl mb-3">🇸🇹</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -1298,7 +1328,13 @@ export default function Home() {
                   </div>
 
                   {/* PALOP Business Excellence */}
-                  <div className="bg-gradient-to-br from-green-500 to-yellow-500 rounded-2xl p-6 shadow-xl text-white">
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&tag=palop`)}
+                    onClick={() => router.push(`${ROUTES.events}?ref=home&tag=palop`)}
+                    className="bg-gradient-to-br from-green-500 to-yellow-500 rounded-2xl p-6 shadow-xl text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-200"
+                  >
                     <div className="text-center mb-4">
                       <div className="text-4xl mb-3">🤝</div>
                       <h3 className="text-xl font-bold mb-2">
@@ -1391,7 +1427,13 @@ export default function Home() {
 
                 {/* Monthly Highlights Grid */}
                 <div className="grid lg:grid-cols-3 gap-8 mb-16">
-                  <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-red-500">
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&month=november`)}
+                    onClick={() => router.push(`${ROUTES.events}?ref=home&month=november`)}
+                    className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-red-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
+                  >
                     <div className="text-center mb-4">
                       <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl flex items-center justify-center text-4xl">
                         🇬🇴
@@ -1431,7 +1473,13 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-green-500">
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&month=december`)}
+                    onClick={() => router.push(`${ROUTES.events}?ref=home&month=december`)}
+                    className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-green-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
+                  >
                     <div className="text-center mb-4">
                       <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center text-4xl">
                         🎄
@@ -1471,7 +1519,13 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-purple-500">
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&month=february`)}
+                    onClick={() => router.push(`${ROUTES.events}?ref=home&month=february`)}
+                    className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-purple-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
+                  >
                     <div className="text-center mb-4">
                       <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-4xl">
                         🎉
