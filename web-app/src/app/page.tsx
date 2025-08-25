@@ -12,6 +12,8 @@ import { ROUTES } from "@/config/routes";
 import MobileWelcomeWizard from "@/components/MobileWelcomeWizard";
 import StreamlinedCommunitySelector from "@/components/StreamlinedCommunitySelector";
 import ResponsiveButton from "@/components/ResponsiveButton";
+// Import Portuguese Cultural Mobile Styles
+import "@/styles/mobile-portuguese-cultural.css";
 
 // Strategic component loading for cohesive experience
 const SuccessStories = dynamic(() => import("@/components/SuccessStories"), {
@@ -105,110 +107,88 @@ export default function Home() {
       <main className="min-h-screen w-full overflow-x-hidden" role="main">
         {/* Fixed spacing: Added proper top margin and padding for hero section */}
         <div className="pt-24 lg:pt-32 w-full">
-          {/* HERO SECTION - Community Discovery Focus with Proper Spacing */}
+          {/* HERO SECTION - Mobile-First Portuguese Community */}
           <section
-            className="relative min-h-[600px] lg:min-h-[700px] bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center overflow-hidden"
-            style={{ paddingTop: "60px", paddingBottom: "80px" }}
+            className="relative min-h-[85vh] lg:min-h-[700px] bg-gradient-to-br from-green-50 via-yellow-50 to-red-50 flex items-center overflow-hidden"
+            style={{ paddingTop: "40px", paddingBottom: "60px" }}
           >
-            {/* Lusophone unity inspired background */}
+            {/* Portuguese Heritage Background Pattern */}
             <div className="absolute inset-0" aria-hidden="true">
-              <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-r from-green-100/20 via-blue-100/20 to-yellow-100/20"></div>
-              <div className="absolute bottom-0 right-0 w-full h-1/3 bg-gradient-to-l from-red-100/20 via-purple-100/20 to-orange-100/20"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-cyan-50/10 to-transparent"></div>
+              <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-r from-green-100/30 via-yellow-100/30 to-red-100/30"></div>
+              <div className="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-l from-red-100/30 via-gold-100/20 to-green-100/30"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,165,116,0.1)_0%,transparent_70%)]"></div>
             </div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-              <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-                {/* Left Column - Unidos pela Língua Community Discovery Value */}
-                <div className="text-center lg:text-left space-y-8">
-                  {/* Main Headline - Clean & Direct */}
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
-                    <span className="bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 bg-clip-text text-transparent">
-                      Unidos pela Língua
-                    </span>
-                    <br />
-                    <span className="text-gray-900">
-                      Portuguese-speaking Community
-                    </span>
-                    <div className="flex justify-center lg:justify-start gap-2 mt-4 text-4xl" aria-label="Featured flags: Portugal, Brazil, United Kingdom">
-                      <span role="img" aria-label="Portugal flag">🇵🇹</span>
-                      <span role="img" aria-label="Brazil flag">🇧🇷</span>
-                      <span role="img" aria-label="United Kingdom flag">🇬🇧</span>
-                    </div>
-                  </h1>
-
-                  {/* Single Clear Value Proposition */}
-                  <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl mb-4">
-                    Discover events, businesses, and opportunities for verified Portuguese and Portuguese‑speaking members across the United Kingdom.
-                  </p>
-
-                  {/* Verification note for clarity */}
-                  <div className="inline-flex items-center gap-2 text-sm text-gray-600 bg-white/70 border border-gray-200 rounded-full px-3 py-1 mb-4">
-                    <CheckIcon className="w-4 h-4 text-green-600" />
-                    <span>Every member is verified as Portuguese or Portuguese‑speaking</span>
-                  </div>
-
-                  {/* PALOP Recognition - Simplified */}
-                  <div className="bg-gradient-to-r from-green-50 to-yellow-50 rounded-xl p-4 border border-green-200 max-w-2xl">
-                    <div className="text-center">
-                      <div className="text-sm font-semibold text-gray-800 mb-1">
-                        All Lusophone-Speaking Nations Celebrated
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        🇦🇴 Angola • 🇨🇻 Cape Verde • 🇬🇼 Guinea-Bissau • 🇲🇿
-                        Mozambique • 🇸🇹 São Tomé • 🇹🇱 East Timor
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Community Discovery Stats */}
-                  <div className="flex flex-wrap justify-center lg:justify-start gap-6 text-gray-600">
-                    <div className="flex items-center gap-2">
-                      <UsersIcon className="w-5 h-5 text-primary-500" />
-                      <span className="font-semibold">Portuguese speakers</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CalendarDaysIcon className="w-5 h-5 text-secondary-500" />
-                      <span className="font-semibold">
-                        What's happening today
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
+                {/* Left Column - Mobile-Optimized Portuguese Community */}
+                <div className="text-center lg:text-left space-y-6">
+                  {/* Mobile-First Title - 24px Bold Portuguese Heritage */}
+                  <div className="space-y-4">
+                    <h1 className="text-2xl sm:text-4xl lg:text-6xl font-black leading-tight">
+                      <span className="block text-gray-900 mb-2 text-[24px] sm:text-4xl lg:text-5xl font-black">
+                        Unidos pela Língua
                       </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPinIcon className="w-5 h-5 text-yellow-500" />
-                      <span className="font-semibold">
-                        Across the United Kingdom
+                      <span className="block text-gray-700 text-base sm:text-xl lg:text-2xl font-semibold leading-relaxed max-w-lg mx-auto lg:mx-0">
+                        Discover events, businesses, and opportunities for verified Portuguese and Lusophone-speaking members across the United Kingdom.
                       </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <StarIcon className="w-5 h-5 text-green-500" />
-                      <span className="font-semibold">Updated daily</span>
+                    </h1>
+                    
+                    {/* Enhanced Flag Row - 32px Mobile-Optimized */}
+                    <div className="flex justify-center lg:justify-start gap-3 mt-6" aria-label="All 8 Lusophone nations represented">
+                      <span role="img" aria-label="Portugal flag" className="text-[32px] hover:scale-110 transition-transform">🇵🇹</span>
+                      <span role="img" aria-label="Brazil flag" className="text-[32px] hover:scale-110 transition-transform">🇧🇷</span>
+                      <span role="img" aria-label="Angola flag" className="text-[32px] hover:scale-110 transition-transform">🇦🇴</span>
+                      <span role="img" aria-label="Cape Verde flag" className="text-[32px] hover:scale-110 transition-transform">🇨🇻</span>
+                      <span role="img" aria-label="Mozambique flag" className="text-[32px] hover:scale-110 transition-transform">🇲🇿</span>
+                      <span role="img" aria-label="Guinea-Bissau flag" className="text-[32px] hover:scale-110 transition-transform">🇬🇼</span>
+                      <span role="img" aria-label="São Tomé flag" className="text-[32px] hover:scale-110 transition-transform">🇸🇹</span>
+                      <span role="img" aria-label="East Timor flag" className="text-[32px] hover:scale-110 transition-transform">🇹🇱</span>
                     </div>
                   </div>
 
-                  {/* Community Discovery CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a
-                      href={ROUTES.events}
-                      className="group inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 text-white text-xl font-black rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-3 hover:scale-110 min-h-[70px] min-w-[250px]"
-                      data-events-cta="hero-primary"
-                    >
-                      <div className="flex items-center mr-3 gap-1">
-                        <span className="text-sm">🇵🇹</span>
-                        <span className="text-sm">🇧🇷</span>
-                        <span className="text-sm">🇦🇴</span>
-                        <span className="text-sm">🇨🇻</span>
-                      </div>
-                      {t("hero.cta_primary", "SEE WHAT'S ON TODAY")}
-                      <ArrowRightIcon className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </a>
+                  {/* Mobile-Optimized Community Stats - 2x2 Grid with Portuguese Cultural Styling */}
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-sm mx-auto lg:max-w-md lg:mx-0 my-8">
+                    <div className="heritage-selection-card lusophone-touch-target mobile-portuguese-card cultural-glow bg-gradient-to-br from-white/90 via-green-50/80 to-white/90 backdrop-blur-sm rounded-xl p-4 text-center border border-green-200 shadow-sm transition-all duration-300 hover:scale-105">
+                      <div className="text-2xl sm:text-3xl font-black text-green-600 mb-1 cultural-pulse">{communityStats.members}</div>
+                      <div className="text-xs sm:text-sm text-gray-600 font-medium responsive-portuguese-text">Active Members</div>
+                    </div>
+                    <div className="heritage-selection-card lusophone-touch-target mobile-portuguese-card bg-gradient-to-br from-white/90 via-yellow-50/80 to-white/90 backdrop-blur-sm rounded-xl p-4 text-center border border-yellow-200 shadow-sm transition-all duration-300 hover:scale-105">
+                      <div className="text-2xl sm:text-3xl font-black text-yellow-600 mb-1">{communityStats.students}</div>
+                      <div className="text-xs sm:text-sm text-gray-600 font-medium responsive-portuguese-text">Students</div>
+                    </div>
+                    <div className="heritage-selection-card lusophone-touch-target mobile-portuguese-card bg-gradient-to-br from-white/90 via-red-50/80 to-white/90 backdrop-blur-sm rounded-xl p-4 text-center border border-red-200 shadow-sm transition-all duration-300 hover:scale-105">
+                      <div className="text-2xl sm:text-3xl font-black text-red-600 mb-1">{communityStats.partnerships}</div>
+                      <div className="text-xs sm:text-sm text-gray-600 font-medium responsive-portuguese-text">Universities</div>
+                    </div>
+                    <div className="heritage-selection-card lusophone-touch-target mobile-portuguese-card bg-gradient-to-br from-white/90 via-blue-50/80 to-white/90 backdrop-blur-sm rounded-xl p-4 text-center border border-blue-200 shadow-sm transition-all duration-300 hover:scale-105">
+                      <div className="text-2xl sm:text-3xl font-black text-blue-600 mb-1">{communityStats.events}</div>
+                      <div className="text-xs sm:text-sm text-gray-600 font-medium responsive-portuguese-text">Monthly Events</div>
+                    </div>
+                  </div>
 
+                  {/* Single Prominent Join Free CTA */}
+                  <div className="space-y-4">
                     <button
                       onClick={handleSignupClick}
-                      className="inline-flex items-center justify-center px-6 py-4 border-2 border-primary-300 text-primary-700 text-lg font-semibold rounded-2xl hover:bg-primary-50 transition-all duration-300 min-h-[60px] min-w-[160px]"
+                      className="w-full sm:w-auto group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 text-white text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 min-h-[56px]"
                     >
-                      {t("hero.cta_secondary", "Join Community")}
+                      <div className="flex items-center mr-3 gap-1">
+                        <span className="text-base">🇵🇹</span>
+                        <span className="text-base">🇧🇷</span>
+                        <span className="text-base">🇦🇴</span>
+                      </div>
+                      {t("hero.cta_primary", "Join Free")}
+                      <ArrowRightIcon className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
+                    
+                    {/* Verification Badge */}
+                    <div className="inline-flex items-center gap-2 text-sm text-gray-600 bg-white/90 border border-green-200 rounded-full px-4 py-2">
+                      <CheckIcon className="w-4 h-4 text-green-600" />
+                      <span className="font-medium">All Portuguese & Lusophone-speaking members verified</span>
+                    </div>
                   </div>
+
 
                   {/* Social proof - Enhanced testimonial with proper spacing */}
                   <div className="portuguese-testimonial hero-testimonial-mobile rounded-2xl p-6 shadow-lg max-w-md mx-auto lg:mx-0 mb-8 lg:mb-0">
@@ -557,237 +537,251 @@ export default function Home() {
             </div>
           </section>
 
-          {/* THIS WEEKEND'S PORTUGUESE COMMUNITY SECTION - Fixed spacing */}
-          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-secondary-50 to-accent-50 section-spacing">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-16">
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6">
-                    {t("weekend.title", "This Weekend's Lusophone Community")}
+          {/* QUICK NAVIGATION BAR - Mobile-First Sticky Navigation */}
+          <section className="sticky top-20 z-30 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+            <div className="container mx-auto px-4">
+              <div className="flex gap-1 overflow-x-auto scrollbar-hide py-3" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                <style jsx>{`
+                  .scrollbar-hide::-webkit-scrollbar {
+                    display: none;
+                  }
+                `}</style>
+                <a
+                  href={`${ROUTES.events}?filter=tonight`}
+                  className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-semibold rounded-full hover:from-red-600 hover:to-red-700 transition-all duration-200 min-w-[100px] justify-center"
+                >
+                  <span className="text-base">🌙</span>
+                  <span>Tonight</span>
+                </a>
+                <a
+                  href={`${ROUTES.events}?filter=weekend`}
+                  className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm font-semibold rounded-full hover:from-yellow-600 hover:to-yellow-700 transition-all duration-200 min-w-[100px] justify-center"
+                >
+                  <span className="text-base">🎉</span>
+                  <span>Weekend</span>
+                </a>
+                <a
+                  href={ROUTES.events}
+                  className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white text-sm font-semibold rounded-full hover:from-green-600 hover:to-green-700 transition-all duration-200 min-w-[100px] justify-center"
+                >
+                  <span className="text-base">📅</span>
+                  <span>Events</span>
+                </a>
+                <a
+                  href={ROUTES.businessDirectory}
+                  className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-200 min-w-[100px] justify-center"
+                >
+                  <span className="text-base">🏢</span>
+                  <span>Business</span>
+                </a>
+                <a
+                  href={`${ROUTES.events}?category=cultural`}
+                  className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-sm font-semibold rounded-full hover:from-purple-600 hover:to-purple-700 transition-all duration-200 min-w-[100px] justify-center"
+                >
+                  <span className="text-base">🎵</span>
+                  <span>Culture</span>
+                </a>
+                <a
+                  href={`${ROUTES.events}?category=food`}
+                  className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm font-semibold rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-200 min-w-[100px] justify-center"
+                >
+                  <span className="text-base">🍽️</span>
+                  <span>Food</span>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          {/* TODAY'S EVENT PREVIEWS - Mobile-Optimized 2x2 Grid */}
+          <section className="py-8 md:py-12 bg-gradient-to-br from-gray-50 to-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                    {t("today.title", "What's Happening Today")}
                   </h2>
-                  <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    {t(
-                      "weekend.subtitle",
-                      "Discover the best Lusophone community experiences happening this weekend across the United Kingdom"
-                    )}
+                  <p className="text-gray-600">
+                    {t("today.subtitle", "Join the Portuguese-speaking community's daily activities")}
                   </p>
                 </div>
 
-                <div className="grid lg:grid-cols-3 gap-8 mb-12">
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") &&
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekend&tag=music&country=cv`
-                      )
-                    }
-                    onClick={() =>
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekend&tag=music&country=cv`
-                      )
-                    }
-                    className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-green-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                    aria-label="See Cape Verdean music events this weekend"
-                  >
-                    <div className="text-center mb-4">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-red-500 rounded-2xl flex items-center justify-center text-3xl">
-                        🎶
+                {/* 2-Column Event Preview Grid with Portuguese Cultural Styling */}
+                <div className="mobile-event-discovery grid grid-cols-2 gap-3 sm:gap-4 mb-8">
+                  <div className="event-card heritage-selection-card lusophone-touch-target bg-white rounded-xl p-4 shadow-sm border border-green-200 hover:shadow-md transition-shadow cursor-pointer max-h-[140px] overflow-hidden"
+                       onClick={() => router.push(`${ROUTES.events}?tag=fado`)}>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-red-500 rounded-lg flex items-center justify-center text-lg flag-flow-animation">🎵</div>
+                        <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium heritage-indicator">Portugal</span>
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        Saturday: Cape Verdean Music Festival
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3">
-                        7pm • Brixton Academy
-                      </p>
-                    </div>
-                    <p className="text-gray-700 text-sm mb-4">
-                      "Festival de música cabo-verdiana com artistas
-                      internacionais. Uma celebração da cultura PALOP em
-                      Londres."
-                    </p>
-                    <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
-                      <div className="flex gap-2 flex-wrap">
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=music`}
-                          className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Music
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&country=cv`}
-                          className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          🇨🇻 Cape Verde
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=palop`}
-                          className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          PALOP
-                        </Link>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-sm leading-tight mb-1 responsive-portuguese-title portuguese-text-clamp-2">Fado Night Camden</h3>
+                        <p className="text-xs text-gray-600 leading-tight portuguese-text-clamp-2 responsive-portuguese-text">Traditional Portuguese music</p>
+                        <p className="text-xs text-green-600 font-medium mt-1">8pm • Tonight</p>
                       </div>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&when=weekend&tag=music&country=cv`}
-                        className="text-sm font-medium text-primary-700 hover:underline"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("common.view_more", "View more")}
-                      </Link>
                     </div>
                   </div>
 
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") &&
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekend&tag=dance&country=ao`
-                      )
-                    }
-                    onClick={() =>
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekend&tag=dance&country=ao`
-                      )
-                    }
-                    className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-orange-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                    aria-label="See Angolan kizomba events this weekend"
-                  >
-                    <div className="text-center mb-4">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center text-3xl">
-                        💃
+                  <div className="event-card heritage-selection-card lusophone-touch-target bg-white rounded-xl p-4 shadow-sm border border-yellow-200 hover:shadow-md transition-shadow cursor-pointer max-h-[140px] overflow-hidden"
+                       onClick={() => router.push(`${ROUTES.events}?tag=kizomba`)}>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-yellow-500 rounded-lg flex items-center justify-center text-lg flag-flow-animation">💃</div>
+                        <span className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium heritage-indicator">Angola</span>
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        Friday: Angolan Kizomba Night
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3">
-                        8pm • Elephant & Castle
-                      </p>
-                    </div>
-                    <p className="text-gray-700 text-sm mb-4">
-                      "Noite sensual de Kizomba angolana com músicos ao vivo.
-                      Conecte-se através da dança mais magnética de África."
-                    </p>
-                    <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
-                      <div className="flex gap-2 flex-wrap">
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=dance`}
-                          className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Dance
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&country=ao`}
-                          className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          🇦🇴 Angola
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=palop`}
-                          className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          PALOP
-                        </Link>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-sm leading-tight mb-1 responsive-portuguese-title portuguese-text-clamp-2">Kizomba Classes</h3>
+                        <p className="text-xs text-gray-600 leading-tight portuguese-text-clamp-2 responsive-portuguese-text">Learn partner dancing</p>
+                        <p className="text-xs text-yellow-600 font-medium mt-1">7pm • Brixton</p>
                       </div>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&when=weekend&tag=dance&country=ao`}
-                        className="text-sm font-medium text-primary-700 hover:underline"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("common.view_more", "View more")}
-                      </Link>
                     </div>
                   </div>
 
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") &&
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekend&tag=food&country=mz`
-                      )
-                    }
-                    onClick={() =>
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekend&tag=food&country=mz`
-                      )
-                    }
-                    className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                    aria-label="See Mozambican food events this weekend"
-                  >
-                    <div className="text-center mb-4">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-3xl">
-                        🌶️
+                  <div className="event-card heritage-selection-card lusophone-touch-target bg-white rounded-xl p-4 shadow-sm border border-blue-200 hover:shadow-md transition-shadow cursor-pointer max-h-[140px] overflow-hidden"
+                       onClick={() => router.push(`${ROUTES.events}?tag=food`)}>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center text-lg flag-flow-animation">🍽️</div>
+                        <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium heritage-indicator">Brazil</span>
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        Sunday: Mozambican Spice Market
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3">
-                        11am • Commercial Road
-                      </p>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-sm leading-tight mb-1 responsive-portuguese-title portuguese-text-clamp-2">Brazilian Restaurant</h3>
+                        <p className="text-xs text-gray-600 leading-tight portuguese-text-clamp-2 responsive-portuguese-text">New opening celebration</p>
+                        <p className="text-xs text-blue-600 font-medium mt-1">All Day • Vauxhall</p>
+                      </div>
                     </div>
-                    <p className="text-gray-700 text-sm mb-4">
-                      "Mercado de especiarias moçambicanas autênticas. Prove os
-                      sabores do Oceano Índico e herança costeira."
-                    </p>
-                    <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
-                      <div className="flex gap-2 flex-wrap">
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=food`}
-                          className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Food
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&country=mz`}
-                          className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          🇲🇿 Mozambique
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=palop`}
-                          className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          PALOP
-                        </Link>
+                  </div>
+
+                  <div className="event-card heritage-selection-card lusophone-touch-target bg-white rounded-xl p-4 shadow-sm border border-purple-200 hover:shadow-md transition-shadow cursor-pointer max-h-[140px] overflow-hidden"
+                       onClick={() => router.push(`${ROUTES.events}?tag=business`)}>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-lg flag-flow-animation">💼</div>
+                        <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full font-medium heritage-indicator">PALOP</span>
                       </div>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&when=weekend&tag=food&country=mz`}
-                        className="text-sm font-medium text-primary-700 hover:underline"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("common.view_more", "View more")}
-                      </Link>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-sm leading-tight mb-1 responsive-portuguese-title portuguese-text-clamp-2">Business Breakfast</h3>
+                        <p className="text-xs text-gray-600 leading-tight portuguese-text-clamp-2 responsive-portuguese-text">Lusophone networking</p>
+                        <p className="text-xs text-purple-600 font-medium mt-1">8am • Manchester</p>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Weekend CTA */}
+                {/* View All Events CTA */}
                 <div className="text-center">
                   <a
                     href={ROUTES.events}
-                    className="inline-flex items-center justify-center px-10 py-5 bg-secondary-600 text-white text-xl font-bold rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-2 hover:scale-105"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                   >
-                    <UsersIcon className="w-6 h-6 mr-3" />
-                    {t("weekend.cta", "Explore Weekend Events")}
-                    <ArrowRightIcon className="w-6 h-6 ml-3" />
+                    <CalendarDaysIcon className="w-4 h-4 mr-2" />
+                    {t("events.view_all", "View All Events")}
+                    <ArrowRightIcon className="w-4 h-4 ml-2" />
                   </a>
                 </div>
               </div>
             </div>
           </section>
+
+          {/* THIS WEEKEND'S LUSOPHONE EVENTS - Mobile-Optimized */}
+          <section className="py-8 md:py-12 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                    {t("weekend.title", "This Weekend's Highlights")}
+                  </h2>
+                  <p className="text-gray-600">
+                    {t("weekend.subtitle", "Lusophone community events across the United Kingdom")}
+                  </p>
+                </div>
+
+                {/* Mobile-Optimized Weekend Events Grid with Portuguese Cultural Styling */}
+                <div className="mobile-event-discovery grid grid-cols-2 gap-3 sm:gap-4 mb-8">
+                  <div
+                    className="event-card heritage-selection-card lusophone-touch-target bg-white rounded-xl p-4 shadow-sm border border-green-200 hover:shadow-md transition-shadow cursor-pointer max-h-[140px] overflow-hidden"
+                    onClick={() => router.push(`${ROUTES.events}?tag=music&country=cv`)}
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center text-lg flag-flow-animation">🎶</div>
+                        <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium heritage-indicator">Cape Verde</span>
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-sm leading-tight mb-1 responsive-portuguese-title portuguese-text-clamp-2">Music Festival</h3>
+                        <p className="text-xs text-gray-600 leading-tight portuguese-text-clamp-2 responsive-portuguese-text">International artists & Morna</p>
+                        <p className="text-xs text-green-600 font-medium mt-1">Sat 7pm • Brixton</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="event-card heritage-selection-card lusophone-touch-target bg-white rounded-xl p-4 shadow-sm border border-red-200 hover:shadow-md transition-shadow cursor-pointer max-h-[140px] overflow-hidden"
+                    onClick={() => router.push(`${ROUTES.events}?tag=dance&country=ao`)}
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-yellow-500 rounded-lg flex items-center justify-center text-lg flag-flow-animation">💃</div>
+                        <span className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium heritage-indicator">Angola</span>
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-sm leading-tight mb-1 responsive-portuguese-title portuguese-text-clamp-2">Kizomba Night</h3>
+                        <p className="text-xs text-gray-600 leading-tight portuguese-text-clamp-2 responsive-portuguese-text">Live music & partner dancing</p>
+                        <p className="text-xs text-red-600 font-medium mt-1">Fri 8pm • E&Castle</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="event-card heritage-selection-card lusophone-touch-target bg-white rounded-xl p-4 shadow-sm border border-blue-200 hover:shadow-md transition-shadow cursor-pointer max-h-[140px] overflow-hidden"
+                    onClick={() => router.push(`${ROUTES.events}?tag=food&country=mz`)}
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-lg flag-flow-animation">🌶️</div>
+                        <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium heritage-indicator">Mozambique</span>
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-sm leading-tight mb-1 responsive-portuguese-title portuguese-text-clamp-2">Spice Market</h3>
+                        <p className="text-xs text-gray-600 leading-tight portuguese-text-clamp-2 responsive-portuguese-text">Authentic coastal flavors</p>
+                        <p className="text-xs text-blue-600 font-medium mt-1">Sun 11am • Commercial</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="event-card heritage-selection-card lusophone-touch-target bg-white rounded-xl p-4 shadow-sm border border-purple-200 hover:shadow-md transition-shadow cursor-pointer max-h-[140px] overflow-hidden"
+                    onClick={() => router.push(`${ROUTES.events}?tag=culture&country=pt`)}
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-red-500 rounded-lg flex items-center justify-center text-lg flag-flow-animation">🏰</div>
+                        <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium heritage-indicator">Portugal</span>
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-sm leading-tight mb-1 responsive-portuguese-title portuguese-text-clamp-2">Heritage Tour</h3>
+                        <p className="text-xs text-gray-600 leading-tight portuguese-text-clamp-2 responsive-portuguese-text">Portuguese historical sites</p>
+                        <p className="text-xs text-purple-600 font-medium mt-1">Sun 2pm • Central</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* View Weekend Events CTA */}
+                <div className="text-center">
+                  <a
+                    href={`${ROUTES.events}?filter=weekend`}
+                    className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <span className="text-base mr-2">🎉</span>
+                    {t("weekend.view_all", "See Full Weekend")}
+                    <ArrowRightIcon className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
 
           {/* WEEKLY COMMUNITY DISCOVERY SECTION - Fixed spacing */}
           <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-50 to-pink-50 section-spacing">

@@ -148,10 +148,10 @@ const ImprovedEventCard = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="h-auto min-h-[650px] sm:min-h-[680px] lg:min-h-[720px] flex flex-col bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+          className="h-auto min-h-[500px] sm:min-h-[650px] lg:min-h-[720px] flex flex-col bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100"
         >
-          {/* Event Image Header */}
-          <div className="relative h-48 sm:h-52 bg-cover bg-center rounded-t-xl overflow-hidden">
+          {/* Event Image Header - Optimized for mobile */}
+          <div className="relative h-40 sm:h-48 lg:h-52 bg-cover bg-center rounded-t-xl overflow-hidden">
             <EventImageWithFallback
               src={event.images?.[0] || ""}
               alt={event.title}
@@ -250,8 +250,8 @@ const ImprovedEventCard = ({
 
           {/* Content Section - flexible */}
           <div className="flex-1 p-4 sm:p-6 flex flex-col">
-            {/* Title - improved hierarchy */}
-            <h3 className={cn(Typography.heading4, "mb-3 group-hover:text-primary-600 transition-colors")}>
+            {/* Title - mobile-optimized hierarchy */}
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors leading-tight">
               {event.title}
             </h3>
 
@@ -265,45 +265,47 @@ const ImprovedEventCard = ({
               </p>
             </div>
 
-            {/* Description - better readability */}
-            <p className={cn(Typography.bodySmall, "mb-4", Typography.lineClamp2)}>
+            {/* Description - mobile-optimized readability */}
+            <p className="text-sm text-gray-600 mb-3 line-clamp-2 leading-relaxed">
               {event.description}
             </p>
 
-            {/* Event details with improved hierarchy */}
-            <div className={cn("space-y-2", Spacing.component)}>
-              <div className={cn("flex items-center", Spacing.sm)}>
-                <CalendarIcon className={cn(IconSystem.sizes.sm, "text-primary-500 flex-shrink-0")} />
-                <span className={cn(Typography.label, "text-gray-900")}>
+            {/* Event details - mobile-optimized */}
+            <div className="space-y-2 mb-4">
+              <div className="flex items-center gap-2">
+                <CalendarIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                <span className="text-sm font-medium text-gray-900">
                   {formatDate(event.date)}
                 </span>
               </div>
-              <div className={cn("flex items-center", Spacing.sm)}>
-                <ClockIcon className={cn(IconSystem.sizes.sm, "text-primary-500 flex-shrink-0")} />
-                <span className={Typography.caption}>
+              <div className="flex items-center gap-2">
+                <ClockIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                <span className="text-sm text-gray-600">
                   {formatTime(event.time)}
                   {event.endTime && ` - ${formatTime(event.endTime)}`}
                 </span>
               </div>
-              <div className={cn("flex items-start", Spacing.sm)}>
-                <MapPinIcon className={cn(IconSystem.sizes.sm, "text-primary-500 mt-0.5 flex-shrink-0")} />
-                <span className={cn(Typography.caption, "break-words")}>
+              <div className="flex items-start gap-2">
+                <MapPinIcon className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
+                <span className="text-sm text-gray-600 break-words line-clamp-1">
                   {event.location}
                 </span>
               </div>
             </div>
 
-            {/* Price and availability - improved hierarchy */}
-            <div className={cn("flex items-center justify-between", Spacing.component)}>
-              <div className={Typography.priceLarge}>
-                {event.price === 0 ? "FREE" : `£${event.price}`}
+            {/* Price and availability - mobile-optimized */}
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <span className="text-xl font-bold text-gray-900">
+                  {event.price === 0 ? "FREE" : `£${event.price}`}
+                </span>
                 {event.membershipRequired !== "free" && (
-                  <span className={cn(Typography.small, "ml-2 capitalize")}>
+                  <span className="text-xs text-gray-500 ml-2 capitalize">
                     ({isPortuguese ? "Membro" : "Member"})
                   </span>
                 )}
               </div>
-              <div className={cn(Typography.status, "text-primary-600")}>
+              <div className="text-sm font-medium text-primary-600 bg-primary-50 px-2 py-1 rounded-full">
                 {spotsLeft} {isPortuguese ? "vagas" : "spots"}
               </div>
             </div>

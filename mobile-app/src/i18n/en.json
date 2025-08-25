@@ -210,7 +210,9 @@
     "title": "Business Directory",
     "subtitle": "Portuguese businesses across the UK",
     "search_placeholder": "Search businesses, services...",
+    "businesses_found": "businesses found",
     "categories": {
+      "all": "All Businesses",
       "restaurants": "Restaurants",
       "services": "Services",
       "retail": "Retail",
@@ -218,7 +220,9 @@
       "health": "Health & Beauty",
       "automotive": "Automotive",
       "real_estate": "Real Estate",
-      "education": "Education"
+      "education": "Education",
+      "cultural": "Cultural Services",
+      "import": "Import & Export"
     },
     "filters": {
       "location": "Location",
@@ -232,6 +236,7 @@
       "open": "Open",
       "closed": "Closed",
       "rating": "{{rating}} ({{count}} reviews)",
+      "reviews": "reviews",
       "call": "Call",
       "website": "Website",
       "directions": "Directions",
@@ -240,6 +245,81 @@
       "contact": "Contact Information",
       "about": "About"
     }
+  },
+  "subscription": {
+    "title": "Subscription Plans",
+    "current_plan": "Current Plan",
+    "upgrade": "Upgrade",
+    "cancel": "Cancel",
+    "features": "Features",
+    "billing": {
+      "monthly": "Monthly",
+      "annual": "Annual",
+      "save": "Save 17%"
+    },
+    "plans": {
+      "free": {
+        "name": "Free",
+        "description": "Explore the Portuguese community"
+      },
+      "community": {
+        "name": "Community Member",
+        "description": "Full access to Portuguese cultural features"
+      },
+      "ambassador": {
+        "name": "Cultural Ambassador",
+        "description": "Premium community leadership features"
+      },
+      "familia": {
+        "name": "Família (Family)",
+        "description": "Multi-generational community connection"
+      }
+    }
+  },
+  "badges": {
+    "title": "Community Badges",
+    "earned": "Earned",
+    "in_progress": "In Progress",
+    "available": "Available",
+    "stats": {
+      "events_attended": "Events Attended",
+      "connections_made": "Connections Made",
+      "businesses_supported": "Businesses Supported",
+      "community_streak": "Day Streak"
+    },
+    "categories": {
+      "business": "Business",
+      "cultural": "Cultural",
+      "personal": "Personal",
+      "achievement": "Achievement",
+      "heritage": "Heritage"
+    }
+  },
+  "booking": {
+    "title": "Book Service",
+    "select_service": "Select a Service",
+    "select_datetime": "Select Date & Time",
+    "your_details": "Your Details",
+    "confirm_booking": "Confirm Booking",
+    "booking_confirmed": "Booking Confirmed",
+    "required_field": "Required field",
+    "date": "Date",
+    "time": "Time",
+    "available_times": "Available Times",
+    "full_name": "Full Name",
+    "phone_number": "Phone Number",
+    "email_address": "Email Address",
+    "special_requirements": "Special Requirements",
+    "review_booking": "Review Booking",
+    "service": "Service",
+    "duration": "Duration",
+    "price": "Price",
+    "customer": "Customer",
+    "notes": "Notes",
+    "minutes": "minutes",
+    "confirm": "Confirm Booking",
+    "processing": "Processing...",
+    "disclaimer": "You will receive a confirmation call to verify your booking details."
   },
   "profile": {
     "title": "Profile",

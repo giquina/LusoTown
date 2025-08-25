@@ -1,0 +1,262 @@
+{
+  "timestamp": "2025-08-25T14:04:48.955Z",
+  "summary": {
+    "bundleSize": 8.200000000000001,
+    "imageOptimization": "59.6",
+    "batteryIssues": 3,
+    "portugueseTextIssues": 0
+  },
+  "metrics": {
+    "bundleSize": {
+      "total": 8.200000000000001,
+      "components": {
+        "core-app": {
+          "size": 1.2,
+          "category": "Core"
+        },
+        "react-navigation": {
+          "size": 0.8,
+          "category": "Navigation"
+        },
+        "portuguese-translations": {
+          "size": 0.3,
+          "category": "Localization"
+        },
+        "cultural-images": {
+          "size": 2.1,
+          "category": "Assets"
+        },
+        "supabase-client": {
+          "size": 0.6,
+          "category": "API"
+        },
+        "form-validation": {
+          "size": 0.4,
+          "category": "Forms"
+        },
+        "ai-matching": {
+          "size": 0.9,
+          "category": "Features"
+        },
+        "offline-storage": {
+          "size": 0.5,
+          "category": "Storage"
+        },
+        "notification-system": {
+          "size": 0.3,
+          "category": "Notifications"
+        },
+        "portuguese-fonts": {
+          "size": 1.1,
+          "category": "Typography"
+        }
+      },
+      "categories": {
+        "Core": 1.2,
+        "Navigation": 0.8,
+        "Localization": 0.3,
+        "Assets": 2.1,
+        "API": 0.6,
+        "Forms": 0.4,
+        "Features": 0.9,
+        "Storage": 0.5,
+        "Notifications": 0.3,
+        "Typography": 1.1
+      },
+      "optimizations": [
+        {
+          "category": "Assets",
+          "issue": "Large asset bundle size",
+          "recommendation": "Implement lazy loading for Portuguese cultural images",
+          "potentialSavings": "40-60%"
+        },
+        {
+          "category": "Typography",
+          "issue": "Large font bundle",
+          "recommendation": "Load Portuguese fonts on-demand",
+          "potentialSavings": "50-70%"
+        }
+      ]
+    },
+    "componentRenderTime": {},
+    "imageOptimization": {
+      "images": [
+        {
+          "type": "Portuguese Flag",
+          "size": 245,
+          "optimizedSize": 120,
+          "format": "WebP"
+        },
+        {
+          "type": "Event Banner",
+          "size": 890,
+          "optimizedSize": 320,
+          "format": "WebP"
+        },
+        {
+          "type": "User Avatar",
+          "size": 156,
+          "optimizedSize": 78,
+          "format": "WebP"
+        },
+        {
+          "type": "Business Logo",
+          "size": 423,
+          "optimizedSize": 180,
+          "format": "WebP"
+        },
+        {
+          "type": "Cultural Photo",
+          "size": 1240,
+          "optimizedSize": 480,
+          "format": "WebP"
+        },
+        {
+          "type": "Food Image",
+          "size": 678,
+          "optimizedSize": 290,
+          "format": "WebP"
+        }
+      ],
+      "totalSavings": "59.6",
+      "recommendations": [
+        "Resize large cultural images for mobile display",
+        "Implement progressive image loading for Portuguese content",
+        "Use CDN for Portuguese cultural image delivery"
+      ]
+    },
+    "portugueseTextPerformance": [
+      {
+        "type": "Simple Text",
+        "text": "Bem-vindo",
+        "expectedTime": 5,
+        "actualTime": "2.33",
+        "meetsTarget": true,
+        "status": "✅"
+      },
+      {
+        "type": "Accented Text",
+        "text": "São João, tradição",
+        "expectedTime": 8,
+        "actualTime": "6.05",
+        "meetsTarget": true,
+        "status": "✅"
+      },
+      {
+        "type": "Long Text",
+        "text": "A comunidade portuguesa no Reino Unido celebra as suas tradições culturais através de eventos, empresas e conexões sociais que mantêm vivas as raízes lusófonas.",
+        "expectedTime": 15,
+        "actualTime": "12.25",
+        "meetsTarget": true,
+        "status": "✅"
+      },
+      {
+        "type": "Mixed Language",
+        "text": "Welcome to LusoTown - Bem-vindo à nossa comunidade portuguesa",
+        "expectedTime": 12,
+        "actualTime": "3.25",
+        "meetsTarget": true,
+        "status": "✅"
+      },
+      {
+        "type": "Special Characters",
+        "text": "ção, não, coração, tradição, celebração",
+        "expectedTime": 10,
+        "actualTime": "7.55",
+        "meetsTarget": true,
+        "status": "✅"
+      }
+    ],
+    "memoryUsage": {},
+    "batteryOptimization": {
+      "consumers": [
+        {
+          "feature": "Portuguese Event Sync",
+          "consumption": "Low",
+          "frequency": "5 minutes",
+          "optimization": "✅"
+        },
+        {
+          "feature": "Business Geolocation",
+          "consumption": "Medium",
+          "frequency": "30 seconds",
+          "optimization": "⚠️"
+        },
+        {
+          "feature": "Match Notifications",
+          "consumption": "Low",
+          "frequency": "Push-based",
+          "optimization": "✅"
+        },
+        {
+          "feature": "Cultural Content Updates",
+          "consumption": "Low",
+          "frequency": "15 minutes",
+          "optimization": "✅"
+        },
+        {
+          "feature": "Background Sync",
+          "consumption": "Medium",
+          "frequency": "10 minutes",
+          "optimization": "⚠️"
+        },
+        {
+          "feature": "Image Caching",
+          "consumption": "High",
+          "frequency": "On-demand",
+          "optimization": "❌"
+        }
+      ],
+      "needsOptimization": 3
+    },
+    "offlinePerformance": [
+      {
+        "feature": "Cached Events",
+        "coverage": "85%",
+        "performance": "Excellent"
+      },
+      {
+        "feature": "Portuguese Translations",
+        "coverage": "100%",
+        "performance": "Excellent"
+      },
+      {
+        "feature": "User Profile",
+        "coverage": "95%",
+        "performance": "Good"
+      },
+      {
+        "feature": "Recent Matches",
+        "coverage": "70%",
+        "performance": "Good"
+      },
+      {
+        "feature": "Business Directory",
+        "coverage": "60%",
+        "performance": "Fair"
+      },
+      {
+        "feature": "Cultural Images",
+        "coverage": "40%",
+        "performance": "Poor"
+      }
+    ]
+  },
+  "recommendations": {
+    "immediate": [
+      "Implement lazy loading for Portuguese cultural images",
+      "Optimize font loading for Portuguese character sets",
+      "Reduce background location tracking frequency"
+    ],
+    "shortTerm": [
+      "Implement progressive image loading",
+      "Add intelligent caching for business directory",
+      "Optimize Portuguese text rendering performance"
+    ],
+    "longTerm": [
+      "Implement CDN for Portuguese cultural content",
+      "Add offline-first architecture for core features",
+      "Optimize for emerging Portuguese community needs"
+    ]
+  }
+}

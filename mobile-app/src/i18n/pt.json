@@ -210,7 +210,9 @@
     "title": "Diretório de Negócios",
     "subtitle": "Negócios portugueses em todo o Reino Unido",
     "search_placeholder": "Procurar negócios, serviços...",
+    "businesses_found": "negócios encontrados",
     "categories": {
+      "all": "Todos os Negócios",
       "restaurants": "Restaurantes",
       "services": "Serviços",
       "retail": "Comércio",
@@ -218,7 +220,9 @@
       "health": "Saúde e Beleza",
       "automotive": "Automóvel",
       "real_estate": "Imobiliário",
-      "education": "Educação"
+      "education": "Educação",
+      "cultural": "Serviços Culturais",
+      "import": "Importação e Exportação"
     },
     "filters": {
       "location": "Localização",
@@ -232,6 +236,7 @@
       "open": "Aberto",
       "closed": "Fechado",
       "rating": "{{rating}} ({{count}} avaliações)",
+      "reviews": "avaliações",
       "call": "Ligar",
       "website": "Website",
       "directions": "Direções",
@@ -240,6 +245,81 @@
       "contact": "Informações de Contacto",
       "about": "Sobre"
     }
+  },
+  "subscription": {
+    "title": "Planos de Subscrição",
+    "current_plan": "Plano Atual",
+    "upgrade": "Atualizar",
+    "cancel": "Cancelar",
+    "features": "Funcionalidades",
+    "billing": {
+      "monthly": "Mensal",
+      "annual": "Anual",
+      "save": "Poupe 17%"
+    },
+    "plans": {
+      "free": {
+        "name": "Grátis",
+        "description": "Explore a comunidade portuguesa"
+      },
+      "community": {
+        "name": "Membro da Comunidade",
+        "description": "Acesso completo às funcionalidades culturais portuguesas"
+      },
+      "ambassador": {
+        "name": "Embaixador Cultural",
+        "description": "Funcionalidades premium de liderança comunitária"
+      },
+      "familia": {
+        "name": "Família",
+        "description": "Conexão comunitária multi-geracional"
+      }
+    }
+  },
+  "badges": {
+    "title": "Distintivos da Comunidade",
+    "earned": "Conquistados",
+    "in_progress": "Em Progresso",
+    "available": "Disponíveis",
+    "stats": {
+      "events_attended": "Eventos Participados",
+      "connections_made": "Conexões Feitas",
+      "businesses_supported": "Negócios Apoiados",
+      "community_streak": "Dias Consecutivos"
+    },
+    "categories": {
+      "business": "Negócios",
+      "cultural": "Cultural",
+      "personal": "Pessoal",
+      "achievement": "Conquista",
+      "heritage": "Património"
+    }
+  },
+  "booking": {
+    "title": "Reservar Serviço",
+    "select_service": "Selecionar um Serviço",
+    "select_datetime": "Selecionar Data e Hora",
+    "your_details": "Os Seus Dados",
+    "confirm_booking": "Confirmar Reserva",
+    "booking_confirmed": "Reserva Confirmada",
+    "required_field": "Campo obrigatório",
+    "date": "Data",
+    "time": "Hora",
+    "available_times": "Horários Disponíveis",
+    "full_name": "Nome Completo",
+    "phone_number": "Número de Telefone",
+    "email_address": "Endereço de Email",
+    "special_requirements": "Requisitos Especiais",
+    "review_booking": "Rever Reserva",
+    "service": "Serviço",
+    "duration": "Duração",
+    "price": "Preço",
+    "customer": "Cliente",
+    "notes": "Notas",
+    "minutes": "minutos",
+    "confirm": "Confirmar Reserva",
+    "processing": "Processando...",
+    "disclaimer": "Irá receber uma chamada de confirmação para verificar os detalhes da sua reserva."
   },
   "profile": {
     "title": "Perfil",

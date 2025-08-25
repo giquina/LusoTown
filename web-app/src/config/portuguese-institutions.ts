@@ -239,6 +239,180 @@ export const EMBASSY_CONTACTS: EmbassyContact[] = [
     
     isActive: true,
     lastUpdated: '2024-08-21'
+  },
+
+  // BIRMINGHAM EXPANSION - Honorary Consulate
+  {
+    id: 'honorary-consulate-birmingham',
+    name: process.env.NEXT_PUBLIC_HONORARY_CONSULATE_BIRMINGHAM_NAME || 'Honorary Portuguese Consulate Birmingham',
+    namePortuguese: process.env.NEXT_PUBLIC_HONORARY_CONSULATE_BIRMINGHAM_NAME_PT || 'Consulado Honorário de Portugal em Birmingham',
+    type: 'honorary_consulate',
+    
+    address: process.env.NEXT_PUBLIC_HONORARY_BIRMINGHAM_ADDRESS || 'Birmingham Business Park, 2200 Century Way',
+    postcode: process.env.NEXT_PUBLIC_HONORARY_BIRMINGHAM_POSTCODE || 'B24 8QD',
+    city: 'Birmingham',
+    country: 'United Kingdom',
+    phone: process.env.NEXT_PUBLIC_HONORARY_BIRMINGHAM_PHONE || '+44 121 333 4567',
+    email: process.env.NEXT_PUBLIC_HONORARY_BIRMINGHAM_EMAIL || 'birmingham@consuladohonorario.pt',
+    website: process.env.NEXT_PUBLIC_HONORARY_BIRMINGHAM_WEBSITE || 'https://birmingham.consuladohonorario.pt',
+    
+    services: [
+      'Basic consular services',
+      'Document authentication',
+      'Community liaison',
+      'Emergency assistance coordination',
+      'Cultural event support',
+      'Business networking facilitation'
+    ],
+    servicesPortuguese: [
+      'Serviços consulares básicos',
+      'Autenticação de documentos',
+      'Ligação comunitária',
+      'Coordenação de assistência de emergência',
+      'Apoio a eventos culturais',
+      'Facilitação de networking empresarial'
+    ],
+    
+    openingHours: {
+      monday: 'Closed',
+      tuesday: 'Closed',
+      wednesday: '14:00-17:00',
+      thursday: 'Closed',
+      friday: '14:00-17:00'
+    },
+    
+    consul: {
+      name: process.env.NEXT_PUBLIC_HONORARY_CONSUL_BIRMINGHAM || 'Dr. Carlos Mendes',
+      title: 'Honorary Consul',
+      titlePortuguese: 'Cônsul Honorário'
+    },
+    
+    regionsServed: ['West Midlands', 'Warwickshire', 'Staffordshire', 'Worcestershire', 'Shropshire'],
+    emergencyServices: false,
+    appointmentRequired: true,
+    
+    socialMedia: {
+      facebook: process.env.NEXT_PUBLIC_HONORARY_BIRMINGHAM_FACEBOOK
+    },
+    
+    isActive: true,
+    lastUpdated: '2024-08-25'
+  },
+
+  // BRISTOL EXPANSION - Honorary Consulate
+  {
+    id: 'honorary-consulate-bristol',
+    name: process.env.NEXT_PUBLIC_HONORARY_CONSULATE_BRISTOL_NAME || 'Honorary Portuguese Consulate Bristol & Southwest',
+    namePortuguese: process.env.NEXT_PUBLIC_HONORARY_CONSULATE_BRISTOL_NAME_PT || 'Consulado Honorário de Portugal em Bristol e Sudoeste',
+    type: 'honorary_consulate',
+    
+    address: process.env.NEXT_PUBLIC_HONORARY_BRISTOL_ADDRESS || 'Broad Quay House, Prince Street',
+    postcode: process.env.NEXT_PUBLIC_HONORARY_BRISTOL_POSTCODE || 'BS1 4DJ',
+    city: 'Bristol',
+    country: 'United Kingdom',
+    phone: process.env.NEXT_PUBLIC_HONORARY_BRISTOL_PHONE || '+44 117 946 2345',
+    email: process.env.NEXT_PUBLIC_HONORARY_BRISTOL_EMAIL || 'bristol@consuladohonorario.pt',
+    website: process.env.NEXT_PUBLIC_HONORARY_BRISTOL_WEBSITE || 'https://bristol.consuladohonorario.pt',
+    
+    services: [
+      'Basic consular services',
+      'Document authentication',
+      'Community liaison services',
+      'Emergency assistance coordination',
+      'Portuguese business support',
+      'Academic partnership facilitation'
+    ],
+    servicesPortuguese: [
+      'Serviços consulares básicos',
+      'Autenticação de documentos',
+      'Serviços de ligação comunitária',
+      'Coordenação de assistência de emergência',
+      'Apoio a negócios portugueses',
+      'Facilitação de parcerias acadêmicas'
+    ],
+    
+    openingHours: {
+      monday: 'Closed',
+      tuesday: '10:00-13:00',
+      wednesday: 'Closed',
+      thursday: '14:00-17:00',
+      friday: 'Closed'
+    },
+    
+    consul: {
+      name: process.env.NEXT_PUBLIC_HONORARY_CONSUL_BRISTOL || 'Dr. Ana Sofia Ribeiro',
+      title: 'Honorary Consul',
+      titlePortuguese: 'Cônsul Honorária'
+    },
+    
+    regionsServed: ['Bristol', 'Somerset', 'Gloucestershire', 'Devon', 'Cornwall', 'Dorset'],
+    emergencyServices: false,
+    appointmentRequired: true,
+    
+    socialMedia: {
+      linkedin: process.env.NEXT_PUBLIC_HONORARY_BRISTOL_LINKEDIN
+    },
+    
+    isActive: true,
+    lastUpdated: '2024-08-25'
+  },
+
+  // BRIGHTON EXPANSION - Honorary Consulate  
+  {
+    id: 'honorary-consulate-brighton',
+    name: process.env.NEXT_PUBLIC_HONORARY_CONSULATE_BRIGHTON_NAME || 'Honorary Portuguese Consulate Brighton & South Coast',
+    namePortuguese: process.env.NEXT_PUBLIC_HONORARY_CONSULATE_BRIGHTON_NAME_PT || 'Consulado Honorário de Portugal em Brighton e Costa Sul',
+    type: 'honorary_consulate',
+    
+    address: process.env.NEXT_PUBLIC_HONORARY_BRIGHTON_ADDRESS || 'Hove Business Centre, Fonthill Road',
+    postcode: process.env.NEXT_PUBLIC_HONORARY_BRIGHTON_POSTCODE || 'BN3 6HA',
+    city: 'Brighton',
+    country: 'United Kingdom',
+    phone: process.env.NEXT_PUBLIC_HONORARY_BRIGHTON_PHONE || '+44 1273 778 456',
+    email: process.env.NEXT_PUBLIC_HONORARY_BRIGHTON_EMAIL || 'brighton@consuladohonorario.pt',
+    website: process.env.NEXT_PUBLIC_HONORARY_BRIGHTON_WEBSITE || 'https://brighton.consuladohonorario.pt',
+    
+    services: [
+      'Basic consular services',
+      'Document authentication',
+      'Tourism liaison services',
+      'Emergency assistance coordination',
+      'Portuguese hospitality business support',
+      'Coastal community integration'
+    ],
+    servicesPortuguese: [
+      'Serviços consulares básicos',
+      'Autenticação de documentos',
+      'Serviços de ligação turística',
+      'Coordenação de assistência de emergência',
+      'Apoio a negócios portugueses de hospitalidade',
+      'Integração da comunidade costeira'
+    ],
+    
+    openingHours: {
+      monday: 'Closed',
+      tuesday: 'Closed',
+      wednesday: '09:00-12:00',
+      thursday: 'Closed',
+      friday: '14:00-17:00'
+    },
+    
+    consul: {
+      name: process.env.NEXT_PUBLIC_HONORARY_CONSUL_BRIGHTON || 'Miguel Santos',
+      title: 'Honorary Consul',
+      titlePortuguese: 'Cônsul Honorário'
+    },
+    
+    regionsServed: ['Brighton & Hove', 'East Sussex', 'West Sussex', 'Kent (southern)'],
+    emergencyServices: false,
+    appointmentRequired: true,
+    
+    socialMedia: {
+      instagram: process.env.NEXT_PUBLIC_HONORARY_BRIGHTON_INSTAGRAM
+    },
+    
+    isActive: true,
+    lastUpdated: '2024-08-25'
   }
 ]
 

@@ -94,6 +94,30 @@ const LusoBotWrapper = dynamicImport(
   }
 );
 
+const MobileRedirectProvider = dynamicImport(
+  () => import("@/components/MobileRedirectProvider"),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
+
+const MobileDownloadPrompt = dynamicImport(
+  () => import("@/components/MobileRedirectProvider").then(mod => ({ default: mod.MobileDownloadPrompt })),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
+
+const AppDownloadLanding = dynamicImport(
+  () => import("@/components/AppDownloadLanding"),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
+
 // Welcome components removed - duplicates consolidated
 
 const inter = Inter({
@@ -179,6 +203,48 @@ export default function RootLayout({
           }}
         />
 
+        {/* PWA initialization script */}
+        <Script
+          id="pwa-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Initialize PWA for Portuguese-speaking community
+              if (typeof window !== 'undefined') {
+                // Register service worker
+                if ('serviceWorker' in navigator) {
+                  window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js')
+                      .then((registration) => {
+                        console.log('PWA: Service Worker registered for Portuguese community');
+                      })
+                      .catch((error) => {
+                        console.log('PWA: Service Worker registration failed:', error);
+                      });
+                  });
+                }
+                
+                // Handle app install prompt
+                let deferredPrompt;
+                window.addEventListener('beforeinstallprompt', (e) => {
+                  e.preventDefault();
+                  deferredPrompt = e;
+                  console.log('PWA: Install prompt available for LusoTown');
+                });
+                
+                // Store install prompt globally for access
+                window.lusotownInstallPrompt = () => {
+                  if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    return deferredPrompt.userChoice;
+                  }
+                  return Promise.reject('Install prompt not available');
+                };
+              }
+            `,
+          }}
+        />
+
         <ErrorBoundary>
           <AuthPopupProvider>
             <HeritageProvider>
@@ -193,6 +259,8 @@ export default function RootLayout({
                               <PlatformIntegrationProvider>
                                 <WaitingListProvider>
                                   <NavigationProvider>
+                                    <ComponentErrorBoundary componentName="Mobile Redirect Provider">
+                                      <MobileRedirectProvider>
                                     {/* WelcomeProvider removed - no welcome UI components */}
                                     {/* Premium Mobile Experience Wrapper */}
                                     <ComponentErrorBoundary componentName="Mobile Experience Optimizer">
@@ -254,6 +322,18 @@ export default function RootLayout({
                                           </MobileCriticalFixes>
                                         </ComponentErrorBoundary>
                                       </MobileExperienceOptimizer>
+                                    </ComponentErrorBoundary>
+
+                                    {/* Mobile App Download Components */}
+                                    <ComponentErrorBoundary componentName="Mobile Download Prompt">
+                                      <MobileDownloadPrompt />
+                                    </ComponentErrorBoundary>
+
+                                    <ComponentErrorBoundary componentName="App Download Landing">
+                                      <AppDownloadLanding />
+                                    </ComponentErrorBoundary>
+
+                                      </MobileRedirectProvider>
                                     </ComponentErrorBoundary>
                                     {/* /WelcomeProvider removed */}
                                   </NavigationProvider>

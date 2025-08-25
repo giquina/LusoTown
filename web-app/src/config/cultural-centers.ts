@@ -987,6 +987,447 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     lastUpdated: '2024-08-22',
     description: 'Elite cultural center serving London\'s affluent Angolan diaspora, focusing on sophisticated cultural exchange, luxury business networking, and celebrating Angola as Africa\'s diamond capital',
     descriptionPortuguese: 'Centro cultural de elite servindo a próspera diáspora angolana de Londres, focando no intercâmbio cultural sofisticado, networking empresarial de luxo e celebrando Angola como a capital dos diamantes de África'
+  },
+
+  // MANCHESTER EXPANSION - Strong Portuguese Community
+  {
+    id: 'centro-cultural-portugues-manchester',
+    name: 'Centro Cultural Português de Manchester',
+    namePortuguese: 'Centro Cultural Português de Manchester',
+    type: 'portuguese_center',
+    
+    address: '45 Rusholme Place',
+    postcode: 'M14 5DL',
+    city: 'Manchester',
+    country: 'United Kingdom',
+    coordinates: {
+      latitude: 53.4520,
+      longitude: -2.2208
+    },
+    
+    phone: '+44 161 224 5678',
+    email: 'info@centroportuguesmanchester.org.uk',
+    website: 'https://centroportuguesmanchester.org.uk',
+    
+    services: [
+      'Portuguese language classes for all levels',
+      'Traditional Portuguese cooking workshops',
+      'Fado music performances and lessons',
+      'Portuguese business networking events',
+      'Cultural celebrations and festivals',
+      'Portuguese heritage preservation',
+      'Community support services',
+      'Youth Portuguese cultural programs'
+    ],
+    servicesPortuguese: [
+      'Aulas de língua portuguesa para todos os níveis',
+      'Workshops de culinária tradicional portuguesa',
+      'Performances e lições de música Fado',
+      'Eventos de networking empresarial português',
+      'Celebrações culturais e festivais',
+      'Preservação do patrimônio português',
+      'Serviços de apoio comunitário',
+      'Programas culturais juvenis portugueses'
+    ],
+    
+    programs: [
+      {
+        id: 'manchester-portuguese-language-comprehensive',
+        name: 'Manchester Portuguese Language Comprehensive Program',
+        namePortuguese: 'Programa Abrangente de Língua Portuguesa de Manchester',
+        description: 'Complete Portuguese language education from beginner to advanced levels, focusing on both European and Brazilian Portuguese variants for Manchester\'s diverse community',
+        descriptionPortuguese: 'Educação completa em língua portuguesa do nível iniciante ao avançado, focando nas variantes portuguesa europeia e brasileira para a comunidade diversa de Manchester',
+        type: 'language_course',
+        targetAudience: ['Adults', 'Students', 'Portuguese heritage families', 'Business professionals'],
+        duration: '30 weeks per level',
+        cost: '£180 per level',
+        schedule: 'Weekly (2.5 hours)',
+        maxParticipants: 18,
+        certification: true,
+        registrationRequired: true
+      },
+      {
+        id: 'manchester-santos-populares-celebration',
+        name: 'Manchester Santos Populares Festival',
+        namePortuguese: 'Festival dos Santos Populares de Manchester',
+        description: 'Annual celebration of Portuguese popular saints festivals, bringing Manchester\'s Portuguese community together with traditional music, food, and cultural activities',
+        descriptionPortuguese: 'Celebração anual dos festivais dos santos populares portugueses, unindo a comunidade portuguesa de Manchester com música tradicional, comida e atividades culturais',
+        type: 'event',
+        targetAudience: ['Portuguese community', 'Cultural enthusiasts', 'Families', 'All ages'],
+        duration: 'Annual weekend festival',
+        cost: '£12 adults / £5 children',
+        schedule: 'Annual (June)',
+        maxParticipants: 300,
+        registrationRequired: false
+      }
+    ],
+    
+    openingHours: {
+      monday: 'Closed',
+      tuesday: '18:00-21:00',
+      wednesday: '18:00-21:00', 
+      thursday: '18:00-21:00',
+      friday: '18:00-21:00',
+      saturday: '10:00-16:00',
+      sunday: '12:00-15:00'
+    },
+    
+    director: {
+      name: 'Dr. António Ferreira',
+      title: 'Cultural Director Manchester',
+      titlePortuguese: 'Diretor Cultural Manchester',
+      email: 'antonio@centroportuguesmanchester.org.uk'
+    },
+    
+    capacity: 120,
+    facilities: ['Main cultural hall', 'Classrooms', 'Community kitchen', 'Exhibition space', 'Library'],
+    languages: ['Lusophone', 'English'],
+    
+    partnerships: ['University of Manchester Portuguese Society', 'Manchester Portuguese Business Network', 'Rusholme Portuguese Community'],
+    accreditation: ['United Kingdom Registered Charity'],
+    
+    socialMedia: {
+      facebook: 'https://facebook.com/CentroPortuguesManchester',
+      instagram: 'https://instagram.com/portugal_manchester'
+    },
+    
+    isActive: true,
+    establishedYear: 1985,
+    lastUpdated: '2024-08-25',
+    description: 'Manchester\'s established Portuguese cultural center serving the vibrant Portuguese-speaking community in Greater Manchester with authentic cultural programming',
+    descriptionPortuguese: 'Centro cultural português estabelecido de Manchester servindo a vibrante comunidade lusófona na Grande Manchester com programação cultural autêntica'
+  },
+
+  // BIRMINGHAM EXPANSION - Cape Verdean and Portuguese Diversity
+  {
+    id: 'centro-cultural-cabo-verde-birmingham',
+    name: 'Cape Verdean Cultural Centre Birmingham - Island Hearts',
+    namePortuguese: 'Centro Cultural Cabo-verdiano Birmingham - Corações das Ilhas',
+    type: 'lusophone_center',
+    
+    address: 'Handsworth Community Centre, 115 Antrobus Road',
+    postcode: 'B21 9NG',
+    city: 'Birmingham',
+    country: 'United Kingdom',
+    coordinates: {
+      latitude: 52.5158,
+      longitude: -1.9342
+    },
+    
+    phone: '+44 121 523 4567',
+    email: 'info@capeverdebirmingham.co.uk',
+    website: 'https://capeverdebirmingham.co.uk',
+    
+    services: [
+      'Heartfelt Morna music circles with Cape Verdean masters',
+      'Energetic Coladeira dance celebrations and community joy',
+      'Traditional Cape Verdean Cachupa cooking experiences',
+      'Batuko women\'s music groups with powerful vocals',
+      'Cape Verdean Creole language conversation circles',
+      'Island crafts workshops: weaving and pottery',
+      'Cape Verdean cultural storytelling nights',
+      'Community celebration festivals with island rhythms',
+      'Modern Cape Verdean artist showcases',
+      'Cultural integration support for new arrivals',
+      'Birmingham Cape Verdean business networking',
+      'Youth cultural preservation programs'
+    ],
+    servicesPortuguese: [
+      'Círculos de música Morna emocionantes com mestres cabo-verdianos',
+      'Celebrações de dança Coladeira energéticas e alegria comunitária',
+      'Experiências de culinária tradicional cabo-verdiana Cachupa',
+      'Grupos femininos de música Batuko com vocais poderosos',
+      'Círculos de conversação em língua crioula cabo-verdiana',
+      'Workshops de artesanatos das ilhas: tecelagem e cerâmica',
+      'Noites de contos culturais cabo-verdianos',
+      'Festivais de celebração comunitária com ritmos das ilhas',
+      'Showcases de artistas cabo-verdianos modernos',
+      'Apoio de integração cultural para novos chegados',
+      'Networking empresarial cabo-verdiano de Birmingham',
+      'Programas juvenis de preservação cultural'
+    ],
+    
+    programs: [
+      {
+        id: 'birmingham-morna-soul-intensive',
+        name: 'Birmingham Morna Soul Intensive - Deep Island Music',
+        namePortuguese: 'Intensivo de Alma Morna Birmingham - Música Profunda das Ilhas',
+        description: 'Immersive morna music program teaching the deeply emotional Cape Verdean musical tradition that touches hearts and preserves island cultural heritage',
+        descriptionPortuguese: 'Programa imersivo de música morna ensinando a tradição musical cabo-verdiana profundamente emocional que toca corações e preserva o patrimônio cultural das ilhas',
+        type: 'cultural_workshop',
+        targetAudience: ['Cape Verdean community', 'Music enthusiasts', 'Cultural preservationists', 'Emotional expression seekers'],
+        duration: '12-week intensive program',
+        cost: '£150 per program',
+        schedule: 'Weekly (3 hours)',
+        maxParticipants: 16,
+        certification: false,
+        registrationRequired: true
+      },
+      {
+        id: 'birmingham-cape-verde-island-festival',
+        name: 'Birmingham Cape Verde Island Festival - Community Celebration',
+        namePortuguese: 'Festival das Ilhas de Cabo Verde Birmingham - Celebração Comunitária',
+        description: 'Annual festival celebrating Cape Verdean culture with live music, traditional dance, island food, and the incredible warmth of Cape Verdean community spirit',
+        descriptionPortuguese: 'Festival anual celebrando a cultura cabo-verdiana com música ao vivo, danças tradicionais, comida das ilhas e o calor incrível do espírito comunitário cabo-verdiano',
+        type: 'event',
+        targetAudience: ['Cape Verdean community', 'Birmingham residents', 'Cultural enthusiasts', 'Families'],
+        duration: 'Annual weekend festival',
+        cost: '£18 adults / £8 children / £45 families',
+        schedule: 'Annual (July)',
+        maxParticipants: 400,
+        registrationRequired: false
+      }
+    ],
+    
+    openingHours: {
+      monday: 'Closed',
+      tuesday: '19:00-21:30',
+      wednesday: '18:00-21:00',
+      thursday: '19:00-21:00',
+      friday: '18:00-22:00',
+      saturday: '14:00-20:00',
+      sunday: '13:00-17:00'
+    },
+    
+    director: {
+      name: 'Cesária Lima Santos',
+      title: 'Cultural Director & Morna Master',
+      titlePortuguese: 'Diretora Cultural e Mestra de Morna',
+      email: 'cesaria@capeverdebirmingham.co.uk'
+    },
+    
+    capacity: 90,
+    facilities: ['Performance space', 'Dance hall', 'Community kitchen', 'Craft workshop room', 'Cultural exhibition area'],
+    languages: ['Cape Verdean Creole', 'Lusophone', 'English'],
+    
+    partnerships: ['Birmingham Cape Verdean Association', 'Handsworth Cultural Centre', 'West Midlands Portuguese Community'],
+    accreditation: ['United Kingdom Registered Cultural Organization'],
+    
+    socialMedia: {
+      facebook: 'https://facebook.com/CapeVerdeBirmingham',
+      instagram: 'https://instagram.com/capeverde_birmingham'
+    },
+    
+    isActive: true,
+    establishedYear: 2005,
+    lastUpdated: '2024-08-25',
+    description: 'Birmingham\'s vibrant Cape Verdean cultural center celebrating island music, dance, and the incredible community spirit that makes Cape Verdean culture so welcoming',
+    descriptionPortuguese: 'Centro cultural cabo-verdiano vibrante de Birmingham celebrando música das ilhas, dança e o espírito comunitário incrível que torna a cultura cabo-verdiana tão acolhedora'
+  },
+
+  // BRISTOL EXPANSION - Growing Portuguese Professional Community
+  {
+    id: 'associacao-portuguesa-bristol',
+    name: 'Portuguese Association of Bristol & Southwest',
+    namePortuguese: 'Associação Portuguesa de Bristol e Sudoeste',
+    type: 'portuguese_center',
+    
+    address: 'Redland Community Centre, 41 Whiteladies Road',
+    postcode: 'BS8 2LY',
+    city: 'Bristol',
+    country: 'United Kingdom',
+    coordinates: {
+      latitude: 51.4693,
+      longitude: -2.6057
+    },
+    
+    phone: '+44 117 973 4567',
+    email: 'info@portuguesebristol.org.uk',
+    website: 'https://portuguesebristol.org.uk',
+    
+    services: [
+      'Portuguese language education for professionals',
+      'Cultural networking events for Portuguese community',
+      'Portuguese business development workshops',
+      'Traditional Portuguese cultural celebrations',
+      'Portuguese student integration support',
+      'Fado music appreciation and performance',
+      'Portuguese wine and cultural tastings',
+      'Community support and integration services'
+    ],
+    servicesPortuguese: [
+      'Educação em língua portuguesa para profissionais',
+      'Eventos de networking cultural para a comunidade portuguesa',
+      'Workshops de desenvolvimento empresarial português',
+      'Celebrações culturais tradicionais portuguesas',
+      'Apoio à integração de estudantes portugueses',
+      'Apreciação e performance de música Fado',
+      'Degustações de vinho português e culturais',
+      'Serviços de apoio comunitário e integração'
+    ],
+    
+    programs: [
+      {
+        id: 'bristol-professional-portuguese',
+        name: 'Bristol Professional Portuguese Network',
+        namePortuguese: 'Rede Profissional Portuguesa de Bristol',
+        description: 'Networking and professional development program for Portuguese professionals in Bristol\'s growing tech, aerospace, and creative industries',
+        descriptionPortuguese: 'Programa de networking e desenvolvimento profissional para profissionais portugueses nas crescentes indústrias de tecnologia, aeroespacial e criativas de Bristol',
+        type: 'event',
+        targetAudience: ['Portuguese professionals', 'Business owners', 'Students', 'Entrepreneurs'],
+        duration: 'Monthly networking events',
+        cost: '£15 per event',
+        schedule: 'Monthly (first Thursday)',
+        maxParticipants: 40,
+        registrationRequired: true
+      },
+      {
+        id: 'bristol-portuguese-cultural-series',
+        name: 'Bristol Portuguese Cultural Discovery Series',
+        namePortuguese: 'Série de Descoberta Cultural Portuguesa de Bristol',
+        description: 'Monthly cultural events featuring Portuguese traditions, including Fado nights, wine tastings, and cultural education for Bristol residents',
+        descriptionPortuguese: 'Eventos culturais mensais apresentando tradições portuguesas, incluindo noites de Fado, degustações de vinho e educação cultural para residentes de Bristol',
+        type: 'cultural_workshop',
+        targetAudience: ['Portuguese community', 'Bristol residents', 'Cultural enthusiasts', 'Students'],
+        duration: 'Monthly cultural events',
+        cost: '£20 per event',
+        schedule: 'Monthly (third Saturday)',
+        maxParticipants: 50,
+        registrationRequired: true
+      }
+    ],
+    
+    openingHours: {
+      monday: 'Closed',
+      tuesday: 'Closed',
+      wednesday: '18:30-21:00',
+      thursday: '18:30-21:00',
+      friday: '18:00-21:00',
+      saturday: '14:00-18:00'
+    },
+    
+    director: {
+      name: 'Dr. Sofia Mendes',
+      title: 'Association Director',
+      titlePortuguese: 'Diretora da Associação',
+      email: 'sofia@portuguesebristol.org.uk'
+    },
+    
+    capacity: 80,
+    facilities: ['Meeting rooms', 'Cultural space', 'Kitchen facilities', 'Library corner'],
+    languages: ['Lusophone', 'English'],
+    
+    partnerships: ['University of Bristol Portuguese Society', 'Bristol Portuguese Business Network', 'Southwest Portuguese Community'],
+    accreditation: ['United Kingdom Registered Association'],
+    
+    socialMedia: {
+      facebook: 'https://facebook.com/PortugueseBristol',
+      instagram: 'https://instagram.com/portuguese_bristol'
+    },
+    
+    isActive: true,
+    establishedYear: 1995,
+    lastUpdated: '2024-08-25',
+    description: 'Bristol\'s Portuguese association supporting the growing Portuguese professional and student community in Southwest England',
+    descriptionPortuguese: 'Associação portuguesa de Bristol apoiando a crescente comunidade profissional e estudantil portuguesa no sudoeste da Inglaterra'
+  },
+
+  // BRIGHTON EXPANSION - Coastal Portuguese Community
+  {
+    id: 'centro-portugues-brighton-seaside',
+    name: 'Portuguese Seaside Cultural Centre Brighton',
+    namePortuguese: 'Centro Cultural Português à Beira-Mar Brighton',
+    type: 'portuguese_center',
+    
+    address: 'Kemptown Community Centre, 8 St George\'s Terrace',
+    postcode: 'BN2 1JJ',
+    city: 'Brighton',
+    country: 'United Kingdom',
+    coordinates: {
+      latitude: 50.8205,
+      longitude: -0.1181
+    },
+    
+    phone: '+44 1273 684 567',
+    email: 'info@portuguesebrighton.org.uk',
+    website: 'https://portuguesebrighton.org.uk',
+    
+    services: [
+      'Coastal Portuguese cultural celebrations',
+      'Portuguese language classes by the sea',
+      'Traditional Portuguese seafood cooking workshops',
+      'Portuguese tourism and hospitality networking',
+      'Fado performances with ocean views',
+      'Portuguese cultural walking tours',
+      'Community integration support services',
+      'Portuguese student social activities'
+    ],
+    servicesPortuguese: [
+      'Celebrações culturais portuguesas costeiras',
+      'Aulas de língua portuguesa à beira-mar',
+      'Workshops de culinária tradicional de frutos do mar portugueses',
+      'Networking português de turismo e hospitalidade',
+      'Performances de Fado com vista para o oceano',
+      'Tours culturais portugueses a pé',
+      'Serviços de apoio à integração comunitária',
+      'Atividades sociais para estudantes portugueses'
+    ],
+    
+    programs: [
+      {
+        id: 'brighton-seaside-fado-sessions',
+        name: 'Brighton Seaside Fado Sessions - Music by the Ocean',
+        namePortuguese: 'Sessões de Fado à Beira-Mar Brighton - Música pelo Oceano',
+        description: 'Monthly Fado performances combining the melancholy beauty of Portuguese music with Brighton\'s stunning coastal atmosphere',
+        descriptionPortuguese: 'Performances mensais de Fado combinando a beleza melancólica da música portuguesa com a atmosfera costeira deslumbrante de Brighton',
+        type: 'cultural_workshop',
+        targetAudience: ['Portuguese community', 'Music lovers', 'Brighton residents', 'Tourists'],
+        duration: 'Monthly performances',
+        cost: '£18 per performance',
+        schedule: 'Monthly (second Friday)',
+        maxParticipants: 60,
+        registrationRequired: true
+      },
+      {
+        id: 'brighton-portuguese-summer-festival',
+        name: 'Brighton Portuguese Summer Festival - Festa by the Sea',
+        namePortuguese: 'Festival de Verão Português Brighton - Festa à Beira-Mar',
+        description: 'Annual summer celebration of Portuguese culture on Brighton beach, featuring music, dance, traditional food, and coastal Portuguese hospitality',
+        descriptionPortuguese: 'Celebração anual de verão da cultura portuguesa na praia de Brighton, com música, dança, comida tradicional e hospitalidade portuguesa costeira',
+        type: 'event',
+        targetAudience: ['Portuguese community', 'Brighton residents', 'Summer visitors', 'Families'],
+        duration: 'Annual summer festival',
+        cost: '£15 adults / £6 children / £35 families',
+        schedule: 'Annual (August)',
+        maxParticipants: 250,
+        registrationRequired: false
+      }
+    ],
+    
+    openingHours: {
+      monday: 'Closed',
+      tuesday: 'Closed',
+      wednesday: '18:00-20:30',
+      thursday: '18:00-20:30',
+      friday: '18:00-21:30',
+      saturday: '15:00-18:00',
+      sunday: '14:00-17:00'
+    },
+    
+    director: {
+      name: 'Carlos Oliveira',
+      title: 'Cultural Director Brighton',
+      titlePortuguese: 'Diretor Cultural Brighton',
+      email: 'carlos@portuguesebrighton.org.uk'
+    },
+    
+    capacity: 70,
+    facilities: ['Seaside cultural space', 'Performance area', 'Kitchen facilities', 'Outdoor terrace'],
+    languages: ['Lusophone', 'English'],
+    
+    partnerships: ['University of Brighton Portuguese Society', 'Brighton Tourism Board', 'Kemptown Community'],
+    accreditation: ['United Kingdom Registered Community Organization'],
+    
+    socialMedia: {
+      facebook: 'https://facebook.com/PortugueseBrighton',
+      instagram: 'https://instagram.com/portuguese_brighton_seaside'
+    },
+    
+    isActive: true,
+    establishedYear: 2010,
+    lastUpdated: '2024-08-25',
+    description: 'Brighton\'s coastal Portuguese cultural center celebrating Portuguese traditions with the beauty of seaside culture and community',
+    descriptionPortuguese: 'Centro cultural português costeiro de Brighton celebrando tradições portuguesas com a beleza da cultura costeira e comunidade'
   }
 ]
 

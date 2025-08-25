@@ -1,0 +1,571 @@
+/* LusoTown Mobile Utility Classes
+ * Portuguese Cultural Mobile-First Utilities
+ * Complementary utilities for the mobile design system
+ */
+
+/* ===== MOBILE-FIRST RESPONSIVE UTILITIES ===== */
+
+/* Container utilities with Portuguese cultural context */
+@utility lusotown-container-mobile {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@utility lusotown-container-tablet {
+  @screen md {
+    max-width: 768px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@utility lusotown-container-desktop {
+  @screen lg {
+    max-width: 1024px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Portuguese text handling utilities */
+@utility lusotown-text-mobile {
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+}
+
+@utility lusotown-text-mobile-large {
+  @screen sm {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+/* Touch-friendly spacing utilities */
+@utility lusotown-touch-spacing {
+  margin: 8px;
+}
+
+@utility lusotown-touch-spacing-comfortable {
+  margin: 12px;
+}
+
+@utility lusotown-touch-spacing-premium {
+  margin: 16px;
+}
+
+/* Mobile navigation utilities */
+@utility lusotown-nav-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+@utility lusotown-nav-item-mobile {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #374151;
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+@utility lusotown-nav-item-mobile:hover {
+  background-color: #f3f4f6;
+  color: var(--heritage-primary, #1e40af);
+}
+
+/* Portuguese cultural button utilities */
+@utility lusotown-btn-mobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@utility lusotown-btn-primary-mobile {
+  background: linear-gradient(135deg, var(--heritage-primary, #1e40af), var(--heritage-primary-600, #1e3a8a));
+  color: white;
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.2);
+}
+
+@utility lusotown-btn-primary-mobile:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+@utility lusotown-btn-secondary-mobile {
+  background: white;
+  color: var(--heritage-primary, #1e40af);
+  border: 1px solid var(--heritage-primary, #1e40af);
+  box-shadow: 0 1px 4px rgba(30, 64, 175, 0.1);
+}
+
+/* Portuguese cultural card utilities */
+@utility lusotown-card-mobile {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+@utility lusotown-card-mobile:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--heritage-primary-200, #bfdbfe);
+}
+
+/* Form utilities optimized for Portuguese text */
+@utility lusotown-form-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@utility lusotown-form-group-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@utility lusotown-input-mobile {
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  transition: all 0.2s ease-in-out;
+}
+
+@utility lusotown-input-mobile:focus {
+  outline: none;
+  border-color: var(--heritage-primary, #1e40af);
+  box-shadow: 0 0 0 1px var(--heritage-primary, #1e40af);
+}
+
+/* List utilities for Portuguese cultural content */
+@utility lusotown-list-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@utility lusotown-list-item-mobile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease-in-out;
+}
+
+@utility lusotown-list-item-mobile:hover {
+  background: #f9fafb;
+  border-color: var(--heritage-primary-200, #bfdbfe);
+}
+
+/* Grid utilities for Portuguese cultural layouts */
+@utility lusotown-grid-mobile {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+
+@utility lusotown-grid-2-mobile {
+  @screen sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@utility lusotown-grid-3-mobile {
+  @screen md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Portuguese cultural animation utilities */
+@utility lusotown-fade-in-mobile {
+  opacity: 0;
+  animation: lusotownFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes lusotownFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@utility lusotown-slide-up-mobile {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: lusotownSlideUp 0.4s ease-out forwards;
+}
+
+@keyframes lusotownSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Portuguese cultural loading utilities */
+@utility lusotown-loading-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+@utility lusotown-spinner-mobile {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e5e7eb;
+  border-top: 2px solid var(--heritage-primary, #1e40af);
+  border-radius: 50%;
+  animation: lusotownSpin 1s linear infinite;
+}
+
+@keyframes lusotownSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Portuguese cultural skeleton utilities */
+@utility lusotown-skeleton-mobile {
+  background: linear-gradient(
+    90deg,
+    rgba(30, 64, 175, 0.1) 25%,
+    rgba(245, 158, 11, 0.1) 50%,
+    rgba(5, 150, 105, 0.1) 75%
+  );
+  background-size: 200% 100%;
+  animation: lusotownSkeletonLoading 2s infinite;
+  border-radius: 4px;
+  height: 20px;
+}
+
+@keyframes lusotownSkeletonLoading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Safe area utilities for mobile browsers */
+@utility lusotown-safe-area-mobile {
+  padding-top: max(12px, env(safe-area-inset-top));
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+
+/* Accessibility utilities */
+@utility lusotown-focus-mobile {
+  outline: none;
+}
+
+@utility lusotown-focus-mobile:focus-visible {
+  outline: 2px solid var(--heritage-primary, #1e40af);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  @utility lusotown-high-contrast-mobile {
+    border: 2px solid currentColor !important;
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  @utility lusotown-no-motion-mobile {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  @utility lusotown-dark-mode-mobile {
+    background: #1f2937;
+    color: #f9fafb;
+    border-color: #374151;
+  }
+}
+
+/* Print utilities */
+@media print {
+  @utility lusotown-print-hidden-mobile {
+    display: none !important;
+  }
+}
+
+/* Orientation utilities */
+@media (orientation: landscape) and (max-height: 500px) {
+  @utility lusotown-landscape-mobile {
+    min-height: auto;
+    height: auto;
+  }
+}
+
+/* Portuguese cultural error utilities */
+@utility lusotown-error-mobile {
+  color: var(--heritage-action, #dc2626);
+  background: rgba(220, 38, 38, 0.05);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Portuguese cultural success utilities */
+@utility lusotown-success-mobile {
+  color: var(--heritage-secondary, #059669);
+  background: rgba(5, 150, 105, 0.05);
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Portuguese cultural warning utilities */
+@utility lusotown-warning-mobile {
+  color: var(--heritage-accent, #f59e0b);
+  background: rgba(245, 158, 11, 0.05);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Scroll utilities */
+@utility lusotown-scroll-mobile {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+@utility lusotown-scroll-mobile::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sticky utilities */
+@utility lusotown-sticky-top-mobile {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Backdrop utilities */
+@utility lusotown-backdrop-mobile {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 40;
+}
+
+/* Modal utilities */
+@utility lusotown-modal-mobile {
+  position: fixed;
+  inset: 16px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  z-index: 50;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+}
+
+/* Floating Action Button utilities */
+@utility lusotown-fab-mobile {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--heritage-primary, #1e40af), var(--heritage-primary-600, #1e3a8a));
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+@utility lusotown-fab-mobile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(30, 64, 175, 0.4);
+}
+
+/* Badge utilities for Portuguese cultural content */
+@utility lusotown-badge-mobile {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 4px;
+  background: var(--heritage-primary-100, #dbeafe);
+  color: var(--heritage-primary-800, #1e3a8a);
+}
+
+@utility lusotown-badge-success-mobile {
+  background: var(--heritage-secondary-100, #d1fae5);
+  color: var(--heritage-secondary-800, #064e3b);
+}
+
+@utility lusotown-badge-warning-mobile {
+  background: var(--heritage-accent-100, #fef3c7);
+  color: var(--heritage-accent-800, #92400e);
+}
+
+@utility lusotown-badge-error-mobile {
+  background: var(--heritage-action-100, #fee2e2);
+  color: var(--heritage-action-800, #7f1d1d);
+}
+
+/* Portuguese cultural notification utilities */
+@utility lusotown-notification-mobile {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  left: 16px;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 60;
+  animation: lusotownSlideDown 0.3s ease-out;
+}
+
+@keyframes lusotownSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Portuguese cultural tab utilities */
+@utility lusotown-tabs-mobile {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@utility lusotown-tab-mobile {
+  flex-shrink: 0;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+@utility lusotown-tab-active-mobile {
+  color: var(--heritage-primary, #1e40af);
+  border-bottom-color: var(--heritage-primary, #1e40af);
+}
+
+/* Portuguese cultural progress utilities */
+@utility lusotown-progress-mobile {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+@utility lusotown-progress-bar-mobile {
+  height: 100%;
+  background: linear-gradient(90deg, var(--heritage-primary, #1e40af), var(--heritage-secondary, #059669));
+  transition: width 0.3s ease-in-out;
+}
+
+/* Portuguese cultural toggle utilities */
+@utility lusotown-toggle-mobile {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: #d1d5db;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+@utility lusotown-toggle-active-mobile {
+  background: var(--heritage-primary, #1e40af);
+}
+
+@utility lusotown-toggle-handle-mobile {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@utility lusotown-toggle-handle-active-mobile {
+  transform: translateX(20px);
+}

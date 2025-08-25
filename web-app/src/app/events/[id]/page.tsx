@@ -387,10 +387,38 @@ export default function EventDetailsPage() {
     <div className="min-h-screen bg-gray-50">
       
       <main className="pt-16">
-        {/* Hero Section */}
+        {/* Mobile-Optimized Hero Section */}
         <section className="relative">
-          {/* Image Gallery */}
-          <div className="relative h-96 bg-gradient-to-r from-primary-200 to-secondary-200">
+          {/* Mobile Header Bar */}
+          <div className="sm:hidden sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+            <div className="flex items-center justify-between p-4">
+              <button
+                onClick={() => router.back()}
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              >
+                <ChevronLeftIcon className="w-5 h-5 text-gray-600" />
+              </button>
+              
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => setIsFavorited(!isFavorited)}
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                >
+                  {isFavorited ? (
+                    <HeartSolidIcon className="w-5 h-5 text-red-500" />
+                  ) : (
+                    <HeartIcon className="w-5 h-5 text-gray-600" />
+                  )}
+                </button>
+                <button className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+                  <ShareIcon className="w-5 h-5 text-gray-600" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Image Gallery - Mobile Optimized */}
+          <div className="relative h-64 sm:h-80 lg:h-96 bg-gradient-to-r from-primary-200 to-secondary-200">
             {event.images.length > 0 ? (
               <>
                 <Image 
@@ -434,8 +462,8 @@ export default function EventDetailsPage() {
               </div>
             )}
             
-            {/* Overlay Actions */}
-            <div className="absolute top-6 right-6 flex gap-3">
+            {/* Desktop Overlay Actions */}
+            <div className="hidden sm:flex absolute top-6 right-6 gap-3">
               <button
                 onClick={() => setIsFavorited(!isFavorited)}
                 className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
@@ -484,20 +512,20 @@ export default function EventDetailsPage() {
           </div>
         </section>
 
-        {/* Event Details */}
-        <section className="py-12">
+        {/* Mobile-First Event Details */}
+        <section className="py-6 sm:py-12">
           <div className="container-width">
-            <div className="grid lg:grid-cols-3 gap-12">
+            <div className="grid lg:grid-cols-3 gap-6 lg:gap-12">
               {/* Main Content */}
               <div className="lg:col-span-2 space-y-8">
                 {/* Basic Info */}
                 <div>
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
+                    <div className="mb-4 sm:mb-0">
+                      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 leading-tight">
                         {event.title}
                       </h1>
-                      <p className="text-lg text-gray-600 mb-3">
+                      <p className="text-base sm:text-lg text-gray-600 mb-3 leading-relaxed">
                         {event.description}
                       </p>
                       {/* Lusophone Cultural Context */}
@@ -510,8 +538,8 @@ export default function EventDetailsPage() {
                         </div>
                       )}
                     </div>
-                    <div className="text-right ml-6">
-                      <div className="text-3xl font-bold text-primary-600 mb-1">
+                    <div className="text-left sm:text-right sm:ml-6">
+                      <div className="text-2xl sm:text-3xl font-bold text-primary-600 mb-1">
                         {event.price === 0 ? 'FREE' : `£${event.price}`}
                       </div>
                       {event.membershipRequired !== 'free' && (
@@ -522,8 +550,8 @@ export default function EventDetailsPage() {
                     </div>
                   </div>
 
-                  {/* Key Details */}
-                  <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  {/* Mobile-Optimized Key Details */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
                         <CalendarIcon className="w-5 h-5 text-primary-600" />
@@ -823,11 +851,11 @@ export default function EventDetailsPage() {
                 )}
               </div>
 
-              {/* Sidebar */}
-              <div className="lg:col-span-1">
-                <div className="sticky top-24 space-y-6">
-                  {/* RSVP Card */}
-                  <div className="bg-white rounded-2xl p-6 shadow-lg">
+              {/* Mobile-First Sidebar */}
+              <div className="lg:col-span-1 order-first lg:order-last">
+                <div className="lg:sticky lg:top-24 space-y-6">
+                  {/* Mobile-Optimized RSVP Card */}
+                  <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200">
                     <h3 className="text-lg font-bold text-gray-900 mb-4">Join This Event</h3>
                     
                     {userRSVP ? (
@@ -876,11 +904,12 @@ export default function EventDetailsPage() {
                         ) : (
                           <button
                             onClick={() => setShowRSVPModal(true)}
-                            className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-bold py-4 px-6 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
+                            className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 min-h-[44px] flex items-center justify-center gap-2"
                             aria-label={`${isFull ? 'Join waitlist for' : 'RSVP to'} ${event.title}`}
                             type="button"
                           >
-                            {isFull ? 'Join Waitlist' : 'RSVP Now'}
+                            <CheckCircleIcon className="w-5 h-5" />
+                            {isFull ? 'Join Waitlist' : 'Book Now'}
                           </button>
                         )}
 
@@ -952,11 +981,11 @@ export default function EventDetailsPage() {
                       </div>
                     </div>
 
-                    <div className="space-y-2">
-                      <button className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2">
+                      <button className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all min-h-[44px]">
                         {t('event.view-host-profile', 'View Host Profile')}
                       </button>
-                      <button className="w-full border border-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors">
+                      <button className="w-full border border-gray-200 text-gray-700 font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors min-h-[44px]">
                         {t('event.message-organizer', 'Message Organizer')}
                       </button>
                     </div>

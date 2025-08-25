@@ -23,10 +23,11 @@ import {
   TvIcon,
   CurrencyPoundIcon,
 } from "@heroicons/react/24/outline";
-import { UserIcon, LogOut } from "lucide-react";
+import { UserIcon, LogOut, Download } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { ROUTES } from '@/config/routes';
 import { LuxuryRipple } from "@/components/LuxuryMobileInteraction";
+import { useMobileRedirect } from "@/components/MobileRedirectProvider";
 
 interface MobileNavigationProps {
   user?: any;
@@ -36,6 +37,7 @@ interface MobileNavigationProps {
 
 export default function MobileNavigation({ user, onClose, isOpen }: MobileNavigationProps) {
   const { t } = useLanguage();
+  const { deviceInfo, triggerAppDownload, showDownloadPrompt } = useMobileRedirect();
 
   // Navigation sections for Portuguese-speaking community
   const navigationSections = [
@@ -102,6 +104,37 @@ export default function MobileNavigation({ user, onClose, isOpen }: MobileNaviga
             className="xl:hidden fixed top-[80px] left-2 right-2 z-50 bg-white border border-primary-200 shadow-2xl rounded-2xl max-h-[80vh] overflow-y-auto"
           >
             <div className="p-4 space-y-4">
+              {/* App Download CTA for Mobile Users */}
+              {deviceInfo?.isMobile && (
+                <div className="bg-gradient-to-r from-primary-50 to-secondary-50 border-2 border-primary-200 rounded-xl p-4 mb-4">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl flex items-center justify-center">
+                      <span className="text-white text-sm font-bold">📱</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-gray-900 text-sm">
+                        {t('mobile.nav.app_title', 'Get the LusoTown App')}
+                      </h3>
+                      <p className="text-xs text-gray-600">
+                        {t('mobile.nav.app_subtitle', 'Better mobile experience for Portuguese community')}
+                      </p>
+                    </div>
+                  </div>
+                  <motion.button
+                    onClick={() => {
+                      triggerAppDownload();
+                      handleLinkClick();
+                    }}
+                    className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium py-3 px-4 rounded-lg text-sm hover:from-primary-700 hover:to-secondary-700 transition-all duration-200 flex items-center justify-center gap-2 min-h-[44px]"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Download className="w-4 h-4" />
+                    <span>{t('mobile.nav.download_app', 'Download App')}</span>
+                  </motion.button>
+                </div>
+              )}
+
               {navigationSections.map((section, sectionIndex) => (
                 <div key={section.title} className="pb-4 border-b border-gray-200 last:border-b-0">
                   <h3 className="text-lg font-semibold text-primary-600 mb-3">
@@ -112,7 +145,7 @@ export default function MobileNavigation({ user, onClose, isOpen }: MobileNaviga
                       <motion.a
                         key={item.name}
                         href={item.href}
-                        className="flex items-center gap-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 p-3 rounded-xl text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[48px]"
+                        className="lusotown-touch-target flex items-center gap-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 p-3 rounded-xl lusotown-text-body font-medium transition-all duration-200 border border-transparent hover:border-primary-200"
                         onClick={handleLinkClick}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}

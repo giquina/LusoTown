@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import {
   View,
   Text,
@@ -7,29 +7,60 @@ import {
   StyleSheet,
   SafeAreaView,
   RefreshControl,
-  Image,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Ionicons } from '@expo/vector-icons';
 
 import { Colors, Spacing, Typography, CommonStyles } from '../../constants/Styles';
 import { PortugueseEvent, Match, Business } from '../../types';
+import { OptimizedImage } from '../../components/optimized/OptimizedImage';
+import { withOptimization, useOptimizedCallback, usePortugueseCulturalMemo } from '../../components/optimized/OptimizedComponent';
+import { PortugueseCacheManager, PerformanceMonitor } from '../../utils/performance';
+import { PortugueseEvent as PortugueseEventAPI } from '../../lib/supabase';
 
-export default function HomeScreen() {
+function HomeScreenComponent() {
   const { t, i18n } = useTranslation();
   const [refreshing, setRefreshing] = useState(false);
   const [upcomingEvents, setUpcomingEvents] = useState<PortugueseEvent[]>([]);
   const [newMatches, setNewMatches] = useState<Match[]>([]);
   const [nearbyBusinesses, setNearbyBusinesses] = useState<Business[]>([]);
 
-  // Mock data - replace with actual API calls
-  useEffect(() => {
-    loadHomeData();
+  // Performance tracking
+  const renderStartTime = performance.now();
+
+  // Optimized data loading with caching
+  const loadHomeData = useOptimizedCallback(async () => {
+    const apiStartTime = performance.now();
+    
+    try {
+      // Try to get cached data first
+      const cachedEvents = await PortugueseCacheManager.getCachedData<PortugueseEvent[]>('portuguese-events');
+      const cachedMatches = await PortugueseCacheManager.getCachedData<Match[]>('user-matches');
+      const cachedBusinesses = await PortugueseCacheManager.getCachedData<Business[]>('cultural-businesses');
+
+      if (cachedEvents) setUpcomingEvents(cachedEvents);
+      if (cachedMatches) setNewMatches(cachedMatches);
+      if (cachedBusinesses) setNearbyBusinesses(cachedBusinesses);
+
+      // If we have cached data, we can return early for better performance
+      if (cachedEvents && cachedMatches && cachedBusinesses) {
+        PerformanceMonitor.trackApiCall('loadHomeData_cached', performance.now() - apiStartTime);
+        return;
+      }
+
+      // Fallback to mock data (replace with actual API calls)
+      await loadMockData();
+      
+      PerformanceMonitor.trackApiCall('loadHomeData', performance.now() - apiStartTime);
+    } catch (error) {
+      console.error('Failed to load home data:', error);
+      // Fallback to mock data on error
+      await loadMockData();
+    }
   }, []);
 
-  const loadHomeData = async () => {
-    // TODO: Replace with actual API calls
-    setUpcomingEvents([
+  const loadMockData = useOptimizedCallback(async () => {
+    const mockEvents: PortugueseEvent[] = [
       {
         id: '1',
         title: { 
@@ -58,9 +89,9 @@ export default function HomeScreen() {
         },
         culturalContext: ['portugal'],
       },
-    ]);
+    ];
 
-    setNewMatches([
+    const mockMatches: Match[] = [
       {
         id: '1',
         user: {
@@ -82,9 +113,9 @@ export default function HomeScreen() {
         lastActive: '2024-12-25T10:00:00Z',
         distance: 2.5,
       },
-    ]);
+    ];
 
-    setNearbyBusinesses([
+    const mockBusinesses: Business[] = [
       {
         id: '1',
         name: 'Tasca do Bacalhau',
@@ -113,16 +144,38 @@ export default function HomeScreen() {
         ownerHeritage: ['portugal'],
         isOpen: true,
       },
-    ]);
-  };
+    ];
 
-  const onRefresh = async () => {
+    setUpcomingEvents(mockEvents);
+    setNewMatches(mockMatches);
+    setNearbyBusinesses(mockBusinesses);
+    
+    // Cache the mock data for better performance
+    await Promise.allSettled([
+      PortugueseCacheManager.cacheData('portuguese-events', mockEvents),
+      PortugueseCacheManager.cacheData('user-matches', mockMatches),
+      PortugueseCacheManager.cacheData('cultural-businesses', mockBusinesses)
+    ]);
+  }, []);
+
+  // Load data on mount with performance tracking
+  useEffect(() => {
+    loadHomeData();
+  }, [loadHomeData]);
+
+  // Track render performance
+  useEffect(() => {
+    PerformanceMonitor.trackRenderTime('HomeScreen', renderStartTime);
+  });
+
+  const onRefresh = useOptimizedCallback(async () => {
     setRefreshing(true);
     await loadHomeData();
     setRefreshing(false);
-  };
+  }, [loadHomeData]);
 
-  const formatDate = (dateString: string) => {
+  // Memoized date formatting for Portuguese cultural context
+  const formatDate = useOptimizedCallback((dateString: string) => {
     const date = new Date(dateString);
     const locale = i18n.language === 'pt' ? 'pt-PT' : 'en-GB';
     return date.toLocaleDateString(locale, {
@@ -130,7 +183,21 @@ export default function HomeScreen() {
       day: 'numeric',
       month: 'short',
     });
-  };
+  }, [i18n.language]);
+
+  // Memoized Portuguese cultural data processing
+  const portugueseCulturalData = usePortugueseCulturalMemo({
+    events: upcomingEvents,
+    matches: newMatches,
+    businesses: nearbyBusinesses
+  }, ['portugal'], i18n.language);
+
+  // Optimized cultural tip based on language
+  const culturalTip = useMemo(() => {
+    return i18n.language === 'pt' 
+      ? 'Sabia que "saudade" é uma palavra única portuguesa que não tem tradução direta em inglês? Representa uma sensação profunda de nostalgia e amor.'
+      : 'Did you know "saudade" is a uniquely Portuguese word with no direct English translation? It represents a deep feeling of nostalgia and love.';
+  }, [i18n.language]);
 
   return (
     <SafeAreaView style={CommonStyles.container}>
@@ -158,10 +225,7 @@ export default function HomeScreen() {
             <Text style={styles.tipTitle}>{t('home.cultural_tip')}</Text>
           </View>
           <Text style={styles.tipText}>
-            {i18n.language === 'pt' 
-              ? 'Sabia que "saudade" é uma palavra única portuguesa que não tem tradução direta em inglês? Representa uma sensação profunda de nostalgia e amor.'
-              : 'Did you know "saudade" is a uniquely Portuguese word with no direct English translation? It represents a deep feeling of nostalgia and love.'
-            }
+            {culturalTip}
           </Text>
         </View>
 
@@ -480,3 +544,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.lg,
   },
 });
+
+// Export with performance optimization
+const HomeScreen = withOptimization(
+  HomeScreenComponent,
+  'HomeScreen',
+  (prevProps, nextProps) => {
+    // Home screen has no props, so always optimize
+    return true;
+  }
+);
+
+export default HomeScreen;

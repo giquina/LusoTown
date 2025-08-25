@@ -26,6 +26,8 @@ import Logo from "@/components/Logo";
 import { ROUTES } from '@/config/routes';
 import { socialMedia } from '@/config/contact';
 import { communityStats } from '@/config/community';
+import { useMobileRedirect } from '@/components/MobileRedirectProvider';
+import { Download, Smartphone } from "lucide-react";
 
 // Membership-focused footer navigation structure
 const getFooterLinks = (t: any) => ({
@@ -83,6 +85,7 @@ export default function Footer() {
   const { t, language } = useLanguage();
   const footerLinks = getFooterLinks(t);
   const sectionHeaders = getSectionHeaders(t);
+  const { deviceInfo, triggerAppDownload } = useMobileRedirect();
 
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-900 to-primary-900 text-white relative overflow-hidden">
@@ -100,7 +103,7 @@ export default function Footer() {
             <p className="text-gray-300 leading-relaxed text-sm">
               {language === 'pt' 
                 ? "Plataforma premium para membros verificados: portugueses ou falantes de português no Reino Unido."
-                : "Premium community for verified Portuguese and Portuguese‑speaking members in the UK."
+                : "Premium community for verified Portuguese and Lusophone‑speaking members in the UK."
               }
             </p>
             
@@ -204,6 +207,64 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Mobile App Download Section - Only show for mobile users */}
+        {(deviceInfo?.isMobile || deviceInfo?.isTablet) && (
+          <div className="mt-6 pt-4 border-t border-gray-800">
+            <div className="bg-gradient-to-r from-primary-900/40 to-secondary-900/40 border border-primary-700/30 rounded-xl p-4">
+              <div className="flex items-center gap-4">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl flex items-center justify-center">
+                    <Smartphone className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-white text-sm mb-1">
+                    {t('mobile.footer.app_title', 'Get the LusoTown App')}
+                  </h3>
+                  <p className="text-gray-300 text-xs leading-relaxed">
+                    {t('mobile.footer.app_description', 'Enhanced mobile experience for the Portuguese-speaking community with offline access and push notifications.')}
+                  </p>
+                </div>
+                <div className="flex-shrink-0">
+                  <motion.button
+                    onClick={() => triggerAppDownload()}
+                    className="bg-white text-primary-600 px-4 py-2 rounded-lg text-xs font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Download className="w-4 h-4" />
+                    <span>{t('mobile.footer.download', 'Download')}</span>
+                  </motion.button>
+                </div>
+              </div>
+              
+              {/* App Features Preview */}
+              <div className="mt-3 pt-3 border-t border-gray-700/50">
+                <div className="grid grid-cols-3 gap-3 text-center">
+                  <div className="text-xs">
+                    <div className="text-primary-400 font-medium">📱</div>
+                    <div className="text-gray-400 mt-1">
+                      {t('mobile.footer.feature_offline', 'Offline Access')}
+                    </div>
+                  </div>
+                  <div className="text-xs">
+                    <div className="text-secondary-400 font-medium">🔔</div>
+                    <div className="text-gray-400 mt-1">
+                      {t('mobile.footer.feature_notifications', 'Event Alerts')}
+                    </div>
+                  </div>
+                  <div className="text-xs">
+                    <div className="text-accent-400 font-medium">🎭</div>
+                    <div className="text-gray-400 mt-1">
+                      {t('mobile.footer.feature_cultural', 'Cultural Content')}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Membership Tiers Preview - Compressed */}
         <div className="mt-6 pt-4 border-t border-gray-800">
           <div className="grid grid-cols-3 gap-4">
@@ -261,7 +322,7 @@ export default function Footer() {
               {/* Membership Status */}
               <div className="flex items-center gap-2 text-xs text-gray-400">
                 <CheckBadgeIcon className="h-4 w-4 text-green-400" />
-                <span>750+ verified Portuguese/Portuguese‑speaking members</span>
+                <span>750+ verified Portuguese/Lusophone‑speaking members</span>
               </div>
             </div>
 

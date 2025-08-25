@@ -1,0 +1,24 @@
+{
+  "name": "@lusotown/shared-config",
+  "version": "1.0.0",
+  "description": "Shared configuration files for LusoTown web and mobile applications",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./brand": "./brand.js",
+    "./routes": "./routes.js",
+    "./pricing": "./pricing.js",
+    "./contact": "./contact.js",
+    "./universities": "./universities.js",
+    "./cultural-centers": "./cultural-centers.js",
+    "./community-guidelines": "./community-guidelines.js",
+    "./portuguese-institutions": "./portuguese-institutions.js"
+  },
+  "keywords": [
+    "lusotown",
+    "portuguese",
+    "config",
+    "shared"
+  ],
+  "private": true
+}
