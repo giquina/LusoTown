@@ -87,15 +87,15 @@ const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-3 rounded-full font-bold text-sm mb-6">
             <SparklesIcon className="w-4 h-4" />
-            {t('palop.events.calendar.title', 'PALOP Cultural Calendar')}
+            {t('palop.events.calendar.title', 'Exclusive PALOP Cultural Calendar')}
           </div>
           
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-            {variant === 'independence' && t('palop.events.independence.celebrations', 'PALOP Independence Celebrations')}
-            {variant === 'business' && t('palop.networking.professional', 'PALOP Professional Network')}
-            {variant === 'cultural' && t('palop.cultural.education', 'PALOP Cultural Education Hub')}
-            {variant === 'current-month' && 'This Month\'s PALOP Events'}
-            {variant === 'featured' && 'Featured PALOP Cultural Events'}
+            {variant === 'independence' && t('palop.events.independence.celebrations', 'PALOP Independence Celebrations - Members Priority')}
+            {variant === 'business' && t('palop.networking.professional', 'PALOP Executive Network - By Invitation')}
+            {variant === 'cultural' && t('palop.cultural.education', 'PALOP Cultural Heritage Circle - Curated Access')}
+            {variant === 'current-month' && 'This Month\'s Exclusive PALOP Events'}
+            {variant === 'featured' && 'Premium PALOP Cultural Experiences'}
           </h2>
           
           {showCountryFlags && (
@@ -104,7 +104,7 @@ const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
           
           {showDescription && (
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              {t('palop.success.subtitle', 'Where PALOP Cultures Thrive in Britain')} - Celebrating the incredible cultural heritage of African Portuguese-speaking nations across the United Kingdom.
+              {t('palop.success.subtitle', 'Where PALOP Cultures Thrive in Britain')} - Join 750+ members celebrating the incredible heritage of African Lusophone nations with exclusive access to premium cultural experiences across the United Kingdom.
             </p>
           )}
         </div>
@@ -190,13 +190,24 @@ const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
               </div>
 
               {/* Event Actions */}
-              <div className="flex gap-2">
-                <button className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold py-2 px-4 rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-200">
-                  Learn More
-                </button>
-                <button className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-                  ❤️
-                </button>
+              <div className="space-y-2">
+                <div className="flex gap-2">
+                  <a
+                    href={`${ROUTES.events}/${event.id}/book`}
+                    className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold py-2 px-4 rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-200 text-center"
+                  >
+                    Get Tickets
+                  </a>
+                  <a
+                    href={`${ROUTES.events}/${event.id}`}
+                    className="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors font-medium"
+                  >
+                    RSVP
+                  </a>
+                </div>
+                <div className="text-xs text-center text-gray-600 bg-amber-50 px-2 py-1 rounded border border-amber-200">
+                  Members £20, Non-members £35 • Limited to 50 spots
+                </div>
               </div>
             </div>
           ))}

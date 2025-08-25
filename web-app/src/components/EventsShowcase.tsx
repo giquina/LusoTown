@@ -269,7 +269,7 @@ const EventsShowcase = memo(() => {
           >
             <SparklesIcon className="w-5 h-5 text-primary-600 mr-2" />
             <span className="text-primary-700 font-medium">
-              {language === "pt" ? "Descubra Eventos Incríveis" : "Discover Amazing Events"}
+              {language === "pt" ? "Eventos Exclusivos para Membros" : "Members-Only Events"}
             </span>
           </motion.div>
 
@@ -291,8 +291,8 @@ const EventsShowcase = memo(() => {
             className="text-xl text-gray-600 max-w-3xl mx-auto"
           >
             {language === "pt"
-              ? "Descubra eventos culturais autênticos lusófonos pelo Reino Unido. De festivais gastronómicos tradicionais a networking profissional, conecte-se com a sua herança e construa amizades duradouras."
-              : "Discover authentic Portuguese-speaking cultural events across the United Kingdom. From traditional food festivals to professional networking, connect with your heritage and build lasting friendships."
+              ? "Eventos exclusivos para membros da comunidade lusófona no Reino Unido. Acesso prioritário a experiências culturais premium e networking de elite."
+              : "Exclusive member events for the Lusophone community across the United Kingdom. Priority access to premium cultural experiences and elite networking."
             }
           </motion.p>
           
@@ -407,7 +407,7 @@ const EventsShowcase = memo(() => {
                           Available to book
                         </span>
                         <span className="text-xs font-medium text-primary-600">
-                          {event.maxAttendees - event.attendees} spots left
+                          {event.maxAttendees - event.attendees} spots left • Members £{Math.round(event.price * 0.7)}, Non-members £{event.price}
                         </span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
@@ -460,29 +460,43 @@ const EventsShowcase = memo(() => {
                     <>
                       <a
                         href={`${ROUTES.events}/${event.id}/book`}
-                        className="w-full bg-gradient-to-r from-secondary-500 via-secondary-600 to-secondary-700 text-white font-semibold py-4 rounded-2xl hover:from-secondary-600 hover:via-secondary-700 hover:to-secondary-800 transition-all duration-300 group-hover:scale-105 text-center shadow-xl hover:shadow-2xl animate-pulse min-h-[44px] flex items-center justify-center"
+                        className="w-full bg-gradient-to-r from-secondary-500 via-secondary-600 to-secondary-700 text-white font-semibold py-3 rounded-2xl hover:from-secondary-600 hover:via-secondary-700 hover:to-secondary-800 transition-all duration-300 group-hover:scale-105 text-center shadow-xl hover:shadow-2xl animate-pulse min-h-[40px] flex items-center justify-center mb-2"
                       >
-                        Book Now - {formatPrice(event.price)}
+                        Members Reserve Now - {formatPrice(Math.round(event.price * 0.7))} 
+                      </a>
+                      <a
+                        href={ROUTES.signup}
+                        className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-medium py-2 rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl min-h-[36px] flex items-center justify-center gap-2 text-sm"
+                      >
+                        Non-members: {formatPrice(event.price)} • Apply for Membership
                       </a>
                       {/* Book Together Button for Portuguese cultural events */}
                       {event.featured && (
-                        <button className="w-full bg-gradient-to-r from-coral-500 to-accent-500 text-white font-medium py-3 rounded-xl hover:from-coral-600 hover:to-accent-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl min-h-[40px] flex items-center justify-center gap-2 whitespace-nowrap">
+                        <a
+                          href={`${ROUTES.events}/${event.id}/book?type=group`}
+                          className="w-full bg-gradient-to-r from-coral-500 to-accent-500 text-white font-medium py-3 rounded-xl hover:from-coral-600 hover:to-accent-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl min-h-[40px] flex items-center justify-center gap-2 whitespace-nowrap"
+                        >
                           <UsersIcon className="w-4 h-4" />
                           {language === "pt"
-                            ? "Reservar em Grupo"
-                            : "Book Together"}
-                        </button>
+                            ? "Grupo 4+ • 20% Desconto"
+                            : "Group 4+ • 20% Discount"}
+                        </a>
                       )}
                     </>
                   ) : (
-                    <button
-                      onClick={() => handleJoinWaitingList(event)}
-                      className="w-full bg-gradient-to-r from-coral-500 via-accent-500 to-accent-600 text-white font-semibold py-4 rounded-2xl hover:from-coral-600 hover:via-accent-600 hover:to-accent-700 transition-all duration-300 group-hover:scale-105 block text-center shadow-xl hover:shadow-2xl min-h-[44px]"
-                    >
-                      {language === "pt"
-                        ? "Juntar à Lista de Espera"
-                        : "Join Waiting List"}
-                    </button>
+                    <div className="space-y-2">
+                      <button
+                        onClick={() => handleJoinWaitingList(event)}
+                        className="w-full bg-gradient-to-r from-coral-500 via-accent-500 to-accent-600 text-white font-semibold py-4 rounded-2xl hover:from-coral-600 hover:via-accent-600 hover:to-accent-700 transition-all duration-300 group-hover:scale-105 block text-center shadow-xl hover:shadow-2xl min-h-[44px]"
+                      >
+                        {language === "pt"
+                          ? "Lista de Espera VIP - Membros Prioridade"
+                          : "VIP Waiting List - Members Priority"}
+                      </button>
+                      <div className="text-xs text-center text-gray-600">
+                        {getWaitingListCount(event.id)} waiting • Members get first access
+                      </div>
+                    </div>
                   )}
                 </div>
               </div>
@@ -583,9 +597,10 @@ const EventsShowcase = memo(() => {
                 flag: "🌍" 
               }
             ].map((category, index) => (
-              <div
+              <a
                 key={index}
-                className="text-center p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer group border border-gray-100/50 hover:border-secondary-200/50 shadow-lg hover:shadow-xl relative"
+                href={`${ROUTES.events}?category=${category.name.toLowerCase().replace(/\s+/g, '-')}`}
+                className="text-center p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer group border border-gray-100/50 hover:border-secondary-200/50 shadow-lg hover:shadow-xl relative block"
               >
                 <div className="absolute top-2 right-2 text-sm">{category.flag}</div>
                 <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
@@ -594,10 +609,13 @@ const EventsShowcase = memo(() => {
                 <div className="text-sm font-semibold text-gray-900 mb-1 leading-tight">
                   {category.name}
                 </div>
-                <div className="text-xs text-gray-500 font-medium">
+                <div className="text-xs text-gray-500 font-medium mb-1">
                   {category.count}
                 </div>
-              </div>
+                <div className="text-xs bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full font-bold">
+                  Members Only
+                </div>
+              </a>
             ))}
           </div>
           

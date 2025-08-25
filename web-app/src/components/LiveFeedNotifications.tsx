@@ -168,10 +168,10 @@ export default function LiveFeedNotifications() {
       setCurrentNotification(randomNotification);
       setIsVisible(true);
 
-      // Hide after 4 seconds
+      // Hide after 9 seconds
       setTimeout(() => {
         setIsVisible(false);
-      }, 4000);
+      }, 9000);
     };
 
     // Show first notification after 3 seconds
@@ -271,20 +271,21 @@ export default function LiveFeedNotifications() {
           }}
           className="fixed bottom-6 left-6 z-50 max-w-sm hidden md:block"
           style={{
-            filter: `drop-shadow(0 8px 32px ${colorScheme.glow}40)`
+            filter: `drop-shadow(0 8px 32px ${colorScheme.glow}50) drop-shadow(0 4px 16px rgba(0,0,0,0.2))`
           }}
         >
           <motion.div
             initial={{ backdropFilter: "blur(0px)" }}
             animate={{ backdropFilter: "blur(20px)" }}
-            className="relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 backdrop-blur-xl"
+            className="relative overflow-hidden rounded-2xl border border-white/30 shadow-2xl backdrop-blur-xl"
             style={{
               background: `linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.25) 0%, 
-                rgba(255, 255, 255, 0.05) 100%),
+                rgba(255, 255, 255, 0.85) 0%, 
+                rgba(255, 255, 255, 0.75) 100%),
                 linear-gradient(135deg, 
-                ${colorScheme.background}20 0%, 
-                ${colorScheme.background}05 100%)`
+                ${colorScheme.background}40 0%, 
+                ${colorScheme.background}20 100%)`,
+              boxShadow: `0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 30px ${colorScheme.glow}20`
             }}
           >
             {/* Animated gradient border */}
@@ -308,7 +309,7 @@ export default function LiveFeedNotifications() {
               onClick={hideNotification}
               whileHover={{ scale: 1.1, rotate: 90 }}
               whileTap={{ scale: 0.95 }}
-              className="absolute top-3 right-3 p-1.5 rounded-full bg-white/20 backdrop-blur-sm border border-white/20 text-white/80 hover:text-white hover:bg-white/30 transition-all duration-200"
+              className="absolute top-3 right-3 p-1.5 rounded-full bg-gray-200/80 backdrop-blur-sm border border-gray-300/40 text-gray-600 hover:text-gray-800 hover:bg-gray-300/80 transition-all duration-200"
             >
               <XMarkIcon className="w-3.5 h-3.5" />
             </motion.button>
@@ -342,10 +343,10 @@ export default function LiveFeedNotifications() {
                     transition={{ delay: 0.4 }}
                     className="flex flex-col gap-1 mb-2"
                   >
-                    <span className="font-semibold text-white text-sm truncate drop-shadow-sm">
+                    <span className="font-semibold text-gray-800 text-sm truncate drop-shadow-sm">
                       {currentNotification.name}
                     </span>
-                    <span className="text-xs text-white/70 truncate">
+                    <span className="text-xs text-gray-600 truncate">
                       📍 {currentNotification.location}
                     </span>
                   </motion.div>
@@ -354,7 +355,7 @@ export default function LiveFeedNotifications() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="text-sm text-white/90 leading-relaxed mb-3 font-medium drop-shadow-sm"
+                    className="text-sm text-gray-700 leading-relaxed mb-3 font-medium drop-shadow-sm"
                   >
                     {isPortuguese ? currentNotification.messagePt : currentNotification.message}
                   </motion.p>
@@ -365,7 +366,7 @@ export default function LiveFeedNotifications() {
                     transition={{ delay: 0.6 }}
                     className="flex items-center justify-between"
                   >
-                    <span className="text-xs text-white/60 font-medium">
+                    <span className="text-xs text-gray-500 font-medium">
                       ⏰ {new Date(currentNotification.timestamp).toLocaleTimeString([], { 
                         hour: '2-digit', 
                         minute: '2-digit' 
@@ -387,8 +388,11 @@ export default function LiveFeedNotifications() {
                         style={{ backgroundColor: colorScheme.glow }}
                       />
                       <span 
-                        className="text-xs font-bold uppercase tracking-wider drop-shadow-sm"
-                        style={{ color: colorScheme.glow }}
+                        className="text-xs font-bold uppercase tracking-wider drop-shadow-sm text-white px-2 py-0.5 rounded-full"
+                        style={{ 
+                          backgroundColor: colorScheme.glow,
+                          textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+                        }}
                       >
                         LIVE
                       </span>
