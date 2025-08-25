@@ -146,7 +146,7 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPinIcon className="w-5 h-5 text-yellow-500" />
-                      <span className="font-semibold">Across the UK</span>
+                      <span className="font-semibold">Across the United Kingdom</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <StarIcon className="w-5 h-5 text-green-500" />
@@ -270,7 +270,7 @@ export default function Home() {
                   </h2>
                   
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                    {t('today.subtitle', 'Don\'t miss what\'s happening right now in the Portuguese-speaking community across London and the UK')}
+                    {t('today.subtitle', 'Don\'t miss what\'s happening right now in the Portuguese-speaking community across London and the United Kingdom')}
                   </p>
                 </div>
                 
@@ -346,7 +346,7 @@ export default function Home() {
                     {t('weekend.title', 'This Weekend\'s Portuguese Community')}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    {t('weekend.subtitle', 'Discover the best Portuguese community experiences happening this weekend across the UK')}
+                    {t('weekend.subtitle', 'Discover the best Portuguese community experiences happening this weekend across the United Kingdom')}
                   </p>
                 </div>
                 
@@ -424,7 +424,7 @@ export default function Home() {
                   </h2>
                   
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    {t('weekly.subtitle', 'Discover the recurring activities and meetups that bring our community together every week across London and the UK')}
+                    {t('weekly.subtitle', 'Discover the recurring activities and meetups that bring our community together every week across London and the United Kingdom')}
                   </p>
                 </div>
                 
@@ -703,7 +703,7 @@ export default function Home() {
                       </div>
                       <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3">
                         <div className="font-semibold text-sm">🌍 £50M+ Combined Revenue</div>
-                        <div className="text-xs opacity-80">PALOP business success in UK</div>
+                        <div className="text-xs opacity-80">PALOP business success in the United Kingdom</div>
                       </div>
                       <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3">
                         <div className="font-semibold text-sm">🏆 Excellence Recognition</div>
@@ -762,7 +762,7 @@ export default function Home() {
                     <div className="text-center mb-4">
                       <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl flex items-center justify-center text-4xl">🇬🇴</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">November: PALOP Independence Month</h3>
-                      <p className="text-gray-600 text-sm mb-3">Major Celebrations Across UK</p>
+                      <p className="text-gray-600 text-sm mb-3">Major Celebrations Across the United Kingdom</p>
                     </div>
                     <div className="space-y-3">
                       <div className="bg-red-50 rounded-lg p-3">
@@ -814,7 +814,7 @@ export default function Home() {
                         <div className="text-xs text-purple-600">Samba dance and costume making</div>
                       </div>
                       <div className="bg-pink-50 rounded-lg p-3">
-                        <div className="font-semibold text-pink-800 text-sm">🇬🇧 UK Brazilian Carnival - Feb 29</div>
+                        <div className="font-semibold text-pink-800 text-sm">🇬🇧 United Kingdom Brazilian Carnival - Feb 29</div>
                         <div className="text-xs text-pink-600">London’s biggest Brazilian party</div>
                       </div>
                       <div className="bg-yellow-50 rounded-lg p-3">
@@ -913,7 +913,7 @@ export default function Home() {
                         </div>
                         <div>
                           <h3 className="font-bold text-gray-900 mb-1">Fado & Samba Nights</h3>
-                          <p className="text-gray-600 text-sm">Portuguese, Brazilian & Cape Verdean music across UK venues</p>
+                          <p className="text-gray-600 text-sm">Portuguese, Brazilian & Cape Verdean music across United Kingdom venues</p>
                         </div>
                       </div>
                       

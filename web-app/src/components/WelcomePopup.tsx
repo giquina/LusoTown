@@ -103,7 +103,7 @@ export default function WelcomePopup() {
                   Find Your Portuguese Community
                 </h2>
                 <p className="text-sm text-gray-600">
-                  Connect with {language === 'pt' ? '750+' : '750+'} Portuguese speakers across the UK
+                  Connect with {language === 'pt' ? '750+' : '750+'} Portuguese speakers across the United Kingdom
                 </p>
               </div>
 
