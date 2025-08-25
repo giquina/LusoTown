@@ -126,7 +126,7 @@ export default function MyNetworkPage() {
             >
               <div className="mb-6">
                 <span className="inline-block bg-gradient-to-r from-primary-600 to-secondary-600 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg mb-4">
-                  {isPortuguese ? 'Rede Portuguesa • Portuguese Network' : 'Portuguese Network • Rede Portuguesa'}
+                  {isPortuguese ? 'Rede Portuguesa • Lusophone Network' : 'Lusophone Network • Rede Portuguesa'}
                 </span>
               </div>
               

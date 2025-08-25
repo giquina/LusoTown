@@ -22,7 +22,7 @@
  * - optimize: Run optimization algorithms
  * - analyze-cultural: Analyze cultural personalization effectiveness
  * - monitor: Continuous monitoring mode
- * - test-regions: Test all Portuguese regions for cultural accuracy
+ * - test-regions: Test all Lusophone regions for cultural accuracy
  */
 
 import { aiNotificationEngine } from '../services/AINotificationEngine'
@@ -172,7 +172,7 @@ class AINotificationOptimizer {
    * Analyze cultural personalization effectiveness
    */
   async analyzeCulturalPersonalization(): Promise<void> {
-    console.log('🎨 Analyzing Portuguese Cultural Personalization...\n')
+    console.log('🎨 Analyzing Lusophone Cultural Personalization...\n')
 
     const regions = ['lisboa', 'norte', 'acores', 'madeira', 'brasil', 'angola', 'cabo_verde']
     const results: Record<string, any> = {}
@@ -188,7 +188,7 @@ class AINotificationOptimizer {
             `test-${region}`,
             'cultural_event_fado',
             { 
-              venue: 'Portuguese Cultural Center',
+              venue: 'Lusophone Cultural Center',
               time: '19:00',
               cultural_context: `${region} heritage event`
             },
@@ -248,10 +248,10 @@ class AINotificationOptimizer {
   }
 
   /**
-   * Test all Portuguese regions for accuracy
+   * Test all Lusophone regions for accuracy
    */
   async testPortugueseRegions(): Promise<void> {
-    console.log('🗺️ Testing All Portuguese Regions for Cultural Accuracy...\n')
+    console.log('🗺️ Testing All Lusophone Regions for Cultural Accuracy...\n')
 
     const regions = [
       { code: 'lisboa', name: 'Lisboa', greeting: 'Olá, lisboeta' },
@@ -271,7 +271,7 @@ class AINotificationOptimizer {
       
       try {
         const userBehavior = this.createMockUserBehavior(region.code)
-        userBehavior.cultural_preferences.language_preference = 'pt' // Force Portuguese
+        userBehavior.cultural_preferences.language_preference = 'pt' // Force Lusophone
         
         const notification = await aiNotificationEngine.generatePersonalizedNotification(
           `test-region-${region.code}`,
@@ -466,7 +466,7 @@ class AINotificationOptimizer {
       console.log(`📞 Contact Configuration: ${hasContactInfo ? 'Configured' : 'Missing'}`)
 
       if (culturalCentersCount < 5) {
-        this.recommendations.push('Consider adding more Portuguese cultural centers to the configuration')
+        this.recommendations.push('Consider adding more Lusophone cultural centers to the configuration')
       }
 
       if (universityCount < 8) {
@@ -541,7 +541,7 @@ Commands:
   optimize          - Run performance optimization
   analyze-cultural  - Analyze cultural personalization effectiveness
   monitor          - Start continuous monitoring mode
-  test-regions     - Test all Portuguese regions for accuracy
+  test-regions     - Test all Lusophone regions for accuracy
   full-report      - Generate comprehensive optimization report
 
 Options:

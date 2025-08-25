@@ -2,7 +2,7 @@
 
 /**
  * Heritage Color Migration Utility
- * Helps components transition from hardcoded Portuguese colors to heritage-configurable colors
+ * Helps components transition from hardcoded Lusophone colors to heritage-configurable colors
  * This utility provides both component-level and hook-based solutions for color migration
  */
 
@@ -49,7 +49,7 @@ export function useHeritageColorReplacements() {
   const { colors } = heritage.branding
 
   return {
-    // Map common hardcoded Portuguese colors to heritage colors
+    // Map common hardcoded Lusophone colors to heritage colors
     colorMap: {
       '#1e40af': colors.primary,    // Primary blue
       '#059669': colors.secondary,  // Secondary green

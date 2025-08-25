@@ -80,7 +80,7 @@ export default function ServiceCommunityBridge({
                 : "Transport + Cultural Events",
               description: isPortuguese
                 ? "Chegue aos eventos portugueses com estilo e conhece pessoas no caminho"
-                : "Arrive at Portuguese events in style and meet people on the way",
+                : "Arrive at Lusophone events in style and meet people on the way",
               value: isPortuguese
                 ? "Economia de até 25% + Networking garantido"
                 : "Save up to 25% + Guaranteed networking",
@@ -120,7 +120,7 @@ export default function ServiceCommunityBridge({
                 : "VIP Transport to Event",
               description: isPortuguese
                 ? "Chegue relaxado e com segurança ao evento português"
-                : "Arrive relaxed and safely at the Portuguese event",
+                : "Arrive relaxed and safely at the Lusophone event",
               value: isPortuguese
                 ? "Sem preocupações + Chegada premium"
                 : "No worries + Premium arrival",

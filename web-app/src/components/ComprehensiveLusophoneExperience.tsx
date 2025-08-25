@@ -186,7 +186,7 @@ function HeritageSelectionSystem() {
         className="text-center"
       >
         <GradientText variant="heritage" size="xl" className="font-bold mb-2">
-          {t('heritage.selection.title', 'Choose Your Portuguese Heritage')}
+          {t('heritage.selection.title', 'Choose Your Lusophone Heritage')}
         </GradientText>
         <p className="text-gray-600 text-sm">
           {t('heritage.selection.subtitle', 'Connect with your cultural roots across the Portuguese-speaking world')}
@@ -248,7 +248,7 @@ function CommunityStatsDashboard() {
 
   const stats = [
     {
-      label: t('stats.members', 'Portuguese Speakers'),
+      label: t('stats.members', 'Lusophone Speakers'),
       value: formatStat(communityStats.members),
       icon: UsersIcon,
       color: 'text-primary-600',
@@ -285,7 +285,7 @@ function CommunityStatsDashboard() {
         className="text-center"
       >
         <GradientText variant="heritage" size="xl" className="font-bold mb-2">
-          {t('community.title', 'Our Growing Portuguese-Speaking Community')}
+          {t('community.title', 'Our Growing Lusophone-Speaking Community')}
         </GradientText>
         <p className="text-gray-600 text-sm">
           {t('community.subtitle', 'Connecting Lusophone communities across the United Kingdom')}
@@ -365,7 +365,7 @@ function BusinessBenefitsShowcase() {
         className="text-center"
       >
         <GradientText variant="heritage" size="xl" className="font-bold mb-2">
-          {t('business.title', 'Portuguese-Speaking Markets Opportunity')}
+          {t('business.title', 'Lusophone-Speaking Markets Opportunity')}
         </GradientText>
         <p className="text-gray-600 text-sm">
           {t('business.subtitle', 'Access 280M+ Portuguese speakers across global markets')}
@@ -584,7 +584,7 @@ export default function ComprehensiveLusophoneExperience() {
             <LuxuryCard variant="glassmorphism" className="p-8 text-center space-y-4">
               <div className="text-3xl mb-4">🤝</div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
-                {t('footer.ready_title', 'Ready to Join the Portuguese-Speaking Community?')}
+                {t('footer.ready_title', 'Ready to Join the Lusophone-Speaking Community?')}
               </h3>
               <p className="text-gray-600 mb-4 text-sm">
                 {t('footer.ready_description', 'Connect with fellow Portuguese speakers, discover cultural events, and build lasting friendships across the UK.')}

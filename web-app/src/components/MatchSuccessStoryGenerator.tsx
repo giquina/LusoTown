@@ -68,9 +68,9 @@ interface MatchSuccessStoryGeneratorProps {
 const storyTemplates = {
   first_meet: {
     en: [
-      "Just met {name} at {location}! The Portuguese connection was instant - we bonded over {cultural_element}. Sometimes the best conversations happen in Portuguese! 🇵🇹",
+      "Just met {name} at {location}! The Lusophone connection was instant - we bonded over {cultural_element}. Sometimes the best conversations happen in Lusophone! 🇵🇹",
       "First coffee with {name} and it felt like talking to a childhood friend from Portugal. Amazing how {cultural_element} brings people together in London! ☕",
-      "Met {name} through LusoTown and discovered we both miss {cultural_element} from home. Already planning our next Portuguese adventure! 🌟"
+      "Met {name} through LusoTown and discovered we both miss {cultural_element} from home. Already planning our next Lusophone adventure! 🌟"
     ],
     pt: [
       "Acabei de conhecer {name} em {location}! A conexão portuguesa foi instantânea - conectámo-nos através de {cultural_element}. Às vezes as melhores conversas acontecem em português! 🇵🇹",
@@ -80,7 +80,7 @@ const storyTemplates = {
   },
   event_together: {
     en: [
-      "Attended the {event_name} with {name} - such an authentic Portuguese experience! Nothing beats sharing {cultural_element} with someone who truly understands. 🎵",
+      "Attended the {event_name} with {name} - such an authentic Lusophone experience! Nothing beats sharing {cultural_element} with someone who truly understands. 🎵",
       "Fado night with {name} was magical! We both got emotional during {cultural_element}. These are the moments that make living in London special. ❤️",
       "Portuguese wine tasting with {name} - discovered we both love {cultural_element}! Already booking our next cultural adventure together. 🍷"
     ],
@@ -92,7 +92,7 @@ const storyTemplates = {
   },
   service_shared: {
     en: [
-      "Shared a Portuguese cultural tour with {name} today! Our guide's stories about {cultural_element} brought back so many memories from home. Perfect day! 🗺️",
+      "Shared a Lusophone cultural tour with {name} today! Our guide's stories about {cultural_element} brought back so many memories from home. Perfect day! 🗺️",
       "Took the transport service to {location} with {name} - having a Portuguese-speaking driver made all the difference! Talked about {cultural_element} the whole way. 🚗",
       "Found the perfect apartment in {location} with help from {name}! The Portuguese-speaking community here is incredible. Can't wait to host our first {cultural_element} dinner! 🏠"
     ],
@@ -106,7 +106,7 @@ const storyTemplates = {
     en: [
       "Cooked pastéis de nata with {name} today! Teaching each other family recipes and sharing stories about {cultural_element}. This is what community means. 👨‍🍳",
       "Celebrated Santos Populares with {name} in the local park! Even in London, we keep our {cultural_element} traditions alive. Saudade hits different when shared. 🎉",
-      "Sunday morning at the Portuguese market with {name} - found ingredients for {cultural_element}! Nothing like speaking Portuguese while shopping for a taste of home. 🛒"
+      "Sunday morning at the Lusophone market with {name} - found ingredients for {cultural_element}! Nothing like speaking Lusophone while shopping for a taste of home. 🛒"
     ],
     pt: [
       "Cozinhámos pastéis de nata com {name} hoje! Ensinando um ao outro receitas de família e partilhando histórias sobre {cultural_element}. Isto é o que significa comunidade. 👨‍🍳",
@@ -117,7 +117,7 @@ const storyTemplates = {
   milestone: {
     en: [
       "Three months of friendship with {name} and counting! From strangers to family friends, all thanks to our shared love of {cultural_element}. LusoTown connections are real! 🎯",
-      "Celebrated {name}'s birthday Portuguese-style! Gathered the whole community for {cultural_element}. These are the friendships that last a lifetime. 🎂",
+      "Celebrated {name}'s birthday Lusophone-style! Gathered the whole community for {cultural_element}. These are the friendships that last a lifetime. 🎂",
       "Six months since meeting {name} through LusoTown - now we're planning to visit Portugal together! Our {cultural_element} adventures continue. ✈️"
     ],
     pt: [
@@ -130,9 +130,9 @@ const storyTemplates = {
 
 const culturalElements = [
   'fado music', 'pastéis de nata', 'Portuguese wine', 'Santos Populares', 'saudade',
-  'bacalhau recipes', 'azulejo art', 'Portuguese coffee', 'sardinha festivals',
-  'Camões poetry', 'Portuguese football', 'traditional dancing', 'family recipes',
-  'Portuguese cinema', 'Minho traditions', 'Alentejo music', 'Porto culture'
+  'bacalhau recipes', 'azulejo art', 'Lusophone coffee', 'sardinha festivals',
+  'Camões poetry', 'Lusophone football', 'traditional dancing', 'family recipes',
+  'Lusophone cinema', 'Minho traditions', 'Alentejo music', 'Porto culture'
 ]
 
 const mockSuccessStories: SuccessStory[] = [
@@ -140,8 +140,8 @@ const mockSuccessStories: SuccessStory[] = [
     id: 'story-1',
     matchId: 'match-1',
     type: 'first_meet',
-    title: 'First Portuguese Connection in London',
-    description: 'Just met Sofia at Borough Market! The Portuguese connection was instant - we bonded over pastéis de nata. Sometimes the best conversations happen in Portuguese! 🇵🇹',
+    title: 'First Lusophone Connection in London',
+    description: 'Just met Sofia at Borough Market! The Lusophone connection was instant - we bonded over pastéis de nata. Sometimes the best conversations happen in Lusophone! 🇵🇹',
     culturalElement: 'pastéis de nata',
     location: 'Borough Market',
     date: '2 days ago',
@@ -161,7 +161,7 @@ const mockSuccessStories: SuccessStory[] = [
     title: 'Magical Fado Night Experience',
     description: 'Fado night with Ana was magical! We both got emotional during traditional saudade songs. These are the moments that make living in London special. ❤️',
     culturalElement: 'fado music',
-    location: 'Portuguese Cultural Centre',
+    location: 'Lusophone Cultural Centre',
     date: '1 week ago',
     imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&auto=format',
     likes: 45,
@@ -213,7 +213,7 @@ export default function MatchSuccessStoryGenerator({
       .replace('{name}', match.name)
       .replace('{location}', customization.location || match.location)
       .replace('{cultural_element}', culturalElement)
-      .replace('{event_name}', customization.eventName || 'Portuguese Cultural Evening')
+      .replace('{event_name}', customization.eventName || 'Lusophone Cultural Evening')
     
     // Add personal note if provided
     if (customization.personalNote) {
@@ -221,7 +221,7 @@ export default function MatchSuccessStoryGenerator({
     }
 
     const titles = {
-      first_meet: isPortuguese ? 'Primeira Conexão Portuguesa' : 'First Portuguese Connection',
+      first_meet: isPortuguese ? 'Primeira Conexão Portuguesa' : 'First Lusophone Connection',
       event_together: isPortuguese ? 'Evento Cultural Partilhado' : 'Shared Cultural Event',
       service_shared: isPortuguese ? 'Serviço Comunitário' : 'Community Service Shared',
       cultural_moment: isPortuguese ? 'Momento Cultural Especial' : 'Special Cultural Moment',
@@ -330,7 +330,7 @@ export default function MatchSuccessStoryGenerator({
             <p className="text-gray-600 text-sm">
               {isPortuguese 
                 ? 'Crie e partilhe momentos especiais com os seus matches portugueses'
-                : 'Create and share special moments with your Portuguese matches'
+                : 'Create and share special moments with your Lusophone matches'
               }
             </p>
           </div>
@@ -675,7 +675,7 @@ export default function MatchSuccessStoryGenerator({
           <p className="text-gray-600 mb-6">
             {isPortuguese 
               ? 'Comece a documentar os seus momentos especiais com matches portugueses!'
-              : 'Start documenting your special moments with Portuguese matches!'
+              : 'Start documenting your special moments with Lusophone matches!'
             }
           </p>
           <button

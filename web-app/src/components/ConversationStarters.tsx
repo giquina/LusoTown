@@ -78,25 +78,25 @@ export default function ConversationStarters({
   const [showCustomInput, setShowCustomInput] = useState(false)
   const [suggestedStarters, setSuggestedStarters] = useState<ConversationStarter[]>([])
 
-  // Portuguese cultural conversation starters database
+  // Lusophone cultural conversation starters database
   const conversationStarters: ConversationStarter[] = [
     // Food & Culture
     {
       id: 'food_1',
-      textEn: "What's your favorite Portuguese dish? I'm always looking for authentic recipes!",
+      textEn: "What's your favorite Lusophone dish? I'm always looking for authentic recipes!",
       textPt: "Qual é o teu prato português favorito? Estou sempre à procura de receitas autênticas!",
-      category: 'Portuguese Food',
+      category: 'Lusophone Food',
       categoryPt: 'Comida Portuguesa',
-      culturalContext: 'Food connects Portuguese people deeply to their heritage',
+      culturalContext: 'Food connects Lusophone people deeply to their heritage',
       culturalContextPt: 'A comida conecta profundamente os portugueses ao seu património',
       popularity: 92,
       matchType: 'both'
     },
     {
       id: 'food_2',
-      textEn: "Best Portuguese bakery in London? I need my pastéis de nata fix!",
+      textEn: "Best Lusophone bakery in London? I need my pastéis de nata fix!",
       textPt: "Melhor pastelaria portuguesa em Londres? Preciso da minha dose de pastéis de nata!",
-      category: 'Portuguese Food',
+      category: 'Lusophone Food',
       categoryPt: 'Comida Portuguesa',
       culturalContext: 'Pastéis de nata are a cultural staple for Portuguese speakers',
       culturalContextPt: 'Pastéis de nata são um elemento cultural fundamental para falantes de português',
@@ -111,7 +111,7 @@ export default function ConversationStarters({
       textPt: "Sentes saudade de casa? Do que tens mais saudades?",
       category: 'Saudade & Heritage',
       categoryPt: 'Saudade e Património',
-      culturalContext: 'Saudade is a uniquely Portuguese emotion that bonds the diaspora',
+      culturalContext: 'Saudade is a uniquely Lusophone emotion that bonds the diaspora',
       culturalContextPt: 'Saudade é uma emoção unicamente portuguesa que une a diáspora',
       popularity: 85,
       matchType: 'both'
@@ -135,7 +135,7 @@ export default function ConversationStarters({
       textPt: "De que região és? Adoro aprender sobre diferentes tradições portuguesas!",
       category: 'Regional Heritage',
       categoryPt: 'Património Regional',
-      culturalContext: 'Portuguese regions have distinct cultures and traditions',
+      culturalContext: 'Lusophone regions have distinct cultures and traditions',
       culturalContextPt: 'As regiões portuguesas têm culturas e tradições distintas',
       popularity: 82,
       matchType: 'both'
@@ -146,7 +146,7 @@ export default function ConversationStarters({
       id: 'festival_1',
       textEn: "How do you celebrate São João in the United Kingdom? I miss the festivities from home!",
       textPt: "Como celebras o São João no Reino Unido? Tenho saudades das festividades de casa!",
-      category: 'Portuguese Festivals',
+      category: 'Lusophone Festivals',
       categoryPt: 'Festas Portuguesas',
       culturalContext: 'São João is a major Portuguese celebration that diaspora tries to recreate',
       culturalContextPt: 'São João é uma grande celebração portuguesa que a diáspora tenta recriar',
@@ -157,9 +157,9 @@ export default function ConversationStarters({
       id: 'festival_2',
       textEn: "Have you found any good Santos Populares celebrations in London?",
       textPt: "Conheces boas celebrações dos Santos Populares em Londres?",
-      category: 'Portuguese Festivals',
+      category: 'Lusophone Festivals',
       categoryPt: 'Festas Portuguesas',
-      culturalContext: 'Santos Populares are cherished Portuguese summer festivals',
+      culturalContext: 'Santos Populares are cherished Lusophone summer festivals',
       culturalContextPt: 'Santos Populares são queridas festas portuguesas de verão',
       popularity: 70,
       matchType: 'both'
@@ -170,7 +170,7 @@ export default function ConversationStarters({
       id: 'music_1',
       textEn: "Do you enjoy Fado? There's something so moving about it...",
       textPt: "Gostas de Fado? Há algo tão tocante nele...",
-      category: 'Portuguese Music',
+      category: 'Lusophone Music',
       categoryPt: 'Música Portuguesa',
       culturalContext: 'Fado represents the soul of Portuguese culture and identity',
       culturalContextPt: 'O Fado representa a alma da cultura e identidade portuguesa',
@@ -183,7 +183,7 @@ export default function ConversationStarters({
       id: 'london_1',
       textEn: "How long have you been in London? What's been your biggest adjustment?",
       textPt: "Há quanto tempo estás em Londres? Qual foi a tua maior adaptação?",
-      category: 'London Portuguese Life',
+      category: 'London Lusophone Life',
       categoryPt: 'Vida Portuguesa em Londres',
       culturalContext: 'Shared immigrant experiences create strong bonds',
       culturalContextPt: 'Experiências partilhadas de imigração criam laços fortes',
@@ -194,7 +194,7 @@ export default function ConversationStarters({
       id: 'london_2',
       textEn: "Favorite Portuguese-speaking community spot in London? I love discovering new places!",
       textPt: "Sítio favorito da comunidade de falantes de português em Londres? Adoro descobrir novos lugares!",
-      category: 'London Portuguese Life',
+      category: 'London Lusophone Life',
       categoryPt: 'Vida Portuguesa em Londres',
       culturalContext: 'Portuguese-speaking community spaces are vital for cultural connection',
       culturalContextPt: 'Espaços da comunidade de falantes de português são vitais para a conexão cultural',
@@ -319,7 +319,7 @@ export default function ConversationStarters({
         </div>
         <div className="flex-1">
           <h3 className="text-lg font-bold text-primary-900">
-            {t('messaging.conversation_starters') || (language === 'pt' ? 'Iniciadores de Conversa Portugueses' : 'Portuguese Conversation Starters')}
+            {t('messaging.conversation_starters') || (language === 'pt' ? 'Iniciadores de Conversa Portugueses' : 'Lusophone Conversation Starters')}
           </h3>
           <p className="text-sm text-primary-600">
             {language === 'pt' 

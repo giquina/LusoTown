@@ -88,7 +88,7 @@ export default function OnboardingFlowEnhanced({
 
   const isPortuguese = language === 'pt'
 
-  // Enhanced onboarding steps with Portuguese cultural context
+  // Enhanced onboarding steps with Lusophone cultural context
   const steps: OnboardingStep[] = [
     {
       id: 'welcome',
@@ -196,11 +196,11 @@ export default function OnboardingFlowEnhanced({
           labelPortuguese: 'O que mais lhe interessa? (Selecione todos os aplicáveis)',
           required: true,
           options: [
-            { value: 'cultural-events', label: 'Portuguese Cultural Events', labelPortuguese: 'Eventos Culturais Portugueses' },
+            { value: 'cultural-events', label: 'Lusophone Cultural Events', labelPortuguese: 'Eventos Culturais Portugueses' },
             { value: 'business-networking', label: 'Business Networking', labelPortuguese: 'Networking Empresarial' },
             { value: 'family-activities', label: 'Family Activities', labelPortuguese: 'Atividades Familiares' },
             { value: 'professional-development', label: 'Professional Development', labelPortuguese: 'Desenvolvimento Profissional' },
-            { value: 'food-and-dining', label: 'Portuguese Food & Dining', labelPortuguese: 'Comida e Restaurantes Portugueses' },
+            { value: 'food-and-dining', label: 'Lusophone Food & Dining', labelPortuguese: 'Comida e Restaurantes Portugueses' },
             { value: 'music-and-arts', label: 'Music & Arts', labelPortuguese: 'Música e Arte' },
             { value: 'sports', label: 'Sports & Recreation', labelPortuguese: 'Desportos e Recreação' },
             { value: 'language-learning', label: 'Language Learning', labelPortuguese: 'Aprendizagem de Idiomas' },
@@ -230,7 +230,7 @@ export default function OnboardingFlowEnhanced({
           options: [
             { value: 'portugal-born', label: 'Born in Portugal', labelPortuguese: 'Nascido em Portugal' },
             { value: 'brazil-born', label: 'Born in Brazil', labelPortuguese: 'Nascido no Brasil' },
-            { value: 'portuguese-heritage', label: 'Portuguese Heritage/Ancestry', labelPortuguese: 'Herança/Ascendência Portuguesa' },
+            { value: 'portuguese-heritage', label: 'Lusophone Heritage/Ancestry', labelPortuguese: 'Herança/Ascendência Portuguesa' },
             { value: 'partner-family', label: 'Partner/Family Connection', labelPortuguese: 'Conexão por Parceiro/Família' },
             { value: 'cultural-interest', label: 'Cultural Interest/Learning', labelPortuguese: 'Interesse Cultural/Aprendizagem' },
             { value: 'business-connection', label: 'Business/Professional Connection', labelPortuguese: 'Conexão Empresarial/Profissional' }
@@ -258,7 +258,7 @@ export default function OnboardingFlowEnhanced({
           labelPortuguese: 'Idioma preferido para interações comunitárias?',
           required: true,
           options: [
-            { value: 'portuguese-only', label: 'Portuguese only', labelPortuguese: 'Apenas português' },
+            { value: 'portuguese-only', label: 'Lusophone only', labelPortuguese: 'Apenas português' },
             { value: 'english-only', label: 'English only', labelPortuguese: 'Apenas inglês' },
             { value: 'both-languages', label: 'Both languages', labelPortuguese: 'Ambos os idiomas' },
             { value: 'depends-on-context', label: 'Depends on context', labelPortuguese: 'Depende do contexto' }
@@ -321,7 +321,7 @@ export default function OnboardingFlowEnhanced({
             { value: 'professional-growth', label: 'Professional growth & mentorship', labelPortuguese: 'Crescimento profissional e mentoria' },
             { value: 'family-integration', label: 'Help family integrate into United Kingdom life', labelPortuguese: 'Ajudar a família a integrar-se na vida do Reino Unido' },
             { value: 'give-back', label: 'Give back to the community', labelPortuguese: 'Retribuir à comunidade' },
-            { value: 'stay-connected', label: 'Stay connected to Portuguese roots', labelPortuguese: 'Manter-se conectado às raízes portuguesas' }
+            { value: 'stay-connected', label: 'Stay connected to Lusophone roots', labelPortuguese: 'Manter-se conectado às raízes portuguesas' }
           ]
         }
       ]

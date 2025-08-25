@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// Portuguese cultural push notification backend for LusoTown community platform
+// Lusophone cultural push notification backend for LusoTown community platform
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -218,7 +218,7 @@ async function sendWelcomeNotification(subscription: any, language: string = 'en
   }
 }
 
-// Portuguese cultural event notification scheduler
+// Lusophone cultural event notification scheduler
 async function schedulePortugueseCulturalNotifications() {
   const culturalEvents = [
     {
@@ -226,7 +226,7 @@ async function schedulePortugueseCulturalNotifications() {
       titlePT: 'Dia da Liberdade',
       titleEN: 'Freedom Day',
       bodyPT: 'Celebra a liberdade e democracia portuguesas em Londres',
-      bodyEN: 'Celebrate Portuguese freedom and democracy in London'
+      bodyEN: 'Celebrate Lusophone freedom and democracy in London'
     },
     {
       date: '2025-06-10',
@@ -245,7 +245,7 @@ async function schedulePortugueseCulturalNotifications() {
   ];
 
   // In production, schedule these notifications based on user timezone
-  console.log('[Push Subscription] Portuguese cultural events scheduled:', culturalEvents);
+  console.log('[Push Subscription] Lusophone cultural events scheduled:', culturalEvents);
 
   return culturalEvents;
 }

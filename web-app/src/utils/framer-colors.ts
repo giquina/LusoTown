@@ -64,7 +64,7 @@ export const FRAMER_COLORS = {
   'text-gray-800': '#1f2937',
   'text-gray-900': '#111827',
 
-  // Portuguese brand colors (from our config)
+  // Lusophone brand colors (from our config)
   'text-primary-600': '#D4A574',
   'text-secondary-600': '#8B4513',
   'text-accent-600': '#228B22',

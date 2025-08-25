@@ -49,10 +49,10 @@ function generateMatchTestimonials(heritage: any, geography: any): MatchTestimon
       timeframe: '18 months ago',
       category: 'Found Love',
       heritage_quote: `Encontrei não só o amor, mas alguém que entende a minha alma ${heritage?.identity?.name?.toLowerCase() || 'portuguesa'}.`,
-      english_translation: `I found not just love, but someone who understands my ${heritage?.identity?.name || 'Portuguese'} soul.`,
-      cultural_bond: `${mainTradition} celebration and shared nostalgia for ${heritage?.identity?.name || 'Portuguese'} traditions`,
+      english_translation: `I found not just love, but someone who understands my ${heritage?.identity?.name || 'Lusophone'} soul.`,
+      cultural_bond: `${mainTradition} celebration and shared nostalgia for ${heritage?.identity?.name || 'Lusophone'} traditions`,
       how_they_met: `Mutual match through cultural compatibility algorithm, met at HeritageTown's ${mainTradition} event`,
-      current_status: `Engaged, planning ${heritage?.identity?.name || 'Portuguese'} wedding with traditional music and ${diasporaCity} reception`
+      current_status: `Engaged, planning ${heritage?.identity?.name || 'Lusophone'} wedding with traditional music and ${diasporaCity} reception`
     },
     {
       id: 'business-1',
@@ -62,13 +62,13 @@ function generateMatchTestimonials(heritage: any, geography: any): MatchTestimon
       profileImage: getImageWithFallback('mariana-santos'),
       partnerName: 'João Pereira',
       partnerImage: getImageWithFallback('joao-pereira'),
-      story: `From ${mainCountry}'s business district to ${diasporaCity}'s financial towers, carrying MBA dreams and ${heritage?.identity?.name || 'Portuguese'} determination. Met João at HeritageTown's "${heritage?.identity?.name || 'Portuguese'} Professionals" breakfast - an entrepreneur struggling with the same cultural isolation in ${diasporaCity}'s business world. "We need to create something of our own," he said over traditional coffee. Our startup now connects 500+ ${heritage?.identity?.name || 'Portuguese'} SMEs across Europe.`,
+      story: `From ${mainCountry}'s business district to ${diasporaCity}'s financial towers, carrying MBA dreams and ${heritage?.identity?.name || 'Lusophone'} determination. Met João at HeritageTown's "${heritage?.identity?.name || 'Lusophone'} Professionals" breakfast - an entrepreneur struggling with the same cultural isolation in ${diasporaCity}'s business world. "We need to create something of our own," he said over traditional coffee. Our startup now connects 500+ ${heritage?.identity?.name || 'Lusophone'} SMEs across Europe.`,
       connectionType: 'Heritage Entrepreneurs',
       timeframe: '3 years ago',
       category: 'Business Partners',
       heritage_quote: `Dois ${heritage?.identity?.name?.toLowerCase() || 'portugueses'} em ${diasporaCity} podem conquistar a Europa inteira.`,
-      english_translation: `Two ${heritage?.identity?.name || 'Portuguese'} people in ${diasporaCity} can conquer all of Europe.`,
-      cultural_bond: `Shared entrepreneurial spirit and ${heritage?.identity?.name || 'Portuguese'} business ethics in global finance`,
+      english_translation: `Two ${heritage?.identity?.name || 'Lusophone'} people in ${diasporaCity} can conquer all of Europe.`,
+      cultural_bond: `Shared entrepreneurial spirit and ${heritage?.identity?.name || 'Lusophone'} business ethics in global finance`,
       how_they_met: 'Professional networking match through business interests filter',
       current_status: 'Business partners who raised £3.2M Series A, planning European expansion'
     },
@@ -80,14 +80,14 @@ function generateMatchTestimonials(heritage: any, geography: any): MatchTestimon
       profileImage: getImageWithFallback('beatriz-oliveira'),
       partnerName: 'Luciana Santos', 
       partnerImage: getImageWithFallback('luciana-santos'),
-      story: `From ${heritage?.geography?.relatedCountries?.[0]?.name || mainCountry} to ${diasporaCity}'s cultural scene, bringing diverse energy and ${heritage?.identity?.name || 'Portuguese'} heritage. Luciana connected through HeritageTown's "${heritage?.identity?.name || 'Portuguese'} Artists" network - a performer mixing traditional and modern sounds. "Let's show that our culture is universal," she proposed. Our collective performs monthly, blending traditional and contemporary ${heritage?.identity?.name || 'Portuguese'} arts.`,
+      story: `From ${heritage?.geography?.relatedCountries?.[0]?.name || mainCountry} to ${diasporaCity}'s cultural scene, bringing diverse energy and ${heritage?.identity?.name || 'Lusophone'} heritage. Luciana connected through HeritageTown's "${heritage?.identity?.name || 'Lusophone'} Artists" network - a performer mixing traditional and modern sounds. "Let's show that our culture is universal," she proposed. Our collective performs monthly, blending traditional and contemporary ${heritage?.identity?.name || 'Lusophone'} arts.`,
       connectionType: 'Cultural Voices',
       timeframe: '2 years ago',
       category: 'Cultural Connection',
       heritage_quote: `A cultura ${heritage?.identity?.name?.toLowerCase() || 'portuguesa'} não tem fronteiras - somos um só povo.`,
-      english_translation: `${heritage?.identity?.name || 'Portuguese'} culture has no borders - we are one people.`,
-      cultural_bond: `Shared ${heritage?.identity?.name || 'Portuguese'} cultural heritage spanning continents and communities`,
-      how_they_met: `Arts and culture match through creative interests and ${heritage?.identity?.name || 'Portuguese'} heritage`,
+      english_translation: `${heritage?.identity?.name || 'Lusophone'} culture has no borders - we are one people.`,
+      cultural_bond: `Shared ${heritage?.identity?.name || 'Lusophone'} cultural heritage spanning continents and communities`,
+      how_they_met: `Arts and culture match through creative interests and ${heritage?.identity?.name || 'Lusophone'} heritage`,
       current_status: `Cultural collective featured on BBC, performing monthly shows across ${diasporaCity}`
     }
   ]
@@ -241,7 +241,7 @@ export default function MatchTestimonials() {
                   "{testimonial.story}"
                 </blockquote>
 
-                {/* Portuguese Quote */}
+                {/* Lusophone Quote */}
                 <div className="bg-gradient-to-r from-secondary-50 via-accent-50 to-coral-50 p-3 rounded-xl border border-secondary-200 mb-4">
                   <blockquote className="text-secondary-800 font-medium text-center mb-2 text-sm">
                     "{testimonial.heritage_quote}"

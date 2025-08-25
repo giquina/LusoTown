@@ -291,7 +291,7 @@ export function PWAInstaller({
           aria-labelledby="pwa-installer-title"
           aria-describedby="pwa-installer-description"
         >
-          {/* Portuguese Heritage Accent */}
+          {/* Lusophone Heritage Accent */}
           <div 
             className="h-1 bg-gradient-to-r from-red-600 via-yellow-400 to-green-600"
             style={{

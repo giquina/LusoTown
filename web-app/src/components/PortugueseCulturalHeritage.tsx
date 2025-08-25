@@ -48,7 +48,7 @@ const culturalElements: CulturalElement[] = [
     descriptionPt: "Festivais tradicionais portugueses celebrando santos populares, cheios de música, dança, sardinhas grelhadas e espírito comunitário.",
     significance: "Community bonding and cultural preservation",
     whenCelebrated: "June (Santo António, São João, São Pedro)",
-    whereFound: ["Stockwell", "Borough Market", "Portuguese Cultural Centers"],
+    whereFound: ["Stockwell", "Borough Market", "Lusophone Cultural Centers"],
     funFact: {
       en: "In London, Santos Populares brings together Portuguese speakers from all backgrounds to celebrate under the June sky.",
       pt: "Em Londres, os Santos Populares juntam lusófonos de todas as origens para celebrar sob o céu de junho."
@@ -64,10 +64,10 @@ const culturalElements: CulturalElement[] = [
     region: "Portugal (Lisboa, Coimbra)",
     descriptionEn: "UNESCO-recognized Portuguese music genre expressing saudade, loss, and melancholy with guitar accompaniment.",
     descriptionPt: "Género musical português reconhecido pela UNESCO que expressa saudade, perda e melancolia com acompanhamento de guitarra.",
-    significance: "Soul of Portuguese emotional expression",
-    whereFound: ["Kentish Town", "Soho", "Camden", "Traditional Portuguese Restaurants"],
+    significance: "Soul of Lusophone emotional expression",
+    whereFound: ["Kentish Town", "Soho", "Camden", "Traditional Lusophone Restaurants"],
     funFact: {
-      en: "London's fado houses are where Portuguese hearts connect across generations and continents.",
+      en: "London's fado houses are where Lusophone hearts connect across generations and continents.",
       pt: "As casas de fado de Londres são onde os corações portugueses se conectam através de gerações e continentes."
     }
   },
@@ -79,12 +79,12 @@ const culturalElements: CulturalElement[] = [
     icon: "🧁",
     flag: "🇵🇹",
     region: "Portugal (originated in Belém)",
-    descriptionEn: "Iconic Portuguese custard tarts with flaky pastry and caramelized tops, a symbol of Portuguese culinary mastery.",
+    descriptionEn: "Iconic Lusophone custard tarts with flaky pastry and caramelized tops, a symbol of Lusophone culinary mastery.",
     descriptionPt: "Icónicos pastéis de nata portugueses com massa folhada e topo caramelizado, símbolo da maestria culinária portuguesa.",
     significance: "Culinary ambassador of Portugal worldwide",
-    whereFound: ["Borough Market", "Portuguese Bakeries", "Cultural Workshops"],
+    whereFound: ["Borough Market", "Lusophone Bakeries", "Cultural Workshops"],
     funFact: {
-      en: "The secret recipe from Pastéis de Belém has been guarded for over 180 years, but London's Portuguese bakers create their own magic.",
+      en: "The secret recipe from Pastéis de Belém has been guarded for over 180 years, but London's Lusophone bakers create their own magic.",
       pt: "A receita secreta dos Pastéis de Belém é guardada há mais de 180 anos, mas os pasteleiros portugueses de Londres criam a sua própria magia."
     }
   },
@@ -114,12 +114,12 @@ const culturalElements: CulturalElement[] = [
     icon: "💙",
     flag: "🇵🇹",
     region: "Portugal & Lusophone world",
-    descriptionEn: "Untranslatable Portuguese emotion combining longing, nostalgia, and bittersweet remembrance.",
+    descriptionEn: "Untranslatable Lusophone emotion combining longing, nostalgia, and bittersweet remembrance.",
     descriptionPt: "Emoção portuguesa intraduzível que combina saudade, nostalgia e recordações agridoces.",
-    significance: "Core of Portuguese emotional identity",
-    whereFound: ["Poetry circles", "Fado houses", "Portuguese gatherings", "Literature groups"],
+    significance: "Core of Lusophone emotional identity",
+    whereFound: ["Poetry circles", "Fado houses", "Lusophone gatherings", "Literature groups"],
     funFact: {
-      en: "Saudade is so uniquely Portuguese that it's considered one of the most difficult words to translate in any language.",
+      en: "Saudade is so uniquely Lusophone that it's considered one of the most difficult words to translate in any language.",
       pt: "A saudade é tão uniquamente portuguesa que é considerada uma das palavras mais difíceis de traduzir em qualquer idioma."
     }
   },
@@ -133,10 +133,10 @@ const culturalElements: CulturalElement[] = [
     region: "Minho, Portugal",
     descriptionEn: "Light, refreshing Portuguese wine perfect for celebrations and summer gatherings.",
     descriptionPt: "Vinho português leve e refrescante perfeito para celebrações e encontros de verão.",
-    significance: "Symbol of Portuguese conviviality",
+    significance: "Symbol of Lusophone conviviality",
     whereFound: ["Portuguese restaurants", "Wine bars", "Cultural tastings", "Community events"],
     funFact: {
-      en: "Vinho Verde means 'green wine' but refers to young wine, not the color - though it pairs perfectly with London's Portuguese picnics.",
+      en: "Vinho Verde means 'green wine' but refers to young wine, not the color - though it pairs perfectly with London's Lusophone picnics.",
       pt: "Vinho Verde significa vinho jovem, não a cor - embora combine perfeitamente com os piqueniques portugueses de Londres."
     }
   }
@@ -203,7 +203,7 @@ const PortugueseCulturalHeritage: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === "pt"
               ? "Descubra as tradições, sabores e histórias que definem a nossa identidade lusófona em Londres."
-              : "Discover the traditions, flavors, and stories that define our Portuguese identity in London."
+              : "Discover the traditions, flavors, and stories that define our Lusophone identity in London."
             }
           </p>
         </motion.div>

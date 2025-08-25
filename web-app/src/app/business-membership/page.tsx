@@ -312,7 +312,7 @@ export default function BusinessMembershipPage() {
         
         <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
           Access exclusive business opportunities across ALL Portuguese-speaking markets. 
-          From PALOP emerging markets to Brazilian enterprises, Portuguese EU connections to global Lusophone trade.
+          From PALOP emerging markets to Brazilian enterprises, Lusophone EU connections to global Lusophone trade.
         </p>
 
         {/* Business Benefits */}

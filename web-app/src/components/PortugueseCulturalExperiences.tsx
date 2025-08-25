@@ -61,18 +61,18 @@ const culturalExperiences: CulturalExperience[] = [
     descriptionEn: "Beautiful tile art workshops and cultural education exploring Portugal's stunning azulejo tradition. Learn to appreciate and create these iconic blue and white masterpieces.",
     descriptionPt: "Belas oficinas de arte de azulejos e educação cultural explorando a deslumbrante tradição portuguesa dos azulejos. Aprenda a apreciar e criar estas icónicas obras-primas azuis e brancas.",
     culturalDepth: {
-      en: "Azulejos tell the story of Portugal through ceramic art. These workshops connect you to centuries of Portuguese artistic tradition while developing your own creative skills.",
+      en: "Azulejos tell the story of Portugal through ceramic art. These workshops connect you to centuries of Lusophone artistic tradition while developing your own creative skills.",
       pt: "Os azulejos contam a história de Portugal através da arte cerâmica. Estas oficinas conectam-no a séculos de tradição artística portuguesa enquanto desenvolve as suas próprias habilidades criativas."
     },
-    londonVenues: ["Portuguese Cultural Centre", "Art studios in Stockwell", "Community centres", "Portuguese museums"],
+    londonVenues: ["Lusophone Cultural Centre", "Art studios in Stockwell", "Community centres", "Lusophone museums"],
     typicalSchedule: "Saturday afternoons, 2pm - 5pm",
     learningOutcomes: {
-      en: "Understand azulejo history, learn traditional patterns, develop appreciation for Portuguese ceramic art, and create your own tile masterpiece.",
+      en: "Understand azulejo history, learn traditional patterns, develop appreciation for Lusophone ceramic art, and create your own tile masterpiece.",
       pt: "Compreender a história dos azulejos, aprender padrões tradicionais, desenvolver apreciação pela arte cerâmica portuguesa e criar a sua própria obra-prima em azulejo."
     },
     skillsGained: ["Ceramic painting", "Pattern design", "Cultural history", "Artistic appreciation", "Traditional techniques"],
     culturalInsight: {
-      en: "Azulejos represent Portuguese resilience and beauty - they've adorned buildings for centuries, telling stories and preserving culture through art.",
+      en: "Azulejos represent Lusophone resilience and beauty - they've adorned buildings for centuries, telling stories and preserving culture through art.",
       pt: "Os azulejos representam a resistência e beleza portuguesas - adornam edifícios há séculos, contando histórias e preservando cultura através da arte."
     },
     communityAspect: ["Intergenerational learning", "Cultural preservation", "Artistic sharing", "Community pride", "Heritage continuation"],
@@ -80,106 +80,106 @@ const culturalExperiences: CulturalExperience[] = [
   },
   {
     id: "literature_circles",
-    titleEn: "Portuguese Literature Circles - Pessoa, Saramago & Cultural Discussions",
+    titleEn: "Lusophone Literature Circles - Pessoa, Saramago & Cultural Discussions",
     titlePt: "Círculos de Literatura Portuguesa - Pessoa, Saramago & Discussões Culturais",
     category: "literature",
     experienceLevel: "intermediate",
     duration: "1.5-2 hours",
     icon: "📚",
-    descriptionEn: "Engaging discussions of Portuguese literature masters like Fernando Pessoa and José Saramago in community settings that build deep cultural understanding and intellectual connections.",
+    descriptionEn: "Engaging discussions of Lusophone literature masters like Fernando Pessoa and José Saramago in community settings that build deep cultural understanding and intellectual connections.",
     descriptionPt: "Discussões envolventes de mestres da literatura portuguesa como Fernando Pessoa e José Saramago em ambientes comunitários que constroem compreensão cultural profunda e conexões intelectuais.",
     culturalDepth: {
-      en: "Portuguese literature circles explore the profound depths of the Portuguese soul through works that have shaped global literature and express universal human experiences.",
+      en: "Lusophone literature circles explore the profound depths of the Lusophone soul through works that have shaped global literature and express universal human experiences.",
       pt: "Os círculos de literatura portuguesa exploram as profundidades profundas da alma portuguesa através de obras que moldaram a literatura global e expressam experiências humanas universais."
     },
-    londonVenues: ["Portuguese libraries", "Bookshops in Stockwell", "Cultural centres", "Private reading groups", "University spaces"],
+    londonVenues: ["Lusophone libraries", "Bookshops in Stockwell", "Cultural centres", "Private reading groups", "University spaces"],
     typicalSchedule: "Thursday evenings, 7pm - 9pm",
     learningOutcomes: {
-      en: "Deepen understanding of Portuguese literature, engage in intellectual discourse, connect with Portuguese cultural identity, and discover universal themes.",
+      en: "Deepen understanding of Lusophone literature, engage in intellectual discourse, connect with Lusophone cultural identity, and discover universal themes.",
       pt: "Aprofundar a compreensão da literatura portuguesa, envolver-se em discurso intelectual, conectar-se com a identidade cultural portuguesa e descobrir temas universais."
     },
     skillsGained: ["Literary analysis", "Critical thinking", "Cultural understanding", "Discussion skills", "Portuguese language"],
     culturalInsight: {
-      en: "Portuguese literature captures the essence of saudade and human experience, offering profound insights into the Portuguese worldview and universal emotions.",
+      en: "Lusophone literature captures the essence of saudade and human experience, offering profound insights into the Lusophone worldview and universal emotions.",
       pt: "A literatura portuguesa captura a essência da saudade e experiência humana, oferecendo insights profundos sobre a visão de mundo portuguesa e emoções universais."
     },
     communityAspect: ["Intellectual community", "Cultural discussion", "Shared reading", "Educational growth", "Literary appreciation"],
-    materialsCovered: ["Fernando Pessoa", "José Saramago", "Modern Portuguese authors", "Cultural themes", "Literary movements"]
+    materialsCovered: ["Fernando Pessoa", "José Saramago", "Modern Lusophone authors", "Cultural themes", "Literary movements"]
   },
   {
     id: "traditional_crafts",
-    titleEn: "Traditional Portuguese Crafts - Pottery, Weaving & Artisan Workshops",
+    titleEn: "Traditional Lusophone Crafts - Pottery, Weaving & Artisan Workshops",
     titlePt: "Artesanato Tradicional Português - Cerâmica, Tecelagem & Oficinas Artesanais",
     category: "crafts",
     experienceLevel: "beginner",
     duration: "3-4 hours",
     icon: "🏺",
-    descriptionEn: "Hands-on workshops in traditional Portuguese crafts including pottery, weaving, and artisan techniques that preserve ancient skills while creating beautiful, functional art.",
+    descriptionEn: "Hands-on workshops in traditional Lusophone crafts including pottery, weaving, and artisan techniques that preserve ancient skills while creating beautiful, functional art.",
     descriptionPt: "Oficinas práticas em artesanato tradicional português incluindo cerâmica, tecelagem e técnicas artesanais que preservam habilidades antigas enquanto criam arte bela e funcional.",
     culturalDepth: {
-      en: "Traditional crafts connect you to centuries of Portuguese artisan heritage, learning skills passed down through generations while creating meaningful objects with your hands.",
+      en: "Traditional crafts connect you to centuries of Lusophone artisan heritage, learning skills passed down through generations while creating meaningful objects with your hands.",
       pt: "O artesanato tradicional conecta-o a séculos de herança artesanal portuguesa, aprendendo habilidades transmitidas através de gerações enquanto cria objetos significativos com as suas mãos."
     },
-    londonVenues: ["Artisan studios", "Portuguese centres", "Craft workshops", "Community spaces", "Cultural festivals"],
+    londonVenues: ["Artisan studios", "Lusophone centres", "Craft workshops", "Community spaces", "Cultural festivals"],
     typicalSchedule: "Saturday workshops, 10am - 2pm",
     learningOutcomes: {
-      en: "Master traditional techniques, create functional art pieces, understand cultural significance of crafts, and connect with Portuguese artisan heritage.",
+      en: "Master traditional techniques, create functional art pieces, understand cultural significance of crafts, and connect with Lusophone artisan heritage.",
       pt: "Dominar técnicas tradicionais, criar peças de arte funcional, compreender o significado cultural do artesanato e conectar-se com a herança artesanal portuguesa."
     },
     skillsGained: ["Pottery techniques", "Weaving skills", "Traditional patterns", "Hand craftsmanship", "Cultural appreciation"],
     culturalInsight: {
-      en: "Portuguese crafts reflect the practical beauty of Portuguese culture - functional objects created with care, skill, and artistic sensibility passed through generations.",
+      en: "Lusophone crafts reflect the practical beauty of Portuguese culture - functional objects created with care, skill, and artistic sensibility passed through generations.",
       pt: "O artesanato português reflete a beleza prática da cultura portuguesa - objetos funcionais criados com cuidado, habilidade e sensibilidade artística transmitida através de gerações."
     },
     communityAspect: ["Skill sharing", "Artisan community", "Cultural preservation", "Creative expression", "Intergenerational teaching"],
-    materialsCovered: ["Traditional pottery", "Portuguese weaving", "Regional techniques", "Cultural symbolism", "Modern applications"]
+    materialsCovered: ["Traditional pottery", "Lusophone weaving", "Regional techniques", "Cultural symbolism", "Modern applications"]
   },
   {
     id: "portuguese_cinema",
-    titleEn: "Portuguese Cinema Nights - Cultural Film Screenings",
+    titleEn: "Lusophone Cinema Nights - Cultural Film Screenings",
     titlePt: "Noites de Cinema Português - Exibições de Filmes Culturais",
     category: "cinema",
     experienceLevel: "all_levels",
     duration: "2.5-3 hours",
     icon: "🎬",
-    descriptionEn: "Cultural film screenings building community through Portuguese cinema, exploring contemporary and classic films that showcase Portuguese storytelling and cultural perspectives.",
+    descriptionEn: "Cultural film screenings building community through Lusophone cinema, exploring contemporary and classic films that showcase Lusophone storytelling and cultural perspectives.",
     descriptionPt: "Exibições de filmes culturais construindo comunidade através do cinema português, explorando filmes contemporâneos e clássicos que mostram narrativa portuguesa e perspectivas culturais.",
     culturalDepth: {
-      en: "Portuguese cinema nights create cultural dialogue through visual storytelling, connecting London's Portuguese-speaking community while introducing others to Portuguese perspectives and experiences.",
+      en: "Lusophone cinema nights create cultural dialogue through visual storytelling, connecting London's Portuguese-speaking community while introducing others to Lusophone perspectives and experiences.",
       pt: "As noites de cinema português criam diálogo cultural através de narrativa visual, conectando a comunidade de falantes de português de Londres enquanto introduz outros às perspectivas e experiências portuguesas."
     },
-    londonVenues: ["Community cinemas", "Portuguese centres", "Cultural venues", "Universities", "Private screenings"],
+    londonVenues: ["Community cinemas", "Lusophone centres", "Cultural venues", "Universities", "Private screenings"],
     typicalSchedule: "Monthly Friday evenings, 7pm - 10pm",
     learningOutcomes: {
-      en: "Discover Portuguese filmmaking, understand cultural themes, engage in post-film discussions, and connect with Portuguese artistic expression through cinema.",
+      en: "Discover Lusophone filmmaking, understand cultural themes, engage in post-film discussions, and connect with Lusophone artistic expression through cinema.",
       pt: "Descobrir o cinema português, compreender temas culturais, envolver-se em discussões pós-filme e conectar-se com a expressão artística portuguesa através do cinema."
     },
-    skillsGained: ["Film appreciation", "Cultural analysis", "Discussion skills", "Portuguese context", "Artistic understanding"],
+    skillsGained: ["Film appreciation", "Cultural analysis", "Discussion skills", "Lusophone context", "Artistic understanding"],
     culturalInsight: {
-      en: "Portuguese cinema reflects the Portuguese experience with honesty and artistry, offering windows into Portuguese life, history, and contemporary challenges.",
+      en: "Lusophone cinema reflects the Lusophone experience with honesty and artistry, offering windows into Lusophone life, history, and contemporary challenges.",
       pt: "O cinema português reflete a experiência portuguesa com honestidade e arte, oferecendo janelas para a vida, história e desafios contemporâneos portugueses."
     },
     communityAspect: ["Cultural dialogue", "Community viewing", "Shared experience", "Educational discussion", "Cultural bridge-building"],
-    materialsCovered: ["Contemporary Portuguese films", "Classic cinema", "Documentary works", "Cultural themes", "Film industry history"]
+    materialsCovered: ["Contemporary Lusophone films", "Classic cinema", "Documentary works", "Cultural themes", "Film industry history"]
   },
   {
     id: "heritage_walking_tours",
-    titleEn: "Heritage Walking Tours - Exploring Portuguese Influence in United Kingdom Cities",
+    titleEn: "Heritage Walking Tours - Exploring Lusophone Influence in United Kingdom Cities",
     titlePt: "Tours de Herança a Pé - Explorando Influência Portuguesa em Cidades do Reino Unido",
     category: "walking_tours",
     experienceLevel: "all_levels",
     duration: "2-3 hours",
     icon: "🚶",
-    descriptionEn: "Guided walks exploring Portuguese historical influence and contemporary presence in United Kingdom cities, discovering hidden stories and cultural connections throughout London and beyond.",
+    descriptionEn: "Guided walks exploring Lusophone historical influence and contemporary presence in United Kingdom cities, discovering hidden stories and cultural connections throughout London and beyond.",
     descriptionPt: "Caminhadas guiadas explorando a influência histórica portuguesa e presença contemporânea em cidades do Reino Unido, descobrindo histórias escondidas e conexões culturais por Londres e além.",
     culturalDepth: {
-      en: "Heritage tours reveal the deep Portuguese connections to British history, from maritime exploration to modern communities, uncovering stories often hidden in plain sight.",
+      en: "Heritage tours reveal the deep Lusophone connections to British history, from maritime exploration to modern communities, uncovering stories often hidden in plain sight.",
       pt: "Os tours de herança revelam as conexões portuguesas profundas à história britânica, desde exploração marítima a comunidades modernas, descobrindo histórias frequentemente escondidas à vista."
     },
-    londonVenues: ["Historic London areas", "Portuguese neighborhoods", "Maritime museums", "Cultural landmarks", "Community areas"],
+    londonVenues: ["Historic London areas", "Lusophone neighborhoods", "Maritime museums", "Cultural landmarks", "Community areas"],
     typicalSchedule: "Sunday afternoons, 2pm - 5pm",
     learningOutcomes: {
-      en: "Discover Portuguese historical presence, understand community development, explore cultural landmarks, and appreciate Portuguese contributions to British society.",
+      en: "Discover Lusophone historical presence, understand community development, explore cultural landmarks, and appreciate Lusophone contributions to British society.",
       pt: "Descobrir presença histórica portuguesa, compreender desenvolvimento comunitário, explorar marcos culturais e apreciar contribuições portuguesas para a sociedade britânica."
     },
     skillsGained: ["Historical knowledge", "Cultural awareness", "Walking exploration", "Community understanding", "Heritage appreciation"],
@@ -188,31 +188,31 @@ const culturalExperiences: CulturalExperience[] = [
       pt: "Os tours de herança portuguesa mostram como a cultura portuguesa se entrelaçou na sociedade britânica, criando conexões duradouras entre duas nações marítimas."
     },
     communityAspect: ["Historical education", "Community pride", "Cultural sharing", "Neighborhood exploration", "Heritage preservation"],
-    materialsCovered: ["Historical sites", "Portuguese immigration", "Cultural landmarks", "Community development", "Contemporary presence"]
+    materialsCovered: ["Historical sites", "Lusophone immigration", "Cultural landmarks", "Community development", "Contemporary presence"]
   },
   {
     id: "art_workshops",
-    titleEn: "Portuguese Art Workshops - Creative Expression & Cultural Learning",
+    titleEn: "Lusophone Art Workshops - Creative Expression & Cultural Learning",
     titlePt: "Oficinas de Arte Portuguesa - Expressão Criativa & Aprendizagem Cultural",
     category: "art_workshops",
     experienceLevel: "beginner",
     duration: "2-4 hours",
     icon: "🖌️",
-    descriptionEn: "Creative workshops exploring Portuguese artistic traditions through hands-on practice, combining cultural education with artistic expression in supportive community environments.",
+    descriptionEn: "Creative workshops exploring Lusophone artistic traditions through hands-on practice, combining cultural education with artistic expression in supportive community environments.",
     descriptionPt: "Oficinas criativas explorando tradições artísticas portuguesas através de prática prática, combinando educação cultural com expressão artística em ambientes comunitários de apoio.",
     culturalDepth: {
-      en: "Art workshops provide hands-on connection to Portuguese creative traditions, allowing personal expression while learning cultural techniques and artistic heritage.",
+      en: "Art workshops provide hands-on connection to Lusophone creative traditions, allowing personal expression while learning cultural techniques and artistic heritage.",
       pt: "As oficinas de arte proporcionam conexão prática às tradições criativas portuguesas, permitindo expressão pessoal enquanto se aprende técnicas culturais e herança artística."
     },
-    londonVenues: ["Art studios", "Community centres", "Portuguese institutions", "Creative spaces", "Cultural workshops"],
+    londonVenues: ["Art studios", "Community centres", "Lusophone institutions", "Creative spaces", "Cultural workshops"],
     typicalSchedule: "Weekend workshops, flexible timing",
     learningOutcomes: {
-      en: "Develop artistic skills, understand Portuguese art traditions, create personal artwork, and connect with creative Portuguese-speaking community members.",
+      en: "Develop artistic skills, understand Lusophone art traditions, create personal artwork, and connect with creative Portuguese-speaking community members.",
       pt: "Desenvolver habilidades artísticas, compreender tradições de arte portuguesa, criar obra de arte pessoal e conectar-se com membros criativos da comunidade de falantes de português."
     },
     skillsGained: ["Artistic techniques", "Cultural patterns", "Creative expression", "Traditional methods", "Contemporary applications"],
     culturalInsight: {
-      en: "Portuguese art workshops show how creativity and culture intertwine, with traditional techniques providing foundation for contemporary artistic expression.",
+      en: "Lusophone art workshops show how creativity and culture intertwine, with traditional techniques providing foundation for contemporary artistic expression.",
       pt: "As oficinas de arte portuguesa mostram como criatividade e cultura se entrelaçam, com técnicas tradicionais fornecendo base para expressão artística contemporânea."
     },
     communityAspect: ["Creative community", "Artistic sharing", "Cultural expression", "Skill development", "Personal growth"],
@@ -291,7 +291,7 @@ const PortugueseCulturalExperiences: React.FC = () => {
           <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full px-6 py-3 mb-6">
             <AcademicCapIcon className="w-5 h-5 text-blue-600 mr-2" />
             <span className="text-blue-700 font-medium">
-              {language === "pt" ? "Experiências Culturais Portuguesas" : "Portuguese Cultural Experiences"}
+              {language === "pt" ? "Experiências Culturais Portuguesas" : "Lusophone Cultural Experiences"}
             </span>
           </div>
 

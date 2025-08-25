@@ -16,7 +16,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/context/LanguageContext';
 
-// Live Attendance Counter with Portuguese cultural context
+// Live Attendance Counter with Lusophone cultural context
 interface LiveAttendanceCounterProps {
   eventId: string;
   currentAttendees: number;
@@ -52,7 +52,7 @@ export function LiveAttendanceCounter({
         setDisplayCount(newCount);
         
         if (change > 0 && showRecentJoins) {
-          // Simulate Portuguese names joining
+          // Simulate Lusophone names joining
           const portugueseNames = [
             'Maria Silva', 'João Santos', 'Ana Costa', 'Pedro Oliveira', 
             'Catarina Ferreira', 'Miguel Rodrigues', 'Sofia Pereira', 'Tiago Almeida',
@@ -197,7 +197,7 @@ export function LiveAttendanceCounter({
   );
 }
 
-// Portuguese Cultural Engagement Metrics
+// Lusophone Cultural Engagement Metrics
 interface CulturalEngagementProps {
   eventId: string;
   likes: number;
@@ -331,7 +331,7 @@ export function CulturalEngagementMetrics({
         </div>
       </div>
 
-      {/* Popular with Portuguese Community Badge */}
+      {/* Popular with Lusophone Community Badge */}
       {engagementScore >= 7 && (
         <motion.div
           className="mt-4 p-3 bg-gradient-to-r from-red-50 to-green-50 border border-red-200 rounded-xl"
@@ -344,7 +344,7 @@ export function CulturalEngagementMetrics({
             <span className="text-sm font-semibold text-red-700">
               {language === 'pt' 
                 ? 'Popular na Comunidade Portuguesa'
-                : 'Popular with Portuguese Community'
+                : 'Popular with Lusophone Community'
               }
             </span>
           </div>
@@ -354,7 +354,7 @@ export function CulturalEngagementMetrics({
   );
 }
 
-// Real-time Activity Feed for Portuguese Events
+// Real-time Activity Feed for Lusophone Events
 interface ActivityItem {
   id: string;
   type: 'join' | 'like' | 'comment' | 'share';
@@ -379,7 +379,7 @@ export function RealTimeActivityFeed({
   const { language } = useLanguage();
   const [activities, setActivities] = useState<ActivityItem[]>([]);
 
-  // Simulate real-time Portuguese community activity
+  // Simulate real-time Lusophone community activity
   useEffect(() => {
     if (!autoRefresh) return;
 
@@ -392,15 +392,15 @@ export function RealTimeActivityFeed({
       ];
 
       const eventTitles = [
-        'Fado Night at Camden Portuguese Club',
-        'Portuguese Wine Tasting in Stockwell',
+        'Fado Night at Camden Lusophone Club',
+        'Lusophone Wine Tasting in Stockwell',
         'Santos Populares Celebration',
-        'Portuguese Business Networking',
+        'Lusophone Business Networking',
         'Cape Verdean Music Night',
         'Brazilian Festa Junina',
         'Angolan Cultural Evening',
         'Mozambican Heritage Showcase',
-        'Portuguese Cooking Class',
+        'Lusophone Cooking Class',
         'Lusophone Literature Club'
       ];
 
@@ -565,7 +565,7 @@ export function RealTimeActivityFeed({
   );
 }
 
-// Portuguese Community Trust Indicators
+// Lusophone Community Trust Indicators
 interface CommunityTrustIndicatorsProps {
   verifiedHost: boolean;
   communityRating: number;

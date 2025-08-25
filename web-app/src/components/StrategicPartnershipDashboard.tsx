@@ -172,7 +172,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
             <p className="text-gray-600 mt-1">
               {language === 'pt' 
                 ? 'Gestão abrangente de parcerias institucionais portuguesas'
-                : 'Comprehensive management of Portuguese institutional partnerships'
+                : 'Comprehensive management of Lusophone institutional partnerships'
               }
             </p>
           </div>
@@ -582,7 +582,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
                 <p className="text-sm text-blue-700 mb-2">
                   {language === 'pt' 
                     ? `Rede universitária expandida para 8 instituições servindo ${communityStats.streamingHours} estudantes portugueses`
-                    : `University network expanded to 8 institutions serving ${communityStats.streamingHours} Portuguese students`
+                    : `University network expanded to 8 institutions serving ${communityStats.streamingHours} Lusophone students`
                   }
                 </p>
                 <div className="text-xs text-blue-600">

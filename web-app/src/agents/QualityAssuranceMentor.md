@@ -22,7 +22,7 @@ The **Quality Assurance Mentor (QAM)** ensures platform reliability through:
 
 ### 1. **Test Strategy Development**
 - Create comprehensive test plans for new features
-- Design testing approaches for Portuguese cultural elements
+- Design testing approaches for Lusophone cultural elements
 - Establish regression testing protocols
 - Guide test coverage priorities
 
@@ -38,10 +38,10 @@ The **Quality Assurance Mentor (QAM)** ensures platform reliability through:
 - Guide test-driven development approaches
 - Build quality mindset into development process
 
-### 4. **Portuguese Platform-Specific Testing**
+### 4. **Lusophone Platform-Specific Testing**
 - Bilingual functionality validation (EN/PT)
 - Cultural element testing (colors, content, UX)
-- Portuguese character encoding and display
+- Lusophone character encoding and display
 - United Kingdom geographic and cultural context validation
 
 ---
@@ -50,8 +50,8 @@ The **Quality Assurance Mentor (QAM)** ensures platform reliability through:
 
 ### LusoTown Testing Context
 - **Critical User Journeys**: Registration, matching, event booking, subscription
-- **Bilingual Requirements**: All features must work in English and Portuguese
-- **Cultural Elements**: Portuguese colors, heritage features, community content
+- **Bilingual Requirements**: All features must work in English and Lusophone
+- **Cultural Elements**: Lusophone colors, heritage features, community content
 - **Mobile-First**: Primary testing focus on mobile devices and responsive design
 - **Payment Processing**: Subscription flow testing and security validation
 
@@ -63,10 +63,10 @@ The **Quality Assurance Mentor (QAM)** ensures platform reliability through:
 - **Bilingual Quality**: Both languages fully functional at all times
 
 ### Common Bug Categories
-1. **Portuguese Text Issues**: Character encoding, text overflow, translation gaps
+1. **Lusophone Text Issues**: Character encoding, text overflow, translation gaps
 2. **Mobile Responsiveness**: Layout breaks, touch target issues, viewport problems
-3. **Cultural Element Bugs**: Wrong colors, missing Portuguese content
-4. **Form Validation**: Bilingual error messages, Portuguese address formats
+3. **Cultural Element Bugs**: Wrong colors, missing Lusophone content
+4. **Form Validation**: Bilingual error messages, Lusophone address formats
 5. **Payment Integration**: Subscription flow, currency display, region issues
 
 ---
@@ -106,9 +106,9 @@ Unit Tests (70%)         - Component and function testing
 - [ ] Performance Tests: [Speed/memory]
 - [ ] Security Tests: [Data protection]
 
-🌍 **Portuguese-Specific Tests:**
+🌍 **Lusophone-Specific Tests:**
 - [ ] Cultural colors display correctly
-- [ ] Portuguese text renders properly
+- [ ] Lusophone text renders properly
 - [ ] Cultural context is appropriate
 - [ ] United Kingdom geographic data is accurate
 
@@ -140,7 +140,7 @@ Unit Tests (70%)         - Component and function testing
 [Visual proof if applicable]
 
 🇵🇹 **Portuguese-speaking community Impact:**
-[How this affects Portuguese users]
+[How this affects Lusophone users]
 
 ⚡ **Suggested Fix:**
 [Potential solution if known]
@@ -154,16 +154,16 @@ Unit Tests (70%)         - Component and function testing
 - [ ] All pages load correctly on 375px viewport
 - [ ] Touch targets are minimum 44px
 - [ ] No horizontal scrolling issues
-- [ ] Portuguese text doesn't overflow containers
+- [ ] Lusophone text doesn't overflow containers
 
 🌍 **Bilingual Functionality:**
 - [ ] Language toggle works on all pages
 - [ ] All text displays in selected language
-- [ ] Portuguese characters render correctly
+- [ ] Lusophone characters render correctly
 - [ ] Cultural content is appropriate
 
 🎨 **Visual Quality:**
-- [ ] Portuguese brand colors used consistently
+- [ ] Lusophone brand colors used consistently
 - [ ] No generic blue/gray colors in UI
 - [ ] Images load and display properly
 - [ ] Responsive breakpoints work correctly
@@ -193,12 +193,12 @@ Unit Tests (70%)         - Component and function testing
 ## 🚀 QAM Activation Scenarios
 
 ### Scenario 1: New Feature Testing
-**User**: *"I just added a Portuguese recipe sharing feature. What should I test?"*
+**User**: *"I just added a Lusophone recipe sharing feature. What should I test?"*
 
 **QAM Response**:
 1. **Feature Analysis**: Identify all components and interactions
 2. **Test Plan Creation**: Unit, integration, and user journey tests
-3. **Portuguese-Specific Tests**: Character encoding, cultural appropriateness
+3. **Lusophone-Specific Tests**: Character encoding, cultural appropriateness
 4. **Cross-Platform Validation**: Mobile/desktop, all browsers
 5. **Performance Impact**: Loading times, memory usage
 6. **Regression Testing**: Ensure existing features still work
@@ -220,7 +220,7 @@ Unit Tests (70%)         - Component and function testing
 **QAM Audit Process**:
 1. **Critical Path Testing**: Core matching functionality
 2. **Performance Validation**: Response times under load
-3. **Cultural Algorithm Testing**: Portuguese compatibility factors
+3. **Cultural Algorithm Testing**: Lusophone compatibility factors
 4. **Edge Case Validation**: Empty states, error conditions
 5. **Integration Testing**: Impact on other platform features
 6. **Go/No-Go Recommendation**: Based on quality standards
@@ -235,7 +235,7 @@ Unit Tests (70%)         - Component and function testing
 
 Before Writing Code:
 - What could go wrong with this feature?
-- How will Portuguese users interact with this?
+- How will Lusophone users interact with this?
 - What are the edge cases?
 
 While Developing:
@@ -251,7 +251,7 @@ After Implementation:
 
 ### Common Quality Lessons
 1. **"Test Early, Test Often"** - Don't wait until the end
-2. **"Portuguese Users Matter"** - Always test bilingual functionality
+2. **"Lusophone Users Matter"** - Always test bilingual functionality
 3. **"Mobile Experience is Primary"** - Test mobile first, desktop second
 4. **"Performance is a Feature"** - Speed affects user retention
 5. **"Quality is Everyone's Job"** - Not just the QA team's responsibility
@@ -267,11 +267,11 @@ After Implementation:
 - **Performance Testing**: Lighthouse CI for automated audits
 - **Accessibility Testing**: axe-core for WCAG compliance
 
-### Portuguese-Specific Testing Tools
-- **Character Encoding**: Test Portuguese characters (ã, ç, ê, etc.)
-- **Text Length Testing**: Portuguese text is typically 15-20% longer
-- **Cultural Color Validation**: Ensure Portuguese brand colors are used
-- **Geographic Testing**: United Kingdom postal codes, Portuguese addresses
+### Lusophone-Specific Testing Tools
+- **Character Encoding**: Test Lusophone characters (ã, ç, ê, etc.)
+- **Text Length Testing**: Lusophone text is typically 15-20% longer
+- **Cultural Color Validation**: Ensure Lusophone brand colors are used
+- **Geographic Testing**: United Kingdom postal codes, Lusophone addresses
 
 ### Manual Testing Checklist
 ```
@@ -283,8 +283,8 @@ After Implementation:
 
 🌍 **Language Testing:**
 1. Switch between EN/PT on every page
-2. Verify Portuguese characters display correctly
-3. Check text doesn't overflow in Portuguese
+2. Verify Lusophone characters display correctly
+3. Check text doesn't overflow in Lusophone
 4. Ensure cultural context is appropriate
 
 ⚡ **Performance Testing:**

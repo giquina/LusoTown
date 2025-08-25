@@ -46,7 +46,7 @@ export default function PrivacyDashboard() {
           <p className="text-lg text-primary-700 max-w-3xl mx-auto">
             {language === 'pt' 
               ? 'Gerir as suas definições de privacidade com sensibilidade cultural portuguesa'
-              : 'Manage your privacy settings with Portuguese cultural sensitivity'
+              : 'Manage your privacy settings with Lusophone cultural sensitivity'
             }
           </p>
         </div>
@@ -158,7 +158,7 @@ function PrivacyOverview() {
               <p className="text-primary-700">
                 {language === 'pt' 
                   ? 'As suas definições de privacidade seguem as melhores práticas portuguesas'
-                  : 'Your privacy settings follow Portuguese best practices'
+                  : 'Your privacy settings follow Lusophone best practices'
                 }
               </p>
             </div>
@@ -276,7 +276,7 @@ function PrivacyPermissions() {
         {
           key: 'regionalPreferences',
           name: language === 'pt' ? 'Preferências Regionais' : 'Regional Preferences',
-          description: language === 'pt' ? 'Personalização baseada na região portuguesa' : 'Personalization based on Portuguese region',
+          description: language === 'pt' ? 'Personalização baseada na região portuguesa' : 'Personalization based on Lusophone region',
           enabled: aiConsent.regionalPreferences,
           critical: false
         }
@@ -562,7 +562,7 @@ function CulturalPreferences() {
               <div className="text-sm text-primary-700">
                 {language === 'pt' 
                   ? 'Ajudar a preservar dialetos regionais portugueses e variações linguísticas'
-                  : 'Help preserve Portuguese regional dialects and linguistic variations'
+                  : 'Help preserve Lusophone regional dialects and linguistic variations'
                 }
               </div>
             </div>
@@ -645,7 +645,7 @@ function PrivacyRights() {
           </div>
           <div>
             <h4 className="font-medium text-primary-900">
-              {language === 'pt' ? 'Apoio em Português' : 'Portuguese Support'}
+              {language === 'pt' ? 'Apoio em Português' : 'Lusophone Support'}
             </h4>
             <p className="text-primary-700">privacidade@lusotown.com</p>
             <p className="text-primary-700">

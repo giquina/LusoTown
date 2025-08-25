@@ -76,11 +76,11 @@ export default function UserPathwayAssessment({
       id: "student",
       name: "Student",
       namePortuguese: "Estudante",
-      description: "Perfect for Portuguese students in London universities",
+      description: "Perfect for Lusophone students in London universities",
       descriptionPortuguese:
         "Perfeito para estudantes portugueses nas universidades de Londres",
       detailedDescription:
-        "Get comprehensive support for academic life, housing, and social connections with other Portuguese students across London's universities.",
+        "Get comprehensive support for academic life, housing, and social connections with other Lusophone students across London's universities.",
       detailedDescriptionPortuguese:
         "Obtenha apoio abrangente para a vida académica, alojamento e conexões sociais com outros estudantes portugueses nas universidades de Londres.",
       icon: GraduationCap,
@@ -97,7 +97,7 @@ export default function UserPathwayAssessment({
         "University-specific housing guidance",
         "Academic support network",
         "Student discount connections",
-        "Portuguese study groups",
+        "Lusophone study groups",
       ],
       benefitsPortuguese: [
         "Orientação de alojamento específica da universidade",
@@ -122,11 +122,11 @@ export default function UserPathwayAssessment({
       id: "professional",
       name: "Professional",
       namePortuguese: "Profissional",
-      description: "Ideal for Portuguese professionals working in London",
+      description: "Ideal for Lusophone professionals working in London",
       descriptionPortuguese:
         "Ideal para profissionais portugueses que trabalham em Londres",
       detailedDescription:
-        "Master business networking, access premium transport services, and connect with other Portuguese professionals across various industries.",
+        "Master business networking, access premium transport services, and connect with other Lusophone professionals across various industries.",
       detailedDescriptionPortuguese:
         "Domine o networking empresarial, aceda a serviços de transporte premium e conecte-se com outros profissionais portugueses em várias indústrias.",
       icon: Briefcase,
@@ -168,11 +168,11 @@ export default function UserPathwayAssessment({
       id: "creator",
       name: "Streamer & Earner",
       namePortuguese: "Streamer e Ganhador",
-      description: "For Portuguese streamers and income earners",
+      description: "For Lusophone streamers and income earners",
       descriptionPortuguese:
         "Para streamers portugueses e pessoas que ganham dinheiro",
       detailedDescription:
-        "Learn streaming, community building, monetization strategies, and how to grow your Portuguese audience in London.",
+        "Learn streaming, community building, monetization strategies, and how to grow your Lusophone audience in London.",
       detailedDescriptionPortuguese:
         "Aprenda streaming, construção de comunidade, estratégias de monetização e como aumentar a sua audiência portuguesa em Londres.",
       icon: Video,
@@ -232,7 +232,7 @@ export default function UserPathwayAssessment({
       estimatedTime: "30 minutes",
       estimatedTimePortuguese: "30 minutos",
       benefits: [
-        "Portuguese dating connections",
+        "Lusophone dating connections",
         "Cultural event access",
         "Community social groups",
         "Friendship networks",
@@ -260,11 +260,11 @@ export default function UserPathwayAssessment({
       id: "business",
       name: "Business Owner",
       namePortuguese: "Empresário",
-      description: "For Portuguese entrepreneurs and business owners",
+      description: "For Lusophone entrepreneurs and business owners",
       descriptionPortuguese:
         "Para empreendedores portugueses e proprietários de negócios",
       detailedDescription:
-        "Optimize your business networking, access premium services, build community partnerships, and grow your Portuguese customer base.",
+        "Optimize your business networking, access premium services, build community partnerships, and grow your Lusophone customer base.",
       detailedDescriptionPortuguese:
         "Otimize o seu networking empresarial, aceda a serviços premium, construa parcerias comunitárias e cresça a sua base de clientes portugueses.",
       icon: Target,
@@ -279,7 +279,7 @@ export default function UserPathwayAssessment({
       estimatedTimePortuguese: "90 minutos",
       benefits: [
         "B2B networking opportunities",
-        "Portuguese customer insights",
+        "Lusophone customer insights",
         "Community partnership access",
         "Business promotion channels",
       ],

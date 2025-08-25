@@ -26,7 +26,7 @@ const studentSupportModule = {
   title: "Student Support",
   titlePortuguese: "Apoio ao Estudante",
   description:
-    "Comprehensive support system for Portuguese students in United Kingdom universities",
+    "Comprehensive support system for Lusophone students in United Kingdom universities",
   descriptionPortuguese:
     "Sistema abrangente de apoio para estudantes portugueses em universidades do Reino Unido",
   difficulty: "Beginner",
@@ -51,23 +51,23 @@ const studentSupportModule = {
         <div class="bg-blue-50 border-l-4 border-blue-400 p-4 my-4">
           <p><strong>University Partner Network:</strong></p>
           <ul class="list-disc list-inside mt-2 space-y-1">
-            <li>King's College London (340+ Portuguese students)</li>
-            <li>Imperial College London (280+ Portuguese students)</li>
-            <li>University College London (250+ Portuguese students)</li>
-            <li>London School of Economics (190+ Portuguese students)</li>
-            <li>University of Edinburgh (160+ Portuguese students)</li>
-            <li>University of Manchester (140+ Portuguese students)</li>
-            <li>University of Warwick (120+ Portuguese students)</li>
-            <li>University of Birmingham (95+ Portuguese students)</li>
+            <li>King's College London (340+ Lusophone students)</li>
+            <li>Imperial College London (280+ Lusophone students)</li>
+            <li>University College London (250+ Lusophone students)</li>
+            <li>London School of Economics (190+ Lusophone students)</li>
+            <li>University of Edinburgh (160+ Lusophone students)</li>
+            <li>University of Manchester (140+ Lusophone students)</li>
+            <li>University of Warwick (120+ Lusophone students)</li>
+            <li>University of Birmingham (95+ Lusophone students)</li>
           </ul>
         </div>
         
         <h4>Partnership Benefits</h4>
         <ul class="list-disc list-inside space-y-2">
           <li><strong>Academic Support:</strong> Portuguese-speaking tutors and study groups</li>
-          <li><strong>Cultural Integration:</strong> Events connecting Portuguese students across universities</li>
-          <li><strong>Career Services:</strong> Job placement support with Portuguese connections</li>
-          <li><strong>Mental Health:</strong> Counselors who understand Portuguese cultural context</li>
+          <li><strong>Cultural Integration:</strong> Events connecting Lusophone students across universities</li>
+          <li><strong>Career Services:</strong> Job placement support with Lusophone connections</li>
+          <li><strong>Mental Health:</strong> Counselors who understand Lusophone cultural context</li>
           <li><strong>Financial Aid:</strong> Guidance on scholarships for Portuguese nationals</li>
         </ul>
         
@@ -114,7 +114,7 @@ const studentSupportModule = {
           titlePortuguese: "Lista de Verificação de Parcerias Universitárias",
           items: [
             {
-              text: "Connect with Portuguese student societies at your university",
+              text: "Connect with Lusophone student societies at your university",
               textPortuguese:
                 "Conectar-se com associações de estudantes portugueses na sua universidade",
             },
@@ -124,12 +124,12 @@ const studentSupportModule = {
                 "Registar-se para serviços de apoio académico em português",
             },
             {
-              text: "Join cross-university Portuguese student events",
+              text: "Join cross-university Lusophone student events",
               textPortuguese:
                 "Juntar-se a eventos de estudantes portugueses inter-universitários",
             },
             {
-              text: "Access career services with Portuguese network connections",
+              text: "Access career services with Lusophone network connections",
               textPortuguese:
                 "Aceder a serviços de carreira com conexões da rede portuguesa",
             },
@@ -142,9 +142,9 @@ const studentSupportModule = {
       title: "Financial Support & Scholarships",
       titlePortuguese: "Apoio Financeiro e Bolsas",
       content: `
-        <p>Navigate the complex landscape of United Kingdom university funding with dedicated support for Portuguese students. We help you access scholarships, understand student finance, and manage costs effectively.</p>
+        <p>Navigate the complex landscape of United Kingdom university funding with dedicated support for Lusophone students. We help you access scholarships, understand student finance, and manage costs effectively.</p>
         
-        <h4>Portuguese Student Scholarships (2025)</h4>
+        <h4>Lusophone Student Scholarships (2025)</h4>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
           <div class="bg-green-50 border border-green-200 rounded-lg p-4">
             <h5 class="font-semibold text-green-800">Camões Scholarship</h5>
@@ -153,11 +153,11 @@ const studentSupportModule = {
           </div>
           <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
             <h5 class="font-semibold text-blue-800">Lusitania Foundation Grant</h5>
-            <p class="text-sm text-blue-700">£8,000/year for Portuguese students in STEM fields</p>
+            <p class="text-sm text-blue-700">£8,000/year for Lusophone students in STEM fields</p>
             <p class="text-xs text-blue-600 mt-2">Application deadline: February 2025</p>
           </div>
           <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <h5 class="font-semibold text-purple-800">Portuguese Heritage Award</h5>
+            <h5 class="font-semibold text-purple-800">Lusophone Heritage Award</h5>
             <p class="text-sm text-purple-700">£5,000 one-time grant for cultural studies</p>
             <p class="text-xs text-purple-600 mt-2">Application deadline: April 2025</p>
           </div>
@@ -170,11 +170,11 @@ const studentSupportModule = {
         
         <h4>Financial Planning Support</h4>
         <ul class="list-disc list-inside space-y-2">
-          <li><strong>Budgeting Workshops:</strong> Monthly sessions in Portuguese on managing student finances</li>
+          <li><strong>Budgeting Workshops:</strong> Monthly sessions in Lusophone on managing student finances</li>
           <li><strong>Part-time Work Guidance:</strong> Understanding United Kingdom work regulations for students</li>
-          <li><strong>Banking Support:</strong> Help opening United Kingdom bank accounts with Portuguese documentation</li>
+          <li><strong>Banking Support:</strong> Help opening United Kingdom bank accounts with Lusophone documentation</li>
           <li><strong>Emergency Fund:</strong> LusoTown community emergency assistance for urgent needs</li>
-          <li><strong>Tax Guidance:</strong> Understanding United Kingdom tax obligations for Portuguese students</li>
+          <li><strong>Tax Guidance:</strong> Understanding United Kingdom tax obligations for Lusophone students</li>
         </ul>
         
         <div class="bg-green-50 border-l-4 border-green-400 p-4 my-4">
@@ -230,17 +230,17 @@ const studentSupportModule = {
           titlePortuguese: "Lista de Verificação de Planeamento Financeiro",
           items: [
             {
-              text: "Research and apply for Portuguese-specific scholarships",
+              text: "Research and apply for Lusophone-specific scholarships",
               textPortuguese:
                 "Pesquisar e candidatar-se a bolsas específicas para portugueses",
             },
             {
-              text: "Open United Kingdom bank account with Portuguese documentation support",
+              text: "Open United Kingdom bank account with Lusophone documentation support",
               textPortuguese:
                 "Abrir conta bancária do Reino Unido com apoio de documentação portuguesa",
             },
             {
-              text: "Attend monthly budgeting workshops in Portuguese",
+              text: "Attend monthly budgeting workshops in Lusophone",
               textPortuguese:
                 "Participar em workshops mensais de orçamentação em português",
             },
@@ -258,16 +258,16 @@ const studentSupportModule = {
       title: "Academic Integration & Support",
       titlePortuguese: "Integração e Apoio Académico",
       content: `
-        <p>Thrive academically with culturally-aware support systems designed specifically for Portuguese students navigating United Kingdom higher education.</p>
+        <p>Thrive academically with culturally-aware support systems designed specifically for Lusophone students navigating United Kingdom higher education.</p>
         
         <h4>Academic Support Services</h4>
         <div class="space-y-4">
           <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
             <h5 class="font-semibold text-blue-800 flex items-center gap-2">
               <BookOpenIcon class="h-5 w-5" />
-              Portuguese Study Groups
+              Lusophone Study Groups
             </h5>
-            <p class="text-sm text-blue-700 mt-2">Subject-specific study groups led by advanced Portuguese students and tutors across all major universities.</p>
+            <p class="text-sm text-blue-700 mt-2">Subject-specific study groups led by advanced Lusophone students and tutors across all major universities.</p>
             <ul class="text-xs text-blue-600 mt-2 list-disc list-inside">
               <li>Weekly sessions for challenging subjects</li>
               <li>Exam preparation workshops</li>
@@ -293,7 +293,7 @@ const studentSupportModule = {
               <ChatBubbleLeftEllipsisIcon class="h-5 w-5" />
               Language Bridge Support
             </h5>
-            <p class="text-sm text-purple-700 mt-2">Academic English support while maintaining Portuguese cultural identity and communication style.</p>
+            <p class="text-sm text-purple-700 mt-2">Academic English support while maintaining Lusophone cultural identity and communication style.</p>
             <ul class="text-xs text-purple-600 mt-2 list-disc list-inside">
               <li>Academic writing workshops</li>
               <li>Presentation skills development</li>
@@ -303,16 +303,16 @@ const studentSupportModule = {
         </div>
         
         <h4>Mentorship Program</h4>
-        <p>Connect with Portuguese professionals and senior students who understand your academic and cultural journey:</p>
+        <p>Connect with Lusophone professionals and senior students who understand your academic and cultural journey:</p>
         <ul class="list-disc list-inside space-y-2 mt-3">
-          <li><strong>Academic Mentors:</strong> Portuguese postgraduate students and academics</li>
-          <li><strong>Professional Mentors:</strong> Portuguese professionals working in your field of study</li>
-          <li><strong>Peer Mentors:</strong> Portuguese students one year ahead in your program</li>
-          <li><strong>Cultural Mentors:</strong> Long-term Portuguese residents who can guide United Kingdom integration</li>
+          <li><strong>Academic Mentors:</strong> Lusophone postgraduate students and academics</li>
+          <li><strong>Professional Mentors:</strong> Lusophone professionals working in your field of study</li>
+          <li><strong>Peer Mentors:</strong> Lusophone students one year ahead in your program</li>
+          <li><strong>Cultural Mentors:</strong> Long-term Lusophone residents who can guide United Kingdom integration</li>
         </ul>
         
         <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-4">
-          <p><strong>Special Feature:</strong> All academic support includes cultural sensitivity - mentors understand Portuguese learning styles, family expectations, and communication preferences.</p>
+          <p><strong>Special Feature:</strong> All academic support includes cultural sensitivity - mentors understand Lusophone learning styles, family expectations, and communication preferences.</p>
         </div>
       `,
       contentPortuguese: `
@@ -387,7 +387,7 @@ const studentSupportModule = {
               text: "Study groups for specific subjects",
               textPortuguese: "Grupos de estudo para disciplinas específicas",
               result:
-                "Join Portuguese study groups in your field - available for engineering, business, medicine, humanities, and more.",
+                "Join Lusophone study groups in your field - available for engineering, business, medicine, humanities, and more.",
               resultPortuguese:
                 "Junte-se a grupos de estudo portugueses na sua área - disponível para engenharia, negócios, medicina, humanidades e mais.",
             },
@@ -403,7 +403,7 @@ const studentSupportModule = {
               text: "Mentorship and career guidance",
               textPortuguese: "Mentoria e orientação de carreira",
               result:
-                "Connect with Portuguese professionals and academic mentors in your field.",
+                "Connect with Lusophone professionals and academic mentors in your field.",
               resultPortuguese:
                 "Conecte-se com profissionais portugueses e mentores académicos na sua área.",
             },
@@ -416,7 +416,7 @@ const studentSupportModule = {
       title: "Student Community & Social Integration",
       titlePortuguese: "Comunidade Estudantil e Integração Social",
       content: `
-        <p>Build lasting friendships and professional networks with fellow Portuguese students across London and the United Kingdom. Our community events are designed to create meaningful connections while celebrating Portuguese culture.</p>
+        <p>Build lasting friendships and professional networks with fellow Lusophone students across London and the United Kingdom. Our community events are designed to create meaningful connections while celebrating Portuguese culture.</p>
         
         <h4>Student-Specific Events</h4>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
@@ -425,7 +425,7 @@ const studentSupportModule = {
               <HeartIcon class="h-4 w-4" />
               Weekly Coffee Meetups
             </h5>
-            <p class="text-sm text-pink-700">Every Tuesday at Portuguese cafés in Stockwell and Camden</p>
+            <p class="text-sm text-pink-700">Every Tuesday at Lusophone cafés in Stockwell and Camden</p>
             <p class="text-xs text-pink-600 mt-1">Free for LusoTown student members</p>
           </div>
           
@@ -434,7 +434,7 @@ const studentSupportModule = {
               <UsersIcon class="h-4 w-4" />
               Study Sessions
             </h5>
-            <p class="text-sm text-indigo-700">Group study sessions at London libraries with Portuguese students</p>
+            <p class="text-sm text-indigo-700">Group study sessions at London libraries with Lusophone students</p>
             <p class="text-xs text-indigo-600 mt-1">Organized by subject and university</p>
           </div>
           
@@ -444,7 +444,7 @@ const studentSupportModule = {
               Cultural Walks
             </h5>
             <p class="text-sm text-green-700">Monthly walks exploring Portuguese history in London</p>
-            <p class="text-xs text-green-600 mt-1">Guided tours in Portuguese and English</p>
+            <p class="text-xs text-green-600 mt-1">Guided tours in Lusophone and English</p>
           </div>
           
           <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
@@ -460,24 +460,24 @@ const studentSupportModule = {
         <h4>Digital Community Platform</h4>
         <ul class="list-disc list-inside space-y-2">
           <li><strong>Student WhatsApp Groups:</strong> University-specific groups for quick communication</li>
-          <li><strong>Portuguese Study Buddy Matching:</strong> Connect with students in similar programs</li>
-          <li><strong>Accommodation Sharing:</strong> Find Portuguese roommates and housing opportunities</li>
-          <li><strong>Event Calendar:</strong> Never miss Portuguese student events across London</li>
+          <li><strong>Lusophone Study Buddy Matching:</strong> Connect with students in similar programs</li>
+          <li><strong>Accommodation Sharing:</strong> Find Lusophone roommates and housing opportunities</li>
+          <li><strong>Event Calendar:</strong> Never miss Lusophone student events across London</li>
           <li><strong>Resource Sharing:</strong> Share textbooks, notes, and study materials</li>
         </ul>
         
         <h4>Professional Development</h4>
-        <p>Prepare for your career while building Portuguese professional networks:</p>
+        <p>Prepare for your career while building Lusophone professional networks:</p>
         <ul class="list-disc list-inside space-y-2 mt-3">
-          <li><strong>CV Workshops:</strong> United Kingdom CV formatting with Portuguese perspective</li>
-          <li><strong>Interview Practice:</strong> Mock interviews with Portuguese professionals</li>
-          <li><strong>Networking Events:</strong> Connect with Portuguese employers and recruitment agencies</li>
+          <li><strong>CV Workshops:</strong> United Kingdom CV formatting with Lusophone perspective</li>
+          <li><strong>Interview Practice:</strong> Mock interviews with Lusophone professionals</li>
+          <li><strong>Networking Events:</strong> Connect with Lusophone employers and recruitment agencies</li>
           <li><strong>Internship Opportunities:</strong> Access to Portuguese businesses offering student placements</li>
-          <li><strong>Graduate Programs:</strong> Information sessions about Portuguese companies hiring in the United Kingdom</li>
+          <li><strong>Graduate Programs:</strong> Information sessions about Lusophone companies hiring in the United Kingdom</li>
         </ul>
         
         <div class="bg-blue-50 border-l-4 border-blue-400 p-4 my-4">
-          <p><strong>Success Story:</strong> "Through LusoTown's student network, I connected with 3 other Portuguese engineering students at Imperial. We formed a study group, shared accommodation, and now we all have graduate jobs lined up with Portuguese connections!" - Maria Santos, Imperial College London</p>
+          <p><strong>Success Story:</strong> "Through LusoTown's student network, I connected with 3 other Lusophone engineering students at Imperial. We formed a study group, shared accommodation, and now we all have graduate jobs lined up with Lusophone connections!" - Maria Santos, Imperial College London</p>
         </div>
       `,
       contentPortuguese: `
@@ -554,7 +554,7 @@ const studentSupportModule = {
           titlePortuguese: "Lista de Verificação de Integração Comunitária",
           items: [
             {
-              text: "Join weekly coffee meetups with Portuguese students",
+              text: "Join weekly coffee meetups with Lusophone students",
               textPortuguese:
                 "Juntar-se aos encontros semanais de café com estudantes portugueses",
             },
@@ -574,7 +574,7 @@ const studentSupportModule = {
                 "Participar em workshops de desenvolvimento profissional",
             },
             {
-              text: "Find Portuguese study buddies and accommodation sharing",
+              text: "Find Lusophone study buddies and accommodation sharing",
               textPortuguese:
                 "Encontrar companheiros de estudo portugueses e partilha de alojamento",
             },

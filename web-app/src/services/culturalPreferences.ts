@@ -1,5 +1,5 @@
 // Cultural Preferences Service
-// Handles database operations for the Portuguese cultural preference system
+// Handles database operations for the Lusophone cultural preference system
 
 import { supabase } from '@/lib/supabase'
 import type {
@@ -170,7 +170,7 @@ export class CulturalPreferencesService {
   }
 
   /**
-   * Get all Portuguese cultural elements for reference
+   * Get all Lusophone cultural elements for reference
    */
   static async getPortugueseCulturalElements(): Promise<any[]> {
     try {
@@ -239,7 +239,7 @@ export class CulturalPreferencesService {
   private static calculateCulturalDepth(results: QuizResults): number {
     let score = 40 // Base score
 
-    // More Portuguese origins = higher cultural depth
+    // More Lusophone origins = higher cultural depth
     score += Math.min(results.origin.length * 10, 20)
 
     // More cultural celebrations = higher depth
@@ -355,10 +355,10 @@ export class CulturalPreferencesService {
     const elementMap: Record<string, string> = {
       fado: 'Fado Music',
       santos_populares: 'Santos Populares',
-      football: 'Portuguese Football',
-      gastronomy: 'Portuguese Cuisine',
-      christmas_traditions: 'Portuguese Christmas',
-      literature_poetry: 'Portuguese Literature',
+      football: 'Lusophone Football',
+      gastronomy: 'Lusophone Cuisine',
+      christmas_traditions: 'Lusophone Christmas',
+      literature_poetry: 'Lusophone Literature',
       religious_traditions: 'Religious Traditions',
       maritime_heritage: 'Maritime Heritage',
       folk_traditions: 'Folk Music',

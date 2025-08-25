@@ -6,7 +6,7 @@ import { predictiveCommunityAnalytics } from '@/lib/ai/PredictiveCommunityAnalyt
 
 /**
  * AI-Powered Recommendations API Endpoint
- * Provides personalized Portuguese cultural recommendations
+ * Provides personalized Lusophone cultural recommendations
  */
 
 interface RecommendationRequest {
@@ -370,7 +370,7 @@ async function generateCulturalEventRecommendations(
   behaviorProfile: any,
   supabase: any
 ) {
-  // Get upcoming Portuguese cultural events
+  // Get upcoming Lusophone cultural events
   const { data: events } = await supabase
     .from('events')
     .select('id, title, description, date, cultural_category, location')
@@ -400,7 +400,7 @@ async function generateCulturalEventRecommendations(
         priority_score: Math.round(relevanceScore * 100),
         relevance_reasons: [
           'Matches your cultural interests',
-          'Relevant to your Portuguese region',
+          'Relevant to your Lusophone region',
           'Good for community connection'
         ]
       })
@@ -571,7 +571,7 @@ function calculatePersonalizationScore(recommendation: any, behaviorProfile: any
 function calculateEventRelevance(event: any, culturalProfile: any) {
   let relevance = 0.5
   
-  // Base relevance for Portuguese events
+  // Base relevance for Lusophone events
   if (event.cultural_category === 'portuguese') {
     relevance += 0.3
   }

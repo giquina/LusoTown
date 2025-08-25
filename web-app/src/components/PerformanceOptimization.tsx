@@ -56,7 +56,7 @@ interface NetworkInfo {
   saveData: boolean;
 }
 
-// Portuguese cultural content priorities for optimization
+// Lusophone cultural content priorities for optimization
 const PORTUGUESE_CONTENT_PRIORITIES = {
   high: [
     'portuguese-events',
@@ -331,7 +331,7 @@ export default function PerformanceOptimization({
   };
 
   const getCacheItemCount = async (): Promise<number> => {
-    // Count localStorage items related to Portuguese content
+    // Count localStorage items related to Lusophone content
     let count = 0;
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
@@ -401,7 +401,7 @@ export default function PerformanceOptimization({
       suggestions.push(
         language === 'pt' 
           ? 'Otimizar imagens portuguesas para carregamento mais rápido' 
-          : 'Optimize Portuguese cultural images for faster loading'
+          : 'Optimize Lusophone cultural images for faster loading'
       );
     }
 
@@ -417,7 +417,7 @@ export default function PerformanceOptimization({
       suggestions.push(
         language === 'pt'
           ? 'Estabilizar layout dos eventos portugueses'
-          : 'Stabilize Portuguese events layout'
+          : 'Stabilize Lusophone events layout'
       );
     }
 
@@ -433,7 +433,7 @@ export default function PerformanceOptimization({
       suggestions.push(
         language === 'pt'
           ? 'Ativar modo de dados limitados para conteúdo português'
-          : 'Enable data saver mode for Portuguese content'
+          : 'Enable data saver mode for Lusophone content'
       );
     }
 
@@ -444,12 +444,12 @@ export default function PerformanceOptimization({
     setIsOptimizing(true);
 
     try {
-      // Preload high-priority Portuguese cultural content
+      // Preload high-priority Lusophone cultural content
       const highPriorityContent = PORTUGUESE_CONTENT_PRIORITIES.high;
       
       for (const contentType of highPriorityContent) {
         try {
-          // Simulate preloading Portuguese cultural content
+          // Simulate preloading Lusophone cultural content
           await preloadContent(contentType);
           await new Promise(resolve => setTimeout(resolve, 200));
         } catch (error) {
@@ -457,12 +457,12 @@ export default function PerformanceOptimization({
         }
       }
 
-      // Optimize images for Portuguese cultural content
+      // Optimize images for Lusophone cultural content
       if (imageOptimizationEnabled) {
         await optimizePortugueseImages();
       }
 
-      // Clear old cache for Portuguese content
+      // Clear old cache for Lusophone content
       if (cachingEnabled) {
         await clearOldPortugueseCache();
       }
@@ -478,7 +478,7 @@ export default function PerformanceOptimization({
         title: language === 'pt' ? 'Otimização Concluída!' : 'Optimization Complete!',
         message: language === 'pt' 
           ? 'Conteúdo português otimizado para melhor performance' 
-          : 'Portuguese content optimized for better performance',
+          : 'Lusophone content optimized for better performance',
         duration: 5000
       });
 
@@ -570,7 +570,7 @@ export default function PerformanceOptimization({
   };
 
   const applyDataSaverMode = async () => {
-    // Reduce image quality for Portuguese content
+    // Reduce image quality for Lusophone content
     document.documentElement.classList.add('data-saver-mode');
     
     // Disable auto-playing videos
@@ -579,7 +579,7 @@ export default function PerformanceOptimization({
       video.removeAttribute('autoplay');
     });
 
-    // Defer non-critical Portuguese cultural content
+    // Defer non-critical Lusophone cultural content
     const deferredElements = document.querySelectorAll('[data-defer-loading]');
     deferredElements.forEach(element => {
       element.setAttribute('style', 'display: none;');
@@ -677,7 +677,7 @@ export default function PerformanceOptimization({
               performanceScore === 'needs-improvement' ? 'text-yellow-700' :
               'text-red-700'
             }`}>
-              {performanceScore === 'good' && (language === 'pt' ? 'Excelente performance para conteúdo português' : 'Excellent performance for Portuguese content')}
+              {performanceScore === 'good' && (language === 'pt' ? 'Excelente performance para conteúdo português' : 'Excellent performance for Lusophone content')}
               {performanceScore === 'needs-improvement' && (language === 'pt' ? 'Performance pode ser melhorada' : 'Performance can be improved')}
               {performanceScore === 'poor' && (language === 'pt' ? 'Performance precisa de otimização urgente' : 'Performance needs urgent optimization')}
             </p>
@@ -843,7 +843,7 @@ export default function PerformanceOptimization({
                   {language === 'pt' ? 'Carregamento Lazy' : 'Lazy Loading'}
                 </h4>
                 <p className="text-sm text-gray-600">
-                  {language === 'pt' ? 'Imagens portuguesas carregadas sob demanda' : 'Portuguese images loaded on demand'}
+                  {language === 'pt' ? 'Imagens portuguesas carregadas sob demanda' : 'Lusophone images loaded on demand'}
                 </p>
               </div>
             </div>

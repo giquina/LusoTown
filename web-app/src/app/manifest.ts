@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'LusoTown London - Portuguese Social Calendar',
+    name: 'LusoTown London - Lusophone Social Calendar',
     short_name: 'LusoTown',
     description: 'Connect with Portuguese speakers in London. Book experiences, join activities, live life together with your lusophone community.',
     start_url: '/',

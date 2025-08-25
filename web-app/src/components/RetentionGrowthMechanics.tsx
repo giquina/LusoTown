@@ -99,12 +99,12 @@ export default function RetentionGrowthMechanics({
 
   const isPortuguese = language === 'pt'
 
-  // Define achievement system with Portuguese cultural context
+  // Define achievement system with Lusophone cultural context
   const achievementDefinitions: Achievement[] = [
     {
       id: 'first-connection',
       category: 'networking',
-      name: 'First Portuguese Connection',
+      name: 'First Lusophone Connection',
       namePortuguese: 'Primeira Conexão Portuguesa',
       description: 'Made your first connection in the Portuguese-speaking community',
       descriptionPortuguese: 'Fez a sua primeira conexão na comunidade de falantes de português',
@@ -124,7 +124,7 @@ export default function RetentionGrowthMechanics({
       category: 'cultural',
       name: 'Cultural Explorer',
       namePortuguese: 'Explorador Cultural',
-      description: 'Attended 3 different Portuguese cultural events',
+      description: 'Attended 3 different Lusophone cultural events',
       descriptionPortuguese: 'Participou em 3 eventos culturais portugueses diferentes',
       icon: '🎭',
       color: 'accent',
@@ -296,7 +296,7 @@ export default function RetentionGrowthMechanics({
       id: 'santos-populares-participation',
       title: 'Santos Populares Celebration',
       titlePortuguese: 'Celebração dos Santos Populares',
-      description: 'Participated in traditional Portuguese summer festivals',
+      description: 'Participated in traditional Lusophone summer festivals',
       descriptionPortuguese: 'Participou nos festivais tradicionais portugueses de verão',
       category: 'heritage',
       icon: CalendarDaysIcon,
@@ -305,7 +305,7 @@ export default function RetentionGrowthMechanics({
       rewards: {
         xp: 300,
         badge: '🎊',
-        exclusive_access: 'VIP access to Portuguese cultural events'
+        exclusive_access: 'VIP access to Lusophone cultural events'
       }
     },
     {
@@ -326,7 +326,7 @@ export default function RetentionGrowthMechanics({
     },
     {
       id: 'portuguese-cuisine-explorer',
-      title: 'Portuguese Cuisine Explorer',
+      title: 'Lusophone Cuisine Explorer',
       titlePortuguese: 'Explorador da Culinária Portuguesa',
       description: 'Discovered authentic Portuguese restaurants and food experiences',
       descriptionPortuguese: 'Descobriu restaurantes portugueses autênticos e experiências gastronómicas',
@@ -337,12 +337,12 @@ export default function RetentionGrowthMechanics({
       rewards: {
         xp: 200,
         badge: '🍽️',
-        exclusive_access: 'Chef-led Portuguese cooking workshops'
+        exclusive_access: 'Chef-led Lusophone cooking workshops'
       }
     },
     {
       id: 'language-preservation',
-      title: 'Portuguese Language Preservation',
+      title: 'Lusophone Language Preservation',
       titlePortuguese: 'Preservação da Língua Portuguesa',
       description: 'Actively using and promoting Portuguese language in the community',
       descriptionPortuguese: 'Usando e promovendo ativamente a língua portuguesa na comunidade',
@@ -353,17 +353,17 @@ export default function RetentionGrowthMechanics({
       rewards: {
         xp: 800,
         badge: '📚',
-        exclusive_access: 'Portuguese literature discussion groups'
+        exclusive_access: 'Lusophone literature discussion groups'
       }
     }
   ]
 
   // Loyalty program levels
   const loyaltyLevels = [
-    { level: 1, name: 'Portuguese Friend', namePortuguese: 'Amigo Português', xpRequired: 0, perks: ['Community access', 'Basic event notifications'], perksPortuguese: ['Acesso à comunidade', 'Notificações básicas de eventos'] },
+    { level: 1, name: 'Lusophone Friend', namePortuguese: 'Amigo Português', xpRequired: 0, perks: ['Community access', 'Basic event notifications'], perksPortuguese: ['Acesso à comunidade', 'Notificações básicas de eventos'] },
     { level: 2, name: 'Cultural Explorer', namePortuguese: 'Explorador Cultural', xpRequired: 500, perks: ['Event discounts', 'Cultural content access'], perksPortuguese: ['Descontos em eventos', 'Acesso a conteúdo cultural'] },
     { level: 3, name: 'Community Member', namePortuguese: 'Membro da Comunidade', xpRequired: 1500, perks: ['Transport booking priority', 'Networking events'], perksPortuguese: ['Prioridade na reserva de transporte', 'Eventos de networking'] },
-    { level: 4, name: 'Portuguese Ambassador', namePortuguese: 'Embaixador Português', xpRequired: 3500, perks: ['Premium features', 'Mentorship access'], perksPortuguese: ['Funcionalidades premium', 'Acesso a mentoria'] },
+    { level: 4, name: 'Lusophone Ambassador', namePortuguese: 'Embaixador Português', xpRequired: 3500, perks: ['Premium features', 'Mentorship access'], perksPortuguese: ['Funcionalidades premium', 'Acesso a mentoria'] },
     { level: 5, name: 'Cultural Guardian', namePortuguese: 'Guardião Cultural', xpRequired: 7500, perks: ['VIP access', 'Community leadership'], perksPortuguese: ['Acesso VIP', 'Liderança comunitária'] },
     { level: 6, name: 'Heritage Keeper', namePortuguese: 'Guardião do Património', xpRequired: 15000, perks: ['Exclusive events', 'Cultural advisory role'], perksPortuguese: ['Eventos exclusivos', 'Papel consultivo cultural'] }
   ]

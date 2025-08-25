@@ -67,7 +67,7 @@ interface Tour {
   culturalFocus: string[];
 }
 
-// Sample Portuguese guides data
+// Sample Lusophone guides data
 const portugueseGuides: TourGuide[] = [
   {
     id: "guide-maria",
@@ -75,8 +75,8 @@ const portugueseGuides: TourGuide[] = [
     rating: 4.9,
     reviews: 127,
     image: "https://images.unsplash.com/photo-1494790108755-2616b332-3a6?w=100&h=100&fit=crop&crop=face",
-    specialties: ["Portuguese Culture", "London History", "Food Tours"],
-    languages: ["Portuguese", "English", "Spanish"],
+    specialties: ["Lusophone Culture", "London History", "Food Tours"],
+    languages: ["Lusophone", "English", "Spanish"],
     experience: "8 years",
     verified: true,
   },
@@ -86,8 +86,8 @@ const portugueseGuides: TourGuide[] = [
     rating: 4.8,
     reviews: 89,
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-    specialties: ["Business Tours", "Architecture", "Portuguese Districts"],
-    languages: ["Portuguese", "English", "French"],
+    specialties: ["Business Tours", "Architecture", "Lusophone Districts"],
+    languages: ["Lusophone", "English", "French"],
     experience: "12 years",
     verified: true,
   },
@@ -97,8 +97,8 @@ const portugueseGuides: TourGuide[] = [
     rating: 4.9,
     reviews: 156,
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-    specialties: ["Family Tours", "Cultural Immersion", "Portuguese Markets"],
-    languages: ["Portuguese", "English"],
+    specialties: ["Family Tours", "Cultural Immersion", "Lusophone Markets"],
+    languages: ["Lusophone", "English"],
     experience: "6 years",
     verified: true,
   },
@@ -108,8 +108,8 @@ const portugueseGuides: TourGuide[] = [
 const toursData: Tour[] = [
   {
     id: "portuguese-food-camden",
-    title: "Portuguese Food Discovery in Camden",
-    description: "Explore the hidden Portuguese gems in Camden Market and surrounding areas. Taste authentic pastéis de nata, bifana, and discover where Portuguese locals shop for ingredients from home.",
+    title: "Lusophone Food Discovery in Camden",
+    description: "Explore the hidden Lusophone gems in Camden Market and surrounding areas. Taste authentic pastéis de nata, bifana, and discover where Lusophone locals shop for ingredients from home.",
     category: 'food',
     duration: "3.5 hours",
     price: 45,
@@ -118,19 +118,19 @@ const toursData: Tour[] = [
     location: "Camden Market & Surroundings",
     meetingPoint: "Camden Market Main Entrance",
     highlights: [
-      "Authentic pastéis de nata from Portuguese bakery",
+      "Authentic pastéis de nata from Lusophone bakery",
       "Traditional bifana preparation demonstration",
-      "Portuguese grocery shopping experience",
+      "Lusophone grocery shopping experience",
       "Meet local Portuguese business owners",
       "Learn Portuguese food vocabulary"
     ],
     includes: [
-      "Professional Portuguese guide",
+      "Professional Lusophone guide",
       "Food tastings (5+ items)",
-      "Recipe cards in Portuguese & English",
+      "Recipe cards in Lusophone & English",
       "Transport between locations"
     ],
-    language: ["Portuguese", "English"],
+    language: ["Lusophone", "English"],
     difficulty: 'easy',
     targetAudience: ['solo', 'families', 'couples'],
     guide: portugueseGuides[0],
@@ -142,12 +142,12 @@ const toursData: Tour[] = [
     availability: 'limited',
     nextAvailableDate: "2025-08-25",
     tags: ["Food", "Culture", "Portuguese-speaking community", "Authentic"],
-    culturalFocus: ["Portuguese Cuisine", "Community Connections", "Language Practice"],
+    culturalFocus: ["Lusophone Cuisine", "Community Connections", "Language Practice"],
   },
   {
     id: "portuguese-business-london",
-    title: "Portuguese Business Districts & Networking",
-    description: "Professional tour of Portuguese business concentrations in London. Visit Portuguese companies, learn about business opportunities, and network with successful Portuguese entrepreneurs.",
+    title: "Lusophone Business Districts & Networking",
+    description: "Professional tour of Portuguese business concentrations in London. Visit Lusophone companies, learn about business opportunities, and network with successful Lusophone entrepreneurs.",
     category: 'business',
     duration: "4 hours",
     price: 85,
@@ -156,11 +156,11 @@ const toursData: Tour[] = [
     location: "City of London & Canary Wharf",
     meetingPoint: "Bank Station Exit 3",
     highlights: [
-      "Visit Portuguese-owned businesses",
-      "Meet successful Portuguese entrepreneurs",
+      "Visit Lusophone-owned businesses",
+      "Meet successful Lusophone entrepreneurs",
       "Business networking opportunities",
       "Investment and partnership insights",
-      "Professional development in Portuguese context"
+      "Professional development in Lusophone context"
     ],
     includes: [
       "Expert business guide",
@@ -169,7 +169,7 @@ const toursData: Tour[] = [
       "Market research insights",
       "Follow-up business community access"
     ],
-    language: ["Portuguese", "English"],
+    language: ["Lusophone", "English"],
     difficulty: 'easy',
     targetAudience: ['business'],
     guide: portugueseGuides[1],
@@ -185,29 +185,29 @@ const toursData: Tour[] = [
   },
   {
     id: "portuguese-heritage-walking",
-    title: "Portuguese Heritage in Central London",
-    description: "Walk through the historical Portuguese presence in London. From embassy district to cultural centers, discover centuries of Portuguese influence in the British capital.",
+    title: "Lusophone Heritage in Central London",
+    description: "Walk through the historical Lusophone presence in London. From embassy district to cultural centers, discover centuries of Lusophone influence in the British capital.",
     category: 'cultural',
     duration: "2.5 hours",
     price: 35,
     maxGroupSize: 15,
     currentBookings: 10,
     location: "Central London",
-    meetingPoint: "Portuguese Embassy Area",
+    meetingPoint: "Lusophone Embassy Area",
     highlights: [
-      "Portuguese Embassy and diplomatic history",
-      "Cultural centers and Portuguese institutions",
-      "Historical Portuguese residents stories",
-      "Portuguese cultural influence on London",
-      "Traditional Portuguese architectural elements"
+      "Lusophone Embassy and diplomatic history",
+      "Cultural centers and Lusophone institutions",
+      "Historical Lusophone residents stories",
+      "Lusophone cultural influence on London",
+      "Traditional Lusophone architectural elements"
     ],
     includes: [
       "Cultural heritage expert guide",
       "Historical documentation",
-      "Portuguese cultural context",
+      "Lusophone cultural context",
       "Photo opportunities at key locations"
     ],
-    language: ["Portuguese", "English"],
+    language: ["Lusophone", "English"],
     difficulty: 'easy',
     targetAudience: ['solo', 'families', 'couples'],
     guide: portugueseGuides[2],
@@ -219,12 +219,12 @@ const toursData: Tour[] = [
     availability: 'available',
     nextAvailableDate: "2025-08-20",
     tags: ["Heritage", "Culture", "History", "Walking Tour"],
-    culturalFocus: ["Portuguese History", "Cultural Heritage", "Community Stories"],
+    culturalFocus: ["Lusophone History", "Cultural Heritage", "Community Stories"],
   },
   {
     id: "portobello-portuguese-markets",
-    title: "Portuguese Life in Portobello & Notting Hill",
-    description: "Discover the vibrant Portuguese-speaking community in Portobello Road and Notting Hill. Experience authentic Portuguese lifestyle, markets, and community gathering places.",
+    title: "Lusophone Life in Portobello & Notting Hill",
+    description: "Discover the vibrant Portuguese-speaking community in Portobello Road and Notting Hill. Experience authentic Lusophone lifestyle, markets, and community gathering places.",
     category: 'neighborhoods',
     duration: "3 hours",
     price: 40,
@@ -234,18 +234,18 @@ const toursData: Tour[] = [
     meetingPoint: "Notting Hill Gate Station",
     highlights: [
       "Portuguese-speaking community hubs in Notting Hill",
-      "Traditional Portuguese shops and services",
+      "Traditional Lusophone shops and services",
       "Community gathering places and cafés",
-      "Portuguese influence on local culture",
-      "Meet local Portuguese residents"
+      "Lusophone influence on local culture",
+      "Meet local Lusophone residents"
     ],
     includes: [
       "Local community guide",
-      "Portuguese coffee tasting",
+      "Lusophone coffee tasting",
       "Community insights and contacts",
       "Local shopping recommendations"
     ],
-    language: ["Portuguese", "English"],
+    language: ["Lusophone", "English"],
     difficulty: 'easy',
     targetAudience: ['solo', 'families', 'couples'],
     guide: portugueseGuides[0],
@@ -257,12 +257,12 @@ const toursData: Tour[] = [
     availability: 'available',
     nextAvailableDate: "2025-08-21",
     tags: ["Neighborhoods", "Community", "Local Life", "Markets"],
-    culturalFocus: ["Community Living", "Local Integration", "Portuguese Lifestyle"],
+    culturalFocus: ["Community Living", "Local Integration", "Lusophone Lifestyle"],
   },
   {
     id: "greenwich-portuguese-maritime",
-    title: "Portuguese Maritime History in Greenwich",
-    description: "Explore the deep Portuguese maritime connections to Greenwich and the Thames. Discover Portuguese navigational contributions and historical maritime trade relationships.",
+    title: "Lusophone Maritime History in Greenwich",
+    description: "Explore the deep Lusophone maritime connections to Greenwich and the Thames. Discover Lusophone navigational contributions and historical maritime trade relationships.",
     category: 'history',
     duration: "4 hours",
     price: 55,
@@ -271,20 +271,20 @@ const toursData: Tour[] = [
     location: "Greenwich",
     meetingPoint: "Greenwich Station",
     highlights: [
-      "Portuguese maritime history and navigation",
+      "Lusophone maritime history and navigation",
       "Greenwich maritime connections to Portugal",
       "Historical trade relationships",
-      "Portuguese navigational instruments",
-      "Thames Portuguese maritime influence"
+      "Lusophone navigational instruments",
+      "Thames Lusophone maritime influence"
     ],
     includes: [
       "Maritime history specialist guide",
       "Museum entries",
       "Historical documentation",
-      "Portuguese maritime context",
-      "Traditional Portuguese sailor meal"
+      "Lusophone maritime context",
+      "Traditional Lusophone sailor meal"
     ],
-    language: ["Portuguese", "English"],
+    language: ["Lusophone", "English"],
     difficulty: 'moderate',
     targetAudience: ['solo', 'families', 'couples'],
     guide: portugueseGuides[1],
@@ -296,12 +296,12 @@ const toursData: Tour[] = [
     availability: 'available',
     nextAvailableDate: "2025-08-23",
     tags: ["History", "Maritime", "Culture", "Educational"],
-    culturalFocus: ["Maritime Heritage", "Historical Connections", "Portuguese Exploration"],
+    culturalFocus: ["Maritime Heritage", "Historical Connections", "Lusophone Exploration"],
   },
   {
     id: "family-portuguese-london",
-    title: "Family-Friendly Portuguese London Adventure",
-    description: "Perfect family tour introducing children to Portuguese culture in London. Interactive experiences, kid-friendly Portuguese activities, and family bonding in a cultural context.",
+    title: "Family-Friendly Lusophone London Adventure",
+    description: "Perfect family tour introducing children to Portuguese culture in London. Interactive experiences, kid-friendly Lusophone activities, and family bonding in a cultural context.",
     category: 'cultural',
     duration: "2.5 hours",
     price: 30,
@@ -311,7 +311,7 @@ const toursData: Tour[] = [
     meetingPoint: "Hyde Park Corner",
     highlights: [
       "Interactive Portuguese culture activities for kids",
-      "Family-friendly Portuguese games and stories",
+      "Family-friendly Lusophone games and stories",
       "Child-appropriate cultural learning",
       "Portuguese language fun for children",
       "Family photography in cultural settings"
@@ -319,11 +319,11 @@ const toursData: Tour[] = [
     includes: [
       "Family specialist guide",
       "Activity materials for children",
-      "Portuguese snacks for kids",
+      "Lusophone snacks for kids",
       "Family cultural games",
-      "Take-home Portuguese learning materials"
+      "Take-home Lusophone learning materials"
     ],
-    language: ["Portuguese", "English"],
+    language: ["Lusophone", "English"],
     difficulty: 'easy',
     targetAudience: ['families'],
     guide: portugueseGuides[2],
@@ -792,10 +792,10 @@ const ToursActivitiesShowcase = memo(() => {
         >
           <div className="bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 rounded-3xl p-10 text-white shadow-2xl border border-white/10">
             <h3 className="text-3xl font-bold mb-6">
-              Experience London Through Portuguese Eyes
+              Experience London Through Lusophone Eyes
             </h3>
             <p className="text-xl opacity-95 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Join passionate Portuguese guides who understand your culture and heritage. 
+              Join passionate Lusophone guides who understand your culture and heritage. 
               From hidden food gems to business opportunities, discover London like never before.
             </p>
 

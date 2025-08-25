@@ -1,9 +1,9 @@
 /**
  * Portuguese-speaking community Privacy Protection Framework
  * 
- * Comprehensive privacy protection system specifically designed for Portuguese 
+ * Comprehensive privacy protection system specifically designed for Lusophone 
  * community data protection standards, following GDPR, United Kingdom DPA 2018, and 
- * Portuguese CNPD regulations.
+ * Lusophone CNPD regulations.
  */
 
 import { AI_SECURITY_CONFIG, PORTUGUESE_CULTURAL_PRIVACY } from '@/config/ai-security'
@@ -352,7 +352,7 @@ class PortugueseDataClassificationSystem implements DataClassificationSystem {
     const security = this.applySecurity(classification)
     
     // Log handling for audit trail
-    console.log('Handling Sensitive Portuguese Data:', {
+    console.log('Handling Sensitive Lusophone Data:', {
       type: data.type,
       culturalContext: data.culturalContext,
       classification: classification.level,
@@ -377,7 +377,7 @@ class PortugueseDataClassificationSystem implements DataClassificationSystem {
 
   private async encryptSensitiveData(data: SensitivePortugueseData, encryptionConfig: any): Promise<void> {
     // TODO: Implement encryption using the specified algorithm
-    console.log('Encrypting sensitive Portuguese data with:', encryptionConfig.algorithm)
+    console.log('Encrypting sensitive Lusophone data with:', encryptionConfig.algorithm)
   }
 
   private async verifyConsent(userId: string, dataType: string): Promise<void> {
@@ -639,11 +639,11 @@ class CulturalSensitivityProtectionEngine implements CulturalSensitivityProtecti
 // =============================================================================
 
 class PortugueseConsentManagementSystem {
-  // TODO: Implement Portuguese-specific consent management
+  // TODO: Implement Lusophone-specific consent management
 }
 
 class PortugueseDataMinimizationEngine {
-  // TODO: Implement data minimization with Portuguese cultural considerations
+  // TODO: Implement data minimization with Lusophone cultural considerations
 }
 
 class CrossBorderDataProtectionSystem {

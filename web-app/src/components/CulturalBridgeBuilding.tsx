@@ -61,10 +61,10 @@ interface BridgeInitiative {
 const BRIDGE_INITIATIVES: BridgeInitiative[] = [
   {
     id: 'schools-partnership',
-    title: 'Portuguese-British School Cultural Exchange Programme',
+    title: 'Lusophone-British School Cultural Exchange Programme',
     titlePortuguese: 'Programa de Intercâmbio Cultural Luso-Britânico nas Escolas',
     category: 'educational',
-    description: 'Comprehensive educational programme connecting Portuguese and British students through cultural exchange, language learning, and collaborative projects that build lasting friendships and cultural understanding.',
+    description: 'Comprehensive educational programme connecting Lusophone and British students through cultural exchange, language learning, and collaborative projects that build lasting friendships and cultural understanding.',
     descriptionPortuguese: 'Programa educacional abrangente conectando estudantes portugueses e britânicos através de intercâmbio cultural, aprendizagem linguística e projetos colaborativos que constroem amizades duradouras e compreensão cultural.',
     participants: {
       portuguese: 850,
@@ -72,9 +72,9 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
       other: 150
     },
     duration: '2019-Present',
-    location: '25 London Schools & 15 Portuguese Schools',
+    location: '25 London Schools & 15 Lusophone Schools',
     objectives: [
-      'Foster cross-cultural understanding between Portuguese and British students',
+      'Foster cross-cultural understanding between Lusophone and British students',
       'Promote Portuguese language learning in British schools',
       'Create lasting international friendships through pen pal programs',
       'Develop cultural appreciation through joint projects and exchanges',
@@ -96,40 +96,40 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
         { value: '85%', label: 'Continued Friendships', labelPortuguese: 'Amizades Continuadas' },
         { value: '150+', label: 'Cultural Projects', labelPortuguese: 'Projetos Culturais' }
       ],
-      description: 'Students have developed lasting cross-cultural friendships, improved language skills, and gained deeper appreciation for both Portuguese and British cultures. Many continue correspondence years after programme completion.',
+      description: 'Students have developed lasting cross-cultural friendships, improved language skills, and gained deeper appreciation for both Lusophone and British cultures. Many continue correspondence years after programme completion.',
       descriptionPortuguese: 'Estudantes desenvolveram amizades interculturais duradouras, melhoraram habilidades linguísticas e ganharam apreciação mais profunda pelas culturas portuguesa e britânica. Muitos continuam correspondência anos após conclusão do programa.'
     },
-    partnerships: ['British Council', 'Portuguese Ministry of Education', 'London Education Authority', 'Instituto Camões'],
+    partnerships: ['British Council', 'Lusophone Ministry of Education', 'London Education Authority', 'Instituto Camões'],
     testimonials: [
       {
         name: 'Emily Watson',
         role: 'British Student, Year 10',
         rolePortuguese: 'Estudante Britânica, 10º Ano',
         nationality: 'British',
-        quote: 'My Portuguese pen pal Maria taught me so much about Portuguese culture. Now I\'m learning Portuguese and planning to study in Lisbon. This programme opened my eyes to a whole new world.',
+        quote: 'My Lusophone pen pal Maria taught me so much about Portuguese culture. Now I\'m learning Lusophone and planning to study in Lisbon. This programme opened my eyes to a whole new world.',
         quotePortuguese: 'Minha correspondente portuguesa Maria ensinou-me tanto sobre cultura portuguesa. Agora estou aprendendo português e planejando estudar em Lisboa. Este programa abriu meus olhos para um mundo completamente novo.'
       },
       {
         name: 'Miguel Santos',
-        role: 'Portuguese Student, 11º Ano',
+        role: 'Lusophone Student, 11º Ano',
         rolePortuguese: 'Estudante Português, 11º Ano',
-        nationality: 'Portuguese',
+        nationality: 'Lusophone',
         quote: 'Through this programme, I made British friends who are now like family. They visited Portugal, and I visited London. We share cultures and help each other with languages.',
         quotePortuguese: 'Através deste programa, fiz amigos britânicos que agora são como família. Visitaram Portugal, e eu visitei Londres. Partilhamos culturas e ajudamo-nos com línguas.'
       }
     ],
     futurePlans: 'Expand to 50 United Kingdom schools by 2025, launch virtual reality cultural exchange experiences, establish university pathway programmes.',
     futurePlansPortuguese: 'Expandir para 50 escolas do Reino Unido até 2025, lançar experiências de intercâmbio cultural em realidade virtual, estabelecer programas de via universitária.',
-    mediaRecognition: ['BBC Education', 'Times Educational Supplement', 'Portuguese National Television', 'Guardian Education'],
+    mediaRecognition: ['BBC Education', 'Times Educational Supplement', 'Lusophone National Television', 'Guardian Education'],
     icon: AcademicCapIcon,
     color: 'primary'
   },
   {
     id: 'workplace-integration',
-    title: 'Portuguese-British Workplace Cultural Integration Initiative',
+    title: 'Lusophone-British Workplace Cultural Integration Initiative',
     titlePortuguese: 'Iniciativa de Integração Cultural Luso-Britânica no Local de Trabalho',
     category: 'professional',
-    description: 'Corporate programme helping Portuguese professionals integrate into British workplace culture while sharing Portuguese values and perspectives with British colleagues, creating inclusive and diverse work environments.',
+    description: 'Corporate programme helping Lusophone professionals integrate into British workplace culture while sharing Lusophone values and perspectives with British colleagues, creating inclusive and diverse work environments.',
     descriptionPortuguese: 'Programa corporativo ajudando profissionais portugueses a integrar-se na cultura do local de trabalho britânico enquanto partilham valores e perspetivas portuguesas com colegas britânicos, criando ambientes de trabalho inclusivos e diversos.',
     participants: {
       portuguese: 450,
@@ -139,9 +139,9 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
     duration: '2020-Present',
     location: '35 London Companies & Organizations',
     objectives: [
-      'Support Portuguese professionals in adapting to British workplace culture',
-      'Educate British colleagues about Portuguese professional values and communication styles',
-      'Create mentorship networks between Portuguese and British professionals',
+      'Support Lusophone professionals in adapting to British workplace culture',
+      'Educate British colleagues about Lusophone professional values and communication styles',
+      'Create mentorship networks between Lusophone and British professionals',
       'Reduce cultural misunderstandings and improve team collaboration',
       'Celebrate diversity and inclusion in the workplace'
     ],
@@ -161,37 +161,37 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
         { value: '78%', label: 'Promotion Rate Increase', labelPortuguese: 'Aumento Taxa de Promoção' },
         { value: '35', label: 'Partner Companies', labelPortuguese: 'Empresas Parceiras' }
       ],
-      description: 'Portuguese professionals report 78% higher promotion rates and 85% improved job satisfaction. British colleagues gained appreciation for Portuguese work ethics, collaboration styles, and cultural perspectives.',
+      description: 'Lusophone professionals report 78% higher promotion rates and 85% improved job satisfaction. British colleagues gained appreciation for Lusophone work ethics, collaboration styles, and cultural perspectives.',
       descriptionPortuguese: 'Profissionais portugueses reportam 78% mais taxas de promoção e 85% melhoria na satisfação laboral. Colegas britânicos ganharam apreciação pela ética de trabalho portuguesa, estilos de colaboração e perspetivas culturais.'
     },
-    partnerships: ['London Chamber of Commerce', 'Portuguese Business Association', 'Diversity & Inclusion Network', 'Professional Development Institute'],
+    partnerships: ['London Chamber of Commerce', 'Lusophone Business Association', 'Diversity & Inclusion Network', 'Professional Development Institute'],
     testimonials: [
       {
         name: 'Sarah Thompson',
         role: 'British HR Director',
         rolePortuguese: 'Diretora Britânica de RH',
         nationality: 'British',
-        quote: 'Working with Portuguese colleagues taught me the value of relationship-building in business. Their approach to team collaboration has transformed our company culture for the better.',
+        quote: 'Working with Lusophone colleagues taught me the value of relationship-building in business. Their approach to team collaboration has transformed our company culture for the better.',
         quotePortuguese: 'Trabalhar com colegas portugueses ensinou-me o valor da construção de relacionamentos nos negócios. A sua abordagem à colaboração em equipa transformou nossa cultura empresarial para melhor.'
       },
       {
         name: 'Carlos Mendes',
-        role: 'Portuguese Senior Manager',
+        role: 'Lusophone Senior Manager',
         rolePortuguese: 'Gestor Sénior Português',
-        nationality: 'Portuguese',
-        quote: 'This programme helped me understand British business communication while allowing me to share Portuguese perspectives. Now I lead a multicultural team successfully.',
+        nationality: 'Lusophone',
+        quote: 'This programme helped me understand British business communication while allowing me to share Lusophone perspectives. Now I lead a multicultural team successfully.',
         quotePortuguese: 'Este programa ajudou-me a entender comunicação empresarial britânica enquanto me permitiu partilhar perspetivas portuguesas. Agora lidero uma equipa multicultural com sucesso.'
       }
     ],
-    futurePlans: 'Launch executive leadership programme, expand to 100 companies, create Portuguese-British business accelerator.',
+    futurePlans: 'Launch executive leadership programme, expand to 100 companies, create Lusophone-British business accelerator.',
     futurePlansPortuguese: 'Lançar programa de liderança executiva, expandir para 100 empresas, criar acelerador empresarial luso-britânico.',
-    mediaRecognition: ['Financial Times Diversity', 'HR Magazine', 'Portuguese Business Weekly', 'London Business Journal'],
+    mediaRecognition: ['Financial Times Diversity', 'HR Magazine', 'Lusophone Business Weekly', 'London Business Journal'],
     icon: BuildingOffice2Icon,
     color: 'secondary'
   },
   {
     id: 'community-festivals',
-    title: 'London Multicultural Festival Portuguese Heritage Showcase',
+    title: 'London Multicultural Festival Lusophone Heritage Showcase',
     titlePortuguese: 'Mostra do Património Português no Festival Multicultural de Londres',
     category: 'cultural',
     description: 'Annual Portuguese heritage showcase at London\'s major multicultural festivals, demonstrating Portuguese culture to diverse London communities while learning about other cultures, building bridges across all communities.',
@@ -206,7 +206,7 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
     objectives: [
       'Showcase Portuguese culture to London\'s diverse communities',
       'Learn about and appreciate other cultures represented in London',
-      'Build friendships between Portuguese and other ethnic communities',
+      'Build friendships between Lusophone and other ethnic communities',
       'Promote cultural understanding and reduce prejudice',
       'Celebrate London\'s multicultural identity'
     ],
@@ -241,9 +241,9 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
       },
       {
         name: 'Isabel Costa',
-        role: 'Portuguese Cultural Coordinator',
+        role: 'Lusophone Cultural Coordinator',
         rolePortuguese: 'Coordenadora Cultural Portuguesa',
-        nationality: 'Portuguese',
+        nationality: 'Lusophone',
         quote: 'Sharing our fado music and traditional dances with other communities brought so much joy. We learned Indian classical dance and Caribbean cooking in return.',
         quotePortuguese: 'Partilhar nossa música de fado e danças tradicionais com outras comunidades trouxe tanta alegria. Aprendemos dança clássica indiana e culinária caribenha em troca.'
       }
@@ -256,10 +256,10 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
   },
   {
     id: 'nhs-healthcare',
-    title: 'Portuguese-NHS Healthcare Cultural Competency Programme',
+    title: 'Lusophone-NHS Healthcare Cultural Competency Programme',
     titlePortuguese: 'Programa de Competência Cultural Português-NHS em Cuidados de Saúde',
     category: 'social',
-    description: 'Healthcare initiative training NHS staff in Portuguese cultural competency while providing Portuguese-speaking community with culturally sensitive healthcare access, improving health outcomes for Portuguese families.',
+    description: 'Healthcare initiative training NHS staff in Lusophone cultural competency while providing Portuguese-speaking community with culturally sensitive healthcare access, improving health outcomes for Lusophone families.',
     descriptionPortuguese: 'Iniciativa de cuidados de saúde treinando funcionários do NHS em competência cultural portuguesa enquanto fornece à comunidade de falantes de português acesso a cuidados de saúde culturalmente sensíveis, melhorando resultados de saúde para famílias portuguesas.',
     participants: {
       portuguese: 2800,
@@ -269,7 +269,7 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
     duration: '2021-Present',
     location: '12 NHS Trusts across London',
     objectives: [
-      'Train NHS staff in Portuguese cultural healthcare practices and communication',
+      'Train NHS staff in Lusophone cultural healthcare practices and communication',
       'Provide Portuguese-speaking healthcare advocates and translators',
       'Educate Portuguese-speaking community about NHS services and rights',
       'Reduce health disparities in Portuguese-speaking community',
@@ -291,31 +291,31 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
         { value: '67%', label: 'Reduced Hospital Readmissions', labelPortuguese: 'Readmissões Hospitalares Reduzidas' },
         { value: '450', label: 'NHS Staff Trained', labelPortuguese: 'Funcionários NHS Treinados' }
       ],
-      description: 'Significant improvement in Portuguese patients\' satisfaction with NHS services. Reduced misunderstandings, improved treatment compliance, and better health outcomes through culturally sensitive care.',
+      description: 'Significant improvement in Lusophone patients\' satisfaction with NHS services. Reduced misunderstandings, improved treatment compliance, and better health outcomes through culturally sensitive care.',
       descriptionPortuguese: 'Melhoria significativa na satisfação de pacientes portugueses com serviços do NHS. Mal-entendidos reduzidos, compliance de tratamento melhorado e melhores resultados de saúde através de cuidados culturalmente sensíveis.'
     },
-    partnerships: ['NHS England', 'Portuguese Medical Association', 'King\'s College Hospital', 'Guy\'s and St Thomas\' NHS Trust'],
+    partnerships: ['NHS England', 'Lusophone Medical Association', 'King\'s College Hospital', 'Guy\'s and St Thomas\' NHS Trust'],
     testimonials: [
       {
         name: 'Dr. James Mitchell',
         role: 'NHS Consultant',
         rolePortuguese: 'Consultor do NHS',
         nationality: 'British',
-        quote: 'Learning about Portuguese health beliefs and family dynamics transformed how I care for Portuguese patients. Cultural competency is essential for effective healthcare.',
+        quote: 'Learning about Lusophone health beliefs and family dynamics transformed how I care for Lusophone patients. Cultural competency is essential for effective healthcare.',
         quotePortuguese: 'Aprender sobre crenças de saúde portuguesas e dinâmicas familiares transformou como cuido de pacientes portugueses. Competência cultural é essencial para cuidados de saúde eficazes.'
       },
       {
         name: 'Maria Fernandes',
-        role: 'Portuguese Patient Advocate',
+        role: 'Lusophone Patient Advocate',
         rolePortuguese: 'Defensora de Pacientes Portuguesa',
-        nationality: 'Portuguese',
+        nationality: 'Lusophone',
         quote: 'Having healthcare professionals who understand our culture makes such a difference. My elderly mother finally feels comfortable seeking medical care.',
         quotePortuguese: 'Ter profissionais de saúde que entendem nossa cultura faz tanta diferença. Minha mãe idosa finalmente sente-se confortável procurando cuidados médicos.'
       }
     ],
     futurePlans: 'Expand to 25 NHS trusts, launch Portuguese-speaking community health champions programme, create digital health resources.',
     futurePlansPortuguese: 'Expandir para 25 trusts do NHS, lançar programa de campeões de saúde da comunidade de falantes de português, criar recursos digitais de saúde.',
-    mediaRecognition: ['NHS Health Publication', 'Portuguese Medical Journal', 'Healthcare Professional Magazine', 'Community Health Newsletter'],
+    mediaRecognition: ['NHS Health Publication', 'Lusophone Medical Journal', 'Healthcare Professional Magazine', 'Community Health Newsletter'],
     icon: HeartIcon,
     color: 'coral'
   },
@@ -324,7 +324,7 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
     title: 'Portuguese-speaking community-Local Government Partnership Programme',
     titlePortuguese: 'Programa de Parceria Comunidade de Falantes de Português-Governo Local',
     category: 'governmental',
-    description: 'Formal partnership between Portuguese-speaking community leaders and London borough councils, ensuring Portuguese voices are heard in local government decisions while helping Portuguese residents understand and engage with local democracy.',
+    description: 'Formal partnership between Portuguese-speaking community leaders and London borough councils, ensuring Lusophone voices are heard in local government decisions while helping Lusophone residents understand and engage with local democracy.',
     descriptionPortuguese: 'Parceria formal entre líderes da comunidade de falantes de português e conselhos de distrito de Londres, garantindo que vozes portuguesas sejam ouvidas nas decisões do governo local enquanto ajuda residentes portugueses a entender e envolver-se com democracia local.',
     participants: {
       portuguese: 1200,
@@ -335,9 +335,9 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
     location: '8 London Borough Councils',
     objectives: [
       'Represent Portuguese-speaking community interests in local government',
-      'Educate Portuguese residents about local democracy and civic participation',
+      'Educate Lusophone residents about local democracy and civic participation',
       'Facilitate communication between Portuguese-speaking community and council services',
-      'Ensure Portuguese cultural needs are considered in local planning',
+      'Ensure Lusophone cultural needs are considered in local planning',
       'Build trust between Portuguese-speaking community and British institutions'
     ],
     objectivesPortuguese: [
@@ -356,7 +356,7 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
         { value: '12', label: 'Policy Changes Influenced', labelPortuguese: 'Mudanças Políticas Influenciadas' },
         { value: '1,730+', label: 'Residents Engaged', labelPortuguese: 'Residentes Envolvidos' }
       ],
-      description: 'Portuguese voter registration increased 75%, three Portuguese councillors elected, Portuguese cultural considerations integrated into local planning policies.',
+      description: 'Lusophone voter registration increased 75%, three Lusophone councillors elected, Lusophone cultural considerations integrated into local planning policies.',
       descriptionPortuguese: 'Registo eleitoral português aumentou 75%, três vereadores portugueses eleitos, considerações culturais portuguesas integradas em políticas de planeamento local.'
     },
     partnerships: ['London Borough Councils', 'Electoral Commission', 'Local Government Association', 'Democratic Participation Network'],
@@ -373,12 +373,12 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
         name: 'António Silva',
         role: 'Portuguese-speaking community Representative',
         rolePortuguese: 'Representante da Comunidade de Falantes de Português',
-        nationality: 'Portuguese',
+        nationality: 'Lusophone',
         quote: 'Having a voice in local government means our children have better Portuguese language support in schools and our elderly have culturally appropriate social services.',
         quotePortuguese: 'Ter voz no governo local significa que nossos filhos têm melhor apoio de língua portuguesa nas escolas e nossos idosos têm serviços sociais culturalmente apropriados.'
       }
     ],
-    futurePlans: 'Expand to all 32 London boroughs, establish Portuguese civic leadership academy, launch digital democracy engagement platform.',
+    futurePlans: 'Expand to all 32 London boroughs, establish Lusophone civic leadership academy, launch digital democracy engagement platform.',
     futurePlansPortuguese: 'Expandir para todos os 32 distritos de Londres, estabelecer academia de liderança cívica portuguesa, lançar plataforma digital de envolvimento democrático.',
     mediaRecognition: ['Local Government Chronicle', 'Municipal Journal', 'Democracy and Participation Quarterly', 'London Assembly Reports'],
     icon: HandRaisedIcon,
@@ -386,10 +386,10 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
   },
   {
     id: 'neighborhood-integration',
-    title: 'Portuguese Neighbor-to-Neighbor Community Integration Project',
+    title: 'Lusophone Neighbor-to-Neighbor Community Integration Project',
     titlePortuguese: 'Projeto de Integração Comunitária Vizinho-a-Vizinho Português',
     category: 'community',
-    description: 'Grassroots programme connecting Portuguese families with British and other neighbors through practical support, cultural sharing, and community building activities that create genuine local friendships and mutual understanding.',
+    description: 'Grassroots programme connecting Lusophone families with British and other neighbors through practical support, cultural sharing, and community building activities that create genuine local friendships and mutual understanding.',
     descriptionPortuguese: 'Programa de base conectando famílias portuguesas com vizinhos britânicos e outros através de apoio prático, partilha cultural e atividades de construção comunitária que criam amizades locais genuínas e compreensão mútua.',
     participants: {
       portuguese: 950,
@@ -399,7 +399,7 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
     duration: '2019-Present',
     location: 'Residential areas across 15 London boroughs',
     objectives: [
-      'Create genuine friendships between Portuguese and neighboring families',
+      'Create genuine friendships between Lusophone and neighboring families',
       'Provide practical support for daily life integration (shopping, schools, healthcare)',
       'Share Portuguese culture through informal neighborhood gatherings',
       'Learn about British customs and local community practices',
@@ -421,7 +421,7 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
         { value: '156', label: 'Neighborhood Events Organized', labelPortuguese: 'Eventos de Bairro Organizados' },
         { value: '92%', label: 'Improved Community Feeling', labelPortuguese: 'Sentimento Comunitário Melhorado' }
       ],
-      description: 'Portuguese families report feeling truly welcomed in their neighborhoods. British neighbors gained appreciation for Portuguese hospitality and culture. Many lasting friendships formed across cultural lines.',
+      description: 'Lusophone families report feeling truly welcomed in their neighborhoods. British neighbors gained appreciation for Lusophone hospitality and culture. Many lasting friendships formed across cultural lines.',
       descriptionPortuguese: 'Famílias portuguesas reportam sentir-se verdadeiramente bem-vindas nos seus bairros. Vizinhos britânicos ganharam apreciação pela hospitalidade e cultura portuguesa. Muitas amizades duradouras formaram-se através de linhas culturais.'
     },
     partnerships: ['Neighborhood Watch Schemes', 'Local Community Centers', 'Parent-Teacher Associations', 'Residents\' Associations'],
@@ -431,14 +431,14 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
         role: 'British Neighbor & Retired Teacher',
         rolePortuguese: 'Vizinha Britânica & Professora Aposentada',
         nationality: 'British',
-        quote: 'My Portuguese neighbors became like family. They taught me to cook bacalhau, and I helped their children with English homework. True friendship knows no borders.',
+        quote: 'My Lusophone neighbors became like family. They taught me to cook bacalhau, and I helped their children with English homework. True friendship knows no borders.',
         quotePortuguese: 'Meus vizinhos portugueses tornaram-se como família. Ensinaram-me a cozinhar bacalhau, e ajudei os filhos deles com deveres de inglês. Amizade verdadeira não conhece fronteiras.'
       },
       {
         name: 'Fernanda & José Silva',
-        role: 'Portuguese Family',
+        role: 'Lusophone Family',
         rolePortuguese: 'Família Portuguesa',
-        nationality: 'Portuguese',
+        nationality: 'Lusophone',
         quote: 'Our street became our extended family. When our daughter was born, neighbors brought meals. When theirs had difficulties, we helped. This is what community means.',
         quotePortuguese: 'Nossa rua tornou-se nossa família estendida. Quando nossa filha nasceu, vizinhos trouxeram refeições. Quando os deles tiveram dificuldades, ajudamos. Isto é o que comunidade significa.'
       }
@@ -562,7 +562,7 @@ export default function CulturalBridgeBuilding() {
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
             <div className="text-3xl font-bold text-secondary-600 mb-2">{totals.portuguese.toLocaleString()}+</div>
             <div className="text-sm text-gray-600">
-              {language === 'pt' ? 'Participantes Portugueses' : 'Portuguese Participants'}
+              {language === 'pt' ? 'Participantes Portugueses' : 'Lusophone Participants'}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
@@ -658,7 +658,7 @@ export default function CulturalBridgeBuilding() {
                     <div className="text-center">
                       <div className="text-lg font-bold">{initiative.participants.portuguese.toLocaleString()}</div>
                       <div className="text-xs opacity-90">
-                        {language === 'pt' ? 'Portugueses' : 'Portuguese'}
+                        {language === 'pt' ? 'Portugueses' : 'Lusophone'}
                       </div>
                     </div>
                     <div className="text-center">

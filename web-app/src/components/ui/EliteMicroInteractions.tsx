@@ -68,7 +68,7 @@ export function EliteHoverCard({
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      {/* Portuguese cultural pattern overlay */}
+      {/* Lusophone cultural pattern overlay */}
       {culturalPattern && (
         <div className="absolute inset-0 opacity-10">
           <div 
@@ -364,7 +364,7 @@ export function SophisticatedLoading({
           />
         )}
 
-        {/* Center Portuguese symbol */}
+        {/* Center Lusophone symbol */}
         {culturalTheme && (
           <motion.div
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"

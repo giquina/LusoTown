@@ -111,7 +111,7 @@ export default function DigitalCulturalArchive({
       verified: true,
       culturalContext: 'Recipes reflect pre-immigration Azorean culinary traditions, using local ingredients and methods passed down orally',
       modernRelevance: 'These recipes help modern Azorean diaspora maintain connection to their culinary heritage',
-      preservationNotes: 'Original handwritten pages digitized at 600 DPI, Portuguese transcription included'
+      preservationNotes: 'Original handwritten pages digitized at 600 DPI, Lusophone transcription included'
     },
     {
       id: 'fado-recordings-coimbra-1950s',
@@ -151,8 +151,8 @@ export default function DigitalCulturalArchive({
     },
     {
       id: 'portuguese-immigration-letters-usa',
-      title: 'Portuguese Immigration Letters to USA (1960s)',
-      description: 'Personal correspondence between Portuguese families during the wave of immigration to the United States',
+      title: 'Lusophone Immigration Letters to USA (1960s)',
+      description: 'Personal correspondence between Lusophone families during the wave of immigration to the United States',
       type: 'document',
       origin: {
         country: 'portugal',
@@ -162,10 +162,10 @@ export default function DigitalCulturalArchive({
       dateCreated: new Date('1963-05-10'),
       dateUploaded: new Date('2025-08-01'),
       contributor: {
-        name: 'Portuguese American Historical Society',
+        name: 'Lusophone American Historical Society',
         relationship: 'organization'
       },
-      culturalSignificance: 'Provides firsthand accounts of Portuguese immigration experience and family separation',
+      culturalSignificance: 'Provides firsthand accounts of Lusophone immigration experience and family separation',
       historicalPeriod: '1960s',
       language: 'portuguese',
       tags: ['immigration', 'family history', 'diaspora', 'personal correspondence', 'usa'],
@@ -186,7 +186,7 @@ export default function DigitalCulturalArchive({
     },
     {
       id: 'azulejo-tile-patterns-database',
-      title: 'Traditional Portuguese Azulejo Patterns Database',
+      title: 'Traditional Lusophone Azulejo Patterns Database',
       description: 'Comprehensive collection of traditional azulejo tile patterns from across Portugal, digitized for preservation',
       type: 'photo',
       origin: {
@@ -200,7 +200,7 @@ export default function DigitalCulturalArchive({
         name: 'Museu Nacional do Azulejo',
         relationship: 'organization'
       },
-      culturalSignificance: 'Preserves traditional Portuguese ceramic art forms and architectural decoration methods',
+      culturalSignificance: 'Preserves traditional Lusophone ceramic art forms and architectural decoration methods',
       historicalPeriod: '16th-18th centuries',
       language: 'portuguese',
       tags: ['azulejo', 'ceramics', 'traditional art', 'architecture', 'patterns'],
@@ -217,13 +217,13 @@ export default function DigitalCulturalArchive({
       likes: 234,
       shares: 156,
       verified: true,
-      culturalContext: 'Azulejo represents unique Portuguese ceramic art tradition with Moorish and European influences',
-      modernRelevance: 'Patterns used by contemporary artists and architects in modern Portuguese design'
+      culturalContext: 'Azulejo represents unique Lusophone ceramic art tradition with Moorish and European influences',
+      modernRelevance: 'Patterns used by contemporary artists and architects in modern Lusophone design'
     },
     {
       id: 'brazilian-portuguese-folklore-tales',
-      title: 'Brazilian Portuguese Folklore Tales Collection',
-      description: 'Oral folklore tales from Brazilian Portuguese communities, recorded to preserve storytelling traditions',
+      title: 'Brazilian Lusophone Folklore Tales Collection',
+      description: 'Oral folklore tales from Brazilian Lusophone communities, recorded to preserve storytelling traditions',
       type: 'story',
       origin: {
         country: 'brazil',
@@ -236,7 +236,7 @@ export default function DigitalCulturalArchive({
         name: 'Fundação Cultural Brasileira-Portuguesa',
         relationship: 'organization'
       },
-      culturalSignificance: 'Preserves oral tradition and folklore unique to Brazilian Portuguese communities',
+      culturalSignificance: 'Preserves oral tradition and folklore unique to Brazilian Lusophone communities',
       historicalPeriod: '19th-20th centuries',
       language: 'portuguese',
       tags: ['folklore', 'oral tradition', 'storytelling', 'brazilian culture', 'community heritage'],
@@ -253,7 +253,7 @@ export default function DigitalCulturalArchive({
       likes: 167,
       shares: 94,
       verified: true,
-      culturalContext: 'Tales blend Portuguese storytelling tradition with Brazilian cultural elements',
+      culturalContext: 'Tales blend Lusophone storytelling tradition with Brazilian cultural elements',
       modernRelevance: 'Used in cultural education programs to teach Brazilian Portuguese heritage'
     },
     {
@@ -272,7 +272,7 @@ export default function DigitalCulturalArchive({
         name: 'Instituto do Patrimônio Cultural Cabo Verde',
         relationship: 'organization'
       },
-      culturalSignificance: 'Preserves the unique Cape Verdean musical tradition that blends Portuguese and African influences',
+      culturalSignificance: 'Preserves the unique Cape Verdean musical tradition that blends Lusophone and African influences',
       historicalPeriod: '1930s-1960s',
       language: 'portuguese',
       tags: ['morna', 'cape verdean music', 'traditional music', 'sheet music', 'cultural preservation'],
@@ -298,7 +298,7 @@ export default function DigitalCulturalArchive({
     {
       id: 'global-fado-preservation',
       name: 'Global Fado Heritage Preservation Project',
-      description: 'Comprehensive digital archive of Fado performances, sheet music, and historical documentation from Portuguese communities worldwide',
+      description: 'Comprehensive digital archive of Fado performances, sheet music, and historical documentation from Lusophone communities worldwide',
       type: 'digitization',
       targetCulture: {
         id: 'fado-tradition',
@@ -315,7 +315,7 @@ export default function DigitalCulturalArchive({
         currency: 'EUR'
       },
       timeline: '18 months',
-      expectedImpact: 'Preserve and make accessible over 5,000 Fado recordings and performances from global Portuguese communities',
+      expectedImpact: 'Preserve and make accessible over 5,000 Fado recordings and performances from global Lusophone communities',
       preservationGoals: [
         'Digitize rare Fado recordings',
         'Create searchable database',
@@ -332,14 +332,14 @@ export default function DigitalCulturalArchive({
     },
     {
       id: 'diaspora-family-stories',
-      name: 'Portuguese Diaspora Family Stories Archive',
-      description: 'Collection and preservation of personal family stories, photos, and documents from Portuguese diaspora communities',
+      name: 'Lusophone Diaspora Family Stories Archive',
+      description: 'Collection and preservation of personal family stories, photos, and documents from Lusophone diaspora communities',
       type: 'documentation',
       targetCulture: {
         id: 'diaspora-stories',
-        name: 'Portuguese Diaspora Heritage',
-        description: 'Personal and family stories of Portuguese immigration and cultural preservation',
-        origin: 'Global Portuguese Communities',
+        name: 'Lusophone Diaspora Heritage',
+        description: 'Personal and family stories of Lusophone immigration and cultural preservation',
+        origin: 'Global Lusophone Communities',
         significance: 'Preserves individual and family cultural identity',
         preservationStatus: 'endangered'
       },
@@ -350,7 +350,7 @@ export default function DigitalCulturalArchive({
         currency: 'EUR'
       },
       timeline: '24 months',
-      expectedImpact: 'Preserve 2,500+ family stories and 10,000+ historical photos from Portuguese diaspora',
+      expectedImpact: 'Preserve 2,500+ family stories and 10,000+ historical photos from Lusophone diaspora',
       preservationGoals: [
         'Record elder testimonies',
         'Digitize family photographs',
@@ -721,11 +721,11 @@ export default function DigitalCulturalArchive({
       {/* Header */}
       <div className="text-center">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Digital Portuguese Cultural Archive
+          Digital Lusophone Cultural Archive
         </h1>
         <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-6">
           Preserving Portuguese heritage through digital documentation - family recipes, historical documents, 
-          traditional music, oral stories, and cultural artifacts from Portuguese communities worldwide
+          traditional music, oral stories, and cultural artifacts from Lusophone communities worldwide
         </p>
         
         {showUploadInterface && enableContributions && (

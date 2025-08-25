@@ -41,7 +41,7 @@ export default function ResponsiveButton({
     ${fullWidth ? 'w-full' : ''}
   `
   
-  // Size classes with Portuguese text considerations
+  // Size classes with Lusophone text considerations
   const sizeClasses = {
     sm: `
       text-sm px-4 py-2.5
@@ -92,7 +92,7 @@ export default function ResponsiveButton({
     ${className}
   `.trim().replace(/\s+/g, ' ')
   
-  // Handle text truncation for Portuguese
+  // Handle text truncation for Lusophone
   const displayText = isPortuguese && portugueseTextFallback && 
     typeof children === 'string' && children.length > 20
     ? portugueseTextFallback

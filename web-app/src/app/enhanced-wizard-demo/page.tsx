@@ -106,7 +106,7 @@ export default function EnhancedWizardDemo() {
                 <span className="font-semibold text-green-800">Premium Community</span>
               </div>
               <p className="text-sm text-green-600">
-                Access to global Portuguese diaspora network
+                Access to global Lusophone diaspora network
               </p>
             </div>
             

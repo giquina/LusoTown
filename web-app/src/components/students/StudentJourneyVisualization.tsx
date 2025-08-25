@@ -64,7 +64,7 @@ const STUDENT_JOURNEY_STEPS: JourneyStep[] = [
   {
     id: 'origin',
     title: {
-      en: 'Portuguese-Speaking Heritage',
+      en: 'Lusophone-Speaking Heritage',
       pt: 'Herança Lusófona'
     },
     description: {
@@ -88,7 +88,7 @@ const STUDENT_JOURNEY_STEPS: JourneyStep[] = [
       pt: 'Universidade do Reino Unido'
     },
     description: {
-      en: 'Pursuing higher education at prestigious United Kingdom institutions with Portuguese support',
+      en: 'Pursuing higher education at prestigious United Kingdom institutions with Lusophone support',
       pt: 'Cursando ensino superior em prestigiosas instituições do Reino Unido com apoio português'
     },
     icon: '🎓',
@@ -97,7 +97,7 @@ const STUDENT_JOURNEY_STEPS: JourneyStep[] = [
     bgColor: 'bg-blue-50 border-blue-200',
     achievements: ['Academic Excellence', 'Cultural Integration', 'Language Skills', 'International Network'],
     stats: {
-      en: '8 partner universities supporting Portuguese students',
+      en: '8 partner universities supporting Lusophone students',
       pt: '8 universidades parceiras apoiando estudantes portugueses'
     }
   },
@@ -108,7 +108,7 @@ const STUDENT_JOURNEY_STEPS: JourneyStep[] = [
       pt: 'Sucesso Profissional'
     },
     description: {
-      en: 'Achieving career goals while maintaining Portuguese cultural identity and community connections',
+      en: 'Achieving career goals while maintaining Lusophone cultural identity and community connections',
       pt: 'Alcançando objetivos profissionais mantendo identidade cultural portuguesa e conexões comunitárias'
     },
     icon: '🏆',
@@ -130,7 +130,7 @@ const FEATURED_STUDENT_STORIES: StudentStory[] = [
     originCountry: { en: 'Portugal', pt: 'Portugal' },
     flag: '🇵🇹',
     university: 'University College London',
-    degree: 'Portuguese Studies & Business',
+    degree: 'Lusophone Studies & Business',
     year: '3rd Year',
     journey: STUDENT_JOURNEY_STEPS,
     quote: {
@@ -192,7 +192,7 @@ export default function StudentJourneyVisualization() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {language === 'pt' 
               ? 'Jornada dos Estudantes Lusófonos' 
-              : 'Portuguese-Speaking Student Journey'
+              : 'Lusophone-Speaking Student Journey'
             }
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -468,7 +468,7 @@ export default function StudentJourneyVisualization() {
             <p className="text-lg mb-6 opacity-90">
               {language === 'pt'
                 ? 'Junte-se a milhares de estudantes portugueses que encontraram o seu caminho para o sucesso através da LusoTown'
-                : 'Join thousands of Portuguese students who found their path to success through LusoTown'
+                : 'Join thousands of Lusophone students who found their path to success through LusoTown'
               }
             </p>
             <button className="

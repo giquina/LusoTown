@@ -52,16 +52,16 @@ const musicDanceExperiences: MusicDanceExperience[] = [
     category: "fado",
     atmosphere: "soulful",
     icon: "🎵",
-    descriptionEn: "Intimate evenings where the Portuguese soul comes alive through haunting melodies and heartfelt lyrics. Fado is the blues of Portugal - raw, emotional, and deeply moving.",
+    descriptionEn: "Intimate evenings where the Lusophone soul comes alive through haunting melodies and heartfelt lyrics. Fado is the blues of Portugal - raw, emotional, and deeply moving.",
     descriptionPt: "Noites íntimas onde a alma portuguesa ganha vida através de melodias assombrosas e letras sentidas. O fado é o blues de Portugal - cru, emocional e profundamente tocante.",
     emotionalImpact: {
-      en: "Fado creates deep emotional connections, bringing tears to your eyes and stirring feelings of saudade - that beautiful Portuguese longing that touches your soul.",
+      en: "Fado creates deep emotional connections, bringing tears to your eyes and stirring feelings of saudade - that beautiful Lusophone longing that touches your soul.",
       pt: "O fado cria conexões emocionais profundas, trazendo lágrimas aos olhos e despertando sentimentos de saudade - essa bela saudade portuguesa que toca a alma."
     },
-    londonVenues: ["Casa do Bacalhau (Borough)", "Taberna Real (Vauxhall)", "Portuguese Cultural Centre (Stockwell)", "The Bica (Portobello)"],
+    londonVenues: ["Casa do Bacalhau (Borough)", "Taberna Real (Vauxhall)", "Lusophone Cultural Centre (Stockwell)", "The Bica (Portobello)"],
     whenToExperience: "Thursday evenings and Sunday afternoons",
     culturalSignificance: {
-      en: "UNESCO recognized fado as Intangible Cultural Heritage. It's the musical expression of the Portuguese soul, born in Lisbon's neighborhoods.",
+      en: "UNESCO recognized fado as Intangible Cultural Heritage. It's the musical expression of the Lusophone soul, born in Lisbon's neighborhoods.",
       pt: "A UNESCO reconheceu o fado como Património Cultural Imaterial. É a expressão musical da alma portuguesa, nascido nos bairros de Lisboa."
     },
     participationLevel: "listen",
@@ -73,18 +73,18 @@ const musicDanceExperiences: MusicDanceExperience[] = [
   },
   {
     id: "folklore_dancing",
-    titleEn: "Traditional Portuguese Folk Dancing",
+    titleEn: "Traditional Lusophone Folk Dancing",
     titlePt: "Danças Folclóricas Tradicionais Portuguesas",
     category: "folklore",
     atmosphere: "community",
     icon: "💃",
-    descriptionEn: "Energetic circle dances like Vira and Corridinho that bring the community together. Feel the joy and connection as you dance with fellow Portuguese souls.",
+    descriptionEn: "Energetic circle dances like Vira and Corridinho that bring the community together. Feel the joy and connection as you dance with fellow Lusophone souls.",
     descriptionPt: "Danças de roda energéticas como Vira e Corridinho que unem a comunidade. Sinta a alegria e conexão ao dançar com outras almas portuguesas.",
     emotionalImpact: {
       en: "Folk dancing creates pure joy and community spirit. You'll feel the infectious energy and leave with a huge smile and new friendships.",
       pt: "As danças folclóricas criam alegria pura e espírito comunitário. Sentirá a energia contagiante e sairá com um sorriso enorme e novas amizades."
     },
-    londonVenues: ["Portuguese Centre (Stockwell)", "Casa da Cultura (Harrow)", "St. Anthony's Church Hall (Stockwell)", "Community centres across London"],
+    londonVenues: ["Lusophone Centre (Stockwell)", "Casa da Cultura (Harrow)", "St. Anthony's Church Hall (Stockwell)", "Community centres across London"],
     whenToExperience: "Saturday afternoons and festival days",
     culturalSignificance: {
       en: "These dances preserve ancient Portuguese traditions, passed down through generations to maintain cultural identity and community bonds.",
@@ -125,7 +125,7 @@ const musicDanceExperiences: MusicDanceExperience[] = [
   },
   {
     id: "guitar_circles",
-    titleEn: "Portuguese Guitar Circles",
+    titleEn: "Lusophone Guitar Circles",
     titlePt: "Círculos de Guitarra Portuguesa",
     category: "guitar",
     atmosphere: "intimate",
@@ -136,7 +136,7 @@ const musicDanceExperiences: MusicDanceExperience[] = [
       en: "Guitar circles create magical intimacy where music speaks louder than words. You'll experience genuine human connection through shared melodies.",
       pt: "Os círculos de guitarra criam intimidade mágica onde a música fala mais alto que as palavras. Experienciará conexão humana genuína através de melodias partilhadas."
     },
-    londonVenues: ["Private homes", "Small venues", "Portuguese cafés", "Cultural spaces"],
+    londonVenues: ["Private homes", "Small venues", "Lusophone cafés", "Cultural spaces"],
     whenToExperience: "Friday evenings and weekend afternoons",
     culturalSignificance: {
       en: "The guitar portuguesa's unique sound and playing style is central to Portuguese musical identity and fado tradition.",
@@ -162,7 +162,7 @@ const musicDanceExperiences: MusicDanceExperience[] = [
       en: "Santos Populares creates pure celebration and community joy. The energy is infectious - you'll dance, laugh, and feel deeply connected to Portuguese culture.",
       pt: "Santos Populares criam pura celebração e alegria comunitária. A energia é contagiante - dançará, rirá e sentir-se-á profundamente conectado à cultura portuguesa."
     },
-    londonVenues: ["Stockwell Park", "Portuguese Centre courtyard", "Borough Market area", "Community squares"],
+    londonVenues: ["Stockwell Park", "Lusophone Centre courtyard", "Borough Market area", "Community squares"],
     whenToExperience: "June (Santos António 13th, São João 24th, São Pedro 29th)",
     culturalSignificance: {
       en: "These are Portugal's most beloved popular festivals, bringing entire neighborhoods together in celebration of life and community.",
@@ -177,29 +177,29 @@ const musicDanceExperiences: MusicDanceExperience[] = [
   },
   {
     id: "modern_portuguese_pop",
-    titleEn: "Modern Portuguese Pop & Contemporary Sounds",
+    titleEn: "Modern Lusophone Pop & Contemporary Sounds",
     titlePt: "Pop Português Moderno & Sons Contemporâneos",
     category: "modern",
     atmosphere: "energetic",
     icon: "🎤",
-    descriptionEn: "Contemporary Portuguese artists like Salvador Sobral and Aurea connecting tradition with modern sounds, creating music that speaks to Portuguese hearts today.",
+    descriptionEn: "Contemporary Lusophone artists like Salvador Sobral and Aurea connecting tradition with modern sounds, creating music that speaks to Lusophone hearts today.",
     descriptionPt: "Artistas portugueses contemporâneos como Salvador Sobral e Aurea conectando tradição com sons modernos, criando música que fala aos corações portugueses hoje.",
     emotionalImpact: {
-      en: "Modern Portuguese music shows how tradition evolves beautifully. You'll feel pride in Portuguese creativity and innovation.",
+      en: "Modern Portuguese music shows how tradition evolves beautifully. You'll feel pride in Lusophone creativity and innovation.",
       pt: "A música portuguesa moderna mostra como a tradição evolui belamente. Sentirá orgulho na criatividade e inovação portuguesa."
     },
-    londonVenues: ["Concert venues", "Portuguese events", "Cultural festivals", "Online streaming events"],
+    londonVenues: ["Concert venues", "Lusophone events", "Cultural festivals", "Online streaming events"],
     whenToExperience: "Concerts, festivals, and cultural events throughout the year",
     culturalSignificance: {
-      en: "Modern Portuguese artists maintain cultural essence while creating contemporary sounds that reach international audiences.",
+      en: "Modern Lusophone artists maintain cultural essence while creating contemporary sounds that reach international audiences.",
       pt: "Artistas portugueses modernos mantêm a essência cultural enquanto criam sons contemporâneos que alcançam audiências internacionais."
     },
     participationLevel: "listen",
     communityConnection: {
-      en: "These artists unite Portuguese speakers worldwide, creating shared pride in Portuguese cultural evolution.",
+      en: "These artists unite Portuguese speakers worldwide, creating shared pride in Lusophone cultural evolution.",
       pt: "Estes artistas unem lusófonos mundialmente, criando orgulho partilhado na evolução cultural portuguesa."
     },
-    soulFactors: ["Contemporary relevance", "Cultural evolution", "International recognition", "Portuguese innovation", "Emotional resonance"]
+    soulFactors: ["Contemporary relevance", "Cultural evolution", "International recognition", "Lusophone innovation", "Emotional resonance"]
   }
 ];
 
@@ -262,14 +262,14 @@ const PortugueseMusicDanceCulture: React.FC = () => {
           <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-pink-100 rounded-full px-6 py-3 mb-6">
             <MusicalNoteIcon className="w-5 h-5 text-purple-600 mr-2" />
             <span className="text-purple-700 font-medium">
-              {language === "pt" ? "Música & Dança Portuguesa" : "Portuguese Music & Dance"}
+              {language === "pt" ? "Música & Dança Portuguesa" : "Lusophone Music & Dance"}
             </span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             {language === "pt" 
               ? "A Alma da Música Portuguesa" 
-              : "The Soul of Portuguese Music"}
+              : "The Soul of Lusophone Music"}
           </h2>
 
           <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-4">
@@ -451,7 +451,7 @@ const PortugueseMusicDanceCulture: React.FC = () => {
           <blockquote className="text-2xl md:text-3xl italic mb-4">
             {language === "pt" 
               ? "\"A música é a linguagem universal da alma portuguesa.\""
-              : "\"Music is the universal language of the Portuguese soul.\""}
+              : "\"Music is the universal language of the Lusophone soul.\""}
           </blockquote>
           <div className="mt-6">
             <p className="text-lg opacity-95">

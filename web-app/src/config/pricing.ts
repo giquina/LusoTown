@@ -80,7 +80,7 @@ export const SUBSCRIPTION_PLANS = {
       portugueseBusinessDiscount: 10, // 10% at Portuguese businesses
       monthlyNewsletter: true,
       familySupport: 4, // Up to 4 family members
-      culturalResources: true // Portuguese learning resources
+      culturalResources: true // Lusophone learning resources
     },
     portugalSpecific: {
       fadoNightsPriority: true,
@@ -154,7 +154,7 @@ export const SUBSCRIPTION_PLANS = {
       familySupport: 8, // Up to 8 family members
       culturalResources: true,
       familyEventPriority: true,
-      childrenPortugueseClasses: true, // Children's Portuguese classes
+      childrenPortugueseClasses: true, // Children's Lusophone classes
       familyNetworking: true // Family playdate coordination
     },
     portugalSpecific: {
@@ -170,7 +170,7 @@ export const SUBSCRIPTION_PLANS = {
   }
 } as const;
 
-// Portuguese Community Premium Benefits
+// Lusophone Community Premium Benefits
 export const PORTUGUESE_PREMIUM_BENEFITS = {
   cultural: {
     fadoNightsAccess: {
@@ -181,7 +181,7 @@ export const PORTUGUESE_PREMIUM_BENEFITS = {
       tier: 'community'
     },
     portugueseRestaurantNetwork: {
-      name: "Portuguese Restaurant Network",
+      name: "Lusophone Restaurant Network",
       namePt: "Rede de Restaurantes Portugueses",
       description: "Exclusive discounts at Portuguese restaurants across the United Kingdom",
       descriptionPt: "Descontos exclusivos em restaurantes portugueses por todo o Reino Unido",
@@ -195,7 +195,7 @@ export const PORTUGUESE_PREMIUM_BENEFITS = {
       tier: 'ambassador'
     },
     monthlyPortugueseWineBox: {
-      name: "Monthly Portuguese Wine Delivery",
+      name: "Monthly Lusophone Wine Delivery",
       namePt: "Entrega Mensal de Vinhos Portugueses",
       description: "Curated Portuguese wines and specialty products delivered monthly",
       descriptionPt: "Vinhos portugueses selecionados e produtos especiais entregues mensalmente",
@@ -204,7 +204,7 @@ export const PORTUGUESE_PREMIUM_BENEFITS = {
   },
   family: {
     childrenPortugueseClasses: {
-      name: "Children's Portuguese Classes",
+      name: "Children's Lusophone Classes",
       namePt: "Aulas de Português para Crianças",
       description: "Weekly Portuguese language and culture classes for children",
       descriptionPt: "Aulas semanais de língua e cultura portuguesa para crianças",
@@ -213,30 +213,30 @@ export const PORTUGUESE_PREMIUM_BENEFITS = {
     familyPlaydateNetwork: {
       name: "Family Playdate Network",
       namePt: "Rede de Encontros Familiares",
-      description: "Connect families for Portuguese cultural playdates",
+      description: "Connect families for Lusophone cultural playdates",
       descriptionPt: "Conectar famílias para encontros culturais portugueses",
       tier: 'familia'
     },
     grandparentInclusion: {
       name: "Grandparent Inclusion Programs",
       namePt: "Programas de Inclusão de Avós",
-      description: "Senior-friendly Portuguese cultural activities and support",
+      description: "Senior-friendly Lusophone cultural activities and support",
       descriptionPt: "Atividades culturais portuguesas e apoio adaptado para seniores",
       tier: 'familia'
     }
   },
   business: {
     portugueseNetworking: {
-      name: "Portuguese Business Networking",
+      name: "Lusophone Business Networking",
       namePt: "Networking de Negócios Portugueses",
-      description: "Exclusive networking events for Portuguese entrepreneurs",
+      description: "Exclusive networking events for Lusophone entrepreneurs",
       descriptionPt: "Eventos exclusivos de networking para empreendedores portugueses",
       tier: 'ambassador'
     },
     businessDiscountNetwork: {
       name: "Business Discount Network",
       namePt: "Rede de Descontos Empresariais",
-      description: "Discounts at Portuguese-owned businesses nationwide",
+      description: "Discounts at Lusophone-owned businesses nationwide",
       descriptionPt: "Descontos em empresas de proprietários portugueses em todo o país",
       tier: 'community'
     }
@@ -259,7 +259,7 @@ export const REVENUE_OPTIMIZATION = {
     psychologicalPricing: {
       anchoring: true, // Show higher tier first
       bundlePerception: true, // Family value perception
-      socialProof: true // "Join 750+ Portuguese speakers"
+      socialProof: true // "Join Portuguese speakers"
     }
   },
   retentionStrategies: {
@@ -290,10 +290,10 @@ export const REVENUE_OPTIMIZATION = {
   }
 } as const;
 
-// Portuguese Community Payment Preferences
+// Lusophone Community Payment Preferences
 export const PAYMENT_PREFERENCES = {
   preferredMethods: {
-    bankTransfer: 0.45, // 45% prefer bank transfer (traditional Portuguese banking)
+    bankTransfer: 0.45, // 45% prefer bank transfer (traditional Lusophone banking)
     creditCard: 0.35, // 35% credit/debit cards
     paypal: 0.15, // 15% PayPal
     other: 0.05 // 5% other methods
@@ -301,7 +301,7 @@ export const PAYMENT_PREFERENCES = {
   billingCycles: {
     monthly: {
       preference: 0.60, // 60% prefer monthly for cash flow management
-      culturalReason: "Portuguese families manage budgets monthly"
+      culturalReason: "Lusophone families manage budgets monthly"
     },
     quarterly: {
       preference: 0.25, // 25% quarterly with discount
@@ -309,7 +309,7 @@ export const PAYMENT_PREFERENCES = {
     },
     annual: {
       preference: 0.15, // 15% annual with significant savings
-      incentive: 0.20 // 20% discount for annual (Portuguese savings culture)
+      incentive: 0.20 // 20% discount for annual (Lusophone savings culture)
     }
   },
   familyBilling: {
@@ -325,11 +325,11 @@ export const CULTURAL_VALUE_PROPOSITIONS = {
     saudadeConnection: {
       headline: "Understanding Saudade",
       headlinePt: "Compreender a Saudade",
-      description: "Connect with others who understand this uniquely Portuguese emotion",
+      description: "Connect with others who understand this uniquely Lusophone emotion",
       descriptionPt: "Conecte-se com outros que compreendem esta emoção unicamente portuguesa"
     },
     culturalPreservation: {
-      headline: "Preserving Portuguese Heritage",
+      headline: "Preserving Lusophone Heritage",
       headlinePt: "Preservar o Património Português",
       description: "Keep Portuguese traditions alive for future generations in the United Kingdom",
       descriptionPt: "Manter as tradições portuguesas vivas para futuras gerações no Reino Unido"
@@ -337,13 +337,13 @@ export const CULTURAL_VALUE_PROPOSITIONS = {
     homeAwayFromHome: {
       headline: "Home Away From Home",
       headlinePt: "Casa Longe de Casa",
-      description: "Find your Portuguese family in the United Kingdom",
+      description: "Find your Lusophone family in the United Kingdom",
       descriptionPt: "Encontre a sua família portuguesa no Reino Unido"
     }
   },
   practical: {
     businessOpportunities: {
-      headline: "Portuguese Business Network",
+      headline: "Lusophone Business Network",
       headlinePt: "Rede de Negócios Portuguesa",
       value: "Access to 200+ Portuguese business owners across the United Kingdom"
     },
@@ -490,7 +490,7 @@ export const DISCOUNTS = {
   earlyBird: 0.2, // 20% off for early adopters
   referral: 0.1, // 10% off for successful referrals
   groupBooking: 0.15, // 15% off for group bookings (5+ people)
-  portuguese: 0.05 // 5% off for Portuguese cultural events
+  portuguese: 0.05 // 5% off for Lusophone cultural events
 } as const;
 
 // Student Pricing (calculated with discount)

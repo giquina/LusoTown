@@ -174,7 +174,7 @@ export default function AccessibilityWidget({
     {
       id: 'voice-control',
       name: language === 'pt' ? 'Controlo Voz' : 'Voice Control',
-      description: language === 'pt' ? 'Comandos de voz em português' : 'Portuguese voice commands',
+      description: language === 'pt' ? 'Comandos de voz em português' : 'Lusophone voice commands',
       icon: MicrophoneIcon,
       activeIcon: MicSolidIcon,
       isActive: isVoiceControlActive,
@@ -285,7 +285,7 @@ export default function AccessibilityWidget({
           {/* Portuguese heritage indicator */}
           <div 
             className="absolute -bottom-2 -right-2 w-4 h-4 rounded-full bg-gradient-to-r from-red-500 to-green-500 shadow-md"
-            title={language === 'pt' ? 'Acessibilidade Portuguesa' : 'Portuguese Accessibility'}
+            title={language === 'pt' ? 'Acessibilidade Portuguesa' : 'Lusophone Accessibility'}
             aria-hidden="true"
           />
         </LuxuryRipple>
@@ -445,7 +445,7 @@ export default function AccessibilityWidget({
                       <div className="text-center text-xs text-gray-500">
                         {language === 'pt' 
                           ? `${availableVoices.length} vozes portuguesas disponíveis`
-                          : `${availableVoices.length} Portuguese voices available`
+                          : `${availableVoices.length} Lusophone voices available`
                         }
                       </div>
                     )}

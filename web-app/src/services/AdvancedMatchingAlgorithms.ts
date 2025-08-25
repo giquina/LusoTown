@@ -6,11 +6,11 @@
  * - Saudade-based emotional connection algorithms  
  * - Event-based networking and matching systems
  * - Business networking and professional connections
- * - Geographic proximity matching for UK Portuguese community
+ * - Geographic proximity matching for UK Lusophone community
  * - AI-enhanced matching with cultural context
  * - Real-time matching optimization and performance
  * 
- * Optimized for mobile users (73% of community) with Portuguese cultural nuances
+ * Optimized for mobile users (73% of community) with Lusophone cultural nuances
  */
 
 import { supabase } from '@/lib/supabase'
@@ -29,10 +29,10 @@ import type {
 
 export interface AdvancedMatchConfiguration {
   culturalWeights: {
-    saudadeCompatibility: number      // 0.35 - Core Portuguese emotional connection
+    saudadeCompatibility: number      // 0.35 - Core Lusophone emotional connection
     heritageAlignment: number         // 0.25 - Cultural heritage compatibility
     regionalConnection: number        // 0.15 - Geographic and regional preferences
-    languagePreference: number        // 0.10 - Portuguese/English fluency balance
+    languagePreference: number        // 0.10 - Lusophone/English fluency balance
     eventInterests: number           // 0.10 - Shared event and activity interests
     professionalAlignment: number    // 0.05 - Business/career compatibility
   }
@@ -87,7 +87,7 @@ export interface GeographicMatchingZone {
   zone: string
   center: [number, number]    // [latitude, longitude]
   radius: number              // kilometers
-  culturalVenues: string[]    // Portuguese venues in area
+  culturalVenues: string[]    // Lusophone venues in area
   transportHubs: string[]     // Major transport connections
   communityDensity: number    // Portuguese speakers per km²
   averageCompatibility: number // Historical success rate
@@ -100,7 +100,7 @@ export interface EventBasedMatchingWindow {
   location: [number, number]
   attendeeProfiles: string[]
   compatibilityBonus: number  // Extra points for event-based matches
-  culturalRelevance: number   // How Portuguese/cultural the event is
+  culturalRelevance: number   // How Lusophone/cultural the event is
 }
 
 export interface BusinessNetworkingParams {
@@ -151,13 +151,13 @@ export class AdvancedMatchingAlgorithms {
     }
   }
 
-  // Portuguese community geographic zones in UK
+  // Lusophone community geographic zones in UK
   private portugueseZones: GeographicMatchingZone[] = [
     {
       zone: 'Central_London_Portuguese',
       center: [51.5074, -0.1278], // Central London
       radius: 8,
-      culturalVenues: ['Instituto Camões', 'Portuguese Church', 'Nandos Headquarters'],
+      culturalVenues: ['Instituto Camões', 'Lusophone Church', 'Nandos Headquarters'],
       transportHubs: ['Kings Cross', 'Liverpool Street', 'London Bridge'],
       communityDensity: 15.2,
       averageCompatibility: 78.5
@@ -166,7 +166,7 @@ export class AdvancedMatchingAlgorithms {
       zone: 'South_London_Lusophone',
       center: [51.4439, -0.1219], // Stockwell/Vauxhall area
       radius: 12,
-      culturalVenues: ['Portuguese Cultural Centre', 'Casa do Bacalhau', 'Portuguese markets'],
+      culturalVenues: ['Lusophone Cultural Centre', 'Casa do Bacalhau', 'Lusophone markets'],
       transportHubs: ['Stockwell', 'Vauxhall', 'Brixton'],
       communityDensity: 22.8,
       averageCompatibility: 82.1
@@ -184,7 +184,7 @@ export class AdvancedMatchingAlgorithms {
       zone: 'North_London_Community',
       center: [51.5642, -0.1278], // North London
       radius: 15,
-      culturalVenues: ['Portuguese churches', 'Community centers'],
+      culturalVenues: ['Lusophone churches', 'Community centers'],
       transportHubs: ['Camden', 'Tottenham', 'Wood Green'],
       communityDensity: 8.7,
       averageCompatibility: 73.9
@@ -349,7 +349,7 @@ export class AdvancedMatchingAlgorithms {
       const userProfile = await this.getUserCompleteProfile(userId)
       if (!userProfile) return []
 
-      // Get upcoming Portuguese events
+      // Get upcoming Lusophone events
       const upcomingEvents = await this.getUpcomingPortugueseEvents(
         eventContext.geographicRadius || 25,
         eventContext.timeWindow || 30
@@ -396,7 +396,7 @@ export class AdvancedMatchingAlgorithms {
             },
             suggestedActivities: [
               ...baseCompatibility.suggestedActivities,
-              'Meet at upcoming Portuguese event',
+              'Meet at upcoming Lusophone event',
               'Plan follow-up cultural activities'
             ]
           }
@@ -489,7 +489,7 @@ export class AdvancedMatchingAlgorithms {
   }
 
   /**
-   * Geographic proximity matching optimized for UK Portuguese community
+   * Geographic proximity matching optimized for UK Lusophone community
    */
   async calculateGeographicCompatibility(
     userLocation: [number, number],
@@ -507,7 +507,7 @@ export class AdvancedMatchingAlgorithms {
       // Calculate distance using Haversine formula
       const distance = this.calculateDistance(userLocation, candidateLocation)
       
-      // Find best Portuguese zone coverage
+      // Find best Lusophone zone coverage
       const userZone = this.findBestPortugueseZone(userLocation)
       const candidateZone = this.findBestPortugueseZone(candidateLocation)
       
@@ -1009,7 +1009,7 @@ export class AdvancedMatchingAlgorithms {
     const userEnglish = userProfile.languageFluency.english || 5
     const candidateEnglish = candidateProfile.language_fluency?.english || 5
     
-    // Portuguese compatibility (more important)
+    // Lusophone compatibility (more important)
     const portugueseDiff = Math.abs(userPortuguese - candidatePortuguese)
     const portugueseScore = Math.max(0, 100 - (portugueseDiff * 8))
     
@@ -1074,12 +1074,12 @@ export class AdvancedMatchingAlgorithms {
     }
     
     if (scores.heritageScore >= 80) {
-      strengths.push('Strong Portuguese cultural heritage alignment')
+      strengths.push('Strong Lusophone cultural heritage alignment')
       opportunities.push('Preserve traditions and cultural identity together')
     }
     
     if (scores.regionalScore >= 80) {
-      strengths.push('Compatible regional Portuguese background')
+      strengths.push('Compatible regional Lusophone background')
       opportunities.push('Share regional traditions and memories')
     }
     
@@ -1104,7 +1104,7 @@ export class AdvancedMatchingAlgorithms {
     }
     
     if (userProfile.overallCulturalDepth >= 8) {
-      return 'Traditional Portuguese cultural bonding approach'
+      return 'Traditional Lusophone cultural bonding approach'
     }
     
     return 'Balanced cultural and modern life integration approach'
@@ -1121,14 +1121,14 @@ export class AdvancedMatchingAlgorithms {
     }
     
     if (userProfile.foodCookingInvolvement >= 7) {
-      activities.push('Cook traditional Portuguese meals together')
+      activities.push('Cook traditional Lusophone meals together')
     }
     
     if (userProfile.communityInvolvement >= 7) {
-      activities.push('Participate in Portuguese community events')
+      activities.push('Participate in Lusophone community events')
     }
     
-    activities.push('Explore Portuguese cultural sites in London')
+    activities.push('Explore Lusophone cultural sites in London')
     activities.push('Share childhood memories and cultural experiences')
     
     return activities

@@ -93,12 +93,12 @@ export default function ProfileCreationWizard() {
   ]
 
   const culturalInterests = {
-    'Traditional': ['Fado', 'Portuguese Literature', 'Traditional Dance', 'Folk Music', 'Religious Festivals'],
-    'Culinary': ['Portuguese Cooking', 'Wine Tasting', 'Pastéis de Nata', 'Regional Cuisines', 'Food Markets'],
-    'Sports': ['Football', 'Futsal', 'Surfing', 'Portuguese Teams', 'Sports Bars'],
-    'Arts & Culture': ['Portuguese Cinema', 'Art Galleries', 'Museums', 'Theatre', 'Photography'],
-    'Social': ['Family Gatherings', 'Community Events', 'Portuguese Language', 'Cultural Heritage', 'Diaspora Stories'],
-    'Modern': ['Portuguese Podcasts', 'Social Media Groups', 'Tech Meetups', 'Modern Music', 'Digital Culture']
+    'Traditional': ['Fado', 'Lusophone Literature', 'Traditional Dance', 'Folk Music', 'Religious Festivals'],
+    'Culinary': ['Lusophone Cooking', 'Wine Tasting', 'Pastéis de Nata', 'Regional Cuisines', 'Food Markets'],
+    'Sports': ['Football', 'Futsal', 'Surfing', 'Lusophone Teams', 'Sports Bars'],
+    'Arts & Culture': ['Lusophone Cinema', 'Art Galleries', 'Museums', 'Theatre', 'Photography'],
+    'Social': ['Family Gatherings', 'Community Events', 'Lusophone Language', 'Cultural Heritage', 'Diaspora Stories'],
+    'Modern': ['Lusophone Podcasts', 'Social Media Groups', 'Tech Meetups', 'Modern Music', 'Digital Culture']
   }
 
   useEffect(() => {
@@ -457,7 +457,7 @@ function CulturalStep({ formData, updateFormData, isPortuguese, options }: any) 
     <div className="space-y-6">
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-4">
-          {isPortuguese ? 'Origem Portuguesa' : 'Portuguese Origin'} *
+          {isPortuguese ? 'Origem Portuguesa' : 'Lusophone Origin'} *
         </label>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {options.portugueseOrigins.map((origin: any) => (

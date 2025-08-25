@@ -179,7 +179,7 @@ export default function CountryPreferences({
           className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
         >
           <ChevronDownIcon className={`w-4 h-4 transition-transform ${showSecondary ? 'rotate-180' : ''}`} />
-          {isPortuguese ? 'Outros Países de Língua Portuguesa' : 'Other Portuguese-Speaking Countries'}
+          {isPortuguese ? 'Outros Países de Língua Portuguesa' : 'Other Lusophone-Speaking Countries'}
           <span className="text-gray-500">({SECONDARY_COUNTRIES.length})</span>
         </button>
 

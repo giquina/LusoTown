@@ -1,21 +1,21 @@
 import DOMPurify from 'isomorphic-dompurify'
 import { z } from 'zod'
 
-// Portuguese-specific validation patterns
+// Lusophone-specific validation patterns
 export const PORTUGUESE_PATTERNS = {
-  // Portuguese postal codes: 1234-123
+  // Lusophone postal codes: 1234-123
   postalCode: /^\d{4}-\d{3}$/,
   
-  // Portuguese phone numbers: +351 123 456 789
+  // Lusophone phone numbers: +351 123 456 789
   phoneNumber: /^\+351\s?\d{3}\s?\d{3}\s?\d{3}$/,
   
-  // Portuguese NIF (tax number): 123456789
+  // Lusophone NIF (tax number): 123456789
   nif: /^\d{9}$/,
   
-  // Portuguese names (allows Portuguese characters)
+  // Lusophone names (allows Lusophone characters)
   name: /^[A-Za-zÀ-ÖØ-öø-ÿĀ-žÇç\s'-]{1,100}$/,
   
-  // Portuguese text content (allows cultural expressions)
+  // Lusophone text content (allows cultural expressions)
   culturalText: /^[A-Za-zÀ-ÖØ-öø-ÿĀ-žÇç\s\d.,!?()'":-]{1,5000}$/
 }
 
@@ -196,7 +196,7 @@ export function sanitizeHTML(html: string, allowedTags: string[] = []): string {
   return sanitizeText(html)
 }
 
-// Portuguese-specific content validation
+// Lusophone-specific content validation
 export function validatePortugueseContent(content: string): {
   isValid: boolean
   issues: string[]
@@ -205,7 +205,7 @@ export function validatePortugueseContent(content: string): {
   const issues: string[] = []
   let sanitizedContent = sanitizeText(content)
   
-  // Check for potentially harmful Portuguese phrases
+  // Check for potentially harmful Lusophone phrases
   const suspiciousPatterns = [
     /golpe|fraude|esquema/i, // Scam/fraud
     /dados\s+pessoais/i, // Personal data harvesting
@@ -284,7 +284,7 @@ export function escapeString(str: string): string {
   })
 }
 
-// Password validation for Portuguese users
+// Password validation for Lusophone users
 export function validatePassword(password: string): {
   isValid: boolean
   score: number
@@ -323,7 +323,7 @@ export function validatePassword(password: string): {
     score += 1
   }
   
-  // Check for common Portuguese passwords
+  // Check for common Lusophone passwords
   const commonPortuguesePasswords = [
     'portugal', 'lisboa', 'porto', 'benfica', 'sporting', 'futebol',
     'saudade', 'fado', 'bacalhau', 'azulejo'
@@ -332,7 +332,7 @@ export function validatePassword(password: string): {
   if (commonPortuguesePasswords.some(common => 
     password.toLowerCase().includes(common)
   )) {
-    issues.push('Password contains common Portuguese words')
+    issues.push('Password contains common Lusophone words')
     score = Math.max(0, score - 2)
   }
   

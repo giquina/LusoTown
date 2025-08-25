@@ -33,11 +33,11 @@ export default function ConnectionNotificationBanner({ notifications }: Connecti
     markNotificationAsRead(notificationId)
   }
 
-  // Portuguese cultural notification messages
+  // Lusophone cultural notification messages
   const getPortugueseNotificationText = (type: string, originalMessage: string) => {
     const culturalMessages = {
       new_connection: {
-        en: `🤝 New Portuguese connection! You're building your London community.`,
+        en: `🤝 New Lusophone connection! You're building your London community.`,
         pt: `🤝 Nova conexão portuguesa! Está a construir a sua comunidade em Londres.`
       },
       milestone: {
@@ -45,7 +45,7 @@ export default function ConnectionNotificationBanner({ notifications }: Connecti
         pt: `🎉 Marco da comunidade de falantes de português alcançado! A sua rede cultural está a crescer.`
       },
       upcoming_event_with_connections: {
-        en: `📅 Portuguese cultural event coming up! Connect with fellow Lusitanians.`,
+        en: `📅 Lusophone cultural event coming up! Connect with fellow Lusitanians.`,
         pt: `📅 Evento cultural português a aproximar-se! Conecte-se com outros lusitanos.`
       },
       connection_activity: {
@@ -112,7 +112,7 @@ export default function ConnectionNotificationBanner({ notifications }: Connecti
                     <p className="text-sm text-gray-600 truncate">
                       {getPortugueseNotificationText(notification.type, notification.message)}
                     </p>
-                    {/* Portuguese cultural context */}
+                    {/* Lusophone cultural context */}
                     {notification.type === 'new_connection' && (
                       <div className="flex items-center mt-1 text-xs text-gray-500">
                         <span className="mr-1">🇵🇹</span>

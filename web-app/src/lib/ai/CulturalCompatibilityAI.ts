@@ -1,13 +1,13 @@
 /**
  * CulturalCompatibilityAI.ts
- * Advanced Portuguese Cultural Matching Algorithm
+ * Advanced Lusophone Cultural Matching Algorithm
  * 
  * Sophisticated AI-powered compatibility matching system designed specifically
  * for Portuguese speakers, incorporating cultural values, linguistic patterns,
  * behavioral analysis, and saudade emotional state matching.
  */
 
-// Portuguese Cultural Dimensions
+// Lusophone Cultural Dimensions
 interface PortugueseCulturalProfile {
   // Core Cultural Values (0-10 scale)
   familyOrientation: number        // Family centricity and importance
@@ -17,14 +17,14 @@ interface PortugueseCulturalProfile {
   hierarchyRespect: number         // Respect for age/authority
   hospitalityValue: number         // Importance of welcoming guests
   
-  // Portuguese-Specific Cultural Psychology
+  // Lusophone-Specific Cultural Psychology
   saudadeIntensity: number         // Depth of saudade experience
   saudadeType: 'geographic' | 'relational' | 'cultural' | 'temporal' | 'mixed'
   diasporaStage: 'newcomer' | 'established' | 'integrated' | 'bicultural'
   culturalMaintenance: number      // Effort to maintain Portuguese culture
   adaptationStyle: 'assimilative' | 'integrative' | 'separative' | 'marginalized'
   
-  // Regional Portuguese Identity
+  // Regional Lusophone Identity
   region: 'norte' | 'centro' | 'lisboa' | 'alentejo' | 'algarve' | 'madeira' | 'azores' | 'other'
   urbanRural: 'urban' | 'rural' | 'mixed'
   generationInUK: number           // 1st, 2nd, 3rd generation
@@ -32,7 +32,7 @@ interface PortugueseCulturalProfile {
   // Linguistic Patterns
   portugueseDialect: 'continental' | 'brazilian' | 'african' | 'mixed'
   formalityPreference: number      // Formal vs casual communication
-  emotionalExpression: number      // Emotional openness in Portuguese
+  emotionalExpression: number      // Emotional openness in Lusophone
   codeSwitch: number              // Comfort switching EN/PT
   
   // Social & Behavioral Patterns
@@ -64,7 +64,7 @@ export interface CulturalMatchResult {
   culturalBonds: string[]         // Specific cultural connection points
   saudadeConnection: 'high' | 'medium' | 'low' | 'therapeutic'
   recommendedInteraction: 'friendship' | 'cultural_activity' | 'support_group' | 'mentorship'
-  conversationStarters: string[]  // Portuguese cultural conversation topics
+  conversationStarters: string[]  // Lusophone cultural conversation topics
   sharedExperiences: string[]     // Likely shared cultural experiences
   complementaryAspects: string[]  // How they complement each other
   potentialChallenges: string[]   // Potential cultural friction points
@@ -387,7 +387,7 @@ export class CulturalCompatibilityAI {
   }
 
   /**
-   * Generate Portuguese cultural conversation starters
+   * Generate Lusophone cultural conversation starters
    */
   private generateConversationStarters(p1: PortugueseCulturalProfile, p2: PortugueseCulturalProfile): string[] {
     const starters: string[] = []
@@ -407,7 +407,7 @@ export class CulturalCompatibilityAI {
       starters.push('Sentes que perdemos alguma coisa da nossa cultura?')
     }
     
-    // Universal Portuguese conversation starters
+    // Universal Lusophone conversation starters
     starters.push('Qual é a comida portuguesa que mais saudades tens?')
     starters.push('Ainda consegues fazer um bom bacalhau à Brás?')
     starters.push('Ouves fado quando bate a saudade?')
@@ -433,19 +433,19 @@ export class CulturalCompatibilityAI {
     if (p1.generationInUK === p2.generationInUK) {
       if (p1.generationInUK === 1) {
         experiences.push('Immigration journey and first United Kingdom experiences')
-        experiences.push('Learning English while maintaining Portuguese')
+        experiences.push('Learning English while maintaining Lusophone')
       } else {
         experiences.push(`${p1.generationInUK}nd/3rd generation identity navigation`)
-        experiences.push('Balancing British and Portuguese identities')
+        experiences.push('Balancing British and Lusophone identities')
       }
     }
     
     // Saudade experiences
-    experiences.push('Deep longing for Portuguese landscapes')
+    experiences.push('Deep longing for Lusophone landscapes')
     experiences.push('Missing extended family gatherings')
     experiences.push('Nostalgia triggered by Portuguese music')
     experiences.push('Explaining Portuguese culture to British friends')
-    experiences.push('Finding authentic Portuguese ingredients in London')
+    experiences.push('Finding authentic Lusophone ingredients in London')
     
     return experiences.slice(0, 6)
   }
@@ -544,7 +544,7 @@ export class CulturalCompatibilityAI {
   }
 
   /**
-   * Assess Portuguese cultural specificity
+   * Assess Lusophone cultural specificity
    */
   private assessCulturalSpecificity(p1: PortugueseCulturalProfile, p2: PortugueseCulturalProfile): number {
     const specificFactors = [
@@ -623,16 +623,16 @@ export class CulturalCompatibilityAI {
     const activities: string[] = []
     
     if (match.culturalBonds.includes('family_values_alignment')) {
-      activities.push('Family-style Portuguese cooking session')
-      activities.push('Portuguese family traditions sharing circle')
+      activities.push('Family-style Lusophone cooking session')
+      activities.push('Lusophone family traditions sharing circle')
     }
     
     if (match.saudadeConnection === 'high' || match.saudadeConnection === 'therapeutic') {
       activities.push('Fado listening and saudade expression session')
-      activities.push('Portuguese landscape photography walk')
+      activities.push('Lusophone landscape photography walk')
     }
     
-    activities.push('Portuguese cultural exploration in London')
+    activities.push('Lusophone cultural exploration in London')
     activities.push('Language practice and cultural exchange')
     
     return activities
@@ -646,7 +646,7 @@ export class CulturalCompatibilityAI {
     }
     
     if (Math.abs(p1.generationInUK - p2.generationInUK) > 0) {
-      opportunities.push('Cross-generational Portuguese experience sharing')
+      opportunities.push('Cross-generational Lusophone experience sharing')
     }
     
     return opportunities

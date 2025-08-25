@@ -1,5 +1,5 @@
 // Luxury Component Library - LusoTown Premium UI Components
-// Sophisticated design system with Portuguese cultural elements and luxury aesthetics
+// Sophisticated design system with Lusophone cultural elements and luxury aesthetics
 // Enhanced with aristocratic sophistication for affluent Portuguese speakers in London
 
 // Core Components
@@ -89,7 +89,7 @@ export {
 // • 'diamond' - Premium cyan-blue crystal effects
 
 // 🔥 NEW GLASSMORPHISM VARIANTS:
-// • 'aristocratic' - Portuguese cultural patterns with azulejo tiles
+// • 'aristocratic' - Lusophone cultural patterns with azulejo tiles
 // • 'royal' - Purple-gold royal treatment with crown elements
 // • 'imperial' - Amber-orange imperial luxury
 // • 'diamond' - Crystal-clear premium glass effects
@@ -119,4 +119,4 @@ export {
 // • Multi-layer shine animations
 // • Cultural pattern overlays
 // • Sophisticated micro-animations
-// • Elite color schemes with Portuguese authenticity
+// • Elite color schemes with Lusophone authenticity

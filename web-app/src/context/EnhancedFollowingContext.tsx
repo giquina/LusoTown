@@ -15,9 +15,9 @@ export interface FollowableEntity {
   category?: string
   followers?: number
   isVerified?: boolean
-  culturalFocus?: string[] // Portuguese cultural interests
+  culturalFocus?: string[] // Lusophone cultural interests
   lastActive?: string
-  // Portuguese nation specific fields
+  // Lusophone nation specific fields
   countryCode?: string // For portuguese_nation type
   capital?: string
   language?: string
@@ -340,13 +340,13 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         isVerified: true,
         countryCode: 'PT',
         capital: 'Lisbon',
-        language: 'Portuguese',
+        language: 'Lusophone',
         currency: 'EUR',
         culturalFocus: ['Fado', 'Port Wine', 'Azulejos', 'Maritime Heritage'],
         benefits: [
-          'Portuguese Embassy event invitations',
+          'Lusophone Embassy event invitations',
           'Cultural festival notifications',
-          'Business networking with Portuguese companies',
+          'Business networking with Lusophone companies',
           'Tourism and travel opportunities',
           'Language and cultural workshops'
         ],
@@ -365,7 +365,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         isVerified: true,
         countryCode: 'BR',
         capital: 'Brasília',
-        language: 'Portuguese (Brazilian)',
+        language: 'Lusophone (Brazilian)',
         currency: 'BRL',
         culturalFocus: ['Carnival', 'Samba', 'Capoeira', 'Football'],
         benefits: [
@@ -390,7 +390,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         isVerified: true,
         countryCode: 'AO',
         capital: 'Luanda',
-        language: 'Portuguese',
+        language: 'Lusophone',
         currency: 'AOA',
         culturalFocus: ['Semba', 'Kizomba', 'Traditional Crafts', 'Oil Industry'],
         benefits: [
@@ -414,7 +414,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         isVerified: true,
         countryCode: 'MZ',
         capital: 'Maputo',
-        language: 'Portuguese',
+        language: 'Lusophone',
         currency: 'MZN',
         culturalFocus: ['Marrabenta', 'Traditional Textiles', 'Coastal Culture'],
         benefits: [
@@ -436,27 +436,27 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         location: 'London, United Kingdom',
         followers: 245,
         isVerified: true,
-        culturalFocus: ['Fado', 'Portuguese Music', 'Cultural Events'],
+        culturalFocus: ['Fado', 'Lusophone Music', 'Cultural Events'],
         lastActive: '2 hours ago'
       },
       {
         id: 'group-fado-london',
         type: 'group',
         name: 'Fado Lovers London',
-        title: 'Traditional Portuguese Music Community',
+        title: 'Traditional Lusophone Music Community',
         description: 'Dedicated to preserving and celebrating Fado music in London',
         imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=150&h=150&fit=crop&auto=format',
         location: 'London, United Kingdom',
         followers: 1240,
         category: 'Music & Culture',
-        culturalFocus: ['Fado', 'Portuguese Music', 'Traditional Culture']
+        culturalFocus: ['Fado', 'Lusophone Music', 'Traditional Culture']
       },
       {
         id: 'community-portuguese-families-uk',
         type: 'community',
-        name: 'Portuguese Families United Kingdom',
-        title: 'Supporting Portuguese families across Britain',
-        description: 'A supportive community for Portuguese families living in the United Kingdom',
+        name: 'Lusophone Families United Kingdom',
+        title: 'Supporting Lusophone families across Britain',
+        description: 'A supportive community for Lusophone families living in the United Kingdom',
         imageUrl: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=150&h=150&fit=crop&auto=format',
         location: 'United Kingdom',
         followers: 2180,
@@ -467,13 +467,13 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         id: 'organizer-carlos-events',
         type: 'event_organizer',
         name: 'Carlos Oliveira Events',
-        title: 'Portuguese Cultural Events Organizer',
-        description: 'Organizing authentic Portuguese cultural experiences across London',
+        title: 'Lusophone Cultural Events Organizer',
+        description: 'Organizing authentic Lusophone cultural experiences across London',
         imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format',
         location: 'London, United Kingdom',
         followers: 892,
         isVerified: true,
-        culturalFocus: ['Portuguese Cuisine', 'Cultural Festivals', 'Community Events']
+        culturalFocus: ['Lusophone Cuisine', 'Cultural Festivals', 'Community Events']
       }
     ]
 

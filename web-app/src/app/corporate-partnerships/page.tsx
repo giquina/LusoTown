@@ -79,7 +79,7 @@ export default function CorporatePartnerships() {
               <p className="text-xl opacity-90 max-w-4xl mx-auto mb-8">
                 {language === 'pt'
                   ? 'Conecte-se ao mercado português de £450M no Reino Unido. Parcerias estratégicas para empresas que valorizam autenticidade, crescimento e impacto na comunidade lusófona.'
-                  : 'Connect to the £450M Portuguese market in the United Kingdom. Strategic partnerships for businesses that value authenticity, growth, and impact in the Portuguese-speaking community.'
+                  : 'Connect to the £450M Lusophone market in the United Kingdom. Strategic partnerships for businesses that value authenticity, growth, and impact in the Portuguese-speaking community.'
                 }
               </p>
               
@@ -91,7 +91,7 @@ export default function CorporatePartnerships() {
                   </div>
                   <h3 className="text-xl font-semibold mb-2">450,000+</h3>
                   <p className="text-sm opacity-75">
-                    {language === 'pt' ? 'Portugueses no Reino Unido' : 'Portuguese in the United Kingdom'}
+                    {language === 'pt' ? 'Portugueses no Reino Unido' : 'Lusophone in the United Kingdom'}
                   </p>
                 </div>
                 <div className="text-center">
@@ -150,13 +150,13 @@ export default function CorporatePartnerships() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-semibold text-gray-700">Anglo-Portuguese Society</div>
+                  <div className="text-lg font-semibold text-gray-700">Anglo-Lusophone Society</div>
                   <div className="text-sm text-gray-500">
                     {language === 'pt' ? 'Relações Diplomáticas' : 'Diplomatic Relations'}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-semibold text-gray-700">Portuguese Embassy</div>
+                  <div className="text-lg font-semibold text-gray-700">Lusophone Embassy</div>
                   <div className="text-sm text-gray-500">
                     {language === 'pt' ? 'Oficiais' : 'Official'}
                   </div>
@@ -213,7 +213,7 @@ export default function CorporatePartnerships() {
               <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
                 {language === 'pt'
                   ? 'Junte-se a empresas líderes que já descobriram o valor do mercado português no Reino Unido. Parcerias que geram resultados reais.'
-                  : 'Join leading companies that have already discovered the value of the Portuguese market in the United Kingdom. Partnerships that deliver real results.'
+                  : 'Join leading companies that have already discovered the value of the Lusophone market in the United Kingdom. Partnerships that deliver real results.'
                 }
               </p>
               

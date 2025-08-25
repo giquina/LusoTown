@@ -72,7 +72,7 @@ export default function EnhancedPostCreator({
 Service Type: {serviceType}
 Date & Time: {dateTime}
 Areas Covered: {areas}
-Languages: Portuguese, English
+Languages: Lusophone, English
 Special Notes: {specialNotes}
 
 #TransportePortugues #LusoTownTransport #PortugueseCommunity`,
@@ -116,7 +116,7 @@ Special Notes: {specialNotes}
 Location: {location}
 Cultural Highlights: {highlights}
 Recommendations: {recommendations}
-Tips for Portuguese visitors: {tips}
+Tips for Lusophone visitors: {tips}
 
 #CulturalTour #PortugueseInLondon #LusoTownExperience`,
       fields: [
@@ -136,7 +136,7 @@ Tips for Portuguese visitors: {tips}
           required: true
         },
         {
-          label: isPortuguese ? 'Dicas para Visitantes Portugueses' : 'Tips for Portuguese Visitors',
+          label: isPortuguese ? 'Dicas para Visitantes Portugueses' : 'Tips for Lusophone Visitors',
           type: 'textarea',
           required: false
         }
@@ -144,7 +144,7 @@ Tips for Portuguese visitors: {tips}
     },
     {
       id: 'event_promotion',
-      title: isPortuguese ? '🎉 Promoção de Evento Português' : '🎉 Portuguese Event Promotion',
+      title: isPortuguese ? '🎉 Promoção de Evento Português' : '🎉 Lusophone Event Promotion',
       icon: CalendarDaysIcon,
       category: 'event',
       requiredTier: 'community',
@@ -191,13 +191,13 @@ Cultural Elements: {culturalElements}
       title: isPortuguese ? '💼 Recomendação de Negócio' : '💼 Business Recommendation',
       icon: BriefcaseIcon,
       category: 'business',
-      template: `💼 Portuguese Business Recommendation
+      template: `💼 Lusophone Business Recommendation
 
 Business: {businessName}
 Category: {category}
 Location: {location}
 Why I recommend: {recommendation}
-Portuguese connection: {connection}
+Lusophone connection: {connection}
 
 #NegocioPortugues #BusinessRec #ComunidadePortuguesa`,
       fields: [
@@ -231,7 +231,7 @@ Portuguese connection: {connection}
           required: true
         },
         {
-          label: isPortuguese ? 'Conexão Portuguesa' : 'Portuguese Connection',
+          label: isPortuguese ? 'Conexão Portuguesa' : 'Lusophone Connection',
           type: 'textarea',
           required: true
         }
@@ -337,7 +337,7 @@ Contact: {contact}
       )
       suggestions.push(isPortuguese ? 
         'Mencione aspectos culturais portugueses ou relevância para a comunidade' :
-        'Mention Portuguese cultural aspects or community relevance'
+        'Mention Lusophone cultural aspects or community relevance'
       )
     }
     

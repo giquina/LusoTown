@@ -3,7 +3,7 @@
  * 
  * Real-time performance monitoring, optimization, and analytics system for:
  * - Matching algorithm performance tracking
- * - Portuguese cultural compatibility success rates
+ * - Lusophone cultural compatibility success rates
  * - Geographic and transport accessibility analysis
  * - Mobile user experience optimization (73% mobile usage)
  * - Saudade-based matching effectiveness
@@ -182,7 +182,7 @@ export class MatchingPerformanceAnalytics {
   private readonly CACHE_DURATION = 5 * 60 * 1000 // 5 minutes
 
   /**
-   * Real-time performance monitoring with Portuguese cultural context
+   * Real-time performance monitoring with Lusophone cultural context
    */
   async getRealTimePerformanceMetrics(): Promise<RealTimeMatchingMetrics> {
     try {
@@ -232,7 +232,7 @@ export class MatchingPerformanceAnalytics {
   }
 
   /**
-   * Comprehensive Portuguese cultural matching analysis
+   * Comprehensive Lusophone cultural matching analysis
    */
   async getCulturalMatchingInsights(): Promise<CulturalMatchingInsights> {
     try {
@@ -524,13 +524,13 @@ export class MatchingPerformanceAnalytics {
       'stockwell_vauxhall': {
         intraRegionalSuccessRate: 89.2,
         interRegionalSuccessRate: 74.6,
-        preferredMeetingLocations: ['Portuguese Cultural Centre', 'Casa do Bacalhau'],
+        preferredMeetingLocations: ['Lusophone Cultural Centre', 'Casa do Bacalhau'],
         culturalEventParticipation: 85.7
       },
       'camden': {
         intraRegionalSuccessRate: 82.1,
         interRegionalSuccessRate: 78.3,
-        preferredMeetingLocations: ['Cafe Oporto', 'Portuguese Language School'],
+        preferredMeetingLocations: ['Cafe Oporto', 'Lusophone Language School'],
         culturalEventParticipation: 78.4
       }
     };

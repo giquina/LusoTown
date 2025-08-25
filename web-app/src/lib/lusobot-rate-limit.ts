@@ -103,7 +103,7 @@ export const COMMUNITY_RATE_RULES = {
     maxRequests: 50, // 50 language practice messages per minute
     burstLimit: 70,
     keyGenerator: (userId: string) => `lusobot:language:${userId}`,
-    message: 'A prática de português é importante! Por favor, faça uma pausa entre as conversas. / Portuguese practice is important! Please pause between conversations.'
+    message: 'A prática de português é importante! Por favor, faça uma pausa entre as conversas. / Lusophone practice is important! Please pause between conversations.'
   }
 }
 

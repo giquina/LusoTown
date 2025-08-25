@@ -91,7 +91,7 @@ export default function SubscriptionGate({
               )} para acesso completo à rede portuguesa de Londres.`
             : `Choose from monthly plans starting at ${formatPrice(
                 plans.community.monthly
-              )} for full access to London's Portuguese network.`,
+              )} for full access to London's Lusophone network.`,
           icon: HeartIcon,
           buttonText: isPortuguese ? "Escolher Plano" : "Choose Plan",
         };

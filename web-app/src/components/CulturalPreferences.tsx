@@ -76,7 +76,7 @@ export default function CulturalPreferences({
     },
     { 
       id: 'natal', 
-      name: 'Portuguese Christmas', 
+      name: 'Lusophone Christmas', 
       namePt: 'Natal Português',
       description: 'Christmas traditions',
       descriptionPt: 'Tradições natalícias',
@@ -283,7 +283,7 @@ export default function CulturalPreferences({
         ))}
       </div>
 
-      {/* Portuguese Origins */}
+      {/* Lusophone Origins */}
       {activeSection === 'origins' && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -292,7 +292,7 @@ export default function CulturalPreferences({
         >
           <div>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              {isPortuguese ? 'Suas Origens Portuguesas' : 'Your Portuguese Origins'}
+              {isPortuguese ? 'Suas Origens Portuguesas' : 'Your Lusophone Origins'}
             </h3>
             <p className="text-gray-600 mb-6">
               {isPortuguese 

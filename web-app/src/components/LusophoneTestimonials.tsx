@@ -38,7 +38,7 @@ const testimonials: Testimonial[] = [
     flag: '🇦🇴',
     location: 'Luanda → Manchester',
     membershipType: 'Founding Member',
-    quote: 'Finally, a community that recognizes PALOP identity with pride! Through LusoTown membership, I\'ve connected with other Angolan entrepreneurs and also learned about Portuguese and Brazilian business opportunities.',
+    quote: 'Finally, a community that recognizes PALOP identity with pride! Through LusoTown membership, I\'ve connected with other Angolan entrepreneurs and also learned about Lusophone and Brazilian business opportunities.',
     achievement: 'Founded 3 UK-Angola trade partnerships',
     businessValue: 'PALOP Business Network Leader'
   },
@@ -58,7 +58,7 @@ const testimonials: Testimonial[] = [
     id: 'portuguese-member',
     name: 'Maria Santos',
     age: 36,
-    heritage: 'Portuguese',
+    heritage: 'Lusophone',
     flag: '🇵🇹',
     location: 'Porto → London',
     membershipType: 'Associate Member',
@@ -82,11 +82,11 @@ const testimonials: Testimonial[] = [
     id: 'mixed-heritage-member',
     name: 'Ricardo Fernandes',
     age: 28,
-    heritage: 'Portuguese-Brazilian',
+    heritage: 'Lusophone-Brazilian',
     flag: '🇵🇹🇧🇷',
     location: 'London born',
     membershipType: 'Community Member',
-    quote: 'As someone with mixed heritage, I finally found a place that celebrates ALL sides of the Portuguese-speaking world. I\'ve learned business Portuguese, attended Brazilian Carnival events, and made friends who understand both cultures.',
+    quote: 'As someone with mixed heritage, I finally found a place that celebrates ALL sides of the Portuguese-speaking world. I\'ve learned business Lusophone, attended Brazilian Carnival events, and made friends who understand both cultures.',
     achievement: 'Cultural bridge-building champion',
     businessValue: 'Cross-cultural expertise valued at companies'
   }
@@ -109,7 +109,7 @@ export default function LusophoneTestimonials() {
             </div>
             
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              {t('testimonials.lusophone.title', 'What Our Global Portuguese-Speaking Community Says')}
+              {t('testimonials.lusophone.title', 'What Our Global Lusophone-Speaking Community Says')}
             </h2>
             
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -208,7 +208,7 @@ export default function LusophoneTestimonials() {
           <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="text-3xl font-bold text-primary-600">750+</div>
-              <div className="text-sm text-gray-600">Portuguese Speakers</div>
+              <div className="text-sm text-gray-600">Lusophone Speakers</div>
               <div className="text-xs text-gray-500">All Nations</div>
             </div>
             <div className="text-center">

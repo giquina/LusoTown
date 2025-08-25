@@ -47,10 +47,10 @@ export function EnhancedSignupForm({
   const getInterestCategories = () => {
     const baseInterests = [
       { key: 'fado', label: '🎵 Fado', description: 'Traditional Portuguese music' },
-      { key: 'food', label: '🍽️ Portuguese Cuisine', description: 'Cooking and food events' },
+      { key: 'food', label: '🍽️ Lusophone Cuisine', description: 'Cooking and food events' },
       { key: 'culture', label: '🏛️ Cultural Events', description: 'Festivals and celebrations' },
       { key: 'dance', label: '💃 Dancing', description: 'Traditional and modern dance' },
-      { key: 'language', label: '🗣️ Language Exchange', description: 'Practice Portuguese/English' },
+      { key: 'language', label: '🗣️ Language Exchange', description: 'Practice Lusophone/English' },
     ];
 
     const businessInterests = [
@@ -309,7 +309,7 @@ export function EnhancedSignupForm({
           <div className="grid sm:grid-cols-2 gap-4 mb-6">
             <div>
               <label htmlFor="portugueseOrigin" className="block text-sm font-medium text-gray-700 mb-2">
-                {language === 'pt' ? 'Origem Portuguesa' : 'Portuguese Origin'}
+                {language === 'pt' ? 'Origem Portuguesa' : 'Lusophone Origin'}
               </label>
               <select
                 id="portugueseOrigin"
@@ -346,7 +346,7 @@ export function EnhancedSignupForm({
                 <option value="">
                   {language === 'pt' ? 'Selecione sua área' : 'Select your area'}
                 </option>
-                <optgroup label={language === 'pt' ? 'Londres (Áreas Portuguesas)' : 'London (Portuguese Areas)'}>
+                <optgroup label={language === 'pt' ? 'Londres (Áreas Portuguesas)' : 'London (Lusophone Areas)'}>
                   <option value="stockwell">🇵🇹 Stockwell</option>
                   <option value="vauxhall">🏛️ Vauxhall</option>
                   <option value="elephant-castle">🐘 Elephant & Castle</option>
@@ -528,7 +528,7 @@ export function EnhancedSignupForm({
                   ? (language === 'pt' ? 'Entrar na Rede Profissional - GRÁTIS' : 'Join Business Network - FREE')
                   : selectedAudience === 'romantic'
                   ? (language === 'pt' ? 'Encontrar Conexões - GRÁTIS' : 'Find Connections - FREE')
-                  : (language === 'pt' ? 'Juntar-se a 750+ Falantes de Português - GRÁTIS' : 'Join 750+ Portuguese Speakers - FREE')
+                  : (language === 'pt' ? 'Juntar-se a 750+ Falantes de Português - GRÁTIS' : 'Join Portuguese speakers - FREE')
                 }
               </span>
               <span className="text-2xl">→</span>

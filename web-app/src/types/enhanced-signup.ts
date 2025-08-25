@@ -1,6 +1,6 @@
 /**
  * Enhanced Signup System Types for Dual-Audience Targeting (Business + Romance)
- * Portuguese Cultural Integration with Chocolate Kizomba Partnership
+ * Lusophone Cultural Integration with Chocolate Kizomba Partnership
  */
 
 export interface EnhancedSignupForm {
@@ -149,7 +149,7 @@ export interface CulturalVerification {
   description: string
 }
 
-// Portuguese regions by country
+// Lusophone regions by country
 export const PORTUGUESE_REGIONS = {
   portugal: [
     'Norte', 'Centro', 'Lisboa', 'Alentejo', 'Algarve', 'Açores', 'Madeira'
@@ -169,7 +169,7 @@ export const PORTUGUESE_REGIONS = {
   ]
 } as const
 
-// UK locations with Portuguese community density
+// UK locations with Lusophone community density
 export const UK_LOCATIONS_WITH_COMMUNITY = [
   { location: 'London', communitySize: 'large', culturalEvents: 'weekly' },
   { location: 'Manchester', communitySize: 'medium', culturalEvents: 'monthly' },
@@ -187,10 +187,10 @@ export const UK_LOCATIONS_WITH_COMMUNITY = [
 export const CULTURAL_BADGE_DESCRIPTIONS = {
   'business-owner-verified': 'Verified Portuguese business owner in the UK',
   'single-culturally-connected': 'Single and actively seeking cultural connections',
-  'cultural-event-organizer': 'Organizes Portuguese cultural events and activities',
-  'community-ambassador': 'Official ambassador for Portuguese community initiatives',
-  'dance-community-member': 'Active in Portuguese/Lusophone dance communities',
-  'language-exchange-leader': 'Leads Portuguese-English language exchange sessions'
+  'cultural-event-organizer': 'Organizes Lusophone cultural events and activities',
+  'community-ambassador': 'Official ambassador for Lusophone community initiatives',
+  'dance-community-member': 'Active in Lusophone/Lusophone dance communities',
+  'language-exchange-leader': 'Leads Lusophone-English language exchange sessions'
 } as const
 
 // Success stories for rotation
@@ -205,7 +205,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
       location: 'London',
       flag: '🇵🇹'
     },
-    story: 'Opened accounting firm serving Portuguese community',
+    story: 'Opened accounting firm serving Lusophone community',
     outcome: '50+ clients in 6 months through LusoTown',
     testimonial: 'LusoTown connected me with entrepreneurs who understand cultural business values'
   },
@@ -234,7 +234,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
       flag: '🇨🇻'
     },
     story: 'Organized Cape Verdean music festival',
-    outcome: '300+ attendees celebrating Cabo Verde heritage',
+    outcome: 'many people celebrating Cabo Verde heritage',
     testimonial: 'LusoTown helped me connect all Portuguese-speaking communities together'
   },
   {
@@ -261,9 +261,9 @@ export const SUCCESS_STORIES: SuccessStory[] = [
       location: 'Bristol',
       flag: '🇵🇹'
     },
-    story: 'Found my Portuguese soulmate',
+    story: 'Found my Lusophone soulmate',
     outcome: 'Married after meeting at Fado evening',
-    testimonial: 'We bonded over nossa saudade - LusoTown understands Portuguese hearts'
+    testimonial: 'We bonded over nossa saudade - LusoTown understands Lusophone hearts'
   },
   {
     id: 'lucia-cultural',
@@ -276,7 +276,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
       flag: '🇲🇿'
     },
     story: 'Started Portuguese language school',
-    outcome: '80 children now learning Portuguese on weekends',
+    outcome: '80 children now learning Lusophone on weekends',
     testimonial: 'LusoTown connected me with families passionate about preserving our language'
   }
 ]
@@ -294,15 +294,15 @@ export const PARTNER_EVENTS = {
   },
   'fado-evening': {
     name: 'Fado Nights',
-    description: 'Traditional Portuguese Fado music and cultural evenings',
-    location: 'Various Portuguese venues',
+    description: 'Traditional Lusophone Fado music and cultural evenings',
+    location: 'Various Lusophone venues',
     schedule: 'Monthly events',
     benefits: ['authentic-fado-music', 'portuguese-community', 'cultural-immersion'],
     skillLevels: ['listener', 'singer', 'musician']
   },
   'business-breakfast': {
-    name: 'Portuguese Business Network',
-    description: 'Monthly networking breakfast for Portuguese entrepreneurs',
+    name: 'Lusophone Business Network',
+    description: 'Monthly networking breakfast for Lusophone entrepreneurs',
     location: 'Central London venues',
     schedule: 'First Saturday of each month, 9am',
     benefits: ['business-networking', 'mentorship-opportunities', 'partnership-development'],
@@ -314,13 +314,13 @@ export const PARTNER_EVENTS = {
 export const SIGNUP_STEPS: FormStep[] = [
   {
     id: 'basic-info',
-    title: 'Welcome to Your Portuguese Community',
+    title: 'Welcome to Your Lusophone Community',
     subtitle: 'Let\'s start with the basics',
     fields: ['firstName', 'lastName', 'email', 'phone'],
   },
   {
     id: 'cultural-background',
-    title: 'Your Portuguese Journey',
+    title: 'Your Lusophone Journey',
     subtitle: 'Tell us about your cultural background',
     fields: ['portugueseOrigin', 'ukLocation', 'languagePreference'],
     culturalContext: 'We celebrate all Portuguese-speaking cultures'

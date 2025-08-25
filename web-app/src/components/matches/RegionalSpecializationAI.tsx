@@ -177,7 +177,7 @@ interface RegionalSpecializationAIProps {
   showDetailedAnalytics?: boolean;
 }
 
-// Portuguese Regional AI Engine
+// Lusophone Regional AI Engine
 class PortugueseRegionalAI {
   static readonly REGIONS: Record<string, PortugueseRegion> = {
     minho: {
@@ -744,7 +744,7 @@ class PortugueseRegionalAI {
           description: 'Different regional dialects may cause communication nuances',
           severity: Math.round((100 - intelligibility) / 10),
           mitigationStrategies: [
-            'Focus on standard Portuguese',
+            'Focus on standard Lusophone',
             'Appreciate dialect differences as cultural richness',
             'Learn about regional linguistic expressions',
           ],
@@ -992,7 +992,7 @@ export default function RegionalSpecializationAI({
         <p className="text-gray-600 max-w-3xl mx-auto">
           {language === 'pt' 
             ? 'Sistema inteligente que otimiza matches baseado nas especificidades regionais portuguesas e experiências de emigração no Reino Unido'
-            : 'Intelligent system that optimizes matches based on Portuguese regional specificities and emigration experiences in the United Kingdom'}
+            : 'Intelligent system that optimizes matches based on Lusophone regional specificities and emigration experiences in the United Kingdom'}
         </p>
       </div>
 

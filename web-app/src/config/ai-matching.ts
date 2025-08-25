@@ -2,8 +2,8 @@
  * AI-Enhanced Matching System Configuration
  * 
  * Centralized configuration for Phase 2 AI matching system with
- * Portuguese cultural compatibility analysis, behavioral learning,
- * and regional specialization for United Kingdom Portuguese diaspora.
+ * Lusophone cultural compatibility analysis, behavioral learning,
+ * and regional specialization for United Kingdom Lusophone diaspora.
  * 
  * Zero hardcoding policy - all values configurable via environment variables
  */
@@ -61,7 +61,7 @@ export const AI_MATCHING_CONFIG = {
   }
 } as const
 
-// Portuguese Cultural Context Configuration
+// Lusophone Cultural Context Configuration
 
 export const PORTUGUESE_CULTURAL_CONFIG = {
   // Regional Characteristics
@@ -217,7 +217,7 @@ export const PORTUGUESE_CULTURAL_CONFIG = {
   }
 } as const
 
-// United Kingdom Regional Configuration for Portuguese Diaspora
+// United Kingdom Regional Configuration for Lusophone Diaspora
 
 export const UK_REGIONAL_CONFIG = {
   london_central: {
@@ -228,7 +228,7 @@ export const UK_REGIONAL_CONFIG = {
     cultural_event_frequency: 'high',
     community_cohesion_score: 85,
     matching_success_rate: 0.82,
-    preferred_meeting_locations: ['Portuguese cafés', 'Cultural centers', 'University areas', 'Central parks'],
+    preferred_meeting_locations: ['Lusophone cafés', 'Cultural centers', 'University areas', 'Central parks'],
     cultural_weight_adjustments: {
       heritage_importance: 0.85,
       language_priority: 0.75,

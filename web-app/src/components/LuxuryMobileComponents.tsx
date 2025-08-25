@@ -121,7 +121,7 @@ export function EliteMobileCard({
   );
 }
 
-// Premium Mobile Action Button with Portuguese Theming
+// Premium Mobile Action Button with Lusophone Theming
 interface LuxuryMobileButtonProps {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'heritage' | 'elite' | 'platinum';
@@ -237,7 +237,7 @@ export function LuxuryMobileButton({
   );
 }
 
-// Elite Mobile Input with Portuguese Styling
+// Elite Mobile Input with Lusophone Styling
 interface LuxuryMobileInputProps {
   type?: 'text' | 'email' | 'password' | 'tel' | 'search';
   placeholder?: string;

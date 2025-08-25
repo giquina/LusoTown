@@ -15,9 +15,9 @@ export interface FollowableEntity {
   category?: string
   followers?: number
   isVerified?: boolean
-  culturalFocus?: string[] // Portuguese cultural interests
+  culturalFocus?: string[] // Lusophone cultural interests
   lastActive?: string
-  // Portuguese nation specific fields
+  // Lusophone nation specific fields
   countryCode?: string // For portuguese_nation type
   capital?: string
   language?: string
@@ -205,7 +205,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
     return stats
   }
 
-  // Mock suggestions based on Portuguese cultural interests
+  // Mock suggestions based on Lusophone cultural interests
   const getFollowingSuggestions = (): FollowableEntity[] => {
     const suggestions: FollowableEntity[] = [
       {
@@ -217,27 +217,27 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         location: 'London, United Kingdom',
         followers: 245,
         isVerified: true,
-        culturalFocus: ['Fado', 'Portuguese Music', 'Cultural Events'],
+        culturalFocus: ['Fado', 'Lusophone Music', 'Cultural Events'],
         lastActive: '2 hours ago'
       },
       {
         id: 'group-fado-london',
         type: 'group',
         name: 'Fado Lovers London',
-        title: 'Traditional Portuguese Music Community',
+        title: 'Traditional Lusophone Music Community',
         description: 'Dedicated to preserving and celebrating Fado music in London',
         imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=150&h=150&fit=crop&auto=format',
         location: 'London, United Kingdom',
         followers: 1240,
         category: 'Music & Culture',
-        culturalFocus: ['Fado', 'Portuguese Music', 'Traditional Culture']
+        culturalFocus: ['Fado', 'Lusophone Music', 'Traditional Culture']
       },
       {
         id: 'community-portuguese-families-uk',
         type: 'community',
-        name: 'Portuguese Families United Kingdom',
-        title: 'Supporting Portuguese families across Britain',
-        description: 'A supportive community for Portuguese families living in the United Kingdom',
+        name: 'Lusophone Families United Kingdom',
+        title: 'Supporting Lusophone families across Britain',
+        description: 'A supportive community for Lusophone families living in the United Kingdom',
         imageUrl: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=150&h=150&fit=crop&auto=format',
         location: 'United Kingdom',
         followers: 2180,
@@ -248,19 +248,19 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         id: 'organizer-carlos-events',
         type: 'event_organizer',
         name: 'Carlos Oliveira Events',
-        title: 'Portuguese Cultural Events Organizer',
-        description: 'Organizing authentic Portuguese cultural experiences across London',
+        title: 'Lusophone Cultural Events Organizer',
+        description: 'Organizing authentic Lusophone cultural experiences across London',
         imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format',
         location: 'London, United Kingdom',
         followers: 892,
         isVerified: true,
-        culturalFocus: ['Portuguese Cuisine', 'Cultural Festivals', 'Community Events']
+        culturalFocus: ['Lusophone Cuisine', 'Cultural Festivals', 'Community Events']
       },
       {
         id: 'group-portuguese-business-network',
         type: 'group',
-        name: 'Portuguese Business Network United Kingdom',
-        title: 'Connecting Portuguese entrepreneurs',
+        name: 'Lusophone Business Network United Kingdom',
+        title: 'Connecting Lusophone entrepreneurs',
         description: 'Network of Portuguese business owners and entrepreneurs in the United Kingdom',
         imageUrl: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=150&h=150&fit=crop&auto=format',
         location: 'United Kingdom',
@@ -272,11 +272,11 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         id: 'person-ana-cultural',
         type: 'person',
         name: 'Ana Pereira',
-        description: 'Portuguese literature enthusiast and book club organizer',
+        description: 'Lusophone literature enthusiast and book club organizer',
         imageUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face&auto=format',
         location: 'London, United Kingdom',
         followers: 423,
-        culturalFocus: ['Portuguese Literature', 'Language Education', 'Book Clubs'],
+        culturalFocus: ['Lusophone Literature', 'Language Education', 'Book Clubs'],
         lastActive: '5 hours ago'
       }
     ]

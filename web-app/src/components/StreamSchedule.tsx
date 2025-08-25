@@ -74,7 +74,7 @@ export default function StreamSchedule({
           : "Learn traditional fado techniques from one of London's finest fadistas",
       category: "portuguese-culture",
       categoryName:
-        language === "pt" ? "Cultura Portuguesa" : "Portuguese Culture",
+        language === "pt" ? "Cultura Portuguesa" : "Lusophone Culture",
       scheduledStart: new Date(Date.now() + 2 * 60 * 60 * 1000).toISOString(), // 2 hours from now
       duration: 60,
       host: "Amália Costa",
@@ -93,7 +93,7 @@ export default function StreamSchedule({
       title:
         language === "pt"
           ? "Workshop de Tecnologia Inteligente para Negócios Portugueses"
-          : "Smart Technology Workshop for Portuguese Businesses",
+          : "Smart Technology Workshop for Lusophone Businesses",
       description:
         language === "pt"
           ? "Como implementar tecnologia inteligente no seu negócio - sessão exclusiva para empreendedores"
@@ -144,7 +144,7 @@ export default function StreamSchedule({
       title:
         language === "pt"
           ? "Sessão de Carreiras para Estudantes Portugueses"
-          : "Career Session for Portuguese Students",
+          : "Career Session for Lusophone Students",
       description:
         language === "pt"
           ? "Conselhos de carreira e oportunidades de estágio no Reino Unido"
@@ -169,7 +169,7 @@ export default function StreamSchedule({
       title:
         language === "pt"
           ? "Mesa Redonda VIP: Futuro dos Negócios Portugueses"
-          : "VIP Roundtable: Future of Portuguese Business",
+          : "VIP Roundtable: Future of Lusophone Business",
       description:
         language === "pt"
           ? "Discussão exclusiva com CEOs e empresários de sucesso"

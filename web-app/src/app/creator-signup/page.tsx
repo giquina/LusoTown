@@ -49,7 +49,7 @@ export default function CreatorSignupPage() {
 
   const isPt = language === 'pt'
 
-  // Portuguese cultural regions and content categories
+  // Lusophone cultural regions and content categories
   const culturalRegions = [
     {
       id: 'portugal',
@@ -105,7 +105,7 @@ export default function CreatorSignupPage() {
     {
       icon: BookOpen,
       name: isPt ? 'Língua & Cultura' : 'Language & Culture',
-      description: isPt ? 'Aulas de português, história, tradições culturais' : 'Portuguese lessons, history, cultural traditions',
+      description: isPt ? 'Aulas de português, história, tradições culturais' : 'Lusophone lessons, history, cultural traditions',
       avgEarnings: 900,
       topCreator: 'Ana Costa',
       color: 'text-secondary-600'
@@ -129,7 +129,7 @@ export default function CreatorSignupPage() {
       monthlyEarnings: 1850,
       quote: isPt 
         ? 'Em apenas 6 meses, consegui transformar a minha paixão pelo fado numa fonte de rendimento estável. A plataforma LusoTown conectou-me com portugueses em Londres que ansiavam por autêntica cultura portuguesa.'
-        : 'In just 6 months, I turned my passion for fado into a stable income source. LusoTown connected me with Portuguese people in London who were craving authentic Portuguese culture.',
+        : 'In just 6 months, I turned my passion for fado into a stable income source. LusoTown connected me with Lusophone people in London who were craving authentic Portuguese culture.',
       followers: 2400,
       streams: 48
     },
@@ -153,7 +153,7 @@ export default function CreatorSignupPage() {
       monthlyEarnings: 920,
       quote: isPt
         ? 'Partilhar a história e tradições de Angola com a diáspora portuguesa tem criado ligações profundas. Os workshops ao vivo geram tanto impacto cultural quanto financeiro.'
-        : 'Sharing Angola\'s history and traditions with the Portuguese diaspora has created deep connections. Live workshops generate both cultural and financial impact.',
+        : 'Sharing Angola\'s history and traditions with the Lusophone diaspora has created deep connections. Live workshops generate both cultural and financial impact.',
       followers: 1520,
       streams: 38
     }
@@ -184,7 +184,7 @@ export default function CreatorSignupPage() {
     {
       icon: Award,
       name: isPt ? 'Patrocínios' : 'Sponsorships',
-      description: isPt ? 'Parcerias com marcas portuguesas (futuro)' : 'Partnerships with Portuguese brands (coming)',
+      description: isPt ? 'Parcerias com marcas portuguesas (futuro)' : 'Partnerships with Lusophone brands (coming)',
       split: '70%',
       color: 'bg-secondary-100 text-secondary-700'
     }
@@ -254,7 +254,7 @@ export default function CreatorSignupPage() {
             >
               {isPt ? 'Transforme a sua' : 'Transform Your'}{' '}
               <span className="text-primary-600">
-                {isPt ? 'Cultura Portuguesa' : 'Portuguese Culture'}
+                {isPt ? 'Cultura Portuguesa' : 'Lusophone Culture'}
               </span>{' '}
               {isPt ? 'numa Fonte de Rendimento' : 'into Income'}
             </motion.h1>
@@ -268,7 +268,7 @@ export default function CreatorSignupPage() {
             >
               {isPt
                 ? 'Junte-se a mais de 200 criadores portugueses que já ganham uma média de £1,200/mês partilhando a sua paixão cultural com a comunidade de falantes de português em Londres.'
-                : 'Join 200+ Portuguese creators already earning an average of £1,200/month sharing their cultural passion with the Portuguese-speaking community in London.'}
+                : 'Join 200+ Lusophone creators already earning an average of £1,200/month sharing their cultural passion with the Portuguese-speaking community in London.'}
             </motion.p>
 
             {/* Key Stats */}
@@ -420,7 +420,7 @@ export default function CreatorSignupPage() {
                     <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                       {isPt
                         ? 'Descubra que tipo de conteúdo português ressoa mais com a audiência em Londres.'
-                        : 'Discover what type of Portuguese content resonates most with London audiences.'}
+                        : 'Discover what type of Lusophone content resonates most with London audiences.'}
                     </p>
                   </div>
 
@@ -592,7 +592,7 @@ export default function CreatorSignupPage() {
             <p className="text-xl text-primary-100 mb-8">
               {isPt
                 ? 'Junte-se a centenas de criadores portugueses que já transformaram a sua paixão cultural numa fonte de rendimento sustentável.'
-                : 'Join hundreds of Portuguese creators who have already transformed their cultural passion into sustainable income.'}
+                : 'Join hundreds of Lusophone creators who have already transformed their cultural passion into sustainable income.'}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

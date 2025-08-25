@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * Community Feedback Panel for Portuguese AI Ethics
+ * Community Feedback Panel for Lusophone AI Ethics
  * 
  * Provides interface for Portuguese-speaking community members to give feedback on AI features,
  * cultural accuracy, privacy concerns, and heritage respect. Implements culturally-sensitive
@@ -93,13 +93,13 @@ export default function CommunityFeedbackPanel() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [activeTab, setActiveTab] = useState<'current' | 'history' | 'impact' | 'ethics_dashboard'>('current')
 
-  // Portuguese cultural feedback categories
+  // Lusophone cultural feedback categories
   const feedbackCategories = {
     heritage_respect: {
       icon: Heart,
       name_en: 'Heritage Respect',
       name_pt: 'Respeito pelo Património',
-      description_en: 'How well does AI respect Portuguese cultural heritage?',
+      description_en: 'How well does AI respect Lusophone cultural heritage?',
       description_pt: 'Quão bem a IA respeita o património cultural português?'
     },
     language_preservation: {
@@ -166,7 +166,7 @@ export default function CommunityFeedbackPanel() {
       {
         id: 'heritage_respect_overall',
         type: 'cultural_scale',
-        question_en: 'How well does LusoTown AI respect Portuguese cultural heritage?',
+        question_en: 'How well does LusoTown AI respect Lusophone cultural heritage?',
         question_pt: 'Quão bem a IA do LusoTown respeita o património cultural português?',
         context_en: 'Consider how AI handles Portuguese traditions, regional differences, and cultural sensitivities',
         context_pt: 'Considere como a IA lida com tradições portuguesas, diferenças regionais e sensibilidades culturais',
@@ -178,7 +178,7 @@ export default function CommunityFeedbackPanel() {
         type: 'rating',
         question_en: 'How satisfied are you with Portuguese language preservation features?',
         question_pt: 'Quão satisfeito está com as funcionalidades de preservação da língua portuguesa?',
-        context_en: 'Rate the quality of Portuguese content, dialect support, and bilingual balance',
+        context_en: 'Rate the quality of Lusophone content, dialect support, and bilingual balance',
         context_pt: 'Avalie a qualidade do conteúdo português, suporte a dialetos e equilíbrio bilíngue',
         cultural_significance: 'high',
         required: true
@@ -186,7 +186,7 @@ export default function CommunityFeedbackPanel() {
       {
         id: 'privacy_trust_level',
         type: 'rating',
-        question_en: 'How much do you trust AI privacy protections for Portuguese cultural data?',
+        question_en: 'How much do you trust AI privacy protections for Lusophone cultural data?',
         question_pt: 'Quanto confia nas proteções de privacidade da IA para dados culturais portugueses?',
         context_en: 'Consider family stories, heritage information, and personal cultural data',
         context_pt: 'Considere histórias familiares, informações patrimoniais e dados culturais pessoais',

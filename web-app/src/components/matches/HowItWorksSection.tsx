@@ -31,9 +31,9 @@ export default function HowItWorksSection() {
         ? 'Crie um perfil que reflete a sua herança portuguesa, interesses culturais, localização no Reino Unido e o que procura numa conexão.'
         : 'Create a profile that reflects your Portuguese heritage, cultural interests, United Kingdom location, and what you\'re looking for in a connection.',
       features: [
-        isPortuguese ? 'Região portuguesa de origem' : 'Portuguese region of origin',
+        isPortuguese ? 'Região portuguesa de origem' : 'Lusophone region of origin',
         isPortuguese ? 'Tradições culturais favoritas' : 'Favorite cultural traditions',
-        isPortuguese ? 'Nível de fluência em português' : 'Portuguese fluency level',
+        isPortuguese ? 'Nível de fluência em português' : 'Lusophone fluency level',
         isPortuguese ? 'Interesses e hobbies' : 'Interests and hobbies'
       ]
     },
@@ -43,7 +43,7 @@ export default function HowItWorksSection() {
       title: isPortuguese ? 'Algoritmo de Compatibilidade Cultural' : 'Cultural Compatibility Algorithm',
       description: isPortuguese
         ? 'O nosso algoritmo analisa múltiplas dimensões da compatibilidade cultural portuguesa para encontrar as melhores correspondências.'
-        : 'Our algorithm analyzes multiple dimensions of Portuguese cultural compatibility to find your best matches.',
+        : 'Our algorithm analyzes multiple dimensions of Lusophone cultural compatibility to find your best matches.',
       features: [
         isPortuguese ? 'Valores culturais partilhados' : 'Shared cultural values',
         isPortuguese ? 'Proximidade geográfica no Reino Unido' : 'Geographic proximity in the United Kingdom',
@@ -75,7 +75,7 @@ export default function HowItWorksSection() {
       features: [
         isPortuguese ? 'Chat seguro e verificado' : 'Secure and verified chat',
         isPortuguese ? 'Eventos comunitários regulares' : 'Regular community events',
-        isPortuguese ? 'Grupos locais de português' : 'Local Portuguese groups',
+        isPortuguese ? 'Grupos locais de português' : 'Local Lusophone groups',
         isPortuguese ? 'Sugestões de encontros culturais' : 'Cultural meetup suggestions'
       ]
     }
@@ -84,10 +84,10 @@ export default function HowItWorksSection() {
   const algorithmFeatures = [
     {
       icon: GlobeEuropeAfricaIcon,
-      title: isPortuguese ? 'Qualquer Falante de Português' : 'Any Portuguese Speaker Welcome',
+      title: isPortuguese ? 'Qualquer Falante de Português' : 'Any Lusophone Speaker Welcome',
       description: isPortuguese
         ? 'Não importa de onde você é - se você fala português, você faz parte da nossa comunidade. Portugal, Brasil, Angola, Cabo Verde, Moçambique ou qualquer lugar.'
-        : 'It doesn\'t matter where you\'re from - if you speak Portuguese, you belong in our community. Portugal, Brazil, Angola, Cape Verde, Mozambique or anywhere.'
+        : 'It doesn\'t matter where you\'re from - if you speak Lusophone, you belong in our community. Portugal, Brazil, Angola, Cape Verde, Mozambique or anywhere.'
     },
     {
       icon: MapPinIcon,
@@ -162,12 +162,12 @@ export default function HowItWorksSection() {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent mb-6 leading-tight">
                 {isPortuguese 
                   ? 'O Seu Caminho para Conectar Falantes de Português'
-                  : 'Your Path to Connect with Portuguese Speakers'}
+                  : 'Your Path to Connect with Lusophone Speakers'}
               </h2>
               <p className="text-gray-700 text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-medium">
                 {isPortuguese
                   ? 'Desenvolvemos um algoritmo especializado que conecta falantes de português no Reino Unido, independentemente da sua origem. Se você fala português, você pertence aqui.'
-                  : 'We\'ve developed a specialized algorithm that connects Portuguese speakers across the United Kingdom, regardless of your origin. If you speak Portuguese, you belong here.'}
+                  : 'We\'ve developed a specialized algorithm that connects Portuguese speakers across the United Kingdom, regardless of your origin. If you speak Lusophone, you belong here.'}
               </p>
             </motion.div>
           </div>
@@ -246,7 +246,7 @@ export default function HowItWorksSection() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 {isPortuguese 
                   ? 'Algoritmo Especializado para Falantes de Português'
-                  : 'Specialized Algorithm for Portuguese Speakers'}
+                  : 'Specialized Algorithm for Lusophone Speakers'}
               </h2>
               <p className="text-white/90 text-lg max-w-3xl mx-auto">
                 {isPortuguese

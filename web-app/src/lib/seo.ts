@@ -19,7 +19,7 @@ export interface SEOMetadata {
   hreflang?: { [key: string]: string };
 }
 
-// Primary Portuguese SEO Keywords
+// Primary Lusophone SEO Keywords
 export const PRIMARY_PORTUGUESE_KEYWORDS = [
   // Community focused
   "comunidade de falantes de português londres",
@@ -109,7 +109,7 @@ export const LONG_TAIL_KEYWORDS = [
 
 // Location-based Keywords
 export const LOCATION_KEYWORDS = [
-  // London areas with Portuguese communities
+  // London areas with Lusophone communities
   "portugueses stockwell",
   "portugueses vauxhall",
   "portugueses south lambeth",
@@ -159,11 +159,11 @@ export const COMPETITOR_KEYWORDS = [
 // SEO Page Configurations
 export const SEO_PAGES: { [key: string]: SEOMetadata } = {
   home: {
-    title: "LusoTown London - Your Portuguese Social Calendar in London",
+    title: "LusoTown London - Your Lusophone Social Calendar in London",
     titlePortuguese:
       "LusoTown London - Sua Agenda Social Portuguesa em Londres",
     description:
-      "Your Portuguese social calendar in London. Book experiences, find activities, and connect with Portuguese speakers from museums and football to concerts and weekend trips.",
+      "Your Lusophone social calendar in London. Book experiences, find activities, and connect with Portuguese speakers from museums and football to concerts and weekend trips.",
     descriptionPortuguese:
       "Sua agenda social portuguesa em Londres. Reserve experiências, encontre atividades e conecte-se com lusófonos - de museus e futebol a concertos e viagens de fim de semana.",
     keywords: [
@@ -194,7 +194,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       name: "LusoTown London",
       alternateName: "LusoTown",
       description:
-        "Portuguese social calendar and community platform in London",
+        "Lusophone social calendar and community platform in London",
       url: SITE_URL,
       logo: absoluteUrl("/logo.png"),
       sameAs: [
@@ -216,11 +216,11 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
 
   events: {
     title:
-      "Portuguese Events in London - Cultural Activities & Social Calendar",
+      "Lusophone Events in London - Cultural Activities & Social Calendar",
     titlePortuguese:
       "Eventos Portugueses em Londres - Atividades Culturais e Agenda Social",
     description:
-      "Discover Portuguese cultural events, social activities, and community gatherings in London. From Fado nights to business networking, find your next Portuguese experience.",
+      "Discover Lusophone cultural events, social activities, and community gatherings in London. From Fado nights to business networking, find your next Lusophone experience.",
     descriptionPortuguese:
       "Descubra eventos culturais portugueses, atividades sociais e encontros comunitários em Londres. De noites de Fado a networking empresarial, encontre sua próxima experiência portuguesa.",
     keywords: [
@@ -243,11 +243,11 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
 
   businessDirectory: {
     title:
-      "Portuguese Business Directory London - Authentic Lusophone Services",
+      "Lusophone Business Directory London - Authentic Lusophone Services",
     titlePortuguese:
       "Diretório de Negócios Portugueses Londres - Serviços Lusófonos Autênticos",
     description:
-      "Find verified Portuguese-owned businesses in London. Restaurants, services, consulting, and more from authentic Portuguese entrepreneurs across the United Kingdom.",
+      "Find verified Lusophone-owned businesses in London. Restaurants, services, consulting, and more from authentic Lusophone entrepreneurs across the United Kingdom.",
     descriptionPortuguese:
       "Encontre negócios verificados de proprietários portugueses em Londres. Restaurantes, serviços, consultoria e mais de empreendedores portugueses autênticos no Reino Unido.",
     keywords: [
@@ -274,7 +274,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     titlePortuguese:
       "Networking Empresarial LusoTown Londres - Eventos e Parcerias",
     description:
-      "Connect with Portuguese entrepreneurs and business professionals in London. Networking events, investor meetups, and partnership opportunities for the Portuguese business community.",
+      "Connect with Lusophone entrepreneurs and business professionals in London. Networking events, investor meetups, and partnership opportunities for the Portuguese business community.",
     descriptionPortuguese:
       "Conecte-se com empreendedores e profissionais portugueses em Londres. Eventos de networking, encontros de investidores e oportunidades de parceria para a comunidade empresarial portuguesa.",
     keywords: [
@@ -330,7 +330,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
 
   heritage: {
     title:
-      "Portuguese Culture & Community Preservation London - Instituto Camões Partnership",
+      "Lusophone Culture & Community Preservation London - Instituto Camões Partnership",
     titlePortuguese:
       "Cultura Portuguesa e Preservação Comunitária Londres - Parceria Instituto Camões",
     description:
@@ -357,11 +357,11 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     ogImage: absoluteUrl("/og-heritage.jpg"),
   },
   live: {
-    title: "LusoTown TV - Live Portuguese Streams from London",
+    title: "LusoTown TV - Live Lusophone Streams from London",
     titlePortuguese:
       "LusoTown TV - Transmissões ao vivo portuguesas de Londres",
     description:
-      "Watch Portuguese cultural content, business workshops, and community events live from London. Replays and VIP sessions for members.",
+      "Watch Lusophone cultural content, business workshops, and community events live from London. Replays and VIP sessions for members.",
     descriptionPortuguese:
       "Assista conteúdo cultural português, workshops de negócios e eventos comunitários ao vivo de Londres. Reprises e sessões VIP para membros.",
     keywords: [
@@ -375,11 +375,11 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     ogImage: absoluteUrl("/og-live.jpg"),
   },
   students: {
-    title: "Portuguese Students United Kingdom - Partnerships, Discounts, Support",
+    title: "Lusophone Students United Kingdom - Partnerships, Discounts, Support",
     titlePortuguese:
       "Estudantes Portugueses no Reino Unido - Parcerias, Descontos, Apoio",
     description:
-      "Exclusive support for Portuguese students across United Kingdom universities. Discounts, cultural programs, and career development.",
+      "Exclusive support for Lusophone students across United Kingdom universities. Discounts, cultural programs, and career development.",
     descriptionPortuguese:
       "Apoio exclusivo para estudantes portugueses em universidades no Reino Unido. Descontos, programas culturais e desenvolvimento de carreira.",
     keywords: [
@@ -392,10 +392,10 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     ogImage: absoluteUrl("/og-students.jpg"),
   },
   premiumMembership: {
-    title: "LusoTown Premium Membership - Unlock VIP Portuguese Network",
+    title: "LusoTown Premium Membership - Unlock VIP Lusophone Network",
     titlePortuguese: "LusoTown Assinatura Premium - Rede VIP Portuguesa",
     description:
-      "Join premium to unlock transport services, VIP events, and exclusive Portuguese networking in London & United Kingdom.",
+      "Join premium to unlock transport services, VIP events, and exclusive Lusophone networking in London & United Kingdom.",
     descriptionPortuguese:
       "Assine premium para desbloquear serviços de transporte, eventos VIP e networking português exclusivo em Londres e no Reino Unido.",
     keywords: [
@@ -407,7 +407,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     ogImage: absoluteUrl("/og-premium.jpg"),
   },
   matches: {
-    title: "Portuguese Matches London - Cultural Compatibility & Networking",
+    title: "Lusophone Matches London - Cultural Compatibility & Networking",
     titlePortuguese:
       "Matches Portugueses em Londres - Compatibilidade Cultural e Networking",
     description:
@@ -532,7 +532,7 @@ export class SEOService {
     return `User-agent: *
 Allow: /
 
-# Portuguese content optimization
+# Lusophone content optimization
 Allow: /?lang=pt
 Allow: /events?lang=pt
 Allow: /business-directory?lang=pt
@@ -592,7 +592,7 @@ Crawl-delay: 1`;
         reviewCount: business.reviewCount,
       },
       servedCuisine:
-        business.category === "restaurant" ? "Portuguese" : undefined,
+        business.category === "restaurant" ? "Lusophone" : undefined,
       priceRange:
         business.price < 20 ? "£" : business.price < 50 ? "££" : "£££",
       acceptedPaymentMethod: ["Cash", "Credit Card"],
@@ -644,7 +644,7 @@ Crawl-delay: 1`;
     };
   }
 
-  // Portuguese SEO Content Templates
+  // Lusophone SEO Content Templates
   static getPortugueseContentTemplates() {
     return {
       welcomeMessage: {
@@ -663,7 +663,7 @@ Crawl-delay: 1`;
           pt: "Conecte-se com lusófonos em Londres. Participe em eventos, faça amigos, descubra negócios.",
         },
         events: {
-          en: "Portuguese cultural events and activities in London. From Fado to business networking.",
+          en: "Lusophone cultural events and activities in London. From Fado to business networking.",
           pt: "Eventos culturais e atividades portuguesas em Londres. Do Fado ao networking empresarial.",
         },
       },
@@ -675,24 +675,24 @@ Crawl-delay: 1`;
     return `<meta name="google-site-verification" content="portuguese-community-london-verification" />`;
   }
 
-  // Analytics tracking for Portuguese content
+  // Analytics tracking for Lusophone content
   static getAnalyticsEvents() {
     return {
       pageViews: {
-        page_view_portuguese: "Portuguese page viewed",
+        page_view_portuguese: "Lusophone page viewed",
         page_view_english: "English page viewed",
       },
       interactions: {
-        language_switch_pt: "Switched to Portuguese",
+        language_switch_pt: "Switched to Lusophone",
         language_switch_en: "Switched to English",
         business_click: "Portuguese business clicked",
-        event_registration: "Portuguese event registration",
+        event_registration: "Lusophone event registration",
         networking_signup: "Business networking signup",
       },
       conversions: {
         community_join: "Joined Portuguese-speaking community",
         business_verified: "Portuguese business verified",
-        event_attended: "Portuguese event attended",
+        event_attended: "Lusophone event attended",
       },
     };
   }

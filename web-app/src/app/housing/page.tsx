@@ -25,14 +25,14 @@ import Footer from '@/components/Footer'
 const mockListings = [
   {
     id: 1,
-    title: 'Cozy Room in Portuguese Shared House',
+    title: 'Cozy Room in Lusophone Shared House',
     location: 'Vauxhall, London',
     price: '£650/month',
     type: 'Room',
     bedrooms: 1,
     bathrooms: 1,
     available: 'Available Now',
-    description: 'Beautiful room in a friendly Portuguese household. Perfect for newcomers to London!',
+    description: 'Beautiful room in a friendly Lusophone household. Perfect for newcomers to London!',
     amenities: ['WiFi', 'Kitchen Access', 'Portuguese-speaking housemates', 'Near Vauxhall Station'],
     images: ['/images/housing/room1.jpg'],
     landlord: {
@@ -42,7 +42,7 @@ const mockListings = [
       speaksPortuguese: true,
       verified: true
     },
-    features: ['Bills Included', 'Portuguese Welcome', 'Help with Setup'],
+    features: ['Bills Included', 'Lusophone Welcome', 'Help with Setup'],
     featured: true,
     deposit: '£650',
     minStay: '3 months'
@@ -56,7 +56,7 @@ const mockListings = [
     bedrooms: 2,
     bathrooms: 1,
     available: 'Available from 1st Nov',
-    description: 'Modern 2-bedroom flat perfect for Portuguese professionals or students sharing.',
+    description: 'Modern 2-bedroom flat perfect for Lusophone professionals or students sharing.',
     amenities: ['Fully Furnished', 'Washing Machine', 'Close to Portuguese-speaking community', 'Transport Links'],
     images: ['/images/housing/flat1.jpg'],
     landlord: {
@@ -66,7 +66,7 @@ const mockListings = [
       speaksPortuguese: true,
       verified: true
     },
-    features: ['Portuguese-Speaking Landlord', 'Help with Council Registration', 'Portuguese TV'],
+    features: ['Lusophone-Speaking Landlord', 'Help with Council Registration', 'Lusophone TV'],
     featured: false,
     deposit: '£1,800',
     minStay: '6 months'
@@ -80,8 +80,8 @@ const mockListings = [
     bedrooms: 1,
     bathrooms: 1,
     available: 'Available Now',
-    description: 'Perfect for Portuguese students! Close to UCL, King\'s College, and other universities.',
-    amenities: ['Study Area', 'High-Speed WiFi', 'Portuguese Student Community', 'Security Entry'],
+    description: 'Perfect for Lusophone students! Close to UCL, King\'s College, and other universities.',
+    amenities: ['Study Area', 'High-Speed WiFi', 'Lusophone Student Community', 'Security Entry'],
     images: ['/images/housing/student1.jpg'],
     landlord: {
       name: 'LusoStudent Housing',
@@ -90,7 +90,7 @@ const mockListings = [
       speaksPortuguese: true,
       verified: true
     },
-    features: ['Student Discount', 'Portuguese Support Network', 'Academic Help'],
+    features: ['Student Discount', 'Lusophone Support Network', 'Academic Help'],
     featured: true,
     deposit: '£550',
     minStay: '1 month'
@@ -105,7 +105,7 @@ const mockListings = [
     bathrooms: 2,
     available: 'Available from 15th Nov',
     description: 'Perfect family home in quiet residential area with Portuguese-speaking neighbors nearby.',
-    amenities: ['Garden', 'Parking', 'Near Portuguese School', 'Family-Friendly Area'],
+    amenities: ['Garden', 'Parking', 'Near Lusophone School', 'Family-Friendly Area'],
     images: ['/images/housing/house1.jpg'],
     landlord: {
       name: 'LusoFamily Properties',
@@ -114,14 +114,14 @@ const mockListings = [
       speaksPortuguese: true,
       verified: true
     },
-    features: ['Child-Friendly', 'School Registration Help', 'Portuguese Playgroups Nearby'],
+    features: ['Child-Friendly', 'School Registration Help', 'Lusophone Playgroups Nearby'],
     featured: false,
     deposit: '£2,200',
     minStay: '12 months'
   },
   {
     id: 5,
-    title: 'Shared Portuguese Household',
+    title: 'Shared Lusophone Household',
     location: 'Bermondsey, London',
     price: '£580/month',
     type: 'Room',
@@ -129,7 +129,7 @@ const mockListings = [
     bathrooms: 1,
     available: 'Available Now',
     description: 'Join our friendly Portuguese-speaking household. Great for making friends and feeling at home!',
-    amenities: ['Shared Kitchen', 'Living Room', 'Portuguese Cooking', 'Social Events'],
+    amenities: ['Shared Kitchen', 'Living Room', 'Lusophone Cooking', 'Social Events'],
     images: ['/images/housing/shared1.jpg'],
     landlord: {
       name: 'Ana Rodrigues',
@@ -138,31 +138,31 @@ const mockListings = [
       speaksPortuguese: true,
       verified: true
     },
-    features: ['Cultural Events', 'Portuguese Food Shopping Tips', 'Buddy System'],
+    features: ['Cultural Events', 'Lusophone Food Shopping Tips', 'Buddy System'],
     featured: false,
     deposit: '£580',
     minStay: '2 months'
   },
   {
     id: 6,
-    title: 'Modern Studio with Portuguese Support',
+    title: 'Modern Studio with Lusophone Support',
     location: 'Canary Wharf, London',
     price: '£1,200/month',
     type: 'Studio',
     bedrooms: 1,
     bathrooms: 1,
     available: 'Available Now',
-    description: 'Modern studio perfect for young Portuguese professionals working in the financial district.',
+    description: 'Modern studio perfect for young Lusophone professionals working in the financial district.',
     amenities: ['Gym Access', 'Concierge', '24/7 Security', 'Transport Links'],
     images: ['/images/housing/studio1.jpg'],
     landlord: {
-      name: 'Premium Portuguese Properties',
+      name: 'Premium Lusophone Properties',
       rating: 4.9,
       reviews: 22,
       speaksPortuguese: true,
       verified: true
     },
-    features: ['Professional Network', 'Portuguese Business Contacts', 'Career Support'],
+    features: ['Professional Network', 'Lusophone Business Contacts', 'Career Support'],
     featured: true,
     deposit: '£1,200',
     minStay: '6 months'
@@ -270,7 +270,7 @@ export default function HousingPage() {
             >
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
                 <HomeIcon className="w-5 h-5 text-white" />
-                <span className="text-white font-semibold">Portuguese Housing in London</span>
+                <span className="text-white font-semibold">Lusophone Housing in London</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
@@ -278,7 +278,7 @@ export default function HousingPage() {
               </h1>
               
               <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Discover Portuguese-friendly housing with landlords who understand your journey to London
+                Discover Lusophone-friendly housing with landlords who understand your journey to London
               </p>
 
               {/* Quick Stats */}
@@ -289,7 +289,7 @@ export default function HousingPage() {
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-white">89%</div>
-                  <div className="text-white/80">Portuguese-Friendly</div>
+                  <div className="text-white/80">Lusophone-Friendly</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-white">£750</div>
@@ -365,7 +365,7 @@ export default function HousingPage() {
                   onChange={(e) => setShowPortugueseOnly(e.target.checked)}
                   className="rounded text-accent-600 focus:ring-accent-500"
                 />
-                <span className="text-sm font-medium">Portuguese-Speaking Only</span>
+                <span className="text-sm font-medium">Lusophone-Speaking Only</span>
               </label>
             </div>
           </div>

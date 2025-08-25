@@ -53,7 +53,7 @@ import {
 } from '@/config';
 
 // Validate content for inclusivity
-const validation = validateCommunityContent('Portuguese community in London');
+const validation = validateCommunityContent('Lusophone community in London');
 if (!validation.isValid) {
   console.log(validation.suggestions); // Use "Portuguese-speaking community in the United Kingdom"
 }
@@ -109,7 +109,7 @@ const quote = getTransportQuote('luxury', 3, 2); // 3 hours, 2 passengers
 ```
 
 ### 5. Brand System (`brand.ts`)
-Portuguese cultural design system with colors, typography, and design tokens.
+Lusophone cultural design system with colors, typography, and design tokens.
 
 **Before (hardcoded):**
 ```typescript
@@ -150,7 +150,7 @@ import { buildUnsplashUrl, SOCIAL_URLS } from '@/config';
 <a href={SOCIAL_URLS.instagram}>Instagram</a>
 
 // Calendar integration
-const calendarUrl = buildCalendarUrl('Portuguese Night', '20250825T190000Z', '20250825T220000Z');
+const calendarUrl = buildCalendarUrl('Lusophone Night', '20250825T190000Z', '20250825T220000Z');
 ```
 
 ### 7. Analytics (`analytics.ts`)
@@ -169,14 +169,14 @@ import { ANALYTICS_EVENTS, trackEvent, trackUserAction } from '@/config';
 trackEvent(ANALYTICS_EVENTS.PAGE_VIEW);
 trackEvent(ANALYTICS_EVENTS.USER_SIGNUP);
 
-// Portuguese cultural tracking
+// Lusophone cultural tracking
 trackPortugueseCulturalEngagement('fado_event', 'event-123');
 
 // Conversion tracking
 trackConversion(ANALYTICS_EVENTS.SUBSCRIPTION_COMPLETE, 19.99);
 ```
 
-## Portuguese Cultural Integration
+## Lusophone Cultural Integration
 
 The configuration system is designed specifically for the Portuguese-speaking community across ALL Lusophone nations:
 
@@ -205,12 +205,12 @@ console.log(wisdom.origin.pt); // "Provérbio Marítimo Português"
 ```typescript
 import { PORTUGUESE_COLORS, brandColors } from '@/config';
 
-// Use Portuguese brand colors, not generic blue/gray
+// Use Lusophone brand colors, not generic blue/gray
 const styles = {
-  primary: brandColors.primary,     // Portuguese gold
-  secondary: brandColors.secondary, // Portuguese brown
-  accent: brandColors.accent,       // Portuguese green
-  action: brandColors.action        // Portuguese red
+  primary: brandColors.primary,     // Lusophone gold
+  secondary: brandColors.secondary, // Lusophone brown
+  accent: brandColors.accent,       // Lusophone green
+  action: brandColors.action        // Lusophone red
 };
 ```
 
@@ -230,11 +230,11 @@ const message = `Great fado performance! ${CULTURAL_EMOJIS[':fado:']} ${CULTURAL
 <span>{celebration.flagEmoji} {celebration.name.en}</span>
 ```
 
-### Portuguese Resources
+### Lusophone Resources
 ```typescript
 import { PORTUGUESE_RESOURCES } from '@/config';
 
-<a href={PORTUGUESE_RESOURCES.consulado}>Portuguese Consulate</a>
+<a href={PORTUGUESE_RESOURCES.consulado}>Lusophone Consulate</a>
 <a href={PORTUGUESE_RESOURCES.institutoCamoes}>Instituto Camões</a>
 ```
 
@@ -326,12 +326,12 @@ import { SOCIAL_URLS, buildUnsplashUrl } from '@/config';
 <span>{formatPrice(19.99)}</span>
 ```
 
-### 2. Portuguese Cultural Branding
+### 2. Lusophone Cultural Branding
 ```typescript
 // ❌ Don't use generic colors
 <div className="bg-blue-500">
 
-// ✅ Use Portuguese brand colors
+// ✅ Use Lusophone brand colors
 <div style={{ backgroundColor: brandColors.primary }}>
 ```
 
@@ -405,7 +405,7 @@ When adding new configuration:
 
 1. **Choose the right file** based on the configuration type
 2. **Follow TypeScript patterns** with proper types and `as const`
-3. **Add bilingual support** for Portuguese cultural elements
+3. **Add bilingual support** for Lusophone cultural elements
 4. **Export from index.ts** for centralized access
 5. **Update this README** with usage examples
 

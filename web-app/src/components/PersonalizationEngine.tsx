@@ -17,7 +17,7 @@ import {
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 import { useLanguage } from '@/context/LanguageContext';
 
-// Portuguese Cultural Preference Types
+// Lusophone Cultural Preference Types
 interface CulturalPreferences {
   // Heritage background
   heritage: ('portugal' | 'brazil' | 'angola' | 'cape-verde' | 'mozambique' | 'guinea-bissau' | 'sao-tome' | 'timor-leste')[];
@@ -71,11 +71,11 @@ const EVENT_TYPE_OPTIONS = [
   { id: 'fado', nameEn: 'Fado Music', namePt: 'Música Fado', icon: '🎵', description: 'Traditional Portuguese music' },
   { id: 'samba', nameEn: 'Samba & Dance', namePt: 'Samba e Dança', icon: '💃', description: 'Brazilian dance and music' },
   { id: 'kizomba', nameEn: 'Kizomba', namePt: 'Kizomba', icon: '🕺', description: 'Angolan dance and music' },
-  { id: 'football', nameEn: 'Football Events', namePt: 'Eventos de Futebol', icon: '⚽', description: 'Portuguese football viewing' },
+  { id: 'football', nameEn: 'Football Events', namePt: 'Eventos de Futebol', icon: '⚽', description: 'Lusophone football viewing' },
   { id: 'food-wine', nameEn: 'Food & Wine', namePt: 'Gastronomia', icon: '🍷', description: 'Portuguese cuisine experiences' },
-  { id: 'business', nameEn: 'Business Networking', namePt: 'Networking Profissional', icon: '💼', description: 'Professional Portuguese community' },
+  { id: 'business', nameEn: 'Business Networking', namePt: 'Networking Profissional', icon: '💼', description: 'Professional Lusophone community' },
   { id: 'cultural-talks', nameEn: 'Cultural Talks', namePt: 'Palestras Culturais', icon: '🗣️', description: 'Portuguese history and culture' },
-  { id: 'family', nameEn: 'Family Events', namePt: 'Eventos Familiares', icon: '👨‍👩‍👧‍👦', description: 'Family-friendly Portuguese events' },
+  { id: 'family', nameEn: 'Family Events', namePt: 'Eventos Familiares', icon: '👨‍👩‍👧‍👦', description: 'Family-friendly Lusophone events' },
 ];
 
 export default function PersonalizationEngine({

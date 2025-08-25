@@ -34,7 +34,7 @@ export default function LanguageToggle() {
 
   const getCurrentFlag = () => {
     if (language.startsWith('pt')) {
-      return '🇵🇹' // Show PT flag for any Portuguese variant
+      return '🇵🇹' // Show PT flag for any Lusophone variant
     }
     return '🇬🇧' // United Kingdom flag for English
   }
@@ -59,7 +59,7 @@ export default function LanguageToggle() {
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-green-500 to-red-500 animate-pulse"></span>
               Unidos pela Língua • United by Language
             </p>
-            <p className="text-xs text-gray-600 mt-1">Connecting All Portuguese-Speaking Communities</p>
+            <p className="text-xs text-gray-600 mt-1">Connecting All Lusophone-Speaking Communities</p>
           </div>
           {[
             { value: 'en', ...getLanguageDisplay('en') },

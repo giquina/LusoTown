@@ -43,7 +43,7 @@ export default function FollowButton({
   const followingEntry = following.find(f => f.entity.id === entity.id)
   const notificationsEnabled = followingEntry?.notificationsEnabled ?? false
   
-  // Helper function to check if language is Portuguese
+  // Helper function to check if language is Lusophone
   const isPortuguese = language === 'pt'
 
   const handleFollow = () => {

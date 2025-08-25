@@ -214,7 +214,7 @@ function PurposeStep({ selectedReason, onReasonSelect, onNext, isPortuguese }: a
     {
       id: 'connections',
       title: isPortuguese ? 'Conexões Lusófonas Elite' : 'Elite Lusophone Connections',
-      subtitle: isPortuguese ? 'Relacionamentos Lusófonos Curados' : 'Curated Portuguese-Speaking Relationships',
+      subtitle: isPortuguese ? 'Relacionamentos Lusófonos Curados' : 'Curated Lusophone-Speaking Relationships',
       description: isPortuguese 
         ? 'Conhecer pessoas distintas de Portugal, Brasil, Angola, Cabo Verde, Moçambique e todas as nações lusófonas'
         : 'Meet accomplished individuals from Portugal, Brazil, Angola, Cape Verde, Mozambique, and all Lusophone nations',
@@ -240,12 +240,12 @@ function PurposeStep({ selectedReason, onReasonSelect, onNext, isPortuguese }: a
     {
       id: 'business',
       title: isPortuguese ? 'Rede de Negócios Lusófona Global' : 'Global Lusophone Business Network',
-      subtitle: isPortuguese ? 'Elite de Negócios PALOP e Lusófona' : 'PALOP & Portuguese-Speaking Business Elite',
+      subtitle: isPortuguese ? 'Elite de Negócios PALOP e Lusófona' : 'PALOP & Lusophone-Speaking Business Elite',
       description: isPortuguese 
         ? 'Acesso exclusivo a oportunidades de negócios em TODOS os mercados lusófonos e comunidades da diáspora'
         : 'Exclusive access to business opportunities across ALL Portuguese-speaking markets and diaspora communities',
       membershipBenefit: isPortuguese ? 'Receita combinada de membros £50M+ em mercados lusófonos' : '£50M+ combined member revenue across Lusophone markets',
-      heritageExamples: isPortuguese ? 'Oportunidades de negócios PALOP, brasileiras, portuguesas e da diáspora' : 'PALOP, Brazilian, Portuguese, and diaspora business opportunities',
+      heritageExamples: isPortuguese ? 'Oportunidades de negócios PALOP, brasileiras, portuguesas e da diáspora' : 'PALOP, Brazilian, Lusophone, and diaspora business opportunities',
       emoji: '💼',
       gradient: 'from-blue-500 to-indigo-500',
       flags: '💰🌐'
@@ -299,7 +299,7 @@ function PurposeStep({ selectedReason, onReasonSelect, onNext, isPortuguese }: a
         >
           {isPortuguese 
             ? 'Seja de qualquer país lusófono ou onde o português é falado 🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱'
-            : 'Whether you\'re from 🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱 or anywhere Portuguese is spoken'
+            : 'Whether you\'re from 🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱 or anywhere Lusophone is spoken'
           }
         </motion.p>
       </div>
@@ -380,7 +380,7 @@ function CulturalConnectionStep({ selectedReason, onNext, onPrevious, isPortugue
         ]
       },
       connections: {
-        headline: isPortuguese ? 'Aceda à Comunidade de Encontros Lusófonos Mais Exclusiva do Reino Unido' : 'Access the UK\'s Most Exclusive Portuguese-Speaking Dating Community',
+        headline: isPortuguese ? 'Aceda à Comunidade de Encontros Lusófonos Mais Exclusiva do Reino Unido' : 'Access the UK\'s Most Exclusive Lusophone-Speaking Dating Community',
         icon: '💎',
         activities: [
           { emoji: '🌍', text: isPortuguese ? 'Membros de todos os países de língua portuguesa' : 'Members from all Portuguese-speaking countries' },
@@ -391,14 +391,14 @@ function CulturalConnectionStep({ selectedReason, onNext, onPrevious, isPortugue
         ]
       },
       community: {
-        headline: isPortuguese ? 'Junte-se à Principal Rede Social Lusófona do Reino Unido' : 'Join the UK\'s Premier Portuguese-Speaking Social Network',
+        headline: isPortuguese ? 'Junte-se à Principal Rede Social Lusófona do Reino Unido' : 'Join the UK\'s Premier Lusophone-Speaking Social Network',
         icon: '🤝',
         activities: [
           { emoji: '🌍', text: isPortuguese ? 'Conectar lusófonos de TODAS as origens' : 'Connect Portuguese speakers from ALL backgrounds' },
           { emoji: '🎉', text: isPortuguese ? 'Eventos mensais celebrando diferentes países lusófonos' : 'Monthly events celebrating different Lusophone countries' },
           { emoji: '💼', text: isPortuguese ? 'Networking profissional inter-industrias em todas as comunidades lusófonas' : 'Cross-industry professional networking across all Portuguese-speaking communities' },
           { emoji: '🇬🇧', text: isPortuguese ? 'Programas especiais para lusófonos nascidos no Reino Unido' : 'Special programs for UK-born Portuguese speakers' },
-          { emoji: '📚', text: isPortuguese ? 'Iniciativas comunitárias para manter o português através das gerações' : 'Community initiatives to maintain Portuguese across generations' }
+          { emoji: '📚', text: isPortuguese ? 'Iniciativas comunitárias para manter o português através das gerações' : 'Community initiatives to maintain Lusophone across generations' }
         ]
       },
       business: {
@@ -407,7 +407,7 @@ function CulturalConnectionStep({ selectedReason, onNext, onPrevious, isPortugue
         activities: [
           { emoji: '🇦🇴🇨🇻🇬🇼🇲🇿🇸🇹', text: isPortuguese ? 'Mercados PALOP: Conexões empresariais diretas para países africanos lusófonos' : 'PALOP Markets: Direct business connections to African Portuguese-speaking countries' },
           { emoji: '🇧🇷', text: isPortuguese ? 'Oportunidades Brasileiras: O maior mercado lusófono da América Latina' : 'Brazilian Opportunities: Latin America\'s largest Portuguese-speaking market' },
-          { emoji: '🇵🇹🇪🇺', text: isPortuguese ? 'Acesso à UE Portuguesa: Entrada no mercado europeu e parcerias' : 'Portuguese EU Access: European market entry and partnerships' },
+          { emoji: '🇵🇹🇪🇺', text: isPortuguese ? 'Acesso à UE Portuguesa: Entrada no mercado europeu e parcerias' : 'Lusophone EU Access: European market entry and partnerships' },
           { emoji: '🇬🇧', text: isPortuguese ? 'Negócios da Diáspora: Empreendedores lusófonos baseados no Reino Unido' : 'Diaspora Business: UK-based Portuguese-speaking entrepreneurs' },
           { emoji: '💰', text: isPortuguese ? 'Comércio Transfronteiriço: Facilitar negócios em todo o mundo lusófono' : 'Cross-Border Trade: Facilitate business across the entire Lusophone world' }
         ]
@@ -606,7 +606,7 @@ function ActionStep({ selectedReason, onPrevious, onComplete, isPortuguese }: an
         title: isPortuguese ? 'Candidatar à Adesão de Negócios' : 'Apply for Business Membership',
         message: isPortuguese 
           ? 'Aceda a oportunidades de negócios exclusivas em mercados PALOP, brasileiros e portugueses com rede de empreendedores lusófonos'
-          : 'Access exclusive business opportunities across PALOP, Brazilian, and Portuguese markets with Lusophone entrepreneur network',
+          : 'Access exclusive business opportunities across PALOP, Brazilian, and Lusophone markets with Lusophone entrepreneur network',
         icon: '💼',
         gradient: 'from-blue-500 to-indigo-500'
       }

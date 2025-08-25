@@ -1,6 +1,6 @@
 'use client'
 
-// Portuguese Business Directory Geolocation Service
+// Lusophone Business Directory Geolocation Service
 // Handles user location detection and distance calculations
 
 export interface Location {
@@ -26,7 +26,7 @@ export const LONDON_CENTER: Location = {
   longitude: -0.1278
 }
 
-// Portuguese cultural areas in London with coordinates
+// Lusophone cultural areas in London with coordinates
 export const PORTUGUESE_AREAS = {
   vauxhall: { latitude: 51.4863, longitude: -0.1225, name: 'Vauxhall' },
   stockwell: { latitude: 51.4723, longitude: -0.1225, name: 'Stockwell' },
@@ -251,7 +251,7 @@ export class GeolocationService {
         `https://nominatim.openstreetmap.org/search?format=json&q=${encodedAddress}&limit=1`,
         {
           headers: {
-            'User-Agent': 'LusoTown Portuguese Business Directory'
+            'User-Agent': 'LusoTown Lusophone Business Directory'
           }
         }
       )

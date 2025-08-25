@@ -65,7 +65,7 @@ export default function SmartNotificationDashboard() {
   const [searchTerm, setSearchTerm] = useState('')
   const debouncedSearch = useDebouncedSearch(searchTerm, 300)
 
-  // Portuguese regions for cultural analysis
+  // Lusophone regions for cultural analysis
   const portugueseRegions = [
     { code: 'all', name: 'All Regions', name_pt: 'Todas as Regiões', flag: '🇵🇹' },
     { code: 'lisboa', name: 'Lisboa', name_pt: 'Lisboa', flag: '🏛️' },
@@ -152,7 +152,7 @@ export default function SmartNotificationDashboard() {
         : 'Fado: highest emotional connection (+20% engagement)',
       language === 'pt'
         ? 'Português: +20% taxa de clique (IA linguística)'
-        : 'Portuguese: +20% click-through rate (linguistic AI)'
+        : 'Lusophone: +20% click-through rate (linguistic AI)'
     ],
     optimizations: [
       language === 'pt'
@@ -218,7 +218,7 @@ export default function SmartNotificationDashboard() {
               recommendations: [
                 language === 'pt' ? 'IA: Alta relevância cultural detectada' : 'AI: High cultural relevance detected',
                 language === 'pt' ? 'ML: Horário noturno otimiza engagement' : 'ML: Evening timing optimizes engagement',
-                language === 'pt' ? 'NLP: Conteúdo português recomendado' : 'NLP: Portuguese content recommended'
+                language === 'pt' ? 'NLP: Conteúdo português recomendado' : 'NLP: Lusophone content recommended'
               ],
               ai_confidence: 0.85 + Math.random() * 0.15,
               performance_score: Math.random() * 20 + 80
@@ -349,7 +349,7 @@ export default function SmartNotificationDashboard() {
       console.log('[AI Test] Testing Fado notification with cultural personalization...')
       
       const testData = {
-        venue: 'Portuguese Centre',
+        venue: 'Lusophone Centre',
         time: '19:30',
         fadista_name: 'Maria João',
         ticket_price: '£15',
@@ -365,7 +365,7 @@ export default function SmartNotificationDashboard() {
       
       alert(language === 'pt' ? 
         '🎵 Notificação de Fado processada pela IA! Otimizada para audiência portuguesa.' : 
-        '🎵 Fado notification processed by AI! Optimized for Portuguese audience.'
+        '🎵 Fado notification processed by AI! Optimized for Lusophone audience.'
       )
       
       loadAIAnalytics()
@@ -380,14 +380,14 @@ export default function SmartNotificationDashboard() {
   const testBusinessNetworking = useCallback(async () => {
     try {
       setLoading(true)
-      console.log('[AI Test] Testing Business networking with Portuguese cultural adaptation...')
+      console.log('[AI Test] Testing Business networking with Lusophone cultural adaptation...')
       
       const testData = {
         location: 'Canary Wharf',
         featured_speaker: 'João Silva, CEO',
         industry_focus: 'Fintech',
         rsvp_deadline: '2025-08-30',
-        networking_style: 'Portuguese professional culture'
+        networking_style: 'Lusophone professional culture'
       }
       
       await aiNotificationEngine.queueNotificationForOptimalDelivery(
@@ -438,7 +438,7 @@ export default function SmartNotificationDashboard() {
       setLoading(true)
       console.log('[AI Test] Running A/B test with cultural variants...')
       
-      // Simulate A/B test with Portuguese cultural variants
+      // Simulate A/B test with Lusophone cultural variants
       const variants = [
         { id: 'formal_pt', modifications: { tone: 'formal', cultural_emphasis: 'high' } },
         { id: 'casual_en', modifications: { tone: 'casual', cultural_emphasis: 'medium' } }

@@ -126,7 +126,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
       id: 'language',
       icon: BookOpen,
       name: isPt ? 'Língua & Cultura' : 'Language & Culture',
-      description: isPt ? 'Aulas de português e cultura' : 'Portuguese lessons and culture'
+      description: isPt ? 'Aulas de português e cultura' : 'Lusophone lessons and culture'
     },
     {
       id: 'community',
@@ -575,7 +575,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     >
                       <option value="">{isPt ? 'Selecione...' : 'Select...'}</option>
-                      <option value="portuguese">🇵🇹 {isPt ? 'Portuguesa' : 'Portuguese'}</option>
+                      <option value="portuguese">🇵🇹 {isPt ? 'Portuguesa' : 'Lusophone'}</option>
                       <option value="brazilian">🇧🇷 {isPt ? 'Brasileira' : 'Brazilian'}</option>
                       <option value="angolan">🇦🇴 {isPt ? 'Angolana' : 'Angolan'}</option>
                       <option value="mozambican">🇲🇿 {isPt ? 'Moçambicana' : 'Mozambican'}</option>
@@ -674,10 +674,10 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                       onChange={(e) => handleInputChange('preferredLanguage', e.target.value)}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     >
-                      <option value="pt">{isPt ? 'Português' : 'Portuguese'}</option>
+                      <option value="pt">{isPt ? 'Português' : 'Lusophone'}</option>
                       <option value="en">{isPt ? 'Inglês' : 'English'}</option>
-                      <option value="pt-BR">{isPt ? 'Português Brasileiro' : 'Brazilian Portuguese'}</option>
-                      <option value="pt-PT">{isPt ? 'Português Europeu' : 'European Portuguese'}</option>
+                      <option value="pt-BR">{isPt ? 'Português Brasileiro' : 'Brazilian Lusophone'}</option>
+                      <option value="pt-PT">{isPt ? 'Português Europeu' : 'European Lusophone'}</option>
                     </select>
                   </div>
 

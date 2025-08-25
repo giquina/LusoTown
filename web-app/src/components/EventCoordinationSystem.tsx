@@ -126,7 +126,7 @@ export default function EventCoordinationSystem({
       date: '2025-08-25',
       time: '19:30',
       location: {
-        name: 'Portuguese Cultural Centre',
+        name: 'Lusophone Cultural Centre',
         address: '2 Stockwell Road, London SW9 9AS',
         area: 'Stockwell',
         coordinates: { lat: 51.4729, lng: -0.1234 }
@@ -139,7 +139,7 @@ export default function EventCoordinationSystem({
         verified: true
       },
       category: 'cultural',
-      culturalElements: ['Traditional Fado', 'Portuguese Wine', 'Cultural History', 'Community Singing'],
+      culturalElements: ['Traditional Fado', 'Lusophone Wine', 'Cultural History', 'Community Singing'],
       attendees: {
         confirmed: 45,
         capacity: 80,
@@ -149,7 +149,7 @@ export default function EventCoordinationSystem({
       pricing: {
         isFree: false,
         price: '£15',
-        includes: ['Fado performance', 'Portuguese appetizers', 'Wine tasting']
+        includes: ['Fado performance', 'Lusophone appetizers', 'Wine tasting']
       },
       transport: {
         available: true,
@@ -179,10 +179,10 @@ export default function EventCoordinationSystem({
     },
     {
       id: 'portuguese-cooking-class',
-      title: isPortuguese ? 'Aula de Culinária Portuguesa' : 'Portuguese Cooking Class',
+      title: isPortuguese ? 'Aula de Culinária Portuguesa' : 'Lusophone Cooking Class',
       description: isPortuguese
         ? 'Aprende a fazer pratos tradicionais portugueses com chef profissional. Desde pastéis de nata a bacalhau à brás!'
-        : 'Learn to make traditional Portuguese dishes with a professional chef. From pastéis de nata to bacalhau à brás!',
+        : 'Learn to make traditional Lusophone dishes with a professional chef. From pastéis de nata to bacalhau à brás!',
       date: '2025-08-27',
       time: '14:00',
       location: {
@@ -198,7 +198,7 @@ export default function EventCoordinationSystem({
         verified: true
       },
       category: 'food',
-      culturalElements: ['Traditional Recipes', 'Portuguese Ingredients', 'Family Cooking Stories', 'Regional Variations'],
+      culturalElements: ['Traditional Recipes', 'Lusophone Ingredients', 'Family Cooking Stories', 'Regional Variations'],
       attendees: {
         confirmed: 18,
         capacity: 20,
@@ -217,7 +217,7 @@ export default function EventCoordinationSystem({
       matchOpportunities: {
         compatibleAttendees: 8,
         newConnectionPotential: 'medium',
-        serviceProviders: ['Portuguese Grocery Guide', 'Catering Service']
+        serviceProviders: ['Lusophone Grocery Guide', 'Catering Service']
       },
       requirements: {
         languageLevel: 'beginner'
@@ -234,10 +234,10 @@ export default function EventCoordinationSystem({
     },
     {
       id: 'portuguese-business-networking',
-      title: isPortuguese ? 'Networking Empresarial Português' : 'Portuguese Business Networking',
+      title: isPortuguese ? 'Networking Empresarial Português' : 'Lusophone Business Networking',
       description: isPortuguese
         ? 'Conecta-te com empresários e profissionais portugueses em Londres. Oportunidades de negócio e parcerias.'
-        : 'Connect with Portuguese entrepreneurs and professionals in London. Business opportunities and partnerships.',
+        : 'Connect with Lusophone entrepreneurs and professionals in London. Business opportunities and partnerships.',
       date: '2025-08-29',
       time: '18:00',
       location: {
@@ -248,12 +248,12 @@ export default function EventCoordinationSystem({
       },
       organizer: {
         id: 'portuguese-business-uk',
-        name: 'Portuguese Business Network United Kingdom',
+        name: 'Lusophone Business Network United Kingdom',
         isMatch: false,
         verified: true
       },
       category: 'professional',
-      culturalElements: ['Business Culture Exchange', 'Portuguese Market Insights', 'Cultural Networking'],
+      culturalElements: ['Business Culture Exchange', 'Lusophone Market Insights', 'Cultural Networking'],
       attendees: {
         confirmed: 67,
         capacity: 100,
@@ -263,7 +263,7 @@ export default function EventCoordinationSystem({
       pricing: {
         isFree: false,
         price: '£25',
-        includes: ['Welcome drink', 'Networking session', 'Portuguese appetizers', 'Business card exchange']
+        includes: ['Welcome drink', 'Networking session', 'Lusophone appetizers', 'Business card exchange']
       },
       transport: {
         available: true,
@@ -293,10 +293,10 @@ export default function EventCoordinationSystem({
     },
     {
       id: 'portuguese-families-picnic',
-      title: isPortuguese ? 'Piquenique das Famílias Portuguesas' : 'Portuguese Families Picnic',
+      title: isPortuguese ? 'Piquenique das Famílias Portuguesas' : 'Lusophone Families Picnic',
       description: isPortuguese
         ? 'Dia divertido para famílias portuguesas com atividades para crianças, comida tradicional e jogos culturais.'
-        : 'Fun day for Portuguese families with children\'s activities, traditional food, and cultural games.',
+        : 'Fun day for Lusophone families with children\'s activities, traditional food, and cultural games.',
       date: '2025-08-31',
       time: '11:00',
       location: {
@@ -307,12 +307,12 @@ export default function EventCoordinationSystem({
       },
       organizer: {
         id: 'portuguese-families-london',
-        name: 'Portuguese Families London',
+        name: 'Lusophone Families London',
         isMatch: false,
         verified: true
       },
       category: 'social',
-      culturalElements: ['Traditional Games', 'Portuguese Stories', 'Folk Dancing', 'Language Activities'],
+      culturalElements: ['Traditional Games', 'Lusophone Stories', 'Folk Dancing', 'Language Activities'],
       attendees: {
         confirmed: 89,
         capacity: 150,
@@ -341,7 +341,7 @@ export default function EventCoordinationSystem({
       highlights: [
         'Family-friendly environment',
         'Children\'s Portuguese language activities',
-        'Traditional Portuguese picnic food',
+        'Traditional Lusophone picnic food',
         'Cultural games and entertainment'
       ],
       rsvpStatus: null,
@@ -350,10 +350,10 @@ export default function EventCoordinationSystem({
     },
     {
       id: 'portuguese-students-study-group',
-      title: isPortuguese ? 'Grupo de Estudo Universitário' : 'Portuguese University Study Group',
+      title: isPortuguese ? 'Grupo de Estudo Universitário' : 'Lusophone University Study Group',
       description: isPortuguese
         ? 'Sessão de estudo colaborativo para estudantes universitários portugueses. Partilhar recursos e apoio académico.'
-        : 'Collaborative study session for Portuguese university students. Share resources and academic support.',
+        : 'Collaborative study session for Lusophone university students. Share resources and academic support.',
       date: '2025-08-26',
       time: '16:00',
       location: {
@@ -370,7 +370,7 @@ export default function EventCoordinationSystem({
         verified: false
       },
       category: 'social',
-      culturalElements: ['Academic Support', 'Portuguese Study Resources', 'Cultural Academic Exchange'],
+      culturalElements: ['Academic Support', 'Lusophone Study Resources', 'Cultural Academic Exchange'],
       attendees: {
         confirmed: 24,
         capacity: 30,
@@ -397,7 +397,7 @@ export default function EventCoordinationSystem({
       highlights: [
         'Academic collaboration',
         'Study technique sharing',
-        'Portuguese academic resources',
+        'Lusophone academic resources',
         'Student networking'
       ],
       rsvpStatus: null,

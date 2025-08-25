@@ -225,7 +225,7 @@ export default function AuthPopup() {
                   <div>
                     <div className="text-lg font-bold text-primary-600">750+</div>
                     <div className="text-xs text-primary-700">
-                      {isPortuguese ? 'Falantes de Português' : 'Portuguese Speakers'}
+                      {isPortuguese ? 'Falantes de Português' : 'Lusophone Speakers'}
                     </div>
                   </div>
                   <div>

@@ -127,7 +127,7 @@ export default function PredictiveAnalyticsDashboard() {
             },
             {
               id: '2', 
-              name: 'Portuguese Business Networking',
+              name: 'Lusophone Business Networking',
               successProbability: 78,
               expectedAttendance: 32,
               culturalResonance: 72

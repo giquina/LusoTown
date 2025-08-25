@@ -1,6 +1,6 @@
 /**
  * Enhanced UK Location Selector
- * Shows Portuguese community density and cultural events for each location
+ * Shows Lusophone community density and cultural events for each location
  */
 
 "use client"
@@ -247,7 +247,7 @@ export default function UKLocationSelector({
                   <p>
                     {language === 'pt'
                       ? 'Londres tem a maior comunidade portuguesa no Reino Unido com eventos regulares em Stockwell, Vauxhall e outras áreas portuguesas.'
-                      : 'London has the largest Portuguese community in the UK with regular events in Stockwell, Vauxhall, and other Portuguese areas.'}
+                      : 'London has the largest Lusophone community in the UK with regular events in Stockwell, Vauxhall, and other Lusophone areas.'}
                   </p>
                 </div>
               </div>
@@ -262,7 +262,7 @@ export default function UKLocationSelector({
                   <p>
                     {language === 'pt'
                       ? 'Comunidade portuguesa crescente com eventos mensais e oportunidades de networking.'
-                      : 'Growing Portuguese community with monthly events and networking opportunities.'}
+                      : 'Growing Lusophone community with monthly events and networking opportunities.'}
                   </p>
                 </div>
               </div>
@@ -277,7 +277,7 @@ export default function UKLocationSelector({
         <span>
           {language === 'pt' 
             ? 'A comunidade portuguesa está crescendo em todo o Reino Unido'
-            : 'Portuguese community is growing across the UK'}
+            : 'Lusophone community is growing across the UK'}
         </span>
       </div>
     </div>

@@ -1,6 +1,6 @@
 /**
- * Portuguese Cultural Centers and Institutions Configuration
- * Centralized configuration for Portuguese cultural institutions
+ * Lusophone Cultural Centers and Institutions Configuration
+ * Centralized configuration for Lusophone cultural institutions
  * Environment-configurable data for easy maintenance
  */
 
@@ -121,12 +121,12 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     services: [
       'Portuguese language courses',
       'Cultural events and exhibitions',
-      'Portuguese teacher training',
+      'Lusophone teacher training',
       'Language certification (CAPLE)',
       'Digital library access',
       'Academic conferences',
       'Cultural workshops',
-      'Portuguese citizenship preparation'
+      'Lusophone citizenship preparation'
     ],
     servicesPortuguese: [
       'Cursos de língua portuguesa',
@@ -142,7 +142,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     programs: [
       {
         id: 'camoes-portuguese-adults',
-        name: 'Portuguese for Adults - Complete CEFR Course',
+        name: 'Lusophone for Adults - Complete CEFR Course',
         namePortuguese: 'Português para Adultos - Curso Completo QECR',
         description: 'Comprehensive Portuguese language course aligned with Common European Framework, A1-C2 levels',
         descriptionPortuguese: 'Curso abrangente de língua portuguesa alinhado com o Quadro Europeu Comum, níveis A1-C2',
@@ -157,9 +157,9 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
       },
       {
         id: 'camoes-business-portuguese',
-        name: 'Business Portuguese Professional Certificate',
+        name: 'Business Lusophone Professional Certificate',
         namePortuguese: 'Certificado Profissional de Português Empresarial',
-        description: 'Specialized Portuguese for business professionals working with Portuguese-speaking markets',
+        description: 'Specialized Lusophone for business professionals working with Portuguese-speaking markets',
         descriptionPortuguese: 'Português especializado para profissionais de negócios que trabalham com mercados lusófonos',
         type: 'certification',
         targetAudience: ['Business professionals', 'Entrepreneurs', 'Finance workers'],
@@ -172,7 +172,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
       },
       {
         id: 'camoes-heritage-weekend',
-        name: 'Portuguese Heritage Weekend School',
+        name: 'Lusophone Heritage Weekend School',
         namePortuguese: 'Escola de Fim de Semana de Património Português',
         description: 'Weekend program for children of Portuguese heritage covering language, culture, and traditions',
         descriptionPortuguese: 'Programa de fim de semana para crianças de herança portuguesa cobrindo língua, cultura e tradições',
@@ -204,10 +204,10 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     
     capacity: 200,
     facilities: ['Classrooms', 'Library', 'Conference room', 'Exhibition space', 'Audio-visual equipment'],
-    languages: ['Portuguese', 'English'],
+    languages: ['Lusophone', 'English'],
     
-    partnerships: ['King\'s College London', 'Portuguese Embassy', 'LusoTown'],
-    accreditation: ['Instituto Camões', 'Portuguese Ministry of Foreign Affairs'],
+    partnerships: ['King\'s College London', 'Lusophone Embassy', 'LusoTown'],
+    accreditation: ['Instituto Camões', 'Lusophone Ministry of Foreign Affairs'],
     
     socialMedia: {
       facebook: process.env.NEXT_PUBLIC_CAMOES_FACEBOOK || 'https://facebook.com/InstitutoCamoesLondres',
@@ -219,7 +219,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     isActive: true,
     establishedYear: 1995,
     lastUpdated: '2024-08-21',
-    description: 'Official Portuguese government cultural institution promoting Portuguese language and culture in the United Kingdom',
+    description: 'Official Lusophone government cultural institution promoting Portuguese language and culture in the United Kingdom',
     descriptionPortuguese: 'Instituição cultural oficial do governo português promovendo língua e cultura portuguesas no Reino Unido'
   },
   
@@ -246,10 +246,10 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
       'Portuguese language classes',
       'Cultural events',
       'Community support services',
-      'Traditional Portuguese workshops',
+      'Traditional Lusophone workshops',
       'Youth programs',
       'Senior citizen activities',
-      'Portuguese library'
+      'Lusophone library'
     ],
     servicesPortuguese: [
       'Aulas de língua portuguesa',
@@ -264,7 +264,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     programs: [
       {
         id: 'centro-portuguese-classes',
-        name: 'Portuguese Language Classes',
+        name: 'Lusophone Language Classes',
         namePortuguese: 'Aulas de Língua Portuguesa',
         description: 'Portuguese language instruction for all levels, from beginner to advanced',
         descriptionPortuguese: 'Ensino de língua portuguesa para todos os níveis, do iniciante ao avançado',
@@ -278,7 +278,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
       },
       {
         id: 'centro-youth-program',
-        name: 'Portuguese Youth Cultural Program',
+        name: 'Lusophone Youth Cultural Program',
         namePortuguese: 'Programa Cultural Juvenil Português',
         description: 'Cultural activities and Portuguese language maintenance for young people',
         descriptionPortuguese: 'Atividades culturais e manutenção da língua portuguesa para jovens',
@@ -311,9 +311,9 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     
     capacity: 150,
     facilities: ['Main hall', 'Classrooms', 'Kitchen', 'Library', 'Office space'],
-    languages: ['Portuguese', 'English'],
+    languages: ['Lusophone', 'English'],
     
-    partnerships: ['Portuguese Embassy', 'Local Portuguese-speaking community', 'Golborne Portuguese-speaking community'],
+    partnerships: ['Lusophone Embassy', 'Local Portuguese-speaking community', 'Golborne Portuguese-speaking community'],
     accreditation: ['United Kingdom Registered Charity'],
     
     socialMedia: {
@@ -323,7 +323,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     isActive: true,
     establishedYear: 1982,
     lastUpdated: '2024-08-21',
-    description: 'Community-based Portuguese cultural center offering language classes, cultural events, and community services',
+    description: 'Community-based Lusophone cultural center offering language classes, cultural events, and community services',
     descriptionPortuguese: 'Centro cultural português baseado na comunidade oferecendo aulas de língua, eventos culturais e serviços comunitários'
   },
   
@@ -376,7 +376,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
     programs: [
       {
         id: 'casa-executive-portuguese',
-        name: 'Executive Brazilian Portuguese Program',
+        name: 'Executive Brazilian Lusophone Program',
         namePortuguese: 'Programa Executivo de Português Brasileiro',
         description: 'Exclusive Portuguese language program for C-suite executives focusing on business communication and cultural nuances',
         descriptionPortuguese: 'Programa exclusivo de língua portuguesa para executivos C-level focando em comunicação empresarial e nuances culturais',
@@ -485,7 +485,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
       'Private dining rooms',
       'Cultural library and research center'
     ],
-    languages: ['Portuguese', 'English', 'Spanish'],
+    languages: ['Lusophone', 'English', 'Spanish'],
     
     partnerships: [
       'Brazilian Embassy London',
@@ -714,7 +714,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
       'Community gathering hall for festivals and celebrations',
       'Outdoor terrace for island-style social events'
     ],
-    languages: ['Cape Verdean Creole', 'Portuguese', 'English'],
+    languages: ['Cape Verdean Creole', 'Lusophone', 'English'],
     
     partnerships: [
       'Cape Verde Embassy London',
@@ -833,7 +833,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
         id: 'angola-luxury-cuisine-masterclass',
         name: 'Sophisticated Angolan Cuisine & Wine Masterclass',
         namePortuguese: 'Masterclass de Culinária Angolana Sofisticada e Vinhos',
-        description: 'Refined culinary experiences featuring elevated Angolan gastronomy paired with premium Portuguese and international wines',
+        description: 'Refined culinary experiences featuring elevated Angolan gastronomy paired with premium Lusophone and international wines',
         descriptionPortuguese: 'Experiências culinárias refinadas apresentando gastronomia angolana elevada combinada com vinhos portugueses e internacionais premium',
         type: 'cultural_workshop',
         targetAudience: ['Gastronomy enthusiasts', 'Luxury lifestyle connoisseurs', 'Cultural sophisticates'],
@@ -960,7 +960,7 @@ export const CULTURAL_CENTERS: CulturalCenter[] = [
       'Business consultation suites',
       'Premium event space'
     ],
-    languages: ['Portuguese', 'English', 'French'],
+    languages: ['Lusophone', 'English', 'French'],
     
     partnerships: [
       'Angolan Embassy London',

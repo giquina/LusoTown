@@ -4,7 +4,7 @@ import { ShieldCheckIcon, HeartIcon, UsersIcon, ExclamationTriangleIcon, GlobeAl
 
 export const metadata = {
   title: 'Community Guidelines | LusoTown London - Portuguese-speaking community Standards',
-  description: 'Learn about LusoTown London community guidelines that ensure a respectful, inclusive environment for the Portuguese diaspora community in London.',
+  description: 'Learn about LusoTown London community guidelines that ensure a respectful, inclusive environment for the Lusophone diaspora community in London.',
 }
 
 export default function CommunityGuidelines() {
@@ -51,7 +51,7 @@ export default function CommunityGuidelines() {
                 Community Guidelines
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Creating a respectful, inclusive environment for the Portuguese diaspora community in London to connect, support each other, and celebrate our shared heritage.
+                Creating a respectful, inclusive environment for the Lusophone diaspora community in London to connect, support each other, and celebrate our shared heritage.
               </p>
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function CommunityGuidelines() {
                   <div className="bg-white border-l-4 border-primary-500 p-4 rounded-r-lg my-6">
                     <p className="font-semibold text-primary-700 mb-2">Inclusive Community Statement</p>
                     <p className="text-gray-700">
-                      This platform is for open-minded people, and we do not discriminate in any way. You are welcome to join our staff, which comes from all the countries that speak Portuguese. 
+                      This platform is for open-minded people, and we do not discriminate in any way. You are welcome to join our staff, which comes from all the countries that speak Lusophone. 
                       Whether you're Muslim, atheist, agnostic, or Christian, we just ask you to be respectful and share and teach and help one another in any way you can, 
                       as life is already challenging as it is. We're making an effort so everyone can get along. That's why we have strict guidelines before attending one of our events. 
                       We do not create events that are religious driven, as we believe religion views should be private by default. We just want to enjoy life around people that speak our language 
@@ -102,7 +102,7 @@ export default function CommunityGuidelines() {
                     <ul className="list-none space-y-3">
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Speak with warmth and respect in Portuguese, English, or any language of the heart</span>
+                        <span>Speak with warmth and respect in Lusophone, English, or any language of the heart</span>
                       </li>
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-secondary-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -160,7 +160,7 @@ export default function CommunityGuidelines() {
                       </li>
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Help professionals thrive in British society while honoring Portuguese identity</span>
+                        <span>Help professionals thrive in British society while honoring Lusophone identity</span>
                       </li>
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>

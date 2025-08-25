@@ -19,7 +19,7 @@ import {
 } from '@heroicons/react/24/solid';
 import { useLanguage } from '@/context/LanguageContext';
 
-// Portuguese Flag Animation Component
+// Lusophone Flag Animation Component
 export const PortugueseFlagWave = ({ 
   size = 'w-6 h-4',
   className = '',
@@ -57,7 +57,7 @@ export const PortugueseFlagWave = ({
   </motion.div>
 );
 
-// Heart Animation with Portuguese Colors
+// Heart Animation with Lusophone Colors
 export const PortugueseHeartButton = ({
   isLiked = false,
   onToggle,
@@ -170,7 +170,7 @@ export const PortugueseHeartButton = ({
   );
 };
 
-// Save Button with Portuguese Theme
+// Save Button with Lusophone Theme
 export const PortugueseSaveButton = ({
   isSaved = false,
   onToggle,
@@ -203,7 +203,7 @@ export const PortugueseSaveButton = ({
   </motion.button>
 );
 
-// Rating Stars with Portuguese Colors
+// Rating Stars with Lusophone Colors
 export const PortugueseStarRating = ({
   rating = 0,
   maxRating = 5,
@@ -257,21 +257,21 @@ export const PortugueseStarRating = ({
   );
 };
 
-// Floating Action Button with Portuguese Theme
+// Floating Action Button with Lusophone Theme
 export const PortugueseFAB = ({
   icon,
   onClick,
   position = 'bottom-right',
   className = '',
   label,
-  Portuguese = true,
+  Lusophone = true,
 }: {
   icon: React.ReactNode;
   onClick?: () => void;
   position?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
   className?: string;
   label?: string;
-  Portuguese?: boolean;
+  Lusophone?: boolean;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -289,7 +289,7 @@ export const PortugueseFAB = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={`w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-white font-bold ${
-          Portuguese 
+          Lusophone 
             ? 'bg-gradient-to-r from-green-500 to-red-500' 
             : 'bg-blue-500'
         } hover:shadow-3xl transition-all duration-200 touch-manipulation`}
@@ -325,18 +325,18 @@ export const PortugueseFAB = ({
   );
 };
 
-// Ripple Effect for Portuguese Theme
+// Ripple Effect for Lusophone Theme
 export const PortugueseRippleButton = ({
   children,
   onClick,
   className = '',
-  Portuguese = true,
+  Lusophone = true,
   disabled = false,
 }: {
   children: React.ReactNode;
   onClick?: () => void;
   className?: string;
-  Portuguese?: boolean;
+  Lusophone?: boolean;
   disabled?: boolean;
 }) => {
   const [ripples, setRipples] = useState<Array<{ id: number; x: number; y: number }>>([]);
@@ -378,7 +378,7 @@ export const PortugueseRippleButton = ({
           <motion.div
             key={ripple.id}
             className={`absolute rounded-full pointer-events-none ${
-              Portuguese 
+              Lusophone 
                 ? 'bg-gradient-to-r from-green-400/30 to-red-400/30' 
                 : 'bg-white/30'
             }`}
@@ -406,7 +406,7 @@ export const PortugueseRippleButton = ({
   );
 };
 
-// Activity Indicator with Portuguese Theme
+// Activity Indicator with Lusophone Theme
 export const PortugueseActivityIndicator = ({
   count = 0,
   label,

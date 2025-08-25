@@ -180,9 +180,9 @@ const membershipPlans = [
 const features = [
   {
     icon: <HomeIcon className="w-5 h-5" />,
-    title: 'Authentic Portuguese Venues',
+    title: 'Authentic Lusophone Venues',
     titlePt: 'Locais Portugueses Autênticos',
-    description: 'Connect at real Portuguese venues - from Stockwell\'s beloved bakeries to Vauxhall\'s cultural centers, where the Portuguese-speaking community truly gathers',
+    description: 'Connect at real Lusophone venues - from Stockwell\'s beloved bakeries to Vauxhall\'s cultural centers, where the Portuguese-speaking community truly gathers',
     descriptionPt: 'Conecta-te em locais portugueses reais - desde as padarias queridas de Stockwell aos centros culturais de Vauxhall, onde a comunidade de falantes de português se reúne verdadeiramente'
   },
   {
@@ -196,21 +196,21 @@ const features = [
     icon: <MusicalNoteIcon className="w-5 h-5" />,
     title: 'Fado & Cultural Events',
     titlePt: 'Fado e Eventos Culturais',
-    description: 'Exclusive access to intimate fado performances, Portuguese film screenings, and traditional celebrations at authentic London venues',
+    description: 'Exclusive access to intimate fado performances, Lusophone film screenings, and traditional celebrations at authentic London venues',
     descriptionPt: 'Acesso exclusivo a performances íntimas de fado, sessões de cinema português, e celebrações tradicionais em locais autênticos de Londres'
   },
   {
     icon: <BuildingStorefrontIcon className="w-5 h-5" />,
-    title: 'Portuguese Business Network',
+    title: 'Lusophone Business Network',
     titlePt: 'Rede de Negócios Portugueses',
-    description: 'Discover Portuguese-owned restaurants, services, and professionals. Support our community while getting authentic Portuguese quality',
+    description: 'Discover Lusophone-owned restaurants, services, and professionals. Support our community while getting authentic Lusophone quality',
     descriptionPt: 'Descobre restaurantes, serviços e profissionais portugueses. Apoia a nossa comunidade enquanto recebes qualidade portuguesa autêntica'
   },
   {
     icon: <AcademicCapIcon className="w-5 h-5" />,
     title: 'Heritage Language Learning',
     titlePt: 'Aprendizagem da Língua Materna',
-    description: 'Maintain and improve your Portuguese through language exchange programs, cultural workshops, and community storytelling',
+    description: 'Maintain and improve your Lusophone through language exchange programs, cultural workshops, and community storytelling',
     descriptionPt: 'Mantém e melhora o teu português através de programas de intercâmbio linguístico, workshops culturais, e narrativas comunitárias'
   },
   {
@@ -229,7 +229,7 @@ const testimonials = [
     location: 'Stockwell, Londres',
     membership: 'Membro da Comunidade',
     quote: 'Por £19.99/mês, encontrei uma família portuguesa em Londres. Já participei em 15 eventos este ano - noites de fado, workshops de pastéis de nata, networking. O valor é incrível.',
-    quoteEn: 'For £19.99/month, I found a Portuguese family in London. I\'ve attended 15 events this year - fado nights, pastéis de nata workshops, networking. The value is incredible.',
+    quoteEn: 'For £19.99/month, I found a Lusophone family in London. I\'ve attended 15 events this year - fado nights, pastéis de nata workshops, networking. The value is incredible.',
     rating: 5,
     cultural: 'Profissional de marketing, originária do Porto',
     roi: '£400+ valor por £240 investidos anualmente'
@@ -240,7 +240,7 @@ const testimonials = [
     location: 'Vauxhall, Londres',
     membership: 'Membro da Comunidade',
     quote: 'Como empresário português, consegui 3 novos clientes através da rede LusoTown. A adesão pagou-se milhares de vezes. Comunidade é investimento, não custo.',
-    quoteEn: 'As a Portuguese entrepreneur, I gained 3 new clients through the LusoTown network. The membership paid for itself thousands of times over. Community is investment, not cost.',
+    quoteEn: 'As a Lusophone entrepreneur, I gained 3 new clients through the LusoTown network. The membership paid for itself thousands of times over. Community is investment, not cost.',
     rating: 5,
     cultural: 'Proprietário de restaurante, de Lisboa',
     roi: '£15,000+ em novos negócios'
@@ -315,7 +315,7 @@ const paymentOptions = [
     title: 'Desconto Estudante',
     titleEn: 'Student Discount',
     description: '50% desconto para estudantes portugueses',
-    descriptionEn: '50% discount for Portuguese students',
+    descriptionEn: '50% discount for Lusophone students',
     icon: <AcademicCapIcon className="w-5 h-5" />
   },
   {
@@ -444,11 +444,11 @@ export default function Pricing() {
                   <p className="text-lg italic text-gray-700 mb-3">
                     {isPortuguese ? 
                       '"Onde há portugueses, há sempre uma mesa para mais um"' : 
-                      '"Where there are Portuguese people, there\'s always room for one more at the table"'
+                      '"Where there are Lusophone people, there\'s always room for one more at the table"'
                     }
                   </p>
                   <footer className="text-sm text-gray-500">
-                    {isPortuguese ? 'Provérbio Português' : 'Portuguese Proverb'}
+                    {isPortuguese ? 'Provérbio Português' : 'Lusophone Proverb'}
                   </footer>
                 </blockquote>
               </div>
@@ -700,7 +700,7 @@ export default function Pricing() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900">
-                          {isPortuguese ? 'Suporte em Português' : 'Portuguese Support'}
+                          {isPortuguese ? 'Suporte em Português' : 'Lusophone Support'}
                         </h4>
                         <p className="text-sm text-gray-600">
                           {isPortuguese ? 'Atendimento na nossa língua materna' : 'Customer service in our native language'}
@@ -724,7 +724,7 @@ export default function Pricing() {
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ?
                   'Ouça como outros portugueses, profissionais e indivíduos encontraram o seu lugar em Londres através da nossa comunidade' :
-                  'Hear how other Portuguese individuals and professionals found their place in London through our community'
+                  'Hear how other Lusophone individuals and professionals found their place in London through our community'
                 }
               </p>
             </div>
@@ -765,7 +765,7 @@ export default function Pricing() {
                 <blockquote className="text-2xl italic text-gray-800 mb-4">
                   {isPortuguese ?
                     '"Comecei grátis só para experimentar. Agora não consigo imaginar Londres sem o LusoTown - encontrei a minha família portuguesa aqui."' :
-                    '"I started free just to try it out. Now I can\'t imagine London without LusoTown - I found my Portuguese family here."'
+                    '"I started free just to try it out. Now I can\'t imagine London without LusoTown - I found my Lusophone family here."'
                   }
                 </blockquote>
                 <footer className="text-gray-600">
@@ -786,7 +786,7 @@ export default function Pricing() {
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ? 
                   'Criamos opções de pagamento que funcionam para todos os membros da comunidade de falantes de português, com descontos especiais e flexibilidade total' :
-                  'We\'ve created payment options that work for all Portuguese Portuguese speakers, with special discounts and full flexibility'
+                  'We\'ve created payment options that work for all Lusophone Portuguese speakers, with special discounts and full flexibility'
                 }
               </p>
             </div>
@@ -819,7 +819,7 @@ export default function Pricing() {
                     <div className="bg-white rounded-xl p-6">
                       <div className="text-3xl font-bold text-secondary-600 mb-2">£9.99</div>
                       <div className="text-sm text-gray-600 mb-2">
-                        {isPortuguese ? 'Estudantes Portugueses/mês' : 'Portuguese Students/month'}
+                        {isPortuguese ? 'Estudantes Portugueses/mês' : 'Lusophone Students/month'}
                       </div>
                       <div className="text-xs text-green-600 font-medium">50% {isPortuguese ? 'desconto no plano Comunidade' : 'discount on Community plan'}</div>
                       <div className="text-xs text-gray-500 mt-1">
@@ -903,11 +903,11 @@ export default function Pricing() {
                           'Workshops culinários tradicionais portugueses',
                           'Tours culturais por Londres com guias portugueses'
                         ] : [
-                          'Unlimited participation in Portuguese events',
+                          'Unlimited participation in Lusophone events',
                           'Exclusive fado nights at authentic venues',
                           'Santo António festivals and cultural celebrations',
-                          'Traditional Portuguese cooking workshops',
-                          'Cultural tours of London with Portuguese guides'
+                          'Traditional Lusophone cooking workshops',
+                          'Cultural tours of London with Lusophone guides'
                         ]
                       },
                       {
@@ -938,8 +938,8 @@ export default function Pricing() {
                           'Language exchange programs',
                           'Portuguese tradition preservation',
                           'Access to exclusive cultural content',
-                          'Connection to authentic Portuguese venues',
-                          'Portuguese holiday celebrations'
+                          'Connection to authentic Lusophone venues',
+                          'Lusophone holiday celebrations'
                         ]
                       },
                       {
@@ -952,7 +952,7 @@ export default function Pricing() {
                           'Benefícios cooperativos futuros'
                         ] : [
                           'True cost pricing (no markups)',
-                          'Priority support in Portuguese',
+                          'Priority support in Lusophone',
                           'Voice in community decisions',
                           '30-day satisfaction guarantee',
                           'Future cooperative benefits'
@@ -1100,7 +1100,7 @@ export default function Pricing() {
                 <p className="text-gray-600 leading-relaxed">
                   {isPortuguese ?
                     'Apenas £2.08 por mês para acesso a centenas de libras em experiências portuguesas autênticas e networking profissional.' :
-                    'Just £2.08 per month for access to hundreds of pounds in authentic Portuguese experiences and professional networking.'
+                    'Just £2.08 per month for access to hundreds of pounds in authentic Lusophone experiences and professional networking.'
                   }
                 </p>
               </div>
@@ -1115,7 +1115,7 @@ export default function Pricing() {
                 <p className="text-gray-600 leading-relaxed">
                   {isPortuguese ?
                     'Conecte-se com empresários, profissionais e criativos portugueses. Uma única conexão pode valer milhares em oportunidades de negócio.' :
-                    'Connect with Portuguese entrepreneurs, professionals and creatives. One connection could be worth thousands in business opportunities.'
+                    'Connect with Lusophone entrepreneurs, professionals and creatives. One connection could be worth thousands in business opportunities.'
                   }
                 </p>
               </div>
@@ -1130,7 +1130,7 @@ export default function Pricing() {
                 <p className="text-gray-600 leading-relaxed">
                   {isPortuguese ?
                     'Combata a solidão e saudades de casa. Encontre a sua "família" portuguesa em Londres - valor inestimável para a sua saúde mental.' :
-                    'Combat loneliness and homesickness. Find your Portuguese "family" in London - invaluable for your mental health and wellbeing.'
+                    'Combat loneliness and homesickness. Find your Lusophone "family" in London - invaluable for your mental health and wellbeing.'
                   }
                 </p>
               </div>
@@ -1198,7 +1198,7 @@ export default function Pricing() {
                   questionPt: "Como funciona a verificação da comunidade de falantes de português?",
                   questionEn: "How does the Portuguese-speaking community verification work?",
                   answerPt: "A nossa verificação multi-etapas garante conexões autênticas com a comunidade de falantes de português: (1) Verificação de identidade portuguesa/lusófona, (2) Revisão do perfil cultural para garantir autenticidade, (3) Moderação da comunidade para manter um ambiente acolhedor. Este processo demora 24-48 horas e assegura que encontra pessoas genuinamente conectadas à cultura portuguesa.",
-                  answerEn: "Our multi-step verification ensures authentic connections with the Portuguese-speaking community: (1) Portuguese/Portuguese-speaking identity verification, (2) Cultural profile review to ensure authenticity, (3) Community moderation to maintain a welcoming environment. This process takes 24-48 hours and ensures you meet people genuinely connected to Portuguese culture."
+                  answerEn: "Our multi-step verification ensures authentic connections with the Portuguese-speaking community: (1) Lusophone/Portuguese-speaking identity verification, (2) Cultural profile review to ensure authenticity, (3) Community moderation to maintain a welcoming environment. This process takes 24-48 hours and ensures you meet people genuinely connected to Portuguese culture."
                 },
                 {
                   questionPt: "O que torna LusoTown diferente de outras plataformas?",
@@ -1210,7 +1210,7 @@ export default function Pricing() {
                   questionPt: "Posso alterar ou cancelar a minha adesão?",
                   questionEn: "Can I change or cancel my membership?",
                   answerPt: "Absolutamente! Entendemos que os membros da comunidade de falantes de português têm necessidades que mudam. Pode fazer upgrade, downgrade, ou cancelar a qualquer momento. Upgrades têm efeito imediato, cancelamentos mantêm-se ativos até ao fim do ciclo atual. Oferecemos também pausas temporárias para dificuldades financeiras.",
-                  answerEn: "Absolutely! We understand that Portuguese Portuguese speakers have changing needs. You can upgrade, downgrade, or cancel anytime. Upgrades take effect immediately, cancellations remain active until the current cycle ends. We also offer temporary pauses for financial difficulties."
+                  answerEn: "Absolutely! We understand that Lusophone Portuguese speakers have changing needs. You can upgrade, downgrade, or cancel anytime. Upgrades take effect immediately, cancellations remain active until the current cycle ends. We also offer temporary pauses for financial difficulties."
                 },
                 {
                   questionPt: "Que tipos de eventos culturais organizam?",
@@ -1226,13 +1226,13 @@ export default function Pricing() {
                 },
                 {
                   questionPt: "E se não encontrar imediatamente a minha 'tribo' portuguesa?",
-                  questionEn: "What if I don't immediately find my Portuguese 'tribe'?",
+                  questionEn: "What if I don't immediately find my Lusophone 'tribe'?",
                   answerPt: "Construir conexões significativas leva tempo, especialmente quando se trata de encontrar pessoas que entendem as tuas saudades de casa! Oferecemos uma garantia de 30 dias - se não te sentires parte da comunidade, devolvemos tudo. A nossa equipa pode ajudar-te a encontrar o teu grupo ideal.",
                   answerEn: "Building meaningful connections takes time, especially when finding people who understand your homesickness! We offer a 30-day guarantee - if you don't feel part of the community, we refund everything. Our team can help you find your ideal group."
                 },
                 {
                   questionPt: "Têm membros portugueses na minha área de Londres?",
-                  questionEn: "Do you have Portuguese members in my London area?",
+                  questionEn: "Do you have Lusophone members in my London area?",
                   answerPt: "Temos comunidades ativas por todo Londres, com concentrações especiais em Stockwell (o coração da comunidade de falantes de português), Vauxhall, Camden, East London, e South Kensington. A nossa plataforma mostra eventos e membros na tua área, crescendo baseado na procura da comunidade.",
                   answerEn: "We have active communities throughout London, with special concentrations in Stockwell (the heart of the Portuguese-speaking community), Vauxhall, Camden, East London, and South Kensington. Our platform shows events and members in your area, growing based on community demand."
                 },
@@ -1240,7 +1240,7 @@ export default function Pricing() {
                   questionPt: "Como sei se esta é a minha comunidade de falantes de português?",
                   questionEn: "How do I know if this is my Portuguese-speaking community?",
                   answerPt: "Comece grátis como Visitante para sentir a nossa cultura. Se tens raízes portuguesas, sentes saudades da cultura, queres melhorar o teu português, procuras oportunidades profissionais ou simplesmente procuras pessoas que entendem a tua jornada em Londres - provavelmente encontraste a tua comunidade.",
-                  answerEn: "Start free as a Visitor to feel our culture. If you have Portuguese roots, miss the culture, want to improve your Portuguese, seek professional opportunities or simply seek people who understand your London journey - you've probably found your community."
+                  answerEn: "Start free as a Visitor to feel our culture. If you have Lusophone roots, miss the culture, want to improve your Lusophone, seek professional opportunities or simply seek people who understand your London journey - you've probably found your community."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
@@ -1300,11 +1300,11 @@ export default function Pricing() {
                 <blockquote className="text-lg italic mb-4">
                   {isPortuguese ?
                     '"Onde há portugueses, há sempre uma mesa para mais um"' :
-                    '"Where there are Portuguese people, there\'s always room for one more at the table"'
+                    '"Where there are Lusophone people, there\'s always room for one more at the table"'
                   }
                 </blockquote>
                 <div className="text-sm opacity-80">
-                  {isPortuguese ? 'Provérbio Português' : 'Portuguese Proverb'}
+                  {isPortuguese ? 'Provérbio Português' : 'Lusophone Proverb'}
                 </div>
               </div>
 

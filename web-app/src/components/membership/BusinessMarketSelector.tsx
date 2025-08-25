@@ -34,7 +34,7 @@ export const BUSINESS_MARKETS: BusinessMarket[] = [
   },
   {
     value: 'portugal',
-    label: 'Portuguese market connections',
+    label: 'Lusophone market connections',
     flag: '🇵🇹',
     description: 'EU gateway with strong maritime and tech sectors',
     opportunities: ['Technology', 'Maritime', 'Tourism', 'Renewable Energy', 'Wine & Food'],
@@ -52,7 +52,7 @@ export const BUSINESS_MARKETS: BusinessMarket[] = [
   },
   {
     value: 'macau_asia_pacific',
-    label: 'Macau/Asia-Pacific Portuguese connections',
+    label: 'Macau/Asia-Pacific Lusophone connections',
     flag: '🇲🇴',
     description: 'Gateway to China and Asia-Pacific Portuguese business',
     opportunities: ['Gaming', 'Tourism', 'Financial Services', 'Trade', 'Real Estate'],
@@ -81,10 +81,10 @@ export const BUSINESS_MARKETS: BusinessMarket[] = [
     value: 'cultural_business',
     label: 'Cultural business partnerships',
     flag: '🎭',
-    description: 'Business opportunities in Portuguese cultural sector',
+    description: 'Business opportunities in Lusophone cultural sector',
     opportunities: ['Media & Entertainment', 'Cultural Events', 'Language Services', 'Publishing', 'Arts'],
     gdp: 'Niche high-value sector',
-    population: 'Global Portuguese diaspora'
+    population: 'Global Lusophone diaspora'
   }
 ]
 

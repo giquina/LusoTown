@@ -1,14 +1,14 @@
 /**
  * ComputerVisionAI.ts
- * Portuguese Cultural Image Recognition and Analysis System
+ * Lusophone Cultural Image Recognition and Analysis System
  * 
  * Phase 5 Advanced AI Implementation:
- * ✅ Portuguese cultural image recognition and categorization
+ * ✅ Lusophone cultural image recognition and categorization
  * ✅ Heritage photo analysis for cultural content organization
  * ✅ Traditional artifact identification and cultural context
  * ✅ Event photo analysis for community engagement insights
  * ✅ Cultural authenticity verification for shared content
- * ✅ Automatic Portuguese text extraction from images (OCR)
+ * ✅ Automatic Lusophone text extraction from images (OCR)
  * ✅ Zero hardcoding policy compliance with config integration
  */
 
@@ -78,7 +78,7 @@ export interface ImageMetadata {
   processing_time_ms: number
 }
 
-// Portuguese Cultural Categories
+// Lusophone Cultural Categories
 export type PortugueseCulturalCategory = 
   | 'azulejo_tiles'
   | 'traditional_clothing'
@@ -324,7 +324,7 @@ export class PortugueseComputerVisionAI {
   }
 
   /**
-   * Analyze image for Portuguese cultural content with comprehensive classification
+   * Analyze image for Lusophone cultural content with comprehensive classification
    */
   async analyzePortugueseCulturalImage(imageUrl: string, options?: {
     includeTextExtraction?: boolean
@@ -390,7 +390,7 @@ export class PortugueseComputerVisionAI {
       return analysisResult
     } catch (error) {
       console.error('[Computer Vision AI] Analysis failed:', error)
-      throw new Error(`Portuguese cultural image analysis failed: ${error instanceof Error ? error.message : 'Unknown error'}`)
+      throw new Error(`Lusophone cultural image analysis failed: ${error instanceof Error ? error.message : 'Unknown error'}`)
     }
   }
 
@@ -450,7 +450,7 @@ export class PortugueseComputerVisionAI {
   }
 
   /**
-   * Batch analyze multiple images for Portuguese cultural content organization
+   * Batch analyze multiple images for Lusophone cultural content organization
    */
   async batchAnalyzeCulturalImages(imageUrls: string[], options?: {
     priorityOrder?: 'chronological' | 'cultural_significance' | 'authenticity'
@@ -501,7 +501,7 @@ export class PortugueseComputerVisionAI {
   }
 
   /**
-   * Extract and translate Portuguese text from images with cultural context
+   * Extract and translate Lusophone text from images with cultural context
    */
   async extractPortugueseText(imageUrl: string, options?: {
     dialectDetection?: boolean
@@ -515,7 +515,7 @@ export class PortugueseComputerVisionAI {
       // Process and categorize text by language
       const textByLanguage = this.categorizeTextByLanguage(rawTextData)
       
-      // Detect Portuguese dialect and cultural terms
+      // Detect Lusophone dialect and cultural terms
       const languageDetection = await this.performLanguageDetection(textByLanguage.portuguese_text)
       const culturalTerms = options?.culturalTermsIdentification 
         ? await this.identifyCulturalTerms(textByLanguage.portuguese_text)
@@ -534,12 +534,12 @@ export class PortugueseComputerVisionAI {
       }
     } catch (error) {
       console.error('[Computer Vision AI] Text extraction failed:', error)
-      throw new Error(`Portuguese text extraction failed: ${error instanceof Error ? error.message : 'Unknown error'}`)
+      throw new Error(`Lusophone text extraction failed: ${error instanceof Error ? error.message : 'Unknown error'}`)
     }
   }
 
   /**
-   * Verify authenticity of Portuguese cultural artifacts in images
+   * Verify authenticity of Lusophone cultural artifacts in images
    */
   async verifyPortugueseCulturalAuthenticity(imageUrl: string, claimedCategory: PortugueseCulturalCategory): Promise<AuthenticityScore> {
     try {
@@ -574,7 +574,7 @@ export class PortugueseComputerVisionAI {
   // Private implementation methods
 
   private async initializeCulturalDatabase(): Promise<void> {
-    // Initialize with known Portuguese cultural classifications
+    // Initialize with known Lusophone cultural classifications
     // In production, this would load from a comprehensive database
     const culturalData = [
       {
@@ -605,7 +605,7 @@ export class PortugueseComputerVisionAI {
           cultural_preservation_priority: 90,
           educational_value: 85,
           community_relevance: 75,
-          description: 'Traditional Portuguese cultural element'
+          description: 'Traditional Lusophone cultural element'
         },
         related_traditions: [],
         seasonal_context: null
@@ -621,21 +621,21 @@ export class PortugueseComputerVisionAI {
       {
         label: 'guitar_portuguesa',
         description: {
-          english: 'Portuguese guitar used in fado music',
+          english: 'Lusophone guitar used in fado music',
           portuguese: 'Guitarra portuguesa usada no fado',
           cultural_context: 'Essential instrument for traditional fado performances',
           usage_description: 'Twelve-string guitar central to Portuguese musical heritage',
-          historical_significance: 'Symbol of Portuguese cultural identity and saudade expression'
+          historical_significance: 'Symbol of Lusophone cultural identity and saudade expression'
         }
       },
       {
         label: 'azulejo_tile',
         description: {
-          english: 'Traditional Portuguese ceramic tile',
+          english: 'Traditional Lusophone ceramic tile',
           portuguese: 'Azulejo tradicional português',
           cultural_context: 'Decorative art form dating back to the 13th century',
           usage_description: 'Architectural decoration with religious, historical or geometric motifs',
-          historical_significance: 'Represents Portuguese artistic heritage and craftsmanship'
+          historical_significance: 'Represents Lusophone artistic heritage and craftsmanship'
         }
       }
       // More tradition identifiers would be added here
@@ -660,7 +660,7 @@ export class PortugueseComputerVisionAI {
         cultural_preservation_priority: 80,
         educational_value: 85,
         community_relevance: 90,
-        description: 'Traditional Portuguese culinary heritage showcase'
+        description: 'Traditional Lusophone culinary heritage showcase'
       },
       related_traditions: ['family_gatherings', 'religious_celebrations', 'seasonal_festivals'],
       seasonal_context: {
@@ -673,7 +673,7 @@ export class PortugueseComputerVisionAI {
   }
 
   private async performObjectDetection(imageUrl: string): Promise<DetectedObject[]> {
-    // Mock object detection results with Portuguese cultural objects
+    // Mock object detection results with Lusophone cultural objects
     return [
       {
         id: 'obj_001',
@@ -683,7 +683,7 @@ export class PortugueseComputerVisionAI {
         bounding_box: { x: 150, y: 200, width: 300, height: 200 },
         cultural_relevance: 88,
         description: {
-          english: 'Traditional Portuguese corn bread',
+          english: 'Traditional Lusophone corn bread',
           portuguese: 'Broa de milho tradicional',
           cultural_context: 'Staple bread in northern Portugal, especially Minho region',
           usage_description: 'Dense, flavorful bread made with corn flour and rye',
@@ -699,10 +699,10 @@ export class PortugueseComputerVisionAI {
         bounding_box: { x: 50, y: 100, width: 150, height: 180 },
         cultural_relevance: 95,
         description: {
-          english: 'Traditional Portuguese ceramic pottery',
+          english: 'Traditional Lusophone ceramic pottery',
           portuguese: 'Olaria tradicional portuguesa',
           cultural_context: 'Handcrafted ceramics representing regional artistic traditions',
-          usage_description: 'Functional and decorative pottery with distinctive Portuguese patterns',
+          usage_description: 'Functional and decorative pottery with distinctive Lusophone patterns',
           historical_significance: 'Centuries-old craft tradition passed through generations'
         },
         related_concepts: ['craftsmanship', 'artistic_heritage', 'regional_identity']
@@ -711,7 +711,7 @@ export class PortugueseComputerVisionAI {
   }
 
   private async performTextExtraction(imageUrl: string): Promise<ExtractedText> {
-    // Mock text extraction with Portuguese cultural content
+    // Mock text extraction with Lusophone cultural content
     return {
       portuguese_text: [
         'Festa de São João',
@@ -746,7 +746,7 @@ export class PortugueseComputerVisionAI {
           term: 'saudade',
           language: 'pt',
           category: 'emotional_concept',
-          cultural_significance: 'Core Portuguese emotional concept expressing longing and nostalgia',
+          cultural_significance: 'Core Lusophone emotional concept expressing longing and nostalgia',
           definition: 'Deep emotional state of nostalgic longing for something absent',
           regional_usage: ['lisboa', 'porto', 'azores', 'madeira']
         }
@@ -767,7 +767,7 @@ export class PortugueseComputerVisionAI {
         {
           factor: 'Historical consistency',
           score: 80,
-          description: 'Consistent with historical Portuguese cultural practices',
+          description: 'Consistent with historical Lusophone cultural practices',
           evidence: ['Period-appropriate materials', 'Traditional composition', 'Cultural context']
         }
       ],
@@ -825,7 +825,7 @@ export class PortugueseComputerVisionAI {
     // Add recommendations based on detected objects
     objects.forEach(obj => {
       if (obj.cultural_relevance > 80) {
-        recommendations.push(`Feature in Portuguese cultural heritage exhibition`)
+        recommendations.push(`Feature in Lusophone cultural heritage exhibition`)
         recommendations.push(`Educational content for ${obj.portuguese_label}`)
       }
     })
@@ -912,7 +912,7 @@ export class PortugueseComputerVisionAI {
       relationship_indicators: ['family_gathering', 'multi_generational'],
       family_traditions_visible: ['traditional_clothing', 'cultural_ceremony'],
       cultural_practices_shown: ['religious_observance', 'community_celebration'],
-      social_context: 'Portuguese family celebration in London community'
+      social_context: 'Lusophone family celebration in London community'
     }
   }
 
@@ -1016,8 +1016,8 @@ export class PortugueseComputerVisionAI {
       if (images.length >= 2) { // Only create collections with multiple images
         collections.push({
           id: `collection_${category}_${Date.now()}`,
-          name: `Portuguese ${category.replace(/_/g, ' ')} Collection`,
-          description: `Cultural collection showcasing Portuguese ${category.replace(/_/g, ' ')} traditions`,
+          name: `Lusophone ${category.replace(/_/g, ' ')} Collection`,
+          description: `Cultural collection showcasing Lusophone ${category.replace(/_/g, ' ')} traditions`,
           category: category,
           images: images,
           cultural_significance: this.calculateCollectionSignificance(images),
@@ -1081,7 +1081,7 @@ export class PortugueseComputerVisionAI {
 
     if (insights.average_confidence > 85) {
       recommendations.push('High-quality cultural content detected - suitable for educational materials')
-      sharing.push('Share with Portuguese cultural centers for community education')
+      sharing.push('Share with Lusophone cultural centers for community education')
     }
 
     // Regional-specific recommendations
@@ -1144,11 +1144,11 @@ export class PortugueseComputerVisionAI {
     const opportunities: string[] = []
 
     if (insights.cultural_diversity_score > 70) {
-      opportunities.push('Organize Portuguese cultural heritage exhibition')
+      opportunities.push('Organize Lusophone cultural heritage exhibition')
       opportunities.push('Create educational workshops based on cultural themes')
     }
 
-    opportunities.push('Collaborate with Portuguese cultural centers for content sharing')
+    opportunities.push('Collaborate with Lusophone cultural centers for content sharing')
     opportunities.push(`Engage our ${this.communitySize} community members in cultural preservation`)
     opportunities.push(`Partner with ${this.universityPartnerships} university partnerships for research`)
 
@@ -1192,7 +1192,7 @@ export class PortugueseComputerVisionAI {
   private async identifyCulturalTerms(texts: string[]): Promise<CulturalTerm[]> {
     const culturalTerms: CulturalTerm[] = []
     
-    // Check for known Portuguese cultural terms
+    // Check for known Lusophone cultural terms
     const knownTerms = ['saudade', 'fado', 'azulejo', 'festa', 'santos populares']
     
     texts.forEach(text => {
@@ -1202,7 +1202,7 @@ export class PortugueseComputerVisionAI {
             term: term,
             language: 'pt',
             category: 'cultural_concept',
-            cultural_significance: `Important Portuguese cultural concept: ${term}`,
+            cultural_significance: `Important Lusophone cultural concept: ${term}`,
             definition: this.getCulturalTermDefinition(term),
             regional_usage: ['lisboa', 'porto', 'azores', 'madeira']
           })
@@ -1217,11 +1217,11 @@ export class PortugueseComputerVisionAI {
     const definitions: Record<string, string> = {
       'saudade': 'Deep emotional state of nostalgic longing',
       'fado': 'Traditional Portuguese music genre',
-      'azulejo': 'Traditional Portuguese ceramic tile',
+      'azulejo': 'Traditional Lusophone ceramic tile',
       'festa': 'Festival or celebration',
       'santos populares': 'Popular saints festivals in June'
     }
-    return definitions[term] || 'Portuguese cultural term'
+    return definitions[term] || 'Lusophone cultural term'
   }
 
   private createTextRegions(rawTextData: any): TextRegion[] {
@@ -1259,13 +1259,13 @@ export class PortugueseComputerVisionAI {
       {
         factor: 'Historical consistency',
         score: 82,
-        description: 'Consistent with historical Portuguese cultural practices',
+        description: 'Consistent with historical Lusophone cultural practices',
         evidence: ['Period-appropriate materials', 'Traditional composition']
       },
       {
         factor: 'Regional authenticity',
         score: 90,
-        description: 'Matches known regional Portuguese cultural patterns',
+        description: 'Matches known regional Lusophone cultural patterns',
         evidence: ['Regional style indicators', 'Local cultural elements']
       }
     ]

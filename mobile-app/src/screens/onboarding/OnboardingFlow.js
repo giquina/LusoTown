@@ -1,46 +1,58 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 
 // Import onboarding steps
+import WelcomeStep from './WelcomeStep';
+import HeritageSelectionScreen from './HeritageSelectionScreen';
 import FirstNameStep from './FirstNameStep';
 import DateOfBirthStep from './DateOfBirthStep';
 import EmailStep from './EmailStep';
 import ProfilePictureStep from './ProfilePictureStep';
 import SelfieVerificationStep from './SelfieVerificationStep';
 import InterestTagsStep from './InterestTagsStep';
-import WelcomeStep from './WelcomeStep';
 
 import { CommonStyles } from '../../constants/Styles';
 
-// 🌟 Main Onboarding Flow - The journey to join our amazing community
+// 🇵🇹 Portuguese Community Onboarding Flow - Unidos pela Língua
 const OnboardingFlow = ({ onComplete }) => {
-  // Current step in the onboarding process
-  const [currentStep, setCurrentStep] = useState(1);
+  const { i18n } = useTranslation();
+  
+  // Current step in the onboarding process  
+  const [currentStep, setCurrentStep] = useState(0);
   
   // User data collected during onboarding
   const [userData, setUserData] = useState({
     firstName: '',
+    lastName: '',
     dateOfBirth: null,
     email: '',
+    heritage: ['portugal'], // Default heritage
+    language: i18n.language === 'pt' ? 'pt' : 'en',
     profilePicture: null,
     selfieVerification: null,
     selectedInterests: [],
+    acceptedTerms: false,
+    marketingConsent: false,
   });
 
-  // Navigate to next step
-  const handleNext = () => {
+  // Navigate to next step with data
+  const handleNext = (stepData = {}) => {
+    const updatedUserData = { ...userData, ...stepData };
+    setUserData(updatedUserData);
+
     if (currentStep < 7) {
       setCurrentStep(currentStep + 1);
     } else {
       // Complete onboarding
-      onComplete(userData);
+      onComplete(updatedUserData);
     }
   };
 
   // Navigate to previous step
   const handleBack = () => {
-    if (currentStep > 1) {
+    if (currentStep > 0) {
       setCurrentStep(currentStep - 1);
     }
   };
@@ -56,16 +68,33 @@ const OnboardingFlow = ({ onComplete }) => {
   // Render current step
   const renderCurrentStep = () => {
     switch (currentStep) {
+      case 0:
+        return (
+          <WelcomeStep
+            onNext={() => handleNext()}
+            userData={userData}
+          />
+        );
+      
       case 1:
+        return (
+          <HeritageSelectionScreen
+            onContinue={(heritage) => handleNext({ heritage })}
+            onBack={handleBack}
+          />
+        );
+
+      case 2:
         return (
           <FirstNameStep
             onNext={handleNext}
+            onBack={handleBack}
             firstName={userData.firstName}
             setFirstName={(value) => updateUserData('firstName', value)}
           />
         );
       
-      case 2:
+      case 3:
         return (
           <DateOfBirthStep
             onNext={handleNext}
@@ -75,7 +104,7 @@ const OnboardingFlow = ({ onComplete }) => {
           />
         );
       
-      case 3:
+      case 4:
         return (
           <EmailStep
             onNext={handleNext}
@@ -85,7 +114,7 @@ const OnboardingFlow = ({ onComplete }) => {
           />
         );
 
-      case 4:
+      case 5:
         return (
           <ProfilePictureStep
             onNext={handleNext}
@@ -95,7 +124,7 @@ const OnboardingFlow = ({ onComplete }) => {
           />
         );
 
-      case 5:
+      case 6:
         return (
           <SelfieVerificationStep
             onNext={handleNext}
@@ -105,27 +134,20 @@ const OnboardingFlow = ({ onComplete }) => {
           />
         );
 
-      case 6:
+      case 7:
         return (
           <InterestTagsStep
-            onNext={handleNext}
+            onNext={() => onComplete(userData)}
             onBack={handleBack}
             selectedInterests={userData.selectedInterests}
             setSelectedInterests={(value) => updateUserData('selectedInterests', value)}
           />
         );
 
-      case 7:
-        return (
-          <WelcomeStep
-            onComplete={onComplete}
-            userData={userData}
-          />
-        );
       default:
         return (
           <View style={CommonStyles.centerContainer}>
-            <Text>Step {currentStep} - Coming Soon!</Text>
+            <Text>Step {currentStep} - Coming Soon! 🇵🇹</Text>
           </View>
         );
     }

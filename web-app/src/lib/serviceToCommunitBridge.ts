@@ -106,7 +106,7 @@ export class ServiceToCommunityBridge {
           },
           {
             id: 'portuguese-business-mixer',
-            title: isPortuguese ? 'Mixer de Negócios Portugueses' : 'Portuguese Business Mixer',
+            title: isPortuguese ? 'Mixer de Negócios Portugueses' : 'Lusophone Business Mixer',
             date: this.getNextWeekDate(),
             location: 'City of London',
             type: 'networking'
@@ -143,7 +143,7 @@ export class ServiceToCommunityBridge {
 
       case 'business_networking':
         baseInvitation.suggestedGroups = [
-          isPortuguese ? 'Empreendedores Portugueses' : 'Portuguese Entrepreneurs',
+          isPortuguese ? 'Empreendedores Portugueses' : 'Lusophone Entrepreneurs',
           isPortuguese ? 'Networking Profissional' : 'Professional Networking',
           isPortuguese ? 'Workshops de Negócios' : 'Business Workshops'
         ]

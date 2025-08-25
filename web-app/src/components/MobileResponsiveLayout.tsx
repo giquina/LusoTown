@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter, usePathname } from 'next/navigation';
 import { useLanguage } from '@/context/LanguageContext';
-import LusoMobileNavigation from './LusoMobileNavigation';
+// LusoMobileNavigation removed - duplicate nav, using PremiumMobileNavigation in layout instead
 import { LuxuryPullToRefresh } from './LuxuryMobileInteraction';
 
 interface MobileResponsiveLayoutProps {
@@ -69,7 +69,7 @@ export default function MobileResponsiveLayout({
     }
   }, [lastScrollY]);
 
-  // Portuguese cultural background patterns
+  // Lusophone cultural background patterns
   const backgroundPatterns = {
     none: '',
     subtle: 'bg-gradient-to-br from-gray-50 via-white to-gray-50',
@@ -223,15 +223,9 @@ export default function MobileResponsiveLayout({
         </main>
       </ContentWrapper>
 
-      {/* Mobile Navigation */}
-      {showMobileNav && (
-        <LusoMobileNavigation 
-          hideOn={hideNavOn}
-          className="sm:hidden"
-        />
-      )}
+      {/* Mobile Navigation handled by PremiumMobileNavigation in main layout */}
 
-      {/* Portuguese Cultural Accessibility Announcements */}
+      {/* Lusophone Cultural Accessibility Announcements */}
       <div
         id="cultural-announcements"
         className="sr-only"
@@ -250,9 +244,9 @@ export default function MobileResponsiveLayout({
         }}
       />
 
-      {/* Portuguese Cultural Context Styles */}
+      {/* Lusophone Cultural Context Styles */}
       <style jsx global>{`
-        /* Portuguese text optimizations */
+        /* Lusophone text optimizations */
         .portuguese-text {
           font-feature-settings: 'liga' 1, 'calt' 1;
           text-rendering: optimizeLegibility;
@@ -260,7 +254,7 @@ export default function MobileResponsiveLayout({
           -moz-osx-font-smoothing: grayscale;
         }
         
-        /* Touch target enhancements for Portuguese content */
+        /* Touch target enhancements for Lusophone content */
         .portuguese-interactive {
           min-height: 44px;
           min-width: 44px;
@@ -268,7 +262,7 @@ export default function MobileResponsiveLayout({
           -webkit-tap-highlight-color: rgba(197, 40, 47, 0.1);
         }
         
-        /* Portuguese cultural spacing adjustments */
+        /* Lusophone cultural spacing adjustments */
         .portuguese-spacing-sm {
           letter-spacing: -0.01em;
           line-height: 1.4;
@@ -287,7 +281,7 @@ export default function MobileResponsiveLayout({
           padding-right: max(1rem, env(safe-area-inset-right));
         }
         
-        /* Mobile-first responsive typography for Portuguese */
+        /* Mobile-first responsive typography for Lusophone */
         @media (max-width: 640px) {
           .responsive-portuguese-text {
             font-size: 0.875rem;
@@ -322,7 +316,7 @@ export default function MobileResponsiveLayout({
           }
         }
         
-        /* Portuguese cultural indicators */
+        /* Lusophone cultural indicators */
         .cultural-content {
           position: relative;
         }
@@ -374,7 +368,7 @@ export default function MobileResponsiveLayout({
           }
         }
         
-        /* Portuguese keyboard support */
+        /* Lusophone keyboard support */
         input[lang="pt"],
         textarea[lang="pt"] {
           font-feature-settings: 'liga' 1, 'calt' 1, 'ccmp' 1;
@@ -386,7 +380,7 @@ export default function MobileResponsiveLayout({
           contain: layout style paint;
         }
         
-        /* Portuguese text overflow handling */
+        /* Lusophone text overflow handling */
         .portuguese-ellipsis {
           overflow: hidden;
           text-overflow: ellipsis;

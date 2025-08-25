@@ -1,10 +1,10 @@
 /**
  * Phase 2 AI-Enhanced Matching System - Cultural Compatibility AI
  * 
- * Complete implementation of Portuguese cultural matching with machine learning:
+ * Complete implementation of Lusophone cultural matching with machine learning:
  * ✅ Cultural Compatibility ML for Portuguese heritage and saudade analysis
  * ✅ Behavioral Learning Engine that learns from successful Portuguese-speaking community connections
- * ✅ Regional Specialization AI for different Portuguese regions in United Kingdom
+ * ✅ Regional Specialization AI for different Lusophone regions in United Kingdom
  * ✅ Conversation Quality Prediction for relationship potential
  * ✅ Success Feedback Loop for continuous improvement
  * 
@@ -216,7 +216,7 @@ export class CulturalCompatibilityAI {
     saudadeAnalyzer: null
   }
 
-  // Portuguese cultural data for AI analysis
+  // Lusophone cultural data for AI analysis
   private portugueseCulturalContext = {
     regions: {
       'norte': {
@@ -289,7 +289,7 @@ export class CulturalCompatibilityAI {
     }
   }
 
-  // Regional matching configurations for Portuguese diaspora in United Kingdom
+  // Regional matching configurations for Lusophone diaspora in United Kingdom
   private regionalConfigs: Record<string, RegionalMatchingConfig> = {
     'london_central': {
       region: 'Central London',
@@ -412,7 +412,7 @@ export class CulturalCompatibilityAI {
    */
   private async initializeAIModels(): Promise<void> {
     try {
-      // In production, these would be actual ML models trained on Portuguese cultural data
+      // In production, these would be actual ML models trained on Lusophone cultural data
       this.machinelearningModels = {
         compatibilityPredictor: this.createCompatibilityPredictionModel(),
         behavioralLearning: this.createBehavioralLearningModel(),
@@ -738,7 +738,7 @@ export class CulturalCompatibilityAI {
   }
 
   /**
-   * Analyze regional specialization factors for Portuguese diaspora in United Kingdom
+   * Analyze regional specialization factors for Lusophone diaspora in United Kingdom
    */
   async analyzeRegionalCompatibility(
     profile1: CulturalCompatibilityProfile,
@@ -836,7 +836,7 @@ export class CulturalCompatibilityAI {
   // Helper Methods for AI Analysis
 
   private createCompatibilityPredictionModel() {
-    // Advanced compatibility prediction model for Portuguese cultural factors
+    // Advanced compatibility prediction model for Lusophone cultural factors
     return {
       predict: (features: any) => {
         // Features: cultural_depth, heritage_similarity, saudade_alignment, regional_match, language_compatibility
@@ -1174,7 +1174,7 @@ export class CulturalCompatibilityAI {
     // Portuguese-speaking community specific weights
     const weights = {
       cultural_harmony: 0.25,        // Most important for Portuguese-speaking community
-      saudade_resonance: 0.20,       // Unique Portuguese emotional connection
+      saudade_resonance: 0.20,       // Unique Lusophone emotional connection
       shared_values: 0.18,           // Strong family and community values
       lifestyle_match: 0.15,         // Daily life compatibility
       conversation_potential: 0.12,  // Communication quality
@@ -1224,13 +1224,13 @@ export class CulturalCompatibilityAI {
 
     // Analyze strengths
     if (scores.cultural_harmony > 80) {
-      insights.strengths.push('Strong Portuguese cultural connection')
+      insights.strengths.push('Strong Lusophone cultural connection')
       insights.reasoning.cultural_factors.push('Both users show deep appreciation for Portuguese heritage')
     }
 
     if (scores.saudade_resonance > 85) {
       insights.strengths.push('Deep emotional understanding and saudade resonance')
-      insights.reasoning.emotional_factors.push('Similar emotional connection to Portuguese roots')
+      insights.reasoning.emotional_factors.push('Similar emotional connection to Lusophone roots')
     }
 
     if (scores.conversation_potential > 75) {
@@ -1253,7 +1253,7 @@ export class CulturalCompatibilityAI {
     )
     if (heritageDiff > 30) {
       insights.potential_challenges.push('Different levels of cultural heritage connection')
-      insights.reasoning.cultural_factors.push('Varying degrees of Portuguese cultural involvement')
+      insights.reasoning.cultural_factors.push('Varying degrees of Lusophone cultural involvement')
     }
 
     // Generate conversation starters

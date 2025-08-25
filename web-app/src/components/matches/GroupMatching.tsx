@@ -117,7 +117,7 @@ export default function GroupMatching({
       name: language === "pt" ? "Atividade em Grupo" : "Group Activity",
       description: language === "pt"
         ? "Formar um grupo para atividades culturais portuguesas"
-        : "Form a group for Portuguese cultural activities",
+        : "Form a group for Lusophone cultural activities",
       icon: "🎉",
       minSize: 4,
       maxSize: 8,
@@ -148,7 +148,7 @@ export default function GroupMatching({
         requestType: "double_date",
         targetGroupSize: 4,
         preferredActivityTypes: ["Gastronomy", "Cultural", "Social"],
-        preferredCulturalFocus: ["Portuguese Cuisine", "Fado Music", "Wine Tasting"],
+        preferredCulturalFocus: ["Lusophone Cuisine", "Fado Music", "Wine Tasting"],
         ageRangeMin: 26,
         ageRangeMax: 35,
         genderPreferences: "mixed",
@@ -156,7 +156,7 @@ export default function GroupMatching({
         preferredNeighborhoods: ["Vauxhall", "Stockwell", "Borough Market"],
         description: language === "pt"
           ? "Casal português procura outro casal para jantares e eventos culturais. Adoramos música e gastronomia portuguesa!"
-          : "Portuguese couple looking for another couple for dinners and cultural events. We love music and Portuguese gastronomy!",
+          : "Lusophone couple looking for another couple for dinners and cultural events. We love music and Lusophone gastronomy!",
         status: "open",
         createdAt: "2025-08-20",
         expiresAt: "2025-09-03",
@@ -168,7 +168,7 @@ export default function GroupMatching({
               id: "u3",
               name: "Ana",
               age: 28,
-              interests: ["Portuguese Cuisine", "Wine", "Cultural Events"],
+              interests: ["Lusophone Cuisine", "Wine", "Cultural Events"],
               location: "Vauxhall",
               isVerified: true,
               compatibilityScore: 89,
@@ -178,7 +178,7 @@ export default function GroupMatching({
               id: "u4",
               name: "Carlos",
               age: 31,
-              interests: ["Fado Music", "Portuguese Culture", "Gastronomy"],
+              interests: ["Fado Music", "Lusophone Culture", "Gastronomy"],
               location: "Stockwell",
               isVerified: true,
               compatibilityScore: 93,
@@ -203,7 +203,7 @@ export default function GroupMatching({
         preferredNeighborhoods: ["Camden", "Islington", "City"],
         description: language === "pt"
           ? "Profissional português em Londres procura expandir rede social. Interessado em networking e desporto."
-          : "Portuguese professional in London looking to expand social network. Interested in networking and sports.",
+          : "Lusophone professional in London looking to expand social network. Interested in networking and sports.",
         status: "open",
         createdAt: "2025-08-19",
         expiresAt: "2025-09-02",
@@ -218,7 +218,7 @@ export default function GroupMatching({
         requestType: "cultural_exploration",
         targetGroupSize: 6,
         preferredActivityTypes: ["Cultural", "Educational", "Arts"],
-        preferredCulturalFocus: ["Portuguese Heritage", "Museums", "Language Exchange"],
+        preferredCulturalFocus: ["Lusophone Heritage", "Museums", "Language Exchange"],
         ageRangeMin: 22,
         ageRangeMax: 32,
         genderPreferences: "mixed",
@@ -226,7 +226,7 @@ export default function GroupMatching({
         preferredNeighborhoods: ["Central London", "South London"],
         description: language === "pt"
           ? "Grupo de jovens portugueses interessados em explorar museus e locais históricos portugueses em Londres."
-          : "Group of young Portuguese interested in exploring museums and Portuguese historical sites in London.",
+          : "Group of young Lusophone interested in exploring museums and Lusophone historical sites in London.",
         status: "open",
         createdAt: "2025-08-18",
         expiresAt: "2025-09-01",
@@ -446,7 +446,7 @@ export default function GroupMatching({
                             <CheckCircleIcon className="w-4 h-4" />
                             <span>
                               {request.portugueseSpeakersOnly 
-                                ? (language === "pt" ? "Só português" : "Portuguese only")
+                                ? (language === "pt" ? "Só português" : "Lusophone only")
                                 : (language === "pt" ? "Qualquer idioma" : "Any language")
                               }
                             </span>

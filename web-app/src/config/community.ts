@@ -14,7 +14,7 @@ export const communityMilestones = {
   majorMilestones: [
     { year: '2024', description: 'Platform Launch' },
     { year: '2024', description: 'First 500 Members' },
-    { year: '2025', description: '750+ Portuguese Speakers' }
+    { year: '2025', description: 'Portuguese speakers' }
   ]
 };
 

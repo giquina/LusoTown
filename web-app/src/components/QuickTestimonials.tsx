@@ -20,7 +20,7 @@ const quickTestimonials: QuickTestimonial[] = [
     age: 28,
     origin: 'Porto',
     quote_pt: 'Encontrei não só o amor, mas alguém que entende a minha alma portuguesa.',
-    quote_en: 'I found not just love, but someone who understands my Portuguese soul.',
+    quote_en: 'I found not just love, but someone who understands my Lusophone soul.',
     category: 'Found Love',
     outcome: 'Engaged to Ricardo from Braga'
   },
@@ -29,7 +29,7 @@ const quickTestimonials: QuickTestimonial[] = [
     age: 35,
     origin: 'Lisboa',
     quote_pt: 'Dois portugueses em Londres podem conquistar a Europa inteira.',
-    quote_en: 'Two Portuguese in London can conquer all of Europe.',
+    quote_en: 'Two Lusophone in London can conquer all of Europe.',
     category: 'Business Partners',
     outcome: 'Co-founded FinTech startup, raised £3.2M'
   },
@@ -40,7 +40,7 @@ const quickTestimonials: QuickTestimonial[] = [
     quote_pt: 'As nossas crianças não vão esquecer de onde vêm.',
     quote_en: 'Our children will not forget where they come from.',
     category: 'Community Family',
-    outcome: 'Created Portuguese Saturday school with 120+ children'
+    outcome: 'Created Lusophone Saturday school with 120+ children'
   }
 ]
 
@@ -86,7 +86,7 @@ export default function QuickTestimonials() {
           <p className="text-gray-600">
             {language === 'pt' 
               ? 'Verdadeiras conexões portuguesas que mudaram vidas em Londres'
-              : 'Real Portuguese connections that changed lives in London'}
+              : 'Real Lusophone connections that changed lives in London'}
           </p>
         </motion.div>
 

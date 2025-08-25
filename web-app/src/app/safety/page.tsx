@@ -28,10 +28,10 @@ export default function SafetyCenter() {
 
   const safetyFeatures = [
     {
-      title: isPortuguese ? 'Verificação de Identidade Portuguesa' : 'Portuguese Identity Verification',
+      title: isPortuguese ? 'Verificação de Identidade Portuguesa' : 'Lusophone Identity Verification',
       description: isPortuguese ? 
         'Todos os membros completam verificação de identidade portuguesa/lusófona para assegurar autenticidade cultural' :
-        'Every member completes Portuguese/Lusophone identity verification to ensure cultural authenticity',
+        'Every member completes Lusophone/Lusophone identity verification to ensure cultural authenticity',
       icon: ShieldCheckIcon,
       color: 'secondary'
     },
@@ -47,15 +47,15 @@ export default function SafetyCenter() {
       title: isPortuguese ? 'Moderação Bilingue' : 'Bilingual Moderation',
       description: isPortuguese ? 
         'Revisão humana de todos os perfis e fotos por moderadores fluentes em português' :
-        'Human review of all profiles and photos by Portuguese-fluent moderators',
+        'Human review of all profiles and photos by Lusophone-fluent moderators',
       icon: EyeIcon,
       color: 'action'
     },
     {
-      title: isPortuguese ? 'Mensagens Seguras em Português' : 'Secure Portuguese Messaging',
+      title: isPortuguese ? 'Mensagens Seguras em Português' : 'Secure Lusophone Messaging',
       description: isPortuguese ? 
         'Comunicação encriptada com recursos de denúncia e bloqueio em português' :
-        'Encrypted communication with Portuguese reporting and blocking features',
+        'Encrypted communication with Lusophone reporting and blocking features',
       icon: LockClosedIcon,
       color: 'primary'
     },
@@ -71,7 +71,7 @@ export default function SafetyCenter() {
       title: isPortuguese ? 'Denúncia Segura e Anônima' : 'Safe Anonymous Reporting',
       description: isPortuguese ? 
         'Sistema de denúncia anônima com tempos de resposta rápidos em português' :
-        'Anonymous reporting system with quick Portuguese response times',
+        'Anonymous reporting system with quick Lusophone response times',
       icon: ExclamationTriangleIcon,
       color: 'premium'
     }
@@ -88,9 +88,9 @@ export default function SafetyCenter() {
         'Confie nos seus instintos - se algo não parece certo, adie o encontro',
         'Partilhe a localização e hora do encontro com alguém da sua confiança'
       ] : [
-        'Always meet in Portuguese public places for first meetings (community cafés, restaurants)',
-        'Tell a trusted Portuguese friend where you\'re going and when you\'ll check in',
-        'Video chat or phone call in Portuguese before meeting in person',
+        'Always meet in Lusophone public places for first meetings (community cafés, restaurants)',
+        'Tell a trusted Lusophone friend where you\'re going and when you\'ll check in',
+        'Video chat or phone call in Lusophone before meeting in person',
         'Trust your instincts - if something feels off, postpone',
         'Share the meeting location and time with someone you trust'
       ]
@@ -105,7 +105,7 @@ export default function SafetyCenter() {
         'Tenha o seu próprio transporte - não dependa de outros',
         'Confie no seu instinto - saia se se sentir desconfortável'
       ] : [
-        'Stay in public, well-lit Portuguese areas with other people around',
+        'Stay in public, well-lit Lusophone areas with other people around',
         'Keep your phone charged and accessible',
         'Don\'t share personal information like your home address',
         'Have your own transportation - don\'t rely on others',
@@ -124,8 +124,8 @@ export default function SafetyCenter() {
       ] : [
         'Keep personal details private until you build trust',
         'Don\'t share financial information or send money',
-        'Be cautious of people who avoid video calls or Portuguese group meetups',
-        'Report suspicious behavior immediately in Portuguese',
+        'Be cautious of people who avoid video calls or Lusophone group meetups',
+        'Report suspicious behavior immediately in Lusophone',
         'Use LusoTown\'s messaging system initially'
       ]
     }
@@ -141,9 +141,9 @@ export default function SafetyCenter() {
         'Pressiona para contacto pessoal imediato',
         'Perfil criado recentemente com informações mínimas'
       ] : [
-        'Refuses to video chat or meet in Portuguese group settings',
+        'Refuses to video chat or meet in Lusophone group settings',
         'Profile photos look too professional or model-like',
-        'Inconsistent information or vague details about Portuguese background',
+        'Inconsistent information or vague details about Lusophone background',
         'Pushes for immediate personal contact information',
         'Profile recently created with minimal information'
       ]
@@ -161,7 +161,7 @@ export default function SafetyCenter() {
         'Pressures you to meet alone or in private locations',
         'Becomes angry or manipulative when you set boundaries',
         'Asks overly personal questions too quickly',
-        'Language doesn\'t match their stated Portuguese background'
+        'Language doesn\'t match their stated Lusophone background'
       ]
     },
     {
@@ -176,7 +176,7 @@ export default function SafetyCenter() {
         'Disrespects your boundaries or comfort level',
         'Makes you feel pressured or uncomfortable',
         'Shows signs of controlling behavior',
-        'Speaks negatively about other Portuguese women or groups',
+        'Speaks negatively about other Lusophone women or groups',
         'Exhibits discriminatory attitudes or language'
       ]
     }
@@ -187,7 +187,7 @@ export default function SafetyCenter() {
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-secondary-50 via-white to-accent-50 relative overflow-hidden">
-          {/* Portuguese-inspired background decorative elements */}
+          {/* Lusophone-inspired background decorative elements */}
           <div className="absolute inset-0">
             <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/40 via-accent-100/30 to-coral-100/30 rounded-full opacity-60 animate-pulse" />
             <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-tr from-action-200/40 via-secondary-100/30 to-accent-100/30 rounded-full opacity-50 animate-bounce" style={{ animationDuration: '8s' }} />
@@ -235,7 +235,7 @@ export default function SafetyCenter() {
               <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-8">
                 <div className="flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 border border-secondary-200/40">
                   <HomeIcon className="w-4 h-4 mr-2 text-secondary-500" />
-                  {isPortuguese ? 'Locais Portugueses Seguros' : 'Safe Portuguese Venues'}
+                  {isPortuguese ? 'Locais Portugueses Seguros' : 'Safe Lusophone Venues'}
                 </div>
                 <div className="flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 border border-secondary-200/40">
                   <LanguageIcon className="w-4 h-4 mr-2 text-accent-500" />
@@ -305,7 +305,7 @@ export default function SafetyCenter() {
                             <div className="text-sm text-red-700">
                               {isPortuguese ? 
                                 'Resposta em 2-4 horas • Monitorizado 24/7 • Suporte em Português' :
-                                'Response within 2-4 hours • Monitored 24/7 • Portuguese Support'
+                                'Response within 2-4 hours • Monitored 24/7 • Lusophone Support'
                               }
                             </div>
                           </div>
@@ -317,16 +317,16 @@ export default function SafetyCenter() {
                     <div className="mt-8 bg-gradient-to-r from-secondary-50/60 via-accent-50/40 to-coral-50/40 rounded-2xl p-6">
                       <h3 className="font-bold text-gray-800 mb-4 text-lg flex items-center">
                         <GlobeAltIcon className="w-5 h-5 mr-2 text-secondary-600" />
-                        {isPortuguese ? 'Recursos Consulares Portugueses' : 'Portuguese Consular Resources'}
+                        {isPortuguese ? 'Recursos Consulares Portugueses' : 'Lusophone Consular Resources'}
                       </h3>
                       <div className="grid md:grid-cols-2 gap-4 text-sm">
                         <div className="bg-white/70 rounded-lg p-3">
                           <div className="font-semibold text-gray-800">
-                            {isPortuguese ? 'Consulado Geral de Portugal' : 'Portuguese Consulate General'}
+                            {isPortuguese ? 'Consulado Geral de Portugal' : 'Lusophone Consulate General'}
                           </div>
                           <div className="text-gray-600">London: +44 20 7235 5331</div>
                           <div className="text-gray-600 text-xs">
-                            {isPortuguese ? 'Assistência consular para cidadãos portugueses' : 'Consular assistance for Portuguese citizens'}
+                            {isPortuguese ? 'Assistência consular para cidadãos portugueses' : 'Consular assistance for Lusophone citizens'}
                           </div>
                         </div>
                         <div className="bg-white/70 rounded-lg p-3">
@@ -373,7 +373,7 @@ export default function SafetyCenter() {
                 <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
                   {isPortuguese ? 
                     'Múltiplas camadas de proteção para garantir conexões autênticas portuguesas e interações seguras em Londres' :
-                    'Multiple layers of protection to ensure authentic Portuguese connections and safe interactions in London'
+                    'Multiple layers of protection to ensure authentic Lusophone connections and safe interactions in London'
                   }
                 </p>
               </div>

@@ -102,7 +102,7 @@ const SUCCESS_STORIES: SuccessStory[] = [
       pt: 'De uma pequena cidade no Norte de Portugal a liderar uma startup tecnológica de £5M em Londres. A jornada da Ana através do Imperial College e da rede da comunidade lusófona LusoTown abriu portas para investidores, mentores e co-fundadores que partilhavam os seus valores culturais.'
     },
     quote: {
-      en: 'LusoTown didn\'t just connect me to other Portuguese students - it connected me to my future co-founder and our biggest investor. Cultural bonds created business success.',
+      en: 'LusoTown didn\'t just connect me to other Lusophone students - it connected me to my future co-founder and our biggest investor. Cultural bonds created business success.',
       pt: 'A LusoTown não me conectou apenas a outros estudantes portugueses - conectou-me ao meu futuro co-fundador e ao nosso maior investidor. Laços culturais criaram sucesso empresarial.'
     },
     achievements: [
@@ -136,11 +136,11 @@ const SUCCESS_STORIES: SuccessStory[] = [
       }
     ],
     culturalImpact: {
-      en: 'Promotes Portuguese tech talent internationally and mentors 50+ Portuguese students in STEM fields',
+      en: 'Promotes Lusophone tech talent internationally and mentors 50+ Lusophone students in STEM fields',
       pt: 'Promove talento tecnológico português internacionalmente e mentoriza mais de 50 estudantes portugueses em áreas STEM'
     },
     lusoTownConnection: {
-      en: 'Met co-founder at LusoTown tech networking event, secured initial funding through Portuguese investor network',
+      en: 'Met co-founder at LusoTown tech networking event, secured initial funding through Lusophone investor network',
       pt: 'Conheceu co-fundador num evento de networking tecnológico LusoTown, garantiu financiamento inicial através de rede de investidores portugueses'
     },
     keyMetrics: {
@@ -157,7 +157,7 @@ const SUCCESS_STORIES: SuccessStory[] = [
     mentorshipOffered: true,
     categories: ['Technology', 'Entrepreneurship', 'Women in Tech', 'Cultural Leadership'],
     testimonial: {
-      en: 'Ana transformed our understanding of what Portuguese tech leadership looks like in London. Her success inspires our entire community.',
+      en: 'Ana transformed our understanding of what Lusophone tech leadership looks like in London. Her success inspires our entire community.',
       pt: 'Ana transformou a nossa compreensão do que parece a liderança tecnológica portuguesa em Londres. O seu sucesso inspira toda a nossa comunidade.'
     }
   },
@@ -446,7 +446,7 @@ const SUCCESS_STORIES: SuccessStory[] = [
       pt: 'Advoga por perspetivas ambientais africanas em fóruns internacionais e mentoriza estudantes moçambicanos de ciências ambientais'
     },
     lusoTownConnection: {
-      en: 'LusoTown connected her with Portuguese environmental researchers, creating research partnerships spanning three continents',
+      en: 'LusoTown connected her with Lusophone environmental researchers, creating research partnerships spanning three continents',
       pt: 'LusoTown conectou-a com investigadores ambientais portugueses, criando parcerias de investigação abrangendo três continentes'
     },
     keyMetrics: {
@@ -528,7 +528,7 @@ export default function SuccessStoriesCarousel({
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'pt'
               ? 'Estudantes portugueses que transformaram as suas experiências universitárias em carreiras extraordinárias'
-              : 'Portuguese students who transformed their university experiences into extraordinary careers'
+              : 'Lusophone students who transformed their university experiences into extraordinary careers'
             }
           </p>
         </motion.div>

@@ -49,7 +49,7 @@ const STUDENT_CULTURAL_EVENTS: CulturalEvent[] = [
       pt: 'Festival Estudantil dos Santos Populares'
     },
     description: {
-      en: 'Authentic Portuguese June festival celebration with traditional food, folk dancing, and cultural workshops designed for students',
+      en: 'Authentic Lusophone June festival celebration with traditional food, folk dancing, and cultural workshops designed for students',
       pt: 'Celebração autêntica do festival português de junho com comida tradicional, danças folclóricas e workshops culturais desenhados para estudantes'
     },
     date: '2024-06-29',
@@ -63,7 +63,7 @@ const STUDENT_CULTURAL_EVENTS: CulturalEvent[] = [
     capacity: 80,
     enrolled: 62,
     image: 'https://images.unsplash.com/photo-1566737236500-c8ac43014a8b?w=800',
-    highlights: ['Live Fado Performance', 'Traditional Sardines', 'Folk Dance Workshop', 'Portuguese Students Network'],
+    highlights: ['Live Fado Performance', 'Traditional Sardines', 'Folk Dance Workshop', 'Lusophone Students Network'],
     culturalElements: ['Marchas Populares', 'Grilled Sardines', 'Sangria Workshop', 'Papel de Lustre Decorations'],
     isStudentFriendly: true,
     rating: 4.8

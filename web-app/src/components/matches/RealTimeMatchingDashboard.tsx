@@ -679,7 +679,7 @@ export default function RealTimeMatchingDashboard({
             <p className="text-gray-500 mb-4">
               {language === 'pt' 
                 ? 'Inicie o matching em tempo real para encontrar conexões portuguesas'
-                : 'Start real-time matching to find Portuguese connections'}
+                : 'Start real-time matching to find Lusophone connections'}
             </p>
             <button
               onClick={toggleRealTimeMatching}

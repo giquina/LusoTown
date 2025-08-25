@@ -220,7 +220,7 @@ export default function LuxuryBreadcrumbs({
           </div>
         )}
         
-        {/* Portuguese pattern overlay */}
+        {/* Lusophone pattern overlay */}
         {variant === 'portuguese' && (
           <div className="absolute inset-0 opacity-10 rounded-xl overflow-hidden">
             <div className="absolute inset-0" style={{

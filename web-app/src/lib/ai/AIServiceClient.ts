@@ -123,7 +123,7 @@ export class AIServiceClient {
   }
 
   /**
-   * Generate text using LLM services with Portuguese cultural awareness
+   * Generate text using LLM services with Lusophone cultural awareness
    */
   async generateText(request: AIRequest): Promise<AIResponse> {
     const startTime = Date.now()
@@ -145,7 +145,7 @@ export class AIServiceClient {
         throw new Error(`Cultural guideline violation: ${culturalValidation.violations_detected.join(', ')}`)
       }
 
-      // Apply Portuguese-specific preprocessing
+      // Apply Lusophone-specific preprocessing
       const processedInput = await this.applyPortuguesePreprocessing(request)
 
       let response: any
@@ -226,7 +226,7 @@ export class AIServiceClient {
   }
 
   /**
-   * Translate text with Portuguese dialect awareness
+   * Translate text with Lusophone dialect awareness
    */
   async translateText(
     text: string,
@@ -256,7 +256,7 @@ export class AIServiceClient {
           throw new Error(`Unsupported translation service: ${service.service_name}`)
       }
 
-      // Apply Portuguese dialect-specific adaptations
+      // Apply Lusophone dialect-specific adaptations
       const dialectAdaptedText = await this.applyDialectAdaptations(translatedText, dialect, culturalContext)
 
       const responseTime = Date.now() - startTime
@@ -328,10 +328,10 @@ export class AIServiceClient {
         throw new Error('No sentiment analysis service available')
       }
 
-      // Enhanced sentiment analysis with Portuguese emotional concepts
+      // Enhanced sentiment analysis with Lusophone emotional concepts
       const sentiment = await this.performEnhancedSentimentAnalysis(service, text, language)
 
-      // Special detection for Portuguese emotional states
+      // Special detection for Lusophone emotional states
       const saudadeLevel = this.detectSaudadeIntensity(text, language)
       const nostalgiaLevel = this.detectNostalgiaIntensity(text, language)
       const culturalEmotions = this.detectCulturalEmotionalMarkers(text, language)
@@ -467,7 +467,7 @@ export class AIServiceClient {
     // Mock OpenAI implementation
     // In production, this would use the actual OpenAI SDK
     return {
-      text: "AI-generated response with Portuguese cultural awareness",
+      text: "AI-generated response with Lusophone cultural awareness",
       model: service.configuration.model || 'gpt-4',
       confidence: 0.9
     }
@@ -514,7 +514,7 @@ export class AIServiceClient {
     return `Azure translated: ${text} (${dialect || 'standard'})`
   }
 
-  // Portuguese-specific processing methods
+  // Lusophone-specific processing methods
 
   private async applyPortuguesePreprocessing(request: AIRequest): Promise<any> {
     let processedInput = { ...request.input_data }
@@ -533,7 +533,7 @@ export class AIServiceClient {
 
     // Apply saudade awareness
     if (request.portuguese_specific_options?.saudade_awareness) {
-      processedInput.emotional_awareness = 'Enable deep understanding of Portuguese emotional concepts like saudade'
+      processedInput.emotional_awareness = 'Enable deep understanding of Lusophone emotional concepts like saudade'
     }
 
     return processedInput
@@ -572,14 +572,14 @@ export class AIServiceClient {
       case 'brazilian':
         return text.replace(/vós/g, 'vocês').replace(/tu/g, 'você')
       case 'african':
-        // Apply African Portuguese adaptations
+        // Apply African Lusophone adaptations
         return text
       default:
         return text
     }
   }
 
-  // Portuguese emotion detection methods
+  // Lusophone emotion detection methods
 
   private detectSaudadeIntensity(text: string, language: string): number {
     const saudadeKeywords = [

@@ -75,9 +75,9 @@ const serviceTypeOptions = [
   { 
     value: 'portuguese-business-meeting', 
     iconEn: BuildingOffice2Icon,
-    labelEn: 'Portuguese Business Meeting', 
+    labelEn: 'Lusophone Business Meeting', 
     labelPt: 'Reunião de Negócios Portuguesa',
-    exampleEn: 'Portuguese networking event, business lunch in Stockwell',
+    exampleEn: 'Lusophone networking event, business lunch in Stockwell',
     examplePt: 'Evento de networking português, almoço de negócios em Stockwell',
     riskBase: 2
   },
@@ -95,16 +95,16 @@ const serviceTypeOptions = [
     iconEn: MusicalNoteIcon,
     labelEn: 'Fado/Cultural Event Escort', 
     labelPt: 'Escolta para Evento Fado/Cultural',
-    exampleEn: 'Fado performance, Portuguese cultural celebration',
+    exampleEn: 'Fado performance, Lusophone cultural celebration',
     examplePt: 'Performance de Fado, celebração cultural portuguesa',
     riskBase: 3
   },
   { 
     value: 'nightlife-security', 
     iconEn: HeartIcon,
-    labelEn: 'Portuguese Nightlife Security', 
+    labelEn: 'Lusophone Nightlife Security', 
     labelPt: 'Segurança para Vida Noturna Portuguesa',
-    exampleEn: 'Portuguese club nights, late-night venues in London',
+    exampleEn: 'Lusophone club nights, late-night venues in London',
     examplePt: 'Noites de clube portuguesas, locais noturnos em Londres',
     riskBase: 4
   },
@@ -120,18 +120,18 @@ const serviceTypeOptions = [
   { 
     value: 'portuguese-heritage-tour', 
     iconEn: GlobeEuropeAfricaIcon,
-    labelEn: 'Portuguese Heritage Tour', 
+    labelEn: 'Lusophone Heritage Tour', 
     labelPt: 'Tour do Património Português',
-    exampleEn: 'Guided tour of Portuguese areas in London (Stockwell, Lambeth)',
+    exampleEn: 'Guided tour of Lusophone areas in London (Stockwell, Lambeth)',
     examplePt: 'Tour guiado das áreas portuguesas em Londres (Stockwell, Lambeth)',
     riskBase: 3
   },
   { 
     value: 'portuguese-workshop', 
     iconEn: AcademicCapIcon,
-    labelEn: 'Portuguese Business Workshop', 
+    labelEn: 'Lusophone Business Workshop', 
     labelPt: 'Workshop de Negócios Português',
-    exampleEn: 'Portuguese entrepreneur training, digital marketing workshop',
+    exampleEn: 'Lusophone entrepreneur training, digital marketing workshop',
     examplePt: 'Treino de empreendedor português, workshop de marketing digital',
     riskBase: 2
   },
@@ -147,14 +147,14 @@ const serviceTypeOptions = [
 ]
 
 const riskFactorOptions = [
-  { value: 'media-attention', labelEn: 'Portuguese media/press attention expected', labelPt: 'Atenção da imprensa/mídia portuguesa esperada', risk: 3 },
+  { value: 'media-attention', labelEn: 'Lusophone media/press attention expected', labelPt: 'Atenção da imprensa/mídia portuguesa esperada', risk: 3 },
   { value: 'public-event', labelEn: 'Large Portuguese-speaking community gathering', labelPt: 'Grande reunião da comunidade de falantes de português', risk: 2 },
   { value: 'previous-incidents', labelEn: 'Previous security incidents', labelPt: 'Incidentes de segurança anteriores', risk: 4 },
   { value: 'stalking-harassment', labelEn: 'Stalking/harassment concerns', labelPt: 'Preocupações com perseguição/assédio', risk: 4 },
   { value: 'business-disputes', labelEn: 'Portuguese business disputes/conflicts', labelPt: 'Disputas/conflitos de negócios portugueses', risk: 3 },
-  { value: 'high-value-items', labelEn: 'High-value items/Portuguese documents', labelPt: 'Itens/documentos portugueses de alto valor', risk: 2 },
+  { value: 'high-value-items', labelEn: 'High-value items/Lusophone documents', labelPt: 'Itens/documentos portugueses de alto valor', risk: 2 },
   { value: 'language-barriers', labelEn: 'Language barrier concerns in emergency', labelPt: 'Preocupações com barreira linguística em emergência', risk: 2 },
-  { value: 'unfamiliar-area', labelEn: 'Unfamiliar with London Portuguese areas', labelPt: 'Não familiarizado com áreas portuguesas de Londres', risk: 1 }
+  { value: 'unfamiliar-area', labelEn: 'Unfamiliar with London Lusophone areas', labelPt: 'Não familiarizado com áreas portuguesas de Londres', risk: 1 }
 ]
 
 const protectionLevelOptions = [
@@ -187,7 +187,7 @@ const protectionLevelOptions = [
 const specialRequirementsOptions = [
   { value: 'portuguese-speaking-officer', labelEn: 'Portuguese-speaking officer required', labelPt: 'Oficial que fala português obrigatório', priority: true },
   { value: 'portuguese-cultural-knowledge', labelEn: 'Knowledge of Portuguese culture/customs', labelPt: 'Conhecimento da cultura/costumes portugueses', priority: true },
-  { value: 'familiar-portuguese-areas', labelEn: 'Familiar with Portuguese areas of London', labelPt: 'Familiarizado com áreas portuguesas de Londres', priority: false },
+  { value: 'familiar-portuguese-areas', labelEn: 'Familiar with Lusophone areas of London', labelPt: 'Familiarizado com áreas portuguesas de Londres', priority: false },
   { value: 'medical-conditions', labelEn: 'Medical conditions to be aware of', labelPt: 'Condições médicas a considerar', priority: false },
   { value: 'wheelchair-access', labelEn: 'Wheelchair accessibility required', labelPt: 'Acessibilidade para cadeira de rodas necessária', priority: false },
   { value: 'multiple-stops', labelEn: 'Multiple stops in Portuguese-speaking community areas', labelPt: 'Múltiplas paragens em áreas da comunidade de falantes de português', priority: false },

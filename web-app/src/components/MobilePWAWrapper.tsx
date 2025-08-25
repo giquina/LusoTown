@@ -88,11 +88,11 @@ export function MobilePWAWrapper({
     }
   }, [updateAvailable]);
 
-  // Mobile gesture handlers for Portuguese cultural navigation
+  // Mobile gesture handlers for Lusophone cultural navigation
   const handleSwipe = (gesture: any) => {
     if (!enableMobileGestures) return;
 
-    // Portuguese cultural navigation patterns
+    // Lusophone cultural navigation patterns
     switch (gesture.direction) {
       case 'right':
         // Navigate back (common mobile pattern)
@@ -127,7 +127,7 @@ export function MobilePWAWrapper({
   const handleDoubleTap = () => {
     if (!enableMobileGestures) return;
     
-    // Quick action for Portuguese community (e.g., bookmark/favorite)
+    // Quick action for Lusophone community (e.g., bookmark/favorite)
     if ('navigator' in window && 'vibrate' in navigator) {
       navigator.vibrate(100);
     }
@@ -232,10 +232,10 @@ export function MobilePWAWrapper({
         />
       )}
 
-      {/* Portuguese Cultural Enhancements */}
+      {/* Lusophone Cultural Enhancements */}
       {enablePortugueseCulturalFeatures && (
         <>
-          {/* Portuguese Heritage CSS Variables */}
+          {/* Lusophone Heritage CSS Variables */}
           <style jsx global>{`
             :root {
               --portuguese-red: #C5282F;
@@ -248,9 +248,9 @@ export function MobilePWAWrapper({
               --mobile-safe-area-right: env(safe-area-inset-right);
             }
 
-            /* Mobile-first optimizations for Portuguese content */
+            /* Mobile-first optimizations for Lusophone content */
             @media (max-width: 768px) {
-              /* Portuguese text optimization */
+              /* Lusophone text optimization */
               .portuguese-text {
                 hyphens: auto;
                 word-break: break-word;
@@ -264,7 +264,7 @@ export function MobilePWAWrapper({
                 touch-action: manipulation;
               }
 
-              /* Portuguese cultural spacing */
+              /* Lusophone cultural spacing */
               .cultural-content {
                 padding-left: max(16px, env(safe-area-inset-left));
                 padding-right: max(16px, env(safe-area-inset-right));
@@ -318,7 +318,7 @@ export function MobilePWAWrapper({
                 padding-bottom: env(safe-area-inset-bottom);
               }
               
-              /* Enhanced Portuguese cultural theming for PWA */
+              /* Enhanced Lusophone cultural theming for PWA */
               .pwa-header {
                 background: var(--heritage-gradient);
                 padding-top: calc(env(safe-area-inset-top) + 12px);

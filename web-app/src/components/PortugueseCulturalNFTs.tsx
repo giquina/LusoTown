@@ -132,7 +132,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
       descriptionPt: 'Preservação digital de alta resolução dos painéis históricos de azulejo retratando a história portuguesa',
       artist: {
         name: 'Maria Azevedo',
-        bio: 'Digital preservationist specializing in Portuguese ceramic art documentation',
+        bio: 'Digital preservationist specializing in Lusophone ceramic art documentation',
         bioPt: 'Preservacionista digital especializada na documentação da arte cerâmica portuguesa',
         avatar: '/images/artists/maria-azevedo.jpg',
         verified: true,
@@ -145,7 +145,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
         regionPt: 'Porto, Norte de Portugal',
         period: '1900-1916',
         periodPt: '1900-1916',
-        significance: 'Represents the golden age of Portuguese azulejo art in public transportation',
+        significance: 'Represents the golden age of Lusophone azulejo art in public transportation',
         significancePt: 'Representa a idade de ouro da arte de azulejo portuguesa no transporte público'
       },
       nft: {
@@ -182,7 +182,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
       },
       culturalAuthenticity: {
         verified: true,
-        verifiedBy: 'Portuguese Institute of Cultural Heritage',
+        verifiedBy: 'Lusophone Institute of Cultural Heritage',
         certificationDate: '2024-01-10',
         historicalAccuracy: 95,
         culturalSignificance: 88
@@ -226,7 +226,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
         regionPt: 'Coimbra, Centro de Portugal',
         period: '19th Century Tradition',
         periodPt: 'Tradição do Século XIX',
-        significance: 'UNESCO Intangible Cultural Heritage representing Portuguese emotional expression',
+        significance: 'UNESCO Intangible Cultural Heritage representing Lusophone emotional expression',
         significancePt: 'Património Cultural Imaterial da UNESCO representando a expressão emocional portuguesa'
       },
       nft: {
@@ -252,14 +252,14 @@ const PortugueseCulturalNFTs: React.FC = () => {
         duration: '4:23',
         attributes: [
           { trait_type: 'Fado Style', value: 'Coimbra', rarity_percentage: 25.5 },
-          { trait_type: 'Instrument', value: 'Portuguese Guitar', rarity_percentage: 15.8 },
+          { trait_type: 'Instrument', value: 'Lusophone Guitar', rarity_percentage: 15.8 },
           { trait_type: 'Recording Quality', value: 'Studio Master', rarity_percentage: 5.2 },
           { trait_type: 'Emotional Intensity', value: 'Deep Saudade', rarity_percentage: 8.7 }
         ]
       },
       culturalAuthenticity: {
         verified: true,
-        verifiedBy: 'Portuguese Fado Museum',
+        verifiedBy: 'Lusophone Fado Museum',
         certificationDate: '2024-01-12',
         historicalAccuracy: 98,
         culturalSignificance: 95
@@ -367,13 +367,13 @@ const PortugueseCulturalNFTs: React.FC = () => {
   const nftCollections: NFTCollection[] = [
     {
       id: 'portuguese-heritage-collection',
-      name: 'Portuguese Heritage Collection',
+      name: 'Lusophone Heritage Collection',
       namePt: 'Coleção do Património Português',
-      description: 'Curated collection of NFTs preserving Portuguese cultural artifacts and traditions',
+      description: 'Curated collection of NFTs preserving Lusophone cultural artifacts and traditions',
       descriptionPt: 'Coleção curada de NFTs preservando artefatos culturais e tradições portuguesas',
       theme: 'Cultural Preservation',
       themePt: 'Preservação Cultural',
-      curator: 'Portuguese Cultural Institute',
+      curator: 'Lusophone Cultural Institute',
       totalItems: 156,
       floorPrice: 0.8,
       totalVolume: 45.7,
@@ -503,7 +503,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
           >
-            🎨 {language === 'pt' ? 'NFTs Culturais Portugueses' : 'Portuguese Cultural NFTs'}
+            🎨 {language === 'pt' ? 'NFTs Culturais Portugueses' : 'Lusophone Cultural NFTs'}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: -20 }}
@@ -513,7 +513,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
           >
             {language === 'pt'
               ? 'Descubra, colecione e preserve a herança cultural portuguesa através de tokens não-fungíveis autênticos e verificados.'
-              : 'Discover, collect, and preserve Portuguese cultural heritage through authentic, verified non-fungible tokens.'}
+              : 'Discover, collect, and preserve Lusophone cultural heritage through authentic, verified non-fungible tokens.'}
           </motion.p>
 
           {/* Wallet Connection */}

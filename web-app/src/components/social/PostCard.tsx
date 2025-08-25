@@ -175,7 +175,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
             <div className="flex items-center space-x-2 text-accent-700">
               <Star className="w-4 h-4" />
               <span className="text-sm font-medium">
-                {t('post.promoted') || 'Promoted Portuguese Service'}
+                {t('post.promoted') || 'Promoted Lusophone Service'}
               </span>
             </div>
           </div>

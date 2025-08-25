@@ -21,7 +21,7 @@ export interface PortugueseEvent {
   status: 'active' | 'cancelled' | 'completed'
   tags?: string[]
   
-  // Portuguese cultural enhancements
+  // Lusophone cultural enhancements
   cultural_category?: string
   portuguese_neighborhood?: string
   cultural_authenticity_score?: number
@@ -122,7 +122,7 @@ class EventManagementService {
   private supabaseClient = supabase
 
   /**
-   * Get featured Portuguese events
+   * Get featured Lusophone events
    */
   async getFeaturedEvents(): Promise<PortugueseEvent[]> {
     try {
@@ -452,7 +452,7 @@ class EventManagementService {
   }
 
   /**
-   * Create a new Portuguese cultural event
+   * Create a new Lusophone cultural event
    */
   async createEvent(eventData: Partial<PortugueseEvent>): Promise<PortugueseEvent> {
     const { data: user } = await this.supabaseClient.auth.getUser()
@@ -523,7 +523,7 @@ class EventManagementService {
   }
 
   /**
-   * Get Portuguese venues for event location selection
+   * Get Lusophone venues for event location selection
    */
   async getPortugueseVenues(filters?: {
     venue_type?: string
@@ -556,7 +556,7 @@ class EventManagementService {
   }
 
   /**
-   * Get Portuguese cultural calendar
+   * Get Lusophone cultural calendar
    */
   async getCulturalCalendar(filters?: {
     celebration_type?: string

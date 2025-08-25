@@ -273,7 +273,7 @@ export class AIMatchingIntegration {
   }
 
   /**
-   * Get regional matching insights for Portuguese diaspora in specific United Kingdom areas
+   * Get regional matching insights for Lusophone diaspora in specific United Kingdom areas
    */
   async getRegionalMatchingInsights(region: string): Promise<RegionalMatchingInsights> {
     try {
@@ -510,7 +510,7 @@ export class AIMatchingIntegration {
     // Calculate cultural diversity
     const culturalRegions = matches.map(m => m.userProfile.cultural_heritage?.portuguese_regions || []).flat()
     const uniqueRegions = new Set(culturalRegions)
-    const culturalDiversityScore = Math.min(100, (uniqueRegions.size / 7) * 100) // 7 Portuguese regions
+    const culturalDiversityScore = Math.min(100, (uniqueRegions.size / 7) * 100) // 7 Lusophone regions
 
     // Regional distribution
     const regionCounts: Record<string, number> = {}
@@ -553,7 +553,7 @@ export class AIMatchingIntegration {
     const userFeedbackRequest = [
       'How well do these matches align with your cultural preferences?',
       'Are the suggested conversation topics helpful?',
-      'Would you like more matches from specific Portuguese regions?'
+      'Would you like more matches from specific Lusophone regions?'
     ]
 
     return {
@@ -753,7 +753,7 @@ export class AIMatchingIntegration {
   }
 
   private generateFirstMeetingSuggestions(profile1: any, profile2: any, context: any): string[] {
-    return ['Portuguese café meeting', 'Cultural center event', 'Walking tour'] // Placeholder
+    return ['Lusophone café meeting', 'Cultural center event', 'Walking tour'] // Placeholder
   }
 
   private generateConversationTopics(profile1: any, profile2: any, prediction: any): string[] {
@@ -761,7 +761,7 @@ export class AIMatchingIntegration {
   }
 
   private generateCulturalActivities(profile1: any, profile2: any): string[] {
-    return ['Fado night', 'Portuguese cooking class', 'Cultural festival'] // Placeholder
+    return ['Fado night', 'Lusophone cooking class', 'Cultural festival'] // Placeholder
   }
 
   private generateTimelineRecommendation(prediction: any, context: any): string {
@@ -775,10 +775,10 @@ export class AIMatchingIntegration {
       conversationScore: score,
       strengths: ['Cultural connection', 'Similar communication style'],
       potentialChallenges: ['Different regional backgrounds'],
-      conversationStarters: ['Portuguese childhood memories', 'London adaptation experiences'],
+      conversationStarters: ['Lusophone childhood memories', 'London adaptation experiences'],
       topicRecommendations: ['Cultural traditions', 'Family stories', 'Future goals'],
-      culturalBridges: ['Shared Portuguese values', 'Common United Kingdom experiences'],
-      communicationTips: ['Use Portuguese expressions naturally', 'Share cultural references']
+      culturalBridges: ['Shared Lusophone values', 'Common United Kingdom experiences'],
+      communicationTips: ['Use Lusophone expressions naturally', 'Share cultural references']
     }
   }
 

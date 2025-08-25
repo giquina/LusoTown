@@ -143,7 +143,7 @@ export function LuxuryHeading({
         </>
       )}
       
-      {/* Cultural accent line for Portuguese variants */}
+      {/* Cultural accent line for Lusophone variants */}
       {(variant === 'portuguese' || variant === 'aristocratic' || culturalAccent) && (
         <span className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-6 w-1 h-8 bg-gradient-to-b from-red-500 via-amber-500 to-green-500 rounded-full opacity-40" />
       )}
@@ -288,7 +288,7 @@ export function LuxuryText({
         className
       )}
     >
-      {/* Cultural decoration for Portuguese variants */}
+      {/* Cultural decoration for Lusophone variants */}
       {(variant === 'portuguese' || variant === 'aristocratic') && culturalAccent && (
         <span className="absolute -left-1 top-0 bottom-0 w-0.5 bg-gradient-to-b from-red-500 via-amber-500 to-green-500 rounded-full opacity-30" />
       )}

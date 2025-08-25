@@ -214,7 +214,7 @@ export default function EliteButton({
       disabled={disabled || loading}
       {...props}
     >
-      {/* Portuguese cultural pattern overlay with sophistication */}
+      {/* Lusophone cultural pattern overlay with sophistication */}
       {(portuguese || culturalElement) && (
         <div className="absolute inset-0 opacity-15">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12 animate-shimmer" />

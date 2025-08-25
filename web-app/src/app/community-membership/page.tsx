@@ -254,7 +254,7 @@ export default function CommunityMembershipPage() {
         </div>
         
         <h1 className="text-4xl font-bold text-primary-900 mb-4">
-          Join the UK's Premier Portuguese-Speaking Community
+          Join the UK's Premier Lusophone-Speaking Community
         </h1>
         
         <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">

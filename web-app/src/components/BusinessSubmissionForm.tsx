@@ -114,11 +114,11 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
   const steps = [
     { id: 1, title: t('form.step_business_info', 'Business Information'), icon: BuildingStorefrontIcon },
     { id: 2, title: t('form.step_location', 'Location & Contact'), icon: MapPinIcon },
-    { id: 3, title: t('form.step_portuguese_details', 'Portuguese Details'), icon: '🇵🇹' },
+    { id: 3, title: t('form.step_portuguese_details', 'Lusophone Details'), icon: '🇵🇹' },
     { id: 4, title: t('form.step_hours_additional', 'Hours & Additional'), icon: ClockIcon }
   ]
 
-  // Categories with Portuguese translations
+  // Categories with Lusophone translations
   const categories: { value: BusinessCategory; label: { en: string; pt: string } }[] = [
     { value: 'restaurant', label: { en: 'Restaurant', pt: 'Restaurante' } },
     { value: 'cafe', label: { en: 'Café', pt: 'Café' } },
@@ -154,7 +154,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
     { value: 'sao_tome_principe', label: { en: 'São Tomé and Príncipe', pt: 'São Tomé e Príncipe' }, flag: '🇸🇹' },
     { value: 'east_timor', label: { en: 'East Timor', pt: 'Timor-Leste' }, flag: '🇹🇱' },
     { value: 'macau', label: { en: 'Macau', pt: 'Macau' }, flag: '🇲🇴' },
-    { value: 'portuguese_diaspora', label: { en: 'Portuguese Diaspora', pt: 'Diáspora Portuguesa' }, flag: '🌍' }
+    { value: 'portuguese_diaspora', label: { en: 'Lusophone Diaspora', pt: 'Diáspora Portuguesa' }, flag: '🌍' }
   ]
 
   // London areas
@@ -172,7 +172,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
 
   // Languages
   const languages: { value: Language; label: { en: string; pt: string } }[] = [
-    { value: 'portuguese', label: { en: 'Portuguese', pt: 'Português' } },
+    { value: 'portuguese', label: { en: 'Lusophone', pt: 'Português' } },
     { value: 'english', label: { en: 'English', pt: 'Inglês' } },
     { value: 'spanish', label: { en: 'Spanish', pt: 'Espanhol' } },
     { value: 'french', label: { en: 'French', pt: 'Francês' } },
@@ -337,7 +337,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t('form.business_name_portuguese', 'Business Name (Portuguese)')}
+                  {t('form.business_name_portuguese', 'Business Name (Lusophone)')}
                 </label>
                 <input
                   type="text"
@@ -392,7 +392,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t('form.description_portuguese', 'Description (Portuguese)')}
+                {t('form.description_portuguese', 'Description (Lusophone)')}
               </label>
               <textarea
                 value={formData.descriptionPortuguese}
@@ -570,7 +570,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t('form.owner_region', 'Portuguese Connection')} *
+                {t('form.owner_region', 'Lusophone Connection')} *
               </label>
               <select
                 value={formData.ownerRegion}
@@ -579,7 +579,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                   validationErrors.ownerRegion ? 'border-red-300' : 'border-gray-300'
                 }`}
               >
-                <option value="">{t('form.select_region', 'Select Portuguese region/country')}</option>
+                <option value="">{t('form.select_region', 'Select Lusophone region/country')}</option>
                 {regions.map(region => (
                   <option key={region.value} value={region.value}>
                     {region.flag} {region.label[language]}
@@ -627,7 +627,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                   className="rounded border-gray-300 text-secondary-600 focus:ring-secondary-500"
                 />
                 <span className="ml-3 text-sm text-gray-700">
-                  {t('form.supports_culture', 'This business actively supports Portuguese cultural events and community activities')}
+                  {t('form.supports_culture', 'This business actively supports Lusophone cultural events and community activities')}
                 </span>
               </label>
             </div>
@@ -668,7 +668,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                 value={formData.keywords.join(', ')}
                 onChange={(e) => updateFormData('keywords', e.target.value.split(',').map(k => k.trim()).filter(Boolean))}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                placeholder={t('form.keywords_placeholder', 'e.g., pastéis de nata, traditional Portuguese, fado music')}
+                placeholder={t('form.keywords_placeholder', 'e.g., pastéis de nata, traditional Lusophone, fado music')}
               />
               <p className="text-sm text-gray-600 mt-1">
                 {t('form.keywords_help', 'Separate keywords with commas. These help people find your business.')}
@@ -734,7 +734,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
       <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white p-6">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold">
-            {t('form.submit_business', 'Submit Your Portuguese Business')}
+            {t('form.submit_business', 'Submit Your Lusophone Business')}
           </h2>
           {onClose && (
             <button

@@ -176,7 +176,7 @@ export default function NotificationPreferences({ className = '' }: Notification
       descriptionPT: 'Eventos universitários e oportunidades de carreira',
       icon: '🎓',
       examples: [
-        { en: 'University Portuguese society events', pt: 'Eventos da associação portuguesa universitária' },
+        { en: 'University Lusophone society events', pt: 'Eventos da associação portuguesa universitária' },
         { en: 'Career opportunities', pt: 'Oportunidades de carreira' },
         { en: 'Academic networking', pt: 'Networking académico' }
       ]
@@ -211,13 +211,13 @@ export default function NotificationPreferences({ className = '' }: Notification
 
   const culturalInterests = [
     { value: 'fado', label: 'Fado Music', labelPT: 'Música Fado' },
-    { value: 'portuguese_cuisine', label: 'Portuguese Cuisine', labelPT: 'Gastronomia Portuguesa' },
-    { value: 'festivals', label: 'Portuguese Festivals', labelPT: 'Festivais Portugueses' },
-    { value: 'literature', label: 'Portuguese Literature', labelPT: 'Literatura Portuguesa' },
-    { value: 'history', label: 'Portuguese History', labelPT: 'História Portuguesa' },
-    { value: 'language', label: 'Portuguese Language', labelPT: 'Língua Portuguesa' },
+    { value: 'portuguese_cuisine', label: 'Lusophone Cuisine', labelPT: 'Gastronomia Portuguesa' },
+    { value: 'festivals', label: 'Lusophone Festivals', labelPT: 'Festivais Portugueses' },
+    { value: 'literature', label: 'Lusophone Literature', labelPT: 'Literatura Portuguesa' },
+    { value: 'history', label: 'Lusophone History', labelPT: 'História Portuguesa' },
+    { value: 'language', label: 'Lusophone Language', labelPT: 'Língua Portuguesa' },
     { value: 'traditions', label: 'Cultural Traditions', labelPT: 'Tradições Culturais' },
-    { value: 'arts', label: 'Portuguese Arts', labelPT: 'Artes Portuguesas' }
+    { value: 'arts', label: 'Lusophone Arts', labelPT: 'Artes Portuguesas' }
   ]
 
   const professionalInterests = [
@@ -237,7 +237,7 @@ export default function NotificationPreferences({ className = '' }: Notification
     { value: 'east_london', label: 'East London', labelPT: 'Este de Londres' },
     { value: 'west_london', label: 'West London', labelPT: 'Oeste de Londres' },
     { value: 'north_london', label: 'North London', labelPT: 'Norte de Londres' },
-    { value: 'portuguese_areas', label: 'Portuguese Areas', labelPT: 'Áreas Portuguesas' },
+    { value: 'portuguese_areas', label: 'Lusophone Areas', labelPT: 'Áreas Portuguesas' },
     { value: 'greater_london', label: 'Greater London', labelPT: 'Grande Londres' },
     { value: 'uk_wide', label: 'United Kingdom Wide', labelPT: 'Todo o Reino Unido' }
   ]
@@ -536,7 +536,7 @@ export default function NotificationPreferences({ className = '' }: Notification
               <p className="text-sm text-neutral-600 mb-4">
                 {language === 'pt' 
                   ? 'Selecione os seus interesses culturais portugueses para receber notificações relevantes'
-                  : 'Select your Portuguese cultural interests to receive relevant notifications'
+                  : 'Select your Lusophone cultural interests to receive relevant notifications'
                 }
               </p>
               <div className="grid grid-cols-2 gap-3">

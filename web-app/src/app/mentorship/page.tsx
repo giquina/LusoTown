@@ -16,7 +16,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
   name: 'LusoTown Portuguese-speaking community Mentorship',
-  description: 'Three-tier mentorship system connecting Portuguese professionals, language learners, and cultural knowledge sharers in London',
+  description: 'Three-tier mentorship system connecting Lusophone professionals, language learners, and cultural knowledge sharers in London',
   url: 'https://lusotown.london/mentorship',
   serviceType: [
     'Professional Integration Mentorship',
@@ -36,7 +36,7 @@ const jsonLd = {
       name: 'London'
     }
   },
-  educationalCredentialAwarded: 'Portuguese Cultural Preservation Certificate',
+  educationalCredentialAwarded: 'Lusophone Cultural Preservation Certificate',
   offers: {
     '@type': 'Offer',
     name: 'Portuguese-speaking community Mentorship Programs',

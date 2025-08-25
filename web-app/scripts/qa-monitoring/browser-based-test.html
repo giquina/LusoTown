@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LusoTown Live Site Browser Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e40af, #7c3aed);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .test-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .test-result {
+            background: #f1f5f9;
+            border-left: 4px solid #64748b;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .success { border-left-color: #10b981; background: #f0fdf4; }
+        .error { border-left-color: #ef4444; background: #fef2f2; }
+        .warning { border-left-color: #f59e0b; background: #fffbeb; }
+        .button {
+            background: linear-gradient(135deg, #1e40af, #7c3aed);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 5px;
+        }
+        .button:hover { opacity: 0.9; }
+        .button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .progress {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+        }
+        .stat-value { font-size: 24px; font-weight: bold; color: #1e40af; }
+        .stat-label { font-size: 14px; color: #64748b; margin-top: 5px; }
+        iframe { 
+            width: 100%; 
+            height: 600px; 
+            border: 2px solid #e2e8f0; 
+            border-radius: 8px;
+            display: none;
+        }
+        #testResults { max-height: 500px; overflow-y: auto; }
+        .component-info {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 10px;
+            margin: 5px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚨 LusoTown Live Site Browser Test</h1>
+        <p>Comprehensive testing for duplicate components, navigation issues, and console errors</p>
+    </div>
+
+    <div class="test-container">
+        <h2>Test Configuration</h2>
+        <p><strong>Site URL:</strong> <code>https://web-5vmpcxfvy-giquinas-projects.vercel.app</code></p>
+        <button class="button" onclick="runAllTests()" id="runTestsBtn">🔍 Run All Tests</button>
+        <button class="button" onclick="testSinglePage()" id="testSingleBtn">🔍 Test Current Page</button>
+        <button class="button" onclick="clearResults()">🗑️ Clear Results</button>
+        
+        <div class="progress">
+            <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="totalPages">0</div>
+                <div class="stat-label">Pages Tested</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="successCount">0</div>
+                <div class="stat-label">Successful</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="errorCount">0</div>
+                <div class="stat-label">Errors</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="duplicateCount">0</div>
+                <div class="stat-label">Duplicates</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="test-container">
+        <h2>Test Results</h2>
+        <div id="testResults"></div>
+    </div>
+
+    <iframe id="testFrame" src="about:blank"></iframe>
+
+    <script>
+        const SITE_URL = 'https://web-5vmpcxfvy-giquinas-projects.vercel.app';
+        
+        const PAGES_TO_TEST = [
+            { name: 'Homepage', path: '/' },
+            { name: 'Events', path: '/events/' },
+            { name: 'Matches', path: '/matches/' },
+            { name: 'Business Directory', path: '/business-directory/' },
+            { name: 'Pricing', path: '/pricing/' },
+            { name: 'Login', path: '/login/' },
+            { name: 'Signup', path: '/signup/' },
+            { name: 'Community', path: '/community/' },
+            { name: 'Students', path: '/students/' }
+        ];
+
+        let testStats = {
+            total: 0,
+            success: 0,
+            errors: 0,
+            duplicates: 0
+        };
+
+        function updateStats() {
+            document.getElementById('totalPages').textContent = testStats.total;
+            document.getElementById('successCount').textContent = testStats.success;
+            document.getElementById('errorCount').textContent = testStats.errors;
+            document.getElementById('duplicateCount').textContent = testStats.duplicates;
+            
+            const progress = testStats.total > 0 ? (testStats.success / testStats.total) * 100 : 0;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function addResult(title, content, type = 'info') {
+            const resultsDiv = document.getElementById('testResults');
+            const resultDiv = document.createElement('div');
+            resultDiv.className = `test-result ${type}`;
+            resultDiv.innerHTML = `<h3>${title}</h3><div>${content}</div>`;
+            resultsDiv.appendChild(resultDiv);
+            resultsDiv.scrollTop = resultsDiv.scrollHeight;
+        }
+
+        function clearResults() {
+            document.getElementById('testResults').innerHTML = '';
+            testStats = { total: 0, success: 0, errors: 0, duplicates: 0 };
+            updateStats();
+        }
+
+        async function testPage(page) {
+            const url = SITE_URL + page.path;
+            testStats.total++;
+            updateStats();
+            
+            return new Promise((resolve) => {
+                const iframe = document.getElementById('testFrame');
+                const startTime = Date.now();
+                let consoleErrors = [];
+                let hasLoaded = false;
+                
+                // Override console to capture errors from iframe
+                const originalConsoleError = console.error;
+                console.error = function(...args) {
+                    consoleErrors.push(args.join(' '));
+                    originalConsoleError.apply(console, arguments);
+                };
+
+                iframe.onload = function() {
+                    if (hasLoaded) return; // Prevent duplicate calls
+                    hasLoaded = true;
+                    
+                    const loadTime = Date.now() - startTime;
+                    
+                    try {
+                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        
+                        if (!iframeDoc) {
+                            testStats.errors++;
+                            updateStats();
+                            addResult(
+                                `❌ ${page.name} - Access Denied`,
+                                `Cannot access iframe content due to CORS policy.<br>
+                                <strong>URL:</strong> ${url}<br>
+                                <strong>Load Time:</strong> ${loadTime}ms`,
+                                'error'
+                            );
+                            resolve({ success: false, error: 'CORS' });
+                            return;
+                        }
+
+                        // Check for duplicate components
+                        const duplicateResults = checkForDuplicates(iframeDoc, page.name);
+                        
+                        // Check for navigation elements
+                        const navResults = checkNavigation(iframeDoc, page.name);
+                        
+                        // Check for essential elements
+                        const essentialResults = checkEssentialElements(iframeDoc, page.name);
+                        
+                        testStats.success++;
+                        if (duplicateResults.found > 0) testStats.duplicates++;
+                        updateStats();
+                        
+                        const resultContent = `
+                            <strong>URL:</strong> ${url}<br>
+                            <strong>Load Time:</strong> ${loadTime}ms<br>
+                            <strong>Console Errors:</strong> ${consoleErrors.length}<br><br>
+                            
+                            <strong>🔄 Component Analysis:</strong><br>
+                            ${duplicateResults.analysis}<br><br>
+                            
+                            <strong>🔗 Navigation:</strong><br>
+                            ${navResults}<br><br>
+                            
+                            <strong>✅ Essential Elements:</strong><br>
+                            ${essentialResults}
+                            
+                            ${consoleErrors.length > 0 ? `<br><br><strong>⚠️ Console Errors:</strong><br><div class="component-info">${consoleErrors.join('<br>')}</div>` : ''}
+                        `;
+                        
+                        addResult(
+                            `✅ ${page.name} - Loaded Successfully`,
+                            resultContent,
+                            duplicateResults.found > 0 ? 'warning' : 'success'
+                        );
+                        
+                        resolve({ success: true, duplicates: duplicateResults.found });
+                        
+                    } catch (error) {
+                        testStats.errors++;
+                        updateStats();
+                        addResult(
+                            `❌ ${page.name} - Analysis Error`,
+                            `Error analyzing page content: ${error.message}<br><strong>URL:</strong> ${url}`,
+                            'error'
+                        );
+                        resolve({ success: false, error: error.message });
+                    }
+                };
+                
+                iframe.onerror = function() {
+                    if (hasLoaded) return;
+                    hasLoaded = true;
+                    testStats.errors++;
+                    updateStats();
+                    addResult(
+                        `❌ ${page.name} - Load Failed`,
+                        `Failed to load page<br><strong>URL:</strong> ${url}`,
+                        'error'
+                    );
+                    resolve({ success: false, error: 'Load failed' });
+                };
+                
+                // Set timeout
+                setTimeout(() => {
+                    if (!hasLoaded) {
+                        hasLoaded = true;
+                        testStats.errors++;
+                        updateStats();
+                        addResult(
+                            `❌ ${page.name} - Timeout`,
+                            `Page load timeout after 10 seconds<br><strong>URL:</strong> ${url}`,
+                            'error'
+                        );
+                        resolve({ success: false, error: 'Timeout' });
+                    }
+                }, 10000);
+                
+                // Load the page
+                iframe.src = url;
+            });
+        }
+
+        function checkForDuplicates(doc, pageName) {
+            let analysis = '';
+            let duplicatesFound = 0;
+            
+            // Check for LusoBot components
+            const lusoBotElements = doc.querySelectorAll('[class*="lusobot"], [aria-label*="LusoBot"], [data-testid*="lusobot"]');
+            analysis += `LusoBot Widgets: ${lusoBotElements.length} found<br>`;
+            if (lusoBotElements.length > 1) {
+                duplicatesFound++;
+                analysis += `⚠️ DUPLICATE: Found ${lusoBotElements.length} LusoBot widgets (should be 1)<br>`;
+            }
+            
+            // Check for mobile navigation
+            const mobileNavs = doc.querySelectorAll('[class*="mobile-nav"], [class*="MobileNavigation"], [class*="PremiumMobile"]');
+            analysis += `Mobile Navigation: ${mobileNavs.length} found<br>`;
+            
+            // Check for welcome components (should be 0)
+            const welcomeComponents = doc.querySelectorAll('[class*="Welcome"], [class*="welcome"]');
+            analysis += `Welcome Components: ${welcomeComponents.length} found<br>`;
+            if (welcomeComponents.length > 0) {
+                duplicatesFound++;
+                analysis += `⚠️ UNEXPECTED: Found ${welcomeComponents.length} welcome components (should be 0)<br>`;
+            }
+            
+            // Check for headers
+            const headers = doc.querySelectorAll('header, [role="banner"]');
+            analysis += `Headers: ${headers.length} found<br>`;
+            if (headers.length > 1) {
+                duplicatesFound++;
+                analysis += `⚠️ DUPLICATE: Found ${headers.length} headers (should be 1)<br>`;
+            }
+            
+            return { analysis, found: duplicatesFound };
+        }
+
+        function checkNavigation(doc, pageName) {
+            const navElements = doc.querySelectorAll('nav, [role="navigation"]');
+            const dropdowns = doc.querySelectorAll('[class*="dropdown"], [aria-haspopup="true"]');
+            const menuButtons = doc.querySelectorAll('[aria-label*="menu"], [class*="menu-button"]');
+            
+            return `Navigation elements: ${navElements.length}, Dropdowns: ${dropdowns.length}, Menu buttons: ${menuButtons.length}`;
+        }
+
+        function checkEssentialElements(doc, pageName) {
+            const elements = {
+                'Portuguese Content': doc.querySelector('[lang="pt"], [class*="portuguese"], [class*="Portuguese"]') !== null,
+                'LusoTown Branding': doc.querySelector('[class*="LusoTown"], [alt*="LusoTown"]') !== null,
+                'Main Content': doc.querySelector('main, [role="main"]') !== null,
+                'Footer': doc.querySelector('footer, [role="contentinfo"]') !== null
+            };
+            
+            return Object.entries(elements)
+                .map(([name, present]) => `${present ? '✅' : '❌'} ${name}`)
+                .join('<br>');
+        }
+
+        async function runAllTests() {
+            const runBtn = document.getElementById('runTestsBtn');
+            runBtn.disabled = true;
+            runBtn.textContent = '🔄 Testing...';
+            
+            clearResults();
+            
+            addResult(
+                '🚀 Starting Comprehensive Test Suite',
+                `Testing ${PAGES_TO_TEST.length} pages for:<br>
+                • Duplicate components<br>
+                • Navigation functionality<br>
+                • Console errors<br>
+                • Portuguese community features<br>
+                • Essential page elements`,
+                'info'
+            );
+            
+            for (let i = 0; i < PAGES_TO_TEST.length; i++) {
+                const page = PAGES_TO_TEST[i];
+                await testPage(page);
+                
+                // Small delay between tests
+                if (i < PAGES_TO_TEST.length - 1) {
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                }
+            }
+            
+            // Generate summary
+            const successRate = testStats.total > 0 ? ((testStats.success / testStats.total) * 100).toFixed(1) : 0;
+            const summaryContent = `
+                <strong>📊 Test Results Summary:</strong><br>
+                • Pages Tested: ${testStats.total}<br>
+                • Successful Loads: ${testStats.success} (${successRate}%)<br>
+                • Errors: ${testStats.errors}<br>
+                • Duplicate Components: ${testStats.duplicates}<br><br>
+                
+                <strong>🎯 Status:</strong> ${testStats.errors === 0 && testStats.duplicates === 0 ? '✅ HEALTHY' : '⚠️ ISSUES DETECTED'}<br><br>
+                
+                <strong>🔄 Next Steps:</strong><br>
+                ${testStats.errors > 0 ? '• Fix page loading errors<br>' : ''}
+                ${testStats.duplicates > 0 ? '• Remove duplicate components<br>' : ''}
+                ${testStats.errors === 0 && testStats.duplicates === 0 ? '• No immediate action required<br>' : ''}
+            `;
+            
+            addResult(
+                '📊 Test Suite Complete',
+                summaryContent,
+                testStats.errors === 0 && testStats.duplicates === 0 ? 'success' : 'warning'
+            );
+            
+            runBtn.disabled = false;
+            runBtn.textContent = '🔍 Run All Tests';
+        }
+
+        async function testSinglePage() {
+            const testBtn = document.getElementById('testSingleBtn');
+            testBtn.disabled = true;
+            testBtn.textContent = '🔄 Testing...';
+            
+            // Test current page or default to homepage
+            const currentPage = { name: 'Current Page', path: window.location.pathname };
+            await testPage(currentPage);
+            
+            testBtn.disabled = false;
+            testBtn.textContent = '🔍 Test Current Page';
+        }
+
+        // Auto-update stats display
+        setInterval(updateStats, 1000);
+        
+        // Initialize
+        updateStats();
+        
+        console.log('🔍 LusoTown Browser Test Tool Loaded');
+        console.log('Click "Run All Tests" to start comprehensive testing');
+    </script>
+</body>
+</html>

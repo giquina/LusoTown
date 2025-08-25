@@ -40,7 +40,7 @@ export default function USA_PortugueseCommunity({
         name: 'New York Metro',
         population: 350000,
         neighborhoods: ['Newark NJ', 'Elizabeth NJ', 'Astoria Queens', 'Yonkers NY'],
-        culturalCenters: ['Portuguese Sports Club', 'Casa do Benfica NY', 'Portuguese American Federation'],
+        culturalCenters: ['Lusophone Sports Club', 'Casa do Benfica NY', 'Lusophone American Federation'],
         primaryOrigins: ['Azores', 'Mainland Portugal', 'Madeira'],
         establishedSince: 1870
       },
@@ -48,7 +48,7 @@ export default function USA_PortugueseCommunity({
         name: 'Greater Boston',
         population: 280000,
         neighborhoods: ['Fall River MA', 'New Bedford MA', 'Cambridge MA', 'Somerville MA'],
-        culturalCenters: ['Portuguese American Civic League', 'Club Sport Maritimo', 'Portuguese Cultural Center'],
+        culturalCenters: ['Lusophone American Civic League', 'Club Sport Maritimo', 'Lusophone Cultural Center'],
         primaryOrigins: ['Azores', 'Cape Verde', 'Mainland Portugal'],
         establishedSince: 1850
       },
@@ -56,7 +56,7 @@ export default function USA_PortugueseCommunity({
         name: 'San Francisco Bay Area',
         population: 140000,
         neighborhoods: ['San Jose CA', 'Oakland CA', 'Fremont CA', 'Santa Clara CA'],
-        culturalCenters: ['Portuguese Cultural Center San Jose', 'Club Lusitano', 'Portuguese American Cultural Society'],
+        culturalCenters: ['Lusophone Cultural Center San Jose', 'Club Lusitano', 'Lusophone American Cultural Society'],
         primaryOrigins: ['Azores', 'Mainland Portugal'],
         establishedSince: 1860
       },
@@ -64,18 +64,18 @@ export default function USA_PortugueseCommunity({
         name: 'South Florida',
         population: 95000,
         neighborhoods: ['Miami FL', 'Fort Lauderdale FL', 'West Palm Beach FL'],
-        culturalCenters: ['Portuguese American Club Miami', 'Casa de Portugal Florida'],
+        culturalCenters: ['Lusophone American Club Miami', 'Casa de Portugal Florida'],
         primaryOrigins: ['Brazil (Portuguese heritage)', 'Mainland Portugal', 'Azores'],
         establishedSince: 1960
       }
     }
   }
 
-  // Mock USA Portuguese Events
+  // Mock USA Lusophone Events
   const usaPortugueseEvents: GlobalPortugueseEvent[] = [
     {
       id: 'fall-river-portuguese-festival',
-      title: 'Fall River Portuguese Festival',
+      title: 'Fall River Lusophone Festival',
       description: 'The largest Portuguese festival in New England, celebrating Azorean culture with traditional music, food, and religious processions',
       date: new Date('2025-08-08'),
       location: {
@@ -87,7 +87,7 @@ export default function USA_PortugueseCommunity({
       type: 'cultural',
       organizer: {
         id: 'fall-river-committee',
-        name: 'Fall River Portuguese Festival Committee',
+        name: 'Fall River Lusophone Festival Committee',
         type: 'cultural',
         contact: 'info@fallriverportuguesefest.com',
         services: ['Cultural events', 'Community organizing'],
@@ -104,19 +104,19 @@ export default function USA_PortugueseCommunity({
     },
     {
       id: 'portuguese-heritage-month-ny',
-      title: 'Portuguese Heritage Month Celebration NYC',
+      title: 'Lusophone Heritage Month Celebration NYC',
       description: 'Month-long celebration featuring Portuguese culture, history, and contributions to American society',
       date: new Date('2025-06-15'),
       location: {
         country: 'usa',
         city: 'New York',
-        venue: 'Portuguese Sports Club',
+        venue: 'Lusophone Sports Club',
         address: '9 Miller St, Newark, NJ'
       },
       type: 'cultural',
       organizer: {
         id: 'portuguese-american-federation',
-        name: 'Portuguese American Federation',
+        name: 'Lusophone American Federation',
         type: 'cultural',
         contact: 'info@paf-ny.org',
         services: ['Cultural preservation', 'Community advocacy'],
@@ -127,14 +127,14 @@ export default function USA_PortugueseCommunity({
       cost: { amount: 15, currency: 'USD' },
       registrationRequired: true,
       language: 'bilingual',
-      culturalSignificance: 'Promotes Portuguese-American cultural identity and historical awareness',
+      culturalSignificance: 'Promotes Lusophone-American cultural identity and historical awareness',
       internationalParticipation: false,
       streamingAvailable: true
     },
     {
       id: 'festa-do-senhor-santo-cristo',
       title: 'Festa do Senhor Santo Cristo dos Milagres',
-      description: 'Traditional Azorean religious festival celebrated by Portuguese-Americans across the East Coast',
+      description: 'Traditional Azorean religious festival celebrated by Lusophone-Americans across the East Coast',
       date: new Date('2025-05-18'),
       location: {
         country: 'usa',
@@ -162,7 +162,7 @@ export default function USA_PortugueseCommunity({
     }
   ]
 
-  // Mock USA Portuguese Businesses
+  // Mock USA Lusophone Businesses
   const usaPortugueseBusinesses: PortugueseBusinessDirectory[] = [
     {
       id: 'marios-pastry-shop',
@@ -174,7 +174,7 @@ export default function USA_PortugueseCommunity({
         city: 'Boston',
         address: '105 Prince St, North End, Boston, MA'
       },
-      services: ['Portuguese pastries', 'Custom cakes', 'Catering'],
+      services: ['Lusophone pastries', 'Custom cakes', 'Catering'],
       targetMarket: 'both',
       establishedYear: 1968,
       employeeCount: 8,
@@ -182,7 +182,7 @@ export default function USA_PortugueseCommunity({
       communityInvolvement: ['Portuguese festival sponsor', 'Community event catering'],
       internationalShipping: true,
       supportedCurrencies: ['USD'],
-      socialImpact: ['Preserving Portuguese culinary traditions', 'Supporting local Portuguese families']
+      socialImpact: ['Preserving Lusophone culinary traditions', 'Supporting local Lusophone families']
     },
     {
       id: 'azorean-construction',
@@ -198,11 +198,11 @@ export default function USA_PortugueseCommunity({
       targetMarket: 'general-public',
       establishedYear: 1985,
       employeeCount: 25,
-      portugueseSpecialties: ['Traditional stone work', 'Portuguese-style architecture'],
-      communityInvolvement: ['Portuguese church renovations', 'Community center construction'],
+      portugueseSpecialties: ['Traditional stone work', 'Lusophone-style architecture'],
+      communityInvolvement: ['Lusophone church renovations', 'Community center construction'],
       internationalShipping: false,
       supportedCurrencies: ['USD'],
-      socialImpact: ['Employing Portuguese immigrants', 'Preserving architectural heritage']
+      socialImpact: ['Employing Lusophone immigrants', 'Preserving architectural heritage']
     },
     {
       id: 'lusitano-insurance',
@@ -222,11 +222,11 @@ export default function USA_PortugueseCommunity({
       communityInvolvement: ['Portuguese festival sponsor', 'Community financial literacy programs'],
       internationalShipping: false,
       supportedCurrencies: ['USD'],
-      socialImpact: ['Financial security for Portuguese families', 'Bilingual customer service']
+      socialImpact: ['Financial security for Lusophone families', 'Bilingual customer service']
     }
   ]
 
-  // Mock USA Portuguese Professionals
+  // Mock USA Lusophone Professionals
   const usaPortugueseProfessionals: PortugueseProfessional[] = [
     {
       id: 'dr-carlos-silva-cardiologist',
@@ -234,14 +234,14 @@ export default function USA_PortugueseCommunity({
       profession: 'Cardiologist',
       industry: 'Healthcare',
       location: { country: 'usa', city: 'Boston' },
-      expertise: ['Cardiology', 'Portuguese patient care', 'Medical interpretation'],
+      expertise: ['Cardiology', 'Lusophone patient care', 'Medical interpretation'],
       services: ['Cardiac consultations', 'Medical screenings', 'Community health education'],
       availableForMentoring: true,
       languagePreference: 'bilingual',
-      networkingInterests: ['Portuguese healthcare initiatives', 'Community health programs'],
+      networkingInterests: ['Lusophone healthcare initiatives', 'Community health programs'],
       businessType: 'corporate',
       yearsExperience: 22,
-      culturalSpecialization: ['Portuguese healthcare traditions', 'Immigrant health advocacy']
+      culturalSpecialization: ['Lusophone healthcare traditions', 'Immigrant health advocacy']
     },
     {
       id: 'maria-fernandes-lawyer',
@@ -249,14 +249,14 @@ export default function USA_PortugueseCommunity({
       profession: 'Immigration Attorney',
       industry: 'Legal Services',
       location: { country: 'usa', city: 'New York' },
-      expertise: ['Immigration law', 'Family reunification', 'Portuguese citizenship'],
+      expertise: ['Immigration law', 'Family reunification', 'Lusophone citizenship'],
       services: ['Legal consultations', 'Document preparation', 'Court representation'],
       availableForMentoring: true,
       languagePreference: 'bilingual',
-      networkingInterests: ['Portuguese legal advocacy', 'Immigration reform'],
+      networkingInterests: ['Lusophone legal advocacy', 'Immigration reform'],
       businessType: 'company',
       yearsExperience: 18,
-      culturalSpecialization: ['Portuguese immigration history', 'Portuguese legal documents']
+      culturalSpecialization: ['Lusophone immigration history', 'Lusophone legal documents']
     },
     {
       id: 'antonio-costa-chef',
@@ -268,18 +268,18 @@ export default function USA_PortugueseCommunity({
       services: ['Restaurant consulting', 'Cooking classes', 'Menu development'],
       availableForMentoring: true,
       languagePreference: 'bilingual',
-      networkingInterests: ['Portuguese culinary preservation', 'Food entrepreneurship'],
+      networkingInterests: ['Lusophone culinary preservation', 'Food entrepreneurship'],
       businessType: 'company',
       yearsExperience: 25,
-      culturalSpecialization: ['Traditional Portuguese recipes', 'Azorean cuisine', 'Portuguese wine pairing']
+      culturalSpecialization: ['Traditional Lusophone recipes', 'Azorean cuisine', 'Portuguese wine pairing']
     }
   ]
 
-  // Mock Portuguese Organizations in USA
+  // Mock Lusophone Organizations in USA
   const usaPortugueseOrganizations: Organization[] = [
     {
       id: 'portuguese-american-federation',
-      name: 'Portuguese American Federation',
+      name: 'Lusophone American Federation',
       type: 'cultural',
       website: 'https://paf-usa.org',
       contact: 'info@paf-usa.org',
@@ -299,7 +299,7 @@ export default function USA_PortugueseCommunity({
     },
     {
       id: 'portuguese-chamber-commerce',
-      name: 'Portuguese-American Chamber of Commerce',
+      name: 'Lusophone-American Chamber of Commerce',
       type: 'professional',
       website: 'https://pacc-usa.com',
       contact: 'info@pacc-usa.com',
@@ -352,16 +352,16 @@ export default function USA_PortugueseCommunity({
         <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-4 flex items-center justify-center">
             <span className="text-4xl mr-3">🇺🇸</span>
-            Portuguese Americans
+            Lusophone Americans
             <span className="text-4xl ml-3">🇵🇹</span>
           </h2>
           <p className="text-xl text-gray-700 mb-6">
-            Over 1.5 million Portuguese Americans preserve their rich heritage across the United States
+            Over 1.5 million Lusophone Americans preserve their rich heritage across the United States
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="bg-blue-50 rounded-lg p-4">
               <div className="text-2xl font-bold text-blue-600">{usaCommunityData.totalPopulation.toLocaleString()}</div>
-              <div className="text-sm text-blue-800">Portuguese Americans</div>
+              <div className="text-sm text-blue-800">Lusophone Americans</div>
             </div>
             <div className="bg-green-50 rounded-lg p-4">
               <div className="text-2xl font-bold text-green-600">155</div>
@@ -381,7 +381,7 @@ export default function USA_PortugueseCommunity({
 
       {/* Major Cities */}
       <div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-6">Major Portuguese American Cities</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-6">Major Lusophone American Cities</h3>
         <div className="grid md:grid-cols-2 gap-6">
           {Object.entries(usaCommunityData.majorCities).map(([key, city]) => (
             <div key={key} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
@@ -433,7 +433,7 @@ export default function USA_PortugueseCommunity({
 
   const EventsSection = () => (
     <div className="space-y-6">
-      <h3 className="text-2xl font-bold text-gray-900">Portuguese American Events</h3>
+      <h3 className="text-2xl font-bold text-gray-900">Lusophone American Events</h3>
       <div className="grid lg:grid-cols-2 gap-6">
         {usaPortugueseEvents.map(event => (
           <div key={event.id} className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
@@ -498,7 +498,7 @@ export default function USA_PortugueseCommunity({
 
   const BusinessDirectory = () => (
     <div className="space-y-6">
-      <h3 className="text-2xl font-bold text-gray-900">Portuguese American Businesses</h3>
+      <h3 className="text-2xl font-bold text-gray-900">Lusophone American Businesses</h3>
       <div className="grid lg:grid-cols-2 gap-6">
         {usaPortugueseBusinesses.map(business => (
           <div key={business.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
@@ -523,7 +523,7 @@ export default function USA_PortugueseCommunity({
             </div>
 
             <div className="mb-4">
-              <p className="text-sm text-gray-600 mb-2">Portuguese Specialties:</p>
+              <p className="text-sm text-gray-600 mb-2">Lusophone Specialties:</p>
               <div className="flex flex-wrap gap-2">
                 {business.portugueseSpecialties.map((specialty, index) => (
                   <span key={index} className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">
@@ -561,7 +561,7 @@ export default function USA_PortugueseCommunity({
 
   const ProfessionalsSection = () => (
     <div className="space-y-6">
-      <h3 className="text-2xl font-bold text-gray-900">Portuguese American Professionals</h3>
+      <h3 className="text-2xl font-bold text-gray-900">Lusophone American Professionals</h3>
       <div className="grid lg:grid-cols-3 gap-6">
         {usaPortugueseProfessionals.map(professional => (
           <div key={professional.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
@@ -617,7 +617,7 @@ export default function USA_PortugueseCommunity({
 
   const OrganizationsSection = () => (
     <div className="space-y-6">
-      <h3 className="text-2xl font-bold text-gray-900">Portuguese American Organizations</h3>
+      <h3 className="text-2xl font-bold text-gray-900">Lusophone American Organizations</h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {usaPortugueseOrganizations.map(org => (
           <div key={org.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
@@ -676,11 +676,11 @@ export default function USA_PortugueseCommunity({
       <div className="text-center">
         <h1 className="text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center">
           <span className="text-5xl mr-4">🇺🇸</span>
-          Portuguese American Community
+          Lusophone American Community
           <span className="text-5xl ml-4">🇵🇹</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-          Discover the vibrant Portuguese American community across the United States - 
+          Discover the vibrant Lusophone American community across the United States - 
           from the Azorean traditions of New England to the growing communities of California and Florida
         </p>
       </div>

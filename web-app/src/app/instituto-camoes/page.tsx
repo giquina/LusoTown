@@ -77,7 +77,7 @@ interface EducationalResource {
 const INSTITUTO_CAMOES_PROGRAMS: InstitutoCamoesProgram[] = [
   {
     id: 'prog-portuguese-adults',
-    name: 'Portuguese for Adults - Complete Course',
+    name: 'Lusophone for Adults - Complete Course',
     namePortuguese: 'Português para Adultos - Curso Completo',
     description: 'Comprehensive Portuguese language course for adult learners, from complete beginners to advanced speakers. Aligned with the Common European Framework of Reference for Languages (CEFR).',
     descriptionPortuguese: 'Curso abrangente de língua portuguesa para adultos, desde iniciantes completos até falantes avançados. Alinhado com o Quadro Europeu Comum de Referência para as Línguas (QECR).',
@@ -92,12 +92,12 @@ const INSTITUTO_CAMOES_PROGRAMS: InstitutoCamoesProgram[] = [
       'Access to digital learning platform',
       'Cultural immersion activities',
       'One-on-one tutoring sessions',
-      'Portuguese citizenship preparation'
+      'Lusophone citizenship preparation'
     ]
   },
   {
     id: 'prog-business-portuguese',
-    name: 'Business Portuguese Certificate',
+    name: 'Business Lusophone Certificate',
     namePortuguese: 'Certificado de Português Empresarial',
     description: 'Specialized Portuguese language course for business professionals working with Portuguese-speaking markets. Focus on business communication, formal writing, and professional networking.',
     descriptionPortuguese: 'Curso especializado de língua portuguesa para profissionais que trabalham com mercados lusófonos. Foco em comunicação empresarial, escrita formal e networking profissional.',
@@ -117,7 +117,7 @@ const INSTITUTO_CAMOES_PROGRAMS: InstitutoCamoesProgram[] = [
   },
   {
     id: 'prog-heritage-weekend',
-    name: 'Portuguese Heritage Weekend School',
+    name: 'Lusophone Heritage Weekend School',
     namePortuguese: 'Escola de Fim de Semana de Património Português',
     description: 'Weekend Portuguese language and culture classes for children of Portuguese heritage. Comprehensive program covering language, history, traditions, and cultural identity.',
     descriptionPortuguese: 'Aulas de língua e cultura portuguesa aos fins de semana para crianças de herança portuguesa. Programa abrangente cobrindo língua, história, tradições e identidade cultural.',
@@ -129,15 +129,15 @@ const INSTITUTO_CAMOES_PROGRAMS: InstitutoCamoesProgram[] = [
     nextStartDate: '2024-09-07',
     benefits: [
       'Cultural identity preservation',
-      'Portuguese citizenship qualification preparation',
+      'Lusophone citizenship qualification preparation',
       'Traditional Portuguese celebrations participation',
       'Peer community building',
-      'Portuguese family integration support'
+      'Lusophone family integration support'
     ]
   },
   {
     id: 'prog-teacher-training',
-    name: 'Portuguese Teacher Training & Certification',
+    name: 'Lusophone Teacher Training & Certification',
     namePortuguese: 'Formação e Certificação de Professores de Português',
     description: 'Professional development program for Portuguese language teachers. Covers modern teaching methodologies, cultural competency, and official certification pathways.',
     descriptionPortuguese: 'Programa de desenvolvimento profissional para professores de língua portuguesa. Cobre metodologias de ensino modernas, competência cultural e caminhos de certificação oficial.',
@@ -157,7 +157,7 @@ const INSTITUTO_CAMOES_PROGRAMS: InstitutoCamoesProgram[] = [
   },
   {
     id: 'prog-citizenship-preparation',
-    name: 'Portuguese Citizenship Language Test Preparation',
+    name: 'Lusophone Citizenship Language Test Preparation',
     namePortuguese: 'Preparação para Teste de Língua para Cidadania Portuguesa',
     description: 'Intensive preparation course for the Portuguese language proficiency test required for citizenship applications. Covers all aspects of the official examination.',
     descriptionPortuguese: 'Curso intensivo de preparação para o teste de proficiência em língua portuguesa exigido para pedidos de cidadania. Cobre todos os aspectos do exame oficial.',
@@ -191,7 +191,7 @@ const CULTURAL_EVENTS: CulturalEvent[] = [
     price: 0,
     capacity: 120,
     registrationLink: buildPortugueseResourceUrl('symposium'),
-    culturalSignificance: 'Celebrates Portugal\'s greatest literary figure and reinforces Portuguese cultural identity in the diaspora.'
+    culturalSignificance: 'Celebrates Portugal\'s greatest literary figure and reinforces Lusophone cultural identity in the diaspora.'
   },
   {
     id: 'event-fado-masterclass',
@@ -210,9 +210,9 @@ const CULTURAL_EVENTS: CulturalEvent[] = [
   },
   {
     id: 'event-portuguese-cinema',
-    title: 'Contemporary Portuguese Cinema Festival',
+    title: 'Contemporary Lusophone Cinema Festival',
     titlePortuguese: 'Festival de Cinema Português Contemporâneo',
-    description: 'Three-day festival showcasing the best of contemporary Portuguese filmmaking, with director Q&As and cultural discussions.',
+    description: 'Three-day festival showcasing the best of contemporary Lusophone filmmaking, with director Q&As and cultural discussions.',
     descriptionPortuguese: 'Festival de três dias apresentando o melhor do cinema português contemporâneo, com sessões de perguntas e respostas com diretores e discussões culturais.',
     date: '2024-09-20',
     time: '18:00',
@@ -221,13 +221,13 @@ const CULTURAL_EVENTS: CulturalEvent[] = [
     price: 12,
     capacity: 80,
     registrationLink: buildPortugueseResourceUrl('cinemaFestival'),
-    culturalSignificance: 'Promotes Portuguese artistic expression and cultural dialogue through contemporary visual narratives.'
+    culturalSignificance: 'Promotes Lusophone artistic expression and cultural dialogue through contemporary visual narratives.'
   },
   {
     id: 'event-heritage-preservation',
-    title: 'Portuguese Heritage Preservation Workshop',
+    title: 'Lusophone Heritage Preservation Workshop',
     titlePortuguese: 'Workshop de Preservação do Património Português',
-    description: 'Hands-on workshop teaching traditional Portuguese crafts, cooking techniques, and cultural preservation methods.',
+    description: 'Hands-on workshop teaching traditional Lusophone crafts, cooking techniques, and cultural preservation methods.',
     descriptionPortuguese: 'Workshop prático ensinando artesanato tradicional português, técnicas culinárias e métodos de preservação cultural.',
     date: '2024-08-03',
     time: '10:00',
@@ -236,7 +236,7 @@ const CULTURAL_EVENTS: CulturalEvent[] = [
     price: 35,
     capacity: 25,
     registrationLink: buildPortugueseResourceUrl('heritageWorkshop'),
-    culturalSignificance: 'Ensures traditional Portuguese cultural practices are maintained and transmitted to future generations.'
+    culturalSignificance: 'Ensures traditional Lusophone cultural practices are maintained and transmitted to future generations.'
   },
   {
     id: 'event-lusophone-literature',
@@ -251,16 +251,16 @@ const CULTURAL_EVENTS: CulturalEvent[] = [
     price: 15,
     capacity: 60,
     registrationLink: buildPortugueseResourceUrl('lusophoneLiterature'),
-    culturalSignificance: 'Celebrates the diversity and richness of Portuguese-language literature across the global Portuguese-speaking community.'
+    culturalSignificance: 'Celebrates the diversity and richness of Lusophone-language literature across the global Portuguese-speaking community.'
   }
 ]
 
 const EDUCATIONAL_RESOURCES: EducationalResource[] = [
   {
     id: 'resource-digital-library',
-    title: 'Digital Portuguese Library Access',
+    title: 'Digital Lusophone Library Access',
     titlePortuguese: 'Acesso à Biblioteca Digital Portuguesa',
-    description: 'Comprehensive digital library with over 10,000 Portuguese books, academic papers, historical documents, and multimedia resources.',
+    description: 'Comprehensive digital library with over 10,000 Lusophone books, academic papers, historical documents, and multimedia resources.',
     descriptionPortuguese: 'Biblioteca digital abrangente com mais de 10.000 livros portugueses, artigos académicos, documentos históricos e recursos multimédia.',
     type: 'digital',
     category: 'literature',
@@ -270,9 +270,9 @@ const EDUCATIONAL_RESOURCES: EducationalResource[] = [
   },
   {
     id: 'resource-pronunciation-guide',
-    title: 'Portuguese Pronunciation & Phonetics Guide',
+    title: 'Lusophone Pronunciation & Phonetics Guide',
     titlePortuguese: 'Guia de Pronúncia e Fonética Portuguesa',
-    description: 'Interactive audio guide covering Portuguese pronunciation patterns, regional accents, and phonetic variations across Portuguese-speaking countries.',
+    description: 'Interactive audio guide covering Lusophone pronunciation patterns, regional accents, and phonetic variations across Portuguese-speaking countries.',
     descriptionPortuguese: 'Guia áudio interativo cobrindo padrões de pronúncia portuguesa, sotaques regionais e variações fonéticas em países lusófonos.',
     type: 'audio',
     category: 'language',
@@ -282,9 +282,9 @@ const EDUCATIONAL_RESOURCES: EducationalResource[] = [
   },
   {
     id: 'resource-business-toolkit',
-    title: 'Portuguese Business Communication Toolkit',
+    title: 'Lusophone Business Communication Toolkit',
     titlePortuguese: 'Kit de Comunicação Empresarial Portuguesa',
-    description: 'Professional business Portuguese templates, formal letter writing guides, and industry-specific vocabulary for commercial contexts.',
+    description: 'Professional business Lusophone templates, formal letter writing guides, and industry-specific vocabulary for commercial contexts.',
     descriptionPortuguese: 'Modelos de português empresarial profissional, guias de escrita de cartas formais e vocabulário específico da indústria para contextos comerciais.',
     type: 'document',
     category: 'business',
@@ -294,9 +294,9 @@ const EDUCATIONAL_RESOURCES: EducationalResource[] = [
   },
   {
     id: 'resource-cultural-calendar',
-    title: 'Portuguese Cultural Heritage Calendar',
+    title: 'Lusophone Cultural Heritage Calendar',
     titlePortuguese: 'Calendário do Património Cultural Português',
-    description: 'Annual calendar featuring Portuguese cultural celebrations, historical commemorations, and traditional festivals across all Portuguese-speaking nations.',
+    description: 'Annual calendar featuring Lusophone cultural celebrations, historical commemorations, and traditional festivals across all Portuguese-speaking nations.',
     descriptionPortuguese: 'Calendário anual com celebrações culturais portuguesas, comemorações históricas e festivais tradicionais em todas as nações lusófonas.',
     type: 'digital',
     category: 'culture',
@@ -306,9 +306,9 @@ const EDUCATIONAL_RESOURCES: EducationalResource[] = [
   },
   {
     id: 'resource-citizenship-guide',
-    title: 'Portuguese Citizenship Application Guide',
+    title: 'Lusophone Citizenship Application Guide',
     titlePortuguese: 'Guia de Candidatura à Cidadania Portuguesa',
-    description: 'Comprehensive guide covering all aspects of Portuguese citizenship applications, including legal requirements, documentation, and language proficiency standards.',
+    description: 'Comprehensive guide covering all aspects of Lusophone citizenship applications, including legal requirements, documentation, and language proficiency standards.',
     descriptionPortuguese: 'Guia abrangente cobrindo todos os aspectos dos pedidos de cidadania portuguesa, incluindo requisitos legais, documentação e padrões de proficiência linguística.',
     type: 'document',
     category: 'language',
@@ -346,7 +346,7 @@ export default function InstitutoCamoes() {
         pt: 'Reconhecimento Oficial como Principal Plataforma da Comunidade de Falantes de Português no Reino Unido'
       },
       'partnership.description': {
-        en: 'LusoTown London has been officially recognized by Instituto Camões as the preferred digital platform for Portuguese cultural promotion and community engagement in the United Kingdom. This strategic partnership establishes LusoTown as the authoritative hub for Portuguese language, culture, and community services.',
+        en: 'LusoTown London has been officially recognized by Instituto Camões as the preferred digital platform for Lusophone cultural promotion and community engagement in the United Kingdom. This strategic partnership establishes LusoTown as the authoritative hub for Portuguese language, culture, and community services.',
         pt: 'A LusoTown London foi oficialmente reconhecida pelo Instituto Camões como a plataforma digital preferida para promoção cultural portuguesa e envolvimento comunitário no Reino Unido. Esta parceria estratégica estabelece a LusoTown como o centro autorizado para língua, cultura e serviços comunitários portugueses.'
       },
       'benefits.title': { en: 'Exclusive Member Benefits', pt: 'Benefícios Exclusivos para Membros' },
@@ -462,12 +462,12 @@ export default function InstitutoCamoes() {
                       <CheckBadgeIcon className="w-6 h-6 text-primary-600 flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-900">
-                          {language === 'pt' ? 'Reconhecimento Oficial do Governo Português' : 'Official Portuguese Government Recognition'}
+                          {language === 'pt' ? 'Reconhecimento Oficial do Governo Português' : 'Official Lusophone Government Recognition'}
                         </h4>
                         <p className="text-gray-600 text-sm">
                           {language === 'pt' 
                             ? 'Endossado pelo Instituto Camões e pela Embaixada Portuguesa no Reino Unido.'
-                            : 'Endorsed by Instituto Camões and the Portuguese Embassy in the United Kingdom.'}
+                            : 'Endorsed by Instituto Camões and the Lusophone Embassy in the United Kingdom.'}
                         </p>
                       </div>
                     </div>
@@ -520,7 +520,7 @@ export default function InstitutoCamoes() {
                       </div>
                       <div className="flex items-center justify-center gap-2">
                         <UsersIcon className="w-4 h-4" />
-                        <span>{language === 'pt' ? '5,000+ estudantes' : '5,000+ students'}</span>
+                        <span>{language === 'pt' ? '5,000+ estudantes' : 'students'}</span>
                       </div>
                     </div>
                   </div>
@@ -573,7 +573,7 @@ export default function InstitutoCamoes() {
                   <p className="text-gray-700 text-sm mb-3">
                     {language === 'pt' 
                       ? 'Acesso completo à biblioteca digital com 10.000+ recursos portugueses.'
-                      : 'Full access to digital library with 10,000+ Portuguese resources.'}
+                      : 'Full access to digital library with 10,000+ Lusophone resources.'}
                   </p>
                   <span className="inline-block bg-accent-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                     {language === 'pt' ? 'Valor £200/ano' : '£200/year value'}
@@ -836,7 +836,7 @@ export default function InstitutoCamoes() {
           <p className="text-lg mb-8 opacity-90 max-w-3xl mx-auto">
             {language === 'pt' 
               ? 'Torne-se membro da LusoTown e aceda a todos os benefícios exclusivos da nossa parceria oficial com o Instituto Camões. A única plataforma portuguesa oficialmente reconhecida no Reino Unido.'
-              : 'Become a LusoTown member and access all exclusive benefits from our official partnership with Instituto Camões. The only officially recognized Portuguese platform in the United Kingdom.'}
+              : 'Become a LusoTown member and access all exclusive benefits from our official partnership with Instituto Camões. The only officially recognized Lusophone platform in the United Kingdom.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <a

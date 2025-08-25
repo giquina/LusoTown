@@ -53,7 +53,7 @@ export class EliteErrorBoundary extends React.Component<EliteErrorBoundaryProps,
     
     this.props.onError?.(error, errorInfo)
     
-    // Log to analytics with Portuguese cultural context
+    // Log to analytics with Lusophone cultural context
     if (typeof window !== 'undefined' && 'gtag' in window) {
       (window as any).gtag('event', 'exception', {
         description: error.toString(),

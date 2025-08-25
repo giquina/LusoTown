@@ -8,7 +8,7 @@
  * - Environment variable validation
  * - Secure defaults that fail safe
  * - Runtime security checks
- * - Portuguese community specific validation
+ * - Lusophone community specific validation
  */
 
 // Security validation functions

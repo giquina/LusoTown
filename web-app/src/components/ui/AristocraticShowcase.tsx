@@ -79,7 +79,7 @@ export default function AristocraticShowcase({
         </LuxuryText>
 
         <div className="flex justify-center gap-3 mt-6">
-          <LuxuryBadge variant="portuguese" size="lg">🇵🇹 Portuguese Heritage</LuxuryBadge>
+          <LuxuryBadge variant="portuguese" size="lg">🇵🇹 Lusophone Heritage</LuxuryBadge>
           <LuxuryBadge variant="premium" size="lg">👑 Elite Design</LuxuryBadge>
           <LuxuryBadge variant="success" size="lg">✨ Sophisticated</LuxuryBadge>
         </div>
@@ -126,7 +126,7 @@ export default function AristocraticShowcase({
                 hapticFeedback={true}
                 fullWidth
               >
-                Portuguese Heritage
+                Lusophone Heritage
               </EliteButton>
               <EliteButton
                 variant="ghost"
@@ -257,7 +257,7 @@ export default function AristocraticShowcase({
                 sophistication="opulent"
                 culturalAccent={true}
               >
-                Portuguese Aristocracy
+                Lusophone Aristocracy
               </LuxuryHeading>
               <LuxuryText
                 variant="aristocratic"
@@ -354,7 +354,7 @@ export default function AristocraticShowcase({
                 Aristocratic Headings
               </LuxuryHeading>
               <LuxuryText variant="aristocratic" sophistication="refined" culturalAccent={true} className="mt-3">
-                Our aristocratic typography system brings Portuguese cultural sophistication to every text element.
+                Our aristocratic typography system brings Lusophone cultural sophistication to every text element.
               </LuxuryText>
             </div>
             

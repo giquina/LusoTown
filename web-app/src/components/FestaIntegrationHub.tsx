@@ -143,7 +143,7 @@ export default function FestaIntegrationHub() {
       emoji: '🎉',
       color: 'from-red-500 to-orange-500',
       season: 'summer',
-      significance: 'Major Portuguese street festivals celebrating popular saints'
+      significance: 'Major Lusophone street festivals celebrating popular saints'
     },
     {
       key: 'festa_junina',
@@ -152,7 +152,7 @@ export default function FestaIntegrationHub() {
       emoji: '🌽',
       color: 'from-yellow-500 to-orange-500',
       season: 'summer',
-      significance: 'Brazilian-Portuguese countryside celebrations'
+      significance: 'Brazilian-Lusophone countryside celebrations'
     },
     {
       key: 'carnaval',
@@ -179,7 +179,7 @@ export default function FestaIntegrationHub() {
       emoji: '🏟️',
       color: 'from-green-500 to-blue-500',
       season: 'summer',
-      significance: 'Traditional Portuguese village square celebrations'
+      significance: 'Traditional Lusophone village square celebrations'
     },
     {
       key: 'marchas',
@@ -199,7 +199,7 @@ export default function FestaIntegrationHub() {
         id: '1',
         nameEn: 'London Santos Populares 2025',
         namePt: 'Santos Populares Londres 2025',
-        descriptionEn: 'Authentic Portuguese street festival celebrating Saint Anthony with grilled sardines, traditional music, and community spirit',
+        descriptionEn: 'Authentic Lusophone street festival celebrating Saint Anthony with grilled sardines, traditional music, and community spirit',
         descriptionPt: 'Autêntico festival de rua português celebrando Santo António com sardinhas grelhadas, música tradicional e espírito comunitário',
         festaType: 'santos_populares',
         date: '2025-06-13',
@@ -219,7 +219,7 @@ export default function FestaIntegrationHub() {
         foodOfferings: ['sardines', 'caldo_verde', 'bifana', 'pasteis_nata', 'vinho_verde'],
         culturalActivities: ['traditional_dancing', 'manjerico_gifting', 'folk_singing', 'accordion_workshop'],
         ageGroups: ['families', 'adults', 'seniors'],
-        dresscode: 'Traditional Portuguese or casual',
+        dresscode: 'Traditional Lusophone or casual',
         languagePreference: 'bilingual',
         weatherDependent: true,
         familyFriendly: true,
@@ -231,7 +231,7 @@ export default function FestaIntegrationHub() {
         imageGallery: [],
         videoContent: [],
         socialHashtags: ['#SantosPopularesLondon', '#PortugueseHeritage', '#LusoTownFesta'],
-        partnerVenues: ['Portuguese Cultural Centre', 'Casa do Bacalhau'],
+        partnerVenues: ['Lusophone Cultural Centre', 'Casa do Bacalhau'],
         sponsorships: ['TAP Portugal', 'Super Bock'],
         rating: 4.8,
         reviewCount: 156,
@@ -242,7 +242,7 @@ export default function FestaIntegrationHub() {
         id: '2',
         nameEn: 'Carnaval de Inverno London',
         namePt: 'Carnaval de Inverno Londres',
-        descriptionEn: 'Winter carnival celebration with Portuguese and Brazilian influences, featuring costume parade and samba music',
+        descriptionEn: 'Winter carnival celebration with Lusophone and Brazilian influences, featuring costume parade and samba music',
         descriptionPt: 'Celebração de carnaval de inverno com influências portuguesas e brasileiras, com desfile de fantasias e música de samba',
         festaType: 'carnaval',
         date: '2025-02-28',
@@ -274,7 +274,7 @@ export default function FestaIntegrationHub() {
         imageGallery: [],
         videoContent: [],
         socialHashtags: ['#CarnavalLondon', '#LusoBrazilian', '#LusoTownCarnival'],
-        partnerVenues: ['Brazilian Restaurant Network', 'Portuguese Dance Academy'],
+        partnerVenues: ['Brazilian Restaurant Network', 'Lusophone Dance Academy'],
         sponsorships: ['Sagres Beer', 'Globo TV'],
         rating: 4.6,
         reviewCount: 89,
@@ -299,7 +299,7 @@ export default function FestaIntegrationHub() {
         venue: 'Hackney Community Centre',
         venueConfirmed: true,
         permits: ['Music License', 'Food Handling Permit'],
-        suppliers: ['Traditional Foods Ltd', 'Portuguese Decorations Co'],
+        suppliers: ['Traditional Foods Ltd', 'Lusophone Decorations Co'],
         timeline: [
           { date: '2025-03-01', task: 'Venue booking confirmation', responsible: 'Maria Santos', status: 'completed' },
           { date: '2025-03-15', task: 'Permits application', responsible: 'João Silva', status: 'in_progress' },
@@ -315,7 +315,7 @@ export default function FestaIntegrationHub() {
         currentFunding: 2100,
         updates: [
           { date: '2025-02-15', message: 'Venue confirmed! Hackney Community Centre is perfect for our festa.', author: 'Maria Santos' },
-          { date: '2025-02-20', message: 'Looking for volunteers to help with decorations. Portuguese crafting skills welcome!', author: 'Ana Pereira' }
+          { date: '2025-02-20', message: 'Looking for volunteers to help with decorations. Lusophone crafting skills welcome!', author: 'Ana Pereira' }
         ]
       }
     ])
@@ -327,13 +327,13 @@ export default function FestaIntegrationHub() {
         eventName: 'Santos Populares London 2024',
         mediaType: 'photo',
         title: 'Traditional Sardine Grilling',
-        description: 'Community members grilling sardines in the traditional Portuguese way with rock salt and olive oil',
+        description: 'Community members grilling sardines in the traditional Lusophone way with rock salt and olive oil',
         uploaderId: '1',
         uploaderName: 'Carlos Fernandes',
         fileUrl: '/images/festa/sardines-grilling.jpg',
         thumbnailUrl: '/images/festa/sardines-grilling-thumb.jpg',
         tags: ['sardines', 'grilling', 'traditional', 'community'],
-        culturalContext: 'Sardines are the iconic food of Santos Populares, representing Portuguese coastal heritage',
+        culturalContext: 'Sardines are the iconic food of Santos Populares, representing Lusophone coastal heritage',
         traditionalSignificance: 'Grilling sardines outdoors brings families and communities together during summer festivals',
         location: 'Kennington Park',
         uploadDate: '2024-06-13',
@@ -354,13 +354,13 @@ export default function FestaIntegrationHub() {
         eventName: 'Carnaval London 2024',
         mediaType: 'video',
         title: 'Samba Circle Dance',
-        description: 'Spontaneous samba circle with children and adults celebrating Portuguese-Brazilian carnival traditions',
+        description: 'Spontaneous samba circle with children and adults celebrating Lusophone-Brazilian carnival traditions',
         uploaderId: '2',
         uploaderName: 'Ana Barbosa',
         fileUrl: '/videos/festa/samba-circle.mp4',
         thumbnailUrl: '/images/festa/samba-circle-thumb.jpg',
         tags: ['samba', 'dancing', 'children', 'carnival'],
-        culturalContext: 'Samba dancing connects Portuguese and Brazilian cultural expressions in diaspora celebrations',
+        culturalContext: 'Samba dancing connects Lusophone and Brazilian cultural expressions in diaspora celebrations',
         traditionalSignificance: 'Community samba circles foster intergenerational cultural transmission and joy',
         location: 'Stockwell Community Hall',
         uploadDate: '2024-02-28',
@@ -610,7 +610,7 @@ export default function FestaIntegrationHub() {
             <SparklesIcon className="w-8 h-8 text-white" />
           </div>
           <h2 className="text-3xl font-black text-gray-900 mb-4">
-            {t('festa.planning.title', 'Organize Your Own Portuguese Festa')}
+            {t('festa.planning.title', 'Organize Your Own Lusophone Festa')}
           </h2>
           <p className="text-lg text-gray-700 mb-6">
             {t('festa.planning.subtitle', 'Bring the community together with authentic Portuguese celebrations. We provide tools, guidance, and support every step of the way.')}
@@ -748,7 +748,7 @@ export default function FestaIntegrationHub() {
             {
               icon: MapPinIcon,
               title: t('festa.resources.venues', 'Venue Directory'),
-              desc: t('festa.resources.venues_desc', 'Portuguese-friendly venues across London')
+              desc: t('festa.resources.venues_desc', 'Lusophone-friendly venues across London')
             },
             {
               icon: MusicalNoteIcon,
@@ -952,7 +952,7 @@ export default function FestaIntegrationHub() {
         >
           <FlagIcon className="w-5 h-5 text-green-600" />
           <span className="font-semibold text-green-700">
-            {t('festa.traditions.badge', 'Portuguese Heritage Guide')}
+            {t('festa.traditions.badge', 'Lusophone Heritage Guide')}
           </span>
         </motion.div>
 
@@ -971,7 +971,7 @@ export default function FestaIntegrationHub() {
             name: 'Grilled Sardines',
             namePt: 'Sardinhas Grelhadas',
             tradition: 'santos_populares',
-            significance: 'Symbol of Portuguese coastal heritage and community gathering',
+            significance: 'Symbol of Lusophone coastal heritage and community gathering',
             significancePt: 'Símbolo da herança costeira portuguesa e reunião comunitária',
             howTo: 'Grill over charcoal with coarse salt, serve with roasted peppers and broa bread',
             howToPt: 'Grelhadas no carvão com sal grosso, servir com pimentos assados e broa',
@@ -993,7 +993,7 @@ export default function FestaIntegrationHub() {
             howToPt: 'Apresentar pequenas plantas de manjerico com fitas coloridas e quadras tradicionais',
             regionalVariations: ['Lisbon quadras', 'Different colored ribbons by region'],
             seasonality: 'Given on Saint Anthony\'s Eve (June 12)',
-            londonAdaptation: 'Grow in small pots, available at Portuguese grocery stores',
+            londonAdaptation: 'Grow in small pots, available at Lusophone grocery stores',
             culturalMeaning: 'Expression of love, friendship, and wishes for prosperity',
             materials: ['Basil plant', 'Colorful ribbons', 'Traditional poem card', 'Small decorative pot'],
             difficulty: 'Easy',
@@ -1019,15 +1019,15 @@ export default function FestaIntegrationHub() {
             name: 'Quadrilha Dance',
             namePt: 'Dança da Quadrilha',
             tradition: 'festa_junina',
-            significance: 'Community dance celebrating rural Portuguese-Brazilian traditions',
+            significance: 'Community dance celebrating rural Lusophone-Brazilian traditions',
             significancePt: 'Dança comunitária celebrando tradições rurais português-brasileiras',
-            howTo: 'Form couples in squares, follow caller\'s instructions in Portuguese',
+            howTo: 'Form couples in squares, follow caller\'s instructions in Lusophone',
             howToPt: 'Formar casais em quadrado, seguir instruções do marcador em português',
-            regionalVariations: ['Brazilian quadrilha', 'Portuguese folk variations', 'Modern adaptations'],
+            regionalVariations: ['Brazilian quadrilha', 'Lusophone folk variations', 'Modern adaptations'],
             seasonality: 'June festivals (São João period)',
             londonAdaptation: 'Practice indoors during winter, teach in community centers',
             culturalMeaning: 'Unity, tradition transmission, intergenerational bonding',
-            materials: ['Traditional costumes', 'Portuguese folk music', 'Dance instruction cards'],
+            materials: ['Traditional costumes', 'Lusophone folk music', 'Dance instruction cards'],
             difficulty: 'Moderate',
             authenticity: 88
           }
@@ -1134,7 +1134,7 @@ export default function FestaIntegrationHub() {
       {/* Regional Variations */}
       <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
         <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-          {t('festa.traditions.regional', 'Regional Portuguese Festa Traditions')}
+          {t('festa.traditions.regional', 'Regional Lusophone Festa Traditions')}
         </h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1183,7 +1183,7 @@ export default function FestaIntegrationHub() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6"
           >
-            {t('festa.title', 'Celebrate Portuguese')}
+            {t('festa.title', 'Celebrate Lusophone')}
             <br />
             <span className="bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent">
               {t('festa.festivities', 'Festivities in London')}

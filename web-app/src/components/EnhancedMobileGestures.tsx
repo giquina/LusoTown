@@ -37,7 +37,7 @@ interface EnhancedMobileGesturesProps {
   doubleTapDelay?: number;
   pinchThreshold?: number;
   
-  // Portuguese-specific settings
+  // Lusophone-specific settings
   enablePortugueseGestures?: boolean;
   enableHapticFeedback?: boolean;
   enableVoiceAnnouncements?: boolean;
@@ -448,7 +448,7 @@ export function EnhancedMobileGestures({
   );
 }
 
-// Portuguese Cultural Gesture Patterns Hook
+// Lusophone Cultural Gesture Patterns Hook
 export function usePortugueseGestures() {
   const [gestureHistory, setGestureHistory] = useState<SwipeGesture[]>([]);
   

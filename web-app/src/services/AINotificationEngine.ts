@@ -10,9 +10,9 @@ import { UNIVERSITY_PARTNERSHIPS } from '@/config/universities'
  * 
  * Phase 1 Implementation - Enhanced:
  * ✅ Intelligent timing optimization based on Portuguese-speaking community behavior patterns
- * ✅ Cultural personalization engine for Portuguese regions (Minho, Porto, Lisboa, Azores)
+ * ✅ Cultural personalization engine for Lusophone regions (Minho, Porto, Lisboa, Azores)
  * ✅ Engagement prediction AI using machine learning algorithms
- * ✅ Dynamic content generation with Portuguese cultural context
+ * ✅ Dynamic content generation with Lusophone cultural context
  * ✅ A/B testing framework for continuous optimization
  * ✅ Real-time analytics and performance monitoring
  * ✅ Bilingual content generation (EN/PT)
@@ -162,7 +162,7 @@ export class SmartNotificationEngine {
   private totalStudents: number = 2150
   private universityPartnerships: number = 8
 
-  // Portuguese cultural regions with specific personalization rules
+  // Lusophone cultural regions with specific personalization rules
   private culturalRules: CulturalPersonalizationRules[] = [
     {
       region: 'norte',
@@ -249,19 +249,19 @@ export class SmartNotificationEngine {
       content_variations: {
         formal: {
           title: 'Authentic Fado Performance Tonight',
-          message: 'Join us for an evening of traditional Portuguese fado music featuring renowned fadistas.',
+          message: 'Join us for an evening of traditional Lusophone fado music featuring renowned fadistas.',
           title_pt: 'Espetáculo de Fado Autêntico Esta Noite',
           message_pt: 'Junte-se a nós para uma noite de fado tradicional português com fadistas renomados.'
         },
         casual: {
           title: 'Fado Night - Feel the Saudade! 🎵',
-          message: "Tonight's fado performance will touch your Portuguese soul. Don't miss this authentic experience!",
+          message: "Tonight's fado performance will touch your Lusophone soul. Don't miss this authentic experience!",
           title_pt: 'Noite de Fado - Sente a Saudade! 🎵',
           message_pt: 'O fado de hoje vai tocar a tua alma portuguesa. Não percas esta experiência autêntica!'
         },
         friendly: {
-          title: 'Your Portuguese Heart is Calling! 💙',
-          message: 'Come feel the saudade with fellow Portuguese souls at tonight\'s intimate fado session.',
+          title: 'Your Lusophone Heart is Calling! 💙',
+          message: 'Come feel the saudade with fellow Lusophone souls at tonight\'s intimate fado session.',
           title_pt: 'O Teu Coração Português Está a Chamar! 💙',
           message_pt: 'Vem sentir a saudade com outras almas portuguesas na sessão intimista de fado de hoje.'
         }
@@ -281,19 +281,19 @@ export class SmartNotificationEngine {
       content_variations: {
         formal: {
           title: 'LusoTown Professional Networking Event',
-          message: 'Connect with successful Portuguese entrepreneurs and business leaders in London.',
+          message: 'Connect with successful Lusophone entrepreneurs and business leaders in London.',
           title_pt: 'Evento de Networking Profissional Português',
           message_pt: 'Conecta-te com empresários e líderes empresariais portugueses de sucesso em Londres.'
         },
         casual: {
-          title: 'Portuguese Business Mixer 🤝',
+          title: 'Lusophone Business Mixer 🤝',
           message: 'Network with your Portuguese business community over authentic conversation and opportunities.',
           title_pt: 'Encontro de Negócios Português 🤝',
           message_pt: 'Networking com a tua comunidade empresarial portuguesa com conversas autênticas e oportunidades.'
         },
         friendly: {
-          title: 'Growing Together - Portuguese Style! 🚀',
-          message: 'Join fellow Portuguese professionals building successful businesses in the United Kingdom.',
+          title: 'Growing Together - Lusophone Style! 🚀',
+          message: 'Join fellow Lusophone professionals building successful businesses in the United Kingdom.',
           title_pt: 'Crescer Juntos - À Portuguesa! 🚀',
           message_pt: 'Junta-te a outros profissionais portugueses que constroem negócios de sucesso no Reino Unido.'
         }
@@ -319,13 +319,13 @@ export class SmartNotificationEngine {
         },
         casual: {
           title: 'Santos Populares Party! 🎉🐟',
-          message: 'Sardines, sangria, and Portuguese spirit! Join the biggest Portuguese celebration in London.',
+          message: 'Sardines, sangria, and Lusophone spirit! Join the biggest Portuguese celebration in London.',
           title_pt: 'Festa dos Santos Populares! 🎉🐟',
           message_pt: 'Sardinhas, sangria e espírito português! Junta-te à maior celebração portuguesa em Londres.'
         },
         friendly: {
           title: 'Smell the Sardines? It\'s Santos Time! 🇵🇹',
-          message: 'Your Portuguese family in London is gathering for the most authentic Santos Populares celebration.',
+          message: 'Your Lusophone family in London is gathering for the most authentic Santos Populares celebration.',
           title_pt: 'Cheiras as Sardinhas? É Tempo de Santos! 🇵🇹',
           message_pt: 'A tua família portuguesa em Londres reúne-se para a celebração mais autêntica dos Santos Populares.'
         }
@@ -666,7 +666,7 @@ export class SmartNotificationEngine {
   }
 
   /**
-   * Enhanced personalized notification generation with Portuguese cultural context
+   * Enhanced personalized notification generation with Lusophone cultural context
    */
   async generatePersonalizedNotification(
     userId: string,
@@ -1285,7 +1285,7 @@ export class SmartNotificationEngine {
         adapted_content: template.content_variations.friendly,
         cultural_authenticity_score: 0.5,
         adaptation_reasoning: ['Fallback adaptation due to error'],
-        regional_context: 'Generic Portuguese',
+        regional_context: 'Generic Lusophone',
         cultural_references_used: []
       }
     }
@@ -1762,7 +1762,7 @@ export class SmartNotificationEngine {
             adjustedScore *= 0.95 // Slightly lower but still strong
           }
           
-          // Portuguese region specific patterns
+          // Lusophone region specific patterns
           if (features.portuguese_region === 'lisboa' && features.content_category === 'cultural') {
             adjustedScore *= 1.08 // Lisboa region loves cultural content
           } else if (features.portuguese_region === 'norte' && features.content_category === 'business') {
@@ -1806,7 +1806,7 @@ export class SmartNotificationEngine {
             return communityPeakHours[0]
           }
           
-          // Final fallback to Portuguese dinner time
+          // Final fallback to Lusophone dinner time
           return 19
         } catch (error) {
           console.error('[AI Notification Engine] Timing optimization error:', error)
@@ -1868,7 +1868,7 @@ export class SmartNotificationEngine {
   }
   
   /**
-   * Cultural adaptation engine for Portuguese authenticity
+   * Cultural adaptation engine for Lusophone authenticity
    */
   private createCulturalAdaptationEngine() {
     return {
@@ -2198,7 +2198,7 @@ export class SmartNotificationEngine {
     const reasons: string[] = []
     
     if (engagementScore > 70) {
-      reasons.push('High user engagement history with Portuguese content')
+      reasons.push('High user engagement history with Lusophone content')
     }
     if (culturalRelevance > 1.0) {
       reasons.push('Strong cultural relevance match for Portuguese heritage')
@@ -2207,7 +2207,7 @@ export class SmartNotificationEngine {
       reasons.push('User shows excellent response to community notifications')
     }
     if (userBehavior.cultural_preferences.diaspora_relevance === 'first_generation') {
-      reasons.push('First generation Portuguese - high cultural engagement expected')
+      reasons.push('First generation Lusophone - high cultural engagement expected')
     }
     if (processingTime < 100) {
       reasons.push('Fast processing time indicates optimal system performance')

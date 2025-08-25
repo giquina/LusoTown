@@ -105,7 +105,7 @@ const membershipTiers = [
       "Priority access to Fado Nights",
       "Monthly cultural newsletter",
       "Support for up to 4 family members",
-      "Portuguese learning resources",
+      "Lusophone learning resources",
     ],
     culturalBenefits: [
       PORTUGUESE_PREMIUM_BENEFITS.cultural.fadoNightsAccess,
@@ -192,7 +192,7 @@ const membershipTiers = [
     featuresEn: [
       "All premium benefits",
       "Support for up to 8 family members", 
-      "Portuguese classes for children",
+      "Lusophone classes for children",
       "Family playdate network",
       "Grandparent inclusion programs",
       "Family event priority",
@@ -472,7 +472,7 @@ export default function MembershipTiers({
           })}
         </div>
 
-        {/* Portuguese Cultural Value Proposition */}
+        {/* Lusophone Cultural Value Proposition */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -502,7 +502,7 @@ export default function MembershipTiers({
                   <MapPinIcon className="w-6 h-6 text-amber-600" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">
-                  {isPortuguese ? "Negócios Portugueses" : "Portuguese Businesses"}
+                  {isPortuguese ? "Negócios Portugueses" : "Lusophone Businesses"}
                 </h4>
                 <p className="text-sm text-gray-600">
                   {isPortuguese
@@ -528,23 +528,23 @@ export default function MembershipTiers({
                   <UsersIcon className="w-6 h-6 text-red-600" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">
-                  {isPortuguese ? "Famílias Portuguesas" : "Portuguese Families"}
+                  {isPortuguese ? "Famílias Portuguesas" : "Lusophone Families"}
                 </h4>
                 <p className="text-sm text-gray-600">
                   {isPortuguese
                     ? "Crianças aprendem português, avós participam"
-                    : "Children learn Portuguese, grandparents participate"}
+                    : "Children learn Lusophone, grandparents participate"}
                 </p>
               </div>
             </div>
             
-            {/* Portuguese Community Stats */}
+            {/* Lusophone Community Stats */}
             <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/50">
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <div className="text-2xl font-bold text-primary-600">750+</div>
                   <div className="text-sm text-gray-600">
-                    {isPortuguese ? "Membros Portugueses" : "Portuguese Members"}
+                    {isPortuguese ? "Membros Portugueses" : "Lusophone Members"}
                   </div>
                 </div>
                 <div>
@@ -564,7 +564,7 @@ export default function MembershipTiers({
                 <p className="text-sm font-medium text-gray-700">
                   {isPortuguese
                     ? '"Finalmente encontrei a minha família portuguesa no Reino Unido!"'
-                    : '"Finally found my Portuguese family in the United Kingdom!"'}
+                    : '"Finally found my Lusophone family in the United Kingdom!"'}
                 </p>
                 <p className="text-xs text-gray-500 mt-1">
                   - Maria, {isPortuguese ? "Membro da Comunidade" : "Community Member"}

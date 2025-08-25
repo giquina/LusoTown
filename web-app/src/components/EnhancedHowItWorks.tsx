@@ -41,7 +41,7 @@ export default function EnhancedHowItWorks() {
       id: 1,
       title: isPortuguese
         ? "Encontre o Seu Match Português"
-        : "Find Your Portuguese Match",
+        : "Find Your Lusophone Match",
       description: isPortuguese
         ? "Conecte-se com portugueses que partilham a sua saudade, lealdades futebolísticas e património cultural"
         : "Connect with Portuguese speakers who share your saudade, football loyalties, and cultural heritage",
@@ -69,10 +69,10 @@ export default function EnhancedHowItWorks() {
       id: 2,
       title: isPortuguese
         ? "LusoTown TV - Streaming Português"
-        : "LusoTown TV - Portuguese Streaming",
+        : "LusoTown TV - Lusophone Streaming",
       description: isPortuguese
         ? "Assista conteúdo cultural português ao vivo, crie programas e conecte-se com a comunidade da diáspora"
-        : "Watch live Portuguese cultural content, create shows, and connect with the diaspora community",
+        : "Watch live Lusophone cultural content, create shows, and connect with the diaspora community",
       cta: isPortuguese ? "Começar a Ver" : "Start Watching",
       link: "/tv",
       icon: PlayIcon,
@@ -96,7 +96,7 @@ export default function EnhancedHowItWorks() {
       id: 3,
       title: isPortuguese
         ? "Eventos Culturais Autênticos"
-        : "Authentic Portuguese Events",
+        : "Authentic Lusophone Events",
       description: isPortuguese
         ? "Desde noites íntimas de Fado em Stockwell até networking empresarial português na City"
         : "From intimate Fado nights in Stockwell to Portuguese business networking in the City",
@@ -123,7 +123,7 @@ export default function EnhancedHowItWorks() {
       id: 4,
       title: isPortuguese
         ? "Comunidades Portuguesas"
-        : "Portuguese Communities",
+        : "Lusophone Communities",
       description: isPortuguese
         ? "Conecte-se através de interesses partilhados - da culinária portuguesa ao futebol, negócios à cultura"
         : "Connect through shared interests - from Portuguese cuisine to football, business to culture",
@@ -150,7 +150,7 @@ export default function EnhancedHowItWorks() {
       id: 5,
       title: isPortuguese
         ? "Descubra a Londres Portuguesa"
-        : "Discover Portuguese London",
+        : "Discover Lusophone London",
       description: isPortuguese
         ? "Tours guiados que mostram a história, cultura e tesouros escondidos portugueses por Londres"
         : "Guided tours showcasing Portuguese history, culture, and hidden gems throughout London",
@@ -162,11 +162,11 @@ export default function EnhancedHowItWorks() {
       bgGradient: "from-primary-50/80 via-secondary-50/60 to-primary-50/80",
       hoverGradient: "from-primary-100 via-secondary-100 to-primary-100",
       stat: "Tours culturais com contexto português",
-      statEn: "Cultural tours with Portuguese context",
+      statEn: "Cultural tours with Lusophone context",
       preview: {
         type: "tour",
         data: {
-          title: "Portuguese London Heritage",
+          title: "Lusophone London Heritage",
           duration: "3h",
           rating: 4.9,
           price: formatPrice(EVENTS_PRICING.cultural.fadoEvening),
@@ -177,7 +177,7 @@ export default function EnhancedHowItWorks() {
       id: 6,
       title: isPortuguese
         ? "Transporte com Motoristas Portugueses"
-        : "Transport with Portuguese Drivers",
+        : "Transport with Lusophone Drivers",
       description: isPortuguese
         ? "Serviços de transporte profissional com motoristas que falam português para conforto cultural"
         : "Professional transport services with Portuguese-speaking drivers for cultural comfort",
@@ -206,7 +206,7 @@ export default function EnhancedHowItWorks() {
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-br from-white via-primary-50/30 to-secondary-50/30 relative overflow-hidden">
-      {/* Portuguese Cultural Background Elements */}
+      {/* Lusophone Cultural Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-secondary-200/30 to-accent-200/20 rounded-full animate-pulse opacity-60"></div>
         <div
@@ -251,7 +251,7 @@ export default function EnhancedHowItWorks() {
           >
             {isPortuguese
               ? "A Sua Plataforma Portuguesa"
-              : "Your Portuguese Platform"}
+              : "Your Lusophone Platform"}
           </motion.h2>
 
           <motion.p

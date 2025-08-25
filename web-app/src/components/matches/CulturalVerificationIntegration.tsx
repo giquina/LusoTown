@@ -52,7 +52,7 @@ const VERIFICATION_STEPS: VerificationStep[] = [
     id: 'heritage_photos',
     title: 'Heritage Photos',
     titlePortuguese: 'Fotos de Herança',
-    description: 'Upload photos showing Portuguese cultural heritage',
+    description: 'Upload photos showing Lusophone cultural heritage',
     descriptionPortuguese: 'Carregue fotos que mostrem herança cultural portuguesa',
     icon: PhotoIcon,
     completed: false,
@@ -63,7 +63,7 @@ const VERIFICATION_STEPS: VerificationStep[] = [
     id: 'event_photos',
     title: 'Event Photos',
     titlePortuguese: 'Fotos de Eventos',
-    description: 'Share photos from Portuguese cultural events',
+    description: 'Share photos from Lusophone cultural events',
     descriptionPortuguese: 'Partilhe fotos de eventos culturais portugueses',
     icon: SparklesIcon,
     completed: false,
@@ -222,7 +222,7 @@ export default function CulturalVerificationIntegration({
               <ShieldCheckSolid className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-bold text-primary-900 mb-2">
-              {language === 'pt' ? 'Verificação Cultural Portuguesa' : 'Portuguese Cultural Verification'}
+              {language === 'pt' ? 'Verificação Cultural Portuguesa' : 'Lusophone Cultural Verification'}
             </h3>
             <p className="text-primary-600 max-w-lg mx-auto">
               {language === 'pt' 
@@ -471,7 +471,7 @@ export default function CulturalVerificationIntegration({
                 {language === 'pt' ? '🏆 Maximizar Pontuação:' : '🏆 Maximize Score:'}
               </h5>
               <ul className="text-sm text-blue-800 space-y-1">
-                <li>• {language === 'pt' ? 'Inclua texto em português nas fotos' : 'Include Portuguese text in photos'}</li>
+                <li>• {language === 'pt' ? 'Inclua texto em português nas fotos' : 'Include Lusophone text in photos'}</li>
                 <li>• {language === 'pt' ? 'Mostre símbolos culturais autênticos' : 'Show authentic cultural symbols'}</li>
                 <li>• {language === 'pt' ? 'Fotos em eventos conhecidos' : 'Photos at recognized events'}</li>
                 <li>• {language === 'pt' ? 'Diversifique as categorias culturais' : 'Diversify cultural categories'}</li>

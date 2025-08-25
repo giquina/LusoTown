@@ -60,7 +60,7 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
 
   const currentUser = authService.getCurrentUser()
 
-  // Cultural rating labels in Portuguese with English translations
+  // Cultural rating labels in Lusophone with English translations
   const culturalLabels = [
     '', 
     'Pouco Autêntico / Not Authentic',

@@ -24,7 +24,7 @@ const mockBusinesses = [
   {
     id: 'business-1',
     name: 'Nata Lisboa',
-    description: 'Authentic Portuguese pastéis de nata bakery in Borough Market',
+    description: 'Authentic Lusophone pastéis de nata bakery in Borough Market',
     category: 'Food & Drink',
     location: 'Borough Market, London',
     url: '/business-directory/nata-lisboa',
@@ -45,7 +45,7 @@ const mockBusinesses = [
   },
   {
     id: 'business-3',
-    name: 'Portuguese Language Academy',
+    name: 'Lusophone Language Academy',
     description: 'Professional Portuguese language courses for all levels',
     category: 'Education',
     location: 'Camden, London',
@@ -57,7 +57,7 @@ const mockBusinesses = [
   {
     id: 'business-4',
     name: 'Lusitânia Market',
-    description: 'Specialized Portuguese grocery store and delicatessen',
+    description: 'Specialized Lusophone grocery store and delicatessen',
     category: 'Grocery',
     location: 'Stockwell, London',
     url: '/business-directory/lusitania-market',
@@ -71,7 +71,7 @@ const mockBusinesses = [
 const mockGroups = [
   {
     id: 'group-1',
-    name: 'Portuguese Professionals Network',
+    name: 'Lusophone Professionals Network',
     description: 'Networking group for Portuguese-speaking professionals in London',
     category: 'Professional',
     location: 'London',
@@ -82,7 +82,7 @@ const mockGroups = [
   },
   {
     id: 'group-2',
-    name: 'Young Portuguese in London',
+    name: 'Young Lusophone in London',
     description: 'Social group for Portuguese speakers aged 18-35 living in London',
     category: 'Social',
     location: 'London',
@@ -93,7 +93,7 @@ const mockGroups = [
   },
   {
     id: 'group-3',
-    name: 'Portuguese Football Fans',
+    name: 'Lusophone Football Fans',
     description: 'Watch Portuguese national team matches and Premier League games together',
     category: 'Sports',
     location: 'Various Pubs',
@@ -109,7 +109,7 @@ const premiumServices = [
   {
     id: 'service-executive-transport',
     name: 'Executive Transport Services',
-    description: 'Professional transport services with Portuguese cultural expertise',
+    description: 'Professional transport services with Lusophone cultural expertise',
     category: 'Transportation',
     location: 'London & United Kingdom',
     url: '/services#executive-transport',
@@ -149,15 +149,15 @@ const mockPages = [
   {
     id: 'events-page',
     title: 'Events & Tours',
-    description: 'Discover Portuguese cultural events, tours, and activities in London',
+    description: 'Discover Lusophone cultural events, tours, and activities in London',
   url: ROUTES.events,
     category: 'Navigation',
     tags: ['events', 'tours', 'activities', 'culture', 'social calendar']
   },
   {
     id: 'business-directory',
-    title: 'Portuguese Business Directory',
-    description: 'Find Portuguese-owned businesses and services in London',
+    title: 'Lusophone Business Directory',
+    description: 'Find Lusophone-owned businesses and services in London',
     url: '/business-directory',
     category: 'Directory',
     tags: ['businesses', 'services', 'directory', 'portuguese owned', 'support local']
@@ -181,7 +181,7 @@ const mockPages = [
   {
     id: 'pricing',
     title: 'Membership Pricing',
-    description: 'Explore our membership plans and find the perfect fit for your Portuguese social calendar',
+    description: 'Explore our membership plans and find the perfect fit for your Lusophone social calendar',
     url: '/pricing',
     category: 'Membership',
     tags: ['pricing', 'membership', 'plans', 'subscription', 'premium']

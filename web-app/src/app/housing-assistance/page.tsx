@@ -38,9 +38,9 @@ const sampleListings: HousingListing[] = [
   {
     id: "1",
     type: "room",
-    title: "Room in Portuguese Family Home",
+    title: "Room in Lusophone Family Home",
     description:
-      "Cozy room in traditional Portuguese household in Stockwell. Perfect for Portuguese speakers looking for a family environment.",
+      "Cozy room in traditional Lusophone household in Stockwell. Perfect for Portuguese speakers looking for a family environment.",
     location: "Stockwell, SW9",
     price: 650,
     currency: "GBP",
@@ -50,7 +50,7 @@ const sampleListings: HousingListing[] = [
     postedDate: "2025-01-15",
     features: [
       "Portuguese-speaking household",
-      "Near Portuguese shops",
+      "Near Lusophone shops",
       "Shared kitchen",
       "Bills included",
     ],
@@ -59,7 +59,7 @@ const sampleListings: HousingListing[] = [
   {
     id: "2",
     type: "flatmate",
-    title: "Portuguese Flatmate Wanted",
+    title: "Lusophone Flatmate Wanted",
     description:
       "Looking for Portuguese-speaking flatmate to share modern 2-bedroom flat near Vauxhall Portuguese-speaking community.",
     location: "Vauxhall, SW8",
@@ -73,16 +73,16 @@ const sampleListings: HousingListing[] = [
       "Portuguese-speaking flatmate preferred",
       "Near transport links",
       "Modern facilities",
-      "Portuguese TV channels",
+      "Lusophone TV channels",
     ],
     available: true,
   },
   {
     id: "3",
     type: "flat",
-    title: "Family Flat - Portuguese Area",
+    title: "Family Flat - Lusophone Area",
     description:
-      "Spacious 3-bedroom flat perfect for Portuguese families. Close to Portuguese school and community center.",
+      "Spacious 3-bedroom flat perfect for Lusophone families. Close to Lusophone school and community center.",
     location: "Nine Elms, SW8",
     price: 2200,
     currency: "GBP",
@@ -95,7 +95,7 @@ const sampleListings: HousingListing[] = [
       "Near Portuguese-speaking community center",
       "Balcony",
       "Parking space",
-      "Portuguese neighbors",
+      "Lusophone neighbors",
     ],
     available: true,
   },
@@ -199,7 +199,7 @@ export default function HousingAssistancePage() {
                   <div className="text-sm text-gray-600">
                     {isPortuguese
                       ? "Falantes de Português em Londres"
-                      : "Portuguese Speakers in London"}
+                      : "Lusophone Speakers in London"}
                   </div>
                 </div>
                 <div>
@@ -407,7 +407,7 @@ export default function HousingAssistancePage() {
                       placeholder={
                         isPortuguese
                           ? "Ex: Quarto em casa portuguesa em Stockwell"
-                          : "e.g. Room in Portuguese household in Stockwell"
+                          : "e.g. Room in Lusophone household in Stockwell"
                       }
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     />
@@ -504,7 +504,7 @@ export default function HousingAssistancePage() {
               <p className="text-gray-600 text-sm">
                 {isPortuguese
                   ? "Conecte-se com famílias portuguesas"
-                  : "Connect with Portuguese families"}
+                  : "Connect with Lusophone families"}
               </p>
             </div>
             <div className="text-center">

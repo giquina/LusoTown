@@ -53,7 +53,7 @@ const CorporatePartnershipProgram: React.FC = () => {
       namePortuguese: 'Programa Parceiro Fundador',
       price: '£25,000/year',
       targetRevenue: '£2M+ annual revenue',
-      clientBase: '500+ Portuguese customers',
+      clientBase: '500+ Lusophone customers',
       features: [
         'Exclusive founding partner status and branding',
         'Co-branded marketing campaigns and events',
@@ -86,7 +86,7 @@ const CorporatePartnershipProgram: React.FC = () => {
       namePortuguese: 'Parceiro Estratégico de Negócios',
       price: '£12,500/year',
       targetRevenue: '£750K+ annual revenue',
-      clientBase: '200+ Portuguese customers',
+      clientBase: '200+ Lusophone customers',
       features: [
         'Strategic partner recognition and branding',
         'Featured placement in business directory',
@@ -94,7 +94,7 @@ const CorporatePartnershipProgram: React.FC = () => {
         'Preferred vendor status for LusoTown events',
         'Co-marketing opportunities and content',
         'Access to premium networking events',
-        'Portuguese customer referral program',
+        'Lusophone customer referral program',
         'Quarterly partnership review meetings',
         'Business development support and guidance'
       ],
@@ -116,7 +116,7 @@ const CorporatePartnershipProgram: React.FC = () => {
       namePortuguese: 'Parceiro de Serviços Profissionais',
       price: '£6,500/year',
       targetRevenue: '£250K+ annual revenue',
-      clientBase: '50+ Portuguese clients',
+      clientBase: '50+ Lusophone clients',
       features: [
         'Professional partner directory listing',
         'Portuguese-speaking client matching service',
@@ -125,7 +125,7 @@ const CorporatePartnershipProgram: React.FC = () => {
         'Client testimonial and case study features',
         'Bi-annual partnership strategy sessions',
         'Access to Portuguese business community data',
-        'Marketing support for Portuguese outreach'
+        'Marketing support for Lusophone outreach'
       ],
       featuresPortuguese: [
         'Listagem no diretório de parceiros profissionais',
@@ -148,8 +148,8 @@ const CorporatePartnershipProgram: React.FC = () => {
       features: [
         'Community business directory listing',
         'Access to community networking events',
-        'Portuguese customer acquisition support',
-        'Local Portuguese market insights',
+        'Lusophone customer acquisition support',
+        'Local Lusophone market insights',
         'Community event participation opportunities',
         'Basic partnership recognition',
         'Portuguese-speaking community newsletter features'
@@ -171,14 +171,14 @@ const CorporatePartnershipProgram: React.FC = () => {
       category: 'Direct Customer Acquisition',
       categoryPortuguese: 'Aquisição Direta de Clientes',
       annualValue: '£15,000 - £85,000',
-      description: 'New Portuguese customers through LusoTown referrals and directory visibility',
+      description: 'New Lusophone customers through LusoTown referrals and directory visibility',
       descriptionPortuguese: 'Novos clientes portugueses através de referências da LusoTown e visibilidade no diretório'
     },
     {
       category: 'Market Intelligence & Insights',
       categoryPortuguese: 'Inteligência e Insights de Mercado',
       annualValue: '£8,000 - £25,000',
-      description: 'Portuguese market data, customer behavior insights, and competitive intelligence',
+      description: 'Lusophone market data, customer behavior insights, and competitive intelligence',
       descriptionPortuguese: 'Dados do mercado português, insights de comportamento do cliente e inteligência competitiva'
     },
     {
@@ -199,7 +199,7 @@ const CorporatePartnershipProgram: React.FC = () => {
       category: 'Marketing & Co-promotion',
       categoryPortuguese: 'Marketing e Co-promoção',
       annualValue: '£10,000 - £40,000',
-      description: 'Shared marketing costs and amplified reach within Portuguese markets',
+      description: 'Shared marketing costs and amplified reach within Lusophone markets',
       descriptionPortuguese: 'Custos de marketing compartilhados e alcance amplificado nos mercados portugueses'
     }
   ]
@@ -232,7 +232,7 @@ const CorporatePartnershipProgram: React.FC = () => {
         <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-6">
           {language === 'pt'
             ? 'Junte-se ao mercado português de £450M no Reino Unido. Parcerias estratégicas para empresas que servem a comunidade lusófona.'
-            : 'Join the £450M Portuguese market in the United Kingdom. Strategic partnerships for businesses serving the Portuguese-speaking community.'
+            : 'Join the £450M Lusophone market in the United Kingdom. Strategic partnerships for businesses serving the Portuguese-speaking community.'
           }
         </p>
         
@@ -241,7 +241,7 @@ const CorporatePartnershipProgram: React.FC = () => {
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
             <div className="text-2xl font-bold text-primary-600">450,000+</div>
             <div className="text-sm text-gray-600">
-              {language === 'pt' ? 'Portugueses no Reino Unido' : 'Portuguese in United Kingdom'}
+              {language === 'pt' ? 'Portugueses no Reino Unido' : 'Lusophone in United Kingdom'}
             </div>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
@@ -427,7 +427,7 @@ const CorporatePartnershipProgram: React.FC = () => {
             <p className="text-gray-600 text-sm mb-4">
               {language === 'pt'
                 ? '45% de aumento em novos clientes portugueses através da parceria LusoTown.'
-                : '45% increase in new Portuguese customers through LusoTown partnership.'
+                : '45% increase in new Lusophone customers through LusoTown partnership.'
               }
             </p>
             <div className="text-2xl font-bold text-green-600">+£125K</div>
@@ -451,7 +451,7 @@ const CorporatePartnershipProgram: React.FC = () => {
             <p className="text-gray-600 text-sm mb-4">
               {language === 'pt'
                 ? '60% de aumento nas inscrições em cursos de português através da plataforma.'
-                : '60% increase in Portuguese course enrollments through the platform.'
+                : '60% increase in Lusophone course enrollments through the platform.'
               }
             </p>
             <div className="text-2xl font-bold text-green-600">+£85K</div>
@@ -559,12 +559,12 @@ const CorporatePartnershipProgram: React.FC = () => {
       <div className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 text-center text-white">
         <TrophyIcon className="w-16 h-16 mx-auto mb-4 opacity-80" />
         <h3 className="text-2xl font-bold mb-4">
-          {language === 'pt' ? 'Pronto para Expandir no Mercado Português?' : 'Ready to Expand in the Portuguese Market?'}
+          {language === 'pt' ? 'Pronto para Expandir no Mercado Português?' : 'Ready to Expand in the Lusophone Market?'}
         </h3>
         <p className="text-lg mb-6 opacity-90 max-w-3xl mx-auto">
           {language === 'pt'
             ? 'Junte-se a empresas líderes que já estão a capitalizar no mercado português de £450M no Reino Unido.'
-            : 'Join leading companies already capitalizing on the £450M Portuguese market in the United Kingdom.'
+            : 'Join leading companies already capitalizing on the £450M Lusophone market in the United Kingdom.'
           }
         </p>
         

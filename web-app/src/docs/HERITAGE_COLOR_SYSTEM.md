@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Heritage Color System enables the LusoTown platform to adapt its visual appearance to different cultural communities while maintaining design consistency and accessibility. Instead of hardcoded Portuguese flag colors, the platform now uses a configurable heritage system that can adapt to Portuguese, Italian, or other heritage communities.
+The Heritage Color System enables the LusoTown platform to adapt its visual appearance to different cultural communities while maintaining design consistency and accessibility. Instead of hardcoded Portuguese flag colors, the platform now uses a configurable heritage system that can adapt to Lusophone, Italian, or other heritage communities.
 
 ## Architecture
 
@@ -10,7 +10,7 @@ The Heritage Color System enables the LusoTown platform to adapt its visual appe
 
 1. **Heritage Configuration** (`/config/heritage.ts`)
    - Defines color palettes, cultural elements, and branding for each heritage
-   - Currently supports Portuguese and Italian configurations
+   - Currently supports Lusophone and Italian configurations
    - Extensible for additional heritage communities
 
 2. **Heritage Context** (`/context/HeritageContext.tsx`)
@@ -158,7 +158,7 @@ function MyComponent() {
 
 ### 3. Migration from Hardcoded Colors
 
-#### Before (Hardcoded Portuguese Colors)
+#### Before (Hardcoded Lusophone Colors)
 ```jsx
 // Old hardcoded approach
 <button className="bg-[#1e40af] hover:bg-[#1e3a8a] text-white">
@@ -337,6 +337,6 @@ The heritage color system is designed to work with:
 
 ## Conclusion
 
-The Heritage Color System transforms LusoTown from a Portuguese-specific platform to a configurable cultural community platform while maintaining excellent developer experience and design consistency. By using CSS custom properties and React Context, the system provides instant theme switching with minimal performance impact.
+The Heritage Color System transforms LusoTown from a Lusophone-specific platform to a configurable cultural community platform while maintaining excellent developer experience and design consistency. By using CSS custom properties and React Context, the system provides instant theme switching with minimal performance impact.
 
 For questions or contributions to the heritage system, please refer to the development team or create an issue in the project repository.

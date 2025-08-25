@@ -73,7 +73,7 @@ export default function About() {
                 <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
                   LusoTown is the United Kingdom's premier digital platform designed specifically for Portuguese speakers. 
                   We're not just a social network—we're a comprehensive community ecosystem that brings together culture, 
-                  commerce, entertainment, and connections for the Portuguese diaspora across Britain.
+                  commerce, entertainment, and connections for the Lusophone diaspora across Britain.
                 </p>
               </motion.div>
               
@@ -87,7 +87,7 @@ export default function About() {
               >
                 <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-premium-200/50">
                   <h3 className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent mb-8 text-center">
-                    How LusoTown Works for Portuguese Speakers
+                    How LusoTown Works for Lusophone Speakers
                   </h3>
                   
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -103,29 +103,29 @@ export default function About() {
                         icon: CalendarIcon,
                         title: "Events & Experiences",
                         titlePt: "Eventos & Experiências",
-                        description: "Discover and join authentic Portuguese events across the United Kingdom. From intimate fado nights in Stockwell to networking events in the City, experience Portuguese culture in every corner of Britain.",
+                        description: "Discover and join authentic Lusophone events across the United Kingdom. From intimate fado nights in Stockwell to networking events in the City, experience Portuguese culture in every corner of Britain.",
                         features: ["Cultural festivals & celebrations", "Professional networking events", "Food markets & restaurants", "Live music & entertainment"]
                       },
                       {
                         icon: MapPinIcon,
                         title: "LusoTown Business Directory",
                         titlePt: "Diretório de Negócios LusoTown",
-                        description: "Support and discover Portuguese-owned businesses across the United Kingdom. From restaurants and shops to professional services, keep your spending within our community while getting services in your language.",
-                        features: ["Portuguese-speaking professionals", "Cultural restaurants & cafés", "Import shops & markets", "Community services in Portuguese"]
+                        description: "Support and discover Lusophone-owned businesses across the United Kingdom. From restaurants and shops to professional services, keep your spending within our community while getting services in your language.",
+                        features: ["Portuguese-speaking professionals", "Cultural restaurants & cafés", "Import shops & markets", "Community services in Lusophone"]
                       },
                       {
                         icon: SparklesIcon,
                         title: "LusoTown TV",
                         titlePt: "LusoTown TV",
-                        description: "Watch live Portuguese cultural content, from cooking shows to interviews with Portuguese-speaking community leaders. Our streaming platform brings Portuguese entertainment directly to your device.",
-                        features: ["Live cultural programming", "Portuguese cooking shows", "Community interviews", "Cultural documentaries"]
+                        description: "Watch live Lusophone cultural content, from cooking shows to interviews with Portuguese-speaking community leaders. Our streaming platform brings Lusophone entertainment directly to your device.",
+                        features: ["Live cultural programming", "Lusophone cooking shows", "Community interviews", "Cultural documentaries"]
                       },
                       {
                         icon: ChatBubbleLeftRightIcon,
                         title: "Community Feed",
                         titlePt: "Feed da Comunidade",
-                        description: "Stay connected with real-time updates from the Portuguese-speaking community. Share experiences, ask for recommendations, and stay informed about everything happening in Portuguese London.",
-                        features: ["Real-time community updates", "Portuguese-language posts", "Event recommendations", "Local community support"]
+                        description: "Stay connected with real-time updates from the Portuguese-speaking community. Share experiences, ask for recommendations, and stay informed about everything happening in Lusophone London.",
+                        features: ["Real-time community updates", "Lusophone-language posts", "Event recommendations", "Local community support"]
                       },
                       {
                         icon: HeartIcon,
@@ -183,7 +183,7 @@ export default function About() {
                 <div className="bg-gradient-to-br from-premium-50 via-primary-50 to-secondary-50 rounded-3xl p-10 border border-premium-200/30 shadow-xl">
                   <div className="text-center mb-10">
                     <h3 className="text-3xl font-bold bg-gradient-to-r from-premium-600 to-primary-600 bg-clip-text text-transparent mb-4">
-                      The Complete Vision: Building Portuguese Britain
+                      The Complete Vision: Building Lusophone Britain
                     </h3>
                     <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
                       Nossa visão • Our vision is to create the most comprehensive Portuguese-speaking community platform in the United Kingdom, 
@@ -193,7 +193,7 @@ export default function About() {
                   
                   <div className="grid lg:grid-cols-2 gap-8">
                     <div className="space-y-6">
-                      <h4 className="text-2xl font-bold text-gray-900 mb-4">🎯 Why Portuguese Speakers Need LusoTown</h4>
+                      <h4 className="text-2xl font-bold text-gray-900 mb-4">🎯 Why Lusophone Speakers Need LusoTown</h4>
                       <div className="space-y-4">
                         <div className="flex items-start gap-3">
                           <div className="w-6 h-6 bg-premium-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -210,7 +210,7 @@ export default function About() {
                           </div>
                           <div>
                             <p className="font-bold text-gray-900">Language Preservation</p>
-                            <p className="text-gray-600">Portuguese families worry about their children losing the language and cultural connection, needing a community that actively preserves and celebrates Portuguese heritage.</p>
+                            <p className="text-gray-600">Lusophone families worry about their children losing the language and cultural connection, needing a community that actively preserves and celebrates Portuguese heritage.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -219,7 +219,7 @@ export default function About() {
                           </div>
                           <div>
                             <p className="font-bold text-gray-900">Limited Cultural Access</p>
-                            <p className="text-gray-600">Difficulty finding Portuguese-speaking services, authentic cultural events, and businesses that understand Portuguese customs and preferences.</p>
+                            <p className="text-gray-600">Difficulty finding Portuguese-speaking services, authentic cultural events, and businesses that understand Lusophone customs and preferences.</p>
                           </div>
                         </div>
                       </div>
@@ -239,14 +239,14 @@ export default function About() {
                           <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                           <div>
                             <p className="font-bold text-gray-900">Cultural Preservation Platform</p>
-                            <p className="text-gray-600">Active community events, Portuguese-language content, and cultural education ensuring your heritage stays alive and is passed to future generations.</p>
+                            <p className="text-gray-600">Active community events, Lusophone-language content, and cultural education ensuring your heritage stays alive and is passed to future generations.</p>
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
                           <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                           <div>
-                            <p className="font-bold text-gray-900">Comprehensive Portuguese Ecosystem</p>
-                            <p className="text-gray-600">Everything you need in one place: from finding Portuguese-speaking professionals to attending cultural events, watching Portuguese content, and building romantic or professional relationships.</p>
+                            <p className="font-bold text-gray-900">Comprehensive Lusophone Ecosystem</p>
+                            <p className="text-gray-600">Everything you need in one place: from finding Portuguese-speaking professionals to attending cultural events, watching Lusophone content, and building romantic or professional relationships.</p>
                           </div>
                         </div>
                       </div>
@@ -281,23 +281,23 @@ export default function About() {
                       },
                       {
                         section: "Events Discovery",
-                        description: "Comprehensive calendar of Portuguese cultural events, from intimate fado evenings to large community festivals, professional networking, and cultural celebrations across the United Kingdom.",
+                        description: "Comprehensive calendar of Lusophone cultural events, from intimate fado evenings to large community festivals, professional networking, and cultural celebrations across the United Kingdom.",
                         benefits: "Experience authentic Portuguese culture, meet community members, preserve traditions"
                       },
                       {
                         section: "LusoTown Business Directory",
-                        description: "Complete directory of Portuguese-owned businesses and Portuguese-speaking professionals across the United Kingdom, from restaurants to legal services, all in your language.",
-                        benefits: "Support Portuguese businesses, get services in Portuguese, strengthen community economy"
+                        description: "Complete directory of Lusophone-owned businesses and Portuguese-speaking professionals across the United Kingdom, from restaurants to legal services, all in your language.",
+                        benefits: "Support Portuguese businesses, get services in Lusophone, strengthen community economy"
                       },
                       {
                         section: "LusoTown TV",
-                        description: "Live streaming platform featuring Portuguese cultural content, cooking shows, community interviews, and entertainment that celebrates Portuguese heritage and keeps culture alive.",
-                        benefits: "Access Portuguese content anytime, learn about your culture, stay connected to heritage"
+                        description: "Live streaming platform featuring Lusophone cultural content, cooking shows, community interviews, and entertainment that celebrates Portuguese heritage and keeps culture alive.",
+                        benefits: "Access Lusophone content anytime, learn about your culture, stay connected to heritage"
                       },
                       {
                         section: "Premium Services",
                         description: "Exclusive Portuguese-speaking services including executive transport, heritage tours, concierge services, and VIP experiences designed for sophisticated Portuguese-speaking community members.",
-                        benefits: "Luxury services in Portuguese, cultural authenticity, premium community experiences"
+                        benefits: "Luxury services in Lusophone, cultural authenticity, premium community experiences"
                       }
                     ].map((item, index) => (
                       <motion.div
@@ -362,7 +362,7 @@ export default function About() {
                         <p className="text-premium-600 font-medium">Community Builders</p>
                         <div className="flex items-center justify-center gap-2 mt-3">
                           <MapPinIcon className="w-4 h-4 text-premium-500" />
-                          <p className="text-sm text-premium-500 font-medium">London • Portuguese Heritage</p>
+                          <p className="text-sm text-premium-500 font-medium">London • Lusophone Heritage</p>
                         </div>
                         <div className="flex items-center justify-center gap-1 mt-2">
                           <SparklesIcon className="w-4 h-4 text-premium-400" />
@@ -411,7 +411,7 @@ export default function About() {
                         viewport={{ once: true }}
                         className="text-lg leading-relaxed"
                       >
-                        <span className="font-bold text-premium-700">London's Portuguese diaspora is rich and diverse,</span> but we're often 
+                        <span className="font-bold text-premium-700">London's Lusophone diaspora is rich and diverse,</span> but we're often 
                         scattered across the city. LusoTown was created to bring us together—to share resources, 
                         support each other, and preserve our Portuguese heritage.
                       </motion.p>
@@ -528,7 +528,7 @@ export default function About() {
                       },
                       {
                         icon: ShieldCheckIcon,
-                        title: "Support Portuguese Businesses",
+                        title: "Support Lusophone Businesses",
                         description: "Explore our directory and discover places run by or for Portuguese speakers.",
                         gradient: "from-premium-500 to-primary-500",
                         bgGradient: "from-premium-50 to-primary-50"
@@ -632,7 +632,7 @@ export default function About() {
                     icon: HomeIcon,
                     title: "Saudade & Connection",
                     titlePt: "Saudade & Ligação",
-                    description: "That feeling of missing home, our culture, and speaking Portuguese naturally with people who understand. We created a space where saudade becomes connection.",
+                    description: "That feeling of missing home, our culture, and speaking Lusophone naturally with people who understand. We created a space where saudade becomes connection.",
                     gradient: "from-premium-500 to-primary-500",
                     bgGradient: "from-premium-50/80 to-primary-50/80",
                     delay: 0.2
@@ -650,7 +650,7 @@ export default function About() {
                     icon: UsersIcon,
                     title: "Community Support",
                     titlePt: "Apoio Comunitário",
-                    description: "From finding Portuguese schools to navigating United Kingdom systems, we help each other with the practical and emotional challenges of life in London as Portuguese speakers.",
+                    description: "From finding Lusophone schools to navigating United Kingdom systems, we help each other with the practical and emotional challenges of life in London as Portuguese speakers.",
                     gradient: "from-secondary-500 to-accent-500",
                     bgGradient: "from-secondary-50/80 to-accent-50/80",
                     delay: 0.6
@@ -722,7 +722,7 @@ export default function About() {
                     </div>
                     <div className="flex items-start">
                       <CheckCircleIcon className="w-5 h-5 text-primary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>Language heritage.</strong> Ensuring Portuguese continues to be spoken with pride and confidence.</p>
+                      <p><strong>Language heritage.</strong> Ensuring Lusophone continues to be spoken with pride and confidence.</p>
                     </div>
                     <div className="flex items-start">
                       <CheckCircleIcon className="w-5 h-5 text-primary-500 mt-1 mr-3 flex-shrink-0" />
@@ -758,7 +758,7 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Royal Portuguese Heritage - Aristocratic Legacy Section */}
+              {/* Royal Lusophone Heritage - Aristocratic Legacy Section */}
               <div className="relative overflow-hidden">
                 {/* Premium background gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-premium-50 via-white to-primary-50" />
@@ -774,14 +774,14 @@ export default function About() {
                       className="inline-flex items-center gap-3 bg-gradient-to-r from-premium-500/10 to-primary-500/10 backdrop-blur-sm rounded-full px-8 py-4 mb-8 border border-premium-300/30"
                     >
                       <TrophyIcon className="w-6 h-6 text-premium-600" />
-                      <span className="text-premium-700 font-bold text-lg">Royal Portuguese Heritage • Património Real Português</span>
+                      <span className="text-premium-700 font-bold text-lg">Royal Lusophone Heritage • Património Real Português</span>
                     </motion.div>
                     <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-premium-600 via-primary-600 to-secondary-600 bg-clip-text text-transparent mb-6">
-                      Eight Centuries of Portuguese Royal Legacy in London
+                      Eight Centuries of Lusophone Royal Legacy in London
                     </h3>
                     <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
-                      From the medieval courts of Afonso Henriques to today's sophisticated Portuguese aristocracy maintaining £2B+ London estates, 
-                      experience the unparalleled heritage of Europe's most ancient continuous monarchy. Join London's elite Portuguese society 
+                      From the medieval courts of Afonso Henriques to today's sophisticated Lusophone aristocracy maintaining £2B+ London estates, 
+                      experience the unparalleled heritage of Europe's most ancient continuous monarchy. Join London's elite Lusophone society 
                       where royal bloodlines, ducal titles, and centuries-old noble traditions create the United Kingdom's most distinguished lusophone community.
                     </p>
                     <div className="bg-gradient-to-r from-premium-50 via-primary-50 to-secondary-50 rounded-2xl p-6 border border-premium-200/30">
@@ -789,7 +789,7 @@ export default function About() {
                     </div>
                   </div>
                   
-                  {/* Portuguese Royal Legacy Section */}
+                  {/* Lusophone Royal Legacy Section */}
                   <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -807,13 +807,13 @@ export default function About() {
                           className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-6 border border-premium-300/50 shadow-lg"
                         >
                           <span className="text-4xl">👑</span>
-                          <span className="text-premium-700 font-bold text-xl">Portuguese Royal Dynasty • Dinastia Real Portuguesa</span>
+                          <span className="text-premium-700 font-bold text-xl">Lusophone Royal Dynasty • Dinastia Real Portuguesa</span>
                         </motion.div>
                         <h4 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-premium-600 to-primary-600 bg-clip-text text-transparent mb-6">
                           From Medieval Kingdoms to Modern London Elite
                         </h4>
                         <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                          The Portuguese royal legacy represents Europe's most enduring aristocratic tradition—from the founding of Portugal in 1143 
+                          The Lusophone royal legacy represents Europe's most enduring aristocratic tradition—from the founding of Portugal in 1143 
                           to today's sophisticated noble families maintaining exclusive London residences, private clubs, and cultural institutions 
                           that define the United Kingdom's most prestigious Portuguese heritage networks.
                         </p>
@@ -844,10 +844,10 @@ export default function About() {
                                 </div>
                               </div>
                               <div className="space-y-4">
-                                <p className="text-gray-700"><strong className="text-premium-700">👑 Medieval Royal Courts:</strong> From Dom Afonso Henriques (1143) to the magnificent courts of Dom Manuel I and the Monastery of Jerónimos—Portuguese monarchy established Europe's first global empire, setting the standard for royal sophistication and cultural refinement that influences London's elite circles today.</p>
-                                <p className="text-gray-700"><strong className="text-premium-700">🏛️ Palatial Architecture:</strong> Pena Palace, Sintra's romantic castles, Mafra National Palace with 1,200 rooms—architectural masterpieces rivaling Versailles. London's Portuguese nobility maintains country estates replicating these royal designs, hosting exclusive events for United Kingdom's aristocratic elite.</p>
-                                <p className="text-gray-700"><strong className="text-premium-700">⭐ Noble Lineages:</strong> Houses of Braganza, Aviz, and Burgundy—ducal families whose bloodlines connect to every European royal house. Contemporary Portuguese dukes and counts maintain direct lineage to medieval monarchs, holding hereditary titles recognized by Buckingham Palace.</p>
-                                <p className="text-gray-700"><strong className="text-premium-700">🎭 Cultural Patronage:</strong> Royal sponsorship of arts created Portugal's Golden Age—from epic poetry to maritime discoveries. Today's Portuguese cultural elite continue this tradition, funding London's major museums, opera seasons, and cultural institutions with annual contributions exceeding £50M.</p>
+                                <p className="text-gray-700"><strong className="text-premium-700">👑 Medieval Royal Courts:</strong> From Dom Afonso Henriques (1143) to the magnificent courts of Dom Manuel I and the Monastery of Jerónimos—Lusophone monarchy established Europe's first global empire, setting the standard for royal sophistication and cultural refinement that influences London's elite circles today.</p>
+                                <p className="text-gray-700"><strong className="text-premium-700">🏛️ Palatial Architecture:</strong> Pena Palace, Sintra's romantic castles, Mafra National Palace with 1,200 rooms—architectural masterpieces rivaling Versailles. London's Lusophone nobility maintains country estates replicating these royal designs, hosting exclusive events for United Kingdom's aristocratic elite.</p>
+                                <p className="text-gray-700"><strong className="text-premium-700">⭐ Noble Lineages:</strong> Houses of Braganza, Aviz, and Burgundy—ducal families whose bloodlines connect to every European royal house. Contemporary Lusophone dukes and counts maintain direct lineage to medieval monarchs, holding hereditary titles recognized by Buckingham Palace.</p>
+                                <p className="text-gray-700"><strong className="text-premium-700">🎭 Cultural Patronage:</strong> Royal sponsorship of arts created Portugal's Golden Age—from epic poetry to maritime discoveries. Today's Lusophone cultural elite continue this tradition, funding London's major museums, opera seasons, and cultural institutions with annual contributions exceeding £50M.</p>
                               </div>
                             </div>
                           </div>
@@ -872,15 +872,15 @@ export default function About() {
                                   <span className="text-white text-2xl">🏛️</span>
                                 </motion.div>
                                 <div>
-                                  <h5 className="text-2xl font-bold text-gray-900 group-hover:text-secondary-700 transition-colors duration-300">London's Elite Portuguese Society</h5>
+                                  <h5 className="text-2xl font-bold text-gray-900 group-hover:text-secondary-700 transition-colors duration-300">London's Elite Lusophone Society</h5>
                                   <p className="text-secondary-600 font-bold">Sociedade Elite Portuguesa de Londres</p>
                                 </div>
                               </div>
                               <div className="space-y-4">
-                                <p className="text-gray-700"><strong className="text-secondary-700">🎩 Exclusive Club Memberships:</strong> Portuguese nobility maintains memberships at White's Club (founded 1693), Boodle's, the Carlton Club, and Brooks's—where ducal titles open doors to London's most prestigious gentlemen's clubs. Annual membership fees exceeding £50,000 ensure exclusivity.</p>
-                                <p className="text-gray-700"><strong className="text-secondary-700">🏰 Mayfair & Belgravia Mansions:</strong> Portuguese aristocratic families own historic Georgian mansions in Grosvenor Square, Eaton Square, and Chester Square worth £100M+ each. These serve as private embassies for Portugal's cultural elite, hosting exclusive receptions for royalty and heads of state.</p>
-                                <p className="text-gray-700"><strong className="text-secondary-700">💎 Royal Court Connections:</strong> Portuguese nobility maintains direct relationships with Buckingham Palace through state visits, royal patronages, and cultural exchanges. Regular invitations to Windsor Castle private dinners, Royal Ascot royal enclosure, and exclusive palace garden parties.</p>
-                                <p className="text-gray-700"><strong className="text-secondary-700">🍷 Elite Wine Societies:</strong> Members of the prestigious Wine Society, Institute of Masters of Wine, and exclusive Portuguese wine societies. Private cellars worth £5M+ containing rare vintages from quintas owned by Portuguese noble families for centuries.</p>
+                                <p className="text-gray-700"><strong className="text-secondary-700">🎩 Exclusive Club Memberships:</strong> Lusophone nobility maintains memberships at White's Club (founded 1693), Boodle's, the Carlton Club, and Brooks's—where ducal titles open doors to London's most prestigious gentlemen's clubs. Annual membership fees exceeding £50,000 ensure exclusivity.</p>
+                                <p className="text-gray-700"><strong className="text-secondary-700">🏰 Mayfair & Belgravia Mansions:</strong> Lusophone aristocratic families own historic Georgian mansions in Grosvenor Square, Eaton Square, and Chester Square worth £100M+ each. These serve as private embassies for Portugal's cultural elite, hosting exclusive receptions for royalty and heads of state.</p>
+                                <p className="text-gray-700"><strong className="text-secondary-700">💎 Royal Court Connections:</strong> Lusophone nobility maintains direct relationships with Buckingham Palace through state visits, royal patronages, and cultural exchanges. Regular invitations to Windsor Castle private dinners, Royal Ascot royal enclosure, and exclusive palace garden parties.</p>
+                                <p className="text-gray-700"><strong className="text-secondary-700">🍷 Elite Wine Societies:</strong> Members of the prestigious Wine Society, Institute of Masters of Wine, and exclusive Portuguese wine societies. Private cellars worth £5M+ containing rare vintages from quintas owned by Lusophone noble families for centuries.</p>
                               </div>
                             </div>
                           </div>
@@ -904,11 +904,11 @@ export default function About() {
                             className="inline-flex items-center gap-3 bg-gradient-to-r from-premium-500/10 to-primary-500/10 backdrop-blur-sm rounded-full px-6 py-3 mb-4 border border-premium-300/30"
                           >
                             <span className="text-2xl">💎</span>
-                            <span className="text-premium-700 font-bold">Luxury Portuguese Lifestyle in London</span>
+                            <span className="text-premium-700 font-bold">Luxury Lusophone Lifestyle in London</span>
                           </motion.div>
                           <h5 className="text-2xl font-bold text-gray-900 mb-4">Modern Aristocratic Living</h5>
                           <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                            Experience London's most sophisticated Portuguese lifestyle where centuries-old traditions meet contemporary luxury, 
+                            Experience London's most sophisticated Lusophone lifestyle where centuries-old traditions meet contemporary luxury, 
                             creating an exclusive community that defines prestige in the United Kingdom's Portuguese-speaking elite circles.
                           </p>
                         </div>
@@ -945,7 +945,7 @@ export default function About() {
                           >
                             <div className="text-3xl mb-3">🍽️</div>
                             <h6 className="font-bold text-gray-900 mb-2">Culinary Excellence</h6>
-                            <p className="text-sm text-gray-600">Private chefs from Portuguese Michelin-starred restaurants, exclusive dining experiences at £1,000+ per person, and vintage port collections worth millions.</p>
+                            <p className="text-sm text-gray-600">Private chefs from Lusophone Michelin-starred restaurants, exclusive dining experiences at £1,000+ per person, and vintage port collections worth millions.</p>
                           </motion.div>
                         </div>
                       </motion.div>
@@ -964,11 +964,11 @@ export default function About() {
                       <span className="text-premium-700 font-bold text-lg">Elite Lusophone Heritage • Património de Elite Lusófono</span>
                     </motion.div>
                     <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-premium-600 via-primary-600 to-secondary-600 bg-clip-text text-transparent mb-6">
-                      The Sophisticated Portuguese-Speaking World
+                      The Sophisticated Lusophone-Speaking World
                     </h3>
                     <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
                       Nine distinguished nations representing centuries of cultural refinement, economic prosperity, and aristocratic heritage. 
-                      From Portuguese royal lineages to Brazilian billionaire dynasties, from Angolan diamond empires to Macau's luxury gaming capitals—
+                      From Lusophone royal lineages to Brazilian billionaire dynasties, from Angolan diamond empires to Macau's luxury gaming capitals—
                       discover the opulent legacy and contemporary wealth of the world's most sophisticated Portuguese-speaking elite.
                     </p>
                     <div className="bg-gradient-to-r from-premium-50 via-primary-50 to-secondary-50 rounded-2xl p-6 border border-premium-200/30">
@@ -995,9 +995,9 @@ export default function About() {
                           </div>
                         </div>
                         <div className="space-y-4">
-                          <p className="text-gray-700"><strong className="text-premium-700">👑 Royal Legacy & Aristocracy:</strong> Europe's most ancient noble houses, eight centuries of royal lineage producing Europe's aristocratic elite. Portuguese dukes and counts maintain London mansions worth £50M+, with exclusive access to Buckingham Palace state functions and Windsor Castle private events.</p>
+                          <p className="text-gray-700"><strong className="text-premium-700">👑 Royal Legacy & Aristocracy:</strong> Europe's most ancient noble houses, eight centuries of royal lineage producing Europe's aristocratic elite. Lusophone dukes and counts maintain London mansions worth £50M+, with exclusive access to Buckingham Palace state functions and Windsor Castle private events.</p>
                           <p className="text-gray-700"><strong className="text-premium-700">🍷 Luxury Wine Dynasties:</strong> Port wine empires valued at €200M+, Douro Valley estates spanning centuries, aristocratic wine families owning London's most exclusive private cellars. Members of prestigious wine societies including the Institute of Masters of Wine.</p>
-                          <p className="text-gray-700"><strong className="text-premium-700">🏰 Palatial Real Estate:</strong> Sintra Palace replicas in Surrey, Manueline architecture mansions, private quintas with Michelin-starred chefs, and luxury golf estates. Portuguese nobility owns £2B+ in London prime real estate including historic Mayfair properties.</p>
+                          <p className="text-gray-700"><strong className="text-premium-700">🏰 Palatial Real Estate:</strong> Sintra Palace replicas in Surrey, Manueline architecture mansions, private quintas with Michelin-starred chefs, and luxury golf estates. Lusophone nobility owns £2B+ in London prime real estate including historic Mayfair properties.</p>
                           <p className="text-gray-700"><strong className="text-premium-700">💎 Elite Society Networks:</strong> White's Club members, Royal Yacht Squadron associates, exclusive Portuguese heritage foundations, and aristocratic families maintaining private art collections worth hundreds of millions, with regular exhibitions at the National Gallery.</p>
                         </div>
                       </div>
@@ -1074,7 +1074,7 @@ export default function About() {
                         </div>
                         <div className="space-y-4">
                           <p className="text-gray-700"><strong className="text-green-700">🏝️ Coastal Paradise Empire:</strong> Bazaruto Archipelago private islands owned by global billionaires, exclusive beach resorts charging $15,000+ per night, private helicopter safari lodges, and luxury eco-resorts serving exclusively ultra-high-net-worth individuals. London elite maintain private yachts worth £100M+ for Mozambique expeditions.</p>
-                          <p className="text-gray-700"><strong className="text-green-700">🏰 Colonial Palace Heritage:</strong> Portuguese colonial mansions converted into ultra-luxury retreats hosting European royalty, Ibo Island UNESCO palaces serving as exclusive private residences, and sophisticated Afro-Portuguese cultural fusion in luxury hospitality exceeding St. Moritz standards.</p>
+                          <p className="text-gray-700"><strong className="text-green-700">🏰 Colonial Palace Heritage:</strong> Lusophone colonial mansions converted into ultra-luxury retreats hosting European royalty, Ibo Island UNESCO palaces serving as exclusive private residences, and sophisticated Afro-Lusophone cultural fusion in luxury hospitality exceeding St. Moritz standards.</p>
                           <p className="text-gray-700"><strong className="text-green-700">⭐ Elite Tourism Capital:</strong> Forbes Five-Star resorts accessible only by private jet, exclusive big-game hunting concessions worth $50,000 per expedition, luxury diving experiences with personal submarine access, and private conservation estates where London's elite conduct £10M+ wildlife photography expeditions.</p>
                           <p className="text-gray-700"><strong className="text-green-700">🎯 London Professional Elite:</strong> Mozambican executives in City of London top-tier investment banks, senior partners in Magic Circle law firms, elite diplomatic corps with direct access to Whitehall, and international development professionals managing £2B+ African investment portfolios from London headquarters.</p>
                         </div>
@@ -1128,7 +1128,7 @@ export default function About() {
                           <p className="text-gray-700"><strong className="text-orange-700">🌿 Pristine Paradise Investment:</strong> Bijagós Archipelago UNESCO Biosphere Reserve with exclusive eco-luxury development rights worth €2B+, untapped cashew nut industry generating premium organic exports, and emerging sustainable tourism attracting £500M+ investment from London's elite environmental funds and impact investors.</p>
                           <p className="text-gray-700"><strong className="text-orange-700">🎨 Artisanal Luxury Heritage:</strong> Traditional Balanta sculptures selling for £50,000+ at Sotheby's, hand-carved masks displayed in private London galleries, refined bijoux jewelry crafted from local materials, and sophisticated artistic traditions patronized by Tate Modern curators and Royal Academy collectors.</p>
                           <p className="text-gray-700"><strong className="text-orange-700">👥 Elite Professional Diaspora:</strong> Guinea-Bissau academics with Oxford and Cambridge professorships, distinguished UN ambassadors based in London's diplomatic quarter, successful entrepreneurs in City financial services, and business leaders managing African investment portfolios exceeding £1B+ from London headquarters.</p>
-                          <p className="text-gray-700"><strong className="text-orange-700">🏆 Colonial Heritage Sophistication:</strong> Portuguese colonial architecture preserved as luxury boutique hotels, sophisticated traditional governance systems studied by LSE political scientists, cultural sophistication showcased in private London galleries, and elite diaspora funding £20M+ heritage preservation foundations with Royal Patronage.</p>
+                          <p className="text-gray-700"><strong className="text-orange-700">🏆 Colonial Heritage Sophistication:</strong> Lusophone colonial architecture preserved as luxury boutique hotels, sophisticated traditional governance systems studied by LSE political scientists, cultural sophistication showcased in private London galleries, and elite diaspora funding £20M+ heritage preservation foundations with Royal Patronage.</p>
                         </div>
                       </div>
                     </motion.div>
@@ -1153,7 +1153,7 @@ export default function About() {
                         <div className="space-y-4">
                           <p className="text-gray-700"><strong className="text-yellow-700">🍫 Chocolate Empire Royalty:</strong> Premium cocoa beans selling for €150+ per kilogram to London's most exclusive chocolatiers, artisanal plantations supplying Harrods and Fortnum & Mason, luxury chocolate masterclasses for £5,000+ per person, and São Toméan chocolatiers owning Bond Street boutiques charging £200+ per chocolate box, rivaling Godiva and La Maison du Chocolat.</p>
                           <p className="text-gray-700"><strong className="text-yellow-700">🏝️ Billionaire Paradise Retreats:</strong> Private volcanic islands owned by tech billionaires, eco-luxury resorts charging €20,000+ per night accessible only by helicopter, pristine biodiversity sanctuaries funded by £100M+ conservation trusts, and exclusive retreat destinations hosting London's ultra-elite for digital detox experiences worth more than Necker Island.</p>
-                          <p className="text-gray-700"><strong className="text-yellow-700">🎭 Cultural Aristocracy:</strong> Sophisticated Tchiloli theatre performances for Royal Family private events, Portuguese-African cultural fusion celebrated at Buckingham Palace receptions, high arts patronage through London's elite cultural institutions, and traditional festivals recreated as exclusive £50,000+ private events for London's cultural elite.</p>
+                          <p className="text-gray-700"><strong className="text-yellow-700">🎭 Cultural Aristocracy:</strong> Sophisticated Tchiloli theatre performances for Royal Family private events, Lusophone-African cultural fusion celebrated at Buckingham Palace receptions, high arts patronage through London's elite cultural institutions, and traditional festivals recreated as exclusive £50,000+ private events for London's cultural elite.</p>
                           <p className="text-gray-700"><strong className="text-yellow-700">🌟 Elite London Networks:</strong> Distinguished São Toméan ambassadors with direct access to Foreign Office, academics holding prestigious chairs at Imperial College and King's College London, cultural attachés managing £50M+ United Kingdom-São Tomé cultural exchange programs, and diplomatic elite maintaining sophisticated networks within London's Portuguese-speaking aristocracy.</p>
                         </div>
                       </div>
@@ -1178,7 +1178,7 @@ export default function About() {
                         </div>
                         <div className="space-y-4">
                           <p className="text-gray-700"><strong className="text-red-700">💰 Petroleum Fortune Empire:</strong> Timor Sea oil reserves worth $50B+, liquefied natural gas exports generating $2B+ annually, sovereign wealth fund investments in London's premium real estate, and Timorese petroleum executives owning luxury properties in Kensington worth £100M+ while maintaining private jets for Asia-Pacific business empire management.</p>
-                          <p className="text-gray-700"><strong className="text-red-700">🎭 Elite Cultural Fusion:</strong> Unique Portuguese-Tetum-Bahasa heritage creating sophisticated tri-lingual cultural aristocracy, refined tais textile art selling for £10,000+ in London galleries, sophisticated cultural fusion celebrated in exclusive embassy receptions, and distinguished traditions promoted within London's most exclusive multicultural diplomatic elite circles.</p>
+                          <p className="text-gray-700"><strong className="text-red-700">🎭 Elite Cultural Fusion:</strong> Unique Lusophone-Tetum-Bahasa heritage creating sophisticated tri-lingual cultural aristocracy, refined tais textile art selling for £10,000+ in London galleries, sophisticated cultural fusion celebrated in exclusive embassy receptions, and distinguished traditions promoted within London's most exclusive multicultural diplomatic elite circles.</p>
                           <p className="text-gray-700"><strong className="text-red-700">🎓 Academic Aristocracy:</strong> Cambridge and Oxford scholarships for Timorese elite families, prestigious diplomatic academy training at Georgetown and LSE, high-level intellectual exchanges with London School of Economics, and Timorese academic elite holding professorships at Imperial College while contributing to Chatham House policy-making for £200M+ Asia-Pacific development programs.</p>
                           <p className="text-gray-700"><strong className="text-red-700">🏛️ Elite Diplomatic Networks:</strong> Timorese ambassadors with direct access to Downing Street and Westminster, high-ranking officials in UN Security Council deliberations, sophisticated political networks spanning ASEAN elite circles, and diplomatic professionals maintaining £500M+ cultural and political exchange programs across the sophisticated Portuguese-speaking world from London headquarters.</p>
                         </div>
@@ -1204,8 +1204,8 @@ export default function About() {
                         </div>
                         <div className="space-y-4">
                           <p className="text-gray-700"><strong className="text-pink-700">🎰 Gaming Capital:</strong> World's largest gambling revenue center, luxury casino resorts, high-roller entertainment, and elite gaming culture connecting Macanese professionals with London's financial and entertainment elite.</p>
-                          <p className="text-gray-700"><strong className="text-pink-700">🏛️ Portuguese Elegance:</strong> UNESCO World Heritage colonial architecture, sophisticated Portuguese-Chinese cultural fusion, elegant historic preservation, and refined aesthetic traditions maintaining prestige in London's cultural circles.</p>
-                          <p className="text-gray-700"><strong className="text-pink-700">🍽️ Culinary Excellence:</strong> Michelin-starred restaurants, fusion haute cuisine, world-renowned culinary traditions, and Macanese chefs operating London's most exclusive Portuguese-Asian fusion establishments and luxury dining experiences.</p>
+                          <p className="text-gray-700"><strong className="text-pink-700">🏛️ Lusophone Elegance:</strong> UNESCO World Heritage colonial architecture, sophisticated Lusophone-Chinese cultural fusion, elegant historic preservation, and refined aesthetic traditions maintaining prestige in London's cultural circles.</p>
+                          <p className="text-gray-700"><strong className="text-pink-700">🍽️ Culinary Excellence:</strong> Michelin-starred restaurants, fusion haute cuisine, world-renowned culinary traditions, and Macanese chefs operating London's most exclusive Lusophone-Asian fusion establishments and luxury dining experiences.</p>
                           <p className="text-gray-700"><strong className="text-pink-700">💼 Elite Networks:</strong> Wealthy Macanese professionals in London's financial district, luxury hospitality sector, gaming industry connections, and sophisticated business networks linking Asia's wealthiest Portuguese-speaking elite with United Kingdom markets.</p>
                         </div>
                       </div>
@@ -1221,7 +1221,7 @@ export default function About() {
                       viewport={{ once: true }}
                       className="text-2xl font-bold text-gray-900 mb-6 text-center"
                     >
-                      💎 Elite Portuguese-Speaking World Statistics
+                      💎 Elite Lusophone-Speaking World Statistics
                     </motion.h4>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                       <motion.div 
@@ -1271,7 +1271,7 @@ export default function About() {
                     </div>
                   </div>
                   
-                  {/* Elite Portuguese Networks in London */}
+                  {/* Elite Lusophone Networks in London */}
                   <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -1289,10 +1289,10 @@ export default function About() {
                           className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-6 border border-premium-300/50 shadow-lg"
                         >
                           <span className="text-4xl">🏛️</span>
-                          <span className="text-premium-700 font-bold text-xl">Exclusive Portuguese London Society • Sociedade Portuguesa Elite de Londres</span>
+                          <span className="text-premium-700 font-bold text-xl">Exclusive Lusophone London Society • Sociedade Portuguesa Elite de Londres</span>
                         </motion.div>
                         <h4 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-premium-600 to-primary-600 bg-clip-text text-transparent mb-6">
-                          London's Most Prestigious Portuguese Networks
+                          London's Most Prestigious Lusophone Networks
                         </h4>
                         <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
                           Access London's most exclusive Portuguese-speaking elite circles where aristocratic families, business magnates, 
@@ -1326,9 +1326,9 @@ export default function About() {
                                 </div>
                               </div>
                               <div className="space-y-3 text-sm text-gray-700">
-                                <p><strong className="text-premium-700">White's Club:</strong> Portuguese dukes with 300+ year memberships, exclusive dining with European royalty, annual fees £50,000+</p>
-                                <p><strong className="text-premium-700">Boodle's & Brooks's:</strong> Historic gentlemen's clubs where Portuguese nobility conduct private business and cultural affairs</p>
-                                <p><strong className="text-premium-700">Royal Automobile Club:</strong> Luxury Portuguese automotive collections, exclusive driving events, and aristocratic motoring heritage</p>
+                                <p><strong className="text-premium-700">White's Club:</strong> Lusophone dukes with 300+ year memberships, exclusive dining with European royalty, annual fees £50,000+</p>
+                                <p><strong className="text-premium-700">Boodle's & Brooks's:</strong> Historic gentlemen's clubs where Lusophone nobility conduct private business and cultural affairs</p>
+                                <p><strong className="text-premium-700">Royal Automobile Club:</strong> Luxury Lusophone automotive collections, exclusive driving events, and aristocratic motoring heritage</p>
                               </div>
                             </div>
                           </div>
@@ -1358,9 +1358,9 @@ export default function About() {
                                 </div>
                               </div>
                               <div className="space-y-3 text-sm text-gray-700">
-                                <p><strong className="text-secondary-700">Private Portuguese Restaurants:</strong> Michelin-starred chefs, exclusive tasting menus £500+ per person, rare vintage ports worth £10,000+ per bottle</p>
-                                <p><strong className="text-secondary-700">Covent Garden Opera Boxes:</strong> Portuguese cultural elite maintain private boxes, host royal receptions, sponsor exclusive performances</p>
-                                <p><strong className="text-secondary-700">National Gallery Patronage:</strong> Portuguese art collectors with private viewing privileges, exclusive exhibition openings, cultural foundation boards</p>
+                                <p><strong className="text-secondary-700">Private Lusophone Restaurants:</strong> Michelin-starred chefs, exclusive tasting menus £500+ per person, rare vintage ports worth £10,000+ per bottle</p>
+                                <p><strong className="text-secondary-700">Covent Garden Opera Boxes:</strong> Lusophone cultural elite maintain private boxes, host royal receptions, sponsor exclusive performances</p>
+                                <p><strong className="text-secondary-700">National Gallery Patronage:</strong> Lusophone art collectors with private viewing privileges, exclusive exhibition openings, cultural foundation boards</p>
                               </div>
                             </div>
                           </div>
@@ -1390,7 +1390,7 @@ export default function About() {
                                 </div>
                               </div>
                               <div className="space-y-3 text-sm text-gray-700">
-                                <p><strong className="text-purple-700">City of London Elite:</strong> Portuguese CEOs in FTSE 100 companies, private banking with Coutts & Co, exclusive investment partnerships worth £5B+</p>
+                                <p><strong className="text-purple-700">City of London Elite:</strong> Lusophone CEOs in FTSE 100 companies, private banking with Coutts & Co, exclusive investment partnerships worth £5B+</p>
                                 <p><strong className="text-purple-700">Mayfair Private Offices:</strong> Portuguese business dynasties maintain headquarters in historic Mayfair buildings, conduct international deals</p>
                                 <p><strong className="text-purple-700">Royal Patron Networks:</strong> Portuguese business leaders with royal warrants, direct access to Buckingham Palace commercial partnerships</p>
                               </div>
@@ -1422,9 +1422,9 @@ export default function About() {
                                 </div>
                               </div>
                               <div className="space-y-3 text-sm text-gray-700">
-                                <p><strong className="text-green-700">Belgravia Palaces:</strong> Portuguese aristocratic families own historic mansions in Eaton Square and Chester Square worth £100M+ each</p>
+                                <p><strong className="text-green-700">Belgravia Palaces:</strong> Lusophone aristocratic families own historic mansions in Eaton Square and Chester Square worth £100M+ each</p>
                                 <p><strong className="text-green-700">Kensington Palace Gardens:</strong> "Billionaire's Row" residences, private security, diplomatic immunity, neighbors include royal family members</p>
-                                <p><strong className="text-green-700">Surrey Country Estates:</strong> Portuguese nobility maintain countryside palaces with private golf courses, helicopter pads, equestrian facilities</p>
+                                <p><strong className="text-green-700">Surrey Country Estates:</strong> Lusophone nobility maintain countryside palaces with private golf courses, helicopter pads, equestrian facilities</p>
                               </div>
                             </div>
                           </div>
@@ -1454,9 +1454,9 @@ export default function About() {
                                 </div>
                               </div>
                               <div className="space-y-3 text-sm text-gray-700">
-                                <p><strong className="text-blue-700">Portuguese Embassy Events:</strong> Exclusive diplomatic receptions, cultural celebrations with royal family attendance, state dinner access</p>
-                                <p><strong className="text-blue-700">Camões Institute London:</strong> Portuguese cultural center hosting elite literature circles, academic symposiums, aristocratic cultural preservation</p>
-                                <p><strong className="text-blue-700">Royal Society Memberships:</strong> Portuguese academics and nobles with fellowship in prestigious scientific and cultural societies, centuries-old traditions</p>
+                                <p><strong className="text-blue-700">Lusophone Embassy Events:</strong> Exclusive diplomatic receptions, cultural celebrations with royal family attendance, state dinner access</p>
+                                <p><strong className="text-blue-700">Camões Institute London:</strong> Lusophone cultural center hosting elite literature circles, academic symposiums, aristocratic cultural preservation</p>
+                                <p><strong className="text-blue-700">Royal Society Memberships:</strong> Lusophone academics and nobles with fellowship in prestigious scientific and cultural societies, centuries-old traditions</p>
                               </div>
                             </div>
                           </div>
@@ -1487,7 +1487,7 @@ export default function About() {
                               </div>
                               <div className="space-y-3 text-sm text-gray-700">
                                 <p><strong className="text-orange-700">Private Jets & Yachts:</strong> Portuguese-speaking crews, exclusive access to European royal destinations, luxury travel exceeding £100,000 per trip</p>
-                                <p><strong className="text-orange-700">Personal Shoppers Bond Street:</strong> Exclusive access to private Harrods appointments, bespoke Savile Row tailoring, luxury Portuguese jewelry collections</p>
+                                <p><strong className="text-orange-700">Personal Shoppers Bond Street:</strong> Exclusive access to private Harrods appointments, bespoke Savile Row tailoring, luxury Lusophone jewelry collections</p>
                                 <p><strong className="text-orange-700">Private Healthcare:</strong> Exclusive Harley Street consultants, Royal London Hospital VIP suites, Portuguese-speaking medical teams for aristocratic families</p>
                               </div>
                             </div>
@@ -1518,7 +1518,7 @@ export default function About() {
                         </div>
                         <div className="text-left">
                           <p className="font-bold text-gray-900">LusoTown London</p>
-                          <p className="text-sm text-gray-600">Celebrating Elite Portuguese Heritage</p>
+                          <p className="text-sm text-gray-600">Celebrating Elite Lusophone Heritage</p>
                         </div>
                       </div>
                     </div>
@@ -1610,7 +1610,7 @@ export default function About() {
                 <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8">
                   <h3 className="text-xl font-semibold text-purple-600 mb-4">👨‍👩‍👧‍👦 Family Support</h3>
                   <p className="text-gray-600">
-                    Supporting Portuguese families in London with resources, connections, and community that 
+                    Supporting Lusophone families in London with resources, connections, and community that 
                     help children grow proud of their heritage while thriving in British society.
                   </p>
                 </div>
@@ -1635,7 +1635,7 @@ export default function About() {
                   <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 mb-6">
                     <p className="mb-4">
                       <strong>This platform welcomes open-minded people from every corner of the Portuguese-speaking world.</strong> 
-                      Our staff and community come from all countries that speak Portuguese—from the historic streets of Porto 
+                      Our staff and community come from all countries that speak Lusophone—from the historic streets of Porto 
                       to the vibrant beaches of Rio, from the cultural richness of Luanda to the island beauty of Cabo Verde.
                     </p>
                     <p className="mb-4">

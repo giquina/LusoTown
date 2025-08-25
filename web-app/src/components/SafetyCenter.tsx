@@ -77,7 +77,7 @@ export default function SafetyCenter() {
             description: 'Control who can see your profile, photos, and contact information.'
           },
           support: {
-            title: '24/7 Portuguese Support',
+            title: '24/7 Lusophone Support',
             description: 'Our Portuguese-speaking safety team is available around the clock.'
           },
           meetings: {

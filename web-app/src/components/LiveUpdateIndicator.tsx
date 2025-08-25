@@ -51,8 +51,8 @@ export default function LiveUpdateIndicator({
     {
       type: 'user_joined',
       message: isPortuguese
-        ? 'Maria Silva confirmou presença em "Portuguese Wine Tasting"'
-        : 'Maria Silva confirmed attendance at "Portuguese Wine Tasting"',
+        ? 'Maria Silva confirmou presença em "Lusophone Wine Tasting"'
+        : 'Maria Silva confirmed attendance at "Lusophone Wine Tasting"',
       eventId: 'event-124',
       userId: 'user-456'
     },

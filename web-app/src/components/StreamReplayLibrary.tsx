@@ -81,7 +81,7 @@ export default function StreamReplayLibrary({
           : "An unforgettable night of traditional fado with artists from Lisbon and Porto",
       category: "portuguese-culture",
       categoryName:
-        language === "pt" ? "Cultura Portuguesa" : "Portuguese Culture",
+        language === "pt" ? "Cultura Portuguesa" : "Lusophone Culture",
       originalStreamDate: "2024-12-15T20:00:00Z",
       duration: 95,
       views: 1247,
@@ -222,7 +222,7 @@ export default function StreamReplayLibrary({
       description:
         language === "pt"
           ? "Conselhos de carreira e oportunidades para estudantes portugueses no Reino Unido"
-          : "Career advice and opportunities for Portuguese students in the United Kingdom",
+          : "Career advice and opportunities for Lusophone students in the United Kingdom",
       category: "student-sessions",
       categoryName:
         language === "pt" ? "Sessões de Estudantes" : "Student Sessions",
@@ -267,7 +267,7 @@ export default function StreamReplayLibrary({
       description:
         language === "pt"
           ? "CEOs portugueses discutem o futuro dos negócios pós-Brexit"
-          : "Portuguese CEOs discuss the future of post-Brexit business",
+          : "Lusophone CEOs discuss the future of post-Brexit business",
       category: "vip-business",
       categoryName: language === "pt" ? "VIP Business" : "VIP Business",
       originalStreamDate: "2024-12-08T15:00:00Z",

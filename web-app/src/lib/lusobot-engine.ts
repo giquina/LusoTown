@@ -1,7 +1,7 @@
 /**
- * LusoBot Portuguese Cultural AI Assistant Engine
+ * LusoBot Lusophone Cultural AI Assistant Engine
  * 
- * Core AI system providing Portuguese cultural expertise, language support,
+ * Core AI system providing Lusophone cultural expertise, language support,
  * community navigation, and saudade emotional understanding.
  */
 
@@ -73,15 +73,15 @@ export type CommunityLevel = 'newcomer' | 'active' | 'engaged' | 'leader' | 'eld
 export type LanguageProficiency = 'native' | 'fluent' | 'intermediate' | 'beginner' | 'learning'
 export type UserMood = 'curious' | 'homesick' | 'excited' | 'seeking_help' | 'celebratory'
 
-// Portuguese Cultural Knowledge Base
+// Lusophone Cultural Knowledge Base
 export const PORTUGUESE_CULTURAL_KNOWLEDGE = {
   // Historical Periods
   history: {
     discoveries: {
       period: '15th-16th centuries',
       keywords: ['navegações', 'descobrimentos', 'vasco da gama', 'pedro álvares cabral'],
-      significance: 'Portuguese maritime expansion and global influence',
-      cultural_impact: 'Foundation of Portuguese global identity and pride'
+      significance: 'Lusophone maritime expansion and global influence',
+      cultural_impact: 'Foundation of Lusophone global identity and pride'
     },
     revolution_1974: {
       period: '25 de Abril 1974',
@@ -110,7 +110,7 @@ export const PORTUGUESE_CULTURAL_KNOWLEDGE = {
       characteristics: ['Academic', 'Historical', 'Balanced'],
       cuisine: ['Leitão da Bairrada', 'Queijo da Serra', 'Ovos moles'],
       traditions: ['Queima das Fitas', 'Festa dos Tabuleiros'],
-      dialects: ['Standard Portuguese', 'Academic language'],
+      dialects: ['Standard Lusophone', 'Academic language'],
       music: ['University traditions', 'Classical influence']
     },
     south: {
@@ -124,7 +124,7 @@ export const PORTUGUESE_CULTURAL_KNOWLEDGE = {
       characteristics: ['Cosmopolitan', 'Historic', 'Diverse'],
       cuisine: ['Pastéis de nata', 'Bacalhau', 'International fusion'],
       traditions: ['Santos Populares', 'Fado houses'],
-      dialects: ['Standard Portuguese', 'Urban slang'],
+      dialects: ['Standard Lusophone', 'Urban slang'],
       music: ['Fado', 'Modern Portuguese music']
     },
     azores: {
@@ -149,7 +149,7 @@ export const PORTUGUESE_CULTURAL_KNOWLEDGE = {
       'bacalhau': {
         significance: 'National fish, "fiel amigo" (faithful friend)',
         preparations: ['365 ways to prepare', 'Christmas tradition', 'Identity symbol'],
-        cultural_meaning: 'Represents Portuguese ingenuity and tradition'
+        cultural_meaning: 'Represents Lusophone ingenuity and tradition'
       },
       'pão': {
         significance: 'Daily bread, center of meals',
@@ -165,7 +165,7 @@ export const PORTUGUESE_CULTURAL_KNOWLEDGE = {
     traditional_dishes: {
       'cozido_portuguesa': 'National stew representing unity in diversity',
       'francesinha': 'Porto\'s hearty sandwich, local pride',
-      'pasteis_nata': 'Sweet symbol of Portuguese culinary expertise',
+      'pasteis_nata': 'Sweet symbol of Lusophone culinary expertise',
       'cataplana': 'Algarve seafood celebration',
       'bifana': 'Everyday comfort food, working-class identity'
     },
@@ -193,7 +193,7 @@ export const PORTUGUESE_CULTURAL_KNOWLEDGE = {
       'chamarrita': 'Azorean folk music, island identity'
     },
     modern_music: {
-      evolution: 'From folk to contemporary, maintaining Portuguese soul',
+      evolution: 'From folk to contemporary, maintaining Lusophone soul',
       artists: ['Mariza', 'Dulce Pontes', 'Madredeus', 'Deolinda'],
       themes: 'Modern life with traditional emotions'
     }
@@ -203,12 +203,12 @@ export const PORTUGUESE_CULTURAL_KNOWLEDGE = {
   language: {
     saudade: {
       definition: 'Untranslatable feeling of longing, missing, nostalgic love',
-      usage: 'Central to Portuguese emotional expression',
-      cultural_importance: 'Defines Portuguese character and worldview',
+      usage: 'Central to Lusophone emotional expression',
+      cultural_importance: 'Defines Lusophone character and worldview',
       expressions: ['Tenho saudades', 'Mata saudades', 'Morrer de saudades']
     },
     common_expressions: {
-      'desenrascanço': 'Portuguese ability to solve problems creatively',
+      'desenrascanço': 'Lusophone ability to solve problems creatively',
       'fado': 'Fate, destiny - acceptance of life\'s ups and downs',
       'coração': 'Heart - central to emotional expression',
       'família': 'Family - core value and social unit',
@@ -217,7 +217,7 @@ export const PORTUGUESE_CULTURAL_KNOWLEDGE = {
     regional_dialects: {
       pronunciation: 'Varies significantly by region',
       vocabulary: 'Local words and expressions',
-      formal_vs_informal: 'Portuguese hierarchy in language use'
+      formal_vs_informal: 'Lusophone hierarchy in language use'
     }
   }
 }
@@ -226,7 +226,7 @@ export const PORTUGUESE_CULTURAL_KNOWLEDGE = {
 export class SaudadeEngine {
   static detectSaudade(message: string, language: Language): EmotionalTone {
     const saudadeKeywords = [
-      // Portuguese
+      // Lusophone
       'saudades', 'saudade', 'falta', 'nostalgia', 'longe', 'casa', 'família',
       'terra', 'portugal', 'pátria', 'raízes', 'origem', 'coração',
       // English equivalents
@@ -300,7 +300,7 @@ export class SaudadeEngine {
     if (tone.saudade > 0.6) {
       return language === 'pt' 
         ? "Compreendo essa saudade profunda que sentes. É algo muito português, essa capacidade de amar intensamente mesmo à distância. A nossa comunidade está aqui para te acolher."
-        : "I understand that deep saudade you're feeling. It's something very Portuguese, this ability to love intensely even from a distance. Our community is here to embrace you."
+        : "I understand that deep saudade you're feeling. It's something very Lusophone, this ability to love intensely even from a distance. Our community is here to embrace you."
     }
 
     if (tone.nostalgia > 0.5) {
@@ -312,7 +312,7 @@ export class SaudadeEngine {
     if (tone.community > 0.5) {
       return language === 'pt'
         ? "O sentido de comunidade é fundamental para nós, portugueses. Há sempre espaço para mais uma pessoa na nossa mesa e no nosso coração."
-        : "The sense of community is fundamental for us Portuguese. There's always room for one more person at our table and in our hearts."
+        : "The sense of community is fundamental for us Lusophone. There's always room for one more person at our table and in our hearts."
     }
 
     return language === 'pt'
@@ -507,7 +507,7 @@ export class LusoBotEngine {
   ): string {
     return language === 'pt'
       ? "O fado é a nossa alma cantada, o espelho da saudade portuguesa. Desde Amália Rodrigues até Mariza, o fado evolui mas mantém sempre essa capacidade única de tocar o coração. Em Londres, há casas de fado onde podes ouvir essa música que nos define. Conheces alguma fadista favorita?"
-      : "Fado is our sung soul, the mirror of Portuguese saudade. From Amália Rodrigues to Mariza, fado evolves but always maintains that unique ability to touch the heart. In London, there are fado houses where you can hear this music that defines us. Do you have a favorite fadista?"
+      : "Fado is our sung soul, the mirror of Lusophone saudade. From Amália Rodrigues to Mariza, fado evolves but always maintains that unique ability to touch the heart. In London, there are fado houses where you can hear this music that defines us. Do you have a favorite fadista?"
   }
 
   private static generateHistoryResponse(
@@ -547,7 +547,7 @@ export class LusoBotEngine {
   ): string {
     return language === 'pt'
       ? "A cultura empresarial portuguesa valoriza as relações pessoais, a confiança e o respeito mútuo. No Reino Unido, muitos empresários portugueses destacam-se pela criatividade e pelo 'desenrascanço'. Como posso ajudar-te no teu percurso profissional ou empresarial?"
-      : "Portuguese business culture values personal relationships, trust and mutual respect. In the United Kingdom, many Portuguese entrepreneurs stand out for their creativity and 'desenrascanço'. How can I help you in your professional or business journey?"
+      : "Portuguese business culture values personal relationships, trust and mutual respect. In the United Kingdom, many Lusophone entrepreneurs stand out for their creativity and 'desenrascanço'. How can I help you in your professional or business journey?"
   }
 
   private static generateCommunityResponse(
@@ -555,9 +555,40 @@ export class LusoBotEngine {
     context: CulturalContext,
     language: Language
   ): string {
+    const text = message.toLowerCase()
+    
+    // Navigation-focused responses based on what they're looking for
+    if (text.includes('where') || text.includes('onde') || text.includes('como') || text.includes('how')) {
+      if (text.includes('event') || text.includes('evento')) {
+        return language === 'pt'
+          ? "Para eventos portugueses, vai à secção 'What's Happening' no menu principal! Lá encontras eventos culturais, festas, workshops e encontros da comunidade. Podes filtrar por data, localização e tipo de evento. De que região és? Posso recomendar eventos específicos!"
+          : "For Lusophone events, go to 'What's Happening' in the main menu! There you'll find cultural events, parties, workshops and community meetups. You can filter by date, location and event type. Where are you from? I can recommend specific events!"
+      }
+      
+      if (text.includes('business') || text.includes('negócio') || text.includes('restaurant') || text.includes('service')) {
+        return language === 'pt'
+          ? "Para negócios portugueses, clica em 'For Business' → 'Discover Businesses' no menu! Encontrarás restaurantes, serviços, lojas e profissionais portugueses. Podes pesquisar por localização, tipo de negócio ou classificação. Que tipo de serviço procuras?"
+          : "For Portuguese businesses, click 'For Business' → 'Discover Businesses' in the menu! You'll find Portuguese restaurants, services, shops and professionals. You can search by location, business type or rating. What kind of service are you looking for?"
+      }
+      
+      if (text.includes('people') || text.includes('meet') || text.includes('conhecer') || text.includes('pessoas')) {
+        return language === 'pt'
+          ? "Para conhecer pessoas, experimenta 'Find Your Match' (o coração 💗 no menu) para conexões românticas ou de amizade! Também podes ir ao 'Community' → 'Meet Lusophone Speakers' para o diretório da comunidade. De onde és e que idade tens? Isso ajuda-me a sugerir os melhores grupos!"
+          : "To meet people, try 'Find Your Match' (the heart 💗 in the menu) for romantic or friendship connections! You can also go to 'Community' → 'Meet Lusophone Speakers' for the community directory. Where are you from and what age are you? This helps me suggest the best groups!"
+      }
+    }
+    
+    // New user welcome response
+    if (text.includes('novo') || text.includes('new') || text.includes('começar') || text.includes('start')) {
+      return language === 'pt'
+        ? "Bem-vindo ao LusoTown! 🇵🇹 Aqui tens tudo para a comunidade lusófona no Reino Unido:\n\n📅 **Events**: Clica 'What's Happening' para eventos\n💗 **Dating/Amizades**: 'Find Your Match'\n🏢 **Negócios**: 'For Business' → 'Discover Businesses'\n👥 **Comunidade**: 'Community' para conhecer pessoas\n\nDe onde és? Portugal, Brasil, ou outro país lusófono? Isso ajuda-me a personalizar as sugestões!"
+        : "Welcome to LusoTown! 🇵🇹 Here you have everything for the Portuguese-speaking community in the UK:\n\n📅 **Events**: Click 'What's Happening' for events\n💗 **Dating/Friendships**: 'Find Your Match'\n🏢 **Business**: 'For Business' → 'Discover Businesses'\n👥 **Community**: 'Community' to meet people\n\nWhere are you from? Portugal, Brazil, or another Portuguese-speaking country? This helps me personalize suggestions!"
+    }
+    
+    // Default navigation-focused response
     return language === 'pt'
-      ? "A comunidade de falantes de português no Reino Unido é forte, acolhedora e sempre pronta a ajudar. Seja para encontrar produtos portugueses, eventos culturais, ou simplesmente para um café e uma conversa, estamos todos ligados pela mesma herança. Como posso ajudar-te a sentires-te mais integrado na nossa comunidade?"
-      : "The Portuguese-speaking community in the United Kingdom is strong, welcoming and always ready to help. Whether to find Portuguese products, cultural events, or simply for a coffee and conversation, we're all connected by the same heritage. How can I help you feel more integrated into our community?"
+      ? "Olá! Sou o LusoBot e estou aqui para te ajudar a navegar no LusoTown. 🇵🇹\n\nDiz-me:\n• De onde és? (Portugal, Brasil, Cabo Verde...)\n• O que procuras? (eventos, negócios, pessoas, grupos...)\n• És novo no Reino Unido?\n\nCom essas informações, posso guiar-te para as secções mais úteis da plataforma!"
+      : "Hello! I'm LusoBot and I'm here to help you navigate LusoTown. 🇵🇹\n\nTell me:\n• Where are you from? (Portugal, Brazil, Cape Verde...)\n• What are you looking for? (events, businesses, people, groups...)\n• Are you new to the UK?\n\nWith this information, I can guide you to the most useful sections of the platform!"
   }
 
   private static generateSuggestions(
@@ -568,15 +599,51 @@ export class LusoBotEngine {
   ): LusoBotSuggestion[] {
     const suggestions: LusoBotSuggestion[] = []
 
+    // Always suggest main navigation areas for new users
+    if (userContext.communityLevel === 'newcomer') {
+      suggestions.push({
+        type: 'event',
+        title: language === 'pt' ? 'Ver Eventos Portugueses' : 'Browse Lusophone Events',
+        description: language === 'pt' 
+          ? 'Clica "What\'s Happening" no menu principal'
+          : 'Click "What\'s Happening" in the main menu',
+        link: '/events/',
+        priority: 'high',
+        culturalRelevance: 0.95
+      })
+      
+      suggestions.push({
+        type: 'community',
+        title: language === 'pt' ? 'Encontrar Pessoas' : 'Find People',
+        description: language === 'pt' 
+          ? 'Usa "Find Your Match" (💗) para conhecer portugueses'
+          : 'Use "Find Your Match" (💗) to meet Portuguese speakers',
+        link: '/matches/',
+        priority: 'high',
+        culturalRelevance: 0.9
+      })
+      
+      suggestions.push({
+        type: 'business',
+        title: language === 'pt' ? 'Negócios Portugueses' : 'Lusophone Businesses',
+        description: language === 'pt' 
+          ? 'Vai a "For Business" → "Discover Businesses"'
+          : 'Go to "For Business" → "Discover Businesses"',
+        link: '/business-directory/',
+        priority: 'high',
+        culturalRelevance: 0.85
+      })
+    }
+
     // High saudade - suggest community connections
     if (emotionalTone.saudade > 0.5) {
       suggestions.push({
         type: 'community',
-        title: language === 'pt' ? 'Encontros Portugueses em Londres' : 'Portuguese Meetups in London',
+        title: language === 'pt' ? 'Encontros Portugueses em Londres' : 'Lusophone Meetups in London',
         description: language === 'pt' 
           ? 'Conecta-te com outros portugueses na tua área'
-          : 'Connect with other Portuguese people in your area',
-        link: '/events?category=cultural',
+          : 'Connect with other Lusophone people in your area',
+        link: '/events/?category=cultural',
         priority: 'high',
         culturalRelevance: 0.9
       })
@@ -586,7 +653,7 @@ export class LusoBotEngine {
     if (culturalContext.topic === 'cuisine') {
       suggestions.push({
         type: 'business',
-        title: language === 'pt' ? 'Restaurantes Portugueses' : 'Portuguese Restaurants',
+        title: language === 'pt' ? 'Restaurantes Portugueses' : 'Lusophone Restaurants',
         description: language === 'pt' 
           ? 'Descobre sabores de casa em Londres'
           : 'Discover flavors from home in London',
@@ -597,7 +664,7 @@ export class LusoBotEngine {
 
       suggestions.push({
         type: 'event',
-        title: language === 'pt' ? 'Aulas de Culinária Portuguesa' : 'Portuguese Cooking Classes',
+        title: language === 'pt' ? 'Aulas de Culinária Portuguesa' : 'Lusophone Cooking Classes',
         description: language === 'pt' 
           ? 'Aprende a fazer pratos tradicionais'
           : 'Learn to make traditional dishes',
@@ -614,7 +681,7 @@ export class LusoBotEngine {
         title: language === 'pt' ? 'Intercâmbio de Idiomas' : 'Language Exchange',
         description: language === 'pt' 
           ? 'Pratica português com nativos'
-          : 'Practice Portuguese with natives',
+          : 'Practice Lusophone with natives',
         link: '/language-exchange',
         priority: 'high',
         culturalRelevance: 0.8
@@ -628,7 +695,7 @@ export class LusoBotEngine {
         title: language === 'pt' ? 'Networking Empresarial LusoTown' : 'LusoTown Business Networking',
         description: language === 'pt' 
           ? 'Conecta-te com empresários portugueses'
-          : 'Connect with Portuguese entrepreneurs',
+          : 'Connect with Lusophone entrepreneurs',
         link: '/business-networking',
         priority: 'high',
         culturalRelevance: 0.8
@@ -639,7 +706,7 @@ export class LusoBotEngine {
     if (emotionalTone.heritage > 0.4) {
       suggestions.push({
         type: 'event',
-        title: language === 'pt' ? 'Eventos Culturais Portugueses' : 'Portuguese Cultural Events',
+        title: language === 'pt' ? 'Eventos Culturais Portugueses' : 'Lusophone Cultural Events',
         description: language === 'pt' 
           ? 'Celebra a nossa cultura e tradições'
           : 'Celebrate our culture and traditions',
@@ -679,7 +746,7 @@ export class LusoBotSession {
       role: 'assistant',
       content: this.language === 'pt' 
         ? "Olá! Sou o LusoBot, o teu assistente cultural português. Estou aqui para te ajudar com tudo relacionado com a nossa cultura, tradições, comunidade em Londres, e claro, para compreender e apoiar as tuas saudades. Como posso ajudar-te hoje?"
-        : "Hello! I'm LusoBot, your Portuguese cultural assistant. I'm here to help you with everything related to our culture, traditions, community in London, and of course, to understand and support your saudades. How can I help you today?",
+        : "Hello! I'm LusoBot, your Lusophone cultural assistant. I'm here to help you with everything related to our culture, traditions, community in London, and of course, to understand and support your saudades. How can I help you today?",
       timestamp: new Date(),
       language: this.language,
       culturalContext: {

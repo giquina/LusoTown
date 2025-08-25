@@ -64,7 +64,7 @@ export const LUSOPHONE_CELEBRATIONS: LusophoneCelebration[] = [
       pt: 'Santos Populares e Festas Juninas'
     },
     description: {
-      en: 'Vibrant June celebrations combining Portuguese Santos Populares with Brazilian Festa Junina traditions',
+      en: 'Vibrant June celebrations combining Lusophone Santos Populares with Brazilian Festa Junina traditions',
       pt: 'Vibrantes celebrações de junho combinando Santos Populares portugueses com tradições brasileiras de Festa Junina'
     },
     icon: '🎉',
@@ -77,7 +77,7 @@ export const LUSOPHONE_CELEBRATIONS: LusophoneCelebration[] = [
     businessCount: 27,
     category: 'festival',
     significance: {
-      en: 'Celebrates community spirit, traditional foods, folk dances, and the joy of summer across Portuguese and Brazilian cultures',
+      en: 'Celebrates community spirit, traditional foods, folk dances, and the joy of summer across Lusophone and Brazilian cultures',
       pt: 'Celebra o espírito comunitário, comidas tradicionais, danças folclóricas e a alegria do verão nas culturas portuguesa e brasileira'
     },
     traditionalElements: ['Sardines & Grilled Corn', 'Quadrilha Dancing', 'Paper Decorations', 'Street Parties', 'Bonfire Jumping'],
@@ -222,7 +222,7 @@ export const LUSOPHONE_CELEBRATIONS: LusophoneCelebration[] = [
     businessCount: 12,
     category: 'heritage',
     significance: {
-      en: 'Celebrates Mozambican independence and the fusion of African, Portuguese, and Arab cultural influences',
+      en: 'Celebrates Mozambican independence and the fusion of African, Lusophone, and Arab cultural influences',
       pt: 'Celebra a independência moçambicana e a fusão de influências culturais africanas, portuguesas e árabes'
     },
     traditionalElements: ['Traditional Music', 'Artwork Exhibitions', 'Cultural Cuisine', 'Heritage Stories'],
@@ -238,7 +238,7 @@ export const LUSOPHONE_CELEBRATIONS: LusophoneCelebration[] = [
       pt: 'Tradições de Carnaval'
     },
     description: {
-      en: 'Vibrant carnival celebrations from Rio\'s samba to Portuguese and Cape Verdean traditions',
+      en: 'Vibrant carnival celebrations from Rio\'s samba to Lusophone and Cape Verdean traditions',
       pt: 'Vibrantes celebrações de carnaval desde o samba do Rio até tradições portuguesas e cabo-verdianas'
     },
     icon: '🎭',
@@ -280,7 +280,7 @@ export const LUSOPHONE_CELEBRATIONS: LusophoneCelebration[] = [
     businessCount: 24,
     category: 'cultural',
     significance: {
-      en: 'Celebrates agricultural heritage, wine making, and the abundance of Portuguese and Brazilian lands',
+      en: 'Celebrates agricultural heritage, wine making, and the abundance of Lusophone and Brazilian lands',
       pt: 'Celebra a herança agrícola, a produção de vinho e a abundância das terras portuguesas e brasileiras'
     },
     traditionalElements: ['Wine Tastings', 'Traditional Foods', 'Harvest Celebrations', 'Community Feasts'],
@@ -338,7 +338,7 @@ export const LUSOPHONE_CELEBRATIONS: LusophoneCelebration[] = [
     businessCount: 8,
     category: 'art',
     significance: {
-      en: 'Showcases the diversity of Portuguese-language cinema and promotes cultural understanding through film',
+      en: 'Showcases the diversity of Lusophone-language cinema and promotes cultural understanding through film',
       pt: 'Mostra a diversidade do cinema de língua portuguesa e promove compreensão cultural através do filme'
     },
     traditionalElements: ['Film Screenings', 'Director Talks', 'Cultural Discussions', 'Awards Ceremonies'],
@@ -350,7 +350,7 @@ export const LUSOPHONE_CELEBRATIONS: LusophoneCelebration[] = [
 ]
 
 /**
- * Rotating Cultural Wisdom from All Portuguese-Speaking Cultures
+ * Rotating Cultural Wisdom from All Lusophone-Speaking Cultures
  * Celebrates the diverse philosophies and wisdom across the Lusophone world
  */
 export const CULTURAL_WISDOM: CulturalWisdom[] = [
@@ -361,7 +361,7 @@ export const CULTURAL_WISDOM: CulturalWisdom[] = [
       pt: 'O comércio une os povos e as culturas'
     },
     origin: {
-      en: 'Portuguese Maritime Proverb',
+      en: 'Lusophone Maritime Proverb',
       pt: 'Provérbio Marítimo Português'
     },
     country: 'Portugal',

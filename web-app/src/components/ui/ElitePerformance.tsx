@@ -289,7 +289,7 @@ export function LazyImage({
         )}
       </AnimatePresence>
 
-      {/* Cultural pattern overlay for Portuguese images */}
+      {/* Cultural pattern overlay for Lusophone images */}
       {culturalTheme && !isLoading && (
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div 

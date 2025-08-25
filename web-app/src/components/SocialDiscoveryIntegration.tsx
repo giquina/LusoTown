@@ -67,11 +67,11 @@ const mockDiscoveryMatches: DiscoveryMatch[] = [
     name: 'Marta Silva',
     age: 31,
     location: 'Bermondsey',
-    interests: ['Portuguese Literature', 'Wine Tasting', 'Cultural Events', 'Photography'],
+    interests: ['Lusophone Literature', 'Wine Tasting', 'Cultural Events', 'Photography'],
     compatibility: 87,
     discoveryReason: 'mutual_followers',
     mutualConnections: ['Sofia Martins', 'Ana Oliveira'],
-    recentActivity: 'Attended Fado night at Portuguese Cultural Centre',
+    recentActivity: 'Attended Fado night at Lusophone Cultural Centre',
     verificationStatus: 'verified',
     culturalScore: 92,
     isOnline: true,
@@ -83,11 +83,11 @@ const mockDiscoveryMatches: DiscoveryMatch[] = [
     name: 'Carlos Mendes',
     age: 28,
     location: 'Elephant & Castle',
-    interests: ['Portuguese Football', 'Business Networking', 'Tech Events', 'Brazilian Culture'],
+    interests: ['Lusophone Football', 'Business Networking', 'Tech Events', 'Brazilian Culture'],
     compatibility: 84,
     discoveryReason: 'shared_interests',
     mutualConnections: ['Ricardo Ferreira'],
-    recentActivity: 'Joined Portuguese Business Network event',
+    recentActivity: 'Joined Lusophone Business Network event',
     verificationStatus: 'community_verified',
     culturalScore: 89,
     isOnline: false,
@@ -99,7 +99,7 @@ const mockDiscoveryMatches: DiscoveryMatch[] = [
     name: 'Isabella Santos',
     age: 26,
     location: 'Camden',
-    interests: ['Fado Music', 'Dance', 'Portuguese Cuisine', 'Young Professionals'],
+    interests: ['Fado Music', 'Dance', 'Lusophone Cuisine', 'Young Professionals'],
     compatibility: 91,
     discoveryReason: 'cultural_compatibility',
     mutualConnections: ['Ana Oliveira', 'Sofia Martins', 'Marta Silva'],
@@ -115,7 +115,7 @@ const mockDiscoveryMatches: DiscoveryMatch[] = [
     name: 'Pedro Almeida',
     age: 33,
     location: 'Stockwell',
-    interests: ['Traditional Music', 'Portuguese History', 'Cultural Tours', 'Art'],
+    interests: ['Traditional Music', 'Lusophone History', 'Cultural Tours', 'Art'],
     compatibility: 83,
     discoveryReason: 'location_proximity',
     mutualConnections: ['Carlos Mendes'],
@@ -131,7 +131,7 @@ const mockDiscoveryMatches: DiscoveryMatch[] = [
     name: 'Fernanda Costa',
     age: 29,
     location: 'Vauxhall',
-    interests: ['Brazilian Festivals', 'Community Events', 'Portuguese Language', 'Social Work'],
+    interests: ['Brazilian Festivals', 'Community Events', 'Lusophone Language', 'Social Work'],
     compatibility: 86,
     discoveryReason: 'event_attendance',
     mutualConnections: ['Isabella Santos', 'Ricardo Ferreira'],
@@ -272,7 +272,7 @@ export default function SocialDiscoveryIntegration({
             ['Silva', 'Santos', 'Oliveira', 'Costa', 'Ferreira'][Math.floor(Math.random() * 5)]}`,
       age: 25 + Math.floor(Math.random() * 10),
       location: locations[Math.floor(Math.random() * locations.length)],
-      interests: ['Portuguese Culture', 'Cultural Events', 'Community', 'Networking'].slice(0, 2 + Math.floor(Math.random() * 2)),
+      interests: ['Lusophone Culture', 'Cultural Events', 'Community', 'Networking'].slice(0, 2 + Math.floor(Math.random() * 2)),
       compatibility: 80 + Math.floor(Math.random() * 15),
       discoveryReason: reasons[Math.floor(Math.random() * reasons.length)],
       mutualConnections: matches.slice(0, 1 + Math.floor(Math.random() * 2)).map(m => m.name),
@@ -336,7 +336,7 @@ export default function SocialDiscoveryIntegration({
             <p className="text-gray-600 text-sm">
               {isPortuguese 
                 ? 'Encontre novos matches baseados na sua rede social portuguesa'
-                : 'Find new matches based on your Portuguese social network'
+                : 'Find new matches based on your Lusophone social network'
               }
             </p>
           </div>

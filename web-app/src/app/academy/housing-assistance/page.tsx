@@ -54,10 +54,10 @@ export default function HousingAssistanceModule() {
     prerequisites: [],
     prerequisitesPortuguese: [],
     learningObjectives: [
-      'Understand London\'s housing market from a Portuguese perspective',
+      'Understand London\'s housing market from a Lusophone perspective',
       'Access Portuguese-speaking community housing networks and resources',
       'Navigate United Kingdom rental processes and legal requirements',
-      'Find Portuguese-friendly neighborhoods and communities',
+      'Find Lusophone-friendly neighborhoods and communities',
       'Build support networks for housing stability and growth'
     ],
     learningObjectivesPortuguese: [
@@ -70,7 +70,7 @@ export default function HousingAssistanceModule() {
     steps: [
       {
         id: 'understanding-london-housing',
-        title: 'Understanding London Housing for Portuguese Speakers',
+        title: 'Understanding London Housing for Lusophone Speakers',
         titlePortuguese: 'Compreendendo Habitação em Londres para Falantes de Português',
         type: 'introduction',
         estimatedTime: 5,
@@ -94,7 +94,7 @@ export default function HousingAssistanceModule() {
                 <li>Heavily subsidized housing for eligible residents</li>
                 <li>Long waiting lists (2-10+ years)</li>
                 <li>Priority given to families and vulnerable individuals</li>
-                <li>Portuguese families may qualify if settled in United Kingdom</li>
+                <li>Lusophone families may qualify if settled in United Kingdom</li>
               </ul>
             </li>
             <li><strong>Housing Association Properties:</strong>
@@ -117,20 +117,20 @@ export default function HousingAssistanceModule() {
           
           <h4>Community Networks:</h4>
           <ul>
-            <li><strong>Portuguese Landlords:</strong> Better cultural understanding and communication</li>
-            <li><strong>Portuguese Flatmates:</strong> Shared language and cultural comfort</li>
+            <li><strong>Lusophone Landlords:</strong> Better cultural understanding and communication</li>
+            <li><strong>Lusophone Flatmates:</strong> Shared language and cultural comfort</li>
             <li><strong>Community Recommendations:</strong> Trusted referrals from Portuguese-speaking friends</li>
-            <li><strong>Portuguese Estate Agents:</strong> Bilingual service and cultural sensitivity</li>
+            <li><strong>Lusophone Estate Agents:</strong> Bilingual service and cultural sensitivity</li>
           </ul>
           
-          <h4>Preferred Portuguese Areas in London:</h4>
+          <h4>Preferred Lusophone Areas in London:</h4>
           <ul>
             <li><strong>South London:</strong>
               <ul>
                 <li>Stockwell: Large Portuguese-speaking community, good transport links</li>
                 <li>Vauxhall: Close to central London, Portuguese businesses</li>
-                <li>Lambeth: Affordable options, established Portuguese families</li>
-                <li>Elephant & Castle: Portuguese shops and services</li>
+                <li>Lambeth: Affordable options, established Lusophone families</li>
+                <li>Elephant & Castle: Lusophone shops and services</li>
               </ul>
             </li>
             <li><strong>West London:</strong>
@@ -153,7 +153,7 @@ export default function HousingAssistanceModule() {
             <li><strong>Salary Multiples:</strong> Generally need 30-40x monthly rent as annual salary</li>
             <li><strong>Deposit Requirements:</strong> Usually 1-6 weeks rent upfront</li>
             <li><strong>Guarantors:</strong> May need United Kingdom-based guarantor or international guarantor service</li>
-            <li><strong>Portuguese Banking:</strong> Some Portuguese banks offer United Kingdom mortgage services</li>
+            <li><strong>Lusophone Banking:</strong> Some Lusophone banks offer United Kingdom mortgage services</li>
           </ul>
           
           <p><strong>Transportation Note:</strong> When viewing properties or moving, our professional transport service is available separately to assist with property visits or moving logistics, but is not included with housing services.</p>
@@ -244,7 +244,7 @@ export default function HousingAssistanceModule() {
         `,
         tips: [
           'Start your housing search 2-3 months before you need to move',
-          'Join Portuguese housing groups on WhatsApp and Facebook for insider tips',
+          'Join Lusophone housing groups on WhatsApp and Facebook for insider tips',
           'Consider areas with good transport links to central London for work flexibility'
         ],
         tipsPortuguese: [
@@ -264,39 +264,39 @@ export default function HousingAssistanceModule() {
           
           <h3>Portuguese-speaking community Housing Networks:</h3>
           
-          <h4>1. Online Portuguese Housing Groups:</h4>
+          <h4>1. Online Lusophone Housing Groups:</h4>
           <ul>
             <li><strong>WhatsApp Groups:</strong>
               <ul>
-                <li>"Portuguese Housing London" - property listings and roommate searches</li>
+                <li>"Lusophone Housing London" - property listings and roommate searches</li>
                 <li>"Lusitanos London Housing" - family housing and neighborhood advice</li>
-                <li>"Portuguese Professionals Housing" - higher-end properties and house shares</li>
-                <li>"Portuguese Students London" - budget-friendly housing for students</li>
+                <li>"Lusophone Professionals Housing" - higher-end properties and house shares</li>
+                <li>"Lusophone Students London" - budget-friendly housing for students</li>
               </ul>
             </li>
             <li><strong>Facebook Groups:</strong>
               <ul>
-                <li>"Portuguese in London - Housing Help"</li>
+                <li>"Lusophone in London - Housing Help"</li>
                 <li>"Brasileiros e Portugueses em Londres - Habitação"</li>
-                <li>"Portuguese Families London Housing"</li>
-                <li>"Portuguese Property London"</li>
+                <li>"Lusophone Families London Housing"</li>
+                <li>"Lusophone Property London"</li>
               </ul>
             </li>
           </ul>
           
-          <h4>2. Portuguese Estate Agents and Property Services:</h4>
+          <h4>2. Lusophone Estate Agents and Property Services:</h4>
           <ul>
-            <li><strong>Portuguese-Speaking Estate Agents:</strong>
+            <li><strong>Lusophone-Speaking Estate Agents:</strong>
               <ul>
                 <li>Bilingual property consultations</li>
-                <li>Understanding of Portuguese financial situations</li>
+                <li>Understanding of Lusophone financial situations</li>
                 <li>Cultural sensitivity in property matching</li>
                 <li>Assistance with United Kingdom rental procedures</li>
               </ul>
             </li>
-            <li><strong>Portuguese Property Management:</strong>
+            <li><strong>Lusophone Property Management:</strong>
               <ul>
-                <li>Portuguese landlords with multiple properties</li>
+                <li>Lusophone landlords with multiple properties</li>
                 <li>Property management companies serving Portuguese-speaking community</li>
                 <li>Maintenance services with Portuguese-speaking staff</li>
               </ul>
@@ -313,7 +313,7 @@ export default function HousingAssistanceModule() {
                 <li>Emergency housing assistance programs</li>
               </ul>
             </li>
-            <li><strong>Portuguese Churches:</strong>
+            <li><strong>Lusophone Churches:</strong>
               <ul>
                 <li>Emergency accommodation networks</li>
                 <li>Community housing referrals</li>
@@ -325,7 +325,7 @@ export default function HousingAssistanceModule() {
           
           <h3>How to Access Community Housing Support:</h3>
           
-          <h4>Step 1: Join Portuguese Housing Networks</h4>
+          <h4>Step 1: Join Lusophone Housing Networks</h4>
           <ul>
             <li><strong>Verify Groups:</strong> Ensure groups are moderated and safe</li>
             <li><strong>Introduce Yourself:</strong> Share your housing needs respectfully</li>
@@ -336,9 +336,9 @@ export default function HousingAssistanceModule() {
           <h4>Step 2: Build Relationships</h4>
           <ul>
             <li><strong>Attend Portuguese-speaking community Events:</strong> Meet potential roommates and landlords</li>
-            <li><strong>Network at Portuguese Businesses:</strong> Portuguese restaurants, shops, services</li>
-            <li><strong>Connect with Portuguese Professionals:</strong> Business networking with housing benefits</li>
-            <li><strong>Engage with Portuguese Families:</strong> Learn from established community members</li>
+            <li><strong>Network at Lusophone Businesses:</strong> Portuguese restaurants, shops, services</li>
+            <li><strong>Connect with Lusophone Professionals:</strong> Business networking with housing benefits</li>
+            <li><strong>Engage with Lusophone Families:</strong> Learn from established community members</li>
           </ul>
           
           <h4>Step 3: Leverage Community Recommendations</h4>
@@ -349,7 +349,7 @@ export default function HousingAssistanceModule() {
             <li><strong>Build Reputation:</strong> Establish yourself as a trustworthy community member</li>
           </ul>
           
-          <h3>Portuguese-Specific Housing Services:</h3>
+          <h3>Lusophone-Specific Housing Services:</h3>
           
           <h4>Documentation and Legal Support:</h4>
           <ul>
@@ -364,7 +364,7 @@ export default function HousingAssistanceModule() {
             <li><strong>Legal Advice:</strong>
               <ul>
                 <li>Portuguese-speaking housing lawyers</li>
-                <li>Tenant rights education in Portuguese</li>
+                <li>Tenant rights education in Lusophone</li>
                 <li>Deposit protection scheme guidance</li>
                 <li>Eviction protection and advice</li>
               </ul>
@@ -373,9 +373,9 @@ export default function HousingAssistanceModule() {
           
           <h4>Financial Support and Guidance:</h4>
           <ul>
-            <li><strong>Portuguese Banking Services:</strong>
+            <li><strong>Lusophone Banking Services:</strong>
               <ul>
-                <li>Mortgage advice from Portuguese financial advisors</li>
+                <li>Mortgage advice from Lusophone financial advisors</li>
                 <li>Help to Buy scheme guidance</li>
                 <li>Credit building advice for new United Kingdom residents</li>
                 <li>International money transfer for deposits</li>
@@ -383,21 +383,21 @@ export default function HousingAssistanceModule() {
             </li>
             <li><strong>Community Financial Support:</strong>
               <ul>
-                <li>Emergency housing funds from Portuguese organizations</li>
+                <li>Emergency housing funds from Lusophone organizations</li>
                 <li>Deposit loan schemes within the community</li>
-                <li>Financial literacy workshops in Portuguese</li>
+                <li>Financial literacy workshops in Lusophone</li>
               </ul>
             </li>
           </ul>
           
-          <h3>Contributing to the Portuguese Housing Community:</h3>
+          <h3>Contributing to the Lusophone Housing Community:</h3>
           
           <h4>How to Give Back:</h4>
           <ul>
             <li><strong>Share Your Experience:</strong> Help others learn from your housing journey</li>
             <li><strong>Provide References:</strong> Offer character references for trustworthy community members</li>
-            <li><strong>Recommend Services:</strong> Share positive experiences with Portuguese housing services</li>
-            <li><strong>Mentor Newcomers:</strong> Guide new Portuguese arrivals through housing processes</li>
+            <li><strong>Recommend Services:</strong> Share positive experiences with Lusophone housing services</li>
+            <li><strong>Mentor Newcomers:</strong> Guide new Lusophone arrivals through housing processes</li>
             <li><strong>Volunteer:</strong> Help Portuguese-speaking community organizations with housing support programs</li>
           </ul>
         `,
@@ -410,18 +410,18 @@ export default function HousingAssistanceModule() {
           <ul>
             <li><strong>Grupos WhatsApp:</strong>
               <ul>
-                <li>"Portuguese Housing London" - listagens de propriedades e procura de colegas de quarto</li>
+                <li>"Lusophone Housing London" - listagens de propriedades e procura de colegas de quarto</li>
                 <li>"Lusitanos London Housing" - habitação familiar e conselhos de bairro</li>
-                <li>"Portuguese Professionals Housing" - propriedades de gama alta e partilhas de casa</li>
-                <li>"Portuguese Students London" - habitação económica para estudantes</li>
+                <li>"Lusophone Professionals Housing" - propriedades de gama alta e partilhas de casa</li>
+                <li>"Lusophone Students London" - habitação económica para estudantes</li>
               </ul>
             </li>
             <li><strong>Grupos Facebook:</strong>
               <ul>
-                <li>"Portuguese in London - Housing Help"</li>
+                <li>"Lusophone in London - Housing Help"</li>
                 <li>"Brasileiros e Portugueses em Londres - Habitação"</li>
-                <li>"Portuguese Families London Housing"</li>
-                <li>"Portuguese Property London"</li>
+                <li>"Lusophone Families London Housing"</li>
+                <li>"Lusophone Property London"</li>
               </ul>
             </li>
           </ul>
@@ -547,8 +547,8 @@ export default function HousingAssistanceModule() {
           type: 'checklist',
           data: {
             items: [
-              { text: 'Join 3 Portuguese housing WhatsApp or Facebook groups', textPortuguese: 'Junte-se a 3 grupos habitacionais portugueses no WhatsApp ou Facebook' },
-              { text: 'Research Portuguese estate agents in London', textPortuguese: 'Pesquise agentes imobiliários portugueses em Londres' },
+              { text: 'Join 3 Lusophone housing WhatsApp or Facebook groups', textPortuguese: 'Junte-se a 3 grupos habitacionais portugueses no WhatsApp ou Facebook' },
+              { text: 'Research Lusophone estate agents in London', textPortuguese: 'Pesquise agentes imobiliários portugueses em Londres' },
               { text: 'Connect with Portuguese-speaking community centers for housing advice', textPortuguese: 'Conecte-se com centros comunitários portugueses para aconselhamento habitacional' },
               { text: 'Attend a Portuguese-speaking community event to network about housing', textPortuguese: 'Participe num evento da comunidade de falantes de português para fazer networking sobre habitação' }
             ]
@@ -603,10 +603,10 @@ export default function HousingAssistanceModule() {
           <h4>Step 2: Right to Rent Checks</h4>
           <ul>
             <li><strong>Legal Requirement:</strong> All tenants must prove legal right to rent in United Kingdom</li>
-            <li><strong>Acceptable Documents for Portuguese Citizens:</strong>
+            <li><strong>Acceptable Documents for Lusophone Citizens:</strong>
               <ul>
-                <li>Portuguese passport with indefinite leave to remain</li>
-                <li>Portuguese passport with valid United Kingdom visa</li>
+                <li>Lusophone passport with indefinite leave to remain</li>
+                <li>Lusophone passport with valid United Kingdom visa</li>
                 <li>Biometric Residence Permit (BRP)</li>
                 <li>EU Settlement Scheme document (pre-settled/settled status)</li>
               </ul>
@@ -628,7 +628,7 @@ export default function HousingAssistanceModule() {
                 <li>Most landlords require credit check</li>
                 <li>New United Kingdom residents may have limited credit history</li>
                 <li>Some agencies specialize in applications with limited United Kingdom credit</li>
-                <li>Portuguese bank references may be accepted as alternative</li>
+                <li>Lusophone bank references may be accepted as alternative</li>
               </ul>
             </li>
             <li><strong>Income Requirements:</strong>
@@ -763,9 +763,9 @@ export default function HousingAssistanceModule() {
           <h4>Portuguese-speaking community Solutions:</h4>
           <ul>
             <li><strong>Community References:</strong> Portuguese-speaking community leaders can provide character references</li>
-            <li><strong>Portuguese Landlords:</strong> May be more flexible with requirements for Portuguese tenants</li>
-            <li><strong>Portuguese Estate Agents:</strong> Understand unique challenges and have alternative solutions</li>
-            <li><strong>Community Guarantor Networks:</strong> Established Portuguese residents helping newcomers</li>
+            <li><strong>Lusophone Landlords:</strong> May be more flexible with requirements for Lusophone tenants</li>
+            <li><strong>Lusophone Estate Agents:</strong> Understand unique challenges and have alternative solutions</li>
+            <li><strong>Community Guarantor Networks:</strong> Established Lusophone residents helping newcomers</li>
           </ul>
         `,
         contentPortuguese: `
@@ -1049,10 +1049,10 @@ export default function HousingAssistanceModule() {
                 <li>Consider shared ownership or purchase options</li>
               </ul>
             </li>
-            <li><strong>Portuguese Banking Integration:</strong>
+            <li><strong>Lusophone Banking Integration:</strong>
               <ul>
-                <li>Maintain Portuguese bank accounts for flexibility</li>
-                <li>Use Portuguese bank United Kingdom services where available</li>
+                <li>Maintain Lusophone bank accounts for flexibility</li>
+                <li>Use Lusophone bank United Kingdom services where available</li>
                 <li>Build credit history in both countries</li>
                 <li>Consider international mortgage options</li>
               </ul>
@@ -1063,17 +1063,17 @@ export default function HousingAssistanceModule() {
           
           <h4>1. Neighborhood Portuguese-speaking community Building</h4>
           <ul>
-            <li><strong>Local Portuguese Networks:</strong>
+            <li><strong>Local Lusophone Networks:</strong>
               <ul>
-                <li>Connect with Portuguese neighbors and families</li>
-                <li>Join local Portuguese WhatsApp groups</li>
-                <li>Participate in neighborhood Portuguese activities</li>
-                <li>Support Portuguese local businesses</li>
+                <li>Connect with Lusophone neighbors and families</li>
+                <li>Join local Lusophone WhatsApp groups</li>
+                <li>Participate in neighborhood Lusophone activities</li>
+                <li>Support Lusophone local businesses</li>
               </ul>
             </li>
             <li><strong>Multi-cultural Community Integration:</strong>
               <ul>
-                <li>Build relationships with non-Portuguese neighbors</li>
+                <li>Build relationships with non-Lusophone neighbors</li>
                 <li>Participate in local community events</li>
                 <li>Engage with local councils and representatives</li>
                 <li>Contribute to neighborhood improvements</li>
@@ -1085,17 +1085,17 @@ export default function HousingAssistanceModule() {
           <ul>
             <li><strong>Mentorship and Guidance:</strong>
               <ul>
-                <li>Connect with established Portuguese families</li>
-                <li>Seek advice from Portuguese homeowners</li>
-                <li>Learn from Portuguese landlords and property professionals</li>
-                <li>Share experiences with other Portuguese newcomers</li>
+                <li>Connect with established Lusophone families</li>
+                <li>Seek advice from Lusophone homeowners</li>
+                <li>Learn from Lusophone landlords and property professionals</li>
+                <li>Share experiences with other Lusophone newcomers</li>
               </ul>
             </li>
             <li><strong>Practical Support Systems:</strong>
               <ul>
-                <li>Portuguese moving and logistics support</li>
+                <li>Lusophone moving and logistics support</li>
                 <li>Shared resources for furniture and household items</li>
-                <li>Portuguese tradespeople and maintenance contacts</li>
+                <li>Lusophone tradespeople and maintenance contacts</li>
                 <li>Emergency accommodation networks</li>
               </ul>
             </li>
@@ -1130,10 +1130,10 @@ export default function HousingAssistanceModule() {
                 <li>Participate in Portuguese-speaking community housing forums</li>
                 <li>Support fair housing initiatives for immigrants</li>
                 <li>Share experiences to help improve community housing access</li>
-                <li>Advocate for Portuguese-friendly housing policies</li>
+                <li>Advocate for Lusophone-friendly housing policies</li>
               </ul>
             </li>
-            <li><strong>Supporting Other Portuguese Tenants:</strong>
+            <li><strong>Supporting Other Lusophone Tenants:</strong>
               <ul>
                 <li>Share knowledge about tenant rights with others</li>
                 <li>Provide translation help for housing documents</li>
@@ -1157,7 +1157,7 @@ export default function HousingAssistanceModule() {
             </li>
             <li><strong>Property Search Strategy:</strong>
               <ul>
-                <li>Research Portuguese-friendly areas for investment</li>
+                <li>Research Lusophone-friendly areas for investment</li>
                 <li>Consider properties near Portuguese-speaking community hubs</li>
                 <li>Evaluate transport links and future development plans</li>
                 <li>Assess potential for property value growth</li>
@@ -1167,17 +1167,17 @@ export default function HousingAssistanceModule() {
           
           <h4>2. Portuguese-speaking community Property Support</h4>
           <ul>
-            <li><strong>Portuguese Property Professionals:</strong>
+            <li><strong>Lusophone Property Professionals:</strong>
               <ul>
-                <li>Mortgage advisors who understand Portuguese financial situations</li>
+                <li>Mortgage advisors who understand Lusophone financial situations</li>
                 <li>Estate agents specializing in Portuguese-speaking community needs</li>
                 <li>Solicitors with Portuguese language skills</li>
-                <li>Portuguese surveyors and property inspectors</li>
+                <li>Lusophone surveyors and property inspectors</li>
               </ul>
             </li>
             <li><strong>Community Property Investment:</strong>
               <ul>
-                <li>Group purchasing opportunities with other Portuguese families</li>
+                <li>Group purchasing opportunities with other Lusophone families</li>
                 <li>Shared ownership arrangements within the community</li>
                 <li>Portuguese-speaking community property investment clubs</li>
                 <li>Inter-generational property planning and support</li>
@@ -1185,7 +1185,7 @@ export default function HousingAssistanceModule() {
             </li>
           </ul>
           
-          <h3>Giving Back to the Portuguese Housing Community:</h3>
+          <h3>Giving Back to the Lusophone Housing Community:</h3>
           
           <h4>1. Mentoring New Arrivals</h4>
           <ul>
@@ -1202,7 +1202,7 @@ export default function HousingAssistanceModule() {
                 <li>Help with property viewings and area orientation</li>
                 <li>Assist with housing document translation and understanding</li>
                 <li>Provide character references for trustworthy community members</li>
-                <li>Share contacts for reliable Portuguese housing services</li>
+                <li>Share contacts for reliable Lusophone housing services</li>
               </ul>
             </li>
           </ul>
@@ -1211,8 +1211,8 @@ export default function HousingAssistanceModule() {
           <ul>
             <li><strong>Organizing Housing Support:</strong>
               <ul>
-                <li>Establish formal Portuguese housing support groups</li>
-                <li>Create resource databases for Portuguese housing services</li>
+                <li>Establish formal Lusophone housing support groups</li>
+                <li>Create resource databases for Lusophone housing services</li>
                 <li>Organize housing workshops and information sessions</li>
                 <li>Advocate for improved housing policies affecting Portuguese-speaking community</li>
               </ul>
@@ -1221,7 +1221,7 @@ export default function HousingAssistanceModule() {
               <ul>
                 <li>Support development of Portuguese-speaking community centers</li>
                 <li>Contribute to Portuguese-speaking community housing funds</li>
-                <li>Help establish Portuguese housing cooperatives</li>
+                <li>Help establish Lusophone housing cooperatives</li>
                 <li>Work toward sustainable Portuguese-speaking community growth in London</li>
               </ul>
             </li>
@@ -1468,9 +1468,9 @@ export default function HousingAssistanceModule() {
             items: [
               { text: 'Create a 5-year housing progression plan', textPortuguese: 'Crie um plano de progressão habitacional de 5 anos' },
               { text: 'Build an emergency housing fund (3-6 months rent)', textPortuguese: 'Construa um fundo habitacional de emergência (3-6 meses de renda)' },
-              { text: 'Connect with established Portuguese families in your area', textPortuguese: 'Conecte-se com famílias portuguesas estabelecidas na sua área' },
+              { text: 'Connect with established Lusophone families in your area', textPortuguese: 'Conecte-se com famílias portuguesas estabelecidas na sua área' },
               { text: 'Research first-time buyer schemes and mortgage options', textPortuguese: 'Pesquise esquemas de comprador de primeira vez e opções de hipoteca' },
-              { text: 'Volunteer to help other Portuguese newcomers with housing', textPortuguese: 'Voluntarie-se para ajudar outros recém-chegados portugueses com habitação' },
+              { text: 'Volunteer to help other Lusophone newcomers with housing', textPortuguese: 'Voluntarie-se para ajudar outros recém-chegados portugueses com habitação' },
               { text: 'Document your housing journey to share lessons learned', textPortuguese: 'Documente a sua jornada habitacional para partilhar lições aprendidas' }
             ]
           }
@@ -1478,7 +1478,7 @@ export default function HousingAssistanceModule() {
         tips: [
           'Build relationships with your current landlord for future references',
           'Keep detailed records of all housing experiences for future applications',
-          'Consider house-sitting opportunities for Portuguese families going to Portugal'
+          'Consider house-sitting opportunities for Lusophone families going to Portugal'
         ],
         tipsPortuguese: [
           'Construa relacionamentos com o seu senhorio atual para referências futuras',
@@ -1496,7 +1496,7 @@ export default function HousingAssistanceModule() {
         type: 'download'
       },
       {
-        title: 'Portuguese Housing Support Directory London',
+        title: 'Lusophone Housing Support Directory London',
         titlePortuguese: 'Diretório de Apoio Habitacional Português Londres',
         url: '/housing/portuguese-support-directory',
         type: 'guide'
@@ -1508,7 +1508,7 @@ export default function HousingAssistanceModule() {
         type: 'download'
       },
       {
-        title: 'London Portuguese Areas Housing Guide',
+        title: 'London Lusophone Areas Housing Guide',
         titlePortuguese: 'Guia Habitacional das Áreas Portuguesas de Londres',
         url: '/guides/portuguese-areas-london',
         type: 'external'

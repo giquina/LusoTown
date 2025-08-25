@@ -98,7 +98,7 @@ interface AccommodationTip {
 const ACCOMMODATION_LISTINGS: AccommodationListing[] = [
   {
     id: 'vauxhall-portuguese-house',
-    title: 'Portuguese House Share in Vauxhall',
+    title: 'Lusophone House Share in Vauxhall',
     titlePortuguese: 'Casa Partilhada Portuguesa em Vauxhall',
     type: 'shared_house',
     location: 'Vauxhall, London',
@@ -112,9 +112,9 @@ const ACCOMMODATION_LISTINGS: AccommodationListing[] = [
     maxHousemates: 5,
     portugueseSpeaking: true,
     portugueseOwner: true,
-    description: 'Beautiful Victorian house in the heart of the Portuguese-speaking community. All housemates are Portuguese students. Walking distance to Vauxhall station and Portuguese shops.',
+    description: 'Beautiful Victorian house in the heart of the Portuguese-speaking community. All housemates are Lusophone students. Walking distance to Vauxhall station and Lusophone shops.',
     descriptionPortuguese: 'Linda casa vitoriana no coração da comunidade de falantes de português. Todos os colegas de casa são estudantes portugueses. A pé da estação de Vauxhall e lojas portuguesas.',
-    amenities: ['Fast WiFi', 'Washing machine', 'Dishwasher', 'Garden', 'Portuguese TV channels', 'Parking space'],
+    amenities: ['Fast WiFi', 'Washing machine', 'Dishwasher', 'Garden', 'Lusophone TV channels', 'Parking space'],
     nearbyUniversities: ['King\'s College London (15 min)', 'LSE (20 min)', 'Imperial College (25 min)'],
     transportLinks: ['Vauxhall Station (3 min walk)', 'Bus routes to central London', 'Cycle to Westminster'],
     images: ['/images/accommodation/vauxhall-house-1.jpg', '/images/accommodation/vauxhall-house-2.jpg'],
@@ -129,7 +129,7 @@ const ACCOMMODATION_LISTINGS: AccommodationListing[] = [
   },
   {
     id: 'ucl-halls-portuguese-floor',
-    title: 'UCL Student Halls - Portuguese Student Floor',
+    title: 'UCL Student Halls - Lusophone Student Floor',
     titlePortuguese: 'Residência UCL - Andar de Estudantes Portugueses',
     type: 'student_halls',
     location: 'Bloomsbury, London',
@@ -143,9 +143,9 @@ const ACCOMMODATION_LISTINGS: AccommodationListing[] = [
     maxHousemates: 10,
     portugueseSpeaking: true,
     portugueseOwner: false,
-    description: 'Official UCL accommodation with a dedicated floor for Portuguese and Lusophone students. Modern facilities, 24/7 security, and organized Portuguese cultural events.',
+    description: 'Official UCL accommodation with a dedicated floor for Lusophone and Lusophone students. Modern facilities, 24/7 security, and organized Lusophone cultural events.',
     descriptionPortuguese: 'Alojamento oficial da UCL com um andar dedicado a estudantes portugueses e lusófonos. Instalações modernas, segurança 24/7 e eventos culturais portugueses organizados.',
-    amenities: ['24/7 Security', 'Gym access', 'Study rooms', 'Common kitchen', 'Laundry facilities', 'Portuguese library'],
+    amenities: ['24/7 Security', 'Gym access', 'Study rooms', 'Common kitchen', 'Laundry facilities', 'Lusophone library'],
     nearbyUniversities: ['UCL (2 min walk)', 'King\'s College (10 min)', 'Birkbeck (5 min)'],
     transportLinks: ['Russell Square Station (5 min)', 'Multiple bus routes', 'Cycle hire stations'],
     images: ['/images/accommodation/ucl-halls-1.jpg', '/images/accommodation/ucl-halls-2.jpg'],
@@ -205,7 +205,7 @@ const ACCOMMODATION_LISTINGS: AccommodationListing[] = [
     maxHousemates: 3,
     portugueseSpeaking: true,
     portugueseOwner: true,
-    description: 'Cozy flat share on famous Golborne Road, surrounded by Portuguese restaurants and shops. Great for students who want an authentic Portuguese London experience.',
+    description: 'Cozy flat share on famous Golborne Road, surrounded by Portuguese restaurants and shops. Great for students who want an authentic Lusophone London experience.',
     descriptionPortuguese: 'Apartamento acolhedor partilhado na famosa Golborne Road, rodeado de restaurantes e lojas portuguesas. Ótimo para estudantes que querem uma experiência autêntica de Londres portuguesa.',
     amenities: ['Shared living room', 'Full kitchen', 'Washing machine', 'Balcony', 'Storage space'],
     nearbyUniversities: ['Imperial College (15 min)', 'Royal College of Art (10 min)', 'UCL (25 min)'],
@@ -222,7 +222,7 @@ const ACCOMMODATION_LISTINGS: AccommodationListing[] = [
   },
   {
     id: 'portuguese-homestay-family',
-    title: 'Homestay with Portuguese-Speaking Family',
+    title: 'Homestay with Lusophone-Speaking Family',
     titlePortuguese: 'Homestay com Família de Língua Portuguesa',
     type: 'homestay',
     location: 'Tulse Hill, London',
@@ -238,7 +238,7 @@ const ACCOMMODATION_LISTINGS: AccommodationListing[] = [
     portugueseOwner: true,
     description: 'Live with a welcoming Portuguese-speaking family who has been hosting students from all Lusophone countries for 10+ years. Perfect for students wanting cultural immersion and family support away from home - whether you\'re from Lisbon, São Paulo, Luanda, or Praia.',
     descriptionPortuguese: 'Viva com uma família lusófona acolhedora que tem recebido estudantes de todos os países lusófonos há mais de 10 anos. Perfeito para estudantes que querem imersão cultural e apoio familiar longe de casa - seja de Lisboa, São Paulo, Luanda ou Praia.',
-    amenities: ['Meals included', 'Family support', 'Portuguese conversation practice', 'Laundry included', 'WiFi'],
+    amenities: ['Meals included', 'Family support', 'Lusophone conversation practice', 'Laundry included', 'WiFi'],
     nearbyUniversities: ['King\'s College (30 min)', 'UCL (35 min)', 'Various universities accessible'],
     transportLinks: ['Tulse Hill Station (5 min)', 'Direct trains to central London', 'Bus connections'],
     images: ['/images/accommodation/homestay-family-1.jpg', '/images/accommodation/homestay-family-2.jpg'],
@@ -265,10 +265,10 @@ const ROOMMATE_REQUESTS: RoommateRequest[] = [
     budget: { min: 600, max: 800 },
     preferredAreas: ['South Kensington', 'Vauxhall', 'Stockwell', 'King\'s Cross'],
     lookingFor: 'portuguese_housemates',
-    languages: ['Portuguese', 'English'],
+    languages: ['Lusophone', 'English'],
     hobbies: ['Football', 'Gaming', 'Cooking', 'Portuguese music'],
     lifestyle: ['non_smoker', 'social_drinker', 'gym_enthusiast'],
-    bio: 'Portuguese CS student looking for Portuguese housemates to share culture and language. Love cooking traditional Portuguese food and watching football together.',
+    bio: 'Lusophone CS student looking for Lusophone housemates to share culture and language. Love cooking traditional Portuguese food and watching football together.',
     bioPortuguese: 'Estudante português de Informática procura colegas de casa portugueses para partilhar cultura e língua. Adoro cozinhar comida tradicional portuguesa e ver futebol juntos.',
     availableFrom: '2024-09-01',
     contactPreference: 'app_messaging',
@@ -288,8 +288,8 @@ const ROOMMATE_REQUESTS: RoommateRequest[] = [
     budget: { min: 700, max: 900 },
     preferredAreas: ['Bloomsbury', 'King\'s Cross', 'Holborn', 'Vauxhall'],
     lookingFor: 'mixed_international',
-    languages: ['Portuguese', 'English', 'Spanish'],
-    hobbies: ['Reading', 'Yoga', 'Portuguese literature', 'Cultural events'],
+    languages: ['Lusophone', 'English', 'Spanish'],
+    hobbies: ['Reading', 'Yoga', 'Lusophone literature', 'Cultural events'],
     lifestyle: ['non_smoker', 'vegetarian', 'early_riser'],
     bio: 'Economics student seeking culturally diverse flatmates. Interested in international perspectives while maintaining connection to Portuguese culture.',
     bioPortuguese: 'Estudante de Economia procura colegas de casa culturalmente diversos. Interessada em perspetivas internacionais enquanto mantém ligação à cultura portuguesa.',
@@ -311,10 +311,10 @@ const ROOMMATE_REQUESTS: RoommateRequest[] = [
     budget: { min: 800, max: 1000 },
     preferredAreas: ['London Bridge', 'Borough', 'Elephant & Castle', 'Vauxhall'],
     lookingFor: 'quiet_studious',
-    languages: ['Portuguese', 'English'],
+    languages: ['Lusophone', 'English'],
     hobbies: ['Medicine research', 'Portuguese history', 'Quiet study', 'Medical volunteering'],
     lifestyle: ['non_smoker', 'early_riser', 'gym_enthusiast'],
-    bio: 'Final year medical student seeking quiet, studious environment. Prefer Portuguese or Portuguese-speaking housemates who understand academic pressure.',
+    bio: 'Final year medical student seeking quiet, studious environment. Prefer Lusophone or Portuguese-speaking housemates who understand academic pressure.',
     bioPortuguese: 'Estudante de medicina do último ano procura ambiente tranquilo e estudioso. Prefere colegas portugueses ou que falem português que compreendam a pressão académica.',
     availableFrom: '2024-08-30',
     contactPreference: 'email',
@@ -334,7 +334,7 @@ const ROOMMATE_REQUESTS: RoommateRequest[] = [
     budget: { min: 650, max: 750 },
     preferredAreas: ['North Kensington', 'Golborne Road', 'Notting Hill', 'Paddington'],
     lookingFor: 'social_active',
-    languages: ['Portuguese', 'English', 'Italian'],
+    languages: ['Lusophone', 'English', 'Italian'],
     hobbies: ['Art', 'Portuguese culture', 'Gallery visits', 'Creative collaboration'],
     lifestyle: ['non_smoker', 'social_drinker', 'night_owl'],
     bio: 'Art student passionate about Portuguese culture and creativity. Looking for social, artistic housemates who appreciate culture and creativity.',
@@ -372,9 +372,9 @@ const ACCOMMODATION_TIPS: AccommodationTip[] = [
   {
     id: 'portuguese-areas',
     category: 'cultural',
-    title: 'Portuguese Communities in London',
+    title: 'Lusophone Communities in London',
     titlePortuguese: 'Comunidades Portuguesas em Londres',
-    content: 'Vauxhall, Stockwell, and Golborne Road have large Portuguese communities with shops, restaurants, and cultural centers. Living nearby provides cultural connection and support.',
+    content: 'Vauxhall, Stockwell, and Golborne Road have large Lusophone communities with shops, restaurants, and cultural centers. Living nearby provides cultural connection and support.',
     contentPortuguese: 'Vauxhall, Stockwell e Golborne Road têm grandes comunidades portuguesas com lojas, restaurantes e centros culturais. Viver perto proporciona conexão cultural e apoio.',
     importance: 'medium',
     icon: GlobeAltIcon
@@ -500,7 +500,7 @@ export default function AccommodationSupportSection() {
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-bold">
               {language === 'pt' 
                 ? "Apoio de Alojamento para Estudantes Lusófonos"
-                : "Portuguese-Speaking Student Accommodation Support"}
+                : "Lusophone-Speaking Student Accommodation Support"}
             </span>
           </div>
 
@@ -528,7 +528,7 @@ export default function AccommodationSupportSection() {
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
               <div className="text-2xl font-bold text-purple-600 mb-1">3</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Áreas portuguesas' : 'Portuguese areas'}</div>
+              <div className="text-sm text-gray-600">{language === 'pt' ? 'Áreas portuguesas' : 'Lusophone areas'}</div>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
               <div className="text-2xl font-bold text-pink-600 mb-1">24h</div>
@@ -654,7 +654,7 @@ export default function AccommodationSupportSection() {
                           </span>
                           {listing.portugueseSpeaking && (
                             <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
-                              🇵🇹 {language === 'pt' ? 'Português' : 'Portuguese'}
+                              🇵🇹 {language === 'pt' ? 'Português' : 'Lusophone'}
                             </span>
                           )}
                           {listing.verified && (

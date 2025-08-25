@@ -15,7 +15,7 @@ export default function MentorshipHero() {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-      {/* Portuguese Cultural Background Elements */}
+      {/* Lusophone Cultural Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-br from-secondary-200/40 via-accent-100/30 to-coral-100/30 rounded-full opacity-60 animate-pulse" />
         <div className="absolute bottom-32 left-16 w-32 h-32 bg-gradient-to-tr from-action-200/40 via-secondary-100/30 to-accent-100/30 rounded-full opacity-50 animate-bounce" style={{ animationDuration: '8s' }} />
@@ -23,7 +23,7 @@ export default function MentorshipHero() {
         <div className="absolute top-2/3 right-1/5 w-6 h-6 bg-accent-300/50 rounded-full opacity-30" />
         <div className="absolute bottom-1/4 left-3/4 w-4 h-4 bg-coral-300/50 rounded-full opacity-35" />
         
-        {/* Decorative Portuguese tile pattern */}
+        {/* Decorative Lusophone tile pattern */}
         <div className="absolute top-40 left-10 w-16 h-16 border-2 border-secondary-200/30 rotate-45 opacity-20" />
         <div className="absolute bottom-40 right-10 w-12 h-12 border-2 border-accent-200/30 rotate-12 opacity-25" />
       </div>
@@ -99,7 +99,7 @@ export default function MentorshipHero() {
                   {t('mentorship.hero.pillar1.title', 'Professional Integration')}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  {t('mentorship.hero.pillar1.description', 'Career guidance from established Portuguese professionals in finance, healthcare, hospitality, and more')}
+                  {t('mentorship.hero.pillar1.description', 'Career guidance from established Lusophone professionals in finance, healthcare, hospitality, and more')}
                 </p>
               </div>
 
@@ -112,7 +112,7 @@ export default function MentorshipHero() {
                   {t('mentorship.hero.pillar2.title', 'Language Exchange')}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  {t('mentorship.hero.pillar2.description', 'Portuguese-English practice sessions with cross-generational cultural knowledge sharing')}
+                  {t('mentorship.hero.pillar2.description', 'Lusophone-English practice sessions with cross-generational cultural knowledge sharing')}
                 </p>
               </div>
 
@@ -125,7 +125,7 @@ export default function MentorshipHero() {
                   {t('mentorship.hero.pillar3.title', 'Cultural Skills')}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  {t('mentorship.hero.pillar3.description', 'Learn traditional Portuguese crafts, cooking, fado music, and preserve cultural heritage')}
+                  {t('mentorship.hero.pillar3.description', 'Learn traditional Lusophone crafts, cooking, fado music, and preserve cultural heritage')}
                 </p>
               </div>
             </motion.div>

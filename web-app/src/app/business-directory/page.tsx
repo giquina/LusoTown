@@ -157,7 +157,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
       sao_tome_principe: { pt: 'São Tomé e Príncipe', en: 'São Tomé and Príncipe' },
       east_timor: { pt: 'Timor-Leste', en: 'East Timor' },
       macau: { pt: 'Macau', en: 'Macau' },
-      portuguese_diaspora: { pt: 'Diáspora Portuguesa', en: 'Portuguese Diaspora' }
+      portuguese_diaspora: { pt: 'Diáspora Portuguesa', en: 'Lusophone Diaspora' }
     }
     return regionNames[region]?.[language] || region.replace('_', ' ')
   }
@@ -329,7 +329,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
                 key={lang}
                 className="px-2 py-1 bg-primary-100 text-primary-700 text-xs rounded-full"
               >
-                {lang === 'portuguese' ? (isPortuguese ? 'Português' : 'Portuguese') : 
+                {lang === 'portuguese' ? (isPortuguese ? 'Português' : 'Lusophone') : 
                  lang === 'english' ? (isPortuguese ? 'Inglês' : 'English') : lang}
               </span>
             ))}
@@ -1051,7 +1051,7 @@ export default function BusinessDirectory() {
             </button>
             
             <div className="mt-4 text-xs opacity-70">
-              {isPortuguese ? 'Gratuito para listar • Verificação rápida • Suporte em português' : 'Free to list • Quick verification • Portuguese support'}
+              {isPortuguese ? 'Gratuito para listar • Verificação rápida • Suporte em português' : 'Free to list • Quick verification • Lusophone support'}
             </div>
           </div>
         </div>

@@ -2,8 +2,8 @@
 
 // LusoTown Design System Usage:
 // - Primary (blue): Icons, information, navigation elements
-// - Portuguese CTA Gradient: from-secondary-600 via-action-600 to-accent-600 (Green → Red → Amber)
-// - Always use Portuguese gradient for main action buttons (search, join, book, etc.)
+// - Lusophone CTA Gradient: from-secondary-600 via-action-600 to-accent-600 (Green → Red → Amber)
+// - Always use Lusophone gradient for main action buttons (search, join, book, etc.)
 
 import React, { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'

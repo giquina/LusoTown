@@ -94,14 +94,14 @@ export default function PadrinhoMentorshipSystem() {
         specializations: ['Digital Marketing', 'Team Leadership', 'Cultural Adaptation'],
         mentorshipAreas: ['professional_development', 'cultural_integration', 'career_advancement'],
         portugueseRegion: 'Lisboa',
-        languages: ['Portuguese', 'English', 'Spanish'],
+        languages: ['Lusophone', 'English', 'Spanish'],
         availability: 'Weekends and evenings',
         successfulMentorships: 8,
         rating: 4.9,
         profileImage: '/images/mentors/ana.jpg',
-        bio: 'Experienced marketing professional who has helped numerous Portuguese professionals establish themselves in London\'s competitive market.',
+        bio: 'Experienced marketing professional who has helped numerous Lusophone professionals establish themselves in London\'s competitive market.',
         mentorshipPhilosophy: 'I believe in empowering others through shared experiences and cultural pride while embracing new opportunities.',
-        achievements: ['Promoted 3 Portuguese colleagues to senior positions', 'Founded Portuguese Professional Network London'],
+        achievements: ['Promoted 3 Lusophone colleagues to senior positions', 'Founded Lusophone Professional Network London'],
         isVerified: true,
         responseTime: 'Within 24 hours'
       },
@@ -112,17 +112,17 @@ export default function PadrinhoMentorshipSystem() {
         yearsInLondon: 8,
         profession: 'Restaurant Owner & Chef',
         company: 'Casa do Bacalhau',
-        specializations: ['Business Development', 'Portuguese Cuisine', 'Restaurant Management'],
+        specializations: ['Business Development', 'Lusophone Cuisine', 'Restaurant Management'],
         mentorshipAreas: ['entrepreneurship', 'cultural_business', 'portuguese_gastronomy'],
         portugueseRegion: 'Porto',
-        languages: ['Portuguese', 'English', 'French'],
+        languages: ['Lusophone', 'English', 'French'],
         availability: 'Flexible schedule',
         successfulMentorships: 12,
         rating: 4.8,
         profileImage: '/images/mentors/carlos.jpg',
         bio: 'Successful Portuguese restaurant owner who has built a thriving business celebrating authentic Portuguese culture in London.',
-        mentorshipPhilosophy: 'Success comes from combining Portuguese authenticity with London\'s multicultural business environment.',
-        achievements: ['2x Portuguese Restaurant of the Year', 'Mentored 5 successful Portuguese food businesses'],
+        mentorshipPhilosophy: 'Success comes from combining Lusophone authenticity with London\'s multicultural business environment.',
+        achievements: ['2x Lusophone Restaurant of the Year', 'Mentored 5 successful Portuguese food businesses'],
         isVerified: true,
         responseTime: 'Within 48 hours'
       },
@@ -136,14 +136,14 @@ export default function PadrinhoMentorshipSystem() {
         specializations: ['Healthcare Navigation', 'Family Settlement', 'Educational Pathways'],
         mentorshipAreas: ['family_integration', 'healthcare_system', 'children_education'],
         portugueseRegion: 'Açores',
-        languages: ['Portuguese', 'English'],
+        languages: ['Lusophone', 'English'],
         availability: 'Weekends',
         successfulMentorships: 15,
         rating: 5.0,
         profileImage: '/images/mentors/maria.jpg',
-        bio: 'Dedicated healthcare professional who has helped countless Portuguese families navigate London\'s systems with compassion and expertise.',
-        mentorshipPhilosophy: 'Every Portuguese family deserves to feel at home in London while maintaining their cultural identity.',
-        achievements: ['Established Portuguese Healthcare Support Network', 'Helped 20+ families with NHS navigation'],
+        bio: 'Dedicated healthcare professional who has helped countless Lusophone families navigate London\'s systems with compassion and expertise.',
+        mentorshipPhilosophy: 'Every Lusophone family deserves to feel at home in London while maintaining their cultural identity.',
+        achievements: ['Established Lusophone Healthcare Support Network', 'Helped 20+ families with NHS navigation'],
         isVerified: true,
         responseTime: 'Within 24 hours'
       }
@@ -154,7 +154,7 @@ export default function PadrinhoMentorshipSystem() {
         id: '1',
         nameEn: 'New Arrival Integration Program',
         namePt: 'Programa de Integração para Recém-Chegados',
-        descriptionEn: 'Comprehensive 6-month program pairing new Portuguese arrivals with experienced community members',
+        descriptionEn: 'Comprehensive 6-month program pairing new Lusophone arrivals with experienced community members',
         descriptionPt: 'Programa abrangente de 6 meses emparelhando novos portugueses com membros experientes da comunidade',
         duration: '6 months',
         structure: 'Weekly 1-hour sessions + monthly group activities',
@@ -179,7 +179,7 @@ export default function PadrinhoMentorshipSystem() {
         id: '2',
         nameEn: 'Professional Advancement Track',
         namePt: 'Trilha de Avanço Profissional',
-        descriptionEn: 'Career-focused mentorship connecting Portuguese professionals with industry leaders',
+        descriptionEn: 'Career-focused mentorship connecting Lusophone professionals with industry leaders',
         descriptionPt: 'Mentoria focada na carreira conectando profissionais portugueses com líderes da indústria',
         duration: '12 months',
         structure: 'Bi-weekly sessions + quarterly industry events',
@@ -202,7 +202,7 @@ export default function PadrinhoMentorshipSystem() {
       },
       {
         id: '3',
-        nameEn: 'Portuguese Business Incubator',
+        nameEn: 'Lusophone Business Incubator',
         namePt: 'Incubadora de Negócios Portugueses',
         descriptionEn: 'Entrepreneurship program supporting Portuguese business ventures in London',
         descriptionPt: 'Programa de empreendedorismo apoiando ventures portugueses de negócios em Londres',
@@ -214,7 +214,7 @@ export default function PadrinhoMentorshipSystem() {
           'Business development support',
           'Investment network access',
           'Legal and financial guidance',
-          'Portuguese market connections'
+          'Lusophone market connections'
         ],
         requirements: [
           'Viable business idea or early-stage business',
@@ -276,7 +276,7 @@ export default function PadrinhoMentorshipSystem() {
             onChange={(e) => setFilters(prev => ({ ...prev, region: e.target.value }))}
             className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
           >
-            <option value="">{t('mentorship.filters.all_regions', 'All Portuguese Regions')}</option>
+            <option value="">{t('mentorship.filters.all_regions', 'All Lusophone Regions')}</option>
             <option value="lisboa">Lisboa</option>
             <option value="porto">Porto</option>
             <option value="açores">Açores</option>
@@ -431,7 +431,7 @@ export default function PadrinhoMentorshipSystem() {
             {t('mentorship.benefits.community.title', 'Strengthen Our Community')}
           </h3>
           <p className="text-gray-600">
-            {t('mentorship.benefits.community.desc', 'Help build a stronger Portuguese diaspora network where everyone feels supported and connected to their roots')}
+            {t('mentorship.benefits.community.desc', 'Help build a stronger Lusophone diaspora network where everyone feels supported and connected to their roots')}
           </p>
         </div>
 
@@ -455,7 +455,7 @@ export default function PadrinhoMentorshipSystem() {
             {t('mentorship.benefits.network.title', 'Expand Your Network')}
           </h3>
           <p className="text-gray-600">
-            {t('mentorship.benefits.network.desc', 'Connect with diverse Portuguese professionals and discover new business and collaboration opportunities')}
+            {t('mentorship.benefits.network.desc', 'Connect with diverse Lusophone professionals and discover new business and collaboration opportunities')}
           </p>
         </div>
 
@@ -532,7 +532,7 @@ export default function PadrinhoMentorshipSystem() {
           {t('mentorship.programs.title', 'Structured Mentorship Programs')}
         </h2>
         <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-          {t('mentorship.programs.subtitle', 'Choose from specialized programs designed to address specific aspects of Portuguese life in London')}
+          {t('mentorship.programs.subtitle', 'Choose from specialized programs designed to address specific aspects of Lusophone life in London')}
         </p>
       </div>
 
@@ -625,7 +625,7 @@ export default function PadrinhoMentorshipSystem() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6"
           >
-            {t('mentorship.title', 'Portuguese Cultural')}
+            {t('mentorship.title', 'Lusophone Cultural')}
             <br />
             <span className="bg-gradient-to-r from-secondary-600 via-accent-600 to-coral-600 bg-clip-text text-transparent">
               {t('mentorship.mentorship', 'Mentorship Network')}
@@ -638,7 +638,7 @@ export default function PadrinhoMentorshipSystem() {
             transition={{ delay: 0.2 }}
             className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto"
           >
-            {t('mentorship.subtitle', 'Connect with experienced Portuguese mentors who understand your journey and can guide you to success while honoring your heritage')}
+            {t('mentorship.subtitle', 'Connect with experienced Lusophone mentors who understand your journey and can guide you to success while honoring your heritage')}
           </motion.p>
         </div>
 

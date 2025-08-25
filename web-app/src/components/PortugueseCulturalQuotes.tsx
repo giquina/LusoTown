@@ -56,11 +56,11 @@ const culturalQuotes: CulturalQuote[] = [
     },
     culturalSignificance: {
       pt: "Camões expressa a filosofia portuguesa sobre aceitação da mudança",
-      en: "Camões expresses Portuguese philosophy about accepting change"
+      en: "Camões expresses Lusophone philosophy about accepting change"
     },
     modernRelevance: {
       pt: "Ressoa com imigrantes portugueses adaptando-se à vida em Londres",
-      en: "Resonates with Portuguese immigrants adapting to life in London"
+      en: "Resonates with Lusophone immigrants adapting to life in London"
     }
   },
   {
@@ -76,15 +76,15 @@ const culturalQuotes: CulturalQuote[] = [
     },
     context: {
       pt: "Inspirado no lema dos navegadores portugueses antigos",
-      en: "Inspired by the motto of ancient Portuguese navigators"
+      en: "Inspired by the motto of ancient Lusophone navigators"
     },
     culturalSignificance: {
       pt: "Representa o espírito explorador português e coragem de partir",
-      en: "Represents the Portuguese explorer spirit and courage to leave"
+      en: "Represents the Lusophone explorer spirit and courage to leave"
     },
     modernRelevance: {
       pt: "Fala a todos os portugueses que partiram para encontrar nova vida",
-      en: "Speaks to all Portuguese who left to find new life"
+      en: "Speaks to all Lusophone who left to find new life"
     }
   },
   {
@@ -104,11 +104,11 @@ const culturalQuotes: CulturalQuote[] = [
     },
     culturalSignificance: {
       pt: "Reflete a valorização portuguesa das relações humanas",
-      en: "Reflects Portuguese valuation of human relationships"
+      en: "Reflects Lusophone valuation of human relationships"
     },
     modernRelevance: {
       pt: "Essencial para comunidades portuguesas em Londres construindo laços",
-      en: "Essential for Portuguese communities in London building bonds"
+      en: "Essential for Lusophone communities in London building bonds"
     }
   },
   {
@@ -152,11 +152,11 @@ const culturalQuotes: CulturalQuote[] = [
     },
     culturalSignificance: {
       pt: "Fado como expressão da alma portuguesa e da saudade",
-      en: "Fado as expression of Portuguese soul and saudade"
+      en: "Fado as expression of Lusophone soul and saudade"
     },
     modernRelevance: {
       pt: "Noites de fado em Londres conectam corações lusófonos",
-      en: "Fado nights in London connect Portuguese hearts"
+      en: "Fado nights in London connect Lusophone hearts"
     }
   },
   {
@@ -224,11 +224,11 @@ const culturalQuotes: CulturalQuote[] = [
     },
     culturalSignificance: {
       pt: "Expressa o sentimento universal lusófono de saudade",
-      en: "Expresses the universal Portuguese feeling of saudade"
+      en: "Expresses the universal Lusophone feeling of saudade"
     },
     modernRelevance: {
       pt: "Une toda a diáspora lusófona através do sentimento compartilhado",
-      en: "Unites the entire Portuguese diaspora through shared feeling"
+      en: "Unites the entire Lusophone diaspora through shared feeling"
     }
   }
 ];
@@ -303,7 +303,7 @@ const PortugueseCulturalQuotes: React.FC = () => {
           <div className="inline-flex items-center bg-gradient-to-r from-primary-100 to-secondary-100 rounded-full px-6 py-3 mb-6">
             <QuoteIcon className="w-5 h-5 text-primary-600 mr-2" />
             <span className="text-primary-700 font-medium">
-              {language === "pt" ? "Sabedoria Lusófona" : "Portuguese Wisdom"}
+              {language === "pt" ? "Sabedoria Lusófona" : "Lusophone Wisdom"}
             </span>
           </div>
 
@@ -316,7 +316,7 @@ const PortugueseCulturalQuotes: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === "pt"
               ? "Descubra a profundidade da sabedoria portuguesa através de citações que atravessam séculos e unem corações lusófonos."
-              : "Discover the depth of Portuguese wisdom through quotes that span centuries and unite Portuguese hearts."
+              : "Discover the depth of Lusophone wisdom through quotes that span centuries and unite Lusophone hearts."
             }
           </p>
         </motion.div>
@@ -451,7 +451,7 @@ const PortugueseCulturalQuotes: React.FC = () => {
           <p className="text-lg opacity-95 max-w-2xl mx-auto leading-relaxed">
             {language === "pt"
               ? "Estas palavras não são apenas citações - são pontes entre o passado e o presente, ligando corações portugueses em Londres e pelo mundo."
-              : "These words are not just quotes - they are bridges between past and present, connecting Portuguese hearts in London and around the world."
+              : "These words are not just quotes - they are bridges between past and present, connecting Lusophone hearts in London and around the world."
             }
           </p>
           <div className="mt-6 flex items-center justify-center gap-4 text-4xl opacity-75">

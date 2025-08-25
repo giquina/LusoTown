@@ -74,13 +74,13 @@ const mockServicePosts: ServicePost[] = [
       rating: 4.9,
       completedServices: 247
     },
-    content: 'Just completed a beautiful tour to Windsor Castle with a lovely Portuguese family! Shared stories about Portuguese royalty connections and showed them the Portuguese influences in the castle\'s history. Available this weekend for airport pickups and London tours! 🏰',
+    content: 'Just completed a beautiful tour to Windsor Castle with a lovely Lusophone family! Shared stories about Lusophone royalty connections and showed them the Lusophone influences in the castle\'s history. Available this weekend for airport pickups and London tours! 🏰',
     serviceDetails: {
       type: 'Airport Transfer & Tours',
       price: 'From £45',
       availability: 'This Weekend',
       areas: ['Heathrow', 'Gatwick', 'Central London', 'Windsor'],
-      languages: ['Portuguese', 'English'],
+      languages: ['Lusophone', 'English'],
       includes: ['Cultural commentary', 'Portuguese-speaking community areas', 'Historical context'],
       booking: 'WhatsApp: +44 7xxx xxx xxx'
     },
@@ -104,14 +104,14 @@ const mockServicePosts: ServicePost[] = [
       rating: 4.8,
       completedServices: 189
     },
-    content: 'Amazing cultural tour of Stockwell Portuguese-speaking community today! Visited the best Portuguese bakeries, explored the Portuguese murals, and ended at the Portuguese Cultural Centre. My guests loved learning about our community\'s history in London! 🇵🇹',
+    content: 'Amazing cultural tour of Stockwell Portuguese-speaking community today! Visited the best Lusophone bakeries, explored the Lusophone murals, and ended at the Lusophone Cultural Centre. My guests loved learning about our community\'s history in London! 🇵🇹',
     serviceDetails: {
       type: 'Cultural Walking Tour',
       price: 'From £25 per person',
       availability: 'Daily',
       areas: ['Stockwell', 'Vauxhall', 'Borough Market'],
-      languages: ['Portuguese', 'English'],
-      includes: ['Portuguese bakery visits', 'Cultural history', 'Local insights', 'Pastéis de nata tasting']
+      languages: ['Lusophone', 'English'],
+      includes: ['Lusophone bakery visits', 'Cultural history', 'Local insights', 'Pastéis de nata tasting']
     },
     images: [
       'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&h=400&fit=crop',
@@ -136,12 +136,12 @@ const mockServicePosts: ServicePost[] = [
       rating: 5.0,
       completedServices: 67
     },
-    content: 'Successfully coordinated transport for the Portuguese Business Network event last night! 45 Portuguese professionals attended with seamless transport arrangements. Planning next month\'s Fado night with coordinated group transport from key London areas! 🚌',
+    content: 'Successfully coordinated transport for the Lusophone Business Network event last night! 45 Lusophone professionals attended with seamless transport arrangements. Planning next month\'s Fado night with coordinated group transport from key London areas! 🚌',
     serviceDetails: {
       type: 'Event Transport Coordination',
       availability: 'Events Monthly',
       areas: ['All London', 'Group pickups available'],
-      languages: ['Portuguese', 'English'],
+      languages: ['Lusophone', 'English'],
       includes: ['Group coordination', 'Multiple pickup points', 'Event return transport', 'Portuguese-speaking drivers']
     },
     createdAt: '8 hours ago',

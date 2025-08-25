@@ -30,7 +30,7 @@ export default function ToursPage() {
       serviceKey: "london_tours", // Available service
       description: isPortuguese 
         ? "Descubra os pontos turísticos mais famosos de Londres com guias portugueses experientes. Big Ben, Tower Bridge, Buckingham Palace, Westminster Abbey e muito mais. Uma introdução perfeita à capital britânica com explicações em português." 
-        : "Discover London's most famous tourist attractions with experienced Portuguese guides. Big Ben, Tower Bridge, Buckingham Palace, Westminster Abbey and much more. A perfect introduction to the British capital with explanations in Portuguese.",
+        : "Discover London's most famous tourist attractions with experienced Lusophone guides. Big Ben, Tower Bridge, Buckingham Palace, Westminster Abbey and much more. A perfect introduction to the British capital with explanations in Lusophone.",
       duration: "3.5h",
       groupSize: "8-12",
       rating: 4.9,
@@ -92,7 +92,7 @@ export default function ToursPage() {
       serviceKey: "portuguese_cultural_tours", // Unavailable service
       description: isPortuguese 
         ? "Visite os museus mais famosos do mundo: British Museum, Tate Modern, National Gallery, Victoria & Albert Museum. Descubra tesouros históricos e arte mundial com explicações detalhadas em português."
-        : "Visit the world's most famous museums: British Museum, Tate Modern, National Gallery, Victoria & Albert Museum. Discover historical treasures and world art with detailed explanations in Portuguese.",
+        : "Visit the world's most famous museums: British Museum, Tate Modern, National Gallery, Victoria & Albert Museum. Discover historical treasures and world art with detailed explanations in Lusophone.",
       duration: "4h",
       groupSize: "6-10",
       rating: 4.9,
@@ -196,7 +196,7 @@ export default function ToursPage() {
                     Discover London with
                     <br />
                     <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
-                      experienced Portuguese
+                      experienced Lusophone
                     </span>{" "}
                     guides
                   </>
@@ -234,13 +234,13 @@ export default function ToursPage() {
               <span className="hidden sm:block">
                 {isPortuguese
                   ? "Explore os marcos icónicos de Londres com guias portugueses qualificados. Experiências culturais autênticas, storytelling em português e descoberta dos segredos da capital britânica através dos olhos da comunidade de falantes de português."
-                  : "Explore London's iconic landmarks with qualified Portuguese guides. Authentic cultural experiences, Portuguese storytelling, and discover British capital secrets through the eyes of the Portuguese-speaking community."}
+                  : "Explore London's iconic landmarks with qualified Lusophone guides. Authentic cultural experiences, Lusophone storytelling, and discover British capital secrets through the eyes of the Portuguese-speaking community."}
               </span>
               {/* Mobile short subtitle */}
               <span className="sm:hidden">
                 {isPortuguese
                   ? "Explore Londres com guias portugueses qualificados! Experiências culturais autênticas e storytelling em português."
-                  : "Explore London with qualified Portuguese guides! Authentic cultural experiences and Portuguese storytelling."}
+                  : "Explore London with qualified Lusophone guides! Authentic cultural experiences and Lusophone storytelling."}
               </span>
             </motion.p>
 
@@ -255,7 +255,7 @@ export default function ToursPage() {
                 <span>
                   {isPortuguese
                     ? "Guias Portugueses Experientes"
-                    : "Experienced Portuguese Guides"}
+                    : "Experienced Lusophone Guides"}
                 </span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -271,7 +271,7 @@ export default function ToursPage() {
                 <span>
                   {isPortuguese
                     ? "Storytelling em Português"
-                    : "Portuguese Storytelling"}
+                    : "Lusophone Storytelling"}
                 </span>
               </div>
             </motion.div>
@@ -305,12 +305,12 @@ export default function ToursPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {isPortuguese ? "Tours Autênticos com Guias Portugueses" : "Authentic Tours with Portuguese Guides"}
+                {isPortuguese ? "Tours Autênticos com Guias Portugueses" : "Authentic Tours with Lusophone Guides"}
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese 
                   ? "Explore os marcos mais famosos de Londres com guias portugueses qualificados que explicam tudo na nossa língua."
-                  : "Explore London's most famous landmarks with qualified Portuguese guides who explain everything in our language."
+                  : "Explore London's most famous landmarks with qualified Lusophone guides who explain everything in our language."
                 }
               </p>
             </div>
@@ -473,7 +473,7 @@ export default function ToursPage() {
         </div>
       </section>
 
-      {/* Portuguese Tour Testimonials */}
+      {/* Lusophone Tour Testimonials */}
       <section id="testimonials" className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
         <div className="container-width">
           <div className="max-w-6xl mx-auto">
@@ -484,7 +484,7 @@ export default function ToursPage() {
               <p className="text-lg text-gray-600">
                 {isPortuguese 
                   ? "Experiências reais de portugueses que descobriram Londres connosco"
-                  : "Real experiences from Portuguese people who discovered London with us"
+                  : "Real experiences from Lusophone people who discovered London with us"
                 }
               </p>
             </div>
@@ -501,7 +501,7 @@ export default function ToursPage() {
                 <p className="text-gray-600 mb-4 italic">
                   {isPortuguese 
                     ? "\"O tour clássico de Londres foi fantástico! Ver Big Ben, Tower Bridge e Buckingham Palace com explicações em português fez toda a diferença. O Carlos é um guia excelente!\""
-                    : "\"The classic London tour was fantastic! Seeing Big Ben, Tower Bridge and Buckingham Palace with explanations in Portuguese made all the difference. Carlos is an excellent guide!\""
+                    : "\"The classic London tour was fantastic! Seeing Big Ben, Tower Bridge and Buckingham Palace with explanations in Lusophone made all the difference. Carlos is an excellent guide!\""
                   }
                 </p>
                 <div className="flex items-center gap-3">
@@ -526,7 +526,7 @@ export default function ToursPage() {
                 <p className="text-gray-600 mb-4 italic">
                   {isPortuguese 
                     ? "\"O tour dos mercados foi incrível! Borough Market e Camden Market com um guia português que explica tudo na nossa língua. Experimentámos comidas deliciosas!\""
-                    : "\"The markets tour was incredible! Borough Market and Camden Market with a Portuguese guide who explains everything in our language. We tried delicious foods!\""
+                    : "\"The markets tour was incredible! Borough Market and Camden Market with a Lusophone guide who explains everything in our language. We tried delicious foods!\""
                   }
                 </p>
                 <div className="flex items-center gap-3">
@@ -551,7 +551,7 @@ export default function ToursPage() {
                 <p className="text-gray-600 mb-4 italic">
                   {isPortuguese 
                     ? "\"Os museus de Londres são impressionantes! British Museum e National Gallery com explicações detalhadas em português. A Ana conhece tudo sobre arte e história!\""
-                    : "\"London's museums are impressive! British Museum and National Gallery with detailed explanations in Portuguese. Ana knows everything about art and history!\""
+                    : "\"London's museums are impressive! British Museum and National Gallery with detailed explanations in Lusophone. Ana knows everything about art and history!\""
                   }
                 </p>
                 <div className="flex items-center gap-3">
@@ -580,7 +580,7 @@ export default function ToursPage() {
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese 
                   ? "Não somos apenas mais uma empresa de tours. Somos portugueses que vivem em Londres e queremos partilhar as nossas descobertas."
-                  : "We're not just another tour company. We're Portuguese people living in London who want to share our discoveries."
+                  : "We're not just another tour company. We're Lusophone people living in London who want to share our discoveries."
                 }
               </p>
             </div>
@@ -596,7 +596,7 @@ export default function ToursPage() {
                 <p className="text-gray-600 leading-relaxed">
                   {isPortuguese 
                     ? "Historiadores, chefs e líderes comunitários portugueses com anos de experiência em Londres"
-                    : "Portuguese historians, chefs and community leaders with years of London experience"
+                    : "Lusophone historians, chefs and community leaders with years of London experience"
                   }
                 </p>
               </div>
@@ -661,7 +661,7 @@ export default function ToursPage() {
             <p className="text-xl md:text-2xl mb-8 opacity-90">
               {isPortuguese 
                 ? "Junta-te a centenas de portugueses que já exploraram os marcos mais famosos de Londres com os nossos guias especializados."
-                : "Join hundreds of Portuguese people who have already explored London's most famous landmarks with our specialized guides."
+                : "Join hundreds of Lusophone people who have already explored London's most famous landmarks with our specialized guides."
               }
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -675,7 +675,7 @@ export default function ToursPage() {
             <div className="mt-8 text-sm opacity-80">
               {isPortuguese 
                 ? "💬 Tours em português | 🏛️ Marcos famosos | 👥 Guias especializados"
-                : "💬 Tours in Portuguese | 🏛️ Famous landmarks | 👥 Specialized guides"
+                : "💬 Tours in Lusophone | 🏛️ Famous landmarks | 👥 Specialized guides"
               }
             </div>
           </div>

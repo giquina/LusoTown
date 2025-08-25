@@ -146,7 +146,7 @@ export default function WelcomeDemoPage() {
                   <ul className="space-y-1 text-gray-600">
                     <li>• localStorage preference management</li>
                     <li>• Smooth Framer Motion animations</li>
-                    <li>• Portuguese brand color integration</li>
+                    <li>• Lusophone brand color integration</li>
                     <li>• Bilingual EN/PT support</li>
                     <li>• Smart routing based on user preferences</li>
                     <li>• Community statistics display</li>

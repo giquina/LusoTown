@@ -67,7 +67,7 @@ export function LuxurySkeleton({
   );
 }
 
-// Luxury Spinner for Portuguese-themed loading
+// Luxury Spinner for Lusophone-themed loading
 interface LuxurySpinnerProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   variant?: 'default' | 'portuguese' | 'dots' | 'pulse';
@@ -92,8 +92,8 @@ export function LuxurySpinner({
         <motion.div
           className="absolute inset-0 border-3 border-transparent rounded-full"
           style={{
-            borderTopColor: '#C5282F', // Portuguese red
-            borderRightColor: '#00A859', // Portuguese green
+            borderTopColor: '#C5282F', // Lusophone red
+            borderRightColor: '#00A859', // Lusophone green
           }}
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
@@ -101,7 +101,7 @@ export function LuxurySpinner({
         <motion.div
           className="absolute inset-1 border-2 border-transparent rounded-full"
           style={{
-            borderBottomColor: '#FFD700', // Portuguese gold
+            borderBottomColor: '#FFD700', // Lusophone gold
             borderLeftColor: '#C5282F',
           }}
           animate={{ rotate: -360 }}
@@ -158,7 +158,7 @@ export function LuxurySpinner({
   );
 }
 
-// Luxury Progress Bar with Portuguese theming
+// Luxury Progress Bar with Lusophone theming
 interface LuxuryProgressProps {
   progress: number;
   variant?: 'default' | 'portuguese' | 'gradient';

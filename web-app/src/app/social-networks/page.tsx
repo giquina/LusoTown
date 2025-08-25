@@ -282,7 +282,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
           <div className="flex items-center gap-2">
             <GlobeAltIcon className="w-3 h-3" />
             <span>
-              {network.primaryLanguage === 'portuguese' ? (language === 'pt' ? 'Português' : 'Portuguese') :
+              {network.primaryLanguage === 'portuguese' ? (language === 'pt' ? 'Português' : 'Lusophone') :
                network.primaryLanguage === 'english' ? (language === 'pt' ? 'Inglês' : 'English') :
                language === 'pt' ? 'Bilíngue' : 'Bilingual'}
             </span>
@@ -431,7 +431,7 @@ export default function SocialNetworks() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'pt' 
               ? 'Conecte-se com grupos, canais e comunidades portuguesas ativas em Londres. WhatsApp, Facebook, Telegram e muito mais.'
-              : 'Connect with active Portuguese groups, channels, and communities in London. WhatsApp, Facebook, Telegram, and more.'}
+              : 'Connect with active Lusophone groups, channels, and communities in London. WhatsApp, Facebook, Telegram, and more.'}
           </p>
           
           {/* Statistics */}
@@ -548,7 +548,7 @@ export default function SocialNetworks() {
           <p className="text-lg mb-6 opacity-90">
             {language === 'pt' 
               ? 'Ajude-nos a construir um diretório completo das redes sociais portuguesas em Londres.'
-              : 'Help us build a comprehensive directory of Portuguese social networks in London.'}
+              : 'Help us build a comprehensive directory of Lusophone social networks in London.'}
           </p>
           <button className="bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
             {language === 'pt' ? 'Sugerir Rede' : 'Suggest Network'}

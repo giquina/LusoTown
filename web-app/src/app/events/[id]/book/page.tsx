@@ -578,7 +578,7 @@ const TechnologyWorkshopBookingPage = () => {
                         </div>
                         <div className="flex items-start gap-3">
                           <UsersIcon className="w-5 h-5 text-green-500 mt-0.5" />
-                          <span className="text-sm text-gray-700">Network with Portuguese entrepreneurs</span>
+                          <span className="text-sm text-gray-700">Network with Lusophone entrepreneurs</span>
                         </div>
                       </div>
                     </div>

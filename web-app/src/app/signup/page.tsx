@@ -60,7 +60,7 @@ const benefits = [
     icon: ShieldCheckIcon,
     text: "Premium features available",
     subtext: "Priority booking, secret societies, exclusive events",
-    mobileText: "Elite Portuguese Events",
+    mobileText: "Elite Lusophone Events",
     mobileSubtext: "Exclusive experiences"
   },
 ];
@@ -104,7 +104,7 @@ const mobileEvents = [
   },
   {
     title: "Business Breakfast Tomorrow",
-    subtitle: "Portuguese networking • 8AM",
+    subtitle: "Lusophone networking • 8AM",
     location: "Canary Wharf",
     emoji: "☕",
     flag: "🇵🇹",
@@ -489,7 +489,7 @@ function SignupInner() {
   const MobileTestimonialCarousel = () => (
     <div className="lg:hidden mt-6">
       <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">
-        💬 Our Portuguese Community
+        💬 Our Lusophone Community
       </h3>
       <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 px-2 pb-2">
         {testimonials.map((testimonial, index) => (
@@ -568,7 +568,7 @@ function SignupInner() {
   const getPersonalizedMessage = () => {
     const messages = {
       dating: {
-        title: "Find Your Portuguese Match",
+        title: "Find Your Lusophone Match",
         subtitle: "Connect with Portuguese speakers for dating and genuine relationships",
         icon: "❤️"
       },
@@ -583,7 +583,7 @@ function SignupInner() {
         icon: "💼"
       },
       student: {
-        title: "Connect with Portuguese Students",
+        title: "Connect with Lusophone Students",
         subtitle: "Find study partners and build your academic network",
         icon: "🎓"
       }
@@ -598,7 +598,7 @@ function SignupInner() {
       <div className="pt-16">
         <section className="py-4 sm:py-8 bg-gradient-to-br from-primary-50 to-secondary-50">
           <div className="container-width w-full px-4 sm:px-6 lg:px-8">
-            {/* Mobile Portuguese Nations Showcase */}
+            {/* Mobile Lusophone Nations Showcase */}
             <MobileFlagCarousel />
             
             {/* Mobile Events Carousel */}
@@ -651,7 +651,7 @@ function SignupInner() {
                 {/* Social Proof Stats */}
                 <div className="space-y-4 mb-6">
                   <p className="text-xl xs:text-2xl sm:text-2xl text-gray-700 leading-relaxed font-medium">
-                    <span className="font-bold text-green-600">750 Portuguese speakers</span> already connected • 
+                    <span className="font-bold text-green-600">Portuguese speakers</span> already connected • 
                     <span className="font-bold text-blue-600">23 joined this week</span>
                   </p>
                   
@@ -685,7 +685,7 @@ function SignupInner() {
                       <div className="bg-white/70 p-4 rounded-lg border border-amber-200">
                         <p className="text-sm text-gray-600 mb-2">
                           <strong>Cultural Education:</strong> Kizomba originated in 1980s Angola, blending traditional Semba 
-                          with Portuguese influences. Today it's the heartbeat of romantic connection across all Portuguese-speaking 
+                          with Lusophone influences. Today it's the heartbeat of romantic connection across all Portuguese-speaking 
                           communities - from Luanda to London.
                         </p>
                         <div className="flex items-center gap-2 text-sm text-amber-700">
@@ -863,7 +863,7 @@ function SignupInner() {
                       <span className="hidden sm:block">Start Free Today</span>
                     </h2>
                     <p className="text-gray-600 text-xs sm:text-sm lg:text-base mb-3 sm:mb-4">
-                      <span className="sm:hidden">750+ Members • Business & Romance • No barriers</span>
+                      <span className="sm:hidden">Portuguese speakers • Business & Romance • No barriers</span>
                       <span className="hidden sm:block">Free community access • No barriers to participation</span>
                     </p>
 
@@ -1125,7 +1125,7 @@ function SignupInner() {
                           <span title="Cape Verde">🇨🇻</span>
                           <span title="Mozambique">🇲🇿</span>
                         </div>
-                        <span className="sm:hidden">Portuguese Community</span>
+                        <span className="sm:hidden">Lusophone Community</span>
                         <span className="hidden sm:block">
                           {t(
                             "signup.portuguese-community",
@@ -1140,7 +1140,7 @@ function SignupInner() {
                             htmlFor="portugueseOrigin"
                             className="block text-sm font-medium text-gray-700 mb-2"
                           >
-                            {t("signup.portuguese-origin", "Portuguese Origin")}
+                            {t("signup.portuguese-origin", "Lusophone Origin")}
                           </label>
                           <select
                             id="portugueseOrigin"
@@ -1200,7 +1200,7 @@ function SignupInner() {
                             <optgroup
                               label={t(
                                 "signup.south-london",
-                                "South London (Portuguese Areas)"
+                                "South London (Lusophone Areas)"
                               )}
                             >
                               <option value="stockwell">🇵🇹 Stockwell</option>
@@ -1260,7 +1260,7 @@ function SignupInner() {
                             🇬🇧 English (I prefer events in English)
                           </option>
                           <option value="pt">
-                            🇵🇹 Português (I prefer events in Portuguese)
+                            🇵🇹 Português (I prefer events in Lusophone)
                           </option>
                           <option value="both">
                             🌍 Both (I'm comfortable with both languages)
@@ -1285,7 +1285,7 @@ function SignupInner() {
                             },
                             {
                               key: "food",
-                              label: "🍽️ Portuguese Cuisine",
+                              label: "🍽️ Lusophone Cuisine",
                               description: "Cooking and food events",
                             },
                             {
@@ -1296,7 +1296,7 @@ function SignupInner() {
                             {
                               key: "language",
                               label: "🗣️ Language Exchange",
-                              description: "Practice Portuguese/English",
+                              description: "Practice Lusophone/English",
                             },
                             {
                               key: "business",
@@ -1406,7 +1406,7 @@ function SignupInner() {
                             </span>
                           </div>
                           <span>
-                            Browse and join Portuguese events in London
+                            Browse and join Lusophone events in London
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
@@ -1445,7 +1445,7 @@ function SignupInner() {
                             💃🇦🇴 Chocolate Kizomba (One Regent Street)
                           </span>
                           <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">
-                            💼🇵🇹 Portuguese Business Breakfast (City)
+                            💼🇵🇹 Lusophone Business Breakfast (City)
                           </span>
                           <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">
                             🍽️🌍 Lusophone Sunday Brunch (Vauxhall)
@@ -1517,8 +1517,8 @@ function SignupInner() {
                         <span className="flex items-center justify-center gap-2 sm:gap-4 text-lg sm:text-xl font-black">
                           <span className="text-lg sm:text-xl">🇵🇹</span>
                           <span className="text-center leading-tight">
-                            <span className="sm:hidden">Join 750+ Portuguese Speakers FREE</span>
-                            <span className="hidden sm:block">Join 750+ Portuguese Speakers - FREE</span>
+                            <span className="sm:hidden">Join Portuguese speakers FREE</span>
+                            <span className="hidden sm:block">Join Portuguese speakers - FREE</span>
                           </span>
                           <span className="text-xl sm:text-2xl">→</span>
                         </span>

@@ -198,12 +198,12 @@ export default function ModeratorPanel({
                 </button>
               </div>
 
-              {/* Portuguese Only */}
+              {/* Lusophone Only */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="text-sm">🇵🇹</span>
                   <span className="text-sm font-medium text-gray-700">
-                    {language === 'pt' ? 'Só Português' : 'Portuguese Only'}
+                    {language === 'pt' ? 'Só Português' : 'Lusophone Only'}
                   </span>
                 </div>
                 <button
@@ -355,7 +355,7 @@ export default function ModeratorPanel({
           <div className="text-xs text-gray-500 text-center">
             {language === 'pt' 
               ? 'Moderação Portuguesa • LusoTown'
-              : 'Portuguese Moderation • LusoTown'
+              : 'Lusophone Moderation • LusoTown'
             }
           </div>
         </div>

@@ -3,22 +3,26 @@
  * Centralizes all hardcoded SEO, JSON-LD, and metadata values
  */
 
-import { brand } from './brand';
-import { contact, socialMedia, officeLocations } from './contact';
+import { brand } from "./brand";
+import { contact, socialMedia, officeLocations } from "./contact";
 
 // SEO Configuration
 export const seo = {
   // Primary site metadata
   siteName: process.env.NEXT_PUBLIC_SITE_NAME || brand.name,
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://lusotown.london',
-  
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london",
+
   // Default page metadata
-  defaultTitle: process.env.NEXT_PUBLIC_DEFAULT_TITLE || 'LusoTown - London | Portuguese Social & Business Network',
-  defaultDescription: process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION || 'The Portuguese social and business network in London. Connect with Portuguese speakers, book cultural events, attend technology workshops, and build professional networks. Unidos pela Língua.',
-  
+  defaultTitle:
+    process.env.NEXT_PUBLIC_DEFAULT_TITLE ||
+    "LusoTown - London | Lusophone Social & Business Network",
+  defaultDescription:
+    process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION ||
+    "The Lusophone social and business network in London. Connect with Portuguese speakers, book cultural events, attend technology workshops, and build professional networks. Unidos pela Língua.",
+
   // Complete SEO keyword set
   keywords: [
-    // Primary Portuguese SEO Keywords
+    // Primary Lusophone SEO Keywords
     "portuguese social calendar london",
     "agenda social portuguesa londres",
     "comunidade de falantes de português londres",
@@ -67,7 +71,7 @@ export const seo = {
     "música cabo-verdiana londres",
     "portuguese heritage preservation",
     "diaspora community london",
-    // Portuguese Keywords
+    // Lusophone Keywords
     "comunidade de falantes de português londres",
     "comunidade brasileira londres",
     "comunidade angolana londres",
@@ -87,137 +91,155 @@ export const seo = {
     "preservação herança portuguesa",
     "diáspora lusófona londres",
   ],
-  
+
   // Authors and publishers
-  authors: [{ name: 'LusoTown' }],
-  creator: 'LusoTown',
-  publisher: 'LusoTown',
-  
+  authors: [{ name: "LusoTown" }],
+  creator: "LusoTown",
+  publisher: "LusoTown",
+
   // Open Graph defaults
-  ogImage: process.env.NEXT_PUBLIC_OG_IMAGE || '/og-image.jpg',
-  ogType: 'website',
-  
+  ogImage: process.env.NEXT_PUBLIC_OG_IMAGE || "/og-image.jpg",
+  ogType: "website",
+
   // Twitter Card defaults
-  twitterCard: 'summary_large_image',
-  twitterSite: process.env.NEXT_PUBLIC_TWITTER_HANDLE || '@lusotownlondon',
-  twitterCreator: process.env.NEXT_PUBLIC_TWITTER_CREATOR || '@lusotownlondon',
-  
+  twitterCard: "summary_large_image",
+  twitterSite: process.env.NEXT_PUBLIC_TWITTER_HANDLE || "@lusotownlondon",
+  twitterCreator: process.env.NEXT_PUBLIC_TWITTER_CREATOR || "@lusotownlondon",
+
   // Language and locale
-  locale: 'en_GB',
-  alternateLocales: ['pt_PT', 'pt_BR'],
-  
+  locale: "en_GB",
+  alternateLocales: ["pt_PT", "pt_BR"],
+
   // Verification codes
   googleSiteVerification: process.env.GOOGLE_SITE_VERIFICATION,
   bingSiteVerification: process.env.BING_SITE_VERIFICATION,
-  
+
   // Structured data
   jsonLd: {
     organization: {
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
+      "@context": "https://schema.org",
+      "@type": "Organization",
       name: brand.name,
-      description: process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION || 'Portuguese social and business network in London',
-      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://lusotown.london',
-      logo: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://lusotown.london'}/logo.png`,
+      description:
+        process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION ||
+        "Lusophone social and business network in London",
+      url: process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london",
+      logo: `${
+        process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london"
+      }/logo.png`,
       contactPoint: {
-        '@type': 'ContactPoint',
+        "@type": "ContactPoint",
         telephone: contact.phone,
-        contactType: 'customer service',
+        contactType: "customer service",
         email: contact.support,
-        areaServed: 'GB',
-        availableLanguage: ['English', 'Portuguese']
+        areaServed: "GB",
+        availableLanguage: ["English", "Lusophone"],
       },
       sameAs: [
         socialMedia.facebook,
         socialMedia.instagram,
         socialMedia.twitter,
-        socialMedia.linkedin
+        socialMedia.linkedin,
       ].filter(Boolean),
       address: {
-        '@type': 'PostalAddress',
+        "@type": "PostalAddress",
         streetAddress: officeLocations.london.address,
-        addressLocality: 'London',
-        addressRegion: 'England',
+        addressLocality: "London",
+        addressRegion: "England",
         postalCode: officeLocations.london.postcode,
-        addressCountry: 'GB'
-      }
+        addressCountry: "GB",
+      },
     },
-    
+
     localBusiness: {
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
       name: brand.name,
-      description: 'Portuguese-speaking community services in London',
-      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://lusotown.london',
+      description: "Portuguese-speaking community services in London",
+      url: process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london",
       telephone: contact.phone,
       email: contact.support,
-      priceRange: '££',
-      servesCuisine: 'Portuguese',
+      priceRange: "££",
+      servesCuisine: "Lusophone",
       areaServed: {
-        '@type': 'City',
-        name: 'London'
-      }
+        "@type": "City",
+        name: "London",
+      },
     },
-    
+
     website: {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
+      "@context": "https://schema.org",
+      "@type": "WebSite",
       name: brand.name,
-      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://lusotown.london',
+      url: process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london",
       potentialAction: {
-        '@type': 'SearchAction',
-        target: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://lusotown.london'}/search?q={search_term_string}`,
-        'query-input': 'required name=search_term_string'
-      }
-    }
-  }
+        "@type": "SearchAction",
+        target: `${
+          process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london"
+        }/search?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    },
+  },
 };
 
 // Page-specific SEO configurations
 export const pageSEO = {
   home: {
-    title: seo.defaultTitle,
+    title: "Portuguese Speakers Community",
     description: seo.defaultDescription,
-    keywords: 'portuguese london, Portuguese-speaking community, portuguese events, portuguese business, lusitanian, luso town'
+    keywords:
+      "portuguese london, Portuguese-speaking community, portuguese events, portuguese business, lusitanian, luso town",
   },
-  
+
   events: {
-    title: `Portuguese Events in London | ${brand.name}`,
-    description: 'Discover Portuguese cultural events, meetups, and community gatherings in London. Join the vibrant Portuguese diaspora community.',
-    keywords: 'portuguese events london, portuguese meetups, portuguese culture, community events'
+    title: `Lusophone Events in London | ${brand.name}`,
+    description:
+      "Discover Lusophone cultural events, meetups, and community gatherings in London. Join the vibrant Lusophone diaspora community.",
+    keywords:
+      "portuguese events london, portuguese meetups, portuguese culture, community events",
   },
-  
+
   transport: {
-    title: `Portuguese Transport Services London | ${brand.name}`,
-    description: 'Premium transport services for the Portuguese-speaking community in London. Executive cars, airport transfers, and cultural tour transport.',
-    keywords: 'portuguese transport london, executive cars, airport transfer, portuguese driver'
+    title: `Lusophone Transport Services London | ${brand.name}`,
+    description:
+      "Premium transport services for the Portuguese-speaking community in London. Executive cars, airport transfers, and cultural tour transport.",
+    keywords:
+      "portuguese transport london, executive cars, airport transfer, portuguese driver",
   },
-  
+
   matches: {
-    title: `Find Portuguese Matches in London | ${brand.name}`,
-    description: 'Connect with Portuguese singles in London. Cultural compatibility matching for meaningful relationships within the Portuguese diaspora.',
-    keywords: 'portuguese dating london, portuguese matches, portuguese singles, lusitanian dating'
+    title: `Find Lusophone Matches in London | ${brand.name}`,
+    description:
+      "Connect with Lusophone singles in London. Cultural compatibility matching for meaningful relationships within the Lusophone diaspora.",
+    keywords:
+      "portuguese dating london, portuguese matches, portuguese singles, lusitanian dating",
   },
-  
+
   streaming: {
-    title: `Portuguese Live Streaming Platform | ${brand.name}`,
-    description: 'Get paid to stream for the Portuguese-speaking community. 85/15 revenue split, cultural emotes, and monetize your Portuguese content.',
-    keywords: 'portuguese streaming, live streaming income, portuguese content creator, monetize streaming'
+    title: `Lusophone Live Streaming Platform | ${brand.name}`,
+    description:
+      "Get paid to stream for the Portuguese-speaking community. 85/15 revenue split, cultural emotes, and monetize your Lusophone content.",
+    keywords:
+      "portuguese streaming, live streaming income, portuguese content creator, monetize streaming",
   },
-  
+
   directory: {
-    title: `Portuguese Business Directory London | ${brand.name}`,
-    description: 'Discover Portuguese businesses, services, and professionals in London. Complete directory of Portuguese-owned businesses.',
-    keywords: 'portuguese business london, portuguese services, portuguese directory, portuguese professionals'
-  }
+    title: `Lusophone Business Directory London | ${brand.name}`,
+    description:
+      "Discover Portuguese businesses, services, and professionals in London. Complete directory of Lusophone-owned businesses.",
+    keywords:
+      "portuguese business london, portuguese services, portuguese directory, portuguese professionals",
+  },
 };
 
 // Helper functions
 export const generateMetadata = (page?: keyof typeof pageSEO) => {
   const pageData = page ? pageSEO[page] : pageSEO.home;
-  
+  const computedTitle = pageData?.title || seo.defaultTitle;
+
   return {
-    title: seo.defaultTitle,
+    title: computedTitle,
     description: seo.defaultDescription,
     keywords: seo.keywords,
     authors: seo.authors,
@@ -228,22 +250,22 @@ export const generateMetadata = (page?: keyof typeof pageSEO) => {
       locale: seo.locale,
       alternateLocale: seo.alternateLocales,
       url: seo.siteUrl,
-      title: 'LusoTown London - Your Portuguese Social Calendar',
-      description: 'Connect with Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond in London. Book experiences, join activities, live life together with your lusophone community.',
-      siteName: 'LusoTown London',
+      title: computedTitle,
+      description: seo.defaultDescription,
+      siteName: "LusoTown London",
       images: [
         {
           url: seo.ogImage,
           width: 1200,
           height: 630,
-          alt: 'LusoTown - Real-Life Portuguese Meetups in London & United Kingdom',
+          alt: "LusoTown - Real-Life Lusophone Meetups in London & United Kingdom",
         },
       ],
     },
     twitter: {
       card: seo.twitterCard,
-      title: 'LusoTown London - Your Portuguese Social Calendar',
-      description: 'Connect with Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond. Book experiences, live life together.',
+      title: computedTitle,
+      description: seo.defaultDescription,
       images: [seo.ogImage],
     },
     robots: {
@@ -252,16 +274,16 @@ export const generateMetadata = (page?: keyof typeof pageSEO) => {
       googleBot: {
         index: true,
         follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
       },
     },
     alternates: {
       canonical: seo.siteUrl,
       languages: {
-        'en-GB': seo.siteUrl,
-        'pt-PT': `${seo.siteUrl}/pt`,
+        "en-GB": seo.siteUrl,
+        "pt-PT": `${seo.siteUrl}/pt`,
       },
     },
     verification: {
@@ -273,6 +295,8 @@ export const generateMetadata = (page?: keyof typeof pageSEO) => {
   };
 };
 
-export const generateJsonLd = (type: keyof typeof seo.jsonLd = 'organization') => {
+export const generateJsonLd = (
+  type: keyof typeof seo.jsonLd = "organization"
+) => {
   return JSON.stringify(seo.jsonLd[type]);
 };

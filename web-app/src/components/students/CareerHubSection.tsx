@@ -99,7 +99,7 @@ interface CareerEvent {
 const CAREER_OPPORTUNITIES: CareerOpportunity[] = [
   {
     id: 'google-internship-pt',
-    title: 'Software Engineering Internship - Portuguese Markets',
+    title: 'Software Engineering Internship - Lusophone Markets',
     titlePortuguese: 'Estágio de Engenharia de Software - Mercados Portugueses',
     company: 'Google',
     type: 'internship',
@@ -115,8 +115,8 @@ const CAREER_OPPORTUNITIES: CareerOpportunity[] = [
       'Previous internship or project experience preferred'
     ],
     benefits: [
-      'Mentorship from Portuguese engineers',
-      'Work on Portuguese market products',
+      'Mentorship from Lusophone engineers',
+      'Work on Lusophone market products',
       'Full-time job consideration',
       'Google certification programs'
     ],
@@ -124,10 +124,10 @@ const CAREER_OPPORTUNITIES: CareerOpportunity[] = [
     descriptionPortuguese: 'Trabalhe em produtos e serviços especificamente para mercados de língua portuguesa. Colabore com equipas do Google em Portugal e Brasil enquanto está baseado em Londres.',
     applicationDeadline: '2024-10-31',
     startDate: '2024-06-01',
-    contactPerson: 'Carlos Silva - Portuguese Markets Lead',
+    contactPerson: 'Carlos Silva - Lusophone Markets Lead',
     isPartnership: true,
     portugueseConnection: 'Focus on Portuguese-speaking markets and culture',
-    skillsRequired: ['Programming', 'Problem Solving', 'Teamwork', 'Portuguese Language'],
+    skillsRequired: ['Programming', 'Problem Solving', 'Teamwork', 'Lusophone Language'],
     preferredYears: ['2nd Year', '3rd Year', 'Final Year'],
     logo: '/images/companies/google.png'
   },
@@ -150,18 +150,18 @@ const CAREER_OPPORTUNITIES: CareerOpportunity[] = [
     ],
     benefits: [
       'Real legal experience',
-      'Portuguese client interaction',
+      'Lusophone client interaction',
       'Reference letter guaranteed',
       'Potential full-time offer'
     ],
-    description: 'Assist Portuguese clients with visa applications, conduct legal research, and support immigration casework. Perfect opportunity to help the Portuguese-speaking community.',
+    description: 'Assist Lusophone clients with visa applications, conduct legal research, and support immigration casework. Perfect opportunity to help the Portuguese-speaking community.',
     descriptionPortuguese: 'Assista clientes portugueses com candidaturas de visto, conduza investigação jurídica e apoie trabalho de casos de imigração. Oportunidade perfeita para ajudar a comunidade de falantes de português.',
     applicationDeadline: '2024-09-30',
     startDate: '2024-10-15',
     contactPerson: 'Dr. Maria Fernandes - Senior Partner',
     isPartnership: true,
-    portugueseConnection: 'Specializes in Portuguese immigration cases',
-    skillsRequired: ['Legal Research', 'Portuguese Language', 'Communication', 'Attention to Detail'],
+    portugueseConnection: 'Specializes in Lusophone immigration cases',
+    skillsRequired: ['Legal Research', 'Lusophone Language', 'Communication', 'Attention to Detail'],
     preferredYears: ['2nd Year', '3rd Year', 'Final Year', 'Masters'],
     logo: '/images/companies/euvisa.png'
   },
@@ -179,7 +179,7 @@ const CAREER_OPPORTUNITIES: CareerOpportunity[] = [
     requirements: [
       'Recent graduate or final year student',
       'Business, Economics, or International Relations degree',
-      'Fluent Portuguese and English',
+      'Fluent Lusophone and English',
       'Interest in United Kingdom-Portugal trade'
     ],
     benefits: [
@@ -195,7 +195,7 @@ const CAREER_OPPORTUNITIES: CareerOpportunity[] = [
     contactPerson: 'João Santos - Programme Director',
     isPartnership: true,
     portugueseConnection: 'Dedicated to strengthening United Kingdom-Portugal business ties',
-    skillsRequired: ['Business Development', 'Relationship Building', 'Analysis', 'Portuguese Market Knowledge'],
+    skillsRequired: ['Business Development', 'Relationship Building', 'Analysis', 'Lusophone Market Knowledge'],
     preferredYears: ['Final Year', 'Masters', 'Recent Graduate'],
     logo: '/images/companies/portugal-uk-chamber.png'
   },
@@ -211,31 +211,31 @@ const CAREER_OPPORTUNITIES: CareerOpportunity[] = [
     duration: '12 months',
     salary: '£1,500/month',
     requirements: [
-      'Portuguese Studies, History, or Cultural Studies student',
+      'Lusophone Studies, History, or Cultural Studies student',
       'Advanced Portuguese language skills',
       'Research methodology knowledge',
       'Academic writing experience'
     ],
     benefits: [
-      'Access to exclusive Portuguese archives',
+      'Access to exclusive Lusophone archives',
       'Publication opportunities',
       'Academic conference presentations',
       'Professional development courses'
     ],
-    description: 'Support research on Portuguese cultural presence in the United Kingdom, diaspora studies, and cultural exchange programs.',
+    description: 'Support research on Lusophone cultural presence in the United Kingdom, diaspora studies, and cultural exchange programs.',
     descriptionPortuguese: 'Apoie investigação sobre presença cultural portuguesa no Reino Unido, estudos da diáspora e programas de intercâmbio cultural.',
     applicationDeadline: '2024-10-15',
     startDate: '2024-11-01',
     contactPerson: 'Dr. António Rebelo - Research Director',
     isPartnership: true,
-    portugueseConnection: 'Official Portuguese cultural institution',
-    skillsRequired: ['Research', 'Academic Writing', 'Portuguese Culture', 'Data Analysis'],
+    portugueseConnection: 'Official Lusophone cultural institution',
+    skillsRequired: ['Research', 'Academic Writing', 'Lusophone Culture', 'Data Analysis'],
     preferredYears: ['2nd Year', '3rd Year', 'Masters', 'PhD'],
     logo: '/images/companies/instituto-camoes.png'
   },
   {
     id: 'luso-fintech-startup',
-    title: 'Marketing Intern - Portuguese Markets',
+    title: 'Marketing Intern - Lusophone Markets',
     titlePortuguese: 'Estagiário de Marketing - Mercados Portugueses',
     company: 'LusoFintech',
     type: 'internship',
@@ -256,14 +256,14 @@ const CAREER_OPPORTUNITIES: CareerOpportunity[] = [
       'Flexible working arrangements',
       'Potential equity options'
     ],
-    description: 'Help expand fintech services to Portuguese small businesses in London. Create Portuguese-language content and manage community engagement.',
+    description: 'Help expand fintech services to Lusophone small businesses in London. Create Lusophone-language content and manage community engagement.',
     descriptionPortuguese: 'Ajude a expandir serviços fintech para pequenas empresas portuguesas em Londres. Crie conteúdo em português e gira envolvimento da comunidade.',
     applicationDeadline: '2024-09-25',
     startDate: '2024-10-01',
     contactPerson: 'Catarina Silva - Marketing Director',
     isPartnership: false,
     portugueseConnection: 'Serves Portuguese business community in London',
-    skillsRequired: ['Digital Marketing', 'Content Creation', 'Portuguese Language', 'Community Management'],
+    skillsRequired: ['Digital Marketing', 'Content Creation', 'Lusophone Language', 'Community Management'],
     preferredYears: ['2nd Year', '3rd Year', 'Final Year'],
     logo: '/images/companies/lusofintech.png'
   }
@@ -277,14 +277,14 @@ const PROFESSIONAL_MENTORS: ProfessionalMentor[] = [
     company: 'Microsoft',
     industry: 'Technology',
     experience: 8,
-    specializations: ['Software Engineering', 'Career Transition', 'Tech Leadership', 'Portuguese Tech Community'],
+    specializations: ['Software Engineering', 'Career Transition', 'Tech Leadership', 'Lusophone Tech Community'],
     mentorshipType: ['career_advice', 'interview_prep', 'skill_development', 'networking'],
     availability: 'Weekends & Evenings',
-    languages: ['Portuguese', 'English'],
+    languages: ['Lusophone', 'English'],
     successStories: 23,
     rating: 4.9,
     isTopMentor: true,
-    bio: 'Portuguese software engineer with 8 years at top tech companies. Passionate about helping Portuguese students break into tech.',
+    bio: 'Lusophone software engineer with 8 years at top tech companies. Passionate about helping Lusophone students break into tech.',
     bioPortuguese: 'Engenheira de software portuguesa com 8 anos em empresas de tecnologia de topo. Apaixonada por ajudar estudantes portugueses a entrar na tecnologia.',
     linkedIn: 'https://linkedin.com/in/rita-santos-tech',
     avatar: '/images/mentors/rita-santos.jpg'
@@ -296,14 +296,14 @@ const PROFESSIONAL_MENTORS: ProfessionalMentor[] = [
     company: 'Goldman Sachs',
     industry: 'Finance',
     experience: 12,
-    specializations: ['Investment Banking', 'Financial Analysis', 'Portuguese Markets', 'Career Strategy'],
+    specializations: ['Investment Banking', 'Financial Analysis', 'Lusophone Markets', 'Career Strategy'],
     mentorshipType: ['career_advice', 'interview_prep', 'industry_insights', 'networking'],
     availability: 'Weekday Evenings',
-    languages: ['Portuguese', 'English', 'Spanish'],
+    languages: ['Lusophone', 'English', 'Spanish'],
     successStories: 31,
     rating: 4.8,
     isTopMentor: true,
-    bio: 'Portuguese finance professional specializing in European markets. Mentor to 30+ Portuguese students entering finance.',
+    bio: 'Lusophone finance professional specializing in European markets. Mentor to 30+ Lusophone students entering finance.',
     bioPortuguese: 'Profissional de finanças português especializado em mercados europeus. Mentor de mais de 30 estudantes portugueses a entrar em finanças.',
     linkedIn: 'https://linkedin.com/in/miguel-costa-finance',
     avatar: '/images/mentors/miguel-costa.jpg'
@@ -315,14 +315,14 @@ const PROFESSIONAL_MENTORS: ProfessionalMentor[] = [
     company: 'Clifford Chance',
     industry: 'Law',
     experience: 10,
-    specializations: ['International Law', 'Corporate Law', 'Portuguese Business Law', 'Career Development'],
+    specializations: ['International Law', 'Corporate Law', 'Lusophone Business Law', 'Career Development'],
     mentorshipType: ['career_advice', 'interview_prep', 'industry_insights', 'skill_development'],
     availability: 'Flexible',
-    languages: ['Portuguese', 'English', 'French'],
+    languages: ['Lusophone', 'English', 'French'],
     successStories: 18,
     rating: 4.9,
     isTopMentor: false,
-    bio: 'Senior lawyer with expertise in international and Portuguese business law. Committed to supporting Portuguese law students.',
+    bio: 'Senior lawyer with expertise in international and Portuguese business law. Committed to supporting Lusophone law students.',
     bioPortuguese: 'Advogada sénior com experiência em direito internacional e empresarial português. Comprometida em apoiar estudantes de direito portugueses.',
     linkedIn: 'https://linkedin.com/in/ana-ferreira-law',
     avatar: '/images/mentors/ana-ferreira.jpg'
@@ -334,14 +334,14 @@ const PROFESSIONAL_MENTORS: ProfessionalMentor[] = [
     company: 'McKinsey & Company',
     industry: 'Consulting',
     experience: 7,
-    specializations: ['Management Consulting', 'Strategy', 'Portuguese Market Entry', 'Leadership'],
+    specializations: ['Management Consulting', 'Strategy', 'Lusophone Market Entry', 'Leadership'],
     mentorshipType: ['career_advice', 'interview_prep', 'skill_development', 'networking'],
     availability: 'Weekend Mornings',
-    languages: ['Portuguese', 'English'],
+    languages: ['Lusophone', 'English'],
     successStories: 25,
     rating: 4.7,
     isTopMentor: true,
-    bio: 'Management consultant helping companies expand into Portuguese markets. Passionate about developing Portuguese consulting talent.',
+    bio: 'Management consultant helping companies expand into Lusophone markets. Passionate about developing Lusophone consulting talent.',
     bioPortuguese: 'Consultor de gestão ajudando empresas a expandir para mercados portugueses. Apaixonado por desenvolver talento português em consultoria.',
     linkedIn: 'https://linkedin.com/in/joao-silva-consulting',
     avatar: '/images/mentors/joao-silva.jpg'
@@ -351,7 +351,7 @@ const PROFESSIONAL_MENTORS: ProfessionalMentor[] = [
 const CAREER_EVENTS: CareerEvent[] = [
   {
     id: 'portuguese-career-fair-2024',
-    title: 'Portuguese Professionals Career Fair 2024',
+    title: 'Lusophone Professionals Career Fair 2024',
     titlePortuguese: 'Feira de Carreiras de Profissionais Portugueses 2024',
     type: 'job_fair',
     date: '2024-10-12',
@@ -366,23 +366,23 @@ const CAREER_EVENTS: CareerEvent[] = [
     registered: 187,
     speakers: ['Portuguese business leaders', 'HR directors', 'Successful alumni'],
     topics: ['Job opportunities', 'Company presentations', 'One-on-one interviews', 'CV reviews'],
-    description: 'Largest Portuguese career fair in London. Meet top employers specifically looking for Portuguese talent.',
+    description: 'Largest Lusophone career fair in London. Meet top employers specifically looking for Lusophone talent.',
     descriptionPortuguese: 'Maior feira de carreiras portuguesa em Londres. Conheça os melhores empregadores que procuram especificamente talento português.',
-    benefits: ['Direct access to employers', 'On-site interviews', 'Portuguese networking', 'Career guidance'],
+    benefits: ['Direct access to employers', 'On-site interviews', 'Lusophone networking', 'Career guidance'],
     requirements: ['Bring printed CVs', 'Professional attire', 'Portuguese language skills'],
     isStudentExclusive: false,
     image: '/images/events/career-fair.jpg'
   },
   {
     id: 'tech-interview-masterclass',
-    title: 'Tech Interview Masterclass for Portuguese Students',
+    title: 'Tech Interview Masterclass for Lusophone Students',
     titlePortuguese: 'Masterclass de Entrevistas de Tecnologia para Estudantes Portugueses',
     type: 'masterclass',
     date: '2024-09-28',
     time: '14:00-17:00',
     location: 'Imperial College London',
     isVirtual: false,
-    organizer: 'Rita Santos (Microsoft) & Portuguese Tech Community',
+    organizer: 'Rita Santos (Microsoft) & Lusophone Tech Community',
     targetAudience: ['Computer Science Students', 'Engineering Students'],
     price: 15,
     studentPrice: 10,
@@ -390,34 +390,34 @@ const CAREER_EVENTS: CareerEvent[] = [
     registered: 42,
     speakers: ['Rita Santos - Microsoft', 'Carlos Mendes - Google', 'Sofia Tech - Amazon'],
     topics: ['Technical interviews', 'Coding challenges', 'System design', 'Cultural fit'],
-    description: 'Intensive masterclass on tech interviews by successful Portuguese engineers at top companies.',
+    description: 'Intensive masterclass on tech interviews by successful Lusophone engineers at top companies.',
     descriptionPortuguese: 'Masterclass intensiva sobre entrevistas de tecnologia por engenheiros portugueses de sucesso em empresas de topo.',
-    benefits: ['Mock interviews', 'Real interview questions', 'Industry insights', 'Portuguese networking'],
+    benefits: ['Mock interviews', 'Real interview questions', 'Industry insights', 'Lusophone networking'],
     requirements: ['Basic programming knowledge', 'Laptop required', 'Portuguese language helpful'],
     isStudentExclusive: true,
     image: '/images/events/tech-masterclass.jpg'
   },
   {
     id: 'finance-networking-evening',
-    title: 'Portuguese Finance Networking Evening',
+    title: 'Lusophone Finance Networking Evening',
     titlePortuguese: 'Noite de Networking de Finanças Portuguesa',
     type: 'networking',
     date: '2024-10-05',
     time: '18:00-21:00',
     location: 'City of London',
     isVirtual: false,
-    organizer: 'Portuguese Finance Professionals Association',
+    organizer: 'Lusophone Finance Professionals Association',
     targetAudience: ['Finance Students', 'Economics Students', 'Recent Graduates'],
     price: 25,
     studentPrice: 15,
     capacity: 80,
     registered: 64,
-    speakers: ['Top Portuguese finance professionals', 'Investment bankers', 'Asset managers'],
-    topics: ['Career paths in finance', 'Breaking into investment banking', 'Portuguese finance community'],
-    description: 'Exclusive networking event with Portuguese finance professionals in London\'s financial district.',
+    speakers: ['Top Lusophone finance professionals', 'Investment bankers', 'Asset managers'],
+    topics: ['Career paths in finance', 'Breaking into investment banking', 'Lusophone finance community'],
+    description: 'Exclusive networking event with Lusophone finance professionals in London\'s financial district.',
     descriptionPortuguese: 'Evento exclusivo de networking com profissionais de finanças portugueses no distrito financeiro de Londres.',
     benefits: ['Professional connections', 'Career advice', 'Job opportunities', 'Industry insights'],
-    requirements: ['Student ID', 'Professional attire', 'Portuguese connection preferred'],
+    requirements: ['Student ID', 'Professional attire', 'Lusophone connection preferred'],
     isStudentExclusive: false,
     image: '/images/events/finance-networking.jpg'
   }
@@ -434,13 +434,13 @@ export default function CareerHubSection() {
       id: 'opportunities', 
       label: { en: 'Job Opportunities', pt: 'Oportunidades de Emprego' },
       icon: BriefcaseIcon,
-      description: { en: 'Internships and jobs with Portuguese connection', pt: 'Estágios e empregos com conexão portuguesa' }
+      description: { en: 'Internships and jobs with Lusophone connection', pt: 'Estágios e empregos com conexão portuguesa' }
     },
     { 
       id: 'mentors', 
       label: { en: 'Professional Mentors', pt: 'Mentores Profissionais' },
       icon: UserGroupIcon,
-      description: { en: 'Connect with successful Portuguese professionals', pt: 'Conecte-se com profissionais portugueses de sucesso' }
+      description: { en: 'Connect with successful Lusophone professionals', pt: 'Conecte-se com profissionais portugueses de sucesso' }
     },
     { 
       id: 'events', 
@@ -513,7 +513,7 @@ export default function CareerHubSection() {
             <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-coral-600 bg-clip-text text-transparent font-bold">
               {language === 'pt' 
                 ? "Hub de Carreiras para Estudantes Portugueses"
-                : "Portuguese Student Career Hub"}
+                : "Lusophone Student Career Hub"}
             </span>
           </div>
 
@@ -526,7 +526,7 @@ export default function CareerHubSection() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             {language === 'pt' 
               ? 'Conecte-se com oportunidades de emprego, mentores experientes e eventos de carreira específicos para estudantes portugueses no Reino Unido'
-              : 'Connect with job opportunities, experienced mentors, and career events specifically for Portuguese students in the United Kingdom'}
+              : 'Connect with job opportunities, experienced mentors, and career events specifically for Lusophone students in the United Kingdom'}
           </p>
 
           {/* Quick Stats */}
@@ -700,13 +700,13 @@ export default function CareerHubSection() {
                       {language === 'pt' ? opportunity.descriptionPortuguese : opportunity.description}
                     </p>
 
-                    {/* Portuguese Connection */}
+                    {/* Lusophone Connection */}
                     <div className="mb-4 p-3 bg-secondary-50 rounded-lg">
                       <div className="flex items-start">
                         <GlobeAltIcon className="w-4 h-4 text-secondary-600 mr-2 mt-0.5 flex-shrink-0" />
                         <div>
                           <div className="text-xs font-medium text-secondary-700 mb-1">
-                            {language === 'pt' ? 'Conexão Portuguesa:' : 'Portuguese Connection:'}
+                            {language === 'pt' ? 'Conexão Portuguesa:' : 'Lusophone Connection:'}
                           </div>
                           <div className="text-xs text-secondary-600">
                             {opportunity.portugueseConnection}
@@ -1057,7 +1057,7 @@ export default function CareerHubSection() {
           <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
             {language === 'pt' 
               ? 'Junte-se a mais de 850 estudantes portugueses que estão a construir carreiras de sucesso através da nossa rede profissional exclusiva.'
-              : 'Join over 850 Portuguese students who are building successful careers through our exclusive professional network.'}
+              : 'Join over 850 Lusophone students who are building successful careers through our exclusive professional network.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-secondary-600 font-bold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">

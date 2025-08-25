@@ -52,11 +52,11 @@ const mockLiveStreams = [
     isLive: true,
     thumbnail: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",
     duration: "2h 15m",
-    language: "Portuguese",
+    language: "Lusophone",
   },
   {
     id: "stream-2", 
-    title: "Portuguese Business Workshop",
+    title: "Lusophone Business Workshop",
     titlePt: "Workshop de Negócios Português",
     streamer: "Miguel Santos",
     category: "Business",
@@ -65,7 +65,7 @@ const mockLiveStreams = [
     isLive: true,
     thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400",
     duration: "1h 45m",
-    language: "Portuguese",
+    language: "Lusophone",
   },
   {
     id: "stream-3",
@@ -78,7 +78,7 @@ const mockLiveStreams = [
     isLive: true,
     thumbnail: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400",
     duration: "3h 02m",
-    language: "Portuguese",
+    language: "Lusophone",
   }
 ];
 
@@ -86,9 +86,9 @@ const mockLiveStreams = [
 const contentCategories = [
   {
     id: "music",
-    name: "Portuguese Music",
+    name: "Lusophone Music",
     namePortuguese: "Música Portuguesa",
-    description: "Fado, folk music, and modern Portuguese artists",
+    description: "Fado, folk music, and modern Lusophone artists",
     descriptionPortuguese: "Fado, música folclórica e artistas portugueses modernos",
     icon: Music,
     color: "from-primary-500 to-secondary-500",

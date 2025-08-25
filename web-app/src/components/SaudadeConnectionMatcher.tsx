@@ -90,7 +90,7 @@ export default function SaudadeConnectionMatcher() {
     { key: 'grandmother_cooking', en: "Grandmother's cooking", pt: 'Culinária da avó', emoji: '👵' },
     { key: 'village_festivals', en: 'Village festivals', pt: 'Festas da aldeia', emoji: '🎉' },
     { key: 'childhood_friends', en: 'Childhood friends', pt: 'Amigos de infância', emoji: '👫' },
-    { key: 'portuguese_tv', en: 'Portuguese TV shows', pt: 'Programas de TV portugueses', emoji: '📺' },
+    { key: 'portuguese_tv', en: 'Lusophone TV shows', pt: 'Programas de TV portugueses', emoji: '📺' },
     { key: 'family_gatherings', en: 'Family gatherings', pt: 'Reuniões familiares', emoji: '👨‍👩‍👧‍👦' },
     { key: 'traditional_music', en: 'Traditional folk music', pt: 'Música tradicional', emoji: '🪗' }
   ]
@@ -173,7 +173,7 @@ export default function SaudadeConnectionMatcher() {
         id: '2',
         nameEn: "Grandmother's Recipe Workshop",
         namePt: 'Oficina das Receitas da Avó',
-        descriptionEn: 'Collaborative cooking of traditional Portuguese family recipes',
+        descriptionEn: 'Collaborative cooking of traditional Lusophone family recipes',
         descriptionPt: 'Culinária colaborativa de receitas tradicionais portuguesas',
         category: 'cooking_together',
         comfortLevel: 'high_comfort',
@@ -209,21 +209,21 @@ export default function SaudadeConnectionMatcher() {
     },
     {
       key: 'languageNostalgia',
-      questionEn: 'How much do you miss speaking Portuguese naturally?',
+      questionEn: 'How much do you miss speaking Lusophone naturally?',
       questionPt: 'Quanto sente falta de falar português naturalmente?',
       descriptionEn: 'Consider the comfort and ease of your native language',
       descriptionPt: 'Considere o conforto e facilidade da sua língua nativa'
     },
     {
       key: 'foodMemory',
-      questionEn: 'How intensely do you crave authentic Portuguese flavors?',
+      questionEn: 'How intensely do you crave authentic Lusophone flavors?',
       questionPt: 'Quão intensamente deseja sabores portugueses autênticos?',
       descriptionEn: 'Think about specific dishes, ingredients, and food memories',
       descriptionPt: 'Pense em pratos específicos, ingredientes e memórias de comida'
     },
     {
       key: 'landscapeLonging',
-      questionEn: 'How much do you miss Portuguese landscapes and nature?',
+      questionEn: 'How much do you miss Lusophone landscapes and nature?',
       questionPt: 'Quanto sente falta das paisagens e natureza portuguesas?',
       descriptionEn: 'Consider beaches, mountains, countryside, and natural environments',
       descriptionPt: 'Considere praias, montanhas, campo e ambientes naturais'

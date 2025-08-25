@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { communityStats } from "@/config/community";
-import { generateJsonLd } from "@/config/seo";
+import { generateJsonLd, seo } from "@/config/seo";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -50,8 +50,10 @@ import {
   AcademicCapIcon,
 } from "@heroicons/react/24/outline";
 
-// Page-specific structured data for Portuguese social calendar
+// Page-specific structured data for Lusophone social calendar
 const jsonLd = generateJsonLd("organization");
+
+// Page-level metadata removed (client component). Title is set via global SEO config.
 
 export default function Home() {
   const { t } = useLanguage();
@@ -61,13 +63,13 @@ export default function Home() {
   // Mobile welcome wizard - Only trigger on signup intent (no automatic triggers)
   const handleSignupClick = () => {
     const isMobile = window.innerWidth < 768;
-    
+
     if (isMobile) {
       // Show wizard on mobile for personalized signup flow
       setShowWelcomeWizard(true);
     } else {
       // Desktop: go directly to signup
-      router.push('/signup');
+      router.push("/signup");
     }
   };
 
@@ -77,18 +79,19 @@ export default function Home() {
 
     // Route to specific signup forms based on wizard responses
     const signupRoutes = {
-      "matches": "/signup?focus=dating",
-      "dating": "/signup?focus=dating", 
-      "events": "/signup?focus=community",
-      "community": "/signup?focus=community",
-      "business": "/signup?focus=business",
-      "networking": "/signup?focus=business",
-      "student": "/signup?focus=student",
-      "education": "/signup?focus=student",
-      "default": "/signup"
+      matches: "/signup?focus=dating",
+      dating: "/signup?focus=dating",
+      events: "/signup?focus=community",
+      community: "/signup?focus=community",
+      business: "/signup?focus=business",
+      networking: "/signup?focus=business",
+      student: "/signup?focus=student",
+      education: "/signup?focus=student",
+      default: "/signup",
     };
 
-    const route = signupRoutes[action as keyof typeof signupRoutes] || signupRoutes.default;
+    const route =
+      signupRoutes[action as keyof typeof signupRoutes] || signupRoutes.default;
     router.push(route);
   };
 
@@ -125,10 +128,12 @@ export default function Home() {
                     </span>
                     <br />
                     <span className="text-gray-900">
-                      Portuguese-Speaking Community
+                      Lusophone-Speaking Community
                     </span>
-                    <div className="flex justify-center lg:justify-start gap-1 mt-4 text-2xl">
-                      🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱
+                    <div className="flex justify-center lg:justify-start gap-2 mt-4 text-4xl" aria-label="Featured flags: Portugal, Brazil, United Kingdom">
+                      <span role="img" aria-label="Portugal flag">🇵🇹</span>
+                      <span role="img" aria-label="Brazil flag">🇧🇷</span>
+                      <span role="img" aria-label="United Kingdom flag">🇬🇧</span>
                     </div>
                   </h1>
 
@@ -143,7 +148,7 @@ export default function Home() {
                   <div className="bg-gradient-to-r from-green-50 to-yellow-50 rounded-xl p-4 border border-green-200 max-w-2xl">
                     <div className="text-center">
                       <div className="text-sm font-semibold text-gray-800 mb-1">
-                        All Portuguese-Speaking Nations Celebrated
+                        All Lusophone-Speaking Nations Celebrated
                       </div>
                       <div className="text-sm text-gray-600">
                         🇦🇴 Angola • 🇨🇻 Cape Verde • 🇬🇼 Guinea-Bissau • 🇲🇿
@@ -156,9 +161,7 @@ export default function Home() {
                   <div className="flex flex-wrap justify-center lg:justify-start gap-6 text-gray-600">
                     <div className="flex items-center gap-2">
                       <UsersIcon className="w-5 h-5 text-primary-500" />
-                      <span className="font-semibold">
-                        750+ Portuguese speakers
-                      </span>
+                      <span className="font-semibold">Portuguese speakers</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CalendarDaysIcon className="w-5 h-5 text-secondary-500" />
@@ -241,7 +244,7 @@ export default function Home() {
                 {/* Right Column - Community Events Preview */}
                 <div className="relative">
                   <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                    {/* Mock Portuguese event cards */}
+                    {/* Mock Lusophone event cards */}
                     <div className="space-y-4">
                       <div className="bg-gradient-to-r from-green-50 to-red-50 rounded-2xl p-4 border border-green-200/50">
                         <div className="flex items-center gap-3 mb-3">
@@ -338,7 +341,7 @@ export default function Home() {
                   </div>
 
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6">
-                    {t("today.title", "Today in Portuguese Community")}
+                    {t("today.title", "Today in Lusophone Community")}
                   </h2>
 
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
@@ -496,7 +499,7 @@ export default function Home() {
                       </div>
                       <div>
                         <div className="font-bold text-gray-900">
-                          Tomorrow: Portuguese Business Breakfast
+                          Tomorrow: Lusophone Business Breakfast
                         </div>
                         <div className="text-sm text-gray-600">
                           8am • Manchester
@@ -556,12 +559,12 @@ export default function Home() {
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6">
-                    {t("weekend.title", "This Weekend's Portuguese Community")}
+                    {t("weekend.title", "This Weekend's Lusophone Community")}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     {t(
                       "weekend.subtitle",
-                      "Discover the best Portuguese community experiences happening this weekend across the United Kingdom"
+                      "Discover the best Lusophone community experiences happening this weekend across the United Kingdom"
                     )}
                   </p>
                 </div>
@@ -793,10 +796,7 @@ export default function Home() {
                   </div>
 
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6">
-                    {t(
-                      "weekly.title",
-                      "Weekly Portuguese Community Activities"
-                    )}
+                    {t("weekly.title", "Weekly Lusophone Community Activities")}
                   </h2>
 
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -831,7 +831,7 @@ export default function Home() {
                         🗣️
                       </div>
                       <h3 className="text-lg font-bold text-gray-900 mb-2">
-                        Monday: Portuguese Language Exchange
+                        Monday: Lusophone Language Exchange
                       </h3>
                       <p className="text-gray-600 text-sm mb-3">7pm • Camden</p>
                     </div>
@@ -999,14 +999,14 @@ export default function Home() {
                       )
                     }
                     className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                    aria-label="See weekly Portuguese football socials"
+                    aria-label="See weekly Lusophone football socials"
                   >
                     <div className="text-center mb-4">
                       <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-3xl">
                         ⚽
                       </div>
                       <h3 className="text-lg font-bold text-gray-900 mb-2">
-                        Sunday: Portuguese Football Social
+                        Sunday: Lusophone Football Social
                       </h3>
                       <p className="text-gray-600 text-sm mb-3">
                         3pm • Various Pubs
@@ -1050,7 +1050,7 @@ export default function Home() {
                     <h3 className="text-2xl lg:text-3xl font-bold mb-4">
                       {t(
                         "weekly.pattern.title",
-                        "Your Weekly Portuguese Community Calendar"
+                        "Your Weekly Lusophone Community Calendar"
                       )}
                     </h3>
                     <p className="text-lg text-gray-300 max-w-2xl mx-auto">
@@ -1513,7 +1513,7 @@ export default function Home() {
                   </div>
 
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6">
-                    {t("monthly.title", "Your Portuguese Cultural Calendar")}
+                    {t("monthly.title", "Your Lusophone Cultural Calendar")}
                   </h2>
 
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -1594,7 +1594,7 @@ export default function Home() {
                         🎄
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        December: Portuguese Christmas
+                        December: Lusophone Christmas
                       </h3>
                       <p className="text-gray-600 text-sm mb-3">
                         Festive Community Traditions
@@ -1614,7 +1614,7 @@ export default function Home() {
                           🎤 Concerto de Natal - Dec 22
                         </div>
                         <div className="text-xs text-emerald-600">
-                          Portuguese Christmas concert
+                          Lusophone Christmas concert
                         </div>
                       </div>
                       <div className="bg-red-50 rounded-lg p-3">
@@ -1686,7 +1686,7 @@ export default function Home() {
                     <h3 className="text-2xl lg:text-3xl font-bold mb-4">
                       {t(
                         "monthly.year_round.title",
-                        "Year-Round Portuguese Community Highlights"
+                        "Year-Round Lusophone Community Highlights"
                       )}
                     </h3>
                     <p className="text-lg text-gray-300 max-w-3xl mx-auto">
@@ -1709,12 +1709,12 @@ export default function Home() {
                         router.push(`${ROUTES.events}?ref=home&season=spring`)
                       }
                       className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                      aria-label="View spring Portuguese community highlights"
+                      aria-label="View spring Lusophone community highlights"
                     >
                       <div className="text-3xl mb-2">🌸</div>
                       <div className="font-bold text-sm mb-1">March - May</div>
                       <div className="text-xs text-gray-300">
-                        Portuguese Spring Festivals
+                        Lusophone Spring Festivals
                       </div>
                       <div className="text-xs text-gray-400 mt-1">
                         Santos Populares preparation
@@ -1741,7 +1741,7 @@ export default function Home() {
                         router.push(`${ROUTES.events}?ref=home&season=summer`)
                       }
                       className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                      aria-label="View summer Portuguese community highlights"
+                      aria-label="View summer Lusophone community highlights"
                     >
                       <div className="text-3xl mb-2">☀️</div>
                       <div className="font-bold text-sm mb-1">
@@ -1775,7 +1775,7 @@ export default function Home() {
                         router.push(`${ROUTES.events}?ref=home&season=autumn`)
                       }
                       className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                      aria-label="View autumn Portuguese community highlights"
+                      aria-label="View autumn Lusophone community highlights"
                     >
                       <div className="text-3xl mb-2">🍂</div>
                       <div className="font-bold text-sm mb-1">
@@ -1809,7 +1809,7 @@ export default function Home() {
                         router.push(`${ROUTES.events}?ref=home&season=winter`)
                       }
                       className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                      aria-label="View winter Portuguese community highlights"
+                      aria-label="View winter Lusophone community highlights"
                     >
                       <div className="text-3xl mb-2">❄️</div>
                       <div className="font-bold text-sm mb-1">
@@ -1856,7 +1856,7 @@ export default function Home() {
                   <p className="text-sm text-gray-600 mt-4">
                     {t(
                       "monthly.guarantee",
-                      "Never miss major Portuguese community celebrations • Monthly email reminders • Early event access"
+                      "Never miss major Lusophone community celebrations • Monthly email reminders • Early event access"
                     )}
                   </p>
                 </div>
@@ -1870,10 +1870,7 @@ export default function Home() {
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6">
-                    {t(
-                      "events.title",
-                      "Meet Your Matches at Portuguese Events"
-                    )}
+                    {t("events.title", "Meet Your Matches at Lusophone Events")}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     {t(
@@ -1896,7 +1893,7 @@ export default function Home() {
                             Fado & Samba Nights
                           </h3>
                           <p className="text-gray-600 text-sm">
-                            Portuguese, Brazilian & Cape Verdean music across
+                            Lusophone, Brazilian & Cape Verdean music across
                             United Kingdom venues
                           </p>
                         </div>
@@ -2009,11 +2006,11 @@ export default function Home() {
               <div className="max-w-4xl mx-auto">
                 <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-bold mb-8">
                   <CheckIcon className="w-4 h-4" />
-                  {t("final_cta.badge", "JOIN 750+ PORTUGUESE SPEAKERS")}
+                  {t("final_cta.badge", "JOIN Portuguese speakers")}
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6">
-                  {t("final_cta.title", "Ready to Find Your Portuguese Match?")}
+                  {t("final_cta.title", "Ready to Find Your Lusophone Match?")}
                 </h2>
 
                 <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
@@ -2191,7 +2188,7 @@ export default function Home() {
                     <p className="text-gray-600 text-sm mb-4">
                       Vibrant celebration featuring energetic Marrabenta music,
                       incredible coastal cuisine, cultural performances
-                      showcasing Mozambique's African, Portuguese & Indian Ocean
+                      showcasing Mozambique's African, Lusophone & Indian Ocean
                       influences.
                     </p>
                     <div className="flex flex-wrap gap-1 mb-4">
@@ -2236,7 +2233,7 @@ export default function Home() {
           <button
             onClick={handleSignupClick}
             className="group w-18 h-18 bg-gradient-to-br from-green-600 via-yellow-500 to-red-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center active:scale-95 animate-pulse"
-            aria-label="Join Portuguese community - FREE"
+            aria-label="Join Lusophone community - FREE"
           >
             <div className="flex flex-col items-center">
               <HeartIcon className="w-6 h-6 group-hover:scale-110 transition-transform mb-1" />
@@ -2260,7 +2257,7 @@ export default function Home() {
               <span>🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹</span>
               {t(
                 "palop.community.welcome",
-                "Join PALOP & Portuguese community - FREE!"
+                "Join PALOP & Lusophone community - FREE!"
               )}
             </span>
             <div className="text-xs opacity-80 mt-1 text-center">

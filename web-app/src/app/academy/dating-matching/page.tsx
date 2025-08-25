@@ -54,7 +54,7 @@ export default function DatingMatchingModule() {
     prerequisites: [],
     prerequisitesPortuguese: [],
     learningObjectives: [
-      'Understand how the Portuguese matching system works',
+      'Understand how the Lusophone matching system works',
       'Create an attractive and authentic profile',
       'Navigate cultural conversation starters safely',
       'Use premium features effectively',
@@ -70,7 +70,7 @@ export default function DatingMatchingModule() {
     steps: [
       {
         id: 'introduction-to-matching',
-        title: 'Introduction to Portuguese Matching',
+        title: 'Introduction to Lusophone Matching',
         titlePortuguese: 'Introdução à Compatibilidade Portuguesa',
         type: 'introduction',
         estimatedTime: 3,
@@ -82,10 +82,10 @@ export default function DatingMatchingModule() {
             <li><strong>Cultural Compatibility:</strong> Shared Portuguese heritage, traditions, and values</li>
             <li><strong>Location Proximity:</strong> Other Portuguese speakers near you in London</li>
             <li><strong>Lifestyle Alignment:</strong> Similar interests, career goals, and life stages</li>
-            <li><strong>Language Preference:</strong> Comfort level with Portuguese vs English communication</li>
+            <li><strong>Language Preference:</strong> Comfort level with Lusophone vs English communication</li>
           </ul>
           
-          <p>Unlike generic dating apps, we understand the unique experience of being Portuguese in London - from missing <em>saudade</em> to finding someone who appreciates a proper <em>pastel de nata</em>.</p>
+          <p>Unlike generic dating apps, we understand the unique experience of being Lusophone in London - from missing <em>saudade</em> to finding someone who appreciates a proper <em>pastel de nata</em>.</p>
         `,
         contentPortuguese: `
           <p>Bem-vindo ao sistema de encontros e compatibilidade da LusoTown, desenhado especificamente para falantes de português em Londres!</p>
@@ -102,7 +102,7 @@ export default function DatingMatchingModule() {
         `,
         tips: [
           'Start with a free account to explore the platform',
-          'Be authentic about your Portuguese background - it\'s what makes you unique here',
+          'Be authentic about your Lusophone background - it\'s what makes you unique here',
           'Don\'t rush - meaningful connections take time to develop'
         ],
         tipsPortuguese: [
@@ -113,12 +113,12 @@ export default function DatingMatchingModule() {
       },
       {
         id: 'profile-creation',
-        title: 'Creating Your Authentic Portuguese Profile',
+        title: 'Creating Your Authentic Lusophone Profile',
         titlePortuguese: 'Criando o Seu Perfil Português Autêntico',
         type: 'tutorial',
         estimatedTime: 5,
         content: `
-          <p>Your profile is your first impression. Here's how to make it authentically Portuguese and appealing:</p>
+          <p>Your profile is your first impression. Here's how to make it authentically Lusophone and appealing:</p>
           
           <h3>Essential Profile Elements:</h3>
           <ol>
@@ -133,7 +133,7 @@ export default function DatingMatchingModule() {
             
             <li><strong>About Me Section:</strong>
               <ul>
-                <li>Mention your Portuguese region (Norte, Centro, Sul, Ilhas, or Diaspora)</li>
+                <li>Mention your Lusophone region (Norte, Centro, Sul, Ilhas, or Diaspora)</li>
                 <li>Share how long you've been in London</li>
                 <li>Include what you miss most about Portugal</li>
                 <li>Mention your favorite Portuguese traditions you maintain in London</li>
@@ -143,19 +143,19 @@ export default function DatingMatchingModule() {
             <li><strong>What I'm Looking For:</strong>
               <ul>
                 <li>Be specific about relationship goals</li>
-                <li>Mention if Portuguese cultural connection is important</li>
+                <li>Mention if Lusophone cultural connection is important</li>
                 <li>Share ideal date activities (Portuguese restaurant? Museum? Hyde Park?)</li>
               </ul>
             </li>
           </ol>
           
-          <h3>Portuguese Cultural Touches:</h3>
+          <h3>Lusophone Cultural Touches:</h3>
           <p>Stand out by including:</p>
           <ul>
-            <li>Your favorite Portuguese dish to cook</li>
-            <li>Portuguese music you love (Fado? Modern Portuguese artists?)</li>
-            <li>Portuguese locations you'd love to visit together</li>
-            <li>Portuguese expressions that make you laugh</li>
+            <li>Your favorite Lusophone dish to cook</li>
+            <li>Portuguese music you love (Fado? Modern Lusophone artists?)</li>
+            <li>Lusophone locations you'd love to visit together</li>
+            <li>Lusophone expressions that make you laugh</li>
           </ul>
         `,
         contentPortuguese: `
@@ -205,7 +205,7 @@ export default function DatingMatchingModule() {
             items: [
               { text: 'Upload 3-4 high-quality photos', textPortuguese: 'Carregar 3-4 fotos de alta qualidade' },
               { text: 'Write authentic "About Me" section', textPortuguese: 'Escrever secção "Sobre Mim" autêntica' },
-              { text: 'Include Portuguese cultural elements', textPortuguese: 'Incluir elementos culturais portugueses' },
+              { text: 'Include Lusophone cultural elements', textPortuguese: 'Incluir elementos culturais portugueses' },
               { text: 'Specify what you\'re looking for', textPortuguese: 'Especificar o que procura' },
               { text: 'Review and edit for authenticity', textPortuguese: 'Rever e editar para autenticidade' }
             ]
@@ -214,7 +214,7 @@ export default function DatingMatchingModule() {
         tips: [
           'Use recent photos (within last 6 months)',
           'Avoid group photos as your main image',
-          'Write in the language you prefer for dating (Portuguese or English)',
+          'Write in the language you prefer for dating (Lusophone or English)',
           'Be honest about your Portuguese language fluency level'
         ],
         tipsPortuguese: [
@@ -226,7 +226,7 @@ export default function DatingMatchingModule() {
       },
       {
         id: 'understanding-matching-algorithm',
-        title: 'How Our Portuguese Matching Algorithm Works',
+        title: 'How Our Lusophone Matching Algorithm Works',
         titlePortuguese: 'Como Funciona o Nosso Algoritmo de Compatibilidade Português',
         type: 'tutorial',
         estimatedTime: 4,
@@ -237,10 +237,10 @@ export default function DatingMatchingModule() {
           
           <h4>1. Cultural Compatibility (40%)</h4>
           <ul>
-            <li><strong>Portuguese Heritage:</strong> Regional connections, family traditions</li>
-            <li><strong>Language Comfort:</strong> Preference for Portuguese vs English in relationships</li>
+            <li><strong>Lusophone Heritage:</strong> Regional connections, family traditions</li>
+            <li><strong>Language Comfort:</strong> Preference for Lusophone vs English in relationships</li>
             <li><strong>Cultural Values:</strong> Family importance, traditional vs modern outlook</li>
-            <li><strong>Portuguese-speaking community Involvement:</strong> How active you are in Portuguese events</li>
+            <li><strong>Portuguese-speaking community Involvement:</strong> How active you are in Lusophone events</li>
           </ul>
           
           <h4>2. Location & Lifestyle (30%)</h4>
@@ -254,7 +254,7 @@ export default function DatingMatchingModule() {
           <h4>3. Personal Interests (20%)</h4>
           <ul>
             <li><strong>Hobbies:</strong> Shared activities you both enjoy</li>
-            <li><strong>Entertainment:</strong> Portuguese cinema, fado music, British culture</li>
+            <li><strong>Entertainment:</strong> Lusophone cinema, fado music, British culture</li>
             <li><strong>Food Preferences:</strong> Portuguese cuisine enthusiasm level</li>
             <li><strong>Travel Style:</strong> Exploring London vs visiting Portugal</li>
           </ul>
@@ -267,7 +267,7 @@ export default function DatingMatchingModule() {
           </ul>
           
           <h3>Improving Your Match Quality:</h3>
-          <p>The more complete your profile, the better your matches become. Answer all cultural preference questions and be specific about your Portuguese background.</p>
+          <p>The more complete your profile, the better your matches become. Answer all cultural preference questions and be specific about your Lusophone background.</p>
         `,
         contentPortuguese: `
           <p>Entender como os matches são feitos ajuda-o a otimizar a sua experiência e conectar-se com os falantes de português mais compatíveis.</p>
@@ -321,7 +321,7 @@ export default function DatingMatchingModule() {
       },
       {
         id: 'cultural-conversation-starters',
-        title: 'Portuguese Cultural Conversation Starters',
+        title: 'Lusophone Cultural Conversation Starters',
         titlePortuguese: 'Iniciadores de Conversa Cultural Portuguesa',
         type: 'interactive',
         estimatedTime: 4,
@@ -330,7 +330,7 @@ export default function DatingMatchingModule() {
           
           <h3>Food & Tradition Starters:</h3>
           <ul>
-            <li>"What's the Portuguese dish you miss most that you can't find in London?"</li>
+            <li>"What's the Lusophone dish you miss most that you can't find in London?"</li>
             <li>"Do you have a secret spot for good bifana in London?"</li>
             <li>"What Portuguese tradition do you still maintain here?"</li>
             <li>"Pastel de nata from which bakery in London comes closest to home?"</li>
@@ -341,23 +341,23 @@ export default function DatingMatchingModule() {
             <li>"Which part of Portugal are you from? I'd love to hear about it!"</li>
             <li>"What made you choose London over other cities?"</li>
             <li>"Do you have family still in Portugal you visit regularly?"</li>
-            <li>"What's the most Portuguese thing about your London flat?"</li>
+            <li>"What's the most Lusophone thing about your London flat?"</li>
           </ul>
           
           <h3>Music & Culture Starters:</h3>
           <ul>
             <li>"Are you into fado, or more modern Portuguese music?"</li>
-            <li>"Have you been to any Portuguese events in London lately?"</li>
-            <li>"What Portuguese movie would you recommend I watch?"</li>
-            <li>"Do you speak Portuguese at home, or mix with English?"</li>
+            <li>"Have you been to any Lusophone events in London lately?"</li>
+            <li>"What Lusophone movie would you recommend I watch?"</li>
+            <li>"Do you speak Lusophone at home, or mix with English?"</li>
           </ul>
           
           <h3>London Life Starters:</h3>
           <ul>
             <li>"What's your favorite London neighborhood that reminds you of Portugal?"</li>
             <li>"Have you found any good Portuguese-speaking community spots here?"</li>
-            <li>"What's been your biggest London culture shock as a Portuguese person?"</li>
-            <li>"Do you prefer English breakfast or a proper Portuguese coffee and pastry?"</li>
+            <li>"What's been your biggest London culture shock as a Lusophone person?"</li>
+            <li>"Do you prefer English breakfast or a proper Lusophone coffee and pastry?"</li>
           </ul>
           
           <h3>What to Avoid Early On:</h3>
@@ -418,14 +418,14 @@ export default function DatingMatchingModule() {
               { text: 'Practice 3 food-related conversation starters', textPortuguese: 'Praticar 3 iniciadores de conversa relacionados com comida' },
               { text: 'Prepare your own Portuguese heritage story', textPortuguese: 'Preparar a sua própria história de herança portuguesa' },
               { text: 'Think of 2 London-Portugal comparison topics', textPortuguese: 'Pensar em 2 tópicos de comparação Londres-Portugal' },
-              { text: 'List your favorite Portuguese cultural elements to share', textPortuguese: 'Listar os seus elementos culturais portugueses favoritos para partilhar' }
+              { text: 'List your favorite Lusophone cultural elements to share', textPortuguese: 'Listar os seus elementos culturais portugueses favoritos para partilhar' }
             ]
           }
         },
         tips: [
-          'Be genuinely curious about their Portuguese experience',
+          'Be genuinely curious about their Lusophone experience',
           'Share your own stories to create reciprocal conversation',
-          'Use Portuguese phrases naturally if you both speak it',
+          'Use Lusophone phrases naturally if you both speak it',
           'Ask follow-up questions to show real interest'
         ],
         tipsPortuguese: [
@@ -449,7 +449,7 @@ export default function DatingMatchingModule() {
             <li><strong>Verify Their Profile:</strong>
               <ul>
                 <li>Check if they have multiple photos that look consistent</li>
-                <li>Look for Portuguese cultural references that seem authentic</li>
+                <li>Look for Lusophone cultural references that seem authentic</li>
                 <li>Notice if their Portuguese language use feels natural</li>
                 <li>Video chat before meeting to confirm identity</li>
               </ul>
@@ -459,7 +459,7 @@ export default function DatingMatchingModule() {
               <ul>
                 <li>Keep conversations on the platform initially</li>
                 <li>Don't share personal information (address, workplace) too quickly</li>
-                <li>Use your Portuguese instincts - trust your gut feelings</li>
+                <li>Use your Lusophone instincts - trust your gut feelings</li>
                 <li>Ask mutual friends in the community if they know them</li>
               </ul>
             </li>
@@ -467,7 +467,7 @@ export default function DatingMatchingModule() {
           
           <h3>First Date Safety Tips:</h3>
           <ol>
-            <li><strong>Choose Public Portuguese Venues:</strong>
+            <li><strong>Choose Public Lusophone Venues:</strong>
               <ul>
                 <li>Meet at popular Portuguese restaurants or cafés in London</li>
                 <li>Consider Portuguese-speaking community events as casual meeting spots</li>
@@ -488,7 +488,7 @@ export default function DatingMatchingModule() {
           
           <h3>Red Flags to Watch For:</h3>
           <ul>
-            <li><strong>Cultural Red Flags:</strong> Exaggerated Portuguese stories, inconsistent cultural knowledge</li>
+            <li><strong>Cultural Red Flags:</strong> Exaggerated Lusophone stories, inconsistent cultural knowledge</li>
             <li><strong>Behavioral Red Flags:</strong> Pressure to meet immediately, asking for money, avoiding video calls</li>
             <li><strong>Communication Red Flags:</strong> Overly romantic language too quickly, deflecting personal questions</li>
           </ul>
@@ -499,7 +499,7 @@ export default function DatingMatchingModule() {
             <li>Join Portuguese-speaking community groups on social media for references</li>
             <li>Attend Portuguese-speaking community events to meet people organically</li>
             <li>Ask other Portuguese-speaking friends about good dating venues</li>
-            <li>Use the Portuguese network for informal background checks</li>
+            <li>Use the Lusophone network for informal background checks</li>
           </ul>
           
           <h3>If Something Feels Wrong:</h3>
@@ -596,7 +596,7 @@ export default function DatingMatchingModule() {
     practicalExercises: [],
     resources: [
       {
-        title: 'Portuguese Restaurants in London Guide',
+        title: 'Lusophone Restaurants in London Guide',
         titlePortuguese: 'Guia de Restaurantes Portugueses em Londres',
         url: '/guides/portuguese-restaurants-london',
         type: 'guide'

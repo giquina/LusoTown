@@ -203,7 +203,7 @@ interface BehavioralLearningEngineProps {
   showDetailedAnalytics?: boolean;
 }
 
-// Portuguese Cultural Behavioral AI
+// Lusophone Cultural Behavioral AI
 class PortugueseBehavioralAI {
   static analyzeBehaviorPattern(
     interactionHistory: InteractionData[],
@@ -856,7 +856,7 @@ export default function BehavioralLearningEngine({
         <p className="text-gray-600 max-w-3xl mx-auto">
           {language === 'pt' 
             ? 'Sistema inteligente que aprende com as suas interações portuguesas e melhora continuamente as recomendações de compatibilidade cultural'
-            : 'Intelligent system that learns from your Portuguese interactions and continuously improves cultural compatibility recommendations'}
+            : 'Intelligent system that learns from your Lusophone interactions and continuously improves cultural compatibility recommendations'}
         </p>
       </div>
 

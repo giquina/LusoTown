@@ -997,7 +997,7 @@ export const getMembershipTierConfig = (
       namePortuguese: "Profissional",
       monthlyPrice: 2500, // £25
       yearlyPrice: 25000, // £250
-      description: "Full access for Portuguese professionals in London",
+      description: "Full access for Lusophone professionals in London",
       descriptionPortuguese:
         "Acesso completo para profissionais portugueses em Londres",
       color: "primary",
@@ -1260,7 +1260,7 @@ export const getPortugueseCulturalElements = async () => {
     if (error) throw error;
     return data || [];
   } catch (error) {
-    console.error("Error fetching Portuguese cultural elements:", error);
+    console.error("Error fetching Lusophone cultural elements:", error);
     return [];
   }
 };

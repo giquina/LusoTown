@@ -81,7 +81,7 @@ export default function TransportChauffeurModule() {
           
           <h3>What Makes LusoTown Transport Special:</h3>
           <ul>
-            <li><strong>Portuguese-Speaking Drivers:</strong> All chauffeurs speak Portuguese fluently and understand cultural nuances</li>
+            <li><strong>Lusophone-Speaking Drivers:</strong> All chauffeurs speak Lusophone fluently and understand cultural nuances</li>
             <li><strong>SIA-Compliant Security:</strong> Drivers are SIA (Security Industry Authority) licensed for executive protection</li>
             <li><strong>Professional Fleet:</strong> Modern, well-maintained vehicles with professional standards</li>
             <li><strong>Cultural Comfort:</strong> Drivers understand Portuguese business culture, social customs, and can assist with cultural navigation</li>
@@ -126,18 +126,18 @@ export default function TransportChauffeurModule() {
           <ul>
             <li><strong>Priority Booking:</strong> Guaranteed availability with 2-hour notice</li>
             <li><strong>Discounted Rates:</strong> 15-25% off standard pricing</li>
-            <li><strong>Portuguese Cultural Concierge:</strong> Recommendations for Portuguese events, restaurants, services</li>
-            <li><strong>24/7 Portuguese Support:</strong> Customer service available in Portuguese</li>
+            <li><strong>Lusophone Cultural Concierge:</strong> Recommendations for Lusophone events, restaurants, services</li>
+            <li><strong>24/7 Lusophone Support:</strong> Customer service available in Lusophone</li>
           </ul>
           
           <h3>Coverage Areas:</h3>
           <p>Full London coverage with specialized knowledge of:</p>
           <ul>
             <li>Portuguese business districts (Canary Wharf, City, West End)</li>
-            <li>Portuguese residential areas (Vauxhall, Stockwell, Golborne Road)</li>
-            <li>Portuguese cultural venues and restaurants</li>
+            <li>Lusophone residential areas (Vauxhall, Stockwell, Golborne Road)</li>
+            <li>Lusophone cultural venues and restaurants</li>
             <li>Major airports and transport hubs</li>
-            <li>Extended coverage to Portuguese communities in surrounding areas</li>
+            <li>Extended coverage to Lusophone communities in surrounding areas</li>
           </ul>
         `,
         contentPortuguese: `
@@ -219,7 +219,7 @@ export default function TransportChauffeurModule() {
       },
       {
         id: 'booking-process',
-        title: 'How to Book Your Portuguese-Speaking Chauffeur',
+        title: 'How to Book Your Lusophone-Speaking Chauffeur',
         titlePortuguese: 'Como Reservar o Seu Motorista que Fala Português',
         type: 'tutorial',
         estimatedTime: 5,
@@ -235,7 +235,7 @@ export default function TransportChauffeurModule() {
                 <li>Download "LusoTown" app from App Store/Google Play</li>
                 <li>Log in with your LusoTown account</li>
                 <li>Enable location services for pickup accuracy</li>
-                <li>Set language preference to Portuguese</li>
+                <li>Set language preference to Lusophone</li>
               </ul>
             </li>
             
@@ -244,7 +244,7 @@ export default function TransportChauffeurModule() {
                 <li>Tap "Transport" from main menu</li>
                 <li>Choose service category (Executive, Security, Cultural, Airport)</li>
                 <li>Select "Portuguese-speaking driver required"</li>
-                <li>View available chauffeurs with Portuguese profiles</li>
+                <li>View available chauffeurs with Lusophone profiles</li>
               </ul>
             </li>
             
@@ -261,16 +261,16 @@ export default function TransportChauffeurModule() {
               <ul>
                 <li>Review available Portuguese-speaking drivers</li>
                 <li>Check driver profiles, ratings, and Portuguese language level</li>
-                <li>Read previous customer reviews in Portuguese</li>
+                <li>Read previous customer reviews in Lusophone</li>
                 <li>Select preferred chauffeur or allow auto-assignment</li>
               </ul>
             </li>
             
             <li><strong>Special Requirements:</strong>
               <ul>
-                <li>Add special requests (Portuguese cultural music, specific route preferences)</li>
+                <li>Add special requests (Lusophone cultural music, specific route preferences)</li>
                 <li>Specify any mobility requirements</li>
-                <li>Request Portuguese-language assistance for destinations</li>
+                <li>Request Lusophone-language assistance for destinations</li>
                 <li>Add notes about cultural preferences or business requirements</li>
               </ul>
             </li>
@@ -284,12 +284,12 @@ export default function TransportChauffeurModule() {
             <li>Corporate booking options for business accounts</li>
           </ul>
           
-          <h4>3. Phone Booking (24/7 Portuguese Support)</h4>
+          <h4>3. Phone Booking (24/7 Lusophone Support)</h4>
           <ul>
-            <li><strong>Portuguese Line:</strong> +44 20 XXXX XXXX</li>
+            <li><strong>Lusophone Line:</strong> +44 20 XXXX XXXX</li>
             <li><strong>Available:</strong> 24/7 with Portuguese-speaking operators</li>
             <li><strong>Best For:</strong> Complex bookings, group transport, security requirements</li>
-            <li><strong>Services:</strong> Complete booking assistance in Portuguese</li>
+            <li><strong>Services:</strong> Complete booking assistance in Lusophone</li>
           </ul>
           
           <h3>Pricing Structure & Payment:</h3>
@@ -339,7 +339,7 @@ export default function TransportChauffeurModule() {
           <ul>
             <li><strong>Credit/Debit Cards:</strong> Visa, Mastercard, Amex</li>
             <li><strong>Digital Payments:</strong> Apple Pay, Google Pay, PayPal</li>
-            <li><strong>Corporate Accounts:</strong> Monthly billing with Portuguese invoicing</li>
+            <li><strong>Corporate Accounts:</strong> Monthly billing with Lusophone invoicing</li>
             <li><strong>Cash:</strong> Accepted for same-day bookings only</li>
           </ul>
           
@@ -349,7 +349,7 @@ export default function TransportChauffeurModule() {
           <ol>
             <li><strong>Immediate Confirmation:</strong> Booking reference number sent via SMS/email</li>
             <li><strong>Driver Assignment:</strong> Driver details shared 30-60 minutes before pickup</li>
-            <li><strong>Portuguese Communication:</strong> All communications available in Portuguese</li>
+            <li><strong>Lusophone Communication:</strong> All communications available in Lusophone</li>
             <li><strong>Real-time Updates:</strong> Driver location tracking and ETA updates</li>
           </ol>
           
@@ -526,7 +526,7 @@ export default function TransportChauffeurModule() {
               { text: 'Download LusoTown mobile app', textPortuguese: 'Descarregar app móvel LusoTown' },
               { text: 'Set up account with payment method', textPortuguese: 'Configurar conta com método de pagamento' },
               { text: 'Enable location services', textPortuguese: 'Ativar serviços de localização' },
-              { text: 'Set language preference to Portuguese', textPortuguese: 'Definir preferência de idioma para português' },
+              { text: 'Set language preference to Lusophone', textPortuguese: 'Definir preferência de idioma para português' },
               { text: 'Save frequently used pickup/drop-off locations', textPortuguese: 'Guardar localizações de pickup/drop-off frequentemente usadas' },
               { text: 'Test booking process with a trial booking', textPortuguese: 'Testar processo de reserva com uma reserva de teste' }
             ]
@@ -534,7 +534,7 @@ export default function TransportChauffeurModule() {
         },
         tips: [
           'Book during off-peak hours for better availability and pricing',
-          'Specify Portuguese cultural requirements in advance',
+          'Specify Lusophone cultural requirements in advance',
           'Save your frequent destinations for quicker booking',
           'Join LusoTown membership for significant discounts and priority service'
         ],
@@ -561,14 +561,14 @@ export default function TransportChauffeurModule() {
             <li><strong>Enhanced DBS Check:</strong> All drivers undergo enhanced criminal background screening</li>
             <li><strong>SIA Licensing:</strong> Security drivers hold valid SIA (Security Industry Authority) licenses</li>
             <li><strong>PCO Licensing:</strong> All drivers licensed by Transport for London (TfL)</li>
-            <li><strong>Portuguese Language Certification:</strong> Verified fluency through certified Portuguese language testing</li>
-            <li><strong>Cultural Competency Training:</strong> Specialized training in Portuguese cultural sensitivity and business etiquette</li>
+            <li><strong>Lusophone Language Certification:</strong> Verified fluency through certified Portuguese language testing</li>
+            <li><strong>Cultural Competency Training:</strong> Specialized training in Lusophone cultural sensitivity and business etiquette</li>
           </ul>
           
           <h4>Ongoing Quality Assurance:</h4>
           <ul>
             <li><strong>Monthly Reviews:</strong> Regular performance assessments based on customer feedback</li>
-            <li><strong>Continuous Training:</strong> Quarterly Portuguese cultural awareness and security update sessions</li>
+            <li><strong>Continuous Training:</strong> Quarterly Lusophone cultural awareness and security update sessions</li>
             <li><strong>Medical Clearance:</strong> Annual health checks and fitness assessments</li>
             <li><strong>Vehicle Inspections:</strong> Weekly vehicle safety and cleanliness inspections</li>
           </ul>
@@ -612,11 +612,11 @@ export default function TransportChauffeurModule() {
             <li><strong>Emergency Response:</strong> Immediate access to emergency services and security support</li>
           </ul>
           
-          <h3>Portuguese Cultural Safety Considerations:</h3>
+          <h3>Lusophone Cultural Safety Considerations:</h3>
           
           <h4>Cultural Sensitivity Protocols:</h4>
           <ul>
-            <li><strong>Language Accommodation:</strong> Drivers respect passenger language preferences (Portuguese/English mix)</li>
+            <li><strong>Language Accommodation:</strong> Drivers respect passenger language preferences (Lusophone/English mix)</li>
             <li><strong>Cultural Events Security:</strong> Special awareness for Portuguese-speaking community events and potential crowd situations</li>
             <li><strong>Business Culture Understanding:</strong> Knowledge of Portuguese business customs and meeting protocols</li>
             <li><strong>Family Service Considerations:</strong> Appropriate behavior when transporting families with children</li>
@@ -625,9 +625,9 @@ export default function TransportChauffeurModule() {
           <h4>Portuguese-speaking community Venues:</h4>
           <ul>
             <li><strong>Venue Familiarity:</strong> Drivers know Portuguese restaurants, cultural centers, and community spaces</li>
-            <li><strong>Event Security:</strong> Awareness of Portuguese cultural events and associated security considerations</li>
+            <li><strong>Event Security:</strong> Awareness of Lusophone cultural events and associated security considerations</li>
             <li><strong>Discretion:</strong> Understanding of community privacy needs and gossip sensitivity</li>
-            <li><strong>Cultural Calendar Awareness:</strong> Knowledge of Portuguese holidays and cultural celebrations</li>
+            <li><strong>Cultural Calendar Awareness:</strong> Knowledge of Lusophone holidays and cultural celebrations</li>
           </ul>
           
           <h3>Emergency Procedures & Support:</h3>
@@ -655,7 +655,7 @@ export default function TransportChauffeurModule() {
           <h4>Rating System:</h4>
           <ul>
             <li><strong>Post-Journey Rating:</strong> 5-star rating system with detailed feedback options</li>
-            <li><strong>Portuguese Language Feedback:</strong> Feedback forms available in Portuguese</li>
+            <li><strong>Lusophone Language Feedback:</strong> Feedback forms available in Lusophone</li>
             <li><strong>Cultural Sensitivity Scoring:</strong> Specific ratings for cultural understanding and respect</li>
             <li><strong>Driver Recognition:</strong> Top-rated drivers receive recognition and bonuses</li>
           </ul>
@@ -820,7 +820,7 @@ export default function TransportChauffeurModule() {
     practicalExercises: [],
     resources: [
       {
-        title: 'London Portuguese Areas Map',
+        title: 'London Lusophone Areas Map',
         titlePortuguese: 'Mapa de Áreas Portuguesas de Londres',
         url: '/guides/portuguese-areas-london-map',
         type: 'guide'

@@ -23,14 +23,14 @@ import Footer from '@/components/Footer'
 const mockJobs = [
   {
     id: 1,
-    title: 'Portuguese-English Business Analyst',
+    title: 'Lusophone-English Business Analyst',
     company: 'FinTech Solutions Ltd',
     location: 'Canary Wharf, London',
     salary: '£45,000 - £60,000',
     type: 'Full-time',
     posted: '2 days ago',
-    description: 'Leading fintech company seeking bilingual Business Analyst to work with Portuguese markets. Native Portuguese speaker required.',
-    requirements: ['Fluent Portuguese and English', 'Business analysis experience', 'Financial services background preferred'],
+    description: 'Leading fintech company seeking bilingual Business Analyst to work with Lusophone markets. Native Portuguese speaker required.',
+    requirements: ['Fluent Lusophone and English', 'Business analysis experience', 'Financial services background preferred'],
     benefits: ['Portuguese-speaking team', '25 days holiday', 'Private healthcare'],
     featured: true,
     remote: false,
@@ -38,7 +38,7 @@ const mockJobs = [
   },
   {
     id: 2,
-    title: 'Portuguese Customer Success Manager',
+    title: 'Lusophone Customer Success Manager',
     company: 'TechStart London',
     location: 'Shoreditch, London',
     salary: '£40,000 - £55,000',
@@ -46,14 +46,14 @@ const mockJobs = [
     posted: '1 week ago',
     description: 'Join our diverse team helping Portuguese-speaking customers succeed with our platform.',
     requirements: ['Native Portuguese speaker', 'Customer service experience', 'Tech-savvy'],
-    benefits: ['Remote work options', 'Portuguese cultural holidays recognized', 'Career development'],
+    benefits: ['Remote work options', 'Lusophone cultural holidays recognized', 'Career development'],
     featured: false,
     remote: true,
     category: 'Technology'
   },
   {
     id: 3,
-    title: 'Portuguese Language Teacher',
+    title: 'Lusophone Language Teacher',
     company: 'London International School',
     location: 'Camden, London',
     salary: '£35,000 - £45,000',
@@ -68,14 +68,14 @@ const mockJobs = [
   },
   {
     id: 4,
-    title: 'Portuguese Content Marketing Specialist',
+    title: 'Lusophone Content Marketing Specialist',
     company: 'Digital Marketing Agency',
     location: 'King\'s Cross, London',
     salary: '£35,000 - £50,000',
     type: 'Full-time',
     posted: '5 days ago',
-    description: 'Create engaging Portuguese content for Brazilian and Portuguese markets. Work with international brands.',
-    requirements: ['Portuguese copywriting skills', 'Marketing experience', 'Social media expertise'],
+    description: 'Create engaging Lusophone content for Brazilian and Lusophone markets. Work with international brands.',
+    requirements: ['Lusophone copywriting skills', 'Marketing experience', 'Social media expertise'],
     benefits: ['Creative environment', 'Brazilian coffee bar', 'Flexible hours'],
     featured: true,
     remote: true,
@@ -83,14 +83,14 @@ const mockJobs = [
   },
   {
     id: 5,
-    title: 'Portuguese-Speaking Tour Guide',
+    title: 'Lusophone-Speaking Tour Guide',
     company: 'London Heritage Tours',
     location: 'Central London',
     salary: '£25,000 - £35,000',
     type: 'Part-time',
     posted: '1 day ago',
     description: 'Lead Portuguese-speaking tourists through London\'s historic sites. Flexible schedule, great for students.',
-    requirements: ['Fluent Portuguese and English', 'Knowledge of London history', 'Enthusiastic personality'],
+    requirements: ['Fluent Lusophone and English', 'Knowledge of London history', 'Enthusiastic personality'],
     benefits: ['Flexible schedule', 'Tips included', 'Meet people from around the world'],
     featured: false,
     remote: false,
@@ -105,7 +105,7 @@ const mockJobs = [
     type: 'Full-time',
     posted: '4 days ago',
     description: 'Support Portuguese-speaking patients in London hospitals. Make a difference in your community.',
-    requirements: ['Healthcare experience preferred', 'Fluent Portuguese and English', 'Compassionate nature'],
+    requirements: ['Healthcare experience preferred', 'Fluent Lusophone and English', 'Compassionate nature'],
     benefits: ['NHS pension', 'Career progression', 'Serve Portuguese-speaking community'],
     featured: false,
     remote: false,
@@ -193,7 +193,7 @@ export default function JobsPage() {
             >
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
                 <BriefcaseIcon className="w-5 h-5 text-white" />
-                <span className="text-white font-semibold">Portuguese Jobs in London</span>
+                <span className="text-white font-semibold">Lusophone Jobs in London</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
@@ -201,7 +201,7 @@ export default function JobsPage() {
               </h1>
               
               <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Connect with Portuguese-friendly employers and opportunities designed for bilingual professionals in London
+                Connect with Lusophone-friendly employers and opportunities designed for bilingual professionals in London
               </p>
 
               {/* Quick Stats */}
@@ -406,7 +406,7 @@ export default function JobsPage() {
               Can't Find the Perfect Job?
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Set up job alerts and get notified when Portuguese-friendly positions become available
+              Set up job alerts and get notified when Lusophone-friendly positions become available
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-secondary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-secondary-700 transition-colors">

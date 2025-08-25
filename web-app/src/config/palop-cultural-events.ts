@@ -1,6 +1,6 @@
 /**
  * PALOP Cultural Events Configuration
- * Celebrating Países Africanos de Língua Oficial Portuguesa (African Portuguese-Speaking Countries)
+ * Celebrating Países Africanos de Língua Oficial Portuguesa (African Lusophone-Speaking Countries)
  * Comprehensive cultural event system for Angola, Cape Verde, Guinea-Bissau, Mozambique, São Tomé and Príncipe
  */
 
@@ -62,7 +62,7 @@ export interface PALOPCulturalEvent {
 }
 
 /**
- * PALOP Cultural Events - Celebrating African Portuguese Heritage in the UK
+ * PALOP Cultural Events - Celebrating African Lusophone Heritage in the UK
  * Each country's most significant and engaging cultural celebrations
  */
 export const PALOP_CULTURAL_EVENTS: PALOPCulturalEvent[] = [
@@ -88,7 +88,7 @@ export const PALOP_CULTURAL_EVENTS: PALOPCulturalEvent[] = [
     music: ['Semba', 'Kizomba', 'Kuduro', 'Afrobeat fusion', 'Traditional drumming'],
     food: ['Muamba de galinha', 'Funge', 'Calulu', 'Mufete', 'Traditional Angolan desserts'],
     traditions: ['Traditional dress celebration', 'Cultural storytelling', 'Business showcase', 'Diaspora networking'],
-    language: ['Portuguese', 'Umbundu', 'Kimbundu', 'Kikongo'],
+    language: ['Lusophone', 'Umbundu', 'Kimbundu', 'Kikongo'],
     
     targetAudience: ['Angolan diaspora', 'PALOP community', 'African culture enthusiasts', 'Business professionals'],
     expectedAttendance: 400,
@@ -111,7 +111,7 @@ export const PALOP_CULTURAL_EVENTS: PALOPCulturalEvent[] = [
       'Modern Angola achievements',
       'Diaspora success stories'
     ],
-    languageElement: 'Portuguese with regional language introductions',
+    languageElement: 'Lusophone with regional language introductions',
     heritageConnection: 'Celebrates Angolan freedom, resilience, and cultural pride while honoring diaspora achievements in the United Kingdom',
     
     hashtags: ['#AngolaIndependenceUK', '#AngolanPrideUK', '#PALOPPride', '#LusoTownAngola'],
@@ -183,7 +183,7 @@ export const PALOP_CULTURAL_EVENTS: PALOPCulturalEvent[] = [
     
     description: 'Joyful celebration of Cape Verde\'s independence (July 5th) featuring heartfelt Morna music, energetic Coladeira dancing, incredible Cachupa feasts, and the amazing community spirit that makes Cape Verdean culture so welcoming and beautiful.',
     descriptionPortuguese: 'Celebração alegre da independência de Cabo Verde (5 de julho) com música emocionante de Morna, dança energética de Coladeira, festas incríveis de Cachupa, e o espírito comunitário incrível que torna a cultura cabo-verdiana tão acolhedora e bonita.',
-    culturalSignificance: 'Cape Verde\'s independence celebrates the unique island culture that blends African, Portuguese, and Atlantic influences into something beautifully distinct.',
+    culturalSignificance: 'Cape Verde\'s independence celebrates the unique island culture that blends African, Lusophone, and Atlantic influences into something beautifully distinct.',
     culturalSignificancePortuguese: 'A independência de Cabo Verde celebra a cultura única das ilhas que mistura influências africanas, portuguesas e atlânticas em algo lindamente distinto.',
     
     duration: 'Weekend festival',
@@ -194,7 +194,7 @@ export const PALOP_CULTURAL_EVENTS: PALOPCulturalEvent[] = [
     music: ['Morna', 'Coladeira', 'Funaná', 'Batuko', 'Traditional Cape Verdean'],
     food: ['Cachupa', 'Pastéis', 'Canja', 'Fresh fish', 'Island specialties'],
     traditions: ['Island storytelling', 'Community singing', 'Traditional crafts', 'Cultural sharing'],
-    language: ['Cape Verdean Creole', 'Portuguese'],
+    language: ['Cape Verdean Creole', 'Lusophone'],
     
     targetAudience: ['Cape Verdean community', 'PALOP community', 'Island culture lovers', 'Music enthusiasts'],
     expectedAttendance: 350,
@@ -277,7 +277,7 @@ export const PALOP_CULTURAL_EVENTS: PALOPCulturalEvent[] = [
     category: 'independence',
     type: 'celebration',
     
-    description: 'Vibrant celebration of Mozambique\'s independence (June 25th) featuring energetic Marrabenta music, incredible coastal cuisine, cultural performances, and showcasing Mozambique\'s rich blend of African, Portuguese, and Indian Ocean influences.',
+    description: 'Vibrant celebration of Mozambique\'s independence (June 25th) featuring energetic Marrabenta music, incredible coastal cuisine, cultural performances, and showcasing Mozambique\'s rich blend of African, Lusophone, and Indian Ocean influences.',
     descriptionPortuguese: 'Celebração vibrante da independência de Moçambique (25 de junho) com música energética de Marrabenta, culinária costeira incrível, apresentações culturais, e mostrando a rica mistura de influências africanas, portuguesas e do Oceano Índico de Moçambique.',
     culturalSignificance: 'Mozambique\'s independence celebrates a unique coastal culture that bridges Africa, Portugal, and the Indian Ocean trading routes.',
     culturalSignificancePortuguese: 'A independência de Moçambique celebra uma cultura costeira única que une África, Portugal e as rotas comerciais do Oceano Índico.',
@@ -290,7 +290,7 @@ export const PALOP_CULTURAL_EVENTS: PALOPCulturalEvent[] = [
     music: ['Marrabenta', 'Traditional Mozambican', 'Coastal rhythms', 'Indian Ocean fusion'],
     food: ['Prawns peri-peri', 'Matapa', 'Xima', 'Coconut curry', 'Coastal specialties'],
     traditions: ['Coastal culture', 'Spice trading heritage', 'Cultural fusion', 'Community celebration'],
-    language: ['Portuguese', 'Makua', 'Sena', 'Local languages'],
+    language: ['Lusophone', 'Makua', 'Sena', 'Local languages'],
     
     targetAudience: ['Mozambican diaspora', 'PALOP community', 'Coastal culture enthusiasts', 'Spice lovers'],
     expectedAttendance: 280,
@@ -341,7 +341,7 @@ export const PALOP_CULTURAL_EVENTS: PALOPCulturalEvent[] = [
     music: ['Traditional Guinea-Bissau', 'West African rhythms', 'Gumbe', 'Cultural fusion'],
     food: ['Traditional stews', 'Rice dishes', 'West African specialties', 'Cultural foods'],
     traditions: ['Cultural storytelling', 'Traditional crafts', 'Community solidarity', 'Heritage preservation'],
-    language: ['Portuguese', 'Crioulo', 'Balanta', 'Local languages'],
+    language: ['Lusophone', 'Crioulo', 'Balanta', 'Local languages'],
     
     targetAudience: ['Guinea-Bissau diaspora', 'PALOP community', 'West African culture enthusiasts'],
     expectedAttendance: 180,
@@ -389,10 +389,10 @@ export const PALOP_CULTURAL_EVENTS: PALOPCulturalEvent[] = [
     traditionalMonth: 7,
     season: 'summer',
     
-    music: ['Traditional São Tomé', 'Island rhythms', 'Portuguese colonial fusion', 'Tropical sounds'],
+    music: ['Traditional São Tomé', 'Island rhythms', 'Lusophone colonial fusion', 'Tropical sounds'],
     food: ['Cocoa specialties', 'Fresh fish', 'Tropical fruits', 'Traditional stews', 'Island delicacies'],
     traditions: ['Island hospitality', 'Cocoa heritage', 'Natural paradise appreciation', 'Community sharing'],
-    language: ['Portuguese', 'Forro', 'Lungwa'],
+    language: ['Lusophone', 'Forro', 'Lungwa'],
     
     targetAudience: ['São Tomé diaspora', 'PALOP community', 'Island culture lovers', 'Paradise enthusiasts'],
     expectedAttendance: 120,
@@ -424,7 +424,7 @@ export const PALOP_CULTURAL_EVENTS: PALOPCulturalEvent[] = [
   // CROSS-PALOP EVENTS
   {
     id: 'palop-business-excellence-summit',
-    title: 'PALOP Business Excellence Summit - African Portuguese Entrepreneurship',
+    title: 'PALOP Business Excellence Summit - African Lusophone Entrepreneurship',
     titlePortuguese: 'Cúpula de Excelência Empresarial PALOP - Empreendedorismo Africano Português',
     country: 'angola', // Rotating lead
     category: 'business',
@@ -457,7 +457,7 @@ export const PALOP_CULTURAL_EVENTS: PALOPCulturalEvent[] = [
       'Cross-cultural business practices',
       'Investment landscape analysis',
       'Diaspora success strategies',
-      'Pan-African Portuguese cooperation'
+      'Pan-African Lusophone cooperation'
     ],
     heritageConnection: 'Celebrates the collective economic strength and business success of all PALOP nations in the United Kingdom',
     
@@ -488,11 +488,11 @@ export const PALOP_CULTURAL_EVENTS: PALOPCulturalEvent[] = [
     traditionalMonth: 11,
     season: 'autumn',
     
-    music: ['All PALOP traditional music', 'Cultural fusion', 'Contemporary African Portuguese'],
+    music: ['All PALOP traditional music', 'Cultural fusion', 'Contemporary African Lusophone'],
     food: ['Dishes from all PALOP countries', 'Cultural food tours', 'Heritage cooking'],
     traditions: ['Independence ceremonies', 'Cultural showcases', 'Heritage exhibitions', 'Success celebrations'],
     
-    targetAudience: ['All PALOP communities', 'African Portuguese diaspora', 'Cultural enthusiasts', 'Heritage preservationists'],
+    targetAudience: ['All PALOP communities', 'African Lusophone diaspora', 'Cultural enthusiasts', 'Heritage preservationists'],
     expectedAttendance: 1200,
     communityBenefit: 'Celebrates collective PALOP heritage, educates about African Portuguese cultures, promotes unity and pride',
     
@@ -505,7 +505,7 @@ export const PALOP_CULTURAL_EVENTS: PALOPCulturalEvent[] = [
       'PALOP independence movements',
       'Cultural preservation methods',
       'Diaspora contribution analysis',
-      'Pan-African Portuguese cooperation',
+      'Pan-African Lusophone cooperation',
       'Heritage celebration traditions'
     ],
     heritageConnection: 'Honors the collective journey of PALOP nations from independence to success in the global diaspora',

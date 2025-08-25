@@ -70,7 +70,7 @@ const courses: Course[] = [
   {
     id: 'portuguese-foundations',
     title: 'Funda��es do Portugu�s',
-    titleEn: 'Portuguese Foundations',
+    titleEn: 'Lusophone Foundations',
     description: 'Curso completo para iniciantes absolutos. Aprenda gram�tica, vocabul�rio essencial e pron�ncia correta.',
     descriptionEn: 'Complete course for absolute beginners. Learn grammar, essential vocabulary, and correct pronunciation.',
     level: 'beginner',
@@ -109,9 +109,9 @@ const courses: Course[] = [
   {
     id: 'business-portuguese',
     title: 'Portugu�s Empresarial',
-    titleEn: 'Business Portuguese',
+    titleEn: 'Business Lusophone',
     description: 'Domine o portugu�s profissional. Ideal para neg�cios, apresenta��es e networking empresarial.',
-    descriptionEn: 'Master professional Portuguese. Ideal for business, presentations, and corporate networking.',
+    descriptionEn: 'Master professional Lusophone. Ideal for business, presentations, and corporate networking.',
     level: 'intermediate',
     price: 299.99,
     duration: '8 semanas',
@@ -122,7 +122,7 @@ const courses: Course[] = [
     reviews: 187,
     instructor: 'Dr. Jo�o Pereira',
     instructorBio: 'PhD em Neg�cios Internacionais, consultor para empresas portuguesas no Reino Unido',
-    instructorBioEn: 'PhD in International Business, consultant for Portuguese companies in the United Kingdom',
+    instructorBioEn: 'PhD in International Business, consultant for Lusophone companies in the United Kingdom',
     features: [
       'Vocabul�rio empresarial especializado',
       'Simula��es de reuni�es',
@@ -135,7 +135,7 @@ const courses: Course[] = [
       'Specialized business vocabulary',
       'Meeting simulations',
       'Professional presentations',
-      'Portuguese networking',
+      'Lusophone networking',
       'Professional certification',
       'Individual mentoring'
     ],
@@ -147,9 +147,9 @@ const courses: Course[] = [
   {
     id: 'cultural-immersion',
     title: 'Imers�o Cultural Portuguesa',
-    titleEn: 'Portuguese Cultural Immersion',
+    titleEn: 'Lusophone Cultural Immersion',
     description: 'Aprenda portugu�s atrav�s da cultura. Explore tradi��es, hist�ria e costumes dos pa�ses lus�fonos.',
-    descriptionEn: 'Learn Portuguese through culture. Explore traditions, history, and customs of Portuguese-speaking countries.',
+    descriptionEn: 'Learn Lusophone through culture. Explore traditions, history, and customs of Portuguese-speaking countries.',
     level: 'intermediate',
     price: 199.99,
     duration: '10 semanas',
@@ -190,7 +190,7 @@ const learningPaths: LearningPath[] = [
     name: 'Flu�ncia Completa',
     nameEn: 'Complete Fluency',
     description: 'Do zero � flu�ncia completa. Percurso estruturado de 6 meses para dominar o portugu�s.',
-    descriptionEn: 'From zero to complete fluency. Structured 6-month path to master Portuguese.',
+    descriptionEn: 'From zero to complete fluency. Structured 6-month path to master Lusophone.',
     courses: ['portuguese-foundations', 'cultural-immersion', 'business-portuguese'],
     totalHours: 120,
     price: 499.99,
@@ -203,7 +203,7 @@ const learningPaths: LearningPath[] = [
     name: 'Percurso Profissional',
     nameEn: 'Professional Path',
     description: 'Especializa��o em portugu�s empresarial. Perfeito para profissionais e empres�rios.',
-    descriptionEn: 'Specialization in business Portuguese. Perfect for professionals and entrepreneurs.',
+    descriptionEn: 'Specialization in business Lusophone. Perfect for professionals and entrepreneurs.',
     courses: ['portuguese-foundations', 'business-portuguese'],
     totalHours: 80,
     price: 349.99,
@@ -239,20 +239,20 @@ export default function PortugueseLanguageLearning() {
           >
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium mb-8">
               <AcademicCapIcon className="w-5 h-5 mr-2" />
-              {isPortuguese ? 'Academia de Portugu�s LusoTown' : 'LusoTown Portuguese Academy'}
+              {isPortuguese ? 'Academia de Portugu�s LusoTown' : 'LusoTown Lusophone Academy'}
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               {isPortuguese 
                 ? 'Aprenda Portugu�s com Especialistas Nativos'
-                : 'Learn Portuguese with Native Experts'
+                : 'Learn Lusophone with Native Experts'
               }
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'A plataforma mais completa de ensino de portugu�s. Cursos estruturados, professores certificados e imers�o cultural aut�ntica.'
-                : 'The most complete Portuguese learning platform. Structured courses, certified teachers, and authentic cultural immersion.'
+                : 'The most complete Lusophone learning platform. Structured courses, certified teachers, and authentic cultural immersion.'
               }
             </p>
 
@@ -387,7 +387,7 @@ export default function PortugueseLanguageLearning() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                {isPortuguese ? 'Cursos de Portugu�s' : 'Portuguese Courses'}
+                {isPortuguese ? 'Cursos de Portugu�s' : 'Lusophone Courses'}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese
@@ -762,14 +762,14 @@ export default function PortugueseLanguageLearning() {
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               {isPortuguese 
                 ? 'Comece a Sua Jornada no Portugu�s Hoje'
-                : 'Start Your Portuguese Journey Today'
+                : 'Start Your Lusophone Journey Today'
               }
             </h2>
             
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Junte-se a milhares de estudantes que j� dominam o portugu�s com os nossos cursos especializados.'
-                : 'Join thousands of students who already master Portuguese with our specialized courses.'
+                : 'Join thousands of students who already master Lusophone with our specialized courses.'
               }
             </p>
 

@@ -53,7 +53,7 @@ export default function Hero() {
                 : "opacity-0 -translate-x-12"
             }`}
           >
-            {/* Enhanced Portuguese Community Badge - Mobile Optimized */}
+            {/* Enhanced Lusophone Community Badge - Mobile Optimized */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ export default function Hero() {
               className="portuguese-community-badge inline-flex items-center gap-2 sm:gap-3 rounded-2xl px-3 py-2 sm:px-4 sm:py-3 transition-all duration-300"
             >
               <div className="flex items-center gap-1 sm:gap-2">
-                {/* Enhanced Portuguese Flag - More Prominent */}
+                {/* Enhanced Lusophone Flag - More Prominent */}
                 <div className="portuguese-flag-enhanced flex items-center gap-1 portuguese-flag-pulse">
                   <span className="text-lg sm:text-xl">🇵🇹</span>
                   <div className="hidden xs:block w-0.5 h-4 bg-gradient-to-b from-red-300 via-amber-300 to-green-300"></div>
@@ -69,7 +69,7 @@ export default function Hero() {
                 </div>
                 <span className="text-xs sm:text-sm font-bold text-gray-800 tracking-wide">
                   {/* Mobile-friendly text */}
-                  <span className="block sm:hidden">Portuguese Community United Kingdom</span>
+                  <span className="block sm:hidden">Lusophone Community United Kingdom</span>
                   <span className="hidden sm:block">United Kingdom Portuguese-speaking Community</span>
                 </span>
               </div>
@@ -227,7 +227,7 @@ export default function Hero() {
               <div className="hero-premium-services bg-white/70 backdrop-blur-lg rounded-3xl p-4 sm:p-5 shadow-xl">
                 <div className="text-center mb-4">
                   <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-1">
-                    🇵🇹 {t("hero.services.title", "Premium Portuguese Services")}
+                    🇵🇹 {t("hero.services.title", "Premium Lusophone Services")}
                   </h3>
                   <p className="text-xs text-gray-600">Luxury experiences for Portuguese speakers</p>
                 </div>
@@ -387,7 +387,7 @@ export default function Hero() {
                 </div>
                 <div className="hero-trust-indicator">
                   <div className="hero-trust-dot gold"></div>
-                  <span>{t('hero.trust.culture', 'Portuguese Culture')}</span>
+                  <span>{t('hero.trust.culture', 'Lusophone Culture')}</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -498,7 +498,7 @@ export default function Hero() {
             <div className="hidden lg:block mt-6">
               <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 border border-white/40 shadow-xl">
                 <h3 className="text-lg font-bold text-gray-800 mb-4 text-center">
-                  {t("hero.services.title", "Premium Portuguese Services")}
+                  {t("hero.services.title", "Premium Lusophone Services")}
                 </h3>
                 <div className="grid grid-cols-1 gap-3">
                   <a

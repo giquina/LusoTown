@@ -36,7 +36,7 @@ const mockFavorites = [
     id: '2',
     type: 'business',
     title: 'Casa do Pão',
-    description: 'Authentic Portuguese bakery and café in Shoreditch with the best pastéis de nata in London.',
+    description: 'Authentic Lusophone bakery and café in Shoreditch with the best pastéis de nata in London.',
     category: 'Café & Bakery',
     location: 'Shoreditch, London',
     rating: 4.8,
@@ -60,7 +60,7 @@ const mockFavorites = [
   {
     id: '4',
     type: 'event',
-    title: 'Portuguese Book Club',
+    title: 'Lusophone Book Club',
     description: 'Discussing "O Guarani" by José de Alencar. All Portuguese speakers and literature lovers welcome!',
     date: '2025-08-18',
     time: '18:30',

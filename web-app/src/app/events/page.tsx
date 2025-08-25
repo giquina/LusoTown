@@ -699,7 +699,7 @@ export default function EventsPage() {
       <main className="pt-16">
         {/* Hero Section - CONVERSION OPTIMIZED */}
         <section className="relative py-16 overflow-hidden bg-gradient-to-br from-white via-red-50/20 to-green-50/20">
-          {/* Portuguese tile pattern background */}
+          {/* Lusophone tile pattern background */}
           <div className="absolute inset-0 overflow-hidden opacity-10">
             <div
               className="absolute inset-0"
@@ -723,7 +723,7 @@ export default function EventsPage() {
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-sm" />
                 <span className="text-xs font-bold text-gray-800">
-                  🎵 47 people viewing Portuguese events now
+                  🎵 47 people viewing Lusophone events now
                 </span>
               </div>
             </motion.div>
@@ -756,7 +756,7 @@ export default function EventsPage() {
                       Find Your Next
                     </span>{" "}
                     <span className="text-gray-900">
-                      Portuguese Cultural Experience
+                      Lusophone Cultural Experience
                     </span>
                   </>
                 ) : (
@@ -777,7 +777,7 @@ export default function EventsPage() {
               >
                 <p className="text-xl xs:text-2xl sm:text-3xl text-gray-700 leading-relaxed font-medium">
                   <span className="font-bold text-green-600">
-                    750+ Portuguese speakers
+                    Portuguese speakers
                   </span>{" "}
                   attend monthly •
                   <span className="font-bold text-blue-600">
@@ -819,13 +819,13 @@ export default function EventsPage() {
                     <span className="hidden sm:block">
                       {isPortuguese
                         ? "Descubra eventos autênticos nos bairros portugueses de Londres - de Santos Populares em Stockwell a noites de Fado em Camden. Conecte-se com a sua comunidade através de experiências culturais genuínas, networking profissional e tradições que unem gerações."
-                        : "Discover authentic events in London's Portuguese neighborhoods - from Santos Populares in Stockwell to Fado nights in Camden. Connect with your community through genuine cultural experiences, professional networking, and traditions that unite generations."}
+                        : "Discover authentic events in London's Lusophone neighborhoods - from Santos Populares in Stockwell to Fado nights in Camden. Connect with your community through genuine cultural experiences, professional networking, and traditions that unite generations."}
                     </span>
                     {/* Mobile short subtitle */}
                     <span className="sm:hidden">
                       {isPortuguese
                         ? "Eventos portugueses autênticos em Londres!"
-                        : "Authentic Portuguese events in London!"}
+                        : "Authentic Lusophone events in London!"}
                     </span>
                   </>
                 ) : (
@@ -931,7 +931,7 @@ export default function EventsPage() {
                   <div className="flex items-center justify-center gap-4 text-xl font-black">
                     <span className="text-xl">🇵🇹</span>
                     <span className="relative z-10">
-                      Join 750+ Portuguese Speakers - FREE
+                      Join Portuguese speakers - FREE
                     </span>
                     <motion.div
                       whileHover={{ x: 6 }}
@@ -1013,7 +1013,7 @@ export default function EventsPage() {
                     {activeTab === "events"
                       ? isPortuguese
                         ? "Falantes de Português"
-                        : "Portuguese Speakers"
+                        : "Lusophone Speakers"
                       : isPortuguese
                       ? "Categorias"
                       : "Categories"}
@@ -1389,7 +1389,7 @@ export default function EventsPage() {
 
                 {/* Events Grid */}
                 <div className="flex-1">
-                  {/* Portuguese Events Discovery */}
+                  {/* Lusophone Events Discovery */}
                   {activeTab === "events" && (
                     <div className="mb-8">
                       <EventsDiscovery />

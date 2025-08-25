@@ -1,13 +1,13 @@
 /**
- * Portuguese-Speaking Community Database Cache Optimization
+ * Lusophone-Speaking Community Database Cache Optimization
  * 
- * Optimizes database queries with intelligent caching for Portuguese cultural content
+ * Optimizes database queries with intelligent caching for Lusophone cultural content
  * Implements connection pooling, query caching, and real-time subscription management
  */
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-// Cache configuration for Portuguese community features
+// Cache configuration for Lusophone community features
 interface CacheConfig {
   ttl: number; // Time to live in milliseconds
   maxSize: number; // Maximum cache entries
@@ -143,7 +143,7 @@ class PortugueseQueryCache<T> {
 }
 
 /**
- * Optimized Supabase client with Portuguese community caching
+ * Optimized Supabase client with Lusophone community caching
  */
 export class OptimizedPortugueseSupabaseClient {
   private supabase: SupabaseClient;
@@ -168,7 +168,7 @@ export class OptimizedPortugueseSupabaseClient {
       },
       global: {
         headers: {
-          'X-Portuguese-Community': 'true',
+          'X-Lusophone-Community': 'true',
         },
       },
     });
@@ -185,7 +185,7 @@ export class OptimizedPortugueseSupabaseClient {
   }
 
   /**
-   * Get Portuguese events with optimized caching
+   * Get Lusophone events with optimized caching
    */
   async getPortugueseEventsOptimized(params: {
     userLat?: number;
@@ -280,7 +280,7 @@ export class OptimizedPortugueseSupabaseClient {
   }
 
   /**
-   * Get Portuguese community feed with real-time updates
+   * Get Lusophone community feed with real-time updates
    */
   async getPortugueseCommunityFeedOptimized(userId: string, limit?: number, offset?: number) {
     const cacheKey = `community_feed_${userId}_${limit}_${offset}`;
@@ -305,7 +305,7 @@ export class OptimizedPortugueseSupabaseClient {
   }
 
   /**
-   * Get Portuguese nation suggestions with caching
+   * Get Lusophone nation suggestions with caching
    */
   async getPortugueseNationSuggestions(userId?: string, limit?: number) {
     const cacheKey = `nation_suggestions_${userId}_${limit}`;
@@ -406,10 +406,10 @@ export class OptimizedPortugueseSupabaseClient {
   }
 
   /**
-   * Prefetch popular Portuguese content
+   * Prefetch popular Lusophone content
    */
   async prefetchPopularContent(): Promise<void> {
-    console.log('🔄 Prefetching popular Portuguese content...');
+    console.log('🔄 Prefetching popular Lusophone content...');
     
     try {
       // Prefetch popular events
@@ -426,7 +426,7 @@ export class OptimizedPortugueseSupabaseClient {
         limit: 30
       });
 
-      // Prefetch Portuguese nation data
+      // Prefetch Lusophone nation data
       await this.getPortugueseNationSuggestions();
 
       console.log('✅ Popular content prefetched successfully');
@@ -469,8 +469,8 @@ export const PRODUCTION_DB_CONFIG = {
   idleTimeoutMillis: 30000,
   statementTimeout: 60000,
   
-  // Portuguese community specific optimizations
-  applicationName: 'LusoTown-Portuguese-Community',
+  // Lusophone community specific optimizations
+  applicationName: 'LusoTown-Lusophone-Community',
   searchPath: 'public',
   
   // Connection pooling for high availability
@@ -568,7 +568,7 @@ export function getOptimizedSupabaseClient(): OptimizedPortugueseSupabaseClient 
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     
     if (!supabaseUrl || !supabaseKey) {
-      throw new Error('Missing Supabase configuration for Portuguese community optimization');
+      throw new Error('Missing Supabase configuration for Lusophone community optimization');
     }
     
     optimizedSupabaseClient = new OptimizedPortugueseSupabaseClient(supabaseUrl, supabaseKey);

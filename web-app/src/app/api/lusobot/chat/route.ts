@@ -8,7 +8,7 @@ import type { LusoBotMessage, MessageMetadata } from '@/lib/lusobot-engine'
 
 /**
  * Enhanced LusoBot AI Chat API Endpoint
- * Provides Portuguese cultural AI assistance with saudade support
+ * Provides Lusophone cultural AI assistance with saudade support
  */
 
 interface ChatRequest {
@@ -128,7 +128,7 @@ export async function POST(request: NextRequest) {
         .eq('user_id', user.id)
         .single()
 
-      // Get user's Portuguese profile for additional context
+      // Get user's Lusophone profile for additional context
       const { data: userProfile } = await supabase
         .from('profiles')
         .select('first_name, heritage_story, cultural_background')
@@ -458,7 +458,7 @@ async function generateContextualRecommendations(
       recommendations.push({
         type: 'cultural_event',
         title: event.title,
-        description: 'Portuguese cooking event',
+        description: 'Lusophone cooking event',
         item_id: event.id,
         priority: 'medium',
         cultural_relevance: 0.8

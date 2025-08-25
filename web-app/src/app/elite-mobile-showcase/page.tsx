@@ -58,7 +58,7 @@ export default function EliteMobileShowcasePage() {
       badge: 5
     },
     {
-      label: 'Portuguese Culture',
+      label: 'Lusophone Culture',
       labelPt: 'Cultura Portuguesa',
       icon: GlobeEuropeAfricaIcon,
       onClick: () => alert('Culture'),
@@ -79,7 +79,7 @@ export default function EliteMobileShowcasePage() {
       title: language === 'pt' ? 'Festival do Fado em Londres' : 'Fado Festival in London',
       description: language === 'pt' 
         ? 'Uma noite mágica de fado tradicional português no coração de Londres, apresentando artistas renomados de Lisboa e Porto.'
-        : 'A magical night of traditional Portuguese fado in the heart of London, featuring renowned artists from Lisbon and Porto.',
+        : 'A magical night of traditional Lusophone fado in the heart of London, featuring renowned artists from Lisbon and Porto.',
       image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=400&q=80',
       category: language === 'pt' ? 'Cultura' : 'Culture',
       author: {
@@ -161,11 +161,11 @@ export default function EliteMobileShowcasePage() {
         </div>
       </EliteMobileCard>
 
-      {/* Portuguese Heritage Elements */}
+      {/* Lusophone Heritage Elements */}
       <EliteMobileCard variant="elite" corner="elite" badge="PORTUGAL">
         <h3 className="text-xl font-bold text-amber-400 mb-4 flex items-center gap-2">
           <GlobeEuropeAfricaIcon className="w-6 h-6" />
-          {language === 'pt' ? 'Património Português' : 'Portuguese Heritage'}
+          {language === 'pt' ? 'Património Português' : 'Lusophone Heritage'}
         </h3>
         <p className="text-gray-300 mb-4">
           {language === 'pt'
@@ -175,7 +175,7 @@ export default function EliteMobileShowcasePage() {
         <div className="flex items-center gap-2">
           <span className="text-2xl">🇵🇹</span>
           <span className="font-semibold text-amber-400">
-            {language === 'pt' ? 'Orgulhosamente Português' : 'Proudly Portuguese'}
+            {language === 'pt' ? 'Orgulhosamente Português' : 'Proudly Lusophone'}
           </span>
         </div>
       </EliteMobileCard>
@@ -192,7 +192,7 @@ export default function EliteMobileShowcasePage() {
         <h3 className="text-lg font-semibold text-gray-700">Standard Variants</h3>
         <div className="space-y-3">
           <LuxuryMobileButton variant="heritage" icon={<HeartIcon className="w-5 h-5" />}>
-            {language === 'pt' ? 'Herança Portuguesa' : 'Portuguese Heritage'}
+            {language === 'pt' ? 'Herança Portuguesa' : 'Lusophone Heritage'}
           </LuxuryMobileButton>
           
           <LuxuryMobileButton variant="elite" icon={<CrownIcon className="w-5 h-5" />}>

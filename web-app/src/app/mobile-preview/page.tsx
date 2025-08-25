@@ -41,7 +41,7 @@ export default function MobilePreviewPage() {
   const [progress, setProgress] = useState(0);
   const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
 
-  // Mock data for Portuguese events
+  // Mock data for Lusophone events
   const mockEvents = [
     {
       id: '1',
@@ -69,7 +69,7 @@ export default function MobilePreviewPage() {
       id: '3',
       title: 'Aulas de Português para Crianças',
       description: 'Ensino da língua portuguesa para a nova geração em Londres',
-      location: 'Portuguese Centre, London',
+      location: 'Lusophone Centre, London',
       date: '2024-01-30',
       time: '10:00',
       image: '/api/placeholder/300/200',
@@ -153,7 +153,7 @@ export default function MobilePreviewPage() {
               progress={progress} 
               variant="portuguese" 
               showPercentage 
-              label="Loading Portuguese Events"
+              label="Loading Lusophone Events"
             />
           </section>
 
@@ -221,7 +221,7 @@ export default function MobilePreviewPage() {
             </div>
           </section>
 
-          {/* Portuguese Events with Swipe Gestures */}
+          {/* Lusophone Events with Swipe Gestures */}
           <section className="space-y-4">
             <h2 className="text-lg font-bold text-gray-900 luxury-portuguese-accent">
               Portuguese-speaking community Events
@@ -334,7 +334,7 @@ export default function MobilePreviewPage() {
             <LuxuryPlaceholder
               icon={<CalendarDaysIcon className="w-full h-full" />}
               title="No Events Found"
-              description="There are no Portuguese events in your area right now. Be the first to create one!"
+              description="There are no Lusophone events in your area right now. Be the first to create one!"
               action={{
                 label: "Create Event",
                 onClick: () => console.log('Create event clicked')

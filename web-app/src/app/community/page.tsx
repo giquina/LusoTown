@@ -22,7 +22,7 @@ const recentActivities = [
     type: 'event',
     title: 'Noite de Fado at Vauxhall Cultural Centre',
     titlePt: 'Noite de Fado no Centro Cultural Vauxhall',
-    group: 'Portuguese Culture',
+    group: 'Lusophone Culture',
     groupPt: 'Cultura Portuguesa',
     attendees: 35,
     date: 'This Friday, 7:30 PM',
@@ -48,7 +48,7 @@ const recentActivities = [
   },
   {
     type: 'event',
-    title: 'Portuguese Language Exchange',
+    title: 'Lusophone Language Exchange',
     titlePt: 'Intercâmbio de Língua Portuguesa',
     group: 'Language Learning',
     groupPt: 'Aprendizagem de Línguas',
@@ -70,7 +70,7 @@ const memberSpotlight = [
     origin: 'Porto, Portugal',
     originPt: 'Porto, Portugal',
     image: getImageWithFallback('sarah-chen'),
-    quote: 'Found my Portuguese network here! From Sunday lunches to Fado nights, I feel at home again.',
+    quote: 'Found my Lusophone network here! From Sunday lunches to Fado nights, I feel at home again.',
     quotePt: 'Encontrei a minha rede portuguesa aqui! Dos almoços de domingo às noites de Fado, sinto-me em casa novamente.',
     activity: 'Organized 5 cultural events',
     activityPt: 'Organizou 5 eventos culturais',
@@ -108,18 +108,18 @@ const memberSpotlight = [
 const communityAreas = [
   {
     name: 'Stockwell',
-    description: 'Heart of Portuguese London with traditional bakeries and Portuguese businesses',
+    description: 'Heart of Lusophone London with traditional bakeries and Portuguese businesses',
     descriptionPt: 'Coração de Londres Portuguesa com padarias tradicionais e negócios portugueses',
-    highlights: ['Portuguese bakeries', 'Portuguese restaurants', 'Cultural center'],
+    highlights: ['Lusophone bakeries', 'Portuguese restaurants', 'Cultural center'],
     highlightsPt: ['Padarias portuguesas', 'Restaurantes portugueses', 'Centro cultural'],
     members: '150+',
     icon: '🥖'
   },
   {
     name: 'Vauxhall',
-    description: 'Cultural hub with Portuguese churches and community events',
+    description: 'Cultural hub with Lusophone churches and community events',
     descriptionPt: 'Centro cultural com igrejas portuguesas e eventos comunitários',
-    highlights: ['Portuguese church', 'Cultural events', 'Community center'],
+    highlights: ['Lusophone church', 'Cultural events', 'Community center'],
     highlightsPt: ['Igreja portuguesa', 'Eventos culturais', 'Centro comunitário'],
     members: '120+',
     icon: '⛪'
@@ -144,7 +144,7 @@ const communityAreas = [
   }
 ]
 
-// Portuguese origin communities
+// Lusophone origin communities
 const originCommunities = [
   {
     country: 'Portugal',
@@ -193,7 +193,7 @@ export default function Community() {
       <div className="pt-16">
         {/* Hero Section - CONVERSION OPTIMIZED */}
         <section className="relative py-16 overflow-hidden bg-gradient-to-br from-white via-red-50/20 to-green-50/20">
-          {/* Portuguese tile pattern background */}
+          {/* Lusophone tile pattern background */}
           <div className="absolute inset-0 overflow-hidden opacity-10">
             <div className="absolute inset-0" style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c53026' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
@@ -234,13 +234,13 @@ export default function Community() {
                     <span className="bg-gradient-to-r from-green-600 to-red-600 bg-clip-text text-transparent">
                       Finally!
                     </span>{" "}
-                    <span className="text-gray-900">Your Portuguese Community in London</span>
+                    <span className="text-gray-900">Your Lusophone Community in London</span>
                   </h1>
                   
                   {/* Social Proof Stats */}
                   <div className="space-y-4">
                     <p className="text-xl xs:text-2xl sm:text-3xl text-gray-700 leading-relaxed font-medium">
-                      <span className="font-bold text-green-600">750 Portuguese speakers</span> and growing • 
+                      <span className="font-bold text-green-600">Portuguese speakers</span> and growing • 
                       <span className="font-bold text-blue-600">127 active this week</span>
                     </p>
                     
@@ -267,7 +267,7 @@ export default function Community() {
                     >
                       <div className="flex items-center justify-center gap-4 text-xl font-black">
                         <span className="text-xl">🇵🇹</span>
-                        <span>Join Your Portuguese Community - FREE</span>
+                        <span>Join Your Lusophone Community - FREE</span>
                         <motion.div
                           whileHover={{ x: 6 }}
                           transition={{ duration: 0.2 }}
@@ -284,7 +284,7 @@ export default function Community() {
                     >
                       <div className="flex items-center justify-center gap-3 text-lg font-bold">
                         <span className="text-lg">📅</span>
-                        <span>Browse Portuguese Events First</span>
+                        <span>Browse Lusophone Events First</span>
                         <motion.div
                           whileHover={{ x: 4 }}
                           transition={{ duration: 0.2 }}
@@ -336,7 +336,7 @@ export default function Community() {
                           </div>
                           <div className="flex-1">
                             <p className="font-semibold text-green-800">Sunday Brunch Stockwell</p>
-                            <p className="text-sm text-green-600">34 attending • Portuguese bakery</p>
+                            <p className="text-sm text-green-600">34 attending • Lusophone bakery</p>
                           </div>
                         </div>
                         
@@ -364,7 +364,7 @@ export default function Community() {
                   <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/50">
                     <div className="space-y-6">
                       <div className="text-center">
-                        <h3 className="text-xl font-bold text-gray-800 mb-2">Real Portuguese Members</h3>
+                        <h3 className="text-xl font-bold text-gray-800 mb-2">Real Lusophone Members</h3>
                         <div className="flex items-center justify-center gap-2">
                           {[...Array(5)].map((_, i) => (
                             <StarIconSolid key={i} className="w-5 h-5 text-yellow-500" />
@@ -385,13 +385,13 @@ export default function Community() {
                               <CheckIcon className="w-4 h-4 text-green-500" />
                             </div>
                             <p className="text-gray-700 italic leading-relaxed">
-                              "Found my Portuguese community here! From Sunday brunches to Fado nights, I feel at home."
+                              "Found my Lusophone community here! From Sunday brunches to Fado nights, I feel at home."
                             </p>
                             <div className="flex items-center gap-1 mt-2">
                               {[...Array(5)].map((_, i) => (
                                 <StarIconSolid key={i} className="w-3 h-3 text-yellow-500" />
                               ))}
-                              <span className="text-xs text-gray-500 ml-1">Verified Portuguese 🇵🇹</span>
+                              <span className="text-xs text-gray-500 ml-1">Verified Lusophone 🇵🇹</span>
                             </div>
                           </div>
                         </div>
@@ -413,7 +413,7 @@ export default function Community() {
                           </div>
                         </div>
                         <p className="text-gray-600 font-medium">
-                          <span className="font-bold text-green-600">750 Portuguese speakers</span> already connected
+                          <span className="font-bold text-green-600">Portuguese speakers</span> already connected
                         </p>
                       </div>
                     </div>
@@ -446,7 +446,7 @@ export default function Community() {
                   {isPortuguese ? (
                     'Junta-te a estes eventos culturais portugueses acontecendo esta semana por Londres'
                   ) : (
-                    'Join these Portuguese cultural events happening this week across London'
+                    'Join these Lusophone cultural events happening this week across London'
                   )}
                 </p>
               </div>
@@ -589,7 +589,7 @@ export default function Community() {
           </div>
         </section>
 
-        {/* Portuguese Origins Communities */}
+        {/* Lusophone Origins Communities */}
         <section className="py-16 bg-white">
           <div className="container-width">
             <motion.div
@@ -722,7 +722,7 @@ export default function Community() {
           </div>
         </section>
 
-        {/* Portuguese Cultural Heritage & Values */}
+        {/* Lusophone Cultural Heritage & Values */}
         <section className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
           <div className="container-width">
             <motion.div
@@ -802,13 +802,13 @@ export default function Community() {
                       <CheckCircleIcon className="h-6 w-6 text-coral-400 flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-gray-900 mb-2">
-                          {isPortuguese ? 'Hospitalidade Portuguesa' : 'Portuguese Hospitality'}
+                          {isPortuguese ? 'Hospitalidade Portuguesa' : 'Lusophone Hospitality'}
                         </h3>
                         <p className="text-gray-600 text-sm leading-relaxed">
                           {isPortuguese ? (
                             'Abrimos os braços a todos. "Onde há portugueses, há sempre uma mesa para mais um."'
                           ) : (
-                            'We welcome everyone with open arms. "Where there are Portuguese people, there\'s always room for one more."'
+                            'We welcome everyone with open arms. "Where there are Lusophone people, there\'s always room for one more."'
                           )}
                         </p>
                       </div>
@@ -817,7 +817,7 @@ export default function Community() {
                       <CheckCircleIcon className="h-6 w-6 text-primary-400 flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-gray-900 mb-2">
-                          {isPortuguese ? 'Diversidade Lusófona' : 'Portuguese-Speaking Diversity'}
+                          {isPortuguese ? 'Diversidade Lusófona' : 'Lusophone-Speaking Diversity'}
                         </h3>
                         <p className="text-gray-600 text-sm leading-relaxed">
                           {isPortuguese ? (
@@ -850,7 +850,7 @@ export default function Community() {
           </div>
         </section>
 
-        {/* Portuguese Business Directory Integration */}
+        {/* Lusophone Business Directory Integration */}
         <section className="py-16 bg-white">
           <div className="container-width">
             <motion.div
@@ -864,7 +864,7 @@ export default function Community() {
                 {isPortuguese ? (
                   <>Negócios <span className="gradient-text">Portugueses</span> em Londres</>
                 ) : (
-                  <>Portuguese <span className="gradient-text">Businesses</span> in London</>
+                  <>Lusophone <span className="gradient-text">Businesses</span> in London</>
                 )}
               </h2>
               <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
@@ -910,7 +910,7 @@ export default function Community() {
                     {isPortuguese ? (
                       'Cabeleireiros, tradutores, contabilistas que falam português e compreendem as nossas necessidades.'
                     ) : (
-                      'Hairdressers, translators, accountants who speak Portuguese and understand our needs.'
+                      'Hairdressers, translators, accountants who speak Lusophone and understand our needs.'
                     )}
                   </p>
                   <span className="text-secondary-600 font-semibold text-sm">40+ {isPortuguese ? 'serviços' : 'services'}</span>
@@ -930,7 +930,7 @@ export default function Community() {
                     {isPortuguese ? (
                       'Escolas de português, aulas de guitarra, grupos de dança tradicional portuguesa.'
                     ) : (
-                      'Portuguese schools, guitar lessons, traditional Portuguese dance groups.'
+                      'Lusophone schools, guitar lessons, traditional Lusophone dance groups.'
                     )}
                   </p>
                   <span className="text-accent-600 font-semibold text-sm">15+ {isPortuguese ? 'programas' : 'programs'}</span>
@@ -964,14 +964,14 @@ export default function Community() {
                   {isPortuguese ? (
                     <>Pronto para se Juntar à <span className="gradient-text">Rede Portuguesa?</span></>
                   ) : (
-                    <>Ready to Join the <span className="gradient-text">Portuguese Network?</span></>
+                    <>Ready to Join the <span className="gradient-text">Lusophone Network?</span></>
                   )}
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
                   {isPortuguese ? (
                     `A tua rede portuguesa está à espera. Junta-te a ${stats.members} falantes de português que fizeram de Londres a sua casa, uma conexão profissional de cada vez. Unidos pela língua, unidos pela ambição.`
                   ) : (
-                    `Your Portuguese network is waiting. Join ${stats.members} Portuguese speakers who have made London their home, one professional connection at a time. United by language, united by ambition.`
+                    `Your Lusophone network is waiting. Join ${stats.members} Portuguese speakers who have made London their home, one professional connection at a time. United by language, united by ambition.`
                   )}
                 </p>
                 
@@ -1013,7 +1013,7 @@ export default function Community() {
                   <div className="flex flex-col items-center gap-2">
                     <CheckCircleIcon className="h-6 w-6 text-green-500" />
                     <span className="text-gray-600 font-medium">
-                      {isPortuguese ? 'Rede portuguesa' : 'Portuguese network'}
+                      {isPortuguese ? 'Rede portuguesa' : 'Lusophone network'}
                     </span>
                   </div>
                 </div>

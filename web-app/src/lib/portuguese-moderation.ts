@@ -1,4 +1,4 @@
-// Portuguese Content Moderation System
+// Lusophone Content Moderation System
 // AI-powered content filtering for Portuguese language variants
 
 interface ModerationResult {
@@ -44,7 +44,7 @@ const PORTUGUESE_VARIANTS: Record<string, PortugueseVariant> = {
   }
 }
 
-// Toxic content patterns for Portuguese
+// Toxic content patterns for Lusophone
 const TOXIC_PATTERNS = {
   hate_speech: [
     // General hate speech patterns
@@ -72,7 +72,7 @@ const TOXIC_PATTERNS = {
 
 // Positive cultural references to preserve
 const CULTURAL_POSITIVES = [
-  // Portuguese cultural elements
+  // Lusophone cultural elements
   'fado', 'pastéis de nata', 'bacalhau', 'saudade', 'azulejos',
   // Brazilian cultural elements  
   'samba', 'carnival', 'caipirinha', 'feijoada', 'bossa nova',
@@ -81,7 +81,7 @@ const CULTURAL_POSITIVES = [
   'pelé', 'fernando pessoa', 'machado de assis'
 ]
 
-// Portuguese profanity filter with context consideration
+// Lusophone profanity filter with context consideration
 const PROFANITY_LEVELS = {
   mild: ['droga', 'raios', 'porra', 'caralho'], // Common but not severely offensive
   moderate: ['merda', 'fodasse', 'cabrão', 'puta'], // More offensive
@@ -272,7 +272,7 @@ export class PortugueseModerationEngine {
     return undefined
   }
 
-  // Auto-moderate common Portuguese expressions that might be flagged incorrectly
+  // Auto-moderate common Lusophone expressions that might be flagged incorrectly
   isPortugueseExpression(message: string): boolean {
     const commonExpressions = [
       'porra', // Common exclamation, not always offensive

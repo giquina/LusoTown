@@ -81,7 +81,7 @@ export default function TVPage() {
   const categories = [
     {
       id: "portuguese-culture",
-      name: isPortuguese ? "Cultura Portuguesa" : "Portuguese Culture",
+      name: isPortuguese ? "Cultura Portuguesa" : "Lusophone Culture",
       description: isPortuguese
         ? "Música, tradição e arte"
         : "Music, tradition and art",
@@ -258,7 +258,7 @@ export default function TVPage() {
               <span className="hidden sm:block">
                 {isPortuguese
                   ? "Canal Cultural Português de Londres"
-                  : "Portuguese Cultural Channel from London"}
+                  : "Lusophone Cultural Channel from London"}
               </span>
               <span className="sm:hidden">
                 {isPortuguese ? "LusoTown TV" : "LusoTown TV"}

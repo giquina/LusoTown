@@ -30,7 +30,7 @@ export default function NotFound() {
             <p className="text-gray-600 leading-relaxed">
               {isPortuguese 
                 ? 'Parece que esta página decidiu explorar outro bairro português! Vamos ajudá-lo a encontrar o que procura.'
-                : 'Looks like this page decided to explore another Portuguese neighborhood! Let\'s help you find what you\'re looking for.'
+                : 'Looks like this page decided to explore another Lusophone neighborhood! Let\'s help you find what you\'re looking for.'
               }
             </p>
           </div>
@@ -88,7 +88,7 @@ export default function NotFound() {
             <p className="text-xs text-gray-600 italic">
               {isPortuguese 
                 ? '"Onde há portugueses, há sempre uma mesa para mais um" - A comunidade de falantes de português de Londres espera por si!'
-                : '"Where there are Portuguese, there\'s always room for one more" - The Portuguese-speaking community in London awaits you!'
+                : '"Where there are Lusophone, there\'s always room for one more" - The Portuguese-speaking community in London awaits you!'
               }
             </p>
           </div>

@@ -1,8 +1,8 @@
-# Portuguese Cultural Conversation Starter System
+# Lusophone Cultural Conversation Starter System
 
 ## Overview
 
-This implementation provides a TikTok-style messaging restriction system with Portuguese cultural conversation starters for the LusoTown matches page. The system ensures that messaging is only available after meaningful connections are established while providing culturally relevant conversation tools.
+This implementation provides a TikTok-style messaging restriction system with Lusophone cultural conversation starters for the LusoTown matches page. The system ensures that messaging is only available after meaningful connections are established while providing culturally relevant conversation tools.
 
 ## Key Features
 
@@ -11,7 +11,7 @@ This implementation provides a TikTok-style messaging restriction system with Po
 - **Event-Based Messaging**: Alternative unlock method through attending shared events
 - **Security First**: Prevents unsolicited messages and harassment
 
-### 🇵🇹 Portuguese Cultural Conversation Starters
+### 🇵🇹 Lusophone Cultural Conversation Starters
 - **30+ Authentic Starters**: Culturally relevant phrases covering Portuguese heritage topics
 - **Regional Awareness**: Content adapted for different Portuguese-speaking regions
 - **Cultural Context**: Each starter includes educational context about Portuguese culture
@@ -28,12 +28,12 @@ This implementation provides a TikTok-style messaging restriction system with Po
 ### Core Components
 
 #### 1. `ConversationStarters.tsx`
-**Purpose**: Main component for displaying Portuguese cultural conversation starters
+**Purpose**: Main component for displaying Lusophone cultural conversation starters
 
 **Features**:
 - Displays 6 personalized conversation starters
 - Cultural context explanations for each starter
-- Bilingual support (English/Portuguese)
+- Bilingual support (English/Lusophone)
 - Real-time personalization based on user profiles
 - Edit and customize message functionality
 
@@ -72,14 +72,14 @@ This implementation provides a TikTok-style messaging restriction system with Po
 - Statistics tracking for conversations started
 - Seamless user experience across discovery and messaging
 
-## Portuguese Cultural Content Database
+## Lusophone Cultural Content Database
 
 ### Conversation Categories
 
-#### 1. **Portuguese Food & Cuisine**
+#### 1. **Lusophone Food & Cuisine**
 - Pastéis de nata recommendations
 - Authentic recipe sharing
-- Portuguese bakery discoveries
+- Lusophone bakery discoveries
 - Regional food specialties
 
 #### 2. **Saudade & Heritage**
@@ -89,12 +89,12 @@ This implementation provides a TikTok-style messaging restriction system with Po
 - Immigrant experiences
 
 #### 3. **Regional Heritage**
-- Portuguese regional traditions
+- Lusophone regional traditions
 - Lusophone country diversity
 - Local customs and celebrations
 - Family heritage stories
 
-#### 4. **Portuguese Festivals**
+#### 4. **Lusophone Festivals**
 - São João celebrations in United Kingdom
 - Santos Populares traditions
 - Carnival experiences
@@ -106,10 +106,10 @@ This implementation provides a TikTok-style messaging restriction system with Po
 - Cultural performances in London
 - Traditional arts and crafts
 
-#### 6. **London Portuguese Life**
+#### 6. **London Lusophone Life**
 - Community spaces and gathering spots
 - Adaptation experiences
-- Portuguese services in London
+- Lusophone services in London
 - Networking and professional connections
 
 #### 7. **Event-Specific Starters**
@@ -121,7 +121,7 @@ This implementation provides a TikTok-style messaging restriction system with Po
 ### Sample Conversation Starters
 
 #### Food & Culture
-- **EN**: "What's your favorite Portuguese dish? I'm always looking for authentic recipes!"
+- **EN**: "What's your favorite Lusophone dish? I'm always looking for authentic recipes!"
 - **PT**: "Qual é o teu prato português favorito? Estou sempre à procura de receitas autênticas!"
 
 #### Saudade & Heritage
@@ -224,7 +224,7 @@ CREATE TABLE message_authorizations (
 - Conversation starters become available
 
 ### 4. Conversation Phase
-- User sees personalized Portuguese cultural starters
+- User sees personalized Lusophone cultural starters
 - Selects appropriate starter for the match
 - Can customize message before sending
 - Conversation begins with cultural context
@@ -236,7 +236,7 @@ CREATE TABLE message_authorizations (
 
 ## Cultural Authenticity
 
-### Portuguese Diaspora Focus
+### Lusophone Diaspora Focus
 - Content reflects real immigrant experiences
 - Acknowledges homesickness and cultural adaptation
 - Celebrates Portuguese heritage preservation
@@ -245,7 +245,7 @@ CREATE TABLE message_authorizations (
 ### Lusophone Inclusivity
 - Content for Portugal, Brazil, Angola, Mozambique, etc.
 - Respects regional differences and traditions
-- Uses appropriate Portuguese variants
+- Uses appropriate Lusophone variants
 - Celebrates diversity within Portuguese-speaking world
 
 ### Community-Driven Content
@@ -259,7 +259,7 @@ CREATE TABLE message_authorizations (
 ### Key Metrics
 - **Conversation Success Rate**: Percentage leading to ongoing conversations
 - **Starter Popularity**: Most/least successful cultural topics
-- **Cultural Engagement**: Which Portuguese themes resonate most
+- **Cultural Engagement**: Which Lusophone themes resonate most
 - **Regional Preferences**: Success by Portuguese-speaking regions
 - **Event Impact**: Conversation success for event-based vs mutual matches
 
@@ -273,9 +273,9 @@ CREATE TABLE message_authorizations (
 
 ### Planned Features
 1. **Seasonal Content**: Christmas, São João, Carnival-specific starters
-2. **Regional Dialects**: Brazil vs Portugal Portuguese variants
-3. **Voice Messages**: Audio conversation starters with Portuguese accent
-4. **Cultural Tips**: Educational content about Portuguese customs
+2. **Regional Dialects**: Brazil vs Portugal Lusophone variants
+3. **Voice Messages**: Audio conversation starters with Lusophone accent
+4. **Cultural Tips**: Educational content about Lusophone customs
 5. **Success Stories**: Share positive conversation outcomes
 6. **AI Suggestions**: Machine learning for personalized starter creation
 
@@ -315,6 +315,6 @@ Update i18n files with new conversation starter translations (already added to e
 
 ## Conclusion
 
-This Portuguese cultural conversation starter system provides a secure, culturally authentic, and engaging way for Portuguese speakers in the United Kingdom to connect. By combining TikTok-style safety restrictions with rich Portuguese cultural content, it ensures meaningful connections while preserving the community's heritage and values.
+This Lusophone cultural conversation starter system provides a secure, culturally authentic, and engaging way for Portuguese speakers in the United Kingdom to connect. By combining TikTok-style safety restrictions with rich Lusophone cultural content, it ensures meaningful connections while preserving the community's heritage and values.
 
 The system respects user safety, celebrates Portuguese culture, and facilitates genuine connections through shared experiences and cultural understanding.

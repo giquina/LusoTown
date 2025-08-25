@@ -339,7 +339,7 @@ class ReferralService {
           subject: 'Join the Portuguese-speaking community in London - LusoTown',
           body: `Hi!\n\nI wanted to invite you to join LusoTown, the Portuguese-speaking community platform I've been using in London. It's been amazing for connecting with other Portuguese speakers, finding cultural events, and accessing Portuguese-speaking services.\n\nUse my referral code ${code} when you sign up and you'll get 25% off your first month!\n\nJoin here: ${referralUrl}\n\nLooking forward to seeing you in the community!\n\nBest regards`
         },
-        generic: `Join LusoTown - London's Portuguese-speaking community platform! Use code ${code} for 25% off. Connect with Portuguese speakers, discover cultural events, and access Portuguese services. ${referralUrl}`
+        generic: `Join LusoTown - London's Portuguese-speaking community platform! Use code ${code} for 25% off. Connect with Portuguese speakers, discover cultural events, and access Lusophone services. ${referralUrl}`
       },
       pt: {
         whatsapp: `Junte-se a mim no LusoTown - a plataforma da comunidade de falantes de português em Londres! Use o meu código ${code} e ganhe 25% de desconto no primeiro mês. Perfeito para conectar com falantes de português. ${referralUrl}`,

@@ -33,7 +33,7 @@ export default function LiveFeedNotifications() {
     // Recent signups with compelling hooks
     { type: 'signup', name: 'Sofia Pereira', location: 'Camden, London', icon: '👋', countryFlag: '🇵🇹', country: 'Portugal',
       message: 'joined and found 3 events this week!', messagePt: 'juntou-se e encontrou 3 eventos esta semana!',
-      engagementHook: '💎 Just discovered premium transport to Portuguese events', engagementHookPt: '💎 Acabou de descobrir transporte premium para eventos portugueses' },
+      engagementHook: '💎 Just discovered premium transport to Lusophone events', engagementHookPt: '💎 Acabou de descobrir transporte premium para eventos portugueses' },
     { type: 'signup', name: 'Miguel Santos', location: 'Vauxhall, London', icon: '🎉', countryFlag: '🇧🇷', country: 'Brazil',
       message: 'connected with 12 Brazilians in London!', messagePt: 'conectou-se com 12 brasileiros em Londres!',
       engagementHook: '🚀 Already booked 2 cultural meetups', engagementHookPt: '🚀 Já reservou 2 encontros culturais' },
@@ -51,7 +51,7 @@ export default function LiveFeedNotifications() {
     // Premium subscriptions with success metrics
     { type: 'subscription', name: 'Carlos Ribeiro', location: 'Kensington, London', icon: '⭐', countryFlag: '🇵🇹', country: 'Portugal',
       message: 'unlocked Cultural Ambassador - saved £200 on events!', messagePt: 'desbloqueou Embaixador Cultural - poupou £200 em eventos!',
-      engagementHook: '💰 Members save average £150/month on Portuguese services', engagementHookPt: '💰 Membros poupam em média £150/mês em serviços portugueses' },
+      engagementHook: '💰 Members save average £150/month on Lusophone services', engagementHookPt: '💰 Membros poupam em média £150/mês em serviços portugueses' },
     { type: 'subscription', name: 'Mariana Lopes', location: 'Canary Wharf, London', icon: '🚀', countryFlag: '🇧🇷', country: 'Brazil',
       message: 'got premium transport + 15 exclusive invites!', messagePt: 'obteve transporte premium + 15 convites exclusivos!',
       engagementHook: '🎯 Premium members get 3x more business opportunities', engagementHookPt: '🎯 Membros premium obtêm 3x mais oportunidades de negócio' },
@@ -63,7 +63,7 @@ export default function LiveFeedNotifications() {
     // Event bookings with social proof
     { type: 'event', name: 'Inês Rodrigues', location: 'Hampstead, London', icon: '🎭', countryFlag: '🇵🇹', country: 'Portugal',
       message: 'secured last spot at sold-out Fado Night!', messagePt: 'garantiu último lugar na Noite de Fado esgotada!',
-      engagementHook: '🔥 89% of Portuguese events sell out within 24h', engagementHookPt: '🔥 89% dos eventos portugueses esgotam em 24h' },
+      engagementHook: '🔥 89% of Lusophone events sell out within 24h', engagementHookPt: '🔥 89% dos eventos portugueses esgotam em 24h' },
     { type: 'event', name: 'Pedro Oliveira', location: 'Clapham, London', icon: '🍷', countryFlag: '🇵🇹', country: 'Portugal',
       message: 'met his future business partner at wine tasting!', messagePt: 'conheceu o seu futuro parceiro de negócios na prova de vinhos!',
       engagementHook: '💼 73% of members find business opportunities at events', engagementHookPt: '💼 73% dos membros encontram oportunidades de negócio em eventos' },
@@ -152,11 +152,11 @@ export default function LiveFeedNotifications() {
 
     // Cultural activities
     { type: 'cultural', name: 'Leonor Almeida', location: 'Covent Garden, London', icon: '🇵🇹', 
-      message: 'organized Portuguese cultural event', messagePt: 'organizou evento cultural português' },
+      message: 'organized Lusophone cultural event', messagePt: 'organizou evento cultural português' },
     { type: 'cultural', name: 'Eduardo Neves', location: 'Camden Town, London', icon: '🎭', 
       message: 'promoted Portuguese heritage', messagePt: 'promoveu património português' },
     { type: 'cultural', name: 'Susana Lopes', location: 'Hampstead Heath, London', icon: '📚', 
-      message: 'shared Portuguese story', messagePt: 'partilhou história portuguesa' },
+      message: 'shared Lusophone story', messagePt: 'partilhou história portuguesa' },
 
     // Transport activities
     { type: 'transport', name: 'Nuno Cardoso', location: 'Canary Wharf, London', icon: '🚗', 
@@ -168,7 +168,7 @@ export default function LiveFeedNotifications() {
     { type: 'review', name: 'Mário Pires', location: 'Waterloo, London', icon: '⭐', 
       message: 'left 5-star business review', messagePt: 'deixou avaliação de 5 estrelas' },
     { type: 'review', name: 'Cristina Marques', location: 'Bank, London', icon: '👍', 
-      message: 'recommended Portuguese service', messagePt: 'recomendou serviço português' },
+      message: 'recommended Lusophone service', messagePt: 'recomendou serviço português' },
 
     // Partnership activities
     { type: 'partnership', name: 'Francisco Gomes', location: 'King\'s College, London', icon: '🎓', 
@@ -214,15 +214,15 @@ export default function LiveFeedNotifications() {
       }, 9000);
     };
 
-    // Show first notification after 3 seconds
-    const initialTimeout = setTimeout(showNotification, 3000);
+    // Show first notification after 5 seconds (less intrusive)
+    const initialTimeout = setTimeout(showNotification, 5000);
 
-    // Then show notifications every 8-12 seconds
+    // Then show notifications every 15-20 seconds (less frequent)
     const interval = setInterval(() => {
       if (!isVisible) {
         showNotification();
       }
-    }, Math.random() * 4000 + 8000); // 8-12 seconds
+    }, Math.random() * 5000 + 15000); // 15-20 seconds
 
     return () => {
       clearTimeout(initialTimeout);
@@ -323,7 +323,7 @@ export default function LiveFeedNotifications() {
             damping: 25,
             duration: 0.6
           }}
-          className="fixed bottom-6 left-6 z-50 max-w-sm hidden md:block"
+          className="fixed bottom-20 left-4 right-4 md:bottom-6 md:left-6 md:right-auto z-50 max-w-sm md:max-w-sm mx-auto md:mx-0"
           style={{
             filter: `drop-shadow(0 8px 32px ${colorScheme.glow}50) drop-shadow(0 4px 16px rgba(0,0,0,0.2))`
           }}

@@ -100,7 +100,7 @@ export default function AcademyHomePage() {
       name: "Student",
       namePortuguese: "Estudante",
       description:
-        "Learn about housing, academic support, and connecting with other Portuguese students",
+        "Learn about housing, academic support, and connecting with other Lusophone students",
       descriptionPortuguese:
         "Aprenda sobre alojamento, apoio académico e conectar-se com outros estudantes portugueses",
       icon: GraduationCap,
@@ -208,7 +208,7 @@ export default function AcademyHomePage() {
       id: "live-streaming",
       name: "Live Streaming",
       namePortuguese: "Transmissão Ao Vivo",
-      description: "Create and watch Portuguese cultural content",
+      description: "Create and watch Lusophone cultural content",
       descriptionPortuguese: "Crie e assista conteúdo cultural português",
       icon: Video,
       difficulty: "Intermediate",

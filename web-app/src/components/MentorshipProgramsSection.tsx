@@ -22,8 +22,8 @@ export default function MentorshipProgramsSection() {
       id: 'professional',
       icon: BriefcaseIcon,
       title: t('mentorship.programs.professional.title', 'Professional Integration Mentorship'),
-      subtitle: t('mentorship.programs.professional.subtitle', 'Career advancement with Portuguese professionals'),
-      description: t('mentorship.programs.professional.description', 'Connect with established Portuguese professionals across finance, healthcare, hospitality, construction, and technology sectors. Get industry-specific guidance, CV reviews, interview practice, and business networking within the Portuguese-speaking community.'),
+      subtitle: t('mentorship.programs.professional.subtitle', 'Career advancement with Lusophone professionals'),
+      description: t('mentorship.programs.professional.description', 'Connect with established Lusophone professionals across finance, healthcare, hospitality, construction, and technology sectors. Get industry-specific guidance, CV reviews, interview practice, and business networking within the Portuguese-speaking community.'),
       features: [
         t('mentorship.programs.professional.feature1', 'Industry-specific career guidance'),
         t('mentorship.programs.professional.feature2', 'CV review and interview preparation'),
@@ -49,9 +49,9 @@ export default function MentorshipProgramsSection() {
       icon: LanguageIcon,
       title: t('mentorship.programs.language.title', 'Language Exchange Partnerships'),
       subtitle: t('mentorship.programs.language.subtitle', 'Bilingual practice with cultural connection'),
-      description: t('mentorship.programs.language.description', 'Practice Portuguese and English through meaningful conversations with native speakers. Connect across generations with Portuguese elders sharing wisdom and British-Portuguese youth exploring their heritage. Cultural knowledge preservation through language.'),
+      description: t('mentorship.programs.language.description', 'Practice Lusophone and English through meaningful conversations with native speakers. Connect across generations with Lusophone elders sharing wisdom and British-Lusophone youth exploring their heritage. Cultural knowledge preservation through language.'),
       features: [
-        t('mentorship.programs.language.feature1', 'Portuguese-English conversation practice'),
+        t('mentorship.programs.language.feature1', 'Lusophone-English conversation practice'),
         t('mentorship.programs.language.feature2', 'Cross-generational cultural exchange'),
         t('mentorship.programs.language.feature3', 'Heritage exploration sessions'),
         t('mentorship.programs.language.feature4', 'Cultural storytelling traditions'),
@@ -59,10 +59,10 @@ export default function MentorshipProgramsSection() {
         t('mentorship.programs.language.feature6', 'Family history documentation')
       ],
       pairings: [
-        t('mentorship.programs.language.pairing1', 'Portuguese Elders ↔ British-Portuguese Youth'),
-        t('mentorship.programs.language.pairing2', 'Native Portuguese ↔ English Learners'),
+        t('mentorship.programs.language.pairing1', 'Lusophone Elders ↔ British-Lusophone Youth'),
+        t('mentorship.programs.language.pairing2', 'Native Lusophone ↔ English Learners'),
         t('mentorship.programs.language.pairing3', 'Recent Immigrants ↔ Established Community'),
-        t('mentorship.programs.language.pairing4', 'Students ↔ Professional Portuguese Speakers')
+        t('mentorship.programs.language.pairing4', 'Students ↔ Professional Lusophone Speakers')
       ],
       gradient: 'from-accent-500 to-coral-500',
       bgGradient: 'from-accent-50/60 via-transparent to-coral-50/40',
@@ -73,22 +73,22 @@ export default function MentorshipProgramsSection() {
       icon: PaintBrushIcon,
       title: t('mentorship.programs.cultural.title', 'Skill Sharing Marketplace'),
       subtitle: t('mentorship.programs.cultural.subtitle', 'Preserve and learn Portuguese traditions'),
-      description: t('mentorship.programs.cultural.description', 'Learn traditional Portuguese crafts, authentic cooking techniques, fado music, and cultural arts from skilled community members. Share your own expertise while preserving Portuguese heritage for future generations.'),
+      description: t('mentorship.programs.cultural.description', 'Learn traditional Lusophone crafts, authentic cooking techniques, fado music, and cultural arts from skilled community members. Share your own expertise while preserving Portuguese heritage for future generations.'),
       features: [
-        t('mentorship.programs.cultural.feature1', 'Traditional Portuguese crafts instruction'),
+        t('mentorship.programs.cultural.feature1', 'Traditional Lusophone crafts instruction'),
         t('mentorship.programs.cultural.feature2', 'Authentic cooking and baking classes'),
         t('mentorship.programs.cultural.feature3', 'Fado music and cultural arts'),
-        t('mentorship.programs.cultural.feature4', 'Portuguese tile painting (azulejos)'),
+        t('mentorship.programs.cultural.feature4', 'Lusophone tile painting (azulejos)'),
         t('mentorship.programs.cultural.feature5', 'Embroidery and textile arts'),
-        t('mentorship.programs.cultural.feature6', 'Business skills from Portuguese entrepreneurs')
+        t('mentorship.programs.cultural.feature6', 'Business skills from Lusophone entrepreneurs')
       ],
       skills: [
         t('mentorship.programs.cultural.skill1', 'Azulejo Tile Painting'),
-        t('mentorship.programs.cultural.skill2', 'Traditional Portuguese Cooking'),
+        t('mentorship.programs.cultural.skill2', 'Traditional Lusophone Cooking'),
         t('mentorship.programs.cultural.skill3', 'Fado Music & Guitar'),
-        t('mentorship.programs.cultural.skill4', 'Portuguese Embroidery'),
+        t('mentorship.programs.cultural.skill4', 'Lusophone Embroidery'),
         t('mentorship.programs.cultural.skill5', 'Business & Entrepreneurship'),
-        t('mentorship.programs.cultural.skill6', 'Portuguese Literature & Poetry')
+        t('mentorship.programs.cultural.skill6', 'Lusophone Literature & Poetry')
       ],
       gradient: 'from-action-500 to-premium-500',
       bgGradient: 'from-action-50/60 via-transparent to-premium-50/40',
@@ -98,7 +98,7 @@ export default function MentorshipProgramsSection() {
 
   return (
     <section id="mentorship-programs" className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30 relative overflow-hidden">
-      {/* Portuguese-inspired background elements */}
+      {/* Lusophone-inspired background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/40 via-accent-100/30 to-coral-100/30 rounded-full opacity-60 animate-pulse" />
         <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-tr from-action-200/40 via-secondary-100/30 to-accent-100/30 rounded-full opacity-50 animate-bounce" style={{ animationDuration: '8s' }} />
@@ -142,7 +142,7 @@ export default function MentorshipProgramsSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl sm:text-2xl text-gray-700 mb-6 font-medium max-w-5xl mx-auto leading-relaxed"
             >
-              {t('mentorship.programs.subtitle', 'Three specialized pathways connecting Portuguese professionals, language learners, and cultural knowledge sharers across London')}
+              {t('mentorship.programs.subtitle', 'Three specialized pathways connecting Lusophone professionals, language learners, and cultural knowledge sharers across London')}
             </motion.p>
           </div>
 

@@ -150,7 +150,7 @@ export const VERIFICATION_BADGES: VerificationBadge[] = [
     minimumAge: 25,
     prerequisites: ['Community leadership experience', 'Cultural event involvement', 'Community respect and recognition'],
     
-    sampleProfiles: ['Maria Cardoso - Angolan Independence Day Organizer', 'Tiago Moreira - Portuguese Business Podcast', 'Isabella Lima - Brazilian Cultural Education'],
+    sampleProfiles: ['Maria Cardoso - Angolan Independence Day Organizer', 'Tiago Moreira - Lusophone Business Podcast', 'Isabella Lima - Brazilian Cultural Education'],
     
     isActive: true,
     featured: true
@@ -168,7 +168,7 @@ export const VERIFICATION_BADGES: VerificationBadge[] = [
     color: '#EC4899', // pink-500
     backgroundColor: '#FCE7F3', // pink-100
     
-    description: 'Single Portuguese-speaker actively seeking meaningful romantic connections within our cultural community',
+    description: 'Single Lusophone-speaker actively seeking meaningful romantic connections within our cultural community',
     descriptionPortuguese: 'Lusófono solteiro procurando ativamente conexões românticas significativas dentro da nossa comunidade cultural',
     
     criteria: 'Must be single, 21+, and actively participating in Portuguese-speaking cultural events seeking romantic connections',
@@ -248,7 +248,7 @@ export const VERIFICATION_BADGES: VerificationBadge[] = [
     minimumAge: 16,
     prerequisites: ['Dance event participation', 'Cultural dance interest', 'Community event attendance'],
     
-    sampleProfiles: ['Chocolate Kizomba regulars', 'Traditional Portuguese folk dancers', 'Cape Verdean morna dancers'],
+    sampleProfiles: ['Chocolate Kizomba regulars', 'Traditional Lusophone folk dancers', 'Cape Verdean morna dancers'],
     
     isActive: true,
     featured: false
@@ -257,7 +257,7 @@ export const VERIFICATION_BADGES: VerificationBadge[] = [
   // HERITAGE AND ACHIEVEMENT BADGES
   {
     id: 'portuguese-heritage-verified',
-    name: '🇵🇹 Portuguese Heritage Verified',
+    name: '🇵🇹 Lusophone Heritage Verified',
     namePortuguese: '🇵🇹 Herança Portuguesa Verificada',
     type: 'heritage',
     
@@ -266,36 +266,36 @@ export const VERIFICATION_BADGES: VerificationBadge[] = [
     color: '#DC2626', // red-600
     backgroundColor: '#FEF2F2', // red-50
     
-    description: 'Verified connection to Portuguese cultural heritage through birth, family, or deep cultural involvement',
+    description: 'Verified connection to Lusophone cultural heritage through birth, family, or deep cultural involvement',
     descriptionPortuguese: 'Conexão verificada com herança cultural portuguesa através de nascimento, família ou envolvimento cultural profundo',
     
-    criteria: 'Portuguese birth, Portuguese ancestry, Portuguese citizenship, or demonstrated deep Portuguese cultural involvement',
+    criteria: 'Lusophone birth, Lusophone ancestry, Lusophone citizenship, or demonstrated deep Lusophone cultural involvement',
     criteriaPortuguese: 'Nascimento português, ascendência portuguesa, cidadania portuguesa ou envolvimento cultural português profundo demonstrado',
     
-    verificationMethod: 'Documentation of Portuguese connection through official documents or extensive cultural involvement proof',
+    verificationMethod: 'Documentation of Lusophone connection through official documents or extensive cultural involvement proof',
     verificationMethodPortuguese: 'Documentação de conexão portuguesa através de documentos oficiais ou prova de envolvimento cultural extenso',
     
     documentsRequired: [
-      'Portuguese passport/birth certificate OR',
-      'Portuguese ancestry documentation OR',
-      'Extensive Portuguese cultural involvement proof',
+      'Lusophone passport/birth certificate OR',
+      'Lusophone ancestry documentation OR',
+      'Extensive Lusophone cultural involvement proof',
       'Language proficiency demonstration',
       'Cultural knowledge assessment'
     ],
     verificationTime: '3-5 business days',
     
-    culturalImportance: 'Validates authentic Portuguese cultural connection for community trust and cultural preservation',
+    culturalImportance: 'Validates authentic Lusophone cultural connection for community trust and cultural preservation',
     culturalImportancePortuguese: 'Valida conexão cultural portuguesa autêntica para confiança comunitária e preservação cultural',
     
-    communityBenefit: 'Builds trust within Portuguese community and validates cultural authority for traditional practices',
+    communityBenefit: 'Builds trust within Lusophone community and validates cultural authority for traditional practices',
     communityBenefitPortuguese: 'Constrói confiança dentro da comunidade portuguesa e valida autoridade cultural para práticas tradicionais',
     
     trustLevel: 9,
     popularityScore: 91,
     communityRespect: 89,
     
-    eligibleCountries: ['Portugal', 'Portuguese diaspora worldwide'],
-    prerequisites: ['Portuguese cultural connection', 'Language demonstration', 'Cultural respect'],
+    eligibleCountries: ['Portugal', 'Lusophone diaspora worldwide'],
+    prerequisites: ['Lusophone cultural connection', 'Language demonstration', 'Cultural respect'],
     
     sampleProfiles: ['Carlos Silva - Porto', 'Miguel - Porto heritage', 'Portuguese business owners'],
     
@@ -421,7 +421,7 @@ export const VERIFICATION_BADGES: VerificationBadge[] = [
     
     documentsRequired: [
       'Cape Verdean documentation OR cultural involvement proof',
-      'Portuguese/Creole language demonstration',
+      'Lusophone/Creole language demonstration',
       'Cape Verdean cultural knowledge (morna, coladeira, etc.)',
       'Island community references',
       'Cultural contribution evidence'

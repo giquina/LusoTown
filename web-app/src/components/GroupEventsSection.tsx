@@ -21,7 +21,7 @@ import GroupEventCard, { GroupEventData } from "./GroupEventCard";
 const sampleGroupEvents: GroupEventData[] = [
   {
     id: "group-event-1",
-    title: "Tower of London Portuguese Heritage Tour",
+    title: "Tower of London Lusophone Heritage Tour",
     description:
       "Explore the Tower of London with Portuguese-speaking women 30+ and discover fascinating historical connections between Portugal and England. Guided tour includes Crown Jewels and Beefeater stories.",
     date: "2025-08-18",
@@ -43,13 +43,13 @@ const sampleGroupEvents: GroupEventData[] = [
     hasPhotos: true,
     groupFocus: "Cultural Heritage",
     ageRange: "30-55",
-    languages: ["Portuguese", "English"],
+    languages: ["Lusophone", "English"],
   },
   {
     id: "group-event-2",
     title: "Thames Sunset Tea Cruise",
     description:
-      "Relaxing evening cruise along the Thames with traditional afternoon tea. Perfect for Portuguese women 30+ looking to unwind and connect while enjoying London's skyline at golden hour.",
+      "Relaxing evening cruise along the Thames with traditional afternoon tea. Perfect for Lusophone women 30+ looking to unwind and connect while enjoying London's skyline at golden hour.",
     date: "2025-08-20",
     time: "5:30 PM",
     location: "Westminster Pier, SW1A 2JH",
@@ -69,13 +69,13 @@ const sampleGroupEvents: GroupEventData[] = [
     hasPhotos: true,
     groupFocus: "Social & Relaxation",
     ageRange: "30-50",
-    languages: ["Portuguese", "English"],
+    languages: ["Lusophone", "English"],
   },
   {
     id: "group-event-3",
     title: "St. Paul's Cathedral & City Architecture Walk",
     description:
-      "Sophisticated cultural walk through the City of London, exploring architectural marvels including St. Paul's Cathedral. Designed for Portuguese women 40+ who appreciate history and beautiful design.",
+      "Sophisticated cultural walk through the City of London, exploring architectural marvels including St. Paul's Cathedral. Designed for Lusophone women 40+ who appreciate history and beautiful design.",
     date: "2025-08-22",
     time: "2:00 PM",
     location: "St. Paul's Cathedral, EC4M 8AD",
@@ -94,13 +94,13 @@ const sampleGroupEvents: GroupEventData[] = [
     hasPhotos: true,
     groupFocus: "Architecture & History",
     ageRange: "40-65",
-    languages: ["Portuguese", "English"],
+    languages: ["Lusophone", "English"],
   },
   {
     id: "group-event-4",
     title: "Harry Potter Studio Tour Community Adventure",
     description:
-      "Magical day out at the Warner Bros Studio Tour. Perfect for Portuguese speakers in London - you will be guided by Portuguese hosts and travel with fellow Portuguese speakers, making it feel like going with close friends who share your language and culture while exploring behind-the-scenes magic, costumes, and sets.",
+      "Magical day out at the Warner Bros Studio Tour. Perfect for Portuguese speakers in London - you will be guided by Lusophone hosts and travel with fellow Portuguese speakers, making it feel like going with close friends who share your language and culture while exploring behind-the-scenes magic, costumes, and sets.",
     date: "2025-08-24",
     time: "11:00 AM",
     location: "Warner Bros Studio Tour, WD25 7LR",
@@ -121,13 +121,13 @@ const sampleGroupEvents: GroupEventData[] = [
     hasPhotos: true,
     groupFocus: "Community Connection",
     ageRange: "All ages welcome",
-    languages: ["Portuguese", "English"],
+    languages: ["Lusophone", "English"],
   },
   {
     id: "group-event-5",
-    title: "Borough Market Portuguese Food Tasting",
+    title: "Borough Market Lusophone Food Tasting",
     description:
-      "Discover the best Portuguese and international foods at Borough Market. Join other Portuguese-speaking women 30+ for tastings, shopping, and cultural food discussions.",
+      "Discover the best Lusophone and international foods at Borough Market. Join other Portuguese-speaking women 30+ for tastings, shopping, and cultural food discussions.",
     date: "2025-08-25",
     time: "10:30 AM",
     location: "Borough Market, SE1 9AL",
@@ -147,13 +147,13 @@ const sampleGroupEvents: GroupEventData[] = [
     hasPhotos: true,
     groupFocus: "Food & Culture",
     ageRange: "30-55",
-    languages: ["Portuguese", "English"],
+    languages: ["Lusophone", "English"],
   },
   {
     id: "group-event-6",
     title: "London Zoo Community Safari Day",
     description:
-      "Fun-filled day at London Zoo with Portuguese speakers in London. Educational talks, animal encounters, and activities led by Portuguese guides - experience London's wildlife while connecting with fellow Portuguese speakers who share your language and culture.",
+      "Fun-filled day at London Zoo with Portuguese speakers in London. Educational talks, animal encounters, and activities led by Lusophone guides - experience London's wildlife while connecting with fellow Portuguese speakers who share your language and culture.",
     date: "2025-08-26",
     time: "10:00 AM",
     location: "London Zoo, NW1 4RY",
@@ -173,7 +173,7 @@ const sampleGroupEvents: GroupEventData[] = [
     hasPhotos: true,
     groupFocus: "Wildlife & Education",
     ageRange: "All ages welcome",
-    languages: ["Portuguese", "English"],
+    languages: ["Lusophone", "English"],
   },
 ];
 
@@ -241,7 +241,7 @@ export default function GroupEventsSection({
       <section
         className={`py-24 bg-gradient-to-br from-white via-primary-50/20 to-secondary-50/30 relative overflow-hidden ${className}`}
       >
-        {/* Portuguese-inspired background decorative elements */}
+        {/* Lusophone-inspired background decorative elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-coral-200/40 via-accent-100/30 to-secondary-100/30 rounded-full opacity-60 animate-pulse" />
           <div
@@ -347,7 +347,7 @@ export default function GroupEventsSection({
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {isPortuguese
                     ? "Por que Participar nos Nossos Grupos?"
-                    : "Why Join Our Portuguese Groups?"}
+                    : "Why Join Our Lusophone Groups?"}
                 </h3>
                 <p className="text-gray-700 max-w-3xl mx-auto">
                   {isPortuguese
@@ -369,7 +369,7 @@ export default function GroupEventsSection({
                   <p className="text-sm text-gray-600">
                     {isPortuguese
                       ? "Conheça pessoas que partilham a sua cultura e língua"
-                      : "Connect with Portuguese speakers through shared experiences led by Portuguese hosts and guides"}
+                      : "Connect with Portuguese speakers through shared experiences led by Lusophone hosts and guides"}
                   </p>
                 </div>
 
@@ -460,7 +460,7 @@ export default function GroupEventsSection({
             <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-6">
               {isPortuguese
                 ? "Eventos de Grupo Portugueses"
-                : "Portuguese Group Events"}
+                : "Lusophone Group Events"}
             </h1>
             <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
               {isPortuguese

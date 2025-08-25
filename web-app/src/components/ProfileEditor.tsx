@@ -67,22 +67,22 @@ export default function ProfileEditor({ profile, onSave, saving }: ProfileEditor
 
   const culturalInterests = {
     [isPortuguese ? 'Tradicional' : 'Traditional']: [
-      'Fado', 'Portuguese Literature', 'Traditional Dance', 'Folk Music', 'Religious Festivals'
+      'Fado', 'Lusophone Literature', 'Traditional Dance', 'Folk Music', 'Religious Festivals'
     ],
     [isPortuguese ? 'Culinária' : 'Culinary']: [
-      'Portuguese Cooking', 'Wine Tasting', 'Pastéis de Nata', 'Regional Cuisines', 'Food Markets'
+      'Lusophone Cooking', 'Wine Tasting', 'Pastéis de Nata', 'Regional Cuisines', 'Food Markets'
     ],
     [isPortuguese ? 'Desportos' : 'Sports']: [
-      'Football', 'Futsal', 'Surfing', 'Portuguese Teams', 'Sports Bars'
+      'Football', 'Futsal', 'Surfing', 'Lusophone Teams', 'Sports Bars'
     ],
     [isPortuguese ? 'Arte e Cultura' : 'Arts & Culture']: [
-      'Portuguese Cinema', 'Art Galleries', 'Museums', 'Theatre', 'Photography'
+      'Lusophone Cinema', 'Art Galleries', 'Museums', 'Theatre', 'Photography'
     ],
     [isPortuguese ? 'Social' : 'Social']: [
-      'Family Gatherings', 'Community Events', 'Portuguese Language', 'Cultural Heritage', 'Diaspora Stories'
+      'Family Gatherings', 'Community Events', 'Lusophone Language', 'Cultural Heritage', 'Diaspora Stories'
     ],
     [isPortuguese ? 'Moderno' : 'Modern']: [
-      'Portuguese Podcasts', 'Social Media Groups', 'Tech Meetups', 'Modern Music', 'Digital Culture'
+      'Lusophone Podcasts', 'Social Media Groups', 'Tech Meetups', 'Modern Music', 'Digital Culture'
     ]
   }
 

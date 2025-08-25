@@ -190,7 +190,7 @@ export default function SaudadeCompatibilityEngine({
           integrationBalance: 4,
           emotionalCompatibilityType: 'Alma Saudosa',
           supportNeeds: ['understanding_saudade', 'share_traditions'],
-          culturalHealingActivities: ['Fado nights', 'Portuguese cooking'],
+          culturalHealingActivities: ['Fado nights', 'Lusophone cooking'],
         },
         culturalProfile: {
           ...userProfile,
@@ -217,14 +217,14 @@ export default function SaudadeCompatibilityEngine({
             region: 'lisboa_area',
             connection: 8,
             specificAreas: ['Lisboa', 'Cascais'],
-            traditions: ['Fado', 'Portuguese literature'],
+            traditions: ['Fado', 'Lusophone literature'],
             culturalMarkers: ['Urban culture', 'Cosmopolitan'],
           },
           heritagePreservation: 7,
           integrationBalance: 5,
           emotionalCompatibilityType: 'Construtor de Pontes',
           supportNeeds: ['cultural_healing', 'community_building'],
-          culturalHealingActivities: ['Community events', 'Portuguese literature'],
+          culturalHealingActivities: ['Community events', 'Lusophone literature'],
         },
         culturalProfile: {
           ...userProfile,
@@ -360,7 +360,7 @@ export default function SaudadeCompatibilityEngine({
       strengths.push(
         lang === 'pt'
           ? 'Ligação emocional forte ao português'
-          : 'Strong emotional connection to Portuguese'
+          : 'Strong emotional connection to Lusophone'
       );
     }
 

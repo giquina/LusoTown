@@ -36,7 +36,7 @@ export function DualAudienceHeader({ selectedAudience, onAudienceSelect }: DualA
     {
       id: 'romantic' as const,
       title: language === 'pt' ? 'Conexões Românticas' : 'Romantic Connections',
-      subtitle: language === 'pt' ? 'Encontre alguém que entenda sua alma portuguesa' : 'Find someone who understands your Portuguese soul',
+      subtitle: language === 'pt' ? 'Encontre alguém que entenda sua alma portuguesa' : 'Find someone who understands your Lusophone soul',
       icon: HeartIcon,
       gradient: 'from-red-500 to-pink-600',
       hoverGradient: 'hover:from-red-600 hover:to-pink-700',
@@ -78,13 +78,13 @@ export function DualAudienceHeader({ selectedAudience, onAudienceSelect }: DualA
               {language === 'pt' ? 'Finalmente!' : 'Finally!'}
             </span>
             <br />
-            {language === 'pt' ? 'Sua Comunidade Portuguesa Completa' : 'Your Complete Portuguese Community'}
+            {language === 'pt' ? 'Sua Comunidade Portuguesa Completa' : 'Your Complete Lusophone Community'}
           </h1>
           
           <p className="text-xl text-gray-700 mb-4 max-w-4xl mx-auto">
             {language === 'pt' 
               ? 'De negócios de alto nível a conexões românticas autênticas - tudo em uma plataforma cultural portuguesa'
-              : 'From high-level business to authentic romantic connections - all in one Portuguese cultural platform'
+              : 'From high-level business to authentic romantic connections - all in one Lusophone cultural platform'
             }
           </p>
           

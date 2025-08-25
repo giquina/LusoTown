@@ -205,7 +205,7 @@ export default function GroupsPage() {
               <div className="flex items-center text-sm text-gray-600">
                 <GlobeAltIcon className="w-4 h-4 mr-2 text-gray-400" />
                 {group.language_preference === 'english' && 'English'}
-                {group.language_preference === 'portuguese' && 'Portuguese'}
+                {group.language_preference === 'portuguese' && 'Lusophone'}
                 {group.language_preference === 'pt-pt' && 'Português (Portugal)'}
                 {group.language_preference === 'pt-br' && 'Português (Brasil)'}
               </div>
@@ -366,7 +366,7 @@ export default function GroupsPage() {
               ))}
             </select>
 
-            {/* Portuguese Origin Filter */}
+            {/* Lusophone Origin Filter */}
             <select
               value={selectedOrigin}
               onChange={(e) => setSelectedOrigin(e.target.value)}

@@ -297,37 +297,37 @@ class BusinessDirectoryService {
       },
       cafe: {
         name: 'Cafés',
-        description: 'Portuguese cafés and coffee shops',
+        description: 'Lusophone cafés and coffee shops',
         icon: '☕'
       },
       bakery: {
         name: 'Bakeries',
-        description: 'Portuguese bakeries and pastry shops',
+        description: 'Lusophone bakeries and pastry shops',
         icon: '🥖'
       },
       shop: {
         name: 'Shops',
-        description: 'Portuguese grocery stores and specialty shops',
+        description: 'Lusophone grocery stores and specialty shops',
         icon: '🛍️'
       },
       bar: {
         name: 'Bars & Pubs',
-        description: 'Portuguese bars and entertainment venues',
+        description: 'Lusophone bars and entertainment venues',
         icon: '🍻'
       },
       cultural_center: {
         name: 'Cultural Centers',
-        description: 'Portuguese cultural and community centers',
+        description: 'Lusophone cultural and community centers',
         icon: '🏛️'
       },
       church: {
         name: 'Churches',
-        description: 'Portuguese churches and religious centers',
+        description: 'Lusophone churches and religious centers',
         icon: '⛪'
       },
       service: {
         name: 'Services',
-        description: 'Portuguese professional services',
+        description: 'Lusophone professional services',
         icon: '🔧'
       }
     }

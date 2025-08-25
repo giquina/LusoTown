@@ -65,15 +65,15 @@ export default function PremiumMatchesGate() {
       testimonials: {
         title: "What Portuguese-speaking community Members Say",
         maria: {
-          text: "Found amazing business connections through LusoTown Premium. The advanced filters helped me connect with Portuguese entrepreneurs in my field.",
+          text: "Found amazing business connections through LusoTown Premium. The advanced filters helped me connect with Lusophone entrepreneurs in my field.",
           author: "Maria Santos, Finance Professional",
         },
         carlos: {
-          text: "The cultural matching algorithm is incredible. I've met fellow Portuguese families and we now have regular gatherings in London.",
+          text: "The cultural matching algorithm is incredible. I've met fellow Lusophone families and we now have regular gatherings in London.",
           author: "Carlos Oliveira, Family Man",
         },
         ana: {
-          text: "As a student, the Premium features helped me find Portuguese mentors and study groups. Worth every penny for the connections.",
+          text: "As a student, the Premium features helped me find Lusophone mentors and study groups. Worth every penny for the connections.",
           author: "Ana Costa, Medical Student",
         },
       },

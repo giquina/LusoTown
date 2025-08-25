@@ -60,11 +60,11 @@ export default function GroupsShowcase() {
     } catch (error) {
       console.warn('Supabase unavailable, using local groups data:', error)
       
-      // Fallback to mock Portuguese groups data
+      // Fallback to mock Lusophone groups data
       const mockGroups: GroupWithCategory[] = [
         {
           id: 'group-1',
-          name: 'Portuguese Professionals London',
+          name: 'Lusophone Professionals London',
           description: 'Connecting Portuguese-speaking professionals across London for networking, career development, and cultural exchange.',
           category: 'professional',
           current_member_count: 245,
@@ -86,7 +86,7 @@ export default function GroupsShowcase() {
         },
         {
           id: 'group-2', 
-          name: 'Fado & Portuguese Culture',
+          name: 'Fado & Lusophone Culture',
           description: 'Preserving and sharing Portuguese musical heritage through Fado sessions and cultural events.',
           category: 'cultural',
           current_member_count: 189,
@@ -108,8 +108,8 @@ export default function GroupsShowcase() {
         },
         {
           id: 'group-3',
-          name: 'Portuguese Families London & United Kingdom',
-          description: 'Supporting Portuguese families with children, family-friendly events, and cultural education.',
+          name: 'Lusophone Families London & United Kingdom',
+          description: 'Supporting Lusophone families with children, family-friendly events, and cultural education.',
           category: 'family',
           current_member_count: 156,
           max_members: 400,
@@ -284,7 +284,7 @@ export default function GroupsShowcase() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight"
           >
-            Find Your Portuguese
+            Find Your Lusophone
             <span className="block bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 bg-clip-text text-transparent">
               Community
             </span>

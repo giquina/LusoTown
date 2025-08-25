@@ -46,19 +46,19 @@ function generateHeritageTestimonials(heritage: any): HeritageTestimonial[] {
         profileImage: getImageWithFallback('ana-catarina'),
         partnerName: 'Ricardo Manuel',
         partnerImage: getImageWithFallback('ricardo-manuel'),
-        story: `I moved from Porto to ${geography.diasporaHub.city} for banking, but the city felt cold as winter rain. Ricardo appeared at HeritageTown's Santos Populares event in Vauxhall Park - a guy from Braga with the same saudade for home. "Do you miss the smell of sardines on the fire?" he asked, offering grilled sardines. Six months later, we're planning our engagement party at The Portuguese Centre.`,
+        story: `I moved from Porto to ${geography.diasporaHub.city} for banking, but the city felt cold as winter rain. Ricardo appeared at HeritageTown's Santos Populares event in Vauxhall Park - a guy from Braga with the same saudade for home. "Do you miss the smell of sardines on the fire?" he asked, offering grilled sardines. Six months later, we're planning our engagement party at The Lusophone Centre.`,
         connectionType: 'Saudade Sweethearts',
         timeframe: '18 months ago',
         category: 'Found Love',
         heritage_quote: 'Encontrei não só o amor, mas alguém que entende a minha alma portuguesa.',
-        english_translation: 'I found not just love, but someone who understands my Portuguese soul.',
+        english_translation: 'I found not just love, but someone who understands my Lusophone soul.',
         cultural_bond: 'Santos Populares celebration and shared nostalgia for northern Portugal traditions',
         how_they_met: 'Mutual match through cultural compatibility algorithm, met at HeritageTown\'s Santos Populares event',
-        current_status: 'Engaged, planning Portuguese wedding with fado music and London reception',
+        current_status: 'Engaged, planning Lusophone wedding with fado music and London reception',
         heritage_specific: {
           traditions: ['Santos Populares', 'Fado music'],
           foods: ['Sardines', 'Traditional Portuguese cuisine'],
-          celebrations: ['Portuguese wedding traditions']
+          celebrations: ['Lusophone wedding traditions']
         }
       },
       {
@@ -69,17 +69,17 @@ function generateHeritageTestimonials(heritage: any): HeritageTestimonial[] {
         profileImage: getImageWithFallback('mariana-santos'),
         partnerName: 'João Pereira',
         partnerImage: getImageWithFallback('joao-pereira'),
-        story: `From Lisboa's Avenidas Novas to Canary Wharf towers, carrying MBA dreams and Portuguese determination. Met João at HeritageTown's "Portuguese Professionals" breakfast in The Shard - an entrepreneur from Coimbra struggling with the same cultural isolation in ${geography.diasporaHub.city}'s business world. "We need to create something of our own," he said over galão coffee. Our FinTech startup "LusoLink" now connects 500+ Portuguese SMEs across Europe.`,
+        story: `From Lisboa's Avenidas Novas to Canary Wharf towers, carrying MBA dreams and Lusophone determination. Met João at HeritageTown's "Lusophone Professionals" breakfast in The Shard - an entrepreneur from Coimbra struggling with the same cultural isolation in ${geography.diasporaHub.city}'s business world. "We need to create something of our own," he said over galão coffee. Our FinTech startup "LusoLink" now connects 500+ Lusophone SMEs across Europe.`,
         connectionType: 'Empreendedores Lusos',
         timeframe: '3 years ago',
         category: 'Business Partners',
         heritage_quote: 'Dois portugueses em Londres podem conquistar a Europa inteira.',
-        english_translation: 'Two Portuguese in London can conquer all of Europe.',
+        english_translation: 'Two Lusophone in London can conquer all of Europe.',
         cultural_bond: 'Shared entrepreneurial spirit and Portuguese business ethics in global finance',
         how_they_met: 'Professional networking match through business interests filter',
         current_status: 'Business partners who raised £3.2M Series A, planning European expansion',
         heritage_specific: {
-          traditions: ['Portuguese work ethic', 'Galão coffee culture'],
+          traditions: ['Lusophone work ethic', 'Galão coffee culture'],
           foods: ['Galão coffee'],
           celebrations: ['Professional achievements']
         }

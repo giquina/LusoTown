@@ -8,24 +8,24 @@ This directory contains the complete enhanced matches system for LusoTown, desig
 - Instant event suggestions after matching based on shared interests
 - Event compatibility scoring system (cultural alignment, interests, proximity)
 - "Book Together" functionality with buddy pricing discounts (10-25% off)
-- Portuguese cultural event prioritization (Fado, Santos Populares, Football)
+- Lusophone cultural event prioritization (Fado, Santos Populares, Football)
 
 ### 2. **Enhanced Match Cards**
 - Tabbed interface: Profile, Events, Conversation Starters
 - Event compatibility indicators and suggested events display
-- Portuguese cultural compatibility scores and heritage alignment
+- Lusophone cultural compatibility scores and heritage alignment
 - Cultural conversation starters with popularity metrics
 - Achievement badges and verification status
 
 ### 3. **Event Buddy Feature**
-- "Find an Event Buddy" matching for Portuguese events
+- "Find an Event Buddy" matching for Lusophone events
 - Buddy pricing discounts for joint bookings
 - Compatibility scoring for potential event partners
 - Portuguese speaker preference filtering
 - Cultural activity focus (Fado, Cuisine, Football, Networking)
 
 ### 4. **Achievement System**
-- Portuguese cultural engagement tracking
+- Lusophone cultural engagement tracking
 - Event attendance milestones and badges
 - Cultural categories: Fado Lover, Food Enthusiast, Football Fan, etc.
 - Achievement levels with rewards (discounts, priority matching, VIP events)
@@ -36,7 +36,7 @@ This directory contains the complete enhanced matches system for LusoTown, desig
 - Double date event suggestions for couples
 - Group activity recommendations (4-8 people)
 - Cultural exploration groups for Portuguese heritage sites
-- Portuguese neighborhood meetups
+- Lusophone neighborhood meetups
 
 ## 🏗️ Component Structure
 
@@ -54,10 +54,10 @@ This directory contains the complete enhanced matches system for LusoTown, desig
 
 ## 🎨 Design Philosophy
 
-### Portuguese Cultural Integration
+### Lusophone Cultural Integration
 - **Authentic Colors**: Portuguese flag-inspired color palette
-- **Cultural Icons**: Fado (🎵), Pastéis de Nata (🥮), Football (⚽), Portuguese Flag (🇵🇹)
-- **Cultural Context**: Saudade, Santos Populares, Portuguese neighborhoods
+- **Cultural Icons**: Fado (🎵), Pastéis de Nata (🥮), Football (⚽), Lusophone Flag (🇵🇹)
+- **Cultural Context**: Saudade, Santos Populares, Lusophone neighborhoods
 - **Heritage Celebration**: Regional origins (Porto, Lisboa, Açores, etc.)
 
 ### Mobile-First Design
@@ -67,8 +67,8 @@ This directory contains the complete enhanced matches system for LusoTown, desig
 - **Progressive Enhancement**: Works on all devices, enhanced on modern ones
 
 ### Bilingual Support (EN/PT)
-- **Complete Translation**: All text supports English and Portuguese
-- **Cultural Nuance**: Portuguese expressions and context preserved
+- **Complete Translation**: All text supports English and Lusophone
+- **Cultural Nuance**: Lusophone expressions and context preserved
 - **Dynamic Language**: Instant language switching without page reload
 - **Accessibility**: Proper aria-labels and screen reader support
 
@@ -119,10 +119,10 @@ Progress Tracking → Badge Unlocking → Rewards → Premium Features
 - **Regional Representation**: Porto, Lisboa, Açores, Brasil, Angola, etc.
 - **Cultural Events**: Fado nights, Santos Populares, Football viewing
 - **Traditional Food**: Pastéis de nata workshops, Portuguese wine tastings
-- **Language Pride**: Portuguese conversation starters and cultural context
+- **Language Pride**: Lusophone conversation starters and cultural context
 
 ### London Integration
-- **Portuguese Neighborhoods**: Stockwell, Vauxhall, Borough Market focus
+- **Lusophone Neighborhoods**: Stockwell, Vauxhall, Borough Market focus
 - **Community Venues**: Portuguese restaurants, cultural centers, churches
 - **Public Transport**: Integration with London travel for meetups
 - **Local Knowledge**: London Portuguese-speaking community insights
@@ -130,7 +130,7 @@ Progress Tracking → Badge Unlocking → Rewards → Premium Features
 ### Community Building
 - **Mentorship**: Experienced community members help newcomers
 - **Professional Networks**: Business connections and career support
-- **Family Events**: Child-friendly Portuguese cultural activities
+- **Family Events**: Child-friendly Lusophone cultural activities
 - **Intergenerational**: Connecting different age groups and backgrounds
 
 ## 💎 Premium Features
@@ -156,7 +156,7 @@ Progress Tracking → Badge Unlocking → Rewards → Premium Features
 
 ### Planned Features
 - **AI-Powered Matching**: Machine learning for better compatibility
-- **Voice Messages**: Portuguese accent preservation in audio
+- **Voice Messages**: Lusophone accent preservation in audio
 - **Video Calls**: Cultural video speed dating events
 - **Location Sharing**: Real-time meetup coordination
 - **Integration**: WhatsApp groups and social media
@@ -177,8 +177,8 @@ Progress Tracking → Badge Unlocking → Rewards → Premium Features
 - **Community Growth**: 20%+ monthly active user increase
 
 ### Cultural Impact
-- **Portuguese Events**: Increased attendance at cultural events
-- **Community Connections**: Stronger Portuguese network in London
+- **Lusophone Events**: Increased attendance at cultural events
+- **Community Connections**: Stronger Lusophone network in London
 - **Cultural Preservation**: Active use of Portuguese traditions
 - **Business Support**: Increased patronage of Portuguese businesses
 

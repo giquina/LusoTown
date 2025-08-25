@@ -27,7 +27,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { useHeritage } from '@/context/HeritageContext';
 import { LuxuryRipple, LuxuryFAB, LuxuryModal } from './LuxuryMobileInteraction';
 
-// Elite Mobile Header with Premium Portuguese Theming
+// Elite Mobile Header with Premium Lusophone Theming
 interface EliteMobileHeaderProps {
   title?: string;
   subtitle?: string;
@@ -316,7 +316,7 @@ export function EliteMobileSearch({
   );
 }
 
-// Elite Mobile Content Card with Portuguese Cultural Elements
+// Elite Mobile Content Card with Lusophone Cultural Elements
 interface EliteContentCardProps {
   title: string;
   description?: string;

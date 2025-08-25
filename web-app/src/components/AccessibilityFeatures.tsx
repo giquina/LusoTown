@@ -48,7 +48,7 @@ interface PortugueseVoiceSettings {
   volume: number;
 }
 
-// Portuguese accessibility texts for screen readers
+// Lusophone accessibility texts for screen readers
 const PORTUGUESE_ACCESSIBILITY_TEXTS = {
   'pt-PT': {
     welcome: 'Bem-vindo à LusoTown, a comunidade de falantes de português em Londres',
@@ -198,7 +198,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
     // Keyboard navigation enhancements
     html.classList.toggle('keyboard-navigation', settings.keyboardNavigation);
 
-    // Portuguese cultural accessibility enhancements
+    // Lusophone cultural accessibility enhancements
     if (settings.portugueseScreenReader) {
       html.setAttribute('lang', language === 'pt' ? 'pt-PT' : 'en-GB');
       addPortugueseCulturalContext();
@@ -206,14 +206,14 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
   };
 
   const addAriaLabels = () => {
-    // Add Portuguese cultural context to ARIA labels
+    // Add Lusophone cultural context to ARIA labels
     const events = document.querySelectorAll('[data-event-type="portuguese"]');
     events.forEach(event => {
       if (!event.getAttribute('aria-label')) {
         event.setAttribute('aria-label', 
           language === 'pt' 
             ? 'Evento cultural português'
-            : 'Portuguese cultural event'
+            : 'Lusophone cultural event'
         );
       }
     });
@@ -248,7 +248,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
   };
 
   const addPortugueseCulturalContext = () => {
-    // Add Portuguese cultural landmarks to navigation
+    // Add Lusophone cultural landmarks to navigation
     const landmarks = document.querySelectorAll('nav, main, aside, footer');
     landmarks.forEach((landmark, index) => {
       if (!landmark.getAttribute('aria-label')) {
@@ -270,7 +270,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!settings.keyboardNavigation) return;
 
-      // Portuguese cultural keyboard shortcuts
+      // Lusophone cultural keyboard shortcuts
       if (e.altKey) {
         switch (e.key) {
           case 'e':
@@ -335,11 +335,11 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
       const loadVoices = () => {
         const voices = window.speechSynthesis.getVoices();
         const portugueseVoices = voices.filter(voice => 
-          voice.lang.startsWith('pt') || voice.name.includes('Portuguese')
+          voice.lang.startsWith('pt') || voice.name.includes('Lusophone')
         );
         setAvailableVoices(portugueseVoices);
         
-        // Set default Portuguese voice
+        // Set default Lusophone voice
         if (portugueseVoices.length > 0 && !voiceSettings.voice) {
           const defaultVoice = portugueseVoices.find(v => v.lang === 'pt-PT') || portugueseVoices[0];
           setVoiceSettings(prev => ({ ...prev, voice: defaultVoice.name }));
@@ -350,7 +350,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
       window.speechSynthesis.addEventListener('voiceschanged', loadVoices);
     }
 
-    // Setup Speech Recognition for Portuguese
+    // Setup Speech Recognition for Lusophone
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
       const SpeechRecognition = (window as any).webkitSpeechRecognition || (window as any).SpeechRecognition;
       const recognition = new SpeechRecognition();
@@ -384,7 +384,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
   };
 
   const setupFocusManagement = () => {
-    // Enhanced focus indicators for Portuguese cultural elements
+    // Enhanced focus indicators for Lusophone cultural elements
     const handleFocus = (e: FocusEvent) => {
       if (settings.keyboardNavigation) {
         showFocusIndicator(e.target as HTMLElement);
@@ -488,7 +488,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
 
     const utterance = new SpeechSynthesisUtterance(text);
     
-    // Configure Portuguese voice
+    // Configure Lusophone voice
     const selectedVoice = availableVoices.find(voice => voice.name === voiceSettings.voice);
     if (selectedVoice) {
       utterance.voice = selectedVoice;
@@ -691,7 +691,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
         />
       )}
 
-      {/* Portuguese cultural accessibility landmark */}
+      {/* Lusophone cultural accessibility landmark */}
       <div className="sr-only" aria-live="polite">
         {language === 'pt' 
           ? 'Sistema de acessibilidade ativo para a comunidade de falantes de português'
@@ -776,16 +776,16 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                 </button>
               </div>
 
-              {/* Portuguese Screen Reader */}
+              {/* Lusophone Screen Reader */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <Volume2 className="h-5 w-5 text-gray-600" />
                   <div>
                     <h4 className="text-sm font-medium text-gray-900">
-                      {language === 'pt' ? 'Leitor de Ecrã PT' : 'Portuguese Screen Reader'}
+                      {language === 'pt' ? 'Leitor de Ecrã PT' : 'Lusophone Screen Reader'}
                     </h4>
                     <p className="text-xs text-gray-500">
-                      {language === 'pt' ? 'Leitura em português' : 'Portuguese audio reading'}
+                      {language === 'pt' ? 'Leitura em português' : 'Lusophone audio reading'}
                     </p>
                   </div>
                 </div>
@@ -810,7 +810,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                       {language === 'pt' ? 'Controlo de Voz' : 'Voice Control'}
                     </h4>
                     <p className="text-xs text-gray-500">
-                      {language === 'pt' ? 'Comandos em português' : 'Portuguese voice commands'}
+                      {language === 'pt' ? 'Comandos em português' : 'Lusophone voice commands'}
                     </p>
                   </div>
                 </div>
@@ -911,7 +911,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                 {availableVoices.length > 0 && (
                   <div className="space-y-2">
                     <label className="block text-xs font-medium text-gray-700">
-                      {language === 'pt' ? 'Voz Portuguesa' : 'Portuguese Voice'}
+                      {language === 'pt' ? 'Voz Portuguesa' : 'Lusophone Voice'}
                     </label>
                     <select
                       value={voiceSettings.voice}

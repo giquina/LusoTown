@@ -78,7 +78,7 @@ const marketplaceCategories: MarketplaceCategory[] = [
   {
     id: 'fashion',
     name: 'Moda Portuguesa',
-    nameEn: 'Portuguese Fashion',
+    nameEn: 'Lusophone Fashion',
     icon: <ShoppingBagIcon className="w-6 h-6" />,
     productCount: 92,
     featured: false,
@@ -142,7 +142,7 @@ const featuredProducts: MarketplaceProduct[] = [
     name: 'Azulejos Artesanais Tradicionais',
     nameEn: 'Traditional Handcrafted Azulejos',
     description: 'Azulejos portugueses pintados � m�o por artes�os em Caldas da Rainha, perfeitos para decora��o aut�ntica',
-    descriptionEn: 'Hand-painted Portuguese azulejos by artisans in Caldas da Rainha, perfect for authentic decoration',
+    descriptionEn: 'Hand-painted Lusophone azulejos by artisans in Caldas da Rainha, perfect for authentic decoration',
     price: 145.00,
     category: 'handicrafts',
     seller: 'Cer�micas Tradicionais Lda',
@@ -162,9 +162,9 @@ const featuredProducts: MarketplaceProduct[] = [
   {
     id: 'fado-guitar-lessons',
     name: 'Aulas de Guitarra Portuguesa Online',
-    nameEn: 'Portuguese Guitar Lessons Online',
+    nameEn: 'Lusophone Guitar Lessons Online',
     description: 'Aulas personalizadas de guitarra portuguesa com mestre fadista, incluindo t�cnicas tradicionais e repert�rio cl�ssico',
-    descriptionEn: 'Personalized Portuguese guitar lessons with fado master, including traditional techniques and classic repertoire',
+    descriptionEn: 'Personalized Lusophone guitar lessons with fado master, including traditional techniques and classic repertoire',
     price: 75.00,
     category: 'services',
     seller: 'Mestre Jo�o Fado',
@@ -178,7 +178,7 @@ const featuredProducts: MarketplaceProduct[] = [
     shippingTime: 'Imediato',
     shippingTimeEn: 'Immediate',
     tags: ['Fado', 'Guitarra Portuguesa', 'Aulas Online', 'Mestre'],
-    tagsEn: ['Fado', 'Portuguese Guitar', 'Online Lessons', 'Master'],
+    tagsEn: ['Fado', 'Lusophone Guitar', 'Online Lessons', 'Master'],
     commissionRate: 25.0
   }
 ];
@@ -219,20 +219,20 @@ export default function CulturalMarketplace() {
           >
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium mb-8">
               <ShoppingBagIcon className="w-5 h-5 mr-2" />
-              {isPortuguese ? 'Marketplace Cultural Portugu�s' : 'Portuguese Cultural Marketplace'}
+              {isPortuguese ? 'Marketplace Cultural Portugu�s' : 'Lusophone Cultural Marketplace'}
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               {isPortuguese 
                 ? 'Descubra Produtos Aut�nticos Portugueses'
-                : 'Discover Authentic Portuguese Products'
+                : 'Discover Authentic Lusophone Products'
               }
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Conecte-se diretamente com produtores e artes�os portugueses. Produtos verificados, autenticidade cultural garantida e entrega em Londres.'
-                : 'Connect directly with Portuguese producers and artisans. Verified products, guaranteed cultural authenticity, and London delivery.'
+                : 'Connect directly with Lusophone producers and artisans. Verified products, guaranteed cultural authenticity, and London delivery.'
               }
             </p>
 
@@ -323,7 +323,7 @@ export default function CulturalMarketplace() {
               <p className="text-white/80">
                 {isPortuguese 
                   ? 'Incluindo crescimento de 20% no marketplace cultural portugu�s'
-                  : 'Including 20% growth in Portuguese cultural marketplace'
+                  : 'Including 20% growth in Lusophone cultural marketplace'
                 }
               </p>
             </div>
@@ -345,7 +345,7 @@ export default function CulturalMarketplace() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Explore produtos e servi�os aut�nticos organizados por categoria cultural portuguesa'
-                : 'Explore authentic products and services organized by Portuguese cultural category'
+                : 'Explore authentic products and services organized by Lusophone cultural category'
               }
             </p>
           </motion.div>
@@ -419,7 +419,7 @@ export default function CulturalMarketplace() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Produtos premium selecionados com autenticidade cultural verificada por especialistas portugueses'
-                : 'Premium products selected with cultural authenticity verified by Portuguese experts'
+                : 'Premium products selected with cultural authenticity verified by Lusophone experts'
               }
             </p>
           </motion.div>
@@ -589,7 +589,7 @@ export default function CulturalMarketplace() {
                 <p className="text-white/80">
                   {isPortuguese
                     ? 'Certificamos a autenticidade dos seus produtos portugueses'
-                    : 'We certify the authenticity of your Portuguese products'
+                    : 'We certify the authenticity of your Lusophone products'
                   }
                 </p>
               </div>

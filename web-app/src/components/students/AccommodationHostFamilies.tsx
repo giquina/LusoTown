@@ -73,7 +73,7 @@ const HOST_FAMILIES: HostFamily[] = [
     id: 'santos-family-london',
     name: 'Santos Family',
     location: 'Camden, London',
-    languages: ['Portuguese', 'English', 'Spanish'],
+    languages: ['Lusophone', 'English', 'Spanish'],
     originCountry: { en: 'Portugal', pt: 'Portugal' },
     flag: '🇵🇹',
     profileImage: 'https://images.unsplash.com/photo-1600486913747-55e5470d6f40?w=400',
@@ -85,9 +85,9 @@ const HOST_FAMILIES: HostFamily[] = [
       utilitiesIncluded: true,
       internetIncluded: true
     },
-    amenities: ['Shared Kitchen', 'Garden Access', 'Laundry Facilities', 'Study Area', 'Portuguese Library'],
+    amenities: ['Shared Kitchen', 'Garden Access', 'Laundry Facilities', 'Study Area', 'Lusophone Library'],
     culturalConnection: {
-      en: 'Native Portuguese family from Porto offering authentic cultural immersion and home-cooked meals',
+      en: 'Native Lusophone family from Porto offering authentic cultural immersion and home-cooked meals',
       pt: 'Família portuguesa nativa do Porto oferecendo imersão cultural autêntica e refeições caseiras'
     },
     experience: {
@@ -95,10 +95,10 @@ const HOST_FAMILIES: HostFamily[] = [
       studentsHosted: 24
     },
     description: {
-      en: 'Warm Portuguese family home where students experience authentic Portuguese culture, language practice, and family traditions. Perfect for students wanting cultural immersion.',
+      en: 'Warm Lusophone family home where students experience authentic Portuguese culture, language practice, and family traditions. Perfect for students wanting cultural immersion.',
       pt: 'Casa familiar portuguesa calorosa onde estudantes experienciam cultura portuguesa autêntica, prática da língua e tradições familiares. Perfeito para estudantes que querem imersão cultural.'
     },
-    preferredStudents: ['Portuguese Studies', 'Language Learners', 'Cultural Exchange Students'],
+    preferredStudents: ['Lusophone Studies', 'Language Learners', 'Cultural Exchange Students'],
     rating: 4.9,
     reviews: 18,
     verified: true,
@@ -109,7 +109,7 @@ const HOST_FAMILIES: HostFamily[] = [
     },
     nearbyUniversities: ['UCL (20 min)', 'King\'s College (25 min)', 'SOAS (15 min)'],
     householdRules: ['No smoking indoors', 'Respect quiet hours', 'Join family meals when possible'],
-    culturalActivities: ['Portuguese cooking lessons', 'Fado music evenings', 'Portuguese language practice'],
+    culturalActivities: ['Lusophone cooking lessons', 'Fado music evenings', 'Portuguese language practice'],
     testimonial: {
       en: 'Living with the Santos family transformed my understanding of Portuguese culture. Their warmth and generosity made London feel like home.',
       pt: 'Viver com a família Santos transformou a minha compreensão da cultura portuguesa. O seu carinho e generosidade fizeram de Londres um lar.'
@@ -119,7 +119,7 @@ const HOST_FAMILIES: HostFamily[] = [
     id: 'oliveira-couple-kensington',
     name: 'Oliveira Couple',
     location: 'South Kensington, London',
-    languages: ['Portuguese', 'English', 'French'],
+    languages: ['Lusophone', 'English', 'French'],
     originCountry: { en: 'Brazil', pt: 'Brasil' },
     flag: '🇧🇷',
     profileImage: 'https://images.unsplash.com/photo-1559601748-6d37b7d05c1b?w=400',
@@ -155,7 +155,7 @@ const HOST_FAMILIES: HostFamily[] = [
     },
     nearbyUniversities: ['Imperial College (10 min)', 'Royal College of Art (8 min)', 'Natural History Museum (2 min)'],
     householdRules: ['Professional environment', 'Guest notification required', 'Shared common areas'],
-    culturalActivities: ['Brazilian cooking workshops', 'Samba nights', 'Portuguese conversation practice'],
+    culturalActivities: ['Brazilian cooking workshops', 'Samba nights', 'Lusophone conversation practice'],
     testimonial: {
       en: 'The Oliveiras provided not just accommodation but a Brazilian cultural experience in the heart of London. Unforgettable!',
       pt: 'Os Oliveiras proporcionaram não apenas acomodação mas uma experiência cultural brasileira no coração de Londres. Inesquecível!'
@@ -165,7 +165,7 @@ const HOST_FAMILIES: HostFamily[] = [
     id: 'fernandes-grandmother-hampstead',
     name: 'Dona Maria Fernandes',
     location: 'Hampstead, London',
-    languages: ['Portuguese', 'English'],
+    languages: ['Lusophone', 'English'],
     originCountry: { en: 'Cape Verde', pt: 'Cabo Verde' },
     flag: '🇨🇻',
     profileImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400',
@@ -211,7 +211,7 @@ const HOST_FAMILIES: HostFamily[] = [
     id: 'costa-retired-couple-greenwich',
     name: 'Costa Retired Couple',
     location: 'Greenwich, London',
-    languages: ['Portuguese', 'English'],
+    languages: ['Lusophone', 'English'],
     originCountry: { en: 'Angola', pt: 'Angola' },
     flag: '🇦🇴',
     profileImage: 'https://images.unsplash.com/photo-1569466896818-335b1bedfcce?w=400',
@@ -257,7 +257,7 @@ const HOST_FAMILIES: HostFamily[] = [
     id: 'silva-young-family-clapham',
     name: 'Silva Young Family',
     location: 'Clapham, London',
-    languages: ['Portuguese', 'English'],
+    languages: ['Lusophone', 'English'],
     originCountry: { en: 'Mozambique', pt: 'Moçambique' },
     flag: '🇲🇿',
     profileImage: 'https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=400',
@@ -279,7 +279,7 @@ const HOST_FAMILIES: HostFamily[] = [
       studentsHosted: 8
     },
     description: {
-      en: 'Dynamic young family offering contemporary African Portuguese cultural experience. Perfect for students interested in multicultural perspectives and modern African identity.',
+      en: 'Dynamic young family offering contemporary African Lusophone cultural experience. Perfect for students interested in multicultural perspectives and modern African identity.',
       pt: 'Família jovem dinâmica oferecendo experiência cultural portuguesa africana contemporânea. Perfeito para estudantes interessados em perspetivas multiculturais e identidade africana moderna.'
     },
     preferredStudents: ['International Relations', 'Development Studies', 'Young Adults'],
@@ -344,7 +344,7 @@ export default function AccommodationHostFamilies({ limit = 5, showPricing = tru
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {language === 'pt' 
               ? 'Famílias de Acolhimento Portuguesas' 
-              : 'Portuguese-Speaking Host Families'
+              : 'Lusophone-Speaking Host Families'
             }
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

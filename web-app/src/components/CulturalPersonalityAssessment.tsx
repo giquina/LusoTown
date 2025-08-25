@@ -2,7 +2,7 @@
 
 /**
  * CulturalPersonalityAssessment.tsx
- * Portuguese Cultural Psychology Assessment
+ * Lusophone Cultural Psychology Assessment
  * 
  * Comprehensive psychological assessment tool designed specifically for
  * Portuguese speakers, analyzing cultural personality dimensions,
@@ -33,7 +33,7 @@ import { HeartIcon as HeartSolid } from '@heroicons/react/24/solid'
 
 // Cultural Personality Dimensions
 interface CulturalPersonalityProfile {
-  // Core Portuguese Cultural Dimensions
+  // Core Lusophone Cultural Dimensions
   familyCentricity: number        // 0-10: Individual vs Family-oriented
   collectivismScore: number       // 0-10: Individual vs Community-focused
   traditionAdherence: number      // 0-10: Modern vs Traditional values
@@ -41,7 +41,7 @@ interface CulturalPersonalityProfile {
   hospitalityValue: number        // 0-10: Reserved vs Hospitable
   religiousOrientation: number    // 0-10: Secular vs Religious
   
-  // Portuguese Emotional Psychology
+  // Lusophone Emotional Psychology
   saudadeCapacity: number         // 0-10: Ability to experience deep longing
   emotionalExpressiveness: number // 0-10: Reserved vs Emotionally expressive
   nostalgiaIntensity: number      // 0-10: Forward-looking vs Nostalgic
@@ -51,8 +51,8 @@ interface CulturalPersonalityProfile {
   // Cultural Adaptation Patterns
   culturalFlexibility: number     // 0-10: Rigid vs Adaptable culturally
   identityIntegration: number     // 0-10: Compartmentalized vs Integrated identity
-  languageLoyalty: number         // 0-10: Language-flexible vs Portuguese-loyal
-  culturalPride: number           // 0-10: Modest vs Proudly Portuguese
+  languageLoyalty: number         // 0-10: Language-flexible vs Lusophone-loyal
+  culturalPride: number           // 0-10: Modest vs Proudly Lusophone
   diasporaComfort: number         // 0-10: Homesick vs Comfortable in diaspora
   
   // Social and Communication Styles
@@ -62,7 +62,7 @@ interface CulturalPersonalityProfile {
   groupHarmony: number            // 0-10: Individual expression vs Group harmony
   authorityRelation: number       // 0-10: Questioning vs Respectful of authority
   
-  // Portuguese-Specific Cultural Markers
+  // Lusophone-Specific Cultural Markers
   fadoResonance: number           // 0-10: Connection to fado music/emotion
   foodCulturalSignificance: number // 0-10: Functional vs Culturally significant food
   celebrationStyle: number        // 0-10: Minimalist vs Elaborate celebrations
@@ -80,7 +80,7 @@ interface AssessmentQuestion {
   scenarioEn?: string
   scenarioPt?: string
   responseType: 'scale' | 'scenario' | 'preference'
-  culturalWeight: number // How important this dimension is for Portuguese identity
+  culturalWeight: number // How important this dimension is for Lusophone identity
 }
 
 interface PersonalityInsight {
@@ -127,7 +127,7 @@ const CULTURAL_ARCHETYPES: CulturalArchetype[] = [
     recommendedActivities: ['Fado sessions', 'Traditional cooking', 'Cultural storytelling'],
     compatibleArchetypes: ['cultural_bridge_builder', 'community_guardian'],
     prevalenceInDiaspora: 25,
-    culturalSignificance: 'Guardians of Portuguese cultural authenticity'
+    culturalSignificance: 'Guardians of Lusophone cultural authenticity'
   },
   {
     id: 'ponte_cultural',
@@ -147,19 +147,19 @@ const CULTURAL_ARCHETYPES: CulturalArchetype[] = [
   },
   {
     id: 'português_moderno',
-    nameEn: 'Modern Portuguese',
+    nameEn: 'Modern Lusophone',
     namePt: 'Português Moderno',
-    descriptionEn: 'Contemporary Portuguese identity with selective cultural maintenance',
+    descriptionEn: 'Contemporary Lusophone identity with selective cultural maintenance',
     descriptionPt: 'Identidade portuguesa contemporânea com manutenção cultural seletiva',
     characteristics: ['Low tradition adherence', 'High diaspora comfort', 'Moderate cultural pride'],
     strengthsEn: ['Innovation mindset', 'Professional adaptability', 'Global perspective'],
     strengthsPt: ['Mentalidade inovadora', 'Adaptabilidade profissional', 'Perspetiva global'],
     challengesEn: ['Cultural disconnect risk', 'Generational tensions', 'Identity grounding'],
     challengesPt: ['Risco de desconexão cultural', 'Tensões geracionais', 'Ancoragem identitária'],
-    recommendedActivities: ['Modern Portuguese events', 'Professional networking', 'Cultural fusion activities'],
+    recommendedActivities: ['Modern Lusophone events', 'Professional networking', 'Cultural fusion activities'],
     compatibleArchetypes: ['cultural_bridge_builder', 'pragmatic_integrator'],
     prevalenceInDiaspora: 30,
-    culturalSignificance: 'Innovators of Portuguese cultural expression'
+    culturalSignificance: 'Innovators of Lusophone cultural expression'
   },
   {
     id: 'guardião_comunidade',
@@ -195,7 +195,7 @@ const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     dimension: 'saudadeCapacity',
     questionEn: 'How deeply do you experience saudade for Portugal?',
     questionPt: 'Quão profundamente sente saudade de Portugal?',
-    contextEn: 'Saudade is that uniquely Portuguese feeling of deep longing',
+    contextEn: 'Saudade is that uniquely Lusophone feeling of deep longing',
     contextPt: 'Saudade é esse sentimento unicamente português de nostalgia profunda',
     responseType: 'scale',
     culturalWeight: 1.0
@@ -233,7 +233,7 @@ const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
   {
     id: 'cultural_flexibility_1',
     dimension: 'culturalFlexibility',
-    questionEn: 'How comfortable are you adapting Portuguese ways to British contexts?',
+    questionEn: 'How comfortable are you adapting Lusophone ways to British contexts?',
     questionPt: 'Quão confortável se sente adaptando costumes portugueses a contextos britânicos?',
     contextEn: 'Consider work situations, social settings, or child-rearing approaches',
     contextPt: 'Considere situações profissionais, contextos sociais ou abordagens educacionais',
@@ -253,7 +253,7 @@ const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
   {
     id: 'language_loyalty_1',
     dimension: 'languageLoyalty',
-    questionEn: 'How important is speaking Portuguese with other Portuguese speakers?',
+    questionEn: 'How important is speaking Lusophone with other Portuguese speakers?',
     questionPt: 'Quão importante é falar português com outros falantes de português?',
     contextEn: 'Even when English might be easier or more convenient',
     contextPt: 'Mesmo quando inglês seria mais fácil ou conveniente',
@@ -345,7 +345,7 @@ export default function CulturalPersonalityAssessment() {
       return CULTURAL_ARCHETYPES.find(a => a.id === 'guardião_comunidade')!
     }
     
-    // Default to Modern Portuguese
+    // Default to Modern Lusophone
     return CULTURAL_ARCHETYPES.find(a => a.id === 'português_moderno')!
   }
 
@@ -360,7 +360,7 @@ export default function CulturalPersonalityAssessment() {
         titlePt: 'Conexão Profunda de Saudade',
         description: 'You experience saudade very intensely, which connects you deeply to Portuguese culture but may also create emotional challenges in diaspora life.',
         descriptionPt: 'Experimenta saudade muito intensamente, o que o conecta profundamente à cultura portuguesa mas pode também criar desafios emocionais na vida da diáspora.',
-        culturalContext: 'High saudade is characteristic of Portuguese cultural psychology',
+        culturalContext: 'High saudade is characteristic of Lusophone cultural psychology',
         strengthLevel: 'very_high',
         developmentSuggestions: [
           'Channel saudade into creative expression',
@@ -369,7 +369,7 @@ export default function CulturalPersonalityAssessment() {
         ],
         culturalActivities: [
           'Fado singing or listening groups',
-          'Portuguese poetry reading',
+          'Lusophone poetry reading',
           'Cultural storytelling sessions'
         ],
         compatibilityImplications: [
@@ -385,9 +385,9 @@ export default function CulturalPersonalityAssessment() {
       insights.push({
         title: 'Strong Family Orientation',
         titlePt: 'Forte Orientação Familiar',
-        description: 'Family plays a central role in your decisions and worldview, reflecting core Portuguese values of family solidarity and interconnectedness.',
+        description: 'Family plays a central role in your decisions and worldview, reflecting core Lusophone values of family solidarity and interconnectedness.',
         descriptionPt: 'A família tem um papel central nas suas decisões e visão do mundo, refletindo valores portugueses fundamentais de solidariedade e interconexão familiar.',
-        culturalContext: 'Family centricity is a cornerstone of Portuguese cultural identity',
+        culturalContext: 'Family centricity is a cornerstone of Lusophone cultural identity',
         strengthLevel: 'very_high',
         developmentSuggestions: [
           'Balance family input with personal autonomy',
@@ -395,9 +395,9 @@ export default function CulturalPersonalityAssessment() {
           'Share family values with British friends'
         ],
         culturalActivities: [
-          'Multi-generational Portuguese events',
+          'Multi-generational Lusophone events',
           'Family recipe sharing sessions',
-          'Portuguese family history projects'
+          'Lusophone family history projects'
         ],
         compatibilityImplications: [
           'Best matches with others who value family highly',
@@ -478,11 +478,11 @@ export default function CulturalPersonalityAssessment() {
         </div>
         
         <h2 className="text-4xl font-black text-gray-900 mb-4">
-          {t('assessment.title', 'Portuguese Cultural Personality Assessment')}
+          {t('assessment.title', 'Lusophone Cultural Personality Assessment')}
         </h2>
         
         <p className="text-xl text-gray-700 mb-6 max-w-3xl mx-auto">
-          {t('assessment.subtitle', 'Discover your unique Portuguese cultural personality and how it shapes your experience in the diaspora community')}
+          {t('assessment.subtitle', 'Discover your unique Lusophone cultural personality and how it shapes your experience in the diaspora community')}
         </p>
         
         <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -492,7 +492,7 @@ export default function CulturalPersonalityAssessment() {
               {t('assessment.discover', 'Discover Your Archetype')}
             </h3>
             <p className="text-gray-600">
-              {t('assessment.discover_desc', 'Identify your Portuguese cultural archetype and understand your unique cultural expression')}
+              {t('assessment.discover_desc', 'Identify your Lusophone cultural archetype and understand your unique cultural expression')}
             </p>
           </div>
           
@@ -690,7 +690,7 @@ export default function CulturalPersonalityAssessment() {
         </h3>
         
         <p className="text-gray-600 mb-6">
-          {t('assessment.processing_desc', 'Our AI is analyzing your responses to create your personalized Portuguese cultural profile...')}
+          {t('assessment.processing_desc', 'Our AI is analyzing your responses to create your personalized Lusophone cultural profile...')}
         </p>
         
         <div className="space-y-2 text-sm text-gray-500">
@@ -726,7 +726,7 @@ export default function CulturalPersonalityAssessment() {
             </p>
             
             <div className="flex items-center justify-center gap-4 text-sm text-gray-600">
-              <span>{culturalArchetype.prevalenceInDiaspora}% of Portuguese diaspora</span>
+              <span>{culturalArchetype.prevalenceInDiaspora}% of Lusophone diaspora</span>
               <span>•</span>
               <span>{culturalArchetype.culturalSignificance}</span>
             </div>
@@ -894,7 +894,7 @@ export default function CulturalPersonalityAssessment() {
               className="text-3xl sm:text-4xl font-black text-gray-900"
             >
               {currentStep === 'assessment' && t('assessment.taking', 'Discovering Your Cultural Self')}
-              {currentStep === 'results' && t('assessment.your_profile', 'Your Portuguese Cultural Profile')}
+              {currentStep === 'results' && t('assessment.your_profile', 'Your Lusophone Cultural Profile')}
             </motion.h1>
           )}
         </div>

@@ -59,9 +59,9 @@ export default function PortugueseBusinessConversationStarters({
         id: "bs1",
         text: language === "pt" 
           ? `Vi que trabalhas no setor ${profile.industry}. Que tendências vês no mercado português nesta área?`
-          : `I see you work in ${profile.industry}. What trends do you see in the Portuguese market for this sector?`,
+          : `I see you work in ${profile.industry}. What trends do you see in the Lusophone market for this sector?`,
         category: language === "pt" ? "Tendências do Setor" : "Industry Trends",
-        culturalContext: language === "pt" ? "Focado no mercado português específico" : "Focused on Portuguese market specifics",
+        culturalContext: language === "pt" ? "Focado no mercado português específico" : "Focused on Lusophone market specifics",
         businessRelevance: language === "pt" ? "Análise de mercado e oportunidades setoriais" : "Market analysis and sector opportunities",
         popularity: 89,
       },
@@ -69,9 +69,9 @@ export default function PortugueseBusinessConversationStarters({
         id: "bs2", 
         text: language === "pt"
           ? `Como é trabalhar na ${profile.company}? Que oportunidades vês para profissionais portugueses na empresa?`
-          : `How is it working at ${profile.company}? What opportunities do you see for Portuguese professionals there?`,
+          : `How is it working at ${profile.company}? What opportunities do you see for Lusophone professionals there?`,
         category: language === "pt" ? "Cultura Empresarial" : "Company Culture",
-        culturalContext: language === "pt" ? "Experiência de portugueses em empresas britânicas" : "Portuguese experience in British companies",
+        culturalContext: language === "pt" ? "Experiência de portugueses em empresas britânicas" : "Lusophone experience in British companies",
         businessRelevance: language === "pt" ? "Cultura organizacional e oportunidades de carreira" : "Organizational culture and career opportunities",
         popularity: 92,
       },
@@ -80,9 +80,9 @@ export default function PortugueseBusinessConversationStarters({
         id: "bs3",
         text: language === "pt"
           ? `Com ${profile.experience} de experiência, que conselhos darias a um profissional português que está a começar em Londres?`
-          : `With ${profile.experience} of experience, what advice would you give to a Portuguese professional starting out in London?`,
+          : `With ${profile.experience} of experience, what advice would you give to a Lusophone professional starting out in London?`,
         category: language === "pt" ? "Mentoria Profissional" : "Professional Mentorship",
-        culturalContext: language === "pt" ? "Adaptação profissional de portugueses em Londres" : "Professional adaptation of Portuguese in London",
+        culturalContext: language === "pt" ? "Adaptação profissional de portugueses em Londres" : "Professional adaptation of Lusophone in London",
         businessRelevance: language === "pt" ? "Desenvolvimento de carreira e networking" : "Career development and networking",
         popularity: 95,
       },
@@ -102,9 +102,9 @@ export default function PortugueseBusinessConversationStarters({
         id: "bs5",
         text: language === "pt"
           ? "Que vantagens competitivas achas que os profissionais portugueses têm no mercado britânico?"
-          : "What competitive advantages do you think Portuguese professionals have in the British market?",
+          : "What competitive advantages do you think Lusophone professionals have in the British market?",
         category: language === "pt" ? "Vantagens Culturais" : "Cultural Advantages",
-        culturalContext: language === "pt" ? "Valorização da identidade portuguesa no trabalho" : "Valuing Portuguese identity at work",
+        culturalContext: language === "pt" ? "Valorização da identidade portuguesa no trabalho" : "Valuing Lusophone identity at work",
         businessRelevance: language === "pt" ? "Diferenciação profissional e value proposition" : "Professional differentiation and value proposition",
         popularity: 83,
       },
@@ -113,7 +113,7 @@ export default function PortugueseBusinessConversationStarters({
         id: "bs6",
         text: language === "pt"
           ? `Interessante veres ${profile.businessInterests[0]} como área de interesse. Já colaboraste com empresas portuguesas nesta área?`
-          : `Interesting to see ${profile.businessInterests[0]} as an area of interest. Have you collaborated with Portuguese companies in this field?`,
+          : `Interesting to see ${profile.businessInterests[0]} as an area of interest. Have you collaborated with Lusophone companies in this field?`,
         category: language === "pt" ? "Interesses Comerciais" : "Business Interests",
         culturalContext: language === "pt" ? "Conexões comerciais Portugal-Reino Unido" : "Portugal-United Kingdom business connections",
         businessRelevance: language === "pt" ? "Oportunidades de colaboração e parcerias" : "Collaboration and partnership opportunities",
@@ -137,7 +137,7 @@ export default function PortugueseBusinessConversationStarters({
           ? "Se pudesses expandir o teu negócio/empresa para Portugal, que estratégia usarias?"
           : "If you could expand your business/company to Portugal, what strategy would you use?",
         category: language === "pt" ? "Expansão de Mercado" : "Market Expansion",
-        culturalContext: language === "pt" ? "Conhecimento dos mercados português e britânico" : "Knowledge of Portuguese and British markets",
+        culturalContext: language === "pt" ? "Conhecimento dos mercados português e britânico" : "Knowledge of Lusophone and British markets",
         businessRelevance: language === "pt" ? "Estratégia de internacionalização" : "Internationalization strategy",
         popularity: 85,
       },
@@ -157,7 +157,7 @@ export default function PortugueseBusinessConversationStarters({
         id: "bs10",
         text: language === "pt"
           ? "Como vês o futuro do trabalho remoto para profissionais portugueses que querem manter ligações com Portugal?"
-          : "How do you see the future of remote work for Portuguese professionals who want to maintain connections with Portugal?",
+          : "How do you see the future of remote work for Lusophone professionals who want to maintain connections with Portugal?",
         category: language === "pt" ? "Trabalho Remoto" : "Remote Work",
         culturalContext: language === "pt" ? "Flexibilidade para manter conexões com Portugal" : "Flexibility to maintain connections with Portugal",
         businessRelevance: language === "pt" ? "Modelos de trabalho híbrido e global" : "Hybrid and global work models",
@@ -168,7 +168,7 @@ export default function PortugueseBusinessConversationStarters({
         id: "bs11",
         text: language === "pt"
           ? "Participas em alguma associação ou rede profissional portuguesa em Londres?"
-          : "Do you participate in any Portuguese professional association or network in London?",
+          : "Do you participate in any Lusophone professional association or network in London?",
         category: language === "pt" ? "Redes Profissionais" : "Professional Networks",
         culturalContext: language === "pt" ? "Engagement com organizações da comunidade de falantes de português" : "Engagement with Portuguese-speaking community organizations",
         businessRelevance: language === "pt" ? "Networking estruturado e desenvolvimento profissional" : "Structured networking and professional development",
@@ -433,7 +433,7 @@ export default function PortugueseBusinessConversationStarters({
           <div className="flex items-center gap-2 mb-3">
             <LightBulbIcon className="w-4 h-4 text-accent-600" />
             <h4 className="font-bold text-accent-900 text-sm">
-              {language === "pt" ? "Dicas de Networking Português" : "Portuguese Networking Tips"}
+              {language === "pt" ? "Dicas de Networking Português" : "Lusophone Networking Tips"}
             </h4>
           </div>
           <div className="space-y-2 text-xs text-accent-800">
@@ -442,7 +442,7 @@ export default function PortugueseBusinessConversationStarters({
               <span>
                 {language === "pt" 
                   ? "Mencione experiências ou desafios específicos de portugueses em Londres"
-                  : "Mention specific experiences or challenges of Portuguese in London"}
+                  : "Mention specific experiences or challenges of Lusophone in London"}
               </span>
             </div>
             <div className="flex items-center gap-2">
@@ -458,7 +458,7 @@ export default function PortugueseBusinessConversationStarters({
               <span>
                 {language === "pt"
                   ? "Partilhe insights sobre mercados português e britânico"
-                  : "Share insights about Portuguese and British markets"}
+                  : "Share insights about Lusophone and British markets"}
               </span>
             </div>
           </div>

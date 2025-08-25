@@ -95,19 +95,19 @@ export default function UserTypeSelection() {
 
   const strings = {
     en: {
-      title: 'Find Your Portuguese Community in the United Kingdom',
+      title: 'Find Your Lusophone Community in the United Kingdom',
       subtitle: 'Connect with 2,750+ verified Portuguese speakers through events, networking, and cultural experiences',
       skipForNow: 'Skip for now',
       primaryCta: 'Join Free',
       secondaryCta: 'Learn More',
-      socialProof: '2,750+ Portuguese speakers • 150+ monthly events • 8 university partnerships',
+      socialProof: '2,Portuguese speakers • 150+ monthly events • 8 university partnerships',
       keyBenefit: {
-        title: 'Authentic Portuguese Connections',
+        title: 'Authentic Lusophone Connections',
         desc: 'Meet Portuguese speakers who share your heritage, values, and experiences. From cultural events to professional networking - all curated by our community.',
         icon: HeartIcon,
         features: [
           '✓ Cultural compatibility matching',
-          '✓ Authentic Portuguese events', 
+          '✓ Authentic Lusophone events', 
           '✓ Professional networking opportunities',
           '✓ University student community'
         ]

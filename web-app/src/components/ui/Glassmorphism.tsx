@@ -202,7 +202,7 @@ export default function Glassmorphism({
       className={baseClasses}
       {...props}
     >
-      {/* Portuguese cultural pattern overlay with aristocratic sophistication */}
+      {/* Lusophone cultural pattern overlay with aristocratic sophistication */}
       {(variant === 'portuguese' || variant === 'aristocratic' || culturalElements) && (
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{

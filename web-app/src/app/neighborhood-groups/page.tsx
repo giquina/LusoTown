@@ -36,7 +36,7 @@ const neighborhoodGroups = [
     area: 'South London',
     areaPt: 'Sul de Londres',
     portugueseSpeakers: 9009,
-    description: 'Historic heart of Portuguese London with authentic bakeries and cultural centers',
+    description: 'Historic heart of Lusophone London with authentic bakeries and cultural centers',
     descriptionPt: 'Coração histórico de Londres Portuguesa com padarias autênticas e centros culturais',
     displacement: 'Traditional hub facing gentrification pressure',
     displacementPt: 'Centro tradicional enfrentando pressão de gentrificação',
@@ -45,7 +45,7 @@ const neighborhoodGroups = [
     transportLinks: ['Northern Line', 'Victoria Line', 'Bus 196, 322'],
     transportLinksPt: ['Linha Northern', 'Linha Victoria', 'Autocarro 196, 322'],
     highlights: [
-      'Portuguese Cultural Centre',
+      'Lusophone Cultural Centre',
       'Traditional bakeries',
       'Nossa Senhora church',
       'Community football teams'
@@ -58,7 +58,7 @@ const neighborhoodGroups = [
     ],
     recentEvents: [
       { name: 'Weekly Fado Night', namePt: 'Noite de Fado Semanal', attendees: 35 },
-      { name: 'Portuguese Family Market', namePt: 'Mercado Familiar Português', attendees: 120 },
+      { name: 'Lusophone Family Market', namePt: 'Mercado Familiar Português', attendees: 120 },
       { name: 'Youth Football Training', namePt: 'Treino Futebol Juvenil', attendees: 28 }
     ],
     icon: '🏛️',
@@ -94,7 +94,7 @@ const neighborhoodGroups = [
     ],
     recentEvents: [
       { name: 'Business Networking', namePt: 'Networking Empresarial', attendees: 45 },
-      { name: 'Family Portuguese BBQ', namePt: 'Churrasco Familiar Português', attendees: 65 },
+      { name: 'Family Lusophone BBQ', namePt: 'Churrasco Familiar Português', attendees: 65 },
       { name: 'Language Exchange', namePt: 'Intercâmbio Linguístico', attendees: 22 }
     ],
     icon: '🏢',
@@ -108,7 +108,7 @@ const neighborhoodGroups = [
     area: 'South London',
     areaPt: 'Sul de Londres',
     portugueseSpeakers: 3800,
-    description: 'Portuguese families relocating here due to central London housing costs',
+    description: 'Lusophone families relocating here due to central London housing costs',
     descriptionPt: 'Famílias portuguesas relocalizando-se aqui devido aos custos habitacionais do centro de Londres',
     displacement: 'Primary displacement destination - needs community support',
     displacementPt: 'Destino principal de deslocamento - precisa apoio comunitário',
@@ -118,7 +118,7 @@ const neighborhoodGroups = [
     transportLinksPt: ['Rede de Elétrico', 'Southern Rail', 'Autocarro 60, 109'],
     highlights: [
       'Affordable family housing',
-      'Portuguese school classes',
+      'Lusophone school classes',
       'Community garden project',
       'Growing business network'
     ],
@@ -130,7 +130,7 @@ const neighborhoodGroups = [
     ],
     recentEvents: [
       { name: 'Community Setup Meeting', namePt: 'Reunião Estabelecimento Comunitário', attendees: 18 },
-      { name: 'Portuguese Language Exchange', namePt: 'Intercâmbio de Língua Portuguesa', attendees: 25 },
+      { name: 'Lusophone Language Exchange', namePt: 'Intercâmbio de Língua Portuguesa', attendees: 25 },
       { name: 'Professional Support Group', namePt: 'Grupo Apoio Profissional', attendees: 32 }
     ],
     icon: '🏘️',
@@ -144,7 +144,7 @@ const neighborhoodGroups = [
     area: 'South London',
     areaPt: 'Sul de Londres',
     portugueseSpeakers: 2900,
-    description: 'New Portuguese settlement area with families seeking affordable housing',
+    description: 'New Lusophone settlement area with families seeking affordable housing',
     descriptionPt: 'Nova área de assentamento português com famílias procurando habitação acessível',
     displacement: 'Recent settlement area - building community from scratch',
     displacementPt: 'Área de assentamento recente - construindo comunidade do zero',
@@ -153,7 +153,7 @@ const neighborhoodGroups = [
     transportLinks: ['Southern Rail', 'Bus 68, 196'],
     transportLinksPt: ['Southern Rail', 'Autocarro 68, 196'],
     highlights: [
-      'Portuguese family meetups',
+      'Lusophone family meetups',
       'Private transport to events',
       'Community WhatsApp groups',
       'Potential cultural center'
@@ -167,7 +167,7 @@ const neighborhoodGroups = [
     recentEvents: [
       { name: 'First Community Meeting', namePt: 'Primeira Reunião Comunitária', attendees: 15 },
       { name: 'Transport to Stockwell Event', namePt: 'Transporte para Evento Stockwell', attendees: 8 },
-      { name: 'Portuguese Mothers Group', namePt: 'Grupo Mães Portuguesas', attendees: 12 }
+      { name: 'Lusophone Mothers Group', namePt: 'Grupo Mães Portuguesas', attendees: 12 }
     ],
     icon: '🌱',
     status: 'new',
@@ -201,7 +201,7 @@ const neighborhoodGroups = [
       'Atividades familiares ao ar livre'
     ],
     recentEvents: [
-      { name: 'Riverside Portuguese Picnic', namePt: 'Piquenique Português Ribeirinho', attendees: 28 },
+      { name: 'Riverside Lusophone Picnic', namePt: 'Piquenique Português Ribeirinho', attendees: 28 },
       { name: 'Business Startup Workshop', namePt: 'Workshop Startup Empresarial', attendees: 15 },
       { name: 'Group Transport Planning', namePt: 'Planeamento Transporte Grupo', attendees: 20 }
     ],
@@ -225,9 +225,9 @@ const neighborhoodGroups = [
     transportLinks: ['Northern Line', 'Bakerloo Line', 'Bus 12, 35'],
     transportLinksPt: ['Linha Northern', 'Linha Bakerloo', 'Autocarro 12, 35'],
     highlights: [
-      'Multi-cultural Portuguese hub',
+      'Multi-cultural Lusophone hub',
       'Brazilian football groups',
-      'African-Portuguese cultural events',
+      'African-Lusophone cultural events',
       'Easy transport connections'
     ],
     highlightsPt: [
@@ -237,9 +237,9 @@ const neighborhoodGroups = [
       'Conexões transporte fáceis'
     ],
     recentEvents: [
-      { name: 'Multicultural Portuguese Festival', namePt: 'Festival Português Multicultural', attendees: 85 },
+      { name: 'Multicultural Lusophone Festival', namePt: 'Festival Português Multicultural', attendees: 85 },
       { name: 'Brazilian Capoeira Class', namePt: 'Aula Capoeira Brasileira', attendees: 20 },
-      { name: 'African-Portuguese Heritage Talk', namePt: 'Palestra Herança Afro-Portuguesa', attendees: 35 }
+      { name: 'African-Lusophone Heritage Talk', namePt: 'Palestra Herança Afro-Portuguesa', attendees: 35 }
     ],
     icon: '🌍',
     status: 'established',
@@ -254,10 +254,10 @@ const communityResources = [
     categoryPt: 'Negócios LusoTown',
     icon: BuildingStorefrontIcon,
     items: [
-      { name: 'Portuguese bakeries', namePt: 'Padarias portuguesas', count: 25 },
+      { name: 'Lusophone bakeries', namePt: 'Padarias portuguesas', count: 25 },
       { name: 'Portuguese restaurants', namePt: 'Restaurantes portugueses', count: 18 },
-      { name: 'Portuguese services', namePt: 'Serviços portugueses', count: 42 },
-      { name: 'Portuguese shops', namePt: 'Lojas portuguesas', count: 15 }
+      { name: 'Lusophone services', namePt: 'Serviços portugueses', count: 42 },
+      { name: 'Lusophone shops', namePt: 'Lojas portuguesas', count: 15 }
     ]
   },
   {
@@ -266,7 +266,7 @@ const communityResources = [
     icon: AcademicCapIcon,
     items: [
       { name: 'Community centers', namePt: 'Centros comunitários', count: 8 },
-      { name: 'Portuguese schools', namePt: 'Escolas portuguesas', count: 12 },
+      { name: 'Lusophone schools', namePt: 'Escolas portuguesas', count: 12 },
       { name: 'Cultural associations', namePt: 'Associações culturais', count: 6 },
       { name: 'Churches & religious centers', namePt: 'Igrejas e centros religiosos', count: 9 }
     ]
@@ -287,9 +287,9 @@ const communityResources = [
     categoryPt: 'Apoio Comunitário',
     icon: HomeIcon,
     items: [
-      { name: 'Portuguese professional networks', namePt: 'Redes profissionais portuguesas', count: 8 },
+      { name: 'Lusophone professional networks', namePt: 'Redes profissionais portuguesas', count: 8 },
       { name: 'Community support groups', namePt: 'Grupos apoio comunitário', count: 15 },
-      { name: 'Portuguese women groups', namePt: 'Grupos mulheres portuguesas', count: 12 },
+      { name: 'Lusophone women groups', namePt: 'Grupos mulheres portuguesas', count: 12 },
       { name: 'Young professional activities', namePt: 'Atividades jovens profissionais', count: 20 }
     ]
   }
@@ -392,7 +392,7 @@ export default function NeighborhoodGroups() {
                       </>
                     ) : (
                       <>
-                        Portuguese <span className="gradient-text">Neighborhood</span><br />Groups in London
+                        Lusophone <span className="gradient-text">Neighborhood</span><br />Groups in London
                       </>
                     )}
                   </span>
@@ -403,7 +403,7 @@ export default function NeighborhoodGroups() {
                       </>
                     ) : (
                       <>
-                        Portuguese<br /><span className="gradient-text">Neighborhoods</span>
+                        Lusophone<br /><span className="gradient-text">Neighborhoods</span>
                       </>
                     )}
                   </span>
@@ -421,7 +421,7 @@ export default function NeighborhoodGroups() {
                     {isPortuguese ? (
                       'Mantém conexões portuguesas em toda Londres'
                     ) : (
-                      'Maintain Portuguese connections across London'
+                      'Maintain Lusophone connections across London'
                     )}
                   </span>
                 </p>
@@ -432,7 +432,7 @@ export default function NeighborhoodGroups() {
                     <UsersIcon className="h-8 w-8 text-primary-400 mx-auto mb-2" />
                     <p className="text-2xl font-bold text-gray-900">26,000+</p>
                     <p className="text-sm text-gray-600">
-                      {isPortuguese ? 'Portugueses em Londres' : 'Portuguese in London'}
+                      {isPortuguese ? 'Portugueses em Londres' : 'Lusophone in London'}
                     </p>
                   </div>
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/50">
@@ -551,7 +551,7 @@ export default function NeighborhoodGroups() {
                   {isPortuguese ? (
                     <>Grupos de <span className="gradient-text">Bairro Português</span></>
                   ) : (
-                    <>Portuguese <span className="gradient-text">Neighborhood Groups</span></>
+                    <>Lusophone <span className="gradient-text">Neighborhood Groups</span></>
                   )}
                 </h2>
                 <p className="text-lg text-gray-600 max-w-4xl mx-auto">
@@ -612,7 +612,7 @@ export default function NeighborhoodGroups() {
                         <div className="text-center">
                           <p className="text-lg font-bold text-primary-600">{group.portugueseSpeakers.toLocaleString()}</p>
                           <p className="text-xs text-gray-500">
-                            {isPortuguese ? 'Portugueses' : 'Portuguese'}
+                            {isPortuguese ? 'Portugueses' : 'Lusophone'}
                           </p>
                         </div>
                         <div className="text-center">
@@ -748,7 +748,7 @@ export default function NeighborhoodGroups() {
                   {isPortuguese ? (
                     'Partilha transporte para eventos centrais portugueses. Economiza dinheiro e mantenha-te conectado com a comunidade mesmo vivendo longe dos centros tradicionais.'
                   ) : (
-                    'Share transport to central Portuguese events. Save money and stay connected with the community even when living far from traditional centers.'
+                    'Share transport to central Lusophone events. Save money and stay connected with the community even when living far from traditional centers.'
                   )}
                 </p>
               </div>
@@ -916,7 +916,7 @@ export default function NeighborhoodGroups() {
                     {isPortuguese ? (
                       'Algumas comunidades portuguesas em novas áreas precisam da nossa ajuda para estabelecer grupos locais fortes e manter conexões culturais.'
                     ) : (
-                      'Some Portuguese communities in new areas need our help to establish strong local groups and maintain cultural connections.'
+                      'Some Lusophone communities in new areas need our help to establish strong local groups and maintain cultural connections.'
                     )}
                   </p>
                 </div>
@@ -933,7 +933,7 @@ export default function NeighborhoodGroups() {
                             {isPortuguese ? group.namePt : group.name}
                           </h3>
                           <p className="text-sm text-gray-500">
-                            {group.portugueseSpeakers.toLocaleString()} {isPortuguese ? 'portugueses' : 'Portuguese'}
+                            {group.portugueseSpeakers.toLocaleString()} {isPortuguese ? 'portugueses' : 'Lusophone'}
                           </p>
                         </div>
                       </div>
@@ -1025,7 +1025,7 @@ export default function NeighborhoodGroups() {
                   {isPortuguese ? (
                     'Não deixes que a gentrificação quebre as tuas conexões portuguesas. Junta-te ao teu grupo de bairro local e mantém a comunidade unida em toda Londres.'
                   ) : (
-                    'Don\'t let gentrification break your Portuguese connections. Join your local neighborhood group and keep the community united across London.'
+                    'Don\'t let gentrification break your Lusophone connections. Join your local neighborhood group and keep the community united across London.'
                   )}
                 </p>
                 

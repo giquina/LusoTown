@@ -67,21 +67,21 @@ const CULTURAL_CATEGORIES = [
     id: 'santos_populares',
     name: { en: 'Santos Populares', pt: 'Santos Populares' },
     icon: '🎉',
-    description: 'Traditional Portuguese summer festivals and celebrations',
+    description: 'Traditional Lusophone summer festivals and celebrations',
     verification_required: false
   },
   {
     id: 'fado_music',
     name: { en: 'Fado Music', pt: 'Música de Fado' },
     icon: '🎵',
-    description: 'Portuguese soul music performances and appreciation',
+    description: 'Lusophone soul music performances and appreciation',
     verification_required: true
   },
   {
     id: 'football_culture',
     name: { en: 'Football Culture', pt: 'Cultura do Futebol' },
     icon: '⚽',
-    description: 'Portuguese football viewing parties and discussions',
+    description: 'Lusophone football viewing parties and discussions',
     verification_required: false
   },
   {
@@ -100,9 +100,9 @@ const CULTURAL_CATEGORIES = [
   },
   {
     id: 'gastronomy',
-    name: { en: 'Portuguese Gastronomy', pt: 'Gastronomia Portuguesa' },
+    name: { en: 'Lusophone Gastronomy', pt: 'Gastronomia Portuguesa' },
     icon: '🍽️',
-    description: 'Traditional Portuguese cooking and food experiences',
+    description: 'Traditional Lusophone cooking and food experiences',
     verification_required: false
   },
   {
@@ -185,7 +185,7 @@ export default function CommunityEventCreation({
         is_verified: true,
         verification_level: 'business_owner',
         business_profile: {
-          name: 'Portuguese Cultural Services Ltd',
+          name: 'Lusophone Cultural Services Ltd',
           type: 'Cultural Organization',
           verification_status: 'verified'
         },
@@ -370,7 +370,7 @@ export default function CommunityEventCreation({
               <p className="text-gray-600 text-sm">
                 {isPortuguese
                   ? 'Partilhe experiências portuguesas autênticas em Londres'
-                  : 'Share authentic Portuguese experiences in London'}
+                  : 'Share authentic Lusophone experiences in London'}
               </p>
             </div>
           </div>
@@ -562,7 +562,7 @@ export default function CommunityEventCreation({
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {isPortuguese ? 'Bairro Português' : 'Portuguese Neighborhood'} *
+                  {isPortuguese ? 'Bairro Português' : 'Lusophone Neighborhood'} *
                 </label>
                 <select
                   value={formData.portuguese_neighborhood}

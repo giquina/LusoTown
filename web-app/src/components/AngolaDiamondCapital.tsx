@@ -121,13 +121,13 @@ const luxuryDevelopments: LuxuryDevelopment[] = [
   },
   {
     id: 'dev-002',
-    name: 'Portuguese Quarter Business Hub',
+    name: 'Lusophone Quarter Business Hub',
     location: 'Aldgate, London',
     type: 'Commercial',
-    description: 'Modern business complex designed for Portuguese and Angolan entrepreneurs in London. Premium office spaces with co-working areas, meeting rooms, and cultural facilities.',
+    description: 'Modern business complex designed for Lusophone and Angolan entrepreneurs in London. Premium office spaces with co-working areas, meeting rooms, and cultural facilities.',
     value: '£12M development',
     completionDate: '2025',
-    features: ['Flexible Office Spaces', 'Co-working Areas', 'Meeting Rooms', 'Portuguese Café', 'Business Incubator'],
+    features: ['Flexible Office Spaces', 'Co-working Areas', 'Meeting Rooms', 'Lusophone Café', 'Business Incubator'],
     image: '/developments/portuguese-quarter.jpg'
   },
   {

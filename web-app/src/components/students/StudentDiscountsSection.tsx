@@ -102,7 +102,7 @@ const STUDENT_DISCOUNTS: StudentDiscount[] = [
     discountValue: 'Up to 70% off',
     originalPrice: 35,
     studentPrice: 10,
-    description: 'Access Portuguese cultural events, workshops, and networking sessions at heavily discounted student rates.',
+    description: 'Access Lusophone cultural events, workshops, and networking sessions at heavily discounted student rates.',
     descriptionPortuguese: 'Acesso a eventos culturais portugueses, workshops e sessões de networking com grandes descontos para estudantes.',
     eligibility: ['Verified student status', 'Portuguese-speaking community member', 'Age 18-30'],
     verificationRequired: true,
@@ -126,14 +126,14 @@ const STUDENT_DISCOUNTS: StudentDiscount[] = [
   },
   {
     id: 'transport-student-discount',
-    title: '25% Off Portuguese Transport Services',
+    title: '25% Off Lusophone Transport Services',
     titlePortuguese: '25% Desconto nos Serviços de Transporte Portugueses',
     category: 'transportation',
     discountType: 'percentage',
     discountValue: 25,
     originalPrice: 25,
     studentPrice: 18.75,
-    description: 'Discounted rates on premium transport services to Portuguese events, cultural sites, and community gatherings.',
+    description: 'Discounted rates on premium transport services to Lusophone events, cultural sites, and community gatherings.',
     descriptionPortuguese: 'Tarifas com desconto nos serviços de transporte premium para eventos portugueses, locais culturais e encontros comunitários.',
     eligibility: ['Student membership', 'Valid student ID', 'Advance booking required'],
     verificationRequired: true,
@@ -157,7 +157,7 @@ const STUDENT_DISCOUNTS: StudentDiscount[] = [
   },
   {
     id: 'cultural-workshop-student',
-    title: 'Free Portuguese Language & Culture Classes',
+    title: 'Free Lusophone Language & Culture Classes',
     titlePortuguese: 'Aulas Gratuitas de Língua e Cultura Portuguesa',
     category: 'cultural',
     discountType: 'fixed_amount',
@@ -188,7 +188,7 @@ const STUDENT_DISCOUNTS: StudentDiscount[] = [
   },
   {
     id: 'partner-business-discounts',
-    title: 'Portuguese Business Partner Discounts',
+    title: 'Lusophone Business Partner Discounts',
     titlePortuguese: 'Descontos em Negócios Parceiros Portugueses',
     category: 'partners',
     discountType: 'percentage',
@@ -350,7 +350,7 @@ export default function StudentDiscountsSection() {
             <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent font-bold">
               {language === 'pt' 
                 ? "Descontos Exclusivos para Estudantes Portugueses"
-                : "Exclusive Discounts for Portuguese Students"}
+                : "Exclusive Discounts for Lusophone Students"}
             </span>
           </div>
 
@@ -363,7 +363,7 @@ export default function StudentDiscountsSection() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             {language === 'pt' 
               ? 'Acesso exclusivo a descontos especiais para estudantes portugueses verificados. Da adesão da comunidade a eventos culturais e serviços profissionais.'
-              : 'Exclusive access to special discounts for verified Portuguese students. From community membership to cultural events and professional services.'}
+              : 'Exclusive access to special discounts for verified Lusophone students. From community membership to cultural events and professional services.'}
           </p>
 
           {/* Savings Overview */}

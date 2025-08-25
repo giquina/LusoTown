@@ -16,12 +16,12 @@ interface PortugueseContentState<T> {
   refetch: () => void
 }
 
-// Cache for Portuguese content to improve performance
+// Cache for Lusophone content to improve performance
 const contentCache = new Map<string, { data: any; timestamp: number }>()
 const CACHE_DURATION = 5 * 60 * 1000 // 5 minutes
 
 /**
- * Custom hook for loading Portuguese content with performance optimizations
+ * Custom hook for loading Lusophone content with performance optimizations
  * Includes caching, error handling, and loading states
  */
 export function usePortugueseContent<T>(
@@ -62,9 +62,9 @@ export function usePortugueseContent<T>(
         })
       }
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Failed to load Portuguese content'
+      const errorMessage = err instanceof Error ? err.message : 'Failed to load Lusophone content'
       setError(errorMessage)
-      console.error('Portuguese content loading error:', err)
+      console.error('Lusophone content loading error:', err)
       
       // Use fallback if available
       if (fallback) {
@@ -98,7 +98,7 @@ export function usePortugueseContent<T>(
 }
 
 /**
- * Hook specifically for Portuguese cultural events
+ * Hook specifically for Lusophone cultural events
  */
 export function usePortugueseEvents() {
   return usePortugueseContent(
@@ -106,7 +106,7 @@ export function usePortugueseEvents() {
       // This would typically fetch from your API
       const response = await fetch('/api/events/portuguese')
       if (!response.ok) {
-        throw new Error('Failed to fetch Portuguese events')
+        throw new Error('Failed to fetch Lusophone events')
       }
       return response.json()
     },
@@ -137,7 +137,7 @@ export function usePortugueseBusinesses() {
 }
 
 /**
- * Clear all Portuguese content cache (useful for admin actions)
+ * Clear all Lusophone content cache (useful for admin actions)
  */
 export function clearPortugueseContentCache(): void {
   contentCache.clear()

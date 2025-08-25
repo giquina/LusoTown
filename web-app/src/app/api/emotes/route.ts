@@ -4,7 +4,7 @@ import { cookies } from 'next/headers'
 
 export const dynamic = 'force-dynamic'
 
-// GET /api/emotes - Get Portuguese emotes
+// GET /api/emotes - Get Lusophone emotes
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url)

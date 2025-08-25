@@ -1,7 +1,7 @@
 "use client";
 
 // LusoTown Design System:
-// - Background: Portuguese gradient (from-secondary-600 via-action-600 to-accent-600)
+// - Background: Lusophone gradient (from-secondary-600 via-action-600 to-accent-600)
 // - Button text: secondary-700 (green) for contrast against white background
 // - Never use primary (blue) colors for CTA sections
 
@@ -30,7 +30,7 @@ const socialProviders = [
 // Enhanced community highlights with United Kingdom focus
 const communityHighlights = [
   { 
-    label: "Portuguese Speakers", 
+    label: "Lusophone Speakers", 
     value: communityStats.members, 
     icon: UserGroupIcon,
     description: "Across the United Kingdom"
@@ -51,7 +51,7 @@ const communityHighlights = [
     label: "Success Stories", 
     value: "500+", 
     icon: HeartIcon,
-    description: "Portuguese connections made in the United Kingdom"
+    description: "Lusophone connections made in the United Kingdom"
   },
 ];
 
@@ -117,7 +117,7 @@ export default function CTA() {
                 <h3 className="text-white font-bold text-xl mb-2">Cultural Ambassador</h3>
                 <p className="text-white/90 text-2xl font-bold">{formatPrice(plans.ambassador.monthly)}/month</p>
                 <p className="text-white/80 text-sm mt-3 leading-relaxed">
-                  Premium access + priority visibility across all United Kingdom Portuguese events
+                  Premium access + priority visibility across all United Kingdom Lusophone events
                 </p>
               </div>
             </div>

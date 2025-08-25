@@ -229,7 +229,7 @@ export default function FeatureGate({
       <div className="mt-3 text-xs text-gray-500">
         {isPortuguese 
           ? 'Junte-se a 750+ portugueses que já fizeram upgrade'
-          : 'Join 750+ Portuguese speakers who already upgraded'}
+          : 'Join Portuguese speakers who already upgraded'}
       </div>
     </motion.div>
   )

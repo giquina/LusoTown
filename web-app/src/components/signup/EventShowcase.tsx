@@ -46,11 +46,11 @@ export function EventShowcase({ selectedAudience = '', className = '' }: EventSh
     {
       id: 'executive-networking-gala',
       title: {
-        en: 'Portuguese Executive Networking Gala',
+        en: 'Lusophone Executive Networking Gala',
         pt: 'Gala de Networking Executivo Português'
       },
       description: {
-        en: 'Black-tie networking event with C-suite executives from Portuguese companies. Premium venue, gourmet dining, strategic partnerships.',
+        en: 'Black-tie networking event with C-suite executives from Lusophone companies. Premium venue, gourmet dining, strategic partnerships.',
         pt: 'Evento de networking de gala com executivos C-level de empresas portuguesas. Local premium, jantar gourmet, parcerias estratégicas.'
       },
       type: 'business',
@@ -65,11 +65,11 @@ export function EventShowcase({ selectedAudience = '', className = '' }: EventSh
     {
       id: 'tech-startup-pitch',
       title: {
-        en: 'Portuguese Tech Startup Pitch Night',
+        en: 'Lusophone Tech Startup Pitch Night',
         pt: 'Noite de Pitch de Startups Tech Portuguesas'
       },
       description: {
-        en: 'Monthly startup pitch event featuring Portuguese entrepreneurs. Angel investors, VCs, and mentors. Innovation meets tradition.',
+        en: 'Monthly startup pitch event featuring Lusophone entrepreneurs. Angel investors, VCs, and mentors. Innovation meets tradition.',
         pt: 'Evento mensal de pitch de startups com empreendedores portugueses. Investidores anjo, VCs e mentores. Inovação encontra tradição.'
       },
       type: 'business',
@@ -84,11 +84,11 @@ export function EventShowcase({ selectedAudience = '', className = '' }: EventSh
     {
       id: 'university-career-fair',
       title: {
-        en: 'Portuguese University Career Fair',
+        en: 'Lusophone University Career Fair',
         pt: 'Feira de Carreiras Universitárias Portuguesas'
       },
       description: {
-        en: 'Exclusive career fair connecting 2,150+ Portuguese students with top employers. Graduate opportunities, internships, mentorship.',
+        en: 'Exclusive career fair connecting 2,150+ Lusophone students with top employers. Graduate opportunities, internships, mentorship.',
         pt: 'Feira de carreiras exclusiva conectando 2.150+ estudantes portugueses com empregadores de topo. Oportunidades de graduação, estágios, mentoria.'
       },
       type: 'business',
@@ -114,7 +114,7 @@ export function EventShowcase({ selectedAudience = '', className = '' }: EventSh
       },
       type: 'romantic',
       date: 'Saturday, March 16th, 8:00 PM',
-      location: 'Stockwell Portuguese Quarter',
+      location: 'Stockwell Lusophone Quarter',
       attendees: 45,
       price: '£35 per person',
       image: '/images/events/fado-romance.jpg',
@@ -124,7 +124,7 @@ export function EventShowcase({ selectedAudience = '', className = '' }: EventSh
     {
       id: 'wine-tasting-romance',
       title: {
-        en: 'Portuguese Wine & Romance Tasting',
+        en: 'Lusophone Wine & Romance Tasting',
         pt: 'Degustação de Vinhos e Romance Português'
       },
       description: {
@@ -164,11 +164,11 @@ export function EventShowcase({ selectedAudience = '', className = '' }: EventSh
     {
       id: 'santos-populares',
       title: {
-        en: 'Santos Populares Festival - Portuguese Street Party',
+        en: 'Santos Populares Festival - Lusophone Street Party',
         pt: 'Festival Santos Populares - Festa de Rua Portuguesa'
       },
       description: {
-        en: 'Traditional Portuguese street festival with live music, authentic food, folk dancing, and community celebrations. Family-friendly cultural immersion.',
+        en: 'Traditional Lusophone street festival with live music, authentic food, folk dancing, and community celebrations. Family-friendly cultural immersion.',
         pt: 'Festival de rua tradicional português com música ao vivo, comida autêntica, danças folclóricas e celebrações comunitárias. Imersão cultural para toda família.'
       },
       type: 'cultural',
@@ -271,7 +271,7 @@ export function EventShowcase({ selectedAudience = '', className = '' }: EventSh
             ? (language === 'pt' ? 'Eventos exclusivos de networking profissional' : 'Exclusive professional networking events')
             : selectedAudience === 'romantic'
             ? (language === 'pt' ? 'Eventos íntimos para conexões românticas' : 'Intimate events for romantic connections')
-            : (language === 'pt' ? 'Diversos eventos culturais portugueses' : 'Diverse Portuguese cultural events')
+            : (language === 'pt' ? 'Diversos eventos culturais portugueses' : 'Diverse Lusophone cultural events')
           }
         </p>
       </motion.div>

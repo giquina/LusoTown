@@ -131,7 +131,7 @@ export function AIConsentProvider({ children, userId }: AIConsentProviderProps) 
     regionalPreferences: false,
     culturalInterests: false,
     
-    // Cross-border data - explicit consent for Portuguese diaspora
+    // Cross-border data - explicit consent for Lusophone diaspora
     portugalData: false,
     brazilData: false,
     euData: false,
@@ -313,7 +313,7 @@ export function AIConsentProvider({ children, userId }: AIConsentProviderProps) 
     const templateConsents: Partial<AIConsentState> = {
       privacyTemplate: template,
       
-      // Apply template settings with Portuguese cultural considerations
+      // Apply template settings with Lusophone cultural considerations
       notifications: template !== 'conservative',
       analytics: template === 'enhanced',
       
@@ -349,7 +349,7 @@ export function AIConsentProvider({ children, userId }: AIConsentProviderProps) 
   // =============================================================================
 
   const toggleFeatureConsent = useCallback(async (feature: keyof AIConsentState, enabled: boolean) => {
-    // Special handling for sensitive Portuguese cultural features
+    // Special handling for sensitive Lusophone cultural features
     if (['heritageSharing', 'familyConnections'].includes(feature) && enabled) {
       // Show additional cultural sensitivity warning
       const confirmed = window.confirm(
@@ -507,7 +507,7 @@ export function AIConsentProvider({ children, userId }: AIConsentProviderProps) 
   }, [userId, consentState])
 
   const getCulturalDataSummary = useCallback(async () => {
-    // TODO: Generate cultural data summary respecting Portuguese privacy values
+    // TODO: Generate cultural data summary respecting Lusophone privacy values
     return {
       userId,
       culturalProfile: {

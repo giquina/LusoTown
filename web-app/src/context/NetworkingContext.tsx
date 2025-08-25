@@ -248,7 +248,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
   const [notifications, setNotifications] = useState<ConnectionNotification[]>([])
   const [loading, setLoading] = useState(true)
 
-  // Mock conversation starters with Portuguese cultural context
+  // Mock conversation starters with Lusophone cultural context
   const conversationStarters: ConversationStarter[] = [
     {
       id: 'cultural-1',
@@ -267,7 +267,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'cultural-5',
       category: 'cultural',
-      text_en: "Which Portuguese pastry do you miss the most from home?",
+      text_en: "Which Lusophone pastry do you miss the most from home?",
       text_pt: "Que doce português tem mais saudades de casa?",
       context: 'Gastronomia e memórias afetivas'
     },
@@ -281,7 +281,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'cultural-7',
       category: 'cultural',
-      text_en: "What Portuguese words do you find yourself using in English conversations?",
+      text_en: "What Lusophone words do you find yourself using in English conversations?",
       text_pt: "Que palavras portuguesas se apanha a usar nas conversas em inglês?",
       context: 'Língua e identidade cultural'
     },
@@ -295,7 +295,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'events-2',
       category: 'events',
-      text_en: "Are you planning to attend any Portuguese cultural festivals this year?",
+      text_en: "Are you planning to attend any Lusophone cultural festivals this year?",
       text_pt: "Estás a planear assistir a alguns festivais culturais portugueses este ano?",
       context: 'Cultural events and festivals'
     },
@@ -323,21 +323,21 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'personal-4',
       category: 'personal',
-      text_en: "What Portuguese expression best describes your experience in London?",
+      text_en: "What Lusophone expression best describes your experience in London?",
       text_pt: "Que expressão portuguesa melhor descreve a sua experiência em Londres?",
       context: 'Expressões idiomáticas portuguesas'
     },
     {
       id: 'personal-5',
       category: 'personal',
-      text_en: "How has living in London changed your perspective on being Portuguese?",
+      text_en: "How has living in London changed your perspective on being Lusophone?",
       text_pt: "Como é que viver em Londres mudou a sua perspetiva de ser português?",
       context: 'Identidade cultural na diáspora'
     },
     {
       id: 'cultural-3',
       category: 'cultural',
-      text_en: "What's your favorite Portuguese recipe to cook in London?",
+      text_en: "What's your favorite Lusophone recipe to cook in London?",
       text_pt: "Qual é a tua receita portuguesa favorita para cozinhar em Londres?",
       context: 'Food and cooking traditions'
     },
@@ -351,21 +351,21 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'professional-4',
       category: 'professional',
-      text_en: "Do you work with Portuguese clients or suppliers from your role in London?",
+      text_en: "Do you work with Lusophone clients or suppliers from your role in London?",
       text_pt: "Trabalha com clientes ou fornecedores portugueses no seu papel em Londres?",
       context: 'Negócios transnacionais lusófonos'
     },
     {
       id: 'professional-5',
       category: 'professional',
-      text_en: "How has your Portuguese background influenced your career path?",
+      text_en: "How has your Lusophone background influenced your career path?",
       text_pt: "Como é que as suas origens portuguesas influenciaram o seu percurso profissional?",
       context: 'Vantagens culturais no trabalho'
     },
     {
       id: 'cultural-4',
       category: 'cultural',
-      text_en: "Do you celebrate any Portuguese holidays or festivals in London?",
+      text_en: "Do you celebrate any Lusophone holidays or festivals in London?",
       text_pt: "Celebras algum feriado ou festival português em Londres?",
       context: 'Holiday celebrations'
     },
@@ -454,7 +454,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
         firstMetEventId: 'event-fado-night',
         firstMetEvent: {
           id: 'event-fado-night',
-          title: 'Fado Night at Portuguese Cultural Centre',
+          title: 'Fado Night at Lusophone Cultural Centre',
           date: '2024-01-15'
         },
         connectionStrength: calculateConnectionStrength({
@@ -487,7 +487,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
         firstMetEventId: 'event-portuguese-food-tour',
         firstMetEvent: {
           id: 'event-portuguese-food-tour',
-          title: 'Portuguese Food Tour in Little Portugal',
+          title: 'Lusophone Food Tour in Little Portugal',
           date: '2024-01-10'
         },
         connectionStrength: calculateConnectionStrength({
@@ -520,7 +520,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
         firstMetEventId: 'event-book-club',
         firstMetEvent: {
           id: 'event-book-club',
-          title: 'Portuguese Literature Book Club',
+          title: 'Lusophone Literature Book Club',
           date: '2024-01-08'
         },
         connectionStrength: calculateConnectionStrength({
@@ -552,7 +552,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
           id: 'ach-1',
           type: 'connector',
           name: 'Community Connector',
-          description: 'Connected with 3+ Portuguese Portuguese speakers',
+          description: 'Connected with 3+ Lusophone Portuguese speakers',
           icon: '🤝',
           earnedAt: '2024-01-15T20:30:00Z',
           isActive: true
@@ -561,7 +561,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
           id: 'ach-2',
           type: 'regular_attendee',
           name: 'Cultural Enthusiast',
-          description: 'Attended 5+ Portuguese cultural events',
+          description: 'Attended 5+ Lusophone cultural events',
           icon: '🎭',
           earnedAt: '2024-01-20T18:00:00Z',
           isActive: true
@@ -597,7 +597,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
         id: 'notif-1',
         type: 'new_connection',
         title: 'New Connection!',
-        message: 'You connected with Ana Pereira at Portuguese Literature Book Club',
+        message: 'You connected with Ana Pereira at Lusophone Literature Book Club',
         data: { connectionId: 'conn-3', eventId: 'event-book-club' },
         isRead: false,
         createdAt: '2024-01-08T19:45:00Z'

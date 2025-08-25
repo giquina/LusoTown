@@ -69,14 +69,14 @@ export default function PortugueseSpeakingNationsPage() {
       continent: 'Europe',
       population: '10.3 million',
       gdp: '$249.9 billion',
-      languages: ['Portuguese'],
+      languages: ['Lusophone'],
       timeZone: 'WET (UTC+0)',
       independence: '1143',
       followers: 2840,
       isVerified: true,
       countryCode: 'PT',
       capital: 'Lisbon',
-      language: 'Portuguese',
+      language: 'Lusophone',
       currency: 'EUR',
       culturalFocus: ['Fado', 'Port Wine', 'Azulejos', 'Maritime Heritage', 'Literature'],
       culturalHighlights: ['Fado Music', 'Pastéis de Nata', 'Azulejo Tiles', 'Port Wine', 'Jerónimos Monastery'],
@@ -87,16 +87,16 @@ export default function PortugueseSpeakingNationsPage() {
       businessOpportunities: 28,
       diplomaticPresence: {
         embassy: 'Embassy of Portugal, London',
-        consulate: 'Portuguese Consulate General',
+        consulate: 'Lusophone Consulate General',
         culturalCenter: 'Instituto Camões London'
       },
       londonCommunity: {
         size: '95,000+',
         mainAreas: ['Stockwell', 'Vauxhall', 'Lambeth', 'Tufnell Park'],
-        organizations: ['Portuguese Cultural Centre', 'Casa do Bacalhau', 'Portuguese-speaking community Association']
+        organizations: ['Lusophone Cultural Centre', 'Casa do Bacalhau', 'Portuguese-speaking community Association']
       },
       benefits: [
-        'Portuguese Embassy event invitations',
+        'Lusophone Embassy event invitations',
         'Cultural festival notifications', 
         'Business networking opportunities',
         'Tourism and travel updates',
@@ -117,14 +117,14 @@ export default function PortugueseSpeakingNationsPage() {
       continent: 'South America',
       population: '215.3 million',
       gdp: '$2.13 trillion',
-      languages: ['Portuguese'],
+      languages: ['Lusophone'],
       timeZone: 'BRT (UTC-3)',
       independence: '1822',
       followers: 1950,
       isVerified: true,
       countryCode: 'BR',
       capital: 'Brasília',
-      language: 'Portuguese (Brazilian)',
+      language: 'Lusophone (Brazilian)',
       currency: 'BRL',
       culturalFocus: ['Carnival', 'Samba', 'Capoeira', 'Football', 'Bossa Nova'],
       culturalHighlights: ['Carnival', 'Samba', 'Capoeira', 'Christ the Redeemer', 'Amazon Rainforest'],
@@ -165,14 +165,14 @@ export default function PortugueseSpeakingNationsPage() {
       continent: 'Africa',
       population: '34.5 million',
       gdp: '$106.4 billion',
-      languages: ['Portuguese'],
+      languages: ['Lusophone'],
       timeZone: 'WAT (UTC+1)',
       independence: '1975',
       followers: 680,
       isVerified: true,
       countryCode: 'AO',
       capital: 'Luanda',
-      language: 'Portuguese',
+      language: 'Lusophone',
       currency: 'AOA',
       culturalFocus: ['Semba', 'Kizomba', 'Traditional Crafts', 'Oil Industry'],
       culturalHighlights: ['Kizomba', 'Semba', 'Traditional Masks', 'Luanda Architecture'],
@@ -211,14 +211,14 @@ export default function PortugueseSpeakingNationsPage() {
       continent: 'Africa',
       population: '32.4 million',
       gdp: '$16.9 billion',
-      languages: ['Portuguese'],
+      languages: ['Lusophone'],
       timeZone: 'CAT (UTC+2)',
       independence: '1975',
       followers: 420,
       isVerified: true,
       countryCode: 'MZ',
       capital: 'Maputo',
-      language: 'Portuguese',
+      language: 'Lusophone',
       currency: 'MZN',
       culturalFocus: ['Marrabenta', 'Traditional Textiles', 'Coastal Culture'],
       culturalHighlights: ['Marrabenta Music', 'Traditional Textiles', 'Island Culture', 'Seafood Cuisine'],
@@ -257,14 +257,14 @@ export default function PortugueseSpeakingNationsPage() {
       continent: 'Africa',
       population: '563,000',
       gdp: '$2.1 billion',
-      languages: ['Portuguese', 'Cape Verdean Creole'],
+      languages: ['Lusophone', 'Cape Verdean Creole'],
       timeZone: 'CVT (UTC-1)',
       independence: '1975',
       followers: 320,
       isVerified: true,
       countryCode: 'CV',
       capital: 'Praia',
-      language: 'Portuguese',
+      language: 'Lusophone',
       currency: 'CVE',
       culturalFocus: ['Morna', 'Funaná', 'Island Culture', 'Maritime Heritage'],
       culturalHighlights: ['Morna Music', 'Funaná Dance', 'Cesária Évora Legacy', 'Island Festivals'],
@@ -303,14 +303,14 @@ export default function PortugueseSpeakingNationsPage() {
       continent: 'Africa',
       population: '2.0 million',
       gdp: '$1.6 billion',
-      languages: ['Portuguese'],
+      languages: ['Lusophone'],
       timeZone: 'GMT (UTC+0)',
       independence: '1973',
       followers: 180,
       isVerified: true,
       countryCode: 'GW',
       capital: 'Bissau',
-      language: 'Portuguese',
+      language: 'Lusophone',
       currency: 'XOF',
       culturalFocus: ['Traditional Music', 'Mask Ceremonies', 'Oral Traditions'],
       culturalHighlights: ['Gumbe Music', 'Traditional Masks', 'Rice Culture', 'Bijagós Islands'],
@@ -373,12 +373,12 @@ export default function PortugueseSpeakingNationsPage() {
                 </div>
                 <div className="text-left">
                   <h1 className="text-4xl sm:text-5xl font-bold mb-2">
-                    {isPortuguese ? 'Países Lusófonos' : 'Portuguese-Speaking Nations'}
+                    {isPortuguese ? 'Países Lusófonos' : 'Lusophone-Speaking Nations'}
                   </h1>
                   <p className="text-xl opacity-90">
                     {isPortuguese 
                       ? 'Conecte-se com comunidades portuguesas globais'
-                      : 'Connect with global Portuguese communities'
+                      : 'Connect with global Lusophone communities'
                     }
                   </p>
                 </div>
@@ -419,7 +419,7 @@ export default function PortugueseSpeakingNationsPage() {
           <div className="container-width">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold text-primary-900 text-center mb-12">
-                {isPortuguese ? 'Por que Seguir Países Lusófonos?' : 'Why Follow Portuguese-Speaking Nations?'}
+                {isPortuguese ? 'Por que Seguir Países Lusófonos?' : 'Why Follow Lusophone-Speaking Nations?'}
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -58,7 +58,7 @@ const PAYMENT_METHODS: PaymentMethod[] = [
     type: 'card',
     name: 'Credit/Debit Card',
     namePortuguese: 'Cartão de Crédito/Débito',
-    description: 'Secure payment with Visa, Mastercard, Amex - Portuguese bank cards accepted',
+    description: 'Secure payment with Visa, Mastercard, Amex - Lusophone bank cards accepted',
     descriptionPortuguese: 'Pagamento seguro com Visa, Mastercard, Amex - Cartões bancários portugueses aceites',
     icon: CreditCardIcon,
     supportedCurrencies: ['GBP', 'EUR', 'USD', 'BRL'],

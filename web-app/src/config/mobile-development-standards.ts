@@ -43,10 +43,10 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
     },
     
     culturalAdaptability: {
-      title: 'Portuguese Cultural Content Adaptability',
+      title: 'Lusophone Cultural Content Adaptability',
       description: 'Ensure cultural content displays properly across all mobile devices',
-      reasoning: 'Portuguese cultural elements and longer text must work on small screens',
-      implementation: 'Test with Portuguese text, cultural images, and community-specific content'
+      reasoning: 'Lusophone cultural elements and longer text must work on small screens',
+      implementation: 'Test with Lusophone text, cultural images, and community-specific content'
     }
   },
 
@@ -56,8 +56,8 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
       id: 'breakpoint-strategy',
       category: 'design',
       title: 'Progressive Enhancement Breakpoints',
-      description: 'Use systematic breakpoint strategy that accommodates Portuguese content',
-      implementation: 'Mobile (375px+), Tablet (768px+), Desktop (1024px+). Test Portuguese text at each breakpoint.',
+      description: 'Use systematic breakpoint strategy that accommodates Lusophone content',
+      implementation: 'Mobile (375px+), Tablet (768px+), Desktop (1024px+). Test Lusophone text at each breakpoint.',
       examples: {
         good: 'sm:text-lg md:text-xl lg:text-2xl // Progressive text scaling',
         bad: 'text-2xl md:text-sm // Reducing text size on larger screens'
@@ -70,7 +70,7 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
       id: 'flexible-containers',
       category: 'design',
       title: 'Flexible Container Systems',
-      description: 'Containers must adapt to varying Portuguese text lengths and cultural content',
+      description: 'Containers must adapt to varying Lusophone text lengths and cultural content',
       implementation: 'Use CSS Grid and Flexbox for flexible layouts. Avoid fixed widths.',
       examples: {
         good: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 // Responsive grid',
@@ -97,15 +97,15 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
     {
       id: 'portuguese-text-accommodation',
       category: 'cultural',
-      title: 'Portuguese Text Length Accommodation',
-      description: 'Account for Portuguese text being 20-40% longer than English equivalents',
-      implementation: 'Use flexible text containers, test with longest Portuguese translations, implement text truncation gracefully.',
+      title: 'Lusophone Text Length Accommodation',
+      description: 'Account for Lusophone text being 20-40% longer than English equivalents',
+      implementation: 'Use flexible text containers, test with longest Lusophone translations, implement text truncation gracefully.',
       examples: {
         good: 'line-clamp-2 // Graceful text truncation',
         bad: 'w-20 overflow-hidden // Hard width limit causing cut-off'
       },
       priority: 'high',
-      validation: 'Test with longest Portuguese translations for each text element'
+      validation: 'Test with longest Lusophone translations for each text element'
     },
     
     {
@@ -113,7 +113,7 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
       category: 'design',
       title: 'Mobile-Optimized Navigation',
       description: 'Navigation must be thumb-friendly and culturally appropriate',
-      implementation: 'Bottom tab bars, hamburger menus with large targets, Portuguese cultural navigation terms',
+      implementation: 'Bottom tab bars, hamburger menus with large targets, Lusophone cultural navigation terms',
       examples: {
         good: 'bottom-0 fixed // Bottom navigation for thumb accessibility',
         bad: 'top-0 // Top navigation hard to reach on large phones'
@@ -140,8 +140,8 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
   // Component-Specific Mobile Patterns
   componentPatterns: [
     {
-      name: 'Portuguese Event Card',
-      description: 'Mobile-optimized event card that accommodates Portuguese event names and descriptions',
+      name: 'Lusophone Event Card',
+      description: 'Mobile-optimized event card that accommodates Lusophone event names and descriptions',
       mobileImplementation: 'Stack layout on mobile, side-by-side on tablet. Flexible text containers.',
       portugueseConsiderations: 'Event titles can be long ("Noite de Fado Tradicional Português em Londres"), descriptions are detailed',
       codeExample: `
@@ -165,20 +165,20 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
   </div>
 </div>`,
       commonMistakes: [
-        'Fixed width containers that cut off Portuguese titles',
+        'Fixed width containers that cut off Lusophone titles',
         'Touch targets too small on mobile',
-        'Not testing with actual Portuguese content',
+        'Not testing with actual Lusophone content',
         'Horizontal scrolling on mobile devices'
       ]
     },
     
     {
       name: 'Portuguese-speaking community Form',
-      description: 'Mobile-friendly form with Portuguese labels and validation',
-      mobileImplementation: 'Single column layout, large input fields, clear Portuguese labels',
-      portugueseConsiderations: 'Form labels are longer in Portuguese, error messages need more space',
+      description: 'Mobile-friendly form with Lusophone labels and validation',
+      mobileImplementation: 'Single column layout, large input fields, clear Lusophone labels',
+      portugueseConsiderations: 'Form labels are longer in Lusophone, error messages need more space',
       codeExample: `
-// ✅ Good: Mobile-optimized Portuguese form
+// ✅ Good: Mobile-optimized Lusophone form
 <form className="space-y-4">
   <div className="space-y-2">
     <label className="block text-sm font-medium text-gray-700">
@@ -199,19 +199,19 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
 </form>`,
       commonMistakes: [
         'Input fields too small for touch interaction',
-        'Portuguese labels causing layout overflow',
+        'Lusophone labels causing layout overflow',
         'Error messages not properly styled for mobile',
-        'Form validation not accounting for Portuguese characters'
+        'Form validation not accounting for Lusophone characters'
       ]
     },
     
     {
       name: 'Mobile Navigation Menu',
       description: 'Portuguese-speaking community navigation optimized for mobile devices',
-      mobileImplementation: 'Bottom tab bar with Portuguese cultural terms, large touch targets',
+      mobileImplementation: 'Bottom tab bar with Lusophone cultural terms, large touch targets',
       portugueseConsiderations: 'Navigation terms like "Comunidade" vs "Community" affect spacing',
       codeExample: `
-// ✅ Good: Mobile-optimized Portuguese navigation
+// ✅ Good: Mobile-optimized Lusophone navigation
 <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 safe-area-pb">
   <div className="grid grid-cols-5 h-16">
     {NAVIGATION_ITEMS.map((item) => (
@@ -231,7 +231,7 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
 </nav>`,
       commonMistakes: [
         'Navigation items too small for touch interaction',
-        'Portuguese labels causing text overflow',
+        'Lusophone labels causing text overflow',
         'Not accounting for safe area on iOS devices',
         'Missing active/focus states for accessibility'
       ]
@@ -257,7 +257,7 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
       bundleSize: '< 100KB initial JavaScript bundle',
       cssSize: '< 50KB critical CSS',
       unusedCode: 'Tree-shake unused Tailwind classes',
-      caching: 'Aggressive caching for Portuguese cultural content'
+      caching: 'Aggressive caching for Lusophone cultural content'
     }
   },
 
@@ -281,8 +281,8 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
       touch: 'All interactive elements respond to touch',
       gestures: 'Swipe navigation works smoothly',
       rotation: 'Layout adapts to portrait/landscape orientation',
-      keyboard: 'Portuguese keyboard input works correctly',
-      forms: 'Form validation with Portuguese error messages',
+      keyboard: 'Lusophone keyboard input works correctly',
+      forms: 'Form validation with Lusophone error messages',
       navigation: 'Tab navigation works with screen readers'
     },
     
@@ -297,14 +297,14 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
   // Accessibility Standards for Portuguese-speaking community
   accessibilityStandards: {
     screenReader: {
-      language: 'Proper lang attributes for Portuguese content',
+      language: 'Proper lang attributes for Lusophone content',
       labels: 'ARIA labels in user\'s selected language',
       landmarks: 'Semantic HTML structure for navigation',
       announcements: 'Dynamic content changes announced correctly'
     },
     
     visualAccessibility: {
-      contrast: 'Minimum 4.5:1 contrast ratio for Portuguese brand colors',
+      contrast: 'Minimum 4.5:1 contrast ratio for Lusophone brand colors',
       focus: 'Visible focus indicators for all interactive elements',
       scaling: 'Content remains functional at 200% zoom',
       colorBlindness: 'Information not conveyed by color alone'
@@ -314,7 +314,7 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
       touchTargets: 'Minimum 44x44px touch targets',
       spacing: 'Adequate spacing between interactive elements',
       gestures: 'Alternative to complex gestures available',
-      timeout: 'Sufficient time for Portuguese form completion'
+      timeout: 'Sufficient time for Lusophone form completion'
     }
   },
 
@@ -323,22 +323,22 @@ export const MOBILE_DEVELOPMENT_STANDARDS = {
     cssClasses: {
       responsive: 'Always use mobile-first responsive classes',
       semantic: 'Use semantic class names that reflect function',
-      consistent: 'Follow established Portuguese cultural design tokens',
+      consistent: 'Follow established Lusophone cultural design tokens',
       maintainable: 'Avoid deep nesting, use utility-first approach'
     },
     
     components: {
       props: 'Accept responsive and accessibility props',
       testing: 'Include mobile-specific test cases',
-      documentation: 'Document Portuguese-specific considerations',
+      documentation: 'Document Lusophone-specific considerations',
       reusability: 'Design for reuse across different screen sizes'
     },
     
     performance: {
       lazy: 'Implement lazy loading for non-critical content',
-      optimization: 'Use React.memo for expensive Portuguese text rendering',
+      optimization: 'Use React.memo for expensive Lusophone text rendering',
       bundling: 'Code split by feature, not by screen size',
-      caching: 'Cache Portuguese cultural content effectively'
+      caching: 'Cache Lusophone cultural content effectively'
     }
   }
 };
@@ -373,7 +373,7 @@ export const mobileStandardHelpers = {
   },
 
   /**
-   * Portuguese text container with overflow handling
+   * Lusophone text container with overflow handling
    */
   createTextContainer: (maxLines?: number): string => {
     const baseClasses = 'overflow-hidden break-words hyphens-auto';
@@ -384,7 +384,7 @@ export const mobileStandardHelpers = {
   },
 
   /**
-   * Responsive image classes for Portuguese cultural content
+   * Responsive image classes for Lusophone cultural content
    */
   createResponsiveImage: (aspect?: 'square' | 'video' | 'portrait'): string => {
     const aspectClasses = {

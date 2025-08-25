@@ -141,7 +141,7 @@ export default function MatchMessagingFlow({
       },
       {
         id: 'evt3',
-        title: 'Portuguese Business Network',
+        title: 'Lusophone Business Network',
         type: 'Professional',
         date: '2025-09-02'
       }

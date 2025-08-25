@@ -32,24 +32,24 @@ const mockCulturalEvents = [
     location: 'Potters Fields Park, London Bridge',
     category: 'Festival',
     type: 'Community Event',
-    description: 'Join us for the biggest Portuguese cultural celebration in London! Traditional music, food, and festivities celebrating São António.',
-    organizer: 'Portuguese Cultural Association',
+    description: 'Join us for the biggest Lusophone cultural celebration in London! Traditional music, food, and festivities celebrating São António.',
+    organizer: 'Lusophone Cultural Association',
     attendees: 245,
     maxAttendees: 500,
     price: 'Free',
     image: '/images/events/santos-populares.jpg',
     featured: true,
     tags: ['Traditional', 'Music', 'Food', 'Family-Friendly'],
-    highlights: ['Traditional Sardines', 'Fado Music', 'Portuguese Folk Dancing', 'Caldo Verde'],
+    highlights: ['Traditional Sardines', 'Fado Music', 'Lusophone Folk Dancing', 'Caldo Verde'],
     rating: 4.9,
     reviews: 89
   },
   {
     id: 2,
-    title: 'Fado Night at Portuguese Cultural Center',
+    title: 'Fado Night at Lusophone Cultural Center',
     date: '2024-06-20',
     time: '8:00 PM - 10:30 PM',
-    location: 'Portuguese Cultural Center, South Lambeth',
+    location: 'Lusophone Cultural Center, South Lambeth',
     category: 'Music',
     type: 'Cultural Performance',
     description: 'An intimate evening of traditional Fado music featuring renowned Portuguese musicians.',
@@ -60,73 +60,73 @@ const mockCulturalEvents = [
     image: '/images/events/fado-night.jpg',
     featured: false,
     tags: ['Music', 'Traditional', 'Adults Only'],
-    highlights: ['Professional Fado Singers', 'Traditional Portuguese Wine', 'Authentic Atmosphere'],
+    highlights: ['Professional Fado Singers', 'Traditional Lusophone Wine', 'Authentic Atmosphere'],
     rating: 4.8,
     reviews: 23
   },
   {
     id: 3,
-    title: 'Portuguese Independence Day Celebration',
+    title: 'Lusophone Independence Day Celebration',
     date: '2024-12-01',
     time: '2:00 PM - 8:00 PM',
     location: 'Trafalgar Square, Central London',
     category: 'National Holiday',
     type: 'Public Celebration',
     description: 'Celebrate Portugal\'s Independence Day with cultural performances, food stalls, and community activities.',
-    organizer: 'Portuguese Embassy & Community Groups',
+    organizer: 'Lusophone Embassy & Community Groups',
     attendees: 180,
     maxAttendees: 1000,
     price: 'Free',
     image: '/images/events/independence-day.jpg',
     featured: true,
     tags: ['National Holiday', 'Cultural', 'Family-Friendly', 'Music'],
-    highlights: ['Official Ceremony', 'Portuguese Choir', 'Traditional Crafts', 'Food Festival'],
+    highlights: ['Official Ceremony', 'Lusophone Choir', 'Traditional Crafts', 'Food Festival'],
     rating: 4.9,
     reviews: 67
   },
   {
     id: 4,
-    title: 'Portuguese Wine Tasting & Cultural Evening',
+    title: 'Lusophone Wine Tasting & Cultural Evening',
     date: '2024-06-25',
     time: '7:00 PM - 10:00 PM',
     location: 'Noble Green Wines, Borough Market',
     category: 'Food & Drink',
     type: 'Tasting Event',
     description: 'Discover the finest Portuguese wines while learning about regional wine-making traditions.',
-    organizer: 'Portuguese Wine Society',
+    organizer: 'Lusophone Wine Society',
     attendees: 28,
     maxAttendees: 40,
     price: '£35',
     image: '/images/events/wine-tasting.jpg',
     featured: false,
     tags: ['Wine', 'Education', 'Adults Only', 'Premium'],
-    highlights: ['6 Regional Wines', 'Portuguese Cheese Selection', 'Wine Expert Guide'],
+    highlights: ['6 Regional Wines', 'Lusophone Cheese Selection', 'Wine Expert Guide'],
     rating: 4.7,
     reviews: 15
   },
   {
     id: 5,
-    title: 'Festa Junina Brazilian-Portuguese Celebration',
+    title: 'Festa Junina Brazilian-Lusophone Celebration',
     date: '2024-06-24',
     time: '12:00 PM - 6:00 PM',
     location: 'Burgess Park, Southwark',
     category: 'Festival',
     type: 'Cultural Celebration',
     description: 'Experience the joy of Festa Junina with traditional games, quadrilha dancing, and delicious Brazilian-Portuguese food.',
-    organizer: 'Brazilian-Portuguese Alliance',
+    organizer: 'Brazilian-Lusophone Alliance',
     attendees: 156,
     maxAttendees: 300,
     price: '£8',
     image: '/images/events/festa-junina.jpg',
     featured: true,
-    tags: ['Brazilian-Portuguese', 'Dancing', 'Games', 'Family-Friendly'],
+    tags: ['Brazilian-Lusophone', 'Dancing', 'Games', 'Family-Friendly'],
     highlights: ['Quadrilha Dancing', 'Traditional Games', 'Canjica & Pamonha', 'Live Music'],
     rating: 4.8,
     reviews: 41
   },
   {
     id: 6,
-    title: 'Portuguese Language & Culture Workshop',
+    title: 'Lusophone Language & Culture Workshop',
     date: '2024-06-22',
     time: '10:00 AM - 4:00 PM',
     location: 'King\'s College London, Strand Campus',
@@ -146,34 +146,34 @@ const mockCulturalEvents = [
   },
   {
     id: 7,
-    title: 'Portuguese Football Watch Party - Euro 2024',
+    title: 'Lusophone Football Watch Party - Euro 2024',
     date: '2024-06-18',
     time: '8:00 PM - 11:00 PM',
     location: 'O\'Neill\'s Pub, Leicester Square',
     category: 'Sports',
     type: 'Watch Party',
-    description: 'Cheer for Portugal with fellow supporters! Big screens, Portuguese commentary, and match atmosphere.',
-    organizer: 'Portuguese Football Supporters Club',
+    description: 'Cheer for Portugal with fellow supporters! Big screens, Lusophone commentary, and match atmosphere.',
+    organizer: 'Lusophone Football Supporters Club',
     attendees: 89,
     maxAttendees: 120,
     price: 'Free (drinks purchased separately)',
     image: '/images/events/football-watch.jpg',
     featured: false,
     tags: ['Sports', 'Football', 'Social', 'Adults'],
-    highlights: ['Large Screens', 'Portuguese Commentary', 'Team Atmosphere', 'Portuguese Snacks'],
+    highlights: ['Large Screens', 'Lusophone Commentary', 'Team Atmosphere', 'Lusophone Snacks'],
     rating: 4.6,
     reviews: 34
   },
   {
     id: 8,
-    title: 'Traditional Portuguese Christmas Market',
+    title: 'Traditional Lusophone Christmas Market',
     date: '2024-12-15',
     time: '11:00 AM - 8:00 PM',
     location: 'South Bank, London',
     category: 'Holiday',
     type: 'Market',
-    description: 'Experience a traditional Portuguese Christmas with handmade crafts, festive foods, and holiday music.',
-    organizer: 'Portuguese Christmas Committee',
+    description: 'Experience a traditional Lusophone Christmas with handmade crafts, festive foods, and holiday music.',
+    organizer: 'Lusophone Christmas Committee',
     attendees: 78,
     maxAttendees: 400,
     price: 'Free entry',
@@ -278,11 +278,11 @@ export default function CulturalCalendarPage() {
             >
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
                 <CalendarDaysIcon className="w-5 h-5 text-white" />
-                <span className="text-white font-semibold">Portuguese Cultural Calendar</span>
+                <span className="text-white font-semibold">Lusophone Cultural Calendar</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Celebrate Portuguese Culture in London
+                Celebrate Lusophone Culture in London
               </h1>
               
               <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -608,7 +608,7 @@ export default function CulturalCalendarPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Organizing a Portuguese Cultural Event?
+              Organizing a Lusophone Cultural Event?
             </h2>
             <p className="text-lg text-gray-600 mb-8">
               Share your event with the Portuguese-speaking community in London and help preserve our culture

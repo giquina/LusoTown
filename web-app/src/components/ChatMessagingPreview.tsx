@@ -171,8 +171,8 @@ export default function ChatMessagingPreview() {
         },
         message:
           language === "pt"
-            ? "Portuguese book club meeting Sunday at Southbank! Saramago this month 📚"
-            : "Portuguese book club meeting Sunday at Southbank! Saramago this month 📚",
+            ? "Lusophone book club meeting Sunday at Southbank! Saramago this month 📚"
+            : "Lusophone book club meeting Sunday at Southbank! Saramago this month 📚",
         timestamp: new Date(Date.now() - 600000),
         type: "group",
         groupId: "portuguese-book-club",
@@ -206,7 +206,7 @@ export default function ChatMessagingPreview() {
     [language]
   );
 
-  // Mock chat groups with Portuguese cultural focus
+  // Mock chat groups with Lusophone cultural focus
   const chatGroups: ChatGroup[] = useMemo(
     () => [
       {
@@ -230,7 +230,7 @@ export default function ChatMessagingPreview() {
       {
         id: "portuguese-food",
         name: "Comida Portuguesa",
-        nameEn: "Portuguese Food",
+        nameEn: "Lusophone Food",
         memberCount: 891,
         isActive: true,
         category: "cultural",
@@ -239,7 +239,7 @@ export default function ChatMessagingPreview() {
       {
         id: "south-london",
         name: "South London Lusos",
-        nameEn: "South London Portuguese",
+        nameEn: "South London Lusophone",
         memberCount: 423,
         isActive: true,
         category: "location",
@@ -257,7 +257,7 @@ export default function ChatMessagingPreview() {
       {
         id: "portuguese-football",
         name: "Futebol Português",
-        nameEn: "Portuguese Football",
+        nameEn: "Lusophone Football",
         memberCount: 678,
         isActive: true,
         category: "cultural",
@@ -742,7 +742,7 @@ export default function ChatMessagingPreview() {
             <h3 className="text-2xl font-bold mb-4">
               {language === "pt"
                 ? "Junte-se à Conversa Portuguesa"
-                : "Join the Portuguese Conversation"}
+                : "Join the Lusophone Conversation"}
             </h3>
             <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
               {language === "pt"

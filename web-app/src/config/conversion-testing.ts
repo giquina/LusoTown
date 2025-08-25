@@ -39,7 +39,7 @@ export interface ABTestSegmentation {
   returningUser?: boolean
 }
 
-// Portuguese Community A/B Testing Configuration
+// Lusophone Community A/B Testing Configuration
 export const CONVERSION_AB_TESTS: ABTestConfig[] = [
   {
     id: 'headline-value-proposition-v1',
@@ -62,8 +62,8 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
         isControl: true,
         config: {
           headlineType: 'community-focused',
-          headline: 'Join 750+ Portuguese Speakers in London',
-          subheading: '750+ Portuguese speakers already connected • Growing daily',
+          headline: 'Join Portuguese speakers in London',
+          subheading: 'Portuguese speakers already connected • Growing daily',
           cta: 'Join Your Community'
         }
       },
@@ -75,12 +75,12 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
         isControl: false,
         config: {
           headlineType: 'business-focused',
-          headline: 'Connect with 750+ Portuguese Business Leaders in the UK',
+          headline: 'Connect with 750+ Lusophone Business Leaders in the UK',
           subheading: 'Professional networking • Business growth • Cultural connections',
           cta: 'Join Professional Network',
           benefits: [
             'Portuguese business networking events',
-            'Mentorship from successful Portuguese entrepreneurs', 
+            'Mentorship from successful Lusophone entrepreneurs', 
             'Access to Portuguese business directory'
           ]
         }
@@ -93,13 +93,13 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
         isControl: false,
         config: {
           headlineType: 'romance-focused',
-          headline: 'Finally! Meet Portuguese Speakers Who Truly Understand You',
+          headline: 'Finally! Meet Lusophone Speakers Who Truly Understand You',
           subheading: 'Authentic connections • Cultural compatibility • Lasting relationships',
           cta: 'Find Your Person',
           benefits: [
             'Cultural compatibility matching',
-            'Portuguese cultural events and dates',
-            'Safe, verified Portuguese community'
+            'Lusophone cultural events and dates',
+            'Safe, verified Lusophone community'
           ]
         }
       }
@@ -107,7 +107,7 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
   },
   {
     id: 'cultural-flag-integration-v1',
-    name: 'Portuguese Cultural Flag Display Test',
+    name: 'Lusophone Cultural Flag Display Test',
     description: 'Testing different approaches to displaying lusophone nation flags',
     status: 'active',
     startDate: '2025-08-24',
@@ -165,7 +165,7 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
         config: {
           flagDisplay: 'badge',
           flagCount: 'single',
-          badgeText: 'Portuguese Heritage Community',
+          badgeText: 'Lusophone Heritage Community',
           colors: ['#006600', '#FF0000'] // Portuguese flag colors
         }
       }
@@ -214,7 +214,7 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
       {
         id: 'progressive-disclosure',
         name: 'Progressive Disclosure with Cultural Milestones',
-        description: 'Step-by-step with Portuguese cultural context at each step',
+        description: 'Step-by-step with Lusophone cultural context at each step',
         weight: 25,
         isControl: false,
         config: {
@@ -222,7 +222,7 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
           steps: [
             {
               fields: ['email', 'firstName'],
-              title: 'Welcome to Your Portuguese Community',
+              title: 'Welcome to Your Lusophone Community',
               culturalElement: 'portugal_flag'
             },
             {
@@ -243,7 +243,7 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
       {
         id: 'mobile-optimized-flow',
         name: 'Mobile-Optimized Multi-Step',
-        description: 'Specially designed for mobile Portuguese community users',
+        description: 'Specially designed for mobile Lusophone community users',
         weight: 25,
         isControl: false,
         config: {
@@ -260,7 +260,7 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
   {
     id: 'social-proof-types-v1',
     name: 'Social Proof Element Testing',
-    description: 'Testing different types of social proof for Portuguese community trust',
+    description: 'Testing different types of social proof for Lusophone community trust',
     status: 'draft', 
     startDate: '2025-09-15',
     trafficAllocation: 60,
@@ -272,7 +272,7 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
       {
         id: 'activity-proof',
         name: 'Recent Activity Social Proof',
-        description: 'Real-time activity from Portuguese community members',
+        description: 'Real-time activity from Lusophone community members',
         weight: 20,
         isControl: true,
         config: {
@@ -289,7 +289,7 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
       {
         id: 'success-stories',
         name: 'Success Story Testimonials',
-        description: 'Real success stories from Portuguese community members',
+        description: 'Real success stories from Lusophone community members',
         weight: 20,
         isControl: false,
         config: {
@@ -314,7 +314,7 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
           messages: [
             'Only 12 spots left for next cultural event',
             'Early bird pricing ends in 48 hours',
-            'Join before we reach 1000 members for founding perks'
+            'Join before we Reach Portuguese speakers for founding perks'
           ],
           countdownTimers: true,
           memberCountProgress: true
@@ -329,9 +329,9 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
         config: {
           socialProofType: 'authority',
           endorsements: [
-            'Endorsed by Portuguese Cultural Centers',
+            'Endorsed by Lusophone Cultural Centers',
             'Recommended by Instituto Camões',
-            'Official Portuguese Embassy community partner'
+            'Official Lusophone Embassy community partner'
           ],
           officialLogos: true,
           certificationBadges: true
@@ -391,7 +391,7 @@ export const CONVERSION_AB_TESTS: ABTestConfig[] = [
           featuredPartners: ['chocolate-kizomba'],
           partnerSection: 'hero-adjacent',
           specialOffer: 'LusoTown members get 10% off dance classes',
-          partnerCTA: 'Learn Kizomba with Fellow Portuguese Speakers'
+          partnerCTA: 'Learn Kizomba with Fellow Lusophone Speakers'
         }
       },
       {
@@ -520,22 +520,22 @@ export const getTestConfig = (testId: string, variationId: string): Record<strin
   return variation?.config || {}
 }
 
-// Portuguese Community Specific Test Configurations
+// Lusophone Community Specific Test Configurations
 export const PORTUGUESE_COMMUNITY_TESTS = {
   culturalAuthenticity: {
-    saudadeMessaging: 'Test emotional Portuguese cultural messaging',
+    saudadeMessaging: 'Test emotional Lusophone cultural messaging',
     familyValues: 'Test family-oriented value propositions',
     heritagePreservation: 'Test cultural preservation messaging'
   },
   businessNetworking: {
-    entrepreneurship: 'Test Portuguese entrepreneurship angle',
+    entrepreneurship: 'Test Lusophone entrepreneurship angle',
     professionalGrowth: 'Test UK professional integration messaging',
     businessDirectory: 'Test Portuguese business network emphasis'
   },
   romanticConnections: {
     culturalCompatibility: 'Test cultural compatibility matching',
     authenticity: 'Test authentic connection messaging',
-    safeSpace: 'Test safe Portuguese community emphasis'
+    safeSpace: 'Test safe Lusophone community emphasis'
   }
 }
 

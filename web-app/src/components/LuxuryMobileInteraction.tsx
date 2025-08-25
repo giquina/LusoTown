@@ -416,7 +416,7 @@ export function LuxuryLongPress({
   );
 }
 
-// Premium Floating Action Button with Portuguese theming
+// Premium Floating Action Button with Lusophone theming
 interface LuxuryFABProps {
   icon: React.ReactNode;
   onClick: () => void;

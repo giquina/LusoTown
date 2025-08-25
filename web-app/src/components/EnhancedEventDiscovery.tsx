@@ -59,7 +59,7 @@ export default function EnhancedEventDiscovery({
   const [showFilters, setShowFilters] = useState(false);
   const [showRecommendations, setShowRecommendations] = useState(true);
 
-  // Enhanced filtering logic with Portuguese cultural considerations
+  // Enhanced filtering logic with Lusophone cultural considerations
   const filteredAndSortedEvents = useMemo(() => {
     let filtered = events.filter(event => {
       // Search term filter
@@ -114,7 +114,7 @@ export default function EnhancedEventDiscovery({
       return true;
     });
 
-    // Sorting with Portuguese cultural prioritization
+    // Sorting with Lusophone cultural prioritization
     filtered.sort((a, b) => {
       switch (filters.sortBy) {
         case 'date':
@@ -125,7 +125,7 @@ export default function EnhancedEventDiscovery({
           return (a.price || 0) - (b.price || 0);
         case 'relevance':
         default:
-          // Portuguese cultural events get priority
+          // Lusophone cultural events get priority
           const aCultural = a.title.toLowerCase().includes('portuguese') || 
                           a.title.toLowerCase().includes('português') ||
                           a.description.toLowerCase().includes('portuguese') ||
@@ -151,12 +151,12 @@ export default function EnhancedEventDiscovery({
     onEventsFiltered(filteredAndSortedEvents);
   }, [filteredAndSortedEvents, onEventsFiltered]);
 
-  // Generate smart recommendations based on user behavior and Portuguese cultural context
+  // Generate smart recommendations based on user behavior and Lusophone cultural context
   const eventRecommendations = useMemo(() => {
     const reasons: RecommendationReason[] = [
       { type: 'trending', label: 'Trending Now', labelPt: 'Tendência Agora', weight: 3 },
       { type: 'popular', label: 'Popular Choice', labelPt: 'Escolha Popular', weight: 2 },
-      { type: 'cultural', label: 'Portuguese Heritage', labelPt: 'Herança Portuguesa', weight: 4 },
+      { type: 'cultural', label: 'Lusophone Heritage', labelPt: 'Herança Portuguesa', weight: 4 },
       { type: 'nearby', label: 'Near You', labelPt: 'Perto de Ti', weight: 2 },
       { type: 'similar', label: 'Similar Interest', labelPt: 'Interesse Semelhante', weight: 1 }
     ];
@@ -430,7 +430,7 @@ export default function EnhancedEventDiscovery({
             <FunnelIcon className="w-4 h-4" />
             {isPortuguese 
               ? 'Eventos portugueses têm prioridade'
-              : 'Portuguese events prioritized'
+              : 'Lusophone events prioritized'
             }
           </div>
         )}

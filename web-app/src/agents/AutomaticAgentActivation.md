@@ -15,7 +15,7 @@ This system enables AI assistants to **automatically trigger specialized agents*
 
 ### 2. Instruction Compliance Advisor  
 **Auto-triggers when**:
-- User requests involving Portuguese community terminology
+- User requests involving Lusophone community terminology
 - Geographic scope discussions (London vs United Kingdom)  
 - Event planning or content creation
 - Any content that might need inclusivity validation
@@ -136,9 +136,9 @@ const TRIGGER_PATTERNS = {
   ],
   
   communityContent: [
-    /Portuguese community/i,
-    /London.*Portuguese/i,
-    /event.*Portuguese/i,
+    /Lusophone community/i,
+    /London.*Lusophone/i,
+    /event.*Lusophone/i,
     /community.*guidelines/i,
     /cultural.*content/i
   ],
@@ -188,13 +188,13 @@ I've detected a TailwindCSS module resolution error. Let me diagnose and fix thi
 
 ### 2. Multi-Agent Activation
 ```
-User Input: "Let's create events for the Portuguese community in London"
+User Input: "Let's create events for the Lusophone community in London"
 
 Auto-Response:
 📋 **Multiple Agents Activated**
 
 🌍 **Instruction Compliance Advisor**: Detected community content requiring inclusivity validation
-- ✅ Correcting: "Portuguese community" → "Portuguese-speaking community"  
+- ✅ Correcting: "Lusophone community" → "Portuguese-speaking community"  
 - ✅ Correcting: "in London" → "across the United Kingdom"
 - ✅ Ensuring diverse lusophone nation representation
 
@@ -216,7 +216,7 @@ Analyzing Portuguese-speaking community engagement patterns:
 
 **Immediate Actions**:
 - Mobile optimization (73% of users are mobile)
-- Portuguese cultural content expansion
+- Lusophone cultural content expansion
 - Cross-lusophone nation event promotion
 
 **Performance Coach Advisor** also suggests:

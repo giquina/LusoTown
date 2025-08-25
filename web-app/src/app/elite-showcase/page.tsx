@@ -150,7 +150,7 @@ export default function EliteShowcasePage() {
                   <p className="text-amber-600 text-sm">
                     {language === 'pt' 
                       ? 'Experiência visual sofisticada com padrões culturais portugueses'
-                      : 'Sophisticated visual experience with Portuguese cultural patterns'
+                      : 'Sophisticated visual experience with Lusophone cultural patterns'
                     }
                   </p>
                 </div>
@@ -450,7 +450,7 @@ export default function EliteShowcasePage() {
               <p className="text-amber-600 max-w-2xl mx-auto">
                 {language === 'pt'
                   ? 'Notificações sofisticadas com design premium e contexto cultural português'
-                  : 'Sophisticated notifications with premium design and Portuguese cultural context'
+                  : 'Sophisticated notifications with premium design and Lusophone cultural context'
                 }
               </p>
             </motion.div>

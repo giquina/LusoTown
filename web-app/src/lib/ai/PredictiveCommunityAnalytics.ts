@@ -2,7 +2,7 @@
  * PredictiveCommunityAnalytics.ts
  * Production-Ready Luxury Portuguese-speaking community Analytics
  * 
- * Sophisticated ML system for predicting Portuguese diaspora trends in London,
+ * Sophisticated ML system for predicting Lusophone diaspora trends in London,
  * optimizing luxury event success, analyzing culturally-aware behavior patterns,
  * providing actionable insights for premium community growth,
  * and ensuring GDPR compliance for Portuguese-speaking community data.
@@ -296,7 +296,7 @@ export class PredictiveCommunityAnalytics {
       trends.push(...seasonalTrends)
     }
 
-    // Portuguese-specific trends
+    // Lusophone-specific trends
     const portugueseTrends = await this.analyzePortugueseSpecificTrends(timeframe)
     trends.push(...portugueseTrends)
 
@@ -312,7 +312,7 @@ export class PredictiveCommunityAnalytics {
   }
 
   /**
-   * Predict luxury event success with Portuguese cultural sophistication
+   * Predict luxury event success with Lusophone cultural sophistication
    * Advanced ML model considering diaspora patterns in London/United Kingdom
    */
   public async predictEventSuccess(
@@ -350,7 +350,7 @@ export class PredictiveCommunityAnalytics {
     // Cultural resonance analysis
     const culturalResonance = this.calculateCulturalResonance(eventDetails.culturalTheme)
     
-    // Portuguese seasonal preferences
+    // Lusophone seasonal preferences
     const seasonalScore = this.calculateSeasonalPreference(eventDetails.date, eventDetails.type)
     
     // Location accessibility analysis
@@ -422,7 +422,7 @@ export class PredictiveCommunityAnalytics {
   }
 
   /**
-   * Predict user churn with sophisticated Portuguese diaspora behavioral analysis
+   * Predict user churn with sophisticated Lusophone diaspora behavioral analysis
    * GDPR-compliant with advanced cultural retention strategies
    */
   public async predictUserChurn(
@@ -490,7 +490,7 @@ export class PredictiveCommunityAnalytics {
   }
 
   /**
-   * Analyze overall community health with Portuguese cultural metrics
+   * Analyze overall community health with Lusophone cultural metrics
    */
   public async analyzeCommunityHealth(): Promise<CommunityHealthMetrics> {
     const members = Array.from(this.memberData.values())
@@ -520,7 +520,7 @@ export class PredictiveCommunityAnalytics {
   }
 
   /**
-   * Generate optimal timing for Portuguese cultural events
+   * Generate optimal timing for Lusophone cultural events
    */
   public generateOptimalEventTiming(
     eventType: string,
@@ -584,7 +584,7 @@ export class PredictiveCommunityAnalytics {
     trends.push({
       id: 'traditional-cooking-trend',
       type: 'cultural_interest',
-      title: 'Traditional Portuguese Cooking Revival',
+      title: 'Traditional Lusophone Cooking Revival',
       description: 'Increased demand for cooking classes and recipe sharing',
       confidence: 78,
       timeframe: 'short_term',
@@ -607,19 +607,19 @@ export class PredictiveCommunityAnalytics {
       {
         id: 'outdoor-event-demand',
         type: 'event_demand',
-        title: 'Rising Demand for Outdoor Portuguese Events',
-        description: 'Community prefers outdoor gatherings reminiscent of Portuguese village festivals',
+        title: 'Rising Demand for Outdoor Lusophone Events',
+        description: 'Community prefers outdoor gatherings reminiscent of Lusophone village festivals',
         confidence: 82,
         timeframe: 'immediate',
         affectedSegments: ['families', 'all_generations'],
         predictedImpact: 'high',
         recommendations: [
           'Plan more outdoor festivals',
-          'Utilize London parks for Portuguese events',
+          'Utilize London parks for Lusophone events',
           'Create weather backup plans'
         ],
         dataPoints: this.generateMockDataPoints(),
-        culturalContext: 'Recreating Portuguese outdoor social culture'
+        culturalContext: 'Recreating Lusophone outdoor social culture'
       }
     ]
   }
@@ -641,7 +641,7 @@ export class PredictiveCommunityAnalytics {
           'Facilitate cultural knowledge transfer'
         ],
         dataPoints: this.generateMockDataPoints(),
-        culturalContext: 'Preserving Portuguese cultural continuity'
+        culturalContext: 'Preserving Lusophone cultural continuity'
       }
     ]
   }
@@ -673,16 +673,16 @@ export class PredictiveCommunityAnalytics {
       {
         id: 'language-preservation-concern',
         type: 'cultural_interest',
-        title: 'Growing Concern About Portuguese Language Preservation',
-        description: 'Parents increasingly worried about children losing Portuguese fluency',
+        title: 'Growing Concern About Lusophone Language Preservation',
+        description: 'Parents increasingly worried about children losing Lusophone fluency',
         confidence: 88,
         timeframe: 'long_term',
         affectedSegments: ['families', 'second_generation_parents'],
         predictedImpact: 'high',
         recommendations: [
           'Create Portuguese language learning programs',
-          'Organize Portuguese-only events for children',
-          'Partner with Portuguese schools'
+          'Organize Lusophone-only events for children',
+          'Partner with Lusophone schools'
         ],
         dataPoints: this.generateMockDataPoints(),
         culturalContext: 'Intergenerational language transmission anxiety'
@@ -728,7 +728,7 @@ export class PredictiveCommunityAnalytics {
   private calculateSeasonalPreference(date: Date, eventType: string): number {
     const month = date.getMonth()
     
-    // Portuguese seasonal preferences
+    // Lusophone seasonal preferences
     if (eventType.includes('outdoor') || eventType.includes('festival')) {
       return month >= 4 && month <= 8 ? 90 : 40 // May-September
     }
@@ -770,7 +770,7 @@ export class PredictiveCommunityAnalytics {
   }
 
   private calculateCrossGenerationalAppeal(eventDetails: any): Record<string, number> {
-    // Calculate appeal across Portuguese generations in United Kingdom
+    // Calculate appeal across Lusophone generations in United Kingdom
     const baseAppeal = {
       'first_generation': 70,
       'second_generation': 60,
@@ -1046,20 +1046,20 @@ export class PredictiveCommunityAnalytics {
     
     if (reasons.includes('Low recent activity')) {
       strategies.push('Exclusive VIP re-engagement with premium content access')
-      strategies.push('Personalized invitation to high-end Portuguese cultural experiences')
+      strategies.push('Personalized invitation to high-end Lusophone cultural experiences')
       strategies.push('Priority access to luxury events and premium networking opportunities')
     }
     
     if (reasons.includes('High saudade intensity')) {
       strategies.push('Connect with exclusive Portuguese heritage groups')
-      strategies.push('Access to premium Portuguese cultural therapy and wellness services')
-      strategies.push('Curated nostalgic experiences recreating Portuguese homeland memories')
+      strategies.push('Access to premium Lusophone cultural therapy and wellness services')
+      strategies.push('Curated nostalgic experiences recreating Lusophone homeland memories')
     }
     
     if (member.profile.premiumEngagementLevel === 'luxury' || member.profile.premiumEngagementLevel === 'ultra_luxury') {
       strategies.push(
         'Dedicated luxury account manager for personalized service',
-        'Exclusive access to ultra-premium Portuguese cultural experiences',
+        'Exclusive access to ultra-premium Lusophone cultural experiences',
         'Private networking events with Portuguese business elite in United Kingdom'
       )
     }
@@ -1073,26 +1073,26 @@ export class PredictiveCommunityAnalytics {
     if (member.profile.saudadeIntensity >= 7) {
       interventions.push(
         'Premium fado music therapy with renowned Portuguese musicians',
-        'Luxury Portuguese cultural immersion retreats in United Kingdom countryside',
-        'Exclusive access to Portuguese art and heritage exhibitions',
-        'Private Portuguese cooking experiences with Michelin-starred chefs'
+        'Luxury Lusophone cultural immersion retreats in United Kingdom countryside',
+        'Exclusive access to Lusophone art and heritage exhibitions',
+        'Private Lusophone cooking experiences with Michelin-starred chefs'
       )
     }
     
     if (member.profile.generationInUK >= 2) {
       interventions.push(
-        'Elite Portuguese cultural heritage preservation workshops',
+        'Elite Lusophone cultural heritage preservation workshops',
         'Premium Portuguese language courses with certified native instructors',
         'Exclusive family heritage documentation and genealogy services',
-        'Access to Portuguese cultural ambassador programs'
+        'Access to Lusophone cultural ambassador programs'
       )
     }
     
     if (member.profile.luxuryServicePreference >= 7) {
       interventions.push(
         'Curated luxury Portuguese wine and gastronomy experiences',
-        'Private tours of Portuguese historical sites and cultural landmarks',
-        'Exclusive access to Portuguese cultural VIP networks and societies'
+        'Private tours of Lusophone historical sites and cultural landmarks',
+        'Exclusive access to Lusophone cultural VIP networks and societies'
       )
     }
     
@@ -1108,24 +1108,24 @@ export class PredictiveCommunityAnalytics {
 
   private generatePremiumPersonalizedContent(member: CommunityMember): string[] {
     const baseContent = [
-      `Exclusive regional Portuguese recipes from ${member.profile.region} prepared by renowned chefs`,
-      'Premium stories and interviews with successful Portuguese entrepreneurs in London',
+      `Exclusive regional Lusophone recipes from ${member.profile.region} prepared by renowned chefs`,
+      'Premium stories and interviews with successful Lusophone entrepreneurs in London',
       'Curated luxury cultural events matching your sophisticated interests',
       'Personalized Portuguese heritage and genealogy insights'
     ]
     
     if (member.profile.premiumEngagementLevel === 'luxury') {
       baseContent.push(
-        'Private access to Portuguese cultural documentaries and exclusive content',
+        'Private access to Lusophone cultural documentaries and exclusive content',
         'Personalized luxury travel recommendations to Portuguese heritage sites',
-        'Exclusive interviews with Portuguese cultural ambassadors and dignitaries'
+        'Exclusive interviews with Lusophone cultural ambassadors and dignitaries'
       )
     }
     
     if (member.profile.luxuryServicePreference >= 8) {
       baseContent.push(
         'Ultra-premium Portuguese wine and gastronomy curation',
-        'Access to private Portuguese art collections and cultural exhibitions',
+        'Access to private Lusophone art collections and cultural exhibitions',
         'Bespoke cultural experiences crafted for your Portuguese heritage journey'
       )
     }
@@ -1135,25 +1135,25 @@ export class PredictiveCommunityAnalytics {
 
   private recommendEliteCommunityConnections(member: CommunityMember): string[] {
     const baseConnections = [
-      `Elite Portuguese professionals from ${member.profile.region} in prestigious London positions`,
+      `Elite Lusophone professionals from ${member.profile.region} in prestigious London positions`,
       'Sophisticated Portuguese speakers with luxury lifestyle and cultural interests',
-      'Distinguished Portuguese cultural mentors and community leaders',
-      'Successful Portuguese entrepreneurs and business leaders in United Kingdom'
+      'Distinguished Lusophone cultural mentors and community leaders',
+      'Successful Lusophone entrepreneurs and business leaders in United Kingdom'
     ]
     
     if (member.profile.premiumEngagementLevel === 'ultra_luxury') {
       baseConnections.push(
-        'Ultra-high-net-worth Portuguese individuals and families',
-        'Portuguese cultural ambassadors and diplomatic connections',
-        'Exclusive Portuguese private members clubs and societies'
+        'Ultra-high-net-worth Lusophone individuals and families',
+        'Lusophone cultural ambassadors and diplomatic connections',
+        'Exclusive Lusophone private members clubs and societies'
       )
     }
     
     if (member.demographics.profession.includes('business') || member.demographics.profession.includes('executive')) {
       baseConnections.push(
-        'Portuguese C-level executives and business owners in London',
-        'Portuguese venture capital and investment professionals',
-        'Portuguese luxury industry leaders and influencers'
+        'Lusophone C-level executives and business owners in London',
+        'Lusophone venture capital and investment professionals',
+        'Lusophone luxury industry leaders and influencers'
       )
     }
     
@@ -1168,16 +1168,16 @@ export class PredictiveCommunityAnalytics {
     
     if (member.profile.luxuryServicePreference >= 7) {
       recommendations.push(
-        'Premium Portuguese cultural concierge services',
-        'Exclusive access to luxury Portuguese experiences in London',
-        'Private Portuguese cultural and heritage consultation services'
+        'Premium Lusophone cultural concierge services',
+        'Exclusive access to luxury Lusophone experiences in London',
+        'Private Lusophone cultural and heritage consultation services'
       )
     }
     
     if (member.profile.saudadeIntensity >= 6) {
       recommendations.push(
-        'Luxury homesickness therapy with Portuguese cultural specialists',
-        'Premium Portuguese cultural immersion and comfort services'
+        'Luxury homesickness therapy with Lusophone cultural specialists',
+        'Premium Lusophone cultural immersion and comfort services'
       )
     }
     
@@ -1238,18 +1238,18 @@ export class PredictiveCommunityAnalytics {
 
   private generateLuxuryMarketingRecommendations(eventDetails: any, successProb: number): string[] {
     const baseRecommendations = [
-      'Target affluent Portuguese professionals in London financial district',
-      'Partner with luxury Portuguese brands and boutique businesses',
+      'Target affluent Lusophone professionals in London financial district',
+      'Partner with luxury Lusophone brands and boutique businesses',
       'Use elegant, sophisticated imagery showcasing Portuguese heritage',
       'Emphasize exclusivity and limited availability',
-      'Leverage Portuguese cultural ambassadors and community leaders'
+      'Leverage Lusophone cultural ambassadors and community leaders'
     ]
     
     if (eventDetails.luxuryLevel === 'ultra_luxury') {
       baseRecommendations.push(
-        'Private invitation-only marketing to ultra-high-net-worth Portuguese individuals',
-        'Partner with Portuguese embassy and consulate networks',
-        'Collaborate with luxury lifestyle magazines and Portuguese media'
+        'Private invitation-only marketing to ultra-high-net-worth Lusophone individuals',
+        'Partner with Lusophone embassy and consulate networks',
+        'Collaborate with luxury lifestyle magazines and Lusophone media'
       )
     }
     
@@ -1257,7 +1257,7 @@ export class PredictiveCommunityAnalytics {
       baseRecommendations.push(
         'Target Portuguese business owners and executives in United Kingdom',
         'Collaborate with high-end Portuguese restaurants and wine establishments',
-        'Market through exclusive Portuguese professional networks'
+        'Market through exclusive Lusophone professional networks'
       )
     }
     
@@ -1274,7 +1274,7 @@ export class PredictiveCommunityAnalytics {
 
   private identifyPotentialChallenges(eventDetails: any): string[] {
     return [
-      'Potential scheduling conflicts with Portuguese cultural calendar',
+      'Potential scheduling conflicts with Lusophone cultural calendar',
       'Weather considerations for outdoor elements',
       'Language barrier for mixed-generation attendance'
     ]
@@ -1282,9 +1282,9 @@ export class PredictiveCommunityAnalytics {
 
   private identifyLuxurySuccessFactors(eventDetails: any): string[] {
     const baseFactors = [
-      'Sophisticated Portuguese cultural authenticity and heritage connection',
+      'Sophisticated Lusophone cultural authenticity and heritage connection',
       'Premium multi-generational appeal targeting affluent families',
-      'Strategic location in prestigious areas with Portuguese cultural significance',
+      'Strategic location in prestigious areas with Lusophone cultural significance',
       'Exclusive access and limited availability creating desire',
       'High-quality service standards befitting luxury positioning'
     ]
@@ -1293,14 +1293,14 @@ export class PredictiveCommunityAnalytics {
       baseFactors.push(
         'Ultra-exclusive access with invitation-only elements',
         'Premium concierge services and personalized experiences',
-        'Partnership with Portuguese cultural institutions and embassy'
+        'Partnership with Lusophone cultural institutions and embassy'
       )
     }
     
     if (eventDetails.culturalAuthenticity >= 8) {
       baseFactors.push(
         'Exceptional cultural authenticity resonating with Portuguese heritage',
-        'Expert cultural curation and authentic Portuguese elements'
+        'Expert cultural curation and authentic Lusophone elements'
       )
     }
     

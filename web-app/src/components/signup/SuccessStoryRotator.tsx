@@ -60,7 +60,7 @@ export function SuccessStoryRotator({
       age: '28',
       location: 'Shoreditch',
       story: {
-        en: "Found my co-founder at a LusoTown tech networking event. Our fintech startup just got Series A funding from Portuguese investors!",
+        en: "Found my co-founder at a LusoTown tech networking event. Our fintech startup just got Series A funding from Lusophone investors!",
         pt: "Encontrei meu co-fundador num evento de networking de tecnologia da LusoTown. Nossa startup de fintech acabou de receber financiamento Série A de investidores portugueses!"
       },
       type: 'business',
@@ -74,7 +74,7 @@ export function SuccessStoryRotator({
       age: '41',
       location: 'City of London',
       story: {
-        en: "LusoTown's executive network opened doors I never imagined. Landed 5 major Portuguese corporate clients for my consulting firm.",
+        en: "LusoTown's executive network opened doors I never imagined. Landed 5 major Lusophone corporate clients for my consulting firm.",
         pt: "A rede executiva da LusoTown abriu portas que nunca imaginei. Consegui 5 grandes clientes corporativos portugueses para minha empresa de consultoria."
       },
       type: 'business',
@@ -90,7 +90,7 @@ export function SuccessStoryRotator({
       age: '29 & 32',
       location: 'Stockwell',
       story: {
-        en: "Met at a LusoTown Fado night. He understood my saudade, I fell for his guitar playing. Married last month in a beautiful Portuguese ceremony!",
+        en: "Met at a LusoTown Fado night. He understood my saudade, I fell for his guitar playing. Married last month in a beautiful Lusophone ceremony!",
         pt: "Conhecemo-nos numa noite de Fado da LusoTown. Ele entendeu a minha saudade, eu apaixonei-me pelo seu tocar guitarra. Casámos no mês passado numa linda cerimónia portuguesa!"
       },
       type: 'romantic',
@@ -134,7 +134,7 @@ export function SuccessStoryRotator({
       age: '45',
       location: 'Vauxhall',
       story: {
-        en: "My children were losing touch with Portuguese culture. LusoTown's family events brought our heritage back to life. They speak Portuguese fluently now!",
+        en: "My children were losing touch with Portuguese culture. LusoTown's family events brought our heritage back to life. They speak Lusophone fluently now!",
         pt: "Os meus filhos estavam a perder o contacto com a cultura portuguesa. Os eventos familiares da LusoTown trouxeram a nossa herança de volta à vida. Agora falam português fluentemente!"
       },
       type: 'cultural',

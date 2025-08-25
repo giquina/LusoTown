@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     'Portuguese speakers United Kingdom',
     'Portuguese-speaking friendship stories',
     'Portuguese business partnerships',
-    'Portuguese cultural connections',
-    'Brazilian Portuguese London',
-    'Angola Portuguese United Kingdom',
-    'Portuguese diaspora success',
+    'Lusophone cultural connections',
+    'Brazilian Lusophone London',
+    'Angola Lusophone United Kingdom',
+    'Lusophone diaspora success',
     'Portuguese-speaking community transformation'
   ],
   openGraph: {
@@ -86,7 +86,7 @@ const jsonLd = {
       {
         '@type': 'Article',
         name: 'From Book Club to Cultural Legacy: Literature That Launched a Movement',
-        description: 'How Isabel from Portugal and Fernanda from Brazil created London\'s premier Portuguese cultural organization',
+        description: 'How Isabel from Portugal and Fernanda from Brazil created London\'s premier Lusophone cultural organization',
         author: {
           '@type': 'Organization',
           name: 'LusoTown London'
@@ -121,10 +121,10 @@ export default function CaseStudiesPage() {
               <div className="max-w-4xl mx-auto text-center">
                 <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium text-primary-600 mb-6">
                   <SparklesIcon className="w-5 h-5 mr-2" />
-                  Portuguese Communities in London Case Studies
+                  Lusophone Communities in London Case Studies
                 </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance">
-                  Portuguese Communities in London Case Studies
+                  Lusophone Communities in London Case Studies
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-balance">
                   Detailed case studies showing how Portuguese speakers from Brazil, Portugal, Angola, and beyond 
@@ -149,7 +149,7 @@ export default function CaseStudiesPage() {
                       <HeartIcon className="w-8 h-8 text-secondary-600" />
                     </div>
                     <div className="text-3xl font-bold text-gray-900 mb-2">750+</div>
-                    <div className="text-sm text-gray-600">Portuguese Speakers Connected</div>
+                    <div className="text-sm text-gray-600">Lusophone Speakers Connected</div>
                   </div>
                   
                   <div className="text-center">
@@ -212,7 +212,7 @@ export default function CaseStudiesPage() {
                   
                   <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <UsersIcon className="w-8 h-8 text-coral-600 mb-4" />
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Diverse Portuguese Heritage</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Diverse Lusophone Heritage</h3>
                     <p className="text-gray-600">
                       Stories include speakers from Portugal, Brazil, Angola - showcasing how all Portuguese 
                       speakers find common ground and mutual support in London's diaspora community.
@@ -237,7 +237,7 @@ export default function CaseStudiesPage() {
             <div className="container-width">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                  How to Write Your Own Portuguese Story in London
+                  How to Write Your Own Lusophone Story in London
                 </h2>
                 <p className="text-xl text-gray-600 mb-12">
                   These transformations all started with someone attending their first LusoTown event. 
@@ -284,7 +284,7 @@ export default function CaseStudiesPage() {
                     Ready to Start Your Story?
                   </h3>
                   <p className="text-lg text-gray-600 mb-6">
-                    Your next life-changing connection could be at this week's event. Join the Portuguese 
+                    Your next life-changing connection could be at this week's event. Join the Lusophone 
                     community that's transforming lives across London.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">

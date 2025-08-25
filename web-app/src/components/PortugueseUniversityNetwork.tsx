@@ -312,7 +312,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
           internationalStudents: 4500,
           facultiesCount: 14,
           researchCenters: 35,
-          description: 'Leading Portuguese university renowned for engineering, medicine, and research excellence, with strong international partnerships.',
+          description: 'Leading Lusophone university renowned for engineering, medicine, and research excellence, with strong international partnerships.',
           descriptionPortuguese: 'Universidade portuguesa líder reconhecida pela engenharia, medicina e excelência em investigação, com fortes parcerias internacionais.',
           logo: '/images/universities/universidade-porto.png',
           website: 'https://www.up.pt',
@@ -578,13 +578,13 @@ const PortugueseUniversityNetwork: React.FC = () => {
           type: 'research',
           amount: 2128,
           currency: 'EUR',
-          description: 'Monthly stipend for PhD students conducting research in Portuguese institutions.',
+          description: 'Monthly stipend for PhD students conducting research in Lusophone institutions.',
           descriptionPortuguese: 'Bolsa mensal para estudantes de doutoramento que conduzem investigação em instituições portuguesas.',
           eligibility: [
             'Enrollment in PhD program',
             'Research project approval',
             'Supervisor agreement',
-            'Portuguese residency during studies'
+            'Lusophone residency during studies'
           ],
           eligibilityPortuguese: [
             'Inscrição em programa de doutoramento',
@@ -735,13 +735,13 @@ const PortugueseUniversityNetwork: React.FC = () => {
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           {language === 'pt' 
             ? 'Rede de Universidades Portuguesas'
-            : 'Portuguese University Network'
+            : 'Lusophone University Network'
           }
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           {language === 'pt'
             ? 'Descubra oportunidades de educação superior, investigação e intercâmbio nas principais universidades portuguesas, conectando-se com excelência académica e inovação.'
-            : 'Discover higher education, research, and exchange opportunities at leading Portuguese universities, connecting with academic excellence and innovation.'
+            : 'Discover higher education, research, and exchange opportunities at leading Lusophone universities, connecting with academic excellence and innovation.'
           }
         </p>
       </div>
@@ -1225,7 +1225,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
       <div className="text-center bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-8">
         <AcademicCapIcon className="w-12 h-12 text-primary-500 mx-auto mb-4" />
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
-          {language === 'pt' ? 'Conecte-se com a Excelência Académica Portuguesa' : 'Connect with Portuguese Academic Excellence'}
+          {language === 'pt' ? 'Conecte-se com a Excelência Académica Portuguesa' : 'Connect with Lusophone Academic Excellence'}
         </h2>
         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
           {language === 'pt'

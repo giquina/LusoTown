@@ -69,7 +69,7 @@ export default function ConsultationConfirmationPage() {
     {
       title: 'Expert Guidance',
       titlePortuguese: 'Orientação Especializada',
-      description: 'Get professional advice from Portuguese cultural and service experts',
+      description: 'Get professional advice from Lusophone cultural and service experts',
       descriptionPortuguese: 'Obtenha conselhos profissionais de especialistas culturais e de serviços portugueses'
     },
     {

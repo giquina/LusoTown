@@ -74,7 +74,7 @@ export default function CulturalCompatibilityIntegration({
         age: 29,
         location: 'Stockwell',
         profession: 'Teacher',
-        bio: 'Portuguese teacher who loves sharing our culture with the next generation. Passionate about fado and traditional cooking.',
+        bio: 'Lusophone teacher who loves sharing our culture with the next generation. Passionate about fado and traditional cooking.',
         lastActive: '2 hours ago',
         culturalProfile: {
           food: 9.2,
@@ -93,7 +93,7 @@ export default function CulturalCompatibilityIntegration({
           recommendations: [],
         },
         overallCompatibility: 94,
-        sharedInterests: ['Portuguese Language', 'Fado Music', 'Traditional Cooking', 'Family Values'],
+        sharedInterests: ['Lusophone Language', 'Fado Music', 'Traditional Cooking', 'Family Values'],
         culturalAlignment: {
           food: 92,
           music: 89,
@@ -127,7 +127,7 @@ export default function CulturalCompatibilityIntegration({
           recommendations: [],
         },
         overallCompatibility: 87,
-        sharedInterests: ['Professional Networking', 'Portuguese Football', 'Technology', 'Cultural Events'],
+        sharedInterests: ['Professional Networking', 'Lusophone Football', 'Technology', 'Cultural Events'],
         culturalAlignment: {
           food: 78,
           music: 72,
@@ -195,7 +195,7 @@ export default function CulturalCompatibilityIntegration({
           recommendations: [],
         },
         overallCompatibility: 91,
-        sharedInterests: ['Portuguese Cuisine', 'Business Networking', 'Cultural Events', 'Cooking'],
+        sharedInterests: ['Lusophone Cuisine', 'Business Networking', 'Cultural Events', 'Cooking'],
         culturalAlignment: {
           food: 98,
           music: 76,
@@ -336,12 +336,12 @@ export default function CulturalCompatibilityIntegration({
           <h3 className="text-xl font-bold text-primary-900 mb-3">
             {language === 'pt' 
               ? 'Descubra Sua Compatibilidade Cultural Portuguesa'
-              : 'Discover Your Portuguese Cultural Compatibility'}
+              : 'Discover Your Lusophone Cultural Compatibility'}
           </h3>
           <p className="text-primary-700 mb-6 max-w-md mx-auto">
             {language === 'pt'
               ? 'Complete nosso quiz cultural para encontrar pessoas que realmente compartilham seus valores e tradições portuguesas.'
-              : 'Complete our cultural quiz to find people who truly share your Portuguese values and traditions.'}
+              : 'Complete our cultural quiz to find people who truly share your Lusophone values and traditions.'}
           </p>
           <button
             onClick={() => setShowQuiz(true)}

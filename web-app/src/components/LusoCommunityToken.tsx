@@ -120,7 +120,7 @@ const LusoCommunityToken: React.FC = () => {
       activityPt: 'Participar em Noite de Fado',
       amount: 50,
       multiplier: 1.5,
-      description: 'Attend authentic Portuguese Fado performances',
+      description: 'Attend authentic Lusophone Fado performances',
       descriptionPt: 'Participar em apresentações autênticas de Fado português',
       category: 'cultural',
       requirements: ['Attend event', 'Check-in via app', 'Stay for minimum 2 hours'],
@@ -130,7 +130,7 @@ const LusoCommunityToken: React.FC = () => {
     },
     {
       id: 'portuguese-business-review',
-      activity: 'Review Portuguese Business',
+      activity: 'Review Lusophone Business',
       activityPt: 'Avaliar Negócio Português',
       amount: 25,
       multiplier: 1.2,
@@ -144,11 +144,11 @@ const LusoCommunityToken: React.FC = () => {
     },
     {
       id: 'teach-portuguese-phrase',
-      activity: 'Teach Portuguese Phrase',
+      activity: 'Teach Lusophone Phrase',
       activityPt: 'Ensinar Expressão Portuguesa',
       amount: 30,
       multiplier: 1.3,
-      description: 'Share and explain Portuguese expressions with cultural context',
+      description: 'Share and explain Lusophone expressions with cultural context',
       descriptionPt: 'Partilhar e explicar expressões portuguesas com contexto cultural',
       category: 'learning',
       requirements: ['Record audio pronunciation', 'Provide cultural context', 'Get community approval'],
@@ -192,7 +192,7 @@ const LusoCommunityToken: React.FC = () => {
       id: 'cultural-ambassador',
       title: 'Cultural Ambassador',
       titlePt: 'Embaixador Cultural',
-      description: 'Attend 50 Portuguese cultural events',
+      description: 'Attend 50 Lusophone cultural events',
       descriptionPt: 'Participar em 50 eventos culturais portugueses',
       icon: '🇵🇹',
       tokenReward: 1000,
@@ -219,7 +219,7 @@ const LusoCommunityToken: React.FC = () => {
       id: 'business-connector',
       title: 'Business Connector',
       titlePt: 'Conector de Negócios',
-      description: 'Connect 100 people with Portuguese businesses',
+      description: 'Connect many people with Portuguese businesses',
       descriptionPt: 'Conectar 100 pessoas com negócios portugueses',
       icon: '🤝',
       tokenReward: 750,
@@ -232,7 +232,7 @@ const LusoCommunityToken: React.FC = () => {
       id: 'pasteis-de-nata-expert',
       title: 'Pastéis de Nata Expert',
       titlePt: 'Especialista em Pastéis de Nata',
-      description: 'Review 25 Portuguese bakeries and rate their pastéis de nata',
+      description: 'Review 25 Lusophone bakeries and rate their pastéis de nata',
       descriptionPt: 'Avaliar 25 pastelarias portuguesas e classificar os seus pastéis de nata',
       icon: '🥮',
       tokenReward: 300,
@@ -263,9 +263,9 @@ const LusoCommunityToken: React.FC = () => {
       id: 'cultural-events-fund',
       name: 'Cultural Events Fund',
       namePt: 'Fundo de Eventos Culturais',
-      description: 'Support Portuguese cultural events and festivals in London',
+      description: 'Support Lusophone cultural events and festivals in London',
       descriptionPt: 'Apoiar eventos e festivais culturais portugueses em Londres',
-      purpose: 'Fund authentic Portuguese cultural celebrations',
+      purpose: 'Fund authentic Lusophone cultural celebrations',
       purposePt: 'Financiar celebrações culturais portuguesas autênticas',
       apr: 15.5,
       totalStaked: 125000,
@@ -275,7 +275,7 @@ const LusoCommunityToken: React.FC = () => {
       benefits: ['Priority event tickets', 'Cultural event planning input', 'Exclusive meet-and-greets'],
       benefitsPt: ['Bilhetes prioritários para eventos', 'Contribuição no planeamento de eventos culturais', 'Encontros exclusivos'],
       culturalImpact: {
-        projects: ['Santos Populares 2024', 'Fado Festival London', 'Portuguese Film Festival'],
+        projects: ['Santos Populares 2024', 'Fado Festival London', 'Lusophone Film Festival'],
         projectsPt: ['Santos Populares 2024', 'Festival de Fado Londres', 'Festival de Cinema Português'],
         beneficiaries: 15000
       }
@@ -296,7 +296,7 @@ const LusoCommunityToken: React.FC = () => {
       benefits: ['Business network access', 'Investment opportunities', 'Entrepreneur mentorship'],
       benefitsPt: ['Acesso à rede de negócios', 'Oportunidades de investimento', 'Orientação empresarial'],
       culturalImpact: {
-        projects: ['Portuguese Startup Incubator', 'Traditional Crafts Support', 'Restaurant Revival Fund'],
+        projects: ['Lusophone Startup Incubator', 'Traditional Crafts Support', 'Restaurant Revival Fund'],
         projectsPt: ['Incubadora de Startups Portuguesas', 'Apoio a Artesanato Tradicional', 'Fundo de Revitalização de Restaurantes'],
         beneficiaries: 450
       }
@@ -305,9 +305,9 @@ const LusoCommunityToken: React.FC = () => {
       id: 'heritage-preservation',
       name: 'Heritage Preservation',
       namePt: 'Preservação do Património',
-      description: 'Preserve Portuguese cultural heritage and traditions',
+      description: 'Preserve Lusophone cultural heritage and traditions',
       descriptionPt: 'Preservar o património e tradições culturais portuguesas',
-      purpose: 'Document and preserve Portuguese cultural practices',
+      purpose: 'Document and preserve Lusophone cultural practices',
       purposePt: 'Documentar e preservar práticas culturais portuguesas',
       apr: 18.5,
       totalStaked: 68900,
@@ -340,14 +340,14 @@ const LusoCommunityToken: React.FC = () => {
       quorum: 12000,
       endDate: '2024-02-15',
       status: 'active',
-      culturalImpact: 'Preserve and celebrate Portuguese June festivals tradition',
+      culturalImpact: 'Preserve and celebrate Lusophone June festivals tradition',
       culturalImpactPt: 'Preservar e celebrar a tradição dos festivais portugueses de junho',
       fundingRequired: 25000,
       expectedBeneficiaries: 8000
     },
     {
       id: 'portuguese-language-program',
-      title: 'Community Portuguese Language Program',
+      title: 'Community Lusophone Language Program',
       titlePt: 'Programa Comunitário de Língua Portuguesa',
       description: 'Establish free Portuguese language classes for children and adults',
       descriptionPt: 'Estabelecer aulas gratuitas de língua portuguesa para crianças e adultos',
@@ -366,7 +366,7 @@ const LusoCommunityToken: React.FC = () => {
     },
     {
       id: 'business-directory-enhancement',
-      title: 'Enhanced Portuguese Business Directory',
+      title: 'Enhanced Lusophone Business Directory',
       titlePt: 'Diretório Melhorado de Negócios Portugueses',
       description: 'Upgrade business directory with virtual tours and AI recommendations',
       descriptionPt: 'Melhorar diretório de negócios com tours virtuais e recomendações de IA',
@@ -901,7 +901,7 @@ const LusoCommunityToken: React.FC = () => {
                   <p className="text-gray-500 max-w-md mx-auto">
                     {language === 'pt'
                       ? 'Estamos a desenvolver um mercado onde poderá trocar tokens por produtos portugueses exclusivos, experiências culturais e serviços da comunidade.'
-                      : 'We\'re developing a marketplace where you can exchange tokens for exclusive Portuguese products, cultural experiences, and community services.'}
+                      : 'We\'re developing a marketplace where you can exchange tokens for exclusive Lusophone products, cultural experiences, and community services.'}
                   </p>
                 </div>
               </div>

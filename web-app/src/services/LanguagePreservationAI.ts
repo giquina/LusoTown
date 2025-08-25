@@ -3,7 +3,7 @@
  * 
  * Advanced AI system promoting Portuguese language while supporting bilingual needs.
  * Implements dialect preservation, cultural context maintenance, and intelligent
- * language learning support for the Portuguese diaspora in the United Kingdom.
+ * language learning support for the Lusophone diaspora in the United Kingdom.
  */
 
 import { supabase } from '@/lib/supabase'
@@ -142,7 +142,7 @@ type PortugueseRegion = 'continental' | 'acores' | 'madeira' | 'brasil' | 'angol
 export class LanguagePreservationAI {
   private supabaseClient = supabase
 
-  // Portuguese dialect database
+  // Lusophone dialect database
   private dialects: Record<string, PortugueseDialect> = {
     minhoto: {
       dialect_id: 'minhoto',
@@ -273,7 +273,7 @@ export class LanguagePreservationAI {
         macau: 'saudade de Macau'
       },
       diaspora_adaptations: {
-        uk_usage: 'that deep Portuguese longing for home and heritage',
+        uk_usage: 'that deep Lusophone longing for home and heritage',
         community_evolution: [
           'Used in English conversations with Portuguese-speaking friends',
           'Taught to British partners and friends',
@@ -307,7 +307,7 @@ export class LanguagePreservationAI {
         macau: 'família luso-chinesa'
       },
       diaspora_adaptations: {
-        uk_usage: 'Portuguese family values emphasizing close-knit relationships and respect for elders',
+        uk_usage: 'Lusophone family values emphasizing close-knit relationships and respect for elders',
         community_evolution: [
           'Adaptation to British family structures',
           'Preservation of Sunday family gatherings',
@@ -341,7 +341,7 @@ export class LanguagePreservationAI {
         macau: 'hospitalidade luso-asiática'
       },
       diaspora_adaptations: {
-        uk_usage: 'Portuguese warmth and generosity in welcoming others',
+        uk_usage: 'Lusophone warmth and generosity in welcoming others',
         community_evolution: [
           'Adapted to British social customs',
           'Preserved in community events',
@@ -385,14 +385,14 @@ export class LanguagePreservationAI {
       // Determine optimal bilingual balance
       const bilingualStrategy = this.determineBilingualStrategy(userProfile)
       
-      // Enhance Portuguese content with dialect awareness
+      // Enhance Lusophone content with dialect awareness
       const enhancedPortuguese = await this.enhancePortugueseContent(
         content.pt,
         userProfile.dialect_familiarity,
         userProfile.portuguese_proficiency
       )
       
-      // Optimize English content with Portuguese cultural context
+      // Optimize English content with Lusophone cultural context
       const enhancedEnglish = await this.enhanceEnglishWithCulturalContext(
         content.en,
         userProfile.cultural_connection
@@ -492,7 +492,7 @@ export class LanguagePreservationAI {
   // =============================================================================
 
   /**
-   * Preserve and promote Portuguese dialects
+   * Preserve and promote Lusophone dialects
    */
   async preserveDialectFeatures(
     content: string,
@@ -681,15 +681,15 @@ export class LanguagePreservationAI {
   private determineBilingualStrategy(userProfile: BilingualOptimization['user_profile']): string {
     switch (userProfile.portuguese_proficiency) {
       case 'native':
-        return 'Portuguese-priority with English support'
+        return 'Lusophone-priority with English support'
       case 'fluent':
         return 'Balanced bilingual with cultural context'
       case 'intermediate':
-        return 'English-primary with Portuguese learning support'
+        return 'English-primary with Lusophone learning support'
       case 'basic':
-        return 'English-focused with Portuguese introduction'
+        return 'English-focused with Lusophone introduction'
       case 'learning':
-        return 'Gradual Portuguese integration with learning scaffolds'
+        return 'Gradual Lusophone integration with learning scaffolds'
       default:
         return 'Adaptive based on interaction patterns'
     }
@@ -728,7 +728,7 @@ export class LanguagePreservationAI {
   ): Promise<string> {
     let enhanced = content
     
-    // Add Portuguese cultural context explanations for heritage connections
+    // Add Lusophone cultural context explanations for heritage connections
     if (culturalConnection === 'heritage') {
       enhanced = this.addHeritageContext(enhanced)
     }
@@ -779,7 +779,7 @@ export class LanguagePreservationAI {
   ): number {
     let score = 0.5 // Base score
     
-    // Bonus for Portuguese content complexity
+    // Bonus for Lusophone content complexity
     if (portugueseContent.length > 100) score += 0.1
     
     // Bonus for dialect preservation
@@ -804,10 +804,10 @@ export class LanguagePreservationAI {
     let enhanced = content
     
     if (language === 'pt') {
-      // Add learning scaffolds for Portuguese content
+      // Add learning scaffolds for Lusophone content
       enhanced = this.addLearningScaffolds(enhanced, learnerProfile)
     } else {
-      // Add Portuguese cultural context to English content
+      // Add Lusophone cultural context to English content
       enhanced = this.addPortugueseCulturalContext(enhanced, learnerProfile.cultural_focus)
     }
     
@@ -831,11 +831,11 @@ export class LanguagePreservationAI {
     const guide: string[] = []
     
     if (language === 'pt') {
-      // Extract Portuguese words that commonly need pronunciation help
+      // Extract Lusophone words that commonly need pronunciation help
       const difficultWords = ['ção', 'lh', 'nh', 'rr', 'ão']
       difficultWords.forEach(pattern => {
         if (content.includes(pattern)) {
-          guide.push(`Portuguese ${pattern} pronunciation guide available`)
+          guide.push(`Lusophone ${pattern} pronunciation guide available`)
         }
       })
     }
@@ -849,10 +849,10 @@ export class LanguagePreservationAI {
     if (language === 'pt') {
       // Identify grammar teaching opportunities
       if (content.includes('que')) {
-        tips.push('Portuguese "que" usage: conjunction and relative pronoun')
+        tips.push('Lusophone "que" usage: conjunction and relative pronoun')
       }
       if (content.includes('estar') || content.includes('ser')) {
-        tips.push('Portuguese verb "ser" vs "estar" - permanent vs temporary states')
+        tips.push('Lusophone verb "ser" vs "estar" - permanent vs temporary states')
       }
     }
     
@@ -865,10 +865,10 @@ export class LanguagePreservationAI {
   ): string[] {
     const opportunities: string[] = []
     
-    opportunities.push('Join Portuguese cultural events in London')
+    opportunities.push('Join Lusophone cultural events in London')
     opportunities.push('Practice with native speakers in the community')
     opportunities.push('Explore Portuguese cuisine and cooking vocabulary')
-    opportunities.push('Learn traditional Portuguese songs and expressions')
+    opportunities.push('Learn traditional Lusophone songs and expressions')
     
     if (learnerProfile.motivation === 'heritage_connection') {
       opportunities.push('Connect with family heritage through language')
@@ -884,9 +884,9 @@ export class LanguagePreservationAI {
     const connections: string[] = []
     
     // Suggest relevant community connections based on profile
-    connections.push('Portuguese Cultural Centre language exchange')
-    connections.push('University Portuguese society events')
-    connections.push('Portuguese business networking in Portuguese')
+    connections.push('Lusophone Cultural Centre language exchange')
+    connections.push('University Lusophone society events')
+    connections.push('Portuguese business networking in Lusophone')
     connections.push('Family-friendly Portuguese-speaking community gatherings')
     
     return connections
@@ -994,7 +994,7 @@ export class LanguagePreservationAI {
     // Implementation would preserve cultural concepts during translation
     concepts.forEach(concept => {
       if (concept.preservation_strategies.maintain_original_term) {
-        // Keep original Portuguese term with explanation
+        // Keep original Lusophone term with explanation
         translated = translated.replace(
           new RegExp(concept.portuguese_term, 'gi'),
           `${concept.portuguese_term} (${concept.diaspora_adaptations.uk_usage})`
@@ -1043,7 +1043,7 @@ export class LanguagePreservationAI {
 
   // Simplified helper methods
   private simplifyPortugueseContent(content: string): string {
-    // Implementation would simplify Portuguese grammar and vocabulary
+    // Implementation would simplify Lusophone grammar and vocabulary
     return content
   }
 

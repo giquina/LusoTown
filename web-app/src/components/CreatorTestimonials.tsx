@@ -38,7 +38,7 @@ export default function CreatorTestimonials() {
       rating: 4.9,
       quote: isPt 
         ? 'Em apenas 6 meses na LusoTown, consegui transformar a minha paixão pelo fado numa fonte de rendimento estável. A plataforma conectou-me com portugueses em Londres que ansiavam por autêntica cultura portuguesa. Os meus workshops de fado online têm sempre casa cheia!'
-        : 'In just 6 months on LusoTown, I turned my passion for fado into a stable income source. The platform connected me with Portuguese people in London who were craving authentic Portuguese culture. My online fado workshops are always sold out!',
+        : 'In just 6 months on LusoTown, I turned my passion for fado into a stable income source. The platform connected me with Lusophone people in London who were craving authentic Portuguese culture. My online fado workshops are always sold out!',
       achievements: [
         { 
           icon: DollarSign, 
@@ -58,7 +58,7 @@ export default function CreatorTestimonials() {
       ],
       contentHighlight: isPt 
         ? 'Especialista em ensino de guitarra portuguesa e canto tradicional'
-        : 'Expert in Portuguese guitar and traditional singing instruction'
+        : 'Expert in Lusophone guitar and traditional singing instruction'
     },
     {
       id: 2,
@@ -110,7 +110,7 @@ export default function CreatorTestimonials() {
       rating: 4.7,
       quote: isPt
         ? 'Partilhar a história e tradições de Angola com a diáspora portuguesa tem criado ligações profundas. Os workshops ao vivo sobre a influência angolana na cultura portuguesa geram tanto impacto cultural quanto financeiro. É maravilhoso ver jovens em Londres interessados nas suas raízes.'
-        : 'Sharing Angola\'s history and traditions with the Portuguese diaspora has created deep connections. Live workshops about Angolan influence on Portuguese culture generate both cultural and financial impact. It\'s wonderful to see young people in London interested in their roots.',
+        : 'Sharing Angola\'s history and traditions with the Lusophone diaspora has created deep connections. Live workshops about Angolan influence on Portuguese culture generate both cultural and financial impact. It\'s wonderful to see young people in London interested in their roots.',
       achievements: [
         { 
           icon: Star, 
@@ -146,7 +146,7 @@ export default function CreatorTestimonials() {
       rating: 4.8,
       quote: isPt
         ? 'Como empresário português em Londres, uso a LusoTown para partilhar conhecimentos sobre como montar negócios no Reino Unido. A comunidade é muito engajada e os workshops sobre vistos de negócios e networking profissional são sempre muito procurados.'
-        : 'As a Portuguese entrepreneur in London, I use LusoTown to share knowledge about setting up businesses in the United Kingdom. The community is very engaged and workshops about business visas and professional networking are always in high demand.',
+        : 'As a Lusophone entrepreneur in London, I use LusoTown to share knowledge about setting up businesses in the United Kingdom. The community is very engaged and workshops about business visas and professional networking are always in high demand.',
       achievements: [
         { 
           icon: DollarSign, 
@@ -166,7 +166,7 @@ export default function CreatorTestimonials() {
       ],
       contentHighlight: isPt 
         ? 'Consultoria especializada para empreendedores portugueses no Reino Unido'
-        : 'Specialized consultancy for Portuguese entrepreneurs in the United Kingdom'
+        : 'Specialized consultancy for Lusophone entrepreneurs in the United Kingdom'
     },
     {
       id: 5,
@@ -239,7 +239,7 @@ export default function CreatorTestimonials() {
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
           {isPt
             ? 'Conheça criadores portugueses reais que transformaram a sua paixão cultural numa fonte de rendimento sustentável na LusoTown.'
-            : 'Meet real Portuguese creators who have transformed their cultural passion into sustainable income on LusoTown.'}
+            : 'Meet real Lusophone creators who have transformed their cultural passion into sustainable income on LusoTown.'}
         </p>
       </div>
 
@@ -428,7 +428,7 @@ export default function CreatorTestimonials() {
           <p className="text-gray-600">
             {isPt 
               ? 'Números reais da nossa comunidade de criadores portugueses'
-              : 'Real numbers from our Portuguese creator community'
+              : 'Real numbers from our Lusophone creator community'
             }
           </p>
         </div>

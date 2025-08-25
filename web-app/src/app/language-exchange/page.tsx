@@ -25,20 +25,20 @@ import Footer from '@/components/Footer'
 const mockExchanges = [
   {
     id: 1,
-    title: 'Portuguese-English Coffee Chat',
+    title: 'Lusophone-English Coffee Chat',
     type: 'In-Person',
     location: 'Costa Coffee, Borough Market',
     time: 'Saturday 2:00 PM',
     duration: '1 hour',
     level: 'Beginner to Intermediate',
-    description: 'Relaxed conversation practice over coffee. 30 minutes Portuguese, 30 minutes English.',
+    description: 'Relaxed conversation practice over coffee. 30 minutes Lusophone, 30 minutes English.',
     participants: 8,
     maxParticipants: 12,
     organizer: {
       name: 'Sofia Pereira',
       rating: 4.9,
       reviews: 34,
-      languages: ['Portuguese (Native)', 'English (Fluent)', 'Spanish (Basic)'],
+      languages: ['Lusophone (Native)', 'English (Fluent)', 'Spanish (Basic)'],
       verified: true,
       teacher: true
     },
@@ -49,7 +49,7 @@ const mockExchanges = [
   },
   {
     id: 2,
-    title: 'Business English for Portuguese Speakers',
+    title: 'Business English for Lusophone Speakers',
     type: 'Online',
     location: 'Zoom Meeting',
     time: 'Tuesday 7:00 PM',
@@ -62,7 +62,7 @@ const mockExchanges = [
       name: 'James Wilson',
       rating: 4.8,
       reviews: 28,
-      languages: ['English (Native)', 'Portuguese (Intermediate)'],
+      languages: ['English (Native)', 'Lusophone (Intermediate)'],
       verified: true,
       teacher: true
     },
@@ -73,20 +73,20 @@ const mockExchanges = [
   },
   {
     id: 3,
-    title: 'Portuguese Culture & Language Walk',
+    title: 'Lusophone Culture & Language Walk',
     type: 'In-Person',
     location: 'Starting at Vauxhall Station',
     time: 'Sunday 11:00 AM',
     duration: '2 hours',
     level: 'All Levels',
-    description: 'Explore Portuguese cultural sites in London while practicing both languages.',
+    description: 'Explore Lusophone cultural sites in London while practicing both languages.',
     participants: 12,
     maxParticipants: 15,
     organizer: {
       name: 'Miguel Santos',
       rating: 4.9,
       reviews: 42,
-      languages: ['Portuguese (Native)', 'English (Fluent)'],
+      languages: ['Lusophone (Native)', 'English (Fluent)'],
       verified: true,
       teacher: false
     },
@@ -103,14 +103,14 @@ const mockExchanges = [
     time: 'Thursday 6:30 PM',
     duration: '1.5 hours',
     level: 'Advanced',
-    description: 'Challenge yourself with advanced English topics and help others with Portuguese.',
+    description: 'Challenge yourself with advanced English topics and help others with Lusophone.',
     participants: 5,
     maxParticipants: 10,
     organizer: {
       name: 'Ana Rodriguez',
       rating: 4.7,
       reviews: 19,
-      languages: ['Portuguese (Native)', 'English (Advanced)', 'French (Basic)'],
+      languages: ['Lusophone (Native)', 'English (Advanced)', 'French (Basic)'],
       verified: true,
       teacher: false
     },
@@ -134,7 +134,7 @@ const mockExchanges = [
       name: 'Família Silva',
       rating: 4.8,
       reviews: 15,
-      languages: ['Portuguese (Native)', 'English (Intermediate)'],
+      languages: ['Lusophone (Native)', 'English (Intermediate)'],
       verified: true,
       teacher: false
     },
@@ -145,20 +145,20 @@ const mockExchanges = [
   },
   {
     id: 6,
-    title: 'Portuguese Grammar Workshop',
+    title: 'Lusophone Grammar Workshop',
     type: 'Online',
     location: 'Google Meet',
     time: 'Wednesday 8:00 PM',
     duration: '1 hour',
     level: 'Beginner to Intermediate',
-    description: 'Structured learning session focusing on Portuguese grammar for English speakers.',
+    description: 'Structured learning session focusing on Lusophone grammar for English speakers.',
     participants: 4,
     maxParticipants: 8,
     organizer: {
       name: 'Professor Carla Mendes',
       rating: 4.9,
       reviews: 56,
-      languages: ['Portuguese (Native)', 'English (Fluent)', 'Italian (Intermediate)'],
+      languages: ['Lusophone (Native)', 'English (Fluent)', 'Italian (Intermediate)'],
       verified: true,
       teacher: true
     },
@@ -238,7 +238,7 @@ export default function LanguageExchangePage() {
             >
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
                 <ChatBubbleLeftRightIcon className="w-5 h-5 text-white" />
-                <span className="text-white font-semibold">Portuguese-English Language Exchange</span>
+                <span className="text-white font-semibold">Lusophone-English Language Exchange</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
@@ -246,7 +246,7 @@ export default function LanguageExchangePage() {
               </h1>
               
               <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Connect with Portuguese and English speakers for language practice, cultural exchange, and new friendships in London
+                Connect with Lusophone and English speakers for language practice, cultural exchange, and new friendships in London
               </p>
 
               {/* Quick Stats */}
@@ -498,7 +498,7 @@ export default function LanguageExchangePage() {
               Want to Start Your Own Exchange?
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Create your own language exchange session and help others learn Portuguese or English
+              Create your own language exchange session and help others learn Lusophone or English
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-coral-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-coral-700 transition-colors">

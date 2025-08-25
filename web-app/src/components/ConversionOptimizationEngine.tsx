@@ -84,7 +84,7 @@ export default function ConversionOptimizationEngine({
 
   const isPortuguese = language === 'pt'
 
-  // Define conversion opportunities with Portuguese cultural context
+  // Define conversion opportunities with Lusophone cultural context
   const opportunities: ConversionOpportunity[] = [
     {
       id: 'premium-upgrade-transport-user',
@@ -92,7 +92,7 @@ export default function ConversionOptimizationEngine({
       priority: 'high',
       title: 'Unlock Unlimited Transport Booking',
       titlePortuguese: 'Desbloqueie Reservas Ilimitadas de Transporte',
-      description: 'You\'ve shown interest in our transport services! Upgrade to premium for unlimited booking, priority scheduling, and exclusive Portuguese driver network access.',
+      description: 'You\'ve shown interest in our transport services! Upgrade to premium for unlimited booking, priority scheduling, and exclusive Lusophone driver network access.',
       descriptionPortuguese: 'Demonstrou interesse nos nossos serviços de transporte! Atualize para premium para reservas ilimitadas, agendamento prioritário e acesso exclusivo à rede de motoristas portugueses.',
       value: 'From £19.99/month - Portuguese-speaking community access',
       valuePortuguese: 'A partir de £19.99/mês - Acesso à comunidade de falantes de português',
@@ -130,7 +130,7 @@ export default function ConversionOptimizationEngine({
       id: 'networking-to-premium',
       type: 'subscription_upgrade',
       priority: 'high',
-      title: 'Enhance Your Portuguese Network',
+      title: 'Enhance Your Lusophone Network',
       titlePortuguese: 'Melhore a Sua Rede Portuguesa',
       description: 'You\'re building great connections! Premium membership unlocks advanced networking features, mentorship access, and exclusive business events.',
       descriptionPortuguese: 'Está a construir ótimas conexões! A subscrição premium desbloqueia funcionalidades avançadas de networking, acesso a mentoria e eventos empresariais exclusivos.',
@@ -166,7 +166,7 @@ export default function ConversionOptimizationEngine({
       priority: 'high',
       title: 'Student Special: 50% Off Premium',
       titlePortuguese: 'Especial Estudante: 50% Desconto Premium',
-      description: 'Portuguese student in the United Kingdom? Get premium access to mentorship, career events, and transport services at student-friendly pricing.',
+      description: 'Lusophone student in the United Kingdom? Get premium access to mentorship, career events, and transport services at student-friendly pricing.',
       descriptionPortuguese: 'Estudante português no Reino Unido? Obtenha acesso premium a mentoria, eventos de carreira e serviços de transporte com preços amigáveis para estudantes.',
       value: 'Only £9.99/month (50% off)',
       valuePortuguese: 'Apenas £9.99/mês (50% desconto)',
@@ -235,9 +235,9 @@ export default function ConversionOptimizationEngine({
       id: 'mentorship-program-engagement',
       type: 'engagement_boost',
       priority: 'medium',
-      title: 'Connect with Portuguese Professionals',
+      title: 'Connect with Lusophone Professionals',
       titlePortuguese: 'Conecte-se com Profissionais Portugueses',
-      description: 'Advance your career with guidance from successful Portuguese professionals already established in the United Kingdom. Get industry insights, networking opportunities, and career advice.',
+      description: 'Advance your career with guidance from successful Lusophone professionals already established in the United Kingdom. Get industry insights, networking opportunities, and career advice.',
       descriptionPortuguese: 'Avance na sua carreira com orientação de profissionais portugueses bem-sucedidos já estabelecidos no Reino Unido. Obtenha insights da indústria, oportunidades de networking e conselhos profissionais.',
       value: 'Career acceleration',
       valuePortuguese: 'Aceleração profissional',
@@ -303,7 +303,7 @@ export default function ConversionOptimizationEngine({
       id: 'cultural-event-bundle',
       type: 'service_upsell',
       priority: 'low',
-      title: 'Portuguese Cultural Event Package',
+      title: 'Lusophone Cultural Event Package',
       titlePortuguese: 'Pacote de Eventos Culturais Portugueses',
       description: 'Love Portuguese culture? Get priority access to all cultural events this season, including exclusive pre-event meetups and transport coordination.',
       descriptionPortuguese: 'Adora a cultura portuguesa? Obtenha acesso prioritário a todos os eventos culturais desta temporada, incluindo encontros exclusivos pré-evento e coordenação de transporte.',

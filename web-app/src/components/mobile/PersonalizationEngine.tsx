@@ -19,7 +19,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/context/LanguageContext';
 
-// Portuguese Cultural Preference Categories
+// Lusophone Cultural Preference Categories
 const CULTURAL_PREFERENCES = {
   heritage: {
     id: 'heritage',
@@ -45,7 +45,7 @@ const CULTURAL_PREFERENCES = {
     icon: MusicalNoteIcon,
     options: [
       { value: 'fado', label: 'Fado Music', labelPt: 'Música Fado', icon: '🎵' },
-      { value: 'cuisine', label: 'Portuguese Cuisine', labelPt: 'Culinária Portuguesa', icon: '🍽️' },
+      { value: 'cuisine', label: 'Lusophone Cuisine', labelPt: 'Culinária Portuguesa', icon: '🍽️' },
       { value: 'literature', label: 'Literature', labelPt: 'Literatura', icon: '📚' },
       { value: 'history', label: 'History', labelPt: 'História', icon: '🏛️' },
       { value: 'language', label: 'Language Learning', labelPt: 'Aprendizagem da Língua', icon: '🗣️' },
@@ -121,7 +121,7 @@ export function PersonalizationEngine({
     const mockRecommendations = [
       {
         id: 'rec-1',
-        title: 'Fado Night at Portuguese Cultural Center',
+        title: 'Fado Night at Lusophone Cultural Center',
         type: 'event',
         matchReason: 'Based on your interest in Fado music',
         matchReasonPt: 'Com base no seu interesse em música Fado',
@@ -132,7 +132,7 @@ export function PersonalizationEngine({
       },
       {
         id: 'rec-2',
-        title: 'Portuguese Business Network Breakfast',
+        title: 'Lusophone Business Network Breakfast',
         type: 'networking',
         matchReason: 'Matches your professional networking preference',
         matchReasonPt: 'Corresponde à sua preferência de networking profissional',

@@ -26,7 +26,7 @@ export const DEFAULT_MATCHING_PREFERENCES: MatchingPreferences = {
   distanceRange: 50, // 50 miles
   lookingFor: 'any',
   interests: [],
-  languages: ['Portuguese', 'English'],
+  languages: ['Lusophone', 'English'],
   lastUpdated: new Date().toISOString(),
 };
 

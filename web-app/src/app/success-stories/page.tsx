@@ -17,11 +17,11 @@ import {
 } from '@heroicons/react/24/outline'
 import { ROUTES } from '@/config/routes'
 
-// Portuguese success stories dedicated page
+// Lusophone success stories dedicated page
 
 export const metadata: Metadata = {
   title: 'Success Stories - Portuguese-speaking community Connections | LusoTown London',
-  description: 'Real success stories from Portuguese speakers who found their community in London. From Portugal to Brazil, Angola to Mozambique - discover how LusoTown connects Portuguese hearts across the United Kingdom.',
+  description: 'Real success stories from Portuguese speakers who found their community in London. From Portugal to Brazil, Angola to Mozambique - discover how LusoTown connects Lusophone hearts across the United Kingdom.',
   keywords: [
     'Portuguese-speaking community London success stories',
     'Brazilian community United Kingdom testimonials',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     'Cape Verdean London networking',
     'Portuguese business partnerships United Kingdom',
     'Lusophone community success',
-    'Portuguese cultural preservation London',
+    'Lusophone cultural preservation London',
     'Portuguese-speaking friendship networks United Kingdom',
     'Portuguese heritage community'
   ],
@@ -69,10 +69,10 @@ export default function SuccessStories() {
                 Real Stories • Real Connections
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance">
-                From Saudade to Success: Portuguese Hearts United in London
+                From Saudade to Success: Lusophone Hearts United in London
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-balance">
-                Real Portuguese souls who transformed London loneliness into thriving community connections. From pastéis de nata meetups in Stockwell to fado nights in Camden - discover how nossa gente builds lasting bonds while preserving Portuguese heart in the city's rhythm.
+                Real Lusophone souls who transformed London loneliness into thriving community connections. From pastéis de nata meetups in Stockwell to fado nights in Camden - discover how nossa gente builds lasting bonds while preserving Lusophone heart in the city's rhythm.
               </p>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function SuccessStories() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm opacity-75">
                 <div className="flex items-center justify-center">
                   <CalendarIcon className="w-4 h-4 mr-2" />
-                  All Portuguese Speakers Welcome
+                  All Lusophone Speakers Welcome
                 </div>
                 <div className="flex items-center justify-center">
                   <HeartIcon className="w-4 h-4 mr-2" />

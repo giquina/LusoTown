@@ -6,7 +6,7 @@
  * 
  * Features:
  * - Environment-aware URL configuration (dev/prod)
- * - Portuguese cultural resource management
+ * - Lusophone cultural resource management
  * - University partnership URL management
  * - Social media URL synchronization with contact config
  * - Image URL builders with optimization parameters
@@ -39,7 +39,7 @@ export const SOCIAL_URLS = {
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_URL || 'https://chat.whatsapp.com/lusotown'
 } as const;
 
-// Portuguese Cultural and Official Resources
+// Lusophone Cultural and Official Resources
 export const PORTUGUESE_RESOURCES = {
   consulado: process.env.NEXT_PUBLIC_CONSULADO_URL || 'https://london.embaixadaportugal.mne.gov.pt',
   institutoCamoes: process.env.NEXT_PUBLIC_INSTITUTO_CAMOES_URL || 'https://instituto-camoes.pt',
@@ -236,7 +236,7 @@ export const buildUniversityUrl = (university: keyof typeof UNIVERSITY_URLS, pat
   return path ? `${baseUrl}${path.startsWith('/') ? path : `/${path}`}` : baseUrl;
 };
 
-// Build Portuguese resource URLs
+// Build Lusophone resource URLs
 export const buildPortugueseResourceUrl = (resource: keyof typeof PORTUGUESE_RESOURCES, path?: string): string => {
   const baseUrl = PORTUGUESE_RESOURCES[resource];
   return path ? `${baseUrl}${path.startsWith('/') ? path : `/${path}`}` : baseUrl;
@@ -305,7 +305,7 @@ export const COMMON_IMAGES = {
     venue: buildUnsplashUrl('photo-1506905925346-21bda4d32df4', 600, 400, { fit: 'crop', auto: 'format' }),
     group: buildUnsplashUrl('photo-1511895426328-dc8714191300', 600, 400, { fit: 'crop', auto: 'format' })
   },
-  // Portuguese cultural images
+  // Lusophone cultural images
   portuguese: {
     professional: buildPortugueseImageUrl('1493225457124-a3eb161ffa5f'),
     cultural: buildPortugueseImageUrl('1574362848149-11496d93a7c7'),

@@ -71,7 +71,7 @@ const mockMatches: MatchProfile[] = [
     location: 'Stockwell',
     profession: 'Graphic Designer',
     origin: 'Porto, Portugal',
-    interests: ['Fado', 'Portuguese Cuisine', 'Arts & Crafts', 'Cultural Events'],
+    interests: ['Fado', 'Lusophone Cuisine', 'Arts & Crafts', 'Cultural Events'],
     bio: 'Designer from Porto who loves authentic Portuguese culture and exploring London\'s creative scene.',
     compatibility: 94,
     isMatch: true,
@@ -105,7 +105,7 @@ const mockMatches: MatchProfile[] = [
     location: 'Camden',
     profession: 'Marketing Manager',
     origin: 'Lisboa, Portugal',
-    interests: ['Wine Tasting', 'Portuguese Literature', 'Business Events', 'Cultural Tours'],
+    interests: ['Wine Tasting', 'Lusophone Literature', 'Business Events', 'Cultural Tours'],
     bio: 'Marketing professional from Lisbon who enjoys Portuguese wine and literature discussions.',
     compatibility: 91,
     isMatch: true,
@@ -281,7 +281,7 @@ export default function MatchSocialHub({
             <p className="text-gray-600">
               {isPortuguese 
                 ? 'Conecte os seus matches à rede social portuguesa'
-                : 'Connect your matches to the Portuguese social network'
+                : 'Connect your matches to the Lusophone social network'
               }
             </p>
           </div>

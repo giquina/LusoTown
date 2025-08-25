@@ -26,7 +26,7 @@ import TrustBadges from '@/components/TrustBadges'
 import ServiceIntegration from '@/components/ServiceIntegration'
 import SubscriptionGate from '@/components/SubscriptionGate'
 
-// Premium service offerings with Portuguese cultural expertise
+// Premium service offerings with Lusophone cultural expertise
 const services = [
   {
     id: 'executive-transport',
@@ -39,7 +39,7 @@ const services = [
     icon: Car,
     color: 'secondary',
     image: IMAGES.transport.executive,
-    description: 'Professional transport services with Portuguese cultural expertise',
+    description: 'Professional transport services with Lusophone cultural expertise',
     descriptionPortuguese: 'Serviços de transporte profissional com especialização cultural portuguesa',
     features: [
       'Portuguese-speaking drivers',
@@ -139,7 +139,7 @@ const trustIndicators = [
 const caseStudies = [
   {
     id: 'corporate-delegation',
-    title: 'Portuguese Trade Delegation',
+    title: 'Lusophone Trade Delegation',
     titlePortuguese: 'Delegação Comercial Portuguesa',
     client: 'Câmara de Comércio Luso-Britânica',
     clientPortuguese: 'Câmara de Comércio Luso-Britânica',
@@ -219,7 +219,7 @@ export default function ServicesPage() {
                 <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
                   {isPortuguese
                     ? "Serviços Premium Portugueses"
-                    : "Premium Portuguese Services"}
+                    : "Premium Lusophone Services"}
                 </span>
               </span>
             </motion.div>
@@ -246,7 +246,7 @@ export default function ServicesPage() {
                     London's leading
                     <br />
                     <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
-                      Portuguese services
+                      Lusophone services
                     </span>{" "}
                     platform
                   </>
@@ -284,13 +284,13 @@ export default function ServicesPage() {
               <span className="hidden sm:block">
                 {isPortuguese
                   ? "Serviços de transporte executivo, segurança pessoal e tours culturais de nível mundial com especialização cultural portuguesa. Conectando a comunidade de falantes de português de Londres com experiências premium e culturalmente autênticas."
-                  : "World-class executive transport, personal security, and cultural tour services with Portuguese cultural expertise. Connecting London's Portuguese-speaking community with premium and culturally authentic experiences."}
+                  : "World-class executive transport, personal security, and cultural tour services with Lusophone cultural expertise. Connecting London's Portuguese-speaking community with premium and culturally authentic experiences."}
               </span>
               {/* Mobile short subtitle */}
               <span className="sm:hidden">
                 {isPortuguese
                   ? "Transporte executivo, segurança e tours com especialização cultural portuguesa para a comunidade de Londres."
-                  : "Executive transport, security, and tours with Portuguese cultural expertise for London's community."}
+                  : "Executive transport, security, and tours with Lusophone cultural expertise for London's community."}
               </span>
             </motion.p>
 

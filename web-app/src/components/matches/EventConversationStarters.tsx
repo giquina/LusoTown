@@ -31,7 +31,7 @@ interface ConversationContext {
   eventTime: string;
   eventLocation: string;
   culturalCategory: string;
-  languageLevel: 'Portuguese' | 'English' | 'Bilingual';
+  languageLevel: 'Lusophone' | 'English' | 'Bilingual';
 }
 
 interface MatchProfile {
@@ -156,14 +156,14 @@ export default function EventConversationStarters({
         });
       }
 
-      if (eventContext.culturalCategory === "Portuguese Cuisine") {
+      if (eventContext.culturalCategory === "Lusophone Cuisine") {
         starters.push({
           id: "cuisine-1",
           category: "cultural",
           text: language === "pt"
             ? `Olá! Também vais aprender a fazer pastéis de nata? Tenho curiosidade sobre os segredos da receita!`
             : `Hi! Are you also learning to make pastéis de nata? I'm curious about the recipe secrets!`,
-          context: "Portuguese cooking",
+          context: "Lusophone cooking",
           appropriateness: "high",
           culturalRelevance: 95,
           safetyLevel: "safe",
@@ -179,7 +179,7 @@ export default function EventConversationStarters({
           text: language === "pt"
             ? `Força Portugal! 🇵🇹 De que região és? Vamos torcer juntos!`
             : `Força Portugal! 🇵🇹 Which region are you from? Let's cheer together!`,
-          context: "Portuguese football support",
+          context: "Lusophone football support",
           appropriateness: "high",
           culturalRelevance: 92,
           safetyLevel: "safe",

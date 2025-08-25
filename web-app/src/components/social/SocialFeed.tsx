@@ -134,7 +134,7 @@ const MOCK_POSTS: SocialPost[] = [
       verified: true,
       membershipTier: 'cultural_ambassador'
     },
-    content: '🚗 Professional Portuguese-speaking drivers available for weekend cultural tours! Visit the best Portuguese spots in London with someone who knows the community. Book your transport experience today.',
+    content: '🚗 Professional Portuguese-speaking drivers available for weekend cultural tours! Visit the best Lusophone spots in London with someone who knows the community. Book your transport experience today.',
     contentType: 'service_promotion',
     culturalTags: ['transport', 'cultural_tours', 'portuguese_service'],
     locationTags: ['london'],

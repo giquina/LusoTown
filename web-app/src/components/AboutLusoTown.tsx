@@ -63,7 +63,7 @@ export default function AboutLusoTown() {
     {
       icon: Calendar,
       title: 'Discover & Join Events',
-      description: 'Find Portuguese cultural events at authentic London venues - from Fado nights to food festivals at real Portuguese locations.',
+      description: 'Find Lusophone cultural events at authentic London venues - from Fado nights to food festivals at real Lusophone locations.',
       gradient: 'from-action-500 to-action-600',
       lightBg: 'from-action-50 to-action-100/50',
       shadowColor: 'shadow-action-500/20'
@@ -94,7 +94,7 @@ export default function AboutLusoTown() {
     },
     {
       icon: Store,
-      title: 'Support Portuguese Businesses',
+      title: 'Support Lusophone Businesses',
       description: 'Explore our directory and discover places run by or for Portuguese speakers.',
       gradient: 'from-accent-500 to-coral-500',
       lightBg: 'from-accent-50 to-coral-100/50',
@@ -102,7 +102,7 @@ export default function AboutLusoTown() {
     },
     {
       icon: Users,
-      title: 'Connect with Portuguese Speakers',
+      title: 'Connect with Lusophone Speakers',
       description: 'Find Your Match among Portuguese speakers through real-life meetups at authentic London venues, share experiences, and keep your language and traditions alive.',
       gradient: 'from-coral-500 to-action-500',
       lightBg: 'from-coral-50 to-action-100/50',
@@ -157,8 +157,8 @@ export default function AboutLusoTown() {
           </h2>
           
           <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">
-            LusoTown is where Portuguese hearts find their London network. Whether you're homesick, building your career while honoring your heritage, 
-            or simply miss the warmth of Portuguese conversation, this is your professional home. Every person here understands your journey and opens their networks to support you.
+            LusoTown is where Lusophone hearts find their London network. Whether you're homesick, building your career while honoring your heritage, 
+            or simply miss the warmth of Lusophone conversation, this is your professional home. Every person here understands your journey and opens their networks to support you.
           </p>
         </div>
 
@@ -269,8 +269,8 @@ export default function AboutLusoTown() {
                 name: "Portugal",
                 flag: "🇵🇹",
                 heritage: "The heart of fado music and legendary pastéis de nata, Portugal brings soul-stirring musical traditions and incredible cuisine to United Kingdom communities. From intimate acoustic guitar circles with francesinha sandwiches to lively Santos Populares festivals featuring bifana, bacalhau dishes, and vinho verde, Portuguese culture creates warm gathering spaces where everyone feels at home.",
-                highlights: ["Fado Music Nights", "Traditional Folk Dancing", "Modern Portuguese Pop", "Community Festivals"],
-                ukDiaspora: "Portugal's United Kingdom community creates vibrant cultural hubs across London, Manchester, and beyond, organizing fado nights in cozy pubs, folklore dance workshops, and Portuguese food festivals. Join LusoTown for exclusive access to our annual January Pastéis de Nata Festival at the Portuguese Cultural Centre, where everyone can experience the warmth of Portuguese hospitality and traditions.",
+                highlights: ["Fado Music Nights", "Traditional Folk Dancing", "Modern Lusophone Pop", "Community Festivals"],
+                ukDiaspora: "Portugal's United Kingdom community creates vibrant cultural hubs across London, Manchester, and beyond, organizing fado nights in cozy pubs, folklore dance workshops, and Portuguese food festivals. Join LusoTown for exclusive access to our annual January Pastéis de Nata Festival at the Lusophone Cultural Centre, where everyone can experience the warmth of Lusophone hospitality and traditions.",
                 traditions: "Passionate fado performances, folklore dance circles, community celebrations",
                 stats: "280,000+ Portuguese speakers in United Kingdom • 100+ cultural events yearly • Fado UNESCO heritage"
               },
@@ -340,11 +340,11 @@ export default function AboutLusoTown() {
               {
                 name: "Macau",
                 flag: "🇲🇴",
-                heritage: "Macau creates unique cultural fusion through incredible Portuguese-Macanese cuisine featuring minchi, galinha portuguesa, egg tarts, and serradura desserts alongside cultural festivals that blend Asian and Portuguese traditions! Heritage celebration events showcase amazing fusion dishes like African chicken, Portuguese-style dim sum, and unique East-meets-West flavors that demonstrate the beautiful blend of two culinary worlds meeting in delicious harmony.",
-                highlights: ["Portuguese-Macanese Fusion Cuisine", "Cultural Fusion Festivals", "Heritage Tours", "East-West Celebrations"],
-                ukDiaspora: "Macau communities in London create fascinating cultural fusion experiences through Portuguese-Macanese cooking classes, cultural festivals, and heritage celebration events. Join LusoTown for exclusive access to our annual September East-West Fusion Feast at Chinatown Cultural Centre, showcasing the beautiful meeting of Eastern and Western culinary traditions.",
-                traditions: "Portuguese-Macanese fusion cuisine, cultural blend festivals, heritage celebrations",
-                stats: "Unique cultural fusion heritage • Portuguese-Chinese traditions • Growing United Kingdom presence"
+                heritage: "Macau creates unique cultural fusion through incredible Lusophone-Macanese cuisine featuring minchi, galinha portuguesa, egg tarts, and serradura desserts alongside cultural festivals that blend Asian and Portuguese traditions! Heritage celebration events showcase amazing fusion dishes like African chicken, Lusophone-style dim sum, and unique East-meets-West flavors that demonstrate the beautiful blend of two culinary worlds meeting in delicious harmony.",
+                highlights: ["Lusophone-Macanese Fusion Cuisine", "Cultural Fusion Festivals", "Heritage Tours", "East-West Celebrations"],
+                ukDiaspora: "Macau communities in London create fascinating cultural fusion experiences through Lusophone-Macanese cooking classes, cultural festivals, and heritage celebration events. Join LusoTown for exclusive access to our annual September East-West Fusion Feast at Chinatown Cultural Centre, showcasing the beautiful meeting of Eastern and Western culinary traditions.",
+                traditions: "Lusophone-Macanese fusion cuisine, cultural blend festivals, heritage celebrations",
+                stats: "Unique cultural fusion heritage • Lusophone-Chinese traditions • Growing United Kingdom presence"
               }
             ].map((country, index) => (
               <div
@@ -479,7 +479,7 @@ export default function AboutLusoTown() {
           {/* Monthly Food Events Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { month: "January", nation: "Portugal", flag: "🇵🇹", event: "Pastéis de Nata Festival", foods: "Pastéis de nata, francesinha, bifana, bacalhau", venue: "Portuguese Cultural Centre, South Kensington" },
+              { month: "January", nation: "Portugal", flag: "🇵🇹", event: "Pastéis de Nata Festival", foods: "Pastéis de nata, francesinha, bifana, bacalhau", venue: "Lusophone Cultural Centre, South Kensington" },
               { month: "February", nation: "Brazil", flag: "🇧🇷", event: "Carnival Food Fiesta", foods: "Feijoada, brigadeiros, coxinha, caipirinha", venue: "Brazilian Embassy Cultural Hall" },
               { month: "March", nation: "Cape Verde", flag: "🇨🇻", event: "Island Flavors Night", foods: "Cachupa, grilled tuna, caldeirada, grogue cocktails", venue: "Hackney Community Kitchen" },
               { month: "April", nation: "Angola", flag: "🇦🇴", event: "Muamba Masterclass", foods: "Muamba de galinha, calulu, grilled seafood", venue: "Peckham Multi-Cultural Centre" },

@@ -213,7 +213,7 @@ export default function SaudadeMatchingIntegration({
             <p className="text-sm text-gray-500">
               {language === 'pt' 
                 ? '5 minutos • Baseado em psicologia cultural portuguesa'
-                : '5 minutes • Based on Portuguese cultural psychology'}
+                : '5 minutes • Based on Lusophone cultural psychology'}
             </p>
           </div>
         </motion.div>

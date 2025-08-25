@@ -47,7 +47,7 @@ const getMobileFeatures = (t: any, isPortuguese: boolean) => [
     title: isPortuguese ? 'LusoTown TV' : 'LusoTown TV',
     description: isPortuguese
       ? 'Assista conteúdo cultural português ao vivo e conecte-se com criadores'
-      : 'Watch live Portuguese cultural content and connect with creators'
+      : 'Watch live Lusophone cultural content and connect with creators'
   },
   {
     icon: UserGroupIcon,
@@ -71,7 +71,7 @@ const getMobileFeatures = (t: any, isPortuguese: boolean) => [
     icon: MapPinIcon,
     solidIcon: MapPinIcon,
     gradient: 'from-coral-500 to-action-500',
-    title: isPortuguese ? 'Londres Portuguesa' : 'Portuguese London',
+    title: isPortuguese ? 'Londres Portuguesa' : 'Lusophone London',
     description: isPortuguese
       ? 'Descubra a história e cultura portuguesa espalhada por Londres'
       : 'Discover Portuguese history and culture throughout London'
@@ -84,7 +84,7 @@ export default function AppDownloadSection() {
   const mobileFeatures = getMobileFeatures(t, isPortuguese)
   return (
     <section className="py-16 md:py-24 bg-gradient-to-br from-white via-primary-50/30 to-secondary-50/30 relative overflow-hidden">
-      {/* Portuguese Cultural Background Elements */}
+      {/* Lusophone Cultural Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-10 w-40 h-40 bg-gradient-to-br from-secondary-200/40 to-accent-200/30 rounded-full animate-pulse opacity-60" style={{ animationDuration: '6s' }}></div>
         <div className="absolute bottom-32 left-16 w-32 h-32 bg-gradient-to-br from-action-200/40 to-coral-200/30 rounded-full animate-bounce opacity-50" style={{ animationDuration: '8s' }}></div>
@@ -147,7 +147,7 @@ export default function AppDownloadSection() {
                   <>
                     Meet Your{' '}
                     <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
-                      Portuguese Matches
+                      Lusophone Matches
                     </span>
                     {' '}On Mobile
                   </>
@@ -195,7 +195,7 @@ export default function AppDownloadSection() {
               </motion.div>
             </motion.div>
 
-            {/* Enhanced Portuguese Mobile Features - 3x2 Grid */}
+            {/* Enhanced Lusophone Mobile Features - 3x2 Grid */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -205,7 +205,7 @@ export default function AppDownloadSection() {
             >
               <div className="text-center">
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-                  {isPortuguese ? 'Encontre os Seus Matches Portugueses Perfeitos' : 'Find Your Perfect Portuguese Matches'}
+                  {isPortuguese ? 'Encontre os Seus Matches Portugueses Perfeitos' : 'Find Your Perfect Lusophone Matches'}
                 </h3>
                 <p className="text-lg text-gray-600">
                   {isPortuguese ? 'Algoritmo inteligente conecta-o com portugueses compatíveis em Londres' : 'Smart algorithm connects you with compatible Portuguese speakers in London'}
@@ -338,7 +338,7 @@ export default function AppDownloadSection() {
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-secondary-500 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
                   <span className="text-secondary-700 font-semibold">
-                    {communityStats.members} {isPortuguese ? 'portugueses conectados' : 'Portuguese connected'}
+                    {communityStats.members} {isPortuguese ? 'portugueses conectados' : 'Lusophone connected'}
                   </span>
                 </div>
               </div>
@@ -354,7 +354,7 @@ export default function AppDownloadSection() {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative">
-              {/* Enhanced Portuguese-themed Glow Effect */}
+              {/* Enhanced Lusophone-themed Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary-500/30 via-secondary-400/25 to-accent-500/20 blur-3xl transform scale-125 animate-pulse" style={{ animationDuration: '4s' }}></div>
               <div className="absolute inset-0 bg-gradient-to-tr from-coral-400/20 to-action-400/15 blur-2xl transform scale-110 animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }}></div>
               
@@ -384,12 +384,12 @@ export default function AppDownloadSection() {
                     </div>
                   </div>
 
-                  {/* Enhanced Portuguese App Interface Mockup */}
+                  {/* Enhanced Lusophone App Interface Mockup */}
                   <div className="bg-gradient-to-br from-primary-50/80 via-secondary-50/60 to-accent-50/40 flex-1 flex flex-col relative overflow-hidden">
-                    {/* Floating Portuguese elements */}
+                    {/* Floating Lusophone elements */}
                     <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-secondary-200/40 to-accent-200/30 rounded-full animate-bounce opacity-60" style={{ animationDuration: '3s' }}></div>
                     
-                    {/* Enhanced Portuguese-themed Header - Matches Focus */}
+                    {/* Enhanced Lusophone-themed Header - Matches Focus */}
                     <div className="bg-gradient-to-r from-white via-primary-50/30 to-secondary-50/30 px-6 py-5 shadow-lg border-b border-primary-100/50">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
@@ -418,10 +418,10 @@ export default function AppDownloadSection() {
                       </div>
                     </div>
 
-                    {/* Enhanced Portuguese Matches Interface */}
+                    {/* Enhanced Lusophone Matches Interface */}
                     <div className="p-6 space-y-4 flex-1 relative">
                       
-                      {/* Top Portuguese Match Card */}
+                      {/* Top Lusophone Match Card */}
                       <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -451,7 +451,7 @@ export default function AppDownloadSection() {
                             <p className="text-sm text-gray-600 mb-3">
                               {isPortuguese 
                                 ? 'Lisboa • Kensington • Adora fado e literatura portuguesa'
-                                : 'Lisbon • Kensington • Loves fado and Portuguese literature'}
+                                : 'Lisbon • Kensington • Loves fado and Lusophone literature'}
                             </p>
                             <div className="flex items-center gap-2 mb-3">
                               <div className="px-2 py-1 bg-secondary-100 rounded-lg text-xs font-medium text-secondary-700">
@@ -476,7 +476,7 @@ export default function AppDownloadSection() {
                         </div>
                       </motion.div>
 
-                      {/* Second Portuguese Match Card */}
+                      {/* Second Lusophone Match Card */}
                       <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -531,7 +531,7 @@ export default function AppDownloadSection() {
                         </div>
                       </motion.div>
 
-                      {/* Portuguese Matches Summary */}
+                      {/* Lusophone Matches Summary */}
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}

@@ -264,7 +264,7 @@ export default function CoreFeaturesShowcase() {
 
   return (
     <section className="py-24 bg-gradient-to-br from-white via-gray-50/30 to-secondary-50/20 relative overflow-hidden" aria-labelledby="core-features-title">
-      {/* Portuguese-inspired background elements */}
+      {/* Lusophone-inspired background elements */}
       <div className="absolute inset-0" aria-hidden="true">
         <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/30 via-accent-100/20 to-coral-100/20 rounded-full opacity-60 animate-pulse" />
         <div className="absolute bottom-32 left-20 w-24 h-24 bg-gradient-to-tr from-action-200/30 via-secondary-100/20 to-accent-100/20 rounded-full opacity-50 animate-bounce" style={{ animationDuration: '8s' }} />

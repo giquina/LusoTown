@@ -500,12 +500,12 @@ export default function EventDetailsPage() {
                       <p className="text-lg text-gray-600 mb-3">
                         {event.description}
                       </p>
-                      {/* Portuguese Cultural Context */}
-                      {(event.tags.includes('Portuguese') || event.tags.includes('Fado') || event.tags.includes('Cultural')) && (
+                      {/* Lusophone Cultural Context */}
+                      {(event.tags.includes('Lusophone') || event.tags.includes('Fado') || event.tags.includes('Cultural')) && (
                         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-50 to-secondary-50 px-4 py-2 rounded-full border border-primary-200 mb-3">
                           <span className="text-2xl">🇵🇹</span>
                           <span className="text-sm font-medium text-primary-700">
-                            {t('event.portuguese-cultural-event', 'Authentic Portuguese Cultural Event')}
+                            {t('event.portuguese-cultural-event', 'Authentic Lusophone Cultural Event')}
                           </span>
                         </div>
                       )}
@@ -553,10 +553,10 @@ export default function EventDetailsPage() {
                       <div className="flex-1">
                         <div className="font-medium text-gray-900">{event.location}</div>
                         <div className="text-sm text-gray-500 mb-2">{event.address}</div>
-                        {/* Portuguese Venue Context */}
-                        {(event.location.includes('Stockwell') || event.location.includes('Vauxhall') || event.location.includes('Portuguese')) && (
+                        {/* Lusophone Venue Context */}
+                        {(event.location.includes('Stockwell') || event.location.includes('Vauxhall') || event.location.includes('Lusophone')) && (
                           <div className="text-xs text-primary-600 bg-primary-50 px-2 py-1 rounded-full inline-block">
-                            🏛️ {t('event.portuguese-cultural-area', 'Portuguese Cultural Area')}
+                            🏛️ {t('event.portuguese-cultural-area', 'Lusophone Cultural Area')}
                           </div>
                         )}
                         {/* Venue Type Indicators */}

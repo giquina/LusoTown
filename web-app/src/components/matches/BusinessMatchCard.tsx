@@ -369,7 +369,7 @@ export default function BusinessMatchCard({
                   <div className="flex items-center gap-2">
                     <CheckCircleIcon className="w-3 h-3 text-green-500" />
                     <span className="text-xs text-accent-700">
-                      {language === "pt" ? "Herança cultural portuguesa partilhada" : "Shared Portuguese cultural heritage"}
+                      {language === "pt" ? "Herança cultural portuguesa partilhada" : "Shared Lusophone cultural heritage"}
                     </span>
                   </div>
                   <div className="flex items-center gap-2">

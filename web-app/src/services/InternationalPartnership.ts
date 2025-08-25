@@ -1,4 +1,4 @@
-// International Partnership Service for Portuguese Embassies and Cultural Centers
+// International Partnership Service for Lusophone Embassies and Cultural Centers
 import { 
   PortugueseCountry, 
   Organization, 
@@ -223,7 +223,7 @@ class InternationalPartnershipService {
       {
         id: 'embassy-uk-portugal',
         country: 'uk',
-        embassyName: 'Portuguese Embassy London',
+        embassyName: 'Lusophone Embassy London',
         ambassadorName: 'Manuel Lobo Antunes',
         culturalAttache: 'Dr. Maria Santos',
         address: '11 Belgrave Square, London SW1X 8PP',
@@ -234,8 +234,8 @@ class InternationalPartnershipService {
           {
             id: 'passport-renewal',
             name: 'Passport Renewal',
-            description: 'Renewal of Portuguese passports for citizens',
-            eligibility: ['Portuguese citizens', 'Valid ID required'],
+            description: 'Renewal of Lusophone passports for citizens',
+            eligibility: ['Lusophone citizens', 'Valid ID required'],
             requirements: ['Current passport', 'Application form', 'Photos'],
             processingTime: '15-20 business days',
             cost: 65,
@@ -247,10 +247,10 @@ class InternationalPartnershipService {
         culturalPrograms: [
           {
             id: 'portuguese-language-course',
-            name: 'Portuguese Language & Culture Course',
-            description: 'Comprehensive course for Portuguese diaspora and interested learners',
+            name: 'Lusophone Language & Culture Course',
+            description: 'Comprehensive course for Lusophone diaspora and interested learners',
             type: 'educational',
-            targetAudience: ['Portuguese diaspora', 'Cultural enthusiasts'],
+            targetAudience: ['Lusophone diaspora', 'Cultural enthusiasts'],
             duration: '12 weeks',
             cost: 150,
             currency: 'GBP',
@@ -258,11 +258,11 @@ class InternationalPartnershipService {
             registrationDeadline: new Date('2025-09-15'),
             startDate: new Date('2025-10-01'),
             endDate: new Date('2025-12-15'),
-            location: 'Portuguese Embassy London',
-            organizer: 'Portuguese Embassy Cultural Department',
+            location: 'Lusophone Embassy London',
+            organizer: 'Lusophone Embassy Cultural Department',
             partners: ['Instituto Camões', 'King\'s College London'],
             culturalObjectives: ['Language preservation', 'Cultural transmission'],
-            expectedOutcomes: ['Improved Portuguese proficiency', 'Cultural connection'],
+            expectedOutcomes: ['Improved Lusophone proficiency', 'Cultural connection'],
             applicationProcess: ['Online application', 'Language assessment', 'Interview']
           }
         ],
@@ -288,10 +288,10 @@ class InternationalPartnershipService {
           {
             name: 'Dr. João Silva',
             position: 'Cultural Coordinator',
-            expertise: ['Portuguese Literature', 'Cultural Events'],
-            languages: ['Portuguese', 'English'],
+            expertise: ['Lusophone Literature', 'Cultural Events'],
+            languages: ['Lusophone', 'English'],
             email: 'j.silva@instituto-camoes.pt',
-            bio: 'Specialist in Portuguese cultural promotion with 15 years experience'
+            bio: 'Specialist in Lusophone cultural promotion with 15 years experience'
           }
         ],
         programs: [],
@@ -308,7 +308,7 @@ class InternationalPartnershipService {
         ],
         services: [
           {
-            name: 'Portuguese Language Classes',
+            name: 'Lusophone Language Classes',
             description: 'Professional Portuguese language instruction',
             type: 'education',
             cost: 200,
@@ -324,10 +324,10 @@ class InternationalPartnershipService {
             }
           }
         ],
-        partnerships: ['Portuguese Embassy London', 'University College London'],
+        partnerships: ['Lusophone Embassy London', 'University College London'],
         budget: 150000,
         currency: 'GBP',
-        fundingSources: ['Portuguese Government', 'EU Grants', 'Private Donations'],
+        fundingSources: ['Lusophone Government', 'EU Grants', 'Private Donations'],
         visitorsPerMonth: 800,
         membershipProgram: {
           name: 'Instituto Camões Membership',

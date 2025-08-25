@@ -102,14 +102,14 @@ export default function SaudadeMatchingDemo({
     {
       titleEn: 'Deep Emotional Understanding',
       titlePt: 'Compreensão Emocional Profunda',
-      descriptionEn: 'Beyond surface matching - understand the depth of Portuguese emotional experience',
+      descriptionEn: 'Beyond surface matching - understand the depth of Lusophone emotional experience',
       descriptionPt: 'Para além de matches superficiais - compreenda a profundidade da experiência emocional portuguesa',
       icon: HeartSolid,
     },
     {
       titleEn: 'Regional Cultural Matching',
       titlePt: 'Matching Cultural Regional',
-      descriptionEn: 'Connect with people from your specific Portuguese region or with complementary cultural backgrounds',
+      descriptionEn: 'Connect with people from your specific Lusophone region or with complementary cultural backgrounds',
       descriptionPt: 'Conecte-se com pessoas da sua região portuguesa específica ou com backgrounds culturais complementares',
       icon: AcademicCapIcon,
     },
@@ -146,7 +146,7 @@ export default function SaudadeMatchingDemo({
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             {language === 'pt'
               ? 'O primeiro sistema de matching que compreende verdadeiramente a profundidade emocional da experiência portuguesa. Conecte-se com base na saudade, herança cultural e necessidades de apoio emocional.'
-              : 'The first matching system that truly understands the emotional depth of the Portuguese experience. Connect based on saudade, cultural heritage, and emotional support needs.'}
+              : 'The first matching system that truly understands the emotional depth of the Lusophone experience. Connect based on saudade, cultural heritage, and emotional support needs.'}
           </p>
         </div>
 
@@ -296,7 +296,7 @@ export default function SaudadeMatchingDemo({
           <p className="text-sm text-gray-500 mt-4">
             {language === 'pt' 
               ? '5 minutos • Baseado em psicologia cultural portuguesa • Completamente gratuito'
-              : '5 minutes • Based on Portuguese cultural psychology • Completely free'}
+              : '5 minutes • Based on Lusophone cultural psychology • Completely free'}
           </p>
         </div>
       </div>

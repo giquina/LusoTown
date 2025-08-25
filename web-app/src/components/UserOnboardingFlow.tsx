@@ -114,7 +114,7 @@ export default function UserOnboardingFlow({
       title: isPortuguese ? 'Partilhe a sua herança' : 'Share your heritage',
       subtitle: isPortuguese
         ? 'De onde vem a sua conexão portuguesa?'
-        : 'Where does your Portuguese connection come from?',
+        : 'Where does your Lusophone connection come from?',
       component: HeritageStep
     },
     {
@@ -367,7 +367,7 @@ function WelcomeStep({ onNext, isPortuguese, isMobile }: any) {
           <div>
             <div className={`${isMobile ? 'text-2xl' : 'text-3xl'} font-bold text-primary-600`}>750+</div>
             <div className="text-xs text-primary-700">
-              {isPortuguese ? 'Portugueses' : 'Portuguese'}
+              {isPortuguese ? 'Portugueses' : 'Lusophone'}
             </div>
           </div>
           <div>
@@ -538,7 +538,7 @@ function HeritageStep({ onNext, onPrevious, data, onDataChange, isPortuguese, is
       id: 'portugal',
       name: isPortuguese ? 'Portugal' : 'Portugal',
       flag: '🇵🇹',
-      description: isPortuguese ? 'Nascido em Portugal ou ascendência portuguesa' : 'Born in Portugal or Portuguese ancestry'
+      description: isPortuguese ? 'Nascido em Portugal ou ascendência portuguesa' : 'Born in Portugal or Lusophone ancestry'
     },
     {
       id: 'brazil',
@@ -586,7 +586,7 @@ function HeritageStep({ onNext, onPrevious, data, onDataChange, isPortuguese, is
       id: 'diaspora',
       name: isPortuguese ? 'Diáspora' : 'Diaspora',
       flag: '🌍',
-      description: isPortuguese ? 'Segunda geração ou aprendeu português' : 'Second generation or learned Portuguese'
+      description: isPortuguese ? 'Segunda geração ou aprendeu português' : 'Second generation or learned Lusophone'
     }
   ]
 
@@ -806,7 +806,7 @@ function InterestsStep({ onNext, onPrevious, data, onDataChange, isPortuguese, i
     {
       id: 'business_networking',
       name: isPortuguese ? 'Networking Empresarial' : 'Business Networking',
-      description: isPortuguese ? 'Conectar com empresários portugueses' : 'Connect with Portuguese entrepreneurs',
+      description: isPortuguese ? 'Conectar com empresários portugueses' : 'Connect with Lusophone entrepreneurs',
       icon: BuildingOffice2Icon,
       color: 'from-blue-500 to-blue-600'
     },
@@ -820,7 +820,7 @@ function InterestsStep({ onNext, onPrevious, data, onDataChange, isPortuguese, i
     {
       id: 'student_life',
       name: isPortuguese ? 'Vida Universitária' : 'Student Life',
-      description: isPortuguese ? 'Eventos para estudantes portugueses' : 'Events for Portuguese students',
+      description: isPortuguese ? 'Eventos para estudantes portugueses' : 'Events for Lusophone students',
       icon: AcademicCapIcon,
       color: 'from-orange-500 to-orange-600'
     },
@@ -1165,7 +1165,7 @@ function GrowthStep({ onNext, onPrevious, data, onDataChange, isPortuguese, isMo
           {
             icon: CalendarDaysIcon,
             title: isPortuguese ? 'Primeiro Evento Gratuito' : 'First Event Free',
-            description: isPortuguese ? 'Participe no seu primeiro evento português sem custos' : 'Attend your first Portuguese event at no cost',
+            description: isPortuguese ? 'Participe no seu primeiro evento português sem custos' : 'Attend your first Lusophone event at no cost',
             color: 'from-blue-500 to-blue-600'
           },
           {

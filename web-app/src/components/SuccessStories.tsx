@@ -51,10 +51,10 @@ function generateSuccessStories(heritage: any, geography: any): SuccessStory[] {
     story: `Moved from ${mainCountry} to ${diasporaCity} for banking, but the city felt cold like winter rain. Ricardo appeared at HeritageTown's ${mainTradition} event in ${culturalAreas[1] || 'Central'} - someone with the same longing for home. "Do you miss our traditional celebrations?" he asked, offering traditional food. Six months later, we're planning our engagement party at The Heritage Centre. From first meeting to sharing apartment in ${culturalAreas[0] || 'Central'}, love grew in the warmth of shared culture. Now we cook ${foods[0] || 'traditional dishes'} on Sundays, planning ${heritage.identity.name} wedding with ${music[0] || 'traditional music'} and ${diasporaCity} guests.`,
     connectionType: 'Heritage Sweethearts',
     timeframe: '18 months ago',
-    activities: ['Portuguese cultural events', 'Cooking traditional meals', 'London wedding planning', 'Weekend market trips'],
+    activities: ['Lusophone cultural events', 'Cooking traditional meals', 'London wedding planning', 'Weekend market trips'],
     category: 'Found Love',
     portuguese_quote: '"Encontrei não só o amor, mas alguém que entende a minha alma portuguesa."',
-    english_translation: '"I found not just love, but someone who understands my Portuguese soul."',
+    english_translation: '"I found not just love, but someone who understands my Lusophone soul."',
     cultural_bond: `${mainTradition} celebration and shared nostalgia for ${heritage.identity.name} traditions`
   },
   {
@@ -68,7 +68,7 @@ function generateSuccessStories(heritage: any, geography: any): SuccessStory[] {
     story: `From ${heritage.geography.relatedCountries?.[0]?.name || mainCountry}'s coastal regions to ${diasporaCity}'s waterways, carrying traditional skills and cultural heart. Sofia caught my attention at HeritageTown's professional networking event near the city center - a lawyer with books and longing for home's landscapes. "Do you also dream of home's natural beauty?" she asked. Over ${foods[1] || 'traditional cuisine'} at a cultural restaurant, we shared stories of growing up in our homeland, missing familiar landscapes while building ${diasporaCity} careers. Now every weekend, we explore nearby nature, collecting memories and planning return to ${mainCountry} someday, together.`,
     connectionType: 'Heritage Hearts',
     timeframe: '2 years ago', 
-    activities: ['Weekend coastal trips', 'Portuguese cooking', 'Career planning', 'Ocean photography'],
+    activities: ['Weekend coastal trips', 'Lusophone cooking', 'Career planning', 'Ocean photography'],
     category: 'Found Love',
     portuguese_quote: '"O mar trouxe-nos juntos em Londres, longe das nossas praias."',
     english_translation: '"The sea brought us together in London, far from our beaches."',
@@ -87,7 +87,7 @@ function generateSuccessStories(heritage: any, geography: any): SuccessStory[] {
     story: `From ${mainCountry}'s main commercial street to ${diasporaCity}'s food markets, bringing culinary skills and ${heritage.identity.name} flavors. Ana found me through HeritageTown's "Food Entrepreneurs" meetup - a food blogger missing authentic ${foods[2] || 'traditional cuisine'} in ${diasporaCity}. "Let's show locals what good ${heritage.identity.name} food is," she challenged over traditional cocktails. Our food truck "Heritage Flavors" now serves authentic ${heritage.identity.name} street food across ${diasporaCity} markets. Featured in local media, planning brick-and-mortar restaurant while teaching local palates the joy of ${foods[1] || 'traditional dishes'} and ${foods[0] || 'heritage cuisine'}.`,
     connectionType: 'Heritage Flavors Partnership',
     timeframe: '2.5 years ago',
-    activities: ['Food truck operations', 'London market circuits', 'Restaurant planning', 'Portuguese cooking classes'],
+    activities: ['Food truck operations', 'London market circuits', 'Restaurant planning', 'Lusophone cooking classes'],
     category: 'Business Partners',
     portuguese_quote: '"A comida portuguesa une corações em qualquer cidade do mundo."',
     english_translation: '"Portuguese food unites hearts in any city in the world."',
@@ -106,7 +106,7 @@ function generateSuccessStories(heritage: any, geography: any): SuccessStory[] {
     story: `From ${mainCountry}'s historic districts to ${diasporaCity}'s suburbs, raising children while preserving ${heritage.identity.name} identity. Teresa joined our HeritageTown "Heritage Families" group at local playground - a parent facing same struggles teaching ${heritage.identity.defaultLanguage} to English-speaking children. "My children are forgetting who they are," she worried, watching her daughter play. Together we created "Little Heritage ${diasporaCity}" - Saturday ${heritage.identity.name} school at community centre. Now 120+ children learn ${heritage.identity.defaultLanguage} through stories, songs, and traditional games. Our children are proud of being ${heritage.identity.name}-British, speaking both languages with confidence.`,
     connectionType: 'Heritage Warriors',
     timeframe: '4 years ago',
-    activities: ['Portuguese Saturday school', 'Cultural children\'s events', 'Language preservation', 'Community playground meetups'],
+    activities: ['Lusophone Saturday school', 'Cultural children\'s events', 'Language preservation', 'Community playground meetups'],
     category: 'Community Family',
     portuguese_quote: '"As nossas crianças não vão esquecer de onde vêm."',
     english_translation: '"Our children will not forget where they come from."',
@@ -145,7 +145,7 @@ function generateSuccessStories(heritage: any, geography: any): SuccessStory[] {
     activities: ['Political advocacy', 'Community representation', 'Local council engagement', 'Policy research'],
     category: 'Cultural Connection',
     portuguese_quote: '"A nossa voz portuguesa faz diferença na democracia britânica."',
-    english_translation: '"Our Portuguese voice makes a difference in British democracy."',
+    english_translation: '"Our Lusophone voice makes a difference in British democracy."',
     cultural_bond: `Shared commitment to ${heritage.identity.name} community political representation and civic engagement`
   },
 
@@ -161,10 +161,10 @@ function generateSuccessStories(heritage: any, geography: any): SuccessStory[] {
     story: `From ${mainCountry}'s academic cities to ${diasporaCity}'s universities, pursuing Medicine while missing ${heritage.identity.name} mentorship and guidance. Professor Sousa reached out through HeritageTown's "Academic Mentorship" program - a professor from ${mainCountry} teaching at local college, understanding international student struggles. "Medicine taught in ${heritage.identity.defaultLanguage} has different soul," he explained during our first meeting at library. Under his mentorship, I'm excelling in Medical School while researching ${heritage.identity.name} genetic factors in health. Now helping organize "Future ${heritage.identity.name} Doctors United Kingdom" network, ensuring next generation maintains connection to ${heritage.identity.name} medical traditions.`,
     connectionType: 'Heritage Medical Mentorship',
     timeframe: '3 years ago',
-    activities: ['Medical school excellence', 'Research collaboration', 'Student mentorship program', 'Portuguese medical network'],
+    activities: ['Medical school excellence', 'Research collaboration', 'Student mentorship program', 'Lusophone medical network'],
     category: 'Student Success',
     portuguese_quote: '"Um mentor português fez toda a diferença na minha carreira médica."',
-    english_translation: '"A Portuguese mentor made all the difference in my medical career."',
+    english_translation: '"A Lusophone mentor made all the difference in my medical career."',
     cultural_bond: `${heritage.identity.name} medical tradition and academic excellence across generations`
   }
   ]

@@ -173,7 +173,7 @@ const serviceTiers = [
   },
 ];
 
-// London Tourism Experience Packages with Portuguese-Speaking Guides - Premium London Attractions
+// London Tourism Experience Packages with Lusophone-Speaking Guides - Premium London Attractions
 const londonTourismExperiences = [
   {
     id: "classic-london-tour",
@@ -200,7 +200,7 @@ const londonTourismExperiences = [
     category: "classic",
     priceIncludes: [
       "VIP Security Driver",
-      "Professional Portuguese-Speaking Guide",
+      "Professional Lusophone-Speaking Guide",
       "Venue Access Fees",
       "London Guide Book",
     ],
@@ -355,7 +355,7 @@ const londonTourismExperiences = [
   },
 ];
 
-// Multi-Day London Tourism Packages - Premium London Experiences with Portuguese-Speaking Service
+// Multi-Day London Tourism Packages - Premium London Experiences with Lusophone-Speaking Service
 const multiDayPackages = [
   {
     id: "half-day-london-highlights",
@@ -471,7 +471,7 @@ const multiDayPackages = [
     category: "cultural",
     priceIncludes: [
       "Specialized Driver",
-      "Portuguese-Speaking London Guide",
+      "Lusophone-Speaking London Guide",
       "Traditional Meal",
       "Interactive Activities",
       "Educational Materials",
@@ -480,7 +480,7 @@ const multiDayPackages = [
   },
 ];
 
-// Standard London Tourism Packages - Professional London Services with Portuguese-Speaking Staff
+// Standard London Tourism Packages - Professional London Services with Lusophone-Speaking Staff
 const standardPackages = [
   {
     id: "bespoke",
@@ -612,7 +612,7 @@ const features = [
   },
   {
     icon: Crown,
-    title: "Portuguese-Speaking Service",
+    title: "Lusophone-Speaking Service",
     titlePortuguese: "Serviço Falante de Português",
     description: "Professional Portuguese-speaking guides for London tourism",
     descriptionPortuguese:
@@ -695,7 +695,7 @@ export default function TransportPage() {
                   </>
                 ) : (
                   <>
-                    Need a Portuguese driver
+                    Need a Lusophone driver
                     <br />
                     <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">
                       or security
@@ -720,7 +720,7 @@ export default function TransportPage() {
                     LusoTown - London
                     <br />
                     <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">
-                      Portuguese
+                      Lusophone
                     </span>{" "}
                     Transport
                   </>
@@ -738,13 +738,13 @@ export default function TransportPage() {
               <span className="hidden sm:block">
                 {isPortuguese
                   ? "Descubra Londres com total confiança: motorista e guia português certificados, veículos premium e experiências VIP exclusivas. Comunicação fluente no seu idioma, conhecimento cultural autêntico e acesso privilegiado aos melhores locais de Londres."
-                  : "Discover London with complete confidence: certified Portuguese driver and guide, premium vehicles, and exclusive VIP experiences. Fluent communication in your language, authentic cultural knowledge, and privileged access to London's finest locations."}
+                  : "Discover London with complete confidence: certified Lusophone driver and guide, premium vehicles, and exclusive VIP experiences. Fluent communication in your language, authentic cultural knowledge, and privileged access to London's finest locations."}
               </span>
               {/* Mobile short subtitle */}
               <span className="sm:hidden">
                 {isPortuguese
                   ? "Motorista e guia português certificados em Londres. Experiências VIP com comunicação no seu idioma!"
-                  : "Certified Portuguese driver & guide in London. VIP experiences with communication in your language!"}
+                  : "Certified Lusophone driver & guide in London. VIP experiences with communication in your language!"}
               </span>
             </motion.p>
 
@@ -850,7 +850,7 @@ export default function TransportPage() {
                 <p className="text-sm text-gray-600 font-medium">
                   {isPortuguese 
                     ? "Todos os preços incluem motorista português certificado" 
-                    : "All prices include certified Portuguese driver"}
+                    : "All prices include certified Lusophone driver"}
                 </p>
                 <p className="text-xs text-gray-500 mt-1">
                   {isPortuguese 
@@ -1084,7 +1084,7 @@ export default function TransportPage() {
               <p className="text-gray-600">
                 {isPortuguese
                   ? "Comunicação em português e conhecimento cultural especializado"
-                  : "Portuguese communication and specialized cultural knowledge"}
+                  : "Lusophone communication and specialized cultural knowledge"}
               </p>
             </motion.div>
           </div>
@@ -1121,7 +1121,7 @@ export default function TransportPage() {
 
       {/* Cultural Authenticity Section */}
       <section className="py-24 bg-gradient-to-br from-secondary-50/60 via-white to-accent-50/40 border-t border-gray-100 relative overflow-hidden">
-        {/* Portuguese-inspired background decorative elements */}
+        {/* Lusophone-inspired background decorative elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/40 via-accent-100/30 to-coral-100/30 rounded-full opacity-60 animate-pulse" />
           <div
@@ -1160,7 +1160,7 @@ export default function TransportPage() {
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               {isPortuguese
                 ? "Nossos motoristas e pessoal de segurança especializados oferecem proteção pessoal discreta e comunicação fluente em português. Explore Londres com confiança total!"
-                : "Our specialized drivers and security personnel provide discreet personal protection and fluent Portuguese communication. Explore London with complete confidence!"}
+                : "Our specialized drivers and security personnel provide discreet personal protection and fluent Lusophone communication. Explore London with complete confidence!"}
             </p>
           </div>
 
@@ -1190,7 +1190,7 @@ export default function TransportPage() {
               <p className="text-gray-600 mb-6 flex-1">
                 {isPortuguese
                   ? "Guias profissionais com conhecimento profundo da história de Londres, atrações principais e experiências premium, oferecendo tours em português fluente."
-                  : "Professional guides with deep knowledge of London's history, top attractions, and premium experiences, offering tours in fluent Portuguese."}
+                  : "Professional guides with deep knowledge of London's history, top attractions, and premium experiences, offering tours in fluent Lusophone."}
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center gap-2">
@@ -1214,7 +1214,7 @@ export default function TransportPage() {
                   <span>
                     {isPortuguese
                       ? "Comunicação fluente em português"
-                      : "Fluent Portuguese communication"}
+                      : "Fluent Lusophone communication"}
                   </span>
                 </li>
               </ul>
@@ -1292,7 +1292,7 @@ export default function TransportPage() {
               <p className="text-gray-600 mb-6">
                 {isPortuguese
                   ? "Proteção profissional especializada em turismo com comunicação fluente em português, oferecendo segurança discreta durante experiências turísticas em Londres especificamente."
-                  : "Tourism-specialized professional protection with fluent Portuguese communication, providing discreet security during London tourism experiences specifically."}
+                  : "Tourism-specialized professional protection with fluent Lusophone communication, providing discreet security during London tourism experiences specifically."}
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center gap-2">
@@ -1308,7 +1308,7 @@ export default function TransportPage() {
                   <span>
                     {isPortuguese
                       ? "Comunicação em português"
-                      : "Portuguese communication"}
+                      : "Lusophone communication"}
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
@@ -1511,7 +1511,7 @@ export default function TransportPage() {
               <div className="text-center">
                 <div className="text-4xl font-black text-white mb-2">100%</div>
                 <div className="text-gray-300">
-                  {isPortuguese ? "Português Fluente" : "Fluent Portuguese"}
+                  {isPortuguese ? "Português Fluente" : "Fluent Lusophone"}
                 </div>
               </div>
             </motion.div>
@@ -1696,7 +1696,7 @@ export default function TransportPage() {
               <p className="text-gray-600 mb-4">
                 {isPortuguese
                   ? "Planeamos todo o seu itinerário de Londres antes da sua chegada. Inclui tours, refeições, e experiências culturais portuguesas."
-                  : "We plan your entire London itinerary before your arrival. Includes tours, dining, and Portuguese cultural experiences."}
+                  : "We plan your entire London itinerary before your arrival. Includes tours, dining, and Lusophone cultural experiences."}
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center gap-2">
@@ -1793,7 +1793,7 @@ export default function TransportPage() {
                 <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">
                   {isPortuguese
                     ? "Serviços Premium para Portugueses em Londres"
-                    : "Premium Services for Portuguese in London"}
+                    : "Premium Services for Lusophone in London"}
                 </span>
               </span>
             </motion.div>
@@ -1833,7 +1833,7 @@ export default function TransportPage() {
               <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-gray-100">
                 <CheckCircleIcon className="w-5 h-5 text-secondary-600" />
                 <span className="font-semibold text-gray-800">
-                  {isPortuguese ? "Comunicação em Português" : "Portuguese Communication"}
+                  {isPortuguese ? "Comunicação em Português" : "Lusophone Communication"}
                 </span>
               </div>
               <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-gray-100">
@@ -1865,7 +1865,7 @@ export default function TransportPage() {
         </div>
       </section>
 
-      {/* London Tourism Experiences with Portuguese Service Section */}
+      {/* London Tourism Experiences with Lusophone Service Section */}
       <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30">
         <div className="container-width">
           <div className="text-center mb-12">
@@ -2224,7 +2224,7 @@ export default function TransportPage() {
               <div className="flex items-center gap-2 text-gray-300">
                 <StarIcon className="w-5 h-5 text-yellow-400" />
                 <span className="font-semibold">
-                  {isPortuguese ? "Comunicação em Português" : "Portuguese Communication"}
+                  {isPortuguese ? "Comunicação em Português" : "Lusophone Communication"}
                 </span>
               </div>
             </motion.div>

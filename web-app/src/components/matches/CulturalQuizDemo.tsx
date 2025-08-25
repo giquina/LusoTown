@@ -45,7 +45,7 @@ export default function CulturalQuizDemo({ showAsPrompt = true, className = "" }
     recommendations: [
       language === 'pt' 
         ? 'Participe em workshops de culinária portuguesa no Borough Market'
-        : 'Join Portuguese cooking workshops at Borough Market',
+        : 'Join Lusophone cooking workshops at Borough Market',
       language === 'pt'
         ? 'Visite noites de fado autênticas em Soho'
         : 'Visit authentic fado nights in Soho',
@@ -86,7 +86,7 @@ export default function CulturalQuizDemo({ showAsPrompt = true, className = "" }
           <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-4">
             {language === 'pt' 
               ? 'Descubra Sua Compatibilidade Cultural Portuguesa'
-              : 'Discover Your Portuguese Cultural Compatibility'}
+              : 'Discover Your Lusophone Cultural Compatibility'}
           </h2>
 
           <p className="text-primary-700 mb-8 text-lg leading-relaxed">
@@ -190,7 +190,7 @@ export default function CulturalQuizDemo({ showAsPrompt = true, className = "" }
             <p className="text-sm text-primary-700">
               {language === 'pt' 
                 ? '"Com que frequência cozinha comida tradicional portuguesa/brasileira?"'
-                : '"How often do you cook traditional Portuguese/Brazilian food?"'}
+                : '"How often do you cook traditional Lusophone/Brazilian food?"'}
             </p>
           </div>
 

@@ -58,7 +58,7 @@ export default function PortugueseRevenueOptimizer({
       urgency: true,
       culturalContext: isPortuguese 
         ? "N�o perca os Santos Populares com a sua comunidade portuguesa"
-        : "Don't miss Santos Populares with your Portuguese community",
+        : "Don't miss Santos Populares with your Lusophone community",
       icon: <FireIcon className="w-5 h-5 text-orange-500" />,
     },
     familyValue: {
@@ -66,12 +66,12 @@ export default function PortugueseRevenueOptimizer({
       name: isPortuguese ? "Plano Familiar Especial" : "Special Family Plan",
       description: isPortuguese
         ? "4 pessoas por �5 cada - perfeito para fam�lias portuguesas"
-        : "4 people for �5 each - perfect for Portuguese families",
+        : "4 people for �5 each - perfect for Lusophone families",
       discount: 0.50, // 50% off per person for families
       familyFocused: true,
       culturalContext: isPortuguese
         ? "As fam�lias portuguesas fazem tudo juntas - por que n�o LusoTown?"
-        : "Portuguese families do everything together - why not LusoTown?",
+        : "Lusophone families do everything together - why not LusoTown?",
       icon: <UserGroupIcon className="w-5 h-5 text-emerald-500" />,
     },
     newcomerSpecial: {
@@ -97,7 +97,7 @@ export default function PortugueseRevenueOptimizer({
       immediateValue: true,
       culturalContext: isPortuguese
         ? "N�o seja o �nico sem acesso premium neste evento portugu�s"
-        : "Don't be the only one without premium access at this Portuguese event",
+        : "Don't be the only one without premium access at this Lusophone event",
       icon: <CalendarDaysIcon className="w-5 h-5 text-purple-500" />,
     }
   };
@@ -144,7 +144,7 @@ export default function PortugueseRevenueOptimizer({
       discount: PAYMENT_PREFERENCES.billingCycles.quarterly.incentive,
       culturalNote: isPortuguese
         ? "Pague menos, planeie melhor - ao estilo portugu�s"
-        : "Pay less, plan better - Portuguese style",
+        : "Pay less, plan better - Lusophone style",
     }
   };
 
@@ -175,12 +175,12 @@ export default function PortugueseRevenueOptimizer({
       <div className="text-center mb-6">
         <div className="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-700 mb-3">
           <SparklesIcon className="w-4 h-4 mr-2" />
-          {isPortuguese ? "Oferta Especial Para Portugueses" : "Special Offer for Portuguese Speakers"}
+          {isPortuguese ? "Oferta Especial Para Portugueses" : "Special Offer for Lusophone Speakers"}
         </div>
         <h3 className="text-xl font-bold text-gray-900 mb-2">
           {isPortuguese 
             ? "Encontre a Sua Fam�lia Portuguesa no Reino Unido" 
-            : "Find Your Portuguese Family in the United Kingdom"}
+            : "Find Your Lusophone Family in the United Kingdom"}
         </h3>
         <p className="text-gray-600">
           {getCulturalValueProposition().emotional}
@@ -281,7 +281,7 @@ export default function PortugueseRevenueOptimizer({
           <span>
             {isPortuguese 
               ? "92% dos membros premium recomendam aos amigos portugueses"
-              : "92% of premium members recommend to Portuguese friends"}
+              : "92% of premium members recommend to Lusophone friends"}
           </span>
         </div>
       </div>

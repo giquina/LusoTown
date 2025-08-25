@@ -27,91 +27,125 @@ import SavedItemsButton from "@/components/SavedItemsButton";
 import SearchBar from "@/components/SearchBar";
 import NotificationBell from "@/components/NotificationBell";
 import { useLanguage } from "@/context/LanguageContext";
-import { ROUTES } from '@/config/routes';
+import { ROUTES } from "@/config/routes";
 import { LuxuryRipple } from "@/components/LuxuryMobileInteraction";
 import { EliteMobileHeader } from "@/components/EliteMobileInterface";
-import MobileNavigation, { MobileNavButton } from "@/components/MobileNavigation";
+import { MobileNavButton } from "@/components/MobileNavigation";
 
 // New simplified main navigation for the redesigned structure
 const getMainNavigationLinks = (t: any) => [
-  { name: t("nav.whats_happening", "What's Happening"), href: "/events", description: "Discover events, activities, and community happenings" },
+  {
+    name: t("nav.whats_happening", "What's Happening"),
+    href: "/events",
+    description: "Discover events, activities, and community happenings",
+  },
 ];
 
 // Community dropdown links - action-oriented
 const getCommunityDropdownLinks = (t: any) => [
-  { 
-    name: t("nav.book_events", "Book Events"), 
+  {
+    name: t("nav.book_events", "Book Events"),
     href: ROUTES.events,
-    description: t("nav.book_events_desc", "Purchase tickets for Portuguese cultural events, festivals, and community gatherings"),
+    description: t(
+      "nav.book_events_desc",
+      "Purchase tickets for Lusophone cultural events, festivals, and community gatherings"
+    ),
     icon: CalendarDaysIcon,
-    iconColor: "text-blue-500"
+    iconColor: "text-blue-500",
   },
-  { 
-    name: t("nav.join_cultural_tours", "Join Cultural Tours"), 
+  {
+    name: t("nav.join_cultural_tours", "Join Cultural Tours"),
     href: ROUTES.londonTours,
-    description: t("nav.join_cultural_tours_desc", "Experience London's Portuguese culture with guided tours and local experiences"),
+    description: t(
+      "nav.join_cultural_tours_desc",
+      "Experience London's Portuguese culture with guided tours and local experiences"
+    ),
     icon: MapPinIcon,
-    iconColor: "text-green-500"
+    iconColor: "text-green-500",
   },
-  { 
-    name: t("nav.find_student_groups", "Find Student Groups"), 
+  {
+    name: t("nav.find_student_groups", "Find Student Groups"),
     href: "/students",
-    description: t("nav.find_student_groups_desc", "Connect with Portuguese-speaking students across UK universities"),
+    description: t(
+      "nav.find_student_groups_desc",
+      "Connect with Portuguese-speaking students across UK universities"
+    ),
     icon: UserGroupIcon,
-    iconColor: "text-purple-500"
+    iconColor: "text-purple-500",
   },
-  { 
-    name: t("nav.meet_portuguese_speakers", "Meet Portuguese Speakers"), 
+  {
+    name: t("nav.meet_portuguese_speakers", "Meet Lusophone Speakers"),
     href: ROUTES.directory,
-    description: t("nav.meet_portuguese_speakers_desc", "Explore our community directory and connect with members"),
+    description: t(
+      "nav.meet_portuguese_speakers_desc",
+      "Explore our community directory and connect with members"
+    ),
     icon: UserGroupIcon,
-    iconColor: "text-orange-500"
+    iconColor: "text-orange-500",
   },
-  { 
-    name: t("nav.see_event_calendar", "See Event Calendar"), 
+  {
+    name: t("nav.see_event_calendar", "See Event Calendar"),
     href: `${ROUTES.events}?view=calendar`,
-    description: t("nav.see_event_calendar_desc", "Full calendar view of all upcoming Portuguese community events"),
+    description: t(
+      "nav.see_event_calendar_desc",
+      "Full calendar view of all upcoming Lusophone community events"
+    ),
     icon: CalendarDaysIcon,
-    iconColor: "text-red-500"
+    iconColor: "text-red-500",
   },
 ];
 
 // For Business dropdown links - action-oriented
 const getForBusinessDropdownLinks = (t: any) => [
-  { 
-    name: t("nav.discover_businesses", "Discover Businesses"), 
+  {
+    name: t("nav.discover_businesses", "Discover Businesses"),
     href: ROUTES.businessDirectory,
-    description: t("nav.discover_businesses_desc", "Browse Portuguese businesses, restaurants, and services across the UK"),
+    description: t(
+      "nav.discover_businesses_desc",
+      "Browse Portuguese businesses, restaurants, and services across the UK"
+    ),
     icon: BriefcaseIcon,
-    iconColor: "text-blue-500"
+    iconColor: "text-blue-500",
   },
-  { 
-    name: t("nav.list_your_business", "List Your Business"), 
+  {
+    name: t("nav.list_your_business", "List Your Business"),
     href: `${ROUTES.businessDirectory}?action=add`,
-    description: t("nav.list_your_business_desc", "Add your business to our directory and reach Portuguese customers"),
+    description: t(
+      "nav.list_your_business_desc",
+      "Add your business to our directory and reach Lusophone customers"
+    ),
     icon: BriefcaseIcon,
-    iconColor: "text-green-500"
+    iconColor: "text-green-500",
   },
-  { 
-    name: t("nav.find_portuguese_customers", "Find Portuguese Customers"), 
+  {
+    name: t("nav.find_portuguese_customers", "Find Lusophone Customers"),
     href: `${ROUTES.businessNetworking}?type=customers`,
-    description: t("nav.find_portuguese_customers_desc", "Connect with the Portuguese-speaking community for business growth"),
+    description: t(
+      "nav.find_portuguese_customers_desc",
+      "Connect with the Portuguese-speaking community for business growth"
+    ),
     icon: UserGroupIcon,
-    iconColor: "text-purple-500"
+    iconColor: "text-purple-500",
   },
-  { 
-    name: t("nav.see_pricing_plans", "See Pricing Plans"), 
+  {
+    name: t("nav.see_pricing_plans", "See Pricing Plans"),
     href: ROUTES.pricing,
-    description: t("nav.see_pricing_plans_desc", "Explore membership options and business advertising packages"),
+    description: t(
+      "nav.see_pricing_plans_desc",
+      "Explore membership options and business advertising packages"
+    ),
     icon: CurrencyPoundIcon,
-    iconColor: "text-yellow-500"
+    iconColor: "text-yellow-500",
   },
-  { 
-    name: t("nav.get_market_insights", "Get Market Insights"), 
+  {
+    name: t("nav.get_market_insights", "Get Market Insights"),
     href: `${ROUTES.businessNetworking}?section=insights`,
-    description: t("nav.get_market_insights_desc", "Access data and trends about the Portuguese-speaking market in the UK"),
+    description: t(
+      "nav.get_market_insights_desc",
+      "Access data and trends about the Portuguese-speaking market in the UK"
+    ),
     icon: TrophyIcon,
-    iconColor: "text-indigo-500"
+    iconColor: "text-indigo-500",
   },
 ];
 
@@ -181,7 +215,7 @@ export default function Header() {
       <nav className="container-width" aria-label="Top">
         <div className="flex items-center justify-between py-3 sm:py-4 lg:py-5 gap-2 sm:gap-4">
           {/* Logo - Premium design with sophisticated hover effects */}
-          <motion.div 
+          <motion.div
             className="flex items-center flex-shrink-0"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -236,13 +270,15 @@ export default function Header() {
               onMouseEnter={() => setShowCommunityDropdown(true)}
               onMouseLeave={() => setShowCommunityDropdown(false)}
             >
-              <motion.button 
+              <motion.button
                 className="relative text-gray-600 hover:text-primary-600 px-3 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group min-h-[44px]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <span className="relative z-10">{t("nav.community", "Community")}</span>
+                <span className="relative z-10">
+                  {t("nav.community", "Community")}
+                </span>
                 <motion.div
                   animate={{ rotate: showCommunityDropdown ? 180 : 0 }}
                   transition={{ duration: 0.3, ease: [0.215, 0.61, 0.355, 1] }}
@@ -264,7 +300,10 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                    transition={{ duration: 0.4, ease: [0.215, 0.61, 0.355, 1] }}
+                    transition={{
+                      duration: 0.4,
+                      ease: [0.215, 0.61, 0.355, 1],
+                    }}
                     className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200/60 py-8 z-50"
                     style={{
                       left: "50%",
@@ -295,11 +334,17 @@ export default function Header() {
                                 className={`group-hover:scale-110 transition-transform duration-300`}
                                 whileHover={{ rotate: 5 }}
                               >
-                                <link.icon className={`w-5 h-5 ${link.iconColor}`} />
+                                <link.icon
+                                  className={`w-5 h-5 ${link.iconColor}`}
+                                />
                               </motion.div>
-                              <div className="font-semibold text-sm group-hover:text-primary-700 transition-colors duration-300">{link.name}</div>
+                              <div className="font-semibold text-sm group-hover:text-primary-700 transition-colors duration-300">
+                                {link.name}
+                              </div>
                             </div>
-                            <div className="text-xs text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors duration-300">{link.description}</div>
+                            <div className="text-xs text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors duration-300">
+                              {link.description}
+                            </div>
                           </motion.a>
                         ))}
                       </div>
@@ -315,13 +360,15 @@ export default function Header() {
               onMouseEnter={() => setShowForBusinessDropdown(true)}
               onMouseLeave={() => setShowForBusinessDropdown(false)}
             >
-              <motion.button 
+              <motion.button
                 className="relative text-gray-600 hover:text-secondary-600 px-3 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group min-h-[44px]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <span className="relative z-10">{t("nav.for_business", "For Business")}</span>
+                <span className="relative z-10">
+                  {t("nav.for_business", "For Business")}
+                </span>
                 <motion.div
                   animate={{ rotate: showForBusinessDropdown ? 180 : 0 }}
                   transition={{ duration: 0.3, ease: [0.215, 0.61, 0.355, 1] }}
@@ -343,7 +390,10 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                    transition={{ duration: 0.4, ease: [0.215, 0.61, 0.355, 1] }}
+                    transition={{
+                      duration: 0.4,
+                      ease: [0.215, 0.61, 0.355, 1],
+                    }}
                     className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200/60 py-8 z-50"
                     style={{
                       left: "50%",
@@ -374,11 +424,17 @@ export default function Header() {
                                 className={`group-hover:scale-110 transition-transform duration-300`}
                                 whileHover={{ rotate: 5 }}
                               >
-                                <link.icon className={`w-5 h-5 ${link.iconColor}`} />
+                                <link.icon
+                                  className={`w-5 h-5 ${link.iconColor}`}
+                                />
                               </motion.div>
-                              <div className="font-semibold text-sm group-hover:text-secondary-700 transition-colors duration-300">{link.name}</div>
+                              <div className="font-semibold text-sm group-hover:text-secondary-700 transition-colors duration-300">
+                                {link.name}
+                              </div>
                             </div>
-                            <div className="text-xs text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors duration-300">{link.description}</div>
+                            <div className="text-xs text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors duration-300">
+                              {link.description}
+                            </div>
                           </motion.a>
                         ))}
                       </div>
@@ -399,7 +455,7 @@ export default function Header() {
               <motion.div
                 className="text-red-500 group-hover:text-red-600"
                 whileHover={{ scale: 1.2 }}
-                animate={{ 
+                animate={{
                   scale: [1, 1.1, 1],
                 }}
                 transition={{
@@ -410,7 +466,9 @@ export default function Header() {
               >
                 💗
               </motion.div>
-              <span className="relative z-10">{t("nav.find_your_match", "Find Your Match")}</span>
+              <span className="relative z-10">
+                {t("nav.find_your_match", "Find Your Match")}
+              </span>
               {/* Premium background hover effect */}
               <motion.div
                 className="absolute inset-0 bg-red-50 rounded-md"
@@ -426,7 +484,6 @@ export default function Header() {
                 transition={{ duration: 0.3 }}
               />
             </motion.a>
-
           </div>
 
           {/* Desktop CTA / User Menu */}
@@ -537,14 +594,14 @@ export default function Header() {
                   {/* Premium shimmer effect */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                    initial={{ x: '-100%' }}
-                    whileHover={{ x: '100%' }}
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "100%" }}
                     transition={{ duration: 0.6 }}
                   />
                   <span className="relative z-10 hidden lg:inline">
-                    {t("nav.start-free", "Start Free")}
+                    Apply for Membership
                   </span>
-                  <span className="relative z-10 lg:hidden">START</span>
+                  <span className="relative z-10 lg:hidden">APPLY</span>
                 </motion.a>
               </>
             )}
@@ -559,7 +616,7 @@ export default function Header() {
               </>
             )}
             <LanguageToggle />
-            <MobileNavButton 
+            <MobileNavButton
               isOpen={mobileMenuOpen}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             />
@@ -623,7 +680,9 @@ export default function Header() {
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       <CalendarDaysIcon className="w-5 h-5 text-primary-500" />
-                      <span>{t("nav.whats_happening", "What's Happening")}</span>
+                      <span>
+                        {t("nav.whats_happening", "What's Happening")}
+                      </span>
                     </a>
                   </div>
 
@@ -659,7 +718,7 @@ export default function Header() {
                       </a>
                     ))}
                   </div>
-                    
+
                   {/* For Business for Mobile */}
                   <div className="pb-4 border-b border-gray-200">
                     <h3 className="text-lg font-semibold text-secondary-600 mb-3">
@@ -677,8 +736,6 @@ export default function Header() {
                       </a>
                     ))}
                   </div>
-
-
 
                   {/* Additional Links */}
                   <div className="pb-4 border-b border-gray-200">
@@ -795,7 +852,7 @@ export default function Header() {
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             <span className="text-base">
-                              {t("nav.start-free", "Start Free").toUpperCase()}
+                              {"Apply for Membership".toUpperCase()}
                             </span>
                           </a>
                         </div>

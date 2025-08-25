@@ -94,7 +94,7 @@ export default function UnifiedPremiumExperience({
           items: [
             isPortuguese ? "Acesso a eventos premium" : "Premium event access",
             isPortuguese ? "Networking básico" : "Basic networking",
-            isPortuguese ? "Suporte em português" : "Portuguese support",
+            isPortuguese ? "Suporte em português" : "Lusophone support",
           ],
         },
       ],
@@ -375,7 +375,7 @@ export default function UnifiedPremiumExperience({
               title: isPortuguese ? "Comunidade VIP" : "VIP Community",
               description: isPortuguese
                 ? "Conecte-se com a elite portuguesa em Londres"
-                : "Connect with the Portuguese elite in London",
+                : "Connect with the Lusophone elite in London",
             },
             {
               icon: TrendingUp,
@@ -660,7 +660,7 @@ export default function UnifiedPremiumExperience({
             <div className="text-center">
               <div className="text-2xl font-bold text-coral-600">24/7</div>
               <div className="text-sm text-gray-600">
-                {isPortuguese ? "Suporte português" : "Portuguese support"}
+                {isPortuguese ? "Suporte português" : "Lusophone support"}
               </div>
             </div>
           </div>

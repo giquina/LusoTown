@@ -97,7 +97,7 @@ export default function PremiumMembershipPage() {
                     <p className="text-gray-600">
                       {isPortuguese
                         ? 'Convites automáticos para eventos culturais portugueses e acesso à Câmara de Comércio'
-                        : 'Automatic invitations to Portuguese cultural events and Chamber of Commerce access'
+                        : 'Automatic invitations to Lusophone cultural events and Chamber of Commerce access'
                       }
                     </p>
                   </div>

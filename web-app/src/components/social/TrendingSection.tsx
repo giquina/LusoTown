@@ -63,13 +63,13 @@ export default function TrendingSection({ className = '' }: { className?: string
       growth: 67,
       icon: <Utensils className="w-4 h-4" />,
       category: 'cultural',
-      description: 'Portuguese custard tarts'
+      description: 'Lusophone custard tarts'
     },
     {
       id: 'lusotown_transport',
       type: 'topic',
       name: 'transport',
-      displayName: 'Portuguese Transport',
+      displayName: 'Lusophone Transport',
       count: 45,
       growth: 12,
       icon: <Car className="w-4 h-4" />,
@@ -85,7 +85,7 @@ export default function TrendingSection({ className = '' }: { className?: string
       growth: 156,
       icon: <Calendar className="w-4 h-4" />,
       category: 'cultural',
-      description: 'Portuguese popular saints festivals'
+      description: 'Lusophone popular saints festivals'
     },
     {
       id: 'vauxhall',
@@ -202,7 +202,7 @@ export default function TrendingSection({ className = '' }: { className?: string
         </div>
       </div>
 
-      {/* Portuguese Cultural Highlights */}
+      {/* Lusophone Cultural Highlights */}
       <div className="px-6 pb-6">
         <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-4">
           <div className="flex items-center space-x-2 mb-3">

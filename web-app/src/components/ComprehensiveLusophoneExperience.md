@@ -10,7 +10,7 @@ The `ComprehensiveLusophoneExperience` component is a mobile-first, production-r
 - **Heritage Selection System**: Interactive selection of Portuguese-speaking nations (Portugal, Brazil, PALOP countries, Timor-Leste)
 - **Enhanced Mobile Welcome Wizard**: Seamless membership application flow with touch-friendly interactions
 - **Testimonials Carousel**: PALOP-specific testimonials with mobile swipe navigation
-- **Community Statistics Dashboard**: Real-time stats with Portuguese cultural theming
+- **Community Statistics Dashboard**: Real-time stats with Lusophone cultural theming
 - **Business Benefits Showcase**: Market data for Portuguese-speaking regions
 
 ### 📱 Mobile-First Design
@@ -19,7 +19,7 @@ The `ComprehensiveLusophoneExperience` component is a mobile-first, production-r
 - **Gesture Support**: Swipe navigation for carousels and section navigation
 - **Performance Optimized**: Lazy loading, efficient animations, reduced bundle size
 
-### 🎨 Portuguese Cultural Theming
+### 🎨 Lusophone Cultural Theming
 - **Heritage Colors**: Dynamic theming through CSS custom properties
 - **Flag Animations**: Smooth animations featuring all Portuguese-speaking nations
 - **Cultural Authenticity**: Content specifically crafted for Portuguese-speaking communities
@@ -29,7 +29,7 @@ The `ComprehensiveLusophoneExperience` component is a mobile-first, production-r
 - **WCAG 2.1 AA Compliance**: Screen reader support, keyboard navigation
 - **High Contrast Support**: Works with system accessibility preferences
 - **Reduced Motion**: Respects user motion preferences
-- **Bilingual Accessibility**: Support for Portuguese and English screen readers
+- **Bilingual Accessibility**: Support for Lusophone and English screen readers
 
 ## Usage
 
@@ -88,7 +88,7 @@ export default function LusophoneExperiencePage() {
 
 3. **Dynamic Content Sections**
    - **Heritage Selection**: Interactive heritage picker with cultural descriptions
-   - **Community Dashboard**: Live statistics with Portuguese theming
+   - **Community Dashboard**: Live statistics with Lusophone theming
    - **Business Showcase**: Market opportunity data with swipe navigation
    - **Testimonials**: PALOP-specific member testimonials
 
@@ -134,16 +134,16 @@ const swipeHandlers = useSwipeDetection(
 @media (min-width: 1024px) { ... }
 ```
 
-### Portuguese Text Optimization
-- **Text Length**: Portuguese is 20-30% longer than English
+### Lusophone Text Optimization
+- **Text Length**: Lusophone is 20-30% longer than English
 - **Container Sizing**: Adequate space for translations
 - **Overflow Prevention**: Text wrapping and responsive containers
-- **Cultural Keyboard**: Support for Portuguese accent characters
+- **Cultural Keyboard**: Support for Lusophone accent characters
 
 ## Performance Optimizations
 
 ### Loading Strategy
-- **Critical CSS**: Inlined for immediate Portuguese brand appearance
+- **Critical CSS**: Inlined for immediate Lusophone brand appearance
 - **Progressive Loading**: Components load based on interaction
 - **Image Optimization**: Lazy loading for cultural event photos
 - **Bundle Splitting**: Efficient JavaScript delivery
@@ -208,7 +208,7 @@ import { useLanguage } from '@/context/LanguageContext'
 const { t, language } = useLanguage()
 
 // Bilingual content
-<h1>{t('lusophone.title', 'Portuguese-Speaking Community')}</h1>
+<h1>{t('lusophone.title', 'Lusophone-Speaking Community')}</h1>
 ```
 
 ## State Management
@@ -234,8 +234,8 @@ const result = await validateMobileUX(componentRef.current)
 console.log(generateUXReport(result))
 ```
 
-### Portuguese Text Testing
-- Test with actual Portuguese translations
+### Lusophone Text Testing
+- Test with actual Lusophone translations
 - Verify container sizes accommodate longer text
 - Check for text overflow at all breakpoints
 - Validate cultural terminology accuracy
@@ -254,9 +254,9 @@ NEXT_PUBLIC_HERITAGE_CODE=pt
 ```
 
 ### CDN Optimization
-- Portuguese cultural images optimized
+- Lusophone cultural images optimized
 - Flag icons and symbols cached
-- Font loading optimized for Portuguese characters
+- Font loading optimized for Lusophone characters
 
 ### Analytics Integration
 ```tsx
@@ -313,20 +313,20 @@ Extend the heritage options by modifying the `heritageOptions` array in the comp
 ### Mobile-First Development
 1. **Start with 375px viewport** (iPhone SE)
 2. **Test touch interactions** on actual devices
-3. **Validate Portuguese text length** in all components
+3. **Validate Lusophone text length** in all components
 4. **Ensure 44px minimum touch targets**
 5. **Test gesture navigation** (swipe, pinch, scroll)
 
 ### Cultural Sensitivity
-1. **Use "Portuguese-speaking community"** not "Portuguese community"
+1. **Use "Portuguese-speaking community"** not "Lusophone community"
 2. **Include all PALOP nations** equally
 3. **Respect cultural symbols** and terminology
 4. **Provide authentic cultural content**
 
 ### Performance Monitoring
 1. **Monitor mobile performance** with real device testing
-2. **Track Portuguese bundle size** separately
-3. **Optimize for 3G networks** common in Portuguese regions
+2. **Track Lusophone bundle size** separately
+3. **Optimize for 3G networks** common in Lusophone regions
 4. **Measure Cultural Time to Interactive** (CTI)
 
 ## Migration Guide
@@ -350,7 +350,7 @@ If migrating from separate components:
 2. **Add mobile CSS** if using custom styling
 3. **Configure environment variables** for community stats
 4. **Test mobile experience** at all breakpoints
-5. **Validate Portuguese translations** in all sections
+5. **Validate Lusophone translations** in all sections
 
 ## Support & Maintenance
 
@@ -368,7 +368,7 @@ If migrating from separate components:
 
 ### Updates & Maintenance
 - **Monitor community statistics** and update accordingly
-- **Keep Portuguese translations current** with community feedback
+- **Keep Lusophone translations current** with community feedback
 - **Test mobile experience** after major updates
 - **Validate accessibility** with screen reader testing
 

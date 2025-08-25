@@ -191,7 +191,7 @@ export default function EnhancedEventCard({
           {/* Overlays */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
           
-          {/* Portuguese Flag Indicator */}
+          {/* Lusophone Flag Indicator */}
           <div className="absolute top-3 right-3">
             <PortugueseFlagWave size="w-8 h-5" animate={true} />
           </div>
@@ -370,7 +370,7 @@ export default function EnhancedEventCard({
               <PortugueseRippleButton
                 onClick={handleView}
                 className="flex-1 bg-gradient-to-r from-green-500 to-red-500 text-white py-3 px-4 rounded-xl font-semibold text-center"
-                Portuguese={true}
+                Lusophone={true}
               >
                 {isPortuguese ? 'Ver Detalhes' : 'View Details'}
               </PortugueseRippleButton>

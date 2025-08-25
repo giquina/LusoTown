@@ -39,13 +39,13 @@ export default function PortuguesePolls({
     allowMultiple: false,
   });
 
-  // Portuguese cultural poll templates
+  // Lusophone cultural poll templates
   const POLL_TEMPLATES = [
     {
       question:
         language === "pt"
           ? "Qual o melhor prato português?"
-          : "What's the best Portuguese dish?",
+          : "What's the best Lusophone dish?",
       options: ["Pastéis de Nata", "Bacalhau", "Francesinha", "Caldo Verde"],
     },
     {
@@ -59,14 +59,14 @@ export default function PortuguesePolls({
       question:
         language === "pt"
           ? "Cidade portuguesa favorita?"
-          : "Favorite Portuguese city?",
+          : "Favorite Lusophone city?",
       options: ["Lisboa", "Porto", "Coimbra", "Aveiro"],
     },
     {
       question:
         language === "pt"
           ? "Melhor jogador português?"
-          : "Best Portuguese player?",
+          : "Best Lusophone player?",
       options: ["Cristiano Ronaldo", "Eusébio", "Luís Figo", "Rui Costa"],
     },
     {
@@ -192,7 +192,7 @@ export default function PortuguesePolls({
         <div className="flex justify-between items-center">
           <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
             <ChartBarIcon className="w-5 h-5 text-primary-600" />
-            {language === "pt" ? "Sondagens Portuguesas" : "Portuguese Polls"}
+            {language === "pt" ? "Sondagens Portuguesas" : "Lusophone Polls"}
           </h3>
 
           <button

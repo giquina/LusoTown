@@ -45,7 +45,7 @@ export default function LiveStreamingModule() {
     id: 'live-streaming',
     title: 'Live Streaming',
     titlePortuguese: 'Transmissão Ao Vivo',
-    description: 'Master Portuguese streaming platform, build your audience, and turn your passion into profit',
+    description: 'Master Lusophone streaming platform, build your audience, and turn your passion into profit',
     descriptionPortuguese: 'Domine a plataforma de streaming portuguesa, construa a sua audiência e monetize o seu conteúdo cultural',
     difficulty: 'Intermediate',
     estimatedTime: 35,
@@ -55,9 +55,9 @@ export default function LiveStreamingModule() {
     prerequisites: ['Basic understanding of Portuguese culture', 'Comfort with technology'],
     prerequisitesPortuguese: ['Compreensão básica da cultura portuguesa', 'Conforto com tecnologia'],
     learningObjectives: [
-      'Set up professional Portuguese streaming setup',
-      'Create engaging cultural content for Portuguese audience',
-      'Use Portuguese emotes and community features',
+      'Set up professional Lusophone streaming setup',
+      'Create engaging cultural content for Lusophone audience',
+      'Use Lusophone emotes and community features',
       'Build and grow your Portuguese-speaking audience',
       'Monetize through LusoTown revenue sharing program',
       'Navigate streaming best practices and community guidelines'
@@ -73,39 +73,39 @@ export default function LiveStreamingModule() {
     steps: [
       {
         id: 'streaming-platform-overview',
-        title: 'Portuguese Streaming Platform Overview',
+        title: 'Lusophone Streaming Platform Overview',
         titlePortuguese: 'Visão Geral da Plataforma de Streaming Portuguesa',
         type: 'introduction',
         estimatedTime: 5,
         content: `
-          <p>Welcome to LusoTown TV - the premier Portuguese streaming platform in London! Our platform is specifically designed for Portuguese streamers to connect with the diaspora community and earn immediate income.</p>
+          <p>Welcome to LusoTown TV - the premier Lusophone streaming platform in London! Our platform is specifically designed for Lusophone streamers to connect with the diaspora community and earn immediate income.</p>
           
           <h3>What Makes LusoTown Streaming Special:</h3>
           <ul>
-            <li><strong>Portuguese-First Community:</strong> Your audience understands your cultural references, language nuances, and shared experiences</li>
-            <li><strong>Cultural Emotes System:</strong> Express yourself with Portuguese-specific emotes like :saudade:, :festa:, :futebol:, :pastelnata:</li>
+            <li><strong>Lusophone-First Community:</strong> Your audience understands your cultural references, language nuances, and shared experiences</li>
+            <li><strong>Cultural Emotes System:</strong> Express yourself with Lusophone-specific emotes like :saudade:, :festa:, :futebol:, :pastelnata:</li>
             <li><strong>Revenue Sharing (85/15):</strong> Keep 85% of your earnings - industry-leading rates for creators</li>
             <li><strong>Multi-Platform Integration:</strong> Simultaneously stream to YouTube, Twitch, and TikTok</li>
-            <li><strong>London Portuguese Events:</strong> Integrate with local Portuguese-speaking community events and venues</li>
+            <li><strong>London Lusophone Events:</strong> Integrate with local Portuguese-speaking community events and venues</li>
           </ul>
           
           <h3>Content Categories That Thrive:</h3>
           <ol>
-            <li><strong>Portuguese Culture & Heritage:</strong> Fado nights, traditional cooking, cultural storytelling</li>
-            <li><strong>Business & Professional:</strong> Technology workshops in Portuguese, startup discussions, professional development</li>
-            <li><strong>Gaming in Portuguese:</strong> FIFA tournaments, Portuguese gaming community</li>
-            <li><strong>London Portuguese Life:</strong> Community vlogs, restaurant reviews, cultural events coverage</li>
+            <li><strong>Lusophone Culture & Heritage:</strong> Fado nights, traditional cooking, cultural storytelling</li>
+            <li><strong>Business & Professional:</strong> Technology workshops in Lusophone, startup discussions, professional development</li>
+            <li><strong>Gaming in Lusophone:</strong> FIFA tournaments, Lusophone gaming community</li>
+            <li><strong>London Lusophone Life:</strong> Community vlogs, restaurant reviews, cultural events coverage</li>
             <li><strong>Educational Content:</strong> Portuguese language lessons, cultural education, history</li>
           </ol>
           
           <h3>Streaming Tiers Available:</h3>
           <ul>
-            <li><strong>Creator Starter (£19/month):</strong> Basic RTMP, Portuguese emotes, community chat</li>
+            <li><strong>Creator Starter (£19/month):</strong> Basic RTMP, Lusophone emotes, community chat</li>
             <li><strong>Professional Creator (£49/month):</strong> Multi-stream, revenue sharing, custom overlays</li>
             <li><strong>Enterprise Creator (£199/month):</strong> White-label platform, dedicated channel, API access</li>
           </ul>
           
-          <p>Our platform serves over 12,500 monthly viewers with 180+ active Portuguese streamers generating £45K+ in monthly revenue.</p>
+          <p>Our platform serves over 12,500 monthly viewers with 180+ active Lusophone streamers generating £45K+ in monthly revenue.</p>
         `,
         contentPortuguese: `
           <p>Bem-vindo à LusoTown TV - a principal plataforma de streaming portuguesa em Londres! A nossa plataforma é especificamente desenhada para criadores de conteúdo portugueses se conectarem com a comunidade da diáspora.</p>
@@ -140,7 +140,7 @@ export default function LiveStreamingModule() {
         tips: [
           'Start with Creator Starter tier to test the platform before upgrading',
           'Focus on one content category initially to build your niche audience',
-          'Engage with other Portuguese streamers to build community connections'
+          'Engage with other Lusophone streamers to build community connections'
         ],
         tipsPortuguese: [
           'Comece com o nível Criador Iniciante para testar a plataforma antes de upgradar',
@@ -150,12 +150,12 @@ export default function LiveStreamingModule() {
       },
       {
         id: 'technical-setup',
-        title: 'Technical Setup & Equipment for Portuguese Streaming',
+        title: 'Technical Setup & Equipment for Lusophone Streaming',
         titlePortuguese: 'Configuração Técnica e Equipamento para Streaming Português',
         type: 'tutorial',
         estimatedTime: 8,
         content: `
-          <p>Setting up professional streaming equipment ensures your Portuguese content looks and sounds great for your audience.</p>
+          <p>Setting up professional streaming equipment ensures your Lusophone content looks and sounds great for your audience.</p>
           
           <h3>Essential Equipment Checklist:</h3>
           
@@ -166,15 +166,15 @@ export default function LiveStreamingModule() {
             <li><strong>Professional:</strong> Professional camcorder + multi-camera setup - £500+</li>
           </ul>
           
-          <h4>2. Audio Equipment (Critical for Portuguese Content)</h4>
+          <h4>2. Audio Equipment (Critical for Lusophone Content)</h4>
           <ul>
             <li><strong>Microphone:</strong> USB microphone (Blue Yeti/Audio-Technica AT2020USB+) - £100-200</li>
             <li><strong>Audio Interface:</strong> For XLR microphones (Focusrite Scarlett Solo) - £100</li>
             <li><strong>Headphones:</strong> Monitoring headphones (Sony MDR-7506) - £80</li>
-            <li><strong>Acoustic Treatment:</strong> Foam panels for better Portuguese pronunciation clarity - £50</li>
+            <li><strong>Acoustic Treatment:</strong> Foam panels for better Lusophone pronunciation clarity - £50</li>
           </ul>
           
-          <h4>3. Lighting for Portuguese Cultural Content</h4>
+          <h4>3. Lighting for Lusophone Cultural Content</h4>
           <ul>
             <li><strong>Ring Light:</strong> For face-focused content (interviews, cooking) - £50-100</li>
             <li><strong>Softbox Setup:</strong> For professional look - £150-300</li>
@@ -189,21 +189,21 @@ export default function LiveStreamingModule() {
           </ul>
           
           <h3>LusoTown RTMP Configuration:</h3>
-          <p>To connect to our Portuguese streaming platform:</p>
+          <p>To connect to our Lusophone streaming platform:</p>
           <ol>
             <li><strong>RTMP URL:</strong> rtmp://stream.lusotown.com/live/</li>
             <li><strong>Stream Key:</strong> Provided in your creator dashboard</li>
-            <li><strong>Video Settings:</strong> 1920x1080, 30fps (recommended for Portuguese content)</li>
-            <li><strong>Audio Settings:</strong> 44.1kHz, 128kbps (important for clear Portuguese speech)</li>
+            <li><strong>Video Settings:</strong> 1920x1080, 30fps (recommended for Lusophone content)</li>
+            <li><strong>Audio Settings:</strong> 44.1kHz, 128kbps (important for clear Lusophone speech)</li>
             <li><strong>Bitrate:</strong> 3000-5000 kbps (depending on your internet connection)</li>
           </ol>
           
-          <h3>Portuguese Cultural Setup Ideas:</h3>
+          <h3>Lusophone Cultural Setup Ideas:</h3>
           <ul>
-            <li><strong>Background:</strong> Portuguese flag, azulejo tiles, or Portuguese books</li>
-            <li><strong>Props:</strong> Portuguese guitar for music content, traditional pottery</li>
-            <li><strong>Food Setup:</strong> Kitchen area for Portuguese cooking streams</li>
-            <li><strong>Gaming Setup:</strong> Portuguese football jerseys, Portuguese gaming peripherals</li>
+            <li><strong>Background:</strong> Portuguese flag, azulejo tiles, or Lusophone books</li>
+            <li><strong>Props:</strong> Lusophone guitar for music content, traditional pottery</li>
+            <li><strong>Food Setup:</strong> Kitchen area for Lusophone cooking streams</li>
+            <li><strong>Gaming Setup:</strong> Lusophone football jerseys, Lusophone gaming peripherals</li>
           </ul>
           
           <h3>Internet Requirements:</h3>
@@ -299,7 +299,7 @@ export default function LiveStreamingModule() {
               { text: 'Test your internet upload speed', textPortuguese: 'Testar a velocidade de upload da sua internet' },
               { text: 'Set up streaming software (OBS/Streamlabs)', textPortuguese: 'Configurar software de streaming (OBS/Streamlabs)' },
               { text: 'Configure RTMP settings for LusoTown', textPortuguese: 'Configurar definições RTMP para LusoTown' },
-              { text: 'Test audio quality in Portuguese', textPortuguese: 'Testar qualidade de áudio em português' },
+              { text: 'Test audio quality in Lusophone', textPortuguese: 'Testar qualidade de áudio em português' },
               { text: 'Set up cultural background/props', textPortuguese: 'Configurar fundo/adereços culturais' },
               { text: 'Do a test stream to check everything works', textPortuguese: 'Fazer um stream de teste para verificar se tudo funciona' }
             ]
@@ -309,7 +309,7 @@ export default function LiveStreamingModule() {
           'Invest in good audio first - viewers forgive poor video but not poor audio',
           'Test your setup thoroughly before your first live stream',
           'Have backup equipment ready in case of technical failures',
-          'Practice speaking clearly in Portuguese for better audience engagement'
+          'Practice speaking clearly in Lusophone for better audience engagement'
         ],
         tipsPortuguese: [
           'Invista primeiro em bom áudio - espectadores perdoam vídeo pobre mas não áudio pobre',
@@ -320,14 +320,14 @@ export default function LiveStreamingModule() {
       },
       {
         id: 'content-creation-strategies',
-        title: 'Portuguese Content Creation Strategies',
+        title: 'Lusophone Content Creation Strategies',
         titlePortuguese: 'Estratégias de Criação de Conteúdo Português',
         type: 'tutorial',
         estimatedTime: 10,
         content: `
-          <p>Creating engaging Portuguese content requires understanding your diaspora audience and their unique interests in London.</p>
+          <p>Creating engaging Lusophone content requires understanding your diaspora audience and their unique interests in London.</p>
           
-          <h3>Content Pillars for Portuguese Streamers:</h3>
+          <h3>Content Pillars for Lusophone Streamers:</h3>
           
           <h4>1. Cultural Heritage Content (40% of content)</h4>
           <ul>
@@ -335,15 +335,15 @@ export default function LiveStreamingModule() {
               <ul>
                 <li>Bacalhau recipes with London-available ingredients</li>
                 <li>Pastéis de nata making tutorials</li>
-                <li>Portuguese Christmas/Easter traditions</li>
+                <li>Lusophone Christmas/Easter traditions</li>
                 <li>Regional specialties (Northern vs Southern Portugal)</li>
               </ul>
             </li>
             <li><strong>Music and Arts:</strong>
               <ul>
                 <li>Fado nights with guitar lessons</li>
-                <li>Portuguese folk music sessions</li>
-                <li>Portuguese poetry readings</li>
+                <li>Lusophone folk music sessions</li>
+                <li>Lusophone poetry readings</li>
                 <li>Traditional craft demonstrations</li>
               </ul>
             </li>
@@ -357,20 +357,20 @@ export default function LiveStreamingModule() {
             </li>
           </ul>
           
-          <h4>2. London Portuguese Life (30% of content)</h4>
+          <h4>2. London Lusophone Life (30% of content)</h4>
           <ul>
             <li><strong>Community Spotlights:</strong>
               <ul>
                 <li>Portuguese business owner interviews</li>
                 <li>Community event coverage</li>
-                <li>Portuguese student experiences in London universities</li>
-                <li>Success stories of Portuguese professionals</li>
+                <li>Lusophone student experiences in London universities</li>
+                <li>Success stories of Lusophone professionals</li>
               </ul>
             </li>
-            <li><strong>London Through Portuguese Eyes:</strong>
+            <li><strong>London Through Lusophone Eyes:</strong>
               <ul>
                 <li>Portuguese restaurant reviews and hidden gems</li>
-                <li>Comparing London neighborhoods to Portuguese cities</li>
+                <li>Comparing London neighborhoods to Lusophone cities</li>
                 <li>Navigating British systems as a Portuguese speaker</li>
                 <li>Cultural shock moments and adaptations</li>
               </ul>
@@ -381,8 +381,8 @@ export default function LiveStreamingModule() {
           <ul>
             <li><strong>Career Growth in London:</strong>
               <ul>
-                <li>CV writing tips for Portuguese professionals</li>
-                <li>Interview preparation in English vs Portuguese contexts</li>
+                <li>CV writing tips for Lusophone professionals</li>
+                <li>Interview preparation in English vs Lusophone contexts</li>
                 <li>Networking strategies in London's Portuguese-speaking community</li>
                 <li>Industry-specific guidance (tech, finance, healthcare)</li>
               </ul>
@@ -390,7 +390,7 @@ export default function LiveStreamingModule() {
             <li><strong>Business and Entrepreneurship:</strong>
               <ul>
                 <li>Starting a business in the United Kingdom as a Portuguese speaker</li>
-                <li>Portuguese market insights and opportunities</li>
+                <li>Lusophone market insights and opportunities</li>
                 <li>Cross-cultural business communication</li>
                 <li>Technology trends affecting Portuguese businesses</li>
               </ul>
@@ -399,11 +399,11 @@ export default function LiveStreamingModule() {
           
           <h4>4. Entertainment and Gaming (10% of content)</h4>
           <ul>
-            <li><strong>Portuguese Gaming Community:</strong>
+            <li><strong>Lusophone Gaming Community:</strong>
               <ul>
-                <li>FIFA tournaments with Portuguese teams</li>
+                <li>FIFA tournaments with Lusophone teams</li>
                 <li>Gaming in Portuguese language</li>
-                <li>Portuguese esports scene coverage</li>
+                <li>Lusophone esports scene coverage</li>
                 <li>Gaming nostalgia from Portugal</li>
               </ul>
             </li>
@@ -411,7 +411,7 @@ export default function LiveStreamingModule() {
           
           <h3>Audience Engagement Strategies:</h3>
           
-          <h4>Portuguese Cultural Emotes Usage:</h4>
+          <h4>Lusophone Cultural Emotes Usage:</h4>
           <ul>
             <li><strong>:saudade:</strong> When discussing missing Portugal or family</li>
             <li><strong>:festa:</strong> For celebrations and happy moments</li>
@@ -423,18 +423,18 @@ export default function LiveStreamingModule() {
           
           <h4>Interactive Elements:</h4>
           <ul>
-            <li><strong>Portuguese Polls:</strong> "Norte vs Sul cuisine preferences"</li>
+            <li><strong>Lusophone Polls:</strong> "Norte vs Sul cuisine preferences"</li>
             <li><strong>Cultural Quizzes:</strong> Portuguese history, geography, traditions</li>
             <li><strong>Story Sharing:</strong> Viewer immigration stories and experiences</li>
-            <li><strong>Recipe Exchanges:</strong> Family recipes from different Portuguese regions</li>
-            <li><strong>Language Games:</strong> Portuguese word associations, pronunciation challenges</li>
+            <li><strong>Recipe Exchanges:</strong> Family recipes from different Lusophone regions</li>
+            <li><strong>Language Games:</strong> Lusophone word associations, pronunciation challenges</li>
           </ul>
           
           <h3>Content Calendar Planning:</h3>
           
           <h4>Weekly Schedule Suggestions:</h4>
           <ul>
-            <li><strong>Monday:</strong> "Portuguese Monday" - cultural content, traditions</li>
+            <li><strong>Monday:</strong> "Lusophone Monday" - cultural content, traditions</li>
             <li><strong>Wednesday:</strong> "London Life Wednesday" - community, lifestyle</li>
             <li><strong>Friday:</strong> "Professional Friday" - career, business, skills</li>
             <li><strong>Weekend:</strong> Entertainment, gaming, casual community interaction</li>
@@ -442,18 +442,18 @@ export default function LiveStreamingModule() {
           
           <h4>Seasonal Content Ideas:</h4>
           <ul>
-            <li><strong>Portuguese National Day (June 10):</strong> Historical documentaries, cultural celebrations</li>
+            <li><strong>Lusophone National Day (June 10):</strong> Historical documentaries, cultural celebrations</li>
             <li><strong>Festa de São João (June 24):</strong> Traditional celebrations, food preparation</li>
             <li><strong>Christmas in Portugal vs London:</strong> Tradition comparisons, recipe sharing</li>
-            <li><strong>Portuguese Football Season:</strong> Match viewing parties, team discussions</li>
+            <li><strong>Lusophone Football Season:</strong> Match viewing parties, team discussions</li>
           </ul>
           
           <h3>Collaboration Opportunities:</h3>
           <ul>
-            <li><strong>Other Portuguese Streamers:</strong> Joint cooking sessions, cultural discussions</li>
-            <li><strong>Portuguese Businesses in London:</strong> Restaurant features, product reviews</li>
-            <li><strong>Portuguese Cultural Organizations:</strong> Event coverage, educational content</li>
-            <li><strong>Cross-Cultural Content:</strong> British-Portuguese cultural exchanges</li>
+            <li><strong>Other Lusophone Streamers:</strong> Joint cooking sessions, cultural discussions</li>
+            <li><strong>Lusophone Businesses in London:</strong> Restaurant features, product reviews</li>
+            <li><strong>Lusophone Cultural Organizations:</strong> Event coverage, educational content</li>
+            <li><strong>Cross-Cultural Content:</strong> British-Lusophone cultural exchanges</li>
           </ul>
         `,
         contentPortuguese: `
@@ -594,7 +594,7 @@ export default function LiveStreamingModule() {
             items: [
               { text: 'Choose your primary content pillar (cultural, lifestyle, professional)', textPortuguese: 'Escolher o seu pilar de conteúdo primário (cultural, estilo de vida, profissional)' },
               { text: 'Plan 5 initial stream topics', textPortuguese: 'Planear 5 tópicos iniciais de stream' },
-              { text: 'Research Portuguese cultural calendar dates', textPortuguese: 'Pesquisar datas do calendário cultural português' },
+              { text: 'Research Lusophone cultural calendar dates', textPortuguese: 'Pesquisar datas do calendário cultural português' },
               { text: 'Create content calendar for first month', textPortuguese: 'Criar calendário de conteúdo para primeiro mês' },
               { text: 'Identify potential collaboration partners', textPortuguese: 'Identificar potenciais parceiros de colaboração' }
             ]
@@ -602,8 +602,8 @@ export default function LiveStreamingModule() {
         },
         tips: [
           'Start with content you\'re genuinely passionate about',
-          'Engage with your audience in Portuguese to build authentic connections',
-          'Collaborate with other Portuguese creators to grow your network',
+          'Engage with your audience in Lusophone to build authentic connections',
+          'Collaborate with other Lusophone creators to grow your network',
           'Keep track of what content performs best and create more of it'
         ],
         tipsPortuguese: [
@@ -615,14 +615,14 @@ export default function LiveStreamingModule() {
       },
       {
         id: 'audience-building',
-        title: 'Building Your Portuguese-Speaking Audience',
+        title: 'Building Your Lusophone-Speaking Audience',
         titlePortuguese: 'Construindo a Sua Audiência de Falantes de Português',
         type: 'tutorial',
         estimatedTime: 7,
         content: `
           <p>Building a loyal Portuguese-speaking audience requires understanding the diaspora community's unique needs and creating genuine connections.</p>
           
-          <h3>Understanding Your Portuguese Audience in London:</h3>
+          <h3>Understanding Your Lusophone Audience in London:</h3>
           
           <h4>Audience Segments:</h4>
           <ul>
@@ -630,7 +630,7 @@ export default function LiveStreamingModule() {
               <ul>
                 <li>Need: Practical London life guidance, language support</li>
                 <li>Content: How-to guides, cultural comparisons, community integration</li>
-                <li>Engagement: Respond in Portuguese, offer direct help and advice</li>
+                <li>Engagement: Respond in Lusophone, offer direct help and advice</li>
               </ul>
             </li>
             <li><strong>Established Professionals (2-10+ years):</strong>
@@ -640,14 +640,14 @@ export default function LiveStreamingModule() {
                 <li>Engagement: Industry discussions, networking opportunities</li>
               </ul>
             </li>
-            <li><strong>Portuguese Students:</strong>
+            <li><strong>Lusophone Students:</strong>
               <ul>
                 <li>Need: Academic support, social connections, budget living</li>
                 <li>Content: Study tips, affordable Portuguese food, student community</li>
                 <li>Engagement: Study groups, exam support, social meetups</li>
               </ul>
             </li>
-            <li><strong>Second-Generation Portuguese (British-born):</strong>
+            <li><strong>Second-Generation Lusophone (British-born):</strong>
               <ul>
                 <li>Need: Cultural connection, language maintenance, heritage pride</li>
                 <li>Content: Portuguese traditions, language lessons, cultural history</li>
@@ -663,24 +663,24 @@ export default function LiveStreamingModule() {
             <li><strong>Portuguese-speaking community Events:</strong>
               <ul>
                 <li>Stream live from Portuguese festivals and events in London</li>
-                <li>Cover Portuguese religious celebrations and cultural gatherings</li>
+                <li>Cover Lusophone religious celebrations and cultural gatherings</li>
                 <li>Interview community leaders and Portuguese business owners</li>
                 <li>Document Portuguese-speaking community milestones and achievements</li>
               </ul>
             </li>
-            <li><strong>Portuguese Social Media Groups:</strong>
+            <li><strong>Lusophone Social Media Groups:</strong>
               <ul>
                 <li>Share your content in "Portugueses em Londres" Facebook groups</li>
-                <li>Engage in Portuguese WhatsApp community groups</li>
-                <li>Post on Portuguese Instagram hashtags (#portugueseslondres #lusolondon)</li>
-                <li>Participate in Portuguese LinkedIn professional groups</li>
+                <li>Engage in Lusophone WhatsApp community groups</li>
+                <li>Post on Lusophone Instagram hashtags (#portugueseslondres #lusolondon)</li>
+                <li>Participate in Lusophone LinkedIn professional groups</li>
               </ul>
             </li>
           </ul>
           
           <h4>2. Content Discovery Optimization</h4>
           <ul>
-            <li><strong>Portuguese SEO Keywords:</strong>
+            <li><strong>Lusophone SEO Keywords:</strong>
               <ul>
                 <li>"Portugueses em Londres", "Comunidade de Falantes de Português Londres"</li>
                 <li>"Fado Londres", "Comida Portuguesa Londres"</li>
@@ -690,10 +690,10 @@ export default function LiveStreamingModule() {
             </li>
             <li><strong>Cross-Platform Promotion:</strong>
               <ul>
-                <li>YouTube: Portuguese vlogs and tutorials</li>
-                <li>TikTok: Short Portuguese cultural content</li>
+                <li>YouTube: Lusophone vlogs and tutorials</li>
+                <li>TikTok: Short Lusophone cultural content</li>
                 <li>Instagram: Portuguese food and lifestyle posts</li>
-                <li>LinkedIn: Portuguese professional content</li>
+                <li>LinkedIn: Lusophone professional content</li>
               </ul>
             </li>
           </ul>
@@ -702,38 +702,38 @@ export default function LiveStreamingModule() {
           <ul>
             <li><strong>Regular Interaction Schedule:</strong>
               <ul>
-                <li>Weekly Portuguese Q&A sessions</li>
+                <li>Weekly Lusophone Q&A sessions</li>
                 <li>Monthly community challenges (cooking, language, cultural)</li>
                 <li>Seasonal Portuguese tradition explanations</li>
                 <li>Regular viewer spotlight segments</li>
               </ul>
             </li>
-            <li><strong>Portuguese Language Engagement:</strong>
+            <li><strong>Lusophone Language Engagement:</strong>
               <ul>
-                <li>Respond to comments in Portuguese</li>
-                <li>Use Portuguese expressions and idioms naturally</li>
-                <li>Incorporate different Portuguese regional dialects</li>
-                <li>Switch between Portuguese and English based on audience preference</li>
+                <li>Respond to comments in Lusophone</li>
+                <li>Use Lusophone expressions and idioms naturally</li>
+                <li>Incorporate different Lusophone regional dialects</li>
+                <li>Switch between Lusophone and English based on audience preference</li>
               </ul>
             </li>
           </ul>
           
           <h3>Collaboration Network Building:</h3>
           
-          <h4>Portuguese Streamer Network:</h4>
+          <h4>Lusophone Streamer Network:</h4>
           <ul>
             <li><strong>Joint Streams:</strong> Cooking competitions, cultural discussions, gaming tournaments</li>
             <li><strong>Guest Appearances:</strong> Regular appearances on each other's streams</li>
-            <li><strong>Community Projects:</strong> Collaborative Portuguese cultural documentation</li>
+            <li><strong>Community Projects:</strong> Collaborative Lusophone cultural documentation</li>
             <li><strong>Mutual Promotion:</strong> Cross-promote each other's content to expand reach</li>
           </ul>
           
-          <h4>Portuguese Business Partnerships:</h4>
+          <h4>Lusophone Business Partnerships:</h4>
           <ul>
             <li><strong>Restaurant Partnerships:</strong> Live cooking shows from Portuguese restaurants</li>
-            <li><strong>Cultural Organization Partnerships:</strong> Stream Portuguese cultural events</li>
-            <li><strong>Portuguese Service Providers:</strong> Feature Portuguese lawyers, accountants, doctors</li>
-            <li><strong>Portuguese Product Reviews:</strong> Portuguese food imports, cultural items</li>
+            <li><strong>Cultural Organization Partnerships:</strong> Stream Lusophone cultural events</li>
+            <li><strong>Lusophone Service Providers:</strong> Feature Lusophone lawyers, accountants, doctors</li>
+            <li><strong>Lusophone Product Reviews:</strong> Portuguese food imports, cultural items</li>
           </ul>
           
           <h3>Audience Retention Strategies:</h3>
@@ -749,7 +749,7 @@ export default function LiveStreamingModule() {
           <h4>Consistency and Reliability:</h4>
           <ul>
             <li><strong>Regular Schedule:</strong> Same day/time each week for main content</li>
-            <li><strong>Reliable Quality:</strong> Consistent audio/video quality in Portuguese</li>
+            <li><strong>Reliable Quality:</strong> Consistent audio/video quality in Lusophone</li>
             <li><strong>Community Updates:</strong> Regular updates on Portuguese-speaking community news</li>
             <li><strong>Responsive Engagement:</strong> Quick responses to community questions</li>
           </ul>
@@ -758,7 +758,7 @@ export default function LiveStreamingModule() {
           
           <h4>Portuguese-speaking community Metrics:</h4>
           <ul>
-            <li><strong>Engagement Quality:</strong> Comments in Portuguese, cultural discussions</li>
+            <li><strong>Engagement Quality:</strong> Comments in Lusophone, cultural discussions</li>
             <li><strong>Community Building:</strong> Viewers connecting with each other</li>
             <li><strong>Cultural Impact:</strong> Preservation and sharing of Portuguese traditions</li>
             <li><strong>Professional Growth:</strong> Career opportunities created through community</li>
@@ -766,10 +766,10 @@ export default function LiveStreamingModule() {
           
           <h4>Growth Milestones:</h4>
           <ul>
-            <li><strong>Month 1:</strong> 50+ regular Portuguese viewers</li>
+            <li><strong>Month 1:</strong> 50+ regular Lusophone viewers</li>
             <li><strong>Month 3:</strong> 200+ community members</li>
-            <li><strong>Month 6:</strong> 500+ Portuguese audience, community partnerships</li>
-            <li><strong>Year 1:</strong> 1000+ audience, established Portuguese cultural presence</li>
+            <li><strong>Month 6:</strong> 500+ Lusophone audience, community partnerships</li>
+            <li><strong>Year 1:</strong> 1000+ audience, established Lusophone cultural presence</li>
           </ul>
         `,
         contentPortuguese: `
@@ -933,7 +933,7 @@ export default function LiveStreamingModule() {
         type: 'tutorial',
         estimatedTime: 5,
         content: `
-          <p>LusoTown offers multiple revenue streams for Portuguese streamers, with industry-leading 85/15 revenue sharing that lets you keep most of what you earn.</p>
+          <p>LusoTown offers multiple revenue streams for Lusophone streamers, with industry-leading 85/15 revenue sharing that lets you keep most of what you earn.</p>
           
           <h3>LusoTown Revenue Sharing Program (85/15 Split):</h3>
           
@@ -951,56 +951,56 @@ export default function LiveStreamingModule() {
           <ul>
             <li><strong>Monthly Subscriptions:</strong> £2.99-£9.99/month based on your tier</li>
             <li><strong>Annual Subscriptions:</strong> 15% discount for yearly payments</li>
-            <li><strong>Subscriber Benefits:</strong> Ad-free viewing, exclusive content, Portuguese emotes</li>
+            <li><strong>Subscriber Benefits:</strong> Ad-free viewing, exclusive content, Lusophone emotes</li>
             <li><strong>Portuguese-speaking community Focus:</strong> Market to Portuguese speakers specifically</li>
           </ul>
           
           <h4>2. Live Stream Donations (Secondary Income)</h4>
           <ul>
             <li><strong>Real-time Tips:</strong> Viewers can tip during live streams</li>
-            <li><strong>Portuguese Cultural Messages:</strong> Custom donation messages in Portuguese</li>
+            <li><strong>Lusophone Cultural Messages:</strong> Custom donation messages in Lusophone</li>
             <li><strong>Goal Setting:</strong> Set funding goals for equipment, events, cultural projects</li>
             <li><strong>Special Recognition:</strong> Highlight donors during streams</li>
           </ul>
           
-          <h4>3. Portuguese Cultural Merchandise</h4>
+          <h4>3. Lusophone Cultural Merchandise</h4>
           <ul>
-            <li><strong>Branded Portuguese Items:</strong> T-shirts with Portuguese sayings, cultural designs</li>
-            <li><strong>Food Products:</strong> Portuguese recipe books, spice sets, cooking tools</li>
+            <li><strong>Branded Lusophone Items:</strong> T-shirts with Lusophone sayings, cultural designs</li>
+            <li><strong>Food Products:</strong> Lusophone recipe books, spice sets, cooking tools</li>
             <li><strong>Cultural Accessories:</strong> Portuguese flag items, traditional crafts</li>
             <li><strong>Educational Materials:</strong> Portuguese language learning resources</li>
           </ul>
           
           <h4>4. Sponsored Content & Partnerships</h4>
           <ul>
-            <li><strong>Portuguese Business Partnerships:</strong> Restaurants, shops, services in London</li>
+            <li><strong>Lusophone Business Partnerships:</strong> Restaurants, shops, services in London</li>
             <li><strong>Cultural Event Sponsorships:</strong> Portuguese festivals, concerts, community events</li>
             <li><strong>Product Reviews:</strong> Portuguese food imports, cultural products</li>
-            <li><strong>Service Promotions:</strong> Portuguese travel agencies, legal services, education</li>
+            <li><strong>Service Promotions:</strong> Lusophone travel agencies, legal services, education</li>
           </ul>
           
           <h4>5. Educational Content & Courses</h4>
           <ul>
-            <li><strong>Portuguese Language Courses:</strong> For diaspora children or British learners</li>
+            <li><strong>Lusophone Language Courses:</strong> For diaspora children or British learners</li>
             <li><strong>Cultural Education:</strong> Portuguese history, traditions, customs</li>
-            <li><strong>Professional Development:</strong> Business skills for Portuguese professionals</li>
+            <li><strong>Professional Development:</strong> Business skills for Lusophone professionals</li>
             <li><strong>Cooking Classes:</strong> Traditional Portuguese cuisine tutorials</li>
           </ul>
           
-          <h3>Pricing Strategies for Portuguese Audience:</h3>
+          <h3>Pricing Strategies for Lusophone Audience:</h3>
           
           <h4>Subscription Tier Recommendations:</h4>
           <ul>
             <li><strong>Basic Tier (£2.99/month):</strong>
               <ul>
                 <li>Ad-free viewing</li>
-                <li>Portuguese chat emotes</li>
+                <li>Lusophone chat emotes</li>
                 <li>Community access</li>
               </ul>
             </li>
             <li><strong>Premium Tier (£5.99/month):</strong>
               <ul>
-                <li>Exclusive Portuguese cultural content</li>
+                <li>Exclusive Lusophone cultural content</li>
                 <li>Monthly virtual meetups</li>
                 <li>Recipe sharing access</li>
                 <li>Early access to new content</li>
@@ -1008,9 +1008,9 @@ export default function LiveStreamingModule() {
             </li>
             <li><strong>VIP Tier (£9.99/month):</strong>
               <ul>
-                <li>One-on-one Portuguese cultural consultations</li>
+                <li>One-on-one Lusophone cultural consultations</li>
                 <li>Custom content requests</li>
-                <li>Priority support in Portuguese</li>
+                <li>Priority support in Lusophone</li>
                 <li>Exclusive Portuguese-speaking community events</li>
               </ul>
             </li>
@@ -1022,8 +1022,8 @@ export default function LiveStreamingModule() {
           <ul>
             <li><strong>Cultural Value Proposition:</strong> "Support Portuguese culture preservation in London"</li>
             <li><strong>Community Building:</strong> "Join exclusive Portuguese-speaking community"</li>
-            <li><strong>Language Maintenance:</strong> "Help your children maintain Portuguese"</li>
-            <li><strong>Professional Networking:</strong> "Connect with Portuguese professionals"</li>
+            <li><strong>Language Maintenance:</strong> "Help your children maintain Lusophone"</li>
+            <li><strong>Professional Networking:</strong> "Connect with Lusophone professionals"</li>
           </ul>
           
           <h4>Content Strategy for Revenue:</h4>
@@ -1033,14 +1033,14 @@ export default function LiveStreamingModule() {
             <li><strong>VIP Content (10%):</strong> Personal consultations, custom cultural education</li>
           </ul>
           
-          <h3>Financial Planning for Portuguese Creators:</h3>
+          <h3>Financial Planning for Lusophone Creators:</h3>
           
           <h4>Revenue Milestones:</h4>
           <ul>
             <li><strong>Month 1-3:</strong> £50-200/month (building initial audience)</li>
             <li><strong>Month 4-6:</strong> £200-500/month (growing subscription base)</li>
             <li><strong>Month 7-12:</strong> £500-1,500/month (established creator with partnerships)</li>
-            <li><strong>Year 2+:</strong> £1,500-5,000/month (successful Portuguese cultural creator)</li>
+            <li><strong>Year 2+:</strong> £1,500-5,000/month (successful Lusophone cultural creator)</li>
           </ul>
           
           <h4>Tax Considerations (United Kingdom):</h4>
@@ -1048,25 +1048,25 @@ export default function LiveStreamingModule() {
             <li><strong>Self-Employment Registration:</strong> Register as self-employed with HMRC</li>
             <li><strong>VAT Registration:</strong> Required if earning over £85,000/year</li>
             <li><strong>Expense Tracking:</strong> Equipment, internet, studio space can be deducted</li>
-            <li><strong>Portuguese Tax Implications:</strong> Understand double taxation agreements</li>
+            <li><strong>Lusophone Tax Implications:</strong> Understand double taxation agreements</li>
           </ul>
           
-          <h3>Success Tips for Portuguese Creators:</h3>
+          <h3>Success Tips for Lusophone Creators:</h3>
           
           <h4>Community-First Approach:</h4>
           <ul>
-            <li><strong>Authentic Value:</strong> Focus on genuine Portuguese cultural value</li>
+            <li><strong>Authentic Value:</strong> Focus on genuine Lusophone cultural value</li>
             <li><strong>Community Investment:</strong> Reinvest earnings into better equipment and content</li>
-            <li><strong>Long-term Vision:</strong> Build sustainable Portuguese cultural presence</li>
-            <li><strong>Collaboration:</strong> Work with other Portuguese creators to grow together</li>
+            <li><strong>Long-term Vision:</strong> Build sustainable Lusophone cultural presence</li>
+            <li><strong>Collaboration:</strong> Work with other Lusophone creators to grow together</li>
           </ul>
           
           <h4>Revenue Diversification:</h4>
           <ul>
             <li><strong>Multiple Streams:</strong> Don't rely on just one revenue source</li>
-            <li><strong>Seasonal Content:</strong> Capitalize on Portuguese holidays and events</li>
+            <li><strong>Seasonal Content:</strong> Capitalize on Lusophone holidays and events</li>
             <li><strong>Cross-Platform Revenue:</strong> YouTube ad revenue, TikTok creator fund</li>
-            <li><strong>Offline Opportunities:</strong> Portuguese cultural workshops, events</li>
+            <li><strong>Offline Opportunities:</strong> Lusophone cultural workshops, events</li>
           </ul>
         `,
         contentPortuguese: `
@@ -1241,7 +1241,7 @@ export default function LiveStreamingModule() {
         type: 'guide'
       },
       {
-        title: 'Portuguese Cultural Content Calendar',
+        title: 'Lusophone Cultural Content Calendar',
         titlePortuguese: 'Calendário de Conteúdo Cultural Português',
         url: '/downloads/portuguese-cultural-calendar.pdf',
         type: 'download'

@@ -67,7 +67,7 @@ interface CaseStudy {
 }
 
 const allCaseStudies: CaseStudy[] = [
-  // Portuguese Case Studies (70%)
+  // Lusophone Case Studies (70%)
   {
     id: 'pt-1',
     language: 'pt' as const,
@@ -247,7 +247,7 @@ const allCaseStudies: CaseStudy[] = [
       }
     },
     event: {
-      type: 'LusoTown Student Nightlife: Portuguese Night at Ministry',
+      type: 'LusoTown Student Nightlife: Lusophone Night at Ministry',
       venue: 'Ministry of Sound',
       location: 'Elephant & Castle, London',
       date: 'October 14, 2023'
@@ -256,23 +256,23 @@ const allCaseStudies: CaseStudy[] = [
       initial: 'October 2023 - Met on the dance floor during Portuguese music set at Ministry of Sound',
       meeting: 'October 2023 - Bonded over shared academic struggles and love for Portuguese music',
       friendship: 'November 2023-February 2024 - Weekly study sessions combined with weekend nightlife adventures',
-      outcome: 'March 2024 - Created "Study Hard, Party Harder" Portuguese student group with 85+ members'
+      outcome: 'March 2024 - Created "Study Hard, Party Harder" Lusophone student group with 85+ members'
     },
     transformation: {
       before: 'Miguel was struggling with isolation and failing calculus; Carla felt homesick and overwhelmed by London university life',
       after: 'Built an unbreakable friendship while creating London\'s most successful Portuguese-speaking student support network',
       impact: [
         'Miguel improved from D grades to First Class Honours with Carla\'s study support',
-        'Carla overcame homesickness through weekend Portuguese cultural parties',
-        'Created study groups that helped 40+ Portuguese students improve grades',
-        'Organized monthly Portuguese student nights at top London clubs',
-        'Established scholarship fund for Portuguese students (£15,000 raised)',
+        'Carla overcame homesickness through weekend Lusophone cultural parties',
+        'Created study groups that helped 40+ Lusophone students improve grades',
+        'Organized monthly Lusophone student nights at top London clubs',
+        'Established scholarship fund for Lusophone students (£15,000 raised)',
         'Featured in LSE and UCL student newspapers for community building'
       ]
     },
     quotes: {
-      person1: '"Carla saved my academic life. We balance study intensity with Portuguese party culture perfectly. She taught me that success doesn\'t mean giving up fun."',
-      person2: '"Miguel showed me London nightlife could feel like home. Our friendship proves Portuguese students can excel academically while celebrating our culture."',
+      person1: '"Carla saved my academic life. We balance study intensity with Lusophone party culture perfectly. She taught me that success doesn\'t mean giving up fun."',
+      person2: '"Miguel showed me London nightlife could feel like home. Our friendship proves Lusophone students can excel academically while celebrating our culture."',
       joint: '"We created the perfect balance - serious about studies during the week, celebrating Portuguese culture every weekend. Our group shows that academic success and cultural pride go hand in hand."'
     },
     currentStatus: 'Leading a network of 120+ Portuguese-speaking students across 8 London universities. They host monthly academic workshops and weekend cultural events, with 95% of members reporting improved grades and social connections.',
@@ -299,14 +299,14 @@ const allCaseStudies: CaseStudy[] = [
       }
     },
     event: {
-      type: 'Portuguese Cultural Heritage Tour',
+      type: 'Lusophone Cultural Heritage Tour',
       venue: 'National Gallery',
       location: 'Trafalgar Square, London',
       date: 'March 15, 2024'
     },
     timeline: {
-      initial: 'March 2024 - First meeting at National Gallery Portuguese art exhibition',
-      meeting: 'March 2024 - Discovered shared love for Portuguese contemporary art and London life challenges',
+      initial: 'March 2024 - First meeting at National Gallery Lusophone art exhibition',
+      meeting: 'March 2024 - Discovered shared love for Lusophone contemporary art and London life challenges',
       friendship: 'April-June 2024 - Weekly coffee meetings, museum visits, and cultural events',
       outcome: 'July 2024 - Moved in together to a shared flat in Stockwell'
     },
@@ -322,11 +322,11 @@ const allCaseStudies: CaseStudy[] = [
       ]
     },
     quotes: {
-      person1: '"Mariana became my London sister. When I was homesick, she\'d cook Portuguese comfort food. When I doubted my English, she practiced presentations with me."',
+      person1: '"Mariana became my London sister. When I was homesick, she\'d cook Lusophone comfort food. When I doubted my English, she practiced presentations with me."',
       person2: '"Ana brought such joy and perspective. Through her eyes, I rediscovered why I loved London. We balanced each other perfectly - my experience, her optimism."',
       joint: '"Living together has been the best decision. We share costs, culture, and create a piece of Portugal in London. Our flat is now the gathering place for the whole Portuguese-speaking community."'
     },
-    currentStatus: 'Still living together in their Stockwell flat, planning to buy a property together in 2025. They host monthly Portuguese dinner parties and have helped 15+ newcomers settle in London.',
+    currentStatus: 'Still living together in their Stockwell flat, planning to buy a property together in 2025. They host monthly Lusophone dinner parties and have helped 15+ newcomers settle in London.',
     icon: HomeIcon
   },
   {
@@ -350,13 +350,13 @@ const allCaseStudies: CaseStudy[] = [
       }
     },
     event: {
-      type: 'Portuguese Professionals Networking Night',
+      type: 'Lusophone Professionals Networking Night',
       venue: 'The Shard - Level 31',
       location: 'London Bridge, London',
       date: 'January 20, 2024'
     },
     timeline: {
-      initial: 'January 2024 - Met at Portuguese professionals\' networking event at The Shard',
+      initial: 'January 2024 - Met at Lusophone professionals\' networking event at The Shard',
       meeting: 'January 2024 - Bonded over shared vision for sustainable tech solutions',
       friendship: 'February-May 2024 - Collaborated on freelance projects, discovered perfect skill complement',
       outcome: 'June 2024 - Launched "Verde Digital" - sustainable technology consultancy'
@@ -369,12 +369,12 @@ const allCaseStudies: CaseStudy[] = [
         'Carlos gained United Kingdom business credibility and network',
         'Sofia achieved entrepreneurial independence',
         'Hired 3 additional Portuguese-speaking consultants',
-        'Featured in Portuguese Embassy\'s "Diaspora Success Stories"',
+        'Featured in Lusophone Embassy\'s "Diaspora Success Stories"',
         'Speaking at European sustainability conferences'
       ]
     },
     quotes: {
-      person1: '"Sofia understood both Portuguese work culture and London business dynamics. She helped me navigate United Kingdom partnerships I never could have secured alone."',
+      person1: '"Sofia understood both Lusophone work culture and London business dynamics. She helped me navigate United Kingdom partnerships I never could have secured alone."',
       person2: '"Carlos brought technical innovation I\'d never seen in traditional marketing. Together we created something neither could achieve individually."',
       joint: '"Our partnership works because we share values but bring different perspectives. We\'re proving Portuguese speakers can lead innovation in London\'s tech scene."'
     },
@@ -402,25 +402,25 @@ const allCaseStudies: CaseStudy[] = [
       }
     },
     event: {
-      type: 'Portuguese Literature & Coffee Evening',
+      type: 'Lusophone Literature & Coffee Evening',
       venue: 'British Library',
       location: 'Kings Cross, London',
       date: 'September 8, 2023'
     },
     timeline: {
-      initial: 'September 2023 - Met at Portuguese literature discussion evening at British Library',
-      meeting: 'September 2023 - Discovered shared passion for preserving Portuguese literary heritage',
+      initial: 'September 2023 - Met at Lusophone literature discussion evening at British Library',
+      meeting: 'September 2023 - Discovered shared passion for preserving Lusophone literary heritage',
       friendship: 'October 2023-March 2024 - Weekly literature meetings evolved into cultural preservation project',
       outcome: 'April 2024 - Launched "Palavras de Londres" (Words of London) cultural initiative'
     },
     transformation: {
-      before: 'Isabel felt disconnected from Portuguese academic community; Fernanda struggled to find platform for Brazilian cultural expression in London',
-      after: 'Created London\'s premier Portuguese cultural organization connecting 200+ families with their heritage',
+      before: 'Isabel felt disconnected from Lusophone academic community; Fernanda struggled to find platform for Brazilian cultural expression in London',
+      after: 'Created London\'s premier Lusophone cultural organization connecting 200+ families with their heritage',
       impact: [
-        'Established monthly Portuguese authors\' readings at Southbank Centre',
+        'Established monthly Lusophone authors\' readings at Southbank Centre',
         'Created Portuguese language library at Camden Community Centre',
-        'Organized first-ever London Portuguese Literature Festival (500+ attendees)',
-        'Partnered with Portuguese Embassy for cultural programming',
+        'Organized first-ever London Lusophone Literature Festival (many people)',
+        'Partnered with Lusophone Embassy for cultural programming',
         'Awarded £25,000 Arts Council grant for community cultural projects',
         'Featured in BBC London for cultural diversity initiatives'
       ]
@@ -430,7 +430,7 @@ const allCaseStudies: CaseStudy[] = [
       person2: '"Isabel brought the academic rigor I needed to legitimize our cultural work. We\'re not just preserving culture - we\'re evolving it for a new generation."',
       joint: '"Through literature, we\'ve built bridges between Portugal, Brazil, and all Portuguese speakers in London. We\'re creating a cultural legacy our grandchildren will be proud of."'
     },
-    currentStatus: 'Palavras de Londres now runs 12 programs annually, has published an anthology of London Portuguese writers, and is establishing partnerships with universities in Portugal and Brazil. They\'re planning a documentary about Portuguese literary heritage in the United Kingdom.',
+    currentStatus: 'Palavras de Londres now runs 12 programs annually, has published an anthology of London Lusophone writers, and is establishing partnerships with universities in Portugal and Brazil. They\'re planning a documentary about Lusophone literary heritage in the United Kingdom.',
     icon: AcademicCapIcon
   },
   {
@@ -441,7 +441,7 @@ const allCaseStudies: CaseStudy[] = [
       person1: {
         name: 'Helena Rodrigues',
         age: 35,
-        background: 'Chef from Aveiro specializing in Portuguese seafood',
+        background: 'Chef from Aveiro specializing in Lusophone seafood',
         country: 'Portugal 🇵🇹',
         image: getImageWithFallback('ava-davis')
       },
@@ -454,7 +454,7 @@ const allCaseStudies: CaseStudy[] = [
       }
     },
     event: {
-      type: 'Portuguese-Brazilian Food Festival',
+      type: 'Lusophone-Brazilian Food Festival',
       venue: 'Southbank Centre Food Market',
       location: 'South Bank, London',
       date: 'August 12, 2023'
@@ -463,26 +463,26 @@ const allCaseStudies: CaseStudy[] = [
       initial: 'August 2023 - Both running competing food stalls at Southbank Centre Food Festival',
       meeting: 'August 2023 - Discovered complementary culinary skills and shared business vision',
       friendship: 'September 2023-January 2024 - Collaborated on weekend pop-ups, developed signature fusion dishes',
-      outcome: 'February 2024 - Opened "Lusitânia" - London\'s first Portuguese-Brazilian fusion restaurant'
+      outcome: 'February 2024 - Opened "Lusitânia" - London\'s first Lusophone-Brazilian fusion restaurant'
     },
     transformation: {
       before: 'Helena struggled with limited Portuguese cuisine market; Roberto faced challenges scaling his Brazilian food truck business',
-      after: 'Combined their expertise to create London\'s most innovative Portuguese-Brazilian dining experience',
+      after: 'Combined their expertise to create London\'s most innovative Lusophone-Brazilian dining experience',
       impact: [
         'Lusitânia booked solid for 3 months in advance within first month',
         'Generated £400,000 revenue in first 8 months',
         'Featured in Time Out London, Evening Standard, and Michelin Guide',
         'Hired 12 staff members (8 from Portuguese-speaking community)',
-        'Won "Best New Restaurant" at London Portuguese Business Awards',
-        'Launched catering service for Portuguese cultural events'
+        'Won "Best New Restaurant" at London Lusophone Business Awards',
+        'Launched catering service for Lusophone cultural events'
       ]
     },
     quotes: {
       person1: '"Roberto taught me that Portuguese cuisine could evolve beyond tradition. Together we created something completely new while honoring both our cultures."',
-      person2: '"Helena showed me the depth of Portuguese culinary heritage. Our fusion represents the future of Portuguese-speaking community dining."',
-      joint: '"Lusitânia proves Portuguese and Brazilian cuisines create magic together. We\'re not just serving food - we\'re sharing our heritage with London."'
+      person2: '"Helena showed me the depth of Lusophone culinary heritage. Our fusion represents the future of Portuguese-speaking community dining."',
+      joint: '"Lusitânia proves Lusophone and Brazilian cuisines create magic together. We\'re not just serving food - we\'re sharing our heritage with London."'
     },
-    currentStatus: 'Lusitânia has a 6-week waiting list and plans to open a second location in Canary Wharf. They\'re launching a cookbook and culinary school focused on Portuguese-Brazilian fusion techniques.',
+    currentStatus: 'Lusitânia has a 6-week waiting list and plans to open a second location in Canary Wharf. They\'re launching a cookbook and culinary school focused on Lusophone-Brazilian fusion techniques.',
     icon: BuildingOffice2Icon
   },
   {
@@ -506,13 +506,13 @@ const allCaseStudies: CaseStudy[] = [
       }
     },
     event: {
-      type: 'Portuguese Tech Professionals Meetup',
+      type: 'Lusophone Tech Professionals Meetup',
       venue: 'Google Campus London',
       location: 'Shoreditch, London',
       date: 'November 8, 2023'
     },
     timeline: {
-      initial: 'November 2023 - Met during Portuguese tech professionals meetup at Google Campus',
+      initial: 'November 2023 - Met during Lusophone tech professionals meetup at Google Campus',
       meeting: 'November 2023 - Discovered shared vision for Portuguese-speaking community financial inclusion',
       friendship: 'December 2023-March 2024 - Weekend hackathons developing fintech prototype',
       outcome: 'April 2024 - Launched "LusoFinance" - remittance app for Portuguese-speaking diaspora'
@@ -526,7 +526,7 @@ const allCaseStudies: CaseStudy[] = [
         'Secured £2M Series A funding from leading London VC',
         'Team grew to 18 employees across London, Lisbon, and São Paulo',
         'Featured in TechCrunch, Financial Times, and Wired',
-        'Partnership with Portuguese banks and credit unions'
+        'Partnership with Lusophone banks and credit unions'
       ]
     },
     quotes: {
@@ -534,7 +534,7 @@ const allCaseStudies: CaseStudy[] = [
       person2: '"Pedro\'s engineering excellence combined with my product experience created something neither of us could build alone. We\'re helping families stay connected."',
       joint: '"LusoFinance started as weekend conversations and became a mission to serve Portuguese speakers globally. Technology with cultural purpose is incredibly powerful."'
     },
-    currentStatus: 'LusoFinance serves 25,000+ users across 12 countries, planning IPO by 2026. They sponsor Portuguese tech education programs and mentor 50+ entrepreneurs.',
+    currentStatus: 'LusoFinance serves 25,000+ users across 12 countries, planning IPO by 2026. They sponsor Lusophone tech education programs and mentor 50+ entrepreneurs.',
     icon: SparklesIcon
   }
 ]
@@ -564,12 +564,12 @@ const caseStudyVariants = {
 export default function CaseStudies() {
   const { language } = useLanguage()
   
-  // Create mixed case studies ensuring 70% Portuguese content
+  // Create mixed case studies ensuring 70% Lusophone content
   const mixedCaseStudies = createMixedTestimonials(allCaseStudies, { portuguesePercentage: 70 })
   
   return (
     <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/20 relative overflow-hidden">
-      {/* Portuguese-inspired background elements */}
+      {/* Lusophone-inspired background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/30 via-accent-100/20 to-coral-100/20 rounded-full opacity-60 animate-pulse" />
         <div className="absolute bottom-10 left-20 w-28 h-28 bg-gradient-to-tr from-action-200/30 via-secondary-100/20 to-accent-100/20 rounded-full opacity-50 animate-bounce" style={{ animationDuration: '6s' }} />
@@ -723,7 +723,7 @@ export default function CaseStudies() {
                       <div className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60">
                         <h4 className="font-bold text-gray-900 mb-6 flex items-center gap-2">
                           <UserGroupIcon className="w-5 h-5 text-primary-600" />
-                          Meet the Portuguese Speakers
+                          Meet the Lusophone Speakers
                         </h4>
                         
                         <div className="space-y-6">
@@ -815,7 +815,7 @@ export default function CaseStudies() {
           >
             <div className="bg-gradient-to-r from-white/80 via-secondary-50/60 to-accent-50/60 backdrop-blur-lg border border-white/40 rounded-3xl p-12 shadow-2xl max-w-5xl mx-auto">
               <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                Your Portuguese Story Starts With 
+                Your Lusophone Story Starts With 
                 <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent block sm:inline">
                   One Event
                 </span>

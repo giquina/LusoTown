@@ -4,7 +4,7 @@ import { EXTERNAL_SERVICES } from '@/config/cdn'
 
 /**
  * YouTube API Service for LusoTown's Streaming Platform
- * Handles all YouTube API operations with Portuguese cultural content focus
+ * Handles all YouTube API operations with Lusophone cultural content focus
  * Created: 2025-08-18
  */
 
@@ -92,7 +92,7 @@ class YouTubeAPIService {
   // ============================================================================
 
   /**
-   * Upload video to YouTube with Portuguese cultural metadata
+   * Upload video to YouTube with Lusophone cultural metadata
    */
   async uploadVideo(file: File, options: UploadOptions): Promise<YouTubeVideo> {
     try {
@@ -111,7 +111,7 @@ class YouTubeAPIService {
         }
       };
 
-      // Add to Portuguese cultural playlist if specified
+      // Add to Lusophone cultural playlist if specified
       if (options.playlistId || options.portugueseCulturalFocus) {
         const playlistId = options.playlistId || await this.getPortugueseCulturalPlaylistId(options.culturalContext);
         if (playlistId) {
@@ -147,7 +147,7 @@ class YouTubeAPIService {
   }
 
   /**
-   * Create live stream with Portuguese cultural context
+   * Create live stream with Lusophone cultural context
    */
   async createLiveStream(
     title: string,
@@ -200,7 +200,7 @@ class YouTubeAPIService {
   }
 
   /**
-   * Get video analytics with Portuguese audience focus
+   * Get video analytics with Lusophone audience focus
    */
   async getVideoAnalytics(videoId: string, startDate: string, endDate: string): Promise<YouTubeAnalytics> {
     try {
@@ -243,7 +243,7 @@ class YouTubeAPIService {
   }
 
   /**
-   * Search for Portuguese cultural content
+   * Search for Lusophone cultural content
    */
   async searchPortugueseContent(
     query: string,
@@ -286,7 +286,7 @@ class YouTubeAPIService {
   // ============================================================================
 
   /**
-   * Create specialized playlists for Portuguese cultural content
+   * Create specialized playlists for Lusophone cultural content
    */
   async createPortugueseCulturalPlaylists(): Promise<Record<string, string>> {
     const playlists = [
@@ -346,7 +346,7 @@ class YouTubeAPIService {
             snippet: {
               title: playlist.title,
               description: playlist.description,
-              tags: ['LusoTown', 'Portuguese', 'Community', 'London', 'Culture'],
+              tags: ['LusoTown', 'Lusophone', 'Community', 'London', 'Culture'],
               defaultLanguage: 'pt'
             },
             status: {
@@ -370,7 +370,7 @@ class YouTubeAPIService {
   // ============================================================================
 
   /**
-   * Enhance video titles with Portuguese cultural context
+   * Enhance video titles with Lusophone cultural context
    */
   private enhanceTitleWithCulturalContext(
     title: string,
@@ -433,23 +433,23 @@ class YouTubeAPIService {
   }
 
   /**
-   * Enhance tags with Portuguese cultural keywords
+   * Enhance tags with Lusophone cultural keywords
    */
   private enhanceTagsWithPortugueseKeywords(
     tags: string[],
     culturalContext?: 'portugal' | 'brazil' | 'africa' | 'diaspora' | 'universal'
   ): string[] {
     const basePortugueseTags = [
-      'LusoTown', 'Portuguese-speaking community', 'London Portuguese', 'Comunidade de Falantes de Português',
-      'Portuguese Culture', 'Lusitanian', 'Portuguese Events', 'Cultural Heritage'
+      'LusoTown', 'Portuguese-speaking community', 'London Lusophone', 'Comunidade de Falantes de Português',
+      'Lusophone Culture', 'Lusitanian', 'Lusophone Events', 'Cultural Heritage'
     ];
 
     const contextualTags = {
-      portugal: ['Portugal', 'Fado', 'Portuguese Traditions', 'Cultural Heritage', 'Azulejos'],
+      portugal: ['Portugal', 'Fado', 'Lusophone Traditions', 'Cultural Heritage', 'Azulejos'],
       brazil: ['Brazil', 'Brazilian Culture', 'Brazilian Community', 'Samba', 'Capoeira'],
-      africa: ['Lusophone Africa', 'PALOP', 'African Culture', 'Portuguese Speaking Africa'],
-      diaspora: ['Portuguese Diaspora', 'Immigration', 'Saudade', 'Heritage Preservation'],
-      universal: ['Lusophone', 'Portuguese Language', 'Portuguese Speaking Community']
+      africa: ['Lusophone Africa', 'PALOP', 'African Culture', 'Lusophone Speaking Africa'],
+      diaspora: ['Lusophone Diaspora', 'Immigration', 'Saudade', 'Heritage Preservation'],
+      universal: ['Lusophone', 'Lusophone Language', 'Lusophone Speaking Community']
     };
 
     let enhancedTags = [...tags, ...basePortugueseTags];

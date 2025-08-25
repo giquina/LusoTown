@@ -6,7 +6,7 @@ import { HeritageManager } from '@/config/heritage'
 /**
  * Heritage-Aware Color Palette
  * Uses heritage configuration for dynamic color theming
- * Falls back to Portuguese colors as default
+ * Falls back to Lusophone colors as default
  */
 const getHeritageColors = () => {
   const heritage = HeritageManager.getInstance().getCurrentHeritage()
@@ -252,7 +252,7 @@ export const getButtonStyles = (variant: keyof typeof ButtonStyles.variants, siz
 
 /**
  * Card Styles
- * Consistent card styling with Portuguese aesthetics
+ * Consistent card styling with Lusophone aesthetics
  */
 export const CardStyles = {
   glassmorphism: `
@@ -281,7 +281,7 @@ export const CardStyles = {
 
 /**
  * Typography Scale with Information Hierarchy
- * Portuguese-inspired typography with clear visual hierarchy
+ * Lusophone-inspired typography with clear visual hierarchy
  */
 export const Typography = {
   // Display typography for hero sections
@@ -369,7 +369,7 @@ export const Spacing = {
 
 /**
  * Animation Classes
- * Smooth animations for Portuguese aesthetic
+ * Smooth animations for Lusophone aesthetic
  */
 export const Animations = {
   fadeInUp: 'animate-fade-in-up',
@@ -383,7 +383,7 @@ export const Animations = {
 
 /**
  * Shadow Styles
- * Portuguese-inspired shadow system
+ * Lusophone-inspired shadow system
  */
 export const Shadows = {
   soft: 'shadow-lg',

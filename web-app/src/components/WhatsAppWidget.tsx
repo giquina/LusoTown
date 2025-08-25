@@ -32,9 +32,9 @@ export default function WhatsAppWidget() {
           message:
             "Ola! 👋 Welcome to LusoTown - London's Portuguese-speaking community!\n\nI'm here to help you discover:\n🤝 Meet Your Match\n📺 Live Streams\n🚗 Premium Transport\n\nWhat interests you most?",
           options: [
-            '🤝 Find my Portuguese match',
-            '📺 Watch Portuguese streams',
-            '🚗 Book Portuguese driver',
+            '🤝 Find my Lusophone match',
+            '📺 Watch Lusophone streams',
+            '🚗 Book Lusophone driver',
             '❓ How does LusoTown work?',
           ],
         },
@@ -56,7 +56,7 @@ export default function WhatsAppWidget() {
         {
           message:
             "LusoTown is London's complete Portuguese-speaking community platform. Which area interests you most?",
-          options: ['❤️ Find my Portuguese match', '📺 Explore streaming platform', '🚗 Book premium transport', '🎪 Join events & groups'],
+          options: ['❤️ Find my Lusophone match', '📺 Explore streaming platform', '🚗 Book premium transport', '🎪 Join events & groups'],
         },
         {
           message:

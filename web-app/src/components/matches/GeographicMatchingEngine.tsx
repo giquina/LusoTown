@@ -81,7 +81,7 @@ interface GeographicMatchingEngineProps {
   showMap?: boolean;
 }
 
-// Portuguese community zones in London and UK
+// Lusophone community zones in London and UK
 const portugueseZones: GeographicZone[] = [
   {
     id: 'stockwell_vauxhall',
@@ -89,11 +89,11 @@ const portugueseZones: GeographicZone[] = [
     namePortuguese: 'Stockwell e Vauxhall',
     center: [51.4886, -0.1234],
     radius: 3,
-    description: 'Heart of Portuguese London community',
+    description: 'Heart of Lusophone London community',
     descriptionPortuguese: 'Coração da comunidade portuguesa em Londres',
     culturalVenues: [
       {
-        name: 'Portuguese Church of Our Lady of Fatima',
+        name: 'Lusophone Church of Our Lady of Fatima',
         namePortuguese: 'Igreja Portuguesa de Nossa Senhora de Fátima',
         type: 'church',
         address: 'Stockwell Road',
@@ -109,7 +109,7 @@ const portugueseZones: GeographicZone[] = [
         portugueseAuthenticity: 9
       },
       {
-        name: 'Portuguese Centre',
+        name: 'Lusophone Centre',
         namePortuguese: 'Centro Português',
         type: 'community_center',
         address: 'South Lambeth Road',
@@ -131,7 +131,7 @@ const portugueseZones: GeographicZone[] = [
     namePortuguese: 'Camden e Kentish Town',
     center: [51.5373, -0.1457],
     radius: 4,
-    description: 'Creative Portuguese community with cultural venues',
+    description: 'Creative Lusophone community with cultural venues',
     descriptionPortuguese: 'Comunidade portuguesa criativa com espaços culturais',
     culturalVenues: [
       {
@@ -143,7 +143,7 @@ const portugueseZones: GeographicZone[] = [
         portugueseAuthenticity: 8
       },
       {
-        name: 'Portuguese Language School',
+        name: 'Lusophone Language School',
         namePortuguese: 'Escola de Língua Portuguesa',
         type: 'school',
         address: 'Kentish Town Road',
@@ -165,7 +165,7 @@ const portugueseZones: GeographicZone[] = [
     namePortuguese: 'East London (Newham e Tower Hamlets)',
     center: [51.5254, 0.0356],
     radius: 8,
-    description: 'Growing Portuguese community with good transport links',
+    description: 'Growing Lusophone community with good transport links',
     descriptionPortuguese: 'Comunidade portuguesa crescente com boas ligações de transporte',
     culturalVenues: [
       {
@@ -177,7 +177,7 @@ const portugueseZones: GeographicZone[] = [
         portugueseAuthenticity: 8
       },
       {
-        name: 'Portuguese Community Association East',
+        name: 'Lusophone Community Association East',
         namePortuguese: 'Associação Comunitária Portuguesa Este',
         type: 'community_center',
         address: 'Stratford',
@@ -199,11 +199,11 @@ const portugueseZones: GeographicZone[] = [
     namePortuguese: 'West London (Hammersmith e Ealing)',
     center: [51.4927, -0.2353],
     radius: 6,
-    description: 'Family-oriented Portuguese community',
+    description: 'Family-oriented Lusophone community',
     descriptionPortuguese: 'Comunidade portuguesa orientada para famílias',
     culturalVenues: [
       {
-        name: 'Portuguese Family Centre',
+        name: 'Lusophone Family Centre',
         namePortuguese: 'Centro Familiar Português',
         type: 'community_center',
         address: 'Hammersmith',
@@ -233,11 +233,11 @@ const portugueseZones: GeographicZone[] = [
     namePortuguese: 'South London (Croydon e Wimbledon)',
     center: [51.3762, -0.0982],
     radius: 10,
-    description: 'Suburban Portuguese families and professionals',
+    description: 'Suburban Lusophone families and professionals',
     descriptionPortuguese: 'Famílias e profissionais portugueses suburbanos',
     culturalVenues: [
       {
-        name: 'Portuguese Club Croydon',
+        name: 'Lusophone Club Croydon',
         namePortuguese: 'Clube Português Croydon',
         type: 'community_center',
         address: 'Croydon High Street',
@@ -626,7 +626,7 @@ export default function GeographicMatchingEngine({
       {/* Zone Selection */}
       <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
         <h3 className="text-lg font-semibold text-gray-900 mb-4">
-          {language === 'pt' ? 'Explorar Zonas Portuguesas' : 'Explore Portuguese Zones'}
+          {language === 'pt' ? 'Explorar Zonas Portuguesas' : 'Explore Lusophone Zones'}
         </h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -64,7 +64,7 @@ export default function BusinessNetworkingModule() {
     prerequisites: [],
     prerequisitesPortuguese: [],
     learningObjectives: [
-      "Build meaningful professional connections with Portuguese entrepreneurs",
+      "Build meaningful professional connections with Lusophone entrepreneurs",
       "Navigate business etiquette in bilingual environments",
       "Leverage cultural heritage for business advantages",
       "Create lasting partnerships and collaborations",
@@ -80,7 +80,7 @@ export default function BusinessNetworkingModule() {
     steps: [
       {
         id: "introduction-portuguese-business",
-        title: "Portuguese Business Landscape in London",
+        title: "Lusophone Business Landscape in London",
         titlePortuguese: "Panorama Empresarial Português em Londres",
         type: "introduction",
         estimatedTime: 4,
@@ -91,8 +91,8 @@ export default function BusinessNetworkingModule() {
           
           <h3>Key Industry Sectors:</h3>
           <ul>
-            <li><strong>Financial Services:</strong> Portuguese professionals in banking, fintech, and investment</li>
-            <li><strong>Technology & Innovation:</strong> Portuguese tech entrepreneurs and developers</li>
+            <li><strong>Financial Services:</strong> Lusophone professionals in banking, fintech, and investment</li>
+            <li><strong>Technology & Innovation:</strong> Lusophone tech entrepreneurs and developers</li>
             <li><strong>Hospitality & Tourism:</strong> Restaurants, hotels, and travel services</li>
             <li><strong>Healthcare & Life Sciences:</strong> Medical professionals and researchers</li>
             <li><strong>Creative Industries:</strong> Design, marketing, and digital agencies</li>
@@ -135,9 +135,9 @@ export default function BusinessNetworkingModule() {
           <p>Compreender estas fundações ajudá-lo-á a navegar e contribuir para a nossa próspera comunidade empresarial.</p>
         `,
         tips: [
-          "Start by observing existing business interactions at Portuguese events",
+          "Start by observing existing business interactions at Lusophone events",
           "Research successful Portuguese business owners in your industry",
-          "Understand the blend of British business formality with Portuguese warmth",
+          "Understand the blend of British business formality with Lusophone warmth",
         ],
         tipsPortuguese: [
           "Comece por observar interações empresariais existentes em eventos portugueses",
@@ -154,12 +154,12 @@ export default function BusinessNetworkingModule() {
         content: `
           <p>Portuguese business culture emphasizes genuine relationships over transactional interactions. Here's how to build lasting professional connections:</p>
           
-          <h3>The Portuguese Approach to Business Relationships:</h3>
+          <h3>The Lusophone Approach to Business Relationships:</h3>
           
           <h4>1. Personal Connection First</h4>
           <ul>
             <li><strong>Family and Background:</strong> Share your Portuguese heritage story</li>
-            <li><strong>Regional Pride:</strong> Discuss your connection to specific Portuguese regions</li>
+            <li><strong>Regional Pride:</strong> Discuss your connection to specific Lusophone regions</li>
             <li><strong>London Experience:</strong> Exchange stories about settling in London</li>
             <li><strong>Cultural Interests:</strong> Mention Portuguese traditions you maintain</li>
           </ul>
@@ -169,7 +169,7 @@ export default function BusinessNetworkingModule() {
             <li><strong>Expertise Sharing:</strong> Offer genuine value and insights</li>
             <li><strong>Success Stories:</strong> Share achievements without boasting</li>
             <li><strong>Challenge Solutions:</strong> Discuss how you've overcome business obstacles</li>
-            <li><strong>Industry Knowledge:</strong> Demonstrate understanding of both United Kingdom and Portuguese markets</li>
+            <li><strong>Industry Knowledge:</strong> Demonstrate understanding of both United Kingdom and Lusophone markets</li>
           </ul>
           
           <h4>3. Long-term Relationship Mindset</h4>
@@ -183,8 +183,8 @@ export default function BusinessNetworkingModule() {
           <h3>Conversation Starters for Professional Settings:</h3>
           <ul>
             <li>"What brought you from Portugal to London in your career?"</li>
-            <li>"How has your Portuguese background influenced your business approach?"</li>
-            <li>"What opportunities do you see in connecting United Kingdom and Portuguese markets?"</li>
+            <li>"How has your Lusophone background influenced your business approach?"</li>
+            <li>"What opportunities do you see in connecting United Kingdom and Lusophone markets?"</li>
             <li>"Which Portuguese business traditions do you maintain in London?"</li>
           </ul>
         `,
@@ -239,7 +239,7 @@ export default function BusinessNetworkingModule() {
                   "Pesquise 3 líderes empresariais portugueses em Londres",
               },
               {
-                text: "Practice professional introduction in both English and Portuguese",
+                text: "Practice professional introduction in both English and Lusophone",
                 textPortuguese:
                   "Pratique apresentação profissional em inglês e português",
               },
@@ -264,14 +264,14 @@ export default function BusinessNetworkingModule() {
       },
       {
         id: "networking-events-strategies",
-        title: "Mastering Portuguese Business Events",
+        title: "Mastering Lusophone Business Events",
         titlePortuguese: "Dominando Eventos Empresariais Portugueses",
         type: "tutorial",
         estimatedTime: 5,
         content: `
           <p>Portuguese business events blend professional networking with cultural celebration. Here's how to maximize your impact:</p>
           
-          <h3>Types of Portuguese Business Events:</h3>
+          <h3>Types of Lusophone Business Events:</h3>
           
           <h4>1. Chamber of Commerce Events</h4>
           <ul>
@@ -281,7 +281,7 @@ export default function BusinessNetworkingModule() {
             <li><strong>Strategy:</strong> Prepare industry-specific insights to share</li>
           </ul>
           
-          <h4>2. Portuguese Restaurant Business Dinners</h4>
+          <h4>2. Lusophone Restaurant Business Dinners</h4>
           <ul>
             <li><strong>Format:</strong> Intimate dinners with 8-12 professionals</li>
             <li><strong>Atmosphere:</strong> Relaxed but purposeful</li>
@@ -291,15 +291,15 @@ export default function BusinessNetworkingModule() {
           
           <h4>3. Industry-Specific Meetups</h4>
           <ul>
-            <li><strong>Tech Talks:</strong> Portuguese technology professionals</li>
+            <li><strong>Tech Talks:</strong> Lusophone technology professionals</li>
             <li><strong>Finance Forums:</strong> Banking and investment discussions</li>
-            <li><strong>Creative Showcases:</strong> Portuguese artists and designers</li>
+            <li><strong>Creative Showcases:</strong> Lusophone artists and designers</li>
             <li><strong>Strategy:</strong> Demonstrate expertise while learning from others</li>
           </ul>
           
           <h4>4. Cultural Events with Business Elements</h4>
           <ul>
-            <li><strong>Portuguese National Day celebrations</li>
+            <li><strong>Lusophone National Day celebrations</li>
             <li><strong>Fado nights with business networking</li>
             <li><strong>Portuguese wine tastings</li>
             <li><strong>Strategy:</strong> Balance cultural appreciation with professional goals</li>
@@ -312,7 +312,7 @@ export default function BusinessNetworkingModule() {
             <li>Research attendees and speakers in advance</li>
             <li>Prepare 3-4 conversation topics relevant to Portuguese business</li>
             <li>Set specific goals (e.g., meet 5 new people, learn about 2 industries)</li>
-            <li>Prepare business cards with both English and Portuguese contact details</li>
+            <li>Prepare business cards with both English and Lusophone contact details</li>
           </ul>
           
           <h4>During the Event:</h4>
@@ -413,7 +413,7 @@ export default function BusinessNetworkingModule() {
                   "Prepare o seu pitch de elevador de 30 segundos em ambos os idiomas",
               },
               {
-                text: "Design business cards with Portuguese cultural elements",
+                text: "Design business cards with Lusophone cultural elements",
                 textPortuguese:
                   "Desenhe cartões de visita com elementos culturais portugueses",
               },
@@ -426,8 +426,8 @@ export default function BusinessNetworkingModule() {
         },
         tips: [
           "Dress slightly more formally than expected - Portuguese business culture values presentation",
-          "Learn key business phrases in Portuguese even if the event is primarily in English",
-          "Bring small Portuguese gifts (like pastéis de nata) to memorable first meetings",
+          "Learn key business phrases in Lusophone even if the event is primarily in English",
+          "Bring small Lusophone gifts (like pastéis de nata) to memorable first meetings",
         ],
         tipsPortuguese: [
           "Vista-se ligeiramente mais formal do que esperado - a cultura empresarial portuguesa valoriza a apresentação",
@@ -437,7 +437,7 @@ export default function BusinessNetworkingModule() {
       },
       {
         id: "leveraging-cultural-heritage",
-        title: "Leveraging Your Portuguese Heritage in Business",
+        title: "Leveraging Your Lusophone Heritage in Business",
         titlePortuguese: "Aproveitando a Sua Herança Portuguesa nos Negócios",
         type: "interactive",
         estimatedTime: 5,
@@ -448,13 +448,13 @@ export default function BusinessNetworkingModule() {
           
           <h4>1. Language and Communication Advantages</h4>
           <ul>
-            <li><strong>Multilingual Skills:</strong> Portuguese, English, often Spanish</li>
+            <li><strong>Multilingual Skills:</strong> Lusophone, English, often Spanish</li>
             <li><strong>Global Market Access:</strong> 260+ million Portuguese speakers worldwide</li>
             <li><strong>Cultural Bridge:</strong> Understanding Latin and Southern European markets</li>
             <li><strong>Business Application:</strong> International partnerships, customer service, market expansion</li>
           </ul>
           
-          <h4>2. Portuguese Business Values</h4>
+          <h4>2. Lusophone Business Values</h4>
           <ul>
             <li><strong>Relationship-First Approach:</strong> Long-term partnerships over quick profits</li>
             <li><strong>Family Business Ethics:</strong> Loyalty, trust, and personal accountability</li>
@@ -464,11 +464,11 @@ export default function BusinessNetworkingModule() {
           
           <h4>3. Industry-Specific Opportunities</h4>
           <ul>
-            <li><strong>Tourism & Hospitality:</strong> Authentic Portuguese experiences in London</li>
+            <li><strong>Tourism & Hospitality:</strong> Authentic Lusophone experiences in London</li>
             <li><strong>Import/Export:</strong> Unique products from Portugal and Portuguese-speaking countries</li>
             <li><strong>Financial Services:</strong> Cross-border banking and investment</li>
             <li><strong>Technology:</strong> Bridge between European and Latin American markets</li>
-            <li><strong>Creative Industries:</strong> Portuguese design, arts, and media</li>
+            <li><strong>Creative Industries:</strong> Lusophone design, arts, and media</li>
           </ul>
           
           <h3>Practical Applications:</h3>
@@ -477,23 +477,23 @@ export default function BusinessNetworkingModule() {
           <ul>
             <li>Offer bilingual services and materials</li>
             <li>Understand cultural nuances in business communication</li>
-            <li>Provide insights into Portuguese and Latin markets</li>
+            <li>Provide insights into Lusophone and Latin markets</li>
             <li>Create authentic cultural experiences</li>
           </ul>
           
           <h4>In Team Building:</h4>
           <ul>
-            <li>Introduce Portuguese team-building concepts</li>
+            <li>Introduce Lusophone team-building concepts</li>
             <li>Share cross-cultural perspectives in problem-solving</li>
-            <li>Organize Portuguese-themed team events</li>
-            <li>Mentor other Portuguese professionals</li>
+            <li>Organize Lusophone-themed team events</li>
+            <li>Mentor other Lusophone professionals</li>
           </ul>
           
           <h4>In Business Development:</h4>
           <ul>
-            <li>Identify partnership opportunities with Portuguese companies</li>
+            <li>Identify partnership opportunities with Lusophone companies</li>
             <li>Develop products/services for Portuguese-speaking community needs</li>
-            <li>Create authentic marketing for Portuguese audiences</li>
+            <li>Create authentic marketing for Lusophone audiences</li>
             <li>Build bridges between British and Portuguese business practices</li>
           </ul>
           
@@ -574,7 +574,7 @@ export default function BusinessNetworkingModule() {
           data: {
             items: [
               {
-                text: "List your Portuguese cultural strengths and how they apply to business",
+                text: "List your Lusophone cultural strengths and how they apply to business",
                 textPortuguese:
                   "Liste as suas forças culturais portuguesas e como se aplicam aos negócios",
               },
@@ -584,12 +584,12 @@ export default function BusinessNetworkingModule() {
                   "Identifique potenciais parcerias empresariais portuguesas na sua indústria",
               },
               {
-                text: "Research Portuguese market opportunities for your business",
+                text: "Research Lusophone market opportunities for your business",
                 textPortuguese:
                   "Pesquise oportunidades de mercado português para o seu negócio",
               },
               {
-                text: "Plan ways to incorporate Portuguese elements into your professional brand",
+                text: "Plan ways to incorporate Lusophone elements into your professional brand",
                 textPortuguese:
                   "Planeie formas de incorporar elementos portugueses na sua marca profissional",
               },
@@ -598,7 +598,7 @@ export default function BusinessNetworkingModule() {
         },
         tips: [
           "Be proud but not overwhelming about your heritage - let it enhance rather than define your professional identity",
-          "Stay updated on Portuguese economic and cultural news to provide current insights",
+          "Stay updated on Lusophone economic and cultural news to provide current insights",
           "Consider obtaining dual citizenship if eligible for enhanced business opportunities",
         ],
         tipsPortuguese: [
@@ -614,9 +614,9 @@ export default function BusinessNetworkingModule() {
         type: "tutorial",
         estimatedTime: 5,
         content: `
-          <p>In today's hybrid business environment, digital networking is essential for maintaining and growing your Portuguese professional network.</p>
+          <p>In today's hybrid business environment, digital networking is essential for maintaining and growing your Lusophone professional network.</p>
           
-          <h3>Digital Platforms for Portuguese Business Networking:</h3>
+          <h3>Digital Platforms for Lusophone Business Networking:</h3>
           
           <h4>1. LinkedIn Strategy</h4>
           <ul>
@@ -625,13 +625,13 @@ export default function BusinessNetworkingModule() {
                 <li>Include Portuguese language skills</li>
                 <li>Mention Portuguese business experience</li>
                 <li>Use Portuguese flag in your location</li>
-                <li>Write summary in both English and Portuguese</li>
+                <li>Write summary in both English and Lusophone</li>
               </ul>
             </li>
             <li><strong>Content Strategy:</strong>
               <ul>
                 <li>Share insights about Portuguese business culture</li>
-                <li>Comment thoughtfully on Portuguese professionals' posts</li>
+                <li>Comment thoughtfully on Lusophone professionals' posts</li>
                 <li>Write articles about cross-cultural business</li>
                 <li>Share success stories from the Portuguese-speaking community</li>
               </ul>
@@ -640,25 +640,25 @@ export default function BusinessNetworkingModule() {
           
           <h4>2. WhatsApp Business Groups</h4>
           <ul>
-            <li><strong>Portuguese Business London groups</li>
-            <li><strong>Industry-specific Portuguese professional groups</li>
+            <li><strong>Lusophone Business London groups</li>
+            <li><strong>Industry-specific Lusophone professional groups</li>
             <li><strong>Chamber of Commerce communication channels</li>
             <li><strong>Best Practices:</strong>
               <ul>
                 <li>Contribute valuable content, not just promotions</li>
                 <li>Respect group rules and cultural norms</li>
-                <li>Use appropriate language (Portuguese vs English)</li>
+                <li>Use appropriate language (Lusophone vs English)</li>
                 <li>Network privately before posting business proposals</li>
               </ul>
             </li>
           </ul>
           
-          <h4>3. Portuguese Business Forums and Communities</h4>
+          <h4>3. Lusophone Business Forums and Communities</h4>
           <ul>
             <li><strong>LusoTown Business Network</li>
-            <li><strong>Portuguese Chamber of Commerce online platforms</li>
+            <li><strong>Lusophone Chamber of Commerce online platforms</li>
             <li><strong>Facebook business groups</li>
-            <li><strong>Discord servers for Portuguese entrepreneurs</li>
+            <li><strong>Discord servers for Lusophone entrepreneurs</li>
           </ul>
           
           <h3>Follow-Up Systems and Relationship Maintenance:</h3>
@@ -668,7 +668,7 @@ export default function BusinessNetworkingModule() {
             <li><strong>Immediate Follow-up Template:</strong>
               <br>Subject: Great meeting you at [Event Name] - [Your Name]
               <br>Message: Reference specific conversation point + offer value + suggest next step</li>
-            <li><strong>Portuguese Touch:</strong> Include a Portuguese greeting or cultural reference</li>
+            <li><strong>Lusophone Touch:</strong> Include a Lusophone greeting or cultural reference</li>
           </ul>
           
           <h4>2. Monthly Relationship Review</h4>
@@ -693,14 +693,14 @@ export default function BusinessNetworkingModule() {
             <li><strong>Cultural Events:</strong> Invite connections to Portuguese business events</li>
           </ul>
           
-          <h3>Digital Etiquette for Portuguese Professionals:</h3>
+          <h3>Digital Etiquette for Lusophone Professionals:</h3>
           
           <h4>Communication Style:</h4>
           <ul>
-            <li><strong>Warmth:</strong> Maintain Portuguese friendliness even in digital communication</li>
+            <li><strong>Warmth:</strong> Maintain Lusophone friendliness even in digital communication</li>
             <li><strong>Respect:</strong> Use appropriate titles and formal language initially</li>
             <li><strong>Personal Touch:</strong> Reference personal details from previous conversations</li>
-            <li><strong>Cultural Sensitivity:</strong> Be aware of Portuguese holidays and customs</li>
+            <li><strong>Cultural Sensitivity:</strong> Be aware of Lusophone holidays and customs</li>
           </ul>
           
           <h4>Response Timing:</h4>
@@ -738,7 +738,7 @@ export default function BusinessNetworkingModule() {
           
           <h4>2. Grupos WhatsApp Business</h4>
           <ul>
-            <li><strong>Grupos Portuguese Business London</li>
+            <li><strong>Grupos Lusophone Business London</li>
             <li><strong>Grupos profissionais portugueses específicos da indústria</li>
             <li><strong>Canais de comunicação da Câmara de Comércio</li>
             <li><strong>Melhores Práticas:</strong>
@@ -853,7 +853,7 @@ export default function BusinessNetworkingModule() {
     practicalExercises: [],
     resources: [
       {
-        title: "Portuguese Chamber of Commerce United Kingdom Events",
+        title: "Lusophone Chamber of Commerce United Kingdom Events",
         titlePortuguese: "Eventos da Câmara de Comércio Portuguesa Reino Unido",
         url: "/business-networking/chamber-events",
         type: "external",
@@ -865,7 +865,7 @@ export default function BusinessNetworkingModule() {
         type: "download",
       },
       {
-        title: "Portuguese Business Etiquette Guide",
+        title: "Lusophone Business Etiquette Guide",
         titlePortuguese: "Guia de Etiqueta Empresarial Portuguesa",
         url: "/guides/portuguese-business-etiquette",
         type: "guide",

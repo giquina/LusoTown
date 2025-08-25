@@ -3,7 +3,7 @@
  * Advanced Business Intelligence System for Portuguese-speaking community Platform
  * 
  * Provides market analysis, revenue optimization, and growth insights
- * specifically tailored for the Portuguese diaspora in the United Kingdom.
+ * specifically tailored for the Lusophone diaspora in the United Kingdom.
  */
 
 import { predictiveCommunityAnalytics } from '@/lib/ai/PredictiveCommunityAnalytics'
@@ -183,7 +183,7 @@ export class PortugueseBusinessIntelligence {
   }
 
   /**
-   * Analyze Portuguese market segments in the United Kingdom
+   * Analyze Lusophone market segments in the United Kingdom
    */
   public async analyzePortugueseMarket(): Promise<PortugueseMarketInsights> {
     const marketData = this.getPortugueseMarketData()
@@ -211,7 +211,7 @@ export class PortugueseBusinessIntelligence {
     opportunities.push({
       id: 'portuguese-eldercare',
       type: 'service',
-      title: 'Portuguese Eldercare Services',
+      title: 'Lusophone Eldercare Services',
       description: 'Home care services with Portuguese-speaking caregivers for elderly community members',
       marketSize: 450,
       revenueProjection: 180000,
@@ -247,8 +247,8 @@ export class PortugueseBusinessIntelligence {
     opportunities.push({
       id: 'portuguese-business-network',
       type: 'partnership',
-      title: 'Portuguese Business Acceleration Network',
-      description: 'Partnership with Portuguese Chamber of Commerce for business mentoring',
+      title: 'Lusophone Business Acceleration Network',
+      description: 'Partnership with Lusophone Chamber of Commerce for business mentoring',
       marketSize: 150,
       revenueProjection: 72000,
       investmentRequired: 8000,
@@ -320,7 +320,7 @@ export class PortugueseBusinessIntelligence {
         currentPrice: 15,
         recommendedPrice: 18,
         priceElasticity: -0.6,
-        culturalJustification: 'Portuguese families value quality services and are willing to pay for cultural authenticity',
+        culturalJustification: 'Lusophone families value quality services and are willing to pay for cultural authenticity',
         expectedImpact: {
           conversionChange: -8,
           revenueChange: 12,
@@ -332,7 +332,7 @@ export class PortugueseBusinessIntelligence {
         currentPrice: 35,
         recommendedPrice: 42,
         priceElasticity: -0.4,
-        culturalJustification: 'Premium Portuguese cultural experiences command higher prices due to authenticity and exclusivity',
+        culturalJustification: 'Premium Lusophone cultural experiences command higher prices due to authenticity and exclusivity',
         expectedImpact: {
           conversionChange: -5,
           revenueChange: 18,
@@ -344,7 +344,7 @@ export class PortugueseBusinessIntelligence {
         currentPrice: 25,
         recommendedPrice: 28,
         priceElasticity: -0.3,
-        culturalJustification: 'Portuguese families prioritize children\'s cultural education and family bonding experiences',
+        culturalJustification: 'Lusophone families prioritize children\'s cultural education and family bonding experiences',
         expectedImpact: {
           conversionChange: -3,
           revenueChange: 9,
@@ -355,7 +355,7 @@ export class PortugueseBusinessIntelligence {
   }
 
   /**
-   * Identify Portuguese-specific churn reduction strategies
+   * Identify Lusophone-specific churn reduction strategies
    */
   public analyzeChurnReduction(): ChurnReductionStrategy[] {
     return [
@@ -378,7 +378,7 @@ export class PortugueseBusinessIntelligence {
         roi: 380
       },
       {
-        strategy: 'Professional Portuguese Network',
+        strategy: 'Professional Lusophone Network',
         targetSegment: 'Young professionals',
         culturalContext: 'Career advancement while maintaining cultural identity',
         implementation: 'Industry-specific networking, mentorship programs, cultural leadership training',
@@ -390,7 +390,7 @@ export class PortugueseBusinessIntelligence {
   }
 
   /**
-   * Identify upsell opportunities based on Portuguese cultural behavior
+   * Identify upsell opportunities based on Lusophone cultural behavior
    */
   public analyzeUpsellOpportunities(): UpsellOpportunity[] {
     return [
@@ -414,7 +414,7 @@ export class PortugueseBusinessIntelligence {
         currentTier: 'Core',
         targetTier: 'Family',
         triggerEvents: ['Has children', 'Language preservation interest', 'Multi-generational events'],
-        culturalMotivation: 'Children\'s Portuguese cultural education and family bonding',
+        culturalMotivation: 'Children\'s Lusophone cultural education and family bonding',
         conversionProbability: 42,
         additionalRevenue: 10
       }
@@ -422,14 +422,14 @@ export class PortugueseBusinessIntelligence {
   }
 
   /**
-   * Analyze market expansion opportunities in Portuguese communities
+   * Analyze market expansion opportunities in Lusophone communities
    */
   public analyzeMarketExpansion(): MarketExpansionStrategy[] {
     return [
       {
         targetArea: 'Manchester Portuguese-speaking community',
         marketSize: 1200,
-        competitiveAnalysis: 'Limited Portuguese-specific services, strong community presence',
+        competitiveAnalysis: 'Limited Lusophone-specific services, strong community presence',
         culturalFactors: ['Large Madeira community', 'Strong cultural associations', 'Family-oriented'],
         investmentRequired: 25000,
         projectedRevenue: 144000,
@@ -457,7 +457,7 @@ export class PortugueseBusinessIntelligence {
   }
 
   /**
-   * Generate location-specific business intelligence for Portuguese areas
+   * Generate location-specific business intelligence for Lusophone areas
    */
   public async analyzePortugueseAreas(): Promise<PortugueseArea[]> {
     return [
@@ -472,7 +472,7 @@ export class PortugueseBusinessIntelligence {
         averageIncome: 45000
       },
       {
-        name: 'Vauxhall Portuguese Quarter',
+        name: 'Vauxhall Lusophone Quarter',
         borough: 'Lambeth',
         coordinates: { lat: 51.4861, lon: -0.1253 },
         portuguesePopulation: 2800,
@@ -534,7 +534,7 @@ export class PortugueseBusinessIntelligence {
         period: 'Christmas Season (December)',
         demandMultiplier: 1.8,
         popularServices: ['Traditional food services', 'Family reunions', 'Cultural gift experiences'],
-        culturalEvents: ['Portuguese Christmas traditions', 'Family gatherings'],
+        culturalEvents: ['Lusophone Christmas traditions', 'Family gatherings'],
         marketingOpportunities: ['Traditional celebrations', 'Family togetherness']
       }
     ]
@@ -560,7 +560,7 @@ export class PortugueseBusinessIntelligence {
   private performCompetitiveAnalysis(): CompetitorAnalysis[] {
     return [
       {
-        competitor: 'Local Portuguese Restaurants',
+        competitor: 'Local Lusophone Restaurants',
         type: 'indirect',
         strengths: ['Authentic food', 'Cultural atmosphere', 'Community gathering places'],
         weaknesses: ['Limited services', 'No digital platform', 'Location constraints'],
@@ -569,7 +569,7 @@ export class PortugueseBusinessIntelligence {
         differentiationOpportunities: ['Digital community platform', 'Broader service offering', 'Event integration']
       },
       {
-        competitor: 'Portuguese Cultural Associations',
+        competitor: 'Lusophone Cultural Associations',
         type: 'indirect',
         strengths: ['Strong cultural focus', 'Community trust', 'Traditional events'],
         weaknesses: ['Limited technology', 'Aging membership', 'Narrow focus'],

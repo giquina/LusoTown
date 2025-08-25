@@ -106,7 +106,7 @@ export default function WelcomePopup() {
               <h2 className="text-xl font-bold text-gray-900 mb-2">
                 {t(
                   "welcome.find_your_community",
-                  "Find your Portuguese community in the UK"
+                  "Find your Lusophone community in the UK"
                 )}
               </h2>
               <p className="text-sm text-gray-600">

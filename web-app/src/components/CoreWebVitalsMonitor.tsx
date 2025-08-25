@@ -38,7 +38,7 @@ const THRESHOLDS: PerformanceThresholds = {
   ttfb: { good: 800, needsImprovement: 1800 },
 };
 
-// Portuguese-specific performance context
+// Lusophone-specific performance context
 const PORTUGUESE_PERFORMANCE_CONTEXT = {
   criticalPages: ['/events', '/community', '/matches', '/business-directory'],
   culturalContent: ['portuguese-events', 'cultural-calendar', 'community-feed'],
@@ -304,7 +304,7 @@ export default function CoreWebVitalsMonitor({
       newRecommendations.push(
         language === 'pt' 
           ? 'Otimizar carregamento de conteúdo português inicial'
-          : 'Optimize initial Portuguese content loading'
+          : 'Optimize initial Lusophone content loading'
       );
     }
 
@@ -320,7 +320,7 @@ export default function CoreWebVitalsMonitor({
       newRecommendations.push(
         language === 'pt'
           ? 'Estabilizar layout dos eventos portugueses'
-          : 'Stabilize Portuguese events layout'
+          : 'Stabilize Lusophone events layout'
       );
     }
 

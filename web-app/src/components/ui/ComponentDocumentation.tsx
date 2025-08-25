@@ -112,7 +112,7 @@ export default function ComponentDocumentation() {
   const examples: CodeExampleProps[] = [
     {
       title: "Luxury Card with Heritage Variant",
-      description: "Premium card design with Portuguese cultural elements and glassmorphism effects",
+      description: "Premium card design with Lusophone cultural elements and glassmorphism effects",
       category: "Cards",
       code: `<LuxuryCard variant="heritage" elevation="xl" className="p-8">
   <div className="text-center">
@@ -154,7 +154,7 @@ export default function ComponentDocumentation() {
       )
     },
     {
-      title: "Elite Button with Portuguese Style",
+      title: "Elite Button with Lusophone Style",
       description: "Sophisticated button with Portuguese flag colors and luxury interactions",
       category: "Buttons",
       code: `<EliteButton 
@@ -216,7 +216,7 @@ export default function ComponentDocumentation() {
       )
     },
     {
-      title: "Portuguese Heritage Typography",
+      title: "Lusophone Heritage Typography",
       description: "Gradient text with Portuguese flag colors and luxury typography",
       category: "Typography",
       code: `<LuxuryHeading 
@@ -249,11 +249,11 @@ export default function ComponentDocumentation() {
     },
     {
       title: "Premium Badge Collection",
-      description: "Sophisticated badges with Portuguese cultural variants",
+      description: "Sophisticated badges with Lusophone cultural variants",
       category: "Components",
       code: `<div className="flex flex-wrap gap-3">
   <LuxuryBadge variant="portuguese" size="lg">
-    Portuguese Heritage
+    Lusophone Heritage
   </LuxuryBadge>
   <LuxuryBadge variant="premium" size="lg">
     Premium Member
@@ -265,7 +265,7 @@ export default function ComponentDocumentation() {
       preview: (
         <div className="flex flex-wrap gap-3 justify-center">
           <LuxuryBadge variant="portuguese" size="lg">
-            Portuguese Heritage
+            Lusophone Heritage
           </LuxuryBadge>
           <LuxuryBadge variant="premium" size="lg">
             Premium Member

@@ -120,7 +120,7 @@ const mockActivities: CommunityActivity[] = [
     id: '1',
     type: 'member_joined',
     title: { 
-      en: 'Found Portuguese Speaking Driver', 
+      en: 'Found Lusophone Speaking Driver', 
       pt: 'Encontrou Motorista que Fala Português' 
     },
     description: { 
@@ -154,7 +154,7 @@ const mockActivities: CommunityActivity[] = [
     },
     actor: {
       name: 'Miguel & Sofia',
-      location: 'Vauxhall Portuguese Centre',
+      location: 'Vauxhall Lusophone Centre',
       region: 'Porto & Lisboa',
       flag: '🇵🇹'
     },
@@ -174,7 +174,7 @@ const mockActivities: CommunityActivity[] = [
       pt: 'LusoTown TV: Sucesso de Networking Empresarial' 
     },
     description: { 
-      en: 'Carlos started his Portuguese catering business after meeting investors on LusoTown TV livestream', 
+      en: 'Carlos started his Lusophone catering business after meeting investors on LusoTown TV livestream', 
       pt: 'Carlos começou o seu negócio de catering português depois de conhecer investidores no livestream LusoTown TV' 
     },
     actor: {
@@ -317,7 +317,7 @@ const PortugueseCommunityActivity: React.FC = () => {
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               {language === "pt" 
                 ? "Nossa comunidade prioriza a autenticidade e sensibilidade cultural portuguesa"
-                : "Our community prioritizes authenticity and Portuguese cultural sensitivity"}
+                : "Our community prioritizes authenticity and Lusophone cultural sensitivity"}
             </p>
           </div>
 

@@ -87,7 +87,7 @@ export default function SmartNavigation({
   const pulseY = useMotionValue(0)
   const springConfig = { stiffness: 400, damping: 30 }
 
-  // Elite Portuguese cultural suggestions with AI-powered recommendations
+  // Elite Lusophone cultural suggestions with AI-powered recommendations
   useEffect(() => {
     const generateEliteSuggestions = () => {
       const relatedPages = getRelatedPages(state.currentPath)
@@ -162,7 +162,7 @@ export default function SmartNavigation({
         }
       })
 
-      // Add elite Portuguese cultural recommendations
+      // Add elite Lusophone cultural recommendations
       const eliteRecommendations = getEliteRecommendations(state.currentPath)
       eliteRecommendations.forEach(rec => {
         suggestions.push({
@@ -206,7 +206,7 @@ export default function SmartNavigation({
         })
       }
 
-      // Sort by cultural relevance and urgency for Portuguese users
+      // Sort by cultural relevance and urgency for Lusophone users
       return suggestions
         .sort((a, b) => {
           if (language === 'pt') {
@@ -223,14 +223,14 @@ export default function SmartNavigation({
     setSuggestions(generateEliteSuggestions())
   }, [state.currentPath, state.favoritePages, maxSuggestions, language])
 
-  // Elite Portuguese cultural context functions
+  // Elite Lusophone cultural context functions
   const getCulturalSuggestions = (currentPath: string): NavigationSuggestion[] => {
     const culturalMap: Record<string, NavigationSuggestion[]> = {
       '/': [
         {
           path: ROUTES.events,
-          title: t('nav.portuguese-events', 'Portuguese Events'),
-          description: t('nav.portuguese-events-desc', 'Authentic Portuguese cultural celebrations'),
+          title: t('nav.portuguese-events', 'Lusophone Events'),
+          description: t('nav.portuguese-events-desc', 'Authentic Lusophone cultural celebrations'),
           category: 'cultural',
           icon: <GlobeEuropeAfricaIcon className="w-4 h-4" />,
           urgency: 'high',
@@ -240,7 +240,7 @@ export default function SmartNavigation({
       '/events': [
         {
           path: ROUTES.londonTours,
-          title: t('nav.portuguese-tours', 'Portuguese Heritage Tours'),
+          title: t('nav.portuguese-tours', 'Lusophone Heritage Tours'),
           description: t('nav.portuguese-tours-desc', 'Discover Portuguese history in London'),
           category: 'heritage',
           icon: <TrophyIcon className="w-4 h-4" />,
@@ -260,7 +260,7 @@ export default function SmartNavigation({
       '/community': [
         {
           path: ROUTES.businessNetworking,
-          title: t('nav.elite-networking', 'Elite Portuguese Network'),
+          title: t('nav.elite-networking', 'Elite Lusophone Network'),
           description: t('nav.elite-networking-desc', 'Connect with Portuguese business leaders'),
           category: 'elite',
           icon: <DiamondIcon className="w-4 h-4" />,
@@ -320,14 +320,14 @@ export default function SmartNavigation({
     const descriptions: Record<string, string> = {
       [ROUTES.events]: t('nav.events-desc', 'Portuguese-speaking community events in London'),
       [ROUTES.community]: t('nav.community-desc', 'Connect with Portuguese speakers'),
-      [ROUTES.services]: t('nav.services-desc', 'Exclusive Portuguese services'),
+      [ROUTES.services]: t('nav.services-desc', 'Exclusive Lusophone services'),
       [ROUTES.transport]: t('nav.transport-desc', 'Portuguese-speaking drivers'),
-      [ROUTES.londonTours]: t('nav.tours-desc', 'Portuguese-guided London tours'),
-      [ROUTES.businessNetworking]: t('nav.networking-desc', 'Professional Portuguese network'),
+      [ROUTES.londonTours]: t('nav.tours-desc', 'Lusophone-guided London tours'),
+      [ROUTES.businessNetworking]: t('nav.networking-desc', 'Professional Lusophone network'),
       [ROUTES.matches]: t('nav.matches-desc', 'Find compatible Portuguese speakers'),
-      [ROUTES.tv]: t('nav.tv-desc', 'Portuguese content and shows'),
-      [ROUTES.live]: t('nav.live-desc', 'Monetize your Portuguese content'),
-      [ROUTES.students]: t('nav.students-desc', 'Portuguese students in United Kingdom'),
+      [ROUTES.tv]: t('nav.tv-desc', 'Lusophone content and shows'),
+      [ROUTES.live]: t('nav.live-desc', 'Monetize your Lusophone content'),
+      [ROUTES.students]: t('nav.students-desc', 'Lusophone students in United Kingdom'),
       [ROUTES.pricing]: t('nav.pricing-desc', 'Membership plans')
     }
     return descriptions[path] || 'Explore this page'
@@ -341,9 +341,9 @@ export default function SmartNavigation({
       '/transport': <span className="text-blue-600" title="Luxury Transport">{CULTURAL_SYMBOLS.ship}</span>,
       '/london-tours': <span className="text-amber-600" title="Heritage Tours">{CULTURAL_SYMBOLS.castle}</span>,
       '/matches': <span className="text-red-500" title="Cultural Matches">{CULTURAL_SYMBOLS.heart}</span>,
-      '/tv': <span className="text-purple-600" title="Portuguese Content">{CULTURAL_SYMBOLS.music}</span>,
+      '/tv': <span className="text-purple-600" title="Lusophone Content">{CULTURAL_SYMBOLS.music}</span>,
       '/live': <span className="text-green-600" title="Streaming Income">{CULTURAL_SYMBOLS.star}</span>,
-      '/students': <span className="text-blue-600" title="Portuguese Students">{CULTURAL_SYMBOLS.anchor}</span>,
+      '/students': <span className="text-blue-600" title="Lusophone Students">{CULTURAL_SYMBOLS.anchor}</span>,
       '/business-networking': <span className="text-amber-600" title="Business Network">{CULTURAL_SYMBOLS.crown}</span>
     }
     
@@ -362,7 +362,7 @@ export default function SmartNavigation({
     // Enhanced voice announcements with cultural context
     if (enableVoiceAnnouncements) {
       const culturalContext = suggestion.metadata?.cultural ? 
-        (language === 'pt' ? ' - conteúdo cultural português' : ' - Portuguese cultural content') : ''
+        (language === 'pt' ? ' - conteúdo cultural português' : ' - Lusophone cultural content') : ''
       const eliteContext = suggestion.eliteFeature ? 
         (language === 'pt' ? ' - experiência premium' : ' - premium experience') : ''
       
@@ -535,7 +535,7 @@ export default function SmartNavigation({
       animate={{ opacity: 1, x: 0, scale: 1 }}
       transition={{ delay: 2, duration: 0.8, type: "spring", stiffness: 200 }}
       role="complementary"
-      aria-label={t('navigation.elite-suggestions-widget', 'Elite Portuguese navigation suggestions')}
+      aria-label={t('navigation.elite-suggestions-widget', 'Elite Lusophone navigation suggestions')}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
@@ -562,7 +562,7 @@ export default function SmartNavigation({
           } : {})
         }}
       >
-        {/* Portuguese Heritage Accent Line */}
+        {/* Lusophone Heritage Accent Line */}
         <motion.div
           className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-amber-400 to-green-600"
           initial={{ scaleX: 0 }}

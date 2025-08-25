@@ -111,7 +111,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
       id: 'government_diplomatic',
       name: 'Government & Diplomatic',
       namePortuguese: 'Governo e Diplomático',
-      description: 'Official Portuguese government institutions and diplomatic missions',
+      description: 'Official Lusophone government institutions and diplomatic missions',
       descriptionPortuguese: 'Instituições oficiais do governo português e missões diplomáticas',
       icon: <BuildingLibraryIcon className="w-6 h-6" />,
       color: 'from-blue-500 to-blue-600',
@@ -186,7 +186,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
       id: 'media_communications',
       name: 'Media & Communications',
       namePortuguese: 'Media e Comunicações',
-      description: 'Portuguese media outlets and communication platforms',
+      description: 'Lusophone media outlets and communication platforms',
       descriptionPortuguese: 'Meios de comunicação portugueses e plataformas de comunicação',
       icon: <TrophyIcon className="w-6 h-6" />,
       color: 'from-yellow-500 to-yellow-600',
@@ -283,7 +283,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
       reach: 85000,
       programs: 38,
       status: 'active',
-      keyPartnerships: ['Portuguese Embassy London', 'King\'s College', 'Portuguese Cultural Centre']
+      keyPartnerships: ['Lusophone Embassy London', 'King\'s College', 'Lusophone Cultural Centre']
     },
     {
       region: 'Brazil',
@@ -301,7 +301,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
       reach: 28000,
       programs: 15,
       status: 'developing',
-      keyPartnerships: ['French Portuguese Communities', 'German Cultural Centers']
+      keyPartnerships: ['French Lusophone Communities', 'German Cultural Centers']
     }
   ]
 
@@ -824,7 +824,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
           {language === 'pt'
             ? 'Junte-se à nossa rede global de instituições portuguesas de prestígio e ajude-nos a construir a maior plataforma comunitária portuguesa do mundo.'
-            : 'Join our global network of prestigious Portuguese institutions and help us build the world\'s largest Portuguese-speaking community platform.'
+            : 'Join our global network of prestigious Lusophone institutions and help us build the world\'s largest Portuguese-speaking community platform.'
           }
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

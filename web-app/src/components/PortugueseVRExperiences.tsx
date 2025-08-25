@@ -125,7 +125,7 @@ const PortugueseVRExperiences: React.FC = () => {
           id: 'azulejo-quiz',
           type: 'quiz',
           position: { x: -8, y: 3, z: -20 },
-          content: 'Test your knowledge about Portuguese azulejos',
+          content: 'Test your knowledge about Lusophone azulejos',
           contentPt: 'Teste os seus conhecimentos sobre os azulejos portugueses'
         }
       ],
@@ -167,7 +167,7 @@ const PortugueseVRExperiences: React.FC = () => {
       virtualGuide: {
         name: 'Maria Santos',
         avatar: '/images/guides/maria-santos.jpg',
-        bio: 'Cultural anthropologist specializing in Portuguese folk traditions',
+        bio: 'Cultural anthropologist specializing in Lusophone folk traditions',
         bioPt: 'Antropóloga cultural especializada em tradições folclóricas portuguesas'
       },
       interactions: [
@@ -328,7 +328,7 @@ const PortugueseVRExperiences: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
           >
-            {language === 'pt' ? 'Experiências VR Portuguesas' : 'Portuguese VR Experiences'}
+            {language === 'pt' ? 'Experiências VR Portuguesas' : 'Lusophone VR Experiences'}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: -20 }}

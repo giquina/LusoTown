@@ -88,7 +88,7 @@ export default function CrossPlatformNavigationWidget({
         return [
           {
             id: 'transport-to-events',
-            title: isPortuguese ? 'Eventos Portugueses' : 'Portuguese Events',
+            title: isPortuguese ? 'Eventos Portugueses' : 'Lusophone Events',
             description: isPortuguese ? 'Encontre eventos para ir com seu transporte' : 'Find events to go to with your transport',
             action: ROUTES.events,
             icon: CalendarDaysIcon,
@@ -97,7 +97,7 @@ export default function CrossPlatformNavigationWidget({
           },
           {
             id: 'transport-to-networking',
-            title: isPortuguese ? 'Rede Portuguesa' : 'Portuguese Network',
+            title: isPortuguese ? 'Rede Portuguesa' : 'Lusophone Network',
             description: isPortuguese ? 'Conecte-se com outros que usam transporte' : 'Connect with others who use transport',
             action: ROUTES.myNetwork,
             icon: UserGroupIcon,

@@ -1,6 +1,6 @@
 /**
  * Progressive Multi-Step Signup Form
- * Enhanced Portuguese community signup with dual-audience targeting
+ * Enhanced Lusophone community signup with dual-audience targeting
  */
 
 "use client"
@@ -51,7 +51,7 @@ const PRIMARY_INTERESTS_OPTIONS: { value: PrimaryInterest; label: string; labelP
     label: 'Business Networking',
     labelPt: 'Networking de Negócios',
     icon: BriefcaseIcon,
-    description: 'Connect with Portuguese entrepreneurs and professionals'
+    description: 'Connect with Lusophone entrepreneurs and professionals'
   },
   {
     value: 'dating-romance',
@@ -65,28 +65,28 @@ const PRIMARY_INTERESTS_OPTIONS: { value: PrimaryInterest; label: string; labelP
     label: 'Cultural Events',
     labelPt: 'Eventos Culturais',
     icon: SparklesIcon,
-    description: 'Experience authentic Portuguese cultural experiences'
+    description: 'Experience authentic Lusophone cultural experiences'
   },
   {
     value: 'professional-development',
     label: 'Professional Development',
     labelPt: 'Desenvolvimento Profissional',
     icon: UserIcon,
-    description: 'Advance your career through Portuguese connections'
+    description: 'Advance your career through Lusophone connections'
   },
   {
     value: 'friendship-social',
     label: 'Friendship & Social',
     labelPt: 'Amizade e Social',
     icon: UserIcon,
-    description: 'Build lasting friendships in the Portuguese community'
+    description: 'Build lasting friendships in the Lusophone community'
   },
   {
     value: 'dance-cultural-arts',
     label: 'Dance & Cultural Arts',
     labelPt: 'Dança e Artes Culturais',
     icon: SparklesIcon,
-    description: 'Explore Portuguese dance, music, and artistic traditions'
+    description: 'Explore Lusophone dance, music, and artistic traditions'
   },
   {
     value: 'food-cultural-experiences',
@@ -171,7 +171,7 @@ export default function ProgressiveSignupForm({
 
       case 'cultural-background':
         if (!formData.portugueseOrigin.country) {
-          newErrors.portugueseOrigin = t('validation.portuguese-origin-required', 'Please select your Portuguese origin')
+          newErrors.portugueseOrigin = t('validation.portuguese-origin-required', 'Please select your Lusophone origin')
         }
         if (!formData.ukLocation) {
           newErrors.ukLocation = t('validation.uk-location-required', 'Please select your UK location')
@@ -355,7 +355,7 @@ export default function ProgressiveSignupForm({
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {[
                   { value: 'en', label: '🇬🇧 English', description: 'I prefer events in English' },
-                  { value: 'pt', label: '🇵🇹 Português', description: 'I prefer events in Portuguese' },
+                  { value: 'pt', label: '🇵🇹 Português', description: 'I prefer events in Lusophone' },
                   { value: 'both', label: '🌍 Both', description: 'I\'m comfortable with both languages' }
                 ].map((option) => (
                   <button
@@ -489,7 +489,7 @@ export default function ProgressiveSignupForm({
                   className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                 />
                 <label htmlFor="eventNotifications" className="ml-3 text-sm text-gray-700">
-                  {t('signup.event-notifications', 'Receive notifications about Portuguese cultural events')}
+                  {t('signup.event-notifications', 'Receive notifications about Lusophone cultural events')}
                 </label>
               </div>
 

@@ -28,18 +28,18 @@ const CulturalGallery: React.FC = () => {
   const [items, setItems] = useState<CulturalItem[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Mock Portuguese cultural gallery items
+  // Mock Lusophone cultural gallery items
   useEffect(() => {
     const mockItems: CulturalItem[] = [
       {
         id: '1',
         title: 'Azulejo Tiles at Benfica',
         titlePt: 'Azulejos do Benfica',
-        description: 'Traditional Portuguese ceramic tiles celebrating football culture',
+        description: 'Traditional Lusophone ceramic tiles celebrating football culture',
         descriptionPt: 'Azulejos tradicionais portugueses celebrando a cultura do futebol',
         image: '/images/cultural/azulejos-benfica.jpg',
         category: 'architecture',
-        location: 'Portuguese Club, London',
+        location: 'Lusophone Club, London',
         likes: 124,
         views: 2430,
         isLiked: false,
@@ -50,7 +50,7 @@ const CulturalGallery: React.FC = () => {
         id: '2',
         title: 'Fado Performance',
         titlePt: 'Espetáculo de Fado',
-        description: 'Soulful Fado music performance in traditional Portuguese style',
+        description: 'Soulful Fado music performance in traditional Lusophone style',
         descriptionPt: 'Espetáculo de Fado tradicional português com toda a alma',
         image: '/images/cultural/fado-performance.jpg',
         category: 'music',
@@ -65,7 +65,7 @@ const CulturalGallery: React.FC = () => {
         id: '3',
         title: 'Pastéis de Nata Workshop',
         titlePt: 'Workshop de Pastéis de Nata',
-        description: 'Traditional Portuguese custard tarts making workshop',
+        description: 'Traditional Lusophone custard tarts making workshop',
         descriptionPt: 'Workshop tradicional de confeção de pastéis de nata',
         image: '/images/cultural/pasteis-nata.jpg',
         category: 'food',
@@ -80,7 +80,7 @@ const CulturalGallery: React.FC = () => {
         id: '4',
         title: 'Santos Populares Festival',
         titlePt: 'Festival dos Santos Populares',
-        description: 'Traditional Portuguese street festival celebration',
+        description: 'Traditional Lusophone street festival celebration',
         descriptionPt: 'Celebração tradicional do festival de rua português',
         image: '/images/cultural/santos-populares.jpg',
         category: 'festival',
@@ -154,13 +154,13 @@ const CulturalGallery: React.FC = () => {
         <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-100 via-white to-red-100 border border-green-200 rounded-full px-6 py-3 mb-4">
           <span className="text-2xl">🇵🇹</span>
           <span className="font-bold text-gray-800">
-            {t('gallery.title', 'Portuguese Cultural Gallery')}
+            {t('gallery.title', 'Lusophone Cultural Gallery')}
           </span>
           <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
         </div>
         
         <h2 className="text-3xl font-black text-gray-900 mb-2">
-          {t('gallery.subtitle', 'Discover Portuguese Culture in London')}
+          {t('gallery.subtitle', 'Discover Lusophone Culture in London')}
         </h2>
         
         <p className="text-gray-600">
@@ -267,7 +267,7 @@ const CulturalGallery: React.FC = () => {
       {/* Footer */}
       <div className="mt-12 text-center">
         <button className="bg-gradient-to-r from-green-600 to-red-600 text-white font-bold px-8 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-          {t('gallery.upload', 'Share Your Portuguese Culture')}
+          {t('gallery.upload', 'Share Your Lusophone Culture')}
         </button>
       </div>
     </div>

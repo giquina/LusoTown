@@ -102,7 +102,7 @@ interface VerificationResults {
 const CULTURAL_CATEGORIES: CulturalCategory[] = [
   {
     id: 'heritage',
-    name: 'Portuguese Heritage',
+    name: 'Lusophone Heritage',
     namePortuguese: 'Herança Portuguesa',
     confidence: 0,
     color: 'emerald',
@@ -110,7 +110,7 @@ const CULTURAL_CATEGORIES: CulturalCategory[] = [
   },
   {
     id: 'events',
-    name: 'Portuguese Events',
+    name: 'Lusophone Events',
     namePortuguese: 'Eventos Portugueses',
     confidence: 0,
     color: 'blue',
@@ -118,7 +118,7 @@ const CULTURAL_CATEGORIES: CulturalCategory[] = [
   },
   {
     id: 'cuisine',
-    name: 'Portuguese Cuisine',
+    name: 'Lusophone Cuisine',
     namePortuguese: 'Culinária Portuguesa',
     confidence: 0,
     color: 'orange',
@@ -126,7 +126,7 @@ const CULTURAL_CATEGORIES: CulturalCategory[] = [
   },
   {
     id: 'locations',
-    name: 'Portuguese Locations',
+    name: 'Lusophone Locations',
     namePortuguese: 'Locais Portugueses',
     confidence: 0,
     color: 'purple',
@@ -142,7 +142,7 @@ const CULTURAL_CATEGORIES: CulturalCategory[] = [
   },
   {
     id: 'traditions',
-    name: 'Portuguese Traditions',
+    name: 'Lusophone Traditions',
     namePortuguese: 'Tradições Portuguesas',
     confidence: 0,
     color: 'indigo',
@@ -155,7 +155,7 @@ const VERIFICATION_BADGES: VerificationBadge[] = [
     id: 'heritage_verified',
     name: 'Heritage Verified',
     namePortuguese: 'Herança Verificada',
-    description: 'Verified Portuguese cultural heritage through authentic photos',
+    description: 'Verified Lusophone cultural heritage through authentic photos',
     descriptionPortuguese: 'Herança cultural portuguesa verificada através de fotos autênticas',
     icon: '🛡️',
     color: 'emerald',
@@ -167,12 +167,12 @@ const VERIFICATION_BADGES: VerificationBadge[] = [
     id: 'event_verified',
     name: 'Event Verified',
     namePortuguese: 'Evento Verificado',
-    description: 'Confirmed attendance at Portuguese cultural events',
+    description: 'Confirmed attendance at Lusophone cultural events',
     descriptionPortuguese: 'Participação confirmada em eventos culturais portugueses',
     icon: '🎪',
     color: 'blue',
     rarity: 'common',
-    requirements: ['Event photos with timestamps', 'Recognized Portuguese events'],
+    requirements: ['Event photos with timestamps', 'Recognized Lusophone events'],
     achievedAt: ''
   },
   {
@@ -184,7 +184,7 @@ const VERIFICATION_BADGES: VerificationBadge[] = [
     icon: '👑',
     color: 'pink',
     rarity: 'rare',
-    requirements: ['Community event participation', 'Portuguese social activities'],
+    requirements: ['Community event participation', 'Lusophone social activities'],
     achievedAt: ''
   },
   {
@@ -196,7 +196,7 @@ const VERIFICATION_BADGES: VerificationBadge[] = [
     icon: '🏆',
     color: 'indigo',
     rarity: 'epic',
-    requirements: ['Traditional Portuguese elements', 'Cultural knowledge demonstration'],
+    requirements: ['Traditional Lusophone elements', 'Cultural knowledge demonstration'],
     achievedAt: ''
   },
   {
@@ -215,7 +215,7 @@ const VERIFICATION_BADGES: VerificationBadge[] = [
     id: 'fado_lover',
     name: 'Fado Lover',
     namePortuguese: 'Amante do Fado',
-    description: 'Deep appreciation for Portuguese Fado music',
+    description: 'Deep appreciation for Lusophone Fado music',
     descriptionPortuguese: 'Apreço profundo pela música Fado portuguesa',
     icon: '🎵',
     color: 'slate',
@@ -227,7 +227,7 @@ const VERIFICATION_BADGES: VerificationBadge[] = [
     id: 'santos_populares_champion',
     name: 'Santos Populares Champion',
     namePortuguese: 'Campeão dos Santos Populares',
-    description: 'Celebrates Portuguese Saints festivals with passion',
+    description: 'Celebrates Lusophone Saints festivals with passion',
     descriptionPortuguese: 'Celebra as festas dos Santos Populares com paixão',
     icon: '🎊',
     color: 'yellow',
@@ -272,7 +272,7 @@ export default function PortugueseCulturalPhotoVerification({
           {
             id: 'flag_detection',
             type: 'flag',
-            name: 'Portuguese Flag',
+            name: 'Lusophone Flag',
             namePortuguese: 'Bandeira Portuguesa',
             confidence: 85,
             description: 'Portuguese flag detected in photo',
@@ -281,7 +281,7 @@ export default function PortugueseCulturalPhotoVerification({
           {
             id: 'text_portuguese',
             type: 'text',
-            name: 'Portuguese Text',
+            name: 'Lusophone Text',
             namePortuguese: 'Texto Português',
             confidence: 92,
             description: 'Portuguese language text identified',
@@ -372,7 +372,7 @@ export default function PortugueseCulturalPhotoVerification({
         toast.loading(
           language === 'pt' 
             ? 'Analisando elementos culturais portugueses...' 
-            : 'Analyzing Portuguese cultural elements...',
+            : 'Analyzing Lusophone cultural elements...',
           { id: `verify_${photo.id}` }
         )
 
@@ -540,7 +540,7 @@ export default function PortugueseCulturalPhotoVerification({
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-xl font-bold text-primary-900 flex items-center gap-2">
               <ShieldCheckSolidIcon className="w-6 h-6 text-emerald-600" />
-              {language === 'pt' ? 'Verificação Cultural Portuguesa' : 'Portuguese Cultural Verification'}
+              {language === 'pt' ? 'Verificação Cultural Portuguesa' : 'Lusophone Cultural Verification'}
             </h3>
             <div className="flex items-center gap-2">
               <StarSolidIcon className="w-5 h-5 text-yellow-500" />
@@ -639,7 +639,7 @@ export default function PortugueseCulturalPhotoVerification({
 
             <div>
               <h3 className="text-xl font-bold text-primary-900 mb-2">
-                {language === 'pt' ? 'Adicionar Fotos Culturais Portuguesas' : 'Add Portuguese Cultural Photos'}
+                {language === 'pt' ? 'Adicionar Fotos Culturais Portuguesas' : 'Add Lusophone Cultural Photos'}
               </h3>
               <p className="text-primary-600 mb-4 max-w-lg mx-auto leading-relaxed">
                 {language === 'pt' 
@@ -681,7 +681,7 @@ export default function PortugueseCulturalPhotoVerification({
                 <div className="space-y-1">
                   <div>🎉 {language === 'pt' ? 'Santos Populares, festas portuguesas' : 'Santos Populares, Portuguese festivals'}</div>
                   <div>🍽️ {language === 'pt' ? 'Pastéis de nata, francesinha, bifana' : 'Pastéis de nata, francesinha, bifana'}</div>
-                  <div>🏛️ {language === 'pt' ? 'Centros culturais portugueses' : 'Portuguese cultural centers'}</div>
+                  <div>🏛️ {language === 'pt' ? 'Centros culturais portugueses' : 'Lusophone cultural centers'}</div>
                 </div>
                 <div className="space-y-1">
                   <div>🎵 {language === 'pt' ? 'Noites de fado, música portuguesa' : 'Fado nights, Portuguese music'}</div>
@@ -1045,9 +1045,9 @@ export default function PortugueseCulturalPhotoVerification({
               {language === 'pt' ? '✅ Fotos Recomendadas:' : '✅ Recommended Photos:'}
             </h5>
             <ul className="text-sm text-blue-800 space-y-1">
-              <li>• {language === 'pt' ? 'Eventos culturais portugueses (Santos Populares, Fado)' : 'Portuguese cultural events (Santos Populares, Fado)'}</li>
+              <li>• {language === 'pt' ? 'Eventos culturais portugueses (Santos Populares, Fado)' : 'Lusophone cultural events (Santos Populares, Fado)'}</li>
               <li>• {language === 'pt' ? 'Comida tradicional portuguesa' : 'Traditional Portuguese food'}</li>
-              <li>• {language === 'pt' ? 'Locais portugueses ou centros culturais' : 'Portuguese locations or cultural centers'}</li>
+              <li>• {language === 'pt' ? 'Locais portugueses ou centros culturais' : 'Lusophone locations or cultural centers'}</li>
               <li>• {language === 'pt' ? 'Fotos de família com tradições portuguesas' : 'Family photos with Portuguese traditions'}</li>
               <li>• {language === 'pt' ? 'Objetos culturais (azulejos, fado guitar, etc.)' : 'Cultural objects (azulejos, fado guitar, etc.)'}</li>
             </ul>

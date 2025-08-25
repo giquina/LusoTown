@@ -1,7 +1,7 @@
 'use client'
 
 // University Partnerships and Student Community Management
-// Comprehensive system for managing Portuguese student community across United Kingdom universities
+// Comprehensive system for managing Lusophone student community across United Kingdom universities
 
 export interface University {
   id: string
@@ -22,7 +22,7 @@ export interface University {
   partnershipStartDate: string
   partnershipAgreementType: 'formal_mou' | 'informal_agreement' | 'pilot_program' | 'trial_period'
   
-  // Portuguese Programs and Support
+  // Lusophone Programs and Support
   hasPortugueseProgram: boolean
   portugueseStudentSupport: {
     languageExchange: boolean
@@ -326,72 +326,72 @@ export interface UniversityPartnershipMetrics {
   communityIntegrationScore: number
 }
 
-// Portuguese Studies Department Information for United Kingdom Universities
+// Lusophone Studies Department Information for United Kingdom Universities
 export const PORTUGUESE_STUDIES_DEPARTMENTS = {
   'ucl': {
-    name: 'Department of Spanish, Portuguese and Latin American Studies',
+    name: 'Department of Spanish, Lusophone and Latin American Studies',
     head: 'Professor Maria Fernandes',
     establishedYear: 1826,
-    specializations: ['Portuguese Literature', 'Brazilian Studies', 'Lusophone Africa', 'Portuguese Language Pedagogy'],
+    specializations: ['Lusophone Literature', 'Brazilian Studies', 'Lusophone Africa', 'Lusophone Language Pedagogy'],
     researchCenters: ['Centre for Multidisciplinary and Intercultural Inquiry', 'Institute of the Americas'],
-    notableAlumni: ['Renowned Portuguese scholars', 'Brazilian cultural critics'],
-    currentProjects: ['Digital Archive of Portuguese Literature', 'Lusophone Migration Studies']
+    notableAlumni: ['Renowned Lusophone scholars', 'Brazilian cultural critics'],
+    currentProjects: ['Digital Archive of Lusophone Literature', 'Lusophone Migration Studies']
   },
   'oxford': {
-    name: 'Faculty of Medieval and Modern Languages - Portuguese',
+    name: 'Faculty of Medieval and Modern Languages - Lusophone',
     head: 'Dr. Ana Rebelo',
     establishedYear: 1067,
-    specializations: ['Medieval Portuguese Literature', 'Early Modern Portuguese', 'Portuguese Linguistics'],
-    researchCenters: ['Oxford Portuguese Studies', 'Centre for Romance Languages'],
-    notableAlumni: ['Leading Portuguese academics', 'Oxford Portuguese scholars'],
-    currentProjects: ['Digital Edition of Portuguese Medieval Texts', 'Portuguese Language Evolution']
+    specializations: ['Medieval Lusophone Literature', 'Early Modern Lusophone', 'Lusophone Linguistics'],
+    researchCenters: ['Oxford Lusophone Studies', 'Centre for Romance Languages'],
+    notableAlumni: ['Leading Lusophone academics', 'Oxford Lusophone scholars'],
+    currentProjects: ['Digital Edition of Lusophone Medieval Texts', 'Lusophone Language Evolution']
   },
   'cambridge': {
-    name: 'Department of Spanish and Portuguese',
+    name: 'Department of Spanish and Lusophone',
     head: 'Professor Carlos Mendes',
     establishedYear: 1209,
-    specializations: ['Portuguese Literary Studies', 'Comparative Romance Literature', 'Portuguese Cultural History'],
+    specializations: ['Lusophone Literary Studies', 'Comparative Romance Literature', 'Lusophone Cultural History'],
     researchCenters: ['Centre for Research in the Arts', 'Faculty of Modern and Medieval Languages'],
-    notableAlumni: ['Cambridge Portuguese literature experts', 'Renowned Portuguese translators'],
-    currentProjects: ['Portuguese Poetry Digital Archive', 'Cross-cultural Portuguese Studies']
+    notableAlumni: ['Cambridge Lusophone literature experts', 'Renowned Lusophone translators'],
+    currentProjects: ['Lusophone Poetry Digital Archive', 'Cross-cultural Lusophone Studies']
   }
 }
 
-// Major Portuguese Student Societies in United Kingdom Universities
+// Major Lusophone Student Societies in United Kingdom Universities
 export const PORTUGUESE_STUDENT_SOCIETIES = [
   {
     universityId: 'ucl',
-    name: 'UCL Portuguese Society',
+    name: 'UCL Lusophone Society',
     established: 2010,
     members: 180,
     activities: ['Cultural nights', 'Language exchange', 'Portugal trips', 'Career talks'],
     contact: 'portuguese.society@ucl.ac.uk',
     socialMedia: {
       instagram: '@ucl_portuguese',
-      facebook: 'UCL Portuguese Society'
+      facebook: 'UCL Lusophone Society'
     }
   },
   {
     universityId: 'kings-college',
-    name: 'King\'s Portuguese Society',
+    name: 'King\'s Lusophone Society',
     established: 2008,
     members: 220,
-    activities: ['Fado nights', 'Portuguese film screenings', 'Study groups', 'Networking events'],
+    activities: ['Fado nights', 'Lusophone film screenings', 'Study groups', 'Networking events'],
     contact: 'portuguese@kcl.ac.uk',
     socialMedia: {
       instagram: '@kings_portuguese',
-      facebook: 'KCL Portuguese Society'
+      facebook: 'KCL Lusophone Society'
     }
   },
   {
     universityId: 'oxford',
-    name: 'Oxford University Portuguese Society',
+    name: 'Oxford University Lusophone Society',
     established: 1995,
     members: 95,
     activities: ['Academic conferences', 'Cultural celebrations', 'Portugal-Oxford exchange'],
     contact: 'portuguese@ox.ac.uk',
     socialMedia: {
-      facebook: 'Oxford Portuguese Society'
+      facebook: 'Oxford Lusophone Society'
     }
   }
 ]
@@ -534,7 +534,7 @@ export class UniversityPartnershipsService {
     return allEvents
   }
 
-  // Portuguese Programs
+  // Lusophone Programs
   async getPortuguesePrograms(): Promise<PortugueseProgram[]> {
     const allPrograms: PortugueseProgram[] = []
     for (const uni of this.universities) {

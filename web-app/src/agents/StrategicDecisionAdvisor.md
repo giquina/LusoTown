@@ -32,7 +32,7 @@ The **Strategic Decision Advisor (SDA)** provides executive-level guidance for:
 - Third-party service integration recommendations
 - Performance vs. feature trade-off analysis
 
-### 3. **Portuguese Market Intelligence**
+### 3. **Lusophone Market Intelligence**
 - United Kingdom Portuguese-speaking community insights and trends
 - Competitive landscape analysis (other community platforms)
 - Cultural considerations affecting feature adoption
@@ -49,7 +49,7 @@ The **Strategic Decision Advisor (SDA)** provides executive-level guidance for:
 ## 🧠 SDA Knowledge Base
 
 ### Portuguese-speaking community Context
-- **Target Market**: 750+ Portuguese speakers across United Kingdom, 2,150+ university students
+- **Target Market**: Portuguese speakers across United Kingdom, 2,150+ university students
 - **Geographic Scope**: London-centric with United Kingdom-wide expansion
 - **Cultural Factors**: Saudade, heritage preservation, language maintenance
 - **Economic Segments**: Students, professionals, families, entrepreneurs
@@ -84,7 +84,7 @@ Low Priority (1-4): Defer or reject
 #### **Feature Decisions**
 - User-facing features vs. infrastructure improvements
 - Core platform vs. premium add-ons
-- Portuguese-specific vs. universal features
+- Lusophone-specific vs. universal features
 - Mobile vs. desktop prioritization
 
 #### **Technology Decisions**
@@ -177,7 +177,7 @@ Current situation and business objectives...
 **User**: *"How should we expand beyond London?"*
 
 **SDA Analysis**:
-- **Market Research**: Portuguese communities in Manchester, Edinburgh, etc.
+- **Market Research**: Lusophone communities in Manchester, Edinburgh, etc.
 - **Expansion Strategy**: Geographic vs. feature expansion priorities
 - **Resource Requirements**: Marketing, localization, community building
 - **Success Metrics**: How to measure and optimize expansion
@@ -200,7 +200,7 @@ Current situation and business objectives...
 - **Risk**: What could go wrong?
 
 ### Portuguese-speaking community Impact
-- **Cultural Fit**: Does this resonate with Portuguese values?
+- **Cultural Fit**: Does this resonate with Lusophone values?
 - **Adoption Barriers**: What might prevent usage?
 - **Engagement Potential**: How will this increase platform value?
 

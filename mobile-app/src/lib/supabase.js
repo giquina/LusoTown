@@ -223,3 +223,155 @@ export const getAllInterests = async () => {
 export const onAuthStateChange = (callback) => {
   return supabase.auth.onAuthStateChange(callback);
 };
+
+// 🇵🇹 Portuguese-speaking community specific functions
+export const PortugueseCommunityAPI = {
+  // Get Portuguese events
+  async getPortugueseEvents() {
+    try {
+      const { data, error } = await supabase
+        .from('events')
+        .select('*')
+        .in('cultural_context', ['portugal', 'brazil', 'cape-verde', 'angola', 'mozambique'])
+        .order('date', { ascending: true });
+      
+      if (error) throw error;
+      return { data, success: true };
+    } catch (error) {
+      console.error('Error fetching Portuguese events:', error);
+      return { data: [], success: false, error: error.message };
+    }
+  },
+
+  // Get Portuguese businesses 
+  async getPortugueseBusinesses() {
+    try {
+      const { data, error } = await supabase
+        .from('businesses')
+        .select('*')
+        .overlaps('owner_heritage', ['portugal', 'brazil', 'cape-verde', 'angola', 'mozambique'])
+        .order('rating', { ascending: false });
+      
+      if (error) throw error;
+      return { data, success: true };
+    } catch (error) {
+      console.error('Error fetching Portuguese businesses:', error);
+      return { data: [], success: false, error: error.message };
+    }
+  },
+
+  // Get cultural matches
+  async getCulturalMatches(userId) {
+    try {
+      const { data, error } = await supabase
+        .from('matches')
+        .select(`
+          *,
+          matched_user:users(*)
+        `)
+        .eq('user_id', userId)
+        .gte('compatibility_score', 70)
+        .order('compatibility_score', { ascending: false });
+      
+      if (error) throw error;
+      return { data, success: true };
+    } catch (error) {
+      console.error('Error fetching cultural matches:', error);
+      return { data: [], success: false, error: error.message };
+    }
+  },
+
+  // Update user heritage
+  async updateUserHeritage(userId, heritage) {
+    try {
+      const { data, error } = await supabase
+        .from('profiles')
+        .update({ heritage })
+        .eq('id', userId)
+        .select();
+      
+      if (error) throw error;
+      return { data: data[0], success: true };
+    } catch (error) {
+      console.error('Error updating user heritage:', error);
+      return { data: null, success: false, error: error.message };
+    }
+  },
+
+  // Register for event
+  async registerForEvent(userId, eventId) {
+    try {
+      const { data, error } = await supabase
+        .from('event_registrations')
+        .insert({
+          user_id: userId,
+          event_id: eventId,
+          registered_at: new Date().toISOString(),
+        })
+        .select();
+      
+      if (error) throw error;
+      return { data: data[0], success: true };
+    } catch (error) {
+      console.error('Error registering for event:', error);
+      return { data: null, success: false, error: error.message };
+    }
+  },
+
+  // Get nearby Portuguese businesses with location
+  async getNearbyPortugueseBusinesses(latitude, longitude, radiusKm = 10) {
+    try {
+      const { data, error } = await supabase
+        .rpc('get_nearby_portuguese_businesses', {
+          user_lat: latitude,
+          user_lng: longitude,
+          radius_km: radiusKm
+        });
+      
+      if (error) throw error;
+      return { data, success: true };
+    } catch (error) {
+      console.error('Error fetching nearby Portuguese businesses:', error);
+      return { data: [], success: false, error: error.message };
+    }
+  },
+
+  // Complete onboarding with Portuguese cultural data
+  async completePortugueseOnboarding(userData) {
+    try {
+      const user = await getCurrentUser();
+      if (!user) throw new Error('User not authenticated');
+
+      // Update profile with Portuguese heritage
+      const profileData = {
+        first_name: userData.firstName,
+        last_name: userData.lastName,
+        date_of_birth: userData.dateOfBirth,
+        heritage: userData.heritage,
+        language: userData.language,
+        profile_picture: userData.profilePicture,
+        is_verified: false,
+        onboarding_completed: true,
+        updated_at: new Date().toISOString(),
+      };
+
+      const { data: profile, error: profileError } = await supabase
+        .from('profiles')
+        .upsert(profileData)
+        .eq('id', user.id)
+        .select();
+
+      if (profileError) throw profileError;
+
+      // Add Portuguese cultural interests
+      if (userData.interests && userData.interests.length > 0) {
+        await addUserInterests(user.id, userData.interests);
+      }
+
+      return { data: profile[0], success: true };
+    } catch (error) {
+      console.error('Error completing Portuguese onboarding:', error);
+      return { data: null, success: false, error: error.message };
+    }
+  },
+};

@@ -61,7 +61,7 @@ const jobRoles: JobRole[] = [
       'Create culturally authentic content for Portuguese speakers',
       'Coordinate community events and meetups',
       'Handle community moderation with cultural sensitivity',
-      'Build partnerships with Portuguese organizations'
+      'Build partnerships with Lusophone organizations'
     ],
     responsibilitiesPt: [
       'Gerir e expandir o envolvimento da comunidade de falantes de português',
@@ -89,20 +89,20 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'event-coordinator',
-    title: 'Portuguese Event Coordinator',
+    title: 'Lusophone Event Coordinator',
     titlePt: 'Coordenador de Eventos Portugueses',
     department: 'Events',
     departmentPt: 'Eventos',
     location: 'London, United Kingdom',
     type: 'Full-time',
     typePt: 'Tempo integral',
-    description: 'Plan and execute authentic Portuguese cultural events across London. Create memorable experiences that bring the community together.',
+    description: 'Plan and execute authentic Lusophone cultural events across London. Create memorable experiences that bring the community together.',
     descriptionPt: 'Planeie e execute eventos culturais portugueses autênticos em Londres. Crie experiências memoráveis que unam a comunidade.',
     responsibilities: [
-      'Plan Portuguese cultural events (Fado nights, festivals, Santos Populares)',
-      'Coordinate with London venues and Portuguese venues',
+      'Plan Lusophone cultural events (Fado nights, festivals, Santos Populares)',
+      'Coordinate with London venues and Lusophone venues',
       'Manage event logistics, registration, and attendance',
-      'Work with Portuguese artists, musicians, and performers',
+      'Work with Lusophone artists, musicians, and performers',
       'Ensure events reflect authentic Portuguese culture'
     ],
     responsibilitiesPt: [
@@ -138,13 +138,13 @@ const jobRoles: JobRole[] = [
     location: 'London, United Kingdom',
     type: 'Full-time',
     typePt: 'Tempo integral',
-    description: 'Create engaging Portuguese and English content for our community. Tell authentic stories of Portuguese life in London.',
+    description: 'Create engaging Lusophone and English content for our community. Tell authentic stories of Lusophone life in London.',
     descriptionPt: 'Crie conteúdo envolvente em português e inglês para a nossa comunidade. Conte histórias autênticas da vida portuguesa em Londres.',
     responsibilities: [
       'Create bilingual content for social media and website',
       'Produce videos, photos, and written content about Portuguese culture',
       'Interview community members and tell their stories',
-      'Manage content calendar across Portuguese and English',
+      'Manage content calendar across Lusophone and English',
       'Collaborate with community members for user-generated content'
     ],
     responsibilitiesPt: [
@@ -155,7 +155,7 @@ const jobRoles: JobRole[] = [
       'Colaborar com membros da comunidade para conteúdo gerado por utilizadores'
     ],
     requirements: [
-      'Bilingual Portuguese-English content creation experience',
+      'Bilingual Lusophone-English content creation experience',
       'Photography and video editing skills',
       'Understanding of Portuguese culture and London Portuguese-speaking community',
       'Experience with social media platforms and content scheduling',
@@ -172,7 +172,7 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'social-media-manager',
-    title: 'Portuguese Social Media Manager',
+    title: 'Lusophone Social Media Manager',
     titlePt: 'Gestor de Redes Sociais Portuguesas',
     department: 'Marketing',
     departmentPt: 'Marketing',
@@ -182,9 +182,9 @@ const jobRoles: JobRole[] = [
     description: 'Drive Portuguese-speaking community growth through strategic social media management across platforms.',
     descriptionPt: 'Impulsione o crescimento da comunidade de falantes de português através da gestão estratégica de redes sociais.',
     responsibilities: [
-      'Manage Portuguese-focused social media strategy',
-      'Grow follower base within Portuguese diaspora in United Kingdom',
-      'Create and schedule Portuguese and English content',
+      'Manage Lusophone-focused social media strategy',
+      'Grow follower base within Lusophone diaspora in United Kingdom',
+      'Create and schedule Lusophone and English content',
       'Engage with Portuguese-speaking community online',
       'Analyze social media metrics and optimize strategy'
     ],
@@ -196,9 +196,9 @@ const jobRoles: JobRole[] = [
       'Analisar métricas de redes sociais e otimizar estratégia'
     ],
     requirements: [
-      'Bilingual Portuguese-English social media expertise',
+      'Bilingual Lusophone-English social media expertise',
       'Experience with Instagram, Facebook, TikTok, LinkedIn',
-      'Knowledge of Portuguese social media trends and culture',
+      'Knowledge of Lusophone social media trends and culture',
       'Analytics and data-driven decision making',
       '2+ years social media management experience'
     ],
@@ -213,7 +213,7 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'translator-interpreter',
-    title: 'Portuguese Translator & Interpreter',
+    title: 'Lusophone Translator & Interpreter',
     titlePt: 'Tradutor e Intérprete Português',
     department: 'Content',
     departmentPt: 'Conteúdo',
@@ -223,7 +223,7 @@ const jobRoles: JobRole[] = [
     description: 'Provide high-quality translation and interpretation services for Portuguese-speaking community events and content.',
     descriptionPt: 'Forneça serviços de tradução e interpretação de alta qualidade para eventos e conteúdo da comunidade de falantes de português.',
     responsibilities: [
-      'Translate website content between Portuguese and English',
+      'Translate website content between Lusophone and English',
       'Interpret at Portuguese-speaking community events',
       'Ensure cultural accuracy in all translations',
       'Work with legal and business documents',
@@ -238,9 +238,9 @@ const jobRoles: JobRole[] = [
     ],
     requirements: [
       'Professional translation/interpretation certification',
-      'Native Portuguese with excellent English',
+      'Native Lusophone with excellent English',
       'Experience with cultural and legal translation',
-      'Understanding of United Kingdom Portuguese diaspora context',
+      'Understanding of United Kingdom Lusophone diaspora context',
       'Ability to work flexible hours for events'
     ],
     requirementsPt: [
@@ -254,7 +254,7 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'business-liaison',
-    title: 'Portuguese Business Development Liaison',
+    title: 'Lusophone Business Development Liaison',
     titlePt: 'Ligação de Desenvolvimento de Negócios Portugueses',
     department: 'Business',
     departmentPt: 'Negócios',
@@ -264,9 +264,9 @@ const jobRoles: JobRole[] = [
     description: 'Build relationships with Portuguese businesses across London and facilitate partnerships within our platform.',
     descriptionPt: 'Construa relacionamentos com empresas portuguesas em Londres e facilite parcerias dentro da nossa plataforma.',
     responsibilities: [
-      'Identify and onboard Portuguese-owned businesses in London',
+      'Identify and onboard Lusophone-owned businesses in London',
       'Develop business directory and partnership programs',
-      'Support Portuguese entrepreneurs and business owners',
+      'Support Lusophone entrepreneurs and business owners',
       'Organize business networking events',
       'Create business-to-business opportunities within community'
     ],
@@ -295,7 +295,7 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'cultural-ambassador',
-    title: 'Portuguese Cultural Ambassador',
+    title: 'Lusophone Cultural Ambassador',
     titlePt: 'Embaixador Cultural Português',
     department: 'Community',
     departmentPt: 'Comunidade',
@@ -307,7 +307,7 @@ const jobRoles: JobRole[] = [
     responsibilities: [
       'Develop Portuguese heritage and cultural education programs',
       'Create content about Portuguese history and traditions',
-      'Coordinate with Portuguese cultural organizations',
+      'Coordinate with Lusophone cultural organizations',
       'Organize heritage tours and cultural workshops',
       'Work with schools and educational institutions'
     ],
@@ -346,7 +346,7 @@ const jobRoles: JobRole[] = [
     description: 'Ensure community safety through culturally-sensitive moderation of Portuguese-speaking community interactions.',
     descriptionPt: 'Garanta a segurança da comunidade através da moderação culturalmente sensível das interações da comunidade de falantes de português.',
     responsibilities: [
-      'Moderate Portuguese and English community discussions',
+      'Moderate Lusophone and English community discussions',
       'Handle community reports and safety concerns',
       'Implement community guidelines with cultural sensitivity',
       'Support members experiencing difficulties',
@@ -360,7 +360,7 @@ const jobRoles: JobRole[] = [
       'Trabalhar com autoridades quando necessário'
     ],
     requirements: [
-      'Bilingual Portuguese-English communication',
+      'Bilingual Lusophone-English communication',
       'Experience in community moderation or customer service',
       'Understanding of cultural nuances and sensitivities',
       'Conflict resolution and de-escalation skills',
@@ -387,7 +387,7 @@ const jobRoles: JobRole[] = [
     description: 'Provide exceptional customer support to Portuguese-speaking community members in their preferred language.',
     descriptionPt: 'Forneça suporte ao cliente excecional aos membros da comunidade lusófona na sua língua preferida.',
     responsibilities: [
-      'Handle customer inquiries in Portuguese and English',
+      'Handle customer inquiries in Lusophone and English',
       'Support users with platform navigation and features',
       'Resolve billing and membership issues',
       'Provide cultural context and guidance to users',
@@ -401,7 +401,7 @@ const jobRoles: JobRole[] = [
       'Documentar problemas comuns e sugerir melhorias'
     ],
     requirements: [
-      'Fluent Portuguese and English communication',
+      'Fluent Lusophone and English communication',
       'Customer service experience preferred',
       'Patience and empathy when helping users',
       'Technical aptitude for troubleshooting',
@@ -418,20 +418,20 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'partnership-manager',
-    title: 'Portuguese Institutional Partnership Manager',
+    title: 'Lusophone Institutional Partnership Manager',
     titlePt: 'Gestor de Parcerias Institucionais Portuguesas',
     department: 'Partnerships',
     departmentPt: 'Parcerias',
     location: 'London, United Kingdom',
     type: 'Full-time',
     typePt: 'Tempo integral',
-    description: 'Build strategic partnerships with Portuguese institutions, embassies, and cultural organizations.',
+    description: 'Build strategic partnerships with Lusophone institutions, embassies, and cultural organizations.',
     descriptionPt: 'Construa parcerias estratégicas com instituições portuguesas, embaixadas e organizações culturais.',
     responsibilities: [
-      'Develop partnerships with Portuguese Embassy and Consulates',
-      'Work with Camões Institute and Portuguese cultural centers',
-      'Coordinate with Portuguese universities and schools',
-      'Establish relationships with Portuguese government organizations',
+      'Develop partnerships with Lusophone Embassy and Consulates',
+      'Work with Camões Institute and Lusophone cultural centers',
+      'Coordinate with Lusophone universities and schools',
+      'Establish relationships with Lusophone government organizations',
       'Manage institutional partnership agreements and programs'
     ],
     responsibilitiesPt: [
@@ -443,10 +443,10 @@ const jobRoles: JobRole[] = [
     ],
     requirements: [
       'Senior level experience in partnership development',
-      'Understanding of Portuguese institutional landscape',
+      'Understanding of Lusophone institutional landscape',
       'Experience working with government and cultural organizations',
       'Strong diplomatic and negotiation skills',
-      'Established network within Portuguese institutions'
+      'Established network within Lusophone institutions'
     ],
     requirementsPt: [
       'Experiência sénior em desenvolvimento de parcerias',
@@ -467,14 +467,14 @@ const jobRoles: JobRole[] = [
     location: 'London, United Kingdom',
     type: 'Full-time',
     typePt: 'Tempo integral',
-    description: 'Drive bilingual social media management specifically for Portuguese diaspora engagement across all platforms.',
+    description: 'Drive bilingual social media management specifically for Lusophone diaspora engagement across all platforms.',
     descriptionPt: 'Conduza a gestão de redes sociais bilingue especificamente para o envolvimento da diáspora portuguesa em todas as plataformas.',
     responsibilities: [
-      'Develop Portuguese-focused social media strategy across Instagram, Facebook, TikTok, LinkedIn',
-      'Create culturally authentic content for Portuguese diaspora in London',
+      'Develop Lusophone-focused social media strategy across Instagram, Facebook, TikTok, LinkedIn',
+      'Create culturally authentic content for Lusophone diaspora in London',
       'Manage bilingual community engagement and respond to comments/messages',
       'Analyze social media metrics and optimize for Portuguese-speaking community growth',
-      'Collaborate with Portuguese influencers and community leaders'
+      'Collaborate with Lusophone influencers and community leaders'
     ],
     responsibilitiesPt: [
       'Desenvolver estratégia de redes sociais focada em portugueses no Instagram, Facebook, TikTok, LinkedIn',
@@ -543,7 +543,7 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'business-development-partnerships',
-    title: 'Portuguese Business Development & Partnerships Manager',
+    title: 'Lusophone Business Development & Partnerships Manager',
     titlePt: 'Gestor de Desenvolvimento de Negócios e Parcerias Portuguesas',
     department: 'Business Development',
     departmentPt: 'Desenvolvimento de Negócios',
@@ -554,9 +554,9 @@ const jobRoles: JobRole[] = [
     descriptionPt: 'Construir parcerias estratégicas com restaurantes portugueses, centros culturais e instituições para expandir o nosso ecossistema de plataforma.',
     responsibilities: [
       'Identify and secure partnerships with Portuguese restaurants and cafés in London',
-      'Develop relationships with Portuguese cultural centers and institutions',
+      'Develop relationships with Lusophone cultural centers and institutions',
       'Negotiate partnership agreements and revenue-sharing models',
-      'Create business development strategies for Portuguese market expansion',
+      'Create business development strategies for Lusophone market expansion',
       'Manage ongoing relationships with Portuguese business partners'
     ],
     responsibilitiesPt: [
@@ -592,11 +592,11 @@ const jobRoles: JobRole[] = [
     location: 'London, United Kingdom',
     type: 'Full-time',
     typePt: 'Tempo integral',
-    description: 'Oversee daily platform operations and ensure exceptional user experience for Portuguese cultural community guidelines.',
+    description: 'Oversee daily platform operations and ensure exceptional user experience for Lusophone cultural community guidelines.',
     descriptionPt: 'Supervisionar as operações diárias da plataforma e garantir uma experiência excecional do utilizador para as diretrizes da comunidade cultural portuguesa.',
     responsibilities: [
       'Manage daily platform operations and user experience optimization',
-      'Implement and enforce Portuguese cultural community guidelines',
+      'Implement and enforce Lusophone cultural community guidelines',
       'Monitor platform performance and user engagement metrics',
       'Coordinate with technical team for platform improvements',
       'Handle escalated user issues and community disputes'
@@ -610,10 +610,10 @@ const jobRoles: JobRole[] = [
     ],
     requirements: [
       'Experience in platform administration or community management',
-      'Understanding of Portuguese cultural values and community dynamics',
+      'Understanding of Lusophone cultural values and community dynamics',
       'Strong analytical and problem-solving skills',
       'Experience with user experience optimization',
-      'Bilingual Portuguese-English communication skills'
+      'Bilingual Lusophone-English communication skills'
     ],
     requirementsPt: [
       'Experiência em administração de plataforma ou gestão de comunidade',
@@ -637,7 +637,7 @@ const jobRoles: JobRole[] = [
     descriptionPt: 'Analisar o comportamento da comunidade de falantes de português e otimizar estratégias de crescimento através de insights baseados em dados e compreensão cultural.',
     responsibilities: [
       'Analyze Portuguese-speaking community engagement patterns and user behavior',
-      'Develop growth strategies specific to Portuguese diaspora in London',
+      'Develop growth strategies specific to Lusophone diaspora in London',
       'Create data-driven insights for community feature development',
       'Monitor KPIs and measure success of Portuguese-speaking community initiatives',
       'Provide analytics support for marketing and business development teams'
@@ -675,11 +675,11 @@ const jobRoles: JobRole[] = [
     location: 'London, United Kingdom',
     type: 'Full-time',
     typePt: 'Tempo integral',
-    description: 'Lead bilingual customer service team with deep Portuguese cultural understanding and exceptional service delivery.',
+    description: 'Lead bilingual customer service team with deep Lusophone cultural understanding and exceptional service delivery.',
     descriptionPt: 'Liderar equipa de atendimento ao cliente bilingue com profunda compreensão cultural portuguesa e entrega de serviço excecional.',
     responsibilities: [
       'Manage multilingual customer support team for Portuguese-speaking community',
-      'Develop customer service protocols with Portuguese cultural sensitivity',
+      'Develop customer service protocols with Lusophone cultural sensitivity',
       'Handle complex customer issues requiring cultural understanding',
       'Train support staff in Portuguese culture and language nuances',
       'Maintain high customer satisfaction rates for Portuguese speakers'
@@ -694,7 +694,7 @@ const jobRoles: JobRole[] = [
     requirements: [
       'Customer service management experience (3+ years)',
       'Native Portuguese speaker with excellent English',
-      'Deep understanding of Portuguese cultural values and communication styles',
+      'Deep understanding of Lusophone cultural values and communication styles',
       'Experience with customer service software and protocols',
       'Leadership and team management skills'
     ],
@@ -720,9 +720,9 @@ const jobRoles: JobRole[] = [
     descriptionPt: 'Executar campanhas de marketing direcionadas a falantes de português em Londres, impulsionando o crescimento da comunidade através da autenticidade cultural.',
     responsibilities: [
       'Develop and execute marketing campaigns targeting Portuguese speakers in London',
-      'Create user acquisition strategies for Portuguese diaspora community',
-      'Manage digital advertising across Portuguese-focused channels',
-      'Partner with Portuguese organizations and influencers for marketing',
+      'Create user acquisition strategies for Lusophone diaspora community',
+      'Manage digital advertising across Lusophone-focused channels',
+      'Partner with Lusophone organizations and influencers for marketing',
       'Analyze campaign performance and optimize for Portuguese-speaking community growth'
     ],
     responsibilitiesPt: [
@@ -736,7 +736,7 @@ const jobRoles: JobRole[] = [
       'Digital marketing experience with focus on community growth',
       'Portuguese speaker with understanding of diaspora marketing',
       'Experience with Google Ads, Facebook Ads, and social media marketing',
-      'Knowledge of Portuguese cultural channels and media consumption',
+      'Knowledge of Lusophone cultural channels and media consumption',
       'Data-driven approach to marketing optimization'
     ],
     requirementsPt: [
@@ -751,21 +751,21 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'event-operations-cultural',
-    title: 'Event Operations & Portuguese Cultural Programming Manager',
+    title: 'Event Operations & Lusophone Cultural Programming Manager',
     titlePt: 'Gestor de Operações de Eventos e Programação Cultural Portuguesa',
     department: 'Events',
     departmentPt: 'Eventos',
     location: 'London, United Kingdom',
     type: 'Full-time',
     typePt: 'Tempo integral',
-    description: 'Coordinate authentic Portuguese cultural events and festival programming, ensuring cultural authenticity and operational excellence.',
+    description: 'Coordinate authentic Lusophone cultural events and festival programming, ensuring cultural authenticity and operational excellence.',
     descriptionPt: 'Coordenar eventos culturais portugueses autênticos e programação de festivais, garantindo autenticidade cultural e excelência operacional.',
     responsibilities: [
-      'Plan and execute authentic Portuguese cultural events (Fado nights, Santos Populares, festivals)',
-      'Coordinate with Portuguese artists, musicians, and cultural performers',
+      'Plan and execute authentic Lusophone cultural events (Fado nights, Santos Populares, festivals)',
+      'Coordinate with Lusophone artists, musicians, and cultural performers',
       'Manage event logistics, vendor relationships, and venue partnerships',
       'Ensure cultural authenticity and educational value of all programming',
-      'Develop annual Portuguese cultural calendar for London community'
+      'Develop annual Lusophone cultural calendar for London community'
     ],
     responsibilitiesPt: [
       'Planear e executar eventos culturais portugueses autênticos (noites de Fado, Santos Populares, festivais)',
@@ -777,9 +777,9 @@ const jobRoles: JobRole[] = [
     requirements: [
       'Event management experience with focus on cultural programming',
       'Deep knowledge of Portuguese culture, traditions, and festivals',
-      'Experience working with Portuguese artists and cultural organizations',
+      'Experience working with Lusophone artists and cultural organizations',
       'Strong project management and organizational skills',
-      'Bilingual Portuguese-English with cultural sensitivity'
+      'Bilingual Lusophone-English with cultural sensitivity'
     ],
     requirementsPt: [
       'Experiência em gestão de eventos com foco em programação cultural',
@@ -793,7 +793,7 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'content-strategy-heritage',
-    title: 'Content Strategy & Portuguese Heritage Manager',
+    title: 'Content Strategy & Lusophone Heritage Manager',
     titlePt: 'Gestor de Estratégia de Conteúdo e Património Português',
     department: 'Content',
     departmentPt: 'Conteúdo',
@@ -805,8 +805,8 @@ const jobRoles: JobRole[] = [
     responsibilities: [
       'Develop content strategy for Portuguese heritage preservation and storytelling',
       'Create educational content about Portuguese history, culture, and traditions',
-      'Manage content calendar incorporating Portuguese cultural calendar and celebrations',
-      'Collaborate with Portuguese historians and cultural experts',
+      'Manage content calendar incorporating Lusophone cultural calendar and celebrations',
+      'Collaborate with Lusophone historians and cultural experts',
       'Ensure authentic representation of Portuguese culture across all content'
     ],
     responsibilitiesPt: [
@@ -819,9 +819,9 @@ const jobRoles: JobRole[] = [
     requirements: [
       'Content strategy and management experience',
       'Portuguese heritage and cultural studies background',
-      'Excellent writing and storytelling skills in Portuguese and English',
+      'Excellent writing and storytelling skills in Lusophone and English',
       'Understanding of digital content creation and distribution',
-      'Network within Portuguese academic and cultural communities'
+      'Network within Lusophone academic and cultural communities'
     ],
     requirementsPt: [
       'Experiência em estratégia e gestão de conteúdo',
@@ -834,7 +834,7 @@ const jobRoles: JobRole[] = [
   },
   {
     id: 'business-intelligence-research',
-    title: 'Business Intelligence & Portuguese Market Research Analyst',
+    title: 'Business Intelligence & Lusophone Market Research Analyst',
     titlePt: 'Analista de Business Intelligence e Pesquisa de Mercado Português',
     department: 'Research',
     departmentPt: 'Investigação',
@@ -845,7 +845,7 @@ const jobRoles: JobRole[] = [
     descriptionPt: 'Conduzir investigação de mercado abrangente sobre demografia da comunidade de falantes de português e business intelligence para planeamento estratégico.',
     responsibilities: [
       'Research Portuguese-speaking community demographics and migration patterns in London',
-      'Analyze economic impact and business opportunities within Portuguese diaspora',
+      'Analyze economic impact and business opportunities within Lusophone diaspora',
       'Provide market intelligence for business development and expansion strategies',
       'Create detailed reports on Portuguese-speaking community trends and behaviors',
       'Support strategic decision-making with data-driven insights'
@@ -860,7 +860,7 @@ const jobRoles: JobRole[] = [
     requirements: [
       'Bachelor\'s degree in Economics, Market Research, or related field',
       'Experience in market research and business intelligence',
-      'Understanding of Portuguese diaspora and migration studies',
+      'Understanding of Lusophone diaspora and migration studies',
       'Strong analytical and research skills',
       'Proficiency in data analysis tools and statistical software'
     ],
@@ -907,7 +907,7 @@ export default function CareersPage() {
               </div>
               <div className="flex items-center gap-2">
                 <HeartIcon className="w-6 h-6" />
-                <span>{isPortuguese ? 'Cultura Portuguesa' : 'Portuguese Culture'}</span>
+                <span>{isPortuguese ? 'Cultura Portuguesa' : 'Lusophone Culture'}</span>
               </div>
             </div>
           </div>
@@ -940,7 +940,7 @@ export default function CareersPage() {
               <p className="text-gray-600">
                 {isPortuguese 
                   ? 'Trabalhe numa missão que importa - conectar portugueses e preservar a nossa cultura em Londres.'
-                  : 'Work on a mission that matters - connecting Portuguese people and preserving our culture in London.'
+                  : 'Work on a mission that matters - connecting Lusophone people and preserving our culture in London.'
                 }
               </p>
             </div>

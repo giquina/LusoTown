@@ -80,7 +80,7 @@ const testimonials = [
     name: "Sofia R.",
     age: "29",
     location: "Stockwell",
-    quote: "Started free, upgraded within a week. Met my Portuguese boyfriend through LusoTown!",
+    quote: "Started free, upgraded within a week. Met my Lusophone boyfriend through LusoTown!",
     quotePt: "Comecei grátis, atualizei numa semana. Conheci o meu namorado português através do LusoTown!",
     avatar: getImageWithFallback("sofia-rodrigues"),
     upgraded: true,
@@ -98,7 +98,7 @@ const testimonials = [
     name: "Ana M.",
     age: "27",
     location: "Vauxhall",
-    quote: "Amazing free events! Upgraded for unlimited messaging after first Portuguese meetup.",
+    quote: "Amazing free events! Upgraded for unlimited messaging after first Lusophone meetup.",
     quotePt: "Eventos gratuitos incríveis! Atualizei para mensagens ilimitadas após o primeiro encontro português.",
     avatar: getImageWithFallback("ana-martins"),
     upgraded: true,
@@ -518,7 +518,7 @@ export default function StartFree() {
               <p className="text-gray-600 mb-6">
                 {isPortuguese 
                   ? "Descubra como a nossa comunidade está a transformar vidas de portugueses em Londres."
-                  : "Discover how our community is transforming Portuguese lives in London."}
+                  : "Discover how our community is transforming Lusophone lives in London."}
               </p>
               <div className="space-y-4">
                 <button

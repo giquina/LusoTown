@@ -74,7 +74,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
     namePortuguese: "Portugal",
     flag: "🇵🇹",
     population: "10.3 million",
-    language: "Portuguese (European)",
+    language: "Lusophone (European)",
     languagePortuguese: "Português (Europeu)",
     capital: "Lisbon",
     capitalPortuguese: "Lisboa",
@@ -104,16 +104,16 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
       culturalEvents: [
         "Santos Populares",
         "Festa do Avante",
-        "Portuguese Film Festival",
+        "Lusophone Film Festival",
       ],
       businesses: [
         "Casa do Bacalhau",
-        "Nando's (Portuguese-inspired)",
+        "Nando's (Lusophone-inspired)",
         "Portuguese restaurants & cafés",
       ],
       education: [
-        "Portuguese Saturday Schools",
-        "University Portuguese Studies",
+        "Lusophone Saturday Schools",
+        "University Lusophone Studies",
         "Instituto Camões programs",
       ],
     },
@@ -123,7 +123,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
         profession: "NHS Senior Consultant",
         professionPortuguese: "Consultora Sénior do NHS",
         achievement:
-          "Led COVID-19 Portuguese-speaking community health initiatives, improving health outcomes for 10,000+ Portuguese residents",
+          "Led COVID-19 Portuguese-speaking community health initiatives, improving health outcomes for 10,000+ Lusophone residents",
         achievementPortuguese:
           "Liderou iniciativas de saúde da comunidade de falantes de português durante COVID-19, melhorando resultados de saúde para 10.000+ residentes portugueses",
         quote:
@@ -136,11 +136,11 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
         profession: "Tech Entrepreneur",
         professionPortuguese: "Empreendedor Tecnológico",
         achievement:
-          "Founded Portuguese-United Kingdom fintech startup valued at £5M, connecting Portuguese businesses with United Kingdom markets",
+          "Founded Lusophone-United Kingdom fintech startup valued at £5M, connecting Portuguese businesses with United Kingdom markets",
         achievementPortuguese:
           "Fundou startup fintech Portugal-Reino Unido avaliada em £5M, conectando negócios portugueses com mercados do Reino Unido",
         quote:
-          "London's Portuguese-speaking community provided the cultural bridges I needed to build trust between Portuguese and British business partners.",
+          "London's Portuguese-speaking community provided the cultural bridges I needed to build trust between Lusophone and British business partners.",
         quotePortuguese:
           "A comunidade de falantes de português de Londres forneceu as pontes culturais que precisava para construir confiança entre parceiros de negócios portugueses e britânicos.",
       },
@@ -155,11 +155,11 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
       cuisinePortuguese:
         "Restaurantes portugueses autênticos, pastelarias de pastéis de nata, culinária tradicional de peixe e mariscos",
       traditions:
-        "Santos Populares festivals, Portuguese religious processions, traditional craft workshops",
+        "Santos Populares festivals, Lusophone religious processions, traditional craft workshops",
       traditionsPortuguese:
         "Festivais dos Santos Populares, procissões religiosas portuguesas, workshops de artesanato tradicional",
       literature:
-        "Portuguese poetry readings, Camões literary societies, contemporary Portuguese author events",
+        "Lusophone poetry readings, Camões literary societies, contemporary Lusophone author events",
       literaturePortuguese:
         "Leituras de poesia portuguesa, sociedades literárias de Camões, eventos de autores portugueses contemporâneos",
     },
@@ -177,7 +177,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
     namePortuguese: "Brasil",
     flag: "🇧🇷",
     population: "215 million",
-    language: "Portuguese (Brazilian)",
+    language: "Lusophone (Brazilian)",
     languagePortuguese: "Português (Brasileiro)",
     capital: "Brasília",
     capitalPortuguese: "Brasília",
@@ -275,7 +275,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
     namePortuguese: "Angola",
     flag: "🇦🇴",
     population: "33 million",
-    language: "Portuguese (Angolan)",
+    language: "Lusophone (Angolan)",
     languagePortuguese: "Português (Angolano)",
     capital: "Luanda",
     capitalPortuguese: "Luanda",
@@ -332,9 +332,9 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
         profession: "Cultural Event Organizer",
         professionPortuguese: "Organizadora de Eventos Culturais",
         achievement:
-          'Founded "Angola in London" festival attracting 5,000+ attendees and showcasing Angolan culture across the United Kingdom',
+          'Founded "Angola in London" festival attracting 5,many people and showcasing Angolan culture across the United Kingdom',
         achievementPortuguese:
-          'Fundou festival "Angola em Londres" atraindo 5.000+ participantes e exibindo cultura angolana por todo o Reino Unido',
+          'Fundou festival "Angola em Londres" atraindo 5.many peoplees e exibindo cultura angolana por todo o Reino Unido',
         quote:
           "Through music and dance, we show London the beauty of Angola. Culture is our bridge between continents.",
         quotePortuguese:
@@ -347,7 +347,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
       musicPortuguese:
         "Workshops sensuais de dança kizomba, noites rítmicas de música semba, celebrações gospel cheias de alma, círculos de percussão hipnóticos, festas modernas de fusão afrobeat",
       cuisine:
-        "Flavorful Angolan cooking classes, community muamba sharing dinners, traditional calulu gatherings, African-Portuguese fusion food experiences",
+        "Flavorful Angolan cooking classes, community muamba sharing dinners, traditional calulu gatherings, African-Lusophone fusion food experiences",
       cuisinePortuguese:
         "Aulas de culinária angolana saborosas, jantares comunitários de partilha de muamba, encontros tradicionais de calulu, experiências gastronómicas de fusão africano-portuguesa",
       traditions:
@@ -373,7 +373,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
     namePortuguese: "Moçambique",
     flag: "🇲🇿",
     population: "32 million",
-    language: "Portuguese (Mozambican)",
+    language: "Lusophone (Mozambican)",
     languagePortuguese: "Português (Moçambicano)",
     capital: "Maputo",
     capitalPortuguese: "Maputo",
@@ -447,11 +447,11 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
     ],
     culturalContributions: {
       music:
-        "Marrabenta performances, traditional Mozambican drumming, African Portuguese fusion music",
+        "Marrabenta performances, traditional Mozambican drumming, African Lusophone fusion music",
       musicPortuguese:
         "Performances de Marrabenta, percussão tradicional moçambicana, música de fusão africano-portuguesa",
       cuisine:
-        "Mozambican seafood restaurants, peri-peri chicken venues, traditional African Portuguese dishes",
+        "Mozambican seafood restaurants, peri-peri chicken venues, traditional African Lusophone dishes",
       cuisinePortuguese:
         "Restaurantes de marisco moçambicano, locais de frango peri-peri, pratos tradicionais africano-portugueses",
       traditions:
@@ -477,7 +477,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
     namePortuguese: "Cabo Verde",
     flag: "🇨🇻",
     population: "560,000",
-    language: "Portuguese & Creole",
+    language: "Lusophone & Creole",
     languagePortuguese: "Português & Crioulo",
     capital: "Praia",
     capitalPortuguese: "Praia",
@@ -581,7 +581,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
     namePortuguese: "Guiné-Bissau",
     flag: "🇬🇼",
     population: "2 million",
-    language: "Portuguese & Creole",
+    language: "Lusophone & Creole",
     languagePortuguese: "Português & Crioulo",
     capital: "Bissau",
     capitalPortuguese: "Bissau",
@@ -613,7 +613,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
         "Cultural community centers",
       ],
       education: [
-        "Portuguese-Creole schools",
+        "Lusophone-Creole schools",
         "West African heritage classes",
         "Traditional arts programs",
       ],
@@ -635,7 +635,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
     ],
     culturalContributions: {
       music:
-        "Gumbe music performances, traditional West African drumming, Portuguese-Creole fusion music",
+        "Gumbe music performances, traditional West African drumming, Lusophone-Creole fusion music",
       musicPortuguese:
         "Performances de música Gumbe, percussão tradicional da África Ocidental, música de fusão português-crioula",
       cuisine:
@@ -704,7 +704,7 @@ export default function LusophoneDiversityShowcase() {
           <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
             {language === "pt"
               ? "Descubra a energia pulsante das comunidades lusófonas no Reino Unido - desde noites de fado em Londres até samba no Manchester, kizomba em Birmingham a festivais crioulos em Liverpool. Cada nação traz música, dança, comida e celebrações únicas que conectam corações portugueses."
-              : "Discover the pulsating energy of Portuguese-speaking communities across the United Kingdom - from fado nights in London to samba in Manchester, kizomba in Birmingham to Creole festivals in Liverpool. Each nation brings unique music, dance, food and celebrations that connect Portuguese hearts."}
+              : "Discover the pulsating energy of Portuguese-speaking communities across the United Kingdom - from fado nights in London to samba in Manchester, kizomba in Birmingham to Creole festivals in Liverpool. Each nation brings unique music, dance, food and celebrations that connect Lusophone hearts."}
           </p>
         </motion.div>
 
@@ -723,7 +723,7 @@ export default function LusophoneDiversityShowcase() {
             <div className="text-sm text-gray-600">
               {language === "pt"
                 ? "Lusófonos em Londres"
-                : "Portuguese Speakers in London"}
+                : "Lusophone Speakers in London"}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
@@ -745,7 +745,7 @@ export default function LusophoneDiversityShowcase() {
             <div className="text-sm text-gray-600">
               {language === "pt"
                 ? "Lusófonos Globais"
-                : "Global Portuguese Speakers"}
+                : "Global Lusophone Speakers"}
             </div>
           </div>
         </motion.div>

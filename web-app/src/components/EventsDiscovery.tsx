@@ -81,61 +81,61 @@ const PORTUGUESE_NEIGHBORHOODS: NeighborhoodData[] = [
     name: 'Stockwell',
     portuguese_population: 2800,
     authenticity_level: 95,
-    popular_venues: ['Portuguese Centre', 'Bar do Fado', 'Café Nata'],
-    cultural_significance: 'Heart of Little Portugal with highest concentration of Portuguese families'
+    popular_venues: ['Lusophone Centre', 'Bar do Fado', 'Café Nata'],
+    cultural_significance: 'Heart of Little Portugal with highest concentration of Lusophone families'
   },
   {
     name: 'Vauxhall',
     portuguese_population: 2100,
     authenticity_level: 90,
-    popular_venues: ['Portuguese-speaking community Hall', 'Vauxhall Portuguese Market', 'Taberna Real'],
-    cultural_significance: 'Historic Portuguese settlement area with traditional businesses'
+    popular_venues: ['Portuguese-speaking community Hall', 'Vauxhall Lusophone Market', 'Taberna Real'],
+    cultural_significance: 'Historic Lusophone settlement area with traditional businesses'
   },
   {
     name: 'North Kensington',
     portuguese_population: 1900,
     authenticity_level: 85,
-    popular_venues: ['Golborne Road Market', 'Portuguese Church', 'Casa Madeira'],
+    popular_venues: ['Golborne Road Market', 'Lusophone Church', 'Casa Madeira'],
     cultural_significance: 'Established Portuguese-speaking community with strong cultural roots'
   },
   {
     name: 'Brixton',
     portuguese_population: 1200,
     authenticity_level: 70,
-    popular_venues: ['Brixton Portuguese Club', 'Portuguese Bakery', 'Cultural Centre'],
+    popular_venues: ['Brixton Lusophone Club', 'Lusophone Bakery', 'Cultural Centre'],
     cultural_significance: 'Growing Portuguese-speaking community with vibrant cultural scene'
   },
   {
     name: 'Camden',
     portuguese_population: 800,
     authenticity_level: 60,
-    popular_venues: ['Camden Portuguese Café', 'Fado Bar', 'Portuguese Restaurant'],
-    cultural_significance: 'Young Portuguese professionals and students hub'
+    popular_venues: ['Camden Lusophone Café', 'Fado Bar', 'Lusophone Restaurant'],
+    cultural_significance: 'Young Lusophone professionals and students hub'
   }
 ]
 
-// Professional icon mapping for Portuguese cultural categories
+// Professional icon mapping for Lusophone cultural categories
 const CULTURAL_CATEGORIES = [
   {
     id: 'santos_populares',
     name: { en: 'Santos Populares', pt: 'Santos Populares' },
     icon: CakeIcon,
     color: 'bg-gradient-to-br from-action-500 to-action-600',
-    description: 'Traditional Portuguese summer festivals'
+    description: 'Traditional Lusophone summer festivals'
   },
   {
     id: 'fado_music',
     name: { en: 'Fado Music', pt: 'Música de Fado' },
     icon: MusicalNoteIcon,
     color: 'bg-gradient-to-br from-premium-500 to-premium-600',
-    description: 'Portuguese soul music experiences'
+    description: 'Lusophone soul music experiences'
   },
   {
     id: 'football_culture',
     name: { en: 'Football Culture', pt: 'Cultura do Futebol' },
   icon: StarOutlineIcon,
     color: 'bg-gradient-to-br from-secondary-500 to-secondary-600',
-    description: 'Portuguese football viewing and discussion'
+    description: 'Lusophone football viewing and discussion'
   },
   {
     id: 'business_networking',
@@ -153,7 +153,7 @@ const CULTURAL_CATEGORIES = [
   },
   {
     id: 'gastronomy',
-    name: { en: 'Portuguese Gastronomy', pt: 'Gastronomia Portuguesa' },
+    name: { en: 'Lusophone Gastronomy', pt: 'Gastronomia Portuguesa' },
     icon: CakeIcon,
     color: 'bg-gradient-to-br from-coral-500 to-coral-600',
     description: 'Cooking classes and food experiences'
@@ -186,23 +186,23 @@ export default function EventsDiscovery({
 
   const isPortuguese = language === 'pt'
 
-  // Mock Portuguese events data
+  // Mock Lusophone events data
   const mockPortugueseEvents: PortugueseEvent[] = [
     {
       id: 'santos-populares-stockwell',
       title: 'Santos Populares Celebration 2025',
-      description: 'Traditional Portuguese summer festival with grilled sardines, folk music, and community dancing',
+      description: 'Traditional Lusophone summer festival with grilled sardines, folk music, and community dancing',
       cultural_category: 'santos_populares',
       portuguese_neighborhood: 'Stockwell',
       date: '2025-06-13',
       time: '18:00',
-      location: 'Portuguese Centre, South Lambeth Road',
+      location: 'Lusophone Centre, South Lambeth Road',
       venue: 'Portuguese-speaking community Centre',
       price: 15,
       currency: 'GBP',
       max_attendees: 200,
       current_attendees: 156,
-      host_name: 'Portuguese Cultural Association',
+      host_name: 'Lusophone Cultural Association',
       host_verified: true,
       cultural_authenticity_score: 95,
       fado_music_featured: true,
@@ -212,7 +212,7 @@ export default function EventsDiscovery({
       tags: ['traditional', 'family-friendly', 'authentic', 'community'],
       image: '/events/santos-populares.jpg',
       partner_venue: {
-        name: 'Portuguese Centre',
+        name: 'Lusophone Centre',
         type: 'cultural_center',
         authenticity_rating: 5
       },
@@ -222,7 +222,7 @@ export default function EventsDiscovery({
     {
       id: 'fado-night-camden',
       title: 'Authentic Fado Night',
-      description: 'Intimate evening of traditional Portuguese fado music with professional fadistas from Coimbra',
+      description: 'Intimate evening of traditional Lusophone fado music with professional fadistas from Coimbra',
       cultural_category: 'fado_music',
       portuguese_neighborhood: 'Camden',
       date: '2025-01-25',
@@ -253,13 +253,13 @@ export default function EventsDiscovery({
     {
       id: 'football-portugal-england',
       title: 'Portugal vs England Watch Party',
-      description: 'Join fellow Portuguese supporters for the Nations League match with traditional snacks and drinks',
+      description: 'Join fellow Lusophone supporters for the Nations League match with traditional snacks and drinks',
       cultural_category: 'football_culture',
       portuguese_neighborhood: 'Vauxhall',
       date: '2025-02-15',
       time: '19:45',
-      location: 'Portuguese Sports Club, Vauxhall',
-      venue: 'Portuguese Sports Club',
+      location: 'Lusophone Sports Club, Vauxhall',
+      venue: 'Lusophone Sports Club',
       price: 8,
       currency: 'GBP',
       max_attendees: 80,
@@ -274,7 +274,7 @@ export default function EventsDiscovery({
       tags: ['sports', 'social', 'competitive', 'casual'],
       image: '/events/football-watching.jpg',
       partner_venue: {
-        name: 'Portuguese Sports Club',
+        name: 'Lusophone Sports Club',
         type: 'club',
         authenticity_rating: 4
       },
@@ -283,19 +283,19 @@ export default function EventsDiscovery({
     },
     {
       id: 'business-networking-kensington',
-      title: 'Portuguese Entrepreneurs Network',
+      title: 'Lusophone Entrepreneurs Network',
       description: 'Monthly networking event for Portuguese business owners and professionals in London',
       cultural_category: 'business_networking',
       portuguese_neighborhood: 'North Kensington',
       date: '2025-01-30',
       time: '18:30',
-      location: 'Portuguese Business Centre, Ladbroke Grove',
-      venue: 'Portuguese Business Hub',
+      location: 'Lusophone Business Centre, Ladbroke Grove',
+      venue: 'Lusophone Business Hub',
       price: 20,
       currency: 'GBP',
       max_attendees: 60,
       current_attendees: 45,
-      host_name: 'Portuguese Chamber of Commerce',
+      host_name: 'Lusophone Chamber of Commerce',
       host_verified: true,
       cultural_authenticity_score: 70,
       fado_music_featured: false,
@@ -305,7 +305,7 @@ export default function EventsDiscovery({
       tags: ['professional', 'networking', 'business', 'formal'],
       image: '/events/business-networking.jpg',
       partner_venue: {
-        name: 'Portuguese Business Hub',
+        name: 'Lusophone Business Hub',
         type: 'business_center',
         authenticity_rating: 4
       },
@@ -315,12 +315,12 @@ export default function EventsDiscovery({
     {
       id: 'cooking-class-pasteis',
       title: 'Pastéis de Nata Masterclass',
-      description: 'Learn to make authentic Portuguese pastéis de nata with chef from Pastéis de Belém',
+      description: 'Learn to make authentic Lusophone pastéis de nata with chef from Pastéis de Belém',
       cultural_category: 'gastronomy',
       portuguese_neighborhood: 'Stockwell',
       date: '2025-02-08',
       time: '14:00',
-      location: 'Portuguese Cooking School, Stockwell',
+      location: 'Lusophone Cooking School, Stockwell',
       venue: 'Casa da Culinária',
       price: 45,
       currency: 'GBP',
@@ -494,12 +494,12 @@ export default function EventsDiscovery({
             </div>
             <div className="min-w-0 flex-1">
               <h2 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">
-                {isPortuguese ? 'Descobrir Eventos Portugueses' : 'Discover Portuguese Events'}
+                {isPortuguese ? 'Descobrir Eventos Portugueses' : 'Discover Lusophone Events'}
               </h2>
               <p className="text-gray-600 text-sm leading-tight mt-1">
                 {isPortuguese
                   ? 'Eventos autênticos nos bairros portugueses de Londres'
-                  : 'Authentic events in London\'s Portuguese neighborhoods'}
+                  : 'Authentic events in London\'s Lusophone neighborhoods'}
               </p>
             </div>
           </div>

@@ -1,5 +1,5 @@
 // Cultural Preferences and Matching Types
-// Supports the Portuguese cultural preference quiz and matching system
+// Supports the Lusophone cultural preference quiz and matching system
 
 export interface CulturalPreferences {
   id: string
@@ -203,7 +203,7 @@ export const DEFAULT_MATCHING_CONFIG: CulturalMatchingConfig = {
   maxMatches: 50
 }
 
-// Portuguese origin display names
+// Lusophone origin display names
 export const PORTUGUESE_ORIGIN_NAMES = {
   en: {
     portugal: 'Portugal (Continental)',
@@ -217,7 +217,7 @@ export const PORTUGUESE_ORIGIN_NAMES = {
     sao_tome: 'São Tomé and Príncipe',
     timor_leste: 'Timor-Leste',
     macau: 'Macau',
-    diaspora: 'Portuguese Diaspora'
+    diaspora: 'Lusophone Diaspora'
   },
   pt: {
     portugal: 'Portugal (Continental)',
@@ -240,10 +240,10 @@ export const CULTURAL_ELEMENT_NAMES = {
   en: {
     fado: 'Fado Music',
     santos_populares: 'Santos Populares (June Festivals)',
-    football: 'Portuguese Football',
-    gastronomy: 'Portuguese Cuisine',
-    christmas_traditions: 'Portuguese Christmas (December 24th)',
-    literature_poetry: 'Portuguese Literature & Poetry',
+    football: 'Lusophone Football',
+    gastronomy: 'Lusophone Cuisine',
+    christmas_traditions: 'Lusophone Christmas (December 24th)',
+    literature_poetry: 'Lusophone Literature & Poetry',
     religious_traditions: 'Religious Traditions & Pilgrimages',
     maritime_heritage: 'Maritime Heritage & Discoveries',
     folk_traditions: 'Folk Music & Regional Dances',

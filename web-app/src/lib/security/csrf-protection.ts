@@ -124,7 +124,7 @@ export function addCSRFToken(
   return response
 }
 
-// Portuguese-specific CSRF protection with cultural considerations
+// Lusophone-specific CSRF protection with cultural considerations
 export class PortugueseCSRFProtection extends CSRFProtection {
   constructor(config: Partial<CSRFConfig> = {}) {
     super({
@@ -134,7 +134,7 @@ export class PortugueseCSRFProtection extends CSRFProtection {
     })
   }
 
-  // Enhanced validation for Portuguese community features
+  // Enhanced validation for Lusophone community features
   validatePortugueseRequest(request: NextRequest): {
     isValid: boolean
     culturalContext?: string
@@ -146,7 +146,7 @@ export class PortugueseCSRFProtection extends CSRFProtection {
       return baseValidation
     }
 
-    // Additional Portuguese community validations
+    // Additional Lusophone community validations
     const userAgent = request.headers.get('user-agent')
     const acceptLanguage = request.headers.get('accept-language')
     
@@ -162,7 +162,7 @@ export class PortugueseCSRFProtection extends CSRFProtection {
   }
 }
 
-// Portuguese community CSRF protection instance
+// Lusophone community CSRF protection instance
 export const portugueseCSRF = new PortugueseCSRFProtection()
 
 // Utility functions for API routes
@@ -181,7 +181,7 @@ export function requireCSRF(handler: Function) {
   }
 }
 
-// Special protection for sensitive Portuguese community operations
+// Special protection for sensitive Lusophone community operations
 export function requirePortugueseCSRF(handler: Function) {
   return async (request: NextRequest) => {
     const validation = portugueseCSRF.validatePortugueseRequest(request)
@@ -195,7 +195,7 @@ export function requirePortugueseCSRF(handler: Function) {
 
     // Log cultural context for security monitoring
     if (validation.culturalContext) {
-      console.log(`Portuguese CSRF validation passed - Context: ${validation.culturalContext}`)
+      console.log(`Lusophone CSRF validation passed - Context: ${validation.culturalContext}`)
     }
 
     return handler(request)

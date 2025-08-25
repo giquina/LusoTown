@@ -57,19 +57,19 @@ const BADGE_DEFINITIONS = {
     icon: '🎪',
     color: 'blue',
     category: 'events' as const,
-    requirements: ['Event photos with timestamps', 'Recognized Portuguese events']
+    requirements: ['Event photos with timestamps', 'Recognized Lusophone events']
   },
   community_member: {
     icon: '👑',
     color: 'pink',
     category: 'community' as const,
-    requirements: ['Community event participation', 'Portuguese social activities']
+    requirements: ['Community event participation', 'Lusophone social activities']
   },
   cultural_guardian: {
     icon: '🏆',
     color: 'indigo',
     category: 'traditions' as const,
-    requirements: ['Traditional Portuguese elements', 'Cultural knowledge demonstration']
+    requirements: ['Traditional Lusophone elements', 'Cultural knowledge demonstration']
   },
   lusophone_traveler: {
     icon: '🌍',
@@ -93,13 +93,13 @@ const BADGE_DEFINITIONS = {
     icon: '🧁',
     color: 'orange',
     category: 'cultural' as const,
-    requirements: ['Pastéis de nata photos', 'Portuguese bakery visits']
+    requirements: ['Pastéis de nata photos', 'Lusophone bakery visits']
   },
   azulejos_admirer: {
     icon: '🎨',
     color: 'blue',
     category: 'heritage' as const,
-    requirements: ['Azulejos photos', 'Portuguese tile appreciation']
+    requirements: ['Azulejos photos', 'Lusophone tile appreciation']
   },
   football_fanatic: {
     icon: '⚽',

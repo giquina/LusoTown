@@ -15,7 +15,7 @@ export interface UserProfile {
   membership_tier: 'free' | 'core' | 'premium'
   stripe_customer_id?: string
   
-  // Portuguese cultural data
+  // Lusophone cultural data
   portuguese_origin?: string
   portuguese_regions?: string[]
   years_in_uk?: number

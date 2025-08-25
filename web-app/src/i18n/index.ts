@@ -22,7 +22,7 @@ export async function loadTranslations(language: Language): Promise<Record<strin
   } catch (error) {
     console.error(`Failed to load translations for language: ${language}`, error)
     
-    // Fallback to English if Portuguese fails to load
+    // Fallback to English if Lusophone fails to load
     if (language === 'pt') {
       return loadTranslations('en')
     }

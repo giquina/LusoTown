@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";
 
-// Portuguese cultural event categories
+// Lusophone cultural event categories
 const EVENT_CATEGORIES = [
   {
     id: "tonight",

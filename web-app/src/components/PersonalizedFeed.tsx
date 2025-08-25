@@ -84,12 +84,12 @@ const generatePersonalizedPosts = (followedEntities: FollowableEntity[]): FeedPo
       liked: false,
       reactions: { heart: 20, thumbsUp: 10, laugh: 3, wow: 1, sad: 0, angry: 0 },
       hashtags: ['Fado', 'CulturaPortuguesa'],
-      culturalTags: ['Traditional Music', 'Portuguese Heritage'],
+      culturalTags: ['Traditional Music', 'Lusophone Heritage'],
       linkedEvent: {
         id: 'event1',
         title: 'Noite de Fado Autêntico',
         date: '2025-08-20',
-        location: 'Portuguese Cultural Centre, London'
+        location: 'Lusophone Cultural Centre, London'
       }
     },
     {
@@ -101,7 +101,7 @@ const generatePersonalizedPosts = (followedEntities: FollowableEntity[]): FeedPo
       liked: true,
       reactions: { heart: 18, thumbsUp: 7, laugh: 2, wow: 1, sad: 0, angry: 0 },
       hashtags: ['CulinariaPortuguesa', 'FamiliasPortuguesas'],
-      culturalTags: ['Portuguese Cuisine', 'Family Activities']
+      culturalTags: ['Lusophone Cuisine', 'Family Activities']
     },
     {
       id: 'post-3',
@@ -129,7 +129,7 @@ const generatePersonalizedPosts = (followedEntities: FollowableEntity[]): FeedPo
       culturalTags: ['Business', 'Professional Network'],
       linkedBusiness: {
         id: 'business1',
-        name: 'Portuguese Business Network United Kingdom',
+        name: 'Lusophone Business Network United Kingdom',
         category: 'Professional Services'
       }
     },
@@ -142,11 +142,11 @@ const generatePersonalizedPosts = (followedEntities: FollowableEntity[]): FeedPo
       liked: false,
       reactions: { heart: 12, thumbsUp: 5, laugh: 1, wow: 1, sad: 0, angry: 0 },
       hashtags: ['ComidaPortuguesa', 'Birmingham', 'PaoDeMillho'],
-      culturalTags: ['Portuguese Food', 'Local Business']
+      culturalTags: ['Lusophone Food', 'Local Business']
     },
     {
       id: 'post-6',
-      content: 'Available this weekend for Portuguese cultural tours of London! Just completed an amazing tour to Tower Bridge where I shared the story of Portuguese explorers. Bilingual service and deep cultural knowledge included! 🚗🇵🇹',
+      content: 'Available this weekend for Lusophone cultural tours of London! Just completed an amazing tour to Tower Bridge where I shared the story of Lusophone explorers. Bilingual service and deep cultural knowledge included! 🚗🇵🇹',
       createdAt: '3 hours ago',
       likes: 31,
       comments: 7,
@@ -158,14 +158,14 @@ const generatePersonalizedPosts = (followedEntities: FollowableEntity[]): FeedPo
       serviceType: 'transport',
       linkedBusiness: {
         id: 'portuguese_tours',
-        name: 'Portuguese Heritage Tours London',
+        name: 'Lusophone Heritage Tours London',
         category: 'Cultural Tours & Transport'
       }
     },
     {
       id: 'post-7',
       authorVerified: true,
-      content: 'Coordinating group transport for the upcoming Fado night at Portuguese Cultural Centre! 🚌 Multiple pickup points across London including Stockwell, Vauxhall, and Elephant & Castle. Portuguese-speaking drivers and cultural commentary included!',
+      content: 'Coordinating group transport for the upcoming Fado night at Lusophone Cultural Centre! 🚌 Multiple pickup points across London including Stockwell, Vauxhall, and Elephant & Castle. Portuguese-speaking drivers and cultural commentary included!',
       createdAt: '5 hours ago',
       likes: 42,
       comments: 15,
@@ -239,7 +239,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
   const [showCreatePost, setShowCreatePost] = useState(false)
   const [showServiceFeed, setShowServiceFeed] = useState(false)
   
-  // Helper function to check if language is Portuguese
+  // Helper function to check if language is Lusophone
   const isPortuguese = language === 'pt'
 
   // Generate personalized posts based on following

@@ -44,7 +44,7 @@ export default function CulturalEventsModule() {
     id: 'cultural-events',
     title: 'Cultural Events',
     titlePortuguese: 'Eventos Culturais',
-    description: 'Discover, attend, and organize authentic Portuguese cultural events in London',
+    description: 'Discover, attend, and organize authentic Lusophone cultural events in London',
     descriptionPortuguese: 'Descubra, participe e organize eventos culturais portugueses autênticos em Londres',
     difficulty: 'Beginner',
     estimatedTime: 22,
@@ -54,10 +54,10 @@ export default function CulturalEventsModule() {
     prerequisites: [],
     prerequisitesPortuguese: [],
     learningObjectives: [
-      'Navigate London\'s Portuguese cultural events calendar',
-      'Understand Portuguese cultural traditions and celebrations',
+      'Navigate London\'s Lusophone cultural events calendar',
+      'Understand Lusophone cultural traditions and celebrations',
       'Connect with the Portuguese-speaking community through cultural activities',
-      'Organize your own Portuguese cultural events',
+      'Organize your own Lusophone cultural events',
       'Blend Portuguese heritage with London lifestyle'
     ],
     learningObjectivesPortuguese: [
@@ -70,36 +70,36 @@ export default function CulturalEventsModule() {
     steps: [
       {
         id: 'portuguese-cultural-calendar',
-        title: 'Understanding the Portuguese Cultural Calendar in London',
+        title: 'Understanding the Lusophone Cultural Calendar in London',
         titlePortuguese: 'Compreendendo o Calendário Cultural Português em Londres',
         type: 'introduction',
         estimatedTime: 4,
         content: `
           <p>London's Portuguese-speaking community maintains a rich cultural calendar that celebrates our heritage while embracing our new home. Understanding this calendar helps you stay connected to your roots and build meaningful relationships.</p>
           
-          <h3>Major Portuguese Cultural Events in London:</h3>
+          <h3>Major Lusophone Cultural Events in London:</h3>
           
           <h4>Annual Celebrations:</h4>
           <ul>
             <li><strong>Portugal Day (June 10th):</strong> 
               <ul>
                 <li>Camões Day celebrations across London</li>
-                <li>Portuguese Embassy events</li>
-                <li>Community gatherings in Portuguese neighborhoods</li>
+                <li>Lusophone Embassy events</li>
+                <li>Community gatherings in Lusophone neighborhoods</li>
                 <li>Traditional Portuguese music and dance performances</li>
               </ul>
             </li>
             <li><strong>Festa dos Tabuleiros (varies):</strong>
               <ul>
                 <li>Traditional festival celebrations</li>
-                <li>Portuguese folk dancing and costumes</li>
+                <li>Lusophone folk dancing and costumes</li>
                 <li>Traditional Portuguese food experiences</li>
               </ul>
             </li>
             <li><strong>São João Festival (June 23rd):</strong>
               <ul>
-                <li>Midsummer celebrations with Portuguese twist</li>
-                <li>Traditional Portuguese barbecues</li>
+                <li>Midsummer celebrations with Lusophone twist</li>
+                <li>Traditional Lusophone barbecues</li>
                 <li>Community bonfire gatherings</li>
               </ul>
             </li>
@@ -108,24 +108,24 @@ export default function CulturalEventsModule() {
           <h4>Monthly Cultural Activities:</h4>
           <ul>
             <li><strong>Fado Nights:</strong> Traditional Portuguese music evenings</li>
-            <li><strong>Portuguese Film Screenings:</strong> Contemporary and classic cinema</li>
-            <li><strong>Cultural Workshops:</strong> Portuguese cooking, crafts, and traditions</li>
-            <li><strong>Language Exchange Events:</strong> Portuguese-English conversation practice</li>
+            <li><strong>Lusophone Film Screenings:</strong> Contemporary and classic cinema</li>
+            <li><strong>Cultural Workshops:</strong> Lusophone cooking, crafts, and traditions</li>
+            <li><strong>Language Exchange Events:</strong> Lusophone-English conversation practice</li>
           </ul>
           
           <h4>Weekly Community Gatherings:</h4>
           <ul>
             <li><strong>Portuguese-speaking community Centers:</strong> Regular cultural activities</li>
-            <li><strong>Portuguese Churches:</strong> Cultural and religious events</li>
-            <li><strong>Portuguese Restaurants:</strong> Live music and cultural nights</li>
-            <li><strong>Portuguese Schools:</strong> Family-oriented cultural education</li>
+            <li><strong>Lusophone Churches:</strong> Cultural and religious events</li>
+            <li><strong>Lusophone Restaurants:</strong> Live music and cultural nights</li>
+            <li><strong>Lusophone Schools:</strong> Family-oriented cultural education</li>
           </ul>
           
           <h3>Cultural Event Categories:</h3>
           <ul>
             <li><strong>Traditional:</strong> Folk music, traditional dances, historical celebrations</li>
-            <li><strong>Contemporary:</strong> Modern Portuguese art, music, and fashion</li>
-            <li><strong>Culinary:</strong> Portuguese cooking classes, wine tastings, food festivals</li>
+            <li><strong>Contemporary:</strong> Modern Lusophone art, music, and fashion</li>
+            <li><strong>Culinary:</strong> Lusophone cooking classes, wine tastings, food festivals</li>
             <li><strong>Educational:</strong> History lectures, language classes, cultural workshops</li>
             <li><strong>Family:</strong> Child-friendly events that teach Portuguese culture</li>
             <li><strong>Professional:</strong> Cultural events combined with networking opportunities</li>
@@ -193,9 +193,9 @@ export default function CulturalEventsModule() {
           <p><strong>Nota Importante:</strong> Estes eventos são experiências culturais independentes. Se precisar de transporte para participar em eventos, o nosso serviço de transporte profissional está disponível como um serviço separado que pode ser organizado independentemente.</p>
         `,
         tips: [
-          'Follow Portuguese cultural organizations on social media for event updates',
+          'Follow Lusophone cultural organizations on social media for event updates',
           'Start with smaller, informal events to get comfortable with the community',
-          'Bring traditional Portuguese gifts to share at community events'
+          'Bring traditional Lusophone gifts to share at community events'
         ],
         tipsPortuguese: [
           'Siga organizações culturais portuguesas nas redes sociais para atualizações de eventos',
@@ -205,30 +205,30 @@ export default function CulturalEventsModule() {
       },
       {
         id: 'attending-cultural-events',
-        title: 'How to Attend and Enjoy Portuguese Cultural Events',
+        title: 'How to Attend and Enjoy Lusophone Cultural Events',
         titlePortuguese: 'Como Participar e Desfrutar de Eventos Culturais Portugueses',
         type: 'tutorial',
         estimatedTime: 5,
         content: `
-          <p>Attending Portuguese cultural events is more than just showing up - it's about participating in our shared heritage and building community connections.</p>
+          <p>Attending Lusophone cultural events is more than just showing up - it's about participating in our shared heritage and building community connections.</p>
           
           <h3>Before Attending Events:</h3>
           
           <h4>Research and Preparation:</h4>
           <ul>
             <li><strong>Event Background:</strong> Learn about the cultural significance</li>
-            <li><strong>Dress Code:</strong> Understand if traditional Portuguese attire is expected</li>
-            <li><strong>Language:</strong> Know if the event will be primarily in Portuguese or English</li>
+            <li><strong>Dress Code:</strong> Understand if traditional Lusophone attire is expected</li>
+            <li><strong>Language:</strong> Know if the event will be primarily in Lusophone or English</li>
             <li><strong>Registration:</strong> Check if advance booking is required</li>
             <li><strong>Transportation:</strong> Plan your journey (our professional transport service is available if needed)</li>
           </ul>
           
           <h4>Cultural Preparation:</h4>
           <ul>
-            <li><strong>Learn Key Phrases:</strong> Basic Portuguese greetings and cultural expressions</li>
+            <li><strong>Learn Key Phrases:</strong> Basic Lusophone greetings and cultural expressions</li>
             <li><strong>Understand Traditions:</strong> Research the specific cultural elements being celebrated</li>
             <li><strong>Bring Contributions:</strong> Many events welcome traditional Portuguese foods to share</li>
-            <li><strong>Open Mindset:</strong> Be ready to learn about different Portuguese regional traditions</li>
+            <li><strong>Open Mindset:</strong> Be ready to learn about different Lusophone regional traditions</li>
           </ul>
           
           <h3>During the Event:</h3>
@@ -238,7 +238,7 @@ export default function CulturalEventsModule() {
             <li><strong>Active Participation:</strong>
               <ul>
                 <li>Join in traditional dances if invited</li>
-                <li>Sing along to Portuguese songs you know</li>
+                <li>Sing along to Lusophone songs you know</li>
                 <li>Participate in cultural activities and workshops</li>
                 <li>Ask respectful questions about traditions</li>
               </ul>
@@ -254,7 +254,7 @@ export default function CulturalEventsModule() {
             <li><strong>Cultural Learning:</strong>
               <ul>
                 <li>Listen to stories from older community members</li>
-                <li>Learn traditional Portuguese recipes</li>
+                <li>Learn traditional Lusophone recipes</li>
                 <li>Understand the history behind celebrations</li>
                 <li>Take notes on traditions you'd like to continue</li>
               </ul>
@@ -288,13 +288,13 @@ export default function CulturalEventsModule() {
           <ul>
             <li><strong>Quality over Quantity:</strong> Focus on 3-5 meaningful conversations</li>
             <li><strong>Cultural Bridge Building:</strong> Connect people with shared interests</li>
-            <li><strong>Follow-up Opportunities:</strong> Suggest meeting for Portuguese coffee or meals</li>
+            <li><strong>Follow-up Opportunities:</strong> Suggest meeting for Lusophone coffee or meals</li>
             <li><strong>Community Contribution:</strong> Offer your skills for future events</li>
           </ul>
           
           <h4>Building Cultural Continuity:</h4>
           <ul>
-            <li><strong>Learn Traditional Skills:</strong> Portuguese cooking, crafts, or music</li>
+            <li><strong>Learn Traditional Skills:</strong> Lusophone cooking, crafts, or music</li>
             <li><strong>Share with Family:</strong> Bring Portuguese culture to your children</li>
             <li><strong>Document Experiences:</strong> Take photos and notes to preserve memories</li>
             <li><strong>Plan Return Visits:</strong> Become a regular at cultural events</li>
@@ -395,9 +395,9 @@ export default function CulturalEventsModule() {
           type: 'checklist',
           data: {
             items: [
-              { text: 'Research 3 upcoming Portuguese cultural events in London', textPortuguese: 'Pesquise 3 próximos eventos culturais portugueses em Londres' },
-              { text: 'Learn 5 Portuguese cultural phrases and their meanings', textPortuguese: 'Aprenda 5 frases culturais portuguesas e os seus significados' },
-              { text: 'Prepare a traditional Portuguese dish to share at events', textPortuguese: 'Prepare um prato tradicional português para partilhar em eventos' },
+              { text: 'Research 3 upcoming Lusophone cultural events in London', textPortuguese: 'Pesquise 3 próximos eventos culturais portugueses em Londres' },
+              { text: 'Learn 5 Lusophone cultural phrases and their meanings', textPortuguese: 'Aprenda 5 frases culturais portuguesas e os seus significados' },
+              { text: 'Prepare a traditional Lusophone dish to share at events', textPortuguese: 'Prepare um prato tradicional português para partilhar em eventos' },
               { text: 'Practice introducing yourself and your Portuguese heritage', textPortuguese: 'Pratique apresentar-se e a sua herança portuguesa' }
             ]
           }
@@ -415,14 +415,14 @@ export default function CulturalEventsModule() {
       },
       {
         id: 'traditional-celebrations',
-        title: 'Understanding Portuguese Traditional Celebrations',
+        title: 'Understanding Lusophone Traditional Celebrations',
         titlePortuguese: 'Compreendendo Celebrações Tradicionais Portuguesas',
         type: 'tutorial',
         estimatedTime: 6,
         content: `
           <p>Portuguese traditional celebrations are rich with history, symbolism, and community spirit. Understanding these traditions helps you participate meaningfully and appreciate their cultural significance.</p>
           
-          <h3>Major Portuguese Religious and Cultural Celebrations:</h3>
+          <h3>Major Lusophone Religious and Cultural Celebrations:</h3>
           
           <h4>1. Festa do Espírito Santo (Holy Spirit Festival)</h4>
           <ul>
@@ -445,13 +445,13 @@ export default function CulturalEventsModule() {
             <li><strong>Traditions:</strong>
               <ul>
                 <li>Bonfires and fireworks</li>
-                <li>Traditional Portuguese barbecues</li>
+                <li>Traditional Lusophone barbecues</li>
                 <li>Folk dancing (rancho folclórico)</li>
                 <li>Plastic hammer traditions (martelo de São João)</li>
               </ul>
             </li>
             <li><strong>Cultural Significance:</strong> Midsummer celebration of fertility and community</li>
-            <li><strong>London Adaptation:</strong> Portuguese parks and venues host family-friendly versions</li>
+            <li><strong>London Adaptation:</strong> Lusophone parks and venues host family-friendly versions</li>
           </ul>
           
           <h4>3. Festa dos Tabuleiros (Festival of Trays)</h4>
@@ -462,11 +462,11 @@ export default function CulturalEventsModule() {
                 <li>Elaborate bread and flower crowns (tabuleiros)</li>
                 <li>Processions with traditional costumes</li>
                 <li>Community bread blessing and distribution</li>
-                <li>Traditional Portuguese folk performances</li>
+                <li>Traditional Lusophone folk performances</li>
               </ul>
             </li>
             <li><strong>Cultural Significance:</strong> Gratitude, abundance, and community unity</li>
-            <li><strong>London Adaptation:</strong> Portuguese cultural associations recreate elements</li>
+            <li><strong>London Adaptation:</strong> Lusophone cultural associations recreate elements</li>
           </ul>
           
           <h4>4. Festa das Vindimas (Harvest Festival)</h4>
@@ -477,7 +477,7 @@ export default function CulturalEventsModule() {
                 <li>Portuguese wine tastings</li>
                 <li>Traditional grape stomping ceremonies</li>
                 <li>Harvest blessing rituals</li>
-                <li>Portuguese folk music and dancing</li>
+                <li>Lusophone folk music and dancing</li>
               </ul>
             </li>
             <li><strong>Cultural Significance:</strong> Celebration of Portuguese winemaking heritage</li>
@@ -500,7 +500,7 @@ export default function CulturalEventsModule() {
             <li><strong>Azorean Heritage Days:</strong> Cultural education and traditional demonstrations</li>
           </ul>
           
-          <h4>Mainland Portuguese Traditions:</h4>
+          <h4>Mainland Lusophone Traditions:</h4>
           <ul>
             <li><strong>Festa de Santo António (Lisbon):</strong> June celebrations with sardines and folk music</li>
             <li><strong>Festa de São Pedro (Porto):</strong> Traditional northern Portuguese celebrations</li>
@@ -637,8 +637,8 @@ export default function CulturalEventsModule() {
             items: [
               { text: 'Research your family\'s regional Portuguese traditions', textPortuguese: 'Pesquise as tradições portuguesas regionais da sua família' },
               { text: 'Learn the history behind 2 major Portuguese celebrations', textPortuguese: 'Aprenda a história por trás de 2 grandes celebrações portuguesas' },
-              { text: 'Find local Portuguese cultural organizations in London', textPortuguese: 'Encontre organizações culturais portuguesas locais em Londres' },
-              { text: 'Practice traditional Portuguese songs or prayers', textPortuguese: 'Pratique canções ou orações tradicionais portuguesas' }
+              { text: 'Find local Lusophone cultural organizations in London', textPortuguese: 'Encontre organizações culturais portuguesas locais em Londres' },
+              { text: 'Practice traditional Lusophone songs or prayers', textPortuguese: 'Pratique canções ou orações tradicionais portuguesas' }
             ]
           }
         },
@@ -655,20 +655,20 @@ export default function CulturalEventsModule() {
       },
       {
         id: 'organizing-cultural-events',
-        title: 'Organizing Your Own Portuguese Cultural Events',
+        title: 'Organizing Your Own Lusophone Cultural Events',
         titlePortuguese: 'Organizando os Seus Próprios Eventos Culturais Portugueses',
         type: 'interactive',
         estimatedTime: 7,
         content: `
-          <p>Organizing Portuguese cultural events helps preserve our heritage while building stronger community connections. Here's how to plan authentic, successful cultural gatherings.</p>
+          <p>Organizing Lusophone cultural events helps preserve our heritage while building stronger community connections. Here's how to plan authentic, successful cultural gatherings.</p>
           
           <h3>Types of Events You Can Organize:</h3>
           
           <h4>1. Intimate Gatherings (10-25 people)</h4>
           <ul>
-            <li><strong>Portuguese Dinner Parties:</strong>
+            <li><strong>Lusophone Dinner Parties:</strong>
               <ul>
-                <li>Traditional Portuguese meal preparation</li>
+                <li>Traditional Lusophone meal preparation</li>
                 <li>Portuguese wine pairings</li>
                 <li>Fado music background</li>
                 <li>Cultural conversation topics</li>
@@ -676,15 +676,15 @@ export default function CulturalEventsModule() {
             </li>
             <li><strong>Language Exchange Nights:</strong>
               <ul>
-                <li>Portuguese-English conversation practice</li>
+                <li>Lusophone-English conversation practice</li>
                 <li>Cultural storytelling sessions</li>
-                <li>Traditional Portuguese games</li>
-                <li>Portuguese poetry readings</li>
+                <li>Traditional Lusophone games</li>
+                <li>Lusophone poetry readings</li>
               </ul>
             </li>
             <li><strong>Cooking Workshops:</strong>
               <ul>
-                <li>Traditional Portuguese recipe sharing</li>
+                <li>Traditional Lusophone recipe sharing</li>
                 <li>Hands-on cooking instruction</li>
                 <li>Regional cuisine exploration</li>
                 <li>Family recipe preservation</li>
@@ -692,22 +692,22 @@ export default function CulturalEventsModule() {
             </li>
           </ul>
           
-          <h4>2. Community Events (25-100 people)</h4>
+          <h4>2. Community Events (25-many people)</h4>
           <ul>
-            <li><strong>Portuguese Cultural Showcases:</strong>
+            <li><strong>Lusophone Cultural Showcases:</strong>
               <ul>
                 <li>Traditional music and dance performances</li>
-                <li>Portuguese art and craft exhibitions</li>
+                <li>Lusophone art and craft exhibitions</li>
                 <li>Cultural history presentations</li>
                 <li>Regional tradition demonstrations</li>
               </ul>
             </li>
             <li><strong>Seasonal Celebrations:</strong>
               <ul>
-                <li>Portuguese Christmas (Natal) traditions</li>
+                <li>Lusophone Christmas (Natal) traditions</li>
                 <li>São João summer celebrations</li>
                 <li>Harvest festival adaptations</li>
-                <li>Portuguese New Year (Ano Novo) customs</li>
+                <li>Lusophone New Year (Ano Novo) customs</li>
               </ul>
             </li>
             <li><strong>Educational Workshops:</strong>
@@ -744,9 +744,9 @@ export default function CulturalEventsModule() {
             <li><strong>Cultural Authenticity:</strong>
               <ul>
                 <li>Research traditional elements thoroughly</li>
-                <li>Consult with Portuguese cultural experts</li>
+                <li>Consult with Lusophone cultural experts</li>
                 <li>Ensure respectful representation of traditions</li>
-                <li>Include multiple Portuguese regional perspectives</li>
+                <li>Include multiple Lusophone regional perspectives</li>
               </ul>
             </li>
           </ul>
@@ -756,7 +756,7 @@ export default function CulturalEventsModule() {
             <li><strong>Venue Selection:</strong>
               <ul>
                 <li>Portuguese-speaking community centers</li>
-                <li>Portuguese church halls</li>
+                <li>Lusophone church halls</li>
                 <li>Portuguese restaurants (private events)</li>
                 <li>London cultural venues</li>
                 <li>Private homes for intimate gatherings</li>
@@ -765,7 +765,7 @@ export default function CulturalEventsModule() {
             <li><strong>Program Development:</strong>
               <ul>
                 <li>Welcome and cultural context setting</li>
-                <li>Traditional Portuguese activities</li>
+                <li>Traditional Lusophone activities</li>
                 <li>Interactive cultural learning segments</li>
                 <li>Social networking opportunities</li>
                 <li>Closing with community bonding</li>
@@ -773,10 +773,10 @@ export default function CulturalEventsModule() {
             </li>
             <li><strong>Community Engagement:</strong>
               <ul>
-                <li>Partner with existing Portuguese organizations</li>
+                <li>Partner with existing Lusophone organizations</li>
                 <li>Invite Portuguese-speaking community leaders</li>
                 <li>Recruit volunteers from the community</li>
-                <li>Promote through Portuguese social networks</li>
+                <li>Promote through Lusophone social networks</li>
               </ul>
             </li>
           </ul>
@@ -786,14 +786,14 @@ export default function CulturalEventsModule() {
             <li><strong>Setup and Atmosphere:</strong>
               <ul>
                 <li>Portuguese flag displays</li>
-                <li>Traditional Portuguese decorations</li>
+                <li>Traditional Lusophone decorations</li>
                 <li>Portuguese music playlist</li>
                 <li>Cultural information displays</li>
               </ul>
             </li>
             <li><strong>Cultural Program:</strong>
               <ul>
-                <li>Opening with Portuguese greeting and blessing</li>
+                <li>Opening with Lusophone greeting and blessing</li>
                 <li>Cultural education segments</li>
                 <li>Interactive traditional activities</li>
                 <li>Community sharing and storytelling</li>
@@ -817,14 +817,14 @@ export default function CulturalEventsModule() {
             <li><strong>Community Feedback:</strong> Gather input on cultural authenticity and enjoyment</li>
             <li><strong>Relationship Building:</strong> Connect attendees for ongoing cultural activities</li>
             <li><strong>Cultural Preservation:</strong> Document traditional knowledge shared at events</li>
-            <li><strong>Future Planning:</strong> Establish regular Portuguese cultural programming</li>
+            <li><strong>Future Planning:</strong> Establish regular Lusophone cultural programming</li>
           </ul>
           
           <h4>Collaboration Opportunities:</h4>
           <ul>
-            <li><strong>Portuguese Embassy:</strong> Support for authentic cultural programming</li>
-            <li><strong>Portuguese Schools:</strong> Educational partnerships and cultural exchange</li>
-            <li><strong>Portuguese Businesses:</strong> Sponsorship and authentic cultural resources</li>
+            <li><strong>Lusophone Embassy:</strong> Support for authentic cultural programming</li>
+            <li><strong>Lusophone Schools:</strong> Educational partnerships and cultural exchange</li>
+            <li><strong>Lusophone Businesses:</strong> Sponsorship and authentic cultural resources</li>
             <li><strong>London Cultural Institutions:</strong> Broader cultural integration opportunities</li>
           </ul>
         `,
@@ -1003,8 +1003,8 @@ export default function CulturalEventsModule() {
             items: [
               { text: 'Choose a specific Portuguese tradition to celebrate', textPortuguese: 'Escolha uma tradição portuguesa específica para celebrar' },
               { text: 'Create a detailed event planning timeline', textPortuguese: 'Crie um cronograma detalhado de planeamento de eventos' },
-              { text: 'Research authentic Portuguese decorations and materials', textPortuguese: 'Pesquise decorações e materiais portugueses autênticos' },
-              { text: 'Develop a list of traditional Portuguese activities for your event', textPortuguese: 'Desenvolva uma lista de atividades tradicionais portuguesas para o seu evento' },
+              { text: 'Research authentic Lusophone decorations and materials', textPortuguese: 'Pesquise decorações e materiais portugueses autênticos' },
+              { text: 'Develop a list of traditional Lusophone activities for your event', textPortuguese: 'Desenvolva uma lista de atividades tradicionais portuguesas para o seu evento' },
               { text: 'Connect with local Portuguese-speaking community organizations', textPortuguese: 'Conecte-se com organizações da comunidade de falantes de português local' }
             ]
           }
@@ -1012,7 +1012,7 @@ export default function CulturalEventsModule() {
         tips: [
           'Start small with intimate gatherings before organizing larger events',
           'Always have backup plans for outdoor Portuguese celebrations in London weather',
-          'Create bilingual materials to accommodate different comfort levels with Portuguese'
+          'Create bilingual materials to accommodate different comfort levels with Lusophone'
         ],
         tipsPortuguese: [
           'Comece pequeno com encontros íntimos antes de organizar eventos maiores',
@@ -1024,19 +1024,19 @@ export default function CulturalEventsModule() {
     practicalExercises: [],
     resources: [
       {
-        title: 'Portuguese Cultural Calendar London',
+        title: 'Lusophone Cultural Calendar London',
         titlePortuguese: 'Calendário Cultural Português Londres',
         url: '/cultural-events/calendar',
         type: 'guide'
       },
       {
-        title: 'Traditional Portuguese Recipe Collection',
+        title: 'Traditional Lusophone Recipe Collection',
         titlePortuguese: 'Coleção de Receitas Tradicionais Portuguesas',
         url: '/downloads/portuguese-recipes.pdf',
         type: 'download'
       },
       {
-        title: 'Portuguese Cultural Event Planning Checklist',
+        title: 'Lusophone Cultural Event Planning Checklist',
         titlePortuguese: 'Lista de Verificação de Planeamento de Eventos Culturais Portugueses',
         url: '/downloads/cultural-event-planning.pdf',
         type: 'download'

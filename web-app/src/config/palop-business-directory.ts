@@ -1,6 +1,6 @@
 /**
  * PALOP Business Directory Configuration
- * Celebrating PALOP (African Portuguese-Speaking Countries) Business Excellence in the UK
+ * Celebrating PALOP (African Lusophone-Speaking Countries) Business Excellence in the UK
  * Comprehensive directory of businesses owned by entrepreneurs from Angola, Cape Verde, Guinea-Bissau, Mozambique, São Tomé and Príncipe
  */
 
@@ -105,7 +105,7 @@ export interface PALOPBusiness {
 }
 
 /**
- * PALOP Business Directory - Celebrating African Portuguese Entrepreneurial Excellence
+ * PALOP Business Directory - Celebrating African Lusophone Entrepreneurial Excellence
  */
 export const PALOP_BUSINESS_DIRECTORY: PALOPBusiness[] = [
   // ANGOLA 🇦🇴 - Business Excellence
@@ -166,7 +166,7 @@ export const PALOP_BUSINESS_DIRECTORY: PALOPBusiness[] = [
     ],
     priceRange: '££££',
     paymentMethods: ['Credit cards', 'Bank transfer', 'Cryptocurrency', 'Financing available'],
-    languages: ['Portuguese', 'English', 'French'],
+    languages: ['Lusophone', 'English', 'French'],
     
     culturalOfferings: [
       'Angolan heritage jewelry designs',
@@ -273,7 +273,7 @@ export const PALOP_BUSINESS_DIRECTORY: PALOPBusiness[] = [
     ],
     priceRange: '££',
     paymentMethods: ['Credit cards', 'Direct debit', 'Cash', 'PayPal'],
-    languages: ['Portuguese', 'English', 'Spanish'],
+    languages: ['Lusophone', 'English', 'Spanish'],
     
     culturalOfferings: [
       'Authentic Angolan dance instruction',
@@ -381,7 +381,7 @@ export const PALOP_BUSINESS_DIRECTORY: PALOPBusiness[] = [
     ],
     priceRange: '££',
     paymentMethods: ['Credit cards', 'Direct debit', 'Cash', 'PayPal'],
-    languages: ['Cape Verdean Creole', 'Portuguese', 'English'],
+    languages: ['Cape Verdean Creole', 'Lusophone', 'English'],
     
     culturalOfferings: [
       'Authentic Cape Verdean music education',
@@ -486,7 +486,7 @@ export const PALOP_BUSINESS_DIRECTORY: PALOPBusiness[] = [
     ],
     priceRange: '££',
     paymentMethods: ['Credit cards', 'Cash', 'Contactless'],
-    languages: ['Cape Verdean Creole', 'Portuguese', 'English'],
+    languages: ['Cape Verdean Creole', 'Lusophone', 'English'],
     
     culturalOfferings: [
       'Traditional Cape Verdean dining atmosphere',
@@ -593,7 +593,7 @@ export const PALOP_BUSINESS_DIRECTORY: PALOPBusiness[] = [
     ],
     priceRange: '££',
     paymentMethods: ['Credit cards', 'Bank transfer', 'Trade accounts', 'PayPal'],
-    languages: ['Portuguese', 'English', 'Makua'],
+    languages: ['Lusophone', 'English', 'Makua'],
     
     culturalOfferings: [
       'Authentic Mozambican spice education',
@@ -708,7 +708,7 @@ export const PALOP_BUSINESS_DIRECTORY: PALOPBusiness[] = [
     ],
     priceRange: '£',
     paymentMethods: ['Cash', 'Bank transfer', 'Community contributions'],
-    languages: ['Portuguese', 'Crioulo', 'Balanta', 'Fula', 'English'],
+    languages: ['Lusophone', 'Crioulo', 'Balanta', 'Fula', 'English'],
     
     culturalOfferings: [
       'Authentic Guinea-Bissau cultural education',
@@ -824,7 +824,7 @@ export const PALOP_BUSINESS_DIRECTORY: PALOPBusiness[] = [
     ],
     priceRange: '££',
     paymentMethods: ['Credit cards', 'Cash', 'Contactless', 'PayPal'],
-    languages: ['Portuguese', 'English', 'Forro'],
+    languages: ['Lusophone', 'English', 'Forro'],
     
     culturalOfferings: [
       'São Tomé cocoa heritage education',

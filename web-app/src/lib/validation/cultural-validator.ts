@@ -1,6 +1,6 @@
 /**
  * Cultural Background Validation
- * Validates Portuguese cultural information and heritage
+ * Validates Lusophone cultural information and heritage
  */
 
 import { EnhancedSignupForm, PortugueseCountry } from '@/types/enhanced-signup'
@@ -21,7 +21,7 @@ export async function validateCulturalBackground(
   const recommendations: string[] = []
   let culturalScore = 0
 
-  // Validate Portuguese origin
+  // Validate Lusophone origin
   const originValidation = validatePortugueseOrigin(signupData.portugueseOrigin)
   culturalScore += originValidation.score
   validationFlags.push(...originValidation.flags)
@@ -131,14 +131,14 @@ function validateCulturalInterests(signupData: EnhancedSignupForm) {
     if (hasCulturalInterests) {
       score += 15
       flags.push('verified:strong_cultural_interests')
-      recommendations.push('Your cultural interests will connect you with authentic Portuguese experiences')
+      recommendations.push('Your cultural interests will connect you with authentic Lusophone experiences')
     }
 
     // Check for business interests
     if (signupData.primaryInterests.includes('business-networking')) {
       score += 10
       flags.push('verified:business_networking_interest')
-      recommendations.push('Join the Portuguese Business Network for professional connections')
+      recommendations.push('Join the Lusophone Business Network for professional connections')
     }
 
     // Check for romantic interests
@@ -279,28 +279,28 @@ function generateCulturalRecommendations(
       recommendations.push('Your strong cultural connection makes you ideal for organizing cultural events')
       break
     case 'moderate':
-      recommendations.push('Explore Portuguese cultural workshops to deepen your heritage connection')
+      recommendations.push('Explore Lusophone cultural workshops to deepen your heritage connection')
       recommendations.push('Connect with community elders to learn more about Portuguese traditions')
       break
     case 'developing':
-      recommendations.push('Start with beginner-friendly cultural events to build your Portuguese knowledge')
-      recommendations.push('Join language exchange groups to improve your Portuguese skills')
+      recommendations.push('Start with beginner-friendly cultural events to build your Lusophone knowledge')
+      recommendations.push('Join language exchange groups to improve your Lusophone skills')
       break
   }
 
   // Location-specific recommendations
   if (signupData.ukLocation === 'London') {
-    recommendations.push('Visit the Portuguese Cultural Centre in South London')
+    recommendations.push('Visit the Lusophone Cultural Centre in South London')
     recommendations.push('Explore Stockwell\'s Little Portugal for authentic shops and restaurants')
   } else {
-    recommendations.push(`Connect with the Portuguese community in ${signupData.ukLocation}`)
-    recommendations.push('Consider traveling to London for major Portuguese cultural events')
+    recommendations.push(`Connect with the Lusophone community in ${signupData.ukLocation}`)
+    recommendations.push('Consider traveling to London for major Lusophone cultural events')
   }
 
   // Origin-specific recommendations
   const country = signupData.portugueseOrigin?.country
   if (country === 'portugal') {
-    recommendations.push('Join regional Portuguese groups to connect with people from your area')
+    recommendations.push('Join regional Lusophone groups to connect with people from your area')
   } else if (country === 'brazil') {
     recommendations.push('Explore Brazilian cultural events and capoeira groups')
   } else if (country === 'angola') {

@@ -57,10 +57,10 @@ export default function LusoMobileNavigation({
   const [isScrolling, setIsScrolling] = useState(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout>();
   
-  // Portuguese cultural indicators
+  // Lusophone cultural indicators
   const [showCulturalPulse, setShowCulturalPulse] = useState(false);
 
-  // Navigation items with Portuguese cultural context
+  // Navigation items with Lusophone cultural context
   const navigationItems: NavItem[] = [
     {
       href: ROUTES.home,
@@ -76,7 +76,7 @@ export default function LusoMobileNavigation({
       labelPt: 'Eventos',
       icon: CalendarDaysIcon,
       iconActive: CalendarDaysIconSolid,
-      badge: 3, // Dynamic badge for new Portuguese cultural events
+      badge: 3, // Dynamic badge for new Lusophone cultural events
       cultural: true
     },
     {
@@ -143,7 +143,7 @@ export default function LusoMobileNavigation({
     };
   }, [lastScrollY]);
 
-  // Cultural pulse animation for Portuguese events
+  // Cultural pulse animation for Lusophone events
   useEffect(() => {
     const interval = setInterval(() => {
       setShowCulturalPulse(true);
@@ -167,7 +167,7 @@ export default function LusoMobileNavigation({
   };
 
   const handleNavigation = (href: string, hapticType: 'light' | 'medium' = 'light') => {
-    // Add Portuguese cultural announcement for cultural sections
+    // Add Lusophone cultural announcement for cultural sections
     const item = navigationItems.find(nav => nav.href === href);
     if (item?.cultural && language === 'pt') {
       announceInPortuguese(item.labelPt);
@@ -177,7 +177,7 @@ export default function LusoMobileNavigation({
   };
 
   const announceInPortuguese = (text: string) => {
-    // Portuguese cultural accessibility announcement
+    // Lusophone cultural accessibility announcement
     const announcement = document.createElement('div');
     announcement.className = 'portuguese-announcement';
     announcement.setAttribute('aria-live', 'polite');
@@ -195,7 +195,7 @@ export default function LusoMobileNavigation({
         className={`elite-mobile-nav ${className}`}
         data-cultural-nav="portuguese"
         role="navigation"
-        aria-label={language === 'pt' ? 'Navegação principal da comunidade portuguesa' : 'Main Portuguese community navigation'}
+        aria-label={language === 'pt' ? 'Navegação principal da comunidade portuguesa' : 'Main Lusophone community navigation'}
         initial={{ y: 100 }}
         animate={{ 
           y: isVisible ? 0 : 100,
@@ -243,7 +243,7 @@ export default function LusoMobileNavigation({
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 25 }}
                   >
-                    {/* Icon with Portuguese cultural indicators */}
+                    {/* Icon with Lusophone cultural indicators */}
                     <div className="relative">
                       <motion.div
                         animate={{
@@ -261,7 +261,7 @@ export default function LusoMobileNavigation({
                         />
                       </motion.div>
                       
-                      {/* Portuguese cultural indicator */}
+                      {/* Lusophone cultural indicator */}
                       {item.cultural && (
                         <motion.div
                           className="absolute -top-1 -right-1 w-2 h-2 bg-gradient-to-r from-red-500 to-green-500 rounded-full"
@@ -287,7 +287,7 @@ export default function LusoMobileNavigation({
                       )}
                     </div>
                     
-                    {/* Label with Portuguese support */}
+                    {/* Label with Lusophone support */}
                     <motion.span
                       className={`elite-nav-label text-xs font-medium ${
                         active 
@@ -349,7 +349,7 @@ export default function LusoMobileNavigation({
             className="shadow-lg hover:shadow-xl"
           />
           
-          {/* Portuguese cultural pulse indicator */}
+          {/* Lusophone cultural pulse indicator */}
           <motion.div
             className="absolute inset-0 border-2 border-red-500 rounded-full opacity-30"
             animate={{
@@ -369,7 +369,7 @@ export default function LusoMobileNavigation({
         aria-atomic="true"
       />
 
-      {/* Portuguese navigation indicators */}
+      {/* Lusophone navigation indicators */}
       <style jsx>{`
         .portuguese-announcement {
           position: fixed;
@@ -398,7 +398,7 @@ export default function LusoMobileNavigation({
           }
         }
         
-        /* Portuguese cultural navigation enhancements */
+        /* Lusophone cultural navigation enhancements */
         .elite-mobile-nav {
           background: rgba(255, 255, 255, 0.98);
           backdrop-filter: blur(16px) saturate(160%);

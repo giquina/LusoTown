@@ -38,19 +38,19 @@ export default function CategoryFilter({
     const descriptions = {
       'Women 30+': isPortuguese 
         ? 'Experiências exclusivas para mulheres portuguesas na casa dos 30'
-        : 'Exclusive experiences for Portuguese women in their 30s',
+        : 'Exclusive experiences for Lusophone women in their 30s',
       'Women 40+': isPortuguese 
         ? 'Networking profissional para mulheres portuguesas estabelecidas'
-        : 'Professional networking for established Portuguese women',
+        : 'Professional networking for established Lusophone women',
       'Family-Friendly': isPortuguese 
         ? 'Experiências culturais perfeitas para famílias portuguesas'
-        : 'Cultural experiences perfect for Portuguese families',
+        : 'Cultural experiences perfect for Lusophone families',
       'Mixed Groups': isPortuguese 
         ? 'Experiências abertas para todos os membros da comunidade'
         : 'Open experiences for all community members',
       'Cultural Heritage': isPortuguese 
         ? 'Celebrações e preservação das tradições portuguesas'
-        : 'Portuguese cultural celebrations and heritage preservation',
+        : 'Lusophone cultural celebrations and heritage preservation',
       'Professional Networking': isPortuguese 
         ? 'Desenvolvimento empresarial e de carreira'
         : 'Business and career development experiences'

@@ -2,7 +2,7 @@
  * University Partnerships Configuration
  * 
  * Centralized configuration for all United Kingdom university partnerships,
- * Portuguese student counts, and academic contacts.
+ * Lusophone student counts, and academic contacts.
  */
 
 // University Partnership Data
@@ -77,12 +77,12 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     lusoTownMembers: parseInt(process.env.NEXT_PUBLIC_UCL_LUSOTOWN_MEMBERS || '180'),
     contact: {
       name: process.env.NEXT_PUBLIC_UCL_CONTACT_NAME || 'Dr. Maria Fernandes',
-      title: process.env.NEXT_PUBLIC_UCL_CONTACT_TITLE || 'Head of Portuguese Studies',
+      title: process.env.NEXT_PUBLIC_UCL_CONTACT_TITLE || 'Head of Lusophone Studies',
       email: process.env.NEXT_PUBLIC_UCL_CONTACT_EMAIL || 'portuguese.studies@ucl.ac.uk',
       phone: process.env.NEXT_PUBLIC_UCL_CONTACT_PHONE || '+44 20 7679 7031',
-      department: 'Department of Spanish, Portuguese and Latin American Studies',
+      department: 'Department of Spanish, Lusophone and Latin American Studies',
       office: 'Foster Court, UCL',
-      bio: 'Leading Portuguese studies academic with expertise in contemporary Portuguese literature and digital humanities.'
+      bio: 'Leading Lusophone studies academic with expertise in contemporary Lusophone literature and digital humanities.'
     },
     address: {
       street: 'Gower Street',
@@ -94,8 +94,8 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     portugueseStudiesPage: process.env.NEXT_PUBLIC_UCL_PORTUGUESE_URL || 'https://www.ucl.ac.uk/selcs/departments/spanish-portuguese-latin-american-studies',
     hasPortugueseProgram: true,
     portugalStudyAbroad: true,
-    culturalPrograms: ['Portuguese Cultural Nights', 'Fado Workshops', 'Portuguese Film Screenings'],
-    academicSupport: ['Portuguese Language Exchange', 'Academic Mentorship', 'Thesis Support'],
+    culturalPrograms: ['Lusophone Cultural Nights', 'Fado Workshops', 'Lusophone Film Screenings'],
+    academicSupport: ['Lusophone Language Exchange', 'Academic Mentorship', 'Thesis Support'],
     socialMedia: {
       twitter: 'https://twitter.com/UCLPortuguese',
       facebook: 'https://facebook.com/UCLPortugueseStudies',
@@ -117,7 +117,7 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     lusoTownMembers: parseInt(process.env.NEXT_PUBLIC_KCL_LUSOTOWN_MEMBERS || '220'),
     contact: {
       name: process.env.NEXT_PUBLIC_KCL_CONTACT_NAME || 'Prof. Carlos Mendes',
-      title: process.env.NEXT_PUBLIC_KCL_CONTACT_TITLE || 'Portuguese Studies Coordinator',
+      title: process.env.NEXT_PUBLIC_KCL_CONTACT_TITLE || 'Lusophone Studies Coordinator',
       email: process.env.NEXT_PUBLIC_KCL_CONTACT_EMAIL || 'portuguese@kcl.ac.uk',
       phone: process.env.NEXT_PUBLIC_KCL_CONTACT_PHONE || '+44 20 7848 2299',
       department: 'Department of Modern Language Centre',
@@ -132,7 +132,7 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     website: process.env.NEXT_PUBLIC_KCL_URL || 'https://www.kcl.ac.uk',
     hasPortugueseProgram: true,
     portugalStudyAbroad: true,
-    culturalPrograms: ['Portuguese Society Events', 'Cultural Exchange Programs'],
+    culturalPrograms: ['Lusophone Society Events', 'Cultural Exchange Programs'],
     academicSupport: ['Study Groups', 'Career Guidance', 'Language Practice']
   },
   {
@@ -164,7 +164,7 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     website: process.env.NEXT_PUBLIC_IMPERIAL_URL || 'https://www.imperial.ac.uk',
     hasPortugueseProgram: false,
     portugalStudyAbroad: false,
-    culturalPrograms: ['Portuguese Engineering Society', 'Innovation Labs'],
+    culturalPrograms: ['Lusophone Engineering Society', 'Innovation Labs'],
     academicSupport: ['Technical Mentorship', 'Research Opportunities']
   },
   {
@@ -182,7 +182,7 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     lusoTownMembers: parseInt(process.env.NEXT_PUBLIC_LSE_LUSOTOWN_MEMBERS || '140'),
     contact: {
       name: process.env.NEXT_PUBLIC_LSE_CONTACT_NAME || 'Prof. Ricardo Santos',
-      title: process.env.NEXT_PUBLIC_LSE_CONTACT_TITLE || 'Portuguese Academic Coordinator',
+      title: process.env.NEXT_PUBLIC_LSE_CONTACT_TITLE || 'Lusophone Academic Coordinator',
       email: process.env.NEXT_PUBLIC_LSE_CONTACT_EMAIL || 'r.santos@lse.ac.uk',
       phone: process.env.NEXT_PUBLIC_LSE_CONTACT_PHONE || '+44 20 7955 7425',
       department: 'European Institute'
@@ -196,7 +196,7 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     website: process.env.NEXT_PUBLIC_LSE_URL || 'https://www.lse.ac.uk',
     hasPortugueseProgram: false,
     portugalStudyAbroad: true,
-    culturalPrograms: ['Portuguese Economics Society', 'Business Networking'],
+    culturalPrograms: ['Lusophone Economics Society', 'Business Networking'],
     academicSupport: ['Career Services', 'Alumni Network']
   },
   {
@@ -214,7 +214,7 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     lusoTownMembers: parseInt(process.env.NEXT_PUBLIC_OXFORD_LUSOTOWN_MEMBERS || '60'),
     contact: {
       name: process.env.NEXT_PUBLIC_OXFORD_CONTACT_NAME || 'Dr. Ana Rebelo',
-      title: process.env.NEXT_PUBLIC_OXFORD_CONTACT_TITLE || 'Portuguese Studies Fellow',
+      title: process.env.NEXT_PUBLIC_OXFORD_CONTACT_TITLE || 'Lusophone Studies Fellow',
       email: process.env.NEXT_PUBLIC_OXFORD_CONTACT_EMAIL || 'portuguese@ox.ac.uk',
       phone: process.env.NEXT_PUBLIC_OXFORD_CONTACT_PHONE || '+44 1865 270000',
       department: 'Faculty of Medieval and Modern Languages'
@@ -228,7 +228,7 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     website: process.env.NEXT_PUBLIC_OXFORD_URL || 'https://www.ox.ac.uk',
     hasPortugueseProgram: true,
     portugalStudyAbroad: true,
-    culturalPrograms: ['Oxford Portuguese Society', 'Academic Conferences'],
+    culturalPrograms: ['Oxford Lusophone Society', 'Academic Conferences'],
     academicSupport: ['Research Collaboration', 'Academic Publishing']
   },
   {
@@ -246,10 +246,10 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     lusoTownMembers: parseInt(process.env.NEXT_PUBLIC_CAMBRIDGE_LUSOTOWN_MEMBERS || '45'),
     contact: {
       name: process.env.NEXT_PUBLIC_CAMBRIDGE_CONTACT_NAME || 'Prof. Helena Costa',
-      title: process.env.NEXT_PUBLIC_CAMBRIDGE_CONTACT_TITLE || 'Portuguese Literature Specialist',
+      title: process.env.NEXT_PUBLIC_CAMBRIDGE_CONTACT_TITLE || 'Lusophone Literature Specialist',
       email: process.env.NEXT_PUBLIC_CAMBRIDGE_CONTACT_EMAIL || 'hc@cam.ac.uk',
       phone: process.env.NEXT_PUBLIC_CAMBRIDGE_CONTACT_PHONE || '+44 1223 335000',
-      department: 'Department of Spanish and Portuguese'
+      department: 'Department of Spanish and Lusophone'
     },
     address: {
       street: 'Trinity Lane',
@@ -260,7 +260,7 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     website: process.env.NEXT_PUBLIC_CAMBRIDGE_URL || 'https://www.cam.ac.uk',
     hasPortugueseProgram: true,
     portugalStudyAbroad: true,
-    culturalPrograms: ['Portuguese Literary Society', 'Cultural Heritage Events'],
+    culturalPrograms: ['Lusophone Literary Society', 'Cultural Heritage Events'],
     academicSupport: ['Research Opportunities', 'Academic Mentorship']
   },
   {
@@ -291,7 +291,7 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     website: process.env.NEXT_PUBLIC_MANCHESTER_URL || 'https://www.manchester.ac.uk',
     hasPortugueseProgram: false,
     portugalStudyAbroad: false,
-    culturalPrograms: ['Portuguese Student Network'],
+    culturalPrograms: ['Lusophone Student Network'],
     academicSupport: ['Career Guidance']
   },
   {
@@ -309,7 +309,7 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     lusoTownMembers: parseInt(process.env.NEXT_PUBLIC_EDINBURGH_LUSOTOWN_MEMBERS || '50'),
     contact: {
       name: process.env.NEXT_PUBLIC_EDINBURGH_CONTACT_NAME || 'Dr. Maria Campbell',
-      title: process.env.NEXT_PUBLIC_EDINBURGH_CONTACT_TITLE || 'Portuguese Cultural Coordinator',
+      title: process.env.NEXT_PUBLIC_EDINBURGH_CONTACT_TITLE || 'Lusophone Cultural Coordinator',
       email: process.env.NEXT_PUBLIC_EDINBURGH_CONTACT_EMAIL || 'portuguese@ed.ac.uk',
       department: 'School of Literatures, Languages and Cultures'
     },
@@ -322,7 +322,7 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     website: process.env.NEXT_PUBLIC_EDINBURGH_URL || 'https://www.ed.ac.uk',
     hasPortugueseProgram: false,
     portugalStudyAbroad: true,
-    culturalPrograms: ['Scottish-Portuguese Cultural Exchange'],
+    culturalPrograms: ['Scottish-Lusophone Cultural Exchange'],
     academicSupport: ['International Student Support']
   }
 ];

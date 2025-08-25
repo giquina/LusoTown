@@ -30,13 +30,13 @@ interface QRScanResult {
   data: any;
 }
 
-// Portuguese cultural photo filters
+// Lusophone cultural photo filters
 const PORTUGUESE_FILTERS = [
   { id: 'none', name: 'Original', namePortuguese: 'Original' },
   { id: 'fado', name: 'Fado Night', namePortuguese: 'Noite de Fado', filter: 'sepia(0.3) contrast(1.2)' },
   { id: 'azulejos', name: 'Azulejos', namePortuguese: 'Azulejos', filter: 'hue-rotate(200deg) saturate(1.5)' },
   { id: 'porto', name: 'Porto Wine', namePortuguese: 'Vinho do Porto', filter: 'contrast(1.3) brightness(0.9) hue-rotate(10deg)' },
-  { id: 'sunshine', name: 'Portuguese Sun', namePortuguese: 'Sol Português', filter: 'brightness(1.2) saturate(1.3) contrast(1.1)' },
+  { id: 'sunshine', name: 'Lusophone Sun', namePortuguese: 'Sol Português', filter: 'brightness(1.2) saturate(1.3) contrast(1.1)' },
   { id: 'heritage', name: 'Heritage', namePortuguese: 'Património', filter: 'sepia(0.2) contrast(1.1) brightness(1.1)' }
 ];
 
@@ -67,7 +67,7 @@ export default function MobileCameraIntegration({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const qrScannerRef = useRef<any>(null);
   
-  // Photo compression settings for Portuguese cultural content
+  // Photo compression settings for Lusophone cultural content
   const compressionSettings = {
     profile: { quality: 0.8, maxWidth: 800, maxHeight: 800 },
     event: { quality: 0.9, maxWidth: 1200, maxHeight: 1200 },
@@ -342,7 +342,7 @@ export default function MobileCameraIntegration({
         title: language === 'pt' ? 'Foto Guardada!' : 'Photo Saved!',
         message: language === 'pt' 
           ? 'Adicionada ao teu perfil português' 
-          : 'Added to your Portuguese profile',
+          : 'Added to your Lusophone profile',
         duration: 3000
       });
 
@@ -372,7 +372,7 @@ export default function MobileCameraIntegration({
 
         console.log('[Camera] Location added to photo:', position.coords);
         
-        // Send location data with photo for Portuguese cultural mapping
+        // Send location data with photo for Lusophone cultural mapping
         // This would be sent to backend for cultural site identification
         
       } catch (error) {

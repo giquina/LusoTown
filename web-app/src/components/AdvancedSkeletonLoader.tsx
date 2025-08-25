@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useHeritage } from '@/context/HeritageContext';
 import { useLanguage } from '@/context/LanguageContext';
 
-// Advanced Skeleton Loading with Portuguese Cultural Elements
+// Advanced Skeleton Loading with Lusophone Cultural Elements
 interface SkeletonProps {
   className?: string;
   variant?: 'event-card' | 'event-grid' | 'testimonial' | 'business-card' | 'cultural-content';
@@ -207,7 +207,7 @@ export function TestimonialSkeleton({ portugueseTheme = true }: { portugueseThem
 export function CulturalContentSkeleton({ portugueseTheme = true }: { portugueseTheme?: boolean }) {
   return (
     <div className="bg-gradient-to-br from-green-50 to-red-50 rounded-2xl p-8 border border-gray-100">
-      {/* Header with Portuguese cultural elements */}
+      {/* Header with Lusophone cultural elements */}
       <div className="flex items-center gap-4 mb-6">
         {portugueseTheme ? (
           <motion.div

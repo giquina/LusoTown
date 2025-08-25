@@ -38,7 +38,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
       id: '1',
       name: 'Ana Ferreira',
       avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face',
-      bio: 'Portuguese chef sharing traditional recipes from Porto',
+      bio: 'Lusophone chef sharing traditional recipes from Porto',
       location: 'Stockwell, London',
       membershipTier: 'cultural_ambassador',
       verified: true,
@@ -80,7 +80,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
       id: '4',
       name: 'João Rodrigues',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
-      bio: 'Transport service owner helping Portuguese families in London',
+      bio: 'Transport service owner helping Lusophone families in London',
       location: 'South London',
       membershipTier: 'community',
       verified: false,
@@ -276,12 +276,12 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
           <div className="flex items-center space-x-2 mb-3">
             <Coffee className="w-5 h-5 text-accent-600" />
             <h4 className="font-semibold text-accent-900">
-              {t('suggestions.coffee_meetup') || 'Portuguese Coffee Meetup'}
+              {t('suggestions.coffee_meetup') || 'Lusophone Coffee Meetup'}
             </h4>
           </div>
           
           <p className="text-sm text-accent-700 mb-3">
-            {t('suggestions.coffee_description') || 'Join weekly Portuguese coffee meetups to connect with community members in person.'}
+            {t('suggestions.coffee_description') || 'Join weekly Lusophone coffee meetups to connect with community members in person.'}
           </p>
           
           <div className="flex items-center justify-between">

@@ -264,7 +264,7 @@ export const profileImages: Record<string, ProfileImage> = {
   'catarina-lopes': {
     id: 'catarina-lopes',
     path: '/profiles/testimonials/portuguese/catarina-lopes.jpg',
-    alt: 'Catarina Lopes - Portuguese educator and Luso-British mother from Nine Elms, London',
+    alt: 'Catarina Lopes - Lusophone educator and Luso-British mother from Nine Elms, London',
     category: 'testimonial'
   }
 }

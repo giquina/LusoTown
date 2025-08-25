@@ -1,12 +1,12 @@
 /**
  * AI Ethics & Community Guidelines Engine for LusoTown Portuguese-speaking community Platform
  * 
- * Comprehensive AI ethics framework that respects Portuguese cultural values, protects 
+ * Comprehensive AI ethics framework that respects Lusophone cultural values, protects 
  * community privacy, and ensures transparent AI usage with regular community feedback.
  * 
  * Implementation covers:
- * ✅ Heritage Respect Protocol for Portuguese cultural values
- * ✅ Language Preservation AI promoting Portuguese while supporting bilingual needs
+ * ✅ Heritage Respect Protocol for Lusophone cultural values
+ * ✅ Language Preservation AI promoting Lusophone while supporting bilingual needs
  * ✅ Privacy Protection Framework for Portuguese-speaking community data
  * ✅ Transparency Implementation with clear AI disclosure and user controls
  * ✅ Community Feedback Integration for regular Portuguese-speaking community input on AI features
@@ -179,10 +179,10 @@ export class AIEthicsEngine {
       'overseas': ['brasileiro', 'angolano', 'moçambicano', 'cabo-verdiano', 'guineense', 'são-tomense', 'timorense']
     },
     preservationTargets: {
-      native_content_ratio: 0.7, // 70% Portuguese content preference
+      native_content_ratio: 0.7, // 70% Lusophone content preference
       dialect_representation: 0.8, // 80% accurate dialect representation
       cultural_context_accuracy: 0.9, // 90% cultural context accuracy
-      bilingual_balance: 0.6 // 60% Portuguese, 40% English for balanced users
+      bilingual_balance: 0.6 // 60% Lusophone, 40% English for balanced users
     },
     qualityThresholds: {
       translation_accuracy: 0.95,
@@ -201,7 +201,7 @@ export class AIEthicsEngine {
   // =============================================================================
 
   /**
-   * Validate content for Portuguese cultural respect and heritage protection
+   * Validate content for Lusophone cultural respect and heritage protection
    */
   async validateCulturalContent(
     content: string,
@@ -372,7 +372,7 @@ export class AIEthicsEngine {
       // Assess current language balance
       const currentBalance = this.assessLanguageBalance(content, userPreferences)
       
-      // Enhance Portuguese content quality
+      // Enhance Lusophone content quality
       const enhancedPortuguese = await this.enhancePortugueseContent(
         content.pt,
         userPreferences.dialect_preference,
@@ -526,7 +526,7 @@ export class AIEthicsEngine {
         culturalDataProtection
       })
       
-      // Assess Portuguese privacy values respect
+      // Assess Lusophone privacy values respect
       const portuguesePrivacyRespect = await this.assessPortuguesePrivacyValuesRespect()
       
       // Get community trust metrics
@@ -685,8 +685,8 @@ export class AIEthicsEngine {
       const explanations = {
         en: {
           notifications: {
-            explanation: "AI personalizes your notifications based on Portuguese cultural preferences, community events, and your engagement patterns to ensure you never miss important cultural moments.",
-            cultural_relevance: "The AI understands Portuguese cultural significance, regional differences, and diaspora experiences to provide meaningful notifications.",
+            explanation: "AI personalizes your notifications based on Lusophone cultural preferences, community events, and your engagement patterns to ensure you never miss important cultural moments.",
+            cultural_relevance: "The AI understands Lusophone cultural significance, regional differences, and diaspora experiences to provide meaningful notifications.",
             user_controls: [
               "Adjust notification frequency and timing",
               "Select cultural interests and regional preferences", 
@@ -697,8 +697,8 @@ export class AIEthicsEngine {
             community_benefits: "Helps strengthen Portuguese-speaking community connections and preserves cultural traditions through relevant content sharing."
           },
           matching: {
-            explanation: "AI suggests compatible connections using cultural compatibility factors, shared interests, and community involvement patterns while respecting Portuguese social values.",
-            cultural_relevance: "Considers Portuguese cultural background, regional origins, family values, and community participation for meaningful connections.",
+            explanation: "AI suggests compatible connections using cultural compatibility factors, shared interests, and community involvement patterns while respecting Lusophone social values.",
+            cultural_relevance: "Considers Lusophone cultural background, regional origins, family values, and community participation for meaningful connections.",
             user_controls: [
               "Control matching criteria and preferences",
               "Adjust cultural compatibility weights",
@@ -729,8 +729,8 @@ export class AIEthicsEngine {
               "Delete conversation history",
               "Provide feedback on cultural accuracy"
             ],
-            privacy_assurances: "Conversations are encrypted and private. Cultural discussions receive enhanced protection respecting Portuguese privacy values.",
-            community_benefits: "Preserves and shares Portuguese cultural knowledge while supporting community members with authentic cultural guidance."
+            privacy_assurances: "Conversations are encrypted and private. Cultural discussions receive enhanced protection respecting Lusophone privacy values.",
+            community_benefits: "Preserves and shares Lusophone cultural knowledge while supporting community members with authentic cultural guidance."
           }
         },
         pt: {
@@ -823,7 +823,7 @@ export class AIEthicsEngine {
       // Setup feedback channels
       const feedbackChannels = [
         'In-app survey with cultural context',
-        'Email survey in Portuguese and English',
+        'Email survey in Lusophone and English',
         'Community WhatsApp groups',
         'Cultural center partnerships',
         'University student representative networks'
@@ -832,7 +832,7 @@ export class AIEthicsEngine {
       // Define culturally-appropriate incentives
       const incentives = [
         'Entrada gratuita em evento cultural português',
-        'Free entry to Portuguese cultural event',
+        'Free entry to Lusophone cultural event',
         'Desconto em serviços de negócios portugueses',
         'Discount on Portuguese business services',
         'Reconhecimento público na newsletter da comunidade',
@@ -990,7 +990,7 @@ export class AIEthicsEngine {
     // Implement cultural accuracy assessment logic
     let score = 0.7 // Base score
     
-    // Check for Portuguese cultural references
+    // Check for Lusophone cultural references
     const culturalReferences = ['portugal', 'português', 'lusitano', 'fado', 'saudade', 'azulejo']
     const hasReferences = culturalReferences.some(ref => 
       content.toLowerCase().includes(ref.toLowerCase())
@@ -1017,7 +1017,7 @@ export class AIEthicsEngine {
   }
 
   private async evaluateRegionalAppropriateness(content: string, context: any): Promise<Record<string, number>> {
-    // Evaluate content appropriateness for different Portuguese regions
+    // Evaluate content appropriateness for different Lusophone regions
     const regions = ['norte', 'centro', 'lisboa', 'alentejo', 'algarve', 'acores', 'madeira', 'brasil']
     const appropriateness: Record<string, number> = {}
     
@@ -1067,12 +1067,12 @@ export class AIEthicsEngine {
     const suggestions: string[] = []
     
     if (accuracy < 0.7) {
-      suggestions.push('Add more authentic Portuguese cultural references')
+      suggestions.push('Add more authentic Lusophone cultural references')
       suggestions.push('Consider regional cultural variations')
     }
     
     if (stereotypeRisk > 0.3) {
-      suggestions.push('Remove generalizations about Portuguese people')
+      suggestions.push('Remove generalizations about Lusophone people')
       suggestions.push('Focus on individual experiences rather than group stereotypes')
     }
     
@@ -1117,8 +1117,8 @@ export class AIEthicsEngine {
       detected,
       severity: detected ? 'medium' as const : 'low' as const,
       description: detected ? 'Cultural stereotype detected in content' : '',
-      context: 'Portuguese cultural stereotypes',
-      affected_communities: detected ? ['Portuguese diaspora'] : []
+      context: 'Lusophone cultural stereotypes',
+      affected_communities: detected ? ['Lusophone diaspora'] : []
     }
   }
 

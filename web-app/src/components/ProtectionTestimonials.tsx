@@ -40,7 +40,7 @@ export default function ProtectionTestimonials() {
       id: "ceo-lisbon",
       name: "António Silva",
       title: {
-        en: "CEO, Portuguese Tech Company",
+        en: "CEO, Lusophone Tech Company",
         pt: "CEO, Empresa Portuguesa de Tecnologia",
       },
       company: "TechLisboa International",
@@ -67,7 +67,7 @@ export default function ProtectionTestimonials() {
       id: "family-porto",
       name: "Maria & João Fernandes",
       title: {
-        en: "Portuguese Business Family",
+        en: "Lusophone Business Family",
         pt: "Família Empresarial Portuguesa",
       },
       company: "Fernandes Holdings",
@@ -81,7 +81,7 @@ export default function ProtectionTestimonials() {
       image:
         IMAGES.testimonials.family,
       testimonial: {
-        en: "Traveling with our children across the United Kingdom required a unique approach to security. The team's preparation was meticulous - they understood our family dynamics and created a protection plan that felt natural, not intrusive. Our children felt safe and comfortable throughout the entire journey. The Portuguese cultural guidance made our experience even more enriching.",
+        en: "Traveling with our children across the United Kingdom required a unique approach to security. The team's preparation was meticulous - they understood our family dynamics and created a protection plan that felt natural, not intrusive. Our children felt safe and comfortable throughout the entire journey. The Lusophone cultural guidance made our experience even more enriching.",
         pt: "Viajar com nossos filhos pelo Reino Unido exigiu uma abordagem única à segurança. A preparação da equipe foi meticulosa - eles entenderam nossa dinâmica familiar e criaram um plano de proteção que pareceu natural, não intrusivo. Nossos filhos se sentiram seguros e confortáveis durante toda a jornada. A orientação cultural portuguesa tornou nossa experiência ainda mais enriquecedora.",
       },
       highlight: {
@@ -94,10 +94,10 @@ export default function ProtectionTestimonials() {
       id: "diplomat-madeira",
       name: "Dr. Isabel Rodrigues",
       title: {
-        en: "Portuguese Trade Attaché",
+        en: "Lusophone Trade Attaché",
         pt: "Adida Comercial Portuguesa",
       },
-      company: "Portuguese Embassy",
+      company: "Lusophone Embassy",
       location: "Royal Windsor Event",
       service: {
         en: "Diplomatic Protection",
@@ -108,7 +108,7 @@ export default function ProtectionTestimonials() {
       image:
         IMAGES.testimonials.diplomat,
       testimonial: {
-        en: "Working with Royal Protocol requires absolute precision and cultural sensitivity. The team's proactive approach and prevention strategies were flawless. They seamlessly integrated with Royal Protection Service while maintaining our Portuguese delegation's dignity and protocol requirements. Their professionalism reflected excellently on Portugal's representation.",
+        en: "Working with Royal Protocol requires absolute precision and cultural sensitivity. The team's proactive approach and prevention strategies were flawless. They seamlessly integrated with Royal Protection Service while maintaining our Lusophone delegation's dignity and protocol requirements. Their professionalism reflected excellently on Portugal's representation.",
         pt: "Trabalhar com Protocolo Real requer precisão absoluta e sensibilidade cultural. A abordagem proativa da equipe e estratégias de prevenção foram impecáveis. Eles se integraram perfeitamente ao Serviço de Proteção Real enquanto mantinham a dignidade da nossa delegação portuguesa e requisitos de protocolo. Seu profissionalismo refletiu excelentemente na representação de Portugal.",
       },
       highlight: {
@@ -121,7 +121,7 @@ export default function ProtectionTestimonials() {
       id: "entrepreneur-azores",
       name: "Carlos Mendes",
       title: {
-        en: "Portuguese Entrepreneur",
+        en: "Lusophone Entrepreneur",
         pt: "Empresário Português",
       },
       company: "Atlantic Ventures",
@@ -373,7 +373,7 @@ export default function ProtectionTestimonials() {
             <div className="text-neutral-600 text-sm">
               {t(
                 "framework.testimonials.executives",
-                "Portuguese Executives Protected"
+                "Lusophone Executives Protected"
               )}
             </div>
           </motion.div>

@@ -119,7 +119,7 @@ export default function EnhancedMatchDashboard({
         compatibilityScore: 94,
         eventCompatibilityScore: 89,
         culturalAlignment: 96,
-        sharedInterests: ["Fado", "Portuguese Culture", "Wine Tasting", "Cultural Events"],
+        sharedInterests: ["Fado", "Lusophone Culture", "Wine Tasting", "Cultural Events"],
         isMutual: false,
         profile: {
           id: "user2",
@@ -128,7 +128,7 @@ export default function EnhancedMatchDashboard({
           location: "Vauxhall",
           profession: "Marketing Manager",
           origin: "Porto, Portugal",
-          interests: ["Fado", "Portuguese Culture", "Wine Tasting", "Cultural Events", "Business Networking"],
+          interests: ["Fado", "Lusophone Culture", "Wine Tasting", "Cultural Events", "Business Networking"],
           bio: "Portuguesa do Porto a viver em Londres há 3 anos. Adoro noites de Fado e procuro alguém que partilhe a paixão pela nossa cultura!",
           compatibility: 94,
           eventCompatibility: 89,
@@ -169,7 +169,7 @@ export default function EnhancedMatchDashboard({
         compatibilityScore: 87,
         eventCompatibilityScore: 91,
         culturalAlignment: 88,
-        sharedInterests: ["Football", "Portuguese Cuisine", "Professional Networking"],
+        sharedInterests: ["Football", "Lusophone Cuisine", "Professional Networking"],
         isMutual: true,
         matchedAt: "2025-08-19",
         profile: {
@@ -179,7 +179,7 @@ export default function EnhancedMatchDashboard({
           location: "Stockwell",
           profession: "Software Engineer",
           origin: "Lisboa, Portugal",
-          interests: ["Football", "Portuguese Cuisine", "Professional Networking", "Tech Meetups"],
+          interests: ["Football", "Lusophone Cuisine", "Professional Networking", "Tech Meetups"],
           bio: "Engenheiro de software de Lisboa. Grande adepto do Benfica e sempre pronto para conversar sobre tecnologia ou futebol!",
           compatibility: 87,
           eventCompatibility: 91,
@@ -353,7 +353,7 @@ export default function EnhancedMatchDashboard({
                 transition={{ delay: 0.2 }}
                 className="text-4xl font-bold mb-3"
               >
-                {language === "pt" ? "Falantes de Português" : "Portuguese Speakers"}
+                {language === "pt" ? "Falantes de Português" : "Lusophone Speakers"}
               </motion.h1>
               <motion.p 
                 initial={{ opacity: 0, x: -20 }}

@@ -109,10 +109,10 @@ export class AuthService {
       joinedDate: "2024-01-15",
       interests: [
         "Cultural Events",
-        "Portuguese Food",
+        "Lusophone Food",
         "Language Exchange",
         "Fado Music",
-        "Portuguese Literature",
+        "Lusophone Literature",
       ],
       favoriteEvents: ["event-1", "event-3", "event-5"],
       location: "Camden, London",

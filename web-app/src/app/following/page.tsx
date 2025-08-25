@@ -35,7 +35,7 @@ export default function FollowingPage() {
   const stats = getFollowingStats()
   const suggestions = getFollowingSuggestions()
   
-  // Helper function to check if language is Portuguese
+  // Helper function to check if language is Lusophone
   const isPortuguese = language === 'pt'
 
   const getTabData = () => {
@@ -77,7 +77,7 @@ export default function FollowingPage() {
         group: 'Group',
         community: 'Community',
         event_organizer: 'Event Organizer',
-        portuguese_nation: 'Portuguese-Speaking Nation'
+        portuguese_nation: 'Lusophone-Speaking Nation'
       },
       pt: {
         person: 'Pessoa',
@@ -106,7 +106,7 @@ export default function FollowingPage() {
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
 {isPortuguese 
                   ? 'Todas as pessoas, grupos e comunidades portuguesas que segues. Mantém-te conectado com a tua rede cultural.'
-                  : 'All the Portuguese people, groups, and communities you follow. Stay connected with your cultural network.'
+                  : 'All the Lusophone people, groups, and communities you follow. Stay connected with your cultural network.'
                 }
               </p>
               
@@ -144,7 +144,7 @@ export default function FollowingPage() {
                   <div className="text-2xl font-bold text-primary-600 mb-1">{stats.portugueseNations}</div>
                   <div className="text-sm text-gray-600 flex items-center gap-1">
                     🌍
-{isPortuguese ? 'Países Lusófonos' : 'Portuguese Nations'}
+{isPortuguese ? 'Países Lusófonos' : 'Lusophone Nations'}
                   </div>
                 </div>
               </div>
@@ -214,7 +214,7 @@ export default function FollowingPage() {
                   }`}
                 >
                   🌍
-{isPortuguese ? 'Países Lusófonos' : 'Portuguese Nations'} ({stats.portugueseNations})
+{isPortuguese ? 'Países Lusófonos' : 'Lusophone Nations'} ({stats.portugueseNations})
                 </button>
               </div>
 
@@ -328,7 +328,7 @@ export default function FollowingPage() {
                   <p className="text-gray-600 mb-6">
 {isPortuguese 
                       ? 'Começa a seguir pessoas, grupos e comunidades portuguesas para te manteres conectado com a tua cultura.'
-                      : 'Start following Portuguese people, groups, and communities to stay connected with your culture.'
+                      : 'Start following Lusophone people, groups, and communities to stay connected with your culture.'
                     }
                   </p>
                   <button 

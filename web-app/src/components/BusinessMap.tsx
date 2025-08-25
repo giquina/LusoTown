@@ -248,10 +248,10 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
         )}
       </div>
 
-      {/* Portuguese Areas Legend */}
+      {/* Lusophone Areas Legend */}
       <div className="absolute top-4 right-4 z-10 bg-white rounded-lg shadow-md p-3 max-w-xs">
         <h4 className="font-medium text-sm mb-2 text-gray-900">
-          {t('map.portuguese_areas', 'Portuguese Areas')}
+          {t('map.portuguese_areas', 'Lusophone Areas')}
         </h4>
         <div className="space-y-1">
           {Object.entries(PORTUGUESE_AREAS).map(([key, area]) => (

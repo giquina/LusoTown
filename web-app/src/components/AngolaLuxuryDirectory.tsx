@@ -123,7 +123,7 @@ const angolaLuxuryBusinesses: LuxuryBusiness[] = [
     rating: 4.9,
     reviews: 89,
     image: '/businesses/angola/esperanca-luxury.jpg',
-    features: ['Mercedes S-Class Fleet', 'Portuguese-Speaking Drivers', 'Security Cleared', '24/7 Service'],
+    features: ['Mercedes S-Class Fleet', 'Lusophone-Speaking Drivers', 'Security Cleared', '24/7 Service'],
     privateBooking: true,
     membershipRequired: false
   },

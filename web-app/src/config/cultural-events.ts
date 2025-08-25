@@ -97,12 +97,12 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
     description: 'Experience authentic Kizomba - Angola\'s sensual dance gift to the Portuguese-speaking world. Whether you\'re single and looking to connect or wanting to celebrate our African Lusophone heritage, Chocolate Kizomba welcomes all skill levels.',
     descriptionPortuguese: 'Experimente Kizomba autêntica - o presente de dança sensual de Angola para o mundo lusófono. Quer esteja solteiro e procurando conectar ou querendo celebrar nossa herança africana lusófona, Chocolate Kizomba acolhe todos os níveis.',
     
-    longDescription: 'Chocolate Kizomba is London\'s premier Angolan dance experience, held every Tuesday and Thursday at the prestigious One Regent Street. Founded by Angolan dance masters, this event celebrates Kizomba as more than just dance - it\'s cultural storytelling through movement. Originating in 1980s Angola, Kizomba blends traditional Semba with Portuguese influences, creating the romantic partner dance that has captivated Portuguese-speaking communities worldwide. Each evening begins with beginner-friendly instruction, ensuring newcomers feel welcomed into our cultural family. As the night progresses, the dance floor fills with the magnetic energy that makes Kizomba irresistible - intimate connections, sensual rhythms, and the unmistakable warmth of Portuguese-speaking hospitality. Advanced dancers share their knowledge freely, creating an inclusive environment where cultural traditions pass naturally between generations. Many lasting relationships - both romantic and friendship - have blossomed on our dance floor, proving that authentic cultural experiences create genuine human connections.',
+    longDescription: 'Chocolate Kizomba is London\'s premier Angolan dance experience, held every Tuesday and Thursday at the prestigious One Regent Street. Founded by Angolan dance masters, this event celebrates Kizomba as more than just dance - it\'s cultural storytelling through movement. Originating in 1980s Angola, Kizomba blends traditional Semba with Lusophone influences, creating the romantic partner dance that has captivated Portuguese-speaking communities worldwide. Each evening begins with beginner-friendly instruction, ensuring newcomers feel welcomed into our cultural family. As the night progresses, the dance floor fills with the magnetic energy that makes Kizomba irresistible - intimate connections, sensual rhythms, and the unmistakable warmth of Portuguese-speaking hospitality. Advanced dancers share their knowledge freely, creating an inclusive environment where cultural traditions pass naturally between generations. Many lasting relationships - both romantic and friendship - have blossomed on our dance floor, proving that authentic cultural experiences create genuine human connections.',
     longDescriptionPortuguese: 'Chocolate Kizomba é a principal experiência de dança angolana de Londres, realizada todas as terças e quintas-feiras no prestigioso One Regent Street. Fundado por mestres de dança angolanos, este evento celebra Kizomba como mais do que apenas dança - é narrativa cultural através do movimento. Originando na Angola dos anos 1980, Kizomba mistura Semba tradicional com influências portuguesas, criando a dança romântica de parceiros que cativou comunidades lusófonas mundialmente. Cada noite começa com instrução amigável para iniciantes, garantindo que novatos se sintam bem-vindos na nossa família cultural. Conforme a noite progride, a pista de dança enche-se com a energia magnética que torna Kizomba irresistível - conexões íntimas, ritmos sensuais e o calor inconfundível da hospitalidade lusófona. Dançarinos avançados compartilham seu conhecimento livremente, criando um ambiente inclusivo onde tradições culturais passam naturalmente entre gerações. Muitos relacionamentos duradouros - tanto românticos quanto de amizade - floresceram na nossa pista, provando que experiências culturais autênticas criam conexões humanas genuínas.',
     
     origin: 'Angola (Luanda)',
     flag: '🇦🇴',
-    culturalBackground: 'Kizomba originated in 1980s Angola, blending traditional Semba with Portuguese influences. Today it\'s the heartbeat of romantic connection across all Portuguese-speaking communities - from Luanda to London.',
+    culturalBackground: 'Kizomba originated in 1980s Angola, blending traditional Semba with Lusophone influences. Today it\'s the heartbeat of romantic connection across all Portuguese-speaking communities - from Luanda to London.',
     culturalBackgroundPortuguese: 'Kizomba originou na Angola dos anos 1980, misturando Semba tradicional com influências portuguesas. Hoje é o batimento cardíaco da conexão romântica em todas as comunidades lusófonas - de Luanda a Londres.',
     
     venue: 'One Regent Street - Premium Dance Venue',
@@ -146,12 +146,12 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
       'Angolan dance masters teaching traditional steps',
       'Live Kizomba music from Portugal, Angola, Cape Verde',
       'Cultural context education during lessons',
-      'Portuguese/English bilingual instruction',
+      'Lusophone/English bilingual instruction',
       'Traditional Angolan hospitality and atmosphere'
     ],
     culturalEducation: [
       'History of Kizomba in Angola and its cultural significance',
-      'Connection between Semba, Kizomba, and Portuguese influence',
+      'Connection between Semba, Kizomba, and Lusophone influence',
       'Role of dance in Portuguese-speaking community bonding',
       'Respect and consent in traditional partner dancing'
     ],
@@ -175,19 +175,19 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
   // FADO EVENTS
   {
     id: 'authentic-fado-camden-monthly',
-    name: 'Authentic Fado Night - Portuguese Soul Music',
+    name: 'Authentic Fado Night - Lusophone Soul Music',
     namePortuguese: 'Noite de Fado Autêntico - Música da Alma Portuguesa',
     type: 'fado',
     
-    description: 'Experience the haunting beauty of authentic Portuguese Fado in an intimate Camden setting. Traditional musicians and singers perform the music that captures Portuguese saudade - the untranslatable feeling of longing and nostalgia.',
+    description: 'Experience the haunting beauty of authentic Lusophone Fado in an intimate Camden setting. Traditional musicians and singers perform the music that captures Lusophone saudade - the untranslatable feeling of longing and nostalgia.',
     descriptionPortuguese: 'Experimente a beleza assombrada do Fado português autêntico num ambiente íntimo de Camden. Músicos e cantores tradicionais apresentam a música que captura a saudade portuguesa - o sentimento intraduzível de anseio e nostalgia.',
     
-    longDescription: 'Nossa Noite de Fado Autêntico transports London to the traditional Fado houses of Lisbon\'s Alfama district. Held monthly in Camden\'s most atmospheric venue, this evening celebrates Fado as Portugal\'s most profound cultural expression. Professional Fado singers, accompanied by traditional Portuguese guitar and classical guitar, perform classic repertoire alongside contemporary interpretations. The intimate setting - candle-lit tables, Portuguese wines, traditional atmosphere - recreates the authentic Fado house experience. Between sets, cultural historians share Fado\'s remarkable story: from Lisbon\'s working-class neighborhoods to UNESCO World Heritage status. Audience members often discover personal connections to Portuguese history through Fado\'s emotional storytelling. Many Portuguese expatriates describe these evenings as "coming home" to their cultural roots. The event welcomes cultural newcomers with program notes in English and Portuguese, ensuring everyone appreciates Fado\'s profound artistic and historical significance.',
+    longDescription: 'Nossa Noite de Fado Autêntico transports London to the traditional Fado houses of Lisbon\'s Alfama district. Held monthly in Camden\'s most atmospheric venue, this evening celebrates Fado as Portugal\'s most profound cultural expression. Professional Fado singers, accompanied by traditional Lusophone guitar and classical guitar, perform classic repertoire alongside contemporary interpretations. The intimate setting - candle-lit tables, Portuguese wines, traditional atmosphere - recreates the authentic Fado house experience. Between sets, cultural historians share Fado\'s remarkable story: from Lisbon\'s working-class neighborhoods to UNESCO World Heritage status. Audience members often discover personal connections to Portuguese history through Fado\'s emotional storytelling. Many Lusophone expatriates describe these evenings as "coming home" to their cultural roots. The event welcomes cultural newcomers with program notes in English and Lusophone, ensuring everyone appreciates Fado\'s profound artistic and historical significance.',
     longDescriptionPortuguese: 'Nossa Noite de Fado Autêntico transporta Londres para as casas de Fado tradicionais do bairro de Alfama em Lisboa. Realizada mensalmente no local mais atmosférico de Camden, esta noite celebra o Fado como a expressão cultural mais profunda de Portugal. Cantores profissionais de Fado, acompanhados por guitarra portuguesa tradicional e guitarra clássica, apresentam repertório clássico ao lado de interpretações contemporâneas. O ambiente íntimo - mesas à luz de velas, vinhos portugueses, atmosfera tradicional - recria a experiência autêntica da casa de Fado. Entre sets, historiadores culturais compartilham a história notável do Fado: dos bairros da classe trabalhadora de Lisboa ao status de Património Mundial da UNESCO. Membros da audiência frequentemente descobrem conexões pessoais com a história portuguesa através da narrativa emocional do Fado. Muitos expatriados portugueses descrevem essas noites como "voltar para casa" às suas raízes culturais. O evento acolhe novatos culturais com notas de programa em inglês e português, garantindo que todos apreciem a profunda significância artística e histórica do Fado.',
     
     origin: 'Portugal (Lisbon)',
     flag: '🇵🇹',
-    culturalBackground: 'Fado emerged in 1820s Lisbon, expressing Portuguese saudade through haunting melodies. UNESCO recognized Fado as Intangible Cultural Heritage, cementing its role as Portugal\'s musical soul.',
+    culturalBackground: 'Fado emerged in 1820s Lisbon, expressing Lusophone saudade through haunting melodies. UNESCO recognized Fado as Intangible Cultural Heritage, cementing its role as Portugal\'s musical soul.',
     culturalBackgroundPortuguese: 'O Fado emergiu na Lisboa dos anos 1820, expressando saudade portuguesa através de melodias assombradas. A UNESCO reconheceu o Fado como Património Cultural Imaterial, cimentando seu papel como alma musical de Portugal.',
     
     venue: 'The Camden Assembly - Intimate Performance Space',
@@ -229,7 +229,7 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
     
     authenticityFeatures: [
       'Professional Fado singers from Portugal',
-      'Traditional Portuguese and classical guitar accompaniment',
+      'Traditional Lusophone and classical guitar accompaniment',
       'Authentic Portuguese wine service',
       'Historical and cultural context provided',
       'Intimate candlelit atmosphere matching traditional Fado houses'
@@ -237,15 +237,15 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
     culturalEducation: [
       'History of Fado from 1820s Lisbon to global recognition',
       'UNESCO World Heritage designation significance',
-      'Portuguese guitar construction and playing techniques',
+      'Lusophone guitar construction and playing techniques',
       'Concept of saudade in Portuguese culture and literature'
     ],
-    partnerOrganizations: ['Instituto Camões London', 'Portuguese Embassy Cultural Department', 'Camden Arts Centre'],
+    partnerOrganizations: ['Instituto Camões London', 'Lusophone Embassy Cultural Department', 'Camden Arts Centre'],
     
     image: '/images/events/fado-night-camden.jpg',
     gallery: ['/images/events/fado-singer-1.jpg', '/images/events/portuguese-guitar-2.jpg', '/images/events/fado-audience-3.jpg'],
     
-    organizer: 'Portuguese Cultural Society London',
+    organizer: 'Lusophone Cultural Society London',
     contactEmail: 'fado@portugueseculture.org.uk',
     socialMedia: {
       facebook: 'https://facebook.com/FadoNightLondon',
@@ -260,14 +260,14 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
   // BUSINESS NETWORKING EVENTS
   {
     id: 'portuguese-business-breakfast-monthly',
-    name: 'Portuguese Business Breakfast - Networking & Success',
+    name: 'Lusophone Business Breakfast - Networking & Success',
     namePortuguese: 'Pequeno-Almoço Empresarial Português - Networking e Sucesso',
     type: 'business',
     
     description: 'London\'s premier Portuguese-speaking business networking event. Connect with successful entrepreneurs, share opportunities, and build partnerships across Portugal, Brazil, Angola, and beyond.',
     descriptionPortuguese: 'O principal evento de networking empresarial lusófono de Londres. Conecte-se com empreendedores bem-sucedidos, compartilhe oportunidades e construa parcerias entre Portugal, Brasil, Angola e além.',
     
-    longDescription: 'Our Monthly Portuguese Business Breakfast has become London\'s most influential Portuguese-speaking professional gathering. Held in the prestigious City of London, this event brings together entrepreneurs, executives, investors, and professionals from across the lusophone business community. Each month features a keynote speaker - successful Portuguese-speaking business leaders sharing insights about scaling businesses, navigating United Kingdom markets, and leveraging cultural advantages. Structured networking sessions ensure meaningful connections, while our "Pitch Your Business" segment gives entrepreneurs 60 seconds to present opportunities to potential partners and investors. Success stories include million-pound partnerships, successful business expansions, and collaborative ventures spanning continents. The breakfast format - 7:30am-9:30am - accommodates busy professional schedules while Portuguese cultural hospitality ensures genuine relationship building. Attendees represent diverse sectors: technology, finance, import/export, restaurants, professional services, and luxury goods. Translation services and bilingual materials ensure accessibility for Portuguese and English speakers.',
+    longDescription: 'Our Monthly Lusophone Business Breakfast has become London\'s most influential Portuguese-speaking professional gathering. Held in the prestigious City of London, this event brings together entrepreneurs, executives, investors, and professionals from across the lusophone business community. Each month features a keynote speaker - successful Portuguese-speaking business leaders sharing insights about scaling businesses, navigating United Kingdom markets, and leveraging cultural advantages. Structured networking sessions ensure meaningful connections, while our "Pitch Your Business" segment gives entrepreneurs 60 seconds to present opportunities to potential partners and investors. Success stories include million-pound partnerships, successful business expansions, and collaborative ventures spanning continents. The breakfast format - 7:30am-9:30am - accommodates busy professional schedules while Lusophone cultural hospitality ensures genuine relationship building. Attendees represent diverse sectors: technology, finance, import/export, restaurants, professional services, and luxury goods. Translation services and bilingual materials ensure accessibility for Lusophone and English speakers.',
     longDescriptionPortuguese: 'Nosso Pequeno-Almoço Empresarial Português Mensal tornou-se o encontro profissional lusófono mais influente de Londres. Realizado na prestigiosa City de Londres, este evento reúne empreendedores, executivos, investidores e profissionais de toda a comunidade empresarial lusófona. Cada mês apresenta um orador principal - líderes empresariais lusófonos bem-sucedidos compartilhando insights sobre escalar negócios, navegar mercados do Reino Unido e aproveitar vantagens culturais. Sessões de networking estruturadas garantem conexões significativas, enquanto nosso segmento "Pitch Your Business" dá aos empreendedores 60 segundos para apresentar oportunidades a potenciais parceiros e investidores. Histórias de sucesso incluem parcerias de milhões de libras, expansões empresariais bem-sucedidas e empreendimentos colaborativos abrangendo continentes. O formato de pequeno-almoço - 7:30-9:30 - acomoda horários profissionais ocupados enquanto a hospitalidade cultural portuguesa garante construção genuína de relacionamentos. Participantes representam setores diversos: tecnologia, finanças, importação/exportação, restaurantes, serviços profissionais e bens de luxo. Serviços de tradução e materiais bilíngues garantem acessibilidade para falantes de português e inglês.',
     
     origin: 'Multi-national (Portugal, Brazil, Angola, etc.)',
@@ -291,7 +291,7 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
     atmosphere: 'Professional, collaborative, culturally warm, results-oriented',
     
     price: '£35 per person',
-    priceDetails: '£35 includes full English/Portuguese breakfast, networking materials, follow-up contact directory',
+    priceDetails: '£35 includes full English/Lusophone breakfast, networking materials, follow-up contact directory',
     studentDiscount: false,
     groupDiscount: true,
     
@@ -300,13 +300,13 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
       {
         name: 'Carlos Silva',
         origin: 'Portugal',
-        quote: 'Connected with 400+ clients through these breakfasts. My accounting firm now serves London\'s entire Portuguese community!',
+        quote: 'Connected with 400+ clients through these breakfasts. My accounting firm now serves London\'s entire Lusophone community!',
         quotePortuguese: 'Conectei-me com 400+ clientes através destes pequenos-almoços. Meu escritório contábil agora serve toda a comunidade portuguesa de Londres!'
       },
       {
         name: 'Sandra & Ricardo',
         origin: 'Portugal & Brazil',
-        quote: 'Met here as business partners, became life partners. Now run London\'s largest Portuguese-Brazilian consultancy.',
+        quote: 'Met here as business partners, became life partners. Now run London\'s largest Lusophone-Brazilian consultancy.',
         quotePortuguese: 'Conhecemo-nos aqui como parceiros de negócios, tornámo-nos parceiros de vida. Agora dirigimos a maior consultoria luso-brasileira de Londres.'
       }
     ],
@@ -314,18 +314,18 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
     
     authenticityFeatures: [
       'Portuguese business culture and networking etiquette',
-      'Bilingual environment (Portuguese/English)',
+      'Bilingual environment (Lusophone/English)',
       'Cultural understanding of Portuguese-speaking markets',
-      'Traditional Portuguese hospitality in professional setting',
+      'Traditional Lusophone hospitality in professional setting',
       'Cross-cultural business expertise'
     ],
     culturalEducation: [
       'Portuguese-speaking market opportunities globally',
       'Cultural considerations in international business',
       'Leveraging cultural heritage for business advantage',
-      'Portuguese entrepreneurial traditions and modern success'
+      'Lusophone entrepreneurial traditions and modern success'
     ],
-    partnerOrganizations: ['City of London Corporation', 'Portuguese Chamber of Commerce United Kingdom', 'Brazilian Business Association'],
+    partnerOrganizations: ['City of London Corporation', 'Lusophone Chamber of Commerce United Kingdom', 'Brazilian Business Association'],
     
     image: '/images/events/portuguese-business-breakfast.jpg',
     gallery: ['/images/events/business-networking-1.jpg', '/images/events/keynote-speaker-2.jpg', '/images/events/breakfast-meeting-3.jpg'],
@@ -345,19 +345,19 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
   // CULTURAL CELEBRATION EVENTS
   {
     id: 'porto-night-cultural-celebration',
-    name: 'Porto Night - Northern Portuguese Cultural Celebration',
+    name: 'Porto Night - Northern Lusophone Cultural Celebration',
     namePortuguese: 'Noite do Porto - Celebração Cultural do Norte de Portugal',
     type: 'cultural',
     
     description: 'Celebrate the vibrant culture of Porto and Northern Portugal with traditional music, regional cuisine, port wine tasting, and cultural performances showcasing the authentic spirit of Portugal\'s second city.',
     descriptionPortuguese: 'Celebre a cultura vibrante do Porto e Norte de Portugal com música tradicional, culinária regional, degustação de vinho do Porto e apresentações culturais mostrando o espírito autêntico da segunda cidade de Portugal.',
     
-    longDescription: 'Porto Night brings the warmth and authenticity of Northern Portuguese culture to London through an immersive cultural celebration. This quarterly event transforms venues into a slice of Porto, complete with traditional décor, regional specialties, and cultural performances. The evening begins with guided port wine tasting, featuring authentic vintage ports from renowned Porto cellars, accompanied by expert sommeliers explaining terroir, production, and cultural significance. Traditional Northern Portuguese cuisine includes francesinha sandwiches, tripas à moda do Porto, and regional pastries like pastéis de nata. Live performances feature traditional folk music from the Minho region, Portuguese guitar concerts, and folk dance demonstrations. Cultural exhibits showcase Porto\'s architectural heritage, from medieval quarters to contemporary design, while local artisans demonstrate traditional crafts like azulejo tile painting and Portuguese embroidery. The event attracts Portuguese expatriates seeking authentic cultural connection alongside curious Londoners wanting genuine Portuguese cultural immersion. Business networking opportunities naturally emerge as attendees bond over shared cultural appreciation and regional pride.',
+    longDescription: 'Porto Night brings the warmth and authenticity of Northern Portuguese culture to London through an immersive cultural celebration. This quarterly event transforms venues into a slice of Porto, complete with traditional décor, regional specialties, and cultural performances. The evening begins with guided port wine tasting, featuring authentic vintage ports from renowned Porto cellars, accompanied by expert sommeliers explaining terroir, production, and cultural significance. Traditional Northern Portuguese cuisine includes francesinha sandwiches, tripas à moda do Porto, and regional pastries like pastéis de nata. Live performances feature traditional folk music from the Minho region, Lusophone guitar concerts, and folk dance demonstrations. Cultural exhibits showcase Porto\'s architectural heritage, from medieval quarters to contemporary design, while local artisans demonstrate traditional crafts like azulejo tile painting and Lusophone embroidery. The event attracts Lusophone expatriates seeking authentic cultural connection alongside curious Londoners wanting genuine Lusophone cultural immersion. Business networking opportunities naturally emerge as attendees bond over shared cultural appreciation and regional pride.',
     longDescriptionPortuguese: 'A Noite do Porto traz o calor e autenticidade da cultura do Norte de Portugal para Londres através de uma celebração cultural imersiva. Este evento trimestral transforma locais numa fatia do Porto, completa com decoração tradicional, especialidades regionais e apresentações culturais. A noite começa com degustação guiada de vinho do Porto, apresentando portos vintage autênticos de adegas renomadas do Porto, acompanhados por sommeliers especializados explicando terroir, produção e significância cultural. A culinária tradicional do Norte de Portugal inclui sanduíches francesinha, tripas à moda do Porto e doces regionais como pastéis de nata. Apresentações ao vivo apresentam música folclórica tradicional da região do Minho, concertos de guitarra portuguesa e demonstrações de dança folclórica. Exposições culturais mostram o patrimônio arquitetónico do Porto, de bairros medievais ao design contemporâneo, enquanto artesãos locais demonstram ofícios tradicionais como pintura de azulejos e bordados portugueses. O evento atrai expatriados portugueses procurando conexão cultural autêntica ao lado de londrinos curiosos querendo imersão cultural portuguesa genuína. Oportunidades de networking empresarial emergem naturalmente conforme participantes se unem sobre apreciação cultural compartilhada e orgulho regional.',
     
     origin: 'Porto & Northern Portugal',
     flag: '🇵🇹',
-    culturalBackground: 'Porto, Portugal\'s second city, represents authentic Portuguese culture through wine heritage, architectural beauty, and regional traditions that have shaped Portuguese identity for centuries.',
+    culturalBackground: 'Porto, Portugal\'s second city, represents authentic Portuguese culture through wine heritage, architectural beauty, and regional traditions that have shaped Lusophone identity for centuries.',
     culturalBackgroundPortuguese: 'O Porto, segunda cidade de Portugal, representa cultura portuguesa autêntica através de herança vinícola, beleza arquitetónica e tradições regionais que moldaram a identidade portuguesa durante séculos.',
     
     venue: 'Proud Camden - Multi-level Cultural Venue',
@@ -370,7 +370,7 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
     time: '7:00pm - 12:00am',
     duration: '5 hours',
     
-    targetAudience: ['Portuguese heritage individuals', 'Cultural enthusiasts', 'Wine connoisseurs', 'Food lovers', 'Portuguese families'],
+    targetAudience: ['Portuguese heritage individuals', 'Cultural enthusiasts', 'Wine connoisseurs', 'Food lovers', 'Lusophone families'],
     ageRange: 'All ages welcome (21+ for alcohol)',
     skillLevel: 'Cultural appreciation',
     atmosphere: 'Festive, authentic, family-friendly, culturally rich',
@@ -415,7 +415,7 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
     image: '/images/events/porto-night-celebration.jpg',
     gallery: ['/images/events/port-wine-tasting-1.jpg', '/images/events/northern-portuguese-food-2.jpg', '/images/events/traditional-music-3.jpg'],
     
-    organizer: 'Northern Portuguese Cultural Association',
+    organizer: 'Northern Lusophone Cultural Association',
     contactEmail: 'events@northernportuguese.org.uk',
     socialMedia: {
       facebook: 'https://facebook.com/PortoNightLondon',
@@ -434,7 +434,7 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
     namePortuguese: 'Brunch Lusófono de Domingo - Jornada Gastronômica Multi-Cultural',
     type: 'food',
     
-    description: 'Experience the diverse culinary traditions of Portuguese-speaking countries through our weekly Sunday brunch. From Portuguese pastéis de nata to Brazilian açaí bowls, Angolan muamba, and Cape Verdean cachupa.',
+    description: 'Experience the diverse culinary traditions of Portuguese-speaking countries through our weekly Sunday brunch. From Lusophone pastéis de nata to Brazilian açaí bowls, Angolan muamba, and Cape Verdean cachupa.',
     descriptionPortuguese: 'Experimente as diversas tradições culinárias dos países lusófonos através do nosso brunch dominical semanal. Dos pastéis de nata portugueses às tigelas de açaí brasileiras, muamba angolana e cachupa cabo-verdiana.',
     
     longDescription: 'Our Lusophone Sunday Brunch celebrates the incredible culinary diversity across Portuguese-speaking nations through an authentic, family-style dining experience. Each Sunday, our rotating menu features specialties from different lusophone countries: Portugal\'s coastal seafood and pastries, Brazil\'s tropical flavors and regional variety, Angola\'s hearty stews and palm oil dishes, Cape Verde\'s island fusion cuisine, and Mozambique\'s spice-influenced foods. Executive chefs from each cultural background prepare traditional family recipes, ensuring authenticity while accommodating London tastes. The communal dining format encourages cultural exchange - families share tables, stories, and food traditions while children learn about their diverse heritage. Educational elements include printed guides explaining dish origins, cultural significance, and family traditions behind each recipe. Live background music features gentle acoustic sounds from Portuguese-speaking countries, creating a relaxed, culturally immersive atmosphere. Many attendees describe the experience as "Sunday dinner with the extended lusophone family" - strangers become friends over shared meals and cultural pride.',
@@ -442,7 +442,7 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
     
     origin: 'Multi-national lusophone',
     flag: '🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿',
-    culturalBackground: 'Food traditions across Portuguese-speaking countries reflect diverse influences: Portuguese maritime heritage, Brazilian tropical abundance, African community dining, and island fusion creativity.',
+    culturalBackground: 'Food traditions across Portuguese-speaking countries reflect diverse influences: Lusophone maritime heritage, Brazilian tropical abundance, African community dining, and island fusion creativity.',
     culturalBackgroundPortuguese: 'Tradições alimentares nos países lusófonos refletem influências diversas: herança marítima portuguesa, abundância tropical brasileira, jantar comunitário africano e criatividade de fusão das ilhas.',
     
     venue: 'Vauxhall Food Market - Community Dining Space',

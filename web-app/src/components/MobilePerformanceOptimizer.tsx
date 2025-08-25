@@ -235,7 +235,7 @@ export default function MobilePerformanceOptimizer({
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Lazy load Portuguese cultural content
+          // Lazy load Lusophone cultural content
           const element = entry.target as HTMLElement;
           
           if (element.dataset.src) {
@@ -403,7 +403,7 @@ export default function MobilePerformanceOptimizer({
   };
 
   const deferNonCriticalResources = () => {
-    // Defer non-critical Portuguese cultural content
+    // Defer non-critical Lusophone cultural content
     const deferredSelectors = [
       '[data-defer]',
       '.cultural-gallery img',
@@ -444,7 +444,7 @@ export default function MobilePerformanceOptimizer({
   };
 
   const optimizeTouchInteractions = () => {
-    // Ensure proper touch target sizes for Portuguese mobile users
+    // Ensure proper touch target sizes for Lusophone mobile users
     const touchTargets = document.querySelectorAll('button, a, [role="button"]');
     
     touchTargets.forEach(target => {
@@ -521,7 +521,7 @@ export default function MobilePerformanceOptimizer({
         optimizations.push('memory-saver');
       }
 
-      // Portuguese-specific mobile optimizations
+      // Lusophone-specific mobile optimizations
       await applyPortugueseMobileOptimizations();
       optimizations.push('portuguese-mobile');
 
@@ -591,7 +591,7 @@ export default function MobilePerformanceOptimizer({
   };
 
   const applyPortugueseMobileOptimizations = async () => {
-    // Optimize for Portuguese content viewing patterns
+    // Optimize for Lusophone content viewing patterns
     const portugueseElements = document.querySelectorAll('[data-portuguese-content]');
     
     portugueseElements.forEach(el => {
@@ -602,7 +602,7 @@ export default function MobilePerformanceOptimizer({
       el.classList.add('mobile-spacing');
     });
 
-    // Preload critical Portuguese resources
+    // Preload critical Lusophone resources
     if (optimizationState.preloadingEnabled) {
       const criticalResources = [
         '/api/events?featured=true&limit=5',

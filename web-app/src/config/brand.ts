@@ -45,9 +45,9 @@ export const brandColors = {
   coral: process.env.NEXT_PUBLIC_CORAL_COLOR || '#FF7F50' // Warm accent
 };
 
-// Extended Portuguese Color Palette
+// Extended Lusophone Color Palette
 export const PORTUGUESE_COLORS = {
-  // Traditional Portuguese Colors
+  // Traditional Lusophone Colors
   gold: {
     50: '#FDF7ED',
     100: '#FBEDC2',
@@ -98,14 +98,14 @@ export const PORTUGUESE_COLORS = {
   }
 };
 
-// Portuguese Cultural Design Tokens
+// Lusophone Cultural Design Tokens
 export const DESIGN_TOKENS = {
   // Typography
   fontFamily: {
     primary: '"Inter", "Helvetica Neue", Arial, sans-serif',
     heading: '"Inter", "Helvetica Neue", Arial, sans-serif',
     body: '"Inter", "Helvetica Neue", Arial, sans-serif',
-    portuguese: '"Open Sans", "Roboto", sans-serif' // Better Portuguese character support
+    portuguese: '"Open Sans", "Roboto", sans-serif' // Better Lusophone character support
   },
   
   // Spacing (following 8px grid)
@@ -149,7 +149,7 @@ export const DESIGN_TOKENS = {
   }
 };
 
-// Portuguese Cultural Symbols and Icons
+// Lusophone Cultural Symbols and Icons
 export const CULTURAL_SYMBOLS = {
   flag: '🇵🇹',
   heart: '❤️',
@@ -168,7 +168,7 @@ export const CULTURAL_SYMBOLS = {
   fish: '🐟'
 };
 
-// Portuguese Cultural Emojis for Streaming
+// Lusophone Cultural Emojis for Streaming
 export const CULTURAL_EMOJIS = {
   ':saudade:': '💙', // Deep longing/nostalgia
   ':festa:': '🎉',   // Party/celebration

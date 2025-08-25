@@ -351,9 +351,9 @@ export default function GroupDetailPage({ params }: PageProps) {
                     <div>
                       <div className="font-medium text-gray-900">Language</div>
                       <div className="text-gray-600">
-                        {group.language_preference === 'both' && 'English & Portuguese'}
+                        {group.language_preference === 'both' && 'English & Lusophone'}
                         {group.language_preference === 'english' && 'English'}
-                        {group.language_preference === 'portuguese' && 'Portuguese'}
+                        {group.language_preference === 'portuguese' && 'Lusophone'}
                         {group.language_preference === 'pt-pt' && 'Português (Portugal)'}
                         {group.language_preference === 'pt-br' && 'Português (Brasil)'}
                       </div>
@@ -374,12 +374,12 @@ export default function GroupDetailPage({ params }: PageProps) {
                   </div>
                 )}
 
-                {/* Portuguese Origin */}
+                {/* Lusophone Origin */}
                 {group.portuguese_origin && group.portuguese_origin !== 'any' && (
                   <div className="flex items-start space-x-3">
                     <FlagIcon className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="font-medium text-gray-900">Portuguese Origin</div>
+                      <div className="font-medium text-gray-900">Lusophone Origin</div>
                       <div className="text-gray-600">
                         {t(`origin.${group.portuguese_origin}`)}
                       </div>
@@ -434,7 +434,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                     )}
                     {group.cultural_focus.traditional_activities && (
                       <span className="inline-flex items-center px-3 py-2 rounded-full text-sm bg-purple-100 text-purple-800">
-                        🎭 Traditional Portuguese activities
+                        🎭 Traditional Lusophone activities
                       </span>
                     )}
                     {group.cultural_focus.language_learning && (

@@ -737,7 +737,7 @@ export function PlatformIntegrationProvider({
             : "Premium Networking Events",
           description: isPortuguese
             ? "Eventos exclusivos para profissionais portugueses em Londres"
-            : "Exclusive events for Portuguese professionals in London",
+            : "Exclusive events for Lusophone professionals in London",
           relevanceScore: 8.5,
           basedOn: ["networking_activity", "professional_connections"],
           cta: isPortuguese ? "Ver Eventos" : "View Events",
@@ -786,7 +786,7 @@ export function PlatformIntegrationProvider({
             : "Technology Workshop for Entrepreneurs",
           description: isPortuguese
             ? "Aprenda tecnologia aplicada a negócios com outros empreendedores portugueses"
-            : "Learn business technology with other Portuguese entrepreneurs",
+            : "Learn business technology with other Lusophone entrepreneurs",
           relevanceScore: 9,
           basedOn: ["networking_activity", "professional_interest"],
           cta: isPortuguese ? "Inscrever-se" : "Register",
@@ -881,7 +881,7 @@ export function PlatformIntegrationProvider({
         eventTitle:
           language === "pt"
             ? "Noite de Música Portuguesa"
-            : "Portuguese Music Night",
+            : "Lusophone Music Night",
         culturalExperience:
           language === "pt"
             ? "Fado ao vivo com transporte opcional"
@@ -1133,7 +1133,7 @@ export function PlatformIntegrationProvider({
       insights.opportunities.push(
         isPortuguese
           ? "Expandir rede de contactos portugueses"
-          : "Expand Portuguese network connections"
+          : "Expand Lusophone network connections"
       );
     }
 

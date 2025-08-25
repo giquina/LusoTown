@@ -168,7 +168,7 @@ function logPerformanceIssues(report: WebVitalReport): void {
 
   // Log mobile-specific Portuguese-speaking community issues
   if (report.isMobile && report.isPortuguesePage && report.pageScore && report.pageScore < 50) {
-    console.error(`[Critical Portuguese Mobile Performance] ${report.url}`, {
+    console.error(`[Critical Lusophone Mobile Performance] ${report.url}`, {
       score: report.pageScore,
       metrics: report.metrics,
       userAgent: report.userAgent.substring(0, 100),
@@ -251,42 +251,42 @@ function generateRecommendations(
 
   // LCP recommendations
   if (metrics.lcp > 2500) {
-    recommendations.push('Optimize Portuguese cultural images and above-the-fold content');
+    recommendations.push('Optimize Lusophone cultural images and above-the-fold content');
     recommendations.push('Implement better image compression for cultural galleries');
   }
 
   // CLS recommendations
   if (metrics.cls > 0.1) {
-    recommendations.push('Stabilize layout for Portuguese event cards and community content');
+    recommendations.push('Stabilize layout for Lusophone event cards and community content');
     recommendations.push('Add dimensions to images and reserve space for dynamic content');
   }
 
   // INP/Interaction recommendations
   if (metrics.inp > 200) {
-    recommendations.push('Optimize JavaScript execution for Portuguese community interactions');
+    recommendations.push('Optimize JavaScript execution for Lusophone community interactions');
     recommendations.push('Implement better lazy loading for cultural content');
   }
 
   // TTFB recommendations
   if (metrics.ttfb > 800) {
-    recommendations.push('Optimize server response time for Portuguese content APIs');
+    recommendations.push('Optimize server response time for Lusophone content APIs');
     recommendations.push('Implement better caching strategies for cultural data');
   }
 
   // Mobile-specific recommendations
   if (mobileUsage > 70) {
-    recommendations.push('Prioritize mobile optimization - majority of Portuguese users are on mobile');
+    recommendations.push('Prioritize mobile optimization - majority of Lusophone users are on mobile');
     
     if (score < 70) {
       recommendations.push('Implement aggressive mobile performance optimizations');
-      recommendations.push('Consider mobile-first Portuguese content loading strategies');
+      recommendations.push('Consider mobile-first Lusophone content loading strategies');
     }
   }
 
-  // Portuguese-specific recommendations
+  // Lusophone-specific recommendations
   if (portugueseUsage > 50) {
     recommendations.push('Optimize Portuguese language content loading and rendering');
-    recommendations.push('Implement better bundling for Portuguese cultural features');
+    recommendations.push('Implement better bundling for Lusophone cultural features');
   }
 
   // Overall score recommendations
@@ -295,7 +295,7 @@ function generateRecommendations(
     recommendations.push('Consider professional performance audit for Portuguese-speaking community platform');
   } else if (score < 70) {
     recommendations.push('Implement targeted performance improvements');
-    recommendations.push('Focus on Core Web Vitals optimization for Portuguese users');
+    recommendations.push('Focus on Core Web Vitals optimization for Lusophone users');
   }
 
   return recommendations;

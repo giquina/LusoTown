@@ -130,7 +130,7 @@ const CulturalLandmarkVR: React.FC = () => {
       category: 'tower',
       period: '16th Century',
       periodPt: 'Século XVI',
-      significance: 'UNESCO World Heritage Site and symbol of Portuguese maritime discoveries',
+      significance: 'UNESCO World Heritage Site and symbol of Lusophone maritime discoveries',
       significancePt: 'Património Mundial da UNESCO e símbolo dos descobrimentos marítimos portugueses',
       vrExperience: {
         duration: 35,
@@ -183,7 +183,7 @@ const CulturalLandmarkVR: React.FC = () => {
             position: { x: -5, y: 3, z: -10 },
             title: 'Manueline Architecture',
             titlePt: 'Arquitetura Manuelina',
-            content: 'Distinctive Portuguese architectural style blending maritime motifs',
+            content: 'Distinctive Lusophone architectural style blending maritime motifs',
             contentPt: 'Estilo arquitetônico português distintivo com motivos marítimos',
             trigger: 'click'
           },
@@ -193,7 +193,7 @@ const CulturalLandmarkVR: React.FC = () => {
             position: { x: 8, y: 5, z: -15 },
             title: 'Age of Discoveries Timeline',
             titlePt: 'Cronologia dos Descobrimentos',
-            content: 'Interactive timeline of Portuguese maritime achievements',
+            content: 'Interactive timeline of Lusophone maritime achievements',
             contentPt: 'Cronologia interativa dos feitos marítimos portugueses',
             trigger: 'click'
           }
@@ -309,7 +309,7 @@ const CulturalLandmarkVR: React.FC = () => {
             id: 'church-interior',
             name: 'Church Interior',
             namePt: 'Interior da Igreja',
-            description: 'Experience the soaring vaulted ceiling and tombs of Portuguese explorers',
+            description: 'Experience the soaring vaulted ceiling and tombs of Lusophone explorers',
             descriptionPt: 'Experimente o teto abobadado e os túmulos dos exploradores portugueses',
             position: { x: 0, y: 10, z: 0, rotation: { x: -10, y: 0, z: 0 } },
             imageUrl: '/vr/jeronimos-interior.jpg',
@@ -653,7 +653,7 @@ const CulturalLandmarkVR: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
           >
-            🏛️ {language === 'pt' ? 'Monumentos Portugueses em VR' : 'Portuguese Landmarks in VR'}
+            🏛️ {language === 'pt' ? 'Monumentos Portugueses em VR' : 'Lusophone Landmarks in VR'}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: -20 }}

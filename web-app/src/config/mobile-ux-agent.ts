@@ -44,7 +44,7 @@ export const MOBILE_UX_AGENT_CONFIG = {
     role: 'Mobile-first responsive design expert for Portuguese-speaking community platform',
     expertise: [
       'Mobile-first responsive design',
-      'Portuguese text length considerations',
+      'Lusophone text length considerations',
       'Touch interface optimization',
       'Cross-device compatibility',
       'Cultural accessibility',
@@ -53,7 +53,7 @@ export const MOBILE_UX_AGENT_CONFIG = {
     responsibilities: [
       'Review all UI changes for mobile compatibility',
       'Validate touch target sizes and spacing',
-      'Test Portuguese text overflow scenarios',
+      'Test Lusophone text overflow scenarios',
       'Ensure gesture-friendly interfaces',
       'Verify responsive breakpoint behavior',
       'Assess mobile performance impact'
@@ -79,7 +79,7 @@ export const MOBILE_UX_AGENT_CONFIG = {
   // Touch Target Standards
   touchTargets: {
     minimum: { minSize: 44, recommendedSize: 48, spacing: 8, description: 'WCAG 2.1 AA minimum for accessibility' },
-    comfortable: { minSize: 48, recommendedSize: 56, spacing: 12, description: 'Comfortable for Portuguese users' },
+    comfortable: { minSize: 48, recommendedSize: 56, spacing: 12, description: 'Comfortable for Lusophone users' },
     premium: { minSize: 56, recommendedSize: 64, spacing: 16, description: 'Premium experience for cultural events' }
   } as Record<string, TouchTarget>,
 
@@ -95,8 +95,8 @@ export const MOBILE_UX_AGENT_CONFIG = {
     {
       id: 'portuguese-text-space',
       category: 'typography',
-      rule: 'Allow 20-30% extra space for Portuguese text compared to English',
-      rationale: 'Portuguese text is typically longer than English equivalents',
+      rule: 'Allow 20-30% extra space for Lusophone text compared to English',
+      rationale: 'Lusophone text is typically longer than English equivalents',
       priority: 'critical'
     },
     {
@@ -110,26 +110,26 @@ export const MOBILE_UX_AGENT_CONFIG = {
       id: 'gesture-navigation',
       category: 'interaction',
       rule: 'Support swipe gestures for navigation between cultural content',
-      rationale: 'Enhances mobile experience for browsing Portuguese events and matches',
+      rationale: 'Enhances mobile experience for browsing Lusophone events and matches',
       priority: 'high'
     },
     {
       id: 'cultural-colors',
       category: 'accessibility',
-      rule: 'Ensure Portuguese brand colors meet contrast ratios on all devices',
+      rule: 'Ensure Lusophone brand colors meet contrast ratios on all devices',
       rationale: 'Cultural identity must remain accessible on mobile devices',
       priority: 'high'
     },
     {
       id: 'image-optimization',
       category: 'performance',
-      rule: 'Optimize Portuguese cultural images for mobile data plans',
+      rule: 'Optimize Lusophone cultural images for mobile data plans',
       rationale: 'Many community members use limited data plans',
       priority: 'medium'
     }
   ] as ResponsiveDesignRule[],
 
-  // Portuguese Text Length Considerations
+  // Lusophone Text Length Considerations
   textConsiderations: [
     {
       aspect: 'Navigation Labels',
@@ -137,7 +137,7 @@ export const MOBILE_UX_AGENT_CONFIG = {
       ptExample: 'Eventos',
       lengthIncrease: 17,
       impact: 'Tab width in mobile navigation',
-      solution: 'Use shorter Portuguese alternatives or icons'
+      solution: 'Use shorter Lusophone alternatives or icons'
     },
     {
       aspect: 'Button Text',
@@ -170,7 +170,7 @@ export const MOBILE_UX_AGENT_CONFIG = {
     mandatory: [
       'Test on iPhone SE (375px width) - critical breakpoint',
       'Test on standard iPhone (414px width) - primary mobile experience',
-      'Verify Portuguese text doesn\'t overflow containers',
+      'Verify Lusophone text doesn\'t overflow containers',
       'Validate touch targets are minimum 44px',
       'Check gesture navigation works smoothly',
       'Test with slow 3G network conditions'
@@ -179,9 +179,9 @@ export const MOBILE_UX_AGENT_CONFIG = {
       'Test on iPad portrait (768px width)',
       'Verify landscape orientation on mobile',
       'Test with high contrast accessibility mode',
-      'Validate with Portuguese keyboard on iOS/Android',
+      'Validate with Lusophone keyboard on iOS/Android',
       'Check cultural color contrast on various screens',
-      'Performance test with large Portuguese event images'
+      'Performance test with large Lusophone event images'
     ],
     optional: [
       'Test on Android tablets',
@@ -197,7 +197,7 @@ export const MOBILE_UX_AGENT_CONFIG = {
       '✓ Mobile-first responsive design implemented',
       '✓ Content reflows properly at all breakpoints',
       '✓ No horizontal scrolling on mobile devices',
-      '✓ Portuguese text fits within containers',
+      '✓ Lusophone text fits within containers',
       '✓ Images scale appropriately',
       '✓ Navigation is accessible on mobile',
       '✓ Portuguese flag colors preserved at all viewport sizes',
@@ -213,7 +213,7 @@ export const MOBILE_UX_AGENT_CONFIG = {
     ],
     typography: [
       '✓ Text is readable on small screens',
-      '✓ Portuguese text doesn\'t overflow',
+      '✓ Lusophone text doesn\'t overflow',
       '✓ Font sizes scale appropriately',
       '✓ Line height supports readability',
       '✓ Text contrast meets accessibility standards',
@@ -232,13 +232,13 @@ export const MOBILE_UX_AGENT_CONFIG = {
       '✓ Keyboard navigation support',
       '✓ High contrast mode compatibility',
       '✓ Focus indicators visible',
-      '✓ ARIA labels for Portuguese content',
+      '✓ ARIA labels for Lusophone content',
       '✓ Semantic HTML structure'
     ],
     cultural: [
-      '✓ Portuguese brand colors preserved',
+      '✓ Lusophone brand colors preserved',
       '✓ Cultural content properly formatted',
-      '✓ Portuguese navigation terms clear',
+      '✓ Lusophone navigation terms clear',
       '✓ Event images display correctly',
       '✓ Cultural symbols render properly',
       '✓ Community features accessible'
@@ -292,7 +292,7 @@ export const mobileUXValidators = {
   },
 
   /**
-   * Verify Portuguese text doesn't overflow containers
+   * Verify Lusophone text doesn't overflow containers
    */
   checkPortugueseTextOverflow: (containers: HTMLElement[]): boolean => {
     return containers.every(container => {

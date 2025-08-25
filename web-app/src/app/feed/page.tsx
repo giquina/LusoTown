@@ -121,7 +121,7 @@ const mockPosts: FeedPost[] = [
     userId: 'user3',
     userName: 'Ana Pereira',
     userAvatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face&auto=format',
-    content: 'Looking forward to the weekend Portuguese Book Club meeting! We\'re discussing "O Guarani" by José de Alencar. Anyone interested in joining? 📚',
+    content: 'Looking forward to the weekend Lusophone Book Club meeting! We\'re discussing "O Guarani" by José de Alencar. Anyone interested in joining? 📚',
     linkUrl: 'https://lusotown-london.vercel.app/events/book-club',
     createdAt: '1 day ago',
     likes: 12,
@@ -138,7 +138,7 @@ const mockPosts: FeedPost[] = [
     hashtags: ['BookClub', 'PortugueseLiterature', 'Reading'],
     linkedEvent: {
       id: 'event2',
-      title: 'Portuguese Book Club',
+      title: 'Lusophone Book Club',
       date: '2025-08-18',
       location: 'Champor-Champor Restaurant, Elephant & Castle'
     }
@@ -446,7 +446,7 @@ export default function CommunityFeed() {
                       {feedType === 'events' && (
                         isPortuguese 
                           ? 'Atualizações em tempo real de eventos portugueses em Londres'
-                          : 'Live updates from Portuguese events across London'
+                          : 'Live updates from Lusophone events across London'
                       )}
                       {feedType === 'personalized' && (
                         isPortuguese 

@@ -22,7 +22,7 @@ const COLOR_MAP = {
     900: 'bg-red-900',
   },
   
-  // Primary (Portuguese brand)
+  // Primary (Lusophone brand)
   primary: {
     50: 'bg-primary-50',
     100: 'bg-primary-100',

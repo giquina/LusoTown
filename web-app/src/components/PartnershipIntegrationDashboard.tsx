@@ -103,10 +103,10 @@ const PartnershipIntegrationDashboard: React.FC = () => {
         {
           id: 'act-2',
           type: 'event',
-          title: 'Portuguese Investment Summit Planning Meeting',
+          title: 'Lusophone Investment Summit Planning Meeting',
           titlePortuguese: 'Reunião de Planeamento da Cimeira de Investimento Português',
           partnerId: 'partner-anglo-portuguese-society',
-          partnerName: 'Anglo-Portuguese Society',
+          partnerName: 'Anglo-Lusophone Society',
           date: '2024-08-14',
           status: 'completed'
         },
@@ -212,7 +212,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
             <p className="text-gray-600 mt-1">
               {language === 'pt' 
                 ? 'Gerir e monitorizar parcerias estratégicas portuguesas'
-                : 'Manage and monitor strategic Portuguese partnerships'
+                : 'Manage and monitor strategic Lusophone partnerships'
               }
             </p>
           </div>

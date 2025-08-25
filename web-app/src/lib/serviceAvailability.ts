@@ -100,7 +100,7 @@ export const UNAVAILABLE_SERVICES: ServiceAvailability[] = [
   // Tour Services (except London Tours)
   {
     id: 'portuguese_cultural_tours',
-    name: 'Portuguese Cultural Tours',
+    name: 'Lusophone Cultural Tours',
     namePortuguese: 'Tours Culturais Portugueses',
     category: 'tours',
     isAvailable: false,

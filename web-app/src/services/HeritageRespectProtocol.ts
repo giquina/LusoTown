@@ -1,7 +1,7 @@
 /**
- * Heritage Respect Protocol for Portuguese Cultural Values
+ * Heritage Respect Protocol for Lusophone Cultural Values
  * 
- * Comprehensive framework ensuring AI systems respect and preserve Portuguese cultural
+ * Comprehensive framework ensuring AI systems respect and preserve Lusophone cultural
  * heritage, traditions, and values. Implements cultural sensitivity checks, heritage
  * protection measures, and community-validated cultural guidelines.
  */
@@ -160,7 +160,7 @@ type DiasporaGeneration = 'first_generation' | 'second_generation' | 'third_gene
 export class HeritageRespectProtocol {
   private supabaseClient = supabase
   
-  // Portuguese cultural heritage knowledge base
+  // Lusophone cultural heritage knowledge base
   private culturalHeritage: Record<string, CulturalHeritage> = {
     fado_tradition: {
       category: 'artistic_expression',
@@ -408,7 +408,7 @@ export class HeritageRespectProtocol {
   // =============================================================================
 
   /**
-   * Validate content for Portuguese cultural heritage respect
+   * Validate content for Lusophone cultural heritage respect
    */
   async validateCulturalContent(
     content: string,
@@ -596,7 +596,7 @@ export class HeritageRespectProtocol {
     oversimplifications.forEach(pattern => {
       if (content.toLowerCase().includes(pattern.toLowerCase())) {
         detectedPatterns.push(pattern)
-        culturalOversimplifications.push(`Generalizing about Portuguese people: "${pattern}"`)
+        culturalOversimplifications.push(`Generalizing about Lusophone people: "${pattern}"`)
       }
     })
 
@@ -610,8 +610,8 @@ export class HeritageRespectProtocol {
     const mitigationSuggestions: string[] = []
     if (riskLevel !== 'low') {
       mitigationSuggestions.push('Replace generalizations with specific examples')
-      mitigationSuggestions.push('Acknowledge diversity within Portuguese communities')
-      mitigationSuggestions.push('Use "some" or "many" instead of "all" Portuguese people')
+      mitigationSuggestions.push('Acknowledge diversity within Lusophone communities')
+      mitigationSuggestions.push('Use "some" or "many" instead of "all" Lusophone people')
       mitigationSuggestions.push('Include multiple perspectives and experiences')
     }
 
@@ -626,7 +626,7 @@ export class HeritageRespectProtocol {
   }
 
   /**
-   * Check compliance with Portuguese family value protection
+   * Check compliance with Lusophone family value protection
    */
   checkFamilyValueCompliance(content: string): boolean {
     // Check for sensitive family content
@@ -812,7 +812,7 @@ export class HeritageRespectProtocol {
   private async assessCulturalAccuracy(content: string, context: any): Promise<number> {
     let accuracy = 0.7 // Base score
     
-    // Check for authentic Portuguese cultural references
+    // Check for authentic Lusophone cultural references
     const authenticReferences = Object.keys(this.culturalHeritage)
     const hasAuthentic = authenticReferences.some(ref => 
       content.toLowerCase().includes(ref.toLowerCase())
@@ -899,18 +899,18 @@ export class HeritageRespectProtocol {
     const recommendations: string[] = []
     
     if (factors.culturalAccuracy < 0.7) {
-      recommendations.push('Enhance cultural accuracy with authentic Portuguese references')
-      recommendations.push('Consult Portuguese cultural experts for validation')
+      recommendations.push('Enhance cultural accuracy with authentic Lusophone references')
+      recommendations.push('Consult Lusophone cultural experts for validation')
     }
     
     if (factors.stereotypeRisk.risk_level !== 'low') {
-      recommendations.push('Remove generalizations and stereotypes about Portuguese communities')
-      recommendations.push('Include diverse perspectives from Portuguese diaspora')
+      recommendations.push('Remove generalizations and stereotypes about Lusophone communities')
+      recommendations.push('Include diverse perspectives from Lusophone diaspora')
     }
     
     if (factors.saudadeValidation.emotional_appropriateness !== 'appropriate') {
       recommendations.push('Treat saudade with deeper emotional and cultural respect')
-      recommendations.push('Avoid trivializing this profound Portuguese emotional concept')
+      recommendations.push('Avoid trivializing this profound Lusophone emotional concept')
     }
     
     return recommendations
@@ -919,7 +919,7 @@ export class HeritageRespectProtocol {
   private suggestCulturalEnhancements(content: string, context: any): string[] {
     const enhancements: string[] = []
     
-    enhancements.push('Add authentic Portuguese cultural context')
+    enhancements.push('Add authentic Lusophone cultural context')
     enhancements.push('Include regional diversity perspectives')
     enhancements.push('Provide bilingual content for diaspora inclusion')
     enhancements.push('Reference Portuguese-speaking community values and traditions')
@@ -929,7 +929,7 @@ export class HeritageRespectProtocol {
     }
     
     if (context.target_audience.includes('families')) {
-      enhancements.push('Emphasize Portuguese family values and connections')
+      enhancements.push('Emphasize Lusophone family values and connections')
     }
     
     return enhancements

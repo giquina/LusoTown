@@ -44,7 +44,7 @@ export default function GroupEventsPageClient() {
                 How Group Events Work
               </h2>
               <p className="text-lg text-gray-700">
-                Our Portuguese group events are carefully organized to create meaningful connections and unforgettable experiences.
+                Our Lusophone group events are carefully organized to create meaningful connections and unforgettable experiences.
               </p>
             </div>
 
@@ -86,7 +86,7 @@ export default function GroupEventsPageClient() {
                   Want to Organize Your Own Group Event?
                 </h3>
                 <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-                  Have an idea for a Portuguese group experience? We support community members who want to organize events for specific interests, age groups, or activities.
+                  Have an idea for a Lusophone group experience? We support community members who want to organize events for specific interests, age groups, or activities.
                 </p>
                 <a
                   href={ROUTES.groupsCreate}

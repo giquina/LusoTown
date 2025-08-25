@@ -64,7 +64,7 @@ export default function DiasporaNetwork({
       id: 'family-reunion-azores',
       type: 'personal',
       title: 'Three Generations Reunite in the Azores',
-      description: 'The Santos family from Toronto connected with their Portuguese cousins through LusoTown and organized their first family reunion in 40 years in São Miguel, Azores.',
+      description: 'The Santos family from Toronto connected with their Lusophone cousins through LusoTown and organized their first family reunion in 40 years in São Miguel, Azores.',
       participants: ['Santos Family - Toronto', 'Medeiros Family - São Miguel'],
       countries: ['canada', 'portugal'],
       outcome: 'Successful family reunion with 45 family members from 4 countries',
@@ -79,9 +79,9 @@ export default function DiasporaNetwork({
     {
       id: 'business-partnership-uk-brazil',
       type: 'business',
-      title: 'United Kingdom-Brazil Portuguese Business Partnership',
+      title: 'United Kingdom-Brazil Lusophone Business Partnership',
       description: 'A Portuguese restaurant owner in London partnered with a Brazilian food distributor through LusoTown professional network.',
-      participants: ['Maria\'s Portuguese Kitchen - London', 'Sabores do Brasil - São Paulo'],
+      participants: ['Maria\'s Lusophone Kitchen - London', 'Sabores do Brasil - São Paulo'],
       countries: ['uk', 'brazil'],
       outcome: 'Successful business partnership with 300% increase in authentic ingredient imports',
       impact: '£150,000 annual revenue increase and job creation for 8 Portuguese speakers',
@@ -94,12 +94,12 @@ export default function DiasporaNetwork({
     {
       id: 'cultural-preservation-goa',
       type: 'cultural',
-      title: 'Digital Archive of Goan-Portuguese Heritage',
-      description: 'Collaboration between Portuguese communities in Goa, Lisbon, and London to digitize and preserve Goan-Portuguese cultural artifacts.',
-      participants: ['Goa Heritage Foundation', 'Instituto Oriental Lisboa', 'Portuguese Cultural Centre London'],
+      title: 'Digital Archive of Goan-Lusophone Heritage',
+      description: 'Collaboration between Lusophone communities in Goa, Lisbon, and London to digitize and preserve Goan-Lusophone cultural artifacts.',
+      participants: ['Goa Heritage Foundation', 'Instituto Oriental Lisboa', 'Lusophone Cultural Centre London'],
       countries: ['india-goa', 'portugal', 'uk'],
       outcome: 'Digitized 2,500 historical documents and 800 cultural artifacts',
-      impact: 'Preserved rare Goan-Portuguese cultural heritage for future generations',
+      impact: 'Preserved rare Goan-Lusophone cultural heritage for future generations',
       dateAchieved: new Date('2025-05-10'),
       testimonials: [
         'This project saved irreplaceable pieces of our shared history',
@@ -175,7 +175,7 @@ export default function DiasporaNetwork({
 
   const WorldMap = () => (
     <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 rounded-xl p-8 text-white">
-      <h3 className="text-2xl font-bold mb-6 text-center">Global Portuguese Network</h3>
+      <h3 className="text-2xl font-bold mb-6 text-center">Global Lusophone Network</h3>
       
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
         {globalNetwork.activeCountries.map(country => {
@@ -428,7 +428,7 @@ export default function DiasporaNetwork({
       {/* Header */}
       <div className="text-center">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Global Portuguese Diaspora Network
+          Global Lusophone Diaspora Network
         </h1>
         <p className="text-xl text-gray-600 max-w-4xl mx-auto">
           Connect with Portuguese speakers worldwide - families preserving heritage, 
@@ -500,7 +500,7 @@ export default function DiasporaNetwork({
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div className="bg-purple-600 h-2 rounded-full" style={{ width: '75%' }}></div>
                   </div>
-                  <p className="text-sm text-gray-600">Active projects documenting and preserving Portuguese cultural heritage globally</p>
+                  <p className="text-sm text-gray-600">Active projects documenting and preserving Lusophone cultural heritage globally</p>
                 </div>
               </div>
             </div>

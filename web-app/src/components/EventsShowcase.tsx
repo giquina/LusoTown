@@ -95,7 +95,7 @@ const EventImage = memo(({ event }: { event: Event }) => {
 });
 EventImage.displayName = "EventImage";
 
-// Helper function to get category icons with Portuguese cultural symbols
+// Helper function to get category icons with Lusophone cultural symbols
 const getCategoryIcon = (category?: string) => {
   const iconMap: Record<string, React.ReactElement> = {
     'fado': <MusicalNoteIcon className="w-6 h-6 text-white" />,
@@ -127,7 +127,7 @@ const eventStats = [
   },
   {
     number: "1,200+",
-    label: "Lusófonos | Portuguese Speakers",
+    label: "Lusófonos | Lusophone Speakers",
     icon: <UsersIcon className="w-5 h-5" />,
     flag: "🇧🇷"
   },
@@ -151,17 +151,17 @@ const EventsShowcase = memo(() => {
   const [waitingListModalOpen, setWaitingListModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   
-  // State for real Portuguese events data
+  // State for real Lusophone events data
   const [upcomingEvents, setUpcomingEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch real Portuguese events
+  // Fetch real Lusophone events
   useEffect(() => {
     const fetchRealEvents = async () => {
       try {
         const realEvents = await eventManagementService.getUpcomingEvents({ limit: 6 });
         
-        // Transform Portuguese events to match existing Event interface
+        // Transform Lusophone events to match existing Event interface
         const transformedEvents: Event[] = realEvents.map((event: PortugueseEvent) => ({
           id: parseInt(event.id),
           title: event.title,
@@ -200,7 +200,7 @@ const EventsShowcase = memo(() => {
         
         setUpcomingEvents(transformedEvents);
       } catch (error) {
-        console.error('Error fetching Portuguese events:', error);
+        console.error('Error fetching Lusophone events:', error);
         // Fallback to empty array
         setUpcomingEvents([]);
       } finally {
@@ -307,7 +307,7 @@ const EventsShowcase = memo(() => {
               { area: "Stockwell", icon: "🇵🇹", description: language === "pt" ? "Coração da comunidade" : "Heart of community" },
               { area: "Vauxhall", icon: "🇧🇷", description: language === "pt" ? "Centro brasileiro" : "Brazilian hub" },
               { area: "Elephant & Castle", icon: "🇦🇴", description: language === "pt" ? "Diversidade lusófona" : "Lusophone diversity" },
-              { area: "Borough Market", icon: "🍷", description: language === "pt" ? "Sabores portugueses" : "Portuguese flavors" },
+              { area: "Borough Market", icon: "🍷", description: language === "pt" ? "Sabores portugueses" : "Lusophone flavors" },
               { area: "Kentish Town", icon: "🎵", description: language === "pt" ? "Noites de fado" : "Fado nights" }
             ].map((location, index) => (
               <div
@@ -323,7 +323,7 @@ const EventsShowcase = memo(() => {
           </motion.div>
         </div>
 
-        {/* Stats Bar - Enhanced Multi-Column Layout with Portuguese Cultural Elements */}
+        {/* Stats Bar - Enhanced Multi-Column Layout with Lusophone Cultural Elements */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -470,7 +470,7 @@ const EventsShowcase = memo(() => {
                       >
                         Non-members: {formatPrice(event.price)} • Apply for Membership
                       </a>
-                      {/* Book Together Button for Portuguese cultural events */}
+                      {/* Book Together Button for Lusophone cultural events */}
                       {event.featured && (
                         <a
                           href={`${ROUTES.events}/${event.id}/book?type=group`}
@@ -504,7 +504,7 @@ const EventsShowcase = memo(() => {
           ))}
         </div>
 
-        {/* Portuguese Cultural Event Categories */}
+        {/* Lusophone Cultural Event Categories */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -518,7 +518,7 @@ const EventsShowcase = memo(() => {
             <p className="text-gray-600">
               {language === "pt" 
                 ? "Descubra eventos autênticos da cultura lusófona em Londres" 
-                : "Discover authentic Portuguese cultural events across London"}
+                : "Discover authentic Lusophone cultural events across London"}
             </p>
           </div>
 
@@ -537,7 +537,7 @@ const EventsShowcase = memo(() => {
                 flag: "🇵🇹" 
               },
               { 
-                name: language === "pt" ? "Gastronomia" : "Portuguese Cuisine", 
+                name: language === "pt" ? "Gastronomia" : "Lusophone Cuisine", 
                 icon: "🍷", 
                 count: language === "pt" ? "25+ eventos" : "25+ events", 
                 flag: "🇧🇷" 
@@ -619,7 +619,7 @@ const EventsShowcase = memo(() => {
             ))}
           </div>
           
-          {/* Portuguese Cultural Quote */}
+          {/* Lusophone Cultural Quote */}
           <div className="mt-8 text-center p-4 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl border border-primary-100">
             <p className="text-sm italic text-gray-700 mb-2">
               {language === "pt" 
@@ -628,7 +628,7 @@ const EventsShowcase = memo(() => {
             </p>
             <div className="flex items-center justify-center gap-2 text-xs text-gray-600">
               <span>🇵🇹</span>
-              <span>{language === "pt" ? "Poeta português, 1877-1952" : "Portuguese poet, 1877-1952"}</span>
+              <span>{language === "pt" ? "Poeta português, 1877-1952" : "Lusophone poet, 1877-1952"}</span>
             </div>
           </div>
         </motion.div>
@@ -705,7 +705,7 @@ const EventsShowcase = memo(() => {
             ))}
           </div>
 
-          {/* Portuguese Expressions Section */}
+          {/* Lusophone Expressions Section */}
           <div className="mt-8 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-6 border border-primary-100">
             <h4 className="font-bold text-gray-900 mb-4 text-center">
               {language === "pt" ? "Expressões que Nos Unem" : "Expressions That Unite Us"}
@@ -714,7 +714,7 @@ const EventsShowcase = memo(() => {
               <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
                 <div className="font-medium text-gray-900">Saudade</div>
                 <div className="text-gray-600 text-xs">
-                  {language === "pt" ? "Sentimento únicamente português" : "Uniquely Portuguese feeling"}
+                  {language === "pt" ? "Sentimento únicamente português" : "Uniquely Lusophone feeling"}
                 </div>
               </div>
               <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
@@ -739,7 +739,7 @@ const EventsShowcase = memo(() => {
           </div>
         </motion.div>
 
-        {/* CTA Section with Portuguese Cultural Elements */}
+        {/* CTA Section with Lusophone Cultural Elements */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -747,7 +747,7 @@ const EventsShowcase = memo(() => {
           className="text-center"
         >
           <div className="bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 rounded-3xl p-10 text-white shadow-2xl border border-white/10 relative overflow-hidden">
-            {/* Portuguese Cultural Background Pattern */}
+            {/* Lusophone Cultural Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-4 left-4 text-6xl">🇵🇹</div>
               <div className="absolute top-4 right-4 text-6xl">🇧🇷</div>
@@ -769,11 +769,11 @@ const EventsShowcase = memo(() => {
                 }
               </p>
 
-              {/* Portuguese Saying */}
+              {/* Lusophone Saying */}
               <div className="mb-8 text-lg italic opacity-90">
                 {language === "pt" 
                   ? "\"Quem tem amigos, tem tudo\" - Provérbio Português"
-                  : "\"Those who have friends, have everything\" - Portuguese Proverb"}
+                  : "\"Those who have friends, have everything\" - Lusophone Proverb"}
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

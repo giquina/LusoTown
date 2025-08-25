@@ -40,7 +40,7 @@ export default function EmailPreferencesPage() {
         title: isPortuguese ? 'Notificações de Eventos' : 'Event Notifications',
         description: isPortuguese 
           ? 'Novos eventos portugueses, lembretes e atualizações'
-          : 'New Portuguese events, reminders, and updates',
+          : 'New Lusophone events, reminders, and updates',
         icon: CalendarDaysIcon,
         enabled: true,
         frequency: isPortuguese ? 'Semanal' : 'Weekly'

@@ -25,7 +25,7 @@ export type QualityPreset = keyof typeof QUALITY_PRESETS
 export const COMMUNITY_TRANSFORMATIONS = {
   // Add Portuguese flag overlay for official content
   officialContent: 'l_lusotown:portuguese_flag,w_50,g_north_east,x_10,y_10',
-  // Warm color grading for Portuguese aesthetic
+  // Warm color grading for Lusophone aesthetic
   portugueseFilter: 'e_improve:outdoor:20,e_vibrance:20,e_saturation:10',
   // Privacy blur for sensitive content
   privacyBlur: 'e_blur:300',
@@ -210,7 +210,7 @@ export const PORTUGUESE_ENHANCEMENTS = {
 }
 
 /**
- * Generate URLs for Portuguese cultural assets
+ * Generate URLs for Lusophone cultural assets
  * @param culturalType - Type of cultural content (heritage, flag, food, etc.)
  * @param assetId - Asset identifier
  * @param preset - Quality preset

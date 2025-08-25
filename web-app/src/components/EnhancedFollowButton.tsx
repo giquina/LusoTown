@@ -59,7 +59,7 @@ export default function EnhancedFollowButton({
   const notificationsEnabled = followingEntry?.notificationsEnabled ?? false
   const benefits = getFollowBenefits(entity.type)
   
-  // Helper function to check if language is Portuguese
+  // Helper function to check if language is Lusophone
   const isPortuguese = language === 'pt'
 
   const handleFollow = async () => {
@@ -140,7 +140,7 @@ export default function EnhancedFollowButton({
         group: 'Group',
         community: 'Community',
         event_organizer: 'Event Organizer',
-        portuguese_nation: 'Portuguese-Speaking Nation'
+        portuguese_nation: 'Lusophone-Speaking Nation'
       },
       pt: {
         person: 'Pessoa',

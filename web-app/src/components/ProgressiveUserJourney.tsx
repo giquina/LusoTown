@@ -68,7 +68,7 @@ export default function ProgressiveUserJourney({
 
   const isPortuguese = language === 'pt'
 
-  // Define user journey stages with Portuguese cultural context
+  // Define user journey stages with Lusophone cultural context
   const calculateDiscoveryProgress = useCallback(function calculateDiscoveryProgress(): number {
     let progress = 0
     const hasCompletedProfile = typeof window !== 'undefined' ? localStorage.getItem('lusotown-profile-completed') : null
@@ -126,7 +126,7 @@ export default function ProgressiveUserJourney({
           id: 'complete-profile',
           title: 'Complete Your Profile',
           titlePortuguese: 'Complete o Seu Perfil',
-          description: 'Add your Portuguese background and interests to connect with the right people',
+          description: 'Add your Lusophone background and interests to connect with the right people',
           descriptionPortuguese: 'Adicione o seu background português e interesses para se conectar com as pessoas certas',
           href: '/profile/edit',
           type: 'primary',
@@ -139,7 +139,7 @@ export default function ProgressiveUserJourney({
           id: 'browse-events',
           title: 'Browse Cultural Events',
           titlePortuguese: 'Explorar Eventos Culturais',
-          description: 'Discover Portuguese cultural events happening across London',
+          description: 'Discover Lusophone cultural events happening across London',
           descriptionPortuguese: 'Descubra eventos culturais portugueses acontecendo por toda Londres',
           href: ROUTES.events,
           type: 'secondary',
@@ -163,8 +163,8 @@ export default function ProgressiveUserJourney({
         }
       ],
       benefits: [
-        'Connect with 750+ Portuguese speakers in London',
-        'Access to authentic Portuguese events and experiences',
+        'Connect with Portuguese speakers in London',
+        'Access to authentic Lusophone events and experiences',
         'Safe and familiar transport with Portuguese-speaking drivers'
       ],
       benefitsPortuguese: [
@@ -177,7 +177,7 @@ export default function ProgressiveUserJourney({
       id: 'engagement',
       name: 'Active Engagement',
       namePortuguese: 'Envolvimento Ativo',
-      description: 'Start participating in events and building your Portuguese network in London.',
+      description: 'Start participating in events and building your Lusophone network in London.',
       descriptionPortuguese: 'Comece a participar em eventos e construir a sua rede portuguesa em Londres.',
       icon: UserGroupIcon,
       color: 'accent',
@@ -188,7 +188,7 @@ export default function ProgressiveUserJourney({
           id: 'attend-first-event',
           title: 'Attend Your First Event',
           titlePortuguese: 'Participe no Seu Primeiro Evento',
-          description: 'Join a Portuguese cultural event and start building connections',
+          description: 'Join a Lusophone cultural event and start building connections',
           descriptionPortuguese: 'Junte-se a um evento cultural português e comece a construir conexões',
           href: ROUTES.events,
           type: 'primary',
@@ -263,7 +263,7 @@ export default function ProgressiveUserJourney({
           id: 'use-mentorship',
           title: 'Access Professional Mentorship',
           titlePortuguese: 'Aceder a Mentoria Profissional',
-          description: 'Connect with successful Portuguese professionals for career guidance',
+          description: 'Connect with successful Lusophone professionals for career guidance',
           descriptionPortuguese: 'Conecte-se com profissionais portugueses bem-sucedidos para orientação profissional',
           href: '/mentorship',
           type: 'secondary',
@@ -287,7 +287,7 @@ export default function ProgressiveUserJourney({
         }
       ],
       benefits: [
-        'Unlimited transport booking with Portuguese drivers',
+        'Unlimited transport booking with Lusophone drivers',
         'Access to professional mentorship programs',
         'Housing assistance and neighborhood integration support',
         'Priority access to cultural events and experiences'

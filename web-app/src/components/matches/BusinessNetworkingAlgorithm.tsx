@@ -49,13 +49,13 @@ export default function BusinessNetworkingAlgorithm({
       title: language === "pt" ? "Compatibilidade Cultural Profissional" : "Cultural Business Fit",
       description: language === "pt"
         ? "Mede afinidade cultural portuguesa no contexto profissional"
-        : "Measures Portuguese cultural affinity in professional context",
+        : "Measures Lusophone cultural affinity in professional context",
       weight: 25,
       icon: GlobeAltIcon,
       color: "from-green-500 to-green-600",
       factors: [
         language === "pt" ? "Herança portuguesa partilhada" : "Shared Portuguese heritage",
-        language === "pt" ? "Compreensão do mercado português" : "Understanding of Portuguese market",
+        language === "pt" ? "Compreensão do mercado português" : "Understanding of Lusophone market",
         language === "pt" ? "Experiência de imigração similar" : "Similar immigration experience",
         language === "pt" ? "Valores culturais no trabalho" : "Cultural work values",
       ],
@@ -122,7 +122,7 @@ export default function BusinessNetworkingAlgorithm({
       title: language === "pt" ? "Análise de Tendências de Mercado" : "Market Trend Analysis",
       description: language === "pt"
         ? "Considera tendências atuais do mercado português e britânico"
-        : "Considers current Portuguese and British market trends",
+        : "Considers current Lusophone and British market trends",
       icon: ChartBarIcon,
     },
     {
@@ -155,7 +155,7 @@ export default function BusinessNetworkingAlgorithm({
           </div>
           <div>
             <h3 className="text-xl font-bold text-primary-900">
-              {language === "pt" ? "Algoritmo de Networking Português" : "Portuguese Networking Algorithm"}
+              {language === "pt" ? "Algoritmo de Networking Português" : "Lusophone Networking Algorithm"}
             </h3>
             <p className="text-sm text-primary-600">
               {language === "pt" 

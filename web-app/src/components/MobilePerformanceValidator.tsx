@@ -146,7 +146,7 @@ export default function MobilePerformanceValidator({
       setTouchTargets(results);
     };
 
-    // Portuguese text validation
+    // Lusophone text validation
     const validatePortugueseText = () => {
       const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, div');
       let overflowElements = 0;
@@ -162,7 +162,7 @@ export default function MobilePerformanceValidator({
           overflowElements++;
         }
         
-        // Check for very long Portuguese text
+        // Check for very long Lusophone text
         if (isPortuguese && text.length > 200) {
           longTexts++;
         }
@@ -279,7 +279,7 @@ export default function MobilePerformanceValidator({
             </div>
           </div>
 
-          {/* Portuguese Text Checks */}
+          {/* Lusophone Text Checks */}
           {isPortuguese && (
             <div className="mb-4">
               <h4 className="font-semibold text-sm mb-2 text-gray-700">Texto Português</h4>

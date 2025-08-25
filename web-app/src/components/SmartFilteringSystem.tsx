@@ -45,13 +45,13 @@ interface SmartFilteringSystemProps {
   showAdvanced?: boolean;
 }
 
-// Portuguese Cultural Areas in London
+// Lusophone Cultural Areas in London
 const LONDON_PORTUGUESE_AREAS = {
   'south-london': {
     nameEn: 'South London',
     namePt: 'Sul de Londres',
     icon: '🏛️',
-    description: 'Stockwell, Vauxhall, Lambeth - Heart of Portuguese community',
+    description: 'Stockwell, Vauxhall, Lambeth - Heart of Lusophone community',
     neighborhoods: ['Stockwell', 'Vauxhall', 'Lambeth', 'Elephant & Castle'],
   },
   'central-london': {
@@ -65,28 +65,28 @@ const LONDON_PORTUGUESE_AREAS = {
     nameEn: 'West London',
     namePt: 'Oeste de Londres',
     icon: '🏘️',
-    description: 'Notting Hill, Kensington - Premium Portuguese experiences',
+    description: 'Notting Hill, Kensington - Premium Lusophone experiences',
     neighborhoods: ['Kensington', 'Notting Hill', 'Hammersmith', 'Fulham'],
   },
   'north-london': {
     nameEn: 'North London',
     namePt: 'Norte de Londres',
     icon: '🌳',
-    description: 'Islington, Camden - Portuguese family communities',
+    description: 'Islington, Camden - Lusophone family communities',
     neighborhoods: ['Islington', 'Camden', 'Hampstead', 'Finsbury Park'],
   },
   'east-london': {
     nameEn: 'East London',
     namePt: 'Este de Londres',
     icon: '🎨',
-    description: 'Shoreditch, Hackney - Creative Portuguese community',
+    description: 'Shoreditch, Hackney - Creative Lusophone community',
     neighborhoods: ['Shoreditch', 'Hackney', 'Bethnal Green', 'Canary Wharf'],
   },
   'greater-london': {
     nameEn: 'Greater London',
     namePt: 'Grande Londres',
     icon: '🚇',
-    description: 'Outer London boroughs with Portuguese communities',
+    description: 'Outer London boroughs with Lusophone communities',
     neighborhoods: ['Croydon', 'Richmond', 'Bromley', 'Barnet'],
   },
 };
@@ -119,14 +119,14 @@ export default function SmartFilteringSystem({
       nameEn: '🆓 Free Events',
       namePt: '🆓 Eventos Grátis',
       filters: { priceRange: 'free' as const },
-      description: 'Free Portuguese community events',
+      description: 'Free Lusophone community events',
     },
     {
       id: 'portuguese-culture',
-      nameEn: '🇵🇹 Portuguese Culture',
+      nameEn: '🇵🇹 Lusophone Culture',
       namePt: '🇵🇹 Cultura Portuguesa',
       filters: { cultural: 'portuguese' as const, eventType: 'cultural' as const },
-      description: 'Authentic Portuguese cultural events',
+      description: 'Authentic Lusophone cultural events',
     },
     {
       id: 'palop-heritage',
@@ -147,7 +147,7 @@ export default function SmartFilteringSystem({
       nameEn: '🏘️ Stockwell Area',
       namePt: '🏘️ Área de Stockwell',
       filters: { area: 'south-london' as const },
-      description: 'Events in Portuguese heartland',
+      description: 'Events in Lusophone heartland',
     },
   ], []);
 
@@ -162,7 +162,7 @@ export default function SmartFilteringSystem({
     },
     { 
       value: 'portuguese' as const, 
-      nameEn: 'Portuguese', 
+      nameEn: 'Lusophone', 
       namePt: 'Português', 
       icon: '🇵🇹',
       description: 'Portugal heritage and culture' 

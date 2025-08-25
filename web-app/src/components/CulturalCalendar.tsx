@@ -66,13 +66,13 @@ export default function CulturalCalendar({
       type: 'exclusive',
       date: 'Fri, 30 Aug',
       time: '19:30',
-      location: 'Portuguese Cultural Centre Soho',
+      location: 'Lusophone Cultural Centre Soho',
       address: '25 Frith Street, London W1D 5LJ',
       price: 45,
       memberPrice: 30,
       maxAttendees: 35,
       currentAttendees: 28,
-      description: 'Intimate fado evening with acclaimed Portuguese fadistas',
+      description: 'Intimate fado evening with acclaimed Lusophone fadistas',
       descriptionPt: 'Noite íntima de fado com fadistas portugueses aclamados',
       category: 'Cultural Heritage',
       membershipRequired: true,
@@ -127,7 +127,7 @@ export default function CulturalCalendar({
     },
     {
       id: 4,
-      title: "Portuguese Wine Tasting Masterclass",
+      title: "Lusophone Wine Tasting Masterclass",
       titlePt: "Masterclass de Prova de Vinhos Portugueses",
       type: 'educational',
       date: 'Wed, 4 Sep',
@@ -464,7 +464,7 @@ export default function CulturalCalendar({
           <h3 className="text-3xl font-bold mb-6">
             {language === 'pt' 
               ? 'Junte-se aos 750+ Membros da Comunidade Lusófona'
-              : 'Join 750+ Members of the Lusophone Community'}
+              : 'Join Portuguese speakers of the Lusophone Community'}
           </h3>
           <p className="text-xl opacity-95 mb-8 max-w-3xl mx-auto">
             {language === 'pt'

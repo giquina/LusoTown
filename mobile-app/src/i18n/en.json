@@ -1,0 +1,287 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "next": "Next",
+    "done": "Done",
+    "skip": "Skip",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "refresh": "Refresh",
+    "retry": "Retry"
+  },
+  "navigation": {
+    "home": "Home",
+    "events": "Events",
+    "matches": "Matches", 
+    "directory": "Directory",
+    "profile": "Profile"
+  },
+  "auth": {
+    "welcome": {
+      "title": "Welcome to LusoTown",
+      "subtitle": "Connect with the Portuguese-speaking community across the UK",
+      "login": "Log In",
+      "signup": "Sign Up",
+      "continue_guest": "Continue as Guest"
+    },
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to your account",
+      "email": "Email",
+      "password": "Password",
+      "forgot_password": "Forgot Password?",
+      "remember_me": "Remember Me",
+      "login_button": "Log In",
+      "signup_link": "Don't have an account? Sign Up",
+      "social_divider": "Or continue with",
+      "google": "Continue with Google",
+      "facebook": "Continue with Facebook"
+    },
+    "signup": {
+      "title": "Join LusoTown",
+      "subtitle": "Create your account to connect",
+      "first_name": "First Name",
+      "last_name": "Last Name", 
+      "email": "Email",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "signup_button": "Create Account",
+      "login_link": "Already have an account? Log In",
+      "terms": "I accept the Terms of Service and Privacy Policy",
+      "marketing": "I'd like to receive community updates and events"
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Bem-vindos à Família!",
+      "subtitle": "Let's set up your Portuguese cultural profile",
+      "start": "Get Started"
+    },
+    "heritage": {
+      "title": "Your Portuguese Heritage",
+      "subtitle": "Which Portuguese-speaking country connects you to our community?",
+      "countries": {
+        "portugal": "Portugal",
+        "brazil": "Brazil", 
+        "cape_verde": "Cape Verde",
+        "angola": "Angola",
+        "mozambique": "Mozambique",
+        "guinea_bissau": "Guinea-Bissau",
+        "east_timor": "East Timor",
+        "sao_tome": "São Tomé and Príncipe"
+      },
+      "multiple": "I have connections to multiple countries",
+      "continue": "Continue"
+    },
+    "language": {
+      "title": "Language Preference",
+      "subtitle": "Which language would you prefer to use?",
+      "english": "English",
+      "portuguese": "Português",
+      "continue": "Continue"
+    },
+    "interests": {
+      "title": "Your Interests",
+      "subtitle": "What brings you joy in Portuguese culture?",
+      "categories": {
+        "food": "Food & Cuisine",
+        "music": "Music & Fado", 
+        "sports": "Football & Sports",
+        "festivals": "Cultural Festivals",
+        "business": "Business & Networking",
+        "arts": "Arts & Literature",
+        "travel": "Travel & Tourism",
+        "family": "Family & Traditions",
+        "nightlife": "Nightlife & Social",
+        "education": "Education & Learning"
+      },
+      "min_selection": "Select at least 3 interests",
+      "continue": "Continue"
+    },
+    "location": {
+      "title": "Your Location",
+      "subtitle": "Help us connect you with nearby Portuguese speakers",
+      "allow_location": "Allow Location Access",
+      "enter_manually": "Enter City Manually",
+      "city_placeholder": "Enter your city",
+      "why_location": "We use location to show nearby events and community members",
+      "continue": "Continue"
+    },
+    "notifications": {
+      "title": "Stay Connected",
+      "subtitle": "Get notified about events and matches",
+      "push_notifications": "Push Notifications",
+      "email_updates": "Email Updates", 
+      "event_reminders": "Event Reminders",
+      "new_matches": "New Match Alerts",
+      "community_news": "Community News",
+      "customize_later": "You can customize these in settings later",
+      "continue": "Continue"
+    },
+    "complete": {
+      "title": "Bem-vindos à Comunidade!",
+      "subtitle": "Your Portuguese cultural profile is complete",
+      "features": {
+        "events": "Discover Portuguese events near you",
+        "matches": "Connect with like-minded community members", 
+        "directory": "Find Portuguese businesses and services",
+        "community": "Join the vibrant Portuguese-speaking community"
+      },
+      "start_exploring": "Start Exploring"
+    }
+  },
+  "home": {
+    "greeting": "Olá, {{name}}!",
+    "welcome_back": "Welcome back to LusoTown",
+    "upcoming_events": "Upcoming Events",
+    "new_matches": "New Matches",
+    "nearby_businesses": "Nearby Portuguese Businesses",
+    "community_highlights": "Community Highlights",
+    "see_all": "See All",
+    "no_events": "No upcoming events",
+    "no_matches": "No new matches",
+    "cultural_tip": "Cultural Tip of the Day"
+  },
+  "events": {
+    "title": "Portuguese Events",
+    "subtitle": "Discover cultural events across the UK",
+    "upcoming": "Upcoming",
+    "past": "Past",
+    "favorites": "Favorites", 
+    "attending": "Attending",
+    "filters": {
+      "location": "Location",
+      "date": "Date",
+      "category": "Category",
+      "price": "Price",
+      "apply": "Apply Filters",
+      "clear": "Clear All"
+    },
+    "categories": {
+      "all": "All Events",
+      "cultural": "Cultural",
+      "music": "Music & Fado",
+      "food": "Food & Wine",
+      "sports": "Sports",
+      "business": "Business",
+      "social": "Social",
+      "festivals": "Festivals"
+    },
+    "details": {
+      "when": "When",
+      "where": "Where",
+      "price": "Price",
+      "organizer": "Organizer",
+      "description": "Description",
+      "attendees": "Attendees",
+      "attend": "Attend Event",
+      "attending": "Attending",
+      "add_to_favorites": "Add to Favorites",
+      "share": "Share Event",
+      "directions": "Get Directions"
+    }
+  },
+  "matches": {
+    "title": "Your Matches",
+    "subtitle": "Connect with Portuguese speakers",
+    "new_matches": "New Matches",
+    "recent": "Recent",
+    "favorites": "Favorites",
+    "compatibility": "{{score}}% Compatible",
+    "shared_interests": "Shared Interests",
+    "cultural_connection": "Cultural Connection", 
+    "distance": "{{distance}}km away",
+    "last_active": "Active {{time}}",
+    "send_message": "Send Message",
+    "view_profile": "View Profile",
+    "no_matches": "No matches yet",
+    "discover_more": "Keep using the app to find more matches!"
+  },
+  "directory": {
+    "title": "Business Directory",
+    "subtitle": "Portuguese businesses across the UK",
+    "search_placeholder": "Search businesses, services...",
+    "categories": {
+      "restaurants": "Restaurants",
+      "services": "Services",
+      "retail": "Retail",
+      "professional": "Professional",
+      "health": "Health & Beauty",
+      "automotive": "Automotive",
+      "real_estate": "Real Estate",
+      "education": "Education"
+    },
+    "filters": {
+      "location": "Location",
+      "category": "Category",
+      "rating": "Rating",
+      "open_now": "Open Now",
+      "verified": "Verified Only"
+    },
+    "business": {
+      "verified": "Verified",
+      "open": "Open",
+      "closed": "Closed",
+      "rating": "{{rating}} ({{count}} reviews)",
+      "call": "Call",
+      "website": "Website",
+      "directions": "Directions",
+      "share": "Share",
+      "hours": "Opening Hours",
+      "contact": "Contact Information",
+      "about": "About"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "edit": "Edit Profile",
+    "settings": "Settings",
+    "help": "Help & Support",
+    "logout": "Log Out",
+    "sections": {
+      "account": "Account",
+      "preferences": "Preferences", 
+      "privacy": "Privacy",
+      "support": "Support",
+      "about": "About"
+    },
+    "stats": {
+      "events_attended": "Events Attended",
+      "connections": "Connections",
+      "reviews": "Reviews Given"
+    },
+    "badges": {
+      "title": "Community Badges",
+      "cultural_explorer": "Cultural Explorer",
+      "event_enthusiast": "Event Enthusiast",
+      "community_connector": "Community Connector"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "notifications": "Notifications",
+    "privacy": "Privacy",
+    "account": "Account",
+    "help": "Help",
+    "about": "About",
+    "version": "Version {{version}}"
+  },
+  "errors": {
+    "network": "Network connection error. Please try again.",
+    "unknown": "Something went wrong. Please try again.",
+    "auth_failed": "Authentication failed. Please log in again.",
+    "validation_email": "Please enter a valid email address",
+    "validation_password": "Password must be at least 8 characters",
+    "validation_required": "This field is required"
+  }
+}

@@ -265,7 +265,7 @@ export default function UnifiedExperiencePage() {
               <p className="text-xl text-gray-600 mb-8">
                 {isPortuguese
                   ? "Junte-se à plataforma portuguesa mais integrada de Londres"
-                  : "Join London's most integrated Portuguese platform"}
+                  : "Join London's most integrated Lusophone platform"}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

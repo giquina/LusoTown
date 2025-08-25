@@ -162,16 +162,16 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  // Enhanced Portuguese cultural announcements
+  // Enhanced Lusophone cultural announcements
   const announceWithCulturalContext = (message: string, priority: 'polite' | 'assertive' = 'polite') => {
     const culturalPrefix = language === 'pt' ? 'LusoTown: ' : 'LusoTown: ';
     accessibility.announceToScreenReader(culturalPrefix + message, priority);
   };
 
-  // Portuguese voice-optimized text speaking
+  // Lusophone voice-optimized text speaking
   const speakPortugueseText = (text: string) => {
     if (language === 'pt') {
-      // Add Portuguese pronunciation hints
+      // Add Lusophone pronunciation hints
       const enhancedText = text
         .replace(/LusoTown/g, 'Luso Town')
         .replace(/United Kingdom/g, 'Reino Unido')
@@ -218,7 +218,7 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
     isListening: accessibility.isListening
   };
 
-  // Initialize Portuguese cultural accessibility on mount
+  // Initialize Lusophone cultural accessibility on mount
   useEffect(() => {
     // Add Portuguese heritage class to body
     document.body.classList.add('portuguese-heritage-a11y');
@@ -231,7 +231,7 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
       announceWithCulturalContext(
         language === 'pt' 
           ? 'Sistema de acessibilidade português ativo'
-          : 'Portuguese accessibility system active'
+          : 'Lusophone accessibility system active'
       );
     }, 1000);
 
@@ -297,7 +297,7 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
     <AccessibilityContext.Provider value={contextValue}>
       {children}
       
-      {/* Portuguese cultural accessibility status */}
+      {/* Lusophone cultural accessibility status */}
       {accessibility.currentAnnouncement && (
         <div 
           className="sr-only" 

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "community standards",
     "platform policy",
     "user agreement",
-    "Portuguese diaspora community",
+    "Lusophone diaspora community",
     "LusoTown London",
   ],
   openGraph: {

@@ -91,9 +91,9 @@ export const HERITAGE_OPTIONS: HeritageOption[] = [
   },
   {
     value: 'language_learner',
-    label: 'Portuguese Language Learner (Culturally Connected)',
+    label: 'Lusophone Language Learner (Culturally Connected)',
     flag: '📚',
-    description: 'Learning Portuguese with deep cultural connection'
+    description: 'Learning Lusophone with deep cultural connection'
   },
   {
     value: 'other_lusophone',
@@ -148,7 +148,7 @@ export function HeritageSelector({
   return (
     <div className="relative">
       <label className="block text-sm font-medium text-primary-700 mb-2">
-        Your Portuguese Heritage {required && <span className="text-red-500">*</span>}
+        Your Lusophone Heritage {required && <span className="text-red-500">*</span>}
       </label>
       
       <button

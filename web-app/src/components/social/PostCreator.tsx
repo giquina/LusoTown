@@ -38,11 +38,11 @@ const CULTURAL_TAGS = [
   { id: 'fado', label: 'Fado', icon: <Music className="w-4 h-4" />, category: 'music' },
   { id: 'pasteis_de_nata', label: 'Pastéis de Nata', icon: <Utensils className="w-4 h-4" />, category: 'food' },
   { id: 'santos_populares', label: 'Santos Populares', icon: <Calendar className="w-4 h-4" />, category: 'celebration' },
-  { id: 'portuguese_food', label: 'Portuguese Food', icon: <Utensils className="w-4 h-4" />, category: 'food' },
+  { id: 'portuguese_food', label: 'Lusophone Food', icon: <Utensils className="w-4 h-4" />, category: 'food' },
   { id: 'saudade', label: 'Saudade', icon: <Smile className="w-4 h-4" />, category: 'emotion' },
-  { id: 'portuguese_culture', label: 'Portuguese Culture', icon: <Globe className="w-4 h-4" />, category: 'culture' },
+  { id: 'portuguese_culture', label: 'Lusophone Culture', icon: <Globe className="w-4 h-4" />, category: 'culture' },
   { id: 'brazilian_culture', label: 'Brazilian Culture', icon: <Globe className="w-4 h-4" />, category: 'culture' },
-  { id: 'portuguese_business', label: 'Portuguese Business', icon: <Coffee className="w-4 h-4" />, category: 'business' },
+  { id: 'portuguese_business', label: 'Lusophone Business', icon: <Coffee className="w-4 h-4" />, category: 'business' },
   { id: 'festa_junina', label: 'Festa Junina', icon: <Calendar className="w-4 h-4" />, category: 'celebration' },
   { id: 'futebol', label: 'Football/Futebol', icon: <Globe className="w-4 h-4" />, category: 'sports' }
 ]
@@ -166,7 +166,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
             />
             <div className="flex items-center justify-between mt-2">
               <span className="text-xs text-gray-500">
-                {t('post_creator.supports_emojis') || 'Portuguese emojis: 🇵🇹 🇧🇷 🥧 🎵 ❤️'}
+                {t('post_creator.supports_emojis') || 'Lusophone emojis: 🇵🇹 🇧🇷 🥧 🎵 ❤️'}
               </span>
               <span className={`text-xs ${content.length > maxContentLength * 0.9 ? 'text-red-500' : 'text-gray-400'}`}>
                 {content.length}/{maxContentLength}
@@ -199,7 +199,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="text-sm font-medium text-gray-700">
-                  {t('post_creator.cultural_tags') || 'Portuguese Cultural Elements'}
+                  {t('post_creator.cultural_tags') || 'Lusophone Cultural Elements'}
                 </label>
                 <button
                   type="button"

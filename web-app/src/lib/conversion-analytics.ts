@@ -1,7 +1,7 @@
 /**
  * Conversion Analytics Tracking System
  * 
- * Comprehensive analytics for Portuguese community signup conversion optimization.
+ * Comprehensive analytics for Lusophone community signup conversion optimization.
  * Tracks user behavior, A/B test performance, and cultural engagement metrics.
  */
 
@@ -109,7 +109,7 @@ class ConversionAnalytics {
     this.sendToAnalytics(event)
   }
 
-  // Track Portuguese-specific cultural engagement
+  // Track Lusophone-specific cultural engagement
   trackCulturalEngagement(culturalElement: string, action: string, data: Record<string, any> = {}): void {
     this.track('cultural_engagement', {
       element: culturalElement,
@@ -128,7 +128,7 @@ class ConversionAnalytics {
     })
   }
 
-  // Track form field interactions with Portuguese context
+  // Track form field interactions with Lusophone context
   trackFormInteraction(fieldName: string, action: 'focus' | 'blur' | 'complete' | 'error', value?: any): void {
     const isPortugueseField = ['portugueseOrigin', 'londonArea', 'languagePreference'].includes(fieldName)
     
@@ -213,7 +213,7 @@ class ConversionAnalytics {
     return funnel
   }
 
-  // Get Portuguese-specific insights
+  // Get Lusophone-specific insights
   getPortugueseInsights(): {
     culturalEngagement: number
     languagePreference: { en: number; pt: number }
@@ -252,7 +252,7 @@ class ConversionAnalytics {
       .sort((a, b) => b.engagement - a.engagement)
       .slice(0, 10)
 
-    // Portuguese origin breakdown
+    // Lusophone origin breakdown
     const originEvents = this.events.filter(e => e.data.field === 'portugueseOrigin' && e.data.value)
     const portugueseOriginBreakdown: Record<string, number> = {}
     originEvents.forEach(e => {
@@ -508,7 +508,7 @@ export const useConversionAnalytics = (userId?: string) => {
   }
 }
 
-// Portuguese Community Specific Events
+// Lusophone Community Specific Events
 export const PORTUGUESE_CONVERSION_EVENTS = {
   // Cultural Engagement
   SAUDADE_MESSAGING_VIEWED: 'saudade_messaging_viewed',

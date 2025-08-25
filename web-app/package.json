@@ -69,7 +69,16 @@
     "docs:workflow": "node -e \"const Orchestrator = require('./scripts/docs/intelligent-documentation-orchestrator'); const workflow = process.argv[2]; if (!workflow) { console.log('Usage: npm run docs:workflow <workflow-name>'); process.exit(1); } new Orchestrator().executeWorkflow(workflow, 'manual').then(() => console.log('Workflow executed')).catch(console.error);\"",
     "docs:analytics": "node scripts/docs/intelligent-documentation-engine.js && node scripts/docs/conversation-intelligence.js && node scripts/docs/integration-hub.js && node scripts/docs/automation-rules-engine.js",
     "docs:queue": "node -e \"const Rules = require('./scripts/docs/automation-rules-engine'); new Rules().getTaskQueueStatus().then(r => console.log('Queue:', r.pending, 'pending tasks')).catch(console.error);\"",
-    "postinstall": "npm run docs:install-hooks || true"
+    "postinstall": "npm run docs:install-hooks || true",
+    "qa:emergency-audit": "node scripts/qa-monitoring/emergency-site-audit.js",
+    "qa:complete-diagnostic": "node scripts/qa-monitoring/complete-site-diagnostic.js",
+    "qa:duplicate-check": "npm run qa:check-duplicates && npm run qa:check-layout",
+    "qa:check-duplicates": "grep -r \"LusoBotWidget\\|WelcomePopup\\|WelcomeBanner\" src/app/ || echo \"✅ No banned duplicates found\"",
+    "qa:check-layout": "grep -A10 -B10 \"ComponentErrorBoundary\\|dynamicImport\" src/app/layout.tsx",
+    "qa:pre-commit": "npm run qa:duplicate-check && npm run lint && npx tsc --noEmit",
+    "qa:pre-deploy": "npm run qa:complete-diagnostic && npm run build",
+    "qa:monitor": "watch -n 300 \"npm run qa:emergency-audit\"",
+    "qa:health-check": "curl -f https://web-5vmpcxfvy-giquinas-projects.vercel.app/ > /dev/null && echo \"✅ Site is up\" || echo \"❌ Site is down\""
   },
   "dependencies": {
     "@headlessui/react": "^2.2.7",

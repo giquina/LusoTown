@@ -1,6 +1,6 @@
 /**
- * Portuguese Embassy and Consulate Configuration
- * Centralized configuration for Portuguese diplomatic missions
+ * Lusophone Embassy and Consulate Configuration
+ * Centralized configuration for Lusophone diplomatic missions
  * Environment-configurable data that can be easily updated
  */
 
@@ -74,7 +74,7 @@ export interface EmbassyContact {
 export const EMBASSY_CONTACTS: EmbassyContact[] = [
   {
     id: 'embassy-london',
-    name: process.env.NEXT_PUBLIC_EMBASSY_LONDON_NAME || 'Portuguese Embassy in London',
+    name: process.env.NEXT_PUBLIC_EMBASSY_LONDON_NAME || 'Lusophone Embassy in London',
     namePortuguese: process.env.NEXT_PUBLIC_EMBASSY_LONDON_NAME_PT || 'Embaixada de Portugal em Londres',
     type: 'embassy',
     
@@ -120,7 +120,7 @@ export const EMBASSY_CONTACTS: EmbassyContact[] = [
       name: process.env.NEXT_PUBLIC_AMBASSADOR_NAME || 'Nuno Brito',
       title: 'Ambassador',
       titlePortuguese: 'Embaixador',
-      bio: 'Portuguese Ambassador to the United Kingdom'
+      bio: 'Lusophone Ambassador to the United Kingdom'
     },
     
     regionsServed: ['England', 'Scotland', 'Wales', 'Northern Ireland'],
@@ -139,7 +139,7 @@ export const EMBASSY_CONTACTS: EmbassyContact[] = [
   
   {
     id: 'consulate-manchester',
-    name: process.env.NEXT_PUBLIC_CONSULATE_MANCHESTER_NAME || 'Portuguese Consulate Manchester',
+    name: process.env.NEXT_PUBLIC_CONSULATE_MANCHESTER_NAME || 'Lusophone Consulate Manchester',
     namePortuguese: process.env.NEXT_PUBLIC_CONSULATE_MANCHESTER_NAME_PT || 'Consulado de Portugal em Manchester',
     type: 'consulate',
     
@@ -194,7 +194,7 @@ export const EMBASSY_CONTACTS: EmbassyContact[] = [
   
   {
     id: 'trade-office-london',
-    name: process.env.NEXT_PUBLIC_TRADE_OFFICE_NAME || 'Portuguese Trade Office London',
+    name: process.env.NEXT_PUBLIC_TRADE_OFFICE_NAME || 'Lusophone Trade Office London',
     namePortuguese: process.env.NEXT_PUBLIC_TRADE_OFFICE_NAME_PT || 'Escritório Comercial de Portugal em Londres',
     type: 'trade_office',
     

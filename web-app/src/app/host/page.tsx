@@ -111,10 +111,10 @@ export default function HostPage() {
       icon: UsersIcon,
       title: isPortuguese
         ? "Alcance 750+ Portugueses"
-        : "Reach 750+ Portuguese Speakers",
+        : "Reach Portuguese speakers",
       description: isPortuguese
         ? "Conecte com profissionais e membros da comunidade de falantes de português"
-        : "Connect with Portuguese professionals and Portuguese speakers",
+        : "Connect with Lusophone professionals and Portuguese speakers",
     },
     {
       icon: CurrencyPoundIcon,
@@ -130,7 +130,7 @@ export default function HostPage() {
       title: isPortuguese ? "Construa a Sua Rede" : "Build Your Network",
       description: isPortuguese
         ? "Conecte com outros profissionais portugueses"
-        : "Connect with fellow Portuguese professionals",
+        : "Connect with fellow Lusophone professionals",
     },
     {
       icon: HeartIcon,
@@ -178,7 +178,7 @@ export default function HostPage() {
       role: isPortuguese ? "Instrutora de Tecnologia" : "Technology Instructor",
       quote: isPortuguese
         ? "Organizei 15 workshops de tecnologia e construí uma base sólida de clientes portugueses. O apoio da comunidade é incrível!"
-        : "I've hosted 15 technology workshops and built a solid Portuguese client base. The community support is incredible!",
+        : "I've hosted 15 technology workshops and built a solid Lusophone client base. The community support is incredible!",
       revenue: "£3,500/month",
       avatar: "MS",
     },
@@ -214,7 +214,7 @@ export default function HostPage() {
                 <span className="inline-block bg-gradient-to-r from-premium-600 to-coral-600 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg mb-4">
                   {isPortuguese
                     ? "Para Profissionais Portugueses"
-                    : "For Portuguese Professionals"}
+                    : "For Lusophone Professionals"}
                 </span>
               </motion.div>
 
@@ -568,7 +568,7 @@ export default function HostPage() {
               <p className="text-lg text-gray-600">
                 {isPortuguese
                   ? "Profissionais portugueses reais construindo negócios prósperos"
-                  : "Real Portuguese professionals building thriving businesses"}
+                  : "Real Lusophone professionals building thriving businesses"}
               </p>
             </div>
 

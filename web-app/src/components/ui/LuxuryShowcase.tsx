@@ -33,7 +33,7 @@ import {
 export default function LuxuryShowcase() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-primary-50/30">
-      {/* Hero Section with Portuguese Heritage */}
+      {/* Hero Section with Lusophone Heritage */}
       <GradientBackground variant="portuguese" className="relative py-20 px-6">
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-6xl mx-auto text-center text-white">
@@ -76,7 +76,7 @@ export default function LuxuryShowcase() {
           </FadeIn>
         </div>
 
-        {/* Floating Portuguese elements */}
+        {/* Floating Lusophone elements */}
         <FloatingElement amplitude={15} duration={4} className="absolute top-20 left-10">
           <div className="w-16 h-16 bg-white/20 rounded-full backdrop-blur-sm flex items-center justify-center">
             <GlobeAltIcon className="w-8 h-8 text-white" />
@@ -101,7 +101,7 @@ export default function LuxuryShowcase() {
                 Premium Card Designs
               </LuxuryHeading>
               <LuxuryText variant="muted" size="lg" className="mt-4">
-                Sophisticated cards with glassmorphism effects and Portuguese cultural elements
+                Sophisticated cards with glassmorphism effects and Lusophone cultural elements
               </LuxuryText>
             </div>
 
@@ -137,7 +137,7 @@ export default function LuxuryShowcase() {
                       Glassmorphism
                     </LuxuryHeading>
                     <LuxuryText variant="muted" className="mt-2">
-                      Modern glass-like effects with premium Portuguese aesthetics.
+                      Modern glass-like effects with premium Lusophone aesthetics.
                     </LuxuryText>
                     <div className="mt-6">
                       <EliteButton variant="coral" size="md" fullWidth luxury>
@@ -184,9 +184,9 @@ export default function LuxuryShowcase() {
                 <div className="space-y-6">
                   <div>
                     <LuxuryHeading level={1} variant="portuguese" gradient>
-                      Portuguese Heritage
+                      Lusophone Heritage
                     </LuxuryHeading>
-                    <LuxuryText variant="muted">Display Large - Portuguese Colors</LuxuryText>
+                    <LuxuryText variant="muted">Display Large - Lusophone Colors</LuxuryText>
                   </div>
                   
                   <div>
@@ -206,7 +206,7 @@ export default function LuxuryShowcase() {
 
                 <div className="space-y-6">
                   <div className="flex flex-wrap gap-3">
-                    <LuxuryBadge variant="portuguese" size="lg">Portuguese</LuxuryBadge>
+                    <LuxuryBadge variant="portuguese" size="lg">Lusophone</LuxuryBadge>
                     <LuxuryBadge variant="premium" size="lg">Premium</LuxuryBadge>
                     <LuxuryBadge variant="success" size="lg">Success</LuxuryBadge>
                   </div>
@@ -243,21 +243,21 @@ export default function LuxuryShowcase() {
                 Elite Button Collection
               </LuxuryHeading>
               <LuxuryText variant="muted" size="lg" className="mt-4">
-                Refined interactions with Portuguese cultural sophistication
+                Refined interactions with Lusophone cultural sophistication
               </LuxuryText>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="space-y-4">
-                <LuxuryText weight="semibold" className="text-center">Portuguese Heritage</LuxuryText>
+                <LuxuryText weight="semibold" className="text-center">Lusophone Heritage</LuxuryText>
                 <EliteButton variant="heritage" size="lg" fullWidth portuguese>
                   Heritage Style
                 </EliteButton>
                 <EliteButton variant="primary" size="md" fullWidth portuguese>
-                  Primary Portuguese
+                  Primary Lusophone
                 </EliteButton>
                 <EliteButton variant="outline" size="sm" fullWidth className="border-red-500 text-red-600">
-                  Outline Portuguese
+                  Outline Lusophone
                 </EliteButton>
               </div>
 
@@ -328,13 +328,13 @@ export default function LuxuryShowcase() {
                   Premium Loading Components
                 </LuxuryHeading>
                 <LuxuryText variant="muted" size="lg" className="mt-4">
-                  Sophisticated loading states with Portuguese cultural elements
+                  Sophisticated loading states with Lusophone cultural elements
                 </LuxuryText>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                 <div className="space-y-4">
-                  <LuxuryText weight="semibold">Portuguese Flag</LuxuryText>
+                  <LuxuryText weight="semibold">Lusophone Flag</LuxuryText>
                   <div className="flex justify-center">
                     <PortugueseFlagLoader size="lg" />
                   </div>
@@ -355,7 +355,7 @@ export default function LuxuryShowcase() {
                 </div>
 
                 <div className="space-y-4">
-                  <LuxuryText weight="semibold">Portuguese Spinner</LuxuryText>
+                  <LuxuryText weight="semibold">Lusophone Spinner</LuxuryText>
                   <div className="flex justify-center">
                     <LoadingSpinner size="xl" variant="portuguese" />
                   </div>
@@ -372,7 +372,7 @@ export default function LuxuryShowcase() {
                   Bem-vindos à Comunidade de Falantes de Português
                 </GradientText>
                 <LuxuryText variant="muted" size="lg" className="mt-2">
-                  Portuguese Gradient Text - Heritage Colors
+                  Lusophone Gradient Text - Heritage Colors
                 </LuxuryText>
               </div>
 

@@ -1,4 +1,4 @@
-// Global Portuguese Diaspora Expansion Types and Interfaces
+// Global Lusophone Diaspora Expansion Types and Interfaces
 export type PortugueseRegion = 
   | 'europe' 
   | 'north-america' 

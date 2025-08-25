@@ -1,63 +1,55 @@
 import 'react-native-url-polyfill/auto';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ActivityIndicator, View } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-// Import your onboarding flow
-import OnboardingFlow from './src/screens/onboarding/OnboardingFlow';
-import { Colors, CommonStyles, Typography } from './src/constants/Styles';
+// i18n setup
+import './src/i18n';
 
-// 🚀 Main App Component - Your community app starts here!
+// Navigation
+import AppNavigator from './src/navigation/AppNavigator';
+
+// Styles
+import { Colors, CommonStyles } from './src/constants/Styles';
+
+// 🇵🇹 LusoTown Mobile - Portuguese-speaking Community Platform
 export default function App() {
-  const [isOnboardingComplete, setIsOnboardingComplete] = useState(false);
-  const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Handle onboarding completion
-  const handleOnboardingComplete = (userData) => {
-    console.log('Onboarding completed with data:', userData);
-    setUser(userData);
-    setIsOnboardingComplete(true);
-  };
+  useEffect(() => {
+    // Initialize app (fonts, auth, etc.)
+    const initializeApp = async () => {
+      try {
+        // TODO: Initialize auth state, load fonts, etc.
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate loading
+        setIsLoading(false);
+      } catch (error) {
+        console.error('App initialization error:', error);
+        setIsLoading(false);
+      }
+    };
 
-  // Show different screens based on user state
-  if (!isOnboardingComplete) {
+    initializeApp();
+  }, []);
+
+  if (isLoading) {
     return (
       <SafeAreaProvider>
-        <StatusBar style="dark" backgroundColor={Colors.background} />
-        <OnboardingFlow onComplete={handleOnboardingComplete} />
+        <View style={CommonStyles.centerContainer}>
+          <ActivityIndicator size="large" color={Colors.primary} />
+        </View>
       </SafeAreaProvider>
     );
   }
 
-  // Placeholder for main app (after onboarding)
   return (
-    <SafeAreaProvider>
-      <StatusBar style="dark" backgroundColor={Colors.background} />
-      <View style={styles.container}>
-        <Text style={styles.welcomeText}>
-          Welcome to LusoTown, {user?.firstName}! 🎉
-        </Text>
-        <Text style={styles.subText}>
-          Your Portuguese-speaking community in London awaits...
-        </Text>
-      </View>
-    </SafeAreaProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <StatusBar style="dark" backgroundColor={Colors.background} />
+        <AppNavigator />
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    ...CommonStyles.centerContainer,
-  },
-  welcomeText: {
-    ...Typography.h1,
-    textAlign: 'center',
-    marginBottom: 16,
-  },
-  subText: {
-    ...Typography.body,
-    textAlign: 'center',
-    color: Colors.textSecondary,
-  },
-});

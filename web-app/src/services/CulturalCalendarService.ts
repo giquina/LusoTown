@@ -59,7 +59,7 @@ class CulturalCalendarService {
   private supabaseClient = supabase
 
   /**
-   * Get all Portuguese cultural events
+   * Get all Lusophone cultural events
    */
   async getAllCulturalEvents(): Promise<CulturalEvent[]> {
     const { data, error } = await this.supabaseClient
@@ -253,7 +253,7 @@ class CulturalCalendarService {
         name: 'Carnival Tuesday',
         date: this.calculateCarnivalDate(targetYear),
         type: 'national',
-        description: 'Portuguese Carnival celebrations',
+        description: 'Lusophone Carnival celebrations',
         celebrated_in_uk: true,
         typical_celebrations: ['parades', 'costumes', 'street parties', 'traditional sweets'],
         london_events_count: 0
@@ -298,7 +298,7 @@ class CulturalCalendarService {
         name: 'Portugal Day',
         date: `${targetYear}-06-10`,
         type: 'national',
-        description: 'National Day of Portugal and Portuguese communities',
+        description: 'National Day of Portugal and Lusophone communities',
         celebrated_in_uk: true,
         typical_celebrations: ['cultural exhibitions', 'flag ceremonies', 'community events'],
         london_events_count: 0
@@ -325,7 +325,7 @@ class CulturalCalendarService {
         name: 'Republic Day',
         date: `${targetYear}-10-05`,
         type: 'national',
-        description: 'Proclamation of the Portuguese Republic',
+        description: 'Proclamation of the Lusophone Republic',
         celebrated_in_uk: false,
         typical_celebrations: ['official ceremonies', 'cultural events'],
         london_events_count: 0

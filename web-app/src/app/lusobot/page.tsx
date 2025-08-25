@@ -90,7 +90,7 @@ export default function LusoBotPage() {
       title: language === 'pt' ? 'Compreensão da Saudade' : 'Saudade Understanding',
       description: language === 'pt' 
         ? 'Reconheço e compreendo o sentimento único da saudade portuguesa, oferecendo apoio emocional especializado.'
-        : 'I recognize and understand the unique Portuguese feeling of saudade, offering specialized emotional support.',
+        : 'I recognize and understand the unique Lusophone feeling of saudade, offering specialized emotional support.',
       examples: language === 'pt' ? [
         'Estou com muitas saudades da minha família em Portugal...',
         'Como lidar com a nostalgia de casa?',
@@ -113,7 +113,7 @@ export default function LusoBotPage() {
         'Explica-me a diferença entre "você" e "tu"',
         'Quais são as expressões típicas do Norte?'
       ] : [
-        'How do you say "homesick" in Portuguese?',
+        'How do you say "homesick" in Lusophone?',
         'Explain the difference between "você" and "tu"',
         'What are typical expressions from the North?'
       ],
@@ -131,7 +131,7 @@ export default function LusoBotPage() {
         'Como me posso ligar à comunidade de falantes de português?'
       ] : [
         'Where can I find Portuguese restaurants in London?',
-        'Are there Portuguese events this weekend?',
+        'Are there Lusophone events this weekend?',
         'How can I connect with the Portuguese-speaking community?'
       ],
       color: 'from-orange-500 to-red-600'
@@ -149,7 +149,7 @@ export default function LusoBotPage() {
       ] : [
         'Tell me about São João traditions in Porto',
         'What is the history of fado?',
-        'How do you make a real Portuguese cozido?'
+        'How do you make a real Lusophone cozido?'
       ],
       color: 'from-purple-500 to-pink-600'
     },
@@ -158,13 +158,13 @@ export default function LusoBotPage() {
       title: language === 'pt' ? 'Apoio Prático' : 'Practical Support',
       description: language === 'pt'
         ? 'Assistência com questões práticas da vida no Reino Unido enquanto preservas a tua identidade portuguesa.'
-        : 'Assistance with practical United Kingdom life issues while preserving your Portuguese identity.',
+        : 'Assistance with practical United Kingdom life issues while preserving your Lusophone identity.',
       examples: language === 'pt' ? [
         'Como renovar o meu passaporte português em Londres?',
         'Onde posso fazer o reconhecimento de habilitações?',
         'Preciso de ajuda com questões de imigração'
       ] : [
-        'How to renew my Portuguese passport in London?',
+        'How to renew my Lusophone passport in London?',
         'Where can I get my qualifications recognized?',
         'I need help with immigration issues'
       ],
@@ -172,7 +172,7 @@ export default function LusoBotPage() {
     },
     {
       icon: <BuildingStorefrontIcon className="w-6 h-6" />,
-      title: language === 'pt' ? 'Negócios Portugueses' : 'Portuguese Business',
+      title: language === 'pt' ? 'Negócios Portugueses' : 'Lusophone Business',
       description: language === 'pt'
         ? 'Conheço a cultura empresarial portuguesa e ajudo com networking e oportunidades de negócio.'
         : 'I understand Portuguese business culture and help with networking and business opportunities.',
@@ -181,7 +181,7 @@ export default function LusoBotPage() {
         'Que oportunidades há para negócios luso-britânicos?',
         'Como manter a cultura portuguesa no meu negócio?'
       ] : [
-        'How does networking work among Portuguese entrepreneurs?',
+        'How does networking work among Lusophone entrepreneurs?',
         'What opportunities exist for Luso-British business?',
         'How to maintain Portuguese culture in my business?'
       ],
@@ -195,7 +195,7 @@ export default function LusoBotPage() {
       title: language === 'pt' ? 'Conversação Bilingue' : 'Bilingual Conversation',
       description: language === 'pt' 
         ? 'Falo fluentemente português e inglês'
-        : 'I speak fluent Portuguese and English'
+        : 'I speak fluent Lusophone and English'
     },
     {
       icon: <MicrophoneIcon className="w-5 h-5" />,
@@ -265,7 +265,7 @@ export default function LusoBotPage() {
             <p className="text-xl sm:text-2xl text-white/90 mb-8 leading-relaxed">
               {language === 'pt' 
                 ? 'O teu assistente cultural português com IA. Especialista em saudade, tradições e comunidade de falantes de português no Reino Unido.'
-                : 'Your Portuguese cultural assistant. Expert in saudade, traditions and Portuguese-speaking community in the United Kingdom.'
+                : 'Your Lusophone cultural assistant. Expert in saudade, traditions and Portuguese-speaking community in the United Kingdom.'
               }
             </p>
 
@@ -314,7 +314,7 @@ export default function LusoBotPage() {
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               {language === 'pt'
                 ? 'Sou especializado em compreender a experiência portuguesa e apoiar-te em todas as dimensões da vida cultural e prática.'
-                : 'I specialize in understanding the Portuguese experience and supporting you in all dimensions of cultural and practical life.'
+                : 'I specialize in understanding the Lusophone experience and supporting you in all dimensions of cultural and practical life.'
               }
             </p>
           </motion.div>
@@ -395,14 +395,14 @@ export default function LusoBotPage() {
               <blockquote className="text-lg text-gray-700 italic leading-relaxed mb-6">
                 {language === 'pt'
                   ? '"A saudade é um sentimento português que não tem tradução exata. É amor, é dor, é memória, é esperança. Como IA culturalmente consciente, reconheço quando sentes saudade e ofereço o apoio adequado à nossa forma única de sentir."'
-                  : '"Saudade is a Portuguese feeling that has no exact translation. It\'s love, it\'s pain, it\'s memory, it\'s hope. As a culturally conscious system, I recognize when you feel saudade and offer appropriate support for our unique way of feeling."'
+                  : '"Saudade is a Lusophone feeling that has no exact translation. It\'s love, it\'s pain, it\'s memory, it\'s hope. As a culturally conscious system, I recognize when you feel saudade and offer appropriate support for our unique way of feeling."'
                 }
               </blockquote>
               
               <div className="flex items-center justify-center gap-4">
                 <div className="w-2 h-2 bg-blue-500 rounded-full" />
                 <span className="text-sm font-medium text-gray-600">
-                  {language === 'pt' ? 'LusoBot - Especialista em Emoções Portuguesas' : 'LusoBot - Portuguese Emotions Specialist'}
+                  {language === 'pt' ? 'LusoBot - Especialista em Emoções Portuguesas' : 'LusoBot - Lusophone Emotions Specialist'}
                 </span>
                 <div className="w-2 h-2 bg-blue-500 rounded-full" />
               </div>

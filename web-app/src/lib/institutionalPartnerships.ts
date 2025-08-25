@@ -1,7 +1,7 @@
 'use client'
 
-// Enhanced Portuguese Institutional Partnership Management
-// Comprehensive system for managing strategic partnerships with Portuguese institutions
+// Enhanced Lusophone Institutional Partnership Management
+// Comprehensive system for managing strategic partnerships with Lusophone institutions
 
 import { partnershipsService, PartnershipOrganization, PartnershipBenefit } from './partnerships'
 import { universityPartnershipsService, University } from './universityPartnerships'
@@ -90,20 +90,20 @@ export const INSTITUTIONAL_PARTNERSHIP_STRATEGIES: InstitutionalPartnershipStrat
     name: 'Government and Diplomatic Expansion Strategy',
     namePortuguese: 'Estratégia de Expansão Governamental e Diplomática',
     category: 'government_diplomatic',
-    description: 'Comprehensive strategy to establish partnerships with all major Portuguese government institutions and diplomatic missions in the United Kingdom',
+    description: 'Comprehensive strategy to establish partnerships with all major Lusophone government institutions and diplomatic missions in the United Kingdom',
     targetInstitutions: [
-      'Portuguese Consulate Manchester',
-      'Portuguese Trade Office United Kingdom',
+      'Lusophone Consulate Manchester',
+      'Lusophone Trade Office United Kingdom',
       'AICEP Portugal Global',
-      'Portuguese Tourism Board United Kingdom',
-      'Portuguese Investment Agency',
-      'Portuguese Maritime Administration United Kingdom'
+      'Lusophone Tourism Board United Kingdom',
+      'Lusophone Investment Agency',
+      'Lusophone Maritime Administration United Kingdom'
     ],
     strategicObjectives: [
       'Official government endorsement for LusoTown platform',
       'Integration with consular services',
       'Access to official Portuguese business networks',
-      'Support for Portuguese cultural programming',
+      'Support for Lusophone cultural programming',
       'Immigration and legal service coordination'
     ],
     timeline: {
@@ -137,21 +137,21 @@ export const INSTITUTIONAL_PARTNERSHIP_STRATEGIES: InstitutionalPartnershipStrat
     name: 'University Partnership Enhancement Strategy',
     namePortuguese: 'Estratégia de Melhoria de Parcerias Universitárias',
     category: 'cultural_educational',
-    description: 'Expand and deepen partnerships with United Kingdom universities offering Portuguese studies and serving Portuguese student communities',
+    description: 'Expand and deepen partnerships with United Kingdom universities offering Lusophone studies and serving Lusophone student communities',
     targetInstitutions: [
-      'Oxford University Portuguese Department',
-      'Cambridge University Portuguese Studies',
-      'University of Edinburgh Portuguese Programme',
+      'Oxford University Lusophone Department',
+      'Cambridge University Lusophone Studies',
+      'University of Edinburgh Lusophone Programme',
       'University of Manchester Iberian Studies',
       'University of Warwick Modern Languages',
-      'Queen Mary University Portuguese Centre'
+      'Queen Mary University Lusophone Centre'
     ],
     strategicObjectives: [
       'Comprehensive student support services',
       'Academic research collaboration',
       'Cultural programming partnerships',
       'Study abroad and exchange programs',
-      'Professional development for Portuguese graduates'
+      'Professional development for Lusophone graduates'
     ],
     timeline: {
       phase1: 'University outreach and pilot programs (Months 1-4)',
@@ -161,7 +161,7 @@ export const INSTITUTIONAL_PARTNERSHIP_STRATEGIES: InstitutionalPartnershipStrat
     },
     expectedOutcomes: [
       'Partnership with 12+ United Kingdom universities',
-      'Support for 3,000+ Portuguese students',
+      'Support for 3,000+ Lusophone students',
       'Academic research collaborations',
       'Cultural exchange programs',
       'Graduate career placement services'
@@ -184,14 +184,14 @@ export const INSTITUTIONAL_PARTNERSHIP_STRATEGIES: InstitutionalPartnershipStrat
     name: 'Professional Networks Integration Strategy',
     namePortuguese: 'Estratégia de Integração de Redes Profissionais',
     category: 'business_professional',
-    description: 'Build comprehensive network of Portuguese professional associations and business organizations across all major industries',
+    description: 'Build comprehensive network of Lusophone professional associations and business organizations across all major industries',
     targetInstitutions: [
-      'Portuguese Engineers Association United Kingdom',
-      'Portuguese Architects Society',
-      'Portuguese Teachers Union United Kingdom',
-      'Portuguese Nurses Association',
-      'Portuguese Tech Professionals Network',
-      'Portuguese Entrepreneurs Club London'
+      'Lusophone Engineers Association United Kingdom',
+      'Lusophone Architects Society',
+      'Lusophone Teachers Union United Kingdom',
+      'Lusophone Nurses Association',
+      'Lusophone Tech Professionals Network',
+      'Lusophone Entrepreneurs Club London'
     ],
     strategicObjectives: [
       'Professional development support',
@@ -208,7 +208,7 @@ export const INSTITUTIONAL_PARTNERSHIP_STRATEGIES: InstitutionalPartnershipStrat
     },
     expectedOutcomes: [
       'Professional network coverage across 10+ industries',
-      'Career support for 5,000+ Portuguese professionals',
+      'Career support for 5,000+ Lusophone professionals',
       'Industry-specific training and development programs',
       'Business networking and collaboration opportunities',
       'Professional credential recognition services'
@@ -232,7 +232,7 @@ export const INSTITUTIONAL_PARTNERSHIP_STRATEGIES: InstitutionalPartnershipStrat
 export const PARTNERSHIP_OUTREACH_PIPELINE: PartnershipOutreach[] = [
   {
     id: 'outreach-1',
-    institutionName: 'Portuguese Engineers Association United Kingdom',
+    institutionName: 'Lusophone Engineers Association United Kingdom',
     institutionType: 'Professional Association',
     contactPerson: {
       name: 'Eng. João Silva',
@@ -244,7 +244,7 @@ export const PARTNERSHIP_OUTREACH_PIPELINE: PartnershipOutreach[] = [
     priority: 'high',
     proposalValue: 28000,
     expectedBenefits: [
-      'Professional development programs for Portuguese engineers',
+      'Professional development programs for Lusophone engineers',
       'Technical skills training and certification',
       'Engineering job placement assistance',
       'Professional networking events',
@@ -266,11 +266,11 @@ export const PARTNERSHIP_OUTREACH_PIPELINE: PartnershipOutreach[] = [
   },
   {
     id: 'outreach-2',
-    institutionName: 'Oxford University Portuguese Department',
+    institutionName: 'Oxford University Lusophone Department',
     institutionType: 'Academic Institution',
     contactPerson: {
       name: 'Professor Catherine Boyle',
-      title: 'Head of Portuguese Studies',
+      title: 'Head of Lusophone Studies',
       email: 'catherine.boyle@ox.ac.uk',
       phone: '+44 1865 270750'
     },
@@ -300,7 +300,7 @@ export const PARTNERSHIP_OUTREACH_PIPELINE: PartnershipOutreach[] = [
   },
   {
     id: 'outreach-3',
-    institutionName: 'Portuguese Business Women Network',
+    institutionName: 'Lusophone Business Women Network',
     institutionType: 'Professional Network',
     contactPerson: {
       name: 'Dr. Ana Fernandes',
@@ -560,35 +560,35 @@ export class InstitutionalPartnershipsService {
     return [
       {
         priority: 'high',
-        institution: 'Cambridge University Portuguese Studies',
-        rationale: 'High academic prestige and strong Portuguese studies program. Significant student population.',
+        institution: 'Cambridge University Lusophone Studies',
+        rationale: 'High academic prestige and strong Lusophone studies program. Significant student population.',
         expectedValue: 45000,
         timeToImplement: '6-9 months'
       },
       {
         priority: 'high',
-        institution: 'Portuguese Engineers Association United Kingdom',
+        institution: 'Lusophone Engineers Association United Kingdom',
         rationale: 'Large professional community with high earning potential. Strong demand for professional services.',
         expectedValue: 38000,
         timeToImplement: '4-6 months'
       },
       {
         priority: 'medium',
-        institution: 'Portuguese Cultural Institute Edinburgh',
+        institution: 'Lusophone Cultural Institute Edinburgh',
         rationale: 'Strategic expansion to Scotland. Growing Portuguese-speaking community in Edinburgh area.',
         expectedValue: 25000,
         timeToImplement: '8-12 months'
       },
       {
         priority: 'medium',
-        institution: 'Portuguese Teachers Union United Kingdom',
+        institution: 'Lusophone Teachers Union United Kingdom',
         rationale: 'Educational sector partnerships. Important for cultural preservation and language education.',
         expectedValue: 22000,
         timeToImplement: '6-8 months'
       },
       {
         priority: 'low',
-        institution: 'Portuguese Sports Federation United Kingdom',
+        institution: 'Lusophone Sports Federation United Kingdom',
         rationale: 'Community engagement through sports. Potential for family-oriented programming.',
         expectedValue: 15000,
         timeToImplement: '10-12 months'

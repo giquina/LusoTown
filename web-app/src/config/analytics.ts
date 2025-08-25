@@ -110,7 +110,7 @@ export const EVENT_CATEGORIES = {
   MARKETING: 'marketing'
 } as const;
 
-// Portuguese Cultural Event Tracking
+// Lusophone Cultural Event Tracking
 export const CULTURAL_EVENTS = {
   PORTUGUESE_CONTENT_VIEW: 'portuguese_content_view',
   CULTURAL_EVENT_ATTEND: 'cultural_event_attend',

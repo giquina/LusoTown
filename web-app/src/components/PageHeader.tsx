@@ -11,7 +11,7 @@ export interface PageHeaderProps {
    */
   title: string;
   /**
-   * Portuguese translation of the title
+   * Lusophone translation of the title
    */
   titlePt?: string;
   /**
@@ -19,7 +19,7 @@ export interface PageHeaderProps {
    */
   subtitle?: string;
   /**
-   * Portuguese translation of the subtitle
+   * Lusophone translation of the subtitle
    */
   subtitlePt?: string;
   /**
@@ -27,7 +27,7 @@ export interface PageHeaderProps {
    */
   badge?: string;
   /**
-   * Portuguese translation of the badge
+   * Lusophone translation of the badge
    */
   badgePt?: string;
   /**

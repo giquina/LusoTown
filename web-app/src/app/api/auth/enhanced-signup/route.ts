@@ -1,6 +1,6 @@
 /**
  * Enhanced Signup API Endpoint
- * Handles comprehensive Portuguese community signup with cultural integration
+ * Handles comprehensive Lusophone community signup with cultural integration
  */
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -286,8 +286,8 @@ function generateInitialRecommendations(data: {
   if (data.primaryInterests.includes('business-networking')) {
     recommendations.push({
       type: 'event',
-      title: 'Portuguese Business Breakfast',
-      description: 'Monthly networking event for Portuguese entrepreneurs',
+      title: 'Lusophone Business Breakfast',
+      description: 'Monthly networking event for Lusophone entrepreneurs',
       location: 'Central London',
       next_date: getNextFirstSaturday(),
       category: 'business'
@@ -299,7 +299,7 @@ function generateInitialRecommendations(data: {
     recommendations.push({
       type: 'event',
       title: 'Fado Night at Casa do Bacalhau',
-      description: 'Authentic Portuguese Fado music with traditional dinner',
+      description: 'Authentic Lusophone Fado music with traditional dinner',
       location: 'Southwark, London',
       next_date: getNextFirstFriday(),
       category: 'cultural'
@@ -323,7 +323,7 @@ function generateInitialRecommendations(data: {
     recommendations.push({
       type: 'feature',
       title: 'Cultural Compatibility Matching',
-      description: 'Find meaningful connections based on Portuguese cultural values',
+      description: 'Find meaningful connections based on Lusophone cultural values',
       action: 'complete_cultural_quiz',
       category: 'matching'
     })
@@ -333,8 +333,8 @@ function generateInitialRecommendations(data: {
   if (data.ukLocation === 'London') {
     recommendations.push({
       type: 'community',
-      title: 'Stockwell Portuguese Quarter',
-      description: 'Visit the heart of London\'s Portuguese community',
+      title: 'Stockwell Lusophone Quarter',
+      description: 'Visit the heart of London\'s Lusophone community',
       location: 'Stockwell, London',
       category: 'community'
     })

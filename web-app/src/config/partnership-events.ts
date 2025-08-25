@@ -80,17 +80,17 @@ export const PARTNERSHIP_EVENTS: PartnershipEvent[] = [
     id: 'fado-casa-do-bacalhau',
     name: 'Authentic Fado Nights',
     partnerName: 'Casa do Bacalhau',
-    description: 'Traditional Portuguese Fado music evenings in London\'s most authentic Portuguese restaurant. Monthly events featuring professional Fado singers and traditional Portuguese cuisine.',
+    description: 'Traditional Lusophone Fado music evenings in London\'s most authentic Portuguese restaurant. Monthly events featuring professional Fado singers and traditional Portuguese cuisine.',
     location: 'Casa do Bacalhau, Southwark, London',
     schedule: 'First Friday of each month, 7pm-11pm',
     socialHandle: '@casadobacalhaulondon',
     website: 'https://casadobacalhau.co.uk',
     memberBenefits: [
       'Authentic Fado music performed by professional artists',
-      'Traditional Portuguese dinner included',
+      'Traditional Lusophone dinner included',
       'Cultural storytelling and history sessions',
       'Meet other Portuguese culture enthusiasts',
-      'Photography opportunities with traditional Portuguese décor'
+      'Photography opportunities with traditional Lusophone décor'
     ],
     eventTypes: [
       {
@@ -117,9 +117,9 @@ export const PARTNERSHIP_EVENTS: PartnershipEvent[] = [
   },
   {
     id: 'portuguese-business-network',
-    name: 'Portuguese Business Breakfast',
-    partnerName: 'Portuguese Chamber of Commerce UK',
-    description: 'Monthly networking breakfast for Portuguese entrepreneurs, business owners, and professionals. Connect with the Portuguese business community in London.',
+    name: 'Lusophone Business Breakfast',
+    partnerName: 'Lusophone Chamber of Commerce UK',
+    description: 'Monthly networking breakfast for Lusophone entrepreneurs, business owners, and professionals. Connect with the Portuguese business community in London.',
     location: 'Various Central London venues',
     schedule: 'First Saturday of each month, 9am-12pm',
     website: 'https://portuguesechamber.co.uk',
@@ -164,7 +164,7 @@ export const PARTNERSHIP_EVENTS: PartnershipEvent[] = [
     memberBenefits: [
       'Learn authentic Brazilian Samba and Forró',
       'Taste traditional Brazilian cuisine',
-      'Portuguese-Brazilian language exchange',
+      'Lusophone-Brazilian language exchange',
       'Connect with Brazilian community in London',
       'Cultural workshops on Brazilian traditions'
     ],
@@ -253,10 +253,10 @@ export const PARTNERSHIP_HIGHLIGHTS = {
     callToAction: 'Get 20% discount as LusoTown member'
   },
   'business-networking': {
-    title: 'Build Your Portuguese Business Network',
-    subtitle: 'Connect with successful Portuguese entrepreneurs',
+    title: 'Build Your Lusophone Business Network',
+    subtitle: 'Connect with successful Lusophone entrepreneurs',
     highlight: 'Monthly breakfast meetings in Central London',
-    testimonial: '"Grew my business 300% through Portuguese network connections!" - Carlos, 34',
+    testimonial: '"Grew my business 300% through Lusophone network connections!" - Carlos, 34',
     callToAction: 'Get 25% discount as LusoTown member'
   }
 } as const

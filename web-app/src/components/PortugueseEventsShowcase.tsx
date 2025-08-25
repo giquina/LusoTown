@@ -115,7 +115,7 @@ const PortugueseEventImage = memo(({ event }: { event: PortugueseEvent }) => {
         </div>
       )}
 
-      {/* Portuguese venue badge */}
+      {/* Lusophone venue badge */}
       {event.venue?.verified_portuguese_owned && (
         <div className="absolute bottom-4 right-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg px-2 py-1 shadow-lg">
           <div className="text-xs font-bold">PT VENUE</div>
@@ -143,7 +143,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
 
-  // Fetch real Portuguese events from Supabase
+  // Fetch real Lusophone events from Supabase
   useEffect(() => {
     const fetchEvents = async () => {
       try {
@@ -165,7 +165,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
         
         setEvents(fetchedEvents);
       } catch (error) {
-        console.error('Error fetching Portuguese events:', error);
+        console.error('Error fetching Lusophone events:', error);
         // Fallback to empty array on error
         setEvents([]);
       } finally {
@@ -219,7 +219,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
     },
     {
       icon: <MapPinIcon className="w-5 h-5 text-accent-600" />,
-      label: "Portuguese Venues",
+      label: "Lusophone Venues",
       value: events.filter(e => e.venue?.verified_portuguese_owned).length.toString()
     },
     {
@@ -415,7 +415,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
                   </div>
                 </div>
 
-                {/* Portuguese Cultural Badges */}
+                {/* Lusophone Cultural Badges */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {event.fado_music_featured && (
                     <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">
@@ -474,7 +474,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
                   href={ROUTES.events}
               className="inline-flex items-center bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 text-white font-semibold py-4 px-8 rounded-2xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
             >
-              View All Portuguese Events
+              View All Lusophone Events
               <ArrowRightIcon className="w-5 h-5 ml-2" />
             </Link>
           </motion.div>

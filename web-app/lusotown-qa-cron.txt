@@ -1,0 +1,18 @@
+#!/bin/bash
+# LusoTown QA Monitoring Cron Jobs
+# Add these to your crontab with: crontab -e
+
+# Every 15 minutes - Health check
+*/15 * * * * cd /workspaces/LusoTown/web-app && npm run qa:health-check >> logs/qa-health.log 2>&1
+
+# Every hour - Emergency audit
+0 * * * * cd /workspaces/LusoTown/web-app && npm run qa:emergency-audit >> logs/qa-emergency.log 2>&1
+
+# Every 6 hours - Complete diagnostic
+0 */6 * * * cd /workspaces/LusoTown/web-app && npm run qa:complete-diagnostic >> logs/qa-complete.log 2>&1
+
+# Daily at 2 AM - Full system check
+0 2 * * * cd /workspaces/LusoTown/web-app && npm run qa:pre-deploy >> logs/qa-daily.log 2>&1
+
+# To install these cron jobs, run:
+# crontab lusotown-qa-cron.txt

@@ -28,7 +28,7 @@ export class AIMatchingEngineHelpers {
     const lang1 = profile1.cultural_heritage.language_fluency
     const lang2 = profile2.cultural_heritage.language_fluency
 
-    // Portuguese proficiency compatibility
+    // Lusophone proficiency compatibility
     const portugueseDiff = Math.abs(lang1.portuguese - lang2.portuguese)
     const portugueseScore = Math.max(0, 100 - (portugueseDiff * 10))
 
@@ -44,7 +44,7 @@ export class AIMatchingEngineHelpers {
 
     // Weighted linguistic compatibility
     return Math.round(
-      portugueseScore * 0.50 +    // Portuguese is most important
+      portugueseScore * 0.50 +    // Lusophone is most important
       englishScore * 0.30 +       // English for United Kingdom communication
       dialectOverlap * 0.20       // Regional connection
     )
@@ -512,7 +512,7 @@ export class AIMatchingEngineHelpers {
     const reasons = []
 
     if (matchPrediction.cultural_harmony > 85) {
-      reasons.push('Strong Portuguese cultural connection')
+      reasons.push('Strong Lusophone cultural connection')
     }
 
     if (matchPrediction.saudade_resonance > 80) {

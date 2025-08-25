@@ -99,10 +99,10 @@ export default function LocalizedCulturalPreferences({
         },
         {
           id: 'portuguese-markets-uk',
-          name: 'Portuguese Markets',
-          description: 'Weekly markets selling Portuguese products and foods',
+          name: 'Lusophone Markets',
+          description: 'Weekly markets selling Lusophone products and foods',
           origin: 'Portugal',
-          significance: 'Access to traditional Portuguese products',
+          significance: 'Access to traditional Lusophone products',
           modernAdaptation: 'Online delivery services available',
           preservationStatus: 'thriving'
         }
@@ -149,11 +149,11 @@ export default function LocalizedCulturalPreferences({
       'uk': [
         {
           id: 'portuguese-festival-london',
-          name: 'Portuguese Festival London',
+          name: 'Lusophone Festival London',
           description: 'Annual celebration of Portuguese culture',
           date: '2025-09-15',
           location: 'London',
-          significance: 'Largest Portuguese cultural event in the United Kingdom',
+          significance: 'Largest Lusophone cultural event in the United Kingdom',
           traditions: ['Traditional music', 'Portuguese cuisine', 'Folk dancing'],
           modernCelebration: 'Combines traditional and contemporary Portuguese culture'
         }
@@ -161,13 +161,13 @@ export default function LocalizedCulturalPreferences({
       'usa': [
         {
           id: 'portuguese-festival-fall-river',
-          name: 'Portuguese Festival of Fall River',
-          description: 'Historic Portuguese-American celebration',
+          name: 'Lusophone Festival of Fall River',
+          description: 'Historic Lusophone-American celebration',
           date: '2025-08-10',
           location: 'Fall River, MA',
           significance: 'One of the oldest Portuguese festivals in America',
           traditions: ['Malasadas', 'Portuguese music', 'Cultural exhibits'],
-          modernCelebration: 'Attracts Portuguese-Americans from across New England'
+          modernCelebration: 'Attracts Lusophone-Americans from across New England'
         }
       ]
     }
@@ -278,7 +278,7 @@ export default function LocalizedCulturalPreferences({
               <h3 className="font-semibold text-purple-900">Dialect</h3>
             </div>
             <p className="text-purple-800">{currentRegion?.dialect.replace('-', ' ')}</p>
-            <p className="text-sm text-purple-600 mt-1">Regional Portuguese variant</p>
+            <p className="text-sm text-purple-600 mt-1">Regional Lusophone variant</p>
           </div>
         </div>
 

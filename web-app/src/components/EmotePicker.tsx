@@ -166,7 +166,7 @@ export default function EmotePicker({
             </div>
           )}
 
-          {/* Portuguese Emotes Tab */}
+          {/* Lusophone Emotes Tab */}
           {activeTab === 'emotes' && (
             <div>
               {/* Category Selector */}
@@ -274,7 +274,7 @@ export default function EmotePicker({
           <p className="text-xs text-gray-500 text-center">
             {language === 'pt' 
               ? 'Emotes culturais portugueses • LusoTown'
-              : 'Portuguese Cultural Emotes • LusoTown'
+              : 'Lusophone Cultural Emotes • LusoTown'
             }
           </p>
         </div>

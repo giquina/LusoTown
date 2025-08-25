@@ -43,7 +43,7 @@ export default function PullToRefreshWrapper({
   const texts = {
     pull: pullText || (isPortuguese ? '⬇️ Puxe para atualizar eventos' : '⬇️ Pull to refresh events'),
     release: releaseText || (isPortuguese ? '🔄 Solte para atualizar' : '🔄 Release to refresh'),
-    refreshing: refreshingText || (isPortuguese ? '⏳ Atualizando eventos portugueses...' : '⏳ Refreshing Portuguese events...'),
+    refreshing: refreshingText || (isPortuguese ? '⏳ Atualizando eventos portugueses...' : '⏳ Refreshing Lusophone events...'),
   };
 
   // Check if container is at the top
@@ -147,7 +147,7 @@ export default function PullToRefreshWrapper({
             className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50"
           >
             <div className="bg-white/95 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 px-6 py-3 flex items-center gap-3">
-              {/* Portuguese Flag Indicator */}
+              {/* Lusophone Flag Indicator */}
               <motion.div
                 className="w-4 h-3 rounded-sm bg-gradient-to-r from-green-500 to-red-500"
                 animate={{ scale: [1, 1.1, 1] }}
@@ -280,7 +280,7 @@ export function EventsPullToRefresh({
       onRefresh={onRefreshEvents}
       pullText={isPortuguese ? '⬇️ Puxe para atualizar eventos' : '⬇️ Pull to refresh events'}
       releaseText={isPortuguese ? '🔄 Solte para carregar novos eventos' : '🔄 Release to load new events'}
-      refreshingText={isPortuguese ? '⏳ Carregando eventos portugueses...' : '⏳ Loading Portuguese events...'}
+      refreshingText={isPortuguese ? '⏳ Carregando eventos portugueses...' : '⏳ Loading Lusophone events...'}
       {...props}
     >
       {children}

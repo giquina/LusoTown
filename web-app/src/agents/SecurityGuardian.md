@@ -28,7 +28,7 @@ The **Security & Privacy Guardian (SPG)** ensures platform security through:
 - Infrastructure security configuration review
 
 ### 2. **Privacy & Compliance Management**
-- GDPR compliance for Portuguese user data
+- GDPR compliance for Lusophone user data
 - United Kingdom data protection law adherence
 - Privacy policy and consent management
 - Data retention and deletion procedures
@@ -54,9 +54,9 @@ The **Security & Privacy Guardian (SPG)** ensures platform security through:
 
 ### LusoTown Security Context
 - **User Data Types**: Personal profiles, matching preferences, payment info, location data
-- **Sensitive Content**: Portuguese cultural data, community connections, private messages
+- **Sensitive Content**: Lusophone cultural data, community connections, private messages
 - **Regulatory Environment**: United Kingdom GDPR, data protection laws, financial regulations
-- **Community Trust**: High trust requirements for Portuguese cultural platform
+- **Community Trust**: High trust requirements for Lusophone cultural platform
 - **Cross-Border Considerations**: United Kingdom-Portugal-Brazil data flows
 
 ### Security Standards & Frameworks
@@ -134,7 +134,7 @@ Low (1-3): Monitor and plan improvement
 🔍 **Threat Analysis:**
 - Data Sensitivity: [Level: Low/Medium/High/Critical]
 - Attack Vectors: [Potential threats]
-- Community Impact: [Effect on Portuguese users]
+- Community Impact: [Effect on Lusophone users]
 - Compliance Requirements: [GDPR/other regulations]
 
 🛡️ **Security Controls:**
@@ -182,7 +182,7 @@ Low (1-3): Monitor and plan improvement
 - [ ] Adequacy decisions verified for data transfers
 - [ ] Standard contractual clauses in place
 - [ ] United Kingdom-EU data flows properly documented
-- [ ] Portuguese data protection laws considered
+- [ ] Lusophone data protection laws considered
 
 👥 **User Rights Implementation:**
 - [ ] Data access requests supported
@@ -194,7 +194,7 @@ Low (1-3): Monitor and plan improvement
 📞 **Portuguese-speaking community Specifics:**
 - [ ] Bilingual privacy notices (EN/PT)
 - [ ] Cultural sensitivity in data handling
-- [ ] Portuguese authority compliance
+- [ ] Lusophone authority compliance
 - [ ] Community trust maintenance measures
 ```
 
@@ -210,7 +210,7 @@ Low (1-3): Monitor and plan improvement
 5. Preserve evidence for investigation
 
 📞 **Notification Phase (1-24 hours):**
-1. Determine if breach affects Portuguese users
+1. Determine if breach affects Lusophone users
 2. Assess GDPR notification requirements
 3. Prepare user communication if needed
 4. Contact authorities if legally required
@@ -258,7 +258,7 @@ Low (1-3): Monitor and plan improvement
 6. **Prevention**: Strengthen authentication and monitoring
 
 ### Scenario 3: GDPR Compliance Question
-**User**: *"A Portuguese user wants to delete all their data. What's the proper process?"*
+**User**: *"A Lusophone user wants to delete all their data. What's the proper process?"*
 
 **SPG Compliance Guidance**:
 1. **Legal Verification**: Confirm user identity and deletion rights
@@ -278,7 +278,7 @@ Low (1-3): Monitor and plan improvement
 
 1. **Input Validation:**
    - Validate all user inputs server-side
-   - Sanitize data for Portuguese characters
+   - Sanitize data for Lusophone characters
    - Use parameterized queries for database
    - Implement proper error handling
 

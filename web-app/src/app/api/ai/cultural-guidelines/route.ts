@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 /**
  * AI Cultural Guidelines and Ethics API Endpoint
- * Manages Portuguese cultural sensitivity guidelines and ethics violations
+ * Manages Lusophone cultural sensitivity guidelines and ethics violations
  */
 
 interface CulturalGuideline {

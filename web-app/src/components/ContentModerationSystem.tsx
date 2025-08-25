@@ -153,7 +153,7 @@ export default function ContentModerationSystem({
     // BLOCKED CONTENT
     {
       id: 'non_portuguese_business',
-      name: 'Non-Portuguese Business Promotion',
+      name: 'Non-Lusophone Business Promotion',
       type: 'block',
       keywords: [
         'generic business', 'random promotion', 'unrelated service'

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'personal data protection',
     'privacy rights United Kingdom',
     'data security',
-    'privacy policy Portuguese',
+    'privacy policy Lusophone',
     'United Kingdom GDPR',
     'LusoTown London'
   ],

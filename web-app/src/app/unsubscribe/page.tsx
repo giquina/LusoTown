@@ -52,7 +52,7 @@ function UnsubscribeContent() {
       title: isPortuguese ? 'Atualizações da Comunidade' : 'Community Updates',
       description: isPortuguese
         ? 'Novidades e histórias da comunidade portuguesa'
-        : 'News and stories from the Portuguese community'
+        : 'News and stories from the Lusophone community'
     },
     {
       id: 'all',

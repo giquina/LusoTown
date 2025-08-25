@@ -172,7 +172,7 @@ export default function Contact() {
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
                           <label htmlFor="origin" className="block text-sm font-medium text-gray-700 mb-2">
-                            {t('contact.portuguese-origin', 'Portuguese Origin')}
+                            {t('contact.portuguese-origin', 'Lusophone Origin')}
                           </label>
                           <select
                             id="origin"
@@ -296,7 +296,7 @@ export default function Contact() {
                             </span>
                           </h3>
                           <p className="text-gray-600 text-sm mb-2">
-                            {t('contact.whatsapp-description', 'Quick help in Portuguese or English via WhatsApp')}
+                            {t('contact.whatsapp-description', 'Quick help in Lusophone or English via WhatsApp')}
                           </p>
                           <button className="text-green-600 font-medium text-sm hover:text-green-700 transition-colors">
                             {t('contact.start-whatsapp-chat', 'Start WhatsApp Chat →')}
@@ -350,10 +350,10 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Portuguese Cultural Centers */}
+                  {/* Lusophone Cultural Centers */}
                   <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 border border-primary-100">
                     <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      🏛️ {t('contact.cultural-centers', 'Portuguese Cultural Centers in London')}
+                      🏛️ {t('contact.cultural-centers', 'Lusophone Cultural Centers in London')}
                     </h3>
                     <p className="text-gray-600 mb-6">
                       {t('contact.cultural-centers-description', 'Visit these community spaces for in-person support and cultural connections:')}

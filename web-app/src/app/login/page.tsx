@@ -146,7 +146,7 @@ export default function Login() {
     : [
         "Welcome back to your community...",
         "Connecting to your social calendar...",
-        "Preparing your Portuguese network...",
+        "Preparing your Lusophone network...",
       ];
 
   const [loadingMessageIndex, setLoadingMessageIndex] = useState(0);

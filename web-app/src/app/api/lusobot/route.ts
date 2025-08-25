@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Portuguese-specific content validation
+    // Lusophone-specific content validation
     const contentValidation = validatePortugueseContent(message)
     if (!contentValidation.isValid) {
       return NextResponse.json(
@@ -165,12 +165,12 @@ export async function GET(request: NextRequest) {
   // Health check endpoint
   return NextResponse.json({
     status: 'healthy',
-    service: 'LusoBot Portuguese Cultural AI',
+    service: 'LusoBot Lusophone Cultural AI',
     version: '1.0.0',
     capabilities: [
-      'Bilingual conversation (Portuguese/English)',
+      'Bilingual conversation (Lusophone/English)',
       'Saudade emotional understanding',
-      'Portuguese cultural expertise',
+      'Lusophone cultural expertise',
       'Community navigation support',
       'Language learning assistance',
       'Business culture guidance'

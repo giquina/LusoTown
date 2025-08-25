@@ -147,7 +147,7 @@ export function AccessibleFormField({
 }
 
 /**
- * Accessible button component with Portuguese support
+ * Accessible button component with Lusophone support
  */
 interface AccessibleButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost'

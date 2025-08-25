@@ -49,24 +49,24 @@ interface HeritageProject {
 const HERITAGE_PROJECTS: HeritageProject[] = [
   {
     id: 'oral-histories-elders',
-    title: 'Voices of Wisdom: Portuguese Elder Stories',
+    title: 'Voices of Wisdom: Lusophone Elder Stories',
     titlePortuguese: 'Vozes da Sabedoria: Histórias dos Anciãos Portugueses',
     description: 'Recording life stories and traditional knowledge from Portuguese-speaking community elders across London, preserving immigration narratives, cultural wisdom, and family histories for future generations.',
     descriptionPortuguese: 'Registando histórias de vida e conhecimento tradicional dos anciãos da comunidade de falantes de português em Londres, preservando narrativas de imigração, sabedoria cultural e histórias familiares para as futuras gerações.',
     category: 'oral-history',
     status: 'active',
     participants: 45,
-    location: 'London-wide Portuguese Communities',
+    location: 'London-wide Lusophone Communities',
     yearStarted: '2023',
-    impact: 'Preserved 150+ hours of oral histories from first-generation Portuguese immigrants, capturing irreplaceable cultural knowledge and family stories.',
+    impact: 'Preserved 150+ hours of oral histories from first-generation Lusophone immigrants, capturing irreplaceable cultural knowledge and family stories.',
     impactPortuguese: 'Preservadas 150+ horas de histórias orais de imigrantes portugueses de primeira geração, capturando conhecimento cultural insubstituível e histórias familiares.',
     outcomes: [
       'Created audio archive of 75 elder interviews',
-      'Documented traditional Portuguese recipes and cooking methods',
-      'Recorded stories of Portuguese immigration journeys to United Kingdom',
+      'Documented traditional Lusophone recipes and cooking methods',
+      'Recorded stories of Lusophone immigration journeys to United Kingdom',
       'Preserved religious traditions and cultural practices',
       'Built family heritage collections for 30+ families',
-      'Established Portuguese Oral History Archive at British Library'
+      'Established Lusophone Oral History Archive at British Library'
     ],
     outcomesPortuguese: [
       'Criado arquivo áudio de 75 entrevistas com anciãos',
@@ -77,20 +77,20 @@ const HERITAGE_PROJECTS: HeritageProject[] = [
       'Estabelecido Arquivo de História Oral Portuguesa na British Library'
     ],
     mediaType: 'audio',
-    partnerships: ['British Library', 'Portuguese Embassy', 'Community Centers'],
+    partnerships: ['British Library', 'Lusophone Embassy', 'Community Centers'],
     nextSteps: 'Launch digital storytelling workshops for grandchildren to learn family stories and create multimedia presentations.',
     nextStepsPortuguese: 'Lançar workshops de storytelling digital para netos aprenderem histórias familiares e criarem apresentações multimédia.'
   },
   {
     id: 'digital-heritage-archive',
-    title: 'Portuguese London Digital Heritage Archive',
+    title: 'Lusophone London Digital Heritage Archive',
     titlePortuguese: 'Arquivo Digital do Património Português de Londres',
     description: 'Comprehensive digital collection of Portuguese-speaking community artifacts, photographs, documents, and cultural materials from London\'s Portuguese history spanning 60+ years.',
     descriptionPortuguese: 'Coleção digital abrangente de artefatos da comunidade de falantes de português, fotografias, documentos e materiais culturais da história portuguesa de Londres que abrange 60+ anos.',
     category: 'digital-archive',
     status: 'active',
     participants: 120,
-    location: 'Various London Portuguese Communities',
+    location: 'Various London Lusophone Communities',
     yearStarted: '2022',
     impact: 'Digitally preserved 2,500+ historical items, creating the United Kingdom\'s most comprehensive Portuguese heritage database accessible to researchers worldwide.',
     impactPortuguese: 'Preservados digitalmente 2.500+ itens históricos, criando a base de dados de património português mais abrangente do Reino Unido, acessível a investigadores mundialmente.',
@@ -99,8 +99,8 @@ const HERITAGE_PROJECTS: HeritageProject[] = [
       'Archived 200+ Portuguese business and club documents',
       'Preserved festival posters and cultural event materials',
       'Created searchable database with multilingual descriptions',
-      'Established partnerships with 12 Portuguese cultural organizations',
-      'Launched online exhibition "60 Years of Portuguese London"'
+      'Established partnerships with 12 Lusophone cultural organizations',
+      'Launched online exhibition "60 Years of Lusophone London"'
     ],
     outcomesPortuguese: [
       'Digitalizadas 1.800 fotografias históricas de eventos da comunidade de falantes de português',
@@ -111,29 +111,29 @@ const HERITAGE_PROJECTS: HeritageProject[] = [
       'Lançada exposição online "60 Anos de Portugal em Londres"'
     ],
     mediaType: 'photos',
-    partnerships: ['Museum of London', 'Portuguese Embassy', 'Casa do Bacalhau'],
-    nextSteps: 'Expand to include Portuguese business histories and develop virtual reality heritage tours of historic Portuguese London locations.',
+    partnerships: ['Museum of London', 'Lusophone Embassy', 'Casa do Bacalhau'],
+    nextSteps: 'Expand to include Portuguese business histories and develop virtual reality heritage tours of historic Lusophone London locations.',
     nextStepsPortuguese: 'Expandir para incluir histórias de negócios portugueses e desenvolver tours de património em realidade virtual de locais históricos portugueses de Londres.'
   },
   {
     id: 'language-preservation',
-    title: 'Portuguese Language Preservation Initiative',
+    title: 'Lusophone Language Preservation Initiative',
     titlePortuguese: 'Iniciativa de Preservação da Língua Portuguesa',
     description: 'Multi-generational program documenting Portuguese language variations, regional dialects, and linguistic evolution within London\'s diverse Portuguese-speaking communities.',
     descriptionPortuguese: 'Programa multigeracional documentando variações da língua portuguesa, dialetos regionais e evolução linguística dentro das diversas comunidades lusófonas de Londres.',
     category: 'language-preservation',
     status: 'active',
     participants: 85,
-    location: 'Portuguese Speaking Communities London-wide',
+    location: 'Lusophone Speaking Communities London-wide',
     yearStarted: '2023',
     impact: 'Documented linguistic variations across 8 Portuguese-speaking countries represented in London, creating valuable resource for linguistic research and community education.',
     impactPortuguese: 'Documentadas variações linguísticas de 8 países lusófonos representados em Londres, criando recurso valioso para investigação linguística e educação comunitária.',
     outcomes: [
-      'Recorded pronunciation guides for Portuguese regional dialects',
+      'Recorded pronunciation guides for Lusophone regional dialects',
       'Created bilingual story collections from children',
       'Documented language mixing patterns in second-generation families',
       'Established Portuguese language library with 500+ books',
-      'Launched "Portuguese Parent & Child" language sessions',
+      'Launched "Lusophone Parent & Child" language sessions',
       'Developed educational materials for heritage language schools'
     ],
     outcomesPortuguese: [
@@ -145,29 +145,29 @@ const HERITAGE_PROJECTS: HeritageProject[] = [
       'Desenvolvidos materiais educacionais para escolas de língua de herança'
     ],
     mediaType: 'audio',
-    partnerships: ['UCL Linguistics Department', 'Portuguese Weekend Schools', 'Instituto Camões'],
+    partnerships: ['UCL Linguistics Department', 'Lusophone Weekend Schools', 'Instituto Camões'],
     nextSteps: 'Create mobile app for Portuguese language learning using community voice recordings and develop intergenerational storytelling programs.',
     nextStepsPortuguese: 'Criar aplicação móvel para aprendizagem de português usando gravações de voz da comunidade e desenvolver programas de storytelling intergeracional.'
   },
   {
     id: 'cultural-mapping-london',
-    title: 'Portuguese Cultural Mapping of London',
+    title: 'Lusophone Cultural Mapping of London',
     titlePortuguese: 'Mapeamento Cultural Português de Londres',
-    description: 'Comprehensive mapping project documenting Portuguese cultural sites, businesses, community spaces, and heritage landmarks across Greater London.',
+    description: 'Comprehensive mapping project documenting Lusophone cultural sites, businesses, community spaces, and heritage landmarks across Greater London.',
     descriptionPortuguese: 'Projeto abrangente de mapeamento documentando locais culturais portugueses, negócios, espaços comunitários e marcos patrimoniais em toda a Grande Londres.',
     category: 'cultural-mapping',
     status: 'active',
     participants: 60,
     location: 'Greater London',
     yearStarted: '2022',
-    impact: 'Mapped 300+ Portuguese cultural sites across London, creating the definitive guide to Portuguese heritage locations and community resources.',
+    impact: 'Mapped 300+ Lusophone cultural sites across London, creating the definitive guide to Portuguese heritage locations and community resources.',
     impactPortuguese: 'Mapeados 300+ locais culturais portugueses em Londres, criando o guia definitivo para localizações de património português e recursos comunitários.',
     outcomes: [
       'Documented 150+ Portuguese businesses with historical significance',
-      'Mapped cultural venues hosting Portuguese events',
-      'Identified 25 historic Portuguese settlement areas',
+      'Mapped cultural venues hosting Lusophone events',
+      'Identified 25 historic Lusophone settlement areas',
       'Created interactive online map with photos and stories',
-      'Established heritage walking routes through Portuguese London',
+      'Established heritage walking routes through Lusophone London',
       'Developed QR code heritage trail system'
     ],
     outcomesPortuguese: [
@@ -179,13 +179,13 @@ const HERITAGE_PROJECTS: HeritageProject[] = [
       'Desenvolvido sistema de trilha patrimonial com códigos QR'
     ],
     mediaType: 'photos',
-    partnerships: ['Greater London Authority', 'Historic England', 'Portuguese Business Association'],
-    nextSteps: 'Launch augmented reality heritage app and expand mapping to include Portuguese family cemetery plots and memorial sites.',
+    partnerships: ['Greater London Authority', 'Historic England', 'Lusophone Business Association'],
+    nextSteps: 'Launch augmented reality heritage app and expand mapping to include Lusophone family cemetery plots and memorial sites.',
     nextStepsPortuguese: 'Lançar aplicação de património em realidade aumentada e expandir mapeamento para incluir lotes de cemitério de famílias portuguesas e locais memoriais.'
   },
   {
     id: 'traditions-festivals',
-    title: 'Living Traditions: Portuguese Festival Documentation',
+    title: 'Living Traditions: Lusophone Festival Documentation',
     titlePortuguese: 'Tradições Vivas: Documentação de Festivais Portugueses',
     description: 'Video documentary project capturing Portuguese traditional festivals, religious celebrations, and cultural practices as they evolve within London\'s multicultural environment.',
     descriptionPortuguese: 'Projeto de documentário em vídeo capturando festivais tradicionais portugueses, celebrações religiosas e práticas culturais conforme evoluem no ambiente multicultural de Londres.',
@@ -198,10 +198,10 @@ const HERITAGE_PROJECTS: HeritageProject[] = [
     impactPortuguese: 'Documentados 12 grandes festivais e celebrações portugueses, preservando práticas tradicionais enquanto mostra adaptação cultural no contexto londrino.',
     outcomes: [
       'Filmed Santos Populares celebrations across 5 London venues',
-      'Documented Portuguese Easter and Christmas traditions',
-      'Recorded traditional Portuguese wedding customs',
+      'Documented Lusophone Easter and Christmas traditions',
+      'Recorded traditional Lusophone wedding customs',
       'Captured Fado performance traditions in London',
-      'Created educational videos for Portuguese cultural schools',
+      'Created educational videos for Lusophone cultural schools',
       'Established annual documentary film festival'
     ],
     outcomesPortuguese: [
@@ -213,30 +213,30 @@ const HERITAGE_PROJECTS: HeritageProject[] = [
       'Estabelecido festival anual de cinema documentário'
     ],
     mediaType: 'video',
-    partnerships: ['Portuguese Churches', 'Cultural Associations', 'Documentary Film Society'],
+    partnerships: ['Lusophone Churches', 'Cultural Associations', 'Documentary Film Society'],
     nextSteps: 'Create virtual reality experiences of Portuguese festivals and develop community-led storytelling workshops for youth.',
     nextStepsPortuguese: 'Criar experiências de realidade virtual de festivais portugueses e desenvolver workshops de storytelling liderados pela comunidade para jovens.'
   },
   {
     id: 'genealogy-project',
-    title: 'Portuguese Family Roots Genealogy Project',
+    title: 'Lusophone Family Roots Genealogy Project',
     titlePortuguese: 'Projeto de Genealogia Raízes Familiares Portuguesas',
-    description: 'Collaborative genealogy research helping Portuguese families trace their heritage, connect with relatives, and document family histories for preservation.',
+    description: 'Collaborative genealogy research helping Lusophone families trace their heritage, connect with relatives, and document family histories for preservation.',
     descriptionPortuguese: 'Pesquisa genealógica colaborativa ajudando famílias portuguesas a rastrear o seu património, conectar com parentes e documentar histórias familiares para preservação.',
     category: 'genealogy',
     status: 'active',
     participants: 95,
     location: 'Community-wide with Portugal connections',
     yearStarted: '2022',
-    impact: 'Helped 80+ families trace their Portuguese ancestry, reconnect with homeland communities, and document multi-generational family stories.',
+    impact: 'Helped 80+ families trace their Lusophone ancestry, reconnect with homeland communities, and document multi-generational family stories.',
     impactPortuguese: 'Ajudadas 80+ famílias a rastrear a sua ascendência portuguesa, reconectar com comunidades da pátria e documentar histórias familiares multigeracionais.',
     outcomes: [
-      'Connected families with Portuguese village records',
+      'Connected families with Lusophone village records',
       'Documented immigration stories of 200+ individuals',
       'Created family trees spanning 4-5 generations',
       'Facilitated reunions between London and Portugal families',
       'Digitized family photographs and documents',
-      'Established connections with Portuguese parish records'
+      'Established connections with Lusophone parish records'
     ],
     outcomesPortuguese: [
       'Conectadas famílias com registos de aldeias portuguesas',
@@ -247,7 +247,7 @@ const HERITAGE_PROJECTS: HeritageProject[] = [
       'Estabelecidas conexões com registos paroquiais portugueses'
     ],
     mediaType: 'documents',
-    partnerships: ['Portuguese National Archives', 'Family History Society', 'Parish Churches'],
+    partnerships: ['Lusophone National Archives', 'Family History Society', 'Parish Churches'],
     nextSteps: 'Launch DNA heritage matching program and create digital family heritage books for each participating family.',
     nextStepsPortuguese: 'Lançar programa de correspondência de património DNA e criar livros digitais de património familiar para cada família participante.'
   }
@@ -335,12 +335,12 @@ export default function HeritagePreservationHub() {
           <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-6 leading-tight">
             {language === 'pt' 
               ? 'Preservando a Nossa Herança Portuguesa'
-              : 'Preserving Our Portuguese Heritage'}
+              : 'Preserving Our Lusophone Heritage'}
           </h2>
           <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
             {language === 'pt' 
               ? 'Projetos comunitários ativos preservando histórias, tradições e cultura portuguesa para as futuras gerações através de iniciativas colaborativas inovadoras.'
-              : 'Active community projects preserving Portuguese stories, traditions, and culture for future generations through innovative collaborative initiatives.'}
+              : 'Active community projects preserving Lusophone stories, traditions, and culture for future generations through innovative collaborative initiatives.'}
           </p>
         </motion.div>
 
@@ -575,7 +575,7 @@ export default function HeritagePreservationHub() {
             <p className="text-lg mb-8 opacity-90 max-w-3xl mx-auto">
               {language === 'pt' 
                 ? 'Junte-se aos nossos projetos de preservação do património e ajude a documentar, preservar e celebrar a rica herança cultural portuguesa para as futuras gerações.'
-                : 'Join our heritage preservation projects and help document, preserve, and celebrate rich Portuguese cultural heritage for future generations.'}
+                : 'Join our heritage preservation projects and help document, preserve, and celebrate rich Lusophone cultural heritage for future generations.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <a

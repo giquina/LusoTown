@@ -16,35 +16,35 @@ import {
 } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/context/LanguageContext';
 
-// Portuguese Areas in London with Detailed Info
+// Lusophone Areas in London with Detailed Info
 const PORTUGUESE_LONDON_AREAS = {
   'stockwell': {
     name: 'Stockwell',
     namePt: 'Stockwell',
     coordinates: { lat: 51.4720, lng: -0.1226 },
-    description: 'Heart of London\'s Portuguese community',
+    description: 'Heart of London\'s Lusophone community',
     descriptionPt: 'Coração da comunidade portuguesa de Londres',
     characteristics: ['Little Portugal', 'Portuguese restaurants', 'Cultural center', 'Traditional bakeries'],
     travelTime: { tube: '15 min from Westminster', bus: '25 min from Central London' },
-    popularVenues: ['Casa do Bacalhau', 'Estrela Bar', 'Portuguese Cultural Centre'],
-    events: ['Fado nights', 'Santos Populares', 'Portuguese football viewing'],
+    popularVenues: ['Casa do Bacalhau', 'Estrela Bar', 'Lusophone Cultural Centre'],
+    events: ['Fado nights', 'Santos Populares', 'Lusophone football viewing'],
   },
   'vauxhall': {
     name: 'Vauxhall',
     namePt: 'Vauxhall',
     coordinates: { lat: 51.4861, lng: -0.1253 },
-    description: 'Vibrant Portuguese community hub',
+    description: 'Vibrant Lusophone community hub',
     descriptionPt: 'Centro vibrante da comunidade portuguesa',
     characteristics: ['Portuguese businesses', 'Riverside location', 'Good transport links', 'Mixed community'],
     travelTime: { tube: '10 min from Westminster', bus: '20 min from City' },
-    popularVenues: ['Vauxhall Portuguese Club', 'Riverside restaurants', 'Community center'],
+    popularVenues: ['Vauxhall Lusophone Club', 'Riverside restaurants', 'Community center'],
     events: ['Business networking', 'Community meetings', 'Cultural events'],
   },
   'camden': {
     name: 'Camden',
     namePt: 'Camden',
     coordinates: { lat: 51.5392, lng: -0.1426 },
-    description: 'Cultural and artistic Portuguese hub',
+    description: 'Cultural and artistic Lusophone hub',
     descriptionPt: 'Centro cultural e artístico português',
     characteristics: ['Arts scene', 'Music venues', 'Markets', 'Young professionals'],
     travelTime: { tube: '8 min from King\'s Cross', bus: '15 min from Oxford Circus' },
@@ -55,7 +55,7 @@ const PORTUGUESE_LONDON_AREAS = {
     name: 'Kensington',
     namePt: 'Kensington',
     coordinates: { lat: 51.5020, lng: -0.1948 },
-    description: 'Premium Portuguese professional community',
+    description: 'Premium Lusophone professional community',
     descriptionPt: 'Comunidade profissional portuguesa premium',
     characteristics: ['High-end area', 'Professional community', 'Museums', 'Parks'],
     travelTime: { tube: '20 min from City', bus: '30 min from Westminster' },
@@ -66,7 +66,7 @@ const PORTUGUESE_LONDON_AREAS = {
     name: 'Central London',
     namePt: 'Centro de Londres',
     coordinates: { lat: 51.5074, lng: -0.1278 },
-    description: 'Business and tourist Portuguese events',
+    description: 'Business and tourist Lusophone events',
     descriptionPt: 'Eventos portugueses de negócios e turismo',
     characteristics: ['Business district', 'Tourist attractions', 'Transport hub', 'International community'],
     travelTime: { tube: 'Central location', bus: 'All areas accessible' },
@@ -161,7 +161,7 @@ export default function LocationAwareRecommendations({
     },
     {
       id: '2',
-      title: 'Portuguese Business Networking',
+      title: 'Lusophone Business Networking',
       area: 'central-london',
       popularity: 92,
       attendees: 67,
@@ -283,7 +283,7 @@ export default function LocationAwareRecommendations({
               <p className="text-sm text-gray-600 mb-3">
                 {isPortuguese 
                   ? 'Permita a localização para descobrir eventos portugueses na sua área de Londres'
-                  : 'Allow location access to discover Portuguese events in your London area'
+                  : 'Allow location access to discover Lusophone events in your London area'
                 }
               </p>
               <button
@@ -396,14 +396,14 @@ export default function LocationAwareRecommendations({
         </div>
       )}
 
-      {/* Portuguese Areas Explorer */}
+      {/* Lusophone Areas Explorer */}
       <div>
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-red-500 rounded-full flex items-center justify-center">
             <GlobeAltIcon className="w-4 h-4 text-white" />
           </div>
           <h3 className="text-lg font-bold text-gray-900">
-            {isPortuguese ? 'Áreas Portuguesas de Londres' : 'Portuguese Areas of London'}
+            {isPortuguese ? 'Áreas Portuguesas de Londres' : 'Lusophone Areas of London'}
           </h3>
         </div>
 

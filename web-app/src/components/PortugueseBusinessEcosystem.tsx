@@ -58,7 +58,7 @@ const businessCategories: BusinessCategory[] = [
   {
     id: 'restaurants',
     name: 'Restaurantes Portugueses',
-    nameEn: 'Portuguese Restaurants',
+    nameEn: 'Lusophone Restaurants',
     icon: <BuildingOfficeIcon className="w-6 h-6" />,
     businessCount: 145,
     featured: true,
@@ -146,8 +146,8 @@ const featuredBusinesses: PortugueseBusiness[] = [
       'Priority listing in results',
       'Integrated online reservations',
       'Targeted cultural marketing',
-      'Portuguese customer analytics',
-      'Portuguese technical support'
+      'Lusophone customer analytics',
+      'Lusophone technical support'
     ]
   },
   {
@@ -155,7 +155,7 @@ const featuredBusinesses: PortugueseBusiness[] = [
     name: 'Luso Legal Services',
     category: 'legal',
     description: 'Escrit�rio de advocacia especializado em direito portugu�s e imigra��o',
-    descriptionEn: 'Law firm specialized in Portuguese law and immigration',
+    descriptionEn: 'Law firm specialized in Lusophone law and immigration',
     address: '123 Holborn, London WC1V 6NA',
     phone: '+44 20 7242 5678',
     email: 'contacto@lusolegal.co.uk',
@@ -177,9 +177,9 @@ const featuredBusinesses: PortugueseBusiness[] = [
     featuresEn: [
       'Specialized legal consultations',
       'Visa and citizenship assistance',
-      'Contracts in Portuguese and English',
+      'Contracts in Lusophone and English',
       'Network of contacts in Portugal',
-      'Service in Portuguese'
+      'Service in Lusophone'
     ]
   }
 ];
@@ -214,13 +214,13 @@ export default function PortugueseBusinessEcosystem() {
           >
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium mb-8">
               <BuildingOfficeIcon className="w-5 h-5 mr-2" />
-              {isPortuguese ? 'Ecossistema Empresarial Portugu�s' : 'Portuguese Business Ecosystem'}
+              {isPortuguese ? 'Ecossistema Empresarial Portugu�s' : 'Lusophone Business Ecosystem'}
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               {isPortuguese 
                 ? 'Conecte-se com Neg�cios Portugueses em Londres'
-                : 'Connect with Portuguese Businesses in London'
+                : 'Connect with Lusophone Businesses in London'
               }
             </h1>
             
@@ -552,7 +552,7 @@ export default function PortugueseBusinessEcosystem() {
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               {isPortuguese 
                 ? 'Integre o Seu Neg�cio no Ecossistema Portugu�s'
-                : 'Integrate Your Business into the Portuguese Ecosystem'
+                : 'Integrate Your Business into the Lusophone Ecosystem'
               }
             </h2>
             

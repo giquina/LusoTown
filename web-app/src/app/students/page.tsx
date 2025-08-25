@@ -143,22 +143,22 @@ const UNIVERSITIES: University[] = [
     internationalStudents: 22000,
     portugueseStudents: 420,
     programs: {
-      undergraduate: ['Portuguese & Brazilian Studies', 'Modern Languages with Portuguese', 'International Business with Portuguese'],
-      postgraduate: ['Portuguese Literature MA', 'Lusophone Studies MA', 'Brazilian Cultural Studies MA'],
-      research: ['Portuguese Language PhD', 'Lusophone Literature PhD', 'Portuguese History PhD'],
-      languageCourses: ['Portuguese A1-C2', 'Business Portuguese', 'Portuguese for Heritage Speakers']
+      undergraduate: ['Lusophone & Brazilian Studies', 'Modern Languages with Lusophone', 'International Business with Lusophone'],
+      postgraduate: ['Lusophone Literature MA', 'Lusophone Studies MA', 'Brazilian Cultural Studies MA'],
+      research: ['Lusophone Language PhD', 'Lusophone Literature PhD', 'Lusophone History PhD'],
+      languageCourses: ['Lusophone A1-C2', 'Business Lusophone', 'Lusophone for Heritage Speakers']
     },
     benefits: [
       '50% discount on LusoTown membership (£9.99/month)',
-      'Priority access to Portuguese cultural events',
+      'Priority access to Lusophone cultural events',
       'Free Portuguese language exchange sessions',
-      'Career mentorship with Portuguese professionals',
-      'Exclusive networking events with Portuguese Alumni'
+      'Career mentorship with Lusophone professionals',
+      'Exclusive networking events with Lusophone Alumni'
     ],
     website: UNIVERSITY_URLS.ucl,
     contact: {
       name: 'Dr. Maria Fernandes',
-      title: 'Portuguese Studies Coordinator & LusoTown Liaison',
+      title: 'Lusophone Studies Coordinator & LusoTown Liaison',
       email: 'portuguese.studies@ucl.ac.uk',
       phone: '+44 20 7679 2000'
     }
@@ -175,22 +175,22 @@ const UNIVERSITIES: University[] = [
     internationalStudents: 15500,
     portugueseStudents: 380,
     programs: {
-      undergraduate: ['Portuguese Studies', 'Comparative Literature with Portuguese', 'European Studies with Portuguese'],
-      postgraduate: ['Portuguese & Brazilian Studies MA', 'Digital Humanities with Portuguese Sources MA'],
-      research: ['Portuguese Cultural Studies PhD', 'Lusophone Digital Humanities PhD'],
-      languageCourses: ['Portuguese Language & Culture', 'Advanced Portuguese Communication', 'Portuguese Translation Studies']
+      undergraduate: ['Lusophone Studies', 'Comparative Literature with Lusophone', 'European Studies with Lusophone'],
+      postgraduate: ['Lusophone & Brazilian Studies MA', 'Digital Humanities with Lusophone Sources MA'],
+      research: ['Lusophone Cultural Studies PhD', 'Lusophone Digital Humanities PhD'],
+      languageCourses: ['Lusophone Language & Culture', 'Advanced Lusophone Communication', 'Lusophone Translation Studies']
     },
     benefits: [
       '50% discount on LusoTown membership',
       'Free access to Instituto Camões events',
       'Portuguese business networking opportunities',
       'Study abroad support for Portugal/Brazil',
-      'Career services with Portuguese connections'
+      'Career services with Lusophone connections'
     ],
     website: UNIVERSITY_URLS.kcl,
     contact: {
       name: 'Prof. João Silva',
-      title: 'Head of Portuguese Department',
+      title: 'Head of Lusophone Department',
       email: 'portuguese@kcl.ac.uk',
       phone: '+44 20 7836 5454'
     }
@@ -207,22 +207,22 @@ const UNIVERSITIES: University[] = [
     internationalStudents: 11500,
     portugueseStudents: 95,
     programs: {
-      undergraduate: ['Portuguese', 'Modern Languages (Portuguese)', 'Portuguese & Linguistics'],
-      postgraduate: ['Portuguese Studies MPhil', 'Comparative Literature & Criticism'],
-      research: ['Portuguese Literature DPhil', 'Lusophone Studies DPhil'],
-      languageCourses: ['Portuguese Language (all levels)', 'Portuguese Literature & Culture']
+      undergraduate: ['Lusophone', 'Modern Languages (Lusophone)', 'Lusophone & Linguistics'],
+      postgraduate: ['Lusophone Studies MPhil', 'Comparative Literature & Criticism'],
+      research: ['Lusophone Literature DPhil', 'Lusophone Studies DPhil'],
+      languageCourses: ['Lusophone Language (all levels)', 'Lusophone Literature & Culture']
     },
     benefits: [
       '50% discount on LusoTown membership',
-      'Access to Oxford Portuguese Society',
-      'Portuguese academic conferences',
+      'Access to Oxford Lusophone Society',
+      'Lusophone academic conferences',
       'Research collaboration opportunities',
       'Alumni network in Portuguese-speaking countries'
     ],
     website: UNIVERSITY_URLS.oxford,
     contact: {
       name: 'Dr. Ana Rebelo',
-      title: 'Lecturer in Portuguese Literature',
+      title: 'Lecturer in Lusophone Literature',
       email: 'portuguese@ox.ac.uk',
       phone: '+44 1865 270000'
     }
@@ -239,22 +239,22 @@ const UNIVERSITIES: University[] = [
     internationalStudents: 8900,
     portugueseStudents: 85,
     programs: {
-      undergraduate: ['Modern & Medieval Languages (Portuguese)', 'Portuguese Studies'],
-      postgraduate: ['Portuguese Literature MPhil', 'Romance Linguistics MPhil'],
-      research: ['Portuguese Language & Literature PhD', 'Comparative Romance Studies PhD'],
-      languageCourses: ['Portuguese Language (Beginner to Advanced)', 'Portuguese Cultural Studies']
+      undergraduate: ['Modern & Medieval Languages (Lusophone)', 'Lusophone Studies'],
+      postgraduate: ['Lusophone Literature MPhil', 'Romance Linguistics MPhil'],
+      research: ['Lusophone Language & Literature PhD', 'Comparative Romance Studies PhD'],
+      languageCourses: ['Lusophone Language (Beginner to Advanced)', 'Lusophone Cultural Studies']
     },
     benefits: [
       '50% discount on LusoTown membership',
-      'Cambridge Portuguese Society membership',
+      'Cambridge Lusophone Society membership',
       'Academic Portuguese language support',
-      'Research funding for Portuguese studies',
+      'Research funding for Lusophone studies',
       'International exchange program support'
     ],
     website: UNIVERSITY_URLS.cambridge,
     contact: {
       name: 'Dr. Carlos Mendes',
-      title: 'Director of Portuguese Studies',
+      title: 'Director of Lusophone Studies',
       email: 'portuguese@cam.ac.uk',
       phone: '+44 1223 337733'
     }
@@ -274,13 +274,13 @@ const UNIVERSITIES: University[] = [
       undergraduate: ['International Relations', 'Economics', 'Government & Politics'],
       postgraduate: ['Development Studies', 'International Political Economy', 'European Studies'],
       research: ['Latin American Studies PhD', 'Development Economics PhD'],
-      languageCourses: ['Portuguese for Business', 'Portuguese for Social Scientists']
+      languageCourses: ['Lusophone for Business', 'Lusophone for Social Scientists']
     },
     benefits: [
       '50% discount on LusoTown membership',
       'Portuguese business networking events',
-      'Career services for Portuguese market',
-      'Portuguese economist speaker series',
+      'Career services for Lusophone market',
+      'Lusophone economist speaker series',
       'Brazil-United Kingdom business connections'
     ],
     website: UNIVERSITY_URLS.lse,
@@ -306,14 +306,14 @@ const UNIVERSITIES: University[] = [
       undergraduate: ['Engineering', 'Computer Science', 'Natural Sciences', 'Medicine'],
       postgraduate: ['Business School Programs', 'Engineering Masters', 'Data Science'],
       research: ['Engineering PhD', 'Computer Science PhD', 'Medical Sciences PhD'],
-      languageCourses: ['Portuguese for Engineers', 'Technical Portuguese Communication']
+      languageCourses: ['Lusophone for Engineers', 'Technical Lusophone Communication']
     },
     benefits: [
       '50% discount on LusoTown membership',
-      'Portuguese tech networking events',
-      'Career support for Portuguese tech sector',
-      'Portuguese startup ecosystem connections',
-      'Research collaboration with Portuguese institutions'
+      'Lusophone tech networking events',
+      'Career support for Lusophone tech sector',
+      'Lusophone startup ecosystem connections',
+      'Research collaboration with Lusophone institutions'
     ],
     website: UNIVERSITY_URLS.imperial,
     contact: {
@@ -335,22 +335,22 @@ const UNIVERSITIES: University[] = [
     internationalStudents: 12000,
     portugueseStudents: 290,
     programs: {
-      undergraduate: ['Spanish & Portuguese Studies', 'Modern Languages with Portuguese'],
+      undergraduate: ['Spanish & Lusophone Studies', 'Modern Languages with Lusophone'],
       postgraduate: ['Hispanic & Lusophone Studies MA', 'Translation & Interpretation Studies'],
-      research: ['Portuguese Literature PhD', 'Comparative Literature PhD'],
-      languageCourses: ['Portuguese Language & Culture', 'Business Portuguese for International Trade']
+      research: ['Lusophone Literature PhD', 'Comparative Literature PhD'],
+      languageCourses: ['Lusophone Language & Culture', 'Business Lusophone for International Trade']
     },
     benefits: [
       '50% discount on LusoTown membership',
-      'Manchester Portuguese Society support',
+      'Manchester Lusophone Society support',
       'Northern Portuguese-speaking community connections',
-      'Portuguese cultural event organization support',
-      'Mentorship with Portuguese alumni network'
+      'Lusophone cultural event organization support',
+      'Mentorship with Lusophone alumni network'
     ],
     website: UNIVERSITY_URLS.manchester,
     contact: {
       name: 'Dr. Luisa Rodrigues',
-      title: 'Portuguese Studies Programme Leader',
+      title: 'Lusophone Studies Programme Leader',
       email: 'portuguese@manchester.ac.uk',
       phone: '+44 161 275 2000'
     }
@@ -367,22 +367,22 @@ const UNIVERSITIES: University[] = [
     internationalStudents: 15000,
     portugueseStudents: 180,
     programs: {
-      undergraduate: ['Portuguese Studies', 'Hispanic Studies with Portuguese', 'Comparative Literature'],
-      postgraduate: ['Lusophone Studies MSc', 'Celtic & Scottish Studies with Portuguese connections'],
-      research: ['Portuguese Cultural Studies PhD', 'Comparative Celtic-Lusophone Studies PhD'],
-      languageCourses: ['Portuguese Language (All Levels)', 'Portuguese Cultural Immersion']
+      undergraduate: ['Lusophone Studies', 'Hispanic Studies with Lusophone', 'Comparative Literature'],
+      postgraduate: ['Lusophone Studies MSc', 'Celtic & Scottish Studies with Lusophone connections'],
+      research: ['Lusophone Cultural Studies PhD', 'Comparative Celtic-Lusophone Studies PhD'],
+      languageCourses: ['Lusophone Language (All Levels)', 'Lusophone Cultural Immersion']
     },
     benefits: [
       '50% discount on LusoTown membership',
-      'Edinburgh Portuguese Society partnership',
-      'Scottish-Portuguese cultural exchange',
-      'Research funding for Portuguese studies',
+      'Edinburgh Lusophone Society partnership',
+      'Scottish-Lusophone cultural exchange',
+      'Research funding for Lusophone studies',
       'Virtual connection to London Portuguese-speaking community'
     ],
     website: UNIVERSITY_URLS.edinburgh,
     contact: {
       name: 'Dr. Fernando Alves',
-      title: 'Senior Lecturer in Portuguese Studies',
+      title: 'Senior Lecturer in Lusophone Studies',
       email: 'portuguese@ed.ac.uk',
       phone: '+44 131 650 1000'
     }
@@ -404,12 +404,12 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
   },
   {
     id: 'language-exchange',
-    title: 'Free Portuguese Language Exchange Programs',
+    title: 'Free Lusophone Language Exchange Programs',
     titlePortuguese: 'Programas Gratuitos de Intercâmbio de Língua Portuguesa',
     description: 'Weekly language exchange sessions with native speakers from all Portuguese-speaking countries - from Lisbon to São Paulo, Luanda to Praia. Experience diverse accents, cultural expressions, and regional variations.',
     descriptionPortuguese: 'Sessões semanais de intercâmbio linguístico com falantes nativos de todos os países lusófonos - de Lisboa a São Paulo, Luanda à Praia. Experiencie sotaques diversos, expressões culturais e variações regionais.',
     category: 'academic',
-    eligibility: ['University students', 'All Portuguese levels welcome', 'All Lusophone backgrounds'],
+    eligibility: ['University students', 'All Lusophone levels welcome', 'All Lusophone backgrounds'],
     verificationRequired: true,
     value: '£200 equivalent value'
   },
@@ -417,7 +417,7 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     id: 'career-mentorship',
     title: 'Lusophone Professional Mentorship Program',
     titlePortuguese: 'Programa de Mentoria Profissional Lusófona',
-    description: 'One-on-one mentorship with established Portuguese-speaking professionals from your cultural background - whether São Paulo business leaders, Luanda entrepreneurs, or Portuguese tech innovators. Find your mentor from any Portuguese-speaking nation.',
+    description: 'One-on-one mentorship with established Portuguese-speaking professionals from your cultural background - whether São Paulo business leaders, Luanda entrepreneurs, or Lusophone tech innovators. Find your mentor from any Portuguese-speaking nation.',
     descriptionPortuguese: 'Mentoria individual com profissionais lusófonos estabelecidos da sua origem cultural - sejam líderes empresariais de São Paulo, empresários de Luanda, ou inovadores tecnológicos portugueses. Encontre o seu mentor de qualquer nação lusófona.',
     category: 'professional',
     eligibility: ['Final year students', 'Recent graduates', 'All academic disciplines', 'All Lusophone backgrounds'],
@@ -428,7 +428,7 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     id: 'study-groups',
     title: 'Lusophone Student Study Groups',
     titlePortuguese: 'Grupos de Estudo de Estudantes Lusófonos',
-    description: 'Subject-specific study groups connecting Portuguese-speaking students across United Kingdom universities. From Brazilian study groups to Portuguese academic workshops - collaborate with students who share your cultural background and language.',
+    description: 'Subject-specific study groups connecting Portuguese-speaking students across United Kingdom universities. From Brazilian study groups to Lusophone academic workshops - collaborate with students who share your cultural background and language.',
     descriptionPortuguese: 'Grupos de estudo específicos por disciplina conectando estudantes lusófonos em universidades do Reino Unido. De grupos de estudo brasileiros a workshops acadêmicos portugueses - colabore com estudantes que partilham a sua origem cultural e linguística.',
     category: 'academic',
     eligibility: ['University students', 'All subjects welcome', 'All Lusophone backgrounds'],
@@ -461,7 +461,7 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     id: 'academic-support',
     title: 'Lusophone Academic Support Services',
     titlePortuguese: 'Serviços de Apoio Acadêmico Lusófono',
-    description: 'Academic writing support, research guidance, and dissertation help for any Lusophone-related studies. Connect with academic mentors specializing in Portuguese, Brazilian, Angolan, Cape Verdean, and other Lusophone academic fields.',
+    description: 'Academic writing support, research guidance, and dissertation help for any Lusophone-related studies. Connect with academic mentors specializing in Lusophone, Brazilian, Angolan, Cape Verdean, and other Lusophone academic fields.',
     descriptionPortuguese: 'Apoio à escrita acadêmica, orientação de pesquisa e ajuda com dissertações para estudos relacionados com qualquer área lusófona. Conecte-se com mentores acadêmicos especializados em áreas acadêmicas portuguesas, brasileiras, angolanas, cabo-verdianas e outras lusófonas.',
     category: 'academic',
     eligibility: ['Students in Lusophone studies', 'Portuguese-speaking research students', 'Any Lusophone-related academic work'],
@@ -506,7 +506,7 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
 const STUDENT_EVENTS: StudentEvent[] = [
   {
     id: 'career-workshop-tech',
-    title: 'Portuguese Tech Career Workshop',
+    title: 'Lusophone Tech Career Workshop',
     titlePortuguese: 'Workshop de Carreira em Tecnologia Portuguesa',
     type: 'career',
     date: '2024-09-15',
@@ -516,13 +516,13 @@ const STUDENT_EVENTS: StudentEvent[] = [
     price: 0,
     originalPrice: 25,
     capacity: 40,
-    description: 'Explore career opportunities in Portugal\'s booming tech sector. Learn about Portuguese startups, multinational tech companies, and remote work opportunities.',
-    speakers: ['Ana Silva - CTO at Portuguese Startup', 'Miguel Costa - Google Portugal', 'Joana Fernandes - Startup Founder'],
+    description: 'Explore career opportunities in Portugal\'s booming tech sector. Learn about Lusophone startups, multinational tech companies, and remote work opportunities.',
+    speakers: ['Ana Silva - CTO at Lusophone Startup', 'Miguel Costa - Google Portugal', 'Joana Fernandes - Startup Founder'],
     isStudentExclusive: true
   },
   {
     id: 'portuguese-film-night',
-    title: 'Portuguese Cinema Student Night',
+    title: 'Lusophone Cinema Student Night',
     titlePortuguese: 'Noite de Cinema Português para Estudantes',
     type: 'cultural',
     date: '2024-09-20',
@@ -532,8 +532,8 @@ const STUDENT_EVENTS: StudentEvent[] = [
     price: 5,
     originalPrice: 15,
     capacity: 80,
-    description: 'Monthly Portuguese film screening followed by discussion with Portuguese studies students and film experts. This month: contemporary Portuguese cinema.',
-    speakers: ['Dr. Maria Fernandes - Portuguese Studies', 'Carlos Mendes - Film Critic'],
+    description: 'Monthly Lusophone film screening followed by discussion with Lusophone studies students and film experts. This month: contemporary Lusophone cinema.',
+    speakers: ['Dr. Maria Fernandes - Lusophone Studies', 'Carlos Mendes - Film Critic'],
     isStudentExclusive: true
   },
   {
@@ -547,8 +547,8 @@ const STUDENT_EVENTS: StudentEvent[] = [
     price: 10,
     originalPrice: 35,
     capacity: 60,
-    description: 'Connect with Portuguese professionals across industries. Practice networking skills, learn about career paths, and discover internship opportunities.',
-    speakers: ['Multiple Portuguese professionals from various industries'],
+    description: 'Connect with Lusophone professionals across industries. Practice networking skills, learn about career paths, and discover internship opportunities.',
+    speakers: ['Multiple Lusophone professionals from various industries'],
     isStudentExclusive: false
   },
   {
@@ -558,17 +558,17 @@ const STUDENT_EVENTS: StudentEvent[] = [
     type: 'academic',
     date: '2024-10-02',
     time: '16:00',
-    location: 'UCL - Portuguese Studies Department',
+    location: 'UCL - Lusophone Studies Department',
     university: 'University College London',
     price: 0,
     capacity: 50,
-    description: 'Learn about study abroad opportunities in Portugal, Erasmus+ programs, Portuguese universities, and cultural preparation for your exchange.',
-    speakers: ['Portuguese Embassy Education Attaché', 'Erasmus+ Coordinator', 'Student Exchange Alumni'],
+    description: 'Learn about study abroad opportunities in Portugal, Erasmus+ programs, Lusophone universities, and cultural preparation for your exchange.',
+    speakers: ['Lusophone Embassy Education Attaché', 'Erasmus+ Coordinator', 'Student Exchange Alumni'],
     isStudentExclusive: true
   },
   {
     id: 'portuguese-startup-pitch',
-    title: 'Portuguese Startup Pitch Competition',
+    title: 'Lusophone Startup Pitch Competition',
     titlePortuguese: 'Competição de Pitch de Startups Portuguesas',
     type: 'career',
     date: '2024-10-10',
@@ -577,8 +577,8 @@ const STUDENT_EVENTS: StudentEvent[] = [
     university: 'London School of Economics',
     price: 0,
     capacity: 100,
-    description: 'Student entrepreneurs pitch their business ideas to Portuguese investors and successful entrepreneurs. Win mentorship and potential funding.',
-    speakers: ['Portuguese Angel Investors', 'Successful Portuguese Entrepreneurs', 'Business Mentors'],
+    description: 'Student entrepreneurs pitch their business ideas to Lusophone investors and successful entrepreneurs. Win mentorship and potential funding.',
+    speakers: ['Lusophone Angel Investors', 'Successful Lusophone Entrepreneurs', 'Business Mentors'],
     isStudentExclusive: true
   },
   {
@@ -836,7 +836,7 @@ export default function StudentsPage() {
                 <p className="text-sm text-orange-700">
                   {language === 'pt' 
                     ? "Verificação gratuita + 30 dias de garantia de devolução do dinheiro. Já aderiram mais de 2150+ estudantes!"
-                    : "Free verification + 30-day money back guarantee. Over 2150+ students already joined!"}
+                    : "Free verification + 30-day money back guarantee. Over students already joined!"}
                 </p>
               </motion.div>
 
@@ -1032,7 +1032,7 @@ export default function StudentsPage() {
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {language === 'pt' ?
                   'Colaboramos com as principais universidades de Londres e do Reino Unido para apoiar estudantes portugueses e programas de estudos portugueses' :
-                  'We collaborate with leading London and United Kingdom universities to support Portuguese students and Portuguese studies programs'
+                  'We collaborate with leading London and United Kingdom universities to support Lusophone students and Lusophone studies programs'
                 }
               </p>
 
@@ -1114,7 +1114,7 @@ export default function StudentsPage() {
                       <div className="mb-4">
                         <h4 className="font-medium text-gray-900 mb-2 flex items-center">
                           <BookOpenIcon className="w-4 h-4 mr-2" />
-                          {language === 'pt' ? 'Programas Portugueses' : 'Portuguese Programs'}
+                          {language === 'pt' ? 'Programas Portugueses' : 'Lusophone Programs'}
                         </h4>
                         <div className="space-y-1 text-sm">
                           {university.programs.undergraduate.slice(0, 2).map((program, index) => (
@@ -1187,7 +1187,7 @@ export default function StudentsPage() {
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-secondary-600 mb-2">45</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Programas de Estudos Portugueses' : 'Portuguese Studies Programs'}</div>
+                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Programas de Estudos Portugueses' : 'Lusophone Studies Programs'}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-accent-600 mb-2">£1.7M</div>
@@ -1338,7 +1338,7 @@ export default function StudentsPage() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
                   <div className="bg-white rounded-lg p-4 border border-yellow-100">
                     <div className="text-sm font-medium text-gray-900 mb-1">
-                      {language === 'pt' ? '1. UCL Sociedade Portuguesa' : '1. UCL Portuguese Society'}
+                      {language === 'pt' ? '1. UCL Sociedade Portuguesa' : '1. UCL Lusophone Society'}
                     </div>
                     <div className="text-xs text-gray-600">
                       {language === 'pt' ? 'Propõe festival cultural' : 'Proposes cultural festival'}
@@ -1365,7 +1365,7 @@ export default function StudentsPage() {
                       {language === 'pt' ? '4. Festival de Herança' : '4. Heritage Festival'}
                     </div>
                     <div className="text-xs text-gray-600">
-                      {language === 'pt' ? '1.200+ estudantes, £15k caridade' : '1,200+ students, £15k charity'}
+                      {language === 'pt' ? '1.200+ estudantes, £15k caridade' : 'students, charity raised'}
                     </div>
                   </div>
                 </div>
@@ -1492,7 +1492,7 @@ export default function StudentsPage() {
                 <p className="text-gray-600 text-sm mb-4">
                   {language === 'pt'
                     ? 'Celebre conquistas conjuntas. Festival de Herança Portuguesa de Londres 2024: 8 sociedades, 1.200+ estudantes.'
-                    : 'Celebrate joint achievements. London Portuguese Heritage Festival 2024: 8 societies, 1,200+ students.'
+                    : 'Celebrate joint achievements. London Lusophone Heritage Festival 2024: 8 societies, students.'
                   }
                 </p>
                 <div className="flex items-center text-green-600 font-medium text-sm">
@@ -1506,7 +1506,7 @@ export default function StudentsPage() {
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-16">
               <div className="flex items-center justify-between mb-8">
                 <h3 className="text-2xl font-bold text-gray-900">
-                  {language === 'pt' ? 'Sociedades Lusófonas em Destaque' : 'Featured Portuguese-Speaking University Societies'}
+                  {language === 'pt' ? 'Sociedades Lusófonas em Destaque' : 'Featured Lusophone-Speaking University Societies'}
                 </h3>
                 <button className="flex items-center text-accent-600 font-medium hover:text-accent-700 transition-colors">
                   {language === 'pt' ? 'Ver Todas' : 'View All'}
@@ -1522,11 +1522,11 @@ export default function StudentsPage() {
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {[
-                    { name: 'UCL Portuguese-Speaking Society', members: 420, university: 'University College London' },
+                    { name: 'UCL Lusophone-Speaking Society', members: 420, university: 'University College London' },
                     { name: "King's College Lusophone Society", members: 380, university: "King's College London" },
-                    { name: 'Imperial Portuguese Language Society', members: 290, university: 'Imperial College London' },
-                    { name: 'LSE Portuguese-Speaking Students', members: 350, university: 'London School of Economics' },
-                    { name: 'Queen Mary Portuguese Cultural Society', members: 180, university: 'Queen Mary University' }
+                    { name: 'Imperial Lusophone Language Society', members: 290, university: 'Imperial College London' },
+                    { name: 'LSE Lusophone-Speaking Students', members: 350, university: 'London School of Economics' },
+                    { name: 'Queen Mary Lusophone Cultural Society', members: 180, university: 'Queen Mary University' }
                   ].slice(0, 3).map((society, index) => (
                     <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                       <h5 className="font-medium text-gray-900 mb-1 text-sm">{society.name}</h5>
@@ -1552,10 +1552,10 @@ export default function StudentsPage() {
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   {[
-                    { name: 'Oxford Portuguese-Speaking Society', members: 95, city: 'Oxford' },
+                    { name: 'Oxford Lusophone-Speaking Society', members: 95, city: 'Oxford' },
                     { name: 'Cambridge Lusophone Cultural Society', members: 110, city: 'Cambridge' },
-                    { name: 'Manchester Portuguese Language Society', members: 290, city: 'Manchester' },
-                    { name: 'Edinburgh Portuguese-Speaking Society', members: 180, city: 'Edinburgh' }
+                    { name: 'Manchester Lusophone Language Society', members: 290, city: 'Manchester' },
+                    { name: 'Edinburgh Lusophone-Speaking Society', members: 180, city: 'Edinburgh' }
                   ].map((society, index) => (
                     <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                       <h5 className="font-medium text-gray-900 mb-1 text-sm">{society.name}</h5>
@@ -1581,11 +1581,11 @@ export default function StudentsPage() {
                 </h4>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
                   {[
-                    { name: 'Birmingham Portuguese-Speaking Students', members: 200 },
-                    { name: 'Leeds Portuguese Cultural Society', members: 150 },
+                    { name: 'Birmingham Lusophone-Speaking Students', members: 200 },
+                    { name: 'Leeds Lusophone Cultural Society', members: 150 },
                     { name: 'Bristol Lusophone Society', members: 160 },
-                    { name: 'Glasgow Portuguese Language Society', members: 90 },
-                    { name: 'Cardiff Portuguese-Speaking Society', members: 110 }
+                    { name: 'Glasgow Lusophone Language Society', members: 90 },
+                    { name: 'Cardiff Lusophone-Speaking Society', members: 110 }
                   ].map((society, index) => (
                     <div key={index} className="bg-gradient-to-br from-green-50 to-blue-50 rounded-lg p-3 border border-green-100">
                       <h5 className="font-medium text-gray-900 mb-1 text-xs">{society.name}</h5>
@@ -1780,7 +1780,7 @@ export default function StudentsPage() {
                   <div className="text-center mb-4">
                     <TrophyIcon className="w-8 h-8 text-yellow-600 mx-auto mb-2" />
                     <h4 className="font-bold text-gray-900">
-                      {language === 'pt' ? 'Festival de Herança Portuguesa de Londres 2024' : 'London Portuguese Heritage Festival 2024'}
+                      {language === 'pt' ? 'Festival de Herança Portuguesa de Londres 2024' : 'London Lusophone Heritage Festival 2024'}
                     </h4>
                   </div>
                   <div className="grid grid-cols-3 gap-2 text-center mb-4">
@@ -1815,7 +1815,7 @@ export default function StudentsPage() {
                   <div className="text-center mb-4">
                     <GlobeAltIcon className="w-8 h-8 text-blue-600 mx-auto mb-2" />
                     <h4 className="font-bold text-gray-900">
-                      {language === 'pt' ? 'Mês Cultural de Estudantes Lusófonos do Reino Unido' : 'UK Portuguese-Speaking Students Cultural Month'}
+                      {language === 'pt' ? 'Mês Cultural de Estudantes Lusófonos do Reino Unido' : 'UK Lusophone-Speaking Students Cultural Month'}
                     </h4>
                   </div>
                   <div className="grid grid-cols-3 gap-2 text-center mb-4">
@@ -1943,7 +1943,7 @@ export default function StudentsPage() {
             <div className="text-center">
               <div className="bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl p-8 text-white">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                  {language === 'pt' ? 'Conecte Sua Sociedade Lusófona' : 'Connect Your Portuguese-Speaking Society'}
+                  {language === 'pt' ? 'Conecte Sua Sociedade Lusófona' : 'Connect Your Lusophone-Speaking Society'}
                 </h3>
                 <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
                   {language === 'pt'
@@ -1970,20 +1970,20 @@ export default function StudentsPage() {
           </div>
         </section>
 
-        {/* Portuguese-Speaking Countries Flag Grid */}
+        {/* Lusophone-Speaking Countries Flag Grid */}
         <section className="py-20 bg-white">
           <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {language === 'pt' 
                   ? 'Estudantes de Países Lusófonos' 
-                  : 'Students from Portuguese-Speaking Countries'
+                  : 'Students from Lusophone-Speaking Countries'
                 }
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {language === 'pt'
                   ? 'Celebrando a diversidade cultural dos estudantes portugueses de todas as nações lusófonas no Reino Unido'
-                  : 'Celebrating the cultural diversity of Portuguese students from all Lusophone nations in United Kingdom'
+                  : 'Celebrating the cultural diversity of Lusophone students from all Lusophone nations in United Kingdom'
                 }
               </p>
             </div>
@@ -2034,7 +2034,7 @@ export default function StudentsPage() {
                     'Connect with employers from all Lusophone countries. Exclusive opportunities in Portugal, Brazil, Angola and more.',
                   highlights: [
                     language === 'pt' ? 'Empresas de 10 países' : 'Companies from 10 countries',
-                    language === 'pt' ? 'CV em português/inglês' : 'Portuguese/English CV reviews',
+                    language === 'pt' ? 'CV em português/inglês' : 'Lusophone/English CV reviews',
                     language === 'pt' ? 'Networking multicultural' : 'Multicultural networking'
                   ]
                 },
@@ -2046,7 +2046,7 @@ export default function StudentsPage() {
                   price: '£5',
                   description: language === 'pt' ?
                     'Pratique português com falantes nativos do Brasil, Angola, Cabo Verde. Diferentes sotaques, mesma paixão cultural.' :
-                    'Practice Portuguese with native speakers from Brazil, Angola, Cape Verde. Different accents, same cultural passion.',
+                    'Practice Lusophone with native speakers from Brazil, Angola, Cape Verde. Different accents, same cultural passion.',
                   highlights: [
                     language === 'pt' ? 'Falantes de 8 países' : 'Speakers from 8 countries',
                     language === 'pt' ? 'Grupos por nível' : 'Level-based groups',
@@ -2061,7 +2061,7 @@ export default function StudentsPage() {
                   price: '£12',
                   description: language === 'pt' ?
                     'Uma noite celebrando Fado português, Samba brasileiro, Kizomba angolana, Morna cabo-verdiana e muito mais.' :
-                    'A night celebrating Portuguese Fado, Brazilian Samba, Angolan Kizomba, Cape Verdean Morna and much more.',
+                    'A night celebrating Lusophone Fado, Brazilian Samba, Angolan Kizomba, Cape Verdean Morna and much more.',
                   highlights: [
                     language === 'pt' ? 'Música ao vivo' : 'Live music',
                     language === 'pt' ? 'Comida tradicional' : 'Traditional food',
@@ -2143,7 +2143,7 @@ export default function StudentsPage() {
         {/* Student Discounts Section */}
         <StudentDiscountsSection />
         
-        {/* Portuguese-Speaking Host Families */}
+        {/* Lusophone-Speaking Host Families */}
         <AccommodationHostFamilies limit={5} showPricing={true} />
         
         {/* Accommodation Support Section */}
@@ -2308,7 +2308,7 @@ export default function StudentsPage() {
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {language === 'pt' ?
                   'Histórias de sucesso de estudantes portugueses que encontraram a sua comunidade através da LusoTown' :
-                  'Success stories from Portuguese students who found their community through LusoTown'
+                  'Success stories from Lusophone students who found their community through LusoTown'
                 }
               </p>
             </div>
@@ -2319,7 +2319,7 @@ export default function StudentsPage() {
                   name: 'Sofia Martins',
                   flag: '🇵🇹',
                   country: 'Portugal',
-                  university: 'UCL - Portuguese Studies',
+                  university: 'UCL - Lusophone Studies',
                   year: '3º ano',
                   quote: 'A LusoTown mudou completamente a minha experiência universitária. Encontrei amigos de todos os países lusófonos, oportunidades de estágio e até um mentor brasileiro na minha área.',
                   quoteEn: 'LusoTown completely changed my university experience. I found friends from all Portuguese-speaking countries, internship opportunities, and even a Brazilian mentor in my field.',
@@ -2408,7 +2408,7 @@ export default function StudentsPage() {
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 {language === 'pt' ? 
                   'Junte-se à Maior Comunidade de Estudantes Lusófonos em Universidades do Reino Unido' :
-                  'Join the United Kingdom\'s Largest Community of Portuguese-Speaking Students'
+                  'Join the United Kingdom\'s Largest Community of Lusophone-Speaking Students'
                 }
               </h2>
               
@@ -2447,7 +2447,7 @@ export default function StudentsPage() {
                 <div className="flex flex-wrap justify-center items-center gap-4 text-sm">
                   <div className="flex items-center text-white/90">
                     <CheckBadgeIcon className="w-5 h-5 mr-2 text-green-300" />
-                    <span className="font-medium">{language === 'pt' ? '2150+ estudantes já aderiram' : '2150+ students already joined'}</span>
+                    <span className="font-medium">{language === 'pt' ? '2150+ estudantes já aderiram' : 'students already joined'}</span>
                   </div>
                   <div className="flex items-center text-white/90">
                     <ClockIcon className="w-5 h-5 mr-2 text-yellow-300" />
@@ -2633,7 +2633,7 @@ export default function StudentsPage() {
                         <li>• {language === 'pt' ? 'Verifique o seu email para confirmação' : 'Check your email for confirmation'}</li>
                         <li>• {language === 'pt' ? 'Complete o seu perfil LusoTown' : 'Complete your LusoTown profile'}</li>
                         <li>• {language === 'pt' ? 'Explore eventos exclusivos para estudantes' : 'Explore student-exclusive events'}</li>
-                        <li>• {language === 'pt' ? 'Conecte-se com outros estudantes portugueses' : 'Connect with other Portuguese students'}</li>
+                        <li>• {language === 'pt' ? 'Conecte-se com outros estudantes portugueses' : 'Connect with other Lusophone students'}</li>
                       </ul>
                     </div>
                     <button 

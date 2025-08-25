@@ -20,7 +20,7 @@ import {
   Settings
 } from 'lucide-react';
 
-// Portuguese cultural locations in London
+// Lusophone cultural locations in London
 const PORTUGUESE_CULTURAL_SITES = [
   {
     id: 'casa-do-bacalhau',
@@ -34,13 +34,13 @@ const PORTUGUESE_CULTURAL_SITES = [
   },
   {
     id: 'portuguese-church',
-    name: 'Portuguese Catholic Church',
+    name: 'Lusophone Catholic Church',
     namePortuguese: 'Igreja Católica Portuguesa',
     type: 'cultural',
     coordinates: { lat: 51.5155, lng: -0.1426 },
     address: 'Sample Road, London',
-    description: 'Portuguese Catholic community center',
-    culturalSignificance: 'Center of Portuguese Catholic community in London'
+    description: 'Lusophone Catholic community center',
+    culturalSignificance: 'Center of Lusophone Catholic community in London'
   },
   {
     id: 'fado-venue',
@@ -50,7 +50,7 @@ const PORTUGUESE_CULTURAL_SITES = [
     coordinates: { lat: 51.5074, lng: -0.1278 },
     address: 'Sample Avenue, London',
     description: 'Authentic fado performances',
-    culturalSignificance: 'Traditional Portuguese fado music venue'
+    culturalSignificance: 'Traditional Lusophone fado music venue'
   }
 ];
 
@@ -437,7 +437,7 @@ export default function MobileGeolocationServices({
     <div className="space-y-4">
       <h3 className="text-lg font-semibold text-gray-900 flex items-center space-x-2">
         <Store className="h-5 w-5 text-red-600" />
-        <span>{language === 'pt' ? 'Negócios Portugueses' : 'Portuguese Businesses'}</span>
+        <span>{language === 'pt' ? 'Negócios Portugueses' : 'Lusophone Businesses'}</span>
         <span className="text-sm text-gray-500 font-normal">({nearbyBusinesses.length})</span>
       </h3>
 
@@ -510,7 +510,7 @@ export default function MobileGeolocationServices({
     <div className="space-y-4">
       <h3 className="text-lg font-semibold text-gray-900 flex items-center space-x-2">
         <Users className="h-5 w-5 text-green-600" />
-        <span>{language === 'pt' ? 'Portugueses Próximos' : 'Nearby Portuguese Speakers'}</span>
+        <span>{language === 'pt' ? 'Portugueses Próximos' : 'Nearby Lusophone Speakers'}</span>
         <span className="text-sm text-gray-500 font-normal">({nearbyMembers.length})</span>
       </h3>
 
@@ -679,7 +679,7 @@ export default function MobileGeolocationServices({
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-gray-900 flex items-center space-x-2">
             <Compass className="h-5 w-5 text-blue-600" />
-            <span>{language === 'pt' ? 'Locais Culturais Portugueses' : 'Portuguese Cultural Sites'}</span>
+            <span>{language === 'pt' ? 'Locais Culturais Portugueses' : 'Lusophone Cultural Sites'}</span>
           </h3>
           <div className="space-y-3">
             {PORTUGUESE_CULTURAL_SITES.map((site) => (

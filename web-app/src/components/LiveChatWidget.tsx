@@ -109,7 +109,7 @@ export default function LiveChatWidget({
             </div>
             <div className="min-w-0 flex-1">
               <h3 className="text-sm font-semibold text-gray-900 truncate">
-                {language === 'pt' ? 'Chat Português' : 'Portuguese Chat'}
+                {language === 'pt' ? 'Chat Português' : 'Lusophone Chat'}
               </h3>
               <div className="flex items-center gap-2 text-xs text-gray-500">
                 <motion.div
@@ -199,7 +199,7 @@ export default function LiveChatWidget({
         <div className="mt-2 flex gap-2 text-xs">
           {activeView === 'chat' && (
             <span className="bg-primary-100 text-primary-800 px-2 py-1 rounded-full">
-              {language === 'pt' ? 'Chat Português' : 'Portuguese Chat'}
+              {language === 'pt' ? 'Chat Português' : 'Lusophone Chat'}
             </span>
           )}
           {activeView === 'polls' && (
@@ -266,7 +266,7 @@ export default function LiveChatWidget({
         </AnimatePresence>
       </div>
 
-      {/* Footer - Portuguese Cultural Touch */}
+      {/* Footer - Lusophone Cultural Touch */}
       {isExpanded && (
         <div className="border-t border-gray-200 p-3 bg-gradient-to-r from-primary-50 to-secondary-50">
           <div className="flex items-center justify-between text-xs text-gray-600">

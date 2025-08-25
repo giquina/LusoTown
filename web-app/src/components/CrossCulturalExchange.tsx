@@ -48,7 +48,7 @@ export default function CrossCulturalExchange({
   const mockExchangePrograms: CulturalExchangeProgram[] = [
     {
       id: 'portuguese-heritage-program',
-      name: 'Portuguese Heritage Discovery Program',
+      name: 'Lusophone Heritage Discovery Program',
       description: 'Immersive cultural experience connecting diaspora youth with Portuguese traditions',
       originCountry: 'portugal',
       destinationCountry: currentCountry,
@@ -62,7 +62,7 @@ export default function CrossCulturalExchange({
       startDate: new Date('2026-03-01'),
       organizer: {
         id: 'heritage-foundation',
-        name: 'Portuguese Heritage Foundation',
+        name: 'Lusophone Heritage Foundation',
         type: 'cultural',
         website: 'https://heritage.pt',
         contact: 'programs@heritage.pt',
@@ -70,7 +70,7 @@ export default function CrossCulturalExchange({
         memberCount: 5000,
         foundedYear: 1985
       },
-      partnershipsRequired: ['Local Portuguese communities', 'Cultural centers'],
+      partnershipsRequired: ['Local Lusophone communities', 'Cultural centers'],
       culturalObjectives: ['Heritage preservation', 'Cultural transmission', 'Community strengthening']
     },
     {
@@ -83,7 +83,7 @@ export default function CrossCulturalExchange({
       type: 'professional',
       ageRange: '25-50',
       cost: { amount: 3500, currency: 'EUR' },
-      requirements: ['Business experience 5+ years', 'Portuguese fluency', 'Business plan'],
+      requirements: ['Business experience 5+ years', 'Lusophone fluency', 'Business plan'],
       benefits: ['International business network', 'Market expansion opportunities', 'Mentorship', 'Investment connections'],
       applicationDeadline: new Date('2025-10-15'),
       startDate: new Date('2026-01-15'),
@@ -102,7 +102,7 @@ export default function CrossCulturalExchange({
     },
     {
       id: 'portuguese-student-semester',
-      name: 'Portuguese Studies Academic Semester',
+      name: 'Lusophone Studies Academic Semester',
       description: 'Academic exchange program for students studying Portuguese language, literature, and culture',
       originCountry: currentCountry,
       destinationCountry: 'portugal',
@@ -110,13 +110,13 @@ export default function CrossCulturalExchange({
       type: 'student',
       ageRange: '18-25',
       cost: { amount: 4000, currency: 'EUR' },
-      requirements: ['University enrollment', 'Portuguese intermediate level', 'Academic transcript'],
+      requirements: ['University enrollment', 'Lusophone intermediate level', 'Academic transcript'],
       benefits: ['University credits', 'Cultural immersion', 'Academic research opportunities', 'Language certification'],
       applicationDeadline: new Date('2025-12-15'),
       startDate: new Date('2026-02-01'),
       organizer: {
         id: 'university-consortium',
-        name: 'Portuguese Universities Consortium',
+        name: 'Lusophone Universities Consortium',
         type: 'educational',
         website: 'https://portuguese-unis.edu',
         contact: 'international@portuguese-unis.edu',
@@ -147,10 +147,10 @@ export default function CrossCulturalExchange({
         }
       ],
       languageStatus: 'conversational',
-      culturalActivities: ['Portuguese cooking classes', 'Fado music nights', 'Portuguese folk dancing'],
+      culturalActivities: ['Lusophone cooking classes', 'Fado music nights', 'Lusophone folk dancing'],
       connectionToPortugal: 'moderate',
       interestInReconnection: true,
-      preservationEfforts: ['Teaching Portuguese to children', 'Maintaining traditional recipes'],
+      preservationEfforts: ['Teaching Lusophone to children', 'Maintaining traditional recipes'],
       youngerGenerationEngagement: 'medium'
     },
     {
@@ -170,10 +170,10 @@ export default function CrossCulturalExchange({
         }
       ],
       languageStatus: 'fluent',
-      culturalActivities: ['Portuguese church services', 'Traditional bread making', 'Azorean cultural events'],
+      culturalActivities: ['Lusophone church services', 'Traditional bread making', 'Azorean cultural events'],
       connectionToPortugal: 'strong',
       interestInReconnection: true,
-      preservationEfforts: ['Portuguese school for children', 'Cultural organization leadership'],
+      preservationEfforts: ['Lusophone school for children', 'Cultural organization leadership'],
       youngerGenerationEngagement: 'high'
     }
   ]
@@ -189,10 +189,10 @@ export default function CrossCulturalExchange({
       services: ['Architectural design', 'Cultural building restoration', 'Mentorship'],
       availableForMentoring: true,
       languagePreference: 'bilingual',
-      networkingInterests: ['Portuguese cultural preservation', 'Sustainable design', 'International projects'],
+      networkingInterests: ['Lusophone cultural preservation', 'Sustainable design', 'International projects'],
       businessType: 'company',
       yearsExperience: 15,
-      culturalSpecialization: ['Portuguese architectural heritage', 'Azulejo tile integration']
+      culturalSpecialization: ['Lusophone architectural heritage', 'Azulejo tile integration']
     },
     {
       id: 'joao-chef-boston',
@@ -201,13 +201,13 @@ export default function CrossCulturalExchange({
       industry: 'Hospitality & Food',
       location: { country: 'usa', city: 'Boston' },
       expertise: ['Portuguese cuisine', 'Modern gastronomy', 'Restaurant management'],
-      services: ['Culinary consulting', 'Portuguese cooking workshops', 'Restaurant development'],
+      services: ['Culinary consulting', 'Lusophone cooking workshops', 'Restaurant development'],
       availableForMentoring: true,
       languagePreference: 'bilingual',
-      networkingInterests: ['Portuguese culinary traditions', 'Food innovation', 'Cultural events'],
+      networkingInterests: ['Lusophone culinary traditions', 'Food innovation', 'Cultural events'],
       businessType: 'company',
       yearsExperience: 20,
-      culturalSpecialization: ['Traditional Portuguese recipes', 'Regional specialties', 'Wine pairing']
+      culturalSpecialization: ['Traditional Lusophone recipes', 'Regional specialties', 'Wine pairing']
     }
   ]
 
@@ -351,10 +351,10 @@ export default function CrossCulturalExchange({
       {/* Header */}
       <div className="text-center">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Global Portuguese Cultural Exchange
+          Global Lusophone Cultural Exchange
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Connect with Portuguese communities worldwide through cultural exchange programs, 
+          Connect with Lusophone communities worldwide through cultural exchange programs, 
           family connections, and professional networks
         </p>
       </div>

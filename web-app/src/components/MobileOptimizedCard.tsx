@@ -92,9 +92,9 @@ export default function MobileOptimizedCard({
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
 
-  // Portuguese text length adjustment
+  // Lusophone text length adjustment
   const isPortuguese = language === 'pt';
-  const maxDescriptionLength = isPortuguese ? 120 : 150; // Portuguese text is typically 20-30% longer
+  const maxDescriptionLength = isPortuguese ? 120 : 150; // Lusophone text is typically 20-30% longer
   const shouldTruncate = description.length > maxDescriptionLength;
   const displayDescription = shouldTruncate && !showFullDescription 
     ? `${description.substring(0, maxDescriptionLength)}...` 
@@ -211,7 +211,7 @@ export default function MobileOptimizedCard({
         <div className="p-4 sm:p-5">
           {/* Header */}
           <div className="mb-3">
-            {/* Title - Optimized for Portuguese text length */}
+            {/* Title - Optimized for Lusophone text length */}
             <h3 className={`font-bold text-gray-900 mb-2 leading-tight ${
               isPortuguese ? 'text-lg' : 'text-lg sm:text-xl'
             } line-clamp-2`}>
@@ -258,7 +258,7 @@ export default function MobileOptimizedCard({
             )}
           </div>
 
-          {/* Description - Portuguese text aware */}
+          {/* Description - Lusophone text aware */}
           <div className="mb-4">
             <p className={`text-gray-600 leading-relaxed ${
               isPortuguese ? 'text-sm' : 'text-sm sm:text-base'
@@ -366,7 +366,7 @@ export default function MobileOptimizedCard({
           )}
         </div>
 
-        {/* Portuguese Cultural Accent */}
+        {/* Lusophone Cultural Accent */}
         <motion.div
           className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-yellow-500 to-green-600 opacity-0"
           animate={{ 

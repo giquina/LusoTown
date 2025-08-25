@@ -120,10 +120,10 @@ C) Update the rules to clarify [specific point]
 **User**: *"I asked you to make the buttons blue, but they're still green. Why?"*
 
 **ICA Response Pattern**:
-- Check `AGENTS.md` for Portuguese color rules
+- Check `AGENTS.md` for Lusophone color rules
 - Review `UI_UX_RULES.md` for button requirements
 - Check configuration files for color definitions
-- Explain that green is used for Portuguese cultural authenticity
+- Explain that green is used for Lusophone cultural authenticity
 - Ask if user wants to override cultural branding or find alternative solution
 
 ### Scenario 2: Feature Request Conflicts
@@ -177,14 +177,14 @@ The ICA is successful when it:
 
 ## 📊 ICA Knowledge Base
 
-### Portuguese Platform Context
+### Lusophone Platform Context
 - Target audience: Portuguese speakers in United Kingdom
-- Cultural requirements: Authentic Portuguese branding
+- Cultural requirements: Authentic Lusophone branding
 - Business model: Community-focused with premium services
 - Technical requirements: Bilingual, mobile-first, configuration-driven
 
 ### Common Rule Categories
-1. **Cultural Authenticity**: Portuguese colors, terminology, community focus
+1. **Cultural Authenticity**: Lusophone colors, terminology, community focus
 2. **Geographic Scope**: United Kingdom-wide vs London-specific messaging
 3. **User Experience**: Button behavior, mobile responsiveness, accessibility
 4. **Technical Standards**: Zero hardcoding, bilingual support, configuration-driven
@@ -212,17 +212,17 @@ Use the Task tool with:
 User: "I asked for blue buttons but you used green. Why?"
 
 ICA Analysis:
-✅ Checked AGENTS.md: "Use Portuguese brand colors from @/config/brand.ts"
+✅ Checked AGENTS.md: "Use Lusophone brand colors from @/config/brand.ts"
 ✅ Checked UI_UX_RULES.md: No specific button color restrictions found
-✅ Checked /src/config/brand.ts: Portuguese cultural colors defined
+✅ Checked /src/config/brand.ts: Lusophone cultural colors defined
 ✅ Found reasoning: Green represents Portuguese flag heritage
 
-Explanation: The platform uses green because it's part of the Portuguese cultural color palette (Portuguese flag: green and red). This maintains cultural authenticity for the Portuguese-speaking community.
+Explanation: The platform uses green because it's part of the Lusophone cultural color palette (Portuguese flag: green and red). This maintains cultural authenticity for the Portuguese-speaking community.
 
 Question: Would you prefer to:
-A) Add blue as an accent color while keeping Portuguese green primary?
+A) Add blue as an accent color while keeping Lusophone green primary?
 B) Override the cultural branding for specific buttons?
-C) Find a Portuguese-inspired blue (like azulejo tile blue)?
+C) Find a Lusophone-inspired blue (like azulejo tile blue)?
 ```
 
 ### Example 2: Feature Behavior Question

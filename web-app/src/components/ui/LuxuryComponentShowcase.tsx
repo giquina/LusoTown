@@ -60,9 +60,9 @@ export default function LuxuryComponentShowcase() {
             </div>
           </div>
 
-          {/* Portuguese Heritage */}
+          {/* Lusophone Heritage */}
           <div className="space-y-4">
-            <LuxuryText size="lg" weight="semibold">Portuguese Heritage</LuxuryText>
+            <LuxuryText size="lg" weight="semibold">Lusophone Heritage</LuxuryText>
             <div className="space-y-3">
               <EliteButton variant="heritage" size="lg" portuguese shimmer>
                 <GlobeEuropeAfricaIcon className="w-5 h-5" />
@@ -151,7 +151,7 @@ export default function LuxuryComponentShowcase() {
                 Heritage Collection
               </LuxuryHeading>
               <LuxuryText className="mt-4">
-                Traditional Portuguese aesthetics meet modern luxury in this sophisticated heritage-inspired design.
+                Traditional Lusophone aesthetics meet modern luxury in this sophisticated heritage-inspired design.
               </LuxuryText>
             </Glassmorphism>
           </div>
@@ -194,7 +194,7 @@ export default function LuxuryComponentShowcase() {
             </LuxuryText>
             <div className="space-y-4">
               <LuxuryText size="xl" weight="bold" variant="premium">
-                Premium service dedicated to affluent Portuguese professionals
+                Premium service dedicated to affluent Lusophone professionals
               </LuxuryText>
               <LuxuryText size="lg" variant="portuguese">
                 Conectando a comunidade de falantes de português de Londres com experiências exclusivas
@@ -228,7 +228,7 @@ export default function LuxuryComponentShowcase() {
 
           <div>
             <LuxuryText size="lg" weight="semibold" className="mb-4">
-              Portuguese Heritage
+              Lusophone Heritage
             </LuxuryText>
             <PortugueseBreadcrumbs
               items={[

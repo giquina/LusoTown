@@ -58,7 +58,7 @@ export default function PWAFeaturesPage() {
       titlePortuguese: 'Instalação PWA',
       description: language === 'pt' 
         ? 'Instala a LusoTown como app nativo no teu dispositivo para acesso rápido à comunidade portuguesa'
-        : 'Install LusoTown as a native app on your device for quick access to the Portuguese community',
+        : 'Install LusoTown as a native app on your device for quick access to the Lusophone community',
       icon: Download,
       color: 'blue',
       component: PWAManager
@@ -69,7 +69,7 @@ export default function PWAFeaturesPage() {
       titlePortuguese: 'Integração da Câmara',
       description: language === 'pt'
         ? 'Captura fotos de eventos portugueses, scanner QR de negócios e partilha momentos culturais'
-        : 'Capture photos of Portuguese events, scan business QR codes, and share cultural moments',
+        : 'Capture photos of Lusophone events, scan business QR codes, and share cultural moments',
       icon: Camera,
       color: 'green',
       component: MobileCameraIntegration
@@ -102,7 +102,7 @@ export default function PWAFeaturesPage() {
       titlePortuguese: 'Otimização de Performance',
       description: language === 'pt'
         ? 'Carregamento rápido de conteúdo português, cache avançado e modo de dados limitados'
-        : 'Fast loading of Portuguese content, advanced caching, and data-saving mode',
+        : 'Fast loading of Lusophone content, advanced caching, and data-saving mode',
       icon: Zap,
       color: 'yellow',
       component: PerformanceOptimization
@@ -113,7 +113,7 @@ export default function PWAFeaturesPage() {
       titlePortuguese: 'Funcionalidades de Acessibilidade',
       description: language === 'pt'
         ? 'Leitor de ecrã em português, controlo por voz, navegação por teclado e alto contraste'
-        : 'Portuguese screen reader, voice control, keyboard navigation, and high contrast',
+        : 'Lusophone screen reader, voice control, keyboard navigation, and high contrast',
       icon: Eye,
       color: 'indigo',
       component: AccessibilityFeatures
@@ -190,7 +190,7 @@ export default function PWAFeaturesPage() {
           <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
             {language === 'pt'
               ? 'Experiência móvel completa para a comunidade portuguesa em Londres. App nativo, câmara, localização, notificações e muito mais.'
-              : 'Complete mobile experience for the Portuguese community in London. Native app experience, camera, location, notifications, and much more.'
+              : 'Complete mobile experience for the Lusophone community in London. Native app experience, camera, location, notifications, and much more.'
             }
           </p>
           
@@ -244,7 +244,7 @@ export default function PWAFeaturesPage() {
           <p className="text-gray-600">
             {language === 'pt'
               ? `Explora todas as funcionalidades PWA da comunidade portuguesa. ${completedFeatures === 5 ? 'Parabéns! Completaste toda a experiência.' : `${5 - completedFeatures} funcionalidades por explorar.`}`
-              : `Explore all PWA features for the Portuguese community. ${completedFeatures === 5 ? 'Congratulations! You\'ve completed the entire experience.' : `${5 - completedFeatures} features left to explore.`}`
+              : `Explore all PWA features for the Lusophone community. ${completedFeatures === 5 ? 'Congratulations! You\'ve completed the entire experience.' : `${5 - completedFeatures} features left to explore.`}`
             }
           </p>
         </div>
@@ -356,7 +356,7 @@ export default function PWAFeaturesPage() {
             <p className="text-xl mb-8">
               {language === 'pt'
                 ? 'Exploraste todas as funcionalidades PWA da LusoTown! Agora podes desfrutar da experiência completa da comunidade portuguesa em Londres.'
-                : 'You\'ve explored all LusoTown PWA features! Now you can enjoy the complete Portuguese community experience in London.'
+                : 'You\'ve explored all LusoTown PWA features! Now you can enjoy the complete Lusophone community experience in London.'
               }
             </p>
             

@@ -113,7 +113,7 @@ export async function POST(request: NextRequest) {
     // Validate required fields
     if (!data.name_pt || !data.name_en || !data.slug) {
       return NextResponse.json({ 
-        error: 'Portuguese name, English name, and slug are required' 
+        error: 'Lusophone name, English name, and slug are required' 
       }, { status: 400 })
     }
 

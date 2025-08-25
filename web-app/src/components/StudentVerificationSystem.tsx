@@ -454,7 +454,7 @@ export default function StudentVerificationSystem({
                   type="text"
                   value={formData.program}
                   onChange={(e) => setFormData(prev => ({ ...prev, program: e.target.value }))}
-                  placeholder={language === 'pt' ? 'Ex: Estudos Portugueses' : 'e.g., Portuguese Studies'}
+                  placeholder={language === 'pt' ? 'Ex: Estudos Portugueses' : 'e.g., Lusophone Studies'}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
                     errors.program ? 'border-red-300' : 'border-gray-300'
                   }`}
@@ -732,7 +732,7 @@ export default function StudentVerificationSystem({
                   <CheckIconSolid className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                   {language === 'pt' ? 
                     'Junte-se aos grupos de estudantes portugueses' :
-                    'Join Portuguese student groups'
+                    'Join Lusophone student groups'
                   }
                 </li>
               </ul>

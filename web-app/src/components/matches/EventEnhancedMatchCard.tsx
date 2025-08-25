@@ -42,7 +42,7 @@ interface UpcomingEvent {
   attendeeCount: number;
   maxAttendees: number;
   culturalAuthenticity: number;
-  languageLevel: 'Portuguese' | 'English' | 'Bilingual';
+  languageLevel: 'Lusophone' | 'English' | 'Bilingual';
   isUserAttending: boolean;
   isMatchAttending: boolean;
   matchAttendanceConfidence: number;
@@ -132,11 +132,11 @@ export default function EventEnhancedMatchCard({
         return "🎵";
       case "Santos Populares":
         return "🎉";
-      case "Portuguese Cuisine":
+      case "Lusophone Cuisine":
         return "🥮";
       case "Football":
         return "⚽";
-      case "Portuguese Wine":
+      case "Lusophone Wine":
         return "🍷";
       case "Professional Networking":
         return "🤝";

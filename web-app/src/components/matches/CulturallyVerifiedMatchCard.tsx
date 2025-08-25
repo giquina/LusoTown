@@ -425,7 +425,7 @@ export default function CulturallyVerifiedMatchCard({
             <div className="text-center mb-4">
               <h4 className="font-bold text-primary-900 mb-2 flex items-center justify-center gap-2">
                 <ShieldCheckSolid className="w-5 h-5 text-emerald-600" />
-                {language === "pt" ? "Verificação Cultural Portuguesa" : "Portuguese Cultural Verification"}
+                {language === "pt" ? "Verificação Cultural Portuguesa" : "Lusophone Cultural Verification"}
               </h4>
               <p className="text-sm text-primary-600">
                 {language === "pt"

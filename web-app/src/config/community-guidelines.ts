@@ -1,5 +1,5 @@
 /**
- * Community Guidelines for Portuguese-Speaking Community Platform
+ * Community Guidelines for Lusophone-Speaking Community Platform
  * 
  * This file contains essential guidelines for maintaining inclusivity and proper
  * representation of the Portuguese-speaking community from all lusophone nations.
@@ -18,9 +18,9 @@ export const COMMUNITY_INCLUSIVITY_GUIDELINES = {
     
     // ❌ AVOID: Exclusive terms
     avoid: [
-      'Portuguese community', // excludes Brazilian, Cape Verdean, etc.
+      'Lusophone community', // excludes Brazilian, Cape Verdean, etc.
       'Portuguese speakers community', // grammatically incorrect
-      'Portuguese people' // excludes non-Portuguese lusophone speakers
+      'Lusophone people' // excludes non-Lusophone lusophone speakers
     ]
   },
 
@@ -87,15 +87,15 @@ export const COMMUNITY_INCLUSIVITY_GUIDELINES = {
 
 export const HERO_SECTION_TEMPLATE = {
   // Template for inclusive hero sections
-  title: 'Your Portuguese-Speaking Community in the United Kingdom',
+  title: 'Your Lusophone-Speaking Community in the United Kingdom',
   
   // Activity examples that must rotate through different nations
   liveActivityExamples: [
     '🎵 Fado Night tomorrow - 12 spots left (Portugal)',
     '🇧🇷 Festa Junina Brasileira this weekend - Brazilian June Festival',
     '🇨🇻 Noite de Morna next week - Cape Verdean Music Evening',
-    '💼 Portuguese-Speaking Business Mixer - All backgrounds welcome',
-    '🍽️ Lusophone Food Market - Portuguese, Brazilian & Cape Verdean cuisine'
+    '💼 Lusophone-Speaking Business Mixer - All backgrounds welcome',
+    '🍽️ Lusophone Food Market - Lusophone, Brazilian & Cape Verdean cuisine'
   ],
   
   // Geographic scope
@@ -108,15 +108,15 @@ export const HERO_SECTION_TEMPLATE = {
 // Usage examples for developers
 export const USAGE_EXAMPLES = {
   correct: {
-    title: 'Join 1,247 Portuguese Speakers in the United Kingdom',
+    title: 'Join 1,247 Lusophone Speakers in the United Kingdom',
     community: 'Portuguese-speaking community from Portugal, Brazil, Cape Verde & more',
     events: 'Events from all Portuguese-speaking nations across the United Kingdom'
   },
   
   incorrect: {
-    title: 'Join 1,247 Portuguese Speakers in London', // Too London-centric
-    community: 'Portuguese community', // Excludes other lusophone nations
-    events: 'Portuguese events only' // Lacks diversity
+    title: 'Join 1,247 Lusophone Speakers in London', // Too London-centric
+    community: 'Lusophone community', // Excludes other lusophone nations
+    events: 'Lusophone events only' // Lacks diversity
   }
 } as const;
 
@@ -137,10 +137,10 @@ export function validateContentInclusivity(content: string): {
     suggestions.push('Replace "in London" with "in the United Kingdom" or "across the United Kingdom"');
   }
   
-  // Check for exclusive Portuguese terminology
-  if (content.includes('Portuguese community') && !content.includes('Portuguese-speaking')) {
+  // Check for exclusive Lusophone terminology
+  if (content.includes('Lusophone community') && !content.includes('Portuguese-speaking')) {
     issues.push('Uses exclusive terminology that may exclude other lusophone speakers');
-    suggestions.push('Use "Portuguese-speaking community" instead of "Portuguese community"');
+    suggestions.push('Use "Portuguese-speaking community" instead of "Lusophone community"');
   }
   
   // Check for event diversity
@@ -149,7 +149,7 @@ export function validateContentInclusivity(content: string): {
   const hasCapeVerdeEvents = /morna|cape verd/i.test(content);
   
   if (hasPortugalEvents && !hasBrazilEvents && !hasCapeVerdeEvents) {
-    issues.push('Content only shows Portuguese events - should include diverse lusophone events');
+    issues.push('Content only shows Lusophone events - should include diverse lusophone events');
     suggestions.push('Add events from Brazil, Cape Verde, Angola, or Mozambique');
   }
   

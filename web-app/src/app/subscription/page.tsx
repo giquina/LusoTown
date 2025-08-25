@@ -266,7 +266,7 @@ export default function SubscriptionPage() {
                         {
                           icon: UsersIcon,
                           title: isPortuguese ? 'Rede Comunitária' : 'Community Network',
-                          description: isPortuguese ? 'Conecte-se com 750+ falantes de português' : 'Connect with 750+ Portuguese speakers'
+                          description: isPortuguese ? 'Conecte-se com 750+ falantes de português' : 'Connect with Portuguese speakers'
                         },
                         {
                           icon: CalendarDaysIcon,

@@ -147,7 +147,7 @@ export default function BusinessNetworkingMatch({
         businessCompatibility: 95,
         culturalAlignment: 89,
         professionalAlignment: 94,
-        sharedInterests: ["FinTech", "Portuguese Market", "United Kingdom-Portugal Trade", "Startup Ecosystem"],
+        sharedInterests: ["FinTech", "Lusophone Market", "United Kingdom-Portugal Trade", "Startup Ecosystem"],
         sharedGoals: ["Business Expansion", "Mentorship", "Investment Opportunities"],
         isMutual: false,
         matchType: "mentorship",
@@ -162,12 +162,12 @@ export default function BusinessNetworkingMatch({
           experience: "12+ years",
           companySize: "50-100 employees",
           networkingGoals: ["Mentorship", "Investment", "Partnership"],
-          businessInterests: ["FinTech", "Portuguese Market", "Cross-border Payments", "Blockchain"],
+          businessInterests: ["FinTech", "Lusophone Market", "Cross-border Payments", "Blockchain"],
           origin: "Lisboa, Portugal",
           bio: "Fundador da LusoFinance, especializada em soluções de pagamento para a comunidade de falantes de português no Reino Unido. Procuro mentorar jovens empreendedores portugueses e expandir para novos mercados.",
           skills: ["Financial Services", "Product Strategy", "Team Leadership", "Fundraising"],
-          achievements: ["Series A £5M raised", "100k+ Portuguese users", "Featured in FinTech Times"],
-          languages: ["Portuguese (Native)", "English (Fluent)", "Spanish (Conversational)"],
+          achievements: ["Series A £5M raised", "100k+ Lusophone users", "Featured in FinTech Times"],
+          languages: ["Lusophone (Native)", "English (Fluent)", "Spanish (Conversational)"],
           isVerified: true,
           professionalScore: 95,
           culturalAlignment: 89,
@@ -178,7 +178,7 @@ export default function BusinessNetworkingMatch({
           mentorshipInterest: "mentor",
           availableForMentorship: true,
           businessEvents: [
-            { id: "be1", title: "FinTech Portuguese Network", category: "Networking", date: "2025-08-30", price: 0 },
+            { id: "be1", title: "FinTech Lusophone Network", category: "Networking", date: "2025-08-30", price: 0 },
             { id: "be2", title: "Portugal-United Kingdom Trade Summit", category: "Conference", date: "2025-09-15", price: 150 },
           ],
           conversationStarters: [
@@ -209,7 +209,7 @@ export default function BusinessNetworkingMatch({
         businessCompatibility: 91,
         culturalAlignment: 94,
         professionalAlignment: 88,
-        sharedInterests: ["Sustainable Business", "Portuguese Crafts", "E-commerce", "Cultural Heritage"],
+        sharedInterests: ["Sustainable Business", "Lusophone Crafts", "E-commerce", "Cultural Heritage"],
         sharedGoals: ["Partnership", "Knowledge Sharing", "Market Expansion"],
         isMutual: true,
         matchType: "collaboration",
@@ -225,12 +225,12 @@ export default function BusinessNetworkingMatch({
           experience: "8+ years",
           companySize: "10-25 employees",
           networkingGoals: ["Partnership", "Knowledge Sharing", "Supplier Network"],
-          businessInterests: ["Sustainable Fashion", "Portuguese Crafts", "E-commerce", "Artisan Network"],
+          businessInterests: ["Sustainable Fashion", "Lusophone Crafts", "E-commerce", "Artisan Network"],
           origin: "Porto, Portugal",
           bio: "Fundadora da Herança Portuguesa, uma marca de moda sustentável que promove artesanato tradicional português. Procuro parceiros para expandir o negócio e preservar as tradições portuguesas.",
           skills: ["Sustainable Design", "Artisan Relations", "Brand Strategy", "E-commerce"],
           achievements: ["£500k annual revenue", "Featured in Vogue Portugal", "Sustainability Award 2024"],
-          languages: ["Portuguese (Native)", "English (Fluent)", "French (Basic)"],
+          languages: ["Lusophone (Native)", "English (Fluent)", "French (Basic)"],
           isVerified: true,
           professionalScore: 88,
           culturalAlignment: 94,
@@ -242,7 +242,7 @@ export default function BusinessNetworkingMatch({
           availableForMentorship: true,
           businessEvents: [
             { id: "be3", title: "Sustainable Fashion Workshop", category: "Workshop", date: "2025-09-01", price: 85 },
-            { id: "be4", title: "Portuguese Artisan Showcase", category: "Exhibition", date: "2025-09-10", price: 25 },
+            { id: "be4", title: "Lusophone Artisan Showcase", category: "Exhibition", date: "2025-09-10", price: 25 },
           ],
           conversationStarters: [
             {
@@ -272,7 +272,7 @@ export default function BusinessNetworkingMatch({
         businessCompatibility: 89,
         culturalAlignment: 91,
         professionalAlignment: 85,
-        sharedInterests: ["Digital Marketing", "Portuguese Tourism", "Content Creation", "Cultural Events"],
+        sharedInterests: ["Digital Marketing", "Lusophone Tourism", "Content Creation", "Cultural Events"],
         sharedGoals: ["Collaboration", "Skill Sharing", "Client Referrals"],
         isMutual: false,
         matchType: "networking",
@@ -287,12 +287,12 @@ export default function BusinessNetworkingMatch({
           experience: "5+ years",
           companySize: "Freelance",
           networkingGoals: ["Collaboration", "Skill Sharing", "Client Referrals"],
-          businessInterests: ["Digital Marketing", "Portuguese Tourism", "Content Creation", "Social Media"],
+          businessInterests: ["Digital Marketing", "Lusophone Tourism", "Content Creation", "Social Media"],
           origin: "Braga, Portugal",
           bio: "Especialista em marketing digital com foco na promoção da cultura e turismo português no Reino Unido. Procuro colaborar com outros profissionais portugueses para projetos criativos.",
           skills: ["Digital Strategy", "Content Marketing", "Social Media", "Video Production"],
           achievements: ["500k+ followers generated", "Tourism Portugal campaign", "Google Certified"],
-          languages: ["Portuguese (Native)", "English (Fluent)", "Spanish (Intermediate)"],
+          languages: ["Lusophone (Native)", "English (Fluent)", "Spanish (Intermediate)"],
           isVerified: true,
           professionalScore: 85,
           culturalAlignment: 91,
@@ -304,7 +304,7 @@ export default function BusinessNetworkingMatch({
           availableForMentorship: true,
           businessEvents: [
             { id: "be5", title: "Digital Marketing Masterclass", category: "Workshop", date: "2025-08-28", price: 65 },
-            { id: "be6", title: "Portuguese Content Creators Meetup", category: "Networking", date: "2025-09-05", price: 0 },
+            { id: "be6", title: "Lusophone Content Creators Meetup", category: "Networking", date: "2025-09-05", price: 0 },
           ],
           conversationStarters: [
             {
@@ -452,12 +452,12 @@ export default function BusinessNetworkingMatch({
             </div>
             <div>
               <h1 className="text-3xl font-bold text-primary-900">
-                {language === "pt" ? "Networking Profissional Português" : "Portuguese Professional Networking"}
+                {language === "pt" ? "Networking Profissional Português" : "Lusophone Professional Networking"}
               </h1>
               <p className="text-primary-600">
                 {language === "pt" 
                   ? "Conecte-se com profissionais portugueses para crescimento de carreira e oportunidades de negócio"
-                  : "Connect with Portuguese professionals for career growth and business opportunities"}
+                  : "Connect with Lusophone professionals for career growth and business opportunities"}
               </p>
             </div>
           </div>
@@ -771,7 +771,7 @@ export default function BusinessNetworkingMatch({
                   <div className="bg-white rounded-2xl p-6 shadow-lg border border-primary-100">
                     <h3 className="text-xl font-bold text-primary-900 mb-4 flex items-center gap-2">
                       <PresentationChartLineIcon className="w-6 h-6 text-secondary-500" />
-                      {language === "pt" ? "Eventos de Networking Português" : "Portuguese Networking Events"}
+                      {language === "pt" ? "Eventos de Networking Português" : "Lusophone Networking Events"}
                     </h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -788,7 +788,7 @@ export default function BusinessNetworkingMatch({
                         },
                         {
                           id: "bev2", 
-                          title: language === "pt" ? "FinTech Portuguese Network" : "FinTech Portuguese Network",
+                          title: language === "pt" ? "FinTech Lusophone Network" : "FinTech Lusophone Network",
                           category: language === "pt" ? "Networking" : "Networking",
                           date: "2025-08-30",
                           price: 0,

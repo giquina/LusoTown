@@ -170,7 +170,7 @@ export class PrivacyPolicyManager {
     const englishPolicy = this.createEnglishPrivacyPolicy()
     this.policies.set('en-2.1.0', englishPolicy)
 
-    // Initialize Portuguese policy
+    // Initialize Lusophone policy
     const portuguesePolicy = this.createPortuguesePrivacyPolicy()
     this.policies.set('pt-2.1.0', portuguesePolicy)
   }
@@ -290,7 +290,7 @@ export class PrivacyPolicyManager {
         {
           id: 'cultural_sensitivity',
           title: 'Cultural Sensitivity and Protection',
-          content: 'We recognize the unique cultural values of Portuguese communities, including family privacy, regional diversity, religious respect, and the emotional significance of saudade. Our AI systems are designed with Portuguese cultural awareness.',
+          content: 'We recognize the unique cultural values of Lusophone communities, including family privacy, regional diversity, religious respect, and the emotional significance of saudade. Our AI systems are designed with Lusophone cultural awareness.',
           importance: 'critical',
           culturalRelevance: true,
           requiresConsent: false
@@ -298,7 +298,7 @@ export class PrivacyPolicyManager {
         {
           id: 'family_data',
           title: 'Family Data Protection',
-          content: 'Family connections and stories require explicit consent. We provide maximum protection for family-related data, recognizing the Portuguese cultural emphasis on family privacy and close-knit relationships.',
+          content: 'Family connections and stories require explicit consent. We provide maximum protection for family-related data, recognizing the Lusophone cultural emphasis on family privacy and close-knit relationships.',
           importance: 'critical',
           culturalRelevance: true,
           requiresConsent: true,
@@ -316,7 +316,7 @@ export class PrivacyPolicyManager {
         {
           id: 'ai_processing',
           title: 'AI and Automated Decision Making',
-          content: 'Our AI systems process cultural compatibility, heritage preferences, and community matching. All AI processing respects Portuguese cultural values and provides meaningful human oversight.',
+          content: 'Our AI systems process cultural compatibility, heritage preferences, and community matching. All AI processing respects Lusophone cultural values and provides meaningful human oversight.',
           importance: 'high',
           culturalRelevance: true,
           requiresConsent: true,
@@ -397,7 +397,7 @@ export class PrivacyPolicyManager {
   private createCulturalConsiderations(): CulturalPrivacyConsiderations {
     return {
       familyPrivacy: {
-        description: 'Portuguese families value privacy and close relationships. Family data requires explicit consent and maximum protection.',
+        description: 'Lusophone families value privacy and close relationships. Family data requires explicit consent and maximum protection.',
         protections: [
           'AES-256-GCM encryption for all family data',
           'Limited sharing with explicit family member consent',
@@ -442,7 +442,7 @@ export class PrivacyPolicyManager {
         ]
       },
       regionalIdentity: {
-        description: 'Portuguese regional identities are diverse and important, from continental regions to island communities.',
+        description: 'Lusophone regional identities are diverse and important, from continental regions to island communities.',
         diversityRespect: [
           'Recognition of regional diversity (Minho, Douro, Alentejo, etc.)',
           'Respect for island communities (Azores, Madeira)',
@@ -457,7 +457,7 @@ export class PrivacyPolicyManager {
         ]
       },
       diasporaSpecific: {
-        description: 'Portuguese diaspora communities have unique privacy needs related to their cross-cultural experience.',
+        description: 'Lusophone diaspora communities have unique privacy needs related to their cross-cultural experience.',
         crossBorderProtections: [
           'United Kingdom-Portugal data transfer protections',
           'Diaspora community privacy considerations',
@@ -562,11 +562,11 @@ export class PrivacyPolicyManager {
           'Submit request through privacy settings or contact us',
           'Identity verification with cultural sensitivity',
           'Comprehensive data report including cultural preferences',
-          'Explanation of AI processing with Portuguese context'
+          'Explanation of AI processing with Lusophone context'
         ],
         timeframe: '1 month (may be extended for complex requests)',
         culturalConsiderations: [
-          'Reports available in Portuguese and English',
+          'Reports available in Lusophone and English',
           'Cultural context explanations',
           'Family data access with appropriate consents',
           'Heritage data access with community context'
@@ -597,7 +597,7 @@ export class PrivacyPolicyManager {
           'Community consultation for significant cultural contributions'
         ],
         exceptions: [
-          'Legal obligations under United Kingdom and Portuguese law',
+          'Legal obligations under United Kingdom and Lusophone law',
           'Community heritage preservation with consent',
           'Ongoing consent processing records',
           'Legitimate interests in fraud prevention'
@@ -666,8 +666,8 @@ export class PrivacyPolicyManager {
   }
 
   private createUserRightsPortuguese(): UserPrivacyRights {
-    // Portuguese version would follow the same structure with Portuguese translations
-    // For brevity, returning English version - in practice, would have full Portuguese translations
+    // Lusophone version would follow the same structure with Lusophone translations
+    // For brevity, returning English version - in practice, would have full Lusophone translations
     return this.createUserRights()
   }
 
@@ -678,12 +678,12 @@ export class PrivacyPolicyManager {
         email: 'privacy@lusotown.com',
         phone: '+44 20 1234 5678',
         languagesSpoken: ['en', 'pt'],
-        culturalBackground: 'Portuguese cultural privacy specialist'
+        culturalBackground: 'Lusophone cultural privacy specialist'
       },
       portugueseSupport: {
         email: 'privacidade@lusotown.com',
         hours: 'Segunda-Sexta: 9:00-17:00 GMT',
-        culturalConsultant: 'Dr. João Silva - Portuguese Cultural Privacy Advisor'
+        culturalConsultant: 'Dr. João Silva - Lusophone Cultural Privacy Advisor'
       },
       regulatoryContacts: {
         uk: { 

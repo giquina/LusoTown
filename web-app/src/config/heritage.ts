@@ -98,10 +98,10 @@ export interface HeritageConfig {
   };
 }
 
-// Portuguese Heritage Configuration (Default)
+// Lusophone Heritage Configuration (Default)
 export const PORTUGUESE_HERITAGE: HeritageConfig = {
   identity: {
-    name: 'Portuguese',
+    name: 'Lusophone',
     code: 'pt',
     defaultLanguage: 'pt-PT',
     tagline: {
@@ -172,9 +172,9 @@ export const PORTUGUESE_HERITAGE: HeritageConfig = {
   culture: {
     traditions: ['Fado', 'Santos Populares', 'Azulejos', 'Maritime Heritage'],
     foods: ['Pastéis de Nata', 'Bacalhau', 'Francesinha', 'Bifana'],
-    music: ['Fado', 'Pimba', 'Folk', 'Modern Portuguese'],
+    music: ['Fado', 'Pimba', 'Folk', 'Modern Lusophone'],
     celebrations: ['Portugal Day', 'Santos Populares', 'Christmas on 24th', 'New Year'],
-    languages: ['Portuguese', 'Mirandese'],
+    languages: ['Lusophone', 'Mirandese'],
     values: ['Saudade', 'Family', 'Hospitality', 'Heritage', 'Community']
   },
 
@@ -182,7 +182,7 @@ export const PORTUGUESE_HERITAGE: HeritageConfig = {
     emotes: {
       ':saudade:': {
         unicode: '💙',
-        description: 'Portuguese feeling of longing/nostalgia',
+        description: 'Lusophone feeling of longing/nostalgia',
         cultural: true
       },
       ':festa:': {
@@ -192,7 +192,7 @@ export const PORTUGUESE_HERITAGE: HeritageConfig = {
       },
       ':futebol:': {
         unicode: '⚽',
-        description: 'Football/soccer - Portuguese passion',
+        description: 'Football/soccer - Lusophone passion',
         cultural: true
       },
       ':fado:': {
@@ -202,12 +202,12 @@ export const PORTUGUESE_HERITAGE: HeritageConfig = {
       },
       ':bacalhau:': {
         unicode: '🐟',
-        description: 'Portuguese codfish tradition',
+        description: 'Lusophone codfish tradition',
         cultural: true
       },
       ':pastel:': {
         unicode: '🥟',
-        description: 'Pastel de nata - Portuguese pastry',
+        description: 'Pastel de nata - Lusophone pastry',
         cultural: true
       },
       ':lusitano:': {
@@ -512,7 +512,7 @@ export class HeritageManager {
     return [
       {
         code: 'pt',
-        name: 'Portuguese',
+        name: 'Lusophone',
         flag: PORTUGUESE_HERITAGE.branding.symbols.flag
       },
       {

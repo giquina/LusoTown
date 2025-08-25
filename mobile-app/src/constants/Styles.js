@@ -2,49 +2,63 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
-// 🎨 LusoTown Design System - Unidos pela Língua (United by Language)
+// 🇵🇹 Portuguese Flag Colors - Official Portuguese Heritage Design System
 export const Colors = {
-  // Primary brand colors - Azul Atlântico (Atlantic Blue)
-  primary: '#1E40AF',        // Deep ocean blue - connects all Portuguese nations
-  primaryDark: '#1E3A8A',    // Deep navy for interactions
-  primaryLight: '#DBEAFE',   // Light sky blue for backgrounds
+  // Portuguese Flag Primary Colors
+  red: '#FF0000',           // Portuguese flag red - passion and courage
+  redDark: '#CC0000',       // Deep red for interactions
+  redLight: '#FFE6E6',      // Light red for backgrounds
   
-  // Secondary colors - Verde Esperança (Hope Green)
-  secondary: '#059669',      // Vibrant emerald - lush landscapes
-  secondaryDark: '#047857',  // Forest green
-  secondaryLight: '#D1FAE5', // Soft mint
+  green: '#00A859',         // Portuguese flag green - hope and nature
+  greenDark: '#008A47',     // Deep green for interactions
+  greenLight: '#E6F7F1',    // Light green for backgrounds
   
-  // Accent colors - Dourado Sol (Golden Sun)
-  accent: '#F59E0B',         // Warm amber - optimism and warmth
-  accentDark: '#D97706',     // Deep gold
-  accentLight: '#FEF3C7',    // Cream
+  // Portuguese Cultural Colors
+  gold: '#FFD700',          // Portuguese golden heritage
+  goldDark: '#B8860B',      // Deep gold for premium features
+  goldLight: '#FFFACD',     // Light gold for accents
   
-  // Action color - Vermelho Paixão (Passion Red)
-  action: '#DC2626',         // Bold red - passionate spirit
-  actionDark: '#B91C1C',     // Deep crimson
-  actionLight: '#FEE2E2',    // Soft pink
+  // Primary brand colors (Portuguese Red)
+  primary: '#FF0000',       // Portuguese flag red
+  primaryDark: '#CC0000',   
+  primaryLight: '#FFE6E6',  
   
-  // Premium color - Roxo Fado (Fado Purple)
-  premium: '#7C3AED',        // Rich purple - soulful tradition
-  premiumDark: '#5B21B6',    // Deep violet
-  premiumLight: '#EDE9FE',   // Lavender
+  // Secondary colors (Portuguese Green)
+  secondary: '#00A859',     // Portuguese flag green
+  secondaryDark: '#008A47', 
+  secondaryLight: '#E6F7F1',
   
-  // Warm accent - Coral Tropical (Tropical Coral)
-  coral: '#F97316',          // Vibrant coral - tropical paradise
-  coralDark: '#EA580C',      // Deep coral
-  coralLight: '#FED7AA',     // Peach
+  // Accent colors (Portuguese Gold)
+  accent: '#FFD700',        // Portuguese golden heritage
+  accentDark: '#B8860B',    
+  accentLight: '#FFFACD',   
+  
+  // Action color (Portuguese Red for consistency)
+  action: '#FF0000',        // Portuguese passion
+  actionDark: '#CC0000',    
+  actionLight: '#FFE6E6',   
+  
+  // Premium color (Deep Portuguese Gold)
+  premium: '#B8860B',       // Luxurious Portuguese gold
+  premiumDark: '#996F00',   
+  premiumLight: '#F4E99B',  
+  
+  // Cultural Heritage Colors
+  azulejo: '#4A90E2',       // Portuguese tile blue
+  azulejoDark: '#2E5B9A',   
+  azulejoLight: '#E1F0FF',  
   
   // Neutral colors
-  background: '#FAFAFA',     // Clean white background
-  surface: '#FFFFFF',        // Card backgrounds
-  text: '#1F2937',          // Darker main text for better contrast
-  textSecondary: '#6B7280',  // Secondary text
-  textLight: '#9CA3AF',     // Placeholder text
+  background: '#FAFAFA',    // Clean white background
+  surface: '#FFFFFF',       // Card backgrounds  
+  text: '#1F2937',         // Dark text for readability
+  textSecondary: '#6B7280', // Secondary text
+  textLight: '#9CA3AF',    // Placeholder text
   
-  // Status colors (updated for better accessibility)
-  success: '#059669',        // Using our secondary green
-  warning: '#F59E0B',        // Using our accent amber
-  error: '#DC2626',          // Using our action red
+  // Status colors using Portuguese heritage
+  success: '#00A859',       // Portuguese green for success
+  warning: '#FFD700',       // Portuguese gold for warnings  
+  error: '#FF0000',         // Portuguese red for errors
   
   // Special colors
   border: '#E5E7EB',

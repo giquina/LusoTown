@@ -35,10 +35,10 @@ export default function BusinessNetworkingPage() {
     },
     {
       icon: AcademicCapIcon,
-      title: language === "pt" ? "Sistema de Mentoria Português" : "Portuguese Mentorship System",
+      title: language === "pt" ? "Sistema de Mentoria Português" : "Lusophone Mentorship System",
       description: language === "pt"
         ? "Encontre mentores experientes ou torne-se mentor para novos profissionais portugueses"
-        : "Find experienced mentors or become a mentor for new Portuguese professionals",
+        : "Find experienced mentors or become a mentor for new Lusophone professionals",
       stats: language === "pt" ? "85% sucesso" : "85% success rate",
     },
     {
@@ -54,7 +54,7 @@ export default function BusinessNetworkingPage() {
       title: language === "pt" ? "Eventos de Networking" : "Networking Events",
       description: language === "pt"
         ? "Participe em eventos exclusivos para profissionais portugueses em Londres"
-        : "Participate in exclusive events for Portuguese professionals in London",
+        : "Participate in exclusive events for Lusophone professionals in London",
       stats: language === "pt" ? "20+ eventos/mês" : "20+ events/month",
     },
     {
@@ -92,7 +92,7 @@ export default function BusinessNetworkingPage() {
       company: "Herança Portuguesa",
       story: language === "pt"
         ? "Conectei-me com fornecedores portugueses e agora exportamos para 15 países."
-        : "Connected with Portuguese suppliers and now we export to 15 countries.",
+        : "Connected with Lusophone suppliers and now we export to 15 countries.",
       achievement: language === "pt" ? "15 países" : "15 countries",
       image: "👗",
     },
@@ -111,7 +111,7 @@ export default function BusinessNetworkingPage() {
   const businessStats = [
     {
       number: "2,500+",
-      label: language === "pt" ? "Profissionais Portugueses" : "Portuguese Professionals",
+      label: language === "pt" ? "Profissionais Portugueses" : "Lusophone Professionals",
       description: language === "pt" ? "Registados na plataforma" : "Registered on platform",
     },
     {
@@ -161,12 +161,12 @@ export default function BusinessNetworkingPage() {
             </div>
             <div>
               <h1 className="text-4xl font-bold text-primary-900">
-                {language === "pt" ? "Networking Profissional Português" : "Portuguese Professional Networking"}
+                {language === "pt" ? "Networking Profissional Português" : "Lusophone Professional Networking"}
               </h1>
               <p className="text-xl text-primary-600 mt-2">
                 {language === "pt" 
                   ? "A maior rede de profissionais portugueses no Reino Unido"
-                  : "The largest network of Portuguese professionals in the United Kingdom"}
+                  : "The largest network of Lusophone professionals in the United Kingdom"}
               </p>
             </div>
           </div>
@@ -295,7 +295,7 @@ export default function BusinessNetworkingPage() {
               <p className="text-xl mb-6 opacity-90">
                 {language === "pt"
                   ? "Junte-se a milhares de profissionais portugueses que já transformaram as suas carreiras"
-                  : "Join thousands of Portuguese professionals who have already transformed their careers"}
+                  : "Join thousands of Lusophone professionals who have already transformed their careers"}
               </p>
               <button
                 onClick={() => setActiveSection('matching')}

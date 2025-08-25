@@ -54,7 +54,7 @@ interface StudentEvent {
 const STUDENT_EVENTS: StudentEvent[] = [
   {
     id: 'portuguese-tech-bootcamp',
-    title: 'Portuguese Tech Career Bootcamp',
+    title: 'Lusophone Tech Career Bootcamp',
     titlePortuguese: 'Bootcamp de Carreira em Tecnologia Portuguesa',
     type: 'career',
     date: '2024-09-15',
@@ -66,14 +66,14 @@ const STUDENT_EVENTS: StudentEvent[] = [
     originalPrice: 45,
     capacity: 60,
     enrolled: 42,
-    description: 'Intensive day-long bootcamp covering Portuguese tech ecosystem, startup opportunities, and career paths. Includes CV review, interview practice, and networking lunch.',
+    description: 'Intensive day-long bootcamp covering Lusophone tech ecosystem, startup opportunities, and career paths. Includes CV review, interview practice, and networking lunch.',
     descriptionPortuguese: 'Bootcamp intensivo de um dia cobrindo ecossistema tecnológico português, oportunidades de startups e percursos profissionais. Inclui revisão de CV, prática de entrevistas e almoço de networking.',
     speakers: ['Ana Silva - CTO at OutSystems', 'Miguel Costa - Google Portugal', 'João Ferreira - Farfetch'],
     requirements: ['Computer Science or Engineering student', 'Basic programming knowledge', 'CV required'],
     yearGroups: ['2nd Year', '3rd Year', 'Final Year', 'Masters', 'PhD'],
     subjects: ['Computer Science', 'Engineering', 'Mathematics', 'Physics'],
     isStudentExclusive: true,
-    benefits: ['1-on-1 CV review', 'Portfolio guidance', 'Job referrals', 'Portuguese tech network access'],
+    benefits: ['1-on-1 CV review', 'Portfolio guidance', 'Job referrals', 'Lusophone tech network access'],
     rating: 4.8,
     difficulty: 'intermediate',
     credits: 2,
@@ -81,7 +81,7 @@ const STUDENT_EVENTS: StudentEvent[] = [
   },
   {
     id: 'fado-cultural-workshop',
-    title: 'Traditional Fado & Portuguese Poetry Workshop',
+    title: 'Traditional Fado & Lusophone Poetry Workshop',
     titlePortuguese: 'Workshop de Fado Tradicional e Poesia Portuguesa',
     type: 'cultural',
     date: '2024-09-22',
@@ -95,10 +95,10 @@ const STUDENT_EVENTS: StudentEvent[] = [
     enrolled: 28,
     description: 'Learn about the history and techniques of Fado with professional musicians. Includes guitar basics, poetry analysis, and cultural context of Portuguese musical heritage.',
     descriptionPortuguese: 'Aprenda sobre a história e técnicas do Fado com músicos profissionais. Inclui básicos de guitarra, análise de poesia e contexto cultural da herança musical portuguesa.',
-    speakers: ['Maria João - Professional Fadista', 'Dr. António Silva - Portuguese Literature', 'Carlos Mendes - Guitar Master'],
+    speakers: ['Maria João - Professional Fadista', 'Dr. António Silva - Lusophone Literature', 'Carlos Mendes - Guitar Master'],
     requirements: ['Interest in Portuguese culture', 'No musical experience required'],
     yearGroups: ['All Years'],
-    subjects: ['Portuguese Studies', 'Music', 'Literature', 'Cultural Studies', 'Any'],
+    subjects: ['Lusophone Studies', 'Music', 'Literature', 'Cultural Studies', 'Any'],
     isStudentExclusive: true,
     benefits: ['Cultural immersion', 'Music basics', 'Poetry appreciation', 'Cultural network'],
     rating: 4.9,
@@ -107,23 +107,23 @@ const STUDENT_EVENTS: StudentEvent[] = [
   },
   {
     id: 'academic-writing-portuguese',
-    title: 'Academic Writing for Portuguese Studies',
+    title: 'Academic Writing for Lusophone Studies',
     titlePortuguese: 'Escrita Académica para Estudos Portugueses',
     type: 'academic',
     date: '2024-09-28',
     time: '13:00-16:00',
-    location: 'UCL - Portuguese Studies Department',
+    location: 'UCL - Lusophone Studies Department',
     university: 'University College London',
     price: 0,
     studentPrice: 0,
     capacity: 30,
     enrolled: 18,
-    description: 'Master academic writing techniques for Portuguese studies papers. Covers research methodology, citation styles, thesis structure, and academic Portuguese language.',
+    description: 'Master academic writing techniques for Lusophone studies papers. Covers research methodology, citation styles, thesis structure, and academic Portuguese language.',
     descriptionPortuguese: 'Domine técnicas de escrita académica para trabalhos de estudos portugueses. Cobre metodologia de investigação, estilos de citação, estrutura de tese e linguagem académica portuguesa.',
-    speakers: ['Dr. Maria Fernandes - Portuguese Studies', 'Prof. João Silva - Academic Writing'],
-    requirements: ['Portuguese Studies student', 'Intermediate Portuguese level'],
+    speakers: ['Dr. Maria Fernandes - Lusophone Studies', 'Prof. João Silva - Academic Writing'],
+    requirements: ['Lusophone Studies student', 'Intermediate Lusophone level'],
     yearGroups: ['2nd Year', '3rd Year', 'Masters', 'PhD'],
-    subjects: ['Portuguese Studies', 'Literature', 'History', 'Cultural Studies'],
+    subjects: ['Lusophone Studies', 'Literature', 'History', 'Cultural Studies'],
     isStudentExclusive: true,
     benefits: ['Academic skills', 'Research methods', 'Writing improvement', 'Professor connections'],
     rating: 4.7,
@@ -133,7 +133,7 @@ const STUDENT_EVENTS: StudentEvent[] = [
   },
   {
     id: 'portuguese-business-networking',
-    title: 'Portuguese Student-Professional Networking Mixer',
+    title: 'Lusophone Student-Professional Networking Mixer',
     titlePortuguese: 'Mixer de Networking Estudante-Profissional Português',
     type: 'networking',
     date: '2024-10-05',
@@ -144,9 +144,9 @@ const STUDENT_EVENTS: StudentEvent[] = [
     originalPrice: 40,
     capacity: 80,
     enrolled: 65,
-    description: 'Connect with Portuguese professionals across industries. Speed networking, panel discussions, and informal mixer with refreshments. All industries welcome.',
+    description: 'Connect with Lusophone professionals across industries. Speed networking, panel discussions, and informal mixer with refreshments. All industries welcome.',
     descriptionPortuguese: 'Conecte-se com profissionais portugueses de várias indústrias. Speed networking, discussões em painel e mixer informal com refreshments. Todas as indústrias são bem-vindas.',
-    speakers: ['Various Portuguese professionals from Banking, Tech, Law, Medicine, and Creative industries'],
+    speakers: ['Various Lusophone professionals from Banking, Tech, Law, Medicine, and Creative industries'],
     requirements: ['Student ID verification', 'Professional attire recommended'],
     yearGroups: ['Final Year', 'Masters', 'PhD', 'Recent Graduates'],
     subjects: ['All Subjects'],
@@ -163,14 +163,14 @@ const STUDENT_EVENTS: StudentEvent[] = [
     type: 'academic',
     date: '2024-10-12',
     time: '14:00-17:00',
-    location: 'Portuguese Embassy Education Office',
+    location: 'Lusophone Embassy Education Office',
     price: 0,
     studentPrice: 0,
     capacity: 50,
     enrolled: 32,
     description: 'Complete guide to studying in Portugal. University applications, Erasmus+, scholarships, visa requirements, and cultural preparation. Q&A with current exchange students.',
     descriptionPortuguese: 'Guia completo para estudar em Portugal. Candidaturas universitárias, Erasmus+, bolsas, requisitos de visto e preparação cultural. Perguntas e respostas com estudantes de intercâmbio atuais.',
-    speakers: ['Portuguese Embassy Education Attaché', 'Erasmus+ Coordinator', 'Current Exchange Students'],
+    speakers: ['Lusophone Embassy Education Attaché', 'Erasmus+ Coordinator', 'Current Exchange Students'],
     requirements: ['Valid student status', 'Interest in Portugal exchange'],
     yearGroups: ['1st Year', '2nd Year', '3rd Year'],
     subjects: ['All Subjects'],
@@ -182,7 +182,7 @@ const STUDENT_EVENTS: StudentEvent[] = [
   },
   {
     id: 'portuguese-startup-pitch',
-    title: 'Portuguese Student Startup Pitch Competition',
+    title: 'Lusophone Student Startup Pitch Competition',
     titlePortuguese: 'Competição de Pitch de Startups de Estudantes Portugueses',
     type: 'career',
     date: '2024-10-19',
@@ -193,9 +193,9 @@ const STUDENT_EVENTS: StudentEvent[] = [
     studentPrice: 0,
     capacity: 120,
     enrolled: 85,
-    description: 'Pitch your business ideas to Portuguese angel investors and successful entrepreneurs. Workshops on pitch preparation, business planning, and funding options.',
+    description: 'Pitch your business ideas to Lusophone angel investors and successful entrepreneurs. Workshops on pitch preparation, business planning, and funding options.',
     descriptionPortuguese: 'Apresente as suas ideias de negócio a investidores anjo portugueses e empresários de sucesso. Workshops sobre preparação de pitch, planeamento de negócios e opções de financiamento.',
-    speakers: ['Portuguese Angel Investors', 'Successful Portuguese Entrepreneurs', 'Business Mentors'],
+    speakers: ['Lusophone Angel Investors', 'Successful Lusophone Entrepreneurs', 'Business Mentors'],
     requirements: ['Business idea or plan', 'Pitch deck (5 minutes max)', 'Student verification'],
     yearGroups: ['All Years'],
     subjects: ['Business', 'Engineering', 'Computer Science', 'Design', 'Any'],
@@ -289,7 +289,7 @@ export default function StudentEventsSection() {
             <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
               {language === 'pt' 
                 ? "Eventos Exclusivos para Estudantes Portugueses"
-                : "Exclusive Events for Portuguese Students"}
+                : "Exclusive Events for Lusophone Students"}
             </span>
           </div>
 
@@ -302,7 +302,7 @@ export default function StudentEventsSection() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             {language === 'pt' 
               ? 'Eventos especiais desenhados para estudantes portugueses: workshops de carreira, networking académico, imersão cultural e desenvolvimento profissional'
-              : 'Special events designed for Portuguese students: career workshops, academic networking, cultural immersion, and professional development'}
+              : 'Special events designed for Lusophone students: career workshops, academic networking, cultural immersion, and professional development'}
           </p>
 
           {/* Quick Stats */}

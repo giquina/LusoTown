@@ -504,7 +504,7 @@ export default function AIEthicsDashboard() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Book className="h-5 w-5" />
-                {language === 'pt' ? 'Preservação da Língua Portuguesa' : 'Portuguese Language Preservation'}
+                {language === 'pt' ? 'Preservação da Língua Portuguesa' : 'Lusophone Language Preservation'}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -515,7 +515,7 @@ export default function AIEthicsDashboard() {
                   </h4>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span>{language === 'pt' ? 'Conteúdo em Português' : 'Portuguese Content'}</span>
+                      <span>{language === 'pt' ? 'Conteúdo em Português' : 'Lusophone Content'}</span>
                       <div className="flex items-center gap-2">
                         <Progress value={formatPercentage(dashboardData.language_preservation.portuguese_usage_rate)} className="w-20" />
                         <span className="text-sm">{formatPercentage(dashboardData.language_preservation.portuguese_usage_rate)}%</span>

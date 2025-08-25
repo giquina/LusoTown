@@ -252,12 +252,12 @@ export async function validateStreamPermissions(
 }
 
 /**
- * Portuguese streaming categories helper
+ * Lusophone streaming categories helper
  */
 export const PORTUGUESE_STREAM_CATEGORIES = {
   'musica-portuguesa': {
     namePt: 'Música Portuguesa',
-    nameEn: 'Portuguese Music',
+    nameEn: 'Lusophone Music',
     culturalContext: 'universal',
     portugueseFocused: true
   },
@@ -281,7 +281,7 @@ export const PORTUGUESE_STREAM_CATEGORIES = {
   },
   'lingua-portuguesa': {
     namePt: 'Língua Portuguesa',
-    nameEn: 'Portuguese Language',
+    nameEn: 'Lusophone Language',
     culturalContext: 'universal',
     portugueseFocused: true
   },
@@ -294,7 +294,7 @@ export const PORTUGUESE_STREAM_CATEGORIES = {
 } as const
 
 /**
- * Portuguese cultural regions
+ * Lusophone cultural regions
  */
 export const CULTURAL_REGIONS = {
   brasil: 'Brasil',

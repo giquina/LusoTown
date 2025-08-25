@@ -393,7 +393,7 @@ export default function Dashboard() {
             {activeTab === 'networking' && (
               <div className="space-y-6">
                 <div className="bg-white rounded-xl shadow-sm p-6">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-6">{language === 'pt' ? 'Sua Rede Portuguesa' : 'Your Portuguese Network'}</h2>
+                  <h2 className="text-xl font-semibold text-gray-900 mb-6">{language === 'pt' ? 'Sua Rede Portuguesa' : 'Your Lusophone Network'}</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-4">
                       <h3 className="font-medium text-gray-900">{language === 'pt' ? 'Estatísticas da Rede' : 'Network Stats'}</h3>
@@ -447,7 +447,7 @@ export default function Dashboard() {
                       <div className="space-y-2 text-sm text-gray-600 mb-4">
                         <p>• {language === 'pt' ? 'Motoristas que falam português' : 'Portuguese-speaking drivers'}</p>
                         <p>• {language === 'pt' ? 'Segurança licenciada SIA' : 'SIA-licensed security'}</p>
-                        <p>• {language === 'pt' ? 'Tours culturais portugueses' : 'Portuguese cultural tours'}</p>
+                        <p>• {language === 'pt' ? 'Tours culturais portugueses' : 'Lusophone cultural tours'}</p>
                       </div>
                       <button 
                         onClick={() => router.push(ROUTES.transport)}

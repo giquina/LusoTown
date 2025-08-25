@@ -1,7 +1,7 @@
 'use client'
 
 // Portuguese-speaking community Social Networks Integration
-// Connect with existing Portuguese WhatsApp groups, Facebook communities, and social networks
+// Connect with existing Lusophone WhatsApp groups, Facebook communities, and social networks
 
 export interface PortugueseSocialNetwork {
   id: string
@@ -172,7 +172,7 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
     },
     
     rules: [
-      'Portuguese/English only',
+      'Lusophone/English only',
       'Be respectful and helpful',
       'No spam or excessive self-promotion',
       'Keep discussions community-relevant',
@@ -257,7 +257,7 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
   
   {
     id: 'network-whatsapp-portuguese-business',
-    name: 'Portuguese Business Network London',
+    name: 'Lusophone Business Network London',
     namePortuguese: 'Rede de Negócios Portuguesa Londres',
     platform: 'whatsapp',
     type: 'business_networking',
@@ -326,11 +326,11 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
   
   {
     id: 'network-telegram-portuguese-events',
-    name: 'Portuguese Events London',
+    name: 'Lusophone Events London',
     namePortuguese: 'Eventos Portugueses Londres',
     platform: 'telegram',
     type: 'cultural_events',
-    description: 'Telegram channel dedicated to Portuguese cultural events, festivals, and community gatherings in London and the United Kingdom.',
+    description: 'Telegram channel dedicated to Lusophone cultural events, festivals, and community gatherings in London and the United Kingdom.',
     descriptionPortuguese: 'Canal do Telegram dedicado a eventos culturais portugueses, festivais e encontros comunitários em Londres e no Reino Unido.',
     
     memberCount: 890,
@@ -379,7 +379,7 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
     },
     
     rules: [
-      'Portuguese/cultural events only',
+      'Lusophone/cultural events only',
       'Include all event details',
       'No spam or unrelated content',
       'Verify event authenticity'
@@ -394,11 +394,11 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
   
   {
     id: 'network-linkedin-portuguese-professionals',
-    name: 'Portuguese Professionals United Kingdom',
+    name: 'Lusophone Professionals United Kingdom',
     namePortuguese: 'Profissionais Portugueses Reino Unido',
     platform: 'linkedin',
     type: 'business_networking',
-    description: 'LinkedIn group for Portuguese professionals working in the United Kingdom. Career development, job opportunities, and professional networking.',
+    description: 'LinkedIn group for Lusophone professionals working in the United Kingdom. Career development, job opportunities, and professional networking.',
     descriptionPortuguese: 'Grupo do LinkedIn para profissionais portugueses que trabalham no Reino Unido. Desenvolvimento de carreira, oportunidades de emprego e networking profissional.',
     
     memberCount: 2800,

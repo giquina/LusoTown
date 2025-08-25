@@ -4,7 +4,7 @@
  * Critical Mobile Fixes for LusoTown Portuguese-speaking community Platform
  * 
  * This component addresses all critical mobile UX issues identified in the
- * comprehensive mobile experience review and implements Portuguese-specific optimizations.
+ * comprehensive mobile experience review and implements Lusophone-specific optimizations.
  */
 
 import React, { useEffect, useState, useCallback } from 'react';
@@ -46,7 +46,7 @@ export function MobileCriticalFixes({
   const { language } = useLanguage();
   const { colors } = useHeritage();
 
-  // Critical Fix 1: Portuguese Text Overflow Prevention
+  // Critical Fix 1: Lusophone Text Overflow Prevention
   const applyPortugueseTextFixes = useCallback(() => {
     if (!enablePortugueseFixes) return;
 
@@ -61,13 +61,13 @@ export function MobileCriticalFixes({
                                  element.textContent?.includes('õ');
 
         if (hasPortugueseText || language === 'pt') {
-          // Apply Portuguese text optimizations
+          // Apply Lusophone text optimizations
           element.style.wordBreak = 'break-word';
           element.style.hyphens = 'auto';
           element.style.overflowWrap = 'break-word';
           element.style.lineHeight = '1.5';
           
-          // Extra spacing for longer Portuguese words
+          // Extra spacing for longer Lusophone words
           if (element.tagName === 'BUTTON') {
             element.style.minHeight = '48px';
             element.style.padding = '12px 16px';
@@ -174,7 +174,7 @@ export function MobileCriticalFixes({
       }
     });
 
-    // Add lang attributes to Portuguese content
+    // Add lang attributes to Lusophone content
     if (language === 'pt') {
       document.documentElement.setAttribute('lang', 'pt-PT');
       const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, button, label');
@@ -356,7 +356,7 @@ export function MobileCriticalFixes({
         >
           <div>📱 Mobile Fixes Applied:</div>
           <div>Scroll Sensitivity: {fixes.scrollSensitivityFixed}</div>
-          <div>Portuguese Text: {fixes.portugueseTextOptimized}</div>
+          <div>Lusophone Text: {fixes.portugueseTextOptimized}</div>
           <div>Touch Targets: {fixes.touchTargetsApplied}</div>
           <div>Performance: {fixes.performanceEnhanced}</div>
           <div>Accessibility: {fixes.accessibilityFixed}</div>
@@ -387,7 +387,7 @@ export function MobileCriticalFixes({
               -webkit-overflow-scrolling: touch;
             }
 
-            /* Portuguese text optimization */
+            /* Lusophone text optimization */
             * {
               word-break: break-word;
               hyphens: auto;
@@ -414,7 +414,7 @@ export function MobileCriticalFixes({
               scroll-behavior: smooth;
             }
 
-            /* Portuguese cultural colors */
+            /* Lusophone cultural colors */
             .heritage-accent {
               background: linear-gradient(135deg, var(--portuguese-red), var(--portuguese-green));
             }
@@ -426,7 +426,7 @@ export function MobileCriticalFixes({
               -webkit-perspective: 1000;
             }
 
-            /* Portuguese text readability */
+            /* Lusophone text readability */
             p, span, label {
               line-height: var(--portuguese-text-line-height, 1.5);
               font-size: max(16px, 1rem); /* Prevent zoom on iOS */

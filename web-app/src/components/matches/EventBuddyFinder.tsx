@@ -92,9 +92,9 @@ export default function EventBuddyFinder({
         eventCategory: "Cultural",
         requesterName: "Sofia",
         requesterAge: 29,
-        requesterInterests: ["Fado", "Portuguese Culture", "Music", "Arts"],
+        requesterInterests: ["Fado", "Lusophone Culture", "Music", "Arts"],
         compatibilityScore: 94,
-        sharedInterests: ["Fado", "Portuguese Culture", "Music"],
+        sharedInterests: ["Fado", "Lusophone Culture", "Music"],
         culturalAlignment: 96,
         buddyDiscountPercent: 15,
         message: language === "pt" 
@@ -105,7 +105,7 @@ export default function EventBuddyFinder({
         isVerified: true,
         preferredBuddyCriteria: {
           ageRange: [25, 35],
-          interests: ["Fado", "Portuguese Culture"],
+          interests: ["Fado", "Lusophone Culture"],
           genderPreference: "any",
           portugueseSpeakerOnly: true,
         },
@@ -121,9 +121,9 @@ export default function EventBuddyFinder({
         eventCategory: "Gastronomy",
         requesterName: "Miguel",
         requesterAge: 32,
-        requesterInterests: ["Wine", "Portuguese Cuisine", "Networking", "Business"],
+        requesterInterests: ["Wine", "Lusophone Cuisine", "Networking", "Business"],
         compatibilityScore: 87,
-        sharedInterests: ["Wine", "Portuguese Cuisine"],
+        sharedInterests: ["Wine", "Lusophone Cuisine"],
         culturalAlignment: 89,
         buddyDiscountPercent: 20,
         message: language === "pt"
@@ -150,14 +150,14 @@ export default function EventBuddyFinder({
         eventCategory: "Sports",
         requesterName: "Carlos",
         requesterAge: 35,
-        requesterInterests: ["Football", "Sports", "Portuguese Pride", "Community"],
+        requesterInterests: ["Football", "Sports", "Lusophone Pride", "Community"],
         compatibilityScore: 91,
-        sharedInterests: ["Football", "Portuguese Pride"],
+        sharedInterests: ["Football", "Lusophone Pride"],
         culturalAlignment: 94,
         buddyDiscountPercent: 10,
         message: language === "pt"
           ? "Vamos apoiar a Seleção juntos! A energia da torcida portuguesa é incrível!"
-          : "Let's support the national team together! The energy of Portuguese fans is incredible!",
+          : "Let's support the national team together! The energy of Lusophone fans is incredible!",
         timePosted: "1d ago",
         responseRate: 78,
         isVerified: true,
@@ -470,7 +470,7 @@ export default function EventBuddyFinder({
             <p className="text-primary-600 text-sm mb-4">
               {language === "pt"
                 ? "Encontre alguém para participar em eventos portugueses juntos!"
-                : "Find someone to attend Portuguese events together!"}
+                : "Find someone to attend Lusophone events together!"}
             </p>
             <button className="bg-gradient-to-r from-secondary-600 to-accent-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-secondary-700 hover:to-accent-700 transition-all">
               {language === "pt" ? "Criar Pedido" : "Create Request"}

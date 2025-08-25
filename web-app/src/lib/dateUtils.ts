@@ -87,7 +87,7 @@ export function formatDateConsistent(
   return parts.join(' ')
 }
 
-// Portuguese-aware date formatting
+// Lusophone-aware date formatting
 export function formatPortugueseDate(
   date: Date | string,
   isPortuguese: boolean = false,

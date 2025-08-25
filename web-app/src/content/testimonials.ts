@@ -1,5 +1,5 @@
 // Centralized testimonial content. Move to CMS/i18n in a future step.
-// Keeping Portuguese-first authentic testimonials consolidated here.
+// Keeping Lusophone-first authentic testimonials consolidated here.
 
 import { buildAvatarUrl } from '@/config/cdn'
 

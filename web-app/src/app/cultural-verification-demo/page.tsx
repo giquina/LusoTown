@@ -24,9 +24,9 @@ const MOCK_VERIFIED_PROFILE = {
   name: 'Sofia',
   age: 28,
   location: 'Vauxhall',
-  profession: 'Portuguese Teacher',
+  profession: 'Lusophone Teacher',
   origin: 'Porto, Portugal',
-  interests: ['Fado Music', 'Portuguese Cuisine', 'Santos Populares', 'Travel', 'Photography'],
+  interests: ['Fado Music', 'Lusophone Cuisine', 'Santos Populares', 'Travel', 'Photography'],
   bio: 'Apaixonada pela cultura portuguesa e sempre à procura de pessoas que partilhem esta paixão. Adoro noites de fado e fazer pastéis de nata aos fins de semana.',
   image: undefined,
   compatibility: 92,
@@ -41,7 +41,7 @@ const MOCK_VERIFIED_PROFILE = {
       id: 'heritage_verified',
       name: 'Heritage Verified',
       namePortuguese: 'Herança Verificada',
-      description: 'Verified Portuguese cultural heritage through authentic photos',
+      description: 'Verified Lusophone cultural heritage through authentic photos',
       descriptionPortuguese: 'Herança cultural portuguesa verificada através de fotos autênticas',
       icon: '🛡️',
       color: 'emerald',
@@ -54,7 +54,7 @@ const MOCK_VERIFIED_PROFILE = {
       id: 'santos_populares_champion',
       name: 'Santos Populares Champion',
       namePortuguese: 'Campeã dos Santos Populares',
-      description: 'Celebrates Portuguese Saints festivals with passion',
+      description: 'Celebrates Lusophone Saints festivals with passion',
       descriptionPortuguese: 'Celebra as festas dos Santos Populares com paixão',
       icon: '🎊',
       color: 'yellow',
@@ -67,7 +67,7 @@ const MOCK_VERIFIED_PROFILE = {
       id: 'fado_lover',
       name: 'Fado Lover',
       namePortuguese: 'Amante do Fado',
-      description: 'Deep appreciation for Portuguese Fado music',
+      description: 'Deep appreciation for Lusophone Fado music',
       descriptionPortuguese: 'Apreço profundo pela música Fado portuguesa',
       icon: '🎵',
       color: 'slate',
@@ -99,14 +99,14 @@ const MOCK_VERIFIED_PROFILE = {
       id: 'starter_1',
       text: 'Qual é a tua memória favorita dos Santos Populares?',
       category: 'Cultural',
-      culturalContext: 'Portuguese Festivals',
+      culturalContext: 'Lusophone Festivals',
       popularity: 89
     },
     {
       id: 'starter_2',
       text: 'Where do you find the best pastéis de nata in London?',
       category: 'Food',
-      culturalContext: 'Portuguese Cuisine',
+      culturalContext: 'Lusophone Cuisine',
       popularity: 76
     }
   ],
@@ -173,7 +173,7 @@ export default function CulturalVerificationDemoPage() {
                 </div>
                 <div>
                   <h1 className="text-2xl font-bold text-gray-900">
-                    {language === 'pt' ? 'Demo: Verificação Cultural Portuguesa' : 'Demo: Portuguese Cultural Verification'}
+                    {language === 'pt' ? 'Demo: Verificação Cultural Portuguesa' : 'Demo: Lusophone Cultural Verification'}
                   </h1>
                   <p className="text-gray-600">
                     {language === 'pt' 
@@ -219,7 +219,7 @@ export default function CulturalVerificationDemoPage() {
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 {language === 'pt' 
                   ? 'Revolucione os seus matches com verificação inteligente da autenticidade cultural portuguesa. Aumente a credibilidade, ganhe distintivos e conecte-se com pessoas que realmente partilham a sua herança.'
-                  : 'Revolutionize your matches with intelligent Portuguese cultural authenticity verification. Boost credibility, earn badges, and connect with people who truly share your heritage.'
+                  : 'Revolutionize your matches with intelligent Lusophone cultural authenticity verification. Boost credibility, earn badges, and connect with people who truly share your heritage.'
                 }
               </p>
             </div>
@@ -235,7 +235,7 @@ export default function CulturalVerificationDemoPage() {
                 <p className="text-sm text-gray-600">
                   {language === 'pt' 
                     ? 'Sistema inteligente detecta elementos culturais portugueses automaticamente'
-                    : 'Smart system automatically detects Portuguese cultural elements'
+                    : 'Smart system automatically detects Lusophone cultural elements'
                   }
                 </p>
               </div>

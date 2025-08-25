@@ -99,7 +99,7 @@ export default function ConversationManager({
 
   const loadConversationStarters = async () => {
     try {
-      // Mock Portuguese conversation starters
+      // Mock Lusophone conversation starters
       const mockStarters: ConversationStarter[] = [
         {
           id: 'cs-1',
@@ -114,7 +114,7 @@ export default function ConversationManager({
           category: 'food',
           promptEn: "Where do you find the best pastéis de nata in London?",
           promptPt: 'Onde encontra os melhores pastéis de nata em Londres?',
-          culturalContext: 'Classic Portuguese pastry conversation starter',
+          culturalContext: 'Classic Lusophone pastry conversation starter',
           usageCount: 203
         },
         {
@@ -128,7 +128,7 @@ export default function ConversationManager({
         {
           id: 'cs-4',
           category: 'events',
-          promptEn: "Have you been to any Portuguese cultural events in London recently?",
+          promptEn: "Have you been to any Lusophone cultural events in London recently?",
           promptPt: 'Tem ido a eventos culturais portugueses em Londres?',
           culturalContext: 'Connects to LusoTown community events',
           usageCount: 167
@@ -136,7 +136,7 @@ export default function ConversationManager({
         {
           id: 'cs-5',
           category: 'sports',
-          promptEn: "How do you follow Portuguese football while living in London?",
+          promptEn: "How do you follow Lusophone football while living in London?",
           promptPt: 'Como acompanha o futebol português vivendo em Londres?',
           culturalContext: 'Football is central to Portuguese culture',
           usageCount: 134
@@ -144,7 +144,7 @@ export default function ConversationManager({
         {
           id: 'cs-6',
           category: 'language',
-          promptEn: "Do you speak Portuguese at home or mostly English now?",
+          promptEn: "Do you speak Lusophone at home or mostly English now?",
           promptPt: 'Fala português em casa ou principalmente inglês agora?',
           culturalContext: 'Language preservation in diaspora',
           usageCount: 98
@@ -152,7 +152,7 @@ export default function ConversationManager({
         {
           id: 'cs-7',
           category: 'holidays',
-          promptEn: "How do you celebrate Portuguese holidays like Santos Populares in London?",
+          promptEn: "How do you celebrate Lusophone holidays like Santos Populares in London?",
           promptPt: 'Como celebra as festas portuguesas como os Santos Populares em Londres?',
           culturalContext: 'Traditional June festivals',
           usageCount: 76
@@ -190,7 +190,7 @@ export default function ConversationManager({
   const translations = {
     en: {
       title: 'Conversation Helper',
-      subtitle: 'Break the ice with Portuguese cultural conversation starters',
+      subtitle: 'Break the ice with Lusophone cultural conversation starters',
       expiryWarning: 'Conversation expires in',
       expired: 'This conversation has expired',
       extendConversation: 'Book an event to continue chatting',

@@ -278,7 +278,7 @@ class NotificationService {
       user_id: userId,
       notification_type: 'cultural',
       title: `🎉 ${eventData.event_title}`,
-      message: `A Portuguese cultural event is coming up on ${new Date(eventData.event_date).toLocaleDateString()}. ${eventData.cultural_significance || 'Join fellow Portuguese speakers for this special celebration!'}`,
+      message: `A Lusophone cultural event is coming up on ${new Date(eventData.event_date).toLocaleDateString()}. ${eventData.cultural_significance || 'Join fellow Portuguese speakers for this special celebration!'}`,
       action_url: `/events/${eventData.event_id}`,
       action_data: {
         type: 'cultural_event',
@@ -329,7 +329,7 @@ class NotificationService {
   }): Promise<void> {
     const message = businessData.special_offer
       ? `${businessData.business_name} in ${businessData.neighborhood} has a special offer: ${businessData.special_offer}`
-      : `New Portuguese ${businessData.business_type} ${businessData.business_name} is now featured in ${businessData.neighborhood}.`
+      : `New Lusophone ${businessData.business_type} ${businessData.business_name} is now featured in ${businessData.neighborhood}.`
 
     await this.createNotification({
       user_id: userId,

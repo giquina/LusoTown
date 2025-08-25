@@ -118,7 +118,7 @@ export default function ProfessionalNetworking({
       id: 'mentoring', 
       label: 'Offer Mentorship', 
       labelPt: 'Oferecer Mentoria',
-      description: 'Guide other Portuguese professionals',
+      description: 'Guide other Lusophone professionals',
       descriptionPt: 'Orientar outros profissionais portugueses',
       icon: UsersIcon 
     },
@@ -148,7 +148,7 @@ export default function ProfessionalNetworking({
     },
     { 
       id: 'portuguese-market', 
-      label: 'Portuguese Market Access', 
+      label: 'Lusophone Market Access', 
       labelPt: 'Acesso ao Mercado Português',
       description: 'Expand to Portuguese-speaking markets',
       descriptionPt: 'Expandir para mercados lusófonos',
@@ -168,7 +168,7 @@ export default function ProfessionalNetworking({
     'Leadership', 'Project Management', 'Digital Marketing', 'Data Analysis', 
     'Sales', 'Customer Service', 'Financial Analysis', 'Legal Expertise',
     'Software Development', 'Design', 'Translation', 'International Trade',
-    'Portuguese Language', 'Cross-Cultural Communication', 'Business Development',
+    'Lusophone Language', 'Cross-Cultural Communication', 'Business Development',
     'Operations Management', 'Human Resources', 'Accounting', 'Consulting'
   ]
 

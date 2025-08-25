@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// Portuguese cultural notification preferences management
+// Lusophone cultural notification preferences management
 export async function PUT(request: NextRequest) {
   try {
     const body = await request.json();
@@ -20,8 +20,8 @@ export async function PUT(request: NextRequest) {
       );
     }
 
-    // Update Portuguese cultural notification preferences
-    console.log('[Push Preferences] Updating Portuguese cultural preferences:', {
+    // Update Lusophone cultural notification preferences
+    console.log('[Push Preferences] Updating Lusophone cultural preferences:', {
       endpoint: subscription.endpoint,
       preferences: {
         culturalEvents: preferences.culturalEvents,
@@ -66,7 +66,7 @@ export async function PUT(request: NextRequest) {
     // Send confirmation based on language preference
     const confirmationMessage = language === 'pt' 
       ? 'Preferências de notificações portuguesas atualizadas com sucesso'
-      : 'Portuguese notification preferences updated successfully';
+      : 'Lusophone notification preferences updated successfully';
 
     return NextResponse.json({
       success: true,

@@ -73,7 +73,7 @@ export default function LocationAwareEvents({
           <p className="text-sm text-gray-600">
             {isPortuguese
               ? "Procurando eventos portugueses próximos..."
-              : "Finding nearby Portuguese events..."}
+              : "Finding nearby Lusophone events..."}
           </p>
         </div>
       )}

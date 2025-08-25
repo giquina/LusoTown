@@ -50,13 +50,13 @@ interface SocialExperience {
 const socialExperiences: SocialExperience[] = [
   {
     id: "tasca_culture",
-    titleEn: "Tasca Culture - Intimate Portuguese Taverns",
+    titleEn: "Tasca Culture - Intimate Lusophone Taverns",
     titlePt: "Cultura de Tasca - Tabernas Portuguesas Íntimas",
     category: "tasca",
     atmosphere: "intimate",
     timeOfDay: "evening",
     icon: "🍷",
-    descriptionEn: "Intimate Portuguese taverns where live fado, warm conversation, and authentic community atmosphere create magical evenings. These are the heart of Portuguese social life.",
+    descriptionEn: "Intimate Lusophone taverns where live fado, warm conversation, and authentic community atmosphere create magical evenings. These are the heart of Lusophone social life.",
     descriptionPt: "Tabernas portuguesas íntimas onde fado ao vivo, conversas calorosas e atmosfera comunitária autêntica criam noites mágicas. Estas são o coração da vida social portuguesa.",
     socialMagic: {
       en: "Tascas create instant intimacy between strangers. You'll share tables, stories, and emotions with people who become friends by the end of the evening.",
@@ -65,12 +65,12 @@ const socialExperiences: SocialExperience[] = [
     londonSpots: ["Casa do Bacalhau (Borough)", "Taberna Real (Vauxhall)", "O Tasco (Stockwell)", "Adega (Bermondsey)"],
     typicalTiming: "7pm - 11pm, Thursday to Saturday",
     communityVibe: {
-      en: "Multigenerational gatherings where elderly Portuguese share wisdom with young professionals, creating beautiful intergenerational connections.",
+      en: "Multigenerational gatherings where elderly Lusophone share wisdom with young professionals, creating beautiful intergenerational connections.",
       pt: "Encontros multigeracionais onde portugueses idosos partilham sabedoria com jovens profissionais, criando belas conexões intergeracionais."
     },
     whatToExpect: ["Live fado performance", "Shared dining tables", "Portuguese wine", "Warm conversations", "Emotional connections"],
     culturalAuthenticity: {
-      en: "Authentic Portuguese hospitality where everyone is treated like family, and the warmth is genuine and overwhelming.",
+      en: "Authentic Lusophone hospitality where everyone is treated like family, and the warmth is genuine and overwhelming.",
       pt: "Hospitalidade portuguesa autêntica onde todos são tratados como família, e o calor é genuíno e avassalador."
     },
     socialBenefits: ["Deep connections", "Cultural immersion", "Emotional release", "Community belonging", "Authentic friendships"]
@@ -83,13 +83,13 @@ const socialExperiences: SocialExperience[] = [
     atmosphere: "celebratory",
     timeOfDay: "all_day",
     icon: "🎉",
-    descriptionEn: "Incredible street festivals celebrating Santo António, São João, and São Pedro with grilled sardines, community dancing, and infectious Portuguese joy that transforms London streets.",
+    descriptionEn: "Incredible street festivals celebrating Santo António, São João, and São Pedro with grilled sardines, community dancing, and infectious Lusophone joy that transforms London streets.",
     descriptionPt: "Festivais de rua incríveis celebrando Santo António, São João e São Pedro com sardinhas grelhadas, dança comunitária e alegria portuguesa contagiosa que transforma as ruas de Londres.",
     socialMagic: {
       en: "These festivals create pure community magic. Everyone dances together - children, grandparents, newcomers. The joy is absolutely infectious and unforgettable.",
       pt: "Estes festivais criam magia comunitária pura. Todos dançam juntos - crianças, avós, recém-chegados. A alegria é absolutamente contagiosa e inesquecível."
     },
-    londonSpots: ["Stockwell Park", "Portuguese Centre courtyards", "Borough Market area", "Community squares across London"],
+    londonSpots: ["Stockwell Park", "Lusophone Centre courtyards", "Borough Market area", "Community squares across London"],
     typicalTiming: "June 13th (Santo António), June 24th (São João), June 29th (São Pedro)",
     communityVibe: {
       en: "The entire Portuguese-speaking community comes together in joyous celebration, creating the most welcoming and inclusive atmosphere imaginable.",
@@ -97,26 +97,26 @@ const socialExperiences: SocialExperience[] = [
     },
     whatToExpect: ["Grilled sardines", "Traditional decorations", "Community dancing", "Live music", "Street parties", "Traditional games"],
     culturalAuthenticity: {
-      en: "These are Portugal's most beloved festivals, recreated with complete authenticity and passion in London's Portuguese communities.",
+      en: "These are Portugal's most beloved festivals, recreated with complete authenticity and passion in London's Lusophone communities.",
       pt: "Estes são os festivais mais amados de Portugal, recriados com total autenticidade e paixão nas comunidades portuguesas de Londres."
     },
     socialBenefits: ["Community celebration", "Cultural pride", "Intergenerational bonding", "Neighborhood connections", "Joyful memories"]
   },
   {
     id: "guitar_circles",
-    titleEn: "Portuguese Guitar Circles",
+    titleEn: "Lusophone Guitar Circles",
     titlePt: "Círculos de Guitarra Portuguesa",
     category: "guitar_circle",
     atmosphere: "intimate",
     timeOfDay: "evening",
     icon: "🎸",
-    descriptionEn: "Intimate acoustic sessions where Portuguese hearts connect through music. Everyone shares songs, stories, and the magical sound of guitarra portuguesa.",
+    descriptionEn: "Intimate acoustic sessions where Lusophone hearts connect through music. Everyone shares songs, stories, and the magical sound of guitarra portuguesa.",
     descriptionPt: "Sessões acústicas íntimas onde corações portugueses se conectam através da música. Todos partilham canções, histórias e o som mágico da guitarra portuguesa.",
     socialMagic: {
       en: "Music transcends language barriers. You'll find yourself emotionally connected to people through shared melodies, even if you're just listening.",
       pt: "A música transcende barreiras linguísticas. Encontrar-se-á emocionalmente conectado às pessoas através de melodias partilhadas, mesmo que esteja apenas a ouvir."
     },
-    londonSpots: ["Private homes", "Portuguese cultural centres", "Small intimate venues", "Community spaces"],
+    londonSpots: ["Private homes", "Lusophone cultural centres", "Small intimate venues", "Community spaces"],
     typicalTiming: "Friday evenings, 7pm - 10pm",
     communityVibe: {
       en: "These circles welcome everyone - musicians and music lovers alike. The atmosphere is supportive, nurturing, and deeply emotional.",
@@ -131,34 +131,34 @@ const socialExperiences: SocialExperience[] = [
   },
   {
     id: "portuguese_cafe_culture",
-    titleEn: "Portuguese Café Culture - Social Gathering Spaces",
+    titleEn: "Lusophone Café Culture - Social Gathering Spaces",
     titlePt: "Cultura de Café Portuguesa - Espaços de Encontro Social",
     category: "cafe",
     atmosphere: "social",
     timeOfDay: "morning",
     icon: "☕",
-    descriptionEn: "Traditional Portuguese cafés where strong coffee, pastéis de nata, and animated conversation create the perfect social atmosphere for community bonding.",
+    descriptionEn: "Traditional Lusophone cafés where strong coffee, pastéis de nata, and animated conversation create the perfect social atmosphere for community bonding.",
     descriptionPt: "Cafés portugueses tradicionais onde café forte, pastéis de nata e conversas animadas criam a atmosfera social perfeita para união comunitária.",
     socialMagic: {
-      en: "Portuguese cafés are community living rooms where regulars become family, and newcomers are warmly welcomed into ongoing conversations.",
+      en: "Lusophone cafés are community living rooms where regulars become family, and newcomers are warmly welcomed into ongoing conversations.",
       pt: "Os cafés portugueses são salas de estar comunitárias onde os habituais se tornam família, e os recém-chegados são calorosamente acolhidos em conversas contínuas."
     },
-    londonSpots: ["Café da Esquina (Stockwell)", "Pastelaria Ribatejo (Vauxhall)", "Café Central (Harrow)", "Local Portuguese bakeries"],
+    londonSpots: ["Café da Esquina (Stockwell)", "Pastelaria Ribatejo (Vauxhall)", "Café Central (Harrow)", "Local Lusophone bakeries"],
     typicalTiming: "Morning coffee: 7am - 11am, Afternoon chat: 3pm - 6pm",
     communityVibe: {
-      en: "These spaces buzz with Portuguese conversation, where community news is shared, friendships are formed, and cultural connections are maintained.",
+      en: "These spaces buzz with Lusophone conversation, where community news is shared, friendships are formed, and cultural connections are maintained.",
       pt: "Estes espaços fervilham com conversas portuguesas, onde notícias da comunidade são partilhadas, amizades se formam e conexões culturais são mantidas."
     },
-    whatToExpect: ["Strong Portuguese coffee", "Fresh pastéis de nata", "Animated conversations", "Community news", "Cultural discussions"],
+    whatToExpect: ["Strong Lusophone coffee", "Fresh pastéis de nata", "Animated conversations", "Community news", "Cultural discussions"],
     culturalAuthenticity: {
-      en: "Authentic Portuguese café culture where time moves slowly, conversations are deep, and community connections are treasured.",
+      en: "Authentic Lusophone café culture where time moves slowly, conversations are deep, and community connections are treasured.",
       pt: "Cultura de café portuguesa autêntica onde o tempo move-se devagar, as conversas são profundas e as conexões comunitárias são valorizadas."
     },
     socialBenefits: ["Daily community", "Cultural preservation", "Social routine", "Information sharing", "Multigenerational connection"]
   },
   {
     id: "traditional_dance_nights",
-    titleEn: "Traditional Portuguese Dance Nights",
+    titleEn: "Traditional Lusophone Dance Nights",
     titlePt: "Noites de Dança Tradicional Portuguesa",
     category: "dance_night",
     atmosphere: "vibrant",
@@ -170,13 +170,13 @@ const socialExperiences: SocialExperience[] = [
       en: "Dancing breaks down all social barriers. Within minutes, strangers are holding hands, laughing together, and creating joyful memories that last forever.",
       pt: "A dança quebra todas as barreiras sociais. Em minutos, estranhos estão de mãos dadas, rindo juntos e criando memórias alegres que duram para sempre."
     },
-    londonSpots: ["Portuguese Centre (Stockwell)", "Community halls", "Cultural associations", "Church halls"],
+    londonSpots: ["Lusophone Centre (Stockwell)", "Community halls", "Cultural associations", "Church halls"],
     typicalTiming: "Saturday evenings, 7pm - 11pm",
     communityVibe: {
       en: "These nights welcome all ages and skill levels. Experienced dancers patiently teach newcomers, creating inclusive and joyful learning environments.",
       pt: "Estas noites acolhem todas as idades e níveis de habilidade. Dançarinos experientes ensinam pacientemente os novatos, criando ambientes de aprendizagem inclusivos e alegres."
     },
-    whatToExpect: ["Traditional Portuguese dances", "Patient teaching", "Community inclusion", "Live music", "Joyful atmosphere", "Cultural costumes"],
+    whatToExpect: ["Traditional Lusophone dances", "Patient teaching", "Community inclusion", "Live music", "Joyful atmosphere", "Cultural costumes"],
     culturalAuthenticity: {
       en: "These dances preserve centuries-old Portuguese traditions, maintaining cultural identity through movement and music.",
       pt: "Estas danças preservam tradições portuguesas centenárias, mantendo a identidade cultural através do movimento e música."
@@ -185,16 +185,16 @@ const socialExperiences: SocialExperience[] = [
   },
   {
     id: "fado_houses",
-    titleEn: "Fado Houses - Where Portuguese Souls Connect",
+    titleEn: "Fado Houses - Where Lusophone Souls Connect",
     titlePt: "Casas de Fado - Onde Almas Portuguesas se Conectam",
     category: "fado_house",
     atmosphere: "cultural",
     timeOfDay: "night",
     icon: "🎵",
-    descriptionEn: "Intimate venues where Portuguese soul comes alive through fado music, creating deeply emotional experiences that touch hearts and build profound connections.",
+    descriptionEn: "Intimate venues where Lusophone soul comes alive through fado music, creating deeply emotional experiences that touch hearts and build profound connections.",
     descriptionPt: "Locais íntimos onde a alma portuguesa ganha vida através da música do fado, criando experiências profundamente emocionais que tocam corações e constroem conexões profundas.",
     socialMagic: {
-      en: "Fado creates shared emotional experiences. Strangers cry together, feel together, and leave with deep understanding of Portuguese saudade.",
+      en: "Fado creates shared emotional experiences. Strangers cry together, feel together, and leave with deep understanding of Lusophone saudade.",
       pt: "O fado cria experiências emocionais partilhadas. Estranhos choram juntos, sentem juntos e saem com profundo entendimento da saudade portuguesa."
     },
     londonSpots: ["Traditional Portuguese restaurants", "Cultural centres", "Intimate performance spaces", "Private fado evenings"],
@@ -205,7 +205,7 @@ const socialExperiences: SocialExperience[] = [
     },
     whatToExpected: ["Live fado performances", "Emotional atmosphere", "Portuguese wine", "Respectful silence", "Deep cultural connection"],
     culturalAuthenticity: {
-      en: "UNESCO-recognized fado maintains its authentic form in London, preserving the true essence of Portuguese emotional expression.",
+      en: "UNESCO-recognized fado maintains its authentic form in London, preserving the true essence of Lusophone emotional expression.",
       pt: "O fado reconhecido pela UNESCO mantém a sua forma autêntica em Londres, preservando a verdadeira essência da expressão emocional portuguesa."
     },
     socialBenefits: ["Emotional release", "Cultural pride", "Spiritual connection", "Heritage preservation", "Deep understanding"]
@@ -273,7 +273,7 @@ const PortugueseNightlifeSocialScene: React.FC = () => {
           <div className="inline-flex items-center bg-gradient-to-r from-indigo-100 to-purple-100 rounded-full px-6 py-3 mb-6">
             <MoonIcon className="w-5 h-5 text-indigo-600 mr-2" />
             <span className="text-indigo-700 font-medium">
-              {language === "pt" ? "Vida Social Portuguesa" : "Portuguese Social Life"}
+              {language === "pt" ? "Vida Social Portuguesa" : "Lusophone Social Life"}
             </span>
           </div>
 
@@ -462,7 +462,7 @@ const PortugueseNightlifeSocialScene: React.FC = () => {
           <blockquote className="text-2xl md:text-3xl italic mb-4">
             {language === "pt" 
               ? "\"A hospitalidade portuguesa transforma estranhos em família numa só noite.\""
-              : "\"Portuguese hospitality transforms strangers into family in a single night.\""}
+              : "\"Lusophone hospitality transforms strangers into family in a single night.\""}
           </blockquote>
           <div className="mt-6">
             <p className="text-lg opacity-95">

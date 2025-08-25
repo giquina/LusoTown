@@ -59,13 +59,13 @@ export type {
 // Utility functions for common operations
 export const PortugueseServiceUtils = {
   /**
-   * Format Portuguese phone numbers
+   * Format Lusophone phone numbers
    */
   formatPortuguesePhone: (phone: string): string => {
     // Remove all non-digits
     const digits = phone.replace(/\D/g, '')
     
-    // Portuguese mobile: +351 9XX XXX XXX
+    // Lusophone mobile: +351 9XX XXX XXX
     if (digits.startsWith('351') && digits.length === 12) {
       return `+351 ${digits.slice(3, 6)} ${digits.slice(6, 9)} ${digits.slice(9)}`
     }
@@ -79,7 +79,7 @@ export const PortugueseServiceUtils = {
   },
 
   /**
-   * Get Portuguese region display name
+   * Get Lusophone region display name
    */
   getRegionDisplayName: (region: string): string => {
     const regionNames: Record<string, string> = {
@@ -96,7 +96,7 @@ export const PortugueseServiceUtils = {
   },
 
   /**
-   * Format Portuguese currency (EUR)
+   * Format Lusophone currency (EUR)
    */
   formatEuroPrice: (amount: number): string => {
     return new Intl.NumberFormat('pt-PT', {
@@ -122,7 +122,7 @@ export const PortugueseServiceUtils = {
   },
 
   /**
-   * Get Portuguese cultural compatibility description
+   * Get Lusophone cultural compatibility description
    */
   getCulturalCompatibilityDescription: (score: number): string => {
     if (score >= 90) return 'Compatibilidade cultural muito forte'
@@ -133,13 +133,13 @@ export const PortugueseServiceUtils = {
   },
 
   /**
-   * Get London Portuguese neighborhoods
+   * Get London Lusophone neighborhoods
    */
   getLondonPortugueseNeighborhoods: (): Array<{ value: string; label: string; description: string }> => [
     {
       value: 'stockwell',
       label: 'Stockwell',
-      description: 'Heart of Little Portugal with Portuguese Centre'
+      description: 'Heart of Little Portugal with Lusophone Centre'
     },
     {
       value: 'south_lambeth',
@@ -159,22 +159,22 @@ export const PortugueseServiceUtils = {
     {
       value: 'hammersmith',
       label: 'Hammersmith',
-      description: 'Emerging Portuguese professional area'
+      description: 'Emerging Lusophone professional area'
     },
     {
       value: 'elephant_castle',
       label: 'Elephant & Castle',
-      description: 'Diverse Portuguese and Latin community'
+      description: 'Diverse Lusophone and Latin community'
     },
     {
       value: 'bermondsey',
       label: 'Bermondsey',
-      description: 'Growing Portuguese family area'
+      description: 'Growing Lusophone family area'
     },
     {
       value: 'east_london',
       label: 'East London',
-      description: 'Young Portuguese professionals'
+      description: 'Young Lusophone professionals'
     }
   ],
 
@@ -197,7 +197,7 @@ export const PortugueseServiceUtils = {
   ],
 
   /**
-   * Validate Portuguese VAT number (NIF)
+   * Validate Lusophone VAT number (NIF)
    */
   validatePortugueseVAT: (vat: string): boolean => {
     const cleanVAT = vat.replace(/\D/g, '')
@@ -252,7 +252,7 @@ export const initializePortugueseServices = async (): Promise<{
       culturalPreferences
     }
   } catch (error) {
-    console.error('Error initializing Portuguese services:', error)
+    console.error('Error initializing Lusophone services:', error)
     return {
       isAuthenticated: false,
       userProfile: null,

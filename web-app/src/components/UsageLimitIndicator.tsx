@@ -372,7 +372,7 @@ export default function UsageLimitIndicator({
                 <div className="mt-4 text-xs text-gray-500 text-center">
                   {isPortuguese 
                     ? '750+ portugueses já fizeram upgrade para acesso ilimitado'
-                    : '750+ Portuguese speakers already upgraded to unlimited access'}
+                    : 'Portuguese speakers already upgraded to unlimited access'}
                 </div>
               </div>
             </motion.div>

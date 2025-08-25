@@ -81,9 +81,9 @@ const PORTUGUESE_COUNTRIES = [
   },
   { 
     code: 'uk-heritage' as PortugueseCountry, 
-    name: 'UK-Born Portuguese Heritage', 
+    name: 'UK-Born Lusophone Heritage', 
     flag: '🇬🇧',
-    description: 'Born in UK with Portuguese family heritage'
+    description: 'Born in UK with Lusophone family heritage'
   }
 ]
 
@@ -91,7 +91,7 @@ const CULTURAL_BACKGROUNDS = [
   'Portuguese traditions', 'Brazilian culture', 'Angolan heritage', 
   'Mozambican culture', 'Cape Verdean traditions', 'Guinea-Bissau culture',
   'São Tomé culture', 'Timorese heritage', 'Macanese culture',
-  'Portuguese diaspora', 'Mixed heritage', 'Second generation',
+  'Lusophone diaspora', 'Mixed heritage', 'Second generation',
   'Third generation', 'Recent immigrant', 'Long-established family'
 ]
 
@@ -142,7 +142,7 @@ export default function CulturalFlagSelector({
       {/* Country Selection */}
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-3">
-          {t('signup.portuguese-origin', 'Portuguese Origin')}
+          {t('signup.portuguese-origin', 'Lusophone Origin')}
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {PORTUGUESE_COUNTRIES.map((country, index) => (

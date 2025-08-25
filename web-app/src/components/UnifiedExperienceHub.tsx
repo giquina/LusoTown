@@ -74,7 +74,7 @@ export default function UnifiedExperienceHub({
       id: "connect",
       name: isPortuguese ? "Conectar" : "Connect",
       icon: UserGroupIcon,
-      description: isPortuguese ? "Rede portuguesa" : "Portuguese network",
+      description: isPortuguese ? "Rede portuguesa" : "Lusophone network",
     },
     {
       id: "upgrade",
@@ -449,7 +449,7 @@ export default function UnifiedExperienceHub({
       {/* Network Stats */}
       <div className="bg-gradient-to-r from-premium-50 to-accent-50 rounded-xl p-6 border border-premium-200">
         <h3 className="text-xl font-bold text-gray-900 mb-6">
-          {isPortuguese ? "Sua Rede Portuguesa" : "Your Portuguese Network"}
+          {isPortuguese ? "Sua Rede Portuguesa" : "Your Lusophone Network"}
         </h3>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="text-center">
@@ -558,7 +558,7 @@ export default function UnifiedExperienceHub({
                 <span>
                   {isPortuguese
                     ? "Suporte português 24/7"
-                    : "24/7 Portuguese support"}
+                    : "24/7 Lusophone support"}
                 </span>
               </div>
               <div className="flex items-center space-x-3">

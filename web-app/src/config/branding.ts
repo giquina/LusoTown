@@ -12,7 +12,7 @@ export const BRANDED_FEATURES = {
     en: 'LusoMatch',
     pt: 'LusoMatch',
     description: {
-      en: 'Portuguese cultural matching system',
+      en: 'Lusophone cultural matching system',
       pt: 'Sistema de matches culturais portugueses'
     }
   },
@@ -21,7 +21,7 @@ export const BRANDED_FEATURES = {
     en: 'LusoStream',
     pt: 'LusoStream', 
     description: {
-      en: 'Portuguese cultural streaming platform',
+      en: 'Lusophone cultural streaming platform',
       pt: 'Plataforma de streaming cultural portuguesa'
     }
   },
@@ -57,7 +57,7 @@ export const BRANDED_FEATURES = {
     en: 'LusoEvents',
     pt: 'LusoEventos',
     description: {
-      en: 'Portuguese cultural events platform',
+      en: 'Lusophone cultural events platform',
       pt: 'Plataforma de eventos culturais portugueses'
     }
   },
@@ -75,17 +75,17 @@ export const BRANDED_FEATURES = {
 // Feature Taglines
 export const BRANDED_TAGLINES = {
   LUSOMATCH: {
-    en: 'Where Portuguese Hearts Connect',
+    en: 'Where Lusophone Hearts Connect',
     pt: 'Onde os Corações Portugueses se Conectam'
   },
   
   LUSOSTREAM: {
-    en: 'Portuguese Culture, Live & On-Demand',
+    en: 'Lusophone Culture, Live & On-Demand',
     pt: 'Cultura Portuguesa, Ao Vivo & On-Demand'
   },
   
   LUSORIDE: {
-    en: 'Your Portuguese-Speaking Driver Network', 
+    en: 'Your Lusophone-Speaking Driver Network', 
     pt: 'Sua Rede de Motoristas que Falam Português'
   },
   
@@ -95,17 +95,17 @@ export const BRANDED_TAGLINES = {
   },
   
   LUSOCONNECT: {
-    en: 'Professional Portuguese Network',
+    en: 'Professional Lusophone Network',
     pt: 'Rede Profissional Portuguesa'
   },
   
   LUSOEVENTS: {
-    en: 'Authentic Portuguese Experiences',
+    en: 'Authentic Lusophone Experiences',
     pt: 'Experiências Portuguesas Autênticas'
   },
   
   LUSOLEARN: {
-    en: 'Master Portuguese Culture & Services',
+    en: 'Master Lusophone Culture & Services',
     pt: 'Domine a Cultura e Serviços Portugueses'
   }
 } as const;
@@ -140,7 +140,7 @@ export const BRANDED_CTA = {
       pt: 'Reservar LusoRide'
     },
     secondary: {
-      en: 'Find Portuguese Driver',
+      en: 'Find Lusophone Driver',
       pt: 'Encontrar Motorista Português'
     }
   },
@@ -193,9 +193,9 @@ export const BRANDED_CTA = {
 // Brand Colors for Features (using Portuguese heritage colors)
 export const FEATURE_COLORS = {
   LUSOMATCH: {
-    primary: '#DC2626', // Portuguese red
-    secondary: '#16A34A', // Portuguese green
-    accent: '#F59E0B' // Portuguese gold
+    primary: '#DC2626', // Lusophone red
+    secondary: '#16A34A', // Lusophone green
+    accent: '#F59E0B' // Lusophone gold
   },
   
   LUSOSTREAM: {
@@ -218,7 +218,7 @@ export const FEATURE_COLORS = {
   
   LUSOCONNECT: {
     primary: '#1F2937', // Professional gray
-    secondary: '#DC2626', // Portuguese red
+    secondary: '#DC2626', // Lusophone red
     accent: '#F59E0B' // Gold
   },
   

@@ -1,15 +1,15 @@
 /**
  * PortugueseCulturalAI.ts
- * AI-Powered Portuguese Cultural Content Generation
+ * AI-Powered Lusophone Cultural Content Generation
  * 
- * Advanced AI system for generating authentic Portuguese cultural content,
- * personalized recommendations, and cultural insights for the Portuguese
+ * Advanced AI system for generating authentic Lusophone cultural content,
+ * personalized recommendations, and cultural insights for the Lusophone
  * diaspora community in London.
  */
 
 import { culturalCompatibilityAI, CulturalMatchResult } from './CulturalCompatibilityAI'
 
-// Portuguese Cultural Knowledge Base
+// Lusophone Cultural Knowledge Base
 interface PortugueseCulturalKnowledge {
   // Regional Specialties
   regionalCuisine: Record<string, CulturalFood[]>
@@ -159,7 +159,7 @@ export class PortugueseCulturalAI {
   }
 
   /**
-   * Generate personalized Portuguese cultural content
+   * Generate personalized Lusophone cultural content
    */
   public async generateCulturalContent(request: CulturalContentRequest): Promise<GeneratedCulturalContent> {
     switch (request.contentType) {
@@ -181,28 +181,28 @@ export class PortugueseCulturalAI {
   }
 
   /**
-   * Generate daily Portuguese cultural tips
+   * Generate daily Lusophone cultural tips
    */
   private async generateDailyTip(request: CulturalContentRequest): Promise<GeneratedCulturalContent> {
     const tips = [
       {
-        title: 'Portuguese Greeting Etiquette',
+        title: 'Lusophone Greeting Etiquette',
         titlePt: 'Etiqueta dos Cumprimentos Portugueses',
         content: 'In Portuguese culture, greetings are warm and personal. Men typically shake hands while women often exchange kisses on both cheeks, even in business settings.',
         contentPt: 'Na cultura portuguesa, os cumprimentos são calorosos e pessoais. Os homens normalmente apertam as mãos enquanto as mulheres frequentemente trocam beijinhos em ambas as faces, mesmo em contextos profissionais.',
-        culturalContext: 'Portuguese social warmth differs from British reserve',
+        culturalContext: 'Lusophone social warmth differs from British reserve',
         emotionalTone: 'informative'
       },
       {
-        title: 'The Art of Portuguese Hospitality',
+        title: 'The Art of Lusophone Hospitality',
         titlePt: 'A Arte da Hospitalidade Portuguesa',
-        content: 'Portuguese hosts will always offer food and drink to guests. Refusing completely may seem rude - accept at least a small token to show respect.',
+        content: 'Lusophone hosts will always offer food and drink to guests. Refusing completely may seem rude - accept at least a small token to show respect.',
         contentPt: 'Os anfitriões portugueses sempre oferecem comida e bebida aos convidados. Recusar completamente pode parecer rude - aceite pelo menos um pequeno gesto para mostrar respeito.',
-        culturalContext: 'Hospitality is central to Portuguese identity',
+        culturalContext: 'Hospitality is central to Lusophone identity',
         emotionalTone: 'warm'
       },
       {
-        title: 'Understanding Portuguese Time',
+        title: 'Understanding Lusophone Time',
         titlePt: 'Compreender o Tempo Português',
         content: 'Portuguese culture has a more relaxed approach to punctuality than British culture. Social events often start later than scheduled.',
         contentPt: 'A cultura portuguesa tem uma abordagem mais descontraída à pontualidade do que a cultura britânica. Eventos sociais frequentemente começam mais tarde que o programado.',
@@ -231,13 +231,13 @@ export class PortugueseCulturalAI {
       shareability: 80,
       conversationStarters: [
         'How do you navigate cultural differences in London?',
-        'What Portuguese customs do you maintain?'
+        'What Lusophone customs do you maintain?'
       ]
     }
   }
 
   /**
-   * Generate personalized Portuguese recipes based on user profile
+   * Generate personalized Lusophone recipes based on user profile
    */
   private async generatePersonalizedRecipe(request: CulturalContentRequest): Promise<GeneratedCulturalContent> {
     const recipes = {
@@ -246,7 +246,7 @@ export class PortugueseCulturalAI {
           name: 'Francesinha Tradicional do Porto',
           nameEn: 'Traditional Porto Francesinha',
           description: 'Iconic sandwich from Porto with layers of meat and special sauce',
-          culturalStory: 'Created in the 1960s in Porto, this hearty sandwich represents northern Portuguese comfort food at its finest.'
+          culturalStory: 'Created in the 1960s in Porto, this hearty sandwich represents northern Lusophone comfort food at its finest.'
         }
       ],
       centro: [
@@ -262,7 +262,7 @@ export class PortugueseCulturalAI {
           name: 'Pastéis de Belém Autênticos',
           nameEn: 'Authentic Pastéis de Belém',
           description: 'The original custard tarts from Belém monastery',
-          culturalStory: 'These pastries carry 200 years of history and represent Portuguese culinary excellence worldwide.'
+          culturalStory: 'These pastries carry 200 years of history and represent Lusophone culinary excellence worldwide.'
         }
       ]
     }
@@ -286,7 +286,7 @@ export class PortugueseCulturalAI {
           substitutions: []
         },
         {
-          name: 'Portuguese flour',
+          name: 'Lusophone flour',
           namePt: 'Farinha portuguesa',
           amount: '500g',
           londonAvailability: 'specialty_store',
@@ -330,7 +330,7 @@ export class PortugueseCulturalAI {
       shareability: 95,
       conversationStarters: [
         'Do you make this recipe like your family taught you?',
-        'How do you adapt Portuguese recipes in London?'
+        'How do you adapt Lusophone recipes in London?'
       ]
     }
   }
@@ -343,13 +343,13 @@ export class PortugueseCulturalAI {
       {
         title: 'The Fisherman\'s Daughter Who Became London\'s Best Fado Singer',
         titlePt: 'A Filha do Pescador Que Se Tornou a Melhor Fadista de Londres',
-        story: 'Maria arrived from Nazaré in 1995 with nothing but her voice and dreams. Today, her fado performances at Portuguese restaurants across London bring tears to the eyes of homesick Portuguese, connecting them to their homeland through the universal language of saudade.',
+        story: 'Maria arrived from Nazaré in 1995 with nothing but her voice and dreams. Today, her fado performances at Portuguese restaurants across London bring tears to the eyes of homesick Lusophone, connecting them to their homeland through the universal language of saudade.',
         lesson: 'Cultural talent can bridge distances and heal homesickness'
       },
       {
-        title: 'How a Portuguese Bakery United Three Generations in Vauxhall',
+        title: 'How a Lusophone Bakery United Three Generations in Vauxhall',
         titlePt: 'Como uma Padaria Portuguesa Uniu Três Gerações em Vauxhall',
-        story: 'When António opened his bakery in 1970, he never imagined his grandson would one day modernize the family recipes while keeping their soul. Today, British-born Portuguese children learn their heritage through the aroma of fresh broa and pastéis de nata.',
+        story: 'When António opened his bakery in 1970, he never imagined his grandson would one day modernize the family recipes while keeping their soul. Today, British-born Lusophone children learn their heritage through the aroma of fresh broa and pastéis de nata.',
         lesson: 'Tradition evolves but its essence remains'
       }
     ]
@@ -363,7 +363,7 @@ export class PortugueseCulturalAI {
       titlePt: selectedStory.titlePt,
       content: selectedStory.story,
       contentPt: selectedStory.story, // Would be translated
-      culturalContext: 'Portuguese diaspora success stories',
+      culturalContext: 'Lusophone diaspora success stories',
       emotionalTone: 'inspiring',
       personalRelevance: 75,
       authenticityScore: 90,
@@ -424,12 +424,12 @@ export class PortugueseCulturalAI {
   }
 
   /**
-   * Generate nostalgic content for homesick Portuguese
+   * Generate nostalgic content for homesick Lusophone
    */
   private async generateNostalgicContent(request: CulturalContentRequest): Promise<GeneratedCulturalContent> {
     const nostalgicMoments = [
       {
-        title: 'The Sound of Morning in Portuguese Villages',
+        title: 'The Sound of Morning in Lusophone Villages',
         titlePt: 'O Som da Manhã nas Aldeias Portuguesas',
         content: 'Remember waking up to church bells, roosters crowing, and your grandmother\'s voice calling from the kitchen? That symphony of home that no London morning can replicate, but lives forever in your heart.',
         emotionalTrigger: 'auditory memory'
@@ -437,7 +437,7 @@ export class PortugueseCulturalAI {
       {
         title: 'Sunday Lunch That Lasted Until Evening',
         titlePt: 'Almoço de Domingo Que Durava Até à Noite',
-        content: 'The table set for twelve, conversations flowing like wine, children playing between courses, and time standing still. Those long Portuguese Sundays taught us that the best moments can\'t be rushed.',
+        content: 'The table set for twelve, conversations flowing like wine, children playing between courses, and time standing still. Those long Lusophone Sundays taught us that the best moments can\'t be rushed.',
         emotionalTrigger: 'family gathering memory'
       }
     ]
@@ -451,7 +451,7 @@ export class PortugueseCulturalAI {
       titlePt: nostalgicMoment.titlePt,
       content: nostalgicMoment.content,
       contentPt: nostalgicMoment.content, // Would be translated
-      culturalContext: 'Portuguese homeland memories',
+      culturalContext: 'Lusophone homeland memories',
       emotionalTone: 'deeply nostalgic',
       personalRelevance: 95,
       authenticityScore: 98,
@@ -473,13 +473,13 @@ export class PortugueseCulturalAI {
   private async generateAdaptationAdvice(request: CulturalContentRequest): Promise<GeneratedCulturalContent> {
     const adaptationAdvice = [
       {
-        title: 'Balancing Portuguese Warmth with British Reserve',
+        title: 'Balancing Lusophone Warmth with British Reserve',
         titlePt: 'Equilibrando a Calidez Portuguesa com a Reserva Britânica',
-        advice: 'In professional settings, adapt your naturally warm Portuguese communication style by observing your British colleagues. Maintain your authenticity while respecting cultural boundaries.',
+        advice: 'In professional settings, adapt your naturally warm Lusophone communication style by observing your British colleagues. Maintain your authenticity while respecting cultural boundaries.',
         strategy: 'Cultural code-switching for professional success'
       },
       {
-        title: 'Teaching Portuguese Culture to British-Born Children',
+        title: 'Teaching Lusophone Culture to British-Born Children',
         titlePt: 'Ensinando Cultura Portuguesa a Crianças Nascidas na Grã-Bretanha',
         advice: 'Make Portuguese culture fun and relevant to your children\'s London life. Cook together, share stories, and create new traditions that blend both cultures meaningfully.',
         strategy: 'Intergenerational cultural transmission'
@@ -495,7 +495,7 @@ export class PortugueseCulturalAI {
       titlePt: advice.titlePt,
       content: advice.advice,
       contentPt: advice.advice, // Would be translated
-      culturalContext: 'Portuguese diaspora adaptation strategies',
+      culturalContext: 'Lusophone diaspora adaptation strategies',
       emotionalTone: 'supportive',
       personalRelevance: 85,
       authenticityScore: 90,
@@ -505,7 +505,7 @@ export class PortugueseCulturalAI {
       relatedContent: ['cultural_adaptation', 'diaspora_challenges'],
       shareability: 78,
       conversationStarters: [
-        'How do you maintain your Portuguese identity in London?',
+        'How do you maintain your Lusophone identity in London?',
         'What adaptation challenges have you faced?'
       ]
     }
@@ -558,23 +558,23 @@ export class PortugueseCulturalAI {
   }
 
   /**
-   * Generate Portuguese cultural learning content
+   * Generate Lusophone cultural learning content
    */
   public generateCulturalLearning(topic: string, level: 'beginner' | 'intermediate' | 'advanced'): GeneratedCulturalContent {
     const learningContent = {
       beginner: {
-        title: 'Portuguese Culture Basics: Family Values',
-        content: 'Family is the cornerstone of Portuguese society. Extended family gatherings are frequent and important. Respect for elders is paramount.',
+        title: 'Lusophone Culture Basics: Family Values',
+        content: 'Family is the cornerstone of Lusophone society. Extended family gatherings are frequent and important. Respect for elders is paramount.',
         culturalContext: 'Foundational cultural understanding'
       },
       intermediate: {
-        title: 'Understanding Portuguese Regional Differences',
+        title: 'Understanding Lusophone Regional Differences',
         content: 'Portugal\'s regions have distinct identities: Northern formality, Central traditions, Southern warmth, and island uniqueness.',
         culturalContext: 'Regional cultural nuances'
       },
       advanced: {
-        title: 'The Philosophy of Saudade in Portuguese Identity',
-        content: 'Saudade transcends simple nostalgia, representing a complex emotional state that defines Portuguese cultural psychology and worldview.',
+        title: 'The Philosophy of Saudade in Lusophone Identity',
+        content: 'Saudade transcends simple nostalgia, representing a complex emotional state that defines Lusophone cultural psychology and worldview.',
         culturalContext: 'Deep cultural philosophy'
       }
     }
@@ -619,7 +619,7 @@ export class PortugueseCulturalAI {
     return {
       authenticityScore,
       culturalAccuracy: [
-        'Accurate representation of Portuguese values',
+        'Accurate representation of Lusophone values',
         'Appropriate cultural context provided',
         'Respectful portrayal of traditions'
       ],
@@ -662,7 +662,7 @@ export class PortugueseCulturalAI {
             ingredients: ['bread', 'ham', 'linguiça', 'fresh sausage', 'steak', 'cheese', 'special sauce'],
             culturalSignificance: 'Symbol of Porto\'s working-class culture and creativity',
             preparationTraditions: 'Each café guards its secret sauce recipe',
-            emotionalConnection: 'Comfort food representing northern Portuguese warmth',
+            emotionalConnection: 'Comfort food representing northern Lusophone warmth',
             diasporaAdaptations: ['Vegetarian versions', 'Simplified home recipes'],
             authenticity: 9,
             nostalgiaLevel: 8
@@ -693,7 +693,7 @@ export class PortugueseCulturalAI {
           genre: 'Fado',
           description: 'Traditional Portuguese music expressing saudade and life\'s hardships',
           regions: ['Lisboa', 'Coimbra'],
-          instruments: ['Portuguese guitar', 'classical guitar', 'voice'],
+          instruments: ['Lusophone guitar', 'classical guitar', 'voice'],
           themes: ['saudade', 'love', 'destiny', 'nostalgia'],
           emotionalQualities: ['melancholic', 'passionate', 'introspective'],
           saudadeConnection: 10,

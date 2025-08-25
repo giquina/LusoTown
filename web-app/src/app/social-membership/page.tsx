@@ -45,8 +45,8 @@ function SocialMembershipForm({ formData, updateFormData, errors }: SocialMember
             'Mixed/multicultural preferred',
             'Language connection most important',
             'Cultural authenticity important',
-            'Second-generation Portuguese-speakers',
-            'Recent Portuguese emigrants',
+            'Second-generation Lusophone-speakers',
+            'Recent Lusophone emigrants',
             'Portuguese language learners'
           ].map((preference) => {
             const preferences = formData.preferences || []
@@ -266,11 +266,11 @@ export default function SocialMembershipPage() {
           <h3 className="text-xl font-semibold text-primary-900 mb-4">Success Stories</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <blockquote className="text-sm italic text-gray-700">
-              "I found my soulmate through LusoTown's social community. We bonded over our shared love for Brazilian music and Portuguese poetry. Six months later, we're planning our wedding!" 
+              "I found my soulmate through LusoTown's social community. We bonded over our shared love for Brazilian music and Lusophone poetry. Six months later, we're planning our wedding!" 
               <footer className="mt-2 text-rose-600 font-medium">— Ana & Carlos, London</footer>
             </blockquote>
             <blockquote className="text-sm italic text-gray-700">
-              "As a Cape Verdean-Portuguese mixed heritage person, I struggled to find someone who understood both cultures. LusoTown connected me with amazing people who celebrate all sides of Portuguese identity."
+              "As a Cape Verdean-Lusophone mixed heritage person, I struggled to find someone who understood both cultures. LusoTown connected me with amazing people who celebrate all sides of Lusophone identity."
               <footer className="mt-2 text-rose-600 font-medium">— Maria, Manchester</footer>
             </blockquote>
           </div>

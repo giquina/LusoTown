@@ -88,21 +88,21 @@ export default function MatchSocialIntegration({
   const mockMatchedPosts: MatchSocialPost[] = useMemo(() => [
     {
       id: 'match-post-1',
-      content: 'Excited to explore Portuguese cafés in Stockwell with my new LusoTown match! 🇵🇹 Anyone know the best pastéis de nata spots?',
+      content: 'Excited to explore Lusophone cafés in Stockwell with my new LusoTown match! 🇵🇹 Anyone know the best pastéis de nata spots?',
       createdAt: '3 hours ago',
       likes: 15,
       liked: false,
       linkedEvent: {
         id: 'cafe-tour',
-        title: 'Portuguese Café Tour',
+        title: 'Lusophone Café Tour',
         date: '2025-08-22',
         location: 'Stockwell, London'
       },
-      culturalTags: ['Portuguese Cuisine', 'London Exploration']
+      culturalTags: ['Lusophone Cuisine', 'London Exploration']
     },
     {
       id: 'match-post-2',
-      content: 'Met an amazing Portuguese architect through LusoTown! Planning to attend the next cultural event together. This community is incredible! 🏛️',
+      content: 'Met an amazing Lusophone architect through LusoTown! Planning to attend the next cultural event together. This community is incredible! 🏛️',
       createdAt: '1 day ago',
       likes: 23,
       liked: true,
@@ -111,11 +111,11 @@ export default function MatchSocialIntegration({
     },
     {
       id: 'match-post-3',
-      content: 'Found my transport service buddy through LusoTown matches! Now offering combined Portuguese cultural tours. 🚗🇵🇹',
+      content: 'Found my transport service buddy through LusoTown matches! Now offering combined Lusophone cultural tours. 🚗🇵🇹',
       createdAt: '2 days ago',
       likes: 31,
       liked: false,
-      culturalTags: ['Transport Service', 'Portuguese Tours'],
+      culturalTags: ['Transport Service', 'Lusophone Tours'],
       serviceAnnouncement: true
     }
   ], [])
@@ -149,13 +149,13 @@ export default function MatchSocialIntegration({
         title: isPortuguese ? 'Parceria de Negócio' : 'Business Partnership',
         content: isPortuguese
           ? `Conectei-me com ${match.name} através do LusoTown e agora oferecemos serviços combinados de turismo português!`
-          : `Connected with ${match.name} through LusoTown and now we offer combined Portuguese tourism services!`
+          : `Connected with ${match.name} through LusoTown and now we offer combined Lusophone tourism services!`
       },
       {
         title: isPortuguese ? 'Amizade Duradoura' : 'Lasting Friendship',
         content: isPortuguese
           ? `${match.name} tornou-se uma amiga próxima. Exploramos Londres juntas, sempre falando em português!`
-          : `${match.name} became a close friend. We explore London together, always speaking Portuguese!`
+          : `${match.name} became a close friend. We explore London together, always speaking Lusophone!`
       }
     ]
     
@@ -471,8 +471,8 @@ export default function MatchSocialIntegration({
               
               <div className="space-y-3">
                 <div className="p-4 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg border border-primary-100">
-                  <h5 className="font-semibold text-gray-900">Portuguese Cultural Night</h5>
-                  <p className="text-sm text-gray-600 mb-2">August 25, 2025 • Portuguese Cultural Centre</p>
+                  <h5 className="font-semibold text-gray-900">Lusophone Cultural Night</h5>
+                  <p className="text-sm text-gray-600 mb-2">August 25, 2025 • Lusophone Cultural Centre</p>
                   <p className="text-sm text-gray-700 mb-3">Perfect for cultural matches to meet in person</p>
                   <button className="text-primary-600 text-sm font-medium hover:underline">
                     {isPortuguese ? 'Coordenar Encontro' : 'Coordinate Meetup'}

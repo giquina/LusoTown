@@ -261,7 +261,7 @@ export default function CreateGroupPage() {
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                placeholder="e.g., Portuguese Young Professionals London"
+                placeholder="e.g., Lusophone Young Professionals London"
                 maxLength={100}
                 required
               />
@@ -368,9 +368,9 @@ export default function CreateGroupPage() {
                 onChange={(e) => handleInputChange('language_preference', e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               >
-                <option value="both">English & Portuguese</option>
+                <option value="both">English & Lusophone</option>
                 <option value="english">English primarily</option>
-                <option value="portuguese">Portuguese primarily</option>
+                <option value="portuguese">Lusophone primarily</option>
                 <option value="pt-pt">Português (Portugal)</option>
                 <option value="pt-br">Português (Brasil)</option>
               </select>
@@ -503,7 +503,7 @@ export default function CreateGroupPage() {
                 {[
                   { key: 'preserves_heritage', label: 'Preserves Portuguese heritage & traditions' },
                   { key: 'professional_networking', label: 'Professional networking activities' },
-                  { key: 'traditional_activities', label: 'Traditional Portuguese activities (Fado, folklore, etc.)' },
+                  { key: 'traditional_activities', label: 'Traditional Lusophone activities (Fado, folklore, etc.)' },
                   { key: 'language_learning', label: 'Portuguese language learning & practice' }
                 ].map((option) => (
                   <div key={option.key} className="flex items-center">

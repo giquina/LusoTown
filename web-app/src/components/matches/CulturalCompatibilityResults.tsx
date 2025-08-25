@@ -116,11 +116,11 @@ export default function CulturalCompatibilityResults({
     },
     'Ponte Cultural': {
       pt: 'Você conecta mundos, ajudando outros portugueses a integrar-se enquanto mantém suas raízes culturais.',
-      en: 'You connect worlds, helping other Portuguese integrate while maintaining their cultural roots.'
+      en: 'You connect worlds, helping other Lusophone integrate while maintaining their cultural roots.'
     },
     'Cultural Bridge': {
       pt: 'Você conecta mundos, ajudando outros portugueses a integrar-se enquanto mantém suas raízes culturais.',
-      en: 'You connect worlds, helping other Portuguese integrate while maintaining their cultural roots.'
+      en: 'You connect worlds, helping other Lusophone integrate while maintaining their cultural roots.'
     },
     'Amante da Cultura': {
       pt: 'Você celebra a rica tapeçaria da cultura portuguesa através da comida, música e festivais.',
@@ -132,11 +132,11 @@ export default function CulturalCompatibilityResults({
     },
     'Coração Familiar': {
       pt: 'A família é o centro da sua vida, e você garante que os valores portugueses sejam passados adiante.',
-      en: 'Family is at the center of your life, and you ensure Portuguese values are passed down.'
+      en: 'Family is at the center of your life, and you ensure Lusophone values are passed down.'
     },
     'Family Heart': {
       pt: 'A família é o centro da sua vida, e você garante que os valores portugueses sejam passados adiante.',
-      en: 'Family is at the center of your life, and you ensure Portuguese values are passed down.'
+      en: 'Family is at the center of your life, and you ensure Lusophone values are passed down.'
     },
     'Explorador Cultural': {
       pt: 'Você está em uma jornada de descoberta, explorando diferentes aspectos da sua herança portuguesa.',
@@ -190,7 +190,7 @@ export default function CulturalCompatibilityResults({
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-2xl font-bold text-primary-900 mb-2">
-                {language === 'pt' ? 'Seu Perfil Cultural Português' : 'Your Portuguese Cultural Profile'}
+                {language === 'pt' ? 'Seu Perfil Cultural Português' : 'Your Lusophone Cultural Profile'}
               </h2>
               <p className="text-gray-600">
                 {language === 'pt' 
@@ -217,7 +217,7 @@ export default function CulturalCompatibilityResults({
                 </span>
               </div>
               <h3 className="text-xl font-bold text-primary-900 mb-2">
-                {language === 'pt' ? 'Força Cultural Portuguesa' : 'Portuguese Cultural Strength'}
+                {language === 'pt' ? 'Força Cultural Portuguesa' : 'Lusophone Cultural Strength'}
               </h3>
               <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-primary-300">
                 <TrophyIcon className="w-5 h-5 text-yellow-500" />
@@ -255,7 +255,7 @@ export default function CulturalCompatibilityResults({
             <p className="text-gray-700 leading-relaxed">
               {profileDescriptions[profile.profileType]?.[language] || 
                profileDescriptions[profile.profileType]?.en ||
-               'A unique cultural personality with strong Portuguese connections.'}
+               'A unique cultural personality with strong Lusophone connections.'}
             </p>
           </div>
 

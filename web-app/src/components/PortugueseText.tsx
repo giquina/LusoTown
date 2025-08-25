@@ -33,7 +33,7 @@ export default function PortugueseText({
   let displayText = children
   
   if (typeof children === 'string') {
-    // If Portuguese text is too long and we have a fallback
+    // If Lusophone text is too long and we have a fallback
     if (isPortuguese && maxLength && children.length > maxLength && fallback) {
       displayText = fallback
     }

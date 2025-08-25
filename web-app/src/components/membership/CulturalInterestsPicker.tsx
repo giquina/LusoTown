@@ -13,13 +13,13 @@ export interface CulturalInterest {
 }
 
 export const CULTURAL_INTERESTS: CulturalInterest[] = [
-  // Portuguese Music & Arts
+  // Lusophone Music & Arts
   {
     value: 'fado',
     label: 'Fado (Portuguese traditional)',
     icon: '🎤',
     category: 'music',
-    description: 'Traditional Portuguese melancholic music',
+    description: 'Traditional Lusophone melancholic music',
     origin: 'Portugal'
   },
   {
@@ -74,18 +74,18 @@ export const CULTURAL_INTERESTS: CulturalInterest[] = [
   },
   {
     value: 'santos_populares',
-    label: 'Santos Populares (Portuguese June festivals)',
+    label: 'Santos Populares (Lusophone June festivals)',
     icon: '🔥',
     category: 'celebration', 
-    description: 'Traditional Portuguese popular saints festivals',
+    description: 'Traditional Lusophone popular saints festivals',
     origin: 'Portugal'
   },
   {
     value: 'christmas_traditions',
-    label: 'Portuguese Christmas traditions',
+    label: 'Lusophone Christmas traditions',
     icon: '🎄',
     category: 'celebration',
-    description: 'Portuguese holiday customs and celebrations',
+    description: 'Lusophone holiday customs and celebrations',
     origin: 'Portugal'
   },
   {
@@ -100,10 +100,10 @@ export const CULTURAL_INTERESTS: CulturalInterest[] = [
   // Literature & Arts
   {
     value: 'portuguese_literature',
-    label: 'Portuguese literature and poetry',
+    label: 'Lusophone literature and poetry',
     icon: '📚',
     category: 'literature',
-    description: 'Classical and contemporary Portuguese writing',
+    description: 'Classical and contemporary Lusophone writing',
     origin: 'Portugal'
   },
   {
@@ -116,10 +116,10 @@ export const CULTURAL_INTERESTS: CulturalInterest[] = [
   },
   {
     value: 'african_portuguese_literature',
-    label: 'African Portuguese literature',
+    label: 'African Lusophone literature',
     icon: '📖',
     category: 'literature',
-    description: 'Literature from PALOP countries in Portuguese',
+    description: 'Literature from PALOP countries in Lusophone',
     origin: 'PALOP Nations'
   },
 
@@ -129,7 +129,7 @@ export const CULTURAL_INTERESTS: CulturalInterest[] = [
     label: 'Portuguese traditional cuisine',
     icon: '🍽️',
     category: 'heritage',
-    description: 'Traditional Portuguese cooking and food culture',
+    description: 'Traditional Lusophone cooking and food culture',
     origin: 'Portugal'
   },
   {
@@ -153,8 +153,8 @@ export const CULTURAL_INTERESTS: CulturalInterest[] = [
     label: 'Azorean & Madeiran heritage',
     icon: '🏝️',
     category: 'heritage',
-    description: 'Portuguese island cultural heritage',
-    origin: 'Portuguese Islands'
+    description: 'Lusophone island cultural heritage',
+    origin: 'Lusophone Islands'
   },
 
   // Community & Language
@@ -187,7 +187,7 @@ export const CULTURAL_INTERESTS: CulturalInterest[] = [
     label: 'Portuguese business networking',
     icon: '💼',
     category: 'community',
-    description: 'Professional networking in Portuguese community',
+    description: 'Professional networking in Lusophone community',
     origin: 'UK Business Community'
   }
 ]

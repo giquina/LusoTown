@@ -99,7 +99,7 @@ export const PRICING_TIERS: PricingTier[] = [
     benefits: [
       '10% discount on all services',
       'Priority booking',
-      'Portuguese cultural concierge',
+      'Lusophone cultural concierge',
       'Monthly member events'
     ],
     benefitsPortuguese: [
@@ -118,7 +118,7 @@ export const PRICING_TIERS: PricingTier[] = [
     benefits: [
       '20% discount on all services',
       'VIP booking priority',
-      'Dedicated Portuguese account manager',
+      'Dedicated Lusophone account manager',
       'Exclusive premium events',
       'Complimentary upgrades',
       'Corporate account benefits'
@@ -154,7 +154,7 @@ export const BUNDLE_DISCOUNTS: BundleDiscount[] = [
   },
   {
     id: 'complete-experience',
-    name: 'Complete Portuguese Experience',
+    name: 'Complete Lusophone Experience',
     namePortuguese: 'Experiência Portuguesa Completa',
     serviceTypes: ['portuguese-tours', 'airport-transfers', 'luxury-experiences'],
     discountPercentage: 18,
@@ -166,7 +166,7 @@ export const BUNDLE_DISCOUNTS: BundleDiscount[] = [
 export const CORPORATE_RATES: CorporateRate[] = [
   {
     id: 'portuguese-businesses',
-    companyName: 'Portuguese Business Network',
+    companyName: 'Lusophone Business Network',
     serviceTypes: ['airport-transfers', 'vip-protection', 'luxury-experiences'],
     discountPercentage: 25,
     volumeThreshold: 10,
@@ -174,7 +174,7 @@ export const CORPORATE_RATES: CorporateRate[] = [
   },
   {
     id: 'cultural-organizations',
-    companyName: 'Portuguese Cultural Organizations',
+    companyName: 'Lusophone Cultural Organizations',
     serviceTypes: ['portuguese-tours', 'luxury-experiences'],
     discountPercentage: 20,
     volumeThreshold: 5,
@@ -207,7 +207,7 @@ const SIA_COMPLEXITY_FEES = {
 
 // Seasonal multipliers
 const SEASONAL_MULTIPLIERS = {
-  peak: 1.3, // Christmas, New Year, Portuguese holidays
+  peak: 1.3, // Christmas, New Year, Lusophone holidays
   high: 1.15, // Summer season, major events
   standard: 1.0, // Regular periods
   low: 0.9 // January-February
@@ -441,7 +441,7 @@ export class DynamicPricingEngine {
     const month = date.getMonth() + 1
     const day = date.getDate()
 
-    // Peak season: December 15 - January 15, Portuguese holidays
+    // Peak season: December 15 - January 15, Lusophone holidays
     if ((month === 12 && day >= 15) || (month === 1 && day <= 15)) {
       return SEASONAL_MULTIPLIERS.peak
     }
@@ -520,7 +520,7 @@ export class DynamicPricingEngine {
 
 export const dynamicPricingEngine = new DynamicPricingEngine()
 
-// Enhanced dynamic pricing library for Portuguese market optimization and revenue maximization
+// Enhanced dynamic pricing library for Lusophone market optimization and revenue maximization
 
 export interface PricingConfig {
   tier: import('./supabase').MembershipTier
@@ -547,7 +547,7 @@ export interface MarketSegment {
   descriptionPortuguese: string
 }
 
-// Portuguese market segments based on cultural and economic patterns
+// Lusophone market segments based on cultural and economic patterns
 export const portugueseMarketSegments: MarketSegment[] = [
   {
     id: 'young-professionals',
@@ -556,7 +556,7 @@ export const portugueseMarketSegments: MarketSegment[] = [
     targetAudience: ['25-35', 'recent-graduates', 'career-focused'],
     priceMultiplier: 0.8,
     features: ['career-networking', 'professional-events', 'mentorship'],
-    description: 'Portuguese professionals starting their United Kingdom careers',
+    description: 'Lusophone professionals starting their United Kingdom careers',
     descriptionPortuguese: 'Profissionais portugueses a iniciar carreira no Reino Unido'
   },
   {
@@ -566,7 +566,7 @@ export const portugueseMarketSegments: MarketSegment[] = [
     targetAudience: ['35-50', 'families', 'homeowners'],
     priceMultiplier: 1.2,
     features: ['family-events', 'education-support', 'community-integration'],
-    description: 'Portuguese families with children settled in United Kingdom',
+    description: 'Lusophone families with children settled in United Kingdom',
     descriptionPortuguese: 'Famílias portuguesas com filhos estabelecidas no Reino Unido'
   },
   {
@@ -576,7 +576,7 @@ export const portugueseMarketSegments: MarketSegment[] = [
     targetAudience: ['entrepreneurs', 'business-owners', 'investors'],
     priceMultiplier: 1.5,
     features: ['business-networking', 'partnership-opportunities', 'investment-events'],
-    description: 'Portuguese entrepreneurs and business leaders',
+    description: 'Lusophone entrepreneurs and business leaders',
     descriptionPortuguese: 'Empresários e líderes de negócios portugueses'
   },
   {
@@ -586,7 +586,7 @@ export const portugueseMarketSegments: MarketSegment[] = [
     targetAudience: ['18-25', 'university-students', 'recent-arrivals'],
     priceMultiplier: 0.5,
     features: ['student-events', 'academic-support', 'social-integration'],
-    description: 'Portuguese students in United Kingdom universities',
+    description: 'Lusophone students in United Kingdom universities',
     descriptionPortuguese: 'Estudantes portugueses em universidades britânicas'
   }
 ]
@@ -594,7 +594,7 @@ export const portugueseMarketSegments: MarketSegment[] = [
 // Dynamic pricing based on Portuguese-speaking community preferences and spending patterns
 export class PortuguesePricingEngine {
   
-  // Calculate optimized pricing for Portuguese market
+  // Calculate optimized pricing for Lusophone market
   static calculateOptimizedPricing(tier: import('./supabase').MembershipTier, userSegment?: string): PricingConfig {
     const { getMembershipTierConfig } = require('./supabase')
     const baseConfig = getMembershipTierConfig(tier)
@@ -608,7 +608,7 @@ export class PortuguesePricingEngine {
     const monthlyPrice = Math.round(baseConfig.monthlyPrice * multiplier)
     const yearlyPrice = Math.round(baseConfig.yearlyPrice * multiplier)
     
-    // Portuguese cultural preference for annual savings
+    // Lusophone cultural preference for annual savings
     const yearlyDiscount = Math.round(((monthlyPrice * 12) - yearlyPrice) / (monthlyPrice * 12) * 100)
     
     return {
@@ -692,7 +692,7 @@ export class PortuguesePricingEngine {
     }
   }
   
-  // Format pricing for Portuguese locale
+  // Format pricing for Lusophone locale
   static formatPortuguesePrice(price: number, currency: string = 'GBP'): string {
     const priceInPounds = price / 100 // Convert from pence to pounds
     

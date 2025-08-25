@@ -121,7 +121,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
   const loadGovernmentData = async () => {
     setLoading(true)
     try {
-      // Simulate API call - in real implementation, this would fetch from Portuguese government APIs
+      // Simulate API call - in real implementation, this would fetch from Lusophone government APIs
       await new Promise(resolve => setTimeout(resolve, 1000))
       
       setGovernmentPartnerships([
@@ -163,7 +163,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
         },
         {
           id: 'secretariat-communities',
-          institution: 'Secretariat of State for Portuguese Communities',
+          institution: 'Secretariat of State for Lusophone Communities',
           institutionPortuguese: 'Secretaria de Estado das Comunidades Portuguesas',
           type: 'secretariat',
           location: 'Lisbon, Portugal',
@@ -178,7 +178,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
           },
           services: [
             'Diaspora community support',
-            'Portuguese citizenship services',
+            'Lusophone citizenship services',
             'Community organization funding',
             'Cultural identity programs'
           ],
@@ -192,7 +192,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
           monthlyEngagement: 2800,
           fundingProvided: 280000,
           programsOffered: 18,
-          description: 'Strategic partnership providing comprehensive support for Portuguese diaspora communities worldwide.',
+          description: 'Strategic partnership providing comprehensive support for Lusophone diaspora communities worldwide.',
           descriptionPortuguese: 'Parceria estratégica que fornece apoio abrangente às comunidades da diáspora portuguesa em todo o mundo.',
           officialWebsite: 'https://www.portaldascomunidades.mne.gov.pt',
           logo: '/images/government/secretariat-communities-pt.png'
@@ -264,7 +264,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
           monthlyEngagement: 850,
           fundingProvided: 120000,
           programsOffered: 8,
-          description: 'Portuguese trade and investment promotion agency supporting Portuguese business expansion in the United Kingdom.',
+          description: 'Lusophone trade and investment promotion agency supporting Portuguese business expansion in the United Kingdom.',
           descriptionPortuguese: 'Agência portuguesa de promoção comercial e de investimento que apoia a expansão de negócios portugueses no Reino Unido.',
           officialWebsite: 'https://www.portugalglobal.pt',
           logo: '/images/government/aicep-portugal.png'
@@ -274,7 +274,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
       setCulturalPrograms([
         {
           id: 'heritage-preservation-2024',
-          name: 'Portuguese Heritage Preservation Program United Kingdom',
+          name: 'Lusophone Heritage Preservation Program United Kingdom',
           namePortuguese: 'Programa de Preservação do Património Português Reino Unido',
           provider: 'Ministry of Culture',
           type: 'heritage_preservation',
@@ -283,7 +283,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
           eligibility: [
             'Portuguese-speaking community organizations in the United Kingdom',
             'Cultural associations promoting Portuguese heritage',
-            'Educational institutions with Portuguese programs'
+            'Educational institutions with Lusophone programs'
           ],
           eligibilityPortuguese: [
             'Organizações comunitárias portuguesas no Reino Unido',
@@ -311,7 +311,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
         },
         {
           id: 'language-certification-2024',
-          name: 'Portuguese Language Proficiency Certification',
+          name: 'Lusophone Language Proficiency Certification',
           namePortuguese: 'Certificação de Proficiência em Língua Portuguesa',
           provider: 'Camões Institute',
           type: 'language_certification',
@@ -320,7 +320,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
           eligibility: [
             'Portuguese speakers seeking official certification',
             'Professionals requiring language credentials',
-            'Students applying for Portuguese universities'
+            'Students applying for Lusophone universities'
           ],
           eligibilityPortuguese: [
             'Falantes de português que procuram certificação oficial',
@@ -350,12 +350,12 @@ const PortugalGovernmentIntegration: React.FC = () => {
           id: 'cultural-exchange-2024',
           name: 'United Kingdom-Portugal Cultural Exchange Program',
           namePortuguese: 'Programa de Intercâmbio Cultural Reino Unido-Portugal',
-          provider: 'Secretariat for Portuguese Communities',
+          provider: 'Secretariat for Lusophone Communities',
           type: 'cultural_exchange',
           duration: '3 months',
           durationPortuguese: '3 meses',
           eligibility: [
-            'Portuguese artists and cultural professionals',
+            'Lusophone artists and cultural professionals',
             'United Kingdom-based Portuguese-speaking community leaders',
             'Cultural organizations with bilateral projects'
           ],
@@ -388,12 +388,12 @@ const PortugalGovernmentIntegration: React.FC = () => {
       setDiasporaSupport([
         {
           id: 'consular-services-uk',
-          program: 'Portuguese Consular Services United Kingdom',
+          program: 'Lusophone Consular Services United Kingdom',
           programPortuguese: 'Serviços Consulares Portugueses Reino Unido',
           category: 'consular_services',
-          description: 'Comprehensive consular services for Portuguese citizens and descendants living in the United Kingdom.',
+          description: 'Comprehensive consular services for Lusophone citizens and descendants living in the United Kingdom.',
           descriptionPortuguese: 'Serviços consulares abrangentes para cidadãos portugueses e descendentes que vivem no Reino Unido.',
-          eligibility: 'Portuguese citizens and eligible descendants',
+          eligibility: 'Lusophone citizens and eligible descendants',
           eligibilityPortuguese: 'Cidadãos portugueses e descendentes elegíveis',
           benefits: [
             'Document issuance and renewal',
@@ -420,14 +420,14 @@ const PortugalGovernmentIntegration: React.FC = () => {
             'Acompanhar o processamento'
           ],
           contactInfo: {
-            office: 'Portuguese Consulate General London',
+            office: 'Lusophone Consulate General London',
             address: '11 Belgrave Square, London SW1X 8PP',
             phone: '+44 20 7235 5331',
             email: 'consulado.londres@mne.pt',
             hours: 'Monday-Friday 9:00-17:00'
           },
           documentsRequired: [
-            'Valid Portuguese ID or Passport',
+            'Valid Lusophone ID or Passport',
             'Proof of United Kingdom residence',
             'Birth certificate (if applicable)',
             'Marriage certificate (if applicable)'
@@ -443,10 +443,10 @@ const PortugalGovernmentIntegration: React.FC = () => {
         },
         {
           id: 'business-support-uk',
-          program: 'Portuguese Business Development Support United Kingdom',
+          program: 'Lusophone Business Development Support United Kingdom',
           programPortuguese: 'Apoio ao Desenvolvimento de Negócios Portugueses Reino Unido',
           category: 'business_support',
-          description: 'Comprehensive business support for Portuguese entrepreneurs and companies expanding to the United Kingdom.',
+          description: 'Comprehensive business support for Lusophone entrepreneurs and companies expanding to the United Kingdom.',
           descriptionPortuguese: 'Apoio empresarial abrangente para empreendedores portugueses e empresas que expandem para o Reino Unido.',
           eligibility: 'Portuguese businesses and entrepreneurs in the United Kingdom',
           eligibilityPortuguese: 'Empresas e empreendedores portugueses no Reino Unido',
@@ -485,7 +485,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
             'Business registration documents',
             'Financial statements',
             'Market analysis report',
-            'Proof of Portuguese connection'
+            'Proof of Lusophone connection'
           ],
           documentsRequiredPortuguese: [
             'Documentos de registo da empresa',
@@ -567,13 +567,13 @@ const PortugalGovernmentIntegration: React.FC = () => {
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           {language === 'pt' 
             ? 'Integração Governamental Portuguesa'
-            : 'Portuguese Government Integration'
+            : 'Lusophone Government Integration'
           }
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           {language === 'pt'
             ? 'Parcerias oficiais com instituições governamentais portuguesas para apoiar a comunidade de falantes de português no Reino Unido através de programas culturais, educacionais e de apoio à diáspora.'
-            : 'Official partnerships with Portuguese government institutions to support the Portuguese-speaking community in the United Kingdom through cultural, educational, and diaspora support programs.'
+            : 'Official partnerships with Lusophone government institutions to support the Portuguese-speaking community in the United Kingdom through cultural, educational, and diaspora support programs.'
           }
         </p>
       </div>

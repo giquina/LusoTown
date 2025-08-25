@@ -89,8 +89,8 @@ export default function EventMatchingIntegration({
       location: "Stockwell",
       profession: "Marketing Manager",
       origin: "Porto, Portugal",
-      interests: ["Fado", "Portuguese Culture", "Professional Networking", "Arts"],
-      bio: "Portuguese marketing professional who loves connecting with fellow lusófonos. Regular attendee of fado nights and cultural events!",
+      interests: ["Fado", "Lusophone Culture", "Professional Networking", "Arts"],
+      bio: "Lusophone marketing professional who loves connecting with fellow lusófonos. Regular attendee of fado nights and cultural events!",
       compatibility: 94,
       culturalAlignment: 96,
       membershipType: "Community" as const,
@@ -104,13 +104,13 @@ export default function EventMatchingIntegration({
           culturalCategory: "Fado Music",
           date: "2025-08-25",
           time: "19:30",
-          location: "Portuguese Cultural Centre",
+          location: "Lusophone Cultural Centre",
           neighborhood: "Soho",
           price: 25,
           attendeeCount: 23,
           maxAttendees: 40,
           culturalAuthenticity: 100,
-          languageLevel: "Portuguese" as const,
+          languageLevel: "Lusophone" as const,
           isUserAttending: true,
           isMatchAttending: true,
           matchAttendanceConfidence: 95
@@ -138,7 +138,7 @@ export default function EventMatchingIntegration({
       location: "Vauxhall",
       profession: "Software Engineer",
       origin: "Lisboa, Portugal",
-      interests: ["Football", "Technology", "Portuguese Wine", "Professional Networking"],
+      interests: ["Football", "Technology", "Lusophone Wine", "Professional Networking"],
       bio: "Tech professional from Lisbon. Love mixing Portuguese traditions with modern London life. Always up for a good conversation about tech or football!",
       compatibility: 87,
       culturalAlignment: 82,
@@ -159,7 +159,7 @@ export default function EventMatchingIntegration({
           attendeeCount: 45,
           maxAttendees: 80,
           culturalAuthenticity: 90,
-          languageLevel: "Portuguese" as const,
+          languageLevel: "Lusophone" as const,
           isUserAttending: false,
           isMatchAttending: true,
           matchAttendanceConfidence: 88
@@ -177,7 +177,7 @@ export default function EventMatchingIntegration({
       ],
       pastEventInteractions: 8,
       eventResponseRate: 76,
-      preferredEventTypes: ["Football", "Professional Networking", "Portuguese Wine"],
+      preferredEventTypes: ["Football", "Professional Networking", "Lusophone Wine"],
       culturalEventParticipation: 78
     }
   ];
@@ -256,7 +256,7 @@ export default function EventMatchingIntegration({
               <h2 className="text-2xl font-bold text-primary-900 mb-2">
                 {language === "pt" 
                   ? "Conexões Através de Eventos Portugueses" 
-                  : "Portuguese Event-Based Connections"}
+                  : "Lusophone Event-Based Connections"}
               </h2>
               <p className="text-primary-600">
                 {language === "pt"
@@ -449,7 +449,7 @@ export default function EventMatchingIntegration({
               <p className="text-primary-600 text-sm mb-6">
                 {language === "pt"
                   ? "Descubra pessoas compatíveis que frequentam os mesmos eventos portugueses que você."
-                  : "Discover compatible people who attend the same Portuguese events as you."}
+                  : "Discover compatible people who attend the same Lusophone events as you."}
               </p>
             </div>
 

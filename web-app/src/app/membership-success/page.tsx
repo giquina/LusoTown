@@ -24,7 +24,7 @@ const MEMBERSHIP_CONFIG = {
     color: 'primary',
     description: 'Your application to join London\'s most exclusive Portuguese-speaking cultural circle',
     benefits: [
-      'Private Fado nights and Portuguese cultural events',
+      'Private Fado nights and Lusophone cultural events',
       'Access to PALOP heritage celebrations',
       'Brazilian cultural festivals and gatherings',
       'Portuguese language preservation activities',
@@ -266,7 +266,7 @@ export default function MembershipSuccessPage() {
         <Card className="mb-8">
           <CardHeader>
             <CardTitle className="text-center">
-              Welcome to the Portuguese-Speaking Community
+              Welcome to the Lusophone-Speaking Community
             </CardTitle>
           </CardHeader>
           <CardContent>

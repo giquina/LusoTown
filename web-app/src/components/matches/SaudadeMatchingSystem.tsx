@@ -60,7 +60,7 @@ interface SaudadeAssessment {
   };
 }
 
-// Portuguese Regional Identity Assessment
+// Lusophone Regional Identity Assessment
 interface RegionalIdentity {
   region: string;
   connection: number;
@@ -114,7 +114,7 @@ const saudadeAssessmentQuestions: SaudadeAssessment[] = [
     weight: 5.0,
     titleEn: 'How would you describe the intensity of your saudade?',
     titlePt: 'Como descreveria a intensidade da sua saudade?',
-    descriptionEn: 'That uniquely Portuguese feeling of nostalgic longing and emotional connection to your homeland',
+    descriptionEn: 'That uniquely Lusophone feeling of nostalgic longing and emotional connection to your homeland',
     descriptionPt: 'Esse sentimento unicamente português de nostalgia e ligação emocional à sua terra natal',
     sliderConfig: {
       min: 0,
@@ -138,7 +138,7 @@ const saudadeAssessmentQuestions: SaudadeAssessment[] = [
       { id: 'daily_constant', labelEn: 'Daily - it\'s always with me', labelPt: 'Diariamente - está sempre comigo', value: 10, emoji: '💔' },
       { id: 'evening_nights', labelEn: 'Evenings and quiet moments', labelPt: 'Noites e momentos silenciosos', value: 8, emoji: '🌙' },
       { id: 'weekends', labelEn: 'Weekends when I have time to think', labelPt: 'Fins de semana quando tenho tempo para pensar', value: 7, emoji: '🏠' },
-      { id: 'special_dates', labelEn: 'Portuguese holidays and special dates', labelPt: 'Feriados portugueses e datas especiais', value: 9, emoji: '📅' },
+      { id: 'special_dates', labelEn: 'Lusophone holidays and special dates', labelPt: 'Feriados portugueses e datas especiais', value: 9, emoji: '📅' },
       { id: 'winter_weather', labelEn: 'During grey London winters', labelPt: 'Durante os invernos cinzentos de Londres', value: 6, emoji: '🌧️' },
       { id: 'music_triggers', labelEn: 'When hearing Portuguese music', labelPt: 'Ao ouvir música portuguesa', value: 8, emoji: '🎵' },
       { id: 'seasonal', labelEn: 'Seasonally, comes in waves', labelPt: 'Sazonalmente, vem em ondas', value: 5, emoji: '🌊' },
@@ -158,14 +158,14 @@ const saudadeAssessmentQuestions: SaudadeAssessment[] = [
       { id: 'fado_music', labelEn: 'Fado music - especially Amália', labelPt: 'Música de fado - especialmente Amália', value: 10, emoji: '🎭' },
       { id: 'family_voices', labelEn: 'Family voices on phone calls', labelPt: 'Vozes da família nas chamadas', value: 9, emoji: '📞' },
       { id: 'childhood_foods', labelEn: 'Childhood comfort foods', labelPt: 'Comidas de conforto da infância', value: 8, emoji: '🍲' },
-      { id: 'portuguese_countryside', labelEn: 'Portuguese countryside landscapes', labelPt: 'Paisagens do campo português', value: 8, emoji: '🌾' },
+      { id: 'portuguese_countryside', labelEn: 'Lusophone countryside landscapes', labelPt: 'Paisagens do campo português', value: 8, emoji: '🌾' },
       { id: 'ocean_waves', labelEn: 'Sound of ocean waves', labelPt: 'Som das ondas do mar', value: 7, emoji: '🌊' },
-      { id: 'church_bells', labelEn: 'Portuguese church bells', labelPt: 'Sinos das igrejas portuguesas', value: 6, emoji: '🔔' },
+      { id: 'church_bells', labelEn: 'Lusophone church bells', labelPt: 'Sinos das igrejas portuguesas', value: 6, emoji: '🔔' },
       { id: 'santos_populares', labelEn: 'Santos Populares season', labelPt: 'Época dos Santos Populares', value: 8, emoji: '🎪' },
       { id: 'grandmother_recipes', labelEn: 'Grandmother\'s recipes and stories', labelPt: 'Receitas e histórias da avó', value: 9, emoji: '👵' },
-      { id: 'portuguese_language', labelEn: 'Portuguese poetry and literature', labelPt: 'Poesia e literatura portuguesa', value: 7, emoji: '📚' },
+      { id: 'portuguese_language', labelEn: 'Lusophone poetry and literature', labelPt: 'Poesia e literatura portuguesa', value: 7, emoji: '📚' },
       { id: 'childhood_friends', labelEn: 'Memories of childhood friends', labelPt: 'Memórias de amigos de infância', value: 8, emoji: '👦' },
-      { id: 'portuguese_films', labelEn: 'Portuguese films and TV shows', labelPt: 'Filmes e programas de TV portugueses', value: 6, emoji: '🎬' },
+      { id: 'portuguese_films', labelEn: 'Lusophone films and TV shows', labelPt: 'Filmes e programas de TV portugueses', value: 6, emoji: '🎬' },
       { id: 'festival_memories', labelEn: 'Village festival memories', labelPt: 'Memórias de festas da aldeia', value: 8, emoji: '🎊' },
     ],
   },
@@ -179,15 +179,15 @@ const saudadeAssessmentQuestions: SaudadeAssessment[] = [
     titleEn: 'How do you cope with intense saudade? (Select your main approaches)',
     titlePt: 'Como lida com a saudade intensa? (Selecione as suas principais abordagens)',
     options: [
-      { id: 'cook_portuguese', labelEn: 'Cook traditional Portuguese meals', labelPt: 'Cozinhar refeições tradicionais portuguesas', value: 8, emoji: '👩‍🍳' },
+      { id: 'cook_portuguese', labelEn: 'Cook traditional Lusophone meals', labelPt: 'Cozinhar refeições tradicionais portuguesas', value: 8, emoji: '👩‍🍳' },
       { id: 'call_family', labelEn: 'Long phone calls with family back home', labelPt: 'Longas chamadas com a família em casa', value: 9, emoji: '📱' },
       { id: 'listen_fado', labelEn: 'Listen to Fado and cry it out', labelPt: 'Ouvir fado e chorar', value: 8, emoji: '😢' },
       { id: 'portuguese_community', labelEn: 'Seek Portuguese-speaking community events', labelPt: 'Procurar eventos da comunidade de falantes de português', value: 7, emoji: '👥' },
       { id: 'visit_portugal', labelEn: 'Plan visits to Portugal/homeland', labelPt: 'Planear visitas a Portugal/terra natal', value: 9, emoji: '✈️' },
-      { id: 'portuguese_media', labelEn: 'Watch Portuguese TV and films', labelPt: 'Ver TV e filmes portugueses', value: 6, emoji: '📺' },
-      { id: 'write_journal', labelEn: 'Write in Portuguese/keep diary', labelPt: 'Escrever em português/manter diário', value: 5, emoji: '✍️' },
+      { id: 'portuguese_media', labelEn: 'Watch Lusophone TV and films', labelPt: 'Ver TV e filmes portugueses', value: 6, emoji: '📺' },
+      { id: 'write_journal', labelEn: 'Write in Lusophone/keep diary', labelPt: 'Escrever em português/manter diário', value: 5, emoji: '✍️' },
       { id: 'talk_portuguese_friends', labelEn: 'Talk with other Portuguese-speaking friends', labelPt: 'Conversar com outros amigos portugueses', value: 8, emoji: '💬' },
-      { id: 'portuguese_markets', labelEn: 'Visit Portuguese shops and markets', labelPt: 'Visitar lojas e mercados portugueses', value: 7, emoji: '🛒' },
+      { id: 'portuguese_markets', labelEn: 'Visit Lusophone shops and markets', labelPt: 'Visitar lojas e mercados portugueses', value: 7, emoji: '🛒' },
       { id: 'embrace_sadness', labelEn: 'Embrace the sadness as part of me', labelPt: 'Abraçar a tristeza como parte de mim', value: 6, emoji: '🤗' },
       { id: 'share_culture', labelEn: 'Share Portuguese culture with others', labelPt: 'Partilhar cultura portuguesa com outros', value: 7, emoji: '🎭' },
       { id: 'keep_busy', labelEn: 'Keep myself very busy to avoid it', labelPt: 'Manter-me muito ocupado(a) para evitar', value: 3, emoji: '🏃' },
@@ -200,7 +200,7 @@ const saudadeAssessmentQuestions: SaudadeAssessment[] = [
     type: 'connection',
     category: 'homeland_bond',
     weight: 4.5,
-    titleEn: 'How strong is your emotional connection to your Portuguese homeland?',
+    titleEn: 'How strong is your emotional connection to your Lusophone homeland?',
     titlePt: 'Quão forte é a sua ligação emocional à sua terra natal portuguesa?',
     descriptionEn: 'Beyond practical ties - your emotional and spiritual connection',
     descriptionPt: 'Para além dos laços práticos - a sua ligação emocional e espiritual',
@@ -221,26 +221,26 @@ const saudadeAssessmentQuestions: SaudadeAssessment[] = [
     type: 'language_emotion',
     category: 'heritage_connection',
     weight: 4.0,
-    titleEn: 'When you speak Portuguese versus English, how do you feel?',
+    titleEn: 'When you speak Lusophone versus English, how do you feel?',
     titlePt: 'Quando fala português versus inglês, como se sente?',
     options: [
-      { id: 'portuguese_soul', labelEn: 'Portuguese touches my soul, English is practical', labelPt: 'Português toca a minha alma, inglês é prático', value: 10, emoji: '❤️' },
-      { id: 'portuguese_home', labelEn: 'Portuguese feels like home, English like work', labelPt: 'Português parece casa, inglês parece trabalho', value: 9, emoji: '🏠' },
-      { id: 'portuguese_family', labelEn: 'Portuguese for emotions, English for daily life', labelPt: 'Português para emoções, inglês para vida diária', value: 8, emoji: '💝' },
+      { id: 'portuguese_soul', labelEn: 'Lusophone touches my soul, English is practical', labelPt: 'Português toca a minha alma, inglês é prático', value: 10, emoji: '❤️' },
+      { id: 'portuguese_home', labelEn: 'Lusophone feels like home, English like work', labelPt: 'Português parece casa, inglês parece trabalho', value: 9, emoji: '🏠' },
+      { id: 'portuguese_family', labelEn: 'Lusophone for emotions, English for daily life', labelPt: 'Português para emoções, inglês para vida diária', value: 8, emoji: '💝' },
       { id: 'equally_comfortable', labelEn: 'Equally comfortable in both languages', labelPt: 'Igualmente confortável em ambas as línguas', value: 6, emoji: '⚖️' },
-      { id: 'english_easier', labelEn: 'English feels easier now, Portuguese takes effort', labelPt: 'Inglês é mais fácil agora, português dá trabalho', value: 4, emoji: '🔄' },
-      { id: 'losing_portuguese', labelEn: 'Worried I\'m losing my Portuguese fluency', labelPt: 'Preocupado(a) que estou a perder fluência em português', value: 5, emoji: '😟' },
+      { id: 'english_easier', labelEn: 'English feels easier now, Lusophone takes effort', labelPt: 'Inglês é mais fácil agora, português dá trabalho', value: 4, emoji: '🔄' },
+      { id: 'losing_portuguese', labelEn: 'Worried I\'m losing my Lusophone fluency', labelPt: 'Preocupado(a) que estou a perder fluência em português', value: 5, emoji: '😟' },
       { id: 'english_dominant', labelEn: 'Think primarily in English now', labelPt: 'Penso principalmente em inglês agora', value: 2, emoji: '🇬🇧' },
     ],
   },
 
-  // Regional Portuguese Identity Depth
+  // Regional Lusophone Identity Depth
   {
     id: 'regional_identity_depth',
     type: 'connection',
     category: 'heritage_connection',
     weight: 3.5,
-    titleEn: 'How deeply do you identify with your specific Portuguese region?',
+    titleEn: 'How deeply do you identify with your specific Lusophone region?',
     titlePt: 'Quão profundamente se identifica com a sua região portuguesa específica?',
     options: [
       { id: 'minho_deep', labelEn: 'Minho - My identity is deeply rooted here', labelPt: 'Minho - A minha identidade está profundamente enraizada aqui', value: 10, emoji: '🌲' },
@@ -251,8 +251,8 @@ const saudadeAssessmentQuestions: SaudadeAssessment[] = [
       { id: 'algarve_coast', labelEn: 'Algarve - Coastal living and fishing culture', labelPt: 'Algarve - vida costeira e cultura piscatória', value: 10, emoji: '🏖️' },
       { id: 'acores_island', labelEn: 'Açores - Island identity and unique culture', labelPt: 'Açores - identidade insular e cultura única', value: 10, emoji: '🌋' },
       { id: 'madeira_island', labelEn: 'Madeira - Proud Madeirense traditions', labelPt: 'Madeira - tradições madeirenses orgulhosas', value: 10, emoji: '🌺' },
-      { id: 'general_portuguese', labelEn: 'Generally Portuguese, not region-specific', labelPt: 'Genericamente português(a), não específico da região', value: 6, emoji: '🇵🇹' },
-      { id: 'mixed_regions', labelEn: 'Connected to multiple Portuguese regions', labelPt: 'Ligado(a) a múltiplas regiões portuguesas', value: 7, emoji: '🗺️' },
+      { id: 'general_portuguese', labelEn: 'Generally Lusophone, not region-specific', labelPt: 'Genericamente português(a), não específico da região', value: 6, emoji: '🇵🇹' },
+      { id: 'mixed_regions', labelEn: 'Connected to multiple Lusophone regions', labelPt: 'Ligado(a) a múltiplas regiões portuguesas', value: 7, emoji: '🗺️' },
     ],
   },
 
@@ -285,14 +285,14 @@ const saudadeAssessmentQuestions: SaudadeAssessment[] = [
     titleEn: 'How do you connect with other Lusophone cultures?',
     titlePt: 'Como se conecta com outras culturas lusófonas?',
     options: [
-      { id: 'portuguese_only', labelEn: 'Primarily Portuguese - others feel different', labelPt: 'Principalmente português - outros parecem diferentes', value: 8, emoji: '🇵🇹' },
+      { id: 'portuguese_only', labelEn: 'Primarily Lusophone - others feel different', labelPt: 'Principalmente português - outros parecem diferentes', value: 8, emoji: '🇵🇹' },
       { id: 'lusophone_family', labelEn: 'All Lusophone cultures feel like family', labelPt: 'Todas as culturas lusófonas parecem família', value: 10, emoji: '🌍' },
       { id: 'brazilian_connection', labelEn: 'Strong connection to Brazilian culture', labelPt: 'Forte ligação à cultura brasileira', value: 9, emoji: '🇧🇷' },
       { id: 'african_lusophone', labelEn: 'Deep respect for African Lusophone heritage', labelPt: 'Profundo respeito pela herança lusófona africana', value: 8, emoji: '🌍' },
       { id: 'cape_verdean', labelEn: 'Feel connected to Cape Verdean community', labelPt: 'Sinto-me ligado(a) à comunidade cabo-verdiana', value: 7, emoji: '🇨🇻' },
       { id: 'language_bond', labelEn: 'Language creates automatic cultural bond', labelPt: 'A língua cria ligação cultural automática', value: 8, emoji: '🗣️' },
-      { id: 'cultural_curiosity', labelEn: 'Curious but maintain Portuguese identity', labelPt: 'Curioso(a) mas mantenho identidade portuguesa', value: 6, emoji: '🤔' },
-      { id: 'limited_connection', labelEn: 'Limited connection beyond Portuguese', labelPt: 'Ligação limitada para além do português', value: 4, emoji: '🔗' },
+      { id: 'cultural_curiosity', labelEn: 'Curious but maintain Lusophone identity', labelPt: 'Curioso(a) mas mantenho identidade portuguesa', value: 6, emoji: '🤔' },
+      { id: 'limited_connection', labelEn: 'Limited connection beyond Lusophone', labelPt: 'Ligação limitada para além do português', value: 4, emoji: '🔗' },
     ],
   },
 
@@ -326,13 +326,13 @@ const saudadeAssessmentQuestions: SaudadeAssessment[] = [
     titleEn: 'Your vision for Portuguese culture in your future family life:',
     titlePt: 'A sua visão para a cultura portuguesa na sua futura vida familiar:',
     options: [
-      { id: 'fully_portuguese_home', labelEn: 'Maintain fully Portuguese household in London', labelPt: 'Manter casa totalmente portuguesa em Londres', value: 10, emoji: '🏠' },
+      { id: 'fully_portuguese_home', labelEn: 'Maintain fully Lusophone household in London', labelPt: 'Manter casa totalmente portuguesa em Londres', value: 10, emoji: '🏠' },
       { id: 'bilingual_bicultural', labelEn: 'Raise bilingual, bicultural children', labelPt: 'Criar filhos bilingues e biculturais', value: 9, emoji: '👨‍👩‍👧‍👦' },
-      { id: 'portuguese_summers', labelEn: 'United Kingdom life, Portuguese summers and holidays', labelPt: 'Vida no Reino Unido, verões e feriados portugueses', value: 8, emoji: '☀️' },
-      { id: 'cultural_events_active', labelEn: 'Active in Portuguese cultural events and community', labelPt: 'Ativo(a) em eventos culturais portugueses e comunidade', value: 8, emoji: '🎪' },
+      { id: 'portuguese_summers', labelEn: 'United Kingdom life, Lusophone summers and holidays', labelPt: 'Vida no Reino Unido, verões e feriados portugueses', value: 8, emoji: '☀️' },
+      { id: 'cultural_events_active', labelEn: 'Active in Lusophone cultural events and community', labelPt: 'Ativo(a) em eventos culturais portugueses e comunidade', value: 8, emoji: '🎪' },
       { id: 'selective_traditions', labelEn: 'Keep select meaningful traditions', labelPt: 'Manter tradições selecionadas e significativas', value: 7, emoji: '🎯' },
       { id: 'portuguese_food_music', labelEn: 'Portuguese food and music, British lifestyle', labelPt: 'Comida e música portuguesa, estilo de vida britânico', value: 6, emoji: '🍽️' },
-      { id: 'occasional_connections', labelEn: 'Occasional Portuguese connections', labelPt: 'Ligações portuguesas ocasionais', value: 4, emoji: '🔗' },
+      { id: 'occasional_connections', labelEn: 'Occasional Lusophone connections', labelPt: 'Ligações portuguesas ocasionais', value: 4, emoji: '🔗' },
       { id: 'mostly_british', labelEn: 'Mostly British lifestyle with Portuguese heritage', labelPt: 'Estilo de vida maioritariamente britânico com herança portuguesa', value: 3, emoji: '🇬🇧' },
     ],
   }
@@ -543,7 +543,7 @@ export default function SaudadeMatchingSystem({
       activities.push(
         lang === 'pt'
           ? 'Workshops de culinária portuguesa em grupo'
-          : 'Group Portuguese cooking workshops'
+          : 'Group Lusophone cooking workshops'
       );
     }
 

@@ -153,7 +153,7 @@ const TrustBadges: React.FC<TrustBadgesProps> = ({ trustIndicators, isPortuguese
               </span>
             </div>
             
-            {/* Portuguese Chamber of Commerce */}
+            {/* Lusophone Chamber of Commerce */}
             <div className="bg-gray-100 rounded-lg p-4 h-16 w-28 flex items-center justify-center">
               <span className="text-xs font-bold text-gray-600">
                 {isPortuguese ? 'CCCP' : 'PBCC'}

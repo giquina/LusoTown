@@ -13,7 +13,7 @@ import { PlatformIntegrationProvider } from "@/context/PlatformIntegrationContex
 import { WaitingListProvider } from "@/context/WaitingListContext";
 import { HeritageProvider } from "@/context/HeritageContext";
 import { NavigationProvider } from "@/context/NavigationContext";
-import { WelcomeProvider } from "@/context/WelcomeContext";
+// WelcomeProvider removed - welcome functionality disabled (no UI components)
 import HeritageStyleProvider from "@/components/HeritageStyleProvider";
 import { AuthPopupProvider } from "@/components/AuthPopupProvider";
 import Header from "@/components/Header";
@@ -22,66 +22,79 @@ import ErrorBoundary, {
   ComponentErrorBoundary,
 } from "@/components/ErrorBoundary";
 import { METADATA_BASE } from "@/config/site";
-import { generateMetadata as generateSEOMetadata, generateJsonLd } from "@/config/seo";
+import {
+  generateMetadata as generateSEOMetadata,
+  generateJsonLd,
+} from "@/config/seo";
 // Performance optimization
-import Script from 'next/script';
-import dynamicImport from 'next/dynamic';
+import Script from "next/script";
+import dynamicImport from "next/dynamic";
 
 // Dynamic imports for heavy components - loads only when needed
-const LiveFeedNotifications = dynamicImport(() => import("@/components/LiveFeedNotifications"), {
-  loading: () => null,
-  ssr: false
-});
+const LiveFeedNotifications = dynamicImport(
+  () => import("@/components/LiveFeedNotifications"),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
 
-const UserTypeSelection = dynamicImport(() => import("@/components/UserTypeSelection"), {
-  loading: () => null,
-  ssr: false
-});
+// UserTypeSelection removed - component was disabled and returning null
 
 const AuthPopup = dynamicImport(() => import("@/components/AuthPopup"), {
   loading: () => null,
-  ssr: false
+  ssr: false,
 });
 
-const AuthIntentHandler = dynamicImport(() => import("@/components/AuthIntentHandler"), {
-  loading: () => null,
-  ssr: false
-});
+const AuthIntentHandler = dynamicImport(
+  () => import("@/components/AuthIntentHandler"),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
 
-const FavoriteNotification = dynamicImport(() => import("@/components/FavoriteNotification"), {
-  loading: () => null,
-  ssr: false
-});
+const FavoriteNotification = dynamicImport(
+  () => import("@/components/FavoriteNotification"),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
 
-const PremiumMobileNavigation = dynamicImport(() => import("@/components/PremiumMobileNavigation"), {
-  loading: () => null,
-  ssr: false
-});
+const PremiumMobileNavigation = dynamicImport(
+  () => import("@/components/PremiumMobileNavigation"),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
 
-const MobileExperienceOptimizer = dynamicImport(() => import("@/components/MobileExperienceOptimizer"), {
-  loading: () => null,
-  ssr: false
-});
+const MobileExperienceOptimizer = dynamicImport(
+  () => import("@/components/MobileExperienceOptimizer"),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
 
-const MobileCriticalFixes = dynamicImport(() => import("@/components/MobileCriticalFixes"), {
-  loading: () => null,
-  ssr: false
-});
+const MobileCriticalFixes = dynamicImport(
+  () => import("@/components/MobileCriticalFixes"),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
 
-const LusoBotWidget = dynamicImport(() => import("@/components/LusoBotWidget"), {
-  loading: () => null,
-  ssr: false
-});
+const LusoBotWrapper = dynamicImport(
+  () => import("@/components/LusoBotWrapper"),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
 
-const WelcomePopup = dynamicImport(() => import("@/components/WelcomePopup"), {
-  loading: () => null,
-  ssr: false
-});
-
-const WelcomeBanner = dynamicImport(() => import("@/components/WelcomeBanner"), {
-  loading: () => null,
-  ssr: false
-});
+// Welcome components removed - duplicates consolidated
 
 const inter = Inter({
   subsets: ["latin"],
@@ -108,9 +121,9 @@ export const viewport = {
 };
 
 // Opt-out of static prerendering to avoid build-time execution of client-only hooks
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
-export const fetchCache = 'force-no-store'
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+export const fetchCache = "force-no-store";
 
 export default function RootLayout({
   children,
@@ -127,7 +140,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: generateJsonLd('organization'),
+            __html: generateJsonLd("organization"),
           }}
         />
       </head>
@@ -165,7 +178,7 @@ export default function RootLayout({
             `,
           }}
         />
-        
+
         <ErrorBoundary>
           <AuthPopupProvider>
             <HeritageProvider>
@@ -180,7 +193,7 @@ export default function RootLayout({
                               <PlatformIntegrationProvider>
                                 <WaitingListProvider>
                                   <NavigationProvider>
-                                    <WelcomeProvider>
+                                    {/* WelcomeProvider removed - no welcome UI components */}
                                     {/* Premium Mobile Experience Wrapper */}
                                     <ComponentErrorBoundary componentName="Mobile Experience Optimizer">
                                       <MobileExperienceOptimizer
@@ -194,9 +207,7 @@ export default function RootLayout({
                                             enableTouchOptimizations={true}
                                             enablePerformanceMode={true}
                                           >
-                                            <ComponentErrorBoundary componentName="User Type Selection">
-                                              <UserTypeSelection />
-                                            </ComponentErrorBoundary>
+                                            {/* UserTypeSelection removed - returns null (disabled) */}
 
                                             <ComponentErrorBoundary componentName="Header">
                                               <Header />
@@ -229,32 +240,22 @@ export default function RootLayout({
 
                                             {/* Premium Mobile Navigation with Elite Design */}
                                             <ComponentErrorBoundary componentName="Premium Mobile Navigation">
-                                              <PremiumMobileNavigation 
+                                              <PremiumMobileNavigation
                                                 style="luxury"
                                                 notifications={0}
                                               />
                                             </ComponentErrorBoundary>
 
-                                            <ComponentErrorBoundary componentName="Welcome Banner">
-                                              <WelcomeBanner />
-                                            </ComponentErrorBoundary>
-
-                                            <ComponentErrorBoundary componentName="Welcome Popup">
-                                              <WelcomePopup />
-                                            </ComponentErrorBoundary>
+                                            {/* Welcome system consolidated - removed duplicate banner/popup */}
 
                                             <ComponentErrorBoundary componentName="LusoBot Widget">
-                                              <LusoBotWidget 
-                                                position="bottom-right"
-                                                showWelcomeMessage={true}
-                                                theme="portuguese"
-                                              />
+                                              <LusoBotWrapper />
                                             </ComponentErrorBoundary>
                                           </MobileCriticalFixes>
                                         </ComponentErrorBoundary>
                                       </MobileExperienceOptimizer>
                                     </ComponentErrorBoundary>
-                                    </WelcomeProvider>
+                                    {/* /WelcomeProvider removed */}
                                   </NavigationProvider>
                                 </WaitingListProvider>
                               </PlatformIntegrationProvider>

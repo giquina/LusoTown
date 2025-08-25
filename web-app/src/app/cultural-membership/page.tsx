@@ -52,11 +52,11 @@ function CulturalMembershipForm({ formData, updateFormData, errors }: CulturalMe
             'Join Portuguese language circles',
             'Attend Fado and music events',
             'Cultural education and workshops',
-            'Portuguese literary discussions',
+            'Lusophone literary discussions',
             'Traditional dance and arts',
             'Regional cuisine experiences',
             'Heritage preservation activities',
-            'Mentoring Portuguese youth'
+            'Mentoring Lusophone youth'
           ].map((preference) => {
             const preferences = formData.preferences || []
             const isSelected = preferences.includes(preference)
@@ -174,7 +174,7 @@ export default function CulturalMembershipPage() {
         </div>
         
         <h1 className="text-4xl font-bold text-primary-900 mb-4">
-          Join London's Most Exclusive Portuguese-Speaking Cultural Circle
+          Join London's Most Exclusive Lusophone-Speaking Cultural Circle
         </h1>
         
         <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
@@ -188,7 +188,7 @@ export default function CulturalMembershipPage() {
             <div className="text-3xl mb-3">🎭</div>
             <h3 className="font-semibold text-primary-900 mb-2">Exclusive Cultural Events</h3>
             <p className="text-sm text-gray-600">
-              Private Fado nights, Brazilian cultural celebrations, PALOP heritage festivals, and intimate Portuguese gatherings
+              Private Fado nights, Brazilian cultural celebrations, PALOP heritage festivals, and intimate Lusophone gatherings
             </p>
           </div>
           
@@ -204,7 +204,7 @@ export default function CulturalMembershipPage() {
             <div className="text-3xl mb-3">🎨</div>
             <h3 className="font-semibold text-primary-900 mb-2">Cultural Preservation</h3>
             <p className="text-sm text-gray-600">
-              Participate in preserving and celebrating Portuguese cultural traditions across all diaspora communities
+              Participate in preserving and celebrating Lusophone cultural traditions across all diaspora communities
             </p>
           </div>
         </div>

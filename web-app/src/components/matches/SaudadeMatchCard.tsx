@@ -433,7 +433,7 @@ export default function SaudadeMatchCard({
             sharedCoping.includes('cook_portuguese') ?
               (language === 'pt' ?
                 'Qual é o prato português que mais lhe lembra casa?' :
-                'What Portuguese dish most reminds you of home?') :
+                'What Lusophone dish most reminds you of home?') :
               (language === 'pt' ?
                 'Como sente a saudade vivendo em Londres?' :
                 'How do you experience saudade living in London?')

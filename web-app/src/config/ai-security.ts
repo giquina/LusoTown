@@ -69,7 +69,7 @@ export interface DataMinimizationRules {
   }
 }
 
-// Portuguese Cultural Sensitivity Standards
+// Lusophone Cultural Sensitivity Standards
 export interface CulturalSensitivityConfig {
   heritageRespect: HeritageRespectProtocol
   languagePreservation: LanguagePreservationAI
@@ -561,7 +561,7 @@ export const AI_SECURITY_CONFIG: AISecurityConfig = {
       brexitConsiderations: true
     },
     portugueseRegulations: {
-      cnpd: true, // Portuguese Data Protection Authority
+      cnpd: true, // Lusophone Data Protection Authority
       localRegulations: true,
       crossBorderRules: true
     },
@@ -619,7 +619,7 @@ export const AI_PRIVACY_TEMPLATES = {
 
 export const PORTUGUESE_CULTURAL_PRIVACY = {
   familyValues: {
-    description: 'Portuguese families value privacy and close-knit relationships',
+    description: 'Lusophone families value privacy and close-knit relationships',
     implications: [
       'Family connections should require explicit consent',
       'Multi-generational privacy considerations',
@@ -628,7 +628,7 @@ export const PORTUGUESE_CULTURAL_PRIVACY = {
   },
   
   communityTrust: {
-    description: 'Portuguese communities are built on trust and mutual support',
+    description: 'Lusophone communities are built on trust and mutual support',
     implications: [
       'Transparency builds community trust',
       'Community members expect cultural sensitivity',
@@ -646,7 +646,7 @@ export const PORTUGUESE_CULTURAL_PRIVACY = {
   },
   
   regionalIdentity: {
-    description: 'Regional Portuguese identities are diverse and important',
+    description: 'Regional Lusophone identities are diverse and important',
     implications: [
       'Avoid stereotyping regions',
       'Respect dialect and cultural differences',
@@ -655,7 +655,7 @@ export const PORTUGUESE_CULTURAL_PRIVACY = {
   },
   
   religiousRespect: {
-    description: 'Portuguese Catholic heritage influences privacy expectations',
+    description: 'Lusophone Catholic heritage influences privacy expectations',
     implications: [
       'Religious content needs respectful handling',
       'Traditional values guide privacy expectations',

@@ -1,6 +1,6 @@
 /**
  * Cultural Badge Selector Component
- * Portuguese community verification badges and specializations
+ * Lusophone community verification badges and specializations
  */
 
 "use client"
@@ -66,7 +66,7 @@ const BADGE_INFO: BadgeInfo[] = [
     badge: 'cultural-event-organizer',
     name: 'Cultural Event Organizer',
     namePortuguese: 'Organizador de Eventos Culturais',
-    description: 'Organizes Portuguese cultural events and activities',
+    description: 'Organizes Lusophone cultural events and activities',
     icon: SparklesIcon,
     color: 'purple',
     verificationRequired: true,
@@ -76,7 +76,7 @@ const BADGE_INFO: BadgeInfo[] = [
     badge: 'community-ambassador',
     name: 'Community Ambassador',
     namePortuguese: 'Embaixador da Comunidade',
-    description: 'Official ambassador for Portuguese community initiatives',
+    description: 'Official ambassador for Lusophone community initiatives',
     icon: UserGroupIcon,
     color: 'green',
     verificationRequired: true,
@@ -86,7 +86,7 @@ const BADGE_INFO: BadgeInfo[] = [
     badge: 'dance-community-member',
     name: 'Dance Community Member',
     namePortuguese: 'Membro da Comunidade de Dança',
-    description: 'Active in Portuguese/Lusophone dance communities',
+    description: 'Active in Lusophone/Lusophone dance communities',
     icon: MusicalNoteIcon,
     color: 'orange',
     verificationRequired: false,
@@ -96,7 +96,7 @@ const BADGE_INFO: BadgeInfo[] = [
     badge: 'language-exchange-leader',
     name: 'Language Exchange Leader',
     namePortuguese: 'Líder de Intercâmbio de Idiomas',
-    description: 'Leads Portuguese-English language exchange sessions',
+    description: 'Leads Lusophone-English language exchange sessions',
     icon: ChatBubbleLeftRightIcon,
     color: 'indigo',
     verificationRequired: true,

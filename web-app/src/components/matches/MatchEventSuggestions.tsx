@@ -78,12 +78,12 @@ export default function MatchEventSuggestions({
         title: language === "pt" ? "Noite de Fado Autêntico" : "Authentic Fado Night",
         description: language === "pt" 
           ? "Uma noite íntima de Fado com fadistas tradicionais e guitarras portuguesas"
-          : "An intimate evening of Fado with traditional fadistas and Portuguese guitars",
+          : "An intimate evening of Fado with traditional fadistas and Lusophone guitars",
         category: "Cultural",
         culturalCategory: "Fado Music",
         date: "2025-08-25",
         time: "19:30",
-        location: "Portuguese Cultural Centre",
+        location: "Lusophone Cultural Centre",
         neighborhood: "Vauxhall",
         price: 25,
         spotsAvailable: 12,
@@ -101,9 +101,9 @@ export default function MatchEventSuggestions({
         title: language === "pt" ? "Degustação de Vinhos do Douro" : "Douro Wine Tasting",
         description: language === "pt"
           ? "Prove os melhores vinhos do Douro com petiscos tradicionais portugueses"
-          : "Taste the finest Douro wines with traditional Portuguese appetizers",
+          : "Taste the finest Douro wines with traditional Lusophone appetizers",
         category: "Gastronomy",
-        culturalCategory: "Portuguese Wine",
+        culturalCategory: "Lusophone Wine",
         date: "2025-08-28",
         time: "18:00",
         location: "Lusitania Wine Bar",
@@ -147,9 +147,9 @@ export default function MatchEventSuggestions({
         title: language === "pt" ? "Workshop de Pastéis de Nata" : "Pastéis de Nata Workshop",
         description: language === "pt"
           ? "Aprendam a fazer os famosos pastéis de nata com um chef português"
-          : "Learn to make the famous pastéis de nata with a Portuguese chef",
+          : "Learn to make the famous pastéis de nata with a Lusophone chef",
         category: "Workshop",
-        culturalCategory: "Portuguese Cuisine",
+        culturalCategory: "Lusophone Cuisine",
         date: "2025-09-05",
         time: "14:00",
         location: "Cooking Studio Lisboa",
@@ -197,11 +197,11 @@ export default function MatchEventSuggestions({
     switch (category) {
       case "Fado Music":
         return "🎵";
-      case "Portuguese Wine":
+      case "Lusophone Wine":
         return "🍷";
       case "Football":
         return "⚽";
-      case "Portuguese Cuisine":
+      case "Lusophone Cuisine":
         return "🥮";
       default:
         return "🇵🇹";

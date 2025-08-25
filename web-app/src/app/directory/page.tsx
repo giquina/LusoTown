@@ -724,7 +724,7 @@ export default function Directory() {
             <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100 mb-8">
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  {t('directory.professional_network_title', 'Portuguese Professional Network')}
+                  {t('directory.professional_network_title', 'Lusophone Professional Network')}
                 </h3>
                 <p className="text-gray-600">
                   {t('directory.professional_network_subtitle', 'Connect with fellow Portuguese speakers in London\'s professional community')}
@@ -866,9 +866,9 @@ export default function Directory() {
           </>
         )}
 
-        {/* Portuguese Business Discovery Call-to-Action */}
+        {/* Lusophone Business Discovery Call-to-Action */}
         <div className="mt-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 text-center text-white relative overflow-hidden">
-          {/* Portuguese Cultural Background Pattern */}
+          {/* Lusophone Cultural Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-4 left-4 text-4xl">🏢</div>
             <div className="absolute top-4 right-4 text-4xl">🤝</div>
@@ -878,10 +878,10 @@ export default function Directory() {
           
           <div className="relative z-10">
             <h3 className="text-2xl font-bold mb-4">
-              {t('directory.discover_businesses_title', 'Discover Portuguese Businesses Too')}
+              {t('directory.discover_businesses_title', 'Discover Lusophone Businesses Too')}
             </h3>
             <p className="text-lg mb-6 opacity-90">
-              {t('directory.discover_businesses_subtitle', 'Complete your networking journey by connecting with Portuguese-owned businesses across London. From restaurants to professional services, support your community.')}
+              {t('directory.discover_businesses_subtitle', 'Complete your networking journey by connecting with Lusophone-owned businesses across London. From restaurants to professional services, support your community.')}
             </p>
             <div className="mb-6 text-lg italic opacity-90">
               "{t('directory.unidos_quote', 'Unidos pela comunidade, unidos pelos negócios')}"

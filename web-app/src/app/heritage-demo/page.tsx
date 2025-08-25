@@ -283,7 +283,7 @@ export default function HeritageDemo() {
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h4 className="font-semibold mb-4 text-red-600">❌ Before (Hardcoded Portuguese)</h4>
+              <h4 className="font-semibold mb-4 text-red-600">❌ Before (Hardcoded Lusophone)</h4>
               <div className="space-y-3">
                 <button 
                   className="w-full px-4 py-2 text-white font-semibold rounded"

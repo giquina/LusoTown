@@ -57,7 +57,7 @@ interface CommunityImpact {
 const COMMUNITY_IMPACTS: CommunityImpact[] = [
   {
     id: 'economic-business-growth',
-    title: 'Portuguese Business Network Economic Impact',
+    title: 'Lusophone Business Network Economic Impact',
     titlePortuguese: 'Impacto Económico da Rede de Negócios Portuguesa',
     category: 'economic',
     description: 'Quantifiable economic contributions of Portuguese-speaking entrepreneurs and businesses facilitated through LusoTown networking, partnerships, and business development programs.',
@@ -73,10 +73,10 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
     location: 'Greater London & United Kingdom',
     keyAchievements: [
       'Facilitated £800,000 in Portuguese business investment into London market',
-      'Connected 50+ Portuguese startups with United Kingdom accelerators and funding',
-      'Established Portuguese-United Kingdom trade relationships worth £1.2M annually',
-      'Created Portuguese Business Mentorship Program serving 75+ entrepreneurs',
-      'Launched "Empreendedores Portugueses" quarterly networking events (300+ attendees)',
+      'Connected 50+ Lusophone startups with United Kingdom accelerators and funding',
+      'Established Lusophone-United Kingdom trade relationships worth £1.2M annually',
+      'Created Lusophone Business Mentorship Program serving 75+ entrepreneurs',
+      'Launched "Empreendedores Portugueses" quarterly networking events (many people)',
       'Supported 12 Portuguese businesses in securing government grants totaling £150,000'
     ],
     keyAchievementsPortuguese: [
@@ -84,26 +84,26 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       'Conectadas 50+ startups portuguesas com aceleradoras e financiamento do Reino Unido',
       'Estabelecidas relações comerciais Portugal-Reino Unido no valor de £1,2M anuais',
       'Criado Programa de Mentoria de Negócios Português servindo 75+ empreendedores',
-      'Lançados eventos trimestrais "Empreendedores Portugueses" (300+ participantes)',
+      'Lançados eventos trimestrais "Empreendedores Portugueses" (many peoplees)',
       'Apoiados 12 negócios portugueses em garantir subsídios governamentais totalizando £150.000'
     ],
     testimonial: {
-      quote: 'Through LusoTown\'s business network, I connected with Portuguese investors who understood my vision and cultural context. What started as a small Portuguese consulting firm now employs 15 people and generates £400,000 annually. The cultural connection was the key to building trust and successful partnerships.',
+      quote: 'Through LusoTown\'s business network, I connected with Lusophone investors who understood my vision and cultural context. What started as a small Lusophone consulting firm now employs 15 people and generates £400,000 annually. The cultural connection was the key to building trust and successful partnerships.',
       quotePortuguese: 'Através da rede de negócios da LusoTown, conectei-me com investidores portugueses que entenderam minha visão e contexto cultural. O que começou como uma pequena consultoria portuguesa agora emprega 15 pessoas e gera £400.000 anuais. A conexão cultural foi a chave para construir confiança e parcerias bem-sucedidas.',
       author: 'Carlos Mendoza',
       role: 'Founder, Verde Digital Consultancy',
       rolePortuguese: 'Fundador, Consultoria Verde Digital'
     },
-    partnerships: ['Portuguese Chamber of Commerce', 'United Kingdom Trade & Investment', 'London Business Hub', 'Enterprise Europe Network'],
-    futureGoals: 'Expand to support 500+ Portuguese businesses by 2025, establish Portugal-United Kingdom trade office, and create £5M Portuguese investment fund.',
+    partnerships: ['Lusophone Chamber of Commerce', 'United Kingdom Trade & Investment', 'London Business Hub', 'Enterprise Europe Network'],
+    futureGoals: 'Expand to support 500+ Portuguese businesses by 2025, establish Portugal-United Kingdom trade office, and create £5M Lusophone investment fund.',
     futureGoalsPortuguese: 'Expandir para apoiar 500+ negócios portugueses até 2025, estabelecer escritório comercial Portugal-Reino Unido e criar fundo de investimento português de £5M.',
-    mediaRecognition: ['BBC London Portuguese Business Feature', 'Portuguese Embassy Newsletter', 'London Chamber of Commerce Spotlight'],
+    mediaRecognition: ['BBC London Lusophone Business Feature', 'Lusophone Embassy Newsletter', 'London Chamber of Commerce Spotlight'],
     icon: BuildingOffice2Icon,
     color: 'primary'
   },
   {
     id: 'educational-language-preservation',
-    title: 'Portuguese Language Education & Cultural Transmission',
+    title: 'Lusophone Language Education & Cultural Transmission',
     titlePortuguese: 'Educação da Língua Portuguesa & Transmissão Cultural',
     category: 'educational',
     description: 'Comprehensive educational impact through Portuguese language preservation, cultural education programs, and intergenerational knowledge transfer initiatives.',
@@ -113,17 +113,17 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       secondary: { value: '85%', label: 'Language Retention Rate', labelPortuguese: 'Taxa de Retenção Linguística' },
       tertiary: { value: '15', label: 'Educational Partnerships', labelPortuguese: 'Parcerias Educacionais' }
     },
-    beneficiaries: 'Portuguese families, children, educators, and cultural institutions',
+    beneficiaries: 'Lusophone families, children, educators, and cultural institutions',
     beneficiariesPortuguese: 'Famílias portuguesas, crianças, educadores e instituições culturais',
     timeframe: '2020-2024',
     location: 'London Schools & Community Centers',
     keyAchievements: [
-      'Established Portuguese weekend schools in 8 London boroughs',
+      'Established Lusophone weekend schools in 8 London boroughs',
       'Trained 45 community members as certified Portuguese language instructors',
-      'Created digital Portuguese learning resources used by 2,000+ families',
+      'Created digital Lusophone learning resources used by 2,000+ families',
       'Partnered with 12 United Kingdom primary schools to introduce Portuguese language programs',
       'Developed cultural education curriculum covering Portuguese history, music, and traditions',
-      'Organized annual "Portuguese Language & Culture Week" in 25 London schools'
+      'Organized annual "Lusophone Language & Culture Week" in 25 London schools'
     ],
     keyAchievementsPortuguese: [
       'Estabelecidas escolas portuguesas de fim de semana em 8 distritos de Londres',
@@ -134,25 +134,25 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       'Organizada "Semana da Língua e Cultura Portuguesa" anual em 25 escolas de Londres'
     ],
     testimonial: {
-      quote: 'My daughter was losing her Portuguese, speaking only English at school. The LusoTown education programs transformed her relationship with our language and culture. Now she\'s proud to be bilingual and teaches Portuguese words to her British friends. She\'s planning to study in Portugal next year.',
+      quote: 'My daughter was losing her Lusophone, speaking only English at school. The LusoTown education programs transformed her relationship with our language and culture. Now she\'s proud to be bilingual and teaches Lusophone words to her British friends. She\'s planning to study in Portugal next year.',
       quotePortuguese: 'Minha filha estava perdendo o português, falando apenas inglês na escola. Os programas educacionais da LusoTown transformaram a relação dela com nossa língua e cultura. Agora ela tem orgulho de ser bilíngue e ensina palavras portuguesas aos amigos britânicos. Está planejando estudar em Portugal no próximo ano.',
       author: 'Ana Lúcia Santos',
-      role: 'Portuguese Mother of Two, Teacher',
+      role: 'Lusophone Mother of Two, Teacher',
       rolePortuguese: 'Mãe Portuguesa de Dois Filhos, Professora'
     },
-    partnerships: ['Instituto Camões', 'Portuguese Embassy Education Dept', 'British Council', 'Local Education Authorities'],
-    futureGoals: 'Launch Portuguese studies program in 5 United Kingdom universities, establish Portuguese cultural curriculum in 100+ schools, train 100+ new instructors.',
+    partnerships: ['Instituto Camões', 'Lusophone Embassy Education Dept', 'British Council', 'Local Education Authorities'],
+    futureGoals: 'Launch Lusophone studies program in 5 United Kingdom universities, establish Lusophone cultural curriculum in 100+ schools, train 100+ new instructors.',
     futureGoalsPortuguese: 'Lançar programa de estudos portugueses em 5 universidades do Reino Unido, estabelecer currículo cultural português em 100+ escolas, treinar 100+ novos instrutores.',
-    mediaRecognition: ['Times Educational Supplement', 'Portuguese National Television', 'BBC Education Features'],
+    mediaRecognition: ['Times Educational Supplement', 'Lusophone National Television', 'BBC Education Features'],
     icon: AcademicCapIcon,
     color: 'secondary'
   },
   {
     id: 'cultural-heritage-preservation',
-    title: 'Portuguese Cultural Heritage Preservation & Celebration',
+    title: 'Lusophone Cultural Heritage Preservation & Celebration',
     titlePortuguese: 'Preservação e Celebração do Património Cultural Português',
     category: 'cultural',
-    description: 'Systematic preservation and celebration of Portuguese cultural heritage through events, festivals, cultural programming, and community cultural initiatives.',
+    description: 'Systematic preservation and celebration of Lusophone cultural heritage through events, festivals, cultural programming, and community cultural initiatives.',
     descriptionPortuguese: 'Preservação sistemática e celebração do património cultural português através de eventos, festivais, programação cultural e iniciativas culturais comunitárias.',
     metrics: {
       primary: { value: '150+', label: 'Cultural Events Annually', labelPortuguese: 'Eventos Culturais Anuais' },
@@ -164,15 +164,15 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
     timeframe: '2019-2024',
     location: 'London Cultural Venues & Public Spaces',
     keyAchievements: [
-      'Organized 5 annual "Santos Populares" festivals across London (8,000+ attendees each)',
+      'Organized 5 annual "Santos Populares" festivals across London (8,many people each)',
       'Established monthly fado nights at 12 London venues',
-      'Created "Portuguese Heritage Month" celebrated in 18 London boroughs',
-      'Curated "Portuguese Diaspora Stories" exhibition at Museum of London',
-      'Launched Portuguese film festival showcasing lusophone cinema (2,500+ viewers)',
-      'Coordinated Portuguese cultural contributions to London\'s major festivals'
+      'Created "Lusophone Heritage Month" celebrated in 18 London boroughs',
+      'Curated "Lusophone Diaspora Stories" exhibition at Museum of London',
+      'Launched Lusophone film festival showcasing lusophone cinema (2,500+ viewers)',
+      'Coordinated Lusophone cultural contributions to London\'s major festivals'
     ],
     keyAchievementsPortuguese: [
-      'Organizados 5 festivais anuais "Santos Populares" em Londres (8.000+ participantes cada)',
+      'Organizados 5 festivais anuais "Santos Populares" em Londres (8.many peoplees cada)',
       'Estabelecidas noites de fado mensais em 12 locais de Londres',
       'Criado "Mês do Património Português" celebrado em 18 distritos de Londres',
       'Curada exposição "Histórias da Diáspora Portuguesa" no Museu de Londres',
@@ -186,10 +186,10 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       role: 'Cultural Event Coordinator',
       rolePortuguese: 'Coordenadora de Eventos Culturais'
     },
-    partnerships: ['Portuguese Cultural Centre', 'Southbank Centre', 'Museum of London', 'Greater London Authority'],
-    futureGoals: 'Establish permanent Portuguese cultural center in London, expand festivals to 10 United Kingdom cities, create Portuguese heritage trail across London.',
+    partnerships: ['Lusophone Cultural Centre', 'Southbank Centre', 'Museum of London', 'Greater London Authority'],
+    futureGoals: 'Establish permanent Lusophone cultural center in London, expand festivals to 10 United Kingdom cities, create Portuguese heritage trail across London.',
     futureGoalsPortuguese: 'Estabelecer centro cultural português permanente em Londres, expandir festivais para 10 cidades do Reino Unido, criar trilha patrimonial portuguesa através de Londres.',
-    mediaRecognition: ['Time Out London', 'Evening Standard Culture', 'Portuguese National Media', 'BBC Arts & Culture'],
+    mediaRecognition: ['Time Out London', 'Evening Standard Culture', 'Lusophone National Media', 'BBC Arts & Culture'],
     icon: SparklesIcon,
     color: 'accent'
   },
@@ -205,7 +205,7 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       secondary: { value: '95%', label: 'Integration Success Rate', labelPortuguese: 'Taxa de Sucesso de Integração' },
       tertiary: { value: '150', label: 'Volunteer Supporters', labelPortuguese: 'Voluntários Apoiantes' }
     },
-    beneficiaries: 'New Portuguese immigrants, families in need, elderly community members, and vulnerable individuals',
+    beneficiaries: 'New Lusophone immigrants, families in need, elderly community members, and vulnerable individuals',
     beneficiariesPortuguese: 'Novos imigrantes portugueses, famílias necessitadas, membros idosos da comunidade e indivíduos vulneráveis',
     timeframe: '2020-2024',
     location: 'London & Greater United Kingdom',
@@ -232,35 +232,35 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       role: 'Single Mother, Community Advocate',
       rolePortuguese: 'Mãe Solteira, Defensora Comunitária'
     },
-    partnerships: ['Citizens Advice Bureau', 'Portuguese Church Community', 'Local Council Services', 'NHS Community Liaisons'],
-    futureGoals: 'Establish Portuguese-speaking community centers in 5 London boroughs, train 50+ new community advocates, create 24/7 Portuguese helpline.',
+    partnerships: ['Citizens Advice Bureau', 'Lusophone Church Community', 'Local Council Services', 'NHS Community Liaisons'],
+    futureGoals: 'Establish Portuguese-speaking community centers in 5 London boroughs, train 50+ new community advocates, create 24/7 Lusophone helpline.',
     futureGoalsPortuguese: 'Estabelecer centros comunitários portugueses em 5 distritos de Londres, treinar 50+ novos defensores comunitários, criar linha de ajuda portuguesa 24/7.',
-    mediaRecognition: ['Guardian Community Features', 'Portuguese Radio London', 'Local Borough Newsletters'],
+    mediaRecognition: ['Guardian Community Features', 'Lusophone Radio London', 'Local Borough Newsletters'],
     icon: HeartIcon,
     color: 'coral'
   },
   {
     id: 'civic-political-engagement',
-    title: 'Portuguese Civic Engagement & Political Participation',
+    title: 'Lusophone Civic Engagement & Political Participation',
     titlePortuguese: 'Envolvimento Cívico e Participação Política Portuguesa',
     category: 'civic',
     description: 'Increasing Portuguese-speaking community political participation, civic engagement, and representation in United Kingdom democratic processes and community leadership.',
     descriptionPortuguese: 'Aumentar a participação política da comunidade de falantes de português, envolvimento cívico e representação nos processos democráticos do Reino Unido e liderança comunitária.',
     metrics: {
       primary: { value: '75%', label: 'Voter Registration Rate', labelPortuguese: 'Taxa de Registo Eleitoral' },
-      secondary: { value: '12', label: 'Portuguese Elected Officials', labelPortuguese: 'Funcionários Eleitos Portugueses' },
+      secondary: { value: '12', label: 'Lusophone Elected Officials', labelPortuguese: 'Funcionários Eleitos Portugueses' },
       tertiary: { value: '350', label: 'Civic Volunteers', labelPortuguese: 'Voluntários Cívicos' }
     },
-    beneficiaries: 'Portuguese voters, community leaders, and United Kingdom democratic institutions',
+    beneficiaries: 'Lusophone voters, community leaders, and United Kingdom democratic institutions',
     beneficiariesPortuguese: 'Eleitores portugueses, líderes comunitários e instituições democráticas do Reino Unido',
     timeframe: '2019-2024',
-    location: 'United Kingdom Electoral Districts with Portuguese Communities',
+    location: 'United Kingdom Electoral Districts with Lusophone Communities',
     keyAchievements: [
-      'Registered 2,500+ eligible Portuguese citizens to vote in United Kingdom elections',
-      'Elected 3 Portuguese councillors in London borough elections',
-      'Established Portuguese Civic Engagement Forum with 200+ active members',
-      'Organized candidate meet-and-greet events in Portuguese for 500+ voters',
-      'Created multilingual voting guides distributed to 1,800+ Portuguese households',
+      'Registered 2,500+ eligible Lusophone citizens to vote in United Kingdom elections',
+      'Elected 3 Lusophone councillors in London borough elections',
+      'Established Lusophone Civic Engagement Forum with 200+ active members',
+      'Organized candidate meet-and-greet events in Lusophone for 500+ voters',
+      'Created multilingual voting guides distributed to 1,800+ Lusophone households',
       'Advocated for Portuguese language services in 8 London council offices'
     ],
     keyAchievementsPortuguese: [
@@ -279,35 +279,35 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       rolePortuguese: 'Vereador Local, Distrito de Camden'
     },
     partnerships: ['Electoral Commission', 'Local Government Association', 'Parliamentary Outreach Services', 'Citizenship Charities'],
-    futureGoals: 'Achieve 90% Portuguese voter registration, elect 20+ Portuguese representatives, establish Portuguese political mentorship program.',
+    futureGoals: 'Achieve 90% Lusophone voter registration, elect 20+ Lusophone representatives, establish Lusophone political mentorship program.',
     futureGoalsPortuguese: 'Alcançar 90% de registo eleitoral português, eleger 20+ representantes portugueses, estabelecer programa de mentoria política portuguesa.',
-    mediaRecognition: ['Parliamentary Review', 'Local Government News', 'Portuguese Embassy Reports'],
+    mediaRecognition: ['Parliamentary Review', 'Local Government News', 'Lusophone Embassy Reports'],
     icon: HandRaisedIcon,
     color: 'action'
   },
   {
     id: 'entrepreneurial-innovation',
-    title: 'Portuguese Innovation & Entrepreneurship Ecosystem',
+    title: 'Lusophone Innovation & Entrepreneurship Ecosystem',
     titlePortuguese: 'Ecossistema de Inovação e Empreendedorismo Português',
     category: 'entrepreneurial',
-    description: 'Fostering Portuguese entrepreneurial spirit through innovation hubs, startup incubation, technology transfer, and cross-border business development.',
+    description: 'Fostering Lusophone entrepreneurial spirit through innovation hubs, startup incubation, technology transfer, and cross-border business development.',
     descriptionPortuguese: 'Fomentando o espírito empreendedor português através de centros de inovação, incubação de startups, transferência de tecnologia e desenvolvimento empresarial transfronteiriço.',
     metrics: {
       primary: { value: '85', label: 'Startups Incubated', labelPortuguese: 'Startups Incubadas' },
       secondary: { value: '£1.8M', label: 'Investment Raised', labelPortuguese: 'Investimento Captado' },
       tertiary: { value: '40', label: 'Patents Filed', labelPortuguese: 'Patentes Registadas' }
     },
-    beneficiaries: 'Portuguese entrepreneurs, tech innovators, investors, and United Kingdom innovation economy',
+    beneficiaries: 'Lusophone entrepreneurs, tech innovators, investors, and United Kingdom innovation economy',
     beneficiariesPortuguese: 'Empreendedores portugueses, inovadores tech, investidores e economia de inovação do Reino Unido',
     timeframe: '2021-2024',
     location: 'London Tech Hubs & Innovation Centers',
     keyAchievements: [
-      'Launched Portuguese Innovation Lab in partnership with Imperial College London',
-      'Facilitated technology transfer partnerships between United Kingdom and Portuguese universities',
+      'Launched Lusophone Innovation Lab in partnership with Imperial College London',
+      'Facilitated technology transfer partnerships between United Kingdom and Lusophone universities',
       'Created angel investor network of 25+ Portuguese business leaders',
       'Established "Portugal-United Kingdom Tech Bridge" connecting ecosystems',
-      'Supported 15+ Portuguese startups in raising Series A funding',
-      'Organized quarterly "Portuguese Innovation Showcase" events (200+ attendees)'
+      'Supported 15+ Lusophone startups in raising Series A funding',
+      'Organized quarterly "Lusophone Innovation Showcase" events (many people)'
     ],
     keyAchievementsPortuguese: [
       'Lançado Laboratório de Inovação Português em parceria com Imperial College London',
@@ -315,19 +315,19 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       'Criada rede de investidores anjo de 25+ líderes empresariais portugueses',
       'Estabelecida "Ponte Tecnológica Portugal-Reino Unido" conectando ecossistemas',
       'Apoiadas 15+ startups portuguesas em captar financiamento Série A',
-      'Organizados eventos trimestrais "Mostra de Inovação Portuguesa" (200+ participantes)'
+      'Organizados eventos trimestrais "Mostra de Inovação Portuguesa" (many peoplees)'
     ],
     testimonial: {
-      quote: 'The Portuguese Innovation Lab gave me access to world-class research facilities and mentorship from successful Portuguese entrepreneurs. My AI startup has now secured £300,000 in funding and is expanding to Lisbon. The cross-border connections were invaluable.',
+      quote: 'The Lusophone Innovation Lab gave me access to world-class research facilities and mentorship from successful Lusophone entrepreneurs. My AI startup has now secured £300,000 in funding and is expanding to Lisbon. The cross-border connections were invaluable.',
       quotePortuguese: 'O Laboratório de Inovação Português deu-me acesso a instalações de pesquisa de classe mundial e mentoria de empreendedores portugueses bem-sucedidos. Minha startup de IA agora garantiu £300.000 em financiamento e está expandindo para Lisboa. As conexões transfronteiriças foram inestimáveis.',
       author: 'Sofia Fernandes',
       role: 'CEO, AI Solutions Startup',
       rolePortuguese: 'CEO, Startup de Soluções de IA'
     },
-    partnerships: ['Imperial College Innovation Hub', 'Lisbon Tech Hub', 'Portuguese Investment Bank', 'United Kingdom Innovation Agency'],
-    futureGoals: 'Launch Portuguese-focused accelerator program, establish £5M venture fund, create innovation exchanges with 5 Portuguese cities.',
+    partnerships: ['Imperial College Innovation Hub', 'Lisbon Tech Hub', 'Lusophone Investment Bank', 'United Kingdom Innovation Agency'],
+    futureGoals: 'Launch Lusophone-focused accelerator program, establish £5M venture fund, create innovation exchanges with 5 Lusophone cities.',
     futureGoalsPortuguese: 'Lançar programa acelerador focado em portugueses, estabelecer fundo de venture de £5M, criar intercâmbios de inovação com 5 cidades portuguesas.',
-    mediaRecognition: ['TechCrunch London', 'Portuguese Tech Media', 'Innovation Week Features'],
+    mediaRecognition: ['TechCrunch London', 'Lusophone Tech Media', 'Innovation Week Features'],
     icon: TrophyIcon,
     color: 'premium'
   }

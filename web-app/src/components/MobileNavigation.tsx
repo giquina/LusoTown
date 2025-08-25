@@ -54,7 +54,7 @@ export default function MobileNavigation({ user, onClose, isOpen }: MobileNaviga
         { name: t("nav.cultural-events", "Cultural Events"), href: `${ROUTES.events}?category=Cultural`, icon: MusicalNoteIcon },
         { name: t("nav.business-networking", "Business Networking"), href: ROUTES.businessNetworking, icon: BriefcaseIcon },
         { name: t("nav.social-meetups", "Social Meetups"), href: `${ROUTES.events}?category=Social`, icon: UserGroupIcon },
-        { name: t("nav.portuguese-language", "Portuguese Language"), href: `${ROUTES.events}?category=Language`, icon: ChatBubbleLeftRightIcon },
+        { name: t("nav.portuguese-language", "Lusophone Language"), href: `${ROUTES.events}?category=Language`, icon: ChatBubbleLeftRightIcon },
         { name: t("nav.food-dining", "Food & Dining"), href: `${ROUTES.events}?category=Food`, icon: FireIcon },
       ]
     },

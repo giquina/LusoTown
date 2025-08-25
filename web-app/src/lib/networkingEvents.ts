@@ -1,7 +1,7 @@
 "use client";
 
-// Portuguese Business Networking Events Service
-// Specialized events for Portuguese entrepreneurs and professionals
+// Lusophone Business Networking Events Service
+// Specialized events for Lusophone entrepreneurs and professionals
 
 import { Event } from "@/lib/events";
 
@@ -13,7 +13,7 @@ export interface NetworkingEvent extends Event {
   dresscode: string;
   languageOfEvent: "portuguese" | "english" | "bilingual";
 
-  // Portuguese Business Context
+  // Lusophone Business Context
   partnerOrganizations: PartnerOrganization[];
   sponsorships: BusinessSponsorship[];
   speakerLineup: Speaker[];
@@ -117,9 +117,9 @@ export type TargetAudience =
   | "students"
   | "recent_graduates";
 
-// Portuguese Business Networking Keywords for SEO
+// Lusophone Business Networking Keywords for SEO
 export const NETWORKING_SEO_KEYWORDS = [
-  // Portuguese
+  // Lusophone
   "networking empresarial português",
   "negócios portugueses Londres",
   "empreendedores portugueses",
@@ -144,16 +144,16 @@ export const NETWORKING_SEO_KEYWORDS = [
   "portuguese investment opportunities",
 ];
 
-// Sample Portuguese Business Networking Events
+// Sample Lusophone Business Networking Events
 export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
   {
     // Basic Event Info
     id: "networking-001",
-    title: "Portuguese Entrepreneurs Breakfast Network",
+    title: "Lusophone Entrepreneurs Breakfast Network",
     description:
       "Monthly networking breakfast for Portuguese-speaking entrepreneurs in London. Share experiences, make connections, grow your business.",
     longDescription:
-      "Join London's most active Portuguese business community for our monthly networking breakfast. Connect with fellow entrepreneurs from Portugal, Brazil, Angola, and other Portuguese-speaking countries. This is your opportunity to expand your professional network, share challenges and successes, and discover new business opportunities. We facilitate structured networking, host guest speakers, and provide a platform for meaningful business relationships. Language: Bilingual (Portuguese and English). Dress code: Business casual.",
+      "Join London's most active Portuguese business community for our monthly networking breakfast. Connect with fellow entrepreneurs from Portugal, Brazil, Angola, and other Portuguese-speaking countries. This is your opportunity to expand your professional network, share challenges and successes, and discover new business opportunities. We facilitate structured networking, host guest speakers, and provide a platform for meaningful business relationships. Language: Bilingual (Lusophone and English). Dress code: Business casual.",
     date: "2024-02-15",
     time: "08:00",
     endTime: "10:00",
@@ -173,7 +173,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
 
     // Host Info
     hostId: "host-networking-001",
-    hostName: "Portuguese Chamber of Commerce United Kingdom",
+    hostName: "Lusophone Chamber of Commerce United Kingdom",
     hostImage:
       "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
     hostBio:
@@ -216,8 +216,8 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       "Please bring business cards and arrive 15 minutes early for registration",
     weatherPolicy: "Indoor event, unaffected by weather",
 
-    // Portuguese Cultural Elements
-    culturalTheme: "Portuguese Business Excellence",
+    // Lusophone Cultural Elements
+    culturalTheme: "Lusophone Business Excellence",
     portugalRegionFocus: ["portugal", "brazil", "angola"],
     languageRequirement: "bilingual_preferred",
     culturalAuthenticityScore: 4.5,
@@ -241,7 +241,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     partnerOrganizations: [
       {
         id: "partner-001",
-        name: "Portuguese Embassy Commercial Office",
+        name: "Lusophone Embassy Commercial Office",
         namePortuguese: "Escritório Comercial da Embaixada Portuguesa",
         type: "embassy",
         website: "https://comercial.londres.consuladoportugal.mne.gov.pt",
@@ -285,7 +285,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         country: "Portugal",
         imageUrl: "/profiles/default-avatar.svg",
         linkedinUrl: "https://linkedin.com/in/ana-ferreira-ceo",
-        presentationTopic: "Scaling Portuguese Tech Startups in the United Kingdom Market",
+        presentationTopic: "Scaling Lusophone Tech Startups in the United Kingdom Market",
         presentationLanguage: "bilingual",
       },
     ],
@@ -310,15 +310,15 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
   },
   {
     id: "networking-002",
-    title: "Portuguese-Brazilian Business Summit",
+    title: "Lusophone-Brazilian Business Summit",
     description:
-      "Annual summit connecting Portuguese and Brazilian business communities in London. Explore trade opportunities, partnerships, and cultural exchange.",
+      "Annual summit connecting Lusophone and Brazilian business communities in London. Explore trade opportunities, partnerships, and cultural exchange.",
     longDescription:
-      "The premier annual event bringing together Portuguese and Brazilian entrepreneurs, investors, and business leaders in London. This full-day summit features keynote presentations, panel discussions, networking sessions, and exhibition opportunities. Focus areas include fintech, renewable energy, tourism, and digital innovation. Simultaneous Portuguese-English translation available for all main sessions.",
+      "The premier annual event bringing together Lusophone and Brazilian entrepreneurs, investors, and business leaders in London. This full-day summit features keynote presentations, panel discussions, networking sessions, and exhibition opportunities. Focus areas include fintech, renewable energy, tourism, and digital innovation. Simultaneous Lusophone-English translation available for all main sessions.",
     date: "2024-03-22",
     time: "09:00",
     endTime: "18:00",
-    location: "Portuguese Cultural Centre",
+    location: "Lusophone Cultural Centre",
     address: "180 High Street, London SE20 7EU",
     coordinates: { lat: 51.4104, lng: -0.0574 },
     category: "Business & Professional",
@@ -337,7 +337,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostImage:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
     hostBio:
-      "Leading Portuguese cultural institution promoting business, cultural, and educational exchanges.",
+      "Leading Lusophone cultural institution promoting business, cultural, and educational exchanges.",
 
     membershipRequired: "core",
     price: 45,
@@ -477,11 +477,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
   },
   {
     id: "networking-003",
-    title: "Portuguese Women in Business Leadership Circle",
+    title: "Lusophone Women in Business Leadership Circle",
     description:
-      "Exclusive networking circle for Portuguese women business leaders and entrepreneurs in London. Empowerment, mentorship, and strategic partnerships.",
+      "Exclusive networking circle for Lusophone women business leaders and entrepreneurs in London. Empowerment, mentorship, and strategic partnerships.",
     longDescription:
-      "An intimate and powerful networking circle designed specifically for Portuguese women who are leading businesses, managing teams, or building startups in London. This monthly gathering focuses on leadership development, strategic partnerships, and creating meaningful support networks. We address unique challenges faced by Portuguese women in business, celebrate successes, and provide mentorship opportunities. Conducted primarily in Portuguese with English support.",
+      "An intimate and powerful networking circle designed specifically for Lusophone women who are leading businesses, managing teams, or building startups in London. This monthly gathering focuses on leadership development, strategic partnerships, and creating meaningful support networks. We address unique challenges faced by Lusophone women in business, celebrate successes, and provide mentorship opportunities. Conducted primarily in Lusophone with English support.",
     date: "2024-02-28",
     time: "18:30",
     endTime: "21:00",
@@ -500,11 +500,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     ],
 
     hostId: "host-networking-003",
-    hostName: "Portuguese Women Leaders United Kingdom",
+    hostName: "Lusophone Women Leaders United Kingdom",
     hostImage:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
     hostBio:
-      "Empowering Portuguese women to excel in business leadership across the United Kingdom.",
+      "Empowering Lusophone women to excel in business leadership across the United Kingdom.",
 
     membershipRequired: "premium",
     price: 25,
@@ -540,7 +540,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       "Professional networking attire. Come prepared to share your business challenges and successes.",
     weatherPolicy: "Indoor event, unaffected by weather",
 
-    culturalTheme: "Portuguese Women Excellence",
+    culturalTheme: "Lusophone Women Excellence",
     portugalRegionFocus: ["portugal", "brazil", "angola", "mozambique"],
     languageRequirement: "portuguese_preferred",
     culturalAuthenticityScore: 4.8,
@@ -608,11 +608,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
   {
     // Tech Event 1: App Development Workshop
     id: "tech-001",
-    title: "Portuguese Mobile App Development Live Workshop",
+    title: "Lusophone Mobile App Development Live Workshop",
     description:
-      "Learn mobile app development from experienced Portuguese developers. Hands-on coding session with React Native and Flutter.",
+      "Learn mobile app development from experienced Lusophone developers. Hands-on coding session with React Native and Flutter.",
     longDescription:
-      "Join our intensive mobile app development workshop led by successful Portuguese developers working at top United Kingdom tech companies. Learn React Native and Flutter through practical projects. Build your first app during the session with live coding, Q&A, and personalized mentorship. Perfect for aspiring developers and entrepreneurs looking to enter the mobile app market. All skill levels welcome - we'll provide different tracks for beginners and intermediate developers.",
+      "Join our intensive mobile app development workshop led by successful Lusophone developers working at top United Kingdom tech companies. Learn React Native and Flutter through practical projects. Build your first app during the session with live coding, Q&A, and personalized mentorship. Perfect for aspiring developers and entrepreneurs looking to enter the mobile app market. All skill levels welcome - we'll provide different tracks for beginners and intermediate developers.",
     date: "2024-03-20",
     time: "18:00",
     endTime: "21:00",
@@ -630,11 +630,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       "portuguese tech",
     ],
     hostId: "host-tech-001",
-    hostName: "Portuguese Developers London",
+    hostName: "Lusophone Developers London",
     hostImage:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",
     hostBio:
-      "Community of Portuguese software developers building the future of technology in London.",
+      "Community of Lusophone software developers building the future of technology in London.",
     membershipRequired: "free",
     price: 25,
     currency: "GBP",
@@ -664,7 +664,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     specialInstructions:
       "Bring your laptop with development environment set up. We'll provide setup guides.",
     weatherPolicy: "Indoor event",
-    culturalTheme: "Portuguese Tech Innovation",
+    culturalTheme: "Lusophone Tech Innovation",
     portugalRegionFocus: ["portugal", "brazil"],
     languageRequirement: "bilingual_preferred",
     culturalAuthenticityScore: 4.3,
@@ -710,11 +710,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
   {
     // Tech Event 2: Website Development Masterclass
     id: "tech-002",
-    title: "Build Your Business Website - Portuguese Entrepreneur Masterclass",
+    title: "Build Your Business Website - Lusophone Entrepreneur Masterclass",
     description:
       "Complete website development masterclass for Portuguese business owners. From design to deployment using modern technologies.",
     longDescription:
-      "Transform your business idea into a professional website! This comprehensive masterclass is designed specifically for Portuguese entrepreneurs who want to establish their online presence. Learn modern web development using Next.js, design principles, SEO optimization, and deployment strategies. Our experienced instructors will guide you through building a complete business website from scratch. No prior coding experience required - we start from the basics and build up to advanced features.",
+      "Transform your business idea into a professional website! This comprehensive masterclass is designed specifically for Lusophone entrepreneurs who want to establish their online presence. Learn modern web development using Next.js, design principles, SEO optimization, and deployment strategies. Our experienced instructors will guide you through building a complete business website from scratch. No prior coding experience required - we start from the basics and build up to advanced features.",
     date: "2024-03-25",
     time: "14:00",
     endTime: "18:00",
@@ -731,7 +731,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       "portuguese entrepreneurs",
     ],
     hostId: "host-tech-002",
-    hostName: "Portuguese Digital Solutions",
+    hostName: "Lusophone Digital Solutions",
     hostImage:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
     hostBio:
@@ -765,7 +765,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     specialInstructions:
       "Bring laptop and charger. We provide all software licenses and learning materials.",
     weatherPolicy: "Indoor event",
-    culturalTheme: "Portuguese Business Digital Transformation",
+    culturalTheme: "Lusophone Business Digital Transformation",
     portugalRegionFocus: ["portugal", "brazil", "angola"],
     languageRequirement: "bilingual_preferred",
     culturalAuthenticityScore: 4.2,
@@ -816,11 +816,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
   {
     // Tech Event 3: Digital Marketing Workshop
     id: "tech-003",
-    title: "Digital Marketing Mastery for Portuguese Businesses",
+    title: "Digital Marketing Mastery for Lusophone Businesses",
     description:
       "Learn advanced digital marketing strategies tailored for Portuguese businesses in the United Kingdom market. SEO, social media, and paid advertising.",
     longDescription:
-      "Master digital marketing specifically designed for Portuguese businesses targeting United Kingdom customers. Learn SEO strategies, social media marketing, Google Ads, Facebook advertising, and content marketing. Our expert will share case studies from successful Portuguese businesses and provide hands-on practice with real campaigns. Understand the unique challenges of marketing Portuguese services to United Kingdom audiences and how to leverage your cultural advantage.",
+      "Master digital marketing specifically designed for Portuguese businesses targeting United Kingdom customers. Learn SEO strategies, social media marketing, Google Ads, Facebook advertising, and content marketing. Our expert will share case studies from successful Portuguese businesses and provide hands-on practice with real campaigns. Understand the unique challenges of marketing Lusophone services to United Kingdom audiences and how to leverage your cultural advantage.",
     date: "2024-04-10",
     time: "19:00",
     endTime: "22:00",
@@ -837,11 +837,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       "portuguese business",
     ],
     hostId: "host-marketing-001",
-    hostName: "Portuguese Marketing Collective",
+    hostName: "Lusophone Marketing Collective",
     hostImage:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
     hostBio:
-      "Collective of Portuguese marketing professionals helping businesses grow in international markets.",
+      "Collective of Lusophone marketing professionals helping businesses grow in international markets.",
     membershipRequired: "free",
     price: 30,
     currency: "GBP",
@@ -871,7 +871,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     specialInstructions:
       "Bring your business information and current marketing materials for personalized advice.",
     weatherPolicy: "Indoor event",
-    culturalTheme: "Portuguese Business Global Reach",
+    culturalTheme: "Lusophone Business Global Reach",
     portugalRegionFocus: ["portugal", "brazil"],
     languageRequirement: "bilingual_required",
     culturalAuthenticityScore: 4.1,
@@ -903,7 +903,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         imageUrl:
           "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
         presentationTopic:
-          "Scaling Portuguese Businesses with Digital Marketing",
+          "Scaling Lusophone Businesses with Digital Marketing",
         presentationLanguage: "bilingual",
       },
     ],
@@ -923,15 +923,15 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     // Tech Event 4: Start Your Own Business Workshop
     id: "business-001",
     title:
-      "Start Your Own Business: Portuguese Entrepreneur's Guide to United Kingdom Success",
+      "Start Your Own Business: Lusophone Entrepreneur's Guide to United Kingdom Success",
     description:
-      "Complete guide to starting a business in the United Kingdom for Portuguese entrepreneurs. Legal requirements, funding, and growth strategies.",
+      "Complete guide to starting a business in the United Kingdom for Lusophone entrepreneurs. Legal requirements, funding, and growth strategies.",
     longDescription:
-      "Everything you need to know about starting a successful business in the United Kingdom as a Portuguese entrepreneur. Learn about legal requirements, business registration, tax implications, funding options, and growth strategies. Our panel of successful Portuguese business owners will share their experiences, challenges, and success stories. Includes practical workshops on business planning, financial projections, and networking strategies. Perfect for aspiring entrepreneurs ready to take the leap.",
+      "Everything you need to know about starting a successful business in the United Kingdom as a Lusophone entrepreneur. Learn about legal requirements, business registration, tax implications, funding options, and growth strategies. Our panel of successful Portuguese business owners will share their experiences, challenges, and success stories. Includes practical workshops on business planning, financial projections, and networking strategies. Perfect for aspiring entrepreneurs ready to take the leap.",
     date: "2024-04-15",
     time: "10:00",
     endTime: "16:00",
-    location: "Portuguese Cultural Centre",
+    location: "Lusophone Cultural Centre",
     address: "11 Belgrave Square, London SW1X 8PP",
     coordinates: { lat: 51.5001, lng: -0.1537 },
     category: "Business & Entrepreneurship",
@@ -944,11 +944,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       "portuguese entrepreneurs",
     ],
     hostId: "host-business-001",
-    hostName: "Portuguese Entrepreneurs United Kingdom",
+    hostName: "Lusophone Entrepreneurs United Kingdom",
     hostImage:
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop",
     hostBio:
-      "Supporting Portuguese entrepreneurs in building successful businesses across the United Kingdom.",
+      "Supporting Lusophone entrepreneurs in building successful businesses across the United Kingdom.",
     membershipRequired: "free",
     price: 45,
     currency: "GBP",
@@ -978,7 +978,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     specialInstructions:
       "Bring your business ideas, notebook, and any existing business plans for feedback.",
     weatherPolicy: "Indoor event",
-    culturalTheme: "Portuguese Entrepreneurial Spirit",
+    culturalTheme: "Lusophone Entrepreneurial Spirit",
     portugalRegionFocus: ["portugal", "brazil", "angola"],
     languageRequirement: "bilingual_required",
     culturalAuthenticityScore: 4.8,
@@ -993,7 +993,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     partnerOrganizations: [
       {
         id: "partner-business-001",
-        name: "Portuguese Chamber of Commerce United Kingdom",
+        name: "Lusophone Chamber of Commerce United Kingdom",
         type: "chamber_commerce",
         website: "https://uk-portugal.com",
         representative: "Dr. Ana Silva",
@@ -1007,7 +1007,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         name: "Ricardo Oliveira",
         title: "Serial Entrepreneur & Investor",
         company: "Oliveira Ventures",
-        bio: "Portuguese serial entrepreneur who built and sold 3 successful companies in the United Kingdom. Now mentors and invests in Portuguese startups.",
+        bio: "Lusophone serial entrepreneur who built and sold 3 successful companies in the United Kingdom. Now mentors and invests in Lusophone startups.",
         bioPortuguese:
           "Empresário em série português que construiu e vendeu 3 empresas bem-sucedidas no Reino Unido. Agora mentoriza e investe em startups portuguesas.",
         expertise: ["business_strategy", "fundraising", "scaling"],
@@ -1034,11 +1034,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
   {
     // Tech Event 5: Data Science & AI Workshop
     id: "tech-004",
-    title: "Data Science & AI for Portuguese Business Innovation",
+    title: "Data Science & AI for Lusophone Business Innovation",
     description:
       "Learn how to leverage data science and artificial intelligence in your business. Hands-on workshop with real Portuguese business case studies.",
     longDescription:
-      "Discover the power of data science and AI for Portuguese businesses. This intensive workshop covers machine learning fundamentals, data analysis techniques, and practical AI implementations. Learn how successful Portuguese companies are using AI to improve operations, customer service, and decision-making. Includes hands-on coding sessions with Python, data visualization, and building your first AI model. No prior experience required - we'll guide you from basics to practical applications.",
+      "Discover the power of data science and AI for Portuguese businesses. This intensive workshop covers machine learning fundamentals, data analysis techniques, and practical AI implementations. Learn how successful Lusophone companies are using AI to improve operations, customer service, and decision-making. Includes hands-on coding sessions with Python, data visualization, and building your first AI model. No prior experience required - we'll guide you from basics to practical applications.",
     date: "2024-05-08",
     time: "18:30",
     endTime: "21:30",
@@ -1055,11 +1055,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       "business innovation",
     ],
     hostId: "host-ai-001",
-    hostName: "Portuguese AI & Data Society",
+    hostName: "Lusophone AI & Data Society",
     hostImage:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
     hostBio:
-      "Community of Portuguese data scientists and AI researchers advancing technology innovation.",
+      "Community of Lusophone data scientists and AI researchers advancing technology innovation.",
     membershipRequired: "free",
     price: 40,
     currency: "GBP",
@@ -1089,7 +1089,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     specialInstructions:
       "Bring laptop with Python installed. We'll provide installation guides and datasets.",
     weatherPolicy: "Indoor event",
-    culturalTheme: "Portuguese Innovation Excellence",
+    culturalTheme: "Lusophone Innovation Excellence",
     portugalRegionFocus: ["portugal"],
     languageRequirement: "bilingual_preferred",
     culturalAuthenticityScore: 3.9,
@@ -1139,11 +1139,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
   {
     // Tech Event 6: E-commerce & Online Business
     id: "ecommerce-001",
-    title: "Build Your E-commerce Empire: Portuguese Products in United Kingdom Markets",
+    title: "Build Your E-commerce Empire: Lusophone Products in United Kingdom Markets",
     description:
-      "Complete guide to launching and scaling e-commerce businesses selling Portuguese products in the United Kingdom. From Shopify to Amazon FBA.",
+      "Complete guide to launching and scaling e-commerce businesses selling Lusophone products in the United Kingdom. From Shopify to Amazon FBA.",
     longDescription:
-      "Master e-commerce selling Portuguese products to United Kingdom customers. Learn platform selection (Shopify, Amazon, eBay), product sourcing from Portugal, logistics, customs, marketing, and scaling strategies. Our expert panel includes successful Portuguese e-commerce entrepreneurs who will share their journey from startup to 6-figure revenues. Includes hands-on workshops on setting up your first online store, product photography, and digital marketing for e-commerce.",
+      "Master e-commerce selling Lusophone products to United Kingdom customers. Learn platform selection (Shopify, Amazon, eBay), product sourcing from Portugal, logistics, customs, marketing, and scaling strategies. Our expert panel includes successful Lusophone e-commerce entrepreneurs who will share their journey from startup to 6-figure revenues. Includes hands-on workshops on setting up your first online store, product photography, and digital marketing for e-commerce.",
     date: "2024-05-20",
     time: "13:00",
     endTime: "17:00",
@@ -1160,11 +1160,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       "online business",
     ],
     hostId: "host-ecommerce-001",
-    hostName: "Portuguese E-commerce Collective",
+    hostName: "Lusophone E-commerce Collective",
     hostImage:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
     hostBio:
-      "Network of Portuguese e-commerce entrepreneurs building successful online businesses in the United Kingdom.",
+      "Network of Lusophone e-commerce entrepreneurs building successful online businesses in the United Kingdom.",
     membershipRequired: "free",
     price: 50,
     currency: "GBP",
@@ -1194,7 +1194,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     specialInstructions:
       "Bring your product ideas and any existing business materials. Laptop recommended.",
     weatherPolicy: "Indoor event",
-    culturalTheme: "Portuguese Products Global Reach",
+    culturalTheme: "Lusophone Products Global Reach",
     portugalRegionFocus: ["portugal", "azores", "madeira"],
     languageRequirement: "bilingual_required",
     culturalAuthenticityScore: 4.7,
@@ -1213,7 +1213,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         id: "speaker-ecommerce-001",
         name: "Ana Rita Mendes",
         title: "E-commerce Entrepreneur",
-        company: "Portuguese Delights United Kingdom",
+        company: "Lusophone Delights United Kingdom",
         bio: "Built a £2M e-commerce business selling Portuguese food and crafts online. Expert in Amazon FBA and international shipping.",
         bioPortuguese:
           "Construiu um negócio de e-commerce de £2M vendendo comida e artesanato português online. Especialista em Amazon FBA e envios internacionais.",
@@ -1222,7 +1222,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         imageUrl:
           "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
         presentationTopic:
-          "From Zero to £2M: Building a Portuguese Products Empire",
+          "From Zero to £2M: Building a Lusophone Products Empire",
         presentationLanguage: "bilingual",
       },
     ],
@@ -1241,11 +1241,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
   {
     // Tech Event 7: Fintech & Cryptocurrency
     id: "fintech-001",
-    title: "Fintech Innovation: Portuguese Perspective on Digital Finance",
+    title: "Fintech Innovation: Lusophone Perspective on Digital Finance",
     description:
       "Explore fintech trends, cryptocurrency, and digital banking from a Portuguese business perspective. Expert insights and networking.",
     longDescription:
-      "Deep dive into the fintech revolution with a focus on opportunities for Portuguese businesses and individuals. Learn about cryptocurrency investing, digital banking solutions, payment processing, and fintech startups. Our panel includes Portuguese fintech entrepreneurs, blockchain developers, and financial advisors. Discover how fintech can streamline your business operations and personal finances. Includes practical sessions on crypto trading, digital wallets, and fintech tools for small businesses.",
+      "Deep dive into the fintech revolution with a focus on opportunities for Portuguese businesses and individuals. Learn about cryptocurrency investing, digital banking solutions, payment processing, and fintech startups. Our panel includes Lusophone fintech entrepreneurs, blockchain developers, and financial advisors. Discover how fintech can streamline your business operations and personal finances. Includes practical sessions on crypto trading, digital wallets, and fintech tools for small businesses.",
     date: "2024-06-05",
     time: "18:00",
     endTime: "21:00",
@@ -1262,11 +1262,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       "investment",
     ],
     hostId: "host-fintech-001",
-    hostName: "Portuguese Fintech Forum",
+    hostName: "Lusophone Fintech Forum",
     hostImage:
       "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=300&fit=crop",
     hostBio:
-      "Forum for Portuguese professionals working in financial technology and innovation.",
+      "Forum for Lusophone professionals working in financial technology and innovation.",
     membershipRequired: "free",
     price: 35,
     currency: "GBP",
@@ -1296,7 +1296,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     specialInstructions:
       "Bring questions about fintech and digital finance. Networking encouraged.",
     weatherPolicy: "Indoor event",
-    culturalTheme: "Portuguese Financial Innovation",
+    culturalTheme: "Lusophone Financial Innovation",
     portugalRegionFocus: ["portugal"],
     languageRequirement: "bilingual_preferred",
     culturalAuthenticityScore: 3.8,
@@ -1324,7 +1324,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         imageUrl:
           "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face",
         presentationTopic:
-          "The Future of Digital Finance: A Portuguese Perspective",
+          "The Future of Digital Finance: A Lusophone Perspective",
         presentationLanguage: "bilingual",
       },
     ],
@@ -1343,11 +1343,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
   {
     // Tech Event 8: SaaS & Cloud Computing
     id: "saas-001",
-    title: "Building SaaS Products: Portuguese Developers Masterclass",
+    title: "Building SaaS Products: Lusophone Developers Masterclass",
     description:
       "Learn to build and scale Software-as-a-Service products. From MVP to enterprise solutions with cloud technologies.",
     longDescription:
-      "Comprehensive masterclass on building SaaS products from Portuguese developers who have successfully launched and scaled software businesses. Learn cloud architecture, subscription models, customer acquisition, and technical scaling strategies. Covers AWS/Azure deployment, database design, API development, and SaaS metrics. Perfect for developers wanting to transition into product development or entrepreneurs planning to build SaaS businesses. Includes hands-on coding sessions and real-world case studies.",
+      "Comprehensive masterclass on building SaaS products from Lusophone developers who have successfully launched and scaled software businesses. Learn cloud architecture, subscription models, customer acquisition, and technical scaling strategies. Covers AWS/Azure deployment, database design, API development, and SaaS metrics. Perfect for developers wanting to transition into product development or entrepreneurs planning to build SaaS businesses. Includes hands-on coding sessions and real-world case studies.",
     date: "2024-06-18",
     time: "14:00",
     endTime: "18:00",
@@ -1364,11 +1364,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       "subscription business",
     ],
     hostId: "host-saas-001",
-    hostName: "Portuguese SaaS Builders",
+    hostName: "Lusophone SaaS Builders",
     hostImage:
       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop",
     hostBio:
-      "Community of Portuguese developers and entrepreneurs building successful SaaS products.",
+      "Community of Lusophone developers and entrepreneurs building successful SaaS products.",
     membershipRequired: "free",
     price: 55,
     currency: "GBP",
@@ -1398,7 +1398,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     specialInstructions:
       "Programming experience required. Bring laptop with development environment set up.",
     weatherPolicy: "Indoor event",
-    culturalTheme: "Portuguese Tech Entrepreneurship",
+    culturalTheme: "Lusophone Tech Entrepreneurship",
     portugalRegionFocus: ["portugal"],
     languageRequirement: "bilingual_preferred",
     culturalAuthenticityScore: 3.7,
@@ -1444,11 +1444,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
   {
     // Tech Event 9: Cybersecurity Workshop
     id: "cybersec-001",
-    title: "Cybersecurity Essentials for Portuguese Small Businesses",
+    title: "Cybersecurity Essentials for Lusophone Small Businesses",
     description:
       "Protect your business from cyber threats. Practical cybersecurity workshop covering threat prevention, data protection, and compliance.",
     longDescription:
-      "Essential cybersecurity training designed specifically for Portuguese small businesses operating in the United Kingdom. Learn to identify and prevent cyber threats, implement data protection measures, and ensure GDPR compliance. Our expert will cover password management, phishing prevention, backup strategies, and incident response. Includes hands-on exercises with security tools and real case studies of cyber attacks on small businesses. Perfect for business owners and managers who want to protect their operations.",
+      "Essential cybersecurity training designed specifically for Lusophone small businesses operating in the United Kingdom. Learn to identify and prevent cyber threats, implement data protection measures, and ensure GDPR compliance. Our expert will cover password management, phishing prevention, backup strategies, and incident response. Includes hands-on exercises with security tools and real case studies of cyber attacks on small businesses. Perfect for business owners and managers who want to protect their operations.",
     date: "2024-07-10",
     time: "19:00",
     endTime: "22:00",
@@ -1465,11 +1465,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       "threat prevention",
     ],
     hostId: "host-cybersec-001",
-    hostName: "Portuguese Cyber Defense Group",
+    hostName: "Lusophone Cyber Defense Group",
     hostImage:
       "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=300&fit=crop",
     hostBio:
-      "Group of Portuguese cybersecurity professionals protecting businesses from digital threats.",
+      "Group of Lusophone cybersecurity professionals protecting businesses from digital threats.",
     membershipRequired: "free",
     price: 25,
     currency: "GBP",
@@ -1499,7 +1499,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     specialInstructions:
       "Bring your business devices for security assessment. No technical background required.",
     weatherPolicy: "Indoor event",
-    culturalTheme: "Portuguese Business Protection",
+    culturalTheme: "Lusophone Business Protection",
     portugalRegionFocus: ["portugal", "brazil"],
     languageRequirement: "bilingual_required",
     culturalAuthenticityScore: 3.9,
@@ -1550,11 +1550,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     // Tech Event 10: Green Tech & Sustainability
     id: "greentech-001",
     title:
-      "Green Technology & Sustainable Business: Portuguese Innovation for Climate Action",
+      "Green Technology & Sustainable Business: Lusophone Innovation for Climate Action",
     description:
-      "Explore green technology solutions and sustainable business practices. Learn how Portuguese companies are leading climate innovation.",
+      "Explore green technology solutions and sustainable business practices. Learn how Lusophone companies are leading climate innovation.",
     longDescription:
-      "Join Portuguese entrepreneurs and innovators leading the green technology revolution. Discover sustainable business practices, renewable energy solutions, and climate-friendly innovations. Learn how Portuguese companies are developing cutting-edge green technologies and building sustainable businesses. Includes presentations on solar energy, waste reduction, sustainable manufacturing, and green finance. Perfect for entrepreneurs interested in climate action and sustainable business models. Network with like-minded individuals building the future of green business.",
+      "Join Lusophone entrepreneurs and innovators leading the green technology revolution. Discover sustainable business practices, renewable energy solutions, and climate-friendly innovations. Learn how Lusophone companies are developing cutting-edge green technologies and building sustainable businesses. Includes presentations on solar energy, waste reduction, sustainable manufacturing, and green finance. Perfect for entrepreneurs interested in climate action and sustainable business models. Network with like-minded individuals building the future of green business.",
     date: "2024-07-25",
     time: "18:00",
     endTime: "21:00",
@@ -1571,11 +1571,11 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
       "eco innovation",
     ],
     hostId: "host-greentech-001",
-    hostName: "Portuguese Green Innovation Network",
+    hostName: "Lusophone Green Innovation Network",
     hostImage:
       "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=400&h=300&fit=crop",
     hostBio:
-      "Network of Portuguese professionals and entrepreneurs driving sustainable innovation and green technology.",
+      "Network of Lusophone professionals and entrepreneurs driving sustainable innovation and green technology.",
     membershipRequired: "free",
     price: 20,
     currency: "GBP",
@@ -1605,7 +1605,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     specialInstructions:
       "Bring your green business ideas and sustainability questions for the panel discussion.",
     weatherPolicy: "Indoor event",
-    culturalTheme: "Portuguese Environmental Leadership",
+    culturalTheme: "Lusophone Environmental Leadership",
     portugalRegionFocus: ["portugal", "azores"],
     languageRequirement: "bilingual_preferred",
     culturalAuthenticityScore: 4.2,

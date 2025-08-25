@@ -185,9 +185,9 @@ export class GDPRComplianceMonitor {
       issues.push('Consent mechanisms not sufficiently granular')
     }
 
-    // Portuguese cultural considerations
-    culturalConsiderations.push('Legal basis considers Portuguese cultural values')
-    culturalConsiderations.push('Family data processing respects Portuguese privacy expectations')
+    // Lusophone cultural considerations
+    culturalConsiderations.push('Legal basis considers Lusophone cultural values')
+    culturalConsiderations.push('Family data processing respects Lusophone privacy expectations')
 
     if (score < 80) {
       improvements.push('Implement clearer legal basis documentation')
@@ -237,7 +237,7 @@ export class GDPRComplianceMonitor {
     // Cultural consent considerations
     culturalConsiderations.push('Consent provided in Portuguese language when appropriate')
     culturalConsiderations.push('Cultural context explained in consent requests')
-    culturalConsiderations.push('Family data consent considers Portuguese cultural values')
+    culturalConsiderations.push('Family data consent considers Lusophone cultural values')
 
     // Check withdrawal mechanisms
     const withdrawalMechanisms = this.checkWithdrawalMechanisms()
@@ -283,7 +283,7 @@ export class GDPRComplianceMonitor {
 
     // Cultural data minimization
     culturalConsiderations.push('Cultural data collection limited to necessary purposes')
-    culturalConsiderations.push('Family data minimized with Portuguese privacy values')
+    culturalConsiderations.push('Family data minimized with Lusophone privacy values')
     culturalConsiderations.push('Heritage data collection respects community boundaries')
 
     // Check AI data usage
@@ -291,7 +291,7 @@ export class GDPRComplianceMonitor {
     if (!aiDataUsage.minimized) {
       score -= 10
       issues.push('AI systems may process more data than necessary')
-      improvements.push('Optimize AI data usage for Portuguese cultural sensitivity')
+      improvements.push('Optimize AI data usage for Lusophone cultural sensitivity')
     }
 
     return {
@@ -323,7 +323,7 @@ export class GDPRComplianceMonitor {
     }
 
     // Cultural data security
-    culturalConsiderations.push('Enhanced encryption for Portuguese cultural data')
+    culturalConsiderations.push('Enhanced encryption for Lusophone cultural data')
     culturalConsiderations.push('Family data receives maximum security protection')
     culturalConsiderations.push('Heritage data protected with cultural sensitivity')
 
@@ -372,7 +372,7 @@ export class GDPRComplianceMonitor {
     }
 
     // Bilingual transparency
-    culturalConsiderations.push('Privacy notices available in Portuguese')
+    culturalConsiderations.push('Privacy notices available in Lusophone')
     culturalConsiderations.push('Cultural context provided in transparency information')
     culturalConsiderations.push('AI processing explained with Portuguese-speaking community examples')
 
@@ -381,7 +381,7 @@ export class GDPRComplianceMonitor {
     if (!aiTransparency.meaningful_information) {
       score -= 12
       issues.push('AI processing not sufficiently transparent')
-      improvements.push('Enhance AI transparency for Portuguese cultural processing')
+      improvements.push('Enhance AI transparency for Lusophone cultural processing')
     }
 
     return {
@@ -412,9 +412,9 @@ export class GDPRComplianceMonitor {
     })
 
     // Cultural rights considerations
-    culturalConsiderations.push('Data subject rights explained in Portuguese')
+    culturalConsiderations.push('Data subject rights explained in Lusophone')
     culturalConsiderations.push('Cultural data rights consider community impact')
-    culturalConsiderations.push('Family data rights respect Portuguese privacy values')
+    culturalConsiderations.push('Family data rights respect Lusophone privacy values')
 
     // Check response times
     const responseTimes = this.checkResponseTimes()
@@ -453,17 +453,17 @@ export class GDPRComplianceMonitor {
       issues.push('Transfer mechanisms not properly documented')
     }
 
-    // Portuguese-specific transfers
+    // Lusophone-specific transfers
     culturalConsiderations.push('United Kingdom-Portugal transfers use adequacy decision')
     culturalConsiderations.push('Brazil transfers use appropriate safeguards')
     culturalConsiderations.push('Cultural data transfers respect community boundaries')
 
-    // Check Portuguese regulation compliance
+    // Check Lusophone regulation compliance
     const portugueseCompliance = this.checkPortugueseRegulationCompliance()
     if (!portugueseCompliance) {
       score -= 10
       issues.push('Transfers to Portugal may not comply with local regulations')
-      improvements.push('Enhance Portuguese CNPD compliance documentation')
+      improvements.push('Enhance Lusophone CNPD compliance documentation')
     }
 
     return {
@@ -498,11 +498,11 @@ export class GDPRComplianceMonitor {
 
     if (!culturalHandling.regional_awareness) {
       score -= 10
-      issues.push('Regional Portuguese identity not properly considered')
+      issues.push('Regional Lusophone identity not properly considered')
     }
 
     // Cultural considerations are inherent to this area
-    culturalConsiderations.push('All processing respects Portuguese cultural values')
+    culturalConsiderations.push('All processing respects Lusophone cultural values')
     culturalConsiderations.push('Community consultation integrated in data practices')
     culturalConsiderations.push('Saudade and emotional content handled sensitively')
 
@@ -565,7 +565,7 @@ export class GDPRComplianceMonitor {
           'Family data minimization practices'
         ],
         culturalAlignment: [
-          'Respects Portuguese family privacy values',
+          'Respects Lusophone family privacy values',
           'Considers extended family network dynamics',
           'Aligns with community trust expectations'
         ]
@@ -595,21 +595,21 @@ export class GDPRComplianceMonitor {
         ],
         portugueseRegulationAlignment: [
           'CNPD guidelines compliance',
-          'Portuguese cultural data laws respect',
+          'Lusophone cultural data laws respect',
           'Local privacy expectations alignment'
         ]
       },
       languageRights: {
         score: 94,
         bilingualSupport: [
-          'Privacy notices in Portuguese and English',
+          'Privacy notices in Lusophone and English',
           'Consent forms in preferred language',
           'Data subject rights information bilingual',
-          'Customer support in Portuguese'
+          'Customer support in Lusophone'
         ],
         culturalContextPreservation: [
           'Cultural nuances preserved in translations',
-          'Portuguese legal concepts properly explained',
+          'Lusophone legal concepts properly explained',
           'Community-specific examples provided'
         ]
       }
@@ -679,7 +679,7 @@ export class GDPRComplianceMonitor {
             area: area.area,
             recommendation: improvement,
             culturalBenefits: area.culturalConsiderations.length > 0 ? 
-              'Enhance Portuguese cultural compliance alignment' : undefined,
+              'Enhance Lusophone cultural compliance alignment' : undefined,
             implementationEffort: 'medium',
             timeline: '2-4 weeks',
             expectedImpact: 'Improve area compliance score'
@@ -834,7 +834,7 @@ export class GDPRComplianceMonitor {
   }
 
   private checkPortugueseRegulationCompliance(): boolean {
-    // TODO: Check specific Portuguese regulation compliance
+    // TODO: Check specific Lusophone regulation compliance
     return true
   }
 

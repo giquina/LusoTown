@@ -10,7 +10,7 @@ import { createMixedTestimonials, getTestimonialText, authenticPortugueseTestimo
 
 // Curated testimonials - Shortened and focused on LusoTown features
 const allTestimonials = [
-  // Portuguese testimonials (70%) - Shortened and LusoTown-focused
+  // Lusophone testimonials (70%) - Shortened and LusoTown-focused
   {
     id: "fernanda-oliveira",
     name: "Fernanda Oliveira",
@@ -80,11 +80,11 @@ const allTestimonials = [
     location: "Greenwich, London",
     locationPortuguese: "Greenwich, Londres",
     imageId: "sofia-costa",
-    quote: "LusoTown's business networking events help me connect with Portuguese professionals while sharing pastéis de nata!",
-    text: "LusoTown's business networking events help me connect with Portuguese professionals while sharing pastéis de nata!",
+    quote: "LusoTown's business networking events help me connect with Lusophone professionals while sharing pastéis de nata!",
+    text: "LusoTown's business networking events help me connect with Lusophone professionals while sharing pastéis de nata!",
     textPortuguese: "Os eventos de networking da LusoTown ajudam-me a conectar com profissionais portugueses partilhando pastéis de nata!",
     rating: 5,
-    relationship: "Portuguese Business Professional",
+    relationship: "Lusophone Business Professional",
     relationshipPortuguese: "Profissional Portuguesa",
     language: 'en' as const
   },
@@ -130,7 +130,7 @@ const cardVariants = {
 export default function TestimonialsNew() {
   const { t, language } = useLanguage()
   
-  // Create mixed testimonials ensuring 70% Portuguese reviews
+  // Create mixed testimonials ensuring 70% Lusophone reviews
   const mixedTestimonials = createMixedTestimonials(allTestimonials, { portuguesePercentage: 70 })
 
   return (
@@ -189,7 +189,7 @@ export default function TestimonialsNew() {
                     <ChatBubbleLeftIcon className="h-8 w-8 text-primary-300" />
                   </div>
                   
-                  {/* Language indicator for Portuguese reviews */}
+                  {/* Language indicator for Lusophone reviews */}
                   {testimonial.language === 'pt' && (
                     <div className="mb-4">
                       <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary-800">
@@ -317,7 +317,7 @@ export default function TestimonialsNew() {
           className="text-center mt-12 mb-8 sm:mb-12 lg:mb-16"
         >
           <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-            Ready to Connect with Portuguese Speakers in London?
+            Ready to Connect with Lusophone Speakers in London?
           </h3>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Join thousands of Portuguese speakers across London who are organizing events, building communities, and creating lasting connections throughout the city.

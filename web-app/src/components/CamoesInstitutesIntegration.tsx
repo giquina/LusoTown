@@ -184,7 +184,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
           programs: [], // Will be populated with featured programs
           facilities: [
             'Modern classrooms with interactive technology',
-            'Portuguese literature library',
+            'Lusophone literature library',
             'Cultural exhibition space',
             'Conference and seminar rooms',
             'Student common area',
@@ -248,7 +248,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
               ],
               discounts: { courses: 25, events: 100, materials: 20 },
               priority: true,
-              exclusive: ['Monthly Portuguese conversation groups', 'Cultural heritage workshops'],
+              exclusive: ['Monthly Lusophone conversation groups', 'Cultural heritage workshops'],
               exclusivePortuguese: ['Grupos de conversa portuguesa mensais', 'Oficinas de património cultural']
             },
             {
@@ -263,7 +263,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
                 'Free access to all events and conferences',
                 'Premium library access',
                 'One-on-one language coaching sessions',
-                'Business Portuguese certification programs'
+                'Business Lusophone certification programs'
               ],
               benefitsPortuguese: [
                 '35% desconto em todos os cursos',
@@ -274,7 +274,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
               ],
               discounts: { courses: 35, events: 100, materials: 25 },
               priority: true,
-              exclusive: ['Business Portuguese workshops', 'Professional certification fast-track'],
+              exclusive: ['Business Lusophone workshops', 'Professional certification fast-track'],
               exclusivePortuguese: ['Oficinas de português empresarial', 'Certificação profissional acelerada']
             }
           ],
@@ -293,11 +293,11 @@ const CamoesInstitutesIntegration: React.FC = () => {
             weekends: 'Saturday: 9:00-17:00, Sunday: Closed'
           },
           specializations: [
-            'Portuguese Language Certification',
+            'Lusophone Language Certification',
             'Lusophone Literature Studies',
-            'Portuguese History and Culture',
-            'Business Portuguese',
-            'Portuguese for Academic Purposes'
+            'Lusophone History and Culture',
+            'Business Lusophone',
+            'Lusophone for Academic Purposes'
           ],
           specializationsPortuguese: [
             'Certificação da Língua Portuguesa',
@@ -326,7 +326,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
             'Language laboratory',
             'Cultural resource center',
             'Video conference facilities',
-            'Portuguese film screening room',
+            'Lusophone film screening room',
             'Study and research areas'
           ],
           facilitiesPortuguese: [
@@ -377,9 +377,9 @@ const CamoesInstitutesIntegration: React.FC = () => {
             weekends: 'Saturday: 10:00-16:00, Sunday: Closed'
           },
           specializations: [
-            'Portuguese Language Learning',
+            'Lusophone Language Learning',
             'Cultural Integration Programs',
-            'Portuguese Media and Cinema',
+            'Lusophone Media and Cinema',
             'Community Engagement Projects'
           ],
           specializationsPortuguese: [
@@ -394,14 +394,14 @@ const CamoesInstitutesIntegration: React.FC = () => {
       setLanguageCertifications([
         {
           id: 'ciple-a2',
-          name: 'CIPLE - Initial Certificate in Portuguese as a Foreign Language',
+          name: 'CIPLE - Initial Certificate in Lusophone as a Foreign Language',
           namePortuguese: 'CIPLE - Certificado Inicial de Português Língua Estrangeira',
           level: 'A2',
-          description: 'Basic level certification demonstrating fundamental Portuguese communication skills.',
+          description: 'Basic level certification demonstrating fundamental Lusophone communication skills.',
           descriptionPortuguese: 'Certificação de nível básico que demonstra competências fundamentais de comunicação em português.',
           requirements: [
             'Completion of A2 level course or equivalent',
-            'Basic understanding of Portuguese grammar',
+            'Basic understanding of Lusophone grammar',
             'Ability to communicate in simple everyday situations'
           ],
           requirementsPortuguese: [
@@ -422,9 +422,9 @@ const CamoesInstitutesIntegration: React.FC = () => {
           validityPeriod: 'Lifetime',
           validityPeriodPortuguese: 'Vitalício',
           recognition: [
-            'Portuguese universities',
+            'Lusophone universities',
             'EU academic institutions',
-            'Portuguese employer recognition',
+            'Lusophone employer recognition',
             'Immigration applications'
           ],
           recognitionPortuguese: [
@@ -436,15 +436,15 @@ const CamoesInstitutesIntegration: React.FC = () => {
         },
         {
           id: 'deple-b2',
-          name: 'DEPLE - Diploma of Portuguese as a Foreign Language',
+          name: 'DEPLE - Diploma of Lusophone as a Foreign Language',
           namePortuguese: 'DEPLE - Diploma de Português Língua Estrangeira',
           level: 'B2',
-          description: 'Intermediate level certification for professional and academic Portuguese proficiency.',
+          description: 'Intermediate level certification for professional and academic Lusophone proficiency.',
           descriptionPortuguese: 'Certificação de nível intermédio para proficiência portuguesa profissional e académica.',
           requirements: [
             'Completion of B2 level course or equivalent',
-            'Intermediate Portuguese grammar mastery',
-            'Ability to discuss complex topics in Portuguese'
+            'Intermediate Lusophone grammar mastery',
+            'Ability to discuss complex topics in Lusophone'
           ],
           requirementsPortuguese: [
             'Conclusão de curso de nível B2 ou equivalente',
@@ -464,7 +464,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
           validityPeriod: 'Lifetime',
           validityPeriodPortuguese: 'Vitalício',
           recognition: [
-            'Portuguese higher education',
+            'Lusophone higher education',
             'Professional qualification recognition',
             'European language framework compliance',
             'Corporate hiring standards'
@@ -478,14 +478,14 @@ const CamoesInstitutesIntegration: React.FC = () => {
         },
         {
           id: 'duple-c1',
-          name: 'DUPLE - Advanced Diploma of Portuguese as a Foreign Language',
+          name: 'DUPLE - Advanced Diploma of Lusophone as a Foreign Language',
           namePortuguese: 'DUPLE - Diploma Universitário de Português Língua Estrangeira',
           level: 'C1',
-          description: 'Advanced level certification for academic and professional excellence in Portuguese.',
+          description: 'Advanced level certification for academic and professional excellence in Lusophone.',
           descriptionPortuguese: 'Certificação de nível avançado para excelência académica e profissional em português.',
           requirements: [
             'Completion of C1 level course or equivalent',
-            'Advanced Portuguese grammar and syntax',
+            'Advanced Lusophone grammar and syntax',
             'Academic writing and presentation skills'
           ],
           requirementsPortuguese: [
@@ -506,7 +506,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
           validityPeriod: 'Lifetime',
           validityPeriodPortuguese: 'Vitalício',
           recognition: [
-            'Portuguese doctoral programs',
+            'Lusophone doctoral programs',
             'Academic teaching positions',
             'Translation and interpretation work',
             'High-level professional positions'
@@ -523,7 +523,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
       setFeaturedPrograms([
         {
           id: 'intensive-portuguese',
-          title: 'Intensive Portuguese Language Course',
+          title: 'Intensive Lusophone Language Course',
           titlePortuguese: 'Curso Intensivo de Língua Portuguesa',
           category: 'language_learning',
           description: 'Comprehensive intensive course covering all aspects of Portuguese language from beginner to intermediate level.',
@@ -541,7 +541,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
           },
           instructor: {
             name: 'Prof. Maria Santos',
-            qualifications: 'PhD in Portuguese Linguistics, 15 years teaching experience',
+            qualifications: 'PhD in Lusophone Linguistics, 15 years teaching experience',
             qualificationsPortuguese: 'Doutoramento em Linguística Portuguesa, 15 anos de experiência de ensino'
           },
           capacity: 20,
@@ -561,15 +561,15 @@ const CamoesInstitutesIntegration: React.FC = () => {
             'Participação em atividades culturais'
           ],
           certification: true,
-          prerequisites: 'No previous Portuguese knowledge required',
+          prerequisites: 'No previous Lusophone knowledge required',
           prerequisitesPortuguese: 'Não é necessário conhecimento prévio de português'
         },
         {
           id: 'business-portuguese',
-          title: 'Business Portuguese Certificate Program',
+          title: 'Business Lusophone Certificate Program',
           titlePortuguese: 'Programa de Certificação em Português Empresarial',
           category: 'certification',
-          description: 'Specialized program for professionals seeking to enhance their business communication in Portuguese.',
+          description: 'Specialized program for professionals seeking to enhance their business communication in Lusophone.',
           descriptionPortuguese: 'Programa especializado para profissionais que procuram melhorar a sua comunicação empresarial em português.',
           duration: '8 weeks',
           durationPortuguese: '8 semanas',
@@ -592,7 +592,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
           startDate: '2024-10-02',
           endDate: '2024-11-27',
           materials: [
-            'Business Portuguese textbook',
+            'Business Lusophone textbook',
             'Case study materials',
             'Professional vocabulary guides',
             'Networking event access'
@@ -604,15 +604,15 @@ const CamoesInstitutesIntegration: React.FC = () => {
             'Acesso a eventos de networking'
           ],
           certification: true,
-          prerequisites: 'Intermediate Portuguese level (B1) required',
+          prerequisites: 'Intermediate Lusophone level (B1) required',
           prerequisitesPortuguese: 'Necessário nível intermédio de português (B1)'
         },
         {
           id: 'cultural-heritage',
-          title: 'Portuguese Cultural Heritage Workshop Series',
+          title: 'Lusophone Cultural Heritage Workshop Series',
           titlePortuguese: 'Série de Oficinas de Património Cultural Português',
           category: 'cultural_workshops',
-          description: 'Monthly workshops exploring different aspects of Portuguese cultural heritage, traditions, and contemporary culture.',
+          description: 'Monthly workshops exploring different aspects of Lusophone cultural heritage, traditions, and contemporary culture.',
           descriptionPortuguese: 'Oficinas mensais explorando diferentes aspetos do património cultural português, tradições e cultura contemporânea.',
           duration: '6 months',
           durationPortuguese: '6 meses',
@@ -627,7 +627,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
           },
           instructor: {
             name: 'Prof. Ana Rodrigues',
-            qualifications: 'PhD in Portuguese Cultural Studies, Museum curator',
+            qualifications: 'PhD in Lusophone Cultural Studies, Museum curator',
             qualificationsPortuguese: 'Doutoramento em Estudos Culturais Portugueses, Curadora de museu'
           },
           capacity: 25,
@@ -1021,7 +1021,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
       {/* Language Certifications */}
       <div className="mb-12">
         <h2 className="text-2xl font-bold text-gray-900 mb-8">
-          {language === 'pt' ? 'Certificações Oficiais de Português' : 'Official Portuguese Certifications'}
+          {language === 'pt' ? 'Certificações Oficiais de Português' : 'Official Lusophone Certifications'}
         </h2>
         
         <div className="space-y-6">

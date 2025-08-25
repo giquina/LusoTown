@@ -300,7 +300,7 @@ export function PWAInstallPrompt({
                 <p className="text-white/90 text-sm">
                   {language === 'pt'
                     ? 'A sua comunidade portuguesa no bolso'
-                    : 'Your Portuguese community in your pocket'
+                    : 'Your Lusophone community in your pocket'
                   }
                 </p>
               </div>

@@ -1,7 +1,7 @@
 'use client'
 
-// Portuguese Business Directory Service
-// Connects Portuguese-owned businesses with the community
+// Lusophone Business Directory Service
+// Connects Lusophone-owned businesses with the community
 
 export interface PortugueseBusiness {
   id: string
@@ -31,7 +31,7 @@ export interface PortugueseBusiness {
   // Community Features
   specialOffers?: CommunityOffer[]
   culturalEvents?: BusinessEvent[]
-  supportsCulture: boolean // Sponsors Portuguese events, etc.
+  supportsCulture: boolean // Sponsors Lusophone events, etc.
   
   // Business Info
   openingHours: BusinessHours
@@ -56,7 +56,7 @@ export interface PortugueseBusiness {
 }
 
 export interface BusinessVerification {
-  documentsSubmitted: string[] // Business license, Portuguese connection proof
+  documentsSubmitted: string[] // Business license, Lusophone connection proof
   verifiedBy?: string // Admin ID
   verifiedAt?: string
   verificationNotes?: string
@@ -161,7 +161,7 @@ export type LondonArea =
 
 // Portuguese business keywords for SEO
 export const PORTUGUESE_BUSINESS_KEYWORDS = [
-  // Portuguese
+  // Lusophone
   'restaurante português',
   'comida portuguesa',
   'negócio português',
@@ -286,7 +286,7 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
         id: 'badge-cultural',
         name: 'Cultural Supporter',
         namePortuguese: 'Apoiador Cultural',
-        description: 'Actively supports Portuguese cultural events',
+        description: 'Actively supports Lusophone cultural events',
         icon: '🎭',
         color: 'purple',
         earnedAt: '2024-01-20T10:00:00Z'
@@ -298,7 +298,7 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
     name: 'Pastelaria Ribeiro',
     namePortuguese: 'Pastelaria Ribeiro - Doces e Salgados',
     category: 'bakery',
-    description: 'Traditional Portuguese bakery specializing in pastéis de nata, bolo de arroz, and other Portuguese pastries.',
+    description: 'Traditional Lusophone bakery specializing in pastéis de nata, bolo de arroz, and other Lusophone pastries.',
     descriptionPortuguese: 'Pastelaria portuguesa tradicional especializada em pastéis de nata, bolo de arroz e outros doces portugueses.',
     
     address: '56 South Lambeth Road, London',
@@ -317,7 +317,7 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
       documentsSubmitted: ['business_license', 'portuguese_id', 'community_references'],
       verifiedBy: 'admin-001',
       verifiedAt: '2024-01-18T14:00:00Z',
-      verificationNotes: 'Excellent Portuguese bakery with authentic recipes',
+      verificationNotes: 'Excellent Lusophone bakery with authentic recipes',
       businessLicense: true,
       portugueseConnection: true,
       communityReferences: ['user-002', 'user-004'],
@@ -329,7 +329,7 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
         id: 'offer-002',
         title: 'Free coffee with pastéis de nata',
         titlePortuguese: 'Café grátis com pastéis de nata',
-        description: 'Buy 6 pastéis de nata, get a free Portuguese coffee',
+        description: 'Buy 6 pastéis de nata, get a free Lusophone coffee',
         discount: 'Free coffee',
         validUntil: '2024-12-31T23:59:59Z',
         membershipRequired: false,
@@ -340,9 +340,9 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
     culturalEvents: [
       {
         id: 'event-002',
-        title: 'Portuguese Pastry Workshop',
+        title: 'Lusophone Pastry Workshop',
         titlePortuguese: 'Workshop de Doçaria Portuguesa',
-        description: 'Learn to make traditional Portuguese pastries',
+        description: 'Learn to make traditional Lusophone pastries',
         date: 'Every Saturday',
         time: '10:00',
         price: '£35 per person',
@@ -382,7 +382,7 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
         id: 'badge-artisan',
         name: 'Master Artisan',
         namePortuguese: 'Mestre Artesão',
-        description: 'Exceptional craftsmanship in traditional Portuguese baking',
+        description: 'Exceptional craftsmanship in traditional Lusophone baking',
         icon: '👨‍🍳',
         color: 'orange',
         earnedAt: '2024-01-22T10:00:00Z'
@@ -490,7 +490,7 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
     name: 'Centro Cultural Português',
     namePortuguese: 'Centro Cultural Português de Londres',
     category: 'cultural_center',
-    description: 'Portuguese cultural center offering language classes, cultural events, and community services for Portuguese speakers in London.',
+    description: 'Lusophone cultural center offering language classes, cultural events, and community services for Portuguese speakers in London.',
     descriptionPortuguese: 'Centro cultural português oferecendo aulas de língua, eventos culturais e serviços comunitários para lusófonos em Londres.',
     
     address: '180 High Street, London',
@@ -509,7 +509,7 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
       documentsSubmitted: ['charity_registration', 'cultural_license', 'portuguese_embassy_endorsement'],
       verifiedBy: 'admin-003',
       verifiedAt: '2024-01-12T12:00:00Z',
-      verificationNotes: 'Official Portuguese cultural center with embassy support',
+      verificationNotes: 'Official Lusophone cultural center with embassy support',
       businessLicense: true,
       portugueseConnection: true,
       communityReferences: ['user-002', 'user-003', 'user-006'],
@@ -532,7 +532,7 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
     culturalEvents: [
       {
         id: 'event-004',
-        title: 'Portuguese Heritage Month Celebration',
+        title: 'Lusophone Heritage Month Celebration',
         titlePortuguese: 'Celebração do Mês da Herança Portuguesa',
         description: 'Month-long celebration of Portuguese culture, history, and traditions',
         date: 'Throughout June',
@@ -574,7 +574,7 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
         id: 'badge-official',
         name: 'Official Cultural Partner',
         namePortuguese: 'Parceiro Cultural Oficial',
-        description: 'Officially recognized Portuguese cultural institution',
+        description: 'Officially recognized Lusophone cultural institution',
         icon: '🏛️',
         color: 'blue',
         earnedAt: '2024-01-12T12:00:00Z'

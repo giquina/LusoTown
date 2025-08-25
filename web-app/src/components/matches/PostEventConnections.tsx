@@ -120,7 +120,7 @@ export default function PostEventConnections({
       title: language === "pt" ? "Noite de Fado Autêntico" : "Authentic Fado Night",
       culturalCategory: "Fado Music",
       date: "2025-08-20",
-      location: "Portuguese Cultural Centre",
+      location: "Lusophone Cultural Centre",
       neighborhood: "Soho",
       attendedAt: "2 days ago",
       duration: "3 hours",
@@ -137,7 +137,7 @@ export default function PostEventConnections({
       followUpOpportunities: [
         language === "pt" ? "Café com grupo de fado" : "Coffee with fado group",
         language === "pt" ? "Próximo evento de fado" : "Next fado event",
-        language === "pt" ? "Aulas de guitarra portuguesa" : "Portuguese guitar lessons"
+        language === "pt" ? "Aulas de guitarra portuguesa" : "Lusophone guitar lessons"
       ],
       nextSimilarEvent: {
         id: "next-fado",
@@ -202,7 +202,7 @@ export default function PostEventConnections({
       culturalAuthenticity: 95,
       wouldRecommend: true,
       followUpOpportunities: [
-        language === "pt" ? "Jantar português em grupo" : "Portuguese group dinner",
+        language === "pt" ? "Jantar português em grupo" : "Lusophone group dinner",
         language === "pt" ? "Aulas de dança tradicional" : "Traditional dance classes"
       ],
       attendees: [
@@ -254,7 +254,7 @@ export default function PostEventConnections({
         ? "Reservem juntos o próximo evento de fado em setembro"
         : "Book together for the next fado event in September",
       suggestedDate: "2025-09-15",
-      location: "Portuguese Cultural Centre",
+      location: "Lusophone Cultural Centre",
       safetyLevel: "verified_venue",
       estimatedCost: 25,
       culturalRelevance: 100,
@@ -266,7 +266,7 @@ export default function PostEventConnections({
     {
       id: "group-dinner-portuguese",
       type: "group_activity",
-      title: language === "pt" ? "Jantar Português em Grupo" : "Portuguese Group Dinner",
+      title: language === "pt" ? "Jantar Português em Grupo" : "Lusophone Group Dinner",
       description: language === "pt"
         ? "Jantar em restaurante português com pessoas do festival São João"
         : "Dinner at Portuguese restaurant with people from São João festival",
@@ -309,7 +309,7 @@ export default function PostEventConnections({
         return "🎵";
       case "Santos Populares":
         return "🎉";
-      case "Portuguese Cuisine":
+      case "Lusophone Cuisine":
         return "🥮";
       case "Football":
         return "⚽";
@@ -409,7 +409,7 @@ export default function PostEventConnections({
             <p className="text-sm text-primary-600">
               {language === "pt"
                 ? "Continue as amizades iniciadas em eventos portugueses"
-                : "Continue friendships started at Portuguese events"}
+                : "Continue friendships started at Lusophone events"}
             </p>
           </div>
         </div>
@@ -859,7 +859,7 @@ export default function PostEventConnections({
               <p className="text-primary-600 text-sm mb-4">
                 {language === "pt"
                   ? "Adicione fotos e memórias dos eventos portugueses que participou."
-                  : "Add photos and memories from Portuguese events you attended."}
+                  : "Add photos and memories from Lusophone events you attended."}
               </p>
               <button className="bg-gradient-to-r from-coral-600 to-accent-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-coral-700 hover:to-accent-700 transition-all">
                 {language === "pt" ? "Adicionar Memória" : "Add Memory"}

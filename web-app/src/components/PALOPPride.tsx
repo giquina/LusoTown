@@ -14,7 +14,7 @@ interface PALOPPrideProps {
 }
 
 /**
- * PALOP Pride Component - Celebrating African Portuguese Heritage
+ * PALOP Pride Component - Celebrating African Lusophone Heritage
  * Displays pride and recognition for PALOP countries across LusoTown
  */
 const PALOPPride: React.FC<PALOPPrideProps> = ({ 
@@ -64,7 +64,7 @@ const PALOPPride: React.FC<PALOPPrideProps> = ({
         )}
         {showDescription && (
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {t('palop.full_name', 'African Portuguese-Speaking Countries')} - 
+            {t('palop.full_name', 'African Lusophone-Speaking Countries')} - 
             Angola 🇦🇴 • Cape Verde 🇨🇻 • Guinea-Bissau 🇬🇼 • Mozambique 🇲🇿 • São Tomé and Príncipe 🇸🇹
           </p>
         )}
@@ -173,7 +173,7 @@ export const PALOPIndependenceBadge: React.FC<{ className?: string }> = ({ class
   return (
     <div className={`inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-yellow-500 text-white px-4 py-2 rounded-full font-bold ${className}`}>
       <TrophyIcon className="w-4 h-4" />
-      <span>{t('palop.independence.subtitle', 'Celebrating 50+ Years of African Portuguese Freedom')}</span>
+      <span>{t('palop.independence.subtitle', 'Celebrating 50+ Years of African Lusophone Freedom')}</span>
     </div>
   )
 }

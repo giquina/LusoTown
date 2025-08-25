@@ -1,0 +1,287 @@
+{
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro",
+    "success": "Sucesso",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "done": "Concluído",
+    "skip": "Pular",
+    "search": "Procurar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "refresh": "Atualizar",
+    "retry": "Tentar novamente"
+  },
+  "navigation": {
+    "home": "Início",
+    "events": "Eventos",
+    "matches": "Matches",
+    "directory": "Diretório",
+    "profile": "Perfil"
+  },
+  "auth": {
+    "welcome": {
+      "title": "Bem-vindos ao LusoTown",
+      "subtitle": "Conecte-se com a comunidade lusófona em todo o Reino Unido",
+      "login": "Entrar",
+      "signup": "Registar",
+      "continue_guest": "Continuar como Convidado"
+    },
+    "login": {
+      "title": "Bem-vindos de Volta",
+      "subtitle": "Entre na sua conta",
+      "email": "Email",
+      "password": "Senha",
+      "forgot_password": "Esqueceu a Senha?",
+      "remember_me": "Lembrar-me",
+      "login_button": "Entrar",
+      "signup_link": "Não tem conta? Registe-se",
+      "social_divider": "Ou continue com",
+      "google": "Continuar com Google",
+      "facebook": "Continuar com Facebook"
+    },
+    "signup": {
+      "title": "Junte-se ao LusoTown",
+      "subtitle": "Crie a sua conta para se conectar",
+      "first_name": "Primeiro Nome",
+      "last_name": "Apelido",
+      "email": "Email",
+      "password": "Senha",
+      "confirm_password": "Confirmar Senha",
+      "signup_button": "Criar Conta",
+      "login_link": "Já tem conta? Entre",
+      "terms": "Aceito os Termos de Serviço e Política de Privacidade",
+      "marketing": "Gostaria de receber atualizações da comunidade e eventos"
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Bem-vindos à Família!",
+      "subtitle": "Vamos configurar o seu perfil cultural português",
+      "start": "Começar"
+    },
+    "heritage": {
+      "title": "A Sua Herança Portuguesa",
+      "subtitle": "Que país lusófono o conecta à nossa comunidade?",
+      "countries": {
+        "portugal": "Portugal",
+        "brazil": "Brasil",
+        "cape_verde": "Cabo Verde",
+        "angola": "Angola",
+        "mozambique": "Moçambique",
+        "guinea_bissau": "Guiné-Bissau",
+        "east_timor": "Timor-Leste",
+        "sao_tome": "São Tomé e Príncipe"
+      },
+      "multiple": "Tenho ligações a vários países",
+      "continue": "Continuar"
+    },
+    "language": {
+      "title": "Preferência de Idioma",
+      "subtitle": "Que idioma prefere usar?",
+      "english": "English",
+      "portuguese": "Português",
+      "continue": "Continuar"
+    },
+    "interests": {
+      "title": "Os Seus Interesses",
+      "subtitle": "O que lhe traz alegria na cultura portuguesa?",
+      "categories": {
+        "food": "Comida e Culinária",
+        "music": "Música e Fado",
+        "sports": "Futebol e Desportos",
+        "festivals": "Festivais Culturais",
+        "business": "Negócios e Networking",
+        "arts": "Arte e Literatura",
+        "travel": "Viagem e Turismo",
+        "family": "Família e Tradições",
+        "nightlife": "Vida Noturna e Social",
+        "education": "Educação e Aprendizagem"
+      },
+      "min_selection": "Selecione pelo menos 3 interesses",
+      "continue": "Continuar"
+    },
+    "location": {
+      "title": "A Sua Localização",
+      "subtitle": "Ajude-nos a conectá-lo com lusófonos próximos",
+      "allow_location": "Permitir Acesso à Localização",
+      "enter_manually": "Inserir Cidade Manualmente",
+      "city_placeholder": "Insira a sua cidade",
+      "why_location": "Usamos a localização para mostrar eventos e membros próximos",
+      "continue": "Continuar"
+    },
+    "notifications": {
+      "title": "Fique Conectado",
+      "subtitle": "Seja notificado sobre eventos e matches",
+      "push_notifications": "Notificações Push",
+      "email_updates": "Atualizações por Email",
+      "event_reminders": "Lembretes de Eventos",
+      "new_matches": "Alertas de Novos Matches",
+      "community_news": "Notícias da Comunidade",
+      "customize_later": "Pode personalizar estas nas configurações mais tarde",
+      "continue": "Continuar"
+    },
+    "complete": {
+      "title": "Bem-vindos à Comunidade!",
+      "subtitle": "O seu perfil cultural português está completo",
+      "features": {
+        "events": "Descubra eventos portugueses perto de si",
+        "matches": "Conecte-se com membros da comunidade com interesses semelhantes",
+        "directory": "Encontre negócios e serviços portugueses",
+        "community": "Junte-se à vibrante comunidade lusófona"
+      },
+      "start_exploring": "Começar a Explorar"
+    }
+  },
+  "home": {
+    "greeting": "Olá, {{name}}!",
+    "welcome_back": "Bem-vindo de volta ao LusoTown",
+    "upcoming_events": "Próximos Eventos",
+    "new_matches": "Novos Matches",
+    "nearby_businesses": "Negócios Portugueses Próximos",
+    "community_highlights": "Destaques da Comunidade",
+    "see_all": "Ver Todos",
+    "no_events": "Nenhum evento próximo",
+    "no_matches": "Nenhum novo match",
+    "cultural_tip": "Dica Cultural do Dia"
+  },
+  "events": {
+    "title": "Eventos Portugueses",
+    "subtitle": "Descubra eventos culturais em todo o Reino Unido",
+    "upcoming": "Próximos",
+    "past": "Passados",
+    "favorites": "Favoritos",
+    "attending": "A Participar",
+    "filters": {
+      "location": "Localização",
+      "date": "Data",
+      "category": "Categoria",
+      "price": "Preço",
+      "apply": "Aplicar Filtros",
+      "clear": "Limpar Tudo"
+    },
+    "categories": {
+      "all": "Todos os Eventos",
+      "cultural": "Culturais",
+      "music": "Música e Fado",
+      "food": "Comida e Vinho",
+      "sports": "Desportos",
+      "business": "Negócios",
+      "social": "Sociais",
+      "festivals": "Festivais"
+    },
+    "details": {
+      "when": "Quando",
+      "where": "Onde",
+      "price": "Preço",
+      "organizer": "Organizador",
+      "description": "Descrição",
+      "attendees": "Participantes",
+      "attend": "Participar no Evento",
+      "attending": "A Participar",
+      "add_to_favorites": "Adicionar aos Favoritos",
+      "share": "Partilhar Evento",
+      "directions": "Obter Direções"
+    }
+  },
+  "matches": {
+    "title": "Os Seus Matches",
+    "subtitle": "Conecte-se com lusófonos",
+    "new_matches": "Novos Matches",
+    "recent": "Recentes",
+    "favorites": "Favoritos",
+    "compatibility": "{{score}}% Compatível",
+    "shared_interests": "Interesses Partilhados",
+    "cultural_connection": "Ligação Cultural",
+    "distance": "{{distance}}km de distância",
+    "last_active": "Ativo há {{time}}",
+    "send_message": "Enviar Mensagem",
+    "view_profile": "Ver Perfil",
+    "no_matches": "Ainda sem matches",
+    "discover_more": "Continue a usar a app para encontrar mais matches!"
+  },
+  "directory": {
+    "title": "Diretório de Negócios",
+    "subtitle": "Negócios portugueses em todo o Reino Unido",
+    "search_placeholder": "Procurar negócios, serviços...",
+    "categories": {
+      "restaurants": "Restaurantes",
+      "services": "Serviços",
+      "retail": "Comércio",
+      "professional": "Profissional",
+      "health": "Saúde e Beleza",
+      "automotive": "Automóvel",
+      "real_estate": "Imobiliário",
+      "education": "Educação"
+    },
+    "filters": {
+      "location": "Localização",
+      "category": "Categoria",
+      "rating": "Classificação",
+      "open_now": "Aberto Agora",
+      "verified": "Apenas Verificados"
+    },
+    "business": {
+      "verified": "Verificado",
+      "open": "Aberto",
+      "closed": "Fechado",
+      "rating": "{{rating}} ({{count}} avaliações)",
+      "call": "Ligar",
+      "website": "Website",
+      "directions": "Direções",
+      "share": "Partilhar",
+      "hours": "Horário de Funcionamento",
+      "contact": "Informações de Contacto",
+      "about": "Sobre"
+    }
+  },
+  "profile": {
+    "title": "Perfil",
+    "edit": "Editar Perfil",
+    "settings": "Configurações",
+    "help": "Ajuda e Suporte",
+    "logout": "Sair",
+    "sections": {
+      "account": "Conta",
+      "preferences": "Preferências",
+      "privacy": "Privacidade",
+      "support": "Suporte",
+      "about": "Sobre"
+    },
+    "stats": {
+      "events_attended": "Eventos Frequentados",
+      "connections": "Conexões",
+      "reviews": "Avaliações Dadas"
+    },
+    "badges": {
+      "title": "Distintivos da Comunidade",
+      "cultural_explorer": "Explorador Cultural",
+      "event_enthusiast": "Entusiasta de Eventos",
+      "community_connector": "Conector da Comunidade"
+    }
+  },
+  "settings": {
+    "title": "Configurações",
+    "language": "Idioma",
+    "notifications": "Notificações",
+    "privacy": "Privacidade",
+    "account": "Conta",
+    "help": "Ajuda",
+    "about": "Sobre",
+    "version": "Versão {{version}}"
+  },
+  "errors": {
+    "network": "Erro de ligação à rede. Tente novamente.",
+    "unknown": "Algo correu mal. Tente novamente.",
+    "auth_failed": "Falha na autenticação. Entre novamente.",
+    "validation_email": "Introduza um endereço de email válido",
+    "validation_password": "A senha deve ter pelo menos 8 caracteres",
+    "validation_required": "Este campo é obrigatório"
+  }
+}

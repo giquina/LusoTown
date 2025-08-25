@@ -286,7 +286,7 @@ export default function AIMonitoringDashboard() {
             <div className={`text-2xl font-bold ${getHealthStatusColor(metrics.summary.cultural_accuracy_score)}`}>
               {formatPercentage(metrics.summary.cultural_accuracy_score)}
             </div>
-            <p className="text-xs text-gray-600 mt-1">Portuguese authenticity</p>
+            <p className="text-xs text-gray-600 mt-1">Lusophone authenticity</p>
           </CardContent>
         </Card>
 
@@ -348,10 +348,10 @@ export default function AIMonitoringDashboard() {
                     </div>
                   </div>
 
-                  {/* Portuguese-specific metrics */}
+                  {/* Lusophone-specific metrics */}
                   {feature.portuguese_specific_metrics && Object.keys(feature.portuguese_specific_metrics).length > 0 && (
                     <div className="mt-4 pt-4 border-t">
-                      <div className="text-sm font-medium text-gray-700 mb-2">Portuguese Cultural Metrics</div>
+                      <div className="text-sm font-medium text-gray-700 mb-2">Lusophone Cultural Metrics</div>
                       <div className="grid grid-cols-2 gap-4">
                         {feature.portuguese_specific_metrics.saudade_detection_accuracy && (
                           <div>
@@ -403,7 +403,7 @@ export default function AIMonitoringDashboard() {
                   </div>
                   <Progress value={metrics.cultural_insights.saudade_support_effectiveness * 100} className="h-2" />
                   <p className="text-sm text-gray-600">
-                    Measures how well AI systems provide emotional support for Portuguese diaspora experiences
+                    Measures how well AI systems provide emotional support for Lusophone diaspora experiences
                   </p>
                 </div>
               </CardContent>

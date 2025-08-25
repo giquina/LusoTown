@@ -212,7 +212,7 @@ export function EliteFeedbackSystem({
             {culturalTheme
               ? language === 'pt'
                 ? 'Ajude-nos a melhorar a experiência portuguesa no Reino Unido'
-                : 'Help us improve the Portuguese experience in the United Kingdom'
+                : 'Help us improve the Lusophone experience in the United Kingdom'
               : 'Your feedback helps us improve'
             }
           </motion.p>
@@ -451,7 +451,7 @@ export function EliteFeedbackSystem({
             <p className="text-sm text-amber-700 font-medium">
               🇵🇹 {language === 'pt' 
                 ? 'Obrigado por fazer parte da nossa família portuguesa no Reino Unido!' 
-                : 'Thank you for being part of our Portuguese family in the United Kingdom!'
+                : 'Thank you for being part of our Lusophone family in the United Kingdom!'
               }
             </p>
           </motion.div>

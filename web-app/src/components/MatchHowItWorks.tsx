@@ -46,7 +46,7 @@ export default function MatchHowItWorks() {
   const steps = [
     {
       number: 1,
-      title: 'Create Your Portuguese Profile',
+      title: 'Create Your Lusophone Profile',
       titlePt: 'Crie o Seu Perfil Português',
       description: 'Join our community of Portuguese speakers in London. Share your heritage, interests, and what you\'re looking for in authentic connections.',
       descriptionPt: 'Junte-se à nossa comunidade de falantes de português em Londres. Partilhe a sua herança, interesses e o que procura em conexões autênticas.',
@@ -96,9 +96,9 @@ export default function MatchHowItWorks() {
     },
     {
       number: 3,
-      title: 'Meet at Portuguese Events',
+      title: 'Meet at Lusophone Events',
       titlePt: 'Encontrem-se em Eventos Portugueses',
-      description: 'Connect through authentic Portuguese cultural events, from intimate fado nights to professional networking gatherings across London.',
+      description: 'Connect through authentic Lusophone cultural events, from intimate fado nights to professional networking gatherings across London.',
       descriptionPt: 'Conectem-se através de eventos culturais portugueses autênticos, desde noites íntimas de fado até encontros de networking profissional por Londres.',
       icon: CalendarDaysIcon,
       color: 'from-yellow-500 via-green-500 to-red-500',
@@ -149,7 +149,7 @@ export default function MatchHowItWorks() {
   const benefits = [
     {
       icon: ShieldCheckIcon,
-      title: 'Verified Portuguese Speakers',
+      title: 'Verified Lusophone Speakers',
       titlePt: 'Falantes de Português Verificados',
       description: 'All members are verified Portuguese speakers from Portugal, Brazil, and other Lusophone countries',
       descriptionPt: 'Todos os membros são falantes de português verificados de Portugal, Brasil e outros países lusófonos'
@@ -172,14 +172,14 @@ export default function MatchHowItWorks() {
       icon: BuildingOfficeIcon,
       title: 'Professional Networking',
       titlePt: 'Networking Profissional',
-      description: 'Connect with Portuguese professionals across industries for career opportunities',
+      description: 'Connect with Lusophone professionals across industries for career opportunities',
       descriptionPt: 'Conecte-se com profissionais portugueses em várias indústrias para oportunidades de carreira'
     },
     {
       icon: UsersIcon,
       title: 'Community Events',
       titlePt: 'Eventos Comunitários',
-      description: 'Meet your matches at real Portuguese cultural events and gatherings',
+      description: 'Meet your matches at real Lusophone cultural events and gatherings',
       descriptionPt: 'Conheça os seus matches em eventos e encontros culturais portugueses reais'
     },
     {
@@ -194,7 +194,7 @@ export default function MatchHowItWorks() {
   const stats = [
     {
       number: '2,750+',
-      label: 'Portuguese Speakers',
+      label: 'Lusophone Speakers',
       labelPt: 'Falantes de Português',
       sublabel: 'Active in London',
       sublabelPt: 'Ativos em Londres'
@@ -231,7 +231,7 @@ export default function MatchHowItWorks() {
       matchPt: 'Conheceram-se através de um evento de degustação de vinhos portugueses'
     },
     {
-      text: 'Connected with my business partner through LusoTown. We now run a Portuguese catering company together!',
+      text: 'Connected with my business partner through LusoTown. We now run a Lusophone catering company together!',
       textPt: 'Conectei-me com o meu parceiro de negócios através do LusoTown. Agora gerimos uma empresa de catering português juntos!',
       author: 'Miguel, 34, Vauxhall',
       match: 'Met at a Portuguese business networking event',
@@ -277,7 +277,7 @@ export default function MatchHowItWorks() {
               <>
                 Meet Your
                 <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent block sm:inline">
-                  {' '}Portuguese Match
+                  {' '}Lusophone Match
                 </span>
               </>
             )}
@@ -466,7 +466,7 @@ export default function MatchHowItWorks() {
                 Our Community in Numbers
               </h3>
               <p className="text-white/90 text-base sm:text-lg">
-                Real results from Portuguese connections in London
+                Real results from Lusophone connections in London
               </p>
             </div>
 
@@ -568,7 +568,7 @@ export default function MatchHowItWorks() {
               </p>
             </div>
             
-            {/* Portuguese cultural quote */}
+            {/* Lusophone cultural quote */}
             <div className="bg-white/60 rounded-2xl p-6 mb-10 max-w-2xl mx-auto border border-secondary-100">
               <p className="text-gray-700 italic text-lg mb-2">
                 {language === 'pt' 
@@ -579,7 +579,7 @@ export default function MatchHowItWorks() {
               <p className="text-gray-600 text-sm">
                 {language === 'pt' 
                   ? 'Provérbio português sobre o valor das conexões humanas'
-                  : 'Portuguese proverb about the value of human connections'
+                  : 'Lusophone proverb about the value of human connections'
                 }
               </p>
             </div>

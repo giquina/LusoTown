@@ -17,7 +17,7 @@ export default function HostWithUsSection() {
 
   return (
     <section className="py-24 bg-gradient-to-br from-premium-50/30 via-white to-coral-50/30 relative overflow-hidden border-t border-gray-100">
-      {/* Portuguese-inspired background decorative elements */}
+      {/* Lusophone-inspired background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-premium-200/40 via-coral-100/30 to-accent-100/30 rounded-full opacity-60 animate-pulse" />
         <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-tr from-secondary-200/40 via-premium-100/30 to-coral-100/30 rounded-full opacity-50 animate-bounce" style={{ animationDuration: '8s' }} />
@@ -111,7 +111,7 @@ export default function HostWithUsSection() {
               </div>
             </div>
 
-            {/* Portuguese Business Promotion */}
+            {/* Lusophone Business Promotion */}
             <div className="group relative h-full col-span-2 lg:col-span-1">
               <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 min-h-[300px] sm:min-h-[340px] lg:min-h-[380px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-coral-50/60 via-transparent to-action-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl lg:rounded-3xl" />
@@ -190,10 +190,10 @@ export default function HostWithUsSection() {
                 <UserGroupIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
-                Reach 750+ Portuguese
+                Reach 750+ Lusophone
               </h4>
               <p className="text-xs text-gray-600 leading-relaxed flex-1 break-words">
-                Connect with Portuguese professionals and community members.
+                Connect with Lusophone professionals and community members.
               </p>
             </div>
             
@@ -217,7 +217,7 @@ export default function HostWithUsSection() {
                 Build Network
               </h4>
               <p className="text-xs text-gray-600 leading-relaxed flex-1 break-words">
-                Connect with Portuguese professionals.
+                Connect with Lusophone professionals.
               </p>
             </div>
             

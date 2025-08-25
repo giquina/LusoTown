@@ -34,7 +34,7 @@ export default function HowItWorks() {
   const steps = [
     {
       number: 1,
-      title: "Create Your Portuguese Profile",
+      title: "Create Your Lusophone Profile",
       subtitle: "Crie o Seu Perfil Português",
       description: `Join ${communityStats.members} Portuguese speakers in London. Share your heritage: Portugal, Brazil, or Lusophone countries. Add your interests from fado to football, pastéis de nata to professional networking.`,
       icon: UserPlus,
@@ -61,7 +61,7 @@ export default function HowItWorks() {
     },
     {
       number: 3,
-      title: "Book Authentic Portuguese Events",
+      title: "Book Authentic Lusophone Events",
       subtitle: "Reserve Eventos Portugueses Autênticos",
       description:
         "From intimate fado nights in Stockwell to Portuguese business networking in the City. Real venues, real culture, real connections.",
@@ -70,7 +70,7 @@ export default function HowItWorks() {
       bgColor: "from-green-50 via-red-50 to-yellow-50",
       accentColor: "green-500",
       examples:
-        "🎭 Fado nights • ☕ Portuguese café meetups • 🍷 Wine & networking • 🥐 Cooking classes",
+        "🎭 Fado nights • ☕ Lusophone café meetups • 🍷 Wine & networking • 🥐 Cooking classes",
       emoji: "🎉",
     },
     {
@@ -78,7 +78,7 @@ export default function HowItWorks() {
       title: "Stream & Earn Income",
       subtitle: "Transmita e Ganhe Dinheiro",
       description:
-        "Join LusoTown TV - our Portuguese streaming platform. Watch live cultural content, host your own profitable shows, or monetize your London-Portuguese journey with 85/15 revenue split.",
+        "Join LusoTown TV - our Lusophone streaming platform. Watch live cultural content, host your own profitable shows, or monetize your London-Lusophone journey with 85/15 revenue split.",
       icon: Camera,
       color: "from-yellow-500 via-red-500 to-green-500",
       bgColor: "from-yellow-50 via-red-50 to-green-50",
@@ -98,12 +98,12 @@ export default function HowItWorks() {
       bgColor: "from-red-50 via-green-50 to-yellow-50",
       accentColor: "red-500",
       examples:
-        "🚗 Portuguese chauffeurs • 🎫 VIP event access • ⭐ Premium matching • 🍾 Exclusive gatherings",
+        "🚗 Lusophone chauffeurs • 🎫 VIP event access • ⭐ Premium matching • 🍾 Exclusive gatherings",
       emoji: "⭐",
     },
     {
       number: 6,
-      title: "Build Your Portuguese Legacy",
+      title: "Build Your Lusophone Legacy",
       subtitle: "Construa o Seu Legado Português",
       description:
         "Share family recipes, connect with university partnerships, mentor other Portuguese speakers, and help preserve our culture for future generations in London.",
@@ -190,7 +190,7 @@ export default function HowItWorks() {
             <div className="flex items-center gap-2 bg-white/50 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
               <UtensilsCrossed className="h-5 w-5 text-secondary-600" />
               <span className="text-sm font-medium text-gray-700">
-                Portuguese Cuisine
+                Lusophone Cuisine
               </span>
             </div>
             <div className="flex items-center gap-2 bg-white/50 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
@@ -202,7 +202,7 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* Dynamic Cards for All 6 Steps with Portuguese Cultural Elements */}
+        {/* Dynamic Cards for All 6 Steps with Lusophone Cultural Elements */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-20">
           {steps.map((step, index) => {
             const IconComponent = step.icon;
@@ -319,7 +319,7 @@ export default function HowItWorks() {
           })}
         </div>
 
-        {/* Enhanced Stats Section with Portuguese Cultural Context */}
+        {/* Enhanced Stats Section with Lusophone Cultural Context */}
         <div
           className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 transition-all duration-1000 delay-500 ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
@@ -349,7 +349,7 @@ export default function HowItWorks() {
               MONTHLY MEETUPS
             </div>
             <div className="text-xs text-gray-500 italic">
-              At real Portuguese venues in London
+              At real Lusophone venues in London
             </div>
           </div>
 
@@ -375,12 +375,12 @@ export default function HowItWorks() {
               United Kingdom CITIES
             </div>
             <div className="text-xs text-gray-500 italic">
-              London boroughs with Portuguese communities
+              London boroughs with Lusophone communities
             </div>
           </div>
         </div>
 
-        {/* Enhanced CTA Section with Portuguese Cultural Messaging */}
+        {/* Enhanced CTA Section with Lusophone Cultural Messaging */}
         <div
           className={`text-center transition-all duration-1000 delay-700 ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
@@ -404,7 +404,7 @@ export default function HowItWorks() {
               </strong>
             </p>
 
-            {/* Portuguese cultural quote */}
+            {/* Lusophone cultural quote */}
             <div className="bg-white/50 rounded-2xl p-6 mb-10 max-w-2xl mx-auto border border-secondary-100">
               <p className="text-gray-700 italic text-lg mb-2">
                 "Viver é conviver - há sempre algo para fazer juntos"

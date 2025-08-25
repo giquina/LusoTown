@@ -56,8 +56,8 @@ export interface EventToursFilters {
 export const eventsTours: EventTour[] = [
   {
     id: 'et-001',
-    title: 'Portuguese Women 30+ Wine & Cultural Evening',
-    description: 'An intimate evening for Portuguese women in their 30s to connect over authentic Portuguese wines and share stories about preserving our culture in London. Join us for heartfelt conversations about heritage, career, and building meaningful friendships.',
+    title: 'Lusophone Women 30+ Wine & Cultural Evening',
+    description: 'An intimate evening for Lusophone women in their 30s to connect over authentic Portuguese wines and share stories about preserving our culture in London. Join us for heartfelt conversations about heritage, career, and building meaningful friendships.',
     date: '2025-08-20',
     time: '19:00',
     endTime: '22:00',
@@ -85,15 +85,15 @@ export const eventsTours: EventTour[] = [
       'Curated Portuguese wine selection from Douro Valley',
       'Discussion about preserving Portuguese traditions in London',
       'Small group setting for meaningful connections',
-      'Traditional petiscos (Portuguese appetizers)'
+      'Traditional petiscos (Lusophone appetizers)'
     ],
     whatToExpect: [
-      'Intimate group of 20 Portuguese women',
-      'Guided wine tasting by Portuguese sommelier',
+      'Intimate group of 20 Lusophone women',
+      'Guided wine tasting by Lusophone sommelier',
       'Cultural conversation about maintaining heritage abroad',
       'Exchange contacts and plan future meetups'
     ],
-    whatToHear: 'Stories from Portuguese women about adapting to London life while staying connected to heritage',
+    whatToHear: 'Stories from Lusophone women about adapting to London life while staying connected to heritage',
     whatToLearn: 'How to maintain cultural identity while building a successful life in London',
     groupSize: 'Small (15-20 people)',
     difficulty: 'Easy',
@@ -104,7 +104,7 @@ export const eventsTours: EventTour[] = [
   },
   {
     id: 'et-002',
-    title: 'Website Creation Masterclass: Portuguese Professionals',
+    title: 'Website Creation Masterclass: Lusophone Professionals',
     description: 'Learn to build modern websites using HTML, CSS, and JavaScript for business growth. Open to all Portuguese speakers interested in web development, from complete beginners to business professionals.',
     date: '2025-08-22',
     time: '14:00',
@@ -133,15 +133,15 @@ export const eventsTours: EventTour[] = [
       'Hands-on website development training with practical examples',
       'Learn HTML, CSS, and JavaScript for business websites',
       'Practical implementation strategies for immediate use',
-      'Network with Portuguese web development enthusiasts and professionals'
+      'Network with Lusophone web development enthusiasts and professionals'
     ],
     whatToExpect: [
       'Interactive coding workshop with practical exercises',
       'Beginner-friendly approach to web development',
       'Real-world examples of successful business websites',
-      'Networking break with fellow Portuguese web development enthusiasts'
+      'Networking break with fellow Lusophone web development enthusiasts'
     ],
-    whatToHear: 'Success stories of Portuguese professionals using web development in their careers',
+    whatToHear: 'Success stories of Lusophone professionals using web development in their careers',
     whatToLearn: 'How to build professional websites effectively for business growth and career advancement',
     groupSize: 'Medium (25-30 people)',
     difficulty: 'Easy',
@@ -152,8 +152,8 @@ export const eventsTours: EventTour[] = [
   },
   {
     id: 'et-003',
-    title: 'Women 40+ Professional Portuguese Network',
-    description: 'Exclusive networking dinner for established Portuguese women (40+) in London. Share professional experiences, mentor younger Portuguese speakers, and build business connections within the Portuguese diaspora.',
+    title: 'Women 40+ Professional Lusophone Network',
+    description: 'Exclusive networking dinner for established Lusophone women (40+) in London. Share professional experiences, mentor younger Portuguese speakers, and build business connections within the Lusophone diaspora.',
     date: '2025-08-25',
     time: '18:30',
     endTime: '21:30',
@@ -184,13 +184,13 @@ export const eventsTours: EventTour[] = [
       'Discussion about career advancement in United Kingdom market'
     ],
     whatToExpect: [
-      'Intimate dinner with successful Portuguese women',
+      'Intimate dinner with successful Lusophone women',
       'Professional networking and business discussions',
       'Mentorship circle for community guidance',
       'Strategic partnerships and collaboration opportunities'
     ],
-    whatToHear: 'Career success stories from Portuguese women who built businesses in London',
-    whatToLearn: 'Professional strategies for advancing in United Kingdom market while maintaining Portuguese identity',
+    whatToHear: 'Career success stories from Lusophone women who built businesses in London',
+    whatToLearn: 'Professional strategies for advancing in United Kingdom market while maintaining Lusophone identity',
     groupSize: 'Small (12-16 people)',
     difficulty: 'Easy',
     averageRating: 4.9,
@@ -200,8 +200,8 @@ export const eventsTours: EventTour[] = [
   },
   {
     id: 'et-004',
-    title: 'Portuguese Language Exchange at Tate Modern',
-    description: 'Combine art appreciation with language learning! Portuguese and English speakers explore contemporary art while practicing languages. Perfect for Portuguese speakers wanting to improve English or help others learn Portuguese.',
+    title: 'Lusophone Language Exchange at Tate Modern',
+    description: 'Combine art appreciation with language learning! Lusophone and English speakers explore contemporary art while practicing languages. Perfect for Portuguese speakers wanting to improve English or help others learn Lusophone.',
     date: '2025-08-24',
     time: '11:00',
     endTime: '14:00',
@@ -226,18 +226,18 @@ export const eventsTours: EventTour[] = [
     portugueseOrigin: ['All Lusophone'],
     tags: ['Language Exchange', 'Art', 'Cultural', 'Mixed Ages', 'Education'],
     highlights: [
-      'Art discussion in Portuguese and English',
+      'Art discussion in Lusophone and English',
       'Language practice in cultural setting',
-      'Museum exploration with Portuguese perspective',
+      'Museum exploration with Lusophone perspective',
       'International networking with language learners'
     ],
     whatToExpect: [
       'Guided art tour with language learning component',
-      'Portuguese-English conversation practice',
+      'Lusophone-English conversation practice',
       'Cultural exchange about art interpretation',
       'Coffee break for informal conversation'
     ],
-    whatToHear: 'Art discussions blending Portuguese and English perspectives',
+    whatToHear: 'Art discussions blending Lusophone and English perspectives',
     whatToLearn: 'Art vocabulary in both languages and cultural appreciation techniques',
     groupSize: 'Medium (20-24 people)',
     difficulty: 'Moderate',
@@ -249,11 +249,11 @@ export const eventsTours: EventTour[] = [
   {
     id: 'et-005',
     title: 'Fado Night & Cultural Heritage Celebration',
-    description: 'Authentic Fado evening celebrating Portuguese soul music and cultural heritage. Experience traditional Fado performances while connecting with Portuguese speakers who share love for our musical traditions.',
+    description: 'Authentic Fado evening celebrating Lusophone soul music and cultural heritage. Experience traditional Fado performances while connecting with Portuguese speakers who share love for our musical traditions.',
     date: '2025-08-28',
     time: '20:00',
     endTime: '23:00',
-    location: 'Portuguese Cultural Centre',
+    location: 'Lusophone Cultural Centre',
     address: '180 South Lambeth Road, Stockwell, London SW8 1UQ',
     category: 'Cultural Heritage',
     price: TOURS_PRICING.cultural.fadoNight,
@@ -271,7 +271,7 @@ export const eventsTours: EventTour[] = [
     portugueseOrigin: ['Portugal'],
     tags: ['Fado', 'Cultural Heritage', 'Music', 'Traditional', 'Community', 'Evening Entertainment'],
     highlights: [
-      'Live Fado performance by London-based Portuguese artists',
+      'Live Fado performance by London-based Lusophone artists',
       'Traditional Portuguese wine and appetizers',
       'Cultural education about Fado history and significance',
       'Community singing and cultural celebration'
@@ -279,11 +279,11 @@ export const eventsTours: EventTour[] = [
     whatToExpect: [
       'Authentic Fado musical performance',
       'Cultural storytelling about Portuguese traditions',
-      'Community networking with fellow Portuguese',
+      'Community networking with fellow Lusophone',
       'Traditional food and wine accompaniment'
     ],
-    whatToHear: 'Traditional Fado songs and stories about Portuguese emigration and longing',
-    whatToLearn: 'History and cultural significance of Fado in Portuguese identity',
+    whatToHear: 'Traditional Fado songs and stories about Lusophone emigration and longing',
+    whatToLearn: 'History and cultural significance of Fado in Lusophone identity',
     groupSize: 'Large (40-50 people)',
     difficulty: 'Easy',
     averageRating: 4.8,
@@ -293,8 +293,8 @@ export const eventsTours: EventTour[] = [
   },
   {
     id: 'et-006',
-    title: 'Weekend Trip: Portuguese Heritage in Canterbury',
-    description: 'Day trip exploring Portuguese connections to Canterbury Cathedral and historic England. Perfect for families and heritage enthusiasts wanting to discover Portuguese influence in English history.',
+    title: 'Weekend Trip: Lusophone Heritage in Canterbury',
+    description: 'Day trip exploring Lusophone connections to Canterbury Cathedral and historic England. Perfect for families and heritage enthusiasts wanting to discover Lusophone influence in English history.',
     date: '2025-08-30',
     time: '09:00',
     endTime: '18:00',
@@ -316,19 +316,19 @@ export const eventsTours: EventTour[] = [
     portugueseOrigin: ['All Lusophone'],
     tags: ['Day Trip', 'Heritage', 'Family-Friendly', 'History', 'Canterbury'],
     highlights: [
-      'Guided tour of Canterbury Cathedral with Portuguese historical context',
+      'Guided tour of Canterbury Cathedral with Lusophone historical context',
       'Coach transport from London with Portuguese-speaking community',
       'Group lunch at traditional English pub',
-      'Historical exploration of Portuguese-English connections'
+      'Historical exploration of Lusophone-English connections'
     ],
     whatToExpect: [
-      'Full-day coach trip with Portuguese guide',
-      'Canterbury Cathedral tour with Portuguese historical perspective',
+      'Full-day coach trip with Lusophone guide',
+      'Canterbury Cathedral tour with Lusophone historical perspective',
       'Group meals and community bonding time',
-      'Free time to explore Canterbury with fellow Portuguese'
+      'Free time to explore Canterbury with fellow Lusophone'
     ],
-    whatToHear: 'Stories of Portuguese-English historical connections and medieval trade',
-    whatToLearn: 'How Portuguese merchants and nobles influenced English history',
+    whatToHear: 'Stories of Lusophone-English historical connections and medieval trade',
+    whatToLearn: 'How Lusophone merchants and nobles influenced English history',
     groupSize: 'Large (30-35 people)',
     difficulty: 'Moderate',
     averageRating: 4.5,
@@ -338,7 +338,7 @@ export const eventsTours: EventTour[] = [
   },
   {
     id: 'et-007',
-    title: 'Portuguese Friday Night Social: Music & Drinks',
+    title: 'Lusophone Friday Night Social: Music & Drinks',
     description: 'Weekly Friday night social gathering with Portuguese music, drinks, and dancing. Perfect for making new friends and unwinding after the week. All ages and backgrounds welcome!',
     date: '2025-08-23',
     time: '19:30',
@@ -361,18 +361,18 @@ export const eventsTours: EventTour[] = [
     portugueseOrigin: ['All Lusophone'],
     tags: ['Nightlife', 'Music', 'Social', 'Dancing', 'Friday Night', 'Casual'],
     highlights: [
-      'DJ playing Portuguese hits and international music',
-      'Affordable drinks and Portuguese petiscos',
+      'DJ playing Lusophone hits and international music',
+      'Affordable drinks and Lusophone petiscos',
       'Friendly crowd with mix of Portuguese speakers',
       'Perfect for meeting new people in relaxed atmosphere'
     ],
     whatToExpect: [
-      'Vibrant Portuguese social atmosphere',
-      'Mix of Portuguese and international music',
+      'Vibrant Lusophone social atmosphere',
+      'Mix of Lusophone and international music',
       'Casual networking and new friendships',
       'Dancing and socializing until late'
     ],
-    whatToHear: 'Portuguese pop, fado remixes, Brazilian funk, and international hits',
+    whatToHear: 'Lusophone pop, fado remixes, Brazilian funk, and international hits',
     whatToLearn: 'How to connect with Portuguese-speaking community through music and socializing',
     groupSize: 'Large (50-60 people)',
     difficulty: 'Easy',
@@ -384,7 +384,7 @@ export const eventsTours: EventTour[] = [
   {
     id: 'et-008',
     title: 'Lisbon Street Art & Culture Walking Tour',
-    description: 'Explore London through Portuguese eyes! Discover Portuguese-inspired street art, visit Portuguese businesses, and learn about Portuguese influence in different London neighborhoods.',
+    description: 'Explore London through Lusophone eyes! Discover Lusophone-inspired street art, visit Portuguese businesses, and learn about Lusophone influence in different London neighborhoods.',
     date: '2025-08-26',
     time: '14:00',
     endTime: '17:00',
@@ -404,21 +404,21 @@ export const eventsTours: EventTour[] = [
     membershipRequired: 'free',
     ageRestriction: 'All ages welcome',
     portugueseOrigin: ['All Lusophone'],
-    tags: ['Walking Tour', 'Street Art', 'Culture', 'Stockwell', 'Portuguese Businesses', 'Heritage'],
+    tags: ['Walking Tour', 'Street Art', 'Culture', 'Stockwell', 'Lusophone Businesses', 'Heritage'],
     highlights: [
-      'Discover hidden Portuguese gems in South London',
-      'Visit authentic Portuguese cafes and restaurants',
-      'Learn about Portuguese street art and murals',
+      'Discover hidden Lusophone gems in South London',
+      'Visit authentic Lusophone cafes and restaurants',
+      'Learn about Lusophone street art and murals',
       'Meet local Portuguese business owners'
     ],
     whatToExpect: [
-      '3-hour guided walking tour through Portuguese areas',
-      'Coffee break at traditional Portuguese cafe',
-      'Stories about Portuguese immigration to London',
+      '3-hour guided walking tour through Lusophone areas',
+      'Coffee break at traditional Lusophone cafe',
+      'Stories about Lusophone immigration to London',
       'Photo opportunities at cultural landmarks'
     ],
-    whatToHear: 'Stories of Portuguese families who built businesses in London',
-    whatToLearn: 'Hidden Portuguese cultural spots and community history in London',
+    whatToHear: 'Stories of Lusophone families who built businesses in London',
+    whatToLearn: 'Hidden Lusophone cultural spots and community history in London',
     groupSize: 'Medium (20-25 people)',
     difficulty: 'Easy',
     averageRating: 4.6,
@@ -428,8 +428,8 @@ export const eventsTours: EventTour[] = [
   },
   {
     id: 'et-009',
-    title: 'Portuguese Cooking Workshop: Traditional & Modern',
-    description: 'Learn to cook authentic Portuguese dishes with a modern twist. Perfect for food lovers wanting to connect with Portuguese culture through cooking. All skill levels welcome!',
+    title: 'Lusophone Cooking Workshop: Traditional & Modern',
+    description: 'Learn to cook authentic Lusophone dishes with a modern twist. Perfect for food lovers wanting to connect with Portuguese culture through cooking. All skill levels welcome!',
     date: '2025-09-01',
     time: '11:00',
     endTime: '15:00',
@@ -451,9 +451,9 @@ export const eventsTours: EventTour[] = [
     portugueseOrigin: ['All Lusophone'],
     tags: ['Cooking', 'Food', 'Traditional', 'Modern', 'Cultural', 'Hands-on'],
     highlights: [
-      'Learn 4 traditional Portuguese recipes with modern presentation',
+      'Learn 4 traditional Lusophone recipes with modern presentation',
       'All ingredients and equipment provided',
-      'Take home recipe book and Portuguese spice kit',
+      'Take home recipe book and Lusophone spice kit',
       'Enjoy lunch together featuring dishes you cooked'
     ],
     whatToExpect: [
@@ -462,8 +462,8 @@ export const eventsTours: EventTour[] = [
       'Cultural stories behind each dish and ingredient',
       'Group lunch and recipe sharing'
     ],
-    whatToHear: 'Stories about Portuguese culinary traditions and family recipes',
-    whatToLearn: 'How to cook authentic Portuguese dishes and adapt them for modern life',
+    whatToHear: 'Stories about Lusophone culinary traditions and family recipes',
+    whatToLearn: 'How to cook authentic Lusophone dishes and adapt them for modern life',
     groupSize: 'Small (12-16 people)',
     difficulty: 'Easy',
     averageRating: 4.8,
@@ -473,8 +473,8 @@ export const eventsTours: EventTour[] = [
   },
   {
     id: 'et-010',
-    title: 'Portuguese Book Club & Literary Café',
-    description: 'Monthly book club discussing Portuguese literature in English. Enjoy Portuguese coffee and pastries while exploring works by Portuguese and Lusophone authors. Reading level flexible.',
+    title: 'Lusophone Book Club & Literary Café',
+    description: 'Monthly book club discussing Lusophone literature in English. Enjoy Lusophone coffee and pastries while exploring works by Lusophone and Lusophone authors. Reading level flexible.',
     date: '2025-09-05',
     time: '18:30',
     endTime: '20:30',
@@ -494,21 +494,21 @@ export const eventsTours: EventTour[] = [
     membershipRequired: 'free',
     ageRestriction: '18+ literature enthusiasts',
     portugueseOrigin: ['All Lusophone'],
-    tags: ['Books', 'Literature', 'Portuguese Authors', 'Coffee', 'Discussion', 'Cultural'],
+    tags: ['Books', 'Literature', 'Lusophone Authors', 'Coffee', 'Discussion', 'Cultural'],
     highlights: [
-      'Discover Portuguese and Lusophone literature',
-      'Authentic Portuguese coffee and pastéis de nata',
+      'Discover Lusophone and Lusophone literature',
+      'Authentic Lusophone coffee and pastéis de nata',
       'Engaging discussions about culture and storytelling',
       'Relaxed bookstore café atmosphere'
     ],
     whatToExpect: [
       'Literary discussion in comfortable café setting',
-      'Introduction to Portuguese authors and themes',
-      'Coffee and Portuguese pastries included',
+      'Introduction to Lusophone authors and themes',
+      'Coffee and Lusophone pastries included',
       'Book recommendations and cultural insights'
     ],
-    whatToHear: 'Insights into Portuguese storytelling traditions and contemporary literature',
-    whatToLearn: 'Portuguese literary culture and how to appreciate Lusophone authors',
+    whatToHear: 'Insights into Lusophone storytelling traditions and contemporary literature',
+    whatToLearn: 'Lusophone literary culture and how to appreciate Lusophone authors',
     groupSize: 'Small (15-20 people)',
     difficulty: 'Easy',
     averageRating: 4.5,
@@ -542,7 +542,7 @@ export const EVENT_TOUR_CATEGORIES = {
     color: 'bg-premium-500'
   },
   'Cultural Heritage': {
-    description: 'Traditional Portuguese cultural celebrations and preservation',
+    description: 'Traditional Lusophone cultural celebrations and preservation',
     icon: '🇵🇹',
     color: 'bg-accent-600'
   },
@@ -553,12 +553,12 @@ export const EVENT_TOUR_CATEGORIES = {
   },
   // Demographics Categories
   'Women 30+': {
-    description: 'Curated experiences for Portuguese women in their 30s',
+    description: 'Curated experiences for Lusophone women in their 30s',
     icon: '👩‍💼',
     color: 'bg-coral-600'
   },
   'Women 40+': {
-    description: 'Networking and cultural experiences for established Portuguese women',
+    description: 'Networking and cultural experiences for established Lusophone women',
     icon: '👩‍💼',
     color: 'bg-premium-600'
   },

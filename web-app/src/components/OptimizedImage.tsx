@@ -73,8 +73,8 @@ export default function OptimizedImage({
 }
 
 /**
- * Portuguese Cultural Avatar Component
- * Mobile-optimized for Portuguese cultural content with flag integration
+ * Lusophone Cultural Avatar Component
+ * Mobile-optimized for Lusophone cultural content with flag integration
  */
 interface PortugueseAvatarProps {
   src: string;

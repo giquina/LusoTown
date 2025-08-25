@@ -1,6 +1,6 @@
 import { PortugueseEmote } from '@/types/chat'
 
-// Portuguese Cultural Emotes System
+// Lusophone Cultural Emotes System
 export const PORTUGUESE_EMOTES: PortugueseEmote[] = [
   // Cultural Emotions
   {
@@ -13,7 +13,7 @@ export const PORTUGUESE_EMOTES: PortugueseEmote[] = [
   {
     code: ':desenrascanço:',
     url: '/emotes/desenrascanco.png',
-    culturalContext: 'Portuguese art of creative problem-solving',
+    culturalContext: 'Lusophone art of creative problem-solving',
     regions: ['portugal', 'diaspora'],
     category: 'cultural'
   },
@@ -43,7 +43,7 @@ export const PORTUGUESE_EMOTES: PortugueseEmote[] = [
   {
     code: ':santo-antonio:',
     url: '/emotes/santo-antonio.png',
-    culturalContext: 'Portuguese saint celebrations in June',
+    culturalContext: 'Lusophone saint celebrations in June',
     regions: ['portugal', 'diaspora'],
     category: 'celebration'
   },
@@ -75,7 +75,7 @@ export const PORTUGUESE_EMOTES: PortugueseEmote[] = [
   {
     code: ':pasteis:',
     url: '/emotes/pasteis.png',
-    culturalContext: 'Famous Portuguese custard tarts (Pastéis de Nata)',
+    culturalContext: 'Famous Lusophone custard tarts (Pastéis de Nata)',
     regions: ['portugal', 'diaspora'],
     category: 'food'
   },
@@ -89,7 +89,7 @@ export const PORTUGUESE_EMOTES: PortugueseEmote[] = [
   {
     code: ':bacalhau:',
     url: '/emotes/bacalhau.png',
-    culturalContext: 'Portuguese codfish dishes',
+    culturalContext: 'Lusophone codfish dishes',
     regions: ['portugal', 'diaspora'],
     category: 'food'
   },
@@ -105,7 +105,7 @@ export const PORTUGUESE_EMOTES: PortugueseEmote[] = [
   {
     code: ':fado:',
     url: '/emotes/fado.png',
-    culturalContext: 'Traditional Portuguese melancholic music',
+    culturalContext: 'Traditional Lusophone melancholic music',
     regions: ['portugal', 'diaspora'],
     category: 'music'
   },
@@ -119,7 +119,7 @@ export const PORTUGUESE_EMOTES: PortugueseEmote[] = [
   {
     code: ':guitarrada:',
     url: '/emotes/guitarrada.png',
-    culturalContext: 'Portuguese guitar music',
+    culturalContext: 'Lusophone guitar music',
     regions: ['portugal', 'diaspora'],
     category: 'music'
   },
@@ -135,7 +135,7 @@ export const PORTUGUESE_EMOTES: PortugueseEmote[] = [
   {
     code: ':portugal:',
     url: '/emotes/portugal.png',
-    culturalContext: 'Portuguese pride and identity',
+    culturalContext: 'Lusophone pride and identity',
     regions: ['portugal', 'diaspora'],
     category: 'cultural'
   },
@@ -174,7 +174,7 @@ export const REGIONAL_INDICATORS = {
 // Quick reaction emojis for Portuguese culture
 export const QUICK_REACTIONS = ['❤️', '👏', '🎵', '🇵🇹', '🇧🇷', '😍', '🔥', '⚽', '🎉', '🎊']
 
-// Portuguese greetings and common phrases for auto-suggestions
+// Lusophone greetings and common phrases for auto-suggestions
 export const PORTUGUESE_PHRASES = [
   'Olá pessoal!',
   'Boa noite!',

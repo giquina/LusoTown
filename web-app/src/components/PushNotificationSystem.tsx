@@ -63,14 +63,14 @@ interface CulturalNotification {
   };
 }
 
-// Portuguese cultural holidays and events for automated notifications
+// Lusophone cultural holidays and events for automated notifications
 const PORTUGUESE_CULTURAL_CALENDAR = [
   {
     date: '04-25',
     name: 'Freedom Day',
     namePortuguese: 'Dia da Liberdade',
     type: 'national-holiday',
-    description: 'Celebrating Portuguese freedom and democracy'
+    description: 'Celebrating Lusophone freedom and democracy'
   },
   {
     date: '06-10',
@@ -84,7 +84,7 @@ const PORTUGUESE_CULTURAL_CALENDAR = [
     name: 'Santo António',
     namePortuguese: 'Santo António',
     type: 'cultural-festa',
-    description: 'Traditional Portuguese festa with sardines and folk dancing'
+    description: 'Traditional Lusophone festa with sardines and folk dancing'
   },
   {
     date: '06-24',
@@ -214,7 +214,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
           title: language === 'pt' ? 'Notificações Ativadas!' : 'Notifications Enabled!',
           message: language === 'pt' 
             ? 'Vais receber alertas sobre eventos portugueses' 
-            : 'You will receive alerts about Portuguese cultural events',
+            : 'You will receive alerts about Lusophone cultural events',
           duration: 5000
         });
         return true;
@@ -400,7 +400,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
   };
 
   const setupCulturalCalendarNotifications = () => {
-    // Schedule notifications for Portuguese cultural events
+    // Schedule notifications for Lusophone cultural events
     PORTUGUESE_CULTURAL_CALENDAR.forEach(event => {
       const today = new Date();
       const eventDate = new Date(today.getFullYear(), parseInt(event.date.split('-')[0]) - 1, parseInt(event.date.split('-')[1]));
@@ -580,7 +580,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
             <p className="text-gray-600 mt-1">
               {language === 'pt' 
                 ? 'Recebe alertas sobre eventos portugueses, matches da comunidade e atualizações culturais' 
-                : 'Get alerts about Portuguese events, community matches, and cultural updates'}
+                : 'Get alerts about Lusophone events, community matches, and cultural updates'}
             </p>
             
             <div className="mt-4 flex space-x-3">

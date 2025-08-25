@@ -300,7 +300,7 @@ export default function GrowthFeatures({
         title: isPortuguese ? 'Primeiro Evento Grátis' : 'First Event Free',
         description: isPortuguese 
           ? 'Participe no seu primeiro evento português sem custos'
-          : 'Join your first Portuguese event at no cost',
+          : 'Join your first Lusophone event at no cost',
         value: formatPrice(25),
         color: 'from-blue-500 to-blue-600',
         available: true
@@ -330,7 +330,7 @@ export default function GrowthFeatures({
         title: isPortuguese ? 'Matches Ilimitados' : 'Unlimited Matches',
         description: isPortuguese
           ? 'Sem limites nos seus matches portugueses'
-          : 'No limits on your Portuguese matches',
+          : 'No limits on your Lusophone matches',
         value: formatPrice(9.99),
         color: 'from-pink-500 to-red-500',
         available: true
@@ -418,7 +418,7 @@ export default function GrowthFeatures({
           <p className="text-purple-700 text-sm">
             {isPortuguese 
               ? 'Benefícios exclusivos para novos membros portugueses'
-              : 'Exclusive benefits for new Portuguese members'
+              : 'Exclusive benefits for new Lusophone members'
             }
           </p>
         </motion.div>
@@ -459,13 +459,13 @@ export default function GrowthFeatures({
       {
         icon: CalendarDaysIcon,
         title: isPortuguese ? 'Eventos Exclusivos' : 'Exclusive Events',
-        description: isPortuguese ? 'Eventos só para estudantes portugueses' : 'Events just for Portuguese students',
+        description: isPortuguese ? 'Eventos só para estudantes portugueses' : 'Events just for Lusophone students',
         value: 'Mensais'
       },
       {
         icon: UserGroupIcon,
         title: isPortuguese ? 'Rede de Estudantes' : 'Student Network',
-        description: isPortuguese ? 'Conecte com 2,150+ estudantes portugueses' : 'Connect with 2,150+ Portuguese students',
+        description: isPortuguese ? 'Conecte com 2,150+ estudantes portugueses' : 'Connect with 2,150+ Lusophone students',
         value: '2,150+'
       }
     ]
@@ -489,7 +489,7 @@ export default function GrowthFeatures({
           <p className="text-gray-600">
             {isPortuguese 
               ? 'Descontos especiais para estudantes portugueses em Londres'
-              : 'Special discounts for Portuguese students in London'
+              : 'Special discounts for Lusophone students in London'
             }
           </p>
         </div>

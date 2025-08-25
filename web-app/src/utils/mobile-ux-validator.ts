@@ -189,7 +189,7 @@ class MobileUXValidator {
   }
 
   /**
-   * Validate Portuguese text handling and overflow
+   * Validate Lusophone text handling and overflow
    */
   private async validatePortugueseTextHandling(container: HTMLElement | Document): Promise<void> {
     const textElements = this.getTextElements(container);
@@ -197,29 +197,29 @@ class MobileUXValidator {
     textElements.forEach((element) => {
       const text = element.textContent || '';
       
-      // Check for Portuguese text overflow
+      // Check for Lusophone text overflow
       if (this.hasTextOverflow(element)) {
         this.addIssue({
           severity: 'medium',
           category: 'typography',
-          message: 'Text overflow detected - may affect Portuguese content',
+          message: 'Text overflow detected - may affect Lusophone content',
           element: this.getElementSelector(element),
           fix: 'Add line-clamp-* classes or increase container width'
         });
         
         if (this.containsPortugueseText(text)) {
           this.portugueseIssues.push(
-            `Portuguese text overflow in ${this.getElementSelector(element)}`
+            `Lusophone text overflow in ${this.getElementSelector(element)}`
           );
         }
       }
 
-      // Check for long Portuguese words that might break layout
+      // Check for long Lusophone words that might break layout
       if (this.hasLongPortugueseWords(text)) {
         this.addIssue({
           severity: 'low',
           category: 'typography',
-          message: 'Long Portuguese words may break layout on small screens',
+          message: 'Long Lusophone words may break layout on small screens',
           element: this.getElementSelector(element),
           fix: 'Add break-words and hyphens-auto classes'
         });
@@ -336,10 +336,10 @@ class MobileUXValidator {
   }
 
   /**
-   * Validate Portuguese cultural elements
+   * Validate Lusophone cultural elements
    */
   private async validateCulturalElements(container: HTMLElement | Document): Promise<void> {
-    // Check for Portuguese brand colors
+    // Check for Lusophone brand colors
     const elements = container instanceof Document 
       ? document.querySelectorAll('*') 
       : container.querySelectorAll('*');
@@ -358,10 +358,10 @@ class MobileUXValidator {
       this.addRecommendation('Consider using Portuguese heritage colors to maintain cultural identity');
     }
 
-    // Check for Portuguese content
+    // Check for Lusophone content
     const portugueseContent = this.findPortugueseContent(container);
     if (portugueseContent.length > 0) {
-      this.addRecommendation(`Portuguese content detected in ${portugueseContent.length} elements - ensure proper mobile formatting`);
+      this.addRecommendation(`Lusophone content detected in ${portugueseContent.length} elements - ensure proper mobile formatting`);
     }
   }
 
@@ -583,9 +583,9 @@ class MobileUXValidator {
         this.addIssue({
           severity: 'low',
           category: 'accessibility',
-          message: 'Portuguese content missing lang attribute',
+          message: 'Lusophone content missing lang attribute',
           element: this.getElementSelector(element),
-          fix: 'Add lang="pt" attribute to Portuguese text elements'
+          fix: 'Add lang="pt" attribute to Lusophone text elements'
         });
       }
     });
@@ -656,7 +656,7 @@ export const generateMobileReport = (result: ValidationResult): string => {
   }
 
   if (result.portugueseSpecificIssues.length > 0) {
-    report += `Portuguese-Specific Issues (${result.portugueseSpecificIssues.length}):\n`;
+    report += `Lusophone-Specific Issues (${result.portugueseSpecificIssues.length}):\n`;
     result.portugueseSpecificIssues.forEach((issue, index) => {
       report += `${index + 1}. ${issue}\n`;
     });

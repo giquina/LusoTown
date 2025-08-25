@@ -120,7 +120,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       const pipeline: PartnershipDevelopmentPipeline[] = [
         {
           id: 'pipeline-1',
-          institutionName: 'Portuguese Medical Association United Kingdom',
+          institutionName: 'Lusophone Medical Association United Kingdom',
           institutionType: 'Professional Association',
           stage: 'negotiations',
           stagePortuguese: 'Negociações',
@@ -137,7 +137,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
         },
         {
           id: 'pipeline-2',
-          institutionName: 'Portuguese Lawyers Association London',
+          institutionName: 'Lusophone Lawyers Association London',
           institutionType: 'Legal Professional Body',
           stage: 'proposal_sent',
           stagePortuguese: 'Proposta Enviada',
@@ -154,7 +154,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
         },
         {
           id: 'pipeline-3',
-          institutionName: 'Portuguese Tech Professionals Network United Kingdom',
+          institutionName: 'Lusophone Tech Professionals Network United Kingdom',
           institutionType: 'Technology Professional Network',
           stage: 'initial_contact',
           stagePortuguese: 'Contacto Inicial',
@@ -171,7 +171,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
         },
         {
           id: 'pipeline-4',
-          institutionName: 'Portuguese Cultural Heritage Trust',
+          institutionName: 'Lusophone Cultural Heritage Trust',
           institutionType: 'Cultural Heritage Organization',
           stage: 'agreement_draft',
           stagePortuguese: 'Rascunho do Acordo',
@@ -188,7 +188,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
         },
         {
           id: 'pipeline-5',
-          institutionName: 'Portuguese Business Women Network',
+          institutionName: 'Lusophone Business Women Network',
           institutionType: 'Business Professional Network',
           stage: 'final_approval',
           stagePortuguese: 'Aprovação Final',
@@ -218,7 +218,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       id: 'government_diplomatic',
       name: 'Government & Diplomatic',
       namePortuguese: 'Governo e Diplomático',
-      description: 'Official Portuguese government institutions and diplomatic missions',
+      description: 'Official Lusophone government institutions and diplomatic missions',
       descriptionPortuguese: 'Instituições oficiais do governo português e missões diplomáticas',
       icon: <BuildingLibraryIcon className="w-6 h-6" />,
       color: 'bg-blue-100 text-blue-700',
@@ -226,7 +226,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       memberBenefits: ['Consular service discounts', 'Cultural event access', 'Document assistance'],
       totalCommunityReach: partnerships.filter(p => p.type === 'embassy' || p.type === 'consulate').reduce((sum, p) => sum + p.communitySize, 0),
       establishedPartnerships: partnerships.filter(p => p.type === 'embassy' || p.type === 'consulate'),
-      upcomingPartnerships: ['Portuguese Consulate Manchester', 'Portuguese Trade Office', 'AICEP Portugal Global']
+      upcomingPartnerships: ['Lusophone Consulate Manchester', 'Lusophone Trade Office', 'AICEP Portugal Global']
     },
     {
       id: 'cultural_educational',
@@ -240,7 +240,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       memberBenefits: ['Course discounts', 'Cultural programming', 'Heritage workshops'],
       totalCommunityReach: partnerships.filter(p => p.type === 'cultural_center' || p.type === 'educational_institution').reduce((sum, p) => sum + p.communitySize, 0),
       establishedPartnerships: partnerships.filter(p => p.type === 'cultural_center' || p.type === 'educational_institution'),
-      upcomingPartnerships: ['Portuguese Heritage Trust', 'Lisbon Culture Institute', 'Portuguese Film Institute']
+      upcomingPartnerships: ['Lusophone Heritage Trust', 'Lisbon Culture Institute', 'Lusophone Film Institute']
     },
     {
       id: 'business_professional',
@@ -254,7 +254,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       memberBenefits: ['Networking events', 'Business support', 'Investment guidance'],
       totalCommunityReach: partnerships.filter(p => p.type === 'chamber_commerce' || p.type === 'business_association').reduce((sum, p) => sum + p.communitySize, 0),
       establishedPartnerships: partnerships.filter(p => p.type === 'chamber_commerce' || p.type === 'business_association'),
-      upcomingPartnerships: ['Portuguese Medical Association', 'Portuguese Lawyers Network', 'Portuguese Tech Professionals']
+      upcomingPartnerships: ['Lusophone Medical Association', 'Lusophone Lawyers Network', 'Lusophone Tech Professionals']
     },
     {
       id: 'community_religious',
@@ -268,13 +268,13 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       memberBenefits: ['Community support', 'Religious services', 'Social activities'],
       totalCommunityReach: partnerships.filter(p => p.type === 'community_association' || p.type === 'religious_organization').reduce((sum, p) => sum + p.communitySize, 0),
       establishedPartnerships: partnerships.filter(p => p.type === 'community_association' || p.type === 'religious_organization'),
-      upcomingPartnerships: ['Portuguese Social Club Birmingham', 'Portuguese Methodist Church', 'Portuguese Senior Citizens Association']
+      upcomingPartnerships: ['Lusophone Social Club Birmingham', 'Lusophone Methodist Church', 'Lusophone Senior Citizens Association']
     },
     {
       id: 'media_sports',
       name: 'Media & Sports',
       namePortuguese: 'Media e Desporto',
-      description: 'Portuguese media outlets, sports clubs, and entertainment organizations',
+      description: 'Lusophone media outlets, sports clubs, and entertainment organizations',
       descriptionPortuguese: 'Meios de comunicação portugueses, clubes desportivos e organizações de entretenimento',
       icon: <TrophyIcon className="w-6 h-6" />,
       color: 'bg-yellow-100 text-yellow-700',
@@ -282,7 +282,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       memberBenefits: ['Event coverage', 'Sports activities', 'Entertainment discounts'],
       totalCommunityReach: partnerships.filter(p => p.type === 'media_organization' || p.type === 'sports_club').reduce((sum, p) => sum + p.communitySize, 0),
       establishedPartnerships: partnerships.filter(p => p.type === 'media_organization' || p.type === 'sports_club'),
-      upcomingPartnerships: ['Portuguese Radio London', 'Benfica Supporters Club', 'Portuguese Football Federation United Kingdom']
+      upcomingPartnerships: ['Lusophone Radio London', 'Benfica Supporters Club', 'Lusophone Football Federation United Kingdom']
     }
   ]
 
@@ -330,7 +330,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           {language === 'pt' 
             ? 'Parcerias Institucionais Portuguesas'
-            : 'Portuguese Institutional Partnerships'
+            : 'Lusophone Institutional Partnerships'
           }
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -448,7 +448,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
             <p className="text-sm text-gray-600 mt-1">
               {language === 'pt' 
                 ? 'Instituições portuguesas estratégicas em processo de parceria'
-                : 'Strategic Portuguese institutions in partnership process'
+                : 'Strategic Lusophone institutions in partnership process'
               }
             </p>
           </div>
@@ -587,7 +587,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
           {language === 'pt'
             ? 'Seja parte de uma rede exclusiva de instituições portuguesas que estão a construir o futuro da comunidade de falantes de português no Reino Unido.'
-            : 'Be part of an exclusive network of Portuguese institutions building the future of the Portuguese-speaking community in the United Kingdom.'
+            : 'Be part of an exclusive network of Lusophone institutions building the future of the Portuguese-speaking community in the United Kingdom.'
           }
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

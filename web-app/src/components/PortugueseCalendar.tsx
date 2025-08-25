@@ -22,23 +22,23 @@ const PortugueseCalendar: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [events, setEvents] = useState<Event[]>([]);
 
-  // Mock Portuguese cultural events
+  // Mock Lusophone cultural events
   useEffect(() => {
     const mockEvents: Event[] = [
       {
         id: '1',
-        title: 'Fado Night at Portuguese Club',
+        title: 'Fado Night at Lusophone Club',
         titlePt: 'Noite de Fado no Clube Português',
         date: '2025-08-24',
         time: '19:00',
-        location: 'Vauxhall Portuguese Club',
+        location: 'Vauxhall Lusophone Club',
         attendees: 45,
         category: 'cultural',
         cultural: true
       },
       {
         id: '2', 
-        title: 'Portuguese Business Networking',
+        title: 'Lusophone Business Networking',
         titlePt: 'Networking de Negócios Português',
         date: '2025-08-25',
         time: '18:30',
@@ -94,13 +94,13 @@ const PortugueseCalendar: React.FC = () => {
         <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-100 via-white to-red-100 border border-green-200 rounded-full px-6 py-3 mb-4">
           <CalendarDaysIcon className="w-6 h-6 text-green-600" />
           <span className="font-bold text-gray-800">
-            {t('calendar.title', 'Portuguese Cultural Calendar')}
+            {t('calendar.title', 'Lusophone Cultural Calendar')}
           </span>
           <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
         </div>
         
         <h2 className="text-3xl font-black text-gray-900 mb-2">
-          {t('calendar.subtitle', 'Upcoming Portuguese Events in London')}
+          {t('calendar.subtitle', 'Upcoming Lusophone Events in London')}
         </h2>
         
         <p className="text-gray-600">
@@ -169,7 +169,7 @@ const PortugueseCalendar: React.FC = () => {
       {/* Footer */}
       <div className="mt-8 text-center">
         <button className="bg-gradient-to-r from-red-600 to-green-600 text-white font-bold px-8 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-          {t('calendar.view_all', 'View All Portuguese Events')}
+          {t('calendar.view_all', 'View All Lusophone Events')}
         </button>
       </div>
     </div>

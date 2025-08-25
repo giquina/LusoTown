@@ -43,7 +43,7 @@ interface PortugueseEvent {
   currentAttendees: number;
   attendeeProfiles: EventAttendee[];
   culturalAuthenticity: number;
-  languageLevel: 'Portuguese' | 'English' | 'Bilingual';
+  languageLevel: 'Lusophone' | 'English' | 'Bilingual';
   ageGroup: string;
   hostInfo: {
     name: string;
@@ -121,25 +121,25 @@ export default function EventBasedMatchingSystem({
   const [conversationStarters, setConversationStarters] = useState<{[key: string]: string[]}>({});
   const [postEventConnections, setPostEventConnections] = useState<EventMatch[]>([]);
 
-  // Mock Portuguese cultural events
+  // Mock Lusophone cultural events
   const mockPortugueseEvents: PortugueseEvent[] = [
     {
       id: "fado-night-soho",
       title: language === "pt" ? "Noite de Fado Autêntico no Soho" : "Authentic Fado Night in Soho",
       description: language === "pt" 
         ? "Uma noite íntima de Fado com fadistas tradicionais, guitarra portuguesa e atmosfera autêntica. Venha experienciar a alma portuguesa." 
-        : "An intimate evening of Fado with traditional fadistas, Portuguese guitar and authentic atmosphere. Come experience the Portuguese soul.",
+        : "An intimate evening of Fado with traditional fadistas, Lusophone guitar and authentic atmosphere. Come experience the Lusophone soul.",
       category: "Cultural",
       culturalCategory: "Fado Music",
       date: "2025-08-25",
       time: "19:30",
-      location: "Portuguese Cultural Centre",
+      location: "Lusophone Cultural Centre",
       neighborhood: "Soho",
       price: 25,
       maxAttendees: 40,
       currentAttendees: 23,
       culturalAuthenticity: 100,
-      languageLevel: "Portuguese",
+      languageLevel: "Lusophone",
       ageGroup: "25-45",
       hostInfo: {
         name: "Maria Fernandes",
@@ -188,9 +188,9 @@ export default function EventBasedMatchingSystem({
       title: language === "pt" ? "Workshop Pastéis de Nata - Segredos da Receita" : "Pastéis de Nata Workshop - Recipe Secrets",
       description: language === "pt"
         ? "Aprenda os segredos da receita original dos pastéis de nata com chef português. Inclui degustação e receitas para levar para casa."
-        : "Learn the secrets of the original pastéis de nata recipe with Portuguese chef. Includes tasting and recipes to take home.",
+        : "Learn the secrets of the original pastéis de nata recipe with Lusophone chef. Includes tasting and recipes to take home.",
       category: "Workshop",
-      culturalCategory: "Portuguese Cuisine",
+      culturalCategory: "Lusophone Cuisine",
       date: "2025-08-28",
       time: "14:00",
       location: "Cooking Studio Lisboa",
@@ -218,7 +218,7 @@ export default function EventBasedMatchingSystem({
       title: language === "pt" ? "Portugal vs Espanha - Final Europeu" : "Portugal vs Spain - European Final",
       description: language === "pt"
         ? "Assistam ao grande jogo juntos! Ambiente português garantido, petiscos tradicionais e energia da torcida portuguesa em Londres."
-        : "Watch the big game together! Guaranteed Portuguese atmosphere, traditional snacks and Portuguese fan energy in London.",
+        : "Watch the big game together! Guaranteed Lusophone atmosphere, traditional snacks and Lusophone fan energy in London.",
       category: "Sports",
       culturalCategory: "Football",
       date: "2025-09-01",
@@ -229,7 +229,7 @@ export default function EventBasedMatchingSystem({
       maxAttendees: 80,
       currentAttendees: 45,
       culturalAuthenticity: 90,
-      languageLevel: "Portuguese",
+      languageLevel: "Lusophone",
       ageGroup: "18+",
       hostInfo: {
         name: "Bar Lusitano",
@@ -248,9 +248,9 @@ export default function EventBasedMatchingSystem({
       title: language === "pt" ? "Degustação Vinhos do Douro e Alentejo" : "Douro and Alentejo Wine Tasting",
       description: language === "pt"
         ? "Descubra os sabores únicos dos vinhos portugueses numa degustação guiada com sommelier português. Inclui queijos e enchidos."
-        : "Discover the unique flavors of Portuguese wines in a guided tasting with Portuguese sommelier. Includes cheeses and charcuterie.",
+        : "Discover the unique flavors of Portuguese wines in a guided tasting with Lusophone sommelier. Includes cheeses and charcuterie.",
       category: "Gastronomy",
-      culturalCategory: "Portuguese Wine",
+      culturalCategory: "Lusophone Wine",
       date: "2025-08-30",
       time: "19:00",
       location: "Wine Bar Lusitania",
@@ -278,7 +278,7 @@ export default function EventBasedMatchingSystem({
       title: language === "pt" ? "Networking Empresarial LusoTown" : "LusoTown Business Networking",
       description: language === "pt"
         ? "Conecte-se com empresários e profissionais portugueses em Londres. Networking, palestras e oportunidades de negócio."
-        : "Connect with Portuguese entrepreneurs and professionals in London. Networking, talks and business opportunities.",
+        : "Connect with Lusophone entrepreneurs and professionals in London. Networking, talks and business opportunities.",
       category: "Business",
       culturalCategory: "Professional Networking",
       date: "2025-09-05",
@@ -314,7 +314,7 @@ export default function EventBasedMatchingSystem({
         age: 29,
         profession: "Marketing Manager",
         origin: "Porto, Portugal",
-        interests: ["Fado", "Portuguese Culture", "Professional Networking", "Arts"],
+        interests: ["Fado", "Lusophone Culture", "Professional Networking", "Arts"],
         profileImage: "/avatars/sofia.jpg",
         lastActive: "2 hours ago",
         membershipType: "Community",
@@ -326,7 +326,7 @@ export default function EventBasedMatchingSystem({
         age: 32,
         profession: "Software Engineer",
         origin: "Lisboa, Portugal",
-        interests: ["Football", "Technology", "Portuguese Wine", "Networking"],
+        interests: ["Football", "Technology", "Lusophone Wine", "Networking"],
         profileImage: "/avatars/miguel.jpg",
         lastActive: "1 day ago",
         membershipType: "Ambassador",
@@ -338,7 +338,7 @@ export default function EventBasedMatchingSystem({
         age: 28,
         profession: "Financial Analyst", 
         origin: "São Paulo, Brasil",
-        interests: ["Dance", "Portuguese Cuisine", "Cultural Events", "Language Exchange"],
+        interests: ["Dance", "Lusophone Cuisine", "Cultural Events", "Language Exchange"],
         profileImage: "/avatars/carolina.jpg",
         lastActive: "3 hours ago",
         membershipType: "Community",
@@ -350,7 +350,7 @@ export default function EventBasedMatchingSystem({
         age: 34,
         profession: "Chef",
         origin: "Coimbra, Portugal",
-        interests: ["Portuguese Cuisine", "Business", "Traditional Cooking", "Food Culture"],
+        interests: ["Lusophone Cuisine", "Business", "Traditional Cooking", "Food Culture"],
         profileImage: "/avatars/ricardo.jpg",
         lastActive: "5 hours ago",
         membershipType: "Ambassador",
@@ -405,7 +405,7 @@ export default function EventBasedMatchingSystem({
           ? `Olá! Viste que há festa de São João no sábado? Já foste às festas em Portugal?`
           : `Hi! Did you see there's a São João festival on Saturday? Have you been to the festivals in Portugal?`
       );
-    } else if (event.culturalCategory === "Portuguese Cuisine") {
+    } else if (event.culturalCategory === "Lusophone Cuisine") {
       starters.push(
         language === "pt"
           ? `Olá! Vais ao workshop de pastéis de nata? Adoro culinária portuguesa!`
@@ -527,11 +527,11 @@ export default function EventBasedMatchingSystem({
         return "🎵";
       case "Santos Populares":
         return "🎉";
-      case "Portuguese Cuisine":
+      case "Lusophone Cuisine":
         return "🥮";
       case "Football":
         return "⚽";
-      case "Portuguese Wine":
+      case "Lusophone Wine":
         return "🍷";
       case "Professional Networking":
         return "🤝";
@@ -600,7 +600,7 @@ export default function EventBasedMatchingSystem({
             <h3 className="text-xl font-bold text-primary-900">
               {language === "pt" 
                 ? "Conecte-se Através de Eventos Portugueses" 
-                : "Connect Through Portuguese Events"}
+                : "Connect Through Lusophone Events"}
             </h3>
             <p className="text-sm text-primary-600">
               {language === "pt"
@@ -662,7 +662,7 @@ export default function EventBasedMatchingSystem({
           <div className="space-y-4">
             <div className="flex items-center justify-between mb-4">
               <h4 className="font-semibold text-primary-900">
-                {language === "pt" ? "Eventos Portugueses em Breve" : "Portuguese Events Coming Up"}
+                {language === "pt" ? "Eventos Portugueses em Breve" : "Lusophone Events Coming Up"}
               </h4>
               <span className="text-sm text-primary-600">
                 {portugueseEvents.length} {language === "pt" ? "eventos disponíveis" : "events available"}

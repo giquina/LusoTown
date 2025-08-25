@@ -104,7 +104,7 @@ export function useAccessibility() {
       largeText: prefersLargeText || false
     }));
 
-    // Add Portuguese cultural accessibility context
+    // Add Lusophone cultural accessibility context
     document.documentElement.setAttribute('lang', language === 'pt' ? 'pt-PT' : 'en-GB');
     document.body.classList.add('portuguese-heritage-a11y');
 
@@ -155,7 +155,7 @@ export function useAccessibility() {
     html.classList.toggle('color-blind-support', settings.colorBlindSupport);
     body.classList.toggle('a11y-optimized', true);
 
-    // Portuguese cultural enhancements
+    // Lusophone cultural enhancements
     if (settings.portugueseCulturalContext) {
       addPortugueseCulturalLabels();
       enhancePortugueseNavigation();
@@ -226,7 +226,7 @@ export function useAccessibility() {
   }, [voiceSettings.language, voiceSettings.voice]);
 
   const setupKeyboardNavigation = useCallback(() => {
-    // Portuguese cultural keyboard shortcuts
+    // Lusophone cultural keyboard shortcuts
     keyboardShortcuts.current = {
       'alt+e': () => navigateToSection('/events'),
       'alt+c': () => navigateToSection('/community'),
@@ -318,14 +318,14 @@ export function useAccessibility() {
       }
     });
 
-    // Enhance Portuguese events
+    // Enhance Lusophone events
     const eventCards = document.querySelectorAll('[data-event-type="portuguese"]');
     eventCards.forEach(card => {
       if (!card.hasAttribute('aria-label')) {
         card.setAttribute('aria-label',
           language === 'pt'
             ? 'Evento cultural português'
-            : 'Portuguese cultural event'
+            : 'Lusophone cultural event'
         );
       }
     });
@@ -530,7 +530,7 @@ export function useAccessibility() {
       Escape: Fechar menus
     ` : `
       LusoTown Keyboard Shortcuts:
-      Alt+E: Portuguese Events
+      Alt+E: Lusophone Events
       Alt+C: Community
       Alt+N: My Network
       Alt+S: Services

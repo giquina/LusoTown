@@ -116,23 +116,23 @@ const ACADEMIC_CONNECTIONS: AcademicConnection[] = [
     name: "Ana Silva",
     role: "phd_candidate",
     university: "University College London",
-    subject: "Portuguese Literature",
+    subject: "Lusophone Literature",
     specialization: [
-      "Contemporary Portuguese Poetry",
+      "Contemporary Lusophone Poetry",
       "Digital Humanities",
       "Cultural Studies",
     ],
     researchInterests: [
       "Fernando Pessoa",
-      "Modern Portuguese Poetry",
-      "Portuguese Identity in Literature",
+      "Modern Lusophone Poetry",
+      "Lusophone Identity in Literature",
     ],
     availableFor: ["mentorship", "research_collaboration", "career_advice"],
     location: "London",
     rating: 4.9,
     connections: 87,
     isOnline: true,
-    languages: ["Portuguese", "English", "Spanish"],
+    languages: ["Lusophone", "English", "Spanish"],
     publications: 12,
     avatar: "/images/connections/ana-silva.jpg",
   },
@@ -146,7 +146,7 @@ const ACADEMIC_CONNECTIONS: AcademicConnection[] = [
     yearOfStudy: "3rd Year",
     researchInterests: [
       "Natural Language Processing",
-      "Portuguese Language Models",
+      "Lusophone Language Models",
       "Computational Linguistics",
     ],
     availableFor: [
@@ -158,7 +158,7 @@ const ACADEMIC_CONNECTIONS: AcademicConnection[] = [
     rating: 4.7,
     connections: 42,
     isOnline: false,
-    languages: ["Portuguese", "English"],
+    languages: ["Lusophone", "English"],
     avatar: "/images/connections/miguel-costa.jpg",
   },
   {
@@ -166,23 +166,23 @@ const ACADEMIC_CONNECTIONS: AcademicConnection[] = [
     name: "Prof. João Fernandes",
     role: "professor",
     university: "King's College London",
-    subject: "Portuguese Studies",
+    subject: "Lusophone Studies",
     specialization: [
-      "Portuguese History",
+      "Lusophone History",
       "Colonial Studies",
       "Atlantic World",
     ],
     researchInterests: [
-      "Portuguese Empire",
+      "Lusophone Empire",
       "Brazil-Portugal Relations",
-      "Portuguese Colonial History",
+      "Lusophone Colonial History",
     ],
     availableFor: ["mentorship", "career_advice", "research_collaboration"],
     location: "London",
     rating: 4.8,
     connections: 156,
     isOnline: true,
-    languages: ["Portuguese", "English", "French"],
+    languages: ["Lusophone", "English", "French"],
     publications: 45,
     avatar: "/images/connections/prof-joao.jpg",
   },
@@ -193,13 +193,13 @@ const ACADEMIC_CONNECTIONS: AcademicConnection[] = [
     university: "University of Oxford",
     subject: "Modern Languages",
     specialization: [
-      "Portuguese Language",
+      "Lusophone Language",
       "Translation Studies",
       "Comparative Literature",
     ],
     yearOfStudy: "2nd Year",
     researchInterests: [
-      "Portuguese Translation",
+      "Lusophone Translation",
       "Literary Translation",
       "Cross-Cultural Communication",
     ],
@@ -208,7 +208,7 @@ const ACADEMIC_CONNECTIONS: AcademicConnection[] = [
     rating: 4.6,
     connections: 34,
     isOnline: true,
-    languages: ["Portuguese", "English", "Italian"],
+    languages: ["Lusophone", "English", "Italian"],
     avatar: "/images/connections/maria-santos.jpg",
   },
   {
@@ -219,20 +219,20 @@ const ACADEMIC_CONNECTIONS: AcademicConnection[] = [
     subject: "Economics",
     specialization: [
       "Development Economics",
-      "Portuguese Economy",
+      "Lusophone Economy",
       "European Integration",
     ],
     researchInterests: [
       "Portugal EU Integration",
       "Economic Development",
-      "Portuguese Business",
+      "Lusophone Business",
     ],
     availableFor: ["mentorship", "research_collaboration", "career_advice"],
     location: "Cambridge",
     rating: 4.9,
     connections: 98,
     isOnline: false,
-    languages: ["Portuguese", "English"],
+    languages: ["Lusophone", "English"],
     publications: 23,
     avatar: "/images/connections/dr-carlos.jpg",
   },
@@ -244,13 +244,13 @@ const ACADEMIC_CONNECTIONS: AcademicConnection[] = [
     subject: "International Relations",
     specialization: [
       "EU Politics",
-      "Portuguese Foreign Policy",
+      "Lusophone Foreign Policy",
       "International Law",
     ],
     yearOfStudy: "Masters",
     researchInterests: [
       "EU-Africa Relations",
-      "Portuguese Diplomacy",
+      "Lusophone Diplomacy",
       "International Development",
     ],
     availableFor: ["study_groups", "research_collaboration", "mentorship"],
@@ -258,7 +258,7 @@ const ACADEMIC_CONNECTIONS: AcademicConnection[] = [
     rating: 4.8,
     connections: 67,
     isOnline: true,
-    languages: ["Portuguese", "English", "French"],
+    languages: ["Lusophone", "English", "French"],
     avatar: "/images/connections/sofia-rodrigues.jpg",
   },
 ];
@@ -266,9 +266,9 @@ const ACADEMIC_CONNECTIONS: AcademicConnection[] = [
 const STUDY_GROUPS: StudyGroup[] = [
   {
     id: "portuguese-lit-ucl",
-    name: "Portuguese Literature Study Circle",
+    name: "Lusophone Literature Study Circle",
     namePortuguese: "Círculo de Estudos de Literatura Portuguesa",
-    subject: "Portuguese Literature",
+    subject: "Lusophone Literature",
     university: "University College London",
     type: "research_group",
     members: 8,
@@ -276,22 +276,22 @@ const STUDY_GROUPS: StudyGroup[] = [
     level: "mixed",
     meetingFrequency: "Weekly",
     nextMeeting: "2024-09-20T14:00:00",
-    location: "UCL Portuguese Studies Department",
+    location: "UCL Lusophone Studies Department",
     description:
-      "Weekly discussions on contemporary Portuguese literature, poetry analysis, and research collaboration on Portuguese cultural studies.",
+      "Weekly discussions on contemporary Lusophone literature, poetry analysis, and research collaboration on Lusophone cultural studies.",
     descriptionPortuguese:
       "Discussões semanais sobre literatura portuguesa contemporânea, análise de poesia e colaboração em investigação sobre estudos culturais portugueses.",
     coordinator: "Ana Silva (PhD Candidate)",
     requirements: [
-      "Intermediate Portuguese reading level",
-      "Portuguese Studies student or interest",
+      "Intermediate Lusophone reading level",
+      "Lusophone Studies student or interest",
     ],
     isActive: true,
     success_rate: 94,
   },
   {
     id: "cs-algorithms-imperial",
-    name: "Portuguese CS Students - Algorithms Study Group",
+    name: "Lusophone CS Students - Algorithms Study Group",
     namePortuguese:
       "Estudantes de Informática Portugueses - Grupo de Estudo de Algoritmos",
     subject: "Computer Science",
@@ -304,7 +304,7 @@ const STUDY_GROUPS: StudyGroup[] = [
     nextMeeting: "2024-09-18T16:00:00",
     location: "Imperial College - Computing Lab 3",
     description:
-      "Collaborative study sessions for algorithm design, data structures, and coding interview preparation. Conducted in Portuguese and English.",
+      "Collaborative study sessions for algorithm design, data structures, and coding interview preparation. Conducted in Lusophone and English.",
     descriptionPortuguese:
       "Sessões de estudo colaborativas para design de algoritmos, estruturas de dados e preparação para entrevistas de programação. Conduzidas em português e inglês.",
     coordinator: "Miguel Costa (3rd Year)",
@@ -318,7 +318,7 @@ const STUDY_GROUPS: StudyGroup[] = [
   },
   {
     id: "thesis-writing-kcl",
-    name: "Portuguese Thesis Writing Support Group",
+    name: "Lusophone Thesis Writing Support Group",
     namePortuguese: "Grupo de Apoio à Escrita de Teses Portuguesas",
     subject: "Academic Writing",
     university: "King's College London",
@@ -330,21 +330,21 @@ const STUDY_GROUPS: StudyGroup[] = [
     nextMeeting: "2024-09-25T10:00:00",
     location: "KCL Library - Group Study Room",
     description:
-      "Support group for Portuguese students writing dissertations and theses. Peer review, writing workshops, and academic guidance.",
+      "Support group for Lusophone students writing dissertations and theses. Peer review, writing workshops, and academic guidance.",
     descriptionPortuguese:
       "Grupo de apoio para estudantes portugueses a escrever dissertações e teses. Revisão por pares, workshops de escrita e orientação académica.",
     coordinator: "Prof. João Fernandes",
     requirements: [
       "Masters or PhD student",
       "Currently writing thesis",
-      "Portuguese connection to research",
+      "Lusophone connection to research",
     ],
     isActive: true,
     success_rate: 96,
   },
   {
     id: "language-exchange-oxford",
-    name: "Portuguese-English Academic Language Exchange",
+    name: "Lusophone-English Academic Language Exchange",
     namePortuguese: "Intercâmbio de Língua Académica Português-Inglês",
     subject: "Language Practice",
     university: "University of Oxford",
@@ -356,12 +356,12 @@ const STUDY_GROUPS: StudyGroup[] = [
     nextMeeting: "2024-09-22T11:00:00",
     location: "Oxford Modern Languages Faculty",
     description:
-      "Academic language exchange focusing on presentation skills, academic writing, and scholarly discussion in Portuguese and English.",
+      "Academic language exchange focusing on presentation skills, academic writing, and scholarly discussion in Lusophone and English.",
     descriptionPortuguese:
       "Intercâmbio de língua académica focado em competências de apresentação, escrita académica e discussão académica em português e inglês.",
     coordinator: "Maria Santos (2nd Year)",
     requirements: [
-      "Fluent in Portuguese or English",
+      "Fluent in Lusophone or English",
       "Academic focus",
       "Regular attendance",
     ],
@@ -373,11 +373,11 @@ const STUDY_GROUPS: StudyGroup[] = [
 const RESEARCH_PROJECTS: ResearchProject[] = [
   {
     id: "portuguese-diaspora-digital",
-    title: "Digital Portuguese Diaspora: Identity and Community Online",
+    title: "Digital Lusophone Diaspora: Identity and Community Online",
     titlePortuguese:
       "Diáspora Portuguesa Digital: Identidade e Comunidade Online",
     university: "University College London",
-    department: "Portuguese Studies",
+    department: "Lusophone Studies",
     leadResearcher: "Ana Silva (PhD Candidate)",
     collaborators: 3,
     maxCollaborators: 6,
@@ -395,7 +395,7 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
       "Portuguese culture knowledge",
     ],
     description:
-      "Research into how Portuguese communities maintain cultural identity through digital platforms and social media.",
+      "Research into how Lusophone communities maintain cultural identity through digital platforms and social media.",
     descriptionPortuguese:
       "Investigação sobre como as comunidades portuguesas mantêm a identidade cultural através de plataformas digitais e redes sociais.",
     funding: true,
@@ -404,7 +404,7 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
   },
   {
     id: "ai-portuguese-nlp",
-    title: "Intelligent Systems for Portuguese Language Processing",
+    title: "Intelligent Systems for Lusophone Language Processing",
     titlePortuguese: "IA para Processamento de Língua Portuguesa",
     university: "Imperial College London",
     department: "Computing",
@@ -417,7 +417,7 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
     requirements: [
       "Computer Science student",
       "Python programming",
-      "Portuguese native speaker",
+      "Lusophone native speaker",
     ],
     skills: [
       "Machine learning",
@@ -448,7 +448,7 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
     requirements: [
       "International Relations or Economics student",
       "EU studies knowledge",
-      "Portuguese context understanding",
+      "Lusophone context understanding",
     ],
     skills: ["Economic analysis", "Policy research", "Statistical analysis"],
     description:
@@ -475,7 +475,7 @@ export default function AcademicNetworkingSection() {
       label: { en: "Academic Connections", pt: "Conexões Académicas" },
       icon: UsersIcon,
       description: {
-        en: "Connect with Portuguese students, researchers, and professors",
+        en: "Connect with Lusophone students, researchers, and professors",
         pt: "Conecte-se com estudantes, investigadores e professores portugueses",
       },
     },
@@ -484,7 +484,7 @@ export default function AcademicNetworkingSection() {
       label: { en: "Study Groups", pt: "Grupos de Estudo" },
       icon: BookOpenIcon,
       description: {
-        en: "Join Portuguese study groups and academic circles",
+        en: "Join Lusophone study groups and academic circles",
         pt: "Junte-se a grupos de estudo e círculos académicos portugueses",
       },
     },
@@ -493,7 +493,7 @@ export default function AcademicNetworkingSection() {
       label: { en: "Research Projects", pt: "Projetos de Investigação" },
       icon: PresentationChartLineIcon,
       description: {
-        en: "Collaborate on Portuguese-focused research projects",
+        en: "Collaborate on Lusophone-focused research projects",
         pt: "Colabore em projetos de investigação focados no português",
       },
     },
@@ -514,8 +514,8 @@ export default function AcademicNetworkingSection() {
   const subjectFilters = [
     { value: "all", label: { en: "All Subjects", pt: "Todas as Disciplinas" } },
     {
-      value: "Portuguese Studies",
-      label: { en: "Portuguese Studies", pt: "Estudos Portugueses" },
+      value: "Lusophone Studies",
+      label: { en: "Lusophone Studies", pt: "Estudos Portugueses" },
     },
     {
       value: "Computer Science",
@@ -615,20 +615,20 @@ export default function AcademicNetworkingSection() {
             <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
               {language === "pt"
                 ? "Rede Académica Portuguesa"
-                : "Portuguese Academic Network"}
+                : "Lusophone Academic Network"}
             </span>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             {language === "pt"
               ? "Conecte-se com a Comunidade Académica Portuguesa"
-              : "Connect with the Portuguese Academic Community"}
+              : "Connect with the Lusophone Academic Community"}
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === "pt"
               ? "Encontre estudantes, professores e investigadores portugueses para colaboração académica, grupos de estudo e projetos de investigação"
-              : "Find Portuguese students, professors, and researchers for academic collaboration, study groups, and research projects"}
+              : "Find Lusophone students, professors, and researchers for academic collaboration, study groups, and research projects"}
           </p>
         </motion.div>
 
@@ -1154,12 +1154,12 @@ export default function AcademicNetworkingSection() {
           <h3 className="text-2xl font-bold mb-4">
             {language === "pt"
               ? "Construa a Sua Rede Académica Portuguesa"
-              : "Build Your Portuguese Academic Network"}
+              : "Build Your Lusophone Academic Network"}
           </h3>
           <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
             {language === "pt"
               ? "Conecte-se com mais de 2.150 estudantes portugueses em universidades do Reino Unido. Colabore, aprenda e cresça em conjunto."
-              : "Connect with over 2,150 Portuguese students at United Kingdom universities. Collaborate, learn, and grow together."}
+              : "Connect with over 2,150 Lusophone students at United Kingdom universities. Collaborate, learn, and grow together."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-primary-600 font-bold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">

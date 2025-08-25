@@ -37,7 +37,7 @@ const trustIndicators = [
   {
     name: 'Cultural Expertise',
     namePortuguese: 'Especialização Cultural',
-    description: 'Portuguese cultural sensitivity and business protocol training',
+    description: 'Lusophone cultural sensitivity and business protocol training',
     descriptionPortuguese: 'Sensibilidade cultural portuguesa e formação em protocolo empresarial',
     icon: Users,
     verified: true
@@ -73,7 +73,7 @@ const servicePackages = [
     descriptionPortuguese: 'Proteção pessoal profissional com consciência cultural',
     features: [
       'Single SIA-licensed CPO',
-      'Portuguese cultural expertise',
+      'Lusophone cultural expertise',
       'Business environment integration',
       'Risk assessment included',
       'Discrete professional presence',
@@ -128,7 +128,7 @@ const servicePackages = [
     features: [
       'Community-focused security protocols',
       'School and activity coordination',
-      'Portuguese cultural integration',
+      'Lusophone cultural integration',
       'Child protection specialists',
       'Emergency evacuation planning',
       'Residential security assessment'
@@ -148,12 +148,12 @@ const servicePackages = [
 const caseStudies = [
   {
     id: 'diplomatic-protection',
-    title: 'Portuguese Diplomatic Mission',
+    title: 'Lusophone Diplomatic Mission',
     titlePortuguese: 'Missão Diplomática Portuguesa',
     client: 'Consulado-Geral de Portugal',
     clientPortuguese: 'Consulado-Geral de Portugal',
-    challenge: 'Secure diplomatic event with 200+ attendees and high-profile speakers',
-    challengePortuguese: 'Evento diplomático seguro com 200+ participantes e oradores de alto perfil',
+    challenge: 'Secure diplomatic event with many people and high-profile speakers',
+    challengePortuguese: 'Evento diplomático seguro com many peoplees e oradores de alto perfil',
     solution: 'Integrated close protection with venue security and cultural protocol management',
     solutionPortuguese: 'Proteção pessoal integrada com segurança do local e gestão de protocolo cultural',
     result: 'Zero security incidents, seamless protocol execution, commendation letter received',
@@ -165,7 +165,7 @@ const caseStudies = [
     id: 'corporate-executive',
     title: 'Tech CEO London Tour',
     titlePortuguese: 'Tour de CEO de Tecnologia em Londres',
-    client: 'Portuguese Unicorn Startup',
+    client: 'Lusophone Unicorn Startup',
     clientPortuguese: 'Startup Unicórnio Portuguesa',
     challenge: 'High-visibility CEO with security concerns during London expansion meetings',
     challengePortuguese: 'CEO de alta visibilidade com preocupações de segurança durante reuniões de expansão em Londres',
@@ -236,7 +236,7 @@ export default function CloseProtectionPage() {
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {isPortuguese
                   ? 'Operativos de proteção pessoal licenciados SIA com especialização cultural portuguesa, fornecendo segurança discreta e profissional para indivíduos e grupos de alto perfil.'
-                  : 'SIA-licensed Close Protection Operatives with Portuguese cultural expertise, providing discrete and professional security for high-profile individuals and groups.'
+                  : 'SIA-licensed Close Protection Operatives with Lusophone cultural expertise, providing discrete and professional security for high-profile individuals and groups.'
                 }
               </p>
 

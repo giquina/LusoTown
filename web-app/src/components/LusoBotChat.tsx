@@ -347,20 +347,28 @@ export default function LusoBotChat({ className = '', isEmbedded = false, onClos
 
   const quickStarters = [
     {
-      pt: "Como posso encontrar comida portuguesa em Londres?",
-      en: "How can I find Portuguese food in London?"
+      pt: "Sou do Porto e estou novo em Londres. Por onde começar?",
+      en: "I'm from Porto and new to London. Where should I start?"
     },
     {
-      pt: "Estou com saudades de casa...",
-      en: "I'm feeling homesick..."
+      pt: "Procuro eventos portugueses este fim de semana",
+      en: "I'm looking for Lusophone events this weekend"
     },
     {
-      pt: "Onde posso ouvir fado em Londres?",
-      en: "Where can I hear fado in London?"
+      pt: "Quero encontrar outros brasileiros na minha área",
+      en: "I want to find other Brazilians in my area"
     },
     {
-      pt: "Quero aprender mais sobre a cultura portuguesa",
-      en: "I want to learn more about Portuguese culture"
+      pt: "Preciso de negócios portugueses - restaurantes e serviços",
+      en: "I need Portuguese businesses - restaurants and services"
+    },
+    {
+      pt: "Como posso conhecer pessoas da comunidade lusófona?",
+      en: "How can I meet people from the Portuguese-speaking community?"
+    },
+    {
+      pt: "Sou estudante português - que recursos têm para mim?",
+      en: "I'm a Lusophone student - what resources do you have for me?"
     }
   ]
 
@@ -392,7 +400,7 @@ export default function LusoBotChat({ className = '', isEmbedded = false, onClos
                 <SparklesIcon className="w-4 h-4 text-primary-500" />
               </h1>
               <p className="text-xs text-gray-600">
-                {language === 'pt' ? 'Assistente Cultural Português' : 'Portuguese Cultural Assistant'}
+                {language === 'pt' ? 'Assistente Cultural Português' : 'Lusophone Cultural Assistant'}
               </p>
             </div>
           </div>

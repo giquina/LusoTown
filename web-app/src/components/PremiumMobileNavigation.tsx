@@ -224,7 +224,7 @@ export function PremiumMobileNavigation({
 
       <div className="px-4 py-3 pb-safe-bottom">
         <div 
-          className="flex items-center justify-around"
+          className="flex items-center justify-between"
           role="tablist"
           aria-label={language === 'pt' ? 'Navegação por abas' : 'Tab navigation'}
         >
@@ -236,7 +236,7 @@ export function PremiumMobileNavigation({
             return (
               <motion.div
                 key={item.id}
-                className="relative flex-1 flex flex-col items-center"
+                className="relative flex-1 flex flex-col items-center min-w-0"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -261,7 +261,7 @@ export function PremiumMobileNavigation({
               >
                 <LuxuryRipple
                   className={`
-                    relative p-3 rounded-2xl transition-all duration-300 flex flex-col items-center gap-1 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2
+                    relative w-full p-3 rounded-2xl transition-all duration-300 flex flex-col items-center gap-1 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 min-h-[60px]
                     ${isActive 
                       ? (style === 'elite' 
                           ? 'bg-amber-400/20 shadow-lg'
@@ -349,7 +349,7 @@ export function PremiumMobileNavigation({
                   </motion.div>
 
                   <motion.span
-                    className={`text-xs font-semibold transition-all duration-300 ${
+                    className={`text-xs font-semibold transition-all duration-300 truncate text-center max-w-full ${
                       isActive 
                         ? (style === 'elite' ? 'text-amber-400' : item.color)
                         : (style === 'elite' ? 'text-gray-300' : 'text-gray-500')
@@ -431,7 +431,7 @@ export function FloatingNavigation({
       color: 'bg-green-500'
     },
     {
-      label: 'Portuguese Culture',
+      label: 'Lusophone Culture',
       labelPt: 'Cultura Portuguesa',
       icon: GlobeEuropeAfricaIcon,
       onClick: () => console.log('Culture'),

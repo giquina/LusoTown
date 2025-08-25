@@ -71,34 +71,34 @@ const ROUTE_HIERARCHY: Record<string, BreadcrumbItem[]> = {
     { label: 'Create Event', isActive: true, category: 'event', subtitle: 'Host Your Event' }
   ],
   '/community': [
-    { label: 'Community', isActive: true, category: 'community', subtitle: 'Portuguese Speakers in London' }
+    { label: 'Community', isActive: true, category: 'community', subtitle: 'Lusophone Speakers in London' }
   ],
   '/services': [
-    { label: 'Premium Services', isActive: true, category: 'service', subtitle: 'Exclusive Portuguese Services' }
+    { label: 'Premium Services', isActive: true, category: 'service', subtitle: 'Exclusive Lusophone Services' }
   ],
   '/transport': [
     { label: 'Services', href: ROUTES.services, category: 'service' },
-    { label: 'Transport', isActive: true, category: 'service', subtitle: 'Portuguese-Speaking Drivers' }
+    { label: 'Transport', isActive: true, category: 'service', subtitle: 'Lusophone-Speaking Drivers' }
   ],
   '/london-tours': [
     { label: 'Services', href: ROUTES.services, category: 'service' },
-    { label: 'London Tours', isActive: true, category: 'service', subtitle: 'Portuguese-Guided Tours' }
+    { label: 'London Tours', isActive: true, category: 'service', subtitle: 'Lusophone-Guided Tours' }
   ],
   '/business-networking': [
     { label: 'Events', href: ROUTES.events, category: 'event' },
-    { label: 'Business Networking', isActive: true, category: 'event', subtitle: 'Professional Portuguese Network' }
+    { label: 'Business Networking', isActive: true, category: 'event', subtitle: 'Professional Lusophone Network' }
   ],
   '/matches': [
-    { label: 'Find Your Match', isActive: true, category: 'community', subtitle: 'Connect with Portuguese Speakers' }
+    { label: 'Find Your Match', isActive: true, category: 'community', subtitle: 'Connect with Lusophone Speakers' }
   ],
   '/tv': [
-    { label: 'Live TV', isActive: true, category: 'content', subtitle: 'Portuguese Content & Shows' }
+    { label: 'Live TV', isActive: true, category: 'content', subtitle: 'Lusophone Content & Shows' }
   ],
   '/live': [
-    { label: 'Streaming Income', isActive: true, category: 'service', subtitle: 'Monetize Your Portuguese Content' }
+    { label: 'Streaming Income', isActive: true, category: 'service', subtitle: 'Monetize Your Lusophone Content' }
   ],
   '/students': [
-    { label: 'Students', isActive: true, category: 'community', subtitle: 'Portuguese Students in United Kingdom' }
+    { label: 'Students', isActive: true, category: 'community', subtitle: 'Lusophone Students in United Kingdom' }
   ],
   '/pricing': [
     { label: 'Pricing', isActive: true, category: 'service', subtitle: 'Membership Plans' }

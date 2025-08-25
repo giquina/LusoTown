@@ -56,12 +56,12 @@ export default function SignupConversionOptimizer({
 
   const isPortuguese = language === 'pt'
 
-  // Define headline variations with Portuguese cultural context
+  // Define headline variations with Lusophone cultural context
   const variations: HeadlineVariation[] = [
     {
       id: 'business-first',
       type: 'business',
-      headline: 'Connect with 750+ Portuguese Business Leaders in the UK',
+      headline: 'Connect with 750+ Lusophone Business Leaders in the UK',
       headlinePt: 'Conecte-se com 750+ Líderes Empresariais Portugueses no Reino Unido',
       subheading: 'Professional networking • Business growth • Cultural connections',
       subheadingPt: 'Networking profissional • Crescimento empresarial • Conexões culturais',
@@ -73,14 +73,14 @@ export default function SignupConversionOptimizer({
       socialProofPt: '23 empresários juntaram-se esta semana',
       benefits: [
         { text: 'Portuguese business networking events', textPt: 'Eventos de networking empresarial português', icon: UserGroupIcon },
-        { text: 'Mentorship from successful Portuguese entrepreneurs', textPt: 'Mentoria de empreendedores portugueses bem-sucedidos', icon: AcademicCapIcon },
+        { text: 'Mentorship from successful Lusophone entrepreneurs', textPt: 'Mentoria de empreendedores portugueses bem-sucedidos', icon: AcademicCapIcon },
         { text: 'Access to Portuguese business directory', textPt: 'Acesso ao diretório de negócios português', icon: BuildingOfficeIcon }
       ]
     },
     {
       id: 'romance-first', 
       type: 'romance',
-      headline: 'Finally! Meet Portuguese Speakers Who Truly Understand You',
+      headline: 'Finally! Meet Lusophone Speakers Who Truly Understand You',
       headlinePt: 'Finalmente! Conheça Falantes de Português que Realmente o Compreendem',
       subheading: 'Authentic connections • Cultural compatibility • Lasting relationships',
       subheadingPt: 'Conexões autênticas • Compatibilidade cultural • Relacionamentos duradouros',
@@ -92,25 +92,25 @@ export default function SignupConversionOptimizer({
       socialProofPt: '47 membros encontraram conexões significativas no mês passado',
       benefits: [
         { text: 'Cultural compatibility matching', textPt: 'Correspondência de compatibilidade cultural', icon: HeartIcon },
-        { text: 'Portuguese cultural events and dates', textPt: 'Eventos culturais portugueses e encontros', icon: StarIcon },
-        { text: 'Safe, verified Portuguese community', textPt: 'Comunidade portuguesa segura e verificada', icon: CheckCircleIcon }
+        { text: 'Lusophone cultural events and dates', textPt: 'Eventos culturais portugueses e encontros', icon: StarIcon },
+        { text: 'Safe, verified Lusophone community', textPt: 'Comunidade portuguesa segura e verificada', icon: CheckCircleIcon }
       ]
     },
     {
       id: 'community-focused',
       type: 'community', 
-      headline: 'Your Portuguese Home Away From Home in the UK',
+      headline: 'Your Lusophone Home Away From Home in the UK',
       headlinePt: 'A Sua Casa Portuguesa Longe de Casa no Reino Unido',
-      subheading: '750+ Portuguese speakers • Cultural events • Business & personal connections',
+      subheading: 'Portuguese speakers • Cultural events • Business & personal connections',
       subheadingPt: '750+ falantes de português • Eventos culturais • Conexões empresariais e pessoais',
       cta: 'Join Your Community',
       ctaPt: 'Junte-se à Sua Comunidade',
       icon: UserGroupIcon,
       color: 'green',
-      socialProof: 'Fastest-growing Portuguese community in the UK',
+      socialProof: 'Fastest-growing Lusophone community in the UK',
       socialProofPt: 'Comunidade portuguesa que mais cresce no Reino Unido',
       benefits: [
-        { text: 'Weekly Portuguese cultural events', textPt: 'Eventos culturais portugueses semanais', icon: StarIcon },
+        { text: 'Weekly Lusophone cultural events', textPt: 'Eventos culturais portugueses semanais', icon: StarIcon },
         { text: 'Professional and personal connections', textPt: 'Conexões profissionais e pessoais', icon: UserGroupIcon },
         { text: 'Support for newcomers to UK', textPt: 'Apoio para recém-chegados ao Reino Unido', icon: CheckCircleIcon }
       ]

@@ -84,7 +84,7 @@ export default function CommunityFeedSection() {
           heritage: 'Portugal',
           badges: ['Event Host', 'Community Leader']
         },
-        content: 'Excited to announce our next Fado night at the Portuguese Cultural Centre! Join us for an evening of traditional music, pastéis de nata, and connecting with fellow Portuguese speakers. Bring your saudade and let\'s create beautiful memories together! 🎵🇵🇹',
+        content: 'Excited to announce our next Fado night at the Lusophone Cultural Centre! Join us for an evening of traditional music, pastéis de nata, and connecting with fellow Portuguese speakers. Bring your saudade and let\'s create beautiful memories together! 🎵🇵🇹',
         images: ['https://images.unsplash.com/photo-1567336273898-ebbf9eb3c2bf?w=400&h=300&fit=crop&crop=center'],
         timestamp: new Date().toISOString(),
         timeAgo: '2 hours ago',
@@ -96,7 +96,7 @@ export default function CommunityFeedSection() {
           type: 'event',
           id: 'fado_night_march',
           title: 'Traditional Fado Night',
-          subtitle: 'Portuguese Cultural Centre',
+          subtitle: 'Lusophone Cultural Centre',
           date: 'March 15, 7:30 PM'
         },
         trending: true
@@ -125,7 +125,7 @@ export default function CommunityFeedSection() {
           type: 'business',
           id: 'porto_bakery',
           title: 'Porto Authentic Bakery',
-          subtitle: 'Traditional Portuguese pastries'
+          subtitle: 'Traditional Lusophone pastries'
         }
       },
       {
@@ -140,7 +140,7 @@ export default function CommunityFeedSection() {
           heritage: 'Portugal',
           badges: ['HR Professional', 'Recruiter']
         },
-        content: 'Exciting opportunity at my company! We\'re looking for a Portuguese-speaking Customer Success Manager. Perfect for someone who understands both Portuguese and Brazilian markets. Remote-friendly with office in Canary Wharf. DM me for details! 💼',
+        content: 'Exciting opportunity at my company! We\'re looking for a Portuguese-speaking Customer Success Manager. Perfect for someone who understands both Lusophone and Brazilian markets. Remote-friendly with office in Canary Wharf. DM me for details! 💼',
         timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString(),
         timeAgo: '6 hours ago',
         metrics: { likes: 34, comments: 18, shares: 22, views: 178 },
@@ -167,7 +167,7 @@ export default function CommunityFeedSection() {
           heritage: 'Angola',
           badges: ['Property Expert']
         },
-        content: 'Beautiful 2-bedroom flat available in Elephant & Castle! Perfect for Portuguese speakers - there\'s a strong community here. Walking distance to Portuguese shops and the Mercado restaurant. Looking for respectful tenants who appreciate good neighbours. 🏠',
+        content: 'Beautiful 2-bedroom flat available in Elephant & Castle! Perfect for Portuguese speakers - there\'s a strong community here. Walking distance to Lusophone shops and the Mercado restaurant. Looking for respectful tenants who appreciate good neighbours. 🏠',
         images: ['https://images.unsplash.com/photo-1567336273898-ebbf9eb3c2bf?w=400&h=300&fit=crop&crop=center'],
         timestamp: new Date(Date.now() - 8 * 60 * 60 * 1000).toISOString(),
         timeAgo: '8 hours ago',
@@ -217,7 +217,7 @@ export default function CommunityFeedSection() {
           heritage: 'Cape Verde',
           badges: ['Community Moderator']
         },
-        content: 'Had an interesting conversation about maintaining our mother tongue while living abroad. How do you keep Portuguese alive in your daily life here in London? My kids are starting to prefer English, and I want them to stay connected to our roots. Any tips? 🤔',
+        content: 'Had an interesting conversation about maintaining our mother tongue while living abroad. How do you keep Lusophone alive in your daily life here in London? My kids are starting to prefer English, and I want them to stay connected to our roots. Any tips? 🤔',
         timestamp: new Date(Date.now() - 18 * 60 * 60 * 1000).toISOString(),
         timeAgo: '18 hours ago',
         metrics: { likes: 73, comments: 58, shares: 12, views: 456 },
@@ -250,7 +250,7 @@ export default function CommunityFeedSection() {
           type: 'event',
           id: 'portugal_match_watch',
           title: 'Portugal vs Espanha - Ver Juntos',
-          subtitle: 'The Portuguese Pub',
+          subtitle: 'The Lusophone Pub',
           date: 'Amanhã, 20:00'
         },
         isLive: true
@@ -419,7 +419,7 @@ export default function CommunityFeedSection() {
 
   return (
     <section className="py-24 bg-gradient-to-br from-white via-secondary-50/20 to-accent-50/20 relative overflow-hidden">
-      {/* Portuguese-inspired background elements */}
+      {/* Lusophone-inspired background elements */}
       <div className="absolute inset-0" aria-hidden="true">
         <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/30 via-accent-100/20 to-coral-100/20 rounded-full opacity-60 animate-pulse" />
         <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-tr from-action-200/30 via-secondary-100/20 to-accent-100/20 rounded-full opacity-50 animate-bounce" style={{ animationDuration: '8s' }} />

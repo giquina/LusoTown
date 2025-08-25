@@ -154,7 +154,7 @@ function createEventInterest(
     matchingReasons.push('Perfect match for dance and cultural interests')
   } else if (matchingReason === 'cultural-events' && event.id.includes('fado')) {
     interestLevel = 'high'
-    matchingReasons.push('Authentic Portuguese cultural experience')
+    matchingReasons.push('Authentic Lusophone cultural experience')
   } else if (matchingReason === 'business-networking' && event.id.includes('business')) {
     interestLevel = 'high'
     matchingReasons.push('Ideal for Portuguese business networking')
@@ -377,7 +377,7 @@ function createPersonalizationMessage(event: any, signupData: EnhancedSignupForm
   }
   
   if (event.id === 'portuguese-business-network') {
-    return `${signupData.firstName}, build your professional network with successful Portuguese entrepreneurs!`
+    return `${signupData.firstName}, build your professional network with successful Lusophone entrepreneurs!`
   }
   
   return `${signupData.firstName}, this event is perfectly matched to your interests and cultural background!`

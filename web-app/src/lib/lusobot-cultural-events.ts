@@ -1,7 +1,7 @@
 /**
  * LusoBot Cultural Events Integration
  * 
- * Provides Portuguese cultural event knowledge and integration with LusoTown's
+ * Provides Lusophone cultural event knowledge and integration with LusoTown's
  * event system for community engagement and cultural celebration
  */
 
@@ -59,7 +59,7 @@ export interface CulturalSignificance {
   modernRelevance: number
 }
 
-// Portuguese Cultural Calendar
+// Lusophone Cultural Calendar
 export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
   // January
   {
@@ -102,7 +102,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
       {
         location: 'London Portuguese-speaking community',
         adaptations: ['Community centers host bolo-rei sharing', 'Digital janeiras on social media'],
-        communityInvolvement: ['Portuguese families', 'Cultural associations', 'Churches']
+        communityInvolvement: ['Lusophone families', 'Cultural associations', 'Churches']
       }
     ]
   },
@@ -146,9 +146,9 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     ],
     modernCelebrations: [
       {
-        location: 'United Kingdom Portuguese Schools',
+        location: 'United Kingdom Lusophone Schools',
         adaptations: ['Children\'s costume parties', 'Traditional dance workshops'],
-        communityInvolvement: ['Portuguese schools', 'Dance groups', 'Families']
+        communityInvolvement: ['Lusophone schools', 'Dance groups', 'Families']
       }
     ]
   },
@@ -192,7 +192,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     ],
     modernCelebrations: [
       {
-        location: 'Portuguese Embassy London',
+        location: 'Lusophone Embassy London',
         adaptations: ['Democratic values discussion panels', 'Historical exhibitions'],
         communityInvolvement: ['Political associations', 'Cultural centers', 'Universities']
       }
@@ -238,7 +238,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     ],
     modernCelebrations: [
       {
-        location: 'Portuguese Restaurants United Kingdom',
+        location: 'Lusophone Restaurants United Kingdom',
         adaptations: ['Special Mother\'s Day menus', 'Family celebration packages'],
         communityInvolvement: ['Portuguese restaurants', 'Families', 'Community groups']
       }
@@ -308,7 +308,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
           'Street festival simulations'
         ],
         communityInvolvement: [
-          'Portuguese associations',
+          'Lusophone associations',
           'Restaurants',
           'Folk dance groups',
           'Families with children'
@@ -323,7 +323,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     name: { pt: 'Dia da República', en: 'Republic Day' },
     description: {
       pt: 'Celebração da implantação da República Portuguesa em 1910',
-      en: 'Celebration of the establishment of the Portuguese Republic in 1910'
+      en: 'Celebration of the establishment of the Lusophone Republic in 1910'
     },
     category: 'historical',
     date: '2024-10-05',
@@ -338,7 +338,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     },
     traditions: [
       {
-        name: { pt: 'A Portuguesa', en: 'The Portuguese Anthem' },
+        name: { pt: 'A Portuguesa', en: 'The Lusophone Anthem' },
         description: {
           pt: 'Hino nacional cantado em cerimónias oficiais',
           en: 'National anthem sung at official ceremonies'
@@ -348,7 +348,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     ],
     modernCelebrations: [
       {
-        location: 'Portuguese Cultural Centers',
+        location: 'Lusophone Cultural Centers',
         adaptations: ['Historical exhibitions', 'Citizenship ceremonies'],
         communityInvolvement: ['Cultural associations', 'Educational institutions']
       }
@@ -394,7 +394,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     ],
     modernCelebrations: [
       {
-        location: 'London Parks & Portuguese Areas',
+        location: 'London Parks & Lusophone Areas',
         adaptations: ['Chestnut roasting events', 'Wine tasting sessions'],
         communityInvolvement: ['Portuguese wine importers', 'Community groups', 'Families']
       }
@@ -407,7 +407,7 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     name: { pt: 'Natal', en: 'Christmas' },
     description: {
       pt: 'Maior celebração religiosa e familiar do ano português',
-      en: 'The largest religious and family celebration of the Portuguese year'
+      en: 'The largest religious and family celebration of the Lusophone year'
     },
     category: 'religious',
     date: '2024-12-25',
@@ -448,18 +448,18 @@ export const PORTUGUESE_CULTURAL_CALENDAR: PortugueseCulturalEvent[] = [
     ],
     modernCelebrations: [
       {
-        location: 'Portuguese Churches & Community Centers United Kingdom',
+        location: 'Lusophone Churches & Community Centers United Kingdom',
         adaptations: [
-          'Portuguese Christmas markets',
+          'Lusophone Christmas markets',
           'Traditional carol singing',
           'Codfish dinner events',
-          'Midnight mass in Portuguese'
+          'Midnight mass in Lusophone'
         ],
         communityInvolvement: [
-          'Portuguese churches',
+          'Lusophone churches',
           'Cultural associations',
           'Families',
-          'Portuguese schools'
+          'Lusophone schools'
         ]
       }
     ]
@@ -603,7 +603,7 @@ export class LusoBotCulturalEvents {
         if (event.significance.historicalImportance > 0.7) {
           explanation += language === 'pt' 
             ? ` Esta festa tem profundas raízes históricas e representa uma parte importante da identidade portuguesa.`
-            : ` This celebration has deep historical roots and represents an important part of Portuguese identity.`
+            : ` This celebration has deep historical roots and represents an important part of Lusophone identity.`
         }
         break
 

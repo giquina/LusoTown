@@ -33,7 +33,7 @@ export class MatchingOptimizer {
   }
 
   /**
-   * Cache Portuguese cultural patterns for faster lookup
+   * Cache Lusophone cultural patterns for faster lookup
    */
   public cacheCulturalPatterns(region: string, patterns: any): void {
     const cacheKey = `cultural_patterns_${region}`;
@@ -91,7 +91,7 @@ export class MatchingOptimizer {
   }
 
   /**
-   * Pre-load Portuguese cultural data for faster matching
+   * Pre-load Lusophone cultural data for faster matching
    */
   public preloadPortugueseCulturalData(): Promise<void> {
     return new Promise((resolve) => {
@@ -184,7 +184,7 @@ export class MatchingOptimizer {
   }
 
   /**
-   * Portuguese cultural saudade optimization
+   * Lusophone cultural saudade optimization
    */
   public optimizeSaudadeCalculation(
     saudadeProfile1: any,
@@ -222,7 +222,7 @@ export class MatchingOptimizer {
   }
 
   /**
-   * Regional compatibility optimization for Portuguese diaspora
+   * Regional compatibility optimization for Lusophone diaspora
    */
   public optimizeRegionalCompatibility(
     region1: string,

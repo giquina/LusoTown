@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "no-duplicate-imports": "error",
+    "lusotown/no-duplicate-components": {
+      "components": [
+        "WelcomePopup",
+        "WelcomeBanner",
+        "UserTypeSelection"
+      ],
+      "severity": "error",
+      "message": "Duplicate component detected - only one instance allowed"
+    }
+  }
+}

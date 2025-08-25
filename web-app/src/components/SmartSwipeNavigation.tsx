@@ -6,7 +6,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/context/LanguageContext';
 import { useHeritage } from '@/context/HeritageContext';
 
-// Portuguese Cultural Categories for Events
+// Lusophone Cultural Categories for Events
 export const PORTUGUESE_EVENT_CATEGORIES = [
   {
     id: 'tonight',
@@ -14,7 +14,7 @@ export const PORTUGUESE_EVENT_CATEGORIES = [
     namePt: 'Hoje à Noite',
     icon: '🌙',
     color: 'from-purple-500 to-blue-500',
-    description: 'Events happening tonight in Portuguese community',
+    description: 'Events happening tonight in Lusophone community',
   },
   {
     id: 'weekend',
@@ -22,7 +22,7 @@ export const PORTUGUESE_EVENT_CATEGORIES = [
     namePt: 'Fim de Semana',
     icon: '🎉',
     color: 'from-green-500 to-emerald-500',
-    description: 'Weekend Portuguese cultural events',
+    description: 'Weekend Lusophone cultural events',
   },
   {
     id: 'cultural',
@@ -70,7 +70,7 @@ export const PORTUGUESE_EVENT_CATEGORIES = [
     namePt: 'Desportos',
     icon: '⚽',
     color: 'from-green-600 to-green-700',
-    description: 'Portuguese football and sports events',
+    description: 'Lusophone football and sports events',
   }
 ];
 
@@ -233,7 +233,7 @@ export default function SmartSwipeNavigation({
           </motion.div>
         </motion.div>
 
-        {/* Portuguese Flag Corner */}
+        {/* Lusophone Flag Corner */}
         <div className="absolute top-3 right-3">
           <motion.div
             className="w-6 h-4 rounded-sm bg-gradient-to-r from-green-500 to-red-500 shadow-lg"
@@ -336,7 +336,7 @@ export function GestureQuickFilters({
     },
     {
       key: 'portuguese',
-      labelEn: '🇵🇹 Portuguese Culture',
+      labelEn: '🇵🇹 Lusophone Culture',
       labelPt: '🇵🇹 Cultura Portuguesa',
       action: () => onFilterChange({ ...filters, tags: ['portuguese', 'culture'] }),
     },

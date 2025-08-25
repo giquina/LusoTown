@@ -38,7 +38,7 @@ import HowItWorksSection from "@/components/matches/HowItWorksSection";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 
-// Mock Portuguese profiles for demonstration
+// Mock Lusophone profiles for demonstration
 const mockProfiles = [
   {
     id: 1,
@@ -49,11 +49,11 @@ const mockProfiles = [
     origin: "Porto, Portugal",
     interests: [
       "Fado",
-      "Portuguese Cuisine",
+      "Lusophone Cuisine",
       "Professional Networking",
       "Arts & Crafts",
     ],
-    bio: "Portuguese marketing professional looking to connect with fellow lusófonos in London. Love fado nights and traditional cooking!",
+    bio: "Lusophone marketing professional looking to connect with fellow lusófonos in London. Love fado nights and traditional cooking!",
     image: mockProfileImages["ana-sofia"],
     compatibility: 94,
   },
@@ -70,7 +70,7 @@ const mockProfiles = [
       "Language Exchange",
       "Tech Meetups",
     ],
-    bio: "Tech enthusiast from Lisbon. Always up for watching Benfica games and meeting other Portuguese professionals in tech.",
+    bio: "Tech enthusiast from Lisbon. Always up for watching Benfica games and meeting other Lusophone professionals in tech.",
     image: mockProfileImages["miguel-santos"],
     compatibility: 89,
   },
@@ -87,7 +87,7 @@ const mockProfiles = [
       "Young Professionals",
       "Education",
     ],
-    bio: "Medical student from Braga. Love traditional Portuguese dancing and meeting other young professionals.",
+    bio: "Medical student from Braga. Love traditional Lusophone dancing and meeting other young professionals.",
     image: mockProfileImages["beatriz-oliveira"],
     compatibility: 91,
   },
@@ -99,7 +99,7 @@ const mockProfiles = [
     profession: "Chef",
     origin: "Aveiro, Portugal",
     interests: [
-      "Portuguese Cuisine",
+      "Lusophone Cuisine",
       "Cultural Events",
       "Business Networking",
       "Sports",
@@ -397,7 +397,7 @@ function MatchesContent() {
       icon: CalendarIcon,
       title: "Attend Events Together",
       description:
-        "Meet your matches at Portuguese cultural events, networking meetups, and social gatherings",
+        "Meet your matches at Lusophone cultural events, networking meetups, and social gatherings",
       titlePt: "Participem em Eventos Juntos",
       descriptionPt:
         "Conheça as suas correspondências em eventos culturais portugueses, encontros de networking e reuniões sociais",
@@ -406,7 +406,7 @@ function MatchesContent() {
       icon: ChatBubbleLeftRightIcon,
       title: "Build Connections",
       description:
-        "Start conversations in Portuguese or English and build lasting friendships or professional relationships",
+        "Start conversations in Lusophone or English and build lasting friendships or professional relationships",
       titlePt: "Construa Conexões",
       descriptionPt:
         "Inicie conversas em português ou inglês e construa amizades duradouras ou relacionamentos profissionais",
@@ -465,12 +465,12 @@ function MatchesContent() {
                 <HeartIcon className="w-10 h-10 md:w-12 md:h-12 text-white/90 animate-pulse" />
               </div>
               <h1 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                {language === "pt" ? "Encontre Falantes de Português no Reino Unido" : "Connect with Portuguese Speakers in the United Kingdom"}
+                {language === "pt" ? "Encontre Falantes de Português no Reino Unido" : "Connect with Lusophone Speakers in the United Kingdom"}
               </h1>
               <p className="text-sm md:text-base text-white/90 mb-6 leading-relaxed max-w-3xl mx-auto">
                 {language === "pt"
                   ? "Conecte-se com uma comunidade vibrante de falantes de português - brasileiros, portugueses, angolanos, cabo-verdianos e mais. Partilhe a sua língua, cultura e experiências no Reino Unido."
-                  : "Connect with a vibrant community of Portuguese speakers - Brazilians, Portuguese, Angolans, Cape Verdeans and more. Share your language, culture, and experiences in the United Kingdom."}
+                  : "Connect with a vibrant community of Portuguese speakers - Brazilians, Lusophone, Angolans, Cape Verdeans and more. Share your language, culture, and experiences in the United Kingdom."}
               </p>
 
               {/* Live Success Counter */}
@@ -577,7 +577,7 @@ function MatchesContent() {
                 <div className="text-white/80 text-sm">
                   {language === "pt"
                     ? "Falantes Português"
-                    : "Portuguese Speakers"}
+                    : "Lusophone Speakers"}
                 </div>
                 <div className="text-white/60 text-xs mt-1">
                   {language === "pt"
@@ -693,12 +693,12 @@ function MatchesContent() {
         </div>
       </section>
 
-      {/* Portuguese-Speaking Nations Section */}
+      {/* Lusophone-Speaking Nations Section */}
       <section className="py-8 md:py-12 bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-xl md:text-2xl font-bold text-primary-900 mb-3">
-              {language === "pt" ? "Unidos pela Língua Portuguesa" : "United by the Portuguese Language"}
+              {language === "pt" ? "Unidos pela Língua Portuguesa" : "United by the Lusophone Language"}
             </h2>
             <p className="text-sm md:text-base text-primary-700 max-w-2xl mx-auto">
               {language === "pt" 
@@ -748,7 +748,7 @@ function MatchesContent() {
             <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-3 md:mb-5">
               {language === "pt"
                 ? "Descubra Falantes de Português Próximos de Si"
-                : "Discover Portuguese Speakers Near You"}
+                : "Discover Lusophone Speakers Near You"}
             </h2>
             <p className="text-sm md:text-base text-primary-700 max-w-3xl mx-auto mb-5">
               {language === "pt"
@@ -804,7 +804,7 @@ function MatchesContent() {
                   <ul className="text-primary-700 text-xs space-y-1">
                     <li>📍 {language === "pt" ? "A sua localização no Reino Unido" : "Your location in the United Kingdom"}</li>
                     <li>🎯 {language === "pt" ? "Os seus interesses e hobbies" : "Your interests and hobbies"}</li>
-                    <li>🇵🇹 {language === "pt" ? "Preferências culturais portuguesas" : "Portuguese cultural preferences"}</li>
+                    <li>🇵🇹 {language === "pt" ? "Preferências culturais portuguesas" : "Lusophone cultural preferences"}</li>
                     <li>👥 {language === "pt" ? "Tipo de conexões que procura" : "Type of connections you're seeking"}</li>
                   </ul>
                 </div>
@@ -973,7 +973,7 @@ function MatchesContent() {
                         </div>
                       </div>
 
-                      {/* Enhanced Portuguese Cultural Connection */}
+                      {/* Enhanced Lusophone Cultural Connection */}
                       <div className="bg-gradient-to-r from-secondary-50 via-accent-50 to-coral-50 p-3 rounded-2xl border border-secondary-200 shadow-inner">
                         <div className="flex items-center justify-between mb-3">
                           <div className="flex items-center gap-2">
@@ -1137,7 +1137,7 @@ function MatchesContent() {
               <p className="text-primary-600 text-sm font-medium">
                 {language === "pt"
                   ? "Toque em ❌ para passar • Toque em ❤️ para gostar • Conheçam-se em eventos portugueses!"
-                  : "Tap ❌ to skip • Tap ❤️ to like • Meet at Portuguese events!"}
+                  : "Tap ❌ to skip • Tap ❤️ to like • Meet at Lusophone events!"}
               </p>
 
               {remainingMatches <= 1 && isFreeTier && (
@@ -1203,7 +1203,7 @@ function MatchesContent() {
               <p className="text-primary-700 mb-4">
                 {language === "pt"
                   ? `Você e ${matchedProfile?.name} gostaram um do outro! Iniciem uma conversa e planeiem encontrar-se num evento português.`
-                  : `You and ${matchedProfile?.name} both liked each other! Start chatting and plan to meet at a Portuguese event.`}
+                  : `You and ${matchedProfile?.name} both liked each other! Start chatting and plan to meet at a Lusophone event.`}
               </p>
 
               {/* Match Quality Indicator */}
@@ -1583,7 +1583,7 @@ function MatchesContent() {
                     {communityStats.members}
                   </div>
                   <div className="text-sm text-primary-600">
-                    {t("activeMember") || "Active Portuguese Speakers"}
+                    {t("activeMember") || "Active Lusophone Speakers"}
                   </div>
                 </div>
               </div>
@@ -1672,7 +1672,7 @@ function MatchesContent() {
               <p className="text-sm text-primary-700">
                 {language === "pt"
                   ? "Planeiem encontrar-se em eventos portugueses ou cafés locais"
-                  : "Plan to meet at Portuguese events or local cafés"}
+                  : "Plan to meet at Lusophone events or local cafés"}
               </p>
               <div className="text-xs text-gray-500 mt-2">
                 {language === "pt" ? "Eventos sugeridos automaticamente" : "Events suggested automatically"}

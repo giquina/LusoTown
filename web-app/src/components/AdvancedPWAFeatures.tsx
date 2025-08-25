@@ -174,7 +174,7 @@ export default function AdvancedPWAFeatures({
           {
             body: isPortuguese 
               ? 'Receberá notificações sobre eventos portugueses próximos!'
-              : 'You\'ll receive notifications about nearby Portuguese events!',
+              : 'You\'ll receive notifications about nearby Lusophone events!',
             icon: '/icons/icon-192x192.png',
             badge: '/icons/badge-72x72.png',
             tag: 'lusotown-welcome',
@@ -195,10 +195,10 @@ export default function AdvancedPWAFeatures({
     if (navigator.share) {
       try {
         await navigator.share({
-          title: isPortuguese ? 'LusoTown - Comunidade Portuguesa' : 'LusoTown - Portuguese Community',
+          title: isPortuguese ? 'LusoTown - Comunidade Portuguesa' : 'LusoTown - Lusophone Community',
           text: isPortuguese 
             ? 'Descubra eventos portugueses em Londres!'
-            : 'Discover Portuguese events in London!',
+            : 'Discover Lusophone events in London!',
           url: window.location.href,
         });
       } catch (error) {
@@ -234,7 +234,7 @@ export default function AdvancedPWAFeatures({
                   <p className="text-sm text-white/90">
                     {isPortuguese 
                       ? 'Acesso rápido aos eventos portugueses!'
-                      : 'Quick access to Portuguese events!'
+                      : 'Quick access to Lusophone events!'
                     }
                   </p>
                 </div>
@@ -399,7 +399,7 @@ export default function AdvancedPWAFeatures({
                       <div className="text-xs text-gray-600">
                         {isPortuguese 
                           ? 'Eventos portugueses próximos'
-                          : 'Nearby Portuguese events'
+                          : 'Nearby Lusophone events'
                         }
                       </div>
                     </div>
@@ -438,7 +438,7 @@ export default function AdvancedPWAFeatures({
                       <div className="text-xs text-gray-600">
                         {isPortuguese 
                           ? 'Convide amigos portugueses'
-                          : 'Invite Portuguese friends'
+                          : 'Invite Lusophone friends'
                         }
                       </div>
                     </div>

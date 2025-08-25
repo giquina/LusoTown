@@ -35,7 +35,7 @@ interface DeviceCapabilities {
   prefersReducedData: boolean;
 }
 
-// Portuguese cultural image optimization configuration
+// Lusophone cultural image optimization configuration
 const PORTUGUESE_IMAGE_CONFIG = {
   culturalCategories: {
     events: {

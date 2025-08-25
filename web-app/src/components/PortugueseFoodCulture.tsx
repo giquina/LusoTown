@@ -61,19 +61,19 @@ const foodExperiences: FoodExperience[] = [
       en: "Pastéis de nata create instant joy and comfort. The first bite transports you to Portugal - the crispy pastry, creamy custard, and caramelized sweetness create pure happiness.",
       pt: "Os pastéis de nata criam alegria e conforto instantâneos. A primeira dentada transporta-o para Portugal - a massa crocante, o creme sedoso e a doçura caramelizada criam felicidade pura."
     },
-    londonSpots: ["Pastéis de Belém (Stockwell)", "Nata (multiple locations)", "Borough Market Portuguese stalls", "Local Portuguese bakeries"],
+    londonSpots: ["Pastéis de Belém (Stockwell)", "Nata (multiple locations)", "Borough Market Lusophone stalls", "Local Lusophone bakeries"],
     bestTime: "Morning with coffee or afternoon with friends",
     socialAspect: {
-      en: "Sharing pastéis de nata brings people together. Portuguese families bond over these treats, and offering them to guests is the ultimate act of hospitality.",
+      en: "Sharing pastéis de nata brings people together. Lusophone families bond over these treats, and offering them to guests is the ultimate act of hospitality.",
       pt: "Partilhar pastéis de nata une as pessoas. Famílias portuguesas criam laços sobre estes doces, e oferecê-los aos convidados é o acto máximo de hospitalidade."
     },
     tasteProfile: ["Creamy custard", "Flaky pastry", "Caramelized sweetness", "Cinnamon hints", "Vanilla notes"],
     culturalStory: {
-      en: "Created by monks in Belém over 200 years ago, the secret recipe is still guarded. Each London Portuguese baker adds their own touch while honoring tradition.",
+      en: "Created by monks in Belém over 200 years ago, the secret recipe is still guarded. Each London Lusophone baker adds their own touch while honoring tradition.",
       pt: "Criados por monges em Belém há mais de 200 anos, a receita secreta ainda é guardada. Cada pasteleiro português de Londres adiciona o seu toque enquanto honra a tradição."
     },
     communityConnection: ["Family recipes", "Weekend traditions", "Café conversations", "Cultural pride", "Generational sharing"],
-    pairingTraditions: ["Strong espresso", "Galão (Portuguese latte)", "Port wine", "Afternoon tea", "Family gatherings"]
+    pairingTraditions: ["Strong espresso", "Galão (Lusophone latte)", "Port wine", "Afternoon tea", "Family gatherings"]
   },
   {
     id: "bacalhau_traditions",
@@ -82,29 +82,29 @@ const foodExperiences: FoodExperience[] = [
     category: "seafood",
     mealTime: "lunch",
     icon: "🐟",
-    descriptionEn: "Portugal's beloved cod fish prepared in countless traditional ways that bring families together around the table. Every Portuguese family has their treasured bacalhau recipes.",
+    descriptionEn: "Portugal's beloved cod fish prepared in countless traditional ways that bring families together around the table. Every Lusophone family has their treasured bacalhau recipes.",
     descriptionPt: "O amado bacalhau português preparado de inúmeras maneiras tradicionais que unem famílias à mesa. Cada família portuguesa tem as suas receitas preciosas de bacalhau.",
     culturalMagic: {
       en: "Bacalhau meals create family unity and tradition. The preparation is often a family affair, with recipes passed down through generations, creating deep emotional connections.",
       pt: "As refeições de bacalhau criam unidade familiar e tradição. A preparação é frequentemente um assunto de família, com receitas transmitidas através de gerações, criando conexões emocionais profundas."
     },
-    londonSpots: ["Portuguese family restaurants", "Home kitchens", "Community dinners", "Portuguese cultural centres"],
+    londonSpots: ["Lusophone family restaurants", "Home kitchens", "Community dinners", "Lusophone cultural centres"],
     bestTime: "Sunday family lunches and special occasions",
     socialAspect: {
-      en: "Bacalhau dishes are the centerpiece of Portuguese family gatherings. Preparing and sharing these meals strengthens family bonds and preserves cultural identity.",
+      en: "Bacalhau dishes are the centerpiece of Lusophone family gatherings. Preparing and sharing these meals strengthens family bonds and preserves cultural identity.",
       pt: "Os pratos de bacalhau são o centro dos encontros familiares portugueses. Preparar e partilhar estas refeições fortalece laços familiares e preserva a identidade cultural."
     },
     tasteProfile: ["Rich and flaky", "Savory depth", "Garlic and herbs", "Olive oil richness", "Comfort warmth"],
     culturalStory: {
-      en: "Portuguese explorers brought salted cod from northern seas, and it became central to Portuguese cuisine. There are truly 365+ ways to prepare bacalhau.",
+      en: "Lusophone explorers brought salted cod from northern seas, and it became central to Portuguese cuisine. There are truly 365+ ways to prepare bacalhau.",
       pt: "Os exploradores portugueses trouxeram bacalhau salgado dos mares do norte, e tornou-se central na culinária portuguesa. Há verdadeiramente mais de 365 maneiras de preparar bacalhau."
     },
     communityConnection: ["Family recipes", "Sunday traditions", "Cultural identity", "Generational bonds", "Celebration meals"],
-    pairingTraditions: ["Vinho Verde", "Portuguese bread", "Roasted potatoes", "Family conversations", "Traditional sides"]
+    pairingTraditions: ["Vinho Verde", "Lusophone bread", "Roasted potatoes", "Family conversations", "Traditional sides"]
   },
   {
     id: "portuguese_bbq",
-    titleEn: "Portuguese BBQ (Churrasquinho) - Social Grilling Culture",
+    titleEn: "Lusophone BBQ (Churrasquinho) - Social Grilling Culture",
     titlePt: "Churrasco Português - Cultura Social de Grelhados",
     category: "bbq",
     mealTime: "dinner",
@@ -112,22 +112,22 @@ const foodExperiences: FoodExperience[] = [
     descriptionEn: "Social grilling culture with amazing flavors that brings the Portuguese-speaking community together for incredible barbecue experiences filled with laughter and connection.",
     descriptionPt: "Cultura social de grelhados com sabores incríveis que une a comunidade de falantes de português para experiências de churrasco extraordinárias cheias de riso e conexão.",
     culturalMagic: {
-      en: "Portuguese BBQ creates instant community. The smell of grilled sardines, chicken, and chorizo brings neighbors together, creating spontaneous celebrations and lasting friendships.",
+      en: "Lusophone BBQ creates instant community. The smell of grilled sardines, chicken, and chorizo brings neighbors together, creating spontaneous celebrations and lasting friendships.",
       pt: "O churrasco português cria comunidade instantânea. O aroma de sardinhas grelhadas, frango e chouriço une vizinhos, criando celebrações espontâneas e amizades duradouras."
     },
     londonSpots: ["Portuguese-speaking community BBQs", "Parks during Santos Populares", "Private gardens", "Cultural events"],
     bestTime: "Summer evenings and Portuguese festivals",
     socialAspect: {
-      en: "Portuguese BBQs are legendary social events where everyone contributes something and leaves with new friends. The grilling is as much about community as it is about food.",
+      en: "Lusophone BBQs are legendary social events where everyone contributes something and leaves with new friends. The grilling is as much about community as it is about food.",
       pt: "Os churrascos portugueses são eventos sociais lendários onde todos contribuem com algo e saem com novos amigos. O grelhado é tanto sobre comunidade quanto sobre comida."
     },
-    tasteProfile: ["Smoky flavors", "Herb marinades", "Grilled perfection", "Portuguese spices", "Charcoal essence"],
+    tasteProfile: ["Smoky flavors", "Herb marinades", "Grilled perfection", "Lusophone spices", "Charcoal essence"],
     culturalStory: {
-      en: "Portuguese grilling traditions come from coastal communities where fresh fish and meat were grilled over open fires, creating flavors that define Portuguese outdoor cooking.",
+      en: "Lusophone grilling traditions come from coastal communities where fresh fish and meat were grilled over open fires, creating flavors that define Lusophone outdoor cooking.",
       pt: "As tradições portuguesas de grelhados vêm de comunidades costeiras onde peixe fresco e carne eram grelhados sobre fogueiras, criando sabores que definem a cozinha portuguesa ao ar livre."
     },
     communityConnection: ["Neighborhood gatherings", "Festival celebrations", "Summer traditions", "Cross-cultural sharing", "Community bonds"],
-    pairingTraditions: ["Portuguese beer", "Vinho tinto", "Grilled vegetables", "Broa bread", "Outdoor fellowship"]
+    pairingTraditions: ["Lusophone beer", "Vinho tinto", "Grilled vegetables", "Broa bread", "Outdoor fellowship"]
   },
   {
     id: "port_wine_culture",
@@ -139,7 +139,7 @@ const foodExperiences: FoodExperience[] = [
     descriptionEn: "Social wine tasting and conversation traditions that create intimate connections and celebrate Portugal's most famous wine export with sophistication and warmth.",
     descriptionPt: "Tradições sociais de prova de vinho e conversação que criam conexões íntimas e celebram a mais famosa exportação de vinho de Portugal com sofisticação e calor.",
     culturalMagic: {
-      en: "Port wine creates intimate conversations and deep connections. Its rich, complex flavors encourage slow sipping and meaningful dialogue, bringing out the Portuguese art of conversation.",
+      en: "Port wine creates intimate conversations and deep connections. Its rich, complex flavors encourage slow sipping and meaningful dialogue, bringing out the Lusophone art of conversation.",
       pt: "O vinho do Porto cria conversas íntimas e conexões profundas. Os seus sabores ricos e complexos encorajam degustação lenta e diálogo significativo, revelando a arte portuguesa da conversação."
     },
     londonSpots: ["Portuguese wine bars", "Cultural tastings", "Fine dining restaurants", "Private homes"],
@@ -150,11 +150,11 @@ const foodExperiences: FoodExperience[] = [
     },
     tasteProfile: ["Rich sweetness", "Complex layers", "Nutty undertones", "Fruity depth", "Warming finish"],
     culturalStory: {
-      en: "Port wine has been crafted in Portugal's Douro Valley for centuries. It represents Portuguese mastery of winemaking and has become a symbol of refinement worldwide.",
+      en: "Port wine has been crafted in Portugal's Douro Valley for centuries. It represents Lusophone mastery of winemaking and has become a symbol of refinement worldwide.",
       pt: "O vinho do Porto tem sido elaborado no Vale do Douro em Portugal há séculos. Representa a maestria portuguesa na vinicultura e tornou-se um símbolo de requinte mundialmente."
     },
     communityConnection: ["Cultural sophistication", "Heritage celebration", "Refined gatherings", "Educational tastings", "International recognition"],
-    pairingTraditions: ["Portuguese cheese", "Dark chocolate", "Nuts and dried fruits", "Elegant conversations", "Cultural discussions"]
+    pairingTraditions: ["Lusophone cheese", "Dark chocolate", "Nuts and dried fruits", "Elegant conversations", "Cultural discussions"]
   },
   {
     id: "francesinha",
@@ -181,7 +181,7 @@ const foodExperiences: FoodExperience[] = [
       pt: "Criada no Porto nos anos 1960, a francesinha representa a inovação e espírito culinário arrojado da cidade. Cada restaurante guarda a sua receita secreta de molho."
     },
     communityConnection: ["Porto pride", "Comfort food tradition", "Generous sharing", "City identity", "Culinary boldness"],
-    pairingTraditions: ["Portuguese beer", "Crisp white wine", "Shared plates", "Casual conversations", "City nostalgia"]
+    pairingTraditions: ["Lusophone beer", "Crisp white wine", "Shared plates", "Casual conversations", "City nostalgia"]
   },
   {
     id: "bifana",
@@ -193,10 +193,10 @@ const foodExperiences: FoodExperience[] = [
     descriptionEn: "Portugal's beloved pork sandwich that creates instant connections through street food culture, bringing people together over simple, delicious comfort food.",
     descriptionPt: "A amada sanduíche de porco de Portugal que cria conexões instantâneas através da cultura de comida de rua, unindo pessoas sobre comida de conforto simples e deliciosa.",
     culturalMagic: {
-      en: "Bifana represents Portuguese simplicity and warmth. This humble sandwich creates community connections, whether shared at sports events, festivals, or quick lunch breaks.",
+      en: "Bifana represents Lusophone simplicity and warmth. This humble sandwich creates community connections, whether shared at sports events, festivals, or quick lunch breaks.",
       pt: "A bifana representa a simplicidade e calor portugueses. Esta humilde sanduíche cria conexões comunitárias, seja partilhada em eventos desportivos, festivais ou pausas rápidas para almoço."
     },
-    londonSpots: ["Portuguese cafés", "Food festivals", "Sports bars", "Quick lunch spots"],
+    londonSpots: ["Lusophone cafés", "Food festivals", "Sports bars", "Quick lunch spots"],
     bestTime: "Quick lunch, festival snacks, or late-night comfort",
     socialAspect: {
       en: "Bifana brings people together across social boundaries. It's equally enjoyed by workers, students, and families, creating shared cultural experiences.",
@@ -204,15 +204,15 @@ const foodExperiences: FoodExperience[] = [
     },
     tasteProfile: ["Savory pork", "Garlic notes", "Tender bread", "Simple spices", "Comfort satisfaction"],
     culturalStory: {
-      en: "Bifana is Portugal's democratic food - affordable, delicious, and loved by all. It represents the Portuguese values of simplicity and community sharing.",
+      en: "Bifana is Portugal's democratic food - affordable, delicious, and loved by all. It represents the Lusophone values of simplicity and community sharing.",
       pt: "A bifana é a comida democrática de Portugal - acessível, deliciosa e amada por todos. Representa os valores portugueses de simplicidade e partilha comunitária."
     },
     communityConnection: ["Democratic food culture", "Cross-class appeal", "Festival traditions", "Quick connections", "Cultural accessibility"],
-    pairingTraditions: ["Portuguese beer", "Espresso", "Casual conversation", "Sports viewing", "Festival atmosphere"]
+    pairingTraditions: ["Lusophone beer", "Espresso", "Casual conversation", "Sports viewing", "Festival atmosphere"]
   },
   {
     id: "portuguese_breakfast",
-    titleEn: "Portuguese Breakfast - Strong Coffee & Morning Community",
+    titleEn: "Lusophone Breakfast - Strong Coffee & Morning Community",
     titlePt: "Pequeno-Almoço Português - Café Forte & Comunidade Matinal",
     category: "breakfast",
     mealTime: "breakfast",
@@ -220,10 +220,10 @@ const foodExperiences: FoodExperience[] = [
     descriptionEn: "Strong coffee and pastries creating morning community rituals where Portuguese speakers gather to start the day with warmth, conversation, and cultural connection.",
     descriptionPt: "Café forte e pastelaria criando rituais de comunidade matinal onde lusófonos se reúnem para começar o dia com calor, conversação e conexão cultural.",
     culturalMagic: {
-      en: "Portuguese breakfast creates daily community rituals. The strong coffee energizes while pastries comfort, and conversations set a positive tone for the entire day.",
+      en: "Lusophone breakfast creates daily community rituals. The strong coffee energizes while pastries comfort, and conversations set a positive tone for the entire day.",
       pt: "O pequeno-almoço português cria rituais comunitários diários. O café forte energiza enquanto a pastelaria conforta, e as conversas definem um tom positivo para todo o dia."
     },
-    londonSpots: ["Portuguese cafés", "Local bakeries", "Community centres", "Workplace break rooms"],
+    londonSpots: ["Lusophone cafés", "Local bakeries", "Community centres", "Workplace break rooms"],
     bestTime: "Early morning, 7am - 10am",
     socialAspect: {
       en: "Morning coffee culture creates daily touchpoints for the Portuguese-speaking community, maintaining connections and sharing news while starting the day together.",
@@ -231,11 +231,11 @@ const foodExperiences: FoodExperience[] = [
     },
     tasteProfile: ["Strong coffee", "Sweet pastries", "Fresh bread", "Simple pleasures", "Morning comfort"],
     culturalStory: {
-      en: "Portuguese coffee culture emphasizes strong, quality coffee enjoyed slowly with community. It's about starting the day right with good people and good conversation.",
+      en: "Lusophone coffee culture emphasizes strong, quality coffee enjoyed slowly with community. It's about starting the day right with good people and good conversation.",
       pt: "A cultura portuguesa do café enfatiza café forte e de qualidade apreciado lentamente com a comunidade. É sobre começar bem o dia com boas pessoas e boa conversação."
     },
     communityConnection: ["Daily rituals", "Morning news sharing", "Community updates", "Social routine", "Cultural maintenance"],
-    pairingTraditions: ["Fresh pastries", "Portuguese bread", "Morning newspapers", "Community gossip", "Day planning"]
+    pairingTraditions: ["Fresh pastries", "Lusophone bread", "Morning newspapers", "Community gossip", "Day planning"]
   },
   {
     id: "regional_specialties",
@@ -244,7 +244,7 @@ const foodExperiences: FoodExperience[] = [
     category: "regional",
     mealTime: "special_occasion",
     icon: "🍲",
-    descriptionEn: "Incredible regional dishes from across Portugal that celebrate local traditions and bring authentic Portuguese flavors to London's Portuguese-speaking community.",
+    descriptionEn: "Incredible regional dishes from across Portugal that celebrate local traditions and bring authentic Lusophone flavors to London's Portuguese-speaking community.",
     descriptionPt: "Pratos regionais incríveis de todo o Portugal que celebram tradições locais e trazem sabores portugueses autênticos para a comunidade de falantes de português de Londres.",
     culturalMagic: {
       en: "Regional dishes connect London's Portuguese-speaking community to their roots, evoking memories of home while creating new traditions in their adopted city.",
@@ -253,12 +253,12 @@ const foodExperiences: FoodExperience[] = [
     londonSpots: ["Regional Portuguese restaurants", "Cultural festivals", "Private family dinners", "Community celebrations"],
     bestTime: "Special occasions and cultural celebrations",
     socialAspect: {
-      en: "Regional dishes create connections between Portuguese people from different areas, sharing their local traditions and creating a unified Portuguese identity in London.",
+      en: "Regional dishes create connections between Lusophone people from different areas, sharing their local traditions and creating a unified Lusophone identity in London.",
       pt: "Os pratos regionais criam conexões entre portugueses de diferentes áreas, partilhando as suas tradições locais e criando uma identidade portuguesa unificada em Londres."
     },
     tasteProfile: ["Regional authenticity", "Local ingredients", "Traditional methods", "Ancestral flavors", "Home memories"],
     culturalStory: {
-      en: "Each Portuguese region has distinct culinary traditions. In London, these regional dishes help maintain cultural diversity within the broader Portuguese identity.",
+      en: "Each Lusophone region has distinct culinary traditions. In London, these regional dishes help maintain cultural diversity within the broader Lusophone identity.",
       pt: "Cada região portuguesa tem tradições culinárias distintas. Em Londres, estes pratos regionais ajudam a manter a diversidade cultural dentro da identidade portuguesa mais ampla."
     },
     communityConnection: ["Regional pride", "Cultural diversity", "Home connections", "Traditional preservation", "Identity celebration"],
@@ -272,7 +272,7 @@ const PortugueseFoodCulture: React.FC = () => {
   const [selectedExperience, setSelectedExperience] = useState<FoodExperience | null>(null);
 
   const categories = [
-    { id: 'all', nameEn: 'All Portuguese Food', namePt: 'Toda Comida Portuguesa', icon: '🍽️' },
+    { id: 'all', nameEn: 'All Lusophone Food', namePt: 'Toda Comida Portuguesa', icon: '🍽️' },
     { id: 'pastries', nameEn: 'Sweet Pastries', namePt: 'Doçaria', icon: '🧁' },
     { id: 'seafood', nameEn: 'Seafood Traditions', namePt: 'Tradições Marítimas', icon: '🐟' },
     { id: 'bbq', nameEn: 'BBQ Culture', namePt: 'Cultura Churrasco', icon: '🔥' },
@@ -329,20 +329,20 @@ const PortugueseFoodCulture: React.FC = () => {
           <div className="inline-flex items-center bg-gradient-to-r from-orange-100 to-red-100 rounded-full px-6 py-3 mb-6">
             <BeakerIcon className="w-5 h-5 text-orange-600 mr-2" />
             <span className="text-orange-700 font-medium">
-              {language === "pt" ? "Cultura Gastronómica Portuguesa" : "Portuguese Food Culture"}
+              {language === "pt" ? "Cultura Gastronómica Portuguesa" : "Lusophone Food Culture"}
             </span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             {language === "pt" 
               ? "Sabores Incríveis da Comida Portuguesa" 
-              : "Amazing Portuguese Food Culture"}
+              : "Amazing Lusophone Food Culture"}
           </h2>
 
           <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-4">
             {language === "pt"
               ? "Descubra pastéis de nata divinos, tradições de bacalhau, churrasco português, cultura do vinho do Porto e especialidades regionais que tornam a gastronomia portuguesa absolutamente cativante e deliciosa."
-              : "Discover divine pastéis de nata, bacalhau traditions, Portuguese BBQ, Port wine culture, and regional specialties that make Portuguese cuisine absolutely captivating and delicious."
+              : "Discover divine pastéis de nata, bacalhau traditions, Lusophone BBQ, Port wine culture, and regional specialties that make Portuguese cuisine absolutely captivating and delicious."
             }
           </p>
 
@@ -524,7 +524,7 @@ const PortugueseFoodCulture: React.FC = () => {
             <p className="text-lg opacity-95">
               {language === "pt"
                 ? "Junte-se à nossa cultura gastronómica e descubra como os sabores portugueses criam conexões mágicas em Londres."
-                : "Join our food culture and discover how Portuguese flavors create magical connections in London."
+                : "Join our food culture and discover how Lusophone flavors create magical connections in London."
               }
             </p>
           </div>

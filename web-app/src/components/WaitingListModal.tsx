@@ -341,8 +341,8 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                     onChange={(e) => handleInputChange('portuguesePreference', e.target.value)}
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-primary-500 focus:ring-primary-500"
                   >
-                    <option value="both">{language === 'pt' ? 'Português e Inglês' : 'Portuguese and English'}</option>
-                    <option value="portuguese">{language === 'pt' ? 'Apenas Português' : 'Portuguese only'}</option>
+                    <option value="both">{language === 'pt' ? 'Português e Inglês' : 'Lusophone and English'}</option>
+                    <option value="portuguese">{language === 'pt' ? 'Apenas Português' : 'Lusophone only'}</option>
                     <option value="english">{language === 'pt' ? 'Apenas Inglês' : 'English only'}</option>
                   </select>
                 </div>

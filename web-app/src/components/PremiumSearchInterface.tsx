@@ -100,24 +100,24 @@ export default function PremiumSearchInterface({
     features: []
   })
 
-  // Portuguese-specific search suggestions
+  // Lusophone-specific search suggestions
   const portugueseSuggestions = [
-    t('search.suggestions.events', 'Portuguese events London'),
+    t('search.suggestions.events', 'Lusophone events London'),
     t('search.suggestions.restaurants', 'Portuguese restaurants'),
     t('search.suggestions.community', 'Portuguese-speaking community'),
     t('search.suggestions.language', 'Portuguese language exchange'),
     t('search.suggestions.business', 'Portuguese business networking'),
-    t('search.suggestions.culture', 'Portuguese cultural events'),
+    t('search.suggestions.culture', 'Lusophone cultural events'),
     t('search.suggestions.fado', 'Fado nights London'),
-    t('search.suggestions.football', 'Portuguese football viewing'),
+    t('search.suggestions.football', 'Lusophone football viewing'),
   ]
 
-  // Mock search results with Portuguese context
+  // Mock search results with Lusophone context
   const mockResults: SearchResult[] = [
     {
       id: '1',
       title: 'Fado Night at Cafe OPorto',
-      description: 'Authentic Portuguese Fado music evening with traditional cuisine',
+      description: 'Authentic Lusophone Fado music evening with traditional cuisine',
       type: 'event',
       category: 'Cultural',
       url: '/events/fado-night-cafe-oporto',
@@ -129,8 +129,8 @@ export default function PremiumSearchInterface({
     },
     {
       id: '2',
-      title: 'Portuguese Business Network Meetup',
-      description: 'Monthly networking event for Portuguese entrepreneurs in London',
+      title: 'Lusophone Business Network Meetup',
+      description: 'Monthly networking event for Lusophone entrepreneurs in London',
       type: 'event',
       category: 'Business',
       url: '/events/portuguese-business-network',

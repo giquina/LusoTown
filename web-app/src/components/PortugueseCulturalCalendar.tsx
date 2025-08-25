@@ -93,7 +93,7 @@ export default function PortugueseCulturalCalendar() {
     isFavorite: false
   })
 
-  // Portuguese cultural calendar data
+  // Lusophone cultural calendar data
   useEffect(() => {
     setCulturalEvents([
       {
@@ -102,7 +102,7 @@ export default function PortugueseCulturalCalendar() {
         namePt: 'Dia de Portugal',
         descriptionEn: 'National Day celebrating Portuguese language, culture and communities worldwide',
         descriptionPt: 'Dia Nacional celebrando a língua, cultura e comunidades portuguesas pelo mundo',
-        culturalSignificanceEn: 'Celebrates Portuguese identity, language, and the global Portuguese diaspora community',
+        culturalSignificanceEn: 'Celebrates Lusophone identity, language, and the global Lusophone diaspora community',
         culturalSignificancePt: 'Celebra a identidade portuguesa, a língua e a comunidade da diáspora portuguesa mundial',
         celebrationType: 'national',
         originRegion: 'mainland_portugal',
@@ -113,7 +113,7 @@ export default function PortugueseCulturalCalendar() {
         typicalActivities: ['flag ceremonies', 'cultural exhibitions', 'poetry readings', 'community gatherings', 'traditional food fairs'],
         foodTraditions: ['francesinha', 'pastéis de nata', 'chouriço', 'queijo da serra', 'vinho do porto'],
         musicTraditions: ['fado music', 'hymn performances', 'traditional folk songs'],
-        recommendedVenues: ['Portuguese Cultural Centre', 'Camões Square', 'Portuguese Embassy'],
+        recommendedVenues: ['Lusophone Cultural Centre', 'Camões Square', 'Lusophone Embassy'],
         londonEvents: [
           {
             id: '1',
@@ -121,8 +121,8 @@ export default function PortugueseCulturalCalendar() {
             name: 'Portugal Day Celebration London 2025',
             date: '2025-06-10',
             time: '14:00',
-            venue: 'Portuguese Cultural Centre',
-            organizer: 'Portuguese Embassy London',
+            venue: 'Lusophone Cultural Centre',
+            organizer: 'Lusophone Embassy London',
             ticketPrice: 0,
             maxAttendees: 500,
             currentAttendees: 0,
@@ -131,7 +131,7 @@ export default function PortugueseCulturalCalendar() {
             isAuthentic: true
           }
         ],
-        historicalBackground: 'Celebrated since 1580, commemorating Luís de Camões and Portuguese literary heritage',
+        historicalBackground: 'Celebrated since 1580, commemorating Luís de Camões and Lusophone literary heritage',
         modernAdaptations: ['social media campaigns', 'virtual celebrations', 'international broadcasts'],
         familyFriendly: true,
         emoji: '🇵🇹',
@@ -145,7 +145,7 @@ export default function PortugueseCulturalCalendar() {
         namePt: 'Santos Populares',
         descriptionEn: 'Popular Saints festivals celebrating Saint Anthony, Saint John, and Saint Peter',
         descriptionPt: 'Festas dos Santos Populares celebrando Santo António, São João e São Pedro',
-        culturalSignificanceEn: 'Major summer festivities marking Portuguese cultural identity and community gathering',
+        culturalSignificanceEn: 'Major summer festivities marking Lusophone cultural identity and community gathering',
         culturalSignificancePt: 'Grandes festividades de verão marcando a identidade cultural portuguesa e reunião comunitária',
         celebrationType: 'traditional',
         originRegion: 'mainland_portugal',
@@ -165,7 +165,7 @@ export default function PortugueseCulturalCalendar() {
             date: '2025-06-13',
             time: '18:00',
             venue: 'Kennington Park',
-            organizer: 'Portuguese Association London',
+            organizer: 'Lusophone Association London',
             ticketPrice: 15,
             maxAttendees: 600,
             currentAttendees: 0,
@@ -200,7 +200,7 @@ export default function PortugueseCulturalCalendar() {
         typicalActivities: ['crown processions', 'sopas do espírito santo', 'community meals', 'religious ceremonies'],
         foodTraditions: ['sopas', 'massa sovada', 'linguiça', 'traditional bread', 'sweet rice'],
         musicTraditions: ['religious hymns', 'traditional Azorean folk music', 'community singing'],
-        recommendedVenues: ['Azorean Community Centre', 'Portuguese churches', 'Community halls'],
+        recommendedVenues: ['Azorean Community Centre', 'Lusophone churches', 'Community halls'],
         londonEvents: [
           {
             id: '3',
@@ -208,7 +208,7 @@ export default function PortugueseCulturalCalendar() {
             name: 'Azorean Divine Holy Spirit Festival London',
             date: '2025-05-25',
             time: '12:00',
-            venue: 'Portuguese Cultural Centre',
+            venue: 'Lusophone Cultural Centre',
             organizer: 'Azorean Association London',
             ticketPrice: 10,
             maxAttendees: 200,
@@ -245,7 +245,7 @@ export default function PortugueseCulturalCalendar() {
         typicalActivities: ['flower carpets', 'children\'s parade', 'flower arrangements', 'garden exhibitions'],
         foodTraditions: ['bolo do caco', 'espada fish', 'poncha', 'honey cake', 'tropical fruits'],
         musicTraditions: ['Madeiran folk music', 'traditional dances', 'children\'s songs'],
-        recommendedVenues: ['London parks', 'Botanical gardens', 'Portuguese venues'],
+        recommendedVenues: ['London parks', 'Botanical gardens', 'Lusophone venues'],
         londonEvents: [],
         historicalBackground: 'Started in 1979 to celebrate Madeira\'s year-round spring-like climate and flowers',
         modernAdaptations: ['indoor flower displays', 'community garden projects', 'children\'s workshops'],
@@ -257,9 +257,9 @@ export default function PortugueseCulturalCalendar() {
       },
       {
         id: '5',
-        nameEn: 'Portuguese Christmas',
+        nameEn: 'Lusophone Christmas',
         namePt: 'Natal Português',
-        descriptionEn: 'Traditional Portuguese Christmas celebrated on December 24th with Consoada dinner',
+        descriptionEn: 'Traditional Lusophone Christmas celebrated on December 24th with Consoada dinner',
         descriptionPt: 'Natal tradicional português celebrado a 24 de dezembro com ceia da Consoada',
         culturalSignificanceEn: 'Central family celebration emphasizing togetherness, tradition, and religious observance',
         culturalSignificancePt: 'Celebração familiar central enfatizando união, tradição e observância religiosa',
@@ -271,16 +271,16 @@ export default function PortugueseCulturalCalendar() {
         londonParticipationLevel: 5,
         typicalActivities: ['consoada dinner', 'midnight mass', 'gift exchange', 'family gatherings', 'carol singing'],
         foodTraditions: ['bacalhau', 'rabanadas', 'filhós', 'bolo rei', 'vinho do porto'],
-        musicTraditions: ['Portuguese carols', 'janeiras', 'traditional hymns'],
-        recommendedVenues: ['Portuguese restaurants', 'Portuguese churches', 'Family homes'],
+        musicTraditions: ['Lusophone carols', 'janeiras', 'traditional hymns'],
+        recommendedVenues: ['Portuguese restaurants', 'Lusophone churches', 'Family homes'],
         londonEvents: [
           {
             id: '4',
             culturalEventId: '5',
-            name: 'Portuguese Christmas Celebration London',
+            name: 'Lusophone Christmas Celebration London',
             date: '2024-12-24',
             time: '19:00',
-            venue: 'Portuguese Cultural Centre',
+            venue: 'Lusophone Cultural Centre',
             organizer: 'Portuguese-speaking community London',
             ticketPrice: 25,
             maxAttendees: 150,
@@ -290,7 +290,7 @@ export default function PortugueseCulturalCalendar() {
             isAuthentic: true
           }
         ],
-        historicalBackground: 'Combines Christian traditions with Portuguese cultural customs dating back centuries',
+        historicalBackground: 'Combines Christian traditions with Lusophone cultural customs dating back centuries',
         modernAdaptations: ['community dinners for diaspora', 'video calls with family', 'multicultural celebrations'],
         familyFriendly: true,
         religiousSignificance: 'Celebrates the birth of Christ with emphasis on family unity and charity',
@@ -303,7 +303,7 @@ export default function PortugueseCulturalCalendar() {
         id: '6',
         nameEn: 'Carnaval',
         namePt: 'Carnaval',
-        descriptionEn: 'Portuguese Carnival celebrations with regional variations and community festivities',
+        descriptionEn: 'Lusophone Carnival celebrations with regional variations and community festivities',
         descriptionPt: 'Celebrações de Carnaval português com variações regionais e festividades comunitárias',
         culturalSignificanceEn: 'Pre-Lenten celebration expressing joy, creativity, and community bonding',
         culturalSignificancePt: 'Celebração pré-quaresmal expressando alegria, criatividade e união comunitária',
@@ -322,7 +322,7 @@ export default function PortugueseCulturalCalendar() {
           {
             id: '5',
             culturalEventId: '6',
-            name: 'Portuguese Carnaval London 2025',
+            name: 'Lusophone Carnaval London 2025',
             date: '2025-03-01',
             time: '19:00',
             venue: 'Stockwell Community Centre',
@@ -335,7 +335,7 @@ export default function PortugueseCulturalCalendar() {
             isAuthentic: true
           }
         ],
-        historicalBackground: 'Medieval origins with influences from both Portuguese and Brazilian traditions',
+        historicalBackground: 'Medieval origins with influences from both Lusophone and Brazilian traditions',
         modernAdaptations: ['indoor celebrations', 'multicultural influences', 'family-friendly timing'],
         familyFriendly: true,
         emoji: '🎭',
@@ -607,7 +607,7 @@ export default function PortugueseCulturalCalendar() {
     <div className="space-y-6">
       <div className="text-center mb-8">
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          {t('calendar.timeline.title', 'Portuguese Cultural Year Timeline')}
+          {t('calendar.timeline.title', 'Lusophone Cultural Year Timeline')}
         </h3>
         <p className="text-gray-600">
           {t('calendar.timeline.subtitle', 'Follow the rhythm of Portuguese celebrations throughout the year')}
@@ -731,10 +731,10 @@ export default function PortugueseCulturalCalendar() {
     <div className="space-y-8">
       <div className="text-center mb-8">
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          {t('calendar.regions.title', 'Cultural Celebrations by Portuguese Region')}
+          {t('calendar.regions.title', 'Cultural Celebrations by Lusophone Region')}
         </h3>
         <p className="text-gray-600">
-          {t('calendar.regions.subtitle', 'Explore the unique cultural traditions from each Portuguese region celebrated in London')}
+          {t('calendar.regions.subtitle', 'Explore the unique cultural traditions from each Lusophone region celebrated in London')}
         </p>
       </div>
 
@@ -834,7 +834,7 @@ export default function PortugueseCulturalCalendar() {
           >
             <CalendarDaysIcon className="w-5 h-5 text-green-600" />
             <span className="font-semibold text-green-700">
-              {t('calendar.badge', 'Portuguese Cultural Calendar')}
+              {t('calendar.badge', 'Lusophone Cultural Calendar')}
             </span>
           </motion.div>
           
@@ -844,7 +844,7 @@ export default function PortugueseCulturalCalendar() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6"
           >
-            {t('calendar.title', 'Portuguese Cultural')}
+            {t('calendar.title', 'Lusophone Cultural')}
             <br />
             <span className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 bg-clip-text text-transparent">
               {t('calendar.calendar', 'Calendar & Holidays')}
@@ -857,7 +857,7 @@ export default function PortugueseCulturalCalendar() {
             transition={{ delay: 0.2 }}
             className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto"
           >
-            {t('calendar.subtitle', 'Discover, celebrate, and never miss Portuguese cultural holidays, saint days, and traditional celebrations in London')}
+            {t('calendar.subtitle', 'Discover, celebrate, and never miss Lusophone cultural holidays, saint days, and traditional celebrations in London')}
           </motion.p>
         </div>
 
@@ -930,7 +930,7 @@ export default function PortugueseCulturalCalendar() {
               onChange={(e) => setFilters(prev => ({ ...prev, originRegion: e.target.value }))}
               className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
             >
-              <option value="">{t('calendar.all_regions', 'All Portuguese Regions')}</option>
+              <option value="">{t('calendar.all_regions', 'All Lusophone Regions')}</option>
               {originRegions.map(region => (
                 <option key={region.key} value={region.key}>
                   {region.flag} {language === 'pt' ? region.namePt : region.nameEn}

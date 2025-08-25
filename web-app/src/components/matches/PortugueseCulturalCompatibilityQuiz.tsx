@@ -53,7 +53,7 @@ interface QuizQuestion {
   };
 }
 
-// Portuguese Cultural Compatibility Questions
+// Lusophone Cultural Compatibility Questions
 const quizQuestions: QuizQuestion[] = [
   // Food & Cuisine Category
   {
@@ -61,7 +61,7 @@ const quizQuestions: QuizQuestion[] = [
     type: 'multiple_choice',
     category: 'food',
     weight: 2.5,
-    titleEn: 'How often do you cook traditional Portuguese/Brazilian food?',
+    titleEn: 'How often do you cook traditional Lusophone/Brazilian food?',
     titlePt: 'Com que frequência cozinha comida tradicional portuguesa/brasileira?',
     options: [
       { id: 'daily', labelEn: 'Almost daily', labelPt: 'Quase todos os dias', value: 10, emoji: '👩‍🍳' },
@@ -76,7 +76,7 @@ const quizQuestions: QuizQuestion[] = [
     type: 'slider',
     category: 'food',
     weight: 2.0,
-    titleEn: 'How important is finding authentic Portuguese ingredients in London?',
+    titleEn: 'How important is finding authentic Lusophone ingredients in London?',
     titlePt: 'Quão importante é encontrar ingredientes portugueses autênticos em Londres?',
     sliderConfig: {
       min: 1,
@@ -137,7 +137,7 @@ const quizQuestions: QuizQuestion[] = [
     options: [
       { id: 'fado', labelEn: 'Traditional Fado', labelPt: 'Fado Tradicional', value: 10, emoji: '🎭' },
       { id: 'pimba', labelEn: 'Pimba (Fun & Dancing)', labelPt: 'Pimba (Diversão & Dança)', value: 8, emoji: '💃' },
-      { id: 'rock_portugues', labelEn: 'Portuguese Rock', labelPt: 'Rock Português', value: 7, emoji: '🎸' },
+      { id: 'rock_portugues', labelEn: 'Lusophone Rock', labelPt: 'Rock Português', value: 7, emoji: '🎸' },
       { id: 'bossa_nova', labelEn: 'Bossa Nova (Brazilian)', labelPt: 'Bossa Nova (Brasileira)', value: 9, emoji: '🎵' },
       { id: 'samba', labelEn: 'Samba', labelPt: 'Samba', value: 8, emoji: '🥁' },
       { id: 'morna', labelEn: 'Morna (Cape Verdean)', labelPt: 'Morna (Cabo-verdiana)', value: 9, emoji: '🌊' },
@@ -152,7 +152,7 @@ const quizQuestions: QuizQuestion[] = [
     weight: 4.0,
     titleEn: 'How often do you experience "saudade" for your homeland?',
     titlePt: 'Com que frequência sente "saudade" da sua terra natal?',
-    descriptionEn: 'That uniquely Portuguese feeling of nostalgic longing',
+    descriptionEn: 'That uniquely Lusophone feeling of nostalgic longing',
     descriptionPt: 'Esse sentimento unicamente português de nostalgia e saudade',
     sliderConfig: {
       min: 1,
@@ -196,11 +196,11 @@ const quizQuestions: QuizQuestion[] = [
     titleEn: 'In your daily life in London, which language do you use most?',
     titlePt: 'Na sua vida diária em Londres, que língua usa mais?',
     options: [
-      { id: 'mostly_portuguese', labelEn: 'Mostly Portuguese', labelPt: 'Maioritariamente português', value: 10, emoji: '🇵🇹' },
-      { id: 'equal_both', labelEn: 'Equal Portuguese & English', labelPt: 'Português e inglês igualmente', value: 8, emoji: '🌍' },
-      { id: 'mostly_english', labelEn: 'Mostly English, Portuguese at home', labelPt: 'Maioritariamente inglês, português em casa', value: 6, emoji: '🏠' },
-      { id: 'english_portuguese_friends', labelEn: 'English work, Portuguese with friends', labelPt: 'Inglês no trabalho, português com amigos', value: 7, emoji: '👥' },
-      { id: 'struggling_portuguese', labelEn: 'Trying to maintain Portuguese', labelPt: 'A tentar manter o português', value: 4, emoji: '📚' },
+      { id: 'mostly_portuguese', labelEn: 'Mostly Lusophone', labelPt: 'Maioritariamente português', value: 10, emoji: '🇵🇹' },
+      { id: 'equal_both', labelEn: 'Equal Lusophone & English', labelPt: 'Português e inglês igualmente', value: 8, emoji: '🌍' },
+      { id: 'mostly_english', labelEn: 'Mostly English, Lusophone at home', labelPt: 'Maioritariamente inglês, português em casa', value: 6, emoji: '🏠' },
+      { id: 'english_portuguese_friends', labelEn: 'English work, Lusophone with friends', labelPt: 'Inglês no trabalho, português com amigos', value: 7, emoji: '👥' },
+      { id: 'struggling_portuguese', labelEn: 'Trying to maintain Lusophone', labelPt: 'A tentar manter o português', value: 4, emoji: '📚' },
     ],
   },
 
@@ -210,13 +210,13 @@ const quizQuestions: QuizQuestion[] = [
     type: 'multiple_choice',
     category: 'family',
     weight: 3.5,
-    titleEn: 'Which Portuguese family traditions do you maintain in London?',
+    titleEn: 'Which Lusophone family traditions do you maintain in London?',
     titlePt: 'Que tradições familiares portuguesas mantém em Londres?',
     options: [
       { id: 'christmas_24th', labelEn: 'Christmas dinner on December 24th', labelPt: 'Ceia de Natal a 24 de dezembro', value: 9, emoji: '🎄' },
       { id: 'santos_populares', labelEn: 'Santos Populares celebrations', labelPt: 'Celebrações dos Santos Populares', value: 8, emoji: '🎪' },
       { id: 'family_sunday_lunch', labelEn: 'Long family Sunday lunches', labelPt: 'Almoços familiares longos de domingo', value: 9, emoji: '🍽️' },
-      { id: 'easter_traditions', labelEn: 'Portuguese Easter traditions', labelPt: 'Tradições da Páscoa portuguesa', value: 7, emoji: '🥚' },
+      { id: 'easter_traditions', labelEn: 'Lusophone Easter traditions', labelPt: 'Tradições da Páscoa portuguesa', value: 7, emoji: '🥚' },
       { id: 'festa_junina', labelEn: 'Festa Junina (Brazilian)', labelPt: 'Festa Junina (Brasileira)', value: 8, emoji: '🌽' },
       { id: 'all_souls_day', labelEn: 'Day of the Dead remembrance', labelPt: 'Recordação do Dia dos Finados', value: 6, emoji: '🕯️' },
     ],
@@ -233,7 +233,7 @@ const quizQuestions: QuizQuestion[] = [
     options: [
       { id: 'traditional_portuguese', labelEn: 'Exactly like back home - Portuguese traditions only', labelPt: 'Exatamente como em casa - só tradições portuguesas', value: 10, emoji: '🇵🇹' },
       { id: 'mix_traditions', labelEn: 'Mix Portuguese traditions with British customs', labelPt: 'Misturar tradições portuguesas com costumes britânicos', value: 7, emoji: '🌍' },
-      { id: 'adapt_local', labelEn: 'Mostly British way, with some Portuguese touches', labelPt: 'Maioritariamente à britânica, com toques portugueses', value: 4, emoji: '🇬🇧' },
+      { id: 'adapt_local', labelEn: 'Mostly British way, with some Lusophone touches', labelPt: 'Maioritariamente à britânica, com toques portugueses', value: 4, emoji: '🇬🇧' },
       { id: 'fully_integrated', labelEn: 'Completely British - when in Rome...', labelPt: 'Completamente britânico - em Roma sê romano...', value: 2, emoji: '🤝' },
     ],
   },
@@ -262,7 +262,7 @@ const quizQuestions: QuizQuestion[] = [
     type: 'scenario',
     category: 'values',
     weight: 2.8,
-    titleEn: 'When meeting new Portuguese people in London, you typically:',
+    titleEn: 'When meeting new Lusophone people in London, you typically:',
     titlePt: 'Quando conhece novos portugueses em Londres, normalmente:',
     options: [
       { id: 'warm_immediate', labelEn: 'Immediately warm and welcoming - like family', labelPt: 'Imediatamente caloroso(a) e acolhedor(a) - como família', value: 10, emoji: '🤗' },
@@ -302,7 +302,7 @@ const quizQuestions: QuizQuestion[] = [
     titleEn: 'Your long-term vision for cultural connection in London:',
     titlePt: 'A sua visão a longo prazo para conexão cultural em Londres:',
     options: [
-      { id: 'portuguese_household', labelEn: 'Maintain fully Portuguese household', labelPt: 'Manter casa totalmente portuguesa', value: 10, emoji: '🏠' },
+      { id: 'portuguese_household', labelEn: 'Maintain fully Lusophone household', labelPt: 'Manter casa totalmente portuguesa', value: 10, emoji: '🏠' },
       { id: 'bilingual_family', labelEn: 'Raise bilingual, bicultural family', labelPt: 'Criar família bilingue e bicultural', value: 8, emoji: '👨‍👩‍👧‍👦' },
       { id: 'cultural_events', labelEn: 'Active in cultural events and community', labelPt: 'Ativo(a) em eventos culturais e comunidade', value: 9, emoji: '🎭' },
       { id: 'selective_traditions', labelEn: 'Keep select traditions, adapt others', labelPt: 'Manter tradições selecionadas, adaptar outras', value: 6, emoji: '🎯' },
@@ -321,7 +321,7 @@ const quizQuestions: QuizQuestion[] = [
     options: [
       { id: 'portuguese_restaurant', labelEn: 'Portuguese restaurant visits', labelPt: 'Visitas a restaurantes portugueses', value: 0, emoji: '🍽️' },
       { id: 'fado_nights', labelEn: 'Fado nights in London', labelPt: 'Noites de fado em Londres', value: 0, emoji: '🎭' },
-      { id: 'football_matches', labelEn: 'Watching Portuguese football', labelPt: 'Ver futebol português', value: 0, emoji: '⚽' },
+      { id: 'football_matches', labelEn: 'Watching Lusophone football', labelPt: 'Ver futebol português', value: 0, emoji: '⚽' },
       { id: 'british_activities', labelEn: 'Traditional British activities', labelPt: 'Atividades tradicionalmente britânicas', value: 0, emoji: '🇬🇧' },
       { id: 'international_mix', labelEn: 'International/multicultural events', labelPt: 'Eventos internacionais/multiculturais', value: 0, emoji: '🌍' },
       { id: 'home_family', labelEn: 'Quiet time at home with family', labelPt: 'Tempo sossegado em casa com família', value: 0, emoji: '🏠' },
@@ -334,7 +334,7 @@ const quizQuestions: QuizQuestion[] = [
     type: 'multiple_choice',
     category: 'language',
     weight: 3.0,
-    titleEn: 'How important is passing Portuguese to future generations?',
+    titleEn: 'How important is passing Lusophone to future generations?',
     titlePt: 'Quão importante é transmitir português às futuras gerações?',
     options: [
       { id: 'absolutely_essential', labelEn: 'Absolutely essential - it\'s who we are', labelPt: 'Absolutamente essencial - é quem somos', value: 10, emoji: '👨‍👩‍👧‍👦' },
@@ -345,13 +345,13 @@ const quizQuestions: QuizQuestion[] = [
     ],
   },
 
-  // Portuguese Business & Professional Life
+  // Lusophone Business & Professional Life
   {
     id: 'professional_networking',
     type: 'multiple_choice',
     category: 'community',
     weight: 2.5,
-    titleEn: 'In your professional life in London, do you seek Portuguese connections?',
+    titleEn: 'In your professional life in London, do you seek Lusophone connections?',
     titlePt: 'Na sua vida profissional em Londres, procura conexões portuguesas?',
     options: [
       { id: 'actively_seek', labelEn: 'Actively seek Portuguese business networks', labelPt: 'Procuro ativamente redes de negócios portuguesas', value: 10, emoji: '🤝' },
@@ -568,7 +568,7 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
       recommendations.push(
         lang === 'pt' 
           ? 'Participe em workshops de culinária portuguesa no Borough Market'
-          : 'Join Portuguese cooking workshops at Borough Market'
+          : 'Join Lusophone cooking workshops at Borough Market'
       );
     }
 
@@ -592,7 +592,7 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
       recommendations.push(
         lang === 'pt'
           ? 'Considere ensinar português a outros membros da comunidade'
-          : 'Consider teaching Portuguese to other community members'
+          : 'Consider teaching Lusophone to other community members'
       );
     }
 
@@ -777,8 +777,8 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
             </h2>
             <p className="text-gray-600">
               {language === 'pt' 
-                ? 'Discover your Portuguese cultural compatibility'
-                : 'Discover your Portuguese cultural compatibility'}
+                ? 'Discover your Lusophone cultural compatibility'
+                : 'Discover your Lusophone cultural compatibility'}
             </p>
           </div>
 

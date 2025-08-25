@@ -105,10 +105,10 @@ const communityForumsModule = {
         
         <h4>Navigation Features</h4>
         <ul class="list-disc list-inside space-y-2">
-          <li><strong>Search Function:</strong> Find discussions by keywords, topics, or Portuguese phrases</li>
+          <li><strong>Search Function:</strong> Find discussions by keywords, topics, or Lusophone phrases</li>
           <li><strong>Tag System:</strong> Filter by location (Stockwell, Camden, Vauxhall), topic, or urgency</li>
           <li><strong>Trending Discussions:</strong> See what the community is actively discussing</li>
-          <li><strong>Bilingual Support:</strong> Switch between Portuguese and English seamlessly</li>
+          <li><strong>Bilingual Support:</strong> Switch between Lusophone and English seamlessly</li>
           <li><strong>Notification Settings:</strong> Stay updated on topics that matter to you</li>
         </ul>
         
@@ -227,7 +227,7 @@ const communityForumsModule = {
         
         <h4>Cultural Communication Style</h4>
         <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 my-4">
-          <h5 class="font-semibold text-blue-800">Portuguese Communication Values</h5>
+          <h5 class="font-semibold text-blue-800">Lusophone Communication Values</h5>
           <ul class="text-sm text-blue-700 mt-2 list-disc list-inside space-y-1">
             <li><strong>Warmth & Hospitality:</strong> Begin posts with friendly greetings like "Olá pessoal" or "Hello everyone"</li>
             <li><strong>Respect for Hierarchy:</strong> Address experienced community members with appropriate courtesy</li>
@@ -244,8 +244,8 @@ const communityForumsModule = {
             <p class="text-sm text-green-700 mt-2">Examples of effective subject lines:</p>
             <ul class="text-xs text-green-600 mt-2 list-disc list-inside">
               <li>"Procuro médico que fale português em Camden" (Looking for Portuguese-speaking doctor in Camden)</li>
-              <li>"Recomendações: melhor padaria portuguesa em Stockwell?" (Recommendations: best Portuguese bakery in Stockwell?)</li>
-              <li>"Ajuda com documentos - experiência de outros portugueses" (Help with documents - other Portuguese experiences)</li>
+              <li>"Recomendações: melhor padaria portuguesa em Stockwell?" (Recommendations: best Lusophone bakery in Stockwell?)</li>
+              <li>"Ajuda com documentos - experiência de outros portugueses" (Help with documents - other Lusophone experiences)</li>
             </ul>
           </div>
           
@@ -273,7 +273,7 @@ const communityForumsModule = {
         
         <h4>Content Guidelines</h4>
         <ul class="list-disc list-inside space-y-2">
-          <li><strong>Language Choice:</strong> Post in Portuguese, English, or both - community members are multilingual</li>
+          <li><strong>Language Choice:</strong> Post in Lusophone, English, or both - community members are multilingual</li>
           <li><strong>Local Relevance:</strong> Focus on London and United Kingdom-specific content and experiences</li>
           <li><strong>Constructive Tone:</strong> Even when discussing challenges, maintain hope and community spirit</li>
           <li><strong>Privacy Awareness:</strong> Avoid sharing personal details like full addresses or phone numbers publicly</li>
@@ -281,7 +281,7 @@ const communityForumsModule = {
         </ul>
         
         <div class="bg-amber-50 border-l-4 border-amber-400 p-4 my-4">
-          <p><strong>Cultural Tip:</strong> Portuguese communication often includes personal context. Don't hesitate to mention if you're new to London, missing home, or celebrating a Portuguese holiday - this builds authentic community connections.</p>
+          <p><strong>Cultural Tip:</strong> Lusophone communication often includes personal context. Don't hesitate to mention if you're new to London, missing home, or celebrating a Lusophone holiday - this builds authentic community connections.</p>
         </div>
       `,
       contentPortuguese: `
@@ -376,7 +376,7 @@ const communityForumsModule = {
               text: "Organizing a meetup or event",
               textPortuguese: "Organizar um encontro ou evento",
               result:
-                "Include clear date, time, location, and how to RSVP. Explain the Portuguese cultural element.",
+                "Include clear date, time, location, and how to RSVP. Explain the Lusophone cultural element.",
               resultPortuguese:
                 "Inclua data, hora, localização clara, e como confirmar presença. Explique o elemento cultural português.",
             },
@@ -400,7 +400,7 @@ const communityForumsModule = {
             </h5>
             <p class="text-sm text-green-700">Members can verify their identity through:</p>
             <ul class="text-xs text-green-600 mt-2 list-disc list-inside">
-              <li>Portuguese passport or ID verification</li>
+              <li>Lusophone passport or ID verification</li>
               <li>United Kingdom address confirmation</li>
               <li>University or workplace verification</li>
               <li>Community member referrals</li>
@@ -414,7 +414,7 @@ const communityForumsModule = {
             </h5>
             <p class="text-sm text-blue-700">Trusted community members help moderate:</p>
             <ul class="text-xs text-blue-600 mt-2 list-disc list-inside">
-              <li>Experienced Portuguese residents as moderators</li>
+              <li>Experienced Lusophone residents as moderators</li>
               <li>Cultural sensitivity in moderation decisions</li>
               <li>Quick response to community concerns</li>
               <li>Transparent moderation policies</li>
@@ -602,7 +602,7 @@ const communityForumsModule = {
               <li><strong>Expertise Sharing:</strong> Share your unique knowledge (your profession, neighborhood, hobbies)</li>
               <li><strong>Question Following:</strong> Return to threads you've participated in to see outcomes</li>
               <li><strong>Success Stories:</strong> Share positive outcomes from community advice you received</li>
-              <li><strong>Cultural Bridge-Building:</strong> Help newcomers understand both Portuguese and British cultures</li>
+              <li><strong>Cultural Bridge-Building:</strong> Help newcomers understand both Lusophone and British cultures</li>
             </ul>
           </div>
           
@@ -639,7 +639,7 @@ const communityForumsModule = {
               <li>Share career opportunities and insights</li>
               <li>Offer professional mentorship to newcomers</li>
               <li>Create industry-specific discussion groups</li>
-              <li>Recommend Portuguese professionals for services</li>
+              <li>Recommend Lusophone professionals for services</li>
             </ul>
           </div>
         </div>
@@ -659,7 +659,7 @@ const communityForumsModule = {
           <h5 class="font-semibold text-primary-800">Your Portuguese-speaking community Legacy</h5>
           <p class="text-sm text-primary-700 mt-2">Consider how you want to contribute to the long-term growth and success of Portuguese speakers in London:</p>
           <ul class="text-xs text-primary-600 mt-2 list-disc list-inside space-y-1">
-            <li>Mentor new Portuguese arrivals in your professional field</li>
+            <li>Mentor new Lusophone arrivals in your professional field</li>
             <li>Document and share resources for common challenges (housing, healthcare, education)</li>
             <li>Build bridges between different Portuguese-speaking communities (Portugal, Brazil, African countries)</li>
             <li>Create lasting traditions and events that strengthen community bonds</li>
