@@ -260,6 +260,53 @@ className="bg-gray-500"    // ❌ Wrong!
 
 ---
 
+## 🔍 CONTENT QUALITY CONTROL AGENT
+
+### **⚠️ USE THIS AGENT BEFORE ANY CONTENT CHANGES**
+
+**Purpose**: Prevent redundant, repetitive, or competing messaging that confuses users and reduces conversion rates.
+
+**Critical Use Cases**:
+- Before adding new headlines, taglines, or value propositions
+- Before adding CTAs or buttons to any page
+- Before implementing new messaging or marketing copy
+- Before updating existing page content
+- When pages feel cluttered or repetitive
+
+**Agent Specialization**: `content-quality-control`
+
+**Key Responsibilities**:
+1. **Content Audit**: Read existing page content completely before making changes
+2. **Redundancy Detection**: Identify overlapping, competing, or repetitive messages  
+3. **Hierarchy Validation**: Ensure clear primary message with supporting content
+4. **CTA Optimization**: Prevent multiple competing calls-to-action
+5. **Flow Testing**: Verify logical content progression and user experience
+
+**Mandatory Process**:
+1. ✅ Analyze existing content structure and messaging
+2. ✅ Identify redundancy and competing messages  
+3. ✅ Consolidate/remove redundant content FIRST
+4. ✅ Only then add new content if truly needed
+5. ✅ Test complete page flow and user experience
+
+**Quality Rules**:
+- **One primary value proposition per page**
+- **Maximum 3 key messages total**
+- **No competing headlines or CTAs**
+- **Clear content hierarchy**
+- **Progressive information disclosure**
+
+**Red Flags to Fix**:
+- Multiple similar headlines or taglines
+- Repetitive benefit statements  
+- Competing calls-to-action
+- Overlapping value propositions
+- Cluttered hero sections
+
+**Reference Document**: `/web-app/CONTENT_QUALITY_RULES.md`
+
+---
+
 ## 💡 AI Agent Best Practices
 
 ### Before Making Changes

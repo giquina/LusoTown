@@ -103,64 +103,29 @@ export default function Home() {
               <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
                 {/* Left Column - Unidos pela Língua Community Discovery Value */}
                 <div className="text-center lg:text-left space-y-8">
-                  {/* Discovery Badge - Properly Positioned */}
-                  <div className="mt-4 lg:mt-8 mb-6">
-                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg">
-                      <CalendarDaysIcon className="w-4 h-4" />
-                      {t('hero.discovery_badge', 'NEVER MISS YOUR COMMUNITY AGAIN')}
-                    </div>
-                  </div>
-                  
-                  {/* Main Headline - Unidos pela Língua Focus */}
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
-                    <span className="text-primary-600">{t('welcome.lusophone.title', 'Your Portuguese-Speaking')}</span><br />
+                  {/* Main Headline - Clean & Direct */}
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
                     <span className="bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 bg-clip-text text-transparent">
-                      {t('hero.title.guide', 'Community Guide')}
+                      Unidos pela Língua
                     </span><br />
-                    <span className="text-secondary-600">{t('hero.title.uk', 'to the United Kingdom')}</span>
-                    <div className="flex justify-center lg:justify-start gap-1 mt-2 text-2xl">
+                    <span className="text-gray-900">Portuguese-Speaking Community</span>
+                    <div className="flex justify-center lg:justify-start gap-1 mt-4 text-2xl">
                       🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱
                     </div>
                   </h1>
                   
-                  {/* Unidos pela Língua Sub-headline */}
-                  <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl">
-                    <span className="font-bold bg-gradient-to-r from-green-600 via-yellow-600 to-red-600 bg-clip-text text-transparent">
-                      {t('welcome.lusophone.subtitle', 'Unidos pela Língua - United by Language, Not by Borders')}
-                    </span>
+                  {/* Single Clear Value Proposition */}
+                  <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl mb-8">
+                    From Lisboa to São Paulo, Luanda to Praia, Maputo to Bissau - discover events, businesses, and opportunities across the United Kingdom's Portuguese-speaking community.
                   </p>
                   
-                  {/* Community Discovery Description */}
-                  <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
-                    {t('hero.discovery_tagline', 'Discover what\'s happening today, this weekend, and this month in your Portuguese-speaking community')}
-                  </p>
-                  
-                  {/* Value Proposition */}
-                  <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mb-4">
-                    {t('hero.value_prop', 'From local events to business opportunities, student groups to cultural experiences - never miss what\'s happening again.')}
-                  </p>
-                  
-                  {/* Lusophone Unity Description */}
-                  <p className="text-base text-gray-600 leading-relaxed max-w-2xl mb-4">
-                    {t('welcome.lusophone.from_anywhere', 'From Lisboa to São Paulo, Luanda to Praia, Maputo to Bissau - all Portuguese speakers united in London')}
-                  </p>
-                  
-                  {/* Heritage Celebration */}
-                  <p className="text-base text-gray-600 leading-relaxed max-w-2xl mb-4">
-                    {t('welcome.lusophone.heritage_celebration', 'Celebrating the full spectrum of Lusophone heritage and culture')}
-                  </p>
-                  
-                  {/* PALOP Pride Recognition */}
-                  <div className="bg-gradient-to-r from-green-50 via-yellow-50 to-red-50 rounded-xl p-4 border border-green-200 max-w-2xl">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="text-lg">🌍</div>
-                      <div className="font-bold text-gray-900">
-                        {t('palop.community.welcome', 'Finally, a platform that recognizes and celebrates PALOP identity specifically')}
+                  {/* PALOP Recognition - Simplified */}
+                  <div className="bg-gradient-to-r from-green-50 to-yellow-50 rounded-xl p-4 border border-green-200 max-w-2xl">
+                    <div className="text-center">
+                      <div className="text-sm font-semibold text-gray-800 mb-1">All Portuguese-Speaking Nations Celebrated</div>
+                      <div className="text-sm text-gray-600">
+                        🇦🇴 Angola • 🇨🇻 Cape Verde • 🇬🇼 Guinea-Bissau • 🇲🇿 Mozambique • 🇸🇹 São Tomé • 🇹🇱 East Timor
                       </div>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-600">
-                      <span className="font-semibold text-gray-800">PALOP:</span>
-                      <span>🇦🇴 Angola • 🇨🇻 Cape Verde • 🇬🇼 Guinea-Bissau • 🇲🇿 Mozambique • 🇸🇹 São Tomé</span>
                     </div>
                   </div>
                   
