@@ -2,12 +2,33 @@ import React from 'react'
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
+  variant?: 'default' | 'event' | 'business' | 'match' | 'premium'
+  mobile?: boolean
 }
 
-export function Card({ children, className = '', ...props }: CardProps) {
+export function Card({ 
+  children, 
+  className = '', 
+  variant = 'default',
+  mobile = false,
+  ...props 
+}: CardProps) {
+  // Use LusoTown Mobile Design System classes
+  const baseClass = 'lusotown-card lusotown-fade-in'
+  
+  const variants = {
+    default: '',
+    event: 'lusotown-event-card',
+    business: 'lusotown-business-card',
+    match: 'lusotown-match-card',
+    premium: 'border-2 border-premium-500 bg-gradient-to-br from-premium-50 to-primary-50'
+  }
+  
+  const mobileClasses = mobile ? 'lusotown-spacing-card-gap' : ''
+  
   return (
     <div 
-      className={`rounded-lg border border-gray-200 bg-white shadow-sm ${className}`}
+      className={`${baseClass} ${variants[variant]} ${mobileClasses} ${className}`}
       {...props}
     >
       {children}
@@ -17,27 +38,35 @@ export function Card({ children, className = '', ...props }: CardProps) {
 
 interface CardContentProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
+  mobile?: boolean
 }
 
-export function CardContent({ children, className = '', ...props }: CardContentProps) {
+export function CardContent({ children, className = '', mobile = false, ...props }: CardContentProps) {
+  const mobileClass = mobile ? 'lusotown-card-content' : 'lusotown-card-content'
+  
   return (
     <div 
-      className={`p-6 ${className}`}
+      className={`${mobileClass} ${className}`}
       {...props}
     >
-      {children}
+      <div className="lusotown-portuguese-text">
+        {children}
+      </div>
     </div>
   )
 }
 
 interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
+  mobile?: boolean
 }
 
-export function CardHeader({ children, className = '', ...props }: CardHeaderProps) {
+export function CardHeader({ children, className = '', mobile = false, ...props }: CardHeaderProps) {
+  const mobileClass = mobile ? 'lusotown-card-header' : 'lusotown-card-header'
+  
   return (
     <div 
-      className={`flex flex-col space-y-1.5 p-6 ${className}`}
+      className={`${mobileClass} ${className}`}
       {...props}
     >
       {children}
@@ -47,15 +76,36 @@ export function CardHeader({ children, className = '', ...props }: CardHeaderPro
 
 interface CardTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
   children: React.ReactNode
+  mobile?: boolean
 }
 
-export function CardTitle({ children, className = '', ...props }: CardTitleProps) {
+export function CardTitle({ children, className = '', mobile = false, ...props }: CardTitleProps) {
+  const mobileClass = mobile ? 'lusotown-text-h3' : 'lusotown-text-h3'
+  
   return (
     <h3 
-      className={`text-lg font-semibold leading-none tracking-tight ${className}`}
+      className={`${mobileClass} lusotown-text-wrap ${className}`}
       {...props}
     >
       {children}
     </h3>
+  )
+}
+
+interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode
+  mobile?: boolean
+}
+
+export function CardFooter({ children, className = '', mobile = false, ...props }: CardFooterProps) {
+  const mobileClass = mobile ? 'lusotown-card-footer' : 'lusotown-card-footer'
+  
+  return (
+    <div 
+      className={`${mobileClass} ${className}`}
+      {...props}
+    >
+      {children}
+    </div>
   )
 }

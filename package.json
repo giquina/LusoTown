@@ -1,14 +1,39 @@
 {
-  "name": "lusotown-deploy",
+  "name": "lusotown-monorepo",
   "version": "1.0.0",
   "private": true,
-  "description": "LusoTown - Portuguese Community Platform - Production Ready",
+  "description": "LusoTown - Portuguese Community Platform - Production Ready Monorepo",
+  "workspaces": [
+    "web-app",
+    "mobile-app",
+    "streaming",
+    "packages/*",
+    "shared"
+  ],
   "scripts": {
+    "dev": "cd web-app && npm run dev",
+    "dev:mobile": "cd mobile-app && npm start",
+    "dev:streaming": "cd streaming && npm start",
     "build": "cd web-app && npm run build",
-    "dev": "cd web-app && npm run dev", 
+    "build:mobile": "cd mobile-app && npm run build",
     "start": "cd web-app && npm run start",
-    "lint": "cd web-app && npm run lint",
-    "deploy": "vercel --prod"
+    "lint": "npm run lint:web && npm run lint:mobile",
+    "lint:web": "cd web-app && npm run lint",
+    "lint:mobile": "cd mobile-app && npm run lint",
+    "type-check": "npm run type-check:web && npm run type-check:mobile",
+    "type-check:web": "cd web-app && npx tsc --noEmit",
+    "type-check:mobile": "cd mobile-app && npm run type-check",
+    "test": "npm run test:web && npm run test:mobile",
+    "test:web": "cd web-app && npm run test",
+    "test:mobile": "cd mobile-app && npm run test",
+    "deploy": "vercel --prod",
+    "deploy:mobile": "cd mobile-app && npx eas build --platform all",
+    "install:all": "npm install && cd web-app && npm install && cd ../mobile-app && npm install && cd ../streaming && npm install",
+    "clean": "rm -rf node_modules && rm -rf web-app/node_modules && rm -rf mobile-app/node_modules && rm -rf streaming/node_modules",
+    "audit:hardcoding": "cd web-app && npm run audit:hardcoding",
+    "mobile:ios": "cd mobile-app && npm run ios",
+    "mobile:android": "cd mobile-app && npm run android",
+    "mobile:web": "cd mobile-app && npm run web"
   },
   "engines": {
     "node": ">=18.0.0",
@@ -21,6 +46,10 @@
     "uk",
     "nextjs",
     "react",
-    "typescript"
+    "react-native",
+    "typescript",
+    "monorepo",
+    "mobile-app",
+    "lusophone"
   ]
 }

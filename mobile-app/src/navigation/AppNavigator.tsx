@@ -21,6 +21,9 @@ import ProfileScreen from '../screens/main/ProfileScreen';
 import EventDetailsScreen from '../screens/modals/EventDetailsScreen';
 import UserProfileScreen from '../screens/modals/UserProfileScreen';
 import BusinessDetailsScreen from '../screens/modals/BusinessDetailsScreen';
+import BookingScreen from '../screens/modals/BookingScreen';
+import SubscriptionScreen from '../screens/modals/SubscriptionScreen';
+import CommunityBadgesScreen from '../screens/modals/CommunityBadgesScreen';
 import SettingsScreen from '../screens/modals/SettingsScreen';
 
 import { Colors } from '../constants/Styles';
@@ -203,11 +206,28 @@ export default function AppNavigator() {
                 name="BusinessDetails" 
                 component={BusinessDetailsScreen}
                 options={{
-                  headerShown: true,
-                  headerTitle: 'Business Details',
-                  headerStyle: { backgroundColor: Colors.surface },
-                  headerTitleStyle: { color: Colors.text },
-                  headerTintColor: Colors.primary,
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen 
+                name="BookingScreen" 
+                component={BookingScreen}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen 
+                name="SubscriptionScreen" 
+                component={SubscriptionScreen}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen 
+                name="CommunityBadgesScreen" 
+                component={CommunityBadgesScreen}
+                options={{
+                  headerShown: false,
                 }}
               />
               <Stack.Screen 

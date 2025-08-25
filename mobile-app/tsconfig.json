@@ -26,7 +26,11 @@
       "@/services/*": ["src/services/*"],
       "@/types/*": ["src/types/*"],
       "@/i18n/*": ["src/i18n/*"],
-      "@/config/*": ["src/config/*"]
+      "@/config/*": ["src/config/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@lusotown/shared": ["../shared"],
+      "@lusotown/shared/*": ["../shared/*"]
     }
   },
   "include": [

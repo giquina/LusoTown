@@ -1,0 +1,472 @@
+{
+  "timestamp": "2025-08-25T14:05:00.837Z",
+  "summary": {
+    "total_devices": 11,
+    "critical_devices": 3,
+    "portuguese_test_cases": 15,
+    "estimated_testing_time": "3 weeks",
+    "market_coverage": "85%"
+  },
+  "device_matrix": {
+    "ios_devices": [
+      {
+        "device": "iPhone SE (3rd generation)",
+        "screen": "4.7\" - 375x667",
+        "market_share": "15%",
+        "portuguese_community_usage": "High",
+        "test_priority": "Critical",
+        "specific_tests": [
+          "Portuguese text rendering at small screen size",
+          "Touch targets meet 44pt minimum",
+          "Cultural images display correctly",
+          "Navigation usability with smaller screen"
+        ]
+      },
+      {
+        "device": "iPhone 12/13/14",
+        "screen": "6.1\" - 390x844",
+        "market_share": "35%",
+        "portuguese_community_usage": "Very High",
+        "test_priority": "Critical",
+        "specific_tests": [
+          "Portuguese character input with iOS keyboard",
+          "Cultural content layout optimization",
+          "Performance with Portuguese language processing",
+          "Camera integration for profile/event photos"
+        ]
+      },
+      {
+        "device": "iPhone 15 Pro",
+        "screen": "6.1\" - 393x852",
+        "market_share": "20%",
+        "portuguese_community_usage": "High",
+        "test_priority": "High",
+        "specific_tests": [
+          "Dynamic Island integration with Portuguese notifications",
+          "Advanced camera features for cultural events",
+          "Performance optimization for latest hardware",
+          "USB-C integration testing"
+        ]
+      },
+      {
+        "device": "iPhone 11",
+        "screen": "6.1\" - 414x896",
+        "market_share": "20%",
+        "portuguese_community_usage": "Medium",
+        "test_priority": "Medium",
+        "specific_tests": [
+          "Performance on older A13 chip",
+          "Portuguese text rendering compatibility",
+          "Battery optimization validation",
+          "Older iOS version compatibility"
+        ]
+      }
+    ],
+    "android_devices": [
+      {
+        "device": "Samsung Galaxy S23/S24",
+        "screen": "6.1\" - 360x800 (dp)",
+        "market_share": "25%",
+        "portuguese_community_usage": "High",
+        "test_priority": "Critical",
+        "specific_tests": [
+          "Samsung keyboard Portuguese character support",
+          "OneUI integration with Portuguese content",
+          "S Pen integration for Portuguese notes",
+          "Samsung Pay integration for event payments"
+        ]
+      },
+      {
+        "device": "Google Pixel 7/8",
+        "screen": "6.3\" - 393x851",
+        "market_share": "15%",
+        "portuguese_community_usage": "Medium",
+        "test_priority": "High",
+        "specific_tests": [
+          "Stock Android Portuguese language support",
+          "Google Assistant integration in Portuguese",
+          "Camera performance for cultural event photos",
+          "Material You theming with Portuguese brand colors"
+        ]
+      },
+      {
+        "device": "Xiaomi Redmi Note series",
+        "screen": "6.43\" - 393x873",
+        "market_share": "12%",
+        "portuguese_community_usage": "High",
+        "test_priority": "High",
+        "specific_tests": [
+          "MIUI customizations compatibility",
+          "Budget device performance optimization",
+          "Portuguese input method compatibility",
+          "Battery optimization on mid-range hardware"
+        ]
+      },
+      {
+        "device": "OnePlus Nord/Nothing Phone",
+        "screen": "6.4\" - 412x915",
+        "market_share": "8%",
+        "portuguese_community_usage": "Medium",
+        "test_priority": "Medium",
+        "specific_tests": [
+          "OxygenOS/Nothing OS integration",
+          "Performance optimization validation",
+          "Custom Android features compatibility",
+          "Gaming mode integration for Portuguese content"
+        ]
+      },
+      {
+        "device": "Older Android (Samsung Galaxy S10)",
+        "screen": "6.1\" - 360x760",
+        "market_share": "10%",
+        "portuguese_community_usage": "Medium",
+        "test_priority": "Medium",
+        "specific_tests": [
+          "Android 9/10 compatibility",
+          "Performance on older hardware",
+          "Portuguese text rendering on older displays",
+          "Legacy feature support"
+        ]
+      }
+    ],
+    "budget_devices": [
+      {
+        "device": "Motorola Moto G series",
+        "screen": "6.5\" - 393x851",
+        "market_share": "8%",
+        "portuguese_community_usage": "High",
+        "test_priority": "High",
+        "specific_tests": [
+          "Performance on budget hardware",
+          "Limited RAM optimization",
+          "Portuguese community features on budget",
+          "Data usage optimization for limited plans"
+        ]
+      },
+      {
+        "device": "Nokia G series",
+        "screen": "6.52\" - 360x800",
+        "market_share": "5%",
+        "portuguese_community_usage": "Medium",
+        "test_priority": "Medium",
+        "specific_tests": [
+          "Android One Portuguese support",
+          "Long-term software support validation",
+          "Clean Android experience with Portuguese content",
+          "HMD Global device optimization"
+        ]
+      }
+    ]
+  },
+  "portuguese_test_cases": [
+    {
+      "category": "Text Rendering",
+      "tests": [
+        {
+          "id": "text-001",
+          "name": "Portuguese Special Characters Display",
+          "description": "Verify Portuguese accented characters render correctly",
+          "testText": "São João, tradição, coração, não, então, português",
+          "expectedResult": "All Portuguese characters display with proper accents",
+          "devices": "All",
+          "priority": "Critical"
+        },
+        {
+          "id": "text-002",
+          "name": "Long Portuguese Text Layout",
+          "description": "Verify layout handles longer Portuguese translations",
+          "testText": "Compatibilidade Cultural Portuguesa no Reino Unido",
+          "expectedResult": "Text wraps correctly without UI breaking",
+          "devices": "Small screens priority",
+          "priority": "High"
+        },
+        {
+          "id": "text-003",
+          "name": "Mixed Language Content",
+          "description": "Verify mixed Portuguese-English content displays correctly",
+          "testText": "Welcome to LusoTown - Bem-vindo à comunidade portuguesa",
+          "expectedResult": "Both languages display correctly in same context",
+          "devices": "All",
+          "priority": "High"
+        }
+      ]
+    },
+    {
+      "category": "Input Testing",
+      "tests": [
+        {
+          "id": "input-001",
+          "name": "Portuguese Keyboard Input",
+          "description": "Verify Portuguese characters can be input correctly",
+          "testInputs": [
+            "José Silva",
+            "São Paulo",
+            "Tradição portuguesa"
+          ],
+          "expectedResult": "All Portuguese characters preserved in form inputs",
+          "devices": "All",
+          "priority": "Critical"
+        },
+        {
+          "id": "input-002",
+          "name": "Portuguese Search Functionality",
+          "description": "Verify search works with Portuguese queries",
+          "testQueries": [
+            "fado",
+            "são joão",
+            "restaurante português"
+          ],
+          "expectedResult": "Search returns relevant Portuguese results",
+          "devices": "All",
+          "priority": "Critical"
+        },
+        {
+          "id": "input-003",
+          "name": "Portuguese Voice Input",
+          "description": "Test voice recognition for Portuguese commands",
+          "testCommands": [
+            "Abrir eventos",
+            "Encontrar empresas",
+            "Ver perfil"
+          ],
+          "expectedResult": "Voice commands recognized and executed",
+          "devices": "Modern devices with good microphones",
+          "priority": "Medium"
+        }
+      ]
+    },
+    {
+      "category": "Cultural Content",
+      "tests": [
+        {
+          "id": "culture-001",
+          "name": "Portuguese Heritage Selection",
+          "description": "Verify all Portuguese-speaking countries are represented",
+          "testItems": [
+            "Portugal",
+            "Brasil",
+            "Cabo Verde",
+            "Angola",
+            "Moçambique"
+          ],
+          "expectedResult": "All lusophone countries available and selectable",
+          "devices": "All",
+          "priority": "Critical"
+        },
+        {
+          "id": "culture-002",
+          "name": "Cultural Event Display",
+          "description": "Verify Portuguese cultural events display authentically",
+          "testEvents": [
+            "Festa de São João",
+            "Carnaval Brasileiro",
+            "Festival de Fado"
+          ],
+          "expectedResult": "Events display with accurate cultural context",
+          "devices": "All",
+          "priority": "High"
+        },
+        {
+          "id": "culture-003",
+          "name": "Portuguese Business Categories",
+          "description": "Verify business categories reflect Portuguese community needs",
+          "testCategories": [
+            "Restaurantes",
+            "Padarias",
+            "Serviços de Tradução",
+            "Centros Culturais"
+          ],
+          "expectedResult": "Comprehensive Portuguese business categories available",
+          "devices": "All",
+          "priority": "High"
+        }
+      ]
+    },
+    {
+      "category": "Performance",
+      "tests": [
+        {
+          "id": "perf-001",
+          "name": "Portuguese Text Rendering Performance",
+          "description": "Measure performance impact of Portuguese character rendering",
+          "testScenario": "Render 100 Portuguese names with accents",
+          "expectedResult": "Rendering time < 50ms on modern devices, < 100ms on older",
+          "devices": "Range of hardware capabilities",
+          "priority": "High"
+        },
+        {
+          "id": "perf-002",
+          "name": "Cultural Image Loading",
+          "description": "Test loading performance of Portuguese cultural images",
+          "testScenario": "Load 10 Portuguese cultural images in sequence",
+          "expectedResult": "Images load within 2 seconds on good connection",
+          "devices": "All, various network conditions",
+          "priority": "High"
+        },
+        {
+          "id": "perf-003",
+          "name": "Language Switching Performance",
+          "description": "Measure performance of switching between EN and PT",
+          "testScenario": "Switch languages 5 times rapidly",
+          "expectedResult": "Each switch completes in < 200ms",
+          "devices": "Range of hardware capabilities",
+          "priority": "Medium"
+        }
+      ]
+    },
+    {
+      "category": "Accessibility",
+      "tests": [
+        {
+          "id": "a11y-001",
+          "name": "Portuguese Screen Reader Support",
+          "description": "Verify screen readers pronounce Portuguese content correctly",
+          "testContent": "São João, Tradição Portuguesa, Compatibilidade",
+          "expectedResult": "Screen reader pronunciation is understandable",
+          "devices": "iOS VoiceOver, Android TalkBack",
+          "priority": "High"
+        },
+        {
+          "id": "a11y-002",
+          "name": "Portuguese Voice Control",
+          "description": "Test voice control commands in Portuguese",
+          "testCommands": [
+            "Ir para eventos",
+            "Abrir perfil",
+            "Voltar"
+          ],
+          "expectedResult": "Voice commands recognized and executed",
+          "devices": "Modern devices with voice control",
+          "priority": "Medium"
+        },
+        {
+          "id": "a11y-003",
+          "name": "High Contrast Portuguese Text",
+          "description": "Verify Portuguese text is readable in high contrast mode",
+          "testScenario": "Enable high contrast and navigate app",
+          "expectedResult": "All Portuguese text remains readable",
+          "devices": "All",
+          "priority": "Medium"
+        }
+      ]
+    }
+  ],
+  "testing_schedule": {
+    "week1_critical_devices": {
+      "devices": [
+        "iPhone SE",
+        "iPhone 14",
+        "Samsung Galaxy S24",
+        "Google Pixel 8"
+      ],
+      "focus": "Core functionality and Portuguese text rendering",
+      "tests_per_device": 15,
+      "expected_completion": "90%"
+    },
+    "week2_high_priority": {
+      "devices": [
+        "iPhone 15 Pro",
+        "Samsung Galaxy S23",
+        "Xiaomi Redmi Note",
+        "OnePlus Nord"
+      ],
+      "focus": "Advanced features and performance optimization",
+      "tests_per_device": 12,
+      "expected_completion": "85%"
+    },
+    "week3_budget_legacy": {
+      "devices": [
+        "iPhone 11",
+        "Samsung Galaxy S10",
+        "Motorola Moto G",
+        "Nokia G series"
+      ],
+      "focus": "Performance on limited hardware and legacy compatibility",
+      "tests_per_device": 10,
+      "expected_completion": "80%"
+    }
+  },
+  "compatibility_matrix": {
+    "os_versions": {
+      "ios": {
+        "minimum_supported": "iOS 15.0",
+        "recommended": "iOS 16.0+",
+        "portuguese_features": {
+          "iOS 15": "Basic Portuguese keyboard support",
+          "iOS 16": "Enhanced Portuguese autocorrect",
+          "iOS 17": "Portuguese voice recognition improvements"
+        }
+      },
+      "android": {
+        "minimum_supported": "Android 8.0 (API 26)",
+        "recommended": "Android 12.0+ (API 31+)",
+        "portuguese_features": {
+          "Android 8+": "Basic Portuguese input methods",
+          "Android 10+": "Enhanced Portuguese language support",
+          "Android 12+": "Material You theming with Portuguese colors"
+        }
+      }
+    },
+    "hardware_requirements": {
+      "minimum": {
+        "ram": "3GB",
+        "storage": "64GB",
+        "cpu": "Snapdragon 660 / A12 Bionic equivalent",
+        "gpu": "Adreno 512 / Apple GPU equivalent",
+        "portuguese_performance": "Basic functionality, may have slower text rendering"
+      },
+      "recommended": {
+        "ram": "6GB+",
+        "storage": "128GB+",
+        "cpu": "Snapdragon 778G / A15 Bionic or better",
+        "gpu": "Adreno 642L / Apple GPU or better",
+        "portuguese_performance": "Optimal Portuguese text and cultural content experience"
+      }
+    },
+    "screen_requirements": {
+      "minimum": {
+        "size": "4.7\"",
+        "resolution": "750x1334",
+        "density": "326 PPI",
+        "portuguese_considerations": "Portuguese text may be small, UI adjustments needed"
+      },
+      "recommended": {
+        "size": "6.1\"+",
+        "resolution": "1170x2532",
+        "density": "460+ PPI",
+        "portuguese_considerations": "Optimal Portuguese text display and cultural image quality"
+      }
+    }
+  },
+  "success_criteria": {
+    "performance": {
+      "app_launch": "< 3 seconds on modern devices, < 5 seconds on older",
+      "portuguese_text_render": "< 16ms for 60fps experience",
+      "image_loading": "< 2 seconds for Portuguese cultural images",
+      "language_switching": "< 200ms transition time"
+    },
+    "functionality": {
+      "portuguese_text_accuracy": "100% character preservation",
+      "cultural_authenticity": "95%+ community approval",
+      "accessibility_compliance": "WCAG 2.1 AA standard",
+      "offline_functionality": "80%+ features available offline"
+    },
+    "compatibility": {
+      "ios_support": "iOS 15.0+ (covers 95% of Portuguese iOS users)",
+      "android_support": "Android 8.0+ (covers 90% of Portuguese Android users)",
+      "device_compatibility": "85%+ of Portuguese community devices supported"
+    }
+  },
+  "risk_mitigation": {
+    "high_risk": [
+      "Older Android devices may struggle with Portuguese text rendering",
+      "Budget devices may have performance issues with cultural images",
+      "Legacy iOS versions may have Portuguese keyboard limitations"
+    ],
+    "mitigation_strategies": [
+      "Implement progressive enhancement for Portuguese features",
+      "Provide lite mode for older/budget devices",
+      "Graceful degradation for unsupported features"
+    ]
+  }
+}

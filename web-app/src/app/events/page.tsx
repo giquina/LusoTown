@@ -1511,12 +1511,12 @@ export default function EventsPage() {
                     </div>
                   )}
 
-                  {/* Main Content Grid */}
+                  {/* Mobile-Optimized Content Grid */}
                   {loading ? (
                     <SkeletonEventGrid 
                       count={6} 
                       variant="portuguese" 
-                      className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
+                      className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
                     />
                   ) : currentData.length === 0 ? (
                     <div className="text-center py-16">
@@ -1554,7 +1554,7 @@ export default function EventsPage() {
                   ) : (
                     <motion.div
                       layout
-                      className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
+                      className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
                     >
                       <AnimatePresence>
                         {currentData.map((item, index) =>

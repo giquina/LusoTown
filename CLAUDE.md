@@ -12,6 +12,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Cultural Rule**: Use "Portuguese-speaking community" (not "Portuguese community")  
 **Mobile-First**: Test at 375px, 768px, 1024px breakpoints
 
+### Quick Single Test Commands
+```bash
+cd web-app
+npm test ComponentName.test          # Single component test
+npm test -- --testNamePattern="name" # Specific test
+npx playwright test file.spec.ts     # Single E2E test
+npm run test:mobile                   # Mobile tests only
+npm run test:portuguese               # Portuguese tests only
+```
+
 ## 🤖 AI Development Guidance
 
 **Primary Source**: `/AGENTS.md` contains comprehensive guidance with 6 specialized agents, UI/UX rules, luxury standards, and cross-IDE compatibility instructions for all AI development tools.

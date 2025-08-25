@@ -13,27 +13,65 @@ const EVENT_CATEGORIES = [
     namePt: "Hoje à Noite",
     icon: "🌙",
     color: "from-purple-500 to-blue-500",
+    description: {
+      en: "Events happening tonight",
+      pt: "Eventos hoje à noite"
+    }
   },
   {
-    id: "weekend",
+    id: "weekend", 
     nameEn: "Weekend",
     namePt: "Fim de Semana",
     icon: "🎉",
     color: "from-green-500 to-emerald-500",
+    description: {
+      en: "Weekend activities",
+      pt: "Atividades de fim de semana"
+    }
+  },
+  {
+    id: "free",
+    nameEn: "Free",
+    namePt: "Grátis",
+    icon: "🆓",
+    color: "from-blue-500 to-cyan-500",
+    description: {
+      en: "Free events",
+      pt: "Eventos gratuitos"
+    }
+  },
+  {
+    id: "palop-culture",
+    nameEn: "PALOP Culture",
+    namePt: "Cultura PALOP",
+    icon: "🌍",
+    color: "from-red-500 to-orange-500",
+    description: {
+      en: "Portuguese-speaking African countries culture",
+      pt: "Cultura dos países africanos de língua portuguesa"
+    }
   },
   {
     id: "cultural",
     nameEn: "Cultural",
     namePt: "Cultural",
     icon: "🎭",
-    color: "from-red-500 to-pink-500",
+    color: "from-pink-500 to-rose-500",
+    description: {
+      en: "Traditional cultural events",
+      pt: "Eventos culturais tradicionais"
+    }
   },
   {
     id: "business",
     nameEn: "Business",
     namePt: "Negócios",
     icon: "💼",
-    color: "from-blue-500 to-indigo-500",
+    color: "from-gray-600 to-slate-600",
+    description: {
+      en: "Networking and business events",
+      pt: "Eventos de networking e negócios"
+    }
   },
 ];
 
@@ -69,31 +107,115 @@ export default function SwipeEventNavigation({
         </h3>
       </div>
 
-      {/* Categories Grid */}
+      {/* Search Bar */}
+      <div className="mb-6">
+        <div className="relative">
+          <input
+            type="text"
+            placeholder={isPortuguese ? "Procurar eventos portugueses..." : "Find Portuguese events..."}
+            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl bg-gray-50 focus:bg-white focus:border-green-400 focus:ring-2 focus:ring-green-100 transition-all duration-200 text-sm"
+          />
+          <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
+            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+        </div>
+        
+        {/* Cultural Suggestions */}
+        <div className="mt-3 flex flex-wrap gap-2">
+          {["Fado", "Santos Populares", "Futebol", "Brasileira"].map((suggestion) => (
+            <button
+              key={suggestion}
+              className="text-xs bg-green-50 text-green-700 px-3 py-1 rounded-full hover:bg-green-100 transition-colors"
+            >
+              {suggestion}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Sort Options */}
+      <div className="mb-6">
+        <div className="flex items-center gap-2 text-sm">
+          <span className="text-gray-600 font-medium">
+            {isPortuguese ? "Ordenar por:" : "Sort by:"}
+          </span>
+          <div className="flex gap-2">
+            {[
+              { id: "today", label: isPortuguese ? "Hoje" : "Today" },
+              { id: "week", label: isPortuguese ? "Semana" : "This Week" },
+              { id: "price", label: isPortuguese ? "Preço" : "Price" },
+              { id: "distance", label: isPortuguese ? "Distância" : "Distance" }
+            ].map((sortOption) => (
+              <button
+                key={sortOption.id}
+                className="text-xs bg-white border border-gray-200 px-3 py-1 rounded-full hover:border-green-300 hover:bg-green-50 transition-colors"
+              >
+                {sortOption.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Filter Categories Grid */}
       <div className="grid grid-cols-2 gap-3">
-        {EVENT_CATEGORIES.map((category, index) => (
-          <motion.button
-            key={category.id}
-            onClick={() => handleCategoryClick(category.id, index)}
-            className={`p-4 rounded-xl border-2 transition-all duration-200 touch-manipulation ${
-              selectedCategory === category.id
-                ? "border-green-400 bg-gradient-to-r from-green-50 to-red-50"
-                : "border-gray-200 bg-white hover:border-gray-300"
-            }`}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <div className="text-2xl mb-2">{category.icon}</div>
-            <div className="text-sm font-medium text-gray-900 mb-1">
-              {isPortuguese ? category.namePt : category.nameEn}
-            </div>
-            {showCounts && categoryCounts[category.id] && (
-              <div className="text-xs text-gray-600">
-                {categoryCounts[category.id]} {isPortuguese ? "eventos" : "events"}
+        {EVENT_CATEGORIES.map((category, index) => {
+          const isActive = selectedCategory === category.id;
+          const count = categoryCounts[category.id] || 0;
+          
+          return (
+            <motion.button
+              key={category.id}
+              onClick={() => handleCategoryClick(category.id, index)}
+              className={`relative p-4 rounded-xl border-2 transition-all duration-200 touch-manipulation text-left overflow-hidden min-h-[100px] flex flex-col justify-between ${
+                isActive
+                  ? `border-transparent bg-gradient-to-br ${category.color} text-white shadow-lg transform scale-105`
+                  : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-md"
+              }`}
+              whileHover={{ scale: isActive ? 1.05 : 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              title={isPortuguese ? category.description.pt : category.description.en}
+            >
+              {/* Portuguese cultural pattern overlay */}
+              {isActive && (
+                <div className="absolute inset-0 opacity-10">
+                  <div 
+                    className="w-full h-full"
+                    style={{
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='white' fill-opacity='0.3'%3E%3Cpath d='M20 20l-10-10h20l-10 10zm0 0l10 10H10l10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+                    }}
+                  />
+                </div>
+              )}
+              
+              <div className="relative z-10">
+                <div className="text-2xl mb-2">{category.icon}</div>
+                <div className={`text-sm font-semibold mb-1 ${
+                  isActive ? "text-white" : "text-gray-900"
+                }`}>
+                  {isPortuguese ? category.namePt : category.nameEn}
+                </div>
               </div>
-            )}
-          </motion.button>
-        ))}
+              
+              {showCounts && count > 0 && (
+                <div className="relative z-10 mt-auto">
+                  <div className={`inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full ${
+                    isActive 
+                      ? "bg-white/20 text-white" 
+                      : "bg-green-100 text-green-700"
+                  }`}>
+                    <span className={`w-1.5 h-1.5 rounded-full ${
+                      isActive ? "bg-white" : "bg-green-500"
+                    }`}></span>
+                    {count} {isPortuguese ? "eventos" : "events"}
+                  </div>
+                </div>
+              )}
+            </motion.button>
+          );
+        })}
       </div>
     </div>
   );

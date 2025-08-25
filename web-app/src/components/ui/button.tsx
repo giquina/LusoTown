@@ -2,40 +2,54 @@ import React from 'react'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode
-  variant?: 'default' | 'outline' | 'ghost' | 'destructive'
-  size?: 'sm' | 'md' | 'lg'
+  variant?: 'primary' | 'secondary' | 'action' | 'outline' | 'ghost' | 'destructive' | 'portugal' | 'brazil' | 'palop'
+  size?: 'small' | 'medium' | 'large' | 'icon'
+  mobile?: boolean
 }
 
 export function Button({ 
   children, 
   className = '', 
-  variant = 'default', 
-  size = 'md',
+  variant = 'primary', 
+  size = 'medium',
+  mobile = false,
   disabled = false,
   ...props 
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none'
+  // Use LusoTown Mobile Design System classes
+  const baseClass = 'lusotown-button lusotown-focus'
   
   const variants = {
-    default: 'bg-primary text-primary-foreground hover:bg-primary/90 shadow',
-    outline: 'border border-input hover:bg-accent hover:text-accent-foreground',
-    ghost: 'hover:bg-accent hover:text-accent-foreground',
-    destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-sm'
+    primary: 'lusotown-button-primary',
+    secondary: 'lusotown-button-secondary', 
+    action: 'lusotown-button-action',
+    outline: 'lusotown-button-secondary',
+    ghost: 'bg-transparent hover:bg-primary-50 text-primary-600 hover:text-primary-700',
+    destructive: 'lusotown-button-action',
+    portugal: 'lusotown-button-portugal',
+    brazil: 'lusotown-button-brazil',
+    palop: 'lusotown-button-palop'
   }
 
   const sizes = {
-    sm: 'h-9 px-3 text-sm',
-    md: 'h-10 py-2 px-4',
-    lg: 'h-11 px-8 text-base'
+    small: 'lusotown-button-small',
+    medium: '', // Default mobile-optimized size
+    large: 'h-52 px-32 text-lg',
+    icon: 'lusotown-button-icon'
   }
+
+  // Mobile-specific optimizations
+  const mobileClasses = mobile ? 'lusotown-touch-target lusotown-cta-text-mobile' : ''
 
   return (
     <button 
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`${baseClass} ${variants[variant]} ${sizes[size]} ${mobileClasses} ${className}`}
       disabled={disabled}
       {...props}
     >
-      {children}
+      <span className="lusotown-button-text lusotown-portuguese-text">
+        {children}
+      </span>
     </button>
   )
 }

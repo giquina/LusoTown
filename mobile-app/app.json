@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "LusoTown London",
+    "name": "LusoTown: Portuguese Community UK",
     "slug": "lusotown-london",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,22 +9,70 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#FAFAFA"
+      "backgroundColor": "#D4A574"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
+    "platforms": ["ios", "android"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lusotown.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "LusoTown uses location to show nearby Portuguese events and community members",
+        "NSCameraUsageDescription": "LusoTown needs camera access for profile photos and event photos",
+        "NSPhotoLibraryUsageDescription": "LusoTown needs photo library access to upload profile and event photos"
+      },
+      "privacyManifests": {
+        "NSPrivacyAccessedAPITypes": [
+          {
+            "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryLocation",
+            "NSPrivacyAccessedAPITypeReasons": ["AC6B.1"]
+          }
+        ]
+      },
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FAFAFA"
-      }
+        "backgroundColor": "#D4A574"
+      },
+      "package": "com.lusotown.app",
+      "versionCode": 1,
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "NOTIFICATIONS"
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "name": "LusoTown: Portuguese Community UK",
+      "shortName": "LusoTown",
+      "description": "Connect with the Portuguese-speaking community across the United Kingdom"
+    },
+    "notification": {
+      "icon": "./assets/notification-icon.png",
+      "color": "#D4A574",
+      "androidMode": "default",
+      "androidCollapsedTitle": "New from LusoTown"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "lusotown-mobile-app"
+      }
     }
   }
 }

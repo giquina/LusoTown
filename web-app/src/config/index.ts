@@ -9,6 +9,14 @@
 export { communityStats, communityMilestones, getNumericStat, formatStat } from './community';
 export { contactInfo, contactPhones, socialMedia, officeLocations, contact } from './contact';
 
+// Mobile app and PWA configuration
+export { 
+  MOBILE_APP_CONFIG, 
+  DEVICE_DETECTION_CONFIG,
+  LANDING_PAGE_CONFIG,
+  PWA_ENHANCEMENT_CONFIG
+} from './mobile-app';
+
 // Brand and design system
 export { 
   brandConfig, 

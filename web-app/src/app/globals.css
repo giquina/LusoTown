@@ -84,6 +84,12 @@ html {
 /* Framer Motion Fixes for Tailwind CSS Color Animation Conflicts */
 @import '../styles/framer-motion-fixes.css';
 
+/* Universal Mobile Design System - Portuguese Cultural Mobile Framework */
+@import '../styles/mobile-design-system.css';
+
+/* Mobile Utility Classes - Complementary Portuguese Cultural Mobile Utilities */
+@import '../styles/mobile-utilities.css';
+
 /* Ensure proper emoji and flag rendering across all platforms */
 .flag-emoji {
   font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Twemoji Mozilla', 'EmojiOne Color', 'Android Emoji', sans-serif;

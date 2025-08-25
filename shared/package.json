@@ -1,0 +1,36 @@
+{
+  "name": "@lusotown/shared",
+  "version": "1.0.0",
+  "description": "Shared utilities and configurations for LusoTown web and mobile applications",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./config": "./config/index.js",
+    "./config/*": "./config/*.js",
+    "./utils": "./utils/index.js",
+    "./types": "./types/index.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "eslint": "^8.57.1",
+    "jest": "^30.0.5",
+    "typescript": "^5.2.0"
+  },
+  "keywords": [
+    "lusotown",
+    "portuguese",
+    "shared",
+    "config",
+    "utilities"
+  ],
+  "private": true
+}

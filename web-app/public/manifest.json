@@ -177,11 +177,17 @@
       "id": "123456789"
     }
   ],
-  "prefer_related_applications": false,
+  "prefer_related_applications": true,
   "protocol_handlers": [
     {
       "protocol": "web+lusotown",
       "url": "/?utm_source=protocol_handler&action=%s"
     }
-  ]
+  ],
+  "url_handlers": [
+    {
+      "origin": "https://lusotown.com"
+    }
+  ],
+  "capture_links": "existing-client-navigate"
 }
