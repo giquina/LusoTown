@@ -39,7 +39,7 @@ const communityOptions: CommunityOption[] = [
     title: "Meet People",
     benefit: "Find meaningful connections",
     details:
-      "Make real friends who share your culture and values. Weekly meetups, group activities, and city adventures—no awkward small talk, just genuine Lusophone connection.",
+      "Make friends who share your culture and values. Weekly meetups and group activities—simple and genuine.",
     icon: HeartIcon,
     gradient: "from-red-500 to-rose-500",
     culturalSymbols: "💕❤️🤝",
@@ -224,13 +224,13 @@ export default function StreamlinedCommunitySelector({
           )}
 
           {/* Trust indicators */}
-          <div className="text-center mt-6 text-sm text-gray-500">
+      <div className="text-center mt-6 text-sm text-gray-500">
             <div className="flex justify-center items-center gap-4">
               <span>Portuguese speakers</span>
               <span>•</span>
               <span>Free to Join</span>
               <span>•</span>
-              <span>UK-Wide</span>
+        <span>United Kingdom–Wide</span>
             </div>
           </div>
         </div>
