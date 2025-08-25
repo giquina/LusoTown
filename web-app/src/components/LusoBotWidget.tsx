@@ -63,7 +63,7 @@ export default function LusoBotWidget({
   const ROUTES_SAFE = {
     events: "/events",
     businessDirectory: "/business-directory",
-    signup: "/signup",
+    signup: "/apply",
   } as const;
 
   // Position classes with mobile-safe positioning
@@ -445,6 +445,7 @@ export default function LusoBotWidget({
                     <LusoBotChat
                       isEmbedded={true}
                       className="h-full border-0 bg-transparent"
+                      onClose={handleClose}
                     />
                   </div>
                 </div>

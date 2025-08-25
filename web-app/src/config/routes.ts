@@ -19,6 +19,9 @@ export const ROUTES = {
   login: '/login',
   forgotPassword: '/forgot-password',
   
+  // Onboarding / Application
+  apply: '/apply',
+  
   // Events & Activities
   events: '/events',
   eventsCreate: '/events/create',

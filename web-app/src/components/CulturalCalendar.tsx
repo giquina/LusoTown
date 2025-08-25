@@ -58,7 +58,7 @@ export default function CulturalCalendar({
   const [loading, setLoading] = useState(true);
 
   // Mock cultural events data with membership positioning
-  const mockEvents: CulturalEvent[] = [
+  const eventsData: CulturalEvent[] = React.useMemo(() => ([
     {
       id: 1,
       title: "Exclusive Fado Night at Soho",
@@ -191,19 +191,19 @@ export default function CulturalCalendar({
       flag: '🇦🇴',
       organizer: 'Angola Business Network UK'
     }
-  ];
+  ]), []);
 
   useEffect(() => {
     // Simulate API call
     const loadEvents = async () => {
       setLoading(true);
       // Filter events based on variant
-      let filteredEvents = mockEvents;
+  let filteredEvents = eventsData;
       
       if (variant === 'featured') {
-        filteredEvents = mockEvents.filter(e => e.membershipRequired || e.spotsleft < 10);
+  filteredEvents = eventsData.filter(e => e.membershipRequired || e.spotsleft < 10);
       } else if (variant === 'weekly') {
-        filteredEvents = mockEvents.slice(0, 4);
+  filteredEvents = eventsData.slice(0, 4);
       }
       
       setEvents(filteredEvents);
@@ -211,7 +211,7 @@ export default function CulturalCalendar({
     };
 
     loadEvents();
-  }, [variant]);
+  }, [variant, eventsData]);
 
   const getExclusivityBadge = (event: CulturalEvent) => {
     if (event.membershipRequired) {
@@ -423,7 +423,7 @@ export default function CulturalCalendar({
                       {language === 'pt' ? 'Reservar Agora - Apenas Membros' : 'Reserve Now - Members Only'}
                     </a>
                     <a
-                      href={ROUTES.signup}
+                      href={ROUTES.apply}
                       className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-medium py-2 px-4 rounded-lg hover:from-amber-600 hover:to-orange-600 transition-all duration-300 text-center block text-sm"
                     >
                       {language === 'pt' ? 'Candidatar-se à Membresia' : 'Apply for Membership'}
@@ -482,7 +482,7 @@ export default function CulturalCalendar({
               <ArrowRightIcon className="w-5 h-5 ml-2" />
             </a>
             <a
-              href={ROUTES.signup}
+              href={ROUTES.apply}
               className="inline-flex items-center border-2 border-white text-white font-bold px-8 py-4 rounded-2xl hover:bg-white hover:text-blue-600 transition-all duration-300"
             >
               {language === 'pt' ? 'Candidatar-se Agora' : 'Apply for Membership'}

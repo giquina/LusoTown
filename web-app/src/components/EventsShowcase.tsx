@@ -465,7 +465,7 @@ const EventsShowcase = memo(() => {
                         Members Reserve Now - {formatPrice(Math.round(event.price * 0.7))} 
                       </a>
                       <a
-                        href={ROUTES.signup}
+                        href={ROUTES.apply}
                         className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-medium py-2 rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl min-h-[36px] flex items-center justify-center gap-2 text-sm"
                       >
                         Non-members: {formatPrice(event.price)} • Apply for Membership

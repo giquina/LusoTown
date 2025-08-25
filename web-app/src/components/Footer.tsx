@@ -30,14 +30,14 @@ import { communityStats } from '@/config/community';
 // Membership-focused footer navigation structure
 const getFooterLinks = (t: any) => ({
   community: [
-    { name: "Apply for Membership", href: ROUTES.signup, featured: true },
+    { name: "Apply for Membership", href: ROUTES.apply, featured: true },
     { name: "Cultural Events", href: ROUTES.events },
     { name: "PALOP Heritage", href: "/palop-heritage" },
     { name: "Business Directory", href: ROUTES.directory },
     { name: "Success Stories", href: "/success-stories" }
   ],
   membership: [
-    { name: "Membership Tiers", href: ROUTES.premium, featured: true },
+    { name: "Membership Tiers", href: ROUTES.premiumMembership, featured: true },
     { name: "Exclusive Events", href: `${ROUTES.events}?filter=members-only` },
     { name: "Premium Services", href: "/premium-services" },
     { name: "Member Benefits", href: "/member-benefits" },
@@ -145,21 +145,23 @@ export default function Footer() {
                 {sectionHeaders[category as keyof typeof sectionHeaders]}
               </h3>
               <ul className="space-y-2">
-                {links.map((link) => (
+                {links.map((link) => {
+                  const isFeatured = (link as any).featured === true;
+                  return (
                   <li key={link.name}>
                     <a
                       href={link.href}
                       className={`transition-colors duration-200 text-xs ${
-                        link.featured 
+                        isFeatured 
                           ? "text-amber-400 hover:text-amber-300 font-semibold" 
                           : "text-gray-300 hover:text-white"
                       }`}
                     >
-                      {link.featured && <StarIcon className="w-3 h-3 inline mr-1" />}
+                      {isFeatured && <StarIcon className="w-3 h-3 inline mr-1" />}
                       {link.name}
                     </a>
                   </li>
-                ))}
+                )})}
               </ul>
             </div>
           ))}
@@ -184,7 +186,7 @@ export default function Footer() {
             {/* Single-line Membership Application */}
             <div className="flex items-center gap-3">
               <a
-                href={ROUTES.signup}
+                href={ROUTES.apply}
                 className="inline-flex items-center bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-sm whitespace-nowrap"
               >
                 <CrownIcon className="w-4 h-4 mr-2" />

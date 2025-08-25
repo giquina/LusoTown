@@ -585,7 +585,7 @@ export default function Header() {
                   <UserIcon className="w-5 h-5" />
                 </a>
                 <motion.a
-                  href={ROUTES.signup}
+                  href={ROUTES.apply}
                   className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-3 px-4 lg:px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-h-[44px] flex items-center text-sm relative overflow-hidden group"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
