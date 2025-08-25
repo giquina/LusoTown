@@ -13,9 +13,6 @@ import { useLanguage } from "@/context/LanguageContext";
 import { ROUTES } from "@/config/routes";
 
 export default function WelcomePopup() {
-  // Temporarily disabled - returning null to hide popup completely
-  return null;
-  
   const [isVisible, setIsVisible] = useState(false);
   const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
   const router = useRouter();
