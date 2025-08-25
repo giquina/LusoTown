@@ -1584,7 +1584,14 @@ export default function Home() {
                   </div>
 
                   <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                    <div
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&season=spring`)}
+                      onClick={() => router.push(`${ROUTES.events}?ref=home&season=spring`)}
+                      className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
+                      aria-label="View spring Portuguese community highlights"
+                    >
                       <div className="text-3xl mb-2">🌸</div>
                       <div className="font-bold text-sm mb-1">March - May</div>
                       <div className="text-xs text-gray-300">
@@ -1593,8 +1600,25 @@ export default function Home() {
                       <div className="text-xs text-gray-400 mt-1">
                         Santos Populares preparation
                       </div>
+                      <div className="mt-3">
+                        <a
+                          href={`${ROUTES.events}?ref=home&season=spring`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center text-xs font-semibold text-white/90 hover:text-white underline decoration-white/30 underline-offset-4"
+                        >
+                          View more
+                          <span className="ml-1">→</span>
+                        </a>
+                      </div>
                     </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                    <div
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&season=summer`)}
+                      onClick={() => router.push(`${ROUTES.events}?ref=home&season=summer`)}
+                      className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
+                      aria-label="View summer Portuguese community highlights"
+                    >
                       <div className="text-3xl mb-2">☀️</div>
                       <div className="font-bold text-sm mb-1">
                         June - August
@@ -1605,8 +1629,25 @@ export default function Home() {
                       <div className="text-xs text-gray-400 mt-1">
                         Santos Populares, PALOP independence
                       </div>
+                      <div className="mt-3">
+                        <a
+                          href={`${ROUTES.events}?ref=home&season=summer`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center text-xs font-semibold text-white/90 hover:text-white underline decoration-white/30 underline-offset-4"
+                        >
+                          View more
+                          <span className="ml-1">→</span>
+                        </a>
+                      </div>
                     </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                    <div
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&season=autumn`)}
+                      onClick={() => router.push(`${ROUTES.events}?ref=home&season=autumn`)}
+                      className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
+                      aria-label="View autumn Portuguese community highlights"
+                    >
                       <div className="text-3xl mb-2">🍂</div>
                       <div className="font-bold text-sm mb-1">
                         September - November
@@ -1617,8 +1658,25 @@ export default function Home() {
                       <div className="text-xs text-gray-400 mt-1">
                         Independence celebrations peak
                       </div>
+                      <div className="mt-3">
+                        <a
+                          href={`${ROUTES.events}?ref=home&season=autumn`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center text-xs font-semibold text-white/90 hover:text-white underline decoration-white/30 underline-offset-4"
+                        >
+                          View more
+                          <span className="ml-1">→</span>
+                        </a>
+                      </div>
                     </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                    <div
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&season=winter`)}
+                      onClick={() => router.push(`${ROUTES.events}?ref=home&season=winter`)}
+                      className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
+                      aria-label="View winter Portuguese community highlights"
+                    >
                       <div className="text-3xl mb-2">❄️</div>
                       <div className="font-bold text-sm mb-1">
                         December - February
@@ -1628,6 +1686,16 @@ export default function Home() {
                       </div>
                       <div className="text-xs text-gray-400 mt-1">
                         Christmas, New Year, Carnival
+                      </div>
+                      <div className="mt-3">
+                        <a
+                          href={`${ROUTES.events}?ref=home&season=winter`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center text-xs font-semibold text-white/90 hover:text-white underline decoration-white/30 underline-offset-4"
+                        >
+                          View more
+                          <span className="ml-1">→</span>
+                        </a>
                       </div>
                     </div>
                   </div>

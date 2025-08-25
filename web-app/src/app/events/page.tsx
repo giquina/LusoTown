@@ -135,7 +135,9 @@ const FilterSidebar = ({
                       value=""
                       checked={!filters.category}
                       onChange={() =>
-                        onFilterChange({ ...filters, category: undefined })
+                        onFilterChange(Object.fromEntries(Object.entries({
+                          ...filters,
+                        }).filter(([k]) => k !== 'category')) as EventFilters)
                       }
                       className="text-primary-500 focus:ring-primary-400"
                     />
@@ -193,10 +195,9 @@ const FilterSidebar = ({
                       value=""
                       checked={!filters.membershipLevel}
                       onChange={() =>
-                        onFilterChange({
+                        onFilterChange(Object.fromEntries(Object.entries({
                           ...filters,
-                          membershipLevel: undefined,
-                        })
+                        }).filter(([k]) => k !== 'membershipLevel')) as EventFilters)
                       }
                       className="text-primary-500 focus:ring-primary-400"
                     />
@@ -297,7 +298,9 @@ const FilterSidebar = ({
                       value=""
                       checked={!filters.priceRange}
                       onChange={() =>
-                        onFilterChange({ ...filters, priceRange: undefined })
+                        onFilterChange(Object.fromEntries(Object.entries({
+                          ...filters,
+                        }).filter(([k]) => k !== 'priceRange')) as EventFilters)
                       }
                       className="text-primary-500 focus:ring-primary-400"
                     />
@@ -332,7 +335,95 @@ export default function EventsPage() {
   // Preview system state
   const [user, setUser] = useState(getCurrentUser());
 
-  // Check URL parameters on component mount and handle navigation
+  // Helpers to interpret month/season URL params into date ranges
+  const toISODate = useCallback((d: Date) => {
+    const pad = (n: number) => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  }, []);
+  const monthIndex = useCallback((name: string) => {
+    const map: Record<string, number> = {
+      january: 0,
+      february: 1,
+      march: 2,
+      april: 3,
+      may: 4,
+      june: 5,
+      july: 6,
+      august: 7,
+      september: 8,
+      october: 9,
+      november: 10,
+      december: 11,
+    };
+    return map[name.toLowerCase()];
+  }, []);
+  const getMonthRange = useCallback((monthName: string) => {
+    const now = new Date();
+    const y = now.getFullYear();
+    const idx = monthIndex(monthName);
+    if (idx === undefined) return undefined;
+    const start = new Date(y, idx, 1);
+    const end = new Date(y, idx + 1, 0);
+    return { start: toISODate(start), end: toISODate(end) };
+  }, [monthIndex, toISODate]);
+  const getSeasonRange = useCallback((season: string) => {
+    const now = new Date();
+    const y = now.getFullYear();
+    const s = season.toLowerCase();
+    if (s === 'spring') {
+      return { start: toISODate(new Date(y, 2, 1)), end: toISODate(new Date(y, 5, 0)) }; // Mar 1 - May 31
+    }
+    if (s === 'summer') {
+      return { start: toISODate(new Date(y, 5, 1)), end: toISODate(new Date(y, 8, 0)) }; // Jun 1 - Aug 31
+    }
+    if (s === 'autumn' || s === 'fall') {
+      return { start: toISODate(new Date(y, 8, 1)), end: toISODate(new Date(y, 11, 0)) }; // Sep 1 - Nov 30
+    }
+    if (s === 'winter') {
+      const decStart = new Date(y, 11, 1); // Dec 1
+      const febEnd = new Date(y + 1, 2, 0); // last day of Feb next year
+      return { start: toISODate(decStart), end: toISODate(febEnd) };
+    }
+    return undefined;
+  }, [toISODate]);
+
+  // Additional ranges for day/when
+  const getTodayRange = useCallback(() => {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const end = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    return { start: toISODate(start), end: toISODate(end) };
+  }, [toISODate]);
+
+  const getTomorrowRange = useCallback(() => {
+    const now = new Date();
+    const tomorrow = new Date(now);
+    tomorrow.setDate(now.getDate() + 1);
+    const start = new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate());
+    const end = new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate());
+    return { start: toISODate(start), end: toISODate(end) };
+  }, [toISODate]);
+
+  const getNext7DaysRange = useCallback(() => {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const end = new Date(now);
+    end.setDate(now.getDate() + 7);
+    return { start: toISODate(start), end: toISODate(end) };
+  }, [toISODate]);
+
+  const getUpcomingWeekendRange = useCallback(() => {
+    const now = new Date();
+    const day = now.getDay(); // 0=Sun, 6=Sat
+    const daysUntilSat = (6 - day + 7) % 7; // 0 if Sat
+    const saturday = new Date(now);
+    saturday.setDate(now.getDate() + daysUntilSat);
+    const sunday = new Date(saturday);
+    sunday.setDate(saturday.getDate() + 1);
+    return { start: toISODate(saturday), end: toISODate(sunday) };
+  }, [toISODate]);
+
+  // Check URL parameters on component mount and handle navigation + initial filters
   useEffect(() => {
     if (typeof window !== "undefined") {
       const urlParams = new URLSearchParams(window.location.search);
@@ -344,8 +435,42 @@ export default function EventsPage() {
       } else if (tabParam === "create") {
         setActiveTab("create");
       }
+
+      // Initial filtering from URL: month or season
+      const monthParam = urlParams.get('month');
+      const seasonParam = urlParams.get('season');
+      const tagParam = urlParams.getAll('tag');
+      const countryParam = urlParams.get('country');
+      const dayParam = urlParams.get('day');
+      const whenParam = urlParams.get('when');
+
+      const nextFilters: EventFilters = {};
+      if (monthParam) {
+        const range = getMonthRange(monthParam);
+        if (range) nextFilters.dateRange = range;
+      } else if (seasonParam) {
+        const range = getSeasonRange(seasonParam);
+        if (range) nextFilters.dateRange = range;
+      } else if (dayParam) {
+        const d = dayParam.toLowerCase();
+        if (d === 'today') nextFilters.dateRange = getTodayRange();
+        else if (d === 'tomorrow') nextFilters.dateRange = getTomorrowRange();
+      } else if (whenParam) {
+        const w = whenParam.toLowerCase();
+        if (w === 'week') nextFilters.dateRange = getNext7DaysRange();
+        else if (w === 'weekend') nextFilters.dateRange = getUpcomingWeekendRange();
+      }
+      if (tagParam && tagParam.length) {
+        nextFilters.tags = tagParam;
+      }
+      if (countryParam) {
+        nextFilters.tags = [...(nextFilters.tags || []), countryParam.toLowerCase()];
+      }
+      if (Object.keys(nextFilters).length) {
+        setEventFilters((prev) => ({ ...prev, ...nextFilters }));
+      }
     }
-  }, []);
+  }, [getMonthRange, getSeasonRange, getTodayRange, getTomorrowRange, getNext7DaysRange, getUpcomingWeekendRange]);
 
   // Update URL when tab changes
   const handleTabChange = (tab: "events" | "tours" | "cultural" | "create") => {
@@ -475,7 +600,13 @@ export default function EventsPage() {
   };
 
   const handleTourCategoryChange = (category?: string) => {
-    setTourFilters({ ...tourFilters, category });
+    if (category) {
+      setTourFilters({ ...tourFilters, category });
+    } else {
+      setTourFilters(Object.fromEntries(Object.entries({
+        ...tourFilters,
+      }).filter(([k]) => k !== 'category')) as EventToursFilters);
+    }
   };
 
   const currentFilters = activeTab === "events" ? eventFilters : tourFilters;
@@ -904,15 +1035,19 @@ export default function EventsPage() {
                       ].map((filter) => (
                         <button
                           key={filter.key}
-                          onClick={() =>
-                            setEventFilters({
-                              ...eventFilters,
-                              category:
-                                filter.key === eventFilters.category
-                                  ? undefined
-                                  : filter.key,
-                            })
-                          }
+                          onClick={() => {
+                            if (filter.key === eventFilters.category) {
+                              setEventFilters(
+                                Object.fromEntries(
+                                  Object.entries({ ...eventFilters }).filter(
+                                    ([k]) => k !== 'category'
+                                  )
+                                ) as EventFilters
+                              );
+                            } else {
+                              setEventFilters({ ...eventFilters, category: filter.key });
+                            }
+                          }}
                           className={`group px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 touch-manipulation ${
                             eventFilters.category === filter.key
                               ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg transform scale-105"
@@ -945,7 +1080,7 @@ export default function EventsPage() {
                               {info.icon}
                             </span>
                             <span className="truncate">{category}</span>
-                            {eventCounts[category] > 0 && (
+                            {category && (eventCounts?.[category] ?? 0) > 0 && (
                               <span
                                 className={`px-1.5 sm:px-2 py-0.5 rounded-full text-xs font-bold ${
                                   tourFilters.category === category
@@ -953,7 +1088,7 @@ export default function EventsPage() {
                                     : "bg-gray-200 text-gray-700"
                                 }`}
                               >
-                                {eventCounts[category]}
+                                {category ? (eventCounts?.[category] ?? 0) : 0}
                               </span>
                             )}
                           </button>
@@ -1018,6 +1153,7 @@ export default function EventsPage() {
               <CommunityEventCreation
                 onEventCreated={(eventId) => {
                   // Handle successful event creation
+                  // eslint-disable-next-line no-console
                   console.log("Event created:", eventId);
                   setActiveTab("events");
                 }}
@@ -1048,7 +1184,9 @@ export default function EventsPage() {
                       />
                     ) : (
                       <CategoryFilter
-                        selectedCategory={tourFilters.category}
+                        {...(tourFilters.category
+                          ? { selectedCategory: tourFilters.category }
+                          : {})}
                         onCategoryChange={handleTourCategoryChange}
                         eventCounts={eventCounts}
                       />
@@ -1302,7 +1440,9 @@ export default function EventsPage() {
                     </div>
 
                     <CategoryFilter
-                      selectedCategory={tourFilters.category}
+                      {...(tourFilters.category
+                        ? { selectedCategory: tourFilters.category }
+                        : {})}
                       onCategoryChange={(category) => {
                         handleTourCategoryChange(category);
                         setShowFilters(false);
