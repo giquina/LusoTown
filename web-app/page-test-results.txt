@@ -1,0 +1,449 @@
+🚀 Starting comprehensive page test...
+
+📖 Testing: Homepage (/)
+   ❌ FAILED - page.goto: Timeout 15000ms exceeded.
+Call log:
+[2m  - navigating to "http://localhost:3001/", waiting until "networkidle"[22m
+
+
+📖 Testing: What's Happening (Events) (/events)
+   ❌ FAILED - page.goto: Timeout 15000ms exceeded.
+Call log:
+[2m  - navigating to "http://localhost:3001/events", waiting until "networkidle"[22m
+
+
+📖 Testing: Community Feed (/feed)
+   ⚠️  WARNINGS (7 issues) - Title: "LusoTown - London | Portuguese Social & Business Network"
+      - Page error: Element type is invalid. Received a promise that resolves to: [object Object]. Lazy element type must resolve to a class or function.
+      - Page error: Element type is invalid. Received a promise that resolves to: [object Object]. Lazy element type must resolve to a class or function.
+      - Console error: The above error occurred in one of your React components:
+
+    at BailoutToCSR (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-bailout-to-csr.js:13:11)
+    at Suspense
+    at LoadableComponent (Server)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:196:9)
+    at ErrorBoundaryWithTranslations (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:319:11)
+    at ComponentErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:242:11)
+    at div
+    at MobileCriticalFixes (webpack-internal:///(app-pages-browser)/./src/components/MobileCriticalFixes.tsx:26:11)
+    at BailoutToCSR (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-bailout-to-csr.js:13:11)
+    at Suspense
+    at LoadableComponent (Server)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:196:9)
+    at ErrorBoundaryWithTranslations (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:319:11)
+    at ComponentErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:242:11)
+    at div
+    at MotionComponent (webpack-internal:///(app-pages-browser)/./node_modules/framer-motion/dist/es/motion/index.mjs:50:65)
+    at div
+    at MotionComponent (webpack-internal:///(app-pages-browser)/./node_modules/framer-motion/dist/es/motion/index.mjs:50:65)
+    at MobileExperienceOptimizer (webpack-internal:///(app-pages-browser)/./src/components/MobileExperienceOptimizer.tsx:23:11)
+    at BailoutToCSR (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-bailout-to-csr.js:13:11)
+    at Suspense
+    at LoadableComponent (Server)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:196:9)
+    at ErrorBoundaryWithTranslations (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:319:11)
+    at ComponentErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:242:11)
+    at WelcomeProvider (webpack-internal:///(app-pages-browser)/./src/context/WelcomeContext.tsx:35:11)
+    at NavigationProvider (webpack-internal:///(app-pages-browser)/./src/context/NavigationContext.tsx:193:11)
+    at WaitingListProvider (webpack-internal:///(app-pages-browser)/./src/context/WaitingListContext.tsx:14:11)
+    at PlatformIntegrationProvider (webpack-internal:///(app-pages-browser)/./src/context/PlatformIntegrationContext.tsx:26:11)
+    at NotificationProvider (webpack-internal:///(app-pages-browser)/./src/context/NotificationContext.tsx:267:11)
+    at SubscriptionProvider (webpack-internal:///(app-pages-browser)/./src/context/SubscriptionContext.tsx:28:11)
+    at NetworkingProvider (webpack-internal:///(app-pages-browser)/./src/context/NetworkingContext.tsx:49:11)
+    at CartProvider (webpack-internal:///(app-pages-browser)/./src/context/CartContext.tsx:16:11)
+    at FollowingProvider (webpack-internal:///(app-pages-browser)/./src/context/FollowingContext.tsx:18:11)
+    at FavoritesProvider (webpack-internal:///(app-pages-browser)/./src/context/FavoritesContext.tsx:14:11)
+    at LanguageProvider (webpack-internal:///(app-pages-browser)/./src/context/LanguageContext.tsx:17:11)
+    at HeritageStyleProvider (webpack-internal:///(app-pages-browser)/./src/components/HeritageStyleProvider.tsx:25:11)
+    at HeritageProvider (webpack-internal:///(app-pages-browser)/./src/context/HeritageContext.tsx:22:11)
+    at AuthPopupProvider (webpack-internal:///(app-pages-browser)/./src/components/AuthPopupProvider.tsx:16:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:196:9)
+    at ErrorBoundaryWithTranslations (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:319:11)
+    at body
+    at html
+    at RootLayout (Server)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)
+    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)
+    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)
+    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)
+    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)
+    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)
+    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+      - Console error: ErrorBoundary caught an error: Error: Element type is invalid. Received a promise that resolves to: [object Object]. Lazy element type must resolve to a class or function.
+    at mountLazyComponent (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:16808:9)
+    at beginWork$1 (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:18464:16)
+    at beginWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:26927:14)
+    at performUnitOfWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25748:12)
+    at workLoopSync (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25464:5)
+    at renderRootSync (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25419:7)
+    at recoverFromConcurrentError (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24597:20)
+    at performConcurrentWorkOnRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24542:26)
+    at workLoop (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:256:34)
+    at flushWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:225:14)
+    at MessagePort.performWorkUntilDeadline (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:534:21) {componentStack: 
+    at BailoutToCSR (webpack-internal:///(app-pag…ode_modules/next/dist/client/app-index.js:117:11)}
+      - Console error: Premium Mobile Navigation Error: Error: Element type is invalid. Received a promise that resolves to: [object Object]. Lazy element type must resolve to a class or function.
+    at mountLazyComponent (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:16808:9)
+    at beginWork$1 (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:18464:16)
+    at beginWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:26927:14)
+    at performUnitOfWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25748:12)
+    at workLoopSync (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25464:5)
+    at renderRootSync (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25419:7)
+    at recoverFromConcurrentError (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24597:20)
+    at performConcurrentWorkOnRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24542:26)
+    at workLoop (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:256:34)
+    at flushWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:225:14)
+    at MessagePort.performWorkUntilDeadline (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:534:21) {componentStack: 
+    at BailoutToCSR (webpack-internal:///(app-pag…ode_modules/next/dist/client/app-index.js:117:11)}
+      - HTTP 404: http://localhost:3001/_next/image/?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1494790108755-2616b612b1ac%3Fw%3D100%26h%3D100%26fit%3Dcrop%26crop%3Dface%26auto%3Dformat&w=64&q=75
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+   📱 Header: ✅ | Content: ✅
+
+📖 Testing: Business Directory (/business-directory)
+   ❌ FAILED - page.goto: Timeout 15000ms exceeded.
+Call log:
+[2m  - navigating to "http://localhost:3001/business-directory", waiting until "networkidle"[22m
+
+
+📖 Testing: Live Streaming (/streaming)
+   ⚠️  WARNINGS (5 issues) - Title: "LusoTown TV - Live Portuguese Streams from London"
+      - Page error: Element type is invalid. Received a promise that resolves to: [object Object]. Lazy element type must resolve to a class or function.
+      - Page error: Element type is invalid. Received a promise that resolves to: [object Object]. Lazy element type must resolve to a class or function.
+      - Console error: The above error occurred in one of your React components:
+
+    at BailoutToCSR (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-bailout-to-csr.js:13:11)
+    at Suspense
+    at LoadableComponent (Server)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:196:9)
+    at ErrorBoundaryWithTranslations (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:319:11)
+    at ComponentErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:242:11)
+    at div
+    at MobileCriticalFixes (webpack-internal:///(app-pages-browser)/./src/components/MobileCriticalFixes.tsx:26:11)
+    at BailoutToCSR (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-bailout-to-csr.js:13:11)
+    at Suspense
+    at LoadableComponent (Server)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:196:9)
+    at ErrorBoundaryWithTranslations (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:319:11)
+    at ComponentErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:242:11)
+    at div
+    at MotionComponent (webpack-internal:///(app-pages-browser)/./node_modules/framer-motion/dist/es/motion/index.mjs:50:65)
+    at div
+    at MotionComponent (webpack-internal:///(app-pages-browser)/./node_modules/framer-motion/dist/es/motion/index.mjs:50:65)
+    at MobileExperienceOptimizer (webpack-internal:///(app-pages-browser)/./src/components/MobileExperienceOptimizer.tsx:23:11)
+    at BailoutToCSR (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-bailout-to-csr.js:13:11)
+    at Suspense
+    at LoadableComponent (Server)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:196:9)
+    at ErrorBoundaryWithTranslations (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:319:11)
+    at ComponentErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:242:11)
+    at WelcomeProvider (webpack-internal:///(app-pages-browser)/./src/context/WelcomeContext.tsx:35:11)
+    at NavigationProvider (webpack-internal:///(app-pages-browser)/./src/context/NavigationContext.tsx:193:11)
+    at WaitingListProvider (webpack-internal:///(app-pages-browser)/./src/context/WaitingListContext.tsx:14:11)
+    at PlatformIntegrationProvider (webpack-internal:///(app-pages-browser)/./src/context/PlatformIntegrationContext.tsx:26:11)
+    at NotificationProvider (webpack-internal:///(app-pages-browser)/./src/context/NotificationContext.tsx:267:11)
+    at SubscriptionProvider (webpack-internal:///(app-pages-browser)/./src/context/SubscriptionContext.tsx:28:11)
+    at NetworkingProvider (webpack-internal:///(app-pages-browser)/./src/context/NetworkingContext.tsx:49:11)
+    at CartProvider (webpack-internal:///(app-pages-browser)/./src/context/CartContext.tsx:16:11)
+    at FollowingProvider (webpack-internal:///(app-pages-browser)/./src/context/FollowingContext.tsx:18:11)
+    at FavoritesProvider (webpack-internal:///(app-pages-browser)/./src/context/FavoritesContext.tsx:14:11)
+    at LanguageProvider (webpack-internal:///(app-pages-browser)/./src/context/LanguageContext.tsx:17:11)
+    at HeritageStyleProvider (webpack-internal:///(app-pages-browser)/./src/components/HeritageStyleProvider.tsx:25:11)
+    at HeritageProvider (webpack-internal:///(app-pages-browser)/./src/context/HeritageContext.tsx:22:11)
+    at AuthPopupProvider (webpack-internal:///(app-pages-browser)/./src/components/AuthPopupProvider.tsx:16:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:196:9)
+    at ErrorBoundaryWithTranslations (webpack-internal:///(app-pages-browser)/./src/components/ErrorBoundary.tsx:319:11)
+    at body
+    at html
+    at RootLayout (Server)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)
+    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)
+    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)
+    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)
+    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)
+    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)
+    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+      - Console error: ErrorBoundary caught an error: Error: Element type is invalid. Received a promise that resolves to: [object Object]. Lazy element type must resolve to a class or function.
+    at mountLazyComponent (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:16808:9)
+    at beginWork$1 (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:18464:16)
+    at beginWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:26927:14)
+    at performUnitOfWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25748:12)
+    at workLoopSync (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25464:5)
+    at renderRootSync (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25419:7)
+    at recoverFromConcurrentError (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24597:20)
+    at performConcurrentWorkOnRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24542:26)
+    at workLoop (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:256:34)
+    at flushWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:225:14)
+    at MessagePort.performWorkUntilDeadline (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:534:21) {componentStack: 
+    at BailoutToCSR (webpack-internal:///(app-pag…ode_modules/next/dist/client/app-index.js:117:11)}
+      - Console error: Premium Mobile Navigation Error: Error: Element type is invalid. Received a promise that resolves to: [object Object]. Lazy element type must resolve to a class or function.
+    at mountLazyComponent (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:16808:9)
+    at beginWork$1 (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:18464:16)
+    at beginWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:26927:14)
+    at performUnitOfWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25748:12)
+    at workLoopSync (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25464:5)
+    at renderRootSync (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25419:7)
+    at recoverFromConcurrentError (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24597:20)
+    at performConcurrentWorkOnRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24542:26)
+    at workLoop (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:256:34)
+    at flushWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:225:14)
+    at MessagePort.performWorkUntilDeadline (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:534:21) {componentStack: 
+    at BailoutToCSR (webpack-internal:///(app-pag…ode_modules/next/dist/client/app-index.js:117:11)}
+   📱 Header: ✅ | Content: ✅
+
+📖 Testing: About (/about)
+   ❌ FAILED - page.goto: Timeout 15000ms exceeded.
+Call log:
+[2m  - navigating to "http://localhost:3001/about", waiting until "networkidle"[22m
+
+
+📖 Testing: Contact (/contact)
+   ❌ FAILED - page.goto: Timeout 15000ms exceeded.
+Call log:
+[2m  - navigating to "http://localhost:3001/contact", waiting until "networkidle"[22m
+
+
+📖 Testing: Membership (/membership)
+   ❌ FAILED - page.goto: Timeout 15000ms exceeded.
+Call log:
+[2m  - navigating to "http://localhost:3001/membership", waiting until "networkidle"[22m
+
+
+📖 Testing: Community Membership (/membership/community)
+   ⚠️  WARNINGS (57 issues) - Title: "LusoTown - London | Portuguese Social & Business Network"
+      - HTTP 404: http://localhost:3001/membership/community/
+      - Console error: Failed to fetch RSC payload for http://localhost:3001/live/. Falling back to browser navigation. TypeError: network error
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/css/app/layout.css?v=1756109377552
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/main-app.js?v=1756109377552
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_next_dist_client_components_client-page_js-_app-pages-7d523d.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/app-pages-internals.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_next_dist_build_polyfills_process_js-_app-pages-brows-f2c914.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_link_js.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_config_routes_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/app/not-found.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_lucide-react_dist_esm_createLucideIcon_js-_app-pages--05417d.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_supabase_supabase-js_dist_module_index_js.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_heroicons_react_24_outline_esm_EyeIcon_js-_app-pages--e6a43b.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_heroicons_react_24_outline_esm_CalendarDaysIcon_js-_a-b5f9be.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_heroicons_react_24_outline_esm_BellIcon_js-_app-pages-19fe07.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_navigation_js-_app-pages-browser_node_m-9c455c.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_heroicons_react_24_outline_esm_ArrowPathIcon_js-_app--90f26e.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_lucide-react_dist_esm_icons_crown_js-_app-pages-brows-9a557c.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_components_Logo_tsx-_app-pages-browser_src_context_LanguageCon-55f82c.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_lib_profileImages_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_lib_supabase_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_lib_auth_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_components_LuxuryMobileInteraction_tsx-_app-pages-browser_src_-b58ba8.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_context_WaitingListContext_tsx-_app-pages-browser_src_lib_events_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_context_SubscriptionContext_tsx.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_context_CartContext_tsx-_app-pages-browser_src_context_Network-a1fda3.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_config_cdn_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_context_FollowingContext_tsx.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_config_brand_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+   📱 Header: ❌ | Content: ❌
+
+📖 Testing: Cultural Membership (/membership/cultural)
+   ⚠️  WARNINGS (56 issues) - Title: "LusoTown - London | Portuguese Social & Business Network"
+      - HTTP 404: http://localhost:3001/membership/cultural/
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/css/app/layout.css?v=1756109383256
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/main-app.js?v=1756109383256
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_next_dist_client_components_client-page_js-_app-pages-7d523d.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/app-pages-internals.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_next_dist_build_polyfills_process_js-_app-pages-brows-f2c914.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_link_js.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_config_routes_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/app/not-found.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_lucide-react_dist_esm_createLucideIcon_js-_app-pages--05417d.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_supabase_supabase-js_dist_module_index_js.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_heroicons_react_24_outline_esm_EyeIcon_js-_app-pages--e6a43b.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_heroicons_react_24_outline_esm_CalendarDaysIcon_js-_a-b5f9be.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_heroicons_react_24_outline_esm_BellIcon_js-_app-pages-19fe07.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_heroicons_react_24_outline_esm_ArrowPathIcon_js-_app--90f26e.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_lucide-react_dist_esm_icons_crown_js-_app-pages-brows-9a557c.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_components_Logo_tsx-_app-pages-browser_src_context_LanguageCon-55f82c.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_navigation_js-_app-pages-browser_node_m-9c455c.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_lib_profileImages_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_lib_supabase_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_context_WaitingListContext_tsx-_app-pages-browser_src_lib_events_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_lib_auth_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_components_LuxuryMobileInteraction_tsx-_app-pages-browser_src_-b58ba8.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_context_SubscriptionContext_tsx.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_context_CartContext_tsx-_app-pages-browser_src_context_Network-a1fda3.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_config_cdn_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_context_FollowingContext_tsx.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+      - HTTP 404: http://localhost:3001/_next/static/chunks/default-_app-pages-browser_src_config_brand_ts.js
+      - Console error: Failed to load resource: the server responded with a status of 404 (Not Found)
+   📱 Header: ❌ | Content: ❌
+
+📖 Testing: Business Membership (/membership/business)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/membership/business", waiting until "networkidle"[22m
+
+
+📖 Testing: Login (/login)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/login", waiting until "networkidle"[22m
+
+
+📖 Testing: Sign Up (/signup)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/signup", waiting until "networkidle"[22m
+
+
+📖 Testing: Profile (/profile)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/profile", waiting until "networkidle"[22m
+
+
+📖 Testing: Dashboard (/dashboard)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/dashboard", waiting until "networkidle"[22m
+
+
+📖 Testing: Academy (/academy)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/academy", waiting until "networkidle"[22m
+
+
+📖 Testing: Cultural Events Academy (/academy/cultural-events)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/academy/cultural-events", waiting until "networkidle"[22m
+
+
+📖 Testing: Business Networking Academy (/academy/business-networking)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/academy/business-networking", waiting until "networkidle"[22m
+
+
+📖 Testing: Business Networking (/business-networking)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/business-networking", waiting until "networkidle"[22m
+
+
+📖 Testing: Transport Services (/transport)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/transport", waiting until "networkidle"[22m
+
+
+📖 Testing: Forums (/forums)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/forums", waiting until "networkidle"[22m
+
+
+📖 Testing: Chat (/chat)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/chat", waiting until "networkidle"[22m
+
+
+📖 Testing: Member Directory (/directory)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/directory", waiting until "networkidle"[22m
+
+
+📖 Testing: Elite Showcase (/elite-showcase)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/elite-showcase", waiting until "networkidle"[22m
+
+
+📖 Testing: Privacy Policy (/privacy)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/privacy", waiting until "networkidle"[22m
+
+
+📖 Testing: Terms of Service (/terms)
+   ❌ FAILED - page.goto: Page crashed
+Call log:
+[2m  - navigating to "http://localhost:3001/terms", waiting until "networkidle"[22m
+
+
+📱 Testing mobile responsiveness...
+
+page.setViewportSize: Target crashed 
+    at testAllPages (/workspaces/LusoTown/web-app/simple-page-test.js:155:16) {
+  name: 'Error'
+}
