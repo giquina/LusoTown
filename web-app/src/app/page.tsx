@@ -138,9 +138,15 @@ export default function Home() {
                   </h1>
 
                   {/* Single Clear Value Proposition */}
-                  <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl mb-8">
-                    Discover events, businesses, and opportunities for Portuguese speakers across the United Kingdom.
+                  <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl mb-4">
+                    Discover events, businesses, and opportunities for verified Portuguese and Portuguese‑speaking members across the United Kingdom.
                   </p>
+
+                  {/* Verification note for clarity */}
+                  <div className="inline-flex items-center gap-2 text-sm text-gray-600 bg-white/70 border border-gray-200 rounded-full px-3 py-1 mb-4">
+                    <CheckIcon className="w-4 h-4 text-green-600" />
+                    <span>Every member is verified as Portuguese or Portuguese‑speaking</span>
+                  </div>
 
                   {/* PALOP Recognition - Simplified */}
                   <div className="bg-gradient-to-r from-green-50 to-yellow-50 rounded-xl p-4 border border-green-200 max-w-2xl">

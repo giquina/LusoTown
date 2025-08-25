@@ -99,8 +99,8 @@ export default function Footer() {
             <Logo size="medium" className="text-white" />
             <p className="text-gray-300 leading-relaxed text-sm">
               {language === 'pt' 
-                ? "Plataforma premium da comunidade lusófona no Reino Unido. Acesso exclusivo para membros selecionados."
-                : "UK's premium Lusophone community platform. Exclusive access for selected members."
+                ? "Plataforma premium para membros verificados: portugueses ou falantes de português no Reino Unido."
+                : "Premium community for verified Portuguese and Portuguese‑speaking members in the UK."
               }
             </p>
             
@@ -261,7 +261,7 @@ export default function Footer() {
               {/* Membership Status */}
               <div className="flex items-center gap-2 text-xs text-gray-400">
                 <CheckBadgeIcon className="h-4 w-4 text-green-400" />
-                <span>750+ Verified Members</span>
+                <span>750+ verified Portuguese/Portuguese‑speaking members</span>
               </div>
             </div>
 

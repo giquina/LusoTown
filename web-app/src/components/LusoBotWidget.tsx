@@ -277,7 +277,7 @@ export default function LusoBotWidget({
   return (
     <>
       {/* Floating Messages */}
-      <AnimatePresence>
+  <AnimatePresence>
         {floatingMessages.map(
           (message) =>
             message.visible &&
@@ -287,7 +287,7 @@ export default function LusoBotWidget({
                 initial={{ opacity: 0, y: 20, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 20, scale: 0.8 }}
-                className={`fixed ${getCurrentPositionClass()} z-40 ${
+                className={`fixed ${getCurrentPositionClass()} z-50 ${
                   isMobile ? "mb-16" : "mb-20"
                 } max-w-xs`}
               >
@@ -362,7 +362,7 @@ export default function LusoBotWidget({
       </AnimatePresence>
 
       {/* Main Chat Widget */}
-      <div className={`fixed ${getCurrentPositionClass()} z-40`}>
+  <div className={`fixed ${getCurrentPositionClass()} z-50`}>
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -373,7 +373,7 @@ export default function LusoBotWidget({
               className={`mb-4 ${
                 isMinimized
                   ? "w-80 h-16 md:w-80 md:h-16"
-                  : "w-[90vw] max-w-sm h-[60vh] max-h-[480px] md:w-96 md:h-[520px]"
+                  : "w-[90vw] max-w-sm h-[68vh] max-h-[560px] md:w-96 md:h-[560px]"
               } ${
                 currentTheme.chatBg
               } rounded-2xl shadow-2xl border border-gray-200 overflow-hidden`}

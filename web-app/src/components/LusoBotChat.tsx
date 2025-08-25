@@ -231,6 +231,8 @@ export default function LusoBotChat({ className = '', isEmbedded = false, onClos
   
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const [stickToBottom, setStickToBottom] = useState(true)
 
   // Initialize chat session
   useEffect(() => {
@@ -247,10 +249,21 @@ export default function LusoBotChat({ className = '', isEmbedded = false, onClos
     setMessages(newSession.getMessages())
   }, [language, hasActiveSubscription])
 
-  // Auto-scroll to bottom
+  // Auto-scroll to bottom when stickToBottom is true
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [messages])
+    if (stickToBottom) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [messages, stickToBottom])
+
+  // Track user scroll to toggle stickToBottom
+  const handleScroll = useCallback(() => {
+    const el = scrollContainerRef.current
+    if (!el) return
+    const threshold = 48 // px from bottom counts as at-bottom
+    const atBottom = el.scrollHeight - el.scrollTop - el.clientHeight <= threshold
+    setStickToBottom(atBottom)
+  }, [])
 
   // Update suggestions when messages change
   useEffect(() => {
@@ -439,8 +452,12 @@ export default function LusoBotChat({ className = '', isEmbedded = false, onClos
       </div>
 
       {/* Messages Area */}
-      <div className="flex-1 p-4 space-y-1 min-h-0"
-        style={{ overflowY: 'auto', WebkitOverflowScrolling: 'touch' }}>
+      <div
+        ref={scrollContainerRef}
+        onScroll={handleScroll}
+        className="flex-1 p-4 space-y-1 min-h-0"
+        style={{ overflowY: 'auto', WebkitOverflowScrolling: 'touch' }}
+      >
         <AnimatePresence>
           {messages.map((message, index) => (
             <MessageBubble
@@ -476,6 +493,21 @@ export default function LusoBotChat({ className = '', isEmbedded = false, onClos
 
         <div ref={messagesEndRef} />
       </div>
+
+      {/* Scroll-to-bottom affordance */}
+      {!stickToBottom && (
+        <div className="pointer-events-none absolute bottom-24 right-4 z-10">
+          <button
+            className="pointer-events-auto px-3 py-2 rounded-full bg-white shadow border border-gray-200 text-xs text-gray-700 hover:bg-gray-50"
+            onClick={() => {
+              setStickToBottom(true)
+              messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+            }}
+          >
+            Jump to latest
+          </button>
+        </div>
+      )}
 
       {/* Suggestions */}
       {suggestions.length > 0 && (

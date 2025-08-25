@@ -30,16 +30,18 @@ const communityOptions: CommunityOption[] = [
     id: "cultural_events",
     title: "Cultural Events",
     benefit: "Discover authentic experiences",
+    details:
+      "Festivals, food, music, and family-friendly meetups celebrating Portuguese-speaking culture across the UK.",
     icon: MusicalNoteIcon,
     gradient: "from-purple-500 to-pink-500",
     culturalSymbols: "🎵🎭🎪",
   },
   {
     id: "meet_people",
-    title: "Meet People",
+    title: "Find Your Match",
     benefit: "Find meaningful connections",
     details:
-      "Make friends who share your culture and values. Weekly meetups and group activities—simple and genuine.",
+      "Make friends or date within a respectful, verified community. Weekly meetups and small groups—simple and genuine.",
     icon: HeartIcon,
     gradient: "from-red-500 to-rose-500",
     culturalSymbols: "💕❤️🤝",
@@ -48,6 +50,8 @@ const communityOptions: CommunityOption[] = [
     id: "business_network",
     title: "Business Network",
     benefit: "Connect with entrepreneurs",
+    details:
+      "For founders, freelancers, and professionals. Get referrals, mentors, partners, and growth events in the Lusophone space.",
     icon: UserGroupIcon,
     gradient: "from-blue-500 to-indigo-500",
     culturalSymbols: "💼🤝💰",
@@ -56,6 +60,8 @@ const communityOptions: CommunityOption[] = [
     id: "student_life",
     title: "Student Life",
     benefit: "University community access",
+    details:
+      "Meet Portuguese-speaking students across UK campuses. Housing, societies, study help, internships, and discounts.",
     icon: AcademicCapIcon,
     gradient: "from-green-500 to-teal-500",
     culturalSymbols: "🎓📚🏫",
@@ -142,7 +148,7 @@ export default function StreamlinedCommunitySelector({
                   onClick={() => handleSelection(option.id)}
                   className={`
                     relative p-4 sm:p-6 bg-white rounded-2xl border-2 transition-all duration-300 
-                    min-h-[180px] sm:min-h-[200px]
+                    min-h-[260px] sm:min-h-[300px]
                     hover:shadow-xl hover:-translate-y-1 active:scale-95
                     ${
                       isSelected
@@ -191,7 +197,7 @@ export default function StreamlinedCommunitySelector({
 
                     {/* Optional details for richer context */}
                     {option.details && (
-                      <p className="mt-2 text-xs text-gray-500 leading-snug hidden md:block">
+                      <p className="mt-2 text-xs text-gray-500 leading-snug">
                         {option.details}
                       </p>
                     )}
@@ -225,12 +231,12 @@ export default function StreamlinedCommunitySelector({
 
           {/* Trust indicators */}
       <div className="text-center mt-6 text-sm text-gray-500">
-            <div className="flex justify-center items-center gap-4">
-              <span>Portuguese speakers</span>
+            <div className="flex justify-center items-center gap-4 flex-wrap">
+              <span>Verified Portuguese/Portuguese‑speaking members</span>
               <span>•</span>
-              <span>Free to Join</span>
+              <span>Free to join</span>
               <span>•</span>
-        <span>United Kingdom–Wide</span>
+              <span>United Kingdom–wide</span>
             </div>
           </div>
         </div>
