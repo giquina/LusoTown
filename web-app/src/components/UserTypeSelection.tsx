@@ -22,6 +22,9 @@ import { useLanguage } from '@/context/LanguageContext'
 import { ROUTES } from '@/config/routes'
 
 export default function UserTypeSelection() {
+  // Temporarily disabled - returning null to completely hide welcome screen
+  return null;
+  
   const [showModal, setShowModal] = useState(false)
   const [dismissed, setDismissed] = useState(false)
   const [selectedRole, setSelectedRole] = useState<'user' | 'curator' | null>(null)
