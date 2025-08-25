@@ -1491,9 +1491,8 @@ export default function BusinessDirectory() {
           </div>
         </div>
       </div>
-      {submissionFormModal}
-      
       <Footer />
+      {submissionFormModal}
     </div>
   )
 }
