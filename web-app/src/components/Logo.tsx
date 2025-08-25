@@ -74,9 +74,9 @@ export default function Logo({ size = 'medium', className = '', animated = false
         {/* Compact brand name with heritage flags */}
         <div className="flex flex-col">
           <div className="flex items-center space-x-1">
-            <h1 className={`text-lg font-black ${gradientText} leading-none tracking-tight`}>
+            <span className={`text-lg font-black ${gradientText} leading-none tracking-tight`}>
               {process.env.NEXT_PUBLIC_BRAND_NAME || 'LusoTown'}
-            </h1>
+            </span>
             <div className="flex items-center space-x-0.5 ml-1">
               <CulturalFlag type="heritage" className="text-xs" />
               <CulturalFlag type="local" className="text-xs" />
@@ -118,9 +118,9 @@ export default function Logo({ size = 'medium', className = '', animated = false
       
       {/* Brand Name */}
       <div className="flex flex-col">
-        <h1 className={`${textSizes[size]} font-black ${gradientText} leading-none tracking-tight`}>
+        <span className={`${textSizes[size]} font-black ${gradientText} leading-none tracking-tight`}>
           {process.env.NEXT_PUBLIC_BRAND_NAME || 'LusoTown'}
-        </h1>
+        </span>
         {size !== 'small' && (
           <span className={`text-xs font-bold text-gray-600 uppercase tracking-widest ${size === 'large' ? 'sm:text-sm' : ''} flex items-center gap-1`}>
             <CulturalFlag type="heritage" className="text-[8px]" />
