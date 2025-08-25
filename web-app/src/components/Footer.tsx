@@ -15,7 +15,7 @@ import {
   TrophyIcon,
   FireIcon,
   HandRaisedIcon,
-  CrownIcon,
+  StarIcon as CrownIcon,
   ShieldCheckIcon,
   BuildingOfficeIcon
 } from "@heroicons/react/24/outline";

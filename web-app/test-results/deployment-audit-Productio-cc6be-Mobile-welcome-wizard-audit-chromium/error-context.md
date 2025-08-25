@@ -1,0 +1,81 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - img [ref=e11]
+          - heading "Find Your Portuguese Community in the United Kingdom" [level=2] [ref=e13]
+          - paragraph [ref=e14]: Connect with 2,750+ verified Portuguese speakers through events, networking, and cultural experiences
+        - button "Close" [ref=e15] [cursor=pointer]:
+          - img [ref=e16] [cursor=pointer]
+      - generic [ref=e19]:
+        - img [ref=e21]
+        - heading "Authentic Portuguese Connections" [level=3] [ref=e23]
+        - paragraph [ref=e24]: Meet Portuguese speakers who share your heritage, values, and experiences. From cultural events to professional networking - all curated by our community.
+        - generic [ref=e25]:
+          - generic [ref=e27]: ✓ Cultural compatibility matching
+          - generic [ref=e29]: ✓ Authentic Portuguese events
+          - generic [ref=e31]: ✓ Professional networking opportunities
+          - generic [ref=e33]: ✓ University student community
+        - generic [ref=e35]: 2,750+ Portuguese speakers • 150+ monthly events • 8 university partnerships
+        - button "Join Free" [ref=e36] [cursor=pointer]
+        - button "Learn More" [ref=e37] [cursor=pointer]
+        - button "Apply as Curator" [ref=e39] [cursor=pointer]:
+          - img [ref=e40] [cursor=pointer]
+          - text: Apply as Curator
+      - button "Skip for now" [ref=e43] [cursor=pointer]:
+        - img [ref=e44] [cursor=pointer]
+        - text: Skip for now
+    - banner [ref=e46]:
+      - navigation "Top" [ref=e47]:
+        - generic [ref=e48]:
+          - link "🏛️ LusoTown Portuguese flag United Kingdom flag London" [ref=e50] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e53] [cursor=pointer]:
+              - generic [ref=e56] [cursor=pointer]: 🏛️
+              - generic [ref=e57] [cursor=pointer]:
+                - generic [ref=e58] [cursor=pointer]:
+                  - heading "LusoTown" [level=1] [ref=e59] [cursor=pointer]
+                  - generic [ref=e60] [cursor=pointer]:
+                    - img "Portuguese flag" [ref=e61] [cursor=pointer]: 🇵🇹
+                    - img "United Kingdom flag" [ref=e62] [cursor=pointer]: 🇬🇧
+                - generic [ref=e63] [cursor=pointer]: London
+          - generic [ref=e65]:
+            - button "🇬🇧" [ref=e67] [cursor=pointer]:
+              - generic [ref=e68] [cursor=pointer]: 🇬🇧
+            - generic [ref=e70]:
+              - generic [ref=e71]: Open main menu
+              - img [ref=e72]
+    - generic [ref=e77]:
+      - img [ref=e78]
+      - heading "Something went wrong" [level=2] [ref=e80]
+      - paragraph [ref=e81]: An unexpected error occurred. Please try again or contact support if the problem persists.
+      - generic [ref=e82]:
+        - button "Try again" [ref=e83] [cursor=pointer]:
+          - img [ref=e84] [cursor=pointer]
+          - text: Try again
+        - button "Go back home" [ref=e86] [cursor=pointer]:
+          - img [ref=e87] [cursor=pointer]
+          - text: Go back home
+        - link "Contact technical support" [ref=e89] [cursor=pointer]:
+          - /url: mailto:support@lusotown.com?subject=Error Report&body=An error occurred on the LusoTown platform
+    - paragraph [ref=e91]:
+      - text: Error loading component Premium Mobile Navigation.
+      - button "Reload page" [ref=e92] [cursor=pointer]
+    - paragraph [ref=e94]:
+      - text: Error loading component Welcome Banner.
+      - button "Reload page" [ref=e95] [cursor=pointer]
+    - paragraph [ref=e97]:
+      - text: Error loading component Welcome Popup.
+      - button "Reload page" [ref=e98] [cursor=pointer]
+    - button "Open LusoBot - Portuguese Cultural Assistant" [ref=e100] [cursor=pointer]:
+      - generic [ref=e102] [cursor=pointer]:
+        - img [ref=e103] [cursor=pointer]
+        - generic [ref=e105] [cursor=pointer]: 🇵🇹
+        - generic [ref=e107] [cursor=pointer]: "1"
+      - generic: Chat with LusoBot
+  - alert [ref=e108]
+```

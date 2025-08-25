@@ -19,6 +19,10 @@ const TestimonialsNew = dynamic(() => import('@/components/TestimonialsNew'), {
   loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
+const LusophoneTestimonials = dynamic(() => import('@/components/LusophoneTestimonials'), {
+  loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
 const EventsShowcase = dynamic(() => import('@/components/EventsShowcase'), {
   loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
@@ -1087,6 +1091,7 @@ export default function Home() {
 
           <EventsShowcase />
           <SuccessStories />
+          <LusophoneTestimonials />
           
           {/* PALOP Events Showcase */}
           <section className="py-20 bg-gradient-to-br from-green-50 via-yellow-50 to-orange-50">
