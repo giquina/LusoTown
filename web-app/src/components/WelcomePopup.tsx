@@ -24,7 +24,7 @@ const PORTUGUESE_SPEAKING_COUNTRIES = [
 export default function WelcomePopup() {
   const [isVisible, setIsVisible] = useState(false)
   const [step, setStep] = useState(1)
-  const [selectedCountry, setSelectedCountry] = useState('')
+  const [selectedCountries, setSelectedCountries] = useState<string[]>([])
   const router = useRouter()
   const { t, language } = useLanguage()
 
@@ -47,14 +47,18 @@ export default function WelcomePopup() {
   }
 
   const handleNext = () => {
-    if (step === 1 && selectedCountry) {
+  if (step === 1 && selectedCountries.length > 0) {
       setStep(2)
     }
   }
 
   const handleAction = (action: string) => {
     localStorage.setItem('lusotown-welcome-seen', 'true')
-    localStorage.setItem('lusotown-heritage', selectedCountry)
+  // Backward compatibility: keep a primary selection for any legacy readers
+  const primary = selectedCountries[0] || ''
+  localStorage.setItem('lusotown-heritage', primary)
+  // New: store the full list for multi-select aware features
+  localStorage.setItem('lusotown-heritage-list', JSON.stringify(selectedCountries))
     setIsVisible(false)
     
     switch (action) {
@@ -104,13 +108,21 @@ export default function WelcomePopup() {
               </div>
 
               <div className="space-y-3 mb-6">
-                <p className="text-sm font-medium text-gray-700 mb-3">Where are you from?</p>
+                <p className="text-sm font-medium text-gray-700 mb-3">
+                  Where are you from? <span className="text-gray-500 font-normal">(Select all that apply)</span>
+                </p>
                 {PORTUGUESE_SPEAKING_COUNTRIES.map((country) => (
                   <button
                     key={country.code}
-                    onClick={() => setSelectedCountry(country.code)}
+                    onClick={() => {
+                      setSelectedCountries((prev) =>
+                        prev.includes(country.code)
+                          ? prev.filter((c) => c !== country.code)
+                          : [...prev, country.code]
+                      )
+                    }}
                     className={`w-full p-3 rounded-lg border-2 transition-all text-left ${
-                      selectedCountry === country.code
+                      selectedCountries.includes(country.code)
                         ? 'border-primary-500 bg-primary-50'
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
@@ -130,10 +142,10 @@ export default function WelcomePopup() {
                 </button>
                 <button
                   onClick={handleNext}
-                  disabled={!selectedCountry}
+                  disabled={selectedCountries.length === 0}
                   className="flex-1 px-4 py-3 bg-gradient-to-r from-green-600 to-red-600 text-white rounded-lg hover:shadow-lg disabled:opacity-50 text-sm font-bold"
                 >
-                  Continue
+                  Continue{selectedCountries.length > 0 ? ` (${selectedCountries.length})` : ''}
                 </button>
               </div>
             </div>
