@@ -88,7 +88,7 @@ export default function Footer() {
   const { deviceInfo, triggerAppDownload } = useMobileRedirect();
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-900 to-primary-900 text-white relative overflow-hidden">
+    <footer role="contentinfo" className="bg-gradient-to-br from-gray-900 via-gray-900 to-primary-900 text-white relative overflow-hidden">
       {/* Premium background effects - compressed */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-400/30 to-transparent"></div>
@@ -172,7 +172,7 @@ export default function Footer() {
 
         {/* Membership CTA - Single Line Horizontal */}
         <div className="mt-8 pt-6 border-t border-gray-800">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div className="flex-1">
               <h3 className="text-base font-bold text-white mb-1">
                 {language === 'pt' 
@@ -187,10 +187,10 @@ export default function Footer() {
             </div>
             
             {/* Single-line Membership Application */}
-            <div className="flex items-center gap-3">
+      <div className="flex items-stretch sm:items-center gap-2 sm:gap-3 flex-wrap w-full sm:w-auto justify-stretch sm:justify-end">
               <a
                 href={ROUTES.apply}
-                className="inline-flex items-center bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-sm whitespace-nowrap"
+        className="inline-flex items-center bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-sm whitespace-nowrap w-full sm:w-auto justify-center"
               >
                 <CrownIcon className="w-4 h-4 mr-2" />
                 {language === 'pt' ? "Candidatar-se" : "Apply for Membership"}
@@ -199,7 +199,7 @@ export default function Footer() {
               
               <a
                 href={ROUTES.events}
-                className="inline-flex items-center border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white font-medium px-4 py-3 rounded-xl transition-all duration-300 text-sm whitespace-nowrap"
+        className="inline-flex items-center border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white font-medium px-4 py-3 rounded-xl transition-all duration-300 text-sm whitespace-nowrap w-full sm:w-auto justify-center"
               >
                 {language === 'pt' ? "Ver Eventos" : "View Events"}
               </a>
@@ -266,7 +266,7 @@ export default function Footer() {
         )}
 
         {/* Membership Tiers Preview - Compressed */}
-        <div className="mt-6 pt-4 border-t border-gray-800">
+        <div className="mt-6 pt-4 border-t border-gray-800 hidden md:block">
           <div className="grid grid-cols-3 gap-4">
             {/* Community Tier */}
             <div className="bg-blue-900/20 border border-blue-700/30 rounded-lg p-3 text-center">
@@ -298,8 +298,8 @@ export default function Footer() {
       {/* Bottom Footer - Compressed */}
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
-            <div className="flex items-center gap-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 gap-y-3 text-center sm:text-left">
+            <div className="flex items-center gap-3 sm:gap-6 flex-wrap justify-center sm:justify-start">
               {/* Social Media */}
               <div className="flex items-center gap-3">
                 {getSocialLinks().map((social) => {
@@ -320,13 +320,13 @@ export default function Footer() {
               </div>
 
               {/* Membership Status */}
-              <div className="flex items-center gap-2 text-xs text-gray-400">
+              <div className="flex items-center gap-2 text-xs text-gray-400 mt-2 sm:mt-0">
                 <CheckBadgeIcon className="h-4 w-4 text-green-400" />
                 <span>750+ verified Portuguese/Lusophone‑speaking members</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
               <p className="text-gray-400 text-xs">
                 © {new Date().getFullYear()} LusoTown UK • Exclusive Lusophone Community
               </p>

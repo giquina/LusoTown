@@ -678,6 +678,23 @@ export default function BusinessDirectory() {
     filters.openNow ? 'openNow' : null
   ].filter(Boolean).length
 
+  const submissionFormModal = showSubmissionForm ? (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+      <div className="w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white rounded-lg p-6">
+        <div className="text-center">
+          <h2 className="text-xl font-semibold mb-4">Add Your Business</h2>
+          <p className="text-gray-600 mb-6">Business submission form coming soon!</p>
+          <button
+            onClick={() => setShowSubmissionForm(false)}
+            className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  ) : null;
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 pt-20">
@@ -1474,24 +1491,7 @@ export default function BusinessDirectory() {
           </div>
         </div>
       </div>
-      
-      {/* Business Submission Form Modal - TODO: Implement component */}
-      {showSubmissionForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white rounded-lg p-6">
-            <div className="text-center">
-              <h2 className="text-xl font-semibold mb-4">Add Your Business</h2>
-              <p className="text-gray-600 mb-6">Business submission form coming soon!</p>
-              <button
-                onClick={() => setShowSubmissionForm(false)}
-                className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {submissionFormModal}
       
       <Footer />
     </div>

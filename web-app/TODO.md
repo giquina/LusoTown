@@ -1,3 +1,12 @@
+---
+Deployment note (2025-08-25):
+
+- Deployed via Vercel CLI (Preview)
+  - Branch: deploy/lusophone-hero-copy
+  - Preview URL: https://web-e3pouoxpq-giquinas-projects.vercel.app
+  - Inspect URL: https://vercel.com/giquinas-projects/web-app/GaQGBQVtjkph6dg2hKVTMKVS5Vwy
+  - Change: Homepage hero subtitle updated to “Lusophone-speaking”
+
 # LusoTown Platform Development TODO
 
 ## ✅ **MOBILE APP TRANSITION STRATEGY (COMPLETED)**
@@ -271,6 +280,7 @@
 *Based on comprehensive improvements to cultural inclusivity and user experience*
 
 #### **🎆 COMPLETED ENHANCEMENTS**
+- [✅] Homepage hero copy updated to: "Discover events, businesses, and opportunities for verified Portuguese and Lusophone-speaking members across the United Kingdom." (branch: deploy/lusophone-hero-copy)
 - [✅] **LUSOPHONE CULTURAL CELEBRATIONS SYSTEM** 🎉
   - [✅] Comprehensive celebration of ALL Portuguese-speaking cultures (Portugal, Brazil, Angola, Cape Verde, Mozambique, etc.)
   - [✅] Cultural wisdom rotation system with business philosophy from across Lusophone world
