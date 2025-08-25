@@ -187,7 +187,7 @@ export function EventShowcase({ selectedAudience = '', className = '' }: EventSh
         pt: 'Sessões de Alma Morna Cabo-verdiana'
       },
       description: {
-        en: 'Heartfelt acoustic sessions featuring Cape Verde's most emotional music. Intimate venue, traditional instruments, soul-stirring performances.',
+        en: 'Heartfelt acoustic sessions featuring Cape Verde\'s most emotional music. Intimate venue, traditional instruments, soul-stirring performances.',
         pt: 'Sessões acústicas emocionantes com a música mais emocional de Cabo Verde. Local íntimo, instrumentos tradicionais, performances comoventes.'
       },
       type: 'cultural',

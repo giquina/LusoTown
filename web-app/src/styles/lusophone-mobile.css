@@ -1,0 +1,277 @@
+/* Mobile-First Lusophone Experience Optimizations */
+
+/* Touch-friendly interactions for Portuguese-speaking community */
+.lusophone-touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Enhanced touch feedback for heritage selections */
+.heritage-selection-card {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.heritage-selection-card:active {
+  transform: scale(0.95);
+}
+
+.heritage-selection-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth flag animations with Portuguese cultural context */
+.flag-flow-animation {
+  animation: lusophone-flow 2s ease-in-out infinite;
+}
+
+@keyframes lusophone-flow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(2deg); }
+}
+
+/* Mobile swipe indicators for testimonials carousel */
+.swipe-indicator {
+  position: relative;
+  overflow: hidden;
+}
+
+.swipe-indicator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid rgba(59, 130, 246, 0.6);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.swipe-indicator:hover::before {
+  opacity: 1;
+}
+
+/* Portuguese heritage color transitions */
+.heritage-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Mobile-optimized text sizes for Portuguese translations */
+@media (max-width: 375px) {
+  .responsive-text-sm { font-size: 0.75rem; line-height: 1rem; }
+  .responsive-text-base { font-size: 0.875rem; line-height: 1.25rem; }
+  .responsive-text-lg { font-size: 1rem; line-height: 1.5rem; }
+  .responsive-text-xl { font-size: 1.125rem; line-height: 1.75rem; }
+  .responsive-text-2xl { font-size: 1.25rem; line-height: 1.75rem; }
+  .responsive-text-3xl { font-size: 1.5rem; line-height: 2rem; }
+}
+
+/* Portuguese text overflow handling */
+.portuguese-text-container {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* Smooth scrolling for heritage selection */
+.heritage-scroll-container {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.heritage-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile-first modal animations for welcome wizard */
+.mobile-modal-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4);
+  animation: fade-in 0.3s ease-out;
+}
+
+.mobile-modal-content {
+  animation: slide-up-mobile 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up-mobile {
+  from { 
+    opacity: 0;
+    transform: translateY(100px) scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Accessibility improvements for Portuguese-speaking community */
+.focus-ring-lusophone:focus {
+  outline: 2px solid var(--heritage-primary, #1e40af);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(var(--heritage-primary-rgb, 30, 64, 175), 0.2);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .lusophone-card {
+    border: 2px solid currentColor;
+  }
+  
+  .heritage-badge {
+    outline: 1px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .heritage-selection-card,
+  .flag-flow-animation,
+  .mobile-modal-content,
+  .heritage-transition {
+    animation: none;
+    transition: none;
+  }
+  
+  .heritage-selection-card:hover {
+    transform: none;
+  }
+}
+
+/* Dark mode optimizations for Portuguese cultural elements */
+@media (prefers-color-scheme: dark) {
+  .lusophone-glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .heritage-card-dark {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Performance optimizations for mobile devices */
+.lusophone-performance-optimized {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Touch zones for Portuguese flag selection */
+.flag-touch-zone {
+  padding: 8px;
+  margin: 4px;
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.flag-touch-zone:active {
+  background-color: rgba(var(--heritage-primary-rgb, 30, 64, 175), 0.1);
+}
+
+/* Mobile testimonials carousel optimization */
+.testimonials-mobile-optimized {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.testimonials-mobile-optimized::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-card-mobile {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  flex: none;
+}
+
+/* Portuguese community stats counter animations */
+.community-stats-counter {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+/* Mobile-first business benefits showcase */
+.business-benefits-mobile {
+  touch-action: pan-x;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Ensure proper stacking context for mobile modals */
+.mobile-modal-stack {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Portuguese heritage color indicators */
+.heritage-color-indicator {
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--heritage-primary, #1e40af),
+    var(--heritage-secondary, #059669)
+  );
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.6;
+}
+
+/* Mobile navigation tabs optimization */
+.mobile-nav-tabs {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 40;
+}
+
+/* Ensure proper touch targets for all interactive elements */
+button, a, [role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Portuguese cultural element animations */
+.cultural-element-animation {
+  animation: cultural-pulse 3s ease-in-out infinite;
+}
+
+@keyframes cultural-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}

@@ -63,6 +63,10 @@ export const ROUTES = {
   pricing: '/pricing',
   premiumMembership: '/premium-membership',
   membershipUpgrade: '/membership/upgrade',
+  culturalMembership: '/cultural-membership',
+  socialMembership: '/social-membership',
+  communityMembership: '/community-membership',
+  businessMembership: '/business-membership',
   
   // Educational & Partnerships
   students: '/students',

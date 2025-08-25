@@ -7,78 +7,23 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Start Development**: `cd web-app && npm run dev` (http://localhost:3000)  
 **Streaming Server**: `cd streaming && npm start` (http://localhost:8080)  
 **Demo Access**: demo@lusotown.com / LusoTown2025!  
-**Must Pass Before Commit**: `npm run lint && npx tsc --noEmit && npm run build && npm run audit:hardcoding`  
-**Primary Rule**: ZERO hardcoding - import from `/src/config/` files  
+**Must Pass Before Commit**: `cd web-app && npm run lint && npx tsc --noEmit && npm run build && npm run audit:hardcoding`  
+**Core Rule**: ZERO hardcoding - import from `/src/config/` files  
 **Cultural Rule**: Use "Portuguese-speaking community" (not "Portuguese community")  
-**Testing Rule**: Mobile-first responsive design (test at 375px, 768px, 1024px)  
+**Mobile-First**: Test at 375px, 768px, 1024px breakpoints
 
-## 🤖 Primary AI Instructions
+## 🤖 AI Development Guidance
 
-**IMPORTANT**: For comprehensive AI development guidance, specialized agents, and detailed implementation rules, reference `/AGENTS.md` as the primary source of truth. This file works across all AI tools and IDEs.
+**Primary Source**: `/AGENTS.md` contains comprehensive guidance with 6 specialized agents, UI/UX rules, luxury standards, and cross-IDE compatibility instructions for all AI development tools.
 
-The AGENTS.md file contains:
-- 6 specialized advisory agents for expert guidance
-- Complete UI/UX rules and implementation standards  
-- Luxury enhancement priorities and cultural requirements
-- Cross-IDE compatibility instructions
-- Comprehensive testing frameworks and quality standards
+## 🤖 Specialized AI Agents
 
-## 🎯 Proactive AI Advisory System ⚡
-
-LusoTown employs **intelligent advisory agents** that automatically activate based on context, errors, and development needs. These agents act as **proactive consultants** that provide expert guidance without requiring manual activation.
-
-### 🤖 Automatic Advisory Activation
-
-**CORE PRINCIPLE**: Agents are **always active** and automatically provide expert guidance based on what you're doing:
-
-#### 🛠️ Development Issues → **Instant Troubleshooting**
-- Build errors, dependency conflicts, port conflicts
-- **Auto-Response**: Step-by-step diagnosis and solution
-- **Prevention Mode**: Suggests preventive measures
-
-#### 🌍 Community Content → **Inclusivity Validation**  
-- Portuguese community references, event planning
-- **Auto-Response**: Validates community guidelines, suggests corrections
-- **Cultural Check**: Ensures authentic Portuguese representation
-
-#### 📊 Performance Issues → **Optimization Coaching**
-- Mobile experience problems, loading speed issues
-- **Auto-Response**: Performance analysis and optimization recommendations
-- **Mobile-First**: Prioritizes Portuguese-speaking community mobile usage
-
-#### 🚀 Strategic Decisions → **Executive Consultation**
-- Feature prioritization, business strategy questions
-- **Auto-Response**: Executive-level guidance with business context
-- **Growth Focus**: Portuguese-speaking community expansion strategies
-
-#### 🔒 Security Concerns → **Guardian Protection**
-- Privacy questions, GDPR compliance, authentication
-- **Auto-Response**: Security validation and compliance guidance
-- **Data Protection**: UK/EU user protection standards
-
-#### 🎯 Quality Assurance → **Testing Mentorship**
-- Bug reports, testing discussions, code reviews
-- **Auto-Response**: Testing strategies and quality improvement suggestions
-- **Bilingual Testing**: EN/PT functionality validation
-
-### ⚡ Seamless Experience Examples
-
-**Traditional (Manual)**: "Should I use X framework? Let me call the strategic advisor..."  
-**LusoTown (Automatic)**: Discussing frameworks → **Strategic advisor instantly activated** → Provides framework analysis with Portuguese-speaking community context
-
-**Traditional (Manual)**: "Getting build errors, need to troubleshoot..."  
-**LusoTown (Automatic)**: Build error detected → **Development advisor instantly activated** → Provides diagnosis and fix automatically
-
-**Traditional (Manual)**: "Let me check if this content is inclusive..."  
-**LusoTown (Automatic)**: Community content detected → **Inclusivity advisor instantly activated** → Validates and suggests improvements automatically
-
-### 🎯 Agent Intelligence Levels
-
-- **🚨 High Priority**: Development errors, security issues → **Immediate activation**
-- **📋 Medium Priority**: Community content, performance → **Contextual activation** 
-- **💡 Low Priority**: Quality, analytics → **Proactive suggestions**
-
-**Result**: Expert guidance feels natural and integrated into your workflow, not like calling separate tools.
+Use the Task tool to access specialized agents for:
+- **Development Troubleshooting**: Build errors, dependency conflicts, port issues
+- **Cultural Content Validation**: Portuguese community guidelines and authentic representation  
+- **Performance Optimization**: Mobile experience and loading speed improvements
+- **Quality Assurance**: Testing strategies and code review guidance
+- **Security & Privacy**: GDPR compliance and authentication best practices
 
 ## 🌍 Community Inclusivity Guidelines
 
@@ -94,35 +39,6 @@ LusoTown employs **intelligent advisory agents** that automatically activate bas
 
 **Latest Enhancement**: See `/web-app/PLATFORM_ENHANCEMENTS_SUMMARY.md` for detailed overview of recent cultural inclusivity improvements, Lusophone cultural celebrations system, and enhanced business directory features.
 
-## 🛠️ Development Troubleshooting
-
-**Common Issues and Solutions**:
-
-### TailwindCSS Module Not Found
-```bash
-# Error: Cannot find module 'tailwindcss'
-cd /workspaces/LusoTown
-npm install tailwindcss autoprefixer postcss --save-dev
-# Restart development server
-```
-
-### npm ENOTEMPTY Errors
-```bash
-# Error: ENOTEMPTY directory rename conflicts
-npm cache clean --force
-rm -rf node_modules package-lock.json
-npm install
-```
-
-### Port Conflicts
-```bash
-# If port 3000 is in use
-lsof -i :3000  # Find process using port
-kill -9 <PID>  # Kill the process
-# Or use different port: npm run dev -- -p 3002
-```
-
-**For complex issues**: Development troubleshooting advisor automatically activates to provide step-by-step guidance.
 
 ## Current Active TODO Tasks
 
@@ -138,81 +54,69 @@ LusoTown is a production-ready Portuguese-speaking community platform serving th
 
 ## System Requirements
 
-**Node.js**: v22.x (specified in engines - streaming server requires this version)
-**npm**: v9.x (specified in engines)
-**Package Manager**: npm@9.9.3 (workspace support required for monorepo)
+**Node.js**: v22.x (web-app engines) / v18+ (root) - streaming server requires v22
+**npm**: v9.x (web-app engines) / v8+ (root)  
+**Package Manager**: npm (workspace support required for monorepo)
 
 ## Development Commands
 
-### Essential Commands (Use These Daily)
+### Essential Daily Commands
 ```bash
 cd web-app
 
-# Primary development
-npm run dev                    # Start development server (localhost:3000)
-npm run build                  # Production build (REQUIRED before commit)
-npm run lint                   # ESLint validation (REQUIRED before commit)
-npx tsc --noEmit               # TypeScript check (REQUIRED before commit)
-
-# Critical quality checks
-npm run audit:hardcoding       # Check for hardcoded values (CRITICAL - must pass)
-npm run test                   # Run Jest tests
-npm run test:all               # Run comprehensive test suite
+# Core Development (Use These Most)
+npm run dev                    # Start development server
+npm run build                  # Production build
+npm run lint                   # ESLint validation
+npx tsc --noEmit              # TypeScript check
+npm run audit:hardcoding      # Critical hardcoding check
+npm run test                  # Jest tests
+npm run test:all              # Full test suite
 ```
 
-### Complete Command Reference
+### Testing Commands
 ```bash
-cd web-app
+# Unit & Integration Testing
+npm run test                  # Jest unit tests
+npm run test:watch            # Watch mode
+npm run test:coverage         # Coverage report
+npm run test:unit             # Unit tests only
+npm run test:integration      # Integration tests
+npm run test:performance      # Performance tests
 
-# Development
-npm run dev                    # Start development server (localhost:3000)
-npm run build                  # Production build
-npm run start                  # Start production server
-npm run lint                   # ESLint validation
-npm run export                 # Static export
-npm run auto-fix               # Auto-fix ESLint issues
-npm run deploy                 # Build and deploy to Vercel
-npm run deploy:auto            # Auto-fix, build, and deploy
+# End-to-End Testing (Playwright)
+npm run test:e2e              # E2E tests
+npm run test:e2e:headed       # Visual E2E testing
+npm run test:e2e:debug        # Debug E2E tests
 
-# Testing Framework
-npm run test                   # Run Jest tests
-npm run test:watch             # Jest in watch mode
-npm run test:coverage          # Generate coverage report
-npm run test:unit              # Unit tests only
-npm run test:integration       # Integration tests only
-npm run test:performance       # Performance tests
-npm run test:e2e               # Playwright end-to-end tests
-npm run test:e2e:headed        # Visual E2E testing
-npm run test:e2e:debug         # Debug E2E tests
-npm run test:mobile            # Mobile-specific tests
-npm run test:mobile-ux         # Mobile UX validation tests
-npm run test:mobile-validation # Mobile UX validation
-npm run test:portuguese        # Portuguese language tests
-npm run test:all               # Run all test suites
-npm run test:security          # Security-specific tests
-npm run test:accessibility     # Accessibility tests
-npm run test:responsive        # Responsive design tests
-npm run test:touch-targets     # Touch interaction tests
+# Specialized Testing
+npm run test:mobile           # Mobile-specific tests
+npm run test:mobile-ux        # Mobile UX validation
+npm run test:portuguese       # Portuguese language tests
+npm run test:security         # Security tests
+npm run test:accessibility    # Accessibility tests
+npm run test:responsive       # Responsive design tests
+```
 
-# Quality & Security
-npm run audit:hardcoding       # Check for hardcoded values (CRITICAL)
-npm run audit:security         # Security audit
-npm run audit:monthly          # Monthly audit (hardcoding + lint)
+### Quality & Deployment
+```bash
+# Quality Assurance
+npm run audit:hardcoding      # Critical hardcoding check
+npm run audit:security        # Security audit
+npm run audit:monthly         # Monthly combined audit
+npm run auto-fix              # Auto-fix ESLint issues
 
-# AI Systems
-npm run ai:test                # Test AI systems integration
-npm run ai:optimize            # Optimize AI performance
+# Deployment
+npm run deploy                # Build and deploy to Vercel
+npm run deploy:auto           # Auto-fix, build, and deploy
+npm run start                 # Start production server
+npm run export                # Static export
 
-# Database Migrations
-npm run db:migrate             # Apply database migrations
-npm run db:migrate:streaming   # Apply streaming-specific migrations
-npm run db:migrate:streaming:complete # Apply complete streaming migration
-
-# Documentation Automation
-npm run docs:update            # Update documentation
-npm run docs:validate          # Validate documentation
-npm run docs:full              # Full documentation workflow
-npm run docs:health-check      # Documentation system health
+# Database & Documentation
+npm run db:migrate            # Apply database migrations
+npm run db:migrate:streaming  # Apply streaming migrations
+npm run docs:update           # Update documentation
+npm run docs:validate         # Validate documentation
 ```
 
 ### Streaming Server
@@ -243,14 +147,15 @@ npm run web                    # Web version
 ### Root Level (Monorepo)
 ```bash
 npm run dev                    # Start web app development
-npm run build                  # Build web app
+npm run build                  # Build web app  
 npm run lint                   # Lint web app
+npm run deploy                 # Deploy to Vercel
 ```
 
 ## Architecture Overview
 
 ### Monorepo Structure
-- **web-app/**: Next.js 14 web application (primary) - Production ready with 497+ components and 4 AI systems
+- **web-app/**: Next.js 14 web application (primary) - Production ready with 522+ components and 4 AI systems
 - **streaming/**: Node.js/Express streaming server with SRS integration - RTMP/HLS delivery
 - **mobile-app/**: React Native/Expo mobile application - Portuguese-speaking community focused
 - **packages/**: Shared packages (`@lusotown/design-tokens`, `@lusotown/ui`)
@@ -258,169 +163,157 @@ npm run lint                   # Lint web app
 - **docs/**: Comprehensive documentation archive
 - **scripts/**: Automation and deployment scripts
 
-### Key Architectural Patterns
+**Key Architecture Pattern**: The monorepo uses npm workspaces but each app manages its own dependencies. Always `cd` into the specific directory (`web-app/`, `streaming/`, `mobile-app/`) before running commands.
 
-**1. Next.js 14 App Router Architecture**
-- File-based routing in `/src/app/` directory
-- 120+ pages with nested routes and dynamic segments
-- Server Components by default with selective Client Components
-- API routes in `/src/app/api/` with comprehensive endpoints
-- Layout components for shared UI (academy, events, premium sections)
-- Loading, error, and not-found pages for enhanced UX
+### Core Architectural Principles
 
-**2. Configuration-Driven Development**
-All dynamic data is centralized in `/web-app/src/config/`:
-- `pricing.ts` - All pricing, subscriptions, discounts
-- `universities.ts` - University partnerships (8 institutions, 2,150+ students)
-- `cultural-centers.ts` - Portuguese cultural institutions  
-- `portuguese-institutions.ts` - Government and official partnerships
-- `brand.ts` - Portuguese brand colors and styling
-- `routes.ts` - Centralized URL routing
-- `contact.ts` - Contact information and social links
+**1. Configuration-Driven Development (Zero Hardcoding)**
+All dynamic data centralized in `/web-app/src/config/` (33+ configuration files):
+- **Core Config**: `pricing.ts`, `universities.ts`, `cultural-centers.ts`, `brand.ts`, `routes.ts`, `contact.ts`
+- **Cultural**: `lusophone-celebrations.ts`, `palop-business-directory.ts`, `verification-badges.ts`
+- **Business**: `portuguese-institutions.ts`, `community-guidelines.ts`, `student-resources.ts`
+- **Centralized Exports**: All configs accessible through `index.ts` with comprehensive type safety
 
-**2. Bilingual i18n System**
-- Complete English/Portuguese translations in `/web-app/src/i18n/`
-- `LanguageContext` for state management
-- Dynamic language switching throughout the platform
-- Cultural-specific content for Portuguese-speaking community
+**2. Next.js 14 App Router Architecture**
+- **File-based routing**: 121+ pages in `/src/app/` directory with nested routes and dynamic segments
+- **Server Components**: Default SSR with selective Client Components for interactivity
+- **API Integration**: Comprehensive endpoints in `/src/app/api/` for server operations
+- **Enhanced UX**: Layout components, loading states, error boundaries, and not-found pages
 
-**3. Context-Based State Management**
-Multiple React contexts in `/web-app/src/context/`:
-- `LanguageContext` - Bilingual state and translations
-- `HeritageContext` - Portuguese cultural theming  
-- `SubscriptionContext` - Premium membership management
-- `NetworkingContext` - Professional networking features
-- `CartContext` - Event booking and favorites
+**3. Portuguese Cultural Integration**
+- **Bilingual i18n System**: Complete EN/PT translations with `LanguageContext` state management
+- **Heritage Color System**: Dynamic Portuguese cultural theming via CSS custom properties
+- **Cultural Authenticity**: Portuguese-speaking community focus (not generic Portuguese)
+- **Lusophone Celebrations**: Comprehensive cultural events system for all Portuguese-speaking nations
 
-**4. Heritage Color System**
-Dynamic Portuguese heritage colors using CSS custom properties:
-- Configurable through `HeritageContext`
-- Default Portuguese flag-inspired palette
-- Avoids generic blue/gray colors
+**4. Component & Context Architecture**
+- **522+ React Components**: Modular, reusable with Portuguese cultural theming and AI integration
+- **Context-Based State**: Multiple React contexts (Language, Heritage, Subscription, Networking, Cart)
+- **TypeScript First**: Strict typing with `exactOptionalPropertyTypes` and `noUncheckedIndexedAccess`
+- **AI Integration**: 4 production AI systems with Portuguese cultural context
+  - AI Notification System (production-optimized with timing controls)
+  - AI-Enhanced Matching System (91/100 integration score)
+  - LusoBot Portuguese AI Assistant (96/100 production score, 168+ tests)
+  - Predictive Community Analytics (v2.0.0 GDPR-compliant)
 
-**5. Mobile-First Design**
-- Responsive breakpoints: xs(475px), sm(640px), md(768px), lg(1024px), xl(1280px), 2xl(1536px)
-- Touch-optimized components
-- Portuguese-speaking community uses mobile heavily
+**5. File Organization Structure**
+```
+/src/app/              # Next.js 14 App Router (121+ pages)
+/src/components/       # 522+ React components with feature-specific organization
+/src/config/           # 33+ configuration files (ZERO hardcoding policy)
+/src/context/          # React contexts for state management
+/src/lib/             # Business logic and AI engines
+/src/services/        # API services and integrations
+/src/i18n/            # Bilingual EN/PT translations
+```
+
+**6. Data & Integration Layer**
+- **Supabase Backend**: PostgreSQL with PostGIS extension for geolocation
+- **Real-time Updates**: Supabase subscriptions for live data
+- **API Routes**: Next.js server operations with comprehensive endpoints
+- **PostGIS Business Directory**: Advanced geospatial queries for Portuguese businesses
+- **Streaming Infrastructure**: Simple Relay Server (SRS) with RTMP/HLS pipeline
+- **Redis Caching**: Upstash Redis for performance optimization
+- **CDN Integration**: BunnyCDN for Portuguese cultural content delivery
 
 ## Critical Development Rules
 
-### 1. ZERO HARDCODING POLICY (MANDATORY)
-**Audit Command**: `npm run audit:hardcoding` - MUST pass before commit
+### 1. 🚨 ZERO HARDCODING POLICY (MANDATORY)
+**Must pass**: `npm run audit:hardcoding` before every commit
 
 ```typescript
-// ❌ NEVER DO THIS:
+// ❌ NEVER:
 const price = "£19.99"
-const contact = "demo@lusotown.com"  
-const university = "University College London"
-const eventName = "Portuguese Wine Tasting"
+const email = "demo@lusotown.com"
+const uni = "UCL"
 
-// ✅ ALWAYS DO THIS:
-import { formatPrice, SUBSCRIPTION_PLANS } from '@/config/pricing'
-import { UNIVERSITY_PARTNERSHIPS } from '@/config/universities'
+// ✅ ALWAYS:
+import { SUBSCRIPTION_PLANS, formatPrice } from '@/config/pricing'
 import { CONTACT_INFO } from '@/config/contact'
-import { CULTURAL_EVENTS } from '@/config/events'
+import { UNIVERSITY_PARTNERSHIPS } from '@/config/universities'
 
 const price = formatPrice(SUBSCRIPTION_PLANS.community.monthly)
-const contact = CONTACT_INFO.demo.email
-const university = UNIVERSITY_PARTNERSHIPS.ucl.name
-const eventName = CULTURAL_EVENTS.wine_tasting.title
+const email = CONTACT_INFO.demo.email
+const uni = UNIVERSITY_PARTNERSHIPS.ucl.name
 ```
 
-### 2. Bilingual Text Requirements
+### 2. Bilingual Text (EN/PT Required)
 ```typescript
-// ❌ NEVER hardcode text:
-<h1>Welcome to LusoTown</h1>
-
-// ✅ ALWAYS use translations:
+// ❌ NEVER: <h1>Welcome to LusoTown</h1>
+// ✅ ALWAYS:
 const { t } = useLanguage()
-<h1>{t('welcome.title')}</h1>
+return <h1>{t('welcome.title')}</h1>
 ```
 
-### 3. Portuguese Cultural Authenticity
-- Use Portuguese brand colors from `@/config/brand.ts`
-- Integrate cultural elements naturally (not as separate sections)
-- Target Portuguese speakers in London & United Kingdom specifically
-- Maintain cultural context throughout development
+### 3. Portuguese Cultural Context
+- Import colors: `@/config/brand.ts` (never generic blue/gray)
+- Use "Portuguese-speaking community" (not "Portuguese community")
+- Target "United Kingdom" (not just "London")
+- Mix all lusophone nations (Portugal, Brazil, Cape Verde, Angola, etc.)
 
-### 4. Pre-Commit Quality Checks (REQUIRED)
+### 4. Mobile-First Design
+Test at: **375px** (mobile), **768px** (tablet), **1024px** (desktop)
+
+### 5. Pre-Commit Checklist (REQUIRED)
 ```bash
 cd web-app
-npm run lint                    # Must pass - ESLint validation
-npx tsc --noEmit               # Must pass - TypeScript check  
-npm run build                  # Must pass - Production build
-npm run audit:hardcoding       # Must pass - Zero hardcoded values
-npm run test                   # Recommended - Unit tests
-
-# Note: TypeScript/ESLint errors ignored in builds for faster CI
-# But must be fixed in development for code quality
+npm run audit:hardcoding  # ← CRITICAL (must pass)
+npm run lint              # ESLint validation
+npx tsc --noEmit         # TypeScript check
+npm run build            # Production build test
 ```
 
 ## Key Business Context
 
-**Target Audience**: 750+ Portuguese-speaking community members, 2,150+ Portuguese university students across London & United Kingdom
+**Target**: 750+ Portuguese-speaking community members, 2,150+ university students (UK-wide)
+**Universities**: 8 partnerships (UCL, King's, Imperial, LSE, Oxford, Cambridge, Manchester, Edinburgh)
+**Demo Access**: `demo@lusotown.com` / `LusoTown2025!`
 
-**University Partnerships**: 8 institutions (UCL, King's, Imperial, LSE, Oxford, Cambridge, Manchester, Edinburgh)
-
-**Core Features**:
-- **Social Events**: Cultural festivals, networking, guided tours
-- **Business Directory**: Portuguese businesses with geolocation (PostGIS)
-- **Streaming Platform**: Portuguese cultural content, creator monetization
-- **Premium Transport**: Portuguese-speaking chauffeur services  
-- **Student Services**: University partnerships and student verification
-- **Matching System**: Cultural compatibility for Portuguese speakers
-
-**Demo Access**: `demo@lusotown.com` / `LusoTown2025!` (bypasses subscription requirements)
+**Core Features**: Social events, business directory (PostGIS), streaming platform, premium transport, student services, cultural matching system
 
 ## Database Schema
 
-**Primary Database**: Supabase PostgreSQL with PostGIS extension
+**Primary**: Supabase PostgreSQL with PostGIS extension
 **Streaming**: Simple Relay Server (SRS) for RTMP/HLS delivery
-**Location Data**: PostGIS for advanced geospatial queries
+**Geolocation**: PostGIS for advanced spatial queries
 
-Key migrations in `/supabase/migrations/` (chronological order):
-- `20250811_001_initial_schema.sql` - Core user profiles and basic structure
-- `20250812_001_messages_schema.sql` - Messaging system
-- `20250814_001_enhanced_groups_safety.sql` - Group safety features
-- `20250816_002_subscription_system.sql` - Subscription and payment system
-- `20250817_001_premium_membership_tiers.sql` - Premium membership structure
-- `20250818_001_streaming_platform_schema.sql` - Complete streaming infrastructure
-- `20250818_002_conversion_funnel_system.sql` - User conversion tracking
-- `20250818_004_referral_system.sql` - Referral and rewards system
-- `20250818_006_cultural_preferences_system.sql` - Portuguese cultural matching
-- `20250818_007_user_matches_system.sql` - Dating/networking matches
-- `20250818_008_portuguese_cultural_events_system.sql` - Cultural events schema
-- `20250819_001_portuguese_community_real_data_migration.sql` - Real community data
-- `20250819_004_public_business_directory_with_geolocation.sql` - Business directory with PostGIS
-- `20250821_001_cultural_compatibility_quiz.sql` - Cultural compatibility system
+**Migrations**: 20+ chronologically organized files in `/supabase/migrations/`
+- Core: User profiles, messaging, safety features
+- Business: Subscriptions, payments, membership tiers
+- Platform: Streaming infrastructure, analytics, referrals
+- Cultural: Portuguese cultural matching, events, compatibility quiz
+- Directory: Business directory with PostGIS geolocation
 
 ## Environment Configuration
 
-Essential variables for `/web-app/.env.local`:
+### Required Variables for `/web-app/.env.local`
 ```env
-# Supabase (Required)
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
+# Database (Essential)
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-# Portuguese-speaking community Metrics
+# Community Metrics (Important)
 NEXT_PUBLIC_TOTAL_MEMBERS=750
 NEXT_PUBLIC_TOTAL_STUDENTS=2150
 NEXT_PUBLIC_UNIVERSITY_PARTNERSHIPS=8
+```
 
-# Business Directory & Maps
+### Optional Variables
+```env
+# Maps & Location
 NEXT_PUBLIC_MAP_SERVICE=openstreetmap
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY= (optional)
-
-# Twitter Integration  
-NEXT_PUBLIC_TWITTER_BEARER_TOKEN=
-NEXT_PUBLIC_PORTUGUESE_HASHTAGS=LusoLondon PortugueseUK LusoTown
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_key
 
 # Streaming Platform
 NEXT_PUBLIC_STREAMING_SERVER_URL=http://localhost:8080
 RTMP_SERVER_PORT=1935
 HLS_SERVER_PORT=8080
 
-# Pricing Overrides (optional)
+# Social Integration
+NEXT_PUBLIC_TWITTER_BEARER_TOKEN=your_twitter_token
+NEXT_PUBLIC_PORTUGUESE_HASHTAGS=LusoLondon PortugueseUK LusoTown
+
+# Pricing Overrides
 NEXT_PUBLIC_COMMUNITY_PRICE_MONTHLY=19.99
 NEXT_PUBLIC_AMBASSADOR_PRICE_MONTHLY=39.99
 ```
@@ -435,66 +328,113 @@ NEXT_PUBLIC_AMBASSADOR_PRICE_MONTHLY=39.99
 
 Test files located in `/web-app/__tests__/` with organized subdirectories.
 
+## Single Command Testing
+
+**Quick test single component**: `cd web-app && npm test ComponentName.test`
+**Quick test single file**: `cd web-app && npm test -- --testNamePattern="specific test"`
+**Debug failing tests**: `cd web-app && npm run test:watch` 
+
+**Single E2E test**: `cd web-app && npx playwright test specific.spec.ts`
+**Single E2E test with UI**: `cd web-app && npx playwright test specific.spec.ts --headed`
+
+**Run specific test suite**:
+- Mobile tests only: `npm run test:mobile`
+- Portuguese tests only: `npm run test:portuguese` 
+- Security tests only: `npm run test:security`
+
 ## Common Issues & Solutions
 
-### Build & Development Issues
-**Build Failures**: Usually TypeScript errors or missing config imports
-- Check console output for specific error
-- Fix imports from `/src/config/` directory
-- Run `npx tsc --noEmit` to isolate TypeScript issues
+### Development Issues
 
-**Port Conflicts**: If port 3000 is already in use
+**Port Conflicts** - Port 3000 already in use
 ```bash
 lsof -i :3000                  # Find process using port
 kill -9 <PID>                 # Kill the process
-# OR use different port
-npm run dev -- --port 3001
+# OR use different port: npm run dev -- -p 3001
 ```
 
-**Node Modules Issues**: ENOTEMPTY errors or module conflicts
+**TailwindCSS Module Not Found**
+```bash
+# Error: Cannot find module 'tailwindcss'
+cd /workspaces/LusoTown
+npm install tailwindcss autoprefixer postcss --save-dev
+# Restart development server
+```
+
+**npm ENOTEMPTY Errors** - Directory rename conflicts
 ```bash
 npm cache clean --force
 rm -rf node_modules package-lock.json
 npm install
 ```
 
-### Development Workflow Issues
-**Translation Missing**: Add keys to both language files
-- `/web-app/src/i18n/en.json` 
-- `/web-app/src/i18n/pt.json`
-
-**Hardcoding Audit Failures**: Remove hardcoded values and import from config files
-- Use `/src/config/pricing.ts` for pricing data
-- Use `/src/config/contact.ts` for contact information
-- Use `/src/config/universities.ts` for university data
-
-**Mobile Responsiveness**: Test at key breakpoints using browser dev tools
-- 375px (mobile), 768px (tablet), 1024px (desktop)
-- Use responsive design mode in Chrome/Firefox dev tools
-
-**Portuguese Cultural Context**: Ensure authentic representation
-- Use "Portuguese-speaking community" not "Portuguese community"
-- Include all lusophone nations (Portugal, Brazil, Cape Verde, Angola, etc.)
-- Reference "United Kingdom" not just "London"
-
-### Performance Issues
-**Slow Development Server**: 
+**Slow Development Server**
 ```bash
 cd web-app
-rm -rf .next
+rm -rf .next                   # Clear Next.js cache
 npm run dev
 ```
 
-**Build Memory Issues**:
+### Build Issues
+
+**Build Failures** - Usually TypeScript errors or missing config imports
+- Check console output for specific error details
+- Fix imports from `/src/config/` directory (avoid hardcoding)
+- Run `npx tsc --noEmit` to isolate TypeScript issues
+- Verify all required environment variables are set
+
+**Build Memory Issues** - Out of memory during build
 ```bash
 export NODE_OPTIONS="--max-old-space-size=4096"
 npm run build
 ```
 
-**Bundle Analysis**: Enable in development for optimization
+**Bundle Analysis** - Optimize bundle size
 ```bash
-ANALYZE=true npm run dev  # Opens webpack bundle analyzer
+ANALYZE=true npm run dev       # Opens webpack bundle analyzer
 ```
+
+### Quality Issues
+
+**Hardcoding Audit Failures** - Failed `npm run audit:hardcoding`
+- Remove hardcoded values and import from config files:
+  - Use `/src/config/pricing.ts` for pricing data
+  - Use `/src/config/contact.ts` for contact information
+  - Use `/src/config/universities.ts` for university data
+  - Use `/src/config/routes.ts` for URLs
+
+**Translation Missing** - Missing bilingual content
+- Add translation keys to both language files:
+  - `/web-app/src/i18n/en.json`
+  - `/web-app/src/i18n/pt.json`
+- Use `const { t } = useLanguage()` in components
+
+**Mobile Responsiveness Issues** - UI breaks on mobile
+- Test at key breakpoints: **375px** (mobile), **768px** (tablet), **1024px** (desktop)
+- Use responsive design mode in Chrome/Firefox dev tools
+- Prioritize mobile-first design for Portuguese-speaking community
+
+### Cultural Context Issues
+
+**Portuguese Cultural Validation** - Content doesn't meet cultural guidelines
+- Use "Portuguese-speaking community" NOT "Portuguese community"
+- Reference "United Kingdom" NOT just "London"
+- Include diverse lusophone nations (Portugal, Brazil, Cape Verde, Angola, etc.)
+- Import Portuguese brand colors from `@/config/brand.ts` (never generic blue/gray)
+
+### Performance Issues
+
+**Component Loading Slow** - Pages take too long to load
+- Check for unnecessary re-renders in React components
+- Optimize images and use Next.js Image component
+- Review bundle size with `ANALYZE=true npm run dev`
+
+**Database Query Performance** - Supabase queries are slow
+- Review PostGIS queries for business directory
+- Check indexing on frequently queried columns
+- Use Supabase performance insights
+
+**For Complex Issues**: Use the Task tool to access specialized troubleshooting agents for step-by-step guidance based on your specific error context.
 
 ## Deployment
 
@@ -522,44 +462,43 @@ Build configuration optimized for production with bundle splitting, image optimi
 6. Run quality checks before commits
 7. Portuguese cultural context should guide all decisions
 
-## Core Architecture
+## Development Patterns
 
-### Component Architecture
-- **522+ React Components**: Modular, reusable components with Portuguese cultural theming and AI integration
-- **Specialized Component Libraries**: 
-  - UI components in `/src/components/ui/` (buttons, cards, inputs)
-  - Matching system in `/src/components/matches/` (AI-powered matching)
-  - AI systems in `/src/components/ai/` (notification dashboards, analytics)
-- **TypeScript First**: Strict typing with `exactOptionalPropertyTypes` and `noUncheckedIndexedAccess`
-- **Context-Based State**: 9+ React contexts for state management
-- **Configuration-Driven**: All dynamic data centralized in `/src/config/` (15+ config files)
+### Component Organization
+Specialized component libraries organized by functionality:
+- **UI Foundation**: `/src/components/ui/` - Base components (buttons, cards, inputs)
+- **AI Systems**: `/src/components/ai/` - Notification dashboards and analytics
+- **Matching System**: `/src/components/matches/` - AI-powered cultural compatibility
+- **Student Services**: `/src/components/students/` - University partnership components
+- **Feature-Specific**: Organized by business domain for maintainability
 
-### File Organization Patterns
+### Detailed File Structure
 ```
-/src/app/                    # Next.js 14 App Router pages
-/src/components/             # Reusable React components
-  ├── ui/                   # Base UI components (button, card, input)
-  ├── matches/              # AI matching system components  
-  ├── students/             # University partnership components
-  └── [feature]/            # Feature-specific components
-/src/config/                 # Configuration files (NO hardcoding)
-/src/context/                # React context providers
-/src/hooks/                  # Custom React hooks
-/src/i18n/                   # Bilingual translations (en.json, pt.json)
-/src/lib/                    # Utility functions and helpers
-  ├── ai/                   # AI engine implementations
-  └── privacy/              # GDPR compliance utilities
-/src/services/               # Business logic and API clients
-/src/types/                  # TypeScript type definitions
-/src/utils/                  # Generic utility functions
+/src/
+  ├── app/                 # Next.js 14 App Router (121+ pages)
+  ├── components/          # 522+ React components
+  │   ├── ui/             # Base UI components
+  │   ├── ai/             # AI system components
+  │   ├── matches/        # Matching system
+  │   └── [feature]/      # Feature-specific components
+  ├── config/             # 33+ configuration files (centralized exports)
+  ├── context/            # React context providers
+  ├── hooks/              # Custom React hooks
+  ├── i18n/               # Bilingual EN/PT translations
+  ├── lib/                # Business logic and utilities
+  │   ├── ai/             # AI engine implementations
+  │   └── privacy/        # GDPR compliance utilities
+  ├── services/           # API clients and business services
+  ├── types/              # TypeScript type definitions
+  └── utils/              # Generic utility functions
 ```
 
-### Data Flow Architecture
-- **Supabase Backend**: PostgreSQL with PostGIS extension for geolocation
-- **React Context**: Client-side state management (Language, Heritage, Subscription)
-- **API Routes**: Next.js API routes in `/src/app/api/` for server operations
-- **Real-time Updates**: Supabase real-time subscriptions for live data
-- **AI Integration**: 4 production AI systems with Portuguese cultural context
+### Integration Architecture
+- **Configuration Layer**: 33+ config files with centralized exports through `index.ts`
+- **State Management**: React contexts for client-side state (Language, Heritage, Subscription)
+- **Data Flow**: Supabase PostgreSQL with PostGIS → API Routes → React Components
+- **Real-time Features**: Supabase subscriptions for live updates and notifications
+- **AI Ecosystem**: 4 production AI systems integrated throughout the platform
 
 ## Critical Patterns
 

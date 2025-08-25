@@ -195,40 +195,60 @@ export default function MobileWelcomeWizard({
   )
 }
 
-// Step 1: What brings you here?
+// Step 1: Enhanced Lusophone Community Focus
 function PurposeStep({ selectedReason, onReasonSelect, onNext, isPortuguese }: any) {
-  const reasons = [
+  const exclusiveMembershipOptions = [
     {
-      id: 'events',
-      title: isPortuguese ? 'Eventos' : 'Events',
-      description: isPortuguese ? 'Música, festivais e celebrações' : 'Music, festivals and celebrations',
-      icon: CalendarDaysIcon,
-      color: 'from-blue-500 to-blue-600',
-      emoji: '🎉'
+      id: 'cultural',
+      title: isPortuguese ? 'Experiências Culturais Exclusivas' : 'Exclusive Cultural Experiences',
+      subtitle: isPortuguese ? 'Eventos Lusófonos Exclusivos para Membros' : 'Members-Only Lusophone Cultural Events',
+      description: isPortuguese 
+        ? 'Fado privado de Portugal, festivais brasileiros autênticos, celebrações de independência PALOP, noites de Morna cabo-verdianas'
+        : 'Private Fado from Portugal, authentic Brazilian festivals, PALOP independence celebrations, Cape Verdean Morna nights',
+      membershipBenefit: isPortuguese ? 'Acesso a 50+ eventos culturais exclusivos mensalmente' : 'Access 50+ exclusive cultural events monthly',
+      heritageExamples: isPortuguese ? 'Celebrando TODAS as culturas lusófonas igualmente' : 'Celebrating ALL Portuguese-speaking cultures equally',
+      emoji: '🎭',
+      gradient: 'from-purple-500 to-pink-500',
+      flags: '🇵🇹🇧🇷🇦🇴🇨🇻'
+    },
+    {
+      id: 'connections',
+      title: isPortuguese ? 'Conexões Lusófonas Elite' : 'Elite Lusophone Connections',
+      subtitle: isPortuguese ? 'Relacionamentos Lusófonos Curados' : 'Curated Portuguese-Speaking Relationships',
+      description: isPortuguese 
+        ? 'Conhecer pessoas distintas de Portugal, Brasil, Angola, Cabo Verde, Moçambique e todas as nações lusófonas'
+        : 'Meet accomplished individuals from Portugal, Brazil, Angola, Cape Verde, Mozambique, and all Lusophone nations',
+      membershipBenefit: isPortuguese ? 'Membros verificados de toda a diáspora lusófona global' : 'Verified members from across the global Portuguese-speaking diaspora',
+      heritageExamples: isPortuguese ? 'Unidos pela Língua - Unidos pela Língua, não por fronteiras' : 'Unidos pela Língua - United by Language, not borders',
+      emoji: '💎',
+      gradient: 'from-red-500 to-orange-500',
+      flags: '🇲🇿🇬🇼🇸🇹🇹🇱'
     },
     {
       id: 'community',
-      title: isPortuguese ? 'Comunidade' : 'Community',
-      description: isPortuguese ? 'Conhecer outros falantes de português' : 'Meet other Portuguese speakers',
-      icon: UsersIcon,
-      color: 'from-green-500 to-green-600',
-      emoji: '👥'
+      title: isPortuguese ? 'Comunidade Premium da Diáspora' : 'Premium Diaspora Community',
+      subtitle: isPortuguese ? 'Junte-se ao Círculo Lusófono Elite do Reino Unido' : 'Join the UK\'s Elite Lusophone Circle',
+      description: isPortuguese 
+        ? 'Networking com lusófonos bem-sucedidos - de Lisboa a São Paulo, Luanda a Praia, Maputo a Bissau'
+        : 'Network with successful Portuguese speakers - from Lisboa to São Paulo, Luanda to Praia, Maputo to Bissau',
+      membershipBenefit: isPortuguese ? '750+ membros verificados de todas as origens lusófonas' : '750+ verified members from all Portuguese-speaking backgrounds',
+      heritageExamples: isPortuguese ? 'Segunda geração, herança mista e estudantes de língua bem-vindos' : 'Second-generation, mixed heritage, and language learners welcome',
+      emoji: '🤝',
+      gradient: 'from-green-500 to-teal-500',
+      flags: '🇬🇧🌍'
     },
     {
-      id: 'relationships',
-      title: isPortuguese ? 'Relacionamentos' : 'Relationships',
-      description: isPortuguese ? 'Encontrar alguém especial' : 'Find someone special',
-      icon: HeartIcon,
-      color: 'from-red-500 to-pink-500',
-      emoji: '❤️'
-    },
-    {
-      id: 'networking',
-      title: isPortuguese ? 'Networking' : 'Networking',
-      description: isPortuguese ? 'Oportunidades profissionais' : 'Professional opportunities',
-      icon: StarIcon,
-      color: 'from-purple-500 to-purple-600',
-      emoji: '💼'
+      id: 'business',
+      title: isPortuguese ? 'Rede de Negócios Lusófona Global' : 'Global Lusophone Business Network',
+      subtitle: isPortuguese ? 'Elite de Negócios PALOP e Lusófona' : 'PALOP & Portuguese-Speaking Business Elite',
+      description: isPortuguese 
+        ? 'Acesso exclusivo a oportunidades de negócios em TODOS os mercados lusófonos e comunidades da diáspora'
+        : 'Exclusive access to business opportunities across ALL Portuguese-speaking markets and diaspora communities',
+      membershipBenefit: isPortuguese ? 'Receita combinada de membros £50M+ em mercados lusófonos' : '£50M+ combined member revenue across Lusophone markets',
+      heritageExamples: isPortuguese ? 'Oportunidades de negócios PALOP, brasileiras, portuguesas e da diáspora' : 'PALOP, Brazilian, Portuguese, and diaspora business opportunities',
+      emoji: '💼',
+      gradient: 'from-blue-500 to-indigo-500',
+      flags: '💰🌐'
     }
   ]
 
@@ -239,6 +259,7 @@ function PurposeStep({ selectedReason, onReasonSelect, onNext, isPortuguese }: a
 
   return (
     <div className="space-y-6">
+      {/* Enhanced Welcome Message */}
       <div className="text-center space-y-3">
         <motion.div
           initial={{ scale: 0 }}
@@ -246,7 +267,7 @@ function PurposeStep({ selectedReason, onReasonSelect, onNext, isPortuguese }: a
           transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           className="w-16 h-16 mx-auto bg-gradient-to-br from-green-500 via-red-500 to-yellow-500 rounded-full flex items-center justify-center shadow-xl"
         >
-          <span className="text-2xl">🤗</span>
+          <span className="text-2xl">🌍</span>
         </motion.div>
         
         <motion.h2
@@ -255,47 +276,85 @@ function PurposeStep({ selectedReason, onReasonSelect, onNext, isPortuguese }: a
           transition={{ delay: 0.3 }}
           className="text-2xl font-bold text-gray-900"
         >
-          {isPortuguese ? 'O que te trouxe aqui?' : 'What brings you here?'}
+          {isPortuguese ? 'O QUE TE TRAZ À COMUNIDADE LUSÓFONA?' : 'WHAT BRINGS YOU TO THE LUSOPHONE COMMUNITY?'}
         </motion.h2>
         
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-gray-600"
+          className="text-base font-semibold text-primary-600"
         >
           {isPortuguese 
-            ? 'Escolha o que mais te interessa para começar'
-            : 'Choose what interests you most to get started'
+            ? 'Bem-vindos à comunidade lusófona mais exclusiva de Londres'
+            : 'Welcome to London\'s exclusive Portuguese-speaking community'
+          }
+        </motion.p>
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="text-sm text-gray-600"
+        >
+          {isPortuguese 
+            ? 'Seja de qualquer país lusófono ou onde o português é falado 🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱'
+            : 'Whether you\'re from 🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱 or anywhere Portuguese is spoken'
           }
         </motion.p>
       </div>
 
-      <div className="space-y-3">
-        {reasons.map((reason, index) => (
+      {/* Enhanced Membership Options */}
+      <div className="space-y-4">
+        {exclusiveMembershipOptions.map((option, index) => (
           <motion.button
-            key={reason.id}
+            key={option.id}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5 + index * 0.1 }}
-            onClick={() => handleSelection(reason.id)}
-            className={`w-full p-4 bg-white border-2 border-gray-200 rounded-2xl hover:border-green-300 hover:shadow-lg transition-all duration-200 text-left ${
-              selectedReason === reason.id ? 'border-green-500 bg-green-50' : ''
+            transition={{ delay: 0.6 + index * 0.1 }}
+            onClick={() => handleSelection(option.id)}
+            className={`w-full p-4 bg-white border-2 border-gray-200 rounded-2xl hover:border-primary-300 hover:shadow-lg transition-all duration-200 text-left ${
+              selectedReason === option.id ? 'border-primary-500 bg-primary-50' : ''
             }`}
           >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-green-100 to-red-100 rounded-full flex items-center justify-center">
-                <span className="text-xl">{reason.emoji}</span>
-              </div>
-              <div className="flex-1">
-                <div className="font-semibold text-gray-900 mb-1">
-                  {reason.title}
+            <div className="space-y-3">
+              {/* Header with emoji and flags */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className={`w-12 h-12 bg-gradient-to-r ${option.gradient} rounded-full flex items-center justify-center`}>
+                    <span className="text-xl">{option.emoji}</span>
+                  </div>
+                  <div className="text-left">
+                    <div className="font-bold text-gray-900 text-sm leading-tight">
+                      {option.title}
+                    </div>
+                    <div className="text-xs text-primary-600 font-semibold">
+                      {option.subtitle}
+                    </div>
+                  </div>
                 </div>
-                <div className="text-sm text-gray-600">
-                  {reason.description}
+                <div className="text-lg">{option.flags}</div>
+              </div>
+              
+              {/* Description */}
+              <div className="text-xs text-gray-600 leading-relaxed">
+                {option.description}
+              </div>
+              
+              {/* Membership Benefit */}
+              <div className="bg-gradient-to-r from-green-50 to-red-50 rounded-lg p-2">
+                <div className="text-xs font-semibold text-green-700 mb-1">
+                  {isPortuguese ? 'Benefício da Adesão:' : 'Membership Benefit:'}
+                </div>
+                <div className="text-xs text-green-600">
+                  {option.membershipBenefit}
                 </div>
               </div>
-              <ArrowRightIcon className="w-5 h-5 text-gray-400" />
+              
+              {/* Heritage Promise */}
+              <div className="text-xs text-gray-500 italic">
+                {option.heritageExamples}
+              </div>
             </div>
           </motion.button>
         ))}
@@ -304,8 +363,61 @@ function PurposeStep({ selectedReason, onReasonSelect, onNext, isPortuguese }: a
   )
 }
 
-// Step 2: Perfect for Portuguese speakers!
-function CulturalConnectionStep({ onNext, onPrevious, isPortuguese }: any) {
+// Step 2: Dynamic Heritage Celebration & Membership Benefits
+function CulturalConnectionStep({ selectedReason, onNext, onPrevious, isPortuguese }: any) {
+  // Dynamic content based on user's selection from Step 1
+  const getContentForSelection = (selection: string) => {
+    const content = {
+      cultural: {
+        headline: isPortuguese ? 'Junte-se aos Membros Culturais Lusófonos Mais Exclusivos de Londres' : 'Join London\'s Most Exclusive Lusophone Cultural Members',
+        icon: '🎭',
+        activities: [
+          { emoji: '🇵🇹', text: isPortuguese ? 'Performances privadas de Fado, celebrações dos Santos Populares' : 'Private Fado performances, Santos Populares celebrations' },
+          { emoji: '🇧🇷', text: isPortuguese ? 'Preparações exclusivas de Carnaval, escolas de samba, Festa Junina' : 'Exclusive Carnival preparations, Samba schools, Festa Junina' },
+          { emoji: '🇦🇴🇨🇻🇲🇿', text: isPortuguese ? 'Galas do dia da independência (Angola 11 Nov, Cabo Verde 5 Jul, Moçambique 25 Jun)' : 'Independence day galas (Angola Nov 11, Cape Verde July 5, Mozambique June 25)' },
+          { emoji: '🌍', text: isPortuguese ? 'Eventos celebrando TODAS as nações lusófonas igualmente' : 'Events celebrating ALL Portuguese-speaking nations equally' },
+          { emoji: '🍽️', text: isPortuguese ? 'Jantares privados em restaurantes autênticos de cada país lusófono' : 'Private dining at authentic restaurants from every Lusophone country' }
+        ]
+      },
+      connections: {
+        headline: isPortuguese ? 'Aceda à Comunidade de Encontros Lusófonos Mais Exclusiva do Reino Unido' : 'Access the UK\'s Most Exclusive Portuguese-Speaking Dating Community',
+        icon: '💎',
+        activities: [
+          { emoji: '🌍', text: isPortuguese ? 'Membros de todos os países de língua portuguesa' : 'Members from all Portuguese-speaking countries' },
+          { emoji: '❤️', text: isPortuguese ? 'Matching baseado na ligação linguística E valores culturais' : 'Match based on language connection AND cultural values' },
+          { emoji: '✅', text: isPortuguese ? 'Perfis verificados com verificações profissionais e de herança' : 'Verified profiles with professional background checks and heritage verification' },
+          { emoji: '🥂', text: isPortuguese ? 'Eventos mixer privados para diferentes grupos de herança' : 'Private mixer events for different heritage groups' },
+          { emoji: '🇵🇹🇧🇷', text: isPortuguese ? 'Ligação através da língua portuguesa, independentemente da nacionalidade' : 'Connection through Portuguese language, regardless of nationality' }
+        ]
+      },
+      community: {
+        headline: isPortuguese ? 'Junte-se à Principal Rede Social Lusófona do Reino Unido' : 'Join the UK\'s Premier Portuguese-Speaking Social Network',
+        icon: '🤝',
+        activities: [
+          { emoji: '🌍', text: isPortuguese ? 'Conectar lusófonos de TODAS as origens' : 'Connect Portuguese speakers from ALL backgrounds' },
+          { emoji: '🎉', text: isPortuguese ? 'Eventos mensais celebrando diferentes países lusófonos' : 'Monthly events celebrating different Lusophone countries' },
+          { emoji: '💼', text: isPortuguese ? 'Networking profissional inter-industrias em todas as comunidades lusófonas' : 'Cross-industry professional networking across all Portuguese-speaking communities' },
+          { emoji: '🇬🇧', text: isPortuguese ? 'Programas especiais para lusófonos nascidos no Reino Unido' : 'Special programs for UK-born Portuguese speakers' },
+          { emoji: '📚', text: isPortuguese ? 'Iniciativas comunitárias para manter o português através das gerações' : 'Community initiatives to maintain Portuguese across generations' }
+        ]
+      },
+      business: {
+        headline: isPortuguese ? 'Aceda a Oportunidades de Negócios Lusófonos Exclusivas' : 'Access Exclusive Lusophone Business Opportunities',
+        icon: '💼',
+        activities: [
+          { emoji: '🇦🇴🇨🇻🇬🇼🇲🇿🇸🇹', text: isPortuguese ? 'Mercados PALOP: Conexões empresariais diretas para países africanos lusófonos' : 'PALOP Markets: Direct business connections to African Portuguese-speaking countries' },
+          { emoji: '🇧🇷', text: isPortuguese ? 'Oportunidades Brasileiras: O maior mercado lusófono da América Latina' : 'Brazilian Opportunities: Latin America\'s largest Portuguese-speaking market' },
+          { emoji: '🇵🇹🇪🇺', text: isPortuguese ? 'Acesso à UE Portuguesa: Entrada no mercado europeu e parcerias' : 'Portuguese EU Access: European market entry and partnerships' },
+          { emoji: '🇬🇧', text: isPortuguese ? 'Negócios da Diáspora: Empreendedores lusófonos baseados no Reino Unido' : 'Diaspora Business: UK-based Portuguese-speaking entrepreneurs' },
+          { emoji: '💰', text: isPortuguese ? 'Comércio Transfronteiriço: Facilitar negócios em todo o mundo lusófono' : 'Cross-Border Trade: Facilitate business across the entire Lusophone world' }
+        ]
+      }
+    }
+    return content[selection as keyof typeof content] || content.cultural
+  }
+
+  const currentContent = getContentForSelection(selectedReason || 'cultural')
+
   return (
     <div className="space-y-6">
       <div className="text-center space-y-4">
@@ -315,96 +427,108 @@ function CulturalConnectionStep({ onNext, onPrevious, isPortuguese }: any) {
           transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           className="w-20 h-20 mx-auto bg-gradient-to-br from-green-500 via-red-500 to-yellow-500 rounded-full flex items-center justify-center shadow-xl"
         >
-          <span className="text-3xl">🇵🇹</span>
+          <span className="text-3xl">{currentContent.icon}</span>
         </motion.div>
         
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-2xl font-bold text-gray-900"
+          className="text-xl font-bold text-gray-900 leading-tight"
         >
-          {isPortuguese ? 'Bem-vindo à comunidade lusófona do Reino Unido!' : 'Welcome to the United Kingdom Portuguese-speaking community!'}
+          {currentContent.headline}
         </motion.h2>
-        
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="text-lg text-gray-600 leading-relaxed"
-        >
-          {isPortuguese 
-            ? 'Conecta-te com outros falantes de português por todo o Reino Unido'
-            : 'Connect with other Portuguese speakers across the United Kingdom'
-          }
-        </motion.p>
       </div>
 
-      {/* Community Stats */}
+      {/* Heritage Diversity Showcase */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        className="bg-gradient-to-r from-green-50 via-red-50 to-yellow-50 rounded-2xl p-6 border-2 border-green-100"
+        transition={{ delay: 0.4 }}
+        className="bg-gradient-to-r from-green-50 via-red-50 to-yellow-50 rounded-2xl p-4 border-2 border-green-100"
       >
-        <div className="grid grid-cols-3 gap-4 text-center">
-          <div>
-            <div className="text-3xl font-bold text-green-600">{COMMUNITY_STATS.members}</div>
-            <div className="text-xs text-green-700 font-medium">
-              {isPortuguese ? 'Membros' : 'Members'}
-            </div>
+        <div className="text-center mb-3">
+          <div className="text-sm font-bold text-gray-900 mb-2">
+            {isPortuguese ? 'Diversidade da Herança' : 'Heritage Diversity Showcase'}
           </div>
-          <div>
-            <div className="text-3xl font-bold text-red-600">{COMMUNITY_STATS.events}</div>
-            <div className="text-xs text-red-700 font-medium">
-              {isPortuguese ? 'Eventos/Mês' : 'Events/Month'}
+          <div className="grid grid-cols-3 gap-2 text-xs">
+            <div>
+              <div className="text-lg font-bold text-blue-600">32%</div>
+              <div className="text-blue-700">🇧🇷 {isPortuguese ? 'Brasil' : 'Brazil'}</div>
             </div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-yellow-600">{COMMUNITY_STATS.satisfaction}</div>
-            <div className="text-xs text-yellow-700 font-medium">
-              {isPortuguese ? 'Satisfação' : 'Satisfaction'}
+            <div>
+              <div className="text-lg font-bold text-green-600">28%</div>
+              <div className="text-green-700">🇵🇹 Portugal</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold text-orange-600">18%</div>
+              <div className="text-orange-700">🌍 PALOP</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold text-purple-600">12%</div>
+              <div className="text-purple-700">{isPortuguese ? 'Mista' : 'Mixed'}</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold text-red-600">8%</div>
+              <div className="text-red-700">🇬🇧 UK</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold text-gray-600">2%</div>
+              <div className="text-gray-700">{isPortuguese ? 'Estudantes' : 'Learners'}</div>
             </div>
           </div>
         </div>
       </motion.div>
 
-      {/* Cultural highlights */}
+      {/* Dynamic Activities Based on Selection */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
-        className="space-y-3"
+        transition={{ delay: 0.5 }}
+        className="space-y-2"
       >
-        {[
-          {
-            emoji: '🎵',
-            text: isPortuguese ? 'Música e entretenimento' : 'Music and entertainment'
-          },
-          {
-            emoji: '🍽️',
-            text: isPortuguese ? 'Experiências gastronómicas diversas' : 'Diverse dining experiences'
-          },
-          {
-            emoji: '⚽',
-            text: isPortuguese ? 'Desportos e atividades' : 'Sports and activities'
-          },
-          {
-            emoji: '🎭',
-            text: isPortuguese ? 'Eventos culturais e sociais' : 'Cultural and social events'
-          }
-        ].map((item, index) => (
+        {currentContent.activities.map((activity, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.7 + index * 0.1 }}
-            className="flex items-center gap-3 p-3 bg-white rounded-xl border border-gray-200"
+            transition={{ delay: 0.6 + index * 0.1 }}
+            className="flex items-start gap-3 p-3 bg-white rounded-xl border border-gray-200"
           >
-            <span className="text-xl">{item.emoji}</span>
-            <span className="text-gray-700">{item.text}</span>
+            <span className="text-sm mt-0.5">{activity.emoji}</span>
+            <span className="text-xs text-gray-700 leading-relaxed flex-1">{activity.text}</span>
           </motion.div>
         ))}
+      </motion.div>
+
+      {/* Cultural Activities Schedule */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+        className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-4 border border-blue-200"
+      >
+        <div className="text-sm font-bold text-gray-900 mb-3 text-center">
+          {isPortuguese ? 'Atividades Culturais' : 'Cultural Activities'}
+        </div>
+        <div className="grid grid-cols-2 gap-2 text-xs">
+          <div className="flex items-center gap-1">
+            <span>🎵</span>
+            <span>{isPortuguese ? 'Fado, Samba, Kizomba, Morna' : 'Fado, Samba, Kizomba, Morna music nights'}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <span>🍽️</span>
+            <span>{isPortuguese ? 'Culinária de todas as nações lusófonas' : 'Authentic cuisine from every Portuguese-speaking nation'}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <span>⚽</span>
+            <span>{isPortuguese ? 'Equipas Portugal, Brasil e PALOP juntas' : 'Portugal, Brazil, and PALOP team viewings together'}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <span>🎭</span>
+            <span>{isPortuguese ? 'Celebrações culturais sazonais' : 'Major cultural celebrations from all Lusophone countries'}</span>
+          </div>
+        </div>
       </motion.div>
 
       {/* Navigation */}
@@ -421,7 +545,7 @@ function CulturalConnectionStep({ onNext, onPrevious, isPortuguese }: any) {
           onClick={onNext}
           className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-red-500 text-white font-semibold rounded-xl hover:from-green-600 hover:to-red-600 transition-all"
         >
-          <span>{isPortuguese ? 'Continuar' : 'Continue'}</span>
+          <span>{isPortuguese ? 'Candidatar à Adesão' : 'Apply for Membership'}</span>
           <ArrowRightIcon className="w-4 h-4" />
         </button>
       </div>
@@ -429,15 +553,68 @@ function CulturalConnectionStep({ onNext, onPrevious, isPortuguese }: any) {
   )
 }
 
-// Step 3: Start with FREE matching
-function ActionStep({ onPrevious, onComplete, isPortuguese }: any) {
-  const handlePrimaryAction = () => {
-    onComplete('matches')
+// Step 3: Heritage-Aware Membership Application Paths
+function ActionStep({ selectedReason, onPrevious, onComplete, isPortuguese }: any) {
+  // Dynamic routing based on selection and heritage
+  const getMembershipRoute = (selection: string, heritage?: string) => {
+    const baseRoute = `/membership/${selection}`
+    const params = new URLSearchParams({
+      heritage: heritage || 'mixed',
+      intent: selection,
+      source: 'wizard'
+    })
+    return `${baseRoute}?${params}`
   }
 
-  const handleSecondaryAction = () => {
-    onComplete('events')
+  const handleMembershipApplication = () => {
+    // For now, route to signup with parameters indicating the path
+    const route = getMembershipRoute(selectedReason || 'cultural')
+    onComplete('membership')
   }
+
+  const handleExploreAllCultures = () => {
+    onComplete('explore')
+  }
+
+  const getActionContent = (selection: string) => {
+    const content = {
+      cultural: {
+        title: isPortuguese ? 'Candidatar à Adesão Cultural' : 'Apply for Cultural Membership',
+        message: isPortuguese 
+          ? 'Aceda a noites de Fado exclusivas e celebrações dos Santos Populares, ALÉM de descobrir Carnaval brasileiro e eventos de independência PALOP'
+          : 'Access exclusive Fado nights and Santos Populares celebrations, PLUS discover Brazilian Carnival and PALOP independence events',
+        icon: '🎭',
+        gradient: 'from-purple-500 to-pink-500'
+      },
+      connections: {
+        title: isPortuguese ? 'Candidatar à Adesão de Conexões' : 'Apply for Connections Membership',
+        message: isPortuguese 
+          ? 'Aceda à comunidade de encontros lusófonos mais exclusiva do Reino Unido com membros verificados de todas as origens lusófonas'
+          : 'Access the UK\'s most exclusive Portuguese-speaking dating community with verified members from all Lusophone backgrounds',
+        icon: '💎',
+        gradient: 'from-red-500 to-orange-500'
+      },
+      community: {
+        title: isPortuguese ? 'Candidatar à Adesão Comunitária' : 'Apply for Community Membership',
+        message: isPortuguese 
+          ? 'Explore e celebre TODAS as culturas lusófonas - perfeito para herança mista e lusófonos nascidos no Reino Unido'
+          : 'Explore and celebrate ALL Portuguese-speaking cultures - perfect for mixed heritage and UK-born Portuguese speakers',
+        icon: '🤝',
+        gradient: 'from-green-500 to-teal-500'
+      },
+      business: {
+        title: isPortuguese ? 'Candidatar à Adesão de Negócios' : 'Apply for Business Membership',
+        message: isPortuguese 
+          ? 'Aceda a oportunidades de negócios exclusivas em mercados PALOP, brasileiros e portugueses com rede de empreendedores lusófonos'
+          : 'Access exclusive business opportunities across PALOP, Brazilian, and Portuguese markets with Lusophone entrepreneur network',
+        icon: '💼',
+        gradient: 'from-blue-500 to-indigo-500'
+      }
+    }
+    return content[selection as keyof typeof content] || content.cultural
+  }
+
+  const currentContent = getActionContent(selectedReason || 'cultural')
 
   return (
     <div className="space-y-6">
@@ -446,102 +623,154 @@ function ActionStep({ onPrevious, onComplete, isPortuguese }: any) {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-          className="w-20 h-20 mx-auto bg-gradient-to-br from-green-500 to-red-500 rounded-full flex items-center justify-center shadow-xl"
+          className={`w-20 h-20 mx-auto bg-gradient-to-br ${currentContent.gradient} rounded-full flex items-center justify-center shadow-xl`}
         >
-          <HeartSolidIcon className="w-10 h-10 text-white" />
+          <span className="text-3xl">{currentContent.icon}</span>
         </motion.div>
         
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-2xl font-bold text-gray-900"
+          className="text-xl font-bold text-gray-900 leading-tight"
         >
-          {isPortuguese ? 'Comece gratuitamente!' : 'Start for FREE!'}
+          {currentContent.title}
         </motion.h2>
         
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-lg text-gray-600 leading-relaxed"
+          className="text-sm text-gray-600 leading-relaxed"
         >
-          {isPortuguese 
-            ? 'Encontre falantes de português perto de si sem pagar nada'
-            : 'Find Portuguese speakers near you at no cost'
-          }
+          {currentContent.message}
         </motion.p>
       </div>
 
-      {/* Primary Action */}
-      <motion.button
+      {/* Heritage Selection Preview */}
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
-        onClick={handlePrimaryAction}
-        className="w-full p-6 bg-gradient-to-r from-green-500 to-red-500 text-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-200 hover:-translate-y-1"
+        className="bg-gradient-to-r from-green-50 via-red-50 to-yellow-50 rounded-xl p-4 border-2 border-green-100"
       >
-        <div className="flex items-center justify-between">
-          <div className="text-left">
-            <div className="text-xl font-bold mb-1">
-              {isPortuguese ? 'Encontrar Falantes de Português' : 'Find Portuguese Speakers'}
-            </div>
-            <div className="text-sm text-white/90">
-              {isPortuguese ? 'Completamente GRATUITO' : 'Completely FREE'}
-            </div>
+        <div className="text-center mb-3">
+          <div className="text-sm font-bold text-gray-900 mb-2">
+            {isPortuguese ? 'Herança Lusófona Reconhecida' : 'Lusophone Heritage Recognized'}
           </div>
-          <div className="flex items-center gap-2">
-            <div className="bg-white/20 px-3 py-1 rounded-full">
-              <span className="text-sm font-bold">FREE</span>
+          <div className="text-xs text-gray-600 mb-3">
+            {isPortuguese 
+              ? 'Com que herança lusófona se identifica?'
+              : 'Which Portuguese-speaking heritage(s) do you identify with?'
+            }
+          </div>
+          <div className="grid grid-cols-4 gap-1 text-xs">
+            <div className="text-center">
+              <div className="text-lg">🇵🇹</div>
+              <div className="text-gray-600">Portugal</div>
             </div>
-            <ArrowRightIcon className="w-6 h-6" />
+            <div className="text-center">
+              <div className="text-lg">🇧🇷</div>
+              <div className="text-gray-600">{isPortuguese ? 'Brasil' : 'Brazil'}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-lg">🇦🇴</div>
+              <div className="text-gray-600">Angola</div>
+            </div>
+            <div className="text-center">
+              <div className="text-lg">🇨🇻</div>
+              <div className="text-gray-600">{isPortuguese ? 'C.Verde' : 'C.Verde'}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-lg">🇲🇿</div>
+              <div className="text-gray-600">{isPortuguese ? 'Moçam.' : 'Mozam.'}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-lg">🇬🇼</div>
+              <div className="text-gray-600">{isPortuguese ? 'G.Bissau' : 'G.Bissau'}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-lg">🇸🇹</div>
+              <div className="text-gray-600">{isPortuguese ? 'S.Tomé' : 'S.Tomé'}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-lg">🇬🇧</div>
+              <div className="text-gray-600">{isPortuguese ? 'UK' : 'UK'}</div>
+            </div>
           </div>
         </div>
-      </motion.button>
+      </motion.div>
 
-      {/* Secondary Action */}
+      {/* Primary Membership Application */}
       <motion.button
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
-        onClick={handleSecondaryAction}
-        className="w-full p-4 bg-white border-2 border-gray-200 rounded-2xl hover:border-green-300 hover:shadow-lg transition-all duration-200"
+        onClick={handleMembershipApplication}
+        className={`w-full p-6 bg-gradient-to-r ${currentContent.gradient} text-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-200 hover:-translate-y-1`}
       >
-        <div className="flex items-center justify-between">
-          <div className="text-left">
-            <div className="text-lg font-bold text-gray-900 mb-1">
-              {isPortuguese ? 'Explorar Eventos' : 'Browse Cultural Events'}
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <div className="text-left">
+              <div className="text-lg font-bold mb-1">
+                {currentContent.title}
+              </div>
+              <div className="text-sm text-white/90">
+                {isPortuguese ? 'Aplicação Exclusiva de Adesão' : 'Exclusive Membership Application'}
+              </div>
             </div>
-            <div className="text-sm text-gray-600">
-              {isPortuguese ? 'Fado, festas e mais' : 'Fado, festivals and more'}
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">{currentContent.icon}</span>
+              <ArrowRightIcon className="w-6 h-6" />
             </div>
           </div>
-          <CalendarDaysIcon className="w-6 h-6 text-gray-400" />
         </div>
       </motion.button>
 
-      {/* Benefits */}
-      <motion.div
+      {/* Cross-Cultural Discovery Option */}
+      <motion.button
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
-        className="bg-green-50 rounded-xl p-4 border border-green-200"
+        onClick={handleExploreAllCultures}
+        className="w-full p-4 bg-white border-2 border-gray-200 rounded-2xl hover:border-primary-300 hover:shadow-lg transition-all duration-200"
+      >
+        <div className="flex items-center justify-between">
+          <div className="text-left">
+            <div className="text-base font-bold text-gray-900 mb-1">
+              {isPortuguese ? 'Explorar Todas as Culturas Lusófonas' : 'Explore All Lusophone Cultures'}
+            </div>
+            <div className="text-sm text-gray-600">
+              {isPortuguese ? 'Página completa de benefícios da adesão' : 'Full membership benefits page'}
+            </div>
+          </div>
+          <span className="text-xl">🌍</span>
+        </div>
+      </motion.button>
+
+      {/* Heritage Promise & Benefits */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+        className="bg-blue-50 rounded-xl p-4 border border-blue-200"
       >
         <div className="flex items-center gap-3 mb-3">
-          <GiftIcon className="w-5 h-5 text-green-600" />
-          <span className="font-semibold text-green-800">
-            {isPortuguese ? 'Benefícios incluídos:' : 'Benefits included:'}
+          <GiftIcon className="w-5 h-5 text-blue-600" />
+          <span className="font-semibold text-blue-800">
+            {isPortuguese ? 'Unidos pela Língua:' : 'Unidos pela Língua:'}
           </span>
         </div>
         <div className="space-y-2">
           {[
-            isPortuguese ? '✓ Matching gratuito para sempre' : '✓ Free matching forever',
-            isPortuguese ? '✓ Primeiro evento gratuito' : '✓ First event free',
-            isPortuguese ? '✓ Acesso à comunidade lusófona do Reino Unido' : '✓ Access to United Kingdom Portuguese-speaking community'
+            isPortuguese ? '✓ Herança mista e segunda geração bem-vindos' : '✓ Mixed heritage and second-generation welcome',
+            isPortuguese ? '✓ Estudantes de língua portuguesa culturalmente ligados' : '✓ Portuguese language learners culturally connected',
+            isPortuguese ? '✓ Celebração igual de TODAS as culturas lusófonas' : '✓ Equal celebration of ALL Portuguese-speaking cultures',
+            isPortuguese ? '✓ Membros verificados de toda a diáspora global' : '✓ Verified members from across the global diaspora'
           ].map((benefit, index) => (
-            <div key={index} className="text-sm text-green-700 flex items-center gap-2">
-              <CheckIcon className="w-4 h-4 text-green-600" />
-              {benefit}
+            <div key={index} className="text-sm text-blue-700 flex items-center gap-2">
+              <CheckIcon className="w-4 h-4 text-blue-600" />
+              <span className="flex-1">{benefit}</span>
             </div>
           ))}
         </div>
@@ -558,10 +787,10 @@ function ActionStep({ onPrevious, onComplete, isPortuguese }: any) {
         </button>
         
         <button
-          onClick={() => onComplete('explore')}
-          className="flex-1 text-center px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-xl transition-all"
+          onClick={() => onComplete('stories')}
+          className="flex-1 text-center px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-xl transition-all text-sm"
         >
-          {isPortuguese ? 'Explorar mais tarde' : 'Explore later'}
+          {isPortuguese ? 'Ver Histórias de Sucesso' : 'See Member Success Stories'}
         </button>
       </div>
     </div>

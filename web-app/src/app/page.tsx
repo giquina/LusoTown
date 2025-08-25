@@ -11,15 +11,15 @@ import MobileWelcomeWizard from '@/components/MobileWelcomeWizard'
 import ResponsiveButton from '@/components/ResponsiveButton'
 
 // Strategic component loading for cohesive experience  
-const SuccessStories = dynamic(() => import('@/components/SuccessStories').then(mod => ({ default: mod.default })), {
+const SuccessStories = dynamic(() => import('@/components/SuccessStories'), {
   loading: () => <div className="h-60 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
-const TestimonialsNew = dynamic(() => import('@/components/TestimonialsNew').then(mod => ({ default: mod.default })), {
+const TestimonialsNew = dynamic(() => import('@/components/TestimonialsNew'), {
   loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
-const EventsShowcase = dynamic(() => import('@/components/EventsShowcase').then(mod => ({ default: mod.default })), {
+const EventsShowcase = dynamic(() => import('@/components/EventsShowcase'), {
   loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
@@ -85,8 +85,8 @@ export default function Home() {
       />
       
       <main className="min-h-screen w-full overflow-x-hidden" role="main">
-        <div className="pt-24 w-full">
-          {/* HERO SECTION - Redesigned for cohesion and free signup emphasis */}
+        <div className="pt-20 lg:pt-24 w-full">
+          {/* HERO SECTION - Community Discovery Focus with Proper Spacing */}
           <section className="relative min-h-[600px] lg:min-h-[700px] bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center overflow-hidden">
             {/* Lusophone unity inspired background */}
             <div className="absolute inset-0" aria-hidden="true">
@@ -97,31 +97,53 @@ export default function Home() {
             
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-                {/* Left Column - Value Proposition */}
+                {/* Left Column - Unidos pela Língua Community Discovery Value */}
                 <div className="text-center lg:text-left space-y-8">
-                  {/* Discovery Badge */}
-                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg animate-pulse">
-                    <CalendarDaysIcon className="w-4 h-4" />
-                    {t('hero.discovery_badge', 'NEVER MISS YOUR COMMUNITY AGAIN')}
+                  {/* Discovery Badge - Properly Positioned */}
+                  <div className="mt-4 lg:mt-8 mb-6">
+                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg">
+                      <CalendarDaysIcon className="w-4 h-4" />
+                      {t('hero.discovery_badge', 'NEVER MISS YOUR COMMUNITY AGAIN')}
+                    </div>
                   </div>
                   
-                  {/* Main Headline - Community Guide Positioning */}
+                  {/* Main Headline - Unidos pela Língua Focus */}
                   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
-                    <span className="text-primary-600">{t('hero.title.your', 'Your Portuguese')}</span><br />
+                    <span className="text-primary-600">{t('welcome.lusophone.title', 'Your Portuguese-Speaking')}</span><br />
                     <span className="bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 bg-clip-text text-transparent">
-                      {t('hero.title.main', 'Community Guide')}
+                      {t('hero.title.guide', 'Community Guide')}
                     </span><br />
-                    <span className="text-secondary-600">{t('hero.title.location', 'to London & the UK')}</span> 🇵🇹
+                    <span className="text-secondary-600">{t('hero.title.uk', 'to the United Kingdom')}</span>
+                    <div className="flex justify-center lg:justify-start gap-1 mt-2 text-2xl">
+                      🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱
+                    </div>
                   </h1>
                   
-                  {/* Sub-headline */}
+                  {/* Unidos pela Língua Sub-headline */}
                   <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl">
-                    {t('hero.subheadline', 'Find Portuguese community events & experiences - from Kizomba nights to business networking, cultural festivals to family gatherings')}
+                    <span className="font-bold bg-gradient-to-r from-green-600 via-yellow-600 to-red-600 bg-clip-text text-transparent">
+                      {t('welcome.lusophone.subtitle', 'Unidos pela Língua - United by Language, Not by Borders')}
+                    </span>
                   </p>
                   
-                  {/* Community Description */}
+                  {/* Community Discovery Description */}
+                  <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
+                    {t('hero.discovery_tagline', 'Discover what\'s happening today, this weekend, and this month in your Portuguese-speaking community')}
+                  </p>
+                  
+                  {/* Value Proposition */}
                   <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mb-4">
-                    {t('hero.community_description', 'Discover what\'s happening today, this weekend, and this month in the Portuguese-speaking community across 🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱🇲🇴🇬🇶 London and the UK')}
+                    {t('hero.value_prop', 'From local events to business opportunities, student groups to cultural experiences - never miss what\'s happening again.')}
+                  </p>
+                  
+                  {/* Lusophone Unity Description */}
+                  <p className="text-base text-gray-600 leading-relaxed max-w-2xl mb-4">
+                    {t('welcome.lusophone.from_anywhere', 'From Lisboa to São Paulo, Luanda to Praia, Maputo to Bissau - all Portuguese speakers united in London')}
+                  </p>
+                  
+                  {/* Heritage Celebration */}
+                  <p className="text-base text-gray-600 leading-relaxed max-w-2xl mb-4">
+                    {t('welcome.lusophone.heritage_celebration', 'Celebrating the full spectrum of Lusophone heritage and culture')}
                   </p>
                   
                   {/* PALOP Pride Recognition */}
@@ -138,19 +160,19 @@ export default function Home() {
                     </div>
                   </div>
                   
-                  {/* Discovery-focused stats */}
+                  {/* Community Discovery Stats */}
                   <div className="flex flex-wrap justify-center lg:justify-start gap-6 text-gray-600">
                     <div className="flex items-center gap-2">
                       <UsersIcon className="w-5 h-5 text-primary-500" />
-                      <span className="font-semibold">2,750+ community members</span>
+                      <span className="font-semibold">750+ Portuguese speakers</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CalendarDaysIcon className="w-5 h-5 text-secondary-500" />
-                      <span className="font-semibold">50+ weekly events</span>
+                      <span className="font-semibold">What's happening today</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPinIcon className="w-5 h-5 text-yellow-500" />
-                      <span className="font-semibold">8 UK cities covered</span>
+                      <span className="font-semibold">Across the UK</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <StarIcon className="w-5 h-5 text-green-500" />
@@ -158,12 +180,12 @@ export default function Home() {
                     </div>
                   </div>
                   
-                  {/* Primary CTA Buttons */}
+                  {/* Community Discovery CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a
-                      href={ROUTES.signup}
-                      className="group inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 text-white text-xl font-black rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-3 hover:scale-110 min-h-[70px] min-w-[250px] animate-pulse"
-                      data-signup-cta="hero-primary"
+                      href={ROUTES.events}
+                      className="group inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 text-white text-xl font-black rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-3 hover:scale-110 min-h-[70px] min-w-[250px]"
+                      data-events-cta="hero-primary"
                     >
                       <div className="flex items-center mr-3 gap-1">
                         <span className="text-sm">🇵🇹</span>
@@ -171,15 +193,15 @@ export default function Home() {
                         <span className="text-sm">🇦🇴</span>
                         <span className="text-sm">🇨🇻</span>
                       </div>
-                      {t('hero.cta_primary', 'DISCOVER WHAT\'S ON')}
+                      {t('hero.cta_primary', 'SEE WHAT\'S ON TODAY')}
                       <ArrowRightIcon className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
                     
                     <a
-                      href={ROUTES.events}
+                      href={ROUTES.signup}
                       className="inline-flex items-center justify-center px-6 py-4 border-2 border-primary-300 text-primary-700 text-lg font-semibold rounded-2xl hover:bg-primary-50 transition-all duration-300 min-h-[60px] min-w-[160px]"
                     >
-                      {t('hero.cta_secondary', 'Browse Events')}
+                      {t('hero.cta_secondary', 'Join Community')}
                     </a>
                   </div>
                   

@@ -13,6 +13,7 @@ import { PlatformIntegrationProvider } from "@/context/PlatformIntegrationContex
 import { WaitingListProvider } from "@/context/WaitingListContext";
 import { HeritageProvider } from "@/context/HeritageContext";
 import { NavigationProvider } from "@/context/NavigationContext";
+import { WelcomeProvider } from "@/context/WelcomeContext";
 import HeritageStyleProvider from "@/components/HeritageStyleProvider";
 import { AuthPopupProvider } from "@/components/AuthPopupProvider";
 import Header from "@/components/Header";
@@ -68,6 +69,16 @@ const MobileCriticalFixes = dynamicImport(() => import("@/components/MobileCriti
 });
 
 const LusoBotWidget = dynamicImport(() => import("@/components/LusoBotWidget"), {
+  loading: () => null,
+  ssr: false
+});
+
+const WelcomePopup = dynamicImport(() => import("@/components/WelcomePopup"), {
+  loading: () => null,
+  ssr: false
+});
+
+const WelcomeBanner = dynamicImport(() => import("@/components/WelcomeBanner"), {
   loading: () => null,
   ssr: false
 });
@@ -169,6 +180,7 @@ export default function RootLayout({
                               <PlatformIntegrationProvider>
                                 <WaitingListProvider>
                                   <NavigationProvider>
+                                    <WelcomeProvider>
                                     {/* Premium Mobile Experience Wrapper */}
                                     <ComponentErrorBoundary componentName="Mobile Experience Optimizer">
                                       <MobileExperienceOptimizer
@@ -223,6 +235,14 @@ export default function RootLayout({
                                               />
                                             </ComponentErrorBoundary>
 
+                                            <ComponentErrorBoundary componentName="Welcome Banner">
+                                              <WelcomeBanner />
+                                            </ComponentErrorBoundary>
+
+                                            <ComponentErrorBoundary componentName="Welcome Popup">
+                                              <WelcomePopup />
+                                            </ComponentErrorBoundary>
+
                                             <ComponentErrorBoundary componentName="LusoBot Widget">
                                               <LusoBotWidget 
                                                 position="bottom-right"
@@ -234,6 +254,7 @@ export default function RootLayout({
                                         </ComponentErrorBoundary>
                                       </MobileExperienceOptimizer>
                                     </ComponentErrorBoundary>
+                                    </WelcomeProvider>
                                   </NavigationProvider>
                                 </WaitingListProvider>
                               </PlatformIntegrationProvider>

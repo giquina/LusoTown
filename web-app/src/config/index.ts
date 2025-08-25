@@ -115,6 +115,18 @@ export {
   trackPortugueseCulturalEngagement
 } from './analytics';
 
+// Welcome popup and onboarding
+export {
+  WELCOME_POPUP_CONFIG,
+  INTEREST_CATEGORIES,
+  COUNTRY_ROUTING,
+  DEFAULT_WELCOME_PREFERENCES,
+  WELCOME_ANALYTICS_EVENTS,
+  WELCOME_VALIDATION,
+  getRoutingForCountry,
+  getRouteForPreferences
+} from './welcome-popup';
+
 // Mock data and testing
 export { mockProfileImages, mockEventImages, getProfileImage, getEventImage } from './mockData';
 
