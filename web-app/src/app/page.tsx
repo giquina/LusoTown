@@ -5,6 +5,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { communityStats } from '@/config/community'
 import { generateJsonLd } from '@/config/seo'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import Footer from '@/components/Footer'
 import { ROUTES } from '@/config/routes'
 import MobileWelcomeWizard from '@/components/MobileWelcomeWizard'
@@ -275,7 +276,7 @@ export default function Home() {
                 
                 {/* Today's Events Grid */}
                 <div className="grid md:grid-cols-3 gap-6 mb-16">
-                  <div className="bg-gradient-to-br from-green-50 to-red-50 rounded-2xl p-6 border border-green-200/50">
+                  <Link href={`${ROUTES.events}?ref=home&day=today&tag=kizomba`} className="block group bg-gradient-to-br from-green-50 to-red-50 rounded-2xl p-6 border border-green-200/50 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer" aria-label="View today's Kizomba events">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-14 h-14 bg-gradient-to-r from-green-500 to-red-500 rounded-xl flex items-center justify-center text-2xl">🎵</div>
                       <div>
@@ -285,12 +286,12 @@ export default function Home() {
                     </div>
                     <p className="text-gray-700 text-sm mb-3">"Noite especial de kizomba com chocolate quente. Ideal para conhecer novos amigos portugueses!"</p>
                     <div className="flex gap-2">
-                      <span className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">Tonight</span>
-                      <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Kizomba</span>
+                      <Link href={`${ROUTES.events}?ref=home&day=today`} className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full hover:underline">Tonight</Link>
+                      <Link href={`${ROUTES.events}?ref=home&tag=kizomba`} className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full hover:underline">Kizomba</Link>
                     </div>
-                  </div>
+                  </Link>
                   
-                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-200/50">
+                  <Link href={`${ROUTES.events}?ref=home&day=today&tag=food`} className="block group bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-200/50 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer" aria-label="View today's Food events">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-2xl">🍽️</div>
                       <div>
@@ -300,12 +301,12 @@ export default function Home() {
                     </div>
                     <p className="text-gray-700 text-sm mb-3">"Abertura do novo restaurante brasileiro com pratos tradicionais e ambiente acolhedor."</p>
                     <div className="flex gap-2">
-                      <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Today</span>
-                      <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">Food</span>
+                      <Link href={`${ROUTES.events}?ref=home&day=today`} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline">Today</Link>
+                      <Link href={`${ROUTES.events}?ref=home&tag=food`} className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline">Food</Link>
                     </div>
-                  </div>
+                  </Link>
                   
-                  <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-6 border border-yellow-200/50">
+                  <Link href={`${ROUTES.events}?ref=home&day=tomorrow&tag=business`} className="block group bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-6 border border-yellow-200/50 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer" aria-label="View tomorrow's Business events">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-14 h-14 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center text-2xl">💼</div>
                       <div>
@@ -315,10 +316,10 @@ export default function Home() {
                     </div>
                     <p className="text-gray-700 text-sm mb-3">"Networking matinal para profissionais portugueses no setor financeiro."</p>
                     <div className="flex gap-2">
-                      <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">Tomorrow</span>
-                      <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Business</span>
+                      <Link href={`${ROUTES.events}?ref=home&day=tomorrow`} className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full hover:underline">Tomorrow</Link>
+                      <Link href={`${ROUTES.events}?ref=home&tag=business`} className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline">Business</Link>
                     </div>
-                  </div>
+                  </Link>
                 </div>
                 
                 {/* CTA for Today's Events */}
@@ -350,7 +351,7 @@ export default function Home() {
                 </div>
                 
                 <div className="grid lg:grid-cols-3 gap-8 mb-12">
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-green-500">
+                  <Link href={`${ROUTES.events}?ref=home&when=weekend&tag=music&country=cv`} className="block bg-white rounded-2xl p-6 shadow-lg border-l-4 border-green-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer" aria-label="See Cape Verdean music events this weekend">
                     <div className="text-center mb-4">
                       <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-red-500 rounded-2xl flex items-center justify-center text-3xl">🎶</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">Saturday: Cape Verdean Music Festival</h3>
@@ -358,13 +359,13 @@ export default function Home() {
                     </div>
                     <p className="text-gray-700 text-sm mb-4">"Festival de música cabo-verdiana com artistas internacionais. Uma celebração da cultura PALOP em Londres."</p>
                     <div className="flex gap-2 justify-center flex-wrap">
-                      <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Music</span>
-                      <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">🇨🇻 Cape Verde</span>
-                      <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">PALOP</span>
+                      <Link href={`${ROUTES.events}?ref=home&tag=music`} className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full hover:underline">Music</Link>
+                      <Link href={`${ROUTES.events}?ref=home&country=cv`} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline">🇨🇻 Cape Verde</Link>
+                      <Link href={`${ROUTES.events}?ref=home&tag=palop`} className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline">PALOP</Link>
                     </div>
-                  </div>
+                  </Link>
                   
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-orange-500">
+                  <Link href={`${ROUTES.events}?ref=home&when=weekend&tag=dance&country=ao`} className="block bg-white rounded-2xl p-6 shadow-lg border-l-4 border-orange-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer" aria-label="See Angolan kizomba events this weekend">
                     <div className="text-center mb-4">
                       <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center text-3xl">💃</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">Friday: Angolan Kizomba Night</h3>
@@ -372,13 +373,13 @@ export default function Home() {
                     </div>
                     <p className="text-gray-700 text-sm mb-4">"Noite sensual de Kizomba angolana com músicos ao vivo. Conecte-se através da dança mais magnética de África."</p>
                     <div className="flex gap-2 justify-center flex-wrap">
-                      <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">Dance</span>
-                      <span className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">🇦🇴 Angola</span>
-                      <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">PALOP</span>
+                      <Link href={`${ROUTES.events}?ref=home&tag=dance`} className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full hover:underline">Dance</Link>
+                      <Link href={`${ROUTES.events}?ref=home&country=ao`} className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full hover:underline">🇦🇴 Angola</Link>
+                      <Link href={`${ROUTES.events}?ref=home&tag=palop`} className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline">PALOP</Link>
                     </div>
-                  </div>
+                  </Link>
                   
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500">
+                  <Link href={`${ROUTES.events}?ref=home&when=weekend&tag=food&country=mz`} className="block bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer" aria-label="See Mozambican food events this weekend">
                     <div className="text-center mb-4">
                       <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-3xl">🌶️</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">Sunday: Mozambican Spice Market</h3>
@@ -386,11 +387,11 @@ export default function Home() {
                     </div>
                     <p className="text-gray-700 text-sm mb-4">"Mercado de especiarias moçambicanas autênticas. Prove os sabores do Oceano Índico e herança costeira."</p>
                     <div className="flex gap-2 justify-center flex-wrap">
-                      <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Food</span>
-                      <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">🇲🇿 Mozambique</span>
-                      <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">PALOP</span>
+                      <Link href={`${ROUTES.events}?ref=home&tag=food`} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline">Food</Link>
+                      <Link href={`${ROUTES.events}?ref=home&country=mz`} className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline">🇲🇿 Mozambique</Link>
+                      <Link href={`${ROUTES.events}?ref=home&tag=palop`} className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline">PALOP</Link>
                     </div>
-                  </div>
+                  </Link>
                 </div>
                 
                 {/* Weekend CTA */}
@@ -429,7 +430,7 @@ export default function Home() {
                 
                 {/* Weekly Activities Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-purple-500">
+                  <Link href={`${ROUTES.events}?ref=home&when=weekly&tag=language`} className="block bg-white rounded-2xl p-6 shadow-lg border-l-4 border-purple-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer" aria-label="See weekly language exchange events">
                     <div className="text-center mb-4">
                       <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-3xl">🗣️</div>
                       <h3 className="text-lg font-bold text-gray-900 mb-2">Monday: Portuguese Language Exchange</h3>
@@ -437,12 +438,12 @@ export default function Home() {
                     </div>
                     <p className="text-gray-700 text-sm mb-4">"Encontro semanal para prática da língua. Ideal para melhorar português e conhecer nativos."</p>
                     <div className="flex gap-2 justify-center flex-wrap">
-                      <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">Language</span>
-                      <span className="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded-full">Weekly</span>
+                      <Link href={`${ROUTES.events}?ref=home&tag=language`} className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline">Language</Link>
+                      <Link href={`${ROUTES.events}?ref=home&when=weekly`} className="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded-full hover:underline">Weekly</Link>
                     </div>
-                  </div>
+                  </Link>
                   
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-green-500">
+                  <Link href={`${ROUTES.events}?ref=home&when=weekly&tag=business&tag=palop`} className="block bg-white rounded-2xl p-6 shadow-lg border-l-4 border-green-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer" aria-label="See weekly PALOP business networking">
                     <div className="text-center mb-4">
                       <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl flex items-center justify-center text-3xl">🏂</div>
                       <h3 className="text-lg font-bold text-gray-900 mb-2">Wednesday: PALOP Business Networking</h3>
@@ -450,12 +451,12 @@ export default function Home() {
                     </div>
                     <p className="text-gray-700 text-sm mb-4">"Networking semanal para empresários PALOP. Oportunidades de negócios e parcerias."</p>
                     <div className="flex gap-2 justify-center flex-wrap">
-                      <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Business</span>
-                      <span className="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-full">PALOP</span>
+                      <Link href={`${ROUTES.events}?ref=home&tag=business`} className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full hover:underline">Business</Link>
+                      <Link href={`${ROUTES.events}?ref=home&tag=palop`} className="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-full hover:underline">PALOP</Link>
                     </div>
-                  </div>
+                  </Link>
                   
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-red-500">
+                  <Link href={`${ROUTES.events}?ref=home&when=weekly&tag=dance&country=br`} className="block bg-white rounded-2xl p-6 shadow-lg border-l-4 border-red-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer" aria-label="See weekly Brazilian dance classes">
                     <div className="text-center mb-4">
                       <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl flex items-center justify-center text-3xl">💃</div>
                       <h3 className="text-lg font-bold text-gray-900 mb-2">Friday: Brazilian Dance Classes</h3>
@@ -463,12 +464,12 @@ export default function Home() {
                     </div>
                     <p className="text-gray-700 text-sm mb-4">"Aulas semanais de samba, forro e danças brasileiras. Venha dançar e fazer amizades!"</p>
                     <div className="flex gap-2 justify-center flex-wrap">
-                      <span className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">Dance</span>
-                      <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">🇧🇷 Brazil</span>
+                      <Link href={`${ROUTES.events}?ref=home&tag=dance`} className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full hover:underline">Dance</Link>
+                      <Link href={`${ROUTES.events}?ref=home&country=br`} className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full hover:underline">🇧🇷 Brazil</Link>
                     </div>
-                  </div>
+                  </Link>
                   
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500">
+                  <Link href={`${ROUTES.events}?ref=home&when=weekly&tag=football&tag=social`} className="block bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer" aria-label="See weekly Portuguese football socials">
                     <div className="text-center mb-4">
                       <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-3xl">⚽</div>
                       <h3 className="text-lg font-bold text-gray-900 mb-2">Sunday: Portuguese Football Social</h3>
@@ -476,10 +477,10 @@ export default function Home() {
                     </div>
                     <p className="text-gray-700 text-sm mb-4">"Assistir jogos de futebol português e brasileiro com a comunidade. Tapas e cerveja!"</p>
                     <div className="flex gap-2 justify-center flex-wrap">
-                      <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Football</span>
-                      <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">Social</span>
+                      <Link href={`${ROUTES.events}?ref=home&tag=football`} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline">Football</Link>
+                      <Link href={`${ROUTES.events}?ref=home&tag=social`} className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline">Social</Link>
                     </div>
-                  </div>
+                  </Link>
                 </div>
                 
                 {/* Weekly Pattern Showcase */}
