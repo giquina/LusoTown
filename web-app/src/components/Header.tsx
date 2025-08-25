@@ -304,7 +304,7 @@ export default function Header() {
                       duration: 0.4,
                       ease: [0.215, 0.61, 0.355, 1],
                     }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200/60 py-8 z-50"
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
                     style={{
                       left: "50%",
                       transform: "translateX(-50%)",
@@ -394,7 +394,7 @@ export default function Header() {
                       duration: 0.4,
                       ease: [0.215, 0.61, 0.355, 1],
                     }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-200/60 py-8 z-50"
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
                     style={{
                       left: "50%",
                       transform: "translateX(-50%)",
