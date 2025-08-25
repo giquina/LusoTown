@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic'
 import Footer from '@/components/Footer'
 import { ROUTES } from '@/config/routes'
 import MobileWelcomeWizard from '@/components/MobileWelcomeWizard'
+import StreamlinedCommunitySelector from '@/components/StreamlinedCommunitySelector'
 import ResponsiveButton from '@/components/ResponsiveButton'
 
 // Strategic component loading for cohesive experience  
@@ -89,9 +90,12 @@ export default function Home() {
       />
       
       <main className="min-h-screen w-full overflow-x-hidden" role="main">
-        <div className="pt-20 lg:pt-24 w-full">
+        {/* Fixed spacing: Added proper top margin and padding for hero section */}
+        <div className="pt-24 lg:pt-32 w-full">
           {/* HERO SECTION - Community Discovery Focus with Proper Spacing */}
-          <section className="relative min-h-[600px] lg:min-h-[700px] bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center overflow-hidden">
+          <section className="relative min-h-[600px] lg:min-h-[700px] bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center overflow-hidden"
+            style={{ paddingTop: '60px', paddingBottom: '80px' }}
+          >
             {/* Lusophone unity inspired background */}
             <div className="absolute inset-0" aria-hidden="true">
               <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-r from-green-100/20 via-blue-100/20 to-yellow-100/20"></div>
@@ -247,8 +251,11 @@ export default function Home() {
             </div>
           </section>
           
-          {/* WHAT'S HAPPENING TODAY SECTION */}
-          <section className="py-20 bg-white">
+          {/* STREAMLINED COMMUNITY SELECTOR - New 2x2 Grid Onboarding */}
+          <StreamlinedCommunitySelector />
+          
+          {/* WHAT'S HAPPENING TODAY SECTION - Fixed spacing */}
+          <section className="py-16 md:py-20 lg:py-24 bg-white section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
@@ -329,8 +336,8 @@ export default function Home() {
             </div>
           </section>
           
-          {/* THIS WEEKEND'S PORTUGUESE COMMUNITY SECTION */}
-          <section className="py-20 bg-gradient-to-br from-secondary-50 to-accent-50">
+          {/* THIS WEEKEND'S PORTUGUESE COMMUNITY SECTION - Fixed spacing */}
+          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-secondary-50 to-accent-50 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
@@ -401,8 +408,8 @@ export default function Home() {
             </div>
           </section>
           
-          {/* WEEKLY COMMUNITY DISCOVERY SECTION */}
-          <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+          {/* WEEKLY COMMUNITY DISCOVERY SECTION - Fixed spacing */}
+          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-50 to-pink-50 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
@@ -544,8 +551,8 @@ export default function Home() {
             </div>
           </section>
 
-          {/* PALOP HERITAGE CELEBRATION SECTION */}
-          <section className="py-20 bg-gradient-to-br from-orange-50 via-yellow-50 to-green-50">
+          {/* PALOP HERITAGE CELEBRATION SECTION - Fixed spacing */}
+          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-orange-50 via-yellow-50 to-green-50 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
@@ -729,8 +736,8 @@ export default function Home() {
             </div>
           </section>
 
-          {/* MONTHLY CULTURAL CALENDAR SECTION */}
-          <section className="py-20 bg-gradient-to-br from-indigo-50 via-blue-50 to-teal-50">
+          {/* MONTHLY CULTURAL CALENDAR SECTION - Fixed spacing */}
+          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-indigo-50 via-blue-50 to-teal-50 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
@@ -882,8 +889,8 @@ export default function Home() {
             </div>
           </section>
 
-          {/* EVENTS & COMMUNITY SECTION - Connected Experience */}
-          <section className="py-20 bg-gradient-to-br from-secondary-50 to-accent-50">
+          {/* EVENTS & COMMUNITY SECTION - Connected Experience - Fixed spacing */}
+          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-secondary-50 to-accent-50 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
@@ -986,8 +993,8 @@ export default function Home() {
             <TestimonialsNew />
           </div>
           
-          {/* FINAL FREE SIGNUP CTA - Cohesive ending */}
-          <section className="py-20 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 text-white relative z-10">
+          {/* FINAL FREE SIGNUP CTA - Cohesive ending - Fixed spacing */}
+          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 text-white relative z-10 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <div className="max-w-4xl mx-auto">
                 <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-bold mb-8">
@@ -1058,8 +1065,8 @@ export default function Home() {
           <SuccessStories />
           <LusophoneTestimonials />
           
-          {/* PALOP Events Showcase */}
-          <section className="py-20 bg-gradient-to-br from-green-50 via-yellow-50 to-orange-50">
+          {/* PALOP Events Showcase - Fixed spacing */}
+          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-green-50 via-yellow-50 to-orange-50 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
