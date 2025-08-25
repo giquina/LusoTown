@@ -2,6 +2,7 @@
   "framework": "nextjs",
   "installCommand": "cd web-app && npm ci || npm i",
   "buildCommand": "cd web-app && npm run build",
+  "ignoreCommand": "if [ \"$VERCEL_ENV\" = \"production\" ] && [ \"$VERCEL_GIT_COMMIT_REF\" = \"main\" ]; then echo 'Skipping auto Production deploy from main. Use Promote to Production from a Preview.'; exit 0; else exit 1; fi",
   "headers": [
     {
       "source": "/(.*)",
