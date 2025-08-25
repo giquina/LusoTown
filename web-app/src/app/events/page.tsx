@@ -53,6 +53,13 @@ import PortugueseCulturalCalendar from "@/components/PortugueseCulturalCalendar"
 import EventsDiscovery from "@/components/EventsDiscovery";
 import CommunityEventCreation from "@/components/CommunityEventCreation";
 
+// Mobile UX Components
+import { SkeletonEventGrid } from "@/components/mobile/SkeletonLoadingSystem";
+import SwipeEventNavigation from "@/components/mobile/SwipeEventNavigation";
+import QuickFiltersSystem from "@/components/mobile/QuickFiltersSystem";
+import LocationAwareEvents from "@/components/mobile/LocationAwareEvents";
+import { PWAInstallButton } from "@/components/mobile/PWAInstallPrompt";
+
 // EventCard component is no longer needed - using ImprovedEventCard instead
 
 const FilterSidebar = ({
@@ -123,9 +130,18 @@ const FilterSidebar = ({
                           })
                         }
                         className="text-primary-500 focus:ring-primary-400"
-                        aria-describedby={`category-${category.replace(/\s+/g, '-').toLowerCase()}`}
+                        aria-describedby={`category-${category
+                          .replace(/\s+/g, "-")
+                          .toLowerCase()}`}
                       />
-                      <span className="text-sm" id={`category-${category.replace(/\s+/g, '-').toLowerCase()}`}>{category}</span>
+                      <span
+                        className="text-sm"
+                        id={`category-${category
+                          .replace(/\s+/g, "-")
+                          .toLowerCase()}`}
+                      >
+                        {category}
+                      </span>
                     </label>
                   ))}
                   <label className="flex items-center gap-2 cursor-pointer">
@@ -135,9 +151,13 @@ const FilterSidebar = ({
                       value=""
                       checked={!filters.category}
                       onChange={() =>
-                        onFilterChange(Object.fromEntries(Object.entries({
-                          ...filters,
-                        }).filter(([k]) => k !== 'category')) as EventFilters)
+                        onFilterChange(
+                          Object.fromEntries(
+                            Object.entries({
+                              ...filters,
+                            }).filter(([k]) => k !== "category")
+                          ) as EventFilters
+                        )
                       }
                       className="text-primary-500 focus:ring-primary-400"
                     />
@@ -195,9 +215,13 @@ const FilterSidebar = ({
                       value=""
                       checked={!filters.membershipLevel}
                       onChange={() =>
-                        onFilterChange(Object.fromEntries(Object.entries({
-                          ...filters,
-                        }).filter(([k]) => k !== 'membershipLevel')) as EventFilters)
+                        onFilterChange(
+                          Object.fromEntries(
+                            Object.entries({
+                              ...filters,
+                            }).filter(([k]) => k !== "membershipLevel")
+                          ) as EventFilters
+                        )
                       }
                       className="text-primary-500 focus:ring-primary-400"
                     />
@@ -298,9 +322,13 @@ const FilterSidebar = ({
                       value=""
                       checked={!filters.priceRange}
                       onChange={() =>
-                        onFilterChange(Object.fromEntries(Object.entries({
-                          ...filters,
-                        }).filter(([k]) => k !== 'priceRange')) as EventFilters)
+                        onFilterChange(
+                          Object.fromEntries(
+                            Object.entries({
+                              ...filters,
+                            }).filter(([k]) => k !== "priceRange")
+                          ) as EventFilters
+                        )
                       }
                       className="text-primary-500 focus:ring-primary-400"
                     />
@@ -329,7 +357,9 @@ const FilterSidebar = ({
 export default function EventsPage() {
   const { language, t } = useLanguage();
   const isPortuguese = language === "pt";
-  const [activeTab, setActiveTab] = useState<"events" | "tours" | "cultural" | "create">("events");
+  const [activeTab, setActiveTab] = useState<
+    "events" | "tours" | "cultural" | "create"
+  >("events");
   const { getConnectionsByEvent } = useNetworking();
 
   // Preview system state
@@ -337,7 +367,7 @@ export default function EventsPage() {
 
   // Helpers to interpret month/season URL params into date ranges
   const toISODate = useCallback((d: Date) => {
-    const pad = (n: number) => String(n).padStart(2, '0');
+    const pad = (n: number) => String(n).padStart(2, "0");
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
   }, []);
   const monthIndex = useCallback((name: string) => {
@@ -357,35 +387,50 @@ export default function EventsPage() {
     };
     return map[name.toLowerCase()];
   }, []);
-  const getMonthRange = useCallback((monthName: string) => {
-    const now = new Date();
-    const y = now.getFullYear();
-    const idx = monthIndex(monthName);
-    if (idx === undefined) return undefined;
-    const start = new Date(y, idx, 1);
-    const end = new Date(y, idx + 1, 0);
-    return { start: toISODate(start), end: toISODate(end) };
-  }, [monthIndex, toISODate]);
-  const getSeasonRange = useCallback((season: string) => {
-    const now = new Date();
-    const y = now.getFullYear();
-    const s = season.toLowerCase();
-    if (s === 'spring') {
-      return { start: toISODate(new Date(y, 2, 1)), end: toISODate(new Date(y, 5, 0)) }; // Mar 1 - May 31
-    }
-    if (s === 'summer') {
-      return { start: toISODate(new Date(y, 5, 1)), end: toISODate(new Date(y, 8, 0)) }; // Jun 1 - Aug 31
-    }
-    if (s === 'autumn' || s === 'fall') {
-      return { start: toISODate(new Date(y, 8, 1)), end: toISODate(new Date(y, 11, 0)) }; // Sep 1 - Nov 30
-    }
-    if (s === 'winter') {
-      const decStart = new Date(y, 11, 1); // Dec 1
-      const febEnd = new Date(y + 1, 2, 0); // last day of Feb next year
-      return { start: toISODate(decStart), end: toISODate(febEnd) };
-    }
-    return undefined;
-  }, [toISODate]);
+  const getMonthRange = useCallback(
+    (monthName: string) => {
+      const now = new Date();
+      const y = now.getFullYear();
+      const idx = monthIndex(monthName);
+      if (idx === undefined) return undefined;
+      const start = new Date(y, idx, 1);
+      const end = new Date(y, idx + 1, 0);
+      return { start: toISODate(start), end: toISODate(end) };
+    },
+    [monthIndex, toISODate]
+  );
+  const getSeasonRange = useCallback(
+    (season: string) => {
+      const now = new Date();
+      const y = now.getFullYear();
+      const s = season.toLowerCase();
+      if (s === "spring") {
+        return {
+          start: toISODate(new Date(y, 2, 1)),
+          end: toISODate(new Date(y, 5, 0)),
+        }; // Mar 1 - May 31
+      }
+      if (s === "summer") {
+        return {
+          start: toISODate(new Date(y, 5, 1)),
+          end: toISODate(new Date(y, 8, 0)),
+        }; // Jun 1 - Aug 31
+      }
+      if (s === "autumn" || s === "fall") {
+        return {
+          start: toISODate(new Date(y, 8, 1)),
+          end: toISODate(new Date(y, 11, 0)),
+        }; // Sep 1 - Nov 30
+      }
+      if (s === "winter") {
+        const decStart = new Date(y, 11, 1); // Dec 1
+        const febEnd = new Date(y + 1, 2, 0); // last day of Feb next year
+        return { start: toISODate(decStart), end: toISODate(febEnd) };
+      }
+      return undefined;
+    },
+    [toISODate]
+  );
 
   // Additional ranges for day/when
   const getTodayRange = useCallback(() => {
@@ -399,8 +444,16 @@ export default function EventsPage() {
     const now = new Date();
     const tomorrow = new Date(now);
     tomorrow.setDate(now.getDate() + 1);
-    const start = new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate());
-    const end = new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate());
+    const start = new Date(
+      tomorrow.getFullYear(),
+      tomorrow.getMonth(),
+      tomorrow.getDate()
+    );
+    const end = new Date(
+      tomorrow.getFullYear(),
+      tomorrow.getMonth(),
+      tomorrow.getDate()
+    );
     return { start: toISODate(start), end: toISODate(end) };
   }, [toISODate]);
 
@@ -437,12 +490,12 @@ export default function EventsPage() {
       }
 
       // Initial filtering from URL: month or season
-      const monthParam = urlParams.get('month');
-      const seasonParam = urlParams.get('season');
-      const tagParam = urlParams.getAll('tag');
-      const countryParam = urlParams.get('country');
-      const dayParam = urlParams.get('day');
-      const whenParam = urlParams.get('when');
+      const monthParam = urlParams.get("month");
+      const seasonParam = urlParams.get("season");
+      const tagParam = urlParams.getAll("tag");
+      const countryParam = urlParams.get("country");
+      const dayParam = urlParams.get("day");
+      const whenParam = urlParams.get("when");
 
       const nextFilters: EventFilters = {};
       if (monthParam) {
@@ -453,24 +506,35 @@ export default function EventsPage() {
         if (range) nextFilters.dateRange = range;
       } else if (dayParam) {
         const d = dayParam.toLowerCase();
-        if (d === 'today') nextFilters.dateRange = getTodayRange();
-        else if (d === 'tomorrow') nextFilters.dateRange = getTomorrowRange();
+        if (d === "today") nextFilters.dateRange = getTodayRange();
+        else if (d === "tomorrow") nextFilters.dateRange = getTomorrowRange();
       } else if (whenParam) {
         const w = whenParam.toLowerCase();
-        if (w === 'week') nextFilters.dateRange = getNext7DaysRange();
-        else if (w === 'weekend') nextFilters.dateRange = getUpcomingWeekendRange();
+        if (w === "week") nextFilters.dateRange = getNext7DaysRange();
+        else if (w === "weekend")
+          nextFilters.dateRange = getUpcomingWeekendRange();
       }
       if (tagParam && tagParam.length) {
         nextFilters.tags = tagParam;
       }
       if (countryParam) {
-        nextFilters.tags = [...(nextFilters.tags || []), countryParam.toLowerCase()];
+        nextFilters.tags = [
+          ...(nextFilters.tags || []),
+          countryParam.toLowerCase(),
+        ];
       }
       if (Object.keys(nextFilters).length) {
         setEventFilters((prev) => ({ ...prev, ...nextFilters }));
       }
     }
-  }, [getMonthRange, getSeasonRange, getTodayRange, getTomorrowRange, getNext7DaysRange, getUpcomingWeekendRange]);
+  }, [
+    getMonthRange,
+    getSeasonRange,
+    getTodayRange,
+    getTomorrowRange,
+    getNext7DaysRange,
+    getUpcomingWeekendRange,
+  ]);
 
   // Update URL when tab changes
   const handleTabChange = (tab: "events" | "tours" | "cultural" | "create") => {
@@ -603,9 +667,13 @@ export default function EventsPage() {
     if (category) {
       setTourFilters({ ...tourFilters, category });
     } else {
-      setTourFilters(Object.fromEntries(Object.entries({
-        ...tourFilters,
-      }).filter(([k]) => k !== 'category')) as EventToursFilters);
+      setTourFilters(
+        Object.fromEntries(
+          Object.entries({
+            ...tourFilters,
+          }).filter(([k]) => k !== "category")
+        ) as EventToursFilters
+      );
     }
   };
 
@@ -628,17 +696,19 @@ export default function EventsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-
       <main className="pt-16">
         {/* Hero Section - CONVERSION OPTIMIZED */}
         <section className="relative py-16 overflow-hidden bg-gradient-to-br from-white via-red-50/20 to-green-50/20">
           {/* Portuguese tile pattern background */}
           <div className="absolute inset-0 overflow-hidden opacity-10">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c53026' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-            }} />
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c53026' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}
+            />
           </div>
-          
+
           {/* Portuguese flag inspired gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-red-500/5" />
 
@@ -674,7 +744,7 @@ export default function EventsPage() {
                 </span>
               </motion.div>
 
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -685,7 +755,9 @@ export default function EventsPage() {
                     <span className="bg-gradient-to-r from-green-600 to-red-600 bg-clip-text text-transparent">
                       Find Your Next
                     </span>{" "}
-                    <span className="text-gray-900">Portuguese Cultural Experience</span>
+                    <span className="text-gray-900">
+                      Portuguese Cultural Experience
+                    </span>
                   </>
                 ) : (
                   <>
@@ -697,28 +769,41 @@ export default function EventsPage() {
                 )}
               </motion.h1>
               {/* Social Proof Stats */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="space-y-4 mb-6"
               >
                 <p className="text-xl xs:text-2xl sm:text-3xl text-gray-700 leading-relaxed font-medium">
-                  <span className="font-bold text-green-600">750+ Portuguese speakers</span> attend monthly • 
-                  <span className="font-bold text-blue-600">23 joined this week</span>
+                  <span className="font-bold text-green-600">
+                    750+ Portuguese speakers
+                  </span>{" "}
+                  attend monthly •
+                  <span className="font-bold text-blue-600">
+                    23 joined this week
+                  </span>
                 </p>
-                
+
                 <div className="flex items-center gap-4 text-lg text-gray-600">
                   <div className="flex items-center gap-2">
                     {[...Array(5)].map((_, i) => (
-                      <StarIcon key={i} className="w-5 h-5 text-yellow-500 fill-current" />
+                      <StarIcon
+                        key={i}
+                        className="w-5 h-5 text-yellow-500 fill-current"
+                      />
                     ))}
-                    <span className="font-bold text-yellow-600">4.8★ from 890+ reviews</span>
+                    <span className="font-bold text-yellow-600">
+                      4.8★ from 890+ reviews
+                    </span>
                   </div>
                 </div>
-                
+
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  <span className="font-semibold text-red-600">Next event:</span> Porto Night this Friday (47 attending)
+                  <span className="font-semibold text-red-600">
+                    Next event:
+                  </span>{" "}
+                  Porto Night this Friday (47 attending)
                 </p>
               </motion.div>
 
@@ -789,7 +874,9 @@ export default function EventsPage() {
                       }`}
                     >
                       <span className="hidden sm:inline">
-                        {isPortuguese ? "Calendário Cultural" : "Cultural Calendar"}
+                        {isPortuguese
+                          ? "Calendário Cultural"
+                          : "Cultural Calendar"}
                       </span>
                       <span className="sm:hidden">
                         {isPortuguese ? "Cultural" : "Cultural"}
@@ -838,7 +925,7 @@ export default function EventsPage() {
               >
                 {/* Primary CTA */}
                 <button
-                  onClick={() => window.location.href = '/signup'}
+                  onClick={() => (window.location.href = "/signup")}
                   className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer group py-6 px-8"
                 >
                   <div className="flex items-center justify-center gap-4 text-xl font-black">
@@ -857,12 +944,18 @@ export default function EventsPage() {
 
                 {/* Secondary CTA */}
                 <button
-                  onClick={() => window.location.href = activeTab === 'events' ? '/events' : '/tours'}
+                  onClick={() =>
+                    (window.location.href =
+                      activeTab === "events" ? "/events" : "/tours")
+                  }
                   className="w-full bg-white/90 backdrop-blur-lg border-2 border-gray-200 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl hover:border-green-300 transition-all duration-300 hover:-translate-y-1 cursor-pointer group py-4 px-6"
                 >
                   <div className="flex items-center justify-center gap-3 text-lg font-bold">
                     <span className="text-lg">👀</span>
-                    <span>Browse {activeTab === 'events' ? 'Events' : 'Experiences'} First</span>
+                    <span>
+                      Browse {activeTab === "events" ? "Events" : "Experiences"}{" "}
+                      First
+                    </span>
                     <motion.div
                       whileHover={{ x: 4 }}
                       transition={{ duration: 0.2 }}
@@ -974,7 +1067,9 @@ export default function EventsPage() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={(e) => e.key === "Enter" && handleSearch()}
                   className="w-full pl-10 sm:pl-12 pr-20 sm:pr-32 py-3 sm:py-4 text-base sm:text-lg rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-lg bg-white backdrop-blur-sm"
-                  aria-label={activeTab === "events" ? "Search events" : "Search tours"}
+                  aria-label={
+                    activeTab === "events" ? "Search events" : "Search tours"
+                  }
                 />
                 <MagnifyingGlassIcon className="absolute left-6 sm:left-8 top-1/2 transform -translate-y-1/2 w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
                 <button
@@ -991,12 +1086,39 @@ export default function EventsPage() {
                 </button>
               </motion.div>
 
-              {/* Dynamic Quick Filters */}
+              {/* Enhanced Mobile Swipe Navigation - Mobile Only */}
+              <div className="block md:hidden">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="mt-8"
+                >
+                  <SwipeEventNavigation
+                    onCategorySelect={(categoryId) => {
+                      if (activeTab === "events") {
+                        setEventFilters({
+                          ...eventFilters,
+                          category: categoryId
+                        });
+                      } else {
+                        handleTourCategoryChange(categoryId);
+                      }
+                    }}
+                    selectedCategory={activeTab === "events" ? eventFilters.category : tourFilters.category}
+                    showCounts={true}
+                    categoryCounts={eventCounts}
+                    enableVoiceAnnouncements={true}
+                  />
+                </motion.div>
+              </div>
+
+              {/* Desktop Quick Filters - Hidden on Mobile */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="mt-8 px-4"
+                className="mt-8 px-4 hidden md:block"
               >
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 mb-4 max-w-4xl mx-auto">
                   {activeTab === "events"
@@ -1005,7 +1127,8 @@ export default function EventsPage() {
                         {
                           key: "Technology & Innovation",
                           label: "🤖 Tech/Innovation",
-                          description: "Technology workshops and innovation training",
+                          description:
+                            "Technology workshops and innovation training",
                         },
                         {
                           key: "Business & Entrepreneurship",
@@ -1040,12 +1163,15 @@ export default function EventsPage() {
                               setEventFilters(
                                 Object.fromEntries(
                                   Object.entries({ ...eventFilters }).filter(
-                                    ([k]) => k !== 'category'
+                                    ([k]) => k !== "category"
                                   )
                                 ) as EventFilters
                               );
                             } else {
-                              setEventFilters({ ...eventFilters, category: filter.key });
+                              setEventFilters({
+                                ...eventFilters,
+                                category: filter.key,
+                              });
                             }
                           }}
                           className={`group px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 touch-manipulation ${
@@ -1088,7 +1214,7 @@ export default function EventsPage() {
                                     : "bg-gray-200 text-gray-700"
                                 }`}
                               >
-                                {category ? (eventCounts?.[category] ?? 0) : 0}
+                                {category ? eventCounts?.[category] ?? 0 : 0}
                               </span>
                             )}
                           </button>
@@ -1144,9 +1270,7 @@ export default function EventsPage() {
         <section className="py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
             {/* Cultural Calendar Tab */}
-            {activeTab === "cultural" && (
-              <PortugueseCulturalCalendar />
-            )}
+            {activeTab === "cultural" && <PortugueseCulturalCalendar />}
 
             {/* Create Event Tab */}
             {activeTab === "create" && (
@@ -1163,7 +1287,76 @@ export default function EventsPage() {
             {/* Events and Tours Content */}
             {(activeTab === "events" || activeTab === "tours") && (
               <div className="flex gap-8">
-                {/* Sidebar Filters - Desktop */}
+                {/* Enhanced Mobile Sidebar - Mobile Only */}
+                <div className="block lg:hidden w-full mb-8">
+                  <div className="space-y-6">
+                    {/* Location-aware events for mobile */}
+                    <LocationAwareEvents
+                      onLocationUpdate={(location) => {
+                        console.log('Location updated:', location);
+                        // Add location-based filtering logic here
+                      }}
+                      onNearbyEvents={(events) => {
+                        console.log('Nearby events:', events);
+                      }}
+                      maxDistance={15}
+                      className="mb-6"
+                    />
+
+                    {/* Advanced Quick Filters */}
+                    <QuickFiltersSystem
+                      onFilterChange={(filters) => {
+                        // Convert quick filters to event/tour filters
+                        const eventFilterUpdate: EventFilters = {};
+                        const tourFilterUpdate: any = {};
+
+                        if (filters.time) {
+                          // Handle time-based filtering
+                          const timeFilter = filters.time[0];
+                          if (timeFilter === 'tonight' || timeFilter === 'tomorrow') {
+                            // Add date range logic
+                          }
+                        }
+
+                        if (filters.price) {
+                          const priceFilter = filters.price[0];
+                          if (priceFilter === 'free') {
+                            eventFilterUpdate.priceRange = { min: 0, max: 0 };
+                          } else if (priceFilter === '0-25') {
+                            eventFilterUpdate.priceRange = { min: 0, max: 25 };
+                          }
+                          // Add more price ranges...
+                        }
+
+                        if (filters.culture) {
+                          // Handle cultural filtering
+                          eventFilterUpdate.tags = filters.culture;
+                        }
+
+                        if (filters.type) {
+                          // Handle type filtering
+                          eventFilterUpdate.category = filters.type[0];
+                        }
+
+                        if (activeTab === "events") {
+                          setEventFilters({ ...eventFilters, ...eventFilterUpdate });
+                        } else {
+                          setTourFilters({ ...tourFilters, ...tourFilterUpdate });
+                        }
+                      }}
+                      activeFilters={{}}
+                      showFilterCounts={true}
+                      filterCounts={{
+                        'time-tonight': 12,
+                        'price-free': 8,
+                        'culture-palop': 15,
+                        'type-music': 6
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* Desktop Sidebar Filters - Desktop Only */}
                 <div className="hidden lg:block w-80 flex-shrink-0">
                   <div className="bg-white rounded-2xl p-6 shadow-lg sticky top-24">
                     <h3 className="text-lg font-bold mb-6">
@@ -1203,105 +1396,175 @@ export default function EventsPage() {
                     </div>
                   )}
 
-                {/* Controls */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
-                  <div className="flex items-center gap-4 w-full sm:w-auto">
-                    <button
-                      onClick={() => setShowFilters(true)}
-                      className="lg:hidden flex items-center gap-2 bg-white px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow min-h-[44px] text-sm font-medium"
-                    >
-                      <AdjustmentsHorizontalIcon className="w-5 h-5" />
-                      <span>{isPortuguese ? "Filtros" : "Filters"}</span>
-                    </button>
+                  {/* Controls */}
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+                    <div className="flex items-center gap-4 w-full sm:w-auto">
+                      <button
+                        onClick={() => setShowFilters(true)}
+                        className="lg:hidden flex items-center gap-2 bg-white px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow min-h-[44px] text-sm font-medium"
+                      >
+                        <AdjustmentsHorizontalIcon className="w-5 h-5" />
+                        <span>{isPortuguese ? "Filtros" : "Filters"}</span>
+                      </button>
 
-                    <div className="text-gray-600 text-sm sm:text-base">
-                      {loading
-                        ? isPortuguese
-                          ? "Carregando..."
-                          : "Loading..."
-                        : `${currentData.length} ${
-                            currentData.length === 1
-                              ? activeTab === "events"
+                      <div className="text-gray-600 text-sm sm:text-base">
+                        {loading
+                          ? isPortuguese
+                            ? "Carregando..."
+                            : "Loading..."
+                          : `${currentData.length} ${
+                              currentData.length === 1
+                                ? activeTab === "events"
+                                  ? isPortuguese
+                                    ? "evento encontrado"
+                                    : "event found"
+                                  : isPortuguese
+                                  ? "experiência encontrada"
+                                  : "experience found"
+                                : activeTab === "events"
                                 ? isPortuguese
-                                  ? "evento encontrado"
-                                  : "event found"
+                                  ? "eventos encontrados"
+                                  : "events found"
                                 : isPortuguese
-                                ? "experiência encontrada"
-                                : "experience found"
-                              : activeTab === "events"
-                              ? isPortuguese
-                                ? "eventos encontrados"
-                                : "events found"
-                              : isPortuguese
-                              ? "experiências encontradas"
-                              : "experiences found"
-                          }`}
+                                ? "experiências encontradas"
+                                : "experiences found"
+                            }`}
+                      </div>
                     </div>
+
+                    <label htmlFor="sort-events" className="sr-only">
+                      {isPortuguese ? "Ordenar eventos" : "Sort events"}
+                    </label>
+                    <select
+                      id="sort-events"
+                      value={sortBy}
+                      onChange={(e) => setSortBy(e.target.value as any)}
+                      className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 w-full sm:w-auto min-w-[120px]"
+                      aria-label={
+                        isPortuguese ? "Ordenar eventos" : "Sort events"
+                      }
+                    >
+                      <option value="date">
+                        {isPortuguese ? "Ordenar por Data" : "Sort by Date"}
+                      </option>
+                      <option value="popularity">
+                        {isPortuguese
+                          ? "Ordenar por Popularidade"
+                          : "Sort by Popularity"}
+                      </option>
+                      <option value="rating">
+                        {isPortuguese
+                          ? "Ordenar por Avaliação"
+                          : "Sort by Rating"}
+                      </option>
+                    </select>
                   </div>
 
-                  <label htmlFor="sort-events" className="sr-only">
-                    {isPortuguese ? "Ordenar eventos" : "Sort events"}
-                  </label>
-                  <select
-                    id="sort-events"
-                    value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value as any)}
-                    className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 w-full sm:w-auto min-w-[120px]"
-                    aria-label={isPortuguese ? "Ordenar eventos" : "Sort events"}
-                  >
-                    <option value="date">
-                      {isPortuguese ? "Ordenar por Data" : "Sort by Date"}
-                    </option>
-                    <option value="popularity">
-                      {isPortuguese
-                        ? "Ordenar por Popularidade"
-                        : "Sort by Popularity"}
-                    </option>
-                    <option value="rating">
-                      {isPortuguese
-                        ? "Ordenar por Avaliação"
-                        : "Sort by Rating"}
-                    </option>
-                  </select>
-                </div>
-
-                {/* Featured Section */}
-                {featuredItems.length > 0 && (
-                  <div className="mb-12 relative overflow-hidden rounded-2xl">
-                    {/* Background Image for Featured Section - avoid flyers/text */}
-                    <div className="absolute inset-0">
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/95 z-10"></div>
-                      <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-                        style={{
-                          backgroundImage:
-                            activeTab === "events"
-                              ? "url('/events/jazz-networking.jpg')"
-                              : "url('/events/book-brunch.jpg')",
-                        }}
-                      ></div>
-                    </div>
-
-                    <div className="relative z-20 p-8">
-                      <div className="flex items-center gap-3 mb-6">
-                        <SparklesIcon className="w-6 h-6 text-yellow-500" />
-                        <h2 className="text-2xl font-bold text-gray-900">
-                          {activeTab === "events"
-                            ? isPortuguese
-                              ? "Eventos em Destaque"
-                              : "Featured Events"
-                            : isPortuguese
-                            ? "Experiências em Destaque"
-                            : "Featured Experiences"}
-                        </h2>
+                  {/* Featured Section */}
+                  {featuredItems.length > 0 && (
+                    <div className="mb-12 relative overflow-hidden rounded-2xl">
+                      {/* Background Image for Featured Section - avoid flyers/text */}
+                      <div className="absolute inset-0">
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/95 z-10"></div>
+                        <div
+                          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+                          style={{
+                            backgroundImage:
+                              activeTab === "events"
+                                ? "url('/events/jazz-networking.jpg')"
+                                : "url('/events/book-brunch.jpg')",
+                          }}
+                        ></div>
                       </div>
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-                        {featuredItems.slice(0, 2).map((item, index) =>
+
+                      <div className="relative z-20 p-8">
+                        <div className="flex items-center gap-3 mb-6">
+                          <SparklesIcon className="w-6 h-6 text-yellow-500" />
+                          <h2 className="text-2xl font-bold text-gray-900">
+                            {activeTab === "events"
+                              ? isPortuguese
+                                ? "Eventos em Destaque"
+                                : "Featured Events"
+                              : isPortuguese
+                              ? "Experiências em Destaque"
+                              : "Featured Experiences"}
+                          </h2>
+                        </div>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                          {featuredItems.slice(0, 2).map((item, index) =>
+                            activeTab === "events" ? (
+                              <ImprovedEventCard
+                                key={item.id}
+                                event={item as Event}
+                                showPreviewOverlay={index > 0} // Show preview overlay for 2nd and 3rd featured events
+                                onUpgrade={handleUpgradeClick}
+                              />
+                            ) : (
+                              <EventToursCard
+                                key={item.id}
+                                event={item as EventTour}
+                              />
+                            )
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Main Content Grid */}
+                  {loading ? (
+                    <SkeletonEventGrid 
+                      count={6} 
+                      variant="portuguese" 
+                      className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
+                    />
+                  ) : currentData.length === 0 ? (
+                    <div className="text-center py-16">
+                      <div className="text-6xl mb-4">🔍</div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                        {activeTab === "events"
+                          ? isPortuguese
+                            ? "Nenhum evento encontrado"
+                            : "No events found"
+                          : isPortuguese
+                          ? "Nenhuma experiência encontrada"
+                          : "No experiences found"}
+                      </h3>
+                      <p className="text-gray-600 mb-6">
+                        {isPortuguese
+                          ? "Tente ajustar seus critérios de pesquisa ou limpar os filtros."
+                          : "Try adjusting your search criteria or clear your filters."}
+                      </p>
+                      <button
+                        onClick={() => {
+                          if (activeTab === "events") {
+                            setEventFilters({});
+                          } else {
+                            setTourFilters({});
+                          }
+                          setSearchQuery("");
+                        }}
+                        className="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors font-medium"
+                      >
+                        {isPortuguese
+                          ? "Limpar Todos os Filtros"
+                          : "Clear All Filters"}
+                      </button>
+                    </div>
+                  ) : (
+                    <motion.div
+                      layout
+                      className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
+                    >
+                      <AnimatePresence>
+                        {currentData.map((item, index) =>
                           activeTab === "events" ? (
                             <ImprovedEventCard
                               key={item.id}
                               event={item as Event}
-                              showPreviewOverlay={index > 0} // Show preview overlay for 2nd and 3rd featured events
+                              showPreviewOverlay={
+                                index % 4 === 2 || index % 4 === 3
+                              } // Show preview on every 3rd and 4th event
                               onUpgrade={handleUpgradeClick}
                             />
                           ) : (
@@ -1311,89 +1574,9 @@ export default function EventsPage() {
                             />
                           )
                         )}
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Main Content Grid */}
-                {loading ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-                    {[1, 2, 3, 4, 5, 6].map((i) => (
-                      <div
-                        key={i}
-                        className="bg-white rounded-2xl shadow-lg overflow-hidden animate-pulse"
-                      >
-                        <div className="h-48 bg-gray-200"></div>
-                        <div className="p-4 sm:p-6">
-                          <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                          <div className="h-4 bg-gray-200 rounded mb-4 w-2/3"></div>
-                          <div className="h-3 bg-gray-200 rounded mb-2"></div>
-                          <div className="h-3 bg-gray-200 rounded mb-4 w-3/4"></div>
-                          <div className="h-10 bg-gray-200 rounded"></div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : currentData.length === 0 ? (
-                  <div className="text-center py-16">
-                    <div className="text-6xl mb-4">🔍</div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {activeTab === "events"
-                        ? isPortuguese
-                          ? "Nenhum evento encontrado"
-                          : "No events found"
-                        : isPortuguese
-                        ? "Nenhuma experiência encontrada"
-                        : "No experiences found"}
-                    </h3>
-                    <p className="text-gray-600 mb-6">
-                      {isPortuguese
-                        ? "Tente ajustar seus critérios de pesquisa ou limpar os filtros."
-                        : "Try adjusting your search criteria or clear your filters."}
-                    </p>
-                    <button
-                      onClick={() => {
-                        if (activeTab === "events") {
-                          setEventFilters({});
-                        } else {
-                          setTourFilters({});
-                        }
-                        setSearchQuery("");
-                      }}
-                      className="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors font-medium"
-                    >
-                      {isPortuguese
-                        ? "Limpar Todos os Filtros"
-                        : "Clear All Filters"}
-                    </button>
-                  </div>
-                ) : (
-                  <motion.div
-                    layout
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
-                  >
-                    <AnimatePresence>
-                      {currentData.map((item, index) =>
-                        activeTab === "events" ? (
-                          <ImprovedEventCard
-                            key={item.id}
-                            event={item as Event}
-                            showPreviewOverlay={
-                              index % 4 === 2 || index % 4 === 3
-                            } // Show preview on every 3rd and 4th event
-                            onUpgrade={handleUpgradeClick}
-                          />
-                        ) : (
-                          <EventToursCard
-                            key={item.id}
-                            event={item as EventTour}
-                          />
-                        )
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-                )}
+                      </AnimatePresence>
+                    </motion.div>
+                  )}
                 </div>
               </div>
             )}
@@ -1484,7 +1667,7 @@ export default function EventsPage() {
               {/* Three CTA Options */}
               <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
                 <a
-                  href={`${ROUTES.events  }/create`}
+                  href={`${ROUTES.events}/create`}
                   className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                 >
                   <CalendarIcon className="w-8 h-8 text-premium-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
@@ -1499,7 +1682,7 @@ export default function EventsPage() {
                 </a>
 
                 <a
-                  href={`${ROUTES.groups  }/create`}
+                  href={`${ROUTES.groups}/create`}
                   className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                 >
                   <UsersIcon className="w-8 h-8 text-coral-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />

@@ -1,0 +1,386 @@
+/* LusoTown Mobile Enhancements - Portuguese Cultural Mobile Experience */
+
+/* Luxury Haptic Feedback Simulation */
+.luxury-haptic-light {
+  animation: hapticLight 0.2s ease-out;
+}
+
+.luxury-haptic-medium {
+  animation: hapticMedium 0.3s ease-out;
+}
+
+.luxury-haptic-heavy {
+  animation: hapticHeavy 0.4s ease-out;
+}
+
+@keyframes hapticLight {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes hapticMedium {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.05); }
+  75% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+@keyframes hapticHeavy {
+  0% { transform: scale(1); }
+  20% { transform: scale(1.08); }
+  40% { transform: scale(0.95); }
+  80% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Portuguese Cultural Shimmer Effect */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Enhanced Touch Targets */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.luxury-touch-target {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.luxury-touch-target:focus-visible {
+  outline: 2px solid #C5282F;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Portuguese Cultural Gradients */
+.heritage-gradient-portugal {
+  background: linear-gradient(135deg, #C5282F 0%, #FFD700 50%, #00A859 100%);
+}
+
+.heritage-gradient-palop {
+  background: linear-gradient(135deg, #1E3A8A 0%, #C5282F 25%, #FFD700 50%, #00A859 75%, #1E3A8A 100%);
+}
+
+.heritage-gradient-lusophone {
+  background: linear-gradient(45deg, #C5282F 0%, #DC2626 25%, #F59E0B 50%, #10B981 75%, #059669 100%);
+}
+
+/* Smooth Scrolling for Portuguese Content */
+.portuguese-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbars but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Safe Area Support for Portuguese Mobile Experience */
+.pb-safe-bottom {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.pt-safe-top {
+  padding-top: max(1rem, env(safe-area-inset-top));
+}
+
+.pl-safe-left {
+  padding-left: max(1rem, env(safe-area-inset-left));
+}
+
+.pr-safe-right {
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+/* Portuguese Cultural Loading States */
+.luxury-loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid transparent;
+  border-top: 3px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Enhanced Focus States for Portuguese Cultural Content */
+.focus-portuguese:focus {
+  outline: 3px solid #C5282F;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px rgba(197, 40, 47, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+/* Portuguese Cultural Card Animations */
+.card-portuguese-hover {
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.card-portuguese-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(197, 40, 47, 0.15),
+    0 10px 20px rgba(0, 168, 89, 0.1);
+}
+
+/* Mobile-Specific Typography for Portuguese Text */
+@media (max-width: 768px) {
+  .mobile-portuguese-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    word-wrap: break-word;
+  }
+  
+  .mobile-portuguese-heading {
+    font-size: 1.5em;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+}
+
+/* Portuguese Cultural Pull-to-Refresh */
+.luxury-pull-refresh-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-pull-refresh {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(197, 40, 47, 0.1), rgba(0, 168, 89, 0.1));
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 20px 20px;
+  z-index: 10;
+}
+
+.luxury-pull-icon {
+  display: flex;
+  align-items: center;
+  color: #C5282F;
+}
+
+/* Swipe Navigation Styles */
+.luxury-swipe-container {
+  touch-action: pan-y;
+  will-change: transform;
+}
+
+.swipe-category-active {
+  box-shadow: 0 8px 32px rgba(197, 40, 47, 0.3);
+}
+
+/* Portuguese Cultural Modal Animations */
+.luxury-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.luxury-modal-content {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 
+    0 25px 50px rgba(197, 40, 47, 0.15),
+    0 10px 25px rgba(0, 0, 0, 0.1);
+  max-height: 90vh;
+  overflow: auto;
+  width: 100%;
+  position: relative;
+}
+
+/* Portuguese Cultural FAB Styles */
+.luxury-fab {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: 45;
+  backdrop-filter: blur(10px);
+}
+
+.luxury-fab:hover {
+  transform: translateY(-4px) rotate(5deg);
+}
+
+.luxury-fab:active {
+  transform: scale(0.95);
+}
+
+/* Enhanced Accessibility for Portuguese Content */
+@media (prefers-reduced-motion: reduce) {
+  .luxury-touch-target,
+  .card-portuguese-hover,
+  .luxury-fab,
+  .luxury-modal-content {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .animate-shimmer {
+    animation: none !important;
+  }
+  
+  .luxury-loading-spinner {
+    animation: none !important;
+    border-top: 3px solid #C5282F;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .heritage-gradient-portugal,
+  .heritage-gradient-palop,
+  .heritage-gradient-lusophone {
+    background: #C5282F !important;
+  }
+  
+  .luxury-modal-overlay {
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: none !important;
+  }
+}
+
+/* Dark Mode Support for Portuguese Cultural Content */
+@media (prefers-color-scheme: dark) {
+  .luxury-modal-content {
+    background: #1f2937;
+    color: white;
+  }
+  
+  .luxury-pull-refresh {
+    background: linear-gradient(135deg, rgba(197, 40, 47, 0.2), rgba(0, 168, 89, 0.2));
+  }
+}
+
+/* Portuguese Cultural Print Styles */
+@media print {
+  .luxury-fab,
+  .luxury-modal-overlay,
+  .luxury-pull-refresh {
+    display: none !important;
+  }
+}
+
+/* Viewport Units for Portuguese Mobile Layout */
+.vh-100-mobile {
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height */
+}
+
+.vw-100-mobile {
+  width: 100vw;
+  width: 100dvw; /* Dynamic viewport width */
+}
+
+/* Portuguese Cultural Text Selection */
+::selection {
+  background: rgba(197, 40, 47, 0.2);
+  color: inherit;
+}
+
+::-moz-selection {
+  background: rgba(197, 40, 47, 0.2);
+  color: inherit;
+}
+
+/* Enhanced Button States for Portuguese Cultural Actions */
+.portuguese-button-primary {
+  background: linear-gradient(135deg, #C5282F, #DC2626);
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.portuguese-button-primary:hover {
+  background: linear-gradient(135deg, #DC2626, #EF4444);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(197, 40, 47, 0.3);
+}
+
+.portuguese-button-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(197, 40, 47, 0.2);
+}
+
+/* Portuguese Cultural Loading Skeleton */
+.luxury-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(197, 40, 47, 0.1) 25%,
+    rgba(255, 215, 0, 0.1) 50%,
+    rgba(0, 168, 89, 0.1) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading-skeleton 2s infinite;
+}
+
+@keyframes loading-skeleton {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Portuguese Cultural Error States */
+.error-portuguese {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(197, 40, 47, 0.1));
+  border: 2px solid #EF4444;
+  color: #C5282F;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* Portuguese Cultural Success States */
+.success-portuguese {
+  background: linear-gradient(135deg, rgba(0, 168, 89, 0.1), rgba(16, 185, 129, 0.1));
+  border: 2px solid #00A859;
+  color: #065F46;
+  border-radius: 12px;
+  padding: 1rem;
+}

@@ -75,6 +75,9 @@ html {
 /* Elite Mobile Experience for Affluent Portuguese-speaking community */
 @import '../styles/elite-mobile.css';
 
+/* Advanced Mobile UX Enhancements for Portuguese Cultural Experience */
+@import '../styles/mobile-enhancements.css';
+
 /* Premium Accessibility Features for Portuguese-speaking community */
 @import '../styles/premium-accessibility.css';
 

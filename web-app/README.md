@@ -6,7 +6,7 @@
 [![Production Ready](https://img.shields.io/badge/Status-Production%20Ready-success)](https://lusotown.vercel.app/)
 
 **Unidos pela Língua (United by Language)**  
-*The premium Portuguese-speaking community platform connecting London's Portuguese diaspora through luxury services, cultural events, and authentic connections.*
+_The premium Portuguese-speaking community platform connecting London's Portuguese diaspora through luxury services, cultural events, and authentic connections._
 
 ---
 
@@ -33,11 +33,13 @@ LusoTown London is a sophisticated community platform designed exclusively for P
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - **Node.js**: 22.x or higher
 - **npm**: 9.x or higher
 - **Supabase Account**: For database and authentication
 
 ### Installation
+
 ```bash
 # Clone the repository
 git clone https://github.com/LusoTown/web-app.git
@@ -55,6 +57,7 @@ npm run dev
 ```
 
 ### Environment Configuration
+
 ```env
 # Required Environment Variables
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
@@ -69,6 +72,7 @@ NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_key
 ## 🏗️ Architecture
 
 ### Technology Stack
+
 - **Frontend**: Next.js 14 with TypeScript
 - **Styling**: Tailwind CSS with Portuguese-inspired design system
 - **Database**: Supabase (PostgreSQL)
@@ -78,6 +82,7 @@ NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_key
 - **Deployment**: Vercel with optimized production build
 
 ### Core Components
+
 ```
 ├── src/
 │   ├── components/          # Reusable UI components
@@ -110,7 +115,9 @@ NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_key
 ## ✨ Premium Features
 
 ### 📺 LusoTown TV Platform
+
 Professional Portuguese cultural broadcasting with:
+
 - **HLS Streaming Support** - High-quality live broadcasts
 - **Premium Content Gating** - Subscription-based access
 - **Multi-language Chat** - Community interaction during streams
@@ -118,20 +125,25 @@ Professional Portuguese cultural broadcasting with:
 - **Cultural Programming** - Authentic Portuguese content schedule
 
 ### 🚗 Executive Services
+
 Luxury transport and concierge services featuring:
+
 - **Portuguese-speaking Chauffeurs** - Cultural understanding and local expertise
 - **Cultural Heritage Tours** - Professional guided experiences
 - **Executive Protection** - SIA-licensed security professionals
 - **VIP Business Transport** - Premium corporate services
 
 ### 🎭 Community & Events
+
 Sophisticated event management system with:
+
 - **Cultural Event Discovery** - Find authentic Portuguese gatherings
 - **Professional Networking** - Connect with Portuguese business professionals
 - **Smart Cart System** - Seamless event booking and service reservations
 - **Membership Benefits** - Exclusive access and discounted pricing
 
 ### 💎 Subscription Tiers
+
 - **Free Community** - Basic access to events and directory
 - **Premium Membership** - Full TV access, priority bookings, service discounts
 - **VIP Business** - Exclusive networking, premium services, and concierge support
@@ -145,41 +157,49 @@ Sophisticated event management system with:
 Our platform has created life-changing connections across diverse scenarios:
 
 #### 🎓 Student Success: From Ministry of Sound to Academic Excellence
+
 **Miguel Santos** (Portugal) & **Carla Mendes** (Brazil) met during a Portuguese student night at Ministry of Sound. Their friendship led to:
+
 - Miguel improving from D grades to First Class Honours through Carla's study support
 - Creation of "Study Hard, Party Harder" network serving 120+ Portuguese students across 8 London universities
 - Monthly academic workshops combined with cultural celebrations
 
 #### 🍽️ Culinary Innovation: Portuguese-Brazilian Fusion Success
+
 **Helena Rodrigues** (Portugal) & **Roberto Costa** (Brazil) connected at Southbank Centre Food Festival. Together they:
+
 - Opened "Lusitânia" - London's first Portuguese-Brazilian fusion restaurant
 - Generated £400,000 revenue in 8 months with 6-week waiting list
 - Featured in Time Out London, Evening Standard, and Michelin Guide
 
 #### 💻 Tech Entrepreneurship: £2M Startup Launch
+
 **Pedro Almeida** (Portugal) & **Lucas Ferreira** (Brazil) met at Google Campus Portuguese tech meetup. Their collaboration resulted in:
+
 - "LusoFinance" - remittance app serving 25,000+ Portuguese speakers across 12 countries
 - £2M Series A funding from leading London VC
 - 60% reduction in transfer costs for Portuguese-speaking families
 
-*These authentic stories demonstrate how LusoTown creates meaningful connections that transform careers, academics, and communities.*
+_These authentic stories demonstrate how LusoTown creates meaningful connections that transform careers, academics, and communities._
 
 ---
 
 ## 🎨 Design System
 
 ### Portuguese Cultural Colors
+
 ```typescript
 // Primary Colors
-primaryBlue: '#1e40af'     // Azul Atlântico (Atlantic Blue)
-secondaryGreen: '#059669'   // Verde Esperança (Hope Green)
-accentGold: '#f59e0b'      // Dourado Sol (Golden Sun)
-actionRed: '#dc2626'       // Vermelho Paixão (Passion Red)
-premiumPurple: '#7c3aed'   // Roxo Fado (Fado Purple)
-coralOrange: '#f97316'     // Coral Tropical (Tropical Coral)
+primaryBlue: "#1e40af"; // Azul Atlântico (Atlantic Blue)
+secondaryGreen: "#059669"; // Verde Esperança (Hope Green)
+accentGold: "#f59e0b"; // Dourado Sol (Golden Sun)
+actionRed: "#dc2626"; // Vermelho Paixão (Passion Red)
+premiumPurple: "#7c3aed"; // Roxo Fado (Fado Purple)
+coralOrange: "#f97316"; // Coral Tropical (Tropical Coral)
 ```
 
 ### Component Standards
+
 - **Mobile-first Design** - Responsive across all devices
 - **Portuguese Flag Gradients** - Cultural authenticity in UI elements
 - **Luxury Typography** - Professional font hierarchy
@@ -190,6 +210,7 @@ coralOrange: '#f97316'     // Coral Tropical (Tropical Coral)
 ## 🛠️ Development
 
 ### Available Scripts
+
 ```bash
 # Development
 npm run dev              # Start development server
@@ -212,6 +233,7 @@ npm run docs:validate    # Validate documentation consistency
 ```
 
 ### Testing Strategy
+
 - **Unit Tests**: Component functionality and business logic
 - **Integration Tests**: API endpoints and database operations
 - **Mobile UX Tests**: Touch interactions and responsive design
@@ -223,12 +245,14 @@ npm run docs:validate    # Validate documentation consistency
 ## 📊 Production Metrics
 
 ### Performance Benchmarks
+
 - **Build Size**: 337MB (optimized for production)
 - **First Load JS**: 290KB (critical path optimized)
 - **Page Generation**: 51 pages (46 static, 5 dynamic)
 - **Mobile Performance**: Core Web Vitals compliant
 
 ### Production Ready Status ✅
+
 - **Build Success**: 100% success rate
 - **Security Headers**: Complete implementation
 - **Portuguese Compliance**: 100% cultural requirements met with enhanced inclusivity for ALL Lusophone nations
@@ -242,11 +266,13 @@ npm run docs:validate    # Validate documentation consistency
 ## 🌍 Internationalization
 
 ### Language Support
+
 - **Portuguese (Portugal)**: Primary language for community
 - **Portuguese (Brazil)**: Diaspora support
 - **English**: Secondary language for United Kingdom integration
 
 ### Cultural Features
+
 - **Portuguese Date Formats** - DD/MM/YYYY
 - **Currency Support** - GBP for United Kingdom events, EUR for European events
 - **Cultural Context** - Portuguese holidays, traditions, and places
@@ -257,12 +283,14 @@ npm run docs:validate    # Validate documentation consistency
 ## 🔐 Security & Privacy
 
 ### Security Implementation
+
 - **Row Level Security** - Supabase RLS policies
 - **Input Validation** - Client and server-side protection
 - **HTTPS Enforcement** - SSL certificates via Vercel
 - **Environment Security** - Secure credential management
 
 ### GDPR Compliance
+
 - **Data Minimization** - Only necessary data collection
 - **User Control** - Account deletion and data export
 - **Consent Management** - Clear privacy controls
@@ -273,6 +301,7 @@ npm run docs:validate    # Validate documentation consistency
 ## 🚀 Deployment
 
 ### Production Deployment
+
 ```bash
 # Build verification
 npm run build
@@ -285,6 +314,7 @@ npm run deploy
 ```
 
 ### Deployment Requirements
+
 - **Vercel Account** - Production hosting platform
 - **Supabase Project** - Production database
 - **Cloudinary Account** - Image optimization
@@ -304,8 +334,8 @@ We deploy Production via Vercel “Promote” to avoid rebuild flakes and keep r
 Automation
 
 - GitHub Action: `.github/workflows/promote-on-green.yml`
-	- Waits for a READY Preview matching the commit (or branch)
-	- Calls Vercel’s Promote API to update Production
+  - Waits for a READY Preview matching the commit (or branch)
+  - Calls Vercel’s Promote API to update Production
 
 Required GitHub Secrets
 
@@ -315,20 +345,20 @@ Required GitHub Secrets
 
 Verify the setup
 
-1) Push a commit to `main`.
-2) In GitHub → Actions → “Promote Preview to Production (Vercel)”, open the latest run:
-	 - Step “Validate env” prints “Env OK” if secrets are present
-	 - Step “Wait for Preview build to be READY” finds the Preview
-	 - Step “Promote to Production” requests promotion (no rebuild)
+1. Push a commit to `main`.
+2. In GitHub → Actions → “Promote Preview to Production (Vercel)”, open the latest run:
+   - Step “Validate env” prints “Env OK” if secrets are present
+   - Step “Wait for Preview build to be READY” finds the Preview
+   - Step “Promote to Production” requests promotion (no rebuild)
 
 Manual Promote (UI)
 
 - In Vercel, open any READY Preview and click “Promote to Production”. This is instant and uses the reliable artifact.
 
-
 ## 📈 Community Impact
 
 ### Portuguese-speaking community Benefits
+
 - **Cultural Preservation** - Authentic Portuguese experiences in London
 - **Professional Networking** - Business connections within the diaspora
 - **Luxury Services** - Premium experiences with cultural understanding
@@ -336,6 +366,7 @@ Manual Promote (UI)
 - **London Integration** - Bridge between Portuguese and British cultures
 
 ### Business Value
+
 - **Premium Positioning** - High-quality services command premium pricing
 - **Community Loyalty** - Cultural authenticity builds strong user retention
 - **Scalable Model** - Framework ready for expansion to other United Kingdom cities
@@ -346,6 +377,7 @@ Manual Promote (UI)
 ## 🤝 Contributing
 
 ### Development Guidelines
+
 1. **Cultural Sensitivity** - Respect Portuguese heritage and traditions
 2. **Code Quality** - TypeScript strict mode and comprehensive testing
 3. **Mobile-First** - Ensure all features work perfectly on mobile
@@ -353,6 +385,7 @@ Manual Promote (UI)
 5. **Premium Focus** - Maintain luxury positioning and professional quality
 
 ### Community Guidelines
+
 - **Inclusive Environment** - Welcome all Portuguese speakers
 - **Respectful Communication** - Professional and friendly interactions
 - **Cultural Pride** - Celebrate Portuguese heritage and achievements
@@ -363,11 +396,13 @@ Manual Promote (UI)
 ## 📞 Support & Contact
 
 ### Technical Support
+
 - **Documentation**: Comprehensive guides in `/docs`
 - **GitHub Issues**: Bug reports and feature requests
 - **Community Forum**: `/forums` for user discussions
 
 ### Community Management
+
 - **Cultural Events**: Community-driven event organization
 - **Business Directory**: Portuguese business verification and support
 - **Premium Services**: Concierge support for VIP members
@@ -377,12 +412,14 @@ Manual Promote (UI)
 ## 📚 Documentation
 
 ### Key Documentation Files
+
 - **[FEATURES_README.md](./FEATURES_README.md)** - Complete feature overview
 - **[DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md)** - Portuguese-inspired design guidelines
 - **[FINAL_DEPLOYMENT_READINESS_REPORT.md](./FINAL_DEPLOYMENT_READINESS_REPORT.md)** - Production readiness assessment
 - **[PREMIUM_SERVICES_INTEGRATION_SUMMARY.md](./PREMIUM_SERVICES_INTEGRATION_SUMMARY.md)** - Luxury services implementation
 
 ### API Documentation
+
 - **Database Schema** - Complete Supabase table definitions
 - **Service APIs** - Premium service booking endpoints
 - **Streaming APIs** - LusoTown TV platform integration
@@ -391,7 +428,7 @@ Manual Promote (UI)
 
 ## 🏆 Awards & Recognition
 
-*Building the premier Portuguese-speaking community platform in London with authentic cultural values, professional services, and genuine community connections.*
+_Building the premier Portuguese-speaking community platform in London with authentic cultural values, professional services, and genuine community connections._
 
 **Unidos pela Língua - United by Language** 🇵🇹
 

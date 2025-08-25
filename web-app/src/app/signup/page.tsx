@@ -180,13 +180,29 @@ function SignupInner() {
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [showGrowthFeatures, setShowGrowthFeatures] = useState(false);
   const [onboardingData, setOnboardingData] = useState<any>(null);
+  const [signupFocus, setSignupFocus] = useState<string>('community');
   const router = useRouter();
 
-  // Check for referral code in URL on component mount
+  // Check for referral code and focus parameter in URL on component mount
   useEffect(() => {
     const refCode = searchParams.get("ref");
     if (refCode) {
       setFormData((prev) => ({ ...prev, referralCode: refCode.toUpperCase() }));
+    }
+
+    // Handle wizard focus parameter to personalize signup form
+    const focus = searchParams.get("focus");
+    if (focus) {
+      setSignupFocus(focus);
+      // Pre-select relevant interests based on wizard response
+      const focusInterests = {
+        'dating': ['matches', 'cultural_events', 'social'],
+        'community': ['cultural_events', 'community', 'social'],
+        'business': ['networking', 'business', 'professional'],
+        'student': ['education', 'student_support', 'academic']
+      };
+      const interests = focusInterests[focus as keyof typeof focusInterests] || [];
+      setFormData((prev) => ({ ...prev, interests }));
     }
 
     // Capture origin param for attribution
@@ -548,6 +564,35 @@ function SignupInner() {
     router.push("/signup/success");
   };
 
+  // Get personalized messaging based on wizard focus
+  const getPersonalizedMessage = () => {
+    const messages = {
+      dating: {
+        title: "Find Your Portuguese Match",
+        subtitle: "Connect with Portuguese speakers for dating and genuine relationships",
+        icon: "❤️"
+      },
+      community: {
+        title: "Join Our Cultural Community", 
+        subtitle: "Connect with Portuguese speakers through events and cultural activities",
+        icon: "🎭"
+      },
+      business: {
+        title: "Grow Your Professional Network",
+        subtitle: "Connect with Portuguese business professionals and entrepreneurs", 
+        icon: "💼"
+      },
+      student: {
+        title: "Connect with Portuguese Students",
+        subtitle: "Find study partners and build your academic network",
+        icon: "🎓"
+      }
+    };
+    return messages[signupFocus as keyof typeof messages] || messages.community;
+  };
+
+  const personalizedMessage = getPersonalizedMessage();
+
   return (
     <main className="min-h-screen">
       <div className="pt-16">
@@ -594,14 +639,13 @@ function SignupInner() {
                 </div>
 
                 <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black text-gray-900 mb-3 sm:mb-6 leading-tight">
+                  <span className="text-3xl mb-2 block">{personalizedMessage.icon}</span>
                   <span className="bg-gradient-to-r from-green-600 to-red-600 bg-clip-text text-transparent">
-                    Finally!
+                    {personalizedMessage.title}
                   </span>{" "}
-                  <span className="block sm:inline">Connect with{" "}</span>
-                  <span className="bg-gradient-to-r from-green-600 to-red-600 bg-clip-text text-transparent">
-                    Portuguese Speakers Who Get You
-                  </span>{" "}
-                  <span className="block sm:inline">in the United Kingdom</span>
+                  <span className="block sm:inline text-lg sm:text-xl lg:text-2xl text-gray-600 mt-2">
+                    {personalizedMessage.subtitle}
+                  </span>
                 </h1>
 
                 {/* Social Proof Stats */}

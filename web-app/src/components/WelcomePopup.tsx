@@ -13,6 +13,9 @@ import { useLanguage } from "@/context/LanguageContext";
 import { ROUTES } from "@/config/routes";
 
 export default function WelcomePopup() {
+  // Temporarily disabled - returning null to hide popup completely
+  return null;
+  
   const [isVisible, setIsVisible] = useState(false);
   const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
   const router = useRouter();
@@ -104,10 +107,16 @@ export default function WelcomePopup() {
             <div className="text-center mb-6">
               <div className="text-3xl mb-3">🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿</div>
               <h2 className="text-xl font-bold text-gray-900 mb-2">
-                {t("welcome.find_your_community", "Find your Portuguese community in the UK")}
+                {t(
+                  "welcome.find_your_community",
+                  "Find your Portuguese community in the UK"
+                )}
               </h2>
               <p className="text-sm text-gray-600">
-                {t("welcome.tagline", "Choose where to start — events, connections, or local businesses.")}
+                {t(
+                  "welcome.tagline",
+                  "Choose where to start — events, connections, or local businesses."
+                )}
               </p>
             </div>
 
@@ -115,9 +124,14 @@ export default function WelcomePopup() {
             <div className="mb-5">
               <div className="text-sm font-medium text-gray-700 mb-2">
                 {t("welcome.where_from", "Where are you from?")}
-                <span className="text-gray-500 font-normal"> {t("welcome.optional", "(Optional)")}</span>
+                <span className="text-gray-500 font-normal">
+                  {" "}
+                  {t("welcome.optional", "(Optional)")}
+                </span>
               </div>
-              <p className="text-xs text-gray-500 mb-2">{t("welcome.select_all_apply", "Select all that apply")}</p>
+              <p className="text-xs text-gray-500 mb-2">
+                {t("welcome.select_all_apply", "Select all that apply")}
+              </p>
               <div className="grid grid-cols-2 gap-2 max-h-40 overflow-auto pr-1">
                 {[
                   { code: "pt", name: "Portugal", flag: "🇵🇹" },
@@ -165,7 +179,10 @@ export default function WelcomePopup() {
                       {t("welcome.events", "What's Happening")}
                     </div>
                     <div className="text-sm text-gray-600">
-                      {t("welcome.events_desc", "Book cultural events and see the calendar")}
+                      {t(
+                        "welcome.events_desc",
+                        "Book cultural events and see the calendar"
+                      )}
                     </div>
                   </div>
                 </div>
@@ -176,7 +193,10 @@ export default function WelcomePopup() {
                 className="w-full p-4 rounded-lg border border-gray-200 hover:border-red-300 hover:bg-red-50 text-left transition-all group"
               >
                 <div className="flex items-center gap-3">
-                  <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity }}>
+                  <motion.div
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
                     <HeartIcon className="w-6 h-6 text-red-600" />
                   </motion.div>
                   <div>
@@ -184,7 +204,10 @@ export default function WelcomePopup() {
                       {t("welcome.match", "Find Your Match")}
                     </div>
                     <div className="text-sm text-gray-600">
-                      {t("welcome.match_desc", "Dating and genuine connections")}
+                      {t(
+                        "welcome.match_desc",
+                        "Dating and genuine connections"
+                      )}
                     </div>
                   </div>
                 </div>
@@ -203,7 +226,10 @@ export default function WelcomePopup() {
                       {t("welcome.directory", "Business Directory")}
                     </div>
                     <div className="text-sm text-gray-600">
-                      {t("welcome.directory_desc", "Restaurants, services, and professionals")}
+                      {t(
+                        "welcome.directory_desc",
+                        "Restaurants, services, and professionals"
+                      )}
                     </div>
                   </div>
                 </div>
@@ -219,7 +245,9 @@ export default function WelcomePopup() {
               </button>
               <a
                 href={ROUTES.home}
-                onClick={() => localStorage.setItem("lusotown-welcome-seen", "true")}
+                onClick={() =>
+                  localStorage.setItem("lusotown-welcome-seen", "true")
+                }
                 className="text-sm text-primary-700 hover:text-primary-800 font-medium"
               >
                 {t("welcome.explore_all", "Explore the site")}

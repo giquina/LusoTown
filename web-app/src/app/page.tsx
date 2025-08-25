@@ -58,39 +58,38 @@ export default function Home() {
   const [showWelcomeWizard, setShowWelcomeWizard] = useState(false);
   const router = useRouter();
 
-  // Show welcome wizard on first visit (mobile only) - Very non-aggressive
-  useEffect(() => {
-    const hasSeenWelcome = localStorage.getItem("lusotown_welcome_seen");
+  // Mobile welcome wizard - Only trigger on signup intent (no automatic triggers)
+  const handleSignupClick = () => {
     const isMobile = window.innerWidth < 768;
-
-    // Only show after significant interaction time and only once
-    if (!hasSeenWelcome && isMobile) {
-      const timer = setTimeout(() => {
-        // Double check and ensure user has scrolled (indicating engagement)
-        if (
-          !localStorage.getItem("lusotown_welcome_seen") &&
-          window.scrollY > 500
-        ) {
-          setShowWelcomeWizard(true);
-        }
-      }, 30000); // Increased to 30 seconds
-      return () => clearTimeout(timer);
+    
+    if (isMobile) {
+      // Show wizard on mobile for personalized signup flow
+      setShowWelcomeWizard(true);
+    } else {
+      // Desktop: go directly to signup
+      router.push('/signup');
     }
-  }, []);
+  };
 
   const handleWelcomeComplete = (action: string) => {
+    setShowWelcomeWizard(false);
     localStorage.setItem("lusotown_welcome_seen", "true");
 
-    switch (action) {
-      case "matches":
-        window.location.href = "/matches";
-        break;
-      case "events":
-        window.location.href = ROUTES.events;
-        break;
-      default:
-        break;
-    }
+    // Route to specific signup forms based on wizard responses
+    const signupRoutes = {
+      "matches": "/signup?focus=dating",
+      "dating": "/signup?focus=dating", 
+      "events": "/signup?focus=community",
+      "community": "/signup?focus=community",
+      "business": "/signup?focus=business",
+      "networking": "/signup?focus=business",
+      "student": "/signup?focus=student",
+      "education": "/signup?focus=student",
+      "default": "/signup"
+    };
+
+    const route = signupRoutes[action as keyof typeof signupRoutes] || signupRoutes.default;
+    router.push(route);
   };
 
   return (
@@ -196,12 +195,12 @@ export default function Home() {
                       <ArrowRightIcon className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
 
-                    <a
-                      href={ROUTES.signup}
+                    <button
+                      onClick={handleSignupClick}
                       className="inline-flex items-center justify-center px-6 py-4 border-2 border-primary-300 text-primary-700 text-lg font-semibold rounded-2xl hover:bg-primary-50 transition-all duration-300 min-h-[60px] min-w-[160px]"
                     >
                       {t("hero.cta_secondary", "Join Community")}
-                    </a>
+                    </button>
                   </div>
 
                   {/* Social proof - Enhanced testimonial with proper spacing */}
@@ -356,9 +355,16 @@ export default function Home() {
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") && router.push(`${ROUTES.events}?ref=home&day=today&tag=kizomba`)
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(
+                        `${ROUTES.events}?ref=home&day=today&tag=kizomba`
+                      )
                     }
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&day=today&tag=kizomba`)}
+                    onClick={() =>
+                      router.push(
+                        `${ROUTES.events}?ref=home&day=today&tag=kizomba`
+                      )
+                    }
                     className="group bg-gradient-to-br from-green-50 to-red-50 rounded-2xl p-6 border border-green-200/50 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                     aria-label="View today's Kizomba events"
                   >
@@ -401,7 +407,7 @@ export default function Home() {
                         className="text-sm font-medium text-primary-700 hover:underline"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        {t('common.view_more', 'View more')}
+                        {t("common.view_more", "View more")}
                       </Link>
                     </div>
                   </div>
@@ -410,9 +416,16 @@ export default function Home() {
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") && router.push(`${ROUTES.events}?ref=home&day=today&tag=food`)
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(
+                        `${ROUTES.events}?ref=home&day=today&tag=food`
+                      )
                     }
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&day=today&tag=food`)}
+                    onClick={() =>
+                      router.push(
+                        `${ROUTES.events}?ref=home&day=today&tag=food`
+                      )
+                    }
                     className="group bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-200/50 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                     aria-label="View today's Food events"
                   >
@@ -455,7 +468,7 @@ export default function Home() {
                         className="text-sm font-medium text-primary-700 hover:underline"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        {t('common.view_more', 'View more')}
+                        {t("common.view_more", "View more")}
                       </Link>
                     </div>
                   </div>
@@ -464,9 +477,16 @@ export default function Home() {
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") && router.push(`${ROUTES.events}?ref=home&day=tomorrow&tag=business`)
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(
+                        `${ROUTES.events}?ref=home&day=tomorrow&tag=business`
+                      )
                     }
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&day=tomorrow&tag=business`)}
+                    onClick={() =>
+                      router.push(
+                        `${ROUTES.events}?ref=home&day=tomorrow&tag=business`
+                      )
+                    }
                     className="group bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-6 border border-yellow-200/50 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                     aria-label="View tomorrow's Business events"
                   >
@@ -509,7 +529,7 @@ export default function Home() {
                         className="text-sm font-medium text-primary-700 hover:underline"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        {t('common.view_more', 'View more')}
+                        {t("common.view_more", "View more")}
                       </Link>
                     </div>
                   </div>
@@ -551,9 +571,16 @@ export default function Home() {
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") && router.push(`${ROUTES.events}?ref=home&when=weekend&tag=music&country=cv`)
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekend&tag=music&country=cv`
+                      )
                     }
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&when=weekend&tag=music&country=cv`)}
+                    onClick={() =>
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekend&tag=music&country=cv`
+                      )
+                    }
                     className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-green-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                     aria-label="See Cape Verdean music events this weekend"
                   >
@@ -575,34 +602,34 @@ export default function Home() {
                     </p>
                     <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
                       <div className="flex gap-2 flex-wrap">
-                      <Link
-                        href={`${ROUTES.events}?ref=home&tag=music`}
-                        className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        <Link
+                          href={`${ROUTES.events}?ref=home&tag=music`}
+                          className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        Music
-                      </Link>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&country=cv`}
-                        className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        >
+                          Music
+                        </Link>
+                        <Link
+                          href={`${ROUTES.events}?ref=home&country=cv`}
+                          className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        🇨🇻 Cape Verde
-                      </Link>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&tag=palop`}
-                        className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        >
+                          🇨🇻 Cape Verde
+                        </Link>
+                        <Link
+                          href={`${ROUTES.events}?ref=home&tag=palop`}
+                          className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        PALOP
-                      </Link>
+                        >
+                          PALOP
+                        </Link>
                       </div>
                       <Link
                         href={`${ROUTES.events}?ref=home&when=weekend&tag=music&country=cv`}
                         className="text-sm font-medium text-primary-700 hover:underline"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        {t('common.view_more', 'View more')}
+                        {t("common.view_more", "View more")}
                       </Link>
                     </div>
                   </div>
@@ -611,9 +638,16 @@ export default function Home() {
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") && router.push(`${ROUTES.events}?ref=home&when=weekend&tag=dance&country=ao`)
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekend&tag=dance&country=ao`
+                      )
                     }
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&when=weekend&tag=dance&country=ao`)}
+                    onClick={() =>
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekend&tag=dance&country=ao`
+                      )
+                    }
                     className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-orange-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                     aria-label="See Angolan kizomba events this weekend"
                   >
@@ -634,34 +668,34 @@ export default function Home() {
                     </p>
                     <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
                       <div className="flex gap-2 flex-wrap">
-                      <Link
-                        href={`${ROUTES.events}?ref=home&tag=dance`}
-                        className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        <Link
+                          href={`${ROUTES.events}?ref=home&tag=dance`}
+                          className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        Dance
-                      </Link>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&country=ao`}
-                        className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        >
+                          Dance
+                        </Link>
+                        <Link
+                          href={`${ROUTES.events}?ref=home&country=ao`}
+                          className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        🇦🇴 Angola
-                      </Link>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&tag=palop`}
-                        className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        >
+                          🇦🇴 Angola
+                        </Link>
+                        <Link
+                          href={`${ROUTES.events}?ref=home&tag=palop`}
+                          className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        PALOP
-                      </Link>
+                        >
+                          PALOP
+                        </Link>
                       </div>
                       <Link
                         href={`${ROUTES.events}?ref=home&when=weekend&tag=dance&country=ao`}
                         className="text-sm font-medium text-primary-700 hover:underline"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        {t('common.view_more', 'View more')}
+                        {t("common.view_more", "View more")}
                       </Link>
                     </div>
                   </div>
@@ -670,9 +704,16 @@ export default function Home() {
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") && router.push(`${ROUTES.events}?ref=home&when=weekend&tag=food&country=mz`)
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekend&tag=food&country=mz`
+                      )
                     }
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&when=weekend&tag=food&country=mz`)}
+                    onClick={() =>
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekend&tag=food&country=mz`
+                      )
+                    }
                     className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                     aria-label="See Mozambican food events this weekend"
                   >
@@ -693,34 +734,34 @@ export default function Home() {
                     </p>
                     <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
                       <div className="flex gap-2 flex-wrap">
-                      <Link
-                        href={`${ROUTES.events}?ref=home&tag=food`}
-                        className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        <Link
+                          href={`${ROUTES.events}?ref=home&tag=food`}
+                          className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        Food
-                      </Link>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&country=mz`}
-                        className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        >
+                          Food
+                        </Link>
+                        <Link
+                          href={`${ROUTES.events}?ref=home&country=mz`}
+                          className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        🇲🇿 Mozambique
-                      </Link>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&tag=palop`}
-                        className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        >
+                          🇲🇿 Mozambique
+                        </Link>
+                        <Link
+                          href={`${ROUTES.events}?ref=home&tag=palop`}
+                          className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        PALOP
-                      </Link>
+                        >
+                          PALOP
+                        </Link>
                       </div>
                       <Link
                         href={`${ROUTES.events}?ref=home&when=weekend&tag=food&country=mz`}
                         className="text-sm font-medium text-primary-700 hover:underline"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        {t('common.view_more', 'View more')}
+                        {t("common.view_more", "View more")}
                       </Link>
                     </div>
                   </div>
@@ -772,9 +813,16 @@ export default function Home() {
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") && router.push(`${ROUTES.events}?ref=home&when=weekly&tag=language`)
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekly&tag=language`
+                      )
                     }
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&when=weekly&tag=language`)}
+                    onClick={() =>
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekly&tag=language`
+                      )
+                    }
                     className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-purple-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                     aria-label="See weekly language exchange events"
                   >
@@ -793,27 +841,27 @@ export default function Home() {
                     </p>
                     <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
                       <div className="flex gap-2 flex-wrap">
-                      <Link
-                        href={`${ROUTES.events}?ref=home&tag=language`}
-                        className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        <Link
+                          href={`${ROUTES.events}?ref=home&tag=language`}
+                          className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        Language
-                      </Link>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&when=weekly`}
-                        className="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        >
+                          Language
+                        </Link>
+                        <Link
+                          href={`${ROUTES.events}?ref=home&when=weekly`}
+                          className="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        Weekly
-                      </Link>
+                        >
+                          Weekly
+                        </Link>
                       </div>
                       <Link
                         href={`${ROUTES.events}?ref=home&when=weekly&tag=language`}
                         className="text-sm font-medium text-primary-700 hover:underline"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        {t('common.view_more', 'View more')}
+                        {t("common.view_more", "View more")}
                       </Link>
                     </div>
                   </div>
@@ -822,9 +870,16 @@ export default function Home() {
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") && router.push(`${ROUTES.events}?ref=home&when=weekly&tag=business&tag=palop`)
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekly&tag=business&tag=palop`
+                      )
                     }
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&when=weekly&tag=business&tag=palop`)}
+                    onClick={() =>
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekly&tag=business&tag=palop`
+                      )
+                    }
                     className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-green-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                     aria-label="See weekly PALOP business networking"
                   >
@@ -845,27 +900,27 @@ export default function Home() {
                     </p>
                     <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
                       <div className="flex gap-2 flex-wrap">
-                      <Link
-                        href={`${ROUTES.events}?ref=home&tag=business`}
-                        className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        <Link
+                          href={`${ROUTES.events}?ref=home&tag=business`}
+                          className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        Business
-                      </Link>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&tag=palop`}
-                        className="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        >
+                          Business
+                        </Link>
+                        <Link
+                          href={`${ROUTES.events}?ref=home&tag=palop`}
+                          className="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        PALOP
-                      </Link>
+                        >
+                          PALOP
+                        </Link>
                       </div>
                       <Link
                         href={`${ROUTES.events}?ref=home&when=weekly&tag=business&tag=palop`}
                         className="text-sm font-medium text-primary-700 hover:underline"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        {t('common.view_more', 'View more')}
+                        {t("common.view_more", "View more")}
                       </Link>
                     </div>
                   </div>
@@ -874,9 +929,16 @@ export default function Home() {
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") && router.push(`${ROUTES.events}?ref=home&when=weekly&tag=dance&country=br`)
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekly&tag=dance&country=br`
+                      )
                     }
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&when=weekly&tag=dance&country=br`)}
+                    onClick={() =>
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekly&tag=dance&country=br`
+                      )
+                    }
                     className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-red-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                     aria-label="See weekly Brazilian dance classes"
                   >
@@ -897,27 +959,27 @@ export default function Home() {
                     </p>
                     <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
                       <div className="flex gap-2 flex-wrap">
-                      <Link
-                        href={`${ROUTES.events}?ref=home&tag=dance`}
-                        className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        <Link
+                          href={`${ROUTES.events}?ref=home&tag=dance`}
+                          className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        Dance
-                      </Link>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&country=br`}
-                        className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        >
+                          Dance
+                        </Link>
+                        <Link
+                          href={`${ROUTES.events}?ref=home&country=br`}
+                          className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        🇧🇷 Brazil
-                      </Link>
+                        >
+                          🇧🇷 Brazil
+                        </Link>
                       </div>
                       <Link
                         href={`${ROUTES.events}?ref=home&when=weekly&tag=dance&country=br`}
                         className="text-sm font-medium text-primary-700 hover:underline"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        {t('common.view_more', 'View more')}
+                        {t("common.view_more", "View more")}
                       </Link>
                     </div>
                   </div>
@@ -926,9 +988,16 @@ export default function Home() {
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") && router.push(`${ROUTES.events}?ref=home&when=weekly&tag=football&tag=social`)
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekly&tag=football&tag=social`
+                      )
                     }
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&when=weekly&tag=football&tag=social`)}
+                    onClick={() =>
+                      router.push(
+                        `${ROUTES.events}?ref=home&when=weekly&tag=football&tag=social`
+                      )
+                    }
                     className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                     aria-label="See weekly Portuguese football socials"
                   >
@@ -949,27 +1018,27 @@ export default function Home() {
                     </p>
                     <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
                       <div className="flex gap-2 flex-wrap">
-                      <Link
-                        href={`${ROUTES.events}?ref=home&tag=football`}
-                        className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        <Link
+                          href={`${ROUTES.events}?ref=home&tag=football`}
+                          className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        Football
-                      </Link>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&tag=social`}
-                        className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline"
+                        >
+                          Football
+                        </Link>
+                        <Link
+                          href={`${ROUTES.events}?ref=home&tag=social`}
+                          className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline"
                           onClick={(e) => e.stopPropagation()}
-                      >
-                        Social
-                      </Link>
+                        >
+                          Social
+                        </Link>
                       </div>
                       <Link
                         href={`${ROUTES.events}?ref=home&when=weekly&tag=football&tag=social`}
                         className="text-sm font-medium text-primary-700 hover:underline"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        {t('common.view_more', 'View more')}
+                        {t("common.view_more", "View more")}
                       </Link>
                     </div>
                   </div>
@@ -1106,8 +1175,13 @@ export default function Home() {
                   <div
                     role="button"
                     tabIndex={0}
-                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&country=ao`)}
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&country=ao`)}
+                    onKeyDown={(e) =>
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(`${ROUTES.events}?ref=home&country=ao`)
+                    }
+                    onClick={() =>
+                      router.push(`${ROUTES.events}?ref=home&country=ao`)
+                    }
                     className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-red-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                   >
                     <div className="text-center mb-4">
@@ -1151,8 +1225,13 @@ export default function Home() {
                   <div
                     role="button"
                     tabIndex={0}
-                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&country=cv`)}
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&country=cv`)}
+                    onKeyDown={(e) =>
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(`${ROUTES.events}?ref=home&country=cv`)
+                    }
+                    onClick={() =>
+                      router.push(`${ROUTES.events}?ref=home&country=cv`)
+                    }
                     className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-blue-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                   >
                     <div className="text-center mb-4">
@@ -1196,8 +1275,13 @@ export default function Home() {
                   <div
                     role="button"
                     tabIndex={0}
-                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&country=mz`)}
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&country=mz`)}
+                    onKeyDown={(e) =>
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(`${ROUTES.events}?ref=home&country=mz`)
+                    }
+                    onClick={() =>
+                      router.push(`${ROUTES.events}?ref=home&country=mz`)
+                    }
                     className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-green-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                   >
                     <div className="text-center mb-4">
@@ -1241,8 +1325,13 @@ export default function Home() {
                   <div
                     role="button"
                     tabIndex={0}
-                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&country=gw`)}
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&country=gw`)}
+                    onKeyDown={(e) =>
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(`${ROUTES.events}?ref=home&country=gw`)
+                    }
+                    onClick={() =>
+                      router.push(`${ROUTES.events}?ref=home&country=gw`)
+                    }
                     className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-purple-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                   >
                     <div className="text-center mb-4">
@@ -1286,8 +1375,13 @@ export default function Home() {
                   <div
                     role="button"
                     tabIndex={0}
-                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&country=st`)}
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&country=st`)}
+                    onKeyDown={(e) =>
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(`${ROUTES.events}?ref=home&country=st`)
+                    }
+                    onClick={() =>
+                      router.push(`${ROUTES.events}?ref=home&country=st`)
+                    }
                     className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-orange-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                   >
                     <div className="text-center mb-4">
@@ -1331,8 +1425,13 @@ export default function Home() {
                   <div
                     role="button"
                     tabIndex={0}
-                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&tag=palop`)}
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&tag=palop`)}
+                    onKeyDown={(e) =>
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(`${ROUTES.events}?ref=home&tag=palop`)
+                    }
+                    onClick={() =>
+                      router.push(`${ROUTES.events}?ref=home&tag=palop`)
+                    }
                     className="bg-gradient-to-br from-green-500 to-yellow-500 rounded-2xl p-6 shadow-xl text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-200"
                   >
                     <div className="text-center mb-4">
@@ -1430,8 +1529,13 @@ export default function Home() {
                   <div
                     role="button"
                     tabIndex={0}
-                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&month=november`)}
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&month=november`)}
+                    onKeyDown={(e) =>
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(`${ROUTES.events}?ref=home&month=november`)
+                    }
+                    onClick={() =>
+                      router.push(`${ROUTES.events}?ref=home&month=november`)
+                    }
                     className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-red-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                   >
                     <div className="text-center mb-4">
@@ -1476,8 +1580,13 @@ export default function Home() {
                   <div
                     role="button"
                     tabIndex={0}
-                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&month=december`)}
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&month=december`)}
+                    onKeyDown={(e) =>
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(`${ROUTES.events}?ref=home&month=december`)
+                    }
+                    onClick={() =>
+                      router.push(`${ROUTES.events}?ref=home&month=december`)
+                    }
                     className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-green-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                   >
                     <div className="text-center mb-4">
@@ -1522,8 +1631,13 @@ export default function Home() {
                   <div
                     role="button"
                     tabIndex={0}
-                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&month=february`)}
-                    onClick={() => router.push(`${ROUTES.events}?ref=home&month=february`)}
+                    onKeyDown={(e) =>
+                      (e.key === "Enter" || e.key === " ") &&
+                      router.push(`${ROUTES.events}?ref=home&month=february`)
+                    }
+                    onClick={() =>
+                      router.push(`${ROUTES.events}?ref=home&month=february`)
+                    }
                     className="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-purple-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                   >
                     <div className="text-center mb-4">
@@ -1587,8 +1701,13 @@ export default function Home() {
                     <div
                       role="button"
                       tabIndex={0}
-                      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&season=spring`)}
-                      onClick={() => router.push(`${ROUTES.events}?ref=home&season=spring`)}
+                      onKeyDown={(e) =>
+                        (e.key === "Enter" || e.key === " ") &&
+                        router.push(`${ROUTES.events}?ref=home&season=spring`)
+                      }
+                      onClick={() =>
+                        router.push(`${ROUTES.events}?ref=home&season=spring`)
+                      }
                       className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                       aria-label="View spring Portuguese community highlights"
                     >
@@ -1606,7 +1725,7 @@ export default function Home() {
                           onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center text-xs font-semibold text-white/90 hover:text-white underline decoration-white/30 underline-offset-4"
                         >
-                          View more
+                          {t("common.view_more", "View more")}
                           <span className="ml-1">→</span>
                         </a>
                       </div>
@@ -1614,8 +1733,13 @@ export default function Home() {
                     <div
                       role="button"
                       tabIndex={0}
-                      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&season=summer`)}
-                      onClick={() => router.push(`${ROUTES.events}?ref=home&season=summer`)}
+                      onKeyDown={(e) =>
+                        (e.key === "Enter" || e.key === " ") &&
+                        router.push(`${ROUTES.events}?ref=home&season=summer`)
+                      }
+                      onClick={() =>
+                        router.push(`${ROUTES.events}?ref=home&season=summer`)
+                      }
                       className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                       aria-label="View summer Portuguese community highlights"
                     >
@@ -1635,7 +1759,7 @@ export default function Home() {
                           onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center text-xs font-semibold text-white/90 hover:text-white underline decoration-white/30 underline-offset-4"
                         >
-                          View more
+                          {t("common.view_more", "View more")}
                           <span className="ml-1">→</span>
                         </a>
                       </div>
@@ -1643,8 +1767,13 @@ export default function Home() {
                     <div
                       role="button"
                       tabIndex={0}
-                      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&season=autumn`)}
-                      onClick={() => router.push(`${ROUTES.events}?ref=home&season=autumn`)}
+                      onKeyDown={(e) =>
+                        (e.key === "Enter" || e.key === " ") &&
+                        router.push(`${ROUTES.events}?ref=home&season=autumn`)
+                      }
+                      onClick={() =>
+                        router.push(`${ROUTES.events}?ref=home&season=autumn`)
+                      }
                       className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                       aria-label="View autumn Portuguese community highlights"
                     >
@@ -1664,7 +1793,7 @@ export default function Home() {
                           onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center text-xs font-semibold text-white/90 hover:text-white underline decoration-white/30 underline-offset-4"
                         >
-                          View more
+                          {t("common.view_more", "View more")}
                           <span className="ml-1">→</span>
                         </a>
                       </div>
@@ -1672,8 +1801,13 @@ export default function Home() {
                     <div
                       role="button"
                       tabIndex={0}
-                      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}?ref=home&season=winter`)}
-                      onClick={() => router.push(`${ROUTES.events}?ref=home&season=winter`)}
+                      onKeyDown={(e) =>
+                        (e.key === "Enter" || e.key === " ") &&
+                        router.push(`${ROUTES.events}?ref=home&season=winter`)
+                      }
+                      onClick={() =>
+                        router.push(`${ROUTES.events}?ref=home&season=winter`)
+                      }
                       className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
                       aria-label="View winter Portuguese community highlights"
                     >
@@ -1693,7 +1827,7 @@ export default function Home() {
                           onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center text-xs font-semibold text-white/90 hover:text-white underline decoration-white/30 underline-offset-4"
                         >
-                          View more
+                          {t("common.view_more", "View more")}
                           <span className="ml-1">→</span>
                         </a>
                       </div>
@@ -1912,8 +2046,8 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <a
-                    href={ROUTES.signup}
+                  <button
+                    onClick={handleSignupClick}
                     className="group inline-flex items-center justify-center px-12 py-6 bg-white text-primary-700 text-xl font-bold rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-2 hover:scale-105"
                   >
                     <div className="flex items-center mr-3 gap-1">
@@ -1925,7 +2059,7 @@ export default function Home() {
                     </div>
                     {t("final_cta.primary", "JOIN FREE NOW")}
                     <ArrowRightIcon className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </button>
 
                   <a
                     href={ROUTES.login}
@@ -2099,8 +2233,8 @@ export default function Home() {
 
         {/* Mobile Floating CTA - Prominent matching action */}
         <div className="md:hidden fixed bottom-20 right-4 z-40">
-          <a
-            href={ROUTES.signup}
+          <button
+            onClick={handleSignupClick}
             className="group w-18 h-18 bg-gradient-to-br from-green-600 via-yellow-500 to-red-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center active:scale-95 animate-pulse"
             aria-label="Join Portuguese community - FREE"
           >
@@ -2118,7 +2252,7 @@ export default function Home() {
                 <span>🇦🇴</span>
               </div>
             </div>
-          </a>
+          </button>
 
           {/* Enhanced PALOP Tooltip */}
           <div className="absolute right-20 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-4 py-2 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">

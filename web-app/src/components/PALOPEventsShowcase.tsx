@@ -1,27 +1,36 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { useRouter } from 'next/navigation'
-import { useLanguage } from '@/context/LanguageContext'
-import { PALOP_CULTURAL_EVENTS, getHighPriorityPALOPEvents, getCurrentMonthPALOPEvents } from '@/config/palop-cultural-events'
-import { 
-  CalendarDaysIcon, 
-  MapPinIcon, 
-  UsersIcon, 
+import React from "react";
+import { useRouter } from "next/navigation";
+import { useLanguage } from "@/context/LanguageContext";
+import {
+  PALOP_CULTURAL_EVENTS,
+  getHighPriorityPALOPEvents,
+  getCurrentMonthPALOPEvents,
+} from "@/config/palop-cultural-events";
+import {
+  CalendarDaysIcon,
+  MapPinIcon,
+  UsersIcon,
   SparklesIcon,
   ArrowRightIcon,
   FlagIcon,
   HeartIcon,
-  ClockIcon
-} from '@heroicons/react/24/outline'
-import { ROUTES } from '@/config/routes'
+  ClockIcon,
+} from "@heroicons/react/24/outline";
+import { ROUTES } from "@/config/routes";
 
 interface PALOPEventsShowcaseProps {
-  variant?: 'featured' | 'current-month' | 'independence' | 'business' | 'cultural'
-  limit?: number
-  className?: string
-  showCountryFlags?: boolean
-  showDescription?: boolean
+  variant?:
+    | "featured"
+    | "current-month"
+    | "independence"
+    | "business"
+    | "cultural";
+  limit?: number;
+  className?: string;
+  showCountryFlags?: boolean;
+  showDescription?: boolean;
 }
 
 /**
@@ -29,58 +38,76 @@ interface PALOPEventsShowcaseProps {
  * Displays curated PALOP cultural events with pride and cultural context
  */
 const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
-  variant = 'featured',
+  variant = "featured",
   limit = 3,
-  className = '',
+  className = "",
   showCountryFlags = true,
-  showDescription = true
+  showDescription = true,
 }) => {
-  const { t } = useLanguage()
-  const router = useRouter()
+  const { t } = useLanguage();
+  const router = useRouter();
 
   // Get events based on variant
   const getEvents = () => {
     switch (variant) {
-      case 'current-month':
-        return getCurrentMonthPALOPEvents().slice(0, limit)
-      case 'independence':
-        return PALOP_CULTURAL_EVENTS.filter(e => e.category === 'independence').slice(0, limit)
-      case 'business':
-        return PALOP_CULTURAL_EVENTS.filter(e => e.networking || e.category === 'business').slice(0, limit)
-      case 'cultural':
-        return PALOP_CULTURAL_EVENTS.filter(e => e.category === 'music' || e.category === 'heritage').slice(0, limit)
+      case "current-month":
+        return getCurrentMonthPALOPEvents().slice(0, limit);
+      case "independence":
+        return PALOP_CULTURAL_EVENTS.filter(
+          (e) => e.category === "independence"
+        ).slice(0, limit);
+      case "business":
+        return PALOP_CULTURAL_EVENTS.filter(
+          (e) => e.networking || e.category === "business"
+        ).slice(0, limit);
+      case "cultural":
+        return PALOP_CULTURAL_EVENTS.filter(
+          (e) => e.category === "music" || e.category === "heritage"
+        ).slice(0, limit);
       default:
-        return getHighPriorityPALOPEvents().slice(0, limit)
+        return getHighPriorityPALOPEvents().slice(0, limit);
     }
-  }
+  };
 
-  const events = getEvents()
+  const events = getEvents();
 
   if (events.length === 0) {
-    return null
+    return null;
   }
 
   const getCountryColor = (country: string) => {
     switch (country) {
-      case 'angola': return 'border-red-500 text-red-600'
-      case 'cape_verde': return 'border-blue-500 text-blue-600'
-      case 'mozambique': return 'border-green-500 text-green-600'
-      case 'guinea_bissau': return 'border-purple-500 text-purple-600'
-      case 'sao_tome_principe': return 'border-orange-500 text-orange-600'
-      default: return 'border-gray-500 text-gray-600'
+      case "angola":
+        return "border-red-500 text-red-600";
+      case "cape_verde":
+        return "border-blue-500 text-blue-600";
+      case "mozambique":
+        return "border-green-500 text-green-600";
+      case "guinea_bissau":
+        return "border-purple-500 text-purple-600";
+      case "sao_tome_principe":
+        return "border-orange-500 text-orange-600";
+      default:
+        return "border-gray-500 text-gray-600";
     }
-  }
+  };
 
   const getCountryName = (country: string) => {
     switch (country) {
-      case 'angola': return 'Angola 🇦🇴'
-      case 'cape_verde': return 'Cape Verde 🇨🇻'
-      case 'mozambique': return 'Mozambique 🇲🇿'
-      case 'guinea_bissau': return 'Guinea-Bissau 🇬🇼'
-      case 'sao_tome_principe': return 'São Tomé 🇸🇹'
-      default: return 'PALOP'
+      case "angola":
+        return "Angola 🇦🇴";
+      case "cape_verde":
+        return "Cape Verde 🇨🇻";
+      case "mozambique":
+        return "Mozambique 🇲🇿";
+      case "guinea_bissau":
+        return "Guinea-Bissau 🇬🇼";
+      case "sao_tome_principe":
+        return "São Tomé 🇸🇹";
+      default:
+        return "PALOP";
     }
-  }
+  };
 
   return (
     <section className={`py-12 ${className}`}>
@@ -89,24 +116,46 @@ const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-3 rounded-full font-bold text-sm mb-6">
             <SparklesIcon className="w-4 h-4" />
-            {t('palop.events.calendar.title', 'Exclusive PALOP Cultural Calendar')}
+            {t(
+              "palop.events.calendar.title",
+              "Exclusive PALOP Cultural Calendar"
+            )}
           </div>
-          
+
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-            {variant === 'independence' && t('palop.events.independence.celebrations', 'PALOP Independence Celebrations - Members Priority')}
-            {variant === 'business' && t('palop.networking.professional', 'PALOP Executive Network - By Invitation')}
-            {variant === 'cultural' && t('palop.cultural.education', 'PALOP Cultural Heritage Circle - Curated Access')}
-            {variant === 'current-month' && 'This Month\'s Exclusive PALOP Events'}
-            {variant === 'featured' && 'Premium PALOP Cultural Experiences'}
+            {variant === "independence" &&
+              t(
+                "palop.events.independence.celebrations",
+                "PALOP Independence Celebrations - Members Priority"
+              )}
+            {variant === "business" &&
+              t(
+                "palop.networking.professional",
+                "PALOP Executive Network - By Invitation"
+              )}
+            {variant === "cultural" &&
+              t(
+                "palop.cultural.education",
+                "PALOP Cultural Heritage Circle - Curated Access"
+              )}
+            {variant === "current-month" &&
+              "This Month's Exclusive PALOP Events"}
+            {variant === "featured" && "Premium PALOP Cultural Experiences"}
           </h2>
-          
+
           {showCountryFlags && (
             <div className="text-3xl mb-4">🇦🇴 🇨🇻 🇬🇼 🇲🇿 🇸🇹</div>
           )}
-          
+
           {showDescription && (
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              {t('palop.success.subtitle', 'Where PALOP Cultures Thrive in Britain')} - Join the community celebrating the incredible heritage of African Lusophone nations with exclusive access to premium cultural experiences across the United Kingdom.
+              {t(
+                "palop.success.subtitle",
+                "Where PALOP Cultures Thrive in Britain"
+              )}{" "}
+              - Join the community celebrating the incredible heritage of
+              African Lusophone nations with exclusive access to premium
+              cultural experiences across the United Kingdom.
             </p>
           )}
         </div>
@@ -118,14 +167,23 @@ const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
               key={event.id}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && router.push(`${ROUTES.events}/${event.id}`)}
+              onKeyDown={(e) =>
+                (e.key === "Enter" || e.key === " ") &&
+                router.push(`${ROUTES.events}/${event.id}`)
+              }
               onClick={() => router.push(`${ROUTES.events}/${event.id}`)}
-              className={`bg-white rounded-2xl p-6 shadow-xl border-l-4 ${getCountryColor(event.country)} hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-300`}
+              className={`bg-white rounded-2xl p-6 shadow-xl border-l-4 ${getCountryColor(
+                event.country
+              )} hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-300`}
               aria-label={`${event.title} — view details`}
             >
               {/* Country Badge */}
               <div className="flex items-center justify-between mb-4">
-                <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold ${getCountryColor(event.country)} bg-opacity-10`}>
+                <div
+                  className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold ${getCountryColor(
+                    event.country
+                  )} bg-opacity-10`}
+                >
                   <FlagIcon className="w-3 h-3" />
                   {getCountryName(event.country)}
                 </div>
@@ -156,7 +214,7 @@ const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-600">
                   <MapPinIcon className="w-4 h-4" />
-                  <span>{event.venues[0] || 'Multiple venues'}</span>
+                  <span>{event.venues[0] || "Multiple venues"}</span>
                 </div>
               </div>
 
@@ -164,12 +222,18 @@ const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
               <div className="mb-4">
                 <div className="flex flex-wrap gap-1">
                   {event.music?.slice(0, 2).map((music, index) => (
-                    <span key={index} className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">
+                    <span
+                      key={index}
+                      className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full"
+                    >
                       🎵 {music}
                     </span>
                   ))}
                   {event.food?.slice(0, 1).map((food, index) => (
-                    <span key={index} className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
+                    <span
+                      key={index}
+                      className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full"
+                    >
                       🍽️ {food}
                     </span>
                   ))}
@@ -220,7 +284,7 @@ const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
                     onClick={(e) => e.stopPropagation()}
                     className="text-sm font-medium text-primary-700 hover:underline"
                   >
-                    {t('common.view_more', 'View more')}
+                    {t("common.view_more", "View more")}
                   </a>
                 </div>
                 <div className="text-xs text-center text-gray-600 bg-amber-50 px-2 py-1 rounded border border-amber-200">
@@ -240,66 +304,82 @@ const PALOPEventsShowcase: React.FC<PALOPEventsShowcaseProps> = ({
             <div className="flex items-center mr-3">
               <span className="text-sm">🇦🇴🇨🇻🇬🇼🇲🇿🇸🇹</span>
             </div>
-            {t('palop.events.calendar.title', 'View All PALOP Events')}
+            {t("palop.events.calendar.title", "View All PALOP Events")}
             <ArrowRightIcon className="w-5 h-5 ml-2" />
           </a>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default PALOPEventsShowcase
+export default PALOPEventsShowcase;
 
 /**
  * PALOP Success Stories Component
  * Showcases successful PALOP entrepreneurs and community members
  */
-export const PALOPSuccessStories: React.FC<{ className?: string }> = ({ className = '' }) => {
-  const { t } = useLanguage()
+export const PALOPSuccessStories: React.FC<{ className?: string }> = ({
+  className = "",
+}) => {
+  const { t } = useLanguage();
 
   const successStories = [
     {
-      name: 'Carlos Burity Santos',
-      country: 'Angola 🇦🇴',
-      business: 'Elite Angolan Diamonds London',
-      achievement: '£2.5M+ Annual Revenue',
-      story: 'Building London\'s premier Angolan diamond boutique in Hatton Garden',
-      impact: 'Supporting ethical diamond trade while celebrating Angolan heritage'
+      name: "Carlos Burity Santos",
+      country: "Angola 🇦🇴",
+      business: "Elite Angolan Diamonds London",
+      achievement: "£2.5M+ Annual Revenue",
+      story:
+        "Building London's premier Angolan diamond boutique in Hatton Garden",
+      impact:
+        "Supporting ethical diamond trade while celebrating Angolan heritage",
     },
     {
-      name: 'Helena Santos Morais',
-      country: 'Cape Verde 🇨🇻',
-      business: 'Cachupa Island Kitchen',
-      achievement: '4.8/5 Customer Rating',
-      story: 'Bringing authentic Cape Verdean cuisine to London with family recipes',
-      impact: 'Preserving island food culture while building successful restaurant'
+      name: "Helena Santos Morais",
+      country: "Cape Verde 🇨🇻",
+      business: "Cachupa Island Kitchen",
+      achievement: "4.8/5 Customer Rating",
+      story:
+        "Bringing authentic Cape Verdean cuisine to London with family recipes",
+      impact:
+        "Preserving island food culture while building successful restaurant",
     },
     {
-      name: 'Fernando Machel Samora',
-      country: 'Mozambique 🇲🇿',
-      business: 'Coastal Spice Trading Company',
-      achievement: '£800K+ Annual Revenue',
-      story: 'Importing authentic Mozambican spices directly from coastal producers',
-      impact: 'Supporting traditional farmers while bringing coastal flavors to UK'
-    }
-  ]
+      name: "Fernando Machel Samora",
+      country: "Mozambique 🇲🇿",
+      business: "Coastal Spice Trading Company",
+      achievement: "£800K+ Annual Revenue",
+      story:
+        "Importing authentic Mozambican spices directly from coastal producers",
+      impact:
+        "Supporting traditional farmers while bringing coastal flavors to UK",
+    },
+  ];
 
   return (
-    <section className={`py-12 bg-gradient-to-br from-green-50 to-yellow-50 ${className}`}>
+    <section
+      className={`py-12 bg-gradient-to-br from-green-50 to-yellow-50 ${className}`}
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-yellow-500 text-white px-6 py-3 rounded-full font-bold text-sm mb-6">
             <SparklesIcon className="w-4 h-4" />
-            {t('palop.success.stories', 'PALOP Success Stories')}
+            {t("palop.success.stories", "PALOP Success Stories")}
           </div>
-          
+
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-            {t('palop.success.entrepreneurs', 'PALOP Entrepreneurs Changing London\'s Landscape')}
+            {t(
+              "palop.success.entrepreneurs",
+              "PALOP Entrepreneurs Changing London's Landscape"
+            )}
           </h2>
-          
+
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Meet the incredible entrepreneurs from Angola, Cape Verde, Guinea-Bissau, Mozambique, and São Tomé who are building successful businesses while preserving their cultural heritage in the United Kingdom.
+            Meet the incredible entrepreneurs from Angola, Cape Verde,
+            Guinea-Bissau, Mozambique, and São Tomé who are building successful
+            businesses while preserving their cultural heritage in the United
+            Kingdom.
           </p>
         </div>
 
@@ -307,23 +387,31 @@ export const PALOPSuccessStories: React.FC<{ className?: string }> = ({ classNam
           {successStories.map((story, index) => (
             <div key={index} className="bg-white rounded-2xl p-6 shadow-xl">
               <div className="text-center mb-4">
-                <div className="text-3xl mb-3">{story.country.split(' ')[1]}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-1">{story.name}</h3>
+                <div className="text-3xl mb-3">
+                  {story.country.split(" ")[1]}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-1">
+                  {story.name}
+                </h3>
                 <p className="text-sm text-gray-600 mb-2">{story.business}</p>
                 <div className="inline-flex items-center gap-1 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
                   <SparklesIcon className="w-3 h-3" />
                   {story.achievement}
                 </div>
               </div>
-              
+
               <div className="space-y-3">
                 <div className="bg-gray-50 rounded-lg p-3">
-                  <p className="text-sm text-gray-700 font-medium mb-1">Success Story:</p>
+                  <p className="text-sm text-gray-700 font-medium mb-1">
+                    Success Story:
+                  </p>
                   <p className="text-xs text-gray-600">{story.story}</p>
                 </div>
-                
+
                 <div className="bg-blue-50 rounded-lg p-3">
-                  <p className="text-sm text-blue-800 font-medium mb-1">Community Impact:</p>
+                  <p className="text-sm text-blue-800 font-medium mb-1">
+                    Community Impact:
+                  </p>
                   <p className="text-xs text-blue-600">{story.impact}</p>
                 </div>
               </div>
@@ -332,5 +420,5 @@ export const PALOPSuccessStories: React.FC<{ className?: string }> = ({ classNam
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

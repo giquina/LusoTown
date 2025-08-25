@@ -34,7 +34,13 @@ export function LuxuryRipple({
     }
   }, []);
 
-  const createRipple = useCallback((event: React.MouseEvent | React.TouchEvent) => {
+
+  const handleClick = useCallback((event: React.MouseEvent) => {
+    if (disabled) return;
+    onClick?.();
+  }, [disabled, onClick]);
+
+  const handleTouchOrMouse = useCallback((event: React.MouseEvent | React.TouchEvent) => {
     if (disabled || !rippleRef.current) return;
 
     const rect = rippleRef.current.getBoundingClientRect();
@@ -61,16 +67,15 @@ export function LuxuryRipple({
     setTimeout(() => {
       setRipples(prev => prev.filter(ripple => ripple.id !== newRipple.id));
     }, 600);
-
-    onClick?.();
-  }, [disabled, onClick, hapticFeedback, triggerHaptic]);
+  }, [disabled, hapticFeedback, triggerHaptic]);
 
   return (
     <div
       ref={rippleRef}
       className={`luxury-touch-target relative overflow-hidden ${className}`}
-      onMouseDown={createRipple}
-      onTouchStart={createRipple}
+      onMouseDown={handleTouchOrMouse}
+      onTouchStart={handleTouchOrMouse}
+      onClick={handleClick}
     >
       {children}
       {ripples.map(ripple => (
