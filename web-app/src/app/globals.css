@@ -383,6 +383,10 @@ html {
   .section-padding {
     @apply px-6 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24;
   }
+
+  .section-spacing {
+    @apply mt-16 md:mt-20 lg:mt-24;
+  }
   
   .container-width {
     @apply max-w-[1600px] mx-auto w-full px-4 sm:px-6 lg:px-12;

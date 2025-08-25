@@ -90,7 +90,7 @@ export default function StreamlinedCommunitySelector({
   }
 
   return (
-    <section className={`py-16 bg-gradient-to-br from-primary-50 to-secondary-50 ${className}`}>
+    <section className={`py-16 md:py-20 lg:py-24 bg-gradient-to-br from-primary-50 to-secondary-50 section-spacing ${className}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center mb-12">
           <motion.h2
