@@ -1,180 +1,27 @@
-'use client'
-import Image from 'next/image'
-
-import React, { useState, useEffect, useMemo } from 'react'
-
-// ✅ PUBLIC ACCESS: This page is accessible to all users without authentication
-import { useLanguage } from '@/context/LanguageContext'
-import { ROUTES } from '@/config/routes'
-import { portugueseBusinessService, PortugueseBusiness, BusinessFilters, BusinessCategory, LondonArea, PortugueseRegion } from '@/lib/businessDirectory'
-import { geolocationService, BusinessDistance } from '@/lib/geolocation'
-import BusinessMap from '@/components/BusinessMap'
-import NearMeButton, { DistanceIndicator } from '@/components/NearMeButton'
-// import BusinessSubmissionForm from '@/components/BusinessSubmissionForm' // TODO: Implement component
-import { LUSOPHONE_CELEBRATIONS, CULTURAL_WISDOM, getFeaturedCelebrations, getRandomCulturalWisdom } from '@/config/lusophone-celebrations'
-import { PALOP_BUSINESS_DIRECTORY, getFeaturedPALOPBusinesses, getPALOPBusinessesByCategory } from '@/config/palop-business-directory'
-import { useGeolocation } from '@/hooks/useGeolocation'
-import { useMediaQuery } from '@/hooks/useMediaQuery'
-import { 
-  MapPinIcon,
-  PhoneIcon,
-  GlobeAltIcon,
-  ClockIcon,
-  StarIcon,
-  MagnifyingGlassIcon,
-  FunnelIcon,
-  BuildingStorefrontIcon,
-  TagIcon,
-  CalendarDaysIcon,
-  CheckBadgeIcon,
-  SparklesIcon,
-  HeartIcon,
-  XMarkIcon,
-  FlagIcon,
-  MapIcon,
-  ListBulletIcon,
-  PlusIcon
-} from '@heroicons/react/24/outline'
-import { StarIcon as StarSolidIcon, UsersIcon } from '@heroicons/react/24/solid'
+"use client"
+import React from 'react'
 import Footer from '@/components/Footer'
 
-// Cultural Wisdom Display Component
-const CulturalWisdomDisplay: React.FC = () => {
-  const { language } = useLanguage()
-  const isPortuguese = language === 'pt'
-  const [currentWisdom, setCurrentWisdom] = useState(() => getRandomCulturalWisdom())
-  const [fadeClass, setFadeClass] = useState('opacity-100')
-
-  // Rotate wisdom every 10 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFadeClass('opacity-0')
-      setTimeout(() => {
-        setCurrentWisdom(getRandomCulturalWisdom())
-        setFadeClass('opacity-100')
-      }, 300)
-    }, 10000)
-
-    return () => clearInterval(interval)
-  }, [])
-
+// Temporary minimal page to unblock production deployment.
+// TODO: Restore full Business Directory implementation.
+export default function BusinessDirectory() {
   return (
-    <div className="mt-8 text-center p-6 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl border border-primary-100">
-      <div className={`transition-opacity duration-300 ${fadeClass}`}>
-        <div className="flex items-center justify-center gap-3 mb-3">
-          <span className="text-2xl">{currentWisdom.flagEmoji}</span>
-          <span className="text-sm font-medium text-primary-700">
-            {currentWisdom.origin[language]}
-          </span>
-        </div>
-        
-        <p className="text-lg italic text-gray-800 mb-3 font-medium">
-          "{currentWisdom.quote[language]}"
+    <div className="min-h-screen bg-gray-50">
+      <div className="pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          Lusophone Business Directory
+        </h1>
+        <p className="text-lg text-gray-600 mb-8">
+          We’re improving this page. The full directory will be back shortly.
         </p>
-        
-        <div className="flex items-center justify-center gap-2 text-sm text-gray-600 mb-2">
-          <span>🌍</span>
-          <span>{currentWisdom.philosophy[language].slice(0, 80)}...</span>
-        </div>
-        
-        <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
-          <span>{isPortuguese ? 'Comunidade Lusófona Mundial' : 'Global Lusophone Community'}</span>
-          <span>•</span>
-          <span>{isPortuguese ? 'Tradições Empresariais' : 'Business Traditions'}</span>
+        <div className="rounded-xl border border-gray-200 bg-white p-6">
+          <p>Business submissions and listings are temporarily unavailable during updates.</p>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
-
-interface BusinessCardProps {
-  business: PortugueseBusiness
-  featured?: boolean
-  distance?: number
-  viewMode?: 'grid' | 'list'
-  onFavorite?: (businessId: string) => void
-  isFavorited?: boolean
-}
-
-interface FilterState {
-  search: string
-  category: BusinessCategory[]
-  palop: boolean
-  cultural: boolean
-  londonArea: LondonArea[]
-  verificationStatus: 'verified' | 'all'
-  sortBy: 'featured' | 'rating' | 'distance' | 'newest' | 'alphabetical'
-  priceRange?: ('£' | '££' | '£££' | '££££')[]
-  openNow?: boolean
-}
-
-const BusinessCard: React.FC<BusinessCardProps> = ({ 
-  business, 
-  featured = false, 
-  distance, 
-  viewMode = 'grid',
-  onFavorite,
-  isFavorited = false 
-}) => {
-  const { language } = useLanguage()
-  const isPortuguese = language === 'pt'
-  const [isImageLoaded, setIsImageLoaded] = useState(false)
-
-  const formatHours = (hours: string) => {
-    if (hours === 'Closed') return isPortuguese ? 'Fechado' : 'Closed'
-    return hours
-  }
-
-  const getCategoryLabel = (category: BusinessCategory) => {
-    const categories = {
-      restaurant: { en: 'Restaurant', pt: 'Restaurante' },
-      cafe: { en: 'Café', pt: 'Café' },
-      bakery: { en: 'Bakery', pt: 'Pastelaria' },
-      grocery: { en: 'Grocery', pt: 'Mercearia' },
-      services: { en: 'Services', pt: 'Serviços' },
-      travel: { en: 'Travel Agency', pt: 'Agência de Viagens' },
-      cultural_center: { en: 'Cultural Center', pt: 'Centro Cultural' },
-      healthcare: { en: 'Healthcare', pt: 'Saúde' },
-      legal: { en: 'Legal Services', pt: 'Serviços Jurídicos' },
-      education: { en: 'Education', pt: 'Educação' },
-      beauty: { en: 'Beauty & Wellness', pt: 'Beleza e Bem-estar' },
-      retail: { en: 'Retail', pt: 'Comércio' },
-      real_estate: { en: 'Real Estate', pt: 'Imobiliário' },
-      financial: { en: 'Financial Services', pt: 'Serviços Financeiros' },
-      consulting: { en: 'Consulting', pt: 'Consultoria' },
-      automotive: { en: 'Automotive', pt: 'Automóvel' },
-      home_services: { en: 'Home Services', pt: 'Serviços Domésticos' },
-      entertainment: { en: 'Entertainment', pt: 'Entretenimento' },
-      technology: { en: 'Technology', pt: 'Tecnologia' },
-    }
-    return categories[category]?.[language] || category
-  }
-
-  const getRegionFlag = (region: PortugueseRegion) => {
-    const flags = {
-      portugal_mainland: '🇵🇹',
-      portugal_azores: '🇵🇹',
-      portugal_madeira: '🇵🇹',
-      brazil: '🇧🇷',
-      angola: '🇦🇴',
-      mozambique: '🇲🇿',
-      cape_verde: '🇨🇻',
-      guinea_bissau: '🇬🇼',
-      sao_tome_principe: '🇸🇹',
-      east_timor: '🇹🇱',
-      macau: '🇲🇴',
-      portuguese_diaspora: '🌍'
-    }
-    return flags[region] || '🇵🇹'
-  }
-
-  const getRegionName = (region: PortugueseRegion) => {
-    const regionNames = {
-      portugal_mainland: { pt: 'Portugal Continental', en: 'Mainland Portugal' },
-      portugal_azores: { pt: 'Açores', en: 'Azores' },
-      portugal_madeira: { pt: 'Madeira', en: 'Madeira' },
-      brazil: { pt: 'Brasil', en: 'Brazil' },
-      angola: { pt: 'Angola', en: 'Angola' },
       mozambique: { pt: 'Moçambique', en: 'Mozambique' },
       cape_verde: { pt: 'Cabo Verde', en: 'Cape Verde' },
       guinea_bissau: { pt: 'Guiné-Bissau', en: 'Guinea-Bissau' },
