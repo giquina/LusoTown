@@ -293,6 +293,39 @@ npm run deploy
 
 ---
 
+### Promote-only Production (Vercel)
+
+We deploy Production via Vercel “Promote” to avoid rebuild flakes and keep releases reliable:
+
+- Push to `main` → Vercel creates a Preview build.
+- Once Preview is READY, promote it to Production (no rebuild).
+- Auto Production builds from `main` are skipped via `vercel.json`.
+
+Automation
+
+- GitHub Action: `.github/workflows/promote-on-green.yml`
+	- Waits for a READY Preview matching the commit (or branch)
+	- Calls Vercel’s Promote API to update Production
+
+Required GitHub Secrets
+
+- `VERCEL_TOKEN` (from the ilyjiquina… Vercel account)
+- `VERCEL_PROJECT_ID`
+- `VERCEL_TEAM_ID` (optional if using a Team)
+
+Verify the setup
+
+1) Push a commit to `main`.
+2) In GitHub → Actions → “Promote Preview to Production (Vercel)”, open the latest run:
+	 - Step “Validate env” prints “Env OK” if secrets are present
+	 - Step “Wait for Preview build to be READY” finds the Preview
+	 - Step “Promote to Production” requests promotion (no rebuild)
+
+Manual Promote (UI)
+
+- In Vercel, open any READY Preview and click “Promote to Production”. This is instant and uses the reliable artifact.
+
+
 ## 📈 Community Impact
 
 ### Portuguese-speaking community Benefits
