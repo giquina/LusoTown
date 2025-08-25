@@ -1,4 +1,7 @@
 {
+  "framework": "nextjs",
+  "installCommand": "cd web-app && npm ci || npm i",
+  "buildCommand": "cd web-app && npm run build",
   "headers": [
     {
       "source": "/(.*)",
