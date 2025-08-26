@@ -139,7 +139,7 @@ export default function Home() {
 
                   {/* Single Clear Value Proposition */}
                   <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl mb-4">
-                    Discover events, businesses, and opportunities for verified Portuguese and Portuguese‑speaking members across the United Kingdom.
+                    Discover events, businesses, and opportunities for verified Portuguese and Lusophone‑speaking community across the United Kingdom.
                   </p>
 
                   {/* Verification note for clarity */}

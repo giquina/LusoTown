@@ -39,9 +39,9 @@ const communityOptions: CommunityOption[] = [
   {
     id: "meet_people",
     title: "Find Your Match",
-    benefit: "Find meaningful connections",
+    benefit: "Find meaningful connections within the Portuguese-speaking community",
     details:
-      "Make friends or date within a respectful, verified community. Weekly meetups and small groups—simple and genuine.",
+      "Make friends or date within a respectful, verified Lusophone community. Weekly Portuguese cultural meetups and small groups—simple and genuine.",
     icon: HeartIcon,
     gradient: "from-red-500 to-rose-500",
     culturalSymbols: "💕❤️🤝",

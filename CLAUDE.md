@@ -18,8 +18,10 @@ cd web-app
 npm test ComponentName.test          # Single component test
 npm test -- --testNamePattern="name" # Specific test
 npx playwright test file.spec.ts     # Single E2E test
+npx playwright test file.spec.ts --headed # Single E2E test with UI
 npm run test:mobile                   # Mobile tests only
 npm run test:portuguese               # Portuguese tests only
+npm run test:e2e:debug               # Debug E2E tests interactively
 ```
 
 ## 🤖 AI Development Guidance
@@ -60,7 +62,7 @@ LusoTown is a production-ready Portuguese-speaking community platform serving th
 
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL with PostGIS, Simple Relay Server (SRS) for streaming, OpenStreetMap/Leaflet for mapping, Twitter API, Stripe, React Context state management, enhanced cultural celebrations system.
 
-**Status**: Production-ready with 120+ pages, 522+ components, complete bilingual EN/PT system, mobile-first responsive design, 4 integrated AI systems, enhanced Lusophone cultural celebrations system. **Live Platform**: https://lusotown-bzkyz77ez-giquinas-projects.vercel.app
+**Status**: Production-ready with 121+ pages, 522+ components, complete bilingual EN/PT system, mobile-first responsive design, 4 integrated AI systems, enhanced Lusophone cultural celebrations system, comprehensive E2E testing suite. **Live Platform**: https://lusotown-bzkyz77ez-giquinas-projects.vercel.app
 
 ## System Requirements
 
@@ -115,6 +117,8 @@ npm run audit:hardcoding      # Critical hardcoding check
 npm run audit:security        # Security audit
 npm run audit:monthly         # Monthly combined audit
 npm run auto-fix              # Auto-fix ESLint issues
+npm run qa:pre-commit         # Pre-commit QA checks
+npm run qa:pre-deploy         # Pre-deployment diagnostic
 
 # Deployment
 npm run deploy                # Build and deploy to Vercel
@@ -271,6 +275,7 @@ npm run audit:hardcoding  # ← CRITICAL (must pass)
 npm run lint              # ESLint validation
 npx tsc --noEmit         # TypeScript check
 npm run build            # Production build test
+npm run qa:pre-commit     # Comprehensive QA checks
 ```
 
 ## Key Business Context
@@ -445,6 +450,14 @@ ANALYZE=true npm run dev       # Opens webpack bundle analyzer
 - Use Supabase performance insights
 
 **For Complex Issues**: Use the Task tool to access specialized troubleshooting agents for step-by-step guidance based on your specific error context.
+
+**E2E Testing Issues** - Playwright tests failing
+```bash
+cd web-app
+npx playwright test --headed          # Visual debugging
+npx playwright test --debug          # Step-through debugging
+npx playwright codegen               # Generate new tests
+```
 
 ## Deployment
 
