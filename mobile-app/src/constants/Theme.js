@@ -1,5 +1,6 @@
 import { MD3LightTheme, configureFonts } from 'react-native-paper';
 import { Colors } from './Styles';
+import { MOBILE_UX_CONFIG } from '../config';
 
 // Portuguese Cultural Theme Configuration
 const fontConfig = {

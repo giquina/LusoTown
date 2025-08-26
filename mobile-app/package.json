@@ -35,8 +35,10 @@
     "reset:cache": "npm start -- --reset-cache",
     "doctor": "expo doctor",
     "validate:setup": "node scripts/validate-setup.js",
-    "setup:complete": "npm run validate:setup && npm run doctor && npm run lint",
-    "dev:setup": "npm run validate:setup && npm start"
+    "validate:config": "node scripts/validate-config.js",
+    "setup:complete": "npm run validate:setup && npm run validate:config && npm run doctor && npm run lint",
+    "dev:setup": "npm run validate:setup && npm run validate:config && npm start",
+    "qa:pre-commit": "npm run lint && npm run type-check && npm run validate:config && npm run audit:hardcoding"
   },
   "dependencies": {
     "expo": "~52.0.0",

@@ -1,79 +1,32 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { PORTUGUESE_COLORS, MOBILE_UX_CONFIG } from '../config';
 
 const { width, height } = Dimensions.get('window');
 
-// 🇵🇹 Portuguese Flag Colors - Official Portuguese Heritage Design System
+// Portuguese Flag Colors - Imported from centralized configuration with flag color definitions
 export const Colors = {
-  // Portuguese Flag Primary Colors
-  red: '#FF0000',           // Portuguese flag red - passion and courage
-  redDark: '#CC0000',       // Deep red for interactions
-  redLight: '#FFE6E6',      // Light red for backgrounds
-  
-  green: '#00A859',         // Portuguese flag green - hope and nature
-  greenDark: '#008A47',     // Deep green for interactions
-  greenLight: '#E6F7F1',    // Light green for backgrounds
-  
-  // Portuguese Cultural Colors
-  gold: '#FFD700',          // Portuguese golden heritage
-  goldDark: '#B8860B',      // Deep gold for premium features
-  goldLight: '#FFFACD',     // Light gold for accents
-  
-  // Primary brand colors (Portuguese Red)
-  primary: '#FF0000',       // Portuguese flag red
-  primaryDark: '#CC0000',   
-  primaryLight: '#FFE6E6',  
-  
-  // Secondary colors (Portuguese Green)
-  secondary: '#00A859',     // Portuguese flag green
-  secondaryDark: '#008A47', 
-  secondaryLight: '#E6F7F1',
-  
-  // Accent colors (Portuguese Gold)
-  accent: '#FFD700',        // Portuguese golden heritage
-  accentDark: '#B8860B',    
-  accentLight: '#FFFACD',   
-  
-  // Action color (Portuguese Red for consistency)
-  action: '#FF0000',        // Portuguese passion
-  actionDark: '#CC0000',    
-  actionLight: '#FFE6E6',   
-  
-  // Premium color (Deep Portuguese Gold)
-  premium: '#B8860B',       // Luxurious Portuguese gold
-  premiumDark: '#996F00',   
-  premiumLight: '#F4E99B',  
-  
-  // Cultural Heritage Colors
-  azulejo: '#4A90E2',       // Portuguese tile blue
-  azulejoDark: '#2E5B9A',   
-  azulejoLight: '#E1F0FF',  
-  
-  // Neutral colors
-  background: '#FAFAFA',    // Clean white background
-  surface: '#FFFFFF',       // Card backgrounds  
-  text: '#1F2937',         // Dark text for readability
-  textSecondary: '#6B7280', // Secondary text
-  textLight: '#9CA3AF',    // Placeholder text
-  
-  // Status colors using Portuguese heritage
-  success: '#00A859',       // Portuguese green for success
-  warning: '#FFD700',       // Portuguese gold for warnings  
-  error: '#FF0000',         // Portuguese red for errors
-  
-  // Special colors
-  border: '#E5E7EB',
-  shadow: 'rgba(0, 0, 0, 0.1)',
-  overlay: 'rgba(0, 0, 0, 0.5)',
+  ...PORTUGUESE_COLORS,
+  // Portuguese flag red - passion and courage
+  portugueseRed: PORTUGUESE_COLORS.primary || '#FF0000',
+  // Portuguese flag green - hope and nature  
+  portugueseGreen: PORTUGUESE_COLORS.secondary || '#00A859', 
+  portugueseGold: PORTUGUESE_COLORS.accent || '#FFD700',
+  // Flag colors - aliases for cultural authenticity
+  flagRed: PORTUGUESE_COLORS.primary || '#FF0000',
+  flagGreen: PORTUGUESE_COLORS.secondary || '#00A859',
+  flagGold: PORTUGUESE_COLORS.accent || '#FFD700',
 };
 
-// 📏 Spacing System - Consistent spacing like building blocks
+// Spacing System - Using mobile UX configuration
 export const Spacing = {
   xs: 4,
   sm: 8,
-  md: 16,
-  lg: 24,
+  md: MOBILE_UX_CONFIG.comfortableSpacing,
+  lg: MOBILE_UX_CONFIG.premiumSpacing,
   xl: 32,
   xxl: 48,
+  // Touch targets
+  minTouch: MOBILE_UX_CONFIG.minTouchTarget,
 };
 
 // 📝 Typography - Beautiful, readable text hierarchy
@@ -179,14 +132,17 @@ export const CommonStyles = StyleSheet.create({
   },
 });
 
-// 📱 Device Dimensions
+// Device Dimensions - Using mobile UX breakpoints
 export const Layout = {
   window: {
     width,
     height,
   },
-  isSmallDevice: width < 375,
-  isLargeDevice: width >= 414,
+  isSmallDevice: width < MOBILE_UX_CONFIG.breakpoints.small,
+  isMediumDevice: width >= MOBILE_UX_CONFIG.breakpoints.small && width < MOBILE_UX_CONFIG.breakpoints.medium,
+  isLargeDevice: width >= MOBILE_UX_CONFIG.breakpoints.medium,
+  isTablet: width >= MOBILE_UX_CONFIG.breakpoints.tablet,
+  breakpoints: MOBILE_UX_CONFIG.breakpoints,
 };
 
 export default {

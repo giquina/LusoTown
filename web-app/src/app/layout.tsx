@@ -31,10 +31,13 @@ import {
 } from "@/config/seo";
 // Performance optimization
 import Script from "next/script";
-import dynamicImport from "next/dynamic";
+import dynamic from "next/dynamic";
 
-// Dynamic imports for heavy components - loads only when needed
-const LiveFeedNotifications = dynamicImport(
+// Critical components that need SSR - import directly
+// Header component will render server-side for better performance
+
+// Dynamic imports ONLY for heavy, non-critical components
+const LiveFeedNotifications = dynamic(
   () => import("@/components/LiveFeedNotifications"),
   {
     loading: () => null,
@@ -42,50 +45,12 @@ const LiveFeedNotifications = dynamicImport(
   }
 );
 
-const AppDownloadBar = dynamicImport(
-  () => import("@/components/AppDownloadBar"),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
-
-const WidgetManager = dynamicImport(
-  () => import("@/components/WidgetManager"),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
-
-// Beginner guidance provider disabled
-
-// Beginner guidance disabled: WelcomeGuidanceBanner and QuickHelpButton removed
-
-const GlobalUXEnhancementProvider = dynamicImport(
-  () => import("@/components/GlobalUXEnhancementProvider"),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
-
-// UserTypeSelection removed - component was disabled and returning null
-
-const AuthPopup = dynamicImport(() => import("@/components/AuthPopup"), {
+const AuthPopup = dynamic(() => import("@/components/AuthPopup"), {
   loading: () => null,
   ssr: false,
 });
 
-const AuthIntentHandler = dynamicImport(
-  () => import("@/components/AuthIntentHandler"),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
-
-const FavoriteNotification = dynamicImport(
+const FavoriteNotification = dynamic(
   () => import("@/components/FavoriteNotification"),
   {
     loading: () => null,
@@ -93,34 +58,7 @@ const FavoriteNotification = dynamicImport(
   }
 );
 
-const PremiumMobileNavigation = dynamicImport(
-  () =>
-    import("@/components/PremiumMobileNavigation").then((mod) => ({
-      default: mod.PremiumMobileNavigation,
-    })),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
-
-const MobileExperienceOptimizer = dynamicImport(
-  () => import("@/components/MobileExperienceOptimizer"),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
-
-const MobileCriticalFixes = dynamicImport(
-  () => import("@/components/MobileCriticalFixes"),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
-
-const LusoBotWrapper = dynamicImport(
+const LusoBotWrapper = dynamic(
   () => import("@/components/LusoBotWrapper"),
   {
     loading: () => null,
@@ -128,39 +66,17 @@ const LusoBotWrapper = dynamicImport(
   }
 );
 
-const MobileRedirectProvider = dynamicImport(
-  () => import("@/components/MobileRedirectProvider"),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
-
-const MobileDownloadPrompt = dynamicImport(
-  () => import("@/components/MobileRedirectProvider").then(mod => ({ default: mod.MobileDownloadPrompt })),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
-
-const AppDownloadLanding = dynamicImport(
-  () => import("@/components/AppDownloadLanding"),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
-
-const TooltipRenderer = dynamicImport(
-  () => import("@/components/ui/Tooltip").then((mod) => ({ default: mod.TooltipRenderer })),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
-
-// Welcome components removed - duplicates consolidated
+// Light wrapper components that can be loaded directly for better SSR
+import GlobalUXEnhancementProvider from "@/components/GlobalUXEnhancementProvider";
+import { PremiumMobileNavigation } from "@/components/PremiumMobileNavigation";
+import MobileExperienceOptimizer from "@/components/MobileExperienceOptimizer";
+import MobileCriticalFixes from "@/components/MobileCriticalFixes";
+import WidgetManager from "@/components/WidgetManager";
+import MobileRedirectProvider from "@/components/MobileRedirectProvider";
+import AppDownloadBar from "@/components/AppDownloadBar";
+import AuthIntentHandler from "@/components/AuthIntentHandler";
+import { MobileDownloadPrompt } from "@/components/MobileRedirectProvider";
+import AppDownloadLanding from "@/components/AppDownloadLanding";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -186,10 +102,11 @@ export const viewport = {
   maximumScale: 1,
 };
 
-// Opt-out of static prerendering to avoid build-time execution of client-only hooks
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
-export const fetchCache = "force-no-store";
+// Enable static generation for better performance - Header can render server-side
+// Only dynamic parts will be client-side rendered
+export const dynamic = "auto"; // Let Next.js optimize automatically
+export const revalidate = 3600; // Cache for 1 hour
+export const fetchCache = "auto";
 
 export default function RootLayout({
   children,
@@ -303,103 +220,87 @@ export default function RootLayout({
                               <PlatformIntegrationProvider>
                                 <WaitingListProvider>
                                   <NavigationProvider>
-                                    {/* User Guidance Provider removed */}
+                                    {/* CRITICAL: Header renders server-side FIRST for proper desktop navigation */}
+                                    <ComponentErrorBoundary componentName="Header">
+                                      <Header />
+                                    </ComponentErrorBoundary>
+
+                                    <ScrollToTop />
+
+                                    {/* Main content renders server-side */}
+                                    {children}
+
+                                    {/* Wrapper components for mobile experience - can render server-side */}
                                     <ComponentErrorBoundary componentName="Widget Manager">
-                                          <WidgetManager>
-                                            <ComponentErrorBoundary componentName="Mobile Redirect Provider">
-                                              <MobileRedirectProvider>
-                                    {/* WelcomeProvider removed - no welcome UI components */}
-                                    
-                                    {/* Global UX Enhancement System for Portuguese-speaking Community */}
-                                    <ComponentErrorBoundary componentName="Global UX Enhancement Provider">
-                                      <GlobalUXEnhancementProvider>
-                                    
-                                    {/* Premium Mobile Experience Wrapper */}
-                                    <ComponentErrorBoundary componentName="Mobile Experience Optimizer">
-                                      <MobileExperienceOptimizer
-                                        enablePremiumAnimations={true}
-                                        enableLuxuryEffects={true}
-                                        enablePortugueseTheming={true}
-                                      >
-                                        <ComponentErrorBoundary componentName="Mobile Critical Fixes">
-                                          <MobileCriticalFixes
-                                            enablePortugueseFixes={true}
-                                            enableTouchOptimizations={true}
-                                            enablePerformanceMode={true}
-                                          >
-                                            {/* UserTypeSelection removed - returns null (disabled) */}
+                                      <WidgetManager>
+                                        <ComponentErrorBoundary componentName="Mobile Redirect Provider">
+                                          <MobileRedirectProvider>
+                                            <ComponentErrorBoundary componentName="Global UX Enhancement Provider">
+                                              <GlobalUXEnhancementProvider>
+                                                <ComponentErrorBoundary componentName="Mobile Experience Optimizer">
+                                                  <MobileExperienceOptimizer
+                                                    enablePremiumAnimations={true}
+                                                    enableLuxuryEffects={true}
+                                                    enablePortugueseTheming={true}
+                                                  >
+                                                    <ComponentErrorBoundary componentName="Mobile Critical Fixes">
+                                                      <MobileCriticalFixes
+                                                        enablePortugueseFixes={true}
+                                                        enableTouchOptimizations={true}
+                                                        enablePerformanceMode={true}
+                                                      >
+                                                        {/* Premium Mobile Navigation - Server-side compatible */}
+                                                        <ComponentErrorBoundary componentName="Premium Mobile Navigation">
+                                                          <PremiumMobileNavigation
+                                                            style="luxury"
+                                                            notifications={0}
+                                                          />
+                                                        </ComponentErrorBoundary>
 
-                                            {/* Welcome Guidance Banner disabled */}
+                                                        {/* App Download Bar - Server-side compatible */}
+                                                        <ComponentErrorBoundary componentName="App Download Bar">
+                                                          <AppDownloadBar />
+                                                        </ComponentErrorBoundary>
 
-                                            <ComponentErrorBoundary componentName="Header">
-                                              <Header />
+                                                        {/* Mobile Download Components - Server-side compatible */}
+                                                        <ComponentErrorBoundary componentName="Mobile Download Prompt">
+                                                          <MobileDownloadPrompt />
+                                                        </ComponentErrorBoundary>
+
+                                                        <ComponentErrorBoundary componentName="App Download Landing">
+                                                          <AppDownloadLanding />
+                                                        </ComponentErrorBoundary>
+
+                                                        <ComponentErrorBoundary componentName="Auth Intent Handler">
+                                                          <AuthIntentHandler />
+                                                        </ComponentErrorBoundary>
+                                                      </MobileCriticalFixes>
+                                                    </ComponentErrorBoundary>
+                                                  </MobileExperienceOptimizer>
+                                                </ComponentErrorBoundary>
+                                              </GlobalUXEnhancementProvider>
                                             </ComponentErrorBoundary>
-
-                                            <ScrollToTop />
-
-                                            {/* Demo removed from SSR path to avoid server/client boundary issues */}
-                                            {children}
-
-                                            {/* WhatsApp widget removed per request; keeping LusoBot only */}
-
-                                            <ComponentErrorBoundary componentName="Live Feed Notifications">
-                                              <LiveFeedNotifications />
-                                            </ComponentErrorBoundary>
-
-                                            <ComponentErrorBoundary componentName="Favorite Notification">
-                                              <FavoriteNotification />
-                                            </ComponentErrorBoundary>
-
-                                            <ComponentErrorBoundary componentName="Auth Popup">
-                                              <AuthPopup />
-                                            </ComponentErrorBoundary>
-
-                                            <ComponentErrorBoundary componentName="Auth Intent Handler">
-                                              <AuthIntentHandler />
-                                            </ComponentErrorBoundary>
-
-                                            {/* Premium Mobile Navigation with Elite Design */}
-                                            <ComponentErrorBoundary componentName="Premium Mobile Navigation">
-                                              <PremiumMobileNavigation
-                                                style="luxury"
-                                                notifications={0}
-                                              />
-                                            </ComponentErrorBoundary>
-
-                                            {/* Welcome system consolidated - removed duplicate banner/popup */}
-
-                                            <ComponentErrorBoundary componentName="LusoBot Widget">
-                                              <LusoBotWrapper />
-                                            </ComponentErrorBoundary>
-
-                                            {/* App Download Bar - Bottom Dismissible Widget */}
-                                            <ComponentErrorBoundary componentName="App Download Bar">
-                                              <AppDownloadBar />
-                                            </ComponentErrorBoundary>
-
-                                            {/* Quick Help Button disabled */}
-                                          </MobileCriticalFixes>
+                                          </MobileRedirectProvider>
                                         </ComponentErrorBoundary>
-                                      </MobileExperienceOptimizer>
-                                    </ComponentErrorBoundary>
-                                    
-                                      </GlobalUXEnhancementProvider>
+                                      </WidgetManager>
                                     </ComponentErrorBoundary>
 
-                                    {/* Mobile App Download Components */}
-                                    <ComponentErrorBoundary componentName="Mobile Download Prompt">
-                                      <MobileDownloadPrompt />
+                                    {/* CLIENT-ONLY dynamic components - Load after SSR */}
+                                    <ComponentErrorBoundary componentName="Live Feed Notifications">
+                                      <LiveFeedNotifications />
                                     </ComponentErrorBoundary>
 
-                                    <ComponentErrorBoundary componentName="App Download Landing">
-                                      <AppDownloadLanding />
+                                    <ComponentErrorBoundary componentName="Favorite Notification">
+                                      <FavoriteNotification />
                                     </ComponentErrorBoundary>
 
-                                              </MobileRedirectProvider>
-                                            </ComponentErrorBoundary>
-                                          </WidgetManager>
-                                        </ComponentErrorBoundary>
-                                    {/* /WelcomeProvider removed */}
+                                    <ComponentErrorBoundary componentName="Auth Popup">
+                                      <AuthPopup />
+                                    </ComponentErrorBoundary>
+
+                                    <ComponentErrorBoundary componentName="LusoBot Widget">
+                                      <LusoBotWrapper />
+                                    </ComponentErrorBoundary>
                                   </NavigationProvider>
                                 </WaitingListProvider>
                               </PlatformIntegrationProvider>

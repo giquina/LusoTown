@@ -64,7 +64,7 @@ LusoTown is a production-ready Portuguese-speaking community platform serving th
 
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL with PostGIS, Simple Relay Server (SRS) for streaming, OpenStreetMap/Leaflet for mapping, Twitter API, Stripe, React Context state management, enhanced cultural celebrations system.
 
-**Status**: Production-ready with 135+ pages, 496+ components, complete bilingual EN/PT system, mobile-first responsive design, 4 integrated AI systems, enhanced Lusophone cultural celebrations system, comprehensive E2E testing suite. **Live Platform**: https://lusotown-bzkyz77ez-giquinas-projects.vercel.app
+**Status**: Production-ready with 135+ pages, 496+ components, complete bilingual EN/PT system, mobile-first responsive design, 4 integrated AI systems, enhanced Lusophone cultural celebrations system, comprehensive E2E testing suite. **Live Platform**: https://web-99kxh0sku-giquinas-projects.vercel.app
 
 
 
@@ -560,7 +560,7 @@ Automated validation of LusoTown-specific requirements:
 3. **Manual Deployments**: Available via GitHub Actions workflow_dispatch
 
 #### 🌐 Live Platform Status
-**Production URL**: https://lusotown-bzkyz77ez-giquinas-projects.vercel.app  
+**Production URL**: https://web-99kxh0sku-giquinas-projects.vercel.app  
 **Community Metrics**: 750+ members, 2,150+ students, 8 universities partnerships
 
 #### 🔧 Build Configuration Optimizations
@@ -756,7 +756,7 @@ npx tsc --noEmit         # TypeScript compilation check
 
 **Testing Strategy**: Comprehensive testing including 168+ AI system tests and mobile UX validation
 
-**Production Deployment**: Successfully deployed to https://lusotown-bzkyz77ez-giquinas-projects.vercel.app with all AI systems operational
+**Production Deployment**: Successfully deployed to https://web-99kxh0sku-giquinas-projects.vercel.app with all AI systems operational
 
 **AI Systems Status**: 4 production-ready AI engines deployed with comprehensive testing:
 - AI Notification System (production-optimized with timing controls)
