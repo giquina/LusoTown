@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { XMarkIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/context/LanguageContext';
 import { PORTUGUESE_COLORS, brandColors } from '@/config/brand';
+import { COMPONENT_Z_INDEX, getMobileWidgetClasses } from '@/config/z-index-layers';
 
 interface Notification {
   id: string;
@@ -323,7 +324,7 @@ export default function LiveFeedNotifications() {
             damping: 25,
             duration: 0.6
           }}
-          className="fixed bottom-20 left-4 right-4 md:bottom-6 md:left-6 md:right-auto z-50 max-w-sm md:max-w-sm mx-auto md:mx-0"
+          className={`fixed bottom-28 md:bottom-20 left-4 right-4 md:left-6 md:right-auto z-[${COMPONENT_Z_INDEX.liveActivityWidget}] max-w-sm md:max-w-sm mx-auto md:mx-0`}
           style={{
             filter: `drop-shadow(0 8px 32px ${colorScheme.glow}50) drop-shadow(0 4px 16px rgba(0,0,0,0.2))`
           }}

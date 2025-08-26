@@ -24,6 +24,7 @@ import {
 import { usePathname } from 'next/navigation';
 import { LuxuryRipple, LuxuryFAB } from './LuxuryMobileInteraction';
 import { ROUTES } from '@/config/routes';
+import { COMPONENT_Z_INDEX } from '@/config/z-index-layers';
 
 interface NavItem {
   id: string;
@@ -210,7 +211,7 @@ export default function LuxuryMobileNav({
           variant="primary"
           size="medium"
           tooltip="Create New"
-          className="fixed bottom-24 right-6 z-50"
+          className="fixed bottom-24 right-6 z-[${COMPONENT_Z_INDEX.fabButton}]"
         />
       )}
 
@@ -269,7 +270,7 @@ export function ContextualMobileNav({ user, className }: ContextualMobileNavProp
       <AnimatePresence>
         {quickActions && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end justify-center pb-32"
+            className="fixed inset-0 bg-black bg-opacity-50 z-[${COMPONENT_Z_INDEX.modal}] flex items-end justify-center pb-32"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

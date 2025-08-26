@@ -2,6 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile Widget Positioning - Safe Areas */
+@media (max-width: 768px) {
+  .widget-safe-bottom {
+    bottom: 5rem; /* 80px - above mobile navigation */
+  }
+  
+  .chat-widget-mobile {
+    bottom: 6rem; /* 96px - above mobile nav with spacing */
+    z-index: 40;
+  }
+  
+  .live-feed-mobile {
+    bottom: 7rem; /* 112px - above chat widget */
+    z-index: 45;
+  }
+  
+  .fab-mobile {
+    bottom: 8rem; /* 128px - above live feed */
+    z-index: 50;
+  }
+  
+  /* Portuguese text safe area handling */
+  .portuguese-nav-label {
+    font-size: 11px;
+    max-width: 60px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  /* Mobile safe area utilities */
+  .mobile-safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .mobile-nav-height {
+    height: 4rem; /* 64px standard mobile nav */
+  }
+}
+
 /* Critical CSS for performance optimization */
 .critical-above-fold {
   display: contents;
@@ -44,6 +84,34 @@
 /* Optimize scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Mobile-safe positioning utilities for widget layering */
+@media (max-width: 768px) {
+  .widget-safe-bottom {
+    bottom: 5rem; /* 80px - above mobile navigation bars */
+  }
+  
+  .widget-safe-bottom-high {
+    bottom: 7rem; /* 112px - for stacked widgets */
+  }
+  
+  .chat-widget-mobile {
+    bottom: 6rem; /* 96px - LusoBot positioning */
+    right: 1rem;
+    z-index: 40;
+  }
+  
+  .live-feed-mobile {
+    bottom: 7rem; /* 112px - LiveFeed positioning */
+    left: 1rem;
+    right: 1rem;
+    z-index: 45;
+  }
+  
+  .pwa-prompt-mobile {
+    z-index: 60; /* Highest for modal overlays */
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

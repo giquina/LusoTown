@@ -13,6 +13,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { PWAInstallPrompt, getInstallationState, showInstallPrompt, isAppInstalled } from '@/lib/pwa-helper';
 import { getDeviceInfo, trackDownloadChoice } from '@/lib/mobile-detection';
 import { MOBILE_APP_CONFIG } from '@/config/mobile-app';
+import { COMPONENT_Z_INDEX } from '@/config/z-index-layers';
 
 interface PWAInstallPromptProps {
   onInstall?: () => void;
@@ -178,7 +179,7 @@ export default function PWAInstallPromptComponent({
   }
 
   const renderBannerVariant = () => (
-    <div className={`fixed top-0 left-0 right-0 z-50 bg-gradient-to-r ${getCulturalColors()} text-white p-4 shadow-lg`}>
+    <div className={`fixed top-0 left-0 right-0 z-[${COMPONENT_Z_INDEX.pwaInstall}] bg-gradient-to-r ${getCulturalColors()} text-white p-4 shadow-lg`}>
       <div className="flex items-center justify-between max-w-4xl mx-auto">
         <div className="flex items-center space-x-3">
           <span className="text-2xl">{getCulturalIcon()}</span>
@@ -218,7 +219,7 @@ export default function PWAInstallPromptComponent({
   );
 
   const renderModalVariant = () => (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+    <div className="fixed inset-0 z-[${COMPONENT_Z_INDEX.pwaInstall}] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
       <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl">
         <div className="text-center">
           <div className={`mx-auto w-16 h-16 bg-gradient-to-br ${getCulturalColors()} rounded-full flex items-center justify-center text-2xl mb-4`}>
@@ -272,7 +273,7 @@ export default function PWAInstallPromptComponent({
   );
 
   const renderBottomSheetVariant = () => (
-    <div className="fixed inset-0 z-50 pointer-events-none">
+    <div className="fixed inset-0 z-[${COMPONENT_Z_INDEX.pwaInstall}] pointer-events-none">
       <div className="fixed bottom-0 left-0 right-0 pointer-events-auto">
         <div className="bg-white rounded-t-3xl shadow-2xl border-t border-gray-200">
           <div className="p-6">

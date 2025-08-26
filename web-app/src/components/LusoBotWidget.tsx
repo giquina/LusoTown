@@ -12,6 +12,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { HeartIcon as HeartSolidIcon } from "@heroicons/react/24/solid";
 import { useLanguage } from "@/context/LanguageContext";
+import { COMPONENT_Z_INDEX, getMobileWidgetClasses } from "@/config/z-index-layers";
 import LusoBotChat from "./LusoBotChat";
 
 // Simple, consistent welcome messages (no randomization)
@@ -76,8 +77,8 @@ export default function LusoBotWidget({
 
   // Mobile-safe positioning that avoids navigation conflicts and ensures full visibility
   const mobilePositionClasses = {
-    "bottom-right": "bottom-6 right-4 safe-area-bottom", // Above mobile nav + avoid FloatingNavigation FAB
-    "bottom-left": "bottom-6 left-4 safe-area-bottom",
+    "bottom-right": "bottom-24 right-4 safe-area-bottom", // Above mobile nav + PWA prompts + LiveFeed
+    "bottom-left": "bottom-24 left-4 safe-area-bottom",
     "top-right": "top-6 right-4 safe-area-top", // Below header with more clearance
     "top-left": "top-6 left-4 safe-area-top",
   };
@@ -287,8 +288,8 @@ export default function LusoBotWidget({
                 initial={{ opacity: 0, y: 20, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 20, scale: 0.8 }}
-                className={`fixed ${getCurrentPositionClass()} z-50 ${
-                  isMobile ? "mb-16" : "mb-20"
+                className={`fixed ${getCurrentPositionClass()} z-[${COMPONENT_Z_INDEX.lusoBotWidget}] ${
+                  isMobile ? "bottom-28" : "bottom-20"
                 } max-w-xs`}
               >
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-4 relative">
@@ -362,7 +363,7 @@ export default function LusoBotWidget({
       </AnimatePresence>
 
       {/* Main Chat Widget */}
-  <div className={`fixed ${getCurrentPositionClass()} z-50`}>
+  <div className={isMobile ? getMobileWidgetClasses('chat') : `fixed ${getCurrentPositionClass()} z-[${COMPONENT_Z_INDEX.lusoBotWidget}]`}>
         <AnimatePresence>
           {isOpen && (
             <motion.div
