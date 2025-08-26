@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useSpring, useTransform } from 'framer-motion';
 
 // Luxury Touch Ripple Effect Component
-interface LuxuryRippleProps {
+interface LuxuryRippleProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
   disabled?: boolean;
@@ -68,6 +68,7 @@ export function LuxuryRipple({
 
   return (
     <div
+      {...rest}
       ref={rippleRef}
       className={`luxury-touch-target relative overflow-hidden ${className}`}
       onMouseDown={createRipple}

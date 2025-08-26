@@ -257,11 +257,13 @@ export default function MobileNavigation({ user, onClose, isOpen }: MobileNaviga
 
 // Mobile Navigation Button Component
 interface MobileNavButtonProps {
+  "data-testid"?: string;
+  "aria-label"?: string;
   isOpen: boolean;
   onClick: () => void;
 }
 
-export function MobileNavButton({ isOpen, onClick }: MobileNavButtonProps) {
+export function MobileNavButton({ isOpen, onClick, "data-testid": testId, "aria-label": ariaLabel }: MobileNavButtonProps) {
   return (
     <LuxuryRipple
       className="inline-flex items-center justify-center p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200 min-h-[48px] min-w-[48px] bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50"

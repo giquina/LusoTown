@@ -235,7 +235,7 @@ export default function Header() {
           </motion.div>
 
           {/* Desktop Navigation - New Redesigned Structure */}
-          <div className="hidden xl:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
             {/* What's Happening - Main Discovery Link */}
             {mainNavigationLinks.map((link) => (
               <motion.a
@@ -475,7 +475,7 @@ export default function Header() {
           </div>
 
           {/* Desktop CTA / User Menu */}
-          <div className="hidden xl:flex items-center gap-2 lg:gap-3 flex-shrink-0">
+          <div className="hidden lg:flex items-center gap-2 lg:gap-3 flex-shrink-0">
             <SearchBar variant="header" />
             <NotificationBell className="hidden md:block" showDropdown />
             <LanguageToggle />
@@ -596,7 +596,7 @@ export default function Header() {
           </div>
 
           {/* Mobile menu button - Optimized for Portuguese-speaking community */}
-          <div className="flex xl:hidden items-center gap-1 relative z-50 flex-shrink-0">
+          <div className="flex lg:hidden items-center gap-1 relative z-50 flex-shrink-0">
             {/* Only show notifications when user is signed in */}
             {user && (
               <>
@@ -605,6 +605,8 @@ export default function Header() {
             )}
             <LanguageToggle />
             <MobileNavButton
+              data-testid="mobile-menu-button"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open main menu"}
               isOpen={mobileMenuOpen}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             />
