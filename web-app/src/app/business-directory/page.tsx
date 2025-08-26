@@ -730,8 +730,9 @@ export default function BusinessDirectory() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div>
+      <div className="min-h-screen bg-gray-50">
+        <div className="pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
           <div className="text-center mb-8">
@@ -1490,9 +1491,9 @@ export default function BusinessDirectory() {
             </div>
           </div>
         </div>
+        <Footer />
+        {submissionFormModal}
       </div>
-      <Footer />
-      {submissionFormModal}
     </div>
   )
 }
