@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { 
   CalendarDaysIcon, 
@@ -11,11 +11,17 @@ import {
   ArrowRightIcon,
   TicketIcon,
   StarIcon,
-  CurrencyPoundIcon
+  CurrencyPoundIcon,
+  ShareIcon,
+  CalendarIcon,
+  EyeIcon
 } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/context/LanguageContext';
 import { ROUTES } from '@/config/routes';
 import { formatPrice } from '@/config/pricing';
+import { EventsCalendarTooltip } from '@/components/ui/GuidanceTooltip';
+import { useAriaAnnouncements, ARIA_MESSAGES } from '@/hooks/useAriaAnnouncements';
+import { useFocusIndicator } from '@/hooks/useFocusManagement';
 
 interface CulturalEvent {
   id: number;
@@ -56,6 +62,34 @@ export default function CulturalCalendar({
   const { language, t } = useLanguage();
   const [events, setEvents] = useState<CulturalEvent[]>([]);
   const [loading, setLoading] = useState(true);
+  
+  // ARIA and Focus Management
+  const { announcePolite } = useAriaAnnouncements();
+  const { addFocusClasses } = useFocusIndicator();
+  const eventRefs = useRef<{ [key: number]: HTMLElement | null }>({});
+  
+  const handleEventFocus = (eventId: number) => {
+    const event = events.find(e => e.id === eventId);
+    if (event) {
+      const eventTitle = language === 'pt' ? event.titlePt : event.title;
+      announcePolite({
+        en: `${eventTitle}. Cultural event focused. Press Enter to view details.`,
+        pt: `${eventTitle}. Evento cultural focado. Prima Enter para ver detalhes.`
+      });
+      
+      const element = eventRefs.current[eventId];
+      if (element) {
+        addFocusClasses(element, 'card');
+      }
+    }
+  };
+
+  const handleEventBlur = (eventId: number) => {
+    const element = eventRefs.current[eventId];
+    if (element) {
+      element.classList.remove('lusotown-card-focus', 'lusotown-focus-smooth');
+    }
+  };
 
   // Mock cultural events data with membership positioning
   const eventsData: CulturalEvent[] = React.useMemo(() => ([
@@ -249,6 +283,48 @@ export default function CulturalCalendar({
     }
   };
 
+  // Calendar integration utility
+  const addToGoogleCalendar = (event: CulturalEvent) => {
+    const startDate = new Date(`${event.date} ${event.time}`);
+    const endDate = new Date(startDate.getTime() + 2 * 60 * 60 * 1000); // Add 2 hours
+    
+    const googleCalUrl = new URL('https://calendar.google.com/calendar/render');
+    googleCalUrl.searchParams.append('action', 'TEMPLATE');
+    googleCalUrl.searchParams.append('text', language === 'pt' ? event.titlePt : event.title);
+    googleCalUrl.searchParams.append('dates', `${startDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z/${endDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z`);
+    googleCalUrl.searchParams.append('details', `${language === 'pt' ? event.descriptionPt : event.description}\n\nOrganized by: ${event.organizer}`);
+    googleCalUrl.searchParams.append('location', event.address);
+    
+    window.open(googleCalUrl.toString(), '_blank');
+  };
+
+  // Social sharing utility
+  const shareEvent = async (event: CulturalEvent) => {
+    const shareData = {
+      title: language === 'pt' ? event.titlePt : event.title,
+      text: `${language === 'pt' ? event.descriptionPt : event.description} - ${event.date} at ${event.time}`,
+      url: `${window.location.origin}${ROUTES.events}/${event.id}`
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.log('Error sharing:', err);
+        fallbackShare(shareData);
+      }
+    } else {
+      fallbackShare(shareData);
+    }
+  };
+
+  const fallbackShare = (shareData: { title: string; text: string; url: string }) => {
+    // Copy to clipboard as fallback
+    navigator.clipboard.writeText(`${shareData.title}\n${shareData.text}\n${shareData.url}`);
+    // You could add a toast notification here
+    alert(language === 'pt' ? 'Link copiado para a área de transferência!' : 'Link copied to clipboard!');
+  };
+
   if (loading) {
     return (
       <div className={`cultural-calendar-loading ${className}`}>
@@ -266,7 +342,11 @@ export default function CulturalCalendar({
   }
 
   return (
-    <section className={`py-16 bg-gradient-to-br from-white via-gray-50 to-blue-50 ${className}`}>
+    <EventsCalendarTooltip>
+      <section 
+        className={`py-16 bg-gradient-to-br from-white via-gray-50 to-blue-50 ${className}`}
+        data-guidance="events-calendar"
+      >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -333,23 +413,42 @@ export default function CulturalCalendar({
           {events.map((event, index) => (
             <motion.div
               key={event.id}
+              ref={(el) => { eventRefs.current[event.id] = el; }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className={`bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 ${getExclusivityColor(event.exclusiveLevel)} hover:-translate-y-2`}
+              className={`bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 ${getExclusivityColor(event.exclusiveLevel)} hover:-translate-y-2 cursor-pointer focus:outline-none`}
+              tabIndex={0}
+              role="article"
+              aria-labelledby={`event-title-${event.id}`}
+              aria-describedby={`event-description-${event.id}`}
+              onFocus={() => handleEventFocus(event.id)}
+              onBlur={() => handleEventBlur(event.id)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  const eventTitle = language === 'pt' ? event.titlePt : event.title;
+                  announcePolite({
+                    en: `${eventTitle} selected. Details panel opened.`,
+                    pt: `${eventTitle} selecionado. Painel de detalhes aberto.`
+                  });
+                  // Navigate to event details
+                  window.location.href = `${ROUTES.events}/${event.id}`;
+                }
+              }}
             >
               {/* Event Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-2xl">{event.flag}</span>
+                    <span className="text-2xl" aria-hidden="true">{event.flag}</span>
                     <span className="text-sm font-medium text-gray-600">{event.category}</span>
                     {getExclusivityBadge(event)}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 id={`event-title-${event.id}`} className="text-xl font-bold text-gray-900 mb-2">
                     {language === 'pt' ? event.titlePt : event.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p id={`event-description-${event.id}`} className="text-gray-600 text-sm">
                     {language === 'pt' ? event.descriptionPt : event.description}
                   </p>
                 </div>
@@ -412,8 +511,41 @@ export default function CulturalCalendar({
                 </div>
               </div>
 
-              {/* Action Buttons */}
+              {/* Three-Tier CTA System */}
               <div className="space-y-3">
+                
+                {/* Primary CTA - View Event Details */}
+                <a
+                  href={`${ROUTES.events}/${event.id}`}
+                  className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-3 px-4 rounded-xl hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 text-center block flex items-center justify-center gap-2"
+                >
+                  <EyeIcon className="w-5 h-5" />
+                  {language === 'pt' ? 'Ver Detalhes do Evento' : 'View Event Details'}
+                  <ArrowRightIcon className="w-4 h-4" />
+                </a>
+
+                {/* Secondary CTAs */}
+                <div className="flex gap-2">
+                  {/* Add to Calendar */}
+                  <button
+                    onClick={() => addToGoogleCalendar(event)}
+                    className="flex-1 bg-green-100 text-green-700 py-2 px-3 rounded-lg hover:bg-green-200 transition-colors font-medium text-sm flex items-center justify-center gap-2"
+                  >
+                    <CalendarIcon className="w-4 h-4" />
+                    {language === 'pt' ? 'Adicionar ao Calendário' : 'Add to Calendar'}
+                  </button>
+
+                  {/* Share with Friends */}
+                  <button
+                    onClick={() => shareEvent(event)}
+                    className="flex-1 bg-blue-100 text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-200 transition-colors font-medium text-sm flex items-center justify-center gap-2"
+                  >
+                    <ShareIcon className="w-4 h-4" />
+                    {language === 'pt' ? 'Partilhar' : 'Share'}
+                  </button>
+                </div>
+
+                {/* Booking CTA */}
                 {event.membershipRequired ? (
                   <div className="space-y-2">
                     <a
@@ -430,25 +562,22 @@ export default function CulturalCalendar({
                     </a>
                   </div>
                 ) : (
-                  <div className="flex gap-2">
-                    <a
-                      href={`${ROUTES.events}/${event.id}/book`}
-                      className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-3 px-4 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-center"
-                    >
-                      {language === 'pt' ? 'Reservar' : 'Book Now'}
-                    </a>
-                    <a
-                      href={`${ROUTES.events}/${event.id}`}
-                      className="px-4 py-3 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 transition-colors font-medium"
-                    >
-                      {language === 'pt' ? 'Detalhes' : 'Details'}
-                    </a>
-                  </div>
+                  <a
+                    href={`${ROUTES.events}/${event.id}/book`}
+                    className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold py-3 px-4 rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all duration-300 text-center block"
+                  >
+                    {language === 'pt' ? 'Reservar Lugar' : 'Book Now'}
+                  </a>
                 )}
                 
                 {/* Organizer Credit */}
                 <div className="text-xs text-center text-gray-500 bg-gray-50 py-2 px-3 rounded-lg">
                   {language === 'pt' ? 'Organizado por' : 'Organized by'} <span className="font-medium">{event.organizer}</span>
+                </div>
+
+                {/* Visual indicator for hover actions */}
+                <div className="text-xs text-center text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                  {language === 'pt' ? 'Clique para explorar opções' : 'Click to explore options'}
                 </div>
               </div>
             </motion.div>
@@ -492,7 +621,8 @@ export default function CulturalCalendar({
         
         {children}
       </div>
-    </section>
+      </section>
+    </EventsCalendarTooltip>
   );
 }
 

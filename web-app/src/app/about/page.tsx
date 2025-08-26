@@ -27,12 +27,12 @@ export default function About() {
       <div>
         {/* Premium PageHeader with luxury styling */}
         <PageHeader
-        title="About LusoTown United Kingdom"
-        titlePt="Sobre LusoTown Reino Unido"
-        subtitle="LusoTown connects Portuguese speakers and friends through exciting real-life meetups across the United Kingdom. Whether you're exploring a new United Kingdom city, have roots in a Portuguese-speaking country, or simply love our vibrant culture and language, this is your space to socialize, meet amazing people in person, share unforgettable moments, and celebrate the richness of Portuguese heritage throughout Britain!"
-        subtitlePt="LusoTown conecta falantes de português e amigos através de encontros emocionantes por todo o Reino Unido. Seja novo numa cidade britânica, tenha raízes num país de língua portuguesa, ou simplesmente ame a nossa cultura vibrante e língua, este é o seu espaço para socializar, conhecer pessoas incríveis pessoalmente, partilhar momentos inesquecíveis e celebrar a riqueza da herança portuguesa por toda a Grã-Bretanha!"
-        badge="Unidos pela Língua • United by Language"
-        badgePt="Unidos pela Língua • Unidos pelo Idioma"
+        title={t('about.hero.title')}
+        titlePt={t('about.hero.title')}
+        subtitle={t('about.hero.subtitle')}
+        subtitlePt={t('about.hero.subtitle')}
+        badge={t('about.hero.badge')}
+        badgePt={t('about.hero.badge')}
         theme="premium"
         background="gradient"
         size="xl"
@@ -65,15 +65,13 @@ export default function About() {
                   className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-8 border border-premium-200/50 shadow-lg"
                 >
                   <GlobeAltIcon className="w-6 h-6 text-premium-600" />
-                  <span className="text-premium-700 font-bold text-lg">What is LusoTown? • O que é a LusoTown?</span>
+                  <span className="text-premium-700 font-bold text-lg">{t('about.platform.intro')}</span>
                 </motion.div>
                 <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-premium-600 via-primary-600 to-secondary-600 bg-clip-text text-transparent mb-8">
-                  Your Portuguese-speaking community Ecosystem in the United Kingdom
+                  {t('about.platform.title')}
                 </h2>
                 <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
-                  LusoTown is the United Kingdom's premier digital platform designed specifically for Portuguese speakers. 
-                  We're not just a social network—we're a comprehensive community ecosystem that brings together culture, 
-                  commerce, entertainment, and connections for the Lusophone diaspora across Britain.
+                  {t('about.platform.subtitle')}
                 </p>
               </motion.div>
               
@@ -87,56 +85,80 @@ export default function About() {
               >
                 <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-premium-200/50">
                   <h3 className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent mb-8 text-center">
-                    How LusoTown Works for Lusophone Speakers
+                    {t('about.how-it-works.title')}
                   </h3>
                   
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
                       {
                         icon: UsersIcon,
-                        title: "Meet Your Match",
-                        titlePt: "Encontre a Sua Alma Gémea",
-                        description: "Connect with Portuguese speakers who share your saudade, cultural values, and interests. Our intelligent matching system helps you find meaningful relationships—romantic, friendship, or professional—within the Portuguese-speaking community.",
-                        features: ["Cultural compatibility matching", "Portuguese heritage preferences", "London location-based connections", "Verified Portuguese speaker profiles"]
+                        titleKey: 'about.matching.title',
+                        descriptionKey: 'about.matching.description',
+                        features: [
+                          t('about.matching.feature1'),
+                          t('about.matching.feature2'),
+                          t('about.matching.feature3'),
+                          t('about.matching.feature4')
+                        ]
                       },
                       {
                         icon: CalendarIcon,
-                        title: "Events & Experiences",
-                        titlePt: "Eventos & Experiências",
-                        description: "Discover and join authentic Lusophone events across the United Kingdom. From intimate fado nights in Stockwell to networking events in the City, experience Portuguese culture in every corner of Britain.",
-                        features: ["Cultural festivals & celebrations", "Professional networking events", "Food markets & restaurants", "Live music & entertainment"]
+                        titleKey: 'about.events.title',
+                        descriptionKey: 'about.events.description',
+                        features: [
+                          t('about.events.feature1'),
+                          t('about.events.feature2'),
+                          t('about.events.feature3'),
+                          t('about.events.feature4')
+                        ]
                       },
                       {
                         icon: MapPinIcon,
-                        title: "LusoTown Business Directory",
-                        titlePt: "Diretório de Negócios LusoTown",
-                        description: "Support and discover Lusophone-owned businesses across the United Kingdom. From restaurants and shops to professional services, keep your spending within our community while getting services in your language.",
-                        features: ["Portuguese-speaking professionals", "Cultural restaurants & cafés", "Import shops & markets", "Community services in Lusophone"]
+                        titleKey: 'about.directory.title',
+                        descriptionKey: 'about.directory.description',
+                        features: [
+                          t('about.directory.feature1'),
+                          t('about.directory.feature2'),
+                          t('about.directory.feature3'),
+                          t('about.directory.feature4')
+                        ]
                       },
                       {
                         icon: SparklesIcon,
-                        title: "LusoTown TV",
-                        titlePt: "LusoTown TV",
-                        description: "Watch live Lusophone cultural content, from cooking shows to interviews with Portuguese-speaking community leaders. Our streaming platform brings Lusophone entertainment directly to your device.",
-                        features: ["Live cultural programming", "Lusophone cooking shows", "Community interviews", "Cultural documentaries"]
+                        titleKey: 'about.tv.title',
+                        descriptionKey: 'about.tv.description',
+                        features: [
+                          t('about.tv.feature1'),
+                          t('about.tv.feature2'),
+                          t('about.tv.feature3'),
+                          t('about.tv.feature4')
+                        ]
                       },
                       {
                         icon: ChatBubbleLeftRightIcon,
-                        title: "Community Feed",
-                        titlePt: "Feed da Comunidade",
-                        description: "Stay connected with real-time updates from the Portuguese-speaking community. Share experiences, ask for recommendations, and stay informed about everything happening in Lusophone London.",
-                        features: ["Real-time community updates", "Lusophone-language posts", "Event recommendations", "Local community support"]
+                        titleKey: 'about.feed.title',
+                        descriptionKey: 'about.feed.description',
+                        features: [
+                          t('about.feed.feature1'),
+                          t('about.feed.feature2'),
+                          t('about.feed.feature3'),
+                          t('about.feed.feature4')
+                        ]
                       },
                       {
                         icon: HeartIcon,
-                        title: "Premium Services",
-                        titlePt: "Serviços Premium",
-                        description: "Access exclusive Portuguese-speaking professional services including executive transport, cultural tours, and concierge services designed for the sophisticated Portuguese-speaking community in London.",
-                        features: ["Portuguese-speaking chauffeurs", "Cultural heritage tours", "Executive concierge services", "VIP event access"]
+                        titleKey: 'about.premium.title',
+                        descriptionKey: 'about.premium.description',
+                        features: [
+                          t('about.premium.feature1'),
+                          t('about.premium.feature2'),
+                          t('about.premium.feature3'),
+                          t('about.premium.feature4')
+                        ]
                       }
                     ].map((feature, index) => (
                       <motion.div
-                        key={feature.title}
+                        key={feature.titleKey}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 * index }}
@@ -152,11 +174,10 @@ export default function About() {
                               <feature.icon className="w-6 h-6 text-white" />
                             </motion.div>
                             <div className="flex-1">
-                              <h4 className="font-bold text-gray-900 mb-1 text-lg group-hover:text-premium-700 transition-colors duration-300">{feature.title}</h4>
-                              <p className="text-sm text-premium-600 italic font-medium">{feature.titlePt}</p>
+                              <h4 className="font-bold text-gray-900 mb-1 text-lg group-hover:text-premium-700 transition-colors duration-300">{t(feature.titleKey)}</h4>
                             </div>
                           </div>
-                          <p className="text-gray-600 leading-relaxed mb-4">{feature.description}</p>
+                          <p className="text-gray-600 leading-relaxed mb-4">{t(feature.descriptionKey)}</p>
                           <ul className="space-y-2">
                             {feature.features.map((item, i) => (
                               <li key={i} className="flex items-center gap-2 text-sm text-gray-600">

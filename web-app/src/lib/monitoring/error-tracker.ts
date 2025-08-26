@@ -1,8 +1,9 @@
 /**
  * Comprehensive Error Tracking System for LusoTown Platform
- * Handles Portuguese community-specific error tracking and monitoring
+ * Handles Portuguese community-specific error tracking and monitoring with Sentry integration
  */
 
+import * as Sentry from '@sentry/nextjs'
 import { 
   ERROR_MONITORING, 
   MONITORING_ALERTS, 
@@ -12,6 +13,7 @@ import {
   PORTUGUESE_ERROR_THRESHOLDS
 } from '@/config/error-monitoring'
 import { LusoTownError, ErrorType } from '@/lib/errorHandling'
+import { getErrorMessage, getContextualErrorMessage } from './portuguese-error-messages'
 
 export interface ErrorEvent {
   id: string
@@ -95,6 +97,37 @@ class ErrorTracker {
     })
   }
 
+  private setupPerformanceCapture() {
+    if (typeof window === 'undefined') return
+
+    // Capture performance metrics using Performance Observer API
+    if ('PerformanceObserver' in window) {
+      try {
+        const observer = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries()) {
+            if (entry.entryType === 'navigation') {
+              this.trackPerformanceMetric({
+                name: 'Page Load Time',
+                value: entry.duration,
+                context: 'page-navigation'
+              })
+            } else if (entry.entryType === 'measure') {
+              this.trackPerformanceMetric({
+                name: entry.name,
+                value: entry.duration,
+                context: 'custom-measure'
+              })
+            }
+          }
+        })
+
+        observer.observe({ entryTypes: ['navigation', 'measure'] })
+      } catch (error) {
+        console.error('Failed to setup performance observer:', error)
+      }
+    }
+  }
+
   trackError(errorData: Partial<ErrorEvent>) {
     const error: ErrorEvent = {
       id: this.generateErrorId(),
@@ -111,6 +144,9 @@ class ErrorTracker {
       portugueseContext: errorData.portugueseContext,
       metadata: errorData.metadata
     }
+
+    // Send to Sentry with Portuguese community context
+    this.sendToSentry(error)
 
     this.errorQueue.push(error)
     this.updateErrorCounts(error)
@@ -272,17 +308,81 @@ class ErrorTracker {
     }
   }
 
+  private sendToSentry(error: ErrorEvent) {
+    try {
+      // Set user context if available
+      if (error.userId) {
+        Sentry.setUser({
+          id: error.userId,
+          segment: 'portuguese-community'
+        })
+      }
+
+      // Set Portuguese community context
+      Sentry.setContext('portuguese_community', {
+        feature_context: error.context,
+        language: error.portugueseContext?.language || 'unknown',
+        cultural_feature: error.portugueseContext?.culturalFeature,
+        business_directory_action: error.portugueseContext?.businessDirectoryAction,
+        mobile_device: error.portugueseContext?.mobileDevice || false,
+        character_encoding_issue: error.portugueseContext?.characterEncodingIssue || false
+      })
+
+      // Set additional metadata
+      Sentry.setTags({
+        error_severity: error.severity,
+        error_type: error.type,
+        error_context: error.context,
+        session_id: error.sessionId
+      })
+
+      // Add breadcrumb for error sequence
+      Sentry.addBreadcrumb({
+        message: `Error in ${error.context}`,
+        category: 'error',
+        level: error.severity as any,
+        data: {
+          error_id: error.id,
+          portuguese_context: error.portugueseContext,
+          metadata: error.metadata
+        }
+      })
+
+      // Capture the error
+      if (error.stack) {
+        const sentryError = new Error(error.message)
+        sentryError.stack = error.stack
+        Sentry.captureException(sentryError)
+      } else {
+        Sentry.captureMessage(error.message, error.severity as any)
+      }
+
+    } catch (sentryError) {
+      console.error('Failed to send error to Sentry:', sentryError)
+    }
+  }
+
   // Public methods for manual tracking
   trackPortugueseFeatureError(featureContext: keyof typeof PORTUGUESE_ERROR_CONTEXTS, error: Error | string, metadata?: any) {
+    const language = typeof window !== 'undefined' ? 
+      (localStorage.getItem('preferred-language') as 'en' | 'pt') || 'en' : 'en'
+
+    // Determine severity based on feature context
+    let severity = ERROR_SEVERITY.HIGH
+    if (featureContext === 'CULTURAL_MATCHING' || featureContext === 'AUTHENTICATION' || featureContext === 'DATABASE') {
+      severity = ERROR_SEVERITY.CRITICAL
+    }
+
     this.trackError({
       message: typeof error === 'string' ? error : error.message,
       type: ErrorType.CLIENT_ERROR,
-      severity: ERROR_SEVERITY.HIGH,
+      severity,
       context: PORTUGUESE_ERROR_CONTEXTS[featureContext],
       stack: typeof error === 'string' ? undefined : error.stack,
       portugueseContext: {
-        language: 'pt',
-        culturalFeature: featureContext
+        language,
+        culturalFeature: featureContext,
+        mobileDevice: typeof window !== 'undefined' ? /Mobile|Android|iPhone|iPad/.test(navigator.userAgent) : false
       },
       metadata
     })
@@ -295,7 +395,7 @@ class ErrorTracker {
         acc[key] = count
         return acc
       }, {} as Record<string, number>),
-      criticalErrors: this.errorQueue.filter(e => e.severity === ERROR_SEVERITY.CRITICAL).length,
+      criticalErrors: this.errorQueue.filter(e => e.severity === 'critical').length,
       portugueseRelatedErrors: this.errorQueue.filter(e => e.portugueseContext).length
     }
   }

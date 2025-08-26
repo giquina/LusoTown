@@ -6,6 +6,7 @@ import { NetworkingProvider } from '@/context/NetworkingContext'
 import { SubscriptionProvider } from '@/context/SubscriptionContext'
 import { CartProvider } from '@/context/CartContext'
 import { FavoritesProvider } from '@/context/FavoritesContext'
+import { HeritageProvider } from '@/context/HeritageContext'
 
 interface AllTheProvidersProps {
   children: React.ReactNode
@@ -30,15 +31,17 @@ const AllTheProviders: React.FC<AllTheProvidersProps> = ({
 
   return (
     <LanguageProvider>
-      <CartProvider>
-        <FavoritesProvider>
-          <SubscriptionProvider>
-            <NetworkingProvider>
-              {children}
-            </NetworkingProvider>
-          </SubscriptionProvider>
-        </FavoritesProvider>
-      </CartProvider>
+      <HeritageProvider>
+        <CartProvider>
+          <FavoritesProvider>
+            <SubscriptionProvider>
+              <NetworkingProvider>
+                {children}
+              </NetworkingProvider>
+            </SubscriptionProvider>
+          </FavoritesProvider>
+        </CartProvider>
+      </HeritageProvider>
     </LanguageProvider>
   )
 }

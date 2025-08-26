@@ -1,11 +1,47 @@
 /**
- * LusoBot Lusophone Cultural AI Assistant Engine
+ * LusoBot Advanced Lusophone Cultural AI Assistant Engine
  * 
- * Core AI system providing Lusophone cultural expertise, language support,
- * community navigation, and saudade emotional understanding.
+ * Enhanced AI system providing comprehensive Lusophone cultural expertise, 
+ * advanced language learning support, emotional intelligence with saudade understanding,
+ * voice interaction capabilities, and therapeutic Portuguese cultural guidance.
+ * 
+ * Enhanced Features:
+ * - Deep Portuguese cultural knowledge across all Lusophone nations
+ * - Advanced emotional intelligence and therapeutic support
+ * - Portuguese language learning assistance with pronunciation guides
+ * - Voice interaction with authentic Portuguese cultural personalities
+ * - Cultural etiquette and business guidance
+ * - Homesickness and cultural adaptation support
  */
 
 import { Language } from '@/i18n'
+import { 
+  PORTUGUESE_CULTURAL_TRADITIONS, 
+  LANGUAGE_LEARNING_MODULES,
+  EMOTIONAL_SUPPORT_RESPONSES,
+  VOICE_PERSONALITIES,
+  findCulturalTradition,
+  getLanguageLearningModule,
+  findEmotionalSupport,
+  getVoicePersonality,
+  analyzeCulturalContext
+} from '@/config/portuguese-cultural-knowledge'
+import {
+  LANGUAGE_LEARNING_MODULES as ADVANCED_LANGUAGE_MODULES,
+  PRONUNCIATION_GUIDES,
+  PORTUGUESE_DIALECTS,
+  getModuleByLevel,
+  findPronunciationGuide,
+  getDialectInfo,
+  generatePersonalizedLesson,
+  assessPronunciation,
+  getCulturalContext
+} from '@/config/portuguese-language-learning'
+import {
+  VOICE_PERSONALITIES as VOICE_CONFIGS,
+  voiceInteractionSystem,
+  VoiceInteractionSystem
+} from '@/config/voice-interaction-system'
 
 // Core Types
 export interface LusoBotMessage {
@@ -36,12 +72,16 @@ export interface EmotionalTone {
 }
 
 export interface LusoBotSuggestion {
-  type: 'event' | 'business' | 'resource' | 'community' | 'language'
+  type: 'event' | 'business' | 'resource' | 'community' | 'language' | 'voice' | 'cultural' | 'therapeutic'
   title: string
   description: string
   link?: string
+  action?: 'speak' | 'teach' | 'practice' | 'connect' | 'learn' | 'support'
   priority: 'high' | 'medium' | 'low'
   culturalRelevance: number
+  therapeuticValue?: number
+  voicePersonality?: string
+  languageLevel?: string
 }
 
 export interface MessageMetadata {
@@ -50,6 +90,12 @@ export interface MessageMetadata {
   languageProficiency?: LanguageProficiency
   interests?: string[]
   mood?: UserMood
+  preferredVoicePersonality?: string
+  culturalBackground?: string[]
+  therapeuticNeeds?: string[]
+  languageLearningGoals?: string[]
+  emotionalState?: string
+  sessionContext?: string
 }
 
 // Enums and Constants
@@ -321,37 +367,54 @@ export class SaudadeEngine {
   }
 }
 
-// LusoBot AI Response Engine
+// Enhanced LusoBot AI Response Engine with Advanced Cultural Intelligence
 export class LusoBotEngine {
   private static knowledge = PORTUGUESE_CULTURAL_KNOWLEDGE
   private static saudadeEngine = SaudadeEngine
+  private static voiceSystem = voiceInteractionSystem
+  private static culturalTraditions = PORTUGUESE_CULTURAL_TRADITIONS
+  private static emotionalSupport = EMOTIONAL_SUPPORT_RESPONSES
+  private static languageModules = ADVANCED_LANGUAGE_MODULES
 
   static async generateResponse(
     message: string,
     context: MessageMetadata,
     language: Language
   ): Promise<LusoBotMessage> {
-    // Detect emotional tone
+    // Enhanced emotional tone detection with cultural analysis
     const emotionalTone = this.saudadeEngine.detectSaudade(message, language)
+    const culturalAnalysis = analyzeCulturalContext(message, language)
     
-    // Identify cultural context
+    // Identify cultural context with advanced pattern matching
     const culturalContext = this.identifyCulturalContext(message, language)
     
-    // Generate appropriate response
-    const response = await this.generateContextualResponse(
+    // Check for specific therapeutic needs
+    const therapeuticContext = this.identifyTherapeuticNeeds(message, emotionalTone, context)
+    
+    // Check for language learning opportunities
+    const languageLearningContext = this.identifyLanguageLearningNeeds(message, context)
+    
+    // Generate appropriate response with enhanced intelligence
+    const response = await this.generateAdvancedContextualResponse(
       message,
       culturalContext,
       emotionalTone,
       context,
-      language
+      language,
+      culturalAnalysis,
+      therapeuticContext,
+      languageLearningContext
     )
     
-    // Generate helpful suggestions
-    const suggestions = this.generateSuggestions(
+    // Generate comprehensive suggestions including voice, therapy, and learning
+    const suggestions = this.generateAdvancedSuggestions(
       culturalContext,
       emotionalTone,
       context,
-      language
+      language,
+      culturalAnalysis,
+      therapeuticContext,
+      languageLearningContext
     )
 
     return {
@@ -360,11 +423,223 @@ export class LusoBotEngine {
       content: response,
       timestamp: new Date(),
       language,
-      culturalContext,
+      culturalContext: {
+        ...culturalContext,
+        traditions: culturalAnalysis.traditions.map(t => t.id),
+        culturalDepth: culturalAnalysis.culturalDepth,
+        suggestedPersonality: culturalAnalysis.suggestedPersonality.id
+      },
       emotionalTone,
       suggestions,
-      metadata: context
+      metadata: {
+        ...context,
+        therapeuticValue: therapeuticContext ? 0.8 : 0.3,
+        languageLearningOpportunity: languageLearningContext ? true : false,
+        recommendedVoicePersonality: culturalAnalysis.suggestedPersonality.id
+      }
     }
+  }
+
+  private static identifyTherapeuticNeeds(
+    message: string, 
+    emotionalTone: EmotionalTone, 
+    context: MessageMetadata
+  ): any {
+    // Identify if user needs emotional/therapeutic support
+    const therapeuticTriggers = ['lonely', 'sad', 'homesick', 'lost', 'anxious', 'stressed']
+    const messageText = message.toLowerCase()
+    
+    const needsTherapy = therapeuticTriggers.some(trigger => messageText.includes(trigger)) ||
+                        emotionalTone.saudade > 0.6 ||
+                        emotionalTone.nostalgia > 0.7 ||
+                        context.therapeuticNeeds?.length > 0
+    
+    if (needsTherapy) {
+      const supportType = emotionalTone.saudade > 0.6 ? 'homesickness' :
+                         emotionalTone.nostalgia > 0.7 ? 'cultural_isolation' :
+                         messageText.includes('anxious') || messageText.includes('stress') ? 'language_anxiety' :
+                         'general_support'
+      
+      return findEmotionalSupport(supportType)
+    }
+    
+    return null
+  }
+
+  private static identifyLanguageLearningNeeds(message: string, context: MessageMetadata): any {
+    const learningKeywords = ['learn', 'practice', 'pronounce', 'grammar', 'vocabulary', 'accent', 'dialect']
+    const messageText = message.toLowerCase()
+    
+    const needsLearning = learningKeywords.some(keyword => messageText.includes(keyword)) ||
+                         context.languageLearningGoals?.length > 0 ||
+                         context.languageProficiency !== 'native'
+    
+    if (needsLearning) {
+      // Determine appropriate level and topic
+      const level = context.languageProficiency === 'beginner' ? 'A1' :
+                   context.languageProficiency === 'intermediate' ? 'B1' :
+                   context.languageProficiency === 'fluent' ? 'C1' : 'B1'
+      
+      const topic = messageText.includes('business') ? 'business' :
+                   messageText.includes('culture') ? 'culture' :
+                   messageText.includes('pronounce') ? 'pronunciation' :
+                   'conversation'
+      
+      return generatePersonalizedLesson(level as any, [topic], context.culturalBackground?.[0] || 'portuguese')
+    }
+    
+    return null
+  }
+
+  private static async generateAdvancedContextualResponse(
+    message: string,
+    culturalContext: CulturalContext,
+    emotionalTone: EmotionalTone,
+    userContext: MessageMetadata,
+    language: Language,
+    culturalAnalysis: any,
+    therapeuticContext: any,
+    languageLearningContext: any
+  ): Promise<string> {
+    // Priority 1: Therapeutic response if needed
+    if (therapeuticContext && (emotionalTone.saudade > 0.5 || emotionalTone.nostalgia > 0.5)) {
+      const responses = therapeuticContext.responses
+      const selectedResponse = responses[Math.floor(Math.random() * responses.length)]
+      return selectedResponse[language]
+    }
+
+    // Priority 2: Language learning if requested
+    if (languageLearningContext && message.toLowerCase().includes('learn')) {
+      return language === 'pt'
+        ? `Vou ajudar-te com o português! Identifiquei que podes beneficiar de ${languageLearningContext.title[language]}. Vamos começar com exercícios adequados ao teu nível.`
+        : `I'll help you with Portuguese! I identified that you could benefit from ${languageLearningContext.title[language]}. Let's start with exercises appropriate to your level.`
+    }
+
+    // Priority 3: Cultural tradition responses
+    if (culturalAnalysis.traditions.length > 0) {
+      const tradition = culturalAnalysis.traditions[0]
+      return language === 'pt'
+        ? `${tradition.name.pt} é uma tradição muito especial! ${tradition.significance.pt} ${tradition.modernPractice.pt}`
+        : `${tradition.name.en} is a very special tradition! ${tradition.significance.en} ${tradition.modernPractice.en}`
+    }
+
+    // Priority 4: Voice personality suggestion
+    if (userContext.preferredVoicePersonality || culturalAnalysis.suggestedPersonality) {
+      const personality = culturalAnalysis.suggestedPersonality
+      return language === 'pt'
+        ? `Olá! Sou o LusoBot com personalidade cultural ${personality.name.pt}. Estou aqui para te ajudar com tudo relacionado à cultura portuguesa. ${personality.speechPatterns.greetings[0]?.text || 'Como posso ajudar-te hoje?'}`
+        : `Hello! I'm LusoBot with ${personality.name.en} cultural personality. I'm here to help you with everything Portuguese culture related. ${personality.speechPatterns.greetings[0]?.text || 'How can I help you today?'}`
+    }
+
+    // Fallback to original contextual response generation
+    return this.generateContextualResponse(message, culturalContext, emotionalTone, userContext, language)
+  }
+
+  private static generateAdvancedSuggestions(
+    culturalContext: CulturalContext,
+    emotionalTone: EmotionalTone,
+    userContext: MessageMetadata,
+    language: Language,
+    culturalAnalysis: any,
+    therapeuticContext: any,
+    languageLearningContext: any
+  ): LusoBotSuggestion[] {
+    const suggestions: LusoBotSuggestion[] = []
+
+    // Voice interaction suggestions
+    if (culturalAnalysis.suggestedPersonality) {
+      suggestions.push({
+        type: 'voice',
+        title: language === 'pt' ? `Conversar com ${culturalAnalysis.suggestedPersonality.name.pt}` : `Chat with ${culturalAnalysis.suggestedPersonality.name.en}`,
+        description: language === 'pt' 
+          ? `Personalidade vocal ${culturalAnalysis.suggestedPersonality.region} especializada em ${culturalAnalysis.suggestedPersonality.culturalSpecialties[0]}`
+          : `${culturalAnalysis.suggestedPersonality.region} voice personality specialized in ${culturalAnalysis.suggestedPersonality.culturalSpecialties[0]}`,
+        action: 'speak',
+        priority: 'high',
+        culturalRelevance: 0.9,
+        voicePersonality: culturalAnalysis.suggestedPersonality.id,
+        therapeuticValue: culturalAnalysis.suggestedPersonality.characteristics.empathy
+      })
+    }
+
+    // Language learning suggestions
+    if (languageLearningContext) {
+      suggestions.push({
+        type: 'language',
+        title: languageLearningContext.title[language],
+        description: language === 'pt' 
+          ? `Módulo de ${languageLearningContext.duration} minutos com exercícios culturais`
+          : `${languageLearningContext.duration}-minute module with cultural exercises`,
+        action: 'learn',
+        priority: 'high',
+        culturalRelevance: 0.85,
+        languageLevel: languageLearningContext.level,
+        therapeuticValue: 0.6
+      })
+    }
+
+    // Therapeutic support suggestions
+    if (therapeuticContext) {
+      therapeuticContext.followUpActions.forEach((action: string) => {
+        suggestions.push({
+          type: 'therapeutic',
+          title: language === 'pt' ? action.replace(/^[a-z]/, (m: string) => m.toUpperCase()) : action,
+          description: language === 'pt' 
+            ? 'Apoio emocional com contexto cultural português'
+            : 'Emotional support with Portuguese cultural context',
+          action: 'support',
+          priority: 'high',
+          culturalRelevance: 0.9,
+          therapeuticValue: 0.95
+        })
+      })
+    }
+
+    // Cultural tradition exploration
+    culturalAnalysis.traditions.forEach((tradition: any) => {
+      suggestions.push({
+        type: 'cultural',
+        title: tradition.name[language],
+        description: language === 'pt' 
+          ? `Explorar tradição ${tradition.countries.join(', ')}`
+          : `Explore ${tradition.countries.join(', ')} tradition`,
+        action: 'learn',
+        priority: 'medium',
+        culturalRelevance: 1.0,
+        therapeuticValue: 0.7
+      })
+    })
+
+    // Pronunciation practice if language learning detected
+    if (userContext.languageProficiency !== 'native') {
+      const pronunciationGuide = PRONUNCIATION_GUIDES[0] // Get first available guide
+      if (pronunciationGuide) {
+        suggestions.push({
+          type: 'language',
+          title: language === 'pt' ? `Praticar "${pronunciationGuide.phoneme}"` : `Practice "${pronunciationGuide.phoneme}"`,
+          description: pronunciationGuide.description[language],
+          action: 'practice',
+          priority: 'medium',
+          culturalRelevance: 0.8,
+          therapeuticValue: 0.5
+        })
+      }
+    }
+
+    // Add original navigation suggestions for new users
+    if (userContext.communityLevel === 'newcomer') {
+      suggestions.push(...this.generateSuggestions(culturalContext, emotionalTone, userContext, language))
+    }
+
+    // Sort by priority and cultural relevance, limit to top 6
+    return suggestions
+      .sort((a, b) => {
+        const priorityWeight = { high: 3, medium: 2, low: 1 }
+        const aScore = priorityWeight[a.priority] + (a.culturalRelevance * 2) + (a.therapeuticValue || 0)
+        const bScore = priorityWeight[b.priority] + (b.culturalRelevance * 2) + (b.therapeuticValue || 0)
+        return bScore - aScore
+      })
+      .slice(0, 6)
   }
 
   private static identifyCulturalContext(message: string, language: Language): CulturalContext {
@@ -726,41 +1001,142 @@ export class LusoBotEngine {
   }
 }
 
-// Chat Session Manager
+// Enhanced Chat Session Manager with Voice and Learning Support
 export class LusoBotSession {
   private messages: LusoBotMessage[] = []
   private userContext: MessageMetadata
   private language: Language
+  private voiceSession: any = null
+  private culturalProfile: any = {}
+  private learningProgress: any = {}
+  private therapeuticHistory: any[] = []
 
   constructor(userContext: MessageMetadata, language: Language = 'en') {
-    this.userContext = userContext
+    this.userContext = {
+      ...userContext,
+      culturalBackground: userContext.culturalBackground || ['portuguese'],
+      therapeuticNeeds: userContext.therapeuticNeeds || [],
+      languageLearningGoals: userContext.languageLearningGoals || [],
+      emotionalState: userContext.emotionalState || 'neutral',
+      sessionContext: userContext.sessionContext || 'general'
+    }
     this.language = language
     
-    // Add welcome message
-    this.addWelcomeMessage()
+    // Initialize cultural profile based on user context
+    this.initializeCulturalProfile()
+    
+    // Add enhanced welcome message
+    this.addEnhancedWelcomeMessage()
   }
 
-  private addWelcomeMessage() {
+  private initializeCulturalProfile() {
+    // Analyze user background and preferences
+    const backgroundAnalysis = this.userContext.culturalBackground || ['portuguese']
+    const region = this.userContext.userRegion || 'diaspora_uk'
+    const languageLevel = this.userContext.languageProficiency || 'intermediate'
+    
+    this.culturalProfile = {
+      primaryCulture: backgroundAnalysis[0],
+      region,
+      languageLevel,
+      interests: this.userContext.interests || ['community', 'culture'],
+      preferredPersonality: null,
+      therapeuticPreferences: [],
+      learningStyle: 'interactive'
+    }
+  }
+
+  private addEnhancedWelcomeMessage() {
+    // Select appropriate personality based on user profile
+    const suggestedPersonality = getVoicePersonality(this.culturalProfile.region)
+    this.culturalProfile.preferredPersonality = suggestedPersonality.id
+
+    // Create personalized welcome message
+    const culturalGreeting = suggestedPersonality.speechPatterns.greetings[0]?.text || 
+      (this.language === 'pt' ? 'Olá!' : 'Hello!')
+
+    const personalizedContent = this.language === 'pt' 
+      ? `${culturalGreeting} Sou o LusoBot com personalidade ${suggestedPersonality.name.pt}. Estou aqui para te ajudar com:
+
+🇵🇹 **Cultura Portuguesa**: Tradições, história, e património lusófono
+💬 **Apoio Emocional**: Compreendo saudade e adaptação cultural  
+🗣️ **Aprendizagem**: Português, pronúncia, e contexto cultural
+🎵 **Voz Cultural**: Posso falar contigo com sotaque ${suggestedPersonality.region}
+
+Diz-me: de onde és e como posso apoiar-te hoje?`
+      : `${culturalGreeting} I'm LusoBot with ${suggestedPersonality.name.en} personality. I'm here to help you with:
+
+🇵🇹 **Portuguese Culture**: Traditions, history, and Lusophone heritage
+💬 **Emotional Support**: I understand saudade and cultural adaptation
+🗣️ **Learning**: Portuguese language, pronunciation, and cultural context  
+🎵 **Cultural Voice**: I can speak with you using ${suggestedPersonality.region} accent
+
+Tell me: where are you from and how can I support you today?`
+
     const welcomeMessage: LusoBotMessage = {
-      id: `welcome_${  Date.now()}`,
+      id: `welcome_${Date.now()}`,
       role: 'assistant',
-      content: this.language === 'pt' 
-        ? "Olá! Sou o LusoBot, o teu assistente cultural português. Estou aqui para te ajudar com tudo relacionado com a nossa cultura, tradições, comunidade em Londres, e claro, para compreender e apoiar as tuas saudades. Como posso ajudar-te hoje?"
-        : "Hello! I'm LusoBot, your Lusophone cultural assistant. I'm here to help you with everything related to our culture, traditions, community in London, and of course, to understand and support your saudades. How can I help you today?",
+      content: personalizedContent,
       timestamp: new Date(),
       language: this.language,
       culturalContext: {
-        region: 'diaspora_uk',
+        region: this.culturalProfile.region as PortugueseRegion,
         topic: 'community',
-        expertise: ['uk_portuguese_community', 'cultural_events', 'diaspora_support'],
-        confidence: 1.0
+        expertise: ['uk_portuguese_community', 'cultural_events', 'diaspora_support', 'language_learning', 'emotional_support'],
+        confidence: 1.0,
+        traditions: [],
+        culturalDepth: 0.8,
+        suggestedPersonality: suggestedPersonality.id
       },
       emotionalTone: {
         saudade: 0,
         nostalgia: 0,
-        hope: 0.8,
-        community: 0.9,
-        heritage: 0.7
+        hope: 0.9,
+        community: 0.95,
+        heritage: 0.85
+      },
+      suggestions: [
+        {
+          type: 'voice',
+          title: this.language === 'pt' ? 'Ativar Voz Cultural' : 'Activate Cultural Voice',
+          description: this.language === 'pt' 
+            ? `Conversar com personalidade ${suggestedPersonality.region}`
+            : `Chat with ${suggestedPersonality.region} personality`,
+          action: 'speak',
+          priority: 'high',
+          culturalRelevance: 0.9,
+          voicePersonality: suggestedPersonality.id,
+          therapeuticValue: suggestedPersonality.characteristics.empathy
+        },
+        {
+          type: 'cultural',
+          title: this.language === 'pt' ? 'Explorar Tradições' : 'Explore Traditions',
+          description: this.language === 'pt' 
+            ? 'Descobrir tradições portuguesas e lusófonas'
+            : 'Discover Portuguese and Lusophone traditions',
+          action: 'learn',
+          priority: 'medium',
+          culturalRelevance: 1.0,
+          therapeuticValue: 0.7
+        },
+        {
+          type: 'language',
+          title: this.language === 'pt' ? 'Aprender Português' : 'Learn Portuguese',
+          description: this.language === 'pt' 
+            ? 'Exercícios personalizados com contexto cultural'
+            : 'Personalized exercises with cultural context',
+          action: 'learn',
+          priority: 'medium',
+          culturalRelevance: 0.85,
+          languageLevel: this.culturalProfile.languageLevel,
+          therapeuticValue: 0.6
+        }
+      ],
+      metadata: {
+        ...this.userContext,
+        recommendedVoicePersonality: suggestedPersonality.id,
+        therapeuticValue: 0.8,
+        languageLearningOpportunity: this.userContext.languageProficiency !== 'native'
       }
     }
 
@@ -807,7 +1183,181 @@ export class LusoBotSession {
       timestamp: new Date().toISOString(),
       language: this.language,
       userContext: this.userContext,
+      culturalProfile: this.culturalProfile,
+      learningProgress: this.learningProgress,
+      therapeuticHistory: this.therapeuticHistory,
       messages: this.messages
     }, null, 2)
+  }
+
+  // Voice Interaction Methods
+  async enableVoiceInteraction(personalityId?: string): Promise<boolean> {
+    try {
+      const selectedPersonality = personalityId || this.culturalProfile.preferredPersonality
+      this.voiceSession = voiceInteractionSystem.startSession(
+        'user',
+        selectedPersonality,
+        this.userContext.sessionContext || 'general',
+        {
+          accent: this.culturalProfile.region,
+          speed: 1.0,
+          language: this.language
+        }
+      )
+      return true
+    } catch (error) {
+      console.error('Failed to enable voice interaction:', error)
+      return false
+    }
+  }
+
+  async speakMessage(text: string, emotion: string = 'neutral'): Promise<void> {
+    if (!this.voiceSession) {
+      await this.enableVoiceInteraction()
+    }
+    
+    if (this.voiceSession) {
+      return voiceInteractionSystem.speak(text, emotion, ['cultural', 'portuguese'])
+    }
+    
+    throw new Error('Voice session not available')
+  }
+
+  // Language Learning Methods
+  async getPersonalizedLesson(topic?: string): Promise<any> {
+    const userLevel = this.userContext.languageProficiency === 'beginner' ? 'A1' :
+                     this.userContext.languageProficiency === 'intermediate' ? 'B1' :
+                     this.userContext.languageProficiency === 'fluent' ? 'C1' : 'B1'
+    
+    const interests = topic ? [topic] : this.userContext.interests || ['culture']
+    const culturalBackground = this.culturalProfile.primaryCulture
+    
+    return generatePersonalizedLesson(userLevel as any, interests, culturalBackground)
+  }
+
+  async assessPronunciation(word: string, userAudio?: string): Promise<any> {
+    const dialect = this.culturalProfile.region.includes('brasil') ? 'brazilian' : 'european'
+    return assessPronunciation(userAudio || word, word, dialect)
+  }
+
+  // Therapeutic Support Methods
+  recordTherapeuticInteraction(emotionalTone: EmotionalTone, response: string, effectiveness: number) {
+    this.therapeuticHistory.push({
+      timestamp: new Date(),
+      emotionalState: this.userContext.emotionalState,
+      primaryEmotion: Object.keys(emotionalTone).reduce((a, b) => 
+        emotionalTone[a as keyof EmotionalTone] > emotionalTone[b as keyof EmotionalTone] ? a : b
+      ),
+      response,
+      effectiveness,
+      culturalContext: this.culturalProfile.primaryCulture
+    })
+  }
+
+  getTherapeuticInsights(): any {
+    const history = this.therapeuticHistory
+    if (history.length === 0) return null
+
+    const commonEmotions = history.map(h => h.primaryEmotion)
+    const emotionFrequency = commonEmotions.reduce((acc, emotion) => {
+      acc[emotion] = (acc[emotion] || 0) + 1
+      return acc
+    }, {} as Record<string, number>)
+
+    const mostCommonEmotion = Object.keys(emotionFrequency)
+      .reduce((a, b) => emotionFrequency[a] > emotionFrequency[b] ? a : b)
+
+    const averageEffectiveness = history.reduce((sum, h) => sum + h.effectiveness, 0) / history.length
+
+    return {
+      mostCommonEmotion,
+      sessionCount: history.length,
+      averageEffectiveness,
+      recommendedSupport: this.getRecommendedSupport(mostCommonEmotion, averageEffectiveness)
+    }
+  }
+
+  private getRecommendedSupport(emotion: string, effectiveness: number): string[] {
+    const recommendations = []
+    
+    if (emotion === 'saudade' && effectiveness < 0.7) {
+      recommendations.push('Cultural connection activities', 'Video calls with family', 'Portuguese music therapy')
+    }
+    
+    if (emotion === 'nostalgia') {
+      recommendations.push('Cultural storytelling sessions', 'Traditional recipe sharing', 'Heritage documentation')
+    }
+    
+    if (effectiveness < 0.5) {
+      recommendations.push('Professional therapeutic support', 'Community group participation', 'Cultural mentor assignment')
+    }
+
+    return recommendations
+  }
+
+  // Learning Progress Tracking
+  updateLearningProgress(skill: string, improvement: number, culturalContext: string) {
+    if (!this.learningProgress[skill]) {
+      this.learningProgress[skill] = {
+        level: 0,
+        sessions: 0,
+        culturalContexts: [],
+        lastImprovement: null
+      }
+    }
+
+    this.learningProgress[skill].level += improvement
+    this.learningProgress[skill].sessions += 1
+    this.learningProgress[skill].lastImprovement = new Date()
+    
+    if (!this.learningProgress[skill].culturalContexts.includes(culturalContext)) {
+      this.learningProgress[skill].culturalContexts.push(culturalContext)
+    }
+  }
+
+  getLearningInsights(): any {
+    const skills = Object.keys(this.learningProgress)
+    if (skills.length === 0) return null
+
+    const strengths = skills.filter(skill => this.learningProgress[skill].level > 0.7)
+    const weaknesses = skills.filter(skill => this.learningProgress[skill].level < 0.4)
+    const mostPracticedSkill = skills.reduce((a, b) => 
+      this.learningProgress[a].sessions > this.learningProgress[b].sessions ? a : b
+    )
+
+    return {
+      strengths,
+      weaknesses,
+      mostPracticedSkill,
+      totalSessions: skills.reduce((sum, skill) => sum + this.learningProgress[skill].sessions, 0),
+      culturalDiversity: new Set(
+        skills.flatMap(skill => this.learningProgress[skill].culturalContexts)
+      ).size
+    }
+  }
+
+  // Cultural Profile Management
+  updateCulturalProfile(updates: Partial<typeof this.culturalProfile>) {
+    this.culturalProfile = { ...this.culturalProfile, ...updates }
+  }
+
+  getCulturalProfile() {
+    return { ...this.culturalProfile }
+  }
+
+  // Enhanced Context Management
+  adaptToUserNeeds(emotionalState: string, culturalNeeds: string[], learningGoals: string[]) {
+    this.userContext.emotionalState = emotionalState
+    this.userContext.therapeuticNeeds = culturalNeeds
+    this.userContext.languageLearningGoals = learningGoals
+    
+    // Update cultural profile based on expressed needs
+    if (culturalNeeds.includes('homesickness')) {
+      this.culturalProfile.therapeuticPreferences.push('saudade_support')
+    }
+    
+    if (learningGoals.includes('pronunciation')) {
+      this.culturalProfile.learningStyle = 'audio_focused'
+    }
   }
 }

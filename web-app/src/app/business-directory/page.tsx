@@ -7,6 +7,7 @@ import React, { useState, useEffect, useMemo } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { ROUTES } from '@/config/routes'
 import { portugueseBusinessService, PortugueseBusiness, BusinessFilters, BusinessCategory, LondonArea, PortugueseRegion } from '@/lib/businessDirectory'
+import { BusinessDirectoryTooltip } from '@/components/ui/GuidanceTooltip'
 import { geolocationService, BusinessDistance } from '@/lib/geolocation'
 import BusinessMap from '@/components/BusinessMap'
 import NearMeButton, { DistanceIndicator } from '@/components/NearMeButton'
@@ -1269,11 +1270,15 @@ export default function BusinessDirectory() {
               </div>
             </div>
           ) : (
-            <div className={`grid gap-4 sm:gap-6 ${
-              cardViewMode === 'list' 
-                ? 'grid-cols-1' 
-                : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
-            }`}>
+            <BusinessDirectoryTooltip>
+              <div 
+                className={`grid gap-4 sm:gap-6 ${
+                  cardViewMode === 'list' 
+                    ? 'grid-cols-1' 
+                    : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+                }`}
+                data-guidance="business-grid"
+              >
               {filteredBusinesses.map(business => (
                 <BusinessCard 
                   key={business.id} 
@@ -1285,7 +1290,8 @@ export default function BusinessDirectory() {
                   featured={featuredBusinesses.some(fb => fb.id === business.id)}
                 />
               ))}
-            </div>
+              </div>
+            </BusinessDirectoryTooltip>
           )}
           </>
         )}

@@ -1,4 +1,5 @@
 // Note: avoid strict typing here to prevent build-time type mismatches from metadata helpers
+import React from "react";
 import { Inter, Poppins } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
@@ -33,6 +34,54 @@ import dynamicImport from "next/dynamic";
 // Dynamic imports for heavy components - loads only when needed
 const LiveFeedNotifications = dynamicImport(
   () => import("@/components/LiveFeedNotifications"),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
+
+const AppDownloadBar = dynamicImport(
+  () => import("@/components/AppDownloadBar"),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
+
+const WidgetManager = dynamicImport(
+  () => import("@/components/WidgetManager"),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
+
+const UserGuidanceProvider = dynamicImport(
+  () => import("@/components/UserGuidanceSystem").then(mod => ({ default: mod.UserGuidanceProvider })),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
+
+const WelcomeGuidanceBanner = dynamicImport(
+  () => import("@/components/UserGuidanceSystem").then(mod => ({ default: mod.WelcomeGuidanceBanner })),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
+
+const QuickHelpButton = dynamicImport(
+  () => import("@/components/UserGuidanceSystem").then(mod => ({ default: mod.QuickHelpButton })),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
+
+const GlobalUXEnhancementProvider = dynamicImport(
+  () => import("@/components/GlobalUXEnhancementProvider"),
   {
     loading: () => null,
     ssr: false,
@@ -259,9 +308,18 @@ export default function RootLayout({
                               <PlatformIntegrationProvider>
                                 <WaitingListProvider>
                                   <NavigationProvider>
-                                    <ComponentErrorBoundary componentName="Mobile Redirect Provider">
-                                      <MobileRedirectProvider>
+                                    <ComponentErrorBoundary componentName="User Guidance Provider">
+                                      <UserGuidanceProvider>
+                                        <ComponentErrorBoundary componentName="Widget Manager">
+                                          <WidgetManager>
+                                            <ComponentErrorBoundary componentName="Mobile Redirect Provider">
+                                              <MobileRedirectProvider>
                                     {/* WelcomeProvider removed - no welcome UI components */}
+                                    
+                                    {/* Global UX Enhancement System for Portuguese-speaking Community */}
+                                    <ComponentErrorBoundary componentName="Global UX Enhancement Provider">
+                                      <GlobalUXEnhancementProvider>
+                                    
                                     {/* Premium Mobile Experience Wrapper */}
                                     <ComponentErrorBoundary componentName="Mobile Experience Optimizer">
                                       <MobileExperienceOptimizer
@@ -276,6 +334,11 @@ export default function RootLayout({
                                             enablePerformanceMode={true}
                                           >
                                             {/* UserTypeSelection removed - returns null (disabled) */}
+
+                                            {/* Welcome Guidance Banner for First-Time Visitors */}
+                                            <ComponentErrorBoundary componentName="Welcome Guidance Banner">
+                                              <WelcomeGuidanceBanner />
+                                            </ComponentErrorBoundary>
 
                                             <ComponentErrorBoundary componentName="Header">
                                               <Header />
@@ -319,9 +382,22 @@ export default function RootLayout({
                                             <ComponentErrorBoundary componentName="LusoBot Widget">
                                               <LusoBotWrapper />
                                             </ComponentErrorBoundary>
+
+                                            {/* App Download Bar - Bottom Dismissible Widget */}
+                                            <ComponentErrorBoundary componentName="App Download Bar">
+                                              <AppDownloadBar />
+                                            </ComponentErrorBoundary>
+
+                                            {/* Quick Help Button - Always Available */}
+                                            <ComponentErrorBoundary componentName="Quick Help Button">
+                                              <QuickHelpButton />
+                                            </ComponentErrorBoundary>
                                           </MobileCriticalFixes>
                                         </ComponentErrorBoundary>
                                       </MobileExperienceOptimizer>
+                                    </ComponentErrorBoundary>
+                                    
+                                      </GlobalUXEnhancementProvider>
                                     </ComponentErrorBoundary>
 
                                     {/* Mobile App Download Components */}
@@ -333,7 +409,11 @@ export default function RootLayout({
                                       <AppDownloadLanding />
                                     </ComponentErrorBoundary>
 
-                                      </MobileRedirectProvider>
+                                              </MobileRedirectProvider>
+                                            </ComponentErrorBoundary>
+                                          </WidgetManager>
+                                        </ComponentErrorBoundary>
+                                      </UserGuidanceProvider>
                                     </ComponentErrorBoundary>
                                     {/* /WelcomeProvider removed */}
                                   </NavigationProvider>

@@ -31,7 +31,7 @@ const customJestConfig = {
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   // Enhanced module mapping for monorepo
-  moduleNameMapping: {
+  moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@lusotown/(.*)$': '<rootDir>/../packages/$1/src'
   },

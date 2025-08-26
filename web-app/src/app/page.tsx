@@ -12,6 +12,13 @@ import { ROUTES } from "@/config/routes";
 import MobileWelcomeWizard from "@/components/MobileWelcomeWizard";
 import StreamlinedCommunitySelector from "@/components/StreamlinedCommunitySelector";
 import ResponsiveButton from "@/components/ResponsiveButton";
+import { HomepageHeroTooltip, PALOPSectionTooltip } from "@/components/ui/GuidanceTooltip";
+
+// Dynamic import for PALOP Country Cards
+const PALOPCountryCards = dynamic(() => import("@/components/PALOPCountryCards"), {
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false,
+});
 
 // Strategic component loading for cohesive experience
 const SuccessStories = dynamic(() => import("@/components/SuccessStories"), {
@@ -106,10 +113,12 @@ export default function Home() {
         {/* Fixed spacing: Added proper top margin and padding for hero section */}
         <div className="pt-24 lg:pt-32 w-full">
           {/* HERO SECTION - Community Discovery Focus with Proper Spacing */}
-          <section
-            className="relative min-h-[600px] lg:min-h-[700px] bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center overflow-hidden"
-            style={{ paddingTop: "60px", paddingBottom: "80px" }}
-          >
+          <HomepageHeroTooltip>
+            <section
+              className="relative min-h-[600px] lg:min-h-[700px] bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center overflow-hidden"
+              style={{ paddingTop: "60px", paddingBottom: "80px" }}
+              data-guidance="homepage-hero"
+            >
             {/* Lusophone unity inspired background */}
             <div className="absolute inset-0" aria-hidden="true">
               <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-r from-green-100/20 via-blue-100/20 to-yellow-100/20"></div>
@@ -124,28 +133,39 @@ export default function Home() {
                   {/* Main Headline - Clean & Direct */}
                   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
                     <span className="bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 bg-clip-text text-transparent">
-                      Unidos pela Língua
+                      {t('homepage.hero.title')}
                     </span>
                     <br />
                     <span className="text-gray-900">
-                      Portuguese-speaking Community
+                      {t('homepage.hero.subtitle')}
                     </span>
-                    <div className="flex justify-center lg:justify-start gap-2 mt-4 text-4xl" aria-label="Featured flags: Portugal, Brazil, United Kingdom">
-                      <span role="img" aria-label="Portugal flag">🇵🇹</span>
-                      <span role="img" aria-label="Brazil flag">🇧🇷</span>
-                      <span role="img" aria-label="United Kingdom flag">🇬🇧</span>
+                    <div
+                      className="flex justify-center lg:justify-start gap-2 mt-4 text-4xl"
+                      aria-label="Featured flags: Portugal, Brazil, United Kingdom"
+                    >
+                      <span role="img" aria-label="Portugal flag">
+                        🇵🇹
+                      </span>
+                      <span role="img" aria-label="Brazil flag">
+                        🇧🇷
+                      </span>
+                      <span role="img" aria-label="United Kingdom flag">
+                        🇬🇧
+                      </span>
                     </div>
                   </h1>
 
                   {/* Single Clear Value Proposition */}
                   <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl mb-4">
-                    Discover events, businesses, and opportunities for verified Portuguese and Lusophone‑speaking community across the United Kingdom.
+                    {t('homepage.hero.description')}
                   </p>
 
                   {/* Verification note for clarity */}
                   <div className="inline-flex items-center gap-2 text-sm text-gray-600 bg-white/70 border border-gray-200 rounded-full px-3 py-1 mb-4">
                     <CheckIcon className="w-4 h-4 text-green-600" />
-                    <span>Every member is verified as Portuguese or Portuguese‑speaking</span>
+                    <span>
+                      {t('homepage.hero.verification')}
+                    </span>
                   </div>
 
                   {/* PALOP Recognition - Simplified */}
@@ -329,7 +349,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
+            </section>
+          </HomepageHeroTooltip>
 
           {/* STREAMLINED COMMUNITY SELECTOR - New 2x2 Grid Onboarding */}
           <StreamlinedCommunitySelector />
@@ -1141,7 +1162,11 @@ export default function Home() {
           </section>
 
           {/* PALOP HERITAGE CELEBRATION SECTION - Fixed spacing */}
-          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-orange-50 via-yellow-50 to-green-50 section-spacing">
+          <PALOPSectionTooltip>
+            <section 
+              className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-orange-50 via-yellow-50 to-green-50 section-spacing"
+              data-guidance="palop-section"
+            >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
@@ -1504,7 +1529,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
+            </section>
+          </PALOPSectionTooltip>
 
           {/* MONTHLY CULTURAL CALENDAR SECTION - Fixed spacing */}
           <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-indigo-50 via-blue-50 to-teal-50 section-spacing">

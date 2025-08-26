@@ -129,6 +129,14 @@ export class EnhancedDatabaseService {
   private connectionPool: Map<string, SupabaseClient> = new Map();
   private performanceMetrics: DatabasePerformanceMetrics;
   private realtimeChannels: Map<string, any> = new Map();
+  private healthCheckInterval: NodeJS.Timeout | null = null;
+  private performanceMonitoringActive = false;
+  private connectionPoolHealth = {
+    healthy: true,
+    lastHealthCheck: new Date(),
+    unhealthyConnectionCount: 0,
+    averageResponseTime: 0
+  };
 
   constructor() {
     // Initialize primary Supabase client
@@ -155,6 +163,12 @@ export class EnhancedDatabaseService {
     
     // Setup real-time subscriptions for Portuguese community data
     this.setupPortugueseRealtimeSubscriptions();
+    
+    // Initialize health monitoring
+    this.startHealthMonitoring();
+    
+    // Start performance monitoring
+    this.initializePerformanceMonitoring();
   }
 
   /**

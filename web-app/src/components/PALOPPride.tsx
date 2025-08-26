@@ -3,7 +3,9 @@
 import React from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { PALOP_COUNTRIES } from '@/config/palop-cultural-events'
-import { SparklesIcon, HeartIcon, GlobeAltIcon, TrophyIcon } from '@heroicons/react/24/outline'
+import { SparklesIcon, HeartIcon, GlobeAltIcon, TrophyIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
+import { useRouter } from 'next/navigation'
+import { ROUTES } from '@/config/routes'
 
 interface PALOPPrideProps {
   variant?: 'banner' | 'inline' | 'footer' | 'hero' | 'compact'

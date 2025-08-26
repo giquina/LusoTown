@@ -13,6 +13,8 @@
   "dir": "ltr",
   "scope": "/",
   "id": "/?lusotown-pwa=true",
+  "gcm_sender_id": "103953800507",
+  "gcm_user_visible_only": true,
   "icons": [
     {
       "src": "/icons/icon-72x72.png",
@@ -127,6 +129,19 @@
       "icons": [
         {
           "src": "/icons/live-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Notifications",
+      "short_name": "Notificações",
+      "description": "Manage Portuguese cultural notifications",
+      "url": "/notifications?utm_source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "/icons/notifications-shortcut.png",
           "sizes": "96x96",
           "type": "image/png"
         }

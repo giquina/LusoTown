@@ -452,31 +452,97 @@ function createPortugueseOfflineResponse() {
   });
 }
 
-// Push notification handler for Portuguese cultural events
+// Enhanced push notification handler for Portuguese cultural events
 self.addEventListener('push', event => {
   console.log('[SW] Push notification received');
   
-  if (!event.data) return;
+  if (!event.data) {
+    console.log('[SW] No notification data received');
+    return;
+  }
   
   try {
     const data = event.data.json();
+    console.log('[SW] Notification data:', data);
+    
+    // Check if notifications should be shown during quiet hours
+    if (isQuietHours() && data.priority !== 'urgent') {
+      console.log('[SW] Quiet hours - scheduling notification for later');
+      scheduleNotificationForLater(data);
+      return;
+    }
+    
+    // Check daily notification limits
+    if (exceedsNotificationLimits(data.type)) {
+      console.log('[SW] Notification limit exceeded for type:', data.type);
+      return;
+    }
+    
     const options = createPortugueseNotificationOptions(data);
     
+    // Store notification for analytics
+    storeNotificationEvent(data);
+    
     event.waitUntil(
-      self.registration.showNotification(data.title || 'LusoTown', options)
+      Promise.all([
+        self.registration.showNotification(data.title || 'LusoTown', options),
+        updateNotificationHistory(data)
+      ])
     );
   } catch (error) {
     console.error('[SW] Error handling push notification:', error);
+    
+    // Fallback notification
+    event.waitUntil(
+      self.registration.showNotification('LusoTown', {
+        body: 'Nova atualização da comunidade portuguesa / New Portuguese community update',
+        icon: '/icons/icon-192x192.png',
+        badge: '/icons/badge-72x72.png'
+      })
+    );
   }
 });
 
-// Notification click handler
+// Enhanced notification click handler with actions
 self.addEventListener('notificationclick', event => {
-  console.log('[SW] Notification clicked');
+  console.log('[SW] Notification clicked', event.action);
   
   event.notification.close();
   
-  const urlToOpen = event.notification.data?.url || '/';
+  const notificationData = event.notification.data || {};
+  let urlToOpen = '/';
+  
+  // Handle different notification actions
+  switch (event.action) {
+    case 'view-event':
+      urlToOpen = notificationData.eventUrl || '/events';
+      break;
+    case 'share-event':
+      // Share via Web Share API or fallback to social sharing
+      handleEventShare(notificationData);
+      return;
+    case 'view-match':
+      urlToOpen = notificationData.matchUrl || '/matches';
+      break;
+    case 'send-message':
+      urlToOpen = notificationData.messageUrl || '/messages';
+      break;
+    case 'rsvp-yes':
+      // Handle RSVP in background
+      handleEventRSVP(notificationData, 'yes');
+      urlToOpen = notificationData.eventUrl || '/events';
+      break;
+    case 'get-directions':
+      urlToOpen = notificationData.directionsUrl || 
+                 `https://maps.google.com/?q=${encodeURIComponent(notificationData.location || 'London')}`;
+      break;
+    default:
+      // Default click - use notification's URL or home
+      urlToOpen = notificationData.url || '/';
+  }
+  
+  // Track notification interaction
+  trackNotificationInteraction(event.notification.tag, event.action);
   
   event.waitUntil(
     clients.matchAll({ type: 'window', includeUncontrolled: true })
@@ -498,47 +564,106 @@ self.addEventListener('notificationclick', event => {
 });
 
 function createPortugueseNotificationOptions(data) {
+  const userLanguage = data.language || 'en';
+  
   const defaultOptions = {
     body: data.body,
-    icon: '/icons/icon-192x192.png',
-    badge: '/icons/badge-72x72.png',
-    tag: data.tag || 'lusotown-general',
+    icon: data.icon || '/icons/icon-192x192.png',
+    badge: data.badge || '/icons/badge-72x72.png',
+    tag: data.tag || `lusotown-${data.type || 'general'}`,
     requireInteraction: data.requireInteraction || false,
+    timestamp: Date.now(),
+    renotify: true,
+    silent: data.silent || false,
+    vibrate: data.vibrate || getVibratePattern(data.culturalContext?.region),
     data: {
-      url: data.url || '/'
+      url: data.url || '/',
+      eventUrl: data.eventUrl,
+      matchUrl: data.matchUrl,
+      messageUrl: data.messageUrl,
+      directionsUrl: data.directionsUrl,
+      location: data.location,
+      type: data.type,
+      priority: data.priority || 'normal'
     },
     actions: []
   };
-  
-  // Add Portuguese cultural context to notifications
-  if (data.type === 'cultural-event') {
-    defaultOptions.actions = [
-      {
-        action: 'view-event',
-        title: 'Ver Evento',
-        icon: '/icons/event-action.png'
-      },
-      {
-        action: 'share-event',
-        title: 'Partilhar',
-        icon: '/icons/share-action.png'
-      }
-    ];
-  } else if (data.type === 'community-match') {
-    defaultOptions.actions = [
-      {
-        action: 'view-match',
-        title: 'Ver Perfil',
-        icon: '/icons/profile-action.png'
-      },
-      {
-        action: 'send-message',
-        title: 'Enviar Mensagem',
-        icon: '/icons/message-action.png'
-      }
-    ];
+
+  // Add image for rich notifications
+  if (data.image) {
+    defaultOptions.image = data.image;
   }
-  
+
+  // Add Portuguese cultural context actions based on notification type
+  switch (data.type) {
+    case 'cultural-event':
+    case 'festa':
+    case 'fado-night':
+      defaultOptions.actions = [
+        {
+          action: 'view-event',
+          title: userLanguage === 'pt' ? 'Ver Evento' : 'View Event',
+          icon: '/icons/calendar-action.png'
+        },
+        {
+          action: 'rsvp-yes',
+          title: userLanguage === 'pt' ? 'Vou!' : 'I\'m Going!',
+          icon: '/icons/check-action.png'
+        }
+      ];
+      break;
+
+    case 'community-match':
+      defaultOptions.actions = [
+        {
+          action: 'view-match',
+          title: userLanguage === 'pt' ? 'Ver Perfil' : 'View Profile',
+          icon: '/icons/user-action.png'
+        },
+        {
+          action: 'send-message',
+          title: userLanguage === 'pt' ? 'Enviar Mensagem' : 'Send Message',
+          icon: '/icons/message-action.png'
+        }
+      ];
+      break;
+
+    case 'business-update':
+    case 'restaurant-special':
+      defaultOptions.actions = [
+        {
+          action: 'view-business',
+          title: userLanguage === 'pt' ? 'Ver Oferta' : 'View Deal',
+          icon: '/icons/business-action.png'
+        },
+        {
+          action: 'get-directions',
+          title: userLanguage === 'pt' ? 'Como Chegar' : 'Get Directions',
+          icon: '/icons/navigation-action.png'
+        }
+      ];
+      break;
+
+    case 'heritage-reminder':
+      defaultOptions.actions = [
+        {
+          action: 'view-celebration',
+          title: userLanguage === 'pt' ? 'Ver Celebração' : 'View Celebration',
+          icon: '/icons/flag-action.png'
+        }
+      ];
+      break;
+
+    default:
+      defaultOptions.actions = [
+        {
+          action: 'view-content',
+          title: userLanguage === 'pt' ? 'Ver Mais' : 'View More',
+          icon: '/icons/view-action.png'
+        }
+      ];
+  }
+
   return defaultOptions;
 }
 

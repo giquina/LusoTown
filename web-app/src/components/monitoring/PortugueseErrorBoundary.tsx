@@ -1,6 +1,7 @@
 'use client'
 
 import React, { Component, ErrorInfo, ReactNode } from 'react'
+import * as Sentry from '@sentry/nextjs'
 import { ExclamationTriangleIcon, ArrowPathIcon, HomeIcon, LanguageIcon } from '@heroicons/react/24/outline'
 import { getContextualErrorMessage } from '@/lib/monitoring/portuguese-error-messages'
 import { errorTracker } from '@/lib/monitoring/error-tracker'
@@ -46,7 +47,40 @@ class PortugueseErrorBoundary extends Component<Props, State> {
       errorInfo
     })
 
-    // Track the error with Portuguese community context
+    // Set Sentry scope with Portuguese community context
+    Sentry.withScope((scope) => {
+      // Set user language and cultural context
+      scope.setTag('language', this.state.language)
+      scope.setTag('portuguese_feature', this.props.portugueseContext || 'unknown')
+      scope.setTag('mobile_optimized', this.props.isMobileOptimized || false)
+      scope.setTag('error_boundary', 'PortugueseErrorBoundary')
+      
+      // Set Portuguese community context
+      scope.setContext('portuguese_community', {
+        feature: this.props.portugueseContext,
+        language: this.state.language,
+        mobile_device: this.props.isMobileOptimized,
+        retry_count: this.retryCount,
+        component_stack: errorInfo.componentStack
+      })
+      
+      // Set breadcrumb for error boundary
+      scope.addBreadcrumb({
+        message: 'Portuguese Error Boundary caught error',
+        category: 'ui',
+        level: 'error',
+        data: {
+          portuguese_context: this.props.portugueseContext,
+          language: this.state.language,
+          mobile: this.props.isMobileOptimized
+        }
+      })
+      
+      // Capture the exception in Sentry
+      Sentry.captureException(error)
+    })
+
+    // Track the error with our internal system
     errorTracker.trackError({
       message: error.message,
       type: 'CLIENT_ERROR' as any,
@@ -86,6 +120,20 @@ class PortugueseErrorBoundary extends Component<Props, State> {
   handleRetry = () => {
     if (this.retryCount < this.maxRetries) {
       this.retryCount++
+      
+      // Track retry in Sentry
+      Sentry.addBreadcrumb({
+        message: `User retry attempt ${this.retryCount}/${this.maxRetries}`,
+        category: 'ui',
+        level: 'info',
+        data: {
+          retry_count: this.retryCount,
+          max_retries: this.maxRetries,
+          portuguese_context: this.props.portugueseContext,
+          original_error: this.state.error?.message
+        }
+      })
+      
       this.setState({ 
         hasError: false, 
         error: undefined, 

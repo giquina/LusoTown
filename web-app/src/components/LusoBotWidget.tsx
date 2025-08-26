@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChatBubbleLeftRightIcon,
@@ -12,17 +12,20 @@ import {
 } from "@heroicons/react/24/outline";
 import { HeartIcon as HeartSolidIcon } from "@heroicons/react/24/solid";
 import { useLanguage } from "@/context/LanguageContext";
-import { COMPONENT_Z_INDEX, getMobileWidgetClasses } from "@/config/z-index-layers";
+import {
+  COMPONENT_Z_INDEX,
+  getMobileWidgetClasses,
+} from "@/config/z-index-layers";
 import LusoBotChat from "./LusoBotChat";
+import { useAppDownloadBarVisible } from "./AppDownloadBar";
+import { useWidget } from "./WidgetManager";
+import { useAriaAnnouncements, ARIA_MESSAGES } from "@/hooks/useAriaAnnouncements";
+import { useFocusManagement, useFocusIndicator } from "@/hooks/useFocusManagement";
 
 // Simple, consistent welcome messages (no randomization)
 const WELCOME_MESSAGES = {
-  pt: [
-    "Olá! Sou o LusoBot. Como posso ajudar-te hoje?",
-  ],
-  en: [
-    "Hi! I’m LusoBot. How can I help you today?",
-  ],
+  pt: ["Olá! Sou o LusoBot. Como posso ajudar-te hoje?"],
+  en: ["Hi! I’m LusoBot. How can I help you today?"],
 };
 
 interface LusoBotWidgetProps {
@@ -57,9 +60,30 @@ export default function LusoBotWidget({
   const [unreadCount, setUnreadCount] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
+  
+  // Use Widget Management System
+  const widgetId = 'lusobot-widget';
+  const { isAppBarVisible, classes: widgetClasses, zIndex } = useWidget(widgetId, 'chat');
+
+  // ARIA and Focus Management
+  const { announce, announcePolite } = useAriaAnnouncements();
+  const { addFocusClasses } = useFocusIndicator();
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  
+  // Focus management for the chat widget when opened
+  const { focusFirst } = useFocusManagement(
+    widgetRef,
+    isOpen && !isMinimized,
+    {
+      restoreFocus: true,
+      initialFocus: 'first',
+      preventScroll: false
+    }
+  );
   // Feature flag to disable extra contextual popups
   const ENABLE_CONTEXTUAL_SUGGESTIONS = false;
-  
+
   // Lightweight routes for quick actions (fallbacks if import is unavailable)
   const ROUTES_SAFE = {
     events: "/events",
@@ -75,19 +99,14 @@ export default function LusoBotWidget({
     "top-left": "top-6 left-6",
   };
 
-  // Mobile-safe positioning that avoids navigation conflicts and ensures full visibility
-  const mobilePositionClasses = {
-    "bottom-right": "bottom-24 right-4 safe-area-bottom", // Above mobile nav + PWA prompts + LiveFeed
-    "bottom-left": "bottom-24 left-4 safe-area-bottom",
-    "top-right": "top-6 right-4 safe-area-top", // Below header with more clearance
-    "top-left": "top-6 left-4 safe-area-top",
-  };
-
-  // Choose positioning based on screen size - mobile uses safe positioning
+  // Dynamic positioning based on Widget Management System
   const getCurrentPositionClass = () => {
-    return isMobile
-      ? mobilePositionClasses[position]
-      : positionClasses[position];
+    if (isMobile) {
+      // Use widget management system for mobile positioning
+      const baseBottomClass = isAppBarVisible ? 'bottom-40' : 'bottom-24';
+      return `${baseBottomClass} right-4 safe-area-bottom`;
+    }
+    return positionClasses[position];
   };
 
   // Mobile detection and resize handler
@@ -161,9 +180,8 @@ export default function LusoBotWidget({
     if (!showWelcomeMessage || hasInteracted) return;
 
     const timer = setTimeout(() => {
-      const messages = WELCOME_MESSAGES[
-        language as keyof typeof WELCOME_MESSAGES
-      ];
+      const messages =
+        WELCOME_MESSAGES[language as keyof typeof WELCOME_MESSAGES];
       const welcomeText = messages[0];
 
       const newMessage: FloatingMessage = {
@@ -243,7 +261,12 @@ export default function LusoBotWidget({
 
       return () => clearTimeout(timer);
     }
-  }, [language, hasInteracted, showWelcomeMessage, ENABLE_CONTEXTUAL_SUGGESTIONS]);
+  }, [
+    language,
+    hasInteracted,
+    showWelcomeMessage,
+    ENABLE_CONTEXTUAL_SUGGESTIONS,
+  ]);
 
   const handleOpen = () => {
     setIsOpen(true);
@@ -251,19 +274,52 @@ export default function LusoBotWidget({
     setHasInteracted(true);
     setUnreadCount(0);
     setFloatingMessages([]);
+    
+    // Announce to screen readers
+    announce(ARIA_MESSAGES.lusobot.opened, { priority: 'polite', bilingual: false });
+    
+    // Scroll chat to top when opened (Priority 1 enhancement)
+    setTimeout(() => {
+      const chatContainer = document.querySelector('[data-lusobot-chat-container]') || 
+                            document.querySelector('.lusobot-chat-container');
+      if (chatContainer) {
+        chatContainer.scrollTop = 0;
+        // Smooth scroll to top for better UX
+        chatContainer.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      
+      // Focus first interactive element in the widget
+      focusFirst();
+    }, 150);
   };
 
   const handleClose = () => {
     setIsOpen(false);
     setIsMinimized(false);
+    
+    // Announce to screen readers
+    announcePolite(ARIA_MESSAGES.lusobot.closed);
+    
+    // Focus will be restored to the original trigger button by useFocusManagement
   };
 
   const handleMinimize = () => {
     setIsMinimized(true);
+    
+    // Announce to screen readers
+    announcePolite(ARIA_MESSAGES.lusobot.minimized);
   };
 
   const handleMaximize = () => {
     setIsMinimized(false);
+    
+    // Announce to screen readers
+    announcePolite(ARIA_MESSAGES.widget.maximized);
+    
+    // Focus the first element when maximized
+    setTimeout(() => {
+      focusFirst();
+    }, 100);
   };
 
   const dismissFloatingMessage = (messageId: string) => {
@@ -278,7 +334,7 @@ export default function LusoBotWidget({
   return (
     <>
       {/* Floating Messages */}
-  <AnimatePresence>
+      <AnimatePresence>
         {floatingMessages.map(
           (message) =>
             message.visible &&
@@ -288,8 +344,8 @@ export default function LusoBotWidget({
                 initial={{ opacity: 0, y: 20, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 20, scale: 0.8 }}
-                className={`fixed ${getCurrentPositionClass()} z-[${COMPONENT_Z_INDEX.lusoBotWidget}] ${
-                  isMobile ? "bottom-28" : "bottom-20"
+                className={`fixed ${getCurrentPositionClass()} z-[${zIndex}] ${
+                  isMobile ? (isAppBarVisible ? "bottom-44" : "bottom-28") : "bottom-20"
                 } max-w-xs`}
               >
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-4 relative">
@@ -323,13 +379,17 @@ export default function LusoBotWidget({
                         href={ROUTES_SAFE.events}
                         className="text-xs px-2 py-1 rounded-full bg-primary-50 text-primary-700 border border-primary-200 hover:bg-primary-100"
                       >
-                        {language === "pt" ? "Encontrar eventos" : "Find events"}
+                        {language === "pt"
+                          ? "Encontrar eventos"
+                          : "Find events"}
                       </a>
                       <a
                         href={ROUTES_SAFE.businessDirectory}
                         className="text-xs px-2 py-1 rounded-full bg-yellow-50 text-yellow-700 border border-yellow-200 hover:bg-yellow-100"
                       >
-                        {language === "pt" ? "Negócios portugueses" : "Portuguese businesses"}
+                        {language === "pt"
+                          ? "Negócios portugueses"
+                          : "Portuguese businesses"}
                       </a>
                       <a
                         href={ROUTES_SAFE.signup}
@@ -363,10 +423,17 @@ export default function LusoBotWidget({
       </AnimatePresence>
 
       {/* Main Chat Widget */}
-  <div className={isMobile ? getMobileWidgetClasses('chat') : `fixed ${getCurrentPositionClass()} z-[${COMPONENT_Z_INDEX.lusoBotWidget}]`}>
+      <div
+        className={
+          isMobile
+            ? getMobileWidgetClasses("chat", isAppBarVisible)
+            : `fixed ${getCurrentPositionClass()} z-[${zIndex}]`
+        }
+      >
         <AnimatePresence>
           {isOpen && (
             <motion.div
+              ref={widgetRef}
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -378,6 +445,10 @@ export default function LusoBotWidget({
               } ${
                 currentTheme.chatBg
               } rounded-2xl shadow-2xl border border-gray-200 overflow-hidden`}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="lusobot-title"
+              aria-describedby="lusobot-description"
             >
               {isMinimized ? (
                 <div className="h-full flex items-center justify-between p-4">
@@ -407,46 +478,53 @@ export default function LusoBotWidget({
                 </div>
               ) : (
                 <div className="h-full flex flex-col">
-                  {/* Chat Header */}
+                  {/* Chat Header - Priority 1 Enhancement: Clear minimize/close buttons */}
                   <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-4 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center" aria-hidden="true">
                         <span className="text-white text-sm">🇵🇹</span>
                       </div>
                       <div>
-                        <h3 className="font-bold text-white">LusoBot</h3>
-                        <p className="text-xs text-white/80">
+                        <h3 id="lusobot-title" className="font-bold text-white">LusoBot</h3>
+                        <p id="lusobot-description" className="text-xs text-white/80">
                           {language === "pt"
-                            ? "Assistente Cultural"
-                            : "Cultural Assistant"}
+                            ? "Assistente Cultural Português - Conecte-se com a comunidade lusófona"
+                            : "Portuguese Cultural Assistant - Connect with the Portuguese-speaking community"}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                       <button
                         onClick={handleMinimize}
-                        className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center
-                          hover:bg-white/30 transition-colors"
+                        className="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center
+                          hover:bg-white/30 transition-colors focus:ring-2 focus:ring-white/50
+                          min-h-[44px] min-w-[44px]"
+                        aria-label={language === "pt" ? "Minimizar" : "Minimize"}
+                        title={language === "pt" ? "Minimizar" : "Minimize"}
                       >
-                        <MinusIcon className="w-4 h-4 text-white" />
+                        <MinusIcon className="w-5 h-5 text-white" />
                       </button>
                       <button
                         onClick={handleClose}
-                        className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center
-                          hover:bg-white/30 transition-colors"
+                        className="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center
+                          hover:bg-white/30 transition-colors focus:ring-2 focus:ring-white/50
+                          min-h-[44px] min-w-[44px]"
+                        aria-label={language === "pt" ? "Fechar" : "Close"}
+                        title={language === "pt" ? "Fechar" : "Close"}
                       >
-                        <XMarkIcon className="w-4 h-4 text-white" />
+                        <XMarkIcon className="w-5 h-5 text-white" />
                       </button>
                     </div>
                   </div>
 
-                  {/* Chat Content */}
-                  <div className="flex-1 relative">
+                  {/* Chat Content - Priority 1 Enhancement: Max height with internal scrolling */}
+                  <div className="flex-1 relative overflow-hidden max-h-[400px]">
                     <LusoBotChat
                       isEmbedded={true}
-                      className="h-full border-0 bg-transparent"
+                      className="h-full border-0 bg-transparent lusobot-chat-container"
                       onClose={handleClose}
+                      data-lusobot-chat-container="true"
                     />
                   </div>
                 </div>
@@ -458,20 +536,32 @@ export default function LusoBotWidget({
         {/* Floating Action Button */}
         {!isOpen && !isKeyboardOpen && (
           <motion.button
+            ref={buttonRef}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={handleOpen}
+            onFocus={() => {
+              if (buttonRef.current) {
+                addFocusClasses(buttonRef.current, 'widget');
+              }
+            }}
+            onBlur={() => {
+              if (buttonRef.current) {
+                buttonRef.current.classList.remove('lusotown-widget-focus', 'lusotown-focus-smooth');
+              }
+            }}
             className={`${isMobile ? "w-14 h-14" : "w-16 h-16"} rounded-full ${
               currentTheme.buttonBg
             } ${currentTheme.buttonHover}
               flex items-center justify-center transition-all duration-200 relative group min-h-[44px] min-w-[44px]`}
             aria-label={
               language === "pt"
-                ? "Abrir LusoBot - Assistente Cultural Português"
-                : "Open LusoBot - Portuguese-speaking Cultural Assistant"
+                ? "Abrir LusoBot - Assistente Cultural Português para a comunidade lusófona. Prima Enter para abrir."
+                : "Open LusoBot - Portuguese Cultural Assistant for the Portuguese-speaking community. Press Enter to open."
             }
+            aria-describedby={unreadCount > 0 ? "lusobot-unread-count" : undefined}
             role="button"
             tabIndex={0}
             onKeyDown={(e) => {

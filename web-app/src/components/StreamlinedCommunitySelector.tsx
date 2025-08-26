@@ -39,7 +39,8 @@ const communityOptions: CommunityOption[] = [
   {
     id: "meet_people",
     title: "Find Your Match",
-    benefit: "Find meaningful connections within the Portuguese-speaking community",
+    benefit:
+      "Find meaningful connections within the Portuguese-speaking community",
     details:
       "Make friends or date within a respectful, verified Lusophone community. Weekly Portuguese cultural meetups and small groups—simple and genuine.",
     icon: HeartIcon,
@@ -230,7 +231,7 @@ export default function StreamlinedCommunitySelector({
           )}
 
           {/* Trust indicators */}
-      <div className="text-center mt-6 text-sm text-gray-500">
+          <div className="text-center mt-6 text-sm text-gray-500">
             <div className="flex justify-center items-center gap-4 flex-wrap">
               <span>Verified Portuguese/Portuguese‑speaking members</span>
               <span>•</span>

@@ -1,13 +1,15 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import * as Sentry from '@sentry/nextjs'
 import { 
   ExclamationTriangleIcon, 
   ChartBarIcon, 
   BoltIcon,
   GlobeAltIcon,
   DevicePhoneMobileIcon,
-  LanguageIcon
+  LanguageIcon,
+  ArrowPathIcon
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 import { errorTracker, ErrorEvent } from '@/lib/monitoring/error-tracker'
@@ -152,15 +154,25 @@ export default function ErrorMonitoringDashboard({
               <ChartBarIcon className="w-6 h-6 text-primary-600" />
               <div>
                 <h2 className="text-lg font-semibold text-gray-900">
-                  {t('monitoring.dashboard.title', 'Error Monitoring Dashboard')}
+                  {t('error_monitoring.title')}
                 </h2>
                 <p className="text-sm text-gray-600">
-                  {t('monitoring.dashboard.subtitle', 'Portuguese community platform health')}
+                  {t('error_monitoring.subtitle')}
                 </p>
               </div>
             </div>
-            <div className="text-sm text-gray-500">
-              {t('monitoring.dashboard.last_update', 'Last updated')}: {lastUpdate.toLocaleTimeString()}
+            <div className="flex items-center space-x-3">
+              <button
+                onClick={loadMetrics}
+                disabled={isLoading}
+                className="flex items-center space-x-1 px-3 py-1 text-sm text-gray-600 hover:text-gray-800 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors disabled:opacity-50"
+              >
+                <ArrowPathIcon className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} />
+                <span>{t('error_monitoring.refresh_data')}</span>
+              </button>
+              <div className="text-sm text-gray-500">
+                {t('error_monitoring.last_24h')}: {lastUpdate.toLocaleTimeString()}
+              </div>
             </div>
           </div>
         </div>
@@ -173,7 +185,7 @@ export default function ErrorMonitoringDashboard({
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">
-                  {t('monitoring.metrics.total_errors', 'Total Errors')}
+                  Total Errors
                 </p>
                 <p className="text-2xl font-bold text-gray-900">{metrics.totalErrors}</p>
               </div>
@@ -185,7 +197,7 @@ export default function ErrorMonitoringDashboard({
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-red-600">
-                  {t('monitoring.metrics.critical_errors', 'Critical Errors')}
+                  {t('error_monitoring.critical_errors')}
                 </p>
                 <p className="text-2xl font-bold text-red-900">{metrics.criticalErrors}</p>
               </div>
@@ -197,7 +209,7 @@ export default function ErrorMonitoringDashboard({
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-primary-600">
-                  {t('monitoring.metrics.portuguese_errors', 'Portuguese Feature Errors')}
+                  {t('error_monitoring.portuguese_features')}
                 </p>
                 <p className="text-2xl font-bold text-primary-900">{metrics.portugueseRelatedErrors}</p>
               </div>
@@ -209,10 +221,12 @@ export default function ErrorMonitoringDashboard({
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-green-600">
-                  {t('monitoring.metrics.uptime', 'System Status')}
+                  System Status
                 </p>
                 <p className="text-lg font-bold text-green-900">
-                  {metrics.criticalErrors === 0 ? 'Healthy' : 'Degraded'}
+                  {metrics.criticalErrors === 0 ? 
+                    (language === 'pt' ? 'Saudável' : 'Healthy') : 
+                    (language === 'pt' ? 'Degradado' : 'Degraded')}
                 </p>
               </div>
               <GlobeAltIcon className="w-8 h-8 text-green-400" />
@@ -223,7 +237,7 @@ export default function ErrorMonitoringDashboard({
         {/* Performance Metrics */}
         <div className="mb-8">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            {t('monitoring.performance.title', 'Performance Metrics')}
+            {t('error_monitoring.performance_issues')}
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -233,7 +247,7 @@ export default function ErrorMonitoringDashboard({
                 <div className="flex items-center space-x-3">
                   <LanguageIcon className="w-5 h-5 text-primary-600" />
                   <span className="text-sm font-medium text-gray-900">
-                    {t('monitoring.performance.portuguese_content', 'Portuguese Content Load')}
+                    Portuguese Content Load
                   </span>
                 </div>
                 <div className={`text-sm font-semibold ${getPerformanceStatus(metrics.performanceMetrics.portugueseContentLoadTime, 2000).color}`}>
@@ -246,7 +260,7 @@ export default function ErrorMonitoringDashboard({
                 <div className="flex items-center space-x-3">
                   <LanguageIcon className="w-5 h-5 text-blue-600" />
                   <span className="text-sm font-medium text-gray-900">
-                    {t('monitoring.performance.language_switching', 'Language Switching')}
+                    Language Switching
                   </span>
                 </div>
                 <div className={`text-sm font-semibold ${getPerformanceStatus(metrics.performanceMetrics.languageSwitchingTime, 500).color}`}>
@@ -261,7 +275,7 @@ export default function ErrorMonitoringDashboard({
                 <div className="flex items-center space-x-3">
                   <GlobeAltIcon className="w-5 h-5 text-green-600" />
                   <span className="text-sm font-medium text-gray-900">
-                    {t('monitoring.performance.business_directory', 'Business Directory')}
+                    Business Directory
                   </span>
                 </div>
                 <div className={`text-sm font-semibold ${getPerformanceStatus(metrics.performanceMetrics.businessDirectoryResponseTime, 2000).color}`}>
@@ -274,7 +288,7 @@ export default function ErrorMonitoringDashboard({
                 <div className="flex items-center space-x-3">
                   <ChartBarIcon className="w-5 h-5 text-gray-600" />
                   <span className="text-sm font-medium text-gray-900">
-                    {t('monitoring.performance.average_load', 'Average Load Time')}
+                    Average Load Time
                   </span>
                 </div>
                 <div className={`text-sm font-semibold ${getPerformanceStatus(metrics.performanceMetrics.averageLoadTime, 2500).color}`}>
@@ -289,7 +303,7 @@ export default function ErrorMonitoringDashboard({
         {!compactMode && Object.keys(metrics.errorsByContext).length > 0 && (
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              {t('monitoring.errors.breakdown_title', 'Error Breakdown by Context')}
+              Error Breakdown by Context
             </h3>
             
             <div className="space-y-2">
@@ -309,7 +323,7 @@ export default function ErrorMonitoringDashboard({
         <div className="bg-primary-50 rounded-lg p-4 border border-primary-200">
           <h3 className="text-lg font-semibold text-primary-900 mb-3 flex items-center space-x-2">
             <LanguageIcon className="w-5 h-5" />
-            <span>{t('monitoring.portuguese.health_title', 'Portuguese Community Features Health')}</span>
+            <span>Portuguese Community Features Health</span>
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -318,7 +332,7 @@ export default function ErrorMonitoringDashboard({
                 {metrics.portugueseRelatedErrors === 0 ? '✅' : '⚠️'}
               </p>
               <p className="text-sm text-primary-700">
-                {t('monitoring.portuguese.cultural_content', 'Cultural Content')}
+                Cultural Content
               </p>
             </div>
             
@@ -327,7 +341,7 @@ export default function ErrorMonitoringDashboard({
                 {metrics.performanceMetrics.languageSwitchingTime < 500 ? '✅' : '⚠️'}
               </p>
               <p className="text-sm text-primary-700">
-                {t('monitoring.portuguese.bilingual_system', 'Bilingual System')}
+                Bilingual System
               </p>
             </div>
             
@@ -336,7 +350,7 @@ export default function ErrorMonitoringDashboard({
                 {metrics.performanceMetrics.businessDirectoryResponseTime < 2000 ? '✅' : '⚠️'}
               </p>
               <p className="text-sm text-primary-700">
-                {t('monitoring.portuguese.business_directory', 'Business Directory')}
+                Business Directory
               </p>
             </div>
           </div>

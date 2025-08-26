@@ -14,6 +14,7 @@ const LusoBotWidget = dynamic(() => import("@/components/LusoBotWidget"), {
  * LusoBotWrapper
  * - Hides the global chat widget on pages that already embed chat (/lusobot routes)
  * - Disables welcome/suggestion popups to prevent recurring popups on navigation
+ * - Uses Priority 1 Widget Management System for positioning
  */
 export default function LusoBotWrapper() {
   const pathname = usePathname() || "";

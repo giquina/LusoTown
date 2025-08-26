@@ -18,7 +18,9 @@ import {
   ShieldCheckIcon,
   MusicalNoteIcon,
   BuildingOfficeIcon,
-  AcademicCapIcon
+  AcademicCapIcon,
+  PlusIcon,
+  QuestionMarkCircleIcon
 } from '@heroicons/react/24/outline'
 import { 
   HeartIcon as HeartIconSolid,

@@ -1,24 +1,24 @@
 /**
  * Welcome Flow Hook
- * 
+ *
  * Comprehensive hook for components to interact with the welcome system.
  * Provides utilities for checking user status, getting recommendations, and handling onboarding.
  */
 
-import { useCallback, useMemo } from 'react';
-import { useRouter } from 'next/navigation';
-import { useWelcome } from '@/context/WelcomeContext';
-import { useLanguage } from '@/context/LanguageContext';
-import { 
+import { useCallback, useMemo } from "react";
+import { useRouter } from "next/navigation";
+import { useWelcome } from "@/context/WelcomeContext";
+import { useLanguage } from "@/context/LanguageContext";
+import {
   navigateToRecommendedPage,
   getUserPreferenceSummary,
   arePreferencesComplete,
   getOnboardingProgress,
   getNextRecommendedAction,
   getCountrySpecificRoutes,
-  getInterestSpecificRoutes
-} from '@/utils/welcomeRouting';
-import { WELCOME_ANALYTICS_EVENTS } from '@/config/welcome-popup';
+  getInterestSpecificRoutes,
+} from "@/utils/welcomeRouting";
+import { WELCOME_ANALYTICS_EVENTS } from "@/config/welcome-popup";
 
 export function useWelcomeFlow() {
   const router = useRouter();
@@ -39,139 +39,154 @@ export function useWelcomeFlow() {
       isOnboardingComplete: isComplete,
       onboardingProgress: progress,
       nextRecommendedAction: nextAction,
-      userSummary: summary
+      userSummary: summary,
     };
   }, [welcome.preferences, welcome.isFirstTime, language]);
 
   // Navigation utilities
-  const navigation = useMemo(() => {
-    const recommendedRoute = navigateToRecommendedPage(welcome.preferences);
-    const countryRoutes = welcome.preferences.country 
-      ? getCountrySpecificRoutes(welcome.preferences.country)
-      : null;
-    const interestRoutes = getInterestSpecificRoutes(welcome.preferences.interests);
-
-    return {
-      recommendedRoute,
-      countryRoutes,
-      interestRoutes,
-      navigateToRecommended: () => {
-        welcome.trackEvent(WELCOME_ANALYTICS_EVENTS.BANNER_CLICKED, { 
-          action: 'navigate_recommended',
-          route: recommendedRoute
-        });
-        router.push(recommendedRoute);
-      }
-    };
-  }, [welcome.preferences, router, welcome.trackEvent]);
+  const recommendedRoute = useMemo(
+    () => navigateToRecommendedPage(welcome.preferences),
+    [welcome.preferences]
+  );
+  const countryRoutes = useMemo(
+    () =>
+      welcome.preferences.country
+        ? getCountrySpecificRoutes(welcome.preferences.country)
+        : null,
+    [welcome.preferences.country]
+  );
+  const interestRoutes = useMemo(
+    () => getInterestSpecificRoutes(welcome.preferences.interests),
+    [welcome.preferences.interests]
+  );
+  const navigateToRecommended = useCallback(() => {
+    welcome.trackEvent(WELCOME_ANALYTICS_EVENTS.BANNER_CLICKED, {
+      action: "navigate_recommended",
+      route: recommendedRoute,
+    });
+    router.push(recommendedRoute);
+  }, [recommendedRoute, router, welcome]);
 
   // Onboarding actions
-  const onboardingActions = useMemo(() => ({
-    startWelcome: useCallback(() => {
-      welcome.showPopup();
-      welcome.trackEvent(WELCOME_ANALYTICS_EVENTS.POPUP_SHOWN, { 
-        trigger: 'manual',
-        source: 'useWelcomeFlow'
-      });
-    }, [welcome]),
+  const startWelcome = useCallback(() => {
+    welcome.showPopup();
+    welcome.trackEvent(WELCOME_ANALYTICS_EVENTS.POPUP_SHOWN, {
+      trigger: "manual",
+      source: "useWelcomeFlow",
+    });
+  }, [welcome]);
 
-    skipWelcome: useCallback(() => {
-      welcome.skipPopup();
-      welcome.trackEvent(WELCOME_ANALYTICS_EVENTS.SKIP_CLICKED, { 
-        source: 'useWelcomeFlow'
-      });
-    }, [welcome]),
+  const skipWelcome = useCallback(() => {
+    welcome.skipPopup();
+    welcome.trackEvent(WELCOME_ANALYTICS_EVENTS.SKIP_CLICKED, {
+      source: "useWelcomeFlow",
+    });
+  }, [welcome]);
 
-    completeWelcome: useCallback((country?: string, interests: string[] = []) => {
+  const completeWelcome = useCallback(
+    (country?: string, interests: string[] = []) => {
       welcome.completeWelcomeFlow(country, interests);
       welcome.trackEvent(WELCOME_ANALYTICS_EVENTS.FLOW_COMPLETED, {
         country,
         interests,
         interestCount: interests.length,
-        source: 'useWelcomeFlow'
+        source: "useWelcomeFlow",
       });
-    }, [welcome]),
+    },
+    [welcome]
+  );
 
-    updatePreferences: useCallback((country?: string, interests?: string[]) => {
+  const updatePreferences = useCallback(
+    (country?: string, interests?: string[]) => {
       const updates: any = {};
       if (country !== undefined) updates.country = country;
       if (interests !== undefined) updates.interests = interests;
-      
+
       welcome.updatePreferences(updates);
-      welcome.trackEvent('preferences_updated', {
+      welcome.trackEvent(WELCOME_ANALYTICS_EVENTS.BANNER_SHOWN, {
         updates,
-        source: 'useWelcomeFlow'
+        source: "useWelcomeFlow",
       });
-    }, [welcome])
-  }), [welcome]);
+    },
+    [welcome]
+  );
 
   // Utility functions
-  const utilities = useMemo(() => ({
-    shouldShowOnboardingHints: () => {
-      return !welcome.preferences.completedWelcome || welcome.isFirstTime;
-    },
+  const shouldShowOnboardingHints = useCallback(() => {
+    return !welcome.preferences.completedWelcome || welcome.isFirstTime;
+  }, [welcome.preferences.completedWelcome, welcome.isFirstTime]);
 
-    getPersonalizedGreeting: () => {
-      const summary = getUserPreferenceSummary(welcome.preferences, language);
-      
-      if (!summary.hasPreferences) {
-        return language === 'pt' 
-          ? 'Bem-vindo ao LusoTown!' 
-          : 'Welcome to LusoTown!';
-      }
+  const getPersonalizedGreeting = useCallback(() => {
+    const summary = getUserPreferenceSummary(welcome.preferences, language);
 
-      if (summary.country) {
-        return language === 'pt'
-          ? `Olá! Vemos que és ${summary.country === 'Portugal' ? 'de Portugal' : `d${summary.country}`}!`
-          : `Hello! We see you're from ${summary.country}!`;
-      }
-
-      return language === 'pt'
-        ? 'Bem-vindo de volta!'
-        : 'Welcome back!';
-    },
-
-    getRecommendedContent: () => {
-      if (!welcome.preferences.completedWelcome) {
-        return {
-          title: language === 'pt' ? 'Complete o seu perfil' : 'Complete your profile',
-          description: language === 'pt' 
-            ? 'Ajude-nos a personalizar a sua experiência'
-            : 'Help us personalize your experience',
-          action: 'complete_onboarding'
-        };
-      }
-
-      const summary = getUserPreferenceSummary(welcome.preferences, language);
-      
-      if (summary.interests.length > 0) {
-        return {
-          title: language === 'pt' ? 'Baseado nos seus interesses' : 'Based on your interests',
-          description: `${summary.interests.slice(0, 2).join(', ')}${summary.interests.length > 2 ? '...' : ''}`,
-          action: 'view_personalized'
-        };
-      }
-
-      if (summary.country) {
-        return {
-          title: language === 'pt' ? 'Da sua região' : 'From your region',
-          description: `${summary.countryFlag} ${summary.country}`,
-          action: 'view_country_content'
-        };
-      }
-
-      return {
-        title: language === 'pt' ? 'Descubra a sua comunidade' : 'Discover your community',
-        description: language === 'pt' ? 'Explore eventos e negócios' : 'Explore events and businesses',
-        action: 'explore_community'
-      };
-    },
-
-    canShowPersonalizedContent: () => {
-      return welcome.preferences.completedWelcome && 
-             (welcome.preferences.country || welcome.preferences.interests.length > 0);
+    if (!summary.hasPreferences) {
+      return language === "pt"
+        ? "Bem-vindo ao LusoTown!"
+        : "Welcome to LusoTown!";
     }
-  }), [welcome.preferences, welcome.isFirstTime, language]);
+
+    if (summary.country) {
+      return language === "pt"
+        ? `Olá! Vemos que és ${summary.country === "Portugal" ? "de Portugal" : `d${summary.country}`}!`
+        : `Hello! We see you're from ${summary.country}!`;
+    }
+
+    return language === "pt" ? "Bem-vindo de volta!" : "Welcome back!";
+  }, [welcome.preferences, language]);
+
+  const getRecommendedContent = useCallback(() => {
+    if (!welcome.preferences.completedWelcome) {
+      return {
+        title:
+          language === "pt" ? "Complete o seu perfil" : "Complete your profile",
+        description:
+          language === "pt"
+            ? "Ajude-nos a personalizar a sua experiência"
+            : "Help us personalize your experience",
+        action: "complete_onboarding",
+      };
+    }
+
+    const summary = getUserPreferenceSummary(welcome.preferences, language);
+
+    if (summary.interests.length > 0) {
+      return {
+        title:
+          language === "pt"
+            ? "Baseado nos seus interesses"
+            : "Based on your interests",
+        description: `${summary.interests.slice(0, 2).join(", ")}${summary.interests.length > 2 ? "..." : ""}`,
+        action: "view_personalized",
+      };
+    }
+
+    if (summary.country) {
+      return {
+        title: language === "pt" ? "Da sua região" : "From your region",
+        description: `${summary.countryFlag} ${summary.country}`,
+        action: "view_country_content",
+      };
+    }
+
+    return {
+      title:
+        language === "pt"
+          ? "Descubra a sua comunidade"
+          : "Discover your community",
+      description:
+        language === "pt"
+          ? "Explore eventos e negócios"
+          : "Explore events and businesses",
+      action: "explore_community",
+    };
+  }, [welcome.preferences, language]);
+
+  const canShowPersonalizedContent = useCallback(() => {
+    return (
+      welcome.preferences.completedWelcome &&
+      (welcome.preferences.country || welcome.preferences.interests.length > 0)
+    );
+  }, [welcome.preferences]);
 
   return {
     // State
@@ -182,15 +197,24 @@ export function useWelcomeFlow() {
     preferences: welcome.preferences,
 
     // Navigation
-    ...navigation,
+    recommendedRoute,
+    countryRoutes,
+    interestRoutes,
+    navigateToRecommended,
 
     // Actions
-    ...onboardingActions,
+    startWelcome,
+    skipWelcome,
+    completeWelcome,
+    updatePreferences,
 
     // Utilities
-    ...utilities,
+    shouldShowOnboardingHints,
+    getPersonalizedGreeting,
+    getRecommendedContent,
+    canShowPersonalizedContent,
 
     // Raw welcome context for advanced usage
-    welcomeContext: welcome
+    welcomeContext: welcome,
   };
 }

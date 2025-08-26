@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
+import { useAriaAnnouncements, ARIA_MESSAGES } from '@/hooks/useAriaAnnouncements'
+import { useFocusIndicator } from '@/hooks/useFocusManagement'
 import { 
   CalendarDaysIcon,
   BellIcon,
@@ -17,9 +19,20 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   PlusIcon,
-  EyeIcon
+  EyeIcon,
+  ArrowPathIcon,
+  CalendarIcon,
+  PlayIcon,
+  UsersIcon
 } from '@heroicons/react/24/outline'
 import { StarIcon as StarSolid, HeartIcon as HeartSolid } from '@heroicons/react/24/solid'
+import RecurringEventCreator from './RecurringEventCreator'
+import { 
+  PORTUGUESE_CULTURAL_CALENDAR,
+  getUpcomingCulturalCelebrations,
+  RECURRING_EVENT_TEMPLATES,
+  getFeaturedRecurringTemplates
+} from '@/config/recurring-events'
 
 interface CulturalEvent {
   id: string
@@ -84,14 +97,21 @@ export default function PortugueseCulturalCalendar() {
   const { t, language } = useLanguage()
   const [currentDate, setCurrentDate] = useState(new Date())
   const [selectedEvent, setSelectedEvent] = useState<CulturalEvent | null>(null)
-  const [viewMode, setViewMode] = useState<'calendar' | 'timeline' | 'regions'>('calendar')
+  const [viewMode, setViewMode] = useState<'calendar' | 'timeline' | 'regions' | 'recurring'>('calendar')
   const [culturalEvents, setCulturalEvents] = useState<CulturalEvent[]>([])
+  const [showRecurringCreator, setShowRecurringCreator] = useState(false)
+  const [upcomingCelebrations, setUpcomingCelebrations] = useState(getUpcomingCulturalCelebrations(90))
+  const [recurringTemplates] = useState(getFeaturedRecurringTemplates())
   const [filters, setFilters] = useState({
     celebrationType: '',
     originRegion: '',
     participationLevel: '',
     isFavorite: false
   })
+
+  // ARIA and Focus Management
+  const { announcePolite } = useAriaAnnouncements()
+  const { addFocusClasses } = useFocusIndicator()
 
   // Lusophone cultural calendar data
   useEffect(() => {
@@ -379,21 +399,33 @@ export default function PortugueseCulturalCalendar() {
 
   const toggleFavorite = (eventId: string) => {
     setCulturalEvents(prev => 
-      prev.map(event => 
-        event.id === eventId 
-          ? { ...event, isUserFavorite: !event.isUserFavorite }
-          : event
-      )
+      prev.map(event => {
+        if (event.id === eventId) {
+          const newFavoriteState = !event.isUserFavorite
+          // Announce change to screen readers
+          const message = newFavoriteState 
+            ? ARIA_MESSAGES.events.favoriteAdded 
+            : ARIA_MESSAGES.events.favoriteRemoved
+          announcePolite(message)
+          return { ...event, isUserFavorite: newFavoriteState }
+        }
+        return event
+      })
     )
   }
 
   const toggleReminder = (eventId: string) => {
     setCulturalEvents(prev => 
-      prev.map(event => 
-        event.id === eventId 
-          ? { ...event, reminderSet: !event.reminderSet }
-          : event
-      )
+      prev.map(event => {
+        if (event.id === eventId) {
+          const newReminderState = !event.reminderSet
+          if (newReminderState) {
+            announcePolite(ARIA_MESSAGES.events.reminderSet)
+          }
+          return { ...event, reminderSet: newReminderState }
+        }
+        return event
+      })
     )
   }
 
@@ -822,6 +854,266 @@ export default function PortugueseCulturalCalendar() {
     </div>
   )
 
+  const renderRecurringEventsView = () => (
+    <div className="space-y-8">
+      {/* Header with Create Button */}
+      <div className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl p-8 text-white">
+        <div className="flex items-center justify-between">
+          <div>
+            <h3 className="text-3xl font-bold mb-2">
+              {language === 'pt' ? 'Eventos Culturais Recorrentes' : 'Recurring Cultural Events'}
+            </h3>
+            <p className="text-white/90 text-lg">
+              {language === 'pt' 
+                ? 'Crie e gerencie séries de eventos portugueses autênticos'
+                : 'Create and manage authentic Portuguese event series'}
+            </p>
+          </div>
+          <button
+            onClick={() => setShowRecurringCreator(true)}
+            className="bg-white text-primary-600 px-6 py-3 rounded-xl font-bold hover:bg-gray-50 transition-colors flex items-center gap-2"
+          >
+            <PlusIcon className="w-5 h-5" />
+            {language === 'pt' ? 'Criar Série' : 'Create Series'}
+          </button>
+        </div>
+      </div>
+
+      {/* Quick Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
+          <div className="text-3xl font-bold text-green-600 mb-1">
+            {recurringTemplates.length}
+          </div>
+          <div className="text-sm text-gray-600">
+            {language === 'pt' ? 'Modelos Disponíveis' : 'Available Templates'}
+          </div>
+        </div>
+        <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
+          <div className="text-3xl font-bold text-blue-600 mb-1">
+            {upcomingCelebrations.length}
+          </div>
+          <div className="text-sm text-gray-600">
+            {language === 'pt' ? 'Próximas Celebrações' : 'Upcoming Celebrations'}
+          </div>
+        </div>
+        <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
+          <div className="text-3xl font-bold text-purple-600 mb-1">8</div>
+          <div className="text-sm text-gray-600">
+            {language === 'pt' ? 'Países Representados' : 'Countries Represented'}
+          </div>
+        </div>
+        <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
+          <div className="text-3xl font-bold text-amber-600 mb-1">12</div>
+          <div className="text-sm text-gray-600">
+            {language === 'pt' ? 'Eventos Mensais' : 'Monthly Events'}
+          </div>
+        </div>
+      </div>
+
+      {/* Upcoming Cultural Celebrations */}
+      <div className="bg-white rounded-3xl p-8 shadow-xl">
+        <div className="flex items-center gap-3 mb-6">
+          <SparklesIcon className="w-6 h-6 text-amber-500" />
+          <h4 className="text-2xl font-bold text-gray-900">
+            {language === 'pt' ? 'Próximas Celebrações Culturais' : 'Upcoming Cultural Celebrations'}
+          </h4>
+        </div>
+        
+        <div className="space-y-4">
+          {upcomingCelebrations.slice(0, 5).map((celebration, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="flex items-center justify-between p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border border-amber-200"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
+                  <CalendarIcon className="w-6 h-6 text-amber-600" />
+                </div>
+                <div>
+                  <h5 className="font-bold text-amber-900">
+                    {language === 'pt' ? celebration.celebration.name.pt : celebration.celebration.name.en}
+                  </h5>
+                  <p className="text-sm text-amber-700">
+                    {new Date(celebration.date).toLocaleDateString(language === 'pt' ? 'pt-PT' : 'en-GB', {
+                      weekday: 'long',
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </p>
+                  <p className="text-xs text-amber-600 mt-1">
+                    {language === 'pt' ? celebration.celebration.significance.pt : celebration.celebration.significance.en}
+                  </p>
+                </div>
+              </div>
+              
+              <div className="text-right">
+                <div className="text-sm font-medium text-amber-700 mb-1">
+                  {celebration.suggestedTemplates.length} {language === 'pt' ? 'modelos sugeridos' : 'suggested templates'}
+                </div>
+                {celebration.suggestedTemplates.length > 0 && (
+                  <button
+                    onClick={() => {
+                      setShowRecurringCreator(true);
+                      // Pre-select first suggested template
+                    }}
+                    className="bg-amber-500 text-white px-3 py-1 rounded-lg text-xs font-medium hover:bg-amber-600 transition-colors"
+                  >
+                    {language === 'pt' ? 'Criar Evento' : 'Create Event'}
+                  </button>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Featured Recurring Templates */}
+      <div className="bg-white rounded-3xl p-8 shadow-xl">
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            <ArrowPathIcon className="w-6 h-6 text-primary-500" />
+            <h4 className="text-2xl font-bold text-gray-900">
+              {language === 'pt' ? 'Modelos de Eventos em Destaque' : 'Featured Event Templates'}
+            </h4>
+          </div>
+          <button
+            onClick={() => setViewMode('calendar')}
+            className="text-primary-600 hover:text-primary-700 text-sm font-medium flex items-center gap-1"
+          >
+            <EyeIcon className="w-4 h-4" />
+            {language === 'pt' ? 'Ver Todos' : 'View All'}
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {recurringTemplates.map((template, index) => (
+            <motion.div
+              key={template.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all cursor-pointer group"
+              onClick={() => setShowRecurringCreator(true)}
+            >
+              <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-4">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">{template.flagEmojis}</span>
+                  <div>
+                    <h5 className="text-white font-bold">
+                      {language === 'pt' ? template.name.pt : template.name.en}
+                    </h5>
+                    <p className="text-white/80 text-sm">
+                      {template.culturalOrigin.join(', ')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-4">
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  {language === 'pt' ? template.description.pt : template.description.en}
+                </p>
+                
+                <div className="grid grid-cols-2 gap-2 mb-4">
+                  <div className="flex items-center gap-1 text-xs text-gray-500">
+                    <CalendarIcon className="w-3 h-3" />
+                    <span>
+                      {template.pattern.type === 'weekly' ? 
+                        (language === 'pt' ? 'Semanal' : 'Weekly') :
+                      template.pattern.type === 'monthly' ?
+                        (language === 'pt' ? 'Mensal' : 'Monthly') :
+                        (language === 'pt' ? 'Personalizado' : 'Custom')}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1 text-xs text-gray-500">
+                    <ClockIcon className="w-3 h-3" />
+                    <span>{Math.floor(template.eventDefaults.duration / 60)}h</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-xs text-gray-500">
+                    <UsersIcon className="w-3 h-3" />
+                    <span>{template.eventDefaults.capacity}</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-xs text-gray-500">
+                    <span>£{template.eventDefaults.price}</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-1 mb-4">
+                  {template.eventDefaults.tags.slice(0, 3).map(tag => (
+                    <span key={tag} className="bg-primary-50 text-primary-600 text-xs px-2 py-1 rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <button className="w-full bg-primary-500 text-white py-2 rounded-lg hover:bg-primary-600 transition-colors font-medium text-sm group-hover:bg-primary-600">
+                  {language === 'pt' ? 'Usar Este Modelo' : 'Use This Template'}
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Cultural Authenticity Guidelines */}
+      <div className="bg-gradient-to-r from-green-50 to-red-50 rounded-3xl p-8 border border-green-200">
+        <div className="flex items-center gap-3 mb-4">
+          <FlagIcon className="w-6 h-6 text-green-600" />
+          <h4 className="text-xl font-bold text-gray-900">
+            {language === 'pt' ? 'Diretrizes de Autenticidade Cultural' : 'Cultural Authenticity Guidelines'}
+          </h4>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h5 className="font-semibold text-gray-900 mb-2">
+              {language === 'pt' ? 'Elementos Obrigatórios' : 'Required Elements'}
+            </h5>
+            <ul className="space-y-1 text-sm text-gray-600">
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                {language === 'pt' ? 'Contexto cultural autêntico' : 'Authentic cultural context'}
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                {language === 'pt' ? 'Componentes educacionais' : 'Educational components'}
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                {language === 'pt' ? 'Envolvimento da comunidade' : 'Community involvement'}
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h5 className="font-semibold text-gray-900 mb-2">
+              {language === 'pt' ? 'Melhores Práticas' : 'Best Practices'}
+            </h5>
+            <ul className="space-y-1 text-sm text-gray-600">
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                {language === 'pt' ? 'Parcerias com organizações culturais' : 'Partner with cultural organizations'}
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                {language === 'pt' ? 'Inclusão de todas as nações lusófonas' : 'Include all Portuguese-speaking nations'}
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                {language === 'pt' ? 'Ambiente bilíngue (PT/EN)' : 'Bilingual environment (PT/EN)'}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-green-50/30 to-red-50/30 py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -870,7 +1162,8 @@ export default function PortugueseCulturalCalendar() {
                 {[
                   { key: 'calendar', label: t('calendar.view.calendar', 'Calendar'), icon: CalendarDaysIcon },
                   { key: 'timeline', label: t('calendar.view.timeline', 'Timeline'), icon: ClockIcon },
-                  { key: 'regions', label: t('calendar.view.regions', 'Regions'), icon: GlobeAltIcon }
+                  { key: 'regions', label: t('calendar.view.regions', 'Regions'), icon: GlobeAltIcon },
+                  { key: 'recurring', label: language === 'pt' ? 'Eventos Recorrentes' : 'Recurring Events', icon: ArrowPathIcon }
                 ].map((view) => {
                   const Icon = view.icon
                   return (
@@ -968,6 +1261,7 @@ export default function PortugueseCulturalCalendar() {
             {viewMode === 'calendar' && renderCalendarView()}
             {viewMode === 'timeline' && renderTimelineView()}
             {viewMode === 'regions' && renderRegionsView()}
+            {viewMode === 'recurring' && renderRecurringEventsView()}
           </motion.div>
         </AnimatePresence>
 
@@ -1153,6 +1447,29 @@ export default function PortugueseCulturalCalendar() {
                   </div>
                 </div>
               </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Recurring Event Creator Modal */}
+        <AnimatePresence>
+          {showRecurringCreator && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            >
+              <RecurringEventCreator
+                onEventSeriesCreated={(templateId, instances) => {
+                  // Handle the created recurring event series
+                  console.log('Recurring event series created:', templateId, instances);
+                  setShowRecurringCreator(false);
+                  // You could add logic here to refresh the calendar or show a success message
+                }}
+                onClose={() => setShowRecurringCreator(false)}
+                className="max-h-[90vh] overflow-y-auto"
+              />
             </motion.div>
           )}
         </AnimatePresence>

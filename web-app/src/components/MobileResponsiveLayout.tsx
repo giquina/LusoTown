@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useRouter, usePathname } from 'next/navigation';
-import { useLanguage } from '@/context/LanguageContext';
+import React, { useEffect, useState, useRef } from "react";
+import { motion, AnimatePresence, useMotionValue } from "framer-motion";
+import { useRouter, usePathname } from "next/navigation";
+import { useLanguage } from "@/context/LanguageContext";
 // LusoMobileNavigation removed - duplicate nav, using PremiumMobileNavigation in layout instead
-import { LuxuryPullToRefresh } from './LuxuryMobileInteraction';
+import { LuxuryPullToRefresh } from "./LuxuryMobileInteraction";
 
 interface MobileResponsiveLayoutProps {
   children: React.ReactNode;
@@ -16,11 +16,11 @@ interface MobileResponsiveLayoutProps {
   pullToRefresh?: boolean;
   onRefresh?: () => Promise<void>;
   headerActions?: React.ReactNode;
-  backgroundPattern?: 'none' | 'subtle' | 'portuguese';
+  backgroundPattern?: "none" | "subtle" | "portuguese";
   className?: string;
   contentClassName?: string;
   hideNavOn?: string[];
-  maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full';
+  maxWidth?: "sm" | "md" | "lg" | "xl" | "2xl" | "full";
 }
 
 export default function MobileResponsiveLayout({
@@ -32,21 +32,22 @@ export default function MobileResponsiveLayout({
   pullToRefresh = false,
   onRefresh,
   headerActions,
-  backgroundPattern = 'subtle',
-  className = '',
-  contentClassName = '',
+  backgroundPattern = "subtle",
+  className = "",
+  contentClassName = "",
   hideNavOn = [],
-  maxWidth = 'lg'
+  maxWidth = "lg",
 }: MobileResponsiveLayoutProps) {
   const { language, t } = useLanguage();
   const router = useRouter();
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down">("up");
   const [lastScrollY, setLastScrollY] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
-  const isPortuguese = language === 'pt';
+  const isPortuguese = language === "pt";
+  const progressX = useMotionValue(0);
 
   // Handle mounting
   useEffect(() => {
@@ -57,37 +58,43 @@ export default function MobileResponsiveLayout({
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       setIsScrolled(currentScrollY > 20);
-      setScrollDirection(currentScrollY > lastScrollY ? 'down' : 'up');
+      setScrollDirection(currentScrollY > lastScrollY ? "down" : "up");
       setLastScrollY(currentScrollY);
     };
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      return () => window.removeEventListener('scroll', handleScroll);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      return () => window.removeEventListener("scroll", handleScroll);
     }
   }, [lastScrollY]);
 
+  // Update progress bar value based on scroll
+  useEffect(() => {
+    // reflect simple scrolled state on motion value
+    progressX.set(isScrolled ? 0.3 : 0);
+  }, [isScrolled, progressX]);
+
   // Lusophone cultural background patterns
   const backgroundPatterns = {
-    none: '',
-    subtle: 'bg-gradient-to-br from-gray-50 via-white to-gray-50',
+    none: "",
+    subtle: "bg-gradient-to-br from-gray-50 via-white to-gray-50",
     portuguese: `
       relative
       before:absolute before:inset-0 before:opacity-[0.02] before:pointer-events-none
       before:bg-[url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dc2626' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")]
       bg-gradient-to-br from-red-50/30 via-yellow-50/20 to-green-50/30
-    `
+    `,
   };
 
   const maxWidthClasses = {
-    sm: 'max-w-sm',
-    md: 'max-w-md',
-    lg: 'max-w-4xl',
-    xl: 'max-w-6xl',
-    '2xl': 'max-w-7xl',
-    full: 'max-w-full'
+    sm: "max-w-sm",
+    md: "max-w-md",
+    lg: "max-w-4xl",
+    xl: "max-w-6xl",
+    "2xl": "max-w-7xl",
+    full: "max-w-full",
   };
 
   // Default refresh handler
@@ -96,18 +103,20 @@ export default function MobileResponsiveLayout({
       await onRefresh();
     } else {
       // Default refresh behavior
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       window.location.reload();
     }
   };
 
-  const ContentWrapper = pullToRefresh 
+  const ContentWrapper = pullToRefresh
     ? ({ children: wrapperChildren }: { children: React.ReactNode }) => (
         <LuxuryPullToRefresh onRefresh={handleRefresh}>
           {wrapperChildren}
         </LuxuryPullToRefresh>
       )
-    : ({ children: wrapperChildren }: { children: React.ReactNode }) => <>{wrapperChildren}</>;
+    : ({ children: wrapperChildren }: { children: React.ReactNode }) => (
+        <>{wrapperChildren}</>
+      );
 
   if (!mounted) {
     return (
@@ -118,20 +127,24 @@ export default function MobileResponsiveLayout({
   }
 
   return (
-    <div className={`min-h-screen elite-mobile-viewport ${backgroundPatterns[backgroundPattern]} ${className}`}>
+    <div
+      className={`min-h-screen elite-mobile-viewport ${backgroundPatterns[backgroundPattern]} ${className}`}
+    >
       {/* Skip Links for Accessibility */}
       <div className="sr-only-focusable">
         <a
           href="#main-content"
           className="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg z-50 focus:not-sr-only"
         >
-          {isPortuguese ? 'Pular para conteúdo principal' : 'Skip to main content'}
+          {isPortuguese
+            ? "Pular para conteúdo principal"
+            : "Skip to main content"}
         </a>
         <a
           href="#mobile-navigation"
           className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg z-50 focus:not-sr-only"
         >
-          {isPortuguese ? 'Pular para navegação' : 'Skip to navigation'}
+          {isPortuguese ? "Pular para navegação" : "Skip to navigation"}
         </a>
       </div>
 
@@ -140,9 +153,10 @@ export default function MobileResponsiveLayout({
         <motion.header
           className={`
             sticky top-0 z-40 transition-all duration-300 elite-safe-top
-            ${isScrolled 
-              ? 'bg-white/95 backdrop-blur-lg shadow-lg border-b border-gray-200/50' 
-              : 'bg-transparent'
+            ${
+              isScrolled
+                ? "bg-white/95 backdrop-blur-lg shadow-lg border-b border-gray-200/50"
+                : "bg-transparent"
             }
           `}
           initial={{ y: -100 }}
@@ -154,9 +168,11 @@ export default function MobileResponsiveLayout({
               <div className="flex items-center justify-between">
                 <div className="min-w-0 flex-1">
                   {title && (
-                    <motion.h1 
+                    <motion.h1
                       className={`font-bold text-gray-900 truncate ${
-                        isPortuguese ? 'text-lg sm:text-xl' : 'text-xl sm:text-2xl'
+                        isPortuguese
+                          ? "text-lg sm:text-xl"
+                          : "text-xl sm:text-2xl"
                       }`}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -166,9 +182,9 @@ export default function MobileResponsiveLayout({
                     </motion.h1>
                   )}
                   {description && (
-                    <motion.p 
+                    <motion.p
                       className={`text-gray-600 truncate mt-1 ${
-                        isPortuguese ? 'text-sm' : 'text-sm sm:text-base'
+                        isPortuguese ? "text-sm" : "text-sm sm:text-base"
                       }`}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -178,9 +194,9 @@ export default function MobileResponsiveLayout({
                     </motion.p>
                   )}
                 </div>
-                
+
                 {headerActions && (
-                  <motion.div 
+                  <motion.div
                     className="flex items-center gap-2 ml-4"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -204,8 +220,8 @@ export default function MobileResponsiveLayout({
           data-cultural-main="portuguese"
           className={`
             flex-1 relative
-            ${showMobileNav ? 'pb-20 sm:pb-4' : 'pb-4'}
-            ${showHeader ? 'pt-0' : 'pt-4'}
+            ${showMobileNav ? "pb-20 sm:pb-4" : "pb-4"}
+            ${showHeader ? "pt-0" : "pt-4"}
             elite-safe-left elite-safe-right
             ${contentClassName}
           `}
@@ -238,14 +254,11 @@ export default function MobileResponsiveLayout({
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-yellow-500 to-green-600 z-50 origin-left"
         initial={{ scaleX: 0 }}
-        animate={{ scaleX: isScrolled ? 0.3 : 0 }}
-        style={{
-          scaleX: useMotionValue(0)
-        }}
+        style={{ scaleX: progressX }}
       />
 
       {/* Lusophone Cultural Context Styles */}
-      <style jsx global>{`
+      <style>{`
         /* Lusophone text optimizations */
         .portuguese-text {
           font-feature-settings: 'liga' 1, 'calt' 1;
@@ -402,23 +415,4 @@ export default function MobileResponsiveLayout({
       `}</style>
     </div>
   );
-}
-
-// Motion value hook for scroll progress (simplified version)
-function useMotionValue(initial: number) {
-  const [value, setValue] = useState(initial);
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY;
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = Math.min(scrolled / maxScroll, 1);
-      setValue(progress);
-    };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  
-  return value;
 }

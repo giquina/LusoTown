@@ -17,15 +17,15 @@ import {
   HandRaisedIcon,
   StarIcon as CrownIcon,
   ShieldCheckIcon,
-  BuildingOfficeIcon
+  BuildingOfficeIcon,
 } from "@heroicons/react/24/outline";
 import { Instagram, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import Logo from "@/components/Logo";
-import { ROUTES } from '@/config/routes';
-import { socialMedia } from '@/config/contact';
-import { communityStats } from '@/config/community';
+import { ROUTES } from "@/config/routes";
+import { socialMedia } from "@/config/contact";
+import { communityStats } from "@/config/community";
 
 // Membership-focused footer navigation structure
 const getFooterLinks = (t: any) => ({
@@ -34,39 +34,43 @@ const getFooterLinks = (t: any) => ({
     { name: "Cultural Events", href: ROUTES.events },
     { name: "PALOP Heritage", href: "/palop-heritage" },
     { name: "Business Directory", href: ROUTES.directory },
-    { name: "Success Stories", href: "/success-stories" }
+    { name: "Success Stories", href: "/success-stories" },
   ],
   membership: [
-    { name: "Membership Tiers", href: ROUTES.premiumMembership, featured: true },
+    {
+      name: "Membership Tiers",
+      href: ROUTES.premiumMembership,
+      featured: true,
+    },
     { name: "Exclusive Events", href: `${ROUTES.events}?filter=members-only` },
     { name: "Premium Services", href: "/premium-services" },
     { name: "Member Benefits", href: "/member-benefits" },
-    { name: "Executive Network", href: "/executive-network" }
+    { name: "Executive Network", href: "/executive-network" },
   ],
   services: [
     { name: "Cultural Tours", href: ROUTES.tours },
     { name: "Private Events", href: "/private-events" },
     { name: "Venue Access", href: "/venue-access" },
     { name: "Concierge", href: "/concierge" },
-    { name: "Partner Benefits", href: "/partner-benefits" }
+    { name: "Partner Benefits", href: "/partner-benefits" },
   ],
   support: [
     { name: "Member Portal", href: "/member-portal" },
     { name: "Help Center", href: "/help" },
     { name: "Contact", href: ROUTES.contact },
     { name: "Privacy", href: "/privacy" },
-    { name: "Terms", href: "/terms" }
-  ]
+    { name: "Terms", href: "/terms" },
+  ],
 });
 
 // Build a safe, render-ready social links array from config object
 const getSocialLinks = () => {
   const links = [
-    { name: 'Instagram', url: socialMedia?.instagram, icon: Instagram },
-    { name: 'Facebook', url: socialMedia?.facebook, icon: Facebook },
-    { name: 'Twitter', url: socialMedia?.twitter, icon: Twitter },
-    { name: 'LinkedIn', url: socialMedia?.linkedin, icon: Linkedin },
-    { name: 'YouTube', url: socialMedia?.youtube, icon: Youtube },
+    { name: "Instagram", url: socialMedia?.instagram, icon: Instagram },
+    { name: "Facebook", url: socialMedia?.facebook, icon: Facebook },
+    { name: "Twitter", url: socialMedia?.twitter, icon: Twitter },
+    { name: "LinkedIn", url: socialMedia?.linkedin, icon: Linkedin },
+    { name: "YouTube", url: socialMedia?.youtube, icon: Youtube },
   ];
   return links.filter((l) => typeof l.url === "string" && l.url.length > 0);
 };
@@ -74,9 +78,9 @@ const getSocialLinks = () => {
 // Section headers mapping
 const getSectionHeaders = (t: any) => ({
   community: "Community",
-  membership: "Membership", 
+  membership: "Membership",
   services: "Services",
-  support: "Support"
+  support: "Support",
 });
 
 export default function Footer() {
@@ -89,21 +93,19 @@ export default function Footer() {
       {/* Premium background effects - compressed */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-400/30 to-transparent"></div>
-      
+
       {/* Main Footer Content - 40% compressed spacing */}
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
         <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-          
           {/* Premium Brand Column - Compressed */}
           <div className="md:col-span-4 lg:col-span-1 space-y-4">
             <Logo size="medium" className="text-white" />
             <p className="text-gray-300 leading-relaxed text-sm">
-              {language === 'pt' 
+              {language === "pt"
                 ? "Plataforma premium para membros verificados: portugueses ou falantes de português no Reino Unido."
-                : "Premium community for verified Portuguese and Portuguese‑speaking members in the UK."
-              }
+                : "Premium community for verified Portuguese and Portuguese‑speaking members in the UK."}
             </p>
-            
+
             {/* PALOP Pride Recognition - Compressed */}
             <div className="bg-gradient-to-r from-green-800/20 to-red-800/20 border border-green-700/20 rounded-lg p-2">
               <div className="text-center">
@@ -128,7 +130,7 @@ export default function Footer() {
                 </div>
                 <span className="text-xs">London, United Kingdom</span>
               </div>
-              
+
               <div className="flex items-center gap-2 text-gray-300 min-w-0">
                 <div className="p-1 bg-primary-600/20 rounded backdrop-blur-sm border border-primary-500/30">
                   <EnvelopeIcon className="h-3 w-3 text-primary-400" />
@@ -148,20 +150,23 @@ export default function Footer() {
                 {links.map((link) => {
                   const isFeatured = (link as any).featured === true;
                   return (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className={`transition-colors duration-200 text-xs ${
-                        isFeatured 
-                          ? "text-amber-400 hover:text-amber-300 font-semibold" 
-                          : "text-gray-300 hover:text-white"
-                      }`}
-                    >
-                      {isFeatured && <StarIcon className="w-3 h-3 inline mr-1" />}
-                      {link.name}
-                    </a>
-                  </li>
-                )})}
+                    <li key={link.name}>
+                      <a
+                        href={link.href}
+                        className={`transition-colors duration-200 text-xs ${
+                          isFeatured
+                            ? "text-amber-400 hover:text-amber-300 font-semibold"
+                            : "text-gray-300 hover:text-white"
+                        }`}
+                      >
+                        {isFeatured && (
+                          <StarIcon className="w-3 h-3 inline mr-1" />
+                        )}
+                        {link.name}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
@@ -172,17 +177,17 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex-1">
               <h3 className="text-base font-bold text-white mb-1">
-                {language === 'pt' 
+                {language === "pt"
                   ? "Junte-se aos 750+ Membros de Elite"
                   : "Join 750+ Elite Members"}
               </h3>
               <p className="text-gray-300 text-sm">
-                {language === 'pt'
+                {language === "pt"
                   ? "Acesso exclusivo, eventos premium, rede de contactos de elite."
                   : "Exclusive access, premium events, elite networking."}
               </p>
             </div>
-            
+
             {/* Single-line Membership Application */}
             <div className="flex items-center gap-3">
               <a
@@ -190,15 +195,15 @@ export default function Footer() {
                 className="inline-flex items-center bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-sm whitespace-nowrap"
               >
                 <CrownIcon className="w-4 h-4 mr-2" />
-                {language === 'pt' ? "Candidatar-se" : "Apply for Membership"}
+                {language === "pt" ? "Candidatar-se" : "Apply for Membership"}
                 <ArrowRightIcon className="w-4 h-4 ml-2" />
               </a>
-              
+
               <a
                 href={ROUTES.events}
                 className="inline-flex items-center border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white font-medium px-4 py-3 rounded-xl transition-all duration-300 text-sm whitespace-nowrap"
               >
-                {language === 'pt' ? "Ver Eventos" : "View Events"}
+                {language === "pt" ? "Ver Eventos" : "View Events"}
               </a>
             </div>
           </div>
@@ -218,7 +223,9 @@ export default function Footer() {
             {/* Ambassador Tier */}
             <div className="bg-purple-900/20 border border-purple-700/30 rounded-lg p-3 text-center">
               <ShieldCheckIcon className="w-5 h-5 text-purple-400 mx-auto mb-1" />
-              <div className="text-purple-400 font-bold text-xs">AMBASSADOR</div>
+              <div className="text-purple-400 font-bold text-xs">
+                AMBASSADOR
+              </div>
               <div className="text-gray-300 text-xs">£39.99/month</div>
               <div className="text-gray-400 text-xs mt-1">Premium Access</div>
             </div>
@@ -261,19 +268,22 @@ export default function Footer() {
               {/* Membership Status */}
               <div className="flex items-center gap-2 text-xs text-gray-400">
                 <CheckBadgeIcon className="h-4 w-4 text-green-400" />
-                <span>750+ verified Portuguese/Portuguese‑speaking members</span>
+                <span>
+                  750+ verified Portuguese/Portuguese‑speaking members
+                </span>
               </div>
             </div>
 
             <div className="flex items-center gap-4">
               <p className="text-gray-400 text-xs">
-                © {new Date().getFullYear()} LusoTown UK • Exclusive Lusophone Community
+                © {new Date().getFullYear()} LusoTown UK • Exclusive Lusophone
+                Community
               </p>
-              
+
               <div className="flex items-center gap-1 text-xs text-gray-400">
                 <HeartIcon className="h-3 w-3 text-action-400" />
                 <span>
-                  {language === 'pt' 
+                  {language === "pt"
                     ? "Feito com orgulho lusófono"
                     : "Made with Lusophone pride"}
                 </span>

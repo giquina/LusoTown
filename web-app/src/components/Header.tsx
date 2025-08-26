@@ -36,7 +36,7 @@ import { MobileNavButton } from "@/components/MobileNavigation";
 const getMainNavigationLinks = (t: any) => [
   {
     name: t("nav.whats_happening", "What's Happening"),
-    href: "/events",
+    href: ROUTES.events,
     description: "Discover events, activities, and community happenings",
   },
 ];
@@ -51,7 +51,7 @@ const getCommunityDropdownLinks = (t: any) => [
       "Purchase tickets for Lusophone cultural events, festivals, and community gatherings"
     ),
     icon: CalendarDaysIcon,
-    iconColor: "text-blue-500",
+    iconColor: "text-primary-500",
   },
   {
     name: t("nav.join_cultural_tours", "Join Cultural Tours"),
@@ -105,7 +105,7 @@ const getForBusinessDropdownLinks = (t: any) => [
       "Browse Portuguese businesses, restaurants, and services across the UK"
     ),
     icon: BriefcaseIcon,
-    iconColor: "text-blue-500",
+    iconColor: "text-primary-500",
   },
   {
     name: t("nav.list_your_business", "List Your Business"),
@@ -675,7 +675,7 @@ export default function Header() {
                       {t("nav.discover", "Discover")}
                     </h3>
                     <a
-                      href="/events"
+                      href={ROUTES.events}
                       className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-4 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[48px] flex items-center gap-3"
                       onClick={() => setMobileMenuOpen(false)}
                     >

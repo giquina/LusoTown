@@ -1,0 +1,49 @@
+ad21281eb5e1dcd33132cda5fcc3840c
+// Centralized logger to avoid eslint no-console warnings in app code
+// Only logs in development or when explicitly enabled via window.LUSOTOWN_DEBUG
+/* eslint-disable no-console */ "use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    default: function() {
+        return _default;
+    },
+    logger: function() {
+        return logger;
+    }
+});
+const shouldLog = ()=>{
+    if (typeof window !== "undefined") {
+        // @ts-ignore allow runtime flag
+        return process.env.NODE_ENV !== "production" || Boolean(window.LUSOTOWN_DEBUG);
+    }
+    return process.env.NODE_ENV !== "production";
+};
+const format = (level, args)=>[
+        `[LusoTown:${level}]`,
+        ...args
+    ];
+const logger = {
+    info: (...args)=>{
+        if (!shouldLog()) return;
+        console.log(...format("info", args));
+    },
+    warn: (...args)=>{
+        if (!shouldLog()) return;
+        console.warn(...format("warn", args));
+    },
+    error: (...args)=>{
+        // Allow errors in all envs, but still route through single point
+        console.error(...format("error", args));
+    }
+};
+const _default = logger;
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93b3Jrc3BhY2VzL0x1c29Ub3duL3dlYi1hcHAvc3JjL3V0aWxzL2xvZ2dlci50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBDZW50cmFsaXplZCBsb2dnZXIgdG8gYXZvaWQgZXNsaW50IG5vLWNvbnNvbGUgd2FybmluZ3MgaW4gYXBwIGNvZGVcbi8vIE9ubHkgbG9ncyBpbiBkZXZlbG9wbWVudCBvciB3aGVuIGV4cGxpY2l0bHkgZW5hYmxlZCB2aWEgd2luZG93LkxVU09UT1dOX0RFQlVHXG4vKiBlc2xpbnQtZGlzYWJsZSBuby1jb25zb2xlICovXG5cbnR5cGUgTG9nTGV2ZWwgPSBcImluZm9cIiB8IFwid2FyblwiIHwgXCJlcnJvclwiO1xuXG5jb25zdCBzaG91bGRMb2cgPSAoKSA9PiB7XG4gIGlmICh0eXBlb2Ygd2luZG93ICE9PSBcInVuZGVmaW5lZFwiKSB7XG4gICAgLy8gQHRzLWlnbm9yZSBhbGxvdyBydW50aW1lIGZsYWdcbiAgICByZXR1cm4gKFxuICAgICAgcHJvY2Vzcy5lbnYuTk9ERV9FTlYgIT09IFwicHJvZHVjdGlvblwiIHx8XG4gICAgICBCb29sZWFuKCh3aW5kb3cgYXMgYW55KS5MVVNPVE9XTl9ERUJVRylcbiAgICApO1xuICB9XG4gIHJldHVybiBwcm9jZXNzLmVudi5OT0RFX0VOViAhPT0gXCJwcm9kdWN0aW9uXCI7XG59O1xuXG5jb25zdCBmb3JtYXQgPSAobGV2ZWw6IExvZ0xldmVsLCBhcmdzOiBhbnlbXSkgPT4gW1xuICBgW0x1c29Ub3duOiR7bGV2ZWx9XWAsXG4gIC4uLmFyZ3MsXG5dO1xuXG5leHBvcnQgY29uc3QgbG9nZ2VyID0ge1xuICBpbmZvOiAoLi4uYXJnczogYW55W10pID0+IHtcbiAgICBpZiAoIXNob3VsZExvZygpKSByZXR1cm47XG4gICAgY29uc29sZS5sb2coLi4uZm9ybWF0KFwiaW5mb1wiLCBhcmdzKSk7XG4gIH0sXG4gIHdhcm46ICguLi5hcmdzOiBhbnlbXSkgPT4ge1xuICAgIGlmICghc2hvdWxkTG9nKCkpIHJldHVybjtcbiAgICBjb25zb2xlLndhcm4oLi4uZm9ybWF0KFwid2FyblwiLCBhcmdzKSk7XG4gIH0sXG4gIGVycm9yOiAoLi4uYXJnczogYW55W10pID0+IHtcbiAgICAvLyBBbGxvdyBlcnJvcnMgaW4gYWxsIGVudnMsIGJ1dCBzdGlsbCByb3V0ZSB0aHJvdWdoIHNpbmdsZSBwb2ludFxuICAgIGNvbnNvbGUuZXJyb3IoLi4uZm9ybWF0KFwiZXJyb3JcIiwgYXJncykpO1xuICB9LFxufTtcblxuZXhwb3J0IGRlZmF1bHQgbG9nZ2VyO1xuIl0sIm5hbWVzIjpbImxvZ2dlciIsInNob3VsZExvZyIsIndpbmRvdyIsInByb2Nlc3MiLCJlbnYiLCJOT0RFX0VOViIsIkJvb2xlYW4iLCJMVVNPVE9XTl9ERUJVRyIsImZvcm1hdCIsImxldmVsIiwiYXJncyIsImluZm8iLCJjb25zb2xlIiwibG9nIiwid2FybiIsImVycm9yIl0sIm1hcHBpbmdzIjoiQUFBQSxxRUFBcUU7QUFDckUsZ0ZBQWdGO0FBQ2hGLDZCQUE2Qjs7Ozs7Ozs7Ozs7SUFtQzdCLE9BQXNCO2VBQXRCOztJQWZhQSxNQUFNO2VBQU5BOzs7QUFoQmIsTUFBTUMsWUFBWTtJQUNoQixJQUFJLE9BQU9DLFdBQVcsYUFBYTtRQUNqQyxnQ0FBZ0M7UUFDaEMsT0FDRUMsUUFBUUMsR0FBRyxDQUFDQyxRQUFRLEtBQUssZ0JBQ3pCQyxRQUFRLEFBQUNKLE9BQWVLLGNBQWM7SUFFMUM7SUFDQSxPQUFPSixRQUFRQyxHQUFHLENBQUNDLFFBQVEsS0FBSztBQUNsQztBQUVBLE1BQU1HLFNBQVMsQ0FBQ0MsT0FBaUJDLE9BQWdCO1FBQy9DLENBQUMsVUFBVSxFQUFFRCxNQUFNLENBQUMsQ0FBQztXQUNsQkM7S0FDSjtBQUVNLE1BQU1WLFNBQVM7SUFDcEJXLE1BQU0sQ0FBQyxHQUFHRDtRQUNSLElBQUksQ0FBQ1QsYUFBYTtRQUNsQlcsUUFBUUMsR0FBRyxJQUFJTCxPQUFPLFFBQVFFO0lBQ2hDO0lBQ0FJLE1BQU0sQ0FBQyxHQUFHSjtRQUNSLElBQUksQ0FBQ1QsYUFBYTtRQUNsQlcsUUFBUUUsSUFBSSxJQUFJTixPQUFPLFFBQVFFO0lBQ2pDO0lBQ0FLLE9BQU8sQ0FBQyxHQUFHTDtRQUNULGlFQUFpRTtRQUNqRUUsUUFBUUcsS0FBSyxJQUFJUCxPQUFPLFNBQVNFO0lBQ25DO0FBQ0Y7TUFFQSxXQUFlViJ9

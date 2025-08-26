@@ -1,0 +1,41 @@
+f34868b7b6135c422178835c937d4b12
+// Centralized site configuration for URLs and SEO
+// Derives a canonical base URL from environment variables with safe fallbacks.
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    METADATA_BASE: function() {
+        return METADATA_BASE;
+    },
+    SITE_URL: function() {
+        return SITE_URL;
+    },
+    absoluteUrl: function() {
+        return absoluteUrl;
+    }
+});
+function normalizeUrl(u) {
+    if (!u) return null;
+    const trimmed = u.trim();
+    if (!trimmed) return null;
+    return trimmed.startsWith("http://") || trimmed.startsWith("https://") ? trimmed : `https://${trimmed}`;
+}
+// Priority: explicit public env > generic site url > Vercel provided
+const envCandidate = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || process.env.VERCEL_URL;
+const SITE_URL = normalizeUrl(envCandidate) || "https://lusotown.com";
+const METADATA_BASE = new URL(SITE_URL);
+const absoluteUrl = (path = "/")=>{
+    const base = SITE_URL.replace(/\/$/, "");
+    const p = path.startsWith("/") ? path : `/${path}`;
+    return `${base}${p}`;
+};
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93b3Jrc3BhY2VzL0x1c29Ub3duL3dlYi1hcHAvc3JjL2NvbmZpZy9zaXRlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIENlbnRyYWxpemVkIHNpdGUgY29uZmlndXJhdGlvbiBmb3IgVVJMcyBhbmQgU0VPXG4vLyBEZXJpdmVzIGEgY2Fub25pY2FsIGJhc2UgVVJMIGZyb20gZW52aXJvbm1lbnQgdmFyaWFibGVzIHdpdGggc2FmZSBmYWxsYmFja3MuXG5cbmZ1bmN0aW9uIG5vcm1hbGl6ZVVybCh1Pzogc3RyaW5nIHwgbnVsbCk6IHN0cmluZyB8IG51bGwge1xuICBpZiAoIXUpIHJldHVybiBudWxsO1xuICBjb25zdCB0cmltbWVkID0gdS50cmltKCk7XG4gIGlmICghdHJpbW1lZCkgcmV0dXJuIG51bGw7XG4gIHJldHVybiB0cmltbWVkLnN0YXJ0c1dpdGgoXCJodHRwOi8vXCIpIHx8IHRyaW1tZWQuc3RhcnRzV2l0aChcImh0dHBzOi8vXCIpXG4gICAgPyB0cmltbWVkXG4gICAgOiBgaHR0cHM6Ly8ke3RyaW1tZWR9YDtcbn1cblxuLy8gUHJpb3JpdHk6IGV4cGxpY2l0IHB1YmxpYyBlbnYgPiBnZW5lcmljIHNpdGUgdXJsID4gVmVyY2VsIHByb3ZpZGVkXG5jb25zdCBlbnZDYW5kaWRhdGUgPVxuICBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TSVRFX1VSTCB8fFxuICBwcm9jZXNzLmVudi5TSVRFX1VSTCB8fFxuICBwcm9jZXNzLmVudi5WRVJDRUxfVVJMO1xuXG5leHBvcnQgY29uc3QgU0lURV9VUkwgPSBub3JtYWxpemVVcmwoZW52Q2FuZGlkYXRlKSB8fCBcImh0dHBzOi8vbHVzb3Rvd24uY29tXCI7XG5cbmV4cG9ydCBjb25zdCBNRVRBREFUQV9CQVNFID0gbmV3IFVSTChTSVRFX1VSTCk7XG5cbi8vIEhlbHBlciB0byBidWlsZCBhYnNvbHV0ZSBVUkxzIHNhZmVseVxuZXhwb3J0IGNvbnN0IGFic29sdXRlVXJsID0gKHBhdGggPSBcIi9cIik6IHN0cmluZyA9PiB7XG4gIGNvbnN0IGJhc2UgPSBTSVRFX1VSTC5yZXBsYWNlKC9cXC8kLywgXCJcIik7XG4gIGNvbnN0IHAgPSBwYXRoLnN0YXJ0c1dpdGgoXCIvXCIpID8gcGF0aCA6IGAvJHtwYXRofWA7XG4gIHJldHVybiBgJHtiYXNlfSR7cH1gO1xufTtcbiJdLCJuYW1lcyI6WyJNRVRBREFUQV9CQVNFIiwiU0lURV9VUkwiLCJhYnNvbHV0ZVVybCIsIm5vcm1hbGl6ZVVybCIsInUiLCJ0cmltbWVkIiwidHJpbSIsInN0YXJ0c1dpdGgiLCJlbnZDYW5kaWRhdGUiLCJwcm9jZXNzIiwiZW52IiwiTkVYVF9QVUJMSUNfU0lURV9VUkwiLCJWRVJDRUxfVVJMIiwiVVJMIiwicGF0aCIsImJhc2UiLCJyZXBsYWNlIiwicCJdLCJtYXBwaW5ncyI6IkFBQUEsa0RBQWtEO0FBQ2xELCtFQUErRTs7Ozs7Ozs7Ozs7O0lBbUJsRUEsYUFBYTtlQUFiQTs7SUFGQUMsUUFBUTtlQUFSQTs7SUFLQUMsV0FBVztlQUFYQTs7O0FBcEJiLFNBQVNDLGFBQWFDLENBQWlCO0lBQ3JDLElBQUksQ0FBQ0EsR0FBRyxPQUFPO0lBQ2YsTUFBTUMsVUFBVUQsRUFBRUUsSUFBSTtJQUN0QixJQUFJLENBQUNELFNBQVMsT0FBTztJQUNyQixPQUFPQSxRQUFRRSxVQUFVLENBQUMsY0FBY0YsUUFBUUUsVUFBVSxDQUFDLGNBQ3ZERixVQUNBLENBQUMsUUFBUSxFQUFFQSxRQUFRLENBQUM7QUFDMUI7QUFFQSxxRUFBcUU7QUFDckUsTUFBTUcsZUFDSkMsUUFBUUMsR0FBRyxDQUFDQyxvQkFBb0IsSUFDaENGLFFBQVFDLEdBQUcsQ0FBQ1QsUUFBUSxJQUNwQlEsUUFBUUMsR0FBRyxDQUFDRSxVQUFVO0FBRWpCLE1BQU1YLFdBQVdFLGFBQWFLLGlCQUFpQjtBQUUvQyxNQUFNUixnQkFBZ0IsSUFBSWEsSUFBSVo7QUFHOUIsTUFBTUMsY0FBYyxDQUFDWSxPQUFPLEdBQUc7SUFDcEMsTUFBTUMsT0FBT2QsU0FBU2UsT0FBTyxDQUFDLE9BQU87SUFDckMsTUFBTUMsSUFBSUgsS0FBS1AsVUFBVSxDQUFDLE9BQU9PLE9BQU8sQ0FBQyxDQUFDLEVBQUVBLEtBQUssQ0FBQztJQUNsRCxPQUFPLENBQUMsRUFBRUMsS0FBSyxFQUFFRSxFQUFFLENBQUM7QUFDdEIifQ==
