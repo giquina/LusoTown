@@ -1,4 +1,12 @@
 {
   "framework": "nextjs",
-  "public": true
+  "public": true,
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci",
+  "regions": ["lhr1"],
+  "functions": {
+    "app/**/*.js": {
+      "runtime": "nodejs22.x"
+    }
+  }
 }
