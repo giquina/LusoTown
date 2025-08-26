@@ -27,11 +27,18 @@ This file serves as the **primary source of truth** for AI agents working on the
 
 ### ⚡ 30-Second Setup
 ```bash
-# 1. Start development (parallel terminals)
+# 1. 🚨 CRITICAL: Check for parallel Claude instances (ALWAYS FIRST)
+cat CLAUDE_COORDINATION.md | tail -20  # Check active work
+git status --porcelain | head -10      # Check concurrent changes  
+find web-app/src/components -newermt "30 minutes ago" -name "*.tsx" | head -10  # Recent files
+
+# 2. Start development (parallel terminals)
+# 3. CRITICAL: Install Playwright MCP for verification
+npm install -g @playwright/mcp@latest  # MANDATORY for all changes
 cd web-app && npm install && npm run dev    # http://localhost:3001
 cd streaming && npm install && npm start    # http://localhost:8080
 
-# 2. Essential environment setup
+# 4. Essential environment setup
 cp web-app/.env.local.example web-app/.env.local  # Configure Supabase keys
 
 # 3. Test demo access
@@ -167,6 +174,77 @@ href={ROUTES.events} // Not "/events"
 - [ ] Environment variables set correctly
 - [ ] Portuguese cultural elements present (not generic)
 - [ ] Mobile responsive design working
+
+---
+
+## 🚀 ENHANCED DEPLOYMENT SYSTEM
+
+### ✅ GitHub Actions Auto-Deployment (Updated August 2025)
+
+**CRITICAL**: The deployment system now includes comprehensive quality assurance and properly uses **Node.js v22** as required by CLAUDE.md.
+
+#### 🔧 Key Deployment Features:
+- **Node.js v22 Compliance**: Fixed version mismatch that was causing build failures
+- **Mandatory Quality Gates**: All CLAUDE.md requirements enforced
+- **Zero Hardcoding Enforcement**: Automatic hardcoding audit with deployment blocking
+- **Portuguese Platform Validation**: Cultural authenticity and configuration checks
+- **Multi-Environment Support**: Preview for PRs, Production for main branch, Manual deployment
+
+#### 🛡️ Pre-Deployment Quality Gates (REQUIRED)
+Every deployment now runs these **blocking** checks:
+```bash
+# 1. Critical Hardcoding Audit - BLOCKS deployment if failed
+npm run audit:hardcoding
+
+# 2. ESLint Validation - BLOCKS deployment if failed  
+npm run lint
+
+# 3. TypeScript Check - BLOCKS deployment if failed
+npx tsc --noEmit
+
+# 4. Production Build Test - BLOCKS deployment if failed
+npm run build
+
+# 5. Portuguese Community Platform Validation
+# - Checks for community-guidelines.ts
+# - Validates lusophone-celebrations.ts 
+# - Confirms Portuguese translations (pt.json)
+```
+
+#### 📊 Deployment Workflow Triggers:
+1. **Preview Deployment**: Automatic on Pull Requests
+2. **Production Deployment**: Automatic on push to main branch  
+3. **Manual Deployment**: Available via GitHub Actions workflow_dispatch
+
+#### 🎯 What Fixed the Previous Failures:
+- ❌ **Was**: Node.js 18 → ✅ **Now**: Node.js 22 (CLAUDE.md compliant)
+- ❌ **Was**: Ignored lint/TS errors → ✅ **Now**: Deployment blocking quality gates
+- ❌ **Was**: No hardcoding validation → ✅ **Now**: Mandatory hardcoding audit
+- ❌ **Was**: Missing platform validation → ✅ **Now**: Portuguese community checks
+- ❌ **Was**: Generic deployment → ✅ **Now**: LusoTown-specific validation
+
+#### 🚨 For AI Agents: Deployment Best Practices
+1. **Always run pre-commit checks locally before pushing**:
+   ```bash
+   cd web-app
+   npm run audit:hardcoding && npm run lint && npx tsc --noEmit && npm run build
+   ```
+
+2. **Monitor deployment status**: Check GitHub Actions tab for real-time logs
+
+3. **Preview deployments**: Use PR preview URLs for testing before merging
+
+4. **Environment variables**: Ensure all required vars are set in Vercel dashboard
+
+5. **Portuguese validation**: New deployments automatically validate cultural authenticity
+
+#### 🎊 Deployment Success Indicators:
+- ✅ All quality gates pass
+- ✅ Node.js v22 confirmed  
+- ✅ Zero hardcoding policy enforced
+- ✅ Portuguese community platform validated
+- ✅ Live deployment URL provided
+- ✅ Community metrics confirmed (750+ members, 2,150+ students, 8 universities)
 
 ---
 
@@ -823,8 +901,16 @@ Task tool with:
 - **Unit Tests**: Jest with jsdom for component testing
 - **Integration Tests**: API routes and context integration
 - **E2E Tests**: Playwright across Chrome, Firefox, Safari, Mobile
+- **🚨 PLAYWRIGHT MCP**: Mandatory verification for all changes
 - **Mobile UX Tests**: Custom mobile validation framework
 - **Portuguese Tests**: Bilingual functionality validation
+
+#### 🚨 CRITICAL: Playwright MCP Integration (MANDATORY)
+```bash
+npm install -g @playwright/mcp@latest  # Install MCP server
+npx playwright test ux-fixes-focused-verification.spec.ts  # UX verification
+```
+**Required for**: All UI changes, UX fixes, component modifications, layout updates
 
 #### Performance Optimization Stack
 - Bundle splitting with vendor, framework, and common chunks

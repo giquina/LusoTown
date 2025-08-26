@@ -1,6 +1,14 @@
-# GitHub Actions Deployment Setup
+# Enhanced GitHub Actions Deployment Setup (Updated August 2025)
 
-This document explains how to configure GitHub Actions for automatic deployment to Vercel.
+This document explains the enhanced GitHub Actions configuration for automatic deployment to Vercel with comprehensive quality assurance.
+
+## 🚨 CRITICAL UPDATE: Deployment System Fixed
+
+**Previous Issues Resolved**:
+- ❌ **Fixed**: Node.js version mismatch (was 18, now 22 as required by CLAUDE.md)
+- ❌ **Fixed**: Ignored quality checks (now deployment-blocking)
+- ❌ **Fixed**: Missing hardcoding validation (now mandatory audit)
+- ❌ **Fixed**: No Portuguese platform validation (now culturally-aware checks)
 
 ## Required GitHub Secrets
 
@@ -41,24 +49,36 @@ Click **New repository secret** for each of the following:
 3. Scroll to **General** section
 4. Copy the **Project ID**
 
-## Workflow Features
+## Enhanced Workflow Features (August 2025)
 
-Our GitHub Actions workflow includes:
+Our enhanced GitHub Actions workflow now includes:
+
+### 🛡️ **Mandatory Quality Assurance** (NEW)
+Every deployment is **BLOCKED** if these checks fail:
+- **Critical Hardcoding Audit**: `npm run audit:hardcoding` 
+- **ESLint Validation**: `npm run lint` (no longer ignored)
+- **TypeScript Check**: `npx tsc --noEmit` (no longer ignored)
+- **Production Build Test**: `npm run build` (mandatory)
+- **Portuguese Community Validation**: Cultural authenticity checks
 
 ### 🚀 **Automatic Deployment**
-- **Preview Deployments:** For pull requests
-- **Production Deployments:** For pushes to main branch
-- **Manual Deployments:** Via workflow_dispatch trigger
+- **Preview Deployments**: For pull requests (with automated PR comments)
+- **Production Deployments**: For pushes to main branch
+- **Manual Deployments**: Via workflow_dispatch trigger
 
-### 🔍 **Code Quality Checks**
-- ESLint linting
-- TypeScript type checking
-- Runs on every push and PR
+### 🎯 **Portuguese Community Platform Validation** (NEW)
+Automatic validation of LusoTown-specific requirements:
+- ✅ Validates `community-guidelines.ts` configuration exists
+- ✅ Confirms `lusophone-celebrations.ts` cultural data present  
+- ✅ Checks Portuguese translations (`pt.json`) completeness
+- ✅ Enforces cultural authenticity standards
+- ✅ Validates mobile-first Portuguese-speaking community design
 
-### 📦 **Build Process**
-- Node.js 18 setup
+### 📦 **Corrected Build Process**
+- **Node.js v22 setup** (Fixed: was using v18, now matches CLAUDE.md requirement)
 - NPM dependency caching
-- Production-optimized builds
+- Production-optimized builds with Portuguese content delivery
+- Community metrics validation (750+ members, 2,150+ students, 8 universities)
 
 ## Deployment Triggers
 

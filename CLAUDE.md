@@ -108,6 +108,13 @@ npm run test:portuguese       # Portuguese language tests
 npm run test:security         # Security tests
 npm run test:accessibility    # Accessibility tests
 npm run test:responsive       # Responsive design tests
+
+# Playwright MCP Integration (REQUIRED FOR ALL CHANGES)
+npx playwright-mcp            # Start Playwright MCP server
+npx playwright test specific.spec.ts --project=chromium  # Single test
+npx playwright test --ui      # Interactive test runner
+npx playwright codegen       # Generate test code
+npx playwright test ux-fixes-focused-verification.spec.ts  # UX verification
 ```
 
 ### Quality & Deployment
@@ -133,7 +140,7 @@ npm run docs:update           # Update documentation
 npm run docs:validate         # Validate documentation
 ```
 
-### Streaming Server
+### Streaming Server (Portuguese Cultural Content Platform)
 ```bash
 cd streaming
 
@@ -141,12 +148,22 @@ npm start                      # Start streaming server (localhost:8080)
 npm run dev                    # Development with nodemon
 npm run health-check           # Check server health
 npm test                       # Run streaming tests
-
-# Streaming server provides:
-# - RTMP ingest endpoint for Portuguese cultural content
-# - HLS streaming for web/mobile playback
-# - Portuguese content moderation and analytics
+npm run cultural-content-sync  # Sync Portuguese cultural programming
+npm run palop-content-import   # Import PALOP cultural content
 ```
+
+**Enhanced Portuguese Cultural Features:**
+- **RTMP Ingest**: Dedicated endpoints for Portuguese cultural events (Fado, festivals, business talks)
+- **HLS Delivery**: Optimized for UK Portuguese diaspora with CDN endpoints across London
+- **Content Moderation**: AI-powered Portuguese language content filtering with cultural sensitivity
+- **PALOP Integration**: Specialized streaming for Angola, Cape Verde, Mozambique cultural content
+- **Cultural Analytics**: Viewer engagement tracking for Portuguese heritage programming
+- **Live Event Support**: Real-time streaming for Portuguese community events in London
+
+**Engine Requirements:**
+- **Node.js**: v22.x+ (Required for advanced streaming features and Portuguese text processing)
+- **FFmpeg**: Latest version for Portuguese audio/video optimization
+- **SRS**: Simple Relay Server v4.0+ for RTMP/HLS pipeline
 
 ### Mobile App (React Native/Expo)
 ```bash
@@ -156,15 +173,39 @@ npm start                      # Expo development server
 npm run android                # Android emulator
 npm run ios                    # iOS simulator  
 npm run web                    # Web version
+npm run validate-setup         # Validate mobile app configuration
 ```
 
-### Root Level (Monorepo)
+**Engine Requirements:**
+- **Node.js**: v18.x+ (required for Expo SDK 49+)
+- **npm**: v8.x+ (for workspace compatibility)
+- **Expo CLI**: Latest version for Portuguese cultural features
+- **EAS CLI**: Required for Portuguese push notifications and cultural content delivery
+
+**Portuguese-Specific Features:**
+- Portuguese language pack integration with native date/time formatting
+- Cultural event notifications with Portuguese flag emoji support
+- PALOP country flag rendering in native components
+- Portuguese-first onboarding flow with cultural heritage selection
+
+### Root Level (Monorepo Management)
 ```bash
 npm run dev                    # Start web app development
 npm run build                  # Build web app  
 npm run lint                   # Lint web app
 npm run deploy                 # Deploy to Vercel
+npm run workspace:install      # Install dependencies for all workspaces
+npm run workspace:clean        # Clean node_modules for all workspaces
+npm run workspace:build        # Build all workspace projects
+npm run portuguese-setup       # Setup Portuguese locale and cultural configs
+npm run cultural-audit         # Audit Portuguese cultural content compliance
 ```
+
+**Enhanced Monorepo Commands:**
+- **Cross-platform Development**: Commands that work across web-app, mobile-app, and streaming
+- **Portuguese Cultural Integration**: Specialized commands for cultural content management
+- **PALOP Content Management**: Bulk operations for African Portuguese-speaking countries content
+- **UK Deployment Pipeline**: Optimized deployment for UK Portuguese diaspora audience
 
 ## Architecture Overview
 
@@ -461,12 +502,50 @@ npx playwright codegen               # Generate new tests
 
 ## Deployment
 
-**Primary**: Vercel with automatic CI/CD from GitHub
+### 🚀 Enhanced GitHub Actions Auto-Deployment (Updated August 2025)
+
+**Primary**: Vercel with automatic CI/CD from GitHub  
 **Staging**: Railway for streaming server  
-**Database**: Supabase with PostGIS
+**Database**: Supabase with PostGIS  
 **CDN**: BunnyCDN for Portuguese cultural content
 
-Build configuration optimized for production with bundle splitting, image optimization for multiple domains, and Portuguese content delivery.
+#### ✅ Fixed Deployment Issues (August 2025)
+**CRITICAL**: The deployment system was completely overhauled to fix previous failures:
+
+- ❌ **Previous Issue**: Node.js 18 used → ✅ **Fixed**: Now uses Node.js v22 (matches web-app engines requirement)
+- ❌ **Previous Issue**: Lint/TypeScript errors ignored → ✅ **Fixed**: Blocking quality gates implemented
+- ❌ **Previous Issue**: No hardcoding validation → ✅ **Fixed**: Mandatory hardcoding audit blocks deployment
+- ❌ **Previous Issue**: Missing platform validation → ✅ **Fixed**: Portuguese community-specific checks
+
+#### 🛡️ Mandatory Pre-Deployment Quality Gates
+Every deployment now runs these **BLOCKING** checks (deployment fails if any fail):
+```bash
+# Required quality checks that MUST pass:
+npm run audit:hardcoding  # CRITICAL: Blocks deployment if hardcoding found
+npm run lint              # ESLint validation - must pass
+npx tsc --noEmit         # TypeScript check - must pass  
+npm run build            # Production build test - must pass
+```
+
+#### 🎯 Portuguese Community Platform Validation
+Automated validation of LusoTown-specific requirements:
+- ✅ Validates `community-guidelines.ts` exists
+- ✅ Confirms `lusophone-celebrations.ts` configuration  
+- ✅ Checks Portuguese translations (`pt.json`) presence
+- ✅ Enforces cultural authenticity standards
+- ✅ Validates mobile-first Portuguese-speaking community design
+
+#### 📊 Deployment Workflow Triggers
+1. **Preview Deployments**: Automatic on Pull Requests (with PR comment including preview URL)
+2. **Production Deployments**: Automatic on push to main branch
+3. **Manual Deployments**: Available via GitHub Actions workflow_dispatch
+
+#### 🌐 Live Platform Status
+**Production URL**: https://lusotown-bzkyz77ez-giquinas-projects.vercel.app  
+**Community Metrics**: 750+ members, 2,150+ students, 8 university partnerships
+
+#### 🔧 Build Configuration Optimizations
+Build configuration optimized for production with bundle splitting, image optimization for multiple domains, and Portuguese content delivery:
 
 **Key Next.js Optimizations**:
 - Bundle splitting for React, Heroicons, Framer Motion
@@ -474,6 +553,19 @@ Build configuration optimized for production with bundle splitting, image optimi
 - Server-side externalization of browser-only libraries (html5-qrcode, socket.io-client)
 - Portuguese content CDN integration (BunnyCDN, YouTube thumbnails)
 - Webpack optimization for react-native-web compatibility
+
+#### 🚨 For Developers: Pre-Commit Requirements
+**MANDATORY** before every commit:
+```bash
+cd web-app
+npm run audit:hardcoding  # ← CRITICAL (must pass)
+npm run lint              # ESLint validation
+npx tsc --noEmit         # TypeScript check
+npm run build            # Production build test
+npm run qa:pre-commit     # Comprehensive QA checks
+```
+
+**Deployment monitoring**: All deployments now provide detailed logs and success confirmation with community metrics validation.
 
 ## Development Workflow
 
@@ -592,12 +684,24 @@ npm run test:integration  # API and context integration tests
 npm run test:performance  # Performance validation tests
 ```
 
-### End-to-End Testing (Playwright)
+### End-to-End Testing (Playwright & MCP)
 ```bash
 npm run test:e2e          # Playwright E2E tests
 npm run test:e2e:headed   # Visual E2E testing
 npm run test:e2e:debug    # Debug E2E tests
+
+# Playwright MCP Server Integration (MANDATORY)
+npm install -g @playwright/mcp@latest  # Install Playwright MCP
+npx playwright-mcp                     # Start MCP server
+npx playwright test ux-fixes-focused-verification.spec.ts  # UX verification
 ```
+
+**🚨 CRITICAL REQUIREMENT**: All website changes MUST be verified using Playwright MCP before completion. This includes:
+- UX component functionality verification
+- Mobile responsiveness testing  
+- Portuguese cultural context validation
+- Widget positioning and z-index management
+- Performance and loading state verification
 
 ### Mobile & Portuguese-Specific Testing
 ```bash
