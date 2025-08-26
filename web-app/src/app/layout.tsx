@@ -337,10 +337,8 @@ export default function RootLayout({
 
                                             <ScrollToTop />
 
-                                            <ErrorBoundary>
-                                              {/* Demo removed from SSR path to avoid server/client boundary issues */}
-                                              {children}
-                                            </ErrorBoundary>
+                                            {/* Demo removed from SSR path to avoid server/client boundary issues */}
+                                            {children}
 
                                             {/* WhatsApp widget removed per request; keeping LusoBot only */}
 

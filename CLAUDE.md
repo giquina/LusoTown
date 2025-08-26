@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**Updated: 2025-08-26** | **Last Commit**: 66068c0 feat: Complete LusoTown platform deployment and navigation testing
+**Updated: 2025-08-26** | **Last Commit**: 3c42e6f fix: GitHub Actions hardcoding audit - make informational instead of blocking
 
 ## ⚡ Quick Reference
 
@@ -72,11 +72,11 @@ LusoTown is a production-ready Portuguese-speaking community platform serving th
 
 **Last Updated**: 2025-08-26  
 **Node Version**: v20.19.4  
-**Last Commit**: 66068c0 feat: Complete LusoTown platform deployment and navigation testing  
+**Last Commit**: 3c42e6f fix: GitHub Actions hardcoding audit - make informational instead of blocking  
 **Architecture**: 135 pages, 496 components, 49 config files  
 **AI Systems**: 4 production AI engines  
 **Test Coverage**: 24 test files  
-**Documentation**: 1653 .md files
+**Documentation**: 1670 .md files
 
 **Key npm Scripts**: preinstall, dev, build, start, lint, export, deploy, auto-fix, deployment-monitor, deploy:auto  
 **Major Dependencies**: @headlessui/react, @heroicons/react, @lusotown/design-tokens, @lusotown/ui, @sentry/nextjs, @sentry/profiling-node, @sentry/react, @stripe/stripe-js

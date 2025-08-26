@@ -1,0 +1,330 @@
+/**
+ * LusoTown Lusophone Carousel Styles
+ * Portuguese-speaking community focused carousel component styles
+ * Optimized for cultural authenticity and accessibility
+ */
+
+/* Base carousel styles */
+.lusophone-carousel {
+  @apply w-full;
+}
+
+/* Carousel container */
+.carousel-container {
+  @apply relative overflow-hidden;
+}
+
+/* Smooth scrolling for native scroll carousels */
+.carousel-scroll {
+  @apply scroll-smooth;
+  scroll-behavior: smooth;
+}
+
+/* Navigation button base styles */
+.nav-button {
+  @apply absolute top-1/2 -translate-y-1/2 z-20;
+  @apply bg-white/90 hover:bg-white shadow-lg hover:shadow-xl;
+  @apply w-12 h-12 rounded-full flex items-center justify-center;
+  @apply border border-gray-200 hover:border-gray-300;
+  @apply transition-all duration-300 ease-out;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  @apply disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Portuguese brand colors for focus states */
+.nav-button:focus {
+  @apply ring-primary-500;
+}
+
+.nav-button:hover:not(:disabled) {
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Previous button positioning */
+.nav-button-prev {
+  @apply left-4;
+}
+
+/* Next button positioning */
+.nav-button-next {
+  @apply right-4;
+}
+
+/* Play/pause button positioning */
+.nav-button-play {
+  @apply right-20;
+}
+
+/* Navigation button icons */
+.nav-button-icon {
+  @apply w-5 h-5 transition-colors duration-200;
+  @apply text-gray-600 group-hover:text-gray-800;
+}
+
+/* Portuguese brand colors for icons */
+.nav-button:hover .nav-button-icon {
+  @apply text-primary-600;
+}
+
+/* Dot indicators container */
+.dot-indicators {
+  @apply flex justify-center space-x-2 mt-6;
+}
+
+/* Individual dot indicator */
+.dot-indicator {
+  @apply w-3 h-3 rounded-full transition-all duration-300;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+  @apply bg-primary-300 hover:bg-primary-400;
+}
+
+/* Active dot indicator */
+.dot-indicator-active {
+  @apply bg-primary-600 scale-125;
+}
+
+/* Carousel content area */
+.carousel-content {
+  @apply overflow-hidden rounded-xl p-6;
+  background: linear-gradient(135deg, #fdf7ed 0%, #f7d997 100%);
+}
+
+/* Grid layout for carousel items */
+.carousel-grid {
+  @apply grid gap-6;
+}
+
+/* Animation classes for smooth transitions */
+.carousel-item-enter {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.carousel-item-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.carousel-item-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.carousel-item-exit-active {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+/* Loading skeleton styles */
+.carousel-skeleton {
+  @apply animate-pulse;
+}
+
+.carousel-skeleton-item {
+  @apply bg-gray-200 rounded-xl;
+  height: 16rem; /* 64 * 0.25rem = 16rem = 256px */
+}
+
+/* Empty state styles */
+.carousel-empty-state {
+  @apply flex flex-col items-center justify-center py-12 text-center;
+}
+
+.carousel-empty-state-icon {
+  @apply w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4;
+}
+
+.carousel-empty-state-text {
+  @apply text-gray-600 max-w-md;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-button {
+    @apply w-10 h-10;
+  }
+  
+  .nav-button-icon {
+    @apply w-4 h-4;
+  }
+  
+  .nav-button-prev {
+    @apply left-2;
+  }
+  
+  .nav-button-next {
+    @apply right-2;
+  }
+  
+  .nav-button-play {
+    @apply right-14;
+  }
+  
+  .carousel-content {
+    @apply p-4;
+  }
+  
+  .carousel-grid {
+    @apply gap-4;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .carousel-content {
+    @apply p-5;
+  }
+  
+  .carousel-grid {
+    @apply gap-5;
+  }
+}
+
+/* Desktop optimization */
+@media (min-width: 1024px) {
+  .carousel-content {
+    @apply p-6;
+  }
+  
+  .carousel-grid {
+    @apply gap-6;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .nav-button {
+    @apply border-2 border-gray-800;
+  }
+  
+  .nav-button-icon {
+    @apply text-gray-900;
+  }
+  
+  .dot-indicator {
+    @apply border-2 border-gray-800;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-item-enter-active,
+  .carousel-item-exit-active {
+    transition: none;
+  }
+  
+  .nav-button,
+  .dot-indicator {
+    @apply transition-none;
+  }
+  
+  .carousel-skeleton {
+    @apply animate-none;
+  }
+}
+
+/* Focus visible improvements */
+.nav-button:focus-visible {
+  @apply ring-2 ring-primary-500 ring-offset-2;
+}
+
+.dot-indicator:focus-visible {
+  @apply ring-2 ring-primary-500 ring-offset-2;
+}
+
+/* Portuguese cultural theming */
+.lusophone-carousel {
+  --primary-50: #fdf7ed;
+  --primary-100: #fbedc2;
+  --primary-200: #f7d997;
+  --primary-300: #f3c56b;
+  --primary-400: #efb140;
+  --primary-500: #d4a574;
+  --primary-600: #b8945e;
+  --primary-700: #9c8248;
+  --primary-800: #807032;
+  --primary-900: #645e1c;
+  
+  --gold-50: #fdf7ed;
+  --gold-100: #fbedc2;
+  --gold-200: #f7d997;
+  --gold-300: #f3c56b;
+  --gold-400: #efb140;
+  --gold-500: #d4a574;
+  --gold-600: #b8945e;
+  --gold-700: #9c8248;
+  --gold-800: #807032;
+  --gold-900: #645e1c;
+}
+
+/* Portuguese cultural gradient backgrounds */
+.carousel-content-lusophone {
+  background: linear-gradient(135deg, 
+    var(--primary-50) 0%, 
+    var(--gold-100) 50%, 
+    var(--primary-100) 100%
+  );
+}
+
+/* Cultural celebration themed carousel */
+.carousel-content-celebration {
+  background: linear-gradient(135deg, 
+    #fdf2f2 0%, 
+    #f8d7d7 30%, 
+    #fdf7ed 70%, 
+    #f7d997 100%
+  );
+}
+
+/* PALOP heritage themed carousel */
+.carousel-content-palop {
+  background: linear-gradient(135deg, 
+    #f0f8f0 0%, 
+    #d6e8d6 30%, 
+    #fdf7ed 70%, 
+    #f7d997 100%
+  );
+}
+
+/* Music heritage themed carousel */
+.carousel-content-music {
+  background: linear-gradient(135deg, 
+    #f3f4f6 0%, 
+    #e5e7eb 30%, 
+    #fdf7ed 70%, 
+    #f7d997 100%
+  );
+}
+
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Card hover effects */
+.carousel-card {
+  @apply transition-all duration-300 ease-out;
+  @apply hover:shadow-lg hover:scale-[1.02] hover:-translate-y-1;
+}
+
+/* Card focus states */
+.carousel-card:focus-within {
+  @apply ring-2 ring-primary-500 ring-offset-2;
+}
+
+/* Loading states */
+.carousel-loading {
+  @apply opacity-75;
+}
+
+/* Error states */
+.carousel-error {
+  @apply border-red-200 bg-red-50;
+}
+
+/* Success states */
+.carousel-success {
+  @apply border-green-200 bg-green-50;
+}

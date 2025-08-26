@@ -1,189 +1,157 @@
-/**
- * Mobile App Configuration
- * Integrates with shared configuration following LusoTown's zero hardcoding policy
- * Imports shared configurations and provides mobile-specific enhancements
- */
+// 🇵🇹 LusoTown Mobile - Portuguese Cultural Configuration
 
-// Import shared configuration from @lusotown/shared
-import { config as sharedConfig } from '@lusotown/shared';
+export const CULTURAL_SYMBOLS = {
+  flag: '🇵🇹',
+  castle: '🏰',
+  ship: '⛵',
+  music: '🎵',
+  wine: '🍷',
+  fish: '🐟',
+  azulejo: '🟦',
+  fado: '🎶',
+  pastéis: '🧁',
+  cork: '🌳',
+};
 
-// Mobile-specific configuration
-export const MOBILE_CONFIG = {
-  // App metadata
-  app: {
-    name: 'LusoTown',
-    version: '1.0.0',
-    scheme: 'lusotown',
-    bundleIdentifier: 'com.lusotown.app'
+export const HERITAGE_FLAGS = {
+  portugal: '🇵🇹',
+  brazil: '🇧🇷',
+  'cape-verde': '🇨🇻',
+  angola: '🇦🇴',
+  mozambique: '🇲🇿',
+  'guinea-bissau': '🇬🇼',
+  'east-timor': '🇹🇱',
+  'sao-tome': '🇸🇹',
+};
+
+export const PORTUGUESE_REGIONS = {
+  minho: { name: { en: 'Minho', pt: 'Minho' }, emoji: '🌿' },
+  douro: { name: { en: 'Douro', pt: 'Douro' }, emoji: '🍇' },
+  'tras-os-montes': { name: { en: 'Trás-os-Montes', pt: 'Trás-os-Montes' }, emoji: '⛰️' },
+  'beira-interior': { name: { en: 'Beira Interior', pt: 'Beira Interior' }, emoji: '🏔️' },
+  'beira-litoral': { name: { en: 'Beira Litoral', pt: 'Beira Litoral' }, emoji: '🌊' },
+  'ribatejo': { name: { en: 'Ribatejo', pt: 'Ribatejo' }, emoji: '🐂' },
+  'estremadura': { name: { en: 'Estremadura', pt: 'Estremadura' }, emoji: '🏛️' },
+  'alto-alentejo': { name: { en: 'Alto Alentejo', pt: 'Alto Alentejo' }, emoji: '🌾' },
+  'baixo-alentejo': { name: { en: 'Baixo Alentejo', pt: 'Baixo Alentejo' }, emoji: '🫒' },
+  algarve: { name: { en: 'Algarve', pt: 'Algarve' }, emoji: '🏖️' },
+  azores: { name: { en: 'Azores', pt: 'Açores' }, emoji: '🌋' },
+  madeira: { name: { en: 'Madeira', pt: 'Madeira' }, emoji: '🌺' },
+};
+
+export const LUSOPHONE_COUNTRIES = [
+  {
+    code: 'portugal',
+    name: { en: 'Portugal', pt: 'Portugal' },
+    flag: '🇵🇹',
+    language: 'pt',
+    capital: { en: 'Lisbon', pt: 'Lisboa' },
+    continent: 'Europe',
   },
-
-  // API endpoints
-  api: {
-    baseUrl: process.env.EXPO_PUBLIC_API_URL || 'https://lusotown.com/api',
-    webUrl: process.env.EXPO_PUBLIC_WEB_URL || 'https://lusotown.com',
-    streamingUrl: process.env.EXPO_PUBLIC_STREAMING_URL || 'http://localhost:8080'
+  {
+    code: 'brazil',
+    name: { en: 'Brazil', pt: 'Brasil' },
+    flag: '🇧🇷',
+    language: 'pt',
+    capital: { en: 'Brasília', pt: 'Brasília' },
+    continent: 'South America',
   },
-
-  // Portuguese cultural features
-  culture: {
-    defaultLanguage: process.env.EXPO_PUBLIC_DEFAULT_LANGUAGE || 'en',
-    supportedLanguages: process.env.EXPO_PUBLIC_SUPPORTED_LANGUAGES?.split(',') || ['en', 'pt'],
-    heritageCode: process.env.EXPO_PUBLIC_HERITAGE_CODE || 'pt',
-    enableCulturalFeatures: process.env.EXPO_PUBLIC_CULTURAL_FEATURES === 'true',
-    lusophoneNations: process.env.EXPO_PUBLIC_LUSOPHONE_NATIONS?.split(',') || ['pt', 'br', 'cv', 'ao', 'mz', 'gw', 'st', 'tl']
+  {
+    code: 'cape-verde',
+    name: { en: 'Cape Verde', pt: 'Cabo Verde' },
+    flag: '🇨🇻',
+    language: 'pt',
+    capital: { en: 'Praia', pt: 'Praia' },
+    continent: 'Africa',
   },
+  {
+    code: 'angola',
+    name: { en: 'Angola', pt: 'Angola' },
+    flag: '🇦🇴',
+    language: 'pt',
+    capital: { en: 'Luanda', pt: 'Luanda' },
+    continent: 'Africa',
+  },
+  {
+    code: 'mozambique',
+    name: { en: 'Mozambique', pt: 'Moçambique' },
+    flag: '🇲🇿',
+    language: 'pt',
+    capital: { en: 'Maputo', pt: 'Maputo' },
+    continent: 'Africa',
+  },
+  {
+    code: 'guinea-bissau',
+    name: { en: 'Guinea-Bissau', pt: 'Guiné-Bissau' },
+    flag: '🇬🇼',
+    language: 'pt',
+    capital: { en: 'Bissau', pt: 'Bissau' },
+    continent: 'Africa',
+  },
+  {
+    code: 'east-timor',
+    name: { en: 'East Timor', pt: 'Timor-Leste' },
+    flag: '🇹🇱',
+    language: 'pt',
+    capital: { en: 'Dili', pt: 'Díli' },
+    continent: 'Asia',
+  },
+  {
+    code: 'sao-tome',
+    name: { en: 'São Tomé and Príncipe', pt: 'São Tomé e Príncipe' },
+    flag: '🇸🇹',
+    language: 'pt',
+    capital: { en: 'São Tomé', pt: 'São Tomé' },
+    continent: 'Africa',
+  },
+];
 
-  // Community metrics
+export const CULTURAL_INTERESTS = [
+  { id: 'fado', name: { en: 'Fado Music', pt: 'Fado' }, emoji: '🎶', category: 'music' },
+  { id: 'football', name: { en: 'Football', pt: 'Futebol' }, emoji: '⚽', category: 'sports' },
+  { id: 'gastronomy', name: { en: 'Portuguese Cuisine', pt: 'Gastronomia Portuguesa' }, emoji: '🍽️', category: 'food' },
+  { id: 'wine', name: { en: 'Portuguese Wines', pt: 'Vinhos Portugueses' }, emoji: '🍷', category: 'food' },
+  { id: 'literature', name: { en: 'Portuguese Literature', pt: 'Literatura Portuguesa' }, emoji: '📚', category: 'culture' },
+  { id: 'history', name: { en: 'Portuguese History', pt: 'História Portuguesa' }, emoji: '🏛️', category: 'culture' },
+  { id: 'festivals', name: { en: 'Portuguese Festivals', pt: 'Festas Portuguesas' }, emoji: '🎊', category: 'culture' },
+  { id: 'handicrafts', name: { en: 'Portuguese Handicrafts', pt: 'Artesanato Português' }, emoji: '🎨', category: 'arts' },
+  { id: 'azulejos', name: { en: 'Portuguese Tiles', pt: 'Azulejos' }, emoji: '🟦', category: 'arts' },
+  { id: 'navigation', name: { en: 'Portuguese Discoveries', pt: 'Descobrimentos Portugueses' }, emoji: '🧭', category: 'history' },
+  { id: 'folk-dance', name: { en: 'Portuguese Folk Dance', pt: 'Folclore Português' }, emoji: '💃', category: 'dance' },
+  { id: 'cork', name: { en: 'Portuguese Cork', pt: 'Cortiça Portuguesa' }, emoji: '🌳', category: 'nature' },
+];
+
+export const APP_CONFIG = {
+  name: 'LusoTown',
+  version: '1.0.0',
+  description: {
+    en: 'Portuguese-speaking Community Platform in the UK',
+    pt: 'Plataforma da Comunidade de Língua Portuguesa no Reino Unido',
+  },
+  supportEmail: 'support@lusotown.com',
   community: {
-    totalMembers: parseInt(process.env.EXPO_PUBLIC_TOTAL_MEMBERS || '750'),
-    totalStudents: parseInt(process.env.EXPO_PUBLIC_TOTAL_STUDENTS || '2150'),
-    universityPartnerships: parseInt(process.env.EXPO_PUBLIC_UNIVERSITY_PARTNERSHIPS || '8'),
-    businessListings: parseInt(process.env.EXPO_PUBLIC_BUSINESS_LISTINGS || '150'),
-    monthlyEvents: parseInt(process.env.EXPO_PUBLIC_MONTHLY_EVENTS || '45')
-  },
-
-  // Mobile-specific features
-  features: {
-    biometricAuth: process.env.EXPO_PUBLIC_BIOMETRIC_AUTH === 'true',
-    pushNotifications: process.env.EXPO_PUBLIC_PUSH_NOTIFICATIONS === 'true',
-    secureStorage: process.env.EXPO_PUBLIC_SECURE_STORAGE === 'true',
-    offlineMode: true,
-    darkMode: true,
-    hapticFeedback: process.env.EXPO_PUBLIC_VIBRATION === 'true',
-    streaming: process.env.EXPO_PUBLIC_ENABLE_STREAMING === 'true',
-    matching: process.env.EXPO_PUBLIC_ENABLE_MATCHING === 'true',
-    transport: process.env.EXPO_PUBLIC_ENABLE_TRANSPORT === 'true',
-    events: process.env.EXPO_PUBLIC_ENABLE_EVENTS === 'true',
-    premium: process.env.EXPO_PUBLIC_ENABLE_PREMIUM === 'true',
-    businessDirectory: process.env.EXPO_PUBLIC_ENABLE_BUSINESS_DIRECTORY === 'true'
-  },
-
-  // Development settings
-  development: {
-    isDevelopment: process.env.EXPO_PUBLIC_DEVELOPMENT_MODE === 'true',
-    debugMode: process.env.EXPO_PUBLIC_DEBUG_MODE === 'true',
-    logLevel: process.env.EXPO_PUBLIC_LOG_LEVEL || 'info',
-    enableFlipper: process.env.EXPO_PUBLIC_ENABLE_FLIPPER === 'true',
-    performanceMonitoring: process.env.EXPO_PUBLIC_PERFORMANCE_MONITORING === 'true'
-  }
-};
-
-// Portuguese Cultural Configuration for Mobile
-export const PORTUGUESE_COLORS = {
-  red: '#FF0000',           // Portuguese flag red
-  green: '#00A859',         // Portuguese flag green
-  gold: '#FFD700',          // Portuguese heritage gold
-  azulejo: '#4A90E2',       // Portuguese tile blue
-  primary: '#FF0000',       // Main brand color
-  secondary: '#00A859',     // Secondary brand color
-  accent: '#FFD700'         // Accent color
-};
-
-// Mobile Routes Configuration
-export const MOBILE_ROUTES = {
-  auth: {
-    welcome: 'Welcome',
-    login: 'Login',
-    signup: 'Signup',
-    onboarding: 'OnboardingFlow'
-  },
-  main: {
-    home: 'Home',
-    events: 'Events',
-    matches: 'Matches',
-    directory: 'Directory',
-    profile: 'Profile'
-  },
-  modals: {
-    eventDetails: 'EventDetails',
-    userProfile: 'UserProfile',
-    businessDetails: 'BusinessDetails',
-    booking: 'BookingScreen',
-    subscription: 'SubscriptionScreen',
-    badges: 'CommunityBadgesScreen',
-    settings: 'Settings'
-  }
-};
-
-// Mobile-Specific Subscription Plans
-export const SUBSCRIPTION_PLANS = {
-  free: {
-    id: 'free',
-    name: 'Comunidade',
-    priceMonthly: 0,
-    priceYearly: 0,
-    features: ['Basic events', 'Community access', 'Business directory'],
-    maxConnections: 50
-  },
-  community: {
-    id: 'community',
-    name: 'Embaixador',
-    priceMonthly: 19.99,
-    priceYearly: 199.99,
-    features: ['All events', 'Premium matching', 'Priority support'],
-    maxConnections: 500
-  },
-  ambassador: {
-    id: 'ambassador',
-    name: 'Patrono',
-    priceMonthly: 39.99,
-    priceYearly: 399.99,
-    features: ['Everything', 'Exclusive events', 'Business promotion'],
-    maxConnections: 2000
-  }
-};
-
-// Contact Information
-export const CONTACT_INFO = {
-  support: {
-    email: process.env.EXPO_PUBLIC_SUPPORT_EMAIL || 'support@lusotown.com',
-    phone: '+44 20 7946 0958'
-  },
-  demo: {
-    email: process.env.EXPO_PUBLIC_DEMO_EMAIL || 'demo@lusotown.com',
-    password: process.env.EXPO_PUBLIC_DEMO_PASSWORD || 'LusoTown2025!'
+    totalMembers: 2750,
+    totalStudents: 2150,
+    universityPartnerships: 8,
   },
   social: {
-    twitter: process.env.EXPO_PUBLIC_TWITTER_HANDLE || '@LusoTownUK',
-    instagram: process.env.EXPO_PUBLIC_INSTAGRAM_HANDLE || '@lusotownuk',
-    facebook: process.env.EXPO_PUBLIC_FACEBOOK_PAGE || 'LusoTownUK'
-  }
+    twitter: '@LusoTownUK',
+    instagram: '@lusotownuk',
+    facebook: 'LusoTownUK',
+  },
 };
 
-// Mobile-specific helper functions
-export const getMobileTabIcon = (tabName: string): string => {
-  const icons: Record<string, string> = {
-    home: 'home',
-    events: 'calendar',
-    matches: 'users',
-    business: 'briefcase',
-    profile: 'user',
-    streaming: 'play-circle',
-    settings: 'settings'
-  };
-  return icons[tabName] || 'circle';
+export const DEMO_CREDENTIALS = {
+  email: 'demo@lusotown.com',
+  password: 'LusoTown2025!',
 };
 
-export const getDeepLinkUrl = (route: string, params?: Record<string, string>): string => {
-  let url = `${MOBILE_CONFIG.app.scheme}://${route}`;
-  if (params) {
-    const queryString = new URLSearchParams(params).toString();
-    url += `?${queryString}`;
-  }
-  return url;
-};
-
-export const isPortugueseSpeaker = (language: string): boolean => {
-  return ['pt', 'pt-BR', 'pt-PT'].includes(language);
-};
-
-// Default export for convenience
 export default {
-  MOBILE_CONFIG,
-  BRAND_CONFIG,
-  BRAND_COLORS,
-  PORTUGUESE_COLORS,
-  ROUTES,
-  SUBSCRIPTION_PLANS,
-  CONTACT_INFO
+  CULTURAL_SYMBOLS,
+  HERITAGE_FLAGS,
+  PORTUGUESE_REGIONS,
+  LUSOPHONE_COUNTRIES,
+  CULTURAL_INTERESTS,
+  APP_CONFIG,
+  DEMO_CREDENTIALS,
 };

@@ -17,7 +17,8 @@ import * as LocalAuthentication from 'expo-local-authentication';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { TextInput, Button, Divider } from 'react-native-paper';
 import { Colors, Typography, CommonStyles } from '../../constants/Styles';
-import { supabase, signInWithEmail } from '../../lib/supabase';
+import { useAuth } from '../../context/AuthContext';
+import { DEMO_CREDENTIALS } from '../../config';
 import SocialLoginButtons from '../../components/auth/SocialLoginButtons';
 import BiometricAuthButton from '../../components/auth/BiometricAuthButton';
 
@@ -32,6 +33,7 @@ const LoginSchema = Yup.object().shape({
 
 export default function LoginScreen({ navigation }: any) {
   const { t } = useTranslation();
+  const { signIn } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [biometricAvailable, setBiometricAvailable] = useState(false);
   const [savedCredentials, setSavedCredentials] = useState(null);
@@ -63,18 +65,8 @@ export default function LoginScreen({ navigation }: any) {
   const handleLogin = async (values: { email: string; password: string }) => {
     setIsLoading(true);
     try {
-      const result = await signInWithEmail(values.email, values.password);
-      
-      if (result.user) {
-        // Save email for future biometric login
-        await AsyncStorage.setItem('lusotown_user_email', values.email);
-        
-        // Track Portuguese community login
-        // TODO: Add analytics tracking
-        console.log('Portuguese community member logged in:', result.user.email);
-        
-        navigation.replace('Main');
-      }
+      await signIn(values.email, values.password);
+      console.log('Portuguese community member logged in successfully');
     } catch (error: any) {
       let errorMessage = t('auth.login.error.generic');
       
@@ -86,6 +78,18 @@ export default function LoginScreen({ navigation }: any) {
       }
       
       Alert.alert(t('auth.login.error.title'), errorMessage);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleDemoLogin = async () => {
+    setIsLoading(true);
+    try {
+      await signIn(DEMO_CREDENTIALS.email, DEMO_CREDENTIALS.password);
+      console.log('Demo user logged in successfully');
+    } catch (error: any) {
+      Alert.alert('Demo Login Failed', 'Unable to login with demo credentials. Please try manual login.');
     } finally {
       setIsLoading(false);
     }
@@ -169,9 +173,23 @@ export default function LoginScreen({ navigation }: any) {
         <Divider style={styles.divider} />
         <Text style={styles.orText}>{t('auth.login.or')}</Text>
 
+        {/* Demo Login Button */}
+        <Button
+          mode="outlined"
+          onPress={handleDemoLogin}
+          disabled={isLoading}
+          style={[styles.demoButton, { marginBottom: 24 }]}
+          labelStyle={styles.demoButtonText}
+          icon="account-circle"
+        >
+          {t('auth.login.demoLogin', { defaultValue: 'Demo Login' })}
+        </Button>
+
+        <Divider style={styles.divider} />
+
         {/* Email/Password Login Form */}
         <Formik
-          initialValues={{ email: '', password: '' }}
+          initialValues={{ email: DEMO_CREDENTIALS.email, password: DEMO_CREDENTIALS.password }}
           validationSchema={LoginSchema}
           onSubmit={handleLogin}
         >
@@ -376,5 +394,13 @@ const styles = StyleSheet.create({
     ...Typography.caption,
     color: Colors.textSecondary,
     textAlign: 'center',
+  },
+  demoButton: {
+    borderColor: Colors.secondary,
+    borderWidth: 2,
+  },
+  demoButtonText: {
+    color: Colors.secondary,
+    fontWeight: '600',
   },
 });

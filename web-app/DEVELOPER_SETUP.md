@@ -13,7 +13,7 @@ Get the LusoTown premium platform running locally in under 10 minutes.
 ### Prerequisites
 ```bash
 # Required versions
-Node.js: 22.x or higher (currently v20.19.4) (currently v20.19.4)
+Node.js: 22.x or higher (currently v20.19.4) (currently v20.19.4) (currently v20.19.4)
 npm: 9.x or higher
 Git: Latest version
 ```

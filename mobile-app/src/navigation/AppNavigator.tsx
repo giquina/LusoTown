@@ -4,6 +4,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
+import { View, Text, ActivityIndicator } from 'react-native';
+
+import { useAuth } from '../context/AuthContext';
 
 // Screens
 import WelcomeScreen from '../screens/auth/WelcomeScreen';
@@ -155,9 +158,18 @@ function AuthStack() {
 
 // Main App Navigator
 export default function AppNavigator() {
-  // TODO: Replace with actual auth state
-  const isAuthenticated = false;
-  const hasCompletedOnboarding = false;
+  const { isAuthenticated, isOnboardingComplete, isLoading } = useAuth();
+
+  if (isLoading) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: Colors.background }}>
+        <ActivityIndicator size="large" color={Colors.primary} />
+        <Text style={{ marginTop: 16, color: Colors.textSecondary }}>
+          Loading LusoTown...
+        </Text>
+      </View>
+    );
+  }
 
   return (
     <NavigationContainer>
@@ -170,7 +182,7 @@ export default function AppNavigator() {
         {!isAuthenticated ? (
           // Auth Flow
           <Stack.Screen name="Auth" component={AuthStack} />
-        ) : !hasCompletedOnboarding ? (
+        ) : !isOnboardingComplete ? (
           // Onboarding Flow  
           <Stack.Screen name="OnboardingFlow" component={OnboardingFlow} />
         ) : (

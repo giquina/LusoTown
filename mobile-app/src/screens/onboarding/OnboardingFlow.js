@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
+import { useAuth } from '../../context/AuthContext';
 
 // Import onboarding steps
 import WelcomeStep from './WelcomeStep';
@@ -16,8 +17,9 @@ import InterestTagsStep from './InterestTagsStep';
 import { CommonStyles } from '../../constants/Styles';
 
 // 🇵🇹 Portuguese Community Onboarding Flow - Unidos pela Língua
-const OnboardingFlow = ({ onComplete }) => {
+const OnboardingFlow = () => {
   const { i18n } = useTranslation();
+  const { completeOnboarding, isLoading } = useAuth();
   
   // Current step in the onboarding process  
   const [currentStep, setCurrentStep] = useState(0);
@@ -46,7 +48,24 @@ const OnboardingFlow = ({ onComplete }) => {
       setCurrentStep(currentStep + 1);
     } else {
       // Complete onboarding
-      onComplete(updatedUserData);
+      handleCompleteOnboarding(updatedUserData);
+    }
+  };
+
+  // Complete Portuguese cultural onboarding
+  const handleCompleteOnboarding = async (onboardingData) => {
+    try {
+      await completeOnboarding(onboardingData);
+      console.log('Portuguese cultural onboarding completed successfully');
+    } catch (error) {
+      Alert.alert(
+        'Onboarding Error', 
+        'Failed to complete onboarding. Please try again.',
+        [
+          { text: 'OK', style: 'default' }
+        ]
+      );
+      console.error('Onboarding completion error:', error);
     }
   };
 
@@ -137,10 +156,11 @@ const OnboardingFlow = ({ onComplete }) => {
       case 7:
         return (
           <InterestTagsStep
-            onNext={() => onComplete(userData)}
+            onNext={() => handleCompleteOnboarding(userData)}
             onBack={handleBack}
             selectedInterests={userData.selectedInterests}
             setSelectedInterests={(value) => updateUserData('selectedInterests', value)}
+            isLoading={isLoading}
           />
         );
 
