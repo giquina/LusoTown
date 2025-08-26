@@ -1,8 +1,8 @@
-name: Promote Preview to Production (Vercel)
+name: Promote Preview to Production (Vercel) - DISABLED
 
 on:
-  push:
-    branches: [main]
+  # Disabled this workflow as it was causing failures
+  # The main deploy.yml workflow handles all deployments properly
   workflow_dispatch:
 
 jobs:
