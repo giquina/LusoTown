@@ -427,8 +427,12 @@ export default function LusoBotWidget({
         className={
           isMobile
             ? getMobileWidgetClasses("chat", isAppBarVisible)
-            : `fixed ${getCurrentPositionClass()} z-[${zIndex}]`
+            : `fixed ${getCurrentPositionClass()}`
         }
+        style={{
+          // Only apply z-index for desktop, mobile classes already include it
+          ...(isMobile ? {} : { zIndex: zIndex || 70 })
+        }}
       >
         <AnimatePresence>
           {isOpen && (

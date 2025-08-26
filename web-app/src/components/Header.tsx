@@ -211,7 +211,7 @@ export default function Header() {
   const forBusinessDropdownLinks = getForBusinessDropdownLinks(t);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/60 min-h-[80px] lg:min-h-[88px] shadow-lg shadow-gray-900/5">
+    <header className="fixed top-0 left-0 right-0 z-[9999] bg-white/95 backdrop-blur-md border-b border-gray-200/60 min-h-[80px] lg:min-h-[88px] shadow-lg shadow-gray-900/5">
       <nav className="container-width" aria-label="Top">
         <div className="flex items-center justify-between py-3 sm:py-4 lg:py-5 gap-2 sm:gap-4">
           {/* Logo - Premium design with sophisticated hover effects */}
@@ -266,7 +266,7 @@ export default function Header() {
 
             {/* Community Dropdown */}
             <div
-              className="relative"
+              className="relative dropdown-container"
               onMouseEnter={() => setShowCommunityDropdown(true)}
               onMouseLeave={() => setShowCommunityDropdown(false)}
             >
@@ -304,7 +304,7 @@ export default function Header() {
                       duration: 0.4,
                       ease: [0.215, 0.61, 0.355, 1],
                     }}
-                    className="absolute top-full mt-2 w-[min(56rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-[70]"
+                    className="absolute top-full mt-2 w-[min(56rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-[9998]"
                     style={{ left: '50%', transform: 'translateX(-50%)' }}
                   >
                     <div className="px-8">
@@ -350,7 +350,7 @@ export default function Header() {
 
             {/* For Business Dropdown */}
             <div
-              className="relative"
+              className="relative dropdown-container"
               onMouseEnter={() => setShowForBusinessDropdown(true)}
               onMouseLeave={() => setShowForBusinessDropdown(false)}
             >
@@ -388,7 +388,7 @@ export default function Header() {
                       duration: 0.4,
                       ease: [0.215, 0.61, 0.355, 1],
                     }}
-                    className="absolute top-full mt-2 w-[min(56rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-[70]"
+                    className="absolute top-full mt-2 w-[min(56rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-[9998]"
                     style={{ left: '50%', transform: 'translateX(-50%)' }}
                   >
                     <div className="px-8">
@@ -515,7 +515,7 @@ export default function Header() {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1"
+                      className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-[9997]"
                     >
                       <a
                         href={`/profile/${user.id}`}
@@ -596,7 +596,7 @@ export default function Header() {
           </div>
 
           {/* Mobile menu button - Optimized for Portuguese-speaking community */}
-          <div className="flex lg:hidden items-center gap-1 relative z-50 flex-shrink-0">
+          <div className="flex lg:hidden items-center gap-1 relative z-[10000] flex-shrink-0">
             {/* Only show notifications when user is signed in */}
             {user && (
               <>
@@ -613,27 +613,36 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Enhanced with proper z-index layering */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <>
-              {/* Mobile menu backdrop */}
+              {/* Mobile menu backdrop - Higher z-index for proper layering */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 xl:hidden"
+                className="fixed inset-0 bg-black/50 backdrop-blur-md z-[9998] xl:hidden"
                 onClick={() => setMobileMenuOpen(false)}
               />
 
-              {/* Mobile menu content */}
+              {/* Mobile menu content - Highest z-index with enhanced styling */}
               <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="xl:hidden relative z-50 bg-white border-t border-primary-200 shadow-2xl rounded-b-lg mx-2 mb-2 max-h-[80vh] overflow-y-auto"
+                initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                transition={{ 
+                  duration: 0.4, 
+                  ease: [0.215, 0.61, 0.355, 1],
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 25
+                }}
+                className="xl:hidden fixed top-[80px] left-2 right-2 z-[9999] bg-white/98 backdrop-blur-xl border border-primary-200/50 shadow-2xl rounded-2xl mx-0 mb-2 max-h-[85vh] overflow-y-auto"
+                style={{
+                  boxShadow: '0 25px 50px rgba(197, 40, 47, 0.15), 0 10px 25px rgba(0, 0, 0, 0.1)'
+                }}
               >
                 <div className="px-4 pt-6 pb-4 space-y-2">
                   {/* Quick Actions Section */}
@@ -664,16 +673,19 @@ export default function Header() {
                     <h3 className="text-lg font-semibold text-primary-600 mb-3">
                       {t("nav.discover", "Discover")}
                     </h3>
-                    <a
+                    <motion.a
                       href={ROUTES.events}
-                      className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-4 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[48px] flex items-center gap-3"
+                      className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 border border-transparent hover:border-primary-200 min-h-[56px] flex items-center gap-3 luxury-touch-target"
                       onClick={() => setMobileMenuOpen(false)}
+                      whileHover={{ scale: 1.02, x: 4 }}
+                      whileTap={{ scale: 0.98 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
                     >
                       <CalendarDaysIcon className="w-5 h-5 text-primary-500" />
                       <span>
                         {t("nav.whats_happening", "What's Happening")}
                       </span>
-                    </a>
+                    </motion.a>
                   </div>
 
                   {/* Find Your Match - Heart Icon */}
@@ -681,14 +693,17 @@ export default function Header() {
                     <h3 className="text-lg font-semibold text-red-600 mb-3">
                       {t("nav.dating", "Dating")}
                     </h3>
-                    <a
+                    <motion.a
                       href={ROUTES.matches}
-                      className="text-gray-700 hover:text-red-600 hover:bg-red-50 px-4 py-4 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-red-200 min-h-[48px] flex items-center gap-3"
+                      className="text-gray-700 hover:text-red-600 hover:bg-red-50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 border border-transparent hover:border-red-200 min-h-[56px] flex items-center gap-3 luxury-touch-target"
                       onClick={() => setMobileMenuOpen(false)}
+                      whileHover={{ scale: 1.02, x: 4 }}
+                      whileTap={{ scale: 0.98 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
                     >
                       <span className="text-red-500 text-lg">💗</span>
                       <span>{t("nav.find_your_match", "Find Your Match")}</span>
-                    </a>
+                    </motion.a>
                   </div>
 
                   {/* Community Actions for Mobile */}
@@ -696,16 +711,21 @@ export default function Header() {
                     <h3 className="text-lg font-semibold text-primary-600 mb-3">
                       {t("nav.community_actions", "Community Actions")}
                     </h3>
-                    {communityDropdownLinks.map((link) => (
-                      <a
+                    {communityDropdownLinks.map((link, index) => (
+                      <motion.a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-4 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[48px] flex items-center gap-3"
+                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 border border-transparent hover:border-primary-200 min-h-[56px] flex items-center gap-3 luxury-touch-target"
                         onClick={() => setMobileMenuOpen(false)}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05, type: "spring", stiffness: 400, damping: 25 }}
+                        whileHover={{ scale: 1.02, x: 4 }}
+                        whileTap={{ scale: 0.98 }}
                       >
-                        <link.icon className={`w-5 h-5 ${link.iconColor}`} />
+                        <link.icon className={`w-5 h-5 ${link.iconColor} transition-transform duration-300 group-hover:scale-110`} />
                         <span>{link.name}</span>
-                      </a>
+                      </motion.a>
                     ))}
                   </div>
 
@@ -714,16 +734,21 @@ export default function Header() {
                     <h3 className="text-lg font-semibold text-secondary-600 mb-3">
                       {t("nav.business_solutions", "Business Solutions")}
                     </h3>
-                    {forBusinessDropdownLinks.map((link) => (
-                      <a
+                    {forBusinessDropdownLinks.map((link, index) => (
+                      <motion.a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-4 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[48px] flex items-center gap-3"
+                        className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 border border-transparent hover:border-secondary-200 min-h-[56px] flex items-center gap-3 luxury-touch-target group"
                         onClick={() => setMobileMenuOpen(false)}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05, type: "spring", stiffness: 400, damping: 25 }}
+                        whileHover={{ scale: 1.02, x: 4 }}
+                        whileTap={{ scale: 0.98 }}
                       >
-                        <link.icon className={`w-5 h-5 ${link.iconColor}`} />
+                        <link.icon className={`w-5 h-5 ${link.iconColor} transition-transform duration-300 group-hover:scale-110`} />
                         <span>{link.name}</span>
-                      </a>
+                      </motion.a>
                     ))}
                   </div>
 
@@ -732,20 +757,24 @@ export default function Header() {
                     <h3 className="text-lg font-semibold text-gray-600 mb-3">
                       {t("nav.more", "More")}
                     </h3>
-                    <a
+                    <motion.a
                       href={ROUTES.about}
-                      className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
+                      className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 border border-transparent hover:border-gray-200 min-h-[56px] flex items-center luxury-touch-target"
                       onClick={() => setMobileMenuOpen(false)}
+                      whileHover={{ scale: 1.02, x: 4 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       {t("nav.about", "About Us")}
-                    </a>
-                    <a
+                    </motion.a>
+                    <motion.a
                       href={ROUTES.pricing}
-                      className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
+                      className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 border border-transparent hover:border-gray-200 min-h-[56px] flex items-center luxury-touch-target"
                       onClick={() => setMobileMenuOpen(false)}
+                      whileHover={{ scale: 1.02, x: 4 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       {t("nav.pricing", "Pricing")}
-                    </a>
+                    </motion.a>
                   </div>
 
                   {/* User Section */}

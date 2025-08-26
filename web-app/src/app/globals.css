@@ -2,6 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Portuguese Cultural Mobile Menu Enhancements Imported */
+/* @import '../styles/mobile-menu-enhancements.css'; */
+
+/* Desktop Navigation Dropdown Positioning */
+@media (min-width: 1024px) {
+  .dropdown-container {
+    position: relative;
+  }
+  
+  /* Ensure dropdown menus appear above all content */
+  .dropdown-container .absolute {
+    z-index: 9998 !important;
+  }
+  
+  /* Improve dropdown positioning for consistent centering */
+  .dropdown-container > div[style*="transform: translateX(-50%)"] {
+    position: absolute;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  /* Ensure dropdowns are visible at large screens */
+  .dropdown-container:hover .absolute,
+  .dropdown-container:focus-within .absolute {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Enhanced shadow and backdrop for dropdowns */
+  .dropdown-container .absolute {
+    backdrop-filter: blur(8px);
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.25),
+      0 10px 20px -8px rgba(197, 40, 47, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Portuguese cultural theming for dropdowns */
+  .dropdown-container .absolute {
+    background: rgba(255, 255, 255, 0.98);
+  }
+}
+
 /* Mobile Widget Positioning - Safe Areas */
 @media (max-width: 768px) {
   .widget-safe-bottom {
@@ -10,17 +56,17 @@
   
   .chat-widget-mobile {
     bottom: 6rem; /* 96px - above mobile nav with spacing */
-    z-index: 40;
+    z-index: 9990; /* Below mobile menu */
   }
   
   .live-feed-mobile {
     bottom: 7rem; /* 112px - above chat widget */
-    z-index: 45;
+    z-index: 9991; /* Below mobile menu */
   }
   
   .fab-mobile {
     bottom: 8rem; /* 128px - above live feed */
-    z-index: 50;
+    z-index: 9992; /* Below mobile menu */
   }
   
   /* Portuguese text safe area handling */

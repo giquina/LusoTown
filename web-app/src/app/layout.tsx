@@ -66,17 +66,18 @@ const LusoBotWrapper = dynamic(
   }
 );
 
-// Light wrapper components that can be loaded directly for better SSR
-import GlobalUXEnhancementProvider from "@/components/GlobalUXEnhancementProvider";
-import { PremiumMobileNavigation } from "@/components/PremiumMobileNavigation";
-import MobileExperienceOptimizer from "@/components/MobileExperienceOptimizer";
-import MobileCriticalFixes from "@/components/MobileCriticalFixes";
-import WidgetManager from "@/components/WidgetManager";
-import MobileRedirectProvider from "@/components/MobileRedirectProvider";
-import AppDownloadBar from "@/components/AppDownloadBar";
-import AuthIntentHandler from "@/components/AuthIntentHandler";
-import { MobileDownloadPrompt } from "@/components/MobileRedirectProvider";
-import AppDownloadLanding from "@/components/AppDownloadLanding";
+const WidgetManager = dynamic(() => import("@/components/WidgetManager"), {
+  loading: () => null,
+  ssr: false,
+});
+
+const AppDownloadBar = dynamic(() => import("@/components/AppDownloadBar"), {
+  loading: () => null,
+  ssr: false,
+});
+
+// Minimal dynamic imports - only for heavy client-only components
+// Header and core navigation components render server-side
 
 const inter = Inter({
   subsets: ["latin"],
@@ -102,11 +103,11 @@ export const viewport = {
   maximumScale: 1,
 };
 
-// Enable static generation for better performance - Header can render server-side
-// Only dynamic parts will be client-side rendered
-export const dynamic = "auto"; // Let Next.js optimize automatically
-export const revalidate = 3600; // Cache for 1 hour
-export const fetchCache = "auto";
+// Allow Next.js to optimize SSR vs CSR automatically
+// Header will render server-side, dynamic components client-side
+export const dynamic = "force-dynamic"; // Keep dynamic to avoid build issues
+export const revalidate = 0;
+export const fetchCache = "force-no-store";
 
 export default function RootLayout({
   children,
@@ -220,72 +221,17 @@ export default function RootLayout({
                               <PlatformIntegrationProvider>
                                 <WaitingListProvider>
                                   <NavigationProvider>
-                                    {/* CRITICAL: Header renders server-side FIRST for proper desktop navigation */}
+                                    {/* PRIORITY: Header renders FIRST without complex wrappers for better SSR */}
                                     <ComponentErrorBoundary componentName="Header">
                                       <Header />
                                     </ComponentErrorBoundary>
 
                                     <ScrollToTop />
 
-                                    {/* Main content renders server-side */}
+                                    {/* Main content */}
                                     {children}
 
-                                    {/* Wrapper components for mobile experience - can render server-side */}
-                                    <ComponentErrorBoundary componentName="Widget Manager">
-                                      <WidgetManager>
-                                        <ComponentErrorBoundary componentName="Mobile Redirect Provider">
-                                          <MobileRedirectProvider>
-                                            <ComponentErrorBoundary componentName="Global UX Enhancement Provider">
-                                              <GlobalUXEnhancementProvider>
-                                                <ComponentErrorBoundary componentName="Mobile Experience Optimizer">
-                                                  <MobileExperienceOptimizer
-                                                    enablePremiumAnimations={true}
-                                                    enableLuxuryEffects={true}
-                                                    enablePortugueseTheming={true}
-                                                  >
-                                                    <ComponentErrorBoundary componentName="Mobile Critical Fixes">
-                                                      <MobileCriticalFixes
-                                                        enablePortugueseFixes={true}
-                                                        enableTouchOptimizations={true}
-                                                        enablePerformanceMode={true}
-                                                      >
-                                                        {/* Premium Mobile Navigation - Server-side compatible */}
-                                                        <ComponentErrorBoundary componentName="Premium Mobile Navigation">
-                                                          <PremiumMobileNavigation
-                                                            style="luxury"
-                                                            notifications={0}
-                                                          />
-                                                        </ComponentErrorBoundary>
-
-                                                        {/* App Download Bar - Server-side compatible */}
-                                                        <ComponentErrorBoundary componentName="App Download Bar">
-                                                          <AppDownloadBar />
-                                                        </ComponentErrorBoundary>
-
-                                                        {/* Mobile Download Components - Server-side compatible */}
-                                                        <ComponentErrorBoundary componentName="Mobile Download Prompt">
-                                                          <MobileDownloadPrompt />
-                                                        </ComponentErrorBoundary>
-
-                                                        <ComponentErrorBoundary componentName="App Download Landing">
-                                                          <AppDownloadLanding />
-                                                        </ComponentErrorBoundary>
-
-                                                        <ComponentErrorBoundary componentName="Auth Intent Handler">
-                                                          <AuthIntentHandler />
-                                                        </ComponentErrorBoundary>
-                                                      </MobileCriticalFixes>
-                                                    </ComponentErrorBoundary>
-                                                  </MobileExperienceOptimizer>
-                                                </ComponentErrorBoundary>
-                                              </GlobalUXEnhancementProvider>
-                                            </ComponentErrorBoundary>
-                                          </MobileRedirectProvider>
-                                        </ComponentErrorBoundary>
-                                      </WidgetManager>
-                                    </ComponentErrorBoundary>
-
-                                    {/* CLIENT-ONLY dynamic components - Load after SSR */}
+                                    {/* CLIENT-ONLY components loaded after initial render */}
                                     <ComponentErrorBoundary componentName="Live Feed Notifications">
                                       <LiveFeedNotifications />
                                     </ComponentErrorBoundary>
@@ -298,9 +244,16 @@ export default function RootLayout({
                                       <AuthPopup />
                                     </ComponentErrorBoundary>
 
-                                    <ComponentErrorBoundary componentName="LusoBot Widget">
-                                      <LusoBotWrapper />
-                                    </ComponentErrorBoundary>
+                                    {/* Widget Management System - Centralized positioning */}
+                                    <WidgetManager>
+                                      <ComponentErrorBoundary componentName="App Download Bar">
+                                        <AppDownloadBar />
+                                      </ComponentErrorBoundary>
+                                      
+                                      <ComponentErrorBoundary componentName="LusoBot Widget">
+                                        <LusoBotWrapper />
+                                      </ComponentErrorBoundary>
+                                    </WidgetManager>
                                   </NavigationProvider>
                                 </WaitingListProvider>
                               </PlatformIntegrationProvider>
