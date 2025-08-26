@@ -31,13 +31,13 @@ import {
 } from "@/config/seo";
 // Performance optimization
 import Script from "next/script";
-import dynamic from "next/dynamic";
+import dynamicImport from "next/dynamic";
 
 // Critical components that need SSR - import directly
 // Header component will render server-side for better performance
 
 // Dynamic imports ONLY for heavy, non-critical components
-const LiveFeedNotifications = dynamic(
+const LiveFeedNotifications = dynamicImport(
   () => import("@/components/LiveFeedNotifications"),
   {
     loading: () => null,
@@ -45,12 +45,12 @@ const LiveFeedNotifications = dynamic(
   }
 );
 
-const AuthPopup = dynamic(() => import("@/components/AuthPopup"), {
+const AuthPopup = dynamicImport(() => import("@/components/AuthPopup"), {
   loading: () => null,
   ssr: false,
 });
 
-const FavoriteNotification = dynamic(
+const FavoriteNotification = dynamicImport(
   () => import("@/components/FavoriteNotification"),
   {
     loading: () => null,
@@ -58,7 +58,7 @@ const FavoriteNotification = dynamic(
   }
 );
 
-const LusoBotWrapper = dynamic(
+const LusoBotWrapper = dynamicImport(
   () => import("@/components/LusoBotWrapper"),
   {
     loading: () => null,
@@ -66,12 +66,12 @@ const LusoBotWrapper = dynamic(
   }
 );
 
-const WidgetManager = dynamic(() => import("@/components/WidgetManager"), {
+const WidgetManager = dynamicImport(() => import("@/components/WidgetManager"), {
   loading: () => null,
   ssr: false,
 });
 
-const AppDownloadBar = dynamic(() => import("@/components/AppDownloadBar"), {
+const AppDownloadBar = dynamicImport(() => import("@/components/AppDownloadBar"), {
   loading: () => null,
   ssr: false,
 });

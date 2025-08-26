@@ -2,6 +2,6 @@
   "framework": "nextjs",
   "public": true,
   "buildCommand": "npm run build",
-  "installCommand": "npm ci",
+  "installCommand": "npm install",
   "regions": ["lhr1"]
 }
