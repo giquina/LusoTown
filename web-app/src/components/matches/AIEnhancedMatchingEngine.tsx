@@ -19,7 +19,7 @@ import {
   CalendarDaysIcon,
   AcademicCapIcon,
   BookOpenIcon,
-  BrainIcon,
+  CpuChipIcon, // Alternative to BrainIcon
   ChartBarIcon,
   AdjustmentsHorizontalIcon,
   LightBulbIcon,
@@ -30,7 +30,7 @@ import {
 import {
   HeartIcon as HeartSolid,
   StarIcon as StarSolid,
-  BrainIcon as BrainSolid,
+  CpuChipIcon as BrainSolid, // Alternative to BrainIcon
 } from '@heroicons/react/24/solid';
 import type { SaudadeProfile, CulturalDepthProfile, SaudadeCompatibilityResult, RegionalIdentity } from './SaudadeMatchingSystem';
 
@@ -806,7 +806,7 @@ export default function AIEnhancedMatchingEngine({
         <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-4 mb-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <BrainIcon className="w-6 h-6 text-purple-600" />
+              <CpuChipIcon className="w-6 h-6 text-purple-600" />
               <div>
                 <h3 className="font-semibold text-gray-900">
                   {language === 'pt' ? 'Modo de Aprendizagem Inteligente' : 'Smart Learning Mode'}

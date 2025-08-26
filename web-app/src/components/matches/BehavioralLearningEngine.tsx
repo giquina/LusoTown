@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import {
-  BrainIcon,
+  CpuChipIcon, // Alternative to BrainIcon
   ChartBarIcon,
   LightBulbIcon,
   TrendingUpIcon,
@@ -19,7 +19,7 @@ import {
   ArrowPathIcon,
 } from '@heroicons/react/24/outline';
 import {
-  BrainIcon as BrainSolid,
+  CpuChipIcon as BrainSolid, // Alternative to BrainIcon
   HeartIcon as HeartSolid,
   StarIcon as StarSolid,
 } from '@heroicons/react/24/solid';

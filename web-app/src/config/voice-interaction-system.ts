@@ -832,11 +832,14 @@ export class VoiceInteractionSystem {
   private availableVoices: string[] = []
   
   constructor() {
-    this.initializeSpeechAPI()
+    // Only initialize speech API in browser environment
+    if (typeof window !== 'undefined') {
+      this.initializeSpeechAPI()
+    }
   }
   
   private initializeSpeechAPI() {
-    if ('speechSynthesis' in window) {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       this.availableVoices = speechSynthesis.getVoices().map(voice => voice.name)
     }
   }
@@ -899,8 +902,8 @@ export class VoiceInteractionSystem {
     const voiceSettings = this.adaptVoiceSettings(personality, emotion, context)
     
     return new Promise((resolve, reject) => {
-      if (!('speechSynthesis' in window)) {
-        reject(new Error('Speech synthesis not supported'))
+      if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
+        reject(new Error('Speech synthesis not supported or running on server'))
         return
       }
       
@@ -911,7 +914,7 @@ export class VoiceInteractionSystem {
       utterance.volume = voiceSettings.volume
       
       // Try to find matching voice
-      const voices = speechSynthesis.getVoices()
+      const voices = typeof window !== 'undefined' ? speechSynthesis.getVoices() : []
       const matchingVoice = voices.find(voice => 
         voice.lang.includes(personality.voiceSettings.language.split('-')[0])
       )
@@ -922,7 +925,9 @@ export class VoiceInteractionSystem {
       utterance.onend = () => resolve()
       utterance.onerror = (error) => reject(error)
       
-      speechSynthesis.speak(utterance)
+      if (typeof window !== 'undefined') {
+        speechSynthesis.speak(utterance)
+      }
     })
   }
   
