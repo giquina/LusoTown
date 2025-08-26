@@ -31,13 +31,13 @@ import {
 } from "@/config/seo";
 // Performance optimization
 import Script from "next/script";
-import dynamicImport from "next/dynamic";
+import dynamic from "next/dynamic";
 
 // Critical components that need SSR - import directly
 // Header component will render server-side for better performance
 
 // Dynamic imports ONLY for heavy, non-critical components
-const LiveFeedNotifications = dynamicImport(
+const LiveFeedNotifications = dynamic(
   () => import("@/components/LiveFeedNotifications"),
   {
     loading: () => null,
@@ -45,12 +45,12 @@ const LiveFeedNotifications = dynamicImport(
   }
 );
 
-const AuthPopup = dynamicImport(() => import("@/components/AuthPopup"), {
+const AuthPopup = dynamic(() => import("@/components/AuthPopup"), {
   loading: () => null,
   ssr: false,
 });
 
-const FavoriteNotification = dynamicImport(
+const FavoriteNotification = dynamic(
   () => import("@/components/FavoriteNotification"),
   {
     loading: () => null,
@@ -58,7 +58,7 @@ const FavoriteNotification = dynamicImport(
   }
 );
 
-const LusoBotWrapper = dynamicImport(
+const LusoBotWrapper = dynamic(
   () => import("@/components/LusoBotWrapper"),
   {
     loading: () => null,
@@ -66,12 +66,12 @@ const LusoBotWrapper = dynamicImport(
   }
 );
 
-const WidgetManager = dynamicImport(() => import("@/components/WidgetManager"), {
+const WidgetManager = dynamic(() => import("@/components/WidgetManager"), {
   loading: () => null,
   ssr: false,
 });
 
-const AppDownloadBar = dynamicImport(() => import("@/components/AppDownloadBar"), {
+const AppDownloadBar = dynamic(() => import("@/components/AppDownloadBar"), {
   loading: () => null,
   ssr: false,
 });
@@ -105,7 +105,7 @@ export const viewport = {
 
 // Allow Next.js to optimize SSR vs CSR automatically
 // Header will render server-side, dynamic components client-side
-export const dynamic = "force-dynamic"; // Keep dynamic to avoid build issues
+// Remove dynamic export to avoid naming conflict with import
 export const revalidate = 0;
 export const fetchCache = "force-no-store";
 
