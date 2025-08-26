@@ -2,7 +2,7 @@
 
 **Version**: 1.0.0  
 **Platform**: Premium Portuguese-speaking community Platform  
-**Last Updated**: August 2025
+**Last Updated**: 2025-08-26
 
 ---
 
@@ -13,7 +13,7 @@ Get the LusoTown premium platform running locally in under 10 minutes.
 ### Prerequisites
 ```bash
 # Required versions
-Node.js: 22.x or higher
+Node.js: 22.x or higher (currently v20.19.4) (currently v20.19.4)
 npm: 9.x or higher
 Git: Latest version
 ```

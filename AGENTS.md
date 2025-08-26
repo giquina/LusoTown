@@ -19,7 +19,7 @@ This file serves as the **primary source of truth** for AI agents working on the
 
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL, Simple Relay Server (SRS), OpenStreetMap/Leaflet, PostGIS, Twitter API, Stripe, React Context state management
 
-**Status**: Production-ready - 121+ pages, 522+ components, complete bilingual i18n system, mobile-first responsive design, integrated streaming platform, enhanced business directory with cultural celebrations and cultural wisdom rotation system
+**Status**: Production-ready - 135+ pages, 496+ components, complete bilingual i18n system, mobile-first responsive design, integrated streaming platform, enhanced business directory with cultural celebrations and cultural wisdom rotation system
 
 ---
 
@@ -92,7 +92,7 @@ const { t } = useLanguage()
 - Cultural elements integrated, not separate
 
 ### 4. ⚙️ CONFIGURATION-DRIVEN ARCHITECTURE (REQUIRED)
-All dynamic data lives in `/src/config/`:
+All dynamic data lives in `/src/config/` (49 files):
 - `pricing.ts` - All pricing, subscriptions, discounts
 - `universities.ts` - University partnerships, student counts  
 - `cultural-centers.ts` - Portuguese cultural institutions
@@ -109,8 +109,8 @@ All dynamic data lives in `/src/config/`:
 ### Key Directories
 ```
 web-app/src/
-├── app/                    # Next.js App Router pages (111+ pages)
-├── components/             # React components (421+ components)
+├── app/                    # Next.js App Router pages (135+ pages)
+├── components/             # React components (496+ components)
 ├── config/                 # 🚨 CENTRALIZED CONFIG (always import from here)
 ├── context/                # React Context providers
 ├── i18n/                   # Bilingual translations (en.json, pt.json)
@@ -456,10 +456,10 @@ find . -name "*.tsx" | head -10                      # Sample components
 **Remember These Key Facts Throughout Conversation:**
 - LusoTown serves **Portuguese speakers in London & United Kingdom**
 - **750+ community members**, **2,150+ Portuguese students**
-- **8 university partnerships** (UCL, King's, Imperial, LSE, Oxford, Cambridge, Manchester, Edinburgh)
+- **8 universities partnerships** (UCL, King's, Imperial, LSE, Oxford, Cambridge, Manchester, Edinburgh)
 - **Never generic** - always Portuguese cultural context
 - **Mobile-first** - Portuguese-speaking community uses mobile heavily
-- **Production-ready** - 111+ pages, 421+ components
+- **Production-ready** - 135+ pages, 496+ components
 
 ---
 

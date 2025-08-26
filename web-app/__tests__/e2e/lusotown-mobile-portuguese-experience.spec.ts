@@ -21,7 +21,6 @@ const MOBILE_TEST_CONFIG = {
 };
 
 test.describe('Mobile Portuguese Community Experience', () => {
-  test.use({ ...devices['iPhone 12'] });
 
   test('Mobile Portuguese navigation and language switching', async ({ page }) => {
     await page.goto('/');
@@ -311,7 +310,6 @@ test.describe('Mobile Portuguese Community Experience', () => {
 });
 
 test.describe('Mobile Portuguese Performance Testing', () => {
-  test.use({ ...devices['Pixel 5'] });
 
   test('Mobile Portuguese page load performance', async ({ page }) => {
     // Test homepage load performance

@@ -1,5 +1,7 @@
 # LusoTown API Documentation
 
+**Last Updated: 2025-08-26**
+
 This document provides comprehensive API documentation for LusoTown's enhanced social & business networking platform.
 
 ## Table of Contents

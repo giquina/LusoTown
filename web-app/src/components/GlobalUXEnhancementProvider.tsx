@@ -3,8 +3,6 @@
 import React, { useEffect, useState } from 'react'
 import { TooltipProvider } from '@/context/TooltipContext'
 import { TooltipRenderer } from '@/components/ui/Tooltip'
-import GlobalUserGuidance, { WelcomeBanner } from '@/components/GlobalUserGuidance'
-import OnboardingChecklist, { onboardingActions } from '@/components/OnboardingChecklist'
 import { useLanguage } from '@/context/LanguageContext'
 
 interface GlobalUXState {
@@ -142,36 +140,31 @@ export default function GlobalUXEnhancementProvider({
 
   // Progressive enhancement based on user journey
   const shouldShowWelcomeBanner = uxState.isFirstVisit && uxState.currentUserJourney === 'discovery'
-  const shouldShowOnboardingChecklist = !uxState.hasCompletedOnboarding && 
-    uxState.currentUserJourney !== 'retention'
-  const shouldShowAdvancedGuidance = uxState.guidanceLevel === 'advanced'
+  // Beginner guidance disabled site-wide
+  const shouldShowOnboardingChecklist = false
+  const shouldShowAdvancedGuidance = false
 
   return (
     <TooltipProvider>
       <div className="global-ux-enhancement-wrapper">
-        {/* Welcome Banner for First-Time Visitors */}
-        {shouldShowWelcomeBanner && <WelcomeBanner />}
+  {/* Welcome Banner disabled */}
         
         {/* Main Content */}
         <div className={`
           main-content-wrapper
-          ${shouldShowWelcomeBanner ? 'pt-20 md:pt-16' : ''}
+          
           ${uxState.mobileOptimized ? 'mobile-optimized' : ''}
         `}>
           {children}
         </div>
 
-        {/* Onboarding Checklist Sidebar */}
-        {shouldShowOnboardingChecklist && <OnboardingChecklist />}
-        
-        {/* Global User Guidance System */}
-        <GlobalUserGuidance />
+  {/* Beginner guidance removed */}
         
         {/* Tooltip Renderer */}
         <TooltipRenderer />
         
         {/* Mobile UX Enhancement Styles */}
-        <style jsx global>{`
+  <style>{`
           .mobile-optimized {
             touch-action: manipulation;
           }
@@ -253,7 +246,7 @@ export default function GlobalUXEnhancementProvider({
               border-color: currentColor;
             }
           }
-        `}</style>
+  `}</style>
       </div>
     </TooltipProvider>
   )
@@ -277,11 +270,10 @@ export const globalUXActions = {
     keysToRemove.forEach(key => {
       localStorage.removeItem(key)
     })
-    
-    window.location.reload()
   },
   
-  triggerOnboardingStep: onboardingActions
+  // No-op while onboarding is disabled; keeps external API stable
+  triggerOnboardingStep: (_step: string) => {}
 }
 
 // Hook for accessing UX enhancement state

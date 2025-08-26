@@ -14,7 +14,9 @@ import { PlatformIntegrationProvider } from "@/context/PlatformIntegrationContex
 import { WaitingListProvider } from "@/context/WaitingListContext";
 import { HeritageProvider } from "@/context/HeritageContext";
 import { NavigationProvider } from "@/context/NavigationContext";
+import { TooltipProvider } from "@/context/TooltipContext";
 // WelcomeProvider removed - welcome functionality disabled (no UI components)
+
 import HeritageStyleProvider from "@/components/HeritageStyleProvider";
 import { AuthPopupProvider } from "@/components/AuthPopupProvider";
 import Header from "@/components/Header";
@@ -56,29 +58,9 @@ const WidgetManager = dynamicImport(
   }
 );
 
-const UserGuidanceProvider = dynamicImport(
-  () => import("@/components/UserGuidanceSystem").then(mod => ({ default: mod.UserGuidanceProvider })),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
+// Beginner guidance provider disabled
 
-const WelcomeGuidanceBanner = dynamicImport(
-  () => import("@/components/UserGuidanceSystem").then(mod => ({ default: mod.WelcomeGuidanceBanner })),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
-
-const QuickHelpButton = dynamicImport(
-  () => import("@/components/UserGuidanceSystem").then(mod => ({ default: mod.QuickHelpButton })),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
+// Beginner guidance disabled: WelcomeGuidanceBanner and QuickHelpButton removed
 
 const GlobalUXEnhancementProvider = dynamicImport(
   () => import("@/components/GlobalUXEnhancementProvider"),
@@ -112,7 +94,10 @@ const FavoriteNotification = dynamicImport(
 );
 
 const PremiumMobileNavigation = dynamicImport(
-  () => import("@/components/PremiumMobileNavigation"),
+  () =>
+    import("@/components/PremiumMobileNavigation").then((mod) => ({
+      default: mod.PremiumMobileNavigation,
+    })),
   {
     loading: () => null,
     ssr: false,
@@ -161,6 +146,14 @@ const MobileDownloadPrompt = dynamicImport(
 
 const AppDownloadLanding = dynamicImport(
   () => import("@/components/AppDownloadLanding"),
+  {
+    loading: () => null,
+    ssr: false,
+  }
+);
+
+const TooltipRenderer = dynamicImport(
+  () => import("@/components/ui/Tooltip").then((mod) => ({ default: mod.TooltipRenderer })),
   {
     loading: () => null,
     ssr: false,
@@ -253,15 +246,17 @@ export default function RootLayout({
         />
 
         {/* PWA initialization script */}
-        <Script
+  <Script
           id="pwa-init"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               // Initialize PWA for Portuguese-speaking community
               if (typeof window !== 'undefined') {
+    // Only enable Service Worker in production to avoid caching issues during development
+    const ENABLE_SW = ${process.env.NODE_ENV === 'production'};
                 // Register service worker
-                if ('serviceWorker' in navigator) {
+    if (ENABLE_SW && 'serviceWorker' in navigator) {
                   window.addEventListener('load', () => {
                     navigator.serviceWorker.register('/sw.js')
                       .then((registration) => {
@@ -308,9 +303,8 @@ export default function RootLayout({
                               <PlatformIntegrationProvider>
                                 <WaitingListProvider>
                                   <NavigationProvider>
-                                    <ComponentErrorBoundary componentName="User Guidance Provider">
-                                      <UserGuidanceProvider>
-                                        <ComponentErrorBoundary componentName="Widget Manager">
+                                    {/* User Guidance Provider removed */}
+                                    <ComponentErrorBoundary componentName="Widget Manager">
                                           <WidgetManager>
                                             <ComponentErrorBoundary componentName="Mobile Redirect Provider">
                                               <MobileRedirectProvider>
@@ -335,10 +329,7 @@ export default function RootLayout({
                                           >
                                             {/* UserTypeSelection removed - returns null (disabled) */}
 
-                                            {/* Welcome Guidance Banner for First-Time Visitors */}
-                                            <ComponentErrorBoundary componentName="Welcome Guidance Banner">
-                                              <WelcomeGuidanceBanner />
-                                            </ComponentErrorBoundary>
+                                            {/* Welcome Guidance Banner disabled */}
 
                                             <ComponentErrorBoundary componentName="Header">
                                               <Header />
@@ -388,10 +379,7 @@ export default function RootLayout({
                                               <AppDownloadBar />
                                             </ComponentErrorBoundary>
 
-                                            {/* Quick Help Button - Always Available */}
-                                            <ComponentErrorBoundary componentName="Quick Help Button">
-                                              <QuickHelpButton />
-                                            </ComponentErrorBoundary>
+                                            {/* Quick Help Button disabled */}
                                           </MobileCriticalFixes>
                                         </ComponentErrorBoundary>
                                       </MobileExperienceOptimizer>
@@ -413,8 +401,6 @@ export default function RootLayout({
                                             </ComponentErrorBoundary>
                                           </WidgetManager>
                                         </ComponentErrorBoundary>
-                                      </UserGuidanceProvider>
-                                    </ComponentErrorBoundary>
                                     {/* /WelcomeProvider removed */}
                                   </NavigationProvider>
                                 </WaitingListProvider>

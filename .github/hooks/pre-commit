@@ -1,0 +1,15 @@
+#!/bin/bash
+# Pre-commit hook to automatically update AI guidance files
+
+# Check if this is a significant change that warrants updating docs
+CHANGED_FILES=$(git diff --cached --name-only)
+
+# Update if changes to key directories
+if echo "$CHANGED_FILES" | grep -E "(web-app/src/|package\.json|\.md$)" > /dev/null; then
+    echo "📝 Updating AI guidance files due to significant changes..."
+    node scripts/update-ai-guidance.js
+    
+    # Stage the updated files
+    git add CLAUDE.md RULES.md AGENTS.md
+    echo "✅ AI guidance files updated and staged"
+fi

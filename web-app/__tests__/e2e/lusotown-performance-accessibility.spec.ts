@@ -84,8 +84,10 @@ class PerformanceTestHelper {
         // Largest Contentful Paint
         new PerformanceObserver((list) => {
           const entries = list.getEntries();
-          const lastEntry = entries[entries.length - 1];
-          vitals.lcp = lastEntry.startTime;
+          const lastEntry = entries[entries.length - 1] as any;
+          if (lastEntry) {
+            vitals.lcp = lastEntry.startTime;
+          }
         }).observe({ entryTypes: ['largest-contentful-paint'] });
 
         // Cumulative Layout Shift
@@ -155,7 +157,7 @@ class PerformanceTestHelper {
     for (let i = 0; i < Math.min(textCount, 5); i++) {
       const element = textElements.nth(i);
       
-      const styles = await element.evaluate((el) => {
+  const styles = await element.evaluate((el: HTMLElement) => {
         const computed = window.getComputedStyle(el);
         return {
           color: computed.color,
@@ -577,7 +579,6 @@ test.describe('Cross-Browser Portuguese Character Rendering', () => {
 });
 
 test.describe('Mobile Accessibility and Performance', () => {
-  test.use({ viewport: { width: 375, height: 667 } });
 
   test('Mobile Portuguese content accessibility', async ({ page }) => {
     const helper = new PerformanceTestHelper();

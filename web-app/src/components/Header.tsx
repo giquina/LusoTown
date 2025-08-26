@@ -304,14 +304,7 @@ export default function Header() {
                       duration: 0.4,
                       ease: [0.215, 0.61, 0.355, 1],
                     }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
-                    style={{
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      maxWidth: "calc(100vw - 2rem)",
-                      marginLeft: "max(-400px, calc(-50vw + 1rem))",
-                      marginRight: "max(-400px, calc(-50vw + 1rem))",
-                    }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[min(56rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-[70]"
                   >
                     <div className="px-8">
                       <h3 className="text-lg font-semibold mb-6 text-primary-600 text-center">
@@ -394,14 +387,7 @@ export default function Header() {
                       duration: 0.4,
                       ease: [0.215, 0.61, 0.355, 1],
                     }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
-                    style={{
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      maxWidth: "calc(100vw - 2rem)",
-                      marginLeft: "max(-400px, calc(-50vw + 1rem))",
-                      marginRight: "max(-400px, calc(-50vw + 1rem))",
-                    }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[min(56rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-[70]"
                   >
                     <div className="px-8">
                       <h3 className="text-lg font-semibold mb-6 text-secondary-600 text-center">

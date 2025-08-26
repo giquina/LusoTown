@@ -1,5 +1,7 @@
 # LusoTown Portuguese-speaking community Streaming Infrastructure
 
+**Last Updated: 2025-08-26**
+
 **Professional streaming platform serving Portuguese speakers in London & United Kingdom**
 
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue)](https://docker.com)

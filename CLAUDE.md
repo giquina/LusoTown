@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+**Updated: 2025-08-26** | **Last Commit**: 66068c0 feat: Complete LusoTown platform deployment and navigation testing
+
 ## ⚡ Quick Reference
 
 **Start Development**: `cd web-app && npm run dev` (http://localhost:3000)  
@@ -62,7 +64,24 @@ LusoTown is a production-ready Portuguese-speaking community platform serving th
 
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL with PostGIS, Simple Relay Server (SRS) for streaming, OpenStreetMap/Leaflet for mapping, Twitter API, Stripe, React Context state management, enhanced cultural celebrations system.
 
-**Status**: Production-ready with 121+ pages, 522+ components, complete bilingual EN/PT system, mobile-first responsive design, 4 integrated AI systems, enhanced Lusophone cultural celebrations system, comprehensive E2E testing suite. **Live Platform**: https://lusotown-bzkyz77ez-giquinas-projects.vercel.app
+**Status**: Production-ready with 135+ pages, 496+ components, complete bilingual EN/PT system, mobile-first responsive design, 4 integrated AI systems, enhanced Lusophone cultural celebrations system, comprehensive E2E testing suite. **Live Platform**: https://lusotown-bzkyz77ez-giquinas-projects.vercel.app
+
+
+
+## Current System Status
+
+**Last Updated**: 2025-08-26  
+**Node Version**: v20.19.4  
+**Last Commit**: 66068c0 feat: Complete LusoTown platform deployment and navigation testing  
+**Architecture**: 135 pages, 496 components, 49 config files  
+**AI Systems**: 4 production AI engines  
+**Test Coverage**: 24 test files  
+**Documentation**: 1653 .md files
+
+**Key npm Scripts**: preinstall, dev, build, start, lint, export, deploy, auto-fix, deployment-monitor, deploy:auto  
+**Major Dependencies**: @headlessui/react, @heroicons/react, @lusotown/design-tokens, @lusotown/ui, @sentry/nextjs, @sentry/profiling-node, @sentry/react, @stripe/stripe-js
+
+
 
 ## System Requirements
 
@@ -210,7 +229,7 @@ npm run cultural-audit         # Audit Portuguese cultural content compliance
 ## Architecture Overview
 
 ### Monorepo Structure
-- **web-app/**: Next.js 14 web application (primary) - Production ready with 522+ components and 4 AI systems
+- **web-app/**: Next.js 14 web application (primary) - Production ready with 496+ components and 4 AI systems
 - **streaming/**: Node.js/Express streaming server with SRS integration - RTMP/HLS delivery
 - **mobile-app/**: React Native/Expo mobile application - Portuguese-speaking community focused
 - **packages/**: Shared packages (`@lusotown/design-tokens`, `@lusotown/ui`)
@@ -223,14 +242,14 @@ npm run cultural-audit         # Audit Portuguese cultural content compliance
 ### Core Architectural Principles
 
 **1. Configuration-Driven Development (Zero Hardcoding)**
-All dynamic data centralized in `/web-app/src/config/` (33+ configuration files):
+All dynamic data centralized in `/web-app/src/config/` (49+ configuration files):
 - **Core Config**: `pricing.ts`, `universities.ts`, `cultural-centers.ts`, `brand.ts`, `routes.ts`, `contact.ts`
 - **Cultural**: `lusophone-celebrations.ts`, `palop-business-directory.ts`, `verification-badges.ts`
 - **Business**: `portuguese-institutions.ts`, `community-guidelines.ts`, `student-resources.ts`
 - **Centralized Exports**: All configs accessible through `index.ts` with comprehensive type safety
 
 **2. Next.js 14 App Router Architecture**
-- **File-based routing**: 121+ pages in `/src/app/` directory with nested routes and dynamic segments
+- **File-based routing**: 135+ pages in `/src/app/` directory with nested routes and dynamic segments
 - **Server Components**: Default SSR with selective Client Components for interactivity
 - **API Integration**: Comprehensive endpoints in `/src/app/api/` for server operations
 - **Enhanced UX**: Layout components, loading states, error boundaries, and not-found pages
@@ -242,7 +261,7 @@ All dynamic data centralized in `/web-app/src/config/` (33+ configuration files)
 - **Lusophone Celebrations**: Comprehensive cultural events system for all Portuguese-speaking nations
 
 **4. Component & Context Architecture**
-- **522+ React Components**: Modular, reusable with Portuguese cultural theming and AI integration
+- **496+ React Components**: Modular, reusable with Portuguese cultural theming and AI integration
 - **Context-Based State**: Multiple React contexts (Language, Heritage, Subscription, Networking, Cart)
 - **TypeScript First**: Strict typing with `exactOptionalPropertyTypes` and `noUncheckedIndexedAccess`
 - **AI Integration**: 4 production AI systems with Portuguese cultural context
@@ -253,9 +272,9 @@ All dynamic data centralized in `/web-app/src/config/` (33+ configuration files)
 
 **5. File Organization Structure**
 ```
-/src/app/              # Next.js 14 App Router (121+ pages)
+/src/app/              # Next.js 14 App Router (135+ pages)
 /src/components/       # 522+ React components with feature-specific organization
-/src/config/           # 33+ configuration files (ZERO hardcoding policy)
+/src/config/           # 49+ configuration files (ZERO hardcoding policy)
 /src/context/          # React contexts for state management
 /src/lib/             # Business logic and AI engines
 /src/services/        # API services and integrations
@@ -542,7 +561,7 @@ Automated validation of LusoTown-specific requirements:
 
 #### 🌐 Live Platform Status
 **Production URL**: https://lusotown-bzkyz77ez-giquinas-projects.vercel.app  
-**Community Metrics**: 750+ members, 2,150+ students, 8 university partnerships
+**Community Metrics**: 750+ members, 2,150+ students, 8 universities partnerships
 
 #### 🔧 Build Configuration Optimizations
 Build configuration optimized for production with bundle splitting, image optimization for multiple domains, and Portuguese content delivery:
@@ -590,13 +609,13 @@ Specialized component libraries organized by functionality:
 ### Detailed File Structure
 ```
 /src/
-  ├── app/                 # Next.js 14 App Router (121+ pages)
+  ├── app/                 # Next.js 14 App Router (135+ pages)
   ├── components/          # 522+ React components
   │   ├── ui/             # Base UI components
   │   ├── ai/             # AI system components
   │   ├── matches/        # Matching system
   │   └── [feature]/      # Feature-specific components
-  ├── config/             # 33+ configuration files (centralized exports)
+  ├── config/             # 49+ configuration files (centralized exports)
   ├── context/            # React context providers
   ├── hooks/              # Custom React hooks
   ├── i18n/               # Bilingual EN/PT translations

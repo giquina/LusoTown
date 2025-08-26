@@ -1,7 +1,7 @@
 // Service Worker for LusoTown Portuguese-speaking community Platform
 // Version: 3.0.0 - Enhanced Mobile PWA with Portuguese Cultural Features
 
-const CACHE_VERSION = '3.0.0';
+const CACHE_VERSION = '3.0.1';
 const CACHE_NAME = `lusotown-v${CACHE_VERSION}-portuguese-community`;
 const OFFLINE_URL = '/offline.html';
 const PORTUGUESE_CULTURAL_CACHE = `portuguese-cultural-v${CACHE_VERSION}`;

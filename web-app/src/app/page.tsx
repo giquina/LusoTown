@@ -12,7 +12,12 @@ import { ROUTES } from "@/config/routes";
 import MobileWelcomeWizard from "@/components/MobileWelcomeWizard";
 import StreamlinedCommunitySelector from "@/components/StreamlinedCommunitySelector";
 import ResponsiveButton from "@/components/ResponsiveButton";
-import { HomepageHeroTooltip, PALOPSectionTooltip } from "@/components/ui/GuidanceTooltip";
+import { 
+  HomepageHeroTooltip, 
+  PALOPSectionTooltip, 
+  EventsCalendarTooltip,
+  MatchingTooltip 
+} from "@/components/ui/GuidanceTooltip";
 
 // Dynamic import for PALOP Country Cards
 const PALOPCountryCards = dynamic(() => import("@/components/PALOPCountryCards"), {
@@ -109,7 +114,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: jsonLd }}
       />
 
-      <main className="min-h-screen w-full overflow-x-hidden" role="main">
+      <main className="min-h-screen w-full overflow-x-hidden" role="main" data-guidance="test-main">
         {/* Fixed spacing: Added proper top margin and padding for hero section */}
         <div className="pt-24 lg:pt-32 w-full">
           {/* HERO SECTION - Community Discovery Focus with Proper Spacing */}
@@ -1533,7 +1538,11 @@ export default function Home() {
           </PALOPSectionTooltip>
 
           {/* MONTHLY CULTURAL CALENDAR SECTION - Fixed spacing */}
-          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-indigo-50 via-blue-50 to-teal-50 section-spacing">
+          <EventsCalendarTooltip>
+            <section 
+              className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-indigo-50 via-blue-50 to-teal-50 section-spacing"
+              data-guidance="events-calendar"
+            >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
@@ -1893,9 +1902,14 @@ export default function Home() {
               </div>
             </div>
           </section>
+          </EventsCalendarTooltip>
 
           {/* EVENTS & COMMUNITY SECTION - Connected Experience - Fixed spacing */}
-          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-secondary-50 to-accent-50 section-spacing">
+          <MatchingTooltip>
+            <section 
+              className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-secondary-50 to-accent-50 section-spacing"
+              data-guidance="matching-section"
+            >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
@@ -2254,6 +2268,7 @@ export default function Home() {
               </div>
             </div>
           </section>
+          </MatchingTooltip>
 
           <Footer />
         </div>

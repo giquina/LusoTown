@@ -33,7 +33,10 @@
     "audit:hardcoding": "cd web-app && npm run audit:hardcoding",
     "mobile:ios": "cd mobile-app && npm run ios",
     "mobile:android": "cd mobile-app && npm run android",
-    "mobile:web": "cd mobile-app && npm run web"
+    "mobile:web": "cd mobile-app && npm run web",
+    "init": "scripts/claude-init-wrapper.sh",
+    "update-ai-docs": "node scripts/enhanced-ai-guidance-updater.js",
+    "update-ai-docs:basic": "node scripts/update-ai-guidance.js"
   },
   "engines": {
     "node": ">=18.0.0",

@@ -10,8 +10,11 @@ const nextConfig = {
   transpilePackages: ["@lusotown/ui", "@lusotown/design-tokens"],
   productionBrowserSourceMaps: false,
   swcMinify: true,
+  // Allow Playwright to access dev server via 127.0.0.1
+  allowedDevOrigins: ['http://127.0.0.1:3000', 'http://localhost:3000'],
   images: {
-    unoptimized: false,
+    // Disable image optimizer in development to avoid external fetch stalls during tests
+    unoptimized: process.env.NODE_ENV !== 'production',
     remotePatterns: [
       {
         protocol: "https",
@@ -158,7 +161,7 @@ const nextConfig = {
         ({ request }, callback) => {
           if (!request) return callback()
           if (request === 'html5-qrcode' || request === 'socket.io-client') {
-            return callback(null, 'commonjs ' + request)
+            return callback(null, `commonjs ${request}`)
           }
           return callback()
         }

@@ -12,7 +12,7 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
   # Core environment variables for LusoTown platform
   NEXT_PUBLIC_TOTAL_MEMBERS: "750"
-  NEXT_PUBLIC_TOTAL_STUDENTS: "2150" 
+  NEXT_PUBLIC_TOTAL_STUDENTS: "2150"
   NEXT_PUBLIC_UNIVERSITY_PARTNERSHIPS: "8"
   NEXT_PUBLIC_MAP_SERVICE: "openstreetmap"
 
@@ -79,26 +79,32 @@ jobs:
           echo "✅ Production build test passed"
         working-directory: ./web-app
 
+      - name: 🧪 E2E Smoke Test (Playwright)
+        run: |
+          npx playwright install --with-deps
+          npx playwright test -c playwright.simple.config.ts
+        working-directory: ./web-app
+
       - name: 🎯 Portuguese Community Platform Validation
         run: |
           echo "Validating Portuguese-speaking community platform requirements..."
-          
+
           # Check for critical configuration files
           if [ ! -f "src/config/community-guidelines.ts" ]; then
             echo "❌ Missing community-guidelines.ts configuration"
             exit 1
           fi
-          
+
           if [ ! -f "src/config/lusophone-celebrations.ts" ]; then
             echo "❌ Missing lusophone-celebrations.ts configuration"
             exit 1
           fi
-          
+
           if [ ! -f "src/i18n/pt.json" ]; then
             echo "❌ Missing Portuguese translations"
             exit 1
           fi
-          
+
           echo "✅ Portuguese community platform validation passed"
         working-directory: ./web-app
 

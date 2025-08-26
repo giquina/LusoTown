@@ -1,5 +1,7 @@
 # LusoTown London Design System Reference Guide
 
+**Last Updated: 2025-08-26**
+
 *Unidos pela Língua (United by Language)*
 
 ## Portuguese-Inspired Color Palette

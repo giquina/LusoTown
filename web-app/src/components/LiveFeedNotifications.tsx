@@ -28,6 +28,7 @@ export default function LiveFeedNotifications() {
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [currentNotification, setCurrentNotification] = useState<Notification | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
 
   // Portuguese-speaking nations members across UK
   const portugalMockData = [
@@ -198,11 +199,20 @@ export default function LiveFeedNotifications() {
       }));
     };
 
+    // Respect persistent dismissal
+    try {
+      const dismissed = typeof window !== 'undefined' && localStorage.getItem('lusotown-livefeed-dismissed') === 'true';
+      if (dismissed) {
+        setIsDismissed(true);
+      }
+    } catch {}
+
     setNotifications(generateNotifications());
   }, []);
 
   useEffect(() => {
     if (notifications.length === 0) return;
+    if (isDismissed) return; // Do not schedule if user permanently dismissed
 
     const showNotification = () => {
       const randomNotification = notifications[Math.floor(Math.random() * notifications.length)];
@@ -229,7 +239,7 @@ export default function LiveFeedNotifications() {
       clearTimeout(initialTimeout);
       clearInterval(interval);
     };
-  }, [notifications, isVisible]);
+  }, [notifications, isVisible, isDismissed]);
 
   const getNotificationColor = (type: string) => {
     switch (type) {
@@ -278,6 +288,12 @@ export default function LiveFeedNotifications() {
 
   const hideNotification = () => {
     setIsVisible(false);
+    setIsDismissed(true);
+    try {
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('lusotown-livefeed-dismissed', 'true');
+      }
+    } catch {}
   };
 
   const getRelativeTime = (timestamp: string) => {
@@ -298,7 +314,7 @@ export default function LiveFeedNotifications() {
 
   return (
     <AnimatePresence>
-      {isVisible && currentNotification && colorScheme && (
+  {!isDismissed && isVisible && currentNotification && colorScheme && (
         <motion.div
           initial={{ 
             opacity: 0, 
