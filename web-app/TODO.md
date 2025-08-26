@@ -7,7 +7,109 @@ Deployment note (2025-08-25):
   - Inspect URL: https://vercel.com/giquinas-projects/web-app/GaQGBQVtjkph6dg2hKVTMKVS5Vwy
   - Change: Homepage hero subtitle updated to “Lusophone-speaking”
 
+---
+Claude instance sync (2025-08-26):
+
+- Sourced from CLAUDE.md and docs/archive/TODO.md (Aug 18, 2025) to reflect work already completed.
+- This section summarizes completed deliverables to keep this TODO current and avoid duplicate work.
+
+Completed (Claude):
+- [x] 3-tier pricing structure (Free, £19.99, £39.99) implemented and documented
+- [x] Advanced streaming platform integration with Portuguese cultural emotes and creator monetization
+- [x] Mobile experience improvements across Events, Group sections, and brand color consistency
+- [x] TikTok-style messaging policies and moderation flows designed with AI cultural sensitivity
+- [x] Match-to-Event integration concepts with event compatibility scoring
+- [x] Advanced YouTube features and LusoTown TV integration plan
+- [x] Comprehensive subscription system (tiers, gating, billing flows) captured and aligned
+- [x] Transport & luxury services blueprint (SIA-compliant, scheduling, integration)
+- [x] Events & community platform features (categories, monetization, calendar) consolidated
+- [x] Business directory & networking enhancements (verified badges, reviews, owner dashboard)
+
+Mobile app foundation status (from Claude):
+- [x] React Native + Expo baseline, onboarding fundamentals, email validation
+- [ ] In progress: selfie verification, interest selection, push notifications, real-time messaging
+
+Note:
+- Items above are documentation- and plan-validated and reflected in product docs; implementation in code may vary by module. Use this list as DONE for roadmap tracking while verifying feature flags per release.
+
 # LusoTown Platform Development TODO
+
+## 🚨 **CRITICAL UX FIXES - IN PROGRESS (August 2025)**
+*Based on comprehensive UX review of live platform - addressing beginner user experience issues*
+
+**STATUS: ACTIVELY IMPLEMENTING ALL CRITICAL FIXES**
+
+### **Priority 1: Widget Management System (CRITICAL)**
+- [ ] **Bottom App Download Bar - Dismiss Functionality**
+  - [ ] Create AppDownloadBar.jsx component with dismiss options
+  - [ ] Add "X" close button and "Skip for now" link
+  - [ ] Implement localStorage dismissal state
+  - [ ] Add smooth slide-in/out animations
+  - [ ] Fix z-index conflicts with chat and notification widgets
+
+- [ ] **Chat Widget Improvements**
+  - [ ] Fix scroll-to-top functionality when chat opens
+  - [ ] Implement dynamic bottom positioning (adjusts when app bar present)
+  - [ ] Add clear minimize/close buttons in header
+  - [ ] Set max height with internal scrolling
+  - [ ] Resolve z-index conflicts (set to 999)
+
+- [ ] **Widget Position Management System**
+  - [ ] Create WidgetManager.jsx for centralized positioning
+  - [ ] Define widget z-index hierarchy (appDownloadBar: 50, notification: 60, chat: 70, modal: 100)
+  - [ ] Implement dynamic positioning based on app bar visibility
+  - [ ] Auto-adjust widget positions when app bar shown/hidden
+
+### **Priority 2: Section Enhancement (HIGH)**
+- [ ] **PALOP Heritage Section CTAs**
+  - [ ] Add "Explore Angola Events →" button to Angola card
+  - [ ] Add "View Cape Verde Businesses →" button to Cape Verde card
+  - [ ] Add "Discover Mozambique Culture →" button to Mozambique card
+  - [ ] Implement hover states showing "Click to explore"
+  - [ ] Link entire cards to relevant filtered pages
+  - [ ] Add pulsing animation on CTA buttons
+
+- [ ] **Cultural Calendar Interactions**
+  - [ ] Add "View Event Details" primary CTA to each event
+  - [ ] Add "Add to Calendar" secondary CTA
+  - [ ] Add "Share with Friends" tertiary CTA
+  - [ ] Implement visual indicators (arrows, buttons)
+  - [ ] Add hover effects revealing quick actions
+
+- [ ] **Meet Your Matches Section**
+  - [ ] Add "Join This Event Type →" button for each category
+  - [ ] Add "Start Your Story" CTA after testimonial
+  - [ ] Implement progress indicators: "Step 1: Choose Interest → Step 2: Join Event → Step 3: Connect"
+  - [ ] Add beginner tooltips on hover explaining each option
+
+### **Priority 3: Global UX Enhancement (MEDIUM)**
+- [ ] **Global User Guidance System**
+  - [ ] Create GlobalUserGuidance.jsx for first-time visitor detection
+  - [ ] Add contextual help bubbles
+  - [ ] Implement "What should I do next?" prompts
+  - [ ] Add progress tracking through user journey
+  - [ ] Create onboarding checklist sidebar
+
+- [ ] **Beginner Tooltip System**
+  - [ ] Homepage: "👋 Welcome! Start by choosing what interests you most below"
+  - [ ] PALOP: "🌍 Click any country to explore their events and businesses"
+  - [ ] Calendar: "📅 Click any event to see details and RSVP"
+  - [ ] Matches: "💕 Choose an event type to meet Portuguese speakers like you"
+
+### **Priority 4: Quality Assurance (ESSENTIAL)**
+- [ ] **Cross-Device Testing**
+  - [ ] Test app download bar dismiss functionality on mobile/desktop
+  - [ ] Verify chat widget scrolling works on all breakpoints
+  - [ ] Test widget repositioning when app bar shown/hidden
+  - [ ] Validate all CTAs are clickable and obvious on mobile
+  - [ ] Test z-index conflicts resolution across all widgets
+
+- [ ] **User Flow Validation**
+  - [ ] Test first-time visitor experience with guidance system
+  - [ ] Verify every section has clear primary CTA
+  - [ ] Test progressive disclosure doesn't overwhelm users
+  - [ ] Validate escape hatches (go back/cancel/dismiss) work throughout
+  - [ ] Test beginner tooltips appear and disappear correctly
 
 ## ✅ **MOBILE APP TRANSITION STRATEGY (COMPLETED)**
 *Comprehensive roadmap to native mobile app for Portuguese-speaking community*
