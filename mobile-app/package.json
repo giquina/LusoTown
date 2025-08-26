@@ -33,7 +33,10 @@
     "audit:hardcoding": "node scripts/mobile-hardcoding-audit.js",
     "install:ios": "cd ios && pod install",
     "reset:cache": "npm start -- --reset-cache",
-    "doctor": "expo doctor"
+    "doctor": "expo doctor",
+    "validate:setup": "node scripts/validate-setup.js",
+    "setup:complete": "npm run validate:setup && npm run doctor && npm run lint",
+    "dev:setup": "npm run validate:setup && npm start"
   },
   "dependencies": {
     "expo": "~52.0.0",
