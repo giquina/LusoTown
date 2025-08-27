@@ -2071,8 +2071,8 @@ export default function Home() {
           <Footer />
         </div>
 
-        {/* Mobile Floating CTA - Prominent matching action */}
-        <div className="md:hidden fixed bottom-20 right-4 z-40">
+        {/* Mobile Floating CTA - Repositioned to avoid widget overlap */}
+        <div className="md:hidden fixed bottom-32 left-4 z-40">
           <button
             onClick={handleSignupClick}
             className="group w-18 h-18 bg-gradient-to-br from-green-600 via-yellow-500 to-red-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center active:scale-95 animate-pulse"

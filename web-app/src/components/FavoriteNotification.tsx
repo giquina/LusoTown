@@ -32,7 +32,7 @@ export default function FavoriteNotification() {
           initial={{ opacity: 0, y: 50, scale: 0.3 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
-          className="fixed bottom-6 right-6 z-50"
+          className="fixed bottom-6 left-6 z-50"
         >
           <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-4 max-w-xs">
             <div className="flex items-start gap-3">
