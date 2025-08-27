@@ -1,5 +1,4 @@
 import React from "react";
-import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
@@ -12,11 +11,6 @@ import dynamic from "next/dynamic";
 const LusoBotWrapper = dynamic(() => import("@/components/LusoBotWrapper"), {
   ssr: false,
   loading: () => null,
-});
-
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: "--font-inter"
 });
 
 export const metadata = {
@@ -34,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" className="font-sans">
+      <body className="font-sans antialiased">
         <ErrorBoundary>
           <LanguageProvider>
             <SubscriptionProvider>

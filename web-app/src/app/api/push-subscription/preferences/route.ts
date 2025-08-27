@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// Force dynamic rendering for this route
+export const dynamic = 'force-dynamic';
+
 // Lusophone cultural notification preferences management
 export async function PUT(request: NextRequest) {
   try {
@@ -89,7 +92,7 @@ export async function PUT(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
-    const searchParams = request.nextUrl.searchParams;
+    const { searchParams } = new URL(request.url);
     const endpoint = searchParams.get('endpoint');
 
     if (!endpoint) {

@@ -538,7 +538,14 @@ export class SmartNotificationEngine {
     } catch (error) {
       logger.error('[AI Notification Engine] Failed to initialize ML models:', error)
       // Initialize fallback models
-      this.initializeFallbackModels()
+      try {
+        this.initializeFallbackModels()
+        logger.info('[AI Notification Engine] Fallback models initialized successfully')
+      } catch (fallbackError) {
+        logger.error('[AI Notification Engine] Failed to initialize fallback models:', fallbackError)
+        // Initialize basic fallback as last resort
+        this.initializeBasicFallback()
+      }
     }
   }
   
@@ -578,6 +585,88 @@ export class SmartNotificationEngine {
       contentPersonalizer: this.createSimpleContentPersonalizer(),
       culturalAdaptationEngine: this.createSimpleCulturalAdapter(),
       performanceAnalyzer: this.createSimplePerformanceAnalyzer()
+    }
+  }
+
+  /**
+   * Create simple engagement predictor fallback
+   */
+  private createSimpleEngagementPredictor() {
+    return {
+      predict: (features: any) => {
+        // Simple rule-based engagement prediction
+        const base = 50
+        const cultural = (features.cultural_relevance || 0.5) * 20
+        const timing = (features.timing_score || 0.5) * 15
+        const engagement = (features.user_engagement_history || 0.5) * 15
+        return Math.min(100, Math.max(0, base + cultural + timing + engagement))
+      }
+    }
+  }
+
+  /**
+   * Create simple timing optimizer fallback
+   */
+  private createSimpleTimingOptimizer() {
+    return {
+      optimize: () => {
+        // Simple default timing
+        const now = new Date()
+        now.setHours(now.getHours() + 1)
+        return now
+      }
+    }
+  }
+
+  /**
+   * Create simple content personalizer fallback
+   */
+  private createSimpleContentPersonalizer() {
+    return {
+      personalize: (template: any, userProfile: any) => {
+        // Simple fallback - return template as-is
+        return template
+      }
+    }
+  }
+
+  /**
+   * Create simple cultural adapter fallback
+   */
+  private createSimpleCulturalAdapter() {
+    return {
+      adapt: (content: any, culturalPrefs: any) => {
+        // Simple fallback - minimal adaptation
+        return { ...content, culturallyAdapted: true }
+      }
+    }
+  }
+
+  /**
+   * Create simple performance analyzer fallback
+   */
+  private createSimplePerformanceAnalyzer() {
+    return {
+      analyze: () => ({
+        accuracy: 0.75,
+        responseTime: 250,
+        satisfactionScore: 4.0
+      })
+    }
+  }
+
+  /**
+   * Initialize basic fallback models as last resort
+   */
+  private initializeBasicFallback(): void {
+    logger.warn('[AI Notification Engine] Using basic fallback - minimal functionality')
+    
+    this.mlModels = {
+      engagementPredictor: { predict: () => 50 },
+      timingOptimizer: { optimize: () => new Date(Date.now() + 3600000) },
+      contentPersonalizer: { personalize: (template: any) => template },
+      culturalAdaptationEngine: { adapt: (content: any) => content },
+      performanceAnalyzer: { analyze: () => ({ accuracy: 0.5, responseTime: 500, satisfactionScore: 3.0 }) }
     }
   }
 

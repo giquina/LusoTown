@@ -6,7 +6,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import {
   HeartIcon,
   SparklesIcon,
-  HandHeartIcon,
+  HeartIcon as HandHeartIcon,
   HomeIcon,
   MusicalNoteIcon,
   UserGroupIcon,
@@ -23,7 +23,7 @@ import {
   ChartBarIcon,
   AdjustmentsHorizontalIcon,
   LightBulbIcon,
-  TrendingUpIcon,
+  ArrowTrendingUpIcon as TrendingUpIcon,
   EyeIcon,
   ClockIcon,
 } from '@heroicons/react/24/outline';

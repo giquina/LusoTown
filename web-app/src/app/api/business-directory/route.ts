@@ -2,10 +2,21 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import logger from '@/utils/logger';
 
+// Force dynamic rendering for this route
+export const dynamic = 'force-dynamic';
+
 // Initialize Supabase client for server-side operations
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-const supabase = createClient(supabaseUrl, supabaseServiceKey);
+function createSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  
+  if (!supabaseUrl || !supabaseServiceKey) {
+    logger.warn('[Business Directory] Supabase configuration missing, using mock data');
+    return null;
+  }
+  
+  return createClient(supabaseUrl, supabaseServiceKey);
+}
 
 interface BusinessFilters {
   search?: string;
@@ -69,6 +80,19 @@ export async function GET(request: NextRequest) {
 }
 
 async function findPortugueseBusinesses(filters: BusinessFilters) {
+  // Get Supabase client, return mock data if not available
+  const supabase = createSupabaseClient();
+  
+  if (!supabase) {
+    // Return mock data for build process
+    logger.info('[Business Directory] Using mock data due to missing Supabase configuration');
+    return {
+      data: [],
+      total: 0,
+      hasMore: false
+    };
+  }
+
   // Start building the query
   let query = supabase
     .from('portuguese_businesses')
