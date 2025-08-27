@@ -59,7 +59,7 @@ interface WeekendEventCardProps {
   isBookmarked?: boolean
 }
 
-export function WeekendEventCard({ 
+function WeekendEventCard({ 
   event, 
   onFavoriteToggle, 
   onBookmarkToggle, 
@@ -229,7 +229,7 @@ interface PALOPHeritageCardProps {
   onExploreClick?: (heritageId: string) => void
 }
 
-export function PALOPHeritageCard({ heritage, onExploreClick }: PALOPHeritageCardProps) {
+function PALOPHeritageCard({ heritage, onExploreClick }: PALOPHeritageCardProps) {
   const { language } = useLanguage()
   
   return (
@@ -351,7 +351,7 @@ interface WeeklyDiscoveryCardProps {
   onDiscoverClick?: (discoveryId: string) => void
 }
 
-export function WeeklyDiscoveryCard({ discovery, onDiscoverClick }: WeeklyDiscoveryCardProps) {
+function WeeklyDiscoveryCard({ discovery, onDiscoverClick }: WeeklyDiscoveryCardProps) {
   const { language } = useLanguage()
   
   const getDiscoveryIcon = (type: string) => {
@@ -479,7 +479,7 @@ interface CulturalCelebrationCardProps {
   onLearnMoreClick?: (celebrationId: string) => void
 }
 
-export function CulturalCelebrationCard({ celebration, onLearnMoreClick }: CulturalCelebrationCardProps) {
+function CulturalCelebrationCard({ celebration, onLearnMoreClick }: CulturalCelebrationCardProps) {
   const { language } = useLanguage()
   
   const getCelebrationTypeColor = (type: string) => {

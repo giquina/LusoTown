@@ -25,7 +25,7 @@ import { LUSOPHONE_CELEBRATIONS } from '@/config/lusophone-celebrations'
 /**
  * Hook for managing weekend events data
  */
-export function useWeekendEvents() {
+function useWeekendEvents() {
   const [favorites, setFavorites] = useState<Set<string>>(new Set())
   const [bookmarks, setBookmarks] = useState<Set<string>>(new Set())
   const router = useRouter()
@@ -74,7 +74,7 @@ export function useWeekendEvents() {
 /**
  * Hook for managing PALOP heritage interactions
  */
-export function usePALOPHeritage() {
+function usePALOPHeritage() {
   const router = useRouter()
 
   const handleExploreClick = useCallback((heritageId: string) => {
@@ -95,7 +95,7 @@ export function usePALOPHeritage() {
 /**
  * Hook for managing weekly discovery interactions
  */
-export function useWeeklyDiscovery() {
+function useWeeklyDiscovery() {
   const router = useRouter()
 
   const handleDiscoverClick = useCallback((discoveryId: string) => {
@@ -116,7 +116,7 @@ export function useWeeklyDiscovery() {
 /**
  * Hook for managing cultural celebration interactions
  */
-export function useCulturalCelebrations() {
+function useCulturalCelebrations() {
   const router = useRouter()
 
   const handleLearnMoreClick = useCallback((celebrationId: string) => {
@@ -143,7 +143,7 @@ interface WeekendEventsCarouselProps {
   className?: string
 }
 
-export function WeekendEventsCarousel({ 
+function WeekendEventsCarousel({ 
   events, 
   loading = false, 
   className = '' 
@@ -196,7 +196,7 @@ interface PALOPHeritageCarouselProps {
   className?: string
 }
 
-export function PALOPHeritageCarousel({ 
+function PALOPHeritageCarousel({ 
   heritageItems, 
   loading = false, 
   className = '' 
@@ -250,7 +250,7 @@ interface WeeklyDiscoveryCarouselProps {
   className?: string
 }
 
-export function WeeklyDiscoveryCarousel({ 
+function WeeklyDiscoveryCarousel({ 
   discoveries, 
   loading = false, 
   className = '' 
@@ -306,7 +306,7 @@ interface CulturalCelebrationsCarouselProps {
   featuredOnly?: boolean
 }
 
-export function CulturalCelebrationsCarousel({ 
+function CulturalCelebrationsCarousel({ 
   celebrations,
   loading = false, 
   className = '',
@@ -372,7 +372,7 @@ export function CulturalCelebrationsCarousel({
 /**
  * Utility function to create mock data for testing
  */
-export function createMockWeekendEvents(count: number = 6): WeekendEventItem[] {
+function createMockWeekendEvents(count: number = 6): WeekendEventItem[] {
   const mockEvents: WeekendEventItem[] = [
     {
       id: 'event-1',
