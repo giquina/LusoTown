@@ -1,0 +1,119 @@
+{
+  "projectName": "LusoTown",
+  "context": "Portuguese-speaking-community-platform",
+  "version": "1.0.0",
+  "createdAt": "2025-08-27T06:48:00.000Z",
+  "lastUpdated": "2025-08-27T06:48:00.000Z",
+  
+  "culturalContext": {
+    "primaryAudience": "Portuguese-speaking community",
+    "geographicScope": "United Kingdom",
+    "lusophoneNations": [
+      "Portugal",
+      "Brazil", 
+      "Cape Verde",
+      "Angola",
+      "Mozambique",
+      "Guinea-Bissau",
+      "São Tomé and Príncipe",
+      "Timor-Leste",
+      "Macau"
+    ],
+    "languages": ["EN", "PT"],
+    "culturalAuthenticity": {
+      "terminology": "Portuguese-speaking community",
+      "avoidTerms": ["Portuguese community"],
+      "geographicReference": "United Kingdom",
+      "diversityEmphasis": "All lusophone nations"
+    }
+  },
+  
+  "technicalContext": {
+    "architecture": "Next.js 14 App Router",
+    "database": "Supabase PostgreSQL + PostGIS",
+    "styling": "Tailwind CSS with Portuguese heritage colors",
+    "mobileFirst": true,
+    "breakpoints": {
+      "mobile": "375px",
+      "tablet": "768px", 
+      "desktop": "1024px"
+    },
+    "zeroHardcoding": {
+      "enabled": true,
+      "configDirectory": "/web-app/src/config/",
+      "auditCommand": "npm run audit:hardcoding"
+    }
+  },
+  
+  "developmentWorkflow": {
+    "preCommitChecks": [
+      "npm run audit:hardcoding",
+      "npm run lint",
+      "npx tsc --noEmit",
+      "npm run build"
+    ],
+    "testingStrategy": {
+      "unit": "Jest + Testing Library",
+      "e2e": "Playwright",
+      "mobile": "Mobile UX validation",
+      "portuguese": "Portuguese language tests"
+    },
+    "deploymentPipeline": {
+      "staging": "Railway (streaming)",
+      "production": "Vercel",
+      "cdn": "BunnyCDN (Portuguese content)"
+    }
+  },
+  
+  "businessContext": {
+    "metrics": {
+      "totalMembers": "750+",
+      "totalStudents": "2150+", 
+      "universityPartnerships": 8,
+      "aiSystems": 4,
+      "components": "522+",
+      "pages": "135+"
+    },
+    "universities": [
+      "UCL", "King's", "Imperial", "LSE", 
+      "Oxford", "Cambridge", "Manchester", "Edinburgh"
+    ],
+    "coreFeatures": [
+      "Social events",
+      "Business directory (PostGIS)",
+      "Streaming platform", 
+      "Premium transport",
+      "Student services",
+      "Cultural matching system"
+    ]
+  },
+  
+  "memoryOptimization": {
+    "sharedContexts": [
+      "portuguese-cultural",
+      "mobile-ux",
+      "configuration-patterns",
+      "testing-framework"
+    ],
+    "sessionPersistence": true,
+    "crossInstanceCoordination": true,
+    "culturalKnowledgeBase": true
+  },
+  
+  "qualityGates": {
+    "mandatoryChecks": {
+      "hardcodingAudit": true,
+      "typeScriptCheck": true,
+      "linting": true,
+      "buildTest": true,
+      "portugueseTranslations": true,
+      "mobileResponsiveness": true
+    },
+    "performanceTargets": {
+      "mobileLuxuryCompliance": "73.3%+",
+      "coreWebVitals": "optimized",
+      "accessibilityScore": "WCAG AA",
+      "portugueseContentDelivery": "optimized"
+    }
+  }
+}

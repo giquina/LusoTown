@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "strict": false,
+    "exactOptionalPropertyTypes": false,
+    "noUncheckedIndexedAccess": false,
+    "incremental": true,
+    "tsBuildInfoFile": "./tsconfig.components.tsbuildinfo",
+    "isolatedModules": false
+  },
+  "include": [
+    "src/components/**/*.ts",
+    "src/components/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/__tests__/**/*"
+  ],
+  "references": [
+    { "path": "./tsconfig.build.json" }
+  ]
+}

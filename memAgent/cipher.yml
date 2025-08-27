@@ -1,0 +1,96 @@
+# LusoTown Portuguese-Speaking Community Platform
+# Cipher Memory Agent Configuration
+
+name: "LusoTown Portuguese Community Platform"
+description: "Memory optimization for Portuguese-speaking community platform development with bilingual EN/PT requirements, mobile-first design, and cultural authenticity guidelines"
+version: "1.0.0"
+
+# Project Context
+context:
+  project_name: "LusoTown"
+  primary_focus: "Portuguese-speaking-community-platform"
+  target_audience: "750+ Portuguese speakers, 2,150+ university students (UK-wide)"
+  geographic_scope: "United Kingdom"
+  cultural_scope: "Portuguese-speaking nations (Portugal, Brazil, Cape Verde, Angola, Mozambique, etc.)"
+  
+# Core Development Guidelines
+development_rules:
+  zero_hardcoding: true
+  cultural_context: "Portuguese-speaking community (not Portuguese community)"
+  mobile_first: true
+  bilingual_requirement: "EN/PT"
+  breakpoints: ["375px", "768px", "1024px"]
+  
+# Technical Stack
+tech_stack:
+  framework: "Next.js 14"
+  language: "TypeScript"
+  styling: "Tailwind CSS"
+  database: "Supabase PostgreSQL + PostGIS"
+  streaming: "Simple Relay Server (SRS)"
+  deployment: "Vercel"
+
+# Key Directories
+directories:
+  config: "/web-app/src/config/"
+  components: "/web-app/src/components/"
+  tests: "/web-app/__tests__/"
+  documentation: "/AGENTS.md"
+  
+# Critical Commands
+commands:
+  development: "cd web-app && npm run dev"
+  hardcoding_audit: "cd web-app && npm run audit:hardcoding"
+  build: "cd web-app && npm run build"
+  test: "cd web-app && npm test"
+  
+# Cultural Guidelines
+cultural_authenticity:
+  terminology: "Portuguese-speaking community"
+  geographic_reference: "United Kingdom"
+  lusophone_diversity: true
+  heritage_colors: "Portuguese brand colors"
+  
+# Quality Gates
+pre_commit_requirements:
+  - "npm run audit:hardcoding"
+  - "npm run lint"
+  - "npx tsc --noEmit"
+  - "npm run build"
+
+# Memory Context Areas
+memory_contexts:
+  - name: "portuguese_cultural"
+    description: "Portuguese cultural context, authenticity, and community guidelines"
+    shared: true
+  - name: "mobile_ux"
+    description: "Mobile-first design patterns and UX optimizations"
+    shared: true
+  - name: "configuration_patterns"
+    description: "Zero-hardcoding patterns and config file management"
+    shared: true
+  - name: "testing_framework" 
+    description: "Testing patterns for components, E2E, and Portuguese-specific tests"
+    shared: true
+
+# Agent Specializations
+agent_roles:
+  - "Development (UI/UX, components, technical implementation)"
+  - "Cultural Validation (Portuguese authenticity, lusophone diversity)"
+  - "Performance Optimization (mobile, PWA, core web vitals)"
+  - "Quality Assurance (testing, security, hardcoding prevention)"
+  - "Security & Privacy (GDPR, data protection, safety)"
+
+# Integration Points
+integrations:
+  ai_systems: 4
+  university_partnerships: 8
+  streaming_platform: "localhost:8080"
+  mobile_app: "React Native/Expo"
+  
+# Performance Targets
+performance:
+  mobile_compliance: "73.3%+ luxury compliance"
+  core_web_vitals: "optimized"
+  accessibility: "WCAG AA compliant"
+  portuguese_content_delivery: "BunnyCDN optimized"
