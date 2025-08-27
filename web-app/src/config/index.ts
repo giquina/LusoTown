@@ -196,6 +196,31 @@ export {
   getFeaturedCelebrations,
 } from "./lusophone-celebrations";
 
+// Business directory and PALOP businesses
+export {
+  PALOP_BUSINESS_DIRECTORY,
+  getFeaturedPALOPBusinesses,
+  getPALOPBusinessesByCategory,
+  getPALOPBusinessesByCountry,
+  getPremiumPALOPBusinesses,
+  getPALOPBusinessesByCity,
+  searchPALOPBusinesses,
+  getPALOPBusinessStats,
+} from "./palop-business-directory";
+
+export {
+  FEATURED_PORTUGUESE_BUSINESSES,
+  BUSINESS_DIRECTORY_CATEGORIES,
+  PALOP_BUSINESS_SHOWCASE,
+  BUSINESS_GEOGRAPHIC_DISTRIBUTION,
+  getFeaturedBusinessesByCategory,
+  getBusinessesByCity,
+  getBusinessesByCountry,
+  getPremiumBusinesses,
+  searchBusinesses,
+  getBusinessDirectoryStats,
+} from "./business-directory-carousels";
+
 // Mock data and testing
 export {
   mockProfileImages,

@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "description": "LusoTown Web Application",
   "engines": {
-    "node": "22.x",
-    "npm": "9.x"
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
   },
   "scripts": {
     "preinstall": "npx --yes npm@9 --version >/dev/null 2>&1 && (node -e \"try{require('child_process').execSync('npm -v',{stdio:'inherit'})}catch(e){}\") || true",
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "SKIP_TYPE_CHECK=true next dev",
+    "build": "node scripts/optimized-build.js",
+    "build:next": "next build",
+    "build:debug": "NODE_OPTIONS='--max-old-space-size=8192 --inspect' next build",
+    "build:memory-safe": "node scripts/memory-safe-build.js",
+    "type-check": "tsc --noEmit --project tsconfig.json",
+    "type-check:build": "tsc --noEmit --project tsconfig.build.json",
     "start": "next start",
     "lint": "next lint",
     "export": "next build && next export",
@@ -118,6 +123,7 @@
     "socket.io-client": "^4.8.1",
     "stripe": "^18.4.0",
     "tailwind-merge": "^3.3.1",
+    "winston": "^3.17.0",
     "zod": "^4.1.0"
   },
   "devDependencies": {

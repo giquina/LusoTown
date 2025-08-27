@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase'
+import logger from '@/utils/logger'
 import { UserNotification, CulturalContext, UserBehaviorProfile } from './NotificationService'
 import { contactInfo, contactPhones } from '@/config/contact'
 import { SUBSCRIPTION_PLANS } from '@/config/pricing'
@@ -354,9 +355,9 @@ export class SmartNotificationEngine {
       ])
       
       this.initialized = true
-      console.log('[AI Notification Engine] Successfully initialized for production')
+      logger.info('[AI Notification Engine] Successfully initialized for production')
     } catch (error) {
-      console.error('[AI Notification Engine] Initialization failed:', error)
+      logger.error('[AI Notification Engine] Initialization failed:', error)
       // Schedule retry in 30 seconds
       setTimeout(() => this.safeInitialize(), 30000)
     }
@@ -395,9 +396,9 @@ export class SmartNotificationEngine {
         timestamp: Date.now()
       })
       
-      console.log('[AI Notification Engine] Community behavior data loaded successfully')
+      logger.info('[AI Notification Engine] Community behavior data loaded successfully')
     } catch (error) {
-      console.error('[AI Notification Engine] Failed to load community behavior data:', error)
+      logger.error('[AI Notification Engine] Failed to load community behavior data:', error)
       // Fallback to environment variables
       this.totalMembers = parseInt(process.env.NEXT_PUBLIC_TOTAL_MEMBERS || '750')
       this.totalStudents = parseInt(process.env.NEXT_PUBLIC_TOTAL_STUDENTS || '2150')
@@ -428,7 +429,7 @@ export class SmartNotificationEngine {
         universityPartnerships: metrics.university_partnerships || 8
       }
     } catch (error) {
-      console.warn('[AI Notification Engine] Database metrics unavailable, using defaults')
+      logger.warn('[AI Notification Engine] Database metrics unavailable, using defaults')
       return {
         totalMembers: parseInt(process.env.NEXT_PUBLIC_TOTAL_MEMBERS || '750'),
         totalStudents: parseInt(process.env.NEXT_PUBLIC_TOTAL_STUDENTS || '2150'),
@@ -460,7 +461,7 @@ export class SmartNotificationEngine {
       
       return this.processBehaviorPatterns(patterns || [])
     } catch (error) {
-      console.warn('[AI Notification Engine] Analytics data unavailable, using defaults')
+      logger.warn('[AI Notification Engine] Analytics data unavailable, using defaults')
       return null
     }
   }
@@ -533,9 +534,9 @@ export class SmartNotificationEngine {
       // Validate models
       await this.validateMLModels()
       
-      console.log('[AI Notification Engine] Production ML models initialized successfully')
+      logger.info('[AI Notification Engine] Production ML models initialized successfully')
     } catch (error) {
-      console.error('[AI Notification Engine] Failed to initialize ML models:', error)
+      logger.error('[AI Notification Engine] Failed to initialize ML models:', error)
       // Initialize fallback models
       this.initializeFallbackModels()
     }
@@ -558,9 +559,9 @@ export class SmartNotificationEngine {
         throw new Error('Invalid engagement prediction model output')
       }
       
-      console.log('[AI Notification Engine] ML model validation passed')
+      logger.info('[AI Notification Engine] ML model validation passed')
     } catch (error) {
-      console.error('[AI Notification Engine] ML model validation failed:', error)
+      logger.error('[AI Notification Engine] ML model validation failed:', error)
       throw error
     }
   }
@@ -569,7 +570,7 @@ export class SmartNotificationEngine {
    * Initialize fallback models when main models fail
    */
   private initializeFallbackModels(): void {
-    console.warn('[AI Notification Engine] Using fallback models - reduced functionality')
+    logger.warn('[AI Notification Engine] Using fallback models - reduced functionality')
     
     this.mlModels = {
       engagementPredictor: this.createSimpleEngagementPredictor(),
@@ -659,7 +660,7 @@ export class SmartNotificationEngine {
       
       return prediction
     } catch (error) {
-      console.error('[AI Notification Engine] Advanced engagement prediction failed:', error)
+      logger.error('[AI Notification Engine] Advanced engagement prediction failed:', error)
       this.recordErrorMetric('engagement_prediction_error', error)
       return this.getDefaultPrediction()
     }
@@ -747,7 +748,7 @@ export class SmartNotificationEngine {
         ab_test_assignment: abTestAssignment || undefined
       }
     } catch (error) {
-      console.error('[AI Notification Engine] Enhanced personalization failed:', error)
+      logger.error('[AI Notification Engine] Enhanced personalization failed:', error)
       throw error
     }
   }
@@ -793,7 +794,7 @@ export class SmartNotificationEngine {
         performance_prediction: performancePrediction
       }
     } catch (error) {
-      console.error('[AI Notification Engine] Advanced timing optimization failed:', error)
+      logger.error('[AI Notification Engine] Advanced timing optimization failed:', error)
       return {
         optimized_notifications: notifications,
         timing_insights: [],
@@ -832,7 +833,7 @@ export class SmartNotificationEngine {
       
       return assignments
     } catch (error) {
-      console.error('[AI Notification Engine] A/B test execution failed:', error)
+      logger.error('[AI Notification Engine] A/B test execution failed:', error)
       return []
     }
   }
@@ -865,7 +866,7 @@ export class SmartNotificationEngine {
         cultural_patterns: culturalPatterns
       }
     } catch (error) {
-      console.error('[AI Notification Engine] Performance analysis failed:', error)
+      logger.error('[AI Notification Engine] Performance analysis failed:', error)
       return {
         insights: ['Error analyzing performance'],
         optimizations: ['Review notification system health'],
@@ -1140,7 +1141,7 @@ export class SmartNotificationEngine {
         }
       }
     } catch (error) {
-      console.error('[AI Notification Engine] Failed to get user behavior profile:', error)
+      logger.error('[AI Notification Engine] Failed to get user behavior profile:', error)
       return null
     }
   }
@@ -1148,9 +1149,9 @@ export class SmartNotificationEngine {
   private async trackABTestExperiment(templateId: string, assignments: any[]): Promise<void> {
     try {
       // In production, save to database
-      console.log('[AI Notification Engine] A/B Test tracked:', { templateId, assignments })
+      logger.info('[AI Notification Engine] A/B Test tracked:', { templateId, assignments })
     } catch (error) {
-      console.error('[AI Notification Engine] Failed to track A/B test:', error)
+      logger.error('[AI Notification Engine] Failed to track A/B test:', error)
     }
   }
 
@@ -1169,7 +1170,7 @@ export class SmartNotificationEngine {
         }
       }
     } catch (error) {
-      console.error('[AI Notification Engine] Failed to get performance data:', error)
+      logger.error('[AI Notification Engine] Failed to get performance data:', error)
       return {}
     }
   }
@@ -1221,9 +1222,9 @@ export class SmartNotificationEngine {
   private async updateMLModelsWithPerformanceData(performanceData: any): Promise<void> {
     try {
       // In production, retrain ML models with new performance data
-      console.log('[AI Notification Engine] ML models updated with performance data')
+      logger.info('[AI Notification Engine] ML models updated with performance data')
     } catch (error) {
-      console.error('[AI Notification Engine] Failed to update ML models:', error)
+      logger.error('[AI Notification Engine] Failed to update ML models:', error)
     }
   }
   // New Enhanced Methods for Portuguese-speaking community AI
@@ -1243,7 +1244,7 @@ export class SmartNotificationEngine {
       if (error) throw error
       return data
     } catch (error) {
-      console.error('[AI Notification Engine] Failed to get template from database:', error)
+      logger.error('[AI Notification Engine] Failed to get template from database:', error)
       return null
     }
   }
@@ -1279,7 +1280,7 @@ export class SmartNotificationEngine {
         cultural_references_used: culturalRules.content_adaptations.cultural_references
       }
     } catch (error) {
-      console.error('[AI Notification Engine] Cultural adaptation failed:', error)
+      logger.error('[AI Notification Engine] Cultural adaptation failed:', error)
       // Fallback to basic adaptation
       return {
         adapted_content: template.content_variations.friendly,
@@ -1306,7 +1307,7 @@ export class SmartNotificationEngine {
       if (error) throw error
       return data
     } catch (error) {
-      console.error('[AI Notification Engine] Failed to get cultural rules from database:', error)
+      logger.error('[AI Notification Engine] Failed to get cultural rules from database:', error)
       // Fallback to hardcoded rules
       return this.getCulturalRules(region as CulturalContext['portuguese_region'])
     }
@@ -1364,7 +1365,7 @@ export class SmartNotificationEngine {
       
       return variants[assignmentIndex]
     } catch (error) {
-      console.error('[AI Notification Engine] A/B test assignment failed:', error)
+      logger.error('[AI Notification Engine] A/B test assignment failed:', error)
       return null
     }
   }
@@ -1483,7 +1484,7 @@ export class SmartNotificationEngine {
           send_day_of_week: new Date().getDay() + 1
         })
     } catch (error) {
-      console.error('[AI Notification Engine] Failed to track notification generation:', error)
+      logger.error('[AI Notification Engine] Failed to track notification generation:', error)
     }
   }
   
@@ -1611,9 +1612,9 @@ export class SmartNotificationEngine {
           scheduled_send_time: scheduledTime.toISOString()
         })
         
-      console.log(`[AI Notification Engine] Notification queued for optimal delivery at ${scheduledTime.toISOString()}`)
+      logger.info(`[AI Notification Engine] Notification queued for optimal delivery at ${scheduledTime.toISOString()}`)
     } catch (error) {
-      console.error('[AI Notification Engine] Failed to queue notification:', error)
+      logger.error('[AI Notification Engine] Failed to queue notification:', error)
       throw error
     }
   }
@@ -1671,7 +1672,7 @@ export class SmartNotificationEngine {
           }
           
         } catch (notifError) {
-          console.error('[AI Notification Engine] Failed to process queued notification:', notifError)
+          logger.error('[AI Notification Engine] Failed to process queued notification:', notifError)
           
           await this.supabaseClient
             .from('notification_queue')
@@ -1701,7 +1702,7 @@ export class SmartNotificationEngine {
         }
       }
     } catch (error) {
-      console.error('[AI Notification Engine] Failed to process notification queue:', error)
+      logger.error('[AI Notification Engine] Failed to process notification queue:', error)
       throw error
     }
   }
@@ -1725,9 +1726,9 @@ export class SmartNotificationEngine {
         this.cleanupOldMetrics()
       }, 3600000)
       
-      console.log('[AI Notification Engine] Performance monitoring initialized')
+      logger.info('[AI Notification Engine] Performance monitoring initialized')
     } catch (error) {
-      console.error('[AI Notification Engine] Failed to setup performance monitoring:', error)
+      logger.error('[AI Notification Engine] Failed to setup performance monitoring:', error)
     }
   }
   
@@ -1771,7 +1772,7 @@ export class SmartNotificationEngine {
           
           return Math.min(100, Math.max(0, adjustedScore * 100))
         } catch (error) {
-          console.error('[AI Notification Engine] Prediction model error:', error)
+          logger.error('[AI Notification Engine] Prediction model error:', error)
           return 50 // Safe fallback
         }
       }
@@ -1809,7 +1810,7 @@ export class SmartNotificationEngine {
           // Final fallback to Lusophone dinner time
           return 19
         } catch (error) {
-          console.error('[AI Notification Engine] Timing optimization error:', error)
+          logger.error('[AI Notification Engine] Timing optimization error:', error)
           return 19 // Safe fallback
         }
       }
@@ -1860,7 +1861,7 @@ export class SmartNotificationEngine {
             adaptation_applied: true
           }
         } catch (error) {
-          console.error('[AI Notification Engine] Content personalization error:', error)
+          logger.error('[AI Notification Engine] Content personalization error:', error)
           return { ...content, culturally_adapted: false, personalization_score: 0.5 }
         }
       }
@@ -1906,7 +1907,7 @@ export class SmartNotificationEngine {
           
           return adaptedContent
         } catch (error) {
-          console.error('[AI Notification Engine] Cultural adaptation error:', error)
+          logger.error('[AI Notification Engine] Cultural adaptation error:', error)
           return content
         }
       }
@@ -1959,7 +1960,7 @@ export class SmartNotificationEngine {
           
           return analysis
         } catch (error) {
-          console.error('[AI Notification Engine] Performance analysis error:', error)
+          logger.error('[AI Notification Engine] Performance analysis error:', error)
           return {
             overall_engagement: 0,
             cultural_effectiveness: 0,
@@ -1989,7 +1990,7 @@ export class SmartNotificationEngine {
         }
       }
     } catch (error) {
-      console.warn('[AI Notification Engine] Failed to record performance metric:', error)
+      logger.warn('[AI Notification Engine] Failed to record performance metric:', error)
     }
   }
   
@@ -2003,7 +2004,7 @@ export class SmartNotificationEngine {
       const count = this.performanceMetrics.error_counts.get(errorType) || 0
       this.performanceMetrics.error_counts.set(errorType, count + 1)
     } catch (e) {
-      console.warn('[AI Notification Engine] Failed to record error metric:', e)
+      logger.warn('[AI Notification Engine] Failed to record error metric:', e)
     }
   }
   
@@ -2018,7 +2019,7 @@ export class SmartNotificationEngine {
         timestamp: Date.now()
       })
     } catch (error) {
-      console.warn('[AI Notification Engine] Failed to cache prediction:', error)
+      logger.warn('[AI Notification Engine] Failed to cache prediction:', error)
     }
   }
   
@@ -2040,7 +2041,7 @@ export class SmartNotificationEngine {
         this.processingQueue.clear()
       }
     } catch (error) {
-      console.warn('[AI Notification Engine] Failed to cleanup metrics:', error)
+      logger.warn('[AI Notification Engine] Failed to cleanup metrics:', error)
     }
   }
   
@@ -2090,7 +2091,7 @@ export class SmartNotificationEngine {
         recommendations
       }
     } catch (error) {
-      console.error('[AI Notification Engine] Failed to get performance metrics:', error)
+      logger.error('[AI Notification Engine] Failed to get performance metrics:', error)
       return {
         system_health: 'unknown',
         average_prediction_time: 0,
@@ -2174,7 +2175,7 @@ export class SmartNotificationEngine {
         timestamp: new Date().toISOString()
       }
     } catch (error) {
-      console.error('[AI Notification Engine] Health check failed:', error)
+      logger.error('[AI Notification Engine] Health check failed:', error)
       return {
         status: 'critical',
         checks,
@@ -2266,7 +2267,7 @@ export class SmartNotificationEngine {
       if (userStyle === 'casual' && culturalTone !== 'warm') return 'casual'
       return 'friendly'
     } catch (error) {
-      console.warn('[AI Notification Engine] Advanced content style recommendation error:', error)
+      logger.warn('[AI Notification Engine] Advanced content style recommendation error:', error)
       return this.recommendContentStyle(userBehavior, culturalRules)
     }
   }
@@ -2295,7 +2296,7 @@ export class SmartNotificationEngine {
         best_performing_style: data.best_performing_style
       }
     } catch (error) {
-      console.warn('[AI Notification Engine] A/B test results query error:', error)
+      logger.warn('[AI Notification Engine] A/B test results query error:', error)
       return null
     }
   }
@@ -2327,7 +2328,7 @@ export class SmartNotificationEngine {
       
       return baseOptimalTime
     } catch (error) {
-      console.warn('[AI Notification Engine] Advanced timing calculation error:', error)
+      logger.warn('[AI Notification Engine] Advanced timing calculation error:', error)
       return this.calculateOptimalSendTime(userBehavior, culturalRules)
     }
   }
@@ -2350,7 +2351,7 @@ export class SmartNotificationEngine {
         activity_level: isEveningPeak ? (isWeekend ? 0.9 : 0.8) : 0.5
       }
     } catch (error) {
-      console.warn('[AI Notification Engine] Current activity query error:', error)
+      logger.warn('[AI Notification Engine] Current activity query error:', error)
       return null
     }
   }
@@ -2370,7 +2371,7 @@ export class SmartNotificationEngine {
         this.updateBehaviorPatternsWithRealData(cachedData.behaviorPatterns)
       }
     } catch (error) {
-      console.warn('[AI Notification Engine] Failed to apply cached behavior data:', error)
+      logger.warn('[AI Notification Engine] Failed to apply cached behavior data:', error)
     }
   }
   
@@ -2404,7 +2405,7 @@ export class SmartNotificationEngine {
         })
       }
     } catch (error) {
-      console.warn('[AI Notification Engine] Failed to update behavior patterns:', error)
+      logger.warn('[AI Notification Engine] Failed to update behavior patterns:', error)
     }
   }
 }

@@ -13,6 +13,7 @@
  */
 
 import { supabase } from '@/lib/supabase'
+import logger from '@/utils/logger'
 import { contactInfo } from '@/config/contact'
 import { SUBSCRIPTION_PLANS, formatPrice } from '@/config/pricing'
 import { UNIVERSITY_PARTNERSHIPS } from '@/config/universities'
@@ -421,9 +422,9 @@ export class CulturalCompatibilityAI {
         saudadeAnalyzer: this.createSaudadeAnalysisModel()
       }
       
-      console.log('[Cultural Compatibility AI] All ML models initialized successfully')
+      logger.info('[Cultural Compatibility AI] All ML models initialized successfully')
     } catch (error) {
-      console.error('[Cultural Compatibility AI] Failed to initialize ML models:', error)
+      logger.error('[Cultural Compatibility AI] Failed to initialize ML models:', error)
       throw new Error('Cultural Compatibility AI initialization failed')
     }
   }
@@ -447,7 +448,7 @@ export class CulturalCompatibilityAI {
         await this.updateModelWeights(historicalMatches)
       }
     } catch (error) {
-      console.error('[Cultural Compatibility AI] Failed to load behavioral learning data:', error)
+      logger.error('[Cultural Compatibility AI] Failed to load behavioral learning data:', error)
     }
   }
 
@@ -542,7 +543,7 @@ export class CulturalCompatibilityAI {
 
       return matchPrediction
     } catch (error) {
-      console.error('[Cultural Compatibility AI] Analysis failed:', error)
+      logger.error('[Cultural Compatibility AI] Analysis failed:', error)
       throw error
     }
   }
@@ -571,7 +572,7 @@ export class CulturalCompatibilityAI {
         .single()
 
       if (matchError || !originalMatch) {
-        console.error('Original match prediction not found:', matchError)
+        logger.error('Original match prediction not found:', matchError)
         return
       }
 
@@ -609,9 +610,11 @@ export class CulturalCompatibilityAI {
       // Update analytics
       await this.updateAnalytics(predictionAccuracy, outcome)
 
-      console.log(`[Cultural Compatibility AI] Learned from match ${matchId} with outcome ${outcome}`)
+      if (process.env.NODE_ENV === 'development') {
+        logger.info(`[Cultural Compatibility AI] Learned from match ${matchId} with outcome ${outcome}`)
+      }
     } catch (error) {
-      console.error('[Cultural Compatibility AI] Failed to learn from outcome:', error)
+      logger.error('[Cultural Compatibility AI] Failed to learn from outcome:', error)
     }
   }
 
@@ -695,7 +698,7 @@ export class CulturalCompatibilityAI {
 
       return filteredMatches
     } catch (error) {
-      console.error('[Cultural Compatibility AI] Failed to get personalized matches:', error)
+      logger.error('[Cultural Compatibility AI] Failed to get personalized matches:', error)
       throw error
     }
   }
@@ -732,7 +735,7 @@ export class CulturalCompatibilityAI {
 
       return Math.round(conversationScore)
     } catch (error) {
-      console.error('[Cultural Compatibility AI] Conversation quality prediction failed:', error)
+      logger.error('[Cultural Compatibility AI] Conversation quality prediction failed:', error)
       return 65 // Default moderate score
     }
   }
@@ -773,7 +776,7 @@ export class CulturalCompatibilityAI {
 
       return Math.round(regionalScore)
     } catch (error) {
-      console.error('[Cultural Compatibility AI] Regional analysis failed:', error)
+      logger.error('[Cultural Compatibility AI] Regional analysis failed:', error)
       return 75 // Default moderate-high score
     }
   }

@@ -5,6 +5,7 @@ import React, { useState, useEffect, useMemo } from 'react'
 
 // ✅ PUBLIC ACCESS: This page is accessible to all users without authentication
 import { useLanguage } from '@/context/LanguageContext'
+import logger from '@/utils/logger'
 import { ROUTES } from '@/config/routes'
 import { portugueseBusinessService, PortugueseBusiness, BusinessFilters, BusinessCategory, LondonArea, PortugueseRegion } from '@/lib/businessDirectory'
 import { BusinessDirectoryTooltip } from '@/components/ui/GuidanceTooltip'
@@ -14,6 +15,16 @@ import NearMeButton, { DistanceIndicator } from '@/components/NearMeButton'
 // import BusinessSubmissionForm from '@/components/BusinessSubmissionForm' // TODO: Implement component
 import { LUSOPHONE_CELEBRATIONS, CULTURAL_WISDOM, getFeaturedCelebrations, getRandomCulturalWisdom } from '@/config/lusophone-celebrations'
 import { PALOP_BUSINESS_DIRECTORY, getFeaturedPALOPBusinesses, getPALOPBusinessesByCategory } from '@/config/palop-business-directory'
+import { 
+  FEATURED_PORTUGUESE_BUSINESSES,
+  BUSINESS_DIRECTORY_CATEGORIES,
+  PALOP_BUSINESS_SHOWCASE,
+  BUSINESS_GEOGRAPHIC_DISTRIBUTION,
+  getFeaturedBusinessesByCategory,
+  getBusinessesByCity,
+  getPremiumBusinesses,
+  getBusinessDirectoryStats
+} from '@/config/business-directory-carousels'
 import { useGeolocation } from '@/hooks/useGeolocation'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { 
@@ -479,7 +490,7 @@ export default function BusinessDirectory() {
         const parsed = JSON.parse(savedFavorites)
         setFavoritedBusinesses(new Set(parsed))
       } catch (error) {
-        console.warn('Failed to load saved favorites:', error)
+        logger.warn('Failed to load saved favorites:', error)
       }
     }
   }, [])
@@ -492,7 +503,7 @@ export default function BusinessDirectory() {
       setFeaturedBusinesses(result.featuredBusinesses)
       setTotal(result.total)
     } catch (error) {
-      console.error('Error loading businesses:', error)
+      logger.error('Error loading businesses:', error)
     } finally {
       setLoading(false)
     }
@@ -1195,127 +1206,207 @@ export default function BusinessDirectory() {
           )}
           </div>
 
-          {/* Featured Businesses Carousel */}
-          {featuredBusinesses.length > 0 && (
-            <div className="mb-12">
-              <LusophoneCarousel
-                items={featuredBusinesses.map(business => ({
-                  id: business.id,
-                  title: {
-                    en: business.name,
-                    pt: business.namePortuguese || business.name
-                  },
-                  description: {
-                    en: business.description,
-                    pt: business.descriptionPortuguese || business.description
-                  },
-                  image: business.photos[0] || '/images/default-business.jpg',
-                  flagEmoji: business.ownerRegion === 'portugal_mainland' ? '🇵🇹' :
-                           business.ownerRegion === 'brazil' ? '🇧🇷' :
-                           business.ownerRegion === 'angola' ? '🇦🇴' :
-                           business.ownerRegion === 'cape_verde' ? '🇨🇻' :
-                           business.ownerRegion === 'mozambique' ? '🇲🇿' :
-                           business.ownerRegion === 'guinea_bissau' ? '🇬🇼' :
-                           business.ownerRegion === 'sao_tome_principe' ? '🇸🇹' : '🇵🇹',
-                  category: business.category,
-                  countries: [business.ownerRegion.replace('_', ' ')],
-                  priority: business.verificationStatus === 'verified' ? 1 : 2
-                }))}
-                renderItem={(item, index) => {
-                  const originalBusiness = featuredBusinesses[index]
-                  if (!originalBusiness) return null
-                  return (
-                    <BusinessCard 
-                      business={originalBusiness} 
-                      featured={true}
-                      viewMode="grid"
-                      distance={getBusinessDistance(originalBusiness.id)}
-                      onFavorite={handleFavoriteToggle}
-                      isFavorited={favoritedBusinesses.has(originalBusiness.id)}
-                    />
-                  )
-                }}
-                title={{
-                  en: "Featured Portuguese Businesses",
-                  pt: "Negócios Portugueses em Destaque"
-                }}
-                subtitle={{
-                  en: "Verified businesses owned by Portuguese speakers across London",
-                  pt: "Negócios verificados de proprietários lusófonos em Londres"
-                }}
-                responsive={CAROUSEL_CONFIGS.standard}
-                autoAdvance={true}
-                autoAdvanceInterval={AUTO_ADVANCE_TIMINGS.slow}
-                showControls={true}
-                showDots={true}
-                className="featured-businesses-carousel"
-                onItemClick={(item, index) => {
-                  // Navigate to business details or open business modal
-                  console.log('Business clicked:', featuredBusinesses[index]?.name)
-                }}
-              />
-            </div>
-          )}
-
-          {/* Business Categories Showcase Carousel */}
+          {/* Featured Portuguese Businesses Carousel */}
           <div className="mb-12">
             <LusophoneCarousel
-              items={categories.filter(cat => cat.value !== 'all').map(category => ({
-                id: `category-${category.value}`,
-                title: {
-                  en: category.label.en,
-                  pt: category.label.pt
-                },
-                description: {
-                  en: `Discover authentic ${category.label.en.toLowerCase()} businesses`,
-                  pt: `Descubra negócios autênticos de ${category.label.pt.toLowerCase()}`
-                },
-                image: `/images/categories/${category.value}.jpg`,
+              items={getPremiumBusinesses()}
+              renderItem={(item, index) => {
+                return (
+                  <div className="bg-white rounded-2xl shadow-lg border border-primary-200 overflow-hidden hover:shadow-xl transition-all duration-300 group h-full">
+                    {/* Premium Badge */}
+                    <div className="bg-gradient-to-r from-premium-400 to-accent-400 text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
+                      <SparklesIcon className="w-4 h-4" />
+                      {isPortuguese ? 'Negócio Premium' : 'Premium Business'}
+                    </div>
+                    
+                    {/* Business Image */}
+                    <div className="relative h-48">
+                      <div className="w-full h-full bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
+                        <BuildingStorefrontIcon className="w-16 h-16 text-primary-400" />
+                      </div>
+                      
+                      {/* Country Flag & Verification */}
+                      <div className="absolute top-3 left-3 flex flex-col gap-2">
+                        <span className="bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-medium px-3 py-1 rounded-full flex items-center gap-1">
+                          {item.flagEmoji} {item.ownerCountry === 'portugal' ? 'Portugal' :
+                                          item.ownerCountry === 'brazil' ? 'Brasil' :
+                                          item.ownerCountry === 'angola' ? 'Angola' :
+                                          item.ownerCountry === 'cape_verde' ? 'Cabo Verde' :
+                                          item.ownerCountry === 'mozambique' ? 'Moçambique' : item.ownerCountry}
+                        </span>
+                        {item.isVerified && (
+                          <div className="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+                            <CheckBadgeIcon className="w-3 h-3" />
+                            {isPortuguese ? 'Verificado' : 'Verified'}
+                          </div>
+                        )}
+                      </div>
+                      
+                      {/* Rating */}
+                      <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full flex items-center gap-1">
+                        <StarSolidIcon className="w-3 h-3 text-yellow-400" />
+                        <span className="text-xs font-medium">{item.rating}</span>
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="mb-4">
+                        <h3 className="font-bold text-xl text-gray-900 group-hover:text-primary-600 transition-colors mb-1">
+                          {item.title[language]}
+                        </h3>
+                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                          <span>{isPortuguese ? `Proprietário: ${item.ownerName}` : `Owner: ${item.ownerName}`}</span>
+                          <span>•</span>
+                          <span>{isPortuguese ? `Desde ${item.establishedYear}` : `Since ${item.establishedYear}`}</span>
+                        </div>
+                      </div>
+                      
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                        {item.description[language]}
+                      </p>
+                      
+                      {/* Location */}
+                      <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
+                        <MapPinIcon className="w-4 h-4" />
+                        <span>{item.location.city}, {item.location.region}</span>
+                      </div>
+                      
+                      {/* Specialties */}
+                      <div className="mb-4">
+                        <div className="flex flex-wrap gap-1">
+                          {item.specialties.slice(0, 3).map(specialty => (
+                            <span
+                              key={specialty}
+                              className="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded-full"
+                            >
+                              {specialty}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      {/* Action Buttons */}
+                      <div className="flex gap-2 mt-4">
+                        <button className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 min-h-[44px] active:scale-95">
+                          {isPortuguese ? 'Ver Detalhes' : 'View Details'}
+                        </button>
+                        <a 
+                          href={`tel:${item.contact.phone}`}
+                          className="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors min-h-[44px] flex items-center justify-center active:scale-95"
+                        >
+                          <PhoneIcon className="w-5 h-5" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }}
+              title={{
+                en: "Featured Portuguese Businesses",
+                pt: "Negócios Portugueses em Destaque"
+              }}
+              subtitle={{
+                en: "Premium verified businesses from Portuguese-speaking entrepreneurs across the UK",
+                pt: "Negócios premium verificados de empreendedores lusófonos em todo o Reino Unido"
+              }}
+              responsive={CAROUSEL_CONFIGS.standard}
+              autoAdvance={true}
+              autoAdvanceInterval={AUTO_ADVANCE_TIMINGS.slow}
+              showControls={true}
+              showDots={true}
+              className="featured-businesses-carousel"
+              onItemClick={(item, index) => {
+                if (process.env.NODE_ENV === 'development') {
+                  logger.info('Featured business clicked:', item.title.en)
+                }
+              }}
+            />
+          </div>
+
+          {/* Business Categories Carousel */}
+          <div className="mb-12">
+            <LusophoneCarousel
+              items={BUSINESS_DIRECTORY_CATEGORIES.map(category => ({
+                id: category.id,
+                title: category.name,
+                description: category.description,
+                image: `/images/categories/${category.id}.jpg`,
                 flagEmoji: category.emoji,
-                category: category.value,
-                countries: ['Portugal', 'Brazil', 'Angola', 'Cape Verde', 'Mozambique'],
+                category: category.id,
+                countries: category.countries,
                 priority: 1
               }))}
               renderItem={(item, index) => {
-                const originalCategory = categories.filter(cat => cat.value !== 'all')[index]
-                if (!originalCategory) return null
-                
-                const businessCount = businesses.filter(b => b.category === originalCategory.value).length
+                const categoryData = BUSINESS_DIRECTORY_CATEGORIES[index]
+                if (!categoryData) return null
                 
                 return (
                   <div 
                     className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer h-full"
                     onClick={() => {
                       const currentCategories = filters.category || []
-                      if (currentCategories.includes(originalCategory.value as BusinessCategory)) {
-                        handleFilterChange('category', currentCategories.filter(c => c !== originalCategory.value))
+                      const categoryValue = categoryData.id as BusinessCategory
+                      if (currentCategories.includes(categoryValue)) {
+                        handleFilterChange('category', currentCategories.filter(c => c !== categoryValue))
                       } else {
-                        handleFilterChange('category', [...currentCategories, originalCategory.value])
+                        handleFilterChange('category', [...currentCategories, categoryValue])
                       }
                     }}
                   >
-                    <div className="relative h-32">
+                    <div className="relative h-40">
                       <div className="w-full h-full bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center">
-                        <span className="text-4xl">{originalCategory.emoji}</span>
+                        <span className="text-5xl">{categoryData.emoji}</span>
                       </div>
-                      <div className="absolute top-3 right-3 bg-primary-500 text-white px-2 py-1 rounded-full text-xs font-bold">
-                        {businessCount}
+                      <div className="absolute top-3 right-3 bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                        {categoryData.totalBusinesses}
+                      </div>
+                      <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full flex items-center gap-1">
+                        <StarSolidIcon className="w-3 h-3 text-yellow-400" />
+                        <span className="text-xs font-medium">{categoryData.averageRating.toFixed(1)}</span>
                       </div>
                     </div>
-                    <div className="p-4">
+                    
+                    <div className="p-5">
                       <h3 className="font-bold text-lg text-gray-900 mb-2">
-                        {originalCategory.label[language]}
+                        {categoryData.name[language]}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-4">
-                        {item.description[language]}
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                        {categoryData.description[language]}
                       </p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-primary-600 font-medium">
-                          {businessCount} {isPortuguese ? 'negócios' : 'businesses'}
-                        </span>
-                        <div className="flex gap-1 text-xs">
-                          🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿
+                      
+                      {/* Countries represented */}
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                          <span>{isPortuguese ? 'Países representados:' : 'Countries represented:'}</span>
                         </div>
+                        <div className="flex gap-1 text-lg">
+                          {categoryData.countries.slice(0, 5).map(country => {
+                            const countryFlags = {
+                              'Portugal': '🇵🇹',
+                              'Brazil': '🇧🇷', 
+                              'Angola': '🇦🇴',
+                              'Cape Verde': '🇨🇻',
+                              'Mozambique': '🇲🇿',
+                              'Guinea-Bissau': '🇬🇼',
+                              'São Tomé and Príncipe': '🇸🇹'
+                            }
+                            return (
+                              <span key={country} className="hover:scale-110 transition-transform cursor-pointer" title={country}>
+                                {countryFlags[country as keyof typeof countryFlags] || '🌍'}
+                              </span>
+                            )
+                          })}
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <span className="text-sm text-primary-600 font-medium">
+                          {categoryData.totalBusinesses} {isPortuguese ? 'negócios' : 'businesses'}
+                        </span>
+                        <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                          {isPortuguese ? 'Clique para filtrar' : 'Click to filter'}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -1326,8 +1417,8 @@ export default function BusinessDirectory() {
                 pt: "Explorar Categorias de Negócios"
               }}
               subtitle={{
-                en: "Find Portuguese businesses by category - from restaurants to professional services",
-                pt: "Encontre negócios portugueses por categoria - de restaurantes a serviços profissionais"
+                en: "Discover Portuguese businesses by category across the United Kingdom",
+                pt: "Descubra negócios portugueses por categoria em todo o Reino Unido"
               }}
               responsive={CAROUSEL_CONFIGS.compact}
               autoAdvance={false}
@@ -1335,15 +1426,242 @@ export default function BusinessDirectory() {
               showDots={true}
               className="business-categories-carousel"
               onItemClick={(item, index) => {
-                const category = categories.filter(cat => cat.value !== 'all')[index]
+                const category = BUSINESS_DIRECTORY_CATEGORIES[index]
                 if (category) {
                   const currentCategories = filters.category || []
-                  if (currentCategories.includes(category.value as BusinessCategory)) {
-                    handleFilterChange('category', currentCategories.filter(c => c !== category.value))
+                  const categoryValue = category.id as BusinessCategory
+                  if (currentCategories.includes(categoryValue)) {
+                    handleFilterChange('category', currentCategories.filter(c => c !== categoryValue))
                   } else {
-                    handleFilterChange('category', [...currentCategories, category.value])
+                    handleFilterChange('category', [...currentCategories, categoryValue])
                   }
                 }
+              }}
+            />
+          </div>
+          
+          {/* PALOP Business Excellence Carousel */}
+          <div className="mb-12">
+            <LusophoneCarousel
+              items={PALOP_BUSINESS_SHOWCASE.slice(0, 8)}
+              renderItem={(item, index) => {
+                return (
+                  <div className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-2xl shadow-lg border-2 border-orange-200 overflow-hidden hover:shadow-xl transition-all duration-300 group h-full">
+                    {/* PALOP Excellence Badge */}
+                    <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
+                      <span className="text-lg">{item.flagEmoji}</span>
+                      <span>{isPortuguese ? 'Excelência PALOP' : 'PALOP Excellence'}</span>
+                      <SparklesIcon className="w-4 h-4" />
+                    </div>
+                    
+                    {/* Business Image */}
+                    <div className="relative h-48">
+                      <div className="w-full h-full bg-gradient-to-br from-orange-100 to-yellow-100 flex items-center justify-center">
+                        <BuildingStorefrontIcon className="w-16 h-16 text-orange-400" />
+                      </div>
+                      
+                      {/* Country & Verification */}
+                      <div className="absolute top-3 left-3 flex flex-col gap-2">
+                        <span className="bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-medium px-3 py-1 rounded-full flex items-center gap-1">
+                          {item.flagEmoji}
+                          {item.ownerCountry === 'angola' ? 'Angola' :
+                           item.ownerCountry === 'cape_verde' ? 'Cabo Verde' :
+                           item.ownerCountry === 'mozambique' ? 'Moçambique' :
+                           item.ownerCountry === 'guinea_bissau' ? 'Guiné-Bissau' :
+                           item.ownerCountry === 'sao_tome_principe' ? 'São Tomé' : item.ownerCountry}
+                        </span>
+                      </div>
+                      
+                      {/* Rating */}
+                      <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full flex items-center gap-1">
+                        <StarSolidIcon className="w-3 h-3 text-yellow-400" />
+                        <span className="text-xs font-medium">{item.rating}</span>
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="mb-4">
+                        <h3 className="font-bold text-xl text-gray-900 group-hover:text-orange-600 transition-colors mb-1 line-clamp-2">
+                          {item.title[language]}
+                        </h3>
+                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                          <span>{isPortuguese ? `Proprietário: ${item.ownerName}` : `Owner: ${item.ownerName}`}</span>
+                        </div>
+                      </div>
+                      
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                        {item.description[language]}
+                      </p>
+                      
+                      {/* Cultural Connection */}
+                      <div className="bg-orange-100 border border-orange-200 rounded-lg p-3 mb-4">
+                        <p className="text-sm text-orange-800 italic line-clamp-2">
+                          {item.culturalConnection}
+                        </p>
+                      </div>
+                      
+                      {/* Location */}
+                      <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
+                        <MapPinIcon className="w-4 h-4" />
+                        <span>{item.location.city}, {item.location.region}</span>
+                      </div>
+                      
+                      {/* Action Buttons */}
+                      <div className="flex gap-2 mt-4">
+                        <button className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-200 min-h-[44px] active:scale-95">
+                          {isPortuguese ? 'Ver Detalhes' : 'View Details'}
+                        </button>
+                        <a 
+                          href={`tel:${item.contact.phone}`}
+                          className="px-4 py-3 bg-orange-100 text-orange-700 rounded-lg hover:bg-orange-200 transition-colors min-h-[44px] flex items-center justify-center active:scale-95"
+                        >
+                          <PhoneIcon className="w-5 h-5" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }}
+              title={{
+                en: "PALOP Business Excellence",
+                pt: "Excelência Empresarial PALOP"
+              }}
+              subtitle={{
+                en: "Celebrating exceptional businesses from African Portuguese-speaking countries",
+                pt: "Celebrando negócios excepcionais dos países africanos de língua portuguesa"
+              }}
+              responsive={CAROUSEL_CONFIGS.standard}
+              autoAdvance={true}
+              autoAdvanceInterval={AUTO_ADVANCE_TIMINGS.showcase}
+              showControls={true}
+              showDots={true}
+              className="palop-excellence-carousel"
+              onItemClick={(item, index) => {
+                if (process.env.NODE_ENV === 'development') {
+                  logger.info('PALOP business clicked:', item.title.en)
+                }
+              }}
+            />
+          </div>
+          
+          {/* Geographic Business Distribution Carousel */}
+          <div className="mb-12">
+            <LusophoneCarousel
+              items={Object.entries(BUSINESS_GEOGRAPHIC_DISTRIBUTION).map(([city, data]) => ({
+                id: `city-${city.toLowerCase()}`,
+                title: {
+                  en: `${city} Portuguese Businesses`,
+                  pt: `Negócios Portugueses em ${city}`
+                },
+                description: {
+                  en: `${data.total} verified Portuguese businesses serving the ${city} community`,
+                  pt: `${data.total} negócios portugueses verificados servindo a comunidade de ${city}`
+                },
+                image: `/images/cities/${city.toLowerCase()}.jpg`,
+                flagEmoji: '🇬🇧',
+                category: 'geographic',
+                countries: Object.keys(data.byCountry),
+                priority: data.total > 50 ? 1 : 2
+              }))}
+              renderItem={(item, index) => {
+                const [city, cityData] = Object.entries(BUSINESS_GEOGRAPHIC_DISTRIBUTION)[index]
+                if (!cityData) return null
+                
+                const topCountries = Object.entries(cityData.byCountry)
+                  .sort(([,a], [,b]) => b - a)
+                  .slice(0, 3)
+                
+                return (
+                  <div className="bg-white rounded-xl shadow-md border border-blue-100 overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer h-full">
+                    <div className="relative h-40">
+                      <div className="w-full h-full bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center">
+                        <div className="text-center">
+                          <span className="text-4xl mb-2 block">🏙️</span>
+                          <span className="text-2xl font-bold text-blue-600">{city}</span>
+                        </div>
+                      </div>
+                      <div className="absolute top-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                        {cityData.total}
+                      </div>
+                      <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full">
+                        <span className="text-lg">🇬🇧</span>
+                      </div>
+                    </div>
+                    
+                    <div className="p-5">
+                      <h3 className="font-bold text-lg text-gray-900 mb-2">
+                        {item.title[language]}
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-4">
+                        {item.description[language]}
+                      </p>
+                      
+                      {/* Top Countries */}
+                      <div className="mb-4">
+                        <div className="text-xs text-gray-500 mb-2">
+                          {isPortuguese ? 'Principais comunidades:' : 'Top communities:'}
+                        </div>
+                        <div className="space-y-2">
+                          {topCountries.map(([country, count]) => {
+                            const countryNames = {
+                              'portugal': { en: 'Portugal', pt: 'Portugal', flag: '🇵🇹' },
+                              'brazil': { en: 'Brazil', pt: 'Brasil', flag: '🇧🇷' },
+                              'angola': { en: 'Angola', pt: 'Angola', flag: '🇦🇴' },
+                              'cape_verde': { en: 'Cape Verde', pt: 'Cabo Verde', flag: '🇨🇻' },
+                              'mozambique': { en: 'Mozambique', pt: 'Moçambique', flag: '🇲🇿' }
+                            }
+                            const countryInfo = countryNames[country as keyof typeof countryNames]
+                            if (!countryInfo) return null
+                            
+                            return (
+                              <div key={country} className="flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                  <span>{countryInfo.flag}</span>
+                                  <span className="text-sm">{countryInfo[language]}</span>
+                                </div>
+                                <span className="text-sm font-medium text-blue-600">{count}</span>
+                              </div>
+                            )
+                          })}
+                        </div>
+                      </div>
+                      
+                      <div className="pt-3 border-t border-gray-100">
+                        <div className="text-xs text-gray-500 mb-1">
+                          {cityData.regions.length > 1 ? 
+                            (isPortuguese ? 'Múltiplas regiões' : 'Multiple regions') :
+                            (isPortuguese ? 'Região única' : 'Single region')
+                          }
+                        </div>
+                        <div className="text-sm text-gray-600">
+                          {cityData.regions.slice(0, 2).join(', ')}
+                          {cityData.regions.length > 2 && ` +${cityData.regions.length - 2}`}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }}
+              title={{
+                en: "Portuguese Businesses Across the UK",
+                pt: "Negócios Portugueses por Todo o Reino Unido"
+              }}
+              subtitle={{
+                en: "Discover Portuguese businesses in major UK cities from London to Edinburgh",
+                pt: "Descubra negócios portugueses nas principais cidades do Reino Unido de Londres a Edinburgh"
+              }}
+              responsive={CAROUSEL_CONFIGS.compact}
+              autoAdvance={false}
+              showControls={true}
+              showDots={true}
+              className="geographic-distribution-carousel"
+              onItemClick={(item, index) => {
+                const [city] = Object.entries(BUSINESS_GEOGRAPHIC_DISTRIBUTION)[index]
+                if (process.env.NODE_ENV === 'development') {
+                logger.info('City clicked:', city)
+              }
+                // Could implement city filtering here
               }}
             />
           </div>

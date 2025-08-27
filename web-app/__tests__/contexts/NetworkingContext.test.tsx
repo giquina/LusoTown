@@ -18,7 +18,7 @@ global.localStorage = localStorageMock
 describe('NetworkingContext', () => {
   beforeEach(() => {
     jest.clearAllMocks()
-    localStorageMock.getItem.mockReturnValue(null)
+    (localStorageMock.getItem as jest.Mock).mockReturnValue(null)
   })
 
   const wrapper = ({ children }: { children: React.ReactNode }) => (
@@ -30,11 +30,11 @@ describe('NetworkingContext', () => {
     
     expect(result.current).toBeDefined()
     expect(result.current.connections).toBeDefined()
-    expect(result.current.isLoading).toBe(false)
+    expect(result.current.loading).toBe(false)
   })
 
   it('should handle mock connections data', () => {
-    localStorageMock.getItem.mockImplementation((key: string) => {
+    (localStorageMock.getItem as jest.Mock).mockImplementation((key: string) => {
       if (key === 'lusotown-connections') {
         return JSON.stringify(portugueseTestUtils.mockPortugueseConnections)
       }
@@ -48,7 +48,7 @@ describe('NetworkingContext', () => {
   })
 
   it('should handle connection filtering', () => {
-    localStorageMock.getItem.mockImplementation((key: string) => {
+    (localStorageMock.getItem as jest.Mock).mockImplementation((key: string) => {
       if (key === 'lusotown-connections') {
         return JSON.stringify(portugueseTestUtils.mockPortugueseConnections)
       }
@@ -68,7 +68,7 @@ describe('NetworkingContext', () => {
   })
 
   it('should handle connection strength updates', () => {
-    localStorageMock.getItem.mockImplementation((key: string) => {
+    (localStorageMock.getItem as jest.Mock).mockImplementation((key: string) => {
       if (key === 'lusotown-connections') {
         return JSON.stringify(portugueseTestUtils.mockPortugueseConnections)
       }
@@ -88,7 +88,7 @@ describe('NetworkingContext', () => {
   })
 
   it('should handle privacy settings', () => {
-    localStorageMock.getItem.mockImplementation((key: string) => {
+    (localStorageMock.getItem as jest.Mock).mockImplementation((key: string) => {
       if (key === 'lusotown-privacy-settings') {
         return JSON.stringify({ level: 'normal' })
       }
@@ -110,7 +110,7 @@ describe('NetworkingContext', () => {
   })
 
   it('should handle cultural events integration', () => {
-    localStorageMock.getItem.mockImplementation((key: string) => {
+    (localStorageMock.getItem as jest.Mock).mockImplementation((key: string) => {
       if (key === 'lusotown-cultural-events') {
         return JSON.stringify(portugueseTestUtils.mockCulturalEvents)
       }
@@ -131,12 +131,12 @@ describe('NetworkingContext', () => {
     const { result } = renderHook(() => useNetworking(), { wrapper })
     
     expect(result.current).toBeDefined()
-    expect(result.current.isLoading).toBe(false)
+    expect(result.current.loading).toBe(false)
   })
 
   // Test subscription integration
   it('should integrate with premium subscriptions', () => {
-    localStorageMock.getItem.mockImplementation((key: string) => {
+    (localStorageMock.getItem as jest.Mock).mockImplementation((key: string) => {
       if (key === 'lusotown-subscription') {
         return JSON.stringify(portugueseTestUtils.mockPremiumSubscription)
       }

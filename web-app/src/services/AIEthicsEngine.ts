@@ -13,6 +13,7 @@
  */
 
 import { supabase } from '@/lib/supabase'
+import logger from '@/utils/logger'
 import { AI_SECURITY_CONFIG, PORTUGUESE_CULTURAL_PRIVACY } from '@/config/ai-security'
 import { CULTURAL_CENTERS } from '@/config/cultural-centers'
 import { UNIVERSITY_PARTNERSHIPS } from '@/config/universities'
@@ -247,7 +248,7 @@ export class AIEthicsEngine {
       
       return validation
     } catch (error) {
-      console.error('[AI Ethics Engine] Cultural content validation failed:', error)
+      logger.error('[AI Ethics Engine] Cultural content validation failed:', error)
       throw error
     }
   }
@@ -305,7 +306,7 @@ export class AIEthicsEngine {
 
       return null
     } catch (error) {
-      console.error('[AI Ethics Engine] Heritage violation detection failed:', error)
+      logger.error('[AI Ethics Engine] Heritage violation detection failed:', error)
       return null
     }
   }
@@ -343,7 +344,7 @@ export class AIEthicsEngine {
         sentiment_analysis: analysis.sentiment_analysis
       }
     } catch (error) {
-      console.error('[AI Ethics Engine] Heritage respect feedback collection failed:', error)
+      logger.error('[AI Ethics Engine] Heritage respect feedback collection failed:', error)
       throw error
     }
   }
@@ -412,7 +413,7 @@ export class AIEthicsEngine {
         recommendations
       }
     } catch (error) {
-      console.error('[AI Ethics Engine] Language preservation optimization failed:', error)
+      logger.error('[AI Ethics Engine] Language preservation optimization failed:', error)
       throw error
     }
   }
@@ -442,7 +443,7 @@ export class AIEthicsEngine {
       
       return metrics
     } catch (error) {
-      console.error('[AI Ethics Engine] Language preservation report generation failed:', error)
+      logger.error('[AI Ethics Engine] Language preservation report generation failed:', error)
       throw error
     }
   }
@@ -484,7 +485,7 @@ export class AIEthicsEngine {
         community_practice_opportunities: practiceOpportunities
       }
     } catch (error) {
-      console.error('[AI Ethics Engine] Cultural language support failed:', error)
+      logger.error('[AI Ethics Engine] Cultural language support failed:', error)
       throw error
     }
   }
@@ -550,7 +551,7 @@ export class AIEthicsEngine {
       
       return audit
     } catch (error) {
-      console.error('[AI Ethics Engine] Privacy audit failed:', error)
+      logger.error('[AI Ethics Engine] Privacy audit failed:', error)
       throw error
     }
   }
@@ -600,7 +601,7 @@ export class AIEthicsEngine {
         recommendations
       }
     } catch (error) {
-      console.error('[AI Ethics Engine] Cultural data protection monitoring failed:', error)
+      logger.error('[AI Ethics Engine] Cultural data protection monitoring failed:', error)
       throw error
     }
   }
@@ -662,7 +663,7 @@ export class AIEthicsEngine {
       
       return report
     } catch (error) {
-      console.error('[AI Ethics Engine] Transparency report generation failed:', error)
+      logger.error('[AI Ethics Engine] Transparency report generation failed:', error)
       throw error
     }
   }
@@ -790,7 +791,7 @@ export class AIEthicsEngine {
 
       return featureExplanation
     } catch (error) {
-      console.error('[AI Ethics Engine] AI feature explanation failed:', error)
+      logger.error('[AI Ethics Engine] AI feature explanation failed:', error)
       throw error
     }
   }
@@ -861,7 +862,7 @@ export class AIEthicsEngine {
         incentives: incentives
       }
     } catch (error) {
-      console.error('[AI Ethics Engine] Community feedback collection failed:', error)
+      logger.error('[AI Ethics Engine] Community feedback collection failed:', error)
       throw error
     }
   }
@@ -913,7 +914,7 @@ export class AIEthicsEngine {
         community_response_plan: communityResponsePlan
       }
     } catch (error) {
-      console.error('[AI Ethics Engine] Feedback analysis and implementation failed:', error)
+      logger.error('[AI Ethics Engine] Feedback analysis and implementation failed:', error)
       throw error
     }
   }
@@ -967,7 +968,7 @@ export class AIEthicsEngine {
         community_feedback_summary: feedbackSummary
       }
     } catch (error) {
-      console.error('[AI Ethics Engine] Ethics dashboard generation failed:', error)
+      logger.error('[AI Ethics Engine] Ethics dashboard generation failed:', error)
       throw error
     }
   }
@@ -980,9 +981,9 @@ export class AIEthicsEngine {
     try {
       // Setup monitoring tables if they don't exist
       // In production, these would be created via Supabase migrations
-      console.log('[AI Ethics Engine] Ethics monitoring initialized for Portuguese-speaking community')
+      logger.info('[AI Ethics Engine] Ethics monitoring initialized for Portuguese-speaking community')
     } catch (error) {
-      console.error('[AI Ethics Engine] Failed to initialize ethics monitoring:', error)
+      logger.error('[AI Ethics Engine] Failed to initialize ethics monitoring:', error)
     }
   }
 
@@ -1162,12 +1163,16 @@ export class AIEthicsEngine {
 
   private async logCulturalValidation(validation: CulturalContextValidation, context: any): Promise<void> {
     // Log for audit trail
-    console.log('[AI Ethics Engine] Cultural validation logged:', validation)
+    if (process.env.NODE_ENV === 'development') {
+      logger.info('[AI Ethics Engine] Cultural validation logged:', validation)
+    }
   }
 
   private async storeHeritageViolation(violation: HeritageRespectViolation): Promise<void> {
     // Store in database for tracking
-    console.log('[AI Ethics Engine] Heritage violation stored:', violation)
+    if (process.env.NODE_ENV === 'development') {
+      logger.info('[AI Ethics Engine] Heritage violation stored:', violation)
+    }
   }
 
   private async getLanguageUsageAnalytics(): Promise<any> {

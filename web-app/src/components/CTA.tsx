@@ -167,7 +167,7 @@ export default function CTA() {
                 href="/signup"
                 className="bg-white text-secondary-700 hover:bg-gray-50 font-bold text-xl px-12 py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center justify-center"
               >
-                Quick Join
+                Join Now
                 <ArrowRightIcon className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform duration-200" />
               </a>
 

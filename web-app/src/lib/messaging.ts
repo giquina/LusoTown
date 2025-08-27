@@ -3,6 +3,7 @@
 import { supabase, Group } from '@/lib/supabase'
 import { getImageWithFallback } from '@/lib/profileImages'
 import { RealtimeChannel } from '@supabase/supabase-js'
+import logger from '@/utils/logger'
 
 // Extended ChatRoom interface that combines Supabase Group with additional UI data
 export interface ChatRoom extends Omit<Group, 'id' | 'name' | 'description' | 'is_private' | 'max_members' | 'current_member_count' | 'created_by' | 'image_url' | 'is_active' | 'created_at' | 'updated_at' | 'rules' | 'group_type'> {
@@ -288,7 +289,7 @@ export class MessagingService {
       const { data: groups, error } = await query
 
       if (error) {
-        console.error('Error fetching chat rooms:', error)
+        logger.error('Error fetching chat rooms:', error)
         return []
       }
 
@@ -308,7 +309,7 @@ export class MessagingService {
         return new Date(b.lastActivity).getTime() - new Date(a.lastActivity).getTime()
       })
     } catch (error) {
-      console.error('Error in getChatRooms:', error)
+      logger.error('Error in getChatRooms:', error)
       return []
     }
   }
@@ -335,7 +336,7 @@ export class MessagingService {
         .single()
 
       if (error || !group) {
-        console.error('Error fetching room:', error)
+        logger.error('Error fetching room:', error)
         return null
       }
 
@@ -377,7 +378,7 @@ export class MessagingService {
 
       return chatRoom
     } catch (error) {
-      console.error('Error in getRoomById:', error)
+      logger.error('Error in getRoomById:', error)
       return null
     }
   }
@@ -430,7 +431,7 @@ export class MessagingService {
         })
 
       if (memberError) {
-        console.error('Error joining room:', memberError)
+        logger.error('Error joining room:', memberError)
         return { success: false, message: 'Failed to join room' }
       }
 
@@ -445,7 +446,7 @@ export class MessagingService {
 
       return { success: true, message: 'Successfully joined the room' }
     } catch (error) {
-      console.error('Error in joinRoom:', error)
+      logger.error('Error in joinRoom:', error)
       return { success: false, message: 'An unexpected error occurred' }
     }
   }
@@ -473,7 +474,7 @@ export class MessagingService {
         .eq('user_id', userId)
 
       if (updateError) {
-        console.error('Error leaving room:', updateError)
+        logger.error('Error leaving room:', updateError)
         return { success: false, message: 'Failed to leave room' }
       }
 
@@ -496,7 +497,7 @@ export class MessagingService {
 
       return { success: true, message: 'Successfully left the room' }
     } catch (error) {
-      console.error('Error in leaveRoom:', error)
+      logger.error('Error in leaveRoom:', error)
       return { success: false, message: 'An unexpected error occurred' }
     }
   }
@@ -537,7 +538,7 @@ export class MessagingService {
       const { data: messages, error } = await query
 
       if (error) {
-        console.error('Error fetching messages:', error)
+        logger.error('Error fetching messages:', error)
         return []
       }
 
@@ -575,7 +576,7 @@ export class MessagingService {
       // Return in chronological order (oldest first)
       return chatMessages.reverse()
     } catch (error) {
-      console.error('Error fetching messages:', error)
+      logger.error('Error fetching messages:', error)
       return []
     }
   }
@@ -629,7 +630,7 @@ export class MessagingService {
         .single()
 
       if (error) {
-        console.error('Error inserting message:', error)
+        logger.error('Error inserting message:', error)
         return { success: false, error: 'Failed to send message' }
       }
 
@@ -665,7 +666,7 @@ export class MessagingService {
 
       return { success: true, message: chatMessage }
     } catch (error) {
-      console.error('Error sending message:', error)
+      logger.error('Error sending message:', error)
       return { success: false, error: 'Failed to send message' }
     }
   }
@@ -683,13 +684,13 @@ export class MessagingService {
         })
 
       if (error) {
-        console.error('Error adding reaction:', error)
+        logger.error('Error adding reaction:', error)
         return { success: false, message: 'Failed to add reaction' }
       }
 
       return { success: true, message: 'Reaction added' }
     } catch (error) {
-      console.error('Error adding reaction:', error)
+      logger.error('Error adding reaction:', error)
       return { success: false, message: 'Failed to add reaction' }
     }
   }
@@ -704,13 +705,13 @@ export class MessagingService {
         .eq('emoji', emoji)
 
       if (error) {
-        console.error('Error removing reaction:', error)
+        logger.error('Error removing reaction:', error)
         return { success: false, message: 'Failed to remove reaction' }
       }
 
       return { success: true, message: 'Reaction removed' }
     } catch (error) {
-      console.error('Error removing reaction:', error)
+      logger.error('Error removing reaction:', error)
       return { success: false, message: 'Failed to remove reaction' }
     }
   }
@@ -764,7 +765,7 @@ export class MessagingService {
         .single()
 
       if (error) {
-        console.error('Error creating room:', error)
+        logger.error('Error creating room:', error)
         return { success: false, error: 'Failed to create room' }
       }
 
@@ -782,7 +783,7 @@ export class MessagingService {
       const chatRoom = this.transformGroupToChatRoom(group, { role: 'admin' })
       return { success: true, room: chatRoom }
     } catch (error) {
-      console.error('Error in createRoom:', error)
+      logger.error('Error in createRoom:', error)
       return { success: false, error: 'An unexpected error occurred' }
     }
   }
@@ -861,7 +862,7 @@ export class MessagingService {
           onConflict: 'group_id,user_id'
         })
     } catch (error) {
-      console.error('Error updating typing indicator:', error)
+      logger.error('Error updating typing indicator:', error)
     }
   }
 
@@ -923,7 +924,7 @@ export class MessagingService {
 
       callback(typingIndicators)
     } catch (error) {
-      console.error('Error fetching typing indicators:', error)
+      logger.error('Error fetching typing indicators:', error)
     }
   }
 
@@ -948,7 +949,7 @@ export class MessagingService {
         presence_status: status
       })
     } catch (error) {
-      console.error('Error updating user presence:', error)
+      logger.error('Error updating user presence:', error)
     }
   }
 
@@ -1011,7 +1012,7 @@ export class MessagingService {
 
       callback(userPresence)
     } catch (error) {
-      console.error('Error fetching user presence:', error)
+      logger.error('Error fetching user presence:', error)
     }
   }
 
@@ -1053,13 +1054,13 @@ export class MessagingService {
         .eq('user_id', userId)
 
       if (error) {
-        console.error('Error editing message:', error)
+        logger.error('Error editing message:', error)
         return { success: false, error: 'Failed to edit message' }
       }
 
       return { success: true }
     } catch (error) {
-      console.error('Error editing message:', error)
+      logger.error('Error editing message:', error)
       return { success: false, error: 'Failed to edit message' }
     }
   }
@@ -1078,13 +1079,13 @@ export class MessagingService {
         .eq('user_id', userId)
 
       if (error) {
-        console.error('Error deleting message:', error)
+        logger.error('Error deleting message:', error)
         return { success: false, error: 'Failed to delete message' }
       }
 
       return { success: true }
     } catch (error) {
-      console.error('Error deleting message:', error)
+      logger.error('Error deleting message:', error)
       return { success: false, error: 'Failed to delete message' }
     }
   }

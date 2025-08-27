@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import logger from '@/utils/logger'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Languages, 
@@ -172,7 +173,7 @@ export default function MessageTranslator({
       onTranslationComplete?.(enhancedResult)
 
     } catch (error) {
-      console.error('Translation error:', error)
+      logger.error('Translation error:', error)
       setError(t.translationError)
       
       // Fallback: create basic translation result
@@ -243,7 +244,7 @@ export default function MessageTranslator({
       setCopiedText(type)
       setTimeout(() => setCopiedText(null), 2000)
     } catch (error) {
-      console.error('Copy failed:', error)
+      logger.error('Copy failed:', error)
     }
   }
 

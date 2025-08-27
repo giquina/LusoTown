@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import logger from "@/utils/logger";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChatBubbleLeftRightIcon,
@@ -368,7 +369,7 @@ export default function LusoBotChat({
         );
       }
     } catch (error) {
-      console.error("Error sending message:", error);
+      logger.error("Error sending message:", error);
       toast.error(
         language === "pt"
           ? "Erro ao enviar mensagem. Tenta novamente."
@@ -444,7 +445,7 @@ export default function LusoBotChat({
                 );
               }
             } catch (error) {
-              console.error("Error loading lesson:", error);
+              logger.error("Error loading lesson:", error);
             }
           } else {
             setInputValue(
@@ -561,7 +562,7 @@ export default function LusoBotChat({
                 );
               }
             })
-            .catch(console.error);
+            .catch(logger.error);
         }
       }
     };

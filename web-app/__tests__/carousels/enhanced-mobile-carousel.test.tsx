@@ -283,14 +283,14 @@ describe('Enhanced Mobile LusophoneCarousel', () => {
 
     it('displays performance info in development mode', () => {
       const originalEnv = process.env.NODE_ENV
-      process.env.NODE_ENV = 'development'
+      Object.defineProperty(process.env, 'NODE_ENV', { value: 'development' })
       
       const mockPerformanceHandler = jest.fn()
       renderCarousel({ onPerformanceUpdate: mockPerformanceHandler })
       
       expect(screen.queryByText(/Load:/)).toBeInTheDocument()
       
-      process.env.NODE_ENV = originalEnv
+      Object.defineProperty(process.env, 'NODE_ENV', { value: originalEnv })
     })
 
     it('detects slow network conditions', async () => {

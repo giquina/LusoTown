@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import logger from '@/utils/logger';
 
 // Initialize Supabase client for server-side operations
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -59,7 +60,7 @@ export async function GET(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Business directory API error:', error);
+    logger.error('Business directory API error:', error);
     return NextResponse.json(
       { success: false, error: 'Failed to fetch businesses' },
       { status: 500 }
@@ -168,7 +169,7 @@ async function findPortugueseBusinesses(filters: BusinessFilters) {
     });
 
     if (error) {
-      console.error('PostGIS query error:', error);
+      logger.error('PostGIS query error:', error);
       // Fallback to regular query without distance
     } else {
       // Apply additional filters to PostGIS results
@@ -320,7 +321,7 @@ export async function POST(request: NextRequest) {
       try {
         coordinates = await geocodeAddress(`${body.address}, London, United Kingdom`);
       } catch (error) {
-        console.warn('Geocoding failed:', error);
+        logger.warn('Geocoding failed:', error);
       }
     }
 
@@ -367,7 +368,7 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Business submission error:', error);
+    logger.error('Business submission error:', error);
     return NextResponse.json(
       { success: false, error: 'Failed to submit business' },
       { status: 500 }

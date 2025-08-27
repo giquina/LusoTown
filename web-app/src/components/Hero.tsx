@@ -309,7 +309,7 @@ export default function Hero() {
                       transition={{ duration: 0.3 }}
                     />
                     <span className="relative z-10 flex items-center gap-2">
-                      🇵🇹 {t("hero.cta.primary", "Join Community - FREE")}
+                      🇵🇹 {t("hero.cta.primary", "Join FREE")}
                     </span>
                     <motion.div
                       whileHover={{ x: 4 }}

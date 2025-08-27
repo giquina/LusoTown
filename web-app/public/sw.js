@@ -1,13 +1,15 @@
 // Service Worker for LusoTown Portuguese-speaking community Platform
-// Version: 3.0.0 - Enhanced Mobile PWA with Portuguese Cultural Features
+// Version: 3.1.0 - Enhanced Mobile PWA with Advanced Performance Optimization
 
-const CACHE_VERSION = '3.0.1';
+const CACHE_VERSION = '3.1.0';
 const CACHE_NAME = `lusotown-v${CACHE_VERSION}-portuguese-community`;
 const OFFLINE_URL = '/offline.html';
 const PORTUGUESE_CULTURAL_CACHE = `portuguese-cultural-v${CACHE_VERSION}`;
 const API_CACHE = `api-cache-v${CACHE_VERSION}`;
 const IMAGES_CACHE = `images-v${CACHE_VERSION}`;
 const STATIC_CACHE = `static-v${CACHE_VERSION}`;
+const CAROUSEL_PERFORMANCE_CACHE = `carousel-performance-v${CACHE_VERSION}`;
+const PWA_FEATURES_CACHE = `pwa-features-v${CACHE_VERSION}`;
 
 // Portuguese cultural priorities
 const CULTURAL_PRIORITY_ROUTES = [
@@ -18,13 +20,19 @@ const CULTURAL_PRIORITY_ROUTES = [
   '/portuguese-heritage'
 ];
 
-// Mobile-first optimization settings
+// Mobile-first optimization settings with enhanced performance
 const MOBILE_OPTIMIZATION = {
   maxImageSize: 500 * 1024, // 500KB for mobile
   maxApiCacheTime: 5 * 60 * 1000, // 5 minutes
   backgroundSyncInterval: 30 * 1000, // 30 seconds
   offlineQueueLimit: 50,
-  compressionEnabled: true
+  compressionEnabled: true,
+  // Enhanced carousel optimizations
+  carouselImageSize: 300 * 1024, // 300KB for carousel images
+  preloadDistance: 2, // Preload 2 items ahead/behind
+  lazyLoadThreshold: 50, // 50px from viewport
+  portugueseContentPriority: true,
+  adaptiveImageQuality: true
 };
 
 // Portuguese cultural assets that should be cached
@@ -59,7 +67,11 @@ const PORTUGUESE_ASSETS = [
   // Fonts and styles
   '/fonts/poppins-regular.woff2',
   '/fonts/poppins-semibold.woff2',
-  '/fonts/inter-regular.woff2'
+  '/fonts/inter-regular.woff2',
+  // Enhanced carousel assets
+  '/components/carousels/optimized-carousel.js',
+  '/hooks/performance-optimization.js',
+  '/hooks/pwa-features.js'
 ];
 
 // Portuguese cultural event categories for priority caching
@@ -753,4 +765,218 @@ async function syncBusinessDirectory() {
   }
 }
 
-console.log('[SW] LusoTown Portuguese-speaking community Service Worker loaded successfully');
+// Enhanced carousel performance caching functions
+async function cacheCarouselPerformanceAssets() {
+  try {
+    const performanceCache = await caches.open(CAROUSEL_PERFORMANCE_CACHE);
+    
+    const carouselAssets = [
+      '/api/carousel/performance-metrics',
+      '/api/carousel/portuguese-content-optimized',
+      '/api/events?carousel=true&optimized=true&limit=20',
+      '/api/businesses?carousel=true&optimized=true&limit=15'
+    ];
+    
+    await Promise.allSettled(
+      carouselAssets.map(async (url) => {
+        try {
+          const response = await fetch(url + '&cache-optimized=true');
+          if (response.ok) {
+            await performanceCache.put(url, response);
+          }
+        } catch (error) {
+          console.log(`[SW] Failed to cache carousel asset: ${url}`, error);
+        }
+      })
+    );
+    
+    console.log('[SW] Carousel performance assets cached successfully');
+  } catch (error) {
+    console.error('[SW] Failed to cache carousel performance assets:', error);
+  }
+}
+
+async function optimizePortugueseImages(request) {
+  const url = new URL(request.url);
+  
+  // Check if it's a carousel image
+  if (url.pathname.includes('carousel') || url.searchParams.get('carousel') === 'true') {
+    try {
+      const imageCache = await caches.open(IMAGES_CACHE);
+      const cachedResponse = await imageCache.match(request);
+      
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      
+      // Fetch with optimization parameters
+      const optimizedUrl = new URL(request.url);
+      
+      // Apply Portuguese cultural image optimizations
+      if (url.hostname.includes('cloudinary') || url.hostname.includes('unsplash')) {
+        const isSlowConnection = self.navigator && self.navigator.connection && 
+          ['slow-2g', '2g'].includes(self.navigator.connection.effectiveType);
+        
+        // Optimize for mobile Portuguese cultural content
+        optimizedUrl.searchParams.set('w', '400');
+        optimizedUrl.searchParams.set('h', '300');
+        optimizedUrl.searchParams.set('q', isSlowConnection ? '30' : '60');
+        optimizedUrl.searchParams.set('f', 'auto');
+        optimizedUrl.searchParams.set('c', 'fill');
+      }
+      
+      const response = await fetch(optimizedUrl.toString());
+      
+      if (response.ok && response.size <= MOBILE_OPTIMIZATION.carouselImageSize) {
+        await imageCache.put(request, response.clone());
+      }
+      
+      return response;
+    } catch (error) {
+      console.log('[SW] Image optimization failed, serving original:', error);
+      return fetch(request);
+    }
+  }
+  
+  return fetch(request);
+}
+
+// Enhanced PWA features caching
+async function cachePWAFeatures() {
+  try {
+    const pwaCache = await caches.open(PWA_FEATURES_CACHE);
+    
+    const pwaAssets = [
+      '/api/pwa/install-prompts?lang=pt',
+      '/api/pwa/notification-settings',
+      '/api/pwa/offline-capabilities',
+      '/api/pwa/background-sync-data'
+    ];
+    
+    await Promise.allSettled(
+      pwaAssets.map(async (url) => {
+        try {
+          const response = await fetch(url);
+          if (response.ok) {
+            await pwaCache.put(url, response);
+          }
+        } catch (error) {
+          console.log(`[SW] Failed to cache PWA asset: ${url}`, error);
+        }
+      })
+    );
+    
+    console.log('[SW] PWA features cached successfully');
+  } catch (error) {
+    console.error('[SW] Failed to cache PWA features:', error);
+  }
+}
+
+// Portuguese cultural carousel content background sync
+self.addEventListener('sync', event => {
+  console.log('[SW] Background sync triggered:', event.tag);
+  
+  if (event.tag === 'carousel-performance-sync') {
+    event.waitUntil(cacheCarouselPerformanceAssets());
+  } else if (event.tag === 'pwa-features-sync') {
+    event.waitUntil(cachePWAFeatures());
+  } else if (event.tag === 'portuguese-community-sync') {
+    event.waitUntil(syncPortugueseCommunityContent());
+  } else if (event.tag === 'cultural-events-sync') {
+    event.waitUntil(syncCulturalEvents());
+  } else if (event.tag === 'business-directory-sync') {
+    event.waitUntil(syncBusinessDirectory());
+  }
+});
+
+// Enhanced notification click handler for carousel interactions
+self.addEventListener('notificationclick', event => {
+  console.log('[SW] Enhanced notification clicked', event.action);
+  
+  event.notification.close();
+  
+  const notificationData = event.notification.data || {};
+  let urlToOpen = '/';
+  
+  // Handle carousel-specific actions
+  switch (event.action) {
+    case 'view-carousel-event':
+      urlToOpen = notificationData.carouselUrl || '/events?carousel=featured';
+      break;
+    case 'view-carousel-business':
+      urlToOpen = notificationData.carouselUrl || '/business-directory?carousel=featured';
+      break;
+    case 'open-cultural-carousel':
+      urlToOpen = '/cultural-calendar?carousel=upcoming';
+      break;
+    case 'view-event':
+      urlToOpen = notificationData.eventUrl || '/events';
+      break;
+    case 'share-event':
+      // Enhanced sharing for carousel items
+      handleEnhancedEventShare(notificationData);
+      return;
+    case 'view-match':
+      urlToOpen = notificationData.matchUrl || '/matches';
+      break;
+    case 'send-message':
+      urlToOpen = notificationData.messageUrl || '/messages';
+      break;
+    case 'rsvp-yes':
+      handleEventRSVP(notificationData, 'yes');
+      urlToOpen = notificationData.eventUrl || '/events';
+      break;
+    case 'get-directions':
+      urlToOpen = notificationData.directionsUrl || 
+                 `https://maps.google.com/?q=${encodeURIComponent(notificationData.location || 'London')}`;
+      break;
+    default:
+      urlToOpen = notificationData.url || '/';
+  }
+  
+  // Enhanced tracking for carousel interactions
+  trackCarouselNotificationInteraction(event.notification.tag, event.action);
+  
+  event.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true })
+      .then(clientList => {
+        for (const client of clientList) {
+          if (client.url.includes(self.location.origin) && 'focus' in client) {
+            client.navigate(urlToOpen);
+            return client.focus();
+          }
+        }
+        
+        if (clients.openWindow) {
+          return clients.openWindow(urlToOpen);
+        }
+      })
+  );
+});
+
+function handleEnhancedEventShare(notificationData) {
+  // Enhanced sharing for Portuguese cultural events
+  if ('share' in navigator) {
+    navigator.share({
+      title: notificationData.title || 'Portuguese Cultural Event',
+      text: notificationData.description || 'Join us for this amazing Portuguese cultural event!',
+      url: notificationData.shareUrl || window.location.origin
+    });
+  }
+}
+
+function trackCarouselNotificationInteraction(tag, action) {
+  // Track carousel-specific notification interactions
+  console.log('[SW] Carousel notification interaction:', { tag, action });
+  
+  // Send analytics data if available
+  if ('gtag' in self) {
+    self.gtag('event', 'carousel_notification_click', {
+      event_category: 'carousel',
+      event_label: `${tag}_${action}`,
+      notification_type: 'portuguese_cultural'
+    });
+  }
+}
+
+console.log('[SW] LusoTown Enhanced Portuguese-speaking community Service Worker v3.1.0 loaded successfully');

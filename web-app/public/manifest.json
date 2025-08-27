@@ -86,10 +86,23 @@
       "name": "Portuguese Cultural Events",
       "short_name": "Eventos",
       "description": "Browse upcoming Portuguese cultural events in the UK",
-      "url": "/events?utm_source=pwa_shortcut&lang=pt",
+      "url": "/events?utm_source=pwa_shortcut&lang=pt&carousel=featured",
       "icons": [
         {
           "src": "/icons/events-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Cultural Carousel",
+      "short_name": "Carousel",
+      "description": "Optimized Portuguese cultural content carousel",
+      "url": "/cultural-calendar?utm_source=pwa_shortcut&carousel=optimized",
+      "icons": [
+        {
+          "src": "/icons/carousel-shortcut.png",
           "sizes": "96x96",
           "type": "image/png"
         }
@@ -111,8 +124,8 @@
     {
       "name": "LusoTown Businesses",
       "short_name": "Negócios",
-      "description": "Discover LusoTown businesses in London",
-      "url": "/business-directory?utm_source=pwa_shortcut",
+      "description": "Discover LusoTown businesses in London with optimized carousel",
+      "url": "/business-directory?utm_source=pwa_shortcut&carousel=optimized",
       "icons": [
         {
           "src": "/icons/business-shortcut.png",
