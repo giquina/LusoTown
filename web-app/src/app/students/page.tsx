@@ -64,6 +64,7 @@ import {
   LanguageIcon
 } from '@heroicons/react/24/outline'
 import { CheckIcon as CheckIconSolid, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
+import { LusophoneCarousel, CAROUSEL_CONFIGS, AUTO_ADVANCE_TIMINGS } from '@/components/carousels'
 
 // Import new enhanced components
 import LusophoneFlagGrid from '@/components/students/LusophoneFlagGrid'
@@ -1019,6 +1020,258 @@ export default function StudentsPage() {
                 }
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* University Programs Carousel */}
+        <section id="university-programs" className="py-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+          <div className="container-width">
+            <LusophoneCarousel
+              items={[
+                {
+                  id: 'ucl-programs',
+                  title: { en: 'University College London (UCL)', pt: 'University College London (UCL)' },
+                  subtitle: { en: 'Strategic Partner • Russell Group', pt: 'Parceiro Estratégico • Grupo Russell' },
+                  description: {
+                    en: 'Premier London university with dedicated Portuguese Studies program, Brazilian Literature courses, and strong Lusophone student community. 180+ Portuguese-speaking students across all faculties.',
+                    pt: 'Universidade de Londres de primeiro nível com programa dedicado de Estudos Portugueses, cursos de Literatura Brasileira e forte comunidade estudantil lusófona. Mais de 180 estudantes lusófonos em todas as faculdades.'
+                  },
+                  image: '/images/universities/ucl.jpg',
+                  metadata: {
+                    programs: { en: 'Portuguese Studies, Brazilian Literature, Linguistics', pt: 'Estudos Portugueses, Literatura Brasileira, Linguística' },
+                    students: { en: '180+ Portuguese speakers', pt: 'Mais de 180 falantes de português' },
+                    partnership: { en: 'Strategic Academic Partnership', pt: 'Parceria Académica Estratégica' },
+                    support: { en: 'Portuguese Society, Academic Mentoring, Career Support', pt: 'Sociedade Portuguesa, Mentoria Académica, Apoio de Carreira' }
+                  }
+                },
+                {
+                  id: 'kings-programs',
+                  title: { en: 'King\'s College London', pt: 'King\'s College London' },
+                  subtitle: { en: 'Strategic Partner • Literature & Arts Focus', pt: 'Parceiro Estratégico • Foco em Literatura e Artes' },
+                  description: {
+                    en: 'Renowned for Comparative Literature with Portuguese focus, Modern Languages, and Cultural Studies. Strong connections to Brazilian and African Portuguese cultural institutions.',
+                    pt: 'Renomado por Literatura Comparada com foco português, Línguas Modernas e Estudos Culturais. Fortes conexões com instituições culturais brasileiras e africanas portuguesas.'
+                  },
+                  image: '/images/universities/kings.jpg',
+                  metadata: {
+                    programs: { en: 'Comparative Literature, Modern Languages, Cultural Studies', pt: 'Literatura Comparada, Línguas Modernas, Estudos Culturais' },
+                    students: { en: '145+ Portuguese speakers', pt: 'Mais de 145 falantes de português' },
+                    specialization: { en: 'Brazilian and African Literature', pt: 'Literatura Brasileira e Africana' },
+                    events: { en: 'Monthly Lusophone Literary Evenings', pt: 'Noites Literárias Lusófonas Mensais' }
+                  }
+                },
+                {
+                  id: 'imperial-programs',
+                  title: { en: 'Imperial College London', pt: 'Imperial College London' },
+                  subtitle: { en: 'Official Partner • STEM Excellence', pt: 'Parceiro Oficial • Excelência STEM' },
+                  description: {
+                    en: 'Leading STEM university with growing Portuguese-speaking engineering and tech student community. Strong links to Brazil tech sector and Portuguese innovation hubs.',
+                    pt: 'Universidade STEM líder com crescente comunidade de estudantes lusófonos de engenharia e tecnologia. Fortes ligações ao setor tecnológico brasileiro e centros de inovação portugueses.'
+                  },
+                  image: '/images/universities/imperial.jpg',
+                  metadata: {
+                    programs: { en: 'Engineering, Computing, Business Tech', pt: 'Engenharia, Computação, Tecnologia Empresarial' },
+                    students: { en: '120+ Portuguese speakers', pt: 'Mais de 120 falantes de português' },
+                    focus: { en: 'Tech Innovation & Entrepreneurship', pt: 'Inovação Tecnológica e Empreendedorismo' },
+                    networking: { en: 'Lusophone Tech Society, Startup Incubator', pt: 'Sociedade Tecnológica Lusófona, Incubadora de Startups' }
+                  }
+                },
+                {
+                  id: 'lse-programs',
+                  title: { en: 'London School of Economics (LSE)', pt: 'London School of Economics (LSE)' },
+                  subtitle: { en: 'Strategic Partner • Social Sciences Leader', pt: 'Parceiro Estratégico • Líder em Ciências Sociais' },
+                  description: {
+                    en: 'World-renowned for Economics, International Relations, and Development Studies with focus on Lusophone economies and African development.',
+                    pt: 'Mundialmente reconhecido por Economia, Relações Internacionais e Estudos de Desenvolvimento com foco em economias lusófonas e desenvolvimento africano.'
+                  },
+                  image: '/images/universities/lse.jpg',
+                  metadata: {
+                    programs: { en: 'Economics, International Relations, Development Studies', pt: 'Economia, Relações Internacionais, Estudos de Desenvolvimento' },
+                    students: { en: '95+ Portuguese speakers', pt: 'Mais de 95 falantes de português' },
+                    research: { en: 'Lusophone Economies Research Center', pt: 'Centro de Pesquisa de Economias Lusófonas' },
+                    opportunities: { en: 'PALOP Development Internships', pt: 'Estágios de Desenvolvimento PALOP' }
+                  }
+                }
+              ]}
+              title={{ en: 'University Partnership Programs', pt: 'Programas de Parcerias Universitárias' }}
+              subtitle={{ en: 'Discover Portuguese-focused programs at leading UK universities', pt: 'Descubra programas focados no português nas principais universidades do Reino Unido' }}
+              responsive={CAROUSEL_CONFIGS.hero}
+              autoAdvance={true}
+              autoAdvanceInterval={AUTO_ADVANCE_TIMINGS.showcase}
+              renderItem={(university) => (
+                <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-primary-200/50 h-full hover:shadow-3xl transition-all duration-500 group">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <BuildingLibraryIcon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent mb-2">
+                        {university.title.en}
+                      </h3>
+                      <p className="text-sm font-semibold text-primary-600">
+                        {university.subtitle.en}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-6">
+                    {university.description.en}
+                  </p>
+                  <div className="space-y-3">
+                    {university.metadata?.programs && (
+                      <div className="bg-primary-50/80 rounded-lg p-3">
+                        <span className="font-semibold text-primary-700 text-xs">{t('university.programs', 'Programs')}: </span>
+                        <span className="text-gray-700 text-xs">{university.metadata.programs.en}</span>
+                      </div>
+                    )}
+                    {university.metadata?.students && (
+                      <div className="bg-secondary-50/80 rounded-lg p-3">
+                        <span className="font-semibold text-secondary-700 text-xs">{t('university.students', 'Students')}: </span>
+                        <span className="text-gray-700 text-xs">{university.metadata.students.en}</span>
+                      </div>
+                    )}
+                    {university.metadata?.support && (
+                      <div className="bg-accent-50/80 rounded-lg p-3">
+                        <span className="font-semibold text-accent-700 text-xs">{t('university.support', 'Support')}: </span>
+                        <span className="text-gray-700 text-xs">{university.metadata.support.en}</span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-gray-100">
+                    <button className="w-full py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg font-medium hover:from-primary-600 hover:to-secondary-600 transition-all duration-300">
+                      {t('university.learnMore', 'Learn More')}
+                    </button>
+                  </div>
+                </div>
+              )}
+            />
+          </div>
+        </section>
+
+        {/* Student Events Carousel */}
+        <section className="py-20 bg-gradient-to-br from-secondary-50 via-white to-accent-50">
+          <div className="container-width">
+            <LusophoneCarousel
+              items={[
+                {
+                  id: 'tech-workshop',
+                  title: { en: 'Lusophone Tech Career Workshop', pt: 'Workshop de Carreira Tecnológica Lusófona' },
+                  subtitle: { en: 'Professional Development • Imperial College', pt: 'Desenvolvimento Profissional • Imperial College' },
+                  description: {
+                    en: 'Connect with Portuguese-speaking tech professionals working at London startups and global companies. CV reviews, interview prep, and networking with Brazilian, Portuguese, and African tech leaders.',
+                    pt: 'Conecte-se com profissionais de tecnologia lusófonos trabalhando em startups de Londres e empresas globais. Revisão de CV, preparação para entrevistas e networking com líderes tecnológicos brasileiros, portugueses e africanos.'
+                  },
+                  image: '/images/events/tech-workshop.jpg',
+                  metadata: {
+                    date: { en: 'October 25, 2024', pt: '25 de Outubro de 2024' },
+                    time: { en: '6:00 PM - 9:00 PM', pt: '18:00 - 21:00' },
+                    location: { en: 'Imperial College Business School', pt: 'Imperial College Business School' },
+                    price: { en: 'FREE for students', pt: 'GRATUITO para estudantes' },
+                    attendees: { en: '45 registered', pt: '45 inscritos' }
+                  }
+                },
+                {
+                  id: 'academic-network',
+                  title: { en: 'Academic Excellence Network', pt: 'Rede de Excelência Académica' },
+                  subtitle: { en: 'Study Groups • Multiple Universities', pt: 'Grupos de Estudo • Várias Universidades' },
+                  description: {
+                    en: 'Join Portuguese-speaking study groups across London universities. From UCL Portuguese Literature to LSE Development Economics - connect with students from your academic field.',
+                    pt: 'Junte-se a grupos de estudo lusófonos em universidades de Londres. Da Literatura Portuguesa da UCL à Economia do Desenvolvimento da LSE - conecte-se com estudantes da sua área académica.'
+                  },
+                  image: '/images/events/study-groups.jpg',
+                  metadata: {
+                    date: { en: 'Every Wednesday', pt: 'Todas as Quartas-feiras' },
+                    time: { en: '5:00 PM - 7:00 PM', pt: '17:00 - 19:00' },
+                    location: { en: 'Rotating university libraries', pt: 'Bibliotecas universitárias rotativas' },
+                    price: { en: 'FREE', pt: 'GRATUITO' },
+                    groups: { en: '8 active study groups', pt: '8 grupos de estudo ativos' }
+                  }
+                },
+                {
+                  id: 'cultural-celebration',
+                  title: { en: 'Portuguese Heritage Month Celebration', pt: 'Celebração do Mês da Herança Portuguesa' },
+                  subtitle: { en: 'Cultural Festival • King\'s College', pt: 'Festival Cultural • King\'s College' },
+                  description: {
+                    en: 'Annual celebration featuring traditional music from all 10 Lusophone countries, authentic cuisine, poetry readings, and dance performances. Students showcase their cultural heritage pride.',
+                    pt: 'Celebração anual com música tradicional dos 10 países lusófonos, culinária autêntica, leituras de poesia e apresentações de dança. Estudantes mostram o orgulho da sua herança cultural.'
+                  },
+                  image: '/images/events/heritage-month.jpg',
+                  metadata: {
+                    date: { en: 'November 15, 2024', pt: '15 de Novembro de 2024' },
+                    time: { en: '2:00 PM - 8:00 PM', pt: '14:00 - 20:00' },
+                    location: { en: 'King\'s College Strand Campus', pt: 'King\'s College Campus Strand' },
+                    price: { en: '£8 students / £12 general', pt: '£8 estudantes / £12 geral' },
+                    features: { en: 'Live music, food, cultural exhibits', pt: 'Música ao vivo, comida, exposições culturais' }
+                  }
+                },
+                {
+                  id: 'career-mentorship',
+                  title: { en: 'Lusophone Professional Mentorship', pt: 'Mentoria Profissional Lusófona' },
+                  subtitle: { en: 'Career Guidance • Cross-University', pt: 'Orientação de Carreira • Inter-Universitário' },
+                  description: {
+                    en: 'Monthly mentorship sessions with successful Portuguese-speaking professionals in London. One-on-one career guidance, industry insights, and professional network expansion.',
+                    pt: 'Sessões mensais de mentoria com profissionais lusófonos de sucesso em Londres. Orientação de carreira individual, insights da indústria e expansão da rede profissional.'
+                  },
+                  image: '/images/events/mentorship.jpg',
+                  metadata: {
+                    date: { en: 'First Saturday monthly', pt: 'Primeiro sábado do mês' },
+                    time: { en: '10:00 AM - 2:00 PM', pt: '10:00 - 14:00' },
+                    location: { en: 'Central London venues', pt: 'Locais no centro de Londres' },
+                    price: { en: '£5 for students', pt: '£5 para estudantes' },
+                    mentors: { en: '25+ professional mentors', pt: 'Mais de 25 mentores profissionais' }
+                  }
+                }
+              ]}
+              title={{ en: 'Student Cultural Events', pt: 'Eventos Culturais Estudantis' }}
+              subtitle={{ en: 'Academic, professional, and cultural activities for Portuguese-speaking students', pt: 'Atividades académicas, profissionais e culturais para estudantes lusófonos' }}
+              responsive={CAROUSEL_CONFIGS.standard}
+              autoAdvance={true}
+              autoAdvanceInterval={AUTO_ADVANCE_TIMINGS.standard}
+              renderItem={(event) => (
+                <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-secondary-200/50 h-full hover:shadow-3xl transition-all duration-500 group">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <CalendarDaysIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-base font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent mb-1">
+                        {event.title.en}
+                      </h3>
+                      <p className="text-xs font-semibold text-secondary-600">
+                        {event.subtitle.en}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                    {event.description.en}
+                  </p>
+                  <div className="space-y-2">
+                    {event.metadata?.date && (
+                      <div className="flex items-center text-xs">
+                        <ClockIcon className="w-3 h-3 mr-2 text-secondary-600" />
+                        <span className="font-medium text-secondary-700">{event.metadata.date.en}</span>
+                      </div>
+                    )}
+                    {event.metadata?.location && (
+                      <div className="flex items-center text-xs">
+                        <MapPinIcon className="w-3 h-3 mr-2 text-accent-600" />
+                        <span className="text-gray-600">{event.metadata.location.en}</span>
+                      </div>
+                    )}
+                    {event.metadata?.price && (
+                      <div className="flex items-center text-xs">
+                        <BanknotesIcon className="w-3 h-3 mr-2 text-green-600" />
+                        <span className="font-semibold text-green-700">{event.metadata.price.en}</span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-gray-100">
+                    <button className="w-full py-2 bg-gradient-to-r from-secondary-500 to-accent-500 text-white rounded-lg text-sm font-medium hover:from-secondary-600 hover:to-accent-600 transition-all duration-300">
+                      {t('events.register', 'Register')}
+                    </button>
+                  </div>
+                </div>
+              )}
+            />
           </div>
         </section>
 

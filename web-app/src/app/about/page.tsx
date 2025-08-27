@@ -19,6 +19,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 import { motion } from 'framer-motion'
+import { LusophoneCarousel, CAROUSEL_CONFIGS, AUTO_ADVANCE_TIMINGS } from '@/components/carousels'
 
 export default function About() {
   const { t } = useLanguage()
@@ -716,6 +717,224 @@ export default function About() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Team Members Carousel */}
+        <section className="py-20 bg-gradient-to-br from-white via-premium-50/30 to-primary-50/30 relative overflow-hidden">
+          <div className="container-width">
+            <LusophoneCarousel
+              items={[
+                {
+                  id: 'team-miguel',
+                  title: { en: 'Miguel Santos', pt: 'Miguel Santos' },
+                  subtitle: { en: 'Founder & CEO • Porto, Portugal', pt: 'Fundador e CEO • Porto, Portugal' },
+                  description: { 
+                    en: 'Former tech consultant who experienced the challenges of finding authentic Portuguese-speaking community in London. Built LusoTown to connect our diaspora and preserve our cultural heritage.',
+                    pt: 'Ex-consultor de tecnologia que vivenciou os desafios de encontrar uma comunidade lusófona autêntica em Londres. Criou LusoTown para conectar nossa diáspora e preservar nosso património cultural.' 
+                  },
+                  image: '/images/team/miguel-santos.jpg',
+                  metadata: {
+                    expertise: { en: 'Community Building, Portuguese Culture, Tech Innovation', pt: 'Construção de Comunidades, Cultura Portuguesa, Inovação Tecnológica' },
+                    heritage: { en: 'Minho Province, Portugal', pt: 'Província do Minho, Portugal' },
+                    languages: { en: 'Portuguese, English, Spanish', pt: 'Português, Inglês, Espanhol' }
+                  }
+                },
+                {
+                  id: 'team-ana',
+                  title: { en: 'Ana Ferreira', pt: 'Ana Ferreira' },
+                  subtitle: { en: 'Head of Cultural Programs • São Paulo, Brazil', pt: 'Diretora de Programas Culturais • São Paulo, Brasil' },
+                  description: { 
+                    en: 'Cultural anthropologist specializing in Lusophone communities. Leads our authentic cultural events program celebrating all Portuguese-speaking nations from Brazil to Cape Verde.',
+                    pt: 'Antropóloga cultural especializada em comunidades lusófonas. Lidera nosso programa de eventos culturais autênticos celebrando todas as nações lusófonas do Brasil a Cabo Verde.' 
+                  },
+                  image: '/images/team/ana-ferreira.jpg',
+                  metadata: {
+                    expertise: { en: 'Cultural Anthropology, Event Planning, Lusophone Studies', pt: 'Antropologia Cultural, Planeamento de Eventos, Estudos Lusófonos' },
+                    heritage: { en: 'Minas Gerais, Brazil', pt: 'Minas Gerais, Brasil' },
+                    specialization: { en: 'Pan-Lusophone Cultural Integration', pt: 'Integração Cultural Pan-Lusófona' }
+                  }
+                },
+                {
+                  id: 'team-carlos',
+                  title: { en: 'Carlos Mendes', pt: 'Carlos Mendes' },
+                  subtitle: { en: 'Community Engagement Lead • Luanda, Angola', pt: 'Líder de Engajamento Comunitário • Luanda, Angola' },
+                  description: { 
+                    en: 'London-based Angolan community leader with 8+ years connecting African Portuguese speakers. Expert in PALOP cultural traditions and professional networking.',
+                    pt: 'Líder comunitário angolano sediado em Londres com mais de 8 anos conectando falantes de português africanos. Especialista em tradições culturais PALOP e networking profissional.' 
+                  },
+                  image: '/images/team/carlos-mendes.jpg',
+                  metadata: {
+                    expertise: { en: 'PALOP Communities, Professional Networks, Cultural Heritage', pt: 'Comunidades PALOP, Redes Profissionais, Património Cultural' },
+                    heritage: { en: 'Luanda, Angola', pt: 'Luanda, Angola' },
+                    focus: { en: 'African Portuguese-speaking Diaspora', pt: 'Diáspora Africana Lusófona' }
+                  }
+                },
+                {
+                  id: 'team-maria',
+                  title: { en: 'Maria Silva', pt: 'Maria Silva' },
+                  subtitle: { en: 'Student Programs Director • Mindelo, Cape Verde', pt: 'Diretora de Programas Estudantis • Mindelo, Cabo Verde' },
+                  description: { 
+                    en: 'PhD student at UCL specializing in Portuguese-speaking student integration. Coordinates our university partnerships and academic support programs across London.',
+                    pt: 'Doutoranda na UCL especializada em integração de estudantes lusófonos. Coordena nossas parcerias universitárias e programas de apoio académico em Londres.' 
+                  },
+                  image: '/images/team/maria-silva.jpg',
+                  metadata: {
+                    expertise: { en: 'Academic Integration, University Partnerships, Student Support', pt: 'Integração Académica, Parcerias Universitárias, Apoio Estudantil' },
+                    heritage: { en: 'Cape Verde Islands', pt: 'Ilhas de Cabo Verde' },
+                    education: { en: 'UCL Linguistics PhD Candidate', pt: 'Candidata a Doutoramento em Linguística UCL' }
+                  }
+                }
+              ]}
+              title={{ en: 'Meet Our Team', pt: 'Conheça Nossa Equipa' }}
+              subtitle={{ en: 'Passionate Portuguese speakers building authentic community', pt: 'Falantes de português apaixonados construindo comunidade autêntica' }}
+              responsive={CAROUSEL_CONFIGS.compact}
+              autoAdvance={true}
+              autoAdvanceInterval={AUTO_ADVANCE_TIMINGS.slow}
+              renderItem={(member) => (
+                <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-premium-200/50 h-full hover:shadow-3xl transition-all duration-500 group">
+                  <div className="text-center">
+                    <div className="relative mb-6">
+                      <div className="w-24 h-24 bg-gradient-to-br from-premium-500 to-primary-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-white text-2xl font-bold">
+                          {member.title.en.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold bg-gradient-to-r from-premium-600 to-primary-600 bg-clip-text text-transparent mb-2">
+                      {member.title.en}
+                    </h3>
+                    <p className="text-sm font-semibold text-premium-600 mb-4">
+                      {member.subtitle.en}
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      {member.description.en}
+                    </p>
+                    <div className="space-y-2">
+                      {member.metadata?.expertise && (
+                        <div className="text-xs">
+                          <span className="font-semibold text-premium-700">{t('team.expertise', 'Expertise')}: </span>
+                          <span className="text-gray-600">{member.metadata.expertise.en}</span>
+                        </div>
+                      )}
+                      {member.metadata?.heritage && (
+                        <div className="text-xs">
+                          <span className="font-semibold text-primary-700">{t('team.heritage', 'Heritage')}: </span>
+                          <span className="text-gray-600">{member.metadata.heritage.en}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+            />
+          </div>
+        </section>
+
+        {/* Success Stories Carousel */}
+        <section className="py-20 bg-gradient-to-br from-secondary-50 via-white to-accent-50 relative overflow-hidden">
+          <div className="container-width">
+            <LusophoneCarousel
+              items={[
+                {
+                  id: 'success-ricardo',
+                  title: { en: 'Ricardo Almeida', pt: 'Ricardo Almeida' },
+                  subtitle: { en: 'Software Engineer • Originally from Lisbon', pt: 'Engenheiro de Software • Originalmente de Lisboa' },
+                  description: { 
+                    en: 'Found my dream job at a London fintech startup through LusoTown networking events. The Portuguese-speaking professional community here opened doors I never knew existed.',
+                    pt: 'Encontrei o trabalho dos meus sonhos numa startup fintech de Londres através de eventos de networking da LusoTown. A comunidade profissional lusófona aqui abriu portas que eu nem sabia que existiam.' 
+                  },
+                  image: '/images/success/ricardo-almeida.jpg',
+                  metadata: {
+                    achievement: { en: 'Senior Software Engineer at London FinTech', pt: 'Engenheiro de Software Sénior numa FinTech de Londres' },
+                    timeline: { en: '6 months after joining LusoTown', pt: '6 meses após se juntar à LusoTown' },
+                    impact: { en: '3 other Portuguese developers hired through his referrals', pt: '3 outros programadores portugueses contratados através das suas referências' }
+                  }
+                },
+                {
+                  id: 'success-lucia',
+                  title: { en: 'Lúcia Santos', pt: 'Lúcia Santos' },
+                  subtitle: { en: 'Marketing Director • Originally from Rio de Janeiro', pt: 'Diretora de Marketing • Originalmente do Rio de Janeiro' },
+                  description: { 
+                    en: 'Started my own cultural events company after organizing Brazilian carnival celebrations through LusoTown. Now I employ 8 people and celebrate Lusophone culture professionally.',
+                    pt: 'Comecei a minha própria empresa de eventos culturais depois de organizar celebrações de carnaval brasileiro através da LusoTown. Agora emprego 8 pessoas e celebro a cultura lusófona profissionalmente.' 
+                  },
+                  image: '/images/success/lucia-santos.jpg',
+                  metadata: {
+                    achievement: { en: 'Founder of "Saudade Events London"', pt: 'Fundadora da "Saudade Events London"' },
+                    timeline: { en: '1 year after joining LusoTown community', pt: '1 ano após se juntar à comunidade LusoTown' },
+                    impact: { en: 'Organized 50+ cultural events for 2000+ Portuguese speakers', pt: 'Organizou mais de 50 eventos culturais para mais de 2000 falantes de português' }
+                  }
+                },
+                {
+                  id: 'success-miguel',
+                  title: { en: 'Miguel Fernandes', pt: 'Miguel Fernandes' },
+                  subtitle: { en: 'PhD Student • Originally from Maputo, Mozambique', pt: 'Estudante de Doutoramento • Originalmente de Maputo, Moçambique' },
+                  description: { 
+                    en: 'Completed my PhD in Development Studies at SOAS through the academic support and Mozambican study group I found on LusoTown. Now researching Lusophone development economics.',
+                    pt: 'Completei o meu doutoramento em Estudos de Desenvolvimento na SOAS através do apoio académico e grupo de estudos moçambicano que encontrei na LusoTown. Agora pesquiso economia do desenvolvimento lusófona.' 
+                  },
+                  image: '/images/success/miguel-fernandes.jpg',
+                  metadata: {
+                    achievement: { en: 'PhD in Development Studies, SOAS University', pt: 'Doutoramento em Estudos de Desenvolvimento, Universidade SOAS' },
+                    timeline: { en: '3 years with LusoTown academic support', pt: '3 anos com apoio académico da LusoTown' },
+                    impact: { en: 'Published 12 papers on Lusophone African economics', pt: 'Publicou 12 artigos sobre economia africana lusófona' }
+                  }
+                },
+                {
+                  id: 'success-ana',
+                  title: { en: 'Ana Tavares', pt: 'Ana Tavares' },
+                  subtitle: { en: 'Entrepreneur • Originally from Praia, Cape Verde', pt: 'Empreendedora • Originalmente da Praia, Cabo Verde' },
+                  description: { 
+                    en: 'Launched my Cape Verdean restaurant "Morabeza London" with customers I met through LusoTown food events. We\'re now the top-rated Cape Verdean restaurant in London.',
+                    pt: 'Lancei o meu restaurante cabo-verdiano "Morabeza London" com clientes que conheci através de eventos gastronómicos da LusoTown. Somos agora o restaurante cabo-verdiano mais bem avaliado de Londres.' 
+                  },
+                  image: '/images/success/ana-tavares.jpg',
+                  metadata: {
+                    achievement: { en: '"Morabeza London" - Top Cape Verdean Restaurant', pt: '"Morabeza London" - Melhor Restaurante Cabo-verdiano' },
+                    timeline: { en: '2 years from idea to 5-star restaurant', pt: '2 anos da ideia ao restaurante 5 estrelas' },
+                    impact: { en: 'Employs 12 people, serves 500+ customers weekly', pt: 'Emprega 12 pessoas, serve mais de 500 clientes semanalmente' }
+                  }
+                }
+              ]}
+              title={{ en: 'Community Success Stories', pt: 'Histórias de Sucesso da Comunidade' }}
+              subtitle={{ en: 'Real achievements from Portuguese speakers who found their path through community', pt: 'Conquistas reais de falantes de português que encontraram o seu caminho através da comunidade' }}
+              responsive={CAROUSEL_CONFIGS.standard}
+              autoAdvance={true}
+              autoAdvanceInterval={AUTO_ADVANCE_TIMINGS.slow}
+              renderItem={(story) => (
+                <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-secondary-200/50 h-full hover:shadow-3xl transition-all duration-500 group">
+                  <div className="text-center mb-6">
+                    <div className="w-20 h-20 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                      <TrophyIcon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent mb-2">
+                      {story.title.en}
+                    </h3>
+                    <p className="text-sm font-semibold text-secondary-600 mb-4">
+                      {story.subtitle.en}
+                    </p>
+                  </div>
+                  <blockquote className="text-gray-700 text-sm leading-relaxed italic mb-6 text-center">
+                    \"{story.description.en}\"
+                  </blockquote>
+                  <div className="space-y-2 text-xs">
+                    {story.metadata?.achievement && (
+                      <div className="bg-secondary-50/80 rounded-lg p-3">
+                        <span className="font-semibold text-secondary-700">{t('success.achievement', 'Achievement')}: </span>
+                        <span className="text-gray-700">{story.metadata.achievement.en}</span>
+                      </div>
+                    )}
+                    {story.metadata?.timeline && (
+                      <div className="bg-accent-50/80 rounded-lg p-3">
+                        <span className="font-semibold text-accent-700">{t('success.timeline', 'Timeline')}: </span>
+                        <span className="text-gray-700">{story.metadata.timeline.en}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            />
           </div>
         </section>
 
