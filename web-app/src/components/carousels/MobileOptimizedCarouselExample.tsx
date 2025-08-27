@@ -16,7 +16,7 @@ export default function MobileOptimizedCarouselExample() {
   // Enhanced mobile settings for Portuguese community
   const mobileSettings: Partial<MobileSettings> = {
     enableSwipeGestures: true,
-    enableHapticFeedback: true,
+    enableHapticFeedback: false,
     enableMomentumScrolling: true,
     enablePullToRefresh: true,
     touchThreshold: 44, // WCAG 2.1 AA compliance
@@ -173,9 +173,10 @@ export default function MobileOptimizedCarouselExample() {
     await new Promise(resolve => setTimeout(resolve, 1000))
     
     // Show success message
-    if ('navigator' in window && 'vibrate' in navigator) {
-      navigator.vibrate([100, 50, 100]) // Success vibration pattern
-    }
+    // Haptic feedback disabled for better UX
+    // if ('navigator' in window && 'vibrate' in navigator) {
+    //   navigator.vibrate([100, 50, 100]) // Success vibration pattern
+    // }
   }, [])
 
   // Handle performance updates

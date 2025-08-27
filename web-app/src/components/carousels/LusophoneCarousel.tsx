@@ -209,7 +209,7 @@ const DEFAULT_RESPONSIVE: ResponsiveConfig = {
  */
 const DEFAULT_MOBILE_SETTINGS: MobileSettings = {
   enableSwipeGestures: true,
-  enableHapticFeedback: true,
+  enableHapticFeedback: false,
   enableMomentumScrolling: true,
   enablePullToRefresh: true,
   touchThreshold: 44, // WCAG 2.1 AA minimum touch target
@@ -399,10 +399,10 @@ function useCarouselNavigation<T extends CarouselItemType>(
       setIsTransitioning(withAnimation)
       setCurrentIndex(newIndex)
       
-      // Haptic feedback for mobile
-      if (settings.enableHapticFeedback && 'vibrate' in navigator) {
-        navigator.vibrate(10)
-      }
+      // Haptic feedback disabled for better UX
+      // if (settings.enableHapticFeedback && 'vibrate' in navigator) {
+      //   navigator.vibrate(10)
+      // }
       
       if (withAnimation) {
         setTimeout(() => setIsTransitioning(false), 300)
