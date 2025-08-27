@@ -51,7 +51,9 @@ export default function OnboardingDemo() {
         toast.success(isPortuguese ? 'Verificação de estudante iniciada!' : 'Student verification started!')
         break
       case 'referral_code_copied':
-        navigator.clipboard.writeText(data?.code || 'DEMO123')
+        if (typeof navigator !== "undefined" && navigator.clipboard) {
+          navigator.clipboard.writeText(data?.code || 'DEMO123')
+        }
         toast.success(isPortuguese ? 'Código de convite copiado!' : 'Referral code copied!')
         break
       case 'share_referral_whatsapp':
@@ -61,7 +63,9 @@ export default function OnboardingDemo() {
         window.open(`${process.env.NEXT_PUBLIC_WHATSAPP_API_URL || 'https://wa.me'}/?text=${encodeURIComponent(whatsappMessage)}`, '_blank')
         break
       case 'share_referral_generic':
-  navigator.clipboard.writeText(`${(process.env.NEXT_PUBLIC_SITE_URL||'').trim() || require('@/config/site').SITE_URL}/?ref=${data?.code}`)
+        if (typeof navigator !== "undefined" && navigator.clipboard) {
+          navigator.clipboard.writeText(`${(process.env.NEXT_PUBLIC_SITE_URL||'').trim() || require('@/config/site').SITE_URL}/?ref=${data?.code}`)
+        }
         toast.success(isPortuguese ? 'Link de convite copiado!' : 'Referral link copied!')
         break
       case 'start_premium_trial':

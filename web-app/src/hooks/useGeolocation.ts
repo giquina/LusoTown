@@ -35,7 +35,7 @@ export function useGeolocation(options: UseGeolocationOptions = {}) {
   } = options;
 
   useEffect(() => {
-    if (!navigator.geolocation) {
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
       setState(prev => ({
         ...prev,
         error: 'Geolocation is not supported by this browser',
@@ -104,7 +104,7 @@ export function useGeolocation(options: UseGeolocationOptions = {}) {
     }
 
     return () => {
-      if (watchId !== null) {
+      if (watchId !== null && typeof navigator !== 'undefined' && navigator.geolocation) {
         navigator.geolocation.clearWatch(watchId);
       }
     };
@@ -112,6 +112,15 @@ export function useGeolocation(options: UseGeolocationOptions = {}) {
 
   const requestLocation = () => {
     setState(prev => ({ ...prev, isLoading: true, error: null }));
+    
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
+      setState(prev => ({
+        ...prev,
+        error: 'Geolocation is not supported by this browser',
+        isLoading: false,
+      }));
+      return;
+    }
     
     navigator.geolocation.getCurrentPosition(
       (position) => {

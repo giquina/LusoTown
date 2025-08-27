@@ -160,8 +160,8 @@ export function useCarouselPerformanceOptimization(options?: {
 
     // Network status monitoring
     const updateNetworkStatus = () => {
-      const connection = (navigator as any).connection
-      let status: 'online' | 'offline' | 'slow' = navigator.onLine ? 'online' : 'offline'
+      const connection = typeof navigator !== 'undefined' ? (navigator as any).connection : null
+      let status: 'online' | 'offline' | 'slow' = typeof navigator !== 'undefined' && navigator.onLine ? 'online' : 'offline'
       
       if (connection && connection.effectiveType) {
         if (['slow-2g', '2g'].includes(connection.effectiveType)) {

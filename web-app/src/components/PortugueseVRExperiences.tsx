@@ -260,7 +260,7 @@ const PortugueseVRExperiences: React.FC = () => {
 
   useEffect(() => {
     // Check for WebXR support
-    if ('xr' in navigator) {
+    if (typeof navigator !== 'undefined' && 'xr' in navigator) {
       setIsVRSupported(true);
     }
   }, []);

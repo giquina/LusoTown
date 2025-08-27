@@ -63,13 +63,13 @@ const BookingConfirmationPage = () => {
   }
 
   const handleShare = () => {
-    if (navigator.share) {
+    if (typeof navigator !== 'undefined' && navigator.share) {
       navigator.share({
         title: 'I\'m attending the Smart Business App Creation Workshop!',
         text: `Just booked my spot at the ${event.title} on ${event.date}. Excited to learn smart technology tools and get a free app created for my business idea!`,
         url: `${window.location.origin  }/events/${eventId}`
       })
-    } else {
+    } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
       // Fallback to copying to clipboard
       navigator.clipboard.writeText(`I'm attending the ${event.title} on ${event.date}! Check it out: ${window.location.origin}/events/${eventId}`)
     }

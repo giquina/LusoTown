@@ -79,7 +79,7 @@ export function usePortuguesePWAFeatures() {
   })
 
   const [offlineCapabilities, setOfflineCapabilities] = useState<OfflineCapabilities>({
-    isOffline: !navigator.onLine,
+    isOffline: typeof navigator !== 'undefined' ? !typeof navigator !== "undefined" && navigator.onLine : false,
     hasOfflineContent: false,
     cachedPagesCount: 0,
     offlineEventsCount: 0,
@@ -185,7 +185,7 @@ export function usePortuguesePWAFeatures() {
 
   // Portuguese cultural push notifications
   const requestPortugueseNotifications = useCallback(async () => {
-    if (!('Notification' in window) || !('serviceWorker' in navigator)) {
+    if (!('Notification' in window) || !(typeof navigator !== 'undefined' && 'serviceWorker' in navigator)) {
       return false
     }
 
@@ -196,7 +196,7 @@ export function usePortuguesePWAFeatures() {
         setNotificationSettings(prev => ({ ...prev, enabled: true }))
         
         // Register for Portuguese cultural event categories
-        const registration = await navigator.serviceWorker.ready
+        const registration = await typeof navigator !== "undefined" && navigator.serviceWorker.ready
         
         if ('pushManager' in registration) {
           const subscription = await registration.pushManager.subscribe({
@@ -238,7 +238,7 @@ export function usePortuguesePWAFeatures() {
   const enableOfflineMode = useCallback(async () => {
     try {
       if ('serviceWorker' in navigator) {
-        const registration = await navigator.serviceWorker.ready
+        const registration = await typeof navigator !== "undefined" && navigator.serviceWorker.ready
         
         // Trigger background sync for Portuguese cultural content
         if ('sync' in registration) {
@@ -293,7 +293,7 @@ export function usePortuguesePWAFeatures() {
   // Background sync for Portuguese community data
   const syncPortugueseContent = useCallback(async () => {
     try {
-      if (!navigator.onLine) {
+      if (!typeof navigator !== "undefined" && navigator.onLine) {
         logger.info('[PWA] Device offline, skipping sync')
         return
       }
@@ -360,7 +360,7 @@ export function usePortuguesePWAFeatures() {
 
   // Process offline actions when back online
   const processOfflineActions = useCallback(async () => {
-    if (!navigator.onLine || offlineCapabilities.pendingActions.length === 0) {
+    if (!typeof navigator !== "undefined" && navigator.onLine || offlineCapabilities.pendingActions.length === 0) {
       return
     }
 
@@ -495,14 +495,14 @@ export function usePortuguesePWAFeatures() {
       window.addEventListener('offline', handleOffline)
 
       // Initial content sync
-      if (navigator.onLine) {
+      if (typeof navigator !== "undefined" && navigator.onLine) {
         await enableOfflineMode()
         await syncPortugueseContent()
       }
 
       // Set up periodic sync
       syncInterval.current = setInterval(() => {
-        if (navigator.onLine) {
+        if (typeof navigator !== "undefined" && navigator.onLine) {
           syncPortugueseContent()
         }
       }, 5 * 60 * 1000) // Sync every 5 minutes

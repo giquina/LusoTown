@@ -44,7 +44,7 @@ Global Error Report:
 - Name: ${error.name}
 - Digest: ${error.digest || 'N/A'}
 - Timestamp: ${new Date().toISOString()}
-- User Agent: ${navigator.userAgent}
+- User Agent: ${typeof navigator !== 'undefined' ? navigator.userAgent : 'SSR'}
 - URL: ${window.location.href}
 
 Please describe what you were doing when this error occurred:

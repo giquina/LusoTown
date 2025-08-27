@@ -49,7 +49,7 @@ export default function AppDownloadBar({
   // Check if user is on mobile device
   useEffect(() => {
     const checkMobile = () => {
-      const userAgent = navigator.userAgent.toLowerCase()
+      const userAgent = typeof navigator !== 'undefined' ? navigator.userAgent.toLowerCase() : ''
       const isMobileDevice = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent)
       const isSmallScreen = window.innerWidth < 768
       setIsMobile(isMobileDevice || isSmallScreen)
@@ -117,7 +117,7 @@ export default function AppDownloadBar({
     if (typeof gtag !== 'undefined') {
       gtag('event', 'app_download_click', {
         source: 'bottom_bar',
-        platform: navigator.userAgent.includes('iPhone') ? 'ios' : 'android'
+        platform: typeof navigator !== 'undefined' && navigator.userAgent.includes('iPhone') ? 'ios' : 'android'
       })
     }
   }
@@ -192,7 +192,7 @@ export default function AppDownloadBar({
               {/* Primary Download Button */}
               <a
                 ref={downloadButtonRef}
-                href={navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad')
+                href={typeof navigator !== 'undefined' && (navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad'))
                   ? 'https://apps.apple.com/app/lusotown-london'
                   : 'https://play.google.com/store/apps/details?id=com.lusotown.london'
                 }
@@ -213,8 +213,8 @@ export default function AppDownloadBar({
                 }}
                 aria-label={
                   isPortuguese 
-                    ? `Descarregar app LusoTown para ${navigator.userAgent.includes('iPhone') ? 'iOS' : 'Android'}. Abre numa nova janela.`
-                    : `Download LusoTown app for ${navigator.userAgent.includes('iPhone') ? 'iOS' : 'Android'}. Opens in a new window.`
+                    ? `Descarregar app LusoTown para ${typeof navigator !== 'undefined' && navigator.userAgent.includes('iPhone') ? 'iOS' : 'Android'}. Abre numa nova janela.`
+                    : `Download LusoTown app for ${typeof navigator !== 'undefined' && navigator.userAgent.includes('iPhone') ? 'iOS' : 'Android'}. Opens in a new window.`
                 }
               >
                 {isPortuguese ? 'Descarregar' : 'Download'}

@@ -19,7 +19,7 @@ export default function OfflinePage() {
   useEffect(() => {
     // Check if we're online
     const updateOnlineStatus = () => {
-      setIsOnline(navigator.onLine);
+      setIsOnline(typeof navigator !== 'undefined' ? navigator.onLine : true);
     };
 
     // Listen for online/offline events
