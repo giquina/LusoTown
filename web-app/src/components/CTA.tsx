@@ -16,15 +16,17 @@ import {
   HeartIcon,
 } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";
-import { plans, formatPrice } from "@/config/pricing";
+import { SUBSCRIPTION_PLANS, formatPrice } from "@/config/pricing";
 import { communityStats } from "@/config/community";
+
+import { ROUTES } from '@/config/routes';
 
 // Social login providers
 const socialProviders = [
-  { name: 'Google', icon: '🔍', href: '/auth/google' },
-  { name: 'Facebook', icon: '📘', href: '/auth/facebook' },
-  { name: 'Instagram', icon: '📸', href: '/auth/instagram' },
-  { name: 'LinkedIn', icon: '💼', href: '/auth/linkedin' },
+  { name: 'Google', icon: '🔍', href: `${ROUTES.api.auth}/google` },
+  { name: 'Facebook', icon: '📘', href: `${ROUTES.api.auth}/facebook` },
+  { name: 'Instagram', icon: '📸', href: `${ROUTES.api.auth}/instagram` },
+  { name: 'LinkedIn', icon: '💼', href: `${ROUTES.api.auth}/linkedin` },
 ];
 
 // Enhanced community highlights with United Kingdom focus
@@ -88,7 +90,7 @@ export default function CTA() {
             </div>
             
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              From {formatPrice(plans.community.monthly)}/month
+              From {formatPrice(SUBSCRIPTION_PLANS.community.monthly)}/month
             </h2>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-4xl mx-auto mb-8 border border-white/20">
@@ -105,7 +107,7 @@ export default function CTA() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-center">
                 <h3 className="text-white font-bold text-xl mb-2">United Kingdom Community Member</h3>
-                <p className="text-white/90 text-2xl font-bold">{formatPrice(plans.community.monthly)}/month</p>
+                <p className="text-white/90 text-2xl font-bold">{formatPrice(SUBSCRIPTION_PLANS.community.monthly)}/month</p>
                 <p className="text-white/80 text-sm mt-3 leading-relaxed">
                   Connect with Portuguese speakers across England, Scotland, Wales & Northern Ireland
                 </p>
@@ -115,7 +117,7 @@ export default function CTA() {
                   Most Popular
                 </div>
                 <h3 className="text-white font-bold text-xl mb-2">Cultural Ambassador</h3>
-                <p className="text-white/90 text-2xl font-bold">{formatPrice(plans.ambassador.monthly)}/month</p>
+                <p className="text-white/90 text-2xl font-bold">{formatPrice(SUBSCRIPTION_PLANS.ambassador.monthly)}/month</p>
                 <p className="text-white/80 text-sm mt-3 leading-relaxed">
                   Premium access + priority visibility across all United Kingdom Lusophone events
                 </p>
@@ -164,11 +166,12 @@ export default function CTA() {
             <div className="flex flex-col items-center space-y-6">
               {/* Primary Action */}
               <a
-                href="/signup"
-                className="bg-white text-secondary-700 hover:bg-gray-50 font-bold text-xl px-12 py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center justify-center"
+                href={ROUTES.signup}
+                className="bg-white text-secondary-700 hover:bg-gray-50 font-bold text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center justify-center whitespace-nowrap min-h-[56px]"
               >
-                Join Now
-                <ArrowRightIcon className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform duration-200" />
+                <span className="hidden sm:inline">Join Now</span>
+                <span className="sm:hidden">Join</span>
+                <ArrowRightIcon className="h-5 w-5 sm:h-6 sm:w-6 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-200" />
               </a>
 
               {/* Social Login Options */}

@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useNotification } from '@/context/NotificationContext';
+import logger from '@/utils/logger';
 import { 
   Camera, 
   X, 
@@ -121,9 +122,9 @@ export default function MobileCameraIntegration({
         videoRef.current.play();
       }
 
-      console.log('[Camera] Initialized successfully');
+      logger.info('Camera initialized successfully', { area: 'mobile', action: 'camera_init' });
     } catch (error) {
-      console.error('[Camera] Initialization failed:', error);
+      logger.error('Camera initialization failed', error, { area: 'mobile', action: 'camera_init_error' });
       addNotification({
         id: 'camera-error',
         type: 'error',
@@ -157,9 +158,9 @@ export default function MobileCameraIntegration({
       scanner.render(handleQRScanSuccess, handleQRScanError);
       qrScannerRef.current = scanner;
 
-      console.log('[QR Scanner] Initialized successfully');
+      logger.info('QR Scanner initialized successfully', { area: 'mobile', action: 'qr_scanner_init' });
     } catch (error) {
-      console.error('[QR Scanner] Initialization failed:', error);
+      logger.error('QR Scanner initialization failed', error, { area: 'mobile', action: 'qr_scanner_init_error' });
       addNotification({
         id: 'qr-scanner-error',
         type: 'error',
@@ -173,7 +174,7 @@ export default function MobileCameraIntegration({
   };
 
   const handleQRScanSuccess = (decodedText: string) => {
-    console.log('[QR Scanner] Scan successful:', decodedText);
+    logger.info('QR Scanner scan successful', { area: 'mobile', action: 'qr_scan_success', decodedText });
     
     try {
       const result = parseQRCode(decodedText);
@@ -197,14 +198,14 @@ export default function MobileCameraIntegration({
       });
       
     } catch (error) {
-      console.error('[QR Scanner] Parse error:', error);
+      logger.error('QR Scanner parse error', error, { area: 'mobile', action: 'qr_parse_error' });
     }
   };
 
   const handleQRScanError = (error: string) => {
     // Ignore frequent scanning errors
     if (!error.includes('NotFoundException')) {
-      console.log('[QR Scanner] Scan error:', error);
+      logger.warn('QR Scanner scan error', undefined, { area: 'mobile', action: 'qr_scan_error' });
     }
   };
 
@@ -290,7 +291,7 @@ export default function MobileCameraIntegration({
         navigator.vibrate(50);
       }
 
-      console.log('[Camera] Photo captured successfully');
+      logger.info('Photo captured successfully', { area: 'mobile', action: 'photo_capture_success', culturalContext: 'lusophone' });
 
       addNotification({
         id: 'photo-captured',
@@ -303,7 +304,7 @@ export default function MobileCameraIntegration({
       });
 
     } catch (error) {
-      console.error('[Camera] Capture failed:', error);
+      logger.error('Photo capture failed', error, { area: 'mobile', action: 'photo_capture_error' });
       addNotification({
         id: 'capture-error',
         type: 'error',
@@ -350,7 +351,7 @@ export default function MobileCameraIntegration({
       if (onClose) onClose();
 
     } catch (error) {
-      console.error('[Camera] Save failed:', error);
+      logger.error('Photo save failed', error, { area: 'mobile', action: 'photo_save_error' });
       addNotification({
         id: 'save-error',
         type: 'error',
@@ -370,13 +371,13 @@ export default function MobileCameraIntegration({
           navigator.geolocation.getCurrentPosition(resolve, reject);
         });
 
-        console.log('[Camera] Location added to photo:', position.coords);
+        logger.info('Location added to photo', { area: 'mobile', action: 'photo_location_added' });
         
         // Send location data with photo for Lusophone cultural mapping
         // This would be sent to backend for cultural site identification
         
       } catch (error) {
-        console.log('[Camera] Location not available:', error);
+        logger.warn('Photo location not available', undefined, { area: 'mobile', action: 'photo_location_error' });
       }
     }
   };
@@ -441,7 +442,7 @@ export default function MobileCameraIntegration({
       });
 
     } catch (error) {
-      console.error('[Camera] Share failed:', error);
+      logger.error('Photo share failed', error, { area: 'mobile', action: 'photo_share_error' });
     }
   };
 

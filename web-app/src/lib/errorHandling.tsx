@@ -5,6 +5,7 @@
 
 import React from 'react'
 import { toast } from 'react-hot-toast'
+import logger from '@/utils/logger'
 
 // Error types for categorization
 export enum ErrorType {
@@ -57,7 +58,7 @@ export async function safeAsync<T>(
     const data = await operation()
     return { data, success: true }
   } catch (error) {
-    console.error(`Error in ${errorContext?.operationName || 'async operation'}:`, error)
+    logger.error(`Error in ${errorContext?.operationName || 'async operation'}`, error, { area: 'errorHandling', action: 'async_error_handler' })
     
     const lusoError = error instanceof LusoTownError 
       ? error 
@@ -156,7 +157,7 @@ function logError(error: LusoTownError, context?: any) {
     url: typeof window !== 'undefined' ? window.location.href : undefined
   }
 
-  console.error('Production Error Report:', errorReport)
+  logger.error('Production error report', undefined, { area: 'errorHandling', action: 'production_error', ...errorReport })
 }
 
 // Safe localStorage operations
@@ -165,7 +166,7 @@ export const safeLocalStorage = {
     try {
       return localStorage.getItem(key)
     } catch (error) {
-      console.error('Error reading from localStorage:', error)
+      logger.error('Error reading from localStorage', error, { area: 'errorHandling', action: 'localStorage_read' })
       return null
     }
   },
@@ -175,7 +176,7 @@ export const safeLocalStorage = {
       localStorage.setItem(key, value)
       return true
     } catch (error) {
-      console.error('Error writing to localStorage:', error)
+      logger.error('Error writing to localStorage', error, { area: 'errorHandling', action: 'localStorage_write' })
       return false
     }
   },
@@ -185,7 +186,7 @@ export const safeLocalStorage = {
       localStorage.removeItem(key)
       return true
     } catch (error) {
-      console.error('Error removing from localStorage:', error)
+      logger.error('Error removing from localStorage', error, { area: 'errorHandling', action: 'localStorage_remove' })
       return false
     }
   },
@@ -195,7 +196,7 @@ export const safeLocalStorage = {
       const item = localStorage.getItem(key)
       return item ? JSON.parse(item) : null
     } catch (error) {
-      console.error('Error parsing JSON from localStorage:', error)
+      logger.error('Error parsing JSON from localStorage', error, { area: 'errorHandling', action: 'localStorage_parse' })
       return null
     }
   },
@@ -205,7 +206,7 @@ export const safeLocalStorage = {
       localStorage.setItem(key, JSON.stringify(value))
       return true
     } catch (error) {
-      console.error('Error storing JSON to localStorage:', error)
+      logger.error('Error storing JSON to localStorage', error, { area: 'errorHandling', action: 'localStorage_store' })
       return false
     }
   }
@@ -217,7 +218,7 @@ export const safeDOMOperations = {
     try {
       return document.querySelector(selector)
     } catch (error) {
-      console.error('Error with querySelector:', error)
+      logger.error('Error with querySelector', error, { area: 'errorHandling', action: 'dom_query_selector' })
       return null
     }
   },
@@ -226,7 +227,7 @@ export const safeDOMOperations = {
     try {
       return document.getElementById(id)
     } catch (error) {
-      console.error('Error with getElementById:', error)
+      logger.error('Error with getElementById', error, { area: 'errorHandling', action: 'dom_get_element_by_id' })
       return null
     }
   },
@@ -241,7 +242,7 @@ export const safeDOMOperations = {
       element.addEventListener(event, handler, options)
       return true
     } catch (error) {
-      console.error('Error adding event listener:', error)
+      logger.error('Error adding event listener', error, { area: 'errorHandling', action: 'dom_add_event_listener' })
       return false
     }
   },
@@ -256,7 +257,7 @@ export const safeDOMOperations = {
       element.removeEventListener(event, handler, options)
       return true
     } catch (error) {
-      console.error('Error removing event listener:', error)
+      logger.error('Error removing event listener', error, { area: 'errorHandling', action: 'dom_remove_event_listener' })
       return false
     }
   }
@@ -342,7 +343,7 @@ export function withErrorHandling<P extends object>(
     try {
       return <Component {...props} />
     } catch (error) {
-      console.error(`Error in component ${errorContext?.componentName || 'Unknown'}:`, error)
+      logger.error(`Error in component ${errorContext?.componentName || 'Unknown'}`, error, { area: 'errorHandling', action: 'component_error', componentName: errorContext?.componentName })
       
       if (errorContext?.fallbackRender) {
         return errorContext.fallbackRender(error as Error)

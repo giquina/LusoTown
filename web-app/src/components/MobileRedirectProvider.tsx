@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import { logger } from '@/utils/logger';
 import { 
   getDeviceInfo, 
   checkAppInstallation, 
@@ -96,7 +97,12 @@ export function MobileRedirectProvider({
       }
       
     } catch (error) {
-      console.warn('Mobile detection initialization failed:', error);
+      logger.warn('Mobile detection initialization failed for Portuguese-speaking community', {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'mobile_detection_init_failed',
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
     } finally {
       setIsLoading(false);
     }
@@ -191,9 +197,17 @@ export function MobileRedirectProvider({
       trackDownloadChoice('install_pwa');
       
       if (outcome === 'accepted') {
-        console.log('PWA installation accepted');
+        logger.info('PWA installation accepted by Portuguese-speaking community member', {
+          area: 'mobile',
+          culturalContext: 'lusophone',
+          action: 'pwa_installation_accepted'
+        });
       } else {
-        console.log('PWA installation dismissed');
+        logger.info('PWA installation dismissed by Portuguese-speaking community member', {
+          area: 'mobile',
+          culturalContext: 'lusophone',
+          action: 'pwa_installation_dismissed'
+        });
       }
       
       // Clear the deferredPrompt
@@ -202,7 +216,12 @@ export function MobileRedirectProvider({
       setShowLandingPage(false);
       
     } catch (error) {
-      console.warn('PWA installation failed:', error);
+      logger.warn('PWA installation failed for Portuguese-speaking community member', {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'pwa_installation_failed',
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
     }
   };
 

@@ -11,6 +11,7 @@
 
 import { SupabaseClient, createClient } from '@supabase/supabase-js';
 import { Redis } from '@upstash/redis';
+import logger from '@/utils/logger';
 
 // Types for Portuguese community data
 interface PortugueseBusinessSearchParams {
@@ -222,10 +223,19 @@ export class EnhancedDatabaseService {
         
         // Test Redis connection
         await this.redis.ping();
-        console.log('✅ Redis cache initialized for Portuguese community service');
+        logger.info('Redis cache initialized for Lusophone community database service', {
+          area: 'performance',
+          culturalContext: 'lusophone',
+          action: 'redis_cache_initialized'
+        });
       }
     } catch (error) {
-      console.warn('⚠️ Redis cache not available, using in-memory cache:', error);
+      logger.warn('Redis cache not available for Lusophone database service, using in-memory cache', {
+        error: error.message,
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'redis_cache_fallback'
+      });
       this.redis = null;
     }
   }
@@ -240,7 +250,13 @@ export class EnhancedDatabaseService {
       this.connectionPool.set(`client_${i}`, client);
     }
     
-    console.log(`✅ Connection pool initialized with ${CONNECTION_POOL_CONFIG.minConnections} connections`);
+    logger.info('Lusophone database connection pool initialized', {
+      minConnections: CONNECTION_POOL_CONFIG.minConnections,
+      maxConnections: CONNECTION_POOL_CONFIG.maxConnections,
+      area: 'performance',
+      culturalContext: 'lusophone',
+      action: 'connection_pool_initialized'
+    });
   }
 
   /**
@@ -268,7 +284,12 @@ export class EnhancedDatabaseService {
             filter: 'is_active=eq.true'
           }, 
           (payload) => {
-            console.log('Portuguese business update:', payload);
+            logger.debug('Lusophone business real-time update received', {
+              payload,
+              area: 'business',
+              culturalContext: 'lusophone',
+              action: 'business_update_received'
+            });
             this.invalidateCache('portugueseBusinesses');
           })
       .subscribe();
@@ -288,7 +309,12 @@ export class EnhancedDatabaseService {
             // Only invalidate for Portuguese-relevant events
             const event = payload.new || payload.old;
             if (this.isPortugueseRelevantEvent(event)) {
-              console.log('Portuguese event update:', payload);
+              logger.debug('Lusophone event real-time update received', {
+                payload,
+                area: 'events',
+                culturalContext: 'lusophone',
+                action: 'event_update_received'
+              });
               this.invalidateCache('portugueseEvents');
             }
           })
@@ -306,7 +332,12 @@ export class EnhancedDatabaseService {
             table: 'user_matches'
           }, 
           (payload) => {
-            console.log('Cultural match update:', payload);
+            logger.debug('Lusophone cultural match update received', {
+              payload,
+              area: 'matching',
+              culturalContext: 'lusophone',
+              action: 'match_update_received'
+            });
             this.invalidateCache('culturalMatches');
           })
       .subscribe();
@@ -387,7 +418,12 @@ export class EnhancedDatabaseService {
     } catch (error) {
       const executionTime = performance.now() - startTime;
       this.updatePerformanceMetrics('database_error', executionTime);
-      console.error('Enhanced Portuguese business search failed:', error);
+      logger.error('Enhanced Lusophone business search failed', error, {
+        params: searchParams,
+        area: 'business',
+        culturalContext: 'lusophone',
+        action: 'business_search_failed'
+      });
       throw error;
     }
   }
@@ -444,7 +480,12 @@ export class EnhancedDatabaseService {
     } catch (error) {
       const executionTime = performance.now() - startTime;
       this.updatePerformanceMetrics('database_error', executionTime);
-      console.error('Enhanced Portuguese event discovery failed:', error);
+      logger.error('Enhanced Lusophone event discovery failed', error, {
+        params: searchParams,
+        area: 'events',
+        culturalContext: 'lusophone',
+        action: 'event_discovery_failed'
+      });
       throw error;
     }
   }
@@ -504,7 +545,13 @@ export class EnhancedDatabaseService {
     } catch (error) {
       const executionTime = performance.now() - startTime;
       this.updatePerformanceMetrics('database_error', executionTime);
-      console.error('Portuguese business clustering analysis failed:', error);
+      logger.error('Lusophone business clustering analysis failed', error, {
+        userLat,
+        userLng,
+        area: 'business',
+        culturalContext: 'lusophone',
+        action: 'business_clustering_failed'
+      });
       throw error;
     }
   }
@@ -554,7 +601,13 @@ export class EnhancedDatabaseService {
     } catch (error) {
       const executionTime = performance.now() - startTime;
       this.updatePerformanceMetrics('database_error', executionTime);
-      console.error('Advanced cultural compatibility calculation failed:', error);
+      logger.error('Advanced Lusophone cultural compatibility calculation failed', error, {
+        userId: params.userId,
+        targetUserId: params.targetUserId,
+        area: 'matching',
+        culturalContext: 'lusophone',
+        action: 'compatibility_calculation_failed'
+      });
       throw error;
     }
   }
@@ -566,7 +619,11 @@ export class EnhancedDatabaseService {
     const startTime = performance.now();
     
     try {
-      console.log('🔧 Starting Portuguese community database maintenance...');
+      logger.info('Starting Lusophone community database maintenance', {
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'maintenance_started'
+      });
       
       const client = this.getPooledClient();
       const { data, error } = await client.rpc('maintain_portuguese_community_database');
@@ -575,12 +632,25 @@ export class EnhancedDatabaseService {
       
       const executionTime = performance.now() - startTime;
       
-      console.log('✅ Database maintenance completed successfully');
-      console.log(`⏱️ Total execution time: ${executionTime.toFixed(2)}ms`);
+      logger.info('Lusophone database maintenance completed successfully', {
+        executionTime: parseFloat(executionTime.toFixed(2)),
+        maintenanceResults: data?.length || 0,
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'maintenance_completed',
+        duration: parseFloat(executionTime.toFixed(2))
+      });
       
       // Log maintenance results
       data?.forEach((result: any) => {
-        console.log(`📊 ${result.maintenance_type}: ${result.status} (${result.execution_time_ms}ms)`);
+        logger.debug('Lusophone database maintenance task completed', {
+          maintenanceType: result.maintenance_type,
+          status: result.status,
+          taskExecutionTime: result.execution_time_ms,
+          area: 'performance',
+          culturalContext: 'lusophone',
+          action: 'maintenance_task_completed'
+        });
       });
       
       return {
@@ -590,7 +660,11 @@ export class EnhancedDatabaseService {
       };
       
     } catch (error) {
-      console.error('❌ Database maintenance failed:', error);
+      logger.error('Lusophone database maintenance failed', error, {
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'maintenance_failed'
+      });
       throw error;
     }
   }
@@ -648,7 +722,11 @@ export class EnhancedDatabaseService {
       };
       
     } catch (error) {
-      console.error('Performance metrics collection failed:', error);
+      logger.error('Lusophone database performance metrics collection failed', error, {
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'metrics_collection_failed'
+      });
       throw error;
     }
   }
@@ -672,7 +750,13 @@ export class EnhancedDatabaseService {
       }
       return null;
     } catch (error) {
-      console.warn('Cache get failed:', error);
+      logger.warn('Lusophone database cache get operation failed', {
+        key,
+        error: error.message,
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'cache_get_failed'
+      });
       return null;
     }
   }
@@ -684,7 +768,14 @@ export class EnhancedDatabaseService {
         await this.redis.setex(key, config.ttlSeconds, JSON.stringify(data));
       }
     } catch (error) {
-      console.warn('Cache set failed:', error);
+      logger.warn('Lusophone database cache set operation failed', {
+        key,
+        ttlSeconds,
+        error: error.message,
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'cache_set_failed'
+      });
     }
   }
 
@@ -702,7 +793,13 @@ export class EnhancedDatabaseService {
         }
       }
     } catch (error) {
-      console.warn('Cache invalidation failed:', error);
+      logger.warn('Lusophone database cache invalidation failed', {
+        key,
+        error: error.message,
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'cache_invalidation_failed'
+      });
     }
   }
 
@@ -756,7 +853,11 @@ export class EnhancedDatabaseService {
    * Cleanup resources and close connections
    */
   async cleanup(): Promise<void> {
-    console.log('🧹 Cleaning up Enhanced Database Service...');
+    logger.info('Cleaning up Enhanced Lusophone Database Service', {
+      area: 'performance',
+      culturalContext: 'lusophone',
+      action: 'service_cleanup_started'
+    });
     
     // Close real-time channels
     this.realtimeChannels.forEach((channel, key) => {
@@ -772,7 +873,11 @@ export class EnhancedDatabaseService {
       // Redis client automatically handles cleanup
     }
     
-    console.log('✅ Enhanced Database Service cleanup completed');
+    logger.info('Enhanced Lusophone Database Service cleanup completed', {
+      area: 'performance',
+      culturalContext: 'lusophone',
+      action: 'service_cleanup_completed'
+    });
   }
 }
 

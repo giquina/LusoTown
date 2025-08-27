@@ -1,11 +1,12 @@
 'use client'
 import Image from 'next/image'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { authService, User } from '@/lib/auth'
 import { directoryService } from '@/lib/directory'
 import { connectionService, UserProfile } from '@/lib/connections'
+import logger from '@/utils/logger'
 import { 
   ArrowLeft,
   MapPin,
@@ -46,17 +47,7 @@ export default function MemberProfile() {
   const [mutualConnections, setMutualConnections] = useState<any[]>([])
   const [activeTab, setActiveTab] = useState<'about' | 'photos' | 'activity'>('about')
 
-  useEffect(() => {
-    const currentUser = authService.getCurrentUser()
-    if (!currentUser) {
-      router.push('/login')
-      return
-    }
-    
-    loadMemberData(currentUser, memberId)
-  }, [router, memberId])
-
-  const loadMemberData = async (currentUser: User, memberId: string) => {
+  const loadMemberData = useCallback(async (currentUser: User, memberId: string) => {
     try {
       const [memberData, connections, mutuals] = await Promise.all([
         directoryService.getMemberById(memberId, currentUser.id),
@@ -74,12 +65,28 @@ export default function MemberProfile() {
       setIsConnected(connections.some(c => c.id === memberId))
       setMutualConnections(mutuals)
     } catch (error) {
-      console.error('Error loading member data:', error)
+      logger.error('Failed to load Portuguese-speaking community member data', error, {
+        area: 'community',
+        culturalContext: 'lusophone',
+        action: 'member_data_load_failed',
+        memberId: id
+      })
       router.push('/directory')
     } finally {
       setLoading(false)
     }
-  }
+  }, [router])
+
+  useEffect(() => {
+    const currentUser = authService.getCurrentUser()
+    if (!currentUser) {
+      router.push('/login')
+      return
+    }
+    
+    loadMemberData(currentUser, memberId)
+  }, [router, memberId, loadMemberData])
+
 
   const getMembershipBadge = (tier: string) => {
     const badges = {
@@ -120,7 +127,11 @@ export default function MemberProfile() {
         alert(result.message)
       }
     } catch (error) {
-      console.error('Error sending connection request:', error)
+      logger.error('Failed to send connection request in Portuguese-speaking community', error, {
+        area: 'community',
+        culturalContext: 'lusophone',
+        action: 'connection_request_failed'
+      })
       alert('Error sending connection request')
     }
   }

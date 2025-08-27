@@ -7,6 +7,7 @@
 
 import { WELCOME_ANALYTICS_EVENTS, WelcomeAnalyticsEvent } from '@/config/welcome-popup';
 import { WelcomePreferences } from '@/config/welcome-popup';
+import logger from '@/utils/logger';
 
 interface AnalyticsData {
   [key: string]: any;
@@ -69,11 +70,15 @@ export const trackWelcomeEvent = (
 
     // Development logging
     if (process.env.NODE_ENV === 'development') {
-      console.log(`🎯 Welcome Analytics: ${event}`, eventData);
+      logger.info(`Welcome Analytics: ${event}`, { 
+        ...eventData,
+        area: 'analytics',
+        action: event
+      });
     }
 
   } catch (error) {
-    console.warn('Error tracking welcome event:', error);
+    logger.warn('Error tracking welcome event', error, { area: 'analytics' });
   }
 };
 
@@ -200,7 +205,7 @@ export const calculateConversionMetrics = () => {
       ) / 3 * 100
     };
   } catch (error) {
-    console.warn('Error calculating conversion metrics:', error);
+    logger.warn('Error calculating conversion metrics', error, { area: 'analytics' });
     return null;
   }
 };
@@ -230,7 +235,7 @@ export const getWelcomeAnalyticsSummary = () => {
       }
     };
   } catch (error) {
-    console.warn('Error getting analytics summary:', error);
+    logger.warn('Error getting analytics summary', error, { area: 'analytics' });
     return null;
   }
 };

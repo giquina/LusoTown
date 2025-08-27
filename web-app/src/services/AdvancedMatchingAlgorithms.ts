@@ -24,6 +24,7 @@ import type {
   CulturalDepthProfile, 
   RegionalIdentity 
 } from '@/components/matches/SaudadeMatchingSystem'
+import logger from '@/utils/logger'
 
 // Advanced Matching Types
 
@@ -253,7 +254,12 @@ export class AdvancedMatchingAlgorithms {
 
       return filteredMatches
     } catch (error) {
-      console.error('[Advanced Matching] Failed to find matches:', error)
+      logger.error('Advanced matching algorithm failed', error, {
+        area: 'matching',
+        action: 'advanced_matching',
+        culturalContext: 'lusophone',
+        userId
+      })
       throw error
     }
   }
@@ -328,7 +334,11 @@ export class AdvancedMatchingAlgorithms {
 
       return Math.min(100, Math.round(saudadeScore))
     } catch (error) {
-      console.error('[Saudade Matching] Calculation error:', error)
+      logger.error('Saudade matching calculation failed', error, {
+        area: 'matching',
+        action: 'saudade_matching',
+        culturalContext: 'portuguese'
+      })
       return 50 // Default moderate compatibility
     }
   }
@@ -409,7 +419,11 @@ export class AdvancedMatchingAlgorithms {
       const uniqueMatches = this.removeDuplicateMatches(eventMatches)
       return uniqueMatches.sort((a, b) => b.compatibilityScore - a.compatibilityScore)
     } catch (error) {
-      console.error('[Event-based Matching] Error:', error)
+      logger.error('Event-based matching failed', error, {
+        area: 'matching',
+        action: 'event_matching',
+        culturalContext: 'lusophone'
+      })
       return []
     }
   }
@@ -483,7 +497,11 @@ export class AdvancedMatchingAlgorithms {
         .filter(match => match.businessPotential >= 60)
         .sort((a, b) => b.businessPotential - a.businessPotential)
     } catch (error) {
-      console.error('[Business Networking] Matching error:', error)
+      logger.error('Business networking matching failed', error, {
+        area: 'business',
+        action: 'business_matching',
+        culturalContext: 'portuguese'
+      })
       return []
     }
   }
@@ -553,7 +571,11 @@ export class AdvancedMatchingAlgorithms {
         estimatedTravelTime
       }
     } catch (error) {
-      console.error('[Geographic Compatibility] Calculation error:', error)
+      logger.error('Geographic compatibility calculation failed', error, {
+        area: 'matching',
+        action: 'geographic_matching',
+        culturalContext: 'lusophone'
+      })
       return {
         score: 30,
         distance: 0,
@@ -606,7 +628,11 @@ export class AdvancedMatchingAlgorithms {
 
       return optimizationMetrics
     } catch (error) {
-      console.error('[Real-time Optimization] Error:', error)
+      logger.error('Real-time matching optimization failed', error, {
+        area: 'matching',
+        action: 'realtime_optimization',
+        culturalContext: 'lusophone'
+      })
       throw error
     }
   }
@@ -656,7 +682,11 @@ export class AdvancedMatchingAlgorithms {
       // Re-sort by enhanced scores
       return enhancedMatches.sort((a, b) => b.compatibilityScore - a.compatibilityScore)
     } catch (error) {
-      console.error('[AI Enhancement] Error:', error)
+      logger.error('AI enhancement matching failed', error, {
+        area: 'ai',
+        action: 'ai_matching_enhancement',
+        culturalContext: 'lusophone'
+      })
       return baseMatches // Return unenhanced matches if AI fails
     }
   }
@@ -687,7 +717,11 @@ export class AdvancedMatchingAlgorithms {
       
       return profile as any // Type assertion for complex joined data
     } catch (error) {
-      console.error('[Profile Retrieval] Error:', error)
+      logger.error('Profile retrieval for matching failed', error, {
+        area: 'matching',
+        action: 'profile_retrieval',
+        culturalContext: 'lusophone'
+      })
       return null
     }
   }
@@ -723,7 +757,11 @@ export class AdvancedMatchingAlgorithms {
       if (error) throw error
       return matches || []
     } catch (error) {
-      console.error('[Potential Matches] Retrieval error:', error)
+      logger.error('Potential matches retrieval failed', error, {
+        area: 'matching',
+        action: 'potential_matches_retrieval',
+        culturalContext: 'lusophone'
+      })
       return []
     }
   }
@@ -787,7 +825,11 @@ export class AdvancedMatchingAlgorithms {
         lastUpdated: new Date().toISOString()
       }
     } catch (error) {
-      console.error('[Advanced Compatibility] Calculation error:', error)
+      logger.error('Advanced compatibility calculation failed', error, {
+        area: 'matching',
+        action: 'compatibility_calculation',
+        culturalContext: 'lusophone'
+      })
       throw error
     }
   }
@@ -1225,7 +1267,11 @@ export class AdvancedMatchingAlgorithms {
           timestamp: new Date().toISOString()
         })
     } catch (error) {
-      console.error('[Analytics Update] Error:', error)
+      logger.error('Matching analytics update failed', error, {
+        area: 'analytics',
+        action: 'matching_analytics_update',
+        culturalContext: 'lusophone'
+      })
     }
   }
 

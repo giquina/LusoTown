@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import logger from '@/utils/logger';
 
 // Lusophone cultural push notification backend for LusoTown community platform
 export async function POST(request: NextRequest) {
@@ -14,12 +15,15 @@ export async function POST(request: NextRequest) {
     }
 
     // Store subscription in database (replace with actual database logic)
-    console.log('[Push Subscription] New subscription received:', {
+    logger.info('New Lusophone push notification subscription received', {
       endpoint: subscription.endpoint,
       preferences,
       language,
       timezone,
-      userAgent: userAgent?.substring(0, 100) // Truncate for logging
+      userAgent: userAgent?.substring(0, 100),
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'subscription_created'
     });
 
     // Simulate database save
@@ -69,7 +73,11 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[Push Subscription] Error saving subscription:', error);
+    logger.error('Failed to save Lusophone push notification subscription', error, {
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'subscription_create_error'
+    });
     return NextResponse.json(
       { 
         error: 'Failed to save subscription',
@@ -93,7 +101,12 @@ export async function DELETE(request: NextRequest) {
     }
 
     // Remove subscription from database (replace with actual database logic)
-    console.log('[Push Subscription] Removing subscription:', subscription.endpoint);
+    logger.info('Removing Lusophone push notification subscription', {
+      endpoint: subscription.endpoint,
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'subscription_removed'
+    });
 
     // In production, remove from Supabase or your database
     /*
@@ -113,7 +126,11 @@ export async function DELETE(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[Push Subscription] Error removing subscription:', error);
+    logger.error('Failed to remove Lusophone push notification subscription', error, {
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'subscription_remove_error'
+    });
     return NextResponse.json(
       { 
         error: 'Failed to remove subscription',
@@ -137,10 +154,13 @@ export async function PUT(request: NextRequest) {
     }
 
     // Update subscription preferences in database
-    console.log('[Push Subscription] Updating preferences:', {
+    logger.info('Updating Lusophone push notification preferences', {
       endpoint: subscription.endpoint,
       preferences,
-      language
+      language,
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'preferences_updated'
     });
 
     // In production, update in Supabase or your database
@@ -167,7 +187,11 @@ export async function PUT(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[Push Subscription] Error updating preferences:', error);
+    logger.error('Failed to update Lusophone push notification preferences', error, {
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'preferences_update_error'
+    });
     return NextResponse.json(
       { 
         error: 'Failed to update preferences',
@@ -196,7 +220,13 @@ async function sendWelcomeNotification(subscription: any, language: string = 'en
       }
     };
 
-    console.log('[Push Subscription] Welcome notification prepared:', welcomeMessage);
+    logger.debug('Lusophone welcome notification prepared', {
+      message: welcomeMessage,
+      language,
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'welcome_notification_prepared'
+    });
 
     // In production, send actual push notification:
     /*
@@ -213,7 +243,11 @@ async function sendWelcomeNotification(subscription: any, language: string = 'en
 
     return true;
   } catch (error) {
-    console.error('[Push Subscription] Failed to send welcome notification:', error);
+    logger.error('Failed to send Lusophone welcome notification', error, {
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'welcome_notification_error'
+    });
     return false;
   }
 }
@@ -245,7 +279,12 @@ async function schedulePortugueseCulturalNotifications() {
   ];
 
   // In production, schedule these notifications based on user timezone
-  console.log('[Push Subscription] Lusophone cultural events scheduled:', culturalEvents);
+  logger.info('Lusophone cultural events scheduled for notifications', {
+    events: culturalEvents,
+    area: 'events',
+    culturalContext: 'lusophone',
+    action: 'cultural_events_scheduled'
+  });
 
   return culturalEvents;
 }

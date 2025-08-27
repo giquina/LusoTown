@@ -1,0 +1,1300 @@
+ed3bf55a8a3e11b399be352a737c87f3
+"use client";
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return Header;
+    }
+});
+const _jsxruntime = require("react/jsx-runtime");
+const _react = /*#__PURE__*/ _interop_require_wildcard(require("react"));
+const _framermotion = require("framer-motion");
+const _outline = require("@heroicons/react/24/outline");
+const _lucidereact = require("lucide-react");
+const _navigation = require("next/navigation");
+const _Logo = /*#__PURE__*/ _interop_require_default(require("./Logo"));
+const _LanguageToggle = /*#__PURE__*/ _interop_require_default(require("./LanguageToggle"));
+const _SavedItemsButton = /*#__PURE__*/ _interop_require_default(require("./SavedItemsButton"));
+const _SearchBar = /*#__PURE__*/ _interop_require_default(require("./SearchBar"));
+const _NotificationBell = /*#__PURE__*/ _interop_require_default(require("./NotificationBell"));
+const _LanguageContext = require("../context/LanguageContext");
+const _routes = require("../config/routes");
+const _MobileNavigation = require("./MobileNavigation");
+function _interop_require_default(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interop_require_wildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) {
+        return obj;
+    }
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
+        return {
+            default: obj
+        };
+    }
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) {
+        return cache.get(obj);
+    }
+    var newObj = {
+        __proto__: null
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj){
+        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+            if (desc && (desc.get || desc.set)) {
+                Object.defineProperty(newObj, key, desc);
+            } else {
+                newObj[key] = obj[key];
+            }
+        }
+    }
+    newObj.default = obj;
+    if (cache) {
+        cache.set(obj, newObj);
+    }
+    return newObj;
+}
+// New simplified main navigation for the redesigned structure
+const getMainNavigationLinks = (t)=>[
+        {
+            name: t("nav.whats_happening", "What's Happening"),
+            href: _routes.ROUTES.events,
+            description: "Discover events, activities, and community happenings"
+        }
+    ];
+// Community dropdown links - action-oriented
+const getCommunityDropdownLinks = (t)=>[
+        {
+            name: t("nav.book_events", "Book Events"),
+            href: _routes.ROUTES.events,
+            description: t("nav.book_events_desc", "Purchase tickets for Lusophone cultural events, festivals, and community gatherings"),
+            icon: _outline.CalendarDaysIcon,
+            iconColor: "text-primary-500"
+        },
+        {
+            name: t("nav.join_cultural_tours", "Join Cultural Tours"),
+            href: _routes.ROUTES.londonTours,
+            description: t("nav.join_cultural_tours_desc", "Experience London's Portuguese culture with guided tours and local experiences"),
+            icon: _outline.MapPinIcon,
+            iconColor: "text-green-500"
+        },
+        {
+            name: t("nav.find_student_groups", "Find Student Groups"),
+            href: "/students",
+            description: t("nav.find_student_groups_desc", "Connect with Portuguese-speaking students across UK universities"),
+            icon: _outline.UserGroupIcon,
+            iconColor: "text-purple-500"
+        },
+        {
+            name: t("nav.meet_portuguese_speakers", "Meet Lusophone Speakers"),
+            href: _routes.ROUTES.directory,
+            description: t("nav.meet_portuguese_speakers_desc", "Explore our community directory and connect with members"),
+            icon: _outline.UserGroupIcon,
+            iconColor: "text-orange-500"
+        },
+        {
+            name: t("nav.see_event_calendar", "See Event Calendar"),
+            href: `${_routes.ROUTES.events}?view=calendar`,
+            description: t("nav.see_event_calendar_desc", "Full calendar view of all upcoming Lusophone community events"),
+            icon: _outline.CalendarDaysIcon,
+            iconColor: "text-red-500"
+        }
+    ];
+// For Business dropdown links - action-oriented
+const getForBusinessDropdownLinks = (t)=>[
+        {
+            name: t("nav.discover_businesses", "Discover Businesses"),
+            href: _routes.ROUTES.businessDirectory,
+            description: t("nav.discover_businesses_desc", "Browse Portuguese businesses, restaurants, and services across the UK"),
+            icon: _outline.BriefcaseIcon,
+            iconColor: "text-primary-500"
+        },
+        {
+            name: t("nav.list_your_business", "List Your Business"),
+            href: `${_routes.ROUTES.businessDirectory}?action=add`,
+            description: t("nav.list_your_business_desc", "Add your business to our directory and reach Lusophone customers"),
+            icon: _outline.BriefcaseIcon,
+            iconColor: "text-green-500"
+        },
+        {
+            name: t("nav.find_portuguese_customers", "Find Lusophone Customers"),
+            href: `${_routes.ROUTES.businessNetworking}?type=customers`,
+            description: t("nav.find_portuguese_customers_desc", "Connect with the Portuguese-speaking community for business growth"),
+            icon: _outline.UserGroupIcon,
+            iconColor: "text-purple-500"
+        },
+        {
+            name: t("nav.see_pricing_plans", "See Pricing Plans"),
+            href: _routes.ROUTES.pricing,
+            description: t("nav.see_pricing_plans_desc", "Explore membership options and business advertising packages"),
+            icon: _outline.CurrencyPoundIcon,
+            iconColor: "text-yellow-500"
+        },
+        {
+            name: t("nav.get_market_insights", "Get Market Insights"),
+            href: `${_routes.ROUTES.businessNetworking}?section=insights`,
+            description: t("nav.get_market_insights_desc", "Access data and trends about the Portuguese-speaking market in the UK"),
+            icon: _outline.TrophyIcon,
+            iconColor: "text-indigo-500"
+        }
+    ];
+// Footer-only links (includes the removed navigation items)
+const getFooterOnlyLinks = (t)=>[
+        {
+            name: t("footer.neighborhood-groups", "Neighborhood Groups"),
+            href: _routes.ROUTES.neighborhoodGroups
+        },
+        {
+            name: "Premium Services",
+            href: _routes.ROUTES.services
+        },
+        {
+            name: "Community Chat",
+            href: _routes.ROUTES.forums
+        }
+    ];
+function Header() {
+    const [mobileMenuOpen, setMobileMenuOpen] = (0, _react.useState)(false);
+    const [user, setUser] = (0, _react.useState)(null);
+    const [showUserMenu, setShowUserMenu] = (0, _react.useState)(false);
+    const [showCommunityDropdown, setShowCommunityDropdown] = (0, _react.useState)(false);
+    const [showForBusinessDropdown, setShowForBusinessDropdown] = (0, _react.useState)(false);
+    const router = (0, _navigation.useRouter)();
+    const { t } = (0, _LanguageContext.useLanguage)();
+    (0, _react.useEffect)(()=>{
+    // Auth temporarily disabled for demo
+    // const currentUser = authService.getCurrentUser()
+    // setUser(currentUser)
+    // const unsubscribe = authService.onAuthStateChange((newUser) => {
+    //   setUser(newUser)
+    // })
+    // return unsubscribe
+    }, []);
+    const handleLogout = async ()=>{
+        // Auth temporarily disabled for demo
+        setShowUserMenu(false);
+        router.push("/");
+    };
+    const getMembershipBadge = (tier)=>{
+        const badges = {
+            free: {
+                icon: /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.UserCircleIcon, {
+                    className: "w-4 h-4"
+                }),
+                color: "text-gray-600",
+                label: "Free"
+            },
+            core: {
+                icon: /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.HeartIcon, {
+                    className: "w-4 h-4"
+                }),
+                color: "text-coral-600",
+                label: "Core"
+            },
+            premium: {
+                icon: /*#__PURE__*/ (0, _jsxruntime.jsx)(_lucidereact.Crown, {
+                    className: "w-4 h-4"
+                }),
+                color: "text-premium-600",
+                label: "Premium"
+            }
+        };
+        return badges[tier] || badges.free;
+    };
+    const mainNavigationLinks = getMainNavigationLinks(t);
+    const communityDropdownLinks = getCommunityDropdownLinks(t);
+    const forBusinessDropdownLinks = getForBusinessDropdownLinks(t);
+    return /*#__PURE__*/ (0, _jsxruntime.jsx)("header", {
+        className: "fixed top-0 left-0 right-0 z-[9999] bg-white/95 backdrop-blur-md border-b border-gray-200/60 min-h-[80px] lg:min-h-[88px] shadow-lg shadow-gray-900/5",
+        children: /*#__PURE__*/ (0, _jsxruntime.jsxs)("nav", {
+            className: "container-width",
+            "aria-label": "Top",
+            children: [
+                /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                    className: "flex items-center justify-between py-3 sm:py-4 lg:py-5 gap-2 sm:gap-4",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                            className: "flex items-center flex-shrink-0",
+                            whileHover: {
+                                scale: 1.02
+                            },
+                            transition: {
+                                type: "spring",
+                                stiffness: 400,
+                                damping: 10
+                            },
+                            children: /*#__PURE__*/ (0, _jsxruntime.jsx)("a", {
+                                href: _routes.ROUTES.home,
+                                className: "flex items-center group",
+                                children: /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                    className: "relative",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxruntime.jsx)(_Logo.default, {
+                                            size: "compact",
+                                            animated: true
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                            className: "absolute inset-0 rounded-lg bg-gradient-to-r from-premium-400/20 to-secondary-400/20 blur-lg",
+                                            initial: {
+                                                opacity: 0
+                                            },
+                                            whileHover: {
+                                                opacity: 1
+                                            },
+                                            transition: {
+                                                duration: 0.3
+                                            }
+                                        })
+                                    ]
+                                })
+                            })
+                        }),
+                        /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                            className: "hidden lg:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8",
+                            children: [
+                                mainNavigationLinks.map((link)=>/*#__PURE__*/ (0, _jsxruntime.jsxs)(_framermotion.motion.a, {
+                                        href: link.href,
+                                        className: "relative text-gray-600 hover:text-primary-600 px-3 py-3 rounded-md text-sm font-medium transition-all duration-300 group min-h-[44px] flex items-center",
+                                        whileHover: {
+                                            scale: 1.05
+                                        },
+                                        whileTap: {
+                                            scale: 0.95
+                                        },
+                                        transition: {
+                                            type: "spring",
+                                            stiffness: 400,
+                                            damping: 10
+                                        },
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                className: "relative z-10",
+                                                children: link.name
+                                            }),
+                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                                className: "absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full",
+                                                initial: {
+                                                    scaleX: 0
+                                                },
+                                                whileHover: {
+                                                    scaleX: 1
+                                                },
+                                                transition: {
+                                                    duration: 0.3
+                                                }
+                                            }),
+                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                                className: "absolute inset-0 bg-primary-50 rounded-md",
+                                                initial: {
+                                                    opacity: 0
+                                                },
+                                                whileHover: {
+                                                    opacity: 1
+                                                },
+                                                transition: {
+                                                    duration: 0.2
+                                                }
+                                            })
+                                        ]
+                                    }, link.name)),
+                                /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                    className: "relative dropdown-container",
+                                    onMouseEnter: ()=>setShowCommunityDropdown(true),
+                                    onMouseLeave: ()=>setShowCommunityDropdown(false),
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxruntime.jsxs)(_framermotion.motion.button, {
+                                            className: "relative text-gray-600 hover:text-primary-600 px-3 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group min-h-[44px]",
+                                            whileHover: {
+                                                scale: 1.05
+                                            },
+                                            whileTap: {
+                                                scale: 0.95
+                                            },
+                                            transition: {
+                                                type: "spring",
+                                                stiffness: 400,
+                                                damping: 10
+                                            },
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                    className: "relative z-10",
+                                                    children: t("nav.community", "Community")
+                                                }),
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                                    animate: {
+                                                        rotate: showCommunityDropdown ? 180 : 0
+                                                    },
+                                                    transition: {
+                                                        duration: 0.3,
+                                                        ease: [
+                                                            0.215,
+                                                            0.61,
+                                                            0.355,
+                                                            1
+                                                        ]
+                                                    },
+                                                    children: /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.ChevronDownIcon, {
+                                                        className: "w-4 h-4"
+                                                    })
+                                                }),
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                                    className: "absolute inset-0 bg-primary-50 rounded-md",
+                                                    initial: {
+                                                        opacity: 0
+                                                    },
+                                                    whileHover: {
+                                                        opacity: 1
+                                                    },
+                                                    transition: {
+                                                        duration: 0.2
+                                                    }
+                                                })
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.AnimatePresence, {
+                                            children: showCommunityDropdown && /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                                initial: {
+                                                    opacity: 0,
+                                                    y: -10,
+                                                    scale: 0.95
+                                                },
+                                                animate: {
+                                                    opacity: 1,
+                                                    y: 0,
+                                                    scale: 1
+                                                },
+                                                exit: {
+                                                    opacity: 0,
+                                                    y: -10,
+                                                    scale: 0.95
+                                                },
+                                                transition: {
+                                                    duration: 0.4,
+                                                    ease: [
+                                                        0.215,
+                                                        0.61,
+                                                        0.355,
+                                                        1
+                                                    ]
+                                                },
+                                                className: "absolute top-full mt-2 w-[min(56rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-[9998]",
+                                                style: {
+                                                    left: "50%",
+                                                    transform: "translateX(-50%)"
+                                                },
+                                                children: /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                                    className: "px-8",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, _jsxruntime.jsx)("h3", {
+                                                            className: "text-lg font-semibold mb-6 text-primary-600 text-center",
+                                                            children: t("nav.community_actions", "Community Actions")
+                                                        }),
+                                                        /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                                            className: "grid grid-cols-2 gap-4",
+                                                            children: communityDropdownLinks.map((link, index)=>/*#__PURE__*/ (0, _jsxruntime.jsxs)(_framermotion.motion.a, {
+                                                                    href: link.href,
+                                                                    className: "block p-4 text-gray-600 hover:text-primary-600 hover:bg-primary-50/80 transition-all duration-300 rounded-xl border border-gray-100/80 hover:border-primary-200 hover:shadow-lg group",
+                                                                    initial: {
+                                                                        opacity: 0,
+                                                                        y: 20
+                                                                    },
+                                                                    animate: {
+                                                                        opacity: 1,
+                                                                        y: 0
+                                                                    },
+                                                                    transition: {
+                                                                        delay: index * 0.05,
+                                                                        duration: 0.3
+                                                                    },
+                                                                    whileHover: {
+                                                                        scale: 1.02,
+                                                                        y: -2
+                                                                    },
+                                                                    whileTap: {
+                                                                        scale: 0.98
+                                                                    },
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                                                            className: "flex items-center gap-3 mb-3",
+                                                                            children: [
+                                                                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                                                                    className: `group-hover:scale-110 transition-transform duration-300`,
+                                                                                    whileHover: {
+                                                                                        rotate: 5
+                                                                                    },
+                                                                                    children: /*#__PURE__*/ (0, _jsxruntime.jsx)(link.icon, {
+                                                                                        className: `w-5 h-5 ${link.iconColor}`
+                                                                                    })
+                                                                                }),
+                                                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                                                                    className: "font-semibold text-sm group-hover:text-primary-700 transition-colors duration-300",
+                                                                                    children: link.name
+                                                                                })
+                                                                            ]
+                                                                        }),
+                                                                        /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                                                            className: "text-xs text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors duration-300",
+                                                                            children: link.description
+                                                                        })
+                                                                    ]
+                                                                }, link.name))
+                                                        })
+                                                    ]
+                                                })
+                                            })
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                    className: "relative dropdown-container",
+                                    onMouseEnter: ()=>setShowForBusinessDropdown(true),
+                                    onMouseLeave: ()=>setShowForBusinessDropdown(false),
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxruntime.jsxs)(_framermotion.motion.button, {
+                                            className: "relative text-gray-600 hover:text-secondary-600 px-3 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group min-h-[44px]",
+                                            whileHover: {
+                                                scale: 1.05
+                                            },
+                                            whileTap: {
+                                                scale: 0.95
+                                            },
+                                            transition: {
+                                                type: "spring",
+                                                stiffness: 400,
+                                                damping: 10
+                                            },
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                    className: "relative z-10",
+                                                    children: t("nav.for_business", "For Business")
+                                                }),
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                                    animate: {
+                                                        rotate: showForBusinessDropdown ? 180 : 0
+                                                    },
+                                                    transition: {
+                                                        duration: 0.3,
+                                                        ease: [
+                                                            0.215,
+                                                            0.61,
+                                                            0.355,
+                                                            1
+                                                        ]
+                                                    },
+                                                    children: /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.ChevronDownIcon, {
+                                                        className: "w-4 h-4"
+                                                    })
+                                                }),
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                                    className: "absolute inset-0 bg-secondary-50 rounded-md",
+                                                    initial: {
+                                                        opacity: 0
+                                                    },
+                                                    whileHover: {
+                                                        opacity: 1
+                                                    },
+                                                    transition: {
+                                                        duration: 0.2
+                                                    }
+                                                })
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.AnimatePresence, {
+                                            children: showForBusinessDropdown && /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                                initial: {
+                                                    opacity: 0,
+                                                    y: -10,
+                                                    scale: 0.95
+                                                },
+                                                animate: {
+                                                    opacity: 1,
+                                                    y: 0,
+                                                    scale: 1
+                                                },
+                                                exit: {
+                                                    opacity: 0,
+                                                    y: -10,
+                                                    scale: 0.95
+                                                },
+                                                transition: {
+                                                    duration: 0.4,
+                                                    ease: [
+                                                        0.215,
+                                                        0.61,
+                                                        0.355,
+                                                        1
+                                                    ]
+                                                },
+                                                className: "absolute top-full mt-2 w-[min(56rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-[9998]",
+                                                style: {
+                                                    left: "50%",
+                                                    transform: "translateX(-50%)"
+                                                },
+                                                children: /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                                    className: "px-8",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, _jsxruntime.jsx)("h3", {
+                                                            className: "text-lg font-semibold mb-6 text-secondary-600 text-center",
+                                                            children: t("nav.business_solutions", "Business Solutions")
+                                                        }),
+                                                        /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                                            className: "grid grid-cols-2 gap-4",
+                                                            children: forBusinessDropdownLinks.map((link, index)=>/*#__PURE__*/ (0, _jsxruntime.jsxs)(_framermotion.motion.a, {
+                                                                    href: link.href,
+                                                                    className: "block p-4 text-gray-600 hover:text-secondary-600 hover:bg-secondary-50/80 transition-all duration-300 rounded-xl border border-gray-100/80 hover:border-secondary-200 hover:shadow-lg group",
+                                                                    initial: {
+                                                                        opacity: 0,
+                                                                        y: 20
+                                                                    },
+                                                                    animate: {
+                                                                        opacity: 1,
+                                                                        y: 0
+                                                                    },
+                                                                    transition: {
+                                                                        delay: index * 0.05,
+                                                                        duration: 0.3
+                                                                    },
+                                                                    whileHover: {
+                                                                        scale: 1.02,
+                                                                        y: -2
+                                                                    },
+                                                                    whileTap: {
+                                                                        scale: 0.98
+                                                                    },
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                                                            className: "flex items-center gap-3 mb-3",
+                                                                            children: [
+                                                                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                                                                    className: `group-hover:scale-110 transition-transform duration-300`,
+                                                                                    whileHover: {
+                                                                                        rotate: 5
+                                                                                    },
+                                                                                    children: /*#__PURE__*/ (0, _jsxruntime.jsx)(link.icon, {
+                                                                                        className: `w-5 h-5 ${link.iconColor}`
+                                                                                    })
+                                                                                }),
+                                                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                                                                    className: "font-semibold text-sm group-hover:text-secondary-700 transition-colors duration-300",
+                                                                                    children: link.name
+                                                                                })
+                                                                            ]
+                                                                        }),
+                                                                        /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                                                            className: "text-xs text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors duration-300",
+                                                                            children: link.description
+                                                                        })
+                                                                    ]
+                                                                }, link.name))
+                                                        })
+                                                    ]
+                                                })
+                                            })
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0, _jsxruntime.jsxs)(_framermotion.motion.a, {
+                                    href: _routes.ROUTES.matches,
+                                    className: "relative text-gray-600 hover:text-red-600 px-3 py-3 rounded-md text-sm font-medium transition-all duration-300 group min-h-[44px] flex items-center gap-2",
+                                    whileHover: {
+                                        scale: 1.05
+                                    },
+                                    whileTap: {
+                                        scale: 0.95
+                                    },
+                                    transition: {
+                                        type: "spring",
+                                        stiffness: 400,
+                                        damping: 10
+                                    },
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                            className: "text-red-500 group-hover:text-red-600",
+                                            whileHover: {
+                                                scale: 1.2
+                                            },
+                                            animate: {
+                                                scale: [
+                                                    1,
+                                                    1.1,
+                                                    1
+                                                ]
+                                            },
+                                            transition: {
+                                                duration: 2,
+                                                repeat: Infinity,
+                                                repeatType: "loop"
+                                            },
+                                            children: "\uD83D\uDC97"
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                            className: "relative z-10",
+                                            children: t("nav.find_your_match", "Find Your Match")
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                            className: "absolute inset-0 bg-red-50 rounded-md",
+                                            initial: {
+                                                opacity: 0
+                                            },
+                                            whileHover: {
+                                                opacity: 1
+                                            },
+                                            transition: {
+                                                duration: 0.2
+                                            }
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                            className: "absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-to-r from-red-400 to-pink-400 rounded-full",
+                                            initial: {
+                                                scaleX: 0
+                                            },
+                                            whileHover: {
+                                                scaleX: 1
+                                            },
+                                            transition: {
+                                                duration: 0.3
+                                            }
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                            className: "hidden lg:flex items-center gap-2 lg:gap-3 flex-shrink-0",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_SearchBar.default, {
+                                    variant: "header"
+                                }),
+                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_NotificationBell.default, {
+                                    className: "hidden md:block",
+                                    showDropdown: true
+                                }),
+                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_LanguageToggle.default, {}),
+                                user ? /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                    className: "relative",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxruntime.jsxs)("button", {
+                                            onClick: ()=>setShowUserMenu(!showUserMenu),
+                                            className: "flex items-center gap-2 p-3 rounded-lg hover:bg-gray-100 transition-colors min-h-[44px] min-w-[44px]",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                                    className: "w-8 h-8 bg-gradient-to-r from-action-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-sm font-bold",
+                                                    children: user.name.split(" ").map((n)=>n[0]).join("")
+                                                }),
+                                                /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                                    className: "text-left min-w-0",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                                            className: "text-sm font-medium text-gray-900 truncate",
+                                                            children: user.name.split(" ")[0]
+                                                        }),
+                                                        /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                                            className: "flex items-center gap-1",
+                                                            children: [
+                                                                getMembershipBadge(user.membershipTier).icon,
+                                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                    className: `text-xs ${getMembershipBadge(user.membershipTier).color} whitespace-nowrap`,
+                                                                    children: getMembershipBadge(user.membershipTier).label
+                                                                })
+                                                            ]
+                                                        })
+                                                    ]
+                                                })
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.AnimatePresence, {
+                                            children: showUserMenu && /*#__PURE__*/ (0, _jsxruntime.jsxs)(_framermotion.motion.div, {
+                                                initial: {
+                                                    opacity: 0,
+                                                    y: -10
+                                                },
+                                                animate: {
+                                                    opacity: 1,
+                                                    y: 0
+                                                },
+                                                exit: {
+                                                    opacity: 0,
+                                                    y: -10
+                                                },
+                                                className: "absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-[9997]",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxruntime.jsxs)("a", {
+                                                        href: `/profile/${user.id}`,
+                                                        className: "flex items-center space-x-2 px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 min-h-[44px]",
+                                                        onClick: ()=>setShowUserMenu(false),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.UserIcon, {
+                                                                className: "w-4 h-4"
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                children: "My Profile"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    /*#__PURE__*/ (0, _jsxruntime.jsxs)("a", {
+                                                        href: _routes.ROUTES.favorites,
+                                                        className: "flex items-center space-x-2 px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 min-h-[44px]",
+                                                        onClick: ()=>setShowUserMenu(false),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.HeartIcon, {
+                                                                className: "w-4 h-4"
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                children: "My Favourites"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    /*#__PURE__*/ (0, _jsxruntime.jsxs)("a", {
+                                                        href: _routes.ROUTES.dashboard,
+                                                        className: "flex items-center space-x-2 px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 min-h-[44px]",
+                                                        onClick: ()=>setShowUserMenu(false),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.UserCircleIcon, {
+                                                                className: "w-4 h-4"
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                children: "Dashboard"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    user.role === "admin" && /*#__PURE__*/ (0, _jsxruntime.jsxs)("a", {
+                                                        href: _routes.ROUTES.admin,
+                                                        className: "flex items-center space-x-2 px-4 py-3 text-sm text-premium-700 hover:bg-premium-50 min-h-[44px]",
+                                                        onClick: ()=>setShowUserMenu(false),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.ShieldCheckIcon, {
+                                                                className: "w-4 h-4"
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                children: "Admin Panel"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                                        className: "border-t border-gray-100 my-1"
+                                                    }),
+                                                    /*#__PURE__*/ (0, _jsxruntime.jsxs)("button", {
+                                                        onClick: handleLogout,
+                                                        className: "flex items-center space-x-2 w-full px-4 py-3 text-sm text-action-700 hover:bg-action-50 text-left min-h-[44px]",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_lucidereact.LogOut, {
+                                                                className: "w-4 h-4"
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                children: "Sign Out"
+                                                            })
+                                                        ]
+                                                    })
+                                                ]
+                                            })
+                                        })
+                                    ]
+                                }) : /*#__PURE__*/ (0, _jsxruntime.jsxs)(_jsxruntime.Fragment, {
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxruntime.jsx)("a", {
+                                            href: _routes.ROUTES.login,
+                                            className: "text-gray-600 hover:text-primary-600 p-3 rounded-md transition-colors duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center",
+                                            title: "Login",
+                                            children: /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.UserIcon, {
+                                                className: "w-5 h-5"
+                                            })
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsxs)(_framermotion.motion.a, {
+                                            href: _routes.ROUTES.apply,
+                                            className: "bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-3 px-3 sm:px-4 lg:px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-h-[44px] flex items-center text-xs sm:text-sm relative overflow-hidden group",
+                                            whileHover: {
+                                                scale: 1.05
+                                            },
+                                            whileTap: {
+                                                scale: 0.95
+                                            },
+                                            transition: {
+                                                type: "spring",
+                                                stiffness: 400,
+                                                damping: 10
+                                            },
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                                    className: "absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent",
+                                                    initial: {
+                                                        x: "-100%"
+                                                    },
+                                                    whileHover: {
+                                                        x: "100%"
+                                                    },
+                                                    transition: {
+                                                        duration: 0.6
+                                                    }
+                                                }),
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                    className: "relative z-10 hidden sm:inline",
+                                                    children: "Join LusoTown"
+                                                }),
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                    className: "relative z-10 sm:hidden",
+                                                    children: "Join"
+                                                })
+                                            ]
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                            className: "flex lg:hidden items-center gap-1 relative z-[10000] flex-shrink-0",
+                            children: [
+                                user && /*#__PURE__*/ (0, _jsxruntime.jsx)(_jsxruntime.Fragment, {
+                                    children: /*#__PURE__*/ (0, _jsxruntime.jsx)(_NotificationBell.default, {
+                                        className: "md:hidden"
+                                    })
+                                }),
+                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_LanguageToggle.default, {}),
+                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_MobileNavigation.MobileNavButton, {
+                                    "data-testid": "mobile-menu-button",
+                                    "aria-label": mobileMenuOpen ? "Close menu" : "Open main menu",
+                                    isOpen: mobileMenuOpen,
+                                    onClick: ()=>setMobileMenuOpen(!mobileMenuOpen)
+                                })
+                            ]
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.AnimatePresence, {
+                    children: mobileMenuOpen && /*#__PURE__*/ (0, _jsxruntime.jsxs)(_jsxruntime.Fragment, {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                initial: {
+                                    opacity: 0
+                                },
+                                animate: {
+                                    opacity: 1
+                                },
+                                exit: {
+                                    opacity: 0
+                                },
+                                transition: {
+                                    duration: 0.2
+                                },
+                                className: "fixed inset-0 bg-black/50 backdrop-blur-md z-[9998] xl:hidden",
+                                onClick: ()=>setMobileMenuOpen(false)
+                            }),
+                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.div, {
+                                initial: {
+                                    opacity: 0,
+                                    y: -20,
+                                    scale: 0.95
+                                },
+                                animate: {
+                                    opacity: 1,
+                                    y: 0,
+                                    scale: 1
+                                },
+                                exit: {
+                                    opacity: 0,
+                                    y: -20,
+                                    scale: 0.95
+                                },
+                                transition: {
+                                    duration: 0.4,
+                                    ease: [
+                                        0.215,
+                                        0.61,
+                                        0.355,
+                                        1
+                                    ],
+                                    type: "spring",
+                                    stiffness: 300,
+                                    damping: 25
+                                },
+                                className: "xl:hidden fixed top-[80px] left-2 right-2 z-[10000] bg-white backdrop-blur-xl border border-primary-200/50 shadow-2xl rounded-2xl mx-0 mb-2 max-h-[85vh] overflow-y-auto",
+                                style: {
+                                    boxShadow: "0 25px 50px rgba(197, 40, 47, 0.15), 0 10px 25px rgba(0, 0, 0, 0.1)"
+                                },
+                                children: /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                    className: "px-4 pt-6 pb-4 space-y-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                            className: "pb-4 border-b border-gray-200",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("h3", {
+                                                    className: "text-lg font-semibold text-gray-900 mb-3",
+                                                    children: "Quick Actions"
+                                                }),
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                                    className: "space-y-3",
+                                                    children: /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                                        className: "flex items-start gap-3",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_SavedItemsButton.default, {
+                                                                className: "flex-shrink-0"
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                                                className: "flex-1 min-w-0",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, _jsxruntime.jsx)("h4", {
+                                                                        className: "text-sm font-medium text-gray-900 mb-1",
+                                                                        children: t("favorites.title", "Saved Items")
+                                                                    }),
+                                                                    /*#__PURE__*/ (0, _jsxruntime.jsx)("p", {
+                                                                        className: "text-xs text-gray-600 leading-relaxed",
+                                                                        children: t("favorites.description", "Access your favorite events, places, and services. Keep track of what interests you most.")
+                                                                    })
+                                                                ]
+                                                            })
+                                                        ]
+                                                    })
+                                                })
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                            className: "pb-4 border-b border-gray-200",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("h3", {
+                                                    className: "text-lg font-semibold text-primary-600 mb-3",
+                                                    children: t("nav.discover", "Discover")
+                                                }),
+                                                /*#__PURE__*/ (0, _jsxruntime.jsxs)(_framermotion.motion.a, {
+                                                    href: _routes.ROUTES.events,
+                                                    className: "text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 border border-transparent hover:border-primary-200 min-h-[56px] flex items-center gap-3 luxury-touch-target",
+                                                    onClick: ()=>setMobileMenuOpen(false),
+                                                    whileHover: {
+                                                        scale: 1.02,
+                                                        x: 4
+                                                    },
+                                                    whileTap: {
+                                                        scale: 0.98
+                                                    },
+                                                    transition: {
+                                                        type: "spring",
+                                                        stiffness: 400,
+                                                        damping: 25
+                                                    },
+                                                    children: [
+                                                        /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.CalendarDaysIcon, {
+                                                            className: "w-5 h-5 text-primary-500"
+                                                        }),
+                                                        /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                            children: t("nav.whats_happening", "What's Happening")
+                                                        })
+                                                    ]
+                                                })
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                            className: "pb-4 border-b border-gray-200",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("h3", {
+                                                    className: "text-lg font-semibold text-red-600 mb-3",
+                                                    children: t("nav.dating", "Dating")
+                                                }),
+                                                /*#__PURE__*/ (0, _jsxruntime.jsxs)(_framermotion.motion.a, {
+                                                    href: _routes.ROUTES.matches,
+                                                    className: "text-gray-700 hover:text-red-600 hover:bg-red-50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 border border-transparent hover:border-red-200 min-h-[56px] flex items-center gap-3 luxury-touch-target",
+                                                    onClick: ()=>setMobileMenuOpen(false),
+                                                    whileHover: {
+                                                        scale: 1.02,
+                                                        x: 4
+                                                    },
+                                                    whileTap: {
+                                                        scale: 0.98
+                                                    },
+                                                    transition: {
+                                                        type: "spring",
+                                                        stiffness: 400,
+                                                        damping: 25
+                                                    },
+                                                    children: [
+                                                        /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                            className: "text-red-500 text-lg",
+                                                            children: "\uD83D\uDC97"
+                                                        }),
+                                                        /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                            children: t("nav.find_your_match", "Find Your Match")
+                                                        })
+                                                    ]
+                                                })
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                            className: "pb-4 border-b border-gray-200",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("h3", {
+                                                    className: "text-lg font-semibold text-primary-600 mb-3",
+                                                    children: t("nav.community_actions", "Community Actions")
+                                                }),
+                                                communityDropdownLinks.map((link, index)=>/*#__PURE__*/ (0, _jsxruntime.jsxs)(_framermotion.motion.a, {
+                                                        href: link.href,
+                                                        className: "text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 border border-transparent hover:border-primary-200 min-h-[56px] flex items-center gap-3 luxury-touch-target",
+                                                        onClick: ()=>setMobileMenuOpen(false),
+                                                        initial: {
+                                                            opacity: 0,
+                                                            x: -20
+                                                        },
+                                                        animate: {
+                                                            opacity: 1,
+                                                            x: 0
+                                                        },
+                                                        transition: {
+                                                            delay: index * 0.05,
+                                                            type: "spring",
+                                                            stiffness: 400,
+                                                            damping: 25
+                                                        },
+                                                        whileHover: {
+                                                            scale: 1.02,
+                                                            x: 4
+                                                        },
+                                                        whileTap: {
+                                                            scale: 0.98
+                                                        },
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(link.icon, {
+                                                                className: `w-5 h-5 ${link.iconColor} transition-transform duration-300 group-hover:scale-110`
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                children: link.name
+                                                            })
+                                                        ]
+                                                    }, link.name))
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                            className: "pb-4 border-b border-gray-200",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("h3", {
+                                                    className: "text-lg font-semibold text-secondary-600 mb-3",
+                                                    children: t("nav.business_solutions", "Business Solutions")
+                                                }),
+                                                forBusinessDropdownLinks.map((link, index)=>/*#__PURE__*/ (0, _jsxruntime.jsxs)(_framermotion.motion.a, {
+                                                        href: link.href,
+                                                        className: "text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 border border-transparent hover:border-secondary-200 min-h-[56px] flex items-center gap-3 luxury-touch-target group",
+                                                        onClick: ()=>setMobileMenuOpen(false),
+                                                        initial: {
+                                                            opacity: 0,
+                                                            x: -20
+                                                        },
+                                                        animate: {
+                                                            opacity: 1,
+                                                            x: 0
+                                                        },
+                                                        transition: {
+                                                            delay: index * 0.05,
+                                                            type: "spring",
+                                                            stiffness: 400,
+                                                            damping: 25
+                                                        },
+                                                        whileHover: {
+                                                            scale: 1.02,
+                                                            x: 4
+                                                        },
+                                                        whileTap: {
+                                                            scale: 0.98
+                                                        },
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(link.icon, {
+                                                                className: `w-5 h-5 ${link.iconColor} transition-transform duration-300 group-hover:scale-110`
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                children: link.name
+                                                            })
+                                                        ]
+                                                    }, link.name))
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                            className: "pb-4 border-b border-gray-200",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)("h3", {
+                                                    className: "text-lg font-semibold text-gray-600 mb-3",
+                                                    children: t("nav.more", "More")
+                                                }),
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.a, {
+                                                    href: _routes.ROUTES.about,
+                                                    className: "text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 border border-transparent hover:border-gray-200 min-h-[56px] flex items-center luxury-touch-target",
+                                                    onClick: ()=>setMobileMenuOpen(false),
+                                                    whileHover: {
+                                                        scale: 1.02,
+                                                        x: 4
+                                                    },
+                                                    whileTap: {
+                                                        scale: 0.98
+                                                    },
+                                                    children: t("nav.about", "About Us")
+                                                }),
+                                                /*#__PURE__*/ (0, _jsxruntime.jsx)(_framermotion.motion.a, {
+                                                    href: _routes.ROUTES.pricing,
+                                                    className: "text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 border border-transparent hover:border-gray-200 min-h-[56px] flex items-center luxury-touch-target",
+                                                    onClick: ()=>setMobileMenuOpen(false),
+                                                    whileHover: {
+                                                        scale: 1.02,
+                                                        x: 4
+                                                    },
+                                                    whileTap: {
+                                                        scale: 0.98
+                                                    },
+                                                    children: t("nav.pricing", "Pricing")
+                                                })
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                            className: "border-t border-primary-100 pt-4 pb-3",
+                                            children: user ? /*#__PURE__*/ (0, _jsxruntime.jsxs)(_jsxruntime.Fragment, {
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                                        className: "flex items-center px-3 pb-3",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                                                className: "w-10 h-10 bg-gradient-to-r from-action-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3",
+                                                                children: user.name.split(" ").map((n)=>n[0]).join("")
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                                                className: "min-w-0 flex-1",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                                                        className: "text-base font-medium text-gray-800 truncate",
+                                                                        children: user.name
+                                                                    }),
+                                                                    /*#__PURE__*/ (0, _jsxruntime.jsxs)("div", {
+                                                                        className: "flex items-center space-x-1",
+                                                                        children: [
+                                                                            getMembershipBadge(user.membershipTier).icon,
+                                                                            /*#__PURE__*/ (0, _jsxruntime.jsxs)("span", {
+                                                                                className: `text-sm ${getMembershipBadge(user.membershipTier).color} whitespace-nowrap`,
+                                                                                children: [
+                                                                                    getMembershipBadge(user.membershipTier).label,
+                                                                                    " ",
+                                                                                    "Member"
+                                                                                ]
+                                                                            })
+                                                                        ]
+                                                                    })
+                                                                ]
+                                                            })
+                                                        ]
+                                                    }),
+                                                    /*#__PURE__*/ (0, _jsxruntime.jsxs)("a", {
+                                                        href: `/profile/${user.id}`,
+                                                        className: "flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]",
+                                                        onClick: ()=>setMobileMenuOpen(false),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.UserIcon, {
+                                                                className: "w-5 h-5"
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                children: "My Profile"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    /*#__PURE__*/ (0, _jsxruntime.jsxs)("a", {
+                                                        href: _routes.ROUTES.favorites,
+                                                        className: "flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]",
+                                                        onClick: ()=>setMobileMenuOpen(false),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.HeartIcon, {
+                                                                className: "w-5 h-5"
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                children: "My Favourites"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    /*#__PURE__*/ (0, _jsxruntime.jsxs)("a", {
+                                                        href: _routes.ROUTES.dashboard,
+                                                        className: "flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]",
+                                                        onClick: ()=>setMobileMenuOpen(false),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.UserCircleIcon, {
+                                                                className: "w-5 h-5"
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                children: "Dashboard"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    user.role === "admin" && /*#__PURE__*/ (0, _jsxruntime.jsxs)("a", {
+                                                        href: _routes.ROUTES.admin,
+                                                        className: "flex items-center space-x-3 text-premium-600 hover:text-premium-700 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px]",
+                                                        onClick: ()=>setMobileMenuOpen(false),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.ShieldCheckIcon, {
+                                                                className: "w-5 h-5"
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                children: "Admin Panel"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    /*#__PURE__*/ (0, _jsxruntime.jsxs)("button", {
+                                                        onClick: ()=>{
+                                                            handleLogout();
+                                                            setMobileMenuOpen(false);
+                                                        },
+                                                        className: "flex items-center space-x-3 text-action-600 hover:text-action-700 hover:bg-action-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 w-full text-left border border-transparent hover:border-action-200 min-h-[44px]",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_lucidereact.LogOut, {
+                                                                className: "w-5 h-5"
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                children: "Sign Out"
+                                                            })
+                                                        ]
+                                                    })
+                                                ]
+                                            }) : /*#__PURE__*/ (0, _jsxruntime.jsxs)(_jsxruntime.Fragment, {
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxruntime.jsxs)("a", {
+                                                        href: _routes.ROUTES.login,
+                                                        className: "flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]",
+                                                        onClick: ()=>setMobileMenuOpen(false),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)(_outline.UserIcon, {
+                                                                className: "w-5 h-5"
+                                                            }),
+                                                            /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                children: "Log In"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    /*#__PURE__*/ (0, _jsxruntime.jsx)("div", {
+                                                        className: "mt-4 px-0",
+                                                        children: /*#__PURE__*/ (0, _jsxruntime.jsx)("a", {
+                                                            href: _routes.ROUTES.signup,
+                                                            className: "bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-[1.02] active:scale-95 transition-all duration-200 w-full text-center min-h-[44px] flex items-center justify-center",
+                                                            onClick: ()=>setMobileMenuOpen(false),
+                                                            children: /*#__PURE__*/ (0, _jsxruntime.jsx)("span", {
+                                                                className: "text-base whitespace-nowrap",
+                                                                children: "Join LusoTown"
+                                                            })
+                                                        })
+                                                    })
+                                                ]
+                                            })
+                                        })
+                                    ]
+                                })
+                            })
+                        ]
+                    })
+                })
+            ]
+        })
+    });
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93b3Jrc3BhY2VzL0x1c29Ub3duL3dlYi1hcHAvc3JjL2NvbXBvbmVudHMvSGVhZGVyLnRzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJcInVzZSBjbGllbnRcIjtcblxuaW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlLCB1c2VFZmZlY3QgfSBmcm9tIFwicmVhY3RcIjtcbmltcG9ydCB7IG1vdGlvbiwgQW5pbWF0ZVByZXNlbmNlIH0gZnJvbSBcImZyYW1lci1tb3Rpb25cIjtcbmltcG9ydCB7XG4gIEJhcnMzSWNvbixcbiAgWE1hcmtJY29uLFxuICBIZWFydEljb24sXG4gIFVzZXJDaXJjbGVJY29uLFxuICBTaGllbGRDaGVja0ljb24sXG4gIFVzZXJJY29uLFxuICBDaGV2cm9uRG93bkljb24sXG4gIE1hcFBpbkljb24sXG4gIEJyaWVmY2FzZUljb24sXG4gIFVzZXJHcm91cEljb24sXG4gIFRyb3BoeUljb24sXG4gIENhbGVuZGFyRGF5c0ljb24sXG4gIEN1cnJlbmN5UG91bmRJY29uLFxufSBmcm9tIFwiQGhlcm9pY29ucy9yZWFjdC8yNC9vdXRsaW5lXCI7XG5pbXBvcnQgeyBDcm93biwgTG9nT3V0IH0gZnJvbSBcImx1Y2lkZS1yZWFjdFwiO1xuLy8gaW1wb3J0IHsgYXV0aFNlcnZpY2UsIFVzZXIgfSBmcm9tICdAL2xpYi9hdXRoJ1xuaW1wb3J0IHsgdXNlUm91dGVyIH0gZnJvbSBcIm5leHQvbmF2aWdhdGlvblwiO1xuaW1wb3J0IExvZ28gZnJvbSBcIkAvY29tcG9uZW50cy9Mb2dvXCI7XG5pbXBvcnQgTGFuZ3VhZ2VUb2dnbGUgZnJvbSBcIkAvY29tcG9uZW50cy9MYW5ndWFnZVRvZ2dsZVwiO1xuaW1wb3J0IENhcnRCdXR0b24gZnJvbSBcIkAvY29tcG9uZW50cy9DYXJ0QnV0dG9uXCI7XG5pbXBvcnQgU2F2ZWRJdGVtc0J1dHRvbiBmcm9tIFwiQC9jb21wb25lbnRzL1NhdmVkSXRlbXNCdXR0b25cIjtcbmltcG9ydCBTZWFyY2hCYXIgZnJvbSBcIkAvY29tcG9uZW50cy9TZWFyY2hCYXJcIjtcbmltcG9ydCBOb3RpZmljYXRpb25CZWxsIGZyb20gXCJAL2NvbXBvbmVudHMvTm90aWZpY2F0aW9uQmVsbFwiO1xuaW1wb3J0IHsgdXNlTGFuZ3VhZ2UgfSBmcm9tIFwiQC9jb250ZXh0L0xhbmd1YWdlQ29udGV4dFwiO1xuaW1wb3J0IHsgUk9VVEVTIH0gZnJvbSBcIkAvY29uZmlnL3JvdXRlc1wiO1xuaW1wb3J0IHsgTHV4dXJ5UmlwcGxlIH0gZnJvbSBcIkAvY29tcG9uZW50cy9MdXh1cnlNb2JpbGVJbnRlcmFjdGlvblwiO1xuaW1wb3J0IHsgRWxpdGVNb2JpbGVIZWFkZXIgfSBmcm9tIFwiQC9jb21wb25lbnRzL0VsaXRlTW9iaWxlSW50ZXJmYWNlXCI7XG5pbXBvcnQgeyBNb2JpbGVOYXZCdXR0b24gfSBmcm9tIFwiQC9jb21wb25lbnRzL01vYmlsZU5hdmlnYXRpb25cIjtcblxuLy8gTmV3IHNpbXBsaWZpZWQgbWFpbiBuYXZpZ2F0aW9uIGZvciB0aGUgcmVkZXNpZ25lZCBzdHJ1Y3R1cmVcbmNvbnN0IGdldE1haW5OYXZpZ2F0aW9uTGlua3MgPSAodDogYW55KSA9PiBbXG4gIHtcbiAgICBuYW1lOiB0KFwibmF2LndoYXRzX2hhcHBlbmluZ1wiLCBcIldoYXQncyBIYXBwZW5pbmdcIiksXG4gICAgaHJlZjogUk9VVEVTLmV2ZW50cyxcbiAgICBkZXNjcmlwdGlvbjogXCJEaXNjb3ZlciBldmVudHMsIGFjdGl2aXRpZXMsIGFuZCBjb21tdW5pdHkgaGFwcGVuaW5nc1wiLFxuICB9LFxuXTtcblxuLy8gQ29tbXVuaXR5IGRyb3Bkb3duIGxpbmtzIC0gYWN0aW9uLW9yaWVudGVkXG5jb25zdCBnZXRDb21tdW5pdHlEcm9wZG93bkxpbmtzID0gKHQ6IGFueSkgPT4gW1xuICB7XG4gICAgbmFtZTogdChcIm5hdi5ib29rX2V2ZW50c1wiLCBcIkJvb2sgRXZlbnRzXCIpLFxuICAgIGhyZWY6IFJPVVRFUy5ldmVudHMsXG4gICAgZGVzY3JpcHRpb246IHQoXG4gICAgICBcIm5hdi5ib29rX2V2ZW50c19kZXNjXCIsXG4gICAgICBcIlB1cmNoYXNlIHRpY2tldHMgZm9yIEx1c29waG9uZSBjdWx0dXJhbCBldmVudHMsIGZlc3RpdmFscywgYW5kIGNvbW11bml0eSBnYXRoZXJpbmdzXCJcbiAgICApLFxuICAgIGljb246IENhbGVuZGFyRGF5c0ljb24sXG4gICAgaWNvbkNvbG9yOiBcInRleHQtcHJpbWFyeS01MDBcIixcbiAgfSxcbiAge1xuICAgIG5hbWU6IHQoXCJuYXYuam9pbl9jdWx0dXJhbF90b3Vyc1wiLCBcIkpvaW4gQ3VsdHVyYWwgVG91cnNcIiksXG4gICAgaHJlZjogUk9VVEVTLmxvbmRvblRvdXJzLFxuICAgIGRlc2NyaXB0aW9uOiB0KFxuICAgICAgXCJuYXYuam9pbl9jdWx0dXJhbF90b3Vyc19kZXNjXCIsXG4gICAgICBcIkV4cGVyaWVuY2UgTG9uZG9uJ3MgUG9ydHVndWVzZSBjdWx0dXJlIHdpdGggZ3VpZGVkIHRvdXJzIGFuZCBsb2NhbCBleHBlcmllbmNlc1wiXG4gICAgKSxcbiAgICBpY29uOiBNYXBQaW5JY29uLFxuICAgIGljb25Db2xvcjogXCJ0ZXh0LWdyZWVuLTUwMFwiLFxuICB9LFxuICB7XG4gICAgbmFtZTogdChcIm5hdi5maW5kX3N0dWRlbnRfZ3JvdXBzXCIsIFwiRmluZCBTdHVkZW50IEdyb3Vwc1wiKSxcbiAgICBocmVmOiBcIi9zdHVkZW50c1wiLFxuICAgIGRlc2NyaXB0aW9uOiB0KFxuICAgICAgXCJuYXYuZmluZF9zdHVkZW50X2dyb3Vwc19kZXNjXCIsXG4gICAgICBcIkNvbm5lY3Qgd2l0aCBQb3J0dWd1ZXNlLXNwZWFraW5nIHN0dWRlbnRzIGFjcm9zcyBVSyB1bml2ZXJzaXRpZXNcIlxuICAgICksXG4gICAgaWNvbjogVXNlckdyb3VwSWNvbixcbiAgICBpY29uQ29sb3I6IFwidGV4dC1wdXJwbGUtNTAwXCIsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiB0KFwibmF2Lm1lZXRfcG9ydHVndWVzZV9zcGVha2Vyc1wiLCBcIk1lZXQgTHVzb3Bob25lIFNwZWFrZXJzXCIpLFxuICAgIGhyZWY6IFJPVVRFUy5kaXJlY3RvcnksXG4gICAgZGVzY3JpcHRpb246IHQoXG4gICAgICBcIm5hdi5tZWV0X3BvcnR1Z3Vlc2Vfc3BlYWtlcnNfZGVzY1wiLFxuICAgICAgXCJFeHBsb3JlIG91ciBjb21tdW5pdHkgZGlyZWN0b3J5IGFuZCBjb25uZWN0IHdpdGggbWVtYmVyc1wiXG4gICAgKSxcbiAgICBpY29uOiBVc2VyR3JvdXBJY29uLFxuICAgIGljb25Db2xvcjogXCJ0ZXh0LW9yYW5nZS01MDBcIixcbiAgfSxcbiAge1xuICAgIG5hbWU6IHQoXCJuYXYuc2VlX2V2ZW50X2NhbGVuZGFyXCIsIFwiU2VlIEV2ZW50IENhbGVuZGFyXCIpLFxuICAgIGhyZWY6IGAke1JPVVRFUy5ldmVudHN9P3ZpZXc9Y2FsZW5kYXJgLFxuICAgIGRlc2NyaXB0aW9uOiB0KFxuICAgICAgXCJuYXYuc2VlX2V2ZW50X2NhbGVuZGFyX2Rlc2NcIixcbiAgICAgIFwiRnVsbCBjYWxlbmRhciB2aWV3IG9mIGFsbCB1cGNvbWluZyBMdXNvcGhvbmUgY29tbXVuaXR5IGV2ZW50c1wiXG4gICAgKSxcbiAgICBpY29uOiBDYWxlbmRhckRheXNJY29uLFxuICAgIGljb25Db2xvcjogXCJ0ZXh0LXJlZC01MDBcIixcbiAgfSxcbl07XG5cbi8vIEZvciBCdXNpbmVzcyBkcm9wZG93biBsaW5rcyAtIGFjdGlvbi1vcmllbnRlZFxuY29uc3QgZ2V0Rm9yQnVzaW5lc3NEcm9wZG93bkxpbmtzID0gKHQ6IGFueSkgPT4gW1xuICB7XG4gICAgbmFtZTogdChcIm5hdi5kaXNjb3Zlcl9idXNpbmVzc2VzXCIsIFwiRGlzY292ZXIgQnVzaW5lc3Nlc1wiKSxcbiAgICBocmVmOiBST1VURVMuYnVzaW5lc3NEaXJlY3RvcnksXG4gICAgZGVzY3JpcHRpb246IHQoXG4gICAgICBcIm5hdi5kaXNjb3Zlcl9idXNpbmVzc2VzX2Rlc2NcIixcbiAgICAgIFwiQnJvd3NlIFBvcnR1Z3Vlc2UgYnVzaW5lc3NlcywgcmVzdGF1cmFudHMsIGFuZCBzZXJ2aWNlcyBhY3Jvc3MgdGhlIFVLXCJcbiAgICApLFxuICAgIGljb246IEJyaWVmY2FzZUljb24sXG4gICAgaWNvbkNvbG9yOiBcInRleHQtcHJpbWFyeS01MDBcIixcbiAgfSxcbiAge1xuICAgIG5hbWU6IHQoXCJuYXYubGlzdF95b3VyX2J1c2luZXNzXCIsIFwiTGlzdCBZb3VyIEJ1c2luZXNzXCIpLFxuICAgIGhyZWY6IGAke1JPVVRFUy5idXNpbmVzc0RpcmVjdG9yeX0/YWN0aW9uPWFkZGAsXG4gICAgZGVzY3JpcHRpb246IHQoXG4gICAgICBcIm5hdi5saXN0X3lvdXJfYnVzaW5lc3NfZGVzY1wiLFxuICAgICAgXCJBZGQgeW91ciBidXNpbmVzcyB0byBvdXIgZGlyZWN0b3J5IGFuZCByZWFjaCBMdXNvcGhvbmUgY3VzdG9tZXJzXCJcbiAgICApLFxuICAgIGljb246IEJyaWVmY2FzZUljb24sXG4gICAgaWNvbkNvbG9yOiBcInRleHQtZ3JlZW4tNTAwXCIsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiB0KFwibmF2LmZpbmRfcG9ydHVndWVzZV9jdXN0b21lcnNcIiwgXCJGaW5kIEx1c29waG9uZSBDdXN0b21lcnNcIiksXG4gICAgaHJlZjogYCR7Uk9VVEVTLmJ1c2luZXNzTmV0d29ya2luZ30/dHlwZT1jdXN0b21lcnNgLFxuICAgIGRlc2NyaXB0aW9uOiB0KFxuICAgICAgXCJuYXYuZmluZF9wb3J0dWd1ZXNlX2N1c3RvbWVyc19kZXNjXCIsXG4gICAgICBcIkNvbm5lY3Qgd2l0aCB0aGUgUG9ydHVndWVzZS1zcGVha2luZyBjb21tdW5pdHkgZm9yIGJ1c2luZXNzIGdyb3d0aFwiXG4gICAgKSxcbiAgICBpY29uOiBVc2VyR3JvdXBJY29uLFxuICAgIGljb25Db2xvcjogXCJ0ZXh0LXB1cnBsZS01MDBcIixcbiAgfSxcbiAge1xuICAgIG5hbWU6IHQoXCJuYXYuc2VlX3ByaWNpbmdfcGxhbnNcIiwgXCJTZWUgUHJpY2luZyBQbGFuc1wiKSxcbiAgICBocmVmOiBST1VURVMucHJpY2luZyxcbiAgICBkZXNjcmlwdGlvbjogdChcbiAgICAgIFwibmF2LnNlZV9wcmljaW5nX3BsYW5zX2Rlc2NcIixcbiAgICAgIFwiRXhwbG9yZSBtZW1iZXJzaGlwIG9wdGlvbnMgYW5kIGJ1c2luZXNzIGFkdmVydGlzaW5nIHBhY2thZ2VzXCJcbiAgICApLFxuICAgIGljb246IEN1cnJlbmN5UG91bmRJY29uLFxuICAgIGljb25Db2xvcjogXCJ0ZXh0LXllbGxvdy01MDBcIixcbiAgfSxcbiAge1xuICAgIG5hbWU6IHQoXCJuYXYuZ2V0X21hcmtldF9pbnNpZ2h0c1wiLCBcIkdldCBNYXJrZXQgSW5zaWdodHNcIiksXG4gICAgaHJlZjogYCR7Uk9VVEVTLmJ1c2luZXNzTmV0d29ya2luZ30/c2VjdGlvbj1pbnNpZ2h0c2AsXG4gICAgZGVzY3JpcHRpb246IHQoXG4gICAgICBcIm5hdi5nZXRfbWFya2V0X2luc2lnaHRzX2Rlc2NcIixcbiAgICAgIFwiQWNjZXNzIGRhdGEgYW5kIHRyZW5kcyBhYm91dCB0aGUgUG9ydHVndWVzZS1zcGVha2luZyBtYXJrZXQgaW4gdGhlIFVLXCJcbiAgICApLFxuICAgIGljb246IFRyb3BoeUljb24sXG4gICAgaWNvbkNvbG9yOiBcInRleHQtaW5kaWdvLTUwMFwiLFxuICB9LFxuXTtcblxuLy8gRm9vdGVyLW9ubHkgbGlua3MgKGluY2x1ZGVzIHRoZSByZW1vdmVkIG5hdmlnYXRpb24gaXRlbXMpXG5jb25zdCBnZXRGb290ZXJPbmx5TGlua3MgPSAodDogYW55KSA9PiBbXG4gIHtcbiAgICBuYW1lOiB0KFwiZm9vdGVyLm5laWdoYm9yaG9vZC1ncm91cHNcIiwgXCJOZWlnaGJvcmhvb2QgR3JvdXBzXCIpLFxuICAgIGhyZWY6IFJPVVRFUy5uZWlnaGJvcmhvb2RHcm91cHMsXG4gIH0sXG4gIHsgbmFtZTogXCJQcmVtaXVtIFNlcnZpY2VzXCIsIGhyZWY6IFJPVVRFUy5zZXJ2aWNlcyB9LFxuICB7IG5hbWU6IFwiQ29tbXVuaXR5IENoYXRcIiwgaHJlZjogUk9VVEVTLmZvcnVtcyB9LFxuICAvLyBBZGQgQ3VsdHVyYWwgVG9vbHMgYW5kIEhvdXNpbmcgQXNzaXN0YW5jZSB3aGVuIHRob3NlIHBhZ2VzIGFyZSBtb3JlIGRldmVsb3BlZFxuXTtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gSGVhZGVyKCkge1xuICBjb25zdCBbbW9iaWxlTWVudU9wZW4sIHNldE1vYmlsZU1lbnVPcGVuXSA9IHVzZVN0YXRlKGZhbHNlKTtcbiAgY29uc3QgW3VzZXIsIHNldFVzZXJdID0gdXNlU3RhdGU8YW55IHwgbnVsbD4obnVsbCk7XG4gIGNvbnN0IFtzaG93VXNlck1lbnUsIHNldFNob3dVc2VyTWVudV0gPSB1c2VTdGF0ZShmYWxzZSk7XG4gIGNvbnN0IFtzaG93Q29tbXVuaXR5RHJvcGRvd24sIHNldFNob3dDb21tdW5pdHlEcm9wZG93bl0gPSB1c2VTdGF0ZShmYWxzZSk7XG4gIGNvbnN0IFtzaG93Rm9yQnVzaW5lc3NEcm9wZG93biwgc2V0U2hvd0ZvckJ1c2luZXNzRHJvcGRvd25dID0gdXNlU3RhdGUoZmFsc2UpO1xuICBjb25zdCByb3V0ZXIgPSB1c2VSb3V0ZXIoKTtcbiAgY29uc3QgeyB0IH0gPSB1c2VMYW5ndWFnZSgpO1xuXG4gIHVzZUVmZmVjdCgoKSA9PiB7XG4gICAgLy8gQXV0aCB0ZW1wb3JhcmlseSBkaXNhYmxlZCBmb3IgZGVtb1xuICAgIC8vIGNvbnN0IGN1cnJlbnRVc2VyID0gYXV0aFNlcnZpY2UuZ2V0Q3VycmVudFVzZXIoKVxuICAgIC8vIHNldFVzZXIoY3VycmVudFVzZXIpXG4gICAgLy8gY29uc3QgdW5zdWJzY3JpYmUgPSBhdXRoU2VydmljZS5vbkF1dGhTdGF0ZUNoYW5nZSgobmV3VXNlcikgPT4ge1xuICAgIC8vICAgc2V0VXNlcihuZXdVc2VyKVxuICAgIC8vIH0pXG4gICAgLy8gcmV0dXJuIHVuc3Vic2NyaWJlXG4gIH0sIFtdKTtcblxuICBjb25zdCBoYW5kbGVMb2dvdXQgPSBhc3luYyAoKSA9PiB7XG4gICAgLy8gQXV0aCB0ZW1wb3JhcmlseSBkaXNhYmxlZCBmb3IgZGVtb1xuICAgIHNldFNob3dVc2VyTWVudShmYWxzZSk7XG4gICAgcm91dGVyLnB1c2goXCIvXCIpO1xuICB9O1xuXG4gIGNvbnN0IGdldE1lbWJlcnNoaXBCYWRnZSA9ICh0aWVyOiBzdHJpbmcpID0+IHtcbiAgICBjb25zdCBiYWRnZXMgPSB7XG4gICAgICBmcmVlOiB7XG4gICAgICAgIGljb246IDxVc2VyQ2lyY2xlSWNvbiBjbGFzc05hbWU9XCJ3LTQgaC00XCIgLz4sXG4gICAgICAgIGNvbG9yOiBcInRleHQtZ3JheS02MDBcIixcbiAgICAgICAgbGFiZWw6IFwiRnJlZVwiLFxuICAgICAgfSxcbiAgICAgIGNvcmU6IHtcbiAgICAgICAgaWNvbjogPEhlYXJ0SWNvbiBjbGFzc05hbWU9XCJ3LTQgaC00XCIgLz4sXG4gICAgICAgIGNvbG9yOiBcInRleHQtY29yYWwtNjAwXCIsXG4gICAgICAgIGxhYmVsOiBcIkNvcmVcIixcbiAgICAgIH0sXG4gICAgICBwcmVtaXVtOiB7XG4gICAgICAgIGljb246IDxDcm93biBjbGFzc05hbWU9XCJ3LTQgaC00XCIgLz4sXG4gICAgICAgIGNvbG9yOiBcInRleHQtcHJlbWl1bS02MDBcIixcbiAgICAgICAgbGFiZWw6IFwiUHJlbWl1bVwiLFxuICAgICAgfSxcbiAgICB9O1xuICAgIHJldHVybiBiYWRnZXNbdGllciBhcyBrZXlvZiB0eXBlb2YgYmFkZ2VzXSB8fCBiYWRnZXMuZnJlZTtcbiAgfTtcblxuICBjb25zdCBtYWluTmF2aWdhdGlvbkxpbmtzID0gZ2V0TWFpbk5hdmlnYXRpb25MaW5rcyh0KTtcbiAgY29uc3QgY29tbXVuaXR5RHJvcGRvd25MaW5rcyA9IGdldENvbW11bml0eURyb3Bkb3duTGlua3ModCk7XG4gIGNvbnN0IGZvckJ1c2luZXNzRHJvcGRvd25MaW5rcyA9IGdldEZvckJ1c2luZXNzRHJvcGRvd25MaW5rcyh0KTtcblxuICByZXR1cm4gKFxuICAgIDxoZWFkZXIgY2xhc3NOYW1lPVwiZml4ZWQgdG9wLTAgbGVmdC0wIHJpZ2h0LTAgei1bOTk5OV0gYmctd2hpdGUvOTUgYmFja2Ryb3AtYmx1ci1tZCBib3JkZXItYiBib3JkZXItZ3JheS0yMDAvNjAgbWluLWgtWzgwcHhdIGxnOm1pbi1oLVs4OHB4XSBzaGFkb3ctbGcgc2hhZG93LWdyYXktOTAwLzVcIj5cbiAgICAgIDxuYXYgY2xhc3NOYW1lPVwiY29udGFpbmVyLXdpZHRoXCIgYXJpYS1sYWJlbD1cIlRvcFwiPlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiBweS0zIHNtOnB5LTQgbGc6cHktNSBnYXAtMiBzbTpnYXAtNFwiPlxuICAgICAgICAgIHsvKiBMb2dvIC0gUHJlbWl1bSBkZXNpZ24gd2l0aCBzb3BoaXN0aWNhdGVkIGhvdmVyIGVmZmVjdHMgKi99XG4gICAgICAgICAgPG1vdGlvbi5kaXZcbiAgICAgICAgICAgIGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIGZsZXgtc2hyaW5rLTBcIlxuICAgICAgICAgICAgd2hpbGVIb3Zlcj17eyBzY2FsZTogMS4wMiB9fVxuICAgICAgICAgICAgdHJhbnNpdGlvbj17eyB0eXBlOiBcInNwcmluZ1wiLCBzdGlmZm5lc3M6IDQwMCwgZGFtcGluZzogMTAgfX1cbiAgICAgICAgICA+XG4gICAgICAgICAgICA8YSBocmVmPXtST1VURVMuaG9tZX0gY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIgZ3JvdXBcIj5cbiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJyZWxhdGl2ZVwiPlxuICAgICAgICAgICAgICAgIDxMb2dvIHNpemU9XCJjb21wYWN0XCIgYW5pbWF0ZWQgLz5cbiAgICAgICAgICAgICAgICB7LyogUHJlbWl1bSBnbG93IGVmZmVjdCBvbiBob3ZlciAqL31cbiAgICAgICAgICAgICAgICA8bW90aW9uLmRpdlxuICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiYWJzb2x1dGUgaW5zZXQtMCByb3VuZGVkLWxnIGJnLWdyYWRpZW50LXRvLXIgZnJvbS1wcmVtaXVtLTQwMC8yMCB0by1zZWNvbmRhcnktNDAwLzIwIGJsdXItbGdcIlxuICAgICAgICAgICAgICAgICAgaW5pdGlhbD17eyBvcGFjaXR5OiAwIH19XG4gICAgICAgICAgICAgICAgICB3aGlsZUhvdmVyPXt7IG9wYWNpdHk6IDEgfX1cbiAgICAgICAgICAgICAgICAgIHRyYW5zaXRpb249e3sgZHVyYXRpb246IDAuMyB9fVxuICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9hPlxuICAgICAgICAgIDwvbW90aW9uLmRpdj5cblxuICAgICAgICAgIHsvKiBEZXNrdG9wIE5hdmlnYXRpb24gLSBOZXcgUmVkZXNpZ25lZCBTdHJ1Y3R1cmUgKi99XG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJoaWRkZW4gbGc6ZmxleCBpdGVtcy1jZW50ZXIgc3BhY2UteC00IHhsOnNwYWNlLXgtNiBtbC00IHhsOm1sLThcIj5cbiAgICAgICAgICAgIHsvKiBXaGF0J3MgSGFwcGVuaW5nIC0gTWFpbiBEaXNjb3ZlcnkgTGluayAqL31cbiAgICAgICAgICAgIHttYWluTmF2aWdhdGlvbkxpbmtzLm1hcCgobGluaykgPT4gKFxuICAgICAgICAgICAgICA8bW90aW9uLmFcbiAgICAgICAgICAgICAgICBrZXk9e2xpbmsubmFtZX1cbiAgICAgICAgICAgICAgICBocmVmPXtsaW5rLmhyZWZ9XG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwicmVsYXRpdmUgdGV4dC1ncmF5LTYwMCBob3Zlcjp0ZXh0LXByaW1hcnktNjAwIHB4LTMgcHktMyByb3VuZGVkLW1kIHRleHQtc20gZm9udC1tZWRpdW0gdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMzAwIGdyb3VwIG1pbi1oLVs0NHB4XSBmbGV4IGl0ZW1zLWNlbnRlclwiXG4gICAgICAgICAgICAgICAgd2hpbGVIb3Zlcj17eyBzY2FsZTogMS4wNSB9fVxuICAgICAgICAgICAgICAgIHdoaWxlVGFwPXt7IHNjYWxlOiAwLjk1IH19XG4gICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyB0eXBlOiBcInNwcmluZ1wiLCBzdGlmZm5lc3M6IDQwMCwgZGFtcGluZzogMTAgfX1cbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cInJlbGF0aXZlIHotMTBcIj57bGluay5uYW1lfTwvc3Bhbj5cbiAgICAgICAgICAgICAgICB7LyogUHJlbWl1bSB1bmRlcmxpbmUgZWZmZWN0ICovfVxuICAgICAgICAgICAgICAgIDxtb3Rpb24uZGl2XG4gICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJhYnNvbHV0ZSBib3R0b20tMCBsZWZ0LTMgcmlnaHQtMyBoLTAuNSBiZy1ncmFkaWVudC10by1yIGZyb20tcHJpbWFyeS00MDAgdG8tc2Vjb25kYXJ5LTQwMCByb3VuZGVkLWZ1bGxcIlxuICAgICAgICAgICAgICAgICAgaW5pdGlhbD17eyBzY2FsZVg6IDAgfX1cbiAgICAgICAgICAgICAgICAgIHdoaWxlSG92ZXI9e3sgc2NhbGVYOiAxIH19XG4gICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGR1cmF0aW9uOiAwLjMgfX1cbiAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgIHsvKiBTdWJ0bGUgYmFja2dyb3VuZCBob3ZlciBlZmZlY3QgKi99XG4gICAgICAgICAgICAgICAgPG1vdGlvbi5kaXZcbiAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImFic29sdXRlIGluc2V0LTAgYmctcHJpbWFyeS01MCByb3VuZGVkLW1kXCJcbiAgICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCB9fVxuICAgICAgICAgICAgICAgICAgd2hpbGVIb3Zlcj17eyBvcGFjaXR5OiAxIH19XG4gICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGR1cmF0aW9uOiAwLjIgfX1cbiAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICA8L21vdGlvbi5hPlxuICAgICAgICAgICAgKSl9XG5cbiAgICAgICAgICAgIHsvKiBDb21tdW5pdHkgRHJvcGRvd24gKi99XG4gICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgIGNsYXNzTmFtZT1cInJlbGF0aXZlIGRyb3Bkb3duLWNvbnRhaW5lclwiXG4gICAgICAgICAgICAgIG9uTW91c2VFbnRlcj17KCkgPT4gc2V0U2hvd0NvbW11bml0eURyb3Bkb3duKHRydWUpfVxuICAgICAgICAgICAgICBvbk1vdXNlTGVhdmU9eygpID0+IHNldFNob3dDb21tdW5pdHlEcm9wZG93bihmYWxzZSl9XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIDxtb3Rpb24uYnV0dG9uXG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwicmVsYXRpdmUgdGV4dC1ncmF5LTYwMCBob3Zlcjp0ZXh0LXByaW1hcnktNjAwIHB4LTMgcHktMyByb3VuZGVkLW1kIHRleHQtc20gZm9udC1tZWRpdW0gdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMzAwIGZsZXggaXRlbXMtY2VudGVyIGdhcC0xIGdyb3VwIG1pbi1oLVs0NHB4XVwiXG4gICAgICAgICAgICAgICAgd2hpbGVIb3Zlcj17eyBzY2FsZTogMS4wNSB9fVxuICAgICAgICAgICAgICAgIHdoaWxlVGFwPXt7IHNjYWxlOiAwLjk1IH19XG4gICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyB0eXBlOiBcInNwcmluZ1wiLCBzdGlmZm5lc3M6IDQwMCwgZGFtcGluZzogMTAgfX1cbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cInJlbGF0aXZlIHotMTBcIj5cbiAgICAgICAgICAgICAgICAgIHt0KFwibmF2LmNvbW11bml0eVwiLCBcIkNvbW11bml0eVwiKX1cbiAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgICAgPG1vdGlvbi5kaXZcbiAgICAgICAgICAgICAgICAgIGFuaW1hdGU9e3sgcm90YXRlOiBzaG93Q29tbXVuaXR5RHJvcGRvd24gPyAxODAgOiAwIH19XG4gICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGR1cmF0aW9uOiAwLjMsIGVhc2U6IFswLjIxNSwgMC42MSwgMC4zNTUsIDFdIH19XG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgPENoZXZyb25Eb3duSWNvbiBjbGFzc05hbWU9XCJ3LTQgaC00XCIgLz5cbiAgICAgICAgICAgICAgICA8L21vdGlvbi5kaXY+XG4gICAgICAgICAgICAgICAgey8qIFByZW1pdW0gYmFja2dyb3VuZCBob3ZlciBlZmZlY3QgKi99XG4gICAgICAgICAgICAgICAgPG1vdGlvbi5kaXZcbiAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImFic29sdXRlIGluc2V0LTAgYmctcHJpbWFyeS01MCByb3VuZGVkLW1kXCJcbiAgICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCB9fVxuICAgICAgICAgICAgICAgICAgd2hpbGVIb3Zlcj17eyBvcGFjaXR5OiAxIH19XG4gICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGR1cmF0aW9uOiAwLjIgfX1cbiAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICA8L21vdGlvbi5idXR0b24+XG5cbiAgICAgICAgICAgICAgPEFuaW1hdGVQcmVzZW5jZT5cbiAgICAgICAgICAgICAgICB7c2hvd0NvbW11bml0eURyb3Bkb3duICYmIChcbiAgICAgICAgICAgICAgICAgIDxtb3Rpb24uZGl2XG4gICAgICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeTogLTEwLCBzY2FsZTogMC45NSB9fVxuICAgICAgICAgICAgICAgICAgICBhbmltYXRlPXt7IG9wYWNpdHk6IDEsIHk6IDAsIHNjYWxlOiAxIH19XG4gICAgICAgICAgICAgICAgICAgIGV4aXQ9e3sgb3BhY2l0eTogMCwgeTogLTEwLCBzY2FsZTogMC45NSB9fVxuICAgICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7XG4gICAgICAgICAgICAgICAgICAgICAgZHVyYXRpb246IDAuNCxcbiAgICAgICAgICAgICAgICAgICAgICBlYXNlOiBbMC4yMTUsIDAuNjEsIDAuMzU1LCAxXSxcbiAgICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiYWJzb2x1dGUgdG9wLWZ1bGwgbXQtMiB3LVttaW4oNTZyZW0sY2FsYygxMDB2dy0ycmVtKSldIGJnLXdoaXRlIHJvdW5kZWQtMnhsIHNoYWRvdy0yeGwgYm9yZGVyIGJvcmRlci1ncmF5LTIwMCBweS04IHotWzk5OThdXCJcbiAgICAgICAgICAgICAgICAgICAgc3R5bGU9e3sgbGVmdDogJzUwJScsIHRyYW5zZm9ybTogJ3RyYW5zbGF0ZVgoLTUwJSknIH19XG4gICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwicHgtOFwiPlxuICAgICAgICAgICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9XCJ0ZXh0LWxnIGZvbnQtc2VtaWJvbGQgbWItNiB0ZXh0LXByaW1hcnktNjAwIHRleHQtY2VudGVyXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICB7dChcIm5hdi5jb21tdW5pdHlfYWN0aW9uc1wiLCBcIkNvbW11bml0eSBBY3Rpb25zXCIpfVxuICAgICAgICAgICAgICAgICAgICAgIDwvaDM+XG4gICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJncmlkIGdyaWQtY29scy0yIGdhcC00XCI+XG4gICAgICAgICAgICAgICAgICAgICAgICB7Y29tbXVuaXR5RHJvcGRvd25MaW5rcy5tYXAoKGxpbmssIGluZGV4KSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxtb3Rpb24uYVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGtleT17bGluay5uYW1lfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e2xpbmsuaHJlZn1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJibG9jayBwLTQgdGV4dC1ncmF5LTYwMCBob3Zlcjp0ZXh0LXByaW1hcnktNjAwIGhvdmVyOmJnLXByaW1hcnktNTAvODAgdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMzAwIHJvdW5kZWQteGwgYm9yZGVyIGJvcmRlci1ncmF5LTEwMC84MCBob3Zlcjpib3JkZXItcHJpbWFyeS0yMDAgaG92ZXI6c2hhZG93LWxnIGdyb3VwXCJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IDIwIH19XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB5OiAwIH19XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkZWxheTogaW5kZXggKiAwLjA1LCBkdXJhdGlvbjogMC4zIH19XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgd2hpbGVIb3Zlcj17eyBzY2FsZTogMS4wMiwgeTogLTIgfX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB3aGlsZVRhcD17eyBzY2FsZTogMC45OCB9fVxuICAgICAgICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMyBtYi0zXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bW90aW9uLmRpdlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9e2Bncm91cC1ob3ZlcjpzY2FsZS0xMTAgdHJhbnNpdGlvbi10cmFuc2Zvcm0gZHVyYXRpb24tMzAwYH1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgd2hpbGVIb3Zlcj17eyByb3RhdGU6IDUgfX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGxpbmsuaWNvblxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT17YHctNSBoLTUgJHtsaW5rLmljb25Db2xvcn1gfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9tb3Rpb24uZGl2PlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmb250LXNlbWlib2xkIHRleHQtc20gZ3JvdXAtaG92ZXI6dGV4dC1wcmltYXJ5LTcwMCB0cmFuc2l0aW9uLWNvbG9ycyBkdXJhdGlvbi0zMDBcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge2xpbmsubmFtZX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwidGV4dC14cyB0ZXh0LWdyYXktNTAwIGxlYWRpbmctcmVsYXhlZCBncm91cC1ob3Zlcjp0ZXh0LWdyYXktNjAwIHRyYW5zaXRpb24tY29sb3JzIGR1cmF0aW9uLTMwMFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge2xpbmsuZGVzY3JpcHRpb259XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDwvbW90aW9uLmE+XG4gICAgICAgICAgICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICA8L21vdGlvbi5kaXY+XG4gICAgICAgICAgICAgICAgKX1cbiAgICAgICAgICAgICAgPC9BbmltYXRlUHJlc2VuY2U+XG4gICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgey8qIEZvciBCdXNpbmVzcyBEcm9wZG93biAqL31cbiAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgY2xhc3NOYW1lPVwicmVsYXRpdmUgZHJvcGRvd24tY29udGFpbmVyXCJcbiAgICAgICAgICAgICAgb25Nb3VzZUVudGVyPXsoKSA9PiBzZXRTaG93Rm9yQnVzaW5lc3NEcm9wZG93bih0cnVlKX1cbiAgICAgICAgICAgICAgb25Nb3VzZUxlYXZlPXsoKSA9PiBzZXRTaG93Rm9yQnVzaW5lc3NEcm9wZG93bihmYWxzZSl9XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIDxtb3Rpb24uYnV0dG9uXG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwicmVsYXRpdmUgdGV4dC1ncmF5LTYwMCBob3Zlcjp0ZXh0LXNlY29uZGFyeS02MDAgcHgtMyBweS0zIHJvdW5kZWQtbWQgdGV4dC1zbSBmb250LW1lZGl1bSB0cmFuc2l0aW9uLWFsbCBkdXJhdGlvbi0zMDAgZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTEgZ3JvdXAgbWluLWgtWzQ0cHhdXCJcbiAgICAgICAgICAgICAgICB3aGlsZUhvdmVyPXt7IHNjYWxlOiAxLjA1IH19XG4gICAgICAgICAgICAgICAgd2hpbGVUYXA9e3sgc2NhbGU6IDAuOTUgfX1cbiAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IHR5cGU6IFwic3ByaW5nXCIsIHN0aWZmbmVzczogNDAwLCBkYW1waW5nOiAxMCB9fVxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwicmVsYXRpdmUgei0xMFwiPlxuICAgICAgICAgICAgICAgICAge3QoXCJuYXYuZm9yX2J1c2luZXNzXCIsIFwiRm9yIEJ1c2luZXNzXCIpfVxuICAgICAgICAgICAgICAgIDwvc3Bhbj5cbiAgICAgICAgICAgICAgICA8bW90aW9uLmRpdlxuICAgICAgICAgICAgICAgICAgYW5pbWF0ZT17eyByb3RhdGU6IHNob3dGb3JCdXNpbmVzc0Ryb3Bkb3duID8gMTgwIDogMCB9fVxuICAgICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkdXJhdGlvbjogMC4zLCBlYXNlOiBbMC4yMTUsIDAuNjEsIDAuMzU1LCAxXSB9fVxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIDxDaGV2cm9uRG93bkljb24gY2xhc3NOYW1lPVwidy00IGgtNFwiIC8+XG4gICAgICAgICAgICAgICAgPC9tb3Rpb24uZGl2PlxuICAgICAgICAgICAgICAgIHsvKiBQcmVtaXVtIGJhY2tncm91bmQgaG92ZXIgZWZmZWN0ICovfVxuICAgICAgICAgICAgICAgIDxtb3Rpb24uZGl2XG4gICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJhYnNvbHV0ZSBpbnNldC0wIGJnLXNlY29uZGFyeS01MCByb3VuZGVkLW1kXCJcbiAgICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCB9fVxuICAgICAgICAgICAgICAgICAgd2hpbGVIb3Zlcj17eyBvcGFjaXR5OiAxIH19XG4gICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGR1cmF0aW9uOiAwLjIgfX1cbiAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICA8L21vdGlvbi5idXR0b24+XG5cbiAgICAgICAgICAgICAgPEFuaW1hdGVQcmVzZW5jZT5cbiAgICAgICAgICAgICAgICB7c2hvd0ZvckJ1c2luZXNzRHJvcGRvd24gJiYgKFxuICAgICAgICAgICAgICAgICAgPG1vdGlvbi5kaXZcbiAgICAgICAgICAgICAgICAgICAgaW5pdGlhbD17eyBvcGFjaXR5OiAwLCB5OiAtMTAsIHNjYWxlOiAwLjk1IH19XG4gICAgICAgICAgICAgICAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogMSwgeTogMCwgc2NhbGU6IDEgfX1cbiAgICAgICAgICAgICAgICAgICAgZXhpdD17eyBvcGFjaXR5OiAwLCB5OiAtMTAsIHNjYWxlOiAwLjk1IH19XG4gICAgICAgICAgICAgICAgICAgIHRyYW5zaXRpb249e3tcbiAgICAgICAgICAgICAgICAgICAgICBkdXJhdGlvbjogMC40LFxuICAgICAgICAgICAgICAgICAgICAgIGVhc2U6IFswLjIxNSwgMC42MSwgMC4zNTUsIDFdLFxuICAgICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJhYnNvbHV0ZSB0b3AtZnVsbCBtdC0yIHctW21pbig1NnJlbSxjYWxjKDEwMHZ3LTJyZW0pKV0gYmctd2hpdGUgcm91bmRlZC0yeGwgc2hhZG93LTJ4bCBib3JkZXIgYm9yZGVyLWdyYXktMjAwIHB5LTggei1bOTk5OF1cIlxuICAgICAgICAgICAgICAgICAgICBzdHlsZT17eyBsZWZ0OiAnNTAlJywgdHJhbnNmb3JtOiAndHJhbnNsYXRlWCgtNTAlKScgfX1cbiAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJweC04XCI+XG4gICAgICAgICAgICAgICAgICAgICAgPGgzIGNsYXNzTmFtZT1cInRleHQtbGcgZm9udC1zZW1pYm9sZCBtYi02IHRleHQtc2Vjb25kYXJ5LTYwMCB0ZXh0LWNlbnRlclwiPlxuICAgICAgICAgICAgICAgICAgICAgICAge3QoXCJuYXYuYnVzaW5lc3Nfc29sdXRpb25zXCIsIFwiQnVzaW5lc3MgU29sdXRpb25zXCIpfVxuICAgICAgICAgICAgICAgICAgICAgIDwvaDM+XG4gICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJncmlkIGdyaWQtY29scy0yIGdhcC00XCI+XG4gICAgICAgICAgICAgICAgICAgICAgICB7Zm9yQnVzaW5lc3NEcm9wZG93bkxpbmtzLm1hcCgobGluaywgaW5kZXgpID0+IChcbiAgICAgICAgICAgICAgICAgICAgICAgICAgPG1vdGlvbi5hXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAga2V5PXtsaW5rLm5hbWV9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgaHJlZj17bGluay5ocmVmfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImJsb2NrIHAtNCB0ZXh0LWdyYXktNjAwIGhvdmVyOnRleHQtc2Vjb25kYXJ5LTYwMCBob3ZlcjpiZy1zZWNvbmRhcnktNTAvODAgdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMzAwIHJvdW5kZWQteGwgYm9yZGVyIGJvcmRlci1ncmF5LTEwMC84MCBob3Zlcjpib3JkZXItc2Vjb25kYXJ5LTIwMCBob3ZlcjpzaGFkb3ctbGcgZ3JvdXBcIlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeTogMjAgfX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbmltYXRlPXt7IG9wYWNpdHk6IDEsIHk6IDAgfX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGRlbGF5OiBpbmRleCAqIDAuMDUsIGR1cmF0aW9uOiAwLjMgfX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB3aGlsZUhvdmVyPXt7IHNjYWxlOiAxLjAyLCB5OiAtMiB9fVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHdoaWxlVGFwPXt7IHNjYWxlOiAwLjk4IH19XG4gICAgICAgICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIGdhcC0zIG1iLTNcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxtb3Rpb24uZGl2XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT17YGdyb3VwLWhvdmVyOnNjYWxlLTExMCB0cmFuc2l0aW9uLXRyYW5zZm9ybSBkdXJhdGlvbi0zMDBgfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB3aGlsZUhvdmVyPXt7IHJvdGF0ZTogNSB9fVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGluay5pY29uXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgdy01IGgtNSAke2xpbmsuaWNvbkNvbG9yfWB9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L21vdGlvbi5kaXY+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZvbnQtc2VtaWJvbGQgdGV4dC1zbSBncm91cC1ob3Zlcjp0ZXh0LXNlY29uZGFyeS03MDAgdHJhbnNpdGlvbi1jb2xvcnMgZHVyYXRpb24tMzAwXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHtsaW5rLm5hbWV9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInRleHQteHMgdGV4dC1ncmF5LTUwMCBsZWFkaW5nLXJlbGF4ZWQgZ3JvdXAtaG92ZXI6dGV4dC1ncmF5LTYwMCB0cmFuc2l0aW9uLWNvbG9ycyBkdXJhdGlvbi0zMDBcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHtsaW5rLmRlc2NyaXB0aW9ufVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICAgICAgICA8L21vdGlvbi5hPlxuICAgICAgICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgPC9tb3Rpb24uZGl2PlxuICAgICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgIDwvQW5pbWF0ZVByZXNlbmNlPlxuICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgIHsvKiBGaW5kIFlvdXIgTWF0Y2ggLSBIZWFydCBJY29uICovfVxuICAgICAgICAgICAgPG1vdGlvbi5hXG4gICAgICAgICAgICAgIGhyZWY9e1JPVVRFUy5tYXRjaGVzfVxuICAgICAgICAgICAgICBjbGFzc05hbWU9XCJyZWxhdGl2ZSB0ZXh0LWdyYXktNjAwIGhvdmVyOnRleHQtcmVkLTYwMCBweC0zIHB5LTMgcm91bmRlZC1tZCB0ZXh0LXNtIGZvbnQtbWVkaXVtIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTMwMCBncm91cCBtaW4taC1bNDRweF0gZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTJcIlxuICAgICAgICAgICAgICB3aGlsZUhvdmVyPXt7IHNjYWxlOiAxLjA1IH19XG4gICAgICAgICAgICAgIHdoaWxlVGFwPXt7IHNjYWxlOiAwLjk1IH19XG4gICAgICAgICAgICAgIHRyYW5zaXRpb249e3sgdHlwZTogXCJzcHJpbmdcIiwgc3RpZmZuZXNzOiA0MDAsIGRhbXBpbmc6IDEwIH19XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIDxtb3Rpb24uZGl2XG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwidGV4dC1yZWQtNTAwIGdyb3VwLWhvdmVyOnRleHQtcmVkLTYwMFwiXG4gICAgICAgICAgICAgICAgd2hpbGVIb3Zlcj17eyBzY2FsZTogMS4yIH19XG4gICAgICAgICAgICAgICAgYW5pbWF0ZT17e1xuICAgICAgICAgICAgICAgICAgc2NhbGU6IFsxLCAxLjEsIDFdLFxuICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17e1xuICAgICAgICAgICAgICAgICAgZHVyYXRpb246IDIsXG4gICAgICAgICAgICAgICAgICByZXBlYXQ6IEluZmluaXR5LFxuICAgICAgICAgICAgICAgICAgcmVwZWF0VHlwZTogXCJsb29wXCIsXG4gICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIPCfkpdcbiAgICAgICAgICAgICAgPC9tb3Rpb24uZGl2PlxuICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJyZWxhdGl2ZSB6LTEwXCI+XG4gICAgICAgICAgICAgICAge3QoXCJuYXYuZmluZF95b3VyX21hdGNoXCIsIFwiRmluZCBZb3VyIE1hdGNoXCIpfVxuICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgIHsvKiBQcmVtaXVtIGJhY2tncm91bmQgaG92ZXIgZWZmZWN0ICovfVxuICAgICAgICAgICAgICA8bW90aW9uLmRpdlxuICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImFic29sdXRlIGluc2V0LTAgYmctcmVkLTUwIHJvdW5kZWQtbWRcIlxuICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCB9fVxuICAgICAgICAgICAgICAgIHdoaWxlSG92ZXI9e3sgb3BhY2l0eTogMSB9fVxuICAgICAgICAgICAgICAgIHRyYW5zaXRpb249e3sgZHVyYXRpb246IDAuMiB9fVxuICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICB7LyogUHJlbWl1bSB1bmRlcmxpbmUgZWZmZWN0ICovfVxuICAgICAgICAgICAgICA8bW90aW9uLmRpdlxuICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImFic29sdXRlIGJvdHRvbS0wIGxlZnQtMyByaWdodC0zIGgtMC41IGJnLWdyYWRpZW50LXRvLXIgZnJvbS1yZWQtNDAwIHRvLXBpbmstNDAwIHJvdW5kZWQtZnVsbFwiXG4gICAgICAgICAgICAgICAgaW5pdGlhbD17eyBzY2FsZVg6IDAgfX1cbiAgICAgICAgICAgICAgICB3aGlsZUhvdmVyPXt7IHNjYWxlWDogMSB9fVxuICAgICAgICAgICAgICAgIHRyYW5zaXRpb249e3sgZHVyYXRpb246IDAuMyB9fVxuICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgPC9tb3Rpb24uYT5cbiAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgIHsvKiBEZXNrdG9wIENUQSAvIFVzZXIgTWVudSAqL31cbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImhpZGRlbiBsZzpmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiBsZzpnYXAtMyBmbGV4LXNocmluay0wXCI+XG4gICAgICAgICAgICA8U2VhcmNoQmFyIHZhcmlhbnQ9XCJoZWFkZXJcIiAvPlxuICAgICAgICAgICAgPE5vdGlmaWNhdGlvbkJlbGwgY2xhc3NOYW1lPVwiaGlkZGVuIG1kOmJsb2NrXCIgc2hvd0Ryb3Bkb3duIC8+XG4gICAgICAgICAgICA8TGFuZ3VhZ2VUb2dnbGUgLz5cbiAgICAgICAgICAgIHt1c2VyID8gKFxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInJlbGF0aXZlXCI+XG4gICAgICAgICAgICAgICAgPGJ1dHRvblxuICAgICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0U2hvd1VzZXJNZW51KCFzaG93VXNlck1lbnUpfVxuICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTIgcC0zIHJvdW5kZWQtbGcgaG92ZXI6YmctZ3JheS0xMDAgdHJhbnNpdGlvbi1jb2xvcnMgbWluLWgtWzQ0cHhdIG1pbi13LVs0NHB4XVwiXG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ3LTggaC04IGJnLWdyYWRpZW50LXRvLXIgZnJvbS1hY3Rpb24tNTAwIHRvLXNlY29uZGFyeS01MDAgcm91bmRlZC1mdWxsIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHRleHQtd2hpdGUgdGV4dC1zbSBmb250LWJvbGRcIj5cbiAgICAgICAgICAgICAgICAgICAge3VzZXIubmFtZVxuICAgICAgICAgICAgICAgICAgICAgIC5zcGxpdChcIiBcIilcbiAgICAgICAgICAgICAgICAgICAgICAubWFwKChuOiBzdHJpbmcpID0+IG5bMF0pXG4gICAgICAgICAgICAgICAgICAgICAgLmpvaW4oXCJcIil9XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwidGV4dC1sZWZ0IG1pbi13LTBcIj5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ0ZXh0LXNtIGZvbnQtbWVkaXVtIHRleHQtZ3JheS05MDAgdHJ1bmNhdGVcIj5cbiAgICAgICAgICAgICAgICAgICAgICB7dXNlci5uYW1lLnNwbGl0KFwiIFwiKVswXX1cbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTFcIj5cbiAgICAgICAgICAgICAgICAgICAgICB7Z2V0TWVtYmVyc2hpcEJhZGdlKHVzZXIubWVtYmVyc2hpcFRpZXIpLmljb259XG4gICAgICAgICAgICAgICAgICAgICAgPHNwYW5cbiAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT17YHRleHQteHMgJHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgZ2V0TWVtYmVyc2hpcEJhZGdlKHVzZXIubWVtYmVyc2hpcFRpZXIpLmNvbG9yXG4gICAgICAgICAgICAgICAgICAgICAgICB9IHdoaXRlc3BhY2Utbm93cmFwYH1cbiAgICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgICB7Z2V0TWVtYmVyc2hpcEJhZGdlKHVzZXIubWVtYmVyc2hpcFRpZXIpLmxhYmVsfVxuICAgICAgICAgICAgICAgICAgICAgIDwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8L2J1dHRvbj5cblxuICAgICAgICAgICAgICAgIHsvKiBVc2VyIERyb3Bkb3duIE1lbnUgKi99XG4gICAgICAgICAgICAgICAgPEFuaW1hdGVQcmVzZW5jZT5cbiAgICAgICAgICAgICAgICAgIHtzaG93VXNlck1lbnUgJiYgKFxuICAgICAgICAgICAgICAgICAgICA8bW90aW9uLmRpdlxuICAgICAgICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeTogLTEwIH19XG4gICAgICAgICAgICAgICAgICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB5OiAwIH19XG4gICAgICAgICAgICAgICAgICAgICAgZXhpdD17eyBvcGFjaXR5OiAwLCB5OiAtMTAgfX1cbiAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJhYnNvbHV0ZSByaWdodC0wIG10LTIgdy00OCBiZy13aGl0ZSByb3VuZGVkLWxnIHNoYWRvdy1sZyBib3JkZXIgYm9yZGVyLWdyYXktMjAwIHB5LTEgei1bOTk5N11cIlxuICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e2AvcHJvZmlsZS8ke3VzZXIuaWR9YH1cbiAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIHNwYWNlLXgtMiBweC00IHB5LTMgdGV4dC1zbSB0ZXh0LWdyYXktNzAwIGhvdmVyOmJnLWdyYXktMTAwIG1pbi1oLVs0NHB4XVwiXG4gICAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRTaG93VXNlck1lbnUoZmFsc2UpfVxuICAgICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxVc2VySWNvbiBjbGFzc05hbWU9XCJ3LTQgaC00XCIgLz5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuPk15IFByb2ZpbGU8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgICAgICAgICBocmVmPXtST1VURVMuZmF2b3JpdGVzfVxuICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIgc3BhY2UteC0yIHB4LTQgcHktMyB0ZXh0LXNtIHRleHQtZ3JheS03MDAgaG92ZXI6YmctZ3JheS0xMDAgbWluLWgtWzQ0cHhdXCJcbiAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldFNob3dVc2VyTWVudShmYWxzZSl9XG4gICAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICAgICAgPEhlYXJ0SWNvbiBjbGFzc05hbWU9XCJ3LTQgaC00XCIgLz5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuPk15IEZhdm91cml0ZXM8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgICAgICAgICBocmVmPXtST1VURVMuZGFzaGJvYXJkfVxuICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIgc3BhY2UteC0yIHB4LTQgcHktMyB0ZXh0LXNtIHRleHQtZ3JheS03MDAgaG92ZXI6YmctZ3JheS0xMDAgbWluLWgtWzQ0cHhdXCJcbiAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldFNob3dVc2VyTWVudShmYWxzZSl9XG4gICAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICAgICAgPFVzZXJDaXJjbGVJY29uIGNsYXNzTmFtZT1cInctNCBoLTRcIiAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4+RGFzaGJvYXJkPC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgICAgICAgICB7dXNlci5yb2xlID09PSBcImFkbWluXCIgJiYgKFxuICAgICAgICAgICAgICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICAgICAgICAgICAgaHJlZj17Uk9VVEVTLmFkbWlufVxuICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBzcGFjZS14LTIgcHgtNCBweS0zIHRleHQtc20gdGV4dC1wcmVtaXVtLTcwMCBob3ZlcjpiZy1wcmVtaXVtLTUwIG1pbi1oLVs0NHB4XVwiXG4gICAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldFNob3dVc2VyTWVudShmYWxzZSl9XG4gICAgICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxTaGllbGRDaGVja0ljb24gY2xhc3NOYW1lPVwidy00IGgtNFwiIC8+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuPkFkbWluIFBhbmVsPC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJib3JkZXItdCBib3JkZXItZ3JheS0xMDAgbXktMVwiPjwvZGl2PlxuICAgICAgICAgICAgICAgICAgICAgIDxidXR0b25cbiAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9e2hhbmRsZUxvZ291dH1cbiAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIHNwYWNlLXgtMiB3LWZ1bGwgcHgtNCBweS0zIHRleHQtc20gdGV4dC1hY3Rpb24tNzAwIGhvdmVyOmJnLWFjdGlvbi01MCB0ZXh0LWxlZnQgbWluLWgtWzQ0cHhdXCJcbiAgICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgICA8TG9nT3V0IGNsYXNzTmFtZT1cInctNCBoLTRcIiAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4+U2lnbiBPdXQ8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgPC9idXR0b24+XG4gICAgICAgICAgICAgICAgICAgIDwvbW90aW9uLmRpdj5cbiAgICAgICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgICAgPC9BbmltYXRlUHJlc2VuY2U+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgKSA6IChcbiAgICAgICAgICAgICAgPD5cbiAgICAgICAgICAgICAgICA8YVxuICAgICAgICAgICAgICAgICAgaHJlZj17Uk9VVEVTLmxvZ2lufVxuICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwidGV4dC1ncmF5LTYwMCBob3Zlcjp0ZXh0LXByaW1hcnktNjAwIHAtMyByb3VuZGVkLW1kIHRyYW5zaXRpb24tY29sb3JzIGR1cmF0aW9uLTIwMCBtaW4taC1bNDRweF0gbWluLXctWzQ0cHhdIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyXCJcbiAgICAgICAgICAgICAgICAgIHRpdGxlPVwiTG9naW5cIlxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIDxVc2VySWNvbiBjbGFzc05hbWU9XCJ3LTUgaC01XCIgLz5cbiAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgICAgPG1vdGlvbi5hXG4gICAgICAgICAgICAgICAgICBocmVmPXtST1VURVMuYXBwbHl9XG4gICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJiZy1ncmFkaWVudC10by1yIGZyb20tc2Vjb25kYXJ5LTYwMCB2aWEtYWN0aW9uLTYwMCB0by1hY2NlbnQtNjAwIHRleHQtd2hpdGUgZm9udC1ib2xkIHB5LTMgcHgtMyBzbTpweC00IGxnOnB4LTYgcm91bmRlZC1sZyBzaGFkb3ctbGcgaG92ZXI6ZnJvbS1zZWNvbmRhcnktNzAwIGhvdmVyOnZpYS1hY3Rpb24tNzAwIGhvdmVyOnRvLWFjY2VudC03MDAgaG92ZXI6c2hhZG93LXhsIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTMwMCB3aGl0ZXNwYWNlLW5vd3JhcCBtaW4taC1bNDRweF0gZmxleCBpdGVtcy1jZW50ZXIgdGV4dC14cyBzbTp0ZXh0LXNtIHJlbGF0aXZlIG92ZXJmbG93LWhpZGRlbiBncm91cFwiXG4gICAgICAgICAgICAgICAgICB3aGlsZUhvdmVyPXt7IHNjYWxlOiAxLjA1IH19XG4gICAgICAgICAgICAgICAgICB3aGlsZVRhcD17eyBzY2FsZTogMC45NSB9fVxuICAgICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyB0eXBlOiBcInNwcmluZ1wiLCBzdGlmZm5lc3M6IDQwMCwgZGFtcGluZzogMTAgfX1cbiAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICB7LyogUHJlbWl1bSBzaGltbWVyIGVmZmVjdCAqL31cbiAgICAgICAgICAgICAgICAgIDxtb3Rpb24uZGl2XG4gICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImFic29sdXRlIGluc2V0LTAgYmctZ3JhZGllbnQtdG8tciBmcm9tLXRyYW5zcGFyZW50IHZpYS13aGl0ZS8yMCB0by10cmFuc3BhcmVudFwiXG4gICAgICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgeDogXCItMTAwJVwiIH19XG4gICAgICAgICAgICAgICAgICAgIHdoaWxlSG92ZXI9e3sgeDogXCIxMDAlXCIgfX1cbiAgICAgICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkdXJhdGlvbjogMC42IH19XG4gICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwicmVsYXRpdmUgei0xMCBoaWRkZW4gc206aW5saW5lXCI+XG4gICAgICAgICAgICAgICAgICAgIEpvaW4gTHVzb1Rvd25cbiAgICAgICAgICAgICAgICAgIDwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cInJlbGF0aXZlIHotMTAgc206aGlkZGVuXCI+XG4gICAgICAgICAgICAgICAgICAgIEpvaW5cbiAgICAgICAgICAgICAgICAgIDwvc3Bhbj5cbiAgICAgICAgICAgICAgICA8L21vdGlvbi5hPlxuICAgICAgICAgICAgICA8Lz5cbiAgICAgICAgICAgICl9XG4gICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICB7LyogTW9iaWxlIG1lbnUgYnV0dG9uIC0gT3B0aW1pemVkIGZvciBQb3J0dWd1ZXNlLXNwZWFraW5nIGNvbW11bml0eSAqL31cbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggbGc6aGlkZGVuIGl0ZW1zLWNlbnRlciBnYXAtMSByZWxhdGl2ZSB6LVsxMDAwMF0gZmxleC1zaHJpbmstMFwiPlxuICAgICAgICAgICAgey8qIE9ubHkgc2hvdyBub3RpZmljYXRpb25zIHdoZW4gdXNlciBpcyBzaWduZWQgaW4gKi99XG4gICAgICAgICAgICB7dXNlciAmJiAoXG4gICAgICAgICAgICAgIDw+XG4gICAgICAgICAgICAgICAgPE5vdGlmaWNhdGlvbkJlbGwgY2xhc3NOYW1lPVwibWQ6aGlkZGVuXCIgLz5cbiAgICAgICAgICAgICAgPC8+XG4gICAgICAgICAgICApfVxuICAgICAgICAgICAgPExhbmd1YWdlVG9nZ2xlIC8+XG4gICAgICAgICAgICA8TW9iaWxlTmF2QnV0dG9uXG4gICAgICAgICAgICAgIGRhdGEtdGVzdGlkPVwibW9iaWxlLW1lbnUtYnV0dG9uXCJcbiAgICAgICAgICAgICAgYXJpYS1sYWJlbD17bW9iaWxlTWVudU9wZW4gPyBcIkNsb3NlIG1lbnVcIiA6IFwiT3BlbiBtYWluIG1lbnVcIn1cbiAgICAgICAgICAgICAgaXNPcGVuPXttb2JpbGVNZW51T3Blbn1cbiAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0TW9iaWxlTWVudU9wZW4oIW1vYmlsZU1lbnVPcGVuKX1cbiAgICAgICAgICAgIC8+XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgIDwvZGl2PlxuXG4gICAgICAgIHsvKiBNb2JpbGUgTmF2aWdhdGlvbiAtIEVuaGFuY2VkIHdpdGggcHJvcGVyIHotaW5kZXggbGF5ZXJpbmcgKi99XG4gICAgICAgIDxBbmltYXRlUHJlc2VuY2U+XG4gICAgICAgICAge21vYmlsZU1lbnVPcGVuICYmIChcbiAgICAgICAgICAgIDw+XG4gICAgICAgICAgICAgIHsvKiBNb2JpbGUgbWVudSBiYWNrZHJvcCAtIEhpZ2hlciB6LWluZGV4IGZvciBwcm9wZXIgbGF5ZXJpbmcgKi99XG4gICAgICAgICAgICAgIDxtb3Rpb24uZGl2XG4gICAgICAgICAgICAgICAgaW5pdGlhbD17eyBvcGFjaXR5OiAwIH19XG4gICAgICAgICAgICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxIH19XG4gICAgICAgICAgICAgICAgZXhpdD17eyBvcGFjaXR5OiAwIH19XG4gICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkdXJhdGlvbjogMC4yIH19XG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiZml4ZWQgaW5zZXQtMCBiZy1ibGFjay81MCBiYWNrZHJvcC1ibHVyLW1kIHotWzk5OThdIHhsOmhpZGRlblwiXG4gICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0TW9iaWxlTWVudU9wZW4oZmFsc2UpfVxuICAgICAgICAgICAgICAvPlxuXG4gICAgICAgICAgICAgIHsvKiBNb2JpbGUgbWVudSBjb250ZW50IC0gSGlnaGVzdCB6LWluZGV4IHdpdGggZW5oYW5jZWQgc3R5bGluZyAqL31cbiAgICAgICAgICAgICAgPG1vdGlvbi5kaXZcbiAgICAgICAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IC0yMCwgc2NhbGU6IDAuOTUgfX1cbiAgICAgICAgICAgICAgICBhbmltYXRlPXt7IG9wYWNpdHk6IDEsIHk6IDAsIHNjYWxlOiAxIH19XG4gICAgICAgICAgICAgICAgZXhpdD17eyBvcGFjaXR5OiAwLCB5OiAtMjAsIHNjYWxlOiAwLjk1IH19XG4gICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBcbiAgICAgICAgICAgICAgICAgIGR1cmF0aW9uOiAwLjQsIFxuICAgICAgICAgICAgICAgICAgZWFzZTogWzAuMjE1LCAwLjYxLCAwLjM1NSwgMV0sXG4gICAgICAgICAgICAgICAgICB0eXBlOiBcInNwcmluZ1wiLFxuICAgICAgICAgICAgICAgICAgc3RpZmZuZXNzOiAzMDAsXG4gICAgICAgICAgICAgICAgICBkYW1waW5nOiAyNVxuICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwieGw6aGlkZGVuIGZpeGVkIHRvcC1bODBweF0gbGVmdC0yIHJpZ2h0LTIgei1bMTAwMDBdIGJnLXdoaXRlIGJhY2tkcm9wLWJsdXIteGwgYm9yZGVyIGJvcmRlci1wcmltYXJ5LTIwMC81MCBzaGFkb3ctMnhsIHJvdW5kZWQtMnhsIG14LTAgbWItMiBtYXgtaC1bODV2aF0gb3ZlcmZsb3cteS1hdXRvXCJcbiAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgYm94U2hhZG93OiAnMCAyNXB4IDUwcHggcmdiYSgxOTcsIDQwLCA0NywgMC4xNSksIDAgMTBweCAyNXB4IHJnYmEoMCwgMCwgMCwgMC4xKSdcbiAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJweC00IHB0LTYgcGItNCBzcGFjZS15LTJcIj5cbiAgICAgICAgICAgICAgICAgIHsvKiBRdWljayBBY3Rpb25zIFNlY3Rpb24gKi99XG4gICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInBiLTQgYm9yZGVyLWIgYm9yZGVyLWdyYXktMjAwXCI+XG4gICAgICAgICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9XCJ0ZXh0LWxnIGZvbnQtc2VtaWJvbGQgdGV4dC1ncmF5LTkwMCBtYi0zXCI+XG4gICAgICAgICAgICAgICAgICAgICAgUXVpY2sgQWN0aW9uc1xuICAgICAgICAgICAgICAgICAgICA8L2gzPlxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInNwYWNlLXktM1wiPlxuICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1zdGFydCBnYXAtM1wiPlxuICAgICAgICAgICAgICAgICAgICAgICAgPFNhdmVkSXRlbXNCdXR0b24gY2xhc3NOYW1lPVwiZmxleC1zaHJpbmstMFwiIC8+XG4gICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXgtMSBtaW4tdy0wXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxoNCBjbGFzc05hbWU9XCJ0ZXh0LXNtIGZvbnQtbWVkaXVtIHRleHQtZ3JheS05MDAgbWItMVwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHt0KFwiZmF2b3JpdGVzLnRpdGxlXCIsIFwiU2F2ZWQgSXRlbXNcIil9XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDwvaDQ+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cInRleHQteHMgdGV4dC1ncmF5LTYwMCBsZWFkaW5nLXJlbGF4ZWRcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7dChcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwiZmF2b3JpdGVzLmRlc2NyaXB0aW9uXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcIkFjY2VzcyB5b3VyIGZhdm9yaXRlIGV2ZW50cywgcGxhY2VzLCBhbmQgc2VydmljZXMuIEtlZXAgdHJhY2sgb2Ygd2hhdCBpbnRlcmVzdHMgeW91IG1vc3QuXCJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICApfVxuICAgICAgICAgICAgICAgICAgICAgICAgICA8L3A+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgICAgey8qIFdoYXQncyBIYXBwZW5pbmcgLSBQcmlvcml0eSBMaW5rICovfVxuICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJwYi00IGJvcmRlci1iIGJvcmRlci1ncmF5LTIwMFwiPlxuICAgICAgICAgICAgICAgICAgICA8aDMgY2xhc3NOYW1lPVwidGV4dC1sZyBmb250LXNlbWlib2xkIHRleHQtcHJpbWFyeS02MDAgbWItM1wiPlxuICAgICAgICAgICAgICAgICAgICAgIHt0KFwibmF2LmRpc2NvdmVyXCIsIFwiRGlzY292ZXJcIil9XG4gICAgICAgICAgICAgICAgICAgIDwvaDM+XG4gICAgICAgICAgICAgICAgICAgIDxtb3Rpb24uYVxuICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e1JPVVRFUy5ldmVudHN9XG4gICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwidGV4dC1ncmF5LTcwMCBob3Zlcjp0ZXh0LXByaW1hcnktNjAwIGhvdmVyOmJnLXByaW1hcnktNTAgcHgtNCBweS0zIHJvdW5kZWQteGwgdGV4dC1iYXNlIGZvbnQtbWVkaXVtIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTMwMCBib3JkZXIgYm9yZGVyLXRyYW5zcGFyZW50IGhvdmVyOmJvcmRlci1wcmltYXJ5LTIwMCBtaW4taC1bNTZweF0gZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTMgbHV4dXJ5LXRvdWNoLXRhcmdldFwiXG4gICAgICAgICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0TW9iaWxlTWVudU9wZW4oZmFsc2UpfVxuICAgICAgICAgICAgICAgICAgICAgIHdoaWxlSG92ZXI9e3sgc2NhbGU6IDEuMDIsIHg6IDQgfX1cbiAgICAgICAgICAgICAgICAgICAgICB3aGlsZVRhcD17eyBzY2FsZTogMC45OCB9fVxuICAgICAgICAgICAgICAgICAgICAgIHRyYW5zaXRpb249e3sgdHlwZTogXCJzcHJpbmdcIiwgc3RpZmZuZXNzOiA0MDAsIGRhbXBpbmc6IDI1IH19XG4gICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICA8Q2FsZW5kYXJEYXlzSWNvbiBjbGFzc05hbWU9XCJ3LTUgaC01IHRleHQtcHJpbWFyeS01MDBcIiAvPlxuICAgICAgICAgICAgICAgICAgICAgIDxzcGFuPlxuICAgICAgICAgICAgICAgICAgICAgICAge3QoXCJuYXYud2hhdHNfaGFwcGVuaW5nXCIsIFwiV2hhdCdzIEhhcHBlbmluZ1wiKX1cbiAgICAgICAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgIDwvbW90aW9uLmE+XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgICAgey8qIEZpbmQgWW91ciBNYXRjaCAtIEhlYXJ0IEljb24gKi99XG4gICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInBiLTQgYm9yZGVyLWIgYm9yZGVyLWdyYXktMjAwXCI+XG4gICAgICAgICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9XCJ0ZXh0LWxnIGZvbnQtc2VtaWJvbGQgdGV4dC1yZWQtNjAwIG1iLTNcIj5cbiAgICAgICAgICAgICAgICAgICAgICB7dChcIm5hdi5kYXRpbmdcIiwgXCJEYXRpbmdcIil9XG4gICAgICAgICAgICAgICAgICAgIDwvaDM+XG4gICAgICAgICAgICAgICAgICAgIDxtb3Rpb24uYVxuICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e1JPVVRFUy5tYXRjaGVzfVxuICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cInRleHQtZ3JheS03MDAgaG92ZXI6dGV4dC1yZWQtNjAwIGhvdmVyOmJnLXJlZC01MCBweC00IHB5LTMgcm91bmRlZC14bCB0ZXh0LWJhc2UgZm9udC1tZWRpdW0gdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMzAwIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgaG92ZXI6Ym9yZGVyLXJlZC0yMDAgbWluLWgtWzU2cHhdIGZsZXggaXRlbXMtY2VudGVyIGdhcC0zIGx1eHVyeS10b3VjaC10YXJnZXRcIlxuICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldE1vYmlsZU1lbnVPcGVuKGZhbHNlKX1cbiAgICAgICAgICAgICAgICAgICAgICB3aGlsZUhvdmVyPXt7IHNjYWxlOiAxLjAyLCB4OiA0IH19XG4gICAgICAgICAgICAgICAgICAgICAgd2hpbGVUYXA9e3sgc2NhbGU6IDAuOTggfX1cbiAgICAgICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IHR5cGU6IFwic3ByaW5nXCIsIHN0aWZmbmVzczogNDAwLCBkYW1waW5nOiAyNSB9fVxuICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidGV4dC1yZWQtNTAwIHRleHQtbGdcIj7wn5KXPC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgIDxzcGFuPnt0KFwibmF2LmZpbmRfeW91cl9tYXRjaFwiLCBcIkZpbmQgWW91ciBNYXRjaFwiKX08L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgIDwvbW90aW9uLmE+XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgICAgey8qIENvbW11bml0eSBBY3Rpb25zIGZvciBNb2JpbGUgKi99XG4gICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInBiLTQgYm9yZGVyLWIgYm9yZGVyLWdyYXktMjAwXCI+XG4gICAgICAgICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9XCJ0ZXh0LWxnIGZvbnQtc2VtaWJvbGQgdGV4dC1wcmltYXJ5LTYwMCBtYi0zXCI+XG4gICAgICAgICAgICAgICAgICAgICAge3QoXCJuYXYuY29tbXVuaXR5X2FjdGlvbnNcIiwgXCJDb21tdW5pdHkgQWN0aW9uc1wiKX1cbiAgICAgICAgICAgICAgICAgICAgPC9oMz5cbiAgICAgICAgICAgICAgICAgICAge2NvbW11bml0eURyb3Bkb3duTGlua3MubWFwKChsaW5rLCBpbmRleCkgPT4gKFxuICAgICAgICAgICAgICAgICAgICAgIDxtb3Rpb24uYVxuICAgICAgICAgICAgICAgICAgICAgICAga2V5PXtsaW5rLm5hbWV9XG4gICAgICAgICAgICAgICAgICAgICAgICBocmVmPXtsaW5rLmhyZWZ9XG4gICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJ0ZXh0LWdyYXktNzAwIGhvdmVyOnRleHQtcHJpbWFyeS02MDAgaG92ZXI6YmctcHJpbWFyeS01MCBweC00IHB5LTMgcm91bmRlZC14bCB0ZXh0LWJhc2UgZm9udC1tZWRpdW0gdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMzAwIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgaG92ZXI6Ym9yZGVyLXByaW1hcnktMjAwIG1pbi1oLVs1NnB4XSBmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMyBsdXh1cnktdG91Y2gtdGFyZ2V0XCJcbiAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldE1vYmlsZU1lbnVPcGVuKGZhbHNlKX1cbiAgICAgICAgICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeDogLTIwIH19XG4gICAgICAgICAgICAgICAgICAgICAgICBhbmltYXRlPXt7IG9wYWNpdHk6IDEsIHg6IDAgfX1cbiAgICAgICAgICAgICAgICAgICAgICAgIHRyYW5zaXRpb249e3sgZGVsYXk6IGluZGV4ICogMC4wNSwgdHlwZTogXCJzcHJpbmdcIiwgc3RpZmZuZXNzOiA0MDAsIGRhbXBpbmc6IDI1IH19XG4gICAgICAgICAgICAgICAgICAgICAgICB3aGlsZUhvdmVyPXt7IHNjYWxlOiAxLjAyLCB4OiA0IH19XG4gICAgICAgICAgICAgICAgICAgICAgICB3aGlsZVRhcD17eyBzY2FsZTogMC45OCB9fVxuICAgICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxsaW5rLmljb24gY2xhc3NOYW1lPXtgdy01IGgtNSAke2xpbmsuaWNvbkNvbG9yfSB0cmFuc2l0aW9uLXRyYW5zZm9ybSBkdXJhdGlvbi0zMDAgZ3JvdXAtaG92ZXI6c2NhbGUtMTEwYH0gLz5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuPntsaW5rLm5hbWV9PC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgIDwvbW90aW9uLmE+XG4gICAgICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgICAgICAgIHsvKiBGb3IgQnVzaW5lc3MgZm9yIE1vYmlsZSAqL31cbiAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwicGItNCBib3JkZXItYiBib3JkZXItZ3JheS0yMDBcIj5cbiAgICAgICAgICAgICAgICAgICAgPGgzIGNsYXNzTmFtZT1cInRleHQtbGcgZm9udC1zZW1pYm9sZCB0ZXh0LXNlY29uZGFyeS02MDAgbWItM1wiPlxuICAgICAgICAgICAgICAgICAgICAgIHt0KFwibmF2LmJ1c2luZXNzX3NvbHV0aW9uc1wiLCBcIkJ1c2luZXNzIFNvbHV0aW9uc1wiKX1cbiAgICAgICAgICAgICAgICAgICAgPC9oMz5cbiAgICAgICAgICAgICAgICAgICAge2ZvckJ1c2luZXNzRHJvcGRvd25MaW5rcy5tYXAoKGxpbmssIGluZGV4KSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgPG1vdGlvbi5hXG4gICAgICAgICAgICAgICAgICAgICAgICBrZXk9e2xpbmsubmFtZX1cbiAgICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e2xpbmsuaHJlZn1cbiAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cInRleHQtZ3JheS03MDAgaG92ZXI6dGV4dC1zZWNvbmRhcnktNjAwIGhvdmVyOmJnLXNlY29uZGFyeS01MCBweC00IHB5LTMgcm91bmRlZC14bCB0ZXh0LWJhc2UgZm9udC1tZWRpdW0gdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMzAwIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgaG92ZXI6Ym9yZGVyLXNlY29uZGFyeS0yMDAgbWluLWgtWzU2cHhdIGZsZXggaXRlbXMtY2VudGVyIGdhcC0zIGx1eHVyeS10b3VjaC10YXJnZXQgZ3JvdXBcIlxuICAgICAgICAgICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0TW9iaWxlTWVudU9wZW4oZmFsc2UpfVxuICAgICAgICAgICAgICAgICAgICAgICAgaW5pdGlhbD17eyBvcGFjaXR5OiAwLCB4OiAtMjAgfX1cbiAgICAgICAgICAgICAgICAgICAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogMSwgeDogMCB9fVxuICAgICAgICAgICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkZWxheTogaW5kZXggKiAwLjA1LCB0eXBlOiBcInNwcmluZ1wiLCBzdGlmZm5lc3M6IDQwMCwgZGFtcGluZzogMjUgfX1cbiAgICAgICAgICAgICAgICAgICAgICAgIHdoaWxlSG92ZXI9e3sgc2NhbGU6IDEuMDIsIHg6IDQgfX1cbiAgICAgICAgICAgICAgICAgICAgICAgIHdoaWxlVGFwPXt7IHNjYWxlOiAwLjk4IH19XG4gICAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGxpbmsuaWNvbiBjbGFzc05hbWU9e2B3LTUgaC01ICR7bGluay5pY29uQ29sb3J9IHRyYW5zaXRpb24tdHJhbnNmb3JtIGR1cmF0aW9uLTMwMCBncm91cC1ob3ZlcjpzY2FsZS0xMTBgfSAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4+e2xpbmsubmFtZX08L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgPC9tb3Rpb24uYT5cbiAgICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgICAgey8qIEFkZGl0aW9uYWwgTGlua3MgKi99XG4gICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInBiLTQgYm9yZGVyLWIgYm9yZGVyLWdyYXktMjAwXCI+XG4gICAgICAgICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9XCJ0ZXh0LWxnIGZvbnQtc2VtaWJvbGQgdGV4dC1ncmF5LTYwMCBtYi0zXCI+XG4gICAgICAgICAgICAgICAgICAgICAge3QoXCJuYXYubW9yZVwiLCBcIk1vcmVcIil9XG4gICAgICAgICAgICAgICAgICAgIDwvaDM+XG4gICAgICAgICAgICAgICAgICAgIDxtb3Rpb24uYVxuICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e1JPVVRFUy5hYm91dH1cbiAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJ0ZXh0LWdyYXktNzAwIGhvdmVyOnRleHQtZ3JheS05MDAgaG92ZXI6YmctZ3JheS01MCBweC00IHB5LTMgcm91bmRlZC14bCB0ZXh0LWJhc2UgZm9udC1tZWRpdW0gdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMzAwIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgaG92ZXI6Ym9yZGVyLWdyYXktMjAwIG1pbi1oLVs1NnB4XSBmbGV4IGl0ZW1zLWNlbnRlciBsdXh1cnktdG91Y2gtdGFyZ2V0XCJcbiAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRNb2JpbGVNZW51T3BlbihmYWxzZSl9XG4gICAgICAgICAgICAgICAgICAgICAgd2hpbGVIb3Zlcj17eyBzY2FsZTogMS4wMiwgeDogNCB9fVxuICAgICAgICAgICAgICAgICAgICAgIHdoaWxlVGFwPXt7IHNjYWxlOiAwLjk4IH19XG4gICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICB7dChcIm5hdi5hYm91dFwiLCBcIkFib3V0IFVzXCIpfVxuICAgICAgICAgICAgICAgICAgICA8L21vdGlvbi5hPlxuICAgICAgICAgICAgICAgICAgICA8bW90aW9uLmFcbiAgICAgICAgICAgICAgICAgICAgICBocmVmPXtST1VURVMucHJpY2luZ31cbiAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJ0ZXh0LWdyYXktNzAwIGhvdmVyOnRleHQtZ3JheS05MDAgaG92ZXI6YmctZ3JheS01MCBweC00IHB5LTMgcm91bmRlZC14bCB0ZXh0LWJhc2UgZm9udC1tZWRpdW0gdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMzAwIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgaG92ZXI6Ym9yZGVyLWdyYXktMjAwIG1pbi1oLVs1NnB4XSBmbGV4IGl0ZW1zLWNlbnRlciBsdXh1cnktdG91Y2gtdGFyZ2V0XCJcbiAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRNb2JpbGVNZW51T3BlbihmYWxzZSl9XG4gICAgICAgICAgICAgICAgICAgICAgd2hpbGVIb3Zlcj17eyBzY2FsZTogMS4wMiwgeDogNCB9fVxuICAgICAgICAgICAgICAgICAgICAgIHdoaWxlVGFwPXt7IHNjYWxlOiAwLjk4IH19XG4gICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICB7dChcIm5hdi5wcmljaW5nXCIsIFwiUHJpY2luZ1wiKX1cbiAgICAgICAgICAgICAgICAgICAgPC9tb3Rpb24uYT5cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICAgICAgICB7LyogVXNlciBTZWN0aW9uICovfVxuICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJib3JkZXItdCBib3JkZXItcHJpbWFyeS0xMDAgcHQtNCBwYi0zXCI+XG4gICAgICAgICAgICAgICAgICAgIHt1c2VyID8gKFxuICAgICAgICAgICAgICAgICAgICAgIDw+XG4gICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIHB4LTMgcGItM1wiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInctMTAgaC0xMCBiZy1ncmFkaWVudC10by1yIGZyb20tYWN0aW9uLTUwMCB0by1zZWNvbmRhcnktNTAwIHJvdW5kZWQtZnVsbCBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciB0ZXh0LXdoaXRlIHRleHQtc20gZm9udC1ib2xkIG1yLTNcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7dXNlci5uYW1lXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAuc3BsaXQoXCIgXCIpXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAubWFwKChuOiBzdHJpbmcpID0+IG5bMF0pXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAuam9pbihcIlwiKX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibWluLXctMCBmbGV4LTFcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInRleHQtYmFzZSBmb250LW1lZGl1bSB0ZXh0LWdyYXktODAwIHRydW5jYXRlXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7dXNlci5uYW1lfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIgc3BhY2UteC0xXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7Z2V0TWVtYmVyc2hpcEJhZGdlKHVzZXIubWVtYmVyc2hpcFRpZXIpLmljb259XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhblxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9e2B0ZXh0LXNtICR7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZ2V0TWVtYmVyc2hpcEJhZGdlKHVzZXIubWVtYmVyc2hpcFRpZXIpLmNvbG9yXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0gd2hpdGVzcGFjZS1ub3dyYXBgfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7Z2V0TWVtYmVyc2hpcEJhZGdlKHVzZXIubWVtYmVyc2hpcFRpZXIpLmxhYmVsfXtcIiBcIn1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTWVtYmVyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e2AvcHJvZmlsZS8ke3VzZXIuaWR9YH1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIgc3BhY2UteC0zIHRleHQtZ3JheS03MDAgaG92ZXI6dGV4dC1wcmltYXJ5LTYwMCBob3ZlcjpiZy1wcmltYXJ5LTUwIHB4LTQgcHktMyByb3VuZGVkLWxnIHRleHQtYmFzZSBmb250LW1lZGl1bSB0cmFuc2l0aW9uLWFsbCBkdXJhdGlvbi0yMDAgYm9yZGVyIGJvcmRlci10cmFuc3BhcmVudCBob3Zlcjpib3JkZXItcHJpbWFyeS0yMDAgbWluLWgtWzQ0cHhdXCJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0TW9iaWxlTWVudU9wZW4oZmFsc2UpfVxuICAgICAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICAgICAgICA8VXNlckljb24gY2xhc3NOYW1lPVwidy01IGgtNVwiIC8+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuPk15IFByb2ZpbGU8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgICAgICAgICAgICA8YVxuICAgICAgICAgICAgICAgICAgICAgICAgICBocmVmPXtST1VURVMuZmF2b3JpdGVzfVxuICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBzcGFjZS14LTMgdGV4dC1ncmF5LTcwMCBob3Zlcjp0ZXh0LXByaW1hcnktNjAwIGhvdmVyOmJnLXByaW1hcnktNTAgcHgtNCBweS0zIHJvdW5kZWQtbGcgdGV4dC1iYXNlIGZvbnQtbWVkaXVtIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTIwMCBib3JkZXIgYm9yZGVyLXRyYW5zcGFyZW50IGhvdmVyOmJvcmRlci1wcmltYXJ5LTIwMCBtaW4taC1bNDRweF1cIlxuICAgICAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRNb2JpbGVNZW51T3BlbihmYWxzZSl9XG4gICAgICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxIZWFydEljb24gY2xhc3NOYW1lPVwidy01IGgtNVwiIC8+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuPk15IEZhdm91cml0ZXM8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L2E+XG5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e1JPVVRFUy5kYXNoYm9hcmR9XG4gICAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIHNwYWNlLXgtMyB0ZXh0LWdyYXktNzAwIGhvdmVyOnRleHQtcHJpbWFyeS02MDAgaG92ZXI6YmctcHJpbWFyeS01MCBweC00IHB5LTMgcm91bmRlZC1sZyB0ZXh0LWJhc2UgZm9udC1tZWRpdW0gdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMjAwIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgaG92ZXI6Ym9yZGVyLXByaW1hcnktMjAwIG1pbi1oLVs0NHB4XVwiXG4gICAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldE1vYmlsZU1lbnVPcGVuKGZhbHNlKX1cbiAgICAgICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgPFVzZXJDaXJjbGVJY29uIGNsYXNzTmFtZT1cInctNSBoLTVcIiAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgICA8c3Bhbj5EYXNoYm9hcmQ8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L2E+XG5cbiAgICAgICAgICAgICAgICAgICAgICAgIHt1c2VyLnJvbGUgPT09IFwiYWRtaW5cIiAmJiAoXG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgaHJlZj17Uk9VVEVTLmFkbWlufVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIHNwYWNlLXgtMyB0ZXh0LXByZW1pdW0tNjAwIGhvdmVyOnRleHQtcHJlbWl1bS03MDAgaG92ZXI6YmctcHJlbWl1bS01MCBweC00IHB5LTMgcm91bmRlZC1sZyB0ZXh0LWJhc2UgZm9udC1tZWRpdW0gdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMjAwIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgaG92ZXI6Ym9yZGVyLXByZW1pdW0tMjAwIG1pbi1oLVs0NHB4XVwiXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0TW9iaWxlTWVudU9wZW4oZmFsc2UpfVxuICAgICAgICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPFNoaWVsZENoZWNrSWNvbiBjbGFzc05hbWU9XCJ3LTUgaC01XCIgLz5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3Bhbj5BZG1pbiBQYW5lbDwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgICAgICAgKX1cblxuICAgICAgICAgICAgICAgICAgICAgICAgPGJ1dHRvblxuICAgICAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgaGFuZGxlTG9nb3V0KCk7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgc2V0TW9iaWxlTWVudU9wZW4oZmFsc2UpO1xuICAgICAgICAgICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBzcGFjZS14LTMgdGV4dC1hY3Rpb24tNjAwIGhvdmVyOnRleHQtYWN0aW9uLTcwMCBob3ZlcjpiZy1hY3Rpb24tNTAgcHgtNCBweS0zIHJvdW5kZWQtbGcgdGV4dC1iYXNlIGZvbnQtbWVkaXVtIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTIwMCB3LWZ1bGwgdGV4dC1sZWZ0IGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgaG92ZXI6Ym9yZGVyLWFjdGlvbi0yMDAgbWluLWgtWzQ0cHhdXCJcbiAgICAgICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgPExvZ091dCBjbGFzc05hbWU9XCJ3LTUgaC01XCIgLz5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4+U2lnbiBPdXQ8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgICAgICAgICAgICAgICA8Lz5cbiAgICAgICAgICAgICAgICAgICAgKSA6IChcbiAgICAgICAgICAgICAgICAgICAgICA8PlxuICAgICAgICAgICAgICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICAgICAgICAgICAgaHJlZj17Uk9VVEVTLmxvZ2lufVxuICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBzcGFjZS14LTMgdGV4dC1ncmF5LTcwMCBob3Zlcjp0ZXh0LXByaW1hcnktNjAwIGhvdmVyOmJnLXByaW1hcnktNTAgcHgtNCBweS0zIHJvdW5kZWQtbGcgdGV4dC1iYXNlIGZvbnQtbWVkaXVtIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTIwMCBib3JkZXIgYm9yZGVyLXRyYW5zcGFyZW50IGhvdmVyOmJvcmRlci1wcmltYXJ5LTIwMCBtaW4taC1bNDRweF1cIlxuICAgICAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRNb2JpbGVNZW51T3BlbihmYWxzZSl9XG4gICAgICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxVc2VySWNvbiBjbGFzc05hbWU9XCJ3LTUgaC01XCIgLz5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4+TG9nIEluPC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtdC00IHB4LTBcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBocmVmPXtST1VURVMuc2lnbnVwfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImJnLWdyYWRpZW50LXRvLXIgZnJvbS1zZWNvbmRhcnktNjAwIHZpYS1hY3Rpb24tNjAwIHRvLWFjY2VudC02MDAgdGV4dC13aGl0ZSBmb250LWJvbGQgcHktNCBweC02IHJvdW5kZWQteGwgc2hhZG93LWxnIGhvdmVyOmZyb20tc2Vjb25kYXJ5LTcwMCBob3Zlcjp2aWEtYWN0aW9uLTcwMCBob3Zlcjp0by1hY2NlbnQtNzAwIGhvdmVyOnNoYWRvdy14bCB0cmFuc2Zvcm0gaG92ZXI6c2NhbGUtWzEuMDJdIGFjdGl2ZTpzY2FsZS05NSB0cmFuc2l0aW9uLWFsbCBkdXJhdGlvbi0yMDAgdy1mdWxsIHRleHQtY2VudGVyIG1pbi1oLVs0NHB4XSBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlclwiXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0TW9iaWxlTWVudU9wZW4oZmFsc2UpfVxuICAgICAgICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidGV4dC1iYXNlIHdoaXRlc3BhY2Utbm93cmFwXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICBKb2luIEx1c29Ub3duXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgICA8Lz5cbiAgICAgICAgICAgICAgICAgICAgKX1cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8L21vdGlvbi5kaXY+XG4gICAgICAgICAgICA8Lz5cbiAgICAgICAgICApfVxuICAgICAgICA8L0FuaW1hdGVQcmVzZW5jZT5cbiAgICAgIDwvbmF2PlxuICAgIDwvaGVhZGVyPlxuICApO1xufVxuIl0sIm5hbWVzIjpbIkhlYWRlciIsImdldE1haW5OYXZpZ2F0aW9uTGlua3MiLCJ0IiwibmFtZSIsImhyZWYiLCJST1VURVMiLCJldmVudHMiLCJkZXNjcmlwdGlvbiIsImdldENvbW11bml0eURyb3Bkb3duTGlua3MiLCJpY29uIiwiQ2FsZW5kYXJEYXlzSWNvbiIsImljb25Db2xvciIsImxvbmRvblRvdXJzIiwiTWFwUGluSWNvbiIsIlVzZXJHcm91cEljb24iLCJkaXJlY3RvcnkiLCJnZXRGb3JCdXNpbmVzc0Ryb3Bkb3duTGlua3MiLCJidXNpbmVzc0RpcmVjdG9yeSIsIkJyaWVmY2FzZUljb24iLCJidXNpbmVzc05ldHdvcmtpbmciLCJwcmljaW5nIiwiQ3VycmVuY3lQb3VuZEljb24iLCJUcm9waHlJY29uIiwiZ2V0Rm9vdGVyT25seUxpbmtzIiwibmVpZ2hib3Job29kR3JvdXBzIiwic2VydmljZXMiLCJmb3J1bXMiLCJtb2JpbGVNZW51T3BlbiIsInNldE1vYmlsZU1lbnVPcGVuIiwidXNlU3RhdGUiLCJ1c2VyIiwic2V0VXNlciIsInNob3dVc2VyTWVudSIsInNldFNob3dVc2VyTWVudSIsInNob3dDb21tdW5pdHlEcm9wZG93biIsInNldFNob3dDb21tdW5pdHlEcm9wZG93biIsInNob3dGb3JCdXNpbmVzc0Ryb3Bkb3duIiwic2V0U2hvd0ZvckJ1c2luZXNzRHJvcGRvd24iLCJyb3V0ZXIiLCJ1c2VSb3V0ZXIiLCJ1c2VMYW5ndWFnZSIsInVzZUVmZmVjdCIsImhhbmRsZUxvZ291dCIsInB1c2giLCJnZXRNZW1iZXJzaGlwQmFkZ2UiLCJ0aWVyIiwiYmFkZ2VzIiwiZnJlZSIsIlVzZXJDaXJjbGVJY29uIiwiY2xhc3NOYW1lIiwiY29sb3IiLCJsYWJlbCIsImNvcmUiLCJIZWFydEljb24iLCJwcmVtaXVtIiwiQ3Jvd24iLCJtYWluTmF2aWdhdGlvbkxpbmtzIiwiY29tbXVuaXR5RHJvcGRvd25MaW5rcyIsImZvckJ1c2luZXNzRHJvcGRvd25MaW5rcyIsImhlYWRlciIsIm5hdiIsImFyaWEtbGFiZWwiLCJkaXYiLCJtb3Rpb24iLCJ3aGlsZUhvdmVyIiwic2NhbGUiLCJ0cmFuc2l0aW9uIiwidHlwZSIsInN0aWZmbmVzcyIsImRhbXBpbmciLCJhIiwiaG9tZSIsIkxvZ28iLCJzaXplIiwiYW5pbWF0ZWQiLCJpbml0aWFsIiwib3BhY2l0eSIsImR1cmF0aW9uIiwibWFwIiwibGluayIsIndoaWxlVGFwIiwic3BhbiIsInNjYWxlWCIsIm9uTW91c2VFbnRlciIsIm9uTW91c2VMZWF2ZSIsImJ1dHRvbiIsImFuaW1hdGUiLCJyb3RhdGUiLCJlYXNlIiwiQ2hldnJvbkRvd25JY29uIiwiQW5pbWF0ZVByZXNlbmNlIiwieSIsImV4aXQiLCJzdHlsZSIsImxlZnQiLCJ0cmFuc2Zvcm0iLCJoMyIsImluZGV4IiwiZGVsYXkiLCJtYXRjaGVzIiwicmVwZWF0IiwiSW5maW5pdHkiLCJyZXBlYXRUeXBlIiwiU2VhcmNoQmFyIiwidmFyaWFudCIsIk5vdGlmaWNhdGlvbkJlbGwiLCJzaG93RHJvcGRvd24iLCJMYW5ndWFnZVRvZ2dsZSIsIm9uQ2xpY2siLCJzcGxpdCIsIm4iLCJqb2luIiwibWVtYmVyc2hpcFRpZXIiLCJpZCIsIlVzZXJJY29uIiwiZmF2b3JpdGVzIiwiZGFzaGJvYXJkIiwicm9sZSIsImFkbWluIiwiU2hpZWxkQ2hlY2tJY29uIiwiTG9nT3V0IiwibG9naW4iLCJ0aXRsZSIsImFwcGx5IiwieCIsIk1vYmlsZU5hdkJ1dHRvbiIsImRhdGEtdGVzdGlkIiwiaXNPcGVuIiwiYm94U2hhZG93IiwiU2F2ZWRJdGVtc0J1dHRvbiIsImg0IiwicCIsImFib3V0Iiwic2lnbnVwIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7K0JBa0tBOzs7ZUFBd0JBOzs7OytEQWhLbUI7OEJBQ0g7eUJBZWpDOzZCQUN1Qjs0QkFFSjs2REFDVDt1RUFDVTt5RUFFRTtrRUFDUDt5RUFDTztpQ0FDRDt3QkFDTDtrQ0FHUzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFFaEMsOERBQThEO0FBQzlELE1BQU1DLHlCQUF5QixDQUFDQyxJQUFXO1FBQ3pDO1lBQ0VDLE1BQU1ELEVBQUUsdUJBQXVCO1lBQy9CRSxNQUFNQyxjQUFNLENBQUNDLE1BQU07WUFDbkJDLGFBQWE7UUFDZjtLQUNEO0FBRUQsNkNBQTZDO0FBQzdDLE1BQU1DLDRCQUE0QixDQUFDTixJQUFXO1FBQzVDO1lBQ0VDLE1BQU1ELEVBQUUsbUJBQW1CO1lBQzNCRSxNQUFNQyxjQUFNLENBQUNDLE1BQU07WUFDbkJDLGFBQWFMLEVBQ1gsd0JBQ0E7WUFFRk8sTUFBTUMseUJBQWdCO1lBQ3RCQyxXQUFXO1FBQ2I7UUFDQTtZQUNFUixNQUFNRCxFQUFFLDJCQUEyQjtZQUNuQ0UsTUFBTUMsY0FBTSxDQUFDTyxXQUFXO1lBQ3hCTCxhQUFhTCxFQUNYLGdDQUNBO1lBRUZPLE1BQU1JLG1CQUFVO1lBQ2hCRixXQUFXO1FBQ2I7UUFDQTtZQUNFUixNQUFNRCxFQUFFLDJCQUEyQjtZQUNuQ0UsTUFBTTtZQUNORyxhQUFhTCxFQUNYLGdDQUNBO1lBRUZPLE1BQU1LLHNCQUFhO1lBQ25CSCxXQUFXO1FBQ2I7UUFDQTtZQUNFUixNQUFNRCxFQUFFLGdDQUFnQztZQUN4Q0UsTUFBTUMsY0FBTSxDQUFDVSxTQUFTO1lBQ3RCUixhQUFhTCxFQUNYLHFDQUNBO1lBRUZPLE1BQU1LLHNCQUFhO1lBQ25CSCxXQUFXO1FBQ2I7UUFDQTtZQUNFUixNQUFNRCxFQUFFLDBCQUEwQjtZQUNsQ0UsTUFBTSxDQUFDLEVBQUVDLGNBQU0sQ0FBQ0MsTUFBTSxDQUFDLGNBQWMsQ0FBQztZQUN0Q0MsYUFBYUwsRUFDWCwrQkFDQTtZQUVGTyxNQUFNQyx5QkFBZ0I7WUFDdEJDLFdBQVc7UUFDYjtLQUNEO0FBRUQsZ0RBQWdEO0FBQ2hELE1BQU1LLDhCQUE4QixDQUFDZCxJQUFXO1FBQzlDO1lBQ0VDLE1BQU1ELEVBQUUsMkJBQTJCO1lBQ25DRSxNQUFNQyxjQUFNLENBQUNZLGlCQUFpQjtZQUM5QlYsYUFBYUwsRUFDWCxnQ0FDQTtZQUVGTyxNQUFNUyxzQkFBYTtZQUNuQlAsV0FBVztRQUNiO1FBQ0E7WUFDRVIsTUFBTUQsRUFBRSwwQkFBMEI7WUFDbENFLE1BQU0sQ0FBQyxFQUFFQyxjQUFNLENBQUNZLGlCQUFpQixDQUFDLFdBQVcsQ0FBQztZQUM5Q1YsYUFBYUwsRUFDWCwrQkFDQTtZQUVGTyxNQUFNUyxzQkFBYTtZQUNuQlAsV0FBVztRQUNiO1FBQ0E7WUFDRVIsTUFBTUQsRUFBRSxpQ0FBaUM7WUFDekNFLE1BQU0sQ0FBQyxFQUFFQyxjQUFNLENBQUNjLGtCQUFrQixDQUFDLGVBQWUsQ0FBQztZQUNuRFosYUFBYUwsRUFDWCxzQ0FDQTtZQUVGTyxNQUFNSyxzQkFBYTtZQUNuQkgsV0FBVztRQUNiO1FBQ0E7WUFDRVIsTUFBTUQsRUFBRSx5QkFBeUI7WUFDakNFLE1BQU1DLGNBQU0sQ0FBQ2UsT0FBTztZQUNwQmIsYUFBYUwsRUFDWCw4QkFDQTtZQUVGTyxNQUFNWSwwQkFBaUI7WUFDdkJWLFdBQVc7UUFDYjtRQUNBO1lBQ0VSLE1BQU1ELEVBQUUsMkJBQTJCO1lBQ25DRSxNQUFNLENBQUMsRUFBRUMsY0FBTSxDQUFDYyxrQkFBa0IsQ0FBQyxpQkFBaUIsQ0FBQztZQUNyRFosYUFBYUwsRUFDWCxnQ0FDQTtZQUVGTyxNQUFNYSxtQkFBVTtZQUNoQlgsV0FBVztRQUNiO0tBQ0Q7QUFFRCw0REFBNEQ7QUFDNUQsTUFBTVkscUJBQXFCLENBQUNyQixJQUFXO1FBQ3JDO1lBQ0VDLE1BQU1ELEVBQUUsOEJBQThCO1lBQ3RDRSxNQUFNQyxjQUFNLENBQUNtQixrQkFBa0I7UUFDakM7UUFDQTtZQUFFckIsTUFBTTtZQUFvQkMsTUFBTUMsY0FBTSxDQUFDb0IsUUFBUTtRQUFDO1FBQ2xEO1lBQUV0QixNQUFNO1lBQWtCQyxNQUFNQyxjQUFNLENBQUNxQixNQUFNO1FBQUM7S0FFL0M7QUFFYyxTQUFTMUI7SUFDdEIsTUFBTSxDQUFDMkIsZ0JBQWdCQyxrQkFBa0IsR0FBR0MsSUFBQUEsZUFBUSxFQUFDO0lBQ3JELE1BQU0sQ0FBQ0MsTUFBTUMsUUFBUSxHQUFHRixJQUFBQSxlQUFRLEVBQWE7SUFDN0MsTUFBTSxDQUFDRyxjQUFjQyxnQkFBZ0IsR0FBR0osSUFBQUEsZUFBUSxFQUFDO0lBQ2pELE1BQU0sQ0FBQ0ssdUJBQXVCQyx5QkFBeUIsR0FBR04sSUFBQUEsZUFBUSxFQUFDO0lBQ25FLE1BQU0sQ0FBQ08seUJBQXlCQywyQkFBMkIsR0FBR1IsSUFBQUEsZUFBUSxFQUFDO0lBQ3ZFLE1BQU1TLFNBQVNDLElBQUFBLHFCQUFTO0lBQ3hCLE1BQU0sRUFBRXJDLENBQUMsRUFBRSxHQUFHc0MsSUFBQUEsNEJBQVc7SUFFekJDLElBQUFBLGdCQUFTLEVBQUM7SUFDUixxQ0FBcUM7SUFDckMsbURBQW1EO0lBQ25ELHVCQUF1QjtJQUN2QixtRUFBbUU7SUFDbkUscUJBQXFCO0lBQ3JCLEtBQUs7SUFDTCxxQkFBcUI7SUFDdkIsR0FBRyxFQUFFO0lBRUwsTUFBTUMsZUFBZTtRQUNuQixxQ0FBcUM7UUFDckNULGdCQUFnQjtRQUNoQkssT0FBT0ssSUFBSSxDQUFDO0lBQ2Q7SUFFQSxNQUFNQyxxQkFBcUIsQ0FBQ0M7UUFDMUIsTUFBTUMsU0FBUztZQUNiQyxNQUFNO2dCQUNKdEMsb0JBQU0scUJBQUN1Qyx1QkFBYztvQkFBQ0MsV0FBVTs7Z0JBQ2hDQyxPQUFPO2dCQUNQQyxPQUFPO1lBQ1Q7WUFDQUMsTUFBTTtnQkFDSjNDLG9CQUFNLHFCQUFDNEMsa0JBQVM7b0JBQUNKLFdBQVU7O2dCQUMzQkMsT0FBTztnQkFDUEMsT0FBTztZQUNUO1lBQ0FHLFNBQVM7Z0JBQ1A3QyxvQkFBTSxxQkFBQzhDLGtCQUFLO29CQUFDTixXQUFVOztnQkFDdkJDLE9BQU87Z0JBQ1BDLE9BQU87WUFDVDtRQUNGO1FBQ0EsT0FBT0wsTUFBTSxDQUFDRCxLQUE0QixJQUFJQyxPQUFPQyxJQUFJO0lBQzNEO0lBRUEsTUFBTVMsc0JBQXNCdkQsdUJBQXVCQztJQUNuRCxNQUFNdUQseUJBQXlCakQsMEJBQTBCTjtJQUN6RCxNQUFNd0QsMkJBQTJCMUMsNEJBQTRCZDtJQUU3RCxxQkFDRSxxQkFBQ3lEO1FBQU9WLFdBQVU7a0JBQ2hCLGNBQUEsc0JBQUNXO1lBQUlYLFdBQVU7WUFBa0JZLGNBQVc7OzhCQUMxQyxzQkFBQ0M7b0JBQUliLFdBQVU7O3NDQUViLHFCQUFDYyxvQkFBTSxDQUFDRCxHQUFHOzRCQUNUYixXQUFVOzRCQUNWZSxZQUFZO2dDQUFFQyxPQUFPOzRCQUFLOzRCQUMxQkMsWUFBWTtnQ0FBRUMsTUFBTTtnQ0FBVUMsV0FBVztnQ0FBS0MsU0FBUzs0QkFBRztzQ0FFMUQsY0FBQSxxQkFBQ0M7Z0NBQUVsRSxNQUFNQyxjQUFNLENBQUNrRSxJQUFJO2dDQUFFdEIsV0FBVTswQ0FDOUIsY0FBQSxzQkFBQ2E7b0NBQUliLFdBQVU7O3NEQUNiLHFCQUFDdUIsYUFBSTs0Q0FBQ0MsTUFBSzs0Q0FBVUMsUUFBUTs7c0RBRTdCLHFCQUFDWCxvQkFBTSxDQUFDRCxHQUFHOzRDQUNUYixXQUFVOzRDQUNWMEIsU0FBUztnREFBRUMsU0FBUzs0Q0FBRTs0Q0FDdEJaLFlBQVk7Z0RBQUVZLFNBQVM7NENBQUU7NENBQ3pCVixZQUFZO2dEQUFFVyxVQUFVOzRDQUFJOzs7Ozs7c0NBT3BDLHNCQUFDZjs0QkFBSWIsV0FBVTs7Z0NBRVpPLG9CQUFvQnNCLEdBQUcsQ0FBQyxDQUFDQyxxQkFDeEIsc0JBQUNoQixvQkFBTSxDQUFDTyxDQUFDO3dDQUVQbEUsTUFBTTJFLEtBQUszRSxJQUFJO3dDQUNmNkMsV0FBVTt3Q0FDVmUsWUFBWTs0Q0FBRUMsT0FBTzt3Q0FBSzt3Q0FDMUJlLFVBQVU7NENBQUVmLE9BQU87d0NBQUs7d0NBQ3hCQyxZQUFZOzRDQUFFQyxNQUFNOzRDQUFVQyxXQUFXOzRDQUFLQyxTQUFTO3dDQUFHOzswREFFMUQscUJBQUNZO2dEQUFLaEMsV0FBVTswREFBaUI4QixLQUFLNUUsSUFBSTs7MERBRTFDLHFCQUFDNEQsb0JBQU0sQ0FBQ0QsR0FBRztnREFDVGIsV0FBVTtnREFDVjBCLFNBQVM7b0RBQUVPLFFBQVE7Z0RBQUU7Z0RBQ3JCbEIsWUFBWTtvREFBRWtCLFFBQVE7Z0RBQUU7Z0RBQ3hCaEIsWUFBWTtvREFBRVcsVUFBVTtnREFBSTs7MERBRzlCLHFCQUFDZCxvQkFBTSxDQUFDRCxHQUFHO2dEQUNUYixXQUFVO2dEQUNWMEIsU0FBUztvREFBRUMsU0FBUztnREFBRTtnREFDdEJaLFlBQVk7b0RBQUVZLFNBQVM7Z0RBQUU7Z0RBQ3pCVixZQUFZO29EQUFFVyxVQUFVO2dEQUFJOzs7dUNBcEJ6QkUsS0FBSzVFLElBQUk7OENBMEJsQixzQkFBQzJEO29DQUNDYixXQUFVO29DQUNWa0MsY0FBYyxJQUFNaEQseUJBQXlCO29DQUM3Q2lELGNBQWMsSUFBTWpELHlCQUF5Qjs7c0RBRTdDLHNCQUFDNEIsb0JBQU0sQ0FBQ3NCLE1BQU07NENBQ1pwQyxXQUFVOzRDQUNWZSxZQUFZO2dEQUFFQyxPQUFPOzRDQUFLOzRDQUMxQmUsVUFBVTtnREFBRWYsT0FBTzs0Q0FBSzs0Q0FDeEJDLFlBQVk7Z0RBQUVDLE1BQU07Z0RBQVVDLFdBQVc7Z0RBQUtDLFNBQVM7NENBQUc7OzhEQUUxRCxxQkFBQ1k7b0RBQUtoQyxXQUFVOzhEQUNiL0MsRUFBRSxpQkFBaUI7OzhEQUV0QixxQkFBQzZELG9CQUFNLENBQUNELEdBQUc7b0RBQ1R3QixTQUFTO3dEQUFFQyxRQUFRckQsd0JBQXdCLE1BQU07b0RBQUU7b0RBQ25EZ0MsWUFBWTt3REFBRVcsVUFBVTt3REFBS1csTUFBTTs0REFBQzs0REFBTzs0REFBTTs0REFBTzt5REFBRTtvREFBQzs4REFFM0QsY0FBQSxxQkFBQ0Msd0JBQWU7d0RBQUN4QyxXQUFVOzs7OERBRzdCLHFCQUFDYyxvQkFBTSxDQUFDRCxHQUFHO29EQUNUYixXQUFVO29EQUNWMEIsU0FBUzt3REFBRUMsU0FBUztvREFBRTtvREFDdEJaLFlBQVk7d0RBQUVZLFNBQVM7b0RBQUU7b0RBQ3pCVixZQUFZO3dEQUFFVyxVQUFVO29EQUFJOzs7O3NEQUloQyxxQkFBQ2EsNkJBQWU7c0RBQ2J4RCx1Q0FDQyxxQkFBQzZCLG9CQUFNLENBQUNELEdBQUc7Z0RBQ1RhLFNBQVM7b0RBQUVDLFNBQVM7b0RBQUdlLEdBQUcsQ0FBQztvREFBSTFCLE9BQU87Z0RBQUs7Z0RBQzNDcUIsU0FBUztvREFBRVYsU0FBUztvREFBR2UsR0FBRztvREFBRzFCLE9BQU87Z0RBQUU7Z0RBQ3RDMkIsTUFBTTtvREFBRWhCLFNBQVM7b0RBQUdlLEdBQUcsQ0FBQztvREFBSTFCLE9BQU87Z0RBQUs7Z0RBQ3hDQyxZQUFZO29EQUNWVyxVQUFVO29EQUNWVyxNQUFNO3dEQUFDO3dEQUFPO3dEQUFNO3dEQUFPO3FEQUFFO2dEQUMvQjtnREFDQXZDLFdBQVU7Z0RBQ1Y0QyxPQUFPO29EQUFFQyxNQUFNO29EQUFPQyxXQUFXO2dEQUFtQjswREFFcEQsY0FBQSxzQkFBQ2pDO29EQUFJYixXQUFVOztzRUFDYixxQkFBQytDOzREQUFHL0MsV0FBVTtzRUFDWC9DLEVBQUUseUJBQXlCOztzRUFFOUIscUJBQUM0RDs0REFBSWIsV0FBVTtzRUFDWlEsdUJBQXVCcUIsR0FBRyxDQUFDLENBQUNDLE1BQU1rQixzQkFDakMsc0JBQUNsQyxvQkFBTSxDQUFDTyxDQUFDO29FQUVQbEUsTUFBTTJFLEtBQUszRSxJQUFJO29FQUNmNkMsV0FBVTtvRUFDVjBCLFNBQVM7d0VBQUVDLFNBQVM7d0VBQUdlLEdBQUc7b0VBQUc7b0VBQzdCTCxTQUFTO3dFQUFFVixTQUFTO3dFQUFHZSxHQUFHO29FQUFFO29FQUM1QnpCLFlBQVk7d0VBQUVnQyxPQUFPRCxRQUFRO3dFQUFNcEIsVUFBVTtvRUFBSTtvRUFDakRiLFlBQVk7d0VBQUVDLE9BQU87d0VBQU0wQixHQUFHLENBQUM7b0VBQUU7b0VBQ2pDWCxVQUFVO3dFQUFFZixPQUFPO29FQUFLOztzRkFFeEIsc0JBQUNIOzRFQUFJYixXQUFVOzs4RkFDYixxQkFBQ2Msb0JBQU0sQ0FBQ0QsR0FBRztvRkFDVGIsV0FBVyxDQUFDLHVEQUF1RCxDQUFDO29GQUNwRWUsWUFBWTt3RkFBRXVCLFFBQVE7b0ZBQUU7OEZBRXhCLGNBQUEscUJBQUNSLEtBQUt0RSxJQUFJO3dGQUNSd0MsV0FBVyxDQUFDLFFBQVEsRUFBRThCLEtBQUtwRSxTQUFTLENBQUMsQ0FBQzs7OzhGQUcxQyxxQkFBQ21EO29GQUFJYixXQUFVOzhGQUNaOEIsS0FBSzVFLElBQUk7Ozs7c0ZBR2QscUJBQUMyRDs0RUFBSWIsV0FBVTtzRkFDWjhCLEtBQUt4RSxXQUFXOzs7bUVBdkJkd0UsS0FBSzVFLElBQUk7Ozs7Ozs7OzhDQW1DOUIsc0JBQUMyRDtvQ0FDQ2IsV0FBVTtvQ0FDVmtDLGNBQWMsSUFBTTlDLDJCQUEyQjtvQ0FDL0MrQyxjQUFjLElBQU0vQywyQkFBMkI7O3NEQUUvQyxzQkFBQzBCLG9CQUFNLENBQUNzQixNQUFNOzRDQUNacEMsV0FBVTs0Q0FDVmUsWUFBWTtnREFBRUMsT0FBTzs0Q0FBSzs0Q0FDMUJlLFVBQVU7Z0RBQUVmLE9BQU87NENBQUs7NENBQ3hCQyxZQUFZO2dEQUFFQyxNQUFNO2dEQUFVQyxXQUFXO2dEQUFLQyxTQUFTOzRDQUFHOzs4REFFMUQscUJBQUNZO29EQUFLaEMsV0FBVTs4REFDYi9DLEVBQUUsb0JBQW9COzs4REFFekIscUJBQUM2RCxvQkFBTSxDQUFDRCxHQUFHO29EQUNUd0IsU0FBUzt3REFBRUMsUUFBUW5ELDBCQUEwQixNQUFNO29EQUFFO29EQUNyRDhCLFlBQVk7d0RBQUVXLFVBQVU7d0RBQUtXLE1BQU07NERBQUM7NERBQU87NERBQU07NERBQU87eURBQUU7b0RBQUM7OERBRTNELGNBQUEscUJBQUNDLHdCQUFlO3dEQUFDeEMsV0FBVTs7OzhEQUc3QixxQkFBQ2Msb0JBQU0sQ0FBQ0QsR0FBRztvREFDVGIsV0FBVTtvREFDVjBCLFNBQVM7d0RBQUVDLFNBQVM7b0RBQUU7b0RBQ3RCWixZQUFZO3dEQUFFWSxTQUFTO29EQUFFO29EQUN6QlYsWUFBWTt3REFBRVcsVUFBVTtvREFBSTs7OztzREFJaEMscUJBQUNhLDZCQUFlO3NEQUNidEQseUNBQ0MscUJBQUMyQixvQkFBTSxDQUFDRCxHQUFHO2dEQUNUYSxTQUFTO29EQUFFQyxTQUFTO29EQUFHZSxHQUFHLENBQUM7b0RBQUkxQixPQUFPO2dEQUFLO2dEQUMzQ3FCLFNBQVM7b0RBQUVWLFNBQVM7b0RBQUdlLEdBQUc7b0RBQUcxQixPQUFPO2dEQUFFO2dEQUN0QzJCLE1BQU07b0RBQUVoQixTQUFTO29EQUFHZSxHQUFHLENBQUM7b0RBQUkxQixPQUFPO2dEQUFLO2dEQUN4Q0MsWUFBWTtvREFDVlcsVUFBVTtvREFDVlcsTUFBTTt3REFBQzt3REFBTzt3REFBTTt3REFBTztxREFBRTtnREFDL0I7Z0RBQ0F2QyxXQUFVO2dEQUNWNEMsT0FBTztvREFBRUMsTUFBTTtvREFBT0MsV0FBVztnREFBbUI7MERBRXBELGNBQUEsc0JBQUNqQztvREFBSWIsV0FBVTs7c0VBQ2IscUJBQUMrQzs0REFBRy9DLFdBQVU7c0VBQ1gvQyxFQUFFLDBCQUEwQjs7c0VBRS9CLHFCQUFDNEQ7NERBQUliLFdBQVU7c0VBQ1pTLHlCQUF5Qm9CLEdBQUcsQ0FBQyxDQUFDQyxNQUFNa0Isc0JBQ25DLHNCQUFDbEMsb0JBQU0sQ0FBQ08sQ0FBQztvRUFFUGxFLE1BQU0yRSxLQUFLM0UsSUFBSTtvRUFDZjZDLFdBQVU7b0VBQ1YwQixTQUFTO3dFQUFFQyxTQUFTO3dFQUFHZSxHQUFHO29FQUFHO29FQUM3QkwsU0FBUzt3RUFBRVYsU0FBUzt3RUFBR2UsR0FBRztvRUFBRTtvRUFDNUJ6QixZQUFZO3dFQUFFZ0MsT0FBT0QsUUFBUTt3RUFBTXBCLFVBQVU7b0VBQUk7b0VBQ2pEYixZQUFZO3dFQUFFQyxPQUFPO3dFQUFNMEIsR0FBRyxDQUFDO29FQUFFO29FQUNqQ1gsVUFBVTt3RUFBRWYsT0FBTztvRUFBSzs7c0ZBRXhCLHNCQUFDSDs0RUFBSWIsV0FBVTs7OEZBQ2IscUJBQUNjLG9CQUFNLENBQUNELEdBQUc7b0ZBQ1RiLFdBQVcsQ0FBQyx1REFBdUQsQ0FBQztvRkFDcEVlLFlBQVk7d0ZBQUV1QixRQUFRO29GQUFFOzhGQUV4QixjQUFBLHFCQUFDUixLQUFLdEUsSUFBSTt3RkFDUndDLFdBQVcsQ0FBQyxRQUFRLEVBQUU4QixLQUFLcEUsU0FBUyxDQUFDLENBQUM7Ozs4RkFHMUMscUJBQUNtRDtvRkFBSWIsV0FBVTs4RkFDWjhCLEtBQUs1RSxJQUFJOzs7O3NGQUdkLHFCQUFDMkQ7NEVBQUliLFdBQVU7c0ZBQ1o4QixLQUFLeEUsV0FBVzs7O21FQXZCZHdFLEtBQUs1RSxJQUFJOzs7Ozs7Ozs4Q0FtQzlCLHNCQUFDNEQsb0JBQU0sQ0FBQ08sQ0FBQztvQ0FDUGxFLE1BQU1DLGNBQU0sQ0FBQzhGLE9BQU87b0NBQ3BCbEQsV0FBVTtvQ0FDVmUsWUFBWTt3Q0FBRUMsT0FBTztvQ0FBSztvQ0FDMUJlLFVBQVU7d0NBQUVmLE9BQU87b0NBQUs7b0NBQ3hCQyxZQUFZO3dDQUFFQyxNQUFNO3dDQUFVQyxXQUFXO3dDQUFLQyxTQUFTO29DQUFHOztzREFFMUQscUJBQUNOLG9CQUFNLENBQUNELEdBQUc7NENBQ1RiLFdBQVU7NENBQ1ZlLFlBQVk7Z0RBQUVDLE9BQU87NENBQUk7NENBQ3pCcUIsU0FBUztnREFDUHJCLE9BQU87b0RBQUM7b0RBQUc7b0RBQUs7aURBQUU7NENBQ3BCOzRDQUNBQyxZQUFZO2dEQUNWVyxVQUFVO2dEQUNWdUIsUUFBUUM7Z0RBQ1JDLFlBQVk7NENBQ2Q7c0RBQ0Q7O3NEQUdELHFCQUFDckI7NENBQUtoQyxXQUFVO3NEQUNiL0MsRUFBRSx1QkFBdUI7O3NEQUc1QixxQkFBQzZELG9CQUFNLENBQUNELEdBQUc7NENBQ1RiLFdBQVU7NENBQ1YwQixTQUFTO2dEQUFFQyxTQUFTOzRDQUFFOzRDQUN0QlosWUFBWTtnREFBRVksU0FBUzs0Q0FBRTs0Q0FDekJWLFlBQVk7Z0RBQUVXLFVBQVU7NENBQUk7O3NEQUc5QixxQkFBQ2Qsb0JBQU0sQ0FBQ0QsR0FBRzs0Q0FDVGIsV0FBVTs0Q0FDVjBCLFNBQVM7Z0RBQUVPLFFBQVE7NENBQUU7NENBQ3JCbEIsWUFBWTtnREFBRWtCLFFBQVE7NENBQUU7NENBQ3hCaEIsWUFBWTtnREFBRVcsVUFBVTs0Q0FBSTs7Ozs7O3NDQU1sQyxzQkFBQ2Y7NEJBQUliLFdBQVU7OzhDQUNiLHFCQUFDc0Qsa0JBQVM7b0NBQUNDLFNBQVE7OzhDQUNuQixxQkFBQ0MseUJBQWdCO29DQUFDeEQsV0FBVTtvQ0FBa0J5RCxZQUFZOzs4Q0FDMUQscUJBQUNDLHVCQUFjO2dDQUNkN0UscUJBQ0Msc0JBQUNnQztvQ0FBSWIsV0FBVTs7c0RBQ2Isc0JBQUNvQzs0Q0FDQ3VCLFNBQVMsSUFBTTNFLGdCQUFnQixDQUFDRDs0Q0FDaENpQixXQUFVOzs4REFFVixxQkFBQ2E7b0RBQUliLFdBQVU7OERBQ1puQixLQUFLM0IsSUFBSSxDQUNQMEcsS0FBSyxDQUFDLEtBQ04vQixHQUFHLENBQUMsQ0FBQ2dDLElBQWNBLENBQUMsQ0FBQyxFQUFFLEVBQ3ZCQyxJQUFJLENBQUM7OzhEQUVWLHNCQUFDakQ7b0RBQUliLFdBQVU7O3NFQUNiLHFCQUFDYTs0REFBSWIsV0FBVTtzRUFDWm5CLEtBQUszQixJQUFJLENBQUMwRyxLQUFLLENBQUMsSUFBSSxDQUFDLEVBQUU7O3NFQUUxQixzQkFBQy9DOzREQUFJYixXQUFVOztnRUFDWkwsbUJBQW1CZCxLQUFLa0YsY0FBYyxFQUFFdkcsSUFBSTs4RUFDN0MscUJBQUN3RTtvRUFDQ2hDLFdBQVcsQ0FBQyxRQUFRLEVBQ2xCTCxtQkFBbUJkLEtBQUtrRixjQUFjLEVBQUU5RCxLQUFLLENBQzlDLGtCQUFrQixDQUFDOzhFQUVuQk4sbUJBQW1CZCxLQUFLa0YsY0FBYyxFQUFFN0QsS0FBSzs7Ozs7Ozs7c0RBT3RELHFCQUFDdUMsNkJBQWU7c0RBQ2IxRCw4QkFDQyxzQkFBQytCLG9CQUFNLENBQUNELEdBQUc7Z0RBQ1RhLFNBQVM7b0RBQUVDLFNBQVM7b0RBQUdlLEdBQUcsQ0FBQztnREFBRztnREFDOUJMLFNBQVM7b0RBQUVWLFNBQVM7b0RBQUdlLEdBQUc7Z0RBQUU7Z0RBQzVCQyxNQUFNO29EQUFFaEIsU0FBUztvREFBR2UsR0FBRyxDQUFDO2dEQUFHO2dEQUMzQjFDLFdBQVU7O2tFQUVWLHNCQUFDcUI7d0RBQ0NsRSxNQUFNLENBQUMsU0FBUyxFQUFFMEIsS0FBS21GLEVBQUUsQ0FBQyxDQUFDO3dEQUMzQmhFLFdBQVU7d0RBQ1YyRCxTQUFTLElBQU0zRSxnQkFBZ0I7OzBFQUUvQixxQkFBQ2lGLGlCQUFRO2dFQUFDakUsV0FBVTs7MEVBQ3BCLHFCQUFDZ0M7MEVBQUs7Ozs7a0VBRVIsc0JBQUNYO3dEQUNDbEUsTUFBTUMsY0FBTSxDQUFDOEcsU0FBUzt3REFDdEJsRSxXQUFVO3dEQUNWMkQsU0FBUyxJQUFNM0UsZ0JBQWdCOzswRUFFL0IscUJBQUNvQixrQkFBUztnRUFBQ0osV0FBVTs7MEVBQ3JCLHFCQUFDZ0M7MEVBQUs7Ozs7a0VBRVIsc0JBQUNYO3dEQUNDbEUsTUFBTUMsY0FBTSxDQUFDK0csU0FBUzt3REFDdEJuRSxXQUFVO3dEQUNWMkQsU0FBUyxJQUFNM0UsZ0JBQWdCOzswRUFFL0IscUJBQUNlLHVCQUFjO2dFQUFDQyxXQUFVOzswRUFDMUIscUJBQUNnQzswRUFBSzs7OztvREFFUG5ELEtBQUt1RixJQUFJLEtBQUsseUJBQ2Isc0JBQUMvQzt3REFDQ2xFLE1BQU1DLGNBQU0sQ0FBQ2lILEtBQUs7d0RBQ2xCckUsV0FBVTt3REFDVjJELFNBQVMsSUFBTTNFLGdCQUFnQjs7MEVBRS9CLHFCQUFDc0Ysd0JBQWU7Z0VBQUN0RSxXQUFVOzswRUFDM0IscUJBQUNnQzswRUFBSzs7OztrRUFHVixxQkFBQ25CO3dEQUFJYixXQUFVOztrRUFDZixzQkFBQ29DO3dEQUNDdUIsU0FBU2xFO3dEQUNUTyxXQUFVOzswRUFFVixxQkFBQ3VFLG1CQUFNO2dFQUFDdkUsV0FBVTs7MEVBQ2xCLHFCQUFDZ0M7MEVBQUs7Ozs7Ozs7O21EQU9oQjs7c0RBQ0UscUJBQUNYOzRDQUNDbEUsTUFBTUMsY0FBTSxDQUFDb0gsS0FBSzs0Q0FDbEJ4RSxXQUFVOzRDQUNWeUUsT0FBTTtzREFFTixjQUFBLHFCQUFDUixpQkFBUTtnREFBQ2pFLFdBQVU7OztzREFFdEIsc0JBQUNjLG9CQUFNLENBQUNPLENBQUM7NENBQ1BsRSxNQUFNQyxjQUFNLENBQUNzSCxLQUFLOzRDQUNsQjFFLFdBQVU7NENBQ1ZlLFlBQVk7Z0RBQUVDLE9BQU87NENBQUs7NENBQzFCZSxVQUFVO2dEQUFFZixPQUFPOzRDQUFLOzRDQUN4QkMsWUFBWTtnREFBRUMsTUFBTTtnREFBVUMsV0FBVztnREFBS0MsU0FBUzs0Q0FBRzs7OERBRzFELHFCQUFDTixvQkFBTSxDQUFDRCxHQUFHO29EQUNUYixXQUFVO29EQUNWMEIsU0FBUzt3REFBRWlELEdBQUc7b0RBQVE7b0RBQ3RCNUQsWUFBWTt3REFBRTRELEdBQUc7b0RBQU87b0RBQ3hCMUQsWUFBWTt3REFBRVcsVUFBVTtvREFBSTs7OERBRTlCLHFCQUFDSTtvREFBS2hDLFdBQVU7OERBQWlDOzs4REFHakQscUJBQUNnQztvREFBS2hDLFdBQVU7OERBQTBCOzs7Ozs7OztzQ0FTbEQsc0JBQUNhOzRCQUFJYixXQUFVOztnQ0FFWm5CLHNCQUNDOzhDQUNFLGNBQUEscUJBQUMyRSx5QkFBZ0I7d0NBQUN4RCxXQUFVOzs7OENBR2hDLHFCQUFDMEQsdUJBQWM7OENBQ2YscUJBQUNrQixpQ0FBZTtvQ0FDZEMsZUFBWTtvQ0FDWmpFLGNBQVlsQyxpQkFBaUIsZUFBZTtvQ0FDNUNvRyxRQUFRcEc7b0NBQ1JpRixTQUFTLElBQU1oRixrQkFBa0IsQ0FBQ0Q7Ozs7Ozs4QkFNeEMscUJBQUMrRCw2QkFBZTs4QkFDYi9ELGdDQUNDOzswQ0FFRSxxQkFBQ29DLG9CQUFNLENBQUNELEdBQUc7Z0NBQ1RhLFNBQVM7b0NBQUVDLFNBQVM7Z0NBQUU7Z0NBQ3RCVSxTQUFTO29DQUFFVixTQUFTO2dDQUFFO2dDQUN0QmdCLE1BQU07b0NBQUVoQixTQUFTO2dDQUFFO2dDQUNuQlYsWUFBWTtvQ0FBRVcsVUFBVTtnQ0FBSTtnQ0FDNUI1QixXQUFVO2dDQUNWMkQsU0FBUyxJQUFNaEYsa0JBQWtCOzswQ0FJbkMscUJBQUNtQyxvQkFBTSxDQUFDRCxHQUFHO2dDQUNUYSxTQUFTO29DQUFFQyxTQUFTO29DQUFHZSxHQUFHLENBQUM7b0NBQUkxQixPQUFPO2dDQUFLO2dDQUMzQ3FCLFNBQVM7b0NBQUVWLFNBQVM7b0NBQUdlLEdBQUc7b0NBQUcxQixPQUFPO2dDQUFFO2dDQUN0QzJCLE1BQU07b0NBQUVoQixTQUFTO29DQUFHZSxHQUFHLENBQUM7b0NBQUkxQixPQUFPO2dDQUFLO2dDQUN4Q0MsWUFBWTtvQ0FDVlcsVUFBVTtvQ0FDVlcsTUFBTTt3Q0FBQzt3Q0FBTzt3Q0FBTTt3Q0FBTztxQ0FBRTtvQ0FDN0JyQixNQUFNO29DQUNOQyxXQUFXO29DQUNYQyxTQUFTO2dDQUNYO2dDQUNBcEIsV0FBVTtnQ0FDVjRDLE9BQU87b0NBQ0xtQyxXQUFXO2dDQUNiOzBDQUVBLGNBQUEsc0JBQUNsRTtvQ0FBSWIsV0FBVTs7c0RBRWIsc0JBQUNhOzRDQUFJYixXQUFVOzs4REFDYixxQkFBQytDO29EQUFHL0MsV0FBVTs4REFBMkM7OzhEQUd6RCxxQkFBQ2E7b0RBQUliLFdBQVU7OERBQ2IsY0FBQSxzQkFBQ2E7d0RBQUliLFdBQVU7OzBFQUNiLHFCQUFDZ0YseUJBQWdCO2dFQUFDaEYsV0FBVTs7MEVBQzVCLHNCQUFDYTtnRUFBSWIsV0FBVTs7a0ZBQ2IscUJBQUNpRjt3RUFBR2pGLFdBQVU7a0ZBQ1gvQyxFQUFFLG1CQUFtQjs7a0ZBRXhCLHFCQUFDaUk7d0VBQUVsRixXQUFVO2tGQUNWL0MsRUFDQyx5QkFDQTs7Ozs7Ozs7O3NEQVNaLHNCQUFDNEQ7NENBQUliLFdBQVU7OzhEQUNiLHFCQUFDK0M7b0RBQUcvQyxXQUFVOzhEQUNYL0MsRUFBRSxnQkFBZ0I7OzhEQUVyQixzQkFBQzZELG9CQUFNLENBQUNPLENBQUM7b0RBQ1BsRSxNQUFNQyxjQUFNLENBQUNDLE1BQU07b0RBQ25CMkMsV0FBVTtvREFDVjJELFNBQVMsSUFBTWhGLGtCQUFrQjtvREFDakNvQyxZQUFZO3dEQUFFQyxPQUFPO3dEQUFNMkQsR0FBRztvREFBRTtvREFDaEM1QyxVQUFVO3dEQUFFZixPQUFPO29EQUFLO29EQUN4QkMsWUFBWTt3REFBRUMsTUFBTTt3REFBVUMsV0FBVzt3REFBS0MsU0FBUztvREFBRzs7c0VBRTFELHFCQUFDM0QseUJBQWdCOzREQUFDdUMsV0FBVTs7c0VBQzVCLHFCQUFDZ0M7c0VBQ0UvRSxFQUFFLHVCQUF1Qjs7Ozs7O3NEQU1oQyxzQkFBQzREOzRDQUFJYixXQUFVOzs4REFDYixxQkFBQytDO29EQUFHL0MsV0FBVTs4REFDWC9DLEVBQUUsY0FBYzs7OERBRW5CLHNCQUFDNkQsb0JBQU0sQ0FBQ08sQ0FBQztvREFDUGxFLE1BQU1DLGNBQU0sQ0FBQzhGLE9BQU87b0RBQ3BCbEQsV0FBVTtvREFDVjJELFNBQVMsSUFBTWhGLGtCQUFrQjtvREFDakNvQyxZQUFZO3dEQUFFQyxPQUFPO3dEQUFNMkQsR0FBRztvREFBRTtvREFDaEM1QyxVQUFVO3dEQUFFZixPQUFPO29EQUFLO29EQUN4QkMsWUFBWTt3REFBRUMsTUFBTTt3REFBVUMsV0FBVzt3REFBS0MsU0FBUztvREFBRzs7c0VBRTFELHFCQUFDWTs0REFBS2hDLFdBQVU7c0VBQXVCOztzRUFDdkMscUJBQUNnQztzRUFBTS9FLEVBQUUsdUJBQXVCOzs7Ozs7c0RBS3BDLHNCQUFDNEQ7NENBQUliLFdBQVU7OzhEQUNiLHFCQUFDK0M7b0RBQUcvQyxXQUFVOzhEQUNYL0MsRUFBRSx5QkFBeUI7O2dEQUU3QnVELHVCQUF1QnFCLEdBQUcsQ0FBQyxDQUFDQyxNQUFNa0Isc0JBQ2pDLHNCQUFDbEMsb0JBQU0sQ0FBQ08sQ0FBQzt3REFFUGxFLE1BQU0yRSxLQUFLM0UsSUFBSTt3REFDZjZDLFdBQVU7d0RBQ1YyRCxTQUFTLElBQU1oRixrQkFBa0I7d0RBQ2pDK0MsU0FBUzs0REFBRUMsU0FBUzs0REFBR2dELEdBQUcsQ0FBQzt3REFBRzt3REFDOUJ0QyxTQUFTOzREQUFFVixTQUFTOzREQUFHZ0QsR0FBRzt3REFBRTt3REFDNUIxRCxZQUFZOzREQUFFZ0MsT0FBT0QsUUFBUTs0REFBTTlCLE1BQU07NERBQVVDLFdBQVc7NERBQUtDLFNBQVM7d0RBQUc7d0RBQy9FTCxZQUFZOzREQUFFQyxPQUFPOzREQUFNMkQsR0FBRzt3REFBRTt3REFDaEM1QyxVQUFVOzREQUFFZixPQUFPO3dEQUFLOzswRUFFeEIscUJBQUNjLEtBQUt0RSxJQUFJO2dFQUFDd0MsV0FBVyxDQUFDLFFBQVEsRUFBRThCLEtBQUtwRSxTQUFTLENBQUMsd0RBQXdELENBQUM7OzBFQUN6RyxxQkFBQ3NFOzBFQUFNRixLQUFLNUUsSUFBSTs7O3VEQVhYNEUsS0FBSzVFLElBQUk7OztzREFpQnBCLHNCQUFDMkQ7NENBQUliLFdBQVU7OzhEQUNiLHFCQUFDK0M7b0RBQUcvQyxXQUFVOzhEQUNYL0MsRUFBRSwwQkFBMEI7O2dEQUU5QndELHlCQUF5Qm9CLEdBQUcsQ0FBQyxDQUFDQyxNQUFNa0Isc0JBQ25DLHNCQUFDbEMsb0JBQU0sQ0FBQ08sQ0FBQzt3REFFUGxFLE1BQU0yRSxLQUFLM0UsSUFBSTt3REFDZjZDLFdBQVU7d0RBQ1YyRCxTQUFTLElBQU1oRixrQkFBa0I7d0RBQ2pDK0MsU0FBUzs0REFBRUMsU0FBUzs0REFBR2dELEdBQUcsQ0FBQzt3REFBRzt3REFDOUJ0QyxTQUFTOzREQUFFVixTQUFTOzREQUFHZ0QsR0FBRzt3REFBRTt3REFDNUIxRCxZQUFZOzREQUFFZ0MsT0FBT0QsUUFBUTs0REFBTTlCLE1BQU07NERBQVVDLFdBQVc7NERBQUtDLFNBQVM7d0RBQUc7d0RBQy9FTCxZQUFZOzREQUFFQyxPQUFPOzREQUFNMkQsR0FBRzt3REFBRTt3REFDaEM1QyxVQUFVOzREQUFFZixPQUFPO3dEQUFLOzswRUFFeEIscUJBQUNjLEtBQUt0RSxJQUFJO2dFQUFDd0MsV0FBVyxDQUFDLFFBQVEsRUFBRThCLEtBQUtwRSxTQUFTLENBQUMsd0RBQXdELENBQUM7OzBFQUN6RyxxQkFBQ3NFOzBFQUFNRixLQUFLNUUsSUFBSTs7O3VEQVhYNEUsS0FBSzVFLElBQUk7OztzREFpQnBCLHNCQUFDMkQ7NENBQUliLFdBQVU7OzhEQUNiLHFCQUFDK0M7b0RBQUcvQyxXQUFVOzhEQUNYL0MsRUFBRSxZQUFZOzs4REFFakIscUJBQUM2RCxvQkFBTSxDQUFDTyxDQUFDO29EQUNQbEUsTUFBTUMsY0FBTSxDQUFDK0gsS0FBSztvREFDbEJuRixXQUFVO29EQUNWMkQsU0FBUyxJQUFNaEYsa0JBQWtCO29EQUNqQ29DLFlBQVk7d0RBQUVDLE9BQU87d0RBQU0yRCxHQUFHO29EQUFFO29EQUNoQzVDLFVBQVU7d0RBQUVmLE9BQU87b0RBQUs7OERBRXZCL0QsRUFBRSxhQUFhOzs4REFFbEIscUJBQUM2RCxvQkFBTSxDQUFDTyxDQUFDO29EQUNQbEUsTUFBTUMsY0FBTSxDQUFDZSxPQUFPO29EQUNwQjZCLFdBQVU7b0RBQ1YyRCxTQUFTLElBQU1oRixrQkFBa0I7b0RBQ2pDb0MsWUFBWTt3REFBRUMsT0FBTzt3REFBTTJELEdBQUc7b0RBQUU7b0RBQ2hDNUMsVUFBVTt3REFBRWYsT0FBTztvREFBSzs4REFFdkIvRCxFQUFFLGVBQWU7Ozs7c0RBS3RCLHFCQUFDNEQ7NENBQUliLFdBQVU7c0RBQ1puQixxQkFDQzs7a0VBQ0Usc0JBQUNnQzt3REFBSWIsV0FBVTs7MEVBQ2IscUJBQUNhO2dFQUFJYixXQUFVOzBFQUNabkIsS0FBSzNCLElBQUksQ0FDUDBHLEtBQUssQ0FBQyxLQUNOL0IsR0FBRyxDQUFDLENBQUNnQyxJQUFjQSxDQUFDLENBQUMsRUFBRSxFQUN2QkMsSUFBSSxDQUFDOzswRUFFVixzQkFBQ2pEO2dFQUFJYixXQUFVOztrRkFDYixxQkFBQ2E7d0VBQUliLFdBQVU7a0ZBQ1puQixLQUFLM0IsSUFBSTs7a0ZBRVosc0JBQUMyRDt3RUFBSWIsV0FBVTs7NEVBQ1pMLG1CQUFtQmQsS0FBS2tGLGNBQWMsRUFBRXZHLElBQUk7MEZBQzdDLHNCQUFDd0U7Z0ZBQ0NoQyxXQUFXLENBQUMsUUFBUSxFQUNsQkwsbUJBQW1CZCxLQUFLa0YsY0FBYyxFQUFFOUQsS0FBSyxDQUM5QyxrQkFBa0IsQ0FBQzs7b0ZBRW5CTixtQkFBbUJkLEtBQUtrRixjQUFjLEVBQUU3RCxLQUFLO29GQUFFO29GQUFJOzs7Ozs7Ozs7a0VBTzVELHNCQUFDbUI7d0RBQ0NsRSxNQUFNLENBQUMsU0FBUyxFQUFFMEIsS0FBS21GLEVBQUUsQ0FBQyxDQUFDO3dEQUMzQmhFLFdBQVU7d0RBQ1YyRCxTQUFTLElBQU1oRixrQkFBa0I7OzBFQUVqQyxxQkFBQ3NGLGlCQUFRO2dFQUFDakUsV0FBVTs7MEVBQ3BCLHFCQUFDZ0M7MEVBQUs7Ozs7a0VBRVIsc0JBQUNYO3dEQUNDbEUsTUFBTUMsY0FBTSxDQUFDOEcsU0FBUzt3REFDdEJsRSxXQUFVO3dEQUNWMkQsU0FBUyxJQUFNaEYsa0JBQWtCOzswRUFFakMscUJBQUN5QixrQkFBUztnRUFBQ0osV0FBVTs7MEVBQ3JCLHFCQUFDZ0M7MEVBQUs7Ozs7a0VBR1Isc0JBQUNYO3dEQUNDbEUsTUFBTUMsY0FBTSxDQUFDK0csU0FBUzt3REFDdEJuRSxXQUFVO3dEQUNWMkQsU0FBUyxJQUFNaEYsa0JBQWtCOzswRUFFakMscUJBQUNvQix1QkFBYztnRUFBQ0MsV0FBVTs7MEVBQzFCLHFCQUFDZ0M7MEVBQUs7Ozs7b0RBR1BuRCxLQUFLdUYsSUFBSSxLQUFLLHlCQUNiLHNCQUFDL0M7d0RBQ0NsRSxNQUFNQyxjQUFNLENBQUNpSCxLQUFLO3dEQUNsQnJFLFdBQVU7d0RBQ1YyRCxTQUFTLElBQU1oRixrQkFBa0I7OzBFQUVqQyxxQkFBQzJGLHdCQUFlO2dFQUFDdEUsV0FBVTs7MEVBQzNCLHFCQUFDZ0M7MEVBQUs7Ozs7a0VBSVYsc0JBQUNJO3dEQUNDdUIsU0FBUzs0REFDUGxFOzREQUNBZCxrQkFBa0I7d0RBQ3BCO3dEQUNBcUIsV0FBVTs7MEVBRVYscUJBQUN1RSxtQkFBTTtnRUFBQ3ZFLFdBQVU7OzBFQUNsQixxQkFBQ2dDOzBFQUFLOzs7OzsrREFJVjs7a0VBQ0Usc0JBQUNYO3dEQUNDbEUsTUFBTUMsY0FBTSxDQUFDb0gsS0FBSzt3REFDbEJ4RSxXQUFVO3dEQUNWMkQsU0FBUyxJQUFNaEYsa0JBQWtCOzswRUFFakMscUJBQUNzRixpQkFBUTtnRUFBQ2pFLFdBQVU7OzBFQUNwQixxQkFBQ2dDOzBFQUFLOzs7O2tFQUVSLHFCQUFDbkI7d0RBQUliLFdBQVU7a0VBQ2IsY0FBQSxxQkFBQ3FCOzREQUNDbEUsTUFBTUMsY0FBTSxDQUFDZ0ksTUFBTTs0REFDbkJwRixXQUFVOzREQUNWMkQsU0FBUyxJQUFNaEYsa0JBQWtCO3NFQUVqQyxjQUFBLHFCQUFDcUQ7Z0VBQUtoQyxXQUFVOzBFQUE4Qjs7Ozs7Ozs7Ozs7Ozs7OztBQWdCMUUifQ==

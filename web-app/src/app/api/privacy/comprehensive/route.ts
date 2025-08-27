@@ -13,6 +13,7 @@ import { cookies } from 'next/headers'
 import { gdprComplianceAuditEngine } from '@/lib/privacy/GDPRComplianceAuditEngine'
 import { createPortuguesePrivacyFramework } from '@/lib/privacy/PrivacyProtectionFramework'
 import { AI_SECURITY_CONFIG } from '@/config/ai-security'
+import { logger } from '@/utils/logger'
 
 // =============================================================================
 // PRIVACY REQUEST TYPES
@@ -86,7 +87,11 @@ export async function GET(request: NextRequest) {
     }
 
   } catch (error) {
-    console.error('Privacy API GET error:', error)
+    logger.error('Privacy API GET error', error, {
+      area: 'security',
+      culturalContext: 'lusophone',
+      action: 'privacy_request_get'
+    })
     return NextResponse.json({
       error: 'Internal server error',
       message: {
@@ -155,7 +160,11 @@ export async function POST(request: NextRequest) {
     }
 
   } catch (error) {
-    console.error('Privacy API POST error:', error)
+    logger.error('Privacy API POST error', error, {
+      area: 'security',
+      culturalContext: 'lusophone',
+      action: 'privacy_request_post'
+    })
     return NextResponse.json({
       error: 'Internal server error',
       message: {
@@ -377,7 +386,12 @@ async function handleDataExport(request: PrivacyRequest, supabase: any): Promise
   
   try {
     // Log the export request
-    console.log(`Data export request initiated for user ${request.userId}`)
+    logger.info(`Data export request initiated for Portuguese-speaking community member`, {
+      userId: request.userId,
+      area: 'security',
+      culturalContext: 'lusophone',
+      action: 'data_export_initiated'
+    })
 
     // In production, this would:
     // 1. Gather all user data from various tables
@@ -438,7 +452,12 @@ async function handleDataDeletion(request: PrivacyRequest, supabase: any): Promi
   
   try {
     // Log the deletion request
-    console.log(`Data deletion request initiated for user ${request.userId}`)
+    logger.warn(`Data deletion request initiated for Portuguese-speaking community member`, {
+      userId: request.userId,
+      area: 'security',
+      culturalContext: 'lusophone',
+      action: 'data_deletion_initiated'
+    })
 
     // In production, this would:
     // 1. Verify user identity with additional authentication
@@ -506,7 +525,13 @@ async function handleDataRectification(request: PrivacyRequest, supabase: any): 
     // In production, this would update the specified data fields
     const rectificationData = request.parameters?.rectificationData || {}
     
-    console.log(`Data rectification request for user ${request.userId}:`, rectificationData)
+    logger.info(`Data rectification request for Portuguese-speaking community member`, {
+      userId: request.userId,
+      area: 'security',
+      culturalContext: 'lusophone',
+      action: 'data_rectification',
+      rectificationFields: Object.keys(rectificationData)
+    })
 
     // Record the request in audit log
     await logPrivacyRequest(supabase, request.userId, 'data_rectification', requestId)
@@ -606,7 +631,12 @@ async function handleConsentWithdrawal(request: PrivacyRequest, supabase: any): 
   
   try {
     // In production, this would update consent settings and stop related processing
-    console.log(`Consent withdrawal request for user ${request.userId}`)
+    logger.warn(`Consent withdrawal request from Portuguese-speaking community member`, {
+      userId: request.userId,
+      area: 'security',
+      culturalContext: 'lusophone',
+      action: 'consent_withdrawal'
+    })
 
     // Record the request in audit log
     await logPrivacyRequest(supabase, request.userId, 'consent_withdrawal', requestId)
@@ -647,7 +677,12 @@ async function handleProcessingRestriction(request: PrivacyRequest, supabase: an
   
   try {
     // In production, this would restrict specific data processing activities
-    console.log(`Processing restriction request for user ${request.userId}`)
+    logger.info(`Processing restriction request from Portuguese-speaking community member`, {
+      userId: request.userId,
+      area: 'security',
+      culturalContext: 'lusophone',
+      action: 'processing_restriction'
+    })
 
     // Record the request in audit log
     await logPrivacyRequest(supabase, request.userId, 'processing_restriction', requestId)
@@ -713,10 +748,18 @@ async function logPrivacyRequest(supabase: any, userId: string, requestType: str
       })
 
     if (error) {
-      console.error('Failed to log privacy request:', error)
+      logger.error('Failed to log privacy request to database', error, {
+        area: 'security',
+        culturalContext: 'lusophone',
+        action: 'privacy_audit_log_error'
+      })
     }
   } catch (error) {
-    console.error('Privacy audit logging error:', error)
+    logger.error('Privacy audit logging error', error, {
+      area: 'security',
+      culturalContext: 'lusophone',
+      action: 'audit_logging_failure'
+    })
   }
 }
 
@@ -748,7 +791,13 @@ export async function DELETE(request: NextRequest) {
     }
 
     // In production, this would cancel the specific pending request
-    console.log(`Cancelling privacy request ${requestId} for user ${user.id}`)
+    logger.info(`Privacy request cancelled by Portuguese-speaking community member`, {
+      requestId,
+      userId: user.id,
+      area: 'security',
+      culturalContext: 'lusophone',
+      action: 'privacy_request_cancelled'
+    })
 
     return NextResponse.json({
       success: true,
@@ -762,7 +811,11 @@ export async function DELETE(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Privacy request cancellation error:', error)
+    logger.error('Privacy request cancellation error', error, {
+      area: 'security',
+      culturalContext: 'lusophone',
+      action: 'privacy_request_cancellation_error'
+    })
     return NextResponse.json({
       error: 'Internal server error',
       message: {

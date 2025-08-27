@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { 
@@ -50,14 +50,7 @@ export default function GroupDetailPage({ params }: PageProps) {
   const [showJoinModal, setShowJoinModal] = useState(false)
   const [joinMessage, setJoinMessage] = useState('')
 
-  useEffect(() => {
-    if (params.id) {
-      loadGroupDetails()
-      checkMembershipStatus()
-    }
-  }, [params.id])
-
-  const loadGroupDetails = async () => {
+  const loadGroupDetails = useCallback(async () => {
     try {
       setLoading(true)
       
@@ -105,9 +98,9 @@ export default function GroupDetailPage({ params }: PageProps) {
     } finally {
       setLoading(false)
     }
-  }
+  }, [params.id, router])
 
-  const checkMembershipStatus = async () => {
+  const checkMembershipStatus = useCallback(async () => {
     try {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) return
@@ -138,7 +131,14 @@ export default function GroupDetailPage({ params }: PageProps) {
     } catch (error) {
       console.error('Error checking membership:', error)
     }
-  }
+  }, [params.id])
+
+  useEffect(() => {
+    if (params.id) {
+      loadGroupDetails()
+      checkMembershipStatus()
+    }
+  }, [params.id, loadGroupDetails, checkMembershipStatus])
 
   const handleJoinGroup = async () => {
     if (!group) return

@@ -273,6 +273,7 @@ function MatchesContent() {
     hasActiveSubscription,
     currentProfile,
     nextProfile,
+    isLoggedIn,
   ]);
 
   const handleSkip = useCallback(() => {
@@ -297,7 +298,7 @@ function MatchesContent() {
       nextProfile();
       setIsSkipping(false);
     }, 400);
-  }, [isLiking, isSkipping, currentProfile, nextProfile]);
+  }, [isLiking, isSkipping, currentProfile, nextProfile, currentProfileIndex, isLoggedIn]);
 
   const handleUndo = () => {
     if (!lastActions.length || isLiking || isSkipping) return;

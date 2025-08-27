@@ -8,6 +8,7 @@ import LearningModuleFramework, {
   LearningStep,
 } from "@/components/academy/LearningModuleFramework";
 import { useLanguage } from "@/context/LanguageContext";
+import logger from "@/utils/logger";
 
 export default function BusinessNetworkingModule() {
   const { language } = useLanguage();
@@ -42,40 +43,44 @@ export default function BusinessNetworkingModule() {
     }
   };
 
+  const { t } = useLanguage();
+  
   const handleModuleComplete = () => {
     // Module completion logic
-    console.log("Business Networking module completed!");
+    logger.info(t('academy.business_networking.completion_message'), {
+      area: 'cultural',
+      action: 'module_completed',
+      culturalContext: 'lusophone'
+    });
   };
 
   // Define the learning module structure
   const businessNetworkingModule: LearningModule = {
     id: "business-networking",
-    title: "LusoTown Business Networking",
-    titlePortuguese: "Networking Empresarial LusoTown",
-    description:
-      "Master professional networking within the Portuguese business community in London",
-    descriptionPortuguese:
-      "Domine o networking profissional dentro da comunidade empresarial portuguesa em Londres",
+    title: t('academy.business_networking.title'),
+    titlePortuguese: t('academy.business_networking.title'),
+    description: t('academy.business_networking.description'),
+    descriptionPortuguese: t('academy.business_networking.description'),
     difficulty: "Intermediate",
     estimatedTime: 25,
     icon: Briefcase,
-    category: "Professional",
-    categoryPortuguese: "Profissional",
+    category: t('academy.business_networking.category'),
+    categoryPortuguese: t('academy.business_networking.category'),
     prerequisites: [],
     prerequisitesPortuguese: [],
     learningObjectives: [
-      "Build meaningful professional connections with Lusophone entrepreneurs",
-      "Navigate business etiquette in bilingual environments",
-      "Leverage cultural heritage for business advantages",
-      "Create lasting partnerships and collaborations",
-      "Develop your personal brand within the Portuguese-speaking community",
+      t('academy.business_networking.objectives.build_connections'),
+      t('academy.business_networking.objectives.navigate_etiquette'),
+      t('academy.business_networking.objectives.leverage_heritage'),
+      t('academy.business_networking.objectives.create_partnerships'),
+      t('academy.business_networking.objectives.develop_brand'),
     ],
     learningObjectivesPortuguese: [
-      "Construir conexões profissionais significativas com empreendedores portugueses",
-      "Navegar etiqueta empresarial em ambientes bilingues",
-      "Aproveitar herança cultural para vantagens empresariais",
-      "Criar parcerias e colaborações duradouras",
-      "Desenvolver sua marca pessoal dentro da comunidade de falantes de português",
+      t('academy.business_networking.objectives.build_connections'),
+      t('academy.business_networking.objectives.navigate_etiquette'),
+      t('academy.business_networking.objectives.leverage_heritage'),
+      t('academy.business_networking.objectives.create_partnerships'),
+      t('academy.business_networking.objectives.develop_brand'),
     ],
     steps: [
       {

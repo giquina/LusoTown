@@ -1,6 +1,7 @@
 import { SITE_URL } from '@/config/site'
 import { ROUTES } from '@/config/routes'
 import { EXTERNAL_SERVICES } from '@/config/cdn'
+import logger from '@/utils/logger'
 
 /**
  * YouTube API Service for LusoTown's Streaming Platform
@@ -141,7 +142,11 @@ class YouTubeAPIService {
 
       return this.mapYouTubeVideoResponse(data);
     } catch (error) {
-      console.error('Error uploading video to YouTube:', error);
+      logger.error('YouTube video upload failed for Portuguese content', error, {
+        area: 'streaming',
+        action: 'youtube_upload',
+        culturalContext: 'portuguese'
+      });
       throw error;
     }
   }
@@ -194,7 +199,11 @@ class YouTubeAPIService {
 
       return this.mapYouTubeLiveStreamResponse(broadcastData);
     } catch (error) {
-      console.error('Error creating YouTube live stream:', error);
+      logger.error('YouTube live stream creation failed', error, {
+        area: 'streaming',
+        action: 'youtube_live_stream',
+        culturalContext: 'portuguese'
+      });
       throw error;
     }
   }
@@ -237,7 +246,11 @@ class YouTubeAPIService {
       
       return this.mapAnalyticsResponse(data, geoResponse);
     } catch (error) {
-      console.error('Error fetching YouTube analytics:', error);
+      logger.error('YouTube analytics fetch failed', error, {
+        area: 'analytics',
+        action: 'youtube_analytics',
+        culturalContext: 'portuguese'
+      });
       throw error;
     }
   }
@@ -276,7 +289,11 @@ class YouTubeAPIService {
 
       return data.items.map((item: any) => this.mapSearchResultToVideo(item));
     } catch (error) {
-      console.error('Error searching YouTube content:', error);
+      logger.error('YouTube content search failed', error, {
+        area: 'streaming',
+        action: 'youtube_search',
+        culturalContext: 'portuguese'
+      });
       throw error;
     }
   }
@@ -358,7 +375,12 @@ class YouTubeAPIService {
         const data = await response.json();
         playlistIds[playlist.culturalContext] = data.id;
       } catch (error) {
-        console.error(`Error creating playlist ${playlist.title}:`, error);
+        logger.error(`Portuguese playlist creation failed: ${playlist.title}`, error, {
+          area: 'streaming',
+          action: 'youtube_playlist_creation',
+          culturalContext: 'portuguese',
+          playlistTitle: playlist.title
+        });
       }
     }
 
@@ -487,7 +509,11 @@ class YouTubeAPIService {
 
       return geoDistribution;
     } catch (error) {
-      console.error('Error fetching geographic analytics:', error);
+      logger.error('YouTube geographic analytics fetch failed', error, {
+        area: 'analytics',
+        action: 'youtube_geo_analytics',
+        culturalContext: 'portuguese'
+      });
       return {};
     }
   }
@@ -527,7 +553,11 @@ class YouTubeAPIService {
         })
       });
     } catch (error) {
-      console.error('Error adding video to playlist:', error);
+      logger.error('YouTube video playlist addition failed', error, {
+        area: 'streaming',
+        action: 'youtube_playlist_add',
+        culturalContext: 'portuguese'
+      });
     }
   }
 
@@ -544,7 +574,11 @@ class YouTubeAPIService {
         body: formData
       });
     } catch (error) {
-      console.error('Error uploading thumbnail:', error);
+      logger.error('YouTube thumbnail upload failed', error, {
+        area: 'streaming',
+        action: 'youtube_thumbnail_upload',
+        culturalContext: 'portuguese'
+      });
     }
   }
 

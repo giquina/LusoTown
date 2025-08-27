@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import logger from '@/utils/logger';
 import { 
   SparklesIcon,
   HeartIcon,
@@ -132,7 +133,7 @@ export default function PortugueseMobileDesignShowcase() {
       id: 'join-event',
       label: 'Participar no Evento',
       icon: <CalendarDaysIcon className="w-6 h-6" />,
-      onClick: () => console.log('Join event'),
+      onClick: () => logger.debug('Join event clicked', { area: 'mobile', action: 'join_event', culturalContext: 'lusophone' }),
       color: 'red' as const,
       heritage: 'portugal' as const
     },
@@ -140,7 +141,7 @@ export default function PortugueseMobileDesignShowcase() {
       id: 'find-community',
       label: 'Encontrar Comunidade',
       icon: <UserGroupIcon className="w-6 h-6" />,
-      onClick: () => console.log('Find community'),
+      onClick: () => logger.debug('Find community clicked', { area: 'mobile', action: 'find_community', culturalContext: 'lusophone' }),
       color: 'green' as const,
       heritage: 'brazil' as const
     },
@@ -148,7 +149,7 @@ export default function PortugueseMobileDesignShowcase() {
       id: 'explore-business',
       label: 'Explorar Negócios',
       icon: <BuildingLibraryIcon className="w-6 h-6" />,
-      onClick: () => console.log('Explore business'),
+      onClick: () => logger.debug('Explore business clicked', { area: 'mobile', action: 'explore_business', culturalContext: 'lusophone' }),
       color: 'blue' as const,
       heritage: 'cape-verde' as const
     }
@@ -180,7 +181,7 @@ export default function PortugueseMobileDesignShowcase() {
         showNotifications={true}
         notificationCount={3}
         onMenuToggle={() => setShowActionSheet(true)}
-        onNotifications={() => console.log('Show notifications')}
+        onNotifications={() => logger.debug('Show notifications clicked', { area: 'mobile', action: 'show_notifications' })}
       />
 
       {/* Design System Information */}
@@ -302,8 +303,8 @@ export default function PortugueseMobileDesignShowcase() {
                   category="cultural"
                   heritage="portugal"
                   image="/images/events/fado-festival.jpg"
-                  onClick={() => console.log('Card clicked')}
-                  onShare={() => console.log('Share event')}
+                  onClick={() => logger.debug('Event card clicked', { area: 'mobile', action: 'card_click', culturalContext: 'portuguese' })}
+                  onShare={() => logger.debug('Share event clicked', { area: 'mobile', action: 'share_event', culturalContext: 'portuguese' })}
                   onBookmark={() => setBookmarkedItems(prev => new Set(prev).add('fado-festival'))}
                   isBookmarked={bookmarkedItems.has('fado-festival')}
                 />
@@ -363,9 +364,9 @@ export default function PortugueseMobileDesignShowcase() {
                       {language === 'pt' ? 'Deslize para a direita para curtir, esquerda para partilhar' : 'Swipe right to like, left to share'}
                     </p>
                     <PortugueseSwipeActions
-                      onLike={() => console.log('Liked')}
-                      onShare={() => console.log('Shared')}
-                      onBookmark={() => console.log('Bookmarked')}
+                      onLike={() => logger.debug('Event liked', { area: 'mobile', action: 'like_event', culturalContext: 'lusophone' })}
+                      onShare={() => logger.debug('Event shared', { area: 'mobile', action: 'share_event', culturalContext: 'lusophone' })}
+                      onBookmark={() => logger.debug('Event bookmarked', { area: 'mobile', action: 'bookmark_event', culturalContext: 'lusophone' })}
                     >
                       <div className="bg-gradient-to-r from-red-50 to-green-50 p-4 rounded-xl border border-red-100">
                         <div className="flex items-center gap-3">
@@ -387,7 +388,7 @@ export default function PortugueseMobileDesignShowcase() {
                       {language === 'pt' ? 'Toque duas vezes para mostrar apreço' : 'Double tap to show appreciation'}
                     </p>
                     <PortugueseDoubleTap
-                      onDoubleTap={() => console.log('Double tapped')}
+                      onDoubleTap={() => logger.debug('Event double tapped', { area: 'mobile', action: 'double_tap', culturalContext: 'lusophone' })}
                       feedbackType="heart"
                     >
                       <div className="bg-gradient-to-r from-amber-50 to-red-50 p-4 rounded-xl border border-amber-100 text-center">
@@ -427,10 +428,10 @@ export default function PortugueseMobileDesignShowcase() {
 
                 <MobileBusinessCard
                   business={sampleBusiness}
-                  onSelect={(business) => console.log('Select business', business)}
-                  onBookmark={(id) => console.log('Bookmark business', id)}
-                  onShare={(business) => console.log('Share business', business)}
-                  onGetDirections={(business) => console.log('Get directions', business)}
+                  onSelect={(business) => logger.debug('Business selected', { area: 'business', action: 'select_business', businessId: business })}
+                  onBookmark={(id) => logger.debug('Business bookmarked', { area: 'business', action: 'bookmark_business', businessId: id })}
+                  onShare={(business) => logger.debug('Business shared', { area: 'business', action: 'share_business', businessId: business })}
+                  onGetDirections={(business) => logger.debug('Get directions clicked', { area: 'business', action: 'get_directions', businessId: business })}
                   isBookmarked={false}
                 />
               </div>
@@ -471,11 +472,11 @@ export default function PortugueseMobileDesignShowcase() {
                           category="event"
                           heritage={event.heritage}
                           image={event.image}
-                          onClick={() => console.log('Event selected', event)}
+                          onClick={() => logger.debug('Event selected', { area: 'mobile', action: 'event_select', eventId: event })}
                           className="h-full"
                         />
                       )}
-                      onItemSelect={(event) => console.log('Selected event', event)}
+                      onItemSelect={(event) => logger.debug('Event item selected', { area: 'mobile', action: 'item_select', eventId: event })}
                       title={language === 'pt' ? 'Próximos Eventos' : 'Upcoming Events'}
                     />
                   </div>
@@ -505,7 +506,7 @@ export default function PortugueseMobileDesignShowcase() {
       <MobileBusinessFilter
         isOpen={showBusinessFilter}
         onClose={() => setShowBusinessFilter(false)}
-        onApplyFilters={(filters) => console.log('Apply filters', filters)}
+        onApplyFilters={(filters) => logger.debug('Filters applied', { area: 'business', action: 'apply_filters', filters })}
         currentFilters={{
           categories: [],
           heritage: [],
@@ -520,7 +521,7 @@ export default function PortugueseMobileDesignShowcase() {
       {/* Bottom Navigation */}
       <PortugueseMobileNavigation
         activeRoute="/"
-        onNavigate={(route) => console.log('Navigate to', route)}
+        onNavigate={(route) => logger.debug('Navigation clicked', { area: 'mobile', action: 'navigate', route })}
       />
     </div>
   );

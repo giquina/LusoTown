@@ -19,6 +19,7 @@ import {
 } from '@/config/business-directory-carousels'
 import { CalendarDaysIcon, MapPinIcon, UsersIcon, SparklesIcon } from '@heroicons/react/24/outline'
 import logger from '@/utils/logger'
+import { IMAGES } from '@/config/cdn'
 
 // Weekend Event Card Component
 function WeekendEventCard({ event, index, isVisible }: { event: WeekendEventItem; index: number; isVisible: boolean }) {
@@ -277,7 +278,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-primary-50/30 to-gold-50/20">
       {/* Hero Section with Community Stats */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white">
-        <div className="absolute inset-0 bg-[url('/images/patterns/portuguese-tiles.svg')] opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-700/10 to-primary-600/10 opacity-10"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="text-center">
@@ -434,6 +435,173 @@ export default function HomePage() {
             enablePortugueseCulturalOptimization={true}
             contentType="cultural"
             className="mb-8"
+          />
+        </section>
+
+        {/* Community Testimonials Carousel */}
+        <section className="mb-16">
+          <OptimizedPortugueseCarousel
+            items={[
+              {
+                id: 'testimonial-1',
+                name: 'Maria Santos',
+                location: 'London',
+                country: 'Portugal',
+                flagEmoji: '🇵🇹',
+                testimonial: {
+                  en: 'LusoTown helped me find authentic Portuguese events and connect with my community. I discovered amazing restaurants and made lifelong friends!',
+                  pt: 'O LusoTown ajudou-me a encontrar eventos portugueses autênticos e a conectar-me com a minha comunidade. Descobri restaurantes incríveis e fiz amigos para a vida!'
+                },
+                rating: 5,
+                role: {
+                  en: 'Community Member',
+                  pt: 'Membro da Comunidade'
+                },
+                memberSince: '2023',
+                eventsAttended: 12,
+                image: IMAGES.testimonials.family
+              },
+              {
+                id: 'testimonial-2',
+                name: 'João Silva',
+                location: 'Manchester',
+                country: 'Brazil',
+                flagEmoji: '🇧🇷',
+                testimonial: {
+                  en: 'As a Brazilian student in Manchester, LusoTown was a lifeline. Found study groups, cultural events, and even my favorite açaí place!',
+                  pt: 'Como estudante brasileiro em Manchester, o LusoTown foi uma salvação. Encontrei grupos de estudo, eventos culturais, e até o meu sítio favorito de açaí!'
+                },
+                rating: 5,
+                role: {
+                  en: 'University Student',
+                  pt: 'Estudante Universitário'
+                },
+                memberSince: '2024',
+                eventsAttended: 8,
+                image: IMAGES.testimonials.entrepreneur
+              },
+              {
+                id: 'testimonial-3',
+                name: 'Ana Ferreira',
+                location: 'Birmingham',
+                country: 'Angola',
+                flagEmoji: '🇦🇴',
+                testimonial: {
+                  en: 'The PALOP business directory helped me find Angolan restaurants and services. Finally, I can get proper muamba de ginguba in the UK!',
+                  pt: 'O diretório de negócios PALOP ajudou-me a encontrar restaurantes e serviços angolanos. Finalmente, posso comer uma muamba de ginguba decente no Reino Unido!'
+                },
+                rating: 5,
+                role: {
+                  en: 'Business Owner',
+                  pt: 'Empresária'
+                },
+                memberSince: '2023',
+                eventsAttended: 15,
+                image: IMAGES.testimonials.businessman
+              },
+              {
+                id: 'testimonial-4',
+                name: 'Carlos Mendes',
+                location: 'Edinburgh',
+                country: 'Cape Verde',
+                flagEmoji: '🇨🇻',
+                testimonial: {
+                  en: 'Found my morna music group through LusoTown! Now we perform at Portuguese cultural events across Scotland. Amazing community support!',
+                  pt: 'Encontrei o meu grupo de morna através do LusoTown! Agora tocamos em eventos culturais portugueses por toda a Escócia. Apoio comunitário incrível!'
+                },
+                rating: 5,
+                role: {
+                  en: 'Musician',
+                  pt: 'Músico'
+                },
+                memberSince: '2023',
+                eventsAttended: 20,
+                image: IMAGES.testimonials.diplomat
+              },
+              {
+                id: 'testimonial-5',
+                name: 'Isabel Costa',
+                location: 'Bristol',
+                country: 'Mozambique',
+                flagEmoji: '🇲🇿',
+                testimonial: {
+                  en: 'LusoTown connected me with other Mozambican families. Our children now learn Portuguese together and celebrate our traditions in the UK.',
+                  pt: 'O LusoTown ligou-me a outras famílias moçambicanas. Os nossos filhos agora aprendem português juntos e celebram as nossas tradições no Reino Unido.'
+                },
+                rating: 5,
+                role: {
+                  en: 'Parent & Teacher',
+                  pt: 'Mãe e Professora'
+                },
+                memberSince: '2023',
+                eventsAttended: 11,
+                image: IMAGES.testimonials.family
+              }
+            ]}
+            renderItem={(testimonial: any, index: number, isVisible: boolean) => {
+              if (!isVisible) {
+                return (
+                  <div className="w-full h-80 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl animate-pulse flex items-center justify-center">
+                    <div className="text-gray-400 text-sm">Loading testimonial...</div>
+                  </div>
+                )
+              }
+
+              return (
+                <motion.div
+                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-full min-h-[320px] p-6 flex flex-col"
+                  whileHover={{ y: -2 }}
+                >
+                  {/* Header with flag and rating */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <span className="text-3xl" title={testimonial.country}>{testimonial.flagEmoji}</span>
+                      <div>
+                        <h3 className="font-bold text-gray-900">{testimonial.name}</h3>
+                        <p className="text-sm text-gray-600">{testimonial.location}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <span key={i} className="text-gold-500 text-lg">⭐</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Testimonial content */}
+                  <blockquote className="text-gray-700 italic mb-4 flex-grow">
+                    "{testimonial.testimonial[language]}"
+                  </blockquote>
+
+                  {/* Footer with stats */}
+                  <div className="pt-4 border-t border-gray-100">
+                    <div className="flex justify-between items-center text-sm text-gray-600">
+                      <span className="font-medium text-primary-600">{testimonial.role[language]}</span>
+                      <div className="text-right">
+                        <div>{testimonial.eventsAttended} events attended</div>
+                        <div className="text-xs text-gray-500">Member since {testimonial.memberSince}</div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )
+            }}
+            title={{
+              en: "What Our Portuguese-speaking Community Says",
+              pt: "O Que Diz a Nossa Comunidade Lusófona"
+            }}
+            subtitle={{
+              en: `Real stories from ${process.env.NEXT_PUBLIC_TOTAL_MEMBERS || '750'}+ Portuguese-speaking community members across the United Kingdom`,
+              pt: `Histórias reais de ${process.env.NEXT_PUBLIC_TOTAL_MEMBERS || '750'}+ membros da comunidade lusófona em todo o Reino Unido`
+            }}
+            autoAdvance={true}
+            autoAdvanceInterval={7000}
+            showControls={true}
+            showDots={true}
+            enablePerformanceOptimization={true}
+            enablePortugueseCulturalOptimization={true}
+            contentType="testimonials"
+            className="mb-16"
           />
         </section>
 

@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useNotification } from '@/context/NotificationContext';
+import logger from '@/utils/logger';
 import { 
   Bell, 
   BellOff, 
@@ -139,7 +140,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
       setPermission(Notification.permission);
     }
 
-    console.log('[Push Notifications] Support check:', {
+    logger.debug('Push notifications support check', { area: 'mobile',
       supported,
       permission: Notification.permission,
       serviceWorker: 'serviceWorker' in navigator,
@@ -154,7 +155,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
         setPreferences(JSON.parse(savedPreferences));
       }
     } catch (error) {
-      console.error('[Push Notifications] Failed to load preferences:', error);
+      logger.error('Failed to load push notification preferences', error, { area: 'mobile', action: 'load_preferences' });
     }
   };
 
@@ -168,7 +169,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
         updateSubscriptionPreferences(newPreferences);
       }
     } catch (error) {
-      console.error('[Push Notifications] Failed to save preferences:', error);
+      logger.error('Failed to save push notification preferences', error, { area: 'mobile', action: 'save_preferences' });
     }
   }, [isSubscribed, subscription]);
 
@@ -182,10 +183,10 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
       if (existingSubscription) {
         setIsSubscribed(true);
         setSubscription(existingSubscription);
-        console.log('[Push Notifications] Existing subscription found');
+        logger.info('Existing push subscription found', { area: 'mobile', action: 'check_subscription' });
       }
     } catch (error) {
-      console.error('[Push Notifications] Failed to check subscription:', error);
+      logger.error('Failed to check push subscription', error, { area: 'mobile', action: 'check_subscription' });
     }
   };
 
@@ -231,7 +232,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
         return false;
       }
     } catch (error) {
-      console.error('[Push Notifications] Permission request failed:', error);
+      logger.error('Push notification permission request failed', error, { area: 'mobile', action: 'request_permission' });
       return false;
     }
   };
@@ -282,7 +283,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
       });
 
     } catch (error) {
-      console.error('[Push Notifications] Subscription failed:', error);
+      logger.error('Push notification subscription failed', error, { area: 'mobile', action: 'subscribe', culturalContext: 'lusophone' });
       addNotification({
         id: 'subscription-error',
         type: 'error',
@@ -322,7 +323,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
       });
 
     } catch (error) {
-      console.error('[Push Notifications] Unsubscription failed:', error);
+      logger.error('Push notification unsubscription failed', error, { area: 'mobile', action: 'unsubscribe' });
       addNotification({
         id: 'unsubscription-error',
         type: 'error',
@@ -357,9 +358,9 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
         throw new Error('Failed to save subscription');
       }
 
-      console.log('[Push Notifications] Subscription sent to backend');
+      logger.info('Push subscription sent to backend', { area: 'mobile', action: 'send_subscription' });
     } catch (error) {
-      console.error('[Push Notifications] Failed to send subscription:', error);
+      logger.error('Failed to send push subscription to backend', error, { area: 'mobile', action: 'send_subscription' });
     }
   };
 
@@ -373,9 +374,9 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
         body: JSON.stringify({ subscription })
       });
 
-      console.log('[Push Notifications] Subscription removed from backend');
+      logger.info('Push subscription removed from backend', { area: 'mobile', action: 'remove_subscription' });
     } catch (error) {
-      console.error('[Push Notifications] Failed to remove subscription:', error);
+      logger.error('Failed to remove push subscription from backend', error, { area: 'mobile', action: 'remove_subscription' });
     }
   };
 
@@ -393,9 +394,9 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
         })
       });
 
-      console.log('[Push Notifications] Preferences updated');
+      logger.info('Push notification preferences updated', { area: 'mobile', action: 'update_preferences' });
     } catch (error) {
-      console.error('[Push Notifications] Failed to update preferences:', error);
+      logger.error('Failed to update push notification preferences', error, { area: 'mobile', action: 'update_preferences' });
     }
   };
 
@@ -444,9 +445,9 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
       scheduledNotifications.push(notification);
       localStorage.setItem('lusotown-scheduled-notifications', JSON.stringify(scheduledNotifications));
       
-      console.log('[Push Notifications] Scheduled notification:', notification);
+      logger.debug('Scheduled push notification', { area: 'mobile', action: 'schedule_notification', notificationType: notification.type });
     } catch (error) {
-      console.error('[Push Notifications] Failed to schedule notification:', error);
+      logger.error('Failed to schedule push notification', error, { area: 'mobile', action: 'schedule_notification' });
     }
   };
 
@@ -507,7 +508,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
       });
 
     } catch (error) {
-      console.error('[Push Notifications] Test notification failed:', error);
+      logger.error('Test push notification failed', error, { area: 'mobile', action: 'test_notification', culturalContext: 'lusophone' });
       addNotification({
         id: 'test-notification-error',
         type: 'error',

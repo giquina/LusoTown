@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import logger from '@/utils/logger';
 
 interface WebVitalReport {
   url: string;
@@ -65,12 +66,16 @@ export async function POST(request: NextRequest) {
     // Log important performance issues
     logPerformanceIssues(report);
 
-    console.log(`[Performance API] Received report from ${report.url}`, {
+    logger.info('Performance report received for Lusophone platform', {
+      url: report.url,
       score: report.pageScore,
       lcp: report.metrics.lcp,
       cls: report.metrics.cls,
       mobile: report.isMobile,
       portuguese: report.isPortuguesePage,
+      area: 'performance',
+      culturalContext: report.isPortuguesePage ? 'lusophone' : undefined,
+      action: 'performance_report_received'
     });
 
     return NextResponse.json({ 
@@ -80,7 +85,10 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[Performance API] Error processing report:', error);
+    logger.error('Failed to process performance report', error, {
+      area: 'performance',
+      action: 'process_report_error'
+    });
     return NextResponse.json(
       { error: 'Failed to process performance report' },
       { status: 500 }
@@ -124,7 +132,10 @@ export async function GET(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[Performance API] Error retrieving reports:', error);
+    logger.error('Failed to retrieve performance reports', error, {
+      area: 'performance',
+      action: 'retrieve_reports_error'
+    });
     return NextResponse.json(
       { error: 'Failed to retrieve performance reports' },
       { status: 500 }
@@ -156,22 +167,32 @@ function logPerformanceIssues(report: WebVitalReport): void {
     issues.push(`Poor TTFB: ${(report.metrics.ttfb / 1000).toFixed(1)}s`);
   }
 
-  // Log significant issues
+  // Log significant performance issues
   if (issues.length > 0) {
-    console.warn(`[Performance Issues] ${report.url}:`, issues.join(', '), {
+    logger.warn('Performance issues detected on Lusophone platform', {
+      url: report.url,
+      issues: issues.join(', '),
       mobile: report.isMobile,
       portuguese: report.isPortuguesePage,
       connection: report.connectionType,
       deviceMemory: report.deviceMemory,
+      area: 'performance',
+      culturalContext: report.isPortuguesePage ? 'lusophone' : undefined,
+      action: 'performance_issues_detected'
     });
   }
 
-  // Log mobile-specific Portuguese-speaking community issues
+  // Log critical mobile performance issues for Lusophone community
   if (report.isMobile && report.isPortuguesePage && report.pageScore && report.pageScore < 50) {
-    console.error(`[Critical Lusophone Mobile Performance] ${report.url}`, {
+    logger.error('Critical mobile performance issue on Lusophone platform', {
+      url: report.url,
       score: report.pageScore,
       metrics: report.metrics,
       userAgent: report.userAgent.substring(0, 100),
+      area: 'performance',
+      culturalContext: 'lusophone',
+      deviceType: 'mobile',
+      action: 'critical_mobile_performance_issue'
     });
   }
 }

@@ -12,6 +12,7 @@ import { aiMatchingEngineHelpers } from './AIMatchingEngineHelpers'
 import { aiNotificationEngine } from './AINotificationEngine'
 import { contactInfo } from '@/config/contact'
 import { SUBSCRIPTION_PLANS } from '@/config/pricing'
+import logger from '@/utils/logger'
 
 // Integration Types
 
@@ -131,7 +132,7 @@ export class AIMatchingIntegration {
    */
   async findAIMatches(request: AIMatchingRequest): Promise<AIMatchingResult> {
     try {
-      console.log(`[AI Matching Integration] Starting AI-powered matching for user ${request.userId}`)
+      logger.info('Starting AI-powered matching for user', { area: 'matching', userId: request.userId, action: 'ai_matching_start', culturalContext: 'lusophone' })
 
       // Get user's cultural profile
       const userProfile = await this.getUserCulturalProfile(request.userId)
@@ -192,11 +193,11 @@ export class AIMatchingIntegration {
         learningFeedback
       }
 
-      console.log(`[AI Matching Integration] Successfully found ${enhancedMatches.length} AI-enhanced matches`)
+      logger.info('Successfully found AI-enhanced matches', { area: 'matching', userId: request.userId, matchCount: enhancedMatches.length, action: 'ai_matching_complete', culturalContext: 'lusophone' })
       return result
 
     } catch (error) {
-      console.error('[AI Matching Integration] AI matching failed:', error)
+      logger.error('AI matching failed', error, { area: 'matching', userId: request.userId, action: 'ai_matching_error', culturalContext: 'lusophone' })
       throw error
     }
   }
@@ -266,9 +267,9 @@ export class AIMatchingIntegration {
         )
       }
 
-      console.log(`[AI Matching Integration] Updated continuous learning for user ${userId}`)
+      logger.info('Updated continuous learning for user', { area: 'ai', userId, action: 'continuous_learning_update' })
     } catch (error) {
-      console.error('[AI Matching Integration] Failed to update continuous learning:', error)
+      logger.error('Failed to update continuous learning', error, { area: 'ai', userId, action: 'continuous_learning_error' })
     }
   }
 
@@ -289,7 +290,7 @@ export class AIMatchingIntegration {
       
       return insights
     } catch (error) {
-      console.error('[AI Matching Integration] Failed to get regional insights:', error)
+      logger.error('Failed to get regional insights', error, { area: 'matching', action: 'regional_insights_error', culturalContext: 'lusophone' })
       throw error
     }
   }
@@ -338,7 +339,7 @@ export class AIMatchingIntegration {
 
       return analysis
     } catch (error) {
-      console.error('[AI Matching Integration] Conversation analysis failed:', error)
+      logger.error('Conversation analysis failed', error, { area: 'ai', action: 'conversation_analysis_error', culturalContext: 'lusophone' })
       throw error
     }
   }
@@ -370,7 +371,7 @@ export class AIMatchingIntegration {
       const analytics = await this.generateAIAnalytics(timeframe)
       return analytics
     } catch (error) {
-      console.error('[AI Matching Integration] Failed to get analytics:', error)
+      logger.error('Failed to get AI analytics', error, { area: 'analytics', action: 'ai_analytics_error' })
       throw error
     }
   }
@@ -392,7 +393,7 @@ export class AIMatchingIntegration {
 
       return data as CulturalCompatibilityProfile
     } catch (error) {
-      console.error('Failed to get user cultural profile:', error)
+      logger.error('Failed to get user cultural profile', error, { area: 'cultural', userId, action: 'get_cultural_profile' })
       return null
     }
   }
@@ -431,7 +432,7 @@ export class AIMatchingIntegration {
       }
 
     } catch (error) {
-      console.error('Failed to apply behavioral learning:', error)
+      logger.error('Failed to apply behavioral learning', error, { area: 'ai', userId, action: 'behavioral_learning_error' })
     }
   }
 
@@ -581,7 +582,7 @@ export class AIMatchingIntegration {
           created_at: new Date().toISOString()
         })
     } catch (error) {
-      console.error('Failed to track AI matching analytics:', error)
+      logger.error('Failed to track AI matching analytics', error, { area: 'analytics', action: 'track_analytics_error' })
     }
   }
 
@@ -600,7 +601,7 @@ export class AIMatchingIntegration {
         'normal'
       )
     } catch (error) {
-      console.error('Failed to send AI match notification:', error)
+      logger.error('Failed to send AI match notification', error, { area: 'ai', userId, action: 'notification_error' })
     }
   }
 
@@ -650,7 +651,7 @@ export class AIMatchingIntegration {
       this.learningDataCache.set(userId, learningData)
       return learningData
     } catch (error) {
-      console.error('Failed to get learning data:', error)
+      logger.error('Failed to get learning data', error, { area: 'ai', userId, action: 'get_learning_data_error' })
       // Return default learning data
       return {
         userId,
@@ -674,7 +675,7 @@ export class AIMatchingIntegration {
       // Update cache
       this.learningDataCache.set(userId, data)
     } catch (error) {
-      console.error('Failed to store learning data:', error)
+      logger.error('Failed to store learning data', error, { area: 'ai', userId, action: 'store_learning_data_error' })
     }
   }
 

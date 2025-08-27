@@ -4,6 +4,7 @@ import React, { Component, ErrorInfo, ReactNode } from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle, RefreshCw, Crown, Home, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import logger from '@/utils/logger';
 
 interface Props {
   children: ReactNode;
@@ -42,7 +43,12 @@ class LuxuryErrorBoundaryClass extends Component<Props, State> {
     });
 
     // Log error to monitoring service
-    console.error("LuxuryErrorBoundary caught an error:", error, errorInfo);
+    logger.error('LuxuryErrorBoundary caught error in Portuguese-speaking community platform', error, {
+      area: 'cultural',
+      action: 'error_boundary_catch',
+      culturalContext: 'lusophone',
+      errorInfo: errorInfo.componentStack
+    });
     
     // In production, send to error tracking service
     if (process.env.NODE_ENV === "production") {

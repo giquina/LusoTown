@@ -1908,7 +1908,7 @@ export default function About() {
                   each other, and celebrate the rich tapestry of Portuguese-speaking cultures.
                 </p>
                 <div className="mt-4">
-                  <a href="/community-guidelines" className="text-primary-600 hover:text-primary-800 font-medium underline">
+                  <a href={ROUTES.communityGuidelines} className="text-primary-600 hover:text-primary-800 font-medium underline">
                     Read our full Community Guidelines →
                   </a>
                 </div>

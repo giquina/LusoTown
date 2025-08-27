@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useNotification } from '@/context/NotificationContext';
 import { NOTIFICATION_CATEGORIES, NOTIFICATION_TEMPLATES, PORTUGUESE_CULTURAL_CALENDAR } from '@/config/push-notifications';
+import logger from '@/utils/logger';
 import { 
   Bell, 
   BellOff, 
@@ -103,11 +104,14 @@ export default function PortuguesePushNotificationManager({
       checkSubscriptionStatus();
     }
 
-    console.log('[PushNotificationManager] Notification support:', {
+    logger.debug('Lusophone push notification system initialized', {
       supported,
       permission: Notification.permission,
       serviceWorker: 'serviceWorker' in navigator,
-      pushManager: 'PushManager' in window
+      pushManager: 'PushManager' in window,
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'notification_system_initialized'
     });
   };
 
@@ -135,7 +139,11 @@ export default function PortuguesePushNotificationManager({
       setQuietHoursEnabled(quietHours);
       setPriorityOnly(priorityOnly);
     } catch (error) {
-      console.error('[PushNotificationManager] Failed to load preferences:', error);
+      logger.error('Failed to load Lusophone notification preferences', error, {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'load_preferences_error'
+      });
     }
   };
 
@@ -149,7 +157,11 @@ export default function PortuguesePushNotificationManager({
         await updateSubscriptionPreferences(newPreferences);
       }
     } catch (error) {
-      console.error('[PushNotificationManager] Failed to save preferences:', error);
+      logger.error('Failed to save Lusophone notification preferences', error, {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'save_preferences_error'
+      });
     }
   }, [isSubscribed, subscription]);
 
@@ -163,10 +175,18 @@ export default function PortuguesePushNotificationManager({
       if (existingSubscription) {
         setIsSubscribed(true);
         setSubscription(existingSubscription);
-        console.log('[PushNotificationManager] Existing subscription found');
+        logger.debug('Existing Lusophone push subscription found', {
+          area: 'messaging',
+          culturalContext: 'lusophone',
+          action: 'existing_subscription_found'
+        });
       }
     } catch (error) {
-      console.error('[PushNotificationManager] Failed to check subscription:', error);
+      logger.error('Failed to check Lusophone push subscription', error, {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'check_subscription_error'
+      });
     }
   };
 
@@ -241,7 +261,11 @@ export default function PortuguesePushNotificationManager({
       });
 
     } catch (error) {
-      console.error('[PushNotificationManager] Subscription failed:', error);
+      logger.error('Lusophone push notification subscription failed', error, {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'subscription_failed'
+      });
       addNotification({
         id: 'subscription-error',
         type: 'error',
@@ -279,7 +303,11 @@ export default function PortuguesePushNotificationManager({
       });
 
     } catch (error) {
-      console.error('[PushNotificationManager] Unsubscription failed:', error);
+      logger.error('Lusophone push notification unsubscription failed', error, {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'unsubscription_failed'
+      });
     } finally {
       setIsLoading(false);
     }
@@ -302,7 +330,11 @@ export default function PortuguesePushNotificationManager({
         })
       });
     } catch (error) {
-      console.error('[PushNotificationManager] Failed to send subscription:', error);
+      logger.error('Failed to send Lusophone subscription to backend', error, {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'send_subscription_error'
+      });
     }
   };
 
@@ -314,7 +346,11 @@ export default function PortuguesePushNotificationManager({
         body: JSON.stringify({ subscription })
       });
     } catch (error) {
-      console.error('[PushNotificationManager] Failed to remove subscription:', error);
+      logger.error('Failed to remove Lusophone subscription from backend', error, {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'remove_subscription_error'
+      });
     }
   };
 
@@ -333,7 +369,11 @@ export default function PortuguesePushNotificationManager({
         })
       });
     } catch (error) {
-      console.error('[PushNotificationManager] Failed to update preferences:', error);
+      logger.error('Failed to update Lusophone notification preferences', error, {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'update_preferences_error'
+      });
     }
   };
 
@@ -389,7 +429,11 @@ export default function PortuguesePushNotificationManager({
       });
 
     } catch (error) {
-      console.error('[PushNotificationManager] Test notification failed:', error);
+      logger.error('Lusophone test notification failed', error, {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'test_notification_failed'
+      });
     } finally {
       setTimeout(() => setTestNotificationSent(false), 3000);
     }
@@ -412,7 +456,11 @@ export default function PortuguesePushNotificationManager({
         recentEvents: events.slice(-10)
       });
     } catch (error) {
-      console.error('[PushNotificationManager] Failed to load stats:', error);
+      logger.error('Failed to load Lusophone notification stats', error, {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'load_stats_error'
+      });
     }
   };
 
@@ -442,7 +490,13 @@ export default function PortuguesePushNotificationManager({
         updateSubscriptionPreferences(preferences);
       }
     } catch (error) {
-      console.error('[PushNotificationManager] Failed to update cultural setting:', error);
+      logger.error('Failed to update Lusophone cultural notification setting', error, {
+        setting,
+        value,
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'update_cultural_setting_error'
+      });
     }
   };
 

@@ -1,22 +1,22 @@
 {
   "summary": {
-    "totalViolations": 164862,
+    "totalViolations": 22315,
     "byCategory": {
-      "hardcoded_text": 160863,
-      "hardcoded_routes": 1434,
-      "console_logs": 466,
-      "hardcoded_colors": 910,
-      "hardcoded_analytics": 75,
-      "hardcoded_urls": 822,
-      "hardcoded_prices": 292
+      "hardcoded_text": 21006,
+      "console_logs": 229,
+      "hardcoded_routes": 281,
+      "hardcoded_colors": 447,
+      "hardcoded_urls": 261,
+      "hardcoded_emails": 60,
+      "hardcoded_prices": 31
     },
     "bySeverity": {
-      "high": 161977,
-      "medium": 2419,
-      "low": 466
+      "high": 21358,
+      "medium": 728,
+      "low": 229
     },
-    "filesAffected": 908,
-    "timestamp": "2025-08-27T07:20:06.579Z",
+    "filesAffected": 664,
+    "timestamp": "2025-08-27T12:34:16.997Z",
     "recommendations": [
       "🚨 CRITICAL: Implement bilingual system with t() function",
       "🔧 Create config/cdn.ts for URL management",
@@ -27,904 +27,1004 @@
   "violations": [
     {
       "file": "src/app/about/page.tsx",
-      "line": 1,
+      "line": 405,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'use client'",
-      "timestamp": "2025-08-27T07:19:52.637Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"We Know How Much It Means to Keep the Language Alive\"",
+      "context": "\"We Know How Much It Means to Keep the Language Alive\"",
+      "timestamp": "2025-08-27T12:34:16.037Z"
     },
     {
       "file": "src/app/about/page.tsx",
-      "line": 3,
+      "line": 789,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'@/components/Footer'",
-      "timestamp": "2025-08-27T07:19:52.637Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Meet Our Team'",
+      "context": "title={{ en: 'Meet Our Team', pt: 'Conheça Nossa Equipa' }}",
+      "timestamp": "2025-08-27T12:34:16.038Z"
     },
     {
       "file": "src/app/about/page.tsx",
-      "line": 4,
+      "line": 789,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'@/components/PageHeader'",
-      "timestamp": "2025-08-27T07:19:52.637Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Conheça Nossa Equipa'",
+      "context": "title={{ en: 'Meet Our Team', pt: 'Conheça Nossa Equipa' }}",
+      "timestamp": "2025-08-27T12:34:16.038Z"
     },
     {
       "file": "src/app/about/page.tsx",
-      "line": 5,
+      "line": 790,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'@/config/routes'",
-      "timestamp": "2025-08-27T07:19:52.637Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Passionate Portuguese speakers building authentic community'",
+      "context": "subtitle={{ en: 'Passionate Portuguese speakers building authentic community', pt: 'Falantes de português apaixonados construindo comunidade autêntica' }}",
+      "timestamp": "2025-08-27T12:34:16.038Z"
     },
     {
       "file": "src/app/about/page.tsx",
-      "line": 19,
+      "line": 790,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'@heroicons/react/24/outline'",
-      "timestamp": "2025-08-27T07:19:52.637Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Falantes de português apaixonados construindo comunidade autêntica'",
+      "context": "subtitle={{ en: 'Passionate Portuguese speakers building authentic community', pt: 'Falantes de português apaixonados construindo comunidade autêntica' }}",
+      "timestamp": "2025-08-27T12:34:16.038Z"
     },
     {
       "file": "src/app/about/page.tsx",
-      "line": 20,
+      "line": 900,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'@/context/LanguageContext'",
-      "timestamp": "2025-08-27T07:19:52.637Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Community Success Stories'",
+      "context": "title={{ en: 'Community Success Stories', pt: 'Histórias de Sucesso da Comunidade' }}",
+      "timestamp": "2025-08-27T12:34:16.038Z"
     },
     {
       "file": "src/app/about/page.tsx",
-      "line": 21,
+      "line": 900,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'framer-motion'",
-      "timestamp": "2025-08-27T07:19:52.637Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Histórias de Sucesso da Comunidade'",
+      "context": "title={{ en: 'Community Success Stories', pt: 'Histórias de Sucesso da Comunidade' }}",
+      "timestamp": "2025-08-27T12:34:16.038Z"
     },
     {
       "file": "src/app/about/page.tsx",
-      "line": 22,
+      "line": 901,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'@/components/carousels'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Real achievements from Portuguese speakers who found their path through community'",
+      "context": "subtitle={{ en: 'Real achievements from Portuguese speakers who found their path through community', pt: 'Conquistas reais de falantes de português que encontraram o seu caminho através da comunidade' }}",
+      "timestamp": "2025-08-27T12:34:16.038Z"
     },
     {
       "file": "src/app/about/page.tsx",
-      "line": 27,
+      "line": 901,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"min-h-screen\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Conquistas reais de falantes de português que encontraram o seu caminho através da comunidade'",
+      "context": "subtitle={{ en: 'Real achievements from Portuguese speakers who found their path through community', pt: 'Conquistas reais de falantes de português que encontraram o seu caminho através da comunidade' }}",
+      "timestamp": "2025-08-27T12:34:16.038Z"
     },
     {
       "file": "src/app/about/page.tsx",
-      "line": 31,
+      "line": 1749,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.hero.title'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Do palácio real português às torres de Macau, dos diamantes angolanos ao ouro brasileiro—somos uma família de prestígio global.\"",
+      "context": "\"Do palácio real português às torres de Macau, dos diamantes angolanos ao ouro brasileiro—somos uma família de prestígio global.\"",
+      "timestamp": "2025-08-27T12:34:16.038Z"
     },
     {
       "file": "src/app/about/page.tsx",
-      "line": 31,
+      "line": 1873,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.hero.title'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Somos uma comunidade de mente aberta que acolhe todos os falantes de português com o coração cheio de amor.\"",
+      "context": "\"Somos uma comunidade de mente aberta que acolhe todos os falantes de português com o coração cheio de amor.\"",
+      "timestamp": "2025-08-27T12:34:16.038Z"
     },
     {
       "file": "src/app/about/page.tsx",
-      "line": 33,
+      "line": 1895,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.hero.subtitle'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Aqui, todos têm lugar. Here, everyone belongs. We'",
+      "context": "\"Aqui, todos têm lugar. Here, everyone belongs. We're not just building a community—we're creating a family.\"",
+      "timestamp": "2025-08-27T12:34:16.038Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 33,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.hero.subtitle'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 35,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.hero.badge'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 35,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.hero.badge'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 37,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"premium\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 38,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"gradient\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 46,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"py-24 bg-gradient-to-br from-white via-premium-50/30 to-primary-50/30 relative overflow-hidden\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 47,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"absolute inset-0 overflow-hidden\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 48,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-premium-200/20 to-primary-200/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse opacity-50\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 49,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-secondary-200/20 to-accent-200/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse opacity-50\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 52,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"container-width relative z-10\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 53,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"max-w-6xl mx-auto\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 59,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"text-center mb-16\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 66,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 mb-8 border border-premium-200/50 shadow-lg\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 68,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"w-6 h-6 text-premium-600\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 69,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"text-premium-700 font-bold text-lg\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 69,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.platform.intro'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 71,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"text-4xl md:text-5xl font-bold bg-gradient-to-r from-premium-600 via-primary-600 to-secondary-600 bg-clip-text text-transparent mb-8\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 72,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.platform.title'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 74,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 75,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.platform.subtitle'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 87,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"bg-white/90 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-premium-200/50\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 88,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"text-3xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent mb-8 text-center\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 89,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.how-it-works.title'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 92,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"grid md:grid-cols-2 lg:grid-cols-3 gap-8\"",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 96,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.matching.title'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 97,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.matching.description'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 99,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.matching.feature1'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 100,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.matching.feature2'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 101,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.matching.feature3'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 102,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.matching.feature4'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 107,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.events.title'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 108,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.events.description'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 110,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.events.feature1'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 111,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.events.feature2'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 112,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.events.feature3'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 113,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.events.feature4'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 118,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.directory.title'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 119,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.directory.description'",
-      "timestamp": "2025-08-27T07:19:52.641Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 121,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.directory.feature1'",
-      "timestamp": "2025-08-27T07:19:52.642Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 122,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.directory.feature2'",
-      "timestamp": "2025-08-27T07:19:52.642Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 123,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.directory.feature3'",
-      "timestamp": "2025-08-27T07:19:52.642Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 124,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.directory.feature4'",
-      "timestamp": "2025-08-27T07:19:52.642Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 129,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.tv.title'",
-      "timestamp": "2025-08-27T07:19:52.642Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 130,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.tv.description'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 132,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.tv.feature1'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 133,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.tv.feature2'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 134,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.tv.feature3'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 135,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.tv.feature4'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 140,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.feed.title'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 141,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.feed.description'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
+      "file": "src/app/academy/business-networking/page.tsx",
       "line": 143,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.feed.feature1'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Start by observing existing business interactions at Lusophone events\"",
+      "context": "\"Start by observing existing business interactions at Lusophone events\",",
+      "timestamp": "2025-08-27T12:34:16.043Z"
     },
     {
-      "file": "src/app/about/page.tsx",
+      "file": "src/app/academy/business-networking/page.tsx",
       "line": 144,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.feed.feature2'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Research successful Portuguese business owners in your industry\"",
+      "context": "\"Research successful Portuguese business owners in your industry\",",
+      "timestamp": "2025-08-27T12:34:16.043Z"
     },
     {
-      "file": "src/app/about/page.tsx",
+      "file": "src/app/academy/business-networking/page.tsx",
       "line": 145,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.feed.feature3'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Understand the blend of British business formality with Lusophone warmth\"",
+      "context": "\"Understand the blend of British business formality with Lusophone warmth\",",
+      "timestamp": "2025-08-27T12:34:16.043Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 146,
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 148,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.feed.feature4'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Comece por observar interações empresariais existentes em eventos portugueses\"",
+      "context": "\"Comece por observar interações empresariais existentes em eventos portugueses\",",
+      "timestamp": "2025-08-27T12:34:16.043Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 151,
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 149,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.premium.title'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Pesquise empresários portugueses bem-sucedidos na sua indústria\"",
+      "context": "\"Pesquise empresários portugueses bem-sucedidos na sua indústria\",",
+      "timestamp": "2025-08-27T12:34:16.043Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 152,
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 150,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.premium.description'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Compreenda a mistura de formalidade empresarial britânica com cordialidade portuguesa\"",
+      "context": "\"Compreenda a mistura de formalidade empresarial britânica com cordialidade portuguesa\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 154,
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 190,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.premium.feature1'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"What brought you from Portugal to London in your career?\"",
+      "context": "<li>\"What brought you from Portugal to London in your career?\"</li>",
+      "timestamp": "2025-08-27T12:34:16.044Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 155,
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 191,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.premium.feature2'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"How has your Lusophone background influenced your business approach?\"",
+      "context": "<li>\"How has your Lusophone background influenced your business approach?\"</li>",
+      "timestamp": "2025-08-27T12:34:16.044Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 156,
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 192,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.premium.feature3'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"What opportunities do you see in connecting United Kingdom and Lusophone markets?\"",
+      "context": "<li>\"What opportunities do you see in connecting United Kingdom and Lusophone markets?\"</li>",
+      "timestamp": "2025-08-27T12:34:16.044Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 157,
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 193,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "'about.premium.feature4'",
-      "timestamp": "2025-08-27T07:19:52.644Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Which Portuguese business traditions do you maintain in London?\"",
+      "context": "<li>\"Which Portuguese business traditions do you maintain in London?\"</li>",
+      "timestamp": "2025-08-27T12:34:16.044Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 167,
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 227,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"group\"",
-      "timestamp": "2025-08-27T07:19:52.644Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"O que o trouxe de Portugal para Londres na sua carreira?\"",
+      "context": "<li>\"O que o trouxe de Portugal para Londres na sua carreira?\"</li>",
+      "timestamp": "2025-08-27T12:34:16.044Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 169,
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 228,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"bg-gradient-to-br from-premium-50 to-primary-50 rounded-2xl p-6 h-full border border-premium-200/30 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2\"",
-      "timestamp": "2025-08-27T07:19:52.644Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Como a sua origem portuguesa influenciou a sua abordagem empresarial?\"",
+      "context": "<li>\"Como a sua origem portuguesa influenciou a sua abordagem empresarial?\"</li>",
+      "timestamp": "2025-08-27T12:34:16.044Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 170,
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 229,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"flex items-start gap-4 mb-4\"",
-      "timestamp": "2025-08-27T07:19:52.644Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Que oportunidades vê em conectar os mercados do Reino Unido e Portugal?\"",
+      "context": "<li>\"Que oportunidades vê em conectar os mercados do Reino Unido e Portugal?\"</li>",
+      "timestamp": "2025-08-27T12:34:16.044Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 172,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"w-12 h-12 bg-gradient-to-br from-premium-500 to-primary-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300\"",
-      "timestamp": "2025-08-27T07:19:52.644Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 175,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"w-6 h-6 text-white\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 177,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"flex-1\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 178,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"font-bold text-gray-900 mb-1 text-lg group-hover:text-premium-700 transition-colors duration-300\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 181,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"text-gray-600 leading-relaxed mb-4\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 182,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"space-y-2\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 184,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"flex items-center gap-2 text-sm text-gray-600\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 185,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"w-4 h-4 text-premium-500 flex-shrink-0\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 205,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"bg-gradient-to-br from-premium-50 via-primary-50 to-secondary-50 rounded-3xl p-10 border border-premium-200/30 shadow-xl\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 206,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"text-center mb-10\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 207,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"text-3xl font-bold bg-gradient-to-r from-premium-600 to-primary-600 bg-clip-text text-transparent mb-4\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 210,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 216,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"grid lg:grid-cols-2 gap-8\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 217,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"space-y-6\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 218,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"text-2xl font-bold text-gray-900 mb-4\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 219,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"space-y-4\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 220,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"flex items-start gap-3\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 221,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"w-6 h-6 bg-premium-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 222,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"text-white text-xs font-bold\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 225,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"font-bold text-gray-900\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 226,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"text-gray-600\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 220,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"flex items-start gap-3\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
+      "file": "src/app/academy/business-networking/page.tsx",
       "line": 230,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"w-6 h-6 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Que tradições empresariais portuguesas mantém em Londres?\"",
+      "context": "<li>\"Que tradições empresariais portuguesas mantém em Londres?\"</li>",
+      "timestamp": "2025-08-27T12:34:16.044Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 222,
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 244,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"text-white text-xs font-bold\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Pesquise 3 líderes empresariais portugueses em Londres\"",
+      "context": "\"Pesquise 3 líderes empresariais portugueses em Londres\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
     },
     {
-      "file": "src/app/about/page.tsx",
-      "line": 225,
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 249,
       "category": "hardcoded_text",
       "severity": "high",
-      "message": "Hardcoded text detected - should use t() function",
-      "code": "\"font-bold text-gray-900\"",
-      "timestamp": "2025-08-27T07:19:52.645Z"
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Pratique apresentação profissional em inglês e português\"",
+      "context": "\"Pratique apresentação profissional em inglês e português\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 254,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Identifique formas de contribuir para a comunidade empresarial portuguesa\"",
+      "context": "\"Identifique formas de contribuir para a comunidade empresarial portuguesa\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 260,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Always follow up within 48 hours after meeting someone new\"",
+      "context": "\"Always follow up within 48 hours after meeting someone new\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 261,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Connect on LinkedIn with a personalized message referencing your conversation\"",
+      "context": "\"Connect on LinkedIn with a personalized message referencing your conversation\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 262,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Offer specific help or resources rather than generic \"",
+      "context": "'Offer specific help or resources rather than generic \"let me know if I can help\"',",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 265,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Sempre faça seguimento dentro de 48 horas após conhecer alguém novo\"",
+      "context": "\"Sempre faça seguimento dentro de 48 horas após conhecer alguém novo\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 266,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Conecte no LinkedIn com uma mensagem personalizada referenciando a sua conversa\"",
+      "context": "\"Conecte no LinkedIn com uma mensagem personalizada referenciando a sua conversa\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 267,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Ofereça ajuda específica ou recursos em vez de genérico \"",
+      "context": "'Ofereça ajuda específica ou recursos em vez de genérico \"me diga se posso ajudar\"',",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 413,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Pesquise próximos eventos empresariais portugueses em Londres\"",
+      "context": "\"Pesquise próximos eventos empresariais portugueses em Londres\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 418,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Prepare o seu pitch de elevador de 30 segundos em ambos os idiomas\"",
+      "context": "\"Prepare o seu pitch de elevador de 30 segundos em ambos os idiomas\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 423,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Desenhe cartões de visita com elementos culturais portugueses\"",
+      "context": "\"Desenhe cartões de visita com elementos culturais portugueses\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 433,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Dress slightly more formally than expected - Portuguese business culture values presentation\"",
+      "context": "\"Dress slightly more formally than expected - Portuguese business culture values presentation\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 434,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Learn key business phrases in Lusophone even if the event is primarily in English\"",
+      "context": "\"Learn key business phrases in Lusophone even if the event is primarily in English\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 435,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Bring small Lusophone gifts (like pastéis de nata) to memorable first meetings\"",
+      "context": "\"Bring small Lusophone gifts (like pastéis de nata) to memorable first meetings\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 438,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Vista-se ligeiramente mais formal do que esperado - a cultura empresarial portuguesa valoriza a apresentação\"",
+      "context": "\"Vista-se ligeiramente mais formal do que esperado - a cultura empresarial portuguesa valoriza a apresentação\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 439,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Aprenda frases empresariais chave em português mesmo que o evento seja principalmente em inglês\"",
+      "context": "\"Aprenda frases empresariais chave em português mesmo que o evento seja principalmente em inglês\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 440,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Traga pequenos presentes portugueses (como pastéis de nata) para primeiros encontros memoráveis\"",
+      "context": "\"Traga pequenos presentes portugueses (como pastéis de nata) para primeiros encontros memoráveis\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 584,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Liste as suas forças culturais portuguesas e como se aplicam aos negócios\"",
+      "context": "\"Liste as suas forças culturais portuguesas e como se aplicam aos negócios\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 589,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Identifique potenciais parcerias empresariais portuguesas na sua indústria\"",
+      "context": "\"Identifique potenciais parcerias empresariais portuguesas na sua indústria\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 594,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Pesquise oportunidades de mercado português para o seu negócio\"",
+      "context": "\"Pesquise oportunidades de mercado português para o seu negócio\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 599,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Planeie formas de incorporar elementos portugueses na sua marca profissional\"",
+      "context": "\"Planeie formas de incorporar elementos portugueses na sua marca profissional\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 605,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Be proud but not overwhelming about your heritage - let it enhance rather than define your professional identity\"",
+      "context": "\"Be proud but not overwhelming about your heritage - let it enhance rather than define your professional identity\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 606,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Stay updated on Lusophone economic and cultural news to provide current insights\"",
+      "context": "\"Stay updated on Lusophone economic and cultural news to provide current insights\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 607,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Consider obtaining dual citizenship if eligible for enhanced business opportunities\"",
+      "context": "\"Consider obtaining dual citizenship if eligible for enhanced business opportunities\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 610,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Seja orgulhoso mas não avassalador sobre a sua herança - deixe-a melhorar em vez de definir a sua identidade profissional\"",
+      "context": "\"Seja orgulhoso mas não avassalador sobre a sua herança - deixe-a melhorar em vez de definir a sua identidade profissional\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 611,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Mantenha-se atualizado sobre notícias económicas e culturais portuguesas para fornecer insights atuais\"",
+      "context": "\"Mantenha-se atualizado sobre notícias económicas e culturais portuguesas para fornecer insights atuais\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 612,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Considere obter dupla cidadania se elegível para oportunidades empresariais melhoradas\"",
+      "context": "\"Considere obter dupla cidadania se elegível para oportunidades empresariais melhoradas\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 824,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Otimize o seu perfil LinkedIn com elementos empresariais portugueses\"",
+      "context": "\"Otimize o seu perfil LinkedIn com elementos empresariais portugueses\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 829,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Junte-se a 3 grupos empresariais portugueses no WhatsApp ou LinkedIn\"",
+      "context": "\"Junte-se a 3 grupos empresariais portugueses no WhatsApp ou LinkedIn\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 834,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Crie um sistema de gestão de contactos para seguimentos\"",
+      "context": "\"Crie um sistema de gestão de contactos para seguimentos\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 839,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Agende revisão mensal de relacionamentos no seu calendário\"",
+      "context": "\"Agende revisão mensal de relacionamentos no seu calendário\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 845,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Never add people to WhatsApp groups without permission\"",
+      "context": "\"Never add people to WhatsApp groups without permission\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 846,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Avoid over-posting on professional platforms - quality over quantity\"",
+      "context": "\"Avoid over-posting on professional platforms - quality over quantity\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 847,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Respect privacy settings and professional boundaries\"",
+      "context": "\"Respect privacy settings and professional boundaries\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 851,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Nunca adicione pessoas a grupos WhatsApp sem permissão\"",
+      "context": "\"Nunca adicione pessoas a grupos WhatsApp sem permissão\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 852,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Evite postar demais em plataformas profissionais - qualidade sobre quantidade\"",
+      "context": "\"Evite postar demais em plataformas profissionais - qualidade sobre quantidade\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 853,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Respeite configurações de privacidade e limites profissionais\"",
+      "context": "\"Respeite configurações de privacidade e limites profissionais\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 854,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Não misture comunicação pessoal e empresarial a menos que apropriado\"",
+      "context": "\"Não misture comunicação pessoal e empresarial a menos que apropriado\",",
+      "timestamp": "2025-08-27T12:34:16.044Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 29,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Navigate and contribute to Portuguese-speaking community discussions with confidence and cultural awareness\"",
+      "context": "\"Navigate and contribute to Portuguese-speaking community discussions with confidence and cultural awareness\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 31,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Navegue e contribua para discussões da comunidade de falantes de português com confiança e consciência cultural\"",
+      "context": "\"Navegue e contribua para discussões da comunidade de falantes de português com confiança e consciência cultural\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 116,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"New Members\"",
+      "context": "<p><strong>Getting Started Tip:</strong> Begin by browsing the \"New Members\" section where fellow Portuguese speakers share their first experiences in London. It's a welcoming space to introduce yourself and ask initial questions.</p>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 187,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Novos Membros\"",
+      "context": "<p><strong>Dica para Começar:</strong> Comece por navegar na secção \"Novos Membros\" onde outros falantes de português partilham as suas primeiras experiências em Londres. É um espaço acolhedor para se apresentar e fazer perguntas iniciais.</p>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 201,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Explorar todas as quatro categorias principais do fórum\"",
+      "context": "\"Explorar todas as quatro categorias principais do fórum\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 206,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Configurar preferências de notificação para tópicos relevantes\"",
+      "context": "\"Configurar preferências de notificação para tópicos relevantes\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 215,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Praticar o uso de pesquisa e funcionalidades de filtragem por tags\"",
+      "context": "\"Praticar o uso de pesquisa e funcionalidades de filtragem por tags\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 232,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Olá pessoal\"",
+      "context": "<li><strong>Warmth & Hospitality:</strong> Begin posts with friendly greetings like \"Olá pessoal\" or \"Hello everyone\"</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 232,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Hello everyone\"",
+      "context": "<li><strong>Warmth & Hospitality:</strong> Begin posts with friendly greetings like \"Olá pessoal\" or \"Hello everyone\"</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 246,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Procuro médico que fale português em Camden\"",
+      "context": "<li>\"Procuro médico que fale português em Camden\" (Looking for Portuguese-speaking doctor in Camden)</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 247,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Recomendações: melhor padaria portuguesa em Stockwell?\"",
+      "context": "<li>\"Recomendações: melhor padaria portuguesa em Stockwell?\" (Recommendations: best Lusophone bakery in Stockwell?)</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 248,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Ajuda com documentos - experiência de outros portugueses\"",
+      "context": "<li>\"Ajuda com documentos - experiência de outros portugueses\" (Help with documents - other Lusophone experiences)</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 267,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Alguém teve experiência similar?\"",
+      "context": "<li>\"Alguém teve experiência similar?\" (Anyone had similar experience?)</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 268,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Que acham? Aceito todas as sugestões!\"",
+      "context": "<li>\"Que acham? Aceito todas as sugestões!\" (What do you think? I welcome all suggestions!)</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 269,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Obrigado/a desde já pela ajuda!\"",
+      "context": "<li>\"Obrigado/a desde já pela ajuda!\" (Thanks in advance for the help!)</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 294,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Olá pessoal\"",
+      "context": "<li><strong>Calor e Hospitalidade:</strong> Comece as publicações com saudações amigáveis como \"Olá pessoal\" ou \"Hello everyone\"</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 294,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Hello everyone\"",
+      "context": "<li><strong>Calor e Hospitalidade:</strong> Comece as publicações com saudações amigáveis como \"Olá pessoal\" ou \"Hello everyone\"</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 308,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Procuro médico que fale português em Camden\"",
+      "context": "<li>\"Procuro médico que fale português em Camden\"</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 309,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Recomendações: melhor padaria portuguesa em Stockwell?\"",
+      "context": "<li>\"Recomendações: melhor padaria portuguesa em Stockwell?\"</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 310,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Ajuda com documentos - experiência de outros portugueses\"",
+      "context": "<li>\"Ajuda com documentos - experiência de outros portugueses\"</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 329,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Alguém teve experiência similar?\"",
+      "context": "<li>\"Alguém teve experiência similar?\"</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 330,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Que acham? Aceito todas as sugestões!\"",
+      "context": "<li>\"Que acham? Aceito todas as sugestões!\"</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 331,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Obrigado/a desde já pela ajuda!\"",
+      "context": "<li>\"Obrigado/a desde já pela ajuda!\"</li>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 363,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Use clear subject line, provide location/context, and ask specific questions. End with gratitude.\"",
+      "context": "\"Use clear subject line, provide location/context, and ask specific questions. End with gratitude.\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 365,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Use linha de assunto clara, forneça localização/contexto, e faça perguntas específicas. Termine com gratidão.\"",
+      "context": "\"Use linha de assunto clara, forneça localização/contexto, e faça perguntas específicas. Termine com gratidão.\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 371,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Start with location/context, share detailed experience, and invite others to ask questions.\"",
+      "context": "\"Start with location/context, share detailed experience, and invite others to ask questions.\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 373,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Comece com localização/contexto, partilhe experiência detalhada, e convide outros a fazer perguntas.\"",
+      "context": "\"Comece com localização/contexto, partilhe experiência detalhada, e convide outros a fazer perguntas.\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 379,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Include clear date, time, location, and how to RSVP. Explain the Lusophone cultural element.\"",
+      "context": "\"Include clear date, time, location, and how to RSVP. Explain the Lusophone cultural element.\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 381,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Inclua data, hora, localização clara, e como confirmar presença. Explique o elemento cultural português.\"",
+      "context": "\"Inclua data, hora, localização clara, e como confirmar presença. Explique o elemento cultural português.\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 465,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"I commit to treating fellow Portuguese speakers with the same warmth and respect I would show to family, while maintaining the safety and dignity of our London community.\"",
+      "context": "<p><strong>Community Pledge:</strong> \"I commit to treating fellow Portuguese speakers with the same warmth and respect I would show to family, while maintaining the safety and dignity of our London community.\"</p>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 546,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Comprometo-me a tratar outros falantes de português com o mesmo calor e respeito que mostraria à família, mantendo a segurança e dignidade da nossa comunidade londrina.\"",
+      "context": "<p><strong>Compromisso da Comunidade:</strong> \"Comprometo-me a tratar outros falantes de português com o mesmo calor e respeito que mostraria à família, mantendo a segurança e dignidade da nossa comunidade londrina.\"</p>",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 568,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Configurar preferências de privacidade para o seu perfil\"",
+      "context": "\"Configurar preferências de privacidade para o seu perfil\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 769,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Receber e ajudar pelo menos 3 novos membros da comunidade a cada mês\"",
+      "context": "\"Receber e ajudar pelo menos 3 novos membros da comunidade a cada mês\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 774,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Partilhar a sua expertise profissional e conhecimento local regularmente\"",
+      "context": "\"Partilhar a sua expertise profissional e conhecimento local regularmente\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 779,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Organizar ou participar em encontros comunitários offline\"",
+      "context": "\"Organizar ou participar em encontros comunitários offline\",",
+      "timestamp": "2025-08-27T12:34:16.048Z"
     }
   ],
-  "fullViolationCount": 164862
+  "fullViolationCount": 22315
 }

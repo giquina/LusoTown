@@ -14,7 +14,7 @@ import { PlatformIntegrationProvider } from "@/context/PlatformIntegrationContex
 import { WaitingListProvider } from "@/context/WaitingListContext";
 import { NavigationProvider } from "@/context/NavigationContext";
 import Header from "@/components/Header";
-import ErrorBoundary from "@/components/ErrorBoundary";
+import ErrorBoundary, { ComponentErrorBoundary } from "@/components/ErrorBoundary";
 import dynamic from "next/dynamic";
 import { WidgetManager } from "@/components/WidgetManager";
 import { METADATA_BASE } from "@/config/site";
@@ -61,8 +61,10 @@ export default function RootLayout({
                           <PlatformIntegrationProvider>
                             <WaitingListProvider>
                               <NavigationProvider>
-                                {/* Essential Header */}
-                                <Header />
+                                {/* Essential Header (isolated to prevent app-wide crash) */}
+                                <ComponentErrorBoundary componentName="Header" level="component" maxRetries={1}>
+                                  <Header />
+                                </ComponentErrorBoundary>
 
                                 <WidgetManager>
                                   {/* Main Content */}
@@ -70,8 +72,10 @@ export default function RootLayout({
                                     {children}
                                   </main>
 
-                                  {/* Client-only widgets */}
-                                  <LusoBotWrapper />
+                                  {/* Client-only widgets (isolated) */}
+                                  <ComponentErrorBoundary componentName="LusoBotWrapper" level="component" maxRetries={0}>
+                                    <LusoBotWrapper />
+                                  </ComponentErrorBoundary>
                                 </WidgetManager>
 
                                 {/* Toast Notifications */}

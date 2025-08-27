@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useCallback, useRef, KeyboardEvent, memo, useMemo, lazy, Suspense } from 'react'
-import { motion, AnimatePresence, PanInfo, useMotionValue, useTransform, animate, useAnimation } from 'framer-motion'
+import { motion, AnimatePresence, PanInfo, useMotionValue, useTransform, animate } from 'framer-motion'
 import { 
   ChevronLeftIcon, 
   ChevronRightIcon,
@@ -521,7 +521,6 @@ const LusophoneCarousel = memo(<T extends CarouselItemType>({
   const { currentConfig, screenSize } = useResponsive(responsive)
   const carouselRef = useRef<HTMLDivElement>(null)
   const [isIntersecting, setIsIntersecting] = useState(false)
-  const controls = useAnimation()
   
   // Enhanced mobile settings
   const mobileConfig = { ...DEFAULT_MOBILE_SETTINGS, ...mobileSettings }

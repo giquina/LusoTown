@@ -6,6 +6,7 @@
  */
 
 import { PWA_ENHANCEMENT_CONFIG } from '@/config/mobile-app';
+import { logger } from '@/utils/logger';
 
 export interface PerformanceMetrics {
   // Core Web Vitals for Portuguese Cultural Content
@@ -95,7 +96,11 @@ export class MobilePerformanceOptimizer {
   public async initialize(): Promise<void> {
     if (typeof window === 'undefined') return;
 
-    console.log('[Mobile Performance] Initializing Portuguese cultural optimization...');
+    logger.info('Initializing Portuguese cultural mobile performance optimization', {
+      area: 'performance',
+      culturalContext: 'lusophone',
+      action: 'mobile_performance_init'
+    });
 
     try {
       // Detect device capabilities
@@ -116,9 +121,17 @@ export class MobilePerformanceOptimizer {
       // Setup lazy loading for non-critical resources
       this.setupLazyLoading();
       
-      console.log('[Mobile Performance] Portuguese cultural optimization initialized');
+      logger.info('Portuguese cultural mobile optimization initialized successfully', {
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'mobile_cultural_optimization_initialized'
+      });
     } catch (error) {
-      console.error('[Mobile Performance] Initialization failed:', error);
+      logger.error('Mobile performance engine initialization failed for Portuguese-speaking community', error, {
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'mobile_performance_initialization_failed'
+      });
     }
   }
 
@@ -142,9 +155,22 @@ export class MobilePerformanceOptimizer {
         this.connectionQuality = connection.effectiveType || 'unknown';
       }
       
-      console.log(`[Mobile Performance] Device capabilities: Memory=${deviceMemory}GB, Cores=${hardwareConcurrency}, Connection=${this.connectionQuality}, LowEnd=${this.isLowEndDevice}`);
+      logger.debug('Device capabilities detected for Portuguese-speaking community', {
+        deviceMemory,
+        hardwareConcurrency,
+        connectionQuality: this.connectionQuality,
+        isLowEndDevice: this.isLowEndDevice,
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'device_capabilities_detected'
+      });
     } catch (error) {
-      console.warn('[Mobile Performance] Could not detect device capabilities:', error);
+      logger.warn('Mobile device capability detection failed for Portuguese community platform', {
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'device_detection_failed',
+        error: error.message
+      });
     }
   }
 
@@ -170,7 +196,12 @@ export class MobilePerformanceOptimizer {
       this.setupWebVitalsMonitoring();
       
     } catch (error) {
-      console.warn('[Mobile Performance] Performance monitoring setup failed:', error);
+      logger.warn('Mobile performance monitoring setup failed for Portuguese-speaking community', {
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'performance_monitoring_setup_failed',
+        error: error.message
+      });
     }
   }
 
@@ -185,7 +216,12 @@ export class MobilePerformanceOptimizer {
       this.metrics.firstContentfulPaint = lastEntry.startTime;
       
       if (lastEntry.startTime > 2500) {
-        console.warn('[Mobile Performance] FCP is slow for Portuguese community content:', lastEntry.startTime);
+        logger.warn('First Contentful Paint is slow for Portuguese community content', {
+          area: 'performance',
+          culturalContext: 'portuguese',
+          action: 'fcp_performance_warning',
+          duration: lastEntry.startTime
+        });
         this.optimizeForSlowFCP();
       }
     });
@@ -198,7 +234,12 @@ export class MobilePerformanceOptimizer {
       this.metrics.largestContentfulPaint = lastEntry.startTime;
       
       if (lastEntry.startTime > 4000) {
-        console.warn('[Mobile Performance] LCP is slow for Portuguese cultural images:', lastEntry.startTime);
+        logger.warn('Largest Contentful Paint is slow for Portuguese cultural images', {
+          area: 'performance',
+          culturalContext: 'portuguese',
+          action: 'lcp_performance_warning',
+          duration: lastEntry.startTime
+        });
         this.optimizeForSlowLCP();
       }
     });
@@ -215,7 +256,12 @@ export class MobilePerformanceOptimizer {
       this.metrics.cumulativeLayoutShift = clsValue;
       
       if (clsValue > 0.1) {
-        console.warn('[Mobile Performance] CLS is high, may affect Portuguese text rendering:', clsValue);
+        logger.warn('Cumulative Layout Shift is high, may affect Portuguese text rendering', {
+          area: 'performance',
+          culturalContext: 'portuguese',
+          action: 'cls_performance_warning',
+          clsValue
+        });
       }
     });
     clsObserver.observe({ entryTypes: ['layout-shift'] });
@@ -235,7 +281,13 @@ export class MobilePerformanceOptimizer {
         this.metrics.culturalContentLoadTime = (this.metrics.culturalContentLoadTime || 0) + loadTime;
         
         if (loadTime > 3000) {
-          console.warn('[Mobile Performance] Slow Portuguese cultural resource:', entry.name, loadTime);
+          logger.warn('Slow Portuguese cultural resource loading detected', {
+            area: 'performance',
+            culturalContext: 'portuguese',
+            action: 'slow_cultural_resource',
+            resourceName: entry.name,
+            duration: loadTime
+          });
           this.optimizeSlowCulturalResource(entry.name, loadTime);
         }
       }
@@ -246,7 +298,11 @@ export class MobilePerformanceOptimizer {
    * Optimize critical rendering path for Portuguese community
    */
   private async optimizeCriticalPath(): Promise<void> {
-    console.log('[Mobile Performance] Optimizing critical path for Portuguese community...');
+    logger.info('Optimizing critical path for Portuguese community mobile experience', {
+      area: 'performance',
+      culturalContext: 'lusophone',
+      action: 'critical_path_optimization_started'
+    });
 
     try {
       // Preload critical Portuguese cultural assets
@@ -262,7 +318,11 @@ export class MobilePerformanceOptimizer {
       this.optimizePortugueseFontLoading();
       
     } catch (error) {
-      console.error('[Mobile Performance] Critical path optimization failed:', error);
+      logger.error('Critical path optimization failed for Portuguese-speaking community mobile', error, {
+        area: 'performance',
+        culturalContext: 'lusophone',
+        action: 'critical_path_optimization_failed'
+      });
     }
   }
 
@@ -444,7 +504,12 @@ export class MobilePerformanceOptimizer {
    * Adapt performance based on connection quality
    */
   private adaptToConnectionQuality(): void {
-    console.log(`[Mobile Performance] Adapting to connection: ${this.connectionQuality}`);
+    logger.info('Adapting mobile performance to connection quality for Portuguese-speaking community', {
+      connectionQuality: this.connectionQuality,
+      area: 'performance',
+      culturalContext: 'lusophone',
+      action: 'connection_adaptation'
+    });
 
     if (this.connectionQuality === 'slow-2g' || this.connectionQuality === '2g') {
       // Ultra-aggressive optimization for slow connections
@@ -462,7 +527,11 @@ export class MobilePerformanceOptimizer {
    * Enable data saver mode for slow connections
    */
   private enableDataSaverMode(): void {
-    console.log('[Mobile Performance] Enabling data saver mode for Portuguese community');
+    logger.info('Enabling data saver mode for Portuguese-speaking community', {
+      area: 'performance',
+      culturalContext: 'lusophone',
+      action: 'data_saver_enabled'
+    });
     
     // Disable auto-playing videos
     document.querySelectorAll('video[autoplay]').forEach(video => {
@@ -485,7 +554,11 @@ export class MobilePerformanceOptimizer {
    * Optimize Portuguese cultural content specifically
    */
   private async optimizePortugueseCulturalContent(): Promise<void> {
-    console.log('[Mobile Performance] Optimizing Portuguese cultural content...');
+    logger.info('Optimizing Portuguese cultural content for mobile performance', {
+      area: 'performance',
+      culturalContext: 'portuguese',
+      action: 'cultural_content_optimization_started'
+    });
 
     try {
       // Optimize cultural images
@@ -501,7 +574,11 @@ export class MobilePerformanceOptimizer {
       this.optimizeHeritageColors();
       
     } catch (error) {
-      console.error('[Mobile Performance] Cultural content optimization failed:', error);
+      logger.error('Portuguese cultural content optimization failed for mobile', error, {
+        area: 'performance',
+        culturalContext: 'portuguese',
+        action: 'cultural_content_optimization_failed'
+      });
     }
   }
 
@@ -582,9 +659,18 @@ export class MobilePerformanceOptimizer {
         ];
         
         await cache.addAll(eventsToCache);
-        console.log('[Mobile Performance] Portuguese cultural events cached');
+        logger.debug('Portuguese cultural events cached for mobile performance', {
+          area: 'performance',
+          culturalContext: 'portuguese',
+          action: 'cultural_events_cached'
+        });
       } catch (error) {
-        console.warn('[Mobile Performance] Failed to cache cultural events:', error);
+        logger.warn('Failed to cache Portuguese cultural events for mobile performance', {
+          area: 'performance',
+          culturalContext: 'portuguese',
+          action: 'cultural_events_cache_failed',
+          error: error.message
+        });
       }
     }
   }
@@ -621,7 +707,11 @@ export class MobilePerformanceOptimizer {
    * Optimize for slow First Contentful Paint
    */
   private optimizeForSlowFCP(): void {
-    console.log('[Mobile Performance] Optimizing for slow FCP...');
+    logger.info('Optimizing for slow First Contentful Paint for Portuguese-speaking community', {
+      area: 'performance',
+      culturalContext: 'lusophone',
+      action: 'slow_fcp_optimization'
+    });
     
     // Inline more critical CSS
     this.inlineCriticalCSS();
@@ -634,7 +724,11 @@ export class MobilePerformanceOptimizer {
    * Optimize for slow Largest Contentful Paint
    */
   private optimizeForSlowLCP(): void {
-    console.log('[Mobile Performance] Optimizing for slow LCP...');
+    logger.info('Optimizing for slow Largest Contentful Paint for Portuguese cultural content', {
+      area: 'performance',
+      culturalContext: 'lusophone',
+      action: 'slow_lcp_optimization'
+    });
     
     // Preload LCP element resources
     const lcpElements = document.querySelectorAll('[data-lcp="true"]');
@@ -649,7 +743,13 @@ export class MobilePerformanceOptimizer {
    * Optimize slow Portuguese cultural resources
    */
   private optimizeSlowCulturalResource(resourceUrl: string, loadTime: number): void {
-    console.log(`[Mobile Performance] Optimizing slow cultural resource: ${resourceUrl} (${loadTime}ms)`);
+    logger.debug('Optimizing slow cultural resource for Portuguese-speaking community', {
+      resourceUrl,
+      loadTime,
+      area: 'performance',
+      culturalContext: 'lusophone',
+      action: 'slow_resource_optimization'
+    });
     
     // Implement resource-specific optimizations
     if (resourceUrl.includes('.jpg') || resourceUrl.includes('.png')) {
@@ -700,12 +800,20 @@ export class MobilePerformanceOptimizer {
   }
 
   private enableBalancedMode(): void {
-    console.log('[Mobile Performance] Enabling balanced mode for Portuguese community');
+    logger.info('Enabling balanced performance mode for Portuguese-speaking community', {
+      area: 'performance',
+      culturalContext: 'lusophone',
+      action: 'balanced_mode_enabled'
+    });
     // Implement balanced optimizations
   }
 
   private enableFullExperienceMode(): void {
-    console.log('[Mobile Performance] Enabling full experience for Portuguese community');
+    logger.info('Enabling full mobile experience for Portuguese-speaking community', {
+      area: 'performance',
+      culturalContext: 'lusophone',
+      action: 'full_experience_enabled'
+    });
     // Enable all features and animations
   }
 
@@ -733,7 +841,13 @@ export class MobilePerformanceOptimizer {
 
   private convertImageToWebP(imageUrl: string): void {
     // Placeholder for WebP conversion logic
-    console.log(`[Mobile Performance] Should convert to WebP: ${imageUrl}`);
+    logger.debug('WebP image optimization recommendation for Portuguese cultural content', {
+      imageUrl,
+      shouldConvert: true,
+      area: 'performance',
+      culturalContext: 'lusophone',
+      action: 'webp_optimization_recommendation'
+    });
   }
 
   private cacheApiResponse(apiUrl: string): void {

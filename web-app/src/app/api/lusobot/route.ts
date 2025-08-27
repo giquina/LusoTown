@@ -3,6 +3,7 @@ import { LusoBotEngine, MessageMetadata } from '@/lib/lusobot-engine'
 import { Language } from '@/i18n'
 import { validateInput, sanitizeText, validatePortugueseContent, ValidationError } from '@/lib/security/input-validation'
 import { createClient } from '@/lib/supabase'
+import logger from '@/utils/logger'
 
 // Enhanced rate limiting and security
 const rateLimitMap = new Map()
@@ -145,7 +146,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(apiResponse)
 
   } catch (error) {
-    console.error('LusoBot API Error:', error)
+    logger.error('LusoBot API processing error', error, {
+      area: 'ai',
+      action: 'lusobot_response_generation',
+      culturalContext: 'lusophone'
+    })
     
     return NextResponse.json(
       { 

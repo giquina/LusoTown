@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getEnhancedDatabaseService } from "@/services/EnhancedDatabaseService";
+import logger from '@/utils/logger';
 
 /**
  * Advanced Portuguese Business Search API
@@ -214,7 +215,14 @@ export async function GET(
           ),
         };
       } catch (error) {
-        console.warn("Clustering analysis failed:", error);
+        logger.warn('Business clustering analysis failed', {
+          area: 'business',
+          action: 'clustering_analysis',
+          culturalContext: 'portuguese',
+          userLat: params.userLat,
+          userLng: params.userLng,
+          error: error instanceof Error ? error.message : String(error)
+        });
       }
     }
 
@@ -256,7 +264,17 @@ export async function GET(
       },
     });
   } catch (error) {
-    console.error("Advanced Portuguese business search error:", error);
+    logger.error('Advanced Portuguese business search failed', error, {
+      area: 'business',
+      action: 'advanced_business_search',
+      culturalContext: 'portuguese',
+      searchParams: {
+        userLat: params.userLat,
+        userLng: params.userLng,
+        radius: params.radiusKm,
+        culturalPreference: params.culturalPreference
+      }
+    });
 
     const executionTime = performance.now() - startTime;
 
@@ -558,7 +576,16 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       },
     });
   } catch (error) {
-    console.error("Portuguese business creation error:", error);
+    logger.error('Portuguese business creation failed', error, {
+      area: 'business',
+      action: 'create_business',
+      culturalContext: 'portuguese',
+      businessData: {
+        name: businessData?.name,
+        type: businessData?.business_type,
+        region: businessData?.owner_region
+      }
+    });
 
     return NextResponse.json(
       {

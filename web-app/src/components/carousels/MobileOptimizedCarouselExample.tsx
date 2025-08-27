@@ -3,6 +3,7 @@
 import React, { useState, useCallback } from 'react'
 import { LusophoneCarousel, WeekendEventItem, MobileSettings, PWASettings, PerformanceMetrics } from './LusophoneCarousel'
 import { useLanguage } from '@/context/LanguageContext'
+import logger from '@/utils/logger'
 
 /**
  * Mobile-optimized carousel example for Portuguese-speaking community
@@ -157,16 +158,16 @@ export default function MobileOptimizedCarouselExample() {
   const handleSwipeGesture = useCallback((direction: 'left' | 'right', item: WeekendEventItem) => {
     if (direction === 'left') {
       // Swipe left could indicate "not interested"
-      console.log(`Swiped left on ${item.title[language]}`)
+      logger.debug(`User swiped left on event`, { area: 'events', eventTitle: item.title[language] })
     } else {
       // Swipe right could indicate "interested"
-      console.log(`Swiped right on ${item.title[language]}`)
+      logger.debug(`User swiped right on event`, { area: 'events', eventTitle: item.title[language] })
     }
   }, [language])
 
   // Handle pull to refresh for Portuguese cultural content
   const handlePullToRefresh = useCallback(async () => {
-    console.log('Refreshing Portuguese cultural content...')
+    logger.info('Refreshing Portuguese cultural content', { area: 'cultural', culturalContext: 'lusophone' })
     setRefreshCount(prev => prev + 1)
     
     // Simulate API call to refresh Portuguese events
@@ -185,11 +186,21 @@ export default function MobileOptimizedCarouselExample() {
     
     // Log performance issues for mobile optimization
     if (metrics.networkStatus === 'slow') {
-      console.warn('Slow network detected - optimizing Portuguese cultural content delivery')
+      logger.warn('Slow network detected - optimizing Portuguese cultural content delivery', {
+        area: 'performance',
+        action: 'network_optimization',
+        culturalContext: 'portuguese',
+        deviceType: 'mobile'
+      })
     }
     
     if (metrics.memoryUsage > 50) { // 50MB threshold
-      console.warn('High memory usage detected - optimizing mobile carousel performance')
+      logger.warn('High memory usage detected - optimizing mobile carousel performance', {
+        area: 'performance',
+        action: 'memory_optimization',
+        culturalContext: 'portuguese',
+        deviceType: 'mobile'
+      })
     }
   }, [])
 
@@ -297,7 +308,7 @@ export default function MobileOptimizedCarouselExample() {
         showDots={true}
         className="mobile-portuguese-carousel"
         onItemClick={(item, index) => {
-          console.log(`Clicked on ${item.title[language]} at index ${index}`)
+          logger.info('Event card clicked', { area: 'events', eventTitle: item.title[language], index })
         }}
         // Enhanced mobile features
         mobileSettings={mobileSettings}

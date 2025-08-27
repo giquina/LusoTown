@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
+import { ROUTES } from "@/config/routes";
 import {
   DocumentTextIcon,
   HandRaisedIcon,
@@ -540,7 +541,7 @@ export default function TermsOfService() {
                     Your privacy is paramount to us. Our data practices are
                     governed by our comprehensive
                     <a
-                      href="/privacy"
+                      href={ROUTES.privacy}
                       className="text-primary-600 hover:underline font-medium ml-1"
                     >
                       Privacy Policy

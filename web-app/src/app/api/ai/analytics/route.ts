@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import logger from '@/utils/logger';
+
 export const dynamic = 'force-dynamic'
 
 export async function GET(request: NextRequest) {
@@ -32,7 +34,10 @@ export async function GET(request: NextRequest) {
     
     return NextResponse.json(mockData);
   } catch (error) {
-    console.error('AI analytics error:', error);
+    logger.error('Failed to fetch AI analytics data', error, {
+      area: 'ai',
+      action: 'analytics_fetch'
+    });
     return NextResponse.json(
       { error: 'Failed to fetch AI analytics' },
       { status: 500 }

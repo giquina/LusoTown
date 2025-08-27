@@ -3393,7 +3393,7 @@
   "error_monitoring.alert_settings": "Alert Settings",
   "error_monitoring.refresh_data": "Refresh Data",
   "error_monitoring.export_report": "Export Report",
-  
+
   "error_boundary.title": "Something went wrong",
   "error_boundary.description": "An unexpected error occurred while loading this Portuguese community feature",
   "error_boundary.retry": "Try again",
@@ -3403,7 +3403,7 @@
   "error_boundary.portuguese_feature": "Portuguese Community Feature",
   "error_boundary.error_details": "Error details (development mode)",
   "error_boundary.attempts_remaining": "attempts remaining",
-  
+
   "error_alerts.critical_threshold": "Critical error threshold exceeded",
   "error_alerts.performance_degraded": "Portuguese feature performance degraded",
   "error_alerts.feature_unavailable": "Portuguese community feature temporarily unavailable",
@@ -3415,7 +3415,7 @@
   "error_alerts.contact_admin": "Contact Administrator",
   "error.boundary.title": "Something went wrong",
   "error.boundary.description": "An unexpected error occurred. Please try again or contact support if the problem persists.",
-  "error.boundary.critical-title": "Critical System Error", 
+  "error.boundary.critical-title": "Critical System Error",
   "error.boundary.critical-description": "A critical error has occurred. Please refresh the page or contact support.",
   "error.boundary.details-title": "Error details (development mode)",
   "error.boundary.retry": "Try again",
@@ -3429,7 +3429,7 @@
   "error.component.reload": "Reload page",
   "carousel.defaultLabel": "Content carousel",
   "carousel.previous": "Previous items",
-  "carousel.next": "Next items", 
+  "carousel.next": "Next items",
   "carousel.pause": "Pause carousel",
   "carousel.play": "Play carousel",
   "carousel.content": "Carousel content",
@@ -3437,5 +3437,24 @@
   "carousel.status": "Showing items {{start}} to {{end}} of {{total}}",
   "carousel.item": "Portuguese cultural item",
   "carousel.of": "of",
-  "carousel.loading": "Loading Portuguese content..."
+  "carousel.loading": "Loading Portuguese content...",
+
+  "academy.business_networking.title": "LusoTown Business Networking",
+  "academy.business_networking.description": "Master professional networking within the Portuguese business community in London",
+  "academy.business_networking.category": "Professional",
+  "academy.business_networking.objectives.build_connections": "Build meaningful professional connections with Lusophone entrepreneurs",
+  "academy.business_networking.objectives.navigate_etiquette": "Navigate business etiquette in bilingual environments",
+  "academy.business_networking.objectives.leverage_heritage": "Leverage cultural heritage for business advantages",
+  "academy.business_networking.objectives.create_partnerships": "Create lasting partnerships and collaborations",
+  "academy.business_networking.objectives.develop_brand": "Develop your personal brand within the Portuguese-speaking community",
+  
+  "academy.business_networking.steps.introduction.title": "Lusophone Business Landscape in London",
+  "academy.business_networking.steps.networking_basics.title": "Networking Fundamentals for Portuguese Speakers",
+  "academy.business_networking.steps.conversation_starters.title": "Conversation Starters for Business Events",
+  "academy.business_networking.steps.homework.title": "Practice Assignments",
+  "academy.business_networking.steps.follow_up.title": "Following Up and Building Relationships",
+  "academy.business_networking.steps.digital_networking.title": "Digital Networking for Portuguese Entrepreneurs",
+  "academy.business_networking.steps.cultural_advantage.title": "Leveraging Cultural Heritage in Business",
+  
+  "academy.business_networking.completion_message": "Business Networking module completed"
 }

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerActionClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
+import logger from '@/utils/logger'
 
 export async function POST(request: NextRequest) {
   try {
@@ -62,7 +63,7 @@ export async function POST(request: NextRequest) {
       .single()
 
     if (error) {
-      console.error('Error queuing email:', error)
+      logger.error('Error queuing email', error, { area: 'messaging', action: 'queue_email' })
       return NextResponse.json({ error: 'Failed to queue email' }, { status: 500 })
     }
 
@@ -73,7 +74,7 @@ export async function POST(request: NextRequest) {
     })
     
   } catch (error) {
-    console.error('Email queue error:', error)
+    logger.error('Email queue error', error, { area: 'messaging', action: 'queue_email' })
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
@@ -104,7 +105,7 @@ export async function GET(request: NextRequest) {
     const { data: queuedEmails, error } = await query
 
     if (error) {
-      console.error('Error fetching email queue:', error)
+      logger.error('Error fetching email queue', error, { area: 'messaging', action: 'fetch_queue' })
       return NextResponse.json({ error: 'Failed to fetch queue' }, { status: 500 })
     }
 
@@ -114,7 +115,7 @@ export async function GET(request: NextRequest) {
     })
     
   } catch (error) {
-    console.error('Email queue fetch error:', error)
+    logger.error('Email queue fetch error', error, { area: 'messaging', action: 'fetch_queue' })
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
@@ -156,14 +157,14 @@ export async function DELETE(request: NextRequest) {
       .eq('id', emailId)
 
     if (error) {
-      console.error('Error cancelling email:', error)
+      logger.error('Error cancelling email', error, { area: 'messaging', action: 'cancel_email' })
       return NextResponse.json({ error: 'Failed to cancel email' }, { status: 500 })
     }
 
     return NextResponse.json({ success: true })
     
   } catch (error) {
-    console.error('Email cancel error:', error)
+    logger.error('Email cancel error', error, { area: 'messaging', action: 'cancel_email' })
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

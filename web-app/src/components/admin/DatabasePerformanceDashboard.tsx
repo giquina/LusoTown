@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import logger from '@/utils/logger';
 
 interface PerformanceMetrics {
   timestamp: string;
@@ -60,7 +61,11 @@ export default function DatabasePerformanceDashboard() {
       }
     } catch (err) {
       // eslint-disable-next-line no-console
-      console.error("Performance metrics fetch error:", err);
+      logger.error('Database performance metrics fetch failed', err, {
+        area: 'performance',
+        action: 'fetch_db_metrics',
+        culturalContext: 'portuguese'
+      });
       setError(err instanceof Error ? err.message : "Unknown error occurred");
     } finally {
       setLoading(false);
@@ -83,7 +88,11 @@ export default function DatabasePerformanceDashboard() {
       }
     } catch (err) {
       // eslint-disable-next-line no-console
-      console.error("Maintenance action error:", err);
+      logger.error('Database maintenance action failed', err, {
+        area: 'admin',
+        action: 'database_maintenance',
+        culturalContext: 'portuguese'
+      });
       setError(
         err instanceof Error ? err.message : "Maintenance action failed"
       );

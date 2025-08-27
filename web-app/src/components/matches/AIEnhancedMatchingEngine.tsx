@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import {
@@ -433,35 +433,39 @@ export default function AIEnhancedMatchingEngine({
   const [showAIAnalysis, setShowAIAnalysis] = useState(false);
   const [learningMode, setLearningMode] = useState(enableLearning);
 
-  useEffect(() => {
-    findAIEnhancedMatches();
-  }, [userProfile]);
-
-  const findAIEnhancedMatches = async () => {
+  const findAIEnhancedMatches = useCallback(async () => {
     setLoading(true);
     
     // Simulate AI matching with enhanced algorithms
     const mockMatches = generateAIEnhancedMockMatches(userProfile);
     
     // Apply AI analysis to each match
-    const analyzedMatches = mockMatches.map(match => {
-      const aiResult = performAIAnalysis(userProfile, match);
-      return {
-        ...match,
-        ...aiResult,
-      };
-    });
-
-    // Sort by AI confidence and compatibility
-    analyzedMatches.sort((a, b) => {
-      const scoreA = a.aiConfidenceScore * 0.6 + a.compatibilityResult.compatibilityScore * 0.4;
-      const scoreB = b.aiConfidenceScore * 0.6 + b.compatibilityResult.compatibilityScore * 0.4;
-      return scoreB - scoreA;
-    });
-
-    setAiMatches(analyzedMatches);
+    const enhancedMatches = await Promise.all(
+      mockMatches.map(async (match) => {
+        const aiEngineResult = await PortugueseCulturalAI.calculateAICompatibility(
+          userProfile.saudadeProfile,
+          match.saudadeProfile
+        );
+        
+        return {
+          ...match,
+          aiEngineResult,
+          aiConfidenceScore: aiEngineResult.relationshipSuccessPrediction,
+        };
+      })
+    );
+    
+    // Sort by AI confidence score
+    enhancedMatches.sort((a, b) => b.aiConfidenceScore - a.aiConfidenceScore);
+    
+    setMatches(enhancedMatches);
     setLoading(false);
-  };
+  }, [userProfile]);
+
+  useEffect(() => {
+    findAIEnhancedMatches();
+  }, [findAIEnhancedMatches]);
+
 
   const performAIAnalysis = (user: CulturalDepthProfile, match: any): Partial<AIEnhancedMatch> => {
     // Cultural Compatibility ML Analysis

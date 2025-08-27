@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { authService, User } from '@/lib/auth'
 import { forumsService, ForumTopic, ForumPost } from '@/lib/forums'
@@ -276,17 +276,7 @@ export default function TopicDetail() {
   const [newPostContent, setNewPostContent] = useState('')
   const [isFollowing, setIsFollowing] = useState(false)
 
-  useEffect(() => {
-    const currentUser = authService.getCurrentUser()
-    if (!currentUser) {
-      router.push('/login')
-      return
-    }
-    
-    loadTopicData(currentUser, topicId)
-  }, [router, topicId])
-
-  const loadTopicData = async (currentUser: User, topicId: string) => {
+  const loadTopicData = useCallback(async (currentUser: User, topicId: string) => {
     try {
       const [topicData, postsData] = await Promise.all([
         forumsService.getTopicById(topicId),
@@ -307,7 +297,17 @@ export default function TopicDetail() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [router])
+
+  useEffect(() => {
+    const currentUser = authService.getCurrentUser()
+    if (!currentUser) {
+      router.push('/login')
+      return
+    }
+    
+    loadTopicData(currentUser, topicId)
+  }, [router, topicId, loadTopicData])
 
   const handleVoteTopic = async (vote: 'up' | 'down') => {
     if (!user || !topic) return

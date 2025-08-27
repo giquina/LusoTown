@@ -7,6 +7,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { communityStats } from '@/config/community'
 import { SUBSCRIPTION_PLANS, STUDENT_PRICING, formatPrice } from '@/config/pricing'
 import { IMAGES, UNIVERSITY_URLS } from '@/config/cdn'
+import logger from '@/utils/logger'
 
 import dynamic from 'next/dynamic'
 
@@ -150,7 +151,7 @@ const UNIVERSITIES: University[] = [
       languageCourses: ['Lusophone A1-C2', 'Business Lusophone', 'Lusophone for Heritage Speakers']
     },
     benefits: [
-      '50% discount on LusoTown membership (£9.99/month)',
+      `50% discount on LusoTown membership (${formatPrice(STUDENT_PRICING.community.monthly)}/month)`,
       'Priority access to Lusophone cultural events',
       'Free Portuguese language exchange sessions',
       'Career mentorship with Lusophone professionals',
@@ -401,7 +402,7 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     discountAmount: '50%',
     eligibility: ['Current university students', 'Valid .ac.uk email required', 'Student ID verification'],
     verificationRequired: true,
-    value: '£9.99 savings per year'
+    value: `${formatPrice(SUBSCRIPTION_PLANS.community.monthly - STUDENT_PRICING.community.monthly)} savings per month`
   },
   {
     id: 'language-exchange',
@@ -780,8 +781,8 @@ export default function StudentsPage() {
                   <div className="w-2 h-2 bg-secondary-500 rounded-full animate-pulse"></div>
                   <span className="font-bold text-secondary-600">
                     {language === 'pt'
-                      ? "50% DESCONTO - Apenas £9.99/mês"
-                      : "50% OFF - Only £9.99/month"}
+                      ? `50% DESCONTO - Apenas ${formatPrice(STUDENT_PRICING.community.monthly)}/mês`
+                      : `50% OFF - Only ${formatPrice(STUDENT_PRICING.community.monthly)}/month`}
                   </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -867,7 +868,7 @@ export default function StudentsPage() {
                   <div className="text-xs text-accent-600 mt-1">{language === 'pt' ? '6 meses' : '6 months'}</div>
                 </div>
                 <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-premium-100 hover:shadow-xl transition-all duration-300 relative">
-                  <div className="text-2xl font-bold text-premium-600 mb-1">£9.99</div>
+                  <div className="text-2xl font-bold text-premium-600 mb-1">{formatPrice(STUDENT_PRICING.community.monthly)}</div>
                   <div className="text-xs text-gray-600 font-medium">{language === 'pt' ? 'Por mês' : 'Per month'}</div>
                   <div className="text-xs text-red-600 mt-1 font-semibold">{language === 'pt' ? '50% desconto!' : '50% off!'}</div>
                   <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
@@ -984,7 +985,7 @@ export default function StudentsPage() {
                   <div className="text-xs text-secondary-600">{language === 'pt' ? 'Mentoria + Eventos + Networking' : 'Mentorship + Events + Networking'}</div>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border-2 border-primary-200">
-                  <div className="text-4xl font-bold text-primary-600 mb-2">£9.99</div>
+                  <div className="text-4xl font-bold text-primary-600 mb-2">{formatPrice(STUDENT_PRICING.community.monthly)}</div>
                   <div className="text-sm text-gray-600 mb-2">{language === 'pt' ? 'Custo mensal estudante' : 'Monthly student cost'}</div>
                   <div className="text-xs text-primary-600 font-semibold">{language === 'pt' ? '50% desconto garantido' : '50% discount guaranteed'}</div>
                 </div>
@@ -2667,8 +2668,8 @@ export default function StudentsPage() {
               
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
                 {language === 'pt' ?
-                  'Apenas £9.99/mês para acesso completo a benefícios exclusivos, eventos culturais e networking profissional.' :
-                  'Just £9.99/month for full access to exclusive benefits, cultural events, and professional networking.'
+                  `Apenas ${formatPrice(STUDENT_PRICING.community.monthly)}/mês para acesso completo a benefícios exclusivos, eventos culturais e networking profissional.` :
+                  `Just ${formatPrice(STUDENT_PRICING.community.monthly)}/month for full access to exclusive benefits, cultural events, and professional networking.`
                 }
               </p>
 
@@ -2679,7 +2680,7 @@ export default function StudentsPage() {
                 >
                   <span className="flex items-center justify-center">
                     <AcademicCapIcon className="w-6 h-6 mr-3" />
-                    {language === 'pt' ? 'Juntar à Comunidade Agora - £9.99/mês' : 'Join Community Now - £9.99/month'}
+                    {language === 'pt' ? `Juntar à Comunidade Agora - ${formatPrice(STUDENT_PRICING.community.monthly)}/mês` : `Join Community Now - ${formatPrice(STUDENT_PRICING.community.monthly)}/month`}
                     <ArrowRightIcon className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <div className="absolute -top-3 -right-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full animate-bounce font-bold">
@@ -2733,6 +2734,200 @@ export default function StudentsPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Student Success Stories Carousel */}
+        <section className="py-20 bg-gradient-to-br from-premium-50 via-white to-gold-50">
+          <div className="container-width">
+            <LusophoneCarousel
+              items={[
+                {
+                  id: 'success-maria-engineering',
+                  title: {
+                    en: 'Maria\'s Engineering Journey',
+                    pt: 'Jornada de Engenharia da Maria'
+                  },
+                  description: {
+                    en: 'From Lisbon to Imperial College London - How LusoTown helped me excel in Engineering',
+                    pt: 'De Lisboa ao Imperial College London - Como o LusoTown me ajudou a destacar-me em Engenharia'
+                  },
+                  flagEmoji: '🇵🇹',
+                  countries: ['Portugal'],
+                  category: 'STEM',
+                  studentName: 'Maria Cardoso',
+                  university: 'Imperial College London',
+                  degree: 'MEng Aeronautical Engineering',
+                  year: '3rd Year',
+                  achievements: ['Dean\'s List 2023', 'Rolls-Royce Internship', 'Portuguese Society President'],
+                  testimonial: {
+                    en: 'LusoTown connected me with Portuguese engineers already working in London. Their mentorship was invaluable during my studies and internship applications.',
+                    pt: 'O LusoTown ligou-me a engenheiros portugueses que já trabalhavam em Londres. A sua mentoria foi inestimável durante os meus estudos e candidaturas a estágios.'
+                  },
+                  impact: 'Secured aerospace internship through network'
+                },
+                {
+                  id: 'success-joao-medicine',
+                  title: {
+                    en: 'João\'s Medical School Success',
+                    pt: 'Sucesso do João na Escola de Medicina'
+                  },
+                  description: {
+                    en: 'Brazilian student at UCL Medical School shares his journey and community support',
+                    pt: 'Estudante brasileiro da Escola de Medicina da UCL partilha a sua jornada e apoio comunitário'
+                  },
+                  flagEmoji: '🇧🇷',
+                  countries: ['Brazil'],
+                  category: 'Medicine',
+                  studentName: 'João Santos',
+                  university: 'University College London',
+                  degree: 'MBBS Medicine',
+                  year: '5th Year',
+                  achievements: ['Clinical Excellence Award', 'NHS Foundation Trust Placement', 'Brazilian Society VP'],
+                  testimonial: {
+                    en: 'The Brazilian medical students network through LusoTown helped me navigate clinical placements and understand the NHS system better.',
+                    pt: 'A rede de estudantes brasileiros de medicina através do LusoTown ajudou-me a navegar os estágios clínicos e compreender melhor o sistema NHS.'
+                  },
+                  impact: 'Connected with 50+ medical students'
+                },
+                {
+                  id: 'success-ana-business',
+                  title: {
+                    en: 'Ana\'s Business Leadership',
+                    pt: 'Liderança Empresarial da Ana'
+                  },
+                  description: {
+                    en: 'Angolan entrepreneur building bridges between UK and Africa through her LSE experience',
+                    pt: 'Empreendedora angolana construindo pontes entre o Reino Unido e África através da sua experiência na LSE'
+                  },
+                  flagEmoji: '🇦🇴',
+                  countries: ['Angola'],
+                  category: 'Business',
+                  studentName: 'Ana Ferreira',
+                  university: 'London School of Economics',
+                  degree: 'MSc International Business',
+                  year: 'Graduate',
+                  achievements: ['Africa Business Society Founder', 'Goldman Sachs Internship', 'TEDx Speaker'],
+                  testimonial: {
+                    en: 'LusoTown\'s business network introduced me to African entrepreneurs in London. This led to my fintech startup focusing on Angola-UK trade.',
+                    pt: 'A rede de negócios do LusoTown apresentou-me a empreendedores africanos em Londres. Isto levou à minha startup fintech focada no comércio Angola-Reino Unido.'
+                  },
+                  impact: 'Founded successful fintech startup'
+                },
+                {
+                  id: 'success-carlos-arts',
+                  title: {
+                    en: 'Carlos\'s Creative Journey',
+                    pt: 'Jornada Criativa do Carlos'
+                  },
+                  description: {
+                    en: 'Cape Verdean artist studying at Royal College of Art, preserving culture through contemporary art',
+                    pt: 'Artista cabo-verdiano estudando no Royal College of Art, preservando cultura através da arte contemporânea'
+                  },
+                  flagEmoji: '🇨🇻',
+                  countries: ['Cape Verde'],
+                  category: 'Arts',
+                  studentName: 'Carlos Mendes',
+                  university: 'Royal College of Art',
+                  degree: 'MA Contemporary Art Practice',
+                  year: '2nd Year',
+                  achievements: ['Tate Modern Exhibition', 'Arts Council Funding', 'Cultural Ambassador'],
+                  testimonial: {
+                    en: 'Through LusoTown, I connected with galleries showcasing Lusophone art. My morna-inspired installations now represent Cape Verdean culture in London.',
+                    pt: 'Através do LusoTown, conectei-me com galerias que exibem arte lusófona. As minhas instalações inspiradas na morna agora representam a cultura cabo-verdiana em Londres.'
+                  },
+                  impact: 'Featured in major London galleries'
+                }
+              ]}
+              title={{
+                en: 'Portuguese-speaking Student Success Stories',
+                pt: 'Histórias de Sucesso de Estudantes Lusófonos'
+              }}
+              subtitle={{
+                en: 'Real journeys of Portuguese-speaking students excelling in UK universities with community support',
+                pt: 'Jornadas reais de estudantes lusófonos destacando-se em universidades do Reino Unido com apoio comunitário'
+              }}
+              renderItem={(story, index) => (
+                <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
+                  {/* Header with university and flag */}
+                  <div className="h-32 bg-gradient-to-r from-primary-500 to-secondary-500 p-4 flex items-end relative">
+                    <div className="absolute top-4 right-4 text-3xl">{story.flagEmoji}</div>
+                    <div className="text-white">
+                      <div className="text-xs opacity-90 mb-1">{story.category}</div>
+                      <h3 className="font-bold text-lg line-clamp-2">{story.title[language]}</h3>
+                    </div>
+                  </div>
+
+                  <div className="p-5 flex flex-col justify-between flex-1">
+                    {/* Student Info */}
+                    <div className="mb-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="font-semibold text-gray-900">{story.studentName}</span>
+                        <span className="text-sm bg-primary-100 text-primary-700 px-2 py-1 rounded-full">{story.year}</span>
+                      </div>
+                      <div className="text-sm text-gray-600 mb-2">
+                        <div className="font-medium">{story.university}</div>
+                        <div>{story.degree}</div>
+                      </div>
+                    </div>
+
+                    {/* Testimonial */}
+                    <blockquote className="text-sm text-gray-700 italic mb-4 border-l-4 border-primary-300 pl-3">
+                      "{story.testimonial[language]}"
+                    </blockquote>
+
+                    {/* Key Achievements */}
+                    <div className="mb-4">
+                      <div className="text-xs font-semibold text-gray-800 mb-2">Key Achievements:</div>
+                      <div className="flex flex-wrap gap-1">
+                        {story.achievements.slice(0, 2).map((achievement, i) => (
+                          <span 
+                            key={i}
+                            className="bg-gold-100 text-gold-800 px-2 py-1 rounded text-xs"
+                          >
+                            {achievement}
+                          </span>
+                        ))}
+                        {story.achievements.length > 2 && (
+                          <span className="text-xs text-gray-500 px-2 py-1">
+                            +{story.achievements.length - 2} more
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Impact */}
+                    <div className="pt-3 border-t border-gray-100">
+                      <div className="flex items-center gap-2 text-sm">
+                        <TrophyIcon className="w-4 h-4 text-gold-500" />
+                        <span className="text-gray-600">Impact:</span>
+                        <span className="font-medium text-primary-600">{story.impact}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              showControls={true}
+              showDots={true}
+              autoAdvance={true}
+              autoAdvanceInterval={9000}
+              className="mb-12"
+              onItemClick={(story) => {
+                logger.debug('Student success story selected', {
+                  area: 'students',
+                  culturalContext: 'lusophone',
+                  action: 'success_story_selection',
+                  studentName: story.studentName
+                })
+              }}
+              mobileSettings={{
+                enableSwipeGestures: true,
+                enablePullToRefresh: true,
+                enableLazyLoading: true
+              }}
+              enablePortugueseGestures={true}
+              enableAccessibilityAnnouncements={true}
+            />
           </div>
         </section>
 

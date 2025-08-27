@@ -1,6 +1,7 @@
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
+import logger from '@/utils/logger'
 
 /**
  * AI Cultural Guidelines and Ethics API Endpoint
@@ -101,7 +102,11 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(response)
 
   } catch (error) {
-    console.error('Cultural Guidelines API error:', error)
+    logger.error('Failed to fetch AI cultural guidelines', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'fetch_guidelines_error'
+    })
     return NextResponse.json(
       { error: 'Failed to fetch cultural guidelines' },
       { status: 500 }
@@ -179,7 +184,11 @@ export async function POST(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Cultural guideline creation error:', error)
+    logger.error('Failed to create AI cultural guideline', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'create_guideline_error'
+    })
     return NextResponse.json(
       { error: 'Failed to create cultural guideline' },
       { status: 500 }
@@ -241,7 +250,11 @@ export async function PUT(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Cultural guideline update error:', error)
+    logger.error('Failed to update AI cultural guideline', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'update_guideline_error'
+    })
     return NextResponse.json(
       { error: 'Failed to update cultural guideline' },
       { status: 500 }
@@ -309,7 +322,11 @@ export async function violations_GET(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Ethics violations fetch error:', error)
+    logger.error('Failed to fetch AI ethics violations', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'fetch_violations_error'
+    })
     return NextResponse.json(
       { error: 'Failed to fetch ethics violations' },
       { status: 500 }
@@ -372,7 +389,11 @@ export async function violations_POST(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Ethics violation reporting error:', error)
+    logger.error('Failed to report AI ethics violation', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'report_violation_error'
+    })
     return NextResponse.json(
       { error: 'Failed to report ethics violation' },
       { status: 500 }
@@ -499,16 +520,23 @@ async function trackGuidelineActivity(
   description: string
 ) {
   try {
-    // This would typically go to an audit log table
-    console.log('Guideline activity:', {
+    // Track cultural guideline activity for audit purposes
+    logger.info('AI cultural guideline activity tracked', {
       activity_type: activityType,
       target_id: targetId,
       user_id: userId,
       description,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'guideline_activity'
     })
   } catch (error) {
-    console.error('Failed to track guideline activity:', error)
+    logger.error('Failed to track AI cultural guideline activity', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'track_activity_error'
+    })
   }
 }
 
@@ -538,6 +566,11 @@ async function notifyAdministrators(supabase: any, violation: any) {
       await supabase.from('user_notifications').insert(notifications)
     }
   } catch (error) {
-    console.error('Failed to notify administrators:', error)
+    logger.error('Failed to notify administrators of AI ethics violation', error, {
+      violationId: violation?.id,
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'notify_admins_error'
+    })
   }
 }

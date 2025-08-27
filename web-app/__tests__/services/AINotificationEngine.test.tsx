@@ -14,7 +14,7 @@
 import { aiNotificationEngine, SmartNotificationEngine } from '../../src/services/AINotificationEngine'
 import { UserBehaviorProfile, CulturalContext } from '../../src/services/NotificationService'
 
-// Mock Supabase client
+// Mock Supabase client with enhanced mocking for all methods
 jest.mock('../../src/lib/supabase', () => ({
   supabase: {
     from: jest.fn(() => ({
@@ -24,6 +24,16 @@ jest.mock('../../src/lib/supabase', () => ({
             single: jest.fn(() => Promise.resolve({ 
               data: mockTemplateData, 
               error: null 
+            })),
+            lte: jest.fn(() => ({
+              order: jest.fn(() => ({
+                order: jest.fn(() => ({
+                  limit: jest.fn(() => Promise.resolve({
+                    data: [],
+                    error: null
+                  }))
+                }))
+              }))
             }))
           })),
           order: jest.fn(() => ({
@@ -31,6 +41,10 @@ jest.mock('../../src/lib/supabase', () => ({
               data: mockAnalyticsData,
               error: null
             }))
+          })),
+          single: jest.fn(() => Promise.resolve({
+            data: mockTemplateData,
+            error: null
           }))
         })),
         gte: jest.fn(() => ({
@@ -42,6 +56,16 @@ jest.mock('../../src/lib/supabase', () => ({
         limit: jest.fn(() => Promise.resolve({
           data: [mockTemplateData],
           error: null
+        })),
+        lte: jest.fn(() => ({
+          order: jest.fn(() => ({
+            order: jest.fn(() => ({
+              limit: jest.fn(() => Promise.resolve({
+                data: [],
+                error: null
+              }))
+            }))
+          }))
         }))
       })),
       insert: jest.fn(() => ({
@@ -246,9 +270,11 @@ describe('AI Notification Engine - Production Readiness', () => {
         )
 
         expect(result.notification.cultural_context?.diaspora_relevance).toBe(generation)
-        expect(result.cultural_adaptation.adaptation_reasoning).toContain(
-          expect.stringMatching(new RegExp(generation.replace('_', ' '), 'i'))
-        )
+        
+        // Check if any reasoning contains the generation pattern
+        const reasoningText = result.cultural_adaptation.adaptation_reasoning.join(' ')
+        const generationPattern = generation.replace('_', ' ')
+        expect(reasoningText.toLowerCase()).toContain(generationPattern.toLowerCase())
       }
     })
   })

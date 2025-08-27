@@ -1,4 +1,5 @@
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
+import logger from '@/utils/logger';
 
 export const supabaseUrl =
   process.env.NEXT_PUBLIC_SUPABASE_URL || "https://placeholder.supabase.co";
@@ -292,7 +293,7 @@ export const getProfile = async (
     if (error) throw error;
     return data;
   } catch (error) {
-    console.error("Error fetching profile:", error);
+    logger.error('Error fetching profile', error, { area: 'auth', action: 'get_profile' });
     return null;
   }
 };
@@ -304,7 +305,7 @@ export const getCurrentUserProfile = async (): Promise<UserProfile | null> => {
 
     return await getProfile(user.id);
   } catch (error) {
-    console.error("Error fetching current user profile:", error);
+    logger.error('Error fetching current user profile', error, { area: 'auth', action: 'get_current_profile' });
     return null;
   }
 };
@@ -324,7 +325,7 @@ export const updateProfile = async (
     if (error) throw error;
     return { success: true, data };
   } catch (error) {
-    console.error("Error updating profile:", error);
+    logger.error('Error updating profile', error, { area: 'auth', action: 'update_profile' });
     return {
       success: false,
       error: error instanceof Error ? error.message : "Unknown error",
@@ -377,7 +378,7 @@ export const uploadPhoto = async (
       path: fileName,
     };
   } catch (error) {
-    console.error("Error uploading photo:", error);
+    logger.error('Error uploading photo', error, { area: 'auth', action: 'upload_photo' });
     return {
       success: false,
       error: error instanceof Error ? error.message : "Unknown error",
@@ -394,7 +395,7 @@ export const deletePhoto = async (path: string) => {
     if (error) throw error;
     return { success: true };
   } catch (error) {
-    console.error("Error deleting photo:", error);
+    logger.error('Error deleting photo', error, { area: 'auth', action: 'delete_photo' });
     return {
       success: false,
       error: error instanceof Error ? error.message : "Unknown error",
@@ -469,7 +470,7 @@ export const calculateProfileCompletion = async (
       max_points: maxPoints,
     };
   } catch (error) {
-    console.error("Error calculating profile completion:", error);
+    logger.error('Error calculating profile completion', error, { area: 'auth', action: 'calculate_completion' });
     return {
       percentage: 0,
       completed_steps: [],
@@ -548,7 +549,7 @@ export const searchProfiles = async (filters?: {
 
     return results;
   } catch (error) {
-    console.error("Error searching profiles:", error);
+    logger.error('Error searching profiles', error, { area: 'matching', action: 'search_profiles' });
     return [];
   }
 };
@@ -1151,7 +1152,7 @@ export const getCulturalPreferences = async (
 
     return data;
   } catch (error) {
-    console.error("Error fetching cultural preferences:", error);
+    logger.error('Error fetching cultural preferences', error, { area: 'cultural', action: 'get_preferences', culturalContext: 'lusophone' });
     return null;
   }
 };
@@ -1187,13 +1188,13 @@ export const saveCulturalPreferences = async (
         target_user_id: userId,
       });
     } catch (compatError) {
-      console.warn("Failed to update compatibility scores:", compatError);
+      logger.warn('Failed to update compatibility scores', undefined, { area: 'matching', action: 'update_compatibility' });
       // Don't fail the main operation if compatibility calculation fails
     }
 
     return { success: true, data };
   } catch (error) {
-    console.error("Error saving cultural preferences:", error);
+    logger.error('Error saving cultural preferences', error, { area: 'cultural', action: 'save_preferences', culturalContext: 'lusophone' });
     return {
       success: false,
       error: error instanceof Error ? error.message : "Unknown error",
@@ -1219,7 +1220,7 @@ export const getCulturalCompatibility = async (
 
     return data;
   } catch (error) {
-    console.error("Error fetching cultural compatibility:", error);
+    logger.error('Error fetching cultural compatibility', error, { area: 'matching', action: 'get_compatibility', culturalContext: 'lusophone' });
     return null;
   }
 };
@@ -1244,7 +1245,7 @@ export const getTopCulturalMatches = async (
     if (error) throw error;
     return data || [];
   } catch (error) {
-    console.error("Error fetching top cultural matches:", error);
+    logger.error('Error fetching top cultural matches', error, { area: 'matching', action: 'get_top_matches', culturalContext: 'lusophone' });
     return [];
   }
 };
@@ -1260,7 +1261,7 @@ export const getPortugueseCulturalElements = async () => {
     if (error) throw error;
     return data || [];
   } catch (error) {
-    console.error("Error fetching Lusophone cultural elements:", error);
+    logger.error('Error fetching Lusophone cultural elements', error, { area: 'cultural', action: 'get_elements', culturalContext: 'lusophone' });
     return [];
   }
 };
@@ -1276,7 +1277,7 @@ export const getCulturalInsights = async () => {
     if (error) throw error;
     return data || [];
   } catch (error) {
-    console.error("Error fetching cultural insights:", error);
+    logger.error('Error fetching cultural insights', error, { area: 'cultural', action: 'get_insights', culturalContext: 'lusophone' });
     return [];
   }
 };

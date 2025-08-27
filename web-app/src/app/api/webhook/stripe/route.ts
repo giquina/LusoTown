@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
 import { SUBSCRIPTION_PLANS, getPlanPrice } from '@/config/pricing'
+import logger from '@/utils/logger'
 
 const getStripe = () => {
   const key = process.env.STRIPE_SECRET_KEY
@@ -28,7 +29,7 @@ export async function POST(request: NextRequest) {
       const stripe = getStripe()
       event = stripe.webhooks.constructEvent(body, signature, webhookSecret)
     } catch (err) {
-      console.error('Webhook signature verification failed:', err)
+      logger.error('Webhook signature verification failed', err, { area: 'payments', action: 'webhook_verification' })
       return NextResponse.json({ error: 'Invalid signature' }, { status: 400 })
     }
 
@@ -59,12 +60,12 @@ export async function POST(request: NextRequest) {
         break
 
       default:
-        console.log(`Unhandled event type: ${event.type}`)
+        logger.debug(`Unhandled event type: ${event.type}`, { area: 'payments', action: 'webhook_event' })
     }
 
     return NextResponse.json({ received: true })
   } catch (error) {
-    console.error('Webhook error:', error)
+    logger.error('Webhook error', error, { area: 'payments', action: 'webhook_handler' })
     return NextResponse.json(
       { error: 'Webhook handler failed' },
       { status: 500 }
@@ -76,7 +77,7 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
   const userId = session.metadata?.lusotown_user_id
   if (!userId) return
 
-  console.log('Checkout session completed for user:', userId)
+  logger.info('Checkout session completed for user', { area: 'payments', userId, action: 'checkout_completed' })
 
   // Mark trial as used if they had one
   await supabase
@@ -92,7 +93,7 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
   
   if (!userId) return
 
-  console.log('Subscription created for user:', userId, 'tier:', tier, 'planType:', planType)
+  logger.info('Subscription created for user', { area: 'payments', userId, action: 'subscription_created', culturalContext: 'lusophone' })
 
   // Use centralized pricing configuration
   const amount = getPlanPrice(tier as keyof typeof SUBSCRIPTION_PLANS, planType as 'monthly' | 'annual')
@@ -124,7 +125,7 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
   const userId = subscription.metadata?.lusotown_user_id
   if (!userId) return
 
-  console.log('Subscription updated for user:', userId)
+  logger.info('Subscription updated for user', { area: 'payments', userId, action: 'subscription_updated' })
 
   // Update subscription record
   await supabase
@@ -155,7 +156,7 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
   const userId = subscription.metadata?.lusotown_user_id
   if (!userId) return
 
-  console.log('Subscription deleted for user:', userId)
+  logger.info('Subscription deleted for user', { area: 'payments', userId, action: 'subscription_deleted' })
 
   // Update subscription record
   await supabase
@@ -182,7 +183,7 @@ async function handlePaymentSucceeded(invoice: Stripe.Invoice) {
   const userId = subscription.metadata?.lusotown_user_id
   if (!userId) return
 
-  console.log('Payment succeeded for user:', userId)
+  logger.info('Payment succeeded for user', { area: 'payments', userId, action: 'payment_succeeded' })
 
   // Record payment
   const { data: subscriptionData } = await supabase
@@ -221,7 +222,7 @@ async function handlePaymentFailed(invoice: Stripe.Invoice) {
   const userId = subscription.metadata?.lusotown_user_id
   if (!userId) return
 
-  console.log('Payment failed for user:', userId)
+  logger.error('Payment failed for user', undefined, { area: 'payments', userId, action: 'payment_failed' })
 
   // Record failed payment
   const { data: subscriptionData } = await supabase

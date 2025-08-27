@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo, useCallback } from 'react'
 
 // ✅ PUBLIC ACCESS: This page is accessible to all users without authentication
 import { useLanguage } from '@/context/LanguageContext'
@@ -476,11 +476,11 @@ export default function BusinessDirectory() {
     if (coordinates && !locationLoading) {
       handleLocationUpdate({ coordinates }, businessDistances)
     }
-  }, [coordinates, locationLoading])
+  }, [coordinates, locationLoading, businessDistances, handleLocationUpdate])
 
   useEffect(() => {
     loadBusinesses()
-  }, [filters])
+  }, [filters, loadBusinesses])
 
   // Load saved favorites from localStorage
   useEffect(() => {
@@ -495,7 +495,7 @@ export default function BusinessDirectory() {
     }
   }, [])
 
-  const loadBusinesses = async () => {
+  const loadBusinesses = useCallback(async () => {
     try {
       setLoading(true)
       const result = await portugueseBusinessService.searchBusinesses(filters, 1, 20)
@@ -507,7 +507,7 @@ export default function BusinessDirectory() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [filters])
 
   const handleFilterChange = (key: keyof FilterState, value: any) => {
     setFilters(prev => ({ ...prev, [key]: value }))
@@ -552,17 +552,17 @@ export default function BusinessDirectory() {
     })
   }
 
-  const handleLocationUpdate = (result: any, distances: BusinessDistance[]) => {
+  const handleLocationUpdate = useCallback((result: any, distances: BusinessDistance[]) => {
     setBusinessDistances(distances)
     // Update sort to show nearest first
     setFilters(prev => ({ ...prev, sortBy: 'distance' }))
-  }
+  }, [])
 
   const getBusinessDistance = (businessId: string): number | undefined => {
     return businessDistances.find(bd => bd.businessId === businessId)?.distance
   }
 
-  const isBusinessOpen = (business: PortugueseBusiness): boolean => {
+  const isBusinessOpen = useCallback((business: PortugueseBusiness): boolean => {
     if (!business.openingHours) return false
     
     const now = new Date()
@@ -584,7 +584,7 @@ export default function BusinessDirectory() {
     if (openTime === null || closeTime === null) return false
     
     return currentTime >= openTime && currentTime <= closeTime
-  }
+  }, [])
 
   const parseTime = (timeStr: string): number | null => {
     const parts = timeStr.trim().split(':')
@@ -648,7 +648,7 @@ export default function BusinessDirectory() {
       
       return true
     })
-  }, [businesses, filters])
+  }, [businesses, filters, isBusinessOpen])
 
   const handleBusinessSubmissionSuccess = (businessId: string) => {
     setShowSubmissionForm(false)

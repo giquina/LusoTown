@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServerActionClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { SITE_URL } from "@/config/site";
+import logger from '@/utils/logger';
 
 // Email service configuration
 const EMAIL_SERVICE_CONFIG = {
@@ -246,7 +247,7 @@ async function sendEmailWithSendGrid(
   htmlContent: string
 ): Promise<boolean> {
   if (!EMAIL_SERVICE_CONFIG.sendgridApiKey) {
-    console.error("SendGrid API key not configured");
+    logger.error('SendGrid API key not configured', undefined, { area: 'messaging', action: 'email_config' });
     return false;
   }
 
@@ -279,7 +280,7 @@ async function sendEmailWithSendGrid(
 
     return response.ok;
   } catch (error) {
-    console.error("SendGrid email error:", error);
+    logger.error('SendGrid email error', error, { area: 'messaging', action: 'sendgrid_send' });
     return false;
   }
 }
@@ -291,7 +292,7 @@ async function sendEmailWithResend(
   htmlContent: string
 ): Promise<boolean> {
   if (!EMAIL_SERVICE_CONFIG.resendApiKey) {
-    console.error("Resend API key not configured");
+    logger.error('Resend API key not configured', undefined, { area: 'messaging', action: 'email_config' });
     return false;
   }
 
@@ -312,7 +313,7 @@ async function sendEmailWithResend(
 
     return response.ok;
   } catch (error) {
-    console.error("Resend email error:", error);
+    logger.error('Resend email error', error, { area: 'messaging', action: 'resend_send' });
     return false;
   }
 }
@@ -394,7 +395,7 @@ export async function POST(request: NextRequest) {
         htmlContent
       );
     } else {
-      console.error("No email service configured");
+      logger.error('No email service configured', undefined, { area: 'messaging', action: 'email_config' });
       return NextResponse.json(
         { error: "Email service not configured" },
         { status: 500 }
@@ -420,7 +421,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (logError) {
-      console.error("Error logging email send:", logError);
+      logger.error('Error logging email send', logError, { area: 'messaging', action: 'email_logging' });
     }
 
     return NextResponse.json({
@@ -428,7 +429,7 @@ export async function POST(request: NextRequest) {
       message: "Email sent successfully",
     });
   } catch (error) {
-    console.error("Email send error:", error);
+    logger.error('Email send error', error, { area: 'messaging', action: 'send_email' });
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

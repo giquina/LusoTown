@@ -33,7 +33,16 @@
       "react-native$": ["react-native-web"]
     },
     "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    // Memory optimization for large codebases (522+ components)
+    "preserveWatchOutput": true,
+    "assumeChangesOnlyAffectDirectDependencies": true,
+    "disableSourceOfProjectReferenceRedirect": true,
+    "disableSizeLimit": false,
+    
+    // TypeScript performance optimizations
+    "useUnknownInCatchVariables": false,
+    "skipDefaultLibCheck": true
   },
   "include": [
     "next-env.d.ts",

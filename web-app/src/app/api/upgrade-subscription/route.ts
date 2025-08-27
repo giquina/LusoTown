@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
+import logger from '@/utils/logger'
 
 const getStripe = () => {
   const key = process.env.STRIPE_SECRET_KEY
@@ -47,7 +48,11 @@ export async function POST(request: NextRequest) {
       newTier: newTier
     })
   } catch (error) {
-    console.error('Error upgrading subscription:', error)
+    logger.error('Portuguese community subscription upgrade failed', error, {
+      area: 'payments',
+      action: 'upgrade_subscription',
+      culturalContext: 'lusophone'
+    })
     return NextResponse.json(
       { error: 'Failed to upgrade subscription' },
       { status: 500 }

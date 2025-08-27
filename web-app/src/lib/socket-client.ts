@@ -2,6 +2,7 @@
 
 import { io, Socket } from 'socket.io-client'
 import { ChatMessage, ChatRoom, ChatUser, PortuguesePoll } from '@/types/chat'
+import { logger } from '@/utils/logger'
 
 interface ServerToClientEvents {
   'chat:message': (message: ChatMessage) => void
@@ -55,14 +56,25 @@ class SocketManager {
         })
 
         this.socket.on('connect', () => {
-          console.log('Connected to chat server')
+          logger.info('Connected to Portuguese-speaking community chat server', {
+            area: 'messaging',
+            culturalContext: 'lusophone',
+            action: 'socket_connected',
+            userId
+          })
           this.isConnected = true
           this.reconnectAttempts = 0
           resolve()
         })
 
         this.socket.on('disconnect', (reason) => {
-          console.log('Disconnected from chat server:', reason)
+          logger.info('Disconnected from Portuguese-speaking community chat server', {
+            reason,
+            area: 'messaging',
+            culturalContext: 'lusophone',
+            action: 'socket_disconnected',
+            userId
+          })
           this.isConnected = false
           
           // Attempt reconnection for certain disconnect reasons
@@ -75,7 +87,12 @@ class SocketManager {
         })
 
         this.socket.on('connect_error', (error) => {
-          console.error('Socket connection error:', error)
+          logger.error('Socket connection error for Portuguese-speaking community', error, {
+            area: 'messaging',
+            culturalContext: 'lusophone',
+            action: 'socket_connection_error',
+            userId
+          })
           this.isConnected = false
           
           if (this.reconnectAttempts < this.maxReconnectAttempts) {
@@ -86,11 +103,19 @@ class SocketManager {
         })
 
         this.socket.on('connection:error', (error) => {
-          console.error('Chat server error:', error)
+          logger.error('Chat server error for Portuguese-speaking community', error, {
+            area: 'messaging',
+            culturalContext: 'lusophone',
+            action: 'socket_server_error'
+          })
         })
 
         this.socket.on('connection:reconnect', () => {
-          console.log('Successfully reconnected to chat server')
+          logger.info('Successfully reconnected to Portuguese-speaking community chat server', {
+            area: 'messaging',
+            culturalContext: 'lusophone',
+            action: 'socket_reconnected'
+          })
           // Re-join current room if exists
           if (this.currentRoom && userId) {
             this.joinRoom(this.currentRoom, userId)
@@ -105,14 +130,25 @@ class SocketManager {
 
   private handleReconnection() {
     if (this.reconnectAttempts >= this.maxReconnectAttempts) {
-      console.error('Max reconnection attempts reached')
+      logger.warn('Max reconnection attempts reached for Portuguese-speaking community chat', {
+        maxAttempts: this.maxReconnectAttempts,
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'socket_max_reconnect_attempts_reached'
+      })
       return
     }
 
     this.reconnectAttempts++
     const delay = Math.min(1000 * Math.pow(2, this.reconnectAttempts), 30000)
     
-    console.log(`Attempting to reconnect in ${delay}ms (attempt ${this.reconnectAttempts})`)
+    logger.debug('Attempting to reconnect to Portuguese-speaking community chat', {
+      delay,
+      attemptNumber: this.reconnectAttempts,
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'socket_reconnect_attempt'
+    })
     
     setTimeout(() => {
       if (this.socket && !this.isConnected) {
@@ -123,7 +159,12 @@ class SocketManager {
 
   joinRoom(roomId: string, userId: string) {
     if (!this.socket || !this.isConnected) {
-      console.warn('Socket not connected, cannot join room')
+      logger.warn('Socket not connected, cannot join Portuguese-speaking community room', {
+        roomId,
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'socket_join_room_failed_not_connected'
+      })
       return
     }
 
@@ -142,7 +183,11 @@ class SocketManager {
 
   sendMessage(message: Omit<ChatMessage, 'id' | 'timestamp'>) {
     if (!this.socket || !this.isConnected) {
-      console.warn('Socket not connected, cannot send message')
+      logger.warn('Socket not connected, cannot send message to Portuguese-speaking community', {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'socket_send_message_failed_not_connected'
+      })
       return
     }
 

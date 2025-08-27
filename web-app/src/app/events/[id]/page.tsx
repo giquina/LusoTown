@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -188,7 +188,7 @@ export default function EventDetailsPage() {
       // Continue without user - this shouldn't break the page
     }
     loadEvent()
-  }, [eventId])
+  }, [eventId, loadEvent])
 
   // Toast notification function
   const alert = (type: 'success' | 'error', message: string) => {
@@ -196,7 +196,7 @@ export default function EventDetailsPage() {
     setTimeout(() => setNotification(null), 3000)
   }
 
-  const loadEvent = async () => {
+  const loadEvent = useCallback(async () => {
     if (!eventId) {
       setError('No event ID provided')
       setLoading(false)
@@ -242,7 +242,7 @@ export default function EventDetailsPage() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [eventId, setEvent, setError, setLoading, setUserRSVP, setUserHasRSVPd])
 
   const handleRSVP = async (status: 'going' | 'waitlist') => {
     const user = authService.getCurrentUser()

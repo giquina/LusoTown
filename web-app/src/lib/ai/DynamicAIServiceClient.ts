@@ -12,6 +12,7 @@
 import { CULTURAL_CENTERS } from '@/config/cultural-centers'
 import { UNIVERSITY_PARTNERSHIPS } from '@/config/universities'
 import { SUBSCRIPTION_PLANS } from '@/config/pricing'
+import { logger } from '@/utils/logger'
 
 // Performance monitoring interface
 export interface AIServicePerformanceMetrics {
@@ -71,10 +72,19 @@ class DynamicAIServiceClient {
       this.serviceCache.set('notifications', aiNotificationEngine)
       this.loadedServices.set('notifications', aiNotificationEngine)
 
-      console.log(`✅ AI Notification Engine loaded in ${loadTime.toFixed(2)}ms`)
+      logger.info(`AI Notification Engine loaded successfully for Portuguese-speaking community`, {
+        loadTime: loadTime.toFixed(2),
+        area: 'ai',
+        culturalContext: 'lusophone',
+        action: 'notification_engine_loaded'
+      })
       return aiNotificationEngine
     } catch (error) {
-      console.error('❌ Failed to load AI Notification Engine:', error)
+      logger.error('Failed to load AI Notification Engine for Portuguese-speaking community', error, {
+        area: 'ai',
+        culturalContext: 'lusophone',
+        action: 'notification_engine_load_failed'
+      })
       throw new Error(`AI Notification Engine failed to load: ${error}`)
     }
   }
@@ -105,10 +115,19 @@ class DynamicAIServiceClient {
       this.serviceCache.set('matching', CulturalCompatibilityAI)
       this.loadedServices.set('matching', CulturalCompatibilityAI)
 
-      console.log(`✅ AI Matching Engine loaded in ${loadTime.toFixed(2)}ms`)
+      logger.info(`AI Matching Engine loaded successfully for Portuguese cultural compatibility`, {
+        loadTime: loadTime.toFixed(2),
+        area: 'matching',
+        culturalContext: 'lusophone',
+        action: 'matching_engine_loaded'
+      })
       return CulturalCompatibilityAI
     } catch (error) {
-      console.error('❌ Failed to load AI Matching Engine:', error)
+      logger.error('Failed to load AI Matching Engine for Portuguese cultural compatibility', error, {
+        area: 'matching',
+        culturalContext: 'lusophone',
+        action: 'matching_engine_load_failed'
+      })
       throw new Error(`AI Matching Engine failed to load: ${error}`)
     }
   }
@@ -139,10 +158,19 @@ class DynamicAIServiceClient {
       this.serviceCache.set('analytics', PredictiveCommunityAnalyticsEngine)
       this.loadedServices.set('analytics', PredictiveCommunityAnalyticsEngine)
 
-      console.log(`✅ AI Analytics Engine loaded in ${loadTime.toFixed(2)}ms`)
+      logger.info(`AI Analytics Engine loaded successfully for Portuguese-speaking community insights`, {
+        loadTime: loadTime.toFixed(2),
+        area: 'analytics',
+        culturalContext: 'lusophone',
+        action: 'analytics_engine_loaded'
+      })
       return PredictiveCommunityAnalyticsEngine
     } catch (error) {
-      console.error('❌ Failed to load AI Analytics Engine:', error)
+      logger.error('Failed to load AI Analytics Engine for Portuguese-speaking community', error, {
+        area: 'analytics',
+        culturalContext: 'lusophone',
+        action: 'analytics_engine_load_failed'
+      })
       throw new Error(`AI Analytics Engine failed to load: ${error}`)
     }
   }
@@ -173,10 +201,19 @@ class DynamicAIServiceClient {
       this.serviceCache.set('cultural', PortugueseCulturalAI)
       this.loadedServices.set('cultural', PortugueseCulturalAI)
 
-      console.log(`✅ Portuguese Cultural AI loaded in ${loadTime.toFixed(2)}ms`)
+      logger.info(`Portuguese Cultural AI loaded successfully for heritage preservation`, {
+        loadTime: loadTime.toFixed(2),
+        area: 'cultural',
+        culturalContext: 'portuguese',
+        action: 'cultural_ai_loaded'
+      })
       return PortugueseCulturalAI
     } catch (error) {
-      console.error('❌ Failed to load Portuguese Cultural AI:', error)
+      logger.error('Failed to load Portuguese Cultural AI', error, {
+        area: 'cultural',
+        culturalContext: 'portuguese',
+        action: 'cultural_ai_load_failed'
+      })
       throw new Error(`Portuguese Cultural AI failed to load: ${error}`)
     }
   }
@@ -204,7 +241,12 @@ class DynamicAIServiceClient {
           loadPromises.push(this.loadPortugueseCulturalAI())
           break
         default:
-          console.warn(`⚠️  Unknown AI service: ${service}`)
+          logger.warn(`Unknown AI service requested`, {
+            serviceName: service,
+            area: 'ai',
+            culturalContext: 'lusophone',
+            action: 'unknown_service_requested'
+          })
       }
     }
 
@@ -215,20 +257,42 @@ class DynamicAIServiceClient {
       const successCount = results.filter(r => r.status === 'fulfilled').length
       const failureCount = results.filter(r => r.status === 'rejected').length
 
-      console.log(`✅ Loaded ${successCount}/${services.length} AI services in ${loadTime.toFixed(2)}ms`)
+      logger.info(`Loaded multiple AI services for Portuguese-speaking community`, {
+        successCount,
+        totalServices: services.length,
+        loadTime: loadTime.toFixed(2),
+        area: 'ai',
+        culturalContext: 'lusophone',
+        action: 'multiple_services_loaded'
+      })
       
       if (failureCount > 0) {
-        console.warn(`⚠️  ${failureCount} AI services failed to load`)
+        logger.warn(`Some AI services failed to load for Portuguese-speaking community`, {
+          failureCount,
+          totalServices: services.length,
+          area: 'ai',
+          culturalContext: 'lusophone',
+          action: 'multiple_services_partial_failure'
+        })
         results.forEach((result, index) => {
           if (result.status === 'rejected') {
-            console.error(`❌ ${services[index]}: ${result.reason}`)
+            logger.error(`AI service load failed`, new Error(result.reason), {
+              serviceName: services[index],
+              area: 'ai',
+              culturalContext: 'lusophone',
+              action: 'service_load_failure'
+            })
           }
         })
       }
 
       return results
     } catch (error) {
-      console.error('❌ Failed to load multiple AI services:', error)
+      logger.error('Failed to load multiple AI services for Portuguese-speaking community', error, {
+        area: 'ai',
+        culturalContext: 'lusophone',
+        action: 'multiple_services_load_error'
+      })
       throw error
     }
   }
@@ -282,16 +346,30 @@ class DynamicAIServiceClient {
    * Clear cache and dispose services
    */
   public async dispose() {
-    console.log('🧹 Disposing AI services...')
+    logger.info('Disposing AI services for Portuguese-speaking community', {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'services_disposal_started'
+    })
     
     for (const [serviceName, service] of this.loadedServices) {
       try {
         if (service && typeof service.dispose === 'function') {
           await service.dispose()
         }
-        console.log(`✅ Disposed ${serviceName}`)
+        logger.debug(`AI service disposed successfully`, {
+          serviceName,
+          area: 'ai',
+          culturalContext: 'lusophone',
+          action: 'service_disposed'
+        })
       } catch (error) {
-        console.error(`❌ Failed to dispose ${serviceName}:`, error)
+        logger.error(`Failed to dispose AI service`, error, {
+          serviceName,
+          area: 'ai',
+          culturalContext: 'lusophone',
+          action: 'service_disposal_failed'
+        })
       }
     }
 
@@ -299,22 +377,39 @@ class DynamicAIServiceClient {
     this.serviceCache.clear()
     this.performanceMetrics.clear()
     
-    console.log('✅ All AI services disposed')
+    logger.info('All AI services disposed for Portuguese-speaking community', {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'services_disposal_completed'
+    })
   }
 
   /**
    * Preload critical AI services for better UX
    */
   public async preloadCriticalServices() {
-    console.log('🚀 Preloading critical AI services...')
+    logger.info('Preloading critical AI services for Portuguese-speaking community', {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'preloading_critical_services'
+    })
     
     const criticalServices = ['cultural', 'notifications']
     
     try {
       await this.loadMultipleServices(criticalServices)
-      console.log('✅ Critical AI services preloaded')
+      logger.info('Critical AI services preloaded successfully for Portuguese-speaking community', {
+        area: 'ai',
+        culturalContext: 'lusophone',
+        action: 'critical_services_preloaded'
+      })
     } catch (error) {
-      console.warn('⚠️  Some critical services failed to preload:', error)
+      logger.warn('Some critical AI services failed to preload for Portuguese-speaking community', {
+        area: 'ai',
+        culturalContext: 'lusophone',
+        action: 'critical_services_preload_partial_failure',
+        error: error instanceof Error ? error.message : 'Unknown error'
+      })
     }
   }
 

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import logger from '@/utils/logger';
 export const dynamic = 'force-dynamic'
 
 // Lusophone cultural notification preferences management
@@ -22,7 +23,7 @@ export async function PUT(request: NextRequest) {
     }
 
     // Update Lusophone cultural notification preferences
-    console.log('[Push Preferences] Updating Lusophone cultural preferences:', {
+    logger.info('Updating Lusophone cultural notification preferences', {
       endpoint: subscription.endpoint,
       preferences: {
         culturalEvents: preferences.culturalEvents,
@@ -37,7 +38,10 @@ export async function PUT(request: NextRequest) {
         emergencyAlerts: preferences.emergencyAlerts
       },
       language,
-      updatedAt: new Date().toISOString()
+      updatedAt: new Date().toISOString(),
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'update_preferences'
     });
 
     // In production, update in database
@@ -77,7 +81,11 @@ export async function PUT(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[Push Preferences] Error updating preferences:', error);
+    logger.error('Failed to update Lusophone notification preferences', error, {
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'update_preferences_error'
+    });
     return NextResponse.json(
       {
         error: 'Failed to update preferences',
@@ -101,7 +109,12 @@ export async function GET(request: NextRequest) {
     }
 
     // Get preferences from database
-    console.log('[Push Preferences] Fetching preferences for endpoint:', endpoint);
+    logger.debug('Fetching Lusophone notification preferences', {
+      endpoint,
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'fetch_preferences'
+    });
 
     // In production, fetch from database
     /*
@@ -144,7 +157,11 @@ export async function GET(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[Push Preferences] Error fetching preferences:', error);
+    logger.error('Failed to fetch Lusophone notification preferences', error, {
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'fetch_preferences_error'
+    });
     return NextResponse.json(
       {
         error: 'Failed to fetch preferences',

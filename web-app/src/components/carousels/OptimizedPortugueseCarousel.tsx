@@ -151,7 +151,7 @@ const OptimizedPortugueseCarousel = memo(<T extends any>({
     itemElements?.forEach(el => observer.observe(el))
 
     return () => observer.disconnect()
-  }, [items, enablePerformanceOptimization])
+  }, [items.length, enablePerformanceOptimization])
 
   // Performance monitoring
   useEffect(() => {
@@ -175,7 +175,7 @@ const OptimizedPortugueseCarousel = memo(<T extends any>({
     }
 
     requestAnimationFrame(measurePerformance)
-  }, [metrics, enablePerformanceOptimization])
+  }, [metrics.renderTime, metrics.interactionLatency, metrics.memoryUsage, metrics.frameRate, enablePerformanceOptimization])
 
   // Enhanced navigation with performance tracking
   const goToSlide = useCallback((index: number) => {

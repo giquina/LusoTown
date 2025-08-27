@@ -963,7 +963,7 @@ ${Array.from(this.systemHealth.entries()).map(([system, health]) => `
 
 ## 🎛️ Quick Commands
 
-\\`\\`\\`bash
+```bash
 # Run full intelligent documentation system
 npm run docs:intelligent-full
 

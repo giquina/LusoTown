@@ -5,6 +5,8 @@
  * and don't overlap with each other or navigation elements.
  */
 
+import logger from '@/utils/logger';
+
 export interface WidgetPosition {
   element: HTMLElement;
   component: string;
@@ -172,27 +174,23 @@ export function startPositionMonitoring(): () => void {
 
     if (report.overlaps.length > 0 || report.recommendations.length > 0) {
       if (process.env.NODE_ENV !== "production") {
-        // eslint-disable-next-line no-console
-        console.group("🚨 Widget Positioning Issues Detected");
+        logger.warn("Widget Positioning Issues Detected", { area: 'mobile' });
         if (report.overlaps.length > 0) {
-          // eslint-disable-next-line no-console
-          console.error("Overlaps:", report.overlaps);
+          logger.error("Widget overlaps detected", null, { area: 'mobile', overlaps: report.overlaps });
         }
         if (report.recommendations.length > 0) {
-          // eslint-disable-next-line no-console
-          console.warn("Recommendations:", report.recommendations);
+          logger.warn("Widget positioning recommendations", { area: 'mobile', recommendations: report.recommendations });
         }
-        // eslint-disable-next-line no-console
-        console.table(
-          report.widgets.map((w) => ({
+        logger.debug("Widget positioning details", { 
+          area: 'mobile',
+          widgets: report.widgets.map((w) => ({
             component: w.component,
             zIndex: w.zIndex,
             bottom: `${w.bottom}px`,
             visible: w.visible,
           }))
-        );
-        // eslint-disable-next-line no-console
-        console.groupEnd();
+        });
+        // End of widget positioning analysis
       }
     }
 
@@ -267,38 +265,32 @@ export function showWidgetDebugOverlay(): () => void {
  */
 export function testWidgetPositioning(): void {
   if (process.env.NODE_ENV === "production") return;
-  // eslint-disable-next-line no-console
-  console.group("🧪 Widget Positioning Test");
+  logger.info("Widget Positioning Test Started", { area: 'mobile' });
   const report = analyzeWidgetPositioning();
-  // eslint-disable-next-line no-console
-  console.log("📊 Analysis Results:");
-  // eslint-disable-next-line no-console
-  console.log(`- Widgets detected: ${report.widgets.length}`);
-  // eslint-disable-next-line no-console
-  console.log(`- Mobile optimized: ${report.mobileOptimized}`);
-  // eslint-disable-next-line no-console
-  console.log(`- Overlaps: ${report.overlaps.length}`);
-  // eslint-disable-next-line no-console
-  console.log(`- Recommendations: ${report.recommendations.length}`);
+  logger.info("Widget positioning analysis results", {
+    area: 'mobile',
+    widgetsDetected: report.widgets.length,
+    mobileOptimized: report.mobileOptimized,
+    overlaps: report.overlaps.length,
+    recommendations: report.recommendations.length
+  });
   if (report.widgets.length > 0) {
-    // eslint-disable-next-line no-console
-    console.table(
-      report.widgets.map((w) => ({
+    logger.debug("Widget details", {
+      area: 'mobile',
+      widgets: report.widgets.map((w) => ({
         Component: w.component,
         "Z-Index": w.zIndex,
         Bottom: `${w.bottom}px`,
         Visible: w.visible ? "✅" : "❌",
       }))
-    );
+    });
   }
   if (report.overlaps.length > 0) {
-    // eslint-disable-next-line no-console
-    console.error("🚨 Overlaps Found:", report.overlaps);
+    logger.error("Widget overlaps found", null, { area: 'mobile', overlaps: report.overlaps });
   }
   if (report.recommendations.length > 0) {
-    // eslint-disable-next-line no-console
-    console.warn("💡 Recommendations:", report.recommendations);
+    logger.warn("Widget positioning recommendations", { area: 'mobile', recommendations: report.recommendations });
   }
   // eslint-disable-next-line no-console
-  console.groupEnd();
+  logger.info("Widget Positioning Test Completed", { area: 'mobile' });
 }

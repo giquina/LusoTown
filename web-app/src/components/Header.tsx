@@ -65,7 +65,7 @@ const getCommunityDropdownLinks = (t: any) => [
   },
   {
     name: t("nav.find_student_groups", "Find Student Groups"),
-    href: "/students",
+    href: ROUTES.students,
     description: t(
       "nav.find_student_groups_desc",
       "Connect with Portuguese-speaking students across UK universities"
@@ -182,7 +182,7 @@ export default function Header() {
   const handleLogout = async () => {
     // Auth temporarily disabled for demo
     setShowUserMenu(false);
-    router.push("/");
+    router.push(ROUTES.home);
   };
 
   const getMembershipBadge = (tier: string) => {
@@ -574,7 +574,7 @@ export default function Header() {
                 </a>
                 <motion.a
                   href={ROUTES.apply}
-                  className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-3 px-4 lg:px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-h-[44px] flex items-center text-sm relative overflow-hidden group"
+                  className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-3 px-3 sm:px-4 lg:px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-h-[44px] flex items-center text-xs sm:text-sm relative overflow-hidden group"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -586,10 +586,12 @@ export default function Header() {
                     whileHover={{ x: "100%" }}
                     transition={{ duration: 0.6 }}
                   />
-                  <span className="relative z-10 hidden lg:inline">
+                  <span className="relative z-10 hidden sm:inline">
                     Join LusoTown
                   </span>
-                  <span className="relative z-10 lg:hidden">JOIN</span>
+                  <span className="relative z-10 sm:hidden">
+                    Join
+                  </span>
                 </motion.a>
               </>
             )}

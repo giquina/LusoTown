@@ -139,7 +139,7 @@ export default function AppDownloadBar({
           damping: 30,
           duration: 0.4
         }}
-        className={`fixed ${position === 'bottom' ? 'bottom-0' : 'top-0'} left-4 right-4 max-w-md mx-auto
+        className={`fixed ${position === 'bottom' ? 'bottom-0' : 'top-0'} left-2 right-2 sm:left-4 sm:right-4 max-w-sm sm:max-w-md mx-auto
           bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-2xl rounded-t-2xl 
           ${position === 'bottom' ? 'border-t border-primary-400' : 'border-b border-primary-400 rounded-b-2xl rounded-t-none'}
           ${className}`}
@@ -180,8 +180,8 @@ export default function AppDownloadBar({
                 </div>
                 <p id="app-download-description" className="text-xs text-white/90 leading-tight">
                   {isPortuguese
-                    ? 'Conecte-se com falantes de português, descubra eventos lusófonos e encontre a sua comunidade. Descarregue agora para iOS ou Android.'
-                    : 'Connect with Portuguese speakers, discover Lusophone events, and find your community. Download now for iOS or Android.'}
+                    ? 'Conecte-se com a comunidade lusófona no Reino Unido, descubra eventos culturais e encontre a sua rede. Descarregue agora.'
+                    : 'Connect with the Portuguese-speaking community across the UK, discover cultural events, and build your network. Download now.'}
                 </p>
               </div>
             </div>
@@ -196,8 +196,8 @@ export default function AppDownloadBar({
                   ? 'https://apps.apple.com/app/lusotown-london'
                   : 'https://play.google.com/store/apps/details?id=com.lusotown.london'
                 }
-                className="bg-white text-primary-600 px-4 py-2 rounded-lg font-semibold text-xs
-                  hover:bg-white/95 transition-colors shadow-sm flex-shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center"
+                className="bg-white text-primary-600 px-3 py-2 rounded-lg font-semibold text-xs
+                  hover:bg-white/95 transition-colors shadow-sm flex-shrink-0 min-h-[44px] min-w-[60px] flex items-center justify-center whitespace-nowrap"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleDownloadClick}
@@ -217,7 +217,7 @@ export default function AppDownloadBar({
                     : `Download LusoTown app for ${navigator.userAgent.includes('iPhone') ? 'iOS' : 'Android'}. Opens in a new window.`
                 }
               >
-                {isPortuguese ? 'Descarregar' : 'Download'}
+                {isPortuguese ? 'App' : 'Get'}
               </a>
 
               {/* Skip Button */}
@@ -225,7 +225,7 @@ export default function AppDownloadBar({
                 ref={skipButtonRef}
                 onClick={handleSkip}
                 className="text-white/80 hover:text-white transition-colors px-2 py-1 text-xs
-                  underline underline-offset-2 flex-shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center"
+                  underline underline-offset-2 flex-shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center whitespace-nowrap"
                 onFocus={() => {
                   if (skipButtonRef.current) {
                     addFocusClasses(skipButtonRef.current, 'button');
@@ -242,7 +242,7 @@ export default function AppDownloadBar({
                     : 'Skip for now. Banner will be shown again in another session.'
                 }
               >
-                {isPortuguese ? 'Mais tarde' : 'Skip for now'}
+                {isPortuguese ? 'Agora não' : 'Later'}
               </button>
 
               {/* Close Button */}

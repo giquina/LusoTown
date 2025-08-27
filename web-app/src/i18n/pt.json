@@ -3842,5 +3842,24 @@
   "carousel.status": "Mostrando itens {{start}} a {{end}} de {{total}}",
   "carousel.item": "Item cultural português",
   "carousel.of": "de",
-  "carousel.loading": "Carregando conteúdo português..."
+  "carousel.loading": "Carregando conteúdo português...",
+
+  "academy.business_networking.title": "Networking Empresarial LusoTown",
+  "academy.business_networking.description": "Domine o networking profissional dentro da comunidade empresarial portuguesa em Londres",
+  "academy.business_networking.category": "Profissional",
+  "academy.business_networking.objectives.build_connections": "Construir conexões profissionais significativas com empreendedores portugueses",
+  "academy.business_networking.objectives.navigate_etiquette": "Navegar etiqueta empresarial em ambientes bilingues",
+  "academy.business_networking.objectives.leverage_heritage": "Aproveitar herança cultural para vantagens empresariais",
+  "academy.business_networking.objectives.create_partnerships": "Criar parcerias e colaborações duradouras",
+  "academy.business_networking.objectives.develop_brand": "Desenvolver sua marca pessoal dentro da comunidade de falantes de português",
+  
+  "academy.business_networking.steps.introduction.title": "Panorama Empresarial Português em Londres",
+  "academy.business_networking.steps.networking_basics.title": "Fundamentos de Networking para Falantes de Português",
+  "academy.business_networking.steps.conversation_starters.title": "Iniciadores de Conversa para Eventos Empresariais",
+  "academy.business_networking.steps.homework.title": "Tarefas Práticas",
+  "academy.business_networking.steps.follow_up.title": "Seguimento e Construção de Relacionamentos",
+  "academy.business_networking.steps.digital_networking.title": "Networking Digital para Empreendedores Portugueses",
+  "academy.business_networking.steps.cultural_advantage.title": "Aproveitando a Herança Cultural nos Negócios",
+  
+  "academy.business_networking.completion_message": "Módulo de Networking Empresarial concluído"
 }

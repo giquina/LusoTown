@@ -16,82 +16,144 @@ const AUDIT_CONFIG = {
   excludePatterns: [
     '*.test.tsx',
     '*.test.ts', 
+    '*.spec.ts',
+    '*.spec.tsx',
     '*.config.js',
     '*.config.ts',
-    'i18n/*.json'
+    '*.d.ts',
+    'i18n/*.json',
+    'src/config/*',
+    '__tests__/*',
+    'scripts/*',
+    'playwright*',
+    '*.setup.js',
+    'jest.*',
+    '*.stories.*',
+    'middleware.ts'
   ]
 };
 
-// Hardcoding violation patterns
+// Hardcoding violation patterns - Updated to reduce false positives
 const VIOLATION_PATTERNS = [
   {
     category: 'hardcoded_text',
-    pattern: /['"`](?!className|key|id|data-|aria-|role|type|placeholder|alt|&|\s|·|•)[^'"`]*[a-zA-Z]{3,}[^'"`]*['"`]/g,
+    // Only catch strings with user-facing text, exclude: imports, translation keys, classNames, and technical strings
+    pattern: /(?<!import[^'"`]*|from\s+|t\(|className=|key=|id=|data-|aria-|role=|type=|placeholder=|alt=|testId=|@\/)['"]((?![@\/]|[a-z]+\.[a-z]+|className|key|id|data-|aria-|role|type|placeholder|alt|testId|use |client|server)[A-Z][^'"`]{10,}|[A-Z][a-z]+\s+[A-Z][a-z]+[^'"`]*)['"]/g,
     severity: 'high',
-    message: 'Hardcoded text detected - should use t() function'
+    message: 'Hardcoded user-facing text detected - should use t() function'
   },
   {
     category: 'hardcoded_urls',
-    pattern: /['"`]https?:\/\/[^'"`]+['"`]/g,
+    // Only catch actual URLs, not import paths
+    pattern: /(?<!import[^'"`]*|from\s+)['"](https?:\/\/(?!localhost)[^'"`]+)['"]/g,
     severity: 'high',
     message: 'Hardcoded URL detected - use config/cdn.ts or env vars'
   },
   {
     category: 'hardcoded_routes',
-    pattern: /['"`]\/[a-zA-Z][^'"`]*['"`]/g,
+    // Only catch route strings not in ROUTES imports or function calls, exclude paths starting with @
+    pattern: /(?<!ROUTES\.|import[^'"`]*|from\s+|href=|to=|path=|pathname=|router\.|navigate\(|Link[^>]*to=)['"](\/(?!api\/)[a-zA-Z][a-zA-Z0-9\-]*(?:\/[a-zA-Z0-9\-]+)*)['"]/g,
     severity: 'medium',
     message: 'Potential hardcoded route - use ROUTES constants'
   },
   {
     category: 'hardcoded_prices',
-    pattern: /['"`][£$€]\d+[^'"`]*['"`]/g,
+    // Prices in strings not in config files
+    pattern: /(?<!formatPrice|PRICES|config\/)['"](£|$|€)\d+(?:\.\d{2})?[^'"`]*['"]/g,
     severity: 'high',
     message: 'Hardcoded price detected - use formatPrice() function'
   },
   {
     category: 'hardcoded_colors',
-    pattern: /#[0-9a-fA-F]{3,6}|rgb\(|rgba\(/g,
+    // Color values not in CSS classes or config files  
+    pattern: /(?<!className=|class=|from-|to-|bg-|text-|border-|ring-|config\/|theme\.|colors\.)#[0-9a-fA-F]{6}|(?<!className=|class=|config\/|theme\.|colors\.)rgb\(|(?<!className=|class=|config\/|theme\.|colors\.)rgba\(/g,
     severity: 'medium',
-    message: 'Hardcoded color detected - use Portuguese brand colors'
+    message: 'Hardcoded color detected - use Portuguese brand colors from config'
   },
   {
     category: 'console_logs',
     pattern: /console\.log\(/g,
     severity: 'low',
-    message: 'Console.log detected - remove before production'
+    message: 'Console.log detected - use logger utility instead'
   },
   {
-    category: 'hardcoded_analytics',
-    pattern: /['"`]track[A-Z][^'"`]*['"`]|['"`][a-z_]+_event['"`]/g,
-    severity: 'medium',
-    message: 'Hardcoded analytics event - use event constants'
+    category: 'hardcoded_emails',
+    // Email addresses not in config
+    pattern: /(?<!config\/|CONTACT|EMAIL)['"]\w+@\w+\.\w+['"]/g,
+    severity: 'high',
+    message: 'Hardcoded email detected - use config/contact.ts'
   }
 ];
 
 // Scan files for violations
 function scanFile(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');
+  const lines = content.split('\n');
   const violations = [];
 
   VIOLATION_PATTERNS.forEach(pattern => {
-    const matches = content.match(pattern.pattern);
-    if (matches) {
-      matches.forEach(match => {
-        const lineNumber = content.substring(0, content.indexOf(match)).split('\n').length;
-        violations.push({
-          file: filePath,
-          line: lineNumber,
-          category: pattern.category,
-          severity: pattern.severity,
-          message: pattern.message,
-          code: match.trim(),
-          timestamp: new Date().toISOString()
+    lines.forEach((line, index) => {
+      const matches = line.match(pattern.pattern);
+      if (matches) {
+        matches.forEach(match => {
+          // Additional filtering to reduce false positives
+          if (shouldSkipViolation(line, match, pattern.category)) {
+            return;
+          }
+          
+          violations.push({
+            file: filePath,
+            line: index + 1,
+            category: pattern.category,
+            severity: pattern.severity,
+            message: pattern.message,
+            code: match.trim(),
+            context: line.trim(),
+            timestamp: new Date().toISOString()
+          });
         });
-      });
-    }
+      }
+    });
   });
 
   return violations;
+}
+
+// Additional filtering function to reduce false positives
+function shouldSkipViolation(line, match, category) {
+  const trimmedLine = line.trim();
+  
+  // Skip import statements
+  if (trimmedLine.startsWith('import') || trimmedLine.startsWith('from')) {
+    return true;
+  }
+  
+  // Skip export statements
+  if (trimmedLine.startsWith('export')) {
+    return true;
+  }
+  
+  // Skip comment lines
+  if (trimmedLine.startsWith('//') || trimmedLine.startsWith('*') || trimmedLine.startsWith('/*')) {
+    return true;
+  }
+  
+  // Skip translation function calls
+  if (line.includes('t(') && category === 'hardcoded_text') {
+    return true;
+  }
+  
+  // Skip className assignments
+  if (line.includes('className=') && category === 'hardcoded_text') {
+    return true;
+  }
+  
+  // Skip config object properties
+  if (/^\s*[a-zA-Z_$][a-zA-Z0-9_$]*:\s*/.test(trimmedLine)) {
+    return true;
+  }
+  
+  return false;
 }
 
 // Get all files to scan

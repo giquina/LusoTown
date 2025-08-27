@@ -21,6 +21,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { useFollowing, FollowableEntity } from '@/context/EnhancedFollowingContext'
 import EnhancedFollowButton from '@/components/EnhancedFollowButton'
 import Footer from '@/components/Footer'
+import { ROUTES } from '@/config/routes'
 
 interface PortugueseNation extends FollowableEntity {
   flag: string
@@ -745,13 +746,13 @@ export default function PortugueseSpeakingNationsPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="/signup"
+                    href={ROUTES.signup}
                     className="bg-white text-primary-600 px-8 py-4 rounded-xl font-bold hover:bg-primary-50 transition-colors shadow-lg"
                   >
                     {isPortuguese ? 'Criar Conta Gratuita' : 'Create Free Account'}
                   </a>
                   <a
-                    href="/login"
+                    href={ROUTES.login}
                     className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-primary-600 transition-colors"
                   >
                     {isPortuguese ? 'Fazer Login' : 'Sign In'}

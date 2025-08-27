@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { aiEthicsEngine } from '@/services/AIEthicsEngine'
 import { heritageRespectProtocol } from '@/services/HeritageRespectProtocol'
 import { languagePreservationAI } from '@/services/LanguagePreservationAI'
+import { logger } from '@/utils/logger'
 
 /**
  * AI Ethics API Endpoints for Portuguese-speaking community Platform
@@ -41,7 +42,11 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ error: 'Invalid action parameter' }, { status: 400 })
     }
   } catch (error) {
-    console.error('[AI Ethics API] GET request failed:', error)
+    logger.error('AI Ethics API GET request failed', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'ai_ethics_get_error'
+    })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -74,7 +79,11 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: 'Invalid action parameter' }, { status: 400 })
     }
   } catch (error) {
-    console.error('[AI Ethics API] POST request failed:', error)
+    logger.error('AI Ethics API POST request failed', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'ai_ethics_post_error'
+    })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -96,7 +105,11 @@ async function getDashboard() {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('[AI Ethics API] Dashboard generation failed:', error)
+    logger.error('AI Ethics dashboard generation failed', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'ethics_dashboard_error'
+    })
     return NextResponse.json(
       { error: 'Failed to generate AI ethics dashboard' },
       { status: 500 }
@@ -125,7 +138,11 @@ async function getHeritageStatus() {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('[AI Ethics API] Heritage status failed:', error)
+    logger.error('Heritage status retrieval failed', error, {
+      area: 'cultural',
+      culturalContext: 'lusophone',
+      action: 'heritage_status_error'
+    })
     return NextResponse.json(
       { error: 'Failed to get heritage status' },
       { status: 500 }
@@ -143,7 +160,11 @@ async function getLanguageMetrics() {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('[AI Ethics API] Language metrics failed:', error)
+    logger.error('Language preservation metrics failed', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'language_metrics_error'
+    })
     return NextResponse.json(
       { error: 'Failed to get language preservation metrics' },
       { status: 500 }
@@ -161,7 +182,11 @@ async function getPrivacyAudit(scope: 'full' | 'cultural_data' | 'cross_border' 
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('[AI Ethics API] Privacy audit failed:', error)
+    logger.error('Privacy audit failed', error, {
+      area: 'security',
+      culturalContext: 'lusophone',
+      action: 'privacy_audit_error'
+    })
     return NextResponse.json(
       { error: 'Failed to conduct privacy audit' },
       { status: 500 }
@@ -186,7 +211,11 @@ async function getTransparencyReport(timeframe: string) {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('[AI Ethics API] Transparency report failed:', error)
+    logger.error('Transparency report generation failed', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'transparency_report_error'
+    })
     return NextResponse.json(
       { error: 'Failed to generate transparency report' },
       { status: 500 }
@@ -215,7 +244,11 @@ async function getCommunityFeedback(feedbackType: string, timeframe: string) {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('[AI Ethics API] Community feedback failed:', error)
+    logger.error('Community feedback retrieval failed', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'community_feedback_error'
+    })
     return NextResponse.json(
       { error: 'Failed to get community feedback' },
       { status: 500 }
@@ -246,7 +279,11 @@ async function validateCulturalContent(body: any) {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('[AI Ethics API] Cultural content validation failed:', error)
+    logger.error('Cultural content validation failed', error, {
+      area: 'cultural',
+      culturalContext: 'lusophone',
+      action: 'cultural_content_validation_error'
+    })
     return NextResponse.json(
       { error: 'Failed to validate cultural content' },
       { status: 500 }
@@ -280,7 +317,11 @@ async function reportHeritageViolation(body: any) {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('[AI Ethics API] Heritage violation report failed:', error)
+    logger.error('Heritage violation report failed', error, {
+      area: 'cultural',
+      culturalContext: 'lusophone',
+      action: 'heritage_violation_report_error'
+    })
     return NextResponse.json(
       { error: 'Failed to report heritage violation' },
       { status: 500 }
@@ -303,13 +344,15 @@ async function submitCommunityFeedback(body: any) {
     const feedbackId = `feedback_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
     
     // Log feedback for analysis
-    console.log('[AI Ethics API] Community feedback submitted:', {
-      feedback_id: feedbackId,
-      feedback_type,
-      responses_count: Object.keys(responses).length,
-      cultural_context,
-      user_id: user_id || 'anonymous',
-      timestamp: new Date().toISOString()
+    logger.info('Community feedback submitted for Portuguese-speaking community', {
+      feedbackId,
+      feedbackType: feedback_type,
+      responsesCount: Object.keys(responses).length,
+      culturalContext: cultural_context,
+      userId: user_id || 'anonymous',
+      area: 'cultural',
+      culturalContext: 'lusophone',
+      action: 'community_feedback_submitted'
     })
     
     return NextResponse.json({
@@ -322,7 +365,11 @@ async function submitCommunityFeedback(body: any) {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('[AI Ethics API] Community feedback submission failed:', error)
+    logger.error('Community feedback submission failed', error, {
+      area: 'cultural',
+      culturalContext: 'lusophone',
+      action: 'community_feedback_submission_error'
+    })
     return NextResponse.json(
       { error: 'Failed to submit community feedback' },
       { status: 500 }
@@ -349,7 +396,11 @@ async function optimizeBilingualContent(body: any) {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('[AI Ethics API] Bilingual content optimization failed:', error)
+    logger.error('Bilingual content optimization failed', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'bilingual_optimization_error'
+    })
     return NextResponse.json(
       { error: 'Failed to optimize bilingual content' },
       { status: 500 }
@@ -380,7 +431,11 @@ async function requestCulturalExplanation(body: any) {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('[AI Ethics API] Cultural explanation failed:', error)
+    logger.error('Cultural explanation failed', error, {
+      area: 'cultural',
+      culturalContext: 'lusophone',
+      action: 'cultural_explanation_error'
+    })
     return NextResponse.json(
       { error: 'Failed to provide cultural explanation' },
       { status: 500 }

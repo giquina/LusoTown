@@ -402,7 +402,7 @@ async function geocodeAddress(address: string): Promise<{ latitude: number; long
       };
     }
   } catch (error) {
-    console.warn('Geocoding failed:', error);
+    logger.warn('Geocoding failed', undefined, { area: 'business', action: 'geocoding' });
   }
 
   return null;

@@ -10,6 +10,7 @@ import type {
   CulturalMatchingConfig
 } from '@/types/cultural-preferences'
 import { DEFAULT_MATCHING_CONFIG } from '@/types/cultural-preferences'
+import logger from '@/utils/logger'
 
 export class CulturalPreferencesService {
   /**
@@ -48,7 +49,12 @@ export class CulturalPreferencesService {
         .single()
 
       if (error) {
-        console.error('Error saving cultural preferences:', error)
+        logger.error('Failed to save cultural preferences', error, {
+          area: 'cultural',
+          action: 'save_preferences',
+          culturalContext: 'lusophone',
+          userId
+        })
         return null
       }
 
@@ -57,7 +63,12 @@ export class CulturalPreferencesService {
 
       return this.transformPreferencesFromDB(data)
     } catch (error) {
-      console.error('Error in saveCulturalPreferences:', error)
+      logger.error('Cultural preferences save operation failed', error, {
+        area: 'cultural',
+        action: 'save_preferences_operation',
+        culturalContext: 'lusophone',
+        userId
+      })
       return null
     }
   }
@@ -79,7 +90,12 @@ export class CulturalPreferencesService {
 
       return this.transformPreferencesFromDB(data)
     } catch (error) {
-      console.error('Error getting cultural preferences:', error)
+      logger.error('Failed to retrieve cultural preferences', error, {
+        area: 'cultural',
+        action: 'get_preferences',
+        culturalContext: 'lusophone',
+        userId
+      })
       return null
     }
   }
@@ -113,7 +129,12 @@ export class CulturalPreferencesService {
         .limit(config.maxMatches)
 
       if (compatibilityError || !compatibilityData) {
-        console.error('Error getting compatibility data:', compatibilityError)
+        logger.error('Failed to retrieve compatibility data', compatibilityError, {
+          area: 'matching',
+          action: 'get_compatibility',
+          culturalContext: 'lusophone',
+          userId
+        })
         return []
       }
 
@@ -142,7 +163,12 @@ export class CulturalPreferencesService {
 
       return matches
     } catch (error) {
-      console.error('Error getting cultural matches:', error)
+      logger.error('Cultural matching operation failed', error, {
+        area: 'matching',
+        action: 'get_cultural_matches',
+        culturalContext: 'lusophone',
+        userId
+      })
       return []
     }
   }
@@ -164,7 +190,13 @@ export class CulturalPreferencesService {
 
       return this.transformCompatibilityFromDB(data)
     } catch (error) {
-      console.error('Error getting compatibility score:', error)
+      logger.error('Compatibility score retrieval failed', error, {
+        area: 'matching',
+        action: 'get_compatibility_score',
+        culturalContext: 'lusophone',
+        userAId,
+        userBId
+      })
       return null
     }
   }
@@ -181,13 +213,21 @@ export class CulturalPreferencesService {
         .order('popularity_score', { ascending: false })
 
       if (error) {
-        console.error('Error getting cultural elements:', error)
+        logger.error('Failed to retrieve Portuguese cultural elements', error, {
+          area: 'cultural',
+          action: 'get_cultural_elements',
+          culturalContext: 'portuguese'
+        })
         return []
       }
 
       return data || []
     } catch (error) {
-      console.error('Error in getPortugueseCulturalElements:', error)
+      logger.error('Portuguese cultural elements operation failed', error, {
+        area: 'cultural',
+        action: 'get_cultural_elements_operation',
+        culturalContext: 'portuguese'
+      })
       return []
     }
   }

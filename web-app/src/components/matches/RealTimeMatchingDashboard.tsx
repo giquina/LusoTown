@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import {
@@ -30,6 +30,7 @@ import {
 } from '@heroicons/react/24/solid';
 import { advancedMatchingAlgorithms, type MatchingResult, type RealTimeMatchingMetrics } from '@/services/AdvancedMatchingAlgorithms';
 import type { CulturalDepthProfile } from '../matches/SaudadeMatchingSystem';
+import logger from '@/utils/logger';
 
 interface RealTimeMatchingState {
   isActive: boolean;
@@ -102,6 +103,85 @@ export default function RealTimeMatchingDashboard({
     }
   };
 
+  const stopRealTimeMatching = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = undefined;
+    }
+    setMatchingState(prev => ({ 
+      ...prev, 
+      optimizationStatus: 'idle',
+      isActive: false 
+    }));
+  }, []);
+
+  const findMatches = useCallback(async () => {
+    try {
+      const results = await advancedMatchingAlgorithms.findRealTimeMatches(
+        userProfile,
+        {
+          maxDistance: filters.maxDistance,
+          minCompatibility: filters.minCompatibility,
+          culturalDepthRange: filters.culturalDepthRange,
+          focusAreas: filters.focusAreas,
+          includeNewUsers: filters.includeNewUsers,
+        }
+      );
+      
+      setMatchingState(prev => ({
+        ...prev,
+        currentMatches: results.matches,
+        metrics: results.metrics,
+        lastUpdate: new Date().toISOString(),
+        optimizationStatus: 'complete'
+      }));
+      
+      return results;
+    } catch (error) {
+      logger.error('Real-time matching algorithm failed', error, {
+        area: 'matching',
+        action: 'real_time_matching',
+        userId: userProfile?.id
+      });
+      setMatchingState(prev => ({ 
+        ...prev, 
+        optimizationStatus: 'error' 
+      }));
+      throw error;
+    }
+  }, [userProfile, filters.maxDistance, filters.minCompatibility, filters.culturalDepthRange, filters.focusAreas, filters.includeNewUsers]);
+
+  const startRealTimeMatching = useCallback(async () => {
+    try {
+      setMatchingState(prev => ({ ...prev, optimizationStatus: 'running' }));
+      
+      // Initial match finding
+      await findMatches();
+      
+      // Set up interval for continuous matching
+      const updateInterval = getUpdateInterval(matchingState.matchingSpeed);
+      intervalRef.current = setInterval(async () => {
+        try {
+          await findMatches();
+        } catch (error) {
+          logger.error('Interval matching update failed', error, {
+            area: 'matching',
+            action: 'interval_matching_update'
+          });
+          stopRealTimeMatching();
+        }
+      }, updateInterval);
+      
+    } catch (error) {
+      logger.error('Failed to initialize real-time matching system', error, {
+        area: 'matching',
+        action: 'start_real_time_matching',
+        userId: userProfile?.id
+      });
+      setMatchingState(prev => ({ ...prev, optimizationStatus: 'error' }));
+    }
+  }, [findMatches, matchingState.matchingSpeed, stopRealTimeMatching]);
+
   // Initialize real-time matching
   useEffect(() => {
     if (matchingState.isActive && filters.realTimeUpdates) {
@@ -111,81 +191,8 @@ export default function RealTimeMatchingDashboard({
     }
 
     return () => stopRealTimeMatching();
-  }, [matchingState.isActive, matchingState.matchingSpeed, filters]);
+  }, [matchingState.isActive, filters.realTimeUpdates, startRealTimeMatching, stopRealTimeMatching]);
 
-  const startRealTimeMatching = async () => {
-    try {
-      setMatchingState(prev => ({ ...prev, optimizationStatus: 'running' }));
-
-      // Initial match finding
-      await findMatches();
-
-      // Set up real-time updates
-      const interval = getUpdateInterval(matchingState.matchingSpeed);
-      intervalRef.current = setInterval(async () => {
-        await findMatches();
-        await updateMetrics();
-      }, interval);
-
-      setMatchingState(prev => ({ ...prev, optimizationStatus: 'complete' }));
-    } catch (error) {
-      console.error('[Real-time Matching] Start error:', error);
-      setMatchingState(prev => ({ ...prev, optimizationStatus: 'error' }));
-    }
-  };
-
-  const stopRealTimeMatching = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = undefined;
-    }
-  };
-
-  const findMatches = async () => {
-    try {
-      const matches = await advancedMatchingAlgorithms.findAdvancedMatches(
-        userProfile.saudadeProfile.id || 'current-user',
-        {
-          maxResults: 20,
-          focusAreas: filters.focusAreas,
-          customWeights: {
-            distanceFactors: {
-              maxDistance: filters.maxDistance,
-              distanceDecayRate: 0.7,
-              transportAccessibility: 0.3,
-            },
-            qualityThresholds: {
-              minCompatibilityScore: filters.minCompatibility,
-              minCulturalDepth: filters.culturalDepthRange[0],
-              minProfileCompleteness: 60,
-            },
-          },
-        }
-      );
-
-      const filteredMatches = matches.filter(match => 
-        match.culturalBondingPotential >= filters.culturalDepthRange[0] &&
-        match.culturalBondingPotential <= filters.culturalDepthRange[1]
-      );
-
-      setMatchingState(prev => ({
-        ...prev,
-        currentMatches: filteredMatches,
-        lastUpdate: new Date().toISOString(),
-      }));
-    } catch (error) {
-      console.error('[Real-time Matching] Find matches error:', error);
-    }
-  };
-
-  const updateMetrics = async () => {
-    try {
-      const metrics = await advancedMatchingAlgorithms.optimizeMatchingPerformance();
-      setMatchingState(prev => ({ ...prev, metrics }));
-    } catch (error) {
-      console.error('[Real-time Matching] Metrics update error:', error);
-    }
-  };
 
   const toggleRealTimeMatching = () => {
     setMatchingState(prev => ({

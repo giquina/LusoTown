@@ -5,6 +5,8 @@ import { useLanguage } from '@/context/LanguageContext';
 import Footer from '@/components/Footer';
 import LusophoneCarousel from '@/components/carousels/LusophoneCarousel';
 import { LUSOPHONE_CELEBRATIONS, getCelebrationsByCategory, type LusophoneCelebration } from '@/config/lusophone-celebrations';
+import logger from '@/utils/logger';
+import { COMMON_IMAGES } from '@/config/cdn';
 
 interface Event {
   id: string;
@@ -43,7 +45,7 @@ export default function EventsPage() {
         location: 'Portuguese Club London',
         category: 'Arts & Culture',
         tags: ['fado', 'music', 'portuguese'],
-        imageUrl: '/images/fado-night.jpg'
+        imageUrl: COMMON_IMAGES.portuguese.events
       },
       {
         id: '2', 
@@ -54,7 +56,7 @@ export default function EventsPage() {
         location: 'Hyde Park',
         category: 'Arts & Culture',
         tags: ['brazil', 'festival', 'samba'],
-        imageUrl: '/images/brazilian-festival.jpg'
+        imageUrl: COMMON_IMAGES.portuguese.cultural
       },
       {
         id: '3',
@@ -65,7 +67,7 @@ export default function EventsPage() {
         location: 'East London Community Center',
         category: 'Arts & Culture',
         tags: ['kizomba', 'angola', 'dance'],
-        imageUrl: '/images/kizomba-night.jpg'
+        imageUrl: COMMON_IMAGES.portuguese.events
       },
       {
         id: '4',
@@ -76,7 +78,7 @@ export default function EventsPage() {
         location: 'South London Cultural Center',
         category: 'Arts & Culture',
         tags: ['morna', 'cape-verde', 'music'],
-        imageUrl: '/images/morna-festival.jpg'
+        imageUrl: COMMON_IMAGES.portuguese.events
       }
     ];
     setEvents(mockEvents);
@@ -160,7 +162,12 @@ export default function EventsPage() {
             autoAdvanceInterval={6000}
             className="mb-12"
             onItemClick={(celebration) => {
-              console.log('Selected celebration:', celebration.name[language])
+              logger.debug('Cultural celebration selected', {
+                area: 'events',
+                culturalContext: celebration.countries[0]?.toLowerCase() as any,
+                action: 'celebration_selection',
+                eventId: celebration.id
+              })
             }}
             mobileSettings={{
               enableSwipeGestures: true,
@@ -250,17 +257,186 @@ export default function EventsPage() {
 
           {/* Cultural Tab Content */}
           {activeTab === 'cultural' && (
-            <div className="text-center py-16">
-              <div className="text-6xl mb-4">🎭</div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                {isPortuguese ? 'Experiências Culturais' : 'Cultural Experiences'}
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                {isPortuguese 
-                  ? 'Mergulhe na rica cultura portuguesa através dos nossos eventos especiais, workshops de fado, aulas de dança e festivais tradicionais.'
-                  : 'Immerse yourself in rich Portuguese culture through our special events, fado workshops, dance classes, and traditional festivals.'
-                }
-              </p>
+            <div className="space-y-8">
+              {/* Portuguese Cultural Experiences Carousel */}
+              <LusophoneCarousel
+                items={LUSOPHONE_CELEBRATIONS.filter(celebration => 
+                  celebration.category === 'cultural' || celebration.category === 'festival'
+                ).slice(0, 10)}
+                title={{
+                  en: 'Portuguese Cultural Experiences',
+                  pt: 'Experiências Culturais Portuguesas'
+                }}
+                subtitle={{
+                  en: 'Immerse yourself in rich Portuguese culture through authentic workshops, festivals, and traditional celebrations',
+                  pt: 'Mergulhe na rica cultura portuguesa através de workshops autênticos, festivais e celebrações tradicionais'
+                }}
+                renderItem={(experience, index) => (
+                  <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 h-full">
+                    <div className="h-40 bg-gradient-to-br from-primary-100 via-gold-50 to-secondary-50 flex items-center justify-center relative">
+                      <div className="text-center">
+                        <div className="text-5xl mb-2">{experience.icon}</div>
+                        <div className="text-3xl">{experience.flagEmoji}</div>
+                      </div>
+                      
+                      {/* Cultural Category Badge */}
+                      <div className="absolute top-3 right-3">
+                        <span className="bg-gradient-to-r from-primary-500 to-gold-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                          {experience.category.toUpperCase()}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div className="p-5 flex flex-col justify-between flex-1">
+                      <div>
+                        <h3 className="text-lg font-bold text-primary-900 mb-2 line-clamp-2">
+                          {experience.name[language]}
+                        </h3>
+                        <p className="text-primary-700 text-sm mb-3 line-clamp-3">
+                          {experience.description[language]}
+                        </p>
+                        
+                        {/* Cultural Details */}
+                        <div className="space-y-2 text-xs text-primary-600 mb-4">
+                          <div className="flex items-center gap-2">
+                            <span>📅</span>
+                            <span className="font-medium">{experience.period[language]}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span>🌍</span>
+                            <span>{experience.countries.slice(0, 2).join(', ')}</span>
+                            {experience.countries.length > 2 && (
+                              <span className="text-gray-400">+{experience.countries.length - 2}</span>
+                            )}
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span>✨</span>
+                            <span>{experience.significance[language].slice(0, 60)}...</span>
+                          </div>
+                        </div>
+
+                        {/* Traditional Elements Tags */}
+                        <div className="flex flex-wrap gap-1 mb-4">
+                          {experience.traditionalElements.slice(0, 3).map((element, i) => (
+                            <span 
+                              key={i}
+                              className="bg-primary-50 text-primary-700 px-2 py-1 rounded-full text-xs border border-primary-200"
+                            >
+                              {element}
+                            </span>
+                          ))}
+                          {experience.traditionalElements.length > 3 && (
+                            <span className="text-xs text-gray-500 px-2 py-1">
+                              +{experience.traditionalElements.length - 3}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      
+                      <button className="w-full bg-gradient-to-r from-primary-500 to-gold-500 text-white font-semibold py-3 rounded-lg hover:from-primary-600 hover:to-gold-600 transition-all duration-300 shadow-md hover:shadow-lg">
+                        {isPortuguese ? 'Explorar Cultura' : 'Explore Culture'}
+                      </button>
+                    </div>
+                  </div>
+                )}
+                showControls={true}
+                showDots={true}
+                autoAdvance={true}
+                autoAdvanceInterval={8000}
+                className="mb-12"
+                onItemClick={(experience) => {
+                  logger.debug('Cultural experience selected', {
+                    area: 'events',
+                    culturalContext: 'lusophone',
+                    action: 'experience_selection'
+                  })
+                }}
+                mobileSettings={{
+                  enableSwipeGestures: true,
+                  enablePullToRefresh: true,
+                  enableLazyLoading: true
+                }}
+                enablePortugueseGestures={true}
+                enableAccessibilityAnnouncements={true}
+              />
+
+              {/* Traditional Portuguese Arts & Crafts Carousel */}
+              <LusophoneCarousel
+                items={LUSOPHONE_CELEBRATIONS.filter(celebration => 
+                  celebration.traditionalElements.some(element => 
+                    element.toLowerCase().includes('music') || 
+                    element.toLowerCase().includes('dance') || 
+                    element.toLowerCase().includes('art')
+                  )
+                ).slice(0, 8)}
+                title={{
+                  en: 'Traditional Portuguese Arts & Crafts',
+                  pt: 'Artes e Ofícios Tradicionais Portugueses'
+                }}
+                subtitle={{
+                  en: 'Discover authentic Portuguese artistic traditions from all lusophone nations',
+                  pt: 'Descubra tradições artísticas portuguesas autênticas de todas as nações lusófonas'
+                }}
+                renderItem={(artTradition, index) => (
+                  <div className="bg-gradient-to-br from-white to-gold-50 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 h-full border border-gold-200">
+                    <div className="h-36 bg-gradient-to-r from-gold-400 to-primary-500 flex items-center justify-center relative">
+                      <div className="text-center text-white">
+                        <div className="text-4xl mb-1">{artTradition.icon}</div>
+                        <div className="text-sm font-semibold opacity-90">
+                          {artTradition.countries[0]}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="p-4">
+                      <h3 className="text-md font-bold text-gray-900 mb-2 line-clamp-2">
+                        {artTradition.name[language]}
+                      </h3>
+                      
+                      {/* Art & Craft Elements */}
+                      <div className="space-y-2 mb-4">
+                        <div className="text-xs text-gray-600">
+                          <span className="font-semibold">Traditional Elements:</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1">
+                          {artTradition.traditionalElements.slice(0, 4).map((element, i) => (
+                            <span 
+                              key={i}
+                              className="bg-gold-100 text-gold-800 px-2 py-1 rounded text-xs"
+                            >
+                              {element}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <button className="w-full bg-gradient-to-r from-gold-500 to-primary-500 text-white font-medium py-2 rounded-lg hover:from-gold-600 hover:to-primary-600 transition-colors text-sm">
+                        {isPortuguese ? 'Aprender Mais' : 'Learn More'}
+                      </button>
+                    </div>
+                  </div>
+                )}
+                showControls={true}
+                showDots={false}
+                autoAdvance={false}
+                responsive={{
+                  mobile: { itemsPerView: 1, spacing: 16 },
+                  tablet: { itemsPerView: 3, spacing: 20 },
+                  desktop: { itemsPerView: 4, spacing: 24 }
+                }}
+                className="mb-8"
+                onItemClick={(artTradition) => {
+                  logger.debug('Art tradition selected', {
+                    area: 'cultural',
+                    culturalContext: 'lusophone',
+                    action: 'art_tradition_selection'
+                  })
+                }}
+                mobileSettings={{
+                  enableSwipeGestures: true,
+                  enableLazyLoading: true
+                }}
+              />
             </div>
           )}
         </section>

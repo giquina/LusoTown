@@ -566,3 +566,73 @@ You are the Platform Architecture specialist overseeing the overall LusoTown pla
 
 - Bug fixes and improvements
 
+- Bug fixes and improvements
+- New feature implementations
+
+- Navigate to messaging interface
+- Open report modal
+- Implement following logic
+- Implement actual post creation with Supabase
+- Send to backend for GDPR compliance
+- Send to backend for GDPR compliance
+- Implement GDPR data export
+- Implement GDPR right to erasure
+- Generate comprehensive data usage report
+- Generate cultural data summary respecting Lusophone privacy values
+- Add geolocation-based country detection
+- Implement API call to join exchange program
+- Implement API call to connect with diaspora family
+- Integrate with enhanced i18n system for regional variations
+- Load cultural calendar from API
+- Load cultural organizations from API
+- Load cultural preservation projects from API
+- Check if users are connected
+- Create missing components
+- Implement component
+- ensure mobile compatibility
+ * and Portuguese-speaking community accessibility standards.
+- don't overlap with each other or navigation elements.
+- Never commit actual credentials to version control.
+- Check if legal basis is documented for all processing
+- Check consent mechanism quality
+- Assess consent quality against GDPR standards
+- Check consent withdrawal mechanisms
+- Assess data collection practices
+- Check AI data usage minimization
+- Check encryption implementation
+- Check access control implementation
+- Check backup security
+- Assess privacy notice quality
+- Check AI transparency
+- Check data subject rights implementation
+- Check response times for data subject requests
+- Check cross-border transfer mechanisms
+- Check specific Lusophone regulation compliance
+- Assess cultural data handling practices
+- Implement encryption using the specified algorithm
+- Check consent management system
+- Send to cultural review queue
+- Implement specific protection measures
+- Check with consent management system
+- Check consent management system
+- Check transparency requirements
+- Check cultural sensitivity
+- Check emotional content protections
+- Check for stereotypes
+- Check dialect respect
+- Check respectful handling
+- Implement Lusophone-specific consent management
+- Implement data minimization with Lusophone cultural considerations
+- Implement cross-border data protection (United Kingdom-Portugal-Brazil-EU)
+- Implement GDPR data subject rights with cultural sensitivity
+- Implement privacy incident response with cultural awareness
+- Store in secure database with encryption
+- Retrieve from secure database
+- Implement actual AI analytics data fetching
+- Implement push notification test functionality
+- Trigger push notification to target user
+- Implement email unsubscribe logic with token validation
+- Validate unsubscribe token
+- Get user email preferences from database
+- Update user email preferences in database
+

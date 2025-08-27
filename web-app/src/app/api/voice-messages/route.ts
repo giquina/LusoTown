@@ -6,6 +6,7 @@ import {
   VOICE_MODERATION,
   getVoiceConfigForTier
 } from '@/config/voice-messaging'
+import { logger } from '@/utils/logger'
 
 // Helper function to validate audio file
 function validateAudioFile(file: File): { isValid: boolean; error?: string } {
@@ -162,7 +163,12 @@ export async function POST(request: NextRequest) {
       })
 
     if (storageError) {
-      console.error('Storage upload error:', storageError)
+      logger.error('Voice message storage upload failed', storageError, {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'voice_upload_error',
+        userId: user.id
+      })
       return NextResponse.json(
         { error: 'Failed to upload voice message' },
         { status: 500 }
@@ -205,7 +211,12 @@ export async function POST(request: NextRequest) {
       .single()
 
     if (dbError) {
-      console.error('Database insert error:', dbError)
+      logger.error('Voice message database insert failed', dbError, {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'voice_db_insert_error',
+        userId: user.id
+      })
       // Clean up uploaded file if DB insert fails
       await supabase.storage
         .from('voice-messages')
@@ -247,13 +258,24 @@ export async function POST(request: NextRequest) {
     // Send notification if approved
     if (moderation.isApproved) {
       // TODO: Trigger push notification to target user
-      console.log(`Voice message notification sent to user ${targetUserId}`)
+      logger.info('Voice message auto-approved and notification sent', {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'voice_message_approved',
+        userId: user.id,
+        targetUserId,
+        dialect
+      })
     }
 
     return NextResponse.json(response)
 
   } catch (error) {
-    console.error('Voice message API error:', error)
+    logger.error('Voice message API error', error, {
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'voice_message_api_error'
+    })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -313,7 +335,12 @@ export async function GET(request: NextRequest) {
       .order('created_at', { ascending: true })
 
     if (error) {
-      console.error('Voice messages fetch error:', error)
+      logger.error('Voice messages fetch error', error, {
+        area: 'messaging',
+        culturalContext: 'lusophone',
+        action: 'voice_messages_fetch_error',
+        userId: user.id
+      })
       return NextResponse.json(
         { error: 'Failed to fetch voice messages' },
         { status: 500 }
@@ -343,7 +370,11 @@ export async function GET(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Voice messages GET error:', error)
+    logger.error('Voice messages GET error', error, {
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'voice_messages_get_error'
+    })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

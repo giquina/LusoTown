@@ -1,11 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { logger } from '@/utils/logger';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     
     // TODO: Implement push notification test functionality
-    console.log('Push notification test:', body);
+    logger.debug('Push notification test for Portuguese-speaking community', {
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'push_notification_test',
+      notificationData: body
+    });
     
     return NextResponse.json({
       success: true,
@@ -13,7 +19,11 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString()
     });
   } catch (error) {
-    console.error('Push notification test error:', error);
+    logger.error('Push notification test error', error, {
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'push_notification_test_error'
+    });
     return NextResponse.json(
       { error: 'Failed to send test notification' },
       { status: 500 }

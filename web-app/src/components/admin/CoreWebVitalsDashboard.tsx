@@ -9,6 +9,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
+import logger from '@/utils/logger';
 import {
   WEB_VITALS_THRESHOLDS,
   DASHBOARD_CONFIG,
@@ -476,7 +477,11 @@ const CoreWebVitalsDashboard: React.FC = () => {
       setLastUpdated(new Date());
       setIsLoading(false);
     } catch (error) {
-      console.error('Failed to fetch Web Vitals metrics:', error);
+      logger.error('Failed to fetch Core Web Vitals metrics', error, {
+        area: 'performance',
+        action: 'fetch_web_vitals',
+        culturalContext: 'portuguese'
+      });
       setIsLoading(false);
     }
   }, []);

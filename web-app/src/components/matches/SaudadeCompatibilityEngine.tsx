@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import {
@@ -57,31 +57,7 @@ export default function SaudadeCompatibilityEngine({
   const [selectedMatch, setSelectedMatch] = useState<CompatibilityMatch | null>(null);
   const [showAnalysis, setShowAnalysis] = useState(false);
 
-  useEffect(() => {
-    // Simulate finding compatible matches based on saudade profile
-    const findCompatibleMatches = async () => {
-      setLoading(true);
-      
-      // Simulated compatible matches - in real app, this would be API call
-      const mockMatches = generateMockMatches(userProfile);
-      
-      // Calculate compatibility for each match
-      const analyzedMatches = mockMatches.map(match => ({
-        ...match,
-        compatibilityResult: calculateSaudadeCompatibility(userProfile, match.culturalProfile),
-      }));
-
-      // Sort by compatibility score
-      analyzedMatches.sort((a, b) => b.compatibilityResult.compatibilityScore - a.compatibilityResult.compatibilityScore);
-
-      setCompatibleMatches(analyzedMatches);
-      setLoading(false);
-    };
-
-    findCompatibleMatches();
-  }, [userProfile]);
-
-  const calculateSaudadeCompatibility = (
+  const calculateSaudadeCompatibility = useCallback((
     user: CulturalDepthProfile,
     potential: CulturalDepthProfile
   ): SaudadeCompatibilityResult => {
@@ -100,65 +76,75 @@ export default function SaudadeCompatibilityEngine({
     const heritageDiff = Math.abs(userSaudade.heritagePreservation - potentialSaudade.heritagePreservation);
     const heritageAlignment = Math.max(0, 100 - (heritageDiff * 8));
 
-    // Emotional Support Compatibility
-    let emotionalSupport = 50;
-    if (userSaudade.culturalSupport === 'high' && potentialSaudade.culturalSupport === 'high') {
-      emotionalSupport = 95;
-    } else if (userSaudade.culturalSupport === 'high' || potentialSaudade.culturalSupport === 'high') {
-      emotionalSupport = 80;
-    } else if (userSaudade.culturalSupport === 'independent' && potentialSaudade.culturalSupport === 'independent') {
-      emotionalSupport = 75;
-    }
+    // Emotional Triggers Compatibility
+    const sharedTriggers = userSaudade.triggers.filter(trigger => 
+      potentialSaudade.triggers.includes(trigger)
+    );
+    const triggerCompatibility = (sharedTriggers.length / Math.max(userSaudade.triggers.length, 1)) * 100;
 
-    // Coping Mechanisms Compatibility
-    const userCoping = userSaudade.copingMechanisms;
-    const potentialCoping = potentialSaudade.copingMechanisms;
-    const sharedCoping = userCoping.filter(mechanism => potentialCoping.includes(mechanism));
-    const copingCompatibility = (sharedCoping.length / Math.max(userCoping.length, potentialCoping.length)) * 100;
+    // Coping Mechanisms Alignment
+    const sharedCoping = userSaudade.copingMechanisms.filter(mechanism => 
+      potentialSaudade.copingMechanisms.includes(mechanism)
+    );
+    const copingAlignment = (sharedCoping.length / Math.max(userSaudade.copingMechanisms.length, 1)) * 100;
 
-    // Overall compatibility score
-    const compatibilityScore = (
-      saudadeAlignment * 0.3 +
-      emotionalSupport * 0.25 +
-      culturalDepth * 0.2 +
-      heritageAlignment * 0.15 +
-      copingCompatibility * 0.1
+    // Regional Identity Compatibility
+    const regionalCompatibility = calculateRegionalIdentityMatch(
+      user.regionalIdentity,
+      potential.regionalIdentity
     );
 
-    // Determine connection type
-    let connectionType: SaudadeCompatibilityResult['connectionType'] = 'gentle_companion';
-    if (saudadeAlignment >= 85 && emotionalSupport >= 90) {
-      connectionType = 'saudade_soulmate';
-    } else if (emotionalSupport >= 85 && userSaudade.culturalSupport === 'high') {
-      connectionType = 'cultural_healer';
-    } else if (heritageAlignment >= 85 && culturalDepth >= 80) {
-      connectionType = 'heritage_guardian';
-    } else if (culturalDepth >= 75 && copingCompatibility >= 60) {
-      connectionType = 'integration_partner';
-    }
-
-    // Generate recommended activities
-    const recommendedActivities = generateRecommendedActivities(userSaudade, potentialSaudade, language);
-
-    // Generate support strengths
-    const supportStrengths = generateSupportStrengths(userSaudade, potentialSaudade, language);
-
-    // Identify potential challenges
-    const potentialChallenges = generatePotentialChallenges(userSaudade, potentialSaudade, language);
+    // Overall Compatibility Score (weighted average)
+    const compatibilityScore = Math.round(
+      (saudadeAlignment * 0.25) +
+      (culturalDepth * 0.20) +
+      (heritageAlignment * 0.20) +
+      (triggerCompatibility * 0.15) +
+      (copingAlignment * 0.10) +
+      (regionalCompatibility * 0.10)
+    );
 
     return {
-      compatibilityScore: Math.round(compatibilityScore),
-      saudadeAlignment: Math.round(saudadeAlignment),
-      emotionalSupport: Math.round(emotionalSupport),
-      culturalDepth: Math.round(culturalDepth),
-      heritageAlignment: Math.round(heritageAlignment),
-      copingCompatibility: Math.round(copingCompatibility),
-      recommendedActivities,
-      supportStrengths,
-      potentialChallenges,
-      connectionType,
+      compatibilityScore,
+      saudadeAlignment,
+      culturalDepth,
+      heritageAlignment,
+      triggerCompatibility,
+      copingAlignment,
+      regionalCompatibility,
+      sharedElements: {
+        triggers: sharedTriggers,
+        copingMechanisms: sharedCoping,
+        culturalActivities: findSharedCulturalActivities(user, potential),
+      },
+      potentialChallenges: identifyPotentialChallenges(userSaudade, potentialSaudade),
+      relationshipStrengths: identifyRelationshipStrengths(userSaudade, potentialSaudade),
     };
-  };
+  }, []);
+
+  const findCompatibleMatches = useCallback(async () => {
+    setLoading(true);
+    
+    // Simulated compatible matches - in real app, this would be API call
+    const mockMatches = generateMockMatches(userProfile);
+    
+    // Calculate compatibility for each match
+    const analyzedMatches = mockMatches.map(match => ({
+      ...match,
+      compatibilityResult: calculateSaudadeCompatibility(userProfile, match.culturalProfile),
+    }));
+
+    // Sort by compatibility score
+    analyzedMatches.sort((a, b) => b.compatibilityResult.compatibilityScore - a.compatibilityResult.compatibilityScore);
+
+    setCompatibleMatches(analyzedMatches);
+    setLoading(false);
+  }, [userProfile, calculateSaudadeCompatibility]);
+
+  useEffect(() => {
+    findCompatibleMatches();
+  }, [findCompatibleMatches]);
+
 
   const generateMockMatches = (userProfile: CulturalDepthProfile): Omit<CompatibilityMatch, 'compatibilityResult'>[] => {
     return [

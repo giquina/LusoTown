@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { logger } from '@/utils/logger';
 
 export async function POST(request: NextRequest) {
   try {
@@ -6,7 +7,12 @@ export async function POST(request: NextRequest) {
     const { email, token } = body;
     
     // TODO: Implement email unsubscribe logic with token validation
-    console.log('Unsubscribe request:', { email, token });
+    logger.info('Email unsubscribe request from Portuguese-speaking community member', {
+      email,
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'email_unsubscribe_request'
+    });
     
     return NextResponse.json({
       success: true,
@@ -14,7 +20,11 @@ export async function POST(request: NextRequest) {
       email: email
     });
   } catch (error) {
-    console.error('Email unsubscribe error:', error);
+    logger.error('Email unsubscribe error', error, {
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'email_unsubscribe_error'
+    });
     return NextResponse.json(
       { error: 'Failed to unsubscribe' },
       { status: 500 }
@@ -42,7 +52,11 @@ export async function GET(request: NextRequest) {
       subscriptionTypes: ['newsletter', 'events', 'promotions']
     });
   } catch (error) {
-    console.error('Email unsubscribe validation error:', error);
+    logger.error('Email unsubscribe validation error', error, {
+      area: 'messaging',
+      culturalContext: 'lusophone',
+      action: 'email_unsubscribe_validation_error'
+    });
     return NextResponse.json(
       { error: 'Failed to validate unsubscribe request' },
       { status: 500 }

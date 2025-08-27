@@ -3,6 +3,7 @@
 import React, { Suspense, lazy, useState, useCallback } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useAIPerformance } from '@/hooks/useAIPerformance'
+import { logger } from '@/utils/logger'
 import { 
   CpuChipIcon as Brain, 
   BoltIcon as Zap, 
@@ -15,7 +16,11 @@ const AINotificationDashboard = lazy(() =>
   import('@/components/AINotificationDashboard').then(module => ({
     default: module.default
   })).catch(error => {
-    console.error('Failed to load AINotificationDashboard:', error)
+    logger.error('Failed to load AINotificationDashboard for Portuguese-speaking community', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'ai_notification_dashboard_load_error'
+    })
     // Return a fallback component
     return {
       default: () => (
@@ -151,9 +156,17 @@ export default function DynamicAINotificationDashboard({
   const handleLoad = useCallback(() => {
     onLoad?.()
     loadService('notifications').then(() => {
-      console.log('✅ AI Notification Dashboard loaded successfully')
+      logger.info('AI Notification Dashboard loaded successfully for Portuguese-speaking community', {
+        area: 'ai',
+        culturalContext: 'lusophone',
+        action: 'ai_notification_dashboard_loaded'
+      })
     }).catch(err => {
-      console.error('❌ Failed to load AI Notification Dashboard:', err)
+      logger.error('Failed to load AI Notification Dashboard for Portuguese-speaking community', err, {
+        area: 'ai',
+        culturalContext: 'lusophone',
+        action: 'ai_notification_dashboard_load_failed'
+      })
       setError(err)
     })
   }, [onLoad, loadService])
@@ -236,7 +249,12 @@ class ErrorBoundary extends React.Component<{
   }
 
   componentDidCatch(error: Error, errorInfo: any) {
-    console.error('AI Notification Dashboard Error:', error, errorInfo)
+    logger.error('AI Notification Dashboard Error in Portuguese community system', error, {
+      area: 'ai',
+      culturalContext: 'lusophone',
+      action: 'ai_notification_dashboard_error_boundary',
+      errorInfo: errorInfo?.componentStack || 'No component stack available'
+    })
     this.props.onError?.(error)
   }
 

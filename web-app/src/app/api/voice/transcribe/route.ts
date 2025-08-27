@@ -6,6 +6,7 @@ import {
   VOICE_API_CONFIG,
   getSpeechToTextForDialect
 } from '@/config/voice-messaging'
+import logger from '@/utils/logger'
 
 // Helper function to validate audio for transcription
 function validateAudioForTranscription(file: File): { isValid: boolean; error?: string } {
@@ -115,7 +116,11 @@ async function transcribeAudio(
     }
 
   } catch (error) {
-    console.error('Transcription error:', error)
+    logger.error('Voice transcription failed', error, {
+      area: 'ai',
+      action: 'voice_transcription',
+      culturalContext: 'portuguese'
+    })
     throw new Error('Speech-to-text service failed')
   }
 }
@@ -185,7 +190,11 @@ export async function POST(request: NextRequest) {
       .single()
 
     if (saveError) {
-      console.error('Failed to save transcription:', saveError)
+      logger.error('Failed to save Portuguese voice transcription', saveError, {
+        area: 'ai',
+        action: 'save_transcription',
+        culturalContext: 'portuguese'
+      })
       // Don't fail the request, just log the error
     }
 
@@ -214,7 +223,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(response)
 
   } catch (error) {
-    console.error('Transcription API error:', error)
+    logger.error('Voice transcription API error', error, {
+      area: 'ai',
+      action: 'transcription_api',
+      culturalContext: 'portuguese'
+    })
     return NextResponse.json(
       { 
         error: error instanceof Error ? error.message : 'Transcription failed',
@@ -262,7 +275,11 @@ export async function GET(request: NextRequest) {
       .limit(limit)
 
     if (error) {
-      console.error('Failed to fetch transcriptions:', error)
+      logger.error('Failed to fetch transcriptions', error, {
+        area: 'ai',
+        action: 'fetch_transcriptions',
+        culturalContext: 'portuguese'
+      })
       return NextResponse.json(
         { error: 'Failed to fetch transcriptions' },
         { status: 500 }
@@ -287,7 +304,11 @@ export async function GET(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Transcription GET API error:', error)
+    logger.error('Transcription GET API error', error, {
+      area: 'ai',
+      action: 'transcription_get_api',
+      culturalContext: 'portuguese'
+    })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

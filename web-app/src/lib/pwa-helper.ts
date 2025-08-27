@@ -6,6 +6,7 @@
  */
 
 import { PWA_ENHANCEMENT_CONFIG } from '@/config/mobile-app';
+import { logger } from '@/utils/logger';
 
 export interface PWAInstallPrompt {
   prompt(): Promise<void>;
@@ -56,9 +57,17 @@ export class PWAHelper {
       // Cache Portuguese cultural content
       await this.cachePortugueseCulturalContent();
       
-      console.log('PWA: Initialized for Portuguese-speaking community');
+      logger.info('PWA initialized for Portuguese-speaking community', {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'pwa_initialized'
+      });
     } catch (error) {
-      console.error('PWA: Initialization failed:', error);
+      logger.error('PWA initialization failed for Portuguese-speaking community', error, {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'pwa_initialization_failed'
+      });
     }
   }
 
@@ -67,7 +76,11 @@ export class PWAHelper {
    */
   private async registerServiceWorker(): Promise<void> {
     if (!('serviceWorker' in navigator)) {
-      console.warn('PWA: Service Worker not supported');
+      logger.warn('Service Worker not supported for Portuguese-speaking community PWA', {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'service_worker_not_supported'
+      });
       return;
     }
 
@@ -77,7 +90,11 @@ export class PWAHelper {
         updateViaCache: 'none'
       });
 
-      console.log('PWA: Service Worker registered for Portuguese community');
+      logger.info('Service Worker registered for Portuguese-speaking community PWA', {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'service_worker_registered'
+      });
 
       // Handle service worker updates
       registration.addEventListener('updatefound', () => {
@@ -98,7 +115,11 @@ export class PWAHelper {
 
       this.isServiceWorkerReady = true;
     } catch (error) {
-      console.error('PWA: Service Worker registration failed:', error);
+      logger.error('Service Worker registration failed for Portuguese-speaking community PWA', error, {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'service_worker_registration_failed'
+      });
     }
   }
 
@@ -107,7 +128,11 @@ export class PWAHelper {
    */
   private setupInstallPrompt(): void {
     window.addEventListener('beforeinstallprompt', (event) => {
-      console.log('PWA: Install prompt available for Portuguese community');
+      logger.debug('PWA install prompt available for Portuguese-speaking community', {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'install_prompt_available'
+      });
       
       // Prevent Chrome 76 and later from showing mini-infobar
       event.preventDefault();
@@ -121,7 +146,11 @@ export class PWAHelper {
 
     // Listen for app installed event
     window.addEventListener('appinstalled', () => {
-      console.log('PWA: LusoTown app installed successfully');
+      logger.info('LusoTown PWA installed successfully for Portuguese-speaking community', {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'app_installed_successfully'
+      });
       this.installPromptEvent = null;
       this.dispatchAppInstalled();
     });
@@ -132,7 +161,11 @@ export class PWAHelper {
    */
   private async setupNotifications(): Promise<void> {
     if (!('Notification' in window) || !('serviceWorker' in navigator)) {
-      console.warn('PWA: Notifications not supported');
+      logger.warn('Notifications not supported for Portuguese-speaking community PWA', {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'notifications_not_supported'
+      });
       return;
     }
 
@@ -140,7 +173,11 @@ export class PWAHelper {
 
     if (this.notificationPermission === 'default') {
       // Don't request permission immediately - wait for user action
-      console.log('PWA: Notification permission not yet requested');
+      logger.debug('Notification permission not yet requested for Portuguese-speaking community', {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'notification_permission_not_requested'
+      });
     }
   }
 
@@ -171,14 +208,23 @@ export class PWAHelper {
       // Wait for user choice
       const choiceResult = await this.installPromptEvent.userChoice;
       
-      console.log('PWA: Install prompt result:', choiceResult.outcome);
+      logger.info('PWA install prompt completed for Portuguese-speaking community', {
+        outcome: choiceResult.outcome,
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'install_prompt_result'
+      });
       
       // Clear the prompt event
       this.installPromptEvent = null;
       
       return choiceResult;
     } catch (error) {
-      console.error('PWA: Install prompt failed:', error);
+      logger.error('PWA install prompt failed for Portuguese-speaking community', error, {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'install_prompt_failed'
+      });
       throw error;
     }
   }
@@ -193,7 +239,12 @@ export class PWAHelper {
 
     try {
       this.notificationPermission = await Notification.requestPermission();
-      console.log('PWA: Notification permission:', this.notificationPermission);
+      logger.info('Notification permission updated for Portuguese-speaking community PWA', {
+        permission: this.notificationPermission,
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'notification_permission_updated'
+      });
       
       if (this.notificationPermission === 'granted') {
         await this.subscribeToPortuguesePushNotifications();
@@ -201,7 +252,11 @@ export class PWAHelper {
       
       return this.notificationPermission;
     } catch (error) {
-      console.error('PWA: Notification permission request failed:', error);
+      logger.error('Notification permission request failed for Portuguese-speaking community PWA', error, {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'notification_permission_request_failed'
+      });
       throw error;
     }
   }
@@ -224,9 +279,17 @@ export class PWAHelper {
       // Send subscription to server for Portuguese community notifications
       await this.sendSubscriptionToServer(subscription);
       
-      console.log('PWA: Subscribed to Portuguese cultural notifications');
+      logger.info('Subscribed to Portuguese cultural notifications via PWA', {
+        area: 'mobile',
+        culturalContext: 'portuguese',
+        action: 'push_subscription_successful'
+      });
     } catch (error) {
-      console.error('PWA: Push subscription failed:', error);
+      logger.error('Push subscription failed for Portuguese-speaking community PWA', error, {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'push_subscription_failed'
+      });
     }
   }
 
@@ -248,9 +311,17 @@ export class PWAHelper {
         });
       }
       
-      console.log('PWA: Portuguese cultural content caching initiated');
+      logger.info('Portuguese cultural content caching initiated via PWA', {
+        area: 'mobile',
+        culturalContext: 'portuguese',
+        action: 'cultural_content_caching_initiated'
+      });
     } catch (error) {
-      console.error('PWA: Cultural content caching failed:', error);
+      logger.error('Cultural content caching failed for Portuguese-speaking community PWA', error, {
+        area: 'mobile',
+        culturalContext: 'portuguese',
+        action: 'cultural_content_caching_failed'
+      });
     }
   }
 
@@ -296,7 +367,11 @@ export class PWAHelper {
         }
       }
     } catch (error) {
-      console.error('PWA: Failed to check offline status:', error);
+      logger.error('Failed to check PWA offline status for Portuguese-speaking community', error, {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'offline_status_check_failed'
+      });
     }
 
     return {
@@ -313,12 +388,21 @@ export class PWAHelper {
     const { data } = event;
     
     if (data.type === 'PORTUGUESE_CONTENT_CACHED') {
-      console.log('PWA: Portuguese cultural content cached successfully');
+      logger.info('Portuguese cultural content cached successfully via PWA', {
+        area: 'mobile',
+        culturalContext: 'portuguese',
+        action: 'cultural_content_cached'
+      });
       this.dispatchContentCached();
     }
     
     if (data.type === 'CULTURAL_EVENT_NOTIFICATION') {
-      console.log('PWA: Portuguese cultural event notification:', data.payload);
+      logger.info('Portuguese cultural event notification received via PWA', {
+        payload: data.payload,
+        area: 'mobile',
+        culturalContext: 'portuguese',
+        action: 'cultural_event_notification_received'
+      });
     }
   }
 
@@ -342,7 +426,11 @@ export class PWAHelper {
         throw new Error('Failed to send subscription to server');
       }
     } catch (error) {
-      console.error('PWA: Failed to send subscription to server:', error);
+      logger.error('Failed to send push subscription to server for Portuguese-speaking community', error, {
+        area: 'mobile',
+        culturalContext: 'lusophone',
+        action: 'subscription_server_send_failed'
+      });
     }
   }
 
@@ -350,7 +438,11 @@ export class PWAHelper {
    * Notify about PWA update availability
    */
   private notifyUpdate(): void {
-    console.log('PWA: Update available for Portuguese community platform');
+    logger.info('PWA update available for Portuguese-speaking community platform', {
+      area: 'mobile',
+      culturalContext: 'lusophone',
+      action: 'pwa_update_available'
+    });
     
     // Dispatch custom event for app to handle
     window.dispatchEvent(new CustomEvent('pwa-update-available', {

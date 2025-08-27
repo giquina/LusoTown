@@ -6,6 +6,7 @@
  * context and mobile-first optimization.
  */
 
+import logger from '@/utils/logger';
 import { 
   WEB_VITALS_THRESHOLDS,
   PORTUGUESE_MONITORING_CATEGORIES,
@@ -56,7 +57,12 @@ class CoreWebVitalsMonitor {
     this.isCollecting = true;
     this.currentPageCategory = pageCategory || this.detectPageCategory();
     
-    console.log(`🔍 Starting Core Web Vitals monitoring for ${this.currentPageCategory}`);
+    logger.info(`Starting Core Web Vitals monitoring for Portuguese community platform: ${this.currentPageCategory}`, {
+      area: 'performance',
+      action: 'start_web_vitals_monitoring',
+      culturalContext: 'portuguese',
+      pageCategory: this.currentPageCategory
+    });
     
     // Start collecting all Core Web Vitals
     this.observeLCP();
@@ -95,13 +101,22 @@ class CoreWebVitalsMonitor {
       try {
         observer.disconnect();
       } catch (error) {
-        console.warn('Error disconnecting performance observer:', error);
+        logger.warn('Performance observer disconnect error', {
+          area: 'performance',
+          action: 'disconnect_observer',
+          culturalContext: 'portuguese',
+          error: error instanceof Error ? error.message : String(error)
+        });
       }
     });
     
     this.observers = [];
     
-    console.log('🛑 Core Web Vitals monitoring stopped');
+    logger.info('Core Web Vitals monitoring stopped for Portuguese platform', {
+      area: 'performance',
+      action: 'stop_web_vitals_monitoring',
+      culturalContext: 'portuguese'
+    });
     
     // Track monitoring stop with final measurements
     const finalMetrics = this.getCurrentMetrics();
@@ -140,7 +155,12 @@ class CoreWebVitalsMonitor {
       observer.observe({ type: 'largest-contentful-paint', buffered: true });
       this.observers.push(observer);
     } catch (error) {
-      console.warn('LCP observer setup failed:', error);
+      logger.warn('LCP observer setup failed for Portuguese platform', {
+        area: 'performance',
+        action: 'lcp_observer_setup',
+        culturalContext: 'portuguese',
+        error: error instanceof Error ? error.message : String(error)
+      });
     }
   }
 
@@ -171,7 +191,12 @@ class CoreWebVitalsMonitor {
       observer.observe({ type: 'first-input', buffered: true });
       this.observers.push(observer);
     } catch (error) {
-      console.warn('FID observer setup failed:', error);
+      logger.warn('FID observer setup failed for Portuguese platform', {
+        area: 'performance',
+        action: 'fid_observer_setup',
+        culturalContext: 'portuguese',
+        error: error instanceof Error ? error.message : String(error)
+      });
     }
   }
 

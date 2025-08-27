@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { notificationService } from "@/services/NotificationService";
+import logger from '@/utils/logger';
 import {
   aiNotificationEngine,
   NotificationPerformanceMetrics,
@@ -158,7 +159,7 @@ export default function SmartNotificationDashboard() {
         sessionStorage.setItem(`${cacheKey}_time`, now.toString());
       }
     } catch (error) {
-      console.error("Failed to load AI analytics:", error);
+      logger.error('Failed to load AI analytics', error, { area: 'ai', action: 'load_analytics' });
       if (isMounted()) {
         // Fallback to optimized mock data
         setAnalytics(getOptimizedMockData());
@@ -243,7 +244,7 @@ export default function SmartNotificationDashboard() {
             );
           return { templateId: template.id, prediction };
         } catch (error) {
-          console.error(`AI prediction failed for ${template.id}:`, error);
+          logger.error(`AI prediction failed for template ${template.id}`, error, { area: 'ai', action: 'prediction_failed' });
           // AI-enhanced fallback data
           return {
             templateId: template.id,
@@ -280,16 +281,16 @@ export default function SmartNotificationDashboard() {
 
         // Performance logging for AI optimization
         const endTime = performance.now();
-        console.log(`AI predictions loaded in ${endTime - startTime}ms`);
+        logger.performanceMetric('AI predictions load time', endTime - startTime, 'ms', { area: 'ai', action: 'predictions_load' });
 
         // If load time > 100ms, trigger optimization
         if (endTime - startTime > 100) {
-          console.warn("AI prediction performance below target (<100ms)");
+          logger.warn('AI prediction performance below target (<100ms)', undefined, { area: 'performance', duration: endTime - startTime });
           // Could trigger model optimization here
         }
       }
     } catch (error) {
-      console.error("Failed to load AI engagement predictions:", error);
+      logger.error('Failed to load AI engagement predictions', error, { area: 'ai', action: 'load_predictions' });
     }
   }, [isMounted, language]);
 
@@ -329,9 +330,7 @@ export default function SmartNotificationDashboard() {
   const testFadoNotification = useCallback(async () => {
     try {
       setLoading(true);
-      console.log(
-        "[AI Test] Testing Fado notification with cultural personalization..."
-      );
+      logger.info('Testing Fado notification with cultural personalization', { area: 'ai', culturalContext: 'portuguese', action: 'fado_test_start' });
 
       const testData = {
         venue: "Lusophone Centre",
@@ -356,7 +355,7 @@ export default function SmartNotificationDashboard() {
 
       loadAIAnalytics();
     } catch (error) {
-      console.error("AI Fado test failed:", error);
+      logger.error('AI Fado test failed', error, { area: 'ai', culturalContext: 'portuguese', action: 'fado_test_error' });
       alert(language === "pt" ? "Erro no teste de IA" : "AI test failed");
     } finally {
       setLoading(false);
@@ -366,9 +365,7 @@ export default function SmartNotificationDashboard() {
   const testBusinessNetworking = useCallback(async () => {
     try {
       setLoading(true);
-      console.log(
-        "[AI Test] Testing Business networking with Lusophone cultural adaptation..."
-      );
+      logger.info('Testing Business networking with Lusophone cultural adaptation', { area: 'ai', culturalContext: 'lusophone', action: 'business_test_start' });
 
       const testData = {
         location: "Canary Wharf",
@@ -393,7 +390,7 @@ export default function SmartNotificationDashboard() {
 
       loadAIAnalytics();
     } catch (error) {
-      console.error("AI Business test failed:", error);
+      logger.error('AI Business test failed', error, { area: 'ai', culturalContext: 'lusophone', action: 'business_test_error' });
       alert(language === "pt" ? "Erro no teste de IA" : "AI test failed");
     } finally {
       setLoading(false);
@@ -403,9 +400,7 @@ export default function SmartNotificationDashboard() {
   const processAIQueue = useCallback(async () => {
     try {
       setLoading(true);
-      console.log(
-        "[AI Test] Processing notification queue with ML optimization..."
-      );
+      logger.info('Processing notification queue with ML optimization', { area: 'ai', action: 'queue_processing_start' });
 
       const metrics = await aiNotificationEngine.processNotificationQueue();
       setPerformanceMetrics(metrics);
@@ -418,7 +413,7 @@ export default function SmartNotificationDashboard() {
 
       loadAIAnalytics();
     } catch (error) {
-      console.error("AI queue processing failed:", error);
+      logger.error('AI queue processing failed', error, { area: 'ai', action: 'queue_processing_error' });
       alert(
         language === "pt"
           ? "Erro ao processar fila da IA"
@@ -432,7 +427,7 @@ export default function SmartNotificationDashboard() {
   const runCulturalABTest = useCallback(async () => {
     try {
       setLoading(true);
-      console.log("[AI Test] Running A/B test with cultural variants...");
+      logger.info('Running A/B test with cultural variants', { area: 'ai', culturalContext: 'lusophone', action: 'ab_test_start' });
 
       // Simulate A/B test with Lusophone cultural variants
       const variants = [
@@ -465,7 +460,7 @@ export default function SmartNotificationDashboard() {
 
       loadAIAnalytics();
     } catch (error) {
-      console.error("AI A/B test failed:", error);
+      logger.error('AI A/B test failed', error, { area: 'ai', culturalContext: 'lusophone', action: 'ab_test_error' });
       alert(
         language === "pt" ? "Erro no teste A/B da IA" : "AI A/B test failed"
       );

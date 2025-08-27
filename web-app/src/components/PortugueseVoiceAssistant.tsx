@@ -27,6 +27,7 @@ import {
   CalendarDaysIcon
 } from '@heroicons/react/24/outline'
 import { MicrophoneIcon as MicrophoneSolid, SpeakerWaveIcon as SpeakerSolid } from '@heroicons/react/24/solid'
+import logger from '@/utils/logger'
 
 // Voice Assistant Configuration
 interface VoiceConfig {
@@ -256,7 +257,12 @@ export default function PortugueseVoiceAssistant() {
     }
     
     recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
-      console.error('Speech recognition error:', event.error)
+      logger.error('Portuguese voice recognition failed', event.error, {
+        area: 'ai',
+        action: 'voice_recognition',
+        culturalContext: 'portuguese',
+        error: event.error
+      })
       setIsListening(false)
     }
     

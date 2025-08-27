@@ -1,0 +1,729 @@
+e919ba71bb29fc75c0df77b21c48ab2e
+/**
+ * Business Directory Carousel Configuration
+ * 
+ * Comprehensive configuration for Portuguese-speaking community business directory carousels
+ * featuring authentic businesses from all lusophone countries across the United Kingdom
+ */ "use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    BUSINESS_DIRECTORY_CATEGORIES: function() {
+        return BUSINESS_DIRECTORY_CATEGORIES;
+    },
+    BUSINESS_GEOGRAPHIC_DISTRIBUTION: function() {
+        return BUSINESS_GEOGRAPHIC_DISTRIBUTION;
+    },
+    FEATURED_PORTUGUESE_BUSINESSES: function() {
+        return FEATURED_PORTUGUESE_BUSINESSES;
+    },
+    PALOP_BUSINESS_SHOWCASE: function() {
+        return PALOP_BUSINESS_SHOWCASE;
+    },
+    getBusinessDirectoryStats: function() {
+        return getBusinessDirectoryStats;
+    },
+    getBusinessesByCity: function() {
+        return getBusinessesByCity;
+    },
+    getBusinessesByCountry: function() {
+        return getBusinessesByCountry;
+    },
+    getFeaturedBusinessesByCategory: function() {
+        return getFeaturedBusinessesByCategory;
+    },
+    getPremiumBusinesses: function() {
+        return getPremiumBusinesses;
+    },
+    searchBusinesses: function() {
+        return searchBusinesses;
+    }
+});
+const _palopbusinessdirectory = require("./palop-business-directory");
+const FEATURED_PORTUGUESE_BUSINESSES = [
+    // LONDON - Diverse Portuguese-speaking businesses
+    {
+        id: "adega-do-bacalhau-london",
+        title: {
+            en: "Adega do Bacalhau - Authentic Portuguese Restaurant",
+            pt: "Adega do Bacalhau - Restaurante Portugu\xeas Aut\xeantico"
+        },
+        description: {
+            en: "Traditional Portuguese restaurant serving authentic bacalhau dishes and regional specialties in the heart of London",
+            pt: "Restaurante portugu\xeas tradicional servindo pratos aut\xeanticos de bacalhau e especialidades regionais no cora\xe7\xe3o de Londres"
+        },
+        image: "/images/businesses/adega-bacalhau.jpg",
+        flagEmoji: "\uD83C\uDDF5\uD83C\uDDF9",
+        category: "restaurant",
+        region: "Central London",
+        ownerCountry: "portugal",
+        ownerName: "Jo\xe3o Silva Santos",
+        location: {
+            city: "London",
+            region: "Central London",
+            postcode: "W1T 4JE"
+        },
+        contact: {
+            phone: "+44 20 7636 2888",
+            email: "reservas@adegadobacalhau.co.uk",
+            website: "https://adegadobacalhau.co.uk"
+        },
+        services: [
+            "Traditional Portuguese dining",
+            "Authentic bacalhau preparations",
+            "Portuguese wine selection",
+            "Cultural dining experiences",
+            "Private event hosting"
+        ],
+        servicesPortuguese: [
+            "Jantar portugu\xeas tradicional",
+            "Prepara\xe7\xf5es aut\xeanticas de bacalhau",
+            "Sele\xe7\xe3o de vinhos portugueses",
+            "Experi\xeancias gastron\xf4micas culturais",
+            "Hospedagem de eventos privados"
+        ],
+        rating: 4.8,
+        reviewCount: 234,
+        priceRange: "\xa3\xa3\xa3",
+        culturalConnection: "Preserves authentic Portuguese culinary traditions with recipes passed down through generations",
+        isVerified: true,
+        isFeatured: true,
+        isPremium: true,
+        establishedYear: 2015,
+        specialties: [
+            "Bacalhau \xe0 Br\xe1s",
+            "Francesinha",
+            "Past\xe9is de Nata",
+            "Vinho Verde",
+            "Bifana"
+        ],
+        priority: 1
+    },
+    {
+        id: "brazilian-groove-dance-studio-london",
+        title: {
+            en: "Brazilian Groove Dance Studio London",
+            pt: "Est\xfadio de Dan\xe7a Brazilian Groove Londres"
+        },
+        description: {
+            en: "Premier Brazilian dance studio teaching authentic samba, forr\xf3, and capoeira in London with master instructors from Brazil",
+            pt: "Est\xfadio premier de dan\xe7a brasileira ensinando samba, forr\xf3 e capoeira aut\xeanticos em Londres com instrutores mestres do Brasil"
+        },
+        image: "/images/businesses/brazilian-groove-studio.jpg",
+        flagEmoji: "\uD83C\uDDE7\uD83C\uDDF7",
+        category: "cultural_services",
+        region: "North London",
+        ownerCountry: "brazil",
+        ownerName: "Fernanda Oliveira Costa",
+        location: {
+            city: "London",
+            region: "North London",
+            postcode: "N1 9HQ"
+        },
+        contact: {
+            phone: "+44 20 7288 4455",
+            email: "dance@braziliangroove.co.uk",
+            website: "https://braziliangroove.co.uk"
+        },
+        services: [
+            "Samba dance classes",
+            "Forr\xf3 instruction",
+            "Capoeira workshops",
+            "Brazilian cultural dance events",
+            "Private dance lessons",
+            "Cultural celebration performances"
+        ],
+        servicesPortuguese: [
+            "Aulas de dan\xe7a samba",
+            "Instru\xe7\xe3o de forr\xf3",
+            "Workshops de capoeira",
+            "Eventos de dan\xe7a cultural brasileira",
+            "Aulas de dan\xe7a privadas",
+            "Performances de celebra\xe7\xf5es culturais"
+        ],
+        rating: 4.9,
+        reviewCount: 189,
+        priceRange: "\xa3\xa3",
+        culturalConnection: "Brings authentic Brazilian dance culture to London while building community connections through rhythm and movement",
+        isVerified: true,
+        isFeatured: true,
+        isPremium: true,
+        establishedYear: 2017,
+        specialties: [
+            "Samba no p\xe9",
+            "Forr\xf3 universit\xe1rio",
+            "Capoeira Angola",
+            "Ax\xe9 dance",
+            "Brazilian cultural celebrations"
+        ],
+        priority: 1
+    },
+    // MANCHESTER - Northern Portuguese community
+    {
+        id: "casa-do-norte-restaurant-manchester",
+        title: {
+            en: "Casa do Norte - Northern Portuguese Restaurant Manchester",
+            pt: "Casa do Norte - Restaurante do Norte Portugu\xeas Manchester"
+        },
+        description: {
+            en: "Authentic northern Portuguese restaurant specializing in Minho region cuisine and traditional northern Portuguese hospitality",
+            pt: "Restaurante portugu\xeas do norte aut\xeantico especializado na culin\xe1ria da regi\xe3o do Minho e hospitalidade tradicional do norte de Portugal"
+        },
+        image: "/images/businesses/casa-do-norte-manchester.jpg",
+        flagEmoji: "\uD83C\uDDF5\uD83C\uDDF9",
+        category: "restaurant",
+        region: "Manchester City Centre",
+        ownerCountry: "portugal",
+        ownerName: "Manuel Ribeiro Fernandes",
+        location: {
+            city: "Manchester",
+            region: "Manchester City Centre",
+            postcode: "M1 4ET"
+        },
+        contact: {
+            phone: "+44 161 834 5677",
+            email: "info@casadonorte.co.uk",
+            website: "https://casadonorte.co.uk"
+        },
+        services: [
+            "Northern Portuguese traditional cuisine",
+            "Vinho Verde wine experiences",
+            "Regional specialty dining",
+            "Portuguese cultural events hosting",
+            "Traditional festival celebrations"
+        ],
+        servicesPortuguese: [
+            "Culin\xe1ria tradicional do norte de Portugal",
+            "Experi\xeancias de vinho verde",
+            "Jantar de especialidades regionais",
+            "Hospedagem de eventos culturais portugueses",
+            "Celebra\xe7\xf5es de festivais tradicionais"
+        ],
+        rating: 4.7,
+        reviewCount: 156,
+        priceRange: "\xa3\xa3",
+        culturalConnection: "Celebrates northern Portuguese regional traditions and connects Manchester Portuguese community with authentic Minho culture",
+        isVerified: true,
+        isFeatured: true,
+        isPremium: false,
+        establishedYear: 2018,
+        specialties: [
+            "Caldo Verde",
+            "Roj\xf5es",
+            "Bacalhau \xe0 Gomes de S\xe1",
+            "Vinho Verde",
+            "Broa de Milho"
+        ],
+        priority: 2
+    },
+    {
+        id: "brazilian-beauty-salon-manchester",
+        title: {
+            en: "Beleza Brasileira - Brazilian Beauty Salon Manchester",
+            pt: "Beleza Brasileira - Sal\xe3o de Beleza Brasileiro Manchester"
+        },
+        description: {
+            en: "Professional Brazilian beauty salon offering authentic Brazilian treatments, hair styling, and beauty services in Manchester",
+            pt: "Sal\xe3o de beleza brasileiro profissional oferecendo tratamentos brasileiros aut\xeanticos, penteados e servi\xe7os de beleza em Manchester"
+        },
+        image: "/images/businesses/beleza-brasileira-manchester.jpg",
+        flagEmoji: "\uD83C\uDDE7\uD83C\uDDF7",
+        category: "beauty_wellness",
+        region: "Manchester City Centre",
+        ownerCountry: "brazil",
+        ownerName: "Gabriela Santos Lima",
+        location: {
+            city: "Manchester",
+            region: "Manchester City Centre",
+            postcode: "M2 3WQ"
+        },
+        contact: {
+            phone: "+44 161 237 8899",
+            email: "beleza@belezabrasileira.co.uk",
+            website: "https://belezabrasileira.co.uk"
+        },
+        services: [
+            "Brazilian keratin treatments",
+            "Authentic Brazilian waxing",
+            "Hair styling and coloring",
+            "Brazilian beauty consultation",
+            "Tropical skincare treatments"
+        ],
+        servicesPortuguese: [
+            "Tratamentos de queratina brasileira",
+            "Depila\xe7\xe3o brasileira aut\xeantica",
+            "Penteados e colora\xe7\xe3o",
+            "Consultoria de beleza brasileira",
+            "Tratamentos tropicais para pele"
+        ],
+        rating: 4.8,
+        reviewCount: 203,
+        priceRange: "\xa3\xa3",
+        culturalConnection: "Brings authentic Brazilian beauty culture to Manchester with traditional techniques and tropical treatments",
+        isVerified: true,
+        isFeatured: true,
+        isPremium: true,
+        establishedYear: 2019,
+        specialties: [
+            "Brazilian Blowout",
+            "Sugaring",
+            "Acai treatments",
+            "Brazilian nail art",
+            "Tropical hair masks"
+        ],
+        priority: 2
+    },
+    // BIRMINGHAM - Central England Portuguese community
+    {
+        id: "angola-flavors-restaurant-birmingham",
+        title: {
+            en: "Angola Flavors - Authentic Angolan Restaurant Birmingham",
+            pt: "Sabores de Angola - Restaurante Angolano Aut\xeantico Birmingham"
+        },
+        description: {
+            en: "Authentic Angolan restaurant bringing traditional Angolan cuisine and cultural dining experiences to Birmingham",
+            pt: "Restaurante angolano aut\xeantico trazendo culin\xe1ria tradicional angolana e experi\xeancias gastron\xf4micas culturais para Birmingham"
+        },
+        image: "/images/businesses/angola-flavors-birmingham.jpg",
+        flagEmoji: "\uD83C\uDDE6\uD83C\uDDF4",
+        category: "restaurant",
+        region: "Birmingham City Centre",
+        ownerCountry: "angola",
+        ownerName: "Carlos Burity Mendes",
+        location: {
+            city: "Birmingham",
+            region: "Birmingham City Centre",
+            postcode: "B1 2JL"
+        },
+        contact: {
+            phone: "+44 121 633 7766",
+            email: "sabores@angolaflavors.co.uk",
+            website: "https://angolaflavors.co.uk"
+        },
+        services: [
+            "Traditional Angolan cuisine",
+            "Muamba de galinha specialty",
+            "Angolan cultural dining experiences",
+            "Traditional music events",
+            "Private Angolan celebrations"
+        ],
+        servicesPortuguese: [
+            "Culin\xe1ria tradicional angolana",
+            "Especialidade muamba de galinha",
+            "Experi\xeancias gastron\xf4micas culturais angolanas",
+            "Eventos de m\xfasica tradicional",
+            "Celebra\xe7\xf5es angolanas privadas"
+        ],
+        rating: 4.6,
+        reviewCount: 89,
+        priceRange: "\xa3\xa3",
+        culturalConnection: "Preserves authentic Angolan culinary traditions while building community connections in Birmingham",
+        isVerified: true,
+        isFeatured: true,
+        isPremium: false,
+        establishedYear: 2020,
+        specialties: [
+            "Muamba de Galinha",
+            "Calulu",
+            "Funge",
+            "Pudim Abade de Priscos",
+            "Kizaca"
+        ],
+        priority: 2
+    },
+    // EDINBURGH - Scottish Portuguese community
+    {
+        id: "portuguese-delicatessen-edinburgh",
+        title: {
+            en: "Portuguese Delicatessen Edinburgh - Authentic Products",
+            pt: "Delicatessen Portuguesa Edinburgh - Produtos Aut\xeanticos"
+        },
+        description: {
+            en: "Specialized Portuguese delicatessen offering authentic Portuguese products, wines, and traditional foods in Edinburgh",
+            pt: "Delicatessen portuguesa especializada oferecendo produtos portugueses aut\xeanticos, vinhos e comidas tradicionais em Edinburgh"
+        },
+        image: "/images/businesses/portuguese-delicatessen-edinburgh.jpg",
+        flagEmoji: "\uD83C\uDDF5\uD83C\uDDF9",
+        category: "grocery",
+        region: "Edinburgh City Centre",
+        ownerCountry: "portugal",
+        ownerName: "Teresa Sousa Marques",
+        location: {
+            city: "Edinburgh",
+            region: "Edinburgh City Centre",
+            postcode: "EH1 3AA"
+        },
+        contact: {
+            phone: "+44 131 225 4433",
+            email: "produtos@portuguesedelicatessen.co.uk",
+            website: "https://portuguesedelicatessen.co.uk"
+        },
+        services: [
+            "Authentic Portuguese products",
+            "Portuguese wine selection",
+            "Traditional Portuguese foods",
+            "Specialty Portuguese imports",
+            "Cultural food consultation"
+        ],
+        servicesPortuguese: [
+            "Produtos portugueses aut\xeanticos",
+            "Sele\xe7\xe3o de vinhos portugueses",
+            "Comidas tradicionais portuguesas",
+            "Importa\xe7\xf5es especiais portuguesas",
+            "Consultoria alimentar cultural"
+        ],
+        rating: 4.7,
+        reviewCount: 134,
+        priceRange: "\xa3\xa3",
+        culturalConnection: "Connects Edinburgh Portuguese community with authentic Portuguese products and maintains cultural food traditions",
+        isVerified: true,
+        isFeatured: true,
+        isPremium: false,
+        establishedYear: 2016,
+        specialties: [
+            "Bacalhau varieties",
+            "Portuguese cheeses",
+            "Vinho do Porto",
+            "Past\xe9is de Nata",
+            "Portuguese preserves"
+        ],
+        priority: 3
+    },
+    // GLASGOW - Scottish Portuguese expansion
+    {
+        id: "cape-verde-music-school-glasgow",
+        title: {
+            en: "Cape Verde Music School Glasgow - Island Sounds",
+            pt: "Escola de M\xfasica Cabo Verde Glasgow - Sons das Ilhas"
+        },
+        description: {
+            en: "Authentic Cape Verdean music school teaching traditional island music, Morna, and Coladeira in Glasgow",
+            pt: "Escola de m\xfasica cabo-verdiana aut\xeantica ensinando m\xfasica tradicional das ilhas, Morna e Coladeira em Glasgow"
+        },
+        image: "/images/businesses/cape-verde-music-glasgow.jpg",
+        flagEmoji: "\uD83C\uDDE8\uD83C\uDDFB",
+        category: "cultural_services",
+        region: "Glasgow City Centre",
+        ownerCountry: "cape_verde",
+        ownerName: "Ces\xe1ria Tavares Silva",
+        location: {
+            city: "Glasgow",
+            region: "Glasgow City Centre",
+            postcode: "G1 2FF"
+        },
+        contact: {
+            phone: "+44 141 332 5544",
+            email: "musica@capeverdemusicschool.co.uk",
+            website: "https://capeverdemusicschool.co.uk"
+        },
+        services: [
+            "Cape Verdean music instruction",
+            "Morna vocal training",
+            "Traditional island instrument lessons",
+            "Cultural music workshops",
+            "Cape Verdean cultural events"
+        ],
+        servicesPortuguese: [
+            "Instru\xe7\xe3o musical cabo-verdiana",
+            "Treinamento vocal de Morna",
+            "Aulas de instrumentos tradicionais das ilhas",
+            "Workshops culturais musicais",
+            "Eventos culturais cabo-verdianos"
+        ],
+        rating: 4.8,
+        reviewCount: 67,
+        priceRange: "\xa3\xa3",
+        culturalConnection: "Preserves Cape Verdean musical heritage while teaching island culture through authentic music education",
+        isVerified: true,
+        isFeatured: true,
+        isPremium: true,
+        establishedYear: 2021,
+        specialties: [
+            "Morna vocals",
+            "Coladeira rhythms",
+            "Cavaquinho lessons",
+            "Traditional Cape Verdean songs",
+            "Island music history"
+        ],
+        priority: 3
+    }
+];
+const BUSINESS_DIRECTORY_CATEGORIES = [
+    {
+        id: "restaurants",
+        name: {
+            en: "Restaurants & Food",
+            pt: "Restaurantes e Comida"
+        },
+        description: {
+            en: "Authentic Portuguese-speaking community restaurants serving traditional cuisine from all lusophone countries",
+            pt: "Restaurantes aut\xeanticos da comunidade lus\xf3fona servindo culin\xe1ria tradicional de todos os pa\xedses lus\xf3fonos"
+        },
+        emoji: "\uD83C\uDF7D️",
+        businesses: FEATURED_PORTUGUESE_BUSINESSES.filter((b)=>b.category === "restaurant"),
+        totalBusinesses: 45,
+        averageRating: 4.7,
+        countries: [
+            "Portugal",
+            "Brazil",
+            "Angola",
+            "Cape Verde",
+            "Mozambique"
+        ]
+    },
+    {
+        id: "cultural_services",
+        name: {
+            en: "Cultural Services",
+            pt: "Servi\xe7os Culturais"
+        },
+        description: {
+            en: "Dance studios, music schools, and cultural centers preserving Portuguese-speaking heritage across the UK",
+            pt: "Est\xfadios de dan\xe7a, escolas de m\xfasica e centros culturais preservando a heran\xe7a lus\xf3fona em todo o Reino Unido"
+        },
+        emoji: "\uD83C\uDFAD",
+        businesses: FEATURED_PORTUGUESE_BUSINESSES.filter((b)=>b.category === "cultural_services"),
+        totalBusinesses: 28,
+        averageRating: 4.8,
+        countries: [
+            "Brazil",
+            "Cape Verde",
+            "Angola",
+            "Guinea-Bissau",
+            "Portugal"
+        ]
+    },
+    {
+        id: "beauty_wellness",
+        name: {
+            en: "Beauty & Wellness",
+            pt: "Beleza e Bem-estar"
+        },
+        description: {
+            en: "Beauty salons and wellness centers offering authentic treatments from Portuguese-speaking countries",
+            pt: "Sal\xf5es de beleza e centros de bem-estar oferecendo tratamentos aut\xeanticos de pa\xedses lus\xf3fonos"
+        },
+        emoji: "\uD83D\uDC84",
+        businesses: FEATURED_PORTUGUESE_BUSINESSES.filter((b)=>b.category === "beauty_wellness"),
+        totalBusinesses: 23,
+        averageRating: 4.6,
+        countries: [
+            "Brazil",
+            "Portugal",
+            "Angola",
+            "Cape Verde"
+        ]
+    },
+    {
+        id: "professional_services",
+        name: {
+            en: "Professional Services",
+            pt: "Servi\xe7os Profissionais"
+        },
+        description: {
+            en: "Legal, financial, consulting and other professional services by Portuguese-speaking business owners",
+            pt: "Servi\xe7os jur\xeddicos, financeiros, consultoria e outros servi\xe7os profissionais de propriet\xe1rios lus\xf3fonos"
+        },
+        emoji: "\uD83D\uDCBC",
+        businesses: [],
+        totalBusinesses: 67,
+        averageRating: 4.5,
+        countries: [
+            "Portugal",
+            "Brazil",
+            "Angola",
+            "Mozambique",
+            "Cape Verde"
+        ]
+    },
+    {
+        id: "retail",
+        name: {
+            en: "Retail & Shopping",
+            pt: "Varejo e Compras"
+        },
+        description: {
+            en: "Portuguese delicatessens, specialty stores, and retail businesses across the United Kingdom",
+            pt: "Delicatessens portuguesas, lojas especializadas e neg\xf3cios de varejo em todo o Reino Unido"
+        },
+        emoji: "\uD83D\uDECD️",
+        businesses: FEATURED_PORTUGUESE_BUSINESSES.filter((b)=>b.category === "grocery" || b.category === "retail"),
+        totalBusinesses: 34,
+        averageRating: 4.6,
+        countries: [
+            "Portugal",
+            "Brazil",
+            "Angola",
+            "Cape Verde",
+            "Mozambique"
+        ]
+    }
+];
+const PALOP_BUSINESS_SHOWCASE = _palopbusinessdirectory.PALOP_BUSINESS_DIRECTORY.filter((business)=>business.isActive && business.featuredBusiness).map((business)=>({
+        id: business.id,
+        title: {
+            en: business.businessName,
+            pt: business.businessNamePortuguese || business.businessName
+        },
+        description: {
+            en: business.description,
+            pt: business.descriptionPortuguese
+        },
+        image: `/images/palop-businesses/${business.id}.jpg`,
+        flagEmoji: ({
+            "angola": "\uD83C\uDDE6\uD83C\uDDF4",
+            "cape_verde": "\uD83C\uDDE8\uD83C\uDDFB",
+            "guinea_bissau": "\uD83C\uDDEC\uD83C\uDDFC",
+            "mozambique": "\uD83C\uDDF2\uD83C\uDDFF",
+            "sao_tome_principe": "\uD83C\uDDF8\uD83C\uDDF9"
+        })[business.ownerCountry],
+        category: business.category,
+        region: business.region,
+        ownerCountry: business.ownerCountry,
+        ownerName: business.ownerName,
+        location: {
+            city: business.city,
+            region: business.region,
+            postcode: business.postcode
+        },
+        contact: {
+            phone: business.phone,
+            email: business.email,
+            website: business.website
+        },
+        services: business.services,
+        servicesPortuguese: business.servicesPortuguese,
+        rating: business.averageRating,
+        reviewCount: business.totalReviews,
+        priceRange: business.priceRange,
+        culturalConnection: business.culturalConnection,
+        isVerified: business.isVerified,
+        isFeatured: business.featuredBusiness,
+        isPremium: business.isPremium,
+        establishedYear: business.establishedYear,
+        specialties: business.specialties,
+        priority: business.isPremium ? 1 : 2
+    }));
+const BUSINESS_GEOGRAPHIC_DISTRIBUTION = {
+    "London": {
+        total: 89,
+        byCountry: {
+            "portugal": 34,
+            "brazil": 28,
+            "angola": 12,
+            "cape_verde": 8,
+            "mozambique": 5,
+            "guinea_bissau": 2
+        },
+        regions: [
+            "Central London",
+            "North London",
+            "South London",
+            "East London",
+            "West London"
+        ]
+    },
+    "Manchester": {
+        total: 23,
+        byCountry: {
+            "portugal": 12,
+            "brazil": 7,
+            "angola": 2,
+            "cape_verde": 1,
+            "mozambique": 1
+        },
+        regions: [
+            "Manchester City Centre",
+            "Greater Manchester"
+        ]
+    },
+    "Birmingham": {
+        total: 18,
+        byCountry: {
+            "portugal": 8,
+            "brazil": 5,
+            "angola": 3,
+            "mozambique": 2
+        },
+        regions: [
+            "Birmingham City Centre",
+            "West Midlands"
+        ]
+    },
+    "Edinburgh": {
+        total: 12,
+        byCountry: {
+            "portugal": 7,
+            "brazil": 3,
+            "cape_verde": 2
+        },
+        regions: [
+            "Edinburgh City Centre",
+            "Edinburgh Suburbs"
+        ]
+    },
+    "Glasgow": {
+        total: 9,
+        byCountry: {
+            "portugal": 4,
+            "brazil": 2,
+            "cape_verde": 2,
+            "angola": 1
+        },
+        regions: [
+            "Glasgow City Centre",
+            "Greater Glasgow"
+        ]
+    }
+};
+function getFeaturedBusinessesByCategory(categoryId) {
+    return FEATURED_PORTUGUESE_BUSINESSES.filter((business)=>business.category === categoryId && business.isFeatured);
+}
+function getBusinessesByCity(city) {
+    return FEATURED_PORTUGUESE_BUSINESSES.filter((business)=>business.location.city.toLowerCase() === city.toLowerCase());
+}
+function getBusinessesByCountry(country) {
+    return FEATURED_PORTUGUESE_BUSINESSES.filter((business)=>business.ownerCountry === country);
+}
+function getPremiumBusinesses() {
+    return FEATURED_PORTUGUESE_BUSINESSES.filter((business)=>business.isPremium).sort((a, b)=>b.priority - a.priority);
+}
+function searchBusinesses(query) {
+    const lowerQuery = query.toLowerCase();
+    return FEATURED_PORTUGUESE_BUSINESSES.filter((business)=>business.title.en.toLowerCase().includes(lowerQuery) || business.title.pt.toLowerCase().includes(lowerQuery) || business.description.en.toLowerCase().includes(lowerQuery) || business.specialties.some((specialty)=>specialty.toLowerCase().includes(lowerQuery)) || business.services.some((service)=>service.toLowerCase().includes(lowerQuery)));
+}
+function getBusinessDirectoryStats() {
+    return {
+        totalBusinesses: FEATURED_PORTUGUESE_BUSINESSES.length + PALOP_BUSINESS_SHOWCASE.length,
+        totalFeatured: FEATURED_PORTUGUESE_BUSINESSES.filter((b)=>b.isFeatured).length,
+        totalPremium: FEATURED_PORTUGUESE_BUSINESSES.filter((b)=>b.isPremium).length + PALOP_BUSINESS_SHOWCASE.filter((b)=>b.isPremium).length,
+        totalVerified: FEATURED_PORTUGUESE_BUSINESSES.filter((b)=>b.isVerified).length + PALOP_BUSINESS_SHOWCASE.filter((b)=>b.isVerified).length,
+        averageRating: (FEATURED_PORTUGUESE_BUSINESSES.reduce((sum, b)=>sum + b.rating, 0) + PALOP_BUSINESS_SHOWCASE.reduce((sum, b)=>sum + b.rating, 0)) / (FEATURED_PORTUGUESE_BUSINESSES.length + PALOP_BUSINESS_SHOWCASE.length),
+        countriesRepresented: [
+            "Portugal",
+            "Brazil",
+            "Angola",
+            "Cape Verde",
+            "Mozambique",
+            "Guinea-Bissau",
+            "S\xe3o Tom\xe9 and Pr\xedncipe"
+        ],
+        citiesServed: [
+            "London",
+            "Manchester",
+            "Birmingham",
+            "Edinburgh",
+            "Glasgow"
+        ],
+        totalCategories: BUSINESS_DIRECTORY_CATEGORIES.length
+    };
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93b3Jrc3BhY2VzL0x1c29Ub3duL3dlYi1hcHAvc3JjL2NvbmZpZy9idXNpbmVzcy1kaXJlY3RvcnktY2Fyb3VzZWxzLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogQnVzaW5lc3MgRGlyZWN0b3J5IENhcm91c2VsIENvbmZpZ3VyYXRpb25cbiAqIFxuICogQ29tcHJlaGVuc2l2ZSBjb25maWd1cmF0aW9uIGZvciBQb3J0dWd1ZXNlLXNwZWFraW5nIGNvbW11bml0eSBidXNpbmVzcyBkaXJlY3RvcnkgY2Fyb3VzZWxzXG4gKiBmZWF0dXJpbmcgYXV0aGVudGljIGJ1c2luZXNzZXMgZnJvbSBhbGwgbHVzb3Bob25lIGNvdW50cmllcyBhY3Jvc3MgdGhlIFVuaXRlZCBLaW5nZG9tXG4gKi9cblxuaW1wb3J0IHsgUEFMT1BCdXNpbmVzcywgUEFMT1BfQlVTSU5FU1NfRElSRUNUT1JZLCBnZXRGZWF0dXJlZFBBTE9QQnVzaW5lc3NlcywgZ2V0UEFMT1BCdXNpbmVzc2VzQnlDYXRlZ29yeSB9IGZyb20gJy4vcGFsb3AtYnVzaW5lc3MtZGlyZWN0b3J5J1xuXG5leHBvcnQgaW50ZXJmYWNlIEJ1c2luZXNzQ2Fyb3VzZWxJdGVtIHtcbiAgaWQ6IHN0cmluZ1xuICB0aXRsZToge1xuICAgIGVuOiBzdHJpbmdcbiAgICBwdDogc3RyaW5nXG4gIH1cbiAgZGVzY3JpcHRpb246IHtcbiAgICBlbjogc3RyaW5nXG4gICAgcHQ6IHN0cmluZ1xuICB9XG4gIGltYWdlOiBzdHJpbmdcbiAgZmxhZ0Vtb2ppOiBzdHJpbmdcbiAgY2F0ZWdvcnk6IHN0cmluZ1xuICByZWdpb246IHN0cmluZ1xuICBvd25lckNvdW50cnk6IHN0cmluZ1xuICBvd25lck5hbWU6IHN0cmluZ1xuICBsb2NhdGlvbjoge1xuICAgIGNpdHk6IHN0cmluZ1xuICAgIHJlZ2lvbjogc3RyaW5nXG4gICAgcG9zdGNvZGU6IHN0cmluZ1xuICB9XG4gIGNvbnRhY3Q6IHtcbiAgICBwaG9uZTogc3RyaW5nXG4gICAgZW1haWw6IHN0cmluZ1xuICAgIHdlYnNpdGU/OiBzdHJpbmdcbiAgfVxuICBzZXJ2aWNlczogc3RyaW5nW11cbiAgc2VydmljZXNQb3J0dWd1ZXNlOiBzdHJpbmdbXVxuICByYXRpbmc6IG51bWJlclxuICByZXZpZXdDb3VudDogbnVtYmVyXG4gIHByaWNlUmFuZ2U6ICfCoycgfCAnwqPCoycgfCAnwqPCo8KjJyB8ICfCo8KjwqPCoydcbiAgY3VsdHVyYWxDb25uZWN0aW9uOiBzdHJpbmdcbiAgaXNWZXJpZmllZDogYm9vbGVhblxuICBpc0ZlYXR1cmVkOiBib29sZWFuXG4gIGlzUHJlbWl1bTogYm9vbGVhblxuICBlc3RhYmxpc2hlZFllYXI6IG51bWJlclxuICBzcGVjaWFsdGllczogc3RyaW5nW11cbiAgcHJpb3JpdHk6IG51bWJlclxufVxuXG5leHBvcnQgaW50ZXJmYWNlIEZlYXR1cmVkQnVzaW5lc3NDYXRlZ29yeSB7XG4gIGlkOiBzdHJpbmdcbiAgbmFtZToge1xuICAgIGVuOiBzdHJpbmdcbiAgICBwdDogc3RyaW5nXG4gIH1cbiAgZGVzY3JpcHRpb246IHtcbiAgICBlbjogc3RyaW5nXG4gICAgcHQ6IHN0cmluZ1xuICB9XG4gIGVtb2ppOiBzdHJpbmdcbiAgYnVzaW5lc3NlczogQnVzaW5lc3NDYXJvdXNlbEl0ZW1bXVxuICB0b3RhbEJ1c2luZXNzZXM6IG51bWJlclxuICBhdmVyYWdlUmF0aW5nOiBudW1iZXJcbiAgY291bnRyaWVzOiBzdHJpbmdbXVxufVxuXG4vKipcbiAqIEZlYXR1cmVkIFBvcnR1Z3Vlc2UgQnVzaW5lc3NlcyBhY3Jvc3MgdGhlIFVuaXRlZCBLaW5nZG9tXG4gKiBSZXByZXNlbnRpbmcgYWxsIGx1c29waG9uZSBuYXRpb25zIHdpdGggZ2VvZ3JhcGhpYyBkaXZlcnNpdHlcbiAqL1xuZXhwb3J0IGNvbnN0IEZFQVRVUkVEX1BPUlRVR1VFU0VfQlVTSU5FU1NFUzogQnVzaW5lc3NDYXJvdXNlbEl0ZW1bXSA9IFtcbiAgLy8gTE9ORE9OIC0gRGl2ZXJzZSBQb3J0dWd1ZXNlLXNwZWFraW5nIGJ1c2luZXNzZXNcbiAge1xuICAgIGlkOiAnYWRlZ2EtZG8tYmFjYWxoYXUtbG9uZG9uJyxcbiAgICB0aXRsZToge1xuICAgICAgZW46ICdBZGVnYSBkbyBCYWNhbGhhdSAtIEF1dGhlbnRpYyBQb3J0dWd1ZXNlIFJlc3RhdXJhbnQnLFxuICAgICAgcHQ6ICdBZGVnYSBkbyBCYWNhbGhhdSAtIFJlc3RhdXJhbnRlIFBvcnR1Z3XDqnMgQXV0w6pudGljbydcbiAgICB9LFxuICAgIGRlc2NyaXB0aW9uOiB7XG4gICAgICBlbjogJ1RyYWRpdGlvbmFsIFBvcnR1Z3Vlc2UgcmVzdGF1cmFudCBzZXJ2aW5nIGF1dGhlbnRpYyBiYWNhbGhhdSBkaXNoZXMgYW5kIHJlZ2lvbmFsIHNwZWNpYWx0aWVzIGluIHRoZSBoZWFydCBvZiBMb25kb24nLFxuICAgICAgcHQ6ICdSZXN0YXVyYW50ZSBwb3J0dWd1w6pzIHRyYWRpY2lvbmFsIHNlcnZpbmRvIHByYXRvcyBhdXTDqm50aWNvcyBkZSBiYWNhbGhhdSBlIGVzcGVjaWFsaWRhZGVzIHJlZ2lvbmFpcyBubyBjb3Jhw6fDo28gZGUgTG9uZHJlcydcbiAgICB9LFxuICAgIGltYWdlOiAnL2ltYWdlcy9idXNpbmVzc2VzL2FkZWdhLWJhY2FsaGF1LmpwZycsXG4gICAgZmxhZ0Vtb2ppOiAn8J+HtfCfh7knLFxuICAgIGNhdGVnb3J5OiAncmVzdGF1cmFudCcsXG4gICAgcmVnaW9uOiAnQ2VudHJhbCBMb25kb24nLFxuICAgIG93bmVyQ291bnRyeTogJ3BvcnR1Z2FsJyxcbiAgICBvd25lck5hbWU6ICdKb8OjbyBTaWx2YSBTYW50b3MnLFxuICAgIGxvY2F0aW9uOiB7XG4gICAgICBjaXR5OiAnTG9uZG9uJyxcbiAgICAgIHJlZ2lvbjogJ0NlbnRyYWwgTG9uZG9uJyxcbiAgICAgIHBvc3Rjb2RlOiAnVzFUIDRKRSdcbiAgICB9LFxuICAgIGNvbnRhY3Q6IHtcbiAgICAgIHBob25lOiAnKzQ0IDIwIDc2MzYgMjg4OCcsXG4gICAgICBlbWFpbDogJ3Jlc2VydmFzQGFkZWdhZG9iYWNhbGhhdS5jby51aycsXG4gICAgICB3ZWJzaXRlOiAnaHR0cHM6Ly9hZGVnYWRvYmFjYWxoYXUuY28udWsnXG4gICAgfSxcbiAgICBzZXJ2aWNlczogW1xuICAgICAgJ1RyYWRpdGlvbmFsIFBvcnR1Z3Vlc2UgZGluaW5nJyxcbiAgICAgICdBdXRoZW50aWMgYmFjYWxoYXUgcHJlcGFyYXRpb25zJyxcbiAgICAgICdQb3J0dWd1ZXNlIHdpbmUgc2VsZWN0aW9uJyxcbiAgICAgICdDdWx0dXJhbCBkaW5pbmcgZXhwZXJpZW5jZXMnLFxuICAgICAgJ1ByaXZhdGUgZXZlbnQgaG9zdGluZydcbiAgICBdLFxuICAgIHNlcnZpY2VzUG9ydHVndWVzZTogW1xuICAgICAgJ0phbnRhciBwb3J0dWd1w6pzIHRyYWRpY2lvbmFsJyxcbiAgICAgICdQcmVwYXJhw6fDtWVzIGF1dMOqbnRpY2FzIGRlIGJhY2FsaGF1JyxcbiAgICAgICdTZWxlw6fDo28gZGUgdmluaG9zIHBvcnR1Z3Vlc2VzJyxcbiAgICAgICdFeHBlcmnDqm5jaWFzIGdhc3Ryb27DtG1pY2FzIGN1bHR1cmFpcycsXG4gICAgICAnSG9zcGVkYWdlbSBkZSBldmVudG9zIHByaXZhZG9zJ1xuICAgIF0sXG4gICAgcmF0aW5nOiA0LjgsXG4gICAgcmV2aWV3Q291bnQ6IDIzNCxcbiAgICBwcmljZVJhbmdlOiAnwqPCo8KjJyxcbiAgICBjdWx0dXJhbENvbm5lY3Rpb246ICdQcmVzZXJ2ZXMgYXV0aGVudGljIFBvcnR1Z3Vlc2UgY3VsaW5hcnkgdHJhZGl0aW9ucyB3aXRoIHJlY2lwZXMgcGFzc2VkIGRvd24gdGhyb3VnaCBnZW5lcmF0aW9ucycsXG4gICAgaXNWZXJpZmllZDogdHJ1ZSxcbiAgICBpc0ZlYXR1cmVkOiB0cnVlLFxuICAgIGlzUHJlbWl1bTogdHJ1ZSxcbiAgICBlc3RhYmxpc2hlZFllYXI6IDIwMTUsXG4gICAgc3BlY2lhbHRpZXM6IFsnQmFjYWxoYXUgw6AgQnLDoXMnLCAnRnJhbmNlc2luaGEnLCAnUGFzdMOpaXMgZGUgTmF0YScsICdWaW5obyBWZXJkZScsICdCaWZhbmEnXSxcbiAgICBwcmlvcml0eTogMVxuICB9LFxuICBcbiAge1xuICAgIGlkOiAnYnJhemlsaWFuLWdyb292ZS1kYW5jZS1zdHVkaW8tbG9uZG9uJyxcbiAgICB0aXRsZToge1xuICAgICAgZW46ICdCcmF6aWxpYW4gR3Jvb3ZlIERhbmNlIFN0dWRpbyBMb25kb24nLFxuICAgICAgcHQ6ICdFc3TDumRpbyBkZSBEYW7Dp2EgQnJhemlsaWFuIEdyb292ZSBMb25kcmVzJ1xuICAgIH0sXG4gICAgZGVzY3JpcHRpb246IHtcbiAgICAgIGVuOiAnUHJlbWllciBCcmF6aWxpYW4gZGFuY2Ugc3R1ZGlvIHRlYWNoaW5nIGF1dGhlbnRpYyBzYW1iYSwgZm9ycsOzLCBhbmQgY2Fwb2VpcmEgaW4gTG9uZG9uIHdpdGggbWFzdGVyIGluc3RydWN0b3JzIGZyb20gQnJhemlsJyxcbiAgICAgIHB0OiAnRXN0w7pkaW8gcHJlbWllciBkZSBkYW7Dp2EgYnJhc2lsZWlyYSBlbnNpbmFuZG8gc2FtYmEsIGZvcnLDsyBlIGNhcG9laXJhIGF1dMOqbnRpY29zIGVtIExvbmRyZXMgY29tIGluc3RydXRvcmVzIG1lc3RyZXMgZG8gQnJhc2lsJ1xuICAgIH0sXG4gICAgaW1hZ2U6ICcvaW1hZ2VzL2J1c2luZXNzZXMvYnJhemlsaWFuLWdyb292ZS1zdHVkaW8uanBnJyxcbiAgICBmbGFnRW1vamk6ICfwn4en8J+HtycsXG4gICAgY2F0ZWdvcnk6ICdjdWx0dXJhbF9zZXJ2aWNlcycsXG4gICAgcmVnaW9uOiAnTm9ydGggTG9uZG9uJyxcbiAgICBvd25lckNvdW50cnk6ICdicmF6aWwnLFxuICAgIG93bmVyTmFtZTogJ0Zlcm5hbmRhIE9saXZlaXJhIENvc3RhJyxcbiAgICBsb2NhdGlvbjoge1xuICAgICAgY2l0eTogJ0xvbmRvbicsXG4gICAgICByZWdpb246ICdOb3J0aCBMb25kb24nLFxuICAgICAgcG9zdGNvZGU6ICdOMSA5SFEnXG4gICAgfSxcbiAgICBjb250YWN0OiB7XG4gICAgICBwaG9uZTogJys0NCAyMCA3Mjg4IDQ0NTUnLFxuICAgICAgZW1haWw6ICdkYW5jZUBicmF6aWxpYW5ncm9vdmUuY28udWsnLFxuICAgICAgd2Vic2l0ZTogJ2h0dHBzOi8vYnJhemlsaWFuZ3Jvb3ZlLmNvLnVrJ1xuICAgIH0sXG4gICAgc2VydmljZXM6IFtcbiAgICAgICdTYW1iYSBkYW5jZSBjbGFzc2VzJyxcbiAgICAgICdGb3Jyw7MgaW5zdHJ1Y3Rpb24nLFxuICAgICAgJ0NhcG9laXJhIHdvcmtzaG9wcycsXG4gICAgICAnQnJhemlsaWFuIGN1bHR1cmFsIGRhbmNlIGV2ZW50cycsXG4gICAgICAnUHJpdmF0ZSBkYW5jZSBsZXNzb25zJyxcbiAgICAgICdDdWx0dXJhbCBjZWxlYnJhdGlvbiBwZXJmb3JtYW5jZXMnXG4gICAgXSxcbiAgICBzZXJ2aWNlc1BvcnR1Z3Vlc2U6IFtcbiAgICAgICdBdWxhcyBkZSBkYW7Dp2Egc2FtYmEnLFxuICAgICAgJ0luc3RydcOnw6NvIGRlIGZvcnLDsycsXG4gICAgICAnV29ya3Nob3BzIGRlIGNhcG9laXJhJyxcbiAgICAgICdFdmVudG9zIGRlIGRhbsOnYSBjdWx0dXJhbCBicmFzaWxlaXJhJyxcbiAgICAgICdBdWxhcyBkZSBkYW7Dp2EgcHJpdmFkYXMnLFxuICAgICAgJ1BlcmZvcm1hbmNlcyBkZSBjZWxlYnJhw6fDtWVzIGN1bHR1cmFpcydcbiAgICBdLFxuICAgIHJhdGluZzogNC45LFxuICAgIHJldmlld0NvdW50OiAxODksXG4gICAgcHJpY2VSYW5nZTogJ8KjwqMnLFxuICAgIGN1bHR1cmFsQ29ubmVjdGlvbjogJ0JyaW5ncyBhdXRoZW50aWMgQnJhemlsaWFuIGRhbmNlIGN1bHR1cmUgdG8gTG9uZG9uIHdoaWxlIGJ1aWxkaW5nIGNvbW11bml0eSBjb25uZWN0aW9ucyB0aHJvdWdoIHJoeXRobSBhbmQgbW92ZW1lbnQnLFxuICAgIGlzVmVyaWZpZWQ6IHRydWUsXG4gICAgaXNGZWF0dXJlZDogdHJ1ZSxcbiAgICBpc1ByZW1pdW06IHRydWUsXG4gICAgZXN0YWJsaXNoZWRZZWFyOiAyMDE3LFxuICAgIHNwZWNpYWx0aWVzOiBbJ1NhbWJhIG5vIHDDqScsICdGb3Jyw7MgdW5pdmVyc2l0w6FyaW8nLCAnQ2Fwb2VpcmEgQW5nb2xhJywgJ0F4w6kgZGFuY2UnLCAnQnJhemlsaWFuIGN1bHR1cmFsIGNlbGVicmF0aW9ucyddLFxuICAgIHByaW9yaXR5OiAxXG4gIH0sXG5cbiAgLy8gTUFOQ0hFU1RFUiAtIE5vcnRoZXJuIFBvcnR1Z3Vlc2UgY29tbXVuaXR5XG4gIHtcbiAgICBpZDogJ2Nhc2EtZG8tbm9ydGUtcmVzdGF1cmFudC1tYW5jaGVzdGVyJyxcbiAgICB0aXRsZToge1xuICAgICAgZW46ICdDYXNhIGRvIE5vcnRlIC0gTm9ydGhlcm4gUG9ydHVndWVzZSBSZXN0YXVyYW50IE1hbmNoZXN0ZXInLFxuICAgICAgcHQ6ICdDYXNhIGRvIE5vcnRlIC0gUmVzdGF1cmFudGUgZG8gTm9ydGUgUG9ydHVndcOqcyBNYW5jaGVzdGVyJ1xuICAgIH0sXG4gICAgZGVzY3JpcHRpb246IHtcbiAgICAgIGVuOiAnQXV0aGVudGljIG5vcnRoZXJuIFBvcnR1Z3Vlc2UgcmVzdGF1cmFudCBzcGVjaWFsaXppbmcgaW4gTWluaG8gcmVnaW9uIGN1aXNpbmUgYW5kIHRyYWRpdGlvbmFsIG5vcnRoZXJuIFBvcnR1Z3Vlc2UgaG9zcGl0YWxpdHknLFxuICAgICAgcHQ6ICdSZXN0YXVyYW50ZSBwb3J0dWd1w6pzIGRvIG5vcnRlIGF1dMOqbnRpY28gZXNwZWNpYWxpemFkbyBuYSBjdWxpbsOhcmlhIGRhIHJlZ2nDo28gZG8gTWluaG8gZSBob3NwaXRhbGlkYWRlIHRyYWRpY2lvbmFsIGRvIG5vcnRlIGRlIFBvcnR1Z2FsJ1xuICAgIH0sXG4gICAgaW1hZ2U6ICcvaW1hZ2VzL2J1c2luZXNzZXMvY2FzYS1kby1ub3J0ZS1tYW5jaGVzdGVyLmpwZycsXG4gICAgZmxhZ0Vtb2ppOiAn8J+HtfCfh7knLFxuICAgIGNhdGVnb3J5OiAncmVzdGF1cmFudCcsXG4gICAgcmVnaW9uOiAnTWFuY2hlc3RlciBDaXR5IENlbnRyZScsXG4gICAgb3duZXJDb3VudHJ5OiAncG9ydHVnYWwnLFxuICAgIG93bmVyTmFtZTogJ01hbnVlbCBSaWJlaXJvIEZlcm5hbmRlcycsXG4gICAgbG9jYXRpb246IHtcbiAgICAgIGNpdHk6ICdNYW5jaGVzdGVyJyxcbiAgICAgIHJlZ2lvbjogJ01hbmNoZXN0ZXIgQ2l0eSBDZW50cmUnLFxuICAgICAgcG9zdGNvZGU6ICdNMSA0RVQnXG4gICAgfSxcbiAgICBjb250YWN0OiB7XG4gICAgICBwaG9uZTogJys0NCAxNjEgODM0IDU2NzcnLFxuICAgICAgZW1haWw6ICdpbmZvQGNhc2Fkb25vcnRlLmNvLnVrJyxcbiAgICAgIHdlYnNpdGU6ICdodHRwczovL2Nhc2Fkb25vcnRlLmNvLnVrJ1xuICAgIH0sXG4gICAgc2VydmljZXM6IFtcbiAgICAgICdOb3J0aGVybiBQb3J0dWd1ZXNlIHRyYWRpdGlvbmFsIGN1aXNpbmUnLFxuICAgICAgJ1ZpbmhvIFZlcmRlIHdpbmUgZXhwZXJpZW5jZXMnLFxuICAgICAgJ1JlZ2lvbmFsIHNwZWNpYWx0eSBkaW5pbmcnLFxuICAgICAgJ1BvcnR1Z3Vlc2UgY3VsdHVyYWwgZXZlbnRzIGhvc3RpbmcnLFxuICAgICAgJ1RyYWRpdGlvbmFsIGZlc3RpdmFsIGNlbGVicmF0aW9ucydcbiAgICBdLFxuICAgIHNlcnZpY2VzUG9ydHVndWVzZTogW1xuICAgICAgJ0N1bGluw6FyaWEgdHJhZGljaW9uYWwgZG8gbm9ydGUgZGUgUG9ydHVnYWwnLFxuICAgICAgJ0V4cGVyacOqbmNpYXMgZGUgdmluaG8gdmVyZGUnLFxuICAgICAgJ0phbnRhciBkZSBlc3BlY2lhbGlkYWRlcyByZWdpb25haXMnLFxuICAgICAgJ0hvc3BlZGFnZW0gZGUgZXZlbnRvcyBjdWx0dXJhaXMgcG9ydHVndWVzZXMnLFxuICAgICAgJ0NlbGVicmHDp8O1ZXMgZGUgZmVzdGl2YWlzIHRyYWRpY2lvbmFpcydcbiAgICBdLFxuICAgIHJhdGluZzogNC43LFxuICAgIHJldmlld0NvdW50OiAxNTYsXG4gICAgcHJpY2VSYW5nZTogJ8KjwqMnLFxuICAgIGN1bHR1cmFsQ29ubmVjdGlvbjogJ0NlbGVicmF0ZXMgbm9ydGhlcm4gUG9ydHVndWVzZSByZWdpb25hbCB0cmFkaXRpb25zIGFuZCBjb25uZWN0cyBNYW5jaGVzdGVyIFBvcnR1Z3Vlc2UgY29tbXVuaXR5IHdpdGggYXV0aGVudGljIE1pbmhvIGN1bHR1cmUnLFxuICAgIGlzVmVyaWZpZWQ6IHRydWUsXG4gICAgaXNGZWF0dXJlZDogdHJ1ZSxcbiAgICBpc1ByZW1pdW06IGZhbHNlLFxuICAgIGVzdGFibGlzaGVkWWVhcjogMjAxOCxcbiAgICBzcGVjaWFsdGllczogWydDYWxkbyBWZXJkZScsICdSb2rDtWVzJywgJ0JhY2FsaGF1IMOgIEdvbWVzIGRlIFPDoScsICdWaW5obyBWZXJkZScsICdCcm9hIGRlIE1pbGhvJ10sXG4gICAgcHJpb3JpdHk6IDJcbiAgfSxcblxuICB7XG4gICAgaWQ6ICdicmF6aWxpYW4tYmVhdXR5LXNhbG9uLW1hbmNoZXN0ZXInLFxuICAgIHRpdGxlOiB7XG4gICAgICBlbjogJ0JlbGV6YSBCcmFzaWxlaXJhIC0gQnJhemlsaWFuIEJlYXV0eSBTYWxvbiBNYW5jaGVzdGVyJyxcbiAgICAgIHB0OiAnQmVsZXphIEJyYXNpbGVpcmEgLSBTYWzDo28gZGUgQmVsZXphIEJyYXNpbGVpcm8gTWFuY2hlc3RlcidcbiAgICB9LFxuICAgIGRlc2NyaXB0aW9uOiB7XG4gICAgICBlbjogJ1Byb2Zlc3Npb25hbCBCcmF6aWxpYW4gYmVhdXR5IHNhbG9uIG9mZmVyaW5nIGF1dGhlbnRpYyBCcmF6aWxpYW4gdHJlYXRtZW50cywgaGFpciBzdHlsaW5nLCBhbmQgYmVhdXR5IHNlcnZpY2VzIGluIE1hbmNoZXN0ZXInLFxuICAgICAgcHQ6ICdTYWzDo28gZGUgYmVsZXphIGJyYXNpbGVpcm8gcHJvZmlzc2lvbmFsIG9mZXJlY2VuZG8gdHJhdGFtZW50b3MgYnJhc2lsZWlyb3MgYXV0w6pudGljb3MsIHBlbnRlYWRvcyBlIHNlcnZpw6dvcyBkZSBiZWxlemEgZW0gTWFuY2hlc3RlcidcbiAgICB9LFxuICAgIGltYWdlOiAnL2ltYWdlcy9idXNpbmVzc2VzL2JlbGV6YS1icmFzaWxlaXJhLW1hbmNoZXN0ZXIuanBnJyxcbiAgICBmbGFnRW1vamk6ICfwn4en8J+HtycsXG4gICAgY2F0ZWdvcnk6ICdiZWF1dHlfd2VsbG5lc3MnLFxuICAgIHJlZ2lvbjogJ01hbmNoZXN0ZXIgQ2l0eSBDZW50cmUnLFxuICAgIG93bmVyQ291bnRyeTogJ2JyYXppbCcsXG4gICAgb3duZXJOYW1lOiAnR2FicmllbGEgU2FudG9zIExpbWEnLFxuICAgIGxvY2F0aW9uOiB7XG4gICAgICBjaXR5OiAnTWFuY2hlc3RlcicsXG4gICAgICByZWdpb246ICdNYW5jaGVzdGVyIENpdHkgQ2VudHJlJyxcbiAgICAgIHBvc3Rjb2RlOiAnTTIgM1dRJ1xuICAgIH0sXG4gICAgY29udGFjdDoge1xuICAgICAgcGhvbmU6ICcrNDQgMTYxIDIzNyA4ODk5JyxcbiAgICAgIGVtYWlsOiAnYmVsZXphQGJlbGV6YWJyYXNpbGVpcmEuY28udWsnLFxuICAgICAgd2Vic2l0ZTogJ2h0dHBzOi8vYmVsZXphYnJhc2lsZWlyYS5jby51aydcbiAgICB9LFxuICAgIHNlcnZpY2VzOiBbXG4gICAgICAnQnJhemlsaWFuIGtlcmF0aW4gdHJlYXRtZW50cycsXG4gICAgICAnQXV0aGVudGljIEJyYXppbGlhbiB3YXhpbmcnLFxuICAgICAgJ0hhaXIgc3R5bGluZyBhbmQgY29sb3JpbmcnLFxuICAgICAgJ0JyYXppbGlhbiBiZWF1dHkgY29uc3VsdGF0aW9uJyxcbiAgICAgICdUcm9waWNhbCBza2luY2FyZSB0cmVhdG1lbnRzJ1xuICAgIF0sXG4gICAgc2VydmljZXNQb3J0dWd1ZXNlOiBbXG4gICAgICAnVHJhdGFtZW50b3MgZGUgcXVlcmF0aW5hIGJyYXNpbGVpcmEnLFxuICAgICAgJ0RlcGlsYcOnw6NvIGJyYXNpbGVpcmEgYXV0w6pudGljYScsXG4gICAgICAnUGVudGVhZG9zIGUgY29sb3Jhw6fDo28nLFxuICAgICAgJ0NvbnN1bHRvcmlhIGRlIGJlbGV6YSBicmFzaWxlaXJhJyxcbiAgICAgICdUcmF0YW1lbnRvcyB0cm9waWNhaXMgcGFyYSBwZWxlJ1xuICAgIF0sXG4gICAgcmF0aW5nOiA0LjgsXG4gICAgcmV2aWV3Q291bnQ6IDIwMyxcbiAgICBwcmljZVJhbmdlOiAnwqPCoycsXG4gICAgY3VsdHVyYWxDb25uZWN0aW9uOiAnQnJpbmdzIGF1dGhlbnRpYyBCcmF6aWxpYW4gYmVhdXR5IGN1bHR1cmUgdG8gTWFuY2hlc3RlciB3aXRoIHRyYWRpdGlvbmFsIHRlY2huaXF1ZXMgYW5kIHRyb3BpY2FsIHRyZWF0bWVudHMnLFxuICAgIGlzVmVyaWZpZWQ6IHRydWUsXG4gICAgaXNGZWF0dXJlZDogdHJ1ZSxcbiAgICBpc1ByZW1pdW06IHRydWUsXG4gICAgZXN0YWJsaXNoZWRZZWFyOiAyMDE5LFxuICAgIHNwZWNpYWx0aWVzOiBbJ0JyYXppbGlhbiBCbG93b3V0JywgJ1N1Z2FyaW5nJywgJ0FjYWkgdHJlYXRtZW50cycsICdCcmF6aWxpYW4gbmFpbCBhcnQnLCAnVHJvcGljYWwgaGFpciBtYXNrcyddLFxuICAgIHByaW9yaXR5OiAyXG4gIH0sXG5cbiAgLy8gQklSTUlOR0hBTSAtIENlbnRyYWwgRW5nbGFuZCBQb3J0dWd1ZXNlIGNvbW11bml0eVxuICB7XG4gICAgaWQ6ICdhbmdvbGEtZmxhdm9ycy1yZXN0YXVyYW50LWJpcm1pbmdoYW0nLFxuICAgIHRpdGxlOiB7XG4gICAgICBlbjogJ0FuZ29sYSBGbGF2b3JzIC0gQXV0aGVudGljIEFuZ29sYW4gUmVzdGF1cmFudCBCaXJtaW5naGFtJyxcbiAgICAgIHB0OiAnU2Fib3JlcyBkZSBBbmdvbGEgLSBSZXN0YXVyYW50ZSBBbmdvbGFubyBBdXTDqm50aWNvIEJpcm1pbmdoYW0nXG4gICAgfSxcbiAgICBkZXNjcmlwdGlvbjoge1xuICAgICAgZW46ICdBdXRoZW50aWMgQW5nb2xhbiByZXN0YXVyYW50IGJyaW5naW5nIHRyYWRpdGlvbmFsIEFuZ29sYW4gY3Vpc2luZSBhbmQgY3VsdHVyYWwgZGluaW5nIGV4cGVyaWVuY2VzIHRvIEJpcm1pbmdoYW0nLFxuICAgICAgcHQ6ICdSZXN0YXVyYW50ZSBhbmdvbGFubyBhdXTDqm50aWNvIHRyYXplbmRvIGN1bGluw6FyaWEgdHJhZGljaW9uYWwgYW5nb2xhbmEgZSBleHBlcmnDqm5jaWFzIGdhc3Ryb27DtG1pY2FzIGN1bHR1cmFpcyBwYXJhIEJpcm1pbmdoYW0nXG4gICAgfSxcbiAgICBpbWFnZTogJy9pbWFnZXMvYnVzaW5lc3Nlcy9hbmdvbGEtZmxhdm9ycy1iaXJtaW5naGFtLmpwZycsXG4gICAgZmxhZ0Vtb2ppOiAn8J+HpvCfh7QnLFxuICAgIGNhdGVnb3J5OiAncmVzdGF1cmFudCcsXG4gICAgcmVnaW9uOiAnQmlybWluZ2hhbSBDaXR5IENlbnRyZScsXG4gICAgb3duZXJDb3VudHJ5OiAnYW5nb2xhJyxcbiAgICBvd25lck5hbWU6ICdDYXJsb3MgQnVyaXR5IE1lbmRlcycsXG4gICAgbG9jYXRpb246IHtcbiAgICAgIGNpdHk6ICdCaXJtaW5naGFtJyxcbiAgICAgIHJlZ2lvbjogJ0Jpcm1pbmdoYW0gQ2l0eSBDZW50cmUnLFxuICAgICAgcG9zdGNvZGU6ICdCMSAySkwnXG4gICAgfSxcbiAgICBjb250YWN0OiB7XG4gICAgICBwaG9uZTogJys0NCAxMjEgNjMzIDc3NjYnLFxuICAgICAgZW1haWw6ICdzYWJvcmVzQGFuZ29sYWZsYXZvcnMuY28udWsnLFxuICAgICAgd2Vic2l0ZTogJ2h0dHBzOi8vYW5nb2xhZmxhdm9ycy5jby51aydcbiAgICB9LFxuICAgIHNlcnZpY2VzOiBbXG4gICAgICAnVHJhZGl0aW9uYWwgQW5nb2xhbiBjdWlzaW5lJyxcbiAgICAgICdNdWFtYmEgZGUgZ2FsaW5oYSBzcGVjaWFsdHknLFxuICAgICAgJ0FuZ29sYW4gY3VsdHVyYWwgZGluaW5nIGV4cGVyaWVuY2VzJyxcbiAgICAgICdUcmFkaXRpb25hbCBtdXNpYyBldmVudHMnLFxuICAgICAgJ1ByaXZhdGUgQW5nb2xhbiBjZWxlYnJhdGlvbnMnXG4gICAgXSxcbiAgICBzZXJ2aWNlc1BvcnR1Z3Vlc2U6IFtcbiAgICAgICdDdWxpbsOhcmlhIHRyYWRpY2lvbmFsIGFuZ29sYW5hJyxcbiAgICAgICdFc3BlY2lhbGlkYWRlIG11YW1iYSBkZSBnYWxpbmhhJyxcbiAgICAgICdFeHBlcmnDqm5jaWFzIGdhc3Ryb27DtG1pY2FzIGN1bHR1cmFpcyBhbmdvbGFuYXMnLFxuICAgICAgJ0V2ZW50b3MgZGUgbcO6c2ljYSB0cmFkaWNpb25hbCcsXG4gICAgICAnQ2VsZWJyYcOnw7VlcyBhbmdvbGFuYXMgcHJpdmFkYXMnXG4gICAgXSxcbiAgICByYXRpbmc6IDQuNixcbiAgICByZXZpZXdDb3VudDogODksXG4gICAgcHJpY2VSYW5nZTogJ8KjwqMnLFxuICAgIGN1bHR1cmFsQ29ubmVjdGlvbjogJ1ByZXNlcnZlcyBhdXRoZW50aWMgQW5nb2xhbiBjdWxpbmFyeSB0cmFkaXRpb25zIHdoaWxlIGJ1aWxkaW5nIGNvbW11bml0eSBjb25uZWN0aW9ucyBpbiBCaXJtaW5naGFtJyxcbiAgICBpc1ZlcmlmaWVkOiB0cnVlLFxuICAgIGlzRmVhdHVyZWQ6IHRydWUsXG4gICAgaXNQcmVtaXVtOiBmYWxzZSxcbiAgICBlc3RhYmxpc2hlZFllYXI6IDIwMjAsXG4gICAgc3BlY2lhbHRpZXM6IFsnTXVhbWJhIGRlIEdhbGluaGEnLCAnQ2FsdWx1JywgJ0Z1bmdlJywgJ1B1ZGltIEFiYWRlIGRlIFByaXNjb3MnLCAnS2l6YWNhJ10sXG4gICAgcHJpb3JpdHk6IDJcbiAgfSxcblxuICAvLyBFRElOQlVSR0ggLSBTY290dGlzaCBQb3J0dWd1ZXNlIGNvbW11bml0eVxuICB7XG4gICAgaWQ6ICdwb3J0dWd1ZXNlLWRlbGljYXRlc3Nlbi1lZGluYnVyZ2gnLFxuICAgIHRpdGxlOiB7XG4gICAgICBlbjogJ1BvcnR1Z3Vlc2UgRGVsaWNhdGVzc2VuIEVkaW5idXJnaCAtIEF1dGhlbnRpYyBQcm9kdWN0cycsXG4gICAgICBwdDogJ0RlbGljYXRlc3NlbiBQb3J0dWd1ZXNhIEVkaW5idXJnaCAtIFByb2R1dG9zIEF1dMOqbnRpY29zJ1xuICAgIH0sXG4gICAgZGVzY3JpcHRpb246IHtcbiAgICAgIGVuOiAnU3BlY2lhbGl6ZWQgUG9ydHVndWVzZSBkZWxpY2F0ZXNzZW4gb2ZmZXJpbmcgYXV0aGVudGljIFBvcnR1Z3Vlc2UgcHJvZHVjdHMsIHdpbmVzLCBhbmQgdHJhZGl0aW9uYWwgZm9vZHMgaW4gRWRpbmJ1cmdoJyxcbiAgICAgIHB0OiAnRGVsaWNhdGVzc2VuIHBvcnR1Z3Vlc2EgZXNwZWNpYWxpemFkYSBvZmVyZWNlbmRvIHByb2R1dG9zIHBvcnR1Z3Vlc2VzIGF1dMOqbnRpY29zLCB2aW5ob3MgZSBjb21pZGFzIHRyYWRpY2lvbmFpcyBlbSBFZGluYnVyZ2gnXG4gICAgfSxcbiAgICBpbWFnZTogJy9pbWFnZXMvYnVzaW5lc3Nlcy9wb3J0dWd1ZXNlLWRlbGljYXRlc3Nlbi1lZGluYnVyZ2guanBnJyxcbiAgICBmbGFnRW1vamk6ICfwn4e18J+HuScsXG4gICAgY2F0ZWdvcnk6ICdncm9jZXJ5JyxcbiAgICByZWdpb246ICdFZGluYnVyZ2ggQ2l0eSBDZW50cmUnLFxuICAgIG93bmVyQ291bnRyeTogJ3BvcnR1Z2FsJyxcbiAgICBvd25lck5hbWU6ICdUZXJlc2EgU291c2EgTWFycXVlcycsXG4gICAgbG9jYXRpb246IHtcbiAgICAgIGNpdHk6ICdFZGluYnVyZ2gnLFxuICAgICAgcmVnaW9uOiAnRWRpbmJ1cmdoIENpdHkgQ2VudHJlJyxcbiAgICAgIHBvc3Rjb2RlOiAnRUgxIDNBQSdcbiAgICB9LFxuICAgIGNvbnRhY3Q6IHtcbiAgICAgIHBob25lOiAnKzQ0IDEzMSAyMjUgNDQzMycsXG4gICAgICBlbWFpbDogJ3Byb2R1dG9zQHBvcnR1Z3Vlc2VkZWxpY2F0ZXNzZW4uY28udWsnLFxuICAgICAgd2Vic2l0ZTogJ2h0dHBzOi8vcG9ydHVndWVzZWRlbGljYXRlc3Nlbi5jby51aydcbiAgICB9LFxuICAgIHNlcnZpY2VzOiBbXG4gICAgICAnQXV0aGVudGljIFBvcnR1Z3Vlc2UgcHJvZHVjdHMnLFxuICAgICAgJ1BvcnR1Z3Vlc2Ugd2luZSBzZWxlY3Rpb24nLFxuICAgICAgJ1RyYWRpdGlvbmFsIFBvcnR1Z3Vlc2UgZm9vZHMnLFxuICAgICAgJ1NwZWNpYWx0eSBQb3J0dWd1ZXNlIGltcG9ydHMnLFxuICAgICAgJ0N1bHR1cmFsIGZvb2QgY29uc3VsdGF0aW9uJ1xuICAgIF0sXG4gICAgc2VydmljZXNQb3J0dWd1ZXNlOiBbXG4gICAgICAnUHJvZHV0b3MgcG9ydHVndWVzZXMgYXV0w6pudGljb3MnLFxuICAgICAgJ1NlbGXDp8OjbyBkZSB2aW5ob3MgcG9ydHVndWVzZXMnLFxuICAgICAgJ0NvbWlkYXMgdHJhZGljaW9uYWlzIHBvcnR1Z3Vlc2FzJyxcbiAgICAgICdJbXBvcnRhw6fDtWVzIGVzcGVjaWFpcyBwb3J0dWd1ZXNhcycsXG4gICAgICAnQ29uc3VsdG9yaWEgYWxpbWVudGFyIGN1bHR1cmFsJ1xuICAgIF0sXG4gICAgcmF0aW5nOiA0LjcsXG4gICAgcmV2aWV3Q291bnQ6IDEzNCxcbiAgICBwcmljZVJhbmdlOiAnwqPCoycsXG4gICAgY3VsdHVyYWxDb25uZWN0aW9uOiAnQ29ubmVjdHMgRWRpbmJ1cmdoIFBvcnR1Z3Vlc2UgY29tbXVuaXR5IHdpdGggYXV0aGVudGljIFBvcnR1Z3Vlc2UgcHJvZHVjdHMgYW5kIG1haW50YWlucyBjdWx0dXJhbCBmb29kIHRyYWRpdGlvbnMnLFxuICAgIGlzVmVyaWZpZWQ6IHRydWUsXG4gICAgaXNGZWF0dXJlZDogdHJ1ZSxcbiAgICBpc1ByZW1pdW06IGZhbHNlLFxuICAgIGVzdGFibGlzaGVkWWVhcjogMjAxNixcbiAgICBzcGVjaWFsdGllczogWydCYWNhbGhhdSB2YXJpZXRpZXMnLCAnUG9ydHVndWVzZSBjaGVlc2VzJywgJ1ZpbmhvIGRvIFBvcnRvJywgJ1Bhc3TDqWlzIGRlIE5hdGEnLCAnUG9ydHVndWVzZSBwcmVzZXJ2ZXMnXSxcbiAgICBwcmlvcml0eTogM1xuICB9LFxuXG4gIC8vIEdMQVNHT1cgLSBTY290dGlzaCBQb3J0dWd1ZXNlIGV4cGFuc2lvblxuICB7XG4gICAgaWQ6ICdjYXBlLXZlcmRlLW11c2ljLXNjaG9vbC1nbGFzZ293JyxcbiAgICB0aXRsZToge1xuICAgICAgZW46ICdDYXBlIFZlcmRlIE11c2ljIFNjaG9vbCBHbGFzZ293IC0gSXNsYW5kIFNvdW5kcycsXG4gICAgICBwdDogJ0VzY29sYSBkZSBNw7pzaWNhIENhYm8gVmVyZGUgR2xhc2dvdyAtIFNvbnMgZGFzIElsaGFzJ1xuICAgIH0sXG4gICAgZGVzY3JpcHRpb246IHtcbiAgICAgIGVuOiAnQXV0aGVudGljIENhcGUgVmVyZGVhbiBtdXNpYyBzY2hvb2wgdGVhY2hpbmcgdHJhZGl0aW9uYWwgaXNsYW5kIG11c2ljLCBNb3JuYSwgYW5kIENvbGFkZWlyYSBpbiBHbGFzZ293JyxcbiAgICAgIHB0OiAnRXNjb2xhIGRlIG3DunNpY2EgY2Fiby12ZXJkaWFuYSBhdXTDqm50aWNhIGVuc2luYW5kbyBtw7pzaWNhIHRyYWRpY2lvbmFsIGRhcyBpbGhhcywgTW9ybmEgZSBDb2xhZGVpcmEgZW0gR2xhc2dvdydcbiAgICB9LFxuICAgIGltYWdlOiAnL2ltYWdlcy9idXNpbmVzc2VzL2NhcGUtdmVyZGUtbXVzaWMtZ2xhc2dvdy5qcGcnLFxuICAgIGZsYWdFbW9qaTogJ/Cfh6jwn4e7JyxcbiAgICBjYXRlZ29yeTogJ2N1bHR1cmFsX3NlcnZpY2VzJyxcbiAgICByZWdpb246ICdHbGFzZ293IENpdHkgQ2VudHJlJyxcbiAgICBvd25lckNvdW50cnk6ICdjYXBlX3ZlcmRlJyxcbiAgICBvd25lck5hbWU6ICdDZXPDoXJpYSBUYXZhcmVzIFNpbHZhJyxcbiAgICBsb2NhdGlvbjoge1xuICAgICAgY2l0eTogJ0dsYXNnb3cnLFxuICAgICAgcmVnaW9uOiAnR2xhc2dvdyBDaXR5IENlbnRyZScsXG4gICAgICBwb3N0Y29kZTogJ0cxIDJGRidcbiAgICB9LFxuICAgIGNvbnRhY3Q6IHtcbiAgICAgIHBob25lOiAnKzQ0IDE0MSAzMzIgNTU0NCcsXG4gICAgICBlbWFpbDogJ211c2ljYUBjYXBldmVyZGVtdXNpY3NjaG9vbC5jby51aycsXG4gICAgICB3ZWJzaXRlOiAnaHR0cHM6Ly9jYXBldmVyZGVtdXNpY3NjaG9vbC5jby51aydcbiAgICB9LFxuICAgIHNlcnZpY2VzOiBbXG4gICAgICAnQ2FwZSBWZXJkZWFuIG11c2ljIGluc3RydWN0aW9uJyxcbiAgICAgICdNb3JuYSB2b2NhbCB0cmFpbmluZycsXG4gICAgICAnVHJhZGl0aW9uYWwgaXNsYW5kIGluc3RydW1lbnQgbGVzc29ucycsXG4gICAgICAnQ3VsdHVyYWwgbXVzaWMgd29ya3Nob3BzJyxcbiAgICAgICdDYXBlIFZlcmRlYW4gY3VsdHVyYWwgZXZlbnRzJ1xuICAgIF0sXG4gICAgc2VydmljZXNQb3J0dWd1ZXNlOiBbXG4gICAgICAnSW5zdHJ1w6fDo28gbXVzaWNhbCBjYWJvLXZlcmRpYW5hJyxcbiAgICAgICdUcmVpbmFtZW50byB2b2NhbCBkZSBNb3JuYScsXG4gICAgICAnQXVsYXMgZGUgaW5zdHJ1bWVudG9zIHRyYWRpY2lvbmFpcyBkYXMgaWxoYXMnLFxuICAgICAgJ1dvcmtzaG9wcyBjdWx0dXJhaXMgbXVzaWNhaXMnLFxuICAgICAgJ0V2ZW50b3MgY3VsdHVyYWlzIGNhYm8tdmVyZGlhbm9zJ1xuICAgIF0sXG4gICAgcmF0aW5nOiA0LjgsXG4gICAgcmV2aWV3Q291bnQ6IDY3LFxuICAgIHByaWNlUmFuZ2U6ICfCo8KjJyxcbiAgICBjdWx0dXJhbENvbm5lY3Rpb246ICdQcmVzZXJ2ZXMgQ2FwZSBWZXJkZWFuIG11c2ljYWwgaGVyaXRhZ2Ugd2hpbGUgdGVhY2hpbmcgaXNsYW5kIGN1bHR1cmUgdGhyb3VnaCBhdXRoZW50aWMgbXVzaWMgZWR1Y2F0aW9uJyxcbiAgICBpc1ZlcmlmaWVkOiB0cnVlLFxuICAgIGlzRmVhdHVyZWQ6IHRydWUsXG4gICAgaXNQcmVtaXVtOiB0cnVlLFxuICAgIGVzdGFibGlzaGVkWWVhcjogMjAyMSxcbiAgICBzcGVjaWFsdGllczogWydNb3JuYSB2b2NhbHMnLCAnQ29sYWRlaXJhIHJoeXRobXMnLCAnQ2F2YXF1aW5obyBsZXNzb25zJywgJ1RyYWRpdGlvbmFsIENhcGUgVmVyZGVhbiBzb25ncycsICdJc2xhbmQgbXVzaWMgaGlzdG9yeSddLFxuICAgIHByaW9yaXR5OiAzXG4gIH1cbl1cblxuLyoqXG4gKiBCdXNpbmVzcyBjYXRlZ29yaWVzIHdpdGggY2Fyb3VzZWwgZGF0YVxuICovXG5leHBvcnQgY29uc3QgQlVTSU5FU1NfRElSRUNUT1JZX0NBVEVHT1JJRVM6IEZlYXR1cmVkQnVzaW5lc3NDYXRlZ29yeVtdID0gW1xuICB7XG4gICAgaWQ6ICdyZXN0YXVyYW50cycsXG4gICAgbmFtZToge1xuICAgICAgZW46ICdSZXN0YXVyYW50cyAmIEZvb2QnLFxuICAgICAgcHQ6ICdSZXN0YXVyYW50ZXMgZSBDb21pZGEnXG4gICAgfSxcbiAgICBkZXNjcmlwdGlvbjoge1xuICAgICAgZW46ICdBdXRoZW50aWMgUG9ydHVndWVzZS1zcGVha2luZyBjb21tdW5pdHkgcmVzdGF1cmFudHMgc2VydmluZyB0cmFkaXRpb25hbCBjdWlzaW5lIGZyb20gYWxsIGx1c29waG9uZSBjb3VudHJpZXMnLFxuICAgICAgcHQ6ICdSZXN0YXVyYW50ZXMgYXV0w6pudGljb3MgZGEgY29tdW5pZGFkZSBsdXPDs2ZvbmEgc2VydmluZG8gY3VsaW7DoXJpYSB0cmFkaWNpb25hbCBkZSB0b2RvcyBvcyBwYcOtc2VzIGx1c8OzZm9ub3MnXG4gICAgfSxcbiAgICBlbW9qaTogJ/Cfjb3vuI8nLFxuICAgIGJ1c2luZXNzZXM6IEZFQVRVUkVEX1BPUlRVR1VFU0VfQlVTSU5FU1NFUy5maWx0ZXIoYiA9PiBiLmNhdGVnb3J5ID09PSAncmVzdGF1cmFudCcpLFxuICAgIHRvdGFsQnVzaW5lc3NlczogNDUsXG4gICAgYXZlcmFnZVJhdGluZzogNC43LFxuICAgIGNvdW50cmllczogWydQb3J0dWdhbCcsICdCcmF6aWwnLCAnQW5nb2xhJywgJ0NhcGUgVmVyZGUnLCAnTW96YW1iaXF1ZSddXG4gIH0sXG4gIFxuICB7XG4gICAgaWQ6ICdjdWx0dXJhbF9zZXJ2aWNlcycsXG4gICAgbmFtZToge1xuICAgICAgZW46ICdDdWx0dXJhbCBTZXJ2aWNlcycsXG4gICAgICBwdDogJ1NlcnZpw6dvcyBDdWx0dXJhaXMnXG4gICAgfSxcbiAgICBkZXNjcmlwdGlvbjoge1xuICAgICAgZW46ICdEYW5jZSBzdHVkaW9zLCBtdXNpYyBzY2hvb2xzLCBhbmQgY3VsdHVyYWwgY2VudGVycyBwcmVzZXJ2aW5nIFBvcnR1Z3Vlc2Utc3BlYWtpbmcgaGVyaXRhZ2UgYWNyb3NzIHRoZSBVSycsXG4gICAgICBwdDogJ0VzdMO6ZGlvcyBkZSBkYW7Dp2EsIGVzY29sYXMgZGUgbcO6c2ljYSBlIGNlbnRyb3MgY3VsdHVyYWlzIHByZXNlcnZhbmRvIGEgaGVyYW7Dp2EgbHVzw7Nmb25hIGVtIHRvZG8gbyBSZWlubyBVbmlkbydcbiAgICB9LFxuICAgIGVtb2ppOiAn8J+OrScsXG4gICAgYnVzaW5lc3NlczogRkVBVFVSRURfUE9SVFVHVUVTRV9CVVNJTkVTU0VTLmZpbHRlcihiID0+IGIuY2F0ZWdvcnkgPT09ICdjdWx0dXJhbF9zZXJ2aWNlcycpLFxuICAgIHRvdGFsQnVzaW5lc3NlczogMjgsXG4gICAgYXZlcmFnZVJhdGluZzogNC44LFxuICAgIGNvdW50cmllczogWydCcmF6aWwnLCAnQ2FwZSBWZXJkZScsICdBbmdvbGEnLCAnR3VpbmVhLUJpc3NhdScsICdQb3J0dWdhbCddXG4gIH0sXG4gIFxuICB7XG4gICAgaWQ6ICdiZWF1dHlfd2VsbG5lc3MnLFxuICAgIG5hbWU6IHtcbiAgICAgIGVuOiAnQmVhdXR5ICYgV2VsbG5lc3MnLFxuICAgICAgcHQ6ICdCZWxlemEgZSBCZW0tZXN0YXInXG4gICAgfSxcbiAgICBkZXNjcmlwdGlvbjoge1xuICAgICAgZW46ICdCZWF1dHkgc2Fsb25zIGFuZCB3ZWxsbmVzcyBjZW50ZXJzIG9mZmVyaW5nIGF1dGhlbnRpYyB0cmVhdG1lbnRzIGZyb20gUG9ydHVndWVzZS1zcGVha2luZyBjb3VudHJpZXMnLFxuICAgICAgcHQ6ICdTYWzDtWVzIGRlIGJlbGV6YSBlIGNlbnRyb3MgZGUgYmVtLWVzdGFyIG9mZXJlY2VuZG8gdHJhdGFtZW50b3MgYXV0w6pudGljb3MgZGUgcGHDrXNlcyBsdXPDs2Zvbm9zJ1xuICAgIH0sXG4gICAgZW1vamk6ICfwn5KEJyxcbiAgICBidXNpbmVzc2VzOiBGRUFUVVJFRF9QT1JUVUdVRVNFX0JVU0lORVNTRVMuZmlsdGVyKGIgPT4gYi5jYXRlZ29yeSA9PT0gJ2JlYXV0eV93ZWxsbmVzcycpLFxuICAgIHRvdGFsQnVzaW5lc3NlczogMjMsXG4gICAgYXZlcmFnZVJhdGluZzogNC42LFxuICAgIGNvdW50cmllczogWydCcmF6aWwnLCAnUG9ydHVnYWwnLCAnQW5nb2xhJywgJ0NhcGUgVmVyZGUnXVxuICB9LFxuICBcbiAge1xuICAgIGlkOiAncHJvZmVzc2lvbmFsX3NlcnZpY2VzJyxcbiAgICBuYW1lOiB7XG4gICAgICBlbjogJ1Byb2Zlc3Npb25hbCBTZXJ2aWNlcycsXG4gICAgICBwdDogJ1NlcnZpw6dvcyBQcm9maXNzaW9uYWlzJ1xuICAgIH0sXG4gICAgZGVzY3JpcHRpb246IHtcbiAgICAgIGVuOiAnTGVnYWwsIGZpbmFuY2lhbCwgY29uc3VsdGluZyBhbmQgb3RoZXIgcHJvZmVzc2lvbmFsIHNlcnZpY2VzIGJ5IFBvcnR1Z3Vlc2Utc3BlYWtpbmcgYnVzaW5lc3Mgb3duZXJzJyxcbiAgICAgIHB0OiAnU2VydmnDp29zIGp1csOtZGljb3MsIGZpbmFuY2Vpcm9zLCBjb25zdWx0b3JpYSBlIG91dHJvcyBzZXJ2acOnb3MgcHJvZmlzc2lvbmFpcyBkZSBwcm9wcmlldMOhcmlvcyBsdXPDs2Zvbm9zJ1xuICAgIH0sXG4gICAgZW1vamk6ICfwn5K8JyxcbiAgICBidXNpbmVzc2VzOiBbXSxcbiAgICB0b3RhbEJ1c2luZXNzZXM6IDY3LFxuICAgIGF2ZXJhZ2VSYXRpbmc6IDQuNSxcbiAgICBjb3VudHJpZXM6IFsnUG9ydHVnYWwnLCAnQnJhemlsJywgJ0FuZ29sYScsICdNb3phbWJpcXVlJywgJ0NhcGUgVmVyZGUnXVxuICB9LFxuICBcbiAge1xuICAgIGlkOiAncmV0YWlsJyxcbiAgICBuYW1lOiB7XG4gICAgICBlbjogJ1JldGFpbCAmIFNob3BwaW5nJyxcbiAgICAgIHB0OiAnVmFyZWpvIGUgQ29tcHJhcydcbiAgICB9LFxuICAgIGRlc2NyaXB0aW9uOiB7XG4gICAgICBlbjogJ1BvcnR1Z3Vlc2UgZGVsaWNhdGVzc2Vucywgc3BlY2lhbHR5IHN0b3JlcywgYW5kIHJldGFpbCBidXNpbmVzc2VzIGFjcm9zcyB0aGUgVW5pdGVkIEtpbmdkb20nLFxuICAgICAgcHQ6ICdEZWxpY2F0ZXNzZW5zIHBvcnR1Z3Vlc2FzLCBsb2phcyBlc3BlY2lhbGl6YWRhcyBlIG5lZ8OzY2lvcyBkZSB2YXJlam8gZW0gdG9kbyBvIFJlaW5vIFVuaWRvJ1xuICAgIH0sXG4gICAgZW1vamk6ICfwn5uN77iPJyxcbiAgICBidXNpbmVzc2VzOiBGRUFUVVJFRF9QT1JUVUdVRVNFX0JVU0lORVNTRVMuZmlsdGVyKGIgPT4gYi5jYXRlZ29yeSA9PT0gJ2dyb2NlcnknIHx8IGIuY2F0ZWdvcnkgPT09ICdyZXRhaWwnKSxcbiAgICB0b3RhbEJ1c2luZXNzZXM6IDM0LFxuICAgIGF2ZXJhZ2VSYXRpbmc6IDQuNixcbiAgICBjb3VudHJpZXM6IFsnUG9ydHVnYWwnLCAnQnJhemlsJywgJ0FuZ29sYScsICdDYXBlIFZlcmRlJywgJ01vemFtYmlxdWUnXVxuICB9XG5dXG5cbi8qKlxuICogUEFMT1AgQnVzaW5lc3MgRXhjZWxsZW5jZSBTaG93Y2FzZVxuICovXG5leHBvcnQgY29uc3QgUEFMT1BfQlVTSU5FU1NfU0hPV0NBU0U6IEJ1c2luZXNzQ2Fyb3VzZWxJdGVtW10gPSBcbiAgUEFMT1BfQlVTSU5FU1NfRElSRUNUT1JZXG4gICAgLmZpbHRlcihidXNpbmVzcyA9PiBidXNpbmVzcy5pc0FjdGl2ZSAmJiBidXNpbmVzcy5mZWF0dXJlZEJ1c2luZXNzKVxuICAgIC5tYXAoYnVzaW5lc3MgPT4gKHtcbiAgICAgIGlkOiBidXNpbmVzcy5pZCxcbiAgICAgIHRpdGxlOiB7XG4gICAgICAgIGVuOiBidXNpbmVzcy5idXNpbmVzc05hbWUsXG4gICAgICAgIHB0OiBidXNpbmVzcy5idXNpbmVzc05hbWVQb3J0dWd1ZXNlIHx8IGJ1c2luZXNzLmJ1c2luZXNzTmFtZVxuICAgICAgfSxcbiAgICAgIGRlc2NyaXB0aW9uOiB7XG4gICAgICAgIGVuOiBidXNpbmVzcy5kZXNjcmlwdGlvbixcbiAgICAgICAgcHQ6IGJ1c2luZXNzLmRlc2NyaXB0aW9uUG9ydHVndWVzZVxuICAgICAgfSxcbiAgICAgIGltYWdlOiBgL2ltYWdlcy9wYWxvcC1idXNpbmVzc2VzLyR7YnVzaW5lc3MuaWR9LmpwZ2AsXG4gICAgICBmbGFnRW1vamk6IHtcbiAgICAgICAgJ2FuZ29sYSc6ICfwn4em8J+HtCcsXG4gICAgICAgICdjYXBlX3ZlcmRlJzogJ/Cfh6jwn4e7JywgXG4gICAgICAgICdndWluZWFfYmlzc2F1JzogJ/Cfh6zwn4e8JyxcbiAgICAgICAgJ21vemFtYmlxdWUnOiAn8J+HsvCfh78nLFxuICAgICAgICAnc2FvX3RvbWVfcHJpbmNpcGUnOiAn8J+HuPCfh7knXG4gICAgICB9W2J1c2luZXNzLm93bmVyQ291bnRyeV0sXG4gICAgICBjYXRlZ29yeTogYnVzaW5lc3MuY2F0ZWdvcnksXG4gICAgICByZWdpb246IGJ1c2luZXNzLnJlZ2lvbixcbiAgICAgIG93bmVyQ291bnRyeTogYnVzaW5lc3Mub3duZXJDb3VudHJ5LFxuICAgICAgb3duZXJOYW1lOiBidXNpbmVzcy5vd25lck5hbWUsXG4gICAgICBsb2NhdGlvbjoge1xuICAgICAgICBjaXR5OiBidXNpbmVzcy5jaXR5LFxuICAgICAgICByZWdpb246IGJ1c2luZXNzLnJlZ2lvbixcbiAgICAgICAgcG9zdGNvZGU6IGJ1c2luZXNzLnBvc3Rjb2RlXG4gICAgICB9LFxuICAgICAgY29udGFjdDoge1xuICAgICAgICBwaG9uZTogYnVzaW5lc3MucGhvbmUsXG4gICAgICAgIGVtYWlsOiBidXNpbmVzcy5lbWFpbCxcbiAgICAgICAgd2Vic2l0ZTogYnVzaW5lc3Mud2Vic2l0ZVxuICAgICAgfSxcbiAgICAgIHNlcnZpY2VzOiBidXNpbmVzcy5zZXJ2aWNlcyxcbiAgICAgIHNlcnZpY2VzUG9ydHVndWVzZTogYnVzaW5lc3Muc2VydmljZXNQb3J0dWd1ZXNlLFxuICAgICAgcmF0aW5nOiBidXNpbmVzcy5hdmVyYWdlUmF0aW5nLFxuICAgICAgcmV2aWV3Q291bnQ6IGJ1c2luZXNzLnRvdGFsUmV2aWV3cyxcbiAgICAgIHByaWNlUmFuZ2U6IGJ1c2luZXNzLnByaWNlUmFuZ2UsXG4gICAgICBjdWx0dXJhbENvbm5lY3Rpb246IGJ1c2luZXNzLmN1bHR1cmFsQ29ubmVjdGlvbixcbiAgICAgIGlzVmVyaWZpZWQ6IGJ1c2luZXNzLmlzVmVyaWZpZWQsXG4gICAgICBpc0ZlYXR1cmVkOiBidXNpbmVzcy5mZWF0dXJlZEJ1c2luZXNzLFxuICAgICAgaXNQcmVtaXVtOiBidXNpbmVzcy5pc1ByZW1pdW0sXG4gICAgICBlc3RhYmxpc2hlZFllYXI6IGJ1c2luZXNzLmVzdGFibGlzaGVkWWVhcixcbiAgICAgIHNwZWNpYWx0aWVzOiBidXNpbmVzcy5zcGVjaWFsdGllcyxcbiAgICAgIHByaW9yaXR5OiBidXNpbmVzcy5pc1ByZW1pdW0gPyAxIDogMlxuICAgIH0pKVxuXG4vKipcbiAqIEdlb2dyYXBoaWMgZGlzdHJpYnV0aW9uIG9mIFBvcnR1Z3Vlc2UgYnVzaW5lc3Nlc1xuICovXG5leHBvcnQgY29uc3QgQlVTSU5FU1NfR0VPR1JBUEhJQ19ESVNUUklCVVRJT04gPSB7XG4gICdMb25kb24nOiB7XG4gICAgdG90YWw6IDg5LFxuICAgIGJ5Q291bnRyeToge1xuICAgICAgJ3BvcnR1Z2FsJzogMzQsXG4gICAgICAnYnJhemlsJzogMjgsXG4gICAgICAnYW5nb2xhJzogMTIsXG4gICAgICAnY2FwZV92ZXJkZSc6IDgsXG4gICAgICAnbW96YW1iaXF1ZSc6IDUsXG4gICAgICAnZ3VpbmVhX2Jpc3NhdSc6IDJcbiAgICB9LFxuICAgIHJlZ2lvbnM6IFsnQ2VudHJhbCBMb25kb24nLCAnTm9ydGggTG9uZG9uJywgJ1NvdXRoIExvbmRvbicsICdFYXN0IExvbmRvbicsICdXZXN0IExvbmRvbiddXG4gIH0sXG4gICdNYW5jaGVzdGVyJzoge1xuICAgIHRvdGFsOiAyMyxcbiAgICBieUNvdW50cnk6IHtcbiAgICAgICdwb3J0dWdhbCc6IDEyLFxuICAgICAgJ2JyYXppbCc6IDcsXG4gICAgICAnYW5nb2xhJzogMixcbiAgICAgICdjYXBlX3ZlcmRlJzogMSxcbiAgICAgICdtb3phbWJpcXVlJzogMVxuICAgIH0sXG4gICAgcmVnaW9uczogWydNYW5jaGVzdGVyIENpdHkgQ2VudHJlJywgJ0dyZWF0ZXIgTWFuY2hlc3RlciddXG4gIH0sXG4gICdCaXJtaW5naGFtJzoge1xuICAgIHRvdGFsOiAxOCxcbiAgICBieUNvdW50cnk6IHtcbiAgICAgICdwb3J0dWdhbCc6IDgsXG4gICAgICAnYnJhemlsJzogNSxcbiAgICAgICdhbmdvbGEnOiAzLFxuICAgICAgJ21vemFtYmlxdWUnOiAyXG4gICAgfSxcbiAgICByZWdpb25zOiBbJ0Jpcm1pbmdoYW0gQ2l0eSBDZW50cmUnLCAnV2VzdCBNaWRsYW5kcyddXG4gIH0sXG4gICdFZGluYnVyZ2gnOiB7XG4gICAgdG90YWw6IDEyLFxuICAgIGJ5Q291bnRyeToge1xuICAgICAgJ3BvcnR1Z2FsJzogNyxcbiAgICAgICdicmF6aWwnOiAzLFxuICAgICAgJ2NhcGVfdmVyZGUnOiAyXG4gICAgfSxcbiAgICByZWdpb25zOiBbJ0VkaW5idXJnaCBDaXR5IENlbnRyZScsICdFZGluYnVyZ2ggU3VidXJicyddXG4gIH0sXG4gICdHbGFzZ293Jzoge1xuICAgIHRvdGFsOiA5LFxuICAgIGJ5Q291bnRyeToge1xuICAgICAgJ3BvcnR1Z2FsJzogNCxcbiAgICAgICdicmF6aWwnOiAyLFxuICAgICAgJ2NhcGVfdmVyZGUnOiAyLFxuICAgICAgJ2FuZ29sYSc6IDFcbiAgICB9LFxuICAgIHJlZ2lvbnM6IFsnR2xhc2dvdyBDaXR5IENlbnRyZScsICdHcmVhdGVyIEdsYXNnb3cnXVxuICB9XG59XG5cbi8qKlxuICogR2V0IGZlYXR1cmVkIGJ1c2luZXNzZXMgYnkgY2F0ZWdvcnlcbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIGdldEZlYXR1cmVkQnVzaW5lc3Nlc0J5Q2F0ZWdvcnkoY2F0ZWdvcnlJZDogc3RyaW5nKTogQnVzaW5lc3NDYXJvdXNlbEl0ZW1bXSB7XG4gIHJldHVybiBGRUFUVVJFRF9QT1JUVUdVRVNFX0JVU0lORVNTRVMuZmlsdGVyKGJ1c2luZXNzID0+IFxuICAgIGJ1c2luZXNzLmNhdGVnb3J5ID09PSBjYXRlZ29yeUlkICYmIGJ1c2luZXNzLmlzRmVhdHVyZWRcbiAgKVxufVxuXG4vKipcbiAqIEdldCBidXNpbmVzc2VzIGJ5IGNpdHlcbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIGdldEJ1c2luZXNzZXNCeUNpdHkoY2l0eTogc3RyaW5nKTogQnVzaW5lc3NDYXJvdXNlbEl0ZW1bXSB7XG4gIHJldHVybiBGRUFUVVJFRF9QT1JUVUdVRVNFX0JVU0lORVNTRVMuZmlsdGVyKGJ1c2luZXNzID0+IFxuICAgIGJ1c2luZXNzLmxvY2F0aW9uLmNpdHkudG9Mb3dlckNhc2UoKSA9PT0gY2l0eS50b0xvd2VyQ2FzZSgpXG4gIClcbn1cblxuLyoqXG4gKiBHZXQgYnVzaW5lc3NlcyBieSBjb3VudHJ5XG4gKi9cbmV4cG9ydCBmdW5jdGlvbiBnZXRCdXNpbmVzc2VzQnlDb3VudHJ5KGNvdW50cnk6IHN0cmluZyk6IEJ1c2luZXNzQ2Fyb3VzZWxJdGVtW10ge1xuICByZXR1cm4gRkVBVFVSRURfUE9SVFVHVUVTRV9CVVNJTkVTU0VTLmZpbHRlcihidXNpbmVzcyA9PiBcbiAgICBidXNpbmVzcy5vd25lckNvdW50cnkgPT09IGNvdW50cnlcbiAgKVxufVxuXG4vKipcbiAqIEdldCBwcmVtaXVtIGJ1c2luZXNzZXNcbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIGdldFByZW1pdW1CdXNpbmVzc2VzKCk6IEJ1c2luZXNzQ2Fyb3VzZWxJdGVtW10ge1xuICByZXR1cm4gRkVBVFVSRURfUE9SVFVHVUVTRV9CVVNJTkVTU0VTLmZpbHRlcihidXNpbmVzcyA9PiBidXNpbmVzcy5pc1ByZW1pdW0pXG4gICAgLnNvcnQoKGEsIGIpID0+IGIucHJpb3JpdHkgLSBhLnByaW9yaXR5KVxufVxuXG4vKipcbiAqIFNlYXJjaCBidXNpbmVzc2VzXG4gKi9cbmV4cG9ydCBmdW5jdGlvbiBzZWFyY2hCdXNpbmVzc2VzKHF1ZXJ5OiBzdHJpbmcpOiBCdXNpbmVzc0Nhcm91c2VsSXRlbVtdIHtcbiAgY29uc3QgbG93ZXJRdWVyeSA9IHF1ZXJ5LnRvTG93ZXJDYXNlKClcbiAgcmV0dXJuIEZFQVRVUkVEX1BPUlRVR1VFU0VfQlVTSU5FU1NFUy5maWx0ZXIoYnVzaW5lc3MgPT5cbiAgICBidXNpbmVzcy50aXRsZS5lbi50b0xvd2VyQ2FzZSgpLmluY2x1ZGVzKGxvd2VyUXVlcnkpIHx8XG4gICAgYnVzaW5lc3MudGl0bGUucHQudG9Mb3dlckNhc2UoKS5pbmNsdWRlcyhsb3dlclF1ZXJ5KSB8fFxuICAgIGJ1c2luZXNzLmRlc2NyaXB0aW9uLmVuLnRvTG93ZXJDYXNlKCkuaW5jbHVkZXMobG93ZXJRdWVyeSkgfHxcbiAgICBidXNpbmVzcy5zcGVjaWFsdGllcy5zb21lKHNwZWNpYWx0eSA9PiBzcGVjaWFsdHkudG9Mb3dlckNhc2UoKS5pbmNsdWRlcyhsb3dlclF1ZXJ5KSkgfHxcbiAgICBidXNpbmVzcy5zZXJ2aWNlcy5zb21lKHNlcnZpY2UgPT4gc2VydmljZS50b0xvd2VyQ2FzZSgpLmluY2x1ZGVzKGxvd2VyUXVlcnkpKVxuICApXG59XG5cbi8qKlxuICogQnVzaW5lc3MgZGlyZWN0b3J5IHN0YXRpc3RpY3NcbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIGdldEJ1c2luZXNzRGlyZWN0b3J5U3RhdHMoKSB7XG4gIHJldHVybiB7XG4gICAgdG90YWxCdXNpbmVzc2VzOiBGRUFUVVJFRF9QT1JUVUdVRVNFX0JVU0lORVNTRVMubGVuZ3RoICsgUEFMT1BfQlVTSU5FU1NfU0hPV0NBU0UubGVuZ3RoLFxuICAgIHRvdGFsRmVhdHVyZWQ6IEZFQVRVUkVEX1BPUlRVR1VFU0VfQlVTSU5FU1NFUy5maWx0ZXIoYiA9PiBiLmlzRmVhdHVyZWQpLmxlbmd0aCxcbiAgICB0b3RhbFByZW1pdW06IEZFQVRVUkVEX1BPUlRVR1VFU0VfQlVTSU5FU1NFUy5maWx0ZXIoYiA9PiBiLmlzUHJlbWl1bSkubGVuZ3RoICsgUEFMT1BfQlVTSU5FU1NfU0hPV0NBU0UuZmlsdGVyKGIgPT4gYi5pc1ByZW1pdW0pLmxlbmd0aCxcbiAgICB0b3RhbFZlcmlmaWVkOiBGRUFUVVJFRF9QT1JUVUdVRVNFX0JVU0lORVNTRVMuZmlsdGVyKGIgPT4gYi5pc1ZlcmlmaWVkKS5sZW5ndGggKyBQQUxPUF9CVVNJTkVTU19TSE9XQ0FTRS5maWx0ZXIoYiA9PiBiLmlzVmVyaWZpZWQpLmxlbmd0aCxcbiAgICBhdmVyYWdlUmF0aW5nOiAoRkVBVFVSRURfUE9SVFVHVUVTRV9CVVNJTkVTU0VTLnJlZHVjZSgoc3VtLCBiKSA9PiBzdW0gKyBiLnJhdGluZywgMCkgKyBQQUxPUF9CVVNJTkVTU19TSE9XQ0FTRS5yZWR1Y2UoKHN1bSwgYikgPT4gc3VtICsgYi5yYXRpbmcsIDApKSAvIChGRUFUVVJFRF9QT1JUVUdVRVNFX0JVU0lORVNTRVMubGVuZ3RoICsgUEFMT1BfQlVTSU5FU1NfU0hPV0NBU0UubGVuZ3RoKSxcbiAgICBjb3VudHJpZXNSZXByZXNlbnRlZDogWydQb3J0dWdhbCcsICdCcmF6aWwnLCAnQW5nb2xhJywgJ0NhcGUgVmVyZGUnLCAnTW96YW1iaXF1ZScsICdHdWluZWEtQmlzc2F1JywgJ1PDo28gVG9tw6kgYW5kIFByw61uY2lwZSddLFxuICAgIGNpdGllc1NlcnZlZDogWydMb25kb24nLCAnTWFuY2hlc3RlcicsICdCaXJtaW5naGFtJywgJ0VkaW5idXJnaCcsICdHbGFzZ293J10sXG4gICAgdG90YWxDYXRlZ29yaWVzOiBCVVNJTkVTU19ESVJFQ1RPUllfQ0FURUdPUklFUy5sZW5ndGhcbiAgfVxufSJdLCJuYW1lcyI6WyJCVVNJTkVTU19ESVJFQ1RPUllfQ0FURUdPUklFUyIsIkJVU0lORVNTX0dFT0dSQVBISUNfRElTVFJJQlVUSU9OIiwiRkVBVFVSRURfUE9SVFVHVUVTRV9CVVNJTkVTU0VTIiwiUEFMT1BfQlVTSU5FU1NfU0hPV0NBU0UiLCJnZXRCdXNpbmVzc0RpcmVjdG9yeVN0YXRzIiwiZ2V0QnVzaW5lc3Nlc0J5Q2l0eSIsImdldEJ1c2luZXNzZXNCeUNvdW50cnkiLCJnZXRGZWF0dXJlZEJ1c2luZXNzZXNCeUNhdGVnb3J5IiwiZ2V0UHJlbWl1bUJ1c2luZXNzZXMiLCJzZWFyY2hCdXNpbmVzc2VzIiwiaWQiLCJ0aXRsZSIsImVuIiwicHQiLCJkZXNjcmlwdGlvbiIsImltYWdlIiwiZmxhZ0Vtb2ppIiwiY2F0ZWdvcnkiLCJyZWdpb24iLCJvd25lckNvdW50cnkiLCJvd25lck5hbWUiLCJsb2NhdGlvbiIsImNpdHkiLCJwb3N0Y29kZSIsImNvbnRhY3QiLCJwaG9uZSIsImVtYWlsIiwid2Vic2l0ZSIsInNlcnZpY2VzIiwic2VydmljZXNQb3J0dWd1ZXNlIiwicmF0aW5nIiwicmV2aWV3Q291bnQiLCJwcmljZVJhbmdlIiwiY3VsdHVyYWxDb25uZWN0aW9uIiwiaXNWZXJpZmllZCIsImlzRmVhdHVyZWQiLCJpc1ByZW1pdW0iLCJlc3RhYmxpc2hlZFllYXIiLCJzcGVjaWFsdGllcyIsInByaW9yaXR5IiwibmFtZSIsImVtb2ppIiwiYnVzaW5lc3NlcyIsImZpbHRlciIsImIiLCJ0b3RhbEJ1c2luZXNzZXMiLCJhdmVyYWdlUmF0aW5nIiwiY291bnRyaWVzIiwiUEFMT1BfQlVTSU5FU1NfRElSRUNUT1JZIiwiYnVzaW5lc3MiLCJpc0FjdGl2ZSIsImZlYXR1cmVkQnVzaW5lc3MiLCJtYXAiLCJidXNpbmVzc05hbWUiLCJidXNpbmVzc05hbWVQb3J0dWd1ZXNlIiwiZGVzY3JpcHRpb25Qb3J0dWd1ZXNlIiwidG90YWxSZXZpZXdzIiwidG90YWwiLCJieUNvdW50cnkiLCJyZWdpb25zIiwiY2F0ZWdvcnlJZCIsInRvTG93ZXJDYXNlIiwiY291bnRyeSIsInNvcnQiLCJhIiwicXVlcnkiLCJsb3dlclF1ZXJ5IiwiaW5jbHVkZXMiLCJzb21lIiwic3BlY2lhbHR5Iiwic2VydmljZSIsImxlbmd0aCIsInRvdGFsRmVhdHVyZWQiLCJ0b3RhbFByZW1pdW0iLCJ0b3RhbFZlcmlmaWVkIiwicmVkdWNlIiwic3VtIiwiY291bnRyaWVzUmVwcmVzZW50ZWQiLCJjaXRpZXNTZXJ2ZWQiLCJ0b3RhbENhdGVnb3JpZXMiXSwibWFwcGluZ3MiOiJBQUFBOzs7OztDQUtDOzs7Ozs7Ozs7OztJQXliWUEsNkJBQTZCO2VBQTdCQTs7SUE4SUFDLGdDQUFnQztlQUFoQ0E7O0lBdGdCQUMsOEJBQThCO2VBQTlCQTs7SUFrZEFDLHVCQUF1QjtlQUF2QkE7O0lBK0pHQyx5QkFBeUI7ZUFBekJBOztJQXhDQUMsbUJBQW1CO2VBQW5CQTs7SUFTQUMsc0JBQXNCO2VBQXRCQTs7SUFsQkFDLCtCQUErQjtlQUEvQkE7O0lBMkJBQyxvQkFBb0I7ZUFBcEJBOztJQVFBQyxnQkFBZ0I7ZUFBaEJBOzs7d0NBbHFCa0c7QUErRDNHLE1BQU1QLGlDQUF5RDtJQUNwRSxrREFBa0Q7SUFDbEQ7UUFDRVEsSUFBSTtRQUNKQyxPQUFPO1lBQ0xDLElBQUk7WUFDSkMsSUFBSTtRQUNOO1FBQ0FDLGFBQWE7WUFDWEYsSUFBSTtZQUNKQyxJQUFJO1FBQ047UUFDQUUsT0FBTztRQUNQQyxXQUFXO1FBQ1hDLFVBQVU7UUFDVkMsUUFBUTtRQUNSQyxjQUFjO1FBQ2RDLFdBQVc7UUFDWEMsVUFBVTtZQUNSQyxNQUFNO1lBQ05KLFFBQVE7WUFDUkssVUFBVTtRQUNaO1FBQ0FDLFNBQVM7WUFDUEMsT0FBTztZQUNQQyxPQUFPO1lBQ1BDLFNB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

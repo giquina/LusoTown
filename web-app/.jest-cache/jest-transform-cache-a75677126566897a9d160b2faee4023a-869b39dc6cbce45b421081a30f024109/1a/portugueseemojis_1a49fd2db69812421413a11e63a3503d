@@ -1,0 +1,703 @@
+9c4822032d92493998f2f3f416fd62d2
+/**
+ * Portuguese Cultural Emojis and Expressions Configuration
+ * 
+ * Configuration for Portuguese cultural emoji packs, expressions, and idioms
+ * Supporting all Lusophone countries and regional variations
+ */ "use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    CULTURAL_EXPRESSIONS: function() {
+        return CULTURAL_EXPRESSIONS;
+    },
+    FAREWELL_TEMPLATES: function() {
+        return FAREWELL_TEMPLATES;
+    },
+    GREETING_TEMPLATES: function() {
+        return GREETING_TEMPLATES;
+    },
+    PORTUGUESE_EMOJI_PACKS: function() {
+        return PORTUGUESE_EMOJI_PACKS;
+    },
+    PORTUGUESE_REACTIONS: function() {
+        return PORTUGUESE_REACTIONS;
+    },
+    getCulturalExpressionsByRegion: function() {
+        return getCulturalExpressionsByRegion;
+    },
+    getEmojiPackForCountry: function() {
+        return getEmojiPackForCountry;
+    },
+    getFarewellForContext: function() {
+        return getFarewellForContext;
+    },
+    getGreetingForContext: function() {
+        return getGreetingForContext;
+    },
+    getRandomGreeting: function() {
+        return getRandomGreeting;
+    },
+    getReactionsByCategory: function() {
+        return getReactionsByCategory;
+    },
+    getTimeBasedGreeting: function() {
+        return getTimeBasedGreeting;
+    },
+    searchEmojis: function() {
+        return searchEmojis;
+    }
+});
+const PORTUGUESE_EMOJI_PACKS = {
+    portugal: {
+        name: "Portugal Pack",
+        description: "Traditional Portuguese cultural emojis",
+        country: "Portugal",
+        flag: "\uD83C\uDDF5\uD83C\uDDF9",
+        emojis: [
+            {
+                emoji: "\uD83D\uDC1F",
+                name: "Bacalhau",
+                description: "Portuguese codfish - cultural staple",
+                tags: [
+                    "food",
+                    "tradition",
+                    "culture"
+                ],
+                usage: "both",
+                cultural_significance: "Central to Portuguese cuisine and culture"
+            },
+            {
+                emoji: "\uD83C\uDFFA",
+                name: "Azulejo",
+                description: "Portuguese ceramic tiles",
+                tags: [
+                    "art",
+                    "architecture",
+                    "tradition"
+                ],
+                usage: "both",
+                cultural_significance: "Traditional Portuguese decorative art"
+            },
+            {
+                emoji: "\uD83C\uDFAD",
+                name: "Fado",
+                description: "Traditional Portuguese music",
+                tags: [
+                    "music",
+                    "emotion",
+                    "tradition"
+                ],
+                usage: "both",
+                cultural_significance: "UNESCO recognized Portuguese musical expression"
+            },
+            {
+                emoji: "⛵",
+                name: "Caravela",
+                description: "Portuguese exploration ships",
+                tags: [
+                    "history",
+                    "exploration",
+                    "pride"
+                ],
+                usage: "both",
+                cultural_significance: "Symbol of Portuguese maritime heritage"
+            },
+            {
+                emoji: "\uD83E\uDDFF",
+                name: "Olho Turco",
+                description: "Evil eye protection",
+                tags: [
+                    "protection",
+                    "tradition",
+                    "superstition"
+                ],
+                usage: "casual",
+                cultural_significance: "Traditional protective symbol"
+            },
+            {
+                emoji: "\uD83C\uDF0A",
+                name: "Saudade",
+                description: "Deep longing/nostalgia",
+                tags: [
+                    "emotion",
+                    "longing",
+                    "culture"
+                ],
+                usage: "both",
+                cultural_significance: "Uniquely Portuguese emotional concept"
+            }
+        ]
+    },
+    brazil: {
+        name: "Brazil Pack",
+        description: "Brazilian Portuguese cultural emojis",
+        country: "Brazil",
+        flag: "\uD83C\uDDE7\uD83C\uDDF7",
+        emojis: [
+            {
+                emoji: "\uD83C\uDF79",
+                name: "Caipirinha",
+                description: "Brazilian national cocktail",
+                tags: [
+                    "drink",
+                    "party",
+                    "culture"
+                ],
+                usage: "casual",
+                cultural_significance: "National drink of Brazil"
+            },
+            {
+                emoji: "\uD83C\uDFAD",
+                name: "Carnaval",
+                description: "Brazilian carnival celebration",
+                tags: [
+                    "celebration",
+                    "music",
+                    "dance"
+                ],
+                usage: "casual",
+                cultural_significance: "Most famous Brazilian cultural celebration"
+            },
+            {
+                emoji: "⚽",
+                name: "Futebol",
+                description: "Brazilian football passion",
+                tags: [
+                    "sport",
+                    "passion",
+                    "culture"
+                ],
+                usage: "casual",
+                cultural_significance: "Central to Brazilian national identity"
+            },
+            {
+                emoji: "\uD83C\uDFD6️",
+                name: "Praia",
+                description: "Beach culture",
+                tags: [
+                    "beach",
+                    "lifestyle",
+                    "relaxation"
+                ],
+                usage: "casual",
+                cultural_significance: "Essential part of Brazilian coastal culture"
+            },
+            {
+                emoji: "\uD83C\uDFB6",
+                name: "Samba",
+                description: "Brazilian musical genre",
+                tags: [
+                    "music",
+                    "dance",
+                    "rhythm"
+                ],
+                usage: "casual",
+                cultural_significance: "Quintessential Brazilian music and dance"
+            },
+            {
+                emoji: "☕",
+                name: "Caf\xe9",
+                description: "Brazilian coffee culture",
+                tags: [
+                    "drink",
+                    "culture",
+                    "social"
+                ],
+                usage: "both",
+                cultural_significance: "Brazil is a major coffee producer and consumer"
+            }
+        ]
+    },
+    capeverde: {
+        name: "Cape Verde Pack",
+        description: "Cape Verdean cultural emojis",
+        country: "Cape Verde",
+        flag: "\uD83C\uDDE8\uD83C\uDDFB",
+        emojis: [
+            {
+                emoji: "\uD83C\uDFB5",
+                name: "Morna",
+                description: "Cape Verdean musical genre",
+                tags: [
+                    "music",
+                    "emotion",
+                    "tradition"
+                ],
+                usage: "both",
+                cultural_significance: "Traditional Cape Verdean music expressing sodade"
+            },
+            {
+                emoji: "\uD83C\uDF0A",
+                name: "Sodade",
+                description: "Cape Verdean longing",
+                tags: [
+                    "emotion",
+                    "longing",
+                    "island"
+                ],
+                usage: "both",
+                cultural_significance: "Cape Verdean concept similar to saudade"
+            },
+            {
+                emoji: "\uD83C\uDFDD️",
+                name: "Ilha",
+                description: "Island life",
+                tags: [
+                    "island",
+                    "ocean",
+                    "home"
+                ],
+                usage: "both",
+                cultural_significance: "Island identity central to Cape Verdean culture"
+            },
+            {
+                emoji: "\uD83C\uDF72",
+                name: "Cachupa",
+                description: "National dish of Cape Verde",
+                tags: [
+                    "food",
+                    "tradition",
+                    "comfort"
+                ],
+                usage: "both",
+                cultural_significance: "National dish representing Cape Verdean heritage"
+            },
+            {
+                emoji: "\uD83E\uDD41",
+                name: "Batuko",
+                description: "Traditional Cape Verdean rhythm",
+                tags: [
+                    "music",
+                    "rhythm",
+                    "community"
+                ],
+                usage: "casual",
+                cultural_significance: "Traditional community musical expression"
+            }
+        ]
+    },
+    angola: {
+        name: "Angola Pack",
+        description: "Angolan Portuguese cultural emojis",
+        country: "Angola",
+        flag: "\uD83C\uDDE6\uD83C\uDDF4",
+        emojis: [
+            {
+                emoji: "\uD83C\uDFAD",
+                name: "Kuduro",
+                description: "Angolan music and dance",
+                tags: [
+                    "music",
+                    "dance",
+                    "energy"
+                ],
+                usage: "casual",
+                cultural_significance: "Popular Angolan musical genre"
+            },
+            {
+                emoji: "\uD83D\uDC8E",
+                name: "Diamante",
+                description: "Angola's diamond heritage",
+                tags: [
+                    "wealth",
+                    "resources",
+                    "pride"
+                ],
+                usage: "formal",
+                cultural_significance: "Angola is a major diamond producer"
+            },
+            {
+                emoji: "\uD83E\uDD81",
+                name: "Le\xe3o",
+                description: "Strength and pride",
+                tags: [
+                    "strength",
+                    "pride",
+                    "africa"
+                ],
+                usage: "both",
+                cultural_significance: "Symbol of African strength and pride"
+            },
+            {
+                emoji: "\uD83C\uDF34",
+                name: "Palmeira",
+                description: "Palm trees",
+                tags: [
+                    "nature",
+                    "tropical",
+                    "home"
+                ],
+                usage: "casual",
+                cultural_significance: "Common in Angolan landscape"
+            }
+        ]
+    }
+};
+const CULTURAL_EXPRESSIONS = [
+    {
+        text: "Que saudades!",
+        emoji: "\uD83D\uDC94",
+        meaning: "I miss this/you so much!",
+        usage_context: "Express deep longing or nostalgia",
+        region: [
+            "PT",
+            "BR",
+            "All"
+        ],
+        formality: "casual"
+    },
+    {
+        text: "Est\xe1 tudo bem?",
+        emoji: "\uD83D\uDE0A",
+        meaning: "Is everything okay?",
+        usage_context: "Caring inquiry about someone's wellbeing",
+        region: [
+            "PT"
+        ],
+        formality: "mixed"
+    },
+    {
+        text: "Tudo bom?",
+        emoji: "\uD83D\uDC4D",
+        meaning: "Everything good?",
+        usage_context: "Casual greeting or check-in",
+        region: [
+            "BR"
+        ],
+        formality: "casual"
+    },
+    {
+        text: "Fixe!",
+        emoji: "\uD83D\uDE0E",
+        meaning: "Cool! Awesome!",
+        usage_context: "Express approval or excitement (Portuguese)",
+        region: [
+            "PT"
+        ],
+        formality: "casual"
+    },
+    {
+        text: "Legal!",
+        emoji: "\uD83E\uDD19",
+        meaning: "Cool! Nice!",
+        usage_context: "Express approval or agreement (Brazilian)",
+        region: [
+            "BR"
+        ],
+        formality: "casual"
+    },
+    {
+        text: "Morabeza",
+        emoji: "\uD83E\uDD17",
+        meaning: "Cape Verdean hospitality",
+        usage_context: "Express warmth and welcoming spirit",
+        region: [
+            "CV"
+        ],
+        formality: "mixed"
+    },
+    {
+        text: "Desenrasca",
+        emoji: "\uD83D\uDEE0️",
+        meaning: "Make do with what you have",
+        usage_context: "Finding creative solutions",
+        region: [
+            "PT"
+        ],
+        formality: "casual"
+    },
+    {
+        text: "Jeitinho brasileiro",
+        emoji: "\uD83D\uDE09",
+        meaning: "Brazilian way of getting things done",
+        usage_context: "Finding creative/flexible solutions",
+        region: [
+            "BR"
+        ],
+        formality: "casual"
+    }
+];
+const GREETING_TEMPLATES = [
+    // Portuguese (Portugal)
+    {
+        id: "pt-morning",
+        text: "Bom dia! Como est\xe1?",
+        emoji: "\uD83C\uDF05",
+        context: "Formal morning greeting",
+        time_of_day: "morning",
+        formality: "formal",
+        region: [
+            "PT"
+        ]
+    },
+    {
+        id: "pt-casual-morning",
+        text: "Ol\xe1! Tudo bem?",
+        emoji: "☀️",
+        context: "Casual morning greeting",
+        time_of_day: "morning",
+        formality: "casual",
+        region: [
+            "PT"
+        ]
+    },
+    {
+        id: "pt-afternoon",
+        text: "Boa tarde!",
+        emoji: "\uD83C\uDF24️",
+        context: "Standard afternoon greeting",
+        time_of_day: "afternoon",
+        formality: "mixed",
+        region: [
+            "PT"
+        ]
+    },
+    {
+        id: "pt-evening",
+        text: "Boa noite! Como passou o dia?",
+        emoji: "\uD83C\uDF19",
+        context: "Evening greeting with inquiry",
+        time_of_day: "evening",
+        formality: "mixed",
+        region: [
+            "PT"
+        ]
+    },
+    // Brazilian Portuguese
+    {
+        id: "br-morning",
+        text: "Bom dia! Beleza?",
+        emoji: "\uD83C\uDF1E",
+        context: "Casual Brazilian morning greeting",
+        time_of_day: "morning",
+        formality: "casual",
+        region: [
+            "BR"
+        ]
+    },
+    {
+        id: "br-general",
+        text: "Oi! Como vai?",
+        emoji: "\uD83D\uDE04",
+        context: "General Brazilian greeting",
+        time_of_day: "any",
+        formality: "casual",
+        region: [
+            "BR"
+        ]
+    },
+    {
+        id: "br-whatsup",
+        text: "E a\xed? Tudo certo?",
+        emoji: "\uD83E\uDD19",
+        context: "Very casual Brazilian greeting",
+        time_of_day: "any",
+        formality: "casual",
+        region: [
+            "BR"
+        ]
+    },
+    // Cape Verde
+    {
+        id: "cv-general",
+        text: "Oi! Tudo dreto?",
+        emoji: "\uD83C\uDFDD️",
+        context: "Cape Verdean casual greeting",
+        time_of_day: "any",
+        formality: "casual",
+        region: [
+            "CV"
+        ]
+    },
+    {
+        id: "cv-formal",
+        text: "Bom dia! Como est\xe1?",
+        emoji: "\uD83C\uDDE8\uD83C\uDDFB",
+        context: "Formal Cape Verdean greeting",
+        time_of_day: "morning",
+        formality: "formal",
+        region: [
+            "CV"
+        ]
+    }
+];
+const FAREWELL_TEMPLATES = [
+    {
+        id: "pt-formal-bye",
+        text: "Adeus! Tenha um bom dia.",
+        emoji: "\uD83D\uDC4B",
+        context: "Formal Portuguese farewell",
+        time_of_day: "any",
+        formality: "formal",
+        region: [
+            "PT"
+        ]
+    },
+    {
+        id: "pt-casual-bye",
+        text: "Tchau! At\xe9 logo!",
+        emoji: "✌️",
+        context: "Casual Portuguese farewell",
+        time_of_day: "any",
+        formality: "casual",
+        region: [
+            "PT"
+        ]
+    },
+    {
+        id: "br-bye",
+        text: "Falou! At\xe9 mais!",
+        emoji: "\uD83E\uDD19",
+        context: "Brazilian casual farewell",
+        time_of_day: "any",
+        formality: "casual",
+        region: [
+            "BR"
+        ]
+    },
+    {
+        id: "general-saudade",
+        text: "At\xe9 breve! Vou ter saudades!",
+        emoji: "\uD83D\uDC95",
+        context: "Emotional farewell with longing",
+        time_of_day: "any",
+        formality: "casual",
+        region: [
+            "PT",
+            "BR",
+            "CV"
+        ]
+    }
+];
+const PORTUGUESE_REACTIONS = {
+    agreement: [
+        {
+            emoji: "\uD83D\uDC4D",
+            text: "Sim!",
+            meaning: "Yes!"
+        },
+        {
+            emoji: "✅",
+            text: "Exato!",
+            meaning: "Exactly!"
+        },
+        {
+            emoji: "\uD83D\uDCAF",
+            text: "Perfeito!",
+            meaning: "Perfect!"
+        }
+    ],
+    excitement: [
+        {
+            emoji: "\uD83C\uDF89",
+            text: "Que fixe!",
+            meaning: "How cool!"
+        },
+        {
+            emoji: "\uD83D\uDE0D",
+            text: "Adoro!",
+            meaning: "I love it!"
+        },
+        {
+            emoji: "\uD83E\uDD29",
+            text: "Incr\xedvel!",
+            meaning: "Incredible!"
+        }
+    ],
+    empathy: [
+        {
+            emoji: "\uD83E\uDD17",
+            text: "Compreendo...",
+            meaning: "I understand..."
+        },
+        {
+            emoji: "\uD83D\uDCAA",
+            text: "For\xe7a!",
+            meaning: "Stay strong!"
+        },
+        {
+            emoji: "❤️",
+            text: "Estou contigo!",
+            meaning: "I'm with you!"
+        }
+    ],
+    surprise: [
+        {
+            emoji: "\uD83D\uDE2E",
+            text: "S\xe9rio?!",
+            meaning: "Seriously?!"
+        },
+        {
+            emoji: "\uD83E\uDD2F",
+            text: "N\xe3o acredito!",
+            meaning: "I can't believe it!"
+        },
+        {
+            emoji: "\uD83D\uDE31",
+            text: "Nossa!",
+            meaning: "Wow!"
+        }
+    ]
+};
+const getEmojiPackForCountry = (country)=>{
+    const countryMap = {
+        "Portugal": "portugal",
+        "Brazil": "brazil",
+        "Cape Verde": "capeverde",
+        "Angola": "angola"
+    };
+    const packKey = countryMap[country];
+    return packKey ? PORTUGUESE_EMOJI_PACKS[packKey] : null;
+};
+const getGreetingForContext = (region, timeOfDay, formality)=>{
+    return GREETING_TEMPLATES.find((template)=>template.region.includes(region) && (template.time_of_day === timeOfDay || template.time_of_day === "any") && (template.formality === formality || template.formality === "mixed")) || null;
+};
+const getFarewellForContext = (region, formality)=>{
+    return FAREWELL_TEMPLATES.find((template)=>template.region.includes(region) && (template.formality === formality || template.formality === "mixed")) || null;
+};
+const getCulturalExpressionsByRegion = (region)=>{
+    return CULTURAL_EXPRESSIONS.filter((expr)=>expr.region.includes(region) || expr.region.includes("All"));
+};
+const getReactionsByCategory = (category)=>{
+    return PORTUGUESE_REACTIONS[category] || [];
+};
+const searchEmojis = (query)=>{
+    const results = [];
+    Object.values(PORTUGUESE_EMOJI_PACKS).forEach((pack)=>{
+        pack.emojis.forEach((emoji)=>{
+            if (emoji.name.toLowerCase().includes(query.toLowerCase()) || emoji.description.toLowerCase().includes(query.toLowerCase()) || emoji.tags.some((tag)=>tag.toLowerCase().includes(query.toLowerCase()))) {
+                results.push(emoji);
+            }
+        });
+    });
+    return results;
+};
+const getRandomGreeting = (region)=>{
+    let templates = GREETING_TEMPLATES;
+    if (region) {
+        templates = templates.filter((t)=>t.region.includes(region));
+    }
+    return templates[Math.floor(Math.random() * templates.length)];
+};
+const getTimeBasedGreeting = (region = "PT")=>{
+    const hour = new Date().getHours();
+    let timeOfDay;
+    if (hour < 12) {
+        timeOfDay = "morning";
+    } else if (hour < 18) {
+        timeOfDay = "afternoon";
+    } else {
+        timeOfDay = "evening";
+    }
+    return getGreetingForContext(region, timeOfDay, "casual") || getRandomGreeting(region);
+};
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi93b3Jrc3BhY2VzL0x1c29Ub3duL3dlYi1hcHAvc3JjL2NvbmZpZy9wb3J0dWd1ZXNlLWVtb2ppcy50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIFBvcnR1Z3Vlc2UgQ3VsdHVyYWwgRW1vamlzIGFuZCBFeHByZXNzaW9ucyBDb25maWd1cmF0aW9uXG4gKiBcbiAqIENvbmZpZ3VyYXRpb24gZm9yIFBvcnR1Z3Vlc2UgY3VsdHVyYWwgZW1vamkgcGFja3MsIGV4cHJlc3Npb25zLCBhbmQgaWRpb21zXG4gKiBTdXBwb3J0aW5nIGFsbCBMdXNvcGhvbmUgY291bnRyaWVzIGFuZCByZWdpb25hbCB2YXJpYXRpb25zXG4gKi9cblxuZXhwb3J0IGludGVyZmFjZSBFbW9qaVBhY2sge1xuICBuYW1lOiBzdHJpbmdcbiAgZGVzY3JpcHRpb246IHN0cmluZ1xuICBjb3VudHJ5OiBzdHJpbmdcbiAgZmxhZzogc3RyaW5nXG4gIGVtb2ppczogRW1vamlJdGVtW11cbn1cblxuZXhwb3J0IGludGVyZmFjZSBFbW9qaUl0ZW0ge1xuICBlbW9qaTogc3RyaW5nXG4gIG5hbWU6IHN0cmluZ1xuICBkZXNjcmlwdGlvbjogc3RyaW5nXG4gIHRhZ3M6IHN0cmluZ1tdXG4gIHVzYWdlOiAnZm9ybWFsJyB8ICdjYXN1YWwnIHwgJ2JvdGgnXG4gIGN1bHR1cmFsX3NpZ25pZmljYW5jZT86IHN0cmluZ1xufVxuXG5leHBvcnQgaW50ZXJmYWNlIEN1bHR1cmFsRXhwcmVzc2lvbiB7XG4gIHRleHQ6IHN0cmluZ1xuICBlbW9qaTogc3RyaW5nXG4gIG1lYW5pbmc6IHN0cmluZ1xuICB1c2FnZV9jb250ZXh0OiBzdHJpbmdcbiAgcmVnaW9uOiBzdHJpbmdbXVxuICBmb3JtYWxpdHk6ICdmb3JtYWwnIHwgJ2Nhc3VhbCcgfCAnbWl4ZWQnXG59XG5cbmV4cG9ydCBpbnRlcmZhY2UgR3JlZXRpbmdUZW1wbGF0ZSB7XG4gIGlkOiBzdHJpbmdcbiAgdGV4dDogc3RyaW5nXG4gIGVtb2ppOiBzdHJpbmdcbiAgY29udGV4dDogc3RyaW5nXG4gIHRpbWVfb2ZfZGF5PzogJ21vcm5pbmcnIHwgJ2FmdGVybm9vbicgfCAnZXZlbmluZycgfCAnYW55J1xuICBmb3JtYWxpdHk6ICdmb3JtYWwnIHwgJ2Nhc3VhbCcgfCAnbWl4ZWQnXG4gIHJlZ2lvbjogc3RyaW5nW11cbn1cblxuLy8gUG9ydHVndWVzZSBDdWx0dXJhbCBFbW9qaSBQYWNrc1xuZXhwb3J0IGNvbnN0IFBPUlRVR1VFU0VfRU1PSklfUEFDS1M6IFJlY29yZDxzdHJpbmcsIEVtb2ppUGFjaz4gPSB7XG4gIHBvcnR1Z2FsOiB7XG4gICAgbmFtZTogJ1BvcnR1Z2FsIFBhY2snLFxuICAgIGRlc2NyaXB0aW9uOiAnVHJhZGl0aW9uYWwgUG9ydHVndWVzZSBjdWx0dXJhbCBlbW9qaXMnLFxuICAgIGNvdW50cnk6ICdQb3J0dWdhbCcsXG4gICAgZmxhZzogJ/Cfh7Xwn4e5JyxcbiAgICBlbW9qaXM6IFtcbiAgICAgIHtcbiAgICAgICAgZW1vamk6ICfwn5CfJyxcbiAgICAgICAgbmFtZTogJ0JhY2FsaGF1JyxcbiAgICAgICAgZGVzY3JpcHRpb246ICdQb3J0dWd1ZXNlIGNvZGZpc2ggLSBjdWx0dXJhbCBzdGFwbGUnLFxuICAgICAgICB0YWdzOiBbJ2Zvb2QnLCAndHJhZGl0aW9uJywgJ2N1bHR1cmUnXSxcbiAgICAgICAgdXNhZ2U6ICdib3RoJyxcbiAgICAgICAgY3VsdHVyYWxfc2lnbmlmaWNhbmNlOiAnQ2VudHJhbCB0byBQb3J0dWd1ZXNlIGN1aXNpbmUgYW5kIGN1bHR1cmUnXG4gICAgICB9LFxuICAgICAge1xuICAgICAgICBlbW9qaTogJ/Cfj7onLFxuICAgICAgICBuYW1lOiAnQXp1bGVqbycsXG4gICAgICAgIGRlc2NyaXB0aW9uOiAnUG9ydHVndWVzZSBjZXJhbWljIHRpbGVzJyxcbiAgICAgICAgdGFnczogWydhcnQnLCAnYXJjaGl0ZWN0dXJlJywgJ3RyYWRpdGlvbiddLFxuICAgICAgICB1c2FnZTogJ2JvdGgnLFxuICAgICAgICBjdWx0dXJhbF9zaWduaWZpY2FuY2U6ICdUcmFkaXRpb25hbCBQb3J0dWd1ZXNlIGRlY29yYXRpdmUgYXJ0J1xuICAgICAgfSxcbiAgICAgIHtcbiAgICAgICAgZW1vamk6ICfwn46tJyxcbiAgICAgICAgbmFtZTogJ0ZhZG8nLFxuICAgICAgICBkZXNjcmlwdGlvbjogJ1RyYWRpdGlvbmFsIFBvcnR1Z3Vlc2UgbXVzaWMnLFxuICAgICAgICB0YWdzOiBbJ211c2ljJywgJ2Vtb3Rpb24nLCAndHJhZGl0aW9uJ10sXG4gICAgICAgIHVzYWdlOiAnYm90aCcsXG4gICAgICAgIGN1bHR1cmFsX3NpZ25pZmljYW5jZTogJ1VORVNDTyByZWNvZ25pemVkIFBvcnR1Z3Vlc2UgbXVzaWNhbCBleHByZXNzaW9uJ1xuICAgICAgfSxcbiAgICAgIHtcbiAgICAgICAgZW1vamk6ICfim7UnLFxuICAgICAgICBuYW1lOiAnQ2FyYXZlbGEnLFxuICAgICAgICBkZXNjcmlwdGlvbjogJ1BvcnR1Z3Vlc2UgZXhwbG9yYXRpb24gc2hpcHMnLFxuICAgICAgICB0YWdzOiBbJ2hpc3RvcnknLCAnZXhwbG9yYXRpb24nLCAncHJpZGUnXSxcbiAgICAgICAgdXNhZ2U6ICdib3RoJyxcbiAgICAgICAgY3VsdHVyYWxfc2lnbmlmaWNhbmNlOiAnU3ltYm9sIG9mIFBvcnR1Z3Vlc2UgbWFyaXRpbWUgaGVyaXRhZ2UnXG4gICAgICB9LFxuICAgICAge1xuICAgICAgICBlbW9qaTogJ/Cfp78nLFxuICAgICAgICBuYW1lOiAnT2xobyBUdXJjbycsXG4gICAgICAgIGRlc2NyaXB0aW9uOiAnRXZpbCBleWUgcHJvdGVjdGlvbicsXG4gICAgICAgIHRhZ3M6IFsncHJvdGVjdGlvbicsICd0cmFkaXRpb24nLCAnc3VwZXJzdGl0aW9uJ10sXG4gICAgICAgIHVzYWdlOiAnY2FzdWFsJyxcbiAgICAgICAgY3VsdHVyYWxfc2lnbmlmaWNhbmNlOiAnVHJhZGl0aW9uYWwgcHJvdGVjdGl2ZSBzeW1ib2wnXG4gICAgICB9LFxuICAgICAge1xuICAgICAgICBlbW9qaTogJ/CfjIonLFxuICAgICAgICBuYW1lOiAnU2F1ZGFkZScsXG4gICAgICAgIGRlc2NyaXB0aW9uOiAnRGVlcCBsb25naW5nL25vc3RhbGdpYScsXG4gICAgICAgIHRhZ3M6IFsnZW1vdGlvbicsICdsb25naW5nJywgJ2N1bHR1cmUnXSxcbiAgICAgICAgdXNhZ2U6ICdib3RoJyxcbiAgICAgICAgY3VsdHVyYWxfc2lnbmlmaWNhbmNlOiAnVW5pcXVlbHkgUG9ydHVndWVzZSBlbW90aW9uYWwgY29uY2VwdCdcbiAgICAgIH1cbiAgICBdXG4gIH0sXG4gIGJyYXppbDoge1xuICAgIG5hbWU6ICdCcmF6aWwgUGFjaycsXG4gICAgZGVzY3JpcHRpb246ICdCcmF6aWxpYW4gUG9ydHVndWVzZSBjdWx0dXJhbCBlbW9qaXMnLFxuICAgIGNvdW50cnk6ICdCcmF6aWwnLFxuICAgIGZsYWc6ICfwn4en8J+HtycsXG4gICAgZW1vamlzOiBbXG4gICAgICB7XG4gICAgICAgIGVtb2ppOiAn8J+NuScsXG4gICAgICAgIG5hbWU6ICdDYWlwaXJpbmhhJyxcbiAgICAgICAgZGVzY3JpcHRpb246ICdCcmF6aWxpYW4gbmF0aW9uYWwgY29ja3RhaWwnLFxuICAgICAgICB0YWdzOiBbJ2RyaW5rJywgJ3BhcnR5JywgJ2N1bHR1cmUnXSxcbiAgICAgICAgdXNhZ2U6ICdjYXN1YWwnLFxuICAgICAgICBjdWx0dXJhbF9zaWduaWZpY2FuY2U6ICdOYXRpb25hbCBkcmluayBvZiBCcmF6aWwnXG4gICAgICB9LFxuICAgICAge1xuICAgICAgICBlbW9qaTogJ/Cfjq0nLFxuICAgICAgICBuYW1lOiAnQ2FybmF2YWwnLFxuICAgICAgICBkZXNjcmlwdGlvbjogJ0JyYXppbGlhbiBjYXJuaXZhbCBjZWxlYnJhdGlvbicsXG4gICAgICAgIHRhZ3M6IFsnY2VsZWJyYXRpb24nLCAnbXVzaWMnLCAnZGFuY2UnXSxcbiAgICAgICAgdXNhZ2U6ICdjYXN1YWwnLFxuICAgICAgICBjdWx0dXJhbF9zaWduaWZpY2FuY2U6ICdNb3N0IGZhbW91cyBCcmF6aWxpYW4gY3VsdHVyYWwgY2VsZWJyYXRpb24nXG4gICAgICB9LFxuICAgICAge1xuICAgICAgICBlbW9qaTogJ+KavScsXG4gICAgICAgIG5hbWU6ICdGdXRlYm9sJyxcbiAgICAgICAgZGVzY3JpcHRpb246ICdCcmF6aWxpYW4gZm9vdGJhbGwgcGFzc2lvbicsXG4gICAgICAgIHRhZ3M6IFsnc3BvcnQnLCAncGFzc2lvbicsICdjdWx0dXJlJ10sXG4gICAgICAgIHVzYWdlOiAnY2FzdWFsJyxcbiAgICAgICAgY3VsdHVyYWxfc2lnbmlmaWNhbmNlOiAnQ2VudHJhbCB0byBCcmF6aWxpYW4gbmF0aW9uYWwgaWRlbnRpdHknXG4gICAgICB9LFxuICAgICAge1xuICAgICAgICBlbW9qaTogJ/Cfj5bvuI8nLFxuICAgICAgICBuYW1lOiAnUHJhaWEnLFxuICAgICAgICBkZXNjcmlwdGlvbjogJ0JlYWNoIGN1bHR1cmUnLFxuICAgICAgICB0YWdzOiBbJ2JlYWNoJywgJ2xpZmVzdHlsZScsICdyZWxheGF0aW9uJ10sXG4gICAgICAgIHVzYWdlOiAnY2FzdWFsJyxcbiAgICAgICAgY3VsdHVyYWxfc2lnbmlmaWNhbmNlOiAnRXNzZW50aWFsIHBhcnQgb2YgQnJhemlsaWFuIGNvYXN0YWwgY3VsdHVyZSdcbiAgICAgIH0sXG4gICAgICB7XG4gICAgICAgIGVtb2ppOiAn8J+OticsXG4gICAgICAgIG5hbWU6ICdTYW1iYScsXG4gICAgICAgIGRlc2NyaXB0aW9uOiAnQnJhemlsaWFuIG11c2ljYWwgZ2VucmUnLFxuICAgICAgICB0YWdzOiBbJ211c2ljJywgJ2RhbmNlJywgJ3JoeXRobSddLFxuICAgICAgICB1c2FnZTogJ2Nhc3VhbCcsXG4gICAgICAgIGN1bHR1cmFsX3NpZ25pZmljYW5jZTogJ1F1aW50ZXNzZW50aWFsIEJyYXppbGlhbiBtdXNpYyBhbmQgZGFuY2UnXG4gICAgICB9LFxuICAgICAge1xuICAgICAgICBlbW9qaTogJ+KYlScsXG4gICAgICAgIG5hbWU6ICdDYWbDqScsXG4gICAgICAgIGRlc2NyaXB0aW9uOiAnQnJhemlsaWFuIGNvZmZlZSBjdWx0dXJlJyxcbiAgICAgICAgdGFnczogWydkcmluaycsICdjdWx0dXJlJywgJ3NvY2lhbCddLFxuICAgICAgICB1c2FnZTogJ2JvdGgnLFxuICAgICAgICBjdWx0dXJhbF9zaWduaWZpY2FuY2U6ICdCcmF6aWwgaXMgYSBtYWpvciBjb2ZmZWUgcHJvZHVjZXIgYW5kIGNvbnN1bWVyJ1xuICAgICAgfVxuICAgIF1cbiAgfSxcbiAgY2FwZXZlcmRlOiB7XG4gICAgbmFtZTogJ0NhcGUgVmVyZGUgUGFjaycsXG4gICAgZGVzY3JpcHRpb246ICdDYXBlIFZlcmRlYW4gY3VsdHVyYWwgZW1vamlzJyxcbiAgICBjb3VudHJ5OiAnQ2FwZSBWZXJkZScsXG4gICAgZmxhZzogJ/Cfh6jwn4e7JyxcbiAgICBlbW9qaXM6IFtcbiAgICAgIHtcbiAgICAgICAgZW1vamk6ICfwn461JyxcbiAgICAgICAgbmFtZTogJ01vcm5hJyxcbiAgICAgICAgZGVzY3JpcHRpb246ICdDYXBlIFZlcmRlYW4gbXVzaWNhbCBnZW5yZScsXG4gICAgICAgIHRhZ3M6IFsnbXVzaWMnLCAnZW1vdGlvbicsICd0cmFkaXRpb24nXSxcbiAgICAgICAgdXNhZ2U6ICdib3RoJyxcbiAgICAgICAgY3VsdHVyYWxfc2lnbmlmaWNhbmNlOiAnVHJhZGl0aW9uYWwgQ2FwZSBWZXJkZWFuIG11c2ljIGV4cHJlc3Npbmcgc29kYWRlJ1xuICAgICAgfSxcbiAgICAgIHtcbiAgICAgICAgZW1vamk6ICfwn4yKJyxcbiAgICAgICAgbmFtZTogJ1NvZGFkZScsXG4gICAgICAgIGRlc2NyaXB0aW9uOiAnQ2FwZSBWZXJkZWFuIGxvbmdpbmcnLFxuICAgICAgICB0YWdzOiBbJ2Vtb3Rpb24nLCAnbG9uZ2luZycsICdpc2xhbmQnXSxcbiAgICAgICAgdXNhZ2U6ICdib3RoJyxcbiAgICAgICAgY3VsdHVyYWxfc2lnbmlmaWNhbmNlOiAnQ2FwZSBWZXJkZWFuIGNvbmNlcHQgc2ltaWxhciB0byBzYXVkYWRlJ1xuICAgICAgfSxcbiAgICAgIHtcbiAgICAgICAgZW1vamk6ICfwn4+d77iPJyxcbiAgICAgICAgbmFtZTogJ0lsaGEnLFxuICAgICAgICBkZXNjcmlwdGlvbjogJ0lzbGFuZCBsaWZlJyxcbiAgICAgICAgdGFnczogWydpc2xhbmQnLCAnb2NlYW4nLCAnaG9tZSddLFxuICAgICAgICB1c2FnZTogJ2JvdGgnLFxuICAgICAgICBjdWx0dXJhbF9zaWduaWZpY2FuY2U6ICdJc2xhbmQgaWRlbnRpdHkgY2VudHJhbCB0byBDYXBlIFZlcmRlYW4gY3VsdHVyZSdcbiAgICAgIH0sXG4gICAgICB7XG4gICAgICAgIGVtb2ppOiAn8J+NsicsXG4gICAgICAgIG5hbWU6ICdDYWNodXBhJyxcbiAgICAgICAgZGVzY3JpcHRpb246ICdOYXRpb25hbCBkaXNoIG9mIENhcGUgVmVyZGUnLFxuICAgICAgICB0YWdzOiBbJ2Zvb2QnLCAndHJhZGl0aW9uJywgJ2NvbWZvcnQnXSxcbiAgICAgICAgdXNhZ2U6ICdib3RoJyxcbiAgICAgICAgY3VsdHVyYWxfc2lnbmlmaWNhbmNlOiAnTmF0aW9uYWwgZGlzaCByZXByZXNlbnRpbmcgQ2FwZSBWZXJkZWFuIGhlcml0YWdlJ1xuICAgICAgfSxcbiAgICAgIHtcbiAgICAgICAgZW1vamk6ICfwn6WBJyxcbiAgICAgICAgbmFtZTogJ0JhdHVrbycsXG4gICAgICAgIGRlc2NyaXB0aW9uOiAnVHJhZGl0aW9uYWwgQ2FwZSBWZXJkZWFuIHJoeXRobScsXG4gICAgICAgIHRhZ3M6IFsnbXVzaWMnLCAncmh5dGhtJywgJ2NvbW11bml0eSddLFxuICAgICAgICB1c2FnZTogJ2Nhc3VhbCcsXG4gICAgICAgIGN1bHR1cmFsX3NpZ25pZmljYW5jZTogJ1RyYWRpdGlvbmFsIGNvbW11bml0eSBtdXNpY2FsIGV4cHJlc3Npb24nXG4gICAgICB9XG4gICAgXVxuICB9LFxuICBhbmdvbGE6IHtcbiAgICBuYW1lOiAnQW5nb2xhIFBhY2snLFxuICAgIGRlc2NyaXB0aW9uOiAnQW5nb2xhbiBQb3J0dWd1ZXNlIGN1bHR1cmFsIGVtb2ppcycsXG4gICAgY291bnRyeTogJ0FuZ29sYScsXG4gICAgZmxhZzogJ/Cfh6bwn4e0JyxcbiAgICBlbW9qaXM6IFtcbiAgICAgIHtcbiAgICAgICAgZW1vamk6ICfwn46tJyxcbiAgICAgICAgbmFtZTogJ0t1ZHVybycsXG4gICAgICAgIGRlc2NyaXB0aW9uOiAnQW5nb2xhbiBtdXNpYyBhbmQgZGFuY2UnLFxuICAgICAgICB0YWdzOiBbJ211c2ljJywgJ2RhbmNlJywgJ2VuZXJneSddLFxuICAgICAgICB1c2FnZTogJ2Nhc3VhbCcsXG4gICAgICAgIGN1bHR1cmFsX3NpZ25pZmljYW5jZTogJ1BvcHVsYXIgQW5nb2xhbiBtdXNpY2FsIGdlbnJlJ1xuICAgICAgfSxcbiAgICAgIHtcbiAgICAgICAgZW1vamk6ICfwn5KOJyxcbiAgICAgICAgbmFtZTogJ0RpYW1hbnRlJyxcbiAgICAgICAgZGVzY3JpcHRpb246ICdBbmdvbGFcXCdzIGRpYW1vbmQgaGVyaXRhZ2UnLFxuICAgICAgICB0YWdzOiBbJ3dlYWx0aCcsICdyZXNvdXJjZXMnLCAncHJpZGUnXSxcbiAgICAgICAgdXNhZ2U6ICdmb3JtYWwnLFxuICAgICAgICBjdWx0dXJhbF9zaWduaWZpY2FuY2U6ICdBbmdvbGEgaXMgYSBtYWpvciBkaWFtb25kIHByb2R1Y2VyJ1xuICAgICAgfSxcbiAgICAgIHtcbiAgICAgICAgZW1vamk6ICfwn6aBJyxcbiAgICAgICAgbmFtZTogJ0xlw6NvJyxcbiAgICAgICAgZGVzY3JpcHRpb246ICdTdHJlbmd0aCBhbmQgcHJpZGUnLFxuICAgICAgICB0YWdzOiBbJ3N0cmVuZ3RoJywgJ3ByaWRlJywgJ2FmcmljYSddLFxuICAgICAgICB1c2FnZTogJ2JvdGgnLFxuICAgICAgICBjdWx0dXJhbF9zaWduaWZpY2FuY2U6ICdTeW1ib2wgb2YgQWZyaWNhbiBzdHJlbmd0aCBhbmQgcHJpZGUnXG4gICAgICB9LFxuICAgICAge1xuICAgICAgICBlbW9qaTogJ/CfjLQnLFxuICAgICAgICBuYW1lOiAnUGFsbWVpcmEnLFxuICAgICAgICBkZXNjcmlwdGlvbjogJ1BhbG0gdHJlZXMnLFxuICAgICAgICB0YWdzOiBbJ25hdHVyZScsICd0cm9waWNhbCcsICdob21lJ10sXG4gICAgICAgIHVzYWdlOiAnY2FzdWFsJyxcbiAgICAgICAgY3VsdHVyYWxfc2lnbmlmaWNhbmNlOiAnQ29tbW9uIGluIEFuZ29sYW4gbGFuZHNjYXBlJ1xuICAgICAgfVxuICAgIF1cbiAgfVxufTtcblxuLy8gQ3VsdHVyYWwgRXhwcmVzc2lvbnMgd2l0aCBDb250ZXh0XG5leHBvcnQgY29uc3QgQ1VMVFVSQUxfRVhQUkVTU0lPTlM6IEN1bHR1cmFsRXhwcmVzc2lvbltdID0gW1xuICB7XG4gICAgdGV4dDogJ1F1ZSBzYXVkYWRlcyEnLFxuICAgIGVtb2ppOiAn8J+SlCcsXG4gICAgbWVhbmluZzogJ0kgbWlzcyB0aGlzL3lvdSBzbyBtdWNoIScsXG4gICAgdXNhZ2VfY29udGV4dDogJ0V4cHJlc3MgZGVlcCBsb25naW5nIG9yIG5vc3RhbGdpYScsXG4gICAgcmVnaW9uOiBbJ1BUJywgJ0JSJywgJ0FsbCddLFxuICAgIGZvcm1hbGl0eTogJ2Nhc3VhbCdcbiAgfSxcbiAge1xuICAgIHRleHQ6ICdFc3TDoSB0dWRvIGJlbT8nLFxuICAgIGVtb2ppOiAn8J+YiicsXG4gICAgbWVhbmluZzogJ0lzIGV2ZXJ5dGhpbmcgb2theT8nLFxuICAgIHVzYWdlX2NvbnRleHQ6ICdDYXJpbmcgaW5xdWlyeSBhYm91dCBzb21lb25lXFwncyB3ZWxsYmVpbmcnLFxuICAgIHJlZ2lvbjogWydQVCddLFxuICAgIGZvcm1hbGl0eTogJ21peGVkJ1xuICB9LFxuICB7XG4gICAgdGV4dDogJ1R1ZG8gYm9tPycsXG4gICAgZW1vamk6ICfwn5GNJyxcbiAgICBtZWFuaW5nOiAnRXZlcnl0aGluZyBnb29kPycsXG4gICAgdXNhZ2VfY29udGV4dDogJ0Nhc3VhbCBncmVldGluZyBvciBjaGVjay1pbicsXG4gICAgcmVnaW9uOiBbJ0JSJ10sXG4gICAgZm9ybWFsaXR5OiAnY2FzdWFsJ1xuICB9LFxuICB7XG4gICAgdGV4dDogJ0ZpeGUhJyxcbiAgICBlbW9qaTogJ/CfmI4nLFxuICAgIG1lYW5pbmc6ICdDb29sISBBd2Vzb21lIScsXG4gICAgdXNhZ2VfY29udGV4dDogJ0V4cHJlc3MgYXBwcm92YWwgb3IgZXhjaXRlbWVudCAoUG9ydHVndWVzZSknLFxuICAgIHJlZ2lvbjogWydQVCddLFxuICAgIGZvcm1hbGl0eTogJ2Nhc3VhbCdcbiAgfSxcbiAge1xuICAgIHRleHQ6ICdMZWdhbCEnLFxuICAgIGVtb2ppOiAn8J+kmScsXG4gICAgbWVhbmluZzogJ0Nvb2whIE5pY2UhJyxcbiAgICB1c2FnZV9jb250ZXh0OiAnRXhwcmVzcyBhcHByb3ZhbCBvciBhZ3JlZW1lbnQgKEJyYXppbGlhbiknLFxuICAgIHJlZ2lvbjogWydCUiddLFxuICAgIGZvcm1hbGl0eTogJ2Nhc3VhbCdcbiAgfSxcbiAge1xuICAgIHRleHQ6ICdNb3JhYmV6YScsXG4gICAgZW1vamk6ICfwn6SXJyxcbiAgICBtZWFuaW5nOiAnQ2FwZSBWZXJkZWFuIGhvc3BpdGFsaXR5JyxcbiAgICB1c2FnZV9jb250ZXh0OiAnRXhwcmVzcyB3YXJtdGggYW5kIHdlbGNvbWluZyBzcGlyaXQnLFxuICAgIHJlZ2lvbjogWydDViddLFxuICAgIGZvcm1hbGl0eTogJ21peGVkJ1xuICB9LFxuICB7XG4gICAgdGV4dDogJ0Rlc2VucmFzY2EnLFxuICAgIGVtb2ppOiAn8J+boO+4jycsXG4gICAgbWVhbmluZzogJ01ha2UgZG8gd2l0aCB3aGF0IHlvdSBoYXZlJyxcbiAgICB1c2FnZV9jb250ZXh0OiAnRmluZGluZyBjcmVhdGl2ZSBzb2x1dGlvbnMnLFxuICAgIHJlZ2lvbjogWydQVCddLFxuICAgIGZvcm1hbGl0eTogJ2Nhc3VhbCdcbiAgfSxcbiAge1xuICAgIHRleHQ6ICdKZWl0aW5obyBicmFzaWxlaXJvJyxcbiAgICBlbW9qaTogJ/CfmIknLFxuICAgIG1lYW5pbmc6ICdCcmF6aWxpYW4gd2F5IG9mIGdldHRpbmcgdGhpbmdzIGRvbmUnLFxuICAgIHVzYWdlX2NvbnRleHQ6ICdGaW5kaW5nIGNyZWF0aXZlL2ZsZXhpYmxlIHNvbHV0aW9ucycsXG4gICAgcmVnaW9uOiBbJ0JSJ10sXG4gICAgZm9ybWFsaXR5OiAnY2FzdWFsJ1xuICB9XG5dO1xuXG4vLyBHcmVldGluZyBUZW1wbGF0ZXNcbmV4cG9ydCBjb25zdCBHUkVFVElOR19URU1QTEFURVM6IEdyZWV0aW5nVGVtcGxhdGVbXSA9IFtcbiAgLy8gUG9ydHVndWVzZSAoUG9ydHVnYWwpXG4gIHtcbiAgICBpZDogJ3B0LW1vcm5pbmcnLFxuICAgIHRleHQ6ICdCb20gZGlhISBDb21vIGVzdMOhPycsXG4gICAgZW1vamk6ICfwn4yFJyxcbiAgICBjb250ZXh0OiAnRm9ybWFsIG1vcm5pbmcgZ3JlZXRpbmcnLFxuICAgIHRpbWVfb2ZfZGF5OiAnbW9ybmluZycsXG4gICAgZm9ybWFsaXR5OiAnZm9ybWFsJyxcbiAgICByZWdpb246IFsnUFQnXVxuICB9LFxuICB7XG4gICAgaWQ6ICdwdC1jYXN1YWwtbW9ybmluZycsXG4gICAgdGV4dDogJ09sw6EhIFR1ZG8gYmVtPycsXG4gICAgZW1vamk6ICfimIDvuI8nLFxuICAgIGNvbnRleHQ6ICdDYXN1YWwgbW9ybmluZyBncmVldGluZycsXG4gICAgdGltZV9vZl9kYXk6ICdtb3JuaW5nJyxcbiAgICBmb3JtYWxpdHk6ICdjYXN1YWwnLFxuICAgIHJlZ2lvbjogWydQVCddXG4gIH0sXG4gIHtcbiAgICBpZDogJ3B0LWFmdGVybm9vbicsXG4gICAgdGV4dDogJ0JvYSB0YXJkZSEnLFxuICAgIGVtb2ppOiAn8J+MpO+4jycsXG4gICAgY29udGV4dDogJ1N0YW5kYXJkIGFmdGVybm9vbiBncmVldGluZycsXG4gICAgdGltZV9vZl9kYXk6ICdhZnRlcm5vb24nLFxuICAgIGZvcm1hbGl0eTogJ21peGVkJyxcbiAgICByZWdpb246IFsnUFQnXVxuICB9LFxuICB7XG4gICAgaWQ6ICdwdC1ldmVuaW5nJyxcbiAgICB0ZXh0OiAnQm9hIG5vaXRlISBDb21vIHBhc3NvdSBvIGRpYT8nLFxuICAgIGVtb2ppOiAn8J+MmScsXG4gICAgY29udGV4dDogJ0V2ZW5pbmcgZ3JlZXRpbmcgd2l0aCBpbnF1aXJ5JyxcbiAgICB0aW1lX29mX2RheTogJ2V2ZW5pbmcnLFxuICAgIGZvcm1hbGl0eTogJ21peGVkJyxcbiAgICByZWdpb246IFsnUFQnXVxuICB9LFxuXG4gIC8vIEJyYXppbGlhbiBQb3J0dWd1ZXNlXG4gIHtcbiAgICBpZDogJ2JyLW1vcm5pbmcnLFxuICAgIHRleHQ6ICdCb20gZGlhISBCZWxlemE/JyxcbiAgICBlbW9qaTogJ/CfjJ4nLFxuICAgIGNvbnRleHQ6ICdDYXN1YWwgQnJhemlsaWFuIG1vcm5pbmcgZ3JlZXRpbmcnLFxuICAgIHRpbWVfb2ZfZGF5OiAnbW9ybmluZycsXG4gICAgZm9ybWFsaXR5OiAnY2FzdWFsJyxcbiAgICByZWdpb246IFsnQlInXVxuICB9LFxuICB7XG4gICAgaWQ6ICdici1nZW5lcmFsJyxcbiAgICB0ZXh0OiAnT2khIENvbW8gdmFpPycsXG4gICAgZW1vamk6ICfwn5iEJyxcbiAgICBjb250ZXh0OiAnR2VuZXJhbCBCcmF6aWxpYW4gZ3JlZXRpbmcnLFxuICAgIHRpbWVfb2ZfZGF5OiAnYW55JyxcbiAgICBmb3JtYWxpdHk6ICdjYXN1YWwnLFxuICAgIHJlZ2lvbjogWydCUiddXG4gIH0sXG4gIHtcbiAgICBpZDogJ2JyLXdoYXRzdXAnLFxuICAgIHRleHQ6ICdFIGHDrT8gVHVkbyBjZXJ0bz8nLFxuICAgIGVtb2ppOiAn8J+kmScsXG4gICAgY29udGV4dDogJ1ZlcnkgY2FzdWFsIEJyYXppbGlhbiBncmVldGluZycsXG4gICAgdGltZV9vZl9kYXk6ICdhbnknLFxuICAgIGZvcm1hbGl0eTogJ2Nhc3VhbCcsXG4gICAgcmVnaW9uOiBbJ0JSJ11cbiAgfSxcblxuICAvLyBDYXBlIFZlcmRlXG4gIHtcbiAgICBpZDogJ2N2LWdlbmVyYWwnLFxuICAgIHRleHQ6ICdPaSEgVHVkbyBkcmV0bz8nLFxuICAgIGVtb2ppOiAn8J+Pne+4jycsXG4gICAgY29udGV4dDogJ0NhcGUgVmVyZGVhbiBjYXN1YWwgZ3JlZXRpbmcnLFxuICAgIHRpbWVfb2ZfZGF5OiAnYW55JyxcbiAgICBmb3JtYWxpdHk6ICdjYXN1YWwnLFxuICAgIHJlZ2lvbjogWydDViddXG4gIH0sXG4gIHtcbiAgICBpZDogJ2N2LWZvcm1hbCcsXG4gICAgdGV4dDogJ0JvbSBkaWEhIENvbW8gZXN0w6E/JyxcbiAgICBlbW9qaTogJ/Cfh6jwn4e7JyxcbiAgICBjb250ZXh0OiAnRm9ybWFsIENhcGUgVmVyZGVhbiBncmVldGluZycsXG4gICAgdGltZV9vZl9kYXk6ICdtb3JuaW5nJyxcbiAgICBmb3JtYWxpdHk6ICdmb3JtYWwnLFxuICAgIHJlZ2lvbjogWydDViddXG4gIH1cbl07XG5cbi8vIEZhcmV3ZWxsIFRlbXBsYXRlc1xuZXhwb3J0IGNvbnN0IEZBUkVXRUxMX1RFTVBMQVRFUzogR3JlZXRpbmdUZW1wbGF0ZVtdID0gW1xuICB7XG4gICAgaWQ6ICdwdC1mb3JtYWwtYnllJyxcbiAgICB0ZXh0OiAnQWRldXMhIFRlbmhhIHVtIGJvbSBkaWEuJyxcbiAgICBlbW9qaTogJ/CfkYsnLFxuICAgIGNvbnRleHQ6ICdGb3JtYWwgUG9ydHVndWVzZSBmYXJld2VsbCcsXG4gICAgdGltZV9vZl9kYXk6ICdhbnknLFxuICAgIGZvcm1hbGl0eTogJ2Zvcm1hbCcsXG4gICAgcmVnaW9uOiBbJ1BUJ11cbiAgfSxcbiAge1xuICAgIGlkOiAncHQtY2FzdWFsLWJ5ZScsXG4gICAgdGV4dDogJ1RjaGF1ISBBdMOpIGxvZ28hJyxcbiAgICBlbW9qaTogJ+KcjO+4jycsXG4gICAgY29udGV4dDogJ0Nhc3VhbCBQb3J0dWd1ZXNlIGZhcmV3ZWxsJyxcbiAgICB0aW1lX29mX2RheTogJ2FueScsXG4gICAgZm9ybWFsaXR5OiAnY2FzdWFsJyxcbiAgICByZWdpb246IFsnUFQnXVxuICB9LFxuICB7XG4gICAgaWQ6ICdici1ieWUnLFxuICAgIHRleHQ6ICdGYWxvdSEgQXTDqSBtYWlzIScsXG4gICAgZW1vamk6ICfwn6SZJyxcbiAgICBjb250ZXh0OiAnQnJhemlsaWFuIGNhc3VhbCBmYXJld2VsbCcsXG4gICAgdGltZV9vZl9kYXk6ICdhbnknLFxuICAgIGZvcm1hbGl0eTogJ2Nhc3VhbCcsXG4gICAgcmVnaW9uOiBbJ0JSJ11cbiAgfSxcbiAge1xuICAgIGlkOiAnZ2VuZXJhbC1zYXVkYWRlJyxcbiAgICB0ZXh0OiAnQXTDqSBicmV2ZSEgVm91IHRlciBzYXVkYWRlcyEnLFxuICAgIGVtb2ppOiAn8J+SlScsXG4gICAgY29udGV4dDogJ0Vtb3Rpb25hbCBmYXJld2VsbCB3aXRoIGxvbmdpbmcnLFxuICAgIHRpbWVfb2ZfZGF5OiAnYW55JyxcbiAgICBmb3JtYWxpdHk6ICdjYXN1YWwnLFxuICAgIHJlZ2lvbjogWydQVCcsICdCUicsICdDViddXG4gIH1cbl07XG5cbi8vIFJlYWN0aW9uIEVtb2ppcyBmb3IgUG9ydHVndWVzZSBDb250ZXh0XG5leHBvcnQgY29uc3QgUE9SVFVHVUVTRV9SRUFDVElPTlMgPSB7XG4gIGFncmVlbWVudDogW1xuICAgIHsgZW1vamk6ICfwn5GNJywgdGV4dDogJ1NpbSEnLCBtZWFuaW5nOiAnWWVzIScgfSxcbiAgICB7IGVtb2ppOiAn4pyFJywgdGV4dDogJ0V4YXRvIScsIG1lYW5pbmc6ICdFeGFjdGx5IScgfSxcbiAgICB7IGVtb2ppOiAn8J+SrycsIHRleHQ6ICdQZXJmZWl0byEnLCBtZWFuaW5nOiAnUGVyZmVjdCEnIH1cbiAgXSxcbiAgZXhjaXRlbWVudDogW1xuICAgIHsgZW1vamk6ICfwn46JJywgdGV4dDogJ1F1ZSBmaXhlIScsIG1lYW5pbmc6ICdIb3cgY29vbCEnIH0sXG4gICAgeyBlbW9qaTogJ/CfmI0nLCB0ZXh0OiAnQWRvcm8hJywgbWVhbmluZzogJ0kgbG92ZSBpdCEnIH0sXG4gICAgeyBlbW9qaTogJ/CfpKknLCB0ZXh0OiAnSW5jcsOtdmVsIScsIG1lYW5pbmc6ICdJbmNyZWRpYmxlIScgfVxuICBdLFxuICBlbXBhdGh5OiBbXG4gICAgeyBlbW9qaTogJ/CfpJcnLCB0ZXh0OiAnQ29tcHJlZW5kby4uLicsIG1lYW5pbmc6ICdJIHVuZGVyc3RhbmQuLi4nIH0sXG4gICAgeyBlbW9qaTogJ/CfkqonLCB0ZXh0OiAnRm9yw6dhIScsIG1lYW5pbmc6ICdTdGF5IHN0cm9uZyEnIH0sXG4gICAgeyBlbW9qaTogJ+KdpO+4jycsIHRleHQ6ICdFc3RvdSBjb250aWdvIScsIG1lYW5pbmc6ICdJXFwnbSB3aXRoIHlvdSEnIH1cbiAgXSxcbiAgc3VycHJpc2U6IFtcbiAgICB7IGVtb2ppOiAn8J+YricsIHRleHQ6ICdTw6lyaW8/IScsIG1lYW5pbmc6ICdTZXJpb3VzbHk/IScgfSxcbiAgICB7IGVtb2ppOiAn8J+krycsIHRleHQ6ICdOw6NvIGFjcmVkaXRvIScsIG1lYW5pbmc6ICdJIGNhblxcJ3QgYmVsaWV2ZSBpdCEnIH0sXG4gICAgeyBlbW9qaTogJ/CfmLEnLCB0ZXh0OiAnTm9zc2EhJywgbWVhbmluZzogJ1dvdyEnIH1cbiAgXVxufTtcblxuLy8gSGVscGVyIEZ1bmN0aW9uc1xuZXhwb3J0IGNvbnN0IGdldEVtb2ppUGFja0ZvckNvdW50cnkgPSAoY291bnRyeTogc3RyaW5nKTogRW1vamlQYWNrIHwgbnVsbCA9PiB7XG4gIGNvbnN0IGNvdW50cnlNYXA6IFJlY29yZDxzdHJpbmcsIHN0cmluZz4gPSB7XG4gICAgJ1BvcnR1Z2FsJzogJ3BvcnR1Z2FsJyxcbiAgICAnQnJhemlsJzogJ2JyYXppbCcsXG4gICAgJ0NhcGUgVmVyZGUnOiAnY2FwZXZlcmRlJyxcbiAgICAnQW5nb2xhJzogJ2FuZ29sYSdcbiAgfTtcbiAgXG4gIGNvbnN0IHBhY2tLZXkgPSBjb3VudHJ5TWFwW2NvdW50cnldO1xuICByZXR1cm4gcGFja0tleSA/IFBPUlRVR1VFU0VfRU1PSklfUEFDS1NbcGFja0tleV0gOiBudWxsO1xufTtcblxuZXhwb3J0IGNvbnN0IGdldEdyZWV0aW5nRm9yQ29udGV4dCA9IChcbiAgcmVnaW9uOiBzdHJpbmcsIFxuICB0aW1lT2ZEYXk6IHN0cmluZywgXG4gIGZvcm1hbGl0eTogJ2Zvcm1hbCcgfCAnY2FzdWFsJ1xuKTogR3JlZXRpbmdUZW1wbGF0ZSB8IG51bGwgPT4ge1xuICByZXR1cm4gR1JFRVRJTkdfVEVNUExBVEVTLmZpbmQodGVtcGxhdGUgPT4gXG4gICAgdGVtcGxhdGUucmVnaW9uLmluY2x1ZGVzKHJlZ2lvbikgJiZcbiAgICAodGVtcGxhdGUudGltZV9vZl9kYXkgPT09IHRpbWVPZkRheSB8fCB0ZW1wbGF0ZS50aW1lX29mX2RheSA9PT0gJ2FueScpICYmXG4gICAgKHRlbXBsYXRlLmZvcm1hbGl0eSA9PT0gZm9ybWFsaXR5IHx8IHRlbXBsYXRlLmZvcm1hbGl0eSA9PT0gJ21peGVkJylcbiAgKSB8fCBudWxsO1xufTtcblxuZXhwb3J0IGNvbnN0IGdldEZhcmV3ZWxsRm9yQ29udGV4dCA9IChcbiAgcmVnaW9uOiBzdHJpbmcsXG4gIGZvcm1hbGl0eTogJ2Zvcm1hbCcgfCAnY2FzdWFsJ1xuKTogR3JlZXRpbmdUZW1wbGF0ZSB8IG51bGwgPT4ge1xuICByZXR1cm4gRkFSRVdFTExfVEVNUExBVEVTLmZpbmQodGVtcGxhdGUgPT5cbiAgICB0ZW1wbGF0ZS5yZWdpb24uaW5jbHVkZXMocmVnaW9uKSAmJlxuICAgICh0ZW1wbGF0ZS5mb3JtYWxpdHkgPT09IGZvcm1hbGl0eSB8fCB0ZW1wbGF0ZS5mb3JtYWxpdHkgPT09ICdtaXhlZCcpXG4gICkgfHwgbnVsbDtcbn07XG5cbmV4cG9ydCBjb25zdCBnZXRDdWx0dXJhbEV4cHJlc3Npb25zQnlSZWdpb24gPSAocmVnaW9uOiBzdHJpbmcpOiBDdWx0dXJhbEV4cHJlc3Npb25bXSA9PiB7XG4gIHJldHVybiBDVUxUVVJBTF9FWFBSRVNTSU9OUy5maWx0ZXIoZXhwciA9PiBcbiAgICBleHByLnJlZ2lvbi5pbmNsdWRlcyhyZWdpb24pIHx8IGV4cHIucmVnaW9uLmluY2x1ZGVzKCdBbGwnKVxuICApO1xufTtcblxuZXhwb3J0IGNvbnN0IGdldFJlYWN0aW9uc0J5Q2F0ZWdvcnkgPSAoY2F0ZWdvcnk6IGtleW9mIHR5cGVvZiBQT1JUVUdVRVNFX1JFQUNUSU9OUykgPT4ge1xuICByZXR1cm4gUE9SVFVHVUVTRV9SRUFDVElPTlNbY2F0ZWdvcnldIHx8IFtdO1xufTtcblxuZXhwb3J0IGNvbnN0IHNlYXJjaEVtb2ppcyA9IChxdWVyeTogc3RyaW5nKTogRW1vamlJdGVtW10gPT4ge1xuICBjb25zdCByZXN1bHRzOiBFbW9qaUl0ZW1bXSA9IFtdO1xuICBcbiAgT2JqZWN0LnZhbHVlcyhQT1JUVUdVRVNFX0VNT0pJX1BBQ0tTKS5mb3JFYWNoKHBhY2sgPT4ge1xuICAgIHBhY2suZW1vamlzLmZvckVhY2goZW1vamkgPT4ge1xuICAgICAgaWYgKFxuICAgICAgICBlbW9qaS5uYW1lLnRvTG93ZXJDYXNlKCkuaW5jbHVkZXMocXVlcnkudG9Mb3dlckNhc2UoKSkgfHxcbiAgICAgICAgZW1vamkuZGVzY3JpcHRpb24udG9Mb3dlckNhc2UoKS5pbmNsdWRlcyhxdWVyeS50b0xvd2VyQ2FzZSgpKSB8fFxuICAgICAgICBlbW9qaS50YWdzLnNvbWUodGFnID0+IHRhZy50b0xvd2VyQ2FzZSgpLmluY2x1ZGVzKHF1ZXJ5LnRvTG93ZXJDYXNlKCkpKVxuICAgICAgKSB7XG4gICAgICAgIHJlc3VsdHMucHVzaChlbW9qaSk7XG4gICAgICB9XG4gICAgfSk7XG4gIH0pO1xuICBcbiAgcmV0dXJuIHJlc3VsdHM7XG59O1xuXG5leHBvcnQgY29uc3QgZ2V0UmFuZG9tR3JlZXRpbmcgPSAocmVnaW9uPzogc3RyaW5nKTogR3JlZXRpbmdUZW1wbGF0ZSA9PiB7XG4gIGxldCB0ZW1wbGF0ZXMgPSBHUkVFVElOR19URU1QTEFURVM7XG4gIFxuICBpZiAocmVnaW9uKSB7XG4gICAgdGVtcGxhdGVzID0gdGVtcGxhdGVzLmZpbHRlcih0ID0+IHQucmVnaW9uLmluY2x1ZGVzKHJlZ2lvbikpO1xuICB9XG4gIFxuICByZXR1cm4gdGVtcGxhdGVzW01hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIHRlbXBsYXRlcy5sZW5ndGgpXTtcbn07XG5cbmV4cG9ydCBjb25zdCBnZXRUaW1lQmFzZWRHcmVldGluZyA9IChyZWdpb246IHN0cmluZyA9ICdQVCcpOiBHcmVldGluZ1RlbXBsYXRlID0+IHtcbiAgY29uc3QgaG91ciA9IG5ldyBEYXRlKCkuZ2V0SG91cnMoKTtcbiAgbGV0IHRpbWVPZkRheTogJ21vcm5pbmcnIHwgJ2FmdGVybm9vbicgfCAnZXZlbmluZyc7XG4gIFxuICBpZiAoaG91ciA8IDEyKSB7XG4gICAgdGltZU9mRGF5ID0gJ21vcm5pbmcnO1xuICB9IGVsc2UgaWYgKGhvdXIgPCAxOCkge1xuICAgIHRpbWVPZkRheSA9ICdhZnRlcm5vb24nO1xuICB9IGVsc2Uge1xuICAgIHRpbWVPZkRheSA9ICdldmVuaW5nJztcbiAgfVxuICBcbiAgcmV0dXJuIGdldEdyZWV0aW5nRm9yQ29udGV4dChyZWdpb24sIHRpbWVPZkRheSwgJ2Nhc3VhbCcpIHx8IGdldFJhbmRvbUdyZWV0aW5nKHJlZ2lvbik7XG59OyJdLCJuYW1lcyI6WyJDVUxUVVJBTF9FWFBSRVNTSU9OUyIsIkZBUkVXRUxMX1RFTVBMQVRFUyIsIkdSRUVUSU5HX1RFTVBMQVRFUyIsIlBPUlRVR1VFU0VfRU1PSklfUEFDS1MiLCJQT1JUVUdVRVNFX1JFQUNUSU9OUyIsImdldEN1bHR1cmFsRXhwcmVzc2lvbnNCeVJlZ2lvbiIsImdldEVtb2ppUGFja0ZvckNvdW50cnkiLCJnZXRGYXJld2VsbEZvckNvbnRleHQiLCJnZXRHcmVldGluZ0ZvckNvbnRleHQiLCJnZXRSYW5kb21HcmVldGluZyIsImdldFJlYWN0aW9uc0J5Q2F0ZWdvcnkiLCJnZXRUaW1lQmFzZWRHcmVldGluZyIsInNlYXJjaEVtb2ppcyIsInBvcnR1Z2FsIiwibmFtZSIsImRlc2NyaXB0aW9uIiwiY291bnRyeSIsImZsYWciLCJlbW9qaXMiLCJlbW9qaSIsInRhZ3MiLCJ1c2FnZSIsImN1bHR1cmFsX3NpZ25pZmljYW5jZSIsImJyYXppbCIsImNhcGV2ZXJkZSIsImFuZ29sYSIsInRleHQiLCJtZWFuaW5nIiwidXNhZ2VfY29udGV4dCIsInJlZ2lvbiIsImZvcm1hbGl0eSIsImlkIiwiY29udGV4dCIsInRpbWVfb2ZfZGF5IiwiYWdyZWVtZW50IiwiZXhjaXRlbWVudCIsImVtcGF0aHkiLCJzdXJwcmlzZSIsImNvdW50cnlNYXAiLCJwYWNrS2V5IiwidGltZU9mRGF5IiwiZmluZCIsInRlbXBsYXRlIiwiaW5jbHVkZXMiLCJmaWx0ZXIiLCJleHByIiwiY2F0ZWdvcnkiLCJxdWVyeSIsInJlc3VsdHMiLCJPYmplY3QiLCJ2YWx1ZXMiLCJmb3JFYWNoIiwicGFjayIsInRvTG93ZXJDYXNlIiwic29tZSIsInRhZyIsInB1c2giLCJ0ZW1wbGF0ZXMiLCJ0IiwiTWF0aCIsImZsb29yIiwicmFuZG9tIiwibGVuZ3RoIiwiaG91ciIsIkRhdGUiLCJnZXRIb3VycyJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7O0NBS0M7Ozs7Ozs7Ozs7O0lBbVBZQSxvQkFBb0I7ZUFBcEJBOztJQThKQUMsa0JBQWtCO2VBQWxCQTs7SUExRkFDLGtCQUFrQjtlQUFsQkE7O0lBaFJBQyxzQkFBc0I7ZUFBdEJBOztJQWtaQUMsb0JBQW9CO2VBQXBCQTs7SUEwREFDLDhCQUE4QjtlQUE5QkE7O0lBbENBQyxzQkFBc0I7ZUFBdEJBOztJQXdCQUMscUJBQXFCO2VBQXJCQTs7SUFaQUMscUJBQXFCO2VBQXJCQTs7SUFrREFDLGlCQUFpQjtlQUFqQkE7O0lBdEJBQyxzQkFBc0I7ZUFBdEJBOztJQWdDQUMsb0JBQW9CO2VBQXBCQTs7SUE1QkFDLFlBQVk7ZUFBWkE7OztBQXRkTixNQUFNVCx5QkFBb0Q7SUFDL0RVLFVBQVU7UUFDUkMsTUFBTTtRQUNOQyxhQUFhO1FBQ2JDLFNBQVM7UUFDVEMsTUFBTTtRQUNOQyxRQUFRO1lBQ047Z0JBQ0VDLE9BQU87Z0JBQ1BMLE1BQU07Z0JBQ05DLGFBQWE7Z0JBQ2JLLE1BQU07b0JBQUM7b0JBQVE7b0JB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

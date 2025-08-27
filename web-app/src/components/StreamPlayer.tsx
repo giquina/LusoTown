@@ -18,6 +18,7 @@ import { ROUTES } from "@/config/routes";
 import LuxuryLoader from "@/components/LuxuryLoader";
 import LuxuryImageOptimizer from "@/components/LuxuryImageOptimizer";
 import { usePerformanceOptimization, useMemoryManagement } from "@/hooks/usePerformanceOptimization";
+import logger from '@/utils/logger';
 
 interface StreamPlayerProps {
   stream: {
@@ -147,7 +148,13 @@ export default function StreamPlayer({
         if (req) req.call(el);
       }
     } catch (e) {
-      console.warn("Fullscreen request failed", e);
+      logger.warn('Fullscreen request failed for Portuguese stream', {
+        area: 'streaming',
+        action: 'fullscreen_request',
+        culturalContext: 'portuguese',
+        streamId: stream.id,
+        error: e instanceof Error ? e.message : String(e)
+      });
     }
   };
 

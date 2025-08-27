@@ -5,6 +5,7 @@ import { LusoBotEngine, SaudadeEngine } from '@/lib/lusobot-engine'
 import { withRateLimit } from '@/lib/lusobot-rate-limit'
 import type { Language } from '@/i18n'
 import type { LusoBotMessage, MessageMetadata } from '@/lib/lusobot-engine'
+import logger from '@/utils/logger'
 
 /**
  * Enhanced LusoBot AI Chat API Endpoint
@@ -246,7 +247,7 @@ export async function POST(request: NextRequest) {
     }
 
   } catch (error) {
-    console.error('LusoBot Chat API error:', error)
+    logger.error('LusoBot Chat API error', error, { area: 'ai', action: 'lusobot_chat_error', culturalContext: 'lusophone' })
     return NextResponse.json(
       { error: 'Failed to process LusoBot conversation' },
       { status: 500 }
@@ -311,7 +312,7 @@ export async function GET(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('LusoBot conversation history error:', error)
+    logger.error('LusoBot conversation history error', error, { area: 'ai', action: 'lusobot_history_error', culturalContext: 'lusophone' })
     return NextResponse.json(
       { error: 'Failed to fetch conversation history' },
       { status: 500 }
@@ -565,6 +566,6 @@ async function trackAIUsage(
       cultural_context: culturalContext || 'portuguese_ai_assistant'
     })
   } catch (error) {
-    console.error('Failed to track AI usage:', error)
+    logger.error('Failed to track AI usage', error, { area: 'analytics', serviceName, action: 'track_usage_error' })
   }
 }

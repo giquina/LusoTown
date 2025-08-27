@@ -14,6 +14,7 @@ import {
   CheckCircle,
   Clock
 } from 'lucide-react'
+import logger from '@/utils/logger'
 
 interface MessageAuthorizationGateProps {
   targetUserId: string
@@ -94,7 +95,12 @@ export default function MessageAuthorizationGate({
         onPermissionDenied()
       }
     } catch (err) {
-      console.error('Error checking message permissions:', err)
+      logger.error('Message authorization check failed', err, {
+        area: 'messaging',
+        action: 'check_authorization',
+        culturalContext: 'lusophone',
+        targetUserId
+      })
       setError(err instanceof Error ? err.message : 'Unknown error')
     } finally {
       setLoading(false)

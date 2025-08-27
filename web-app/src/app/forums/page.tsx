@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { authService, User } from '@/lib/auth'
 import { forumsService, ForumCategory, ForumTopic } from '@/lib/forums'
 import { useRouter } from 'next/navigation'
+import logger from '@/utils/logger'
 import { 
   MessageSquare,
   Users,
@@ -45,9 +46,9 @@ export default function Forums() {
     }
     
     loadData(currentUser)
-  }, [router])
+  }, [router, loadData])
 
-  const loadData = async (currentUser: User) => {
+  const loadData = useCallback(async (currentUser: User) => {
     try {
       const [categoriesData, topicsData] = await Promise.all([
         forumsService.getCategories(currentUser.membershipTier),
@@ -66,17 +67,21 @@ export default function Forums() {
       setCategories(categoriesData)
       setTopics(topicsData)
     } catch (error) {
-      console.error('Error loading forum data:', error)
+      logger.error('Failed to load Portuguese-speaking community forum data', error, {
+        area: 'community',
+        culturalContext: 'lusophone',
+        action: 'forum_data_load_failed'
+      })
     } finally {
       setLoading(false)
     }
-  }
+  }, [selectedCategory, sortBy, searchQuery])
 
   useEffect(() => {
     if (user) {
       loadData(user)
     }
-  }, [selectedCategory, sortBy, searchQuery, user])
+  }, [selectedCategory, sortBy, searchQuery, user, loadData])
 
   const getMembershipBadge = (tier: string) => {
     const badges = {
