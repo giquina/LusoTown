@@ -3,6 +3,12 @@ import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { SubscriptionProvider } from "@/context/SubscriptionContext";
+import { HeritageProvider } from "@/context/HeritageContext";
+import { CartProvider } from "@/context/CartContext";
+import { NetworkingProvider } from "@/context/NetworkingContext";
+import { FavoritesProvider } from "@/context/FavoritesContext";
+import { PlatformIntegrationProvider } from "@/context/PlatformIntegrationContext";
+import WidgetManager from "@/components/WidgetManager";
 import Header from "@/components/Header";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import dynamic from "next/dynamic";
@@ -31,33 +37,45 @@ export default function RootLayout({
     <html lang="en" className="font-sans">
       <body className="font-sans antialiased">
         <ErrorBoundary>
-          <LanguageProvider>
-            <SubscriptionProvider>
-              {/* Essential Header */}
-              <Header />
-              
-              {/* Main Content */}
-              <main className="relative">
-                {children}
-              </main>
-              
-              {/* Essential Widgets */}
-              <LusoBotWrapper />
-              
-              {/* Toast Notifications */}
-              <Toaster
-                position="top-right"
-                toastOptions={{
-                  duration: 4000,
-                  style: {
-                    background: '#fff',
-                    color: '#374151',
-                    border: '1px solid #d1d5db',
-                  },
-                }}
-              />
-            </SubscriptionProvider>
-          </LanguageProvider>
+          <HeritageProvider>
+            <LanguageProvider>
+              <SubscriptionProvider>
+                <CartProvider>
+                  <NetworkingProvider>
+                    <FavoritesProvider>
+                      <PlatformIntegrationProvider>
+                        <WidgetManager>
+                          {/* Essential Header */}
+                          <Header />
+                          
+                          {/* Main Content */}
+                          <main className="relative">
+                            {children}
+                          </main>
+                          
+                          {/* Essential Widgets */}
+                          <LusoBotWrapper />
+                          
+                          {/* Toast Notifications */}
+                          <Toaster
+                            position="top-right"
+                            toastOptions={{
+                              duration: 4000,
+                              style: {
+                                background: '#fff',
+                                color: '#374151',
+                                border: '1px solid #d1d5db',
+                              },
+                            }}
+                          />
+                        </WidgetManager>
+                      </PlatformIntegrationProvider>
+                    </FavoritesProvider>
+                  </NetworkingProvider>
+                </CartProvider>
+              </SubscriptionProvider>
+            </LanguageProvider>
+          </HeritageProvider>
         </ErrorBoundary>
       </body>
     </html>
