@@ -352,28 +352,22 @@ export default function Home() {
               <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
                 {/* Left Column - Unidos pela Língua Community Discovery Value */}
                 <div className="text-center lg:text-left space-y-8">
-                  {/* Main Headline - Clean & Direct */}
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
+                  {/* Main Headline - Compact 4-line layout */}
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-tight mb-4">
                     <span className="bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 bg-clip-text text-transparent">
                       {t('homepage.hero.title')}
                     </span>
                     <br />
-                    <span className="text-gray-900">
+                    <span className="text-gray-900 text-2xl sm:text-3xl lg:text-4xl">
                       {t('homepage.hero.subtitle')}
                     </span>
                     <div
-                      className="flex justify-center lg:justify-start gap-2 mt-4 text-4xl"
+                      className="flex justify-center lg:justify-start gap-2 mt-2 text-2xl sm:text-3xl"
                       aria-label="Featured flags: Portugal, Brazil, United Kingdom"
                     >
-                      <span role="img" aria-label="Portugal flag">
-                        🇵🇹
-                      </span>
-                      <span role="img" aria-label="Brazil flag">
-                        🇧🇷
-                      </span>
-                      <span role="img" aria-label="United Kingdom flag">
-                        🇬🇧
-                      </span>
+                      <span role="img" aria-label="Portugal flag">🇵🇹</span>
+                      <span role="img" aria-label="Brazil flag">🇧🇷</span>
+                      <span role="img" aria-label="United Kingdom flag">🇬🇧</span>
                     </div>
                   </h1>
 
