@@ -37,13 +37,7 @@ import dynamic from "next/dynamic";
 // Header component will render server-side for better performance
 
 // Dynamic imports ONLY for heavy, non-critical components
-const LiveFeedNotifications = dynamic(
-  () => import("@/components/LiveFeedNotifications"),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-);
+// LiveFeedNotifications removed per user request
 
 const AuthPopup = dynamic(() => import("@/components/AuthPopup"), {
   loading: () => null,
@@ -243,11 +237,10 @@ export default function RootLayout({
 
                                     {/* CLIENT-ONLY components with reduced error boundaries */}
                                     <ComponentErrorBoundary 
-                                      componentName="Live Notifications"
+                                      componentName="Favorite Notifications"
                                       level="component"
                                       maxRetries={3}
                                     >
-                                      <LiveFeedNotifications />
                                       <FavoriteNotification />
                                     </ComponentErrorBoundary>
 

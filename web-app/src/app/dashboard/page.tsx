@@ -19,10 +19,7 @@ const EcosystemOverview = dynamic(() => import('@/components/EcosystemOverview')
   ssr: false
 })
 
-const PortugueseCommunityActivity = dynamic(() => import('@/components/PortugueseCommunityActivity'), {
-  loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />,
-  ssr: false
-})
+// PortugueseCommunityActivity removed per user request
 
 const SmartRecommendations = dynamic(() => import('@/components/SmartRecommendations'), {
   loading: () => <div className="h-40 bg-gray-100 animate-pulse rounded-xl" />,
@@ -354,8 +351,7 @@ export default function Dashboard() {
 
             {activeTab === 'activity' && (
               <div className="space-y-6">
-                {/* Portuguese-speaking community Activity Timeline */}
-                <PortugueseCommunityActivity />
+                {/* Activity Timeline removed per user request */}
                 
                 {/* Platform Stats Summary */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
