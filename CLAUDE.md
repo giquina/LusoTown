@@ -2,42 +2,36 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**Updated: 2025-08-26** | **Last Commit**: 3c42e6f fix: GitHub Actions hardcoding audit - make informational instead of blocking
+**Updated: 2025-08-27** | **Last Commit**: 80d126f fix: remove dynamic export to resolve build naming conflict
 
-## ⚡ Quick Reference
+## ⚡ Quick Start Commands
 
-**Start Development**: `cd web-app && npm run dev` (http://localhost:3000)  
-**Streaming Server**: `cd streaming && npm start` (http://localhost:8080)  
+**Development**: `cd web-app && npm run dev` (http://localhost:3000)  
+**Streaming**: `cd streaming && npm start` (http://localhost:8080)  
 **Demo Access**: demo@lusotown.com / LusoTown2025!  
-**Must Pass Before Commit**: `cd web-app && npm run lint && npx tsc --noEmit && npm run build && npm run audit:hardcoding`  
-**Core Rule**: ZERO hardcoding - import from `/src/config/` files  
-**Cultural Rule**: Use "Portuguese-speaking community" (not "Portuguese community")  
-**Mobile-First**: Test at 375px, 768px, 1024px breakpoints
+**Pre-Commit**: `cd web-app && npm run lint && npx tsc --noEmit && npm run build && npm run audit:hardcoding`
 
-### Quick Single Test Commands
+## 🚨 Critical Development Rules
+
+**ZERO HARDCODING**: All data must be imported from `/src/config/` files  
+**Cultural Context**: Use "Portuguese-speaking community" (not "Portuguese community")  
+**Mobile-First**: Test at 375px, 768px, 1024px breakpoints  
+**Bilingual**: All user-facing text must use `t('translation.key')`
+
+## 🧪 Essential Testing Commands
+
 ```bash
 cd web-app
 npm test ComponentName.test          # Single component test
 npm test -- --testNamePattern="name" # Specific test
 npx playwright test file.spec.ts     # Single E2E test
-npx playwright test file.spec.ts --headed # Single E2E test with UI
-npm run test:mobile                   # Mobile tests only
-npm run test:portuguese               # Portuguese tests only
-npm run test:e2e:debug               # Debug E2E tests interactively
+npx playwright test file.spec.ts --headed # Visual E2E test
+npm run audit:hardcoding             # CRITICAL: Check for hardcoded values
 ```
 
-## 🤖 AI Development Guidance
+## 🤖 AI Agent System
 
-**Primary Source**: `/AGENTS.md` contains comprehensive guidance with 6 specialized agents, UI/UX rules, luxury standards, and cross-IDE compatibility instructions for all AI development tools.
-
-## 🤖 Specialized AI Agents
-
-Use the Task tool to access specialized agents for:
-- **Development Troubleshooting**: Build errors, dependency conflicts, port issues
-- **Cultural Content Validation**: Portuguese community guidelines and authentic representation  
-- **Performance Optimization**: Mobile experience and loading speed improvements
-- **Quality Assurance**: Testing strategies and code review guidance
-- **Security & Privacy**: GDPR compliance and authentication best practices
+**Primary Reference**: `/AGENTS.md` - Complete agent system with specialized advisors for development, cultural validation, performance optimization, quality assurance, and security.
 
 ## 🌍 Community Inclusivity Guidelines
 
@@ -89,74 +83,46 @@ LusoTown is a production-ready Portuguese-speaking community platform serving th
 **npm**: v9.x (web-app engines) / v8+ (root)  
 **Package Manager**: npm (workspace support required for monorepo)
 
-## Development Commands
+## 📋 Development Commands
 
-### Essential Daily Commands
+### Core Development
 ```bash
 cd web-app
-
-# Core Development (Use These Most)
-npm run dev                    # Start development server
+npm run dev                    # Start development (localhost:3000)
 npm run build                  # Production build
 npm run lint                   # ESLint validation
 npx tsc --noEmit              # TypeScript check
-npm run audit:hardcoding      # Critical hardcoding check
-npm run test                  # Jest tests
-npm run test:all              # Full test suite
+npm run audit:hardcoding      # CRITICAL: Check for hardcoded values
 ```
 
-### Testing Commands
+### Testing
 ```bash
-# Unit & Integration Testing
+# Unit Testing
 npm run test                  # Jest unit tests
 npm run test:watch            # Watch mode
-npm run test:coverage         # Coverage report
-npm run test:unit             # Unit tests only
-npm run test:integration      # Integration tests
-npm run test:performance      # Performance tests
+npm test ComponentName.test   # Single component test
 
-# End-to-End Testing (Playwright)
-npm run test:e2e              # E2E tests
-npm run test:e2e:headed       # Visual E2E testing
-npm run test:e2e:debug        # Debug E2E tests
+# E2E Testing (Playwright)  
+npx playwright test file.spec.ts           # Single E2E test
+npx playwright test file.spec.ts --headed  # Visual E2E test
+npm run test:e2e:debug                      # Debug E2E tests
 
 # Specialized Testing
 npm run test:mobile           # Mobile-specific tests
-npm run test:mobile-ux        # Mobile UX validation
 npm run test:portuguese       # Portuguese language tests
-npm run test:security         # Security tests
 npm run test:accessibility    # Accessibility tests
-npm run test:responsive       # Responsive design tests
-
-# Playwright MCP Integration (REQUIRED FOR ALL CHANGES)
-npx playwright-mcp            # Start Playwright MCP server
-npx playwright test specific.spec.ts --project=chromium  # Single test
-npx playwright test --ui      # Interactive test runner
-npx playwright codegen       # Generate test code
-npx playwright test ux-fixes-focused-verification.spec.ts  # UX verification
 ```
 
 ### Quality & Deployment
 ```bash
-# Quality Assurance
-npm run audit:hardcoding      # Critical hardcoding check
-npm run audit:security        # Security audit
-npm run audit:monthly         # Monthly combined audit
-npm run auto-fix              # Auto-fix ESLint issues
-npm run qa:pre-commit         # Pre-commit QA checks
-npm run qa:pre-deploy         # Pre-deployment diagnostic
+# Pre-Commit Checks (REQUIRED)
+npm run audit:hardcoding      # CRITICAL: Must pass
+npm run lint                  # ESLint
+npx tsc --noEmit             # TypeScript
+npm run build                # Build test
 
 # Deployment
-npm run deploy                # Build and deploy to Vercel
-npm run deploy:auto           # Auto-fix, build, and deploy
-npm run start                 # Start production server
-npm run export                # Static export
-
-# Database & Documentation
-npm run db:migrate            # Apply database migrations
-npm run db:migrate:streaming  # Apply streaming migrations
-npm run docs:update           # Update documentation
-npm run docs:validate         # Validate documentation
+npm run deploy               # Deploy to Vercel
 ```
 
 ### Streaming Server (Portuguese Cultural Content Platform)
@@ -226,69 +192,49 @@ npm run cultural-audit         # Audit Portuguese cultural content compliance
 - **PALOP Content Management**: Bulk operations for African Portuguese-speaking countries content
 - **UK Deployment Pipeline**: Optimized deployment for UK Portuguese diaspora audience
 
-## Architecture Overview
+## 🏗️ System Architecture
 
 ### Monorepo Structure
-- **web-app/**: Next.js 14 web application (primary) - Production ready with 496+ components and 4 AI systems
-- **streaming/**: Node.js/Express streaming server with SRS integration - RTMP/HLS delivery
-- **mobile-app/**: React Native/Expo mobile application - Portuguese-speaking community focused
-- **packages/**: Shared packages (`@lusotown/design-tokens`, `@lusotown/ui`)
-- **supabase/**: Database schema and migrations (20+ migration files)
-- **docs/**: Comprehensive documentation archive
-- **scripts/**: Automation and deployment scripts
-
-**Key Architecture Pattern**: The monorepo uses npm workspaces but each app manages its own dependencies. Always `cd` into the specific directory (`web-app/`, `streaming/`, `mobile-app/`) before running commands.
-
-### Core Architectural Principles
-
-**1. Configuration-Driven Development (Zero Hardcoding)**
-All dynamic data centralized in `/web-app/src/config/` (49+ configuration files):
-- **Core Config**: `pricing.ts`, `universities.ts`, `cultural-centers.ts`, `brand.ts`, `routes.ts`, `contact.ts`
-- **Cultural**: `lusophone-celebrations.ts`, `palop-business-directory.ts`, `verification-badges.ts`
-- **Business**: `portuguese-institutions.ts`, `community-guidelines.ts`, `student-resources.ts`
-- **Centralized Exports**: All configs accessible through `index.ts` with comprehensive type safety
-
-**2. Next.js 14 App Router Architecture**
-- **File-based routing**: 135+ pages in `/src/app/` directory with nested routes and dynamic segments
-- **Server Components**: Default SSR with selective Client Components for interactivity
-- **API Integration**: Comprehensive endpoints in `/src/app/api/` for server operations
-- **Enhanced UX**: Layout components, loading states, error boundaries, and not-found pages
-
-**3. Portuguese Cultural Integration**
-- **Bilingual i18n System**: Complete EN/PT translations with `LanguageContext` state management
-- **Heritage Color System**: Dynamic Portuguese cultural theming via CSS custom properties
-- **Cultural Authenticity**: Portuguese-speaking community focus (not generic Portuguese)
-- **Lusophone Celebrations**: Comprehensive cultural events system for all Portuguese-speaking nations
-
-**4. Component & Context Architecture**
-- **496+ React Components**: Modular, reusable with Portuguese cultural theming and AI integration
-- **Context-Based State**: Multiple React contexts (Language, Heritage, Subscription, Networking, Cart)
-- **TypeScript First**: Strict typing with `exactOptionalPropertyTypes` and `noUncheckedIndexedAccess`
-- **AI Integration**: 4 production AI systems with Portuguese cultural context
-  - AI Notification System (production-optimized with timing controls)
-  - AI-Enhanced Matching System (91/100 integration score)
-  - LusoBot Portuguese AI Assistant (96/100 production score, 168+ tests)
-  - Predictive Community Analytics (v2.0.0 GDPR-compliant)
-
-**5. File Organization Structure**
 ```
-/src/app/              # Next.js 14 App Router (135+ pages)
-/src/components/       # 522+ React components with feature-specific organization
-/src/config/           # 49+ configuration files (ZERO hardcoding policy)
-/src/context/          # React contexts for state management
-/src/lib/             # Business logic and AI engines
-/src/services/        # API services and integrations
-/src/i18n/            # Bilingual EN/PT translations
+web-app/     # Next.js 14 (primary) - 135+ pages, 496+ components
+streaming/   # Node.js/Express - RTMP/HLS pipeline  
+mobile-app/  # React Native/Expo
+supabase/    # PostgreSQL + PostGIS schema
+```
+**Pattern**: Always `cd` into specific directory before running commands.
+
+### Key Architectural Patterns
+
+**Configuration-First Development**  
+All data centralized in `/web-app/src/config/` (49+ files):
+```typescript
+// ❌ NEVER: const price = "£19.99"
+// ✅ ALWAYS: import { SUBSCRIPTION_PLANS } from '@/config/pricing'
 ```
 
-**6. Data & Integration Layer**
-- **Supabase Backend**: PostgreSQL with PostGIS extension for geolocation
-- **Real-time Updates**: Supabase subscriptions for live data
-- **API Routes**: Next.js server operations with comprehensive endpoints
-- **PostGIS Business Directory**: Advanced geospatial queries for Portuguese businesses
-- **Streaming Infrastructure**: Simple Relay Server (SRS) with RTMP/HLS pipeline
-- **Redis Caching**: Upstash Redis for performance optimization
-- **CDN Integration**: BunnyCDN for Portuguese cultural content delivery
+**Next.js 14 App Router**  
+- File-based routing in `/src/app/` (135+ pages)
+- Server Components by default, Client Components for interactivity
+- API routes in `/src/app/api/`
+
+**Portuguese Cultural System**
+- Bilingual EN/PT via `LanguageContext`
+- Heritage colors via CSS custom properties
+- Cultural authenticity: Portuguese-speaking (not generic Portuguese)
+
+**Component Architecture**
+```
+/src/components/    # 496+ components
+  /ui/             # Base components (buttons, cards)
+  /ai/             # 4 AI systems integration
+  /matches/        # Cultural compatibility matching
+  /mobile/         # Mobile-optimized components
+```
+
+**Data Layer**
+- Supabase PostgreSQL + PostGIS for geolocation
+- Redis caching (Upstash)
+- Real-time subscriptions
 
 ## Critical Development Rules
 
@@ -417,107 +363,26 @@ Test files located in `/web-app/__tests__/` with organized subdirectories.
 - Portuguese tests only: `npm run test:portuguese` 
 - Security tests only: `npm run test:security`
 
-## Common Issues & Solutions
+## 🔧 Common Issues & Solutions
 
 ### Development Issues
+**Port 3000 in use**: `lsof -i :3000` → `kill -9 <PID>` or use `npm run dev -- -p 3001`  
+**Slow dev server**: `rm -rf .next && npm run dev`  
+**Module not found**: Ensure you're in correct directory (`cd web-app`)
 
-**Port Conflicts** - Port 3000 already in use
-```bash
-lsof -i :3000                  # Find process using port
-kill -9 <PID>                 # Kill the process
-# OR use different port: npm run dev -- -p 3001
-```
-
-**TailwindCSS Module Not Found**
-```bash
-# Error: Cannot find module 'tailwindcss'
-cd /workspaces/LusoTown
-npm install tailwindcss autoprefixer postcss --save-dev
-# Restart development server
-```
-
-**npm ENOTEMPTY Errors** - Directory rename conflicts
-```bash
-npm cache clean --force
-rm -rf node_modules package-lock.json
-npm install
-```
-
-**Slow Development Server**
-```bash
-cd web-app
-rm -rf .next                   # Clear Next.js cache
-npm run dev
-```
-
-### Build Issues
-
-**Build Failures** - Usually TypeScript errors or missing config imports
-- Check console output for specific error details
-- Fix imports from `/src/config/` directory (avoid hardcoding)
-- Run `npx tsc --noEmit` to isolate TypeScript issues
-- Verify all required environment variables are set
-
-**Build Memory Issues** - Out of memory during build
-```bash
-export NODE_OPTIONS="--max-old-space-size=4096"
-npm run build
-```
-
-**Bundle Analysis** - Optimize bundle size
-```bash
-ANALYZE=true npm run dev       # Opens webpack bundle analyzer
-```
-
-### Quality Issues
-
-**Hardcoding Audit Failures** - Failed `npm run audit:hardcoding`
-- Remove hardcoded values and import from config files:
-  - Use `/src/config/pricing.ts` for pricing data
-  - Use `/src/config/contact.ts` for contact information
-  - Use `/src/config/universities.ts` for university data
-  - Use `/src/config/routes.ts` for URLs
-
-**Translation Missing** - Missing bilingual content
-- Add translation keys to both language files:
-  - `/web-app/src/i18n/en.json`
-  - `/web-app/src/i18n/pt.json`
-- Use `const { t } = useLanguage()` in components
-
-**Mobile Responsiveness Issues** - UI breaks on mobile
-- Test at key breakpoints: **375px** (mobile), **768px** (tablet), **1024px** (desktop)
-- Use responsive design mode in Chrome/Firefox dev tools
-- Prioritize mobile-first design for Portuguese-speaking community
+### Build Issues  
+**TypeScript errors**: Run `npx tsc --noEmit` to isolate issues  
+**Hardcoding audit fails**: Import from `/src/config/` instead of hardcoding  
+**Memory issues**: `export NODE_OPTIONS="--max-old-space-size=4096"`
 
 ### Cultural Context Issues
+**Wrong terminology**: Use "Portuguese-speaking community" NOT "Portuguese community"  
+**Geographic scope**: Reference "United Kingdom" NOT just "London"  
+**Missing translations**: Add keys to both `/src/i18n/en.json` and `/src/i18n/pt.json`
 
-**Portuguese Cultural Validation** - Content doesn't meet cultural guidelines
-- Use "Portuguese-speaking community" NOT "Portuguese community"
-- Reference "United Kingdom" NOT just "London"
-- Include diverse lusophone nations (Portugal, Brazil, Cape Verde, Angola, etc.)
-- Import Portuguese brand colors from `@/config/brand.ts` (never generic blue/gray)
-
-### Performance Issues
-
-**Component Loading Slow** - Pages take too long to load
-- Check for unnecessary re-renders in React components
-- Optimize images and use Next.js Image component
-- Review bundle size with `ANALYZE=true npm run dev`
-
-**Database Query Performance** - Supabase queries are slow
-- Review PostGIS queries for business directory
-- Check indexing on frequently queried columns
-- Use Supabase performance insights
-
-**For Complex Issues**: Use the Task tool to access specialized troubleshooting agents for step-by-step guidance based on your specific error context.
-
-**E2E Testing Issues** - Playwright tests failing
-```bash
-cd web-app
-npx playwright test --headed          # Visual debugging
-npx playwright test --debug          # Step-through debugging
-npx playwright codegen               # Generate new tests
-```
+### Mobile Issues
+**Responsive breaks**: Test at 375px, 768px, 1024px breakpoints  
+**Touch targets**: Ensure minimum 44px tap targets for Portuguese cultural content
 
 ## Deployment
 

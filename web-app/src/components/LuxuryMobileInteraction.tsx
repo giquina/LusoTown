@@ -19,7 +19,8 @@ export function LuxuryRipple({
   disabled = false, 
   rippleColor = 'rgba(255, 255, 255, 0.3)',
   onClick,
-  hapticFeedback = 'light'
+  hapticFeedback = 'light',
+  ...rest
 }: LuxuryRippleProps) {
   const [ripples, setRipples] = useState<Array<{ id: number; x: number; y: number; size: number }>>([]);
   const rippleRef = useRef<HTMLDivElement>(null);
@@ -68,7 +69,7 @@ export function LuxuryRipple({
 
   return (
     <div
-      {...rest}
+  {...rest}
       ref={rippleRef}
       className={`luxury-touch-target relative overflow-hidden ${className}`}
       onMouseDown={createRipple}

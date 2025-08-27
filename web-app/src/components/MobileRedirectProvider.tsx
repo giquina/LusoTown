@@ -255,7 +255,7 @@ export function MobileDownloadPrompt() {
     showDownloadPrompt,
     dismissPrompt,
     triggerAppDownload,
-    triggerPWAInstall
+  triggerPWAInstall
   } = useMobileRedirect();
 
   if (!showDownloadPrompt || !deviceInfo) return null;
@@ -287,7 +287,7 @@ export function MobileDownloadPrompt() {
             {t('mobile.app.continue_web', 'Not now')}
           </button>
           
-          {installationStatus?.canInstallPWA && deferredPrompt ? (
+          {installationStatus?.canInstallPWA ? (
             <button
               onClick={triggerPWAInstall}
               className="bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors min-h-[36px]"
