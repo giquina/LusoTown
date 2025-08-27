@@ -7,9 +7,9 @@
     "npm": ">=9.0.0"
   },
   "scripts": {
-    "preinstall": "npx --yes npm@9 --version >/dev/null 2>&1 && (node -e \"try{require('child_process').execSync('npm -v',{stdio:'inherit'})}catch(e){}\") || true",
-    "dev": "SKIP_TYPE_CHECK=true next dev",
-    "build": "node scripts/optimized-build.js",
+  "preinstall": "npx --yes npm@9 --version >/dev/null 2>&1 && (node -e \"try{require('child_process').execSync('npm -v',{stdio:'inherit'})}catch(e){}\") || true",
+  "dev": "SKIP_TYPE_CHECK=true next dev",
+  "build": "npm run build:next",
     "build:next": "next build",
     "build:debug": "NODE_OPTIONS='--max-old-space-size=8192 --inspect' next build",
     "build:memory-safe": "node scripts/memory-safe-build.js",

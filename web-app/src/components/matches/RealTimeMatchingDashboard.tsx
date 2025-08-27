@@ -11,7 +11,7 @@ import {
   MapPinIcon,
   ClockIcon,
   UserGroupIcon,
-  TrendingUpIcon,
+  ArrowTrendingUpIcon,
   LightBulbIcon,
   MagnifyingGlassIcon,
   AdjustmentsHorizontalIcon,

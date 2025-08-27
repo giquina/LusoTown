@@ -6,7 +6,6 @@ import { useLanguage } from '@/context/LanguageContext';
 import {
   HeartIcon,
   SparklesIcon,
-  HandHeartIcon,
   HomeIcon,
   MusicalNoteIcon,
   UserGroupIcon,

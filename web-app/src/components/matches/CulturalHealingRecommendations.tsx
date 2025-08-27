@@ -19,7 +19,6 @@ import {
   StarIcon,
   SparklesIcon,
   SunIcon,
-  HandHeartIcon,
   GlobeAltIcon,
   FireIcon,
 } from '@heroicons/react/24/outline';
@@ -121,7 +120,7 @@ const culturalActivities: CulturalActivity[] = [
     location: 'Portuguese-speaking community Centre',
     emotionalBenefit: 'Emotional validation and mutual support',
     culturalConnection: 8,
-    icon: HandHeartIcon,
+  icon: HeartIcon,
     color: 'from-green-500 to-teal-500',
     healingPotential: 10,
   },

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+export const dynamic = 'force-dynamic'
 
 // Lusophone cultural notification preferences management
 export async function PUT(request: NextRequest) {

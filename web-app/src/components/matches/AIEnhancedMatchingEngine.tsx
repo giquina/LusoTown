@@ -6,7 +6,6 @@ import { useLanguage } from '@/context/LanguageContext';
 import {
   HeartIcon,
   SparklesIcon,
-  HandHeartIcon,
   HomeIcon,
   MusicalNoteIcon,
   UserGroupIcon,
@@ -23,7 +22,7 @@ import {
   ChartBarIcon,
   AdjustmentsHorizontalIcon,
   LightBulbIcon,
-  TrendingUpIcon,
+  ArrowTrendingUpIcon,
   EyeIcon,
   ClockIcon,
 } from '@heroicons/react/24/outline';
@@ -733,7 +732,7 @@ export default function AIEnhancedMatchingEngine({
   const getAIInsightIcon = (type: string) => {
     switch (type) {
       case 'ml': return BrainSolid;
-      case 'prediction': return TrendingUpIcon;
+  case 'prediction': return ArrowTrendingUpIcon;
       case 'learning': return LightBulbIcon;
       case 'regional': return GlobeAltIcon;
       default: return SparklesIcon;
@@ -743,7 +742,7 @@ export default function AIEnhancedMatchingEngine({
   const getConnectionTypeIcon = (type: SaudadeCompatibilityResult['connectionType']) => {
     switch (type) {
       case 'saudade_soulmate': return HeartSolid;
-      case 'cultural_healer': return HandHeartIcon;
+  case 'cultural_healer': return HeartIcon;
       case 'heritage_guardian': return HomeIcon;
       case 'integration_partner': return UserGroupIcon;
       default: return SparklesIcon;
@@ -1154,7 +1153,7 @@ export default function AIEnhancedMatchingEngine({
               {learningMode && (
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                    <TrendingUpIcon className="w-5 h-5 text-orange-600" />
+                    <ArrowTrendingUpIcon className="w-5 h-5 text-orange-600" />
                     {language === 'pt' ? 'Dados de Aprendizagem Inteligente' : 'Smart Learning Data'}
                   </h4>
                   <div className="bg-orange-50 p-4 rounded-lg">

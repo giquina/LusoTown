@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import {
   HeartIcon,
-  HandHeartIcon,
   HomeIcon,
   MusicalNoteIcon,
   SparklesIcon,
@@ -76,7 +75,7 @@ export default function SaudadeMatchCard({
       case 'saudade_soulmate':
         return HeartSolid;
       case 'cultural_healer':
-        return HandHeartIcon;
+  return HeartIcon;
       case 'heritage_guardian':
         return HomeIcon;
       case 'integration_partner':

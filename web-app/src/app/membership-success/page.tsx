@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useLanguage } from '@/context/LanguageContext'
 import { Button } from '@/components/ui/button'
@@ -96,7 +96,7 @@ const MEMBERSHIP_CONFIG = {
   }
 }
 
-export default function MembershipSuccessPage() {
+function MembershipSuccessPageInner() {
   const router = useRouter()
   const { t } = useLanguage()
   const searchParams = useSearchParams()
@@ -342,5 +342,13 @@ export default function MembershipSuccessPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function MembershipSuccessPage() {
+  return (
+    <Suspense fallback={<div className="p-8 text-center">Loading...</div>}>
+      <MembershipSuccessPageInner />
+    </Suspense>
   )
 }

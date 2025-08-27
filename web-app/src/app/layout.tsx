@@ -4,15 +4,28 @@ import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { SubscriptionProvider } from "@/context/SubscriptionContext";
+import { HeritageProvider } from "@/context/HeritageContext";
+import { FavoritesProvider } from "@/context/FavoritesContext";
+import { FollowingProvider } from "@/context/EnhancedFollowingContext";
+import { CartProvider } from "@/context/CartContext";
+import { NetworkingProvider } from "@/context/NetworkingContext";
+import { NotificationProvider } from "@/context/NotificationContext";
+import { PlatformIntegrationProvider } from "@/context/PlatformIntegrationContext";
+import { WaitingListProvider } from "@/context/WaitingListContext";
+import { NavigationProvider } from "@/context/NavigationContext";
 import Header from "@/components/Header";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import dynamic from "next/dynamic";
+import { WidgetManager } from "@/components/WidgetManager";
+import { METADATA_BASE } from "@/config/site";
 
 // Dynamic imports for heavy components
 const LusoBotWrapper = dynamic(() => import("@/components/LusoBotWrapper"), {
   ssr: false,
   loading: () => null,
-});
+}) as unknown as React.FC;
+
+// Keep only LusoBotWrapper as dynamic client-only widget
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -25,7 +38,7 @@ export const metadata = {
     default: "LusoTown - Portuguese-speaking Community Platform in London"
   },
   description: "Connect with the Portuguese-speaking community in London. Discover events, businesses, and cultural experiences.",
-  metadataBase: new URL('https://web-99kxh0sku-giquinas-projects.vercel.app'),
+  metadataBase: METADATA_BASE,
 };
 
 export default function RootLayout({
@@ -37,33 +50,53 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className={`${inter.className} antialiased`}>
         <ErrorBoundary>
-          <LanguageProvider>
-            <SubscriptionProvider>
-              {/* Essential Header */}
-              <Header />
-              
-              {/* Main Content */}
-              <main className="relative">
-                {children}
-              </main>
-              
-              {/* Essential Widgets */}
-              <LusoBotWrapper />
-              
-              {/* Toast Notifications */}
-              <Toaster
-                position="top-right"
-                toastOptions={{
-                  duration: 4000,
-                  style: {
-                    background: '#fff',
-                    color: '#374151',
-                    border: '1px solid #d1d5db',
-                  },
-                }}
-              />
-            </SubscriptionProvider>
-          </LanguageProvider>
+          <HeritageProvider>
+            <LanguageProvider>
+              <FavoritesProvider>
+                <FollowingProvider>
+                  <CartProvider>
+                    <NetworkingProvider>
+                      <SubscriptionProvider>
+                        <NotificationProvider>
+                          <PlatformIntegrationProvider>
+                            <WaitingListProvider>
+                              <NavigationProvider>
+                                {/* Essential Header */}
+                                <Header />
+
+                                <WidgetManager>
+                                  {/* Main Content */}
+                                  <main className="relative">
+                                    {children}
+                                  </main>
+
+                                  {/* Client-only widgets */}
+                                  <LusoBotWrapper />
+                                </WidgetManager>
+
+                                {/* Toast Notifications */}
+                                <Toaster
+                                  position="top-right"
+                                  toastOptions={{
+                                    duration: 4000,
+                                    style: {
+                                      background: '#fff',
+                                      color: '#374151',
+                                      border: '1px solid #d1d5db',
+                                    },
+                                  }}
+                                />
+                              </NavigationProvider>
+                            </WaitingListProvider>
+                          </PlatformIntegrationProvider>
+                        </NotificationProvider>
+                      </SubscriptionProvider>
+                    </NetworkingProvider>
+                  </CartProvider>
+                </FollowingProvider>
+              </FavoritesProvider>
+            </LanguageProvider>
+          </HeritageProvider>
         </ErrorBoundary>
       </body>
     </html>

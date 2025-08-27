@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { 
   CpuChipIcon as Brain, 
   BoltIcon as Zap, 
-  TrendingUpIcon as TrendingUp, 
+  ArrowTrendingUpIcon as TrendingUp, 
   EyeIcon as Target,
   UsersIcon as Users,
   ChartBarSquareIcon

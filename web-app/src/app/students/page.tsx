@@ -600,7 +600,7 @@ const STUDENT_EVENTS: StudentEvent[] = [
 ]
 
 export default function StudentsPage() {
-  const { language } = useLanguage()
+  const { language, t } = useLanguage()
   const [selectedUniversityType, setSelectedUniversityType] = useState<string>('all')
   const [selectedBenefitCategory, setSelectedBenefitCategory] = useState<string>('all')
   const [showVerificationModal, setShowVerificationModal] = useState(false)

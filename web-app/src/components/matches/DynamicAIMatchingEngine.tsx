@@ -4,9 +4,9 @@ import React, { Suspense, lazy, useState, useCallback } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useAIPerformance } from '@/hooks/useAIPerformance'
 import { 
-  Heart, 
-  Users, 
-  Target,
+  HeartIcon, 
+  UserGroupIcon, 
+  ChartBarSquareIcon as TargetIcon,
   ExclamationTriangleIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline'
@@ -44,7 +44,7 @@ function AIMatchingLoader() {
       <div className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white rounded-lg p-6 relative overflow-hidden animate-pulse">
         <div className="flex items-center space-x-3">
           <div className="relative">
-            <Heart className="h-8 w-8 animate-pulse" />
+            <HeartIcon className="h-8 w-8 animate-pulse" />
             <SparklesIcon className="absolute -top-1 -right-1 h-4 w-4 animate-spin" />
           </div>
           <div>
@@ -126,7 +126,7 @@ function AIMatchingError({ error, retry }: { error: Error; retry: () => void }) 
   return (
     <div className="p-8 text-center">
       <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-        <Heart className="w-8 h-8 text-red-600" />
+  <HeartIcon className="w-8 h-8 text-red-600" />
       </div>
       <h3 className="text-lg font-semibold text-red-900 mb-2">
         {language === 'pt' 
@@ -252,7 +252,7 @@ export default function DynamicAIMatchingEngine({
             }`} />
             {serviceStatus === 'loading' && (
               <>
-                <Heart className="w-3 h-3 animate-pulse" />
+                <HeartIcon className="w-3 h-3 animate-pulse" />
                 <span>{language === 'pt' ? 'Analisando' : 'Analyzing'}</span>
               </>
             )}
@@ -289,7 +289,7 @@ export default function DynamicAIMatchingEngine({
               </span>
             </div>
             <div className="flex items-center gap-2 text-primary-700">
-              <Target className="w-4 h-4" />
+              <TargetIcon className="w-4 h-4" />
               <span>{metrics.culturalAccuracy.toFixed(1)}% {language === 'pt' ? 'precisão' : 'accuracy'}</span>
             </div>
           </div>

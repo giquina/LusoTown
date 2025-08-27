@@ -87,7 +87,10 @@ const OptimizedPortugueseCarousel = memo(<T extends any>({
   })
 
   const containerRef = useRef<HTMLDivElement>(null)
-  const itemsPerView = window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 2 : 3
+  const itemsPerView = React.useMemo(() => {
+    if (typeof window === 'undefined') return 1
+    return window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 2 : 3
+  }, [])
   const maxIndex = Math.max(0, items.length - itemsPerView)
 
   // Enhanced performance optimization hook
@@ -290,7 +293,7 @@ const OptimizedPortugueseCarousel = memo(<T extends any>({
               </div>
             )}
             
-            {window.innerWidth <= 768 && (
+            {typeof window !== 'undefined' && window.innerWidth <= 768 && (
               <div className="flex items-center gap-1 text-blue-600">
                 <DevicePhoneMobileIcon className="w-4 h-4" />
                 <span>Mobile</span>
@@ -432,7 +435,7 @@ const OptimizedPortugueseCarousel = memo(<T extends any>({
           </AnimatePresence>
 
           {/* Mobile swipe hint */}
-          {window.innerWidth <= 768 && currentIndex === 0 && (
+          {typeof window !== 'undefined' && window.innerWidth <= 768 && currentIndex === 0 && (
             <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
               <div className="w-1 h-1 bg-gray-400 rounded-full opacity-50"></div>
               <div className="w-1 h-1 bg-gray-400 rounded-full opacity-75"></div>
