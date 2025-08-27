@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useState, useEffect, useCallback, useRef, KeyboardEvent } from 'react'
-import { motion, AnimatePresence, PanInfo, useMotionValue, useTransform, animate } from 'framer-motion'
+import React, { useState, useEffect, useCallback, useRef, KeyboardEvent, memo, useMemo, lazy, Suspense } from 'react'
+import { motion, AnimatePresence, PanInfo, useMotionValue, useTransform, animate, useAnimation } from 'framer-motion'
 import { 
   ChevronLeftIcon, 
   ChevronRightIcon,
@@ -12,6 +12,8 @@ import {
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 import { PORTUGUESE_COLORS, DESIGN_TOKENS } from '@/config/brand'
+import { usePortugueseBundleOptimization } from '@/utils/portuguese-bundle-optimizer'
+import logger from '@/utils/logger'
 import { EnhancedMobileGestures, usePortugueseGestures } from '../EnhancedMobileGestures'
 
 /**
@@ -491,7 +493,7 @@ function EmptyState({ message }: { message: string }) {
 /**
  * Main LusophoneCarousel Component with Enhanced Mobile Features
  */
-export default function LusophoneCarousel<T extends CarouselItemType>({
+const LusophoneCarousel = memo(<T extends CarouselItemType>({
   items,
   renderItem,
   title,
@@ -513,10 +515,13 @@ export default function LusophoneCarousel<T extends CarouselItemType>({
   onPerformanceUpdate,
   enablePortugueseGestures = true,
   enableAccessibilityAnnouncements = true
-}: LusophoneCarouselProps<T>) {
+}: LusophoneCarouselProps<T>) => {
   const { language, t } = useLanguage()
+  const { stats, loadBundle } = usePortugueseBundleOptimization()
   const { currentConfig, screenSize } = useResponsive(responsive)
   const carouselRef = useRef<HTMLDivElement>(null)
+  const [isIntersecting, setIsIntersecting] = useState(false)
+  const controls = useAnimation()
   
   // Enhanced mobile settings
   const mobileConfig = { ...DEFAULT_MOBILE_SETTINGS, ...mobileSettings }
@@ -1064,25 +1069,38 @@ export default function LusophoneCarousel<T extends CarouselItemType>({
         </div>
       )}
 
-      {/* Screen Reader Status */}
+      {/* Enhanced Screen Reader Status with Performance Info */}
       <div 
         className="sr-only" 
         aria-live="polite" 
         aria-atomic="true"
         role="status"
       >
-        {t('carousel.status', `Showing items ${currentIndex + 1} to ${Math.min(currentIndex + currentConfig.itemsPerView, items.length)} of ${items.length}`, {
+        {t('carousel.status', `Showing Portuguese cultural items ${currentIndex + 1} to ${Math.min(currentIndex + currentConfig.itemsPerView, items.length)} of ${items.length}. ${isOffline ? 'Offline mode active.' : ''} ${performanceMetrics.networkStatus === 'slow' ? 'Slow connection detected.' : ''}`, {
           start: currentIndex + 1,
           end: Math.min(currentIndex + currentConfig.itemsPerView, items.length),
-          total: items.length
+          total: items.length,
+          networkStatus: performanceMetrics.networkStatus
         })}
       </div>
+
+      {/* Development Performance Monitor */}
+      {process.env.NODE_ENV === 'development' && onPerformanceUpdate && (
+        <div className="mt-4 p-2 bg-gray-100 rounded text-xs">
+          <div>Load: {performanceMetrics.loadTime.toFixed(0)}ms</div>
+          <div>Memory: {performanceMetrics.memoryUsage.toFixed(1)}MB</div>
+          <div>Network: {performanceMetrics.networkStatus}</div>
+          <div>Mobile Settings: Swipe={mobileConfig.enableSwipeGestures.toString()}, Haptic={mobileConfig.enableHapticFeedback.toString()}</div>
+        </div>
+      )}
     </section>
   )
-}
+})
+
+export default LusophoneCarousel
 
 /**
- * Export utility functions and types for external use
+ * Export enhanced utility functions and types for external use
  */
 export {
   type WeekendEventItem,
@@ -1091,7 +1109,14 @@ export {
   type CulturalCelebrationItem,
   type CarouselItemType,
   type ResponsiveConfig,
+  type MobileSettings,
+  type PWASettings,
+  type PerformanceMetrics,
   DEFAULT_RESPONSIVE,
+  DEFAULT_MOBILE_SETTINGS,
+  DEFAULT_PWA_SETTINGS,
   useCarouselNavigation,
-  useResponsive
+  useResponsive,
+  useMobilePerformance,
+  usePWAFeatures
 }

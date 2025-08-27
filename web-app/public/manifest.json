@@ -6,7 +6,7 @@
   "display": "standalone",
   "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "background_color": "#ffffff",
-  "theme_color": "#DC2626",
+  "theme_color": "#D4A574",
   "orientation": "portrait-primary",
   "categories": ["social", "lifestyle", "business", "entertainment", "community"],
   "lang": "en-GB",
@@ -83,10 +83,10 @@
   ],
   "shortcuts": [
     {
-      "name": "LusoTown Events",
+      "name": "Portuguese Cultural Events",
       "short_name": "Eventos",
-      "description": "Browse upcoming LusoTown cultural events",
-      "url": "/events?utm_source=pwa_shortcut",
+      "description": "Browse upcoming Portuguese cultural events in the UK",
+      "url": "/events?utm_source=pwa_shortcut&lang=pt",
       "icons": [
         {
           "src": "/icons/events-shortcut.png",

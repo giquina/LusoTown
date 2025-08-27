@@ -207,7 +207,7 @@ export default function RootLayout({
           }}
         />
 
-        <ErrorBoundary>
+        <ErrorBoundary level="critical" componentName="Root Application" enableTelemetry={true}>
           <AuthPopupProvider>
             <HeritageProvider>
               <HeritageStyleProvider>
@@ -221,39 +221,55 @@ export default function RootLayout({
                               <PlatformIntegrationProvider>
                                 <WaitingListProvider>
                                   <NavigationProvider>
-                                    {/* PRIORITY: Header renders FIRST without complex wrappers for better SSR */}
-                                    <ComponentErrorBoundary componentName="Header">
+                                    {/* OPTIMIZED: Header with improved error boundary */}
+                                    <ComponentErrorBoundary 
+                                      componentName="Header" 
+                                      level="critical"
+                                      maxRetries={2}
+                                    >
                                       <Header />
                                     </ComponentErrorBoundary>
 
                                     <ScrollToTop />
 
-                                    {/* Main content */}
-                                    {children}
-
-                                    {/* CLIENT-ONLY components loaded after initial render */}
-                                    <ComponentErrorBoundary componentName="Live Feed Notifications">
-                                      <LiveFeedNotifications />
+                                    {/* Main content with page-level error boundary */}
+                                    <ComponentErrorBoundary 
+                                      componentName="Main Content" 
+                                      level="page"
+                                      maxRetries={1}
+                                    >
+                                      {children}
                                     </ComponentErrorBoundary>
 
-                                    <ComponentErrorBoundary componentName="Favorite Notification">
+                                    {/* CLIENT-ONLY components with reduced error boundaries */}
+                                    <ComponentErrorBoundary 
+                                      componentName="Live Notifications"
+                                      level="component"
+                                      maxRetries={3}
+                                    >
+                                      <LiveFeedNotifications />
                                       <FavoriteNotification />
                                     </ComponentErrorBoundary>
 
-                                    <ComponentErrorBoundary componentName="Auth Popup">
+                                    <ComponentErrorBoundary 
+                                      componentName="Auth System"
+                                      level="component"
+                                      maxRetries={2}
+                                    >
                                       <AuthPopup />
                                     </ComponentErrorBoundary>
 
-                                    {/* Widget Management System - Centralized positioning */}
-                                    <WidgetManager>
-                                      <ComponentErrorBoundary componentName="App Download Bar">
+                                    {/* Widget Management System - Single error boundary */}
+                                    <ComponentErrorBoundary 
+                                      componentName="Widget System"
+                                      level="component"
+                                      maxRetries={2}
+                                    >
+                                      <WidgetManager>
                                         <AppDownloadBar />
-                                      </ComponentErrorBoundary>
-                                      
-                                      <ComponentErrorBoundary componentName="LusoBot Widget">
                                         <LusoBotWrapper />
-                                      </ComponentErrorBoundary>
-                                    </WidgetManager>
+                                      </WidgetManager>
+                                    </ComponentErrorBoundary>
                                   </NavigationProvider>
                                 </WaitingListProvider>
                               </PlatformIntegrationProvider>

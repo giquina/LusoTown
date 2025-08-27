@@ -328,3 +328,205 @@ html {
 .carousel-success {
   @apply border-green-200 bg-green-50;
 }
+
+/* Enhanced mobile optimizations for Portuguese-speaking community */
+@media (max-width: 768px) {
+  .lusophone-carousel {
+    /* Improved touch targets for Portuguese cultural navigation */
+    --touch-target-size: 44px;
+    --mobile-spacing: 12px;
+    --mobile-border-radius: 8px;
+  }
+  
+  /* Pull to refresh styles */
+  .pull-to-refresh {
+    @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full;
+    @apply bg-white rounded-full p-2 shadow-lg border border-primary-200;
+  }
+  
+  /* Swipe indicators */
+  .swipe-hint {
+    @apply absolute top-4 right-4 z-10;
+    @apply bg-black/10 backdrop-blur-sm rounded-full p-2;
+    @apply text-xs text-gray-600;
+  }
+  
+  /* Enhanced dot indicators for mobile */
+  .mobile-dot-indicators {
+    @apply flex justify-center space-x-3 mt-6;
+  }
+  
+  .mobile-dot-indicator {
+    @apply w-4 h-4 rounded-full transition-all duration-300 touch-manipulation;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    min-width: var(--touch-target-size);
+    min-height: var(--touch-target-size);
+  }
+  
+  .mobile-dot-indicator-active {
+    @apply bg-primary-600 scale-125 shadow-lg;
+  }
+  
+  .mobile-dot-indicator-inactive {
+    @apply bg-primary-300 hover:bg-primary-400 hover:scale-110;
+  }
+  
+  /* Progress bar */
+  .mobile-progress-bar {
+    @apply absolute bottom-0 left-0 w-full h-1 bg-gray-200 rounded-full overflow-hidden;
+  }
+  
+  .mobile-progress-fill {
+    @apply h-full bg-primary-500 rounded-full;
+  }
+  
+  /* Touch interaction feedback */
+  .touch-ripple {
+    @apply absolute pointer-events-none rounded-full;
+    background: radial-gradient(circle, rgba(59,130,246,0.3) 0%, transparent 70%);
+  }
+  
+  /* Gesture direction indicators */
+  .gesture-indicator {
+    @apply absolute inset-0 flex items-center justify-center pointer-events-none z-10;
+  }
+  
+  .gesture-indicator-content {
+    @apply bg-black/20 backdrop-blur-sm rounded-full p-4;
+    @apply text-white text-2xl;
+  }
+  
+  /* Long press indicator */
+  .long-press-indicator {
+    @apply absolute inset-0 flex items-center justify-center pointer-events-none z-10;
+  }
+  
+  .long-press-spinner {
+    @apply bg-red-500/20 backdrop-blur-sm rounded-full p-6;
+  }
+  
+  /* Mobile carousel content optimizations */
+  .mobile-carousel-content {
+    @apply p-4 rounded-xl;
+    touch-action: pan-x pinch-zoom;
+    min-height: 200px;
+  }
+  
+  .mobile-carousel-item {
+    @apply cursor-pointer touch-manipulation;
+    min-height: 160px;
+    min-width: 280px;
+  }
+  
+  .mobile-carousel-item:active {
+    @apply scale-95;
+  }
+  
+  /* Lazy loading placeholder */
+  .loading-placeholder {
+    @apply bg-gray-200 rounded-lg animate-pulse;
+    @apply flex items-center justify-center;
+  }
+  
+  /* Mobile auto-advance control */
+  .mobile-auto-advance {
+    @apply flex items-center gap-2;
+    @apply bg-white border border-primary-200 rounded-full px-4 py-2;
+    @apply shadow-sm hover:shadow-md transition-all duration-200;
+    min-height: var(--touch-target-size);
+  }
+}
+
+/* PWA-specific styles */
+.offline-mode {
+  @apply relative;
+}
+
+.offline-mode::before {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-1 bg-yellow-400;
+}
+
+.pwa-status-bar {
+  @apply p-2 bg-yellow-100 border border-yellow-200 rounded-lg;
+  @apply flex items-center gap-2 mb-4;
+}
+
+.install-pwa-button {
+  @apply ml-auto text-xs bg-blue-500 text-white px-2 py-1 rounded;
+  @apply hover:bg-blue-600 transition-colors duration-200;
+}
+
+/* Performance monitoring styles */
+.performance-monitor {
+  @apply mt-4 p-2 bg-gray-100 rounded text-xs space-y-1;
+}
+
+.performance-metric {
+  @apply flex justify-between items-center;
+}
+
+/* Portuguese cultural theming for mobile */
+@media (max-width: 768px) {
+  .lusophone-carousel {
+    /* Portuguese-specific mobile color variables */
+    --portuguese-mobile-primary: #D4A574;
+    --portuguese-mobile-secondary: #B8945E;
+    --portuguese-mobile-accent: #EFB140;
+    --portuguese-mobile-background: linear-gradient(135deg, #FDF7ED 0%, #F7D997 100%);
+  }
+  
+  /* Portuguese cultural gradient for mobile */
+  .mobile-carousel-content-portuguese {
+    background: var(--portuguese-mobile-background);
+  }
+  
+  /* Cultural event specific theming */
+  .mobile-cultural-event {
+    background: linear-gradient(135deg, #FDF2F2 0%, #F8D7D7 30%, #FDF7ED 70%, #F7D997 100%);
+  }
+  
+  /* PALOP heritage mobile theming */
+  .mobile-palop-heritage {
+    background: linear-gradient(135deg, #F0F8F0 0%, #D6E8D6 30%, #FDF7ED 70%, #F7D997 100%);
+  }
+}
+
+/* Accessibility improvements for mobile */
+@media (prefers-color-scheme: dark) {
+  .lusophone-carousel {
+    --primary-50: #2D2D2D;
+    --primary-100: #3D3D3D;
+    --primary-200: #4D4D4D;
+    --gold-50: #2D2A24;
+    --gold-100: #3D3528;
+  }
+}
+
+/* Reduced motion for mobile users */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-carousel-item,
+  .mobile-dot-indicator,
+  .touch-ripple {
+    @apply transition-none;
+  }
+  
+  .loading-placeholder {
+    @apply animate-none;
+  }
+}
+
+/* High contrast mode for mobile accessibility */
+@media (prefers-contrast: high) {
+  .mobile-dot-indicator {
+    @apply border-2 border-gray-900;
+  }
+  
+  .mobile-auto-advance {
+    @apply border-2 border-gray-900;
+  }
+  
+  .gesture-indicator-content {
+    @apply bg-gray-900/90 text-white;
+  }
+}

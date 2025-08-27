@@ -557,40 +557,106 @@ export class PortugueseBundleOptimizer {
 // Create global instance
 export const portugueseBundleOptimizer = new PortugueseBundleOptimizer();
 
-// Hook for React components
+// Optimized hook for React components with error handling
 export function usePortugueseBundleOptimization() {
-  const [stats, setStats] = React.useState(
-    portugueseBundleOptimizer.getOptimizationStats()
-  );
+  const [stats, setStats] = React.useState(() => {
+    try {
+      return portugueseBundleOptimizer.getOptimizationStats()
+    } catch (error) {
+      logger.error('Failed to get initial optimization stats:', error)
+      return {
+        loadedBundles: [],
+        preloadedResources: [],
+        deviceContext: null,
+        optimizationsApplied: []
+      }
+    }
+  })
+  const [isInitialized, setIsInitialized] = React.useState(false)
+  const statsUpdateTimeoutRef = React.useRef<NodeJS.Timeout>()
 
   React.useEffect(() => {
-    // Initialize optimization
-    portugueseBundleOptimizer.preloadCriticalResources();
-    portugueseBundleOptimizer.optimizeForMobile();
+    const initializeOptimization = async () => {
+      if (isInitialized) return
 
-    // Load critical Lusophone content
-    portugueseBundleOptimizer.loadPortugueseContentBundle("critical");
+      try {
+        // Initialize optimization with error handling
+        await Promise.all([
+          portugueseBundleOptimizer.preloadCriticalResources().catch(err => 
+            logger.warn('Critical resources preload failed:', err)
+          ),
+          Promise.resolve(portugueseBundleOptimizer.optimizeForMobile()).catch(err =>
+            logger.warn('Mobile optimization failed:', err)
+          )
+        ])
 
-    // Update stats
-    const updateStats = () =>
-      setStats(portugueseBundleOptimizer.getOptimizationStats());
-    const interval = setInterval(updateStats, 2000);
+        // Load critical Portuguese cultural content
+        await portugueseBundleOptimizer.loadPortugueseContentBundle('critical').catch(err =>
+          logger.warn('Critical Portuguese bundle loading failed:', err)
+        )
+
+        setIsInitialized(true)
+      } catch (error) {
+        logger.error('Bundle optimization initialization failed:', error)
+        setIsInitialized(true) // Continue even if initialization fails
+      }
+    }
+
+    initializeOptimization()
+
+    // Debounced stats update to prevent excessive re-renders
+    const updateStats = () => {
+      if (statsUpdateTimeoutRef.current) {
+        clearTimeout(statsUpdateTimeoutRef.current)
+      }
+      
+      statsUpdateTimeoutRef.current = setTimeout(() => {
+        try {
+          setStats(portugueseBundleOptimizer.getOptimizationStats())
+        } catch (error) {
+          logger.warn('Failed to update optimization stats:', error)
+        }
+      }, 500)
+    }
+
+    const interval = setInterval(updateStats, 3000) // Reduced frequency
 
     return () => {
-      clearInterval(interval);
-      portugueseBundleOptimizer.cleanup();
-    };
-  }, []);
+      clearInterval(interval)
+      if (statsUpdateTimeoutRef.current) {
+        clearTimeout(statsUpdateTimeoutRef.current)
+      }
+      try {
+        portugueseBundleOptimizer.cleanup()
+      } catch (error) {
+        logger.warn('Bundle optimizer cleanup failed:', error)
+      }
+    }
+  }, [isInitialized])
+
+  const loadBundle = React.useCallback(async (priority: keyof PortugueseContentPriority) => {
+    try {
+      await portugueseBundleOptimizer.loadPortugueseContentBundle(priority)
+    } catch (error) {
+      logger.error(`Failed to load Portuguese bundle: ${priority}`, error)
+    }
+  }, [])
+
+  const preloadResources = React.useCallback(async () => {
+    try {
+      await portugueseBundleOptimizer.preloadCriticalResources()
+    } catch (error) {
+      logger.error('Failed to preload Portuguese cultural resources:', error)
+    }
+  }, [])
 
   return {
     stats,
-    loadBundle: portugueseBundleOptimizer.loadPortugueseContentBundle.bind(
-      portugueseBundleOptimizer
-    ),
-    preloadResources: portugueseBundleOptimizer.preloadCriticalResources.bind(
-      portugueseBundleOptimizer
-    ),
-  };
+    isInitialized,
+    loadBundle,
+    preloadResources,
+    isOptimized: stats.optimizationsApplied.length > 0
+  }
 }
 
 // Utility functions

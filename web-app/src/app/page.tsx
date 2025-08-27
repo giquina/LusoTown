@@ -1,4 +1,5 @@
 "use client";
+// Fixed Heroicons and UI component imports - deployment test
 
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
@@ -81,7 +82,78 @@ export default function Home() {
   const router = useRouter();
   
   // Enhanced Carousel Data Management
-  const [weekendEvents] = useState(() => createMockWeekendEvents(12));
+  const [weekendEvents] = useState(() => {
+    const mockEvents = createMockWeekendEvents(12);
+    return [
+      ...mockEvents,
+      {
+        id: 'event-4',
+        title: {
+          en: 'Portuguese Traditional Folk Dance',
+          pt: 'Dança Folclórica Tradicional Portuguesa'
+        },
+        description: {
+          en: 'Experience authentic Portuguese folk dances with the London Portuguese Cultural Association',
+          pt: 'Experimente danças folclóricas portuguesas autênticas com a Associação Cultural Portuguesa de Londres'
+        },
+        date: 'Saturday, Dec 23',
+        time: '16:00',
+        location: 'Portuguese Cultural Centre, North London',
+        price: 8,
+        attendees: 24,
+        maxAttendees: 30,
+        countries: ['Portugal'],
+        flagEmoji: '🇵🇹',
+        category: 'Cultural',
+        tags: ['Folk Dance', 'Traditional', 'Cultural'],
+        image: '/events/folk-dance.jpg'
+      },
+      {
+        id: 'event-5',
+        title: {
+          en: 'Guinea-Bissau Independence Celebration',
+          pt: 'Celebração da Independência da Guiné-Bissau'
+        },
+        description: {
+          en: 'Celebrate Guinea-Bissau independence with traditional music, dance, and authentic cuisine',
+          pt: 'Celebre a independência da Guiné-Bissau com música, dança e culinária tradicional autêntica'
+        },
+        date: 'Sunday, Dec 24',
+        time: '13:00',
+        location: 'Community Centre, West London',
+        price: 0,
+        attendees: 45,
+        maxAttendees: 60,
+        countries: ['Guinea-Bissau'],
+        flagEmoji: '🇬🇼',
+        category: 'Cultural',
+        tags: ['Independence', 'PALOP', 'Cultural'],
+        image: '/events/guinea-bissau.jpg'
+      },
+      {
+        id: 'event-6',
+        title: {
+          en: 'São Tomé and Príncipe Coffee Tasting',
+          pt: 'Degustação de Café de São Tomé e Príncipe'
+        },
+        description: {
+          en: 'Discover the unique flavors of São Tomé coffee with expert baristas and cultural stories',
+          pt: 'Descubra os sabores únicos do café de São Tomé com baristas especialistas e histórias culturais'
+        },
+        date: 'Friday, Dec 29',
+        time: '18:30',
+        location: 'Specialty Coffee House, Central London',
+        price: 25,
+        attendees: 16,
+        maxAttendees: 20,
+        countries: ['São Tomé and Príncipe'],
+        flagEmoji: '🇸🇹',
+        category: 'Food & Drink',
+        tags: ['Coffee', 'PALOP', 'Tasting'],
+        image: '/events/coffee-tasting.jpg'
+      }
+    ];
+  });
   const [weeklyDiscoveries] = useState<WeeklyDiscoveryItem[]>(() => [
     {
       id: 'discovery-1',
@@ -798,242 +870,7 @@ export default function Home() {
                   className="mb-16"
                 />
 
-                {/* Weekly Activities Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") &&
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekly&tag=language`
-                      )
-                    }
-                    onClick={() =>
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekly&tag=language`
-                      )
-                    }
-                    className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-purple-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                    aria-label="See weekly language exchange events"
-                  >
-                    <div className="text-center mb-4">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-3xl">
-                        🗣️
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">
-                        Monday: Lusophone Language Exchange
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3">7pm • Camden</p>
-                    </div>
-                    <p className="text-gray-700 text-sm mb-4">
-                      "Encontro semanal para prática da língua. Ideal para
-                      melhorar português e conhecer nativos."
-                    </p>
-                    <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
-                      <div className="flex gap-2 flex-wrap">
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=language`}
-                          className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Language
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&when=weekly`}
-                          className="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Weekly
-                        </Link>
-                      </div>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&when=weekly&tag=language`}
-                        className="text-sm font-medium text-primary-700 hover:underline"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("common.view_more", "View more")}
-                      </Link>
-                    </div>
-                  </div>
 
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") &&
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekly&tag=business&tag=palop`
-                      )
-                    }
-                    onClick={() =>
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekly&tag=business&tag=palop`
-                      )
-                    }
-                    className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-green-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                    aria-label="See weekly PALOP business networking"
-                  >
-                    <div className="text-center mb-4">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl flex items-center justify-center text-3xl">
-                        🏂
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">
-                        Wednesday: PALOP Business Networking
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3">
-                        6pm • City of London
-                      </p>
-                    </div>
-                    <p className="text-gray-700 text-sm mb-4">
-                      "Networking semanal para empresários PALOP. Oportunidades
-                      de negócios e parcerias."
-                    </p>
-                    <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
-                      <div className="flex gap-2 flex-wrap">
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=business`}
-                          className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Business
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=palop`}
-                          className="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          PALOP
-                        </Link>
-                      </div>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&when=weekly&tag=business&tag=palop`}
-                        className="text-sm font-medium text-primary-700 hover:underline"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("common.view_more", "View more")}
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") &&
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekly&tag=dance&country=br`
-                      )
-                    }
-                    onClick={() =>
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekly&tag=dance&country=br`
-                      )
-                    }
-                    className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-red-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                    aria-label="See weekly Brazilian dance classes"
-                  >
-                    <div className="text-center mb-4">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl flex items-center justify-center text-3xl">
-                        💃
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">
-                        Friday: Brazilian Dance Classes
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3">
-                        8pm • Multiple Locations
-                      </p>
-                    </div>
-                    <p className="text-gray-700 text-sm mb-4">
-                      "Aulas semanais de samba, forro e danças brasileiras.
-                      Venha dançar e fazer amizades!"
-                    </p>
-                    <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
-                      <div className="flex gap-2 flex-wrap">
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=dance`}
-                          className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Dance
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&country=br`}
-                          className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          🇧🇷 Brazil
-                        </Link>
-                      </div>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&when=weekly&tag=dance&country=br`}
-                        className="text-sm font-medium text-primary-700 hover:underline"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("common.view_more", "View more")}
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") &&
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekly&tag=football&tag=social`
-                      )
-                    }
-                    onClick={() =>
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekly&tag=football&tag=social`
-                      )
-                    }
-                    className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                    aria-label="See weekly Lusophone football socials"
-                  >
-                    <div className="text-center mb-4">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-3xl">
-                        ⚽
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">
-                        Sunday: Lusophone Football Social
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3">
-                        3pm • Various Pubs
-                      </p>
-                    </div>
-                    <p className="text-gray-700 text-sm mb-4">
-                      "Assistir jogos de futebol português e brasileiro com a
-                      comunidade. Tapas e cerveja!"
-                    </p>
-                    <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
-                      <div className="flex gap-2 flex-wrap">
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=football`}
-                          className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Football
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=social`}
-                          className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Social
-                        </Link>
-                      </div>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&when=weekly&tag=football&tag=social`}
-                        className="text-sm font-medium text-primary-700 hover:underline"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("common.view_more", "View more")}
-                      </Link>
-                    </div>
-                  </div>
-                </div>
 
                 {/* Weekly Pattern Showcase */}
                 <div className="bg-gradient-to-br from-gray-900 to-purple-900 rounded-3xl p-8 lg:p-12 text-white mb-16">

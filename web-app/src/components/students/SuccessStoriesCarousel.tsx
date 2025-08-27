@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, memo, useRef, useCallback, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
 import {
@@ -473,44 +473,66 @@ interface SuccessStoriesCarouselProps {
   autoplayInterval?: number
 }
 
-export default function SuccessStoriesCarousel({ 
+const SuccessStoriesCarousel = memo(({ 
   autoplay = true, 
   autoplayInterval = 8000 
-}: SuccessStoriesCarouselProps) {
+}: SuccessStoriesCarouselProps) => {
   const { language } = useLanguage()
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(autoplay)
+  const [isIntersecting, setIsIntersecting] = useState(false)
+  const carouselRef = useRef<HTMLElement>(null)
 
-  // Auto-advance slides
+  // Intersection observer for performance
   useEffect(() => {
-    if (!isPlaying) return
+    if (!carouselRef.current) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries
+        setIsIntersecting(entry.isIntersecting)
+      },
+      { threshold: 0.1 }
+    )
+
+    observer.observe(carouselRef.current)
+    return () => observer.disconnect()
+  }, [])
+
+  // Optimized auto-advance slides - only when in view
+  useEffect(() => {
+    if (!isPlaying || !isIntersecting) return
     
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % SUCCESS_STORIES.length)
     }, autoplayInterval)
 
     return () => clearInterval(interval)
-  }, [isPlaying, autoplayInterval])
+  }, [isPlaying, autoplayInterval, isIntersecting])
 
-  const goToSlide = (index: number) => {
+  const goToSlide = useCallback((index: number) => {
     setCurrentIndex(index)
     setIsPlaying(false) // Pause autoplay when user interacts
-  }
+  }, [])
 
-  const goToPrevious = () => {
+  const goToPrevious = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + SUCCESS_STORIES.length) % SUCCESS_STORIES.length)
     setIsPlaying(false)
-  }
+  }, [])
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % SUCCESS_STORIES.length)
     setIsPlaying(false)
-  }
+  }, [])
 
-  const currentStory = SUCCESS_STORIES[currentIndex]
+  const currentStory = useMemo(() => SUCCESS_STORIES[currentIndex], [currentIndex])
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-primary-50 overflow-hidden">
+    <section 
+      ref={carouselRef}
+      className="py-20 bg-gradient-to-br from-gray-50 via-white to-primary-50 overflow-hidden"
+      aria-label="Success stories of Portuguese-speaking community students"
+    >
       <div className="container-width">
         {/* Section Header */}
         <motion.div
@@ -768,4 +790,6 @@ export default function SuccessStoriesCarousel({
       </div>
     </section>
   )
-}
+})
+
+export default SuccessStoriesCarousel
