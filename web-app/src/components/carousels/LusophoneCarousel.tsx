@@ -1096,6 +1096,9 @@ const LusophoneCarousel = memo(<T extends CarouselItemType>({
   )
 })
 
+// Explicit display name to satisfy react/display-name ESLint rule
+LusophoneCarousel.displayName = 'LusophoneCarousel'
+
 export default LusophoneCarousel
 
 /**

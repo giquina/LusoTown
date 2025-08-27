@@ -10,7 +10,6 @@ import {
   UsersIcon as Users,
   ChartBarSquareIcon
 } from '@heroicons/react/24/outline'
-import logger from '@/utils/logger'
 
 // Dynamic imports for AI systems with Portuguese cultural context
 const AINotificationDashboard = lazy(() => 
@@ -274,12 +273,7 @@ class ErrorBoundary extends React.Component<{
   }
 
   componentDidCatch(error: Error, errorInfo: any) {
-    logger.error('AI System component error in Portuguese-speaking community platform', error, {
-      area: 'ai',
-      culturalContext: 'lusophone',
-      action: 'component_error',
-      errorInfo
-    })
+    console.error('AI System Error:', error, errorInfo)
     this.props.onError?.(error)
   }
 

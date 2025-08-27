@@ -43,9 +43,9 @@ export interface PageHeaderProps {
    */
   size?: 'sm' | 'md' | 'lg' | 'xl';
   /**
-   * Optional icon component
+   * Optional icon component (e.g., Heroicons). Use ElementType to support ForwardRef components.
    */
-  icon?: React.ComponentType<{ className?: string }>;
+  icon?: React.ElementType;
   /**
    * Custom CSS classes
    */

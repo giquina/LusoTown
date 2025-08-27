@@ -30,7 +30,6 @@ import {
 } from '@heroicons/react/24/solid';
 import { advancedMatchingAlgorithms, type MatchingResult, type RealTimeMatchingMetrics } from '@/services/AdvancedMatchingAlgorithms';
 import type { CulturalDepthProfile } from '../matches/SaudadeMatchingSystem';
-import logger from '@/utils/logger';
 
 interface RealTimeMatchingState {
   isActive: boolean;
@@ -138,11 +137,7 @@ export default function RealTimeMatchingDashboard({
       
       return results;
     } catch (error) {
-      logger.error('Real-time matching algorithm failed', error, {
-        area: 'matching',
-        action: 'real_time_matching',
-        userId: userProfile?.id
-      });
+      console.error('Real-time matching error:', error);
       setMatchingState(prev => ({ 
         ...prev, 
         optimizationStatus: 'error' 
@@ -164,20 +159,13 @@ export default function RealTimeMatchingDashboard({
         try {
           await findMatches();
         } catch (error) {
-          logger.error('Interval matching update failed', error, {
-            area: 'matching',
-            action: 'interval_matching_update'
-          });
+          console.error('Interval matching error:', error);
           stopRealTimeMatching();
         }
       }, updateInterval);
       
     } catch (error) {
-      logger.error('Failed to initialize real-time matching system', error, {
-        area: 'matching',
-        action: 'start_real_time_matching',
-        userId: userProfile?.id
-      });
+      console.error('Failed to start real-time matching:', error);
       setMatchingState(prev => ({ ...prev, optimizationStatus: 'error' }));
     }
   }, [findMatches, matchingState.matchingSpeed, stopRealTimeMatching]);

@@ -33,7 +33,7 @@ export const authLoginExample = (userId: string, culturalContext?: CulturalConte
 export const authLoginErrorExample = (error: Error, email?: string) => {
   logger.auth.error('User login failed', { 
     error,
-    metadata: { email: email?.substring(0, 3) + '***' } // Privacy-safe logging
+  metadata: { email: `${email?.substring(0, 3)}***` } // Privacy-safe logging
   });
 };
 

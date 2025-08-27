@@ -232,6 +232,8 @@ class LusoTownLogger {
 const logger = new LusoTownLogger();
 
 export default logger;
+// Also export as a named export for modules importing `{ logger }`
+export { logger };
 
 // Named exports for common logging patterns
 export const logCulturalEvent = (eventName: string, culturalContext: CulturalContext, meta?: LogMeta) => 

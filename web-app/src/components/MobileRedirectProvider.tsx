@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { logger } from '@/utils/logger';
+import logger from '@/utils/logger';
 import { 
   getDeviceInfo, 
   checkAppInstallation, 

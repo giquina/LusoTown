@@ -1,8 +1,8 @@
 {
   "summary": {
-    "totalViolations": 22315,
+    "totalViolations": 22306,
     "byCategory": {
-      "hardcoded_text": 21006,
+      "hardcoded_text": 20997,
       "console_logs": 229,
       "hardcoded_routes": 281,
       "hardcoded_colors": 447,
@@ -11,12 +11,12 @@
       "hardcoded_prices": 31
     },
     "bySeverity": {
-      "high": 21358,
+      "high": 21349,
       "medium": 728,
       "low": 229
     },
     "filesAffected": 664,
-    "timestamp": "2025-08-27T12:34:16.997Z",
+    "timestamp": "2025-08-27T12:50:48.408Z",
     "recommendations": [
       "🚨 CRITICAL: Implement bilingual system with t() function",
       "🔧 Create config/cdn.ts for URL management",
@@ -27,123 +27,33 @@
   "violations": [
     {
       "file": "src/app/about/page.tsx",
-      "line": 405,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"We Know How Much It Means to Keep the Language Alive\"",
-      "context": "\"We Know How Much It Means to Keep the Language Alive\"",
-      "timestamp": "2025-08-27T12:34:16.037Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 789,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Meet Our Team'",
-      "context": "title={{ en: 'Meet Our Team', pt: 'Conheça Nossa Equipa' }}",
-      "timestamp": "2025-08-27T12:34:16.038Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 789,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Conheça Nossa Equipa'",
-      "context": "title={{ en: 'Meet Our Team', pt: 'Conheça Nossa Equipa' }}",
-      "timestamp": "2025-08-27T12:34:16.038Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 790,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Passionate Portuguese speakers building authentic community'",
-      "context": "subtitle={{ en: 'Passionate Portuguese speakers building authentic community', pt: 'Falantes de português apaixonados construindo comunidade autêntica' }}",
-      "timestamp": "2025-08-27T12:34:16.038Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 790,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Falantes de português apaixonados construindo comunidade autêntica'",
-      "context": "subtitle={{ en: 'Passionate Portuguese speakers building authentic community', pt: 'Falantes de português apaixonados construindo comunidade autêntica' }}",
-      "timestamp": "2025-08-27T12:34:16.038Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 900,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Community Success Stories'",
-      "context": "title={{ en: 'Community Success Stories', pt: 'Histórias de Sucesso da Comunidade' }}",
-      "timestamp": "2025-08-27T12:34:16.038Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 900,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Histórias de Sucesso da Comunidade'",
-      "context": "title={{ en: 'Community Success Stories', pt: 'Histórias de Sucesso da Comunidade' }}",
-      "timestamp": "2025-08-27T12:34:16.038Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 901,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Real achievements from Portuguese speakers who found their path through community'",
-      "context": "subtitle={{ en: 'Real achievements from Portuguese speakers who found their path through community', pt: 'Conquistas reais de falantes de português que encontraram o seu caminho através da comunidade' }}",
-      "timestamp": "2025-08-27T12:34:16.038Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 901,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Conquistas reais de falantes de português que encontraram o seu caminho através da comunidade'",
-      "context": "subtitle={{ en: 'Real achievements from Portuguese speakers who found their path through community', pt: 'Conquistas reais de falantes de português que encontraram o seu caminho através da comunidade' }}",
-      "timestamp": "2025-08-27T12:34:16.038Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 1749,
+      "line": 1744,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Do palácio real português às torres de Macau, dos diamantes angolanos ao ouro brasileiro—somos uma família de prestígio global.\"",
       "context": "\"Do palácio real português às torres de Macau, dos diamantes angolanos ao ouro brasileiro—somos uma família de prestígio global.\"",
-      "timestamp": "2025-08-27T12:34:16.038Z"
+      "timestamp": "2025-08-27T12:50:45.636Z"
     },
     {
       "file": "src/app/about/page.tsx",
-      "line": 1873,
+      "line": 1868,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Somos uma comunidade de mente aberta que acolhe todos os falantes de português com o coração cheio de amor.\"",
       "context": "\"Somos uma comunidade de mente aberta que acolhe todos os falantes de português com o coração cheio de amor.\"",
-      "timestamp": "2025-08-27T12:34:16.038Z"
+      "timestamp": "2025-08-27T12:50:45.636Z"
     },
     {
       "file": "src/app/about/page.tsx",
-      "line": 1895,
+      "line": 1890,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Aqui, todos têm lugar. Here, everyone belongs. We'",
       "context": "\"Aqui, todos têm lugar. Here, everyone belongs. We're not just building a community—we're creating a family.\"",
-      "timestamp": "2025-08-27T12:34:16.038Z"
+      "timestamp": "2025-08-27T12:50:45.636Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -153,7 +63,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Start by observing existing business interactions at Lusophone events\"",
       "context": "\"Start by observing existing business interactions at Lusophone events\",",
-      "timestamp": "2025-08-27T12:34:16.043Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -163,7 +73,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Research successful Portuguese business owners in your industry\"",
       "context": "\"Research successful Portuguese business owners in your industry\",",
-      "timestamp": "2025-08-27T12:34:16.043Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -173,7 +83,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Understand the blend of British business formality with Lusophone warmth\"",
       "context": "\"Understand the blend of British business formality with Lusophone warmth\",",
-      "timestamp": "2025-08-27T12:34:16.043Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -183,7 +93,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Comece por observar interações empresariais existentes em eventos portugueses\"",
       "context": "\"Comece por observar interações empresariais existentes em eventos portugueses\",",
-      "timestamp": "2025-08-27T12:34:16.043Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -193,7 +103,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Pesquise empresários portugueses bem-sucedidos na sua indústria\"",
       "context": "\"Pesquise empresários portugueses bem-sucedidos na sua indústria\",",
-      "timestamp": "2025-08-27T12:34:16.043Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -203,7 +113,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Compreenda a mistura de formalidade empresarial britânica com cordialidade portuguesa\"",
       "context": "\"Compreenda a mistura de formalidade empresarial britânica com cordialidade portuguesa\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -213,7 +123,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"What brought you from Portugal to London in your career?\"",
       "context": "<li>\"What brought you from Portugal to London in your career?\"</li>",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -223,7 +133,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"How has your Lusophone background influenced your business approach?\"",
       "context": "<li>\"How has your Lusophone background influenced your business approach?\"</li>",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -233,7 +143,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"What opportunities do you see in connecting United Kingdom and Lusophone markets?\"",
       "context": "<li>\"What opportunities do you see in connecting United Kingdom and Lusophone markets?\"</li>",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -243,7 +153,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Which Portuguese business traditions do you maintain in London?\"",
       "context": "<li>\"Which Portuguese business traditions do you maintain in London?\"</li>",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -253,7 +163,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"O que o trouxe de Portugal para Londres na sua carreira?\"",
       "context": "<li>\"O que o trouxe de Portugal para Londres na sua carreira?\"</li>",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -263,7 +173,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Como a sua origem portuguesa influenciou a sua abordagem empresarial?\"",
       "context": "<li>\"Como a sua origem portuguesa influenciou a sua abordagem empresarial?\"</li>",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -273,7 +183,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Que oportunidades vê em conectar os mercados do Reino Unido e Portugal?\"",
       "context": "<li>\"Que oportunidades vê em conectar os mercados do Reino Unido e Portugal?\"</li>",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -283,7 +193,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Que tradições empresariais portuguesas mantém em Londres?\"",
       "context": "<li>\"Que tradições empresariais portuguesas mantém em Londres?\"</li>",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -293,7 +203,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Pesquise 3 líderes empresariais portugueses em Londres\"",
       "context": "\"Pesquise 3 líderes empresariais portugueses em Londres\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -303,7 +213,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Pratique apresentação profissional em inglês e português\"",
       "context": "\"Pratique apresentação profissional em inglês e português\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -313,7 +223,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Identifique formas de contribuir para a comunidade empresarial portuguesa\"",
       "context": "\"Identifique formas de contribuir para a comunidade empresarial portuguesa\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -323,7 +233,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Always follow up within 48 hours after meeting someone new\"",
       "context": "\"Always follow up within 48 hours after meeting someone new\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -333,7 +243,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Connect on LinkedIn with a personalized message referencing your conversation\"",
       "context": "\"Connect on LinkedIn with a personalized message referencing your conversation\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -343,7 +253,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Offer specific help or resources rather than generic \"",
       "context": "'Offer specific help or resources rather than generic \"let me know if I can help\"',",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -353,7 +263,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Sempre faça seguimento dentro de 48 horas após conhecer alguém novo\"",
       "context": "\"Sempre faça seguimento dentro de 48 horas após conhecer alguém novo\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -363,7 +273,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Conecte no LinkedIn com uma mensagem personalizada referenciando a sua conversa\"",
       "context": "\"Conecte no LinkedIn com uma mensagem personalizada referenciando a sua conversa\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -373,7 +283,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Ofereça ajuda específica ou recursos em vez de genérico \"",
       "context": "'Ofereça ajuda específica ou recursos em vez de genérico \"me diga se posso ajudar\"',",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -383,7 +293,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Pesquise próximos eventos empresariais portugueses em Londres\"",
       "context": "\"Pesquise próximos eventos empresariais portugueses em Londres\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -393,7 +303,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Prepare o seu pitch de elevador de 30 segundos em ambos os idiomas\"",
       "context": "\"Prepare o seu pitch de elevador de 30 segundos em ambos os idiomas\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -403,7 +313,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Desenhe cartões de visita com elementos culturais portugueses\"",
       "context": "\"Desenhe cartões de visita com elementos culturais portugueses\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -413,7 +323,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Dress slightly more formally than expected - Portuguese business culture values presentation\"",
       "context": "\"Dress slightly more formally than expected - Portuguese business culture values presentation\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -423,7 +333,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Learn key business phrases in Lusophone even if the event is primarily in English\"",
       "context": "\"Learn key business phrases in Lusophone even if the event is primarily in English\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -433,7 +343,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Bring small Lusophone gifts (like pastéis de nata) to memorable first meetings\"",
       "context": "\"Bring small Lusophone gifts (like pastéis de nata) to memorable first meetings\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -443,7 +353,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Vista-se ligeiramente mais formal do que esperado - a cultura empresarial portuguesa valoriza a apresentação\"",
       "context": "\"Vista-se ligeiramente mais formal do que esperado - a cultura empresarial portuguesa valoriza a apresentação\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -453,7 +363,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Aprenda frases empresariais chave em português mesmo que o evento seja principalmente em inglês\"",
       "context": "\"Aprenda frases empresariais chave em português mesmo que o evento seja principalmente em inglês\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -463,7 +373,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Traga pequenos presentes portugueses (como pastéis de nata) para primeiros encontros memoráveis\"",
       "context": "\"Traga pequenos presentes portugueses (como pastéis de nata) para primeiros encontros memoráveis\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -473,7 +383,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Liste as suas forças culturais portuguesas e como se aplicam aos negócios\"",
       "context": "\"Liste as suas forças culturais portuguesas e como se aplicam aos negócios\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -483,7 +393,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Identifique potenciais parcerias empresariais portuguesas na sua indústria\"",
       "context": "\"Identifique potenciais parcerias empresariais portuguesas na sua indústria\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -493,7 +403,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Pesquise oportunidades de mercado português para o seu negócio\"",
       "context": "\"Pesquise oportunidades de mercado português para o seu negócio\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -503,7 +413,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Planeie formas de incorporar elementos portugueses na sua marca profissional\"",
       "context": "\"Planeie formas de incorporar elementos portugueses na sua marca profissional\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.649Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -513,7 +423,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Be proud but not overwhelming about your heritage - let it enhance rather than define your professional identity\"",
       "context": "\"Be proud but not overwhelming about your heritage - let it enhance rather than define your professional identity\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -523,7 +433,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Stay updated on Lusophone economic and cultural news to provide current insights\"",
       "context": "\"Stay updated on Lusophone economic and cultural news to provide current insights\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -533,7 +443,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Consider obtaining dual citizenship if eligible for enhanced business opportunities\"",
       "context": "\"Consider obtaining dual citizenship if eligible for enhanced business opportunities\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -543,7 +453,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Seja orgulhoso mas não avassalador sobre a sua herança - deixe-a melhorar em vez de definir a sua identidade profissional\"",
       "context": "\"Seja orgulhoso mas não avassalador sobre a sua herança - deixe-a melhorar em vez de definir a sua identidade profissional\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -553,7 +463,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Mantenha-se atualizado sobre notícias económicas e culturais portuguesas para fornecer insights atuais\"",
       "context": "\"Mantenha-se atualizado sobre notícias económicas e culturais portuguesas para fornecer insights atuais\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -563,7 +473,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Considere obter dupla cidadania se elegível para oportunidades empresariais melhoradas\"",
       "context": "\"Considere obter dupla cidadania se elegível para oportunidades empresariais melhoradas\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -573,7 +483,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Otimize o seu perfil LinkedIn com elementos empresariais portugueses\"",
       "context": "\"Otimize o seu perfil LinkedIn com elementos empresariais portugueses\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -583,7 +493,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Junte-se a 3 grupos empresariais portugueses no WhatsApp ou LinkedIn\"",
       "context": "\"Junte-se a 3 grupos empresariais portugueses no WhatsApp ou LinkedIn\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -593,7 +503,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Crie um sistema de gestão de contactos para seguimentos\"",
       "context": "\"Crie um sistema de gestão de contactos para seguimentos\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -603,7 +513,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Agende revisão mensal de relacionamentos no seu calendário\"",
       "context": "\"Agende revisão mensal de relacionamentos no seu calendário\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -613,7 +523,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Never add people to WhatsApp groups without permission\"",
       "context": "\"Never add people to WhatsApp groups without permission\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -623,7 +533,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Avoid over-posting on professional platforms - quality over quantity\"",
       "context": "\"Avoid over-posting on professional platforms - quality over quantity\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -633,7 +543,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Respect privacy settings and professional boundaries\"",
       "context": "\"Respect privacy settings and professional boundaries\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -643,7 +553,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Nunca adicione pessoas a grupos WhatsApp sem permissão\"",
       "context": "\"Nunca adicione pessoas a grupos WhatsApp sem permissão\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -653,7 +563,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Evite postar demais em plataformas profissionais - qualidade sobre quantidade\"",
       "context": "\"Evite postar demais em plataformas profissionais - qualidade sobre quantidade\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -663,7 +573,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Respeite configurações de privacidade e limites profissionais\"",
       "context": "\"Respeite configurações de privacidade e limites profissionais\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/business-networking/page.tsx",
@@ -673,7 +583,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Não misture comunicação pessoal e empresarial a menos que apropriado\"",
       "context": "\"Não misture comunicação pessoal e empresarial a menos que apropriado\",",
-      "timestamp": "2025-08-27T12:34:16.044Z"
+      "timestamp": "2025-08-27T12:50:45.650Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -683,7 +593,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Navigate and contribute to Portuguese-speaking community discussions with confidence and cultural awareness\"",
       "context": "\"Navigate and contribute to Portuguese-speaking community discussions with confidence and cultural awareness\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -693,7 +603,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Navegue e contribua para discussões da comunidade de falantes de português com confiança e consciência cultural\"",
       "context": "\"Navegue e contribua para discussões da comunidade de falantes de português com confiança e consciência cultural\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -703,7 +613,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"New Members\"",
       "context": "<p><strong>Getting Started Tip:</strong> Begin by browsing the \"New Members\" section where fellow Portuguese speakers share their first experiences in London. It's a welcoming space to introduce yourself and ask initial questions.</p>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -713,7 +623,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Novos Membros\"",
       "context": "<p><strong>Dica para Começar:</strong> Comece por navegar na secção \"Novos Membros\" onde outros falantes de português partilham as suas primeiras experiências em Londres. É um espaço acolhedor para se apresentar e fazer perguntas iniciais.</p>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -723,7 +633,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Explorar todas as quatro categorias principais do fórum\"",
       "context": "\"Explorar todas as quatro categorias principais do fórum\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -733,7 +643,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Configurar preferências de notificação para tópicos relevantes\"",
       "context": "\"Configurar preferências de notificação para tópicos relevantes\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -743,7 +653,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Praticar o uso de pesquisa e funcionalidades de filtragem por tags\"",
       "context": "\"Praticar o uso de pesquisa e funcionalidades de filtragem por tags\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -753,7 +663,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Olá pessoal\"",
       "context": "<li><strong>Warmth & Hospitality:</strong> Begin posts with friendly greetings like \"Olá pessoal\" or \"Hello everyone\"</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -763,7 +673,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Hello everyone\"",
       "context": "<li><strong>Warmth & Hospitality:</strong> Begin posts with friendly greetings like \"Olá pessoal\" or \"Hello everyone\"</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -773,7 +683,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Procuro médico que fale português em Camden\"",
       "context": "<li>\"Procuro médico que fale português em Camden\" (Looking for Portuguese-speaking doctor in Camden)</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -783,7 +693,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Recomendações: melhor padaria portuguesa em Stockwell?\"",
       "context": "<li>\"Recomendações: melhor padaria portuguesa em Stockwell?\" (Recommendations: best Lusophone bakery in Stockwell?)</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -793,7 +703,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Ajuda com documentos - experiência de outros portugueses\"",
       "context": "<li>\"Ajuda com documentos - experiência de outros portugueses\" (Help with documents - other Lusophone experiences)</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -803,7 +713,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Alguém teve experiência similar?\"",
       "context": "<li>\"Alguém teve experiência similar?\" (Anyone had similar experience?)</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -813,7 +723,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Que acham? Aceito todas as sugestões!\"",
       "context": "<li>\"Que acham? Aceito todas as sugestões!\" (What do you think? I welcome all suggestions!)</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -823,7 +733,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Obrigado/a desde já pela ajuda!\"",
       "context": "<li>\"Obrigado/a desde já pela ajuda!\" (Thanks in advance for the help!)</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -833,7 +743,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Olá pessoal\"",
       "context": "<li><strong>Calor e Hospitalidade:</strong> Comece as publicações com saudações amigáveis como \"Olá pessoal\" ou \"Hello everyone\"</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -843,7 +753,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Hello everyone\"",
       "context": "<li><strong>Calor e Hospitalidade:</strong> Comece as publicações com saudações amigáveis como \"Olá pessoal\" ou \"Hello everyone\"</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -853,7 +763,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Procuro médico que fale português em Camden\"",
       "context": "<li>\"Procuro médico que fale português em Camden\"</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -863,7 +773,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Recomendações: melhor padaria portuguesa em Stockwell?\"",
       "context": "<li>\"Recomendações: melhor padaria portuguesa em Stockwell?\"</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -873,7 +783,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Ajuda com documentos - experiência de outros portugueses\"",
       "context": "<li>\"Ajuda com documentos - experiência de outros portugueses\"</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -883,7 +793,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Alguém teve experiência similar?\"",
       "context": "<li>\"Alguém teve experiência similar?\"</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -893,7 +803,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Que acham? Aceito todas as sugestões!\"",
       "context": "<li>\"Que acham? Aceito todas as sugestões!\"</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -903,7 +813,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Obrigado/a desde já pela ajuda!\"",
       "context": "<li>\"Obrigado/a desde já pela ajuda!\"</li>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -913,7 +823,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Use clear subject line, provide location/context, and ask specific questions. End with gratitude.\"",
       "context": "\"Use clear subject line, provide location/context, and ask specific questions. End with gratitude.\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -923,7 +833,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Use linha de assunto clara, forneça localização/contexto, e faça perguntas específicas. Termine com gratidão.\"",
       "context": "\"Use linha de assunto clara, forneça localização/contexto, e faça perguntas específicas. Termine com gratidão.\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -933,7 +843,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Start with location/context, share detailed experience, and invite others to ask questions.\"",
       "context": "\"Start with location/context, share detailed experience, and invite others to ask questions.\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -943,7 +853,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Comece com localização/contexto, partilhe experiência detalhada, e convide outros a fazer perguntas.\"",
       "context": "\"Comece com localização/contexto, partilhe experiência detalhada, e convide outros a fazer perguntas.\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -953,7 +863,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Include clear date, time, location, and how to RSVP. Explain the Lusophone cultural element.\"",
       "context": "\"Include clear date, time, location, and how to RSVP. Explain the Lusophone cultural element.\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -963,7 +873,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Inclua data, hora, localização clara, e como confirmar presença. Explique o elemento cultural português.\"",
       "context": "\"Inclua data, hora, localização clara, e como confirmar presença. Explique o elemento cultural português.\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -973,7 +883,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"I commit to treating fellow Portuguese speakers with the same warmth and respect I would show to family, while maintaining the safety and dignity of our London community.\"",
       "context": "<p><strong>Community Pledge:</strong> \"I commit to treating fellow Portuguese speakers with the same warmth and respect I would show to family, while maintaining the safety and dignity of our London community.\"</p>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -983,7 +893,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Comprometo-me a tratar outros falantes de português com o mesmo calor e respeito que mostraria à família, mantendo a segurança e dignidade da nossa comunidade londrina.\"",
       "context": "<p><strong>Compromisso da Comunidade:</strong> \"Comprometo-me a tratar outros falantes de português com o mesmo calor e respeito que mostraria à família, mantendo a segurança e dignidade da nossa comunidade londrina.\"</p>",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -993,7 +903,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Configurar preferências de privacidade para o seu perfil\"",
       "context": "\"Configurar preferências de privacidade para o seu perfil\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -1003,7 +913,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Receber e ajudar pelo menos 3 novos membros da comunidade a cada mês\"",
       "context": "\"Receber e ajudar pelo menos 3 novos membros da comunidade a cada mês\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -1013,7 +923,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Partilhar a sua expertise profissional e conhecimento local regularmente\"",
       "context": "\"Partilhar a sua expertise profissional e conhecimento local regularmente\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
     },
     {
       "file": "src/app/academy/community-forums/page.tsx",
@@ -1023,8 +933,98 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Organizar ou participar em encontros comunitários offline\"",
       "context": "\"Organizar ou participar em encontros comunitários offline\",",
-      "timestamp": "2025-08-27T12:34:16.048Z"
+      "timestamp": "2025-08-27T12:50:45.653Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 784,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Conectar membros com interesses ou necessidades similares\"",
+      "context": "\"Conectar membros com interesses ou necessidades similares\",",
+      "timestamp": "2025-08-27T12:50:45.653Z"
+    },
+    {
+      "file": "src/app/academy/community-forums/page.tsx",
+      "line": 789,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "\"Contribuir para recursos comunitários e desenvolvimento de FAQ\"",
+      "context": "\"Contribuir para recursos comunitários e desenvolvimento de FAQ\",",
+      "timestamp": "2025-08-27T12:50:45.653Z"
+    },
+    {
+      "file": "src/app/academy/cultural-events/page.tsx",
+      "line": 39,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Cultural Events module completed!'",
+      "context": "console.log('Cultural Events module completed!');",
+      "timestamp": "2025-08-27T12:50:45.658Z"
+    },
+    {
+      "file": "src/app/academy/cultural-events/page.tsx",
+      "line": 57,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Navigate London\\'",
+      "context": "'Navigate London\\'s Lusophone cultural events calendar',",
+      "timestamp": "2025-08-27T12:50:45.658Z"
+    },
+    {
+      "file": "src/app/academy/cultural-events/page.tsx",
+      "line": 58,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Understand Lusophone cultural traditions and celebrations'",
+      "context": "'Understand Lusophone cultural traditions and celebrations',",
+      "timestamp": "2025-08-27T12:50:45.658Z"
+    },
+    {
+      "file": "src/app/academy/cultural-events/page.tsx",
+      "line": 59,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Connect with the Portuguese-speaking community through cultural activities'",
+      "context": "'Connect with the Portuguese-speaking community through cultural activities',",
+      "timestamp": "2025-08-27T12:50:45.658Z"
+    },
+    {
+      "file": "src/app/academy/cultural-events/page.tsx",
+      "line": 60,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Organize your own Lusophone cultural events'",
+      "context": "'Organize your own Lusophone cultural events',",
+      "timestamp": "2025-08-27T12:50:45.658Z"
+    },
+    {
+      "file": "src/app/academy/cultural-events/page.tsx",
+      "line": 61,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Blend Portuguese heritage with London lifestyle'",
+      "context": "'Blend Portuguese heritage with London lifestyle'",
+      "timestamp": "2025-08-27T12:50:45.658Z"
+    },
+    {
+      "file": "src/app/academy/cultural-events/page.tsx",
+      "line": 64,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Navegar no calendário de eventos culturais portugueses de Londres'",
+      "context": "'Navegar no calendário de eventos culturais portugueses de Londres',",
+      "timestamp": "2025-08-27T12:50:45.658Z"
     }
   ],
-  "fullViolationCount": 22315
+  "fullViolationCount": 22306
 }

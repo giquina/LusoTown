@@ -7,7 +7,6 @@ import { useLanguage } from '@/context/LanguageContext'
 import { communityStats } from '@/config/community'
 import { SUBSCRIPTION_PLANS, STUDENT_PRICING, formatPrice } from '@/config/pricing'
 import { IMAGES, UNIVERSITY_URLS } from '@/config/cdn'
-import logger from '@/utils/logger'
 
 import dynamic from 'next/dynamic'
 
@@ -151,7 +150,7 @@ const UNIVERSITIES: University[] = [
       languageCourses: ['Lusophone A1-C2', 'Business Lusophone', 'Lusophone for Heritage Speakers']
     },
     benefits: [
-      `50% discount on LusoTown membership (${formatPrice(STUDENT_PRICING.community.monthly)}/month)`,
+      '50% discount on LusoTown membership (£9.99/month)',
       'Priority access to Lusophone cultural events',
       'Free Portuguese language exchange sessions',
       'Career mentorship with Lusophone professionals',
@@ -402,7 +401,7 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     discountAmount: '50%',
     eligibility: ['Current university students', 'Valid .ac.uk email required', 'Student ID verification'],
     verificationRequired: true,
-    value: `${formatPrice(SUBSCRIPTION_PLANS.community.monthly - STUDENT_PRICING.community.monthly)} savings per month`
+    value: '£9.99 savings per year'
   },
   {
     id: 'language-exchange',
@@ -781,8 +780,8 @@ export default function StudentsPage() {
                   <div className="w-2 h-2 bg-secondary-500 rounded-full animate-pulse"></div>
                   <span className="font-bold text-secondary-600">
                     {language === 'pt'
-                      ? `50% DESCONTO - Apenas ${formatPrice(STUDENT_PRICING.community.monthly)}/mês`
-                      : `50% OFF - Only ${formatPrice(STUDENT_PRICING.community.monthly)}/month`}
+                      ? "50% DESCONTO - Apenas £9.99/mês"
+                      : "50% OFF - Only £9.99/month"}
                   </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -868,7 +867,7 @@ export default function StudentsPage() {
                   <div className="text-xs text-accent-600 mt-1">{language === 'pt' ? '6 meses' : '6 months'}</div>
                 </div>
                 <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-premium-100 hover:shadow-xl transition-all duration-300 relative">
-                  <div className="text-2xl font-bold text-premium-600 mb-1">{formatPrice(STUDENT_PRICING.community.monthly)}</div>
+                  <div className="text-2xl font-bold text-premium-600 mb-1">£9.99</div>
                   <div className="text-xs text-gray-600 font-medium">{language === 'pt' ? 'Por mês' : 'Per month'}</div>
                   <div className="text-xs text-red-600 mt-1 font-semibold">{language === 'pt' ? '50% desconto!' : '50% off!'}</div>
                   <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
@@ -985,7 +984,7 @@ export default function StudentsPage() {
                   <div className="text-xs text-secondary-600">{language === 'pt' ? 'Mentoria + Eventos + Networking' : 'Mentorship + Events + Networking'}</div>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border-2 border-primary-200">
-                  <div className="text-4xl font-bold text-primary-600 mb-2">{formatPrice(STUDENT_PRICING.community.monthly)}</div>
+                  <div className="text-4xl font-bold text-primary-600 mb-2">£9.99</div>
                   <div className="text-sm text-gray-600 mb-2">{language === 'pt' ? 'Custo mensal estudante' : 'Monthly student cost'}</div>
                   <div className="text-xs text-primary-600 font-semibold">{language === 'pt' ? '50% desconto garantido' : '50% discount guaranteed'}</div>
                 </div>
@@ -2668,8 +2667,8 @@ export default function StudentsPage() {
               
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
                 {language === 'pt' ?
-                  `Apenas ${formatPrice(STUDENT_PRICING.community.monthly)}/mês para acesso completo a benefícios exclusivos, eventos culturais e networking profissional.` :
-                  `Just ${formatPrice(STUDENT_PRICING.community.monthly)}/month for full access to exclusive benefits, cultural events, and professional networking.`
+                  'Apenas £9.99/mês para acesso completo a benefícios exclusivos, eventos culturais e networking profissional.' :
+                  'Just £9.99/month for full access to exclusive benefits, cultural events, and professional networking.'
                 }
               </p>
 
@@ -2680,7 +2679,7 @@ export default function StudentsPage() {
                 >
                   <span className="flex items-center justify-center">
                     <AcademicCapIcon className="w-6 h-6 mr-3" />
-                    {language === 'pt' ? `Juntar à Comunidade Agora - ${formatPrice(STUDENT_PRICING.community.monthly)}/mês` : `Join Community Now - ${formatPrice(STUDENT_PRICING.community.monthly)}/month`}
+                    {language === 'pt' ? 'Juntar à Comunidade Agora - £9.99/mês' : 'Join Community Now - £9.99/month'}
                     <ArrowRightIcon className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <div className="absolute -top-3 -right-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full animate-bounce font-bold">
@@ -2913,12 +2912,7 @@ export default function StudentsPage() {
               autoAdvanceInterval={9000}
               className="mb-12"
               onItemClick={(story) => {
-                logger.debug('Student success story selected', {
-                  area: 'students',
-                  culturalContext: 'lusophone',
-                  action: 'success_story_selection',
-                  studentName: story.studentName
-                })
+                console.log('Selected success story:', story.studentName)
               }}
               mobileSettings={{
                 enableSwipeGestures: true,

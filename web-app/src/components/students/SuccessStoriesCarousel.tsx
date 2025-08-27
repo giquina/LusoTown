@@ -792,4 +792,7 @@ const SuccessStoriesCarousel = memo(({
   )
 })
 
+// Explicit display name for ESLint react/display-name rule
+SuccessStoriesCarousel.displayName = 'SuccessStoriesCarousel'
+
 export default SuccessStoriesCarousel

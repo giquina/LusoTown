@@ -3,7 +3,6 @@
 import React, { Suspense, lazy, useState, useCallback } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useAIPerformance } from '@/hooks/useAIPerformance'
-import { logger } from '@/utils/logger'
 import { 
   HeartIcon, 
   UserGroupIcon, 
@@ -17,11 +16,7 @@ const AIEnhancedMatchingEngine = lazy(() =>
   import('@/components/matches/AIEnhancedMatchingEngine').then(module => ({
     default: module.default
   })).catch(error => {
-    logger.error('Failed to load AIEnhancedMatchingEngine for Portuguese-speaking community', error, {
-      area: 'matching',
-      culturalContext: 'lusophone',
-      action: 'ai_matching_engine_load_error'
-    })
+    console.error('Failed to load AIEnhancedMatchingEngine:', error)
     // Return fallback component
     return {
       default: () => (
@@ -192,17 +187,9 @@ export default function DynamicAIMatchingEngine({
   const handleLoad = useCallback(() => {
     onLoad?.()
     loadService('matching').then(() => {
-      logger.info('AI Matching Engine loaded successfully for Portuguese cultural compatibility', {
-        area: 'matching',
-        culturalContext: 'lusophone',
-        action: 'ai_matching_engine_loaded'
-      })
+      console.log('✅ AI Matching Engine loaded successfully')
     }).catch(err => {
-      logger.error('Failed to load AI Matching Engine for Portuguese-speaking community', err, {
-        area: 'matching',
-        culturalContext: 'lusophone',
-        action: 'ai_matching_engine_load_failed'
-      })
+      console.error('❌ Failed to load AI Matching Engine:', err)
       setError(err)
     })
   }, [onLoad, loadService])
@@ -328,12 +315,7 @@ class ErrorBoundary extends React.Component<{
   }
 
   componentDidCatch(error: Error, errorInfo: any) {
-    logger.error('AI Matching Engine Error in Portuguese cultural compatibility system', error, {
-      area: 'matching',
-      culturalContext: 'lusophone',
-      action: 'ai_matching_engine_error_boundary',
-      errorInfo: errorInfo?.componentStack || 'No component stack available'
-    })
+    console.error('AI Matching Engine Error:', error, errorInfo)
     this.props.onError?.(error)
   }
 

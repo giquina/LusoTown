@@ -12,7 +12,7 @@ const os = require('os');
 
 class ChunkedBuildManager {
   constructor() {
-    this.maxMemoryMB = 1536; // Conservative memory limit
+  this.maxMemoryMB = 2048; // Slightly higher memory limit for Vercel builders
     this.componentsDir = path.join(process.cwd(), 'src', 'components');
     this.largeComponents = [
       'src/components/matches/RegionalSpecializationAI.tsx',

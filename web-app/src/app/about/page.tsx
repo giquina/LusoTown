@@ -402,7 +402,7 @@ export default function About() {
                 >
                   <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 border border-premium-200/30 shadow-xl">
                     <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-premium-600 to-primary-600 bg-clip-text text-transparent mb-6">
-                      "We Know How Much It Means to Keep the Language Alive"
+                      {t('about.language.title')}
                     </h2>
                     <div className="space-y-6 text-gray-700">
                       <motion.p
@@ -412,9 +412,7 @@ export default function About() {
                         viewport={{ once: true }}
                         className="text-lg leading-relaxed"
                       >
-                        <span className="font-bold text-premium-700">As Portuguese speakers across the United Kingdom,</span> we understand the deep connection 
-                        to our heritage and the importance of preserving our beautiful language. Whether you're 
-                        from Portugal, Brazil, Angola, or any Portuguese-speaking nation, the United Kingdom is now home.
+                        {t('about.language.paragraph1')}
                       </motion.p>
                       <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -423,8 +421,7 @@ export default function About() {
                         viewport={{ once: true }}
                         className="text-lg leading-relaxed"
                       >
-                        <span className="font-bold text-premium-700">We've experienced the challenge of finding</span> Portuguese-speaking services, or simply wanting to connect with people who understand 
-                        our culture, traditions, and the warmth of our communities back home.
+                        {t('about.language.paragraph2')}
                       </motion.p>
                       <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -433,9 +430,7 @@ export default function About() {
                         viewport={{ once: true }}
                         className="text-lg leading-relaxed"
                       >
-                        <span className="font-bold text-premium-700">London's Lusophone diaspora is rich and diverse,</span> but we're often 
-                        scattered across the city. LusoTown was created to bring us together—to share resources, 
-                        support each other, and preserve our Portuguese heritage.
+                        {t('about.language.paragraph3')}
                       </motion.p>
                     </div>
                   </div>
@@ -786,8 +781,8 @@ export default function About() {
                   }
                 }
               ]}
-              title={{ en: 'Meet Our Team', pt: 'Conheça Nossa Equipa' }}
-              subtitle={{ en: 'Passionate Portuguese speakers building authentic community', pt: 'Falantes de português apaixonados construindo comunidade autêntica' }}
+              title={{ en: t('about.team.title'), pt: t('about.team.title') }}
+              subtitle={{ en: t('about.team.subtitle'), pt: t('about.team.subtitle') }}
               responsive={CAROUSEL_CONFIGS.compact}
               autoAdvance={true}
               autoAdvanceInterval={AUTO_ADVANCE_TIMINGS.slow}
@@ -897,8 +892,8 @@ export default function About() {
                   }
                 }
               ]}
-              title={{ en: 'Community Success Stories', pt: 'Histórias de Sucesso da Comunidade' }}
-              subtitle={{ en: 'Real achievements from Portuguese speakers who found their path through community', pt: 'Conquistas reais de falantes de português que encontraram o seu caminho através da comunidade' }}
+              title={{ en: t('about.success.title'), pt: t('about.success.title') }}
+              subtitle={{ en: t('about.success.subtitle'), pt: t('about.success.subtitle') }}
               responsive={CAROUSEL_CONFIGS.standard}
               autoAdvance={true}
               autoAdvanceInterval={AUTO_ADVANCE_TIMINGS.slow}
