@@ -16,7 +16,7 @@ const TestComponent = ({
   const { focusFirst, focusLast } = useFocusManagement(containerRef, testFocus)
 
   return (
-    <LanguageProvider initialLanguage={language}>
+    <LanguageProvider>
       <div ref={containerRef}>
         <button
           onClick={() => announce(ARIA_MESSAGES.lusobot.opened)}

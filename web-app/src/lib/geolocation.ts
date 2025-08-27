@@ -2,6 +2,7 @@
 
 // Lusophone Business Directory Geolocation Service
 // Handles user location detection and distance calculations
+import logger from '@/utils/logger'
 
 export interface Location {
   latitude: number
@@ -63,7 +64,7 @@ export class GeolocationService {
         }
       }
     } catch (error) {
-      console.warn('Browser geolocation failed:', error)
+      logger.warn('Browser geolocation failed:', error)
     }
 
     try {
@@ -78,7 +79,7 @@ export class GeolocationService {
         }
       }
     } catch (error) {
-      console.warn('IP geolocation failed:', error)
+      logger.warn('IP geolocation failed:', error)
     }
 
     // Final fallback to London center
@@ -114,7 +115,7 @@ export class GeolocationService {
           })
         },
         (error) => {
-          console.warn('Browser geolocation error:', error)
+          logger.warn('Browser geolocation error:', error)
           resolve(null)
         },
         options
@@ -145,7 +146,7 @@ export class GeolocationService {
         }
       }
     } catch (error) {
-      console.warn('IP geolocation failed:', error)
+      logger.warn('IP geolocation failed:', error)
     }
 
     return null
@@ -168,7 +169,7 @@ export class GeolocationService {
         return { supported: true, permission: permission.state as any }
       }
     } catch (error) {
-      console.warn('Permission query failed:', error)
+      logger.warn('Permission query failed:', error)
     }
 
     return { supported: true, permission: 'unknown' }
@@ -182,7 +183,7 @@ export class GeolocationService {
       const result = await this.getBrowserLocation()
       return result !== null
     } catch (error) {
-      console.warn('Location permission request failed:', error)
+      logger.warn('Location permission request failed:', error)
       return false
     }
   }
@@ -273,7 +274,7 @@ export class GeolocationService {
         return location
       }
     } catch (error) {
-      console.warn('Geocoding failed for address:', address, error)
+      logger.warn('Geocoding failed for address:', address, error)
     }
 
     return null

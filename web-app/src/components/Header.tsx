@@ -587,9 +587,9 @@ export default function Header() {
                     transition={{ duration: 0.6 }}
                   />
                   <span className="relative z-10 hidden lg:inline">
-                    Apply for Membership
+                    Join LusoTown
                   </span>
-                  <span className="relative z-10 lg:hidden">APPLY</span>
+                  <span className="relative z-10 lg:hidden">JOIN</span>
                 </motion.a>
               </>
             )}
@@ -639,7 +639,7 @@ export default function Header() {
                   stiffness: 300,
                   damping: 25
                 }}
-                className="xl:hidden fixed top-[80px] left-2 right-2 z-[9999] bg-white/98 backdrop-blur-xl border border-primary-200/50 shadow-2xl rounded-2xl mx-0 mb-2 max-h-[85vh] overflow-y-auto"
+                className="xl:hidden fixed top-[80px] left-2 right-2 z-[10000] bg-white backdrop-blur-xl border border-primary-200/50 shadow-2xl rounded-2xl mx-0 mb-2 max-h-[85vh] overflow-y-auto"
                 style={{
                   boxShadow: '0 25px 50px rgba(197, 40, 47, 0.15), 0 10px 25px rgba(0, 0, 0, 0.1)'
                 }}
@@ -870,8 +870,8 @@ export default function Header() {
                             className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-[1.02] active:scale-95 transition-all duration-200 w-full text-center min-h-[44px] flex items-center justify-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            <span className="text-base">
-                              {"Apply for Membership".toUpperCase()}
+                            <span className="text-base whitespace-nowrap">
+                              Join LusoTown
                             </span>
                           </a>
                         </div>

@@ -6,6 +6,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 // import { createClient } from '@/lib/supabase/server'
 import { createClient } from '@/lib/supabase'
+import logger from '@/utils/logger'
 // import { EnhancedSignupForm } from '@/types/enhanced-signup'
 // import { sendCulturalWelcomeEmail } from '@/lib/email/cultural-welcome'
 // import { processPartnerEventInterests } from '@/lib/partnership/event-processor'
@@ -162,7 +163,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
       .single()
 
     if (profileError) {
-      console.error('Profile creation error:', profileError)
+      logger.error('Profile creation error:', profileError)
       return NextResponse.json(
         { success: false, error: 'Failed to create user profile' },
         { status: 500 }
@@ -179,7 +180,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
         })
         referralResult = referralData
       } catch (referralError) {
-        console.error('Referral processing error:', referralError)
+        logger.error('Referral processing error:', referralError)
         // Don't fail signup for referral errors
       }
     }
@@ -197,7 +198,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
         }
       })
     } catch (emailError) {
-      console.error('Welcome email error:', emailError)
+      logger.error('Welcome email error:', emailError)
       // Don't fail signup for email errors
     }
 
@@ -212,7 +213,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
         partnerEventInterest: signupData.partnerEventInterest
       })
     } catch (registrationError) {
-      console.error('Auto-registration error:', registrationError)
+      logger.error('Auto-registration error:', registrationError)
       // Don't fail signup for registration errors
     }
 
@@ -234,7 +235,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
       )
       compatibilityData = compatibilityScore
     } catch (compatibilityError) {
-      console.error('Compatibility calculation error:', compatibilityError)
+      logger.error('Compatibility calculation error:', compatibilityError)
     }
 
     // Generate recommendations based on signup data
@@ -261,7 +262,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
     return NextResponse.json(response, { status: 201 })
 
   } catch (error) {
-    console.error('Enhanced signup error:', error)
+    logger.error('Enhanced signup error:', error)
     return NextResponse.json(
       { 
         success: false, 

@@ -4,9 +4,9 @@ import React, { Suspense, lazy, useState, useCallback } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useAIPerformance } from '@/hooks/useAIPerformance'
 import { 
-  Heart, 
-  Users, 
-  Target,
+  HeartIcon as Heart, 
+  UsersIcon as Users, 
+  EyeIcon as Target,
   ExclamationTriangleIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline'

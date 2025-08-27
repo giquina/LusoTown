@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import logger from '@/utils/logger'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   CreditCardIcon,
@@ -192,7 +193,7 @@ export default function PaymentProcessor({
       )
       setConvertedAmount(converted)
     } catch (error) {
-      console.error('Currency conversion error:', error)
+      logger.error('Currency conversion error:', error)
       setPaymentError(isPortuguese ? 'Erro na conversão de moeda' : 'Currency conversion error')
     } finally {
       setIsConverting(false)

@@ -44,10 +44,10 @@ export default function PWAFeaturesPage() {
   }, []);
 
   const checkPWASupport = () => {
-    const supported = 'serviceWorker' in navigator && 
+    const supported = typeof navigator !== "undefined" && 'serviceWorker' in navigator && 
                      'PushManager' in window && 
                      'Notification' in window &&
-                     'geolocation' in navigator;
+                     typeof navigator !== "undefined" && 'geolocation' in navigator;
     setPwaSupported(supported);
   };
 

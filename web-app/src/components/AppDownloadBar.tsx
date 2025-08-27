@@ -49,7 +49,7 @@ export default function AppDownloadBar({
   // Check if user is on mobile device
   useEffect(() => {
     const checkMobile = () => {
-      const userAgent = navigator.userAgent.toLowerCase()
+      const userAgent = typeof navigator !== 'undefined' ? navigator.userAgent.toLowerCase() : ''
       const isMobileDevice = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent)
       const isSmallScreen = window.innerWidth < 768
       setIsMobile(isMobileDevice || isSmallScreen)
@@ -117,7 +117,7 @@ export default function AppDownloadBar({
     if (typeof gtag !== 'undefined') {
       gtag('event', 'app_download_click', {
         source: 'bottom_bar',
-        platform: navigator.userAgent.includes('iPhone') ? 'ios' : 'android'
+        platform: typeof navigator !== 'undefined' && navigator.userAgent.includes('iPhone') ? 'ios' : 'android'
       })
     }
   }
@@ -139,9 +139,9 @@ export default function AppDownloadBar({
           damping: 30,
           duration: 0.4
         }}
-        className={`fixed ${position === 'bottom' ? 'bottom-0' : 'top-0'} left-0 right-0 
-          bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-2xl border-t 
-          ${position === 'bottom' ? 'border-primary-400' : 'border-b border-primary-400'}
+        className={`fixed ${position === 'bottom' ? 'bottom-0' : 'top-0'} left-4 right-4 max-w-md mx-auto
+          bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-2xl rounded-t-2xl 
+          ${position === 'bottom' ? 'border-t border-primary-400' : 'border-b border-primary-400 rounded-b-2xl rounded-t-none'}
           ${className}`}
         style={{ zIndex: COMPONENT_Z_INDEX.appDownloadBar }}
         role="banner"
@@ -155,7 +155,7 @@ export default function AppDownloadBar({
           <div className="absolute top-1/2 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
         </div>
 
-        <div className="container-width relative z-10 py-3 px-4">
+        <div className="relative z-10 py-3 px-4">
           <div className="flex items-center justify-between gap-4">
             
             {/* Content Section */}
@@ -180,8 +180,8 @@ export default function AppDownloadBar({
                 </div>
                 <p id="app-download-description" className="text-xs text-white/90 leading-tight">
                   {isPortuguese
-                    ? 'Encontre matches portugueses, descubra eventos e conecte-se offline. Descarregue agora para iOS ou Android.'
-                    : 'Find Portuguese matches, discover events, and connect offline. Download now for iOS or Android.'}
+                    ? 'Conecte-se com falantes de português, descubra eventos lusófonos e encontre a sua comunidade. Descarregue agora para iOS ou Android.'
+                    : 'Connect with Portuguese speakers, discover Lusophone events, and find your community. Download now for iOS or Android.'}
                 </p>
               </div>
             </div>
@@ -192,7 +192,7 @@ export default function AppDownloadBar({
               {/* Primary Download Button */}
               <a
                 ref={downloadButtonRef}
-                href={navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad')
+                href={typeof navigator !== 'undefined' && (navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad'))
                   ? 'https://apps.apple.com/app/lusotown-london'
                   : 'https://play.google.com/store/apps/details?id=com.lusotown.london'
                 }
@@ -213,8 +213,8 @@ export default function AppDownloadBar({
                 }}
                 aria-label={
                   isPortuguese 
-                    ? `Descarregar app LusoTown para ${navigator.userAgent.includes('iPhone') ? 'iOS' : 'Android'}. Abre numa nova janela.`
-                    : `Download LusoTown app for ${navigator.userAgent.includes('iPhone') ? 'iOS' : 'Android'}. Opens in a new window.`
+                    ? `Descarregar app LusoTown para ${typeof navigator !== 'undefined' && navigator.userAgent.includes('iPhone') ? 'iOS' : 'Android'}. Abre numa nova janela.`
+                    : `Download LusoTown app for ${typeof navigator !== 'undefined' && navigator.userAgent.includes('iPhone') ? 'iOS' : 'Android'}. Opens in a new window.`
                 }
               >
                 {isPortuguese ? 'Descarregar' : 'Download'}

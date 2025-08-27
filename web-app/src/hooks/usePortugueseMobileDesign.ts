@@ -122,7 +122,7 @@ export function usePortugueseMobileDesign(): {
       const width = window.innerWidth;
       const height = window.innerHeight;
       const orientation = width > height ? 'landscape' : 'portrait';
-      const touchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const touchCapable = 'ontouchstart' in window || (typeof navigator !== 'undefined' && navigator.maxTouchPoints > 0);
 
       let screenSize: DeviceInfo['screenSize'] = 'desktop-large';
       let isMobile = false;

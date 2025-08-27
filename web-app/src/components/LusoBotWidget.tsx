@@ -445,7 +445,7 @@ export default function LusoBotWidget({
               className={`mb-4 ${
                 isMinimized
                   ? "w-80 h-16 md:w-80 md:h-16"
-                  : "w-[90vw] max-w-sm h-[68vh] max-h-[560px] md:w-96 md:h-[560px]"
+                  : "w-[90vw] max-w-lg h-[75vh] max-h-[680px] md:w-[520px] md:h-[680px]"
               } ${
                 currentTheme.chatBg
               } rounded-2xl shadow-2xl border border-gray-200 overflow-hidden`}
@@ -523,7 +523,7 @@ export default function LusoBotWidget({
                   </div>
 
                   {/* Chat Content - Priority 1 Enhancement: Max height with internal scrolling */}
-                  <div className="flex-1 relative overflow-hidden max-h-[400px]">
+                  <div className="flex-1 relative overflow-hidden max-h-[520px]">
                     <LusoBotChat
                       isEmbedded={true}
                       className="h-full border-0 bg-transparent lusobot-chat-container"
@@ -556,7 +556,7 @@ export default function LusoBotWidget({
                 buttonRef.current.classList.remove('lusotown-widget-focus', 'lusotown-focus-smooth');
               }
             }}
-            className={`${isMobile ? "w-14 h-14" : "w-16 h-16"} rounded-full ${
+            className={`${isMobile ? "w-16 h-16" : "w-20 h-20"} rounded-full ${
               currentTheme.buttonBg
             } ${currentTheme.buttonHover}
               flex items-center justify-center transition-all duration-200 relative group min-h-[44px] min-w-[44px]`}
@@ -588,13 +588,13 @@ export default function LusoBotWidget({
             <div className="relative">
               {unreadCount > 0 ? (
                 <HeartSolidIcon
-                  className={`${isMobile ? "w-5 h-5" : "w-6 h-6"} ${
+                  className={`${isMobile ? "w-6 h-6" : "w-8 h-8"} ${
                     currentTheme.iconColor
                   }`}
                 />
               ) : (
                 <ChatBubbleLeftRightIcon
-                  className={`${isMobile ? "w-5 h-5" : "w-6 h-6"} ${
+                  className={`${isMobile ? "w-6 h-6" : "w-8 h-8"} ${
                     currentTheme.iconColor
                   }`}
                 />

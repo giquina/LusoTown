@@ -7,6 +7,7 @@ import { authService } from '@/lib/auth'
 import { supabase } from '@/lib/supabase'
 import toast from 'react-hot-toast'
 import { ROUTES } from '@/config/routes'
+import logger from '@/utils/logger'
 
 // Initialize Stripe - with fallback for development
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || 'pk_test_placeholder')
@@ -151,7 +152,7 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
         .single()
 
       if (subError && subError.code !== 'PGRST116') {
-        console.error('Error fetching subscription:', subError)
+        logger.error('Error fetching subscription:', subError)
       } else if (subscriptionData) {
         setSubscription(subscriptionData)
       }
@@ -164,12 +165,12 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
         .single()
 
       if (trialError && trialError.code !== 'PGRST116') {
-        console.error('Error fetching trial:', trialError)
+        logger.error('Error fetching trial:', trialError)
       } else if (trialData) {
         setTrial(trialData)
       }
     } catch (error) {
-      console.error('Error checking subscription status:', error)
+      logger.error('Error checking subscription status:', error)
     } finally {
       setIsLoading(false)
     }
@@ -216,7 +217,7 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
       })
 
       if (error) {
-        console.error('Stripe checkout error:', error)
+        logger.error('Stripe checkout error:', error)
         toast.error(
           language === 'pt' 
             ? 'Erro ao processar pagamento. Tente novamente.' 
@@ -227,7 +228,7 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
 
       return sessionId
     } catch (error) {
-      console.error('Error creating subscription:', error)
+      logger.error('Error creating subscription:', error)
       toast.error(
         language === 'pt' 
           ? 'Erro ao criar subscrição. Tente novamente.' 
@@ -269,7 +270,7 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
       
       return true
     } catch (error) {
-      console.error('Error cancelling subscription:', error)
+      logger.error('Error cancelling subscription:', error)
       toast.error(
         language === 'pt' 
           ? 'Erro ao cancelar subscrição' 
@@ -316,7 +317,7 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
       
       return true
     } catch (error) {
-      console.error('Error upgrading subscription:', error)
+      logger.error('Error upgrading subscription:', error)
       toast.error(
         language === 'pt' 
           ? 'Erro ao atualizar subscrição' 
@@ -337,12 +338,12 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
         .eq('user_id', user.id)
 
       if (error) {
-        console.error('Error marking trial as used:', error)
+        logger.error('Error marking trial as used:', error)
       } else {
         setTrial(prev => prev ? { ...prev, is_used: true } : null)
       }
     } catch (error) {
-      console.error('Error marking trial as used:', error)
+      logger.error('Error marking trial as used:', error)
     }
   }
 
@@ -368,10 +369,10 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
         })
 
       if (error) {
-        console.error('Error tracking membership usage:', error)
+        logger.error('Error tracking membership usage:', error)
       }
     } catch (error) {
-      console.error('Error tracking membership usage:', error)
+      logger.error('Error tracking membership usage:', error)
     }
   }
 
@@ -431,14 +432,14 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
         })
 
       if (error) {
-        console.error('Error tracking feature usage:', error)
+        logger.error('Error tracking feature usage:', error)
         return false
       }
 
   setUsage(updatedUsage)
       return true
     } catch (error) {
-      console.error('Error tracking feature usage:', error)
+      logger.error('Error tracking feature usage:', error)
       return false
     }
   }
@@ -463,7 +464,7 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
       const { isValid } = await response.json()
       return isValid
     } catch (error) {
-      console.error('Error validating student status:', error)
+      logger.error('Error validating student status:', error)
       return false
     }
   }

@@ -95,7 +95,9 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
           window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`, '_blank')
           break
         case 'copy':
-          navigator.clipboard.writeText(postUrl)
+          if (typeof navigator !== 'undefined' && navigator.clipboard) {
+            navigator.clipboard.writeText(postUrl)
+          }
           break
       }
     }
