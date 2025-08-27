@@ -4,9 +4,9 @@ import React, { Suspense, lazy, useState, useCallback } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useAIPerformance } from '@/hooks/useAIPerformance'
 import { 
-  Brain, 
-  Zap, 
-  TrendingUp,
+  CpuChipIcon as Brain, 
+  BoltIcon as Zap, 
+  TrendingUpIcon as TrendingUp,
   ExclamationTriangleIcon
 } from '@heroicons/react/24/outline'
 

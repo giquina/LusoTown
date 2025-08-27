@@ -2,23 +2,21 @@
 
 import React from 'react';
 
-interface progressProps {
+interface ProgressProps {
   className?: string;
-  children?: React.ReactNode;
+  value?: number;
+  max?: number;
 }
 
-export default function progress({ className, children }: progressProps) {
+export function Progress({ className, value = 0, max = 100 }: ProgressProps) {
+  const percentage = Math.min(Math.max((value / max) * 100, 0), 100);
+
   return (
-    <div className={`progress-component ${className || ''}`}>
-      {/* TODO: Implement progress component */}
-      <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-        <p className="text-yellow-800 text-sm">
-          ⚠️  progress component stub - needs implementation
-        </p>
-        {children}
-      </div>
+    <div className={`w-full bg-gray-200 rounded-full h-2 ${className || ''}`}>
+      <div
+        className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+        style={{ width: `${percentage}%` }}
+      />
     </div>
   );
 }
-
-export { progress };

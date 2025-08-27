@@ -38,6 +38,8 @@ import {
 } from '@heroicons/react/24/outline'
 import { StarIcon as StarSolidIcon, UsersIcon } from '@heroicons/react/24/solid'
 import Footer from '@/components/Footer'
+import { LusophoneCarousel } from '@/components/carousels'
+import { CAROUSEL_CONFIGS, AUTO_ADVANCE_TIMINGS } from '@/components/carousels'
 
 // Cultural Wisdom Display Component
 const CulturalWisdomDisplay: React.FC = () => {
@@ -1193,19 +1195,158 @@ export default function BusinessDirectory() {
           )}
           </div>
 
-          {/* Featured Businesses */}
+          {/* Featured Businesses Carousel */}
           {featuredBusinesses.length > 0 && (
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                {isPortuguese ? 'Negócios em Destaque' : 'Featured Businesses'}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {featuredBusinesses.map(business => (
-                  <BusinessCard key={business.id} business={business} featured={true} />
-                ))}
-              </div>
+            <div className="mb-12">
+              <LusophoneCarousel
+                items={featuredBusinesses.map(business => ({
+                  id: business.id,
+                  title: {
+                    en: business.name,
+                    pt: business.namePortuguese || business.name
+                  },
+                  description: {
+                    en: business.description,
+                    pt: business.descriptionPortuguese || business.description
+                  },
+                  image: business.photos[0] || '/images/default-business.jpg',
+                  flagEmoji: business.ownerRegion === 'portugal_mainland' ? '🇵🇹' :
+                           business.ownerRegion === 'brazil' ? '🇧🇷' :
+                           business.ownerRegion === 'angola' ? '🇦🇴' :
+                           business.ownerRegion === 'cape_verde' ? '🇨🇻' :
+                           business.ownerRegion === 'mozambique' ? '🇲🇿' :
+                           business.ownerRegion === 'guinea_bissau' ? '🇬🇼' :
+                           business.ownerRegion === 'sao_tome_principe' ? '🇸🇹' : '🇵🇹',
+                  category: business.category,
+                  countries: [business.ownerRegion.replace('_', ' ')],
+                  priority: business.verificationStatus === 'verified' ? 1 : 2
+                }))}
+                renderItem={(item, index) => {
+                  const originalBusiness = featuredBusinesses[index]
+                  if (!originalBusiness) return null
+                  return (
+                    <BusinessCard 
+                      business={originalBusiness} 
+                      featured={true}
+                      viewMode="grid"
+                      distance={getBusinessDistance(originalBusiness.id)}
+                      onFavorite={handleFavoriteToggle}
+                      isFavorited={favoritedBusinesses.has(originalBusiness.id)}
+                    />
+                  )
+                }}
+                title={{
+                  en: "Featured Portuguese Businesses",
+                  pt: "Negócios Portugueses em Destaque"
+                }}
+                subtitle={{
+                  en: "Verified businesses owned by Portuguese speakers across London",
+                  pt: "Negócios verificados de proprietários lusófonos em Londres"
+                }}
+                responsive={CAROUSEL_CONFIGS.standard}
+                autoAdvance={true}
+                autoAdvanceInterval={AUTO_ADVANCE_TIMINGS.slow}
+                showControls={true}
+                showDots={true}
+                className="featured-businesses-carousel"
+                onItemClick={(item, index) => {
+                  // Navigate to business details or open business modal
+                  console.log('Business clicked:', featuredBusinesses[index]?.name)
+                }}
+              />
             </div>
           )}
+
+          {/* Business Categories Showcase Carousel */}
+          <div className="mb-12">
+            <LusophoneCarousel
+              items={categories.filter(cat => cat.value !== 'all').map(category => ({
+                id: `category-${category.value}`,
+                title: {
+                  en: category.label.en,
+                  pt: category.label.pt
+                },
+                description: {
+                  en: `Discover authentic ${category.label.en.toLowerCase()} businesses`,
+                  pt: `Descubra negócios autênticos de ${category.label.pt.toLowerCase()}`
+                },
+                image: `/images/categories/${category.value}.jpg`,
+                flagEmoji: category.emoji,
+                category: category.value,
+                countries: ['Portugal', 'Brazil', 'Angola', 'Cape Verde', 'Mozambique'],
+                priority: 1
+              }))}
+              renderItem={(item, index) => {
+                const originalCategory = categories.filter(cat => cat.value !== 'all')[index]
+                if (!originalCategory) return null
+                
+                const businessCount = businesses.filter(b => b.category === originalCategory.value).length
+                
+                return (
+                  <div 
+                    className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer h-full"
+                    onClick={() => {
+                      const currentCategories = filters.category || []
+                      if (currentCategories.includes(originalCategory.value as BusinessCategory)) {
+                        handleFilterChange('category', currentCategories.filter(c => c !== originalCategory.value))
+                      } else {
+                        handleFilterChange('category', [...currentCategories, originalCategory.value])
+                      }
+                    }}
+                  >
+                    <div className="relative h-32">
+                      <div className="w-full h-full bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center">
+                        <span className="text-4xl">{originalCategory.emoji}</span>
+                      </div>
+                      <div className="absolute top-3 right-3 bg-primary-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                        {businessCount}
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-bold text-lg text-gray-900 mb-2">
+                        {originalCategory.label[language]}
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-4">
+                        {item.description[language]}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-primary-600 font-medium">
+                          {businessCount} {isPortuguese ? 'negócios' : 'businesses'}
+                        </span>
+                        <div className="flex gap-1 text-xs">
+                          🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }}
+              title={{
+                en: "Explore Business Categories",
+                pt: "Explorar Categorias de Negócios"
+              }}
+              subtitle={{
+                en: "Find Portuguese businesses by category - from restaurants to professional services",
+                pt: "Encontre negócios portugueses por categoria - de restaurantes a serviços profissionais"
+              }}
+              responsive={CAROUSEL_CONFIGS.compact}
+              autoAdvance={false}
+              showControls={true}
+              showDots={true}
+              className="business-categories-carousel"
+              onItemClick={(item, index) => {
+                const category = categories.filter(cat => cat.value !== 'all')[index]
+                if (category) {
+                  const currentCategories = filters.category || []
+                  if (currentCategories.includes(category.value as BusinessCategory)) {
+                    handleFilterChange('category', currentCategories.filter(c => c !== category.value))
+                  } else {
+                    handleFilterChange('category', [...currentCategories, category.value])
+                  }
+                }
+              }}
+            />
+          </div>
         </div>
 
         {/* Main Content Area */}

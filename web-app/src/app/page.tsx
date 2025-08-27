@@ -19,6 +19,14 @@ import {
   MatchingTooltip 
 } from "@/components/ui/GuidanceTooltip";
 
+// Enhanced Carousel System Integration
+import { 
+  WeekendEventsCarousel,
+  WeeklyDiscoveryCarousel,
+  createMockWeekendEvents
+} from "@/components/carousels/LusophoneCarouselExamples";
+import type { WeeklyDiscoveryItem } from "@/components/carousels/LusophoneCarousel";
+
 // Dynamic import for PALOP Country Cards
 const PALOPCountryCards = dynamic(() => import("@/components/PALOPCountryCards"), {
   loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-xl" />,
@@ -71,6 +79,143 @@ export default function Home() {
   const { t } = useLanguage();
   const [showWelcomeWizard, setShowWelcomeWizard] = useState(false);
   const router = useRouter();
+  
+  // Enhanced Carousel Data Management
+  const [weekendEvents] = useState(() => createMockWeekendEvents(12));
+  const [weeklyDiscoveries] = useState<WeeklyDiscoveryItem[]>(() => [
+    {
+      id: 'discovery-1',
+      title: {
+        en: 'Portuguese Bakery & Pastéis de Nata',
+        pt: 'Padaria Portuguesa & Pastéis de Nata'
+      },
+      description: {
+        en: 'Authentic Portuguese pastries and fresh bread daily',
+        pt: 'Pastelaria portuguesa autêntica e pão fresco diariamente'
+      },
+      discoveryType: 'restaurant' as const,
+      location: {
+        name: 'Casa do Bacalhau',
+        area: 'South Kensington'
+      },
+      featured: true,
+      rating: 4.8,
+      flagEmoji: '🇵🇹',
+      countries: ['Portugal'],
+      category: 'Food',
+      image: '/discoveries/bakery.jpg'
+    },
+    {
+      id: 'discovery-2',
+      title: {
+        en: 'Brazilian Dance Studio & Classes',
+        pt: 'Estúdio de Dança Brasileira & Aulas'
+      },
+      description: {
+        en: 'Learn Samba, Forró, and Brazilian Zouk with professional instructors',
+        pt: 'Aprenda Samba, Forró e Zouk Brasileiro com instrutores profissionais'
+      },
+      discoveryType: 'cultural-site' as const,
+      location: {
+        name: 'Brasil Ritmos Studio',
+        area: 'East London'
+      },
+      featured: true,
+      rating: 4.9,
+      flagEmoji: '🇧🇷',
+      countries: ['Brazil'],
+      category: 'Dance',
+      image: '/discoveries/dance-studio.jpg'
+    },
+    {
+      id: 'discovery-3',
+      title: {
+        en: 'Cape Verdean Music & Cultural Centre',
+        pt: 'Centro de Música e Cultura Cabo-verdiana'
+      },
+      description: {
+        en: 'Experience morna and coladeira music with Cape Verdean artists',
+        pt: 'Experimente música morna e coladeira com artistas cabo-verdianos'
+      },
+      discoveryType: 'cultural-site' as const,
+      location: {
+        name: 'Cabo Verde Cultural Hub',
+        area: 'Brixton'
+      },
+      featured: false,
+      rating: 4.7,
+      flagEmoji: '🇨🇻',
+      countries: ['Cape Verde'],
+      category: 'Music',
+      image: '/discoveries/cv-music.jpg'
+    },
+    {
+      id: 'discovery-4',
+      title: {
+        en: 'Angolan Restaurant & Kizomba Nights',
+        pt: 'Restaurante Angolano & Noites de Kizomba'
+      },
+      description: {
+        en: 'Taste authentic Angolan cuisine and dance to Kizomba rhythms',
+        pt: 'Prove culinária angolana autêntica e dance ao ritmo da Kizomba'
+      },
+      discoveryType: 'restaurant' as const,
+      location: {
+        name: 'Angola Sabores',
+        area: 'North London'
+      },
+      featured: true,
+      rating: 4.6,
+      flagEmoji: '🇦🇴',
+      countries: ['Angola'],
+      category: 'Food & Music',
+      image: '/discoveries/angola-restaurant.jpg'
+    },
+    {
+      id: 'discovery-5',
+      title: {
+        en: 'Mozambican Art Gallery & Exhibitions',
+        pt: 'Galeria de Arte Moçambicana & Exposições'
+      },
+      description: {
+        en: 'Discover contemporary Mozambican art and cultural exhibitions',
+        pt: 'Descubra arte moçambicana contemporânea e exposições culturais'
+      },
+      discoveryType: 'cultural-site' as const,
+      location: {
+        name: 'Maputo Art Space',
+        area: 'Central London'
+      },
+      featured: false,
+      rating: 4.5,
+      flagEmoji: '🇲🇿',
+      countries: ['Mozambique'],
+      category: 'Art',
+      image: '/discoveries/mz-art.jpg'
+    },
+    {
+      id: 'discovery-6',
+      title: {
+        en: 'Portuguese Business Hub & Networking',
+        pt: 'Centro de Negócios Português & Networking'
+      },
+      description: {
+        en: 'Connect with Portuguese entrepreneurs and business opportunities',
+        pt: 'Conecte-se com empreendedores portugueses e oportunidades de negócio'
+      },
+      discoveryType: 'business' as const,
+      location: {
+        name: 'Portugal Business Centre',
+        area: 'City of London'
+      },
+      featured: true,
+      rating: 4.8,
+      flagEmoji: '🇵🇹',
+      countries: ['Portugal'],
+      category: 'Business',
+      image: '/discoveries/business-hub.jpg'
+    }
+  ]);
 
   // Mobile welcome wizard - Only trigger on signup intent (no automatic triggers)
   const handleSignupClick = () => {
@@ -583,222 +728,32 @@ export default function Home() {
             </div>
           </section>
 
-          {/* THIS WEEKEND'S PORTUGUESE COMMUNITY SECTION - Fixed spacing */}
+          {/* THIS WEEKEND'S PORTUGUESE COMMUNITY SECTION - Enhanced Carousel Implementation */}
           <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-secondary-50 to-accent-50 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-6xl mx-auto">
+              <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
+                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-secondary-500 via-accent-500 to-primary-600 text-white px-6 py-3 rounded-full font-bold text-sm mb-6">
+                    <CalendarDaysIcon className="w-4 h-4" />
+                    {t("weekend.badge", "THIS WEEKEND'S EVENTS")}
+                  </div>
+
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6">
-                    {t("weekend.title", "This Weekend's Lusophone Community")}
+                    {t("weekend.title", "This Weekend's Lusophone Community Events")}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     {t(
                       "weekend.subtitle",
-                      "Discover the best Lusophone community experiences happening this weekend across the United Kingdom"
+                      "Discover 12+ authentic Portuguese-speaking community experiences happening this weekend across the United Kingdom"
                     )}
                   </p>
                 </div>
 
-                <div className="grid lg:grid-cols-3 gap-8 mb-12">
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") &&
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekend&tag=music&country=cv`
-                      )
-                    }
-                    onClick={() =>
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekend&tag=music&country=cv`
-                      )
-                    }
-                    className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-green-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                    aria-label="See Cape Verdean music events this weekend"
-                  >
-                    <div className="text-center mb-4">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-red-500 rounded-2xl flex items-center justify-center text-3xl">
-                        🎶
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        Saturday: Cape Verdean Music Festival
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3">
-                        7pm • Brixton Academy
-                      </p>
-                    </div>
-                    <p className="text-gray-700 text-sm mb-4">
-                      "Festival de música cabo-verdiana com artistas
-                      internacionais. Uma celebração da cultura PALOP em
-                      Londres."
-                    </p>
-                    <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
-                      <div className="flex gap-2 flex-wrap">
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=music`}
-                          className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Music
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&country=cv`}
-                          className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          🇨🇻 Cape Verde
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=palop`}
-                          className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          PALOP
-                        </Link>
-                      </div>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&when=weekend&tag=music&country=cv`}
-                        className="text-sm font-medium text-primary-700 hover:underline"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("common.view_more", "View more")}
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") &&
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekend&tag=dance&country=ao`
-                      )
-                    }
-                    onClick={() =>
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekend&tag=dance&country=ao`
-                      )
-                    }
-                    className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-orange-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                    aria-label="See Angolan kizomba events this weekend"
-                  >
-                    <div className="text-center mb-4">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center text-3xl">
-                        💃
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        Friday: Angolan Kizomba Night
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3">
-                        8pm • Elephant & Castle
-                      </p>
-                    </div>
-                    <p className="text-gray-700 text-sm mb-4">
-                      "Noite sensual de Kizomba angolana com músicos ao vivo.
-                      Conecte-se através da dança mais magnética de África."
-                    </p>
-                    <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
-                      <div className="flex gap-2 flex-wrap">
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=dance`}
-                          className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Dance
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&country=ao`}
-                          className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          🇦🇴 Angola
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=palop`}
-                          className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          PALOP
-                        </Link>
-                      </div>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&when=weekend&tag=dance&country=ao`}
-                        className="text-sm font-medium text-primary-700 hover:underline"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("common.view_more", "View more")}
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) =>
-                      (e.key === "Enter" || e.key === " ") &&
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekend&tag=food&country=mz`
-                      )
-                    }
-                    onClick={() =>
-                      router.push(
-                        `${ROUTES.events}?ref=home&when=weekend&tag=food&country=mz`
-                      )
-                    }
-                    className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400"
-                    aria-label="See Mozambican food events this weekend"
-                  >
-                    <div className="text-center mb-4">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-3xl">
-                        🌶️
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        Sunday: Mozambican Spice Market
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3">
-                        11am • Commercial Road
-                      </p>
-                    </div>
-                    <p className="text-gray-700 text-sm mb-4">
-                      "Mercado de especiarias moçambicanas autênticas. Prove os
-                      sabores do Oceano Índico e herança costeira."
-                    </p>
-                    <div className="flex items-center justify-between flex-wrap gap-2 mt-2">
-                      <div className="flex gap-2 flex-wrap">
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=food`}
-                          className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Food
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&country=mz`}
-                          className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          🇲🇿 Mozambique
-                        </Link>
-                        <Link
-                          href={`${ROUTES.events}?ref=home&tag=palop`}
-                          className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full hover:underline"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          PALOP
-                        </Link>
-                      </div>
-                      <Link
-                        href={`${ROUTES.events}?ref=home&when=weekend&tag=food&country=mz`}
-                        className="text-sm font-medium text-primary-700 hover:underline"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("common.view_more", "View more")}
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                {/* Enhanced Weekend Events Carousel */}
+                <WeekendEventsCarousel 
+                  events={weekendEvents}
+                  className="mb-12"
+                />
 
                 {/* Weekend CTA */}
                 <div className="text-center">
@@ -807,7 +762,7 @@ export default function Home() {
                     className="inline-flex items-center justify-center px-10 py-5 bg-secondary-600 text-white text-xl font-bold rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-2 hover:scale-105"
                   >
                     <UsersIcon className="w-6 h-6 mr-3" />
-                    {t("weekend.cta", "Explore Weekend Events")}
+                    {t("weekend.cta", "Explore All Weekend Events")}
                     <ArrowRightIcon className="w-6 h-6 ml-3" />
                   </a>
                 </div>
@@ -815,10 +770,10 @@ export default function Home() {
             </div>
           </section>
 
-          {/* WEEKLY COMMUNITY DISCOVERY SECTION - Fixed spacing */}
+          {/* WEEKLY COMMUNITY DISCOVERY SECTION - Enhanced Carousel Implementation */}
           <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-50 to-pink-50 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-6xl mx-auto">
+              <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                   <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-6 py-3 rounded-full font-bold text-sm mb-6">
                     <UsersIcon className="w-4 h-4" />
@@ -826,16 +781,22 @@ export default function Home() {
                   </div>
 
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6">
-                    {t("weekly.title", "Weekly Lusophone Community Activities")}
+                    {t("weekly.title", "Weekly Portuguese-speaking Community Discoveries")}
                   </h2>
 
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     {t(
                       "weekly.subtitle",
-                      "Discover the recurring activities and meetups that bring our community together every week across London and the United Kingdom"
+                      "Discover authentic Portuguese-speaking businesses, cultural sites, and community experiences across London, Manchester, Birmingham, and Edinburgh"
                     )}
                   </p>
                 </div>
+
+                {/* Enhanced Weekly Discovery Carousel */}
+                <WeeklyDiscoveryCarousel 
+                  discoveries={weeklyDiscoveries}
+                  className="mb-16"
+                />
 
                 {/* Weekly Activities Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">

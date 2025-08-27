@@ -52,6 +52,8 @@ import {
 import PortugueseCulturalCalendar from "@/components/PortugueseCulturalCalendar";
 import EventsDiscovery from "@/components/EventsDiscovery";
 import CommunityEventCreation from "@/components/CommunityEventCreation";
+import { LusophoneCarousel, WeekendEventsCarousel } from '@/components/carousels';
+import { CAROUSEL_CONFIGS, AUTO_ADVANCE_TIMINGS } from '@/components/carousels';
 
 // Mobile UX Components
 import { SkeletonEventGrid } from "@/components/mobile/SkeletonLoadingSystem";
@@ -1396,6 +1398,88 @@ export default function EventsPage() {
                     </div>
                   )}
 
+                  {/* Featured Events Carousel */}
+                  {activeTab === "events" && featuredItems.length > 0 && (
+                    <div className="mb-12">
+                      <LusophoneCarousel
+                        items={featuredItems.slice(0, 4).map(event => ({
+                          id: event.id,
+                          title: {
+                            en: event.title || 'Featured Event',
+                            pt: event.title || 'Evento em Destaque'
+                          },
+                          description: {
+                            en: event.description || 'Join this premium Portuguese cultural event',
+                            pt: event.description || 'Participe neste evento cultural português premium'
+                          },
+                          image: event.imageUrl || '/images/default-event.jpg',
+                          flagEmoji: '🇵🇹',
+                          category: event.category || 'cultural',
+                          priority: 1
+                        }))}
+                        renderItem={(item, index) => {
+                          const originalEvent = featuredItems[index]
+                          if (!originalEvent) return null
+                          return (
+                            <div className="bg-white rounded-2xl shadow-lg border border-primary-100 overflow-hidden hover:shadow-xl transition-all duration-300 h-full">
+                              <div className="relative h-48">
+                                {originalEvent.imageUrl ? (
+                                  <img 
+                                    src={originalEvent.imageUrl} 
+                                    alt={originalEvent.title}
+                                    className="w-full h-full object-cover"
+                                  />
+                                ) : (
+                                  <div className="w-full h-full bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
+                                    <SparklesIcon className="w-16 h-16 text-primary-400" />
+                                  </div>
+                                )}
+                                <div className="absolute top-3 left-3 bg-gradient-to-r from-accent-500 to-premium-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                                  {isPortuguese ? 'Destaque' : 'Featured'}
+                                </div>
+                              </div>
+                              <div className="p-6">
+                                <h3 className="font-bold text-xl text-gray-900 mb-2">
+                                  {originalEvent.title}
+                                </h3>
+                                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                                  {originalEvent.description}
+                                </p>
+                                <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                                  <CalendarIcon className="w-4 h-4" />
+                                  <span>{originalEvent.date}</span>
+                                  <MapPinIcon className="w-4 h-4 ml-2" />
+                                  <span>{originalEvent.location}</span>
+                                </div>
+                                <button className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200">
+                                  {isPortuguese ? 'Ver Detalhes' : 'View Details'}
+                                </button>
+                              </div>
+                            </div>
+                          )
+                        }}
+                        title={{
+                          en: "Featured Portuguese Events",
+                          pt: "Eventos Portugueses em Destaque"
+                        }}
+                        subtitle={{
+                          en: "Premium cultural experiences for the Portuguese-speaking community",
+                          pt: "Experiências culturais premium para a comunidade lusófona"
+                        }}
+                        responsive={CAROUSEL_CONFIGS.hero}
+                        autoAdvance={true}
+                        autoAdvanceInterval={AUTO_ADVANCE_TIMINGS.showcase}
+                        showControls={true}
+                        showDots={true}
+                        className="featured-events-carousel"
+                        onItemClick={(item, index) => {
+                          // Navigate to event details
+                          window.location.href = `/events/${featuredItems[index]?.id}`
+                        }}
+                      />
+                    </div>
+                  )}
+
                   {/* Controls */}
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
                     <div className="flex items-center gap-4 w-full sm:w-auto">
@@ -1459,6 +1543,93 @@ export default function EventsPage() {
                       </option>
                     </select>
                   </div>
+
+                  {/* Upcoming Events Carousel */}
+                  {activeTab === "events" && events.length > 0 && (
+                    <div className="mb-12">
+                      <LusophoneCarousel
+                        items={events.filter(event => !event.featured).slice(0, 6).map(event => ({
+                          id: event.id,
+                          title: {
+                            en: event.title || 'Portuguese Event',
+                            pt: event.title || 'Evento Português'
+                          },
+                          description: {
+                            en: event.description || 'Join our Portuguese-speaking community event',
+                            pt: event.description || 'Participe do nosso evento da comunidade lusófona'
+                          },
+                          image: event.imageUrl || '/images/default-event.jpg',
+                          flagEmoji: event.category === 'Music' ? '🎵' : 
+                                   event.category === 'Food' ? '🍽️' : 
+                                   event.category === 'Business' ? '💼' : 
+                                   event.category === 'Cultural' ? '🎭' :
+                                   event.category === 'Sports' ? '⚽' : '🇵🇹',
+                          category: event.category,
+                          countries: ['Portugal', 'Brazil', 'Angola', 'Cape Verde', 'Mozambique']
+                        }))}
+                        renderItem={(item, index) => {
+                          const originalEvent = events.filter(event => !event.featured)[index]
+                          if (!originalEvent) return null
+                          return (
+                            <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 h-full">
+                              <div className="relative h-40">
+                                {originalEvent.imageUrl ? (
+                                  <img 
+                                    src={originalEvent.imageUrl} 
+                                    alt={originalEvent.title}
+                                    className="w-full h-full object-cover"
+                                  />
+                                ) : (
+                                  <div className="w-full h-full bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center">
+                                    <CalendarIcon className="w-12 h-12 text-primary-400" />
+                                  </div>
+                                )}
+                                <div className="absolute top-3 right-3 text-2xl">
+                                  {item.flagEmoji}
+                                </div>
+                              </div>
+                              <div className="p-4">
+                                <h3 className="font-bold text-lg text-gray-900 mb-1">
+                                  {originalEvent.title}
+                                </h3>
+                                <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                                  {originalEvent.description}
+                                </p>
+                                <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                                  <CalendarIcon className="w-4 h-4" />
+                                  <span>{originalEvent.date}</span>
+                                </div>
+                                <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                                  <MapPinIcon className="w-4 h-4" />
+                                  <span className="truncate">{originalEvent.location}</span>
+                                </div>
+                                <button className="w-full bg-primary-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-primary-600 transition-colors">
+                                  {isPortuguese ? 'Ver Evento' : 'View Event'}
+                                </button>
+                              </div>
+                            </div>
+                          )
+                        }}
+                        title={{
+                          en: "Upcoming Events",
+                          pt: "Próximos Eventos"
+                        }}
+                        subtitle={{
+                          en: "Discover authentic Portuguese cultural experiences in London",
+                          pt: "Descubra experiências culturais portuguesas autênticas em Londres"
+                        }}
+                        responsive={CAROUSEL_CONFIGS.standard}
+                        autoAdvance={false}
+                        showControls={true}
+                        showDots={true}
+                        className="upcoming-events-carousel"
+                        onItemClick={(item, index) => {
+                          const filteredEvents = events.filter(event => !event.featured)
+                          window.location.href = `/events/${filteredEvents[index]?.id}`
+                        }}
+                      />
+                    </div>
+                  )}
 
                   {/* Featured Section */}
                   {featuredItems.length > 0 && (

@@ -52,36 +52,22 @@ npm run audit:hardcoding             # CRITICAL: Check for hardcoded values
 
 See `/web-app/TODO.md` for comprehensive premium enhancement roadmap focusing on luxury Portuguese-speaking nations content and elite user experience improvements.
 
-## Project Overview
+## 📖 Project Overview
 
-LusoTown is a production-ready Portuguese-speaking community platform serving the United Kingdom Portuguese speakers. It's a comprehensive social network with event discovery, enhanced business directory celebrating ALL Lusophone cultures, streaming platform, transport services, and university partnerships.
+**LusoTown**: Portuguese-speaking community platform for United Kingdom residents. Features event discovery, business directory, streaming platform, transport services, and university partnerships.
 
-**Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL with PostGIS, Simple Relay Server (SRS) for streaming, OpenStreetMap/Leaflet for mapping, Twitter API, Stripe, React Context state management, enhanced cultural celebrations system.
+**Tech Stack**: Next.js 14, TypeScript, Tailwind CSS, Supabase PostgreSQL + PostGIS, Simple Relay Server (SRS)  
+**Status**: Production-ready - 135+ pages, 496+ components, 4 AI systems  
+**Live Platform**: https://web-99kxh0sku-giquinas-projects.vercel.app
 
-**Status**: Production-ready with 135+ pages, 496+ components, complete bilingual EN/PT system, mobile-first responsive design, 4 integrated AI systems, enhanced Lusophone cultural celebrations system, comprehensive E2E testing suite. **Live Platform**: https://web-99kxh0sku-giquinas-projects.vercel.app
+**Target Audience**: 750+ Portuguese speakers, 2,150+ university students (UK-wide)  
+**Universities**: 8 partnerships (UCL, King's, Imperial, LSE, Oxford, Cambridge, Manchester, Edinburgh)
 
+## 💻 System Requirements
 
-
-## Current System Status
-
-**Last Updated**: 2025-08-26  
-**Node Version**: v20.19.4  
-**Last Commit**: 3c42e6f fix: GitHub Actions hardcoding audit - make informational instead of blocking  
-**Architecture**: 135 pages, 496 components, 49 config files  
-**AI Systems**: 4 production AI engines  
-**Test Coverage**: 24 test files  
-**Documentation**: 1670 .md files
-
-**Key npm Scripts**: preinstall, dev, build, start, lint, export, deploy, auto-fix, deployment-monitor, deploy:auto  
-**Major Dependencies**: @headlessui/react, @heroicons/react, @lusotown/design-tokens, @lusotown/ui, @sentry/nextjs, @sentry/profiling-node, @sentry/react, @stripe/stripe-js
-
-
-
-## System Requirements
-
-**Node.js**: v22.x (web-app engines) / v18+ (root) - streaming server requires v22
-**npm**: v9.x (web-app engines) / v8+ (root)  
-**Package Manager**: npm (workspace support required for monorepo)
+**Node.js**: v22.x (web-app) / v18+ (root)  
+**npm**: v9.x (web-app) / v8+ (root)  
+**Package Manager**: npm (monorepo workspace support required)
 
 ## 📋 Development Commands
 

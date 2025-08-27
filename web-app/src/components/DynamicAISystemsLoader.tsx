@@ -3,11 +3,11 @@
 import React, { useState, Suspense, lazy, useCallback } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { 
-  Brain, 
-  Zap, 
-  TrendingUp, 
-  Target,
-  Users,
+  CpuChipIcon as Brain, 
+  BoltIcon as Zap, 
+  TrendingUpIcon as TrendingUp, 
+  EyeIcon as Target,
+  UsersIcon as Users,
   ChartBarSquareIcon
 } from '@heroicons/react/24/outline'
 

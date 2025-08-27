@@ -7,8 +7,8 @@ import DynamicAISystemsLoader from '@/components/DynamicAISystemsLoader'
 import DynamicAINotificationDashboard from '@/components/ai/DynamicAINotificationDashboard'
 import DynamicAIMatchingEngine from '@/components/matches/DynamicAIMatchingEngine'
 import { 
-  Brain, 
-  Zap, 
+  CpuChipIcon as Brain, 
+  BoltIcon as Zap, 
   ChartBarSquareIcon,
   PlayIcon,
   PauseIcon,

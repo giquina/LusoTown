@@ -92,6 +92,24 @@ export function CardTitle({ children, className = '', mobile = false, ...props }
   )
 }
 
+interface CardDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {
+  children: React.ReactNode
+  mobile?: boolean
+}
+
+export function CardDescription({ children, className = '', mobile = false, ...props }: CardDescriptionProps) {
+  const mobileClass = mobile ? 'lusotown-text-body' : 'lusotown-text-body'
+  
+  return (
+    <p 
+      className={`${mobileClass} text-gray-600 mt-2 ${className}`}
+      {...props}
+    >
+      {children}
+    </p>
+  )
+}
+
 interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
   mobile?: boolean

@@ -7,7 +7,7 @@ import { useWidgetManager } from '@/components/WidgetManager';
 import { 
   DevicePhoneMobileIcon,
   ComputerDesktopIcon,
-  TabletLandscapeIcon,
+  DeviceTabletIcon as TabletLandscapeIcon,
   ChatBubbleLeftRightIcon,
   BellIcon,
   PlusIcon
