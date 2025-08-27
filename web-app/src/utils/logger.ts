@@ -66,45 +66,74 @@ class LusoTownLogger {
       typeof window !== 'undefined' && (window as any).LUSOTOWN_DEBUG
     );
 
-    // Winston Configuration
-    this.winston = winston.createLogger({
-      level: this.isDevelopment ? 'debug' : 'info',
-      format: winston.format.combine(
-        winston.format.timestamp({
-          format: 'YYYY-MM-DD HH:mm:ss.SSS Z'
-        }),
-        winston.format.errors({ stack: true }),
-        winston.format.json(),
-        winston.format.printf(({ timestamp, level, message, area, culturalContext, ...meta }) => {
-          const culturalFlag = this.getCulturalFlag(culturalContext as CulturalContext);
-          const areaIcon = this.getAreaIcon(area as PlatformArea);
-          return `${timestamp} [${level.toUpperCase()}] ${areaIcon}${culturalFlag} ${message}${Object.keys(meta).length ? ' ' + JSON.stringify(meta) : ''}`;
-        })
-      ),
-      transports: [
-        // Console Transport (Development)
-        ...(this.isDevelopment ? [new winston.transports.Console({
-          format: winston.format.combine(
-            winston.format.colorize(),
-            winston.format.simple()
-          )
-        })] : []),
-        
-        // File Transport (Production)
-        ...(!this.isDevelopment ? [new winston.transports.File({
-          filename: 'logs/lusotown-error.log',
-          level: 'error',
-          maxsize: 10485760, // 10MB
-          maxFiles: 5
-        })] : []),
-        
-        ...(!this.isDevelopment ? [new winston.transports.File({
-          filename: 'logs/lusotown-combined.log',
-          maxsize: 10485760, // 10MB
-          maxFiles: 10
-        })] : [])
-      ]
-    });
+    // Check if we're in a browser environment
+    const isBrowser = typeof window !== 'undefined';
+
+    // Winston Configuration - Browser vs Server
+    if (isBrowser) {
+      // Simple console-based logging for browser environment
+      this.winston = winston.createLogger({
+        level: this.isDevelopment ? 'debug' : 'info',
+        format: winston.format.combine(
+          winston.format.timestamp({
+            format: 'YYYY-MM-DD HH:mm:ss.SSS Z'
+          }),
+          winston.format.printf(({ timestamp, level, message, area, culturalContext, ...meta }) => {
+            const culturalFlag = this.getCulturalFlag(culturalContext as CulturalContext);
+            const areaIcon = this.getAreaIcon(area as PlatformArea);
+            return `${timestamp} [${level.toUpperCase()}] ${areaIcon}${culturalFlag} ${message}${Object.keys(meta).length ? ' ' + JSON.stringify(meta) : ''}`;
+          })
+        ),
+        transports: [
+          new winston.transports.Console({
+            format: winston.format.combine(
+              winston.format.colorize(),
+              winston.format.simple()
+            )
+          })
+        ]
+      });
+    } else {
+      // Full Winston configuration for server environment
+      this.winston = winston.createLogger({
+        level: this.isDevelopment ? 'debug' : 'info',
+        format: winston.format.combine(
+          winston.format.timestamp({
+            format: 'YYYY-MM-DD HH:mm:ss.SSS Z'
+          }),
+          winston.format.errors({ stack: true }),
+          winston.format.json(),
+          winston.format.printf(({ timestamp, level, message, area, culturalContext, ...meta }) => {
+            const culturalFlag = this.getCulturalFlag(culturalContext as CulturalContext);
+            const areaIcon = this.getAreaIcon(area as PlatformArea);
+            return `${timestamp} [${level.toUpperCase()}] ${areaIcon}${culturalFlag} ${message}${Object.keys(meta).length ? ' ' + JSON.stringify(meta) : ''}`;
+          })
+        ),
+        transports: [
+          // Console Transport (Development)
+          ...(this.isDevelopment ? [new winston.transports.Console({
+            format: winston.format.combine(
+              winston.format.colorize(),
+              winston.format.simple()
+            )
+          })] : []),
+          
+          // File Transport (Production - Server only)
+          ...(!this.isDevelopment ? [new winston.transports.File({
+            filename: 'logs/lusotown-error.log',
+            level: 'error',
+            maxsize: 10485760, // 10MB
+            maxFiles: 5
+          })] : []),
+          
+          ...(!this.isDevelopment ? [new winston.transports.File({
+            filename: 'logs/lusotown-combined.log',
+            maxsize: 10485760, // 10MB
+            maxFiles: 10
+          })] : [])
+        ]
+      });
+    }
   }
 
   // Portuguese Cultural Context Icons
