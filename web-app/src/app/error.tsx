@@ -2,7 +2,11 @@
 
 import React from 'react'
 import * as Sentry from '@sentry/nextjs'
+import { useRouter } from 'next/navigation'
 import { errorTracker } from '@/lib/monitoring/error-tracker'
+import { useLanguage } from '@/context/LanguageContext'
+import { contact } from '@/config/contact'
+import { ROUTES } from '@/config/routes'
 
 interface ErrorProps {
   error: Error & { digest?: string }
@@ -10,6 +14,8 @@ interface ErrorProps {
 }
 
 export default function Error({ error, reset }: ErrorProps) {
+  const router = useRouter()
+  const { t } = useLanguage()
   React.useEffect(() => {
     // Log the error to Sentry with Portuguese context
     Sentry.withScope((scope) => {
@@ -39,13 +45,13 @@ export default function Error({ error, reset }: ErrorProps) {
 
   const handleRetry = () => {
     // Add breadcrumb for retry action
-    Sentry.addBreadcrumb({
+  Sentry.addBreadcrumb({
       message: 'User clicked retry on error page',
       category: 'ui',
       level: 'info',
       data: {
-        error_digest: error.digest,
-        error_message: error.message
+    error_digest: error.digest,
+    error_message: error.message
       }
     })
     
@@ -64,10 +70,10 @@ export default function Error({ error, reset }: ErrorProps) {
               </svg>
             </div>
             <h1 className="text-2xl font-bold text-gray-900 mb-2">
-              Algo deu errado
+              {t('error.title', 'Algo deu errado')}
             </h1>
             <p className="text-gray-600">
-              Ocorreu um erro inesperado na plataforma da comunidade portuguesa.
+              {t('error.message', 'Ocorreu um erro inesperado na plataforma da comunidade portuguesa.')}
             </p>
           </div>
 
@@ -77,10 +83,10 @@ export default function Error({ error, reset }: ErrorProps) {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m6.586 10l4.414-4.414A2 2 0 0111.172 9l-7 7a2 2 0 01-2.829 0l-7-7a2 2 0 011.415-1.415L9 13l7-7z" />
               </svg>
-              <span className="text-sm font-medium">LusoTown Platform</span>
+              <span className="text-sm font-medium">{t('error.platform', 'LusoTown Platform')}</span>
             </div>
             <p className="text-xs text-primary-600">
-              A nossa equipa foi notificada e está a trabalhar para resolver esta questão.
+              {t('error.team_notified', 'A nossa equipa foi notificada e está a trabalhar para resolver esta questão.')}
             </p>
           </div>
 
@@ -93,29 +99,27 @@ export default function Error({ error, reset }: ErrorProps) {
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg>
-              Tentar novamente
+              {t('error.retry', 'Tentar novamente')}
             </button>
             
             <button
-              onClick={() => (window.location.href = '/')}
+              onClick={() => router.push(ROUTES.home)}
               className="w-full flex justify-center items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
-              Voltar ao início
+              {t('error.go_home', 'Voltar ao início')}
             </button>
-          </div>
-
-          {/* Support Contact */}
-          <div className="mt-6 pt-4 border-t border-gray-200">
-            <p className="text-xs text-gray-500 mb-2">Problema persistente?</p>
-            <a
-              href="mailto:support@lusotown.com?subject=Error%20Report&body=Error%20Details:%20Please%20describe%20what%20you%20were%20doing%20when%20this%20error%20occurred."
-              className="text-xs text-primary-600 hover:text-primary-700 font-medium transition-colors"
-            >
-              Contactar suporte técnico
-            </a>
+            <div className="mt-6 pt-4 border-t border-gray-200">
+              <p className="text-xs text-gray-500 mb-2">{t('error.persistent', 'Problema persistente?')}</p>
+              <a
+                href={`mailto:${contact.support}?subject=Error%20Report&body=Error%20Details:%20Please%20describe%20what%20you%20were%20doing%20when%20this%20error%20occurred.`}
+                className="text-xs text-primary-600 hover:text-primary-700 font-medium transition-colors"
+              >
+                {t('error.contact_support', 'Contactar suporte técnico')}
+              </a>
+            </div>
           </div>
         </div>
       </div>
