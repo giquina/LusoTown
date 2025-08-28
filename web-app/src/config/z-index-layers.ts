@@ -20,7 +20,7 @@ export const Z_INDEX_LAYERS = {
   floatingBase: 30,
   
   // Widget Management System - Priority 1 Implementation
-  appDownloadBar: 50,      // App download bar - foundational widget
+  appDownloadBar: 90,      // App download bar - above header when at top
   notification: 60,        // Notification widgets - above app bar
   lusoBotWidget: 70,       // Chat widget - above notifications
   liveActivityWidget: 45,  // Live feed - below app bar

@@ -1,0 +1,1807 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner "LusoTown App Available!" [ref=e2]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - img [ref=e12]
+        - generic [ref=e14]:
+          - generic [ref=e15]:
+            - img [ref=e16]
+            - generic [ref=e18]: LusoTown App Available!
+          - paragraph [ref=e19]: Connect with the Portuguese-speaking community across the UK, discover cultural events, and build your network. Download now.
+      - generic [ref=e20]:
+        - link "Download LusoTown app for Android. Opens in a new window." [ref=e21] [cursor=pointer]:
+          - /url: https://play.google.com/store/apps/details?id=com.lusotown.london
+          - text: Get
+        - button "Skip for now. Banner will be shown again in another session." [ref=e22] [cursor=pointer]: Later
+        - button "Close permanently. Banner will not be shown again." [ref=e23] [cursor=pointer]:
+          - img [ref=e24] [cursor=pointer]
+  - banner [ref=e27]:
+    - navigation "Top" [ref=e28]:
+      - generic [ref=e29]:
+        - link "🏛️ LusoTown Lusophone flag United Kingdom flag London" [ref=e31] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e34] [cursor=pointer]:
+            - generic [ref=e37] [cursor=pointer]: 🏛️
+            - generic [ref=e38] [cursor=pointer]:
+              - generic [ref=e39] [cursor=pointer]:
+                - generic [ref=e40] [cursor=pointer]: LusoTown
+                - generic [ref=e41] [cursor=pointer]:
+                  - img "Lusophone flag" [ref=e42] [cursor=pointer]: 🇵🇹
+                  - img "United Kingdom flag" [ref=e43] [cursor=pointer]: 🇬🇧
+              - generic [ref=e44] [cursor=pointer]: London
+        - generic [ref=e46]:
+          - button "🇬🇧" [ref=e48] [cursor=pointer]:
+            - generic [ref=e49] [cursor=pointer]: 🇬🇧
+          - button "Open main menu" [ref=e50] [cursor=pointer]:
+            - generic [ref=e51] [cursor=pointer]:
+              - generic [ref=e52] [cursor=pointer]: Open main menu
+              - img [ref=e53] [cursor=pointer]
+  - main [ref=e55]:
+    - main [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - 'heading "Unidos pela Língua Portuguese-speaking Community Featured flags: Portugal, Brazil, United Kingdom" [level=1] [ref=e66]':
+              - generic [ref=e67]: Unidos pela Língua
+              - generic [ref=e68]: Portuguese-speaking Community
+              - 'generic "Featured flags: Portugal, Brazil, United Kingdom" [ref=e69]':
+                - img "Portugal flag" [ref=e70]: 🇵🇹
+                - img "Brazil flag" [ref=e71]: 🇧🇷
+                - img "United Kingdom flag" [ref=e72]: 🇬🇧
+            - paragraph [ref=e73]: Discover events, businesses, and opportunities for verified Portuguese and Lusophone‑speaking community across the United Kingdom.
+            - generic [ref=e74]:
+              - img [ref=e75]
+              - generic [ref=e77]: Every member is verified as Portuguese or Portuguese‑speaking
+            - generic [ref=e79]:
+              - generic [ref=e80]: All Lusophone-Speaking Nations Celebrated
+              - generic [ref=e81]: 🇦🇴 Angola • 🇨🇻 Cape Verde • 🇬🇼 Guinea-Bissau • 🇲🇿 Mozambique • 🇸🇹 São Tomé • 🇹🇱 East Timor
+            - generic [ref=e82]:
+              - generic [ref=e83]:
+                - img [ref=e84]
+                - generic [ref=e86]: Portuguese speakers
+              - generic [ref=e87]:
+                - img [ref=e88]
+                - generic [ref=e90]: What's happening today
+              - generic [ref=e91]:
+                - img [ref=e92]
+                - generic [ref=e95]: Across the United Kingdom
+              - generic [ref=e96]:
+                - img [ref=e97]
+                - generic [ref=e99]: Updated daily
+            - generic [ref=e100]:
+              - link "🇵🇹 🇧🇷 🇦🇴 🇨🇻 JOIN FREE NOW" [ref=e101] [cursor=pointer]:
+                - /url: /events
+                - generic [ref=e102] [cursor=pointer]:
+                  - generic [ref=e103] [cursor=pointer]: 🇵🇹
+                  - generic [ref=e104] [cursor=pointer]: 🇧🇷
+                  - generic [ref=e105] [cursor=pointer]: 🇦🇴
+                  - generic [ref=e106] [cursor=pointer]: 🇨🇻
+                - text: JOIN FREE NOW
+                - img [ref=e107] [cursor=pointer]
+              - button "See How It Works" [ref=e109] [cursor=pointer]
+            - generic [ref=e110]:
+              - generic [ref=e111]:
+                - generic [ref=e112]:
+                  - generic [ref=e113]: M
+                  - generic [ref=e114]: J
+                  - generic [ref=e115]: A
+                - generic [ref=e116]:
+                  - generic [ref=e117]: Maria & João
+                  - generic [ref=e118]: Found love through LusoTown 💕
+              - paragraph [ref=e119]: "\"Conhecemo-nos aqui e agora estamos noivos! A comunidade portuguesa no Reino Unido é incrível.\""
+              - generic [ref=e121]: ⭐⭐⭐⭐⭐
+          - generic [ref=e123]:
+            - generic [ref=e124]:
+              - generic [ref=e125]:
+                - generic [ref=e126]:
+                  - generic [ref=e127]: 🎵
+                  - generic [ref=e128]:
+                    - generic [ref=e129]: "Tonight: Fado Night"
+                    - generic [ref=e130]: 📅 8pm • Camden Town
+                  - generic [ref=e131]: TONIGHT
+                - paragraph [ref=e132]: "\"Noite de fado tradicional com música ao vivo. Venha celebrar a cultura portuguesa!\""
+                - generic [ref=e133]:
+                  - generic [ref=e134]: Fado
+                  - generic [ref=e135]: Music
+                  - generic [ref=e136]: Culture
+              - generic [ref=e137]:
+                - generic [ref=e138]:
+                  - generic [ref=e139]: 🍿
+                  - generic [ref=e140]:
+                    - generic [ref=e141]: "Saturday: Kizomba Class"
+                    - generic [ref=e142]: 📅 7pm • Brixton
+                  - generic [ref=e143]: THIS WEEK
+                - paragraph [ref=e144]: "\"Aula de kizomba para todos os níveis. Vamos dançar juntos!\""
+                - generic [ref=e145]:
+                  - generic [ref=e146]: Kizomba
+                  - generic [ref=e147]: Dance
+            - link "50+ events weekly!" [ref=e149] [cursor=pointer]:
+              - /url: /events?ref=home&when=week
+              - img [ref=e150] [cursor=pointer]
+              - text: 50+ events weekly!
+        - generic [ref=e153]:
+          - generic [ref=e154]:
+            - heading "What brings you to our community?" [level=2] [ref=e155]
+            - paragraph [ref=e156]: Choose what interests you most in the Portuguese-speaking community
+            - generic [ref=e157]: 🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱
+          - generic [ref=e158]:
+            - generic [ref=e159]:
+              - button "🎵🎭🎪 Cultural Events Discover authentic experiences Festivals, food, music, and family-friendly meetups celebrating Portuguese-speaking culture across the UK." [ref=e160] [cursor=pointer]:
+                - generic [ref=e161] [cursor=pointer]:
+                  - img [ref=e163] [cursor=pointer]
+                  - generic [ref=e165] [cursor=pointer]: 🎵🎭🎪
+                  - heading "Cultural Events" [level=3] [ref=e166] [cursor=pointer]
+                  - paragraph [ref=e167] [cursor=pointer]: Discover authentic experiences
+                  - paragraph [ref=e168] [cursor=pointer]: Festivals, food, music, and family-friendly meetups celebrating Portuguese-speaking culture across the UK.
+              - button "💕❤️🤝 Find Your Match Find meaningful connections within the Portuguese-speaking community Make friends or date within a respectful, verified Lusophone community. Weekly Portuguese cultural meetups and small groups—simple and genuine." [ref=e169] [cursor=pointer]:
+                - generic [ref=e170] [cursor=pointer]:
+                  - img [ref=e172] [cursor=pointer]
+                  - generic [ref=e174] [cursor=pointer]: 💕❤️🤝
+                  - heading "Find Your Match" [level=3] [ref=e175] [cursor=pointer]
+                  - paragraph [ref=e176] [cursor=pointer]: Find meaningful connections within the Portuguese-speaking community
+                  - paragraph [ref=e177] [cursor=pointer]: Make friends or date within a respectful, verified Lusophone community. Weekly Portuguese cultural meetups and small groups—simple and genuine.
+              - button "💼🤝💰 Business Network Connect with entrepreneurs For founders, freelancers, and professionals. Get referrals, mentors, partners, and growth events in the Lusophone space." [ref=e178] [cursor=pointer]:
+                - generic [ref=e179] [cursor=pointer]:
+                  - img [ref=e181] [cursor=pointer]
+                  - generic [ref=e183] [cursor=pointer]: 💼🤝💰
+                  - heading "Business Network" [level=3] [ref=e184] [cursor=pointer]
+                  - paragraph [ref=e185] [cursor=pointer]: Connect with entrepreneurs
+                  - paragraph [ref=e186] [cursor=pointer]: For founders, freelancers, and professionals. Get referrals, mentors, partners, and growth events in the Lusophone space.
+              - button "🎓📚🏫 Student Life University community access Meet Portuguese-speaking students across UK campuses. Housing, societies, study help, internships, and discounts." [ref=e187] [cursor=pointer]:
+                - generic [ref=e188] [cursor=pointer]:
+                  - img [ref=e190] [cursor=pointer]
+                  - generic [ref=e192] [cursor=pointer]: 🎓📚🏫
+                  - heading "Student Life" [level=3] [ref=e193] [cursor=pointer]
+                  - paragraph [ref=e194] [cursor=pointer]: University community access
+                  - paragraph [ref=e195] [cursor=pointer]: Meet Portuguese-speaking students across UK campuses. Housing, societies, study help, internships, and discounts.
+            - generic [ref=e197]:
+              - generic [ref=e198]: Verified Portuguese/Portuguese‑speaking members
+              - generic [ref=e199]: •
+              - generic [ref=e200]: Free to join
+              - generic [ref=e201]: •
+              - generic [ref=e202]: United Kingdom–wide
+        - generic [ref=e205]:
+          - generic [ref=e206]:
+            - generic [ref=e207]:
+              - img [ref=e208]
+              - text: WHAT'S HAPPENING TODAY
+            - heading "Today in Lusophone Community" [level=2] [ref=e210]
+            - paragraph [ref=e211]: Don't miss what's happening right now in the Portuguese-speaking community across London and the United Kingdom
+          - generic [ref=e212]:
+            - button "View today's Kizomba events" [ref=e213] [cursor=pointer]:
+              - generic [ref=e214] [cursor=pointer]:
+                - generic [ref=e215] [cursor=pointer]: 🎵
+                - generic [ref=e216] [cursor=pointer]:
+                  - generic [ref=e217] [cursor=pointer]: "Tonight: Chocolate Kizomba"
+                  - generic [ref=e218] [cursor=pointer]: 8pm • One Regents Street
+              - paragraph [ref=e219] [cursor=pointer]: "\"Noite especial de kizomba com chocolate quente. Ideal para conhecer novos amigos portugueses!\""
+              - generic [ref=e220] [cursor=pointer]:
+                - generic [ref=e221] [cursor=pointer]:
+                  - link "Tonight" [ref=e222] [cursor=pointer]:
+                    - /url: /events?ref=home&day=today
+                  - link "Kizomba" [ref=e223] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=kizomba
+                - link "View more" [ref=e224] [cursor=pointer]:
+                  - /url: /events?ref=home&day=today&tag=kizomba
+            - button "View today's Food events" [ref=e225] [cursor=pointer]:
+              - generic [ref=e226] [cursor=pointer]:
+                - generic [ref=e227] [cursor=pointer]: 🍽️
+                - generic [ref=e228] [cursor=pointer]:
+                  - generic [ref=e229] [cursor=pointer]: "Today: New Brazilian Restaurant"
+                  - generic [ref=e230] [cursor=pointer]: All Day • Vauxhall
+              - paragraph [ref=e231] [cursor=pointer]: "\"Abertura do novo restaurante brasileiro com pratos tradicionais e ambiente acolhedor.\""
+              - generic [ref=e232] [cursor=pointer]:
+                - generic [ref=e233] [cursor=pointer]:
+                  - link "Today" [ref=e234] [cursor=pointer]:
+                    - /url: /events?ref=home&day=today
+                  - link "Food" [ref=e235] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=food
+                - link "View more" [ref=e236] [cursor=pointer]:
+                  - /url: /events?ref=home&day=today&tag=food
+            - button "View tomorrow's Business events" [ref=e237] [cursor=pointer]:
+              - generic [ref=e238] [cursor=pointer]:
+                - generic [ref=e239] [cursor=pointer]: 💼
+                - generic [ref=e240] [cursor=pointer]:
+                  - generic [ref=e241] [cursor=pointer]: "Tomorrow: Lusophone Business Breakfast"
+                  - generic [ref=e242] [cursor=pointer]: 8am • Manchester
+              - paragraph [ref=e243] [cursor=pointer]: "\"Networking matinal para profissionais portugueses no setor financeiro.\""
+              - generic [ref=e244] [cursor=pointer]:
+                - generic [ref=e245] [cursor=pointer]:
+                  - link "Tomorrow" [ref=e246] [cursor=pointer]:
+                    - /url: /events?ref=home&day=tomorrow
+                  - link "Business" [ref=e247] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=business
+                - link "View more" [ref=e248] [cursor=pointer]:
+                  - /url: /events?ref=home&day=tomorrow&tag=business
+          - link "See All Today's Events" [ref=e250] [cursor=pointer]:
+            - /url: /events
+            - img [ref=e251] [cursor=pointer]
+            - text: See All Today's Events
+            - img [ref=e253] [cursor=pointer]
+        - generic [ref=e257]:
+          - generic [ref=e258]:
+            - heading "This Weekend's Lusophone Community" [level=2] [ref=e259]
+            - paragraph [ref=e260]: Discover the best Lusophone community experiences happening this weekend across the United Kingdom
+          - generic [ref=e261]:
+            - button "See Cape Verdean music events this weekend" [ref=e262] [cursor=pointer]:
+              - generic [ref=e263] [cursor=pointer]:
+                - generic [ref=e264] [cursor=pointer]: 🎶
+                - 'heading "Saturday: Cape Verdean Music Festival" [level=3] [ref=e265] [cursor=pointer]'
+                - paragraph [ref=e266] [cursor=pointer]: 7pm • Brixton Academy
+              - paragraph [ref=e267] [cursor=pointer]: "\"Festival de música cabo-verdiana com artistas internacionais. Uma celebração da cultura PALOP em Londres.\""
+              - generic [ref=e268] [cursor=pointer]:
+                - generic [ref=e269] [cursor=pointer]:
+                  - link "Music" [ref=e270] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=music
+                  - link "🇨🇻 Cape Verde" [ref=e271] [cursor=pointer]:
+                    - /url: /events?ref=home&country=cv
+                  - link "PALOP" [ref=e272] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=palop
+                - link "View more" [ref=e273] [cursor=pointer]:
+                  - /url: /events?ref=home&when=weekend&tag=music&country=cv
+            - button "See Angolan kizomba events this weekend" [ref=e274] [cursor=pointer]:
+              - generic [ref=e275] [cursor=pointer]:
+                - generic [ref=e276] [cursor=pointer]: 💃
+                - 'heading "Friday: Angolan Kizomba Night" [level=3] [ref=e277] [cursor=pointer]'
+                - paragraph [ref=e278] [cursor=pointer]: 8pm • Elephant & Castle
+              - paragraph [ref=e279] [cursor=pointer]: "\"Noite sensual de Kizomba angolana com músicos ao vivo. Conecte-se através da dança mais magnética de África.\""
+              - generic [ref=e280] [cursor=pointer]:
+                - generic [ref=e281] [cursor=pointer]:
+                  - link "Dance" [ref=e282] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=dance
+                  - link "🇦🇴 Angola" [ref=e283] [cursor=pointer]:
+                    - /url: /events?ref=home&country=ao
+                  - link "PALOP" [ref=e284] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=palop
+                - link "View more" [ref=e285] [cursor=pointer]:
+                  - /url: /events?ref=home&when=weekend&tag=dance&country=ao
+            - button "See Mozambican food events this weekend" [ref=e286] [cursor=pointer]:
+              - generic [ref=e287] [cursor=pointer]:
+                - generic [ref=e288] [cursor=pointer]: 🌶️
+                - 'heading "Sunday: Mozambican Spice Market" [level=3] [ref=e289] [cursor=pointer]'
+                - paragraph [ref=e290] [cursor=pointer]: 11am • Commercial Road
+              - paragraph [ref=e291] [cursor=pointer]: "\"Mercado de especiarias moçambicanas autênticas. Prove os sabores do Oceano Índico e herança costeira.\""
+              - generic [ref=e292] [cursor=pointer]:
+                - generic [ref=e293] [cursor=pointer]:
+                  - link "Food" [ref=e294] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=food
+                  - link "🇲🇿 Mozambique" [ref=e295] [cursor=pointer]:
+                    - /url: /events?ref=home&country=mz
+                  - link "PALOP" [ref=e296] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=palop
+                - link "View more" [ref=e297] [cursor=pointer]:
+                  - /url: /events?ref=home&when=weekend&tag=food&country=mz
+          - link "Explore Weekend Events" [ref=e299] [cursor=pointer]:
+            - /url: /events
+            - img [ref=e300] [cursor=pointer]
+            - text: Explore Weekend Events
+            - img [ref=e302] [cursor=pointer]
+        - generic [ref=e306]:
+          - generic [ref=e307]:
+            - generic [ref=e308]:
+              - img [ref=e309]
+              - text: WEEKLY COMMUNITY DISCOVERY
+            - heading "Weekly Lusophone Community Activities" [level=2] [ref=e311]
+            - paragraph [ref=e312]: Discover the recurring activities and meetups that bring our community together every week across London and the United Kingdom
+          - generic [ref=e313]:
+            - button "See weekly language exchange events" [ref=e314] [cursor=pointer]:
+              - generic [ref=e315] [cursor=pointer]:
+                - generic [ref=e316] [cursor=pointer]: 🗣️
+                - 'heading "Monday: Lusophone Language Exchange" [level=3] [ref=e317] [cursor=pointer]'
+                - paragraph [ref=e318] [cursor=pointer]: 7pm • Camden
+              - paragraph [ref=e319] [cursor=pointer]: "\"Encontro semanal para prática da língua. Ideal para melhorar português e conhecer nativos.\""
+              - generic [ref=e320] [cursor=pointer]:
+                - generic [ref=e321] [cursor=pointer]:
+                  - link "Language" [ref=e322] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=language
+                  - link "Weekly" [ref=e323] [cursor=pointer]:
+                    - /url: /events?ref=home&when=weekly
+                - link "View more" [ref=e324] [cursor=pointer]:
+                  - /url: /events?ref=home&when=weekly&tag=language
+            - button "See weekly PALOP business networking" [ref=e325] [cursor=pointer]:
+              - generic [ref=e326] [cursor=pointer]:
+                - generic [ref=e327] [cursor=pointer]: 🏂
+                - 'heading "Wednesday: PALOP Business Networking" [level=3] [ref=e328] [cursor=pointer]'
+                - paragraph [ref=e329] [cursor=pointer]: 6pm • City of London
+              - paragraph [ref=e330] [cursor=pointer]: "\"Networking semanal para empresários PALOP. Oportunidades de negócios e parcerias.\""
+              - generic [ref=e331] [cursor=pointer]:
+                - generic [ref=e332] [cursor=pointer]:
+                  - link "Business" [ref=e333] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=business
+                  - link "PALOP" [ref=e334] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=palop
+                - link "View more" [ref=e335] [cursor=pointer]:
+                  - /url: /events?ref=home&when=weekly&tag=business&tag=palop
+            - button "See weekly Brazilian dance classes" [ref=e336] [cursor=pointer]:
+              - generic [ref=e337] [cursor=pointer]:
+                - generic [ref=e338] [cursor=pointer]: 💃
+                - 'heading "Friday: Brazilian Dance Classes" [level=3] [ref=e339] [cursor=pointer]'
+                - paragraph [ref=e340] [cursor=pointer]: 8pm • Multiple Locations
+              - paragraph [ref=e341] [cursor=pointer]: "\"Aulas semanais de samba, forro e danças brasileiras. Venha dançar e fazer amizades!\""
+              - generic [ref=e342] [cursor=pointer]:
+                - generic [ref=e343] [cursor=pointer]:
+                  - link "Dance" [ref=e344] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=dance
+                  - link "🇧🇷 Brazil" [ref=e345] [cursor=pointer]:
+                    - /url: /events?ref=home&country=br
+                - link "View more" [ref=e346] [cursor=pointer]:
+                  - /url: /events?ref=home&when=weekly&tag=dance&country=br
+            - button "See weekly Lusophone football socials" [ref=e347] [cursor=pointer]:
+              - generic [ref=e348] [cursor=pointer]:
+                - generic [ref=e349] [cursor=pointer]: ⚽
+                - 'heading "Sunday: Lusophone Football Social" [level=3] [ref=e350] [cursor=pointer]'
+                - paragraph [ref=e351] [cursor=pointer]: 3pm • Various Pubs
+              - paragraph [ref=e352] [cursor=pointer]: "\"Assistir jogos de futebol português e brasileiro com a comunidade. Tapas e cerveja!\""
+              - generic [ref=e353] [cursor=pointer]:
+                - generic [ref=e354] [cursor=pointer]:
+                  - link "Football" [ref=e355] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=football
+                  - link "Social" [ref=e356] [cursor=pointer]:
+                    - /url: /events?ref=home&tag=social
+                - link "View more" [ref=e357] [cursor=pointer]:
+                  - /url: /events?ref=home&when=weekly&tag=football&tag=social
+          - generic [ref=e358]:
+            - generic [ref=e359]:
+              - heading "Your Weekly Lusophone Community Calendar" [level=3] [ref=e360]
+              - paragraph [ref=e361]: Never wonder what's happening - your community has activities every day of the week
+            - generic [ref=e362]:
+              - generic [ref=e363]:
+                - generic [ref=e364]: 🗣️
+                - generic [ref=e365]: Monday
+                - generic [ref=e366]: Language Exchange
+              - generic [ref=e367]:
+                - generic [ref=e368]: 🍽️
+                - generic [ref=e369]: Tuesday
+                - generic [ref=e370]: Food Tours
+              - generic [ref=e371]:
+                - generic [ref=e372]: 🏂
+                - generic [ref=e373]: Wednesday
+                - generic [ref=e374]: Business Network
+              - generic [ref=e375]:
+                - generic [ref=e376]: 🎵
+                - generic [ref=e377]: Thursday
+                - generic [ref=e378]: Fado Nights
+              - generic [ref=e379]:
+                - generic [ref=e380]: 💃
+                - generic [ref=e381]: Friday
+                - generic [ref=e382]: Dance Classes
+              - generic [ref=e383]:
+                - generic [ref=e384]: 🎉
+                - generic [ref=e385]: Saturday
+                - generic [ref=e386]: Cultural Events
+              - generic [ref=e387]:
+                - generic [ref=e388]: ⚽
+                - generic [ref=e389]: Sunday
+                - generic [ref=e390]: Football Social
+          - generic [ref=e391]:
+            - link "Join Weekly Community Activities" [ref=e392] [cursor=pointer]:
+              - /url: /events
+              - img [ref=e393] [cursor=pointer]
+              - text: Join Weekly Community Activities
+              - img [ref=e395] [cursor=pointer]
+            - paragraph [ref=e397]: Free to join most activities • New members always welcome • Build lasting friendships
+        - generic [ref=e400]:
+          - generic [ref=e401]:
+            - generic [ref=e402]:
+              - img [ref=e403]
+              - text: Celebrating PALOP Heritage Pride
+            - heading "African Lusophone-Speaking Countries" [level=2] [ref=e405]
+            - generic [ref=e406]: 🇦🇴 🇨🇻 🇬🇼 🇲🇿 🇸🇹
+            - paragraph [ref=e407]: Where PALOP Cultures Thrive in Britain - Angola, Cape Verde, Guinea-Bissau, Mozambique, São Tomé and Príncipe communities creating incredible businesses, cultural events, and success stories across the United Kingdom.
+          - generic [ref=e408]:
+            - button "🇦🇴 Angola Diamond Capital & Kizomba Culture 💎 Elite Diamond Trading Hatton Garden luxury boutiques 💃 Kizomba Dance Studios Authentic partner connection culture 🎵 November Independence Festival Celebrating 49+ years of freedom" [ref=e409] [cursor=pointer]:
+              - generic [ref=e410] [cursor=pointer]:
+                - generic [ref=e411] [cursor=pointer]: 🇦🇴
+                - heading "Angola" [level=3] [ref=e412] [cursor=pointer]
+                - paragraph [ref=e413] [cursor=pointer]: Diamond Capital & Kizomba Culture
+              - generic [ref=e414] [cursor=pointer]:
+                - generic [ref=e415] [cursor=pointer]:
+                  - generic [ref=e416] [cursor=pointer]: 💎 Elite Diamond Trading
+                  - generic [ref=e417] [cursor=pointer]: Hatton Garden luxury boutiques
+                - generic [ref=e418] [cursor=pointer]:
+                  - generic [ref=e419] [cursor=pointer]: 💃 Kizomba Dance Studios
+                  - generic [ref=e420] [cursor=pointer]: Authentic partner connection culture
+                - generic [ref=e421] [cursor=pointer]:
+                  - generic [ref=e422] [cursor=pointer]: 🎵 November Independence Festival
+                  - generic [ref=e423] [cursor=pointer]: Celebrating 49+ years of freedom
+            - button "🇨🇻 Cape Verde Island Music & Community Spirit 🎵 Morna Music Schools Soul-stirring island blues 🍲 Authentic Cachupa Restaurants National dish served with love 🏝️ July Independence Celebration Island freedom & community joy" [ref=e424] [cursor=pointer]:
+              - generic [ref=e425] [cursor=pointer]:
+                - generic [ref=e426] [cursor=pointer]: 🇨🇻
+                - heading "Cape Verde" [level=3] [ref=e427] [cursor=pointer]
+                - paragraph [ref=e428] [cursor=pointer]: Island Music & Community Spirit
+              - generic [ref=e429] [cursor=pointer]:
+                - generic [ref=e430] [cursor=pointer]:
+                  - generic [ref=e431] [cursor=pointer]: 🎵 Morna Music Schools
+                  - generic [ref=e432] [cursor=pointer]: Soul-stirring island blues
+                - generic [ref=e433] [cursor=pointer]:
+                  - generic [ref=e434] [cursor=pointer]: 🍲 Authentic Cachupa Restaurants
+                  - generic [ref=e435] [cursor=pointer]: National dish served with love
+                - generic [ref=e436] [cursor=pointer]:
+                  - generic [ref=e437] [cursor=pointer]: 🏝️ July Independence Celebration
+                  - generic [ref=e438] [cursor=pointer]: Island freedom & community joy
+            - button "🇲🇿 Mozambique Coastal Spices & Trading Heritage 🌶️ Spice Trading Companies Authentic peri-peri & coastal spices 🍤 Indian Ocean Cuisine Prawns, coconut, & coastal flavors 🎶 June Independence Celebration Marrabenta music & coastal culture" [ref=e439] [cursor=pointer]:
+              - generic [ref=e440] [cursor=pointer]:
+                - generic [ref=e441] [cursor=pointer]: 🇲🇿
+                - heading "Mozambique" [level=3] [ref=e442] [cursor=pointer]
+                - paragraph [ref=e443] [cursor=pointer]: Coastal Spices & Trading Heritage
+              - generic [ref=e444] [cursor=pointer]:
+                - generic [ref=e445] [cursor=pointer]:
+                  - generic [ref=e446] [cursor=pointer]: 🌶️ Spice Trading Companies
+                  - generic [ref=e447] [cursor=pointer]: Authentic peri-peri & coastal spices
+                - generic [ref=e448] [cursor=pointer]:
+                  - generic [ref=e449] [cursor=pointer]: 🍤 Indian Ocean Cuisine
+                  - generic [ref=e450] [cursor=pointer]: Prawns, coconut, & coastal flavors
+                - generic [ref=e451] [cursor=pointer]:
+                  - generic [ref=e452] [cursor=pointer]: 🎶 June Independence Celebration
+                  - generic [ref=e453] [cursor=pointer]: Marrabenta music & coastal culture
+            - button "🇬🇼 Guinea-Bissau Cultural Resilience & Heritage 🎨 Community Cultural Centers Traditional arts & heritage preservation 📚 Language Preservation Programs Crioulo & cultural identity support 💪 September Independence Festival Cultural resilience & community strength" [ref=e454] [cursor=pointer]:
+              - generic [ref=e455] [cursor=pointer]:
+                - generic [ref=e456] [cursor=pointer]: 🇬🇼
+                - heading "Guinea-Bissau" [level=3] [ref=e457] [cursor=pointer]
+                - paragraph [ref=e458] [cursor=pointer]: Cultural Resilience & Heritage
+              - generic [ref=e459] [cursor=pointer]:
+                - generic [ref=e460] [cursor=pointer]:
+                  - generic [ref=e461] [cursor=pointer]: 🎨 Community Cultural Centers
+                  - generic [ref=e462] [cursor=pointer]: Traditional arts & heritage preservation
+                - generic [ref=e463] [cursor=pointer]:
+                  - generic [ref=e464] [cursor=pointer]: 📚 Language Preservation Programs
+                  - generic [ref=e465] [cursor=pointer]: Crioulo & cultural identity support
+                - generic [ref=e466] [cursor=pointer]:
+                  - generic [ref=e467] [cursor=pointer]: 💪 September Independence Festival
+                  - generic [ref=e468] [cursor=pointer]: Cultural resilience & community strength
+            - button "🇸🇹 São Tomé Paradise Islands & Cocoa Heritage ☕ Premium Cocoa Cafés World-class cocoa & tropical atmosphere 🏝️ Island Paradise Culture Tropical hospitality & natural beauty 🌺 July Independence Celebration Paradise island freedom festival" [ref=e469] [cursor=pointer]:
+              - generic [ref=e470] [cursor=pointer]:
+                - generic [ref=e471] [cursor=pointer]: 🇸🇹
+                - heading "São Tomé" [level=3] [ref=e472] [cursor=pointer]
+                - paragraph [ref=e473] [cursor=pointer]: Paradise Islands & Cocoa Heritage
+              - generic [ref=e474] [cursor=pointer]:
+                - generic [ref=e475] [cursor=pointer]:
+                  - generic [ref=e476] [cursor=pointer]: ☕ Premium Cocoa Cafés
+                  - generic [ref=e477] [cursor=pointer]: World-class cocoa & tropical atmosphere
+                - generic [ref=e478] [cursor=pointer]:
+                  - generic [ref=e479] [cursor=pointer]: 🏝️ Island Paradise Culture
+                  - generic [ref=e480] [cursor=pointer]: Tropical hospitality & natural beauty
+                - generic [ref=e481] [cursor=pointer]:
+                  - generic [ref=e482] [cursor=pointer]: 🌺 July Independence Celebration
+                  - generic [ref=e483] [cursor=pointer]: Paradise island freedom festival
+            - button "🤝 PALOP Business Summit Annual Excellence Celebration 💼 300+ PALOP Entrepreneurs Cross-country business networking 🌍 £50M+ Combined Revenue PALOP business success in the United Kingdom 🏆 Excellence Recognition Celebrating 50+ years of independence" [ref=e484] [cursor=pointer]:
+              - generic [ref=e485] [cursor=pointer]:
+                - generic [ref=e486] [cursor=pointer]: 🤝
+                - heading "PALOP Business Summit" [level=3] [ref=e487] [cursor=pointer]
+                - paragraph [ref=e488] [cursor=pointer]: Annual Excellence Celebration
+              - generic [ref=e489] [cursor=pointer]:
+                - generic [ref=e490] [cursor=pointer]:
+                  - generic [ref=e491] [cursor=pointer]: 💼 300+ PALOP Entrepreneurs
+                  - generic [ref=e492] [cursor=pointer]: Cross-country business networking
+                - generic [ref=e493] [cursor=pointer]:
+                  - generic [ref=e494] [cursor=pointer]: 🌍 £50M+ Combined Revenue
+                  - generic [ref=e495] [cursor=pointer]: PALOP business success in the United Kingdom
+                - generic [ref=e496] [cursor=pointer]:
+                  - generic [ref=e497] [cursor=pointer]: 🏆 Excellence Recognition
+                  - generic [ref=e498] [cursor=pointer]: Celebrating 50+ years of independence
+          - generic [ref=e499]:
+            - link "🇦🇴🇨🇻🇬🇼🇲🇿🇸🇹 PALOP Independence Celebrations" [ref=e500] [cursor=pointer]:
+              - /url: /events
+              - generic [ref=e502] [cursor=pointer]: 🇦🇴🇨🇻🇬🇼🇲🇿🇸🇹
+              - text: PALOP Independence Celebrations
+              - img [ref=e503] [cursor=pointer]
+            - link "PALOP Business Excellence Directory" [ref=e505] [cursor=pointer]:
+              - /url: /business-directory
+              - img [ref=e506] [cursor=pointer]
+              - text: PALOP Business Excellence Directory
+        - generic [ref=e510]:
+          - generic [ref=e511]:
+            - generic [ref=e512]:
+              - img [ref=e513]
+              - text: MONTHLY CULTURAL CALENDAR
+            - heading "Your Lusophone Cultural Calendar" [level=2] [ref=e515]
+            - paragraph [ref=e516]: Plan ahead with major Portuguese-speaking community celebrations, independence days, and cultural festivals happening throughout the year
+          - generic [ref=e517]:
+            - 'button "🇬🇴 November: PALOP Independence Month Major Celebrations Across the United Kingdom 🇦🇴 Angola Independence Day - Nov 11 49+ years of freedom celebration 🎭 PALOP Cultural Festival - All Month Art, music, food from all 5 countries 🎆 London PALOP Awards - Nov 30 Business excellence recognition" [ref=e518] [cursor=pointer]':
+              - generic [ref=e519] [cursor=pointer]:
+                - generic [ref=e520] [cursor=pointer]: 🇬🇴
+                - 'heading "November: PALOP Independence Month" [level=3] [ref=e521] [cursor=pointer]'
+                - paragraph [ref=e522] [cursor=pointer]: Major Celebrations Across the United Kingdom
+              - generic [ref=e523] [cursor=pointer]:
+                - generic [ref=e524] [cursor=pointer]:
+                  - generic [ref=e525] [cursor=pointer]: 🇦🇴 Angola Independence Day - Nov 11
+                  - generic [ref=e526] [cursor=pointer]: 49+ years of freedom celebration
+                - generic [ref=e527] [cursor=pointer]:
+                  - generic [ref=e528] [cursor=pointer]: 🎭 PALOP Cultural Festival - All Month
+                  - generic [ref=e529] [cursor=pointer]: Art, music, food from all 5 countries
+                - generic [ref=e530] [cursor=pointer]:
+                  - generic [ref=e531] [cursor=pointer]: 🎆 London PALOP Awards - Nov 30
+                  - generic [ref=e532] [cursor=pointer]: Business excellence recognition
+            - 'button "🎄 December: Lusophone Christmas Festive Community Traditions 🎂 Festa do Bacalhau - Dec 15 Traditional codfish Christmas feast 🎤 Concerto de Natal - Dec 22 Lusophone Christmas concert 🎉 Brazilian Réveillon - Dec 31 New Year’s celebration party" [ref=e533] [cursor=pointer]':
+              - generic [ref=e534] [cursor=pointer]:
+                - generic [ref=e535] [cursor=pointer]: 🎄
+                - 'heading "December: Lusophone Christmas" [level=3] [ref=e536] [cursor=pointer]'
+                - paragraph [ref=e537] [cursor=pointer]: Festive Community Traditions
+              - generic [ref=e538] [cursor=pointer]:
+                - generic [ref=e539] [cursor=pointer]:
+                  - generic [ref=e540] [cursor=pointer]: 🎂 Festa do Bacalhau - Dec 15
+                  - generic [ref=e541] [cursor=pointer]: Traditional codfish Christmas feast
+                - generic [ref=e542] [cursor=pointer]:
+                  - generic [ref=e543] [cursor=pointer]: 🎤 Concerto de Natal - Dec 22
+                  - generic [ref=e544] [cursor=pointer]: Lusophone Christmas concert
+                - generic [ref=e545] [cursor=pointer]:
+                  - generic [ref=e546] [cursor=pointer]: 🎉 Brazilian Réveillon - Dec 31
+                  - generic [ref=e547] [cursor=pointer]: New Year’s celebration party
+            - 'button "🎉 February: Brazilian Carnival London Carnival Preparations 🎭 Pre-Carnival Workshops - All Feb Samba dance and costume making 🇬🇧 United Kingdom Brazilian Carnival - Feb 29 London’s biggest Brazilian party 🎤 Escola de Samba - Feb 15 London samba schools showcase" [ref=e548] [cursor=pointer]':
+              - generic [ref=e549] [cursor=pointer]:
+                - generic [ref=e550] [cursor=pointer]: 🎉
+                - 'heading "February: Brazilian Carnival" [level=3] [ref=e551] [cursor=pointer]'
+                - paragraph [ref=e552] [cursor=pointer]: London Carnival Preparations
+              - generic [ref=e553] [cursor=pointer]:
+                - generic [ref=e554] [cursor=pointer]:
+                  - generic [ref=e555] [cursor=pointer]: 🎭 Pre-Carnival Workshops - All Feb
+                  - generic [ref=e556] [cursor=pointer]: Samba dance and costume making
+                - generic [ref=e557] [cursor=pointer]:
+                  - generic [ref=e558] [cursor=pointer]: 🇬🇧 United Kingdom Brazilian Carnival - Feb 29
+                  - generic [ref=e559] [cursor=pointer]: London’s biggest Brazilian party
+                - generic [ref=e560] [cursor=pointer]:
+                  - generic [ref=e561] [cursor=pointer]: 🎤 Escola de Samba - Feb 15
+                  - generic [ref=e562] [cursor=pointer]: London samba schools showcase
+          - generic [ref=e563]:
+            - generic [ref=e564]:
+              - heading "Year-Round Lusophone Community Highlights" [level=3] [ref=e565]
+              - paragraph [ref=e566]: Major celebrations and cultural events that bring our community together throughout the year
+            - generic [ref=e567]:
+              - button "View spring Lusophone community highlights" [ref=e568] [cursor=pointer]:
+                - generic [ref=e569] [cursor=pointer]: 🌸
+                - generic [ref=e570] [cursor=pointer]: March - May
+                - generic [ref=e571] [cursor=pointer]: Lusophone Spring Festivals
+                - generic [ref=e572] [cursor=pointer]: Santos Populares preparation
+                - link "View more →" [ref=e574] [cursor=pointer]:
+                  - /url: /events?ref=home&season=spring
+                  - text: View more
+                  - generic [ref=e575] [cursor=pointer]: →
+              - button "View summer Lusophone community highlights" [ref=e576] [cursor=pointer]:
+                - generic [ref=e577] [cursor=pointer]: ☀️
+                - generic [ref=e578] [cursor=pointer]: June - August
+                - generic [ref=e579] [cursor=pointer]: Summer Cultural Peak
+                - generic [ref=e580] [cursor=pointer]: Santos Populares, PALOP independence
+                - link "View more →" [ref=e582] [cursor=pointer]:
+                  - /url: /events?ref=home&season=summer
+                  - text: View more
+                  - generic [ref=e583] [cursor=pointer]: →
+              - button "View autumn Lusophone community highlights" [ref=e584] [cursor=pointer]:
+                - generic [ref=e585] [cursor=pointer]: 🍂
+                - generic [ref=e586] [cursor=pointer]: September - November
+                - generic [ref=e587] [cursor=pointer]: Heritage Months
+                - generic [ref=e588] [cursor=pointer]: Independence celebrations peak
+                - link "View more →" [ref=e590] [cursor=pointer]:
+                  - /url: /events?ref=home&season=autumn
+                  - text: View more
+                  - generic [ref=e591] [cursor=pointer]: →
+              - button "View winter Lusophone community highlights" [ref=e592] [cursor=pointer]:
+                - generic [ref=e593] [cursor=pointer]: ❄️
+                - generic [ref=e594] [cursor=pointer]: December - February
+                - generic [ref=e595] [cursor=pointer]: Holiday Traditions
+                - generic [ref=e596] [cursor=pointer]: Christmas, New Year, Carnival
+                - link "View more →" [ref=e598] [cursor=pointer]:
+                  - /url: /events?ref=home&season=winter
+                  - text: View more
+                  - generic [ref=e599] [cursor=pointer]: →
+          - generic [ref=e600]:
+            - link "View Full Cultural Calendar" [ref=e601] [cursor=pointer]:
+              - /url: /events
+              - img [ref=e602] [cursor=pointer]
+              - text: View Full Cultural Calendar
+              - img [ref=e604] [cursor=pointer]
+            - link "Get Calendar Updates" [ref=e606] [cursor=pointer]:
+              - /url: "#subscribe"
+              - img [ref=e607] [cursor=pointer]
+              - text: Get Calendar Updates
+            - paragraph [ref=e609]: Never miss major Lusophone community celebrations • Monthly email reminders • Early event access
+        - generic [ref=e612]:
+          - generic [ref=e613]:
+            - heading "Meet Your Matches at Lusophone Events" [level=2] [ref=e614]
+            - paragraph [ref=e615]: Join cultural events, festivals, and meetups where Portuguese speakers connect naturally.
+          - generic [ref=e616]:
+            - generic [ref=e617]:
+              - generic [ref=e618]:
+                - generic [ref=e619]:
+                  - generic [ref=e620]: 🎵
+                  - generic [ref=e621]:
+                    - heading "Fado & Samba Nights" [level=3] [ref=e622]
+                    - paragraph [ref=e623]: Lusophone, Brazilian & Cape Verdean music across United Kingdom venues
+                - generic [ref=e624]:
+                  - generic [ref=e625]: 🍷
+                  - generic [ref=e626]:
+                    - heading "Wine & Culture Tastings" [level=3] [ref=e627]
+                    - paragraph [ref=e628]: Explore wines from Portugal, Brazil & Lusophone Africa
+                - generic [ref=e629]:
+                  - generic [ref=e630]: ⚽
+                  - generic [ref=e631]:
+                    - heading "Football Screenings" [level=3] [ref=e632]
+                    - paragraph [ref=e633]: Portugal, Brazil, Angola & all Lusophone teams together
+                - generic [ref=e634]:
+                  - generic [ref=e635]: 🎭
+                  - generic [ref=e636]:
+                    - heading "Cultural Festivals" [level=3] [ref=e637]
+                    - paragraph [ref=e638]: Santos Populares, Festa Junina, Carnaval & more
+              - link "Browse All Events" [ref=e640] [cursor=pointer]:
+                - /url: /events
+                - img [ref=e641] [cursor=pointer]
+                - text: Browse All Events
+                - img [ref=e643] [cursor=pointer]
+            - generic [ref=e645]:
+              - generic [ref=e646]:
+                - generic [ref=e647]:
+                  - generic [ref=e648]: J
+                  - generic [ref=e649]: A
+                - heading "João & Ana" [level=3] [ref=e650]
+                - paragraph [ref=e651]: Met at Fado Night • Now Dating 💕
+              - blockquote [ref=e652]: "\"Conhecemo-nos numa noite de fado no Camden. A música portuguesa criou uma conexão instantânea. Agora exploramos o Reino Unido juntos todos os fins de semana!\""
+              - generic [ref=e653]:
+                - generic [ref=e654]: ⭐⭐⭐⭐⭐ "Perfect Match"
+                - generic [ref=e655]: 🇵🇹 Both from Porto • Love for Fado • Now inseparable
+        - generic [ref=e665]:
+          - generic [ref=e666]:
+            - generic [ref=e667]:
+              - img [ref=e668]
+              - text: Lusophone Hearts United, Stories Shared
+            - heading "From Saudade to Community - Real United Kingdom Lives" [level=2] [ref=e670]:
+              - generic [ref=e671]: From Saudade to Community - Real United Kingdom Lives
+            - paragraph [ref=e672]: Discover how Portuguese speakers found their United Kingdom family through cultural experiences, social connections, and natural networking. From cinema nights to dance workshops across United Kingdom cities - authentic stories of community, friendship, and shared culture.
+          - generic [ref=e673]:
+            - generic [ref=e675]:
+              - img [ref=e677]
+              - generic [ref=e680]: 🇵🇹 Português
+              - generic [ref=e681]:
+                - img [ref=e682]
+                - img [ref=e684]
+                - img [ref=e686]
+                - img [ref=e688]
+                - img [ref=e690]
+              - blockquote [ref=e692]: "\"Conheci mulheres angolanas e brasileiras em finanças. Criámos um grupo de networking profissional!\""
+              - generic [ref=e693]:
+                - img "Default profile avatar" [ref=e695]
+                - generic [ref=e696]:
+                  - heading "Adelaide Silva, 39" [level=4] [ref=e697]
+                  - paragraph [ref=e698]: Brixton, Londres
+                  - paragraph [ref=e699]: Consultora Angolana
+            - generic [ref=e701]:
+              - img [ref=e703]
+              - generic [ref=e705]:
+                - img [ref=e706]
+                - img [ref=e708]
+                - img [ref=e710]
+                - img [ref=e712]
+                - img [ref=e714]
+              - blockquote [ref=e716]: "\"Found my Brazilian community through LusoTown. Now we organize churrasco weekends in London parks!\""
+              - generic [ref=e717]:
+                - img "Default profile avatar" [ref=e719]
+                - generic [ref=e720]:
+                  - heading "Paulo Rodrigues, 34" [level=4] [ref=e721]
+                  - paragraph [ref=e722]: Canary Wharf, London
+                  - paragraph [ref=e723]: Brazilian Community Organizer
+            - generic [ref=e725]:
+              - img [ref=e727]
+              - generic [ref=e729]:
+                - img [ref=e730]
+                - img [ref=e732]
+                - img [ref=e734]
+                - img [ref=e736]
+                - img [ref=e738]
+              - blockquote [ref=e740]: "\"LusoTown's business networking events help me connect with Lusophone professionals while sharing pastéis de nata!\""
+              - generic [ref=e741]:
+                - img "Default profile avatar" [ref=e743]
+                - generic [ref=e744]:
+                  - heading "Sofia Costa, 27" [level=4] [ref=e745]
+                  - paragraph [ref=e746]: Greenwich, London
+                  - paragraph [ref=e747]: Lusophone Business Professional
+            - generic [ref=e749]:
+              - img [ref=e751]
+              - generic [ref=e754]: 🇵🇹 Português
+              - generic [ref=e755]:
+                - img [ref=e756]
+                - img [ref=e758]
+                - img [ref=e760]
+                - img [ref=e762]
+                - img [ref=e764]
+              - blockquote [ref=e766]: "\"Através da LusoTown descobri eventos de fado e organizamos saraus mensais. É como ter Portugal em Londres!\""
+              - generic [ref=e767]:
+                - img "Fernanda Oliveira - Cultural events organizer from Stockwell, London" [ref=e769]
+                - generic [ref=e770]:
+                  - heading "Fernanda Oliveira, 31" [level=4] [ref=e771]
+                  - paragraph [ref=e772]: Stockwell, Londres
+                  - paragraph [ref=e773]: Organizadora de Eventos Culturais
+            - generic [ref=e775]:
+              - img [ref=e777]
+              - generic [ref=e780]: 🇵🇹 Português
+              - generic [ref=e781]:
+                - img [ref=e782]
+                - img [ref=e784]
+                - img [ref=e786]
+                - img [ref=e788]
+                - img [ref=e790]
+              - blockquote [ref=e792]: "\"A LusoTown ajudou-me a encontrar brasileiros e portugueses que amam samba. Temos roda de samba aos domingos!\""
+              - generic [ref=e793]:
+                - img "Marco Santos - Brazilian musician and community organizer from Bermondsey, London" [ref=e795]
+                - generic [ref=e796]:
+                  - heading "Marco Santos, 28" [level=4] [ref=e797]
+                  - paragraph [ref=e798]: Bermondsey, Londres
+                  - paragraph [ref=e799]: Músico Brasileiro
+            - generic [ref=e801]:
+              - img [ref=e803]
+              - generic [ref=e806]: 🇵🇹 Português
+              - generic [ref=e807]:
+                - img [ref=e808]
+                - img [ref=e810]
+                - img [ref=e812]
+                - img [ref=e814]
+                - img [ref=e816]
+              - blockquote [ref=e818]: "\"Organizamos workshops de português para crianças. Ver os pequenos cantar em português é a minha alegria!\""
+              - generic [ref=e819]:
+                - img "Catarina Lopes - Lusophone educator and Luso-British mother from Nine Elms, London" [ref=e821]
+                - generic [ref=e822]:
+                  - heading "Catarina Lopes, 35" [level=4] [ref=e823]
+                  - paragraph [ref=e824]: Nine Elms, Londres
+                  - paragraph [ref=e825]: Educadora Luso-Britânica
+            - generic [ref=e827]:
+              - img [ref=e829]
+              - generic [ref=e832]: 🇵🇹 Português
+              - generic [ref=e833]:
+                - img [ref=e834]
+                - img [ref=e836]
+                - img [ref=e838]
+                - img [ref=e840]
+                - img [ref=e842]
+              - blockquote [ref=e844]: "\"Na LusoTown encontrei cabo-verdianos e portugueses. Organizamos noites de música crioula juntos!\""
+              - generic [ref=e845]:
+                - img "Default profile avatar" [ref=e847]
+                - generic [ref=e848]:
+                  - heading "João Pereira, 42" [level=4] [ref=e849]
+                  - paragraph [ref=e850]: Camden, Londres
+                  - paragraph [ref=e851]: Músico Cabo-verdiano
+          - generic [ref=e852]:
+            - generic [ref=e853]:
+              - heading "Meet Your London Portuguese-speaking community" [level=3] [ref=e854]:
+                - text: Meet Your
+                - generic [ref=e855]: London Portuguese-speaking community
+              - paragraph [ref=e856]: Join thousands of Portuguese speakers across London who are organizing events, building communities, and connecting throughout the city.
+            - generic [ref=e857]:
+              - img "LusoTown member - Professional woman smiling" [ref=e859]
+              - img "LusoTown member - Confident woman in professional setting" [ref=e861]
+              - img "LusoTown member - Diverse professional woman" [ref=e863]
+              - img "LusoTown member - Woman with warm smile" [ref=e865]
+              - img "LusoTown member - Professional woman outdoors" [ref=e867]
+              - img "LusoTown member - Confident professional woman" [ref=e869]
+              - img "LusoTown member - Woman with authentic smile" [ref=e871]
+              - img "LusoTown member - Approachable professional woman" [ref=e873]
+              - img "LusoTown member - Confident woman in natural lighting" [ref=e875]
+              - img "LusoTown member - Professional woman with warm expression" [ref=e877]
+              - img "LusoTown member - Diverse woman with bright smile" [ref=e879]
+              - img "LusoTown member - Woman with authentic expression" [ref=e881]
+          - generic [ref=e884]:
+            - generic [ref=e885]:
+              - paragraph [ref=e886]: 4.9/5
+              - paragraph [ref=e887]: Average Rating
+            - generic [ref=e888]:
+              - paragraph [ref=e889]: 8K+
+              - paragraph [ref=e890]: London Members
+            - generic [ref=e891]:
+              - paragraph [ref=e892]: 32+
+              - paragraph [ref=e893]: London Boroughs
+          - generic [ref=e894]:
+            - heading "Ready to Connect with Lusophone Speakers in London?" [level=3] [ref=e895]
+            - paragraph [ref=e896]: Join thousands of Portuguese speakers across London who are organizing events, building communities, and creating lasting connections throughout the city.
+            - link "Join the London Community" [ref=e897] [cursor=pointer]:
+              - /url: /signup
+        - generic [ref=e900]:
+          - generic [ref=e901]:
+            - img [ref=e902]
+            - text: THE DEFINITIVE PORTUGUESE HUB
+          - heading "Join the United Kingdom's Premier Lusophone Network" [level=2] [ref=e904]
+          - paragraph [ref=e905]: Become part of the most distinguished Lusophone community in the United Kingdom. Connect with cultural ambassadors, elite professionals, and heritage enthusiasts who elevate Portuguese culture to new heights.
+          - generic [ref=e906]:
+            - generic [ref=e907]:
+              - img [ref=e908]
+              - generic [ref=e910]: 100% Free to Join
+            - generic [ref=e911]:
+              - img [ref=e912]
+              - generic [ref=e914]: Active Members
+            - generic [ref=e915]:
+              - img [ref=e916]
+              - generic [ref=e918]: Daily New Matches
+            - generic [ref=e919]:
+              - img [ref=e920]
+              - generic [ref=e923]: Across United Kingdom
+          - generic [ref=e924]:
+            - button "🇵🇹 🇧🇷 🇦🇴 🇨🇻 🇲🇿 JOIN FREE NOW" [ref=e925] [cursor=pointer]:
+              - generic [ref=e926] [cursor=pointer]:
+                - generic [ref=e927] [cursor=pointer]: 🇵🇹
+                - generic [ref=e928] [cursor=pointer]: 🇧🇷
+                - generic [ref=e929] [cursor=pointer]: 🇦🇴
+                - generic [ref=e930] [cursor=pointer]: 🇨🇻
+                - generic [ref=e931] [cursor=pointer]: 🇲🇿
+              - text: JOIN FREE NOW
+              - img [ref=e932] [cursor=pointer]
+            - link "Try Demo Account" [ref=e934] [cursor=pointer]:
+              - /url: /login
+          - paragraph [ref=e935]: No spam, no credit card required. Cancel anytime. Join the United Kingdom's largest Portuguese-speaking community.
+        - generic [ref=e943]:
+          - generic [ref=e944]:
+            - generic [ref=e945]:
+              - img [ref=e946]
+              - generic [ref=e948]: Members-Only Events
+            - heading "From Feijoada Lunches to Fado Evenings" [level=2] [ref=e949]
+            - paragraph [ref=e950]: Exclusive member events for the Lusophone community across the United Kingdom. Priority access to premium cultural experiences and elite networking.
+            - generic [ref=e951]:
+              - generic [ref=e952]:
+                - generic [ref=e953]: 🇵🇹
+                - generic [ref=e954]: Stockwell
+                - generic [ref=e955]: •
+                - generic [ref=e956]: Heart of community
+              - generic [ref=e957]:
+                - generic [ref=e958]: 🇧🇷
+                - generic [ref=e959]: Vauxhall
+                - generic [ref=e960]: •
+                - generic [ref=e961]: Brazilian hub
+              - generic [ref=e962]:
+                - generic [ref=e963]: 🇦🇴
+                - generic [ref=e964]: Elephant & Castle
+                - generic [ref=e965]: •
+                - generic [ref=e966]: Lusophone diversity
+              - generic [ref=e967]:
+                - generic [ref=e968]: 🍷
+                - generic [ref=e969]: Borough Market
+                - generic [ref=e970]: •
+                - generic [ref=e971]: Lusophone flavors
+              - generic [ref=e972]:
+                - generic [ref=e973]: 🎵
+                - generic [ref=e974]: Kentish Town
+                - generic [ref=e975]: •
+                - generic [ref=e976]: Fado nights
+          - generic [ref=e977]:
+            - generic [ref=e978]:
+              - generic [ref=e979]:
+                - img [ref=e980]
+                - generic [ref=e982]: 🇵🇹
+              - generic [ref=e983]: 200+
+              - generic [ref=e984]: Eventos Mensais | Monthly Events
+            - generic [ref=e985]:
+              - generic [ref=e986]:
+                - img [ref=e987]
+                - generic [ref=e989]: 🇧🇷
+              - generic [ref=e990]: 1,200+
+              - generic [ref=e991]: Lusófonos | Lusophone Speakers
+            - generic [ref=e992]:
+              - generic [ref=e993]:
+                - img [ref=e994]
+                - generic [ref=e996]: 🌍
+              - generic [ref=e997]: 98%
+              - generic [ref=e998]: Satisfação Cultural | Cultural Satisfaction
+            - generic [ref=e999]:
+              - generic [ref=e1000]:
+                - img [ref=e1001]
+                - generic [ref=e1004]: 🇬🇧
+              - generic [ref=e1005]: 25+
+              - generic [ref=e1006]: Cidades Reino Unido | United Kingdom Cities
+          - generic [ref=e1007]:
+            - generic [ref=e1008]:
+              - generic [ref=e1009]:
+                - generic:
+                  - 'img "Starting Your First Business: Complete Beginner''s Guide event image"'
+                - generic [ref=e1013]:
+                  - img [ref=e1015]
+                  - generic [ref=e1017]: Business Basics
+                - generic [ref=e1019]: Mon, 15 Sept
+                - generic [ref=e1021]: £25.00
+                - generic [ref=e1023]:
+                  - img [ref=e1024]
+                  - text: FREE GIVEAWAY
+                - generic [ref=e1027]: NEW EVENT
+              - generic [ref=e1028]:
+                - 'heading "Starting Your First Business: Complete Beginner''s Guide" [level=3] [ref=e1030]'
+                - paragraph [ref=e1031]: Learn the basics of starting a business in the United Kingdom. Perfect for complete beginners with no business experience. Simple, practical steps to get started.
+                - generic [ref=e1032]:
+                  - generic [ref=e1033]:
+                    - img [ref=e1034]
+                    - text: Portuguese-speaking community Centre
+                  - generic [ref=e1037]:
+                    - img [ref=e1038]
+                    - text: 10:00 am
+                  - generic [ref=e1040]:
+                    - img [ref=e1041]
+                    - text: 14/20 attending
+                  - generic [ref=e1043]:
+                    - img [ref=e1044]
+                    - text: Welcome to Portuguese speakers and friends
+                - generic [ref=e1047]:
+                  - generic [ref=e1048]:
+                    - img [ref=e1049]
+                    - text: Available to book
+                  - generic [ref=e1051]: 6 spots left • Members £18, Non-members £25
+                - generic [ref=e1054]:
+                  - link "Members Reserve Now - £18.00" [ref=e1055] [cursor=pointer]:
+                    - /url: /events/NaN/book
+                  - 'link "Non-members: £25.00 • Apply for Membership" [ref=e1056] [cursor=pointer]':
+                    - /url: /apply
+                  - link "Group 4+ • 20% Discount" [ref=e1057] [cursor=pointer]:
+                    - /url: /events/NaN/book?type=group
+                    - img [ref=e1058] [cursor=pointer]
+                    - text: Group 4+ • 20% Discount
+            - generic [ref=e1060]:
+              - generic [ref=e1061]:
+                - generic:
+                  - 'img "Social Media for Small Business: Instagram & Facebook Basics event image"'
+                - generic [ref=e1065]:
+                  - img [ref=e1067]
+                  - generic [ref=e1069]: Digital Marketing
+                - generic [ref=e1071]: Mon, 22 Sept
+                - generic [ref=e1073]: £15.00
+              - generic [ref=e1074]:
+                - 'heading "Social Media for Small Business: Instagram & Facebook Basics" [level=3] [ref=e1076]'
+                - paragraph [ref=e1077]: Learn simple social media marketing for your business. Perfect for beginners who want to use Instagram and Facebook to find customers.
+                - generic [ref=e1078]:
+                  - generic [ref=e1079]:
+                    - img [ref=e1080]
+                    - text: Portuguese-speaking community Centre
+                  - generic [ref=e1083]:
+                    - img [ref=e1084]
+                    - text: 02:00 pm
+                  - generic [ref=e1086]:
+                    - img [ref=e1087]
+                    - text: 9/15 attending
+                  - generic [ref=e1089]:
+                    - img [ref=e1090]
+                    - text: Welcome to Portuguese speakers and friends
+                - generic [ref=e1093]:
+                  - generic [ref=e1094]:
+                    - img [ref=e1095]
+                    - text: Available to book
+                  - generic [ref=e1097]: 6 spots left • Members £11, Non-members £15
+                - generic [ref=e1100]:
+                  - link "Members Reserve Now - £11.00" [ref=e1101] [cursor=pointer]:
+                    - /url: /events/NaN/book
+                  - 'link "Non-members: £15.00 • Apply for Membership" [ref=e1102] [cursor=pointer]':
+                    - /url: /apply
+            - generic [ref=e1103]:
+              - generic [ref=e1104]:
+                - generic:
+                  - 'img "Managing Money in the United Kingdom: Banking and Saving Basics event image"'
+                - generic [ref=e1108]:
+                  - img [ref=e1110]
+                  - generic [ref=e1112]: Personal Finance
+                - generic [ref=e1114]: Mon, 6 Oct
+                - generic [ref=e1116]: £20.00
+              - generic [ref=e1117]:
+                - 'heading "Managing Money in the United Kingdom: Banking and Saving Basics" [level=3] [ref=e1119]'
+                - paragraph [ref=e1120]: Learn the basics of managing money in the United Kingdom. Perfect for anyone who wants to understand United Kingdom banking, saving, and simple budgeting.
+                - generic [ref=e1121]:
+                  - generic [ref=e1122]:
+                    - img [ref=e1123]
+                    - text: Portuguese-speaking community Centre
+                  - generic [ref=e1126]:
+                    - img [ref=e1127]
+                    - text: 11:00 am
+                  - generic [ref=e1129]:
+                    - img [ref=e1130]
+                    - text: 12/18 attending
+                  - generic [ref=e1132]:
+                    - img [ref=e1133]
+                    - text: Welcome to Portuguese speakers and friends
+                - generic [ref=e1136]:
+                  - generic [ref=e1137]:
+                    - img [ref=e1138]
+                    - text: Available to book
+                  - generic [ref=e1140]: 6 spots left • Members £14, Non-members £20
+                - generic [ref=e1143]:
+                  - link "Members Reserve Now - £14.00" [ref=e1144] [cursor=pointer]:
+                    - /url: /events/NaN/book
+                  - 'link "Non-members: £20.00 • Apply for Membership" [ref=e1145] [cursor=pointer]':
+                    - /url: /apply
+          - generic [ref=e1146]:
+            - generic [ref=e1147]:
+              - heading "Explore by Cultural Category" [level=3] [ref=e1148]
+              - paragraph [ref=e1149]: Discover authentic Lusophone cultural events across London
+            - generic [ref=e1150]:
+              - link "🇵🇹 🎵 Fado & Music 15+ events Members Only" [ref=e1151] [cursor=pointer]:
+                - /url: /events?category=fado-&-music
+                - generic [ref=e1152] [cursor=pointer]: 🇵🇹
+                - generic [ref=e1153] [cursor=pointer]: 🎵
+                - generic [ref=e1154] [cursor=pointer]: Fado & Music
+                - generic [ref=e1155] [cursor=pointer]: 15+ events
+                - generic [ref=e1156] [cursor=pointer]: Members Only
+              - link "🇵🇹 ⚽ Football & Sports 20+ matches Members Only" [ref=e1157] [cursor=pointer]:
+                - /url: /events?category=football-&-sports
+                - generic [ref=e1158] [cursor=pointer]: 🇵🇹
+                - generic [ref=e1159] [cursor=pointer]: ⚽
+                - generic [ref=e1160] [cursor=pointer]: Football & Sports
+                - generic [ref=e1161] [cursor=pointer]: 20+ matches
+                - generic [ref=e1162] [cursor=pointer]: Members Only
+              - link "🇧🇷 🍷 Lusophone Cuisine 25+ events Members Only" [ref=e1163] [cursor=pointer]:
+                - /url: /events?category=lusophone-cuisine
+                - generic [ref=e1164] [cursor=pointer]: 🇧🇷
+                - generic [ref=e1165] [cursor=pointer]: 🍷
+                - generic [ref=e1166] [cursor=pointer]: Lusophone Cuisine
+                - generic [ref=e1167] [cursor=pointer]: 25+ events
+                - generic [ref=e1168] [cursor=pointer]: Members Only
+              - link "🇵🇹 🎉 Popular Saints 12+ festivals Members Only" [ref=e1169] [cursor=pointer]:
+                - /url: /events?category=popular-saints
+                - generic [ref=e1170] [cursor=pointer]: 🇵🇹
+                - generic [ref=e1171] [cursor=pointer]: 🎉
+                - generic [ref=e1172] [cursor=pointer]: Popular Saints
+                - generic [ref=e1173] [cursor=pointer]: 12+ festivals
+                - generic [ref=e1174] [cursor=pointer]: Members Only
+              - link "🌍 🤝 Business Network 30+ events Members Only" [ref=e1175] [cursor=pointer]:
+                - /url: /events?category=business-network
+                - generic [ref=e1176] [cursor=pointer]: 🌍
+                - generic [ref=e1177] [cursor=pointer]: 🤝
+                - generic [ref=e1178] [cursor=pointer]: Business Network
+                - generic [ref=e1179] [cursor=pointer]: 30+ events
+                - generic [ref=e1180] [cursor=pointer]: Members Only
+              - link "🇵🇹 🧁 Pastéis de Nata 8+ workshops Members Only" [ref=e1181] [cursor=pointer]:
+                - /url: /events?category=pastéis-de-nata
+                - generic [ref=e1182] [cursor=pointer]: 🇵🇹
+                - generic [ref=e1183] [cursor=pointer]: 🧁
+                - generic [ref=e1184] [cursor=pointer]: Pastéis de Nata
+                - generic [ref=e1185] [cursor=pointer]: 8+ workshops
+                - generic [ref=e1186] [cursor=pointer]: Members Only
+              - link "🇵🇹 🍾 Wine Tasting 10+ tastings Members Only" [ref=e1187] [cursor=pointer]:
+                - /url: /events?category=wine-tasting
+                - generic [ref=e1188] [cursor=pointer]: 🇵🇹
+                - generic [ref=e1189] [cursor=pointer]: 🍾
+                - generic [ref=e1190] [cursor=pointer]: Wine Tasting
+                - generic [ref=e1191] [cursor=pointer]: 10+ tastings
+                - generic [ref=e1192] [cursor=pointer]: Members Only
+              - link "🇧🇷 📚 Literature 6+ events Members Only" [ref=e1193] [cursor=pointer]:
+                - /url: /events?category=literature
+                - generic [ref=e1194] [cursor=pointer]: 🇧🇷
+                - generic [ref=e1195] [cursor=pointer]: 📚
+                - generic [ref=e1196] [cursor=pointer]: Literature
+                - generic [ref=e1197] [cursor=pointer]: 6+ events
+                - generic [ref=e1198] [cursor=pointer]: Members Only
+              - link "🇵🇹 ⛵ Maritime History 4+ tours Members Only" [ref=e1199] [cursor=pointer]:
+                - /url: /events?category=maritime-history
+                - generic [ref=e1200] [cursor=pointer]: 🇵🇹
+                - generic [ref=e1201] [cursor=pointer]: ⛵
+                - generic [ref=e1202] [cursor=pointer]: Maritime History
+                - generic [ref=e1203] [cursor=pointer]: 4+ tours
+                - generic [ref=e1204] [cursor=pointer]: Members Only
+              - link "🇵🇹 💃 Traditional Dance 12+ classes Members Only" [ref=e1205] [cursor=pointer]:
+                - /url: /events?category=traditional-dance
+                - generic [ref=e1206] [cursor=pointer]: 🇵🇹
+                - generic [ref=e1207] [cursor=pointer]: 💃
+                - generic [ref=e1208] [cursor=pointer]: Traditional Dance
+                - generic [ref=e1209] [cursor=pointer]: 12+ classes
+                - generic [ref=e1210] [cursor=pointer]: Members Only
+              - link "🇧🇷 🌽 June Festivals 6+ festivals Members Only" [ref=e1211] [cursor=pointer]:
+                - /url: /events?category=june-festivals
+                - generic [ref=e1212] [cursor=pointer]: 🇧🇷
+                - generic [ref=e1213] [cursor=pointer]: 🌽
+                - generic [ref=e1214] [cursor=pointer]: June Festivals
+                - generic [ref=e1215] [cursor=pointer]: 6+ festivals
+                - generic [ref=e1216] [cursor=pointer]: Members Only
+              - link "🌍 👨‍👩‍👧‍👦 Family Events 18+ events Members Only" [ref=e1217] [cursor=pointer]:
+                - /url: /events?category=family-events
+                - generic [ref=e1218] [cursor=pointer]: 🌍
+                - generic [ref=e1219] [cursor=pointer]: 👨‍👩‍👧‍👦
+                - generic [ref=e1220] [cursor=pointer]: Family Events
+                - generic [ref=e1221] [cursor=pointer]: 18+ events
+                - generic [ref=e1222] [cursor=pointer]: Members Only
+            - generic [ref=e1223]:
+              - paragraph [ref=e1224]: "\"Culture is our second soul\" - Teixeira de Pascoaes"
+              - generic [ref=e1225]:
+                - generic [ref=e1226]: 🇵🇹
+                - generic [ref=e1227]: Lusophone poet, 1877-1952
+          - generic [ref=e1228]:
+            - generic [ref=e1229]:
+              - heading "Voices from Our Community" [level=3] [ref=e1230]
+              - paragraph [ref=e1231]: Real stories from Portuguese speakers who found home in London
+            - generic [ref=e1232]:
+              - generic [ref=e1233]:
+                - generic [ref=e1234]:
+                  - generic [ref=e1235]: MS
+                  - generic [ref=e1236]:
+                    - generic [ref=e1237]: Maria Santos
+                    - generic [ref=e1238]:
+                      - img [ref=e1239]
+                      - text: Stockwell
+                    - generic [ref=e1242]: 🇵🇹 Porto
+                - blockquote [ref=e1243]: "\"I finally found people who understand saudade. The fado nights feel like being home.\""
+                - generic [ref=e1244]: Fado Nights in Soho
+              - generic [ref=e1245]:
+                - generic [ref=e1246]:
+                  - generic [ref=e1247]: JS
+                  - generic [ref=e1248]:
+                    - generic [ref=e1249]: João Silva
+                    - generic [ref=e1250]:
+                      - img [ref=e1251]
+                      - text: Vauxhall
+                    - generic [ref=e1254]: 🇧🇷 São Paulo
+                - blockquote [ref=e1255]: "\"The festa junina in London was amazing! My kids loved it and I felt connected to my roots.\""
+                - generic [ref=e1256]: Brazilian June Festival
+              - generic [ref=e1257]:
+                - generic [ref=e1258]:
+                  - generic [ref=e1259]: AP
+                  - generic [ref=e1260]:
+                    - generic [ref=e1261]: Ana Pereira
+                    - generic [ref=e1262]:
+                      - img [ref=e1263]
+                      - text: Borough Market
+                    - generic [ref=e1266]: 🇦🇴 Luanda
+                - blockquote [ref=e1267]: "\"The pastéis de nata workshop taught me my grandmother's recipes. Such a special experience!\""
+                - generic [ref=e1268]: Pastéis de Nata Workshop
+            - generic [ref=e1269]:
+              - heading "Expressions That Unite Us" [level=4] [ref=e1270]
+              - generic [ref=e1271]:
+                - generic [ref=e1272]:
+                  - generic [ref=e1273]: Saudade
+                  - generic [ref=e1274]: Uniquely Lusophone feeling
+                - generic [ref=e1275]:
+                  - generic [ref=e1276]: Desenrascanço
+                  - generic [ref=e1277]: Art of problem-solving
+                - generic [ref=e1278]:
+                  - generic [ref=e1279]: Cafezinho
+                  - generic [ref=e1280]: Essential Brazilian break
+                - generic [ref=e1281]:
+                  - generic [ref=e1282]: Convívio
+                  - generic [ref=e1283]: Sharing moments together
+          - generic [ref=e1285]:
+            - generic [ref=e1286]:
+              - generic [ref=e1287]: 🇵🇹
+              - generic [ref=e1288]: 🇧🇷
+              - generic [ref=e1289]: ⚽
+              - generic [ref=e1290]: 🎵
+              - generic [ref=e1291]: 🍷
+            - generic [ref=e1292]:
+              - heading "Join the Portuguese-speaking community in London & United Kingdom" [level=3] [ref=e1293]
+              - paragraph [ref=e1294]: From business networking to traditional cooking, transport services to cultural events. Connect with fellow Portuguese speakers and build meaningful relationships.
+              - generic [ref=e1295]: "\"Those who have friends, have everything\" - Lusophone Proverb"
+              - generic [ref=e1296]:
+                - link "View Events" [ref=e1297] [cursor=pointer]:
+                  - /url: /events
+                  - text: View Events
+                  - img [ref=e1298] [cursor=pointer]
+                - link "Join Now" [ref=e1300] [cursor=pointer]:
+                  - /url: /signup
+        - generic [ref=e1305]:
+          - generic [ref=e1306]:
+            - generic [ref=e1307]:
+              - img [ref=e1308]
+              - text: Lusophone Heritage Success Stories
+            - heading "From Longing to Lusophone Dreams Realized" [level=2] [ref=e1310]:
+              - text: From Longing to
+              - generic [ref=e1311]: Lusophone Dreams Realized
+            - paragraph [ref=e1312]: Real Lusophone souls who transformed their London longing into thriving community connections. From Pastéis de Nata meetups in Vauxhall to Fado nights in cultural venues - discover how our people build lasting bonds while preserving Lusophone heart in the city's rhythm.
+          - generic [ref=e1313]:
+            - generic [ref=e1315]:
+              - generic [ref=e1316]:
+                - generic [ref=e1317]:
+                  - img [ref=e1318]
+                  - text: Found Love
+                - generic [ref=e1320]:
+                  - img [ref=e1321]
+                  - text: Heritage Sweethearts
+              - generic [ref=e1324]:
+                - generic [ref=e1325]:
+                  - img "Ana Catarina profile" [ref=e1326]
+                  - img [ref=e1328]
+                - generic [ref=e1330]:
+                  - img "Ricardo Manuel profile" [ref=e1331]
+                  - img [ref=e1333]
+              - generic [ref=e1335]:
+                - heading "Ana Catarina & Ricardo Manuel" [level=3] [ref=e1336]
+                - paragraph [ref=e1337]: 28 • Stockwell, London • Friends for 18 months ago
+              - blockquote [ref=e1338]: "\"Moved from Portugal to London for banking, but the city felt cold like winter rain. Ricardo appeared at HeritageTown's Fado event in Stockwell - someone with the same longing for home. \"Do you miss our traditional celebrations?\" he asked, offering traditional food. Six months later, we're planning our engagement party at The Heritage Centre. From first meeting to sharing apartment in Vauxhall, love grew in the warmth of shared culture. Now we cook Pastéis de Nata on Sundays, planning Lusophone wedding with Fado and London guests.\""
+              - generic [ref=e1339]:
+                - blockquote [ref=e1340]: "\"Encontrei não só o amor, mas alguém que entende a minha alma portuguesa.\""
+                - paragraph [ref=e1341]: "\"I found not just love, but someone who understands my Lusophone soul.\""
+              - paragraph [ref=e1343]:
+                - generic [ref=e1344]: "Cultural Bond:"
+                - text: Fado celebration and shared nostalgia for Lusophone traditions
+              - generic [ref=e1345]:
+                - generic [ref=e1346]: Lusophone cultural events
+                - generic [ref=e1347]: Cooking traditional meals
+                - generic [ref=e1348]: London wedding planning
+                - generic [ref=e1349]: Weekend market trips
+            - generic [ref=e1351]:
+              - generic [ref=e1352]:
+                - generic [ref=e1353]:
+                  - img [ref=e1354]
+                  - text: Found Love
+                - generic [ref=e1356]:
+                  - img [ref=e1357]
+                  - text: Heritage Hearts
+              - generic [ref=e1360]:
+                - generic [ref=e1361]:
+                  - img "Diogo Fernandes profile" [ref=e1362]
+                  - img [ref=e1364]
+                - generic [ref=e1366]:
+                  - img "Sofia Lopes profile" [ref=e1367]
+                  - img [ref=e1369]
+              - generic [ref=e1371]:
+                - heading "Diogo Fernandes & Sofia Lopes" [level=3] [ref=e1372]
+                - paragraph [ref=e1373]: 32 • Bermondsey, London • Friends for 2 years ago
+              - blockquote [ref=e1374]: "\"From Brazil's coastal regions to London's waterways, carrying traditional skills and cultural heart. Sofia caught my attention at HeritageTown's professional networking event near the city center - a lawyer with books and longing for home's landscapes. \"Do you also dream of home's natural beauty?\" she asked. Over Bacalhau at a cultural restaurant, we shared stories of growing up in our homeland, missing familiar landscapes while building London careers. Now every weekend, we explore nearby nature, collecting memories and planning return to Portugal someday, together.\""
+              - generic [ref=e1375]:
+                - blockquote [ref=e1376]: "\"O mar trouxe-nos juntos em Londres, longe das nossas praias.\""
+                - paragraph [ref=e1377]: "\"The sea brought us together in London, far from our beaches.\""
+              - paragraph [ref=e1379]:
+                - generic [ref=e1380]: "Cultural Bond:"
+                - text: Shared connection to Lusophone natural heritage and traditional landscapes
+              - generic [ref=e1381]:
+                - generic [ref=e1382]: Weekend coastal trips
+                - generic [ref=e1383]: Lusophone cooking
+                - generic [ref=e1384]: Career planning
+                - generic [ref=e1385]: Ocean photography
+            - generic [ref=e1387]:
+              - generic [ref=e1388]:
+                - generic [ref=e1389]:
+                  - img [ref=e1390]
+                  - text: Business Partners
+                - generic [ref=e1392]:
+                  - img [ref=e1393]
+                  - text: Heritage Flavors Partnership
+              - generic [ref=e1396]:
+                - generic [ref=e1397]:
+                  - img "Carlos Ribeiro profile" [ref=e1398]
+                  - img [ref=e1400]
+                - generic [ref=e1402]:
+                  - img "Ana Miguel profile" [ref=e1403]
+                  - img [ref=e1405]
+              - generic [ref=e1407]:
+                - heading "Carlos Ribeiro & Ana Miguel" [level=3] [ref=e1408]
+                - paragraph [ref=e1409]: 41 • East London • Friends for 2.5 years ago
+              - blockquote [ref=e1410]: "\"From Portugal's main commercial street to London's food markets, bringing culinary skills and Lusophone flavors. Ana found me through HeritageTown's \"Food Entrepreneurs\" meetup - a food blogger missing authentic Francesinha in London. \"Let's show locals what good Lusophone food is,\" she challenged over traditional cocktails. Our food truck \"Heritage Flavors\" now serves authentic Lusophone street food across London markets. Featured in local media, planning brick-and-mortar restaurant while teaching local palates the joy of Bacalhau and Pastéis de Nata.\""
+              - generic [ref=e1411]:
+                - blockquote [ref=e1412]: "\"A comida portuguesa une corações em qualquer cidade do mundo.\""
+                - paragraph [ref=e1413]: "\"Portuguese food unites hearts in any city in the world.\""
+              - paragraph [ref=e1415]:
+                - generic [ref=e1416]: "Cultural Bond:"
+                - text: Shared passion for authentic Lusophone cuisine and cultural preservation through food
+              - generic [ref=e1417]:
+                - generic [ref=e1418]: Food truck operations
+                - generic [ref=e1419]: London market circuits
+                - generic [ref=e1420]: Restaurant planning
+                - generic [ref=e1421]: Lusophone cooking classes
+            - generic [ref=e1423]:
+              - generic [ref=e1424]:
+                - generic [ref=e1425]:
+                  - img [ref=e1426]
+                  - text: Community Family
+                - generic [ref=e1428]:
+                  - img [ref=e1429]
+                  - text: Heritage Warriors
+              - generic [ref=e1432]:
+                - generic [ref=e1433]:
+                  - img "Isabel Rodrigues profile" [ref=e1434]
+                  - img [ref=e1436]
+                - generic [ref=e1438]:
+                  - img "Teresa Costa profile" [ref=e1439]
+                  - img [ref=e1441]
+              - generic [ref=e1443]:
+                - heading "Isabel Rodrigues & Teresa Costa" [level=3] [ref=e1444]
+                - paragraph [ref=e1445]: 38 • North London • Friends for 4 years ago
+              - blockquote [ref=e1446]: "\"From Portugal's historic districts to London's suburbs, raising children while preserving Lusophone identity. Teresa joined our HeritageTown \"Heritage Families\" group at local playground - a parent facing same struggles teaching pt-PT to English-speaking children. \"My children are forgetting who they are,\" she worried, watching her daughter play. Together we created \"Little Heritage London\" - Saturday Lusophone school at community centre. Now 120+ children learn pt-PT through stories, songs, and traditional games. Our children are proud of being Lusophone-British, speaking both languages with confidence.\""
+              - generic [ref=e1447]:
+                - blockquote [ref=e1448]: "\"As nossas crianças não vão esquecer de onde vêm.\""
+                - paragraph [ref=e1449]: "\"Our children will not forget where they come from.\""
+              - paragraph [ref=e1451]:
+                - generic [ref=e1452]: "Cultural Bond:"
+                - text: Shared mission to preserve Lusophone language and culture in next generation
+              - generic [ref=e1453]:
+                - generic [ref=e1454]: Lusophone Saturday school
+                - generic [ref=e1455]: Cultural children's events
+                - generic [ref=e1456]: Language preservation
+                - generic [ref=e1457]: Community playground meetups
+            - generic [ref=e1459]:
+              - generic [ref=e1460]:
+                - generic [ref=e1461]:
+                  - img [ref=e1462]
+                  - text: Cultural Connection
+                - generic [ref=e1464]:
+                  - img [ref=e1465]
+                  - text: Heritage Voices
+              - generic [ref=e1468]:
+                - generic [ref=e1469]:
+                  - img "Beatriz Oliveira profile" [ref=e1470]
+                  - img [ref=e1472]
+                - generic [ref=e1474]:
+                  - img "Luciana Santos profile" [ref=e1475]
+                  - img [ref=e1477]
+              - generic [ref=e1479]:
+                - heading "Beatriz Oliveira & Luciana Santos" [level=3] [ref=e1480]
+                - paragraph [ref=e1481]: 26 • Camden, London • Friends for 2 years ago
+              - blockquote [ref=e1482]: "\"From Brazil's cultural districts to London's markets, bringing diverse energy and Lusophone heritage. Luciana connected through HeritageTown's \"Lusophone Artists\" network at cultural venue - a performer mixing traditional sounds with London influences. \"Let's show that our culture creates universal music,\" she proposed over traditional drinks. Our collective \"Heritage Voices\" performs monthly at cultural venues, blending Fado, modern beats, and international rhythms. BBC featured our \"Lusophone Cultural Sounds\" concert, proving that Lusophone language creates music that transcends borders.\""
+              - generic [ref=e1483]:
+                - blockquote [ref=e1484]: "\"A música portuguesa não tem fronteiras - do fado ao samba, somos um só povo.\""
+                - paragraph [ref=e1485]: "\"Portuguese music has no borders - from fado to samba, we are one people.\""
+              - paragraph [ref=e1487]:
+                - generic [ref=e1488]: "Cultural Bond:"
+                - text: Shared Lusophone musical heritage spanning continents and cultures
+              - generic [ref=e1489]:
+                - generic [ref=e1490]: Multicultural music events
+                - generic [ref=e1491]: Portuguese language concerts
+                - generic [ref=e1492]: BBC radio appearances
+                - generic [ref=e1493]: Cultural education workshops
+            - generic [ref=e1495]:
+              - generic [ref=e1496]:
+                - generic [ref=e1497]:
+                  - img [ref=e1498]
+                  - text: Cultural Connection
+                - generic [ref=e1500]:
+                  - img [ref=e1501]
+                  - text: Heritage Political Partnership
+              - generic [ref=e1504]:
+                - generic [ref=e1505]:
+                  - img "Pedro Gonçalves profile" [ref=e1506]
+                  - img [ref=e1508]
+                - generic [ref=e1510]:
+                  - img "Fátima Lopes profile" [ref=e1511]
+                  - img [ref=e1513]
+              - generic [ref=e1515]:
+                - heading "Pedro Gonçalves & Fátima Lopes" [level=3] [ref=e1516]
+                - paragraph [ref=e1517]: 30 • Westminster, London • Friends for 5 years ago
+              - blockquote [ref=e1518]: "\"From Portugal's university halls to London's policy corridors, studying International Relations while feeling disconnected from Lusophone diaspora politics. Fátima joined HeritageTown's \"Political Engagement\" group at local library - a lawyer passionate about Lusophone-speaking communities' representation. \"We need political voice in London,\" she declared during policy discussions. Together we founded \"Heritage London Voices\" - advocacy group ensuring Lusophone speakers' interests in local and national politics. Now advising Mayor of London on Lusophone community needs, proving our voice counts in British democracy.\""
+              - generic [ref=e1519]:
+                - blockquote [ref=e1520]: "\"A nossa voz portuguesa faz diferença na democracia britânica.\""
+                - paragraph [ref=e1521]: "\"Our Lusophone voice makes a difference in British democracy.\""
+              - paragraph [ref=e1523]:
+                - generic [ref=e1524]: "Cultural Bond:"
+                - text: Shared commitment to Lusophone community political representation and civic engagement
+              - generic [ref=e1525]:
+                - generic [ref=e1526]: Political advocacy
+                - generic [ref=e1527]: Community representation
+                - generic [ref=e1528]: Local council engagement
+                - generic [ref=e1529]: Policy research
+            - generic [ref=e1531]:
+              - generic [ref=e1532]:
+                - generic [ref=e1533]:
+                  - img [ref=e1534]
+                  - text: Student Success
+                - generic [ref=e1536]:
+                  - img [ref=e1537]
+                  - text: Heritage Medical Mentorship
+              - generic [ref=e1540]:
+                - generic [ref=e1541]:
+                  - img "Inês Ferreira profile" [ref=e1542]
+                  - img [ref=e1544]
+                - generic [ref=e1546]:
+                  - img "Prof. Manuel Sousa profile" [ref=e1547]
+                  - img [ref=e1549]
+              - generic [ref=e1551]:
+                - heading "Inês Ferreira & Prof. Manuel Sousa" [level=3] [ref=e1552]
+                - paragraph [ref=e1553]: 22 • King's Cross, London • Friends for 3 years ago
+              - blockquote [ref=e1554]: "\"From Portugal's academic cities to London's universities, pursuing Medicine while missing Lusophone mentorship and guidance. Professor Sousa reached out through HeritageTown's \"Academic Mentorship\" program - a professor from Portugal teaching at local college, understanding international student struggles. \"Medicine taught in pt-PT has different soul,\" he explained during our first meeting at library. Under his mentorship, I'm excelling in Medical School while researching Lusophone genetic factors in health. Now helping organize \"Future Lusophone Doctors United Kingdom\" network, ensuring next generation maintains connection to Lusophone medical traditions.\""
+              - generic [ref=e1555]:
+                - blockquote [ref=e1556]: "\"Um mentor português fez toda a diferença na minha carreira médica.\""
+                - paragraph [ref=e1557]: "\"A Lusophone mentor made all the difference in my medical career.\""
+              - paragraph [ref=e1559]:
+                - generic [ref=e1560]: "Cultural Bond:"
+                - text: Lusophone medical tradition and academic excellence across generations
+              - generic [ref=e1561]:
+                - generic [ref=e1562]: Medical school excellence
+                - generic [ref=e1563]: Research collaboration
+                - generic [ref=e1564]: Student mentorship program
+                - generic [ref=e1565]: Lusophone medical network
+          - generic [ref=e1566]:
+            - heading "Ready to Transform Your London Longing Into Lusophone Success?" [level=3] [ref=e1567]
+            - paragraph [ref=e1568]: Join 750+ Lusophone souls from Portugal, Brazil, Angola, Mozambique & beyond who found their London community through real connections. From cultural market adventures to traditional music nights - your Lusophone community awaits at authentic London venues where our culture thrives.
+            - generic [ref=e1569]:
+              - link "JOIN NOW" [ref=e1570] [cursor=pointer]:
+                - /url: /signup
+              - link "Read Detailed Case Studies" [ref=e1571] [cursor=pointer]:
+                - /url: /case-studies
+        - generic [ref=e1574]:
+          - generic [ref=e1575]:
+            - generic [ref=e1576]:
+              - generic [ref=e1577]: 🌍
+              - generic [ref=e1578]: UNIDOS PELA LÍNGUA
+            - heading "What Our Global Lusophone-Speaking Community Says" [level=2] [ref=e1579]
+            - paragraph [ref=e1580]: From Portugal to Brazil, Angola to Cape Verde, Mozambique to the UK - hear from successful members across the entire Lusophone world
+            - generic [ref=e1581]: 🇵🇹 🇧🇷 🇦🇴 🇨🇻 🇲🇿 🇬🇼 🇸🇹 🇹🇱
+          - generic [ref=e1582]:
+            - generic [ref=e1583]:
+              - generic [ref=e1584]:
+                - generic [ref=e1585]: CS
+                - generic [ref=e1586]:
+                  - generic [ref=e1587]:
+                    - heading "Carlos Silva" [level=3] [ref=e1588]
+                    - generic [ref=e1589]: 🇧🇷
+                  - generic [ref=e1590]:
+                    - generic [ref=e1591]: "34"
+                    - generic [ref=e1592]: •
+                    - generic [ref=e1593]: Brazilian
+                  - generic [ref=e1594]: São Paulo → London
+              - generic [ref=e1596]:
+                - img [ref=e1597]
+                - text: Executive Member
+              - blockquote [ref=e1599]: "\"As a Brazilian member of LusoTown, I love how they celebrate ALL Portuguese-speaking cultures equally. I've learned so much about PALOP heritage through member events, and made business connections across the entire Lusophone world.\""
+              - generic [ref=e1600]:
+                - generic [ref=e1603]: Connected with 15+ Angolan entrepreneurs
+                - generic [ref=e1606]: £500K+ in cross-border deals facilitated
+              - generic [ref=e1607]:
+                - img [ref=e1608]
+                - img [ref=e1610]
+                - img [ref=e1612]
+                - img [ref=e1614]
+                - img [ref=e1616]
+                - generic [ref=e1618]: Verified Member
+            - generic [ref=e1619]:
+              - generic [ref=e1620]:
+                - generic [ref=e1621]: IM
+                - generic [ref=e1622]:
+                  - generic [ref=e1623]:
+                    - heading "Isabel Mendes" [level=3] [ref=e1624]
+                    - generic [ref=e1625]: 🇦🇴
+                  - generic [ref=e1626]:
+                    - generic [ref=e1627]: "29"
+                    - generic [ref=e1628]: •
+                    - generic [ref=e1629]: Angolan
+                  - generic [ref=e1630]: Luanda → Manchester
+              - generic [ref=e1632]:
+                - img [ref=e1633]
+                - text: Founding Member
+              - blockquote [ref=e1635]: "\"Finally, a community that recognizes PALOP identity with pride! Through LusoTown membership, I've connected with other Angolan entrepreneurs and also learned about Lusophone and Brazilian business opportunities.\""
+              - generic [ref=e1636]:
+                - generic [ref=e1639]: Founded 3 UK-Angola trade partnerships
+                - generic [ref=e1642]: PALOP Business Network Leader
+              - generic [ref=e1643]:
+                - img [ref=e1644]
+                - img [ref=e1646]
+                - img [ref=e1648]
+                - img [ref=e1650]
+                - img [ref=e1652]
+                - generic [ref=e1654]: Verified Member
+            - generic [ref=e1655]:
+              - generic [ref=e1656]:
+                - generic [ref=e1657]: AT
+                - generic [ref=e1658]:
+                  - generic [ref=e1659]:
+                    - heading "António Tavares" [level=3] [ref=e1660]
+                    - generic [ref=e1661]: 🇨🇻
+                  - generic [ref=e1662]:
+                    - generic [ref=e1663]: "42"
+                    - generic [ref=e1664]: •
+                    - generic [ref=e1665]: Cape Verdean
+                  - generic [ref=e1666]: Praia heritage
+              - generic [ref=e1668]:
+                - img [ref=e1669]
+                - text: Full Member
+              - blockquote [ref=e1671]: "\"The cultural events celebrate Morna music alongside Fado and Samba. It's beautiful to see all Portuguese-speaking cultures represented as equals. My children are learning about their Cape Verdean roots through community events.\""
+              - generic [ref=e1672]:
+                - generic [ref=e1675]: Organized 12+ Morna music nights
+                - generic [ref=e1678]: Cultural Heritage Preservation
+              - generic [ref=e1679]:
+                - img [ref=e1680]
+                - img [ref=e1682]
+                - img [ref=e1684]
+                - img [ref=e1686]
+                - img [ref=e1688]
+                - generic [ref=e1690]: Verified Member
+            - generic [ref=e1691]:
+              - generic [ref=e1692]:
+                - generic [ref=e1693]: MS
+                - generic [ref=e1694]:
+                  - generic [ref=e1695]:
+                    - heading "Maria Santos" [level=3] [ref=e1696]
+                    - generic [ref=e1697]: 🇵🇹
+                  - generic [ref=e1698]:
+                    - generic [ref=e1699]: "36"
+                    - generic [ref=e1700]: •
+                    - generic [ref=e1701]: Lusophone
+                  - generic [ref=e1702]: Porto → London
+              - generic [ref=e1704]:
+                - img [ref=e1705]
+                - text: Associate Member
+              - blockquote [ref=e1707]: "\"I love being part of a community that's truly global. I've made friends from Brazil, Angola, Cape Verde - the Portuguese language connects us all. My business now has clients across 5 Portuguese-speaking countries.\""
+              - generic [ref=e1708]:
+                - generic [ref=e1711]: Built network across 8 countries
+                - generic [ref=e1714]: Expanded to 3 new Lusophone markets
+              - generic [ref=e1715]:
+                - img [ref=e1716]
+                - img [ref=e1718]
+                - img [ref=e1720]
+                - img [ref=e1722]
+                - img [ref=e1724]
+                - generic [ref=e1726]: Verified Member
+            - generic [ref=e1727]:
+              - generic [ref=e1728]:
+                - generic [ref=e1729]: SM
+                - generic [ref=e1730]:
+                  - generic [ref=e1731]:
+                    - heading "Sofia Machel" [level=3] [ref=e1732]
+                    - generic [ref=e1733]: 🇲🇿
+                  - generic [ref=e1734]:
+                    - generic [ref=e1735]: "31"
+                    - generic [ref=e1736]: •
+                    - generic [ref=e1737]: Mozambican
+                  - generic [ref=e1738]: Maputo → Edinburgh
+              - generic [ref=e1740]:
+                - img [ref=e1741]
+                - text: Elite Member
+              - blockquote [ref=e1743]: "\"Through LusoTown, I've connected with successful professionals from across the Portuguese-speaking world. The business network helped me establish my consulting firm, and the cultural events keep me connected to my Mozambican heritage.\""
+              - generic [ref=e1744]:
+                - generic [ref=e1747]: Launched UK consulting practice
+                - generic [ref=e1750]: £200K+ first-year revenue
+              - generic [ref=e1751]:
+                - img [ref=e1752]
+                - img [ref=e1754]
+                - img [ref=e1756]
+                - img [ref=e1758]
+                - img [ref=e1760]
+                - generic [ref=e1762]: Verified Member
+            - generic [ref=e1763]:
+              - generic [ref=e1764]:
+                - generic [ref=e1765]: RF
+                - generic [ref=e1766]:
+                  - generic [ref=e1767]:
+                    - heading "Ricardo Fernandes" [level=3] [ref=e1768]
+                    - generic [ref=e1769]: 🇵🇹🇧🇷
+                  - generic [ref=e1770]:
+                    - generic [ref=e1771]: "28"
+                    - generic [ref=e1772]: •
+                    - generic [ref=e1773]: Lusophone-Brazilian
+                  - generic [ref=e1774]: London born
+              - generic [ref=e1776]:
+                - img [ref=e1777]
+                - text: Community Member
+              - blockquote [ref=e1779]: "\"As someone with mixed heritage, I finally found a place that celebrates ALL sides of the Portuguese-speaking world. I've learned business Lusophone, attended Brazilian Carnival events, and made friends who understand both cultures.\""
+              - generic [ref=e1780]:
+                - generic [ref=e1783]: Cultural bridge-building champion
+                - generic [ref=e1786]: Cross-cultural expertise valued at companies
+              - generic [ref=e1787]:
+                - img [ref=e1788]
+                - img [ref=e1790]
+                - img [ref=e1792]
+                - img [ref=e1794]
+                - img [ref=e1796]
+                - generic [ref=e1798]: Verified Member
+          - generic [ref=e1799]:
+            - generic [ref=e1800]:
+              - generic [ref=e1801]: 🏆
+              - 'heading "PALOP Excellence Recognition: Angola 🇦🇴, Cape Verde 🇨🇻, Guinea-Bissau 🇬🇼, Mozambique 🇲🇿, São Tomé 🇸🇹" [level=3] [ref=e1802]'
+            - paragraph [ref=e1803]: Celebrating 50+ years of PALOP independence and success in the UK
+          - generic [ref=e1804]:
+            - generic [ref=e1805]:
+              - generic [ref=e1806]: 750+
+              - generic [ref=e1807]: Lusophone Speakers
+              - generic [ref=e1808]: All Nations
+            - generic [ref=e1809]:
+              - generic [ref=e1810]: "8"
+              - generic [ref=e1811]: Countries Represented
+              - generic [ref=e1812]: 🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱
+            - generic [ref=e1813]:
+              - generic [ref=e1814]: 50+
+              - generic [ref=e1815]: Monthly Events
+              - generic [ref=e1816]: All Cultures
+            - generic [ref=e1817]:
+              - generic [ref=e1818]: £25M+
+              - generic [ref=e1819]: Business Deals
+              - generic [ref=e1820]: Cross-Border
+        - generic [ref=e1823]:
+          - generic [ref=e1824]:
+            - generic [ref=e1825]:
+              - img [ref=e1826]
+              - text: PALOP Cultural Calendar
+            - heading "PALOP Independence Celebrations" [level=2] [ref=e1828]
+            - generic [ref=e1829]: 🇦🇴 🇨🇻 🇬🇼 🇲🇿 🇸🇹
+            - paragraph [ref=e1830]: Join authentic celebrations from Angola's November Freedom Festival to Cape Verde's Island Independence Day, Mozambique's Coastal Freedom Festival, Guinea-Bissau's Cultural Resilience Festival, and São Tomé's Paradise Island Celebration.
+          - generic [ref=e1831]:
+            - generic [ref=e1832]:
+              - generic [ref=e1833]:
+                - generic [ref=e1834]: Angola Independence
+                - generic [ref=e1836]: 🇦🇴
+              - heading "November Freedom Festival" [level=3] [ref=e1837]
+              - paragraph [ref=e1838]: Grand celebration featuring powerful Semba & Kizomba performances, traditional cuisine, business networking, and cultural pride celebrations that unite London's Angolan community.
+              - generic [ref=e1839]:
+                - generic [ref=e1840]: 🎵 Kizomba
+                - generic [ref=e1841]: 💎 Business
+                - generic [ref=e1842]: November
+            - generic [ref=e1843]:
+              - generic [ref=e1844]:
+                - generic [ref=e1845]: Cape Verde Independence
+                - generic [ref=e1847]: 🇨🇻
+              - heading "Island Freedom Celebration" [level=3] [ref=e1848]
+              - paragraph [ref=e1849]: Joyful celebration featuring heartfelt Morna music, energetic Coladeira dancing, incredible Cachupa feasts, and amazing community spirit of Cape Verdean culture.
+              - generic [ref=e1850]:
+                - generic [ref=e1851]: 🎵 Morna
+                - generic [ref=e1852]: 🍲 Cachupa
+                - generic [ref=e1853]: July
+            - generic [ref=e1854]:
+              - generic [ref=e1855]:
+                - generic [ref=e1856]: Mozambique Independence
+                - generic [ref=e1858]: 🇲🇿
+              - heading "Coastal Freedom Festival" [level=3] [ref=e1859]
+              - paragraph [ref=e1860]: Vibrant celebration featuring energetic Marrabenta music, incredible coastal cuisine, cultural performances showcasing Mozambique's African, Lusophone & Indian Ocean influences.
+              - generic [ref=e1861]:
+                - generic [ref=e1862]: 🌶️ Spices
+                - generic [ref=e1863]: 🍤 Seafood
+                - generic [ref=e1864]: June
+          - link "🇦🇴🇨🇻🇬🇼🇲🇿🇸🇹 PALOP Independence Celebrations" [ref=e1866] [cursor=pointer]:
+            - /url: /events
+            - generic [ref=e1868] [cursor=pointer]: 🇦🇴🇨🇻🇬🇼🇲🇿🇸🇹
+            - text: PALOP Independence Celebrations
+            - img [ref=e1869] [cursor=pointer]
+        - generic [ref=e1871]:
+          - generic [ref=e1874]:
+            - generic [ref=e1875]:
+              - generic [ref=e1876]:
+                - generic [ref=e1877]:
+                  - generic [ref=e1881]: 🏛️
+                  - generic [ref=e1883]:
+                    - generic [ref=e1884]: LusoTown
+                    - generic [ref=e1885]:
+                      - img "Lusophone flag" [ref=e1886]: 🇵🇹
+                      - text: London
+                      - img "United Kingdom flag" [ref=e1887]: 🇬🇧
+                - paragraph [ref=e1888]: Premium community for verified Portuguese and Portuguese‑speaking members in the UK.
+                - generic [ref=e1890]:
+                  - generic [ref=e1891]:
+                    - img [ref=e1892]
+                    - generic [ref=e1894]: PALOP Heritage Celebrated
+                  - generic [ref=e1895]: 🇦🇴🇨🇻🇬🇼🇲🇿🇸🇹
+                  - paragraph [ref=e1896]: Elite network for African Lusophone success
+                - generic [ref=e1897]:
+                  - generic [ref=e1898]:
+                    - img [ref=e1900]
+                    - generic [ref=e1903]: London, United Kingdom
+                  - generic [ref=e1904]:
+                    - img [ref=e1906]
+                    - generic [ref=e1908]: members@lusotown.com
+              - generic [ref=e1909]:
+                - heading "Community" [level=3] [ref=e1910]
+                - list [ref=e1911]:
+                  - listitem [ref=e1912]:
+                    - link "Apply for Membership" [ref=e1913] [cursor=pointer]:
+                      - /url: /apply
+                      - img [ref=e1914] [cursor=pointer]
+                      - text: Apply for Membership
+                  - listitem [ref=e1916]:
+                    - link "Cultural Events" [ref=e1917] [cursor=pointer]:
+                      - /url: /events
+                  - listitem [ref=e1918]:
+                    - link "PALOP Heritage" [ref=e1919] [cursor=pointer]:
+                      - /url: /palop-heritage
+                  - listitem [ref=e1920]:
+                    - link "Business Directory" [ref=e1921] [cursor=pointer]:
+                      - /url: /directory
+                  - listitem [ref=e1922]:
+                    - link "Success Stories" [ref=e1923] [cursor=pointer]:
+                      - /url: /success-stories
+              - generic [ref=e1924]:
+                - heading "Membership" [level=3] [ref=e1925]
+                - list [ref=e1926]:
+                  - listitem [ref=e1927]:
+                    - link "Membership Tiers" [ref=e1928] [cursor=pointer]:
+                      - /url: /premium-membership
+                      - img [ref=e1929] [cursor=pointer]
+                      - text: Membership Tiers
+                  - listitem [ref=e1931]:
+                    - link "Exclusive Events" [ref=e1932] [cursor=pointer]:
+                      - /url: /events?filter=members-only
+                  - listitem [ref=e1933]:
+                    - link "Premium Services" [ref=e1934] [cursor=pointer]:
+                      - /url: /premium-services
+                  - listitem [ref=e1935]:
+                    - link "Member Benefits" [ref=e1936] [cursor=pointer]:
+                      - /url: /member-benefits
+                  - listitem [ref=e1937]:
+                    - link "Executive Network" [ref=e1938] [cursor=pointer]:
+                      - /url: /executive-network
+              - generic [ref=e1939]:
+                - heading "Services" [level=3] [ref=e1940]
+                - list [ref=e1941]:
+                  - listitem [ref=e1942]:
+                    - link "Cultural Tours" [ref=e1943] [cursor=pointer]:
+                      - /url: /tours
+                  - listitem [ref=e1944]:
+                    - link "Private Events" [ref=e1945] [cursor=pointer]:
+                      - /url: /private-events
+                  - listitem [ref=e1946]:
+                    - link "Venue Access" [ref=e1947] [cursor=pointer]:
+                      - /url: /venue-access
+                  - listitem [ref=e1948]:
+                    - link "Concierge" [ref=e1949] [cursor=pointer]:
+                      - /url: /concierge
+                  - listitem [ref=e1950]:
+                    - link "Partner Benefits" [ref=e1951] [cursor=pointer]:
+                      - /url: /partner-benefits
+              - generic [ref=e1952]:
+                - heading "Support" [level=3] [ref=e1953]
+                - list [ref=e1954]:
+                  - listitem [ref=e1955]:
+                    - link "Member Portal" [ref=e1956] [cursor=pointer]:
+                      - /url: /member-portal
+                  - listitem [ref=e1957]:
+                    - link "Help Center" [ref=e1958] [cursor=pointer]:
+                      - /url: /help
+                  - listitem [ref=e1959]:
+                    - link "Contact" [ref=e1960] [cursor=pointer]:
+                      - /url: /contact
+                  - listitem [ref=e1961]:
+                    - link "Privacy" [ref=e1962] [cursor=pointer]:
+                      - /url: /privacy
+                  - listitem [ref=e1963]:
+                    - link "Terms" [ref=e1964] [cursor=pointer]:
+                      - /url: /terms
+            - generic [ref=e1966]:
+              - generic [ref=e1967]:
+                - heading "Join 750+ Elite Members" [level=3] [ref=e1968]
+                - paragraph [ref=e1969]: Exclusive access, premium events, elite networking.
+              - generic [ref=e1970]:
+                - link "Apply for Membership" [ref=e1971] [cursor=pointer]:
+                  - /url: /apply
+                  - img [ref=e1972] [cursor=pointer]
+                  - text: Apply for Membership
+                  - img [ref=e1974] [cursor=pointer]
+                - link "View Events" [ref=e1976] [cursor=pointer]:
+                  - /url: /events
+            - generic [ref=e1978]:
+              - generic [ref=e1979]:
+                - img [ref=e1980]
+                - generic [ref=e1982]: COMMUNITY
+                - generic [ref=e1983]: £19.99/month
+                - generic [ref=e1984]: Cultural Events
+              - generic [ref=e1985]:
+                - img [ref=e1986]
+                - generic [ref=e1988]: AMBASSADOR
+                - generic [ref=e1989]: £39.99/month
+                - generic [ref=e1990]: Premium Access
+              - generic [ref=e1991]:
+                - img [ref=e1992]
+                - generic [ref=e1994]: EXECUTIVE
+                - generic [ref=e1995]: £79.99/month
+                - generic [ref=e1996]: Elite Network
+          - generic [ref=e1999]:
+            - generic [ref=e2000]:
+              - generic [ref=e2001]:
+                - link "Instagram" [ref=e2002] [cursor=pointer]:
+                  - /url: https://instagram.com/lusotownlondon
+                  - generic [ref=e2003] [cursor=pointer]: Instagram
+                  - img [ref=e2004] [cursor=pointer]
+                - link "Facebook" [ref=e2007] [cursor=pointer]:
+                  - /url: https://facebook.com/lusotownlondon
+                  - generic [ref=e2008] [cursor=pointer]: Facebook
+                  - img [ref=e2009] [cursor=pointer]
+                - link "Twitter" [ref=e2011] [cursor=pointer]:
+                  - /url: https://twitter.com/lusotownlondon
+                  - generic [ref=e2012] [cursor=pointer]: Twitter
+                  - img [ref=e2013] [cursor=pointer]
+                - link "LinkedIn" [ref=e2015] [cursor=pointer]:
+                  - /url: https://linkedin.com/company/lusotown
+                  - generic [ref=e2016] [cursor=pointer]: LinkedIn
+                  - img [ref=e2017] [cursor=pointer]
+                - link "YouTube" [ref=e2021] [cursor=pointer]:
+                  - /url: https://youtube.com/@lusotownlondon
+                  - generic [ref=e2022] [cursor=pointer]: YouTube
+                  - img [ref=e2023] [cursor=pointer]
+              - generic [ref=e2026]:
+                - img [ref=e2027]
+                - generic [ref=e2029]: 750+ verified Portuguese/Portuguese‑speaking members
+            - generic [ref=e2030]:
+              - paragraph [ref=e2031]: © 2025 LusoTown UK • Exclusive Lusophone Community
+              - generic [ref=e2032]:
+                - img [ref=e2033]
+                - generic [ref=e2035]: Made with Lusophone pride
+      - generic [ref=e2036]:
+        - button "Join Lusophone community - FREE" [ref=e2037] [cursor=pointer]:
+          - generic [ref=e2038] [cursor=pointer]:
+            - img [ref=e2039] [cursor=pointer]
+            - generic [ref=e2041] [cursor=pointer]:
+              - text: JOIN
+              - text: FREE
+          - generic [ref=e2043] [cursor=pointer]:
+            - generic [ref=e2044] [cursor=pointer]: 🇵🇹
+            - generic [ref=e2045] [cursor=pointer]: 🇦🇴
+        - generic:
+          - generic:
+            - generic: 🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹
+            - text: Finally, a platform that recognizes and celebrates PALOP identity specifically
+          - generic: PALOP Recognition Platform
+  - button "Open LusoBot - Portuguese Cultural Assistant for the Portuguese-speaking community. Press Enter to open." [ref=e2047] [cursor=pointer]:
+    - generic [ref=e2048] [cursor=pointer]:
+      - img [ref=e2049] [cursor=pointer]
+      - generic [ref=e2051] [cursor=pointer]: 🇵🇹
+    - generic: Chat with LusoBot
+  - alert [ref=e2052]
+  - generic [ref=e2053]: App download banner appeared. LusoTown mobile app is available.. Banner de download da app apareceu. App móvel LusoTown está disponível.
+```

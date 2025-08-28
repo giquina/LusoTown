@@ -34,6 +34,7 @@ interface LusoBotWidgetProps {
   showWelcomeMessage?: boolean;
   customGreeting?: string;
   theme?: "light" | "dark" | "portuguese";
+  "data-page-role"?: string;
 }
 
 interface FloatingMessage {
@@ -49,6 +50,7 @@ export default function LusoBotWidget({
   showWelcomeMessage = true,
   customGreeting,
   theme = "portuguese",
+  "data-page-role": pageRole,
 }: LusoBotWidgetProps) {
   const { language } = useLanguage();
   const [isOpen, setIsOpen] = useState(autoOpen);
@@ -84,8 +86,8 @@ export default function LusoBotWidget({
       preventScroll: false
     }
   );
-  // Feature flag to disable extra contextual popups
-  const ENABLE_CONTEXTUAL_SUGGESTIONS = false;
+  // Feature flag to enable page-aware contextual suggestions  
+  const ENABLE_CONTEXTUAL_SUGGESTIONS = true;
 
   // Lightweight routes for quick actions (fallbacks if import is unavailable)
   const ROUTES_SAFE = {
@@ -436,6 +438,9 @@ export default function LusoBotWidget({
           // Only apply z-index for desktop, mobile classes already include it
           ...(isMobile ? {} : { zIndex: zIndex || 70 })
         }}
+        data-page-role={pageRole}
+        data-lusobot-widget="true"
+        data-testid="lusobot-widget"
       >
         <AnimatePresence>
           {isOpen && (

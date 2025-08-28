@@ -81,6 +81,19 @@ export default function AppDownloadBar({
     return () => clearTimeout(timer)
   }, [autoShow, showDelay, isMobile])
 
+  // Add body padding when app bar is at top to prevent content overlap
+  useEffect(() => {
+    if (position === 'top' && isVisible) {
+      document.body.style.paddingTop = '80px' // Height of the app bar
+    } else {
+      document.body.style.paddingTop = '0px'
+    }
+    
+    return () => {
+      document.body.style.paddingTop = '0px'
+    }
+  }, [position, isVisible])
+
   // Dismiss handlers
   const handleDismiss = (permanent: boolean = false) => {
     setIsAnimating(true)
@@ -139,9 +152,9 @@ export default function AppDownloadBar({
           damping: 30,
           duration: 0.4
         }}
-        className={`fixed ${position === 'bottom' ? 'bottom-0' : 'top-0'} left-2 right-2 sm:left-4 sm:right-4 max-w-sm sm:max-w-md mx-auto
-          bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-2xl rounded-t-2xl 
-          ${position === 'bottom' ? 'border-t border-primary-400' : 'border-b border-primary-400 rounded-b-2xl rounded-t-none'}
+        className={`fixed ${position === 'bottom' ? 'bottom-0' : 'top-0'} left-0 right-0 
+          bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-2xl
+          ${position === 'bottom' ? 'rounded-t-2xl border-t border-primary-400' : 'border-b border-primary-400'}
           ${className}`}
         style={{ zIndex: COMPONENT_Z_INDEX.appDownloadBar }}
         role="banner"

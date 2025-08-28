@@ -23,7 +23,10 @@ const LusoBotWrapper = dynamic(() => import("@/components/LusoBotWrapper"), {
   loading: () => null,
 }) as unknown as React.FC;
 
-// Keep only LusoBotWrapper as dynamic client-only widget
+const AppDownloadBar = dynamic(() => import("@/components/AppDownloadBar"), {
+  ssr: false,
+  loading: () => null,
+}) as unknown as React.FC;
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -58,6 +61,11 @@ export default function RootLayout({
                           <PlatformIntegrationProvider>
                             <WaitingListProvider>
                               <NavigationProvider>
+                                {/* App Download Bar at top of screen */}
+                                <ComponentErrorBoundary componentName="AppDownloadBar" level="component" maxRetries={0}>
+                                  <AppDownloadBar position="top" />
+                                </ComponentErrorBoundary>
+
                                 {/* Essential Header (isolated to prevent app-wide crash) */}
                                 <ComponentErrorBoundary componentName="Header" level="component" maxRetries={1}>
                                   <Header />
