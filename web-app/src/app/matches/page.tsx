@@ -566,6 +566,21 @@ function MatchesContent() {
               </button>
             </div>
 
+            {/* Cultural Matching Link */}
+            <div className="mt-4 text-center">
+              <a
+                href="/matches/cultural"
+                className="inline-flex items-center space-x-2 text-white/90 hover:text-white text-sm font-medium underline decoration-dotted hover:decoration-solid transition-all"
+              >
+                <HeartIcon className="w-4 h-4" />
+                <span>
+                  {language === "pt" 
+                    ? "Experimente o Matching Cultural Avançado" 
+                    : "Try Advanced Cultural Matching"}
+                </span>
+              </a>
+            </div>
+
             {/* Enhanced Stats */}
             <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-5">
               <div className="text-center group">

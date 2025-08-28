@@ -73,6 +73,12 @@ export interface CulturalEvent {
   isActive: boolean
   featured: boolean
   isRegularEvent: boolean
+  
+  // Calendar specific
+  calendarColor?: string
+  recurrenceRule?: string
+  excludeDates?: string[]
+  specialDates?: { date: string; note: string }[]
 }
 
 export interface EventTestimonial {
@@ -169,7 +175,10 @@ export const CULTURAL_EVENTS: CulturalEvent[] = [
     
     isActive: true,
     featured: true,
-    isRegularEvent: true
+    isRegularEvent: true,
+    
+    calendarColor: '#E91E63',
+    recurrenceRule: 'FREQ=WEEKLY;BYDAY=TU,TH'
   },
   
   // FADO EVENTS

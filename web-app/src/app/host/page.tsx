@@ -22,7 +22,7 @@ import {
 import { CheckIcon } from "@heroicons/react/24/solid";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
-import { creator, formatPrice } from "@/config/pricing";
+import { EVENT_PRICING, SUBSCRIPTION_PLANS, formatPrice } from "@/config/pricing";
 import { toast } from "react-hot-toast";
 
 export default function HostPage() {
@@ -237,15 +237,15 @@ export default function HostPage() {
               >
                 {isPortuguese
                   ? `Sem barreiras para criar eventos. Comece grátis com 1 evento mensal, depois escolha entre Creator Pro (${formatPrice(
-                      creator.proMonthly
+                      SUBSCRIPTION_PLANS.cultural_ambassador.monthly
                     )}) ou modelo de transação (${
-                      creator.ticketFeePercent
-                    }% + ${formatPrice(creator.ticketFeeFlat)} por bilhete).`
+                      EVENT_PRICING.ticketFeePercent
+                    }% + ${formatPrice(EVENT_PRICING.ticketFeeFlat)} por bilhete).`
                   : `No barriers to event creation. Start free with 1 monthly event, then choose Creator Pro (${formatPrice(
-                      creator.proMonthly
+                      SUBSCRIPTION_PLANS.cultural_ambassador.monthly
                     )}) or transaction model (${
-                      creator.ticketFeePercent
-                    }% + ${formatPrice(creator.ticketFeeFlat)} per ticket).`}
+                      EVENT_PRICING.ticketFeePercent
+                    }% + ${formatPrice(EVENT_PRICING.ticketFeeFlat)} per ticket).`}
               </motion.p>
 
               <motion.div
@@ -430,7 +430,7 @@ export default function HostPage() {
                     Creator Pro
                   </h3>
                   <div className="text-4xl font-bold text-gray-900 mb-2">
-                    {formatPrice(creator.proMonthly)}
+                    {formatPrice(SUBSCRIPTION_PLANS.cultural_ambassador.monthly)}
                   </div>
                   <p className="text-gray-600">
                     {isPortuguese ? "por mês" : "per month"}
@@ -478,8 +478,8 @@ export default function HostPage() {
                     {isPortuguese ? "Por Transação" : "Per Transaction"}
                   </h3>
                   <div className="text-3xl font-bold text-gray-900 mb-2">
-                    {creator.ticketFeePercent}% +{" "}
-                    {formatPrice(creator.ticketFeeFlat)}
+                    {EVENT_PRICING.ticketFeePercent}% +{" "}
+                    {formatPrice(EVENT_PRICING.ticketFeeFlat)}
                   </div>
                   <p className="text-gray-600">
                     {isPortuguese ? "por bilhete vendido" : "per ticket sold"}

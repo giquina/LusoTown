@@ -6,6 +6,10 @@ export { default as MatchingAchievements } from './MatchingAchievements';
 export { default as GroupMatching } from './GroupMatching';
 export { default as EnhancedMatchDashboard } from './EnhancedMatchDashboard';
 
+// Cultural Matching System Components
+export { default as MatchesSystem } from './MatchesSystem';
+export { default as CulturalProfileSetup } from './CulturalProfileSetup';
+
 // Types
 export interface MatchProfile {
   id: string;

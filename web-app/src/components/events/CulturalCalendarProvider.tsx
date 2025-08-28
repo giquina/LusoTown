@@ -3,7 +3,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode, useMemo, useCallback } from 'react'
 import { CULTURAL_EVENTS, CulturalEvent } from '@/config/cultural-events'
 import { LUSOPHONE_CELEBRATIONS, LusophoneCelebration } from '@/config/lusophone-celebrations'
-import { PARTNERSHIP_EVENTS } from '@/config/partnership-events'
+import { UNIVERSITY_EVENTS, UniversityEvent } from '@/config/lusophone-celebrations'
 import { PORTUGUESE_COUNTRIES } from '@/config/portuguese-countries'
 
 interface CalendarEvent {
@@ -249,44 +249,47 @@ export function CulturalCalendarProvider({ children }: CulturalCalendarProviderP
     return events
   }, [])
 
-  // Generate university partnership events
+  // Generate university events from configuration
   const generateUniversityEvents = useCallback((): CalendarEvent[] => {
     const events: CalendarEvent[] = []
-    const currentDate = new Date()
-    const currentYear = currentDate.getFullYear()
+    const currentYear = new Date().getFullYear()
     
-    // Generate monthly university events
-    for (let month = 0; month < 12; month++) {
-      // Student mixer events
-      events.push({
-        id: `uni-mixer-${currentYear}-${month}`,
-        title: 'Portuguese-speaking Students Mixer',
-        titlePortuguese: 'Encontro de Estudantes Portugueses',
-        date: new Date(currentYear, month, 10),
-        time: '18:00',
-        endTime: '21:00',
-        type: 'university',
-        category: 'social',
-        location: 'University Student Union',
-        venue: 'Various University Venues',
-        description: 'Monthly networking event for Portuguese-speaking students across UK universities',
-        descriptionPortuguese: 'Evento mensal de networking para estudantes portugueses em universidades do Reino Unido',
-        organizer: 'LusoTown University Network',
-        contactEmail: 'students@lusotown.com',
-        country: 'United Kingdom',
-        flagEmoji: '🎓',
-        tags: ['networking', 'students', 'education', 'community'],
-        featured: false,
-        isRecurring: true,
-        recurrencePattern: 'Monthly',
-        culturalAuthenticity: 80,
-        accessibility: {
-          wheelchairAccessible: true,
-          signLanguage: true,
-          audioDescription: false
-        }
+    UNIVERSITY_EVENTS.forEach(uniEvent => {
+      // Create events for current and next year
+      [currentYear, currentYear + 1].forEach(year => {
+        const eventDate = new Date(uniEvent.date.replace('2025', year.toString()))
+        
+        events.push({
+          id: `${uniEvent.id}-${year}`,
+          title: uniEvent.title.en,
+          titlePortuguese: uniEvent.title.pt,
+          date: eventDate,
+          time: uniEvent.time,
+          endTime: '22:00', // Default end time
+          type: 'university',
+          category: uniEvent.type,
+          location: uniEvent.location,
+          venue: uniEvent.university,
+          description: uniEvent.description.en,
+          descriptionPortuguese: uniEvent.description.pt,
+          organizer: 'LusoTown University Network',
+          contactEmail: 'students@lusotown.com',
+          country: 'United Kingdom',
+          flagEmoji: '🎓',
+          tags: ['networking', 'students', 'education', 'community'],
+          featured: false,
+          isRecurring: uniEvent.isRecurring,
+          recurrencePattern: uniEvent.isRecurring ? 'Annual' : undefined,
+          culturalAuthenticity: 85,
+          capacity: uniEvent.capacity,
+          accessibility: {
+            wheelchairAccessible: true,
+            signLanguage: true,
+            audioDescription: false
+          }
+        })
       })
-    }
+    })
     
     return events
   }, [])

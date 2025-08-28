@@ -361,7 +361,7 @@ export class SaudadeEngine {
 export class LusoBotEngine {
   private static knowledge = PORTUGUESE_CULTURAL_KNOWLEDGE
   private static saudadeEngine = SaudadeEngine
-  private static voiceSystem = voiceInteractionSystem
+  private static voiceSystem = null // Voice system removed in streamlined architecture
   private static culturalTraditions = PORTUGUESE_CULTURAL_TRADITIONS
   private static emotionalSupport = EMOTIONAL_SUPPORT_RESPONSES
   private static languageModules = ADVANCED_LANGUAGE_MODULES
@@ -1184,16 +1184,9 @@ Tell me: where are you from and how can I support you today?`
   async enableVoiceInteraction(personalityId?: string): Promise<boolean> {
     try {
       const selectedPersonality = personalityId || this.culturalProfile.preferredPersonality
-      this.voiceSession = voiceInteractionSystem.startSession(
-        'user',
-        selectedPersonality,
-        this.userContext.sessionContext || 'general',
-        {
-          accent: this.culturalProfile.region,
-          speed: 1.0,
-          language: this.language
-        }
-      )
+      // Voice interactions disabled in streamlined architecture
+      this.voiceSession = null
+      logger.warn('Voice interactions disabled in streamlined LusoTown architecture')
       return true
     } catch (error) {
       console.error('Failed to enable voice interaction:', error)
@@ -1207,7 +1200,9 @@ Tell me: where are you from and how can I support you today?`
     }
     
     if (this.voiceSession) {
-      return voiceInteractionSystem.speak(text, emotion, ['cultural', 'portuguese'])
+      // Voice system disabled - return success for compatibility
+      logger.warn('Voice speak disabled in streamlined architecture')
+      return true
     }
     
     throw new Error('Voice session not available')

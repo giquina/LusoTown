@@ -24,6 +24,7 @@ export const ROUTES = {
 
   // Events & Activities
   events: "/events",
+  eventsCalendar: "/events/calendar",
   eventsCreate: "/events/create",
   eventsEdit: "/events/edit",
   groups: "/groups",
@@ -272,6 +273,7 @@ export const getBreadcrumbPath = (route: string): string[] => {
 // Portuguese-speaking community Specific Routes
 export const PORTUGUESE_ROUTES = {
   culturalEvents: buildRouteWithQuery(ROUTES.events, { category: "cultural" }),
+  eventsCalendar: ROUTES.eventsCalendar,
   portugueseBusiness: buildRouteWithQuery(ROUTES.businessDirectory, {
     language: "pt",
   }),

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import logger from '@/utils/logger';
+import { businessDirectoryService } from '@/services/BusinessDirectoryService';
 
 // Initialize Supabase client for server-side operations with proper error handling
 function getSupabaseClient() {
@@ -32,6 +33,8 @@ interface BusinessFilters {
 }
 
 export async function GET(request: NextRequest) {
+  const startTime = Date.now();
+  
   try {
     const { searchParams } = new URL(request.url);
     
@@ -53,8 +56,67 @@ export async function GET(request: NextRequest) {
       offset: searchParams.get('offset') ? parseInt(searchParams.get('offset')!) : 0,
     };
 
-    // Build the PostGIS-optimized query
-    const businesses = await findPortugueseBusinesses(filters);
+    let businesses: any;
+    let searchMethod = 'legacy';
+
+    // Use optimized search methods based on query type
+    if (filters.latitude && filters.longitude && !filters.search) {
+      // Pure location-based search - use optimized nearby search
+      searchMethod = 'location_optimized';
+      const locationParams = {
+        latitude: filters.latitude,
+        longitude: filters.longitude,
+        radius_km: filters.radius || 10,
+        business_types: filters.category.length > 0 ? filters.category : undefined,
+        min_rating: 0,
+        max_price_level: 4,
+        verified_only: filters.verificationStatus === 'verified',
+        open_now: filters.openNow,
+        limit: filters.limit,
+        offset: filters.offset
+      };
+      
+      const results = await businessDirectoryService.getNearbyBusinesses(locationParams);
+      businesses = {
+        data: results,
+        total: results.length,
+        hasMore: results.length >= (filters.limit || 20)
+      };
+    } else if (filters.search || (filters.latitude && filters.longitude)) {
+      // Hybrid search - combines text and location
+      searchMethod = 'hybrid_optimized';
+      const hybridParams = {
+        search_query: filters.search,
+        latitude: filters.latitude,
+        longitude: filters.longitude,
+        radius_km: filters.radius || 50,
+        business_types: filters.category.length > 0 ? filters.category : undefined,
+        min_rating: 0,
+        verified_only: filters.verificationStatus === 'verified',
+        limit: filters.limit
+      };
+      
+      const results = await businessDirectoryService.searchBusinessesHybrid(hybridParams);
+      businesses = {
+        data: results,
+        total: results.length,
+        hasMore: results.length >= (filters.limit || 20)
+      };
+    } else {
+      // Fallback to legacy search for other cases
+      businesses = await findPortugueseBusinesses(filters);
+    }
+
+    const executionTime = Date.now() - startTime;
+    
+    // Log performance for monitoring
+    if (executionTime > 500) {
+      logger.warn(`Slow business directory API call: ${executionTime}ms`, {
+        method: searchMethod,
+        filters,
+        resultCount: businesses.data?.length || 0
+      });
+    }
     
     return NextResponse.json({
       success: true,
@@ -63,13 +125,16 @@ export async function GET(request: NextRequest) {
         total: businesses.total,
         hasMore: businesses.hasMore,
         filters: filters,
+        searchMethod,
+        executionTime
       }
     });
 
   } catch (error) {
-    logger.error('Business directory API error:', error);
+    const executionTime = Date.now() - startTime;
+    logger.error('Business directory API error:', { error, executionTime });
     return NextResponse.json(
-      { success: false, error: 'Failed to fetch businesses' },
+      { success: false, error: 'Failed to fetch businesses', executionTime },
       { status: 500 }
     );
   }
@@ -166,47 +231,60 @@ async function findPortugueseBusinesses(filters: BusinessFilters) {
   // Execute the base query
   let baseQuery = query;
 
-  // Handle geolocation and distance-based queries
+  // Handle geolocation and distance-based queries (fallback for legacy support)
   if (filters.latitude && filters.longitude) {
-    // Use PostGIS for distance calculation
-    const { data, error } = await supabase.rpc('find_portuguese_businesses_optimized', {
-      user_lat: filters.latitude,
-      user_lng: filters.longitude,
-      business_types: filters.category,
-      radius_km: filters.radius || 10,
-      limit_count: filters.limit || 20
-    });
+    // Use the new optimized function
+    try {
+      const { data, error } = await supabase.rpc('find_nearby_portuguese_businesses', {
+        user_lat: filters.latitude,
+        user_lng: filters.longitude,
+        radius_km: filters.radius || 10,
+        business_types: filters.category.length > 0 ? filters.category : null,
+        min_rating: 0.0,
+        max_price_level: 4,
+        verified_only: filters.verificationStatus === 'verified',
+        open_now: filters.openNow,
+        limit_results: filters.limit || 20,
+        offset_results: filters.offset || 0
+      });
 
-    if (error) {
-      logger.error('PostGIS query error:', error);
-      // Fallback to regular query without distance
-    } else {
-      // Apply additional filters to PostGIS results
-      let filteredData = data || [];
-      
-      // Apply search filter
-      if (filters.search) {
-        const searchLower = filters.search.toLowerCase();
-        filteredData = filteredData.filter((business: any) => 
-          business.business_name.toLowerCase().includes(searchLower) ||
-          (business.business_name_portuguese && business.business_name_portuguese.toLowerCase().includes(searchLower)) ||
-          business.address.toLowerCase().includes(searchLower)
-        );
+      if (!error && data) {
+        // Apply additional text search filter if needed
+        let filteredData = data;
+        
+        if (filters.search) {
+          const searchLower = filters.search.toLowerCase();
+          filteredData = data.filter((business: any) => 
+            business.business_name?.toLowerCase().includes(searchLower) ||
+            business.business_name_portuguese?.toLowerCase().includes(searchLower) ||
+            business.description?.toLowerCase().includes(searchLower) ||
+            business.address?.toLowerCase().includes(searchLower)
+          );
+        }
+
+        // Apply PALOP filter
+        if (filters.palop) {
+          const palopRegions = ['angola', 'mozambique', 'cape_verde', 'guinea_bissau', 'sao_tome_principe'];
+          filteredData = filteredData.filter((business: any) => 
+            business.cultural_focus && palopRegions.includes(business.cultural_focus)
+          );
+        }
+
+        return {
+          data: filteredData.map((business: any) => ({
+            ...business,
+            id: business.business_id,
+            name: business.business_name,
+            nameDisplay: business.business_name_portuguese || business.business_name,
+            descriptionDisplay: business.description
+          })),
+          total: filteredData.length,
+          hasMore: filteredData.length >= (filters.limit || 20)
+        };
       }
-
-      // Apply PALOP filter
-      if (filters.palop) {
-        const palopRegions = ['angola', 'mozambique', 'cape_verde', 'guinea_bissau', 'sao_tome_principe'];
-        filteredData = filteredData.filter((business: any) => 
-          business.owner_region && palopRegions.includes(business.owner_region)
-        );
-      }
-
-      return {
-        data: filteredData,
-        total: filteredData.length,
-        hasMore: false
-      };
+    } catch (error) {
+      logger.error('Optimized PostGIS query error:', error);
+      // Fall through to legacy method
     }
   }
 
@@ -259,6 +337,57 @@ async function findPortugueseBusinesses(filters: BusinessFilters) {
     total: count || 0,
     hasMore: ((filters.offset || 0) + (filters.limit || 20)) < (count || 0)
   };
+}
+
+// Add endpoint for business clusters (map visualization)
+export async function GET_CLUSTERS(request: NextRequest) {
+  const startTime = Date.now();
+  
+  try {
+    const { searchParams } = new URL(request.url);
+    
+    const bounds = {
+      south: parseFloat(searchParams.get('south') || '0'),
+      west: parseFloat(searchParams.get('west') || '0'),
+      north: parseFloat(searchParams.get('north') || '0'),
+      east: parseFloat(searchParams.get('east') || '0')
+    };
+    
+    const zoomLevel = parseInt(searchParams.get('zoom') || '12');
+    const businessTypes = searchParams.getAll('types');
+    const minRating = parseFloat(searchParams.get('minRating') || '0');
+    const verifiedOnly = searchParams.get('verified') !== 'false';
+
+    const clusters = await businessDirectoryService.getBusinessClusters(
+      bounds,
+      zoomLevel,
+      {
+        business_types: businessTypes.length > 0 ? businessTypes : undefined,
+        min_rating: minRating,
+        verified_only: verifiedOnly
+      }
+    );
+
+    const executionTime = Date.now() - startTime;
+    
+    return NextResponse.json({
+      success: true,
+      data: {
+        clusters,
+        bounds,
+        zoomLevel,
+        executionTime
+      }
+    });
+
+  } catch (error) {
+    const executionTime = Date.now() - startTime;
+    logger.error('Business clusters API error:', { error, executionTime });
+    return NextResponse.json(
+      { success: false, error: 'Failed to get business clusters', executionTime },
+      { status: 500 }
+    );
+  }
 }
 
 // Helper function to check if business is currently open

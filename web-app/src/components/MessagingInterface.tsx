@@ -76,7 +76,11 @@ export default function MessagingInterface({
         'Olá! How are you enjoying London?',
         'What\'s your favorite Portuguese restaurant here?',
         'Have you been to any Lusophone events recently?',
-        'How do you stay connected to Portuguese culture in London?'
+        'How do you stay connected to Portuguese culture in London?',
+        'Do you know any good places to buy Portuguese products?',
+        'Have you tried the pastéis de nata at Borough Market?',
+        'Are you planning to watch any Portuguese football matches?',
+        'What do you miss most about Portuguese culture?'
       ],
       startConversation: 'Start the conversation with a friendly greeting!'
     },
@@ -102,7 +106,11 @@ export default function MessagingInterface({
         'Olá! Como está a correr Londres?',
         'Qual é o seu restaurante português favorito aqui?',
         'Esteve em algum evento português recentemente?',
-        'Como se mantém ligado à cultura portuguesa em Londres?'
+        'Como se mantém ligado à cultura portuguesa em Londres?',
+        'Conhece algum bom sítio para comprar produtos portugueses?',
+        'Já experimentou os pastéis de nata no Borough Market?',
+        'Costuma ver jogos de futebol português aqui?',
+        'Do que sente mais saudades da cultura portuguesa?'
       ],
       startConversation: 'Comece a conversa com uma saudação amigável!'
     }

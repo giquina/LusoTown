@@ -599,13 +599,20 @@ export default function EventsDiscovery({
         </div>
       </div>
 
-      {/* Events List */}
+      {/* Content */}
       <div className="p-6">
-        <div className="mb-4 text-sm text-gray-600">
-          {sortedEvents.length} {isPortuguese ? 'eventos encontrados' : 'events found'}
-        </div>
+        {viewMode === 'calendar' ? (
+          <PortugueseEventsCalendar
+            className="mb-6"
+            showFilters={false}
+          />
+        ) : (
+          <>
+            <div className="mb-4 text-sm text-gray-600">
+              {sortedEvents.length} {isPortuguese ? 'eventos encontrados' : 'events found'}
+            </div>
 
-        <div className="space-y-4">
+            <div className="space-y-4">
           {sortedEvents.map((event) => {
             const eventIsFavorite = isFavorite(event.id)
             const attendancePercentage = getAttendancePercentage(event.current_attendees, event.max_attendees)
@@ -760,29 +767,31 @@ export default function EventsDiscovery({
           })}
         </div>
 
-        {sortedEvents.length === 0 && (
-          <div className="text-center py-12">
-            <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              {isPortuguese ? 'Nenhum evento encontrado' : 'No events found'}
-            </h3>
-            <p className="text-gray-600 mb-6">
-              {isPortuguese
-                ? 'Tente ajustar os seus critérios de pesquisa'
-                : 'Try adjusting your search criteria'}
-            </p>
-            <button
-              onClick={() => {
-                setSearchQuery('')
-                setSelectedNeighborhood('all')
-                setSelectedCategory('all')
-                setPriceRange([0, 100])
-              }}
-              className="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors font-medium"
-            >
-              {isPortuguese ? 'Limpar Filtros' : 'Clear Filters'}
-            </button>
-          </div>
+            {sortedEvents.length === 0 && (
+              <div className="text-center py-12">
+                <div className="text-6xl mb-4">🔍</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {isPortuguese ? 'Nenhum evento encontrado' : 'No events found'}
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  {isPortuguese
+                    ? 'Tente ajustar os seus critérios de pesquisa'
+                    : 'Try adjusting your search criteria'}
+                </p>
+                <button
+                  onClick={() => {
+                    setSearchQuery('')
+                    setSelectedNeighborhood('all')
+                    setSelectedCategory('all')
+                    setPriceRange([0, 100])
+                  }}
+                  className="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors font-medium"
+                >
+                  {isPortuguese ? 'Limpar Filtros' : 'Clear Filters'}
+                </button>
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>

@@ -137,11 +137,81 @@ export interface HybridSearchParams {
 
 class BusinessDirectoryService {
   private supabaseClient = supabase
+  private cache = new Map<string, { data: any; timestamp: number; ttl: number }>()
+  private readonly DEFAULT_CACHE_TTL = 15 * 60 * 1000 // 15 minutes in milliseconds
+
+  /**
+   * Generate cache key for search parameters
+   */
+  private generateCacheKey(method: string, params: any): string {
+    return `${method}:${JSON.stringify(params)}`
+  }
+
+  /**
+   * Get cached data if valid
+   */
+  private getCachedData<T>(cacheKey: string): T | null {
+    const cached = this.cache.get(cacheKey)
+    if (cached && Date.now() - cached.timestamp < cached.ttl) {
+      return cached.data
+    }
+    if (cached) {
+      this.cache.delete(cacheKey) // Remove expired cache
+    }
+    return null
+  }
+
+  /**
+   * Cache data with TTL
+   */
+  private setCachedData(cacheKey: string, data: any, ttl: number = this.DEFAULT_CACHE_TTL): void {
+    this.cache.set(cacheKey, {
+      data,
+      timestamp: Date.now(),
+      ttl
+    })
+  }
+
+  /**
+   * Log performance metrics to database
+   */
+  private async logPerformance(searchType: string, executionTime: number, resultCount: number, params: any = {}) {
+    try {
+      await this.supabaseClient.rpc('log_business_search_performance', {
+        search_type: searchType,
+        execution_time_ms: executionTime,
+        result_count: resultCount,
+        search_parameters: params
+      })
+    } catch (error) {
+      logger.warn('Failed to log performance metrics:', error)
+    }
+  }
+
+  /**
+   * Clear expired cache entries
+   */
+  private cleanupCache(): void {
+    const now = Date.now()
+    for (const [key, value] of this.cache.entries()) {
+      if (now - value.timestamp >= value.ttl) {
+        this.cache.delete(key)
+      }
+    }
+  }
 
   /**
    * Get nearby Portuguese businesses using optimized PostGIS search
    */
   async getNearbyBusinesses(params: LocationSearchParams): Promise<PortugueseBusiness[]> {
+    const cacheKey = this.generateCacheKey('getNearbyBusinesses', params)
+    const cached = this.getCachedData<PortugueseBusiness[]>(cacheKey)
+    
+    if (cached) {
+      logger.debug('Returning cached nearby businesses result')
+      return cached
+    }
+
     const startTime = Date.now()
     
     try {
@@ -170,6 +240,8 @@ class BusinessDirectoryService {
 
       // Log performance metrics
       const executionTime = Date.now() - startTime
+      await this.logPerformance('nearby_search', executionTime, data?.length || 0, params)
+      
       if (executionTime > 200) {
         logger.warn(`Slow nearby business search: ${executionTime}ms`, {
           params,
@@ -177,7 +249,7 @@ class BusinessDirectoryService {
         })
       }
 
-      return (data || []).map(business => ({
+      const result = (data || []).map(business => ({
         id: business.business_id,
         business_name: business.business_name,
         business_type: business.business_type,
@@ -201,6 +273,10 @@ class BusinessDirectoryService {
         // Add distance info
         distance_km: business.distance_km
       }))
+
+      // Cache successful results
+      this.setCachedData(cacheKey, result)
+      return result
     } catch (error) {
       logger.error('Nearby businesses search failed:', error)
       throw new Error('Failed to search nearby Portuguese businesses')
@@ -211,6 +287,14 @@ class BusinessDirectoryService {
    * Hybrid search combining text and location
    */
   async searchBusinessesHybrid(params: HybridSearchParams): Promise<PortugueseBusiness[]> {
+    const cacheKey = this.generateCacheKey('searchBusinessesHybrid', params)
+    const cached = this.getCachedData<PortugueseBusiness[]>(cacheKey)
+    
+    if (cached) {
+      logger.debug('Returning cached hybrid search result')
+      return cached
+    }
+
     const startTime = Date.now()
     
     try {
@@ -235,6 +319,8 @@ class BusinessDirectoryService {
 
       // Log performance metrics
       const executionTime = Date.now() - startTime
+      await this.logPerformance('hybrid_search', executionTime, data?.length || 0, params)
+      
       if (executionTime > 300) {
         logger.warn(`Slow hybrid business search: ${executionTime}ms`, {
           params,
@@ -242,7 +328,7 @@ class BusinessDirectoryService {
         })
       }
 
-      return (data || []).map(business => ({
+      const result = (data || []).map(business => ({
         id: business.business_id,
         business_name: business.business_name,
         business_type: business.business_type,
@@ -265,6 +351,10 @@ class BusinessDirectoryService {
         distance_km: business.distance_km,
         match_type: business.match_type
       }))
+
+      // Cache successful results
+      this.setCachedData(cacheKey, result)
+      return result
     } catch (error) {
       logger.error('Hybrid business search failed:', error)
       throw new Error('Failed to search Portuguese businesses')
@@ -288,6 +378,14 @@ class BusinessDirectoryService {
       verified_only?: boolean
     } = {}
   ): Promise<BusinessCluster[]> {
+    const cacheKey = this.generateCacheKey('getBusinessClusters', { bounds, zoomLevel, filters })
+    const cached = this.getCachedData<BusinessCluster[]>(cacheKey)
+    
+    if (cached) {
+      logger.debug('Returning cached business clusters result')
+      return cached
+    }
+
     const startTime = Date.now()
     
     try {
@@ -312,6 +410,8 @@ class BusinessDirectoryService {
 
       // Log performance metrics
       const executionTime = Date.now() - startTime
+      await this.logPerformance('map_clustering', executionTime, data?.length || 0, { bounds, zoomLevel, filters })
+      
       if (executionTime > 100) {
         logger.warn(`Slow business clustering: ${executionTime}ms`, {
           bounds,
@@ -320,7 +420,10 @@ class BusinessDirectoryService {
         })
       }
 
-      return data || []
+      const result = data || []
+      // Cache successful results with shorter TTL for map data
+      this.setCachedData(cacheKey, result, 5 * 60 * 1000) // 5 minutes
+      return result
     } catch (error) {
       logger.error('Business clustering failed:', error)
       throw new Error('Failed to get business clusters')
@@ -331,6 +434,29 @@ class BusinessDirectoryService {
    * Get all Portuguese businesses with filters (legacy method, enhanced)
    */
   async getPortugueseBusinesses(filters: BusinessSearchFilters = {}): Promise<PortugueseBusiness[]> {
+    // If location filters are provided, use the optimized location search
+    if (filters.latitude && filters.longitude) {
+      return this.getNearbyBusinesses({
+        latitude: filters.latitude,
+        longitude: filters.longitude,
+        radius_km: filters.radius_km || 10.0,
+        business_types: filters.business_type ? [filters.business_type] : undefined,
+        min_rating: filters.min_rating || 0.0,
+        max_price_level: filters.max_price_level || 4,
+        cultural_focus: filters.cultural_focus,
+        portuguese_specialties: filters.portuguese_specialties,
+        verified_only: filters.verified_only,
+        open_now: filters.open_now,
+        limit: filters.limit,
+        offset: filters.offset
+      })
+    }
+
+    // Clean up cache periodically
+    if (Math.random() < 0.1) { // 10% chance to cleanup on each call
+      this.cleanupCache()
+    }
+
     let query = this.supabaseClient
       .from('portuguese_businesses')
       .select(`

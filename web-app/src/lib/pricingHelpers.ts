@@ -11,7 +11,6 @@ import {
   TOURS_PRICING,
   EVENTS_PRICING,
   BUSINESS_PRICING,
-  STREAMING_PRICING,
   STUDENT_PRICING,
   LEGACY_TRANSPORT_PRICING,
   formatPrice,
@@ -102,7 +101,8 @@ export const getFormattedBusinessPrice = (
 export const getFormattedStreamingPrice = (
   locale: 'en' | 'pt' = 'en'
 ): string => {
-  const price = STREAMING_PRICING.creatorMonthly;
+  // Using cultural ambassador pricing for content creators/hosts
+  const price = SUBSCRIPTION_PLANS.cultural_ambassador.monthly;
   const formattedPrice = formatPrice(price);
   const monthLabel = locale === 'pt' ? '/mês' : '/month';
   return `${formattedPrice}${monthLabel}`;

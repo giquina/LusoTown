@@ -52,6 +52,25 @@ export interface CulturalWisdom {
   }
 }
 
+export interface UniversityEvent {
+  id: string
+  title: {
+    en: string
+    pt: string
+  }
+  university: string
+  date: string
+  time: string
+  type: 'orientation' | 'social' | 'academic' | 'career' | 'cultural'
+  description: {
+    en: string
+    pt: string
+  }
+  location: string
+  capacity?: number
+  isRecurring: boolean
+}
+
 /**
  * Comprehensive Lusophone Cultural Celebrations
  * Representing all Portuguese-speaking nations and diaspora traditions
@@ -530,6 +549,80 @@ export function getCulturalWisdomByCountry(country: string): CulturalWisdom[] {
  */
 export function getTotalCelebrationBusinesses(): number {
   return LUSOPHONE_CELEBRATIONS.reduce((total, celebration) => total + celebration.businessCount, 0)
+}
+
+/**
+ * University events supporting Portuguese-speaking students
+ */
+export const UNIVERSITY_EVENTS: UniversityEvent[] = [
+  {
+    id: 'monthly-student-mixer',
+    title: {
+      en: 'Portuguese Students Monthly Mixer',
+      pt: 'Encontro Mensal de Estudantes Portugueses'
+    },
+    university: 'Multiple Universities',
+    date: '2025-01-15',
+    time: '19:00',
+    type: 'social',
+    description: {
+      en: 'Monthly networking event for Portuguese-speaking students across UK universities',
+      pt: 'Evento mensal de networking para estudantes lusófonos em universidades do Reino Unido'
+    },
+    location: 'Rotating university venues',
+    capacity: 80,
+    isRecurring: true
+  },
+  {
+    id: 'career-fair-spring',
+    title: {
+      en: 'Portuguese Career Fair',
+      pt: 'Feira de Carreiras Portuguesa'
+    },
+    university: 'King\'s College London',
+    date: '2025-03-20',
+    time: '10:00',
+    type: 'career',
+    description: {
+      en: 'Annual career fair connecting Portuguese students with employers',
+      pt: 'Feira de carreiras anual conectando estudantes portugueses com empregadores'
+    },
+    location: 'King\'s College Great Hall',
+    capacity: 300,
+    isRecurring: true
+  },
+  {
+    id: 'cultural-festival-summer',
+    title: {
+      en: 'Multi-University Portuguese Cultural Festival',
+      pt: 'Festival Cultural Português Multi-Universitário'
+    },
+    university: 'Multiple Universities',
+    date: '2025-06-15',
+    time: '12:00',
+    type: 'cultural',
+    description: {
+      en: 'Large cultural festival bringing together Portuguese students from major UK universities',
+      pt: 'Grande festival cultural reunindo estudantes portugueses das principais universidades do Reino Unido'
+    },
+    location: 'Regent\'s Park',
+    capacity: 2000,
+    isRecurring: true
+  }
+]
+
+/**
+ * Get university events
+ */
+export function getUniversityEvents(): UniversityEvent[] {
+  return UNIVERSITY_EVENTS
+}
+
+/**
+ * Get university events by type
+ */
+export function getUniversityEventsByType(type: UniversityEvent['type']): UniversityEvent[] {
+  return UNIVERSITY_EVENTS.filter(event => event.type === type)
 }
 
 /**

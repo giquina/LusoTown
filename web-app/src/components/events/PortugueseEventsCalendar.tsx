@@ -309,13 +309,10 @@ export default function PortugueseEventsCalendar({
             </div>
             <div>
               <h2 className="text-lg sm:text-xl font-bold text-gray-900">
-                {isPortuguese ? 'Calendário de Eventos Portugueses' : 'Portuguese Events Calendar'}
+                {t('calendar.title', 'Portuguese Events Calendar')}
               </h2>
               <p className="text-gray-600 text-sm">
-                {isPortuguese 
-                  ? 'Eventos culturais e celebrações da comunidade lusófona'
-                  : 'Cultural events and Portuguese-speaking community celebrations'
-                }
+                {t('calendar.subtitle', 'Cultural events and Portuguese-speaking community celebrations')}
               </p>
             </div>
           </div>
@@ -326,8 +323,8 @@ export default function PortugueseEventsCalendar({
               className="px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
             >
               {currentView === 'month' ? 
-                (isPortuguese ? 'Semana' : 'Week') : 
-                (isPortuguese ? 'Mês' : 'Month')
+                t('calendar.view.week', 'Week') : 
+                t('calendar.view.month', 'Month')
               }
             </button>
           </div>
@@ -341,7 +338,7 @@ export default function PortugueseEventsCalendar({
               onChange={(e) => setSelectedEventType(e.target.value)}
               className="border border-gray-300 rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
             >
-              <option value="all">{isPortuguese ? 'Todos os Tipos' : 'All Types'}</option>
+              <option value="all">{t('calendar.filters.all_types', 'All Types')}</option>
               {uniqueEventTypes.map(type => (
                 <option key={type} value={type}>
                   {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -354,7 +351,7 @@ export default function PortugueseEventsCalendar({
               onChange={(e) => setSelectedCountry(e.target.value)}
               className="border border-gray-300 rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
             >
-              <option value="all">{isPortuguese ? 'Todos os Países' : 'All Countries'}</option>
+              <option value="all">{t('calendar.filters.all_countries', 'All Countries')}</option>
               {uniqueCountries.map(country => (
                 <option key={country} value={country}>
                   {country}

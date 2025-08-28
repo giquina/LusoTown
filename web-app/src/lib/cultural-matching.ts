@@ -130,7 +130,7 @@ export const CULTURAL_ICEBREAKERS = {
 /**
  * Calculate distance between two geographic points using Haversine formula
  */
-function calculateDistance(
+export function calculateDistance(
   lat1: number, 
   lon1: number, 
   lat2: number, 
@@ -150,7 +150,7 @@ function calculateDistance(
 /**
  * Calculate cultural compatibility between two profiles
  */
-function calculateCulturalCompatibility(
+export function calculateCulturalCompatibility(
   profile1: SafeMatchingProfile,
   profile2: SafeMatchingProfile
 ): number {
@@ -189,7 +189,7 @@ function calculateCulturalCompatibility(
 /**
  * Calculate location compatibility based on distance
  */
-function calculateLocationCompatibility(
+export function calculateLocationCompatibility(
   profile1: SafeMatchingProfile,
   profile2: SafeMatchingProfile,
   maxDistance: number
@@ -210,7 +210,7 @@ function calculateLocationCompatibility(
 /**
  * Calculate age compatibility
  */
-function calculateAgeCompatibility(age1: number, age2: number): number {
+export function calculateAgeCompatibility(age1: number, age2: number): number {
   const ageDiff = Math.abs(age1 - age2);
   if (ageDiff <= 3) return 100;
   if (ageDiff <= 7) return 80;
