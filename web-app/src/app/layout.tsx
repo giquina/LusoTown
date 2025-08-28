@@ -15,7 +15,6 @@ import { NavigationProvider } from "@/context/NavigationContext";
 import Header from "@/components/Header";
 import ErrorBoundary, { ComponentErrorBoundary } from "@/components/ErrorBoundary";
 import dynamic from "next/dynamic";
-import WidgetManager from "@/components/WidgetManager";
 import { METADATA_BASE } from "@/config/site";
 
 // Dynamic imports for heavy components
@@ -64,17 +63,15 @@ export default function RootLayout({
                                   <Header />
                                 </ComponentErrorBoundary>
 
-                                <WidgetManager>
-                                  {/* Main Content */}
-                                  <main className="relative">
-                                    {children}
-                                  </main>
+                                {/* Main Content */}
+                                <main className="relative">
+                                  {children}
+                                </main>
 
-                                  {/* Client-only widgets (isolated) */}
-                                  <ComponentErrorBoundary componentName="LusoBotWrapper" level="component" maxRetries={0}>
-                                    <LusoBotWrapper />
-                                  </ComponentErrorBoundary>
-                                </WidgetManager>
+                                {/* Client-only widgets (isolated) */}
+                                <ComponentErrorBoundary componentName="LusoBotWrapper" level="component" maxRetries={0}>
+                                  <LusoBotWrapper />
+                                </ComponentErrorBoundary>
 
                                 {/* Toast Notifications */}
                                 <Toaster

@@ -17,7 +17,7 @@ env:
   NEXT_PUBLIC_MAP_SERVICE: "openstreetmap"
 
 jobs:
-  # Quality Assurance - Run pre-deployment checks
+  # Quality Assurance - Run pre-deployment checks (Enhanced with Claude integration)
   quality-assurance:
     runs-on: ubuntu-latest
     steps:
@@ -102,6 +102,7 @@ jobs:
           fi
 
           echo "✅ Portuguese community platform validation passed"
+          echo "🤖 Claude integration ready for quality assurance"
         working-directory: ./web-app
 
   # Preview Deployment for Pull Requests

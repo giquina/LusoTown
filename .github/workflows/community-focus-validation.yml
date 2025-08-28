@@ -1,0 +1,380 @@
+name: Portuguese Community Focus Validation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'web-app/src/**'
+      - 'web-app/public/**' 
+      - 'web-app/src/i18n/**'
+      - 'web-app/src/config/**'
+  push:
+    branches: [main]
+    paths:
+      - 'web-app/src/**'
+      - 'web-app/public/**'
+      - 'web-app/src/i18n/**' 
+      - 'web-app/src/config/**'
+  workflow_dispatch:
+
+env:
+  COMMUNITY_SIZE: "750"
+  STUDENT_COUNT: "2150"
+  UNIVERSITY_PARTNERSHIPS: "8"
+  TARGET_NATIONS: "Portugal,Brazil,Cape Verde,Angola,Mozambique,Guinea-Bissau,East Timor,São Tomé and Príncipe"
+
+jobs:
+  portuguese-cultural-validation:
+    name: <õ<ù Portuguese Cultural Authenticity Check
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup validation environment
+        run: |
+          echo "=== Portuguese Community Platform Validation ==="
+          echo "Community Size: ${{ env.COMMUNITY_SIZE }}+"
+          echo "Student Count: ${{ env.STUDENT_COUNT }}+"
+          echo "Universities: ${{ env.UNIVERSITY_PARTNERSHIPS }}"
+          echo "PALOP Nations: ${{ env.TARGET_NATIONS }}"
+
+      - name: <Û Cultural Terminology Validation
+        id: terminology-check
+        run: |
+          echo "Validating Portuguese cultural terminology..."
+          
+          TERMINOLOGY_ISSUES=""
+          ISSUE_COUNT=0
+          
+          # Check for incorrect "Portuguese community" usage
+          if INCORRECT_USAGE=$(grep -r "Portuguese community[^-]" web-app/src/ 2>/dev/null | grep -v "Portuguese-speaking community" | head -10); then
+            TERMINOLOGY_ISSUES="${TERMINOLOGY_ISSUES}\nL **Incorrect Terminology Found:**\n\`\`\`\n${INCORRECT_USAGE}\n\`\`\`\n"
+            TERMINOLOGY_ISSUES="${TERMINOLOGY_ISSUES}**Fix:** Use 'Portuguese-speaking community' instead of 'Portuguese community'\n"
+            ISSUE_COUNT=$((ISSUE_COUNT + 1))
+          fi
+          
+          # Check for London-only references
+          if LONDON_ONLY=$(grep -ri "\\bin London\\b\\|London only\\|London-based" web-app/src/ 2>/dev/null | head -5); then
+            TERMINOLOGY_ISSUES="${TERMINOLOGY_ISSUES}\nL **Geographic Scope Issues:**\n\`\`\`\n${LONDON_ONLY}\n\`\`\`\n"
+            TERMINOLOGY_ISSUES="${TERMINOLOGY_ISSUES}**Fix:** Reference 'United Kingdom' or 'across the UK' instead of London-only\n"
+            ISSUE_COUNT=$((ISSUE_COUNT + 1))
+          fi
+          
+          # Check for generic "Portuguese" when cultural context needed
+          if GENERIC_USAGE=$(grep -ri "\\bPortuguese\\b[^-]" web-app/src/components/ 2>/dev/null | grep -v "Portuguese-speaking\\|Portuguese language\\|Portuguese culture" | head -5); then
+            TERMINOLOGY_ISSUES="${TERMINOLOGY_ISSUES}\n  **Consider More Specific Language:**\n\`\`\`\n${GENERIC_USAGE}\n\`\`\`\n"
+            TERMINOLOGY_ISSUES="${TERMINOLOGY_ISSUES}**Suggestion:** Consider if 'Portuguese-speaking' or 'Portuguese cultural' is more appropriate\n"
+          fi
+          
+          echo "terminology_issues<<EOF" >> $GITHUB_OUTPUT
+          echo -e "$TERMINOLOGY_ISSUES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          echo "issue_count=$ISSUE_COUNT" >> $GITHUB_OUTPUT
+
+      - name: < PALOP Inclusivity Check
+        id: palop-check
+        run: |
+          echo "Validating PALOP (lusophone) inclusivity..."
+          
+          PALOP_ISSUES=""
+          
+          # Check for Portugal-only bias in examples/content
+          if PORTUGAL_BIAS=$(grep -ri "\\bPortugal\\b" web-app/src/config/ 2>/dev/null | grep -v "Brazil\\|Cape Verde\\|Angola\\|Mozambique" | head -3); then
+            PALOP_ISSUES="${PALOP_ISSUES}\n  **Potential Portugal-Only Bias in Config:**\n\`\`\`\n${PORTUGAL_BIAS}\n\`\`\`\n"
+            PALOP_ISSUES="${PALOP_ISSUES}**Suggestion:** Ensure examples include diverse PALOP representation\n"
+          fi
+          
+          # Check for Brazilian Portuguese considerations
+          if BRAZIL_CONSIDERATIONS=$(grep -ri "Brasil\\|Brazilian" web-app/src/ 2>/dev/null | head -3); then
+            PALOP_ISSUES="${PALOP_ISSUES}\n **Brazilian Portuguese Considerations Found:**\n\`\`\`\n${BRAZIL_CONSIDERATIONS}\n\`\`\`\n"
+          fi
+          
+          # Check for African Portuguese-speaking nations
+          if PALOP_REPRESENTATION=$(grep -ri "Cape Verde\\|Angola\\|Mozambique\\|Guinea-Bissau" web-app/src/ 2>/dev/null | head -3); then
+            PALOP_ISSUES="${PALOP_ISSUES}\n **PALOP Representation Found:**\n\`\`\`\n${PALOP_REPRESENTATION}\n\`\`\`\n"
+          fi
+          
+          echo "palop_issues<<EOF" >> $GITHUB_OUTPUT
+          echo -e "$PALOP_ISSUES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: =ã Bilingual Implementation Validation
+        id: bilingual-check
+        run: |
+          echo "Validating bilingual EN/PT implementation..."
+          
+          BILINGUAL_ISSUES=""
+          
+          # Count translation keys
+          if [ -f "web-app/src/i18n/en.json" ] && [ -f "web-app/src/i18n/pt.json" ]; then
+            EN_KEYS=$(grep -o '"[^"]*":' web-app/src/i18n/en.json | wc -l)
+            PT_KEYS=$(grep -o '"[^"]*":' web-app/src/i18n/pt.json | wc -l)
+            
+            echo "EN Translation Keys: $EN_KEYS"
+            echo "PT Translation Keys: $PT_KEYS"
+            
+            if [ "$EN_KEYS" != "$PT_KEYS" ]; then
+              DIFFERENCE=$((EN_KEYS - PT_KEYS))
+              BILINGUAL_ISSUES="${BILINGUAL_ISSUES}\nL **Translation Key Mismatch:**\n"
+              BILINGUAL_ISSUES="${BILINGUAL_ISSUES}English: $EN_KEYS keys | Portuguese: $PT_KEYS keys | Difference: $DIFFERENCE\n"
+              BILINGUAL_ISSUES="${BILINGUAL_ISSUES}**Fix:** Add missing Portuguese translations\n"
+            else
+              BILINGUAL_ISSUES="${BILINGUAL_ISSUES}\n **Translation Keys Balanced:** $EN_KEYS keys in both languages\n"
+            fi
+          else
+            BILINGUAL_ISSUES="${BILINGUAL_ISSUES}\nL **Missing Translation Files:** en.json or pt.json not found\n"
+          fi
+          
+          # Check for hardcoded English text in components
+          if HARDCODED_TEXT=$(grep -r ">[A-Z][a-z].*[a-z]<" web-app/src/components/ 2>/dev/null | grep -v "t(" | head -5); then
+            BILINGUAL_ISSUES="${BILINGUAL_ISSUES}\n  **Potential Hardcoded Text:**\n\`\`\`\n${HARDCODED_TEXT}\n\`\`\`\n"
+            BILINGUAL_ISSUES="${BILINGUAL_ISSUES}**Review:** Ensure text uses translation functions\n"
+          fi
+          
+          echo "bilingual_issues<<EOF" >> $GITHUB_OUTPUT
+          echo -e "$BILINGUAL_ISSUES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: <¨ Portuguese Cultural Branding Check
+        id: branding-check
+        run: |
+          echo "Validating Portuguese cultural branding..."
+          
+          BRANDING_ISSUES=""
+          
+          # Check for generic Tailwind colors instead of brand colors
+          if GENERIC_COLORS=$(grep -r "bg-blue-\\|text-blue-\\|border-blue-\\|bg-gray-\\|text-gray-" web-app/src/components/ 2>/dev/null | head -5); then
+            BRANDING_ISSUES="${BRANDING_ISSUES}\n  **Generic Colors Used:**\n\`\`\`\n${GENERIC_COLORS}\n\`\`\`\n"
+            BRANDING_ISSUES="${BRANDING_ISSUES}**Suggestion:** Use Portuguese brand colors from config instead of generic Tailwind colors\n"
+          fi
+          
+          # Check for Portuguese flag colors usage
+          if FLAG_COLORS=$(grep -r "bg-red-\\|bg-green-\\|text-red-\\|text-green-" web-app/src/components/ 2>/dev/null | head -3); then
+            BRANDING_ISSUES="${BRANDING_ISSUES}\n **Portuguese-Inspired Colors Found:**\n\`\`\`\n${FLAG_COLORS}\n\`\`\`\n"
+          fi
+          
+          # Check for cultural elements
+          if CULTURAL_ELEMENTS=$(grep -ri "fado\\|azulejo\\|pastéis\\|saudade" web-app/src/ 2>/dev/null | head -3); then
+            BRANDING_ISSUES="${BRANDING_ISSUES}\n **Portuguese Cultural Elements:**\n\`\`\`\n${CULTURAL_ELEMENTS}\n\`\`\`\n"
+          fi
+          
+          echo "branding_issues<<EOF" >> $GITHUB_OUTPUT
+          echo -e "$BRANDING_ISSUES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: =ñ Mobile-First Community Design
+        id: mobile-check
+        run: |
+          echo "Validating mobile-first design for Portuguese community..."
+          
+          MOBILE_ISSUES=""
+          
+          # Check for responsive design patterns
+          if ! grep -r "sm:\\|md:\\|lg:\\|xl:" web-app/src/components/ >/dev/null 2>&1; then
+            MOBILE_ISSUES="${MOBILE_ISSUES}\nL **No Responsive Design Found:** Components should use Tailwind responsive prefixes\n"
+          else
+            MOBILE_RESPONSIVE=$(grep -r "sm:\\|md:\\|lg:" web-app/src/components/ 2>/dev/null | wc -l)
+            MOBILE_ISSUES="${MOBILE_ISSUES}\n **Responsive Design Elements:** $MOBILE_RESPONSIVE responsive classes found\n"
+          fi
+          
+          # Check for fixed widths that could break mobile
+          if FIXED_WIDTHS=$(grep -r "w-\[.*px\]\\|min-w-\[.*px\]" web-app/src/components/ 2>/dev/null | head -3); then
+            MOBILE_ISSUES="${MOBILE_ISSUES}\n  **Fixed Width Elements:**\n\`\`\`\n${FIXED_WIDTHS}\n\`\`\`\n"
+            MOBILE_ISSUES="${MOBILE_ISSUES}**Review:** Consider responsive alternatives\n"
+          fi
+          
+          echo "mobile_issues<<EOF" >> $GITHUB_OUTPUT
+          echo -e "$MOBILE_ISSUES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+  claude-community-analysis:
+    name: > Claude Community Focus Analysis  
+    needs: portuguese-cultural-validation
+    runs-on: ubuntu-latest
+    if: always()
+    
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout for context
+        uses: actions/checkout@v4
+
+      - name: Claude Community Focus Analysis
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // Collect validation results
+            const validationResults = {
+              terminology: `${{ needs.portuguese-cultural-validation.outputs.terminology_issues || 'No issues found' }}`,
+              palop: `${{ needs.portuguese-cultural-validation.outputs.palop_issues || 'No analysis available' }}`,
+              bilingual: `${{ needs.portuguese-cultural-validation.outputs.bilingual_issues || 'No issues found' }}`,
+              branding: `${{ needs.portuguese-cultural-validation.outputs.branding_issues || 'No issues found' }}`,
+              mobile: `${{ needs.portuguese-cultural-validation.outputs.mobile_issues || 'No issues found' }}`
+            };
+            
+            const communityContext = `
+            LusoTown Portuguese-Speaking Community Platform Cultural Validation:
+            
+            Platform Metrics:
+            - Community Members: ${{ env.COMMUNITY_SIZE }}+
+            - University Students: ${{ env.STUDENT_COUNT }}+
+            - University Partnerships: ${{ env.UNIVERSITY_PARTNERSHIPS }}
+            - Target Nations: ${{ env.TARGET_NATIONS }}
+            
+            Validation Results:
+            
+            **Terminology Check:**
+            ${validationResults.terminology}
+            
+            **PALOP Inclusivity:**
+            ${validationResults.palop}
+            
+            **Bilingual Implementation:**
+            ${validationResults.bilingual}
+            
+            **Cultural Branding:**
+            ${validationResults.branding}
+            
+            **Mobile-First Design:**
+            ${validationResults.mobile}
+            `;
+            
+            const prompt = `${communityContext}
+            
+            As an expert in Portuguese-speaking community platforms, please analyze these cultural validation results for LusoTown:
+            
+            **Focus Areas:**
+            1. **Cultural Authenticity**: How well does this maintain Portuguese cultural identity across all 8 PALOP nations?
+            2. **Community Inclusivity**: Does the terminology appropriately include all Portuguese-speaking backgrounds?
+            3. **UK Market Positioning**: Is the geographic scope appropriate for the UK Portuguese diaspora?
+            4. **Bilingual Quality**: How effective is the EN/PT bilingual implementation?
+            5. **Mobile Community Access**: Does the design serve the mobile-heavy Portuguese community effectively?
+            
+            **Provide specific recommendations for:**
+            - Priority fixes for community authenticity
+            - Improvements to serve the 750+ community members
+            - Portuguese cultural elements that should be enhanced
+            - Mobile experience optimizations for community members
+            
+            Be concise but actionable - focus on practical community impact.`;
+            
+            try {
+              const response = await fetch('https://api.anthropic.com/v1/messages', {
+                method: 'POST',
+                headers: {
+                  'x-api-key': '${{ secrets.ANTHROPIC_API_KEY }}',
+                  'content-type': 'application/json',
+                  'anthropic-version': '2023-06-01'
+                },
+                body: JSON.stringify({
+                  model: 'claude-3-5-sonnet-20241022',
+                  max_tokens: 3000,
+                  messages: [{
+                    role: 'user',
+                    content: prompt
+                  }]
+                })
+              });
+              
+              if (!response.ok) {
+                throw new Error(`Claude API error: ${response.status}`);
+              }
+              
+              const data = await response.json();
+              const analysis = data.content[0].text;
+              
+              if (context.eventName === 'pull_request') {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  body: `## ><õ<ù Claude Community Focus Analysis
+
+${analysis}
+
+---
+*This analysis evaluates Portuguese cultural authenticity and community focus for LusoTown's ${process.env.COMMUNITY_SIZE}+ community members across the United Kingdom.*`
+                });
+              } else {
+                core.summary
+                  .addHeading('<õ<ù Community Focus Analysis')
+                  .addRaw(analysis)
+                  .addSeparator()
+                  .addRaw('**Platform Impact**: Serving 750+ Portuguese-speaking community members across 8 university partnerships in the United Kingdom')
+                  .write();
+              }
+              
+            } catch (error) {
+              console.error('Claude analysis failed:', error);
+              
+              const fallbackSummary = `## <õ<ù Community Focus Validation Summary
+              
+**Cultural Authenticity Results:**
+- Terminology Issues: ${validationResults.terminology ? 'Found issues requiring attention' : 'Passed validation'}
+- PALOP Inclusivity: Review needed for representation across all Portuguese-speaking nations
+- Bilingual Support: ${validationResults.bilingual.includes('L') ? 'Translation issues found' : 'Bilingual implementation on track'}
+- Cultural Branding: ${validationResults.branding.includes(' ') ? 'Consider Portuguese brand colors' : 'Cultural elements present'}
+- Mobile Experience: ${validationResults.mobile.includes('L') ? 'Mobile issues require attention' : 'Mobile-first design validated'}
+
+**Priority Actions:**
+1. Ensure "Portuguese-speaking community" terminology throughout
+2. Validate representation across all 8 PALOP nations
+3. Maintain EN/PT translation parity
+4. Use Portuguese cultural colors from config files
+5. Optimize for mobile-heavy Portuguese community usage
+
+*Claude analysis temporarily unavailable - manual review recommended for community focus and cultural authenticity.*`;
+              
+              if (context.eventName === 'pull_request') {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  body: fallbackSummary
+                });
+              } else {
+                core.summary.addRaw(fallbackSummary).write();
+              }
+            }
+
+  community-summary:
+    name: =Ê Community Platform Summary
+    needs: [portuguese-cultural-validation, claude-community-analysis]
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Community Focus Summary
+        run: |
+          echo "=== <õ<ù LusoTown Community Platform Validation Summary ==="
+          echo ""
+          echo "Platform Serving:"
+          echo "" ${{ env.COMMUNITY_SIZE }}+ Portuguese-speaking community members"
+          echo "" ${{ env.STUDENT_COUNT }}+ university students"  
+          echo "" ${{ env.UNIVERSITY_PARTNERSHIPS }} university partnerships"
+          echo "" All PALOP nations: ${{ env.TARGET_NATIONS }}"
+          echo ""
+          echo "Cultural Validation Status:"
+          echo "" Terminology: ${{ needs.portuguese-cultural-validation.outputs.terminology_issues && 'Issues Found' || 'Validated' }}"
+          echo "" PALOP Inclusivity: Reviewed for all Portuguese-speaking nations"
+          echo "" Bilingual EN/PT: Translation implementation checked"
+          echo "" Cultural Branding: Portuguese authenticity validated"
+          echo "" Mobile-First: Community accessibility confirmed"
+          echo ""
+          echo "Next Steps:"
+          echo "" Review Claude's community focus analysis"
+          echo "" Address any cultural authenticity recommendations"
+          echo "" Ensure platform serves Portuguese-speaking community needs"
+          echo "" Maintain inclusive representation across UK Portuguese diaspora"

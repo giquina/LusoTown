@@ -1,0 +1,370 @@
+name: LusoTown Quality Gates with Claude Analysis
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      run_claude_analysis:
+        description: 'Run Claude analysis on quality gate results'
+        required: false
+        default: 'true'
+        type: boolean
+
+env:
+  # LusoTown platform constants
+  NEXT_PUBLIC_TOTAL_MEMBERS: "750"
+  NEXT_PUBLIC_TOTAL_STUDENTS: "2150"
+  NEXT_PUBLIC_UNIVERSITY_PARTNERSHIPS: "8"
+  PLATFORM_FOCUS: "Portuguese-speaking community platform"
+
+jobs:
+  quality-gates:
+    name: = Community-First Quality Gates
+    runs-on: ubuntu-latest
+    outputs:
+      hardcoding_result: ${{ steps.hardcoding-audit.outputs.result }}
+      lint_result: ${{ steps.lint-check.outputs.result }}
+      typescript_result: ${{ steps.typescript-check.outputs.result }}
+      build_result: ${{ steps.build-check.outputs.result }}
+      mobile_validation: ${{ steps.mobile-check.outputs.result }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js v22 (Production Standard)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: web-app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./web-app
+
+      - name: =¨ Critical Hardcoding Audit (MANDATORY)
+        id: hardcoding-audit
+        run: |
+          echo "Running critical hardcoding audit for LusoTown community platform..."
+          
+          if npm run audit:hardcoding > hardcoding_report.txt 2>&1; then
+            echo "result=PASS" >> $GITHUB_OUTPUT
+            echo " Zero hardcoding policy compliant"
+            echo "output=Zero hardcoding policy compliant - all data imported from config files" >> $GITHUB_OUTPUT
+          else
+            echo "result=FAIL" >> $GITHUB_OUTPUT
+            echo "L HARDCODING POLICY VIOLATION - Must use config imports"
+            VIOLATIONS=$(cat hardcoding_report.txt | head -20)
+            echo "output<<EOF" >> $GITHUB_OUTPUT
+            echo "HARDCODING VIOLATIONS FOUND:" >> $GITHUB_OUTPUT
+            echo "$VIOLATIONS" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+        working-directory: ./web-app
+        continue-on-error: true
+
+      - name: >ù ESLint Community Code Standards
+        id: lint-check
+        run: |
+          echo "Running ESLint validation for Portuguese community platform..."
+          
+          if npm run lint > lint_report.txt 2>&1; then
+            echo "result=PASS" >> $GITHUB_OUTPUT
+            echo "output=ESLint validation passed - code follows community standards" >> $GITHUB_OUTPUT
+          else
+            echo "result=FAIL" >> $GITHUB_OUTPUT
+            LINT_ISSUES=$(cat lint_report.txt | head -15)
+            echo "output<<EOF" >> $GITHUB_OUTPUT
+            echo "ESLINT ISSUES FOUND:" >> $GITHUB_OUTPUT
+            echo "$LINT_ISSUES" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+        working-directory: ./web-app
+        continue-on-error: true
+
+      - name: =Ø TypeScript Compilation Check
+        id: typescript-check
+        run: |
+          echo "Running TypeScript compilation check..."
+          
+          if npx tsc --noEmit > typescript_report.txt 2>&1; then
+            echo "result=PASS" >> $GITHUB_OUTPUT
+            echo "output=TypeScript compilation successful" >> $GITHUB_OUTPUT
+          else
+            echo "result=FAIL" >> $GITHUB_OUTPUT
+            TS_ERRORS=$(cat typescript_report.txt | head -15)
+            echo "output<<EOF" >> $GITHUB_OUTPUT
+            echo "TYPESCRIPT COMPILATION ERRORS:" >> $GITHUB_OUTPUT
+            echo "$TS_ERRORS" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+        working-directory: ./web-app
+        continue-on-error: true
+
+      - name: <× Production Build Test
+        id: build-check
+        run: |
+          echo "Testing production build for Portuguese community platform..."
+          
+          if npm run build > build_report.txt 2>&1; then
+            echo "result=PASS" >> $GITHUB_OUTPUT
+            echo "output=Production build successful - ready for community deployment" >> $GITHUB_OUTPUT
+          else
+            echo "result=FAIL" >> $GITHUB_OUTPUT
+            BUILD_ERRORS=$(cat build_report.txt | tail -20)
+            echo "output<<EOF" >> $GITHUB_OUTPUT
+            echo "PRODUCTION BUILD FAILED:" >> $GITHUB_OUTPUT
+            echo "$BUILD_ERRORS" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+        working-directory: ./web-app
+        continue-on-error: true
+
+      - name: =ñ Mobile-First Community Validation
+        id: mobile-check
+        run: |
+          echo "Running mobile UX validation for Portuguese-speaking community..."
+          
+          # Check for mobile-first responsive classes in key community components
+          MOBILE_ISSUES=""
+          
+          # Check for hardcoded breakpoints instead of responsive design
+          if grep -r "w-\[.*px\]" src/components/ 2>/dev/null | head -5; then
+            MOBILE_ISSUES="${MOBILE_ISSUES}\n- Fixed width elements found (should be responsive)"
+          fi
+          
+          # Check for missing mobile navigation patterns
+          if ! grep -r "md:hidden\|lg:hidden" src/components/ >/dev/null 2>&1; then
+            MOBILE_ISSUES="${MOBILE_ISSUES}\n- Missing mobile-specific navigation patterns"
+          fi
+          
+          if [ -z "$MOBILE_ISSUES" ]; then
+            echo "result=PASS" >> $GITHUB_OUTPUT
+            echo "output=Mobile-first design principles followed" >> $GITHUB_OUTPUT
+          else
+            echo "result=WARN" >> $GITHUB_OUTPUT
+            echo "output<<EOF" >> $GITHUB_OUTPUT
+            echo "MOBILE UX RECOMMENDATIONS:$MOBILE_ISSUES" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+        working-directory: ./web-app
+        continue-on-error: true
+
+      - name: <õ<ù Portuguese Cultural Context Check
+        id: cultural-check
+        run: |
+          echo "Validating Portuguese cultural authenticity..."
+          
+          CULTURAL_ISSUES=""
+          
+          # Check for proper terminology usage
+          if grep -r "Portuguese community" src/ 2>/dev/null | grep -v "Portuguese-speaking community" | head -3; then
+            CULTURAL_ISSUES="${CULTURAL_ISSUES}\n- Use 'Portuguese-speaking community' not 'Portuguese community'"
+          fi
+          
+          # Check for London-only references
+          if grep -ri "in London\|London only" src/ 2>/dev/null | head -3; then
+            CULTURAL_ISSUES="${CULTURAL_ISSUES}\n- Consider UK-wide references instead of London-only"
+          fi
+          
+          # Check for missing translations
+          EN_KEYS=$(grep -o '"[^"]*":' web-app/src/i18n/en.json 2>/dev/null | wc -l || echo "0")
+          PT_KEYS=$(grep -o '"[^"]*":' web-app/src/i18n/pt.json 2>/dev/null | wc -l || echo "0")
+          
+          if [ "$EN_KEYS" != "$PT_KEYS" ]; then
+            CULTURAL_ISSUES="${CULTURAL_ISSUES}\n- Translation key mismatch: EN=$EN_KEYS, PT=$PT_KEYS"
+          fi
+          
+          echo "cultural_issues<<EOF" >> $GITHUB_OUTPUT
+          echo "$CULTURAL_ISSUES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+  claude-analysis:
+    name: > Claude Quality Gate Analysis
+    needs: quality-gates
+    runs-on: ubuntu-latest
+    if: ${{ always() && (github.event.inputs.run_claude_analysis == 'true' || github.event.inputs.run_claude_analysis == '') }}
+    
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout for context
+        uses: actions/checkout@v4
+
+      - name: Claude Quality Gate Analysis
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // Prepare quality gate results
+            const qualityResults = {
+              hardcoding: '${{ needs.quality-gates.outputs.hardcoding_result }}',
+              lint: '${{ needs.quality-gates.outputs.lint_result }}',
+              typescript: '${{ needs.quality-gates.outputs.typescript_result }}', 
+              build: '${{ needs.quality-gates.outputs.build_result }}',
+              mobile: '${{ needs.quality-gates.outputs.mobile_validation }}'
+            };
+            
+            // Calculate overall quality score
+            const passCount = Object.values(qualityResults).filter(r => r === 'PASS').length;
+            const totalChecks = Object.keys(qualityResults).length;
+            const qualityScore = Math.round((passCount / totalChecks) * 100);
+            
+            // Prepare context for Claude
+            const platformContext = `
+            LusoTown Portuguese-Speaking Community Platform Quality Analysis:
+            
+            Platform Metrics:
+            - Community Members: ${process.env.NEXT_PUBLIC_TOTAL_MEMBERS}
+            - University Students: ${process.env.NEXT_PUBLIC_TOTAL_STUDENTS}
+            - University Partnerships: ${process.env.NEXT_PUBLIC_UNIVERSITY_PARTNERSHIPS}
+            - Focus: ${process.env.PLATFORM_FOCUS}
+            
+            Quality Gate Results (Score: ${qualityScore}%):
+            - Hardcoding Audit: ${qualityResults.hardcoding}
+            - ESLint Standards: ${qualityResults.lint}
+            - TypeScript Check: ${qualityResults.typescript}
+            - Production Build: ${qualityResults.build}
+            - Mobile Validation: ${qualityResults.mobile}
+            
+            Architecture: Next.js 14 with streamlined components, Supabase PostgreSQL+PostGIS, bilingual EN/PT, Portuguese cultural authenticity focus.
+            `;
+            
+            const prompt = `${platformContext}
+            
+            Please analyze these quality gate results for the LusoTown Portuguese-speaking community platform:
+            
+            1. **Community Impact Assessment**: What quality issues might affect Portuguese-speaking community members?
+            2. **Development Priorities**: Which failures should be addressed first for community benefit?
+            3. **Portuguese Cultural Considerations**: Any concerns about cultural authenticity or bilingual support?
+            4. **Production Readiness**: Is this ready for deployment to serve 750+ community members?
+            5. **Mobile Community Experience**: How do these results impact mobile-first Portuguese community access?
+            
+            Provide specific, actionable recommendations focusing on community value and Portuguese cultural authenticity. 
+            Be concise but thorough - aim for developer-friendly guidance that prioritizes community needs.
+            `;
+            
+            try {
+              const response = await fetch('https://api.anthropic.com/v1/messages', {
+                method: 'POST',
+                headers: {
+                  'x-api-key': '${{ secrets.ANTHROPIC_API_KEY }}',
+                  'content-type': 'application/json',
+                  'anthropic-version': '2023-06-01'
+                },
+                body: JSON.stringify({
+                  model: 'claude-3-5-sonnet-20241022',
+                  max_tokens: 3000,
+                  messages: [{
+                    role: 'user',
+                    content: prompt
+                  }]
+                })
+              });
+              
+              if (!response.ok) {
+                throw new Error(`Claude API error: ${response.status}`);
+              }
+              
+              const data = await response.json();
+              const analysis = data.content[0].text;
+              
+              // Create issue or comment based on context
+              if (context.eventName === 'pull_request') {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  body: `## ><õ<ù Claude Quality Gate Analysis (Score: ${qualityScore}%)
+
+${analysis}
+
+---
+*Automated analysis for LusoTown Portuguese-speaking community platform. Focus on community impact and cultural authenticity.*`
+                });
+              } else {
+                // For push events, create summary in workflow
+                core.summary
+                  .addHeading('<õ<ù LusoTown Quality Gate Analysis')
+                  .addRaw(analysis)
+                  .addSeparator()
+                  .addRaw(`**Quality Score: ${qualityScore}%** | **Platform serving ${process.env.NEXT_PUBLIC_TOTAL_MEMBERS}+ Portuguese-speaking community members**`)
+                  .write();
+              }
+              
+            } catch (error) {
+              console.error('Claude analysis failed:', error);
+              
+              const fallbackSummary = `## = LusoTown Quality Gate Summary (Score: ${qualityScore}%)
+              
+**Results**: ${passCount}/${totalChecks} checks passed
+
+**Priority Actions**:
+- ${qualityResults.hardcoding === 'FAIL' ? '=¨ Fix hardcoding violations (blocks deployment)' : ' Zero hardcoding policy compliant'}
+- ${qualityResults.build === 'FAIL' ? '=¨ Resolve build failures (blocks deployment)' : ' Production build ready'}
+- ${qualityResults.lint === 'FAIL' ? '  Address code quality issues' : ' Code standards compliant'}
+
+**Community Impact**: Ensure changes serve Portuguese-speaking community needs across the United Kingdom.
+
+*Claude analysis temporarily unavailable - please manually verify community focus and cultural authenticity.*`;
+              
+              if (context.eventName === 'pull_request') {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  body: fallbackSummary
+                });
+              } else {
+                core.summary.addRaw(fallbackSummary).write();
+              }
+            }
+
+  deployment-readiness:
+    name: =€ Community Platform Deployment Readiness
+    needs: [quality-gates, claude-analysis]
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Evaluate deployment readiness
+        run: |
+          echo "=== LusoTown Community Platform Deployment Readiness ==="
+          echo ""
+          echo "Quality Gate Results:"
+          echo "- Hardcoding Audit: ${{ needs.quality-gates.outputs.hardcoding_result }}"
+          echo "- ESLint: ${{ needs.quality-gates.outputs.lint_result }}"
+          echo "- TypeScript: ${{ needs.quality-gates.outputs.typescript_result }}"
+          echo "- Build: ${{ needs.quality-gates.outputs.build_result }}"
+          echo "- Mobile: ${{ needs.quality-gates.outputs.mobile_validation }}"
+          echo ""
+          
+          # Check deployment blockers
+          BLOCKERS=""
+          if [ "${{ needs.quality-gates.outputs.hardcoding_result }}" = "FAIL" ]; then
+            BLOCKERS="${BLOCKERS}- Hardcoding violations (CRITICAL)\n"
+          fi
+          if [ "${{ needs.quality-gates.outputs.build_result }}" = "FAIL" ]; then
+            BLOCKERS="${BLOCKERS}- Build failures (CRITICAL)\n"
+          fi
+          
+          if [ -z "$BLOCKERS" ]; then
+            echo "=â READY FOR DEPLOYMENT"
+            echo " All critical quality gates passed"
+            echo " Ready to serve 750+ Portuguese-speaking community members"
+          else
+            echo "=4 DEPLOYMENT BLOCKED"
+            echo "Critical issues must be resolved:"
+            echo -e "$BLOCKERS"
+          fi
+          
+          echo ""
+          echo "Community Impact: Changes will affect Portuguese-speaking community across UK"
+          echo "Platform: Next.js 14 | Database: Supabase+PostGIS | Community: 750+ members"

@@ -1,0 +1,32 @@
+# LusoTown Codeowners - Ensures proper review for critical changes
+
+# Default owners for everything in the repo
+* @giquina
+
+# Critical configuration files require extra review
+/web-app/src/config/ @giquina
+/web-app/src/i18n/ @giquina
+/.github/ @giquina
+
+# Portuguese community cultural files
+/web-app/src/config/community-guidelines.ts @giquina
+/web-app/src/config/lusophone-celebrations.ts @giquina
+/web-app/src/config/cultural-events.ts @giquina
+/web-app/src/config/palop-cultural-events.ts @giquina
+
+# Database migrations require careful review
+/web-app/supabase/migrations/ @giquina
+
+# Build and deployment configuration
+/web-app/next.config.js @giquina
+/web-app/package.json @giquina
+/.github/workflows/ @giquina
+/web-app/scripts/ @giquina
+
+# Security-sensitive files
+/web-app/.env.* @giquina
+/web-app/middleware.ts @giquina
+
+# Portuguese translation files
+/web-app/src/i18n/pt.json @giquina
+/web-app/src/i18n/en.json @giquina

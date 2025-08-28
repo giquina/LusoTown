@@ -1,11 +1,45 @@
-// Simple Community Matching System
+/**
+ * Simple Community Matching System
+ * 
+ * Simplified matching components for Portuguese-speaking community connections
+ * focused on cultural compatibility and event-based friendships
+ */
+
+// Core matching components (simplified)
 export { default as MatchesSystem } from './MatchesSystem';
 export { default as CulturalProfileSetup } from './CulturalProfileSetup';
-export { default as EnhancedMatchCard } from './EnhancedMatchCard';
+
+// Event-based matching (basic)
 export { default as MatchEventSuggestions } from './MatchEventSuggestions';
 export { default as EventBuddyFinder } from './EventBuddyFinder';
-export { default as MatchingAchievements } from './MatchingAchievements';
+export { default as EventMatchingIntegration } from './EventMatchingIntegration';
+export { default as PostEventConnections } from './PostEventConnections';
+
+// Cultural compatibility system (essential only)
+export { default as CulturalCompatibilityBadge } from './CulturalCompatibilityBadge';
+export { default as CulturalCompatibilityIntegration } from './CulturalCompatibilityIntegration';
+export { default as CulturalCompatibilityResults } from './CulturalCompatibilityResults';
+
+// Cultural verification (basic)
+export { default as CulturallyVerifiedMatchCard } from './CulturallyVerifiedMatchCard';
+export { default as CulturalVerificationBadges } from './CulturalVerificationBadges';
+export { default as CulturalVerificationIntegration } from './CulturalVerificationIntegration';
+
+// Group matching (simplified)
 export { default as GroupMatching } from './GroupMatching';
+
+// Communication (basic)
+export { default as MatchConversationInterface } from './MatchConversationInterface';
+export { default as EventConversationStarters } from './EventConversationStarters';
+export { default as SaudadeMatchingIntegration } from './SaudadeMatchingIntegration';
+
+// Achievements (basic)
+export { default as MatchingAchievements } from './MatchingAchievements';
+
+// UI components (essential only)
+export { default as CulturalPhotoGallery } from './CulturalPhotoGallery';
+export { default as CulturalQuizDemo } from './CulturalQuizDemo';
+export { default as HowItWorksSection } from './HowItWorksSection';
 
 // Types
 export interface MatchProfile {
