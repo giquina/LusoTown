@@ -15,8 +15,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import SubscriptionGate from "@/components/SubscriptionGate";
 import { ROUTES } from "@/config/routes";
-import LuxuryLoader from "@/components/LuxuryLoader";
-import LuxuryImageOptimizer from "@/components/LuxuryImageOptimizer";
+// Using standard loading and image components instead of removed luxury components
 import { usePerformanceOptimization, useMemoryManagement } from "@/hooks/usePerformanceOptimization";
 import logger from '@/utils/logger';
 
@@ -218,24 +217,28 @@ export default function StreamPlayer({
       ))}
       {!isPlaying && (
         <>
-          {/* Luxury Loading State */}
-          <LuxuryLoader
-            isLoading={isBuffering}
-            loadingText={language === "pt" ? "Carregando" : "Loading"}
-            subText={language === "pt" ? "Preparando transmissão premium" : "Preparing premium stream"}
-            variant="premium"
-            className="rounded-t-xl"
-          />
-          {/* Luxury Stream Thumbnail */}
+          {/* Loading State */}
+          {isBuffering && (
+            <div className="absolute inset-0 bg-black/50 flex items-center justify-center rounded-t-xl">
+              <div className="text-white text-center">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+                  className="w-8 h-8 border-2 border-white border-t-transparent rounded-full mx-auto mb-2"
+                />
+                <p className="text-sm">{language === "pt" ? "Carregando..." : "Loading..."}</p>
+              </div>
+            </div>
+          )}
+          {/* Stream Thumbnail */}
           <div className="absolute inset-0">
-            <LuxuryImageOptimizer
+            <Image
               src={stream.thumbnail || "/events/networking.jpg"}
               alt={stream.title}
+              fill
               priority={false}
               quality={95}
-              gradient={true}
-              className="w-full h-full"
-              showLoadingState={true}
+              className="object-cover w-full h-full"
             />
           </div>
 

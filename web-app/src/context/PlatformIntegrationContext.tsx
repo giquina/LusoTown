@@ -255,14 +255,13 @@ export function PlatformIntegrationProvider({
   useEffect(() => {
     // Only load after all contexts are available
     if (
-      cartContext &&
       networkingContext &&
       subscriptionContext &&
       favoritesContext
     ) {
       loadPlatformData();
     }
-  }, [cartContext, networkingContext, subscriptionContext, favoritesContext]);
+  }, [networkingContext, subscriptionContext, favoritesContext]);
 
   // Auto-save data changes
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -283,8 +282,7 @@ export function PlatformIntegrationProvider({
   useEffect(() => {
     if (
       !isLoading &&
-      cartContext &&
-      networkingContext &&
+            networkingContext &&
       subscriptionContext &&
       favoritesContext
     ) {
@@ -306,8 +304,7 @@ export function PlatformIntegrationProvider({
   useEffect(() => {
     if (
       !isLoading &&
-      cartContext &&
-      networkingContext &&
+            networkingContext &&
       subscriptionContext &&
       favoritesContext
     ) {
@@ -328,7 +325,6 @@ export function PlatformIntegrationProvider({
   }, [
     ecosystemAnalytics,
     isLoading,
-    cartContext,
     networkingContext,
     subscriptionContext,
     favoritesContext,
