@@ -18,7 +18,7 @@ import {
 } from "@/config/z-index-layers";
 import LusoBotChat from "./LusoBotChat";
 import { useAppDownloadBarVisible } from "./AppDownloadBar";
-import { useWidget } from "./WidgetManager";
+// Simple widget state management (no external WidgetManager needed)
 import { useAriaAnnouncements, ARIA_MESSAGES } from "@/hooks/useAriaAnnouncements";
 import { useFocusManagement, useFocusIndicator } from "@/hooks/useFocusManagement";
 
@@ -63,7 +63,10 @@ export default function LusoBotWidget({
   
   // Use Widget Management System
   const widgetId = 'lusobot-widget';
-  const { isAppBarVisible, classes: widgetClasses, zIndex } = useWidget(widgetId, 'chat');
+  // Simple widget state (replaced WidgetManager dependency)
+  const isAppBarVisible = useAppDownloadBarVisible();
+  const widgetClasses = getMobileWidgetClasses('chat');
+  const zIndex = COMPONENT_Z_INDEX.widget;
 
   // ARIA and Focus Management
   const { announce, announcePolite } = useAriaAnnouncements();
