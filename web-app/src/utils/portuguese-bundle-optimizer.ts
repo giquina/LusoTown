@@ -95,7 +95,7 @@ export class PortugueseBundleOptimizer {
   }
 
   private initializeDeviceContext(): void {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined" || typeof navigator === "undefined") return;
 
     const connection = (navigator as any).connection;
 
@@ -554,14 +554,19 @@ export class PortugueseBundleOptimizer {
   }
 }
 
-// Create global instance
-export const portugueseBundleOptimizer = new PortugueseBundleOptimizer();
+// Create global instance only on client side
+export const portugueseBundleOptimizer = typeof window !== 'undefined' ? new PortugueseBundleOptimizer() : null;
 
 // Optimized hook for React components with error handling
 export function usePortugueseBundleOptimization() {
   const [stats, setStats] = React.useState(() => {
     try {
-      return portugueseBundleOptimizer.getOptimizationStats()
+      return portugueseBundleOptimizer?.getOptimizationStats() || {
+        loadedBundles: [],
+        preloadedResources: [],
+        deviceContext: null,
+        optimizationsApplied: []
+      }
     } catch (error) {
       logger.error('Failed to get initial optimization stats:', error)
       return {
@@ -577,7 +582,7 @@ export function usePortugueseBundleOptimization() {
 
   React.useEffect(() => {
     const initializeOptimization = async () => {
-      if (isInitialized) return
+      if (isInitialized || !portugueseBundleOptimizer) return
 
       try {
         // Initialize optimization with error handling
@@ -612,7 +617,9 @@ export function usePortugueseBundleOptimization() {
       
       statsUpdateTimeoutRef.current = setTimeout(() => {
         try {
-          setStats(portugueseBundleOptimizer.getOptimizationStats())
+          if (portugueseBundleOptimizer) {
+            setStats(portugueseBundleOptimizer.getOptimizationStats())
+          }
         } catch (error) {
           logger.warn('Failed to update optimization stats:', error)
         }
@@ -627,7 +634,7 @@ export function usePortugueseBundleOptimization() {
         clearTimeout(statsUpdateTimeoutRef.current)
       }
       try {
-        portugueseBundleOptimizer.cleanup()
+        portugueseBundleOptimizer?.cleanup()
       } catch (error) {
         logger.warn('Bundle optimizer cleanup failed:', error)
       }
@@ -636,7 +643,9 @@ export function usePortugueseBundleOptimization() {
 
   const loadBundle = React.useCallback(async (priority: keyof PortugueseContentPriority) => {
     try {
-      await portugueseBundleOptimizer.loadPortugueseContentBundle(priority)
+      if (portugueseBundleOptimizer) {
+        await portugueseBundleOptimizer.loadPortugueseContentBundle(priority)
+      }
     } catch (error) {
       logger.error(`Failed to load Portuguese bundle: ${priority}`, error)
     }
@@ -644,7 +653,9 @@ export function usePortugueseBundleOptimization() {
 
   const preloadResources = React.useCallback(async () => {
     try {
-      await portugueseBundleOptimizer.preloadCriticalResources()
+      if (portugueseBundleOptimizer) {
+        await portugueseBundleOptimizer.preloadCriticalResources()
+      }
     } catch (error) {
       logger.error('Failed to preload Portuguese cultural resources:', error)
     }

@@ -640,7 +640,7 @@ class CoreWebVitalsMonitor {
 
   // Detect user language
   private detectUserLanguage(): void {
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined' || typeof navigator === 'undefined') return;
     
     const lang = document.documentElement.lang || 
                  navigator.language || 
