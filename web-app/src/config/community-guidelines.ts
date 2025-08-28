@@ -159,3 +159,35 @@ export function validateContentInclusivity(content: string): {
     suggestions
   };
 }
+
+// Community Statistics
+export const COMMUNITY_STATS = {
+  totalMembers: 750,
+  totalStudents: 2150,
+  universityPartnerships: 8,
+  activeEventTypes: 12,
+  supportedLanguages: 2, // Portuguese and English
+  lusophonieCountries: 8
+};
+
+// Cultural Centers (basic configuration)
+export const CULTURAL_CENTERS = {
+  london: {
+    name: "Portuguese Cultural Centre London",
+    address: "Camden, London",
+    activities: ["Fado nights", "Portuguese classes", "Cultural events"],
+    contact: "info@portuguese-london.org"
+  },
+  manchester: {
+    name: "Portuguese Community Centre Manchester", 
+    address: "Manchester",
+    activities: ["Community meetings", "Cultural celebrations"],
+    contact: "info@portuguese-manchester.org"
+  },
+  birmingham: {
+    name: "Portuguese Association Birmingham",
+    address: "Birmingham", 
+    activities: ["Portuguese festivals", "Business networking"],
+    contact: "info@portuguese-birmingham.org"
+  }
+};

@@ -47,3 +47,12 @@ export const COMMUNITY_BADGES: Record<string, CommunityBadge> = {
 export const getBadgeById = (id: string): CommunityBadge | undefined => {
   return COMMUNITY_BADGES[id];
 };
+
+// Get badges for signup page display
+export const getSignupPageBadges = (): CommunityBadge[] => {
+  return [
+    COMMUNITY_BADGES.heritage_verified,
+    COMMUNITY_BADGES.community_member,
+    COMMUNITY_BADGES.student_verified
+  ];
+};

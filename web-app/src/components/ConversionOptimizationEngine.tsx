@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { ChartLineIcon, TargetIcon, AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
+import { ChartBarIcon, TargetIcon, AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 
 export default function ConversionOptimizationEngine() {
   const { t } = useLanguage();
@@ -12,7 +12,7 @@ export default function ConversionOptimizationEngine() {
       label: t("conversion.signupRate") || "Signup Rate",
       value: "3.2%",
       trend: "+0.5%",
-      icon: ChartLineIcon,
+      icon: ChartBarIcon,
       positive: true
     },
     {

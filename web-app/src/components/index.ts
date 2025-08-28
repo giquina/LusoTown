@@ -61,3 +61,10 @@ export { default as PortugueseNavigation } from './PortugueseNavigation'
 
 // Community Carousels (Simplified)
 export { LusophoneCarousel, WeekendEventsCarousel } from './carousels'
+
+// Dashboard and Analytics Components
+export { default as NetworkAnalytics } from './NetworkAnalytics'
+export { default as PerformanceOptimization } from './PerformanceOptimization'
+export { default as ReferralDashboard } from './ReferralDashboard'
+export { default as ConversionOptimizationEngine } from './ConversionOptimizationEngine'
+export { default as EnhancedMobileGestures } from './EnhancedMobileGestures'

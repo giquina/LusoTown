@@ -7,7 +7,7 @@
  */
 
 import { TRANSPORT_PRICING } from './pricing';
-import { UNIVERSITIES } from './universities';
+import { UNIVERSITY_PARTNERSHIPS } from './universities';
 
 export interface TransportHub {
   id: string;
@@ -655,7 +655,7 @@ export const TRANSPORT_SERVICES: TransportService[] = [
       }
     },
     coverage: {
-      areas: Object.keys(UNIVERSITIES),
+      areas: Object.keys(UNIVERSITY_PARTNERSHIPS),
       maxDistance: 30,
       airports: false,
       universities: true
@@ -803,7 +803,7 @@ export interface DriverVerification {
 export const DRIVER_VERIFICATION: DriverVerification = {
   university: {
     required: true,
-    acceptedUniversities: Object.keys(UNIVERSITIES),
+    acceptedUniversities: Object.keys(UNIVERSITY_PARTNERSHIPS),
     verificationProcess: [
       'University email verification',
       'Staff ID or student ID check',
