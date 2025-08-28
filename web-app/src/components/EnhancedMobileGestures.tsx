@@ -76,3 +76,13 @@ export default function EnhancedMobileGestures({
     </div>
   );
 }
+
+// Export hook for Portuguese gestures
+export const usePortugueseGestures = () => {
+  return {
+    handleSwipe: (direction: 'left' | 'right' | 'up' | 'down') => {
+      // Simple gesture handler for Portuguese community
+      console.log(`Portuguese gesture: ${direction}`);
+    }
+  };
+};

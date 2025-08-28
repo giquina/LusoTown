@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { ChartBarIcon, TargetIcon, AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
+import { ChartBarIcon, PlayIcon, AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 
 export default function ConversionOptimizationEngine() {
   const { t } = useLanguage();
@@ -19,7 +19,7 @@ export default function ConversionOptimizationEngine() {
       label: t("conversion.engagementRate") || "Engagement Rate",
       value: "68%",
       trend: "+12%",
-      icon: TargetIcon,
+      icon: PlayIcon,
       positive: true
     }
   ];
