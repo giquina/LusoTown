@@ -35,6 +35,16 @@ const AccommodationSupportSection = dynamic(() => import('@/components/students/
   loading: () => <div className="h-44 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
+
+const StudentBenefitsShowcase = dynamic(() => import('@/components/students/StudentBenefitsShowcase'), {
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
+
+const UniversityPartnershipDashboard = dynamic(() => import('@/components/students/UniversityPartnershipDashboard'), {
+  loading: () => <div className="h-screen bg-gray-100 animate-pulse rounded-xl" />,
+  ssr: false
+})
 import { 
   AcademicCapIcon,
   StarIcon,

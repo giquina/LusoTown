@@ -140,23 +140,23 @@ export default function MobileCameraIntegration({
   const initializeQRScanner = async () => {
     try {
       if (typeof window === 'undefined') return;
-      const { Html5QrcodeScanner } = await import('html5-qrcode');
       
-      const scanner = new Html5QrcodeScanner(
-        "qr-reader",
-        {
-          fps: 10,
-          qrbox: { width: 250, height: 250 },
-          aspectRatio: 1.0,
-          showTorchButtonIfSupported: true,
-          showZoomSliderIfSupported: true,
-          defaultZoomValueIfSupported: 2
-        },
-        false
+      // QR code scanning removed for simplified community platform
+      logger.warn('QR code scanning not available in simplified platform', {
+        area: 'mobile',
+        culturalContext: 'portuguese',
+        action: 'qr_code_scan_unavailable'
+      });
+      
+      // Show notification to user
+      showNotification(
+        language === 'pt' 
+          ? 'Função de QR code não disponível na versão simplificada'
+          : 'QR code scanning not available in simplified version',
+        'info'
       );
-
-      scanner.render(handleQRScanSuccess, handleQRScanError);
-      qrScannerRef.current = scanner;
+      
+      return;
 
       logger.info('QR Scanner initialized successfully', { area: 'mobile', action: 'qr_scanner_init' });
     } catch (error) {

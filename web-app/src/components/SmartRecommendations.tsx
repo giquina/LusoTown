@@ -2,151 +2,155 @@
 
 import React from 'react'
 import { useLanguage } from '@/context/LanguageContext'
-import { usePlatformIntegration } from '@/context/PlatformIntegrationContext'
-import { Sparkles, Calendar, Users, MapPin, ArrowRight, Car, Crown, Heart } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { ROUTES } from '@/config/routes'
+import { 
+  Calendar,
+  Users,
+  Star,
+  MapPin,
+  Clock,
+  Sparkles,
+  ArrowRight
+} from 'lucide-react'
+
+interface Recommendation {
+  id: string
+  type: 'event' | 'connection' | 'business'
+  title: string
+  description: string
+  actionText: string
+  actionRoute: string
+  priority: number
+  relevanceScore: number
+}
 
 export default function SmartRecommendations() {
   const { language } = useLanguage()
-  const { getPersonalizedRecommendations, trackRecommendationInteraction } = usePlatformIntegration()
+  const router = useRouter()
 
-  const platformRecommendations = getPersonalizedRecommendations() || []
-  
-  const defaultRecommendations = [
+  const recommendations: Recommendation[] = [
     {
-      id: '1',
+      id: 'event-1',
       type: 'event',
-      title: language === 'pt' ? 'Festival de Fado em Southwark' : 'Fado Festival in Southwark',
-      description: language === 'pt' ? 'Evento musical português este fim de semana' : 'Portuguese music event this weekend',
-      basedOn: [language === 'pt' ? 'interesse em música portuguesa' : 'interest in Portuguese music'],
-      cta: language === 'pt' ? 'Ver Evento' : 'View Event',
-      urgency: 'high' as const,
-      relevanceScore: 9,
-      benefits: ['cultural', 'networking']
+      title: language === 'pt' ? 'Noite de Fado no Stockwell' : 'Fado Night in Stockwell',
+      description: language === 'pt' ? 'Baseado no seu interesse em cultura portuguesa' : 'Based on your interest in Portuguese culture',
+      actionText: language === 'pt' ? 'Ver Evento' : 'View Event',
+      actionRoute: ROUTES.events,
+      priority: 1,
+      relevanceScore: 95
     },
     {
-      id: '2',
-      type: 'transport',
-      title: language === 'pt' ? 'Transporte Premium' : 'Premium Transport',
-      description: language === 'pt' ? 'Chegue aos eventos com conforto e estilo' : 'Arrive at events in comfort and style',
-      basedOn: [language === 'pt' ? 'participação em eventos' : 'event participation'],
-      cta: language === 'pt' ? 'Reservar' : 'Book Now',
-      urgency: 'medium' as const,
-      relevanceScore: 7.5,
-      benefits: ['convenience', 'luxury'],
-      price: 180
+      id: 'connection-1',
+      type: 'connection',
+      title: language === 'pt' ? 'Conectar com Ana Santos' : 'Connect with Ana Santos',
+      description: language === 'pt' ? 'Também participa em eventos culturais portugueses' : 'Also attends Portuguese cultural events',
+      actionText: language === 'pt' ? 'Ver Perfil' : 'View Profile',
+      actionRoute: '/networking',
+      priority: 2,
+      relevanceScore: 88
+    },
+    {
+      id: 'business-1',
+      type: 'business',
+      title: language === 'pt' ? 'Casa do Bacalhau - Novo Restaurante' : 'Casa do Bacalhau - New Restaurant',
+      description: language === 'pt' ? 'Cozinha tradicional portuguesa perto de si' : 'Traditional Portuguese cuisine near you',
+      actionText: language === 'pt' ? 'Ver Negócio' : 'View Business',
+      actionRoute: ROUTES.directory,
+      priority: 3,
+      relevanceScore: 82
     }
   ]
 
-  const recommendations = platformRecommendations.length > 0 ? platformRecommendations : defaultRecommendations
-
-  const getRecommendationIcon = (type: string) => {
-    const icons = {
-      event: <Calendar className="w-5 h-5" />,
-      transport: <Car className="w-5 h-5" />,
-      community_group: <Users className="w-5 h-5" />,
-      business_networking: <Users className="w-5 h-5" />,
-      premium_feature: <Crown className="w-5 h-5" />
+  const getIcon = (type: string) => {
+    switch (type) {
+      case 'event':
+        return <Calendar className="w-5 h-5" />
+      case 'connection':
+        return <Users className="w-5 h-5" />
+      case 'business':
+        return <MapPin className="w-5 h-5" />
+      default:
+        return <Star className="w-5 h-5" />
     }
-    return icons[type as keyof typeof icons] || <Sparkles className="w-5 h-5" />
   }
 
-  const getUrgencyColor = (urgency: string) => {
-    const colors = {
-      high: 'bg-red-100 text-red-700 border-red-200',
-      medium: 'bg-orange-100 text-orange-700 border-orange-200',
-      low: 'bg-green-100 text-green-700 border-green-200'
+  const getColor = (type: string) => {
+    switch (type) {
+      case 'event':
+        return 'text-primary-600 bg-primary-50'
+      case 'connection':
+        return 'text-secondary-600 bg-secondary-50'
+      case 'business':
+        return 'text-accent-600 bg-accent-50'
+      default:
+        return 'text-gray-600 bg-gray-50'
     }
-    return colors[urgency as keyof typeof colors] || colors.medium
   }
 
   return (
     <div className="bg-white rounded-xl shadow-sm p-6">
       <div className="flex items-center space-x-3 mb-6">
-        <Sparkles className="w-6 h-6 text-accent-500" />
-        <h2 className="text-xl font-semibold text-gray-900">
-          {language === 'pt' ? 'Recomendações Inteligentes' : 'Smart Recommendations'}
-        </h2>
+        <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+          <Sparkles className="w-5 h-5 text-white" />
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold text-gray-900">
+            {language === 'pt' ? 'Recomendações Inteligentes' : 'Smart Recommendations'}
+          </h2>
+          <p className="text-sm text-gray-600">
+            {language === 'pt' ? 'Personalizadas para a sua atividade na comunidade' : 'Personalized for your community activity'}
+          </p>
+        </div>
       </div>
-      
+
       <div className="space-y-4">
-        {recommendations.slice(0, 3).map((rec) => (
+        {recommendations.map((rec) => (
           <div key={rec.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-            <div className="flex items-start justify-between mb-3">
-              <div className="flex items-center space-x-3">
-                <div className="flex-shrink-0 w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white">
-                  {getRecommendationIcon(rec.type)}
+            <div className="flex items-start justify-between">
+              <div className="flex items-start space-x-3 flex-1">
+                <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${getColor(rec.type)}`}>
+                  {getIcon(rec.type)}
                 </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">{rec.title}</h3>
-                  <p className="text-sm text-gray-600">{rec.description}</p>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-gray-900 mb-1">{rec.title}</h3>
+                  <p className="text-sm text-gray-600 mb-2">{rec.description}</p>
+                  <div className="flex items-center space-x-4 text-xs text-gray-500">
+                    <div className="flex items-center space-x-1">
+                      <Star className="w-3 h-3" />
+                      <span>{rec.relevanceScore}% relevante</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Clock className="w-3 h-3" />
+                      <span>{language === 'pt' ? 'Agora' : 'Now'}</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border ${getUrgencyColor(rec.urgency)}`}>
-                {rec.urgency === 'high' && (language === 'pt' ? 'Alta' : 'High')}
-                {rec.urgency === 'medium' && (language === 'pt' ? 'Média' : 'Medium')}
-                {rec.urgency === 'low' && (language === 'pt' ? 'Baixa' : 'Low')}
-              </span>
-            </div>
-            
-            <div className="flex items-center justify-between mb-3">
-              <div className="text-sm text-gray-600">
-                <span className="font-medium">
-                  {language === 'pt' ? 'Baseado em:' : 'Based on:'}{' '}
-                </span>
-                {Array.isArray(rec.basedOn) ? rec.basedOn.join(', ') : rec.basedOn}
-              </div>
-              {rec.price && (
-                <span className="text-lg font-bold text-primary-600">
-                  £{rec.price}
-                </span>
-              )}
-            </div>
-
-            {rec.benefits && (
-              <div className="flex items-center space-x-2 mb-4">
-                {rec.benefits.slice(0, 3).map((benefit, index) => (
-                  <span key={index} className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-accent-100 text-accent-700">
-                    {benefit}
-                  </span>
-                ))}
-              </div>
-            )}
-
-            <div className="flex items-center justify-between">
-              <div className="text-sm text-gray-500">
-                {language === 'pt' ? 'Relevância:' : 'Relevance:'} {rec.relevanceScore || 8}/10
               </div>
               <button
-                onClick={() => {
-                  trackRecommendationInteraction(rec.id, 'clicked')
-                  // Handle navigation or action
-                }}
-                className="inline-flex items-center px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors text-sm font-medium"
+                onClick={() => router.push(rec.actionRoute)}
+                className="flex items-center space-x-2 px-3 py-1.5 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors text-sm"
               >
-                {rec.cta}
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <span>{rec.actionText}</span>
+                <ArrowRight className="w-3 h-3" />
               </button>
             </div>
           </div>
         ))}
-        
-        {recommendations.length === 0 && (
-          <div className="text-center py-8">
-            <Sparkles className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-            <p className="text-gray-600">
-              {language === 'pt' 
-                ? 'Nenhuma recomendação disponível no momento' 
-                : 'No recommendations available right now'
-              }
-            </p>
-            <p className="text-sm text-gray-500 mt-2">
-              {language === 'pt' 
-                ? 'Continue usando a plataforma para receber sugestões personalizadas'
-                : 'Keep using the platform to receive personalized suggestions'
-              }
-            </p>
+      </div>
+
+      <div className="mt-6 pt-4 border-t border-gray-200">
+        <div className="flex items-center justify-between text-sm">
+          <div className="text-gray-600">
+            {language === 'pt' ? '3 de 12 recomendações mostradas' : '3 of 12 recommendations shown'}
           </div>
-        )}
+          <button
+            onClick={() => router.push('/recommendations')}
+            className="text-primary-600 hover:text-primary-700 font-medium"
+          >
+            {language === 'pt' ? 'Ver Todas' : 'View All'}
+          </button>
+        </div>
       </div>
     </div>
   )

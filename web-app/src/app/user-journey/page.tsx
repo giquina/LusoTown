@@ -17,7 +17,6 @@ import ProgressiveUserJourney from '@/components/ProgressiveUserJourney'
 import CrossPlatformEngagementTriggers from '@/components/CrossPlatformEngagementTriggers'
 import OnboardingFlowEnhanced from '@/components/OnboardingFlowEnhanced'
 import ConversionOptimizationEngine from '@/components/ConversionOptimizationEngine'
-import RetentionGrowthMechanics from '@/components/RetentionGrowthMechanics'
 import { useLanguage } from '@/context/LanguageContext'
 import { ROUTES } from '@/config/routes'
 import { useNetworking } from '@/context/NetworkingContext'
@@ -269,10 +268,10 @@ export default function UserJourneyPage() {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <RetentionGrowthMechanics 
-                    variant="achievements"
-                    showRecentAchievements={true}
-                  />
+                  {/* RetentionGrowthMechanics removed - overly complex for simple community platform */}
+                  <div className="text-center py-8 text-gray-500">
+                    {t('user-journey.achievements.coming-soon')}
+                  </div>
                 </motion.div>
               )}
 

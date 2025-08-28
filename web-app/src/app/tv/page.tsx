@@ -207,15 +207,19 @@ export default function TVPage() {
   };
 
   return (
-    <LuxuryErrorBoundary variant="premium">
-      <LuxuryLoader 
-        isLoading={isLoading}
-        loadingText={isPortuguese ? "Carregando LusoTown TV" : "Loading LusoTown TV"}
-        subText={isPortuguese ? "Preparando experiência cultural premium" : "Preparing premium cultural experience"}
-        showProgress={true}
-        progress={loadingProgress}
-        variant="elite"
-      />
+    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-green-50">
+      {isLoading ? (
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <div className="animate-pulse text-2xl font-bold text-yellow-600 mb-2">
+              {isPortuguese ? "Carregando LusoTown TV" : "Loading LusoTown TV"}
+            </div>
+            <div className="text-yellow-500">
+              {isPortuguese ? "Preparando experiência cultural premium" : "Preparing premium cultural experience"}
+            </div>
+          </div>
+        </div>
+      ) : (
       
       <div className="min-h-screen">
       {/* Hero Section */}
@@ -476,6 +480,7 @@ export default function TVPage() {
 
         <Footer />
       </div>
-    </LuxuryErrorBoundary>
+      )}
+    </div>
   );
 }

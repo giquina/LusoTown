@@ -25,7 +25,7 @@ export async function createPerformanceDashboard() {
   try {
     // Get comprehensive system health
     const systemHealth = await dbService.getDatabaseHealth();
-    console.log('📊 Database Health Score:', systemHealth.overall_score + '%');
+    console.log('📊 Database Health Score:', `${systemHealth.overall_score  }%`);
     
     // Get community metrics
     const communityMetrics = await dbService.getCommunityPlatformMetrics();
@@ -56,27 +56,27 @@ export async function createPerformanceDashboard() {
     // Create performance summary
     const performanceSummary = {
       businessDirectory: {
-        searchSpeed: businessPerformance.find(m => m.metric_name === 'business_directory_search_performance')?.value + 'ms',
+        searchSpeed: `${businessPerformance.find(m => m.metric_name === 'business_directory_search_performance')?.value  }ms`,
         status: businessPerformance.find(m => m.metric_name === 'business_directory_search_performance')?.status,
         resultsCount: businessPerformance.find(m => m.metric_name === 'business_directory_results_count')?.value
       },
       eventDiscovery: {
-        searchSpeed: eventPerformance.find(m => m.metric_name === 'event_discovery_performance')?.value + 'ms',
+        searchSpeed: `${eventPerformance.find(m => m.metric_name === 'event_discovery_performance')?.value  }ms`,
         status: eventPerformance.find(m => m.metric_name === 'event_discovery_performance')?.status,
         availableEvents: eventPerformance.find(m => m.metric_name === 'available_community_events')?.value
       },
       culturalMatching: {
-        matchingSpeed: matchingPerformance.find(m => m.metric_name === 'cultural_matching_performance')?.value + 'ms',
+        matchingSpeed: `${matchingPerformance.find(m => m.metric_name === 'cultural_matching_performance')?.value  }ms`,
         status: matchingPerformance.find(m => m.metric_name === 'cultural_matching_performance')?.status,
         potentialMatches: matchingPerformance.find(m => m.metric_name === 'potential_high_quality_matches')?.value
       },
       transportCoordination: {
-        searchSpeed: transportPerformance.find(m => m.metric_name === 'transport_search_performance')?.value + 'ms',
+        searchSpeed: `${transportPerformance.find(m => m.metric_name === 'transport_search_performance')?.value  }ms`,
         status: transportPerformance.find(m => m.metric_name === 'transport_search_performance')?.status,
         availableOptions: transportPerformance.find(m => m.metric_name === 'available_transport_options')?.value
       },
       universityIntegration: {
-        querySpeed: universityPerformance.find(m => m.metric_name === 'university_partnership_query_performance')?.value + 'ms',
+        querySpeed: `${universityPerformance.find(m => m.metric_name === 'university_partnership_query_performance')?.value  }ms`,
         totalStudents: universityPerformance.find(m => m.metric_name === 'total_portuguese_students')?.value,
         activePartnerships: universityPerformance.find(m => m.metric_name === 'active_university_partnerships')?.value
       }

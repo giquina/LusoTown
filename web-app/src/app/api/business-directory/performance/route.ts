@@ -73,7 +73,7 @@ export async function GET(request: NextRequest) {
     const { data: cacheStats, error: cacheError } = await supabase
       .from('business_search_cache')
       .select('access_count, created_at, last_accessed')
-      .gte('created_at', `now() - interval '${interval}');
+      .gte('created_at', `now() - interval '${interval}'`);
       
     const cacheHitRate = cacheStats ? calculateCacheHitRate(cacheStats) : 0;
     
@@ -320,7 +320,7 @@ function generatePerformanceRecommendations(benchmarkResults: any[]) {
       recommendations.push({
         priority: result.performance_grade === 'D' ? 'high' : 'medium',
         category: result.benchmark_category,
-        issue: `${result.operation_description} performance is ${result.optimization_status.toLowerCase()}`,
+        issue: result.operation_description + ' performance is ' + result.optimization_status.toLowerCase(),
         recommendation: getOptimizationRecommendation(result.benchmark_category, result.execution_time_ms),
         expected_improvement: result.performance_grade === 'D' ? '50-80%' : '20-40%'
       });

@@ -22,11 +22,10 @@ import {
 } from '@heroicons/react/24/solid';
 
 // Import our new saudade components
-import SaudadeMatchingSystem from './SaudadeMatchingSystem';
-import SaudadeCompatibilityEngine from './SaudadeCompatibilityEngine';
-import SaudadeMatchCard from './SaudadeMatchCard';
-import CulturalHealingRecommendations from './CulturalHealingRecommendations';
-import type { SaudadeProfile, CulturalDepthProfile } from './SaudadeMatchingSystem';
+// import SaudadeMatchingSystem from './SaudadeMatchingSystem'; // Complex system removed
+// import SaudadeMatchCard from './SaudadeMatchCard'; // Complex system removed
+// import CulturalHealingRecommendations from './CulturalHealingRecommendations'; // Complex system removed
+// import type { SaudadeProfile, CulturalDepthProfile } from './SaudadeMatchingSystem'; // Complex system removed
 
 interface SaudadeMatchingIntegrationProps {
   userId: string;
@@ -418,12 +417,10 @@ export default function SaudadeMatchingIntegration({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
           >
-            <SaudadeCompatibilityEngine
-              userProfile={userCulturalProfile}
-              onMatchSelect={handleMatchSelect}
-              onStartConversation={handleStartConversation}
-              showDetailedAnalysis={hasActiveSubscription}
-            />
+            {/* SaudadeCompatibilityEngine removed - overly complex for simple community platform */}
+            <div className="text-center py-8 text-gray-500">
+              {language === 'pt' ? 'Sistema de compatibilidade em desenvolvimento' : 'Compatibility system in development'}
+            </div>
           </motion.div>
         )}
 
@@ -434,12 +431,10 @@ export default function SaudadeMatchingIntegration({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
           >
-            <CulturalHealingRecommendations
-              userProfile={userCulturalProfile}
-              currentSaudadeLevel={currentSaudadeLevel}
-              onActivitySelect={handleActivitySelect}
-              onScheduleActivity={handleScheduleActivity}
-            />
+            {/* CulturalHealingRecommendations removed - overly complex for simple community platform */}
+            <div className="text-center py-8 text-gray-500">
+              {language === 'pt' ? 'Recomendações culturais em desenvolvimento' : 'Cultural recommendations in development'}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

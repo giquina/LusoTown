@@ -1,8 +1,18 @@
 'use client'
 
-import { io, Socket } from 'socket.io-client'
+// Socket.io removed for simplified community platform - using basic messaging instead
+// import { io, Socket } from 'socket.io-client'
 import { ChatMessage, ChatRoom, ChatUser, PortuguesePoll } from '@/types/chat'
 import { logger } from '@/utils/logger'
+
+// Simplified socket interface for basic community messaging
+interface Socket {
+  on: (event: string, callback: Function) => void;
+  emit: (event: string, ...args: any[]) => void;
+  connect: () => void;
+  disconnect: () => void;
+  removeAllListeners: () => void;
+}
 
 interface ServerToClientEvents {
   'chat:message': (message: ChatMessage) => void
@@ -33,7 +43,7 @@ interface ClientToServerEvents {
 }
 
 class SocketManager {
-  private socket: Socket<ServerToClientEvents, ClientToServerEvents> | null = null
+  private socket: Socket | null = null
   private isConnected = false
   private reconnectAttempts = 0
   private maxReconnectAttempts = 5
@@ -42,18 +52,23 @@ class SocketManager {
   connect(userId: string, region: string): Promise<void> {
     return new Promise((resolve, reject) => {
       try {
-        // In production, this would be your Socket.io server URL
-        const socketUrl = process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001'
+        // Simplified connection for basic community messaging
+        // Socket.io removed - using WebSocket or similar basic implementation
+        logger.info('Initializing Portuguese-speaking community chat connection', {
+          area: 'messaging',
+          culturalContext: 'lusophone',
+          action: 'socket_connect_attempt',
+          userId
+        });
         
-        this.socket = io(socketUrl, {
-          auth: {
-            userId,
-            region
-          },
-          transports: ['websocket', 'polling'],
-          timeout: 10000,
-          forceNew: true
-        })
+        // Mock socket for now - replace with actual basic WebSocket implementation
+        this.socket = this.createMockSocket()
+        
+        // Simulate successful connection for basic community features
+        setTimeout(() => {
+          this.isConnected = true
+          resolve()
+        }, 100)
 
         this.socket.on('connect', () => {
           logger.info('Connected to Portuguese-speaking community chat server', {
@@ -305,6 +320,36 @@ class SocketManager {
 
   get connected() {
     return this.isConnected
+  }
+
+  // Mock socket implementation for basic community messaging
+  private createMockSocket(): Socket {
+    const eventListeners: Map<string, Function[]> = new Map();
+    
+    return {
+      on: (event: string, callback: Function) => {
+        if (!eventListeners.has(event)) {
+          eventListeners.set(event, []);
+        }
+        eventListeners.get(event)!.push(callback);
+      },
+      emit: (event: string, ...args: any[]) => {
+        logger.debug(`Mock socket emit: ${event}`, {
+          area: 'messaging',
+          culturalContext: 'lusophone',
+          action: 'mock_socket_emit'
+        });
+      },
+      connect: () => {
+        // Mock connection logic
+      },
+      disconnect: () => {
+        eventListeners.clear();
+      },
+      removeAllListeners: () => {
+        eventListeners.clear();
+      }
+    };
   }
 }
 

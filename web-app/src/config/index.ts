@@ -228,27 +228,7 @@ export {
   getEventImage,
 } from "./mockData";
 
-// Voice messaging and communication features
-export {
-  VOICE_RECORDING_CONFIG,
-  SPEECH_TO_TEXT_CONFIG,
-  VOICE_MESSAGE_UI,
-  RECORDING_QUALITY,
-  VOICE_MESSAGE_CATEGORIES,
-  AUDIO_ENHANCEMENT,
-  VOICE_STORAGE_CONFIG,
-  VOICE_MODERATION,
-  VOICE_ACCESSIBILITY,
-  PORTUGUESE_AUDIO_PREFERENCES,
-  VOICE_ANALYTICS,
-  VOICE_API_CONFIG,
-  getVoiceConfigForTier,
-  getSpeechToTextForDialect,
-  getRecordingQualityLabel,
-  getMaxDurationForCategory,
-  isValidVoiceFormat,
-  calculateVoiceFileSize,
-} from "./voice-messaging";
+// Voice messaging configuration removed - file deleted during cleanup
 
 // Translation and Portuguese communication
 export {
@@ -287,27 +267,7 @@ export {
   getTimeBasedGreeting,
 } from "./portuguese-emojis";
 
-// Advanced Portuguese Cultural Knowledge and AI Systems
-export {
-  PORTUGUESE_CULTURAL_TRADITIONS,
-  LANGUAGE_LEARNING_MODULES,
-  EMOTIONAL_SUPPORT_RESPONSES,
-  findCulturalTradition,
-  getLanguageLearningModule,
-  findEmotionalSupport,
-} from "./portuguese-cultural-knowledge";
-
-export {
-  LANGUAGE_LEARNING_MODULES as ADVANCED_LANGUAGE_MODULES,
-  PRONUNCIATION_GUIDES,
-  PORTUGUESE_DIALECTS,
-  getModuleByLevel,
-  findPronunciationGuide,
-  getDialectInfo,
-  generatePersonalizedLesson,
-  assessPronunciation,
-  getCulturalContext,
-} from "./portuguese-language-learning";
+// Advanced Portuguese Cultural Knowledge and AI Systems removed - files deleted during cleanup
 
 
 // Environment-based configuration
@@ -319,18 +279,17 @@ export const appConfig = {
   enableDemo: process.env.NODE_ENV === "development", // Only show demo features in dev
 };
 
-// Feature flags
+// Feature flags - simplified for community-focused platform
 export const featureFlags = {
   enableStreaming: process.env.NEXT_PUBLIC_ENABLE_STREAMING !== "false",
   enableMatching: process.env.NEXT_PUBLIC_ENABLE_MATCHING !== "false",
   enableTransport: process.env.NEXT_PUBLIC_ENABLE_TRANSPORT !== "false",
   enableEvents: process.env.NEXT_PUBLIC_ENABLE_EVENTS !== "false",
   enablePremium: process.env.NEXT_PUBLIC_ENABLE_PREMIUM !== "false",
-  enableVoiceMessaging:
-    process.env.NEXT_PUBLIC_ENABLE_VOICE_MESSAGING !== "false",
   enableTranslation: process.env.NEXT_PUBLIC_ENABLE_TRANSLATION !== "false",
   enableCulturalExpressions:
     process.env.NEXT_PUBLIC_ENABLE_CULTURAL_EXPRESSIONS !== "false",
+  // Voice messaging feature removed during cleanup
 };
 
 // Re-export legacy config object (will be built from imports)

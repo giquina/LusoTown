@@ -1,14 +1,11 @@
-// Enhanced Matches System Components
+// Simple Community Matching System
+export { default as MatchesSystem } from './MatchesSystem';
+export { default as CulturalProfileSetup } from './CulturalProfileSetup';
 export { default as EnhancedMatchCard } from './EnhancedMatchCard';
 export { default as MatchEventSuggestions } from './MatchEventSuggestions';
 export { default as EventBuddyFinder } from './EventBuddyFinder';
 export { default as MatchingAchievements } from './MatchingAchievements';
 export { default as GroupMatching } from './GroupMatching';
-export { default as EnhancedMatchDashboard } from './EnhancedMatchDashboard';
-
-// Cultural Matching System Components
-export { default as MatchesSystem } from './MatchesSystem';
-export { default as CulturalProfileSetup } from './CulturalProfileSetup';
 
 // Types
 export interface MatchProfile {

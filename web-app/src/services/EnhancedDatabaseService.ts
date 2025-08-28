@@ -10,8 +10,22 @@
  */
 
 import { SupabaseClient, createClient } from '@supabase/supabase-js';
-import { Redis } from '@upstash/redis';
 import logger from '@/utils/logger';
+
+// Dynamic Redis import for optional caching (removed Upstash dependency)
+let Redis: any = null;
+try {
+  // Only attempt Redis if environment variables are available
+  if (process.env.REDIS_URL) {
+    Redis = require('redis');
+  }
+} catch (error) {
+  // Redis not available, will use in-memory fallback
+  logger.warn('Redis not available for enhanced caching, using basic caching', {
+    area: 'database',
+    action: 'redis_initialization_failed'
+  });
+}
 
 // Types for Portuguese community data
 interface PortugueseBusinessSearchParams {
@@ -126,7 +140,7 @@ const CACHE_CONFIG = {
  */
 export class EnhancedDatabaseService {
   private supabase: SupabaseClient;
-  private redis: Redis | null = null;
+  private redis: any | null = null;
   private connectionPool: Map<string, SupabaseClient> = new Map();
   private performanceMetrics: DatabasePerformanceMetrics;
   private realtimeChannels: Map<string, any> = new Map();
@@ -211,15 +225,12 @@ export class EnhancedDatabaseService {
    */
   private async initializeRedisClient(): Promise<void> {
     try {
-      if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
-        this.redis = new Redis({
-          url: process.env.UPSTASH_REDIS_REST_URL,
-          token: process.env.UPSTASH_REDIS_REST_TOKEN,
-          retry: {
-            retries: 3,
-            backoff: (retryCount) => Math.pow(2, retryCount) * 1000
-          }
+      if (process.env.REDIS_URL && Redis) {
+        this.redis = Redis.createClient({
+          url: process.env.REDIS_URL,
         });
+
+        await this.redis.connect();
         
         // Test Redis connection
         await this.redis.ping();
@@ -231,7 +242,7 @@ export class EnhancedDatabaseService {
       }
     } catch (error) {
       logger.warn('Redis cache not available for Lusophone database service, using in-memory cache', {
-        error: error.message,
+        error: error instanceof Error ? error.message : String(error),
         area: 'performance',
         culturalContext: 'lusophone',
         action: 'redis_cache_fallback'

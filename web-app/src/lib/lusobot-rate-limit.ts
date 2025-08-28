@@ -8,7 +8,10 @@
 // Dynamic import for Redis to handle missing dependency gracefully
 let Redis: any = null
 try {
-  Redis = require('@upstash/redis').Redis
+  // Only attempt Redis if environment variables are available
+  if (process.env.REDIS_URL) {
+    Redis = require('redis');
+  }
 } catch (error) {
   // Redis not available, will use in-memory fallback
   console.warn('Redis not available for rate limiting, using in-memory fallback')
@@ -113,11 +116,14 @@ export class LusoBotRateLimit {
   private memoryStore: Map<string, { count: number; resetTime: number }> = new Map()
 
   constructor() {
-    if (Redis && process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+    if (Redis && process.env.REDIS_URL) {
       try {
-        this.redis = new Redis({
-          url: process.env.UPSTASH_REDIS_REST_URL,
-          token: process.env.UPSTASH_REDIS_REST_TOKEN
+        this.redis = Redis.createClient({
+          url: process.env.REDIS_URL
+        })
+        this.redis.connect().catch((error: any) => {
+          console.warn('Failed to connect to Redis, using memory store:', error)
+          this.redis = null
         })
       } catch (error) {
         console.warn('Failed to initialize Redis, using memory store:', error)
@@ -156,10 +162,8 @@ export class LusoBotRateLimit {
 
       if (allowed) {
         // Increment counter
-        const pipeline = this.redis.pipeline()
-        pipeline.incr(redisKey)
-        pipeline.expire(redisKey, Math.ceil(config.windowMs / 1000))
-        await pipeline.exec()
+        await this.redis.incr(redisKey)
+        await this.redis.expire(redisKey, Math.ceil(config.windowMs / 1000))
       }
 
       // Check if burst limit exceeded (more serious violation)

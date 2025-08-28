@@ -15,7 +15,7 @@ import { NavigationProvider } from "@/context/NavigationContext";
 import Header from "@/components/Header";
 import ErrorBoundary, { ComponentErrorBoundary } from "@/components/ErrorBoundary";
 import dynamic from "next/dynamic";
-import { WidgetManager } from "@/components/WidgetManager";
+import WidgetManager from "@/components/WidgetManager";
 import { METADATA_BASE } from "@/config/site";
 
 // Dynamic imports for heavy components

@@ -13,7 +13,7 @@
 
 import { supabase } from '@/lib/supabase'
 import type { MatchingResult, RealTimeMatchingMetrics } from './AdvancedMatchingAlgorithms'
-import type { SaudadeProfile, CulturalDepthProfile } from '@/components/matches/SaudadeMatchingSystem'
+// import type { SaudadeProfile, CulturalDepthProfile } from '@/components/matches/SaudadeMatchingSystem' // Complex matching system removed
 
 // Performance Analytics Types
 export interface MatchingPerformanceData {

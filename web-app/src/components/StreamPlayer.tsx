@@ -163,28 +163,28 @@ export default function StreamPlayer({
     return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
-  // Initialize HLS if self-hosted URL is present (dynamic import to avoid SSR/type issues)
+  // Basic HLS support for Portuguese cultural streaming (hls.js removed for simplicity)
   useEffect(() => {
     if (!stream.hlsUrl || !videoRef.current) return;
     const video = videoRef.current;
-    let hls: any;
-    const setup = async () => {
-      const mod: any = await import("hls.js");
-      const HLS = mod.default;
-      if (HLS && HLS.isSupported && HLS.isSupported()) {
-        hls = new HLS({ enableWorker: true, lowLatencyMode: true });
-        hls.loadSource(stream.hlsUrl as string);
-        hls.attachMedia(video);
-      } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-        video.src = stream.hlsUrl as string;
-      }
-    };
-    setup();
-    return () => {
-      if (hls) {
-        try { hls.destroy(); } catch {}
-      }
-    };
+    
+    // Use native HLS support for Safari/iOS, basic video for others
+    if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      video.src = stream.hlsUrl as string;
+      logger.info('Native HLS playback initialized for Portuguese cultural stream', {
+        area: 'streaming',
+        culturalContext: 'portuguese',
+        action: 'native_hls_initialized',
+        streamId: stream.id
+      });
+    } else {
+      logger.warn('HLS not natively supported, using fallback', {
+        area: 'streaming',
+        culturalContext: 'portuguese',
+        action: 'hls_fallback',
+        streamId: stream.id
+      });
+    }
   }, [stream.hlsUrl]);
 
   return (

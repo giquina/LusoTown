@@ -23,7 +23,7 @@ import Footer from '@/components/Footer'
 import PersonalizedFeed from '@/components/PersonalizedFeed'
 import EventFeed from '@/components/EventFeed'
 import LiveUpdateIndicator from '@/components/LiveUpdateIndicator'
-import FeedFilters, { FeedFilters as FeedFiltersType } from '@/components/FeedFilters'
+import FeedFilters from '@/components/social/FeedFilters'
 import PhotoUpload, { UploadedPhoto } from '@/components/PhotoUpload'
 import EventFeedCard, { EventFeedCardData } from '@/components/EventFeedCard'
 import { useLanguage } from '@/context/LanguageContext'
@@ -156,15 +156,7 @@ export default function CommunityFeed() {
   const [uploadedPhotos, setUploadedPhotos] = useState<UploadedPhoto[]>([])
   
   // Enhanced filters state
-  const [filters, setFilters] = useState<FeedFiltersType>({
-    eventType: [],
-    location: [],
-    dateRange: 'all',
-    priceRange: 'all',
-    spotsAvailable: false,
-    culturalTags: [],
-    followingOnly: false
-  })
+  const [activeFilter, setActiveFilter] = useState<'all' | 'following' | 'cultural' | 'services' | 'events'>('all')
   
   const isPortuguese = language === 'pt'
 
@@ -214,10 +206,10 @@ export default function CommunityFeed() {
     setUploadedPhotos(photos)
   }
 
-  const handleFiltersChange = (newFilters: FeedFiltersType) => {
-    setFilters(newFilters)
+  const handleFiltersChange = (filter: 'all' | 'following' | 'cultural' | 'services' | 'events') => {
+    setActiveFilter(filter)
     // Apply filters to posts here - for now just update state
-    console.log('Filters updated:', newFilters)
+    console.log('Filter updated:', filter)
   }
 
   const handleLiveUpdate = (update: any) => {
@@ -321,10 +313,9 @@ export default function CommunityFeed() {
             <section className="py-6">
               <div className="container-width">
                 <FeedFilters
-                  filters={filters}
-                  onFiltersChange={handleFiltersChange}
-                  isOpen={showFilters}
-                  onToggle={() => setShowFilters(!showFilters)}
+                  activeFilter={activeFilter}
+                  onFilterChange={handleFiltersChange}
+                  className="mx-auto max-w-4xl"
                 />
               </div>
             </section>
