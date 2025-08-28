@@ -2,9 +2,11 @@ import { NextRequest, NextResponse } from 'next/server'
 import { CULTURAL_EVENTS, getFeaturedEvents } from '@/config/cultural-events'
 import { LUSOPHONE_CELEBRATIONS } from '@/config/lusophone-celebrations'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url)
+    const { searchParams } = request.nextUrl
     const limit = parseInt(searchParams.get('limit') || '6')
     const category = searchParams.get('category') || 'all'
     const location = searchParams.get('location') || 'all'

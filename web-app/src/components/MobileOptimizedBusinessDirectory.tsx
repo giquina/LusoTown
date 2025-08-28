@@ -39,7 +39,7 @@ export default function MobileOptimizedBusinessDirectory({
   const businessesRef = usePortugueseScrollAnimation(300)
 
   // Get businesses from config
-  const allBusinesses = businessDirectoryCarousels.flatMap(carousel => carousel.items)
+  const allBusinesses = businessDirectoryCarousels.flatMap(carousel => carousel.businesses)
   
   // Filter businesses based on search and filters
   const filteredBusinesses = allBusinesses.filter(business => {
