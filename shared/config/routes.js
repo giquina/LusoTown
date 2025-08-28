@@ -39,7 +39,6 @@ const ROUTES = {
   // Services
   transport: '/transport',
   transportGroup: '/transport?mode=group',
-  transportLuxury: '/transport?type=luxury',
   services: '/services',
   
   // Business
@@ -72,11 +71,9 @@ const ROUTES = {
   partnerships: '/partnerships',
   universities: '/universities',
   mentorship: '/mentorship',
-  corporatePartnerships: '/corporate-partnerships',
   portugueseInstitutionalPartnerships: '/portuguese-institutional-partnerships',
   
   // Cultural Communities
-  brazilianEliteCulture: '/brazilian-elite-culture',
   portugueseSpeakingNations: '/portuguese-speaking-nations',
   
   // Support & Information
@@ -202,7 +199,7 @@ const ROUTE_PATTERNS = {
 const ROUTE_CATEGORIES = {
   public: [
     'home', 'events', 'businessDirectory', 'about', 'contact', 
-    'pricing', 'howItWorks', 'tours', 'instituteCamoes', 'brazilianEliteCulture', 'portugueseSpeakingNations'
+    'pricing', 'howItWorks', 'tours', 'instituteCamoes', 'portugueseSpeakingNations'
   ],
   auth: [
     'signup', 'login', 'forgotPassword'
@@ -265,7 +262,6 @@ const PORTUGUESE_ROUTES = {
 
 // Brazilian Community Specific Routes
 const BRAZILIAN_ROUTES = {
-  eliteCulture: ROUTES.brazilianEliteCulture,
   casaDoBrasil: '/casa-do-brasil',
   brazilianBusiness: buildRouteWithQuery(ROUTES.businessDirectory, { country: 'brazil' }),
   brazilianEvents: buildRouteWithQuery(ROUTES.events, { category: 'brazilian' }),

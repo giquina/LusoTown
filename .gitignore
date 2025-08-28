@@ -7,10 +7,17 @@ node_modules/
 
 # Testing
 /coverage
+.jest-cache/
+**/.jest-cache/
+/test-results/
+/playwright-report/
+*.spec.js.snap
 
 # Production
 /build
 /dist
+/.next/
+**/next-env.d.ts
 
 # Misc
 .DS_Store

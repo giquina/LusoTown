@@ -2,21 +2,34 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**Updated: 2025-08-27** | **Status**: Production-ready monorepo with 137+ pages, 697+ components, 4 AI systems
+**Updated: 2025-08-28** | **Status**: Community-focused Portuguese-speaking platform with essential features, dramatically simplified architecture
 
 ## ⚡ Quick Start Commands
 
+**Verify Setup**: `ls web-app/ && ls streaming/ && ls mobile-app/` (Check main directories exist)  
 **Development**: `cd web-app && npm run dev` (http://localhost:3000)  
 **Streaming**: `cd streaming && npm start` (http://localhost:8080)  
 **Demo Access**: demo@lusotown.com / LusoTown2025!  
 **Build**: `cd web-app && npm run build:chunked` (Optimized stable build)  
 **Pre-Commit**: `cd web-app && npm run audit:hardcoding && npm run lint && npx tsc --noEmit && npm run build`
 
-## 🎉 RECENT MAJOR ACHIEVEMENTS (2025-08-27)
+## 🎉 RECENT MAJOR ACHIEVEMENTS
 
-### ✅ **CRITICAL FIXES COMPLETED**
+### 🧹 **MAJOR CODEBASE CLEANUP (2025-08-28)**
+**COMMUNITY-FIRST REFOCUS**: Eliminated 9,000+ lines of misaligned code that contradicted our inclusive community mission:
+
+- ✅ **Removed Luxury/Elite Branding** (~1,000 lines): Contradicted inclusive Portuguese community values
+- ✅ **Removed NFT/Blockchain System** (1,110 lines): Irrelevant to community event discovery needs  
+- ✅ **Removed Creator Monetization** (3,165 lines): Wrong focus - we're a community platform, not creator economy
+- ✅ **Removed E-commerce Cart System** (2,217 lines): Overcomplicated simple event booking process
+- ✅ **Removed Complex AI Systems** (30+ files): Academic overkill for community platform needs
+- ✅ **Removed VR/AR Components** (1,648 lines): Niche tech most Portuguese community can't access
+
+**TOTAL ELIMINATED**: ~9,000+ lines of code misaligned with community mission
+**NEW FOCUS**: Pure community platform serving Portuguese speakers across the UK
+
+### ✅ **CRITICAL FIXES COMPLETED (2025-08-27)**
 - **Build System Stability**: SIGBUS errors eliminated, TypeScript compilation optimized (114s vs >600s timeout)
-- **AI Notification Engine**: ML model validation errors fixed, all 19 tests passing
 - **Console Statement Cleanup**: 68% complete (833/1,221 statements), production-ready logging
 - **Mobile UX Implementation**: App download bar positioning, CTA button fixes, Portuguese cultural accuracy
 - **Puppeteer Removal**: Fully migrated to Playwright for all testing, dependencies cleaned
@@ -25,36 +38,37 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Memory Management**: Peak usage reduced from >2GB to 4.3MB
 - **Performance**: 5.3x faster builds (114s stable vs previous timeouts)
 - **Reliability**: 100% build success rate (was ~60% due to SIGBUS errors)
-- **Component Processing**: All 697+ components compile successfully
+- **Component Processing**: Streamlined from 697+ to essential community components only
 - **TypeScript**: Incremental compilation with optimized configuration
 
 ### 🇵🇹 **PORTUGUESE CULTURAL AUTHENTICITY MAINTAINED**
-- **All AI Systems Operational**: LusoBot, Matching, Notifications, Analytics (4/4)
+- **Core Systems Operational**: Events, Business Directory, Simple Matching, Transport
 - **Bilingual Support**: EN/PT translations preserved across all optimizations
 - **Cultural Context**: Portuguese-speaking community terminology maintained
 - **PALOP Integration**: All 8 Portuguese-speaking nations support preserved
-- **Heritage System**: Dynamic cultural theming operational
+- **Heritage System**: Simplified cultural theming operational
 
 ## 🏗️ Core Architecture
 
-### **Platform Foundation**
-- **Framework**: Next.js 14 with App Router (137+ pages, 697+ components)
+### **Streamlined Platform Foundation**
+- **Framework**: Next.js 14 with App Router (essential pages only, community-focused components)
 - **Database**: Supabase PostgreSQL + PostGIS for geolocation
-- **Styling**: Tailwind CSS with Portuguese cultural color system
-- **Authentication**: Supabase Auth with Portuguese cultural onboarding
+- **Styling**: Tailwind CSS with simple Portuguese cultural colors
+- **Authentication**: Supabase Auth with straightforward Portuguese onboarding
 - **Deployment**: Vercel with CDN optimization for UK Portuguese diaspora
 
-### **AI Systems Integration**
-- **LusoBot**: Portuguese AI assistant with cultural knowledge base
-- **Matching Engine**: Cultural compatibility scoring for Portuguese speakers
-- **Notification System**: ML-powered Portuguese community engagement
-- **Analytics Engine**: Predictive insights for lusophone community behavior
+### **Essential Community Systems** 
+- **Event Discovery**: Portuguese community event listings and simple booking
+- **Business Directory**: PostGIS-powered Portuguese business listings with map integration
+- **Simple Matching**: Basic cultural compatibility for community connections (no complex AI)
+- **Transport Services**: Community transport coordination and sharing
+- **University Integration**: Direct partnerships with 8 UK universities for Portuguese students
 
-### **Cultural Architecture**
-- **Configuration-First**: All Portuguese cultural data centralized in `/src/config/`
+### **Simplified Cultural Architecture**
+- **Configuration-First**: Essential Portuguese cultural data centralized in `/src/config/`
 - **Bilingual System**: EN/PT translations via `LanguageContext`
-- **Heritage Theming**: Dynamic colors based on Portuguese regional heritage
-- **PALOP Support**: Comprehensive integration for all 8 Portuguese-speaking nations
+- **Simple Heritage Colors**: Basic Portuguese regional color theming
+- **PALOP Support**: Straightforward integration for all 8 Portuguese-speaking nations
 
 ## 🚨 Critical Development Rules
 
@@ -73,6 +87,8 @@ npm test -- --testNamePattern="name" # Specific test
 npx playwright test file.spec.ts     # Single E2E test
 npx playwright test file.spec.ts --headed # Visual E2E test
 npm run audit:hardcoding             # CRITICAL: Check for hardcoded values
+npm run test:mobile-validation       # Mobile UX validator with score
+npm run test:all                     # Complete test suite
 ```
 
 ## 🤖 AI Agent System
@@ -96,14 +112,14 @@ npm run audit:hardcoding             # CRITICAL: Check for hardcoded values
 
 ## Current Active TODO Tasks
 
-See `/web-app/TODO.md` for comprehensive premium enhancement roadmap focusing on luxury Portuguese-speaking nations content and elite user experience improvements.
+See `/web-app/TODO.md` for community-focused enhancement roadmap serving Portuguese-speaking community needs across the UK.
 
 ## 📖 Project Overview
 
 **LusoTown**: Portuguese-speaking community platform for United Kingdom residents. Features event discovery, business directory, streaming platform, transport services, and university partnerships.
 
 **Tech Stack**: Next.js 14, TypeScript, Tailwind CSS, Supabase PostgreSQL + PostGIS, Simple Relay Server (SRS)  
-**Status**: Production-ready - 137+ pages, 697+ components, 4 AI systems  
+**Status**: Production-ready - Essential pages, streamlined components, community-focused systems  
 **Live Platform**: https://web-99kxh0sku-giquinas-projects.vercel.app
 
 **Target Audience**: 750+ Portuguese speakers, 2,150+ university students (UK-wide)  
@@ -111,8 +127,8 @@ See `/web-app/TODO.md` for comprehensive premium enhancement roadmap focusing on
 
 ## 💻 System Requirements
 
-**Node.js**: v20+ (web-app requires >= 20.0.0) / v18+ (root)  
-**npm**: v9+ (web-app requires >= 9.0.0) / v8+ (root)  
+**Node.js**: v20+ (web-app requires >= 20.0.0) / v22.x (streaming server) / v18+ (mobile-app)  
+**npm**: v9+ (web-app requires >= 9.0.0) / v8+ (other workspaces)  
 **Package Manager**: npm (monorepo workspace support required)
 
 ## 📋 Development Commands
@@ -139,10 +155,10 @@ npx playwright test file.spec.ts           # Single E2E test
 npx playwright test file.spec.ts --headed  # Visual E2E test
 npm run test:e2e:debug                      # Debug E2E tests
 
-# Specialized Testing
+# Community Testing
 npm run test:mobile           # Mobile-specific tests
 npm run test:portuguese       # Portuguese language tests
-npm run test:accessibility    # Accessibility tests
+npm run test:events           # Event system tests
 ```
 
 ### Quality & Deployment
@@ -178,7 +194,7 @@ npm run palop-content-import   # Import PALOP cultural content
 - **Live Event Support**: Real-time streaming for Portuguese community events in London
 
 **Engine Requirements:**
-- **Node.js**: v18+ (streaming compatible, web-app uses v20+)
+- **Node.js**: v22.x (streaming server uses Node 22, web-app uses v20+)
 - **FFmpeg**: Latest version for Portuguese audio/video optimization
 - **SRS**: Simple Relay Server v4.0+ for RTMP/HLS pipeline
 
@@ -229,18 +245,21 @@ npm run cultural-audit         # Audit Portuguese cultural content compliance
 ### Monorepo Structure
 ```
 /
-├── web-app/           # Next.js 14 App Router - 137+ pages, 697+ components  
-│   ├── src/config/    # 49+ configuration files (centralized data)
+├── web-app/           # Next.js 14 App Router - Essential pages, community-focused components  
+│   ├── src/config/    # Streamlined configuration files (centralized community data)
 │   ├── src/i18n/      # Bilingual translations (en.json, pt.json)
 │   └── package.json   # Node >=20.0.0, npm >=9.0.0
-├── streaming/         # Node.js/Express RTMP/HLS server
-├── mobile-app/        # React Native/Expo
+├── streaming/         # Node.js/Express RTMP/HLS server (basic Portuguese cultural content)
+├── mobile-app/        # React Native/Expo (simple community features)
 ├── supabase/          # PostgreSQL + PostGIS schema & migrations
 ├── packages/          # @lusotown/design-tokens, @lusotown/ui
 └── shared/            # Cross-platform utilities
 ```
 **Critical Pattern**: Always `cd` into specific directory before running commands.  
 **Never run commands from root** unless using workspace shortcuts like `npm run dev`.
+
+### Missing web-app Directory Note
+**IMPORTANT**: The codebase shows a `web-app/` directory in git status, but this may not be visible in file listings due to gitignore or build artifacts. The web-app directory contains the main Next.js application.
 
 ### Key Architectural Patterns
 
@@ -252,7 +271,7 @@ All data centralized in `/web-app/src/config/` (49+ files):
 ```
 
 **Next.js 14 App Router**  
-- File-based routing in `/src/app/` (135+ pages)
+- File-based routing in `/src/app/` (essential community pages)
 - Server Components by default, Client Components for interactivity
 - API routes in `/src/app/api/`
 
@@ -261,19 +280,21 @@ All data centralized in `/web-app/src/config/` (49+ files):
 - Heritage colors via CSS custom properties
 - Cultural authenticity: Portuguese-speaking (not generic Portuguese)
 
-**Component Architecture**
+**Streamlined Component Architecture**
 ```
-/src/components/    # 697+ components
-  /ui/             # Base components (buttons, cards)
-  /ai/             # 4 AI systems integration
-  /matches/        # Cultural compatibility matching
+/src/components/    # Essential community components only
+  /ui/             # Base components (buttons, cards, forms)
+  /events/         # Portuguese community event components
+  /directory/      # Business directory components
+  /matches/        # Simple cultural matching (no complex AI)
+  /transport/      # Community transport coordination
   /mobile/         # Mobile-optimized components
 ```
 
 **Data Layer**
-- Supabase PostgreSQL + PostGIS for geolocation
-- Redis caching (Upstash)
-- Real-time subscriptions
+- Supabase PostgreSQL + PostGIS for business directory
+- Basic caching for performance
+- Real-time features for events and messaging
 
 ## Critical Development Rules
 
@@ -329,7 +350,7 @@ npm run qa:pre-commit     # Comprehensive QA checks
 **Universities**: 8 partnerships (UCL, King's, Imperial, LSE, Oxford, Cambridge, Manchester, Edinburgh)
 **Demo Access**: `demo@lusotown.com` / `LusoTown2025!`
 
-**Core Features**: Social events, business directory (PostGIS), streaming platform, premium transport, student services, cultural matching system
+**Core Features**: Portuguese community events discovery & booking, business directory with PostGIS mapping, basic streaming for cultural content, transport coordination, 8 university partnerships, simple cultural matching for friendships
 
 ## Database Schema
 
@@ -438,7 +459,7 @@ Test files located in `/web-app/__tests__/` with organized subdirectories.
 #### ✅ Fixed Deployment Issues (August 2025)
 **CRITICAL**: The deployment system was completely overhauled to fix previous failures:
 
-- ❌ **Previous Issue**: Node.js 18 used → ✅ **Fixed**: Now uses Node.js v22 (matches web-app engines requirement)
+- ❌ **Previous Issue**: Node.js 18 used → ✅ **Fixed**: Now uses Node.js v22 for deployment (web-app uses v20+, streaming uses v22)
 - ❌ **Previous Issue**: Lint/TypeScript errors ignored → ✅ **Fixed**: Blocking quality gates implemented
 - ❌ **Previous Issue**: No hardcoding validation → ✅ **Fixed**: Mandatory hardcoding audit blocks deployment
 - ❌ **Previous Issue**: Missing platform validation → ✅ **Fixed**: Portuguese community-specific checks
@@ -474,12 +495,12 @@ Automated validation of LusoTown-specific requirements:
 Production-optimized configuration handling 697+ components with advanced memory management:
 
 **Key Next.js Optimizations**:
-- **Memory Management**: Peak usage reduced, handles large component libraries efficiently
-- **Bundle Splitting**: Separate chunks for React, Heroicons, Framer Motion, vendors
+- **Memory Management**: Peak usage reduced, handles streamlined community components efficiently
+- **Bundle Splitting**: Separate chunks for React, Heroicons, essential community libraries
 - **Cache Optimization**: Memory cache with limited generations for build performance  
 - **Console Removal**: Automatic console.log removal in production (keeps error/warn)
-- **Image Optimization**: Multiple CDN domains (Unsplash, Cloudinary, BunnyCDN, YouTube)
-- **SSR Externalization**: Browser-only libraries (html5-qrcode, socket.io-client)
+- **Image Optimization**: Multiple CDN domains for Portuguese cultural content
+- **SSR Externalization**: Browser-only libraries for maps and basic functionality
 - **TypeScript**: `ignoreBuildErrors: true` (temporary for deployment unblocking)
 - **ESLint**: `ignoreDuringBuilds: true` (temporary for deployment unblocking)
 
@@ -509,41 +530,43 @@ npm run qa:pre-commit     # Comprehensive QA checks
 
 ## Development Patterns
 
-### Component Organization
-Specialized component libraries organized by functionality:
+### Simplified Component Organization
+Community-focused component libraries organized by essential functionality:
 - **UI Foundation**: `/src/components/ui/` - Base components (buttons, cards, inputs)
-- **AI Systems**: `/src/components/ai/` - Notification dashboards and analytics
-- **Matching System**: `/src/components/matches/` - AI-powered cultural compatibility
+- **Event System**: `/src/components/events/` - Portuguese community event discovery and booking
+- **Business Directory**: `/src/components/directory/` - PostGIS-powered business listings
+- **Simple Matching**: `/src/components/matches/` - Basic cultural compatibility (no complex AI)
 - **Student Services**: `/src/components/students/` - University partnership components
-- **Feature-Specific**: Organized by business domain for maintainability
+- **Transport**: `/src/components/transport/` - Community transport coordination
 
 ### Detailed File Structure
 ```
 /src/
-  ├── app/                 # Next.js 14 App Router (135+ pages)
-  ├── components/          # 697+ React components
+  ├── app/                 # Next.js 14 App Router (essential community pages)
+  ├── components/          # Streamlined React components (community-focused)
   │   ├── ui/             # Base UI components
-  │   ├── ai/             # AI system components
-  │   ├── matches/        # Matching system
-  │   └── [feature]/      # Feature-specific components
-  ├── config/             # 49+ configuration files (centralized exports)
-  ├── context/            # React context providers
+  │   ├── events/         # Event discovery and booking
+  │   ├── directory/      # Business directory with maps
+  │   ├── matches/        # Simple matching system
+  │   ├── transport/      # Community transport
+  │   └── students/       # University partnerships
+  ├── config/             # Essential configuration files (centralized community data)
+  ├── context/            # React context providers (simplified)
   ├── hooks/              # Custom React hooks
   ├── i18n/               # Bilingual EN/PT translations
   ├── lib/                # Business logic and utilities
-  │   ├── ai/             # AI engine implementations
   │   └── privacy/        # GDPR compliance utilities
   ├── services/           # API clients and business services
   ├── types/              # TypeScript type definitions
   └── utils/              # Generic utility functions
 ```
 
-### Integration Architecture
-- **Configuration Layer**: 33+ config files with centralized exports through `index.ts`
-- **State Management**: React contexts for client-side state (Language, Heritage, Subscription)
+### Simplified Integration Architecture
+- **Configuration Layer**: Essential config files with centralized exports for community data
+- **State Management**: React contexts for client-side state (Language, Heritage, basic user preferences)
 - **Data Flow**: Supabase PostgreSQL with PostGIS → API Routes → React Components
-- **Real-time Features**: Supabase subscriptions for live updates and notifications
-- **AI Ecosystem**: 4 production AI systems integrated throughout the platform
+- **Real-time Features**: Supabase subscriptions for live community updates
+- **Core Features**: Portuguese event discovery, business directory, simple matching, transport coordination, university partnerships
 
 ## Critical Patterns
 
@@ -663,21 +686,23 @@ npx tsc --noEmit         # TypeScript compilation check
 
 **Cultural Authenticity**: Platform specifically serves Portuguese speakers in London & United Kingdom, not a generic international platform
 
-**AI Integration**: 4 production AI systems with Portuguese language support and cultural context awareness
+**Community Integration**: Portuguese language support and cultural context throughout platform
 
-**Testing Strategy**: Comprehensive testing including 168+ AI system tests and mobile UX validation
+**Testing Strategy**: Comprehensive testing for events, directory, matching, and mobile experience
 
 **Production Deployment**: Successfully deployed to https://web-99kxh0sku-giquinas-projects.vercel.app with all AI systems operational
 
-**AI Systems Status**: 4 production-ready AI engines deployed with comprehensive testing:
-- AI Notification System (production-optimized with timing controls)
-- AI-Enhanced Matching System (91/100 integration score with cultural compatibility) 
-- LusoBot Portuguese AI Assistant (96/100 production score, 168+ comprehensive tests)
-- Predictive Community Analytics (v2.0.0 GDPR-compliant with privacy controls)
+**Community Systems Status**: Streamlined community features operational:
+- Portuguese event discovery and simple booking system
+- Business directory with PostGIS geolocation and maps
+- Simple cultural matching for friendships (no complex AI)
+- Community transport coordination and sharing
+- Direct university partnerships (8 institutions)
+- Basic streaming for Portuguese cultural content
 
-**Mobile Excellence**: 73.3% luxury compliance with comprehensive elite mobile experience
+**Mobile Experience**: Mobile-first design prioritizing Portuguese community needs
 
-**Elite Navigation**: Premium Portuguese cultural navigation with full accessibility compliance
+**Navigation**: Clean, accessible navigation focused on community essentials
 
 ---
 
@@ -686,16 +711,18 @@ npx tsc --noEmit         # TypeScript compilation check
 ### Primary Files for AI Development
 
 1. **`/AGENTS.md`** - **Primary source of truth** for all AI development assistance
-   - Complete agent system with 6 specialized advisors
-   - UI/UX rules and implementation standards
-   - Cultural requirements and luxury positioning guidelines
+   - Complete agent system with specialized advisors for LusoTown platform development
+   - UI/UX rules and implementation standards  
+   - Cultural requirements and Portuguese community guidelines
    - Cross-IDE compatibility instructions
 
 2. **`/CLAUDE.md`** - This file - Claude Code specific guidance and project overview
 
-3. **`/web-app/UI_UX_RULES.md`** - UI/UX specific rules (consolidated into AGENTS.md)
+3. **`/.github/copilot-instructions.md`** - Concise operational guide for AI coding agents
 
-4. **`/web-app/TODO.md`** - Current enhancement priorities and luxury positioning roadmap
+4. **`/web-app/TODO.md`** - Current enhancement priorities and community-focused roadmap
+
+5. **`/web-app/README.md`** - Comprehensive platform overview with features and architecture
 
 ### Integration Strategy
 

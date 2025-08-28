@@ -178,31 +178,16 @@ html {
 }
 
 /* PWA and Mobile Optimization Styles */
-@import '../styles/pwa.css';
 
 /* Heritage-Configurable Color System */
-@import '../styles/heritage-colors.css';
 
 /* Luxury Mobile Experience Enhancement */
-@import '../styles/luxury-mobile.css';
-
-/* Elite Mobile Experience for Affluent Portuguese-speaking community */
-@import '../styles/elite-mobile.css';
-
-/* Advanced Mobile UX Enhancements for Portuguese Cultural Experience */
-@import '../styles/mobile-enhancements.css';
-
-/* Premium Accessibility Features for Portuguese-speaking community */
-@import '../styles/premium-accessibility.css';
 
 /* Framer Motion Fixes for Tailwind CSS Color Animation Conflicts */
-@import '../styles/framer-motion-fixes.css';
 
 /* Universal Mobile Design System - Portuguese Cultural Mobile Framework */
-@import '../styles/mobile-design-system.css';
 
 /* Mobile Utility Classes - Complementary Portuguese Cultural Mobile Utilities */
-@import '../styles/mobile-utilities.css';
 
 /* Ensure proper emoji and flag rendering across all platforms */
 .flag-emoji {
