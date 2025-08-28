@@ -423,15 +423,13 @@ export function PlatformIntegrationProvider({
       ),
       userEngagementScore: Math.min(
         10,
-        safeCartItems.length * 0.5 +
-          safeConnections.length * 0.3 +
-          safeFavorites.length * 0.2 +
+        safeConnections.length * 0.5 +
+          safeFavorites.length * 0.3 +
           (hasActiveSubscription ? 2 : 0) +
-          safeNetworkStats.eventsAttended * 0.4
+          safeNetworkStats.eventsAttended * 0.6
       ),
       serviceUsageFrequency: {
         ...prev.serviceUsageFrequency,
-        cart_activity: safeCartItems.length,
         community_networking: safeConnections.length,
         subscription_tier: hasActiveSubscription ? 1 : 0,
       },

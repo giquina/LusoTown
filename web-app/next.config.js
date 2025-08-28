@@ -81,6 +81,18 @@ const nextConfig = {
       'react-native$': 'react-native-web'
     };
     
+    // Suppress OpenTelemetry/Prisma instrumentation warnings in development
+    if (dev) {
+      config.infrastructureLogging = {
+        level: 'error',
+      };
+      
+      config.ignoreWarnings = [
+        /Critical dependency: the request of a dependency is an expression/,
+        /Critical dependency: require function is used in a way in which dependencies cannot be statically extracted/,
+      ];
+    }
+    
     return config;
   },
   

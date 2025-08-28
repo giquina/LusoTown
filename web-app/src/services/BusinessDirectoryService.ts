@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase'
+import logger from '@/utils/logger'
 
 export interface PortugueseBusiness {
   id: string
@@ -80,6 +81,13 @@ export interface BusinessSearchFilters {
   open_now?: boolean
   limit?: number
   offset?: number
+  // New location-based filters
+  latitude?: number
+  longitude?: number
+  radius_km?: number
+  cultural_focus?: string
+  portuguese_specialties?: string[]
+  max_price_level?: number
 }
 
 export interface BusinessCategory {
@@ -90,11 +98,237 @@ export interface BusinessCategory {
   business_count: number
 }
 
+export interface BusinessCluster {
+  cluster_id: string
+  cluster_lat: number
+  cluster_lng: number
+  business_count: number
+  avg_rating: number
+  dominant_type: string
+  cultural_mix: Record<string, number>
+  business_ids: string[]
+}
+
+export interface LocationSearchParams {
+  latitude: number
+  longitude: number
+  radius_km?: number
+  business_types?: string[]
+  min_rating?: number
+  max_price_level?: number
+  cultural_focus?: string
+  portuguese_specialties?: string[]
+  verified_only?: boolean
+  open_now?: boolean
+  limit?: number
+  offset?: number
+}
+
+export interface HybridSearchParams {
+  search_query?: string
+  latitude?: number
+  longitude?: number
+  radius_km?: number
+  business_types?: string[]
+  min_rating?: number
+  verified_only?: boolean
+  limit?: number
+}
+
 class BusinessDirectoryService {
   private supabaseClient = supabase
 
   /**
-   * Get all Portuguese businesses with filters
+   * Get nearby Portuguese businesses using optimized PostGIS search
+   */
+  async getNearbyBusinesses(params: LocationSearchParams): Promise<PortugueseBusiness[]> {
+    const startTime = Date.now()
+    
+    try {
+      const { data, error } = await this.supabaseClient.rpc(
+        'find_nearby_portuguese_businesses',
+        {
+          user_lat: params.latitude,
+          user_lng: params.longitude,
+          radius_km: params.radius_km || 10.0,
+          business_types: params.business_types || null,
+          min_rating: params.min_rating || 0.0,
+          max_price_level: params.max_price_level || 4,
+          cultural_focus_filter: params.cultural_focus || null,
+          portuguese_specialties_filter: params.portuguese_specialties || null,
+          verified_only: params.verified_only ?? true,
+          open_now: params.open_now ?? false,
+          limit_results: params.limit || 20,
+          offset_results: params.offset || 0
+        }
+      )
+
+      if (error) {
+        logger.error('Nearby businesses search error:', error)
+        throw error
+      }
+
+      // Log performance metrics
+      const executionTime = Date.now() - startTime
+      if (executionTime > 200) {
+        logger.warn(`Slow nearby business search: ${executionTime}ms`, {
+          params,
+          resultCount: data?.length || 0
+        })
+      }
+
+      return (data || []).map(business => ({
+        id: business.business_id,
+        business_name: business.business_name,
+        business_type: business.business_type,
+        description: business.description,
+        address: business.address,
+        postcode: business.postcode,
+        phone: business.phone,
+        website: business.website_url,
+        average_rating: business.average_rating,
+        review_count: business.total_reviews,
+        price_range: business.price_range,
+        specialties: business.portuguese_specialties,
+        portuguese_authenticity_score: business.recommendation_score * 10, // Convert to 0-100 scale
+        serves_portuguese_community: true,
+        staff_speaks_portuguese: true,
+        accepts_multibanco: true, // Assume true for Portuguese businesses
+        verified_status: business.is_verified ? 'verified' : 'pending',
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+        is_open: business.is_open_now,
+        // Add distance info
+        distance_km: business.distance_km
+      }))
+    } catch (error) {
+      logger.error('Nearby businesses search failed:', error)
+      throw new Error('Failed to search nearby Portuguese businesses')
+    }
+  }
+
+  /**
+   * Hybrid search combining text and location
+   */
+  async searchBusinessesHybrid(params: HybridSearchParams): Promise<PortugueseBusiness[]> {
+    const startTime = Date.now()
+    
+    try {
+      const { data, error } = await this.supabaseClient.rpc(
+        'search_portuguese_businesses_hybrid',
+        {
+          search_query: params.search_query || null,
+          user_lat: params.latitude || null,
+          user_lng: params.longitude || null,
+          radius_km: params.radius_km || 50.0,
+          business_types: params.business_types || null,
+          min_rating: params.min_rating || 0.0,
+          verified_only: params.verified_only ?? true,
+          limit_results: params.limit || 20
+        }
+      )
+
+      if (error) {
+        logger.error('Hybrid business search error:', error)
+        throw error
+      }
+
+      // Log performance metrics
+      const executionTime = Date.now() - startTime
+      if (executionTime > 300) {
+        logger.warn(`Slow hybrid business search: ${executionTime}ms`, {
+          params,
+          resultCount: data?.length || 0
+        })
+      }
+
+      return (data || []).map(business => ({
+        id: business.business_id,
+        business_name: business.business_name,
+        business_type: business.business_type,
+        description: business.description,
+        address: business.address,
+        postcode: business.postcode,
+        phone: business.phone,
+        website: business.website_url,
+        average_rating: business.average_rating,
+        review_count: business.total_reviews,
+        price_range: business.price_range,
+        specialties: business.portuguese_specialties,
+        portuguese_authenticity_score: business.relevance_score * 10,
+        serves_portuguese_community: true,
+        staff_speaks_portuguese: true,
+        accepts_multibanco: true,
+        verified_status: business.is_verified ? 'verified' : 'pending',
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+        distance_km: business.distance_km,
+        match_type: business.match_type
+      }))
+    } catch (error) {
+      logger.error('Hybrid business search failed:', error)
+      throw new Error('Failed to search Portuguese businesses')
+    }
+  }
+
+  /**
+   * Get business clusters for map visualization
+   */
+  async getBusinessClusters(
+    bounds: {
+      south: number
+      west: number
+      north: number
+      east: number
+    },
+    zoomLevel: number = 12,
+    filters: {
+      business_types?: string[]
+      min_rating?: number
+      verified_only?: boolean
+    } = {}
+  ): Promise<BusinessCluster[]> {
+    const startTime = Date.now()
+    
+    try {
+      const { data, error } = await this.supabaseClient.rpc(
+        'get_business_clusters_for_map',
+        {
+          bounds_south: bounds.south,
+          bounds_west: bounds.west,
+          bounds_north: bounds.north,
+          bounds_east: bounds.east,
+          zoom_level: zoomLevel,
+          business_types: filters.business_types || null,
+          min_rating: filters.min_rating || 0.0,
+          verified_only: filters.verified_only ?? true
+        }
+      )
+
+      if (error) {
+        logger.error('Business clusters error:', error)
+        throw error
+      }
+
+      // Log performance metrics
+      const executionTime = Date.now() - startTime
+      if (executionTime > 100) {
+        logger.warn(`Slow business clustering: ${executionTime}ms`, {
+          bounds,
+          zoomLevel,
+          resultCount: data?.length || 0
+        })
+      }
+
+      return data || []
+    } catch (error) {
+      logger.error('Business clustering failed:', error)
+      throw new Error('Failed to get business clusters')
+    }
+  }
+
+  /**
+   * Get all Portuguese businesses with filters (legacy method, enhanced)
    */
   async getPortugueseBusinesses(filters: BusinessSearchFilters = {}): Promise<PortugueseBusiness[]> {
     let query = this.supabaseClient

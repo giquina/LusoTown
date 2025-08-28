@@ -28,6 +28,7 @@ import { useFavorites } from '@/context/FavoritesContext'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ROUTES } from '@/config/routes'
+import PortugueseEventsCalendar from './events/PortugueseEventsCalendar'
 
 interface PortugueseEvent {
   id: string
@@ -74,6 +75,7 @@ interface EventsDiscoveryProps {
   compact?: boolean
   focusNeighborhood?: string
   culturalCategory?: string
+  showCalendarToggle?: boolean
 }
 
 const PORTUGUESE_NEIGHBORHOODS: NeighborhoodData[] = [
@@ -171,7 +173,8 @@ export default function EventsDiscovery({
   className = '',
   compact = false,
   focusNeighborhood,
-  culturalCategory
+  culturalCategory,
+  showCalendarToggle = true
 }: EventsDiscoveryProps) {
   const { language } = useLanguage()
   const { isFavorite, toggleFavorite } = useFavorites()
@@ -183,6 +186,7 @@ export default function EventsDiscovery({
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 100])
   const [showFilters, setShowFilters] = useState(false)
   const [sortBy, setSortBy] = useState<'date' | 'distance' | 'authenticity' | 'popularity'>('date')
+  const [viewMode, setViewMode] = useState<'list' | 'calendar'>('list')
 
   const isPortuguese = language === 'pt'
 
@@ -503,12 +507,41 @@ export default function EventsDiscovery({
               </p>
             </div>
           </div>
-          <button
-            onClick={() => setShowFilters(!showFilters)}
-            className="md:hidden bg-gray-100 p-2.5 rounded-lg hover:bg-gray-200 transition-colors flex-shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center"
-          >
-            <AdjustmentsHorizontalIcon className="w-5 h-5" />
-          </button>
+          <div className="flex items-center space-x-2">
+            {/* View Toggle */}
+            {showCalendarToggle && (
+              <div className="flex bg-gray-100 rounded-lg p-1">
+                <button
+                  onClick={() => setViewMode('list')}
+                  className={cn(
+                    'px-3 py-1 text-sm rounded-md transition-colors',
+                    viewMode === 'list'
+                      ? 'bg-white text-primary-600 shadow-sm'
+                      : 'text-gray-600 hover:text-gray-900'
+                  )}
+                >
+                  {isPortuguese ? 'Lista' : 'List'}
+                </button>
+                <button
+                  onClick={() => setViewMode('calendar')}
+                  className={cn(
+                    'px-3 py-1 text-sm rounded-md transition-colors',
+                    viewMode === 'calendar'
+                      ? 'bg-white text-primary-600 shadow-sm'
+                      : 'text-gray-600 hover:text-gray-900'
+                  )}
+                >
+                  {isPortuguese ? 'Calendário' : 'Calendar'}
+                </button>
+              </div>
+            )}
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className="md:hidden bg-gray-100 p-2.5 rounded-lg hover:bg-gray-200 transition-colors flex-shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center"
+            >
+              <AdjustmentsHorizontalIcon className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Search and Quick Filters */}

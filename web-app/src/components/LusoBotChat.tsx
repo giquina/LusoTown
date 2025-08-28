@@ -254,7 +254,7 @@ function MessageBubble({ message, language, isLatest }: MessageBubbleProps) {
           }
         `}
         >
-          <p className="text-sm leading-relaxed whitespace-pre-wrap">
+          <p className="text-base leading-normal whitespace-pre-wrap sm:text-sm sm:leading-relaxed">
             {message.content}
           </p>
 
@@ -758,7 +758,7 @@ export default function LusoBotChat({
       <div
         ref={scrollContainerRef}
         onScroll={handleScroll}
-        className="flex-1 p-4 space-y-1 min-h-0"
+        className="flex-1 p-4 space-y-3 min-h-0 sm:space-y-2"
         style={{ overflowY: "auto", WebkitOverflowScrolling: "touch" }}
         data-lusobot-chat-container
       >
@@ -887,7 +887,7 @@ export default function LusoBotChat({
                       <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">
                         {starter.category}
                       </p>
-                      <p className="font-medium group-hover:text-primary-700 transition-colors leading-tight">
+                      <p className="text-sm font-medium group-hover:text-primary-700 transition-colors leading-normal sm:text-xs sm:leading-tight">
                         {
                           starter[
                             language as keyof Omit<
@@ -978,7 +978,7 @@ export default function LusoBotChat({
                 className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-2xl 
                   focus:ring-2 focus:ring-primary-500 focus:border-transparent
                   disabled:bg-gray-100 disabled:cursor-not-allowed
-                  text-sm"
+                  text-base sm:text-sm"
                 maxLength={500}
               />
 

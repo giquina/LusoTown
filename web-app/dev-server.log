@@ -1,447 +1,17 @@
 
 > lusotown-web@1.0.0 dev
-> next dev
+> SKIP_TYPE_CHECK=true next dev
 
+ ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 is in use, trying 3002 instead.
   ▲ Next.js 14.2.32
-  - Local:        http://localhost:3000
+  - Local:        http://localhost:3002
   - Environments: .env.local
-  - Experiments (use with caution):
-    · esmExternals
-    · scrollRestoration
 
  ✓ Starting...
- ✓ Ready in 2.2s
+   Using tsconfig file: ./tsconfig.json
+ ✓ Ready in 5.3s
  ○ Compiling / ...
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/error.tsx
- GET / 500 in 28820ms
- ⨯ src/context/TooltipContext.tsx (154:11) @ useTooltip
- ⨯ Error: useTooltip must be used within a TooltipProvider
-    at useTooltip (./src/context/TooltipContext.tsx:111:15)
-    at TooltipRenderer (./src/components/ui/Tooltip.tsx:23:121)
-digest: "797545293"
-[0m [90m 152 |[39m   [36mconst[39m context [33m=[39m useContext([33mTooltipContext[39m)[0m
-[0m [90m 153 |[39m   [36mif[39m (context [33m===[39m undefined) {[0m
-[0m[31m[1m>[22m[39m[90m 154 |[39m     [36mthrow[39m [36mnew[39m [33mError[39m([32m'useTooltip must be used within a TooltipProvider'[39m)[0m
-[0m [90m     |[39m           [31m[1m^[22m[39m[0m
-[0m [90m 155 |[39m   }[0m
-[0m [90m 156 |[39m   [36mreturn[39m context[0m
-[0m [90m 157 |[39m }[0m
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/error.tsx
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
- GET / 200 in 399ms
- GET / 200 in 50ms
- GET / 200 in 185ms
- GET / 200 in 83ms
- GET / 200 in 58ms
- GET / 200 in 51ms
- GET / 200 in 50ms
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
- ⨯ ./src/app/layout.tsx
-Error: 
-  [31mx[0m Expression expected
-     ,-[[36;1;4m/workspaces/LusoTown/web-app/src/app/layout.tsx[0m:146:1]
- [2m146[0m | 
- [2m147[0m | const AppDownloadLanding = dynamicImport(
- [2m148[0m | 
- [2m149[0m | const TooltipRenderer = dynamicImport(
-     : [31;1m^^^^^[0m
- [2m150[0m |   () => import("@/components/ui/Tooltip").then((mod) => ({ default: mod.TooltipRenderer })),
- [2m151[0m |   {
- [2m152[0m |     loading: () => null,
-     `----
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./src/app/layout.tsx
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
- GET / 200 in 448ms
- GET / 200 in 54ms
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
- GET / 200 in 1089ms
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
- GET /manifest.webmanifest 200 in 6188ms
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
- GET / 200 in 441ms
- GET / 200 in 90ms
- GET / 200 in 89ms
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
- GET / 200 in 547ms
- GET / 200 in 98ms
- GET / 200 in 74ms
- GET / 200 in 1481ms
- GET / 200 in 1528ms
- GET / 200 in 2203ms
- ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-Critical dependency: the request of a dependency is an expression
-
-Import trace for requested module:
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@prisma/instrumentation/dist/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
-
-../node_modules/require-in-the-middle/index.js
-Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
-
-Import trace for requested module:
-../node_modules/require-in-the-middle/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
-../node_modules/@opentelemetry/instrumentation/build/esm/index.js
-../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
-../node_modules/@sentry/node/build/cjs/index.js
-../node_modules/@sentry/nextjs/build/cjs/index.server.js
-./src/app/global-error.tsx
  ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
 Critical dependency: the request of a dependency is an expression
 
@@ -470,4 +40,32 @@ Import trace for requested module:
 ../node_modules/@sentry/nextjs/build/cjs/index.server.js
 ./src/app/global-error.tsx
 [Pricing Config] Centralized pricing system loaded successfully
+ GET / 200 in 26414ms
+ ⚠ ../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
+../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
+../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
+../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js
+../node_modules/@prisma/instrumentation/dist/index.js
+../node_modules/@sentry/node/build/cjs/integrations/tracing/prisma.js
+../node_modules/@sentry/node/build/cjs/index.js
+../node_modules/@sentry/nextjs/build/cjs/index.server.js
+./src/app/global-error.tsx
+
+../node_modules/require-in-the-middle/index.js
+Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
+
+Import trace for requested module:
+../node_modules/require-in-the-middle/index.js
+../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js
+../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js
+../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js
+../node_modules/@opentelemetry/instrumentation/build/esm/index.js
+../node_modules/@sentry/node/build/cjs/integrations/tracing/postgresjs.js
+../node_modules/@sentry/node/build/cjs/index.js
+../node_modules/@sentry/nextjs/build/cjs/index.server.js
+./src/app/global-error.tsx
 [?25h
