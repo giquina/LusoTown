@@ -219,9 +219,9 @@ export const pageSEO = {
   streaming: {
     title: `Lusophone Live Streaming Platform | ${brand.name}`,
     description:
-      "Get paid to stream for the Portuguese-speaking community. 85/15 revenue split, cultural emotes, and monetize your Lusophone content.",
+      "Stream community events for the Portuguese-speaking community. Cultural emotes and community-focused features for Lusophone content.",
     keywords:
-      "portuguese streaming, live streaming income, portuguese content creator, monetize streaming",
+      "portuguese streaming, live streaming events, portuguese community content, community streaming",
   },
 
   directory: {

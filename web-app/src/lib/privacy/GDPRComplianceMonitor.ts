@@ -5,7 +5,7 @@
  * protection with cultural sensitivity considerations
  */
 
-import { AI_SECURITY_CONFIG } from '@/config/ai-security'
+import { PRIVACY_SECURITY_CONFIG } from '@/config/privacy-security'
 import type { Language } from '@/i18n'
 
 // =============================================================================
@@ -96,7 +96,7 @@ export type GDPRComplianceArea =
 // =============================================================================
 
 export class GDPRComplianceMonitor {
-  private complianceConfig = AI_SECURITY_CONFIG.compliance.gdpr
+  private complianceConfig = PRIVACY_SECURITY_CONFIG.compliance.gdpr
   private auditHistory: GDPRComplianceReport[] = []
 
   // =============================================================================

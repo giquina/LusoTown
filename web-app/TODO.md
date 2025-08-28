@@ -1,798 +1,255 @@
----
-Auto-update status (2025-08-27):
+# LusoTown Community-Focused Development Roadmap
 
-- Platform Status: Development in progress with carousel system implementation
-- Live URL: https://web-99kxh0sku-giquinas-projects.vercel.app
-- Last Commit: ed3a9da fix: optimize homepage header to 4 lines max with smaller fonts
-- AI Systems: 4 production engines operational
-- Community: 750+ members, 2,150+ students, 8 university partnerships
-- Current Focus: Carousel system finalization and build optimization
+**Updated: 2025-08-28** | **Status**: Community Platform Simplification Initiative
 
----
+## 🎯 Core Mission
+**Serve the Portuguese-speaking community in the UK with essential, practical features that strengthen community connections and support local businesses.**
 
----
-Deployment note (2025-08-25):
-
-- Deployed via Vercel CLI (Preview)
-  - Branch: deploy/lusophone-hero-copy
-  - Preview URL: https://web-e3pouoxpq-giquinas-projects.vercel.app
-  - Inspect URL: https://vercel.com/giquinas-projects/web-app/GaQGBQVtjkph6dg2hKVTMKVS5Vwy
-  - Change: Homepage hero subtitle updated to “Lusophone-speaking”
-
----
-🎉 **MOBILE APP IMPLEMENTATION COMPLETE** (August 26, 2025)
-
-✅ **MOBILE APP STATUS: PRODUCTION-READY FOUNDATION**
-- Complete React Native/Expo setup with Portuguese cultural theming
-- Full authentication system with demo credentials integration  
-- Portuguese cultural onboarding (8-step heritage selection)
-- Bilingual EN/PT system with all 8 Portuguese-speaking countries
-- Event discovery, business directory, and matching system foundation
-- Performance optimization and testing framework
-- 37/37 validations passed, 0 critical errors
-- Ready for beta testing and app store submission
-
-📊 **PLATFORM STATUS UPDATE** (August 26, 2025)
-- **Web App**: ✅ Production-ready with 135+ pages, 522+ components
-- **Mobile App**: ✅ Production-ready foundation, ready for App Store/Google Play
-- **Widget System**: ✅ Fixed positioning conflicts - LusoBot and AppDownloadBar properly layered
-- **Live URL**: https://lusotown-bzkyz77ez-giquinas-projects.vercel.app (latest deployment)
-- **AI Systems**: 4 production engines operational
-- **Community**: 750+ members, 2,150+ students, 8 university partnerships
-- **Demo Access**: demo@lusotown.com / LusoTown2025!
-
-### **🔧 RECENT CRITICAL FIXES (August 26, 2025)**
-- ✅ **Widget Positioning Issues Resolved**: Fixed LusoBot chatbot and AppDownloadBar overlap during scroll
-- ✅ **Z-index Hierarchy Fixed**: Proper layering with AppDownloadBar (50) < LusoBot (70)
-- ✅ **Mobile Navigation Enhanced**: Improved hamburger menu with 56px touch targets
-- ✅ **Widget Management System**: Integrated WidgetManager for centralized positioning control
-- ✅ **Portuguese Cultural Mobile UX**: Enhanced animations and cultural theming
+**Target**: 750+ Portuguese speakers, 2,150+ students, 8 UK universities  
+**Focus**: Community needs over technology showcase  
+**Approach**: Simplify, focus, deliver value
 
 ---
 
-## 🚀 **IMMEDIATE PRIORITY ITEMS - AUGUST 27, 2025**
+## 🚨 IMMEDIATE CLEANUP PRIORITIES (Current Sprint)
 
-### **🔧 CRITICAL BUILD & STABILITY ISSUES** (URGENT)
+### **Remove Over-Engineered Systems**
+- [ ] **Remove Luxury/Elite Branding System**
+  - Delete premium tier marketing language that alienates community members
+  - Replace with inclusive community-focused terminology
+  - Remove VIP/elite user interface components
+  - Simplify subscription tiers to Community and Ambassador levels only
 
-**1. 🚨 BUILD SYSTEM REPAIR** (Active Issue - SIGNIFICANT PROGRESS)
-- [✅] Fix Next.js build failure (SIGBUS error **RESOLVED** with chunked build)
-- [✅] Resolve TypeScript compilation timeout issues (**IMPROVED** - builds succeed)
-- [🔄] Address extensive console.log warnings across codebase (**MAJOR PROGRESS**: 474→423, 51 cleaned)
-- [ ] Optimize build performance for large component library (522+ components)
-- [✅] Memory optimization for build process (Cipher integration completed)
-- [✅] Created centralized logger utility with Portuguese cultural context preservation
+- [ ] **Remove NFT/Blockchain Features**
+  - Delete all Web3/cryptocurrency integration code
+  - Remove NFT marketplace components and smart contracts
+  - Eliminate blockchain-based community tokens system
+  - Focus on traditional community engagement
 
-**1.5. 🧠 CIPHER MEMORY OPTIMIZATION** (MAJOR PROGRESS - AUGUST 27, 2025)
-- [✅] Install Cipher globally for Claude Code memory optimization (`npm install -g @byterover/cipher`)
-- [✅] Create comprehensive integration plan (CIPHER_MEMORY_WORKFLOW_INTEGRATION_PLAN.md)
-- [✅] Configure Cipher for Portuguese cultural context preservation across development sessions
-- [✅] Set up automatic memory capture for development patterns and cultural guidelines
-- [✅] Install Winston structured logging system (`npm install winston --save`)
-- [🔄] Implement structured logging to replace console statements (**ACTIVE**: 474→423 cleaned)
-- [✅] Fix React hooks exhaustive-deps warnings (**COMPLETED**: business-directory, events, forums pages fixed)
-- [✅] Enable cross-Claude Code instance synchronization for development team coordination
+- [ ] **Remove Creator Monetization Platform**
+  - Delete creator economy features (wrong focus for community platform)
+  - Remove content creator dashboard and monetization tools
+  - Eliminate streaming monetization beyond basic community events
+  - Simplify to community event sharing
 
-**1.6. 📊 DETAILED CONSOLE STATEMENT CLEANUP** (MAJOR PROGRESS - AUGUST 27, 2025)
-- [✅] Create centralized logger utility for Portuguese cultural context
-- [🔄] Replace console.log statements in API routes (**PROGRESS**: 6 files cleaned with cultural context)
-- [🔄] Replace console.log statements in components (**PROGRESS**: AI + mobile components cleaned)  
-- [🔄] Replace console.log statements in services (**PROGRESS**: Core utilities cleaned)
-- [✅] Create structured logging configuration for production environment
-- [ ] Test carousel system on mobile devices (375px, 768px breakpoints)
-- [ ] Test carousel system on desktop browsers (Chrome, Firefox, Safari)
-- [ ] Optimize TypeScript compilation performance for 522+ components
+- [ ] **Remove E-commerce Shopping Cart**
+  - Delete complex shopping cart system (overcomplicated)
+  - Remove product catalog and inventory management
+  - Simplify to event tickets and basic community services only
+  - Focus on community connections, not commerce
 
-**1.7. 🎨 MOBILE UX CRITICAL FIXES** ✅ **COMPLETED - AUGUST 27, 2025**
-- [✅] Fix mobile app download bar positioning (**PERFECT**: proper z-index 50, doesn't cover screen)
-- [✅] Update app download description (**EXCELLENT**: "Portuguese-speaking community" terminology)
-- [✅] Fix homepage CTA buttons (**SMART**: responsive text with whitespace-nowrap)
-- [✅] Run comprehensive Playwright MCP testing (**COMPLETED**: 87.5% mobile UX score)
-- [✅] Verify all navigation links work correctly (**VERIFIED**: 48x48px touch targets)
-- [✅] Test PWA functionality (**EXCELLENT**: complete manifest, icons, service worker)
-- [✅] Validate Portuguese cultural authenticity (**OUTSTANDING**: 13 cultural terms, UK-wide accuracy)
+- [ ] **Remove Advanced AI/VR Systems**
+  - Keep only LusoBot for community assistance
+  - Remove ML recommendation engines (academic overkill)
+  - Delete VR/AR event experiences (unnecessary complexity)
+  - Simplify to basic AI chat for Portuguese cultural questions
 
-**2. 🎠 CAROUSEL SYSTEM FINAL IMPLEMENTATION** (In Progress)
-- [✅] Core components completed (LusophoneCarousel.tsx system)
-- [✅] Header navigation fixes and dropdown positioning completed
-- [✅] Widget positioning conflicts resolved (LusoBot, AppDownloadBar)
-- [✅] Apply carousels to all major pages (**DEPLOYED**: 6 major pages with OptimizedPortugueseCarousel)
-- [ ] Complete error boundary optimization for "What's happening" page
-- [ ] Test carousel system across all devices and browsers
-- [ ] Performance optimization and final polish
-
-**3. 🍎 MOBILE APP STORE DEPLOYMENT** (Ready for Implementation)
-- [ ] App Store Connect configuration and metadata
-- [ ] Google Play Console setup and store listing
-- [ ] App signing and security certificates
-- [ ] Beta testing group setup and TestFlight configuration
-- [ ] Store screenshots and marketing materials for Portuguese community
-- [ ] App review submission and approval process
-
-**4. 🌟 UX POLISH AND PERFORMANCE** (Post-Build Fix)
-- [ ] Mobile app performance optimization for Portuguese community
-- [ ] Advanced PWA features implementation
-- [ ] Enhanced touch interactions for luxury experience
-- [ ] Cross-platform consistency between web and mobile
-
-## 🎠 **CAROUSEL SYSTEM IMPLEMENTATION STATUS (August 26, 2025)**
-
-### **Core Architecture ✅ COMPLETED**
-
-**Carousel Component System Successfully Implemented:**
-- ✅ **LusophoneCarousel.tsx**: Core responsive carousel with 3-2-1 breakpoint system
-- ✅ **LusophoneCarouselCards.tsx**: Pre-built card components for all content types
-- ✅ **LusophoneCarouselExamples.tsx**: Complete implementations with hooks
-- ✅ **LusophoneCarousel.module.css**: Portuguese cultural theming and responsive design
-- ✅ **index.ts**: Comprehensive export system with configurations
-
-**Technical Features Completed:**
-- ✅ Responsive breakpoints: Desktop (3), Tablet (2), Mobile (1)
-- ✅ Auto-advance with pause-on-hover (configurable intervals)
-- ✅ Keyboard navigation and accessibility compliance (WCAG 2.1 AA)
-- ✅ Touch gesture support with smooth animations
-- ✅ PALOP cultural features with country flag recognition
-- ✅ Portuguese brand colors and cultural authenticity
-
-### **Current Implementation Status**
-
-**✅ COMPLETED RECENTLY (August 26-27, 2025):**
-1. **Header Navigation Fix**: Dropdown positioning now consistent and centered
-2. **Error Boundary Issue Investigation**: Identified multiple nested error boundaries causing conflicts
-3. **Core Carousel System**: All base components and styling implemented
-4. **Cultural Authenticity**: Portuguese-speaking community focused design
-5. **Widget Management**: Fixed LusoBot and AppDownloadBar overlap issues
-6. **Homepage Header Optimization**: Reduced to 4 lines max with smaller fonts
-7. **Live Activity Widgets**: Removed as requested
-8. **Carousel Haptic Feedback**: Disabled to remove unwanted sounds
-
-**🚨 CRITICAL CURRENT ISSUES (August 27, 2025) - LATEST PROGRESS UPDATE:**
-1. **Build System Failure**: ✅ **RESOLVED** - SIGBUS error fixed with chunked build optimization
-2. **TypeScript Compilation**: ✅ **IMPROVED** - Build succeeds with optimizations
-3. **Code Quality**: Console.log warnings 906 occurrences, hardcoding violations 22,315→22,309 (6 fixed) ✅ **ONGOING PROGRESS**
-4. **Hardcoding Audit**: 🔄 **ACTIVE** - Fixed about page translation keys, Portuguese cultural authenticity preserved
-4. **Memory Management**: ✅ **OPTIMIZED** - Build process memory optimization completed (Cipher integrated)
-
-**🔄 IN PROGRESS:**
-1. **Build System Repair**: Addressing critical build failures
-2. **All-Pages Carousel Integration**: Applying carousel system to all website pages
-3. **Performance Optimization**: Large component library optimization (522+ components)
-
-**📋 IMMEDIATE NEXT STEPS:**
-1. Fix build system SIGBUS error and memory issues (in progress - Node.js v22.18.0, 4.5Gi available memory)
-2. ✅ Remove/replace console.log statements causing lint warnings (70+ completed, 217 remaining)
-3. Optimize TypeScript compilation performance
-4. Complete carousel rollout to all major pages
-5. Test system stability after build fixes
-
-**📊 ACTIVE WORK STREAMS (DELEGATED TO AGENTS):**
-- **refactor-helper**: Console cleanup (✅ 25% reduction completed)
-- **build-optimizer**: SIGBUS error diagnosis
-- **frontend-architect**: Carousel system rollout
-- **performance-coach**: Bundle optimization and TypeScript speed
-
-### **All-Pages Carousel Rollout Plan**
-
-**Priority Pages for Carousel Integration:**
-1. **Homepage** (`/`): Weekend events, featured content, community highlights
-2. **Events Page** (`/events`): Already has foundation - enhance with new carousels
-3. **Business Directory** (`/business-directory`): Featured businesses, categories
-4. **Student Hub** (`/students`): University programs, student events
-5. **About Page** (`/about`): Team members, success stories, testimonials
-6. **Pricing Page** (`/pricing`): Features comparison, testimonials
-7. **Community Pages**: Neighborhood groups, cultural centers
-
-**Implementation Strategy:**
-- Use existing carousel components as foundation
-- Adapt content types for each page context
-- Maintain cultural authenticity across all implementations
-- Ensure responsive design and accessibility compliance
+### **Codebase Reduction Target**
+- **Goal**: Remove ~15,000+ lines of code
+- **Current**: 697+ components → Target: 400-450 components
+- **Focus**: 4 core systems only (Events, Directory, Matching, Transport)
 
 ---
 
-## ✅ **COMPREHENSIVE UX AUDIT FINDINGS (August 26, 2025)**
+## 🏘️ CORE COMMUNITY FEATURES TO ENHANCE (Next Sprint)
 
-### **Critical Discovery: Most "Incomplete" UX Fixes Are Already Implemented** 🎉
+### **1. Portuguese Community Events**
+- [ ] **Event Discovery System**
+  - Simple calendar view of Portuguese community events
+  - Filter by type (Fado, festivals, business meetups, cultural celebrations)
+  - Location-based filtering across UK cities
+  - Basic booking system for community events
 
-**AUDIT SUMMARY**: Comprehensive review of live platform revealed that critical UX improvements previously marked as "incomplete" are actually fully functional and deployed. This represents significant hidden progress.
+- [ ] **Cultural Calendar Integration**
+  - Portuguese national holidays and celebrations
+  - PALOP nation independence days and cultural events
+  - Community-submitted local events
+  - University Portuguese society events
 
-#### **✅ VERIFIED WORKING SYSTEMS (Previously Thought Incomplete)**
+### **2. Business Directory Enhancement**
+- [ ] **PostGIS Geolocation Features**
+  - Portuguese businesses across UK (restaurants, services, shops)
+  - Location-based search and filtering
+  - Basic reviews and ratings system
+  - Business owner profile pages
 
-- [✅] **Chat Widget System - 100% Functional** ✅
-  - [✅] Scroll-to-top functionality: Implemented and working (LusoBotWidget.tsx lines 282-294)
-  - [✅] Dynamic positioning: Fully operational with Widget Management System
-  - [✅] Clear minimize/close buttons: Implemented and styled (lines 498-518)
-  - [✅] Max height with scrolling: Working with proper overflow handling (lines 522-529)
-  - [✅] Z-index management: Comprehensive system prevents conflicts
+- [ ] **Community Business Support**
+  - Featured business spotlight system
+  - Community member discounts and offers
+  - Business networking event listings
+  - Portuguese entrepreneur success stories
 
-- [✅] **Widget Management Infrastructure - 100% Complete** ✅
-  - [✅] WidgetManager.tsx: Exists and fully operational (not missing as previously thought)
-  - [✅] Z-index hierarchy: Implemented in dedicated z-index-layers.ts
-  - [✅] Dynamic positioning: Responds to app bar visibility changes
-  - [✅] Mobile responsiveness: Working across all breakpoints
+### **3. Simple Cultural Matching**
+- [ ] **Community Connection System**
+  - Basic compatibility based on cultural background
+  - Location-based matching within UK cities
+  - Shared interests in Portuguese culture
+  - Safe messaging system for community members
 
-- [✅] **User Guidance Components - Fully Built** ✅
-  - [✅] GuidanceTooltip.tsx: Complete with Portuguese cultural context
-  - [✅] Tooltip system: Pre-configured messages for all sections
-  - [✅] Cultural theming: Portuguese community-specific guidance
-  - [⚠️] Integration verification: Need to confirm homepage activation
+- [ ] **Cultural Heritage Integration**
+  - Match by Portuguese regional heritage
+  - PALOP cultural background connections
+  - Language preference matching (Portuguese/English)
+  - Cultural celebration participation interests
 
-#### **📊 AUDIT IMPACT ON PLATFORM STATUS**
+### **4. Transport Coordination Services**
+- [ ] **Community Transport System**
+  - Rideshare coordination for Portuguese events
+  - Public transport guides for Portuguese areas
+  - Airport pickup coordination for new arrivals
+  - Community carpooling for cultural celebrations
 
-**Previous Assessment**: Major UX fixes needed  
-**Audit Reality**: Systems are implemented and functional  
-**New Status**: Focus shifted from implementation to verification and optimization
-
-**Platform Readiness**: Higher than previously assessed - most critical UX infrastructure already operational
-
----
-
-## 🎠 **CURRENT PRIORITY: LUSOPHONE CAROUSEL SYSTEM IMPLEMENTATION (August 2025)**
-
-### **🚀 IMMEDIATE FOCUS: Multi-Section Carousel Enhancement**
-
-**GOAL**: Transform static content sections into engaging, culturally-authentic carousels that showcase the full diversity of Portuguese-speaking communities across the United Kingdom.
-
-#### **📋 COMPREHENSIVE CAROUSEL IMPLEMENTATION PLAN**
-
-**Priority Level**: 🔥 **CRITICAL** - Major UX enhancement for community discovery
-
-##### **🎯 TARGET SECTIONS FOR CAROUSEL TRANSFORMATION**
-
-- [ ] **This Weekend's Lusophone Community** 
-  - Transform 3 static cards → 8-12 scrollable weekend events
-  - Country indicators for each event (🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱)
-  - PALOP cultural events highlighting (special styling for Angola, Cape Verde, etc.)
-
-- [ ] **Weekly Community Discovery**
-  - Recurring activities and meetups carousel
-  - Category filtering (Music, Food, Business, Cultural, Sports)
-  - Location-based grouping (London, Manchester, Birmingham, Edinburgh)
-
-- [ ] **PALOP Heritage Pride Showcase**
-  - Dedicated carousel for PALOP nations (🇦🇴🇨🇻🇬🇼🇲🇿🇸🇹)
-  - Success stories, businesses, cultural events
-  - Cultural authenticity with proper nation recognition
-
-- [ ] **Monthly Cultural Calendar**
-  - Major Portuguese-speaking community celebrations
-  - Independence days, cultural festivals, traditional celebrations
-  - Forward-looking calendar view with cultural context
-
-- [x] **Members-Only Events Premium Carousel**
-  - Exclusive member events (Feijoada lunches, Fado evenings)
-  - Premium access indicators and elite networking opportunities
-  - Subscription gating integration
-
-- [ ] **PALOP Cultural Calendar - Independence Celebrations**
-  - Angola's November Freedom Festival, Cape Verde's Island Independence Day
-  - Mozambique's Coastal Freedom Festival, Guinea-Bissau's Cultural Resilience
-  - São Tomé's Paradise Island Celebration
-
-##### **🛠️ TECHNICAL IMPLEMENTATION ROADMAP**
-
-**Phase 1: Core Component Architecture** ⏱️ Est: 4-6 hours ✅ **COMPLETED**
-- [x] Design reusable `LusophoneCarousel` component
-- [x] Responsive breakpoints (Desktop: 3 cards, Tablet: 2 cards, Mobile: 1 card)
-- [x] Touch gesture support with momentum scrolling
-- [x] Keyboard navigation (arrow keys) for accessibility
-- [x] Auto-advance with pause-on-hover (8-second intervals)
-
-**Phase 2: Cultural Enhancement Features** ⏱️ Est: 3-4 hours ✅ **COMPLETED**
-- [x] Country flag indicators with cultural context tooltips
-- [x] PALOP recognition system with special accent styling
-- [x] Category-based color coding (Fado: deep blue, Samba: vibrant yellow/green, Kizomba: rich red, Morna: ocean blue)
-- [x] Inclusive language enforcement ("Portuguese speakers" not "Portuguese people")
-
-**Phase 3: Visual Polish & Performance** ⏱️ Est: 2-3 hours
-- [ ] Smooth 300ms CSS transitions with easing
-- [ ] Peek preview (10-20px of next card visible)
-- [ ] Loading states with skeleton placeholders
-- [ ] Infinite loop cycling capability
-- [ ] Image lazy loading for performance
-
-**Phase 4: Content Integration** ⏱️ Est: 4-5 hours
-- [ ] Create authentic sample data representing all Portuguese-speaking cultures
-- [x] Business logic for content categorization and filtering
-- [ ] Integration with existing LusoTown design system
-- [ ] Mobile-first responsive spacing and typography
-
-**Phase 5: Testing & Optimization** ⏱️ Est: 2-3 hours
-- [ ] Cross-browser testing (Chrome, Firefox, Safari, Edge)
-- [ ] Mobile device testing (iOS Safari, Chrome Mobile)
-- [ ] Screen reader accessibility validation
-- [ ] Performance optimization and bundle size analysis
-
-##### **🎨 DESIGN SPECIFICATIONS**
-
-**Brand Consistency**
-- Use existing LusoTown green (#10b981) for primary navigation elements
-- Maintain current card design, fonts, and spacing hierarchy
-- Portuguese cultural color palette integration
-
-**Responsive Design**
-- **Desktop (≥1024px)**: 3 cards visible, slide by 3
-- **Tablet (768px-1023px)**: 2 cards visible, slide by 2  
-- **Mobile (<768px)**: 1 card visible, slide by 1
-- **Proper spacing**: Responsive gaps between cards
-
-**Cultural Authenticity Features**
-- Flag indicators for event origin country
-- PALOP nation special recognition styling
-- Category-specific accent colors
-- Culturally appropriate imagery and language
-
-##### **📊 SUCCESS METRICS**
-
-**User Engagement Goals**
-- [ ] Increase weekend event discovery by 40% (more events visible)
-- [ ] Improve PALOP cultural event participation by 25%
-- [ ] Enhance mobile user experience satisfaction to 95%+
-- [ ] Reduce bounce rate on community discovery pages by 30%
-
-**Technical Performance Goals**
-- [ ] Carousel animations at 60fps on mobile devices
-- [ ] Image loading optimized to <200ms per card
-- [ ] Accessibility score 100% (WCAG 2.1 AA compliant)
-- [ ] Bundle size impact <50KB additional JavaScript
-
-##### **🔧 IMPLEMENTATION STRATEGY**
-
-**Agent Delegation Plan**
-1. **Frontend Architect Agent**: Core carousel component architecture
-2. **Mobile UX Specialist Agent**: Touch gestures and responsive design
-3. **Cultural Content Agent**: Authentic Portuguese-speaking community data
-4. **Performance Coach Agent**: Optimization and accessibility
-5. **QA Testing Agent**: Cross-device testing and validation
-
-**Development Workflow**
-1. **Week 1**: Core component + basic functionality
-2. **Week 2**: Cultural features + content integration  
-3. **Week 3**: Polish, testing, and optimization
-4. **Week 4**: Deployment and performance monitoring
-
-##### **📁 FILES TO CREATE/MODIFY**
-
-**New Components**
-- `web-app/src/components/carousels/LusophoneCarousel.tsx`
-- `web-app/src/components/carousels/CarouselCard.tsx`
-- `web-app/src/components/carousels/CarouselNavigation.tsx`
-- `web-app/src/components/carousels/CountryIndicator.tsx`
-
-**Updated Sections**
-- `web-app/src/app/page.tsx` (Homepage weekend events)
-- `web-app/src/components/events/WeekendEvents.tsx`
-- `web-app/src/components/community/WeeklyDiscovery.tsx`
-- `web-app/src/components/palop/PALOPHeritage.tsx`
-- `web-app/src/components/events/MembersOnlyEvents.tsx`
-
-**New Data/Config**
-- `web-app/src/config/carousel-events.ts`
-- `web-app/src/config/palop-celebrations.ts`
-- `web-app/src/config/weekly-activities.ts`
-
-##### **🌍 CULTURAL DATA STRUCTURE**
-
-```typescript
-interface LusophoneEvent {
-  id: string
-  title: string
-  titlePt?: string
-  description: string
-  descriptionPt?: string
-  day: string
-  time: string
-  location: string
-  category: 'Music' | 'Food' | 'Business' | 'Cultural' | 'Sports' | 'Social'
-  country: 'Portugal' | 'Brazil' | 'Angola' | 'Cape Verde' | 'Mozambique' | 'Guinea-Bissau' | 'São Tomé & Príncipe' | 'East Timor'
-  countryCode: string
-  flag: string
-  isPALOP: boolean
-  categoryColor: string
-  image: string
-  isMembers: boolean
-  price?: number
-}
-```
+### **5. University Partnerships**
+- [ ] **Student Integration System**
+  - Connect with 8 UK university Portuguese societies
+  - Student discount verification system
+  - University event integration
+  - Study group coordination
 
 ---
 
-## ✅ **RECENT IMPROVEMENTS - COMPLETED ENHANCEMENTS (January 2025)**
+## 🔧 TECHNICAL DEBT REDUCTION (Ongoing)
 
-### **Platform Enhancements - Recent Updates**
+### **Architecture Simplification**
+- [ ] **Component Library Reduction**
+  - Remove redundant UI components
+  - Consolidate similar functionality
+  - Focus on mobile-first community experience
+  - Maintain only essential responsive components
 
-_Based on comprehensive improvements to cultural inclusivity and user experience_
+- [ ] **Database Schema Optimization**
+  - Simplify user profiles to community essentials
+  - Remove unused premium feature tables
+  - Optimize PostGIS queries for business directory
+  - Focus on community event and messaging data
 
-#### **🎆 COMPLETED ENHANCEMENTS**
+- [ ] **API Endpoint Consolidation**
+  - Remove creator platform APIs
+  - Consolidate similar community endpoints
+  - Simplify authentication to basic community roles
+  - Focus on mobile API performance
 
-- [✅] Homepage hero copy updated to: "Discover events, businesses, and opportunities for verified Portuguese and Lusophone-speaking members across the United Kingdom." (branch: deploy/lusophone-hero-copy)
-- [✅] **LUSOPHONE CULTURAL CELEBRATIONS SYSTEM** 🎉
-  - [✅] Comprehensive celebration of ALL Portuguese-speaking cultures (Portugal, Brazil, Angola, Cape Verde, Mozambique, etc.)
-  - [✅] Cultural wisdom rotation system with business philosophy from across Lusophone world
-  - [✅] Enhanced business directory with cultural celebrations integration
-  - [✅] Dynamic cultural content rotation every 10 seconds
-  - [✅] Nation-specific features with proper flags and cultural contexts
+### **Build System Optimization**
+- [ ] **Performance Focus**
+  - Reduce bundle size by removing unused features
+  - Optimize for mobile Portuguese diaspora usage patterns
+  - Improve loading times for community event discovery
+  - Simple caching for business directory data
 
-- [✅] **FOOTER REDESIGN WITH CONVERSION OPTIMIZATION** 💰
-  - [✅] Community pulse display with real-time activity
-  - [✅] Quick access navigation for different user types
-  - [✅] Cultural phrase rotation with meanings and contexts
-  - [✅] Enhanced social media integration
-  - [✅] Improved conversion pathways and user engagement
+### **Code Quality Maintenance**
+- [ ] **Console Statement Cleanup** (In Progress: 833/1,221 cleaned)
+  - Replace console.log with structured logging
+  - Maintain Portuguese cultural context in logs
+  - Production-ready error handling
 
-- [✅] **ENHANCED MOBILE RESPONSIVENESS** 📱
-  - [✅] Optimized cultural celebration cards for all screen sizes
-  - [✅] Mobile footer optimization for Portuguese-speaking community
-  - [✅] Touch-optimized cultural navigation
-  - [✅] Progressive cultural enhancement across devices
-
-- [✅] **GEOGRAPHIC INCLUSIVITY CORRECTIONS** 🇬🇧
-  - [✅] Updated terminology to "United Kingdom" instead of "London" for community-wide references
-  - [✅] Multi-city Portuguese community support across UK
-  - [✅] Cultural location mapping for Portuguese areas across Britain
-  - [✅] Regional cultural events support throughout United Kingdom
-
-## ✅ **CURRENT PLATFORM STATUS - PRODUCTION READY**
-
-### **Platform Health Check - January 2025**
-
-_Comprehensive analysis confirms LusoTown is functional and production-ready_
-
-#### **✅ VERIFIED WORKING SYSTEMS**
-
-- [✅] **LOGIN SYSTEM FUNCTIONAL** ✅
-  - [✅] Demo account access works: `demo@lusotown.com` / `LusoTown2025!`
-  - [✅] Clean login form with proper 'use client' directive implemented
-  - [✅] Submit button visible and functional on all devices
-  - [✅] Authentication flow properly configured with Supabase
-
-- [✅] **MOBILE NAVIGATION IMPLEMENTED** 📱
-  - [✅] Complete hamburger menu system in `Header.tsx`
-  - [✅] MobileNavigation component with full functionality
-  - [✅] Touch targets ≥44px for Portuguese community accessibility
-  - [✅] Responsive design tested across all breakpoints (375px+)
-
-- [✅] **MAIN NAVIGATION OPERATIONAL** 🧭
-  - [✅] All navigation links functional: Events, Business Directory, Matches
-  - [✅] Sophisticated dropdown navigation system with animations
-  - [✅] All routes properly connected and tested
-  - [✅] Premium navigation hierarchy with Portuguese cultural themes
-
-- [✅] **PLATFORM PERFORMANCE VERIFIED** 🚀
-  - [✅] Build succeeds: 152 pages generated successfully
-  - [✅] Development server runs without blocking errors
-  - [✅] 496+ components all functional
-  - [✅] 4 AI systems operational and tested
-
-#### **📊 CURRENT PLATFORM METRICS**
-
-- [✅] **Platform Status**: Production-ready and functional
-- [✅] **Build Success**: 152 pages generated, zero blocking errors
-- [✅] **Component Health**: 496+ components operational
-- [✅] **Mobile UX Score**: 73.3% luxury compliance (functional, with enhancement opportunities)
-- [✅] **Core Features**: Events, Matching, Business Directory, Streaming all working
-- [✅] **Authentication**: Demo system functional, user flows operational
-
-#### **🔧 ENHANCEMENT OPPORTUNITIES (Non-Critical)**
-
-- [ ] **Mobile UX Improvements** (Current: Functional, Target: Elite)
-  - [ ] Optimize load times further (currently acceptable, target <2.5s)
-  - [ ] Enhance touch interactions for luxury experience
-  - [x] Add premium animations and micro-interactions
-  - [ ] Implement advanced PWA features
-
-- [ ] **Performance Optimizations**
-  - [ ] Further bundle size optimization opportunities
-  - [x] Advanced image optimization for premium experience
-  - [ ] Enhanced caching strategies for Portuguese content
-  - [ ] Database query optimization for high-traffic scenarios
-
-- [ ] **Feature Enhancements**
-  - [ ] Advanced Portuguese cultural matching algorithms
-  - [x] Enhanced live streaming monetization features
-  - [x] Premium user dashboard improvements
-  - [ ] Extended UK city coverage beyond London
+- [ ] **Hardcoding Audit** (Critical for deployment)
+  - Import all data from centralized config files
+  - Maintain bilingual EN/PT text systems
+  - Portuguese cultural authenticity preservation
 
 ---
 
-## 🎯 **ORIGINAL DEVELOPMENT PRIORITIES (Post-Fixes)**
+## 🌍 COMMUNITY-CENTERED GOALS (Long-term)
 
-### Core Philosophy: **Production-Ready Portuguese-Speaking Community Platform**
+### **Year 1 Community Goals**
+- [ ] **Grow Active Community**
+  - 750+ → 1,200+ Portuguese-speaking members
+  - 2,150+ → 3,000+ university students
+  - Maintain 8 university partnerships
+  - Expand to 3 additional UK cities (Manchester, Birmingham, Edinburgh)
 
-Focus on practical enhancements, bug fixes, performance optimization, and user experience improvements for the Portuguese-speaking community in the United Kingdom.
+- [ ] **Business Community Support**
+  - 200+ Portuguese businesses listed in directory
+  - 50+ community events per month
+  - Active transport coordination network
+  - Strong university student integration
 
----
+### **Community Impact Metrics**
+- [ ] **Event Participation**
+  - 75% of members attend at least 1 community event monthly
+  - 90% event satisfaction rate
+  - 80% return attendance rate for cultural celebrations
 
-## 🚀 **HIGH PRIORITY - Platform Stability & Performance** (After Critical Fixes)
+- [ ] **Business Directory Usage**
+  - 60% of members use business directory monthly
+  - 200+ businesses with complete profiles
+  - 85% positive business review rate
 
-### 1. Core Infrastructure Improvements
+- [ ] **Community Connections**
+  - 40% match success rate for cultural compatibility
+  - 500+ successful community connections made
+  - 90% safe messaging experience
 
-- [ ] **Performance Optimization**
-  - [ ] Analyze and optimize bundle size (currently heavy with 496+ components)
-  - [ ] Implement dynamic imports for AI systems to reduce initial load
-  - [ ] Optimize image loading for Portuguese cultural content
-  - [ ] Set up Core Web Vitals monitoring dashboard
+### **Platform Simplicity Goals**
+- [ ] **User Experience**
+  - <2.5 second page load times
+  - 95% mobile user satisfaction
+  - Simple 3-step onboarding process
+  - Intuitive navigation for all age groups
 
-- [ ] **Database Performance**
-  - [ ] Review and optimize Supabase queries for PostGIS geolocation features
-  - [ ] Implement database connection pooling for high traffic
-  - [ ] Add indexes for frequently queried Portuguese cultural data
-  - [ ] Optimize real-time subscriptions for matches and messaging
-
-- [ ] **Error Handling & Monitoring**
-  - [ ] Implement comprehensive error tracking (Sentry integration)
-  - [ ] Add Portuguese-specific error messages in both EN/PT
-  - [ ] Create error reporting dashboard for production issues
-  - [ ] Set up alerts for critical platform failures
-
-### 2. Mobile Experience Enhancement
-
-- [ ] **Touch Interactions**
-  - [ ] Fix reported touch response issues on event cards
-  - [ ] Improve scroll performance on matches page for mobile
-  - [ ] Optimize modal interactions for Portuguese content forms
-  - [ ] Test and fix navigation dropdown positioning on small screens
-
-- [ ] **Progressive Web App (PWA)**
-  - [ ] Enhance offline functionality for core features
-  - [ ] Implement push notifications for matches and events
-  - [ ] Add Portuguese language support to PWA manifest
-  - [ ] Optimize caching strategy for cultural content
-
-### 3. User Experience Improvements
-
-- [ ] **Authentication & Onboarding**
-  - [ ] Streamline Portuguese cultural preferences setup
-  - [ ] Fix reported issues with university verification system
-  - [ ] Improve social login experience (Google, Facebook)
-  - [ ] Add email verification for new Portuguese-speaking members
-
-- [ ] **Search & Discovery**
-  - [x] Enhance business directory search with better filtering
-  - [ ] Improve event discovery algorithms for Portuguese community
-  - [ ] Add location-based search for United Kingdom Portuguese services
-  - [ ] Implement smart suggestions for cultural compatibility
+- [ ] **Technical Performance**
+  - <500KB JavaScript bundle size
+  - 90+ mobile Lighthouse score
+  - 99.5% uptime for core community features
+  - Zero critical bugs for 90 consecutive days
 
 ---
 
-## 🔧 **MEDIUM PRIORITY - Feature Development**
+## 📋 IMPLEMENTATION STRATEGY
 
-### 4. Portuguese Community Features
+### **Phase 1: Cleanup (Weeks 1-4)**
+1. **Week 1**: Remove luxury/elite branding system
+2. **Week 2**: Delete NFT/blockchain and creator platform code
+3. **Week 3**: Remove e-commerce and advanced AI systems
+4. **Week 4**: Component library consolidation
 
-- [ ] **Enhanced Messaging System**
-  - [ ] Add voice message support for Portuguese speakers
-  - [ ] Implement message translation between Portuguese and English
-  - [ ] Create group messaging for community events
-  - [ ] Add cultural emoji pack for Portuguese expressions
+### **Phase 2: Core Enhancement (Weeks 5-8)**
+1. **Week 5**: Portuguese event discovery improvements
+2. **Week 6**: Business directory PostGIS optimization
+3. **Week 7**: Simple cultural matching system
+4. **Week 8**: Transport coordination features
 
-- [ ] **Event Management Improvements**
-  - [ ] Add recurring event creation for cultural celebrations
-  - [ ] Implement waitlist functionality for popular events
-  - [ ] Create Portuguese cultural calendar integration
-  - [x] Add event live streaming capability
+### **Phase 3: Community Polish (Weeks 9-12)**
+1. **Week 9**: Mobile experience optimization
+2. **Week 10**: University partnership integration
+3. **Week 11**: Community feedback implementation
+4. **Week 12**: Performance optimization and launch
 
-- [x] **Business Directory Enhancement**
-  - [x] Add verified badge system for Portuguese businesses
-  - [x] Implement business reviews and ratings system
-  - [ ] Create category-based filtering (restaurants, services, etc.)
-  - [x] Add Portuguese business owner dashboard
-
-### 5. Subscription & Monetization
-
-- [x] **Premium Features**
-  - [ ] Implement tiered messaging limits for free users
-  - [x] Add premium event access and early booking
-  - [ ] Create VIP matching features for Ambassador members
-  - [x] Develop exclusive content for premium subscribers
-
-- [ ] **Payment System**
-  - [ ] Add support for Portuguese payment methods
-  - [ ] Implement subscription pause/resume functionality
-  - [ ] Create family plan options for Portuguese families
-  - [x] Add student discount verification system
-
-### 6. AI System Improvements
-
-- [ ] **LusoBot Enhancement**
-  - [ ] Add more Portuguese cultural knowledge to knowledge base
-  - [ ] Improve saudade detection and emotional support responses
-  - [ ] Create Portuguese language learning assistance features
-  - [ ] Implement voice interaction capabilities
-
-- [ ] **Matching Algorithm Optimization**
-  - [ ] Fine-tune cultural compatibility scoring
-  - [ ] Add compatibility explanations in Portuguese
-  - [ ] Implement match feedback system for continuous learning
-  - [ ] Create regional matching preferences (London, Manchester, etc.)
+### **Success Measures**
+- **Code Reduction**: 15,000+ lines removed
+- **Performance**: 50%+ faster loading times
+- **Simplicity**: 3-step user onboarding
+- **Community**: 90%+ member satisfaction with core features
 
 ---
 
-## 🛠️ **LOW PRIORITY - Technical Debt & Optimization**
+## 🎯 COMMUNITY VALUES FOCUS
 
-### 7. Code Quality & Maintenance
+### **What We're Building**
+- **Simple community platform** for Portuguese speakers in UK
+- **Practical tools** for finding events, businesses, and connections
+- **Mobile-first experience** for busy community members
+- **Bilingual support** (Portuguese/English) without complexity
+- **Safe, inclusive space** for all Portuguese-speaking cultures
 
-- [ ] **TypeScript Improvements**
-  - [ ] Fix remaining TypeScript errors (currently ignored in builds)
-  - [ ] Add strict null checks for better type safety
-  - [ ] Improve type definitions for Portuguese cultural data
-  - [ ] Update deprecated dependencies
+### **What We're NOT Building**
+- Tech showcase with unnecessary complexity
+- Premium/luxury platform that excludes community members  
+- Creator economy or monetization-focused platform
+- Web3/blockchain experimental features
+- Academic research project with over-engineered AI
 
-- [ ] **Testing Coverage**
-  - [ ] Increase test coverage for AI systems (currently 168+ tests)
-  - [ ] Add integration tests for Portuguese cultural features
-  - [ ] Create E2E tests for critical user journeys
-  - [ ] Add mobile-specific test scenarios
-
-- [ ] **Documentation**
-  - [ ] Update API documentation for new features
-  - [ ] Create Portuguese cultural guidelines for developers
-  - [ ] Document AI system architecture and integration
-  - [ ] Add troubleshooting guides for common issues
-
-### 8. Security & Privacy
-
-- [ ] **GDPR Compliance**
-  - [ ] Audit data collection practices for Portuguese users
-  - [ ] Implement right to deletion for user accounts
-  - [ ] Add privacy controls dashboard
-  - [ ] Create Portuguese-language privacy policy
-
-- [ ] **Security Hardening**
-  - [ ] Implement rate limiting for API endpoints
-  - [ ] Add CSRF protection for forms
-  - [ ] Audit authentication flows for vulnerabilities
-  - [ ] Set up security scanning in CI/CD pipeline
+### **Community-First Decisions**
+- **Functionality over features**: What helps the community vs. what sounds impressive
+- **Accessibility over aesthetics**: Simple, usable design for all ages and tech levels
+- **Inclusion over exclusion**: Community-wide access over premium gatekeeping
+- **Practical over theoretical**: Real community needs over academic experiments
 
 ---
 
-## 📊 **SUCCESS METRICS & TARGETS**
+**Last Updated**: August 28, 2025  
+**Next Review**: September 15, 2025  
+**Status**: Community Simplification Initiative - Active Cleanup Phase
 
-### User Engagement Goals
-
-- [ ] **Increase Daily Active Users by 25%** (750+ → 940+ Portuguese speakers)
-- [ ] **Improve Match Success Rate to 40%** (from cultural compatibility AI)
-- [ ] **Boost Event Attendance by 30%** (better discovery and recommendations)
-- [ ] **Achieve 90% Mobile User Satisfaction** (based on UX surveys)
-
-### Technical Performance Goals
-
-- [ ] **Page Load Time < 2.5 seconds** (currently ~3-4 seconds)
-- [ ] **Mobile Performance Score > 90** (Lighthouse metrics)
-- [ ] **Zero Critical Bugs** in production for 30 consecutive days
-- [ ] **99.5% Uptime** for core platform features
-
-### Business Goals
-
-- [x] **Increase Subscription Conversion to 15%** (from free to premium)
-- [x] **Reduce Churn Rate to < 5%** monthly for premium members
-- [ ] **Expand to 3 New UK Cities** beyond London (Manchester, Birmingham, Bristol)
-- [ ] **Partner with 2 More Universities** (current: 8 partnerships)
-
----
-
-## 🔧 **POTENTIAL IMPROVEMENTS**
-
-### Minor Enhancements Available
-
-- [ ] **Optimize card display** for better mobile event listings experience
-- [ ] **Fine-tune navigation dropdown** positioning for tablet devices
-- [ ] **Enhance Portuguese text rendering** across different browsers
-- [✅] **Business directory loading** optimized and functional
-- [ ] **Improve subscription status** real-time updates
-
-### Security & Maintenance
-
-- [ ] **Regular dependency updates** as part of maintenance cycle
-- [ ] **Enhanced authentication token** management for improved UX
-- [ ] **Advanced file upload** security features
-- [✅] **Portuguese character input validation** implemented and working
-
----
-
-## 🎯 **IMPLEMENTATION STRATEGY**
-
-### Development Workflow
-
-1. **Week 1-2**: Critical fixes and performance optimization
-2. **Week 3-4**: Mobile experience improvements and PWA enhancement
-3. **Week 5-6**: User experience improvements and authentication fixes
-4. **Week 7-8**: Portuguese community features and messaging system
-5. **Week 9-10**: Business directory enhancement and subscription features
-6. **Week 11-12**: AI system improvements and testing
-
-### Resource Allocation
-
-- **40% - Bug fixes and performance optimization**
-- **30% - User experience and mobile improvements**
-- **20% - New feature development**
-- **10% - Technical debt and documentation**
-
-### Quality Gates
-
-- All changes must pass hardcoding audit (`npm run audit:hardcoding`)
-- Mobile responsiveness tested at 375px, 768px, 1024px breakpoints
-- Bilingual functionality verified in both English and Portuguese
-- Performance impact assessed before deployment
-
----
-
-## 📋 **COMPLETION TRACKING**
-
-### 2025 Enhancement Goals
-
-- **Complete 80% of enhancement tasks** by end of 2025
-- **Maintain zero critical bugs** (currently achieved)
-- **Achieve elite performance metrics** (currently good, targeting excellent)
-- **Launch in 1 additional UK city** by Q1 2026
-
-### Monthly Reviews
-
-- Review task completion rates and adjust priorities
-- Gather feedback from Portuguese-speaking community
-- Analyze performance metrics and user engagement data
-- Update roadmap based on user needs and business objectives
-
----
-
-**Last Updated**: January 2025  
-**Next Review**: February 2025  
-**Status**: Production-Ready Platform - Focus on Enhancement & Growth
-
-### Recent Completed Features (✅)
-
-- ✅ **MOBILE APP IMPLEMENTATION COMPLETE** (August 26, 2025) 🎉
-  - ✅ Complete React Native/Expo setup with Portuguese cultural theming
-  - ✅ Full authentication system with demo credentials integration
-  - ✅ Portuguese cultural onboarding (8-step heritage selection)
-  - ✅ Bilingual EN/PT system with all 8 Portuguese-speaking countries
-  - ✅ Event discovery, business directory, and matching system foundation
-  - ✅ Performance optimization and testing framework
-  - ✅ 37/37 validations passed, 0 critical errors
-  - ✅ Ready for beta testing and app store submission
-- ✅ Enhanced Lusophone cultural celebrations system
-- ✅ Footer redesign with conversion optimization
-- ✅ Business directory cultural enhancements
-- ✅ Cultural wisdom rotation system
-- ✅ Enhanced mobile responsiveness
-- ✅ Geographic inclusivity corrections
-- ✅ Login system fully functional with demo access
-- ✅ Mobile navigation completely implemented
-- ✅ Main navigation operational with premium features
-- ✅ Platform build and deployment successful
-- ✅ 496+ components all operational
-- ✅ 4 AI systems production-ready and tested
-
-### Current Platform Status ✅ **DEPLOYMENT READY - AUGUST 27, 2025**
-
-**DUAL-PLATFORM ECOSYSTEM WITH EXCELLENT STABILITY** - LusoTown dual-platform Portuguese-speaking community ecosystem serving 750+ members, now optimized and deployment-ready:
-
-**🌐 WEB PLATFORM (Build Stability Achieved)**
-- **522+ React components** - fully functional with optimized build system ✅
-- **Complete bilingual EN/PT system** operational ✅
-- **4 AI systems** production-ready with comprehensive testing ✅
-- **Mobile-first responsive design** - 87.5% excellence score ✅
-- **Widget Management System** fully operational ✅
-- **Chat Widget System** 100% functional ✅
-- **User Guidance Infrastructure** complete ✅
-- **Demo access**: demo@lusotown.com / LusoTown2025! ✅
-- **COMPLETED**: Build system SIGBUS error resolved ✅
-- **ACTIVE**: Console log systematic cleanup (474→423 statements) 🔄
-
-**📱 MOBILE PLATFORM (Ready for Store Deployment)**
-- **React Native/Expo foundation** complete with Portuguese cultural theming ✅
-- **Authentication system** integrated with demo credentials ✅
-- **8-step Portuguese cultural onboarding** implemented ✅
-- **Complete bilingual EN/PT system** with all lusophone countries ✅
-- **Core features foundation** (Events, Business Directory, Matching) ✅
-- **Performance optimized** with 37/37 validations passed ✅
-- **Beta testing ready** - prepared for App Store/Google Play submission ✅
-
-**CURRENT FOCUS**: **DEPLOYMENT PREPARATION** - Systematic hardcoding audit fixes to enable production deployment. Build system stable, mobile UX validated at 87.5% excellence.
-
-**🔧 COORDINATION STATUS**: **SUCCESS** - Multiple specialized agents completed critical fixes with excellent results:
-- ✅ Build System: SIGBUS error resolved, builds succeed
-- ✅ Mobile UX: 87.5% validation score with outstanding Portuguese cultural integration  
-- ✅ React Hooks: exhaustive-deps warnings fixed across major files
-- 🔄 Code Quality: 474→423 console.log statements cleaned (51 statements replaced)
-- 🔄 Hardcoding Audit: 165K+ violations identified, systematic cleanup in progress
-
-_LusoTown achieves mature dual-platform architecture with excellent stability. Current priority: Complete hardcoding audit for production deployment readiness._
+**Live Platform**: https://web-99kxh0sku-giquinas-projects.vercel.app  
+**Demo Access**: demo@lusotown.com / LusoTown2025!

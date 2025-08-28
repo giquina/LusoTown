@@ -8,7 +8,7 @@ import {
   ArrowTrendingUpIcon,
 } from "@heroicons/react/24/outline";
 import { Users, Activity, BarChart3, Globe, TrendingUp, Zap, Crown, Sparkles } from "lucide-react";
-import { LuxuryCard } from "@/components/LuxuryMicroInteractions";
+import { Card } from "@/components/ui/card";
 import { usePerformanceOptimization } from "@/hooks/usePerformanceOptimization";
 
 interface StreamViewerStatsProps {
@@ -102,7 +102,7 @@ export default function StreamViewerStats({
   ];
 
   return (
-    <LuxuryCard
+    <Card
       ref={statsRef}
       variant="premium"
       hoverable={true}
@@ -350,6 +350,6 @@ export default function StreamViewerStats({
           </div>
         </div>
       </div>
-    </LuxuryCard>
+    </Card>
   );
 }

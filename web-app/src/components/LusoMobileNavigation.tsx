@@ -24,7 +24,7 @@ import {
   ChatBubbleLeftRightIcon as ChatBubbleLeftRightIconSolid,
   HeartIcon as HeartIconSolid
 } from '@heroicons/react/24/solid';
-import { LuxuryRipple, LuxuryFAB } from './LuxuryMobileInteraction';
+// Removed luxury imports - using standard components
 
 interface NavItem {
   href: string;
@@ -229,7 +229,7 @@ export default function LusoMobileNavigation({
                 className="elite-nav-item-wrapper flex-1"
                 whileTap={{ scale: 0.95 }}
               >
-                <LuxuryRipple
+                <div
                   className={`elite-nav-item ${active ? 'elite-nav-item--active' : ''} relative flex-1`}
                   onClick={() => handleNavigation(item.href, 'light')}
                   hapticFeedback="light"
@@ -312,7 +312,7 @@ export default function LusoMobileNavigation({
                     }}
                     transition={{ duration: 0.2 }}
                   />
-                </LuxuryRipple>
+                </div>
               </motion.div>
             );
           })}
@@ -340,7 +340,7 @@ export default function LusoMobileNavigation({
             delay: 0.5
           }}
         >
-          <LuxuryFAB
+          <button
             icon={<PlusIcon className="w-6 h-6" />}
             onClick={fabAction || (() => router.push(ROUTES.host))}
             variant="primary"

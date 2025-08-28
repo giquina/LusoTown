@@ -24,6 +24,6 @@ export const STREAMING_COPY = {
   features: [
     "Reliable, low-latency streaming",
     "VOD replays and highlights",
-    "Creator-friendly chat tools",
+    "Community-focused chat tools",
   ],
 } as const;

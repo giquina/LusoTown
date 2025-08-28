@@ -302,7 +302,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
     avatar: '/images/testimonials/tiago-moreira-portugal.jpg',
     businessImage: '/images/success-stories/negocios-lusofonos-studio.jpg',
     
-    verificationBadges: ['content-creator-verified', 'portuguese-heritage-verified', 'business-podcast-host', 'community-influencer'],
+    verificationBadges: ['community-organizer-verified', 'portuguese-heritage-verified', 'business-podcast-host', 'community-influencer'],
     
     featured: true,
     dateJoined: '2021-02-14',

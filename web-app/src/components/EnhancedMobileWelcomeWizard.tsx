@@ -10,8 +10,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 import { ROUTES } from '@/config/routes'
-import LuxuryCard from '@/components/ui/LuxuryCard'
-import { GradientText, GradientBackground } from '@/components/ui/PremiumGradients'
+import { Card } from '@/components/ui/card'
 
 // Mobile Language Toggle Component
 function MobileLanguageToggle() {
@@ -213,7 +212,7 @@ export default function EnhancedMobileWelcomeWizard({
             className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto"
           >
             <GradientBackground variant="heritage" className="rounded-3xl">
-              <LuxuryCard 
+              <Card 
                 variant="glassmorphism" 
                 elevation="2xl" 
                 className="p-6 space-y-6"
@@ -274,7 +273,7 @@ export default function EnhancedMobileWelcomeWizard({
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.6 + index * 0.1 }}
                     >
-                      <LuxuryCard
+                      <Card
                         variant="default"
                         elevation="lg"
                         hover={true}
@@ -338,7 +337,7 @@ export default function EnhancedMobileWelcomeWizard({
                             </motion.div>
                           )}
                         </div>
-                      </LuxuryCard>
+                      </Card>
                     </motion.div>
                   ))}
                 </div>
@@ -365,7 +364,7 @@ export default function EnhancedMobileWelcomeWizard({
                     {t('wizard.enhanced.welcome_message')}
                   </p>
                 </div>
-              </LuxuryCard>
+              </Card>
             </GradientBackground>
           </motion.div>
         </motion.div>

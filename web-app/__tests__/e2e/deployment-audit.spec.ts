@@ -56,18 +56,11 @@ test.describe('Production Deployment Audit', () => {
     }
   })
 
-  test('Check demo and testing pages', async ({ page }) => {
-    const demoPages = [
-      '/welcome-demo',
-      '/enhanced-wizard-demo', 
-      '/lusophone-experience'
-    ]
-    
-    for (const path of demoPages) {
-      console.log(`Testing demo: ${baseURL}${path}`)
-      const response = await page.goto(`${baseURL}${path}`)
-      console.log(`Status: ${response?.status()} for ${path}`)
-    }
+  test('Check lusophone experience page', async ({ page }) => {
+    const testPath = '/lusophone-experience'
+    console.log(`Testing: ${baseURL}${testPath}`)
+    const response = await page.goto(`${baseURL}${testPath}`)
+    console.log(`Status: ${response?.status()} for ${testPath}`)
   })
 
   test('Footer and navigation audit', async ({ page }) => {

@@ -47,7 +47,7 @@ const getMobileFeatures = (t: any, isPortuguese: boolean) => [
     title: isPortuguese ? 'LusoTown TV' : 'LusoTown TV',
     description: isPortuguese
       ? 'Assista conteúdo cultural português ao vivo e conecte-se com criadores'
-      : 'Watch live Lusophone cultural content and connect with creators'
+      : 'Watch live Lusophone cultural content and connect with community organizers'
   },
   {
     icon: UserGroupIcon,
@@ -187,7 +187,7 @@ export default function AppDownloadSection() {
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                        <span className="text-primary-700">{communityStats.creators} {isPortuguese ? 'criadores ativos' : 'active creators'}</span>
+                        <span className="text-primary-700">{communityStats.events} {isPortuguese ? 'eventos mensais' : 'monthly events'}</span>
                       </div>
                     </div>
                   </div>

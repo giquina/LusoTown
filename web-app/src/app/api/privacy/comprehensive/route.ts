@@ -12,7 +12,7 @@ import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { gdprComplianceAuditEngine } from '@/lib/privacy/GDPRComplianceAuditEngine'
 import { createPortuguesePrivacyFramework } from '@/lib/privacy/PrivacyProtectionFramework'
-import { AI_SECURITY_CONFIG } from '@/config/ai-security'
+import { PRIVACY_SECURITY_CONFIG } from '@/config/privacy-security'
 import { logger } from '@/utils/logger'
 
 // =============================================================================

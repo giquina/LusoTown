@@ -1,11 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { StarIcon, CheckCircleIcon, ShoppingCartIcon, HeartIcon } from '@heroicons/react/24/solid'
+import { StarIcon, CheckCircleIcon, HeartIcon } from '@heroicons/react/24/solid'
 import { ArrowRightIcon, Users, MessageCircle } from 'lucide-react'
-import { useCart } from '@/context/CartContext'
 import { useFavorites } from '@/context/FavoritesContext'
-import { addServiceToCart, createServiceCartItem } from '@/lib/serviceCartUtils'
 
 interface Service {
   id: string
@@ -38,32 +36,10 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service, isPortuguese, onBookNow, index }) => {
   const IconComponent = service.icon
-  const { addToCart } = useCart()
   const { addToFavorites, removeFromFavorites, isFavorite } = useFavorites()
   
   const isServiceFavorited = isFavorite(service.id, 'service')
 
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.stopPropagation()
-    const success = addServiceToCart(
-      {
-        id: service.id,
-        name: service.name,
-        namePortuguese: service.namePortuguese,
-        price: service.price,
-        maxPrice: service.maxPrice,
-        priceUnit: service.priceUnit,
-        priceUnitPortuguese: service.priceUnitPortuguese,
-        description: service.description,
-        descriptionPortuguese: service.descriptionPortuguese,
-        image: service.image,
-        category: service.color,
-        rating: service.rating
-      },
-      addToCart,
-      isPortuguese
-    )
-  }
 
   const handleToggleFavorite = (e: React.MouseEvent) => {
     e.stopPropagation()
@@ -173,15 +149,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isPortuguese, onBook
             }`}
           >
             <HeartIcon className="w-4 h-4" />
-          </motion.button>
-          
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={handleAddToCart}
-            className="p-2 bg-white/90 text-gray-600 hover:bg-white rounded-full shadow-lg transition-colors duration-200"
-          >
-            <ShoppingCartIcon className="w-4 h-4" />
           </motion.button>
         </div>
       </div>

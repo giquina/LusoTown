@@ -19,12 +19,9 @@ import {
   PORTUGUESE_CULTURAL_TRADITIONS, 
   LANGUAGE_LEARNING_MODULES,
   EMOTIONAL_SUPPORT_RESPONSES,
-  VOICE_PERSONALITIES,
   findCulturalTradition,
   getLanguageLearningModule,
-  findEmotionalSupport,
-  getVoicePersonality,
-  analyzeCulturalContext
+  findEmotionalSupport
 } from '@/config/portuguese-cultural-knowledge'
 import {
   LANGUAGE_LEARNING_MODULES as ADVANCED_LANGUAGE_MODULES,
@@ -37,11 +34,6 @@ import {
   assessPronunciation,
   getCulturalContext
 } from '@/config/portuguese-language-learning'
-import {
-  VOICE_PERSONALITIES as VOICE_CONFIGS,
-  voiceInteractionSystem,
-  VoiceInteractionSystem
-} from '@/config/voice-interaction-system'
 
 // Core Types
 export interface LusoBotMessage {
@@ -72,15 +64,14 @@ export interface EmotionalTone {
 }
 
 export interface LusoBotSuggestion {
-  type: 'event' | 'business' | 'resource' | 'community' | 'language' | 'voice' | 'cultural' | 'therapeutic'
+  type: 'event' | 'business' | 'resource' | 'community' | 'language' | 'cultural' | 'therapeutic'
   title: string
   description: string
   link?: string
-  action?: 'speak' | 'teach' | 'practice' | 'connect' | 'learn' | 'support'
+  action?: 'teach' | 'practice' | 'connect' | 'learn' | 'support'
   priority: 'high' | 'medium' | 'low'
   culturalRelevance: number
   therapeuticValue?: number
-  voicePersonality?: string
   languageLevel?: string
 }
 
@@ -90,7 +81,6 @@ export interface MessageMetadata {
   languageProficiency?: LanguageProficiency
   interests?: string[]
   mood?: UserMood
-  preferredVoicePersonality?: string
   culturalBackground?: string[]
   therapeuticNeeds?: string[]
   languageLearningGoals?: string[]

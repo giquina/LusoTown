@@ -50,9 +50,8 @@ import StreamViewerStats from "@/components/StreamViewerStats";
 import StreamCategories from "@/components/StreamCategories";
 import LiveChatWidget from "@/components/LiveChatWidget";
 import HowStreamingWorks from "@/components/HowStreamingWorks";
-import LuxuryLoader from "@/components/LuxuryLoader";
-import LuxuryErrorBoundary from "@/components/LuxuryErrorBoundary";
-import { LuxuryButton, LuxuryCard } from "@/components/LuxuryMicroInteractions";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { usePerformanceOptimization } from "@/hooks/usePerformanceOptimization";
 
 export default function TVPage() {
@@ -286,32 +285,31 @@ export default function TVPage() {
               transition={{ delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-3 justify-center"
             >
-              <LuxuryButton
-                variant="premium"
-                size="lg"
+              <Button
+                               size="lg"
                 onClick={() => goToTab("live")}
               >
                 <Play className="w-5 h-5 mr-2" />
                 {isPortuguese ? "Assistir Agora" : "Watch Live"}
-              </LuxuryButton>
+              </Button>
               
-              <LuxuryButton
+              <Button
                 variant="secondary"
                 size="lg"
                 onClick={() => goToTab("programs")}
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 {isPortuguese ? "Ver Horários" : "View Schedule"}
-              </LuxuryButton>
+              </Button>
               
-              <LuxuryButton
+              <Button
                 variant="elite"
                 size="lg"
                 onClick={() => goToTab("replays")}
               >
                 <Library className="w-5 h-5 mr-2" />
                 {isPortuguese ? "Ver Gravações" : "Explore Replays"}
-              </LuxuryButton>
+              </Button>
             </motion.div>
           </div>
         </div>
@@ -363,7 +361,7 @@ export default function TVPage() {
 
               <div className="grid lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-6">
-                  <LuxuryCard variant="premium" className="p-0 overflow-hidden">
+                  <Card variant="premium" className="p-0 overflow-hidden">
                     <StreamPlayer
                       stream={{
                         id: "default",
@@ -378,7 +376,7 @@ export default function TVPage() {
                       hasAccess={true}
                       onInteraction={() => {}}
                     />
-                  </LuxuryCard>
+                  </Card>
                   
                   <StreamViewerStats
                     currentViewers={viewerCount}
@@ -388,14 +386,14 @@ export default function TVPage() {
                   />
                 </div>
                 <div>
-                  <LuxuryCard variant="premium" hoverable={true}>
+                  <Card variant="premium">
                     <StreamCategories
                       categories={categories}
                       selectedCategory={selectedCategory}
                       onCategorySelect={setSelectedCategory}
                       hasActiveSubscription={hasActiveSubscription}
                     />
-                  </LuxuryCard>
+                  </Card>
                 </div>
               </div>
             </div>

@@ -6,7 +6,7 @@ import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import { useFavorites } from '@/context/FavoritesContext'
 import { toast } from 'react-hot-toast'
 import { motion, AnimatePresence } from 'framer-motion'
-import { LuxuryRipple } from './LuxuryMobileInteraction'
+// Removed luxury imports - using standard components
 
 interface FavoriteButtonProps {
   itemId: string
@@ -73,7 +73,7 @@ export default function FavoriteButton({
   }
 
   return (
-    <LuxuryRipple
+    <div
       onClick={handleClick}
       className={getButtonClasses()}
       hapticFeedback="light"
@@ -155,6 +155,6 @@ export default function FavoriteButton({
           )}
         </AnimatePresence>
       </motion.div>
-    </LuxuryRipple>
+    </div>
   )
 }

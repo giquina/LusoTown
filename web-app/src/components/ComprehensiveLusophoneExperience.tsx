@@ -19,8 +19,7 @@ import { ROUTES, communityStats, formatStat } from '@/config'
 import LusophoneTestimonials from '@/components/LusophoneTestimonials'
 import EnhancedMobileWelcomeWizard from '@/components/EnhancedMobileWelcomeWizard'
 import HeritageSelector, { HeritageBadge } from '@/components/HeritageSelector'
-import LuxuryCard from '@/components/ui/LuxuryCard'
-import { GradientText, GradientBackground } from '@/components/ui/PremiumGradients'
+import { Card } from '@/components/ui/card'
 
 // Touch-friendly swipe detection hook
 function useSwipeDetection(onSwipeLeft: () => void, onSwipeRight: () => void) {
@@ -203,11 +202,10 @@ function HeritageSelectionSystem() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <LuxuryCard
+            <Card
               variant="default"
               elevation="md"
-              hover={true}
-              className={`cursor-pointer transition-all duration-300 text-center ${
+                           className={`cursor-pointer transition-all duration-300 text-center ${
                 selectedHeritage === option.code 
                   ? 'ring-2 ring-primary-500 bg-primary-50 border-primary-500' 
                   : 'hover:border-primary-300'
@@ -232,7 +230,7 @@ function HeritageSelectionSystem() {
                   </motion.div>
                 )}
               </div>
-            </LuxuryCard>
+            </Card>
           </motion.div>
         ))}
       </div>
@@ -300,7 +298,7 @@ function CommunityStatsDashboard() {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: index * 0.1 }}
           >
-            <LuxuryCard variant="default" elevation="lg" hover={true}>
+            <Card variant="default" hover={true}>
               <div className="p-4 text-center space-y-3">
                 <div className={`w-12 h-12 mx-auto rounded-xl ${stat.bg} flex items-center justify-center`}>
                   <stat.icon className={`w-6 h-6 ${stat.color}`} />
@@ -312,7 +310,7 @@ function CommunityStatsDashboard() {
                   {stat.label}
                 </div>
               </div>
-            </LuxuryCard>
+            </Card>
           </motion.div>
         ))}
       </div>
@@ -384,7 +382,7 @@ function BusinessBenefitsShowcase() {
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.3 }}
           >
-            <LuxuryCard variant="premium" elevation="xl" className="p-6">
+            <Card className="p-6">
               <div className="text-center space-y-4">
                 <div className="text-4xl mb-2">{markets[activeMarket].flag}</div>
                 <h3 className="text-xl font-bold text-gray-900">{markets[activeMarket].name}</h3>
@@ -408,7 +406,7 @@ function BusinessBenefitsShowcase() {
                   </div>
                 </div>
               </div>
-            </LuxuryCard>
+            </Card>
           </motion.div>
         </AnimatePresence>
 
@@ -568,9 +566,9 @@ export default function ComprehensiveLusophoneExperience() {
           transition={{ duration: 0.3 }}
           className="min-h-[400px]"
         >
-          <LuxuryCard variant="glassmorphism" elevation="2xl" className="p-6">
+          <Card className="p-6">
             {renderActiveSection()}
-          </LuxuryCard>
+          </Card>
         </motion.div>
 
         {/* Footer Call-to-Action */}
@@ -581,7 +579,7 @@ export default function ComprehensiveLusophoneExperience() {
           className="text-center"
         >
           <GradientBackground variant="heritage" className="rounded-3xl">
-            <LuxuryCard variant="glassmorphism" className="p-8 text-center space-y-4">
+            <Card className="p-8 text-center space-y-4">
               <div className="text-3xl mb-4">🤝</div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
                 {t('footer.ready_title', 'Ready to Join the Lusophone-Speaking Community?')}
@@ -607,7 +605,7 @@ export default function ComprehensiveLusophoneExperience() {
                   {t('cta.explore_options', 'Explore Membership Options')}
                 </button>
               </div>
-            </LuxuryCard>
+            </Card>
           </GradientBackground>
         </motion.div>
       </div>

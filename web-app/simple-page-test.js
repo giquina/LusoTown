@@ -35,7 +35,6 @@ async function testAllPages() {
     { path: '/forums', name: 'Forums' },
     { path: '/chat', name: 'Chat' },
     { path: '/directory', name: 'Member Directory' },
-    { path: '/elite-showcase', name: 'Elite Showcase' },
     { path: '/privacy', name: 'Privacy Policy' },
     { path: '/terms', name: 'Terms of Service' }
   ];

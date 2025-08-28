@@ -7,7 +7,7 @@
  * Implements all GDPR articles with Portuguese community context and bilingual support.
  */
 
-import { AI_SECURITY_CONFIG, PORTUGUESE_CULTURAL_PRIVACY } from '@/config/ai-security'
+import { PRIVACY_SECURITY_CONFIG, PORTUGUESE_CULTURAL_PRIVACY } from '@/config/privacy-security'
 import type { Language } from '@/i18n'
 
 // =============================================================================

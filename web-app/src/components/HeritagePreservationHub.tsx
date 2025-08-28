@@ -112,8 +112,8 @@ const HERITAGE_PROJECTS: HeritageProject[] = [
     ],
     mediaType: 'photos',
     partnerships: ['Museum of London', 'Lusophone Embassy', 'Casa do Bacalhau'],
-    nextSteps: 'Expand to include Portuguese business histories and develop virtual reality heritage tours of historic Lusophone London locations.',
-    nextStepsPortuguese: 'Expandir para incluir histórias de negócios portugueses e desenvolver tours de património em realidade virtual de locais históricos portugueses de Londres.'
+    nextSteps: 'Expand to include Portuguese business histories and develop guided heritage walks of historic Lusophone London locations.',
+    nextStepsPortuguese: 'Expandir para incluir histórias de negócios portugueses e desenvolver passeios guiados de património de locais históricos portugueses de Londres.'
   },
   {
     id: 'language-preservation',
@@ -180,8 +180,8 @@ const HERITAGE_PROJECTS: HeritageProject[] = [
     ],
     mediaType: 'photos',
     partnerships: ['Greater London Authority', 'Historic England', 'Lusophone Business Association'],
-    nextSteps: 'Launch augmented reality heritage app and expand mapping to include Lusophone family cemetery plots and memorial sites.',
-    nextStepsPortuguese: 'Lançar aplicação de património em realidade aumentada e expandir mapeamento para incluir lotes de cemitério de famílias portuguesas e locais memoriais.'
+    nextSteps: 'Launch interactive heritage app and expand mapping to include Lusophone family cemetery plots and memorial sites.',
+    nextStepsPortuguese: 'Lançar aplicação interativa de património e expandir mapeamento para incluir lotes de cemitério de famílias portuguesas e locais memoriais.'
   },
   {
     id: 'traditions-festivals',
@@ -214,8 +214,8 @@ const HERITAGE_PROJECTS: HeritageProject[] = [
     ],
     mediaType: 'video',
     partnerships: ['Lusophone Churches', 'Cultural Associations', 'Documentary Film Society'],
-    nextSteps: 'Create virtual reality experiences of Portuguese festivals and develop community-led storytelling workshops for youth.',
-    nextStepsPortuguese: 'Criar experiências de realidade virtual de festivais portugueses e desenvolver workshops de storytelling liderados pela comunidade para jovens.'
+    nextSteps: 'Create multimedia documentary experiences of Portuguese festivals and develop community-led storytelling workshops for youth.',
+    nextStepsPortuguese: 'Criar experiências documentárias multimédia de festivais portugueses e desenvolver workshops de storytelling liderados pela comunidade para jovens.'
   },
   {
     id: 'genealogy-project',

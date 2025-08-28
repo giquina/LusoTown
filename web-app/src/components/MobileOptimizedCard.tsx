@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
-import { LuxuryRipple } from './LuxuryMobileInteraction';
+// Removed luxury imports - using standard components
 import {
   HeartIcon,
   ShareIcon,
@@ -173,7 +173,7 @@ export default function MobileOptimizedCard({
             {/* Action Buttons Overlay */}
             <div className="absolute top-3 right-3 flex items-center gap-2">
               {onShare && (
-                <LuxuryRipple
+                <div
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
@@ -183,11 +183,11 @@ export default function MobileOptimizedCard({
                   hapticFeedback="light"
                 >
                   <ShareIcon className="w-4 h-4 text-gray-700" />
-                </LuxuryRipple>
+                </div>
               )}
               
               {onFavorite && (
-                <LuxuryRipple
+                <div
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
@@ -201,7 +201,7 @@ export default function MobileOptimizedCard({
                   ) : (
                     <HeartIcon className="w-4 h-4 text-gray-700" />
                   )}
-                </LuxuryRipple>
+                </div>
               )}
             </div>
           </div>
@@ -337,7 +337,7 @@ export default function MobileOptimizedCard({
           {actions.length > 0 && (
             <div className={`flex gap-2 ${actions.length === 1 ? '' : actions.length === 2 ? 'grid grid-cols-2' : 'flex-wrap'}`}>
               {actions.map((action, index) => (
-                <LuxuryRipple
+                <div
                   key={index}
                   onClick={(e) => {
                     e.preventDefault();
@@ -360,7 +360,7 @@ export default function MobileOptimizedCard({
                   <span className="truncate">
                     {isPortuguese ? action.labelPt : action.label}
                   </span>
-                </LuxuryRipple>
+                </div>
               ))}
             </div>
           )}

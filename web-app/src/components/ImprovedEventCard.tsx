@@ -13,13 +13,14 @@ import {
   PhotoIcon,
   ArrowRightIcon,
   SparklesIcon,
+  HeartIcon,
 } from "@heroicons/react/24/outline";
+import { HeartIcon as HeartSolidIcon } from "@heroicons/react/24/solid";
 import EventImageWithFallback from "@/components/EventImageWithFallback";
-import SaveFavoriteCartButton from "@/components/SaveFavoriteCartButton";
 import NetworkPreview from "@/components/NetworkPreview";
 import { Event } from "@/lib/events";
-import { useCart } from "@/context/CartContext";
 import { useLanguage } from "@/context/LanguageContext";
+import { useFavorites } from "@/context/FavoritesContext";
 import { useNetworking } from "@/context/NetworkingContext";
 import { formatEventDate } from "@/lib/dateUtils";
 import { getCurrentUser } from "@/lib/auth";
@@ -43,7 +44,7 @@ const ImprovedEventCard = ({
   showPreviewOverlay = false,
   onUpgrade,
 }: ImprovedEventCardProps) => {
-  const { isSaved } = useCart();
+  const { addToFavorites, removeFromFavorites, isFavorite } = useFavorites();
   const { t, language } = useLanguage();
   const isPortuguese = language === "pt";
   const { getConnectionsByEvent } = useNetworking();
@@ -73,6 +74,26 @@ const ImprovedEventCard = ({
   useEffect(() => {
     setUser(getCurrentUser());
   }, []);
+
+  const isEventFavorited = isFavorite(event.id, 'event');
+
+  const handleToggleFavorite = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (isEventFavorited) {
+      removeFromFavorites(event.id, 'event');
+    } else {
+      addToFavorites({
+        id: event.id,
+        type: 'event',
+        title: event.title,
+        description: event.description,
+        url: `/events/${event.id}`,
+        imageUrl: event.images?.[0],
+        category: event.category,
+        addedAt: new Date().toISOString()
+      });
+    }
+  };
 
   // Check if this should show preview overlay for free users
   const shouldShowPreview =
@@ -180,27 +201,23 @@ const ImprovedEventCard = ({
 
                 {/* Right: Actions */}
                 <div className="flex gap-2">
-                  <SaveFavoriteCartButton
-                    itemId={event.id}
-                    itemType="event"
-                    title={event.title}
-                    description={event.description}
-                    imageUrl={event.images?.[0]}
-                    category={event.category}
-                    eventDate={event.date}
-                    eventTime={event.time}
-                    eventLocation={event.location}
-                    eventPrice={event.price}
-                    spotsLeft={spotsLeft}
-                    requiresApproval={event.requiresApproval}
-                    membershipRequired={event.membershipRequired}
-                    showCart={false}
-                    showSave={true}
-                    size="small"
-                    iconOnly={true}
-                    variant="default"
-                    className={cn(Spacing.touchTarget, "bg-white/90 backdrop-blur-sm rounded-full shadow-lg")}
-                  />
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={handleToggleFavorite}
+                    className={`p-2 rounded-full shadow-lg transition-colors duration-200 bg-white/90 backdrop-blur-sm ${
+                      isEventFavorited 
+                        ? 'text-red-500' 
+                        : 'text-gray-600 hover:text-red-500'
+                    }`}
+                    title={isEventFavorited ? (isPortuguese ? 'Remover dos favoritos' : 'Remove from favorites') : (isPortuguese ? 'Adicionar aos favoritos' : 'Add to favorites')}
+                  >
+                    {isEventFavorited ? (
+                      <HeartSolidIcon className="w-4 h-4" />
+                    ) : (
+                      <HeartIcon className="w-4 h-4" />
+                    )}
+                  </motion.button>
                   <button className={cn(Spacing.touchTarget, "bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors shadow-lg")}>
                     <ShareIcon className={cn(IconSystem.sizes.sm, "text-gray-600")} />
                   </button>
@@ -356,27 +373,13 @@ const ImprovedEventCard = ({
                     ? "Ver Mais"
                     : "View More"}
                 </a>
-                <SaveFavoriteCartButton
-                  itemId={event.id}
-                  itemType="event"
-                  title={event.title}
-                  description={event.description}
-                  imageUrl={event.images?.[0]}
-                  category={event.category}
-                  eventDate={event.date}
-                  eventTime={event.time}
-                  eventLocation={event.location}
-                  eventPrice={event.price}
-                  spotsLeft={spotsLeft}
-                  requiresApproval={event.requiresApproval}
-                  membershipRequired={event.membershipRequired}
-                  showSave={false}
-                  showCart={true}
-                  iconOnly={false}
-                  size="medium"
-                  variant="outline"
-                  className="flex-1"
-                />
+                <a
+                  href={`/events/${event.id}`}
+                  className="flex-1 bg-primary-600 text-white px-4 py-2 rounded-lg font-semibold text-center hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center gap-2"
+                >
+                  {isPortuguese ? 'Reservar Evento' : 'Book Event'}
+                  <ArrowRightIcon className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>

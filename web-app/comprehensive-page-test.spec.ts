@@ -49,8 +49,6 @@ test.describe('LusoTown Complete Site Navigation Test', () => {
     { path: '/directory', name: 'Member Directory' },
     
     // Special pages
-    { path: '/elite-showcase', name: 'Elite Showcase' },
-    { path: '/elite-mobile-showcase', name: 'Elite Mobile Showcase' },
     { path: '/privacy', name: 'Privacy Policy' },
     { path: '/terms', name: 'Terms of Service' },
     

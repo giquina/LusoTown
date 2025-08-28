@@ -81,22 +81,6 @@ export interface EmotionalSupportResponse {
   therapeuticApproach: string
 }
 
-export interface VoicePersonality {
-  name: string
-  region: string
-  characteristics: {
-    warmth: number // 0-1
-    formality: number // 0-1
-    enthusiasm: number // 0-1
-    wisdom: number // 0-1
-  }
-  speechPatterns: {
-    greetings: string[]
-    expressions: string[]
-    endingPhrases: string[]
-  }
-  culturalSpecialty: string[]
-}
 
 /**
  * Comprehensive Portuguese Cultural Traditions Database
@@ -450,75 +434,6 @@ export const EMOTIONAL_SUPPORT_RESPONSES: EmotionalSupportResponse[] = [
   }
 ]
 
-/**
- * Voice Personality Configurations
- */
-export const VOICE_PERSONALITIES: VoicePersonality[] = [
-  {
-    name: 'Avó Carinhosa',
-    region: 'Northern Portugal',
-    characteristics: {
-      warmth: 0.9,
-      formality: 0.3,
-      enthusiasm: 0.6,
-      wisdom: 0.9
-    },
-    speechPatterns: {
-      greetings: ['Olá, meu querido', 'Como estás, filho?', 'Que bom ouvir-te'],
-      expressions: ['Ai, Jesus', 'Meu Deus', 'Claro que sim', 'Pois é'],
-      endingPhrases: ['Fica bem, querido', 'Um beijinho grande', 'Deus te abençoe']
-    },
-    culturalSpecialty: ['family_traditions', 'traditional_recipes', 'regional_history', 'emotional_support']
-  },
-  {
-    name: 'Professor Cultured',
-    region: 'Lisbon',
-    characteristics: {
-      warmth: 0.7,
-      formality: 0.8,
-      enthusiasm: 0.7,
-      wisdom: 0.9
-    },
-    speechPatterns: {
-      greetings: ['Bom dia', 'É um prazer', 'Como tem passado?'],
-      expressions: ['Efetivamente', 'Interessante', 'Permita-me explicar', 'É importante notar'],
-      endingPhrases: ['Espero ter ajudado', 'Às suas ordens', 'Com os melhores cumprimentos']
-    },
-    culturalSpecialty: ['history', 'literature', 'language_learning', 'cultural_analysis']
-  },
-  {
-    name: 'Amigo Brasileiro',
-    region: 'Brazil',
-    characteristics: {
-      warmth: 0.9,
-      formality: 0.2,
-      enthusiasm: 0.9,
-      wisdom: 0.6
-    },
-    speechPatterns: {
-      greetings: ['E aí, tudo bem?', 'Opa!', 'Beleza?'],
-      expressions: ['Cara', 'Tipo assim', 'Né?', 'Massa', 'Que legal'],
-      endingPhrases: ['Falou!', 'Valeu mesmo', 'Forte abraço', 'Tamo junto']
-    },
-    culturalSpecialty: ['brazilian_culture', 'music', 'festivals', 'modern_expressions']
-  },
-  {
-    name: 'Tia Cabo-verdiana',
-    region: 'Cape Verde',
-    characteristics: {
-      warmth: 0.9,
-      formality: 0.4,
-      enthusiasm: 0.7,
-      wisdom: 0.8
-    },
-    speechPatterns: {
-      greetings: ['Oi, ma amor', 'Kuma bo sta?', 'Tudu bon?'],
-      expressions: ['Morabeza', 'Ma dja', 'Sta bem', 'N ta konsa'],
-      endingPhrases: ['Ate logo', 'Fica na boa', 'Um abraço forte']
-    },
-    culturalSpecialty: ['island_life', 'morna_music', 'cape_verdean_traditions', 'community_support']
-  }
-]
 
 /**
  * Cultural Knowledge Search Functions
@@ -548,60 +463,3 @@ export function findEmotionalSupport(trigger: string): EmotionalSupportResponse 
   ) || null
 }
 
-export function getVoicePersonality(preference?: string): VoicePersonality {
-  if (preference) {
-    const personality = VOICE_PERSONALITIES.find(p => 
-      p.name.toLowerCase().includes(preference.toLowerCase()) ||
-      p.region.toLowerCase().includes(preference.toLowerCase())
-    )
-    if (personality) return personality
-  }
-  
-  // Default to warm, wise grandmother figure
-  return VOICE_PERSONALITIES[0]
-}
-
-/**
- * Cultural Context Analysis
- */
-export function analyzeCulturalContext(message: string, language: Language): {
-  traditions: CulturalTradition[]
-  emotions: string[]
-  culturalDepth: number
-  suggestedPersonality: VoicePersonality
-} {
-  const traditions = PORTUGUESE_CULTURAL_TRADITIONS.filter(tradition =>
-    tradition.keywords.some(keyword => 
-      message.toLowerCase().includes(keyword.toLowerCase())
-    )
-  )
-  
-  const emotions = traditions.flatMap(t => t.emotionalContext)
-  const uniqueEmotions = [...new Set(emotions)]
-  
-  // Calculate cultural depth based on cultural keywords and emotional complexity
-  const culturalKeywords = ['saudade', 'família', 'tradição', 'cultura', 'património', 'fado', 'casa']
-  const keywordMatches = culturalKeywords.filter(keyword => 
-    message.toLowerCase().includes(keyword)
-  ).length
-  
-  const culturalDepth = Math.min((keywordMatches * 0.3) + (uniqueEmotions.length * 0.1), 1)
-  
-  // Suggest personality based on context
-  let suggestedPersonality = VOICE_PERSONALITIES[0] // Default warm grandmother
-  
-  if (message.toLowerCase().includes('história') || message.toLowerCase().includes('literature')) {
-    suggestedPersonality = VOICE_PERSONALITIES[1] // Professor
-  } else if (message.toLowerCase().includes('festa') || message.toLowerCase().includes('música')) {
-    suggestedPersonality = VOICE_PERSONALITIES[2] // Brazilian friend
-  } else if (message.toLowerCase().includes('morabeza') || message.toLowerCase().includes('cabo verde')) {
-    suggestedPersonality = VOICE_PERSONALITIES[3] // Cape Verdean aunt
-  }
-  
-  return {
-    traditions,
-    emotions: uniqueEmotions,
-    culturalDepth,
-    suggestedPersonality
-  }
-}

@@ -17,7 +17,6 @@ import { useLanguage } from "@/context/LanguageContext";
 import { plans, formatPrice } from "@/config/pricing";
 import { ROUTES } from "@/config/routes";
 import { motion, AnimatePresence } from "framer-motion";
-import { LuxuryRipple } from "./LuxuryMobileInteraction";
 import "../styles/hero-mobile-enhancements.css";
 
 export default function Hero() {
@@ -184,7 +183,7 @@ export default function Hero() {
                     stiffness: 300
                   }}
                 >
-                  <LuxuryRipple
+                  <div
                     className="hero-feature-card hero-mobile-touch-target luxury-glass-card min-h-[80px] sm:min-h-[96px] md:min-h-[104px] cursor-pointer"
                     hapticFeedback="light"
                     rippleColor="rgba(255, 255, 255, 0.4)"
@@ -211,7 +210,7 @@ export default function Hero() {
                         <span className="hidden sm:block">{item.label}</span>
                       </span>
                     </motion.div>
-                  </LuxuryRipple>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -232,7 +231,7 @@ export default function Hero() {
                   <p className="text-xs text-gray-600">Luxury experiences for Portuguese speakers</p>
                 </div>
                 <div className="grid grid-cols-3 gap-2 sm:gap-3">
-                  <LuxuryRipple
+                  <div
                     onClick={() => window.location.href = ROUTES.londonTours}
                     className="group flex flex-col items-center gap-2 p-3 rounded-2xl bg-gradient-to-br from-red-50 to-red-100 hover:from-red-100 hover:to-red-150 transition-all duration-300 hover:scale-105 min-h-[70px] sm:min-h-[80px] shadow-lg hover:shadow-xl border border-red-200/50"
                     hapticFeedback="light"
@@ -243,9 +242,9 @@ export default function Hero() {
                     <span className="text-[10px] sm:text-xs font-bold text-red-800 text-center leading-tight">
                       United Kingdom Tours
                     </span>
-                  </LuxuryRipple>
+                  </div>
 
-                  <LuxuryRipple
+                  <div
                     onClick={() => window.location.href = ROUTES.transport}
                     className="group flex flex-col items-center gap-2 p-3 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 hover:from-green-100 hover:to-green-150 transition-all duration-300 hover:scale-105 min-h-[70px] sm:min-h-[80px] shadow-lg hover:shadow-xl border border-green-200/50"
                     hapticFeedback="light"
@@ -256,9 +255,9 @@ export default function Hero() {
                     <span className="text-[10px] sm:text-xs font-bold text-green-800 text-center leading-tight">
                       Executive Transport
                     </span>
-                  </LuxuryRipple>
+                  </div>
 
-                  <LuxuryRipple
+                  <div
                     onClick={() => window.location.href = ROUTES.transport}
                     className="group flex flex-col items-center gap-2 p-3 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 hover:from-amber-100 hover:to-amber-150 transition-all duration-300 hover:scale-105 min-h-[70px] sm:min-h-[80px] shadow-lg hover:shadow-xl border border-amber-200/50"
                     hapticFeedback="light"
@@ -269,7 +268,7 @@ export default function Hero() {
                     <span className="text-[10px] sm:text-xs font-bold text-amber-800 text-center leading-tight">
                       Protection
                     </span>
-                  </LuxuryRipple>
+                  </div>
                 </div>
               </div>
             </div>
@@ -292,7 +291,7 @@ export default function Hero() {
                   stiffness: 200
                 }}
               >
-                <LuxuryRipple
+                <div
                   className="hero-cta-primary-mobile hero-mobile-primary-cta luxury-btn-primary relative overflow-hidden rounded-2xl text-center min-h-[56px] sm:min-h-[60px] w-full shadow-2xl"
                   onClick={() => window.location.href = ROUTES.signup}
                   hapticFeedback="medium"
@@ -318,7 +317,7 @@ export default function Hero() {
                       <ArrowRightIcon className="h-5 w-5 sm:h-6 sm:w-6" />
                     </motion.div>
                   </motion.div>
-                </LuxuryRipple>
+                </div>
               </motion.div>
 
               {/* Secondary CTAs - Mobile Stack on Small Screens */}
@@ -333,7 +332,7 @@ export default function Hero() {
                   stiffness: 200
                 }}
               >
-                <LuxuryRipple
+                <div
                   className="luxury-btn-secondary bg-white/90 backdrop-blur-sm border-2 border-red-200 hover:border-red-300 relative overflow-hidden rounded-2xl text-center min-h-[48px] sm:min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300"
                   onClick={() => window.location.href = ROUTES.services}
                   hapticFeedback="light"
@@ -346,9 +345,9 @@ export default function Hero() {
                   >
                     <span>🏆 {t("hero.cta.services", "Premium Services")}</span>
                   </motion.div>
-                </LuxuryRipple>
+                </div>
 
-                <LuxuryRipple
+                <div
                   className="luxury-btn-secondary bg-white/90 backdrop-blur-sm border-2 border-green-200 hover:border-green-300 relative overflow-hidden rounded-2xl text-center min-h-[48px] sm:min-h-[52px] shadow-lg hover:shadow-xl transition-all duration-300"
                   onClick={() => window.location.href = ROUTES.host}
                   hapticFeedback="light"
@@ -367,7 +366,7 @@ export default function Hero() {
                       <SparklesIcon className="h-4 w-4" />
                     </motion.div>
                   </motion.div>
-                </LuxuryRipple>
+                </div>
               </motion.div>
               
               {/* Mobile-Specific Trust Indicators */}

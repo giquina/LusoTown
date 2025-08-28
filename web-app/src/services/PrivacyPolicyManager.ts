@@ -6,7 +6,7 @@
  */
 
 import { createPortuguesePrivacyFramework } from '@/lib/privacy/PrivacyProtectionFramework'
-import { AI_SECURITY_CONFIG } from '@/config/ai-security'
+import { PRIVACY_SECURITY_CONFIG } from '@/config/privacy-security'
 import type { Language } from '@/i18n'
 
 // =============================================================================

@@ -103,9 +103,7 @@ export const STREAMING_URLS = {
   webrtc: process.env.NEXT_PUBLIC_WEBRTC_SERVER_URL || (process.env.NODE_ENV === 'production' ? 'wss://webrtc.lusotown.com' : 'ws://localhost:8080/webrtc'),
   socket: process.env.NEXT_PUBLIC_SOCKET_URL || (process.env.NODE_ENV === 'production' ? 'wss://chat.lusotown.com' : 'http://localhost:3002'),
   api: process.env.NEXT_PUBLIC_STREAMING_API_URL || (process.env.NODE_ENV === 'production' ? 'https://api.lusotown.com' : 'http://localhost:3002'),
-  creatorApi: process.env.NEXT_PUBLIC_CREATOR_API_URL || (process.env.NODE_ENV === 'production' ? 'https://creator-api.lusotown.com/api/creators' : 'http://localhost:8080/api/creators'),
-  creatorAuth: process.env.NEXT_PUBLIC_CREATOR_AUTH_URL || (process.env.NODE_ENV === 'production' ? 'https://creator-auth.lusotown.com/auth/creators' : 'http://localhost:8080/auth/creators'),
-  analytics: process.env.NEXT_PUBLIC_CREATOR_ANALYTICS_URL || (process.env.NODE_ENV === 'production' ? 'https://analytics.lusotown.com/api/analytics' : 'http://localhost:8080/api/analytics')
+  analytics: process.env.NEXT_PUBLIC_ANALYTICS_URL || (process.env.NODE_ENV === 'production' ? 'https://analytics.lusotown.com/api/analytics' : 'http://localhost:8080/api/analytics')
 } as const;
 
 // Business and Professional URLs
@@ -276,8 +274,6 @@ export const IMAGES = {
     closeProtection: `${CDN_PROVIDERS.cloudinary}/image/upload/v1734535200/close-protection-london_dlqxkx.jpg`
   },
   streaming: {
-    creatorStarter: `${CDN_PROVIDERS.cloudinary}/image/upload/v1734535200/creator-starter-setup_dlqxkx.jpg`,
-    professionalStudio: `${CDN_PROVIDERS.cloudinary}/image/upload/v1734535201/professional-creator-studio_hml2nr.jpg`,
     enterpriseSetup: `${CDN_PROVIDERS.cloudinary}/image/upload/v1734535202/enterprise-streaming-setup_abc123.jpg`,
     ukStreamingBg: `${CDN_PROVIDERS.cloudinary}/image/upload/v1734535200/uk-streaming-background_dlqxkx.jpg`
   },

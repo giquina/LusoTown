@@ -26,7 +26,6 @@ import {
 import { UserIcon, LogOut, Download } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { ROUTES } from '@/config/routes';
-import { LuxuryRipple } from "@/components/LuxuryMobileInteraction";
 import { useMobileRedirect } from "@/components/MobileRedirectProvider";
 
 interface MobileNavigationProps {
@@ -288,11 +287,9 @@ interface MobileNavButtonProps {
 
 export function MobileNavButton({ isOpen, onClick, "data-testid": testId, "aria-label": ariaLabel }: MobileNavButtonProps) {
   return (
-    <LuxuryRipple
-      className="inline-flex items-center justify-center p-3 rounded-xl text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-300 min-h-[56px] min-w-[56px] bg-white/95 backdrop-blur-sm border-2 border-primary-200/60 shadow-lg hover:shadow-xl active:bg-primary-50 luxury-touch-target relative z-[10001]"
+    <button
+      className="inline-flex items-center justify-center p-3 rounded-xl text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-300 min-h-[56px] min-w-[56px] bg-white/95 backdrop-blur-sm border-2 border-primary-200/60 shadow-lg hover:shadow-xl active:bg-primary-50 touch-target relative z-[10001]"
       onClick={onClick}
-      hapticFeedback="medium"
-      rippleColor="rgba(197, 40, 47, 0.2)"
       data-testid={testId}
       aria-label={ariaLabel}
     >
@@ -315,6 +312,6 @@ export function MobileNavButton({ isOpen, onClick, "data-testid": testId, "aria-
           />
         )}
       </motion.div>
-    </LuxuryRipple>
+    </button>
   );
 }

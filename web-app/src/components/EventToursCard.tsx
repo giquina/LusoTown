@@ -9,9 +9,7 @@ import {
   UserGroupIcon,
   ClockIcon,
   StarIcon,
-  ShoppingCartIcon,
   HeartIcon,
-  CheckIcon,
   SparklesIcon,
   AcademicCapIcon,
   GlobeAltIcon
@@ -19,9 +17,8 @@ import {
 import { Crown } from 'lucide-react'
 import FavoriteButton from '@/components/FavoriteButton'
 import WaitingListModal from '@/components/WaitingListModal'
-import { useCart } from '@/context/CartContext'
+import { useFavorites } from '@/context/FavoritesContext'
 import { useLanguage } from '@/context/LanguageContext'
-import { useAuthRequired } from '@/hooks/useAuthRequired'
 import { formatEventDate } from '@/lib/dateUtils'
 import { toast } from 'react-hot-toast'
 import { EventTour } from '@/lib/events-tours'
@@ -32,15 +29,12 @@ interface EventToursCardProps {
 }
 
 export default function EventToursCard({ event, className = '' }: EventToursCardProps) {
-  const { addToCart, isInCart, addToSaved, isSaved } = useCart()
+  const { addToFavorites, removeFromFavorites, isFavorite } = useFavorites()
   const { language, t } = useLanguage()
-  const { requireAuthForCart } = useAuthRequired()
-  const [addingToCart, setAddingToCart] = useState(false)
   const [showWaitingListModal, setShowWaitingListModal] = useState(false)
   
   const isPortuguese = language === 'pt'
-  const inCart = isInCart(event.title)
-  const savedItem = isSaved(event.title)
+  const isEventFavorited = isFavorite(event.id, 'event')
 
   const formatDate = (dateString: string) => {
     // Use consistent date formatting to prevent hydration issues
@@ -97,79 +91,21 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
     return badges[tier as keyof typeof badges] || badges.free
   }
 
-  const handleAddToCart = async () => {
-    if (inCart) {
-      toast.success(isPortuguese ? 'Já está no carrinho!' : 'Already in cart!')
-      return
+  const handleToggleFavorite = () => {
+    if (isEventFavorited) {
+      removeFromFavorites(event.id, 'event');
+    } else {
+      addToFavorites({
+        id: event.id,
+        type: 'event',
+        title: event.title,
+        description: event.description,
+        url: `/events/${event.id}`,
+        imageUrl: event.imageUrl,
+        category: event.category,
+        addedAt: new Date().toISOString()
+      });
     }
-
-    const cartItemData = {
-      type: 'event',
-      title: event.title,
-      description: event.description,
-      price: event.price,
-      currency: event.currency,
-      imageUrl: event.imageUrl,
-      eventDate: event.date,
-      eventTime: event.time,
-      eventLocation: event.location,
-      eventCategory: event.category,
-      spotsLeft,
-      requiresApproval: event.requiresApproval,
-      membershipRequired: event.membershipRequired,
-      maxQuantity: Math.min(spotsLeft, 4), // Max 4 tickets per person
-      expiresAt: new Date(Date.now() + 30 * 60 * 1000).toISOString(), // 30 min expiry
-      metadata: {
-        hostName: event.hostName,
-        endTime: event.endTime,
-        featured: event.featured,
-        averageRating: event.averageRating,
-        totalReviews: event.totalReviews,
-        groupExperience: event.groupExperience,
-        ageRestriction: event.ageRestriction,
-        portugueseOrigin: event.portugueseOrigin,
-        highlights: event.highlights,
-        groupSize: event.groupSize
-      }
-    }
-
-    const addToCartAction = () => {
-      setAddingToCart(true)
-      
-      try {
-        addToCart(cartItemData)
-      } catch (error) {
-        toast.error(isPortuguese ? 'Erro ao adicionar ao carrinho' : 'Error adding to cart')
-      } finally {
-        setAddingToCart(false)
-      }
-    }
-
-    // Use auth-required hook - will show popup if not authenticated
-    requireAuthForCart(addToCartAction, event.id, event.title, cartItemData)
-  }
-
-  const handleSaveForLater = () => {
-    addToSaved({
-      type: 'event',
-      title: event.title,
-      description: event.description,
-      imageUrl: event.imageUrl,
-      category: event.category,
-      eventDate: event.date,
-      eventTime: event.time,
-      eventLocation: event.location,
-      eventPrice: event.price,
-      metadata: {
-        hostName: event.hostName,
-        currency: event.currency,
-        spotsLeft,
-        membershipRequired: event.membershipRequired,
-        featured: event.featured,
-        groupExperience: event.groupExperience,
-        highlights: event.highlights
-      }
-    })
   }
 
   return (
@@ -418,48 +354,30 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
                 {isPortuguese ? 'ENTRAR NA LISTA DE ESPERA' : 'JOIN WAITING LIST'}
               </button>
             ) : (
-              <button 
-                onClick={handleAddToCart}
-                disabled={addingToCart || inCart}
-                className={`font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg transition-all duration-200 text-center text-xs sm:text-sm flex items-center justify-center gap-1 sm:gap-2 ${
-                  inCart 
-                    ? 'bg-green-100 text-green-700 border border-green-300'
-                    : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
-                }`}
+              <a
+                href={`/events/${event.id}`}
+                className="font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg transition-all duration-200 text-center text-xs sm:text-sm flex items-center justify-center gap-1 sm:gap-2 bg-primary-600 text-white hover:bg-primary-700"
               >
-                {addingToCart ? (
-                  <div className="w-4 h-4 border-2 border-gray-400 border-t-transparent rounded-full animate-spin" />
-                ) : inCart ? (
-                  <>
-                    <CheckIcon className="w-4 h-4" />
-                    <span className="hidden sm:inline">{isPortuguese ? 'No Carrinho' : 'In Cart'}</span>
-                    <span className="sm:hidden">{isPortuguese ? 'Carrinho' : 'Cart'}</span>
-                  </>
-                ) : (
-                  <>
-                    <ShoppingCartIcon className="w-4 h-4" />
-                    <span className="hidden sm:inline">{isPortuguese ? 'Reservar Vaga' : 'Reserve Spot'}</span>
-                    <span className="sm:hidden">{isPortuguese ? 'Reservar' : 'Reserve'}</span>
-                  </>
-                )}
-              </button>
+                <span className="hidden sm:inline">{isPortuguese ? 'Reservar Vaga' : 'Reserve Spot'}</span>
+                <span className="sm:hidden">{isPortuguese ? 'Reservar' : 'Reserve'}</span>
+              </a>
             )}
           </div>
           
           {/* Secondary Action */}
           <button
-            onClick={handleSaveForLater}
+            onClick={handleToggleFavorite}
             className="w-full text-gray-600 hover:text-primary-600 text-xs sm:text-sm font-medium transition-colors flex items-center justify-center gap-2 py-1"
           >
             <HeartIcon className="w-4 h-4" />
             <span className="hidden sm:inline">
-              {savedItem 
+              {isEventFavorited 
                 ? (isPortuguese ? 'Guardado nos Favoritos' : 'Saved to Favorites')
                 : (isPortuguese ? 'Guardar para Mais Tarde' : 'Save for Later')
               }
             </span>
             <span className="sm:hidden">
-              {savedItem 
+              {isEventFavorited 
                 ? (isPortuguese ? 'Favoritos' : 'Saved')
                 : (isPortuguese ? 'Guardar' : 'Save')
               }

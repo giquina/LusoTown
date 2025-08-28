@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Footer from '@/components/Footer'
-import { useCart } from '@/context/CartContext'
+import { useFavorites } from '@/context/FavoritesContext'
 import { useLanguage } from '@/context/LanguageContext'
 import { ROUTES } from '@/config/routes'
 import {
@@ -14,7 +14,6 @@ import {
   ChatBubbleLeftRightIcon,
   ArrowRightIcon,
   XMarkIcon,
-  ShoppingCartIcon,
   TrashIcon,
   BuildingStorefrontIcon,
   UsersIcon,
@@ -25,7 +24,7 @@ import { HeartIcon, FunnelIcon } from '@heroicons/react/24/outline'
 import { toast } from 'react-hot-toast'
 
 export default function SavedItemsPage() {
-  const { savedItems, removeFromSaved, addToCart, isInCart, cartCount } = useCart()
+  const { favorites, removeFromFavorites } = useFavorites()
   const { language } = useLanguage()
   const [activeTab, setActiveTab] = useState<'all' | 'event' | 'business' | 'feed' | 'group'>('all')
   const [sortBy, setSortBy] = useState<'recent' | 'alphabetical' | 'date'>('recent')
@@ -33,8 +32,8 @@ export default function SavedItemsPage() {
   const isPortuguese = language === 'pt'
 
   const filteredItems = activeTab === 'all' 
-    ? savedItems 
-    : savedItems.filter(item => item.type === activeTab)
+    ? favorites 
+    : favorites.filter(item => item.type === activeTab)
 
   const sortedItems = [...filteredItems].sort((a, b) => {
     switch (sortBy) {
@@ -86,28 +85,10 @@ export default function SavedItemsPage() {
     })
   }
 
-  const handleAddToCart = (item: typeof savedItems[0]) => {
-    if (item.type === 'event' && item.eventPrice !== undefined) {
-      addToCart({
-        type: 'event',
-        title: item.title,
-        description: item.description,
-        price: item.eventPrice,
-        currency: 'GBP',
-        imageUrl: item.imageUrl,
-        eventDate: item.eventDate,
-        eventTime: item.eventTime,
-        eventLocation: item.eventLocation,
-        eventCategory: item.category,
-        metadata: item.metadata
-      })
-      toast.success(isPortuguese ? 'Adicionado ao carrinho!' : 'Added to cart!')
-    }
-  }
 
   const getTabCount = (type: 'all' | 'event' | 'business' | 'feed' | 'group') => {
-    if (type === 'all') return savedItems.length
-    return savedItems.filter(item => item.type === type).length
+    if (type === 'all') return favorites.length
+    return favorites.filter(item => item.type === type).length
   }
 
   return (
@@ -138,7 +119,7 @@ export default function SavedItemsPage() {
                 }
               </motion.p>
               
-              {savedItems.length > 0 && (
+              {favorites.length > 0 && (
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -146,12 +127,8 @@ export default function SavedItemsPage() {
                   className="flex justify-center items-center gap-6 mb-8"
                 >
                   <div className="bg-white rounded-lg px-4 py-2 shadow-sm">
-                    <div className="text-2xl font-bold text-primary-600">{savedItems.length}</div>
+                    <div className="text-2xl font-bold text-primary-600">{favorites.length}</div>
                     <div className="text-sm text-gray-600">{isPortuguese ? 'Itens Guardados' : 'Saved Items'}</div>
-                  </div>
-                  <div className="bg-white rounded-lg px-4 py-2 shadow-sm">
-                    <div className="text-2xl font-bold text-secondary-600">{cartCount}</div>
-                    <div className="text-sm text-gray-600">{isPortuguese ? 'No Carrinho' : 'In Cart'}</div>
                   </div>
                 </motion.div>
               )}
@@ -164,7 +141,7 @@ export default function SavedItemsPage() {
           <div className="container-width">
             <div className="max-w-6xl mx-auto">
               
-              {savedItems.length === 0 ? (
+              {favorites.length === 0 ? (
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -281,7 +258,7 @@ export default function SavedItemsPage() {
                             
                             {/* Remove Button */}
                             <button
-                              onClick={() => removeFromSaved(item.id)}
+                              onClick={() => removeFromFavorites(item.id, item.type)}
                               className="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors"
                               title={isPortuguese ? 'Remover dos guardados' : 'Remove from saved'}
                             >
@@ -361,23 +338,6 @@ export default function SavedItemsPage() {
                             
                             {/* Action Buttons */}
                             <div className="flex gap-2">
-                              {item.type === 'event' && item.eventPrice !== undefined && (
-                                <button
-                                  onClick={() => handleAddToCart(item)}
-                                  disabled={isInCart(item.title)}
-                                  className={`flex-1 font-medium py-2 px-3 rounded-lg text-sm transition-colors flex items-center justify-center gap-2 ${
-                                    isInCart(item.title)
-                                      ? 'bg-green-100 text-green-700 cursor-not-allowed'
-                                      : 'bg-primary-100 text-primary-700 hover:bg-primary-200'
-                                  }`}
-                                >
-                                  <ShoppingCartIcon className="w-4 h-4" />
-                                  {isInCart(item.title) 
-                                    ? (isPortuguese ? 'No Carrinho' : 'In Cart')
-                                    : (isPortuguese ? 'Adicionar' : 'Add to Cart')
-                                  }
-                                </button>
-                              )}
                               
                               <button className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2 px-3 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm">
                                 {item.type === 'event' ? (isPortuguese ? 'Ver Evento' : 'View Event') : 

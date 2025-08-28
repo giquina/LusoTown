@@ -293,12 +293,9 @@ export {
   PORTUGUESE_CULTURAL_TRADITIONS,
   LANGUAGE_LEARNING_MODULES,
   EMOTIONAL_SUPPORT_RESPONSES,
-  VOICE_PERSONALITIES,
   findCulturalTradition,
   getLanguageLearningModule,
   findEmotionalSupport,
-  getVoicePersonality,
-  analyzeCulturalContext,
 } from "./portuguese-cultural-knowledge";
 
 export {
@@ -313,11 +310,6 @@ export {
   getCulturalContext,
 } from "./portuguese-language-learning";
 
-export {
-  VOICE_PERSONALITIES as VOICE_CONFIGS,
-  voiceInteractionSystem,
-  VoiceInteractionSystem,
-} from "./voice-interaction-system";
 
 // Environment-based configuration
 export const appConfig = {

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { LuxuryRipple } from './LuxuryMobileInteraction'
+// Removed luxury imports - using standard components
 
 interface ReactionButtonProps {
   emoji: string
@@ -22,7 +22,7 @@ export default function ReactionButton({ emoji, count, isActive, onClick, toolti
   };
 
   return (
-    <LuxuryRipple
+    <div
       onClick={handleClick}
       className={`relative flex items-center gap-1 px-3 py-2 rounded-full text-sm transition-all duration-300 min-h-[44px] cursor-pointer ${
         isActive
@@ -95,6 +95,6 @@ export default function ReactionButton({ emoji, count, isActive, onClick, toolti
           {tooltip}
         </div>
       )}
-    </LuxuryRipple>
+    </div>
   )
 }

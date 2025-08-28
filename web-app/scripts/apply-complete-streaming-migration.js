@@ -24,7 +24,7 @@ const MIGRATIONS = [
   {
     file: '../../supabase/migrations/20250818_004_youtube_integration_system.sql',
     name: 'youtube_integration_system',
-    description: 'YouTube integration and creator monetization system'
+    description: 'YouTube integration and community streaming system'
   }
 ];
 

@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import UnifiedExperienceHub from "@/components/UnifiedExperienceHub";
 import ServiceCommunityBridge from "@/components/ServiceCommunityBridge";
-import UnifiedPremiumExperience from "@/components/UnifiedPremiumExperience";
 import CrossPlatformNavigationWidget from "@/components/CrossPlatformNavigationWidget";
 import { useLanguage } from "@/context/LanguageContext";
 import { usePlatformIntegration } from "@/context/PlatformIntegrationContext";
@@ -15,12 +14,12 @@ import { ROUTES } from '@/config/routes';
 export default function UnifiedExperiencePage() {
   const { language } = useLanguage();
   const { updateJourneyProgress } = usePlatformIntegration();
-  const [activeDemo, setActiveDemo] = useState<"hub" | "bridge" | "premium">(
+  const [activeDemo, setActiveDemo] = useState<"hub" | "bridge">(
     "hub"
   );
   const isPortuguese = language === "pt";
 
-  const handleDemoChange = (demo: "hub" | "bridge" | "premium") => {
+  const handleDemoChange = (demo: "hub" | "bridge") => {
     setActiveDemo(demo);
     updateJourneyProgress("demo_section_changed", {
       demoSection: demo,
@@ -47,8 +46,8 @@ export default function UnifiedExperiencePage() {
               </h1>
               <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
                 {isPortuguese
-                  ? "Uma plataforma integrada onde transporte premium, eventos culturais e networking da comunidade de falantes de português se conectam perfeitamente"
-                  : "An integrated platform where premium transport, cultural events, and Portuguese-speaking community networking connect seamlessly"}
+                  ? "Uma plataforma integrada onde transporte comunitário, eventos culturais e networking da comunidade de falantes de português se conectam perfeitamente"
+                  : "An integrated platform where community transport, cultural events, and Portuguese-speaking community networking connect seamlessly"}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
@@ -72,16 +71,6 @@ export default function UnifiedExperiencePage() {
                   {isPortuguese
                     ? "Ponte Serviço-Comunidade"
                     : "Service-Community Bridge"}
-                </button>
-                <button
-                  onClick={() => handleDemoChange("premium")}
-                  className={`px-8 py-3 rounded-lg font-semibold transition-all duration-200 ${
-                    activeDemo === "premium"
-                      ? "bg-white text-primary-600"
-                      : "bg-white/20 text-white hover:bg-white/30"
-                  }`}
-                >
-                  {isPortuguese ? "Experiência Premium" : "Premium Experience"}
                 </button>
               </div>
             </motion.div>
@@ -113,13 +102,6 @@ export default function UnifiedExperiencePage() {
             />
           )}
 
-          {activeDemo === "premium" && (
-            <UnifiedPremiumExperience
-              showUpgradePrompt={true}
-              currentService="community"
-              onUpgradeClick={() => console.log("Upgrade clicked")}
-            />
-          )}
         </motion.div>
 
         {/* Integration Benefits */}

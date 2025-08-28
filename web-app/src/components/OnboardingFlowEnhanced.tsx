@@ -109,7 +109,6 @@ export default function OnboardingFlowEnhanced({
           required: true,
           options: [
             { value: 'en-uk', label: 'English (United Kingdom)', labelPortuguese: 'Inglês (Reino Unido)' },
-            { value: 'en-us', label: 'English (United States)', labelPortuguese: 'Inglês (Estados Unidos)' },
             { value: 'pt-pt', label: 'Português (Portugal)', labelPortuguese: 'Português (Portugal)' },
             { value: 'pt-br', label: 'Português (Brasil)', labelPortuguese: 'Português (Brasil)' }
           ]

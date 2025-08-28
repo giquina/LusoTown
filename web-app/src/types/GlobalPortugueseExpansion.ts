@@ -1,7 +1,6 @@
 // Global Lusophone Diaspora Expansion Types and Interfaces
 export type PortugueseRegion = 
   | 'europe' 
-  | 'north-america' 
   | 'south-america' 
   | 'africa' 
   | 'asia-pacific' 
@@ -10,8 +9,6 @@ export type PortugueseRegion =
 export type PortugueseCountry = 
   | 'portugal' 
   | 'brazil' 
-  | 'usa' 
-  | 'canada' 
   | 'uk' 
   | 'france' 
   | 'germany' 
@@ -31,7 +28,6 @@ export type PortugueseCountry =
 export type Currency = 
   | 'EUR' 
   | 'USD' 
-  | 'CAD' 
   | 'AUD' 
   | 'BRL' 
   | 'ZAR' 

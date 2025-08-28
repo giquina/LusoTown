@@ -1,8 +1,5 @@
 export const communityStats = {
   members: process.env.NEXT_PUBLIC_TOTAL_MEMBERS || '750+',
-  creators: process.env.NEXT_PUBLIC_TOTAL_CREATORS || '45+',
-  streamingHours: process.env.NEXT_PUBLIC_STREAMING_HOURS || '1200+',
-  viewers: process.env.NEXT_PUBLIC_TOTAL_VIEWERS || '2150+',
   students: process.env.NEXT_PUBLIC_TOTAL_STUDENTS || '2150+',
   partnerships: process.env.NEXT_PUBLIC_UNIVERSITY_PARTNERSHIPS || '8',
   events: process.env.NEXT_PUBLIC_MONTHLY_EVENTS || '12+'

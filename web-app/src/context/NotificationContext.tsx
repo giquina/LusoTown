@@ -791,7 +791,7 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
       userId: 'current-user',
       priority: 'high',
       data,
-      actionUrl: '/corporate-partnerships',
+      actionUrl: '/partnerships',
       actionLabel: language === 'pt' ? 'Ver Oportunidade' : 'View Opportunity'
     })
   }

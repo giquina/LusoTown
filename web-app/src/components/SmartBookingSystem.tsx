@@ -12,9 +12,7 @@ import {
   UserGroupIcon
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
-import { useCart } from '@/context/CartContext'
 import IntelligentBookingFlow, { type ServiceType, type BookingData } from './IntelligentBookingFlow'
-import PaymentProcessor from './PaymentProcessor'
 import EasySIAQuestionnaire, { type EasySIAData } from './EasySIAQuestionnaire'
 import { dynamicPricingEngine, type PricingResult, type DynamicPricingOptions } from '@/lib/dynamicPricing'
 import SubscriptionGate from './SubscriptionGate'
@@ -49,7 +47,6 @@ export default function SmartBookingSystem({
   triggerTextPortuguese
 }: SmartBookingSystemProps) {
   const { language } = useLanguage()
-  const { addToCart } = useCart()
   const isPortuguese = language === 'pt'
   
   const [currentStage, setCurrentStage] = useState<BookingStage>('service-selection')
@@ -234,7 +231,8 @@ export default function SmartBookingSystem({
         }
       }
       
-      addToCart(cartItem)
+      // Redirect to contact page for direct booking
+      window.location.href = '/contact?booking=true'
     }
   }
 
@@ -444,16 +442,26 @@ export default function SmartBookingSystem({
                   />
                 )}
 
-                {/* Payment Stage */}
+                {/* Payment Stage - Redirected to Contact */}
                 {currentStage === 'payment' && bookingData && pricingResult && (
-                  <PaymentProcessor
-                    isOpen={true}
-                    onClose={handleClose}
-                    bookingData={bookingData}
-                    pricingResult={pricingResult}
-                    onPaymentSuccess={handlePaymentSuccess}
-                    onPaymentError={handlePaymentError}
-                  />
+                  <div className="text-center py-12">
+                    <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-6" />
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                      {isPortuguese ? 'Redirecionando para Reserva' : 'Redirecting for Booking'}
+                    </h3>
+                    <p className="text-gray-600 mb-6">
+                      {isPortuguese 
+                        ? 'Será redirecionado para nossa página de contacto para finalizar a reserva.'
+                        : 'You will be redirected to our contact page to finalize the booking.'
+                      }
+                    </p>
+                    <button 
+                      onClick={() => window.location.href = '/contact?booking=true'}
+                      className="bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                    >
+                      {isPortuguese ? 'Continuar' : 'Continue'}
+                    </button>
+                  </div>
                 )}
 
                 {/* Confirmation Stage */}

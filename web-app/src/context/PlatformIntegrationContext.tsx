@@ -12,7 +12,6 @@ import {
 } from "react";
 import { toast } from "react-hot-toast";
 import { useLanguage } from "./LanguageContext";
-import { useCart } from "./CartContext";
 import { useNetworking } from "./NetworkingContext";
 import { useSubscription } from "./SubscriptionContext";
 import { useFavorites } from "./FavoritesContext";
@@ -218,15 +217,10 @@ export function PlatformIntegrationProvider({
   const { language } = useLanguage();
 
   // Safely get context values with fallbacks to prevent initialization errors
-  const cartContext = useCart();
   const networkingContext = useNetworking();
   const subscriptionContext = useSubscription();
   const favoritesContext = useFavorites();
 
-  const { cartItems = [], addToCart } = cartContext || {
-    cartItems: [],
-    addToCart: () => {},
-  };
   const { connections = [], stats: networkStats = { eventsAttended: 0 } } =
     networkingContext || { connections: [], stats: { eventsAttended: 0 } };
   const { hasActiveSubscription = false, membershipTier = "none" } =
@@ -297,13 +291,11 @@ export function PlatformIntegrationProvider({
       updateEcosystemAnalytics();
     }
   }, [
-    cartItems,
     connections,
     networkStats,
     hasActiveSubscription,
     favorites,
     isLoading,
-    cartContext,
     networkingContext,
     subscriptionContext,
     favoritesContext,
@@ -423,7 +415,6 @@ export function PlatformIntegrationProvider({
 
   const updateEcosystemAnalytics = useCallback(() => {
     const safeConnections = connections || [];
-    const safeCartItems = cartItems || [];
     const safeFavorites = favorites || [];
     const safeNetworkStats = networkStats || { eventsAttended: 0 };
 
@@ -449,7 +440,7 @@ export function PlatformIntegrationProvider({
         subscription_tier: hasActiveSubscription ? 1 : 0,
       },
     }));
-  }, [cartItems, connections, networkStats, hasActiveSubscription, favorites]);
+  }, [connections, networkStats, hasActiveSubscription, favorites]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const initializeUserJourney = useCallback(
@@ -611,12 +602,6 @@ export function PlatformIntegrationProvider({
       const triggers = [];
 
       // Determine triggers based on current state
-      if (
-        cartItems.length > 0 &&
-        cartItems.some((item) => item.type === "transport_service")
-      ) {
-        triggers.push("transport_completion");
-      }
 
       if (connections.length >= 3) {
         triggers.push("high_networking_activity");
@@ -637,7 +622,6 @@ export function PlatformIntegrationProvider({
         })
       );
     }, [
-      cartItems,
       connections,
       hasActiveSubscription,
       ecosystemAnalytics,
@@ -1068,20 +1052,11 @@ export function PlatformIntegrationProvider({
       });
     }
 
-    // Add cart activity
-    cartItems.forEach((item) => {
-      timeline.push({
-        type: "cart",
-        title: `Added ${item.title}`,
-        date: item.addedAt,
-        metadata: { itemType: item.type, price: item.price },
-      });
-    });
 
     return timeline
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .slice(0, 10);
-  }, [userJourney, cartItems]);
+  }, [userJourney]);
 
   const generateUserInsights = useCallback(() => {
     const {
@@ -1137,13 +1112,6 @@ export function PlatformIntegrationProvider({
       );
     }
 
-    if (cartItems.length === 0) {
-      insights.opportunities.push(
-        isPortuguese
-          ? "Explorar serviços premium disponíveis"
-          : "Explore available premium services"
-      );
-    }
 
     // Next Actions
     if (activeRecommendations.length > 0) {
@@ -1174,7 +1142,6 @@ export function PlatformIntegrationProvider({
     language,
     connections,
     hasActiveSubscription,
-    cartItems,
     activeRecommendations,
   ]);
 

@@ -22,14 +22,11 @@ import { Crown, LogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Logo from "@/components/Logo";
 import LanguageToggle from "@/components/LanguageToggle";
-import CartButton from "@/components/CartButton";
 import SavedItemsButton from "@/components/SavedItemsButton";
 import SearchBar from "@/components/SearchBar";
 import NotificationBell from "@/components/NotificationBell";
 import { useLanguage } from "@/context/LanguageContext";
 import { ROUTES } from "@/config/routes";
-import { LuxuryRipple } from "@/components/LuxuryMobileInteraction";
-import { EliteMobileHeader } from "@/components/EliteMobileInterface";
 import { MobileNavButton } from "@/components/MobileNavigation";
 
 // New simplified main navigation for the redesigned structure

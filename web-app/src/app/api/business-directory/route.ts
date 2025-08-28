@@ -2,10 +2,17 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import logger from '@/utils/logger';
 
-// Initialize Supabase client for server-side operations
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-const supabase = createClient(supabaseUrl, supabaseServiceKey);
+// Initialize Supabase client for server-side operations with proper error handling
+function getSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  
+  if (!supabaseUrl || !supabaseServiceKey) {
+    throw new Error('Supabase configuration missing. Please check environment variables.');
+  }
+  
+  return createClient(supabaseUrl, supabaseServiceKey);
+}
 
 interface BusinessFilters {
   search?: string;
@@ -69,6 +76,8 @@ export async function GET(request: NextRequest) {
 }
 
 async function findPortugueseBusinesses(filters: BusinessFilters) {
+  const supabase = getSupabaseClient();
+  
   // Start building the query
   let query = supabase
     .from('portuguese_businesses')
@@ -302,6 +311,7 @@ function parseTimeToMinutes(timeStr: string): number | null {
 // POST endpoint for submitting new businesses
 export async function POST(request: NextRequest) {
   try {
+    const supabase = getSupabaseClient();
     const body = await request.json();
     
     // Validate required fields

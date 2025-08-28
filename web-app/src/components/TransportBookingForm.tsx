@@ -15,7 +15,6 @@ import {
   ArrowLeftIcon
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
-import { useCart } from '@/context/CartContext'
 
 interface BookingFormData {
   fullName: string
@@ -66,7 +65,6 @@ export default function TransportBookingForm({
   selectedPackage 
 }: TransportBookingFormProps) {
   const { language, t } = useLanguage()
-  const { addToCart } = useCart()
   const isPortuguese = language === 'pt'
   
   const [currentStep, setCurrentStep] = useState(1)
@@ -180,7 +178,8 @@ export default function TransportBookingForm({
         }
       }
 
-      addToCart(cartItem)
+      // Redirect to contact for transport booking
+      window.location.href = '/contact?transport=true'
       setIsSuccess(true)
       
       // Reset form after success

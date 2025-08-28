@@ -22,7 +22,7 @@ import {
 } from '@heroicons/react/24/solid';
 import { useLanguage } from '@/context/LanguageContext';
 import { useAccessibilityContext } from '@/context/AccessibilityContext';
-import { LuxuryRipple } from './LuxuryMobileInteraction';
+// Removed luxury imports - using standard components
 
 interface AccessibilityWidgetProps {
   position?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
@@ -223,7 +223,7 @@ export default function AccessibilityWidget({
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1.5, type: "spring", stiffness: 300 }}
       >
-        <LuxuryRipple
+        <div
           className={`
             w-16 h-16 rounded-full flex items-center justify-center
             bg-gradient-to-br from-primary-600 to-secondary-600 text-white
@@ -288,7 +288,7 @@ export default function AccessibilityWidget({
             title={language === 'pt' ? 'Acessibilidade Portuguesa' : 'Lusophone Accessibility'}
             aria-hidden="true"
           />
-        </LuxuryRipple>
+        </div>
       </motion.div>
 
       {/* Expanded Panel */}
@@ -409,7 +409,7 @@ export default function AccessibilityWidget({
                         const Icon = feature.isActive ? feature.activeIcon : feature.icon;
                         
                         return (
-                          <LuxuryRipple
+                          <div
                             key={feature.id}
                             className={`
                               p-3 rounded-lg border transition-all duration-200
@@ -436,7 +436,7 @@ export default function AccessibilityWidget({
                                 <div className="w-2 h-2 bg-primary-500 rounded-full mx-auto mt-1" />
                               )}
                             </div>
-                          </LuxuryRipple>
+                          </div>
                         );
                       })}
                     </div>

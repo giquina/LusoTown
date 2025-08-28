@@ -1,22 +1,22 @@
 {
   "summary": {
-    "totalViolations": 22306,
+    "totalViolations": 20903,
     "byCategory": {
-      "hardcoded_text": 20997,
-      "console_logs": 229,
-      "hardcoded_routes": 281,
-      "hardcoded_colors": 447,
-      "hardcoded_urls": 261,
-      "hardcoded_emails": 60,
-      "hardcoded_prices": 31
+      "hardcoded_text": 19643,
+      "hardcoded_routes": 277,
+      "hardcoded_colors": 443,
+      "hardcoded_urls": 257,
+      "hardcoded_emails": 59,
+      "console_logs": 197,
+      "hardcoded_prices": 27
     },
     "bySeverity": {
-      "high": 21349,
-      "medium": 728,
-      "low": 229
+      "high": 19986,
+      "medium": 720,
+      "low": 197
     },
-    "filesAffected": 664,
-    "timestamp": "2025-08-27T12:50:48.408Z",
+    "filesAffected": 629,
+    "timestamp": "2025-08-27T22:31:09.701Z",
     "recommendations": [
       "🚨 CRITICAL: Implement bilingual system with t() function",
       "🔧 Create config/cdn.ts for URL management",
@@ -33,7 +33,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Do palácio real português às torres de Macau, dos diamantes angolanos ao ouro brasileiro—somos uma família de prestígio global.\"",
       "context": "\"Do palácio real português às torres de Macau, dos diamantes angolanos ao ouro brasileiro—somos uma família de prestígio global.\"",
-      "timestamp": "2025-08-27T12:50:45.636Z"
+      "timestamp": "2025-08-27T22:31:09.269Z"
     },
     {
       "file": "src/app/about/page.tsx",
@@ -43,7 +43,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Somos uma comunidade de mente aberta que acolhe todos os falantes de português com o coração cheio de amor.\"",
       "context": "\"Somos uma comunidade de mente aberta que acolhe todos os falantes de português com o coração cheio de amor.\"",
-      "timestamp": "2025-08-27T12:50:45.636Z"
+      "timestamp": "2025-08-27T22:31:09.269Z"
     },
     {
       "file": "src/app/about/page.tsx",
@@ -53,978 +53,978 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "\"Aqui, todos têm lugar. Here, everyone belongs. We'",
       "context": "\"Aqui, todos têm lugar. Here, everyone belongs. We're not just building a community—we're creating a family.\"",
-      "timestamp": "2025-08-27T12:50:45.636Z"
+      "timestamp": "2025-08-27T22:31:09.269Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 143,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Start by observing existing business interactions at Lusophone events\"",
-      "context": "\"Start by observing existing business interactions at Lusophone events\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "file": "src/app/admin/page.tsx",
+      "line": 210,
+      "category": "hardcoded_routes",
+      "severity": "medium",
+      "message": "Potential hardcoded route - use ROUTES constants",
+      "code": "'/login'",
+      "context": "router.push('/login')",
+      "timestamp": "2025-08-27T22:31:09.273Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 144,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Research successful Portuguese business owners in your industry\"",
-      "context": "\"Research successful Portuguese business owners in your industry\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "file": "src/app/admin/page.tsx",
+      "line": 215,
+      "category": "hardcoded_routes",
+      "severity": "medium",
+      "message": "Potential hardcoded route - use ROUTES constants",
+      "code": "'/dashboard'",
+      "context": "router.push('/dashboard')",
+      "timestamp": "2025-08-27T22:31:09.273Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 145,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Understand the blend of British business formality with Lusophone warmth\"",
-      "context": "\"Understand the blend of British business formality with Lusophone warmth\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "file": "src/app/admin/page.tsx",
+      "line": 281,
+      "category": "hardcoded_routes",
+      "severity": "medium",
+      "message": "Potential hardcoded route - use ROUTES constants",
+      "code": "'/dashboard'",
+      "context": "onClick={() => router.push('/dashboard')}",
+      "timestamp": "2025-08-27T22:31:09.273Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 148,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Comece por observar interações empresariais existentes em eventos portugueses\"",
-      "context": "\"Comece por observar interações empresariais existentes em eventos portugueses\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "file": "src/app/admin/page.tsx",
+      "line": 252,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "message": "Hardcoded color detected - use Portuguese brand colors from config",
+      "code": "#FF6B6B",
+      "context": "<div className=\"animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF6B6B]\"></div>",
+      "timestamp": "2025-08-27T22:31:09.273Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 149,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Pesquise empresários portugueses bem-sucedidos na sua indústria\"",
-      "context": "\"Pesquise empresários portugueses bem-sucedidos na sua indústria\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "file": "src/app/admin/page.tsx",
+      "line": 268,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "message": "Hardcoded color detected - use Portuguese brand colors from config",
+      "code": "#FF6B6B",
+      "context": "<div className=\"w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center\">",
+      "timestamp": "2025-08-27T22:31:09.273Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 150,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Compreenda a mistura de formalidade empresarial britânica com cordialidade portuguesa\"",
-      "context": "\"Compreenda a mistura de formalidade empresarial britânica com cordialidade portuguesa\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "file": "src/app/admin/page.tsx",
+      "line": 268,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "message": "Hardcoded color detected - use Portuguese brand colors from config",
+      "code": "#4ECDC4",
+      "context": "<div className=\"w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center\">",
+      "timestamp": "2025-08-27T22:31:09.273Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 190,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"What brought you from Portugal to London in your career?\"",
-      "context": "<li>\"What brought you from Portugal to London in your career?\"</li>",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "file": "src/app/admin/page.tsx",
+      "line": 352,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "message": "Hardcoded color detected - use Portuguese brand colors from config",
+      "code": "#FF6B6B",
+      "context": "<Users className=\"w-8 h-8 text-[#FF6B6B]\" />",
+      "timestamp": "2025-08-27T22:31:09.273Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 191,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"How has your Lusophone background influenced your business approach?\"",
-      "context": "<li>\"How has your Lusophone background influenced your business approach?\"</li>",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "file": "src/app/admin/page.tsx",
+      "line": 366,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "message": "Hardcoded color detected - use Portuguese brand colors from config",
+      "code": "#4ECDC4",
+      "context": "<CheckCircle className=\"w-8 h-8 text-[#4ECDC4]\" />",
+      "timestamp": "2025-08-27T22:31:09.273Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 192,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"What opportunities do you see in connecting United Kingdom and Lusophone markets?\"",
-      "context": "<li>\"What opportunities do you see in connecting United Kingdom and Lusophone markets?\"</li>",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "file": "src/app/admin/page.tsx",
+      "line": 427,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "message": "Hardcoded color detected - use Portuguese brand colors from config",
+      "code": "#FF6B6B",
+      "context": "<Users className=\"w-6 h-6 text-[#FF6B6B] mx-auto mb-2\" />",
+      "timestamp": "2025-08-27T22:31:09.273Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 193,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Which Portuguese business traditions do you maintain in London?\"",
-      "context": "<li>\"Which Portuguese business traditions do you maintain in London?\"</li>",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 227,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"O que o trouxe de Portugal para Londres na sua carreira?\"",
-      "context": "<li>\"O que o trouxe de Portugal para Londres na sua carreira?\"</li>",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 228,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Como a sua origem portuguesa influenciou a sua abordagem empresarial?\"",
-      "context": "<li>\"Como a sua origem portuguesa influenciou a sua abordagem empresarial?\"</li>",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 229,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Que oportunidades vê em conectar os mercados do Reino Unido e Portugal?\"",
-      "context": "<li>\"Que oportunidades vê em conectar os mercados do Reino Unido e Portugal?\"</li>",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 230,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Que tradições empresariais portuguesas mantém em Londres?\"",
-      "context": "<li>\"Que tradições empresariais portuguesas mantém em Londres?\"</li>",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 244,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Pesquise 3 líderes empresariais portugueses em Londres\"",
-      "context": "\"Pesquise 3 líderes empresariais portugueses em Londres\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 249,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Pratique apresentação profissional em inglês e português\"",
-      "context": "\"Pratique apresentação profissional em inglês e português\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 254,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Identifique formas de contribuir para a comunidade empresarial portuguesa\"",
-      "context": "\"Identifique formas de contribuir para a comunidade empresarial portuguesa\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 260,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Always follow up within 48 hours after meeting someone new\"",
-      "context": "\"Always follow up within 48 hours after meeting someone new\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 261,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Connect on LinkedIn with a personalized message referencing your conversation\"",
-      "context": "\"Connect on LinkedIn with a personalized message referencing your conversation\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 262,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Offer specific help or resources rather than generic \"",
-      "context": "'Offer specific help or resources rather than generic \"let me know if I can help\"',",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 265,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Sempre faça seguimento dentro de 48 horas após conhecer alguém novo\"",
-      "context": "\"Sempre faça seguimento dentro de 48 horas após conhecer alguém novo\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 266,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Conecte no LinkedIn com uma mensagem personalizada referenciando a sua conversa\"",
-      "context": "\"Conecte no LinkedIn com uma mensagem personalizada referenciando a sua conversa\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 267,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Ofereça ajuda específica ou recursos em vez de genérico \"",
-      "context": "'Ofereça ajuda específica ou recursos em vez de genérico \"me diga se posso ajudar\"',",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 413,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Pesquise próximos eventos empresariais portugueses em Londres\"",
-      "context": "\"Pesquise próximos eventos empresariais portugueses em Londres\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 418,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Prepare o seu pitch de elevador de 30 segundos em ambos os idiomas\"",
-      "context": "\"Prepare o seu pitch de elevador de 30 segundos em ambos os idiomas\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 423,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Desenhe cartões de visita com elementos culturais portugueses\"",
-      "context": "\"Desenhe cartões de visita com elementos culturais portugueses\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 433,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Dress slightly more formally than expected - Portuguese business culture values presentation\"",
-      "context": "\"Dress slightly more formally than expected - Portuguese business culture values presentation\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
+      "file": "src/app/admin/page.tsx",
       "line": 434,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "message": "Hardcoded color detected - use Portuguese brand colors from config",
+      "code": "#4ECDC4",
+      "context": "<Plus className=\"w-6 h-6 text-[#4ECDC4] mx-auto mb-2\" />",
+      "timestamp": "2025-08-27T22:31:09.273Z"
+    },
+    {
+      "file": "src/app/admin/page.tsx",
+      "line": 455,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "message": "Hardcoded color detected - use Portuguese brand colors from config",
+      "code": "#FF6B6B",
+      "context": "<button className=\"px-4 py-2 bg-[#FF6B6B] text-white rounded-lg hover:bg-[#e55a5a] transition-colors text-sm\">",
+      "timestamp": "2025-08-27T22:31:09.273Z"
+    },
+    {
+      "file": "src/app/admin/page.tsx",
+      "line": 455,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "message": "Hardcoded color detected - use Portuguese brand colors from config",
+      "code": "#e55a5a",
+      "context": "<button className=\"px-4 py-2 bg-[#FF6B6B] text-white rounded-lg hover:bg-[#e55a5a] transition-colors text-sm\">",
+      "timestamp": "2025-08-27T22:31:09.273Z"
+    },
+    {
+      "file": "src/app/admin/page.tsx",
+      "line": 484,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "message": "Hardcoded color detected - use Portuguese brand colors from config",
+      "code": "#FF6B6B",
+      "context": "<div className=\"w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center text-white text-sm font-bold\">",
+      "timestamp": "2025-08-27T22:31:09.273Z"
+    },
+    {
+      "file": "src/app/admin/page.tsx",
+      "line": 484,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "message": "Hardcoded color detected - use Portuguese brand colors from config",
+      "code": "#4ECDC4",
+      "context": "<div className=\"w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center text-white text-sm font-bold\">",
+      "timestamp": "2025-08-27T22:31:09.273Z"
+    },
+    {
+      "file": "src/app/admin/page.tsx",
+      "line": 533,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "message": "Hardcoded color detected - use Portuguese brand colors from config",
+      "code": "#4ECDC4",
+      "context": "<button className=\"px-4 py-2 bg-[#4ECDC4] text-white rounded-lg hover:bg-[#45b8b0] transition-colors flex items-center space-x-2\">",
+      "timestamp": "2025-08-27T22:31:09.273Z"
+    },
+    {
+      "file": "src/app/admin/page.tsx",
+      "line": 533,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "message": "Hardcoded color detected - use Portuguese brand colors from config",
+      "code": "#45b8b0",
+      "context": "<button className=\"px-4 py-2 bg-[#4ECDC4] text-white rounded-lg hover:bg-[#45b8b0] transition-colors flex items-center space-x-2\">",
+      "timestamp": "2025-08-27T22:31:09.273Z"
+    },
+    {
+      "file": "src/app/api/ai/analytics/route.ts",
+      "line": 35,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Learn key business phrases in Lusophone even if the event is primarily in English\"",
-      "context": "\"Learn key business phrases in Lusophone even if the event is primarily in English\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "code": "'AI analytics error:'",
+      "context": "console.error('AI analytics error:', error);",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 435,
+      "file": "src/app/api/ai/analytics/route.ts",
+      "line": 37,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Bring small Lusophone gifts (like pastéis de nata) to memorable first meetings\"",
-      "context": "\"Bring small Lusophone gifts (like pastéis de nata) to memorable first meetings\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "code": "'Failed to fetch AI analytics'",
+      "context": "{ error: 'Failed to fetch AI analytics' },",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 438,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 105,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Vista-se ligeiramente mais formal do que esperado - a cultura empresarial portuguesa valoriza a apresentação\"",
-      "context": "\"Vista-se ligeiramente mais formal do que esperado - a cultura empresarial portuguesa valoriza a apresentação\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "code": "'Failed to fetch AI cultural guidelines'",
+      "context": "logger.error('Failed to fetch AI cultural guidelines', error, {",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 439,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 111,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Aprenda frases empresariais chave em português mesmo que o evento seja principalmente em inglês\"",
-      "context": "\"Aprenda frases empresariais chave em português mesmo que o evento seja principalmente em inglês\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "code": "'Failed to fetch cultural guidelines'",
+      "context": "{ error: 'Failed to fetch cultural guidelines' },",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 440,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 124,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Traga pequenos presentes portugueses (como pastéis de nata) para primeiros encontros memoráveis\"",
-      "context": "\"Traga pequenos presentes portugueses (como pastéis de nata) para primeiros encontros memoráveis\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "code": "'Unauthorized'",
+      "context": "return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 584,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 134,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Liste as suas forças culturais portuguesas e como se aplicam aos negócios\"",
-      "context": "\"Liste as suas forças culturais portuguesas e como se aplicam aos negócios\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "code": "'Insufficient permissions'",
+      "context": "return NextResponse.json({ error: 'Insufficient permissions' }, { status: 403 })",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 589,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 154,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Identifique potenciais parcerias empresariais portuguesas na sua indústria\"",
-      "context": "\"Identifique potenciais parcerias empresariais portuguesas na sua indústria\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
+      "code": "'Invalid guideline category'",
+      "context": "return NextResponse.json({ error: 'Invalid guideline category' }, { status: 400 })",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 594,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Pesquise oportunidades de mercado português para o seu negócio\"",
-      "context": "\"Pesquise oportunidades de mercado português para o seu negócio\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 599,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Planeie formas de incorporar elementos portugueses na sua marca profissional\"",
-      "context": "\"Planeie formas de incorporar elementos portugueses na sua marca profissional\",",
-      "timestamp": "2025-08-27T12:50:45.649Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 605,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Be proud but not overwhelming about your heritage - let it enhance rather than define your professional identity\"",
-      "context": "\"Be proud but not overwhelming about your heritage - let it enhance rather than define your professional identity\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 606,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Stay updated on Lusophone economic and cultural news to provide current insights\"",
-      "context": "\"Stay updated on Lusophone economic and cultural news to provide current insights\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 607,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Consider obtaining dual citizenship if eligible for enhanced business opportunities\"",
-      "context": "\"Consider obtaining dual citizenship if eligible for enhanced business opportunities\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 610,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Seja orgulhoso mas não avassalador sobre a sua herança - deixe-a melhorar em vez de definir a sua identidade profissional\"",
-      "context": "\"Seja orgulhoso mas não avassalador sobre a sua herança - deixe-a melhorar em vez de definir a sua identidade profissional\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 611,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Mantenha-se atualizado sobre notícias económicas e culturais portuguesas para fornecer insights atuais\"",
-      "context": "\"Mantenha-se atualizado sobre notícias económicas e culturais portuguesas para fornecer insights atuais\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 612,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Considere obter dupla cidadania se elegível para oportunidades empresariais melhoradas\"",
-      "context": "\"Considere obter dupla cidadania se elegível para oportunidades empresariais melhoradas\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 824,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Otimize o seu perfil LinkedIn com elementos empresariais portugueses\"",
-      "context": "\"Otimize o seu perfil LinkedIn com elementos empresariais portugueses\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 829,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Junte-se a 3 grupos empresariais portugueses no WhatsApp ou LinkedIn\"",
-      "context": "\"Junte-se a 3 grupos empresariais portugueses no WhatsApp ou LinkedIn\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 834,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Crie um sistema de gestão de contactos para seguimentos\"",
-      "context": "\"Crie um sistema de gestão de contactos para seguimentos\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 839,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Agende revisão mensal de relacionamentos no seu calendário\"",
-      "context": "\"Agende revisão mensal de relacionamentos no seu calendário\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 845,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Never add people to WhatsApp groups without permission\"",
-      "context": "\"Never add people to WhatsApp groups without permission\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 846,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Avoid over-posting on professional platforms - quality over quantity\"",
-      "context": "\"Avoid over-posting on professional platforms - quality over quantity\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 847,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Respect privacy settings and professional boundaries\"",
-      "context": "\"Respect privacy settings and professional boundaries\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 851,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Nunca adicione pessoas a grupos WhatsApp sem permissão\"",
-      "context": "\"Nunca adicione pessoas a grupos WhatsApp sem permissão\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 852,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Evite postar demais em plataformas profissionais - qualidade sobre quantidade\"",
-      "context": "\"Evite postar demais em plataformas profissionais - qualidade sobre quantidade\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 853,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Respeite configurações de privacidade e limites profissionais\"",
-      "context": "\"Respeite configurações de privacidade e limites profissionais\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/business-networking/page.tsx",
-      "line": 854,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Não misture comunicação pessoal e empresarial a menos que apropriado\"",
-      "context": "\"Não misture comunicação pessoal e empresarial a menos que apropriado\",",
-      "timestamp": "2025-08-27T12:50:45.650Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 29,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Navigate and contribute to Portuguese-speaking community discussions with confidence and cultural awareness\"",
-      "context": "\"Navigate and contribute to Portuguese-speaking community discussions with confidence and cultural awareness\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 31,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Navegue e contribua para discussões da comunidade de falantes de português com confiança e consciência cultural\"",
-      "context": "\"Navegue e contribua para discussões da comunidade de falantes de português com confiança e consciência cultural\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 116,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"New Members\"",
-      "context": "<p><strong>Getting Started Tip:</strong> Begin by browsing the \"New Members\" section where fellow Portuguese speakers share their first experiences in London. It's a welcoming space to introduce yourself and ask initial questions.</p>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
       "line": 187,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Novos Membros\"",
-      "context": "<p><strong>Dica para Começar:</strong> Comece por navegar na secção \"Novos Membros\" onde outros falantes de português partilham as suas primeiras experiências em Londres. É um espaço acolhedor para se apresentar e fazer perguntas iniciais.</p>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Failed to create AI cultural guideline'",
+      "context": "logger.error('Failed to create AI cultural guideline', error, {",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 201,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 193,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Explorar todas as quatro categorias principais do fórum\"",
-      "context": "\"Explorar todas as quatro categorias principais do fórum\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Failed to create cultural guideline'",
+      "context": "{ error: 'Failed to create cultural guideline' },",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
       "line": 206,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Configurar preferências de notificação para tópicos relevantes\"",
-      "context": "\"Configurar preferências de notificação para tópicos relevantes\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Unauthorized'",
+      "context": "return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 215,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 212,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Praticar o uso de pesquisa e funcionalidades de filtragem por tags\"",
-      "context": "\"Praticar o uso de pesquisa e funcionalidades de filtragem por tags\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Guideline ID is required'",
+      "context": "return NextResponse.json({ error: 'Guideline ID is required' }, { status: 400 })",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 232,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 253,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Olá pessoal\"",
-      "context": "<li><strong>Warmth & Hospitality:</strong> Begin posts with friendly greetings like \"Olá pessoal\" or \"Hello everyone\"</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Failed to update AI cultural guideline'",
+      "context": "logger.error('Failed to update AI cultural guideline', error, {",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 232,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 259,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Hello everyone\"",
-      "context": "<li><strong>Warmth & Hospitality:</strong> Begin posts with friendly greetings like \"Olá pessoal\" or \"Hello everyone\"</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Failed to update cultural guideline'",
+      "context": "{ error: 'Failed to update cultural guideline' },",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 246,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 275,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Procuro médico que fale português em Camden\"",
-      "context": "<li>\"Procuro médico que fale português em Camden\" (Looking for Portuguese-speaking doctor in Camden)</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Unauthorized'",
+      "context": "return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 247,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 285,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Recomendações: melhor padaria portuguesa em Stockwell?\"",
-      "context": "<li>\"Recomendações: melhor padaria portuguesa em Stockwell?\" (Recommendations: best Lusophone bakery in Stockwell?)</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Insufficient permissions'",
+      "context": "return NextResponse.json({ error: 'Insufficient permissions' }, { status: 403 })",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 248,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 325,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Ajuda com documentos - experiência de outros portugueses\"",
-      "context": "<li>\"Ajuda com documentos - experiência de outros portugueses\" (Help with documents - other Lusophone experiences)</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Failed to fetch AI ethics violations'",
+      "context": "logger.error('Failed to fetch AI ethics violations', error, {",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 267,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Alguém teve experiência similar?\"",
-      "context": "<li>\"Alguém teve experiência similar?\" (Anyone had similar experience?)</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 268,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Que acham? Aceito todas as sugestões!\"",
-      "context": "<li>\"Que acham? Aceito todas as sugestões!\" (What do you think? I welcome all suggestions!)</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 269,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Obrigado/a desde já pela ajuda!\"",
-      "context": "<li>\"Obrigado/a desde já pela ajuda!\" (Thanks in advance for the help!)</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 294,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Olá pessoal\"",
-      "context": "<li><strong>Calor e Hospitalidade:</strong> Comece as publicações com saudações amigáveis como \"Olá pessoal\" ou \"Hello everyone\"</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 294,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Hello everyone\"",
-      "context": "<li><strong>Calor e Hospitalidade:</strong> Comece as publicações com saudações amigáveis como \"Olá pessoal\" ou \"Hello everyone\"</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 308,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Procuro médico que fale português em Camden\"",
-      "context": "<li>\"Procuro médico que fale português em Camden\"</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 309,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Recomendações: melhor padaria portuguesa em Stockwell?\"",
-      "context": "<li>\"Recomendações: melhor padaria portuguesa em Stockwell?\"</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 310,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Ajuda com documentos - experiência de outros portugueses\"",
-      "context": "<li>\"Ajuda com documentos - experiência de outros portugueses\"</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 329,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Alguém teve experiência similar?\"",
-      "context": "<li>\"Alguém teve experiência similar?\"</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 330,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Que acham? Aceito todas as sugestões!\"",
-      "context": "<li>\"Que acham? Aceito todas as sugestões!\"</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
-    },
-    {
-      "file": "src/app/academy/community-forums/page.tsx",
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
       "line": 331,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Obrigado/a desde já pela ajuda!\"",
-      "context": "<li>\"Obrigado/a desde já pela ajuda!\"</li>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Failed to fetch ethics violations'",
+      "context": "{ error: 'Failed to fetch ethics violations' },",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 363,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 355,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Use clear subject line, provide location/context, and ask specific questions. End with gratitude.\"",
-      "context": "\"Use clear subject line, provide location/context, and ask specific questions. End with gratitude.\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Authentication required for user reports'",
+      "context": "return NextResponse.json({ error: 'Authentication required for user reports' }, { status: 401 })",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 365,
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 392,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Use linha de assunto clara, forneça localização/contexto, e faça perguntas específicas. Termine com gratidão.\"",
-      "context": "\"Use linha de assunto clara, forneça localização/contexto, e faça perguntas específicas. Termine com gratidão.\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Failed to report AI ethics violation'",
+      "context": "logger.error('Failed to report AI ethics violation', error, {",
+      "timestamp": "2025-08-27T22:31:09.274Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 398,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Failed to report ethics violation'",
+      "context": "{ error: 'Failed to report ethics violation' },",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 524,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'AI cultural guideline activity tracked'",
+      "context": "logger.info('AI cultural guideline activity tracked', {",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 535,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Failed to track AI cultural guideline activity'",
+      "context": "logger.error('Failed to track AI cultural guideline activity', error, {",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/cultural-guidelines/route.ts",
+      "line": 569,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Failed to notify administrators of AI ethics violation'",
+      "context": "logger.error('Failed to notify administrators of AI ethics violation', error, {",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 33,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Unauthorized'",
+      "context": "return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 159,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Unknown error'",
+      "context": "error instanceof Error ? error.message : 'Unknown error'",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 165,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'AI Recommendations API error:'",
+      "context": "console.error('AI Recommendations API error:', error)",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 167,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Failed to fetch AI recommendations'",
+      "context": "{ error: 'Failed to fetch AI recommendations' },",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 180,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Unauthorized'",
+      "context": "return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 206,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Cultural profile required for AI recommendations'",
+      "context": "{ error: 'Cultural profile required for AI recommendations' },",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 255,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Unknown error'",
+      "context": "error instanceof Error ? error.message : 'Unknown error'",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 261,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'AI Recommendations generation error:'",
+      "context": "console.error('AI Recommendations generation error:', error)",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 263,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Failed to generate AI recommendations'",
+      "context": "{ error: 'Failed to generate AI recommendations' },",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 310,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Error generating new recommendations:'",
+      "context": "console.error('Error generating new recommendations:', error)",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 402,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Matches your cultural interests'",
+      "context": "'Matches your cultural interests',",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 403,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Relevant to your Lusophone region'",
+      "context": "'Relevant to your Lusophone region',",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 404,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Good for community connection'",
+      "context": "'Good for community connection'",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 448,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'High cultural compatibility'",
+      "context": "'High cultural compatibility',",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 449,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Shared Portuguese heritage'",
+      "context": "'Shared Portuguese heritage',",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 450,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Similar saudade experiences'",
+      "context": "'Similar saudade experiences'",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 487,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Authentic Portuguese business'",
+      "context": "'Authentic Portuguese business',",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 488,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'High community rating'",
+      "context": "'High community rating',",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 489,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Good for cultural connection'",
+      "context": "'Good for cultural connection'",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 516,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'High saudade intensity detected'",
+      "context": "'High saudade intensity detected',",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 517,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Therapeutic community support'",
+      "context": "'Therapeutic community support',",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 518,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Cultural emotional understanding'",
+      "context": "'Cultural emotional understanding'",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/recommendations/route.ts",
+      "line": 635,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Failed to track AI usage:'",
+      "context": "console.error('Failed to track AI usage:', error)",
+      "timestamp": "2025-08-27T22:31:09.274Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 38,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Unauthorized'",
+      "context": "return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 48,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Insufficient permissions'",
+      "context": "return NextResponse.json({ error: 'Insufficient permissions' }, { status: 403 })",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 97,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'AI Services API error:'",
+      "context": "console.error('AI Services API error:', error)",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 99,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Failed to fetch AI services configuration'",
+      "context": "{ error: 'Failed to fetch AI services configuration' },",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 112,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Unauthorized'",
+      "context": "return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 122,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Admin access required'",
+      "context": "return NextResponse.json({ error: 'Admin access required' }, { status: 403 })",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 129,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Service name and type are required'",
+      "context": "return NextResponse.json({ error: 'Service name and type are required' }, { status: 400 })",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 139,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Invalid service type'",
+      "context": "return NextResponse.json({ error: 'Invalid service type' }, { status: 400 })",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 174,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'AI Service configuration error:'",
+      "context": "console.error('AI Service configuration error:', error)",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 176,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Failed to save AI service configuration'",
+      "context": "{ error: 'Failed to save AI service configuration' },",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 189,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Unauthorized'",
+      "context": "return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 195,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Service name is required'",
+      "context": "return NextResponse.json({ error: 'Service name is required' }, { status: 400 })",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 230,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'AI Service update error:'",
+      "context": "console.error('AI Service update error:', error)",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 232,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Failed to update AI service configuration'",
+      "context": "{ error: 'Failed to update AI service configuration' },",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 246,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Unauthorized'",
+      "context": "return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 252,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Service name is required'",
+      "context": "return NextResponse.json({ error: 'Service name is required' }, { status: 400 })",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 264,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Cannot delete service that has been used in the last 24 hours'",
+      "context": "{ error: 'Cannot delete service that has been used in the last 24 hours' },",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 282,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'AI Service deletion error:'",
+      "context": "console.error('AI Service deletion error:', error)",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 284,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Failed to delete AI service configuration'",
+      "context": "{ error: 'Failed to delete AI service configuration' },",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 370,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Authorization'",
+      "context": "'Authorization': `Bearer ${config.api_key || 'test'}`,",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai/services/route.ts",
       "line": 371,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Start with location/context, share detailed experience, and invite others to ask questions.\"",
-      "context": "\"Start with location/context, share detailed experience, and invite others to ask questions.\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Content-Type'",
+      "context": "'Content-Type': 'application/json'",
+      "timestamp": "2025-08-27T22:31:09.275Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 373,
+      "file": "src/app/api/ai/services/route.ts",
+      "line": 368,
+      "category": "hardcoded_urls",
+      "severity": "high",
+      "message": "Hardcoded URL detected - use config/cdn.ts or env vars",
+      "code": "'https://api.openai.com/v1/models'",
+      "context": "const response = await fetch('https://api.openai.com/v1/models', {",
+      "timestamp": "2025-08-27T22:31:09.275Z"
+    },
+    {
+      "file": "src/app/api/ai-ethics/route.ts",
+      "line": 42,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Comece com localização/contexto, partilhe experiência detalhada, e convide outros a fazer perguntas.\"",
-      "context": "\"Comece com localização/contexto, partilhe experiência detalhada, e convide outros a fazer perguntas.\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Invalid action parameter'",
+      "context": "return NextResponse.json({ error: 'Invalid action parameter' }, { status: 400 })",
+      "timestamp": "2025-08-27T22:31:09.275Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 379,
+      "file": "src/app/api/ai-ethics/route.ts",
+      "line": 45,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Include clear date, time, location, and how to RSVP. Explain the Lusophone cultural element.\"",
-      "context": "\"Include clear date, time, location, and how to RSVP. Explain the Lusophone cultural element.\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'AI Ethics API GET request failed'",
+      "context": "logger.error('AI Ethics API GET request failed', error, {",
+      "timestamp": "2025-08-27T22:31:09.275Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 381,
+      "file": "src/app/api/ai-ethics/route.ts",
+      "line": 51,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Inclua data, hora, localização clara, e como confirmar presença. Explique o elemento cultural português.\"",
-      "context": "\"Inclua data, hora, localização clara, e como confirmar presença. Explique o elemento cultural português.\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Internal server error'",
+      "context": "{ error: 'Internal server error' },",
+      "timestamp": "2025-08-27T22:31:09.275Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 465,
+      "file": "src/app/api/ai-ethics/route.ts",
+      "line": 79,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"I commit to treating fellow Portuguese speakers with the same warmth and respect I would show to family, while maintaining the safety and dignity of our London community.\"",
-      "context": "<p><strong>Community Pledge:</strong> \"I commit to treating fellow Portuguese speakers with the same warmth and respect I would show to family, while maintaining the safety and dignity of our London community.\"</p>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Invalid action parameter'",
+      "context": "return NextResponse.json({ error: 'Invalid action parameter' }, { status: 400 })",
+      "timestamp": "2025-08-27T22:31:09.275Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 546,
+      "file": "src/app/api/ai-ethics/route.ts",
+      "line": 82,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Comprometo-me a tratar outros falantes de português com o mesmo calor e respeito que mostraria à família, mantendo a segurança e dignidade da nossa comunidade londrina.\"",
-      "context": "<p><strong>Compromisso da Comunidade:</strong> \"Comprometo-me a tratar outros falantes de português com o mesmo calor e respeito que mostraria à família, mantendo a segurança e dignidade da nossa comunidade londrina.\"</p>",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'AI Ethics API POST request failed'",
+      "context": "logger.error('AI Ethics API POST request failed', error, {",
+      "timestamp": "2025-08-27T22:31:09.275Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 568,
+      "file": "src/app/api/ai-ethics/route.ts",
+      "line": 88,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Configurar preferências de privacidade para o seu perfil\"",
-      "context": "\"Configurar preferências de privacidade para o seu perfil\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Internal server error'",
+      "context": "{ error: 'Internal server error' },",
+      "timestamp": "2025-08-27T22:31:09.275Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 769,
+      "file": "src/app/api/ai-ethics/route.ts",
+      "line": 108,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Receber e ajudar pelo menos 3 novos membros da comunidade a cada mês\"",
-      "context": "\"Receber e ajudar pelo menos 3 novos membros da comunidade a cada mês\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'AI Ethics dashboard generation failed'",
+      "context": "logger.error('AI Ethics dashboard generation failed', error, {",
+      "timestamp": "2025-08-27T22:31:09.276Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 774,
+      "file": "src/app/api/ai-ethics/route.ts",
+      "line": 114,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Partilhar a sua expertise profissional e conhecimento local regularmente\"",
-      "context": "\"Partilhar a sua expertise profissional e conhecimento local regularmente\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Failed to generate AI ethics dashboard'",
+      "context": "{ error: 'Failed to generate AI ethics dashboard' },",
+      "timestamp": "2025-08-27T22:31:09.276Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 779,
+      "file": "src/app/api/ai-ethics/route.ts",
+      "line": 141,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Organizar ou participar em encontros comunitários offline\"",
-      "context": "\"Organizar ou participar em encontros comunitários offline\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Heritage status retrieval failed'",
+      "context": "logger.error('Heritage status retrieval failed', error, {",
+      "timestamp": "2025-08-27T22:31:09.276Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 784,
+      "file": "src/app/api/ai-ethics/route.ts",
+      "line": 147,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Conectar membros com interesses ou necessidades similares\"",
-      "context": "\"Conectar membros com interesses ou necessidades similares\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Failed to get heritage status'",
+      "context": "{ error: 'Failed to get heritage status' },",
+      "timestamp": "2025-08-27T22:31:09.276Z"
     },
     {
-      "file": "src/app/academy/community-forums/page.tsx",
-      "line": 789,
+      "file": "src/app/api/ai-ethics/route.ts",
+      "line": 163,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "\"Contribuir para recursos comunitários e desenvolvimento de FAQ\"",
-      "context": "\"Contribuir para recursos comunitários e desenvolvimento de FAQ\",",
-      "timestamp": "2025-08-27T12:50:45.653Z"
+      "code": "'Language preservation metrics failed'",
+      "context": "logger.error('Language preservation metrics failed', error, {",
+      "timestamp": "2025-08-27T22:31:09.276Z"
     },
     {
-      "file": "src/app/academy/cultural-events/page.tsx",
-      "line": 39,
+      "file": "src/app/api/ai-ethics/route.ts",
+      "line": 169,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Cultural Events module completed!'",
-      "context": "console.log('Cultural Events module completed!');",
-      "timestamp": "2025-08-27T12:50:45.658Z"
+      "code": "'Failed to get language preservation metrics'",
+      "context": "{ error: 'Failed to get language preservation metrics' },",
+      "timestamp": "2025-08-27T22:31:09.276Z"
     },
     {
-      "file": "src/app/academy/cultural-events/page.tsx",
-      "line": 57,
+      "file": "src/app/api/ai-ethics/route.ts",
+      "line": 185,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Navigate London\\'",
-      "context": "'Navigate London\\'s Lusophone cultural events calendar',",
-      "timestamp": "2025-08-27T12:50:45.658Z"
-    },
-    {
-      "file": "src/app/academy/cultural-events/page.tsx",
-      "line": 58,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Understand Lusophone cultural traditions and celebrations'",
-      "context": "'Understand Lusophone cultural traditions and celebrations',",
-      "timestamp": "2025-08-27T12:50:45.658Z"
-    },
-    {
-      "file": "src/app/academy/cultural-events/page.tsx",
-      "line": 59,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Connect with the Portuguese-speaking community through cultural activities'",
-      "context": "'Connect with the Portuguese-speaking community through cultural activities',",
-      "timestamp": "2025-08-27T12:50:45.658Z"
-    },
-    {
-      "file": "src/app/academy/cultural-events/page.tsx",
-      "line": 60,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Organize your own Lusophone cultural events'",
-      "context": "'Organize your own Lusophone cultural events',",
-      "timestamp": "2025-08-27T12:50:45.658Z"
-    },
-    {
-      "file": "src/app/academy/cultural-events/page.tsx",
-      "line": 61,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Blend Portuguese heritage with London lifestyle'",
-      "context": "'Blend Portuguese heritage with London lifestyle'",
-      "timestamp": "2025-08-27T12:50:45.658Z"
-    },
-    {
-      "file": "src/app/academy/cultural-events/page.tsx",
-      "line": 64,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Navegar no calendário de eventos culturais portugueses de Londres'",
-      "context": "'Navegar no calendário de eventos culturais portugueses de Londres',",
-      "timestamp": "2025-08-27T12:50:45.658Z"
+      "code": "'Privacy audit failed'",
+      "context": "logger.error('Privacy audit failed', error, {",
+      "timestamp": "2025-08-27T22:31:09.276Z"
     }
   ],
-  "fullViolationCount": 22306
+  "fullViolationCount": 20903
 }

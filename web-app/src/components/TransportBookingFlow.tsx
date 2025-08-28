@@ -12,7 +12,6 @@ import {
   CreditCardIcon
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
-import { useCart } from '@/context/CartContext'
 import EasySIAQuestionnaire, { EasySIAData } from './EasySIAQuestionnaire'
 import TransportBookingForm from './TransportBookingForm'
 
@@ -41,7 +40,6 @@ export default function TransportBookingFlow({
   experiencePackages = []
 }: TransportBookingFlowProps) {
   const { language, t } = useLanguage()
-  const { addToCart } = useCart()
   const isPortuguese = language === 'pt'
   
   const [currentStep, setCurrentStep] = useState<BookingStep>('compliance')
@@ -114,7 +112,8 @@ export default function TransportBookingFlow({
         }
       }
 
-      addToCart(bookingItem)
+      // Redirect to contact for transport booking
+      window.location.href = '/contact?transport=true'
       setBookingConfirmed(true)
       setCurrentStep('confirmation')
       

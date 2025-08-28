@@ -85,50 +85,6 @@ const mockRegionalData: Record<PortugueseCountry, LocalizedRegion> = {
     mediaOutlets: [],
     religiousCenters: []
   },
-  'usa': {
-    country: 'usa',
-    region: 'north-america',
-    name: 'United States',
-    nativeName: 'Estados Unidos',
-    currency: 'USD',
-    timezone: 'America/New_York',
-    dialect: 'diaspora-portuguese',
-    culturalFeatures: ['Portuguese festivals', 'Azorean heritage', 'Lusophone-American clubs'],
-    majorCities: ['New York', 'Boston', 'San Francisco', 'Miami', 'Newark'],
-    portuguesePopulation: 1500000,
-    culturalCenters: ['Lusophone-American Federation', 'Luso-American Foundation'],
-    consulateContacts: ['Lusophone Consulate New York', 'Lusophone Consulate Boston'],
-    traditionalFestivals: [],
-    localCuisine: [],
-    historicalSites: [],
-    communityOrganizations: [],
-    businessNetworks: [],
-    educationalInstitutions: [],
-    mediaOutlets: [],
-    religiousCenters: []
-  },
-  'canada': {
-    country: 'canada',
-    region: 'north-america', 
-    name: 'Canada',
-    nativeName: 'Canadá',
-    currency: 'CAD',
-    timezone: 'America/Toronto',
-    dialect: 'diaspora-portuguese',
-    culturalFeatures: ['Lusophone Week', 'Cultural associations', 'Portuguese businesses'],
-    majorCities: ['Toronto', 'Montreal', 'Vancouver', 'Winnipeg'],
-    portuguesePopulation: 410000,
-    culturalCenters: ['Lusophone Cultural Centre Toronto', 'Casa do Alentejo'],
-    consulateContacts: ['Lusophone Consulate Toronto', 'Lusophone Consulate Montreal'],
-    traditionalFestivals: [],
-    localCuisine: [],
-    historicalSites: [],
-    communityOrganizations: [],
-    businessNetworks: [],
-    educationalInstitutions: [],
-    mediaOutlets: [],
-    religiousCenters: []
-  },
   'australia': {
     country: 'australia',
     region: 'oceania',
@@ -521,10 +477,10 @@ export function GlobalPortugueseProvider({ children }: GlobalPortugueseProviderP
     
     // Mock regional preferences - would be stored in database
     return {
-      dateFormat: currentRegion.country === 'usa' ? 'MM/DD/YYYY' : 'DD/MM/YYYY',
-      timeFormat: currentRegion.country === 'usa' ? '12h' : '24h',
-      firstDayOfWeek: currentRegion.region === 'north-america' ? 0 : 1,
-      numberFormat: currentRegion.country === 'usa' ? '1,234.56' : '1.234,56',
+      dateFormat: 'DD/MM/YYYY',
+      timeFormat: '24h',
+      firstDayOfWeek: 1,
+      numberFormat: '1.234,56',
       phoneFormat: '+1 (123) 456-7890', // Would vary by country
       addressFormat: ['street', 'city', 'state', 'country'],
       preferredPaymentMethods: ['card', 'paypal', 'bank_transfer'],
@@ -586,7 +542,6 @@ export function GlobalPortugueseProvider({ children }: GlobalPortugueseProviderP
     const currencySymbols: Record<Currency, string> = {
       'EUR': '€',
       'USD': '$',
-      'CAD': 'CA$',
       'AUD': 'AU$',
       'BRL': 'R$',
       'ZAR': 'R',
@@ -607,7 +562,7 @@ export function GlobalPortugueseProvider({ children }: GlobalPortugueseProviderP
       day: '2-digit'
     }
     
-    return date.toLocaleDateString(currentCountry === 'usa' ? 'en-US' : 'pt-PT', options)
+    return date.toLocaleDateString('pt-PT', options)
   }, [regionalPreferences, currentCountry])
 
   const formatTime = useCallback((date: Date): string => {
@@ -619,7 +574,7 @@ export function GlobalPortugueseProvider({ children }: GlobalPortugueseProviderP
       hour12: regionalPreferences.timeFormat === '12h'
     }
     
-    return date.toLocaleTimeString(currentCountry === 'usa' ? 'en-US' : 'pt-PT', options)
+    return date.toLocaleTimeString('pt-PT', options)
   }, [regionalPreferences, currentCountry])
 
   const getLocalizedText = useCallback((key: string): string => {

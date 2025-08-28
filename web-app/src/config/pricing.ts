@@ -368,12 +368,6 @@ export const plans = {
 } as const;
 
 
-// Creator/Events pricing
-export const creator = {
-  proMonthly: 24.99, // Creator Pro monthly
-  ticketFeePercent: 8, // % per ticket
-  ticketFeeFlat: 0.4, // £ per ticket
-} as const;
 
 // Legacy formatter (deprecated - use enhanced formatPrice below)
 export const legacyFormatPrice = (amount: number) =>
@@ -438,13 +432,12 @@ export const TRANSPORT_PRICING = {
   }
 } as const;
 
-// Event and Creator Pricing
+// Event Pricing
 export const EVENT_PRICING = {
   ticketFeePercent: 8, // % per ticket
   ticketFeeFlat: 0.4, // £ per ticket
   minimumTicketFee: 0.5,
   maximumTicketFee: 25,
-  creatorRevenueSplit: 0.85, // 85% to creator, 15% to platform
   premiumEventFee: 15 // flat fee for premium event features
 } as const;
 
@@ -458,15 +451,6 @@ export const BUSINESS_PRICING = {
   socialMediaBoost: 19.99 // per month
 } as const;
 
-// Streaming Platform Pricing
-export const STREAMING_PRICING = {
-  creatorMonthly: 24.99,
-  donationFee: 0.03, // 3% platform fee
-  subscriptionFee: 0.05, // 5% platform fee
-  minimumDonation: 1,
-  maximumDonation: 500,
-  creatorRevenueSplit: 0.85 // 85% to creator
-} as const;
 
 // Payment Processing Fees
 export const PAYMENT_FEES = {

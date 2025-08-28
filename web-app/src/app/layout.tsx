@@ -7,7 +7,6 @@ import { SubscriptionProvider } from "@/context/SubscriptionContext";
 import { HeritageProvider } from "@/context/HeritageContext";
 import { FavoritesProvider } from "@/context/FavoritesContext";
 import { FollowingProvider } from "@/context/EnhancedFollowingContext";
-import { CartProvider } from "@/context/CartContext";
 import { NetworkingProvider } from "@/context/NetworkingContext";
 import { NotificationProvider } from "@/context/NotificationContext";
 import { PlatformIntegrationProvider } from "@/context/PlatformIntegrationContext";
@@ -54,8 +53,7 @@ export default function RootLayout({
             <LanguageProvider>
               <FavoritesProvider>
                 <FollowingProvider>
-                  <CartProvider>
-                    <NetworkingProvider>
+                  <NetworkingProvider>
                       <SubscriptionProvider>
                         <NotificationProvider>
                           <PlatformIntegrationProvider>
@@ -95,8 +93,7 @@ export default function RootLayout({
                           </PlatformIntegrationProvider>
                         </NotificationProvider>
                       </SubscriptionProvider>
-                    </NetworkingProvider>
-                  </CartProvider>
+                  </NetworkingProvider>
                 </FollowingProvider>
               </FavoritesProvider>
             </LanguageProvider>

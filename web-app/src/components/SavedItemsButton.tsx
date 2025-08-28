@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { HeartIcon as HeartSolidIcon } from "@heroicons/react/24/solid";
-import { useCart } from "@/context/CartContext";
+import { useFavorites } from "@/context/FavoritesContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { isAuthenticated, useAuthState as onAuthStateChange } from "@/lib/auth";
 import { useAuthPopup } from "@/components/AuthPopupProvider";
@@ -23,7 +23,8 @@ export default function SavedItemsButton({
   size = "medium",
   className = "",
 }: SavedItemsButtonProps) {
-  const { savedCount } = useCart();
+  const { favorites } = useFavorites();
+  const savedCount = favorites.length;
   const { t, language } = useLanguage();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { showPopup } = useAuthPopup();

@@ -5,7 +5,7 @@ import { motion, AnimatePresence, useMotionValue } from "framer-motion";
 import { useRouter, usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 // LusoMobileNavigation removed - duplicate nav, using PremiumMobileNavigation in layout instead
-import { LuxuryPullToRefresh } from "./LuxuryMobileInteraction";
+// Removed luxury imports - using standard components
 
 interface MobileResponsiveLayoutProps {
   children: React.ReactNode;
@@ -110,9 +110,9 @@ export default function MobileResponsiveLayout({
 
   const ContentWrapper = pullToRefresh
     ? ({ children: wrapperChildren }: { children: React.ReactNode }) => (
-        <LuxuryPullToRefresh onRefresh={handleRefresh}>
+        <div>
           {wrapperChildren}
-        </LuxuryPullToRefresh>
+        </div>
       )
     : ({ children: wrapperChildren }: { children: React.ReactNode }) => (
         <>{wrapperChildren}</>

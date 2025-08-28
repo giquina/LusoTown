@@ -34,8 +34,7 @@ import {
 } from '@/lib/pricingHelpers'
 import { SUBSCRIPTION_PLANS, getPlanPrice, getFormattedPlanPrice, formatPrice } from '@/config/pricing'
 
-// Mobile UX optimization imports
-import { mobileStandardHelpers } from '@/config/mobile-development-standards'
+// Mobile UX optimization imports removed - over-engineered
 
 interface GrowthFeaturesProps {
   isOpen: boolean
