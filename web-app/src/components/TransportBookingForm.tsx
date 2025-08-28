@@ -31,22 +31,27 @@ interface BookingFormData {
   estimatedHours?: number
 }
 
-const eventTypes = [
-  { value: 'tea-at-ritz', labelEn: 'Tea at The Ritz VIP Ride', labelPt: 'Chá no Ritz VIP' },
-  { value: 'mayfair-night', labelEn: 'Mayfair by Night', labelPt: 'Mayfair à Noite' },
-  { value: 'london-landmarks', labelEn: 'VIP London Landmarks', labelPt: 'Marcos de Londres VIP' },
-  { value: 'harry-potter', labelEn: 'Harry Potter Studio Tour', labelPt: 'Tour Estúdios Harry Potter' },
-  { value: 'james-bond', labelEn: 'James Bond London Drive', labelPt: 'Tour James Bond Londres' },
-  { value: 'royal-london', labelEn: 'Royal London Experience', labelPt: 'Experiência Londres Real' },
-  { value: 'shopping', labelEn: 'Shopping Experience at Harrods & Bond Street', labelPt: 'Experiência Compras Harrods & Bond Street' },
-  { value: 'airport-transfer', labelEn: 'Airport VIP Transfer', labelPt: 'Transferência VIP Aeroporto' },
-  { value: 'bespoke', labelEn: 'Bespoke Private Transport', labelPt: 'Transporte Privado Personalizado' }
+// Community-focused transport types for Portuguese-speaking community
+const communityTransportTypes = [
+  { value: 'cultural-event', labelEn: 'Portuguese Cultural Event', labelPt: 'Evento Cultural Português' },
+  { value: 'festa-celebration', labelEn: 'Portuguese Festa/Festival', labelPt: 'Festa/Festival Português' },
+  { value: 'university-transport', labelEn: 'University Connection', labelPt: 'Ligação Universitária' },
+  { value: 'airport-arrival', labelEn: 'Airport Welcome Service', labelPt: 'Serviço de Boas-vindas no Aeroporto' },
+  { value: 'community-meetup', labelEn: 'Community Meetup', labelPt: 'Encontro Comunitário' },
+  { value: 'business-networking', labelEn: 'Portuguese Business Networking', labelPt: 'Networking de Negócios Português' },
+  { value: 'healthcare-appointment', labelEn: 'Healthcare/Services Appointment', labelPt: 'Consulta Médica/Serviços' },
+  { value: 'family-visit', labelEn: 'Family/Friend Visit', labelPt: 'Visita Familiar/Amigos' },
+  { value: 'shopping-portuguese', labelEn: 'Portuguese Shops/Markets', labelPt: 'Lojas/Mercados Portugueses' },
+  { value: 'other-community', labelEn: 'Other Community Need', labelPt: 'Outra Necessidade Comunitária' }
 ]
 
-const securityPreferences = [
-  { value: 'driver-only', labelEn: 'Driver only', labelPt: 'Apenas motorista' },
-  { value: 'close-protection', labelEn: 'Close Protection Officer', labelPt: 'Oficial de Proteção Próxima' },
-  { value: 'both', labelEn: 'Both', labelPt: 'Ambos' }
+// Community safety preferences for Portuguese-speaking passengers
+const safetyPreferences = [
+  { value: 'standard', labelEn: 'Standard Community Driver', labelPt: 'Motorista Comunitário Padrão' },
+  { value: 'verified-portuguese', labelEn: 'Portuguese-speaking Driver Required', labelPt: 'Motorista de Língua Portuguesa Necessário' },
+  { value: 'university-verified', labelEn: 'University-verified Driver', labelPt: 'Motorista Verificado pela Universidade' },
+  { value: 'family-friendly', labelEn: 'Family-friendly Service', labelPt: 'Serviço Familiar' },
+  { value: 'female-driver', labelEn: 'Female Driver Preferred', labelPt: 'Preferência por Motorista Feminina' }
 ]
 
 interface TransportBookingFormProps {
@@ -76,7 +81,7 @@ export default function TransportBookingForm({
     pickupLocation: '',
     destinations: '',
     eventType: selectedPackage?.value || '',
-    securityPreference: 'driver-only',
+    securityPreference: 'standard',
     additionalNotes: '',
     serviceType: selectedService?.id || 'essential',
     packageType: selectedPackage?.value,
@@ -144,43 +149,49 @@ export default function TransportBookingForm({
     setIsSubmitting(true)
 
     try {
-      // Calculate pricing
-      const basePrice = selectedService?.price || 55
-      const hours = formData.estimatedHours || 3
-      const totalPrice = basePrice * hours
-
-      // Add to cart
-      const cartItem = {
-        id: `transport-${Date.now()}`,
-        type: 'transport_service' as const,
-        title: isPortuguese 
-          ? `${selectedService?.namePortuguese || 'Serviço de Transporte Privado'} - ${formData.eventType}`
-          : `${selectedService?.name || 'Private Transport Service'} - ${formData.eventType}`,
-        description: isPortuguese 
-          ? `Serviço de transporte privado para ${hours} horas`
-          : `Private transport service for ${hours} hours`,
-        price: totalPrice,
-        currency: 'GBP',
-        imageUrl: '/transport-service.jpg',
-        quantity: 1,
-        transportServiceId: selectedService?.id,
-        pickupDateTime: formData.dateTime,
-        pickupLocation: formData.pickupLocation,
-        dropoffLocation: formData.destinations,
-        hours: hours,
-        bookingType: 'hourly' as const,
-        passengerCount: 1,
-        addedAt: new Date().toISOString(),
-        metadata: {
-          bookingDetails: formData,
-          eventType: formData.eventType,
-          securityPreference: formData.securityPreference
-        }
+      // Submit community transport request
+      const transportRequest = {
+        service_type: selectedService?.id || 'community_rideshare',
+        pickup_location: {
+          address: formData.pickupLocation,
+          coordinates: [0, 0] // Would be geocoded in production
+        },
+        dropoff_location: {
+          address: formData.destinations,
+          coordinates: [0, 0] // Would be geocoded in production
+        },
+        scheduled_datetime: new Date(formData.dateTime).toISOString(),
+        passenger_count: 1,
+        special_requirements: formData.additionalNotes,
+        contact_info: {
+          name: formData.fullName,
+          phone: formData.phone,
+          email: formData.email,
+          emergency_contact: formData.phone // Use same phone for now
+        },
+        additional_options: [
+          formData.eventType,
+          formData.securityPreference
+        ].filter(Boolean)
       }
 
-      // Redirect to contact for transport booking
-      window.location.href = '/contact?transport=true'
+      const response = await fetch('/api/transport', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(transportRequest)
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to submit transport request')
+      }
+
+      const result = await response.json()
       setIsSuccess(true)
+      
+      // Show success message with request details
+      console.log('Transport request submitted:', result)
       
       // Reset form after success
       setTimeout(() => {
@@ -236,7 +247,7 @@ export default function TransportBookingForm({
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900">
-                  {isPortuguese ? 'Reservar Serviço de Transporte Privado' : 'Book Private Transport Service'}
+                  {isPortuguese ? 'Solicitar Transporte Comunitário' : 'Request Community Transport'}
                 </h2>
                 <div className="flex items-center mt-2 space-x-2">
                   {[1, 2, 3].map((step) => (
@@ -267,12 +278,12 @@ export default function TransportBookingForm({
                 >
                   <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {isPortuguese ? 'Reserva Adicionada!' : 'Booking Added!'}
+                    {isPortuguese ? 'Pedido Enviado!' : 'Request Submitted!'}
                   </h3>
                   <p className="text-gray-600">
                     {isPortuguese 
-                      ? 'O seu serviço foi adicionado ao carrinho. Pode finalizar a compra quando estiver pronto.'
-                      : 'Your service has been added to the cart. You can complete checkout when ready.'
+                      ? 'O seu pedido de transporte foi enviado. Entraremos em contacto consigo em breve para coordenar o serviço.'
+                      : 'Your transport request has been submitted. We will contact you shortly to coordinate the service.'
                     }
                   </p>
                 </motion.div>
@@ -457,7 +468,7 @@ export default function TransportBookingForm({
                               <option value="">
                                 {isPortuguese ? 'Selecione o tipo de evento' : 'Select event type'}
                               </option>
-                              {eventTypes.map((type) => (
+                              {communityTransportTypes.map((type) => (
                                 <option key={type.value} value={type.value}>
                                   {isPortuguese ? type.labelPt : type.labelEn}
                                 </option>
@@ -468,14 +479,14 @@ export default function TransportBookingForm({
                           <div>
                             <label className="block text-sm font-medium text-gray-700 mb-2">
                               <ShieldCheckIcon className="w-4 h-4 inline mr-2" />
-                              {isPortuguese ? 'Preferência de Segurança' : 'Security Preference'}
+                              {isPortuguese ? 'Preferências de Segurança Comunitária' : 'Community Safety Preferences'}
                             </label>
                             <select
                               value={formData.securityPreference}
                               onChange={(e) => handleInputChange('securityPreference', e.target.value)}
                               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                             >
-                              {securityPreferences.map((pref) => (
+                              {safetyPreferences.map((pref) => (
                                 <option key={pref.value} value={pref.value}>
                                   {isPortuguese ? pref.labelPt : pref.labelEn}
                                 </option>

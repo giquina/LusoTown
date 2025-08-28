@@ -36,10 +36,12 @@ interface StudentSupportSectionProps {
   onStudentVerificationClick?: () => void
 }
 
-// Mock data for statistics
+import { UNIVERSITY_STATS } from '@/config/universities'
+
+// University statistics from configuration
 const studentStats = {
-  totalStudents: 2150,
-  universities: 8,
+  totalStudents: UNIVERSITY_STATS.totalPortugueseStudents + UNIVERSITY_STATS.totalBrazilianStudents,
+  universities: UNIVERSITY_STATS.totalPartnerships,
   cities: 12,
   successRate: 94
 }
@@ -72,17 +74,18 @@ const testimonials = [
   }
 ]
 
-// University partnerships mock data
-const universityPartnerships = [
-  { name: 'London School of Economics', logo: '/images/universities/lse.png', students: 380 },
-  { name: 'University College London', logo: '/images/universities/ucl.png', students: 320 },
-  { name: 'Imperial College London', logo: '/images/universities/imperial.png', students: 280 },
-  { name: 'King\'s College London', logo: '/images/universities/kcl.png', students: 250 },
-  { name: 'University of Manchester', logo: '/images/universities/manchester.png', students: 550 },
-  { name: 'University of Birmingham', logo: '/images/universities/birmingham.png', students: 420 },
-  { name: 'University of Edinburgh', logo: '/images/universities/edinburgh.png', students: 330 },
-  { name: 'Heriot-Watt University', logo: '/images/universities/heriot-watt.png', students: 120 }
-]
+import { UNIVERSITY_PARTNERSHIPS } from '@/config/universities'
+
+// University partnerships from configuration
+const universityPartnerships = UNIVERSITY_PARTNERSHIPS.map(uni => ({
+  name: uni.name,
+  shortName: uni.shortName,
+  logo: `/images/universities/${uni.id}.png`,
+  students: uni.portugueseStudents + uni.brazilianStudents,
+  partnershipLevel: uni.partnershipLevel,
+  region: uni.region,
+  hasPortugueseProgram: uni.hasPortugueseProgram
+}))
 
 export default function StudentSupportSection({ onStudentVerificationClick }: StudentSupportSectionProps) {
   const { t } = useLanguage()
@@ -499,18 +502,31 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 * index }}
-                  className="text-center group"
+                  className="text-center group cursor-pointer"
                 >
                   <div className="bg-gray-50 rounded-xl p-6 mb-4 group-hover:bg-gray-100 transition-colors duration-300">
                     <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-3">
                       <AcademicCapIcon className="w-8 h-8 text-white" />
                     </div>
                     <div className="text-xs font-medium text-gray-500 mb-1">
-                      {university.students} students
+                      {university.students} lusophone students
                     </div>
+                    <div className="flex justify-center space-x-1 mb-2">
+                      {[...Array(university.partnershipLevel === 'strategic' ? 3 : university.partnershipLevel === 'official' ? 2 : 1)].map((_, i) => (
+                        <StarIconSolid key={i} className="w-3 h-3 text-yellow-400" />
+                      ))}
+                    </div>
+                    {university.hasPortugueseProgram && (
+                      <div className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-primary-100 text-primary-800">
+                        Portuguese Program
+                      </div>
+                    )}
                   </div>
-                  <div className="text-sm font-medium text-gray-900 leading-tight">
-                    {university.name}
+                  <div className="text-sm font-medium text-gray-900 leading-tight mb-1">
+                    {university.shortName}
+                  </div>
+                  <div className="text-xs text-gray-500 capitalize">
+                    {university.region} • {university.partnershipLevel}
                   </div>
                 </motion.div>
               ))}
@@ -545,6 +561,13 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                   <IdentificationIcon className="w-5 h-5 mr-2" />
                   {t('students.cta.verify')}
                 </button>
+                <Link
+                  href="/students/university-partnerships"
+                  className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition-colors duration-300 flex items-center justify-center"
+                >
+                  <AcademicCapIcon className="w-5 h-5 mr-2" />
+                  University Partnerships
+                </Link>
                 <Link
                   href="/students"
                   className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition-colors duration-300 flex items-center justify-center"

@@ -45,6 +45,12 @@ export const ROUTES = {
   // Services
   transport: "/transport",
   transportGroup: "/transport?mode=group",
+  transportCoordination: "/transport/coordination",
+  transportManagement: "/transport/management",
+  transportRideshare: "/transport?mode=rideshare",
+  transportAirport: "/transport?mode=airport",
+  transportEvents: "/transport?mode=events",
+  transportUniversity: "/transport?mode=university",
   services: "/services",
 
   // Business

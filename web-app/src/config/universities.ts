@@ -58,6 +58,27 @@ export interface UniversityPartnership {
     twitter?: string;
     linkedin?: string;
   };
+  
+  // Portuguese Society Information
+  portugueseSociety?: {
+    name: string;
+    active: boolean;
+    contactEmail?: string;
+    whatsappGroup?: string;
+    instagramHandle?: string;
+    meetingFrequency?: string;
+    memberCount?: number;
+    activities: string[];
+  };
+  
+  // Student Services Integration
+  studentServices: {
+    discountVerification: boolean;
+    academicSupport: boolean;
+    mentorshipProgram: boolean;
+    careerGuidance: boolean;
+    accommodationSupport: boolean;
+  };
 }
 
 // University Partnerships Data
@@ -100,6 +121,32 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
       twitter: 'https://twitter.com/UCLPortuguese',
       facebook: 'https://facebook.com/UCLPortugueseStudies',
       instagram: '@ucl_portuguese'
+    },
+    portugueseSociety: {
+      name: 'UCL Portuguese Society',
+      active: true,
+      contactEmail: 'portuguese.society@ucl.ac.uk',
+      whatsappGroup: 'https://chat.whatsapp.com/UCLPortugueseSociety',
+      instagramHandle: '@ucl_portuguese_society',
+      meetingFrequency: 'Weekly on Wednesdays',
+      memberCount: 145,
+      activities: [
+        'Weekly Portuguese conversation circles',
+        'Cultural movie nights with Portuguese films',
+        'Traditional Portuguese cooking workshops',
+        'Fado music appreciation sessions',
+        'Portuguese language exchange program',
+        'Academic study groups for Portuguese studies students',
+        'Annual Festa Junina celebration',
+        'Career networking with Portuguese professionals in London'
+      ]
+    },
+    studentServices: {
+      discountVerification: true,
+      academicSupport: true,
+      mentorshipProgram: true,
+      careerGuidance: true,
+      accommodationSupport: true
     }
   },
   {
@@ -133,7 +180,30 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     hasPortugueseProgram: true,
     portugalStudyAbroad: true,
     culturalPrograms: ['Lusophone Society Events', 'Cultural Exchange Programs'],
-    academicSupport: ['Study Groups', 'Career Guidance', 'Language Practice']
+    academicSupport: ['Study Groups', 'Career Guidance', 'Language Practice'],
+    portugueseSociety: {
+      name: 'KCL Portuguese & Lusophone Society',
+      active: true,
+      contactEmail: 'portuguese@kclsu.org',
+      instagramHandle: '@kcl_portuguese',
+      meetingFrequency: 'Bi-weekly on Fridays',
+      memberCount: 98,
+      activities: [
+        'Portuguese and Brazilian cultural exchange',
+        'Academic support for language students',
+        'Professional networking events',
+        'Cultural trips to Portuguese neighborhoods in London',
+        'Portuguese literature discussion groups',
+        'Sports and social activities'
+      ]
+    },
+    studentServices: {
+      discountVerification: true,
+      academicSupport: true,
+      mentorshipProgram: true,
+      careerGuidance: true,
+      accommodationSupport: true
+    }
   },
   {
     id: 'imperial-college',
@@ -165,7 +235,14 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     hasPortugueseProgram: false,
     portugalStudyAbroad: false,
     culturalPrograms: ['Lusophone Engineering Society', 'Innovation Labs'],
-    academicSupport: ['Technical Mentorship', 'Research Opportunities']
+    academicSupport: ['Technical Mentorship', 'Research Opportunities'],
+    studentServices: {
+      discountVerification: true,
+      academicSupport: true,
+      mentorshipProgram: false,
+      careerGuidance: true,
+      accommodationSupport: false
+    }
   },
   {
     id: 'lse',
@@ -197,7 +274,29 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     hasPortugueseProgram: false,
     portugalStudyAbroad: true,
     culturalPrograms: ['Lusophone Economics Society', 'Business Networking'],
-    academicSupport: ['Career Services', 'Alumni Network']
+    academicSupport: ['Career Services', 'Alumni Network'],
+    portugueseSociety: {
+      name: 'LSE Portuguese & Brazilian Society',
+      active: true,
+      contactEmail: 'portuguese@lse.ac.uk',
+      instagramHandle: '@lse_portuguese',
+      meetingFrequency: 'Monthly meetups',
+      memberCount: 67,
+      activities: [
+        'Business networking with Portuguese entrepreneurs',
+        'Economic policy discussions in Portuguese',
+        'Career development workshops',
+        'Alumni mentor matching program',
+        'Portuguese business case study sessions'
+      ]
+    },
+    studentServices: {
+      discountVerification: true,
+      academicSupport: true,
+      mentorshipProgram: true,
+      careerGuidance: true,
+      accommodationSupport: false
+    }
   },
   {
     id: 'oxford',
@@ -229,7 +328,14 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     hasPortugueseProgram: true,
     portugalStudyAbroad: true,
     culturalPrograms: ['Oxford Lusophone Society', 'Academic Conferences'],
-    academicSupport: ['Research Collaboration', 'Academic Publishing']
+    academicSupport: ['Research Collaboration', 'Academic Publishing'],
+    studentServices: {
+      discountVerification: false,
+      academicSupport: true,
+      mentorshipProgram: false,
+      careerGuidance: true,
+      accommodationSupport: false
+    }
   },
   {
     id: 'cambridge',
@@ -261,7 +367,14 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     hasPortugueseProgram: true,
     portugalStudyAbroad: true,
     culturalPrograms: ['Lusophone Literary Society', 'Cultural Heritage Events'],
-    academicSupport: ['Research Opportunities', 'Academic Mentorship']
+    academicSupport: ['Research Opportunities', 'Academic Mentorship'],
+    studentServices: {
+      discountVerification: false,
+      academicSupport: true,
+      mentorshipProgram: false,
+      careerGuidance: true,
+      accommodationSupport: false
+    }
   },
   {
     id: 'manchester',
@@ -292,7 +405,14 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     hasPortugueseProgram: false,
     portugalStudyAbroad: false,
     culturalPrograms: ['Lusophone Student Network'],
-    academicSupport: ['Career Guidance']
+    academicSupport: ['Career Guidance'],
+    studentServices: {
+      discountVerification: false,
+      academicSupport: true,
+      mentorshipProgram: false,
+      careerGuidance: true,
+      accommodationSupport: true
+    }
   },
   {
     id: 'edinburgh',
@@ -323,7 +443,14 @@ export const UNIVERSITY_PARTNERSHIPS: UniversityPartnership[] = [
     hasPortugueseProgram: false,
     portugalStudyAbroad: true,
     culturalPrograms: ['Scottish-Lusophone Cultural Exchange'],
-    academicSupport: ['International Student Support']
+    academicSupport: ['International Student Support'],
+    studentServices: {
+      discountVerification: false,
+      academicSupport: true,
+      mentorshipProgram: false,
+      careerGuidance: false,
+      accommodationSupport: true
+    }
   }
 ];
 
