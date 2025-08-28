@@ -17,12 +17,18 @@ function validateEnvironmentSecurity(): void {
     // Server-side security validation
     const isBuildPhase = process.env.NEXT_PHASE === 'phase-production-build'
     const requiredEnvVars = [
-      'DEMO_EMAIL',
-      'DEMO_PASSWORD',
-      'ADMIN_EMAIL_DOMAIN',
       'NEXT_PUBLIC_SUPABASE_URL',
       'NEXT_PUBLIC_SUPABASE_ANON_KEY'
     ]
+    
+    // Only require admin/demo vars in production runtime, not during build
+    if (process.env.NODE_ENV === 'production' && !isBuildPhase) {
+      requiredEnvVars.push(
+        'DEMO_EMAIL',
+        'DEMO_PASSWORD',
+        'ADMIN_EMAIL_DOMAIN'
+      )
+    }
     
     const missingVars = requiredEnvVars.filter(varName => !process.env[varName])
     

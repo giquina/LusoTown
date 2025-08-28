@@ -1,5 +1,6 @@
 import React from "react";
-import { Inter } from "next/font/google";
+// Temporary fallback font for build without network access
+// import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
@@ -28,10 +29,11 @@ const AppDownloadBar = dynamic(() => import("@/components/AppDownloadBar"), {
   loading: () => null,
 }) as unknown as React.FC;
 
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: "--font-inter"
-});
+// Temporary fallback font configuration for build without network access
+const inter = {
+  variable: "--font-inter",
+  className: "font-sans"
+};
 
 export const metadata = {
   title: {

@@ -579,7 +579,7 @@ export default function ComprehensiveLusophoneExperience() {
           transition={{ delay: 0.8 }}
           className="text-center"
         >
-          <GradientBackground variant="heritage" className="rounded-3xl">
+          <div className="bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 rounded-3xl p-1">
             <Card className="p-8 text-center space-y-4">
               <div className="text-3xl mb-4">🤝</div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -607,7 +607,7 @@ export default function ComprehensiveLusophoneExperience() {
                 </button>
               </div>
             </Card>
-          </GradientBackground>
+          </div>
         </motion.div>
       </div>
     </div>

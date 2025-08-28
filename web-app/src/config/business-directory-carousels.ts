@@ -691,6 +691,11 @@ export function searchBusinesses(query: string): BusinessCarouselItem[] {
 }
 
 /**
+ * Alias for backward compatibility with components
+ */
+export const businessDirectoryCarousels = BUSINESS_DIRECTORY_CATEGORIES
+
+/**
  * Business directory statistics
  */
 export function getBusinessDirectoryStats() {
