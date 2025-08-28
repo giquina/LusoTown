@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 import { communityStats } from '@/config/community'
+import logger from '@/utils/logger'
 
 export async function GET(request: NextRequest) {
   try {
@@ -30,7 +31,11 @@ export async function GET(request: NextRequest) {
         stats.activeEvents = eventCount
       }
     } catch (error) {
-      console.warn('Could not fetch real-time event stats:', error)
+      logger.warn('Could not fetch real-time event stats', error, { 
+        area: 'community', 
+        culturalContext: 'lusophone',
+        action: 'fetch_event_stats' 
+      })
       stats.activeEvents = 24 // Fallback number
     }
 
@@ -46,7 +51,11 @@ export async function GET(request: NextRequest) {
         stats.businessListings = businessCount
       }
     } catch (error) {
-      console.warn('Could not fetch real-time business stats:', error)
+      logger.warn('Could not fetch real-time business stats', error, { 
+        area: 'community', 
+        culturalContext: 'lusophone',
+        action: 'fetch_business_stats' 
+      })
       stats.businessListings = 156 // Fallback number from config
     }
 
@@ -106,7 +115,11 @@ export async function GET(request: NextRequest) {
       }
     })
   } catch (error) {
-    console.error('Community stats API error:', error)
+    logger.error('Community stats API error', error, { 
+      area: 'community', 
+      culturalContext: 'lusophone',
+      action: 'fetch_community_stats' 
+    })
     
     // Return fallback stats even if database is unavailable
     return NextResponse.json({

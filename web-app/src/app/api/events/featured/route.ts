@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 import { CULTURAL_EVENTS, getFeaturedEvents } from "@/config/cultural-events";
 import { LUSOPHONE_CELEBRATIONS } from "@/config/lusophone-celebrations";
+import logger from '@/utils/logger';
 
 export async function GET(request: NextRequest) {
   try {
@@ -153,7 +154,11 @@ export async function GET(request: NextRequest) {
       filters: { category, location },
     });
   } catch (error) {
-    console.error("Featured events API error:", error);
+    logger.error("Featured events API error", error, { 
+      area: 'events', 
+      culturalContext: 'lusophone',
+      action: 'fetch_featured_events' 
+    });
     return NextResponse.json(
       {
         success: false,

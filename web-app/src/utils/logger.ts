@@ -32,6 +32,7 @@ export type PlatformArea =
   | 'events'       // Community events and cultural activities
   | 'business'     // Portuguese-speaking business directory
   | 'ai'           // AI systems (LusoBot, matching, notifications)
+  | 'aiSystem'     // Legacy alias for ai
   | 'auth'         // Authentication and user management
   | 'payments'     // Subscription and payment processing
   | 'messaging'    // Community chat and communication
@@ -41,6 +42,7 @@ export type PlatformArea =
   | 'performance'  // Performance monitoring and optimization
   | 'security'     // Security and privacy features
   | 'cultural'     // Cultural heritage and authenticity
+  | 'community'    // General community features
   | 'geo'          // Geolocation and PostGIS features
   | 'seo'          // SEO and content optimization
   | 'analytics';   // Usage analytics and metrics
@@ -63,6 +65,10 @@ export interface LogMeta {
   timestamp?: Date;
   eventType?: 'cultural' | 'business' | 'social' | 'educational';
   lusophoneCountries?: string[];
+  metadata?: any; // Generic metadata for structured logging
+  migratedFrom?: string; // For tracking migrated console.log statements
+  migratedAt?: string; // Timestamp of migration
+  error?: any; // Error object for error logging
 }
 
 class LusoTownLogger {
@@ -106,6 +112,7 @@ class LusoTownLogger {
       events: '🎉',
       business: '🏪',
       ai: '🤖',
+      aiSystem: '🤖', // Legacy alias for ai
       auth: '🔐',
       payments: '💳',
       messaging: '💬',
@@ -115,6 +122,7 @@ class LusoTownLogger {
       performance: '📊',
       security: '🛡️',
       cultural: '🎭',
+      community: '👥', // General community features
       geo: '📍',
       seo: '🔍',
       analytics: '📈'

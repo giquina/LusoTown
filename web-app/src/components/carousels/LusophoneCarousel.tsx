@@ -25,6 +25,10 @@ export interface LusophoneCarouselItem {
     en: string
     pt: string
   }
+  subtitle?: {
+    en: string
+    pt: string
+  }
   description?: {
     en: string
     pt: string
@@ -34,6 +38,7 @@ export interface LusophoneCarouselItem {
   countries?: string[]
   category?: string
   priority?: number
+  metadata?: any // Additional metadata for custom carousel implementations
 }
 
 /**

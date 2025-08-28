@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
+import logger from '@/utils/logger'
 
 export async function GET(request: NextRequest) {
   try {
@@ -9,7 +10,10 @@ export async function GET(request: NextRequest) {
     const { data: { session }, error } = await supabase.auth.getSession()
     
     if (error) {
-      console.error('Session retrieval error:', error)
+      logger.error('Session retrieval error', error, { 
+        area: 'auth', 
+        action: 'session_retrieval' 
+      })
       return NextResponse.json(
         { error: 'Failed to retrieve session' },
         { status: 500 }
@@ -47,7 +51,10 @@ export async function GET(request: NextRequest) {
       authenticated: true
     })
   } catch (error) {
-    console.error('Auth session API error:', error)
+    logger.error('Auth session API error', error, { 
+      area: 'auth', 
+      action: 'session_api' 
+    })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -63,7 +70,10 @@ export async function DELETE(request: NextRequest) {
     const { error } = await supabase.auth.signOut()
     
     if (error) {
-      console.error('Sign out error:', error)
+      logger.error('Sign out error', error, { 
+        area: 'auth', 
+        action: 'sign_out' 
+      })
       return NextResponse.json(
         { error: 'Failed to sign out' },
         { status: 500 }
@@ -72,7 +82,10 @@ export async function DELETE(request: NextRequest) {
 
     return NextResponse.json({ message: 'Successfully signed out' })
   } catch (error) {
-    console.error('Auth session delete API error:', error)
+    logger.error('Auth session delete API error', error, { 
+      area: 'auth', 
+      action: 'session_delete' 
+    })
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
