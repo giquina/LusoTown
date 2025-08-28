@@ -15,8 +15,8 @@ import {
   UserGroupIcon,
   PhoneIcon,
   EnvelopeIcon,
-  ChartBarIcon,
-  TrendingUpIcon,
+  
+  ChartBarIcon as TrendingUpIcon,
   ExclamationTriangleIcon,
   ClockIcon,
   FlagIcon,

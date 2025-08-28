@@ -2,6 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import logger from '@/utils/logger';
 import { businessDirectoryService } from '@/services/BusinessDirectoryService';
+import {
+  API_ERROR_MESSAGES,
+  API_LOG_MESSAGES,
+  GEOCODING_CONFIG,
+  getApiErrorMessage,
+  getApiLogMessage
+} from '@/config/api-messages';
 
 // Initialize Supabase client for server-side operations with proper error handling
 function getSupabaseClient() {
@@ -9,7 +16,7 @@ function getSupabaseClient() {
   const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   
   if (!supabaseUrl || !supabaseServiceKey) {
-    throw new Error('Supabase configuration missing. Please check environment variables.');
+    throw new Error(getApiErrorMessage('SUPABASE_CONFIG_MISSING'));
   }
   
   return createClient(supabaseUrl, supabaseServiceKey);

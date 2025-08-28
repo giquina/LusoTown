@@ -12,6 +12,12 @@ import logger from '@/utils/logger'
 // import { processPartnerEventInterests } from '@/lib/partnership/event-processor'
 import { validateCulturalBackground } from '@/lib/validation/cultural-validator'
 // import { registerForInitialEvents } from '@/lib/events/auto-registration'
+import {
+  API_ERROR_MESSAGES,
+  API_LOG_MESSAGES,
+  getApiErrorMessage,
+  getApiLogMessage
+} from '@/config/api-messages'
 
 // Temporary placeholder types and functions for build
 interface EnhancedSignupForm {
@@ -44,35 +50,35 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
     // Basic validation
     if (!signupData.email || !signupData.password) {
       return NextResponse.json(
-        { success: false, error: 'Email and password are required' },
+        { success: false, error: getApiErrorMessage('MISSING_CREDENTIALS') },
         { status: 400 }
       )
     }
 
     if (!signupData.firstName || !signupData.lastName) {
       return NextResponse.json(
-        { success: false, error: 'First name and last name are required' },
+        { success: false, error: getApiErrorMessage('MISSING_USER_INFO') },
         { status: 400 }
       )
     }
 
     if (!signupData.agreeTerms) {
       return NextResponse.json(
-        { success: false, error: 'You must agree to the terms and conditions' },
+        { success: false, error: getApiErrorMessage('TERMS_NOT_AGREED') },
         { status: 400 }
       )
     }
 
     if (!signupData.ageConfirmation) {
       return NextResponse.json(
-        { success: false, error: 'Age confirmation is required' },
+        { success: false, error: getApiErrorMessage('AGE_NOT_CONFIRMED') },
         { status: 400 }
       )
     }
 
     if (signupData.password !== signupData.confirmPassword) {
       return NextResponse.json(
-        { success: false, error: 'Passwords do not match' },
+        { success: false, error: getApiErrorMessage('PASSWORDS_MISMATCH') },
         { status: 400 }
       )
     }
@@ -100,7 +106,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
 
     if (authError || !authData.user) {
       return NextResponse.json(
-        { success: false, error: authError?.message || 'Failed to create account' },
+        { success: false, error: authError?.message || getApiErrorMessage('ACCOUNT_CREATION_FAILED') },
         { status: 400 }
       )
     }
@@ -163,9 +169,9 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
       .single()
 
     if (profileError) {
-      logger.error('Profile creation error:', profileError)
+      logger.error(getApiLogMessage('PROFILE_CREATION_ERROR'), profileError)
       return NextResponse.json(
-        { success: false, error: 'Failed to create user profile' },
+        { success: false, error: getApiErrorMessage('PROFILE_CREATION_FAILED') },
         { status: 500 }
       )
     }
@@ -180,7 +186,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
         })
         referralResult = referralData
       } catch (referralError) {
-        logger.error('Referral processing error:', referralError)
+        logger.error(getApiLogMessage('REFERRAL_PROCESSING_ERROR'), referralError)
         // Don't fail signup for referral errors
       }
     }
@@ -198,7 +204,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
         }
       })
     } catch (emailError) {
-      logger.error('Welcome email error:', emailError)
+      logger.error(getApiLogMessage('WELCOME_EMAIL_ERROR'), emailError)
       // Don't fail signup for email errors
     }
 
@@ -213,7 +219,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
         partnerEventInterest: signupData.partnerEventInterest
       })
     } catch (registrationError) {
-      logger.error('Auto-registration error:', registrationError)
+      logger.error(getApiLogMessage('AUTO_REGISTRATION_ERROR'), registrationError)
       // Don't fail signup for registration errors
     }
 
@@ -235,7 +241,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
       )
       compatibilityData = compatibilityScore
     } catch (compatibilityError) {
-      logger.error('Compatibility calculation error:', compatibilityError)
+      logger.error(getApiLogMessage('COMPATIBILITY_CALCULATION_ERROR'), compatibilityError)
     }
 
     // Generate recommendations based on signup data
@@ -262,7 +268,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
     return NextResponse.json(response, { status: 201 })
 
   } catch (error) {
-    logger.error('Enhanced signup error:', error)
+    logger.error(getApiLogMessage('ENHANCED_SIGNUP_ERROR'), error)
     return NextResponse.json(
       { 
         success: false, 

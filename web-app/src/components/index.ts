@@ -18,17 +18,30 @@
 // Essential UI Foundation
 export * from './ui'
 
+// Mobile-First UX Components (Revolutionary Spacing & Touch Interface)
+export { default as MobileOptimizedBusinessDirectory } from './MobileOptimizedBusinessDirectory'
+export { default as MobileEventCard } from './MobileEventCard'
+export { default as MobileBenchmarkDisplay } from './MobileBenchmarkDisplay'
+
 // Community Core Components
 export { default as Header } from './Header'
 export { default as Footer } from './Footer'
 export { default as MobileNavigation } from './MobileNavigation'
 export { default as Logo } from './Logo'
 
+// Cultural Authenticity & Visual Polish System
+export * from './cultural/LusophoneVisualPolish'
+export * from './cultural/CulturalHeaderEnhancements'
+
 // Events System (Portuguese Cultural Events)
 export { default as EventCard } from './EventCard'
 export { default as ImprovedEventCard } from './ImprovedEventCard'
 export { default as EventsShowcase } from './EventsShowcase'
 export { default as CulturalCalendar } from './CulturalCalendar'
+export { default as EventDiscoverySystem } from './events/EventDiscoverySystem'
+export { default as PortugueseEventsCalendar } from './events/PortugueseEventsCalendar'
+export { default as EnhancedCalendarView } from './events/EnhancedCalendarView'
+export { default as CulturalCalendarIntegration } from './events/CulturalCalendarIntegration'
 
 // Business Directory (PostGIS-powered)
 export { default as BusinessCard } from './BusinessCard'
@@ -36,8 +49,11 @@ export { default as BusinessDirectory } from './BusinessDirectory'
 export { default as BusinessMap } from './BusinessMap'
 
 // Simple Matching System (Cultural Compatibility)
-export { MatchesSystem } from './matches'
-export { default as SimpleMatches } from './MatchesSystem'
+export { default as MatchesSystem } from './matches/MatchesSystem'
+export { default as SimpleCulturalMatchingSystem } from './matches/SimpleCulturalMatchingSystem'
+export { default as CulturalProfileSetup } from './matches/CulturalProfileSetup'
+export { default as CulturalMessaging } from './matches/CulturalMessaging'
+export { default as CulturalCompatibilityForm } from './matches/CulturalCompatibilityForm'
 
 // Transport Coordination
 export { TransportCoordination } from './transport'

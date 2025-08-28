@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { PortugueseBusiness, BusinessCategory } from '@/lib/businessDirectory'
 import { geolocationService, Location, LONDON_CENTER, PORTUGUESE_AREAS } from '@/lib/geolocation'
-import NearMeButton, { RadiusSelector } from './NearMeButton'
+import NearMeButton, { RadiusSelector } from './business/NearMeButton'
 import { 
   MapPinIcon, 
   BuildingStorefrontIcon, 

@@ -107,8 +107,8 @@ export default function Home() {
         <div className="pt-24 lg:pt-32 w-full">
           {/* HERO SECTION - Community Discovery Focus with Proper Spacing */}
           <section
-            className="relative min-h-[600px] lg:min-h-[700px] bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center overflow-hidden"
-            style={{ paddingTop: "60px", paddingBottom: "80px" }}
+            className="relative min-h-[600px] lg:min-h-[700px] section-lusophone-subtle flex items-center overflow-hidden visual-hierarchy-section"
+            style={{ paddingTop: "80px", paddingBottom: "120px" }}
           >
             {/* Lusophone unity inspired background */}
             <div className="absolute inset-0" aria-hidden="true">
@@ -118,11 +118,11 @@ export default function Home() {
             </div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-              <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+              <div className="grid lg:grid-cols-2 card-grid-spacing-large items-center max-w-7xl mx-auto">
                 {/* Left Column - Unidos pela Língua Community Discovery Value */}
-                <div className="text-center lg:text-left space-y-8">
+                <div className="text-center lg:text-left text-spacing-large scroll-fade-in">
                   {/* Main Headline - Clean & Direct */}
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
+                  <h1 className="heading-portuguese-xl text-gray-900 header-spacing-large">
                     <span className="bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 bg-clip-text text-transparent">
                       Unidos pela Língua
                     </span>
@@ -186,10 +186,10 @@ export default function Home() {
                   </div>
 
                   {/* Community Discovery CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <div className="flex flex-col sm:flex-row touch-spacing-large justify-center lg:justify-start">
                     <a
                       href={ROUTES.events}
-                      className="group inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 text-white text-xl font-black rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-3 hover:scale-110 min-h-[70px] min-w-[250px]"
+                      className="group portuguese-button-touch inline-flex items-center justify-center px-10 py-6 bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 text-white button-text-portuguese-large rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-3 hover:scale-110 min-h-[72px] min-w-[280px]"
                       data-events-cta="hero-primary"
                     >
                       <div className="flex items-center mr-3 gap-1">
@@ -204,15 +204,15 @@ export default function Home() {
 
                     <button
                       onClick={handleSignupClick}
-                      className="inline-flex items-center justify-center px-6 py-4 border-2 border-primary-300 text-primary-700 text-lg font-semibold rounded-2xl hover:bg-primary-50 transition-all duration-300 min-h-[60px] min-w-[160px]"
+                      className="portuguese-button-touch inline-flex items-center justify-center px-8 py-5 border-2 border-primary-300 text-primary-700 button-text-portuguese-large rounded-2xl hover:bg-primary-50 transition-all duration-300 min-h-[64px] min-w-[180px]"
                     >
                       {t("hero.cta_secondary", "Join Community")}
                     </button>
                   </div>
 
                   {/* Social proof - Enhanced testimonial with proper spacing */}
-                  <div className="portuguese-testimonial hero-testimonial-mobile rounded-2xl p-6 shadow-lg max-w-md mx-auto lg:mx-0 mb-8 lg:mb-0">
-                    <div className="flex items-center gap-4 mb-4">
+                  <div className="portuguese-testimonial hero-testimonial-mobile rounded-2xl card-padding shadow-lg max-w-md mx-auto lg:mx-0 scroll-slide-right">
+                    <div className="flex items-center touch-spacing header-spacing">
                       <div className="flex -space-x-2">
                         <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-400 to-red-400 flex items-center justify-center text-white font-bold text-sm border-2 border-white shadow-md">
                           M
@@ -335,9 +335,9 @@ export default function Home() {
           <StreamlinedCommunitySelector />
 
           {/* WHAT'S HAPPENING TODAY SECTION - Fixed spacing */}
-          <section className="py-16 md:py-20 lg:py-24 bg-white section-spacing">
+          <section className="section-padding section-alternating-white section-spacing-large visual-hierarchy-section">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-6xl mx-auto">
+              <div className="max-w-6xl mx-auto scroll-fade-in">
                 <div className="text-center mb-16">
                   <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 via-yellow-100 to-red-100 px-6 py-3 rounded-full text-primary-700 font-bold text-sm mb-6">
                     <CalendarDaysIcon className="w-4 h-4" />
@@ -558,9 +558,9 @@ export default function Home() {
           </section>
 
           {/* THIS WEEKEND'S PORTUGUESE COMMUNITY SECTION - Fixed spacing */}
-          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-secondary-50 to-accent-50 section-spacing">
+          <section className="section-padding section-lusophone-subtle section-spacing-large section-divider">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-6xl mx-auto">
+              <div className="max-w-6xl mx-auto lusophone-reveal">
                 <div className="text-center mb-16">
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6">
                     {t("weekend.title", "This Weekend's Lusophone Community")}
@@ -1869,9 +1869,9 @@ export default function Home() {
           </section>
 
           {/* EVENTS & COMMUNITY SECTION - Connected Experience - Fixed spacing */}
-          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-secondary-50 to-accent-50 section-spacing">
+          <section className="section-padding section-lusophone-subtle section-spacing-large section-divider">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-6xl mx-auto">
+              <div className="max-w-6xl mx-auto lusophone-reveal">
                 <div className="text-center mb-16">
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6">
                     {t("events.title", "Meet Your Matches at Lusophone Events")}

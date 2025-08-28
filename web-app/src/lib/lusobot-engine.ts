@@ -18,7 +18,7 @@ import { Language } from '@/i18n'
 // Simplified cultural context from existing configs (streamlined architecture)
 import { CULTURAL_EVENTS } from '@/config/cultural-events'
 import { LUSOPHONE_CELEBRATIONS } from '@/config/lusophone-celebrations'
-import { PORTUGUESE_EMOJIS } from '@/config/portuguese-emojis'
+import { PORTUGUESE_EMOJI_PACKS } from '@/config/portuguese-emojis'
 import { PORTUGUESE_CULTURAL_KNOWLEDGE } from '@/config/portuguese-cultural-knowledge'
 
 // Core Types
@@ -39,6 +39,9 @@ export interface CulturalContext {
   topic: CulturalTopic
   expertise: ExpertiseArea[]
   confidence: number
+  traditions?: string[]
+  culturalDepth?: number
+  suggestedPersonality?: string
 }
 
 export interface EmotionalTone {
@@ -50,15 +53,16 @@ export interface EmotionalTone {
 }
 
 export interface LusoBotSuggestion {
-  type: 'event' | 'business' | 'resource' | 'community' | 'language' | 'cultural' | 'therapeutic'
+  type: 'event' | 'business' | 'resource' | 'community' | 'language' | 'cultural' | 'therapeutic' | 'voice'
   title: string
   description: string
   link?: string
-  action?: 'teach' | 'practice' | 'connect' | 'learn' | 'support'
+  action?: 'teach' | 'practice' | 'connect' | 'learn' | 'support' | 'speak'
   priority: 'high' | 'medium' | 'low'
   culturalRelevance: number
   therapeuticValue?: number
   languageLevel?: string
+  voicePersonality?: string
 }
 
 export interface MessageMetadata {
@@ -72,6 +76,11 @@ export interface MessageMetadata {
   languageLearningGoals?: string[]
   emotionalState?: string
   sessionContext?: string
+  therapeuticValue?: number
+  languageLearningOpportunity?: boolean
+  recommendedVoicePersonality?: string
+  preferredVoicePersonality?: string
+  cultural_effectiveness?: number
 }
 
 // Enums and Constants
@@ -89,7 +98,7 @@ export type ExpertiseArea =
   | 'portuguese_history' | 'regional_cultures' | 'portuguese_cuisine'
   | 'fado_music' | 'language_learning' | 'diaspora_support'
   | 'business_culture' | 'family_traditions' | 'religious_practices'
-  | 'uk_portuguese_community' | 'immigration_support' | 'cultural_events'
+  | 'uk_portuguese_community' | 'immigration_support' | 'cultural_events' | 'emotional_support'
 
 export type CommunityLevel = 'newcomer' | 'active' | 'engaged' | 'leader' | 'elder'
 export type LanguageProficiency = 'native' | 'fluent' | 'intermediate' | 'beginner' | 'learning'
@@ -97,6 +106,145 @@ export type UserMood = 'curious' | 'homesick' | 'excited' | 'seeking_help' | 'ce
 
 // Lusophone Cultural Knowledge Base is imported from config
 // PORTUGUESE_CULTURAL_KNOWLEDGE provides cultural data structure
+
+
+// Voice Personality System - Simplified for streamlined architecture
+interface VoicePersonality {
+  id: string
+  name: { pt: string; en: string }
+  region: string
+  characteristics: {
+    empathy: number
+    formality: number
+    warmth: number
+    culturalDepth: number
+  }
+  speechPatterns: {
+    greetings: Array<{ text: string; formality: "formal" | "casual" }>
+    farewells: Array<{ text: string; formality: "formal" | "casual" }>
+    expressions: string[]
+  }
+  culturalSpecialties: string[]
+}
+
+const VOICE_PERSONALITIES: VoicePersonality[] = [
+  {
+    id: 'portuguese_north',
+    name: { pt: 'Nortenha', en: 'Northern Portuguese' },
+    region: 'north',
+    characteristics: { empathy: 0.9, formality: 0.6, warmth: 0.95, culturalDepth: 0.85 },
+    speechPatterns: {
+      greetings: [{ text: 'Olá, como estás?', formality: 'casual' }, { text: 'Bom dia!', formality: 'formal' }],
+      farewells: [{ text: 'Até logo!', formality: 'casual' }, { text: 'Com os meus cumprimentos', formality: 'formal' }],
+      expressions: ['Que saudades!', 'Isto está muito bom!', 'Desenrasca-te!']
+    },
+    culturalSpecialties: ['francesinha', 'vinho verde', 'São João', 'broa de milho']
+  },
+  {
+    id: 'diaspora_uk',
+    name: { pt: 'Luso-britânica', en: 'UK Portuguese Community' },
+    region: 'diaspora_uk',
+    characteristics: { empathy: 0.85, formality: 0.6, warmth: 0.8, culturalDepth: 0.9 },
+    speechPatterns: {
+      greetings: [{ text: 'Hello! Olá, tudo bem?', formality: 'casual' }],
+      farewells: [{ text: 'See you later, até logo!', formality: 'casual' }],
+      expressions: ['That\'s muito bom!', 'Tenho saudades', 'Missing home']
+    },
+    culturalSpecialties: ['community events', 'UK Portuguese culture', 'cultural adaptation']
+  }
+]
+
+export function getVoicePersonality(region: PortugueseRegion): VoicePersonality {
+  const personalityMap: Record<PortugueseRegion, string> = {
+    'north': 'portuguese_north',
+    'center': 'diaspora_uk',
+    'south': 'diaspora_uk',
+    'lisbon': 'diaspora_uk',
+    'porto': 'portuguese_north',
+    'azores': 'diaspora_uk',
+    'madeira': 'diaspora_uk',
+    'brazil': 'diaspora_uk',
+    'angola': 'diaspora_uk',
+    'mozambique': 'diaspora_uk',
+    'diaspora_uk': 'diaspora_uk',
+    'diaspora_us': 'diaspora_uk',
+    'diaspora_france': 'diaspora_uk',
+    'diaspora_other': 'diaspora_uk'
+  }
+
+  const personalityId = personalityMap[region] || 'diaspora_uk'
+  const personality = VOICE_PERSONALITIES.find(p => p.id === personalityId)
+  
+  return personality || VOICE_PERSONALITIES[VOICE_PERSONALITIES.length - 1]
+}
+
+interface CulturalAnalysis {
+  traditions: Array<{
+    id: string
+    name: { pt: string; en: string }
+    significance: { pt: string; en: string }
+    modernPractice: { pt: string; en: string }
+    countries: string[]
+  }>
+  culturalDepth: number
+  suggestedPersonality: VoicePersonality
+}
+
+export function analyzeCulturalContext(message: string, language: Language): CulturalAnalysis {
+  const text = message.toLowerCase()
+  const traditions: CulturalAnalysis['traditions'] = []
+  
+  if (text.includes('fado') || text.includes('música')) {
+    traditions.push({
+      id: 'fado',
+      name: { pt: 'Fado', en: 'Fado' },
+      significance: { 
+        pt: 'Expressão musical da alma portuguesa',
+        en: 'Musical expression of the Portuguese soul'
+      },
+      modernPractice: {
+        pt: 'Ainda hoje cantado em casas de fado',
+        en: 'Still sung today in fado houses'
+      },
+      countries: ['Portugal']
+    })
+  }
+
+  const culturalDepth = Math.min(traditions.length * 0.3 + 0.4, 1.0)
+  let region: PortugueseRegion = 'diaspora_uk'
+  const suggestedPersonality = getVoicePersonality(region)
+
+  return {
+    traditions,
+    culturalDepth,
+    suggestedPersonality
+  }
+}
+
+interface PronunciationGuide {
+  phoneme: string
+  description: { pt: string; en: string }
+  examples: string[]
+  difficulty: 'easy' | 'medium' | 'hard'
+}
+
+export const PRONUNCIATION_GUIDES: PronunciationGuide[] = [
+  {
+    phoneme: 'ão',
+    description: {
+      pt: 'Som nasal característico do português',
+      en: 'Characteristic Portuguese nasal sound'
+    },
+    examples: ['pão', 'mão', 'coração'],
+    difficulty: 'medium'
+  }
+]
+
+const logger = {
+  warn: (message: string) => console.warn(`[LusoBot] ${message}`),
+  error: (message: string, error?: any) => console.error(`[LusoBot] ${message}`, error),
+  info: (message: string) => console.log(`[LusoBot] ${message}`)
+}
 
 // Saudade Understanding Engine
 export class SaudadeEngine {
@@ -1052,7 +1200,7 @@ Tell me: where are you from and how can I support you today?`
     if (this.voiceSession) {
       // Voice system disabled - return success for compatibility
       logger.warn('Voice speak disabled in streamlined architecture')
-      return true
+      return
     }
     
     throw new Error('Voice session not available')

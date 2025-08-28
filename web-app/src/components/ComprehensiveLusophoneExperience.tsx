@@ -16,6 +16,7 @@ import {
 import { useLanguage } from '@/context/LanguageContext'
 import { useHeritage } from '@/context/HeritageContext'
 import { ROUTES, communityStats, formatStat } from '@/config'
+import { GradientText } from '@/components/ui'
 import LusophoneTestimonials from '@/components/LusophoneTestimonials'
 import EnhancedMobileWelcomeWizard from '@/components/EnhancedMobileWelcomeWizard'
 import HeritageSelector, { HeritageBadge } from '@/components/HeritageSelector'

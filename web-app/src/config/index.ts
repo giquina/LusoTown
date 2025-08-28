@@ -267,6 +267,41 @@ export {
   getTimeBasedGreeting,
 } from "./portuguese-emojis";
 
+// API messages and error handling
+export {
+  API_ERROR_MESSAGES,
+  API_SUCCESS_MESSAGES,
+  API_LOG_MESSAGES,
+  PERFORMANCE_RECOMMENDATIONS,
+  PERFORMANCE_STATUS_MESSAGES,
+  API_ENDPOINT_DESCRIPTIONS,
+  STRIPE_CONFIG,
+  GEOCODING_CONFIG,
+  getApiErrorMessage,
+  getApiSuccessMessage,
+  getApiLogMessage,
+  getPerformanceRecommendation,
+  getPerformanceStatus,
+  getApiEndpointDescription,
+} from "./api-messages";
+
+// About page content
+export {
+  ABOUT_QUOTES,
+  ABOUT_MISSION,
+  ABOUT_STATISTICS,
+  ABOUT_FEATURES,
+  ABOUT_TESTIMONIALS,
+  ABOUT_TIMELINE,
+  ABOUT_TEAM,
+  ABOUT_CONTACT_CTA,
+  getAboutQuote,
+  getAboutMissionValue,
+  getAboutTestimonial,
+  getAboutFeature,
+  getAboutTimelineEntry,
+} from "./about-content";
+
 // Advanced Portuguese Cultural Knowledge and AI Systems removed - files deleted during cleanup
 
 

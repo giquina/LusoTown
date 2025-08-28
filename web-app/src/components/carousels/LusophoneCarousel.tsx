@@ -14,7 +14,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { PORTUGUESE_COLORS, DESIGN_TOKENS } from '@/config/brand'
 import { usePortugueseBundleOptimization } from '@/utils/portuguese-bundle-optimizer'
 import logger from '@/utils/logger'
-import { EnhancedMobileGestures, usePortugueseGestures } from '../EnhancedMobileGestures'
+import EnhancedMobileGestures, { usePortugueseGestures } from '../EnhancedMobileGestures'
 
 /**
  * Base interface for carousel items - all items must extend this

@@ -72,7 +72,8 @@ export default function RootLayout({
                                 </ComponentErrorBoundary>
 
                                 {/* Main Content */}
-                                <main className="relative">
+                                <main className="relative main-content-with-app-bar" 
+                                  style={{ marginTop: 'calc(80px + var(--app-download-bar-height, 0px))' }}>
                                   {children}
                                 </main>
 

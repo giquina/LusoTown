@@ -18,11 +18,27 @@ import {
   BookOpenIcon
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { LusophoneCarousel, CAROUSEL_CONFIGS, AUTO_ADVANCE_TIMINGS } from '@/components/carousels'
+import { 
+  ABOUT_QUOTES,
+  getAboutQuote
+} from '@/config/about-content'
+import { 
+  LUSOPHONE_NATIONS, 
+  getPrimaryNations,
+  getAllFlags,
+  VISUAL_POLISH_CONFIG 
+} from '@/config/cultural-authenticity-system'
+import { 
+  LusophoneNationsJourney, 
+  LusophoneGradientText,
+  ParallaxCulturalBackground,
+  CulturalHoverCard
+} from '@/components/cultural/LusophoneVisualPolish'
 
 export default function About() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   return (
     <main className="min-h-screen">
       <div>
@@ -42,8 +58,144 @@ export default function About() {
         className="pt-16"
       />
 
+        {/* ENHANCED: Portuguese-Speaking Nations Journey */}
+        <ParallaxCulturalBackground pattern="subtle" intensity="light">
+          <section className="py-20 relative">
+            {/* Cultural Authenticity Hero */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+              <motion.div 
+                className="inline-flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-primary-200/50 shadow-lg"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <span className="text-2xl">{getAllFlags()}</span>
+                <span className="text-primary-700 font-semibold">
+                  {language === 'pt' ? 'Celebrando Todas as Nações Lusófonas' : 'Celebrating All Portuguese-Speaking Nations'}
+                </span>
+              </motion.div>
+              
+              <motion.h2 
+                className="text-5xl md:text-6xl font-bold mb-6"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <LusophoneGradientText size="4xl" animate={true}>
+                  {language === 'pt' ? 'Uma Língua, Nove Nações, Uma Comunidade' : 'One Language, Nine Nations, One Community'}
+                </LusophoneGradientText>
+              </motion.h2>
+              
+              <motion.p 
+                className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                {language === 'pt' 
+                  ? 'Do palácio real português às torres de Macau, dos diamantes angolanos ao ouro brasileiro, das ilhas cabo-verdianas às praias moçambicanas - somos uma família global unida pela língua portuguesa no Reino Unido.'
+                  : 'From the Portuguese royal palace to the towers of Macau, from Angolan diamonds to Brazilian gold, from Cape Verdean islands to Mozambican shores - we are a global family united by the Portuguese language in the United Kingdom.'
+                }
+              </motion.p>
+            </div>
+
+            {/* Portuguese-Speaking Nations Showcase */}
+            <LusophoneNationsJourney showAnimation={true} compact={false} />
+            
+            {/* Cultural Values Grid */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                  {
+                    flag: '🇵🇹🇧🇷',
+                    title: language === 'pt' ? 'Herança Compartilhada' : 'Shared Heritage',
+                    description: language === 'pt' ? 'Unidos pela história lusófona' : 'United by Portuguese heritage'
+                  },
+                  {
+                    flag: '🇦🇴🇨🇻🇲🇿',
+                    title: language === 'pt' ? 'Diversidade Africana' : 'African Diversity',
+                    description: language === 'pt' ? 'Celebrando culturas PALOP' : 'Celebrating PALOP cultures'
+                  },
+                  {
+                    flag: '🇹🇱🇲🇴',
+                    title: language === 'pt' ? 'Ponte Global' : 'Global Bridge',
+                    description: language === 'pt' ? 'Conectando Oriente e Ocidente' : 'Connecting East and West'
+                  },
+                  {
+                    flag: '🇬🇼🇸🇹',
+                    title: language === 'pt' ? 'Resistência Cultural' : 'Cultural Resilience',
+                    description: language === 'pt' ? 'Preservando tradições únicas' : 'Preserving unique traditions'
+                  }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="text-center"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <CulturalHoverCard elevation="md" culturalAccent={true}>
+                      <div className="p-6">
+                        <div className="text-4xl mb-4 flag-hover-wave">{item.flag}</div>
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                        <p className="text-gray-600">{item.description}</p>
+                      </div>
+                    </CulturalHoverCard>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </ParallaxCulturalBackground>
+
+        {/* Inclusive Community Message */}
+        <section className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div 
+              className="bg-white rounded-2xl shadow-xl p-8 border border-primary-200/30"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-5xl mb-6 saudade-glow">🤝</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <LusophoneGradientText size="2xl">
+                  {language === 'pt' ? 'Somos uma Comunidade Inclusiva' : 'We Are an Inclusive Community'}
+                </LusophoneGradientText>
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                {language === 'pt' 
+                  ? 'Aqui todos têm lugar. Seja você de Portugal, Brasil, Angola, Cabo Verde, Moçambique, Guiné-Bissau, São Tomé e Príncipe, Timor-Leste ou Macau - celebramos a riqueza de todas as culturas lusófonas. Unidos pela língua, fortalecidos pela diversidade.'
+                  : 'Here, everyone belongs. Whether you\'re from Portugal, Brazil, Angola, Cape Verde, Mozambique, Guinea-Bissau, São Tomé and Príncipe, East Timor, or Macau - we celebrate the richness of all Portuguese-speaking cultures. United by language, strengthened by diversity.'
+                }
+              </p>
+              
+              {/* Success Stories Preview */}
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div className="bg-gradient-angola/10 p-4 rounded-lg">
+                  <div className="font-semibold text-gray-900">🇦🇴 Angolan Success</div>
+                  <p className="text-gray-600">Entrepreneurs thriving in London\'s business scene</p>
+                </div>
+                <div className="bg-gradient-cape-verde/10 p-4 rounded-lg">
+                  <div className="font-semibold text-gray-900">🇨🇻 Cape Verdean Culture</div>
+                  <p className="text-gray-600">Morna music bringing communities together</p>
+                </div>
+                <div className="bg-gradient-brazil/10 p-4 rounded-lg">
+                  <div className="font-semibold text-gray-900">🇧🇷 Brazilian Innovation</div>
+                  <p className="text-gray-600">Tech professionals building the future</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* LusoTown Platform Overview & Vision */}
-        <section className="py-24 bg-gradient-to-br from-white via-premium-50/30 to-primary-50/30 relative overflow-hidden">
+        <section className="py-24 bg-gradient-to-br from-white via-premium-50/30 to-primary-50/30 relative overflow-hidden bg-azulejos">
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-premium-200/20 to-primary-200/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse opacity-50" />
             <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-secondary-200/20 to-accent-200/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse opacity-50" />
@@ -1741,11 +1893,10 @@ export default function About() {
                   >
                     <div className="bg-gradient-to-r from-premium-100 via-primary-100 to-secondary-100 rounded-2xl p-8 border border-premium-200/30">
                       <p className="text-gray-800 font-bold text-xl mb-4">
-                        "Do palácio real português às torres de Macau, dos diamantes angolanos ao ouro brasileiro—somos uma família de prestígio global."
+                        {getAboutQuote('heritage', 'pt')}
                       </p>
                       <p className="text-gray-600 italic text-lg leading-relaxed">
-                        From Portugal's royal palaces to Macau's towers, from Angola's diamonds to Brazil's gold—we are a family of global prestige, 
-                        united by our sophisticated heritage, enriched by our collective success across four continents.
+                        {getAboutQuote('heritage', 'en')}
                       </p>
                       <div className="mt-6 flex items-center justify-center gap-4">
                         <div className="w-12 h-12 bg-gradient-to-br from-premium-500 to-primary-500 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-xl">
@@ -1865,7 +2016,7 @@ export default function About() {
                 </h3>
                 <div className="prose prose-lg text-gray-700 max-w-none">
                   <p className="text-center text-lg font-medium text-gray-800 mb-6">
-                    "Somos uma comunidade de mente aberta que acolhe todos os falantes de português com o coração cheio de amor."
+                    {getAboutQuote('community', 'pt')}
                   </p>
                   <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 mb-6">
                     <p className="mb-4">
@@ -1887,7 +2038,7 @@ export default function About() {
                   </div>
                   <div className="text-center">
                     <p className="text-base text-gray-600 italic">
-                      "Aqui, todos têm lugar. Here, everyone belongs. We're not just building a community—we're creating a family."
+                      {getAboutQuote('belonging', 'en')}
                     </p>
                   </div>
                 </div>

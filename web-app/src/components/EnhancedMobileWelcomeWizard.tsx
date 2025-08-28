@@ -11,6 +11,7 @@ import {
 import { useLanguage } from '@/context/LanguageContext'
 import { ROUTES } from '@/config/routes'
 import { Card } from '@/components/ui/card'
+import { GradientText } from '@/components/ui'
 
 // Mobile Language Toggle Component
 function MobileLanguageToggle() {

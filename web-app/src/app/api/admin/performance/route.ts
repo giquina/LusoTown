@@ -10,6 +10,16 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import DatabasePerformanceService from '@/services/DatabasePerformanceService';
+import {
+  API_ERROR_MESSAGES,
+  API_LOG_MESSAGES,
+  PERFORMANCE_STATUS_MESSAGES,
+  API_ENDPOINT_DESCRIPTIONS,
+  getApiErrorMessage,
+  getApiLogMessage,
+  getPerformanceStatus,
+  getApiEndpointDescription
+} from '@/config/api-messages';
 
 // Initialize performance service
 const dbService = new DatabasePerformanceService();
@@ -102,7 +112,7 @@ export async function GET(request: NextRequest) {
 
         default:
           return NextResponse.json(
-            { error: 'Invalid metric requested', available_metrics: ['community', 'health', 'business', 'events', 'matching', 'transport', 'university', 'recommendations', 'maintenance'] },
+            { error: getApiErrorMessage('INVALID_METRIC_REQUESTED'), available_metrics: ['community', 'health', 'business', 'events', 'matching', 'transport', 'university', 'recommendations', 'maintenance'] },
             { status: 400 }
           );
       }
@@ -192,7 +202,7 @@ export async function GET(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Performance metrics API error:', error);
+    console.error(getApiLogMessage('PERFORMANCE_METRICS_ERROR'), error);
     
     return NextResponse.json({
       error: 'Failed to retrieve performance metrics',
@@ -241,7 +251,7 @@ export async function POST(request: NextRequest) {
               execution_time_ms < 500 ? 'acceptable' : 'needs_optimization',
       recommendation: execution_time_ms > 200 ? 
         `Query took ${execution_time_ms}ms - consider optimization` : 
-        'Performance within acceptable range',
+        getPerformanceStatus('ACCEPTABLE'),
       logged_at: new Date().toISOString()
     };
 
@@ -258,7 +268,7 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Performance logging API error:', error);
+    console.error(getApiLogMessage('PERFORMANCE_LOGGING_ERROR'), error);
     
     return NextResponse.json({
       error: 'Failed to log performance metrics',
@@ -281,7 +291,7 @@ export async function OPTIONS() {
       description: 'Comprehensive performance monitoring and optimization for LusoTown community platform'
     },
     endpoints: {
-      'GET /api/admin/performance': {
+      [getApiEndpointDescription('GET_ADMIN_PERFORMANCE')]: {
         description: 'Get performance metrics and health status',
         parameters: {
           metric: 'Specific metric to retrieve (community, health, business, events, matching, transport, university, recommendations, maintenance)',
@@ -294,7 +304,7 @@ export async function OPTIONS() {
           '/api/admin/performance?metric=recommendations - Optimization recommendations'
         ]
       },
-      'POST /api/admin/performance': {
+      [getApiEndpointDescription('POST_ADMIN_PERFORMANCE')]: {
         description: 'Log performance metrics for historical analysis',
         body: {
           search_type: 'string (required) - Type of operation performed',
@@ -305,11 +315,11 @@ export async function OPTIONS() {
       }
     },
     core_systems_monitored: [
-      'Community Events - Portuguese cultural event discovery and booking',
-      'Business Directory - PostGIS-powered Portuguese business listings',
-      'Cultural Matching - Simple compatibility for community connections',
-      'Transport Coordination - Community transport sharing and coordination',
-      'University Integration - 8 UK university partnerships monitoring'
+      getApiEndpointDescription('COMMUNITY_EVENTS'),
+      getApiEndpointDescription('BUSINESS_DIRECTORY'),
+      getApiEndpointDescription('CULTURAL_MATCHING'),
+      getApiEndpointDescription('TRANSPORT_COORDINATION'),
+      getApiEndpointDescription('UNIVERSITY_INTEGRATION')
     ],
     performance_targets: {
       business_directory_search: '<100ms',

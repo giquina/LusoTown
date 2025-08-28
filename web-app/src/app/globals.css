@@ -2,6 +2,172 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==============================================
+   LUSOPHONE CULTURAL AUTHENTICITY & VISUAL POLISH
+   Enhanced animations and micro-interactions for 
+   Portuguese-speaking community celebration
+   ============================================== */
+
+/* Lusophone Cultural Gradient Animations */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes lusophone-flow {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes cultural-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(212, 165, 116, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(212, 165, 116, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(212, 165, 116, 0);
+  }
+}
+
+@keyframes loading-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes flag-wave {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(2deg) scale(1.05); }
+  75% { transform: rotate(-2deg) scale(1.05); }
+}
+
+@keyframes saudade-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(212, 165, 116, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(212, 165, 116, 0.6), 0 0 30px rgba(139, 69, 19, 0.3); }
+}
+
+/* Cultural Nations Color Utilities */
+.gradient-portugal { background: linear-gradient(135deg, #FF0000 0%, #006600 100%); }
+.gradient-brazil { background: linear-gradient(135deg, #009B3A 0%, #FEDF00 50%, #002776 100%); }
+.gradient-angola { background: linear-gradient(135deg, #CE1126 0%, #000000 50%, #FFCD00 100%); }
+.gradient-cape-verde { background: linear-gradient(135deg, #003893 0%, #FFFFFF 50%, #CF142B 100%); }
+.gradient-mozambique { background: linear-gradient(135deg, #009639 0%, #000000 50%, #FFFF00 100%); }
+.gradient-guinea-bissau { background: linear-gradient(135deg, #CE1126 0%, #FCD116 50%, #009639 100%); }
+.gradient-sao-tome { background: linear-gradient(135deg, #12AD2B 0%, #FFCE00 50%, #D21034 100%); }
+.gradient-east-timor { background: linear-gradient(135deg, #DC143C 0%, #FFFF00 50%, #000000 100%); }
+.gradient-macau { background: linear-gradient(135deg, #067BC2 0%, #FFFFFF 50%, #FFD100 100%); }
+
+/* Lusophone Gradient Text */
+.gradient-text-lusophone {
+  background: linear-gradient(135deg, #D4A574 0%, #8B4513 25%, #228B22 50%, #DC143C 75%, #D4A574 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+/* Portuguese Cultural Hover Effects */
+.cultural-hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cultural-hover-lift:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(212, 165, 116, 0.15), 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Flag Animation Classes */
+.flag-hover-wave:hover {
+  animation: flag-wave 1s ease-in-out;
+}
+
+/* Saudade (Longing) Glow Effect */
+.saudade-glow {
+  animation: saudade-glow 3s ease-in-out infinite;
+}
+
+/* Cultural Loading Animations */
+.cultural-loading {
+  background: linear-gradient(90deg, 
+    rgba(212, 165, 116, 0.1) 25%, 
+    rgba(139, 69, 19, 0.1) 50%, 
+    rgba(212, 165, 116, 0.1) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading-shimmer 2s infinite;
+}
+
+/* Parallax Cultural Backgrounds */
+.bg-azulejos {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A574' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+.bg-cultural-waves {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10c10 0 10-10 20-10s10 10 20 10 10-10 20-10 10 10 20 10 10-10 20-10 10 10 20 10v10H0z' fill='%23228B22' fill-opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 100px 20px;
+}
+
+/* Portuguese-Speaking Community Card Enhancements */
+.community-card {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(212, 165, 116, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.community-card:hover {
+  border-color: rgba(212, 165, 116, 0.4);
+  box-shadow: 
+    0 20px 40px rgba(212, 165, 116, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Cultural Progress Bars */
+.progress-lusophone {
+  background: linear-gradient(90deg, #D4A574, #8B4513, #228B22, #DC143C);
+  background-size: 300% 100%;
+  animation: lusophone-flow 4s ease infinite;
+}
+
+/* Micro-interaction Button Styles */
+.btn-cultural-primary {
+  background: linear-gradient(135deg, #D4A574 0%, #8B4513 100%);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cultural-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3);
+}
+
+.btn-cultural-primary:active {
+  transform: translateY(0);
+}
+
+/* Portuguese Heritage Borders */
+.border-heritage {
+  border-image: linear-gradient(135deg, #D4A574, #8B4513, #228B22) 1;
+}
+
+/* Accessibility Enhancements for Portuguese Speakers */
+.focus-lusophone:focus {
+  outline: 2px solid #D4A574;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.2);
+}
+
 /* Portuguese Cultural Mobile Menu Enhancements Imported */
 /* @import '../styles/mobile-menu-enhancements.css'; */
 
@@ -379,10 +545,75 @@ html {
     padding-right: env(safe-area-inset-right);
   }
 
+  /* Mobile-Optimized Scroll Animations */
+  .scroll-fade-in {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .scroll-fade-in.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .scroll-scale-in.in-view {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-2rem);
+    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .scroll-slide-left.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .scroll-slide-right {
+    opacity: 0;
+    transform: translateX(2rem);
+    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .scroll-slide-right.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Portuguese Cultural Animations */
+  .lusophone-reveal {
+    opacity: 0;
+    transform: translateY(1.5rem) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .lusophone-reveal.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
   /* Optimized animations for reduced motion users */
   @media (prefers-reduced-motion: reduce) {
-    .animate-on-scroll {
+    .animate-on-scroll,
+    .scroll-fade-in,
+    .scroll-scale-in,
+    .scroll-slide-left,
+    .scroll-slide-right,
+    .lusophone-reveal {
       animation: none !important;
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
     }
     
     .motion-safe {
@@ -409,32 +640,163 @@ html {
   }
 }
 
-/* Custom component styles */
+/* Modern Design System Components */
 @layer components {
-  /* Portuguese Primary Button Styles */
+  /* Modern Typography Classes */
+  .lusotown-text-display-large {
+    @apply text-display-large font-display font-extrabold leading-tight;
+    letter-spacing: 0.02em;
+  }
+  
+  .lusotown-text-display {
+    @apply text-display font-display font-bold leading-tight;
+    letter-spacing: 0.02em;
+  }
+  
+  .lusotown-text-display-small {
+    @apply text-display-small font-display font-bold leading-tight;
+    letter-spacing: 0.01em;
+  }
+  
+  .lusotown-text-h1 {
+    @apply text-heading-1 md:text-display-small font-display font-bold leading-tight;
+  }
+  
+  .lusotown-text-h2 {
+    @apply text-heading-2 md:text-heading-1 font-display font-semibold leading-tight;
+  }
+  
+  .lusotown-text-h3 {
+    @apply text-heading-3 md:text-heading-2 font-display font-semibold leading-normal;
+  }
+  
+  .lusotown-text-body {
+    @apply text-body font-sans leading-relaxed;
+  }
+  
+  .lusotown-text-body-large {
+    @apply text-body-large font-sans leading-relaxed;
+  }
+  
+  .lusotown-text-small {
+    @apply text-body-small font-sans leading-normal;
+  }
+  
+  .lusotown-text-caption {
+    @apply text-caption font-sans font-medium uppercase tracking-wide;
+  }
+  
+  /* Modern Card Classes */
+  .lusotown-card {
+    @apply bg-white rounded-card shadow-card border border-neutral-200/50 transition-shadow duration-300;
+  }
+  
+  .lusotown-card-hover {
+    @apply hover:shadow-card-hover hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300;
+  }
+  
+  .lusotown-card-content {
+    @apply p-6 space-y-4;
+  }
+  
+  .lusotown-card-header {
+    @apply flex flex-col space-y-2;
+  }
+  
+  .lusotown-card-footer {
+    @apply flex items-center justify-between pt-4 border-t border-neutral-200;
+  }
+  
+  /* Modern Button Classes */
+  .lusotown-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-button font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .lusotown-button-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white shadow-md hover:shadow-lg focus:ring-primary-500 transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .lusotown-button-secondary {
+    @apply bg-white hover:bg-neutral-50 text-primary-700 border border-neutral-300 hover:border-primary-300 shadow-sm hover:shadow-md focus:ring-primary-500;
+  }
+  
+  .lusotown-button-cultural {
+    @apply bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 hover:from-secondary-700 hover:via-primary-700 hover:to-accent-700 text-white shadow-md hover:shadow-lg focus:ring-secondary-500 hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  .lusotown-button-portugal {
+    @apply bg-gradient-to-r from-red-600 via-green-600 to-red-600 hover:from-red-700 hover:via-green-700 hover:to-red-700 text-white shadow-md hover:shadow-portuguese focus:ring-red-500;
+  }
+  
+  .lusotown-button-brazil {
+    @apply bg-gradient-to-r from-green-500 via-yellow-400 to-blue-500 hover:from-green-600 hover:via-yellow-500 hover:to-blue-600 text-white shadow-md hover:shadow-elevated focus:ring-green-500;
+  }
+  
+  .lusotown-button-palop {
+    @apply bg-gradient-to-r from-primary-600 via-accent-600 to-action-600 hover:from-primary-700 hover:via-accent-700 hover:to-action-700 text-white shadow-md hover:shadow-lusophone focus:ring-primary-500;
+  }
+  
+  /* Touch-friendly sizing */
+  .lusotown-touch-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+  
+  .lusotown-touch-target-large {
+    @apply min-h-[48px] min-w-[48px] flex items-center justify-center;
+  }
+  
+  /* Portuguese text handling */
+  .lusotown-portuguese-text {
+    @apply break-words hyphens-auto;
+  }
+  
+  .lusotown-text-wrap {
+    text-wrap: balance;
+  }
+  
+  /* Cultural gradient backgrounds */
+  .lusotown-gradient-cultural {
+    @apply bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600;
+  }
+  
+  .lusotown-gradient-portugal {
+    @apply bg-gradient-to-r from-red-600 via-green-600 to-red-600;
+  }
+  
+  .lusotown-gradient-brazil {
+    @apply bg-gradient-to-r from-green-500 via-yellow-400 to-blue-500;
+  }
+  
+  .lusotown-gradient-palop {
+    @apply bg-gradient-to-r from-primary-600 via-accent-600 to-action-600;
+  }
+
+  /* Original Portuguese Primary Button Styles */
   .btn-primary {
-    @apply bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2;
+  /* Enhanced Portuguese Primary Button Styles */
+  .btn-primary {
+    @apply bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold px-8 py-4 rounded-button shadow-card hover:shadow-card-hover transform transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 min-h-[48px];
   }
   
   .btn-secondary {
-    @apply bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 hover:border-secondary-300 hover:text-secondary-700 font-bold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1 focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2;
+    @apply bg-white/70 backdrop-blur-lg text-neutral-800 border-2 border-neutral-200 hover:border-secondary-300 hover:text-secondary-700 font-bold px-8 py-4 rounded-button shadow-card hover:shadow-card-hover transform transition-all duration-300 hover:-translate-y-1 focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 min-h-[48px];
   }
   
   .btn-outline {
-    @apply border-2 border-secondary-600 text-secondary-600 hover:bg-gradient-to-r hover:from-secondary-600 hover:via-action-600 hover:to-accent-600 hover:text-white font-bold px-8 py-4 rounded-2xl transition-all duration-300 focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2;
+    @apply border-2 border-secondary-600 text-secondary-600 hover:bg-gradient-to-r hover:from-secondary-600 hover:via-action-600 hover:to-accent-600 hover:text-white font-bold px-8 py-4 rounded-button transition-all duration-300 focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 min-h-[48px];
   }
 
   /* Smaller button variants for forms and secondary actions */
   .btn-primary-sm {
-    @apply bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+    @apply bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white px-6 py-3 rounded-button font-semibold shadow-card hover:shadow-card-hover transform hover:scale-[1.02] transition-all duration-300 min-h-[44px];
   }
 
   .btn-secondary-sm {
-    @apply bg-white/20 backdrop-blur-md border border-white/30 text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-gradient-to-r hover:from-secondary-500 hover:to-primary-500 hover:text-white transition-all duration-300;
+    @apply bg-white/20 backdrop-blur-md border border-white/30 text-primary-600 px-6 py-3 rounded-button font-semibold hover:bg-gradient-to-r hover:from-secondary-500 hover:to-primary-500 hover:text-white transition-all duration-300 min-h-[44px];
   }
 
   .btn-outline-sm {
-    @apply border-2 border-primary-500 text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-gradient-to-r hover:from-secondary-500 hover:to-primary-500 hover:text-white hover:border-transparent transition-all duration-300;
+    @apply border-2 border-primary-500 text-primary-600 px-6 py-3 rounded-button font-semibold hover:bg-gradient-to-r hover:from-secondary-500 hover:to-primary-500 hover:text-white hover:border-transparent transition-all duration-300 min-h-[44px];
   }
   
   /* Portuguese gradient utilities */
@@ -460,6 +822,68 @@ html {
   
   .gradient-bg {
     background: linear-gradient(135deg, #fefefe 0%, #f8f9fa 50%, #f0f4f8 100%);
+  }
+
+  /* Revolutionary Section Flow System */
+  .section-alternating-white {
+    @apply bg-white;
+  }
+
+  .section-alternating-gray {
+    @apply bg-gradient-to-br from-gray-50 via-white to-gray-50;
+  }
+
+  .section-alternating-light {
+    @apply bg-gradient-to-br from-primary-50 via-white to-secondary-50;
+  }
+
+  /* Portuguese Cultural Section Backgrounds */
+  .section-lusophone-subtle {
+    background: linear-gradient(135deg, 
+      rgba(212, 165, 116, 0.03) 0%, 
+      rgba(255, 255, 255, 1) 50%, 
+      rgba(34, 139, 34, 0.02) 100%);
+  }
+
+  .section-lusophone-warm {
+    background: linear-gradient(135deg, 
+      rgba(220, 20, 60, 0.02) 0%, 
+      rgba(255, 255, 255, 1) 50%, 
+      rgba(212, 165, 116, 0.03) 100%);
+  }
+
+  /* Section Dividers with Cultural Elements */
+  .section-divider {
+    @apply relative;
+  }
+
+  .section-divider::before {
+    content: '';
+    @apply absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(212, 165, 116, 0.3) 25%, 
+      rgba(220, 20, 60, 0.3) 50%, 
+      rgba(34, 139, 34, 0.3) 75%, 
+      transparent 100%);
+  }
+
+  .section-divider-large::before {
+    @apply w-64 h-0.5;
+  }
+
+  /* Visual Hierarchy Enhancements */
+  .visual-hierarchy-section {
+    @apply relative overflow-hidden;
+  }
+
+  .visual-hierarchy-section::after {
+    content: '';
+    @apply absolute -bottom-px left-0 right-0 h-px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(212, 165, 116, 0.2) 50%, 
+      transparent 100%);
   }
   
   /* 3D Transform utilities */
@@ -488,12 +912,57 @@ html {
     @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100;
   }
   
+  /* Revolutionary Spacing System - Mobile-First */
   .section-padding {
-    @apply px-6 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24;
+    @apply px-4 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-32;
   }
 
   .section-spacing {
-    @apply mt-16 md:mt-20 lg:mt-24;
+    @apply mt-20 md:mt-28 lg:mt-32;
+  }
+
+  .section-spacing-large {
+    @apply mt-24 md:mt-32 lg:mt-40;
+  }
+
+  .section-spacing-xl {
+    @apply mt-32 md:mt-40 lg:mt-48;
+  }
+
+  /* Card Grid Revolutionary Spacing */
+  .card-grid-spacing {
+    @apply gap-8 md:gap-10 lg:gap-12;
+  }
+
+  .card-grid-spacing-large {
+    @apply gap-10 md:gap-12 lg:gap-16;
+  }
+
+  /* Internal Card Breathing Room */
+  .card-padding {
+    @apply p-6 sm:p-8 lg:p-10;
+  }
+
+  .card-padding-large {
+    @apply p-8 sm:p-10 lg:p-12;
+  }
+
+  /* Typography Spacing Revolution */
+  .text-spacing {
+    @apply space-y-4 md:space-y-6;
+  }
+
+  .text-spacing-large {
+    @apply space-y-6 md:space-y-8;
+  }
+
+  /* Header Margins - Generous Spacing */
+  .header-spacing {
+    @apply mb-6 md:mb-8 lg:mb-10;
+  }
+
+  .header-spacing-large {
+    @apply mb-8 md:mb-10 lg:mb-12;
   }
   
   .container-width {
@@ -530,14 +999,96 @@ html {
     @apply w-full max-w-full overflow-x-hidden;
   }
   
-  /* Better mobile touch targets */
+  /* Revolutionary Mobile Touch Interface */
   .touch-target {
-    @apply min-h-[44px] min-w-[44px];
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+
+  .touch-target-large {
+    @apply min-h-[48px] min-w-[48px] flex items-center justify-center;
+  }
+
+  .touch-target-xl {
+    @apply min-h-[56px] min-w-[56px] flex items-center justify-center;
+  }
+
+  /* Portuguese Touch Gestures - Cultural Adaptation */
+  .portuguese-touch-area {
+    @apply min-h-[48px] min-w-[48px] p-3 rounded-lg touch-manipulation select-none;
+    -webkit-tap-highlight-color: rgba(212, 165, 116, 0.2);
+  }
+
+  .portuguese-button-touch {
+    @apply min-h-[48px] px-6 py-3 touch-manipulation select-none;
+    -webkit-tap-highlight-color: rgba(212, 165, 116, 0.3);
+  }
+
+  /* Enhanced Mobile Spacing for Touch */
+  .touch-spacing {
+    @apply space-y-4 md:space-y-6;
+  }
+
+  .touch-spacing-large {
+    @apply space-y-6 md:space-y-8;
+  }
+
+  .touch-grid {
+    @apply grid gap-4 md:gap-6;
+  }
+
+  .touch-grid-large {
+    @apply grid gap-6 md:gap-8;
   }
   
-  /* Mobile-optimized text sizing */
+  /* Revolutionary Portuguese Mobile Typography */
   .text-mobile-friendly {
     @apply text-base leading-relaxed;
+  }
+
+  .text-portuguese-mobile {
+    @apply text-base leading-relaxed;
+    font-feature-settings: 'liga' 1, 'kern' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .heading-portuguese-mobile {
+    @apply text-xl md:text-2xl lg:text-3xl font-bold leading-tight;
+    text-wrap: balance;
+    font-feature-settings: 'liga' 1, 'kern' 1;
+  }
+
+  .heading-portuguese-large {
+    @apply text-2xl md:text-4xl lg:text-5xl font-black leading-tight;
+    text-wrap: balance;
+    font-feature-settings: 'liga' 1, 'kern' 1;
+  }
+
+  .heading-portuguese-xl {
+    @apply text-3xl md:text-5xl lg:text-6xl font-black leading-none;
+    text-wrap: balance;
+    font-feature-settings: 'liga' 1, 'kern' 1;
+  }
+
+  /* Portuguese Text Overflow Protection */
+  .text-portuguese-safe {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    lang: "pt";
+  }
+
+  /* Button Text Optimization for Portuguese */
+  .button-text-portuguese {
+    @apply text-sm md:text-base font-semibold;
+    letter-spacing: 0.025em;
+    text-transform: none;
+  }
+
+  .button-text-portuguese-large {
+    @apply text-base md:text-lg font-bold;
+    letter-spacing: 0.025em;
+    text-transform: none;
   }
   
   /* Mobile-friendly spacing */
@@ -800,6 +1351,82 @@ html {
   }
 }
 
+/* AppDownloadBar positioning utilities */
+body.app-download-bar-visible {
+  --app-download-bar-offset: var(--app-download-bar-height, 0px);
+}
+
+/* Header offset when app download bar is visible at top */
+.header-with-app-bar {
+  margin-top: var(--app-download-bar-height, 0px);
+}
+
+/* Main content offset when app download bar is at top */
+.main-content-with-app-bar {
+  padding-top: var(--app-download-bar-height, 0px);
+}
+
+/* Mobile-specific AppDownloadBar positioning */
+@media (max-width: 768px) {
+  body.app-download-bar-visible .header-mobile-safe {
+    margin-top: var(--app-download-bar-height, 0px);
+    transition: margin-top 0.3s ease-in-out;
+  }
+  
+  /* Ensure content doesn't get hidden behind app bar */
+  body.app-download-bar-visible main {
+    padding-top: var(--app-download-bar-height, 0px);
+    transition: padding-top 0.3s ease-in-out;
+  }
+  
+  /* AppDownloadBar responsive layout optimizations */
+  .app-download-bar-mobile {
+    height: 80px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+  }
+  
+  .app-download-bar-mobile .text-content {
+    font-size: 12px;
+    line-height: 1.3;
+    max-width: calc(100vw - 200px); /* Account for buttons */
+  }
+  
+  .app-download-bar-mobile .action-buttons {
+    flex-shrink: 0;
+    gap: 8px;
+  }
+}
+
+/* Desktop AppDownloadBar positioning */
+@media (min-width: 769px) {
+  .app-download-bar-desktop {
+    height: 80px;
+    padding: 16px 24px;
+  }
+  
+  .app-download-bar-desktop .text-content {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .app-download-bar-desktop .action-buttons {
+    gap: 12px;
+  }
+}
+
+/* Z-index layering for proper positioning */
+.app-download-bar {
+  z-index: 90;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
 /* Enhanced Event Feed Animations */
 @keyframes photoUpload {
   0% {
@@ -860,4 +1487,7 @@ html {
 
 .animate-filter-slide-in {
   animation: filterSlideIn 0.3s ease-out;
+}
+
+/* Close the @layer components block */
 }

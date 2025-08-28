@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import logger from '@/utils/logger';
 import { businessDirectoryService } from '@/services/BusinessDirectoryService';
 
+// Mark this route as dynamic since it depends on query parameters
+export const dynamic = 'force-dynamic';
+
 /**
  * GET /api/business-directory/clusters
  * Get business clusters for map visualization
@@ -17,7 +20,7 @@ export async function GET(request: NextRequest) {
   const startTime = Date.now();
   
   try {
-    const { searchParams } = new URL(request.url);
+    const { searchParams } = request.nextUrl;
     
     // Validate required bounding box parameters
     const south = searchParams.get('south');
@@ -138,7 +141,7 @@ export async function GET_HOTSPOTS(request: NextRequest) {
   const startTime = Date.now();
   
   try {
-    const { searchParams } = new URL(request.url);
+    const { searchParams } = request.nextUrl;
     
     const businessType = searchParams.get('type');
     const limit = parseInt(searchParams.get('limit') || '50');

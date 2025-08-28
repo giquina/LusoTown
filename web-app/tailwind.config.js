@@ -15,6 +15,23 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
+      // Modern Portuguese-inspired shadow system
+      boxShadow: {
+        'card': '0 4px 20px rgba(0, 0, 0, 0.08)', // Modern card shadow
+        'card-hover': '0 8px 30px rgba(0, 0, 0, 0.12)', // Card hover effect
+        'elevated': '0 12px 40px rgba(0, 0, 0, 0.15)', // Elevated components
+        'premium': '0 20px 50px rgba(0, 0, 0, 0.20)', // Premium elements
+        'portuguese': '0 8px 25px rgba(30, 64, 175, 0.15)', // Portuguese themed
+        'cultural': '0 6px 20px rgba(5, 150, 105, 0.12), 0 2px 6px rgba(245, 158, 11, 0.08)', // Multi-cultural
+        'lusophone': '0 10px 30px rgba(220, 38, 38, 0.10), 0 4px 12px rgba(22, 163, 74, 0.08)', // PALOP nations
+      },
+      // Modern border radius scale
+      borderRadius: {
+        'card': '12px', // Standard card radius
+        'card-lg': '16px', // Large card radius
+        'button': '8px', // Button radius
+        'input': '6px', // Input radius
+      },
       colors: {
         // Heritage-configurable brand colors (dynamically applied via CSS custom properties)
         // Default fallbacks based on Portuguese heritage, configurable through HeritageContext
@@ -151,13 +168,38 @@ module.exports = {
         display: ['Poppins', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'display-large': ['4.5rem', { lineHeight: '1.1', fontWeight: '700' }],
-        'display': ['3.75rem', { lineHeight: '1.1', fontWeight: '700' }],
-        'display-small': ['3rem', { lineHeight: '1.2', fontWeight: '600' }],
+        // Modern Typography Scale for Portuguese-speaking Community
+        'display-large': ['4rem', { lineHeight: '1.1', fontWeight: '800', letterSpacing: '0.02em' }], // 64px
+        'display': ['3rem', { lineHeight: '1.2', fontWeight: '700', letterSpacing: '0.02em' }], // 48px
+        'display-small': ['2.5rem', { lineHeight: '1.2', fontWeight: '700', letterSpacing: '0.01em' }], // 40px
+        'heading-1': ['2rem', { lineHeight: '1.3', fontWeight: '700' }], // 32px
+        'heading-2': ['1.75rem', { lineHeight: '1.3', fontWeight: '600' }], // 28px
+        'heading-3': ['1.5rem', { lineHeight: '1.4', fontWeight: '600' }], // 24px
+        'heading-4': ['1.25rem', { lineHeight: '1.4', fontWeight: '600' }], // 20px
+        'body-large': ['1.125rem', { lineHeight: '1.6', fontWeight: '400' }], // 18px
+        'body': ['1rem', { lineHeight: '1.6', fontWeight: '400' }], // 16px
+        'body-small': ['0.875rem', { lineHeight: '1.6', fontWeight: '400' }], // 14px
+        'caption': ['0.75rem', { lineHeight: '1.5', fontWeight: '500' }], // 12px
+        // Mobile optimized sizes
+        'mobile-display': ['2rem', { lineHeight: '1.2', fontWeight: '700', letterSpacing: '0.02em' }], // 32px
+        'mobile-heading': ['1.5rem', { lineHeight: '1.3', fontWeight: '600' }], // 24px
+        'mobile-body': ['1rem', { lineHeight: '1.6', fontWeight: '400' }], // 16px
       },
       spacing: {
         '18': '4.5rem',
         '88': '22rem',
+        // Enhanced spacing scale for modern cards and components
+        '6': '1.5rem', // 24px - minimum card padding
+        '7': '1.75rem', // 28px
+        '9': '2.25rem', // 36px
+        '11': '2.75rem', // 44px
+        '13': '3.25rem', // 52px
+        '15': '3.75rem', // 60px
+        '17': '4.25rem', // 68px
+        '19': '4.75rem', // 76px
+        '21': '5.25rem', // 84px
+        '22': '5.5rem',  // 88px
+        '23': '5.75rem', // 92px
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease-out',

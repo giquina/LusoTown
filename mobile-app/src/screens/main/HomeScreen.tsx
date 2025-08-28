@@ -18,12 +18,31 @@ import { withOptimization, useOptimizedCallback, usePortugueseCulturalMemo } fro
 import { PortugueseCacheManager, PerformanceMonitor } from '../../utils/performance';
 import { PortugueseEvent as PortugueseEventAPI } from '../../lib/supabase';
 
+// Import new carousel components
+import {
+  EventsCarousel,
+  BusinessCarousel,
+  CulturalCarousel,
+  generateSampleEvents,
+  generateSampleBusinesses,
+  generateSampleCulturalItems,
+  type EventCarouselItem,
+  type BusinessCarouselItem,
+  type CulturalCarouselItem,
+} from '../../components/carousels';
+
 function HomeScreenComponent() {
   const { t, i18n } = useTranslation();
   const [refreshing, setRefreshing] = useState(false);
   const [upcomingEvents, setUpcomingEvents] = useState<PortugueseEvent[]>([]);
   const [newMatches, setNewMatches] = useState<Match[]>([]);
   const [nearbyBusinesses, setNearbyBusinesses] = useState<Business[]>([]);
+  
+  // Carousel-specific data states
+  const [carouselEvents, setCarouselEvents] = useState<EventCarouselItem[]>([]);
+  const [carouselBusinesses, setCarouselBusinesses] = useState<BusinessCarouselItem[]>([]);
+  const [culturalItems, setCulturalItems] = useState<CulturalCarouselItem[]>([]);
+  const [carouselLoading, setCarouselLoading] = useState(true);
 
   // Performance tracking
   const renderStartTime = performance.now();
@@ -31,6 +50,7 @@ function HomeScreenComponent() {
   // Optimized data loading with caching
   const loadHomeData = useOptimizedCallback(async () => {
     const apiStartTime = performance.now();
+    setCarouselLoading(true);
     
     try {
       // Try to get cached data first
@@ -42,9 +62,13 @@ function HomeScreenComponent() {
       if (cachedMatches) setNewMatches(cachedMatches);
       if (cachedBusinesses) setNearbyBusinesses(cachedBusinesses);
 
+      // Load carousel data
+      await loadCarouselData();
+
       // If we have cached data, we can return early for better performance
       if (cachedEvents && cachedMatches && cachedBusinesses) {
         PerformanceMonitor.trackApiCall('loadHomeData_cached', performance.now() - apiStartTime);
+        setCarouselLoading(false);
         return;
       }
 
@@ -56,6 +80,32 @@ function HomeScreenComponent() {
       console.error('Failed to load home data:', error);
       // Fallback to mock data on error
       await loadMockData();
+    } finally {
+      setCarouselLoading(false);
+    }
+  }, []);
+
+  // Load Portuguese cultural carousel data
+  const loadCarouselData = useOptimizedCallback(async () => {
+    try {
+      // In production, these would be API calls
+      // For now, using sample generators with realistic Portuguese content
+      const sampleEvents = generateSampleEvents();
+      const sampleBusinesses = generateSampleBusinesses();  
+      const sampleCultural = generateSampleCulturalItems();
+
+      setCarouselEvents(sampleEvents);
+      setCarouselBusinesses(sampleBusinesses);
+      setCulturalItems(sampleCultural);
+
+      // Cache carousel data for performance
+      await Promise.allSettled([
+        PortugueseCacheManager.cacheData('carousel-events', sampleEvents),
+        PortugueseCacheManager.cacheData('carousel-businesses', sampleBusinesses),
+        PortugueseCacheManager.cacheData('cultural-items', sampleCultural)
+      ]);
+    } catch (error) {
+      console.error('Failed to load carousel data:', error);
     }
   }, []);
 
@@ -174,6 +224,22 @@ function HomeScreenComponent() {
     setRefreshing(false);
   }, [loadHomeData]);
 
+  // Carousel interaction handlers
+  const handleEventPress = useOptimizedCallback((event: EventCarouselItem, index: number) => {
+    console.log('Event pressed:', event.title.en, 'at index:', index);
+    // Navigate to event details screen
+  }, []);
+
+  const handleBusinessPress = useOptimizedCallback((business: BusinessCarouselItem, index: number) => {
+    console.log('Business pressed:', business.title.en, 'at index:', index);
+    // Navigate to business details screen
+  }, []);
+
+  const handleCulturalPress = useOptimizedCallback((cultural: CulturalCarouselItem, index: number) => {
+    console.log('Cultural item pressed:', cultural.title.en, 'at index:', index);
+    // Navigate to cultural details screen
+  }, []);
+
   // Memoized date formatting for Portuguese cultural context
   const formatDate = useOptimizedCallback((dateString: string) => {
     const date = new Date(dateString);
@@ -218,6 +284,14 @@ function HomeScreenComponent() {
           </Text>
         </View>
 
+        {/* Cultural Heritage Carousel */}
+        <CulturalCarousel
+          culturalItems={culturalItems}
+          loading={carouselLoading}
+          onCulturalPress={handleCulturalPress}
+          testID="home-cultural-carousel"
+        />
+
         {/* Cultural Tip of the Day */}
         <View style={styles.tipCard}>
           <View style={styles.tipHeader}>
@@ -229,38 +303,13 @@ function HomeScreenComponent() {
           </Text>
         </View>
 
-        {/* Upcoming Events */}
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>{t('home.upcoming_events')}</Text>
-            <TouchableOpacity>
-              <Text style={styles.seeAllLink}>{t('home.see_all')}</Text>
-            </TouchableOpacity>
-          </View>
-
-          {upcomingEvents.length > 0 ? (
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              {upcomingEvents.map((event) => (
-                <TouchableOpacity key={event.id} style={styles.eventCard}>
-                  <View style={styles.eventDateBadge}>
-                    <Text style={styles.eventDate}>{formatDate(event.date)}</Text>
-                  </View>
-                  <Text style={styles.eventTitle} numberOfLines={2}>
-                    {event.title[i18n.language as 'en' | 'pt']}
-                  </Text>
-                  <Text style={styles.eventLocation} numberOfLines={1}>
-                    📍 {event.location.name}
-                  </Text>
-                  <Text style={styles.eventPrice}>
-                    £{event.price?.toFixed(2)}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-          ) : (
-            <Text style={styles.emptyText}>{t('home.no_events')}</Text>
-          )}
-        </View>
+        {/* Featured Events Carousel */}
+        <EventsCarousel
+          events={carouselEvents}
+          loading={carouselLoading}
+          onEventPress={handleEventPress}
+          testID="home-events-carousel"
+        />
 
         {/* New Matches */}
         <View style={styles.section}>
@@ -300,47 +349,13 @@ function HomeScreenComponent() {
           )}
         </View>
 
-        {/* Nearby Businesses */}
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>{t('home.nearby_businesses')}</Text>
-            <TouchableOpacity>
-              <Text style={styles.seeAllLink}>{t('home.see_all')}</Text>
-            </TouchableOpacity>
-          </View>
-
-          {nearbyBusinesses.map((business) => (
-            <TouchableOpacity key={business.id} style={styles.businessCard}>
-              <View style={styles.businessInfo}>
-                <View style={styles.businessHeader}>
-                  <Text style={styles.businessName}>{business.name}</Text>
-                  {business.isVerified && (
-                    <Ionicons name="checkmark-circle" size={16} color={Colors.primary} />
-                  )}
-                </View>
-                <Text style={styles.businessDescription} numberOfLines={1}>
-                  {business.description[i18n.language as 'en' | 'pt']}
-                </Text>
-                <View style={styles.businessDetails}>
-                  <View style={styles.businessRating}>
-                    <Ionicons name="star" size={14} color={Colors.gold} />
-                    <Text style={styles.ratingText}>
-                      {business.rating} ({business.reviewCount})
-                    </Text>
-                  </View>
-                  <Text style={styles.businessStatus}>
-                    {business.isOpen ? 'Open' : 'Closed'}
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.businessIcon}>
-                <Text style={styles.businessEmoji}>
-                  {business.category.icon}
-                </Text>
-              </View>
-            </TouchableOpacity>
-          ))}
-        </View>
+        {/* Portuguese Business Directory Carousel */}
+        <BusinessCarousel
+          businesses={carouselBusinesses}
+          loading={carouselLoading}
+          onBusinessPress={handleBusinessPress}
+          testID="home-business-carousel"
+        />
       </ScrollView>
     </SafeAreaView>
   );

@@ -16,6 +16,9 @@ import {
   TrophyIcon,
   CalendarDaysIcon,
   CurrencyPoundIcon,
+  ClockIcon,
+  PlusIcon,
+  TagIcon,
 } from "@heroicons/react/24/outline";
 import { Crown, LogOut } from "lucide-react";
 // import { authService, User } from '@/lib/auth'
@@ -29,12 +32,67 @@ import { useLanguage } from "@/context/LanguageContext";
 import { ROUTES } from "@/config/routes";
 import { MobileNavButton } from "@/components/MobileNavigation";
 
-// New simplified main navigation for the redesigned structure
-const getMainNavigationLinks = (t: any) => [
+// Events dropdown links - comprehensive event navigation
+const getEventsDropdownLinks = (t: any) => [
   {
-    name: t("nav.whats_happening", "What's Happening"),
+    name: t("nav.discover_events", "Discover Events"),
     href: ROUTES.events,
-    description: "Discover events, activities, and community happenings",
+    description: t(
+      "nav.discover_events_desc",
+      "Browse all Portuguese-speaking community events across the UK"
+    ),
+    icon: CalendarDaysIcon,
+    iconColor: "text-blue-500",
+  },
+  {
+    name: t("nav.cultural_calendar", "Cultural Calendar"),
+    href: `${ROUTES.events}/calendar`,
+    description: t(
+      "nav.cultural_calendar_desc",
+      "View monthly calendar of Portuguese cultural celebrations"
+    ),
+    icon: CalendarDaysIcon,
+    iconColor: "text-purple-500",
+  },
+  {
+    name: t("nav.upcoming_events", "Upcoming Events"),
+    href: `${ROUTES.events}?filter=upcoming`,
+    description: t(
+      "nav.upcoming_events_desc",
+      "See what's happening this week in Portuguese community"
+    ),
+    icon: ClockIcon,
+    iconColor: "text-green-500",
+  },
+  {
+    name: t("nav.create_event", "Create Event"),
+    href: `${ROUTES.events}/create`,
+    description: t(
+      "nav.create_event_desc",
+      "Organize your own Portuguese community event"
+    ),
+    icon: PlusIcon,
+    iconColor: "text-orange-500",
+  },
+  {
+    name: t("nav.event_categories", "Event Categories"),
+    href: `${ROUTES.events}?view=categories`,
+    description: t(
+      "nav.event_categories_desc",
+      "Browse by Fado, Kizomba, Business, Cultural & more"
+    ),
+    icon: TagIcon,
+    iconColor: "text-pink-500",
+  },
+  {
+    name: t("nav.my_events", "My Events"),
+    href: `${ROUTES.events}/my-events`,
+    description: t(
+      "nav.my_events_desc",
+      "Manage events you're attending or organizing"
+    ),
+    icon: UserIcon,
+    iconColor: "text-indigo-500",
   },
 ];
 
@@ -161,6 +219,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [user, setUser] = useState<any | null>(null);
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showEventsDropdown, setShowEventsDropdown] = useState(false);
   const [showCommunityDropdown, setShowCommunityDropdown] = useState(false);
   const [showForBusinessDropdown, setShowForBusinessDropdown] = useState(false);
   const router = useRouter();
@@ -203,12 +262,13 @@ export default function Header() {
     return badges[tier as keyof typeof badges] || badges.free;
   };
 
-  const mainNavigationLinks = getMainNavigationLinks(t);
+  const eventsDropdownLinks = getEventsDropdownLinks(t);
   const communityDropdownLinks = getCommunityDropdownLinks(t);
   const forBusinessDropdownLinks = getForBusinessDropdownLinks(t);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[9999] bg-white/95 backdrop-blur-md border-b border-gray-200/60 min-h-[80px] lg:min-h-[88px] shadow-lg shadow-gray-900/5">
+    <header className="fixed left-0 right-0 z-20 bg-white/95 backdrop-blur-md border-b border-gray-200/60 min-h-[80px] lg:min-h-[88px] shadow-lg shadow-gray-900/5 header-with-app-bar" 
+      style={{ top: 'var(--app-download-bar-height, 0px)' }}>
       <nav className="container-width" aria-label="Top">
         <div className="flex items-center justify-between py-3 sm:py-4 lg:py-5 gap-2 sm:gap-4">
           {/* Logo - Premium design with sophisticated hover effects */}
@@ -233,33 +293,89 @@ export default function Header() {
 
           {/* Desktop Navigation - New Redesigned Structure */}
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
-            {/* What's Happening - Main Discovery Link */}
-            {mainNavigationLinks.map((link) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                className="relative text-gray-600 hover:text-primary-600 px-3 py-3 rounded-md text-sm font-medium transition-all duration-300 group min-h-[44px] flex items-center"
+            {/* Events Dropdown */}
+            <div
+              className="relative dropdown-container"
+              onMouseEnter={() => setShowEventsDropdown(true)}
+              onMouseLeave={() => setShowEventsDropdown(false)}
+            >
+              <motion.button
+                className="relative text-gray-600 hover:text-blue-600 px-3 py-3 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1 group min-h-[44px]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <span className="relative z-10">{link.name}</span>
-                {/* Premium underline effect */}
+                <span className="relative z-10">
+                  {t("nav.events", "Events")}
+                </span>
                 <motion.div
-                  className="absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-                {/* Subtle background hover effect */}
+                  animate={{ rotate: showEventsDropdown ? 180 : 0 }}
+                  transition={{ duration: 0.3, ease: [0.215, 0.61, 0.355, 1] }}
+                >
+                  <ChevronDownIcon className="w-4 h-4" />
+                </motion.div>
+                {/* Premium background hover effect */}
                 <motion.div
-                  className="absolute inset-0 bg-primary-50 rounded-md"
+                  className="absolute inset-0 bg-blue-50 rounded-md"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
                 />
-              </motion.a>
-            ))}
+              </motion.button>
+
+              <AnimatePresence>
+                {showEventsDropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{
+                      duration: 0.4,
+                      ease: [0.215, 0.61, 0.355, 1],
+                    }}
+                    className="absolute top-full mt-2 w-[min(56rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-[9999]"
+                    style={{ left: '50%', transform: 'translateX(-50%)' }}
+                  >
+                    <div className="px-8">
+                      <h3 className="text-lg font-semibold mb-6 text-blue-600 text-center">
+                        {t("nav.events_hub", "Events Hub")}
+                      </h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        {eventsDropdownLinks.map((link, index) => (
+                          <motion.a
+                            key={link.name}
+                            href={link.href}
+                            className="block p-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50/80 transition-all duration-300 rounded-xl border border-gray-100/80 hover:border-blue-200 hover:shadow-lg group"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.05, duration: 0.3 }}
+                            whileHover={{ scale: 1.02, y: -2 }}
+                            whileTap={{ scale: 0.98 }}
+                          >
+                            <div className="flex items-center gap-3 mb-3">
+                              <motion.div
+                                className={`group-hover:scale-110 transition-transform duration-300`}
+                                whileHover={{ rotate: 5 }}
+                              >
+                                <link.icon
+                                  className={`w-5 h-5 ${link.iconColor}`}
+                                />
+                              </motion.div>
+                              <div className="font-semibold text-sm group-hover:text-blue-700 transition-colors duration-300">
+                                {link.name}
+                              </div>
+                            </div>
+                            <div className="text-xs text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors duration-300">
+                              {link.description}
+                            </div>
+                          </motion.a>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* Community Dropdown */}
             <div
@@ -274,7 +390,7 @@ export default function Header() {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 <span className="relative z-10">
-                  {t("nav.community", "Community")}
+                  {t("nav.more", "More")}
                 </span>
                 <motion.div
                   animate={{ rotate: showCommunityDropdown ? 180 : 0 }}
@@ -301,7 +417,7 @@ export default function Header() {
                       duration: 0.4,
                       ease: [0.215, 0.61, 0.355, 1],
                     }}
-                    className="absolute top-full mt-2 w-[min(56rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-[9998]"
+                    className="absolute top-full mt-2 w-[min(56rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-[9999]"
                     style={{ left: '50%', transform: 'translateX(-50%)' }}
                   >
                     <div className="px-8">
@@ -385,7 +501,7 @@ export default function Header() {
                       duration: 0.4,
                       ease: [0.215, 0.61, 0.355, 1],
                     }}
-                    className="absolute top-full mt-2 w-[min(56rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-[9998]"
+                    className="absolute top-full mt-2 w-[min(56rem,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-[9999]"
                     style={{ left: '50%', transform: 'translateX(-50%)' }}
                   >
                     <div className="px-8">
@@ -622,7 +738,7 @@ export default function Header() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-0 bg-black/50 backdrop-blur-md z-[9998] xl:hidden"
+                className="fixed inset-0 bg-black/50 backdrop-blur-md z-[9999] xl:hidden"
                 onClick={() => setMobileMenuOpen(false)}
               />
 

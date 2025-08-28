@@ -357,14 +357,15 @@ export default function LusoBotWidget({
                   {/* Close button */}
                   <button
                     onClick={() => dismissFloatingMessage(message.id)}
-                    className="absolute top-2 right-2 w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center
-                    hover:bg-gray-200 transition-colors"
+                    className="absolute top-1 right-1 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center
+                    hover:bg-gray-200 transition-colors min-h-[44px] min-w-[44px] sm:w-6 sm:h-6 sm:top-2 sm:right-2 sm:min-h-0 sm:min-w-0"
+                    aria-label={language === "pt" ? "Dispensar mensagem" : "Dismiss message"}
                   >
-                    <XMarkIcon className="w-3 h-3 text-gray-500" />
+                    <XMarkIcon className="w-4 h-4 text-gray-500 sm:w-3 sm:h-3" />
                   </button>
 
                   {/* Message content */}
-                  <div className="pr-6">
+                  <div className="pr-10 sm:pr-6">
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-6 h-6 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
                         <span className="text-white text-xs">🇵🇹</span>

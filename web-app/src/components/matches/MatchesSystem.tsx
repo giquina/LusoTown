@@ -30,7 +30,7 @@ import {
   getCulturalBackgroundName,
   getPortugueseConversationStarters
 } from '@/lib/cultural-matching';
-import { CulturalProfileSetup } from './CulturalProfileSetup';
+import CulturalProfileSetup from './CulturalProfileSetup';
 import { getCulturalInterestById } from '@/config/cultural-preferences';
 
 interface MatchesSystemProps {

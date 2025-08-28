@@ -81,16 +81,19 @@ export default function AppDownloadBar({
     return () => clearTimeout(timer)
   }, [autoShow, showDelay, isMobile])
 
-  // Add body padding when app bar is at top to prevent content overlap
+  // Add CSS custom property for content offset instead of body padding
   useEffect(() => {
     if (position === 'top' && isVisible) {
-      document.body.style.paddingTop = '80px' // Height of the app bar
+      document.documentElement.style.setProperty('--app-download-bar-height', '80px')
+      document.body.classList.add('app-download-bar-visible')
     } else {
-      document.body.style.paddingTop = '0px'
+      document.documentElement.style.setProperty('--app-download-bar-height', '0px')
+      document.body.classList.remove('app-download-bar-visible')
     }
     
     return () => {
-      document.body.style.paddingTop = '0px'
+      document.documentElement.style.setProperty('--app-download-bar-height', '0px')
+      document.body.classList.remove('app-download-bar-visible')
     }
   }, [position, isVisible])
 
@@ -152,9 +155,10 @@ export default function AppDownloadBar({
           damping: 30,
           duration: 0.4
         }}
-        className={`fixed ${position === 'bottom' ? 'bottom-0' : 'top-0'} left-0 right-0 
+        className={`fixed ${position === 'bottom' ? 'bottom-0' : 'top-0'} left-0 right-0 w-full
           bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-2xl
           ${position === 'bottom' ? 'rounded-t-2xl border-t border-primary-400' : 'border-b border-primary-400'}
+          ${position === 'top' ? 'h-20' : 'min-h-[80px]'} 
           ${className}`}
         style={{ zIndex: COMPONENT_Z_INDEX.appDownloadBar }}
         role="banner"
@@ -168,8 +172,8 @@ export default function AppDownloadBar({
           <div className="absolute top-1/2 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
         </div>
 
-        <div className="relative z-10 py-3 px-4">
-          <div className="flex items-center justify-between gap-4">
+        <div className="relative z-10 py-4 px-4 h-full flex items-center">
+          <div className="flex items-center justify-between gap-3 w-full min-h-0">
             
             {/* Content Section */}
             <div className="flex items-center gap-3 flex-1 min-w-0">
@@ -191,10 +195,10 @@ export default function AppDownloadBar({
                       : 'LusoTown App Available!'}
                   </span>
                 </div>
-                <p id="app-download-description" className="text-xs text-white/90 leading-tight">
+                <p id="app-download-description" className="text-xs text-white/90 leading-tight line-clamp-2">
                   {isPortuguese
-                    ? 'Conecte-se com a comunidade lusófona no Reino Unido, descubra eventos culturais e encontre a sua rede. Descarregue agora.'
-                    : 'Connect with the Portuguese-speaking community across the UK, discover cultural events, and build your network. Download now.'}
+                    ? 'Conecte-se com a comunidade lusófona no Reino Unido. Descarregue agora.'
+                    : 'Connect with the Portuguese-speaking community across the UK. Download now.'}
                 </p>
               </div>
             </div>

@@ -16,7 +16,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { PORTUGUESE_COLORS } from '@/config/brand'
 import { useCarouselPerformanceOptimization } from '@/hooks/useCarouselPerformanceOptimization'
 import { usePortuguesePWAFeatures } from '@/hooks/usePortuguesePWAFeatures'
-import { EnhancedMobileGestures } from '../EnhancedMobileGestures'
+import EnhancedMobileGestures from '../EnhancedMobileGestures'
 import logger from '@/utils/logger'
 
 // Enhanced interfaces building on existing carousel types

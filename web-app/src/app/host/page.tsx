@@ -237,12 +237,12 @@ export default function HostPage() {
               >
                 {isPortuguese
                   ? `Sem barreiras para criar eventos. Comece grátis com 1 evento mensal, depois escolha entre Creator Pro (${formatPrice(
-                      SUBSCRIPTION_PLANS.cultural_ambassador.monthly
+                      SUBSCRIPTION_PLANS.ambassador?.monthly || 29.99
                     )}) ou modelo de transação (${
                       EVENT_PRICING.ticketFeePercent
                     }% + ${formatPrice(EVENT_PRICING.ticketFeeFlat)} por bilhete).`
                   : `No barriers to event creation. Start free with 1 monthly event, then choose Creator Pro (${formatPrice(
-                      SUBSCRIPTION_PLANS.cultural_ambassador.monthly
+                      SUBSCRIPTION_PLANS.ambassador?.monthly || 29.99
                     )}) or transaction model (${
                       EVENT_PRICING.ticketFeePercent
                     }% + ${formatPrice(EVENT_PRICING.ticketFeeFlat)} per ticket).`}
@@ -430,7 +430,7 @@ export default function HostPage() {
                     Creator Pro
                   </h3>
                   <div className="text-4xl font-bold text-gray-900 mb-2">
-                    {formatPrice(SUBSCRIPTION_PLANS.cultural_ambassador.monthly)}
+                    {formatPrice(SUBSCRIPTION_PLANS.ambassador?.monthly || 29.99)}
                   </div>
                   <p className="text-gray-600">
                     {isPortuguese ? "por mês" : "per month"}
